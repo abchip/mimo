@@ -10,7 +10,9 @@ package org.abchip.mimo.util.impl;
 
 import org.abchip.mimo.util.CharacterDef;
 import org.abchip.mimo.util.UtilPackage;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -104,7 +106,10 @@ public class CharacterDefImpl extends DataDefImpl<String> implements CharacterDe
 	 */
 	@Override
 	public void setLength(int newLength) {
+		int oldLength = length;
 		length = newLength;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, UtilPackage.CHARACTER_DEF__LENGTH, oldLength, length));
 	}
 
 	/**
@@ -124,7 +129,10 @@ public class CharacterDefImpl extends DataDefImpl<String> implements CharacterDe
 	 */
 	@Override
 	public void setVarying(boolean newVarying) {
+		boolean oldVarying = varying;
 		varying = newVarying;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, UtilPackage.CHARACTER_DEF__VARYING, oldVarying, varying));
 	}
 
 	/**

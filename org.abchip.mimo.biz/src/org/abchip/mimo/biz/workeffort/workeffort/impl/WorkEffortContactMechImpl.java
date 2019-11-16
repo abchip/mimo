@@ -14,10 +14,12 @@ import org.abchip.mimo.biz.party.contact.ContactMech;
 import org.abchip.mimo.biz.workeffort.workeffort.WorkEffort;
 import org.abchip.mimo.biz.workeffort.workeffort.WorkEffortContactMech;
 import org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -158,7 +160,10 @@ public class WorkEffortContactMechImpl extends BizEntityImpl implements WorkEffo
 	 */
 	@Override
 	public void setComments(String newComments) {
+		String oldComments = comments;
 		comments = newComments;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WorkeffortPackage.WORK_EFFORT_CONTACT_MECH__COMMENTS, oldComments, comments));
 	}
 
 	/**
@@ -172,6 +177,8 @@ public class WorkEffortContactMechImpl extends BizEntityImpl implements WorkEffo
 			InternalEObject oldContactMechId = (InternalEObject)contactMechId;
 			contactMechId = (ContactMech)eResolveProxy(oldContactMechId);
 			if (contactMechId != oldContactMechId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WorkeffortPackage.WORK_EFFORT_CONTACT_MECH__CONTACT_MECH_ID, oldContactMechId, contactMechId));
 			}
 		}
 		return contactMechId;
@@ -193,7 +200,10 @@ public class WorkEffortContactMechImpl extends BizEntityImpl implements WorkEffo
 	 */
 	@Override
 	public void setContactMechId(ContactMech newContactMechId) {
+		ContactMech oldContactMechId = contactMechId;
 		contactMechId = newContactMechId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WorkeffortPackage.WORK_EFFORT_CONTACT_MECH__CONTACT_MECH_ID, oldContactMechId, contactMechId));
 	}
 
 	/**
@@ -213,7 +223,10 @@ public class WorkEffortContactMechImpl extends BizEntityImpl implements WorkEffo
 	 */
 	@Override
 	public void setFromDate(Date newFromDate) {
+		Date oldFromDate = fromDate;
 		fromDate = newFromDate;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WorkeffortPackage.WORK_EFFORT_CONTACT_MECH__FROM_DATE, oldFromDate, fromDate));
 	}
 
 	/**
@@ -233,7 +246,10 @@ public class WorkEffortContactMechImpl extends BizEntityImpl implements WorkEffo
 	 */
 	@Override
 	public void setThruDate(Date newThruDate) {
+		Date oldThruDate = thruDate;
 		thruDate = newThruDate;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WorkeffortPackage.WORK_EFFORT_CONTACT_MECH__THRU_DATE, oldThruDate, thruDate));
 	}
 
 	/**
@@ -247,6 +263,8 @@ public class WorkEffortContactMechImpl extends BizEntityImpl implements WorkEffo
 			InternalEObject oldWorkEffortId = (InternalEObject)workEffortId;
 			workEffortId = (WorkEffort)eResolveProxy(oldWorkEffortId);
 			if (workEffortId != oldWorkEffortId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WorkeffortPackage.WORK_EFFORT_CONTACT_MECH__WORK_EFFORT_ID, oldWorkEffortId, workEffortId));
 			}
 		}
 		return workEffortId;
@@ -268,7 +286,10 @@ public class WorkEffortContactMechImpl extends BizEntityImpl implements WorkEffo
 	 */
 	@Override
 	public void setWorkEffortId(WorkEffort newWorkEffortId) {
+		WorkEffort oldWorkEffortId = workEffortId;
 		workEffortId = newWorkEffortId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WorkeffortPackage.WORK_EFFORT_CONTACT_MECH__WORK_EFFORT_ID, oldWorkEffortId, workEffortId));
 	}
 
 	/**

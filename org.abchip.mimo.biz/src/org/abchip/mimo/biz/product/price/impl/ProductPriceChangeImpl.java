@@ -15,10 +15,12 @@ import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.product.price.PricePackage;
 import org.abchip.mimo.biz.product.price.ProductPriceChange;
 import org.abchip.mimo.biz.security.login.UserLogin;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -310,6 +312,8 @@ public class ProductPriceChangeImpl extends BizEntityImpl implements ProductPric
 			InternalEObject oldChangedByUserLogin = (InternalEObject)changedByUserLogin;
 			changedByUserLogin = (UserLogin)eResolveProxy(oldChangedByUserLogin);
 			if (changedByUserLogin != oldChangedByUserLogin) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PricePackage.PRODUCT_PRICE_CHANGE__CHANGED_BY_USER_LOGIN, oldChangedByUserLogin, changedByUserLogin));
 			}
 		}
 		return changedByUserLogin;
@@ -331,7 +335,10 @@ public class ProductPriceChangeImpl extends BizEntityImpl implements ProductPric
 	 */
 	@Override
 	public void setChangedByUserLogin(UserLogin newChangedByUserLogin) {
+		UserLogin oldChangedByUserLogin = changedByUserLogin;
 		changedByUserLogin = newChangedByUserLogin;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PricePackage.PRODUCT_PRICE_CHANGE__CHANGED_BY_USER_LOGIN, oldChangedByUserLogin, changedByUserLogin));
 	}
 
 	/**
@@ -351,7 +358,10 @@ public class ProductPriceChangeImpl extends BizEntityImpl implements ProductPric
 	 */
 	@Override
 	public void setChangedDate(Date newChangedDate) {
+		Date oldChangedDate = changedDate;
 		changedDate = newChangedDate;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PricePackage.PRODUCT_PRICE_CHANGE__CHANGED_DATE, oldChangedDate, changedDate));
 	}
 
 	/**
@@ -371,7 +381,10 @@ public class ProductPriceChangeImpl extends BizEntityImpl implements ProductPric
 	 */
 	@Override
 	public void setCurrencyUomId(String newCurrencyUomId) {
+		String oldCurrencyUomId = currencyUomId;
 		currencyUomId = newCurrencyUomId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PricePackage.PRODUCT_PRICE_CHANGE__CURRENCY_UOM_ID, oldCurrencyUomId, currencyUomId));
 	}
 
 	/**
@@ -391,7 +404,10 @@ public class ProductPriceChangeImpl extends BizEntityImpl implements ProductPric
 	 */
 	@Override
 	public void setFromDate(Date newFromDate) {
+		Date oldFromDate = fromDate;
 		fromDate = newFromDate;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PricePackage.PRODUCT_PRICE_CHANGE__FROM_DATE, oldFromDate, fromDate));
 	}
 
 	/**
@@ -411,7 +427,10 @@ public class ProductPriceChangeImpl extends BizEntityImpl implements ProductPric
 	 */
 	@Override
 	public void setOldPrice(BigDecimal newOldPrice) {
+		BigDecimal oldOldPrice = oldPrice;
 		oldPrice = newOldPrice;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PricePackage.PRODUCT_PRICE_CHANGE__OLD_PRICE, oldOldPrice, oldPrice));
 	}
 
 	/**
@@ -431,7 +450,10 @@ public class ProductPriceChangeImpl extends BizEntityImpl implements ProductPric
 	 */
 	@Override
 	public void setPrice(BigDecimal newPrice) {
+		BigDecimal oldPrice = price;
 		price = newPrice;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PricePackage.PRODUCT_PRICE_CHANGE__PRICE, oldPrice, price));
 	}
 
 	/**
@@ -451,7 +473,10 @@ public class ProductPriceChangeImpl extends BizEntityImpl implements ProductPric
 	 */
 	@Override
 	public void setProductId(String newProductId) {
+		String oldProductId = productId;
 		productId = newProductId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PricePackage.PRODUCT_PRICE_CHANGE__PRODUCT_ID, oldProductId, productId));
 	}
 
 	/**
@@ -471,7 +496,10 @@ public class ProductPriceChangeImpl extends BizEntityImpl implements ProductPric
 	 */
 	@Override
 	public void setProductPriceChangeId(String newProductPriceChangeId) {
+		String oldProductPriceChangeId = productPriceChangeId;
 		productPriceChangeId = newProductPriceChangeId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PricePackage.PRODUCT_PRICE_CHANGE__PRODUCT_PRICE_CHANGE_ID, oldProductPriceChangeId, productPriceChangeId));
 	}
 
 	/**
@@ -491,7 +519,10 @@ public class ProductPriceChangeImpl extends BizEntityImpl implements ProductPric
 	 */
 	@Override
 	public void setProductPricePurposeId(String newProductPricePurposeId) {
+		String oldProductPricePurposeId = productPricePurposeId;
 		productPricePurposeId = newProductPricePurposeId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PricePackage.PRODUCT_PRICE_CHANGE__PRODUCT_PRICE_PURPOSE_ID, oldProductPricePurposeId, productPricePurposeId));
 	}
 
 	/**
@@ -511,7 +542,10 @@ public class ProductPriceChangeImpl extends BizEntityImpl implements ProductPric
 	 */
 	@Override
 	public void setProductPriceTypeId(String newProductPriceTypeId) {
+		String oldProductPriceTypeId = productPriceTypeId;
 		productPriceTypeId = newProductPriceTypeId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PricePackage.PRODUCT_PRICE_CHANGE__PRODUCT_PRICE_TYPE_ID, oldProductPriceTypeId, productPriceTypeId));
 	}
 
 	/**
@@ -531,7 +565,10 @@ public class ProductPriceChangeImpl extends BizEntityImpl implements ProductPric
 	 */
 	@Override
 	public void setProductStoreGroupId(String newProductStoreGroupId) {
+		String oldProductStoreGroupId = productStoreGroupId;
 		productStoreGroupId = newProductStoreGroupId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PricePackage.PRODUCT_PRICE_CHANGE__PRODUCT_STORE_GROUP_ID, oldProductStoreGroupId, productStoreGroupId));
 	}
 
 	/**
@@ -551,7 +588,10 @@ public class ProductPriceChangeImpl extends BizEntityImpl implements ProductPric
 	 */
 	@Override
 	public void setThruDate(Date newThruDate) {
+		Date oldThruDate = thruDate;
 		thruDate = newThruDate;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PricePackage.PRODUCT_PRICE_CHANGE__THRU_DATE, oldThruDate, thruDate));
 	}
 
 	/**

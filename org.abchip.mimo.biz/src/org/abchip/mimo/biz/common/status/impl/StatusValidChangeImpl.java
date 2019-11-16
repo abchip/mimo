@@ -11,9 +11,11 @@ import org.abchip.mimo.biz.common.status.StatusItem;
 import org.abchip.mimo.biz.common.status.StatusPackage;
 import org.abchip.mimo.biz.common.status.StatusValidChange;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -127,7 +129,10 @@ public class StatusValidChangeImpl extends BizEntityImpl implements StatusValidC
 	 */
 	@Override
 	public void setConditionExpression(String newConditionExpression) {
+		String oldConditionExpression = conditionExpression;
 		conditionExpression = newConditionExpression;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, StatusPackage.STATUS_VALID_CHANGE__CONDITION_EXPRESSION, oldConditionExpression, conditionExpression));
 	}
 
 	/**
@@ -147,7 +152,10 @@ public class StatusValidChangeImpl extends BizEntityImpl implements StatusValidC
 	 */
 	@Override
 	public void setTransitionName(String newTransitionName) {
+		String oldTransitionName = transitionName;
 		transitionName = newTransitionName;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, StatusPackage.STATUS_VALID_CHANGE__TRANSITION_NAME, oldTransitionName, transitionName));
 	}
 
 	/**
@@ -161,6 +169,8 @@ public class StatusValidChangeImpl extends BizEntityImpl implements StatusValidC
 			InternalEObject oldStatusId = (InternalEObject)statusId;
 			statusId = (StatusItem)eResolveProxy(oldStatusId);
 			if (statusId != oldStatusId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, StatusPackage.STATUS_VALID_CHANGE__STATUS_ID, oldStatusId, statusId));
 			}
 		}
 		return statusId;
@@ -182,7 +192,10 @@ public class StatusValidChangeImpl extends BizEntityImpl implements StatusValidC
 	 */
 	@Override
 	public void setStatusId(StatusItem newStatusId) {
+		StatusItem oldStatusId = statusId;
 		statusId = newStatusId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, StatusPackage.STATUS_VALID_CHANGE__STATUS_ID, oldStatusId, statusId));
 	}
 
 	/**
@@ -196,6 +209,8 @@ public class StatusValidChangeImpl extends BizEntityImpl implements StatusValidC
 			InternalEObject oldStatusIdTo = (InternalEObject)statusIdTo;
 			statusIdTo = (StatusItem)eResolveProxy(oldStatusIdTo);
 			if (statusIdTo != oldStatusIdTo) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, StatusPackage.STATUS_VALID_CHANGE__STATUS_ID_TO, oldStatusIdTo, statusIdTo));
 			}
 		}
 		return statusIdTo;
@@ -217,7 +232,10 @@ public class StatusValidChangeImpl extends BizEntityImpl implements StatusValidC
 	 */
 	@Override
 	public void setStatusIdTo(StatusItem newStatusIdTo) {
+		StatusItem oldStatusIdTo = statusIdTo;
 		statusIdTo = newStatusIdTo;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, StatusPackage.STATUS_VALID_CHANGE__STATUS_ID_TO, oldStatusIdTo, statusIdTo));
 	}
 
 	/**

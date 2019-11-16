@@ -12,7 +12,9 @@ import java.util.List;
 import org.abchip.mimo.biz.accounting.ledger.GlResourceType;
 import org.abchip.mimo.biz.accounting.ledger.LedgerPackage;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -106,7 +108,10 @@ public class GlResourceTypeImpl extends BizEntityImpl implements GlResourceType 
 	 */
 	@Override
 	public void setDescription(String newDescription) {
+		String oldDescription = description;
 		description = newDescription;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, LedgerPackage.GL_RESOURCE_TYPE__DESCRIPTION, oldDescription, description));
 	}
 
 	/**
@@ -138,7 +143,10 @@ public class GlResourceTypeImpl extends BizEntityImpl implements GlResourceType 
 	 */
 	@Override
 	public void setGlResourceTypeId(String newGlResourceTypeId) {
+		String oldGlResourceTypeId = glResourceTypeId;
 		glResourceTypeId = newGlResourceTypeId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, LedgerPackage.GL_RESOURCE_TYPE__GL_RESOURCE_TYPE_ID, oldGlResourceTypeId, glResourceTypeId));
 	}
 
 	/**

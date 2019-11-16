@@ -11,10 +11,12 @@ import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.shipment.shipment.ShipmentType;
 import org.abchip.mimo.biz.shipment.shipment.ShipmentTypeAttr;
 import org.abchip.mimo.biz.shipment.shipment.Shipment_Package;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -123,7 +125,10 @@ public class ShipmentTypeAttrImpl extends BizEntityImpl implements ShipmentTypeA
 	 */
 	@Override
 	public void setAttrName(String newAttrName) {
+		String oldAttrName = attrName;
 		attrName = newAttrName;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, Shipment_Package.SHIPMENT_TYPE_ATTR__ATTR_NAME, oldAttrName, attrName));
 	}
 
 	/**
@@ -143,7 +148,10 @@ public class ShipmentTypeAttrImpl extends BizEntityImpl implements ShipmentTypeA
 	 */
 	@Override
 	public void setDescription(String newDescription) {
+		String oldDescription = description;
 		description = newDescription;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, Shipment_Package.SHIPMENT_TYPE_ATTR__DESCRIPTION, oldDescription, description));
 	}
 
 	/**
@@ -157,6 +165,8 @@ public class ShipmentTypeAttrImpl extends BizEntityImpl implements ShipmentTypeA
 			InternalEObject oldShipmentTypeId = (InternalEObject)shipmentTypeId;
 			shipmentTypeId = (ShipmentType)eResolveProxy(oldShipmentTypeId);
 			if (shipmentTypeId != oldShipmentTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, Shipment_Package.SHIPMENT_TYPE_ATTR__SHIPMENT_TYPE_ID, oldShipmentTypeId, shipmentTypeId));
 			}
 		}
 		return shipmentTypeId;
@@ -178,7 +188,10 @@ public class ShipmentTypeAttrImpl extends BizEntityImpl implements ShipmentTypeA
 	 */
 	@Override
 	public void setShipmentTypeId(ShipmentType newShipmentTypeId) {
+		ShipmentType oldShipmentTypeId = shipmentTypeId;
 		shipmentTypeId = newShipmentTypeId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, Shipment_Package.SHIPMENT_TYPE_ATTR__SHIPMENT_TYPE_ID, oldShipmentTypeId, shipmentTypeId));
 	}
 
 	/**

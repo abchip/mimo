@@ -11,9 +11,11 @@ import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.party.agreement.AgreementPackage;
 import org.abchip.mimo.biz.party.agreement.AgreementType;
 import org.abchip.mimo.biz.party.agreement.AgreementTypeAttr;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -117,7 +119,10 @@ public class AgreementTypeAttrImpl extends BizEntityImpl implements AgreementTyp
 	 */
 	@Override
 	public void setDescription(String newDescription) {
+		String oldDescription = description;
 		description = newDescription;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, AgreementPackage.AGREEMENT_TYPE_ATTR__DESCRIPTION, oldDescription, description));
 	}
 
 	/**
@@ -137,7 +142,10 @@ public class AgreementTypeAttrImpl extends BizEntityImpl implements AgreementTyp
 	 */
 	@Override
 	public void setAttrName(String newAttrName) {
+		String oldAttrName = attrName;
 		attrName = newAttrName;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, AgreementPackage.AGREEMENT_TYPE_ATTR__ATTR_NAME, oldAttrName, attrName));
 	}
 
 	/**
@@ -151,6 +159,8 @@ public class AgreementTypeAttrImpl extends BizEntityImpl implements AgreementTyp
 			InternalEObject oldAgreementTypeId = (InternalEObject)agreementTypeId;
 			agreementTypeId = (AgreementType)eResolveProxy(oldAgreementTypeId);
 			if (agreementTypeId != oldAgreementTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, AgreementPackage.AGREEMENT_TYPE_ATTR__AGREEMENT_TYPE_ID, oldAgreementTypeId, agreementTypeId));
 			}
 		}
 		return agreementTypeId;
@@ -172,7 +182,10 @@ public class AgreementTypeAttrImpl extends BizEntityImpl implements AgreementTyp
 	 */
 	@Override
 	public void setAgreementTypeId(AgreementType newAgreementTypeId) {
+		AgreementType oldAgreementTypeId = agreementTypeId;
 		agreementTypeId = newAgreementTypeId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, AgreementPackage.AGREEMENT_TYPE_ATTR__AGREEMENT_TYPE_ID, oldAgreementTypeId, agreementTypeId));
 	}
 
 	/**

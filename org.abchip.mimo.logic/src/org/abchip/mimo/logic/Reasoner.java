@@ -37,6 +37,7 @@ public interface Reasoner extends Closeable {
 	 * @model
 	 * @generated
 	 */
+	@Override
 	void close();
 
 	/**

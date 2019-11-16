@@ -14,10 +14,12 @@ import org.abchip.mimo.biz.workeffort.workeffort.WorkEffort;
 import org.abchip.mimo.biz.workeffort.workeffort.WorkEffortAssoc;
 import org.abchip.mimo.biz.workeffort.workeffort.WorkEffortAssocType;
 import org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -169,7 +171,10 @@ public class WorkEffortAssocImpl extends BizEntityTypedImpl<WorkEffortAssocType>
 	 */
 	@Override
 	public void setFromDate(Date newFromDate) {
+		Date oldFromDate = fromDate;
 		fromDate = newFromDate;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WorkeffortPackage.WORK_EFFORT_ASSOC__FROM_DATE, oldFromDate, fromDate));
 	}
 
 	/**
@@ -189,7 +194,10 @@ public class WorkEffortAssocImpl extends BizEntityTypedImpl<WorkEffortAssocType>
 	 */
 	@Override
 	public void setSequenceNum(long newSequenceNum) {
+		long oldSequenceNum = sequenceNum;
 		sequenceNum = newSequenceNum;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WorkeffortPackage.WORK_EFFORT_ASSOC__SEQUENCE_NUM, oldSequenceNum, sequenceNum));
 	}
 
 	/**
@@ -209,7 +217,10 @@ public class WorkEffortAssocImpl extends BizEntityTypedImpl<WorkEffortAssocType>
 	 */
 	@Override
 	public void setThruDate(Date newThruDate) {
+		Date oldThruDate = thruDate;
 		thruDate = newThruDate;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WorkeffortPackage.WORK_EFFORT_ASSOC__THRU_DATE, oldThruDate, thruDate));
 	}
 
 	/**
@@ -223,6 +234,8 @@ public class WorkEffortAssocImpl extends BizEntityTypedImpl<WorkEffortAssocType>
 			InternalEObject oldWorkEffortAssocTypeId = (InternalEObject)workEffortAssocTypeId;
 			workEffortAssocTypeId = (WorkEffortAssocType)eResolveProxy(oldWorkEffortAssocTypeId);
 			if (workEffortAssocTypeId != oldWorkEffortAssocTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WorkeffortPackage.WORK_EFFORT_ASSOC__WORK_EFFORT_ASSOC_TYPE_ID, oldWorkEffortAssocTypeId, workEffortAssocTypeId));
 			}
 		}
 		return workEffortAssocTypeId;
@@ -244,7 +257,10 @@ public class WorkEffortAssocImpl extends BizEntityTypedImpl<WorkEffortAssocType>
 	 */
 	@Override
 	public void setWorkEffortAssocTypeId(WorkEffortAssocType newWorkEffortAssocTypeId) {
+		WorkEffortAssocType oldWorkEffortAssocTypeId = workEffortAssocTypeId;
 		workEffortAssocTypeId = newWorkEffortAssocTypeId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WorkeffortPackage.WORK_EFFORT_ASSOC__WORK_EFFORT_ASSOC_TYPE_ID, oldWorkEffortAssocTypeId, workEffortAssocTypeId));
 	}
 
 	/**
@@ -258,6 +274,8 @@ public class WorkEffortAssocImpl extends BizEntityTypedImpl<WorkEffortAssocType>
 			InternalEObject oldWorkEffortIdFrom = (InternalEObject)workEffortIdFrom;
 			workEffortIdFrom = (WorkEffort)eResolveProxy(oldWorkEffortIdFrom);
 			if (workEffortIdFrom != oldWorkEffortIdFrom) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WorkeffortPackage.WORK_EFFORT_ASSOC__WORK_EFFORT_ID_FROM, oldWorkEffortIdFrom, workEffortIdFrom));
 			}
 		}
 		return workEffortIdFrom;
@@ -279,7 +297,10 @@ public class WorkEffortAssocImpl extends BizEntityTypedImpl<WorkEffortAssocType>
 	 */
 	@Override
 	public void setWorkEffortIdFrom(WorkEffort newWorkEffortIdFrom) {
+		WorkEffort oldWorkEffortIdFrom = workEffortIdFrom;
 		workEffortIdFrom = newWorkEffortIdFrom;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WorkeffortPackage.WORK_EFFORT_ASSOC__WORK_EFFORT_ID_FROM, oldWorkEffortIdFrom, workEffortIdFrom));
 	}
 
 	/**
@@ -293,6 +314,8 @@ public class WorkEffortAssocImpl extends BizEntityTypedImpl<WorkEffortAssocType>
 			InternalEObject oldWorkEffortIdTo = (InternalEObject)workEffortIdTo;
 			workEffortIdTo = (WorkEffort)eResolveProxy(oldWorkEffortIdTo);
 			if (workEffortIdTo != oldWorkEffortIdTo) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WorkeffortPackage.WORK_EFFORT_ASSOC__WORK_EFFORT_ID_TO, oldWorkEffortIdTo, workEffortIdTo));
 			}
 		}
 		return workEffortIdTo;
@@ -314,7 +337,10 @@ public class WorkEffortAssocImpl extends BizEntityTypedImpl<WorkEffortAssocType>
 	 */
 	@Override
 	public void setWorkEffortIdTo(WorkEffort newWorkEffortIdTo) {
+		WorkEffort oldWorkEffortIdTo = workEffortIdTo;
 		workEffortIdTo = newWorkEffortIdTo;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WorkeffortPackage.WORK_EFFORT_ASSOC__WORK_EFFORT_ID_TO, oldWorkEffortIdTo, workEffortIdTo));
 	}
 
 	/**

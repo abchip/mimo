@@ -15,9 +15,11 @@ import org.abchip.mimo.biz.party.contact.ContactPackage;
 import org.abchip.mimo.biz.party.contact.PartyContactMech;
 import org.abchip.mimo.biz.party.party.Party;
 import org.abchip.mimo.biz.party.party.RoleType;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -255,7 +257,10 @@ public class PartyContactMechImpl extends BizEntityImpl implements PartyContactM
 	 */
 	@Override
 	public void setComments(String newComments) {
+		String oldComments = comments;
 		comments = newComments;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ContactPackage.PARTY_CONTACT_MECH__COMMENTS, oldComments, comments));
 	}
 
 	/**
@@ -275,7 +280,10 @@ public class PartyContactMechImpl extends BizEntityImpl implements PartyContactM
 	 */
 	@Override
 	public void setExtension(String newExtension) {
+		String oldExtension = extension;
 		extension = newExtension;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ContactPackage.PARTY_CONTACT_MECH__EXTENSION, oldExtension, extension));
 	}
 
 	/**
@@ -295,7 +303,10 @@ public class PartyContactMechImpl extends BizEntityImpl implements PartyContactM
 	 */
 	@Override
 	public void setFromDate(Date newFromDate) {
+		Date oldFromDate = fromDate;
 		fromDate = newFromDate;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ContactPackage.PARTY_CONTACT_MECH__FROM_DATE, oldFromDate, fromDate));
 	}
 
 	/**
@@ -315,7 +326,10 @@ public class PartyContactMechImpl extends BizEntityImpl implements PartyContactM
 	 */
 	@Override
 	public void setAllowSolicitation(boolean newAllowSolicitation) {
+		boolean oldAllowSolicitation = allowSolicitation;
 		allowSolicitation = newAllowSolicitation;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ContactPackage.PARTY_CONTACT_MECH__ALLOW_SOLICITATION, oldAllowSolicitation, allowSolicitation));
 	}
 
 	/**
@@ -335,7 +349,10 @@ public class PartyContactMechImpl extends BizEntityImpl implements PartyContactM
 	 */
 	@Override
 	public void setMonthsWithContactMech(long newMonthsWithContactMech) {
+		long oldMonthsWithContactMech = monthsWithContactMech;
 		monthsWithContactMech = newMonthsWithContactMech;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ContactPackage.PARTY_CONTACT_MECH__MONTHS_WITH_CONTACT_MECH, oldMonthsWithContactMech, monthsWithContactMech));
 	}
 
 	/**
@@ -349,6 +366,8 @@ public class PartyContactMechImpl extends BizEntityImpl implements PartyContactM
 			InternalEObject oldPartyId = (InternalEObject)partyId;
 			partyId = (Party)eResolveProxy(oldPartyId);
 			if (partyId != oldPartyId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ContactPackage.PARTY_CONTACT_MECH__PARTY_ID, oldPartyId, partyId));
 			}
 		}
 		return partyId;
@@ -370,7 +389,10 @@ public class PartyContactMechImpl extends BizEntityImpl implements PartyContactM
 	 */
 	@Override
 	public void setPartyId(Party newPartyId) {
+		Party oldPartyId = partyId;
 		partyId = newPartyId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ContactPackage.PARTY_CONTACT_MECH__PARTY_ID, oldPartyId, partyId));
 	}
 
 	/**
@@ -384,6 +406,8 @@ public class PartyContactMechImpl extends BizEntityImpl implements PartyContactM
 			InternalEObject oldRoleTypeId = (InternalEObject)roleTypeId;
 			roleTypeId = (RoleType)eResolveProxy(oldRoleTypeId);
 			if (roleTypeId != oldRoleTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ContactPackage.PARTY_CONTACT_MECH__ROLE_TYPE_ID, oldRoleTypeId, roleTypeId));
 			}
 		}
 		return roleTypeId;
@@ -405,7 +429,10 @@ public class PartyContactMechImpl extends BizEntityImpl implements PartyContactM
 	 */
 	@Override
 	public void setRoleTypeId(RoleType newRoleTypeId) {
+		RoleType oldRoleTypeId = roleTypeId;
 		roleTypeId = newRoleTypeId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ContactPackage.PARTY_CONTACT_MECH__ROLE_TYPE_ID, oldRoleTypeId, roleTypeId));
 	}
 
 	/**
@@ -425,7 +452,10 @@ public class PartyContactMechImpl extends BizEntityImpl implements PartyContactM
 	 */
 	@Override
 	public void setThruDate(Date newThruDate) {
+		Date oldThruDate = thruDate;
 		thruDate = newThruDate;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ContactPackage.PARTY_CONTACT_MECH__THRU_DATE, oldThruDate, thruDate));
 	}
 
 	/**
@@ -445,7 +475,10 @@ public class PartyContactMechImpl extends BizEntityImpl implements PartyContactM
 	 */
 	@Override
 	public void setVerified(boolean newVerified) {
+		boolean oldVerified = verified;
 		verified = newVerified;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ContactPackage.PARTY_CONTACT_MECH__VERIFIED, oldVerified, verified));
 	}
 
 	/**
@@ -465,7 +498,10 @@ public class PartyContactMechImpl extends BizEntityImpl implements PartyContactM
 	 */
 	@Override
 	public void setYearsWithContactMech(long newYearsWithContactMech) {
+		long oldYearsWithContactMech = yearsWithContactMech;
 		yearsWithContactMech = newYearsWithContactMech;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ContactPackage.PARTY_CONTACT_MECH__YEARS_WITH_CONTACT_MECH, oldYearsWithContactMech, yearsWithContactMech));
 	}
 
 	/**
@@ -479,6 +515,8 @@ public class PartyContactMechImpl extends BizEntityImpl implements PartyContactM
 			InternalEObject oldContactMechId = (InternalEObject)contactMechId;
 			contactMechId = (ContactMech)eResolveProxy(oldContactMechId);
 			if (contactMechId != oldContactMechId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ContactPackage.PARTY_CONTACT_MECH__CONTACT_MECH_ID, oldContactMechId, contactMechId));
 			}
 		}
 		return contactMechId;
@@ -500,7 +538,10 @@ public class PartyContactMechImpl extends BizEntityImpl implements PartyContactM
 	 */
 	@Override
 	public void setContactMechId(ContactMech newContactMechId) {
+		ContactMech oldContactMechId = contactMechId;
 		contactMechId = newContactMechId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ContactPackage.PARTY_CONTACT_MECH__CONTACT_MECH_ID, oldContactMechId, contactMechId));
 	}
 
 	/**

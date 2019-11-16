@@ -14,11 +14,13 @@ import org.abchip.mimo.biz.accounting.ledger.GlAccount;
 import org.abchip.mimo.biz.accounting.ledger.GlAccountType;
 import org.abchip.mimo.biz.accounting.ledger.LedgerPackage;
 import org.abchip.mimo.biz.impl.BizEntityTypeImpl;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.util.BasicInternalEList;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -152,7 +154,10 @@ public class GlAccountTypeImpl extends BizEntityTypeImpl<GlAccount> implements G
 	 */
 	@Override
 	public void setDescription(String newDescription) {
+		String oldDescription = description;
 		description = newDescription;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, LedgerPackage.GL_ACCOUNT_TYPE__DESCRIPTION, oldDescription, description));
 	}
 
 	/**
@@ -172,7 +177,10 @@ public class GlAccountTypeImpl extends BizEntityTypeImpl<GlAccount> implements G
 	 */
 	@Override
 	public void setHasTable(boolean newHasTable) {
+		boolean oldHasTable = hasTable;
 		hasTable = newHasTable;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, LedgerPackage.GL_ACCOUNT_TYPE__HAS_TABLE, oldHasTable, hasTable));
 	}
 
 	/**
@@ -186,6 +194,8 @@ public class GlAccountTypeImpl extends BizEntityTypeImpl<GlAccount> implements G
 			InternalEObject oldParentTypeId = (InternalEObject)parentTypeId;
 			parentTypeId = (GlAccountType)eResolveProxy(oldParentTypeId);
 			if (parentTypeId != oldParentTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, LedgerPackage.GL_ACCOUNT_TYPE__PARENT_TYPE_ID, oldParentTypeId, parentTypeId));
 			}
 		}
 		return parentTypeId;
@@ -207,7 +217,10 @@ public class GlAccountTypeImpl extends BizEntityTypeImpl<GlAccount> implements G
 	 */
 	@Override
 	public void setParentTypeId(GlAccountType newParentTypeId) {
+		GlAccountType oldParentTypeId = parentTypeId;
 		parentTypeId = newParentTypeId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, LedgerPackage.GL_ACCOUNT_TYPE__PARENT_TYPE_ID, oldParentTypeId, parentTypeId));
 	}
 
 	/**
@@ -218,7 +231,7 @@ public class GlAccountTypeImpl extends BizEntityTypeImpl<GlAccount> implements G
 	@Override
 	public List<String> getGlAccountTypeDefaults() {
 		if (glAccountTypeDefaults == null) {
-			glAccountTypeDefaults = new BasicInternalEList<String>(String.class);
+			glAccountTypeDefaults = new EDataTypeUniqueEList<String>(String.class, this, LedgerPackage.GL_ACCOUNT_TYPE__GL_ACCOUNT_TYPE_DEFAULTS);
 		}
 		return glAccountTypeDefaults;
 	}
@@ -312,7 +325,10 @@ public class GlAccountTypeImpl extends BizEntityTypeImpl<GlAccount> implements G
 	 */
 	@Override
 	public void setGlAccountTypeId(String newGlAccountTypeId) {
+		String oldGlAccountTypeId = glAccountTypeId;
 		glAccountTypeId = newGlAccountTypeId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, LedgerPackage.GL_ACCOUNT_TYPE__GL_ACCOUNT_TYPE_ID, oldGlAccountTypeId, glAccountTypeId));
 	}
 
 	/**

@@ -14,9 +14,11 @@ import org.abchip.mimo.biz.accounting.payment.DeductionType;
 import org.abchip.mimo.biz.accounting.payment.Payment;
 import org.abchip.mimo.biz.accounting.payment.PaymentPackage;
 import org.abchip.mimo.biz.impl.BizEntityTypedImpl;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -133,7 +135,10 @@ public class DeductionImpl extends BizEntityTypedImpl<DeductionType> implements 
 	 */
 	@Override
 	public void setAmount(BigDecimal newAmount) {
+		BigDecimal oldAmount = amount;
 		amount = newAmount;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.DEDUCTION__AMOUNT, oldAmount, amount));
 	}
 
 	/**
@@ -153,7 +158,10 @@ public class DeductionImpl extends BizEntityTypedImpl<DeductionType> implements 
 	 */
 	@Override
 	public void setDeductionId(String newDeductionId) {
+		String oldDeductionId = deductionId;
 		deductionId = newDeductionId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.DEDUCTION__DEDUCTION_ID, oldDeductionId, deductionId));
 	}
 
 	/**
@@ -167,6 +175,8 @@ public class DeductionImpl extends BizEntityTypedImpl<DeductionType> implements 
 			InternalEObject oldDeductionTypeId = (InternalEObject)deductionTypeId;
 			deductionTypeId = (DeductionType)eResolveProxy(oldDeductionTypeId);
 			if (deductionTypeId != oldDeductionTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PaymentPackage.DEDUCTION__DEDUCTION_TYPE_ID, oldDeductionTypeId, deductionTypeId));
 			}
 		}
 		return deductionTypeId;
@@ -188,7 +198,10 @@ public class DeductionImpl extends BizEntityTypedImpl<DeductionType> implements 
 	 */
 	@Override
 	public void setDeductionTypeId(DeductionType newDeductionTypeId) {
+		DeductionType oldDeductionTypeId = deductionTypeId;
 		deductionTypeId = newDeductionTypeId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.DEDUCTION__DEDUCTION_TYPE_ID, oldDeductionTypeId, deductionTypeId));
 	}
 
 	/**
@@ -202,6 +215,8 @@ public class DeductionImpl extends BizEntityTypedImpl<DeductionType> implements 
 			InternalEObject oldPaymentId = (InternalEObject)paymentId;
 			paymentId = (Payment)eResolveProxy(oldPaymentId);
 			if (paymentId != oldPaymentId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PaymentPackage.DEDUCTION__PAYMENT_ID, oldPaymentId, paymentId));
 			}
 		}
 		return paymentId;
@@ -223,7 +238,10 @@ public class DeductionImpl extends BizEntityTypedImpl<DeductionType> implements 
 	 */
 	@Override
 	public void setPaymentId(Payment newPaymentId) {
+		Payment oldPaymentId = paymentId;
 		paymentId = newPaymentId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.DEDUCTION__PAYMENT_ID, oldPaymentId, paymentId));
 	}
 
 	/**

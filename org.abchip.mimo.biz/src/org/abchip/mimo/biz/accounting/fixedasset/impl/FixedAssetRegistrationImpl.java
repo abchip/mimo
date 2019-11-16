@@ -14,9 +14,11 @@ import org.abchip.mimo.biz.accounting.fixedasset.FixedAssetRegistration;
 import org.abchip.mimo.biz.accounting.fixedasset.FixedassetPackage;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.party.party.Party;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -187,7 +189,10 @@ public class FixedAssetRegistrationImpl extends BizEntityImpl implements FixedAs
 	 */
 	@Override
 	public void setFromDate(Date newFromDate) {
+		Date oldFromDate = fromDate;
 		fromDate = newFromDate;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, FixedassetPackage.FIXED_ASSET_REGISTRATION__FROM_DATE, oldFromDate, fromDate));
 	}
 
 	/**
@@ -201,6 +206,8 @@ public class FixedAssetRegistrationImpl extends BizEntityImpl implements FixedAs
 			InternalEObject oldGovAgencyPartyId = (InternalEObject)govAgencyPartyId;
 			govAgencyPartyId = (Party)eResolveProxy(oldGovAgencyPartyId);
 			if (govAgencyPartyId != oldGovAgencyPartyId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, FixedassetPackage.FIXED_ASSET_REGISTRATION__GOV_AGENCY_PARTY_ID, oldGovAgencyPartyId, govAgencyPartyId));
 			}
 		}
 		return govAgencyPartyId;
@@ -222,7 +229,10 @@ public class FixedAssetRegistrationImpl extends BizEntityImpl implements FixedAs
 	 */
 	@Override
 	public void setGovAgencyPartyId(Party newGovAgencyPartyId) {
+		Party oldGovAgencyPartyId = govAgencyPartyId;
 		govAgencyPartyId = newGovAgencyPartyId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, FixedassetPackage.FIXED_ASSET_REGISTRATION__GOV_AGENCY_PARTY_ID, oldGovAgencyPartyId, govAgencyPartyId));
 	}
 
 	/**
@@ -242,7 +252,10 @@ public class FixedAssetRegistrationImpl extends BizEntityImpl implements FixedAs
 	 */
 	@Override
 	public void setLicenseNumber(String newLicenseNumber) {
+		String oldLicenseNumber = licenseNumber;
 		licenseNumber = newLicenseNumber;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, FixedassetPackage.FIXED_ASSET_REGISTRATION__LICENSE_NUMBER, oldLicenseNumber, licenseNumber));
 	}
 
 	/**
@@ -262,7 +275,10 @@ public class FixedAssetRegistrationImpl extends BizEntityImpl implements FixedAs
 	 */
 	@Override
 	public void setRegistrationDate(Date newRegistrationDate) {
+		Date oldRegistrationDate = registrationDate;
 		registrationDate = newRegistrationDate;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, FixedassetPackage.FIXED_ASSET_REGISTRATION__REGISTRATION_DATE, oldRegistrationDate, registrationDate));
 	}
 
 	/**
@@ -282,7 +298,10 @@ public class FixedAssetRegistrationImpl extends BizEntityImpl implements FixedAs
 	 */
 	@Override
 	public void setRegistrationNumber(String newRegistrationNumber) {
+		String oldRegistrationNumber = registrationNumber;
 		registrationNumber = newRegistrationNumber;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, FixedassetPackage.FIXED_ASSET_REGISTRATION__REGISTRATION_NUMBER, oldRegistrationNumber, registrationNumber));
 	}
 
 	/**
@@ -302,7 +321,10 @@ public class FixedAssetRegistrationImpl extends BizEntityImpl implements FixedAs
 	 */
 	@Override
 	public void setThruDate(Date newThruDate) {
+		Date oldThruDate = thruDate;
 		thruDate = newThruDate;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, FixedassetPackage.FIXED_ASSET_REGISTRATION__THRU_DATE, oldThruDate, thruDate));
 	}
 
 	/**
@@ -316,6 +338,8 @@ public class FixedAssetRegistrationImpl extends BizEntityImpl implements FixedAs
 			InternalEObject oldFixedAssetId = (InternalEObject)fixedAssetId;
 			fixedAssetId = (FixedAsset)eResolveProxy(oldFixedAssetId);
 			if (fixedAssetId != oldFixedAssetId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, FixedassetPackage.FIXED_ASSET_REGISTRATION__FIXED_ASSET_ID, oldFixedAssetId, fixedAssetId));
 			}
 		}
 		return fixedAssetId;
@@ -337,7 +361,10 @@ public class FixedAssetRegistrationImpl extends BizEntityImpl implements FixedAs
 	 */
 	@Override
 	public void setFixedAssetId(FixedAsset newFixedAssetId) {
+		FixedAsset oldFixedAssetId = fixedAssetId;
 		fixedAssetId = newFixedAssetId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, FixedassetPackage.FIXED_ASSET_REGISTRATION__FIXED_ASSET_ID, oldFixedAssetId, fixedAssetId));
 	}
 
 	/**

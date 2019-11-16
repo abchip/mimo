@@ -12,10 +12,12 @@ import org.abchip.mimo.entity.Domain;
 import org.abchip.mimo.entity.Entity;
 import org.abchip.mimo.entity.EntityPackage;
 import org.abchip.mimo.entity.Slot;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -242,7 +244,10 @@ public abstract class SlotImpl extends EntityNameableImpl implements Slot {
 	 */
 	@Override
 	public void setName(String newName) {
+		String oldName = name;
 		name = newName;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, EntityPackage.SLOT__NAME, oldName, name));
 	}
 
 	/**
@@ -262,7 +267,10 @@ public abstract class SlotImpl extends EntityNameableImpl implements Slot {
 	 */
 	@Override
 	public void setRoute(boolean newRoute) {
+		boolean oldRoute = route;
 		route = newRoute;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, EntityPackage.SLOT__ROUTE, oldRoute, route));
 	}
 
 	/**
@@ -282,7 +290,10 @@ public abstract class SlotImpl extends EntityNameableImpl implements Slot {
 	 */
 	@Override
 	public void setText(String newText) {
+		String oldText = text;
 		text = newText;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, EntityPackage.SLOT__TEXT, oldText, text));
 	}
 
 	/**
@@ -302,6 +313,8 @@ public abstract class SlotImpl extends EntityNameableImpl implements Slot {
 					msgs = newCardinality.eInverseAdd(this, EOPPOSITE_FEATURE_BASE - EntityPackage.SLOT__CARDINALITY, null, msgs);
 				}
 				if (msgs != null) msgs.dispatch();
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, EntityPackage.SLOT__CARDINALITY, oldCardinality, cardinality));
 			}
 		}
 		return cardinality;
@@ -322,7 +335,12 @@ public abstract class SlotImpl extends EntityNameableImpl implements Slot {
 	 * @generated
 	 */
 	public NotificationChain basicSetCardinality(Cardinality newCardinality, NotificationChain msgs) {
+		Cardinality oldCardinality = cardinality;
 		cardinality = newCardinality;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, EntityPackage.SLOT__CARDINALITY, oldCardinality, newCardinality);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
 		return msgs;
 	}
 
@@ -342,6 +360,8 @@ public abstract class SlotImpl extends EntityNameableImpl implements Slot {
 			msgs = basicSetCardinality(newCardinality, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, EntityPackage.SLOT__CARDINALITY, newCardinality, newCardinality));
 	}
 
 	/**
@@ -361,7 +381,10 @@ public abstract class SlotImpl extends EntityNameableImpl implements Slot {
 	 */
 	@Override
 	public void setContainment(boolean newContainment) {
+		boolean oldContainment = containment;
 		containment = newContainment;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, EntityPackage.SLOT__CONTAINMENT, oldContainment, containment));
 	}
 
 	/**
@@ -381,7 +404,10 @@ public abstract class SlotImpl extends EntityNameableImpl implements Slot {
 	 */
 	@Override
 	public void setDefaultValue(String newDefaultValue) {
+		String oldDefaultValue = defaultValue;
 		defaultValue = newDefaultValue;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, EntityPackage.SLOT__DEFAULT_VALUE, oldDefaultValue, defaultValue));
 	}
 
 	/**
@@ -401,7 +427,10 @@ public abstract class SlotImpl extends EntityNameableImpl implements Slot {
 	 */
 	@Override
 	public void setDerived(boolean newDerived) {
+		boolean oldDerived = derived;
 		derived = newDerived;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, EntityPackage.SLOT__DERIVED, oldDerived, derived));
 	}
 
 	/**
@@ -421,6 +450,8 @@ public abstract class SlotImpl extends EntityNameableImpl implements Slot {
 					msgs = newDomain.eInverseAdd(this, EOPPOSITE_FEATURE_BASE - EntityPackage.SLOT__DOMAIN, null, msgs);
 				}
 				if (msgs != null) msgs.dispatch();
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, EntityPackage.SLOT__DOMAIN, oldDomain, domain));
 			}
 		}
 		return domain;
@@ -441,7 +472,12 @@ public abstract class SlotImpl extends EntityNameableImpl implements Slot {
 	 * @generated
 	 */
 	public NotificationChain basicSetDomain(Domain newDomain, NotificationChain msgs) {
+		Domain oldDomain = domain;
 		domain = newDomain;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, EntityPackage.SLOT__DOMAIN, oldDomain, newDomain);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
 		return msgs;
 	}
 
@@ -461,6 +497,8 @@ public abstract class SlotImpl extends EntityNameableImpl implements Slot {
 			msgs = basicSetDomain(newDomain, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, EntityPackage.SLOT__DOMAIN, newDomain, newDomain));
 	}
 
 	/**
@@ -480,7 +518,10 @@ public abstract class SlotImpl extends EntityNameableImpl implements Slot {
 	 */
 	@Override
 	public void setGroup(String newGroup) {
+		String oldGroup = group;
 		group = newGroup;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, EntityPackage.SLOT__GROUP, oldGroup, group));
 	}
 
 	/**
@@ -500,7 +541,10 @@ public abstract class SlotImpl extends EntityNameableImpl implements Slot {
 	 */
 	@Override
 	public void setKey(boolean newKey) {
+		boolean oldKey = key;
 		key = newKey;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, EntityPackage.SLOT__KEY, oldKey, key));
 	}
 
 	/**

@@ -11,10 +11,12 @@ import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.workeffort.workeffort.WorkEffort;
 import org.abchip.mimo.biz.workeffort.workeffort.WorkEffortIcalData;
 import org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -102,7 +104,10 @@ public class WorkEffortIcalDataImpl extends BizEntityImpl implements WorkEffortI
 	 */
 	@Override
 	public void setIcalData(String newIcalData) {
+		String oldIcalData = icalData;
 		icalData = newIcalData;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WorkeffortPackage.WORK_EFFORT_ICAL_DATA__ICAL_DATA, oldIcalData, icalData));
 	}
 
 	/**
@@ -116,6 +121,8 @@ public class WorkEffortIcalDataImpl extends BizEntityImpl implements WorkEffortI
 			InternalEObject oldWorkEffortId = (InternalEObject)workEffortId;
 			workEffortId = (WorkEffort)eResolveProxy(oldWorkEffortId);
 			if (workEffortId != oldWorkEffortId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WorkeffortPackage.WORK_EFFORT_ICAL_DATA__WORK_EFFORT_ID, oldWorkEffortId, workEffortId));
 			}
 		}
 		return workEffortId;
@@ -137,7 +144,10 @@ public class WorkEffortIcalDataImpl extends BizEntityImpl implements WorkEffortI
 	 */
 	@Override
 	public void setWorkEffortId(WorkEffort newWorkEffortId) {
+		WorkEffort oldWorkEffortId = workEffortId;
 		workEffortId = newWorkEffortId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WorkeffortPackage.WORK_EFFORT_ICAL_DATA__WORK_EFFORT_ID, oldWorkEffortId, workEffortId));
 	}
 
 	/**

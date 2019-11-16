@@ -17,10 +17,12 @@ import org.abchip.mimo.biz.webapp.visit.ServerHit;
 import org.abchip.mimo.biz.webapp.visit.ServerHitType;
 import org.abchip.mimo.biz.webapp.visit.Visit;
 import org.abchip.mimo.biz.webapp.visit.VisitPackage;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -346,6 +348,8 @@ public class ServerHitImpl extends BizEntityTypedImpl<ServerHitType> implements 
 			InternalEObject oldVisitId = (InternalEObject)visitId;
 			visitId = (Visit)eResolveProxy(oldVisitId);
 			if (visitId != oldVisitId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, VisitPackage.SERVER_HIT__VISIT_ID, oldVisitId, visitId));
 			}
 		}
 		return visitId;
@@ -367,7 +371,10 @@ public class ServerHitImpl extends BizEntityTypedImpl<ServerHitType> implements 
 	 */
 	@Override
 	public void setVisitId(Visit newVisitId) {
+		Visit oldVisitId = visitId;
 		visitId = newVisitId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, VisitPackage.SERVER_HIT__VISIT_ID, oldVisitId, visitId));
 	}
 
 	/**
@@ -387,7 +394,10 @@ public class ServerHitImpl extends BizEntityTypedImpl<ServerHitType> implements 
 	 */
 	@Override
 	public void setContentId(String newContentId) {
+		String oldContentId = contentId;
 		contentId = newContentId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, VisitPackage.SERVER_HIT__CONTENT_ID, oldContentId, contentId));
 	}
 
 	/**
@@ -407,7 +417,10 @@ public class ServerHitImpl extends BizEntityTypedImpl<ServerHitType> implements 
 	 */
 	@Override
 	public void setHitStartDateTime(Date newHitStartDateTime) {
+		Date oldHitStartDateTime = hitStartDateTime;
 		hitStartDateTime = newHitStartDateTime;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, VisitPackage.SERVER_HIT__HIT_START_DATE_TIME, oldHitStartDateTime, hitStartDateTime));
 	}
 
 	/**
@@ -421,6 +434,8 @@ public class ServerHitImpl extends BizEntityTypedImpl<ServerHitType> implements 
 			InternalEObject oldHitTypeId = (InternalEObject)hitTypeId;
 			hitTypeId = (ServerHitType)eResolveProxy(oldHitTypeId);
 			if (hitTypeId != oldHitTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, VisitPackage.SERVER_HIT__HIT_TYPE_ID, oldHitTypeId, hitTypeId));
 			}
 		}
 		return hitTypeId;
@@ -442,7 +457,10 @@ public class ServerHitImpl extends BizEntityTypedImpl<ServerHitType> implements 
 	 */
 	@Override
 	public void setHitTypeId(ServerHitType newHitTypeId) {
+		ServerHitType oldHitTypeId = hitTypeId;
 		hitTypeId = newHitTypeId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, VisitPackage.SERVER_HIT__HIT_TYPE_ID, oldHitTypeId, hitTypeId));
 	}
 
 	/**
@@ -456,6 +474,8 @@ public class ServerHitImpl extends BizEntityTypedImpl<ServerHitType> implements 
 			InternalEObject oldIdByIpContactMechId = (InternalEObject)idByIpContactMechId;
 			idByIpContactMechId = (ContactMech)eResolveProxy(oldIdByIpContactMechId);
 			if (idByIpContactMechId != oldIdByIpContactMechId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, VisitPackage.SERVER_HIT__ID_BY_IP_CONTACT_MECH_ID, oldIdByIpContactMechId, idByIpContactMechId));
 			}
 		}
 		return idByIpContactMechId;
@@ -477,7 +497,10 @@ public class ServerHitImpl extends BizEntityTypedImpl<ServerHitType> implements 
 	 */
 	@Override
 	public void setIdByIpContactMechId(ContactMech newIdByIpContactMechId) {
+		ContactMech oldIdByIpContactMechId = idByIpContactMechId;
 		idByIpContactMechId = newIdByIpContactMechId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, VisitPackage.SERVER_HIT__ID_BY_IP_CONTACT_MECH_ID, oldIdByIpContactMechId, idByIpContactMechId));
 	}
 
 	/**
@@ -491,6 +514,8 @@ public class ServerHitImpl extends BizEntityTypedImpl<ServerHitType> implements 
 			InternalEObject oldInternalContentId = (InternalEObject)internalContentId;
 			internalContentId = (Content)eResolveProxy(oldInternalContentId);
 			if (internalContentId != oldInternalContentId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, VisitPackage.SERVER_HIT__INTERNAL_CONTENT_ID, oldInternalContentId, internalContentId));
 			}
 		}
 		return internalContentId;
@@ -512,7 +537,10 @@ public class ServerHitImpl extends BizEntityTypedImpl<ServerHitType> implements 
 	 */
 	@Override
 	public void setInternalContentId(Content newInternalContentId) {
+		Content oldInternalContentId = internalContentId;
 		internalContentId = newInternalContentId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, VisitPackage.SERVER_HIT__INTERNAL_CONTENT_ID, oldInternalContentId, internalContentId));
 	}
 
 	/**
@@ -532,7 +560,10 @@ public class ServerHitImpl extends BizEntityTypedImpl<ServerHitType> implements 
 	 */
 	@Override
 	public void setNumOfBytes(long newNumOfBytes) {
+		long oldNumOfBytes = numOfBytes;
 		numOfBytes = newNumOfBytes;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, VisitPackage.SERVER_HIT__NUM_OF_BYTES, oldNumOfBytes, numOfBytes));
 	}
 
 	/**
@@ -546,6 +577,8 @@ public class ServerHitImpl extends BizEntityTypedImpl<ServerHitType> implements 
 			InternalEObject oldPartyId = (InternalEObject)partyId;
 			partyId = (Party)eResolveProxy(oldPartyId);
 			if (partyId != oldPartyId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, VisitPackage.SERVER_HIT__PARTY_ID, oldPartyId, partyId));
 			}
 		}
 		return partyId;
@@ -567,7 +600,10 @@ public class ServerHitImpl extends BizEntityTypedImpl<ServerHitType> implements 
 	 */
 	@Override
 	public void setPartyId(Party newPartyId) {
+		Party oldPartyId = partyId;
 		partyId = newPartyId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, VisitPackage.SERVER_HIT__PARTY_ID, oldPartyId, partyId));
 	}
 
 	/**
@@ -581,6 +617,8 @@ public class ServerHitImpl extends BizEntityTypedImpl<ServerHitType> implements 
 			InternalEObject oldRefByWebContactMechId = (InternalEObject)refByWebContactMechId;
 			refByWebContactMechId = (ContactMech)eResolveProxy(oldRefByWebContactMechId);
 			if (refByWebContactMechId != oldRefByWebContactMechId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, VisitPackage.SERVER_HIT__REF_BY_WEB_CONTACT_MECH_ID, oldRefByWebContactMechId, refByWebContactMechId));
 			}
 		}
 		return refByWebContactMechId;
@@ -602,7 +640,10 @@ public class ServerHitImpl extends BizEntityTypedImpl<ServerHitType> implements 
 	 */
 	@Override
 	public void setRefByWebContactMechId(ContactMech newRefByWebContactMechId) {
+		ContactMech oldRefByWebContactMechId = refByWebContactMechId;
 		refByWebContactMechId = newRefByWebContactMechId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, VisitPackage.SERVER_HIT__REF_BY_WEB_CONTACT_MECH_ID, oldRefByWebContactMechId, refByWebContactMechId));
 	}
 
 	/**
@@ -622,7 +663,10 @@ public class ServerHitImpl extends BizEntityTypedImpl<ServerHitType> implements 
 	 */
 	@Override
 	public void setReferrerUrl(String newReferrerUrl) {
+		String oldReferrerUrl = referrerUrl;
 		referrerUrl = newReferrerUrl;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, VisitPackage.SERVER_HIT__REFERRER_URL, oldReferrerUrl, referrerUrl));
 	}
 
 	/**
@@ -642,7 +686,10 @@ public class ServerHitImpl extends BizEntityTypedImpl<ServerHitType> implements 
 	 */
 	@Override
 	public void setRequestUrl(String newRequestUrl) {
+		String oldRequestUrl = requestUrl;
 		requestUrl = newRequestUrl;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, VisitPackage.SERVER_HIT__REQUEST_URL, oldRequestUrl, requestUrl));
 	}
 
 	/**
@@ -662,7 +709,10 @@ public class ServerHitImpl extends BizEntityTypedImpl<ServerHitType> implements 
 	 */
 	@Override
 	public void setRunningTimeMillis(long newRunningTimeMillis) {
+		long oldRunningTimeMillis = runningTimeMillis;
 		runningTimeMillis = newRunningTimeMillis;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, VisitPackage.SERVER_HIT__RUNNING_TIME_MILLIS, oldRunningTimeMillis, runningTimeMillis));
 	}
 
 	/**
@@ -682,7 +732,10 @@ public class ServerHitImpl extends BizEntityTypedImpl<ServerHitType> implements 
 	 */
 	@Override
 	public void setServerHostName(String newServerHostName) {
+		String oldServerHostName = serverHostName;
 		serverHostName = newServerHostName;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, VisitPackage.SERVER_HIT__SERVER_HOST_NAME, oldServerHostName, serverHostName));
 	}
 
 	/**
@@ -702,7 +755,10 @@ public class ServerHitImpl extends BizEntityTypedImpl<ServerHitType> implements 
 	 */
 	@Override
 	public void setServerIpAddress(String newServerIpAddress) {
+		String oldServerIpAddress = serverIpAddress;
 		serverIpAddress = newServerIpAddress;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, VisitPackage.SERVER_HIT__SERVER_IP_ADDRESS, oldServerIpAddress, serverIpAddress));
 	}
 
 	/**
@@ -722,7 +778,10 @@ public class ServerHitImpl extends BizEntityTypedImpl<ServerHitType> implements 
 	 */
 	@Override
 	public void setStatusId(String newStatusId) {
+		String oldStatusId = statusId;
 		statusId = newStatusId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, VisitPackage.SERVER_HIT__STATUS_ID, oldStatusId, statusId));
 	}
 
 	/**
@@ -742,7 +801,10 @@ public class ServerHitImpl extends BizEntityTypedImpl<ServerHitType> implements 
 	 */
 	@Override
 	public void setUserLoginId(String newUserLoginId) {
+		String oldUserLoginId = userLoginId;
 		userLoginId = newUserLoginId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, VisitPackage.SERVER_HIT__USER_LOGIN_ID, oldUserLoginId, userLoginId));
 	}
 
 	/**

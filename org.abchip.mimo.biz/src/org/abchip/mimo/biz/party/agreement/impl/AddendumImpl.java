@@ -13,9 +13,11 @@ import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.party.agreement.Addendum;
 import org.abchip.mimo.biz.party.agreement.Agreement;
 import org.abchip.mimo.biz.party.agreement.AgreementPackage;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -187,7 +189,10 @@ public class AddendumImpl extends BizEntityImpl implements Addendum {
 	 */
 	@Override
 	public void setAddendumCreationDate(Date newAddendumCreationDate) {
+		Date oldAddendumCreationDate = addendumCreationDate;
 		addendumCreationDate = newAddendumCreationDate;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, AgreementPackage.ADDENDUM__ADDENDUM_CREATION_DATE, oldAddendumCreationDate, addendumCreationDate));
 	}
 
 	/**
@@ -207,7 +212,10 @@ public class AddendumImpl extends BizEntityImpl implements Addendum {
 	 */
 	@Override
 	public void setAddendumEffectiveDate(Date newAddendumEffectiveDate) {
+		Date oldAddendumEffectiveDate = addendumEffectiveDate;
 		addendumEffectiveDate = newAddendumEffectiveDate;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, AgreementPackage.ADDENDUM__ADDENDUM_EFFECTIVE_DATE, oldAddendumEffectiveDate, addendumEffectiveDate));
 	}
 
 	/**
@@ -227,7 +235,10 @@ public class AddendumImpl extends BizEntityImpl implements Addendum {
 	 */
 	@Override
 	public void setAddendumId(String newAddendumId) {
+		String oldAddendumId = addendumId;
 		addendumId = newAddendumId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, AgreementPackage.ADDENDUM__ADDENDUM_ID, oldAddendumId, addendumId));
 	}
 
 	/**
@@ -247,7 +258,10 @@ public class AddendumImpl extends BizEntityImpl implements Addendum {
 	 */
 	@Override
 	public void setAddendumText(String newAddendumText) {
+		String oldAddendumText = addendumText;
 		addendumText = newAddendumText;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, AgreementPackage.ADDENDUM__ADDENDUM_TEXT, oldAddendumText, addendumText));
 	}
 
 	/**
@@ -267,7 +281,10 @@ public class AddendumImpl extends BizEntityImpl implements Addendum {
 	 */
 	@Override
 	public void setAgreementItemSeqId(String newAgreementItemSeqId) {
+		String oldAgreementItemSeqId = agreementItemSeqId;
 		agreementItemSeqId = newAgreementItemSeqId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, AgreementPackage.ADDENDUM__AGREEMENT_ITEM_SEQ_ID, oldAgreementItemSeqId, agreementItemSeqId));
 	}
 
 	/**
@@ -281,6 +298,8 @@ public class AddendumImpl extends BizEntityImpl implements Addendum {
 			InternalEObject oldAgreementId = (InternalEObject)agreementId;
 			agreementId = (Agreement)eResolveProxy(oldAgreementId);
 			if (agreementId != oldAgreementId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, AgreementPackage.ADDENDUM__AGREEMENT_ID, oldAgreementId, agreementId));
 			}
 		}
 		return agreementId;
@@ -302,7 +321,10 @@ public class AddendumImpl extends BizEntityImpl implements Addendum {
 	 */
 	@Override
 	public void setAgreementId(Agreement newAgreementId) {
+		Agreement oldAgreementId = agreementId;
 		agreementId = newAgreementId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, AgreementPackage.ADDENDUM__AGREEMENT_ID, oldAgreementId, agreementId));
 	}
 
 	/**

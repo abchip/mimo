@@ -11,9 +11,11 @@ import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.product.facility.FacilityPackage;
 import org.abchip.mimo.biz.product.facility.FacilityType;
 import org.abchip.mimo.biz.product.facility.FacilityTypeAttr;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -122,7 +124,10 @@ public class FacilityTypeAttrImpl extends BizEntityImpl implements FacilityTypeA
 	 */
 	@Override
 	public void setDescription(String newDescription) {
+		String oldDescription = description;
 		description = newDescription;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, FacilityPackage.FACILITY_TYPE_ATTR__DESCRIPTION, oldDescription, description));
 	}
 
 	/**
@@ -142,7 +147,10 @@ public class FacilityTypeAttrImpl extends BizEntityImpl implements FacilityTypeA
 	 */
 	@Override
 	public void setAttrName(String newAttrName) {
+		String oldAttrName = attrName;
 		attrName = newAttrName;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, FacilityPackage.FACILITY_TYPE_ATTR__ATTR_NAME, oldAttrName, attrName));
 	}
 
 	/**
@@ -156,6 +164,8 @@ public class FacilityTypeAttrImpl extends BizEntityImpl implements FacilityTypeA
 			InternalEObject oldFacilityTypeId = (InternalEObject)facilityTypeId;
 			facilityTypeId = (FacilityType)eResolveProxy(oldFacilityTypeId);
 			if (facilityTypeId != oldFacilityTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, FacilityPackage.FACILITY_TYPE_ATTR__FACILITY_TYPE_ID, oldFacilityTypeId, facilityTypeId));
 			}
 		}
 		return facilityTypeId;
@@ -177,7 +187,10 @@ public class FacilityTypeAttrImpl extends BizEntityImpl implements FacilityTypeA
 	 */
 	@Override
 	public void setFacilityTypeId(FacilityType newFacilityTypeId) {
+		FacilityType oldFacilityTypeId = facilityTypeId;
 		facilityTypeId = newFacilityTypeId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, FacilityPackage.FACILITY_TYPE_ATTR__FACILITY_TYPE_ID, oldFacilityTypeId, facilityTypeId));
 	}
 
 	/**

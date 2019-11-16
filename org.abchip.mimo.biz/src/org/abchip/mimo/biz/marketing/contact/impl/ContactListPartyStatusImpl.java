@@ -12,7 +12,9 @@ import java.util.Date;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.marketing.contact.ContactListPartyStatus;
 import org.abchip.mimo.biz.marketing.contact.ContactPackage;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -215,7 +217,10 @@ public class ContactListPartyStatusImpl extends BizEntityImpl implements Contact
 	 */
 	@Override
 	public void setContactListId(String newContactListId) {
+		String oldContactListId = contactListId;
 		contactListId = newContactListId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ContactPackage.CONTACT_LIST_PARTY_STATUS__CONTACT_LIST_ID, oldContactListId, contactListId));
 	}
 
 	/**
@@ -235,7 +240,10 @@ public class ContactListPartyStatusImpl extends BizEntityImpl implements Contact
 	 */
 	@Override
 	public void setFromDate(Date newFromDate) {
+		Date oldFromDate = fromDate;
 		fromDate = newFromDate;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ContactPackage.CONTACT_LIST_PARTY_STATUS__FROM_DATE, oldFromDate, fromDate));
 	}
 
 	/**
@@ -255,7 +263,10 @@ public class ContactListPartyStatusImpl extends BizEntityImpl implements Contact
 	 */
 	@Override
 	public void setOptInVerifyCode(String newOptInVerifyCode) {
+		String oldOptInVerifyCode = optInVerifyCode;
 		optInVerifyCode = newOptInVerifyCode;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ContactPackage.CONTACT_LIST_PARTY_STATUS__OPT_IN_VERIFY_CODE, oldOptInVerifyCode, optInVerifyCode));
 	}
 
 	/**
@@ -275,7 +286,10 @@ public class ContactListPartyStatusImpl extends BizEntityImpl implements Contact
 	 */
 	@Override
 	public void setPartyId(String newPartyId) {
+		String oldPartyId = partyId;
 		partyId = newPartyId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ContactPackage.CONTACT_LIST_PARTY_STATUS__PARTY_ID, oldPartyId, partyId));
 	}
 
 	/**
@@ -295,7 +309,10 @@ public class ContactListPartyStatusImpl extends BizEntityImpl implements Contact
 	 */
 	@Override
 	public void setSetByUserLoginId(String newSetByUserLoginId) {
+		String oldSetByUserLoginId = setByUserLoginId;
 		setByUserLoginId = newSetByUserLoginId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ContactPackage.CONTACT_LIST_PARTY_STATUS__SET_BY_USER_LOGIN_ID, oldSetByUserLoginId, setByUserLoginId));
 	}
 
 	/**
@@ -315,7 +332,10 @@ public class ContactListPartyStatusImpl extends BizEntityImpl implements Contact
 	 */
 	@Override
 	public void setStatusDate(Date newStatusDate) {
+		Date oldStatusDate = statusDate;
 		statusDate = newStatusDate;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ContactPackage.CONTACT_LIST_PARTY_STATUS__STATUS_DATE, oldStatusDate, statusDate));
 	}
 
 	/**
@@ -335,7 +355,10 @@ public class ContactListPartyStatusImpl extends BizEntityImpl implements Contact
 	 */
 	@Override
 	public void setStatusId(String newStatusId) {
+		String oldStatusId = statusId;
 		statusId = newStatusId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ContactPackage.CONTACT_LIST_PARTY_STATUS__STATUS_ID, oldStatusId, statusId));
 	}
 
 	/**

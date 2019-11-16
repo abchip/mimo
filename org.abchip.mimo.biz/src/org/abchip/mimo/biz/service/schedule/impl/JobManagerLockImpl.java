@@ -13,10 +13,12 @@ import org.abchip.mimo.biz.common.enum_.Enumeration;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.service.schedule.JobManagerLock;
 import org.abchip.mimo.biz.service.schedule.SchedulePackage;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -251,7 +253,10 @@ public class JobManagerLockImpl extends BizEntityImpl implements JobManagerLock 
 	 */
 	@Override
 	public void setInstanceId(String newInstanceId) {
+		String oldInstanceId = instanceId;
 		instanceId = newInstanceId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SchedulePackage.JOB_MANAGER_LOCK__INSTANCE_ID, oldInstanceId, instanceId));
 	}
 
 	/**
@@ -271,7 +276,10 @@ public class JobManagerLockImpl extends BizEntityImpl implements JobManagerLock 
 	 */
 	@Override
 	public void setFromDate(Date newFromDate) {
+		Date oldFromDate = fromDate;
 		fromDate = newFromDate;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SchedulePackage.JOB_MANAGER_LOCK__FROM_DATE, oldFromDate, fromDate));
 	}
 
 	/**
@@ -291,7 +299,10 @@ public class JobManagerLockImpl extends BizEntityImpl implements JobManagerLock 
 	 */
 	@Override
 	public void setComments(String newComments) {
+		String oldComments = comments;
 		comments = newComments;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SchedulePackage.JOB_MANAGER_LOCK__COMMENTS, oldComments, comments));
 	}
 
 	/**
@@ -311,7 +322,10 @@ public class JobManagerLockImpl extends BizEntityImpl implements JobManagerLock 
 	 */
 	@Override
 	public void setCreatedByUserLogin(String newCreatedByUserLogin) {
+		String oldCreatedByUserLogin = createdByUserLogin;
 		createdByUserLogin = newCreatedByUserLogin;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SchedulePackage.JOB_MANAGER_LOCK__CREATED_BY_USER_LOGIN, oldCreatedByUserLogin, createdByUserLogin));
 	}
 
 	/**
@@ -331,7 +345,10 @@ public class JobManagerLockImpl extends BizEntityImpl implements JobManagerLock 
 	 */
 	@Override
 	public void setCreatedDate(Date newCreatedDate) {
+		Date oldCreatedDate = createdDate;
 		createdDate = newCreatedDate;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SchedulePackage.JOB_MANAGER_LOCK__CREATED_DATE, oldCreatedDate, createdDate));
 	}
 
 	/**
@@ -351,7 +368,10 @@ public class JobManagerLockImpl extends BizEntityImpl implements JobManagerLock 
 	 */
 	@Override
 	public void setLastModifiedByUserLogin(String newLastModifiedByUserLogin) {
+		String oldLastModifiedByUserLogin = lastModifiedByUserLogin;
 		lastModifiedByUserLogin = newLastModifiedByUserLogin;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SchedulePackage.JOB_MANAGER_LOCK__LAST_MODIFIED_BY_USER_LOGIN, oldLastModifiedByUserLogin, lastModifiedByUserLogin));
 	}
 
 	/**
@@ -371,7 +391,10 @@ public class JobManagerLockImpl extends BizEntityImpl implements JobManagerLock 
 	 */
 	@Override
 	public void setLastModifiedDate(Date newLastModifiedDate) {
+		Date oldLastModifiedDate = lastModifiedDate;
 		lastModifiedDate = newLastModifiedDate;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SchedulePackage.JOB_MANAGER_LOCK__LAST_MODIFIED_DATE, oldLastModifiedDate, lastModifiedDate));
 	}
 
 	/**
@@ -385,6 +408,8 @@ public class JobManagerLockImpl extends BizEntityImpl implements JobManagerLock 
 			InternalEObject oldReasonEnumId = (InternalEObject)reasonEnumId;
 			reasonEnumId = (Enumeration)eResolveProxy(oldReasonEnumId);
 			if (reasonEnumId != oldReasonEnumId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, SchedulePackage.JOB_MANAGER_LOCK__REASON_ENUM_ID, oldReasonEnumId, reasonEnumId));
 			}
 		}
 		return reasonEnumId;
@@ -406,7 +431,10 @@ public class JobManagerLockImpl extends BizEntityImpl implements JobManagerLock 
 	 */
 	@Override
 	public void setReasonEnumId(Enumeration newReasonEnumId) {
+		Enumeration oldReasonEnumId = reasonEnumId;
 		reasonEnumId = newReasonEnumId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SchedulePackage.JOB_MANAGER_LOCK__REASON_ENUM_ID, oldReasonEnumId, reasonEnumId));
 	}
 
 	/**
@@ -426,7 +454,10 @@ public class JobManagerLockImpl extends BizEntityImpl implements JobManagerLock 
 	 */
 	@Override
 	public void setThruDate(Date newThruDate) {
+		Date oldThruDate = thruDate;
 		thruDate = newThruDate;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SchedulePackage.JOB_MANAGER_LOCK__THRU_DATE, oldThruDate, thruDate));
 	}
 
 	/**

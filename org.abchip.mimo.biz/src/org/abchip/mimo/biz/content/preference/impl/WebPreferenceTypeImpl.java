@@ -10,7 +10,9 @@ package org.abchip.mimo.biz.content.preference.impl;
 import org.abchip.mimo.biz.content.preference.PreferencePackage;
 import org.abchip.mimo.biz.content.preference.WebPreferenceType;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -108,7 +110,10 @@ public class WebPreferenceTypeImpl extends BizEntityImpl implements WebPreferenc
 	 */
 	@Override
 	public void setDescription(String newDescription) {
+		String oldDescription = description;
 		description = newDescription;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PreferencePackage.WEB_PREFERENCE_TYPE__DESCRIPTION, oldDescription, description));
 	}
 
 	/**
@@ -128,7 +133,10 @@ public class WebPreferenceTypeImpl extends BizEntityImpl implements WebPreferenc
 	 */
 	@Override
 	public void setWebPreferenceTypeId(String newWebPreferenceTypeId) {
+		String oldWebPreferenceTypeId = webPreferenceTypeId;
 		webPreferenceTypeId = newWebPreferenceTypeId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PreferencePackage.WEB_PREFERENCE_TYPE__WEB_PREFERENCE_TYPE_ID, oldWebPreferenceTypeId, webPreferenceTypeId));
 	}
 
 	/**

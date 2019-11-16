@@ -11,10 +11,12 @@ import org.abchip.mimo.biz.entity.group.EntityGroup;
 import org.abchip.mimo.biz.entity.group.EntityGroupEntry;
 import org.abchip.mimo.biz.entity.group.GroupPackage;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -119,7 +121,10 @@ public class EntityGroupEntryImpl extends BizEntityImpl implements EntityGroupEn
 	 */
 	@Override
 	public void setApplEnumId(String newApplEnumId) {
+		String oldApplEnumId = applEnumId;
 		applEnumId = newApplEnumId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, GroupPackage.ENTITY_GROUP_ENTRY__APPL_ENUM_ID, oldApplEnumId, applEnumId));
 	}
 
 	/**
@@ -133,6 +138,8 @@ public class EntityGroupEntryImpl extends BizEntityImpl implements EntityGroupEn
 			InternalEObject oldEntityGroupId = (InternalEObject)entityGroupId;
 			entityGroupId = (EntityGroup)eResolveProxy(oldEntityGroupId);
 			if (entityGroupId != oldEntityGroupId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, GroupPackage.ENTITY_GROUP_ENTRY__ENTITY_GROUP_ID, oldEntityGroupId, entityGroupId));
 			}
 		}
 		return entityGroupId;
@@ -154,7 +161,10 @@ public class EntityGroupEntryImpl extends BizEntityImpl implements EntityGroupEn
 	 */
 	@Override
 	public void setEntityGroupId(EntityGroup newEntityGroupId) {
+		EntityGroup oldEntityGroupId = entityGroupId;
 		entityGroupId = newEntityGroupId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, GroupPackage.ENTITY_GROUP_ENTRY__ENTITY_GROUP_ID, oldEntityGroupId, entityGroupId));
 	}
 
 	/**
@@ -174,7 +184,10 @@ public class EntityGroupEntryImpl extends BizEntityImpl implements EntityGroupEn
 	 */
 	@Override
 	public void setEntityOrPackage(String newEntityOrPackage) {
+		String oldEntityOrPackage = entityOrPackage;
 		entityOrPackage = newEntityOrPackage;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, GroupPackage.ENTITY_GROUP_ENTRY__ENTITY_OR_PACKAGE, oldEntityOrPackage, entityOrPackage));
 	}
 
 	/**

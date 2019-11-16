@@ -16,12 +16,14 @@ import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.party.party.Party;
 import org.abchip.mimo.biz.security.login.LoginPackage;
 import org.abchip.mimo.biz.security.login.UserLogin;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.util.BasicInternalEList;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -468,7 +470,10 @@ public class UserLoginImpl extends BizEntityImpl implements UserLogin {
 	 */
 	@Override
 	public void setCurrentPassword(String newCurrentPassword) {
+		String oldCurrentPassword = currentPassword;
 		currentPassword = newCurrentPassword;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, LoginPackage.USER_LOGIN__CURRENT_PASSWORD, oldCurrentPassword, currentPassword));
 	}
 
 	/**
@@ -488,7 +493,10 @@ public class UserLoginImpl extends BizEntityImpl implements UserLogin {
 	 */
 	@Override
 	public void setDisabledBy(String newDisabledBy) {
+		String oldDisabledBy = disabledBy;
 		disabledBy = newDisabledBy;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, LoginPackage.USER_LOGIN__DISABLED_BY, oldDisabledBy, disabledBy));
 	}
 
 	/**
@@ -508,7 +516,10 @@ public class UserLoginImpl extends BizEntityImpl implements UserLogin {
 	 */
 	@Override
 	public void setDisabledDateTime(Date newDisabledDateTime) {
+		Date oldDisabledDateTime = disabledDateTime;
 		disabledDateTime = newDisabledDateTime;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, LoginPackage.USER_LOGIN__DISABLED_DATE_TIME, oldDisabledDateTime, disabledDateTime));
 	}
 
 	/**
@@ -528,7 +539,10 @@ public class UserLoginImpl extends BizEntityImpl implements UserLogin {
 	 */
 	@Override
 	public void setEnabled(boolean newEnabled) {
+		boolean oldEnabled = enabled;
 		enabled = newEnabled;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, LoginPackage.USER_LOGIN__ENABLED, oldEnabled, enabled));
 	}
 
 	/**
@@ -548,7 +562,10 @@ public class UserLoginImpl extends BizEntityImpl implements UserLogin {
 	 */
 	@Override
 	public void setExternalAuthId(String newExternalAuthId) {
+		String oldExternalAuthId = externalAuthId;
 		externalAuthId = newExternalAuthId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, LoginPackage.USER_LOGIN__EXTERNAL_AUTH_ID, oldExternalAuthId, externalAuthId));
 	}
 
 	/**
@@ -568,7 +585,10 @@ public class UserLoginImpl extends BizEntityImpl implements UserLogin {
 	 */
 	@Override
 	public void setHasLoggedOut(boolean newHasLoggedOut) {
+		boolean oldHasLoggedOut = hasLoggedOut;
 		hasLoggedOut = newHasLoggedOut;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, LoginPackage.USER_LOGIN__HAS_LOGGED_OUT, oldHasLoggedOut, hasLoggedOut));
 	}
 
 	/**
@@ -588,7 +608,10 @@ public class UserLoginImpl extends BizEntityImpl implements UserLogin {
 	 */
 	@Override
 	public void setIsSystem(boolean newIsSystem) {
+		boolean oldIsSystem = isSystem;
 		isSystem = newIsSystem;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, LoginPackage.USER_LOGIN__IS_SYSTEM, oldIsSystem, isSystem));
 	}
 
 	/**
@@ -608,7 +631,10 @@ public class UserLoginImpl extends BizEntityImpl implements UserLogin {
 	 */
 	@Override
 	public void setLastCurrencyUom(String newLastCurrencyUom) {
+		String oldLastCurrencyUom = lastCurrencyUom;
 		lastCurrencyUom = newLastCurrencyUom;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, LoginPackage.USER_LOGIN__LAST_CURRENCY_UOM, oldLastCurrencyUom, lastCurrencyUom));
 	}
 
 	/**
@@ -628,7 +654,10 @@ public class UserLoginImpl extends BizEntityImpl implements UserLogin {
 	 */
 	@Override
 	public void setLastLocale(String newLastLocale) {
+		String oldLastLocale = lastLocale;
 		lastLocale = newLastLocale;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, LoginPackage.USER_LOGIN__LAST_LOCALE, oldLastLocale, lastLocale));
 	}
 
 	/**
@@ -648,7 +677,10 @@ public class UserLoginImpl extends BizEntityImpl implements UserLogin {
 	 */
 	@Override
 	public void setLastTimeZone(String newLastTimeZone) {
+		String oldLastTimeZone = lastTimeZone;
 		lastTimeZone = newLastTimeZone;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, LoginPackage.USER_LOGIN__LAST_TIME_ZONE, oldLastTimeZone, lastTimeZone));
 	}
 
 	/**
@@ -662,6 +694,8 @@ public class UserLoginImpl extends BizEntityImpl implements UserLogin {
 			InternalEObject oldPartyId = (InternalEObject)partyId;
 			partyId = (Party)eResolveProxy(oldPartyId);
 			if (partyId != oldPartyId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, LoginPackage.USER_LOGIN__PARTY_ID, oldPartyId, partyId));
 			}
 		}
 		return partyId;
@@ -683,7 +717,10 @@ public class UserLoginImpl extends BizEntityImpl implements UserLogin {
 	 */
 	@Override
 	public void setPartyId(Party newPartyId) {
+		Party oldPartyId = partyId;
 		partyId = newPartyId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, LoginPackage.USER_LOGIN__PARTY_ID, oldPartyId, partyId));
 	}
 
 	/**
@@ -703,7 +740,10 @@ public class UserLoginImpl extends BizEntityImpl implements UserLogin {
 	 */
 	@Override
 	public void setPasswordHint(String newPasswordHint) {
+		String oldPasswordHint = passwordHint;
 		passwordHint = newPasswordHint;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, LoginPackage.USER_LOGIN__PASSWORD_HINT, oldPasswordHint, passwordHint));
 	}
 
 	/**
@@ -723,7 +763,10 @@ public class UserLoginImpl extends BizEntityImpl implements UserLogin {
 	 */
 	@Override
 	public void setRequirePasswordChange(boolean newRequirePasswordChange) {
+		boolean oldRequirePasswordChange = requirePasswordChange;
 		requirePasswordChange = newRequirePasswordChange;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, LoginPackage.USER_LOGIN__REQUIRE_PASSWORD_CHANGE, oldRequirePasswordChange, requirePasswordChange));
 	}
 
 	/**
@@ -743,7 +786,10 @@ public class UserLoginImpl extends BizEntityImpl implements UserLogin {
 	 */
 	@Override
 	public void setSuccessiveFailedLogins(long newSuccessiveFailedLogins) {
+		long oldSuccessiveFailedLogins = successiveFailedLogins;
 		successiveFailedLogins = newSuccessiveFailedLogins;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, LoginPackage.USER_LOGIN__SUCCESSIVE_FAILED_LOGINS, oldSuccessiveFailedLogins, successiveFailedLogins));
 	}
 
 	/**
@@ -763,7 +809,10 @@ public class UserLoginImpl extends BizEntityImpl implements UserLogin {
 	 */
 	@Override
 	public void setUserLdapDn(String newUserLdapDn) {
+		String oldUserLdapDn = userLdapDn;
 		userLdapDn = newUserLdapDn;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, LoginPackage.USER_LOGIN__USER_LDAP_DN, oldUserLdapDn, userLdapDn));
 	}
 
 	/**
@@ -783,7 +832,10 @@ public class UserLoginImpl extends BizEntityImpl implements UserLogin {
 	 */
 	@Override
 	public void setUserLoginId(String newUserLoginId) {
+		String oldUserLoginId = userLoginId;
 		userLoginId = newUserLoginId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, LoginPackage.USER_LOGIN__USER_LOGIN_ID, oldUserLoginId, userLoginId));
 	}
 
 	/**
@@ -794,7 +846,7 @@ public class UserLoginImpl extends BizEntityImpl implements UserLogin {
 	@Override
 	public List<String> getUserLoginHistories() {
 		if (userLoginHistories == null) {
-			userLoginHistories = new BasicInternalEList<String>(String.class);
+			userLoginHistories = new EDataTypeUniqueEList<String>(String.class, this, LoginPackage.USER_LOGIN__USER_LOGIN_HISTORIES);
 		}
 		return userLoginHistories;
 	}
@@ -807,7 +859,7 @@ public class UserLoginImpl extends BizEntityImpl implements UserLogin {
 	@Override
 	public List<String> getUserLoginPasswordHistories() {
 		if (userLoginPasswordHistories == null) {
-			userLoginPasswordHistories = new BasicInternalEList<String>(String.class);
+			userLoginPasswordHistories = new EDataTypeUniqueEList<String>(String.class, this, LoginPackage.USER_LOGIN__USER_LOGIN_PASSWORD_HISTORIES);
 		}
 		return userLoginPasswordHistories;
 	}
@@ -820,7 +872,7 @@ public class UserLoginImpl extends BizEntityImpl implements UserLogin {
 	@Override
 	public List<String> getUserPreferences() {
 		if (userPreferences == null) {
-			userPreferences = new BasicInternalEList<String>(String.class);
+			userPreferences = new EDataTypeUniqueEList<String>(String.class, this, LoginPackage.USER_LOGIN__USER_PREFERENCES);
 		}
 		return userPreferences;
 	}

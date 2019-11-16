@@ -14,10 +14,12 @@ import org.abchip.mimo.biz.humanres.position.EmplPositionType;
 import org.abchip.mimo.biz.humanres.position.PositionPackage;
 import org.abchip.mimo.biz.humanres.position.ValidResponsibility;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -158,7 +160,10 @@ public class ValidResponsibilityImpl extends BizEntityImpl implements ValidRespo
 	 */
 	@Override
 	public void setComments(String newComments) {
+		String oldComments = comments;
 		comments = newComments;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PositionPackage.VALID_RESPONSIBILITY__COMMENTS, oldComments, comments));
 	}
 
 	/**
@@ -172,6 +177,8 @@ public class ValidResponsibilityImpl extends BizEntityImpl implements ValidRespo
 			InternalEObject oldEmplPositionTypeId = (InternalEObject)emplPositionTypeId;
 			emplPositionTypeId = (EmplPositionType)eResolveProxy(oldEmplPositionTypeId);
 			if (emplPositionTypeId != oldEmplPositionTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PositionPackage.VALID_RESPONSIBILITY__EMPL_POSITION_TYPE_ID, oldEmplPositionTypeId, emplPositionTypeId));
 			}
 		}
 		return emplPositionTypeId;
@@ -193,7 +200,10 @@ public class ValidResponsibilityImpl extends BizEntityImpl implements ValidRespo
 	 */
 	@Override
 	public void setEmplPositionTypeId(EmplPositionType newEmplPositionTypeId) {
+		EmplPositionType oldEmplPositionTypeId = emplPositionTypeId;
 		emplPositionTypeId = newEmplPositionTypeId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PositionPackage.VALID_RESPONSIBILITY__EMPL_POSITION_TYPE_ID, oldEmplPositionTypeId, emplPositionTypeId));
 	}
 
 	/**
@@ -213,7 +223,10 @@ public class ValidResponsibilityImpl extends BizEntityImpl implements ValidRespo
 	 */
 	@Override
 	public void setFromDate(Date newFromDate) {
+		Date oldFromDate = fromDate;
 		fromDate = newFromDate;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PositionPackage.VALID_RESPONSIBILITY__FROM_DATE, oldFromDate, fromDate));
 	}
 
 	/**
@@ -227,6 +240,8 @@ public class ValidResponsibilityImpl extends BizEntityImpl implements ValidRespo
 			InternalEObject oldResponsibilityTypeId = (InternalEObject)responsibilityTypeId;
 			responsibilityTypeId = (ResponsibilityType)eResolveProxy(oldResponsibilityTypeId);
 			if (responsibilityTypeId != oldResponsibilityTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PositionPackage.VALID_RESPONSIBILITY__RESPONSIBILITY_TYPE_ID, oldResponsibilityTypeId, responsibilityTypeId));
 			}
 		}
 		return responsibilityTypeId;
@@ -248,7 +263,10 @@ public class ValidResponsibilityImpl extends BizEntityImpl implements ValidRespo
 	 */
 	@Override
 	public void setResponsibilityTypeId(ResponsibilityType newResponsibilityTypeId) {
+		ResponsibilityType oldResponsibilityTypeId = responsibilityTypeId;
 		responsibilityTypeId = newResponsibilityTypeId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PositionPackage.VALID_RESPONSIBILITY__RESPONSIBILITY_TYPE_ID, oldResponsibilityTypeId, responsibilityTypeId));
 	}
 
 	/**
@@ -268,7 +286,10 @@ public class ValidResponsibilityImpl extends BizEntityImpl implements ValidRespo
 	 */
 	@Override
 	public void setThruDate(Date newThruDate) {
+		Date oldThruDate = thruDate;
 		thruDate = newThruDate;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PositionPackage.VALID_RESPONSIBILITY__THRU_DATE, oldThruDate, thruDate));
 	}
 
 	/**

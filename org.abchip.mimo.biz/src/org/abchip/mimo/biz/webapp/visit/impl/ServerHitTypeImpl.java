@@ -13,7 +13,9 @@ import org.abchip.mimo.biz.impl.BizEntityTypeImpl;
 import org.abchip.mimo.biz.webapp.visit.ServerHit;
 import org.abchip.mimo.biz.webapp.visit.ServerHitType;
 import org.abchip.mimo.biz.webapp.visit.VisitPackage;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -111,7 +113,10 @@ public class ServerHitTypeImpl extends BizEntityTypeImpl<ServerHit> implements S
 	 */
 	@Override
 	public void setHitTypeId(String newHitTypeId) {
+		String oldHitTypeId = hitTypeId;
 		hitTypeId = newHitTypeId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, VisitPackage.SERVER_HIT_TYPE__HIT_TYPE_ID, oldHitTypeId, hitTypeId));
 	}
 
 	/**
@@ -131,7 +136,10 @@ public class ServerHitTypeImpl extends BizEntityTypeImpl<ServerHit> implements S
 	 */
 	@Override
 	public void setDescription(String newDescription) {
+		String oldDescription = description;
 		description = newDescription;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, VisitPackage.SERVER_HIT_TYPE__DESCRIPTION, oldDescription, description));
 	}
 
 	/**

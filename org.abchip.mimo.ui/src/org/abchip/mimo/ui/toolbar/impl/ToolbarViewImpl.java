@@ -6,7 +6,6 @@ package org.abchip.mimo.ui.toolbar.impl;
 import org.abchip.mimo.entity.impl.EntityImpl;
 import org.abchip.mimo.ui.toolbar.ToolbarPackage;
 import org.abchip.mimo.ui.toolbar.ToolbarView;
-
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;

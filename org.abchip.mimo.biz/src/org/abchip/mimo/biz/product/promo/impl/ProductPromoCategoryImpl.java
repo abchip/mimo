@@ -13,9 +13,11 @@ import org.abchip.mimo.biz.product.category.ProductCategory;
 import org.abchip.mimo.biz.product.promo.ProductPromo;
 import org.abchip.mimo.biz.product.promo.ProductPromoCategory;
 import org.abchip.mimo.biz.product.promo.PromoPackage;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -209,7 +211,10 @@ public class ProductPromoCategoryImpl extends BizEntityImpl implements ProductPr
 	 */
 	@Override
 	public void setAndGroupId(String newAndGroupId) {
+		String oldAndGroupId = andGroupId;
 		andGroupId = newAndGroupId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PromoPackage.PRODUCT_PROMO_CATEGORY__AND_GROUP_ID, oldAndGroupId, andGroupId));
 	}
 
 	/**
@@ -229,7 +234,10 @@ public class ProductPromoCategoryImpl extends BizEntityImpl implements ProductPr
 	 */
 	@Override
 	public void setIncludeSubCategories(boolean newIncludeSubCategories) {
+		boolean oldIncludeSubCategories = includeSubCategories;
 		includeSubCategories = newIncludeSubCategories;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PromoPackage.PRODUCT_PROMO_CATEGORY__INCLUDE_SUB_CATEGORIES, oldIncludeSubCategories, includeSubCategories));
 	}
 
 	/**
@@ -249,7 +257,10 @@ public class ProductPromoCategoryImpl extends BizEntityImpl implements ProductPr
 	 */
 	@Override
 	public void setProductPromoActionSeqId(String newProductPromoActionSeqId) {
+		String oldProductPromoActionSeqId = productPromoActionSeqId;
 		productPromoActionSeqId = newProductPromoActionSeqId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PromoPackage.PRODUCT_PROMO_CATEGORY__PRODUCT_PROMO_ACTION_SEQ_ID, oldProductPromoActionSeqId, productPromoActionSeqId));
 	}
 
 	/**
@@ -263,6 +274,8 @@ public class ProductPromoCategoryImpl extends BizEntityImpl implements ProductPr
 			InternalEObject oldProductPromoApplEnumId = (InternalEObject)productPromoApplEnumId;
 			productPromoApplEnumId = (Enumeration)eResolveProxy(oldProductPromoApplEnumId);
 			if (productPromoApplEnumId != oldProductPromoApplEnumId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PromoPackage.PRODUCT_PROMO_CATEGORY__PRODUCT_PROMO_APPL_ENUM_ID, oldProductPromoApplEnumId, productPromoApplEnumId));
 			}
 		}
 		return productPromoApplEnumId;
@@ -284,7 +297,10 @@ public class ProductPromoCategoryImpl extends BizEntityImpl implements ProductPr
 	 */
 	@Override
 	public void setProductPromoApplEnumId(Enumeration newProductPromoApplEnumId) {
+		Enumeration oldProductPromoApplEnumId = productPromoApplEnumId;
 		productPromoApplEnumId = newProductPromoApplEnumId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PromoPackage.PRODUCT_PROMO_CATEGORY__PRODUCT_PROMO_APPL_ENUM_ID, oldProductPromoApplEnumId, productPromoApplEnumId));
 	}
 
 	/**
@@ -304,7 +320,10 @@ public class ProductPromoCategoryImpl extends BizEntityImpl implements ProductPr
 	 */
 	@Override
 	public void setProductPromoCondSeqId(String newProductPromoCondSeqId) {
+		String oldProductPromoCondSeqId = productPromoCondSeqId;
 		productPromoCondSeqId = newProductPromoCondSeqId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PromoPackage.PRODUCT_PROMO_CATEGORY__PRODUCT_PROMO_COND_SEQ_ID, oldProductPromoCondSeqId, productPromoCondSeqId));
 	}
 
 	/**
@@ -324,7 +343,10 @@ public class ProductPromoCategoryImpl extends BizEntityImpl implements ProductPr
 	 */
 	@Override
 	public void setProductPromoRuleId(String newProductPromoRuleId) {
+		String oldProductPromoRuleId = productPromoRuleId;
 		productPromoRuleId = newProductPromoRuleId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PromoPackage.PRODUCT_PROMO_CATEGORY__PRODUCT_PROMO_RULE_ID, oldProductPromoRuleId, productPromoRuleId));
 	}
 
 	/**
@@ -338,6 +360,8 @@ public class ProductPromoCategoryImpl extends BizEntityImpl implements ProductPr
 			InternalEObject oldProductPromoId = (InternalEObject)productPromoId;
 			productPromoId = (ProductPromo)eResolveProxy(oldProductPromoId);
 			if (productPromoId != oldProductPromoId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PromoPackage.PRODUCT_PROMO_CATEGORY__PRODUCT_PROMO_ID, oldProductPromoId, productPromoId));
 			}
 		}
 		return productPromoId;
@@ -359,7 +383,10 @@ public class ProductPromoCategoryImpl extends BizEntityImpl implements ProductPr
 	 */
 	@Override
 	public void setProductPromoId(ProductPromo newProductPromoId) {
+		ProductPromo oldProductPromoId = productPromoId;
 		productPromoId = newProductPromoId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PromoPackage.PRODUCT_PROMO_CATEGORY__PRODUCT_PROMO_ID, oldProductPromoId, productPromoId));
 	}
 
 	/**
@@ -373,6 +400,8 @@ public class ProductPromoCategoryImpl extends BizEntityImpl implements ProductPr
 			InternalEObject oldProductCategoryId = (InternalEObject)productCategoryId;
 			productCategoryId = (ProductCategory)eResolveProxy(oldProductCategoryId);
 			if (productCategoryId != oldProductCategoryId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PromoPackage.PRODUCT_PROMO_CATEGORY__PRODUCT_CATEGORY_ID, oldProductCategoryId, productCategoryId));
 			}
 		}
 		return productCategoryId;
@@ -394,7 +423,10 @@ public class ProductPromoCategoryImpl extends BizEntityImpl implements ProductPr
 	 */
 	@Override
 	public void setProductCategoryId(ProductCategory newProductCategoryId) {
+		ProductCategory oldProductCategoryId = productCategoryId;
 		productCategoryId = newProductCategoryId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PromoPackage.PRODUCT_PROMO_CATEGORY__PRODUCT_CATEGORY_ID, oldProductCategoryId, productCategoryId));
 	}
 
 	/**

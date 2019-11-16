@@ -14,9 +14,11 @@ import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.product.facility.Facility;
 import org.abchip.mimo.biz.product.facility.FacilityContent;
 import org.abchip.mimo.biz.product.facility.FacilityPackage;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -130,6 +132,8 @@ public class FacilityContentImpl extends BizEntityImpl implements FacilityConten
 			InternalEObject oldContentId = (InternalEObject)contentId;
 			contentId = (Content)eResolveProxy(oldContentId);
 			if (contentId != oldContentId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, FacilityPackage.FACILITY_CONTENT__CONTENT_ID, oldContentId, contentId));
 			}
 		}
 		return contentId;
@@ -151,7 +155,10 @@ public class FacilityContentImpl extends BizEntityImpl implements FacilityConten
 	 */
 	@Override
 	public void setContentId(Content newContentId) {
+		Content oldContentId = contentId;
 		contentId = newContentId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, FacilityPackage.FACILITY_CONTENT__CONTENT_ID, oldContentId, contentId));
 	}
 
 	/**
@@ -171,7 +178,10 @@ public class FacilityContentImpl extends BizEntityImpl implements FacilityConten
 	 */
 	@Override
 	public void setFromDate(Date newFromDate) {
+		Date oldFromDate = fromDate;
 		fromDate = newFromDate;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, FacilityPackage.FACILITY_CONTENT__FROM_DATE, oldFromDate, fromDate));
 	}
 
 	/**
@@ -191,7 +201,10 @@ public class FacilityContentImpl extends BizEntityImpl implements FacilityConten
 	 */
 	@Override
 	public void setThruDate(Date newThruDate) {
+		Date oldThruDate = thruDate;
 		thruDate = newThruDate;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, FacilityPackage.FACILITY_CONTENT__THRU_DATE, oldThruDate, thruDate));
 	}
 
 	/**
@@ -205,6 +218,8 @@ public class FacilityContentImpl extends BizEntityImpl implements FacilityConten
 			InternalEObject oldFacilityId = (InternalEObject)facilityId;
 			facilityId = (Facility)eResolveProxy(oldFacilityId);
 			if (facilityId != oldFacilityId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, FacilityPackage.FACILITY_CONTENT__FACILITY_ID, oldFacilityId, facilityId));
 			}
 		}
 		return facilityId;
@@ -226,7 +241,10 @@ public class FacilityContentImpl extends BizEntityImpl implements FacilityConten
 	 */
 	@Override
 	public void setFacilityId(Facility newFacilityId) {
+		Facility oldFacilityId = facilityId;
 		facilityId = newFacilityId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, FacilityPackage.FACILITY_CONTENT__FACILITY_ID, oldFacilityId, facilityId));
 	}
 
 	/**

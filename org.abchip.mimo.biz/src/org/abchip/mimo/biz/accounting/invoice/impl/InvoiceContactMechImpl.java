@@ -13,9 +13,11 @@ import org.abchip.mimo.biz.accounting.invoice.InvoicePackage;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.party.contact.ContactMech;
 import org.abchip.mimo.biz.party.contact.ContactMechPurposeType;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -95,6 +97,8 @@ public class InvoiceContactMechImpl extends BizEntityImpl implements InvoiceCont
 			InternalEObject oldContactMechId = (InternalEObject)contactMechId;
 			contactMechId = (ContactMech)eResolveProxy(oldContactMechId);
 			if (contactMechId != oldContactMechId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, InvoicePackage.INVOICE_CONTACT_MECH__CONTACT_MECH_ID, oldContactMechId, contactMechId));
 			}
 		}
 		return contactMechId;
@@ -116,7 +120,10 @@ public class InvoiceContactMechImpl extends BizEntityImpl implements InvoiceCont
 	 */
 	@Override
 	public void setContactMechId(ContactMech newContactMechId) {
+		ContactMech oldContactMechId = contactMechId;
 		contactMechId = newContactMechId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, InvoicePackage.INVOICE_CONTACT_MECH__CONTACT_MECH_ID, oldContactMechId, contactMechId));
 	}
 
 	/**
@@ -130,6 +137,8 @@ public class InvoiceContactMechImpl extends BizEntityImpl implements InvoiceCont
 			InternalEObject oldContactMechPurposeTypeId = (InternalEObject)contactMechPurposeTypeId;
 			contactMechPurposeTypeId = (ContactMechPurposeType)eResolveProxy(oldContactMechPurposeTypeId);
 			if (contactMechPurposeTypeId != oldContactMechPurposeTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, InvoicePackage.INVOICE_CONTACT_MECH__CONTACT_MECH_PURPOSE_TYPE_ID, oldContactMechPurposeTypeId, contactMechPurposeTypeId));
 			}
 		}
 		return contactMechPurposeTypeId;
@@ -151,7 +160,10 @@ public class InvoiceContactMechImpl extends BizEntityImpl implements InvoiceCont
 	 */
 	@Override
 	public void setContactMechPurposeTypeId(ContactMechPurposeType newContactMechPurposeTypeId) {
+		ContactMechPurposeType oldContactMechPurposeTypeId = contactMechPurposeTypeId;
 		contactMechPurposeTypeId = newContactMechPurposeTypeId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, InvoicePackage.INVOICE_CONTACT_MECH__CONTACT_MECH_PURPOSE_TYPE_ID, oldContactMechPurposeTypeId, contactMechPurposeTypeId));
 	}
 
 	/**
@@ -165,6 +177,8 @@ public class InvoiceContactMechImpl extends BizEntityImpl implements InvoiceCont
 			InternalEObject oldInvoiceId = (InternalEObject)invoiceId;
 			invoiceId = (Invoice)eResolveProxy(oldInvoiceId);
 			if (invoiceId != oldInvoiceId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, InvoicePackage.INVOICE_CONTACT_MECH__INVOICE_ID, oldInvoiceId, invoiceId));
 			}
 		}
 		return invoiceId;
@@ -186,7 +200,10 @@ public class InvoiceContactMechImpl extends BizEntityImpl implements InvoiceCont
 	 */
 	@Override
 	public void setInvoiceId(Invoice newInvoiceId) {
+		Invoice oldInvoiceId = invoiceId;
 		invoiceId = newInvoiceId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, InvoicePackage.INVOICE_CONTACT_MECH__INVOICE_ID, oldInvoiceId, invoiceId));
 	}
 
 	/**

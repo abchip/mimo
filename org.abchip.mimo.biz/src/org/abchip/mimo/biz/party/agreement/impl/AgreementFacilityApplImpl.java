@@ -12,9 +12,11 @@ import org.abchip.mimo.biz.party.agreement.Agreement;
 import org.abchip.mimo.biz.party.agreement.AgreementFacilityAppl;
 import org.abchip.mimo.biz.party.agreement.AgreementPackage;
 import org.abchip.mimo.biz.product.facility.Facility;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -109,7 +111,10 @@ public class AgreementFacilityApplImpl extends BizEntityImpl implements Agreemen
 	 */
 	@Override
 	public void setAgreementItemSeqId(String newAgreementItemSeqId) {
+		String oldAgreementItemSeqId = agreementItemSeqId;
 		agreementItemSeqId = newAgreementItemSeqId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, AgreementPackage.AGREEMENT_FACILITY_APPL__AGREEMENT_ITEM_SEQ_ID, oldAgreementItemSeqId, agreementItemSeqId));
 	}
 
 	/**
@@ -123,6 +128,8 @@ public class AgreementFacilityApplImpl extends BizEntityImpl implements Agreemen
 			InternalEObject oldFacilityId = (InternalEObject)facilityId;
 			facilityId = (Facility)eResolveProxy(oldFacilityId);
 			if (facilityId != oldFacilityId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, AgreementPackage.AGREEMENT_FACILITY_APPL__FACILITY_ID, oldFacilityId, facilityId));
 			}
 		}
 		return facilityId;
@@ -144,7 +151,10 @@ public class AgreementFacilityApplImpl extends BizEntityImpl implements Agreemen
 	 */
 	@Override
 	public void setFacilityId(Facility newFacilityId) {
+		Facility oldFacilityId = facilityId;
 		facilityId = newFacilityId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, AgreementPackage.AGREEMENT_FACILITY_APPL__FACILITY_ID, oldFacilityId, facilityId));
 	}
 
 	/**
@@ -158,6 +168,8 @@ public class AgreementFacilityApplImpl extends BizEntityImpl implements Agreemen
 			InternalEObject oldAgreementId = (InternalEObject)agreementId;
 			agreementId = (Agreement)eResolveProxy(oldAgreementId);
 			if (agreementId != oldAgreementId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, AgreementPackage.AGREEMENT_FACILITY_APPL__AGREEMENT_ID, oldAgreementId, agreementId));
 			}
 		}
 		return agreementId;
@@ -179,7 +191,10 @@ public class AgreementFacilityApplImpl extends BizEntityImpl implements Agreemen
 	 */
 	@Override
 	public void setAgreementId(Agreement newAgreementId) {
+		Agreement oldAgreementId = agreementId;
 		agreementId = newAgreementId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, AgreementPackage.AGREEMENT_FACILITY_APPL__AGREEMENT_ID, oldAgreementId, agreementId));
 	}
 
 	/**

@@ -11,9 +11,11 @@ import org.abchip.mimo.biz.accounting.payment.PaymentGatewayConfig;
 import org.abchip.mimo.biz.accounting.payment.PaymentGatewayEway;
 import org.abchip.mimo.biz.accounting.payment.PaymentPackage;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -174,7 +176,10 @@ public class PaymentGatewayEwayImpl extends BizEntityImpl implements PaymentGate
 	 */
 	@Override
 	public void setCustomerId(String newCustomerId) {
+		String oldCustomerId = customerId;
 		customerId = newCustomerId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.PAYMENT_GATEWAY_EWAY__CUSTOMER_ID, oldCustomerId, customerId));
 	}
 
 	/**
@@ -194,7 +199,10 @@ public class PaymentGatewayEwayImpl extends BizEntityImpl implements PaymentGate
 	 */
 	@Override
 	public void setEnableBeagle(String newEnableBeagle) {
+		String oldEnableBeagle = enableBeagle;
 		enableBeagle = newEnableBeagle;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.PAYMENT_GATEWAY_EWAY__ENABLE_BEAGLE, oldEnableBeagle, enableBeagle));
 	}
 
 	/**
@@ -214,7 +222,10 @@ public class PaymentGatewayEwayImpl extends BizEntityImpl implements PaymentGate
 	 */
 	@Override
 	public void setEnableCvn(String newEnableCvn) {
+		String oldEnableCvn = enableCvn;
 		enableCvn = newEnableCvn;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.PAYMENT_GATEWAY_EWAY__ENABLE_CVN, oldEnableCvn, enableCvn));
 	}
 
 	/**
@@ -228,6 +239,8 @@ public class PaymentGatewayEwayImpl extends BizEntityImpl implements PaymentGate
 			InternalEObject oldPaymentGatewayConfigId = (InternalEObject)paymentGatewayConfigId;
 			paymentGatewayConfigId = (PaymentGatewayConfig)eResolveProxy(oldPaymentGatewayConfigId);
 			if (paymentGatewayConfigId != oldPaymentGatewayConfigId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PaymentPackage.PAYMENT_GATEWAY_EWAY__PAYMENT_GATEWAY_CONFIG_ID, oldPaymentGatewayConfigId, paymentGatewayConfigId));
 			}
 		}
 		return paymentGatewayConfigId;
@@ -249,7 +262,10 @@ public class PaymentGatewayEwayImpl extends BizEntityImpl implements PaymentGate
 	 */
 	@Override
 	public void setPaymentGatewayConfigId(PaymentGatewayConfig newPaymentGatewayConfigId) {
+		PaymentGatewayConfig oldPaymentGatewayConfigId = paymentGatewayConfigId;
 		paymentGatewayConfigId = newPaymentGatewayConfigId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.PAYMENT_GATEWAY_EWAY__PAYMENT_GATEWAY_CONFIG_ID, oldPaymentGatewayConfigId, paymentGatewayConfigId));
 	}
 
 	/**
@@ -269,7 +285,10 @@ public class PaymentGatewayEwayImpl extends BizEntityImpl implements PaymentGate
 	 */
 	@Override
 	public void setRefundPwd(String newRefundPwd) {
+		String oldRefundPwd = refundPwd;
 		refundPwd = newRefundPwd;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.PAYMENT_GATEWAY_EWAY__REFUND_PWD, oldRefundPwd, refundPwd));
 	}
 
 	/**
@@ -289,7 +308,10 @@ public class PaymentGatewayEwayImpl extends BizEntityImpl implements PaymentGate
 	 */
 	@Override
 	public void setTestMode(String newTestMode) {
+		String oldTestMode = testMode;
 		testMode = newTestMode;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.PAYMENT_GATEWAY_EWAY__TEST_MODE, oldTestMode, testMode));
 	}
 
 	/**

@@ -13,9 +13,11 @@ import java.util.List;
 
 import org.abchip.mimo.entity.Default;
 import org.abchip.mimo.entity.EntityPackage;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.util.BasicInternalEList;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.util.EDataTypeEList;
 
 /**
  * <!-- begin-user-doc --> An implementation of the model object '
@@ -95,7 +97,10 @@ public class DefaultImpl extends EntityImpl implements Default {
 	 */
 	@Override
 	public void setValue(String newValue) {
+		String oldValue = value;
 		value = newValue;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, EntityPackage.DEFAULT__VALUE, oldValue, value));
 	}
 
 	/**
@@ -105,7 +110,7 @@ public class DefaultImpl extends EntityImpl implements Default {
 	@Override
 	public List<String> getValues() {
 		if (values == null) {
-			values = new BasicInternalEList<String>(String.class);
+			values = new EDataTypeEList<String>(String.class, this, EntityPackage.DEFAULT__VALUES);
 		}
 		return values;
 	}

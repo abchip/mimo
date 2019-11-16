@@ -14,10 +14,12 @@ import org.abchip.mimo.biz.marketing.campaign.CampaignPackage;
 import org.abchip.mimo.biz.marketing.campaign.MarketingCampaign;
 import org.abchip.mimo.biz.marketing.campaign.MarketingCampaignPromo;
 import org.abchip.mimo.biz.product.promo.ProductPromo;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -134,7 +136,10 @@ public class MarketingCampaignPromoImpl extends BizEntityImpl implements Marketi
 	 */
 	@Override
 	public void setFromDate(Date newFromDate) {
+		Date oldFromDate = fromDate;
 		fromDate = newFromDate;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, CampaignPackage.MARKETING_CAMPAIGN_PROMO__FROM_DATE, oldFromDate, fromDate));
 	}
 
 	/**
@@ -148,6 +153,8 @@ public class MarketingCampaignPromoImpl extends BizEntityImpl implements Marketi
 			InternalEObject oldMarketingCampaignId = (InternalEObject)marketingCampaignId;
 			marketingCampaignId = (MarketingCampaign)eResolveProxy(oldMarketingCampaignId);
 			if (marketingCampaignId != oldMarketingCampaignId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, CampaignPackage.MARKETING_CAMPAIGN_PROMO__MARKETING_CAMPAIGN_ID, oldMarketingCampaignId, marketingCampaignId));
 			}
 		}
 		return marketingCampaignId;
@@ -169,7 +176,10 @@ public class MarketingCampaignPromoImpl extends BizEntityImpl implements Marketi
 	 */
 	@Override
 	public void setMarketingCampaignId(MarketingCampaign newMarketingCampaignId) {
+		MarketingCampaign oldMarketingCampaignId = marketingCampaignId;
 		marketingCampaignId = newMarketingCampaignId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, CampaignPackage.MARKETING_CAMPAIGN_PROMO__MARKETING_CAMPAIGN_ID, oldMarketingCampaignId, marketingCampaignId));
 	}
 
 	/**
@@ -183,6 +193,8 @@ public class MarketingCampaignPromoImpl extends BizEntityImpl implements Marketi
 			InternalEObject oldProductPromoId = (InternalEObject)productPromoId;
 			productPromoId = (ProductPromo)eResolveProxy(oldProductPromoId);
 			if (productPromoId != oldProductPromoId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, CampaignPackage.MARKETING_CAMPAIGN_PROMO__PRODUCT_PROMO_ID, oldProductPromoId, productPromoId));
 			}
 		}
 		return productPromoId;
@@ -204,7 +216,10 @@ public class MarketingCampaignPromoImpl extends BizEntityImpl implements Marketi
 	 */
 	@Override
 	public void setProductPromoId(ProductPromo newProductPromoId) {
+		ProductPromo oldProductPromoId = productPromoId;
 		productPromoId = newProductPromoId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, CampaignPackage.MARKETING_CAMPAIGN_PROMO__PRODUCT_PROMO_ID, oldProductPromoId, productPromoId));
 	}
 
 	/**
@@ -224,7 +239,10 @@ public class MarketingCampaignPromoImpl extends BizEntityImpl implements Marketi
 	 */
 	@Override
 	public void setThruDate(Date newThruDate) {
+		Date oldThruDate = thruDate;
 		thruDate = newThruDate;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, CampaignPackage.MARKETING_CAMPAIGN_PROMO__THRU_DATE, oldThruDate, thruDate));
 	}
 
 	/**

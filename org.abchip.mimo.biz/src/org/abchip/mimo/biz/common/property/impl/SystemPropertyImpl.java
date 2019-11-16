@@ -10,7 +10,9 @@ package org.abchip.mimo.biz.common.property.impl;
 import org.abchip.mimo.biz.common.property.PropertyPackage;
 import org.abchip.mimo.biz.common.property.SystemProperty;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -143,7 +145,10 @@ public class SystemPropertyImpl extends BizEntityImpl implements SystemProperty 
 	 */
 	@Override
 	public void setDescription(String newDescription) {
+		String oldDescription = description;
 		description = newDescription;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PropertyPackage.SYSTEM_PROPERTY__DESCRIPTION, oldDescription, description));
 	}
 
 	/**
@@ -163,7 +168,10 @@ public class SystemPropertyImpl extends BizEntityImpl implements SystemProperty 
 	 */
 	@Override
 	public void setSystemPropertyId(String newSystemPropertyId) {
+		String oldSystemPropertyId = systemPropertyId;
 		systemPropertyId = newSystemPropertyId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PropertyPackage.SYSTEM_PROPERTY__SYSTEM_PROPERTY_ID, oldSystemPropertyId, systemPropertyId));
 	}
 
 	/**
@@ -183,7 +191,10 @@ public class SystemPropertyImpl extends BizEntityImpl implements SystemProperty 
 	 */
 	@Override
 	public void setSystemPropertyValue(String newSystemPropertyValue) {
+		String oldSystemPropertyValue = systemPropertyValue;
 		systemPropertyValue = newSystemPropertyValue;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PropertyPackage.SYSTEM_PROPERTY__SYSTEM_PROPERTY_VALUE, oldSystemPropertyValue, systemPropertyValue));
 	}
 
 	/**
@@ -203,7 +214,10 @@ public class SystemPropertyImpl extends BizEntityImpl implements SystemProperty 
 	 */
 	@Override
 	public void setSystemResourceId(String newSystemResourceId) {
+		String oldSystemResourceId = systemResourceId;
 		systemResourceId = newSystemResourceId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PropertyPackage.SYSTEM_PROPERTY__SYSTEM_RESOURCE_ID, oldSystemResourceId, systemResourceId));
 	}
 
 	/**

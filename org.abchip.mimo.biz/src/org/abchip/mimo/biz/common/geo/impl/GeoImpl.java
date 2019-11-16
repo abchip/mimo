@@ -14,11 +14,13 @@ import org.abchip.mimo.biz.common.geo.Geo;
 import org.abchip.mimo.biz.common.geo.GeoPackage;
 import org.abchip.mimo.biz.common.geo.GeoType;
 import org.abchip.mimo.biz.impl.BizEntityTypedImpl;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.util.BasicInternalEList;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -219,7 +221,10 @@ public class GeoImpl extends BizEntityTypedImpl<GeoType> implements Geo {
 	 */
 	@Override
 	public void setAbbreviation(String newAbbreviation) {
+		String oldAbbreviation = abbreviation;
 		abbreviation = newAbbreviation;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, GeoPackage.GEO__ABBREVIATION, oldAbbreviation, abbreviation));
 	}
 
 	/**
@@ -239,7 +244,10 @@ public class GeoImpl extends BizEntityTypedImpl<GeoType> implements Geo {
 	 */
 	@Override
 	public void setGeoCode(String newGeoCode) {
+		String oldGeoCode = geoCode;
 		geoCode = newGeoCode;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, GeoPackage.GEO__GEO_CODE, oldGeoCode, geoCode));
 	}
 
 	/**
@@ -259,7 +267,10 @@ public class GeoImpl extends BizEntityTypedImpl<GeoType> implements Geo {
 	 */
 	@Override
 	public void setGeoName(String newGeoName) {
+		String oldGeoName = geoName;
 		geoName = newGeoName;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, GeoPackage.GEO__GEO_NAME, oldGeoName, geoName));
 	}
 
 	/**
@@ -279,7 +290,10 @@ public class GeoImpl extends BizEntityTypedImpl<GeoType> implements Geo {
 	 */
 	@Override
 	public void setGeoSecCode(String newGeoSecCode) {
+		String oldGeoSecCode = geoSecCode;
 		geoSecCode = newGeoSecCode;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, GeoPackage.GEO__GEO_SEC_CODE, oldGeoSecCode, geoSecCode));
 	}
 
 	/**
@@ -299,7 +313,10 @@ public class GeoImpl extends BizEntityTypedImpl<GeoType> implements Geo {
 	 */
 	@Override
 	public void setWellKnownText(String newWellKnownText) {
+		String oldWellKnownText = wellKnownText;
 		wellKnownText = newWellKnownText;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, GeoPackage.GEO__WELL_KNOWN_TEXT, oldWellKnownText, wellKnownText));
 	}
 
 	/**
@@ -310,7 +327,7 @@ public class GeoImpl extends BizEntityTypedImpl<GeoType> implements Geo {
 	@Override
 	public List<String> getMainGeoAssocs() {
 		if (mainGeoAssocs == null) {
-			mainGeoAssocs = new BasicInternalEList<String>(String.class);
+			mainGeoAssocs = new EDataTypeUniqueEList<String>(String.class, this, GeoPackage.GEO__MAIN_GEO_ASSOCS);
 		}
 		return mainGeoAssocs;
 	}
@@ -323,7 +340,7 @@ public class GeoImpl extends BizEntityTypedImpl<GeoType> implements Geo {
 	@Override
 	public List<String> getTaxAuthTaxAuthorities() {
 		if (taxAuthTaxAuthorities == null) {
-			taxAuthTaxAuthorities = new BasicInternalEList<String>(String.class);
+			taxAuthTaxAuthorities = new EDataTypeUniqueEList<String>(String.class, this, GeoPackage.GEO__TAX_AUTH_TAX_AUTHORITIES);
 		}
 		return taxAuthTaxAuthorities;
 	}
@@ -651,6 +668,8 @@ public class GeoImpl extends BizEntityTypedImpl<GeoType> implements Geo {
 			InternalEObject oldGeoTypeId = (InternalEObject)geoTypeId;
 			geoTypeId = (GeoType)eResolveProxy(oldGeoTypeId);
 			if (geoTypeId != oldGeoTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, GeoPackage.GEO__GEO_TYPE_ID, oldGeoTypeId, geoTypeId));
 			}
 		}
 		return geoTypeId;
@@ -672,7 +691,10 @@ public class GeoImpl extends BizEntityTypedImpl<GeoType> implements Geo {
 	 */
 	@Override
 	public void setGeoTypeId(GeoType newGeoTypeId) {
+		GeoType oldGeoTypeId = geoTypeId;
 		geoTypeId = newGeoTypeId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, GeoPackage.GEO__GEO_TYPE_ID, oldGeoTypeId, geoTypeId));
 	}
 
 	/**
@@ -692,7 +714,10 @@ public class GeoImpl extends BizEntityTypedImpl<GeoType> implements Geo {
 	 */
 	@Override
 	public void setGeoId(String newGeoId) {
+		String oldGeoId = geoId;
 		geoId = newGeoId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, GeoPackage.GEO__GEO_ID, oldGeoId, geoId));
 	}
 
 	/**

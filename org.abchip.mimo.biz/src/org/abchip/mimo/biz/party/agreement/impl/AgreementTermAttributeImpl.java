@@ -11,9 +11,11 @@ import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.party.agreement.AgreementPackage;
 import org.abchip.mimo.biz.party.agreement.AgreementTerm;
 import org.abchip.mimo.biz.party.agreement.AgreementTermAttribute;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -136,7 +138,10 @@ public class AgreementTermAttributeImpl extends BizEntityImpl implements Agreeme
 	 */
 	@Override
 	public void setAttrDescription(String newAttrDescription) {
+		String oldAttrDescription = attrDescription;
 		attrDescription = newAttrDescription;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, AgreementPackage.AGREEMENT_TERM_ATTRIBUTE__ATTR_DESCRIPTION, oldAttrDescription, attrDescription));
 	}
 
 	/**
@@ -156,7 +161,10 @@ public class AgreementTermAttributeImpl extends BizEntityImpl implements Agreeme
 	 */
 	@Override
 	public void setAttrName(String newAttrName) {
+		String oldAttrName = attrName;
 		attrName = newAttrName;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, AgreementPackage.AGREEMENT_TERM_ATTRIBUTE__ATTR_NAME, oldAttrName, attrName));
 	}
 
 	/**
@@ -176,7 +184,10 @@ public class AgreementTermAttributeImpl extends BizEntityImpl implements Agreeme
 	 */
 	@Override
 	public void setAttrValue(String newAttrValue) {
+		String oldAttrValue = attrValue;
 		attrValue = newAttrValue;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, AgreementPackage.AGREEMENT_TERM_ATTRIBUTE__ATTR_VALUE, oldAttrValue, attrValue));
 	}
 
 	/**
@@ -190,6 +201,8 @@ public class AgreementTermAttributeImpl extends BizEntityImpl implements Agreeme
 			InternalEObject oldAgreementTermId = (InternalEObject)agreementTermId;
 			agreementTermId = (AgreementTerm)eResolveProxy(oldAgreementTermId);
 			if (agreementTermId != oldAgreementTermId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, AgreementPackage.AGREEMENT_TERM_ATTRIBUTE__AGREEMENT_TERM_ID, oldAgreementTermId, agreementTermId));
 			}
 		}
 		return agreementTermId;
@@ -211,7 +224,10 @@ public class AgreementTermAttributeImpl extends BizEntityImpl implements Agreeme
 	 */
 	@Override
 	public void setAgreementTermId(AgreementTerm newAgreementTermId) {
+		AgreementTerm oldAgreementTermId = agreementTermId;
 		agreementTermId = newAgreementTermId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, AgreementPackage.AGREEMENT_TERM_ATTRIBUTE__AGREEMENT_TERM_ID, oldAgreementTermId, agreementTermId));
 	}
 
 	/**

@@ -23,11 +23,13 @@ import org.abchip.mimo.biz.product.facility.FacilityPackage;
 import org.abchip.mimo.biz.product.facility.FacilityType;
 import org.abchip.mimo.biz.product.inventory.InventoryItemType;
 import org.abchip.mimo.biz.product.store.ProductStore;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.util.BasicInternalEList;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -383,7 +385,10 @@ public class FacilityImpl extends BizEntityTypedImpl<FacilityType> implements Fa
 	 */
 	@Override
 	public void setClosedDate(Date newClosedDate) {
+		Date oldClosedDate = closedDate;
 		closedDate = newClosedDate;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, FacilityPackage.FACILITY__CLOSED_DATE, oldClosedDate, closedDate));
 	}
 
 	/**
@@ -403,7 +408,10 @@ public class FacilityImpl extends BizEntityTypedImpl<FacilityType> implements Fa
 	 */
 	@Override
 	public void setDefaultDaysToShip(long newDefaultDaysToShip) {
+		long oldDefaultDaysToShip = defaultDaysToShip;
 		defaultDaysToShip = newDefaultDaysToShip;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, FacilityPackage.FACILITY__DEFAULT_DAYS_TO_SHIP, oldDefaultDaysToShip, defaultDaysToShip));
 	}
 
 	/**
@@ -417,6 +425,8 @@ public class FacilityImpl extends BizEntityTypedImpl<FacilityType> implements Fa
 			InternalEObject oldDefaultDimensionUomId = (InternalEObject)defaultDimensionUomId;
 			defaultDimensionUomId = (Uom)eResolveProxy(oldDefaultDimensionUomId);
 			if (defaultDimensionUomId != oldDefaultDimensionUomId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, FacilityPackage.FACILITY__DEFAULT_DIMENSION_UOM_ID, oldDefaultDimensionUomId, defaultDimensionUomId));
 			}
 		}
 		return defaultDimensionUomId;
@@ -438,7 +448,10 @@ public class FacilityImpl extends BizEntityTypedImpl<FacilityType> implements Fa
 	 */
 	@Override
 	public void setDefaultDimensionUomId(Uom newDefaultDimensionUomId) {
+		Uom oldDefaultDimensionUomId = defaultDimensionUomId;
 		defaultDimensionUomId = newDefaultDimensionUomId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, FacilityPackage.FACILITY__DEFAULT_DIMENSION_UOM_ID, oldDefaultDimensionUomId, defaultDimensionUomId));
 	}
 
 	/**
@@ -452,6 +465,8 @@ public class FacilityImpl extends BizEntityTypedImpl<FacilityType> implements Fa
 			InternalEObject oldDefaultInventoryItemTypeId = (InternalEObject)defaultInventoryItemTypeId;
 			defaultInventoryItemTypeId = (InventoryItemType)eResolveProxy(oldDefaultInventoryItemTypeId);
 			if (defaultInventoryItemTypeId != oldDefaultInventoryItemTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, FacilityPackage.FACILITY__DEFAULT_INVENTORY_ITEM_TYPE_ID, oldDefaultInventoryItemTypeId, defaultInventoryItemTypeId));
 			}
 		}
 		return defaultInventoryItemTypeId;
@@ -473,7 +488,10 @@ public class FacilityImpl extends BizEntityTypedImpl<FacilityType> implements Fa
 	 */
 	@Override
 	public void setDefaultInventoryItemTypeId(InventoryItemType newDefaultInventoryItemTypeId) {
+		InventoryItemType oldDefaultInventoryItemTypeId = defaultInventoryItemTypeId;
 		defaultInventoryItemTypeId = newDefaultInventoryItemTypeId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, FacilityPackage.FACILITY__DEFAULT_INVENTORY_ITEM_TYPE_ID, oldDefaultInventoryItemTypeId, defaultInventoryItemTypeId));
 	}
 
 	/**
@@ -487,6 +505,8 @@ public class FacilityImpl extends BizEntityTypedImpl<FacilityType> implements Fa
 			InternalEObject oldDefaultWeightUomId = (InternalEObject)defaultWeightUomId;
 			defaultWeightUomId = (Uom)eResolveProxy(oldDefaultWeightUomId);
 			if (defaultWeightUomId != oldDefaultWeightUomId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, FacilityPackage.FACILITY__DEFAULT_WEIGHT_UOM_ID, oldDefaultWeightUomId, defaultWeightUomId));
 			}
 		}
 		return defaultWeightUomId;
@@ -508,7 +528,10 @@ public class FacilityImpl extends BizEntityTypedImpl<FacilityType> implements Fa
 	 */
 	@Override
 	public void setDefaultWeightUomId(Uom newDefaultWeightUomId) {
+		Uom oldDefaultWeightUomId = defaultWeightUomId;
 		defaultWeightUomId = newDefaultWeightUomId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, FacilityPackage.FACILITY__DEFAULT_WEIGHT_UOM_ID, oldDefaultWeightUomId, defaultWeightUomId));
 	}
 
 	/**
@@ -528,7 +551,10 @@ public class FacilityImpl extends BizEntityTypedImpl<FacilityType> implements Fa
 	 */
 	@Override
 	public void setDescription(String newDescription) {
+		String oldDescription = description;
 		description = newDescription;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, FacilityPackage.FACILITY__DESCRIPTION, oldDescription, description));
 	}
 
 	/**
@@ -548,7 +574,10 @@ public class FacilityImpl extends BizEntityTypedImpl<FacilityType> implements Fa
 	 */
 	@Override
 	public void setFacilityName(String newFacilityName) {
+		String oldFacilityName = facilityName;
 		facilityName = newFacilityName;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, FacilityPackage.FACILITY__FACILITY_NAME, oldFacilityName, facilityName));
 	}
 
 	/**
@@ -568,7 +597,10 @@ public class FacilityImpl extends BizEntityTypedImpl<FacilityType> implements Fa
 	 */
 	@Override
 	public void setFacilitySize(BigDecimal newFacilitySize) {
+		BigDecimal oldFacilitySize = facilitySize;
 		facilitySize = newFacilitySize;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, FacilityPackage.FACILITY__FACILITY_SIZE, oldFacilitySize, facilitySize));
 	}
 
 	/**
@@ -582,6 +614,8 @@ public class FacilityImpl extends BizEntityTypedImpl<FacilityType> implements Fa
 			InternalEObject oldFacilitySizeUomId = (InternalEObject)facilitySizeUomId;
 			facilitySizeUomId = (Uom)eResolveProxy(oldFacilitySizeUomId);
 			if (facilitySizeUomId != oldFacilitySizeUomId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, FacilityPackage.FACILITY__FACILITY_SIZE_UOM_ID, oldFacilitySizeUomId, facilitySizeUomId));
 			}
 		}
 		return facilitySizeUomId;
@@ -603,7 +637,10 @@ public class FacilityImpl extends BizEntityTypedImpl<FacilityType> implements Fa
 	 */
 	@Override
 	public void setFacilitySizeUomId(Uom newFacilitySizeUomId) {
+		Uom oldFacilitySizeUomId = facilitySizeUomId;
 		facilitySizeUomId = newFacilitySizeUomId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, FacilityPackage.FACILITY__FACILITY_SIZE_UOM_ID, oldFacilitySizeUomId, facilitySizeUomId));
 	}
 
 	/**
@@ -617,6 +654,8 @@ public class FacilityImpl extends BizEntityTypedImpl<FacilityType> implements Fa
 			InternalEObject oldGeoPointId = (InternalEObject)geoPointId;
 			geoPointId = (GeoPoint)eResolveProxy(oldGeoPointId);
 			if (geoPointId != oldGeoPointId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, FacilityPackage.FACILITY__GEO_POINT_ID, oldGeoPointId, geoPointId));
 			}
 		}
 		return geoPointId;
@@ -638,7 +677,10 @@ public class FacilityImpl extends BizEntityTypedImpl<FacilityType> implements Fa
 	 */
 	@Override
 	public void setGeoPointId(GeoPoint newGeoPointId) {
+		GeoPoint oldGeoPointId = geoPointId;
 		geoPointId = newGeoPointId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, FacilityPackage.FACILITY__GEO_POINT_ID, oldGeoPointId, geoPointId));
 	}
 
 	/**
@@ -658,7 +700,10 @@ public class FacilityImpl extends BizEntityTypedImpl<FacilityType> implements Fa
 	 */
 	@Override
 	public void setOldSquareFootage(long newOldSquareFootage) {
+		long oldOldSquareFootage = oldSquareFootage;
 		oldSquareFootage = newOldSquareFootage;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, FacilityPackage.FACILITY__OLD_SQUARE_FOOTAGE, oldOldSquareFootage, oldSquareFootage));
 	}
 
 	/**
@@ -678,7 +723,10 @@ public class FacilityImpl extends BizEntityTypedImpl<FacilityType> implements Fa
 	 */
 	@Override
 	public void setOpenedDate(Date newOpenedDate) {
+		Date oldOpenedDate = openedDate;
 		openedDate = newOpenedDate;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, FacilityPackage.FACILITY__OPENED_DATE, oldOpenedDate, openedDate));
 	}
 
 	/**
@@ -692,6 +740,8 @@ public class FacilityImpl extends BizEntityTypedImpl<FacilityType> implements Fa
 			InternalEObject oldOwnerPartyId = (InternalEObject)ownerPartyId;
 			ownerPartyId = (Party)eResolveProxy(oldOwnerPartyId);
 			if (ownerPartyId != oldOwnerPartyId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, FacilityPackage.FACILITY__OWNER_PARTY_ID, oldOwnerPartyId, ownerPartyId));
 			}
 		}
 		return ownerPartyId;
@@ -713,7 +763,10 @@ public class FacilityImpl extends BizEntityTypedImpl<FacilityType> implements Fa
 	 */
 	@Override
 	public void setOwnerPartyId(Party newOwnerPartyId) {
+		Party oldOwnerPartyId = ownerPartyId;
 		ownerPartyId = newOwnerPartyId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, FacilityPackage.FACILITY__OWNER_PARTY_ID, oldOwnerPartyId, ownerPartyId));
 	}
 
 	/**
@@ -727,6 +780,8 @@ public class FacilityImpl extends BizEntityTypedImpl<FacilityType> implements Fa
 			InternalEObject oldProductStoreId = (InternalEObject)productStoreId;
 			productStoreId = (ProductStore)eResolveProxy(oldProductStoreId);
 			if (productStoreId != oldProductStoreId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, FacilityPackage.FACILITY__PRODUCT_STORE_ID, oldProductStoreId, productStoreId));
 			}
 		}
 		return productStoreId;
@@ -748,7 +803,10 @@ public class FacilityImpl extends BizEntityTypedImpl<FacilityType> implements Fa
 	 */
 	@Override
 	public void setProductStoreId(ProductStore newProductStoreId) {
+		ProductStore oldProductStoreId = productStoreId;
 		productStoreId = newProductStoreId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, FacilityPackage.FACILITY__PRODUCT_STORE_ID, oldProductStoreId, productStoreId));
 	}
 
 	/**
@@ -759,7 +817,7 @@ public class FacilityImpl extends BizEntityTypedImpl<FacilityType> implements Fa
 	@Override
 	public List<String> getFacilityAttributes() {
 		if (facilityAttributes == null) {
-			facilityAttributes = new BasicInternalEList<String>(String.class);
+			facilityAttributes = new EDataTypeUniqueEList<String>(String.class, this, FacilityPackage.FACILITY__FACILITY_ATTRIBUTES);
 		}
 		return facilityAttributes;
 	}
@@ -772,7 +830,7 @@ public class FacilityImpl extends BizEntityTypedImpl<FacilityType> implements Fa
 	@Override
 	public List<String> getFacilityLocations() {
 		if (facilityLocations == null) {
-			facilityLocations = new BasicInternalEList<String>(String.class);
+			facilityLocations = new EDataTypeUniqueEList<String>(String.class, this, FacilityPackage.FACILITY__FACILITY_LOCATIONS);
 		}
 		return facilityLocations;
 	}
@@ -1040,6 +1098,8 @@ public class FacilityImpl extends BizEntityTypedImpl<FacilityType> implements Fa
 			InternalEObject oldParentFacilityId = (InternalEObject)parentFacilityId;
 			parentFacilityId = (Facility)eResolveProxy(oldParentFacilityId);
 			if (parentFacilityId != oldParentFacilityId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, FacilityPackage.FACILITY__PARENT_FACILITY_ID, oldParentFacilityId, parentFacilityId));
 			}
 		}
 		return parentFacilityId;
@@ -1061,7 +1121,10 @@ public class FacilityImpl extends BizEntityTypedImpl<FacilityType> implements Fa
 	 */
 	@Override
 	public void setParentFacilityId(Facility newParentFacilityId) {
+		Facility oldParentFacilityId = parentFacilityId;
 		parentFacilityId = newParentFacilityId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, FacilityPackage.FACILITY__PARENT_FACILITY_ID, oldParentFacilityId, parentFacilityId));
 	}
 
 	/**
@@ -1075,6 +1138,8 @@ public class FacilityImpl extends BizEntityTypedImpl<FacilityType> implements Fa
 			InternalEObject oldPrimaryFacilityGroupId = (InternalEObject)primaryFacilityGroupId;
 			primaryFacilityGroupId = (FacilityGroup)eResolveProxy(oldPrimaryFacilityGroupId);
 			if (primaryFacilityGroupId != oldPrimaryFacilityGroupId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, FacilityPackage.FACILITY__PRIMARY_FACILITY_GROUP_ID, oldPrimaryFacilityGroupId, primaryFacilityGroupId));
 			}
 		}
 		return primaryFacilityGroupId;
@@ -1096,7 +1161,10 @@ public class FacilityImpl extends BizEntityTypedImpl<FacilityType> implements Fa
 	 */
 	@Override
 	public void setPrimaryFacilityGroupId(FacilityGroup newPrimaryFacilityGroupId) {
+		FacilityGroup oldPrimaryFacilityGroupId = primaryFacilityGroupId;
 		primaryFacilityGroupId = newPrimaryFacilityGroupId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, FacilityPackage.FACILITY__PRIMARY_FACILITY_GROUP_ID, oldPrimaryFacilityGroupId, primaryFacilityGroupId));
 	}
 
 	/**
@@ -1110,6 +1178,8 @@ public class FacilityImpl extends BizEntityTypedImpl<FacilityType> implements Fa
 			InternalEObject oldFacilityTypeId = (InternalEObject)facilityTypeId;
 			facilityTypeId = (FacilityType)eResolveProxy(oldFacilityTypeId);
 			if (facilityTypeId != oldFacilityTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, FacilityPackage.FACILITY__FACILITY_TYPE_ID, oldFacilityTypeId, facilityTypeId));
 			}
 		}
 		return facilityTypeId;
@@ -1131,7 +1201,10 @@ public class FacilityImpl extends BizEntityTypedImpl<FacilityType> implements Fa
 	 */
 	@Override
 	public void setFacilityTypeId(FacilityType newFacilityTypeId) {
+		FacilityType oldFacilityTypeId = facilityTypeId;
 		facilityTypeId = newFacilityTypeId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, FacilityPackage.FACILITY__FACILITY_TYPE_ID, oldFacilityTypeId, facilityTypeId));
 	}
 
 	/**
@@ -1151,7 +1224,10 @@ public class FacilityImpl extends BizEntityTypedImpl<FacilityType> implements Fa
 	 */
 	@Override
 	public void setFacilityId(String newFacilityId) {
+		String oldFacilityId = facilityId;
 		facilityId = newFacilityId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, FacilityPackage.FACILITY__FACILITY_ID, oldFacilityId, facilityId));
 	}
 
 	/**

@@ -19,7 +19,7 @@ import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.util.BasicInternalEList;
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
@@ -76,7 +76,7 @@ public abstract class EntityTypeImpl<E extends EntityTyped<?>> extends EntityNam
 	@Override
 	public List<Slot> getSlots() {
 		if (slots == null) {
-			slots = new BasicInternalEList<Slot>(Slot.class);
+			slots = new EObjectContainmentEList.Resolving<Slot>(Slot.class, this, EntityPackage.ENTITY_TYPE__SLOTS);
 		}
 		return slots;
 	}

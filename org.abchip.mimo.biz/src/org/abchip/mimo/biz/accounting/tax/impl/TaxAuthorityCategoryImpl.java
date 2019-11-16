@@ -11,10 +11,12 @@ import org.abchip.mimo.biz.accounting.tax.TaxAuthorityCategory;
 import org.abchip.mimo.biz.accounting.tax.TaxPackage;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.product.category.ProductCategory;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -115,6 +117,8 @@ public class TaxAuthorityCategoryImpl extends BizEntityImpl implements TaxAuthor
 			InternalEObject oldProductCategoryId = (InternalEObject)productCategoryId;
 			productCategoryId = (ProductCategory)eResolveProxy(oldProductCategoryId);
 			if (productCategoryId != oldProductCategoryId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, TaxPackage.TAX_AUTHORITY_CATEGORY__PRODUCT_CATEGORY_ID, oldProductCategoryId, productCategoryId));
 			}
 		}
 		return productCategoryId;
@@ -136,7 +140,10 @@ public class TaxAuthorityCategoryImpl extends BizEntityImpl implements TaxAuthor
 	 */
 	@Override
 	public void setProductCategoryId(ProductCategory newProductCategoryId) {
+		ProductCategory oldProductCategoryId = productCategoryId;
 		productCategoryId = newProductCategoryId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, TaxPackage.TAX_AUTHORITY_CATEGORY__PRODUCT_CATEGORY_ID, oldProductCategoryId, productCategoryId));
 	}
 
 	/**
@@ -156,7 +163,10 @@ public class TaxAuthorityCategoryImpl extends BizEntityImpl implements TaxAuthor
 	 */
 	@Override
 	public void setTaxAuthGeoId(String newTaxAuthGeoId) {
+		String oldTaxAuthGeoId = taxAuthGeoId;
 		taxAuthGeoId = newTaxAuthGeoId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, TaxPackage.TAX_AUTHORITY_CATEGORY__TAX_AUTH_GEO_ID, oldTaxAuthGeoId, taxAuthGeoId));
 	}
 
 	/**
@@ -176,7 +186,10 @@ public class TaxAuthorityCategoryImpl extends BizEntityImpl implements TaxAuthor
 	 */
 	@Override
 	public void setTaxAuthPartyId(String newTaxAuthPartyId) {
+		String oldTaxAuthPartyId = taxAuthPartyId;
 		taxAuthPartyId = newTaxAuthPartyId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, TaxPackage.TAX_AUTHORITY_CATEGORY__TAX_AUTH_PARTY_ID, oldTaxAuthPartyId, taxAuthPartyId));
 	}
 
 	/**

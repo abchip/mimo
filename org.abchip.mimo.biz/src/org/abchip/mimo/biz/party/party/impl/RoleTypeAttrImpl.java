@@ -11,9 +11,11 @@ import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.party.party.PartyPackage;
 import org.abchip.mimo.biz.party.party.RoleType;
 import org.abchip.mimo.biz.party.party.RoleTypeAttr;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -117,7 +119,10 @@ public class RoleTypeAttrImpl extends BizEntityImpl implements RoleTypeAttr {
 	 */
 	@Override
 	public void setDescription(String newDescription) {
+		String oldDescription = description;
 		description = newDescription;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PartyPackage.ROLE_TYPE_ATTR__DESCRIPTION, oldDescription, description));
 	}
 
 	/**
@@ -137,7 +142,10 @@ public class RoleTypeAttrImpl extends BizEntityImpl implements RoleTypeAttr {
 	 */
 	@Override
 	public void setAttrName(String newAttrName) {
+		String oldAttrName = attrName;
 		attrName = newAttrName;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PartyPackage.ROLE_TYPE_ATTR__ATTR_NAME, oldAttrName, attrName));
 	}
 
 	/**
@@ -151,6 +159,8 @@ public class RoleTypeAttrImpl extends BizEntityImpl implements RoleTypeAttr {
 			InternalEObject oldRoleTypeId = (InternalEObject)roleTypeId;
 			roleTypeId = (RoleType)eResolveProxy(oldRoleTypeId);
 			if (roleTypeId != oldRoleTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PartyPackage.ROLE_TYPE_ATTR__ROLE_TYPE_ID, oldRoleTypeId, roleTypeId));
 			}
 		}
 		return roleTypeId;
@@ -172,7 +182,10 @@ public class RoleTypeAttrImpl extends BizEntityImpl implements RoleTypeAttr {
 	 */
 	@Override
 	public void setRoleTypeId(RoleType newRoleTypeId) {
+		RoleType oldRoleTypeId = roleTypeId;
 		roleTypeId = newRoleTypeId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PartyPackage.ROLE_TYPE_ATTR__ROLE_TYPE_ID, oldRoleTypeId, roleTypeId));
 	}
 
 	/**

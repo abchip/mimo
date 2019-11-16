@@ -11,10 +11,12 @@ import org.abchip.mimo.biz.content.data.DataPackage;
 import org.abchip.mimo.biz.content.data.FileExtension;
 import org.abchip.mimo.biz.content.data.MimeType;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -102,7 +104,10 @@ public class FileExtensionImpl extends BizEntityImpl implements FileExtension {
 	 */
 	@Override
 	public void setFileExtensionId(String newFileExtensionId) {
+		String oldFileExtensionId = fileExtensionId;
 		fileExtensionId = newFileExtensionId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, DataPackage.FILE_EXTENSION__FILE_EXTENSION_ID, oldFileExtensionId, fileExtensionId));
 	}
 
 	/**
@@ -116,6 +121,8 @@ public class FileExtensionImpl extends BizEntityImpl implements FileExtension {
 			InternalEObject oldMimeTypeId = (InternalEObject)mimeTypeId;
 			mimeTypeId = (MimeType)eResolveProxy(oldMimeTypeId);
 			if (mimeTypeId != oldMimeTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, DataPackage.FILE_EXTENSION__MIME_TYPE_ID, oldMimeTypeId, mimeTypeId));
 			}
 		}
 		return mimeTypeId;
@@ -137,7 +144,10 @@ public class FileExtensionImpl extends BizEntityImpl implements FileExtension {
 	 */
 	@Override
 	public void setMimeTypeId(MimeType newMimeTypeId) {
+		MimeType oldMimeTypeId = mimeTypeId;
 		mimeTypeId = newMimeTypeId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, DataPackage.FILE_EXTENSION__MIME_TYPE_ID, oldMimeTypeId, mimeTypeId));
 	}
 
 	/**

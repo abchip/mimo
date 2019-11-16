@@ -15,10 +15,12 @@ import org.abchip.mimo.biz.order.request.RequestPackage;
 import org.abchip.mimo.biz.order.request.RespondingParty;
 import org.abchip.mimo.biz.party.contact.ContactMech;
 import org.abchip.mimo.biz.party.party.Party;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -143,6 +145,8 @@ public class RespondingPartyImpl extends BizEntityImpl implements RespondingPart
 			InternalEObject oldContactMechId = (InternalEObject)contactMechId;
 			contactMechId = (ContactMech)eResolveProxy(oldContactMechId);
 			if (contactMechId != oldContactMechId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, RequestPackage.RESPONDING_PARTY__CONTACT_MECH_ID, oldContactMechId, contactMechId));
 			}
 		}
 		return contactMechId;
@@ -164,7 +168,10 @@ public class RespondingPartyImpl extends BizEntityImpl implements RespondingPart
 	 */
 	@Override
 	public void setContactMechId(ContactMech newContactMechId) {
+		ContactMech oldContactMechId = contactMechId;
 		contactMechId = newContactMechId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, RequestPackage.RESPONDING_PARTY__CONTACT_MECH_ID, oldContactMechId, contactMechId));
 	}
 
 	/**
@@ -178,6 +185,8 @@ public class RespondingPartyImpl extends BizEntityImpl implements RespondingPart
 			InternalEObject oldCustRequestId = (InternalEObject)custRequestId;
 			custRequestId = (CustRequest)eResolveProxy(oldCustRequestId);
 			if (custRequestId != oldCustRequestId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, RequestPackage.RESPONDING_PARTY__CUST_REQUEST_ID, oldCustRequestId, custRequestId));
 			}
 		}
 		return custRequestId;
@@ -199,7 +208,10 @@ public class RespondingPartyImpl extends BizEntityImpl implements RespondingPart
 	 */
 	@Override
 	public void setCustRequestId(CustRequest newCustRequestId) {
+		CustRequest oldCustRequestId = custRequestId;
 		custRequestId = newCustRequestId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, RequestPackage.RESPONDING_PARTY__CUST_REQUEST_ID, oldCustRequestId, custRequestId));
 	}
 
 	/**
@@ -219,7 +231,10 @@ public class RespondingPartyImpl extends BizEntityImpl implements RespondingPart
 	 */
 	@Override
 	public void setDateSent(Date newDateSent) {
+		Date oldDateSent = dateSent;
 		dateSent = newDateSent;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, RequestPackage.RESPONDING_PARTY__DATE_SENT, oldDateSent, dateSent));
 	}
 
 	/**
@@ -233,6 +248,8 @@ public class RespondingPartyImpl extends BizEntityImpl implements RespondingPart
 			InternalEObject oldPartyId = (InternalEObject)partyId;
 			partyId = (Party)eResolveProxy(oldPartyId);
 			if (partyId != oldPartyId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, RequestPackage.RESPONDING_PARTY__PARTY_ID, oldPartyId, partyId));
 			}
 		}
 		return partyId;
@@ -254,7 +271,10 @@ public class RespondingPartyImpl extends BizEntityImpl implements RespondingPart
 	 */
 	@Override
 	public void setPartyId(Party newPartyId) {
+		Party oldPartyId = partyId;
 		partyId = newPartyId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, RequestPackage.RESPONDING_PARTY__PARTY_ID, oldPartyId, partyId));
 	}
 
 	/**
@@ -274,7 +294,10 @@ public class RespondingPartyImpl extends BizEntityImpl implements RespondingPart
 	 */
 	@Override
 	public void setRespondingPartySeqId(String newRespondingPartySeqId) {
+		String oldRespondingPartySeqId = respondingPartySeqId;
 		respondingPartySeqId = newRespondingPartySeqId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, RequestPackage.RESPONDING_PARTY__RESPONDING_PARTY_SEQ_ID, oldRespondingPartySeqId, respondingPartySeqId));
 	}
 
 	/**

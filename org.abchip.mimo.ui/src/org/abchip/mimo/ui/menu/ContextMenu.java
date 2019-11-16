@@ -84,6 +84,7 @@ public interface ContextMenu extends EntityNameable {
 	 * @model id="true"
 	 * @generated
 	 */
+	@Override
 	String getName();
 
 	/**

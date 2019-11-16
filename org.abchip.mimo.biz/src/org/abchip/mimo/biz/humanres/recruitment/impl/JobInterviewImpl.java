@@ -16,10 +16,12 @@ import org.abchip.mimo.biz.humanres.recruitment.JobRequisition;
 import org.abchip.mimo.biz.humanres.recruitment.RecruitmentPackage;
 import org.abchip.mimo.biz.impl.BizEntityTypedImpl;
 import org.abchip.mimo.biz.party.party.Party;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -187,6 +189,8 @@ public class JobInterviewImpl extends BizEntityTypedImpl<JobInterviewType> imple
 			InternalEObject oldGradeSecuredEnumId = (InternalEObject)gradeSecuredEnumId;
 			gradeSecuredEnumId = (Enumeration)eResolveProxy(oldGradeSecuredEnumId);
 			if (gradeSecuredEnumId != oldGradeSecuredEnumId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, RecruitmentPackage.JOB_INTERVIEW__GRADE_SECURED_ENUM_ID, oldGradeSecuredEnumId, gradeSecuredEnumId));
 			}
 		}
 		return gradeSecuredEnumId;
@@ -208,7 +212,10 @@ public class JobInterviewImpl extends BizEntityTypedImpl<JobInterviewType> imple
 	 */
 	@Override
 	public void setGradeSecuredEnumId(Enumeration newGradeSecuredEnumId) {
+		Enumeration oldGradeSecuredEnumId = gradeSecuredEnumId;
 		gradeSecuredEnumId = newGradeSecuredEnumId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, RecruitmentPackage.JOB_INTERVIEW__GRADE_SECURED_ENUM_ID, oldGradeSecuredEnumId, gradeSecuredEnumId));
 	}
 
 	/**
@@ -228,7 +235,10 @@ public class JobInterviewImpl extends BizEntityTypedImpl<JobInterviewType> imple
 	 */
 	@Override
 	public void setJobInterviewDate(Date newJobInterviewDate) {
+		Date oldJobInterviewDate = jobInterviewDate;
 		jobInterviewDate = newJobInterviewDate;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, RecruitmentPackage.JOB_INTERVIEW__JOB_INTERVIEW_DATE, oldJobInterviewDate, jobInterviewDate));
 	}
 
 	/**
@@ -248,7 +258,10 @@ public class JobInterviewImpl extends BizEntityTypedImpl<JobInterviewType> imple
 	 */
 	@Override
 	public void setJobInterviewId(String newJobInterviewId) {
+		String oldJobInterviewId = jobInterviewId;
 		jobInterviewId = newJobInterviewId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, RecruitmentPackage.JOB_INTERVIEW__JOB_INTERVIEW_ID, oldJobInterviewId, jobInterviewId));
 	}
 
 	/**
@@ -268,7 +281,10 @@ public class JobInterviewImpl extends BizEntityTypedImpl<JobInterviewType> imple
 	 */
 	@Override
 	public void setJobInterviewResult(String newJobInterviewResult) {
+		String oldJobInterviewResult = jobInterviewResult;
 		jobInterviewResult = newJobInterviewResult;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, RecruitmentPackage.JOB_INTERVIEW__JOB_INTERVIEW_RESULT, oldJobInterviewResult, jobInterviewResult));
 	}
 
 	/**
@@ -282,6 +298,8 @@ public class JobInterviewImpl extends BizEntityTypedImpl<JobInterviewType> imple
 			InternalEObject oldJobInterviewTypeId = (InternalEObject)jobInterviewTypeId;
 			jobInterviewTypeId = (JobInterviewType)eResolveProxy(oldJobInterviewTypeId);
 			if (jobInterviewTypeId != oldJobInterviewTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, RecruitmentPackage.JOB_INTERVIEW__JOB_INTERVIEW_TYPE_ID, oldJobInterviewTypeId, jobInterviewTypeId));
 			}
 		}
 		return jobInterviewTypeId;
@@ -303,7 +321,10 @@ public class JobInterviewImpl extends BizEntityTypedImpl<JobInterviewType> imple
 	 */
 	@Override
 	public void setJobInterviewTypeId(JobInterviewType newJobInterviewTypeId) {
+		JobInterviewType oldJobInterviewTypeId = jobInterviewTypeId;
 		jobInterviewTypeId = newJobInterviewTypeId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, RecruitmentPackage.JOB_INTERVIEW__JOB_INTERVIEW_TYPE_ID, oldJobInterviewTypeId, jobInterviewTypeId));
 	}
 
 	/**
@@ -317,6 +338,8 @@ public class JobInterviewImpl extends BizEntityTypedImpl<JobInterviewType> imple
 			InternalEObject oldJobIntervieweePartyId = (InternalEObject)jobIntervieweePartyId;
 			jobIntervieweePartyId = (Party)eResolveProxy(oldJobIntervieweePartyId);
 			if (jobIntervieweePartyId != oldJobIntervieweePartyId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, RecruitmentPackage.JOB_INTERVIEW__JOB_INTERVIEWEE_PARTY_ID, oldJobIntervieweePartyId, jobIntervieweePartyId));
 			}
 		}
 		return jobIntervieweePartyId;
@@ -338,7 +361,10 @@ public class JobInterviewImpl extends BizEntityTypedImpl<JobInterviewType> imple
 	 */
 	@Override
 	public void setJobIntervieweePartyId(Party newJobIntervieweePartyId) {
+		Party oldJobIntervieweePartyId = jobIntervieweePartyId;
 		jobIntervieweePartyId = newJobIntervieweePartyId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, RecruitmentPackage.JOB_INTERVIEW__JOB_INTERVIEWEE_PARTY_ID, oldJobIntervieweePartyId, jobIntervieweePartyId));
 	}
 
 	/**
@@ -352,6 +378,8 @@ public class JobInterviewImpl extends BizEntityTypedImpl<JobInterviewType> imple
 			InternalEObject oldJobInterviewerPartyId = (InternalEObject)jobInterviewerPartyId;
 			jobInterviewerPartyId = (Party)eResolveProxy(oldJobInterviewerPartyId);
 			if (jobInterviewerPartyId != oldJobInterviewerPartyId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, RecruitmentPackage.JOB_INTERVIEW__JOB_INTERVIEWER_PARTY_ID, oldJobInterviewerPartyId, jobInterviewerPartyId));
 			}
 		}
 		return jobInterviewerPartyId;
@@ -373,7 +401,10 @@ public class JobInterviewImpl extends BizEntityTypedImpl<JobInterviewType> imple
 	 */
 	@Override
 	public void setJobInterviewerPartyId(Party newJobInterviewerPartyId) {
+		Party oldJobInterviewerPartyId = jobInterviewerPartyId;
 		jobInterviewerPartyId = newJobInterviewerPartyId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, RecruitmentPackage.JOB_INTERVIEW__JOB_INTERVIEWER_PARTY_ID, oldJobInterviewerPartyId, jobInterviewerPartyId));
 	}
 
 	/**
@@ -387,6 +418,8 @@ public class JobInterviewImpl extends BizEntityTypedImpl<JobInterviewType> imple
 			InternalEObject oldJobRequisitionId = (InternalEObject)jobRequisitionId;
 			jobRequisitionId = (JobRequisition)eResolveProxy(oldJobRequisitionId);
 			if (jobRequisitionId != oldJobRequisitionId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, RecruitmentPackage.JOB_INTERVIEW__JOB_REQUISITION_ID, oldJobRequisitionId, jobRequisitionId));
 			}
 		}
 		return jobRequisitionId;
@@ -408,7 +441,10 @@ public class JobInterviewImpl extends BizEntityTypedImpl<JobInterviewType> imple
 	 */
 	@Override
 	public void setJobRequisitionId(JobRequisition newJobRequisitionId) {
+		JobRequisition oldJobRequisitionId = jobRequisitionId;
 		jobRequisitionId = newJobRequisitionId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, RecruitmentPackage.JOB_INTERVIEW__JOB_REQUISITION_ID, oldJobRequisitionId, jobRequisitionId));
 	}
 
 	/**

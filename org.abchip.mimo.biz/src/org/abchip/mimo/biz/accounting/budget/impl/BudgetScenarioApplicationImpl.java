@@ -14,9 +14,11 @@ import org.abchip.mimo.biz.accounting.budget.BudgetPackage;
 import org.abchip.mimo.biz.accounting.budget.BudgetScenario;
 import org.abchip.mimo.biz.accounting.budget.BudgetScenarioApplication;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -168,7 +170,10 @@ public class BudgetScenarioApplicationImpl extends BizEntityImpl implements Budg
 	 */
 	@Override
 	public void setAmountChange(BigDecimal newAmountChange) {
+		BigDecimal oldAmountChange = amountChange;
 		amountChange = newAmountChange;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, BudgetPackage.BUDGET_SCENARIO_APPLICATION__AMOUNT_CHANGE, oldAmountChange, amountChange));
 	}
 
 	/**
@@ -188,7 +193,10 @@ public class BudgetScenarioApplicationImpl extends BizEntityImpl implements Budg
 	 */
 	@Override
 	public void setBudgetItemSeqId(String newBudgetItemSeqId) {
+		String oldBudgetItemSeqId = budgetItemSeqId;
 		budgetItemSeqId = newBudgetItemSeqId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, BudgetPackage.BUDGET_SCENARIO_APPLICATION__BUDGET_ITEM_SEQ_ID, oldBudgetItemSeqId, budgetItemSeqId));
 	}
 
 	/**
@@ -208,7 +216,10 @@ public class BudgetScenarioApplicationImpl extends BizEntityImpl implements Budg
 	 */
 	@Override
 	public void setBudgetScenarioApplicId(String newBudgetScenarioApplicId) {
+		String oldBudgetScenarioApplicId = budgetScenarioApplicId;
 		budgetScenarioApplicId = newBudgetScenarioApplicId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, BudgetPackage.BUDGET_SCENARIO_APPLICATION__BUDGET_SCENARIO_APPLIC_ID, oldBudgetScenarioApplicId, budgetScenarioApplicId));
 	}
 
 	/**
@@ -228,7 +239,10 @@ public class BudgetScenarioApplicationImpl extends BizEntityImpl implements Budg
 	 */
 	@Override
 	public void setPercentageChange(BigDecimal newPercentageChange) {
+		BigDecimal oldPercentageChange = percentageChange;
 		percentageChange = newPercentageChange;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, BudgetPackage.BUDGET_SCENARIO_APPLICATION__PERCENTAGE_CHANGE, oldPercentageChange, percentageChange));
 	}
 
 	/**
@@ -242,6 +256,8 @@ public class BudgetScenarioApplicationImpl extends BizEntityImpl implements Budg
 			InternalEObject oldBudgetScenarioId = (InternalEObject)budgetScenarioId;
 			budgetScenarioId = (BudgetScenario)eResolveProxy(oldBudgetScenarioId);
 			if (budgetScenarioId != oldBudgetScenarioId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, BudgetPackage.BUDGET_SCENARIO_APPLICATION__BUDGET_SCENARIO_ID, oldBudgetScenarioId, budgetScenarioId));
 			}
 		}
 		return budgetScenarioId;
@@ -263,7 +279,10 @@ public class BudgetScenarioApplicationImpl extends BizEntityImpl implements Budg
 	 */
 	@Override
 	public void setBudgetScenarioId(BudgetScenario newBudgetScenarioId) {
+		BudgetScenario oldBudgetScenarioId = budgetScenarioId;
 		budgetScenarioId = newBudgetScenarioId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, BudgetPackage.BUDGET_SCENARIO_APPLICATION__BUDGET_SCENARIO_ID, oldBudgetScenarioId, budgetScenarioId));
 	}
 
 	/**
@@ -277,6 +296,8 @@ public class BudgetScenarioApplicationImpl extends BizEntityImpl implements Budg
 			InternalEObject oldBudgetId = (InternalEObject)budgetId;
 			budgetId = (Budget)eResolveProxy(oldBudgetId);
 			if (budgetId != oldBudgetId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, BudgetPackage.BUDGET_SCENARIO_APPLICATION__BUDGET_ID, oldBudgetId, budgetId));
 			}
 		}
 		return budgetId;
@@ -298,7 +319,10 @@ public class BudgetScenarioApplicationImpl extends BizEntityImpl implements Budg
 	 */
 	@Override
 	public void setBudgetId(Budget newBudgetId) {
+		Budget oldBudgetId = budgetId;
 		budgetId = newBudgetId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, BudgetPackage.BUDGET_SCENARIO_APPLICATION__BUDGET_ID, oldBudgetId, budgetId));
 	}
 
 	/**

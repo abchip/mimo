@@ -13,9 +13,11 @@ import org.abchip.mimo.biz.accounting.tax.TaxAuthorityAssoc;
 import org.abchip.mimo.biz.accounting.tax.TaxAuthorityAssocType;
 import org.abchip.mimo.biz.accounting.tax.TaxPackage;
 import org.abchip.mimo.biz.impl.BizEntityTypedImpl;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -199,7 +201,10 @@ public class TaxAuthorityAssocImpl extends BizEntityTypedImpl<TaxAuthorityAssocT
 	 */
 	@Override
 	public void setFromDate(Date newFromDate) {
+		Date oldFromDate = fromDate;
 		fromDate = newFromDate;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, TaxPackage.TAX_AUTHORITY_ASSOC__FROM_DATE, oldFromDate, fromDate));
 	}
 
 	/**
@@ -219,7 +224,10 @@ public class TaxAuthorityAssocImpl extends BizEntityTypedImpl<TaxAuthorityAssocT
 	 */
 	@Override
 	public void setTaxAuthGeoId(String newTaxAuthGeoId) {
+		String oldTaxAuthGeoId = taxAuthGeoId;
 		taxAuthGeoId = newTaxAuthGeoId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, TaxPackage.TAX_AUTHORITY_ASSOC__TAX_AUTH_GEO_ID, oldTaxAuthGeoId, taxAuthGeoId));
 	}
 
 	/**
@@ -239,7 +247,10 @@ public class TaxAuthorityAssocImpl extends BizEntityTypedImpl<TaxAuthorityAssocT
 	 */
 	@Override
 	public void setTaxAuthPartyId(String newTaxAuthPartyId) {
+		String oldTaxAuthPartyId = taxAuthPartyId;
 		taxAuthPartyId = newTaxAuthPartyId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, TaxPackage.TAX_AUTHORITY_ASSOC__TAX_AUTH_PARTY_ID, oldTaxAuthPartyId, taxAuthPartyId));
 	}
 
 	/**
@@ -259,7 +270,10 @@ public class TaxAuthorityAssocImpl extends BizEntityTypedImpl<TaxAuthorityAssocT
 	 */
 	@Override
 	public void setThruDate(Date newThruDate) {
+		Date oldThruDate = thruDate;
 		thruDate = newThruDate;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, TaxPackage.TAX_AUTHORITY_ASSOC__THRU_DATE, oldThruDate, thruDate));
 	}
 
 	/**
@@ -279,7 +293,10 @@ public class TaxAuthorityAssocImpl extends BizEntityTypedImpl<TaxAuthorityAssocT
 	 */
 	@Override
 	public void setToTaxAuthGeoId(String newToTaxAuthGeoId) {
+		String oldToTaxAuthGeoId = toTaxAuthGeoId;
 		toTaxAuthGeoId = newToTaxAuthGeoId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, TaxPackage.TAX_AUTHORITY_ASSOC__TO_TAX_AUTH_GEO_ID, oldToTaxAuthGeoId, toTaxAuthGeoId));
 	}
 
 	/**
@@ -299,7 +316,10 @@ public class TaxAuthorityAssocImpl extends BizEntityTypedImpl<TaxAuthorityAssocT
 	 */
 	@Override
 	public void setToTaxAuthPartyId(String newToTaxAuthPartyId) {
+		String oldToTaxAuthPartyId = toTaxAuthPartyId;
 		toTaxAuthPartyId = newToTaxAuthPartyId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, TaxPackage.TAX_AUTHORITY_ASSOC__TO_TAX_AUTH_PARTY_ID, oldToTaxAuthPartyId, toTaxAuthPartyId));
 	}
 
 	/**
@@ -313,6 +333,8 @@ public class TaxAuthorityAssocImpl extends BizEntityTypedImpl<TaxAuthorityAssocT
 			InternalEObject oldTaxAuthorityAssocTypeId = (InternalEObject)taxAuthorityAssocTypeId;
 			taxAuthorityAssocTypeId = (TaxAuthorityAssocType)eResolveProxy(oldTaxAuthorityAssocTypeId);
 			if (taxAuthorityAssocTypeId != oldTaxAuthorityAssocTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, TaxPackage.TAX_AUTHORITY_ASSOC__TAX_AUTHORITY_ASSOC_TYPE_ID, oldTaxAuthorityAssocTypeId, taxAuthorityAssocTypeId));
 			}
 		}
 		return taxAuthorityAssocTypeId;
@@ -334,7 +356,10 @@ public class TaxAuthorityAssocImpl extends BizEntityTypedImpl<TaxAuthorityAssocT
 	 */
 	@Override
 	public void setTaxAuthorityAssocTypeId(TaxAuthorityAssocType newTaxAuthorityAssocTypeId) {
+		TaxAuthorityAssocType oldTaxAuthorityAssocTypeId = taxAuthorityAssocTypeId;
 		taxAuthorityAssocTypeId = newTaxAuthorityAssocTypeId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, TaxPackage.TAX_AUTHORITY_ASSOC__TAX_AUTHORITY_ASSOC_TYPE_ID, oldTaxAuthorityAssocTypeId, taxAuthorityAssocTypeId));
 	}
 
 	/**

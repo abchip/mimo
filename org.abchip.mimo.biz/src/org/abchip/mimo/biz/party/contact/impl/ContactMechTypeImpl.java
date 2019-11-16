@@ -14,11 +14,13 @@ import org.abchip.mimo.biz.impl.BizEntityTypeImpl;
 import org.abchip.mimo.biz.party.contact.ContactMech;
 import org.abchip.mimo.biz.party.contact.ContactMechType;
 import org.abchip.mimo.biz.party.contact.ContactPackage;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.util.BasicInternalEList;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -162,7 +164,10 @@ public class ContactMechTypeImpl extends BizEntityTypeImpl<ContactMech> implemen
 	 */
 	@Override
 	public void setDescription(String newDescription) {
+		String oldDescription = description;
 		description = newDescription;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ContactPackage.CONTACT_MECH_TYPE__DESCRIPTION, oldDescription, description));
 	}
 
 	/**
@@ -182,7 +187,10 @@ public class ContactMechTypeImpl extends BizEntityTypeImpl<ContactMech> implemen
 	 */
 	@Override
 	public void setHasTable(boolean newHasTable) {
+		boolean oldHasTable = hasTable;
 		hasTable = newHasTable;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ContactPackage.CONTACT_MECH_TYPE__HAS_TABLE, oldHasTable, hasTable));
 	}
 
 	/**
@@ -196,6 +204,8 @@ public class ContactMechTypeImpl extends BizEntityTypeImpl<ContactMech> implemen
 			InternalEObject oldParentTypeId = (InternalEObject)parentTypeId;
 			parentTypeId = (ContactMechType)eResolveProxy(oldParentTypeId);
 			if (parentTypeId != oldParentTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ContactPackage.CONTACT_MECH_TYPE__PARENT_TYPE_ID, oldParentTypeId, parentTypeId));
 			}
 		}
 		return parentTypeId;
@@ -217,7 +227,10 @@ public class ContactMechTypeImpl extends BizEntityTypeImpl<ContactMech> implemen
 	 */
 	@Override
 	public void setParentTypeId(ContactMechType newParentTypeId) {
+		ContactMechType oldParentTypeId = parentTypeId;
 		parentTypeId = newParentTypeId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ContactPackage.CONTACT_MECH_TYPE__PARENT_TYPE_ID, oldParentTypeId, parentTypeId));
 	}
 
 	/**
@@ -228,7 +241,7 @@ public class ContactMechTypeImpl extends BizEntityTypeImpl<ContactMech> implemen
 	@Override
 	public List<String> getContactMechTypeAttrs() {
 		if (contactMechTypeAttrs == null) {
-			contactMechTypeAttrs = new BasicInternalEList<String>(String.class);
+			contactMechTypeAttrs = new EDataTypeUniqueEList<String>(String.class, this, ContactPackage.CONTACT_MECH_TYPE__CONTACT_MECH_TYPE_ATTRS);
 		}
 		return contactMechTypeAttrs;
 	}
@@ -241,7 +254,7 @@ public class ContactMechTypeImpl extends BizEntityTypeImpl<ContactMech> implemen
 	@Override
 	public List<String> getContactMechTypePurposes() {
 		if (contactMechTypePurposes == null) {
-			contactMechTypePurposes = new BasicInternalEList<String>(String.class);
+			contactMechTypePurposes = new EDataTypeUniqueEList<String>(String.class, this, ContactPackage.CONTACT_MECH_TYPE__CONTACT_MECH_TYPE_PURPOSES);
 		}
 		return contactMechTypePurposes;
 	}
@@ -335,7 +348,10 @@ public class ContactMechTypeImpl extends BizEntityTypeImpl<ContactMech> implemen
 	 */
 	@Override
 	public void setContactMechTypeId(String newContactMechTypeId) {
+		String oldContactMechTypeId = contactMechTypeId;
 		contactMechTypeId = newContactMechTypeId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ContactPackage.CONTACT_MECH_TYPE__CONTACT_MECH_TYPE_ID, oldContactMechTypeId, contactMechTypeId));
 	}
 
 	/**

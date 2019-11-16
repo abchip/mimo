@@ -11,10 +11,12 @@ import org.abchip.mimo.biz.content.content.ContentPackage;
 import org.abchip.mimo.biz.content.content.ContentSearchConstraint;
 import org.abchip.mimo.biz.content.content.ContentSearchResult;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -291,7 +293,10 @@ public class ContentSearchConstraintImpl extends BizEntityImpl implements Conten
 	 */
 	@Override
 	public void setConstraintName(String newConstraintName) {
+		String oldConstraintName = constraintName;
 		constraintName = newConstraintName;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ContentPackage.CONTENT_SEARCH_CONSTRAINT__CONSTRAINT_NAME, oldConstraintName, constraintName));
 	}
 
 	/**
@@ -311,7 +316,10 @@ public class ContentSearchConstraintImpl extends BizEntityImpl implements Conten
 	 */
 	@Override
 	public void setConstraintSeqId(String newConstraintSeqId) {
+		String oldConstraintSeqId = constraintSeqId;
 		constraintSeqId = newConstraintSeqId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ContentPackage.CONTENT_SEARCH_CONSTRAINT__CONSTRAINT_SEQ_ID, oldConstraintSeqId, constraintSeqId));
 	}
 
 	/**
@@ -331,7 +339,10 @@ public class ContentSearchConstraintImpl extends BizEntityImpl implements Conten
 	 */
 	@Override
 	public void setAnyPrefix(boolean newAnyPrefix) {
+		boolean oldAnyPrefix = anyPrefix;
 		anyPrefix = newAnyPrefix;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ContentPackage.CONTENT_SEARCH_CONSTRAINT__ANY_PREFIX, oldAnyPrefix, anyPrefix));
 	}
 
 	/**
@@ -351,7 +362,10 @@ public class ContentSearchConstraintImpl extends BizEntityImpl implements Conten
 	 */
 	@Override
 	public void setAnySuffix(boolean newAnySuffix) {
+		boolean oldAnySuffix = anySuffix;
 		anySuffix = newAnySuffix;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ContentPackage.CONTENT_SEARCH_CONSTRAINT__ANY_SUFFIX, oldAnySuffix, anySuffix));
 	}
 
 	/**
@@ -365,6 +379,8 @@ public class ContentSearchConstraintImpl extends BizEntityImpl implements Conten
 			InternalEObject oldContentSearchResultId = (InternalEObject)contentSearchResultId;
 			contentSearchResultId = (ContentSearchResult)eResolveProxy(oldContentSearchResultId);
 			if (contentSearchResultId != oldContentSearchResultId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ContentPackage.CONTENT_SEARCH_CONSTRAINT__CONTENT_SEARCH_RESULT_ID, oldContentSearchResultId, contentSearchResultId));
 			}
 		}
 		return contentSearchResultId;
@@ -386,7 +402,10 @@ public class ContentSearchConstraintImpl extends BizEntityImpl implements Conten
 	 */
 	@Override
 	public void setContentSearchResultId(ContentSearchResult newContentSearchResultId) {
+		ContentSearchResult oldContentSearchResultId = contentSearchResultId;
 		contentSearchResultId = newContentSearchResultId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ContentPackage.CONTENT_SEARCH_CONSTRAINT__CONTENT_SEARCH_RESULT_ID, oldContentSearchResultId, contentSearchResultId));
 	}
 
 	/**
@@ -406,7 +425,10 @@ public class ContentSearchConstraintImpl extends BizEntityImpl implements Conten
 	 */
 	@Override
 	public void setHighValue(String newHighValue) {
+		String oldHighValue = highValue;
 		highValue = newHighValue;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ContentPackage.CONTENT_SEARCH_CONSTRAINT__HIGH_VALUE, oldHighValue, highValue));
 	}
 
 	/**
@@ -426,7 +448,10 @@ public class ContentSearchConstraintImpl extends BizEntityImpl implements Conten
 	 */
 	@Override
 	public void setIncludeSubCategories(boolean newIncludeSubCategories) {
+		boolean oldIncludeSubCategories = includeSubCategories;
 		includeSubCategories = newIncludeSubCategories;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ContentPackage.CONTENT_SEARCH_CONSTRAINT__INCLUDE_SUB_CATEGORIES, oldIncludeSubCategories, includeSubCategories));
 	}
 
 	/**
@@ -446,7 +471,10 @@ public class ContentSearchConstraintImpl extends BizEntityImpl implements Conten
 	 */
 	@Override
 	public void setInfoString(String newInfoString) {
+		String oldInfoString = infoString;
 		infoString = newInfoString;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ContentPackage.CONTENT_SEARCH_CONSTRAINT__INFO_STRING, oldInfoString, infoString));
 	}
 
 	/**
@@ -466,7 +494,10 @@ public class ContentSearchConstraintImpl extends BizEntityImpl implements Conten
 	 */
 	@Override
 	public void setIsAnd(boolean newIsAnd) {
+		boolean oldIsAnd = isAnd;
 		isAnd = newIsAnd;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ContentPackage.CONTENT_SEARCH_CONSTRAINT__IS_AND, oldIsAnd, isAnd));
 	}
 
 	/**
@@ -486,7 +517,10 @@ public class ContentSearchConstraintImpl extends BizEntityImpl implements Conten
 	 */
 	@Override
 	public void setLowValue(String newLowValue) {
+		String oldLowValue = lowValue;
 		lowValue = newLowValue;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ContentPackage.CONTENT_SEARCH_CONSTRAINT__LOW_VALUE, oldLowValue, lowValue));
 	}
 
 	/**
@@ -506,7 +540,10 @@ public class ContentSearchConstraintImpl extends BizEntityImpl implements Conten
 	 */
 	@Override
 	public void setRemoveStems(boolean newRemoveStems) {
+		boolean oldRemoveStems = removeStems;
 		removeStems = newRemoveStems;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ContentPackage.CONTENT_SEARCH_CONSTRAINT__REMOVE_STEMS, oldRemoveStems, removeStems));
 	}
 
 	/**

@@ -12,10 +12,12 @@ import org.abchip.mimo.biz.content.website.WebAnalyticsType;
 import org.abchip.mimo.biz.content.website.WebsitePackage;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.webapp.website.WebSite;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -114,7 +116,10 @@ public class WebAnalyticsConfigImpl extends BizEntityImpl implements WebAnalytic
 	 */
 	@Override
 	public void setWebAnalyticsCode(String newWebAnalyticsCode) {
+		String oldWebAnalyticsCode = webAnalyticsCode;
 		webAnalyticsCode = newWebAnalyticsCode;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.WEB_ANALYTICS_CONFIG__WEB_ANALYTICS_CODE, oldWebAnalyticsCode, webAnalyticsCode));
 	}
 
 	/**
@@ -128,6 +133,8 @@ public class WebAnalyticsConfigImpl extends BizEntityImpl implements WebAnalytic
 			InternalEObject oldWebAnalyticsTypeId = (InternalEObject)webAnalyticsTypeId;
 			webAnalyticsTypeId = (WebAnalyticsType)eResolveProxy(oldWebAnalyticsTypeId);
 			if (webAnalyticsTypeId != oldWebAnalyticsTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WebsitePackage.WEB_ANALYTICS_CONFIG__WEB_ANALYTICS_TYPE_ID, oldWebAnalyticsTypeId, webAnalyticsTypeId));
 			}
 		}
 		return webAnalyticsTypeId;
@@ -149,7 +156,10 @@ public class WebAnalyticsConfigImpl extends BizEntityImpl implements WebAnalytic
 	 */
 	@Override
 	public void setWebAnalyticsTypeId(WebAnalyticsType newWebAnalyticsTypeId) {
+		WebAnalyticsType oldWebAnalyticsTypeId = webAnalyticsTypeId;
 		webAnalyticsTypeId = newWebAnalyticsTypeId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.WEB_ANALYTICS_CONFIG__WEB_ANALYTICS_TYPE_ID, oldWebAnalyticsTypeId, webAnalyticsTypeId));
 	}
 
 	/**
@@ -163,6 +173,8 @@ public class WebAnalyticsConfigImpl extends BizEntityImpl implements WebAnalytic
 			InternalEObject oldWebSiteId = (InternalEObject)webSiteId;
 			webSiteId = (WebSite)eResolveProxy(oldWebSiteId);
 			if (webSiteId != oldWebSiteId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WebsitePackage.WEB_ANALYTICS_CONFIG__WEB_SITE_ID, oldWebSiteId, webSiteId));
 			}
 		}
 		return webSiteId;
@@ -184,7 +196,10 @@ public class WebAnalyticsConfigImpl extends BizEntityImpl implements WebAnalytic
 	 */
 	@Override
 	public void setWebSiteId(WebSite newWebSiteId) {
+		WebSite oldWebSiteId = webSiteId;
 		webSiteId = newWebSiteId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.WEB_ANALYTICS_CONFIG__WEB_SITE_ID, oldWebSiteId, webSiteId));
 	}
 
 	/**

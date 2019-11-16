@@ -14,9 +14,11 @@ import org.abchip.mimo.biz.impl.BizEntityTypeImpl;
 import org.abchip.mimo.biz.product.product.ProductMeter;
 import org.abchip.mimo.biz.product.product.ProductMeterType;
 import org.abchip.mimo.biz.product.product.ProductPackage;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -119,6 +121,8 @@ public class ProductMeterTypeImpl extends BizEntityTypeImpl<ProductMeter> implem
 			InternalEObject oldDefaultUomId = (InternalEObject)defaultUomId;
 			defaultUomId = (Uom)eResolveProxy(oldDefaultUomId);
 			if (defaultUomId != oldDefaultUomId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ProductPackage.PRODUCT_METER_TYPE__DEFAULT_UOM_ID, oldDefaultUomId, defaultUomId));
 			}
 		}
 		return defaultUomId;
@@ -140,7 +144,10 @@ public class ProductMeterTypeImpl extends BizEntityTypeImpl<ProductMeter> implem
 	 */
 	@Override
 	public void setDefaultUomId(Uom newDefaultUomId) {
+		Uom oldDefaultUomId = defaultUomId;
 		defaultUomId = newDefaultUomId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ProductPackage.PRODUCT_METER_TYPE__DEFAULT_UOM_ID, oldDefaultUomId, defaultUomId));
 	}
 
 	/**
@@ -160,7 +167,10 @@ public class ProductMeterTypeImpl extends BizEntityTypeImpl<ProductMeter> implem
 	 */
 	@Override
 	public void setDescription(String newDescription) {
+		String oldDescription = description;
 		description = newDescription;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ProductPackage.PRODUCT_METER_TYPE__DESCRIPTION, oldDescription, description));
 	}
 
 	/**
@@ -216,7 +226,10 @@ public class ProductMeterTypeImpl extends BizEntityTypeImpl<ProductMeter> implem
 	 */
 	@Override
 	public void setProductMeterTypeId(String newProductMeterTypeId) {
+		String oldProductMeterTypeId = productMeterTypeId;
 		productMeterTypeId = newProductMeterTypeId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ProductPackage.PRODUCT_METER_TYPE__PRODUCT_METER_TYPE_ID, oldProductMeterTypeId, productMeterTypeId));
 	}
 
 	/**

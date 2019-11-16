@@ -13,10 +13,12 @@ import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.passport.OAuth2LinkedIn;
 import org.abchip.mimo.biz.passport.PassportPackage;
 import org.abchip.mimo.biz.product.store.ProductStore;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -245,6 +247,8 @@ public class OAuth2LinkedInImpl extends BizEntityImpl implements OAuth2LinkedIn 
 			InternalEObject oldProductStoreId = (InternalEObject)productStoreId;
 			productStoreId = (ProductStore)eResolveProxy(oldProductStoreId);
 			if (productStoreId != oldProductStoreId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PassportPackage.OAUTH2_LINKED_IN__PRODUCT_STORE_ID, oldProductStoreId, productStoreId));
 			}
 		}
 		return productStoreId;
@@ -266,7 +270,10 @@ public class OAuth2LinkedInImpl extends BizEntityImpl implements OAuth2LinkedIn 
 	 */
 	@Override
 	public void setProductStoreId(ProductStore newProductStoreId) {
+		ProductStore oldProductStoreId = productStoreId;
 		productStoreId = newProductStoreId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PassportPackage.OAUTH2_LINKED_IN__PRODUCT_STORE_ID, oldProductStoreId, productStoreId));
 	}
 
 	/**
@@ -286,7 +293,10 @@ public class OAuth2LinkedInImpl extends BizEntityImpl implements OAuth2LinkedIn 
 	 */
 	@Override
 	public void setFromDate(Date newFromDate) {
+		Date oldFromDate = fromDate;
 		fromDate = newFromDate;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PassportPackage.OAUTH2_LINKED_IN__FROM_DATE, oldFromDate, fromDate));
 	}
 
 	/**
@@ -306,7 +316,10 @@ public class OAuth2LinkedInImpl extends BizEntityImpl implements OAuth2LinkedIn 
 	 */
 	@Override
 	public void setApiKey(String newApiKey) {
+		String oldApiKey = apiKey;
 		apiKey = newApiKey;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PassportPackage.OAUTH2_LINKED_IN__API_KEY, oldApiKey, apiKey));
 	}
 
 	/**
@@ -326,7 +339,10 @@ public class OAuth2LinkedInImpl extends BizEntityImpl implements OAuth2LinkedIn 
 	 */
 	@Override
 	public void setIconUrl(String newIconUrl) {
+		String oldIconUrl = iconUrl;
 		iconUrl = newIconUrl;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PassportPackage.OAUTH2_LINKED_IN__ICON_URL, oldIconUrl, iconUrl));
 	}
 
 	/**
@@ -346,7 +362,10 @@ public class OAuth2LinkedInImpl extends BizEntityImpl implements OAuth2LinkedIn 
 	 */
 	@Override
 	public void setLiveReturnUrl(String newLiveReturnUrl) {
+		String oldLiveReturnUrl = liveReturnUrl;
 		liveReturnUrl = newLiveReturnUrl;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PassportPackage.OAUTH2_LINKED_IN__LIVE_RETURN_URL, oldLiveReturnUrl, liveReturnUrl));
 	}
 
 	/**
@@ -366,7 +385,10 @@ public class OAuth2LinkedInImpl extends BizEntityImpl implements OAuth2LinkedIn 
 	 */
 	@Override
 	public void setLocalRedirectUri(String newLocalRedirectUri) {
+		String oldLocalRedirectUri = localRedirectUri;
 		localRedirectUri = newLocalRedirectUri;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PassportPackage.OAUTH2_LINKED_IN__LOCAL_REDIRECT_URI, oldLocalRedirectUri, localRedirectUri));
 	}
 
 	/**
@@ -386,7 +408,10 @@ public class OAuth2LinkedInImpl extends BizEntityImpl implements OAuth2LinkedIn 
 	 */
 	@Override
 	public void setSecretKey(String newSecretKey) {
+		String oldSecretKey = secretKey;
 		secretKey = newSecretKey;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PassportPackage.OAUTH2_LINKED_IN__SECRET_KEY, oldSecretKey, secretKey));
 	}
 
 	/**
@@ -406,7 +431,10 @@ public class OAuth2LinkedInImpl extends BizEntityImpl implements OAuth2LinkedIn 
 	 */
 	@Override
 	public void setTestReturnUrl(String newTestReturnUrl) {
+		String oldTestReturnUrl = testReturnUrl;
 		testReturnUrl = newTestReturnUrl;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PassportPackage.OAUTH2_LINKED_IN__TEST_RETURN_URL, oldTestReturnUrl, testReturnUrl));
 	}
 
 	/**
@@ -426,7 +454,10 @@ public class OAuth2LinkedInImpl extends BizEntityImpl implements OAuth2LinkedIn 
 	 */
 	@Override
 	public void setThruDate(Date newThruDate) {
+		Date oldThruDate = thruDate;
 		thruDate = newThruDate;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PassportPackage.OAUTH2_LINKED_IN__THRU_DATE, oldThruDate, thruDate));
 	}
 
 	/**

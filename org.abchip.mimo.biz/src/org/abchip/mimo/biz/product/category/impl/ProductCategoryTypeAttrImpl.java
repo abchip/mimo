@@ -11,9 +11,11 @@ import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.product.category.CategoryPackage;
 import org.abchip.mimo.biz.product.category.ProductCategoryType;
 import org.abchip.mimo.biz.product.category.ProductCategoryTypeAttr;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -122,7 +124,10 @@ public class ProductCategoryTypeAttrImpl extends BizEntityImpl implements Produc
 	 */
 	@Override
 	public void setDescription(String newDescription) {
+		String oldDescription = description;
 		description = newDescription;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, CategoryPackage.PRODUCT_CATEGORY_TYPE_ATTR__DESCRIPTION, oldDescription, description));
 	}
 
 	/**
@@ -142,7 +147,10 @@ public class ProductCategoryTypeAttrImpl extends BizEntityImpl implements Produc
 	 */
 	@Override
 	public void setAttrName(String newAttrName) {
+		String oldAttrName = attrName;
 		attrName = newAttrName;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, CategoryPackage.PRODUCT_CATEGORY_TYPE_ATTR__ATTR_NAME, oldAttrName, attrName));
 	}
 
 	/**
@@ -156,6 +164,8 @@ public class ProductCategoryTypeAttrImpl extends BizEntityImpl implements Produc
 			InternalEObject oldProductCategoryTypeId = (InternalEObject)productCategoryTypeId;
 			productCategoryTypeId = (ProductCategoryType)eResolveProxy(oldProductCategoryTypeId);
 			if (productCategoryTypeId != oldProductCategoryTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, CategoryPackage.PRODUCT_CATEGORY_TYPE_ATTR__PRODUCT_CATEGORY_TYPE_ID, oldProductCategoryTypeId, productCategoryTypeId));
 			}
 		}
 		return productCategoryTypeId;
@@ -177,7 +187,10 @@ public class ProductCategoryTypeAttrImpl extends BizEntityImpl implements Produc
 	 */
 	@Override
 	public void setProductCategoryTypeId(ProductCategoryType newProductCategoryTypeId) {
+		ProductCategoryType oldProductCategoryTypeId = productCategoryTypeId;
 		productCategoryTypeId = newProductCategoryTypeId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, CategoryPackage.PRODUCT_CATEGORY_TYPE_ATTR__PRODUCT_CATEGORY_TYPE_ID, oldProductCategoryTypeId, productCategoryTypeId));
 	}
 
 	/**

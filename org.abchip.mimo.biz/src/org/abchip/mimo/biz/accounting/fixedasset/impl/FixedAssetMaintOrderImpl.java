@@ -12,9 +12,11 @@ import org.abchip.mimo.biz.accounting.fixedasset.FixedAssetMaintOrder;
 import org.abchip.mimo.biz.accounting.fixedasset.FixedassetPackage;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.order.order.OrderHeader;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -128,7 +130,10 @@ public class FixedAssetMaintOrderImpl extends BizEntityImpl implements FixedAsse
 	 */
 	@Override
 	public void setMaintHistSeqId(String newMaintHistSeqId) {
+		String oldMaintHistSeqId = maintHistSeqId;
 		maintHistSeqId = newMaintHistSeqId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, FixedassetPackage.FIXED_ASSET_MAINT_ORDER__MAINT_HIST_SEQ_ID, oldMaintHistSeqId, maintHistSeqId));
 	}
 
 	/**
@@ -142,6 +147,8 @@ public class FixedAssetMaintOrderImpl extends BizEntityImpl implements FixedAsse
 			InternalEObject oldOrderId = (InternalEObject)orderId;
 			orderId = (OrderHeader)eResolveProxy(oldOrderId);
 			if (orderId != oldOrderId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, FixedassetPackage.FIXED_ASSET_MAINT_ORDER__ORDER_ID, oldOrderId, orderId));
 			}
 		}
 		return orderId;
@@ -163,7 +170,10 @@ public class FixedAssetMaintOrderImpl extends BizEntityImpl implements FixedAsse
 	 */
 	@Override
 	public void setOrderId(OrderHeader newOrderId) {
+		OrderHeader oldOrderId = orderId;
 		orderId = newOrderId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, FixedassetPackage.FIXED_ASSET_MAINT_ORDER__ORDER_ID, oldOrderId, orderId));
 	}
 
 	/**
@@ -183,7 +193,10 @@ public class FixedAssetMaintOrderImpl extends BizEntityImpl implements FixedAsse
 	 */
 	@Override
 	public void setOrderItemSeqId(String newOrderItemSeqId) {
+		String oldOrderItemSeqId = orderItemSeqId;
 		orderItemSeqId = newOrderItemSeqId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, FixedassetPackage.FIXED_ASSET_MAINT_ORDER__ORDER_ITEM_SEQ_ID, oldOrderItemSeqId, orderItemSeqId));
 	}
 
 	/**
@@ -197,6 +210,8 @@ public class FixedAssetMaintOrderImpl extends BizEntityImpl implements FixedAsse
 			InternalEObject oldFixedAssetId = (InternalEObject)fixedAssetId;
 			fixedAssetId = (FixedAsset)eResolveProxy(oldFixedAssetId);
 			if (fixedAssetId != oldFixedAssetId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, FixedassetPackage.FIXED_ASSET_MAINT_ORDER__FIXED_ASSET_ID, oldFixedAssetId, fixedAssetId));
 			}
 		}
 		return fixedAssetId;
@@ -218,7 +233,10 @@ public class FixedAssetMaintOrderImpl extends BizEntityImpl implements FixedAsse
 	 */
 	@Override
 	public void setFixedAssetId(FixedAsset newFixedAssetId) {
+		FixedAsset oldFixedAssetId = fixedAssetId;
 		fixedAssetId = newFixedAssetId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, FixedassetPackage.FIXED_ASSET_MAINT_ORDER__FIXED_ASSET_ID, oldFixedAssetId, fixedAssetId));
 	}
 
 	/**

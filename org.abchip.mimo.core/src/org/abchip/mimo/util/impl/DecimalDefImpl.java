@@ -11,7 +11,9 @@ package org.abchip.mimo.util.impl;
 import org.abchip.mimo.util.DecimalDef;
 import org.abchip.mimo.util.DecimalType;
 import org.abchip.mimo.util.UtilPackage;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -124,7 +126,10 @@ public class DecimalDefImpl extends DataDefImpl<Number> implements DecimalDef {
 	 */
 	@Override
 	public void setPrecision(int newPrecision) {
+		int oldPrecision = precision;
 		precision = newPrecision;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, UtilPackage.DECIMAL_DEF__PRECISION, oldPrecision, precision));
 	}
 
 	/**
@@ -144,7 +149,10 @@ public class DecimalDefImpl extends DataDefImpl<Number> implements DecimalDef {
 	 */
 	@Override
 	public void setScale(int newScale) {
+		int oldScale = scale;
 		scale = newScale;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, UtilPackage.DECIMAL_DEF__SCALE, oldScale, scale));
 	}
 
 	/**
@@ -164,7 +172,10 @@ public class DecimalDefImpl extends DataDefImpl<Number> implements DecimalDef {
 	 */
 	@Override
 	public void setType(DecimalType newType) {
+		DecimalType oldType = type;
 		type = newType == null ? TYPE_EDEFAULT : newType;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, UtilPackage.DECIMAL_DEF__TYPE, oldType, type));
 	}
 
 	/**

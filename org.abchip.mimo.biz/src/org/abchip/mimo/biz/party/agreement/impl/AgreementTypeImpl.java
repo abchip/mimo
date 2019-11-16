@@ -14,11 +14,13 @@ import org.abchip.mimo.biz.impl.BizEntityTypeImpl;
 import org.abchip.mimo.biz.party.agreement.Agreement;
 import org.abchip.mimo.biz.party.agreement.AgreementPackage;
 import org.abchip.mimo.biz.party.agreement.AgreementType;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.util.BasicInternalEList;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -152,7 +154,10 @@ public class AgreementTypeImpl extends BizEntityTypeImpl<Agreement> implements A
 	 */
 	@Override
 	public void setDescription(String newDescription) {
+		String oldDescription = description;
 		description = newDescription;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, AgreementPackage.AGREEMENT_TYPE__DESCRIPTION, oldDescription, description));
 	}
 
 	/**
@@ -172,7 +177,10 @@ public class AgreementTypeImpl extends BizEntityTypeImpl<Agreement> implements A
 	 */
 	@Override
 	public void setHasTable(boolean newHasTable) {
+		boolean oldHasTable = hasTable;
 		hasTable = newHasTable;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, AgreementPackage.AGREEMENT_TYPE__HAS_TABLE, oldHasTable, hasTable));
 	}
 
 	/**
@@ -186,6 +194,8 @@ public class AgreementTypeImpl extends BizEntityTypeImpl<Agreement> implements A
 			InternalEObject oldParentTypeId = (InternalEObject)parentTypeId;
 			parentTypeId = (AgreementType)eResolveProxy(oldParentTypeId);
 			if (parentTypeId != oldParentTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, AgreementPackage.AGREEMENT_TYPE__PARENT_TYPE_ID, oldParentTypeId, parentTypeId));
 			}
 		}
 		return parentTypeId;
@@ -207,7 +217,10 @@ public class AgreementTypeImpl extends BizEntityTypeImpl<Agreement> implements A
 	 */
 	@Override
 	public void setParentTypeId(AgreementType newParentTypeId) {
+		AgreementType oldParentTypeId = parentTypeId;
 		parentTypeId = newParentTypeId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, AgreementPackage.AGREEMENT_TYPE__PARENT_TYPE_ID, oldParentTypeId, parentTypeId));
 	}
 
 	/**
@@ -218,7 +231,7 @@ public class AgreementTypeImpl extends BizEntityTypeImpl<Agreement> implements A
 	@Override
 	public List<String> getAgreementTypeAttrs() {
 		if (agreementTypeAttrs == null) {
-			agreementTypeAttrs = new BasicInternalEList<String>(String.class);
+			agreementTypeAttrs = new EDataTypeUniqueEList<String>(String.class, this, AgreementPackage.AGREEMENT_TYPE__AGREEMENT_TYPE_ATTRS);
 		}
 		return agreementTypeAttrs;
 	}
@@ -264,7 +277,10 @@ public class AgreementTypeImpl extends BizEntityTypeImpl<Agreement> implements A
 	 */
 	@Override
 	public void setAgreementTypeId(String newAgreementTypeId) {
+		String oldAgreementTypeId = agreementTypeId;
 		agreementTypeId = newAgreementTypeId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, AgreementPackage.AGREEMENT_TYPE__AGREEMENT_TYPE_ID, oldAgreementTypeId, agreementTypeId));
 	}
 
 	/**

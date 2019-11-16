@@ -20,11 +20,13 @@ import org.abchip.mimo.biz.party.agreement.Agreement;
 import org.abchip.mimo.biz.party.agreement.AgreementPackage;
 import org.abchip.mimo.biz.party.agreement.AgreementTerm;
 import org.abchip.mimo.biz.party.agreement.TermType;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.util.BasicInternalEList;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -312,7 +314,10 @@ public class AgreementTermImpl extends BizEntityImpl implements AgreementTerm {
 	 */
 	@Override
 	public void setAgreementItemSeqId(String newAgreementItemSeqId) {
+		String oldAgreementItemSeqId = agreementItemSeqId;
 		agreementItemSeqId = newAgreementItemSeqId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, AgreementPackage.AGREEMENT_TERM__AGREEMENT_ITEM_SEQ_ID, oldAgreementItemSeqId, agreementItemSeqId));
 	}
 
 	/**
@@ -332,7 +337,10 @@ public class AgreementTermImpl extends BizEntityImpl implements AgreementTerm {
 	 */
 	@Override
 	public void setDescription(String newDescription) {
+		String oldDescription = description;
 		description = newDescription;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, AgreementPackage.AGREEMENT_TERM__DESCRIPTION, oldDescription, description));
 	}
 
 	/**
@@ -352,7 +360,10 @@ public class AgreementTermImpl extends BizEntityImpl implements AgreementTerm {
 	 */
 	@Override
 	public void setFromDate(Date newFromDate) {
+		Date oldFromDate = fromDate;
 		fromDate = newFromDate;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, AgreementPackage.AGREEMENT_TERM__FROM_DATE, oldFromDate, fromDate));
 	}
 
 	/**
@@ -366,6 +377,8 @@ public class AgreementTermImpl extends BizEntityImpl implements AgreementTerm {
 			InternalEObject oldInvoiceItemTypeId = (InternalEObject)invoiceItemTypeId;
 			invoiceItemTypeId = (InvoiceItemType)eResolveProxy(oldInvoiceItemTypeId);
 			if (invoiceItemTypeId != oldInvoiceItemTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, AgreementPackage.AGREEMENT_TERM__INVOICE_ITEM_TYPE_ID, oldInvoiceItemTypeId, invoiceItemTypeId));
 			}
 		}
 		return invoiceItemTypeId;
@@ -387,7 +400,10 @@ public class AgreementTermImpl extends BizEntityImpl implements AgreementTerm {
 	 */
 	@Override
 	public void setInvoiceItemTypeId(InvoiceItemType newInvoiceItemTypeId) {
+		InvoiceItemType oldInvoiceItemTypeId = invoiceItemTypeId;
 		invoiceItemTypeId = newInvoiceItemTypeId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, AgreementPackage.AGREEMENT_TERM__INVOICE_ITEM_TYPE_ID, oldInvoiceItemTypeId, invoiceItemTypeId));
 	}
 
 	/**
@@ -407,7 +423,10 @@ public class AgreementTermImpl extends BizEntityImpl implements AgreementTerm {
 	 */
 	@Override
 	public void setMaxQuantity(double newMaxQuantity) {
+		double oldMaxQuantity = maxQuantity;
 		maxQuantity = newMaxQuantity;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, AgreementPackage.AGREEMENT_TERM__MAX_QUANTITY, oldMaxQuantity, maxQuantity));
 	}
 
 	/**
@@ -427,7 +446,10 @@ public class AgreementTermImpl extends BizEntityImpl implements AgreementTerm {
 	 */
 	@Override
 	public void setMinQuantity(double newMinQuantity) {
+		double oldMinQuantity = minQuantity;
 		minQuantity = newMinQuantity;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, AgreementPackage.AGREEMENT_TERM__MIN_QUANTITY, oldMinQuantity, minQuantity));
 	}
 
 	/**
@@ -447,7 +469,10 @@ public class AgreementTermImpl extends BizEntityImpl implements AgreementTerm {
 	 */
 	@Override
 	public void setTermDays(long newTermDays) {
+		long oldTermDays = termDays;
 		termDays = newTermDays;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, AgreementPackage.AGREEMENT_TERM__TERM_DAYS, oldTermDays, termDays));
 	}
 
 	/**
@@ -467,7 +492,10 @@ public class AgreementTermImpl extends BizEntityImpl implements AgreementTerm {
 	 */
 	@Override
 	public void setTermValue(BigDecimal newTermValue) {
+		BigDecimal oldTermValue = termValue;
 		termValue = newTermValue;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, AgreementPackage.AGREEMENT_TERM__TERM_VALUE, oldTermValue, termValue));
 	}
 
 	/**
@@ -487,7 +515,10 @@ public class AgreementTermImpl extends BizEntityImpl implements AgreementTerm {
 	 */
 	@Override
 	public void setTextValue(String newTextValue) {
+		String oldTextValue = textValue;
 		textValue = newTextValue;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, AgreementPackage.AGREEMENT_TERM__TEXT_VALUE, oldTextValue, textValue));
 	}
 
 	/**
@@ -507,7 +538,10 @@ public class AgreementTermImpl extends BizEntityImpl implements AgreementTerm {
 	 */
 	@Override
 	public void setThruDate(Date newThruDate) {
+		Date oldThruDate = thruDate;
 		thruDate = newThruDate;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, AgreementPackage.AGREEMENT_TERM__THRU_DATE, oldThruDate, thruDate));
 	}
 
 	/**
@@ -518,7 +552,7 @@ public class AgreementTermImpl extends BizEntityImpl implements AgreementTerm {
 	@Override
 	public List<String> getAgreementTermAttributes() {
 		if (agreementTermAttributes == null) {
-			agreementTermAttributes = new BasicInternalEList<String>(String.class);
+			agreementTermAttributes = new EDataTypeUniqueEList<String>(String.class, this, AgreementPackage.AGREEMENT_TERM__AGREEMENT_TERM_ATTRIBUTES);
 		}
 		return agreementTermAttributes;
 	}
@@ -534,6 +568,8 @@ public class AgreementTermImpl extends BizEntityImpl implements AgreementTerm {
 			InternalEObject oldTermTypeId = (InternalEObject)termTypeId;
 			termTypeId = (TermType)eResolveProxy(oldTermTypeId);
 			if (termTypeId != oldTermTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, AgreementPackage.AGREEMENT_TERM__TERM_TYPE_ID, oldTermTypeId, termTypeId));
 			}
 		}
 		return termTypeId;
@@ -555,7 +591,10 @@ public class AgreementTermImpl extends BizEntityImpl implements AgreementTerm {
 	 */
 	@Override
 	public void setTermTypeId(TermType newTermTypeId) {
+		TermType oldTermTypeId = termTypeId;
 		termTypeId = newTermTypeId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, AgreementPackage.AGREEMENT_TERM__TERM_TYPE_ID, oldTermTypeId, termTypeId));
 	}
 
 	/**
@@ -569,6 +608,8 @@ public class AgreementTermImpl extends BizEntityImpl implements AgreementTerm {
 			InternalEObject oldAgreementId = (InternalEObject)agreementId;
 			agreementId = (Agreement)eResolveProxy(oldAgreementId);
 			if (agreementId != oldAgreementId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, AgreementPackage.AGREEMENT_TERM__AGREEMENT_ID, oldAgreementId, agreementId));
 			}
 		}
 		return agreementId;
@@ -590,7 +631,10 @@ public class AgreementTermImpl extends BizEntityImpl implements AgreementTerm {
 	 */
 	@Override
 	public void setAgreementId(Agreement newAgreementId) {
+		Agreement oldAgreementId = agreementId;
 		agreementId = newAgreementId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, AgreementPackage.AGREEMENT_TERM__AGREEMENT_ID, oldAgreementId, agreementId));
 	}
 
 	/**
@@ -610,7 +654,10 @@ public class AgreementTermImpl extends BizEntityImpl implements AgreementTerm {
 	 */
 	@Override
 	public void setAgreementTermId(String newAgreementTermId) {
+		String oldAgreementTermId = agreementTermId;
 		agreementTermId = newAgreementTermId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, AgreementPackage.AGREEMENT_TERM__AGREEMENT_TERM_ID, oldAgreementTermId, agreementTermId));
 	}
 
 	/**

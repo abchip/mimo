@@ -12,7 +12,9 @@ import java.util.List;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.webapp.visit.PlatformType;
 import org.abchip.mimo.biz.webapp.visit.VisitPackage;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -131,7 +133,10 @@ public class PlatformTypeImpl extends BizEntityImpl implements PlatformType {
 	 */
 	@Override
 	public void setPlatformTypeId(String newPlatformTypeId) {
+		String oldPlatformTypeId = platformTypeId;
 		platformTypeId = newPlatformTypeId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, VisitPackage.PLATFORM_TYPE__PLATFORM_TYPE_ID, oldPlatformTypeId, platformTypeId));
 	}
 
 	/**
@@ -151,7 +156,10 @@ public class PlatformTypeImpl extends BizEntityImpl implements PlatformType {
 	 */
 	@Override
 	public void setPlatformName(String newPlatformName) {
+		String oldPlatformName = platformName;
 		platformName = newPlatformName;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, VisitPackage.PLATFORM_TYPE__PLATFORM_NAME, oldPlatformName, platformName));
 	}
 
 	/**
@@ -171,7 +179,10 @@ public class PlatformTypeImpl extends BizEntityImpl implements PlatformType {
 	 */
 	@Override
 	public void setPlatformVersion(String newPlatformVersion) {
+		String oldPlatformVersion = platformVersion;
 		platformVersion = newPlatformVersion;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, VisitPackage.PLATFORM_TYPE__PLATFORM_VERSION, oldPlatformVersion, platformVersion));
 	}
 
 	/**

@@ -11,10 +11,12 @@ import org.abchip.mimo.biz.content.content.ContentPackage;
 import org.abchip.mimo.biz.content.content.ContentRevisionItem;
 import org.abchip.mimo.biz.content.data.DataResource;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -155,7 +157,10 @@ public class ContentRevisionItemImpl extends BizEntityImpl implements ContentRev
 	 */
 	@Override
 	public void setContentId(String newContentId) {
+		String oldContentId = contentId;
 		contentId = newContentId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ContentPackage.CONTENT_REVISION_ITEM__CONTENT_ID, oldContentId, contentId));
 	}
 
 	/**
@@ -175,7 +180,10 @@ public class ContentRevisionItemImpl extends BizEntityImpl implements ContentRev
 	 */
 	@Override
 	public void setContentRevisionSeqId(String newContentRevisionSeqId) {
+		String oldContentRevisionSeqId = contentRevisionSeqId;
 		contentRevisionSeqId = newContentRevisionSeqId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ContentPackage.CONTENT_REVISION_ITEM__CONTENT_REVISION_SEQ_ID, oldContentRevisionSeqId, contentRevisionSeqId));
 	}
 
 	/**
@@ -195,7 +203,10 @@ public class ContentRevisionItemImpl extends BizEntityImpl implements ContentRev
 	 */
 	@Override
 	public void setItemContentId(String newItemContentId) {
+		String oldItemContentId = itemContentId;
 		itemContentId = newItemContentId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ContentPackage.CONTENT_REVISION_ITEM__ITEM_CONTENT_ID, oldItemContentId, itemContentId));
 	}
 
 	/**
@@ -209,6 +220,8 @@ public class ContentRevisionItemImpl extends BizEntityImpl implements ContentRev
 			InternalEObject oldNewDataResourceId = (InternalEObject)newDataResourceId;
 			newDataResourceId = (DataResource)eResolveProxy(oldNewDataResourceId);
 			if (newDataResourceId != oldNewDataResourceId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ContentPackage.CONTENT_REVISION_ITEM__NEW_DATA_RESOURCE_ID, oldNewDataResourceId, newDataResourceId));
 			}
 		}
 		return newDataResourceId;
@@ -230,7 +243,10 @@ public class ContentRevisionItemImpl extends BizEntityImpl implements ContentRev
 	 */
 	@Override
 	public void setNewDataResourceId(DataResource newNewDataResourceId) {
+		DataResource oldNewDataResourceId = newDataResourceId;
 		newDataResourceId = newNewDataResourceId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ContentPackage.CONTENT_REVISION_ITEM__NEW_DATA_RESOURCE_ID, oldNewDataResourceId, newDataResourceId));
 	}
 
 	/**
@@ -244,6 +260,8 @@ public class ContentRevisionItemImpl extends BizEntityImpl implements ContentRev
 			InternalEObject oldOldDataResourceId = (InternalEObject)oldDataResourceId;
 			oldDataResourceId = (DataResource)eResolveProxy(oldOldDataResourceId);
 			if (oldDataResourceId != oldOldDataResourceId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ContentPackage.CONTENT_REVISION_ITEM__OLD_DATA_RESOURCE_ID, oldOldDataResourceId, oldDataResourceId));
 			}
 		}
 		return oldDataResourceId;
@@ -265,7 +283,10 @@ public class ContentRevisionItemImpl extends BizEntityImpl implements ContentRev
 	 */
 	@Override
 	public void setOldDataResourceId(DataResource newOldDataResourceId) {
+		DataResource oldOldDataResourceId = oldDataResourceId;
 		oldDataResourceId = newOldDataResourceId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ContentPackage.CONTENT_REVISION_ITEM__OLD_DATA_RESOURCE_ID, oldOldDataResourceId, oldDataResourceId));
 	}
 
 	/**

@@ -11,10 +11,12 @@ import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.order.order.OrderAttribute;
 import org.abchip.mimo.biz.order.order.OrderHeader;
 import org.abchip.mimo.biz.order.order.OrderPackage;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -144,7 +146,10 @@ public class OrderAttributeImpl extends BizEntityImpl implements OrderAttribute 
 	 */
 	@Override
 	public void setAttrDescription(String newAttrDescription) {
+		String oldAttrDescription = attrDescription;
 		attrDescription = newAttrDescription;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_ATTRIBUTE__ATTR_DESCRIPTION, oldAttrDescription, attrDescription));
 	}
 
 	/**
@@ -164,7 +169,10 @@ public class OrderAttributeImpl extends BizEntityImpl implements OrderAttribute 
 	 */
 	@Override
 	public void setAttrName(String newAttrName) {
+		String oldAttrName = attrName;
 		attrName = newAttrName;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_ATTRIBUTE__ATTR_NAME, oldAttrName, attrName));
 	}
 
 	/**
@@ -184,7 +192,10 @@ public class OrderAttributeImpl extends BizEntityImpl implements OrderAttribute 
 	 */
 	@Override
 	public void setAttrValue(String newAttrValue) {
+		String oldAttrValue = attrValue;
 		attrValue = newAttrValue;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_ATTRIBUTE__ATTR_VALUE, oldAttrValue, attrValue));
 	}
 
 	/**
@@ -198,6 +209,8 @@ public class OrderAttributeImpl extends BizEntityImpl implements OrderAttribute 
 			InternalEObject oldOrderId = (InternalEObject)orderId;
 			orderId = (OrderHeader)eResolveProxy(oldOrderId);
 			if (orderId != oldOrderId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, OrderPackage.ORDER_ATTRIBUTE__ORDER_ID, oldOrderId, orderId));
 			}
 		}
 		return orderId;
@@ -219,7 +232,10 @@ public class OrderAttributeImpl extends BizEntityImpl implements OrderAttribute 
 	 */
 	@Override
 	public void setOrderId(OrderHeader newOrderId) {
+		OrderHeader oldOrderId = orderId;
 		orderId = newOrderId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_ATTRIBUTE__ORDER_ID, oldOrderId, orderId));
 	}
 
 	/**

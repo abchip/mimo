@@ -14,9 +14,11 @@ import org.abchip.mimo.biz.product.category.ProductCategory;
 import org.abchip.mimo.biz.product.feature.FeaturePackage;
 import org.abchip.mimo.biz.product.feature.ProductFeatureCategory;
 import org.abchip.mimo.biz.product.feature.ProductFeatureCategoryAppl;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -136,7 +138,10 @@ public class ProductFeatureCategoryApplImpl extends BizEntityImpl implements Pro
 	 */
 	@Override
 	public void setFromDate(Date newFromDate) {
+		Date oldFromDate = fromDate;
 		fromDate = newFromDate;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, FeaturePackage.PRODUCT_FEATURE_CATEGORY_APPL__FROM_DATE, oldFromDate, fromDate));
 	}
 
 	/**
@@ -156,7 +161,10 @@ public class ProductFeatureCategoryApplImpl extends BizEntityImpl implements Pro
 	 */
 	@Override
 	public void setThruDate(Date newThruDate) {
+		Date oldThruDate = thruDate;
 		thruDate = newThruDate;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, FeaturePackage.PRODUCT_FEATURE_CATEGORY_APPL__THRU_DATE, oldThruDate, thruDate));
 	}
 
 	/**
@@ -170,6 +178,8 @@ public class ProductFeatureCategoryApplImpl extends BizEntityImpl implements Pro
 			InternalEObject oldProductCategoryId = (InternalEObject)productCategoryId;
 			productCategoryId = (ProductCategory)eResolveProxy(oldProductCategoryId);
 			if (productCategoryId != oldProductCategoryId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, FeaturePackage.PRODUCT_FEATURE_CATEGORY_APPL__PRODUCT_CATEGORY_ID, oldProductCategoryId, productCategoryId));
 			}
 		}
 		return productCategoryId;
@@ -191,7 +201,10 @@ public class ProductFeatureCategoryApplImpl extends BizEntityImpl implements Pro
 	 */
 	@Override
 	public void setProductCategoryId(ProductCategory newProductCategoryId) {
+		ProductCategory oldProductCategoryId = productCategoryId;
 		productCategoryId = newProductCategoryId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, FeaturePackage.PRODUCT_FEATURE_CATEGORY_APPL__PRODUCT_CATEGORY_ID, oldProductCategoryId, productCategoryId));
 	}
 
 	/**
@@ -205,6 +218,8 @@ public class ProductFeatureCategoryApplImpl extends BizEntityImpl implements Pro
 			InternalEObject oldProductFeatureCategoryId = (InternalEObject)productFeatureCategoryId;
 			productFeatureCategoryId = (ProductFeatureCategory)eResolveProxy(oldProductFeatureCategoryId);
 			if (productFeatureCategoryId != oldProductFeatureCategoryId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, FeaturePackage.PRODUCT_FEATURE_CATEGORY_APPL__PRODUCT_FEATURE_CATEGORY_ID, oldProductFeatureCategoryId, productFeatureCategoryId));
 			}
 		}
 		return productFeatureCategoryId;
@@ -226,7 +241,10 @@ public class ProductFeatureCategoryApplImpl extends BizEntityImpl implements Pro
 	 */
 	@Override
 	public void setProductFeatureCategoryId(ProductFeatureCategory newProductFeatureCategoryId) {
+		ProductFeatureCategory oldProductFeatureCategoryId = productFeatureCategoryId;
 		productFeatureCategoryId = newProductFeatureCategoryId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, FeaturePackage.PRODUCT_FEATURE_CATEGORY_APPL__PRODUCT_FEATURE_CATEGORY_ID, oldProductFeatureCategoryId, productFeatureCategoryId));
 	}
 
 	/**

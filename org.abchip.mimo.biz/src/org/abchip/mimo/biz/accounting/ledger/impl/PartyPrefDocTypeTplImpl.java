@@ -16,10 +16,12 @@ import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.order.order.OrderType;
 import org.abchip.mimo.biz.order.quote.QuoteType;
 import org.abchip.mimo.biz.party.party.Party;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -203,7 +205,10 @@ public class PartyPrefDocTypeTplImpl extends BizEntityImpl implements PartyPrefD
 	 */
 	@Override
 	public void setCustomScreenId(String newCustomScreenId) {
+		String oldCustomScreenId = customScreenId;
 		customScreenId = newCustomScreenId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, LedgerPackage.PARTY_PREF_DOC_TYPE_TPL__CUSTOM_SCREEN_ID, oldCustomScreenId, customScreenId));
 	}
 
 	/**
@@ -223,7 +228,10 @@ public class PartyPrefDocTypeTplImpl extends BizEntityImpl implements PartyPrefD
 	 */
 	@Override
 	public void setFromDate(Date newFromDate) {
+		Date oldFromDate = fromDate;
 		fromDate = newFromDate;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, LedgerPackage.PARTY_PREF_DOC_TYPE_TPL__FROM_DATE, oldFromDate, fromDate));
 	}
 
 	/**
@@ -237,6 +245,8 @@ public class PartyPrefDocTypeTplImpl extends BizEntityImpl implements PartyPrefD
 			InternalEObject oldInvoiceTypeId = (InternalEObject)invoiceTypeId;
 			invoiceTypeId = (InvoiceType)eResolveProxy(oldInvoiceTypeId);
 			if (invoiceTypeId != oldInvoiceTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, LedgerPackage.PARTY_PREF_DOC_TYPE_TPL__INVOICE_TYPE_ID, oldInvoiceTypeId, invoiceTypeId));
 			}
 		}
 		return invoiceTypeId;
@@ -258,7 +268,10 @@ public class PartyPrefDocTypeTplImpl extends BizEntityImpl implements PartyPrefD
 	 */
 	@Override
 	public void setInvoiceTypeId(InvoiceType newInvoiceTypeId) {
+		InvoiceType oldInvoiceTypeId = invoiceTypeId;
 		invoiceTypeId = newInvoiceTypeId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, LedgerPackage.PARTY_PREF_DOC_TYPE_TPL__INVOICE_TYPE_ID, oldInvoiceTypeId, invoiceTypeId));
 	}
 
 	/**
@@ -272,6 +285,8 @@ public class PartyPrefDocTypeTplImpl extends BizEntityImpl implements PartyPrefD
 			InternalEObject oldOrderTypeId = (InternalEObject)orderTypeId;
 			orderTypeId = (OrderType)eResolveProxy(oldOrderTypeId);
 			if (orderTypeId != oldOrderTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, LedgerPackage.PARTY_PREF_DOC_TYPE_TPL__ORDER_TYPE_ID, oldOrderTypeId, orderTypeId));
 			}
 		}
 		return orderTypeId;
@@ -293,7 +308,10 @@ public class PartyPrefDocTypeTplImpl extends BizEntityImpl implements PartyPrefD
 	 */
 	@Override
 	public void setOrderTypeId(OrderType newOrderTypeId) {
+		OrderType oldOrderTypeId = orderTypeId;
 		orderTypeId = newOrderTypeId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, LedgerPackage.PARTY_PREF_DOC_TYPE_TPL__ORDER_TYPE_ID, oldOrderTypeId, orderTypeId));
 	}
 
 	/**
@@ -307,6 +325,8 @@ public class PartyPrefDocTypeTplImpl extends BizEntityImpl implements PartyPrefD
 			InternalEObject oldPartyId = (InternalEObject)partyId;
 			partyId = (Party)eResolveProxy(oldPartyId);
 			if (partyId != oldPartyId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, LedgerPackage.PARTY_PREF_DOC_TYPE_TPL__PARTY_ID, oldPartyId, partyId));
 			}
 		}
 		return partyId;
@@ -328,7 +348,10 @@ public class PartyPrefDocTypeTplImpl extends BizEntityImpl implements PartyPrefD
 	 */
 	@Override
 	public void setPartyId(Party newPartyId) {
+		Party oldPartyId = partyId;
 		partyId = newPartyId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, LedgerPackage.PARTY_PREF_DOC_TYPE_TPL__PARTY_ID, oldPartyId, partyId));
 	}
 
 	/**
@@ -348,7 +371,10 @@ public class PartyPrefDocTypeTplImpl extends BizEntityImpl implements PartyPrefD
 	 */
 	@Override
 	public void setPartyPrefDocTypeTplId(String newPartyPrefDocTypeTplId) {
+		String oldPartyPrefDocTypeTplId = partyPrefDocTypeTplId;
 		partyPrefDocTypeTplId = newPartyPrefDocTypeTplId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, LedgerPackage.PARTY_PREF_DOC_TYPE_TPL__PARTY_PREF_DOC_TYPE_TPL_ID, oldPartyPrefDocTypeTplId, partyPrefDocTypeTplId));
 	}
 
 	/**
@@ -362,6 +388,8 @@ public class PartyPrefDocTypeTplImpl extends BizEntityImpl implements PartyPrefD
 			InternalEObject oldQuoteTypeId = (InternalEObject)quoteTypeId;
 			quoteTypeId = (QuoteType)eResolveProxy(oldQuoteTypeId);
 			if (quoteTypeId != oldQuoteTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, LedgerPackage.PARTY_PREF_DOC_TYPE_TPL__QUOTE_TYPE_ID, oldQuoteTypeId, quoteTypeId));
 			}
 		}
 		return quoteTypeId;
@@ -383,7 +411,10 @@ public class PartyPrefDocTypeTplImpl extends BizEntityImpl implements PartyPrefD
 	 */
 	@Override
 	public void setQuoteTypeId(QuoteType newQuoteTypeId) {
+		QuoteType oldQuoteTypeId = quoteTypeId;
 		quoteTypeId = newQuoteTypeId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, LedgerPackage.PARTY_PREF_DOC_TYPE_TPL__QUOTE_TYPE_ID, oldQuoteTypeId, quoteTypeId));
 	}
 
 	/**
@@ -403,7 +434,10 @@ public class PartyPrefDocTypeTplImpl extends BizEntityImpl implements PartyPrefD
 	 */
 	@Override
 	public void setThruDate(Date newThruDate) {
+		Date oldThruDate = thruDate;
 		thruDate = newThruDate;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, LedgerPackage.PARTY_PREF_DOC_TYPE_TPL__THRU_DATE, oldThruDate, thruDate));
 	}
 
 	/**

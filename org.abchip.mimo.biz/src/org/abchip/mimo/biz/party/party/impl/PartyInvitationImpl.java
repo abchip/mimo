@@ -17,11 +17,13 @@ import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.party.party.Party;
 import org.abchip.mimo.biz.party.party.PartyInvitation;
 import org.abchip.mimo.biz.party.party.PartyPackage;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.util.BasicInternalEList;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -213,7 +215,10 @@ public class PartyInvitationImpl extends BizEntityImpl implements PartyInvitatio
 	 */
 	@Override
 	public void setEmailAddress(String newEmailAddress) {
+		String oldEmailAddress = emailAddress;
 		emailAddress = newEmailAddress;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PartyPackage.PARTY_INVITATION__EMAIL_ADDRESS, oldEmailAddress, emailAddress));
 	}
 
 	/**
@@ -233,7 +238,10 @@ public class PartyInvitationImpl extends BizEntityImpl implements PartyInvitatio
 	 */
 	@Override
 	public void setLastInviteDate(Date newLastInviteDate) {
+		Date oldLastInviteDate = lastInviteDate;
 		lastInviteDate = newLastInviteDate;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PartyPackage.PARTY_INVITATION__LAST_INVITE_DATE, oldLastInviteDate, lastInviteDate));
 	}
 
 	/**
@@ -253,7 +261,10 @@ public class PartyInvitationImpl extends BizEntityImpl implements PartyInvitatio
 	 */
 	@Override
 	public void setPartyId(String newPartyId) {
+		String oldPartyId = partyId;
 		partyId = newPartyId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PartyPackage.PARTY_INVITATION__PARTY_ID, oldPartyId, partyId));
 	}
 
 	/**
@@ -267,6 +278,8 @@ public class PartyInvitationImpl extends BizEntityImpl implements PartyInvitatio
 			InternalEObject oldStatusId = (InternalEObject)statusId;
 			statusId = (StatusItem)eResolveProxy(oldStatusId);
 			if (statusId != oldStatusId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PartyPackage.PARTY_INVITATION__STATUS_ID, oldStatusId, statusId));
 			}
 		}
 		return statusId;
@@ -288,7 +301,10 @@ public class PartyInvitationImpl extends BizEntityImpl implements PartyInvitatio
 	 */
 	@Override
 	public void setStatusId(StatusItem newStatusId) {
+		StatusItem oldStatusId = statusId;
 		statusId = newStatusId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PartyPackage.PARTY_INVITATION__STATUS_ID, oldStatusId, statusId));
 	}
 
 	/**
@@ -308,7 +324,10 @@ public class PartyInvitationImpl extends BizEntityImpl implements PartyInvitatio
 	 */
 	@Override
 	public void setToName(String newToName) {
+		String oldToName = toName;
 		toName = newToName;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PartyPackage.PARTY_INVITATION__TO_NAME, oldToName, toName));
 	}
 
 	/**
@@ -319,7 +338,7 @@ public class PartyInvitationImpl extends BizEntityImpl implements PartyInvitatio
 	@Override
 	public List<String> getPartyInvitationGroupAssocs() {
 		if (partyInvitationGroupAssocs == null) {
-			partyInvitationGroupAssocs = new BasicInternalEList<String>(String.class);
+			partyInvitationGroupAssocs = new EDataTypeUniqueEList<String>(String.class, this, PartyPackage.PARTY_INVITATION__PARTY_INVITATION_GROUP_ASSOCS);
 		}
 		return partyInvitationGroupAssocs;
 	}
@@ -332,7 +351,7 @@ public class PartyInvitationImpl extends BizEntityImpl implements PartyInvitatio
 	@Override
 	public List<String> getPartyInvitationRoleAssocs() {
 		if (partyInvitationRoleAssocs == null) {
-			partyInvitationRoleAssocs = new BasicInternalEList<String>(String.class);
+			partyInvitationRoleAssocs = new EDataTypeUniqueEList<String>(String.class, this, PartyPackage.PARTY_INVITATION__PARTY_INVITATION_ROLE_ASSOCS);
 		}
 		return partyInvitationRoleAssocs;
 	}
@@ -348,6 +367,8 @@ public class PartyInvitationImpl extends BizEntityImpl implements PartyInvitatio
 			InternalEObject oldPartyIdFrom = (InternalEObject)partyIdFrom;
 			partyIdFrom = (Party)eResolveProxy(oldPartyIdFrom);
 			if (partyIdFrom != oldPartyIdFrom) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PartyPackage.PARTY_INVITATION__PARTY_ID_FROM, oldPartyIdFrom, partyIdFrom));
 			}
 		}
 		return partyIdFrom;
@@ -369,7 +390,10 @@ public class PartyInvitationImpl extends BizEntityImpl implements PartyInvitatio
 	 */
 	@Override
 	public void setPartyIdFrom(Party newPartyIdFrom) {
+		Party oldPartyIdFrom = partyIdFrom;
 		partyIdFrom = newPartyIdFrom;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PartyPackage.PARTY_INVITATION__PARTY_ID_FROM, oldPartyIdFrom, partyIdFrom));
 	}
 
 	/**
@@ -389,7 +413,10 @@ public class PartyInvitationImpl extends BizEntityImpl implements PartyInvitatio
 	 */
 	@Override
 	public void setPartyInvitationId(String newPartyInvitationId) {
+		String oldPartyInvitationId = partyInvitationId;
 		partyInvitationId = newPartyInvitationId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PartyPackage.PARTY_INVITATION__PARTY_INVITATION_ID, oldPartyInvitationId, partyInvitationId));
 	}
 
 	/**

@@ -9,7 +9,9 @@ package org.abchip.mimo.biz.shipment.shipment.impl;
 
 import org.abchip.mimo.biz.shipment.shipment.ShipmentGatewayUsps;
 import org.abchip.mimo.biz.shipment.shipment.Shipment_Package;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -212,7 +214,10 @@ public class ShipmentGatewayUspsImpl extends ShipmentGatewayConfigImpl implement
 	 */
 	@Override
 	public void setAccessPassword(String newAccessPassword) {
+		String oldAccessPassword = accessPassword;
 		accessPassword = newAccessPassword;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, Shipment_Package.SHIPMENT_GATEWAY_USPS__ACCESS_PASSWORD, oldAccessPassword, accessPassword));
 	}
 
 	/**
@@ -232,7 +237,10 @@ public class ShipmentGatewayUspsImpl extends ShipmentGatewayConfigImpl implement
 	 */
 	@Override
 	public void setAccessUserId(String newAccessUserId) {
+		String oldAccessUserId = accessUserId;
 		accessUserId = newAccessUserId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, Shipment_Package.SHIPMENT_GATEWAY_USPS__ACCESS_USER_ID, oldAccessUserId, accessUserId));
 	}
 
 	/**
@@ -252,7 +260,10 @@ public class ShipmentGatewayUspsImpl extends ShipmentGatewayConfigImpl implement
 	 */
 	@Override
 	public void setConnectTimeout(long newConnectTimeout) {
+		long oldConnectTimeout = connectTimeout;
 		connectTimeout = newConnectTimeout;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, Shipment_Package.SHIPMENT_GATEWAY_USPS__CONNECT_TIMEOUT, oldConnectTimeout, connectTimeout));
 	}
 
 	/**
@@ -272,7 +283,10 @@ public class ShipmentGatewayUspsImpl extends ShipmentGatewayConfigImpl implement
 	 */
 	@Override
 	public void setConnectUrl(String newConnectUrl) {
+		String oldConnectUrl = connectUrl;
 		connectUrl = newConnectUrl;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, Shipment_Package.SHIPMENT_GATEWAY_USPS__CONNECT_URL, oldConnectUrl, connectUrl));
 	}
 
 	/**
@@ -292,7 +306,10 @@ public class ShipmentGatewayUspsImpl extends ShipmentGatewayConfigImpl implement
 	 */
 	@Override
 	public void setConnectUrlLabels(String newConnectUrlLabels) {
+		String oldConnectUrlLabels = connectUrlLabels;
 		connectUrlLabels = newConnectUrlLabels;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, Shipment_Package.SHIPMENT_GATEWAY_USPS__CONNECT_URL_LABELS, oldConnectUrlLabels, connectUrlLabels));
 	}
 
 	/**
@@ -312,7 +329,10 @@ public class ShipmentGatewayUspsImpl extends ShipmentGatewayConfigImpl implement
 	 */
 	@Override
 	public void setMaxEstimateWeight(long newMaxEstimateWeight) {
+		long oldMaxEstimateWeight = maxEstimateWeight;
 		maxEstimateWeight = newMaxEstimateWeight;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, Shipment_Package.SHIPMENT_GATEWAY_USPS__MAX_ESTIMATE_WEIGHT, oldMaxEstimateWeight, maxEstimateWeight));
 	}
 
 	/**
@@ -332,7 +352,10 @@ public class ShipmentGatewayUspsImpl extends ShipmentGatewayConfigImpl implement
 	 */
 	@Override
 	public void setTest(String newTest) {
+		String oldTest = test;
 		test = newTest;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, Shipment_Package.SHIPMENT_GATEWAY_USPS__TEST, oldTest, test));
 	}
 
 	/**

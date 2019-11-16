@@ -14,9 +14,11 @@ import org.abchip.mimo.biz.product.promo.ProductPromo;
 import org.abchip.mimo.biz.product.store.ProductStore;
 import org.abchip.mimo.biz.product.store.ProductStorePromoAppl;
 import org.abchip.mimo.biz.product.store.StorePackage;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -178,7 +180,10 @@ public class ProductStorePromoApplImpl extends BizEntityImpl implements ProductS
 	 */
 	@Override
 	public void setFromDate(Date newFromDate) {
+		Date oldFromDate = fromDate;
 		fromDate = newFromDate;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, StorePackage.PRODUCT_STORE_PROMO_APPL__FROM_DATE, oldFromDate, fromDate));
 	}
 
 	/**
@@ -198,7 +203,10 @@ public class ProductStorePromoApplImpl extends BizEntityImpl implements ProductS
 	 */
 	@Override
 	public void setManualOnly(boolean newManualOnly) {
+		boolean oldManualOnly = manualOnly;
 		manualOnly = newManualOnly;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, StorePackage.PRODUCT_STORE_PROMO_APPL__MANUAL_ONLY, oldManualOnly, manualOnly));
 	}
 
 	/**
@@ -218,7 +226,10 @@ public class ProductStorePromoApplImpl extends BizEntityImpl implements ProductS
 	 */
 	@Override
 	public void setSequenceNum(long newSequenceNum) {
+		long oldSequenceNum = sequenceNum;
 		sequenceNum = newSequenceNum;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, StorePackage.PRODUCT_STORE_PROMO_APPL__SEQUENCE_NUM, oldSequenceNum, sequenceNum));
 	}
 
 	/**
@@ -238,7 +249,10 @@ public class ProductStorePromoApplImpl extends BizEntityImpl implements ProductS
 	 */
 	@Override
 	public void setThruDate(Date newThruDate) {
+		Date oldThruDate = thruDate;
 		thruDate = newThruDate;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, StorePackage.PRODUCT_STORE_PROMO_APPL__THRU_DATE, oldThruDate, thruDate));
 	}
 
 	/**
@@ -252,6 +266,8 @@ public class ProductStorePromoApplImpl extends BizEntityImpl implements ProductS
 			InternalEObject oldProductStoreId = (InternalEObject)productStoreId;
 			productStoreId = (ProductStore)eResolveProxy(oldProductStoreId);
 			if (productStoreId != oldProductStoreId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, StorePackage.PRODUCT_STORE_PROMO_APPL__PRODUCT_STORE_ID, oldProductStoreId, productStoreId));
 			}
 		}
 		return productStoreId;
@@ -273,7 +289,10 @@ public class ProductStorePromoApplImpl extends BizEntityImpl implements ProductS
 	 */
 	@Override
 	public void setProductStoreId(ProductStore newProductStoreId) {
+		ProductStore oldProductStoreId = productStoreId;
 		productStoreId = newProductStoreId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, StorePackage.PRODUCT_STORE_PROMO_APPL__PRODUCT_STORE_ID, oldProductStoreId, productStoreId));
 	}
 
 	/**
@@ -287,6 +306,8 @@ public class ProductStorePromoApplImpl extends BizEntityImpl implements ProductS
 			InternalEObject oldProductPromoId = (InternalEObject)productPromoId;
 			productPromoId = (ProductPromo)eResolveProxy(oldProductPromoId);
 			if (productPromoId != oldProductPromoId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, StorePackage.PRODUCT_STORE_PROMO_APPL__PRODUCT_PROMO_ID, oldProductPromoId, productPromoId));
 			}
 		}
 		return productPromoId;
@@ -308,7 +329,10 @@ public class ProductStorePromoApplImpl extends BizEntityImpl implements ProductS
 	 */
 	@Override
 	public void setProductPromoId(ProductPromo newProductPromoId) {
+		ProductPromo oldProductPromoId = productPromoId;
 		productPromoId = newProductPromoId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, StorePackage.PRODUCT_STORE_PROMO_APPL__PRODUCT_PROMO_ID, oldProductPromoId, productPromoId));
 	}
 
 	/**

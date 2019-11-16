@@ -13,10 +13,12 @@ import org.abchip.mimo.biz.marketing.segment.SegmentGroupRole;
 import org.abchip.mimo.biz.marketing.segment.SegmentPackage;
 import org.abchip.mimo.biz.party.party.Party;
 import org.abchip.mimo.biz.party.party.RoleType;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -99,6 +101,8 @@ public class SegmentGroupRoleImpl extends BizEntityImpl implements SegmentGroupR
 			InternalEObject oldPartyId = (InternalEObject)partyId;
 			partyId = (Party)eResolveProxy(oldPartyId);
 			if (partyId != oldPartyId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, SegmentPackage.SEGMENT_GROUP_ROLE__PARTY_ID, oldPartyId, partyId));
 			}
 		}
 		return partyId;
@@ -120,7 +124,10 @@ public class SegmentGroupRoleImpl extends BizEntityImpl implements SegmentGroupR
 	 */
 	@Override
 	public void setPartyId(Party newPartyId) {
+		Party oldPartyId = partyId;
 		partyId = newPartyId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SegmentPackage.SEGMENT_GROUP_ROLE__PARTY_ID, oldPartyId, partyId));
 	}
 
 	/**
@@ -134,6 +141,8 @@ public class SegmentGroupRoleImpl extends BizEntityImpl implements SegmentGroupR
 			InternalEObject oldRoleTypeId = (InternalEObject)roleTypeId;
 			roleTypeId = (RoleType)eResolveProxy(oldRoleTypeId);
 			if (roleTypeId != oldRoleTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, SegmentPackage.SEGMENT_GROUP_ROLE__ROLE_TYPE_ID, oldRoleTypeId, roleTypeId));
 			}
 		}
 		return roleTypeId;
@@ -155,7 +164,10 @@ public class SegmentGroupRoleImpl extends BizEntityImpl implements SegmentGroupR
 	 */
 	@Override
 	public void setRoleTypeId(RoleType newRoleTypeId) {
+		RoleType oldRoleTypeId = roleTypeId;
 		roleTypeId = newRoleTypeId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SegmentPackage.SEGMENT_GROUP_ROLE__ROLE_TYPE_ID, oldRoleTypeId, roleTypeId));
 	}
 
 	/**
@@ -169,6 +181,8 @@ public class SegmentGroupRoleImpl extends BizEntityImpl implements SegmentGroupR
 			InternalEObject oldSegmentGroupId = (InternalEObject)segmentGroupId;
 			segmentGroupId = (SegmentGroup)eResolveProxy(oldSegmentGroupId);
 			if (segmentGroupId != oldSegmentGroupId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, SegmentPackage.SEGMENT_GROUP_ROLE__SEGMENT_GROUP_ID, oldSegmentGroupId, segmentGroupId));
 			}
 		}
 		return segmentGroupId;
@@ -190,7 +204,10 @@ public class SegmentGroupRoleImpl extends BizEntityImpl implements SegmentGroupR
 	 */
 	@Override
 	public void setSegmentGroupId(SegmentGroup newSegmentGroupId) {
+		SegmentGroup oldSegmentGroupId = segmentGroupId;
 		segmentGroupId = newSegmentGroupId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SegmentPackage.SEGMENT_GROUP_ROLE__SEGMENT_GROUP_ID, oldSegmentGroupId, segmentGroupId));
 	}
 
 	/**

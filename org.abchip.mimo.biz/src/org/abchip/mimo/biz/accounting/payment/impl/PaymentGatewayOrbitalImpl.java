@@ -11,9 +11,11 @@ import org.abchip.mimo.biz.accounting.payment.PaymentGatewayConfig;
 import org.abchip.mimo.biz.accounting.payment.PaymentGatewayOrbital;
 import org.abchip.mimo.biz.accounting.payment.PaymentPackage;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -345,7 +347,10 @@ public class PaymentGatewayOrbitalImpl extends BizEntityImpl implements PaymentG
 	 */
 	@Override
 	public void setAuthorizationURI(String newAuthorizationURI) {
+		String oldAuthorizationURI = authorizationURI;
 		authorizationURI = newAuthorizationURI;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.PAYMENT_GATEWAY_ORBITAL__AUTHORIZATION_URI, oldAuthorizationURI, authorizationURI));
 	}
 
 	/**
@@ -365,7 +370,10 @@ public class PaymentGatewayOrbitalImpl extends BizEntityImpl implements PaymentG
 	 */
 	@Override
 	public void setConnectionPassword(String newConnectionPassword) {
+		String oldConnectionPassword = connectionPassword;
 		connectionPassword = newConnectionPassword;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.PAYMENT_GATEWAY_ORBITAL__CONNECTION_PASSWORD, oldConnectionPassword, connectionPassword));
 	}
 
 	/**
@@ -385,7 +393,10 @@ public class PaymentGatewayOrbitalImpl extends BizEntityImpl implements PaymentG
 	 */
 	@Override
 	public void setConnectionTimeoutSeconds(long newConnectionTimeoutSeconds) {
+		long oldConnectionTimeoutSeconds = connectionTimeoutSeconds;
 		connectionTimeoutSeconds = newConnectionTimeoutSeconds;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.PAYMENT_GATEWAY_ORBITAL__CONNECTION_TIMEOUT_SECONDS, oldConnectionTimeoutSeconds, connectionTimeoutSeconds));
 	}
 
 	/**
@@ -405,7 +416,10 @@ public class PaymentGatewayOrbitalImpl extends BizEntityImpl implements PaymentG
 	 */
 	@Override
 	public void setEngineClass(String newEngineClass) {
+		String oldEngineClass = engineClass;
 		engineClass = newEngineClass;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.PAYMENT_GATEWAY_ORBITAL__ENGINE_CLASS, oldEngineClass, engineClass));
 	}
 
 	/**
@@ -425,7 +439,10 @@ public class PaymentGatewayOrbitalImpl extends BizEntityImpl implements PaymentG
 	 */
 	@Override
 	public void setHostName(String newHostName) {
+		String oldHostName = hostName;
 		hostName = newHostName;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.PAYMENT_GATEWAY_ORBITAL__HOST_NAME, oldHostName, hostName));
 	}
 
 	/**
@@ -445,7 +462,10 @@ public class PaymentGatewayOrbitalImpl extends BizEntityImpl implements PaymentG
 	 */
 	@Override
 	public void setHostNameFailover(String newHostNameFailover) {
+		String oldHostNameFailover = hostNameFailover;
 		hostNameFailover = newHostNameFailover;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.PAYMENT_GATEWAY_ORBITAL__HOST_NAME_FAILOVER, oldHostNameFailover, hostNameFailover));
 	}
 
 	/**
@@ -465,7 +485,10 @@ public class PaymentGatewayOrbitalImpl extends BizEntityImpl implements PaymentG
 	 */
 	@Override
 	public void setMerchantId(String newMerchantId) {
+		String oldMerchantId = merchantId;
 		merchantId = newMerchantId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.PAYMENT_GATEWAY_ORBITAL__MERCHANT_ID, oldMerchantId, merchantId));
 	}
 
 	/**
@@ -479,6 +502,8 @@ public class PaymentGatewayOrbitalImpl extends BizEntityImpl implements PaymentG
 			InternalEObject oldPaymentGatewayConfigId = (InternalEObject)paymentGatewayConfigId;
 			paymentGatewayConfigId = (PaymentGatewayConfig)eResolveProxy(oldPaymentGatewayConfigId);
 			if (paymentGatewayConfigId != oldPaymentGatewayConfigId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PaymentPackage.PAYMENT_GATEWAY_ORBITAL__PAYMENT_GATEWAY_CONFIG_ID, oldPaymentGatewayConfigId, paymentGatewayConfigId));
 			}
 		}
 		return paymentGatewayConfigId;
@@ -500,7 +525,10 @@ public class PaymentGatewayOrbitalImpl extends BizEntityImpl implements PaymentG
 	 */
 	@Override
 	public void setPaymentGatewayConfigId(PaymentGatewayConfig newPaymentGatewayConfigId) {
+		PaymentGatewayConfig oldPaymentGatewayConfigId = paymentGatewayConfigId;
 		paymentGatewayConfigId = newPaymentGatewayConfigId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.PAYMENT_GATEWAY_ORBITAL__PAYMENT_GATEWAY_CONFIG_ID, oldPaymentGatewayConfigId, paymentGatewayConfigId));
 	}
 
 	/**
@@ -520,7 +548,10 @@ public class PaymentGatewayOrbitalImpl extends BizEntityImpl implements PaymentG
 	 */
 	@Override
 	public void setPort(long newPort) {
+		long oldPort = port;
 		port = newPort;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.PAYMENT_GATEWAY_ORBITAL__PORT, oldPort, port));
 	}
 
 	/**
@@ -540,7 +571,10 @@ public class PaymentGatewayOrbitalImpl extends BizEntityImpl implements PaymentG
 	 */
 	@Override
 	public void setPortFailover(long newPortFailover) {
+		long oldPortFailover = portFailover;
 		portFailover = newPortFailover;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.PAYMENT_GATEWAY_ORBITAL__PORT_FAILOVER, oldPortFailover, portFailover));
 	}
 
 	/**
@@ -560,7 +594,10 @@ public class PaymentGatewayOrbitalImpl extends BizEntityImpl implements PaymentG
 	 */
 	@Override
 	public void setReadTimeoutSeconds(long newReadTimeoutSeconds) {
+		long oldReadTimeoutSeconds = readTimeoutSeconds;
 		readTimeoutSeconds = newReadTimeoutSeconds;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.PAYMENT_GATEWAY_ORBITAL__READ_TIMEOUT_SECONDS, oldReadTimeoutSeconds, readTimeoutSeconds));
 	}
 
 	/**
@@ -580,7 +617,10 @@ public class PaymentGatewayOrbitalImpl extends BizEntityImpl implements PaymentG
 	 */
 	@Override
 	public void setResponseType(String newResponseType) {
+		String oldResponseType = responseType;
 		responseType = newResponseType;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.PAYMENT_GATEWAY_ORBITAL__RESPONSE_TYPE, oldResponseType, responseType));
 	}
 
 	/**
@@ -600,7 +640,10 @@ public class PaymentGatewayOrbitalImpl extends BizEntityImpl implements PaymentG
 	 */
 	@Override
 	public void setSdkVersion(String newSdkVersion) {
+		String oldSdkVersion = sdkVersion;
 		sdkVersion = newSdkVersion;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.PAYMENT_GATEWAY_ORBITAL__SDK_VERSION, oldSdkVersion, sdkVersion));
 	}
 
 	/**
@@ -620,7 +663,10 @@ public class PaymentGatewayOrbitalImpl extends BizEntityImpl implements PaymentG
 	 */
 	@Override
 	public void setSslSocketFactory(String newSslSocketFactory) {
+		String oldSslSocketFactory = sslSocketFactory;
 		sslSocketFactory = newSslSocketFactory;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.PAYMENT_GATEWAY_ORBITAL__SSL_SOCKET_FACTORY, oldSslSocketFactory, sslSocketFactory));
 	}
 
 	/**
@@ -640,7 +686,10 @@ public class PaymentGatewayOrbitalImpl extends BizEntityImpl implements PaymentG
 	 */
 	@Override
 	public void setUsername(String newUsername) {
+		String oldUsername = username;
 		username = newUsername;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.PAYMENT_GATEWAY_ORBITAL__USERNAME, oldUsername, username));
 	}
 
 	/**

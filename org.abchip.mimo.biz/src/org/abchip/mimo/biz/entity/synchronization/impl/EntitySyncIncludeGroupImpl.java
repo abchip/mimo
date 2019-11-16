@@ -12,10 +12,12 @@ import org.abchip.mimo.biz.entity.synchronization.EntitySync;
 import org.abchip.mimo.biz.entity.synchronization.EntitySyncIncludeGroup;
 import org.abchip.mimo.biz.entity.synchronization.SynchronizationPackage;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -85,6 +87,8 @@ public class EntitySyncIncludeGroupImpl extends BizEntityImpl implements EntityS
 			InternalEObject oldEntityGroupId = (InternalEObject)entityGroupId;
 			entityGroupId = (EntityGroup)eResolveProxy(oldEntityGroupId);
 			if (entityGroupId != oldEntityGroupId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, SynchronizationPackage.ENTITY_SYNC_INCLUDE_GROUP__ENTITY_GROUP_ID, oldEntityGroupId, entityGroupId));
 			}
 		}
 		return entityGroupId;
@@ -106,7 +110,10 @@ public class EntitySyncIncludeGroupImpl extends BizEntityImpl implements EntityS
 	 */
 	@Override
 	public void setEntityGroupId(EntityGroup newEntityGroupId) {
+		EntityGroup oldEntityGroupId = entityGroupId;
 		entityGroupId = newEntityGroupId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SynchronizationPackage.ENTITY_SYNC_INCLUDE_GROUP__ENTITY_GROUP_ID, oldEntityGroupId, entityGroupId));
 	}
 
 	/**
@@ -120,6 +127,8 @@ public class EntitySyncIncludeGroupImpl extends BizEntityImpl implements EntityS
 			InternalEObject oldEntitySyncId = (InternalEObject)entitySyncId;
 			entitySyncId = (EntitySync)eResolveProxy(oldEntitySyncId);
 			if (entitySyncId != oldEntitySyncId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, SynchronizationPackage.ENTITY_SYNC_INCLUDE_GROUP__ENTITY_SYNC_ID, oldEntitySyncId, entitySyncId));
 			}
 		}
 		return entitySyncId;
@@ -141,7 +150,10 @@ public class EntitySyncIncludeGroupImpl extends BizEntityImpl implements EntityS
 	 */
 	@Override
 	public void setEntitySyncId(EntitySync newEntitySyncId) {
+		EntitySync oldEntitySyncId = entitySyncId;
 		entitySyncId = newEntitySyncId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SynchronizationPackage.ENTITY_SYNC_INCLUDE_GROUP__ENTITY_SYNC_ID, oldEntitySyncId, entitySyncId));
 	}
 
 	/**

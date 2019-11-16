@@ -15,10 +15,12 @@ import org.abchip.mimo.biz.security.login.UserLogin;
 import org.abchip.mimo.biz.workeffort.workeffort.WorkEffort;
 import org.abchip.mimo.biz.workeffort.workeffort.WorkEffortReview;
 import org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -191,7 +193,10 @@ public class WorkEffortReviewImpl extends BizEntityImpl implements WorkEffortRev
 	 */
 	@Override
 	public void setRating(double newRating) {
+		double oldRating = rating;
 		rating = newRating;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WorkeffortPackage.WORK_EFFORT_REVIEW__RATING, oldRating, rating));
 	}
 
 	/**
@@ -211,7 +216,10 @@ public class WorkEffortReviewImpl extends BizEntityImpl implements WorkEffortRev
 	 */
 	@Override
 	public void setReviewDate(Date newReviewDate) {
+		Date oldReviewDate = reviewDate;
 		reviewDate = newReviewDate;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WorkeffortPackage.WORK_EFFORT_REVIEW__REVIEW_DATE, oldReviewDate, reviewDate));
 	}
 
 	/**
@@ -231,7 +239,10 @@ public class WorkEffortReviewImpl extends BizEntityImpl implements WorkEffortRev
 	 */
 	@Override
 	public void setPostedAnonymous(boolean newPostedAnonymous) {
+		boolean oldPostedAnonymous = postedAnonymous;
 		postedAnonymous = newPostedAnonymous;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WorkeffortPackage.WORK_EFFORT_REVIEW__POSTED_ANONYMOUS, oldPostedAnonymous, postedAnonymous));
 	}
 
 	/**
@@ -251,7 +262,10 @@ public class WorkEffortReviewImpl extends BizEntityImpl implements WorkEffortRev
 	 */
 	@Override
 	public void setReviewText(String newReviewText) {
+		String oldReviewText = reviewText;
 		reviewText = newReviewText;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WorkeffortPackage.WORK_EFFORT_REVIEW__REVIEW_TEXT, oldReviewText, reviewText));
 	}
 
 	/**
@@ -265,6 +279,8 @@ public class WorkEffortReviewImpl extends BizEntityImpl implements WorkEffortRev
 			InternalEObject oldStatusId = (InternalEObject)statusId;
 			statusId = (StatusItem)eResolveProxy(oldStatusId);
 			if (statusId != oldStatusId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WorkeffortPackage.WORK_EFFORT_REVIEW__STATUS_ID, oldStatusId, statusId));
 			}
 		}
 		return statusId;
@@ -286,7 +302,10 @@ public class WorkEffortReviewImpl extends BizEntityImpl implements WorkEffortRev
 	 */
 	@Override
 	public void setStatusId(StatusItem newStatusId) {
+		StatusItem oldStatusId = statusId;
 		statusId = newStatusId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WorkeffortPackage.WORK_EFFORT_REVIEW__STATUS_ID, oldStatusId, statusId));
 	}
 
 	/**
@@ -300,6 +319,8 @@ public class WorkEffortReviewImpl extends BizEntityImpl implements WorkEffortRev
 			InternalEObject oldUserLoginId = (InternalEObject)userLoginId;
 			userLoginId = (UserLogin)eResolveProxy(oldUserLoginId);
 			if (userLoginId != oldUserLoginId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WorkeffortPackage.WORK_EFFORT_REVIEW__USER_LOGIN_ID, oldUserLoginId, userLoginId));
 			}
 		}
 		return userLoginId;
@@ -321,7 +342,10 @@ public class WorkEffortReviewImpl extends BizEntityImpl implements WorkEffortRev
 	 */
 	@Override
 	public void setUserLoginId(UserLogin newUserLoginId) {
+		UserLogin oldUserLoginId = userLoginId;
 		userLoginId = newUserLoginId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WorkeffortPackage.WORK_EFFORT_REVIEW__USER_LOGIN_ID, oldUserLoginId, userLoginId));
 	}
 
 	/**
@@ -335,6 +359,8 @@ public class WorkEffortReviewImpl extends BizEntityImpl implements WorkEffortRev
 			InternalEObject oldWorkEffortId = (InternalEObject)workEffortId;
 			workEffortId = (WorkEffort)eResolveProxy(oldWorkEffortId);
 			if (workEffortId != oldWorkEffortId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WorkeffortPackage.WORK_EFFORT_REVIEW__WORK_EFFORT_ID, oldWorkEffortId, workEffortId));
 			}
 		}
 		return workEffortId;
@@ -356,7 +382,10 @@ public class WorkEffortReviewImpl extends BizEntityImpl implements WorkEffortRev
 	 */
 	@Override
 	public void setWorkEffortId(WorkEffort newWorkEffortId) {
+		WorkEffort oldWorkEffortId = workEffortId;
 		workEffortId = newWorkEffortId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WorkeffortPackage.WORK_EFFORT_REVIEW__WORK_EFFORT_ID, oldWorkEffortId, workEffortId));
 	}
 
 	/**

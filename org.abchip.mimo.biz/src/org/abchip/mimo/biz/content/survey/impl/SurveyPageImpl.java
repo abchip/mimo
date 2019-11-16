@@ -11,10 +11,12 @@ import org.abchip.mimo.biz.content.survey.Survey;
 import org.abchip.mimo.biz.content.survey.SurveyPackage;
 import org.abchip.mimo.biz.content.survey.SurveyPage;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -144,7 +146,10 @@ public class SurveyPageImpl extends BizEntityImpl implements SurveyPage {
 	 */
 	@Override
 	public void setPageName(String newPageName) {
+		String oldPageName = pageName;
 		pageName = newPageName;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SurveyPackage.SURVEY_PAGE__PAGE_NAME, oldPageName, pageName));
 	}
 
 	/**
@@ -164,7 +169,10 @@ public class SurveyPageImpl extends BizEntityImpl implements SurveyPage {
 	 */
 	@Override
 	public void setSequenceNum(long newSequenceNum) {
+		long oldSequenceNum = sequenceNum;
 		sequenceNum = newSequenceNum;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SurveyPackage.SURVEY_PAGE__SEQUENCE_NUM, oldSequenceNum, sequenceNum));
 	}
 
 	/**
@@ -178,6 +186,8 @@ public class SurveyPageImpl extends BizEntityImpl implements SurveyPage {
 			InternalEObject oldSurveyId = (InternalEObject)surveyId;
 			surveyId = (Survey)eResolveProxy(oldSurveyId);
 			if (surveyId != oldSurveyId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, SurveyPackage.SURVEY_PAGE__SURVEY_ID, oldSurveyId, surveyId));
 			}
 		}
 		return surveyId;
@@ -199,7 +209,10 @@ public class SurveyPageImpl extends BizEntityImpl implements SurveyPage {
 	 */
 	@Override
 	public void setSurveyId(Survey newSurveyId) {
+		Survey oldSurveyId = surveyId;
 		surveyId = newSurveyId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SurveyPackage.SURVEY_PAGE__SURVEY_ID, oldSurveyId, surveyId));
 	}
 
 	/**
@@ -219,7 +232,10 @@ public class SurveyPageImpl extends BizEntityImpl implements SurveyPage {
 	 */
 	@Override
 	public void setSurveyPageSeqId(String newSurveyPageSeqId) {
+		String oldSurveyPageSeqId = surveyPageSeqId;
 		surveyPageSeqId = newSurveyPageSeqId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SurveyPackage.SURVEY_PAGE__SURVEY_PAGE_SEQ_ID, oldSurveyPageSeqId, surveyPageSeqId));
 	}
 
 	/**

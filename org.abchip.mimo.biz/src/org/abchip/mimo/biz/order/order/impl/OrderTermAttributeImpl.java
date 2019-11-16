@@ -10,7 +10,9 @@ package org.abchip.mimo.biz.order.order.impl;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.order.order.OrderPackage;
 import org.abchip.mimo.biz.order.order.OrderTermAttribute;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -192,7 +194,10 @@ public class OrderTermAttributeImpl extends BizEntityImpl implements OrderTermAt
 	 */
 	@Override
 	public void setAttrDescription(String newAttrDescription) {
+		String oldAttrDescription = attrDescription;
 		attrDescription = newAttrDescription;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_TERM_ATTRIBUTE__ATTR_DESCRIPTION, oldAttrDescription, attrDescription));
 	}
 
 	/**
@@ -212,7 +217,10 @@ public class OrderTermAttributeImpl extends BizEntityImpl implements OrderTermAt
 	 */
 	@Override
 	public void setAttrName(String newAttrName) {
+		String oldAttrName = attrName;
 		attrName = newAttrName;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_TERM_ATTRIBUTE__ATTR_NAME, oldAttrName, attrName));
 	}
 
 	/**
@@ -232,7 +240,10 @@ public class OrderTermAttributeImpl extends BizEntityImpl implements OrderTermAt
 	 */
 	@Override
 	public void setAttrValue(String newAttrValue) {
+		String oldAttrValue = attrValue;
 		attrValue = newAttrValue;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_TERM_ATTRIBUTE__ATTR_VALUE, oldAttrValue, attrValue));
 	}
 
 	/**
@@ -252,7 +263,10 @@ public class OrderTermAttributeImpl extends BizEntityImpl implements OrderTermAt
 	 */
 	@Override
 	public void setOrderId(String newOrderId) {
+		String oldOrderId = orderId;
 		orderId = newOrderId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_TERM_ATTRIBUTE__ORDER_ID, oldOrderId, orderId));
 	}
 
 	/**
@@ -272,7 +286,10 @@ public class OrderTermAttributeImpl extends BizEntityImpl implements OrderTermAt
 	 */
 	@Override
 	public void setOrderItemSeqId(String newOrderItemSeqId) {
+		String oldOrderItemSeqId = orderItemSeqId;
 		orderItemSeqId = newOrderItemSeqId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_TERM_ATTRIBUTE__ORDER_ITEM_SEQ_ID, oldOrderItemSeqId, orderItemSeqId));
 	}
 
 	/**
@@ -292,7 +309,10 @@ public class OrderTermAttributeImpl extends BizEntityImpl implements OrderTermAt
 	 */
 	@Override
 	public void setTermTypeId(String newTermTypeId) {
+		String oldTermTypeId = termTypeId;
 		termTypeId = newTermTypeId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_TERM_ATTRIBUTE__TERM_TYPE_ID, oldTermTypeId, termTypeId));
 	}
 
 	/**

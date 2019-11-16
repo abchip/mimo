@@ -19,10 +19,12 @@ import org.abchip.mimo.biz.security.login.UserLogin;
 import org.abchip.mimo.biz.workeffort.workeffort.WorkEffort;
 import org.abchip.mimo.biz.workeffort.workeffort.WorkEffortPartyAssignment;
 import org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -276,6 +278,8 @@ public class WorkEffortPartyAssignmentImpl extends BizEntityImpl implements Work
 			InternalEObject oldAssignedByUserLoginId = (InternalEObject)assignedByUserLoginId;
 			assignedByUserLoginId = (UserLogin)eResolveProxy(oldAssignedByUserLoginId);
 			if (assignedByUserLoginId != oldAssignedByUserLoginId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WorkeffortPackage.WORK_EFFORT_PARTY_ASSIGNMENT__ASSIGNED_BY_USER_LOGIN_ID, oldAssignedByUserLoginId, assignedByUserLoginId));
 			}
 		}
 		return assignedByUserLoginId;
@@ -297,7 +301,10 @@ public class WorkEffortPartyAssignmentImpl extends BizEntityImpl implements Work
 	 */
 	@Override
 	public void setAssignedByUserLoginId(UserLogin newAssignedByUserLoginId) {
+		UserLogin oldAssignedByUserLoginId = assignedByUserLoginId;
 		assignedByUserLoginId = newAssignedByUserLoginId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WorkeffortPackage.WORK_EFFORT_PARTY_ASSIGNMENT__ASSIGNED_BY_USER_LOGIN_ID, oldAssignedByUserLoginId, assignedByUserLoginId));
 	}
 
 	/**
@@ -311,6 +318,8 @@ public class WorkEffortPartyAssignmentImpl extends BizEntityImpl implements Work
 			InternalEObject oldAvailabilityStatusId = (InternalEObject)availabilityStatusId;
 			availabilityStatusId = (StatusItem)eResolveProxy(oldAvailabilityStatusId);
 			if (availabilityStatusId != oldAvailabilityStatusId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WorkeffortPackage.WORK_EFFORT_PARTY_ASSIGNMENT__AVAILABILITY_STATUS_ID, oldAvailabilityStatusId, availabilityStatusId));
 			}
 		}
 		return availabilityStatusId;
@@ -332,7 +341,10 @@ public class WorkEffortPartyAssignmentImpl extends BizEntityImpl implements Work
 	 */
 	@Override
 	public void setAvailabilityStatusId(StatusItem newAvailabilityStatusId) {
+		StatusItem oldAvailabilityStatusId = availabilityStatusId;
 		availabilityStatusId = newAvailabilityStatusId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WorkeffortPackage.WORK_EFFORT_PARTY_ASSIGNMENT__AVAILABILITY_STATUS_ID, oldAvailabilityStatusId, availabilityStatusId));
 	}
 
 	/**
@@ -352,7 +364,10 @@ public class WorkEffortPartyAssignmentImpl extends BizEntityImpl implements Work
 	 */
 	@Override
 	public void setComments(String newComments) {
+		String oldComments = comments;
 		comments = newComments;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WorkeffortPackage.WORK_EFFORT_PARTY_ASSIGNMENT__COMMENTS, oldComments, comments));
 	}
 
 	/**
@@ -366,6 +381,8 @@ public class WorkEffortPartyAssignmentImpl extends BizEntityImpl implements Work
 			InternalEObject oldDelegateReasonEnumId = (InternalEObject)delegateReasonEnumId;
 			delegateReasonEnumId = (Enumeration)eResolveProxy(oldDelegateReasonEnumId);
 			if (delegateReasonEnumId != oldDelegateReasonEnumId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WorkeffortPackage.WORK_EFFORT_PARTY_ASSIGNMENT__DELEGATE_REASON_ENUM_ID, oldDelegateReasonEnumId, delegateReasonEnumId));
 			}
 		}
 		return delegateReasonEnumId;
@@ -387,7 +404,10 @@ public class WorkEffortPartyAssignmentImpl extends BizEntityImpl implements Work
 	 */
 	@Override
 	public void setDelegateReasonEnumId(Enumeration newDelegateReasonEnumId) {
+		Enumeration oldDelegateReasonEnumId = delegateReasonEnumId;
 		delegateReasonEnumId = newDelegateReasonEnumId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WorkeffortPackage.WORK_EFFORT_PARTY_ASSIGNMENT__DELEGATE_REASON_ENUM_ID, oldDelegateReasonEnumId, delegateReasonEnumId));
 	}
 
 	/**
@@ -401,6 +421,8 @@ public class WorkEffortPartyAssignmentImpl extends BizEntityImpl implements Work
 			InternalEObject oldExpectationEnumId = (InternalEObject)expectationEnumId;
 			expectationEnumId = (Enumeration)eResolveProxy(oldExpectationEnumId);
 			if (expectationEnumId != oldExpectationEnumId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WorkeffortPackage.WORK_EFFORT_PARTY_ASSIGNMENT__EXPECTATION_ENUM_ID, oldExpectationEnumId, expectationEnumId));
 			}
 		}
 		return expectationEnumId;
@@ -422,7 +444,10 @@ public class WorkEffortPartyAssignmentImpl extends BizEntityImpl implements Work
 	 */
 	@Override
 	public void setExpectationEnumId(Enumeration newExpectationEnumId) {
+		Enumeration oldExpectationEnumId = expectationEnumId;
 		expectationEnumId = newExpectationEnumId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WorkeffortPackage.WORK_EFFORT_PARTY_ASSIGNMENT__EXPECTATION_ENUM_ID, oldExpectationEnumId, expectationEnumId));
 	}
 
 	/**
@@ -436,6 +461,8 @@ public class WorkEffortPartyAssignmentImpl extends BizEntityImpl implements Work
 			InternalEObject oldFacilityId = (InternalEObject)facilityId;
 			facilityId = (Facility)eResolveProxy(oldFacilityId);
 			if (facilityId != oldFacilityId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WorkeffortPackage.WORK_EFFORT_PARTY_ASSIGNMENT__FACILITY_ID, oldFacilityId, facilityId));
 			}
 		}
 		return facilityId;
@@ -457,7 +484,10 @@ public class WorkEffortPartyAssignmentImpl extends BizEntityImpl implements Work
 	 */
 	@Override
 	public void setFacilityId(Facility newFacilityId) {
+		Facility oldFacilityId = facilityId;
 		facilityId = newFacilityId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WorkeffortPackage.WORK_EFFORT_PARTY_ASSIGNMENT__FACILITY_ID, oldFacilityId, facilityId));
 	}
 
 	/**
@@ -477,7 +507,10 @@ public class WorkEffortPartyAssignmentImpl extends BizEntityImpl implements Work
 	 */
 	@Override
 	public void setMustRsvp(boolean newMustRsvp) {
+		boolean oldMustRsvp = mustRsvp;
 		mustRsvp = newMustRsvp;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WorkeffortPackage.WORK_EFFORT_PARTY_ASSIGNMENT__MUST_RSVP, oldMustRsvp, mustRsvp));
 	}
 
 	/**
@@ -497,7 +530,10 @@ public class WorkEffortPartyAssignmentImpl extends BizEntityImpl implements Work
 	 */
 	@Override
 	public void setFromDate(Date newFromDate) {
+		Date oldFromDate = fromDate;
 		fromDate = newFromDate;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WorkeffortPackage.WORK_EFFORT_PARTY_ASSIGNMENT__FROM_DATE, oldFromDate, fromDate));
 	}
 
 	/**
@@ -511,6 +547,8 @@ public class WorkEffortPartyAssignmentImpl extends BizEntityImpl implements Work
 			InternalEObject oldPartyId = (InternalEObject)partyId;
 			partyId = (Party)eResolveProxy(oldPartyId);
 			if (partyId != oldPartyId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WorkeffortPackage.WORK_EFFORT_PARTY_ASSIGNMENT__PARTY_ID, oldPartyId, partyId));
 			}
 		}
 		return partyId;
@@ -532,7 +570,10 @@ public class WorkEffortPartyAssignmentImpl extends BizEntityImpl implements Work
 	 */
 	@Override
 	public void setPartyId(Party newPartyId) {
+		Party oldPartyId = partyId;
 		partyId = newPartyId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WorkeffortPackage.WORK_EFFORT_PARTY_ASSIGNMENT__PARTY_ID, oldPartyId, partyId));
 	}
 
 	/**
@@ -546,6 +587,8 @@ public class WorkEffortPartyAssignmentImpl extends BizEntityImpl implements Work
 			InternalEObject oldRoleTypeId = (InternalEObject)roleTypeId;
 			roleTypeId = (RoleType)eResolveProxy(oldRoleTypeId);
 			if (roleTypeId != oldRoleTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WorkeffortPackage.WORK_EFFORT_PARTY_ASSIGNMENT__ROLE_TYPE_ID, oldRoleTypeId, roleTypeId));
 			}
 		}
 		return roleTypeId;
@@ -567,7 +610,10 @@ public class WorkEffortPartyAssignmentImpl extends BizEntityImpl implements Work
 	 */
 	@Override
 	public void setRoleTypeId(RoleType newRoleTypeId) {
+		RoleType oldRoleTypeId = roleTypeId;
 		roleTypeId = newRoleTypeId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WorkeffortPackage.WORK_EFFORT_PARTY_ASSIGNMENT__ROLE_TYPE_ID, oldRoleTypeId, roleTypeId));
 	}
 
 	/**
@@ -587,7 +633,10 @@ public class WorkEffortPartyAssignmentImpl extends BizEntityImpl implements Work
 	 */
 	@Override
 	public void setStatusDateTime(Date newStatusDateTime) {
+		Date oldStatusDateTime = statusDateTime;
 		statusDateTime = newStatusDateTime;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WorkeffortPackage.WORK_EFFORT_PARTY_ASSIGNMENT__STATUS_DATE_TIME, oldStatusDateTime, statusDateTime));
 	}
 
 	/**
@@ -601,6 +650,8 @@ public class WorkEffortPartyAssignmentImpl extends BizEntityImpl implements Work
 			InternalEObject oldStatusId = (InternalEObject)statusId;
 			statusId = (StatusItem)eResolveProxy(oldStatusId);
 			if (statusId != oldStatusId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WorkeffortPackage.WORK_EFFORT_PARTY_ASSIGNMENT__STATUS_ID, oldStatusId, statusId));
 			}
 		}
 		return statusId;
@@ -622,7 +673,10 @@ public class WorkEffortPartyAssignmentImpl extends BizEntityImpl implements Work
 	 */
 	@Override
 	public void setStatusId(StatusItem newStatusId) {
+		StatusItem oldStatusId = statusId;
 		statusId = newStatusId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WorkeffortPackage.WORK_EFFORT_PARTY_ASSIGNMENT__STATUS_ID, oldStatusId, statusId));
 	}
 
 	/**
@@ -642,7 +696,10 @@ public class WorkEffortPartyAssignmentImpl extends BizEntityImpl implements Work
 	 */
 	@Override
 	public void setThruDate(Date newThruDate) {
+		Date oldThruDate = thruDate;
 		thruDate = newThruDate;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WorkeffortPackage.WORK_EFFORT_PARTY_ASSIGNMENT__THRU_DATE, oldThruDate, thruDate));
 	}
 
 	/**
@@ -656,6 +713,8 @@ public class WorkEffortPartyAssignmentImpl extends BizEntityImpl implements Work
 			InternalEObject oldWorkEffortId = (InternalEObject)workEffortId;
 			workEffortId = (WorkEffort)eResolveProxy(oldWorkEffortId);
 			if (workEffortId != oldWorkEffortId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WorkeffortPackage.WORK_EFFORT_PARTY_ASSIGNMENT__WORK_EFFORT_ID, oldWorkEffortId, workEffortId));
 			}
 		}
 		return workEffortId;
@@ -677,7 +736,10 @@ public class WorkEffortPartyAssignmentImpl extends BizEntityImpl implements Work
 	 */
 	@Override
 	public void setWorkEffortId(WorkEffort newWorkEffortId) {
+		WorkEffort oldWorkEffortId = workEffortId;
 		workEffortId = newWorkEffortId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WorkeffortPackage.WORK_EFFORT_PARTY_ASSIGNMENT__WORK_EFFORT_ID, oldWorkEffortId, workEffortId));
 	}
 
 	/**

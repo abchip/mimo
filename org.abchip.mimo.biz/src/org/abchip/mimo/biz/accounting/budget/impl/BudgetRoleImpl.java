@@ -12,9 +12,11 @@ import org.abchip.mimo.biz.accounting.budget.BudgetPackage;
 import org.abchip.mimo.biz.accounting.budget.BudgetRole;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.party.party.Party;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -103,6 +105,8 @@ public class BudgetRoleImpl extends BizEntityImpl implements BudgetRole {
 			InternalEObject oldPartyId = (InternalEObject)partyId;
 			partyId = (Party)eResolveProxy(oldPartyId);
 			if (partyId != oldPartyId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, BudgetPackage.BUDGET_ROLE__PARTY_ID, oldPartyId, partyId));
 			}
 		}
 		return partyId;
@@ -124,7 +128,10 @@ public class BudgetRoleImpl extends BizEntityImpl implements BudgetRole {
 	 */
 	@Override
 	public void setPartyId(Party newPartyId) {
+		Party oldPartyId = partyId;
 		partyId = newPartyId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, BudgetPackage.BUDGET_ROLE__PARTY_ID, oldPartyId, partyId));
 	}
 
 	/**
@@ -144,7 +151,10 @@ public class BudgetRoleImpl extends BizEntityImpl implements BudgetRole {
 	 */
 	@Override
 	public void setRoleTypeId(String newRoleTypeId) {
+		String oldRoleTypeId = roleTypeId;
 		roleTypeId = newRoleTypeId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, BudgetPackage.BUDGET_ROLE__ROLE_TYPE_ID, oldRoleTypeId, roleTypeId));
 	}
 
 	/**
@@ -158,6 +168,8 @@ public class BudgetRoleImpl extends BizEntityImpl implements BudgetRole {
 			InternalEObject oldBudgetId = (InternalEObject)budgetId;
 			budgetId = (Budget)eResolveProxy(oldBudgetId);
 			if (budgetId != oldBudgetId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, BudgetPackage.BUDGET_ROLE__BUDGET_ID, oldBudgetId, budgetId));
 			}
 		}
 		return budgetId;
@@ -179,7 +191,10 @@ public class BudgetRoleImpl extends BizEntityImpl implements BudgetRole {
 	 */
 	@Override
 	public void setBudgetId(Budget newBudgetId) {
+		Budget oldBudgetId = budgetId;
 		budgetId = newBudgetId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, BudgetPackage.BUDGET_ROLE__BUDGET_ID, oldBudgetId, budgetId));
 	}
 
 	/**

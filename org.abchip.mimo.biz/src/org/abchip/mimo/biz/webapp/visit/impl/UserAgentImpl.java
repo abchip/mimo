@@ -17,10 +17,12 @@ import org.abchip.mimo.biz.webapp.visit.UserAgent;
 import org.abchip.mimo.biz.webapp.visit.UserAgentMethodType;
 import org.abchip.mimo.biz.webapp.visit.UserAgentType;
 import org.abchip.mimo.biz.webapp.visit.VisitPackage;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -152,7 +154,10 @@ public class UserAgentImpl extends BizEntityTypedImpl<UserAgentType> implements 
 	 */
 	@Override
 	public void setUserAgentId(String newUserAgentId) {
+		String oldUserAgentId = userAgentId;
 		userAgentId = newUserAgentId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, VisitPackage.USER_AGENT__USER_AGENT_ID, oldUserAgentId, userAgentId));
 	}
 
 	/**
@@ -166,6 +171,8 @@ public class UserAgentImpl extends BizEntityTypedImpl<UserAgentType> implements 
 			InternalEObject oldBrowserTypeId = (InternalEObject)browserTypeId;
 			browserTypeId = (BrowserType)eResolveProxy(oldBrowserTypeId);
 			if (browserTypeId != oldBrowserTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, VisitPackage.USER_AGENT__BROWSER_TYPE_ID, oldBrowserTypeId, browserTypeId));
 			}
 		}
 		return browserTypeId;
@@ -187,7 +194,10 @@ public class UserAgentImpl extends BizEntityTypedImpl<UserAgentType> implements 
 	 */
 	@Override
 	public void setBrowserTypeId(BrowserType newBrowserTypeId) {
+		BrowserType oldBrowserTypeId = browserTypeId;
 		browserTypeId = newBrowserTypeId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, VisitPackage.USER_AGENT__BROWSER_TYPE_ID, oldBrowserTypeId, browserTypeId));
 	}
 
 	/**
@@ -201,6 +211,8 @@ public class UserAgentImpl extends BizEntityTypedImpl<UserAgentType> implements 
 			InternalEObject oldPlatformTypeId = (InternalEObject)platformTypeId;
 			platformTypeId = (PlatformType)eResolveProxy(oldPlatformTypeId);
 			if (platformTypeId != oldPlatformTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, VisitPackage.USER_AGENT__PLATFORM_TYPE_ID, oldPlatformTypeId, platformTypeId));
 			}
 		}
 		return platformTypeId;
@@ -222,7 +234,10 @@ public class UserAgentImpl extends BizEntityTypedImpl<UserAgentType> implements 
 	 */
 	@Override
 	public void setPlatformTypeId(PlatformType newPlatformTypeId) {
+		PlatformType oldPlatformTypeId = platformTypeId;
 		platformTypeId = newPlatformTypeId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, VisitPackage.USER_AGENT__PLATFORM_TYPE_ID, oldPlatformTypeId, platformTypeId));
 	}
 
 	/**
@@ -236,6 +251,8 @@ public class UserAgentImpl extends BizEntityTypedImpl<UserAgentType> implements 
 			InternalEObject oldProtocolTypeId = (InternalEObject)protocolTypeId;
 			protocolTypeId = (ProtocolType)eResolveProxy(oldProtocolTypeId);
 			if (protocolTypeId != oldProtocolTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, VisitPackage.USER_AGENT__PROTOCOL_TYPE_ID, oldProtocolTypeId, protocolTypeId));
 			}
 		}
 		return protocolTypeId;
@@ -257,7 +274,10 @@ public class UserAgentImpl extends BizEntityTypedImpl<UserAgentType> implements 
 	 */
 	@Override
 	public void setProtocolTypeId(ProtocolType newProtocolTypeId) {
+		ProtocolType oldProtocolTypeId = protocolTypeId;
 		protocolTypeId = newProtocolTypeId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, VisitPackage.USER_AGENT__PROTOCOL_TYPE_ID, oldProtocolTypeId, protocolTypeId));
 	}
 
 	/**
@@ -271,6 +291,8 @@ public class UserAgentImpl extends BizEntityTypedImpl<UserAgentType> implements 
 			InternalEObject oldUserAgentMethodTypeId = (InternalEObject)userAgentMethodTypeId;
 			userAgentMethodTypeId = (UserAgentMethodType)eResolveProxy(oldUserAgentMethodTypeId);
 			if (userAgentMethodTypeId != oldUserAgentMethodTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, VisitPackage.USER_AGENT__USER_AGENT_METHOD_TYPE_ID, oldUserAgentMethodTypeId, userAgentMethodTypeId));
 			}
 		}
 		return userAgentMethodTypeId;
@@ -292,7 +314,10 @@ public class UserAgentImpl extends BizEntityTypedImpl<UserAgentType> implements 
 	 */
 	@Override
 	public void setUserAgentMethodTypeId(UserAgentMethodType newUserAgentMethodTypeId) {
+		UserAgentMethodType oldUserAgentMethodTypeId = userAgentMethodTypeId;
 		userAgentMethodTypeId = newUserAgentMethodTypeId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, VisitPackage.USER_AGENT__USER_AGENT_METHOD_TYPE_ID, oldUserAgentMethodTypeId, userAgentMethodTypeId));
 	}
 
 	/**
@@ -306,6 +331,8 @@ public class UserAgentImpl extends BizEntityTypedImpl<UserAgentType> implements 
 			InternalEObject oldUserAgentTypeId = (InternalEObject)userAgentTypeId;
 			userAgentTypeId = (UserAgentType)eResolveProxy(oldUserAgentTypeId);
 			if (userAgentTypeId != oldUserAgentTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, VisitPackage.USER_AGENT__USER_AGENT_TYPE_ID, oldUserAgentTypeId, userAgentTypeId));
 			}
 		}
 		return userAgentTypeId;
@@ -327,7 +354,10 @@ public class UserAgentImpl extends BizEntityTypedImpl<UserAgentType> implements 
 	 */
 	@Override
 	public void setUserAgentTypeId(UserAgentType newUserAgentTypeId) {
+		UserAgentType oldUserAgentTypeId = userAgentTypeId;
 		userAgentTypeId = newUserAgentTypeId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, VisitPackage.USER_AGENT__USER_AGENT_TYPE_ID, oldUserAgentTypeId, userAgentTypeId));
 	}
 
 	/**

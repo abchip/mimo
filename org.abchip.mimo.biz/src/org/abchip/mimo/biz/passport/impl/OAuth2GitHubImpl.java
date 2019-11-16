@@ -13,10 +13,12 @@ import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.passport.OAuth2GitHub;
 import org.abchip.mimo.biz.passport.PassportPackage;
 import org.abchip.mimo.biz.product.store.ProductStore;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -224,6 +226,8 @@ public class OAuth2GitHubImpl extends BizEntityImpl implements OAuth2GitHub {
 			InternalEObject oldProductStoreId = (InternalEObject)productStoreId;
 			productStoreId = (ProductStore)eResolveProxy(oldProductStoreId);
 			if (productStoreId != oldProductStoreId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PassportPackage.OAUTH2_GIT_HUB__PRODUCT_STORE_ID, oldProductStoreId, productStoreId));
 			}
 		}
 		return productStoreId;
@@ -245,7 +249,10 @@ public class OAuth2GitHubImpl extends BizEntityImpl implements OAuth2GitHub {
 	 */
 	@Override
 	public void setProductStoreId(ProductStore newProductStoreId) {
+		ProductStore oldProductStoreId = productStoreId;
 		productStoreId = newProductStoreId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PassportPackage.OAUTH2_GIT_HUB__PRODUCT_STORE_ID, oldProductStoreId, productStoreId));
 	}
 
 	/**
@@ -265,7 +272,10 @@ public class OAuth2GitHubImpl extends BizEntityImpl implements OAuth2GitHub {
 	 */
 	@Override
 	public void setFromDate(Date newFromDate) {
+		Date oldFromDate = fromDate;
 		fromDate = newFromDate;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PassportPackage.OAUTH2_GIT_HUB__FROM_DATE, oldFromDate, fromDate));
 	}
 
 	/**
@@ -285,7 +295,10 @@ public class OAuth2GitHubImpl extends BizEntityImpl implements OAuth2GitHub {
 	 */
 	@Override
 	public void setClientId(String newClientId) {
+		String oldClientId = clientId;
 		clientId = newClientId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PassportPackage.OAUTH2_GIT_HUB__CLIENT_ID, oldClientId, clientId));
 	}
 
 	/**
@@ -305,7 +318,10 @@ public class OAuth2GitHubImpl extends BizEntityImpl implements OAuth2GitHub {
 	 */
 	@Override
 	public void setClientSecret(String newClientSecret) {
+		String oldClientSecret = clientSecret;
 		clientSecret = newClientSecret;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PassportPackage.OAUTH2_GIT_HUB__CLIENT_SECRET, oldClientSecret, clientSecret));
 	}
 
 	/**
@@ -325,7 +341,10 @@ public class OAuth2GitHubImpl extends BizEntityImpl implements OAuth2GitHub {
 	 */
 	@Override
 	public void setIconUrl(String newIconUrl) {
+		String oldIconUrl = iconUrl;
 		iconUrl = newIconUrl;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PassportPackage.OAUTH2_GIT_HUB__ICON_URL, oldIconUrl, iconUrl));
 	}
 
 	/**
@@ -345,7 +364,10 @@ public class OAuth2GitHubImpl extends BizEntityImpl implements OAuth2GitHub {
 	 */
 	@Override
 	public void setLocalRedirectUri(String newLocalRedirectUri) {
+		String oldLocalRedirectUri = localRedirectUri;
 		localRedirectUri = newLocalRedirectUri;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PassportPackage.OAUTH2_GIT_HUB__LOCAL_REDIRECT_URI, oldLocalRedirectUri, localRedirectUri));
 	}
 
 	/**
@@ -365,7 +387,10 @@ public class OAuth2GitHubImpl extends BizEntityImpl implements OAuth2GitHub {
 	 */
 	@Override
 	public void setReturnUrl(String newReturnUrl) {
+		String oldReturnUrl = returnUrl;
 		returnUrl = newReturnUrl;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PassportPackage.OAUTH2_GIT_HUB__RETURN_URL, oldReturnUrl, returnUrl));
 	}
 
 	/**
@@ -385,7 +410,10 @@ public class OAuth2GitHubImpl extends BizEntityImpl implements OAuth2GitHub {
 	 */
 	@Override
 	public void setThruDate(Date newThruDate) {
+		Date oldThruDate = thruDate;
 		thruDate = newThruDate;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PassportPackage.OAUTH2_GIT_HUB__THRU_DATE, oldThruDate, thruDate));
 	}
 
 	/**

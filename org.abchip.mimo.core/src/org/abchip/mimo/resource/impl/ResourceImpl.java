@@ -15,9 +15,11 @@ import org.abchip.mimo.entity.impl.EntityImpl;
 import org.abchip.mimo.resource.Resource;
 import org.abchip.mimo.resource.ResourceConfig;
 import org.abchip.mimo.resource.ResourcePackage;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc --> An implementation of the model object
@@ -73,6 +75,8 @@ public abstract class ResourceImpl<E extends EntityNameable> extends EntityImpl 
 			InternalEObject oldResourceConfig = (InternalEObject)resourceConfig;
 			resourceConfig = (ResourceConfig)eResolveProxy(oldResourceConfig);
 			if (resourceConfig != oldResourceConfig) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ResourcePackage.RESOURCE__RESOURCE_CONFIG, oldResourceConfig, resourceConfig));
 			}
 		}
 		return resourceConfig;
@@ -93,7 +97,10 @@ public abstract class ResourceImpl<E extends EntityNameable> extends EntityImpl 
 	 */
 	@Override
 	public void setResourceConfig(ResourceConfig newResourceConfig) {
+		ResourceConfig oldResourceConfig = resourceConfig;
 		resourceConfig = newResourceConfig;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ResourcePackage.RESOURCE__RESOURCE_CONFIG, oldResourceConfig, resourceConfig));
 	}
 
 	/**

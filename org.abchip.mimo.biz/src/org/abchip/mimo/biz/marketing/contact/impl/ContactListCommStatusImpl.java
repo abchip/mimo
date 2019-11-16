@@ -16,10 +16,12 @@ import org.abchip.mimo.biz.party.communication.CommunicationEvent;
 import org.abchip.mimo.biz.party.contact.ContactMech;
 import org.abchip.mimo.biz.party.party.Party;
 import org.abchip.mimo.biz.security.login.UserLogin;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -156,6 +158,8 @@ public class ContactListCommStatusImpl extends BizEntityImpl implements ContactL
 			InternalEObject oldChangeByUserLoginId = (InternalEObject)changeByUserLoginId;
 			changeByUserLoginId = (UserLogin)eResolveProxy(oldChangeByUserLoginId);
 			if (changeByUserLoginId != oldChangeByUserLoginId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ContactPackage.CONTACT_LIST_COMM_STATUS__CHANGE_BY_USER_LOGIN_ID, oldChangeByUserLoginId, changeByUserLoginId));
 			}
 		}
 		return changeByUserLoginId;
@@ -177,7 +181,10 @@ public class ContactListCommStatusImpl extends BizEntityImpl implements ContactL
 	 */
 	@Override
 	public void setChangeByUserLoginId(UserLogin newChangeByUserLoginId) {
+		UserLogin oldChangeByUserLoginId = changeByUserLoginId;
 		changeByUserLoginId = newChangeByUserLoginId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ContactPackage.CONTACT_LIST_COMM_STATUS__CHANGE_BY_USER_LOGIN_ID, oldChangeByUserLoginId, changeByUserLoginId));
 	}
 
 	/**
@@ -191,6 +198,8 @@ public class ContactListCommStatusImpl extends BizEntityImpl implements ContactL
 			InternalEObject oldCommunicationEventId = (InternalEObject)communicationEventId;
 			communicationEventId = (CommunicationEvent)eResolveProxy(oldCommunicationEventId);
 			if (communicationEventId != oldCommunicationEventId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ContactPackage.CONTACT_LIST_COMM_STATUS__COMMUNICATION_EVENT_ID, oldCommunicationEventId, communicationEventId));
 			}
 		}
 		return communicationEventId;
@@ -212,7 +221,10 @@ public class ContactListCommStatusImpl extends BizEntityImpl implements ContactL
 	 */
 	@Override
 	public void setCommunicationEventId(CommunicationEvent newCommunicationEventId) {
+		CommunicationEvent oldCommunicationEventId = communicationEventId;
 		communicationEventId = newCommunicationEventId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ContactPackage.CONTACT_LIST_COMM_STATUS__COMMUNICATION_EVENT_ID, oldCommunicationEventId, communicationEventId));
 	}
 
 	/**
@@ -226,6 +238,8 @@ public class ContactListCommStatusImpl extends BizEntityImpl implements ContactL
 			InternalEObject oldContactListId = (InternalEObject)contactListId;
 			contactListId = (ContactList)eResolveProxy(oldContactListId);
 			if (contactListId != oldContactListId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ContactPackage.CONTACT_LIST_COMM_STATUS__CONTACT_LIST_ID, oldContactListId, contactListId));
 			}
 		}
 		return contactListId;
@@ -247,7 +261,10 @@ public class ContactListCommStatusImpl extends BizEntityImpl implements ContactL
 	 */
 	@Override
 	public void setContactListId(ContactList newContactListId) {
+		ContactList oldContactListId = contactListId;
 		contactListId = newContactListId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ContactPackage.CONTACT_LIST_COMM_STATUS__CONTACT_LIST_ID, oldContactListId, contactListId));
 	}
 
 	/**
@@ -261,6 +278,8 @@ public class ContactListCommStatusImpl extends BizEntityImpl implements ContactL
 			InternalEObject oldContactMechId = (InternalEObject)contactMechId;
 			contactMechId = (ContactMech)eResolveProxy(oldContactMechId);
 			if (contactMechId != oldContactMechId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ContactPackage.CONTACT_LIST_COMM_STATUS__CONTACT_MECH_ID, oldContactMechId, contactMechId));
 			}
 		}
 		return contactMechId;
@@ -282,7 +301,10 @@ public class ContactListCommStatusImpl extends BizEntityImpl implements ContactL
 	 */
 	@Override
 	public void setContactMechId(ContactMech newContactMechId) {
+		ContactMech oldContactMechId = contactMechId;
 		contactMechId = newContactMechId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ContactPackage.CONTACT_LIST_COMM_STATUS__CONTACT_MECH_ID, oldContactMechId, contactMechId));
 	}
 
 	/**
@@ -302,7 +324,10 @@ public class ContactListCommStatusImpl extends BizEntityImpl implements ContactL
 	 */
 	@Override
 	public void setMessageId(String newMessageId) {
+		String oldMessageId = messageId;
 		messageId = newMessageId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ContactPackage.CONTACT_LIST_COMM_STATUS__MESSAGE_ID, oldMessageId, messageId));
 	}
 
 	/**
@@ -316,6 +341,8 @@ public class ContactListCommStatusImpl extends BizEntityImpl implements ContactL
 			InternalEObject oldPartyId = (InternalEObject)partyId;
 			partyId = (Party)eResolveProxy(oldPartyId);
 			if (partyId != oldPartyId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ContactPackage.CONTACT_LIST_COMM_STATUS__PARTY_ID, oldPartyId, partyId));
 			}
 		}
 		return partyId;
@@ -337,7 +364,10 @@ public class ContactListCommStatusImpl extends BizEntityImpl implements ContactL
 	 */
 	@Override
 	public void setPartyId(Party newPartyId) {
+		Party oldPartyId = partyId;
 		partyId = newPartyId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ContactPackage.CONTACT_LIST_COMM_STATUS__PARTY_ID, oldPartyId, partyId));
 	}
 
 	/**
@@ -351,6 +381,8 @@ public class ContactListCommStatusImpl extends BizEntityImpl implements ContactL
 			InternalEObject oldStatusId = (InternalEObject)statusId;
 			statusId = (StatusItem)eResolveProxy(oldStatusId);
 			if (statusId != oldStatusId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ContactPackage.CONTACT_LIST_COMM_STATUS__STATUS_ID, oldStatusId, statusId));
 			}
 		}
 		return statusId;
@@ -372,7 +404,10 @@ public class ContactListCommStatusImpl extends BizEntityImpl implements ContactL
 	 */
 	@Override
 	public void setStatusId(StatusItem newStatusId) {
+		StatusItem oldStatusId = statusId;
 		statusId = newStatusId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ContactPackage.CONTACT_LIST_COMM_STATUS__STATUS_ID, oldStatusId, statusId));
 	}
 
 	/**

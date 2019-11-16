@@ -13,9 +13,11 @@ import org.abchip.mimo.biz.accounting.payment.PaymentPackage;
 import org.abchip.mimo.biz.accounting.payment.PaymentType;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.party.party.Party;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -95,6 +97,8 @@ public class PaymentGlAccountTypeMapImpl extends BizEntityImpl implements Paymen
 			InternalEObject oldOrganizationPartyId = (InternalEObject)organizationPartyId;
 			organizationPartyId = (Party)eResolveProxy(oldOrganizationPartyId);
 			if (organizationPartyId != oldOrganizationPartyId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PaymentPackage.PAYMENT_GL_ACCOUNT_TYPE_MAP__ORGANIZATION_PARTY_ID, oldOrganizationPartyId, organizationPartyId));
 			}
 		}
 		return organizationPartyId;
@@ -116,7 +120,10 @@ public class PaymentGlAccountTypeMapImpl extends BizEntityImpl implements Paymen
 	 */
 	@Override
 	public void setOrganizationPartyId(Party newOrganizationPartyId) {
+		Party oldOrganizationPartyId = organizationPartyId;
 		organizationPartyId = newOrganizationPartyId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.PAYMENT_GL_ACCOUNT_TYPE_MAP__ORGANIZATION_PARTY_ID, oldOrganizationPartyId, organizationPartyId));
 	}
 
 	/**
@@ -130,6 +137,8 @@ public class PaymentGlAccountTypeMapImpl extends BizEntityImpl implements Paymen
 			InternalEObject oldPaymentTypeId = (InternalEObject)paymentTypeId;
 			paymentTypeId = (PaymentType)eResolveProxy(oldPaymentTypeId);
 			if (paymentTypeId != oldPaymentTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PaymentPackage.PAYMENT_GL_ACCOUNT_TYPE_MAP__PAYMENT_TYPE_ID, oldPaymentTypeId, paymentTypeId));
 			}
 		}
 		return paymentTypeId;
@@ -151,7 +160,10 @@ public class PaymentGlAccountTypeMapImpl extends BizEntityImpl implements Paymen
 	 */
 	@Override
 	public void setPaymentTypeId(PaymentType newPaymentTypeId) {
+		PaymentType oldPaymentTypeId = paymentTypeId;
 		paymentTypeId = newPaymentTypeId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.PAYMENT_GL_ACCOUNT_TYPE_MAP__PAYMENT_TYPE_ID, oldPaymentTypeId, paymentTypeId));
 	}
 
 	/**
@@ -165,6 +177,8 @@ public class PaymentGlAccountTypeMapImpl extends BizEntityImpl implements Paymen
 			InternalEObject oldGlAccountTypeId = (InternalEObject)glAccountTypeId;
 			glAccountTypeId = (GlAccountType)eResolveProxy(oldGlAccountTypeId);
 			if (glAccountTypeId != oldGlAccountTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PaymentPackage.PAYMENT_GL_ACCOUNT_TYPE_MAP__GL_ACCOUNT_TYPE_ID, oldGlAccountTypeId, glAccountTypeId));
 			}
 		}
 		return glAccountTypeId;
@@ -186,7 +200,10 @@ public class PaymentGlAccountTypeMapImpl extends BizEntityImpl implements Paymen
 	 */
 	@Override
 	public void setGlAccountTypeId(GlAccountType newGlAccountTypeId) {
+		GlAccountType oldGlAccountTypeId = glAccountTypeId;
 		glAccountTypeId = newGlAccountTypeId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.PAYMENT_GL_ACCOUNT_TYPE_MAP__GL_ACCOUNT_TYPE_ID, oldGlAccountTypeId, glAccountTypeId));
 	}
 
 	/**

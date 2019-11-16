@@ -14,9 +14,11 @@ import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.party.party.Party;
 import org.abchip.mimo.biz.party.party.PartyDataSource;
 import org.abchip.mimo.biz.party.party.PartyPackage;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -168,7 +170,10 @@ public class PartyDataSourceImpl extends BizEntityImpl implements PartyDataSourc
 	 */
 	@Override
 	public void setComments(String newComments) {
+		String oldComments = comments;
 		comments = newComments;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PartyPackage.PARTY_DATA_SOURCE__COMMENTS, oldComments, comments));
 	}
 
 	/**
@@ -188,7 +193,10 @@ public class PartyDataSourceImpl extends BizEntityImpl implements PartyDataSourc
 	 */
 	@Override
 	public void setIsCreate(boolean newIsCreate) {
+		boolean oldIsCreate = isCreate;
 		isCreate = newIsCreate;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PartyPackage.PARTY_DATA_SOURCE__IS_CREATE, oldIsCreate, isCreate));
 	}
 
 	/**
@@ -202,6 +210,8 @@ public class PartyDataSourceImpl extends BizEntityImpl implements PartyDataSourc
 			InternalEObject oldDataSourceId = (InternalEObject)dataSourceId;
 			dataSourceId = (DataSource)eResolveProxy(oldDataSourceId);
 			if (dataSourceId != oldDataSourceId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PartyPackage.PARTY_DATA_SOURCE__DATA_SOURCE_ID, oldDataSourceId, dataSourceId));
 			}
 		}
 		return dataSourceId;
@@ -223,7 +233,10 @@ public class PartyDataSourceImpl extends BizEntityImpl implements PartyDataSourc
 	 */
 	@Override
 	public void setDataSourceId(DataSource newDataSourceId) {
+		DataSource oldDataSourceId = dataSourceId;
 		dataSourceId = newDataSourceId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PartyPackage.PARTY_DATA_SOURCE__DATA_SOURCE_ID, oldDataSourceId, dataSourceId));
 	}
 
 	/**
@@ -243,7 +256,10 @@ public class PartyDataSourceImpl extends BizEntityImpl implements PartyDataSourc
 	 */
 	@Override
 	public void setFromDate(Date newFromDate) {
+		Date oldFromDate = fromDate;
 		fromDate = newFromDate;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PartyPackage.PARTY_DATA_SOURCE__FROM_DATE, oldFromDate, fromDate));
 	}
 
 	/**
@@ -263,7 +279,10 @@ public class PartyDataSourceImpl extends BizEntityImpl implements PartyDataSourc
 	 */
 	@Override
 	public void setVisitId(String newVisitId) {
+		String oldVisitId = visitId;
 		visitId = newVisitId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PartyPackage.PARTY_DATA_SOURCE__VISIT_ID, oldVisitId, visitId));
 	}
 
 	/**
@@ -277,6 +296,8 @@ public class PartyDataSourceImpl extends BizEntityImpl implements PartyDataSourc
 			InternalEObject oldPartyId = (InternalEObject)partyId;
 			partyId = (Party)eResolveProxy(oldPartyId);
 			if (partyId != oldPartyId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PartyPackage.PARTY_DATA_SOURCE__PARTY_ID, oldPartyId, partyId));
 			}
 		}
 		return partyId;
@@ -298,7 +319,10 @@ public class PartyDataSourceImpl extends BizEntityImpl implements PartyDataSourc
 	 */
 	@Override
 	public void setPartyId(Party newPartyId) {
+		Party oldPartyId = partyId;
 		partyId = newPartyId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PartyPackage.PARTY_DATA_SOURCE__PARTY_ID, oldPartyId, partyId));
 	}
 
 	/**

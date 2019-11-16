@@ -13,11 +13,13 @@ import java.util.List;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.party.communication.CommunicationEventPrpTyp;
 import org.abchip.mimo.biz.party.communication.CommunicationPackage;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.util.BasicInternalEList;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -151,7 +153,10 @@ public class CommunicationEventPrpTypImpl extends BizEntityImpl implements Commu
 	 */
 	@Override
 	public void setDescription(String newDescription) {
+		String oldDescription = description;
 		description = newDescription;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, CommunicationPackage.COMMUNICATION_EVENT_PRP_TYP__DESCRIPTION, oldDescription, description));
 	}
 
 	/**
@@ -171,7 +176,10 @@ public class CommunicationEventPrpTypImpl extends BizEntityImpl implements Commu
 	 */
 	@Override
 	public void setHasTable(boolean newHasTable) {
+		boolean oldHasTable = hasTable;
 		hasTable = newHasTable;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, CommunicationPackage.COMMUNICATION_EVENT_PRP_TYP__HAS_TABLE, oldHasTable, hasTable));
 	}
 
 	/**
@@ -185,6 +193,8 @@ public class CommunicationEventPrpTypImpl extends BizEntityImpl implements Commu
 			InternalEObject oldParentTypeId = (InternalEObject)parentTypeId;
 			parentTypeId = (CommunicationEventPrpTyp)eResolveProxy(oldParentTypeId);
 			if (parentTypeId != oldParentTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, CommunicationPackage.COMMUNICATION_EVENT_PRP_TYP__PARENT_TYPE_ID, oldParentTypeId, parentTypeId));
 			}
 		}
 		return parentTypeId;
@@ -206,7 +216,10 @@ public class CommunicationEventPrpTypImpl extends BizEntityImpl implements Commu
 	 */
 	@Override
 	public void setParentTypeId(CommunicationEventPrpTyp newParentTypeId) {
+		CommunicationEventPrpTyp oldParentTypeId = parentTypeId;
 		parentTypeId = newParentTypeId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, CommunicationPackage.COMMUNICATION_EVENT_PRP_TYP__PARENT_TYPE_ID, oldParentTypeId, parentTypeId));
 	}
 
 	/**
@@ -217,7 +230,7 @@ public class CommunicationEventPrpTypImpl extends BizEntityImpl implements Commu
 	@Override
 	public List<String> getCommunicationEventPurposes() {
 		if (communicationEventPurposes == null) {
-			communicationEventPurposes = new BasicInternalEList<String>(String.class);
+			communicationEventPurposes = new EDataTypeUniqueEList<String>(String.class, this, CommunicationPackage.COMMUNICATION_EVENT_PRP_TYP__COMMUNICATION_EVENT_PURPOSES);
 		}
 		return communicationEventPurposes;
 	}
@@ -251,7 +264,10 @@ public class CommunicationEventPrpTypImpl extends BizEntityImpl implements Commu
 	 */
 	@Override
 	public void setCommunicationEventPrpTypId(String newCommunicationEventPrpTypId) {
+		String oldCommunicationEventPrpTypId = communicationEventPrpTypId;
 		communicationEventPrpTypId = newCommunicationEventPrpTypId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, CommunicationPackage.COMMUNICATION_EVENT_PRP_TYP__COMMUNICATION_EVENT_PRP_TYP_ID, oldCommunicationEventPrpTypId, communicationEventPrpTypId));
 	}
 
 	/**

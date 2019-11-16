@@ -12,9 +12,12 @@ import org.abchip.mimo.biz.BizPackage;
 import org.abchip.mimo.biz.BizProviderConfig;
 import org.abchip.mimo.biz.BizProviderUser;
 import org.abchip.mimo.entity.impl.EntityImpl;
+import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -134,7 +137,10 @@ public class BizProviderConfigImpl extends EntityImpl implements BizProviderConf
 	 */
 	@Override
 	public void setUrl(String newUrl) {
+		String oldUrl = url;
 		url = newUrl;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, BizPackage.BIZ_PROVIDER_CONFIG__URL, oldUrl, url));
 	}
 
 	/**
@@ -148,6 +154,14 @@ public class BizProviderConfigImpl extends EntityImpl implements BizProviderConf
 			InternalEObject oldPublicUser = (InternalEObject)publicUser;
 			publicUser = (BizProviderUser)eResolveProxy(oldPublicUser);
 			if (publicUser != oldPublicUser) {
+				InternalEObject newPublicUser = (InternalEObject)publicUser;
+				NotificationChain msgs = oldPublicUser.eInverseRemove(this, EOPPOSITE_FEATURE_BASE - BizPackage.BIZ_PROVIDER_CONFIG__PUBLIC_USER, null, null);
+				if (newPublicUser.eInternalContainer() == null) {
+					msgs = newPublicUser.eInverseAdd(this, EOPPOSITE_FEATURE_BASE - BizPackage.BIZ_PROVIDER_CONFIG__PUBLIC_USER, null, msgs);
+				}
+				if (msgs != null) msgs.dispatch();
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, BizPackage.BIZ_PROVIDER_CONFIG__PUBLIC_USER, oldPublicUser, publicUser));
 			}
 		}
 		return publicUser;
@@ -167,9 +181,34 @@ public class BizProviderConfigImpl extends EntityImpl implements BizProviderConf
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public NotificationChain basicSetPublicUser(BizProviderUser newPublicUser, NotificationChain msgs) {
+		BizProviderUser oldPublicUser = publicUser;
+		publicUser = newPublicUser;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, BizPackage.BIZ_PROVIDER_CONFIG__PUBLIC_USER, oldPublicUser, newPublicUser);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public void setPublicUser(BizProviderUser newPublicUser) {
-		publicUser = newPublicUser;
+		if (newPublicUser != publicUser) {
+			NotificationChain msgs = null;
+			if (publicUser != null)
+				msgs = ((InternalEObject)publicUser).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - BizPackage.BIZ_PROVIDER_CONFIG__PUBLIC_USER, null, msgs);
+			if (newPublicUser != null)
+				msgs = ((InternalEObject)newPublicUser).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - BizPackage.BIZ_PROVIDER_CONFIG__PUBLIC_USER, null, msgs);
+			msgs = basicSetPublicUser(newPublicUser, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, BizPackage.BIZ_PROVIDER_CONFIG__PUBLIC_USER, newPublicUser, newPublicUser));
 	}
 
 	/**
@@ -183,6 +222,14 @@ public class BizProviderConfigImpl extends EntityImpl implements BizProviderConf
 			InternalEObject oldSystemUser = (InternalEObject)systemUser;
 			systemUser = (BizProviderUser)eResolveProxy(oldSystemUser);
 			if (systemUser != oldSystemUser) {
+				InternalEObject newSystemUser = (InternalEObject)systemUser;
+				NotificationChain msgs = oldSystemUser.eInverseRemove(this, EOPPOSITE_FEATURE_BASE - BizPackage.BIZ_PROVIDER_CONFIG__SYSTEM_USER, null, null);
+				if (newSystemUser.eInternalContainer() == null) {
+					msgs = newSystemUser.eInverseAdd(this, EOPPOSITE_FEATURE_BASE - BizPackage.BIZ_PROVIDER_CONFIG__SYSTEM_USER, null, msgs);
+				}
+				if (msgs != null) msgs.dispatch();
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, BizPackage.BIZ_PROVIDER_CONFIG__SYSTEM_USER, oldSystemUser, systemUser));
 			}
 		}
 		return systemUser;
@@ -202,9 +249,50 @@ public class BizProviderConfigImpl extends EntityImpl implements BizProviderConf
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public NotificationChain basicSetSystemUser(BizProviderUser newSystemUser, NotificationChain msgs) {
+		BizProviderUser oldSystemUser = systemUser;
+		systemUser = newSystemUser;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, BizPackage.BIZ_PROVIDER_CONFIG__SYSTEM_USER, oldSystemUser, newSystemUser);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public void setSystemUser(BizProviderUser newSystemUser) {
-		systemUser = newSystemUser;
+		if (newSystemUser != systemUser) {
+			NotificationChain msgs = null;
+			if (systemUser != null)
+				msgs = ((InternalEObject)systemUser).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - BizPackage.BIZ_PROVIDER_CONFIG__SYSTEM_USER, null, msgs);
+			if (newSystemUser != null)
+				msgs = ((InternalEObject)newSystemUser).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - BizPackage.BIZ_PROVIDER_CONFIG__SYSTEM_USER, null, msgs);
+			msgs = basicSetSystemUser(newSystemUser, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, BizPackage.BIZ_PROVIDER_CONFIG__SYSTEM_USER, newSystemUser, newSystemUser));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case BizPackage.BIZ_PROVIDER_CONFIG__PUBLIC_USER:
+				return basicSetPublicUser(null, msgs);
+			case BizPackage.BIZ_PROVIDER_CONFIG__SYSTEM_USER:
+				return basicSetSystemUser(null, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
 
 	/**
@@ -224,7 +312,10 @@ public class BizProviderConfigImpl extends EntityImpl implements BizProviderConf
 	 */
 	@Override
 	public void setLoginType(BizLoginType newLoginType) {
+		BizLoginType oldLoginType = loginType;
 		loginType = newLoginType == null ? LOGIN_TYPE_EDEFAULT : newLoginType;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, BizPackage.BIZ_PROVIDER_CONFIG__LOGIN_TYPE, oldLoginType, loginType));
 	}
 
 	/**

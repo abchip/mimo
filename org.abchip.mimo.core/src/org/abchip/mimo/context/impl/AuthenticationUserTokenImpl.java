@@ -11,7 +11,9 @@ import org.abchip.mimo.context.AuthenticationUserToken;
 import org.abchip.mimo.context.ContextPackage;
 
 import org.abchip.mimo.entity.impl.EntityImpl;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -162,7 +164,10 @@ public class AuthenticationUserTokenImpl extends EntityImpl implements Authentic
 	 */
 	@Override
 	public void setProvider(String newProvider) {
+		String oldProvider = provider;
 		provider = newProvider;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ContextPackage.AUTHENTICATION_USER_TOKEN__PROVIDER, oldProvider, provider));
 	}
 
 	/**
@@ -182,7 +187,10 @@ public class AuthenticationUserTokenImpl extends EntityImpl implements Authentic
 	 */
 	@Override
 	public void setAccessToken(String newAccessToken) {
+		String oldAccessToken = accessToken;
 		accessToken = newAccessToken;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ContextPackage.AUTHENTICATION_USER_TOKEN__ACCESS_TOKEN, oldAccessToken, accessToken));
 	}
 
 	/**
@@ -202,7 +210,10 @@ public class AuthenticationUserTokenImpl extends EntityImpl implements Authentic
 	 */
 	@Override
 	public void setIdToken(String newIdToken) {
+		String oldIdToken = idToken;
 		idToken = newIdToken;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ContextPackage.AUTHENTICATION_USER_TOKEN__ID_TOKEN, oldIdToken, idToken));
 	}
 
 	/**
@@ -222,7 +233,10 @@ public class AuthenticationUserTokenImpl extends EntityImpl implements Authentic
 	 */
 	@Override
 	public void setPicture(String newPicture) {
+		String oldPicture = picture;
 		picture = newPicture;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ContextPackage.AUTHENTICATION_USER_TOKEN__PICTURE, oldPicture, picture));
 	}
 
 	/**
@@ -242,7 +256,10 @@ public class AuthenticationUserTokenImpl extends EntityImpl implements Authentic
 	 */
 	@Override
 	public void setUser(String newUser) {
+		String oldUser = user;
 		user = newUser;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ContextPackage.AUTHENTICATION_USER_TOKEN__USER, oldUser, user));
 	}
 
 	/**

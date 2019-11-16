@@ -10,9 +10,11 @@ package org.abchip.mimo.biz.accounting.payment.impl;
 import org.abchip.mimo.biz.accounting.payment.GiftCard;
 import org.abchip.mimo.biz.accounting.payment.PaymentPackage;
 import org.abchip.mimo.biz.party.contact.ContactMech;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -139,7 +141,10 @@ public class GiftCardImpl extends PaymentMethodImpl implements GiftCard {
 	 */
 	@Override
 	public void setCardNumber(String newCardNumber) {
+		String oldCardNumber = cardNumber;
 		cardNumber = newCardNumber;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.GIFT_CARD__CARD_NUMBER, oldCardNumber, cardNumber));
 	}
 
 	/**
@@ -153,6 +158,8 @@ public class GiftCardImpl extends PaymentMethodImpl implements GiftCard {
 			InternalEObject oldContactMechId = (InternalEObject)contactMechId;
 			contactMechId = (ContactMech)eResolveProxy(oldContactMechId);
 			if (contactMechId != oldContactMechId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PaymentPackage.GIFT_CARD__CONTACT_MECH_ID, oldContactMechId, contactMechId));
 			}
 		}
 		return contactMechId;
@@ -174,7 +181,10 @@ public class GiftCardImpl extends PaymentMethodImpl implements GiftCard {
 	 */
 	@Override
 	public void setContactMechId(ContactMech newContactMechId) {
+		ContactMech oldContactMechId = contactMechId;
 		contactMechId = newContactMechId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.GIFT_CARD__CONTACT_MECH_ID, oldContactMechId, contactMechId));
 	}
 
 	/**
@@ -194,7 +204,10 @@ public class GiftCardImpl extends PaymentMethodImpl implements GiftCard {
 	 */
 	@Override
 	public void setExpireDate(String newExpireDate) {
+		String oldExpireDate = expireDate;
 		expireDate = newExpireDate;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.GIFT_CARD__EXPIRE_DATE, oldExpireDate, expireDate));
 	}
 
 	/**
@@ -214,7 +227,10 @@ public class GiftCardImpl extends PaymentMethodImpl implements GiftCard {
 	 */
 	@Override
 	public void setPinNumber(String newPinNumber) {
+		String oldPinNumber = pinNumber;
 		pinNumber = newPinNumber;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.GIFT_CARD__PIN_NUMBER, oldPinNumber, pinNumber));
 	}
 
 	/**

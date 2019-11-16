@@ -13,9 +13,11 @@ import org.abchip.mimo.biz.common.enum_.EnumPackage;
 import org.abchip.mimo.biz.common.enum_.Enumeration;
 import org.abchip.mimo.biz.common.enum_.EnumerationType;
 import org.abchip.mimo.biz.impl.BizEntityTypeImpl;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -138,7 +140,10 @@ public class EnumerationTypeImpl extends BizEntityTypeImpl<Enumeration> implemen
 	 */
 	@Override
 	public void setDescription(String newDescription) {
+		String oldDescription = description;
 		description = newDescription;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, EnumPackage.ENUMERATION_TYPE__DESCRIPTION, oldDescription, description));
 	}
 
 	/**
@@ -158,7 +163,10 @@ public class EnumerationTypeImpl extends BizEntityTypeImpl<Enumeration> implemen
 	 */
 	@Override
 	public void setHasTable(boolean newHasTable) {
+		boolean oldHasTable = hasTable;
 		hasTable = newHasTable;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, EnumPackage.ENUMERATION_TYPE__HAS_TABLE, oldHasTable, hasTable));
 	}
 
 	/**
@@ -172,6 +180,8 @@ public class EnumerationTypeImpl extends BizEntityTypeImpl<Enumeration> implemen
 			InternalEObject oldParentTypeId = (InternalEObject)parentTypeId;
 			parentTypeId = (EnumerationType)eResolveProxy(oldParentTypeId);
 			if (parentTypeId != oldParentTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, EnumPackage.ENUMERATION_TYPE__PARENT_TYPE_ID, oldParentTypeId, parentTypeId));
 			}
 		}
 		return parentTypeId;
@@ -193,7 +203,10 @@ public class EnumerationTypeImpl extends BizEntityTypeImpl<Enumeration> implemen
 	 */
 	@Override
 	public void setParentTypeId(EnumerationType newParentTypeId) {
+		EnumerationType oldParentTypeId = parentTypeId;
 		parentTypeId = newParentTypeId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, EnumPackage.ENUMERATION_TYPE__PARENT_TYPE_ID, oldParentTypeId, parentTypeId));
 	}
 
 	/**
@@ -237,7 +250,10 @@ public class EnumerationTypeImpl extends BizEntityTypeImpl<Enumeration> implemen
 	 */
 	@Override
 	public void setEnumTypeId(String newEnumTypeId) {
+		String oldEnumTypeId = enumTypeId;
 		enumTypeId = newEnumTypeId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, EnumPackage.ENUMERATION_TYPE__ENUM_TYPE_ID, oldEnumTypeId, enumTypeId));
 	}
 
 	/**

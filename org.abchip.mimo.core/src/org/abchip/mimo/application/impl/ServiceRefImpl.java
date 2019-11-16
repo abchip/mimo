@@ -12,7 +12,9 @@ import org.abchip.mimo.application.ApplicationPackage;
 import org.abchip.mimo.application.ServiceRef;
 import org.abchip.mimo.application.ServiceStatus;
 import org.abchip.mimo.entity.impl.EntityImpl;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -106,7 +108,10 @@ public abstract class ServiceRefImpl extends EntityImpl implements ServiceRef {
 	 */
 	@Override
 	public void setClassName(String newClassName) {
+		String oldClassName = className;
 		className = newClassName;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ApplicationPackage.SERVICE_REF__CLASS_NAME, oldClassName, className));
 	}
 
 	/**
@@ -224,7 +229,10 @@ public abstract class ServiceRefImpl extends EntityImpl implements ServiceRef {
 	 */
 	@Override
 	public void setStatus(ServiceStatus newStatus) {
+		ServiceStatus oldStatus = status;
 		status = newStatus == null ? STATUS_EDEFAULT : newStatus;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ApplicationPackage.SERVICE_REF__STATUS, oldStatus, status));
 	}
 
 } //ServiceRefImpl

@@ -14,10 +14,12 @@ import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.webapp.visit.ServerHitBin;
 import org.abchip.mimo.biz.webapp.visit.ServerHitType;
 import org.abchip.mimo.biz.webapp.visit.VisitPackage;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -305,7 +307,10 @@ public class ServerHitBinImpl extends BizEntityImpl implements ServerHitBin {
 	 */
 	@Override
 	public void setServerHitBinId(String newServerHitBinId) {
+		String oldServerHitBinId = serverHitBinId;
 		serverHitBinId = newServerHitBinId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, VisitPackage.SERVER_HIT_BIN__SERVER_HIT_BIN_ID, oldServerHitBinId, serverHitBinId));
 	}
 
 	/**
@@ -325,7 +330,10 @@ public class ServerHitBinImpl extends BizEntityImpl implements ServerHitBin {
 	 */
 	@Override
 	public void setBinEndDateTime(Date newBinEndDateTime) {
+		Date oldBinEndDateTime = binEndDateTime;
 		binEndDateTime = newBinEndDateTime;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, VisitPackage.SERVER_HIT_BIN__BIN_END_DATE_TIME, oldBinEndDateTime, binEndDateTime));
 	}
 
 	/**
@@ -345,7 +353,10 @@ public class ServerHitBinImpl extends BizEntityImpl implements ServerHitBin {
 	 */
 	@Override
 	public void setBinStartDateTime(Date newBinStartDateTime) {
+		Date oldBinStartDateTime = binStartDateTime;
 		binStartDateTime = newBinStartDateTime;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, VisitPackage.SERVER_HIT_BIN__BIN_START_DATE_TIME, oldBinStartDateTime, binStartDateTime));
 	}
 
 	/**
@@ -365,7 +376,10 @@ public class ServerHitBinImpl extends BizEntityImpl implements ServerHitBin {
 	 */
 	@Override
 	public void setContentId(String newContentId) {
+		String oldContentId = contentId;
 		contentId = newContentId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, VisitPackage.SERVER_HIT_BIN__CONTENT_ID, oldContentId, contentId));
 	}
 
 	/**
@@ -379,6 +393,8 @@ public class ServerHitBinImpl extends BizEntityImpl implements ServerHitBin {
 			InternalEObject oldHitTypeId = (InternalEObject)hitTypeId;
 			hitTypeId = (ServerHitType)eResolveProxy(oldHitTypeId);
 			if (hitTypeId != oldHitTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, VisitPackage.SERVER_HIT_BIN__HIT_TYPE_ID, oldHitTypeId, hitTypeId));
 			}
 		}
 		return hitTypeId;
@@ -400,7 +416,10 @@ public class ServerHitBinImpl extends BizEntityImpl implements ServerHitBin {
 	 */
 	@Override
 	public void setHitTypeId(ServerHitType newHitTypeId) {
+		ServerHitType oldHitTypeId = hitTypeId;
 		hitTypeId = newHitTypeId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, VisitPackage.SERVER_HIT_BIN__HIT_TYPE_ID, oldHitTypeId, hitTypeId));
 	}
 
 	/**
@@ -414,6 +433,8 @@ public class ServerHitBinImpl extends BizEntityImpl implements ServerHitBin {
 			InternalEObject oldInternalContentId = (InternalEObject)internalContentId;
 			internalContentId = (Content)eResolveProxy(oldInternalContentId);
 			if (internalContentId != oldInternalContentId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, VisitPackage.SERVER_HIT_BIN__INTERNAL_CONTENT_ID, oldInternalContentId, internalContentId));
 			}
 		}
 		return internalContentId;
@@ -435,7 +456,10 @@ public class ServerHitBinImpl extends BizEntityImpl implements ServerHitBin {
 	 */
 	@Override
 	public void setInternalContentId(Content newInternalContentId) {
+		Content oldInternalContentId = internalContentId;
 		internalContentId = newInternalContentId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, VisitPackage.SERVER_HIT_BIN__INTERNAL_CONTENT_ID, oldInternalContentId, internalContentId));
 	}
 
 	/**
@@ -455,7 +479,10 @@ public class ServerHitBinImpl extends BizEntityImpl implements ServerHitBin {
 	 */
 	@Override
 	public void setMaxTimeMillis(long newMaxTimeMillis) {
+		long oldMaxTimeMillis = maxTimeMillis;
 		maxTimeMillis = newMaxTimeMillis;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, VisitPackage.SERVER_HIT_BIN__MAX_TIME_MILLIS, oldMaxTimeMillis, maxTimeMillis));
 	}
 
 	/**
@@ -475,7 +502,10 @@ public class ServerHitBinImpl extends BizEntityImpl implements ServerHitBin {
 	 */
 	@Override
 	public void setMinTimeMillis(long newMinTimeMillis) {
+		long oldMinTimeMillis = minTimeMillis;
 		minTimeMillis = newMinTimeMillis;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, VisitPackage.SERVER_HIT_BIN__MIN_TIME_MILLIS, oldMinTimeMillis, minTimeMillis));
 	}
 
 	/**
@@ -495,7 +525,10 @@ public class ServerHitBinImpl extends BizEntityImpl implements ServerHitBin {
 	 */
 	@Override
 	public void setNumberHits(long newNumberHits) {
+		long oldNumberHits = numberHits;
 		numberHits = newNumberHits;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, VisitPackage.SERVER_HIT_BIN__NUMBER_HITS, oldNumberHits, numberHits));
 	}
 
 	/**
@@ -515,7 +548,10 @@ public class ServerHitBinImpl extends BizEntityImpl implements ServerHitBin {
 	 */
 	@Override
 	public void setServerHostName(String newServerHostName) {
+		String oldServerHostName = serverHostName;
 		serverHostName = newServerHostName;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, VisitPackage.SERVER_HIT_BIN__SERVER_HOST_NAME, oldServerHostName, serverHostName));
 	}
 
 	/**
@@ -535,7 +571,10 @@ public class ServerHitBinImpl extends BizEntityImpl implements ServerHitBin {
 	 */
 	@Override
 	public void setServerIpAddress(String newServerIpAddress) {
+		String oldServerIpAddress = serverIpAddress;
 		serverIpAddress = newServerIpAddress;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, VisitPackage.SERVER_HIT_BIN__SERVER_IP_ADDRESS, oldServerIpAddress, serverIpAddress));
 	}
 
 	/**
@@ -555,7 +594,10 @@ public class ServerHitBinImpl extends BizEntityImpl implements ServerHitBin {
 	 */
 	@Override
 	public void setTotalTimeMillis(long newTotalTimeMillis) {
+		long oldTotalTimeMillis = totalTimeMillis;
 		totalTimeMillis = newTotalTimeMillis;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, VisitPackage.SERVER_HIT_BIN__TOTAL_TIME_MILLIS, oldTotalTimeMillis, totalTimeMillis));
 	}
 
 	/**

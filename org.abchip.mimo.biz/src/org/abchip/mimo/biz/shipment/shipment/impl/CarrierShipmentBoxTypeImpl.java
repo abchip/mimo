@@ -12,10 +12,12 @@ import org.abchip.mimo.biz.party.party.Party;
 import org.abchip.mimo.biz.shipment.shipment.CarrierShipmentBoxType;
 import org.abchip.mimo.biz.shipment.shipment.ShipmentBoxType;
 import org.abchip.mimo.biz.shipment.shipment.Shipment_Package;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -135,7 +137,10 @@ public class CarrierShipmentBoxTypeImpl extends BizEntityImpl implements Carrier
 	 */
 	@Override
 	public void setOversizeCode(String newOversizeCode) {
+		String oldOversizeCode = oversizeCode;
 		oversizeCode = newOversizeCode;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, Shipment_Package.CARRIER_SHIPMENT_BOX_TYPE__OVERSIZE_CODE, oldOversizeCode, oversizeCode));
 	}
 
 	/**
@@ -155,7 +160,10 @@ public class CarrierShipmentBoxTypeImpl extends BizEntityImpl implements Carrier
 	 */
 	@Override
 	public void setPackagingTypeCode(String newPackagingTypeCode) {
+		String oldPackagingTypeCode = packagingTypeCode;
 		packagingTypeCode = newPackagingTypeCode;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, Shipment_Package.CARRIER_SHIPMENT_BOX_TYPE__PACKAGING_TYPE_CODE, oldPackagingTypeCode, packagingTypeCode));
 	}
 
 	/**
@@ -169,6 +177,8 @@ public class CarrierShipmentBoxTypeImpl extends BizEntityImpl implements Carrier
 			InternalEObject oldPartyId = (InternalEObject)partyId;
 			partyId = (Party)eResolveProxy(oldPartyId);
 			if (partyId != oldPartyId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, Shipment_Package.CARRIER_SHIPMENT_BOX_TYPE__PARTY_ID, oldPartyId, partyId));
 			}
 		}
 		return partyId;
@@ -190,7 +200,10 @@ public class CarrierShipmentBoxTypeImpl extends BizEntityImpl implements Carrier
 	 */
 	@Override
 	public void setPartyId(Party newPartyId) {
+		Party oldPartyId = partyId;
 		partyId = newPartyId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, Shipment_Package.CARRIER_SHIPMENT_BOX_TYPE__PARTY_ID, oldPartyId, partyId));
 	}
 
 	/**
@@ -204,6 +217,8 @@ public class CarrierShipmentBoxTypeImpl extends BizEntityImpl implements Carrier
 			InternalEObject oldShipmentBoxTypeId = (InternalEObject)shipmentBoxTypeId;
 			shipmentBoxTypeId = (ShipmentBoxType)eResolveProxy(oldShipmentBoxTypeId);
 			if (shipmentBoxTypeId != oldShipmentBoxTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, Shipment_Package.CARRIER_SHIPMENT_BOX_TYPE__SHIPMENT_BOX_TYPE_ID, oldShipmentBoxTypeId, shipmentBoxTypeId));
 			}
 		}
 		return shipmentBoxTypeId;
@@ -225,7 +240,10 @@ public class CarrierShipmentBoxTypeImpl extends BizEntityImpl implements Carrier
 	 */
 	@Override
 	public void setShipmentBoxTypeId(ShipmentBoxType newShipmentBoxTypeId) {
+		ShipmentBoxType oldShipmentBoxTypeId = shipmentBoxTypeId;
 		shipmentBoxTypeId = newShipmentBoxTypeId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, Shipment_Package.CARRIER_SHIPMENT_BOX_TYPE__SHIPMENT_BOX_TYPE_ID, oldShipmentBoxTypeId, shipmentBoxTypeId));
 	}
 
 	/**

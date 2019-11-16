@@ -10,7 +10,9 @@ package org.abchip.mimo.biz.entity.crypto.impl;
 import org.abchip.mimo.biz.entity.crypto.CryptoPackage;
 import org.abchip.mimo.biz.entity.crypto.EntityKeyStore;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -107,7 +109,10 @@ public class EntityKeyStoreImpl extends BizEntityImpl implements EntityKeyStore 
 	 */
 	@Override
 	public void setKeyName(String newKeyName) {
+		String oldKeyName = keyName;
 		keyName = newKeyName;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, CryptoPackage.ENTITY_KEY_STORE__KEY_NAME, oldKeyName, keyName));
 	}
 
 	/**
@@ -127,7 +132,10 @@ public class EntityKeyStoreImpl extends BizEntityImpl implements EntityKeyStore 
 	 */
 	@Override
 	public void setKeyText(String newKeyText) {
+		String oldKeyText = keyText;
 		keyText = newKeyText;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, CryptoPackage.ENTITY_KEY_STORE__KEY_TEXT, oldKeyText, keyText));
 	}
 
 	/**

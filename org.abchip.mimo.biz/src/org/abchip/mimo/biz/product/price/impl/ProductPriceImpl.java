@@ -23,9 +23,11 @@ import org.abchip.mimo.biz.product.price.ProductPriceType;
 import org.abchip.mimo.biz.product.product.Product;
 import org.abchip.mimo.biz.product.store.ProductStoreGroup;
 import org.abchip.mimo.biz.security.login.UserLogin;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -406,6 +408,8 @@ public class ProductPriceImpl extends BizEntityTypedImpl<ProductPriceType> imple
 			InternalEObject oldCreatedByUserLogin = (InternalEObject)createdByUserLogin;
 			createdByUserLogin = (UserLogin)eResolveProxy(oldCreatedByUserLogin);
 			if (createdByUserLogin != oldCreatedByUserLogin) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PricePackage.PRODUCT_PRICE__CREATED_BY_USER_LOGIN, oldCreatedByUserLogin, createdByUserLogin));
 			}
 		}
 		return createdByUserLogin;
@@ -427,7 +431,10 @@ public class ProductPriceImpl extends BizEntityTypedImpl<ProductPriceType> imple
 	 */
 	@Override
 	public void setCreatedByUserLogin(UserLogin newCreatedByUserLogin) {
+		UserLogin oldCreatedByUserLogin = createdByUserLogin;
 		createdByUserLogin = newCreatedByUserLogin;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PricePackage.PRODUCT_PRICE__CREATED_BY_USER_LOGIN, oldCreatedByUserLogin, createdByUserLogin));
 	}
 
 	/**
@@ -447,7 +454,10 @@ public class ProductPriceImpl extends BizEntityTypedImpl<ProductPriceType> imple
 	 */
 	@Override
 	public void setCreatedDate(Date newCreatedDate) {
+		Date oldCreatedDate = createdDate;
 		createdDate = newCreatedDate;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PricePackage.PRODUCT_PRICE__CREATED_DATE, oldCreatedDate, createdDate));
 	}
 
 	/**
@@ -461,6 +471,8 @@ public class ProductPriceImpl extends BizEntityTypedImpl<ProductPriceType> imple
 			InternalEObject oldCurrencyUomId = (InternalEObject)currencyUomId;
 			currencyUomId = (Uom)eResolveProxy(oldCurrencyUomId);
 			if (currencyUomId != oldCurrencyUomId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PricePackage.PRODUCT_PRICE__CURRENCY_UOM_ID, oldCurrencyUomId, currencyUomId));
 			}
 		}
 		return currencyUomId;
@@ -482,7 +494,10 @@ public class ProductPriceImpl extends BizEntityTypedImpl<ProductPriceType> imple
 	 */
 	@Override
 	public void setCurrencyUomId(Uom newCurrencyUomId) {
+		Uom oldCurrencyUomId = currencyUomId;
 		currencyUomId = newCurrencyUomId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PricePackage.PRODUCT_PRICE__CURRENCY_UOM_ID, oldCurrencyUomId, currencyUomId));
 	}
 
 	/**
@@ -496,6 +511,8 @@ public class ProductPriceImpl extends BizEntityTypedImpl<ProductPriceType> imple
 			InternalEObject oldCustomPriceCalcService = (InternalEObject)customPriceCalcService;
 			customPriceCalcService = (CustomMethod)eResolveProxy(oldCustomPriceCalcService);
 			if (customPriceCalcService != oldCustomPriceCalcService) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PricePackage.PRODUCT_PRICE__CUSTOM_PRICE_CALC_SERVICE, oldCustomPriceCalcService, customPriceCalcService));
 			}
 		}
 		return customPriceCalcService;
@@ -517,7 +534,10 @@ public class ProductPriceImpl extends BizEntityTypedImpl<ProductPriceType> imple
 	 */
 	@Override
 	public void setCustomPriceCalcService(CustomMethod newCustomPriceCalcService) {
+		CustomMethod oldCustomPriceCalcService = customPriceCalcService;
 		customPriceCalcService = newCustomPriceCalcService;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PricePackage.PRODUCT_PRICE__CUSTOM_PRICE_CALC_SERVICE, oldCustomPriceCalcService, customPriceCalcService));
 	}
 
 	/**
@@ -537,7 +557,10 @@ public class ProductPriceImpl extends BizEntityTypedImpl<ProductPriceType> imple
 	 */
 	@Override
 	public void setFromDate(Date newFromDate) {
+		Date oldFromDate = fromDate;
 		fromDate = newFromDate;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PricePackage.PRODUCT_PRICE__FROM_DATE, oldFromDate, fromDate));
 	}
 
 	/**
@@ -551,6 +574,8 @@ public class ProductPriceImpl extends BizEntityTypedImpl<ProductPriceType> imple
 			InternalEObject oldLastModifiedByUserLogin = (InternalEObject)lastModifiedByUserLogin;
 			lastModifiedByUserLogin = (UserLogin)eResolveProxy(oldLastModifiedByUserLogin);
 			if (lastModifiedByUserLogin != oldLastModifiedByUserLogin) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PricePackage.PRODUCT_PRICE__LAST_MODIFIED_BY_USER_LOGIN, oldLastModifiedByUserLogin, lastModifiedByUserLogin));
 			}
 		}
 		return lastModifiedByUserLogin;
@@ -572,7 +597,10 @@ public class ProductPriceImpl extends BizEntityTypedImpl<ProductPriceType> imple
 	 */
 	@Override
 	public void setLastModifiedByUserLogin(UserLogin newLastModifiedByUserLogin) {
+		UserLogin oldLastModifiedByUserLogin = lastModifiedByUserLogin;
 		lastModifiedByUserLogin = newLastModifiedByUserLogin;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PricePackage.PRODUCT_PRICE__LAST_MODIFIED_BY_USER_LOGIN, oldLastModifiedByUserLogin, lastModifiedByUserLogin));
 	}
 
 	/**
@@ -592,7 +620,10 @@ public class ProductPriceImpl extends BizEntityTypedImpl<ProductPriceType> imple
 	 */
 	@Override
 	public void setLastModifiedDate(Date newLastModifiedDate) {
+		Date oldLastModifiedDate = lastModifiedDate;
 		lastModifiedDate = newLastModifiedDate;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PricePackage.PRODUCT_PRICE__LAST_MODIFIED_DATE, oldLastModifiedDate, lastModifiedDate));
 	}
 
 	/**
@@ -612,7 +643,10 @@ public class ProductPriceImpl extends BizEntityTypedImpl<ProductPriceType> imple
 	 */
 	@Override
 	public void setPrice(BigDecimal newPrice) {
+		BigDecimal oldPrice = price;
 		price = newPrice;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PricePackage.PRODUCT_PRICE__PRICE, oldPrice, price));
 	}
 
 	/**
@@ -632,7 +666,10 @@ public class ProductPriceImpl extends BizEntityTypedImpl<ProductPriceType> imple
 	 */
 	@Override
 	public void setPriceWithTax(BigDecimal newPriceWithTax) {
+		BigDecimal oldPriceWithTax = priceWithTax;
 		priceWithTax = newPriceWithTax;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PricePackage.PRODUCT_PRICE__PRICE_WITH_TAX, oldPriceWithTax, priceWithTax));
 	}
 
 	/**
@@ -652,7 +689,10 @@ public class ProductPriceImpl extends BizEntityTypedImpl<ProductPriceType> imple
 	 */
 	@Override
 	public void setPriceWithoutTax(BigDecimal newPriceWithoutTax) {
+		BigDecimal oldPriceWithoutTax = priceWithoutTax;
 		priceWithoutTax = newPriceWithoutTax;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PricePackage.PRODUCT_PRICE__PRICE_WITHOUT_TAX, oldPriceWithoutTax, priceWithoutTax));
 	}
 
 	/**
@@ -666,6 +706,8 @@ public class ProductPriceImpl extends BizEntityTypedImpl<ProductPriceType> imple
 			InternalEObject oldProductId = (InternalEObject)productId;
 			productId = (Product)eResolveProxy(oldProductId);
 			if (productId != oldProductId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PricePackage.PRODUCT_PRICE__PRODUCT_ID, oldProductId, productId));
 			}
 		}
 		return productId;
@@ -687,7 +729,10 @@ public class ProductPriceImpl extends BizEntityTypedImpl<ProductPriceType> imple
 	 */
 	@Override
 	public void setProductId(Product newProductId) {
+		Product oldProductId = productId;
 		productId = newProductId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PricePackage.PRODUCT_PRICE__PRODUCT_ID, oldProductId, productId));
 	}
 
 	/**
@@ -701,6 +746,8 @@ public class ProductPriceImpl extends BizEntityTypedImpl<ProductPriceType> imple
 			InternalEObject oldProductStoreGroupId = (InternalEObject)productStoreGroupId;
 			productStoreGroupId = (ProductStoreGroup)eResolveProxy(oldProductStoreGroupId);
 			if (productStoreGroupId != oldProductStoreGroupId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PricePackage.PRODUCT_PRICE__PRODUCT_STORE_GROUP_ID, oldProductStoreGroupId, productStoreGroupId));
 			}
 		}
 		return productStoreGroupId;
@@ -722,7 +769,10 @@ public class ProductPriceImpl extends BizEntityTypedImpl<ProductPriceType> imple
 	 */
 	@Override
 	public void setProductStoreGroupId(ProductStoreGroup newProductStoreGroupId) {
+		ProductStoreGroup oldProductStoreGroupId = productStoreGroupId;
 		productStoreGroupId = newProductStoreGroupId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PricePackage.PRODUCT_PRICE__PRODUCT_STORE_GROUP_ID, oldProductStoreGroupId, productStoreGroupId));
 	}
 
 	/**
@@ -742,7 +792,10 @@ public class ProductPriceImpl extends BizEntityTypedImpl<ProductPriceType> imple
 	 */
 	@Override
 	public void setTaxAmount(BigDecimal newTaxAmount) {
+		BigDecimal oldTaxAmount = taxAmount;
 		taxAmount = newTaxAmount;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PricePackage.PRODUCT_PRICE__TAX_AMOUNT, oldTaxAmount, taxAmount));
 	}
 
 	/**
@@ -756,6 +809,8 @@ public class ProductPriceImpl extends BizEntityTypedImpl<ProductPriceType> imple
 			InternalEObject oldTaxAuthGeoId = (InternalEObject)taxAuthGeoId;
 			taxAuthGeoId = (Geo)eResolveProxy(oldTaxAuthGeoId);
 			if (taxAuthGeoId != oldTaxAuthGeoId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PricePackage.PRODUCT_PRICE__TAX_AUTH_GEO_ID, oldTaxAuthGeoId, taxAuthGeoId));
 			}
 		}
 		return taxAuthGeoId;
@@ -777,7 +832,10 @@ public class ProductPriceImpl extends BizEntityTypedImpl<ProductPriceType> imple
 	 */
 	@Override
 	public void setTaxAuthGeoId(Geo newTaxAuthGeoId) {
+		Geo oldTaxAuthGeoId = taxAuthGeoId;
 		taxAuthGeoId = newTaxAuthGeoId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PricePackage.PRODUCT_PRICE__TAX_AUTH_GEO_ID, oldTaxAuthGeoId, taxAuthGeoId));
 	}
 
 	/**
@@ -791,6 +849,8 @@ public class ProductPriceImpl extends BizEntityTypedImpl<ProductPriceType> imple
 			InternalEObject oldTaxAuthPartyId = (InternalEObject)taxAuthPartyId;
 			taxAuthPartyId = (Party)eResolveProxy(oldTaxAuthPartyId);
 			if (taxAuthPartyId != oldTaxAuthPartyId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PricePackage.PRODUCT_PRICE__TAX_AUTH_PARTY_ID, oldTaxAuthPartyId, taxAuthPartyId));
 			}
 		}
 		return taxAuthPartyId;
@@ -812,7 +872,10 @@ public class ProductPriceImpl extends BizEntityTypedImpl<ProductPriceType> imple
 	 */
 	@Override
 	public void setTaxAuthPartyId(Party newTaxAuthPartyId) {
+		Party oldTaxAuthPartyId = taxAuthPartyId;
 		taxAuthPartyId = newTaxAuthPartyId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PricePackage.PRODUCT_PRICE__TAX_AUTH_PARTY_ID, oldTaxAuthPartyId, taxAuthPartyId));
 	}
 
 	/**
@@ -832,7 +895,10 @@ public class ProductPriceImpl extends BizEntityTypedImpl<ProductPriceType> imple
 	 */
 	@Override
 	public void setTaxInPrice(boolean newTaxInPrice) {
+		boolean oldTaxInPrice = taxInPrice;
 		taxInPrice = newTaxInPrice;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PricePackage.PRODUCT_PRICE__TAX_IN_PRICE, oldTaxInPrice, taxInPrice));
 	}
 
 	/**
@@ -852,7 +918,10 @@ public class ProductPriceImpl extends BizEntityTypedImpl<ProductPriceType> imple
 	 */
 	@Override
 	public void setTaxPercentage(BigDecimal newTaxPercentage) {
+		BigDecimal oldTaxPercentage = taxPercentage;
 		taxPercentage = newTaxPercentage;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PricePackage.PRODUCT_PRICE__TAX_PERCENTAGE, oldTaxPercentage, taxPercentage));
 	}
 
 	/**
@@ -866,6 +935,8 @@ public class ProductPriceImpl extends BizEntityTypedImpl<ProductPriceType> imple
 			InternalEObject oldTermUomId = (InternalEObject)termUomId;
 			termUomId = (Uom)eResolveProxy(oldTermUomId);
 			if (termUomId != oldTermUomId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PricePackage.PRODUCT_PRICE__TERM_UOM_ID, oldTermUomId, termUomId));
 			}
 		}
 		return termUomId;
@@ -887,7 +958,10 @@ public class ProductPriceImpl extends BizEntityTypedImpl<ProductPriceType> imple
 	 */
 	@Override
 	public void setTermUomId(Uom newTermUomId) {
+		Uom oldTermUomId = termUomId;
 		termUomId = newTermUomId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PricePackage.PRODUCT_PRICE__TERM_UOM_ID, oldTermUomId, termUomId));
 	}
 
 	/**
@@ -907,7 +981,10 @@ public class ProductPriceImpl extends BizEntityTypedImpl<ProductPriceType> imple
 	 */
 	@Override
 	public void setThruDate(Date newThruDate) {
+		Date oldThruDate = thruDate;
 		thruDate = newThruDate;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PricePackage.PRODUCT_PRICE__THRU_DATE, oldThruDate, thruDate));
 	}
 
 	/**
@@ -921,6 +998,8 @@ public class ProductPriceImpl extends BizEntityTypedImpl<ProductPriceType> imple
 			InternalEObject oldProductPriceTypeId = (InternalEObject)productPriceTypeId;
 			productPriceTypeId = (ProductPriceType)eResolveProxy(oldProductPriceTypeId);
 			if (productPriceTypeId != oldProductPriceTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PricePackage.PRODUCT_PRICE__PRODUCT_PRICE_TYPE_ID, oldProductPriceTypeId, productPriceTypeId));
 			}
 		}
 		return productPriceTypeId;
@@ -942,7 +1021,10 @@ public class ProductPriceImpl extends BizEntityTypedImpl<ProductPriceType> imple
 	 */
 	@Override
 	public void setProductPriceTypeId(ProductPriceType newProductPriceTypeId) {
+		ProductPriceType oldProductPriceTypeId = productPriceTypeId;
 		productPriceTypeId = newProductPriceTypeId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PricePackage.PRODUCT_PRICE__PRODUCT_PRICE_TYPE_ID, oldProductPriceTypeId, productPriceTypeId));
 	}
 
 	/**
@@ -956,6 +1038,8 @@ public class ProductPriceImpl extends BizEntityTypedImpl<ProductPriceType> imple
 			InternalEObject oldProductPricePurposeId = (InternalEObject)productPricePurposeId;
 			productPricePurposeId = (ProductPricePurpose)eResolveProxy(oldProductPricePurposeId);
 			if (productPricePurposeId != oldProductPricePurposeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PricePackage.PRODUCT_PRICE__PRODUCT_PRICE_PURPOSE_ID, oldProductPricePurposeId, productPricePurposeId));
 			}
 		}
 		return productPricePurposeId;
@@ -977,7 +1061,10 @@ public class ProductPriceImpl extends BizEntityTypedImpl<ProductPriceType> imple
 	 */
 	@Override
 	public void setProductPricePurposeId(ProductPricePurpose newProductPricePurposeId) {
+		ProductPricePurpose oldProductPricePurposeId = productPricePurposeId;
 		productPricePurposeId = newProductPricePurposeId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PricePackage.PRODUCT_PRICE__PRODUCT_PRICE_PURPOSE_ID, oldProductPricePurposeId, productPricePurposeId));
 	}
 
 	/**

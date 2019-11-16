@@ -13,9 +13,11 @@ import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.party.party.PartyClassificationGroup;
 import org.abchip.mimo.biz.party.party.PartyClassificationType;
 import org.abchip.mimo.biz.party.party.PartyPackage;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -130,7 +132,10 @@ public class PartyClassificationGroupImpl extends BizEntityImpl implements Party
 	 */
 	@Override
 	public void setDescription(String newDescription) {
+		String oldDescription = description;
 		description = newDescription;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PartyPackage.PARTY_CLASSIFICATION_GROUP__DESCRIPTION, oldDescription, description));
 	}
 
 	/**
@@ -144,6 +149,8 @@ public class PartyClassificationGroupImpl extends BizEntityImpl implements Party
 			InternalEObject oldParentGroupId = (InternalEObject)parentGroupId;
 			parentGroupId = (PartyClassificationGroup)eResolveProxy(oldParentGroupId);
 			if (parentGroupId != oldParentGroupId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PartyPackage.PARTY_CLASSIFICATION_GROUP__PARENT_GROUP_ID, oldParentGroupId, parentGroupId));
 			}
 		}
 		return parentGroupId;
@@ -165,7 +172,10 @@ public class PartyClassificationGroupImpl extends BizEntityImpl implements Party
 	 */
 	@Override
 	public void setParentGroupId(PartyClassificationGroup newParentGroupId) {
+		PartyClassificationGroup oldParentGroupId = parentGroupId;
 		parentGroupId = newParentGroupId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PartyPackage.PARTY_CLASSIFICATION_GROUP__PARENT_GROUP_ID, oldParentGroupId, parentGroupId));
 	}
 
 	/**
@@ -179,6 +189,8 @@ public class PartyClassificationGroupImpl extends BizEntityImpl implements Party
 			InternalEObject oldPartyClassificationTypeId = (InternalEObject)partyClassificationTypeId;
 			partyClassificationTypeId = (PartyClassificationType)eResolveProxy(oldPartyClassificationTypeId);
 			if (partyClassificationTypeId != oldPartyClassificationTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PartyPackage.PARTY_CLASSIFICATION_GROUP__PARTY_CLASSIFICATION_TYPE_ID, oldPartyClassificationTypeId, partyClassificationTypeId));
 			}
 		}
 		return partyClassificationTypeId;
@@ -200,7 +212,10 @@ public class PartyClassificationGroupImpl extends BizEntityImpl implements Party
 	 */
 	@Override
 	public void setPartyClassificationTypeId(PartyClassificationType newPartyClassificationTypeId) {
+		PartyClassificationType oldPartyClassificationTypeId = partyClassificationTypeId;
 		partyClassificationTypeId = newPartyClassificationTypeId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PartyPackage.PARTY_CLASSIFICATION_GROUP__PARTY_CLASSIFICATION_TYPE_ID, oldPartyClassificationTypeId, partyClassificationTypeId));
 	}
 
 	/**
@@ -244,7 +259,10 @@ public class PartyClassificationGroupImpl extends BizEntityImpl implements Party
 	 */
 	@Override
 	public void setPartyClassificationGroupId(String newPartyClassificationGroupId) {
+		String oldPartyClassificationGroupId = partyClassificationGroupId;
 		partyClassificationGroupId = newPartyClassificationGroupId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PartyPackage.PARTY_CLASSIFICATION_GROUP__PARTY_CLASSIFICATION_GROUP_ID, oldPartyClassificationGroupId, partyClassificationGroupId));
 	}
 
 	/**

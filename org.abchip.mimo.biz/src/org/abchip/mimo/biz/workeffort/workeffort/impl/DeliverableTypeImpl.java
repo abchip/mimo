@@ -13,7 +13,9 @@ import org.abchip.mimo.biz.impl.BizEntityTypeImpl;
 import org.abchip.mimo.biz.workeffort.workeffort.Deliverable;
 import org.abchip.mimo.biz.workeffort.workeffort.DeliverableType;
 import org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -111,7 +113,10 @@ public class DeliverableTypeImpl extends BizEntityTypeImpl<Deliverable> implemen
 	 */
 	@Override
 	public void setDeliverableTypeId(String newDeliverableTypeId) {
+		String oldDeliverableTypeId = deliverableTypeId;
 		deliverableTypeId = newDeliverableTypeId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WorkeffortPackage.DELIVERABLE_TYPE__DELIVERABLE_TYPE_ID, oldDeliverableTypeId, deliverableTypeId));
 	}
 
 	/**
@@ -131,7 +136,10 @@ public class DeliverableTypeImpl extends BizEntityTypeImpl<Deliverable> implemen
 	 */
 	@Override
 	public void setDescription(String newDescription) {
+		String oldDescription = description;
 		description = newDescription;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WorkeffortPackage.DELIVERABLE_TYPE__DESCRIPTION, oldDescription, description));
 	}
 
 	/**

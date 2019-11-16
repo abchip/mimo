@@ -12,7 +12,9 @@ import java.util.Date;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.party.agreement.AgreementEmploymentAppl;
 import org.abchip.mimo.biz.party.agreement.AgreementPackage;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -248,7 +250,10 @@ public class AgreementEmploymentApplImpl extends BizEntityImpl implements Agreem
 	 */
 	@Override
 	public void setAgreementDate(Date newAgreementDate) {
+		Date oldAgreementDate = agreementDate;
 		agreementDate = newAgreementDate;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, AgreementPackage.AGREEMENT_EMPLOYMENT_APPL__AGREEMENT_DATE, oldAgreementDate, agreementDate));
 	}
 
 	/**
@@ -268,7 +273,10 @@ public class AgreementEmploymentApplImpl extends BizEntityImpl implements Agreem
 	 */
 	@Override
 	public void setAgreementId(String newAgreementId) {
+		String oldAgreementId = agreementId;
 		agreementId = newAgreementId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, AgreementPackage.AGREEMENT_EMPLOYMENT_APPL__AGREEMENT_ID, oldAgreementId, agreementId));
 	}
 
 	/**
@@ -288,7 +296,10 @@ public class AgreementEmploymentApplImpl extends BizEntityImpl implements Agreem
 	 */
 	@Override
 	public void setAgreementItemSeqId(String newAgreementItemSeqId) {
+		String oldAgreementItemSeqId = agreementItemSeqId;
 		agreementItemSeqId = newAgreementItemSeqId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, AgreementPackage.AGREEMENT_EMPLOYMENT_APPL__AGREEMENT_ITEM_SEQ_ID, oldAgreementItemSeqId, agreementItemSeqId));
 	}
 
 	/**
@@ -308,7 +319,10 @@ public class AgreementEmploymentApplImpl extends BizEntityImpl implements Agreem
 	 */
 	@Override
 	public void setFromDate(Date newFromDate) {
+		Date oldFromDate = fromDate;
 		fromDate = newFromDate;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, AgreementPackage.AGREEMENT_EMPLOYMENT_APPL__FROM_DATE, oldFromDate, fromDate));
 	}
 
 	/**
@@ -328,7 +342,10 @@ public class AgreementEmploymentApplImpl extends BizEntityImpl implements Agreem
 	 */
 	@Override
 	public void setPartyIdFrom(String newPartyIdFrom) {
+		String oldPartyIdFrom = partyIdFrom;
 		partyIdFrom = newPartyIdFrom;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, AgreementPackage.AGREEMENT_EMPLOYMENT_APPL__PARTY_ID_FROM, oldPartyIdFrom, partyIdFrom));
 	}
 
 	/**
@@ -348,7 +365,10 @@ public class AgreementEmploymentApplImpl extends BizEntityImpl implements Agreem
 	 */
 	@Override
 	public void setPartyIdTo(String newPartyIdTo) {
+		String oldPartyIdTo = partyIdTo;
 		partyIdTo = newPartyIdTo;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, AgreementPackage.AGREEMENT_EMPLOYMENT_APPL__PARTY_ID_TO, oldPartyIdTo, partyIdTo));
 	}
 
 	/**
@@ -368,7 +388,10 @@ public class AgreementEmploymentApplImpl extends BizEntityImpl implements Agreem
 	 */
 	@Override
 	public void setRoleTypeIdFrom(String newRoleTypeIdFrom) {
+		String oldRoleTypeIdFrom = roleTypeIdFrom;
 		roleTypeIdFrom = newRoleTypeIdFrom;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, AgreementPackage.AGREEMENT_EMPLOYMENT_APPL__ROLE_TYPE_ID_FROM, oldRoleTypeIdFrom, roleTypeIdFrom));
 	}
 
 	/**
@@ -388,7 +411,10 @@ public class AgreementEmploymentApplImpl extends BizEntityImpl implements Agreem
 	 */
 	@Override
 	public void setRoleTypeIdTo(String newRoleTypeIdTo) {
+		String oldRoleTypeIdTo = roleTypeIdTo;
 		roleTypeIdTo = newRoleTypeIdTo;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, AgreementPackage.AGREEMENT_EMPLOYMENT_APPL__ROLE_TYPE_ID_TO, oldRoleTypeIdTo, roleTypeIdTo));
 	}
 
 	/**
@@ -408,7 +434,10 @@ public class AgreementEmploymentApplImpl extends BizEntityImpl implements Agreem
 	 */
 	@Override
 	public void setThruDate(Date newThruDate) {
+		Date oldThruDate = thruDate;
 		thruDate = newThruDate;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, AgreementPackage.AGREEMENT_EMPLOYMENT_APPL__THRU_DATE, oldThruDate, thruDate));
 	}
 
 	/**

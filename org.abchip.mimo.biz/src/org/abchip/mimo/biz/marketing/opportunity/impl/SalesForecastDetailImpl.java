@@ -16,10 +16,12 @@ import org.abchip.mimo.biz.marketing.opportunity.SalesForecast;
 import org.abchip.mimo.biz.marketing.opportunity.SalesForecastDetail;
 import org.abchip.mimo.biz.product.category.ProductCategory;
 import org.abchip.mimo.biz.product.product.Product;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -182,7 +184,10 @@ public class SalesForecastDetailImpl extends BizEntityImpl implements SalesForec
 	 */
 	@Override
 	public void setAmount(BigDecimal newAmount) {
+		BigDecimal oldAmount = amount;
 		amount = newAmount;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, OpportunityPackage.SALES_FORECAST_DETAIL__AMOUNT, oldAmount, amount));
 	}
 
 	/**
@@ -196,6 +201,8 @@ public class SalesForecastDetailImpl extends BizEntityImpl implements SalesForec
 			InternalEObject oldProductCategoryId = (InternalEObject)productCategoryId;
 			productCategoryId = (ProductCategory)eResolveProxy(oldProductCategoryId);
 			if (productCategoryId != oldProductCategoryId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, OpportunityPackage.SALES_FORECAST_DETAIL__PRODUCT_CATEGORY_ID, oldProductCategoryId, productCategoryId));
 			}
 		}
 		return productCategoryId;
@@ -217,7 +224,10 @@ public class SalesForecastDetailImpl extends BizEntityImpl implements SalesForec
 	 */
 	@Override
 	public void setProductCategoryId(ProductCategory newProductCategoryId) {
+		ProductCategory oldProductCategoryId = productCategoryId;
 		productCategoryId = newProductCategoryId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, OpportunityPackage.SALES_FORECAST_DETAIL__PRODUCT_CATEGORY_ID, oldProductCategoryId, productCategoryId));
 	}
 
 	/**
@@ -231,6 +241,8 @@ public class SalesForecastDetailImpl extends BizEntityImpl implements SalesForec
 			InternalEObject oldProductId = (InternalEObject)productId;
 			productId = (Product)eResolveProxy(oldProductId);
 			if (productId != oldProductId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, OpportunityPackage.SALES_FORECAST_DETAIL__PRODUCT_ID, oldProductId, productId));
 			}
 		}
 		return productId;
@@ -252,7 +264,10 @@ public class SalesForecastDetailImpl extends BizEntityImpl implements SalesForec
 	 */
 	@Override
 	public void setProductId(Product newProductId) {
+		Product oldProductId = productId;
 		productId = newProductId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, OpportunityPackage.SALES_FORECAST_DETAIL__PRODUCT_ID, oldProductId, productId));
 	}
 
 	/**
@@ -272,7 +287,10 @@ public class SalesForecastDetailImpl extends BizEntityImpl implements SalesForec
 	 */
 	@Override
 	public void setQuantity(BigDecimal newQuantity) {
+		BigDecimal oldQuantity = quantity;
 		quantity = newQuantity;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, OpportunityPackage.SALES_FORECAST_DETAIL__QUANTITY, oldQuantity, quantity));
 	}
 
 	/**
@@ -286,6 +304,8 @@ public class SalesForecastDetailImpl extends BizEntityImpl implements SalesForec
 			InternalEObject oldQuantityUomId = (InternalEObject)quantityUomId;
 			quantityUomId = (Uom)eResolveProxy(oldQuantityUomId);
 			if (quantityUomId != oldQuantityUomId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, OpportunityPackage.SALES_FORECAST_DETAIL__QUANTITY_UOM_ID, oldQuantityUomId, quantityUomId));
 			}
 		}
 		return quantityUomId;
@@ -307,7 +327,10 @@ public class SalesForecastDetailImpl extends BizEntityImpl implements SalesForec
 	 */
 	@Override
 	public void setQuantityUomId(Uom newQuantityUomId) {
+		Uom oldQuantityUomId = quantityUomId;
 		quantityUomId = newQuantityUomId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, OpportunityPackage.SALES_FORECAST_DETAIL__QUANTITY_UOM_ID, oldQuantityUomId, quantityUomId));
 	}
 
 	/**
@@ -327,7 +350,10 @@ public class SalesForecastDetailImpl extends BizEntityImpl implements SalesForec
 	 */
 	@Override
 	public void setSalesForecastDetailId(String newSalesForecastDetailId) {
+		String oldSalesForecastDetailId = salesForecastDetailId;
 		salesForecastDetailId = newSalesForecastDetailId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, OpportunityPackage.SALES_FORECAST_DETAIL__SALES_FORECAST_DETAIL_ID, oldSalesForecastDetailId, salesForecastDetailId));
 	}
 
 	/**
@@ -341,6 +367,8 @@ public class SalesForecastDetailImpl extends BizEntityImpl implements SalesForec
 			InternalEObject oldSalesForecastId = (InternalEObject)salesForecastId;
 			salesForecastId = (SalesForecast)eResolveProxy(oldSalesForecastId);
 			if (salesForecastId != oldSalesForecastId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, OpportunityPackage.SALES_FORECAST_DETAIL__SALES_FORECAST_ID, oldSalesForecastId, salesForecastId));
 			}
 		}
 		return salesForecastId;
@@ -362,7 +390,10 @@ public class SalesForecastDetailImpl extends BizEntityImpl implements SalesForec
 	 */
 	@Override
 	public void setSalesForecastId(SalesForecast newSalesForecastId) {
+		SalesForecast oldSalesForecastId = salesForecastId;
 		salesForecastId = newSalesForecastId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, OpportunityPackage.SALES_FORECAST_DETAIL__SALES_FORECAST_ID, oldSalesForecastId, salesForecastId));
 	}
 
 	/**

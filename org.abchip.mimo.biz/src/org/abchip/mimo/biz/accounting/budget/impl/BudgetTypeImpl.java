@@ -14,11 +14,13 @@ import org.abchip.mimo.biz.accounting.budget.Budget;
 import org.abchip.mimo.biz.accounting.budget.BudgetPackage;
 import org.abchip.mimo.biz.accounting.budget.BudgetType;
 import org.abchip.mimo.biz.impl.BizEntityTypeImpl;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.util.BasicInternalEList;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -159,7 +161,10 @@ public class BudgetTypeImpl extends BizEntityTypeImpl<Budget> implements BudgetT
 	 */
 	@Override
 	public void setDescription(String newDescription) {
+		String oldDescription = description;
 		description = newDescription;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, BudgetPackage.BUDGET_TYPE__DESCRIPTION, oldDescription, description));
 	}
 
 	/**
@@ -179,7 +184,10 @@ public class BudgetTypeImpl extends BizEntityTypeImpl<Budget> implements BudgetT
 	 */
 	@Override
 	public void setHasTable(boolean newHasTable) {
+		boolean oldHasTable = hasTable;
 		hasTable = newHasTable;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, BudgetPackage.BUDGET_TYPE__HAS_TABLE, oldHasTable, hasTable));
 	}
 
 	/**
@@ -193,6 +201,8 @@ public class BudgetTypeImpl extends BizEntityTypeImpl<Budget> implements BudgetT
 			InternalEObject oldParentTypeId = (InternalEObject)parentTypeId;
 			parentTypeId = (BudgetType)eResolveProxy(oldParentTypeId);
 			if (parentTypeId != oldParentTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, BudgetPackage.BUDGET_TYPE__PARENT_TYPE_ID, oldParentTypeId, parentTypeId));
 			}
 		}
 		return parentTypeId;
@@ -214,7 +224,10 @@ public class BudgetTypeImpl extends BizEntityTypeImpl<Budget> implements BudgetT
 	 */
 	@Override
 	public void setParentTypeId(BudgetType newParentTypeId) {
+		BudgetType oldParentTypeId = parentTypeId;
 		parentTypeId = newParentTypeId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, BudgetPackage.BUDGET_TYPE__PARENT_TYPE_ID, oldParentTypeId, parentTypeId));
 	}
 
 	/**
@@ -225,7 +238,7 @@ public class BudgetTypeImpl extends BizEntityTypeImpl<Budget> implements BudgetT
 	@Override
 	public List<String> getBudgetTypeAttrs() {
 		if (budgetTypeAttrs == null) {
-			budgetTypeAttrs = new BasicInternalEList<String>(String.class);
+			budgetTypeAttrs = new EDataTypeUniqueEList<String>(String.class, this, BudgetPackage.BUDGET_TYPE__BUDGET_TYPE_ATTRS);
 		}
 		return budgetTypeAttrs;
 	}
@@ -271,7 +284,10 @@ public class BudgetTypeImpl extends BizEntityTypeImpl<Budget> implements BudgetT
 	 */
 	@Override
 	public void setBudgetTypeId(String newBudgetTypeId) {
+		String oldBudgetTypeId = budgetTypeId;
 		budgetTypeId = newBudgetTypeId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, BudgetPackage.BUDGET_TYPE__BUDGET_TYPE_ID, oldBudgetTypeId, budgetTypeId));
 	}
 
 	/**

@@ -19,9 +19,11 @@ import org.abchip.mimo.biz.product.product.ProductAssocType;
 import org.abchip.mimo.biz.product.product.ProductPackage;
 import org.abchip.mimo.biz.service.schedule.RecurrenceInfo;
 import org.abchip.mimo.biz.workeffort.workeffort.WorkEffort;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -284,6 +286,8 @@ public class ProductAssocImpl extends BizEntityTypedImpl<ProductAssocType> imple
 			InternalEObject oldEstimateCalcMethod = (InternalEObject)estimateCalcMethod;
 			estimateCalcMethod = (CustomMethod)eResolveProxy(oldEstimateCalcMethod);
 			if (estimateCalcMethod != oldEstimateCalcMethod) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ProductPackage.PRODUCT_ASSOC__ESTIMATE_CALC_METHOD, oldEstimateCalcMethod, estimateCalcMethod));
 			}
 		}
 		return estimateCalcMethod;
@@ -305,7 +309,10 @@ public class ProductAssocImpl extends BizEntityTypedImpl<ProductAssocType> imple
 	 */
 	@Override
 	public void setEstimateCalcMethod(CustomMethod newEstimateCalcMethod) {
+		CustomMethod oldEstimateCalcMethod = estimateCalcMethod;
 		estimateCalcMethod = newEstimateCalcMethod;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ProductPackage.PRODUCT_ASSOC__ESTIMATE_CALC_METHOD, oldEstimateCalcMethod, estimateCalcMethod));
 	}
 
 	/**
@@ -325,7 +332,10 @@ public class ProductAssocImpl extends BizEntityTypedImpl<ProductAssocType> imple
 	 */
 	@Override
 	public void setFromDate(Date newFromDate) {
+		Date oldFromDate = fromDate;
 		fromDate = newFromDate;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ProductPackage.PRODUCT_ASSOC__FROM_DATE, oldFromDate, fromDate));
 	}
 
 	/**
@@ -345,7 +355,10 @@ public class ProductAssocImpl extends BizEntityTypedImpl<ProductAssocType> imple
 	 */
 	@Override
 	public void setInstruction(String newInstruction) {
+		String oldInstruction = instruction;
 		instruction = newInstruction;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ProductPackage.PRODUCT_ASSOC__INSTRUCTION, oldInstruction, instruction));
 	}
 
 	/**
@@ -365,7 +378,10 @@ public class ProductAssocImpl extends BizEntityTypedImpl<ProductAssocType> imple
 	 */
 	@Override
 	public void setQuantity(BigDecimal newQuantity) {
+		BigDecimal oldQuantity = quantity;
 		quantity = newQuantity;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ProductPackage.PRODUCT_ASSOC__QUANTITY, oldQuantity, quantity));
 	}
 
 	/**
@@ -385,7 +401,10 @@ public class ProductAssocImpl extends BizEntityTypedImpl<ProductAssocType> imple
 	 */
 	@Override
 	public void setReason(String newReason) {
+		String oldReason = reason;
 		reason = newReason;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ProductPackage.PRODUCT_ASSOC__REASON, oldReason, reason));
 	}
 
 	/**
@@ -399,6 +418,8 @@ public class ProductAssocImpl extends BizEntityTypedImpl<ProductAssocType> imple
 			InternalEObject oldRecurrenceInfoId = (InternalEObject)recurrenceInfoId;
 			recurrenceInfoId = (RecurrenceInfo)eResolveProxy(oldRecurrenceInfoId);
 			if (recurrenceInfoId != oldRecurrenceInfoId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ProductPackage.PRODUCT_ASSOC__RECURRENCE_INFO_ID, oldRecurrenceInfoId, recurrenceInfoId));
 			}
 		}
 		return recurrenceInfoId;
@@ -420,7 +441,10 @@ public class ProductAssocImpl extends BizEntityTypedImpl<ProductAssocType> imple
 	 */
 	@Override
 	public void setRecurrenceInfoId(RecurrenceInfo newRecurrenceInfoId) {
+		RecurrenceInfo oldRecurrenceInfoId = recurrenceInfoId;
 		recurrenceInfoId = newRecurrenceInfoId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ProductPackage.PRODUCT_ASSOC__RECURRENCE_INFO_ID, oldRecurrenceInfoId, recurrenceInfoId));
 	}
 
 	/**
@@ -434,6 +458,8 @@ public class ProductAssocImpl extends BizEntityTypedImpl<ProductAssocType> imple
 			InternalEObject oldRoutingWorkEffortId = (InternalEObject)routingWorkEffortId;
 			routingWorkEffortId = (WorkEffort)eResolveProxy(oldRoutingWorkEffortId);
 			if (routingWorkEffortId != oldRoutingWorkEffortId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ProductPackage.PRODUCT_ASSOC__ROUTING_WORK_EFFORT_ID, oldRoutingWorkEffortId, routingWorkEffortId));
 			}
 		}
 		return routingWorkEffortId;
@@ -455,7 +481,10 @@ public class ProductAssocImpl extends BizEntityTypedImpl<ProductAssocType> imple
 	 */
 	@Override
 	public void setRoutingWorkEffortId(WorkEffort newRoutingWorkEffortId) {
+		WorkEffort oldRoutingWorkEffortId = routingWorkEffortId;
 		routingWorkEffortId = newRoutingWorkEffortId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ProductPackage.PRODUCT_ASSOC__ROUTING_WORK_EFFORT_ID, oldRoutingWorkEffortId, routingWorkEffortId));
 	}
 
 	/**
@@ -475,7 +504,10 @@ public class ProductAssocImpl extends BizEntityTypedImpl<ProductAssocType> imple
 	 */
 	@Override
 	public void setScrapFactor(BigDecimal newScrapFactor) {
+		BigDecimal oldScrapFactor = scrapFactor;
 		scrapFactor = newScrapFactor;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ProductPackage.PRODUCT_ASSOC__SCRAP_FACTOR, oldScrapFactor, scrapFactor));
 	}
 
 	/**
@@ -495,7 +527,10 @@ public class ProductAssocImpl extends BizEntityTypedImpl<ProductAssocType> imple
 	 */
 	@Override
 	public void setSequenceNum(long newSequenceNum) {
+		long oldSequenceNum = sequenceNum;
 		sequenceNum = newSequenceNum;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ProductPackage.PRODUCT_ASSOC__SEQUENCE_NUM, oldSequenceNum, sequenceNum));
 	}
 
 	/**
@@ -515,7 +550,10 @@ public class ProductAssocImpl extends BizEntityTypedImpl<ProductAssocType> imple
 	 */
 	@Override
 	public void setThruDate(Date newThruDate) {
+		Date oldThruDate = thruDate;
 		thruDate = newThruDate;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ProductPackage.PRODUCT_ASSOC__THRU_DATE, oldThruDate, thruDate));
 	}
 
 	/**
@@ -529,6 +567,8 @@ public class ProductAssocImpl extends BizEntityTypedImpl<ProductAssocType> imple
 			InternalEObject oldProductAssocTypeId = (InternalEObject)productAssocTypeId;
 			productAssocTypeId = (ProductAssocType)eResolveProxy(oldProductAssocTypeId);
 			if (productAssocTypeId != oldProductAssocTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ProductPackage.PRODUCT_ASSOC__PRODUCT_ASSOC_TYPE_ID, oldProductAssocTypeId, productAssocTypeId));
 			}
 		}
 		return productAssocTypeId;
@@ -550,7 +590,10 @@ public class ProductAssocImpl extends BizEntityTypedImpl<ProductAssocType> imple
 	 */
 	@Override
 	public void setProductAssocTypeId(ProductAssocType newProductAssocTypeId) {
+		ProductAssocType oldProductAssocTypeId = productAssocTypeId;
 		productAssocTypeId = newProductAssocTypeId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ProductPackage.PRODUCT_ASSOC__PRODUCT_ASSOC_TYPE_ID, oldProductAssocTypeId, productAssocTypeId));
 	}
 
 	/**
@@ -564,6 +607,8 @@ public class ProductAssocImpl extends BizEntityTypedImpl<ProductAssocType> imple
 			InternalEObject oldProductId = (InternalEObject)productId;
 			productId = (Product)eResolveProxy(oldProductId);
 			if (productId != oldProductId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ProductPackage.PRODUCT_ASSOC__PRODUCT_ID, oldProductId, productId));
 			}
 		}
 		return productId;
@@ -585,7 +630,10 @@ public class ProductAssocImpl extends BizEntityTypedImpl<ProductAssocType> imple
 	 */
 	@Override
 	public void setProductId(Product newProductId) {
+		Product oldProductId = productId;
 		productId = newProductId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ProductPackage.PRODUCT_ASSOC__PRODUCT_ID, oldProductId, productId));
 	}
 
 	/**
@@ -599,6 +647,8 @@ public class ProductAssocImpl extends BizEntityTypedImpl<ProductAssocType> imple
 			InternalEObject oldProductIdTo = (InternalEObject)productIdTo;
 			productIdTo = (Product)eResolveProxy(oldProductIdTo);
 			if (productIdTo != oldProductIdTo) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ProductPackage.PRODUCT_ASSOC__PRODUCT_ID_TO, oldProductIdTo, productIdTo));
 			}
 		}
 		return productIdTo;
@@ -620,7 +670,10 @@ public class ProductAssocImpl extends BizEntityTypedImpl<ProductAssocType> imple
 	 */
 	@Override
 	public void setProductIdTo(Product newProductIdTo) {
+		Product oldProductIdTo = productIdTo;
 		productIdTo = newProductIdTo;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ProductPackage.PRODUCT_ASSOC__PRODUCT_ID_TO, oldProductIdTo, productIdTo));
 	}
 
 	/**

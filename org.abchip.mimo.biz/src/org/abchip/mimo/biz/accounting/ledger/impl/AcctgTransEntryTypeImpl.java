@@ -13,9 +13,11 @@ import org.abchip.mimo.biz.accounting.ledger.AcctgTransEntry;
 import org.abchip.mimo.biz.accounting.ledger.AcctgTransEntryType;
 import org.abchip.mimo.biz.accounting.ledger.LedgerPackage;
 import org.abchip.mimo.biz.impl.BizEntityTypeImpl;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -138,7 +140,10 @@ public class AcctgTransEntryTypeImpl extends BizEntityTypeImpl<AcctgTransEntry> 
 	 */
 	@Override
 	public void setDescription(String newDescription) {
+		String oldDescription = description;
 		description = newDescription;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, LedgerPackage.ACCTG_TRANS_ENTRY_TYPE__DESCRIPTION, oldDescription, description));
 	}
 
 	/**
@@ -158,7 +163,10 @@ public class AcctgTransEntryTypeImpl extends BizEntityTypeImpl<AcctgTransEntry> 
 	 */
 	@Override
 	public void setHasTable(boolean newHasTable) {
+		boolean oldHasTable = hasTable;
 		hasTable = newHasTable;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, LedgerPackage.ACCTG_TRANS_ENTRY_TYPE__HAS_TABLE, oldHasTable, hasTable));
 	}
 
 	/**
@@ -172,6 +180,8 @@ public class AcctgTransEntryTypeImpl extends BizEntityTypeImpl<AcctgTransEntry> 
 			InternalEObject oldParentTypeId = (InternalEObject)parentTypeId;
 			parentTypeId = (AcctgTransEntryType)eResolveProxy(oldParentTypeId);
 			if (parentTypeId != oldParentTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, LedgerPackage.ACCTG_TRANS_ENTRY_TYPE__PARENT_TYPE_ID, oldParentTypeId, parentTypeId));
 			}
 		}
 		return parentTypeId;
@@ -193,7 +203,10 @@ public class AcctgTransEntryTypeImpl extends BizEntityTypeImpl<AcctgTransEntry> 
 	 */
 	@Override
 	public void setParentTypeId(AcctgTransEntryType newParentTypeId) {
+		AcctgTransEntryType oldParentTypeId = parentTypeId;
 		parentTypeId = newParentTypeId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, LedgerPackage.ACCTG_TRANS_ENTRY_TYPE__PARENT_TYPE_ID, oldParentTypeId, parentTypeId));
 	}
 
 	/**
@@ -237,7 +250,10 @@ public class AcctgTransEntryTypeImpl extends BizEntityTypeImpl<AcctgTransEntry> 
 	 */
 	@Override
 	public void setAcctgTransEntryTypeId(String newAcctgTransEntryTypeId) {
+		String oldAcctgTransEntryTypeId = acctgTransEntryTypeId;
 		acctgTransEntryTypeId = newAcctgTransEntryTypeId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, LedgerPackage.ACCTG_TRANS_ENTRY_TYPE__ACCTG_TRANS_ENTRY_TYPE_ID, oldAcctgTransEntryTypeId, acctgTransEntryTypeId));
 	}
 
 	/**

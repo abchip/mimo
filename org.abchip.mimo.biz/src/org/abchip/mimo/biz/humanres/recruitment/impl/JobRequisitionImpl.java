@@ -16,10 +16,12 @@ import org.abchip.mimo.biz.humanres.ability.SkillType;
 import org.abchip.mimo.biz.humanres.recruitment.JobRequisition;
 import org.abchip.mimo.biz.humanres.recruitment.RecruitmentPackage;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -339,7 +341,10 @@ public class JobRequisitionImpl extends BizEntityImpl implements JobRequisition 
 	 */
 	@Override
 	public void setAge(long newAge) {
+		long oldAge = age;
 		age = newAge;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, RecruitmentPackage.JOB_REQUISITION__AGE, oldAge, age));
 	}
 
 	/**
@@ -359,7 +364,10 @@ public class JobRequisitionImpl extends BizEntityImpl implements JobRequisition 
 	 */
 	@Override
 	public void setDurationMonths(long newDurationMonths) {
+		long oldDurationMonths = durationMonths;
 		durationMonths = newDurationMonths;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, RecruitmentPackage.JOB_REQUISITION__DURATION_MONTHS, oldDurationMonths, durationMonths));
 	}
 
 	/**
@@ -373,6 +381,8 @@ public class JobRequisitionImpl extends BizEntityImpl implements JobRequisition 
 			InternalEObject oldExamTypeEnumId = (InternalEObject)examTypeEnumId;
 			examTypeEnumId = (Enumeration)eResolveProxy(oldExamTypeEnumId);
 			if (examTypeEnumId != oldExamTypeEnumId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, RecruitmentPackage.JOB_REQUISITION__EXAM_TYPE_ENUM_ID, oldExamTypeEnumId, examTypeEnumId));
 			}
 		}
 		return examTypeEnumId;
@@ -394,7 +404,10 @@ public class JobRequisitionImpl extends BizEntityImpl implements JobRequisition 
 	 */
 	@Override
 	public void setExamTypeEnumId(Enumeration newExamTypeEnumId) {
+		Enumeration oldExamTypeEnumId = examTypeEnumId;
 		examTypeEnumId = newExamTypeEnumId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, RecruitmentPackage.JOB_REQUISITION__EXAM_TYPE_ENUM_ID, oldExamTypeEnumId, examTypeEnumId));
 	}
 
 	/**
@@ -414,7 +427,10 @@ public class JobRequisitionImpl extends BizEntityImpl implements JobRequisition 
 	 */
 	@Override
 	public void setExperienceMonths(long newExperienceMonths) {
+		long oldExperienceMonths = experienceMonths;
 		experienceMonths = newExperienceMonths;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, RecruitmentPackage.JOB_REQUISITION__EXPERIENCE_MONTHS, oldExperienceMonths, experienceMonths));
 	}
 
 	/**
@@ -434,7 +450,10 @@ public class JobRequisitionImpl extends BizEntityImpl implements JobRequisition 
 	 */
 	@Override
 	public void setExperienceYears(long newExperienceYears) {
+		long oldExperienceYears = experienceYears;
 		experienceYears = newExperienceYears;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, RecruitmentPackage.JOB_REQUISITION__EXPERIENCE_YEARS, oldExperienceYears, experienceYears));
 	}
 
 	/**
@@ -454,7 +473,10 @@ public class JobRequisitionImpl extends BizEntityImpl implements JobRequisition 
 	 */
 	@Override
 	public void setGender(boolean newGender) {
+		boolean oldGender = gender;
 		gender = newGender;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, RecruitmentPackage.JOB_REQUISITION__GENDER, oldGender, gender));
 	}
 
 	/**
@@ -474,7 +496,10 @@ public class JobRequisitionImpl extends BizEntityImpl implements JobRequisition 
 	 */
 	@Override
 	public void setJobLocation(String newJobLocation) {
+		String oldJobLocation = jobLocation;
 		jobLocation = newJobLocation;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, RecruitmentPackage.JOB_REQUISITION__JOB_LOCATION, oldJobLocation, jobLocation));
 	}
 
 	/**
@@ -488,6 +513,8 @@ public class JobRequisitionImpl extends BizEntityImpl implements JobRequisition 
 			InternalEObject oldJobPostingTypeEnumId = (InternalEObject)jobPostingTypeEnumId;
 			jobPostingTypeEnumId = (Enumeration)eResolveProxy(oldJobPostingTypeEnumId);
 			if (jobPostingTypeEnumId != oldJobPostingTypeEnumId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, RecruitmentPackage.JOB_REQUISITION__JOB_POSTING_TYPE_ENUM_ID, oldJobPostingTypeEnumId, jobPostingTypeEnumId));
 			}
 		}
 		return jobPostingTypeEnumId;
@@ -509,7 +536,10 @@ public class JobRequisitionImpl extends BizEntityImpl implements JobRequisition 
 	 */
 	@Override
 	public void setJobPostingTypeEnumId(Enumeration newJobPostingTypeEnumId) {
+		Enumeration oldJobPostingTypeEnumId = jobPostingTypeEnumId;
 		jobPostingTypeEnumId = newJobPostingTypeEnumId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, RecruitmentPackage.JOB_REQUISITION__JOB_POSTING_TYPE_ENUM_ID, oldJobPostingTypeEnumId, jobPostingTypeEnumId));
 	}
 
 	/**
@@ -529,7 +559,10 @@ public class JobRequisitionImpl extends BizEntityImpl implements JobRequisition 
 	 */
 	@Override
 	public void setJobRequisitionDate(Date newJobRequisitionDate) {
+		Date oldJobRequisitionDate = jobRequisitionDate;
 		jobRequisitionDate = newJobRequisitionDate;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, RecruitmentPackage.JOB_REQUISITION__JOB_REQUISITION_DATE, oldJobRequisitionDate, jobRequisitionDate));
 	}
 
 	/**
@@ -549,7 +582,10 @@ public class JobRequisitionImpl extends BizEntityImpl implements JobRequisition 
 	 */
 	@Override
 	public void setJobRequisitionId(String newJobRequisitionId) {
+		String oldJobRequisitionId = jobRequisitionId;
 		jobRequisitionId = newJobRequisitionId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, RecruitmentPackage.JOB_REQUISITION__JOB_REQUISITION_ID, oldJobRequisitionId, jobRequisitionId));
 	}
 
 	/**
@@ -569,7 +605,10 @@ public class JobRequisitionImpl extends BizEntityImpl implements JobRequisition 
 	 */
 	@Override
 	public void setNoOfResources(long newNoOfResources) {
+		long oldNoOfResources = noOfResources;
 		noOfResources = newNoOfResources;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, RecruitmentPackage.JOB_REQUISITION__NO_OF_RESOURCES, oldNoOfResources, noOfResources));
 	}
 
 	/**
@@ -589,7 +628,10 @@ public class JobRequisitionImpl extends BizEntityImpl implements JobRequisition 
 	 */
 	@Override
 	public void setQualification(String newQualification) {
+		String oldQualification = qualification;
 		qualification = newQualification;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, RecruitmentPackage.JOB_REQUISITION__QUALIFICATION, oldQualification, qualification));
 	}
 
 	/**
@@ -609,7 +651,10 @@ public class JobRequisitionImpl extends BizEntityImpl implements JobRequisition 
 	 */
 	@Override
 	public void setRequiredOnDate(Date newRequiredOnDate) {
+		Date oldRequiredOnDate = requiredOnDate;
 		requiredOnDate = newRequiredOnDate;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, RecruitmentPackage.JOB_REQUISITION__REQUIRED_ON_DATE, oldRequiredOnDate, requiredOnDate));
 	}
 
 	/**
@@ -623,6 +668,8 @@ public class JobRequisitionImpl extends BizEntityImpl implements JobRequisition 
 			InternalEObject oldSkillTypeId = (InternalEObject)skillTypeId;
 			skillTypeId = (SkillType)eResolveProxy(oldSkillTypeId);
 			if (skillTypeId != oldSkillTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, RecruitmentPackage.JOB_REQUISITION__SKILL_TYPE_ID, oldSkillTypeId, skillTypeId));
 			}
 		}
 		return skillTypeId;
@@ -644,7 +691,10 @@ public class JobRequisitionImpl extends BizEntityImpl implements JobRequisition 
 	 */
 	@Override
 	public void setSkillTypeId(SkillType newSkillTypeId) {
+		SkillType oldSkillTypeId = skillTypeId;
 		skillTypeId = newSkillTypeId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, RecruitmentPackage.JOB_REQUISITION__SKILL_TYPE_ID, oldSkillTypeId, skillTypeId));
 	}
 
 	/**

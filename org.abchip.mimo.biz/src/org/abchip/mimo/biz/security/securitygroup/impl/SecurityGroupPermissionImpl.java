@@ -14,10 +14,12 @@ import org.abchip.mimo.biz.security.securitygroup.SecurityGroup;
 import org.abchip.mimo.biz.security.securitygroup.SecurityGroupPermission;
 import org.abchip.mimo.biz.security.securitygroup.SecurityPermission;
 import org.abchip.mimo.biz.security.securitygroup.SecuritygroupPackage;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -141,7 +143,10 @@ public class SecurityGroupPermissionImpl extends BizEntityImpl implements Securi
 	 */
 	@Override
 	public void setFromDate(Date newFromDate) {
+		Date oldFromDate = fromDate;
 		fromDate = newFromDate;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SecuritygroupPackage.SECURITY_GROUP_PERMISSION__FROM_DATE, oldFromDate, fromDate));
 	}
 
 	/**
@@ -155,6 +160,8 @@ public class SecurityGroupPermissionImpl extends BizEntityImpl implements Securi
 			InternalEObject oldGroupId = (InternalEObject)groupId;
 			groupId = (SecurityGroup)eResolveProxy(oldGroupId);
 			if (groupId != oldGroupId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, SecuritygroupPackage.SECURITY_GROUP_PERMISSION__GROUP_ID, oldGroupId, groupId));
 			}
 		}
 		return groupId;
@@ -176,7 +183,10 @@ public class SecurityGroupPermissionImpl extends BizEntityImpl implements Securi
 	 */
 	@Override
 	public void setGroupId(SecurityGroup newGroupId) {
+		SecurityGroup oldGroupId = groupId;
 		groupId = newGroupId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SecuritygroupPackage.SECURITY_GROUP_PERMISSION__GROUP_ID, oldGroupId, groupId));
 	}
 
 	/**
@@ -190,6 +200,8 @@ public class SecurityGroupPermissionImpl extends BizEntityImpl implements Securi
 			InternalEObject oldPermissionId = (InternalEObject)permissionId;
 			permissionId = (SecurityPermission)eResolveProxy(oldPermissionId);
 			if (permissionId != oldPermissionId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, SecuritygroupPackage.SECURITY_GROUP_PERMISSION__PERMISSION_ID, oldPermissionId, permissionId));
 			}
 		}
 		return permissionId;
@@ -211,7 +223,10 @@ public class SecurityGroupPermissionImpl extends BizEntityImpl implements Securi
 	 */
 	@Override
 	public void setPermissionId(SecurityPermission newPermissionId) {
+		SecurityPermission oldPermissionId = permissionId;
 		permissionId = newPermissionId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SecuritygroupPackage.SECURITY_GROUP_PERMISSION__PERMISSION_ID, oldPermissionId, permissionId));
 	}
 
 	/**
@@ -231,7 +246,10 @@ public class SecurityGroupPermissionImpl extends BizEntityImpl implements Securi
 	 */
 	@Override
 	public void setThruDate(Date newThruDate) {
+		Date oldThruDate = thruDate;
 		thruDate = newThruDate;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SecuritygroupPackage.SECURITY_GROUP_PERMISSION__THRU_DATE, oldThruDate, thruDate));
 	}
 
 	/**

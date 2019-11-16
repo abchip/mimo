@@ -18,11 +18,13 @@ import org.abchip.mimo.biz.party.agreement.AgreementType;
 import org.abchip.mimo.biz.party.party.Party;
 import org.abchip.mimo.biz.party.party.RoleType;
 import org.abchip.mimo.biz.product.product.Product;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.util.BasicInternalEList;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -274,7 +276,10 @@ public class AgreementImpl extends BizEntityTypedImpl<AgreementType> implements 
 	 */
 	@Override
 	public void setAgreementDate(Date newAgreementDate) {
+		Date oldAgreementDate = agreementDate;
 		agreementDate = newAgreementDate;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, AgreementPackage.AGREEMENT__AGREEMENT_DATE, oldAgreementDate, agreementDate));
 	}
 
 	/**
@@ -294,7 +299,10 @@ public class AgreementImpl extends BizEntityTypedImpl<AgreementType> implements 
 	 */
 	@Override
 	public void setDescription(String newDescription) {
+		String oldDescription = description;
 		description = newDescription;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, AgreementPackage.AGREEMENT__DESCRIPTION, oldDescription, description));
 	}
 
 	/**
@@ -314,7 +322,10 @@ public class AgreementImpl extends BizEntityTypedImpl<AgreementType> implements 
 	 */
 	@Override
 	public void setFromDate(Date newFromDate) {
+		Date oldFromDate = fromDate;
 		fromDate = newFromDate;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, AgreementPackage.AGREEMENT__FROM_DATE, oldFromDate, fromDate));
 	}
 
 	/**
@@ -328,6 +339,8 @@ public class AgreementImpl extends BizEntityTypedImpl<AgreementType> implements 
 			InternalEObject oldPartyIdFrom = (InternalEObject)partyIdFrom;
 			partyIdFrom = (Party)eResolveProxy(oldPartyIdFrom);
 			if (partyIdFrom != oldPartyIdFrom) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, AgreementPackage.AGREEMENT__PARTY_ID_FROM, oldPartyIdFrom, partyIdFrom));
 			}
 		}
 		return partyIdFrom;
@@ -349,7 +362,10 @@ public class AgreementImpl extends BizEntityTypedImpl<AgreementType> implements 
 	 */
 	@Override
 	public void setPartyIdFrom(Party newPartyIdFrom) {
+		Party oldPartyIdFrom = partyIdFrom;
 		partyIdFrom = newPartyIdFrom;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, AgreementPackage.AGREEMENT__PARTY_ID_FROM, oldPartyIdFrom, partyIdFrom));
 	}
 
 	/**
@@ -363,6 +379,8 @@ public class AgreementImpl extends BizEntityTypedImpl<AgreementType> implements 
 			InternalEObject oldPartyIdTo = (InternalEObject)partyIdTo;
 			partyIdTo = (Party)eResolveProxy(oldPartyIdTo);
 			if (partyIdTo != oldPartyIdTo) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, AgreementPackage.AGREEMENT__PARTY_ID_TO, oldPartyIdTo, partyIdTo));
 			}
 		}
 		return partyIdTo;
@@ -384,7 +402,10 @@ public class AgreementImpl extends BizEntityTypedImpl<AgreementType> implements 
 	 */
 	@Override
 	public void setPartyIdTo(Party newPartyIdTo) {
+		Party oldPartyIdTo = partyIdTo;
 		partyIdTo = newPartyIdTo;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, AgreementPackage.AGREEMENT__PARTY_ID_TO, oldPartyIdTo, partyIdTo));
 	}
 
 	/**
@@ -398,6 +419,8 @@ public class AgreementImpl extends BizEntityTypedImpl<AgreementType> implements 
 			InternalEObject oldProductId = (InternalEObject)productId;
 			productId = (Product)eResolveProxy(oldProductId);
 			if (productId != oldProductId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, AgreementPackage.AGREEMENT__PRODUCT_ID, oldProductId, productId));
 			}
 		}
 		return productId;
@@ -419,7 +442,10 @@ public class AgreementImpl extends BizEntityTypedImpl<AgreementType> implements 
 	 */
 	@Override
 	public void setProductId(Product newProductId) {
+		Product oldProductId = productId;
 		productId = newProductId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, AgreementPackage.AGREEMENT__PRODUCT_ID, oldProductId, productId));
 	}
 
 	/**
@@ -433,6 +459,8 @@ public class AgreementImpl extends BizEntityTypedImpl<AgreementType> implements 
 			InternalEObject oldRoleTypeIdFrom = (InternalEObject)roleTypeIdFrom;
 			roleTypeIdFrom = (RoleType)eResolveProxy(oldRoleTypeIdFrom);
 			if (roleTypeIdFrom != oldRoleTypeIdFrom) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, AgreementPackage.AGREEMENT__ROLE_TYPE_ID_FROM, oldRoleTypeIdFrom, roleTypeIdFrom));
 			}
 		}
 		return roleTypeIdFrom;
@@ -454,7 +482,10 @@ public class AgreementImpl extends BizEntityTypedImpl<AgreementType> implements 
 	 */
 	@Override
 	public void setRoleTypeIdFrom(RoleType newRoleTypeIdFrom) {
+		RoleType oldRoleTypeIdFrom = roleTypeIdFrom;
 		roleTypeIdFrom = newRoleTypeIdFrom;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, AgreementPackage.AGREEMENT__ROLE_TYPE_ID_FROM, oldRoleTypeIdFrom, roleTypeIdFrom));
 	}
 
 	/**
@@ -468,6 +499,8 @@ public class AgreementImpl extends BizEntityTypedImpl<AgreementType> implements 
 			InternalEObject oldRoleTypeIdTo = (InternalEObject)roleTypeIdTo;
 			roleTypeIdTo = (RoleType)eResolveProxy(oldRoleTypeIdTo);
 			if (roleTypeIdTo != oldRoleTypeIdTo) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, AgreementPackage.AGREEMENT__ROLE_TYPE_ID_TO, oldRoleTypeIdTo, roleTypeIdTo));
 			}
 		}
 		return roleTypeIdTo;
@@ -489,7 +522,10 @@ public class AgreementImpl extends BizEntityTypedImpl<AgreementType> implements 
 	 */
 	@Override
 	public void setRoleTypeIdTo(RoleType newRoleTypeIdTo) {
+		RoleType oldRoleTypeIdTo = roleTypeIdTo;
 		roleTypeIdTo = newRoleTypeIdTo;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, AgreementPackage.AGREEMENT__ROLE_TYPE_ID_TO, oldRoleTypeIdTo, roleTypeIdTo));
 	}
 
 	/**
@@ -509,7 +545,10 @@ public class AgreementImpl extends BizEntityTypedImpl<AgreementType> implements 
 	 */
 	@Override
 	public void setTextData(String newTextData) {
+		String oldTextData = textData;
 		textData = newTextData;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, AgreementPackage.AGREEMENT__TEXT_DATA, oldTextData, textData));
 	}
 
 	/**
@@ -529,7 +568,10 @@ public class AgreementImpl extends BizEntityTypedImpl<AgreementType> implements 
 	 */
 	@Override
 	public void setThruDate(Date newThruDate) {
+		Date oldThruDate = thruDate;
 		thruDate = newThruDate;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, AgreementPackage.AGREEMENT__THRU_DATE, oldThruDate, thruDate));
 	}
 
 	/**
@@ -540,7 +582,7 @@ public class AgreementImpl extends BizEntityTypedImpl<AgreementType> implements 
 	@Override
 	public List<String> getAgreementAttributes() {
 		if (agreementAttributes == null) {
-			agreementAttributes = new BasicInternalEList<String>(String.class);
+			agreementAttributes = new EDataTypeUniqueEList<String>(String.class, this, AgreementPackage.AGREEMENT__AGREEMENT_ATTRIBUTES);
 		}
 		return agreementAttributes;
 	}
@@ -553,7 +595,7 @@ public class AgreementImpl extends BizEntityTypedImpl<AgreementType> implements 
 	@Override
 	public List<String> getAgreementItems() {
 		if (agreementItems == null) {
-			agreementItems = new BasicInternalEList<String>(String.class);
+			agreementItems = new EDataTypeUniqueEList<String>(String.class, this, AgreementPackage.AGREEMENT__AGREEMENT_ITEMS);
 		}
 		return agreementItems;
 	}
@@ -605,6 +647,8 @@ public class AgreementImpl extends BizEntityTypedImpl<AgreementType> implements 
 			InternalEObject oldAgreementTypeId = (InternalEObject)agreementTypeId;
 			agreementTypeId = (AgreementType)eResolveProxy(oldAgreementTypeId);
 			if (agreementTypeId != oldAgreementTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, AgreementPackage.AGREEMENT__AGREEMENT_TYPE_ID, oldAgreementTypeId, agreementTypeId));
 			}
 		}
 		return agreementTypeId;
@@ -626,7 +670,10 @@ public class AgreementImpl extends BizEntityTypedImpl<AgreementType> implements 
 	 */
 	@Override
 	public void setAgreementTypeId(AgreementType newAgreementTypeId) {
+		AgreementType oldAgreementTypeId = agreementTypeId;
 		agreementTypeId = newAgreementTypeId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, AgreementPackage.AGREEMENT__AGREEMENT_TYPE_ID, oldAgreementTypeId, agreementTypeId));
 	}
 
 	/**
@@ -646,7 +693,10 @@ public class AgreementImpl extends BizEntityTypedImpl<AgreementType> implements 
 	 */
 	@Override
 	public void setAgreementId(String newAgreementId) {
+		String oldAgreementId = agreementId;
 		agreementId = newAgreementId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, AgreementPackage.AGREEMENT__AGREEMENT_ID, oldAgreementId, agreementId));
 	}
 
 	/**

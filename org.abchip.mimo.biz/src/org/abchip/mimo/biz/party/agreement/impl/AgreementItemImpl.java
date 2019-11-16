@@ -12,9 +12,11 @@ import org.abchip.mimo.biz.party.agreement.Agreement;
 import org.abchip.mimo.biz.party.agreement.AgreementItem;
 import org.abchip.mimo.biz.party.agreement.AgreementItemType;
 import org.abchip.mimo.biz.party.agreement.AgreementPackage;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -166,7 +168,10 @@ public class AgreementItemImpl extends BizEntityTypedImpl<AgreementItemType> imp
 	 */
 	@Override
 	public void setAgreementImage(Object newAgreementImage) {
+		Object oldAgreementImage = agreementImage;
 		agreementImage = newAgreementImage;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, AgreementPackage.AGREEMENT_ITEM__AGREEMENT_IMAGE, oldAgreementImage, agreementImage));
 	}
 
 	/**
@@ -186,7 +191,10 @@ public class AgreementItemImpl extends BizEntityTypedImpl<AgreementItemType> imp
 	 */
 	@Override
 	public void setAgreementItemSeqId(String newAgreementItemSeqId) {
+		String oldAgreementItemSeqId = agreementItemSeqId;
 		agreementItemSeqId = newAgreementItemSeqId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, AgreementPackage.AGREEMENT_ITEM__AGREEMENT_ITEM_SEQ_ID, oldAgreementItemSeqId, agreementItemSeqId));
 	}
 
 	/**
@@ -206,7 +214,10 @@ public class AgreementItemImpl extends BizEntityTypedImpl<AgreementItemType> imp
 	 */
 	@Override
 	public void setAgreementText(String newAgreementText) {
+		String oldAgreementText = agreementText;
 		agreementText = newAgreementText;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, AgreementPackage.AGREEMENT_ITEM__AGREEMENT_TEXT, oldAgreementText, agreementText));
 	}
 
 	/**
@@ -226,7 +237,10 @@ public class AgreementItemImpl extends BizEntityTypedImpl<AgreementItemType> imp
 	 */
 	@Override
 	public void setCurrencyUomId(String newCurrencyUomId) {
+		String oldCurrencyUomId = currencyUomId;
 		currencyUomId = newCurrencyUomId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, AgreementPackage.AGREEMENT_ITEM__CURRENCY_UOM_ID, oldCurrencyUomId, currencyUomId));
 	}
 
 	/**
@@ -240,6 +254,8 @@ public class AgreementItemImpl extends BizEntityTypedImpl<AgreementItemType> imp
 			InternalEObject oldAgreementId = (InternalEObject)agreementId;
 			agreementId = (Agreement)eResolveProxy(oldAgreementId);
 			if (agreementId != oldAgreementId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, AgreementPackage.AGREEMENT_ITEM__AGREEMENT_ID, oldAgreementId, agreementId));
 			}
 		}
 		return agreementId;
@@ -261,7 +277,10 @@ public class AgreementItemImpl extends BizEntityTypedImpl<AgreementItemType> imp
 	 */
 	@Override
 	public void setAgreementId(Agreement newAgreementId) {
+		Agreement oldAgreementId = agreementId;
 		agreementId = newAgreementId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, AgreementPackage.AGREEMENT_ITEM__AGREEMENT_ID, oldAgreementId, agreementId));
 	}
 
 	/**
@@ -275,6 +294,8 @@ public class AgreementItemImpl extends BizEntityTypedImpl<AgreementItemType> imp
 			InternalEObject oldAgreementItemTypeId = (InternalEObject)agreementItemTypeId;
 			agreementItemTypeId = (AgreementItemType)eResolveProxy(oldAgreementItemTypeId);
 			if (agreementItemTypeId != oldAgreementItemTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, AgreementPackage.AGREEMENT_ITEM__AGREEMENT_ITEM_TYPE_ID, oldAgreementItemTypeId, agreementItemTypeId));
 			}
 		}
 		return agreementItemTypeId;
@@ -296,7 +317,10 @@ public class AgreementItemImpl extends BizEntityTypedImpl<AgreementItemType> imp
 	 */
 	@Override
 	public void setAgreementItemTypeId(AgreementItemType newAgreementItemTypeId) {
+		AgreementItemType oldAgreementItemTypeId = agreementItemTypeId;
 		agreementItemTypeId = newAgreementItemTypeId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, AgreementPackage.AGREEMENT_ITEM__AGREEMENT_ITEM_TYPE_ID, oldAgreementItemTypeId, agreementItemTypeId));
 	}
 
 	/**

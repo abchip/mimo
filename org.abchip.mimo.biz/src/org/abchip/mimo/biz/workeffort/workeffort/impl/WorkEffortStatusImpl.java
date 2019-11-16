@@ -15,10 +15,12 @@ import org.abchip.mimo.biz.security.login.UserLogin;
 import org.abchip.mimo.biz.workeffort.workeffort.WorkEffort;
 import org.abchip.mimo.biz.workeffort.workeffort.WorkEffortStatus;
 import org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -149,7 +151,10 @@ public class WorkEffortStatusImpl extends BizEntityImpl implements WorkEffortSta
 	 */
 	@Override
 	public void setReason(String newReason) {
+		String oldReason = reason;
 		reason = newReason;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WorkeffortPackage.WORK_EFFORT_STATUS__REASON, oldReason, reason));
 	}
 
 	/**
@@ -163,6 +168,8 @@ public class WorkEffortStatusImpl extends BizEntityImpl implements WorkEffortSta
 			InternalEObject oldSetByUserLogin = (InternalEObject)setByUserLogin;
 			setByUserLogin = (UserLogin)eResolveProxy(oldSetByUserLogin);
 			if (setByUserLogin != oldSetByUserLogin) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WorkeffortPackage.WORK_EFFORT_STATUS__SET_BY_USER_LOGIN, oldSetByUserLogin, setByUserLogin));
 			}
 		}
 		return setByUserLogin;
@@ -184,7 +191,10 @@ public class WorkEffortStatusImpl extends BizEntityImpl implements WorkEffortSta
 	 */
 	@Override
 	public void setSetByUserLogin(UserLogin newSetByUserLogin) {
+		UserLogin oldSetByUserLogin = setByUserLogin;
 		setByUserLogin = newSetByUserLogin;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WorkeffortPackage.WORK_EFFORT_STATUS__SET_BY_USER_LOGIN, oldSetByUserLogin, setByUserLogin));
 	}
 
 	/**
@@ -204,7 +214,10 @@ public class WorkEffortStatusImpl extends BizEntityImpl implements WorkEffortSta
 	 */
 	@Override
 	public void setStatusDatetime(Date newStatusDatetime) {
+		Date oldStatusDatetime = statusDatetime;
 		statusDatetime = newStatusDatetime;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WorkeffortPackage.WORK_EFFORT_STATUS__STATUS_DATETIME, oldStatusDatetime, statusDatetime));
 	}
 
 	/**
@@ -218,6 +231,8 @@ public class WorkEffortStatusImpl extends BizEntityImpl implements WorkEffortSta
 			InternalEObject oldStatusId = (InternalEObject)statusId;
 			statusId = (StatusItem)eResolveProxy(oldStatusId);
 			if (statusId != oldStatusId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WorkeffortPackage.WORK_EFFORT_STATUS__STATUS_ID, oldStatusId, statusId));
 			}
 		}
 		return statusId;
@@ -239,7 +254,10 @@ public class WorkEffortStatusImpl extends BizEntityImpl implements WorkEffortSta
 	 */
 	@Override
 	public void setStatusId(StatusItem newStatusId) {
+		StatusItem oldStatusId = statusId;
 		statusId = newStatusId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WorkeffortPackage.WORK_EFFORT_STATUS__STATUS_ID, oldStatusId, statusId));
 	}
 
 	/**
@@ -253,6 +271,8 @@ public class WorkEffortStatusImpl extends BizEntityImpl implements WorkEffortSta
 			InternalEObject oldWorkEffortId = (InternalEObject)workEffortId;
 			workEffortId = (WorkEffort)eResolveProxy(oldWorkEffortId);
 			if (workEffortId != oldWorkEffortId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WorkeffortPackage.WORK_EFFORT_STATUS__WORK_EFFORT_ID, oldWorkEffortId, workEffortId));
 			}
 		}
 		return workEffortId;
@@ -274,7 +294,10 @@ public class WorkEffortStatusImpl extends BizEntityImpl implements WorkEffortSta
 	 */
 	@Override
 	public void setWorkEffortId(WorkEffort newWorkEffortId) {
+		WorkEffort oldWorkEffortId = workEffortId;
 		workEffortId = newWorkEffortId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WorkeffortPackage.WORK_EFFORT_STATUS__WORK_EFFORT_ID, oldWorkEffortId, workEffortId));
 	}
 
 	/**

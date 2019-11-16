@@ -16,7 +16,9 @@ import org.abchip.mimo.entity.Entity;
 import org.abchip.mimo.entity.Frame;
 import org.abchip.mimo.resource.ResourcePackage;
 import org.abchip.mimo.resource.ResourceSerializer;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 /**
@@ -79,7 +81,10 @@ public abstract class ResourceSerializerImpl<E extends Entity> extends MinimalEO
 	 */
 	@Override
 	public void setFrame(Frame<E> newFrame) {
+		Frame<E> oldFrame = frame;
 		frame = newFrame;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ResourcePackage.RESOURCE_SERIALIZER__FRAME, oldFrame, frame));
 	}
 
 	/**

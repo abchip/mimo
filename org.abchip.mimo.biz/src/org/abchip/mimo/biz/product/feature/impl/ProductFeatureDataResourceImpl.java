@@ -12,9 +12,11 @@ import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.product.feature.FeaturePackage;
 import org.abchip.mimo.biz.product.feature.ProductFeature;
 import org.abchip.mimo.biz.product.feature.ProductFeatureDataResource;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -86,6 +88,8 @@ public class ProductFeatureDataResourceImpl extends BizEntityImpl implements Pro
 			InternalEObject oldDataResourceId = (InternalEObject)dataResourceId;
 			dataResourceId = (DataResource)eResolveProxy(oldDataResourceId);
 			if (dataResourceId != oldDataResourceId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, FeaturePackage.PRODUCT_FEATURE_DATA_RESOURCE__DATA_RESOURCE_ID, oldDataResourceId, dataResourceId));
 			}
 		}
 		return dataResourceId;
@@ -107,7 +111,10 @@ public class ProductFeatureDataResourceImpl extends BizEntityImpl implements Pro
 	 */
 	@Override
 	public void setDataResourceId(DataResource newDataResourceId) {
+		DataResource oldDataResourceId = dataResourceId;
 		dataResourceId = newDataResourceId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, FeaturePackage.PRODUCT_FEATURE_DATA_RESOURCE__DATA_RESOURCE_ID, oldDataResourceId, dataResourceId));
 	}
 
 	/**
@@ -121,6 +128,8 @@ public class ProductFeatureDataResourceImpl extends BizEntityImpl implements Pro
 			InternalEObject oldProductFeatureId = (InternalEObject)productFeatureId;
 			productFeatureId = (ProductFeature)eResolveProxy(oldProductFeatureId);
 			if (productFeatureId != oldProductFeatureId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, FeaturePackage.PRODUCT_FEATURE_DATA_RESOURCE__PRODUCT_FEATURE_ID, oldProductFeatureId, productFeatureId));
 			}
 		}
 		return productFeatureId;
@@ -142,7 +151,10 @@ public class ProductFeatureDataResourceImpl extends BizEntityImpl implements Pro
 	 */
 	@Override
 	public void setProductFeatureId(ProductFeature newProductFeatureId) {
+		ProductFeature oldProductFeatureId = productFeatureId;
 		productFeatureId = newProductFeatureId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, FeaturePackage.PRODUCT_FEATURE_DATA_RESOURCE__PRODUCT_FEATURE_ID, oldProductFeatureId, productFeatureId));
 	}
 
 	/**

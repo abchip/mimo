@@ -18,10 +18,12 @@ import org.abchip.mimo.biz.humanres.employment.EmploymentPackage;
 import org.abchip.mimo.biz.humanres.employment.PayrollPreference;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.party.party.Party;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -310,7 +312,10 @@ public class PayrollPreferenceImpl extends BizEntityImpl implements PayrollPrefe
 	 */
 	@Override
 	public void setAccountNumber(String newAccountNumber) {
+		String oldAccountNumber = accountNumber;
 		accountNumber = newAccountNumber;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, EmploymentPackage.PAYROLL_PREFERENCE__ACCOUNT_NUMBER, oldAccountNumber, accountNumber));
 	}
 
 	/**
@@ -330,7 +335,10 @@ public class PayrollPreferenceImpl extends BizEntityImpl implements PayrollPrefe
 	 */
 	@Override
 	public void setBankName(String newBankName) {
+		String oldBankName = bankName;
 		bankName = newBankName;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, EmploymentPackage.PAYROLL_PREFERENCE__BANK_NAME, oldBankName, bankName));
 	}
 
 	/**
@@ -344,6 +352,8 @@ public class PayrollPreferenceImpl extends BizEntityImpl implements PayrollPrefe
 			InternalEObject oldDeductionTypeId = (InternalEObject)deductionTypeId;
 			deductionTypeId = (DeductionType)eResolveProxy(oldDeductionTypeId);
 			if (deductionTypeId != oldDeductionTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, EmploymentPackage.PAYROLL_PREFERENCE__DEDUCTION_TYPE_ID, oldDeductionTypeId, deductionTypeId));
 			}
 		}
 		return deductionTypeId;
@@ -365,7 +375,10 @@ public class PayrollPreferenceImpl extends BizEntityImpl implements PayrollPrefe
 	 */
 	@Override
 	public void setDeductionTypeId(DeductionType newDeductionTypeId) {
+		DeductionType oldDeductionTypeId = deductionTypeId;
 		deductionTypeId = newDeductionTypeId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, EmploymentPackage.PAYROLL_PREFERENCE__DEDUCTION_TYPE_ID, oldDeductionTypeId, deductionTypeId));
 	}
 
 	/**
@@ -385,7 +398,10 @@ public class PayrollPreferenceImpl extends BizEntityImpl implements PayrollPrefe
 	 */
 	@Override
 	public void setFlatAmount(BigDecimal newFlatAmount) {
+		BigDecimal oldFlatAmount = flatAmount;
 		flatAmount = newFlatAmount;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, EmploymentPackage.PAYROLL_PREFERENCE__FLAT_AMOUNT, oldFlatAmount, flatAmount));
 	}
 
 	/**
@@ -405,7 +421,10 @@ public class PayrollPreferenceImpl extends BizEntityImpl implements PayrollPrefe
 	 */
 	@Override
 	public void setFromDate(Date newFromDate) {
+		Date oldFromDate = fromDate;
 		fromDate = newFromDate;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, EmploymentPackage.PAYROLL_PREFERENCE__FROM_DATE, oldFromDate, fromDate));
 	}
 
 	/**
@@ -419,6 +438,8 @@ public class PayrollPreferenceImpl extends BizEntityImpl implements PayrollPrefe
 			InternalEObject oldPartyId = (InternalEObject)partyId;
 			partyId = (Party)eResolveProxy(oldPartyId);
 			if (partyId != oldPartyId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, EmploymentPackage.PAYROLL_PREFERENCE__PARTY_ID, oldPartyId, partyId));
 			}
 		}
 		return partyId;
@@ -440,7 +461,10 @@ public class PayrollPreferenceImpl extends BizEntityImpl implements PayrollPrefe
 	 */
 	@Override
 	public void setPartyId(Party newPartyId) {
+		Party oldPartyId = partyId;
 		partyId = newPartyId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, EmploymentPackage.PAYROLL_PREFERENCE__PARTY_ID, oldPartyId, partyId));
 	}
 
 	/**
@@ -454,6 +478,8 @@ public class PayrollPreferenceImpl extends BizEntityImpl implements PayrollPrefe
 			InternalEObject oldPaymentMethodTypeId = (InternalEObject)paymentMethodTypeId;
 			paymentMethodTypeId = (PaymentMethodType)eResolveProxy(oldPaymentMethodTypeId);
 			if (paymentMethodTypeId != oldPaymentMethodTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, EmploymentPackage.PAYROLL_PREFERENCE__PAYMENT_METHOD_TYPE_ID, oldPaymentMethodTypeId, paymentMethodTypeId));
 			}
 		}
 		return paymentMethodTypeId;
@@ -475,7 +501,10 @@ public class PayrollPreferenceImpl extends BizEntityImpl implements PayrollPrefe
 	 */
 	@Override
 	public void setPaymentMethodTypeId(PaymentMethodType newPaymentMethodTypeId) {
+		PaymentMethodType oldPaymentMethodTypeId = paymentMethodTypeId;
 		paymentMethodTypeId = newPaymentMethodTypeId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, EmploymentPackage.PAYROLL_PREFERENCE__PAYMENT_METHOD_TYPE_ID, oldPaymentMethodTypeId, paymentMethodTypeId));
 	}
 
 	/**
@@ -495,7 +524,10 @@ public class PayrollPreferenceImpl extends BizEntityImpl implements PayrollPrefe
 	 */
 	@Override
 	public void setPayrollPreferenceSeqId(String newPayrollPreferenceSeqId) {
+		String oldPayrollPreferenceSeqId = payrollPreferenceSeqId;
 		payrollPreferenceSeqId = newPayrollPreferenceSeqId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, EmploymentPackage.PAYROLL_PREFERENCE__PAYROLL_PREFERENCE_SEQ_ID, oldPayrollPreferenceSeqId, payrollPreferenceSeqId));
 	}
 
 	/**
@@ -515,7 +547,10 @@ public class PayrollPreferenceImpl extends BizEntityImpl implements PayrollPrefe
 	 */
 	@Override
 	public void setPercentage(double newPercentage) {
+		double oldPercentage = percentage;
 		percentage = newPercentage;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, EmploymentPackage.PAYROLL_PREFERENCE__PERCENTAGE, oldPercentage, percentage));
 	}
 
 	/**
@@ -529,6 +564,8 @@ public class PayrollPreferenceImpl extends BizEntityImpl implements PayrollPrefe
 			InternalEObject oldPeriodTypeId = (InternalEObject)periodTypeId;
 			periodTypeId = (PeriodType)eResolveProxy(oldPeriodTypeId);
 			if (periodTypeId != oldPeriodTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, EmploymentPackage.PAYROLL_PREFERENCE__PERIOD_TYPE_ID, oldPeriodTypeId, periodTypeId));
 			}
 		}
 		return periodTypeId;
@@ -550,7 +587,10 @@ public class PayrollPreferenceImpl extends BizEntityImpl implements PayrollPrefe
 	 */
 	@Override
 	public void setPeriodTypeId(PeriodType newPeriodTypeId) {
+		PeriodType oldPeriodTypeId = periodTypeId;
 		periodTypeId = newPeriodTypeId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, EmploymentPackage.PAYROLL_PREFERENCE__PERIOD_TYPE_ID, oldPeriodTypeId, periodTypeId));
 	}
 
 	/**
@@ -570,7 +610,10 @@ public class PayrollPreferenceImpl extends BizEntityImpl implements PayrollPrefe
 	 */
 	@Override
 	public void setRoleTypeId(String newRoleTypeId) {
+		String oldRoleTypeId = roleTypeId;
 		roleTypeId = newRoleTypeId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, EmploymentPackage.PAYROLL_PREFERENCE__ROLE_TYPE_ID, oldRoleTypeId, roleTypeId));
 	}
 
 	/**
@@ -590,7 +633,10 @@ public class PayrollPreferenceImpl extends BizEntityImpl implements PayrollPrefe
 	 */
 	@Override
 	public void setRoutingNumber(String newRoutingNumber) {
+		String oldRoutingNumber = routingNumber;
 		routingNumber = newRoutingNumber;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, EmploymentPackage.PAYROLL_PREFERENCE__ROUTING_NUMBER, oldRoutingNumber, routingNumber));
 	}
 
 	/**
@@ -610,7 +656,10 @@ public class PayrollPreferenceImpl extends BizEntityImpl implements PayrollPrefe
 	 */
 	@Override
 	public void setThruDate(Date newThruDate) {
+		Date oldThruDate = thruDate;
 		thruDate = newThruDate;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, EmploymentPackage.PAYROLL_PREFERENCE__THRU_DATE, oldThruDate, thruDate));
 	}
 
 	/**

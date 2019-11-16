@@ -11,7 +11,9 @@ import org.abchip.mimo.entity.impl.EntityImpl;
 
 import org.abchip.mimo.resource.ResourceConfig;
 import org.abchip.mimo.resource.ResourcePackage;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -124,7 +126,10 @@ public class ResourceConfigImpl extends EntityImpl implements ResourceConfig {
 	 */
 	@Override
 	public void setLockSupport(boolean newLockSupport) {
+		boolean oldLockSupport = lockSupport;
 		lockSupport = newLockSupport;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ResourcePackage.RESOURCE_CONFIG__LOCK_SUPPORT, oldLockSupport, lockSupport));
 	}
 
 	/**
@@ -144,7 +149,10 @@ public class ResourceConfigImpl extends EntityImpl implements ResourceConfig {
 	 */
 	@Override
 	public void setOrderSupport(boolean newOrderSupport) {
+		boolean oldOrderSupport = orderSupport;
 		orderSupport = newOrderSupport;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ResourcePackage.RESOURCE_CONFIG__ORDER_SUPPORT, oldOrderSupport, orderSupport));
 	}
 
 	/**
@@ -164,7 +172,10 @@ public class ResourceConfigImpl extends EntityImpl implements ResourceConfig {
 	 */
 	@Override
 	public void setPageSize(int newPageSize) {
+		int oldPageSize = pageSize;
 		pageSize = newPageSize;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ResourcePackage.RESOURCE_CONFIG__PAGE_SIZE, oldPageSize, pageSize));
 	}
 
 	/**

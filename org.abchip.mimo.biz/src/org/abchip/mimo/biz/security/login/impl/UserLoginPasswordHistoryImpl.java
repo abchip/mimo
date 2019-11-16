@@ -13,10 +13,12 @@ import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.security.login.LoginPackage;
 import org.abchip.mimo.biz.security.login.UserLogin;
 import org.abchip.mimo.biz.security.login.UserLoginPasswordHistory;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -153,7 +155,10 @@ public class UserLoginPasswordHistoryImpl extends BizEntityImpl implements UserL
 	 */
 	@Override
 	public void setCurrentPassword(String newCurrentPassword) {
+		String oldCurrentPassword = currentPassword;
 		currentPassword = newCurrentPassword;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, LoginPackage.USER_LOGIN_PASSWORD_HISTORY__CURRENT_PASSWORD, oldCurrentPassword, currentPassword));
 	}
 
 	/**
@@ -173,7 +178,10 @@ public class UserLoginPasswordHistoryImpl extends BizEntityImpl implements UserL
 	 */
 	@Override
 	public void setFromDate(Date newFromDate) {
+		Date oldFromDate = fromDate;
 		fromDate = newFromDate;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, LoginPackage.USER_LOGIN_PASSWORD_HISTORY__FROM_DATE, oldFromDate, fromDate));
 	}
 
 	/**
@@ -193,7 +201,10 @@ public class UserLoginPasswordHistoryImpl extends BizEntityImpl implements UserL
 	 */
 	@Override
 	public void setThruDate(Date newThruDate) {
+		Date oldThruDate = thruDate;
 		thruDate = newThruDate;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, LoginPackage.USER_LOGIN_PASSWORD_HISTORY__THRU_DATE, oldThruDate, thruDate));
 	}
 
 	/**
@@ -207,6 +218,8 @@ public class UserLoginPasswordHistoryImpl extends BizEntityImpl implements UserL
 			InternalEObject oldUserLoginId = (InternalEObject)userLoginId;
 			userLoginId = (UserLogin)eResolveProxy(oldUserLoginId);
 			if (userLoginId != oldUserLoginId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, LoginPackage.USER_LOGIN_PASSWORD_HISTORY__USER_LOGIN_ID, oldUserLoginId, userLoginId));
 			}
 		}
 		return userLoginId;
@@ -228,7 +241,10 @@ public class UserLoginPasswordHistoryImpl extends BizEntityImpl implements UserL
 	 */
 	@Override
 	public void setUserLoginId(UserLogin newUserLoginId) {
+		UserLogin oldUserLoginId = userLoginId;
 		userLoginId = newUserLoginId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, LoginPackage.USER_LOGIN_PASSWORD_HISTORY__USER_LOGIN_ID, oldUserLoginId, userLoginId));
 	}
 
 	/**

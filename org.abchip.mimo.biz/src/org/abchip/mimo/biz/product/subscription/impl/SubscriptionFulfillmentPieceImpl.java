@@ -12,9 +12,11 @@ import org.abchip.mimo.biz.product.subscription.Subscription;
 import org.abchip.mimo.biz.product.subscription.SubscriptionActivity;
 import org.abchip.mimo.biz.product.subscription.SubscriptionFulfillmentPiece;
 import org.abchip.mimo.biz.product.subscription.SubscriptionPackage;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -86,6 +88,8 @@ public class SubscriptionFulfillmentPieceImpl extends BizEntityImpl implements S
 			InternalEObject oldSubscriptionId = (InternalEObject)subscriptionId;
 			subscriptionId = (Subscription)eResolveProxy(oldSubscriptionId);
 			if (subscriptionId != oldSubscriptionId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, SubscriptionPackage.SUBSCRIPTION_FULFILLMENT_PIECE__SUBSCRIPTION_ID, oldSubscriptionId, subscriptionId));
 			}
 		}
 		return subscriptionId;
@@ -107,7 +111,10 @@ public class SubscriptionFulfillmentPieceImpl extends BizEntityImpl implements S
 	 */
 	@Override
 	public void setSubscriptionId(Subscription newSubscriptionId) {
+		Subscription oldSubscriptionId = subscriptionId;
 		subscriptionId = newSubscriptionId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SubscriptionPackage.SUBSCRIPTION_FULFILLMENT_PIECE__SUBSCRIPTION_ID, oldSubscriptionId, subscriptionId));
 	}
 
 	/**
@@ -121,6 +128,8 @@ public class SubscriptionFulfillmentPieceImpl extends BizEntityImpl implements S
 			InternalEObject oldSubscriptionActivityId = (InternalEObject)subscriptionActivityId;
 			subscriptionActivityId = (SubscriptionActivity)eResolveProxy(oldSubscriptionActivityId);
 			if (subscriptionActivityId != oldSubscriptionActivityId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, SubscriptionPackage.SUBSCRIPTION_FULFILLMENT_PIECE__SUBSCRIPTION_ACTIVITY_ID, oldSubscriptionActivityId, subscriptionActivityId));
 			}
 		}
 		return subscriptionActivityId;
@@ -142,7 +151,10 @@ public class SubscriptionFulfillmentPieceImpl extends BizEntityImpl implements S
 	 */
 	@Override
 	public void setSubscriptionActivityId(SubscriptionActivity newSubscriptionActivityId) {
+		SubscriptionActivity oldSubscriptionActivityId = subscriptionActivityId;
 		subscriptionActivityId = newSubscriptionActivityId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SubscriptionPackage.SUBSCRIPTION_FULFILLMENT_PIECE__SUBSCRIPTION_ACTIVITY_ID, oldSubscriptionActivityId, subscriptionActivityId));
 	}
 
 	/**

@@ -10,7 +10,9 @@ package org.abchip.mimo.biz.security.securitygroup.impl;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.security.securitygroup.SecuritygroupPackage;
 import org.abchip.mimo.biz.security.securitygroup.TarpittedLoginView;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -134,7 +136,10 @@ public class TarpittedLoginViewImpl extends BizEntityImpl implements TarpittedLo
 	 */
 	@Override
 	public void setTarpitReleaseDateTime(long newTarpitReleaseDateTime) {
+		long oldTarpitReleaseDateTime = tarpitReleaseDateTime;
 		tarpitReleaseDateTime = newTarpitReleaseDateTime;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SecuritygroupPackage.TARPITTED_LOGIN_VIEW__TARPIT_RELEASE_DATE_TIME, oldTarpitReleaseDateTime, tarpitReleaseDateTime));
 	}
 
 	/**
@@ -154,7 +159,10 @@ public class TarpittedLoginViewImpl extends BizEntityImpl implements TarpittedLo
 	 */
 	@Override
 	public void setUserLoginId(String newUserLoginId) {
+		String oldUserLoginId = userLoginId;
 		userLoginId = newUserLoginId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SecuritygroupPackage.TARPITTED_LOGIN_VIEW__USER_LOGIN_ID, oldUserLoginId, userLoginId));
 	}
 
 	/**
@@ -174,7 +182,10 @@ public class TarpittedLoginViewImpl extends BizEntityImpl implements TarpittedLo
 	 */
 	@Override
 	public void setViewNameId(String newViewNameId) {
+		String oldViewNameId = viewNameId;
 		viewNameId = newViewNameId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SecuritygroupPackage.TARPITTED_LOGIN_VIEW__VIEW_NAME_ID, oldViewNameId, viewNameId));
 	}
 
 	/**

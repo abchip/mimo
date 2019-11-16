@@ -14,7 +14,9 @@ import java.util.Date;
 import org.abchip.mimo.biz.entity.test.TestFieldType;
 import org.abchip.mimo.biz.entity.test.TestPackage;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -282,7 +284,10 @@ public class TestFieldTypeImpl extends BizEntityImpl implements TestFieldType {
 	 */
 	@Override
 	public void setBlobField(String newBlobField) {
+		String oldBlobField = blobField;
 		blobField = newBlobField;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, TestPackage.TEST_FIELD_TYPE__BLOB_FIELD, oldBlobField, blobField));
 	}
 
 	/**
@@ -302,7 +307,10 @@ public class TestFieldTypeImpl extends BizEntityImpl implements TestFieldType {
 	 */
 	@Override
 	public void setByteArrayField(byte[] newByteArrayField) {
+		byte[] oldByteArrayField = byteArrayField;
 		byteArrayField = newByteArrayField;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, TestPackage.TEST_FIELD_TYPE__BYTE_ARRAY_FIELD, oldByteArrayField, byteArrayField));
 	}
 
 	/**
@@ -322,7 +330,10 @@ public class TestFieldTypeImpl extends BizEntityImpl implements TestFieldType {
 	 */
 	@Override
 	public void setClobField(String newClobField) {
+		String oldClobField = clobField;
 		clobField = newClobField;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, TestPackage.TEST_FIELD_TYPE__CLOB_FIELD, oldClobField, clobField));
 	}
 
 	/**
@@ -342,7 +353,10 @@ public class TestFieldTypeImpl extends BizEntityImpl implements TestFieldType {
 	 */
 	@Override
 	public void setDateField(Date newDateField) {
+		Date oldDateField = dateField;
 		dateField = newDateField;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, TestPackage.TEST_FIELD_TYPE__DATE_FIELD, oldDateField, dateField));
 	}
 
 	/**
@@ -362,7 +376,10 @@ public class TestFieldTypeImpl extends BizEntityImpl implements TestFieldType {
 	 */
 	@Override
 	public void setDateTimeField(Date newDateTimeField) {
+		Date oldDateTimeField = dateTimeField;
 		dateTimeField = newDateTimeField;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, TestPackage.TEST_FIELD_TYPE__DATE_TIME_FIELD, oldDateTimeField, dateTimeField));
 	}
 
 	/**
@@ -382,7 +399,10 @@ public class TestFieldTypeImpl extends BizEntityImpl implements TestFieldType {
 	 */
 	@Override
 	public void setFixedPointField(BigDecimal newFixedPointField) {
+		BigDecimal oldFixedPointField = fixedPointField;
 		fixedPointField = newFixedPointField;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, TestPackage.TEST_FIELD_TYPE__FIXED_POINT_FIELD, oldFixedPointField, fixedPointField));
 	}
 
 	/**
@@ -402,7 +422,10 @@ public class TestFieldTypeImpl extends BizEntityImpl implements TestFieldType {
 	 */
 	@Override
 	public void setFloatingPointField(double newFloatingPointField) {
+		double oldFloatingPointField = floatingPointField;
 		floatingPointField = newFloatingPointField;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, TestPackage.TEST_FIELD_TYPE__FLOATING_POINT_FIELD, oldFloatingPointField, floatingPointField));
 	}
 
 	/**
@@ -422,7 +445,10 @@ public class TestFieldTypeImpl extends BizEntityImpl implements TestFieldType {
 	 */
 	@Override
 	public void setNumericField(long newNumericField) {
+		long oldNumericField = numericField;
 		numericField = newNumericField;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, TestPackage.TEST_FIELD_TYPE__NUMERIC_FIELD, oldNumericField, numericField));
 	}
 
 	/**
@@ -442,7 +468,10 @@ public class TestFieldTypeImpl extends BizEntityImpl implements TestFieldType {
 	 */
 	@Override
 	public void setObjectField(Object newObjectField) {
+		Object oldObjectField = objectField;
 		objectField = newObjectField;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, TestPackage.TEST_FIELD_TYPE__OBJECT_FIELD, oldObjectField, objectField));
 	}
 
 	/**
@@ -462,7 +491,10 @@ public class TestFieldTypeImpl extends BizEntityImpl implements TestFieldType {
 	 */
 	@Override
 	public void setTestFieldTypeId(String newTestFieldTypeId) {
+		String oldTestFieldTypeId = testFieldTypeId;
 		testFieldTypeId = newTestFieldTypeId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, TestPackage.TEST_FIELD_TYPE__TEST_FIELD_TYPE_ID, oldTestFieldTypeId, testFieldTypeId));
 	}
 
 	/**
@@ -482,7 +514,10 @@ public class TestFieldTypeImpl extends BizEntityImpl implements TestFieldType {
 	 */
 	@Override
 	public void setTimeField(Date newTimeField) {
+		Date oldTimeField = timeField;
 		timeField = newTimeField;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, TestPackage.TEST_FIELD_TYPE__TIME_FIELD, oldTimeField, timeField));
 	}
 
 	/**

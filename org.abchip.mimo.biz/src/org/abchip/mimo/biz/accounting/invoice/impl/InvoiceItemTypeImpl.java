@@ -15,11 +15,13 @@ import org.abchip.mimo.biz.accounting.invoice.InvoiceItemType;
 import org.abchip.mimo.biz.accounting.invoice.InvoicePackage;
 import org.abchip.mimo.biz.accounting.ledger.GlAccount;
 import org.abchip.mimo.biz.impl.BizEntityTypeImpl;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.util.BasicInternalEList;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -168,6 +170,8 @@ public class InvoiceItemTypeImpl extends BizEntityTypeImpl<InvoiceItem> implemen
 			InternalEObject oldDefaultGlAccountId = (InternalEObject)defaultGlAccountId;
 			defaultGlAccountId = (GlAccount)eResolveProxy(oldDefaultGlAccountId);
 			if (defaultGlAccountId != oldDefaultGlAccountId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, InvoicePackage.INVOICE_ITEM_TYPE__DEFAULT_GL_ACCOUNT_ID, oldDefaultGlAccountId, defaultGlAccountId));
 			}
 		}
 		return defaultGlAccountId;
@@ -189,7 +193,10 @@ public class InvoiceItemTypeImpl extends BizEntityTypeImpl<InvoiceItem> implemen
 	 */
 	@Override
 	public void setDefaultGlAccountId(GlAccount newDefaultGlAccountId) {
+		GlAccount oldDefaultGlAccountId = defaultGlAccountId;
 		defaultGlAccountId = newDefaultGlAccountId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, InvoicePackage.INVOICE_ITEM_TYPE__DEFAULT_GL_ACCOUNT_ID, oldDefaultGlAccountId, defaultGlAccountId));
 	}
 
 	/**
@@ -209,7 +216,10 @@ public class InvoiceItemTypeImpl extends BizEntityTypeImpl<InvoiceItem> implemen
 	 */
 	@Override
 	public void setDescription(String newDescription) {
+		String oldDescription = description;
 		description = newDescription;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, InvoicePackage.INVOICE_ITEM_TYPE__DESCRIPTION, oldDescription, description));
 	}
 
 	/**
@@ -229,7 +239,10 @@ public class InvoiceItemTypeImpl extends BizEntityTypeImpl<InvoiceItem> implemen
 	 */
 	@Override
 	public void setHasTable(boolean newHasTable) {
+		boolean oldHasTable = hasTable;
 		hasTable = newHasTable;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, InvoicePackage.INVOICE_ITEM_TYPE__HAS_TABLE, oldHasTable, hasTable));
 	}
 
 	/**
@@ -243,6 +256,8 @@ public class InvoiceItemTypeImpl extends BizEntityTypeImpl<InvoiceItem> implemen
 			InternalEObject oldParentTypeId = (InternalEObject)parentTypeId;
 			parentTypeId = (InvoiceItemType)eResolveProxy(oldParentTypeId);
 			if (parentTypeId != oldParentTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, InvoicePackage.INVOICE_ITEM_TYPE__PARENT_TYPE_ID, oldParentTypeId, parentTypeId));
 			}
 		}
 		return parentTypeId;
@@ -264,7 +279,10 @@ public class InvoiceItemTypeImpl extends BizEntityTypeImpl<InvoiceItem> implemen
 	 */
 	@Override
 	public void setParentTypeId(InvoiceItemType newParentTypeId) {
+		InvoiceItemType oldParentTypeId = parentTypeId;
 		parentTypeId = newParentTypeId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, InvoicePackage.INVOICE_ITEM_TYPE__PARENT_TYPE_ID, oldParentTypeId, parentTypeId));
 	}
 
 	/**
@@ -275,7 +293,7 @@ public class InvoiceItemTypeImpl extends BizEntityTypeImpl<InvoiceItem> implemen
 	@Override
 	public List<String> getInvoiceItemTypeAttrs() {
 		if (invoiceItemTypeAttrs == null) {
-			invoiceItemTypeAttrs = new BasicInternalEList<String>(String.class);
+			invoiceItemTypeAttrs = new EDataTypeUniqueEList<String>(String.class, this, InvoicePackage.INVOICE_ITEM_TYPE__INVOICE_ITEM_TYPE_ATTRS);
 		}
 		return invoiceItemTypeAttrs;
 	}
@@ -288,7 +306,7 @@ public class InvoiceItemTypeImpl extends BizEntityTypeImpl<InvoiceItem> implemen
 	@Override
 	public List<String> getInvoiceItemTypeGlAccounts() {
 		if (invoiceItemTypeGlAccounts == null) {
-			invoiceItemTypeGlAccounts = new BasicInternalEList<String>(String.class);
+			invoiceItemTypeGlAccounts = new EDataTypeUniqueEList<String>(String.class, this, InvoicePackage.INVOICE_ITEM_TYPE__INVOICE_ITEM_TYPE_GL_ACCOUNTS);
 		}
 		return invoiceItemTypeGlAccounts;
 	}
@@ -358,7 +376,10 @@ public class InvoiceItemTypeImpl extends BizEntityTypeImpl<InvoiceItem> implemen
 	 */
 	@Override
 	public void setInvoiceItemTypeId(String newInvoiceItemTypeId) {
+		String oldInvoiceItemTypeId = invoiceItemTypeId;
 		invoiceItemTypeId = newInvoiceItemTypeId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, InvoicePackage.INVOICE_ITEM_TYPE__INVOICE_ITEM_TYPE_ID, oldInvoiceItemTypeId, invoiceItemTypeId));
 	}
 
 	/**

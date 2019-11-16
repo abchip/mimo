@@ -12,10 +12,12 @@ import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.security.login.LoginPackage;
 import org.abchip.mimo.biz.security.login.UserLogin;
 import org.abchip.mimo.biz.security.login.UserLoginSecurityQuestion;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -112,6 +114,8 @@ public class UserLoginSecurityQuestionImpl extends BizEntityImpl implements User
 			InternalEObject oldQuestionEnumId = (InternalEObject)questionEnumId;
 			questionEnumId = (Enumeration)eResolveProxy(oldQuestionEnumId);
 			if (questionEnumId != oldQuestionEnumId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, LoginPackage.USER_LOGIN_SECURITY_QUESTION__QUESTION_ENUM_ID, oldQuestionEnumId, questionEnumId));
 			}
 		}
 		return questionEnumId;
@@ -133,7 +137,10 @@ public class UserLoginSecurityQuestionImpl extends BizEntityImpl implements User
 	 */
 	@Override
 	public void setQuestionEnumId(Enumeration newQuestionEnumId) {
+		Enumeration oldQuestionEnumId = questionEnumId;
 		questionEnumId = newQuestionEnumId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, LoginPackage.USER_LOGIN_SECURITY_QUESTION__QUESTION_ENUM_ID, oldQuestionEnumId, questionEnumId));
 	}
 
 	/**
@@ -153,7 +160,10 @@ public class UserLoginSecurityQuestionImpl extends BizEntityImpl implements User
 	 */
 	@Override
 	public void setSecurityAnswer(String newSecurityAnswer) {
+		String oldSecurityAnswer = securityAnswer;
 		securityAnswer = newSecurityAnswer;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, LoginPackage.USER_LOGIN_SECURITY_QUESTION__SECURITY_ANSWER, oldSecurityAnswer, securityAnswer));
 	}
 
 	/**
@@ -167,6 +177,8 @@ public class UserLoginSecurityQuestionImpl extends BizEntityImpl implements User
 			InternalEObject oldUserLoginId = (InternalEObject)userLoginId;
 			userLoginId = (UserLogin)eResolveProxy(oldUserLoginId);
 			if (userLoginId != oldUserLoginId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, LoginPackage.USER_LOGIN_SECURITY_QUESTION__USER_LOGIN_ID, oldUserLoginId, userLoginId));
 			}
 		}
 		return userLoginId;
@@ -188,7 +200,10 @@ public class UserLoginSecurityQuestionImpl extends BizEntityImpl implements User
 	 */
 	@Override
 	public void setUserLoginId(UserLogin newUserLoginId) {
+		UserLogin oldUserLoginId = userLoginId;
 		userLoginId = newUserLoginId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, LoginPackage.USER_LOGIN_SECURITY_QUESTION__USER_LOGIN_ID, oldUserLoginId, userLoginId));
 	}
 
 	/**

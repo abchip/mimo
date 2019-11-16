@@ -12,7 +12,9 @@ import java.util.Date;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.product.price.PricePackage;
 import org.abchip.mimo.biz.product.price.ProductPriceAutoNotice;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -173,7 +175,10 @@ public class ProductPriceAutoNoticeImpl extends BizEntityImpl implements Product
 	 */
 	@Override
 	public void setFacilityId(String newFacilityId) {
+		String oldFacilityId = facilityId;
 		facilityId = newFacilityId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PricePackage.PRODUCT_PRICE_AUTO_NOTICE__FACILITY_ID, oldFacilityId, facilityId));
 	}
 
 	/**
@@ -193,7 +198,10 @@ public class ProductPriceAutoNoticeImpl extends BizEntityImpl implements Product
 	 */
 	@Override
 	public void setFromDate(Date newFromDate) {
+		Date oldFromDate = fromDate;
 		fromDate = newFromDate;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PricePackage.PRODUCT_PRICE_AUTO_NOTICE__FROM_DATE, oldFromDate, fromDate));
 	}
 
 	/**
@@ -213,7 +221,10 @@ public class ProductPriceAutoNoticeImpl extends BizEntityImpl implements Product
 	 */
 	@Override
 	public void setProductPriceNoticeId(String newProductPriceNoticeId) {
+		String oldProductPriceNoticeId = productPriceNoticeId;
 		productPriceNoticeId = newProductPriceNoticeId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PricePackage.PRODUCT_PRICE_AUTO_NOTICE__PRODUCT_PRICE_NOTICE_ID, oldProductPriceNoticeId, productPriceNoticeId));
 	}
 
 	/**
@@ -233,7 +244,10 @@ public class ProductPriceAutoNoticeImpl extends BizEntityImpl implements Product
 	 */
 	@Override
 	public void setRunDate(Date newRunDate) {
+		Date oldRunDate = runDate;
 		runDate = newRunDate;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PricePackage.PRODUCT_PRICE_AUTO_NOTICE__RUN_DATE, oldRunDate, runDate));
 	}
 
 	/**
@@ -253,7 +267,10 @@ public class ProductPriceAutoNoticeImpl extends BizEntityImpl implements Product
 	 */
 	@Override
 	public void setThruDate(Date newThruDate) {
+		Date oldThruDate = thruDate;
 		thruDate = newThruDate;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PricePackage.PRODUCT_PRICE_AUTO_NOTICE__THRU_DATE, oldThruDate, thruDate));
 	}
 
 	/**

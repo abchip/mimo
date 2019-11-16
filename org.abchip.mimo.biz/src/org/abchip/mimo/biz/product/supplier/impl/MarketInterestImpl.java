@@ -14,9 +14,11 @@ import org.abchip.mimo.biz.party.party.PartyClassificationGroup;
 import org.abchip.mimo.biz.product.category.ProductCategory;
 import org.abchip.mimo.biz.product.supplier.MarketInterest;
 import org.abchip.mimo.biz.product.supplier.SupplierPackage;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -136,7 +138,10 @@ public class MarketInterestImpl extends BizEntityImpl implements MarketInterest 
 	 */
 	@Override
 	public void setFromDate(Date newFromDate) {
+		Date oldFromDate = fromDate;
 		fromDate = newFromDate;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SupplierPackage.MARKET_INTEREST__FROM_DATE, oldFromDate, fromDate));
 	}
 
 	/**
@@ -150,6 +155,8 @@ public class MarketInterestImpl extends BizEntityImpl implements MarketInterest 
 			InternalEObject oldPartyClassificationGroupId = (InternalEObject)partyClassificationGroupId;
 			partyClassificationGroupId = (PartyClassificationGroup)eResolveProxy(oldPartyClassificationGroupId);
 			if (partyClassificationGroupId != oldPartyClassificationGroupId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, SupplierPackage.MARKET_INTEREST__PARTY_CLASSIFICATION_GROUP_ID, oldPartyClassificationGroupId, partyClassificationGroupId));
 			}
 		}
 		return partyClassificationGroupId;
@@ -171,7 +178,10 @@ public class MarketInterestImpl extends BizEntityImpl implements MarketInterest 
 	 */
 	@Override
 	public void setPartyClassificationGroupId(PartyClassificationGroup newPartyClassificationGroupId) {
+		PartyClassificationGroup oldPartyClassificationGroupId = partyClassificationGroupId;
 		partyClassificationGroupId = newPartyClassificationGroupId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SupplierPackage.MARKET_INTEREST__PARTY_CLASSIFICATION_GROUP_ID, oldPartyClassificationGroupId, partyClassificationGroupId));
 	}
 
 	/**
@@ -191,7 +201,10 @@ public class MarketInterestImpl extends BizEntityImpl implements MarketInterest 
 	 */
 	@Override
 	public void setThruDate(Date newThruDate) {
+		Date oldThruDate = thruDate;
 		thruDate = newThruDate;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SupplierPackage.MARKET_INTEREST__THRU_DATE, oldThruDate, thruDate));
 	}
 
 	/**
@@ -205,6 +218,8 @@ public class MarketInterestImpl extends BizEntityImpl implements MarketInterest 
 			InternalEObject oldProductCategoryId = (InternalEObject)productCategoryId;
 			productCategoryId = (ProductCategory)eResolveProxy(oldProductCategoryId);
 			if (productCategoryId != oldProductCategoryId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, SupplierPackage.MARKET_INTEREST__PRODUCT_CATEGORY_ID, oldProductCategoryId, productCategoryId));
 			}
 		}
 		return productCategoryId;
@@ -226,7 +241,10 @@ public class MarketInterestImpl extends BizEntityImpl implements MarketInterest 
 	 */
 	@Override
 	public void setProductCategoryId(ProductCategory newProductCategoryId) {
+		ProductCategory oldProductCategoryId = productCategoryId;
 		productCategoryId = newProductCategoryId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SupplierPackage.MARKET_INTEREST__PRODUCT_CATEGORY_ID, oldProductCategoryId, productCategoryId));
 	}
 
 	/**

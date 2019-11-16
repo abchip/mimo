@@ -16,9 +16,11 @@ import org.abchip.mimo.biz.accounting.ledger.GlAccount;
 import org.abchip.mimo.biz.accounting.ledger.GlBudgetXref;
 import org.abchip.mimo.biz.accounting.ledger.LedgerPackage;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -151,7 +153,10 @@ public class GlBudgetXrefImpl extends BizEntityImpl implements GlBudgetXref {
 	 */
 	@Override
 	public void setAllocationPercentage(BigDecimal newAllocationPercentage) {
+		BigDecimal oldAllocationPercentage = allocationPercentage;
 		allocationPercentage = newAllocationPercentage;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, LedgerPackage.GL_BUDGET_XREF__ALLOCATION_PERCENTAGE, oldAllocationPercentage, allocationPercentage));
 	}
 
 	/**
@@ -171,7 +176,10 @@ public class GlBudgetXrefImpl extends BizEntityImpl implements GlBudgetXref {
 	 */
 	@Override
 	public void setFromDate(Date newFromDate) {
+		Date oldFromDate = fromDate;
 		fromDate = newFromDate;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, LedgerPackage.GL_BUDGET_XREF__FROM_DATE, oldFromDate, fromDate));
 	}
 
 	/**
@@ -191,7 +199,10 @@ public class GlBudgetXrefImpl extends BizEntityImpl implements GlBudgetXref {
 	 */
 	@Override
 	public void setThruDate(Date newThruDate) {
+		Date oldThruDate = thruDate;
 		thruDate = newThruDate;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, LedgerPackage.GL_BUDGET_XREF__THRU_DATE, oldThruDate, thruDate));
 	}
 
 	/**
@@ -205,6 +216,8 @@ public class GlBudgetXrefImpl extends BizEntityImpl implements GlBudgetXref {
 			InternalEObject oldGlAccountId = (InternalEObject)glAccountId;
 			glAccountId = (GlAccount)eResolveProxy(oldGlAccountId);
 			if (glAccountId != oldGlAccountId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, LedgerPackage.GL_BUDGET_XREF__GL_ACCOUNT_ID, oldGlAccountId, glAccountId));
 			}
 		}
 		return glAccountId;
@@ -226,7 +239,10 @@ public class GlBudgetXrefImpl extends BizEntityImpl implements GlBudgetXref {
 	 */
 	@Override
 	public void setGlAccountId(GlAccount newGlAccountId) {
+		GlAccount oldGlAccountId = glAccountId;
 		glAccountId = newGlAccountId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, LedgerPackage.GL_BUDGET_XREF__GL_ACCOUNT_ID, oldGlAccountId, glAccountId));
 	}
 
 	/**
@@ -240,6 +256,8 @@ public class GlBudgetXrefImpl extends BizEntityImpl implements GlBudgetXref {
 			InternalEObject oldBudgetItemTypeId = (InternalEObject)budgetItemTypeId;
 			budgetItemTypeId = (BudgetItemType)eResolveProxy(oldBudgetItemTypeId);
 			if (budgetItemTypeId != oldBudgetItemTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, LedgerPackage.GL_BUDGET_XREF__BUDGET_ITEM_TYPE_ID, oldBudgetItemTypeId, budgetItemTypeId));
 			}
 		}
 		return budgetItemTypeId;
@@ -261,7 +279,10 @@ public class GlBudgetXrefImpl extends BizEntityImpl implements GlBudgetXref {
 	 */
 	@Override
 	public void setBudgetItemTypeId(BudgetItemType newBudgetItemTypeId) {
+		BudgetItemType oldBudgetItemTypeId = budgetItemTypeId;
 		budgetItemTypeId = newBudgetItemTypeId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, LedgerPackage.GL_BUDGET_XREF__BUDGET_ITEM_TYPE_ID, oldBudgetItemTypeId, budgetItemTypeId));
 	}
 
 	/**

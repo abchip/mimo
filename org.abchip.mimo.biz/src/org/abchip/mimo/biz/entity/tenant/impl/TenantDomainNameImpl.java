@@ -11,10 +11,12 @@ import org.abchip.mimo.biz.entity.tenant.Tenant;
 import org.abchip.mimo.biz.entity.tenant.TenantDomainName;
 import org.abchip.mimo.biz.entity.tenant.TenantPackage;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -101,7 +103,10 @@ public class TenantDomainNameImpl extends BizEntityImpl implements TenantDomainN
 	 */
 	@Override
 	public void setDomainName(String newDomainName) {
+		String oldDomainName = domainName;
 		domainName = newDomainName;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, TenantPackage.TENANT_DOMAIN_NAME__DOMAIN_NAME, oldDomainName, domainName));
 	}
 
 	/**
@@ -115,6 +120,8 @@ public class TenantDomainNameImpl extends BizEntityImpl implements TenantDomainN
 			InternalEObject oldTenantId = (InternalEObject)tenantId;
 			tenantId = (Tenant)eResolveProxy(oldTenantId);
 			if (tenantId != oldTenantId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, TenantPackage.TENANT_DOMAIN_NAME__TENANT_ID, oldTenantId, tenantId));
 			}
 		}
 		return tenantId;
@@ -136,7 +143,10 @@ public class TenantDomainNameImpl extends BizEntityImpl implements TenantDomainN
 	 */
 	@Override
 	public void setTenantId(Tenant newTenantId) {
+		Tenant oldTenantId = tenantId;
 		tenantId = newTenantId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, TenantPackage.TENANT_DOMAIN_NAME__TENANT_ID, oldTenantId, tenantId));
 	}
 
 	/**

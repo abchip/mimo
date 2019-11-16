@@ -9,7 +9,9 @@ package org.abchip.mimo.biz.common.geo.impl;
 
 import org.abchip.mimo.biz.common.geo.CountryTeleCode;
 import org.abchip.mimo.biz.common.geo.GeoPackage;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -84,7 +86,10 @@ public class CountryTeleCodeImpl extends CountryCodeImpl implements CountryTeleC
 	 */
 	@Override
 	public void setTeleCode(String newTeleCode) {
+		String oldTeleCode = teleCode;
 		teleCode = newTeleCode;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, GeoPackage.COUNTRY_TELE_CODE__TELE_CODE, oldTeleCode, teleCode));
 	}
 
 	/**

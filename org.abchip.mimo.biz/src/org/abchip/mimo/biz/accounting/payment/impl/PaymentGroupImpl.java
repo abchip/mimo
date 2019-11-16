@@ -11,9 +11,11 @@ import org.abchip.mimo.biz.accounting.payment.PaymentGroup;
 import org.abchip.mimo.biz.accounting.payment.PaymentGroupType;
 import org.abchip.mimo.biz.accounting.payment.PaymentPackage;
 import org.abchip.mimo.biz.impl.BizEntityTypedImpl;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -117,7 +119,10 @@ public class PaymentGroupImpl extends BizEntityTypedImpl<PaymentGroupType> imple
 	 */
 	@Override
 	public void setPaymentGroupName(String newPaymentGroupName) {
+		String oldPaymentGroupName = paymentGroupName;
 		paymentGroupName = newPaymentGroupName;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.PAYMENT_GROUP__PAYMENT_GROUP_NAME, oldPaymentGroupName, paymentGroupName));
 	}
 
 	/**
@@ -131,6 +136,8 @@ public class PaymentGroupImpl extends BizEntityTypedImpl<PaymentGroupType> imple
 			InternalEObject oldPaymentGroupTypeId = (InternalEObject)paymentGroupTypeId;
 			paymentGroupTypeId = (PaymentGroupType)eResolveProxy(oldPaymentGroupTypeId);
 			if (paymentGroupTypeId != oldPaymentGroupTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PaymentPackage.PAYMENT_GROUP__PAYMENT_GROUP_TYPE_ID, oldPaymentGroupTypeId, paymentGroupTypeId));
 			}
 		}
 		return paymentGroupTypeId;
@@ -152,7 +159,10 @@ public class PaymentGroupImpl extends BizEntityTypedImpl<PaymentGroupType> imple
 	 */
 	@Override
 	public void setPaymentGroupTypeId(PaymentGroupType newPaymentGroupTypeId) {
+		PaymentGroupType oldPaymentGroupTypeId = paymentGroupTypeId;
 		paymentGroupTypeId = newPaymentGroupTypeId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.PAYMENT_GROUP__PAYMENT_GROUP_TYPE_ID, oldPaymentGroupTypeId, paymentGroupTypeId));
 	}
 
 	/**
@@ -172,7 +182,10 @@ public class PaymentGroupImpl extends BizEntityTypedImpl<PaymentGroupType> imple
 	 */
 	@Override
 	public void setPaymentGroupId(String newPaymentGroupId) {
+		String oldPaymentGroupId = paymentGroupId;
 		paymentGroupId = newPaymentGroupId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.PAYMENT_GROUP__PAYMENT_GROUP_ID, oldPaymentGroupId, paymentGroupId));
 	}
 
 	/**

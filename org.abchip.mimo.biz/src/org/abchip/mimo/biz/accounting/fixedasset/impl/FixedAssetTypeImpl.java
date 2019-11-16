@@ -14,11 +14,13 @@ import org.abchip.mimo.biz.accounting.fixedasset.FixedAsset;
 import org.abchip.mimo.biz.accounting.fixedasset.FixedAssetType;
 import org.abchip.mimo.biz.accounting.fixedasset.FixedassetPackage;
 import org.abchip.mimo.biz.impl.BizEntityTypeImpl;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.util.BasicInternalEList;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -152,7 +154,10 @@ public class FixedAssetTypeImpl extends BizEntityTypeImpl<FixedAsset> implements
 	 */
 	@Override
 	public void setDescription(String newDescription) {
+		String oldDescription = description;
 		description = newDescription;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, FixedassetPackage.FIXED_ASSET_TYPE__DESCRIPTION, oldDescription, description));
 	}
 
 	/**
@@ -172,7 +177,10 @@ public class FixedAssetTypeImpl extends BizEntityTypeImpl<FixedAsset> implements
 	 */
 	@Override
 	public void setHasTable(boolean newHasTable) {
+		boolean oldHasTable = hasTable;
 		hasTable = newHasTable;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, FixedassetPackage.FIXED_ASSET_TYPE__HAS_TABLE, oldHasTable, hasTable));
 	}
 
 	/**
@@ -186,6 +194,8 @@ public class FixedAssetTypeImpl extends BizEntityTypeImpl<FixedAsset> implements
 			InternalEObject oldParentTypeId = (InternalEObject)parentTypeId;
 			parentTypeId = (FixedAssetType)eResolveProxy(oldParentTypeId);
 			if (parentTypeId != oldParentTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, FixedassetPackage.FIXED_ASSET_TYPE__PARENT_TYPE_ID, oldParentTypeId, parentTypeId));
 			}
 		}
 		return parentTypeId;
@@ -207,7 +217,10 @@ public class FixedAssetTypeImpl extends BizEntityTypeImpl<FixedAsset> implements
 	 */
 	@Override
 	public void setParentTypeId(FixedAssetType newParentTypeId) {
+		FixedAssetType oldParentTypeId = parentTypeId;
 		parentTypeId = newParentTypeId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, FixedassetPackage.FIXED_ASSET_TYPE__PARENT_TYPE_ID, oldParentTypeId, parentTypeId));
 	}
 
 	/**
@@ -218,7 +231,7 @@ public class FixedAssetTypeImpl extends BizEntityTypeImpl<FixedAsset> implements
 	@Override
 	public List<String> getFixedAssetTypeAttrs() {
 		if (fixedAssetTypeAttrs == null) {
-			fixedAssetTypeAttrs = new BasicInternalEList<String>(String.class);
+			fixedAssetTypeAttrs = new EDataTypeUniqueEList<String>(String.class, this, FixedassetPackage.FIXED_ASSET_TYPE__FIXED_ASSET_TYPE_ATTRS);
 		}
 		return fixedAssetTypeAttrs;
 	}
@@ -276,7 +289,10 @@ public class FixedAssetTypeImpl extends BizEntityTypeImpl<FixedAsset> implements
 	 */
 	@Override
 	public void setFixedAssetTypeId(String newFixedAssetTypeId) {
+		String oldFixedAssetTypeId = fixedAssetTypeId;
 		fixedAssetTypeId = newFixedAssetTypeId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, FixedassetPackage.FIXED_ASSET_TYPE__FIXED_ASSET_TYPE_ID, oldFixedAssetTypeId, fixedAssetTypeId));
 	}
 
 	/**

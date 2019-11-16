@@ -12,10 +12,12 @@ import org.abchip.mimo.biz.order.requirement.DesiredFeature;
 import org.abchip.mimo.biz.order.requirement.Requirement;
 import org.abchip.mimo.biz.order.requirement.RequirementPackage;
 import org.abchip.mimo.biz.product.feature.ProductFeature;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -135,7 +137,10 @@ public class DesiredFeatureImpl extends BizEntityImpl implements DesiredFeature 
 	 */
 	@Override
 	public void setDesiredFeatureId(String newDesiredFeatureId) {
+		String oldDesiredFeatureId = desiredFeatureId;
 		desiredFeatureId = newDesiredFeatureId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, RequirementPackage.DESIRED_FEATURE__DESIRED_FEATURE_ID, oldDesiredFeatureId, desiredFeatureId));
 	}
 
 	/**
@@ -149,6 +154,8 @@ public class DesiredFeatureImpl extends BizEntityImpl implements DesiredFeature 
 			InternalEObject oldProductFeatureId = (InternalEObject)productFeatureId;
 			productFeatureId = (ProductFeature)eResolveProxy(oldProductFeatureId);
 			if (productFeatureId != oldProductFeatureId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, RequirementPackage.DESIRED_FEATURE__PRODUCT_FEATURE_ID, oldProductFeatureId, productFeatureId));
 			}
 		}
 		return productFeatureId;
@@ -170,7 +177,10 @@ public class DesiredFeatureImpl extends BizEntityImpl implements DesiredFeature 
 	 */
 	@Override
 	public void setProductFeatureId(ProductFeature newProductFeatureId) {
+		ProductFeature oldProductFeatureId = productFeatureId;
 		productFeatureId = newProductFeatureId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, RequirementPackage.DESIRED_FEATURE__PRODUCT_FEATURE_ID, oldProductFeatureId, productFeatureId));
 	}
 
 	/**
@@ -184,6 +194,8 @@ public class DesiredFeatureImpl extends BizEntityImpl implements DesiredFeature 
 			InternalEObject oldRequirementId = (InternalEObject)requirementId;
 			requirementId = (Requirement)eResolveProxy(oldRequirementId);
 			if (requirementId != oldRequirementId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, RequirementPackage.DESIRED_FEATURE__REQUIREMENT_ID, oldRequirementId, requirementId));
 			}
 		}
 		return requirementId;
@@ -205,7 +217,10 @@ public class DesiredFeatureImpl extends BizEntityImpl implements DesiredFeature 
 	 */
 	@Override
 	public void setRequirementId(Requirement newRequirementId) {
+		Requirement oldRequirementId = requirementId;
 		requirementId = newRequirementId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, RequirementPackage.DESIRED_FEATURE__REQUIREMENT_ID, oldRequirementId, requirementId));
 	}
 
 	/**
@@ -225,7 +240,10 @@ public class DesiredFeatureImpl extends BizEntityImpl implements DesiredFeature 
 	 */
 	@Override
 	public void setOptionalInd(boolean newOptionalInd) {
+		boolean oldOptionalInd = optionalInd;
 		optionalInd = newOptionalInd;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, RequirementPackage.DESIRED_FEATURE__OPTIONAL_IND, oldOptionalInd, optionalInd));
 	}
 
 	/**

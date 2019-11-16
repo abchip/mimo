@@ -17,10 +17,12 @@ import org.abchip.mimo.biz.party.party.Party;
 import org.abchip.mimo.biz.security.login.UserLogin;
 import org.abchip.mimo.biz.workeffort.timesheet.Timesheet;
 import org.abchip.mimo.biz.workeffort.timesheet.TimesheetPackage;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -198,6 +200,8 @@ public class TimesheetImpl extends BizEntityImpl implements Timesheet {
 			InternalEObject oldApprovedByUserLoginId = (InternalEObject)approvedByUserLoginId;
 			approvedByUserLoginId = (UserLogin)eResolveProxy(oldApprovedByUserLoginId);
 			if (approvedByUserLoginId != oldApprovedByUserLoginId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, TimesheetPackage.TIMESHEET__APPROVED_BY_USER_LOGIN_ID, oldApprovedByUserLoginId, approvedByUserLoginId));
 			}
 		}
 		return approvedByUserLoginId;
@@ -219,7 +223,10 @@ public class TimesheetImpl extends BizEntityImpl implements Timesheet {
 	 */
 	@Override
 	public void setApprovedByUserLoginId(UserLogin newApprovedByUserLoginId) {
+		UserLogin oldApprovedByUserLoginId = approvedByUserLoginId;
 		approvedByUserLoginId = newApprovedByUserLoginId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, TimesheetPackage.TIMESHEET__APPROVED_BY_USER_LOGIN_ID, oldApprovedByUserLoginId, approvedByUserLoginId));
 	}
 
 	/**
@@ -233,6 +240,8 @@ public class TimesheetImpl extends BizEntityImpl implements Timesheet {
 			InternalEObject oldClientPartyId = (InternalEObject)clientPartyId;
 			clientPartyId = (Party)eResolveProxy(oldClientPartyId);
 			if (clientPartyId != oldClientPartyId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, TimesheetPackage.TIMESHEET__CLIENT_PARTY_ID, oldClientPartyId, clientPartyId));
 			}
 		}
 		return clientPartyId;
@@ -254,7 +263,10 @@ public class TimesheetImpl extends BizEntityImpl implements Timesheet {
 	 */
 	@Override
 	public void setClientPartyId(Party newClientPartyId) {
+		Party oldClientPartyId = clientPartyId;
 		clientPartyId = newClientPartyId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, TimesheetPackage.TIMESHEET__CLIENT_PARTY_ID, oldClientPartyId, clientPartyId));
 	}
 
 	/**
@@ -274,7 +286,10 @@ public class TimesheetImpl extends BizEntityImpl implements Timesheet {
 	 */
 	@Override
 	public void setComments(String newComments) {
+		String oldComments = comments;
 		comments = newComments;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, TimesheetPackage.TIMESHEET__COMMENTS, oldComments, comments));
 	}
 
 	/**
@@ -294,7 +309,10 @@ public class TimesheetImpl extends BizEntityImpl implements Timesheet {
 	 */
 	@Override
 	public void setFromDate(Date newFromDate) {
+		Date oldFromDate = fromDate;
 		fromDate = newFromDate;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, TimesheetPackage.TIMESHEET__FROM_DATE, oldFromDate, fromDate));
 	}
 
 	/**
@@ -308,6 +326,8 @@ public class TimesheetImpl extends BizEntityImpl implements Timesheet {
 			InternalEObject oldPartyId = (InternalEObject)partyId;
 			partyId = (Party)eResolveProxy(oldPartyId);
 			if (partyId != oldPartyId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, TimesheetPackage.TIMESHEET__PARTY_ID, oldPartyId, partyId));
 			}
 		}
 		return partyId;
@@ -329,7 +349,10 @@ public class TimesheetImpl extends BizEntityImpl implements Timesheet {
 	 */
 	@Override
 	public void setPartyId(Party newPartyId) {
+		Party oldPartyId = partyId;
 		partyId = newPartyId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, TimesheetPackage.TIMESHEET__PARTY_ID, oldPartyId, partyId));
 	}
 
 	/**
@@ -343,6 +366,8 @@ public class TimesheetImpl extends BizEntityImpl implements Timesheet {
 			InternalEObject oldStatusId = (InternalEObject)statusId;
 			statusId = (StatusItem)eResolveProxy(oldStatusId);
 			if (statusId != oldStatusId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, TimesheetPackage.TIMESHEET__STATUS_ID, oldStatusId, statusId));
 			}
 		}
 		return statusId;
@@ -364,7 +389,10 @@ public class TimesheetImpl extends BizEntityImpl implements Timesheet {
 	 */
 	@Override
 	public void setStatusId(StatusItem newStatusId) {
+		StatusItem oldStatusId = statusId;
 		statusId = newStatusId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, TimesheetPackage.TIMESHEET__STATUS_ID, oldStatusId, statusId));
 	}
 
 	/**
@@ -384,7 +412,10 @@ public class TimesheetImpl extends BizEntityImpl implements Timesheet {
 	 */
 	@Override
 	public void setThruDate(Date newThruDate) {
+		Date oldThruDate = thruDate;
 		thruDate = newThruDate;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, TimesheetPackage.TIMESHEET__THRU_DATE, oldThruDate, thruDate));
 	}
 
 	/**
@@ -416,7 +447,10 @@ public class TimesheetImpl extends BizEntityImpl implements Timesheet {
 	 */
 	@Override
 	public void setTimesheetId(String newTimesheetId) {
+		String oldTimesheetId = timesheetId;
 		timesheetId = newTimesheetId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, TimesheetPackage.TIMESHEET__TIMESHEET_ID, oldTimesheetId, timesheetId));
 	}
 
 	/**

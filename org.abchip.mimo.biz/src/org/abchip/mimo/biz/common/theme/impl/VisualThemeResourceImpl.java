@@ -12,9 +12,11 @@ import org.abchip.mimo.biz.common.theme.ThemePackage;
 import org.abchip.mimo.biz.common.theme.VisualTheme;
 import org.abchip.mimo.biz.common.theme.VisualThemeResource;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -128,7 +130,10 @@ public class VisualThemeResourceImpl extends BizEntityImpl implements VisualThem
 	 */
 	@Override
 	public void setResourceValue(String newResourceValue) {
+		String oldResourceValue = resourceValue;
 		resourceValue = newResourceValue;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ThemePackage.VISUAL_THEME_RESOURCE__RESOURCE_VALUE, oldResourceValue, resourceValue));
 	}
 
 	/**
@@ -148,7 +153,10 @@ public class VisualThemeResourceImpl extends BizEntityImpl implements VisualThem
 	 */
 	@Override
 	public void setSequenceId(String newSequenceId) {
+		String oldSequenceId = sequenceId;
 		sequenceId = newSequenceId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ThemePackage.VISUAL_THEME_RESOURCE__SEQUENCE_ID, oldSequenceId, sequenceId));
 	}
 
 	/**
@@ -162,6 +170,8 @@ public class VisualThemeResourceImpl extends BizEntityImpl implements VisualThem
 			InternalEObject oldVisualThemeId = (InternalEObject)visualThemeId;
 			visualThemeId = (VisualTheme)eResolveProxy(oldVisualThemeId);
 			if (visualThemeId != oldVisualThemeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ThemePackage.VISUAL_THEME_RESOURCE__VISUAL_THEME_ID, oldVisualThemeId, visualThemeId));
 			}
 		}
 		return visualThemeId;
@@ -183,7 +193,10 @@ public class VisualThemeResourceImpl extends BizEntityImpl implements VisualThem
 	 */
 	@Override
 	public void setVisualThemeId(VisualTheme newVisualThemeId) {
+		VisualTheme oldVisualThemeId = visualThemeId;
 		visualThemeId = newVisualThemeId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ThemePackage.VISUAL_THEME_RESOURCE__VISUAL_THEME_ID, oldVisualThemeId, visualThemeId));
 	}
 
 	/**
@@ -197,6 +210,8 @@ public class VisualThemeResourceImpl extends BizEntityImpl implements VisualThem
 			InternalEObject oldResourceTypeEnumId = (InternalEObject)resourceTypeEnumId;
 			resourceTypeEnumId = (Enumeration)eResolveProxy(oldResourceTypeEnumId);
 			if (resourceTypeEnumId != oldResourceTypeEnumId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ThemePackage.VISUAL_THEME_RESOURCE__RESOURCE_TYPE_ENUM_ID, oldResourceTypeEnumId, resourceTypeEnumId));
 			}
 		}
 		return resourceTypeEnumId;
@@ -218,7 +233,10 @@ public class VisualThemeResourceImpl extends BizEntityImpl implements VisualThem
 	 */
 	@Override
 	public void setResourceTypeEnumId(Enumeration newResourceTypeEnumId) {
+		Enumeration oldResourceTypeEnumId = resourceTypeEnumId;
 		resourceTypeEnumId = newResourceTypeEnumId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ThemePackage.VISUAL_THEME_RESOURCE__RESOURCE_TYPE_ENUM_ID, oldResourceTypeEnumId, resourceTypeEnumId));
 	}
 
 	/**

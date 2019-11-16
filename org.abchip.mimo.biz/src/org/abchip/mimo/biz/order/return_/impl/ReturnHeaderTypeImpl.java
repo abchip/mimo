@@ -13,10 +13,12 @@ import org.abchip.mimo.biz.impl.BizEntityTypeImpl;
 import org.abchip.mimo.biz.order.return_.ReturnHeader;
 import org.abchip.mimo.biz.order.return_.ReturnHeaderType;
 import org.abchip.mimo.biz.order.return_.ReturnPackage;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -125,7 +127,10 @@ public class ReturnHeaderTypeImpl extends BizEntityTypeImpl<ReturnHeader> implem
 	 */
 	@Override
 	public void setDescription(String newDescription) {
+		String oldDescription = description;
 		description = newDescription;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ReturnPackage.RETURN_HEADER_TYPE__DESCRIPTION, oldDescription, description));
 	}
 
 	/**
@@ -139,6 +144,8 @@ public class ReturnHeaderTypeImpl extends BizEntityTypeImpl<ReturnHeader> implem
 			InternalEObject oldParentTypeId = (InternalEObject)parentTypeId;
 			parentTypeId = (ReturnHeaderType)eResolveProxy(oldParentTypeId);
 			if (parentTypeId != oldParentTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ReturnPackage.RETURN_HEADER_TYPE__PARENT_TYPE_ID, oldParentTypeId, parentTypeId));
 			}
 		}
 		return parentTypeId;
@@ -160,7 +167,10 @@ public class ReturnHeaderTypeImpl extends BizEntityTypeImpl<ReturnHeader> implem
 	 */
 	@Override
 	public void setParentTypeId(ReturnHeaderType newParentTypeId) {
+		ReturnHeaderType oldParentTypeId = parentTypeId;
 		parentTypeId = newParentTypeId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ReturnPackage.RETURN_HEADER_TYPE__PARENT_TYPE_ID, oldParentTypeId, parentTypeId));
 	}
 
 	/**
@@ -216,7 +226,10 @@ public class ReturnHeaderTypeImpl extends BizEntityTypeImpl<ReturnHeader> implem
 	 */
 	@Override
 	public void setReturnHeaderTypeId(String newReturnHeaderTypeId) {
+		String oldReturnHeaderTypeId = returnHeaderTypeId;
 		returnHeaderTypeId = newReturnHeaderTypeId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ReturnPackage.RETURN_HEADER_TYPE__RETURN_HEADER_TYPE_ID, oldReturnHeaderTypeId, returnHeaderTypeId));
 	}
 
 	/**

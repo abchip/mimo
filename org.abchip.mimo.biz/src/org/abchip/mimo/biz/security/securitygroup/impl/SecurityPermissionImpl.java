@@ -10,7 +10,9 @@ package org.abchip.mimo.biz.security.securitygroup.impl;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.security.securitygroup.SecurityPermission;
 import org.abchip.mimo.biz.security.securitygroup.SecuritygroupPackage;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -111,7 +113,10 @@ public class SecurityPermissionImpl extends BizEntityImpl implements SecurityPer
 	 */
 	@Override
 	public void setDescription(String newDescription) {
+		String oldDescription = description;
 		description = newDescription;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SecuritygroupPackage.SECURITY_PERMISSION__DESCRIPTION, oldDescription, description));
 	}
 
 	/**
@@ -131,7 +136,10 @@ public class SecurityPermissionImpl extends BizEntityImpl implements SecurityPer
 	 */
 	@Override
 	public void setPermissionId(String newPermissionId) {
+		String oldPermissionId = permissionId;
 		permissionId = newPermissionId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SecuritygroupPackage.SECURITY_PERMISSION__PERMISSION_ID, oldPermissionId, permissionId));
 	}
 
 	/**

@@ -11,9 +11,11 @@ import org.abchip.mimo.biz.common.portal.PortalPackage;
 import org.abchip.mimo.biz.common.portal.PortalPortlet;
 import org.abchip.mimo.biz.common.portal.PortletAttribute;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -195,7 +197,10 @@ public class PortletAttributeImpl extends BizEntityImpl implements PortletAttrib
 	 */
 	@Override
 	public void setAttrDescription(String newAttrDescription) {
+		String oldAttrDescription = attrDescription;
 		attrDescription = newAttrDescription;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PortalPackage.PORTLET_ATTRIBUTE__ATTR_DESCRIPTION, oldAttrDescription, attrDescription));
 	}
 
 	/**
@@ -215,7 +220,10 @@ public class PortletAttributeImpl extends BizEntityImpl implements PortletAttrib
 	 */
 	@Override
 	public void setAttrName(String newAttrName) {
+		String oldAttrName = attrName;
 		attrName = newAttrName;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PortalPackage.PORTLET_ATTRIBUTE__ATTR_NAME, oldAttrName, attrName));
 	}
 
 	/**
@@ -235,7 +243,10 @@ public class PortletAttributeImpl extends BizEntityImpl implements PortletAttrib
 	 */
 	@Override
 	public void setAttrType(String newAttrType) {
+		String oldAttrType = attrType;
 		attrType = newAttrType;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PortalPackage.PORTLET_ATTRIBUTE__ATTR_TYPE, oldAttrType, attrType));
 	}
 
 	/**
@@ -255,7 +266,10 @@ public class PortletAttributeImpl extends BizEntityImpl implements PortletAttrib
 	 */
 	@Override
 	public void setAttrValue(String newAttrValue) {
+		String oldAttrValue = attrValue;
 		attrValue = newAttrValue;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PortalPackage.PORTLET_ATTRIBUTE__ATTR_VALUE, oldAttrValue, attrValue));
 	}
 
 	/**
@@ -275,7 +289,10 @@ public class PortletAttributeImpl extends BizEntityImpl implements PortletAttrib
 	 */
 	@Override
 	public void setPortalPageId(String newPortalPageId) {
+		String oldPortalPageId = portalPageId;
 		portalPageId = newPortalPageId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PortalPackage.PORTLET_ATTRIBUTE__PORTAL_PAGE_ID, oldPortalPageId, portalPageId));
 	}
 
 	/**
@@ -295,7 +312,10 @@ public class PortletAttributeImpl extends BizEntityImpl implements PortletAttrib
 	 */
 	@Override
 	public void setPortletSeqId(String newPortletSeqId) {
+		String oldPortletSeqId = portletSeqId;
 		portletSeqId = newPortletSeqId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PortalPackage.PORTLET_ATTRIBUTE__PORTLET_SEQ_ID, oldPortletSeqId, portletSeqId));
 	}
 
 	/**
@@ -309,6 +329,8 @@ public class PortletAttributeImpl extends BizEntityImpl implements PortletAttrib
 			InternalEObject oldPortalPortletId = (InternalEObject)portalPortletId;
 			portalPortletId = (PortalPortlet)eResolveProxy(oldPortalPortletId);
 			if (portalPortletId != oldPortalPortletId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PortalPackage.PORTLET_ATTRIBUTE__PORTAL_PORTLET_ID, oldPortalPortletId, portalPortletId));
 			}
 		}
 		return portalPortletId;
@@ -330,7 +352,10 @@ public class PortletAttributeImpl extends BizEntityImpl implements PortletAttrib
 	 */
 	@Override
 	public void setPortalPortletId(PortalPortlet newPortalPortletId) {
+		PortalPortlet oldPortalPortletId = portalPortletId;
 		portalPortletId = newPortalPortletId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PortalPackage.PORTLET_ATTRIBUTE__PORTAL_PORTLET_ID, oldPortalPortletId, portalPortletId));
 	}
 
 	/**

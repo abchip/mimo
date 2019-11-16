@@ -12,7 +12,9 @@ import java.util.Date;
 import org.abchip.mimo.biz.accounting.payment.PaymentPackage;
 import org.abchip.mimo.biz.accounting.payment.ValueLinkKey;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -324,7 +326,10 @@ public class ValueLinkKeyImpl extends BizEntityImpl implements ValueLinkKey {
 	 */
 	@Override
 	public void setCreatedByTerminal(String newCreatedByTerminal) {
+		String oldCreatedByTerminal = createdByTerminal;
 		createdByTerminal = newCreatedByTerminal;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.VALUE_LINK_KEY__CREATED_BY_TERMINAL, oldCreatedByTerminal, createdByTerminal));
 	}
 
 	/**
@@ -344,7 +349,10 @@ public class ValueLinkKeyImpl extends BizEntityImpl implements ValueLinkKey {
 	 */
 	@Override
 	public void setCreatedByUserLogin(String newCreatedByUserLogin) {
+		String oldCreatedByUserLogin = createdByUserLogin;
 		createdByUserLogin = newCreatedByUserLogin;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.VALUE_LINK_KEY__CREATED_BY_USER_LOGIN, oldCreatedByUserLogin, createdByUserLogin));
 	}
 
 	/**
@@ -364,7 +372,10 @@ public class ValueLinkKeyImpl extends BizEntityImpl implements ValueLinkKey {
 	 */
 	@Override
 	public void setCreatedDate(Date newCreatedDate) {
+		Date oldCreatedDate = createdDate;
 		createdDate = newCreatedDate;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.VALUE_LINK_KEY__CREATED_DATE, oldCreatedDate, createdDate));
 	}
 
 	/**
@@ -384,7 +395,10 @@ public class ValueLinkKeyImpl extends BizEntityImpl implements ValueLinkKey {
 	 */
 	@Override
 	public void setExchangeKey(String newExchangeKey) {
+		String oldExchangeKey = exchangeKey;
 		exchangeKey = newExchangeKey;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.VALUE_LINK_KEY__EXCHANGE_KEY, oldExchangeKey, exchangeKey));
 	}
 
 	/**
@@ -404,7 +418,10 @@ public class ValueLinkKeyImpl extends BizEntityImpl implements ValueLinkKey {
 	 */
 	@Override
 	public void setLastModifiedByTerminal(String newLastModifiedByTerminal) {
+		String oldLastModifiedByTerminal = lastModifiedByTerminal;
 		lastModifiedByTerminal = newLastModifiedByTerminal;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.VALUE_LINK_KEY__LAST_MODIFIED_BY_TERMINAL, oldLastModifiedByTerminal, lastModifiedByTerminal));
 	}
 
 	/**
@@ -424,7 +441,10 @@ public class ValueLinkKeyImpl extends BizEntityImpl implements ValueLinkKey {
 	 */
 	@Override
 	public void setLastModifiedByUserLogin(String newLastModifiedByUserLogin) {
+		String oldLastModifiedByUserLogin = lastModifiedByUserLogin;
 		lastModifiedByUserLogin = newLastModifiedByUserLogin;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.VALUE_LINK_KEY__LAST_MODIFIED_BY_USER_LOGIN, oldLastModifiedByUserLogin, lastModifiedByUserLogin));
 	}
 
 	/**
@@ -444,7 +464,10 @@ public class ValueLinkKeyImpl extends BizEntityImpl implements ValueLinkKey {
 	 */
 	@Override
 	public void setLastModifiedDate(Date newLastModifiedDate) {
+		Date oldLastModifiedDate = lastModifiedDate;
 		lastModifiedDate = newLastModifiedDate;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.VALUE_LINK_KEY__LAST_MODIFIED_DATE, oldLastModifiedDate, lastModifiedDate));
 	}
 
 	/**
@@ -464,7 +487,10 @@ public class ValueLinkKeyImpl extends BizEntityImpl implements ValueLinkKey {
 	 */
 	@Override
 	public void setLastWorkingKey(String newLastWorkingKey) {
+		String oldLastWorkingKey = lastWorkingKey;
 		lastWorkingKey = newLastWorkingKey;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.VALUE_LINK_KEY__LAST_WORKING_KEY, oldLastWorkingKey, lastWorkingKey));
 	}
 
 	/**
@@ -484,7 +510,10 @@ public class ValueLinkKeyImpl extends BizEntityImpl implements ValueLinkKey {
 	 */
 	@Override
 	public void setMerchantId(String newMerchantId) {
+		String oldMerchantId = merchantId;
 		merchantId = newMerchantId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.VALUE_LINK_KEY__MERCHANT_ID, oldMerchantId, merchantId));
 	}
 
 	/**
@@ -504,7 +533,10 @@ public class ValueLinkKeyImpl extends BizEntityImpl implements ValueLinkKey {
 	 */
 	@Override
 	public void setPrivateKey(String newPrivateKey) {
+		String oldPrivateKey = privateKey;
 		privateKey = newPrivateKey;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.VALUE_LINK_KEY__PRIVATE_KEY, oldPrivateKey, privateKey));
 	}
 
 	/**
@@ -524,7 +556,10 @@ public class ValueLinkKeyImpl extends BizEntityImpl implements ValueLinkKey {
 	 */
 	@Override
 	public void setPublicKey(String newPublicKey) {
+		String oldPublicKey = publicKey;
 		publicKey = newPublicKey;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.VALUE_LINK_KEY__PUBLIC_KEY, oldPublicKey, publicKey));
 	}
 
 	/**
@@ -544,7 +579,10 @@ public class ValueLinkKeyImpl extends BizEntityImpl implements ValueLinkKey {
 	 */
 	@Override
 	public void setWorkingKey(String newWorkingKey) {
+		String oldWorkingKey = workingKey;
 		workingKey = newWorkingKey;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.VALUE_LINK_KEY__WORKING_KEY, oldWorkingKey, workingKey));
 	}
 
 	/**
@@ -564,7 +602,10 @@ public class ValueLinkKeyImpl extends BizEntityImpl implements ValueLinkKey {
 	 */
 	@Override
 	public void setWorkingKeyIndex(long newWorkingKeyIndex) {
+		long oldWorkingKeyIndex = workingKeyIndex;
 		workingKeyIndex = newWorkingKeyIndex;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.VALUE_LINK_KEY__WORKING_KEY_INDEX, oldWorkingKeyIndex, workingKeyIndex));
 	}
 
 	/**

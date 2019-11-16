@@ -16,9 +16,11 @@ import org.abchip.mimo.biz.accounting.invoice.InvoiceItemAssocType;
 import org.abchip.mimo.biz.accounting.invoice.InvoicePackage;
 import org.abchip.mimo.biz.impl.BizEntityTypedImpl;
 import org.abchip.mimo.biz.party.party.Party;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -258,7 +260,10 @@ public class InvoiceItemAssocImpl extends BizEntityTypedImpl<InvoiceItemAssocTyp
 	 */
 	@Override
 	public void setAmount(BigDecimal newAmount) {
+		BigDecimal oldAmount = amount;
 		amount = newAmount;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, InvoicePackage.INVOICE_ITEM_ASSOC__AMOUNT, oldAmount, amount));
 	}
 
 	/**
@@ -278,7 +283,10 @@ public class InvoiceItemAssocImpl extends BizEntityTypedImpl<InvoiceItemAssocTyp
 	 */
 	@Override
 	public void setFromDate(Date newFromDate) {
+		Date oldFromDate = fromDate;
 		fromDate = newFromDate;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, InvoicePackage.INVOICE_ITEM_ASSOC__FROM_DATE, oldFromDate, fromDate));
 	}
 
 	/**
@@ -298,7 +306,10 @@ public class InvoiceItemAssocImpl extends BizEntityTypedImpl<InvoiceItemAssocTyp
 	 */
 	@Override
 	public void setInvoiceIdFrom(String newInvoiceIdFrom) {
+		String oldInvoiceIdFrom = invoiceIdFrom;
 		invoiceIdFrom = newInvoiceIdFrom;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, InvoicePackage.INVOICE_ITEM_ASSOC__INVOICE_ID_FROM, oldInvoiceIdFrom, invoiceIdFrom));
 	}
 
 	/**
@@ -318,7 +329,10 @@ public class InvoiceItemAssocImpl extends BizEntityTypedImpl<InvoiceItemAssocTyp
 	 */
 	@Override
 	public void setInvoiceIdTo(String newInvoiceIdTo) {
+		String oldInvoiceIdTo = invoiceIdTo;
 		invoiceIdTo = newInvoiceIdTo;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, InvoicePackage.INVOICE_ITEM_ASSOC__INVOICE_ID_TO, oldInvoiceIdTo, invoiceIdTo));
 	}
 
 	/**
@@ -338,7 +352,10 @@ public class InvoiceItemAssocImpl extends BizEntityTypedImpl<InvoiceItemAssocTyp
 	 */
 	@Override
 	public void setInvoiceItemSeqIdFrom(String newInvoiceItemSeqIdFrom) {
+		String oldInvoiceItemSeqIdFrom = invoiceItemSeqIdFrom;
 		invoiceItemSeqIdFrom = newInvoiceItemSeqIdFrom;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, InvoicePackage.INVOICE_ITEM_ASSOC__INVOICE_ITEM_SEQ_ID_FROM, oldInvoiceItemSeqIdFrom, invoiceItemSeqIdFrom));
 	}
 
 	/**
@@ -358,7 +375,10 @@ public class InvoiceItemAssocImpl extends BizEntityTypedImpl<InvoiceItemAssocTyp
 	 */
 	@Override
 	public void setInvoiceItemSeqIdTo(String newInvoiceItemSeqIdTo) {
+		String oldInvoiceItemSeqIdTo = invoiceItemSeqIdTo;
 		invoiceItemSeqIdTo = newInvoiceItemSeqIdTo;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, InvoicePackage.INVOICE_ITEM_ASSOC__INVOICE_ITEM_SEQ_ID_TO, oldInvoiceItemSeqIdTo, invoiceItemSeqIdTo));
 	}
 
 	/**
@@ -372,6 +392,8 @@ public class InvoiceItemAssocImpl extends BizEntityTypedImpl<InvoiceItemAssocTyp
 			InternalEObject oldPartyIdFrom = (InternalEObject)partyIdFrom;
 			partyIdFrom = (Party)eResolveProxy(oldPartyIdFrom);
 			if (partyIdFrom != oldPartyIdFrom) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, InvoicePackage.INVOICE_ITEM_ASSOC__PARTY_ID_FROM, oldPartyIdFrom, partyIdFrom));
 			}
 		}
 		return partyIdFrom;
@@ -393,7 +415,10 @@ public class InvoiceItemAssocImpl extends BizEntityTypedImpl<InvoiceItemAssocTyp
 	 */
 	@Override
 	public void setPartyIdFrom(Party newPartyIdFrom) {
+		Party oldPartyIdFrom = partyIdFrom;
 		partyIdFrom = newPartyIdFrom;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, InvoicePackage.INVOICE_ITEM_ASSOC__PARTY_ID_FROM, oldPartyIdFrom, partyIdFrom));
 	}
 
 	/**
@@ -407,6 +432,8 @@ public class InvoiceItemAssocImpl extends BizEntityTypedImpl<InvoiceItemAssocTyp
 			InternalEObject oldPartyIdTo = (InternalEObject)partyIdTo;
 			partyIdTo = (Party)eResolveProxy(oldPartyIdTo);
 			if (partyIdTo != oldPartyIdTo) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, InvoicePackage.INVOICE_ITEM_ASSOC__PARTY_ID_TO, oldPartyIdTo, partyIdTo));
 			}
 		}
 		return partyIdTo;
@@ -428,7 +455,10 @@ public class InvoiceItemAssocImpl extends BizEntityTypedImpl<InvoiceItemAssocTyp
 	 */
 	@Override
 	public void setPartyIdTo(Party newPartyIdTo) {
+		Party oldPartyIdTo = partyIdTo;
 		partyIdTo = newPartyIdTo;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, InvoicePackage.INVOICE_ITEM_ASSOC__PARTY_ID_TO, oldPartyIdTo, partyIdTo));
 	}
 
 	/**
@@ -448,7 +478,10 @@ public class InvoiceItemAssocImpl extends BizEntityTypedImpl<InvoiceItemAssocTyp
 	 */
 	@Override
 	public void setQuantity(BigDecimal newQuantity) {
+		BigDecimal oldQuantity = quantity;
 		quantity = newQuantity;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, InvoicePackage.INVOICE_ITEM_ASSOC__QUANTITY, oldQuantity, quantity));
 	}
 
 	/**
@@ -468,7 +501,10 @@ public class InvoiceItemAssocImpl extends BizEntityTypedImpl<InvoiceItemAssocTyp
 	 */
 	@Override
 	public void setThruDate(Date newThruDate) {
+		Date oldThruDate = thruDate;
 		thruDate = newThruDate;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, InvoicePackage.INVOICE_ITEM_ASSOC__THRU_DATE, oldThruDate, thruDate));
 	}
 
 	/**
@@ -482,6 +518,8 @@ public class InvoiceItemAssocImpl extends BizEntityTypedImpl<InvoiceItemAssocTyp
 			InternalEObject oldInvoiceItemAssocTypeId = (InternalEObject)invoiceItemAssocTypeId;
 			invoiceItemAssocTypeId = (InvoiceItemAssocType)eResolveProxy(oldInvoiceItemAssocTypeId);
 			if (invoiceItemAssocTypeId != oldInvoiceItemAssocTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, InvoicePackage.INVOICE_ITEM_ASSOC__INVOICE_ITEM_ASSOC_TYPE_ID, oldInvoiceItemAssocTypeId, invoiceItemAssocTypeId));
 			}
 		}
 		return invoiceItemAssocTypeId;
@@ -503,7 +541,10 @@ public class InvoiceItemAssocImpl extends BizEntityTypedImpl<InvoiceItemAssocTyp
 	 */
 	@Override
 	public void setInvoiceItemAssocTypeId(InvoiceItemAssocType newInvoiceItemAssocTypeId) {
+		InvoiceItemAssocType oldInvoiceItemAssocTypeId = invoiceItemAssocTypeId;
 		invoiceItemAssocTypeId = newInvoiceItemAssocTypeId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, InvoicePackage.INVOICE_ITEM_ASSOC__INVOICE_ITEM_ASSOC_TYPE_ID, oldInvoiceItemAssocTypeId, invoiceItemAssocTypeId));
 	}
 
 	/**

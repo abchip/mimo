@@ -11,10 +11,12 @@ import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.service.schedule.SchedulePackage;
 import org.abchip.mimo.biz.service.schedule.TemporalExpression;
 import org.abchip.mimo.biz.service.schedule.TemporalExpressionAssoc;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -107,6 +109,8 @@ public class TemporalExpressionAssocImpl extends BizEntityImpl implements Tempor
 			InternalEObject oldFromTempExprId = (InternalEObject)fromTempExprId;
 			fromTempExprId = (TemporalExpression)eResolveProxy(oldFromTempExprId);
 			if (fromTempExprId != oldFromTempExprId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, SchedulePackage.TEMPORAL_EXPRESSION_ASSOC__FROM_TEMP_EXPR_ID, oldFromTempExprId, fromTempExprId));
 			}
 		}
 		return fromTempExprId;
@@ -128,7 +132,10 @@ public class TemporalExpressionAssocImpl extends BizEntityImpl implements Tempor
 	 */
 	@Override
 	public void setFromTempExprId(TemporalExpression newFromTempExprId) {
+		TemporalExpression oldFromTempExprId = fromTempExprId;
 		fromTempExprId = newFromTempExprId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SchedulePackage.TEMPORAL_EXPRESSION_ASSOC__FROM_TEMP_EXPR_ID, oldFromTempExprId, fromTempExprId));
 	}
 
 	/**
@@ -142,6 +149,8 @@ public class TemporalExpressionAssocImpl extends BizEntityImpl implements Tempor
 			InternalEObject oldToTempExprId = (InternalEObject)toTempExprId;
 			toTempExprId = (TemporalExpression)eResolveProxy(oldToTempExprId);
 			if (toTempExprId != oldToTempExprId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, SchedulePackage.TEMPORAL_EXPRESSION_ASSOC__TO_TEMP_EXPR_ID, oldToTempExprId, toTempExprId));
 			}
 		}
 		return toTempExprId;
@@ -163,7 +172,10 @@ public class TemporalExpressionAssocImpl extends BizEntityImpl implements Tempor
 	 */
 	@Override
 	public void setToTempExprId(TemporalExpression newToTempExprId) {
+		TemporalExpression oldToTempExprId = toTempExprId;
 		toTempExprId = newToTempExprId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SchedulePackage.TEMPORAL_EXPRESSION_ASSOC__TO_TEMP_EXPR_ID, oldToTempExprId, toTempExprId));
 	}
 
 	/**
@@ -183,7 +195,10 @@ public class TemporalExpressionAssocImpl extends BizEntityImpl implements Tempor
 	 */
 	@Override
 	public void setExprAssocType(String newExprAssocType) {
+		String oldExprAssocType = exprAssocType;
 		exprAssocType = newExprAssocType;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SchedulePackage.TEMPORAL_EXPRESSION_ASSOC__EXPR_ASSOC_TYPE, oldExprAssocType, exprAssocType));
 	}
 
 	/**

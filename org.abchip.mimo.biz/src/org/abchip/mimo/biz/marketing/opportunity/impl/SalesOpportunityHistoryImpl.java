@@ -18,10 +18,12 @@ import org.abchip.mimo.biz.marketing.opportunity.SalesOpportunity;
 import org.abchip.mimo.biz.marketing.opportunity.SalesOpportunityHistory;
 import org.abchip.mimo.biz.marketing.opportunity.SalesOpportunityStage;
 import org.abchip.mimo.biz.security.login.UserLogin;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -289,7 +291,10 @@ public class SalesOpportunityHistoryImpl extends BizEntityImpl implements SalesO
 	 */
 	@Override
 	public void setChangeNote(String newChangeNote) {
+		String oldChangeNote = changeNote;
 		changeNote = newChangeNote;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, OpportunityPackage.SALES_OPPORTUNITY_HISTORY__CHANGE_NOTE, oldChangeNote, changeNote));
 	}
 
 	/**
@@ -303,6 +308,8 @@ public class SalesOpportunityHistoryImpl extends BizEntityImpl implements SalesO
 			InternalEObject oldCurrencyUomId = (InternalEObject)currencyUomId;
 			currencyUomId = (Uom)eResolveProxy(oldCurrencyUomId);
 			if (currencyUomId != oldCurrencyUomId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, OpportunityPackage.SALES_OPPORTUNITY_HISTORY__CURRENCY_UOM_ID, oldCurrencyUomId, currencyUomId));
 			}
 		}
 		return currencyUomId;
@@ -324,7 +331,10 @@ public class SalesOpportunityHistoryImpl extends BizEntityImpl implements SalesO
 	 */
 	@Override
 	public void setCurrencyUomId(Uom newCurrencyUomId) {
+		Uom oldCurrencyUomId = currencyUomId;
 		currencyUomId = newCurrencyUomId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, OpportunityPackage.SALES_OPPORTUNITY_HISTORY__CURRENCY_UOM_ID, oldCurrencyUomId, currencyUomId));
 	}
 
 	/**
@@ -344,7 +354,10 @@ public class SalesOpportunityHistoryImpl extends BizEntityImpl implements SalesO
 	 */
 	@Override
 	public void setDescription(String newDescription) {
+		String oldDescription = description;
 		description = newDescription;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, OpportunityPackage.SALES_OPPORTUNITY_HISTORY__DESCRIPTION, oldDescription, description));
 	}
 
 	/**
@@ -364,7 +377,10 @@ public class SalesOpportunityHistoryImpl extends BizEntityImpl implements SalesO
 	 */
 	@Override
 	public void setEstimatedAmount(BigDecimal newEstimatedAmount) {
+		BigDecimal oldEstimatedAmount = estimatedAmount;
 		estimatedAmount = newEstimatedAmount;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, OpportunityPackage.SALES_OPPORTUNITY_HISTORY__ESTIMATED_AMOUNT, oldEstimatedAmount, estimatedAmount));
 	}
 
 	/**
@@ -384,7 +400,10 @@ public class SalesOpportunityHistoryImpl extends BizEntityImpl implements SalesO
 	 */
 	@Override
 	public void setEstimatedCloseDate(Date newEstimatedCloseDate) {
+		Date oldEstimatedCloseDate = estimatedCloseDate;
 		estimatedCloseDate = newEstimatedCloseDate;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, OpportunityPackage.SALES_OPPORTUNITY_HISTORY__ESTIMATED_CLOSE_DATE, oldEstimatedCloseDate, estimatedCloseDate));
 	}
 
 	/**
@@ -404,7 +423,10 @@ public class SalesOpportunityHistoryImpl extends BizEntityImpl implements SalesO
 	 */
 	@Override
 	public void setEstimatedProbability(BigDecimal newEstimatedProbability) {
+		BigDecimal oldEstimatedProbability = estimatedProbability;
 		estimatedProbability = newEstimatedProbability;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, OpportunityPackage.SALES_OPPORTUNITY_HISTORY__ESTIMATED_PROBABILITY, oldEstimatedProbability, estimatedProbability));
 	}
 
 	/**
@@ -418,6 +440,8 @@ public class SalesOpportunityHistoryImpl extends BizEntityImpl implements SalesO
 			InternalEObject oldModifiedByUserLogin = (InternalEObject)modifiedByUserLogin;
 			modifiedByUserLogin = (UserLogin)eResolveProxy(oldModifiedByUserLogin);
 			if (modifiedByUserLogin != oldModifiedByUserLogin) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, OpportunityPackage.SALES_OPPORTUNITY_HISTORY__MODIFIED_BY_USER_LOGIN, oldModifiedByUserLogin, modifiedByUserLogin));
 			}
 		}
 		return modifiedByUserLogin;
@@ -439,7 +463,10 @@ public class SalesOpportunityHistoryImpl extends BizEntityImpl implements SalesO
 	 */
 	@Override
 	public void setModifiedByUserLogin(UserLogin newModifiedByUserLogin) {
+		UserLogin oldModifiedByUserLogin = modifiedByUserLogin;
 		modifiedByUserLogin = newModifiedByUserLogin;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, OpportunityPackage.SALES_OPPORTUNITY_HISTORY__MODIFIED_BY_USER_LOGIN, oldModifiedByUserLogin, modifiedByUserLogin));
 	}
 
 	/**
@@ -459,7 +486,10 @@ public class SalesOpportunityHistoryImpl extends BizEntityImpl implements SalesO
 	 */
 	@Override
 	public void setModifiedTimestamp(Date newModifiedTimestamp) {
+		Date oldModifiedTimestamp = modifiedTimestamp;
 		modifiedTimestamp = newModifiedTimestamp;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, OpportunityPackage.SALES_OPPORTUNITY_HISTORY__MODIFIED_TIMESTAMP, oldModifiedTimestamp, modifiedTimestamp));
 	}
 
 	/**
@@ -479,7 +509,10 @@ public class SalesOpportunityHistoryImpl extends BizEntityImpl implements SalesO
 	 */
 	@Override
 	public void setNextStep(String newNextStep) {
+		String oldNextStep = nextStep;
 		nextStep = newNextStep;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, OpportunityPackage.SALES_OPPORTUNITY_HISTORY__NEXT_STEP, oldNextStep, nextStep));
 	}
 
 	/**
@@ -493,6 +526,8 @@ public class SalesOpportunityHistoryImpl extends BizEntityImpl implements SalesO
 			InternalEObject oldOpportunityStageId = (InternalEObject)opportunityStageId;
 			opportunityStageId = (SalesOpportunityStage)eResolveProxy(oldOpportunityStageId);
 			if (opportunityStageId != oldOpportunityStageId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, OpportunityPackage.SALES_OPPORTUNITY_HISTORY__OPPORTUNITY_STAGE_ID, oldOpportunityStageId, opportunityStageId));
 			}
 		}
 		return opportunityStageId;
@@ -514,7 +549,10 @@ public class SalesOpportunityHistoryImpl extends BizEntityImpl implements SalesO
 	 */
 	@Override
 	public void setOpportunityStageId(SalesOpportunityStage newOpportunityStageId) {
+		SalesOpportunityStage oldOpportunityStageId = opportunityStageId;
 		opportunityStageId = newOpportunityStageId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, OpportunityPackage.SALES_OPPORTUNITY_HISTORY__OPPORTUNITY_STAGE_ID, oldOpportunityStageId, opportunityStageId));
 	}
 
 	/**
@@ -534,7 +572,10 @@ public class SalesOpportunityHistoryImpl extends BizEntityImpl implements SalesO
 	 */
 	@Override
 	public void setSalesOpportunityHistoryId(String newSalesOpportunityHistoryId) {
+		String oldSalesOpportunityHistoryId = salesOpportunityHistoryId;
 		salesOpportunityHistoryId = newSalesOpportunityHistoryId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, OpportunityPackage.SALES_OPPORTUNITY_HISTORY__SALES_OPPORTUNITY_HISTORY_ID, oldSalesOpportunityHistoryId, salesOpportunityHistoryId));
 	}
 
 	/**
@@ -548,6 +589,8 @@ public class SalesOpportunityHistoryImpl extends BizEntityImpl implements SalesO
 			InternalEObject oldSalesOpportunityId = (InternalEObject)salesOpportunityId;
 			salesOpportunityId = (SalesOpportunity)eResolveProxy(oldSalesOpportunityId);
 			if (salesOpportunityId != oldSalesOpportunityId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, OpportunityPackage.SALES_OPPORTUNITY_HISTORY__SALES_OPPORTUNITY_ID, oldSalesOpportunityId, salesOpportunityId));
 			}
 		}
 		return salesOpportunityId;
@@ -569,7 +612,10 @@ public class SalesOpportunityHistoryImpl extends BizEntityImpl implements SalesO
 	 */
 	@Override
 	public void setSalesOpportunityId(SalesOpportunity newSalesOpportunityId) {
+		SalesOpportunity oldSalesOpportunityId = salesOpportunityId;
 		salesOpportunityId = newSalesOpportunityId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, OpportunityPackage.SALES_OPPORTUNITY_HISTORY__SALES_OPPORTUNITY_ID, oldSalesOpportunityId, salesOpportunityId));
 	}
 
 	/**

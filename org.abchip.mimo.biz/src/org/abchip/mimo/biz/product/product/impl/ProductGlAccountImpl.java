@@ -14,9 +14,11 @@ import org.abchip.mimo.biz.party.party.Party;
 import org.abchip.mimo.biz.product.product.Product;
 import org.abchip.mimo.biz.product.product.ProductGlAccount;
 import org.abchip.mimo.biz.product.product.ProductPackage;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -110,6 +112,8 @@ public class ProductGlAccountImpl extends BizEntityImpl implements ProductGlAcco
 			InternalEObject oldGlAccountId = (InternalEObject)glAccountId;
 			glAccountId = (GlAccount)eResolveProxy(oldGlAccountId);
 			if (glAccountId != oldGlAccountId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ProductPackage.PRODUCT_GL_ACCOUNT__GL_ACCOUNT_ID, oldGlAccountId, glAccountId));
 			}
 		}
 		return glAccountId;
@@ -131,7 +135,10 @@ public class ProductGlAccountImpl extends BizEntityImpl implements ProductGlAcco
 	 */
 	@Override
 	public void setGlAccountId(GlAccount newGlAccountId) {
+		GlAccount oldGlAccountId = glAccountId;
 		glAccountId = newGlAccountId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ProductPackage.PRODUCT_GL_ACCOUNT__GL_ACCOUNT_ID, oldGlAccountId, glAccountId));
 	}
 
 	/**
@@ -145,6 +152,8 @@ public class ProductGlAccountImpl extends BizEntityImpl implements ProductGlAcco
 			InternalEObject oldGlAccountTypeId = (InternalEObject)glAccountTypeId;
 			glAccountTypeId = (GlAccountType)eResolveProxy(oldGlAccountTypeId);
 			if (glAccountTypeId != oldGlAccountTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ProductPackage.PRODUCT_GL_ACCOUNT__GL_ACCOUNT_TYPE_ID, oldGlAccountTypeId, glAccountTypeId));
 			}
 		}
 		return glAccountTypeId;
@@ -166,7 +175,10 @@ public class ProductGlAccountImpl extends BizEntityImpl implements ProductGlAcco
 	 */
 	@Override
 	public void setGlAccountTypeId(GlAccountType newGlAccountTypeId) {
+		GlAccountType oldGlAccountTypeId = glAccountTypeId;
 		glAccountTypeId = newGlAccountTypeId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ProductPackage.PRODUCT_GL_ACCOUNT__GL_ACCOUNT_TYPE_ID, oldGlAccountTypeId, glAccountTypeId));
 	}
 
 	/**
@@ -180,6 +192,8 @@ public class ProductGlAccountImpl extends BizEntityImpl implements ProductGlAcco
 			InternalEObject oldOrganizationPartyId = (InternalEObject)organizationPartyId;
 			organizationPartyId = (Party)eResolveProxy(oldOrganizationPartyId);
 			if (organizationPartyId != oldOrganizationPartyId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ProductPackage.PRODUCT_GL_ACCOUNT__ORGANIZATION_PARTY_ID, oldOrganizationPartyId, organizationPartyId));
 			}
 		}
 		return organizationPartyId;
@@ -201,7 +215,10 @@ public class ProductGlAccountImpl extends BizEntityImpl implements ProductGlAcco
 	 */
 	@Override
 	public void setOrganizationPartyId(Party newOrganizationPartyId) {
+		Party oldOrganizationPartyId = organizationPartyId;
 		organizationPartyId = newOrganizationPartyId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ProductPackage.PRODUCT_GL_ACCOUNT__ORGANIZATION_PARTY_ID, oldOrganizationPartyId, organizationPartyId));
 	}
 
 	/**
@@ -215,6 +232,8 @@ public class ProductGlAccountImpl extends BizEntityImpl implements ProductGlAcco
 			InternalEObject oldProductId = (InternalEObject)productId;
 			productId = (Product)eResolveProxy(oldProductId);
 			if (productId != oldProductId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ProductPackage.PRODUCT_GL_ACCOUNT__PRODUCT_ID, oldProductId, productId));
 			}
 		}
 		return productId;
@@ -236,7 +255,10 @@ public class ProductGlAccountImpl extends BizEntityImpl implements ProductGlAcco
 	 */
 	@Override
 	public void setProductId(Product newProductId) {
+		Product oldProductId = productId;
 		productId = newProductId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ProductPackage.PRODUCT_GL_ACCOUNT__PRODUCT_ID, oldProductId, productId));
 	}
 
 	/**

@@ -12,10 +12,12 @@ import java.util.List;
 import org.abchip.mimo.biz.humanres.employment.EmploymentAppSourceType;
 import org.abchip.mimo.biz.humanres.employment.EmploymentPackage;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -145,7 +147,10 @@ public class EmploymentAppSourceTypeImpl extends BizEntityImpl implements Employ
 	 */
 	@Override
 	public void setDescription(String newDescription) {
+		String oldDescription = description;
 		description = newDescription;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, EmploymentPackage.EMPLOYMENT_APP_SOURCE_TYPE__DESCRIPTION, oldDescription, description));
 	}
 
 	/**
@@ -165,7 +170,10 @@ public class EmploymentAppSourceTypeImpl extends BizEntityImpl implements Employ
 	 */
 	@Override
 	public void setHasTable(boolean newHasTable) {
+		boolean oldHasTable = hasTable;
 		hasTable = newHasTable;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, EmploymentPackage.EMPLOYMENT_APP_SOURCE_TYPE__HAS_TABLE, oldHasTable, hasTable));
 	}
 
 	/**
@@ -185,7 +193,10 @@ public class EmploymentAppSourceTypeImpl extends BizEntityImpl implements Employ
 	 */
 	@Override
 	public void setEmploymentAppSourceTypeId(String newEmploymentAppSourceTypeId) {
+		String oldEmploymentAppSourceTypeId = employmentAppSourceTypeId;
 		employmentAppSourceTypeId = newEmploymentAppSourceTypeId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, EmploymentPackage.EMPLOYMENT_APP_SOURCE_TYPE__EMPLOYMENT_APP_SOURCE_TYPE_ID, oldEmploymentAppSourceTypeId, employmentAppSourceTypeId));
 	}
 
 	/**
@@ -199,6 +210,8 @@ public class EmploymentAppSourceTypeImpl extends BizEntityImpl implements Employ
 			InternalEObject oldParentTypeId = (InternalEObject)parentTypeId;
 			parentTypeId = (EmploymentAppSourceType)eResolveProxy(oldParentTypeId);
 			if (parentTypeId != oldParentTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, EmploymentPackage.EMPLOYMENT_APP_SOURCE_TYPE__PARENT_TYPE_ID, oldParentTypeId, parentTypeId));
 			}
 		}
 		return parentTypeId;
@@ -220,7 +233,10 @@ public class EmploymentAppSourceTypeImpl extends BizEntityImpl implements Employ
 	 */
 	@Override
 	public void setParentTypeId(EmploymentAppSourceType newParentTypeId) {
+		EmploymentAppSourceType oldParentTypeId = parentTypeId;
 		parentTypeId = newParentTypeId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, EmploymentPackage.EMPLOYMENT_APP_SOURCE_TYPE__PARENT_TYPE_ID, oldParentTypeId, parentTypeId));
 	}
 
 	/**

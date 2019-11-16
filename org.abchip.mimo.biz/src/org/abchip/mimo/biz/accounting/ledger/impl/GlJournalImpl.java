@@ -14,9 +14,11 @@ import org.abchip.mimo.biz.accounting.ledger.GlJournal;
 import org.abchip.mimo.biz.accounting.ledger.LedgerPackage;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.party.party.Party;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -158,7 +160,10 @@ public class GlJournalImpl extends BizEntityImpl implements GlJournal {
 	 */
 	@Override
 	public void setGlJournalName(String newGlJournalName) {
+		String oldGlJournalName = glJournalName;
 		glJournalName = newGlJournalName;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, LedgerPackage.GL_JOURNAL__GL_JOURNAL_NAME, oldGlJournalName, glJournalName));
 	}
 
 	/**
@@ -178,7 +183,10 @@ public class GlJournalImpl extends BizEntityImpl implements GlJournal {
 	 */
 	@Override
 	public void setIsPosted(boolean newIsPosted) {
+		boolean oldIsPosted = isPosted;
 		isPosted = newIsPosted;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, LedgerPackage.GL_JOURNAL__IS_POSTED, oldIsPosted, isPosted));
 	}
 
 	/**
@@ -192,6 +200,8 @@ public class GlJournalImpl extends BizEntityImpl implements GlJournal {
 			InternalEObject oldOrganizationPartyId = (InternalEObject)organizationPartyId;
 			organizationPartyId = (Party)eResolveProxy(oldOrganizationPartyId);
 			if (organizationPartyId != oldOrganizationPartyId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, LedgerPackage.GL_JOURNAL__ORGANIZATION_PARTY_ID, oldOrganizationPartyId, organizationPartyId));
 			}
 		}
 		return organizationPartyId;
@@ -213,7 +223,10 @@ public class GlJournalImpl extends BizEntityImpl implements GlJournal {
 	 */
 	@Override
 	public void setOrganizationPartyId(Party newOrganizationPartyId) {
+		Party oldOrganizationPartyId = organizationPartyId;
 		organizationPartyId = newOrganizationPartyId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, LedgerPackage.GL_JOURNAL__ORGANIZATION_PARTY_ID, oldOrganizationPartyId, organizationPartyId));
 	}
 
 	/**
@@ -233,7 +246,10 @@ public class GlJournalImpl extends BizEntityImpl implements GlJournal {
 	 */
 	@Override
 	public void setPostedDate(Date newPostedDate) {
+		Date oldPostedDate = postedDate;
 		postedDate = newPostedDate;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, LedgerPackage.GL_JOURNAL__POSTED_DATE, oldPostedDate, postedDate));
 	}
 
 	/**
@@ -277,7 +293,10 @@ public class GlJournalImpl extends BizEntityImpl implements GlJournal {
 	 */
 	@Override
 	public void setGlJournalId(String newGlJournalId) {
+		String oldGlJournalId = glJournalId;
 		glJournalId = newGlJournalId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, LedgerPackage.GL_JOURNAL__GL_JOURNAL_ID, oldGlJournalId, glJournalId));
 	}
 
 	/**

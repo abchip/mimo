@@ -15,11 +15,13 @@ import org.abchip.mimo.biz.accounting.finaccount.FinAccountType;
 import org.abchip.mimo.biz.accounting.finaccount.FinaccountPackage;
 import org.abchip.mimo.biz.common.enum_.Enumeration;
 import org.abchip.mimo.biz.impl.BizEntityTypeImpl;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.util.BasicInternalEList;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -192,7 +194,10 @@ public class FinAccountTypeImpl extends BizEntityTypeImpl<FinAccount> implements
 	 */
 	@Override
 	public void setDescription(String newDescription) {
+		String oldDescription = description;
 		description = newDescription;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, FinaccountPackage.FIN_ACCOUNT_TYPE__DESCRIPTION, oldDescription, description));
 	}
 
 	/**
@@ -212,7 +217,10 @@ public class FinAccountTypeImpl extends BizEntityTypeImpl<FinAccount> implements
 	 */
 	@Override
 	public void setHasTable(boolean newHasTable) {
+		boolean oldHasTable = hasTable;
 		hasTable = newHasTable;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, FinaccountPackage.FIN_ACCOUNT_TYPE__HAS_TABLE, oldHasTable, hasTable));
 	}
 
 	/**
@@ -232,7 +240,10 @@ public class FinAccountTypeImpl extends BizEntityTypeImpl<FinAccount> implements
 	 */
 	@Override
 	public void setIsRefundable(boolean newIsRefundable) {
+		boolean oldIsRefundable = isRefundable;
 		isRefundable = newIsRefundable;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, FinaccountPackage.FIN_ACCOUNT_TYPE__IS_REFUNDABLE, oldIsRefundable, isRefundable));
 	}
 
 	/**
@@ -246,6 +257,8 @@ public class FinAccountTypeImpl extends BizEntityTypeImpl<FinAccount> implements
 			InternalEObject oldReplenishEnumId = (InternalEObject)replenishEnumId;
 			replenishEnumId = (Enumeration)eResolveProxy(oldReplenishEnumId);
 			if (replenishEnumId != oldReplenishEnumId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, FinaccountPackage.FIN_ACCOUNT_TYPE__REPLENISH_ENUM_ID, oldReplenishEnumId, replenishEnumId));
 			}
 		}
 		return replenishEnumId;
@@ -267,7 +280,10 @@ public class FinAccountTypeImpl extends BizEntityTypeImpl<FinAccount> implements
 	 */
 	@Override
 	public void setReplenishEnumId(Enumeration newReplenishEnumId) {
+		Enumeration oldReplenishEnumId = replenishEnumId;
 		replenishEnumId = newReplenishEnumId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, FinaccountPackage.FIN_ACCOUNT_TYPE__REPLENISH_ENUM_ID, oldReplenishEnumId, replenishEnumId));
 	}
 
 	/**
@@ -278,7 +294,7 @@ public class FinAccountTypeImpl extends BizEntityTypeImpl<FinAccount> implements
 	@Override
 	public List<String> getFinAccountTypeAttrs() {
 		if (finAccountTypeAttrs == null) {
-			finAccountTypeAttrs = new BasicInternalEList<String>(String.class);
+			finAccountTypeAttrs = new EDataTypeUniqueEList<String>(String.class, this, FinaccountPackage.FIN_ACCOUNT_TYPE__FIN_ACCOUNT_TYPE_ATTRS);
 		}
 		return finAccountTypeAttrs;
 	}
@@ -291,7 +307,7 @@ public class FinAccountTypeImpl extends BizEntityTypeImpl<FinAccount> implements
 	@Override
 	public List<String> getFinAccountTypeGlAccounts() {
 		if (finAccountTypeGlAccounts == null) {
-			finAccountTypeGlAccounts = new BasicInternalEList<String>(String.class);
+			finAccountTypeGlAccounts = new EDataTypeUniqueEList<String>(String.class, this, FinaccountPackage.FIN_ACCOUNT_TYPE__FIN_ACCOUNT_TYPE_GL_ACCOUNTS);
 		}
 		return finAccountTypeGlAccounts;
 	}
@@ -343,6 +359,8 @@ public class FinAccountTypeImpl extends BizEntityTypeImpl<FinAccount> implements
 			InternalEObject oldParentTypeId = (InternalEObject)parentTypeId;
 			parentTypeId = (FinAccountType)eResolveProxy(oldParentTypeId);
 			if (parentTypeId != oldParentTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, FinaccountPackage.FIN_ACCOUNT_TYPE__PARENT_TYPE_ID, oldParentTypeId, parentTypeId));
 			}
 		}
 		return parentTypeId;
@@ -364,7 +382,10 @@ public class FinAccountTypeImpl extends BizEntityTypeImpl<FinAccount> implements
 	 */
 	@Override
 	public void setParentTypeId(FinAccountType newParentTypeId) {
+		FinAccountType oldParentTypeId = parentTypeId;
 		parentTypeId = newParentTypeId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, FinaccountPackage.FIN_ACCOUNT_TYPE__PARENT_TYPE_ID, oldParentTypeId, parentTypeId));
 	}
 
 	/**
@@ -384,7 +405,10 @@ public class FinAccountTypeImpl extends BizEntityTypeImpl<FinAccount> implements
 	 */
 	@Override
 	public void setFinAccountTypeId(String newFinAccountTypeId) {
+		String oldFinAccountTypeId = finAccountTypeId;
 		finAccountTypeId = newFinAccountTypeId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, FinaccountPackage.FIN_ACCOUNT_TYPE__FIN_ACCOUNT_TYPE_ID, oldFinAccountTypeId, finAccountTypeId));
 	}
 
 	/**

@@ -15,11 +15,13 @@ import org.abchip.mimo.context.ContextPackage;
 import org.abchip.mimo.context.MessageDataField;
 import org.abchip.mimo.context.MessageDescription;
 import org.abchip.mimo.entity.impl.EntityImpl;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.util.BasicInternalEList;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
@@ -157,7 +159,10 @@ public class MessageDescriptionImpl extends EntityImpl implements MessageDescrip
 	 */
 	@Override
 	public void setName(String newName) {
+		String oldName = name;
 		name = newName;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ContextPackage.MESSAGE_DESCRIPTION__NAME, oldName, name));
 	}
 
 	/**
@@ -175,7 +180,10 @@ public class MessageDescriptionImpl extends EntityImpl implements MessageDescrip
 	 */
 	@Override
 	public void setSeverity(int newSeverity) {
+		int oldSeverity = severity;
 		severity = newSeverity;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ContextPackage.MESSAGE_DESCRIPTION__SEVERITY, oldSeverity, severity));
 	}
 
 	/**
@@ -193,7 +201,10 @@ public class MessageDescriptionImpl extends EntityImpl implements MessageDescrip
 	 */
 	@Override
 	public void setMessageHelp(String newMessageHelp) {
+		String oldMessageHelp = messageHelp;
 		messageHelp = newMessageHelp;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ContextPackage.MESSAGE_DESCRIPTION__MESSAGE_HELP, oldMessageHelp, messageHelp));
 	}
 
 	/**
@@ -211,7 +222,10 @@ public class MessageDescriptionImpl extends EntityImpl implements MessageDescrip
 	 */
 	@Override
 	public void setMessageText(String newMessageText) {
+		String oldMessageText = messageText;
 		messageText = newMessageText;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ContextPackage.MESSAGE_DESCRIPTION__MESSAGE_TEXT, oldMessageText, messageText));
 	}
 
 	/**
@@ -221,7 +235,7 @@ public class MessageDescriptionImpl extends EntityImpl implements MessageDescrip
 	@Override
 	public List<MessageDataField<?>> getMessageDataFields() {
 		if (messageDataFields == null) {
-			messageDataFields = new BasicInternalEList<MessageDataField<?>>(MessageDataField.class);
+			messageDataFields = new EObjectContainmentEList.Resolving<MessageDataField<?>>(MessageDataField.class, this, ContextPackage.MESSAGE_DESCRIPTION__MESSAGE_DATA_FIELDS);
 		}
 		return messageDataFields;
 	}

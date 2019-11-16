@@ -11,10 +11,12 @@ import org.abchip.mimo.biz.content.data.DataPackage;
 import org.abchip.mimo.biz.content.data.MimeType;
 import org.abchip.mimo.biz.content.data.MimeTypeHtmlTemplate;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -96,6 +98,8 @@ public class MimeTypeHtmlTemplateImpl extends BizEntityImpl implements MimeTypeH
 			InternalEObject oldMimeTypeId = (InternalEObject)mimeTypeId;
 			mimeTypeId = (MimeType)eResolveProxy(oldMimeTypeId);
 			if (mimeTypeId != oldMimeTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, DataPackage.MIME_TYPE_HTML_TEMPLATE__MIME_TYPE_ID, oldMimeTypeId, mimeTypeId));
 			}
 		}
 		return mimeTypeId;
@@ -117,7 +121,10 @@ public class MimeTypeHtmlTemplateImpl extends BizEntityImpl implements MimeTypeH
 	 */
 	@Override
 	public void setMimeTypeId(MimeType newMimeTypeId) {
+		MimeType oldMimeTypeId = mimeTypeId;
 		mimeTypeId = newMimeTypeId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, DataPackage.MIME_TYPE_HTML_TEMPLATE__MIME_TYPE_ID, oldMimeTypeId, mimeTypeId));
 	}
 
 	/**
@@ -137,7 +144,10 @@ public class MimeTypeHtmlTemplateImpl extends BizEntityImpl implements MimeTypeH
 	 */
 	@Override
 	public void setTemplateLocation(String newTemplateLocation) {
+		String oldTemplateLocation = templateLocation;
 		templateLocation = newTemplateLocation;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, DataPackage.MIME_TYPE_HTML_TEMPLATE__TEMPLATE_LOCATION, oldTemplateLocation, templateLocation));
 	}
 
 	/**

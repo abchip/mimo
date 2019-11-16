@@ -12,10 +12,12 @@ import java.util.List;
 import org.abchip.mimo.biz.content.data.DataCategory;
 import org.abchip.mimo.biz.content.data.DataPackage;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -124,7 +126,10 @@ public class DataCategoryImpl extends BizEntityImpl implements DataCategory {
 	 */
 	@Override
 	public void setCategoryName(String newCategoryName) {
+		String oldCategoryName = categoryName;
 		categoryName = newCategoryName;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, DataPackage.DATA_CATEGORY__CATEGORY_NAME, oldCategoryName, categoryName));
 	}
 
 	/**
@@ -144,7 +149,10 @@ public class DataCategoryImpl extends BizEntityImpl implements DataCategory {
 	 */
 	@Override
 	public void setDataCategoryId(String newDataCategoryId) {
+		String oldDataCategoryId = dataCategoryId;
 		dataCategoryId = newDataCategoryId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, DataPackage.DATA_CATEGORY__DATA_CATEGORY_ID, oldDataCategoryId, dataCategoryId));
 	}
 
 	/**
@@ -158,6 +166,8 @@ public class DataCategoryImpl extends BizEntityImpl implements DataCategory {
 			InternalEObject oldParentCategoryId = (InternalEObject)parentCategoryId;
 			parentCategoryId = (DataCategory)eResolveProxy(oldParentCategoryId);
 			if (parentCategoryId != oldParentCategoryId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, DataPackage.DATA_CATEGORY__PARENT_CATEGORY_ID, oldParentCategoryId, parentCategoryId));
 			}
 		}
 		return parentCategoryId;
@@ -179,7 +189,10 @@ public class DataCategoryImpl extends BizEntityImpl implements DataCategory {
 	 */
 	@Override
 	public void setParentCategoryId(DataCategory newParentCategoryId) {
+		DataCategory oldParentCategoryId = parentCategoryId;
 		parentCategoryId = newParentCategoryId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, DataPackage.DATA_CATEGORY__PARENT_CATEGORY_ID, oldParentCategoryId, parentCategoryId));
 	}
 
 	/**

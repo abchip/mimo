@@ -15,9 +15,11 @@ import org.abchip.mimo.biz.accounting.ledger.LedgerPackage;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.party.party.Party;
 import org.abchip.mimo.biz.party.party.RoleType;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -141,7 +143,10 @@ public class GlAccountOrganizationImpl extends BizEntityImpl implements GlAccoun
 	 */
 	@Override
 	public void setFromDate(Date newFromDate) {
+		Date oldFromDate = fromDate;
 		fromDate = newFromDate;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, LedgerPackage.GL_ACCOUNT_ORGANIZATION__FROM_DATE, oldFromDate, fromDate));
 	}
 
 	/**
@@ -155,6 +160,8 @@ public class GlAccountOrganizationImpl extends BizEntityImpl implements GlAccoun
 			InternalEObject oldOrganizationPartyId = (InternalEObject)organizationPartyId;
 			organizationPartyId = (Party)eResolveProxy(oldOrganizationPartyId);
 			if (organizationPartyId != oldOrganizationPartyId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, LedgerPackage.GL_ACCOUNT_ORGANIZATION__ORGANIZATION_PARTY_ID, oldOrganizationPartyId, organizationPartyId));
 			}
 		}
 		return organizationPartyId;
@@ -176,7 +183,10 @@ public class GlAccountOrganizationImpl extends BizEntityImpl implements GlAccoun
 	 */
 	@Override
 	public void setOrganizationPartyId(Party newOrganizationPartyId) {
+		Party oldOrganizationPartyId = organizationPartyId;
 		organizationPartyId = newOrganizationPartyId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, LedgerPackage.GL_ACCOUNT_ORGANIZATION__ORGANIZATION_PARTY_ID, oldOrganizationPartyId, organizationPartyId));
 	}
 
 	/**
@@ -190,6 +200,8 @@ public class GlAccountOrganizationImpl extends BizEntityImpl implements GlAccoun
 			InternalEObject oldRoleTypeId = (InternalEObject)roleTypeId;
 			roleTypeId = (RoleType)eResolveProxy(oldRoleTypeId);
 			if (roleTypeId != oldRoleTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, LedgerPackage.GL_ACCOUNT_ORGANIZATION__ROLE_TYPE_ID, oldRoleTypeId, roleTypeId));
 			}
 		}
 		return roleTypeId;
@@ -211,7 +223,10 @@ public class GlAccountOrganizationImpl extends BizEntityImpl implements GlAccoun
 	 */
 	@Override
 	public void setRoleTypeId(RoleType newRoleTypeId) {
+		RoleType oldRoleTypeId = roleTypeId;
 		roleTypeId = newRoleTypeId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, LedgerPackage.GL_ACCOUNT_ORGANIZATION__ROLE_TYPE_ID, oldRoleTypeId, roleTypeId));
 	}
 
 	/**
@@ -231,7 +246,10 @@ public class GlAccountOrganizationImpl extends BizEntityImpl implements GlAccoun
 	 */
 	@Override
 	public void setThruDate(Date newThruDate) {
+		Date oldThruDate = thruDate;
 		thruDate = newThruDate;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, LedgerPackage.GL_ACCOUNT_ORGANIZATION__THRU_DATE, oldThruDate, thruDate));
 	}
 
 	/**
@@ -245,6 +263,8 @@ public class GlAccountOrganizationImpl extends BizEntityImpl implements GlAccoun
 			InternalEObject oldGlAccountId = (InternalEObject)glAccountId;
 			glAccountId = (GlAccount)eResolveProxy(oldGlAccountId);
 			if (glAccountId != oldGlAccountId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, LedgerPackage.GL_ACCOUNT_ORGANIZATION__GL_ACCOUNT_ID, oldGlAccountId, glAccountId));
 			}
 		}
 		return glAccountId;
@@ -266,7 +286,10 @@ public class GlAccountOrganizationImpl extends BizEntityImpl implements GlAccoun
 	 */
 	@Override
 	public void setGlAccountId(GlAccount newGlAccountId) {
+		GlAccount oldGlAccountId = glAccountId;
 		glAccountId = newGlAccountId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, LedgerPackage.GL_ACCOUNT_ORGANIZATION__GL_ACCOUNT_ID, oldGlAccountId, glAccountId));
 	}
 
 	/**

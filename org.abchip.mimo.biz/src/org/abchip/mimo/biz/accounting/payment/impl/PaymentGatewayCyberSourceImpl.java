@@ -11,9 +11,11 @@ import org.abchip.mimo.biz.accounting.payment.PaymentGatewayConfig;
 import org.abchip.mimo.biz.accounting.payment.PaymentGatewayCyberSource;
 import org.abchip.mimo.biz.accounting.payment.PaymentPackage;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -402,7 +404,10 @@ public class PaymentGatewayCyberSourceImpl extends BizEntityImpl implements Paym
 	 */
 	@Override
 	public void setApiVersion(String newApiVersion) {
+		String oldApiVersion = apiVersion;
 		apiVersion = newApiVersion;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.PAYMENT_GATEWAY_CYBER_SOURCE__API_VERSION, oldApiVersion, apiVersion));
 	}
 
 	/**
@@ -422,7 +427,10 @@ public class PaymentGatewayCyberSourceImpl extends BizEntityImpl implements Paym
 	 */
 	@Override
 	public void setAutoBill(String newAutoBill) {
+		String oldAutoBill = autoBill;
 		autoBill = newAutoBill;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.PAYMENT_GATEWAY_CYBER_SOURCE__AUTO_BILL, oldAutoBill, autoBill));
 	}
 
 	/**
@@ -442,7 +450,10 @@ public class PaymentGatewayCyberSourceImpl extends BizEntityImpl implements Paym
 	 */
 	@Override
 	public void setAvsDeclineCodes(String newAvsDeclineCodes) {
+		String oldAvsDeclineCodes = avsDeclineCodes;
 		avsDeclineCodes = newAvsDeclineCodes;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.PAYMENT_GATEWAY_CYBER_SOURCE__AVS_DECLINE_CODES, oldAvsDeclineCodes, avsDeclineCodes));
 	}
 
 	/**
@@ -462,7 +473,10 @@ public class PaymentGatewayCyberSourceImpl extends BizEntityImpl implements Paym
 	 */
 	@Override
 	public void setDisableBillAvs(boolean newDisableBillAvs) {
+		boolean oldDisableBillAvs = disableBillAvs;
 		disableBillAvs = newDisableBillAvs;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.PAYMENT_GATEWAY_CYBER_SOURCE__DISABLE_BILL_AVS, oldDisableBillAvs, disableBillAvs));
 	}
 
 	/**
@@ -482,7 +496,10 @@ public class PaymentGatewayCyberSourceImpl extends BizEntityImpl implements Paym
 	 */
 	@Override
 	public void setEnableDav(boolean newEnableDav) {
+		boolean oldEnableDav = enableDav;
 		enableDav = newEnableDav;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.PAYMENT_GATEWAY_CYBER_SOURCE__ENABLE_DAV, oldEnableDav, enableDav));
 	}
 
 	/**
@@ -502,7 +519,10 @@ public class PaymentGatewayCyberSourceImpl extends BizEntityImpl implements Paym
 	 */
 	@Override
 	public void setFraudScore(boolean newFraudScore) {
+		boolean oldFraudScore = fraudScore;
 		fraudScore = newFraudScore;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.PAYMENT_GATEWAY_CYBER_SOURCE__FRAUD_SCORE, oldFraudScore, fraudScore));
 	}
 
 	/**
@@ -522,7 +542,10 @@ public class PaymentGatewayCyberSourceImpl extends BizEntityImpl implements Paym
 	 */
 	@Override
 	public void setIgnoreAvs(String newIgnoreAvs) {
+		String oldIgnoreAvs = ignoreAvs;
 		ignoreAvs = newIgnoreAvs;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.PAYMENT_GATEWAY_CYBER_SOURCE__IGNORE_AVS, oldIgnoreAvs, ignoreAvs));
 	}
 
 	/**
@@ -542,7 +565,10 @@ public class PaymentGatewayCyberSourceImpl extends BizEntityImpl implements Paym
 	 */
 	@Override
 	public void setKeysDir(String newKeysDir) {
+		String oldKeysDir = keysDir;
 		keysDir = newKeysDir;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.PAYMENT_GATEWAY_CYBER_SOURCE__KEYS_DIR, oldKeysDir, keysDir));
 	}
 
 	/**
@@ -562,7 +588,10 @@ public class PaymentGatewayCyberSourceImpl extends BizEntityImpl implements Paym
 	 */
 	@Override
 	public void setKeysFile(String newKeysFile) {
+		String oldKeysFile = keysFile;
 		keysFile = newKeysFile;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.PAYMENT_GATEWAY_CYBER_SOURCE__KEYS_FILE, oldKeysFile, keysFile));
 	}
 
 	/**
@@ -582,7 +611,10 @@ public class PaymentGatewayCyberSourceImpl extends BizEntityImpl implements Paym
 	 */
 	@Override
 	public void setLogDir(String newLogDir) {
+		String oldLogDir = logDir;
 		logDir = newLogDir;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.PAYMENT_GATEWAY_CYBER_SOURCE__LOG_DIR, oldLogDir, logDir));
 	}
 
 	/**
@@ -602,7 +634,10 @@ public class PaymentGatewayCyberSourceImpl extends BizEntityImpl implements Paym
 	 */
 	@Override
 	public void setLogEnabled(String newLogEnabled) {
+		String oldLogEnabled = logEnabled;
 		logEnabled = newLogEnabled;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.PAYMENT_GATEWAY_CYBER_SOURCE__LOG_ENABLED, oldLogEnabled, logEnabled));
 	}
 
 	/**
@@ -622,7 +657,10 @@ public class PaymentGatewayCyberSourceImpl extends BizEntityImpl implements Paym
 	 */
 	@Override
 	public void setLogFile(String newLogFile) {
+		String oldLogFile = logFile;
 		logFile = newLogFile;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.PAYMENT_GATEWAY_CYBER_SOURCE__LOG_FILE, oldLogFile, logFile));
 	}
 
 	/**
@@ -642,7 +680,10 @@ public class PaymentGatewayCyberSourceImpl extends BizEntityImpl implements Paym
 	 */
 	@Override
 	public void setLogSize(long newLogSize) {
+		long oldLogSize = logSize;
 		logSize = newLogSize;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.PAYMENT_GATEWAY_CYBER_SOURCE__LOG_SIZE, oldLogSize, logSize));
 	}
 
 	/**
@@ -662,7 +703,10 @@ public class PaymentGatewayCyberSourceImpl extends BizEntityImpl implements Paym
 	 */
 	@Override
 	public void setMerchantContact(String newMerchantContact) {
+		String oldMerchantContact = merchantContact;
 		merchantContact = newMerchantContact;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.PAYMENT_GATEWAY_CYBER_SOURCE__MERCHANT_CONTACT, oldMerchantContact, merchantContact));
 	}
 
 	/**
@@ -682,7 +726,10 @@ public class PaymentGatewayCyberSourceImpl extends BizEntityImpl implements Paym
 	 */
 	@Override
 	public void setMerchantDescr(String newMerchantDescr) {
+		String oldMerchantDescr = merchantDescr;
 		merchantDescr = newMerchantDescr;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.PAYMENT_GATEWAY_CYBER_SOURCE__MERCHANT_DESCR, oldMerchantDescr, merchantDescr));
 	}
 
 	/**
@@ -702,7 +749,10 @@ public class PaymentGatewayCyberSourceImpl extends BizEntityImpl implements Paym
 	 */
 	@Override
 	public void setMerchantId(String newMerchantId) {
+		String oldMerchantId = merchantId;
 		merchantId = newMerchantId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.PAYMENT_GATEWAY_CYBER_SOURCE__MERCHANT_ID, oldMerchantId, merchantId));
 	}
 
 	/**
@@ -716,6 +766,8 @@ public class PaymentGatewayCyberSourceImpl extends BizEntityImpl implements Paym
 			InternalEObject oldPaymentGatewayConfigId = (InternalEObject)paymentGatewayConfigId;
 			paymentGatewayConfigId = (PaymentGatewayConfig)eResolveProxy(oldPaymentGatewayConfigId);
 			if (paymentGatewayConfigId != oldPaymentGatewayConfigId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PaymentPackage.PAYMENT_GATEWAY_CYBER_SOURCE__PAYMENT_GATEWAY_CONFIG_ID, oldPaymentGatewayConfigId, paymentGatewayConfigId));
 			}
 		}
 		return paymentGatewayConfigId;
@@ -737,7 +789,10 @@ public class PaymentGatewayCyberSourceImpl extends BizEntityImpl implements Paym
 	 */
 	@Override
 	public void setPaymentGatewayConfigId(PaymentGatewayConfig newPaymentGatewayConfigId) {
+		PaymentGatewayConfig oldPaymentGatewayConfigId = paymentGatewayConfigId;
 		paymentGatewayConfigId = newPaymentGatewayConfigId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.PAYMENT_GATEWAY_CYBER_SOURCE__PAYMENT_GATEWAY_CONFIG_ID, oldPaymentGatewayConfigId, paymentGatewayConfigId));
 	}
 
 	/**
@@ -757,7 +812,10 @@ public class PaymentGatewayCyberSourceImpl extends BizEntityImpl implements Paym
 	 */
 	@Override
 	public void setProduction(String newProduction) {
+		String oldProduction = production;
 		production = newProduction;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.PAYMENT_GATEWAY_CYBER_SOURCE__PRODUCTION, oldProduction, production));
 	}
 
 	/**

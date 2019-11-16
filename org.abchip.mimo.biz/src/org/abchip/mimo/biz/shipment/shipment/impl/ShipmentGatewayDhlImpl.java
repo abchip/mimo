@@ -9,7 +9,9 @@ package org.abchip.mimo.biz.shipment.shipment.impl;
 
 import org.abchip.mimo.biz.shipment.shipment.ShipmentGatewayDhl;
 import org.abchip.mimo.biz.shipment.shipment.Shipment_Package;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -275,7 +277,10 @@ public class ShipmentGatewayDhlImpl extends ShipmentGatewayConfigImpl implements
 	 */
 	@Override
 	public void setAccessAccountNbr(String newAccessAccountNbr) {
+		String oldAccessAccountNbr = accessAccountNbr;
 		accessAccountNbr = newAccessAccountNbr;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, Shipment_Package.SHIPMENT_GATEWAY_DHL__ACCESS_ACCOUNT_NBR, oldAccessAccountNbr, accessAccountNbr));
 	}
 
 	/**
@@ -295,7 +300,10 @@ public class ShipmentGatewayDhlImpl extends ShipmentGatewayConfigImpl implements
 	 */
 	@Override
 	public void setAccessPassword(String newAccessPassword) {
+		String oldAccessPassword = accessPassword;
 		accessPassword = newAccessPassword;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, Shipment_Package.SHIPMENT_GATEWAY_DHL__ACCESS_PASSWORD, oldAccessPassword, accessPassword));
 	}
 
 	/**
@@ -315,7 +323,10 @@ public class ShipmentGatewayDhlImpl extends ShipmentGatewayConfigImpl implements
 	 */
 	@Override
 	public void setAccessShippingKey(String newAccessShippingKey) {
+		String oldAccessShippingKey = accessShippingKey;
 		accessShippingKey = newAccessShippingKey;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, Shipment_Package.SHIPMENT_GATEWAY_DHL__ACCESS_SHIPPING_KEY, oldAccessShippingKey, accessShippingKey));
 	}
 
 	/**
@@ -335,7 +346,10 @@ public class ShipmentGatewayDhlImpl extends ShipmentGatewayConfigImpl implements
 	 */
 	@Override
 	public void setAccessUserId(String newAccessUserId) {
+		String oldAccessUserId = accessUserId;
 		accessUserId = newAccessUserId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, Shipment_Package.SHIPMENT_GATEWAY_DHL__ACCESS_USER_ID, oldAccessUserId, accessUserId));
 	}
 
 	/**
@@ -355,7 +369,10 @@ public class ShipmentGatewayDhlImpl extends ShipmentGatewayConfigImpl implements
 	 */
 	@Override
 	public void setConnectTimeout(long newConnectTimeout) {
+		long oldConnectTimeout = connectTimeout;
 		connectTimeout = newConnectTimeout;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, Shipment_Package.SHIPMENT_GATEWAY_DHL__CONNECT_TIMEOUT, oldConnectTimeout, connectTimeout));
 	}
 
 	/**
@@ -375,7 +392,10 @@ public class ShipmentGatewayDhlImpl extends ShipmentGatewayConfigImpl implements
 	 */
 	@Override
 	public void setConnectUrl(String newConnectUrl) {
+		String oldConnectUrl = connectUrl;
 		connectUrl = newConnectUrl;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, Shipment_Package.SHIPMENT_GATEWAY_DHL__CONNECT_URL, oldConnectUrl, connectUrl));
 	}
 
 	/**
@@ -395,7 +415,10 @@ public class ShipmentGatewayDhlImpl extends ShipmentGatewayConfigImpl implements
 	 */
 	@Override
 	public void setHeadAction(String newHeadAction) {
+		String oldHeadAction = headAction;
 		headAction = newHeadAction;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, Shipment_Package.SHIPMENT_GATEWAY_DHL__HEAD_ACTION, oldHeadAction, headAction));
 	}
 
 	/**
@@ -415,7 +438,10 @@ public class ShipmentGatewayDhlImpl extends ShipmentGatewayConfigImpl implements
 	 */
 	@Override
 	public void setHeadVersion(String newHeadVersion) {
+		String oldHeadVersion = headVersion;
 		headVersion = newHeadVersion;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, Shipment_Package.SHIPMENT_GATEWAY_DHL__HEAD_VERSION, oldHeadVersion, headVersion));
 	}
 
 	/**
@@ -435,7 +461,10 @@ public class ShipmentGatewayDhlImpl extends ShipmentGatewayConfigImpl implements
 	 */
 	@Override
 	public void setLabelImageFormat(String newLabelImageFormat) {
+		String oldLabelImageFormat = labelImageFormat;
 		labelImageFormat = newLabelImageFormat;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, Shipment_Package.SHIPMENT_GATEWAY_DHL__LABEL_IMAGE_FORMAT, oldLabelImageFormat, labelImageFormat));
 	}
 
 	/**
@@ -455,7 +484,10 @@ public class ShipmentGatewayDhlImpl extends ShipmentGatewayConfigImpl implements
 	 */
 	@Override
 	public void setRateEstimateTemplate(String newRateEstimateTemplate) {
+		String oldRateEstimateTemplate = rateEstimateTemplate;
 		rateEstimateTemplate = newRateEstimateTemplate;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, Shipment_Package.SHIPMENT_GATEWAY_DHL__RATE_ESTIMATE_TEMPLATE, oldRateEstimateTemplate, rateEstimateTemplate));
 	}
 
 	/**

@@ -14,11 +14,13 @@ import org.abchip.mimo.biz.common.enum_.EnumPackage;
 import org.abchip.mimo.biz.common.enum_.Enumeration;
 import org.abchip.mimo.biz.common.enum_.EnumerationType;
 import org.abchip.mimo.biz.impl.BizEntityTypedImpl;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.util.BasicInternalEList;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -172,7 +174,10 @@ public class EnumerationImpl extends BizEntityTypedImpl<EnumerationType> impleme
 	 */
 	@Override
 	public void setDescription(String newDescription) {
+		String oldDescription = description;
 		description = newDescription;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, EnumPackage.ENUMERATION__DESCRIPTION, oldDescription, description));
 	}
 
 	/**
@@ -192,7 +197,10 @@ public class EnumerationImpl extends BizEntityTypedImpl<EnumerationType> impleme
 	 */
 	@Override
 	public void setEnumCode(String newEnumCode) {
+		String oldEnumCode = enumCode;
 		enumCode = newEnumCode;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, EnumPackage.ENUMERATION__ENUM_CODE, oldEnumCode, enumCode));
 	}
 
 	/**
@@ -212,7 +220,10 @@ public class EnumerationImpl extends BizEntityTypedImpl<EnumerationType> impleme
 	 */
 	@Override
 	public void setSequenceId(String newSequenceId) {
+		String oldSequenceId = sequenceId;
 		sequenceId = newSequenceId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, EnumPackage.ENUMERATION__SEQUENCE_ID, oldSequenceId, sequenceId));
 	}
 
 	/**
@@ -223,7 +234,7 @@ public class EnumerationImpl extends BizEntityTypedImpl<EnumerationType> impleme
 	@Override
 	public List<String> getUserLoginSecurityQuestions() {
 		if (userLoginSecurityQuestions == null) {
-			userLoginSecurityQuestions = new BasicInternalEList<String>(String.class);
+			userLoginSecurityQuestions = new EDataTypeUniqueEList<String>(String.class, this, EnumPackage.ENUMERATION__USER_LOGIN_SECURITY_QUESTIONS);
 		}
 		return userLoginSecurityQuestions;
 	}
@@ -779,6 +790,8 @@ public class EnumerationImpl extends BizEntityTypedImpl<EnumerationType> impleme
 			InternalEObject oldEnumTypeId = (InternalEObject)enumTypeId;
 			enumTypeId = (EnumerationType)eResolveProxy(oldEnumTypeId);
 			if (enumTypeId != oldEnumTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, EnumPackage.ENUMERATION__ENUM_TYPE_ID, oldEnumTypeId, enumTypeId));
 			}
 		}
 		return enumTypeId;
@@ -800,7 +813,10 @@ public class EnumerationImpl extends BizEntityTypedImpl<EnumerationType> impleme
 	 */
 	@Override
 	public void setEnumTypeId(EnumerationType newEnumTypeId) {
+		EnumerationType oldEnumTypeId = enumTypeId;
 		enumTypeId = newEnumTypeId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, EnumPackage.ENUMERATION__ENUM_TYPE_ID, oldEnumTypeId, enumTypeId));
 	}
 
 	/**
@@ -820,7 +836,10 @@ public class EnumerationImpl extends BizEntityTypedImpl<EnumerationType> impleme
 	 */
 	@Override
 	public void setEnumId(String newEnumId) {
+		String oldEnumId = enumId;
 		enumId = newEnumId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, EnumPackage.ENUMERATION__ENUM_ID, oldEnumId, enumId));
 	}
 
 	/**

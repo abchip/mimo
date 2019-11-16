@@ -13,9 +13,11 @@ import java.util.List;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.security.securitygroup.SecurityGroup;
 import org.abchip.mimo.biz.security.securitygroup.SecuritygroupPackage;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.util.BasicInternalEList;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -148,7 +150,10 @@ public class SecurityGroupImpl extends BizEntityImpl implements SecurityGroup {
 	 */
 	@Override
 	public void setDescription(String newDescription) {
+		String oldDescription = description;
 		description = newDescription;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SecuritygroupPackage.SECURITY_GROUP__DESCRIPTION, oldDescription, description));
 	}
 
 	/**
@@ -168,7 +173,10 @@ public class SecurityGroupImpl extends BizEntityImpl implements SecurityGroup {
 	 */
 	@Override
 	public void setGroupId(String newGroupId) {
+		String oldGroupId = groupId;
 		groupId = newGroupId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SecuritygroupPackage.SECURITY_GROUP__GROUP_ID, oldGroupId, groupId));
 	}
 
 	/**
@@ -188,7 +196,10 @@ public class SecurityGroupImpl extends BizEntityImpl implements SecurityGroup {
 	 */
 	@Override
 	public void setGroupName(String newGroupName) {
+		String oldGroupName = groupName;
 		groupName = newGroupName;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SecuritygroupPackage.SECURITY_GROUP__GROUP_NAME, oldGroupName, groupName));
 	}
 
 	/**
@@ -199,7 +210,7 @@ public class SecurityGroupImpl extends BizEntityImpl implements SecurityGroup {
 	@Override
 	public List<String> getProtectedViews() {
 		if (protectedViews == null) {
-			protectedViews = new BasicInternalEList<String>(String.class);
+			protectedViews = new EDataTypeUniqueEList<String>(String.class, this, SecuritygroupPackage.SECURITY_GROUP__PROTECTED_VIEWS);
 		}
 		return protectedViews;
 	}

@@ -12,10 +12,12 @@ import org.abchip.mimo.biz.product.feature.ProductFeature;
 import org.abchip.mimo.biz.shipment.shipment.Shipment;
 import org.abchip.mimo.biz.shipment.shipment.ShipmentItemFeature;
 import org.abchip.mimo.biz.shipment.shipment.Shipment_Package;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -108,6 +110,8 @@ public class ShipmentItemFeatureImpl extends BizEntityImpl implements ShipmentIt
 			InternalEObject oldProductFeatureId = (InternalEObject)productFeatureId;
 			productFeatureId = (ProductFeature)eResolveProxy(oldProductFeatureId);
 			if (productFeatureId != oldProductFeatureId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, Shipment_Package.SHIPMENT_ITEM_FEATURE__PRODUCT_FEATURE_ID, oldProductFeatureId, productFeatureId));
 			}
 		}
 		return productFeatureId;
@@ -129,7 +133,10 @@ public class ShipmentItemFeatureImpl extends BizEntityImpl implements ShipmentIt
 	 */
 	@Override
 	public void setProductFeatureId(ProductFeature newProductFeatureId) {
+		ProductFeature oldProductFeatureId = productFeatureId;
 		productFeatureId = newProductFeatureId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, Shipment_Package.SHIPMENT_ITEM_FEATURE__PRODUCT_FEATURE_ID, oldProductFeatureId, productFeatureId));
 	}
 
 	/**
@@ -143,6 +150,8 @@ public class ShipmentItemFeatureImpl extends BizEntityImpl implements ShipmentIt
 			InternalEObject oldShipmentId = (InternalEObject)shipmentId;
 			shipmentId = (Shipment)eResolveProxy(oldShipmentId);
 			if (shipmentId != oldShipmentId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, Shipment_Package.SHIPMENT_ITEM_FEATURE__SHIPMENT_ID, oldShipmentId, shipmentId));
 			}
 		}
 		return shipmentId;
@@ -164,7 +173,10 @@ public class ShipmentItemFeatureImpl extends BizEntityImpl implements ShipmentIt
 	 */
 	@Override
 	public void setShipmentId(Shipment newShipmentId) {
+		Shipment oldShipmentId = shipmentId;
 		shipmentId = newShipmentId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, Shipment_Package.SHIPMENT_ITEM_FEATURE__SHIPMENT_ID, oldShipmentId, shipmentId));
 	}
 
 	/**
@@ -184,7 +196,10 @@ public class ShipmentItemFeatureImpl extends BizEntityImpl implements ShipmentIt
 	 */
 	@Override
 	public void setShipmentItemSeqId(String newShipmentItemSeqId) {
+		String oldShipmentItemSeqId = shipmentItemSeqId;
 		shipmentItemSeqId = newShipmentItemSeqId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, Shipment_Package.SHIPMENT_ITEM_FEATURE__SHIPMENT_ITEM_SEQ_ID, oldShipmentItemSeqId, shipmentItemSeqId));
 	}
 
 	/**

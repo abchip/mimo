@@ -12,9 +12,11 @@ import org.abchip.mimo.biz.accounting.payment.PaymentMethod;
 import org.abchip.mimo.biz.accounting.payment.PaymentPackage;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.party.contact.ContactMech;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -217,6 +219,8 @@ public class PayPalPaymentMethodImpl extends BizEntityImpl implements PayPalPaym
 			InternalEObject oldContactMechId = (InternalEObject)contactMechId;
 			contactMechId = (ContactMech)eResolveProxy(oldContactMechId);
 			if (contactMechId != oldContactMechId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PaymentPackage.PAY_PAL_PAYMENT_METHOD__CONTACT_MECH_ID, oldContactMechId, contactMechId));
 			}
 		}
 		return contactMechId;
@@ -238,7 +242,10 @@ public class PayPalPaymentMethodImpl extends BizEntityImpl implements PayPalPaym
 	 */
 	@Override
 	public void setContactMechId(ContactMech newContactMechId) {
+		ContactMech oldContactMechId = contactMechId;
 		contactMechId = newContactMechId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.PAY_PAL_PAYMENT_METHOD__CONTACT_MECH_ID, oldContactMechId, contactMechId));
 	}
 
 	/**
@@ -258,7 +265,10 @@ public class PayPalPaymentMethodImpl extends BizEntityImpl implements PayPalPaym
 	 */
 	@Override
 	public void setCorrelationId(String newCorrelationId) {
+		String oldCorrelationId = correlationId;
 		correlationId = newCorrelationId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.PAY_PAL_PAYMENT_METHOD__CORRELATION_ID, oldCorrelationId, correlationId));
 	}
 
 	/**
@@ -278,7 +288,10 @@ public class PayPalPaymentMethodImpl extends BizEntityImpl implements PayPalPaym
 	 */
 	@Override
 	public void setExpressCheckoutToken(String newExpressCheckoutToken) {
+		String oldExpressCheckoutToken = expressCheckoutToken;
 		expressCheckoutToken = newExpressCheckoutToken;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.PAY_PAL_PAYMENT_METHOD__EXPRESS_CHECKOUT_TOKEN, oldExpressCheckoutToken, expressCheckoutToken));
 	}
 
 	/**
@@ -298,7 +311,10 @@ public class PayPalPaymentMethodImpl extends BizEntityImpl implements PayPalPaym
 	 */
 	@Override
 	public void setPayerId(String newPayerId) {
+		String oldPayerId = payerId;
 		payerId = newPayerId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.PAY_PAL_PAYMENT_METHOD__PAYER_ID, oldPayerId, payerId));
 	}
 
 	/**
@@ -318,7 +334,10 @@ public class PayPalPaymentMethodImpl extends BizEntityImpl implements PayPalPaym
 	 */
 	@Override
 	public void setPayerStatus(String newPayerStatus) {
+		String oldPayerStatus = payerStatus;
 		payerStatus = newPayerStatus;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.PAY_PAL_PAYMENT_METHOD__PAYER_STATUS, oldPayerStatus, payerStatus));
 	}
 
 	/**
@@ -332,6 +351,8 @@ public class PayPalPaymentMethodImpl extends BizEntityImpl implements PayPalPaym
 			InternalEObject oldPaymentMethodId = (InternalEObject)paymentMethodId;
 			paymentMethodId = (PaymentMethod)eResolveProxy(oldPaymentMethodId);
 			if (paymentMethodId != oldPaymentMethodId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PaymentPackage.PAY_PAL_PAYMENT_METHOD__PAYMENT_METHOD_ID, oldPaymentMethodId, paymentMethodId));
 			}
 		}
 		return paymentMethodId;
@@ -353,7 +374,10 @@ public class PayPalPaymentMethodImpl extends BizEntityImpl implements PayPalPaym
 	 */
 	@Override
 	public void setPaymentMethodId(PaymentMethod newPaymentMethodId) {
+		PaymentMethod oldPaymentMethodId = paymentMethodId;
 		paymentMethodId = newPaymentMethodId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.PAY_PAL_PAYMENT_METHOD__PAYMENT_METHOD_ID, oldPaymentMethodId, paymentMethodId));
 	}
 
 	/**
@@ -373,7 +397,10 @@ public class PayPalPaymentMethodImpl extends BizEntityImpl implements PayPalPaym
 	 */
 	@Override
 	public void setAvsAddr(boolean newAvsAddr) {
+		boolean oldAvsAddr = avsAddr;
 		avsAddr = newAvsAddr;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.PAY_PAL_PAYMENT_METHOD__AVS_ADDR, oldAvsAddr, avsAddr));
 	}
 
 	/**
@@ -393,7 +420,10 @@ public class PayPalPaymentMethodImpl extends BizEntityImpl implements PayPalPaym
 	 */
 	@Override
 	public void setAvsZip(boolean newAvsZip) {
+		boolean oldAvsZip = avsZip;
 		avsZip = newAvsZip;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.PAY_PAL_PAYMENT_METHOD__AVS_ZIP, oldAvsZip, avsZip));
 	}
 
 	/**
@@ -413,7 +443,10 @@ public class PayPalPaymentMethodImpl extends BizEntityImpl implements PayPalPaym
 	 */
 	@Override
 	public void setTransactionId(String newTransactionId) {
+		String oldTransactionId = transactionId;
 		transactionId = newTransactionId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.PAY_PAL_PAYMENT_METHOD__TRANSACTION_ID, oldTransactionId, transactionId));
 	}
 
 	/**

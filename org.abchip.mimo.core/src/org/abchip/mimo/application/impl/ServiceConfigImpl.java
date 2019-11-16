@@ -19,7 +19,7 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-import org.eclipse.emf.ecore.util.BasicInternalEList;
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
@@ -73,7 +73,7 @@ public class ServiceConfigImpl extends MinimalEObjectImpl.Container implements S
 	@Override
 	public List<Entity> getEntities() {
 		if (entities == null) {
-			entities = new BasicInternalEList<Entity>(Entity.class);
+			entities = new EObjectContainmentEList.Resolving<Entity>(Entity.class, this, ApplicationPackage.SERVICE_CONFIG__ENTITIES);
 		}
 		return entities;
 	}

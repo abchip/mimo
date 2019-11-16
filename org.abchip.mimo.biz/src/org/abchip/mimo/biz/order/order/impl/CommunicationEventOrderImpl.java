@@ -12,10 +12,12 @@ import org.abchip.mimo.biz.order.order.CommunicationEventOrder;
 import org.abchip.mimo.biz.order.order.OrderHeader;
 import org.abchip.mimo.biz.order.order.OrderPackage;
 import org.abchip.mimo.biz.party.communication.CommunicationEvent;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -87,6 +89,8 @@ public class CommunicationEventOrderImpl extends BizEntityImpl implements Commun
 			InternalEObject oldCommunicationEventId = (InternalEObject)communicationEventId;
 			communicationEventId = (CommunicationEvent)eResolveProxy(oldCommunicationEventId);
 			if (communicationEventId != oldCommunicationEventId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, OrderPackage.COMMUNICATION_EVENT_ORDER__COMMUNICATION_EVENT_ID, oldCommunicationEventId, communicationEventId));
 			}
 		}
 		return communicationEventId;
@@ -108,7 +112,10 @@ public class CommunicationEventOrderImpl extends BizEntityImpl implements Commun
 	 */
 	@Override
 	public void setCommunicationEventId(CommunicationEvent newCommunicationEventId) {
+		CommunicationEvent oldCommunicationEventId = communicationEventId;
 		communicationEventId = newCommunicationEventId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.COMMUNICATION_EVENT_ORDER__COMMUNICATION_EVENT_ID, oldCommunicationEventId, communicationEventId));
 	}
 
 	/**
@@ -122,6 +129,8 @@ public class CommunicationEventOrderImpl extends BizEntityImpl implements Commun
 			InternalEObject oldOrderId = (InternalEObject)orderId;
 			orderId = (OrderHeader)eResolveProxy(oldOrderId);
 			if (orderId != oldOrderId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, OrderPackage.COMMUNICATION_EVENT_ORDER__ORDER_ID, oldOrderId, orderId));
 			}
 		}
 		return orderId;
@@ -143,7 +152,10 @@ public class CommunicationEventOrderImpl extends BizEntityImpl implements Commun
 	 */
 	@Override
 	public void setOrderId(OrderHeader newOrderId) {
+		OrderHeader oldOrderId = orderId;
 		orderId = newOrderId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.COMMUNICATION_EVENT_ORDER__ORDER_ID, oldOrderId, orderId));
 	}
 
 	/**

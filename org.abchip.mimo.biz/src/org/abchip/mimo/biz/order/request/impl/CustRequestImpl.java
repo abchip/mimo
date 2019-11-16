@@ -22,12 +22,14 @@ import org.abchip.mimo.biz.order.request.RequestPackage;
 import org.abchip.mimo.biz.party.contact.ContactMech;
 import org.abchip.mimo.biz.party.party.Party;
 import org.abchip.mimo.biz.product.store.ProductStore;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.util.BasicInternalEList;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -531,7 +533,10 @@ public class CustRequestImpl extends BizEntityTypedImpl<CustRequestType> impleme
 	 */
 	@Override
 	public void setClosedDateTime(Date newClosedDateTime) {
+		Date oldClosedDateTime = closedDateTime;
 		closedDateTime = newClosedDateTime;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, RequestPackage.CUST_REQUEST__CLOSED_DATE_TIME, oldClosedDateTime, closedDateTime));
 	}
 
 	/**
@@ -551,7 +556,10 @@ public class CustRequestImpl extends BizEntityTypedImpl<CustRequestType> impleme
 	 */
 	@Override
 	public void setCreatedByUserLogin(String newCreatedByUserLogin) {
+		String oldCreatedByUserLogin = createdByUserLogin;
 		createdByUserLogin = newCreatedByUserLogin;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, RequestPackage.CUST_REQUEST__CREATED_BY_USER_LOGIN, oldCreatedByUserLogin, createdByUserLogin));
 	}
 
 	/**
@@ -571,7 +579,10 @@ public class CustRequestImpl extends BizEntityTypedImpl<CustRequestType> impleme
 	 */
 	@Override
 	public void setCreatedDate(Date newCreatedDate) {
+		Date oldCreatedDate = createdDate;
 		createdDate = newCreatedDate;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, RequestPackage.CUST_REQUEST__CREATED_DATE, oldCreatedDate, createdDate));
 	}
 
 	/**
@@ -585,6 +596,8 @@ public class CustRequestImpl extends BizEntityTypedImpl<CustRequestType> impleme
 			InternalEObject oldCurrencyUomId = (InternalEObject)currencyUomId;
 			currencyUomId = (Uom)eResolveProxy(oldCurrencyUomId);
 			if (currencyUomId != oldCurrencyUomId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, RequestPackage.CUST_REQUEST__CURRENCY_UOM_ID, oldCurrencyUomId, currencyUomId));
 			}
 		}
 		return currencyUomId;
@@ -606,7 +619,10 @@ public class CustRequestImpl extends BizEntityTypedImpl<CustRequestType> impleme
 	 */
 	@Override
 	public void setCurrencyUomId(Uom newCurrencyUomId) {
+		Uom oldCurrencyUomId = currencyUomId;
 		currencyUomId = newCurrencyUomId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, RequestPackage.CUST_REQUEST__CURRENCY_UOM_ID, oldCurrencyUomId, currencyUomId));
 	}
 
 	/**
@@ -620,6 +636,8 @@ public class CustRequestImpl extends BizEntityTypedImpl<CustRequestType> impleme
 			InternalEObject oldCustRequestCategoryId = (InternalEObject)custRequestCategoryId;
 			custRequestCategoryId = (CustRequestCategory)eResolveProxy(oldCustRequestCategoryId);
 			if (custRequestCategoryId != oldCustRequestCategoryId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, RequestPackage.CUST_REQUEST__CUST_REQUEST_CATEGORY_ID, oldCustRequestCategoryId, custRequestCategoryId));
 			}
 		}
 		return custRequestCategoryId;
@@ -641,7 +659,10 @@ public class CustRequestImpl extends BizEntityTypedImpl<CustRequestType> impleme
 	 */
 	@Override
 	public void setCustRequestCategoryId(CustRequestCategory newCustRequestCategoryId) {
+		CustRequestCategory oldCustRequestCategoryId = custRequestCategoryId;
 		custRequestCategoryId = newCustRequestCategoryId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, RequestPackage.CUST_REQUEST__CUST_REQUEST_CATEGORY_ID, oldCustRequestCategoryId, custRequestCategoryId));
 	}
 
 	/**
@@ -661,7 +682,10 @@ public class CustRequestImpl extends BizEntityTypedImpl<CustRequestType> impleme
 	 */
 	@Override
 	public void setCustRequestDate(Date newCustRequestDate) {
+		Date oldCustRequestDate = custRequestDate;
 		custRequestDate = newCustRequestDate;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, RequestPackage.CUST_REQUEST__CUST_REQUEST_DATE, oldCustRequestDate, custRequestDate));
 	}
 
 	/**
@@ -681,7 +705,10 @@ public class CustRequestImpl extends BizEntityTypedImpl<CustRequestType> impleme
 	 */
 	@Override
 	public void setCustRequestId(String newCustRequestId) {
+		String oldCustRequestId = custRequestId;
 		custRequestId = newCustRequestId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, RequestPackage.CUST_REQUEST__CUST_REQUEST_ID, oldCustRequestId, custRequestId));
 	}
 
 	/**
@@ -701,7 +728,10 @@ public class CustRequestImpl extends BizEntityTypedImpl<CustRequestType> impleme
 	 */
 	@Override
 	public void setCustRequestName(String newCustRequestName) {
+		String oldCustRequestName = custRequestName;
 		custRequestName = newCustRequestName;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, RequestPackage.CUST_REQUEST__CUST_REQUEST_NAME, oldCustRequestName, custRequestName));
 	}
 
 	/**
@@ -715,6 +745,8 @@ public class CustRequestImpl extends BizEntityTypedImpl<CustRequestType> impleme
 			InternalEObject oldCustRequestTypeId = (InternalEObject)custRequestTypeId;
 			custRequestTypeId = (CustRequestType)eResolveProxy(oldCustRequestTypeId);
 			if (custRequestTypeId != oldCustRequestTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, RequestPackage.CUST_REQUEST__CUST_REQUEST_TYPE_ID, oldCustRequestTypeId, custRequestTypeId));
 			}
 		}
 		return custRequestTypeId;
@@ -736,7 +768,10 @@ public class CustRequestImpl extends BizEntityTypedImpl<CustRequestType> impleme
 	 */
 	@Override
 	public void setCustRequestTypeId(CustRequestType newCustRequestTypeId) {
+		CustRequestType oldCustRequestTypeId = custRequestTypeId;
 		custRequestTypeId = newCustRequestTypeId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, RequestPackage.CUST_REQUEST__CUST_REQUEST_TYPE_ID, oldCustRequestTypeId, custRequestTypeId));
 	}
 
 	/**
@@ -756,7 +791,10 @@ public class CustRequestImpl extends BizEntityTypedImpl<CustRequestType> impleme
 	 */
 	@Override
 	public void setDescription(String newDescription) {
+		String oldDescription = description;
 		description = newDescription;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, RequestPackage.CUST_REQUEST__DESCRIPTION, oldDescription, description));
 	}
 
 	/**
@@ -770,6 +808,8 @@ public class CustRequestImpl extends BizEntityTypedImpl<CustRequestType> impleme
 			InternalEObject oldFromPartyId = (InternalEObject)fromPartyId;
 			fromPartyId = (Party)eResolveProxy(oldFromPartyId);
 			if (fromPartyId != oldFromPartyId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, RequestPackage.CUST_REQUEST__FROM_PARTY_ID, oldFromPartyId, fromPartyId));
 			}
 		}
 		return fromPartyId;
@@ -791,7 +831,10 @@ public class CustRequestImpl extends BizEntityTypedImpl<CustRequestType> impleme
 	 */
 	@Override
 	public void setFromPartyId(Party newFromPartyId) {
+		Party oldFromPartyId = fromPartyId;
 		fromPartyId = newFromPartyId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, RequestPackage.CUST_REQUEST__FROM_PARTY_ID, oldFromPartyId, fromPartyId));
 	}
 
 	/**
@@ -805,6 +848,8 @@ public class CustRequestImpl extends BizEntityTypedImpl<CustRequestType> impleme
 			InternalEObject oldFulfillContactMechId = (InternalEObject)fulfillContactMechId;
 			fulfillContactMechId = (ContactMech)eResolveProxy(oldFulfillContactMechId);
 			if (fulfillContactMechId != oldFulfillContactMechId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, RequestPackage.CUST_REQUEST__FULFILL_CONTACT_MECH_ID, oldFulfillContactMechId, fulfillContactMechId));
 			}
 		}
 		return fulfillContactMechId;
@@ -826,7 +871,10 @@ public class CustRequestImpl extends BizEntityTypedImpl<CustRequestType> impleme
 	 */
 	@Override
 	public void setFulfillContactMechId(ContactMech newFulfillContactMechId) {
+		ContactMech oldFulfillContactMechId = fulfillContactMechId;
 		fulfillContactMechId = newFulfillContactMechId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, RequestPackage.CUST_REQUEST__FULFILL_CONTACT_MECH_ID, oldFulfillContactMechId, fulfillContactMechId));
 	}
 
 	/**
@@ -846,7 +894,10 @@ public class CustRequestImpl extends BizEntityTypedImpl<CustRequestType> impleme
 	 */
 	@Override
 	public void setInternalComment(String newInternalComment) {
+		String oldInternalComment = internalComment;
 		internalComment = newInternalComment;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, RequestPackage.CUST_REQUEST__INTERNAL_COMMENT, oldInternalComment, internalComment));
 	}
 
 	/**
@@ -866,7 +917,10 @@ public class CustRequestImpl extends BizEntityTypedImpl<CustRequestType> impleme
 	 */
 	@Override
 	public void setLastModifiedByUserLogin(String newLastModifiedByUserLogin) {
+		String oldLastModifiedByUserLogin = lastModifiedByUserLogin;
 		lastModifiedByUserLogin = newLastModifiedByUserLogin;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, RequestPackage.CUST_REQUEST__LAST_MODIFIED_BY_USER_LOGIN, oldLastModifiedByUserLogin, lastModifiedByUserLogin));
 	}
 
 	/**
@@ -886,7 +940,10 @@ public class CustRequestImpl extends BizEntityTypedImpl<CustRequestType> impleme
 	 */
 	@Override
 	public void setLastModifiedDate(Date newLastModifiedDate) {
+		Date oldLastModifiedDate = lastModifiedDate;
 		lastModifiedDate = newLastModifiedDate;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, RequestPackage.CUST_REQUEST__LAST_MODIFIED_DATE, oldLastModifiedDate, lastModifiedDate));
 	}
 
 	/**
@@ -900,6 +957,8 @@ public class CustRequestImpl extends BizEntityTypedImpl<CustRequestType> impleme
 			InternalEObject oldMaximumAmountUomId = (InternalEObject)maximumAmountUomId;
 			maximumAmountUomId = (Uom)eResolveProxy(oldMaximumAmountUomId);
 			if (maximumAmountUomId != oldMaximumAmountUomId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, RequestPackage.CUST_REQUEST__MAXIMUM_AMOUNT_UOM_ID, oldMaximumAmountUomId, maximumAmountUomId));
 			}
 		}
 		return maximumAmountUomId;
@@ -921,7 +980,10 @@ public class CustRequestImpl extends BizEntityTypedImpl<CustRequestType> impleme
 	 */
 	@Override
 	public void setMaximumAmountUomId(Uom newMaximumAmountUomId) {
+		Uom oldMaximumAmountUomId = maximumAmountUomId;
 		maximumAmountUomId = newMaximumAmountUomId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, RequestPackage.CUST_REQUEST__MAXIMUM_AMOUNT_UOM_ID, oldMaximumAmountUomId, maximumAmountUomId));
 	}
 
 	/**
@@ -941,7 +1003,10 @@ public class CustRequestImpl extends BizEntityTypedImpl<CustRequestType> impleme
 	 */
 	@Override
 	public void setOpenDateTime(Date newOpenDateTime) {
+		Date oldOpenDateTime = openDateTime;
 		openDateTime = newOpenDateTime;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, RequestPackage.CUST_REQUEST__OPEN_DATE_TIME, oldOpenDateTime, openDateTime));
 	}
 
 	/**
@@ -961,7 +1026,10 @@ public class CustRequestImpl extends BizEntityTypedImpl<CustRequestType> impleme
 	 */
 	@Override
 	public void setPriority(long newPriority) {
+		long oldPriority = priority;
 		priority = newPriority;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, RequestPackage.CUST_REQUEST__PRIORITY, oldPriority, priority));
 	}
 
 	/**
@@ -975,6 +1043,8 @@ public class CustRequestImpl extends BizEntityTypedImpl<CustRequestType> impleme
 			InternalEObject oldProductStoreId = (InternalEObject)productStoreId;
 			productStoreId = (ProductStore)eResolveProxy(oldProductStoreId);
 			if (productStoreId != oldProductStoreId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, RequestPackage.CUST_REQUEST__PRODUCT_STORE_ID, oldProductStoreId, productStoreId));
 			}
 		}
 		return productStoreId;
@@ -996,7 +1066,10 @@ public class CustRequestImpl extends BizEntityTypedImpl<CustRequestType> impleme
 	 */
 	@Override
 	public void setProductStoreId(ProductStore newProductStoreId) {
+		ProductStore oldProductStoreId = productStoreId;
 		productStoreId = newProductStoreId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, RequestPackage.CUST_REQUEST__PRODUCT_STORE_ID, oldProductStoreId, productStoreId));
 	}
 
 	/**
@@ -1016,7 +1089,10 @@ public class CustRequestImpl extends BizEntityTypedImpl<CustRequestType> impleme
 	 */
 	@Override
 	public void setReason(String newReason) {
+		String oldReason = reason;
 		reason = newReason;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, RequestPackage.CUST_REQUEST__REASON, oldReason, reason));
 	}
 
 	/**
@@ -1036,7 +1112,10 @@ public class CustRequestImpl extends BizEntityTypedImpl<CustRequestType> impleme
 	 */
 	@Override
 	public void setResponseRequiredDate(Date newResponseRequiredDate) {
+		Date oldResponseRequiredDate = responseRequiredDate;
 		responseRequiredDate = newResponseRequiredDate;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, RequestPackage.CUST_REQUEST__RESPONSE_REQUIRED_DATE, oldResponseRequiredDate, responseRequiredDate));
 	}
 
 	/**
@@ -1050,6 +1129,8 @@ public class CustRequestImpl extends BizEntityTypedImpl<CustRequestType> impleme
 			InternalEObject oldSalesChannelEnumId = (InternalEObject)salesChannelEnumId;
 			salesChannelEnumId = (Enumeration)eResolveProxy(oldSalesChannelEnumId);
 			if (salesChannelEnumId != oldSalesChannelEnumId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, RequestPackage.CUST_REQUEST__SALES_CHANNEL_ENUM_ID, oldSalesChannelEnumId, salesChannelEnumId));
 			}
 		}
 		return salesChannelEnumId;
@@ -1071,7 +1152,10 @@ public class CustRequestImpl extends BizEntityTypedImpl<CustRequestType> impleme
 	 */
 	@Override
 	public void setSalesChannelEnumId(Enumeration newSalesChannelEnumId) {
+		Enumeration oldSalesChannelEnumId = salesChannelEnumId;
 		salesChannelEnumId = newSalesChannelEnumId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, RequestPackage.CUST_REQUEST__SALES_CHANNEL_ENUM_ID, oldSalesChannelEnumId, salesChannelEnumId));
 	}
 
 	/**
@@ -1085,6 +1169,8 @@ public class CustRequestImpl extends BizEntityTypedImpl<CustRequestType> impleme
 			InternalEObject oldStatusId = (InternalEObject)statusId;
 			statusId = (StatusItem)eResolveProxy(oldStatusId);
 			if (statusId != oldStatusId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, RequestPackage.CUST_REQUEST__STATUS_ID, oldStatusId, statusId));
 			}
 		}
 		return statusId;
@@ -1106,7 +1192,10 @@ public class CustRequestImpl extends BizEntityTypedImpl<CustRequestType> impleme
 	 */
 	@Override
 	public void setStatusId(StatusItem newStatusId) {
+		StatusItem oldStatusId = statusId;
 		statusId = newStatusId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, RequestPackage.CUST_REQUEST__STATUS_ID, oldStatusId, statusId));
 	}
 
 	/**
@@ -1117,7 +1206,7 @@ public class CustRequestImpl extends BizEntityTypedImpl<CustRequestType> impleme
 	@Override
 	public List<String> getCustRequestAttributes() {
 		if (custRequestAttributes == null) {
-			custRequestAttributes = new BasicInternalEList<String>(String.class);
+			custRequestAttributes = new EDataTypeUniqueEList<String>(String.class, this, RequestPackage.CUST_REQUEST__CUST_REQUEST_ATTRIBUTES);
 		}
 		return custRequestAttributes;
 	}
@@ -1130,7 +1219,7 @@ public class CustRequestImpl extends BizEntityTypedImpl<CustRequestType> impleme
 	@Override
 	public List<String> getCustRequestCommEvents() {
 		if (custRequestCommEvents == null) {
-			custRequestCommEvents = new BasicInternalEList<String>(String.class);
+			custRequestCommEvents = new EDataTypeUniqueEList<String>(String.class, this, RequestPackage.CUST_REQUEST__CUST_REQUEST_COMM_EVENTS);
 		}
 		return custRequestCommEvents;
 	}
@@ -1143,7 +1232,7 @@ public class CustRequestImpl extends BizEntityTypedImpl<CustRequestType> impleme
 	@Override
 	public List<String> getCustRequestItems() {
 		if (custRequestItems == null) {
-			custRequestItems = new BasicInternalEList<String>(String.class);
+			custRequestItems = new EDataTypeUniqueEList<String>(String.class, this, RequestPackage.CUST_REQUEST__CUST_REQUEST_ITEMS);
 		}
 		return custRequestItems;
 	}
@@ -1156,7 +1245,7 @@ public class CustRequestImpl extends BizEntityTypedImpl<CustRequestType> impleme
 	@Override
 	public List<String> getCustRequestNotes() {
 		if (custRequestNotes == null) {
-			custRequestNotes = new BasicInternalEList<String>(String.class);
+			custRequestNotes = new EDataTypeUniqueEList<String>(String.class, this, RequestPackage.CUST_REQUEST__CUST_REQUEST_NOTES);
 		}
 		return custRequestNotes;
 	}
@@ -1169,7 +1258,7 @@ public class CustRequestImpl extends BizEntityTypedImpl<CustRequestType> impleme
 	@Override
 	public List<String> getCustRequestWorkEfforts() {
 		if (custRequestWorkEfforts == null) {
-			custRequestWorkEfforts = new BasicInternalEList<String>(String.class);
+			custRequestWorkEfforts = new EDataTypeUniqueEList<String>(String.class, this, RequestPackage.CUST_REQUEST__CUST_REQUEST_WORK_EFFORTS);
 		}
 		return custRequestWorkEfforts;
 	}

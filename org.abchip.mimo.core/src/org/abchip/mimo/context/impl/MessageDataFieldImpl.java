@@ -12,10 +12,12 @@ import org.abchip.mimo.context.ContextPackage;
 import org.abchip.mimo.context.MessageDataField;
 import org.abchip.mimo.entity.impl.EntityImpl;
 import org.abchip.mimo.util.DataDef;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -100,7 +102,10 @@ public class MessageDataFieldImpl<DD extends DataDef<?>> extends EntityImpl impl
 	 */
 	@Override
 	public void setOutputMask(String newOutputMask) {
+		String oldOutputMask = outputMask;
 		outputMask = newOutputMask;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ContextPackage.MESSAGE_DATA_FIELD__OUTPUT_MASK, oldOutputMask, outputMask));
 	}
 
 	/**
@@ -120,6 +125,8 @@ public class MessageDataFieldImpl<DD extends DataDef<?>> extends EntityImpl impl
 					msgs = newDefinition.eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ContextPackage.MESSAGE_DATA_FIELD__DEFINITION, null, msgs);
 				}
 				if (msgs != null) msgs.dispatch();
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ContextPackage.MESSAGE_DATA_FIELD__DEFINITION, oldDefinition, definition));
 			}
 		}
 		return definition;
@@ -140,7 +147,12 @@ public class MessageDataFieldImpl<DD extends DataDef<?>> extends EntityImpl impl
 	 * @generated
 	 */
 	public NotificationChain basicSetDefinition(DataDef<?> newDefinition, NotificationChain msgs) {
+		DataDef<?> oldDefinition = definition;
 		definition = newDefinition;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ContextPackage.MESSAGE_DATA_FIELD__DEFINITION, oldDefinition, newDefinition);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
 		return msgs;
 	}
 
@@ -160,6 +172,8 @@ public class MessageDataFieldImpl<DD extends DataDef<?>> extends EntityImpl impl
 			msgs = basicSetDefinition(newDefinition, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ContextPackage.MESSAGE_DATA_FIELD__DEFINITION, newDefinition, newDefinition));
 	}
 
 	/**

@@ -17,10 +17,12 @@ import org.abchip.mimo.biz.humanres.position.EmplPosition;
 import org.abchip.mimo.biz.humanres.recruitment.JobRequisition;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.party.party.Party;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -195,7 +197,10 @@ public class EmploymentAppImpl extends BizEntityImpl implements EmploymentApp {
 	 */
 	@Override
 	public void setApplicationDate(Date newApplicationDate) {
+		Date oldApplicationDate = applicationDate;
 		applicationDate = newApplicationDate;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, EmploymentPackage.EMPLOYMENT_APP__APPLICATION_DATE, oldApplicationDate, applicationDate));
 	}
 
 	/**
@@ -215,7 +220,10 @@ public class EmploymentAppImpl extends BizEntityImpl implements EmploymentApp {
 	 */
 	@Override
 	public void setApplicationId(String newApplicationId) {
+		String oldApplicationId = applicationId;
 		applicationId = newApplicationId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, EmploymentPackage.EMPLOYMENT_APP__APPLICATION_ID, oldApplicationId, applicationId));
 	}
 
 	/**
@@ -229,6 +237,8 @@ public class EmploymentAppImpl extends BizEntityImpl implements EmploymentApp {
 			InternalEObject oldApplyingPartyId = (InternalEObject)applyingPartyId;
 			applyingPartyId = (Party)eResolveProxy(oldApplyingPartyId);
 			if (applyingPartyId != oldApplyingPartyId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, EmploymentPackage.EMPLOYMENT_APP__APPLYING_PARTY_ID, oldApplyingPartyId, applyingPartyId));
 			}
 		}
 		return applyingPartyId;
@@ -250,7 +260,10 @@ public class EmploymentAppImpl extends BizEntityImpl implements EmploymentApp {
 	 */
 	@Override
 	public void setApplyingPartyId(Party newApplyingPartyId) {
+		Party oldApplyingPartyId = applyingPartyId;
 		applyingPartyId = newApplyingPartyId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, EmploymentPackage.EMPLOYMENT_APP__APPLYING_PARTY_ID, oldApplyingPartyId, applyingPartyId));
 	}
 
 	/**
@@ -264,6 +277,8 @@ public class EmploymentAppImpl extends BizEntityImpl implements EmploymentApp {
 			InternalEObject oldApproverPartyId = (InternalEObject)approverPartyId;
 			approverPartyId = (Party)eResolveProxy(oldApproverPartyId);
 			if (approverPartyId != oldApproverPartyId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, EmploymentPackage.EMPLOYMENT_APP__APPROVER_PARTY_ID, oldApproverPartyId, approverPartyId));
 			}
 		}
 		return approverPartyId;
@@ -285,7 +300,10 @@ public class EmploymentAppImpl extends BizEntityImpl implements EmploymentApp {
 	 */
 	@Override
 	public void setApproverPartyId(Party newApproverPartyId) {
+		Party oldApproverPartyId = approverPartyId;
 		approverPartyId = newApproverPartyId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, EmploymentPackage.EMPLOYMENT_APP__APPROVER_PARTY_ID, oldApproverPartyId, approverPartyId));
 	}
 
 	/**
@@ -299,6 +317,8 @@ public class EmploymentAppImpl extends BizEntityImpl implements EmploymentApp {
 			InternalEObject oldEmplPositionId = (InternalEObject)emplPositionId;
 			emplPositionId = (EmplPosition)eResolveProxy(oldEmplPositionId);
 			if (emplPositionId != oldEmplPositionId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, EmploymentPackage.EMPLOYMENT_APP__EMPL_POSITION_ID, oldEmplPositionId, emplPositionId));
 			}
 		}
 		return emplPositionId;
@@ -320,7 +340,10 @@ public class EmploymentAppImpl extends BizEntityImpl implements EmploymentApp {
 	 */
 	@Override
 	public void setEmplPositionId(EmplPosition newEmplPositionId) {
+		EmplPosition oldEmplPositionId = emplPositionId;
 		emplPositionId = newEmplPositionId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, EmploymentPackage.EMPLOYMENT_APP__EMPL_POSITION_ID, oldEmplPositionId, emplPositionId));
 	}
 
 	/**
@@ -334,6 +357,8 @@ public class EmploymentAppImpl extends BizEntityImpl implements EmploymentApp {
 			InternalEObject oldEmploymentAppSourceTypeId = (InternalEObject)employmentAppSourceTypeId;
 			employmentAppSourceTypeId = (EmploymentAppSourceType)eResolveProxy(oldEmploymentAppSourceTypeId);
 			if (employmentAppSourceTypeId != oldEmploymentAppSourceTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, EmploymentPackage.EMPLOYMENT_APP__EMPLOYMENT_APP_SOURCE_TYPE_ID, oldEmploymentAppSourceTypeId, employmentAppSourceTypeId));
 			}
 		}
 		return employmentAppSourceTypeId;
@@ -355,7 +380,10 @@ public class EmploymentAppImpl extends BizEntityImpl implements EmploymentApp {
 	 */
 	@Override
 	public void setEmploymentAppSourceTypeId(EmploymentAppSourceType newEmploymentAppSourceTypeId) {
+		EmploymentAppSourceType oldEmploymentAppSourceTypeId = employmentAppSourceTypeId;
 		employmentAppSourceTypeId = newEmploymentAppSourceTypeId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, EmploymentPackage.EMPLOYMENT_APP__EMPLOYMENT_APP_SOURCE_TYPE_ID, oldEmploymentAppSourceTypeId, employmentAppSourceTypeId));
 	}
 
 	/**
@@ -369,6 +397,8 @@ public class EmploymentAppImpl extends BizEntityImpl implements EmploymentApp {
 			InternalEObject oldJobRequisitionId = (InternalEObject)jobRequisitionId;
 			jobRequisitionId = (JobRequisition)eResolveProxy(oldJobRequisitionId);
 			if (jobRequisitionId != oldJobRequisitionId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, EmploymentPackage.EMPLOYMENT_APP__JOB_REQUISITION_ID, oldJobRequisitionId, jobRequisitionId));
 			}
 		}
 		return jobRequisitionId;
@@ -390,7 +420,10 @@ public class EmploymentAppImpl extends BizEntityImpl implements EmploymentApp {
 	 */
 	@Override
 	public void setJobRequisitionId(JobRequisition newJobRequisitionId) {
+		JobRequisition oldJobRequisitionId = jobRequisitionId;
 		jobRequisitionId = newJobRequisitionId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, EmploymentPackage.EMPLOYMENT_APP__JOB_REQUISITION_ID, oldJobRequisitionId, jobRequisitionId));
 	}
 
 	/**
@@ -404,6 +437,8 @@ public class EmploymentAppImpl extends BizEntityImpl implements EmploymentApp {
 			InternalEObject oldReferredByPartyId = (InternalEObject)referredByPartyId;
 			referredByPartyId = (Party)eResolveProxy(oldReferredByPartyId);
 			if (referredByPartyId != oldReferredByPartyId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, EmploymentPackage.EMPLOYMENT_APP__REFERRED_BY_PARTY_ID, oldReferredByPartyId, referredByPartyId));
 			}
 		}
 		return referredByPartyId;
@@ -425,7 +460,10 @@ public class EmploymentAppImpl extends BizEntityImpl implements EmploymentApp {
 	 */
 	@Override
 	public void setReferredByPartyId(Party newReferredByPartyId) {
+		Party oldReferredByPartyId = referredByPartyId;
 		referredByPartyId = newReferredByPartyId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, EmploymentPackage.EMPLOYMENT_APP__REFERRED_BY_PARTY_ID, oldReferredByPartyId, referredByPartyId));
 	}
 
 	/**
@@ -439,6 +477,8 @@ public class EmploymentAppImpl extends BizEntityImpl implements EmploymentApp {
 			InternalEObject oldStatusId = (InternalEObject)statusId;
 			statusId = (StatusItem)eResolveProxy(oldStatusId);
 			if (statusId != oldStatusId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, EmploymentPackage.EMPLOYMENT_APP__STATUS_ID, oldStatusId, statusId));
 			}
 		}
 		return statusId;
@@ -460,7 +500,10 @@ public class EmploymentAppImpl extends BizEntityImpl implements EmploymentApp {
 	 */
 	@Override
 	public void setStatusId(StatusItem newStatusId) {
+		StatusItem oldStatusId = statusId;
 		statusId = newStatusId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, EmploymentPackage.EMPLOYMENT_APP__STATUS_ID, oldStatusId, statusId));
 	}
 
 	/**

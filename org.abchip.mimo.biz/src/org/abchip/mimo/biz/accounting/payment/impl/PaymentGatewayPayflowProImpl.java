@@ -11,9 +11,11 @@ import org.abchip.mimo.biz.accounting.payment.PaymentGatewayConfig;
 import org.abchip.mimo.biz.accounting.payment.PaymentGatewayPayflowPro;
 import org.abchip.mimo.biz.accounting.payment.PaymentPackage;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -516,7 +518,10 @@ public class PaymentGatewayPayflowProImpl extends BizEntityImpl implements Payme
 	 */
 	@Override
 	public void setCancelReturnUrl(String newCancelReturnUrl) {
+		String oldCancelReturnUrl = cancelReturnUrl;
 		cancelReturnUrl = newCancelReturnUrl;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.PAYMENT_GATEWAY_PAYFLOW_PRO__CANCEL_RETURN_URL, oldCancelReturnUrl, cancelReturnUrl));
 	}
 
 	/**
@@ -536,7 +541,10 @@ public class PaymentGatewayPayflowProImpl extends BizEntityImpl implements Payme
 	 */
 	@Override
 	public void setCertsPath(String newCertsPath) {
+		String oldCertsPath = certsPath;
 		certsPath = newCertsPath;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.PAYMENT_GATEWAY_PAYFLOW_PRO__CERTS_PATH, oldCertsPath, certsPath));
 	}
 
 	/**
@@ -556,7 +564,10 @@ public class PaymentGatewayPayflowProImpl extends BizEntityImpl implements Payme
 	 */
 	@Override
 	public void setCheckAvs(boolean newCheckAvs) {
+		boolean oldCheckAvs = checkAvs;
 		checkAvs = newCheckAvs;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.PAYMENT_GATEWAY_PAYFLOW_PRO__CHECK_AVS, oldCheckAvs, checkAvs));
 	}
 
 	/**
@@ -576,7 +587,10 @@ public class PaymentGatewayPayflowProImpl extends BizEntityImpl implements Payme
 	 */
 	@Override
 	public void setCheckCvv2(boolean newCheckCvv2) {
+		boolean oldCheckCvv2 = checkCvv2;
 		checkCvv2 = newCheckCvv2;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.PAYMENT_GATEWAY_PAYFLOW_PRO__CHECK_CVV2, oldCheckCvv2, checkCvv2));
 	}
 
 	/**
@@ -596,7 +610,10 @@ public class PaymentGatewayPayflowProImpl extends BizEntityImpl implements Payme
 	 */
 	@Override
 	public void setEnableTransmit(String newEnableTransmit) {
+		String oldEnableTransmit = enableTransmit;
 		enableTransmit = newEnableTransmit;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.PAYMENT_GATEWAY_PAYFLOW_PRO__ENABLE_TRANSMIT, oldEnableTransmit, enableTransmit));
 	}
 
 	/**
@@ -616,7 +633,10 @@ public class PaymentGatewayPayflowProImpl extends BizEntityImpl implements Payme
 	 */
 	@Override
 	public void setHostAddress(String newHostAddress) {
+		String oldHostAddress = hostAddress;
 		hostAddress = newHostAddress;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.PAYMENT_GATEWAY_PAYFLOW_PRO__HOST_ADDRESS, oldHostAddress, hostAddress));
 	}
 
 	/**
@@ -636,7 +656,10 @@ public class PaymentGatewayPayflowProImpl extends BizEntityImpl implements Payme
 	 */
 	@Override
 	public void setHostPort(long newHostPort) {
+		long oldHostPort = hostPort;
 		hostPort = newHostPort;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.PAYMENT_GATEWAY_PAYFLOW_PRO__HOST_PORT, oldHostPort, hostPort));
 	}
 
 	/**
@@ -656,7 +679,10 @@ public class PaymentGatewayPayflowProImpl extends BizEntityImpl implements Payme
 	 */
 	@Override
 	public void setLogFileName(String newLogFileName) {
+		String oldLogFileName = logFileName;
 		logFileName = newLogFileName;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.PAYMENT_GATEWAY_PAYFLOW_PRO__LOG_FILE_NAME, oldLogFileName, logFileName));
 	}
 
 	/**
@@ -676,7 +702,10 @@ public class PaymentGatewayPayflowProImpl extends BizEntityImpl implements Payme
 	 */
 	@Override
 	public void setLoggingLevel(long newLoggingLevel) {
+		long oldLoggingLevel = loggingLevel;
 		loggingLevel = newLoggingLevel;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.PAYMENT_GATEWAY_PAYFLOW_PRO__LOGGING_LEVEL, oldLoggingLevel, loggingLevel));
 	}
 
 	/**
@@ -696,7 +725,10 @@ public class PaymentGatewayPayflowProImpl extends BizEntityImpl implements Payme
 	 */
 	@Override
 	public void setMaxLogFileSize(long newMaxLogFileSize) {
+		long oldMaxLogFileSize = maxLogFileSize;
 		maxLogFileSize = newMaxLogFileSize;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.PAYMENT_GATEWAY_PAYFLOW_PRO__MAX_LOG_FILE_SIZE, oldMaxLogFileSize, maxLogFileSize));
 	}
 
 	/**
@@ -716,7 +748,10 @@ public class PaymentGatewayPayflowProImpl extends BizEntityImpl implements Payme
 	 */
 	@Override
 	public void setPartner(String newPartner) {
+		String oldPartner = partner;
 		partner = newPartner;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.PAYMENT_GATEWAY_PAYFLOW_PRO__PARTNER, oldPartner, partner));
 	}
 
 	/**
@@ -736,7 +771,10 @@ public class PaymentGatewayPayflowProImpl extends BizEntityImpl implements Payme
 	 */
 	@Override
 	public void setPreAuth(boolean newPreAuth) {
+		boolean oldPreAuth = preAuth;
 		preAuth = newPreAuth;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.PAYMENT_GATEWAY_PAYFLOW_PRO__PRE_AUTH, oldPreAuth, preAuth));
 	}
 
 	/**
@@ -750,6 +788,8 @@ public class PaymentGatewayPayflowProImpl extends BizEntityImpl implements Payme
 			InternalEObject oldPaymentGatewayConfigId = (InternalEObject)paymentGatewayConfigId;
 			paymentGatewayConfigId = (PaymentGatewayConfig)eResolveProxy(oldPaymentGatewayConfigId);
 			if (paymentGatewayConfigId != oldPaymentGatewayConfigId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PaymentPackage.PAYMENT_GATEWAY_PAYFLOW_PRO__PAYMENT_GATEWAY_CONFIG_ID, oldPaymentGatewayConfigId, paymentGatewayConfigId));
 			}
 		}
 		return paymentGatewayConfigId;
@@ -771,7 +811,10 @@ public class PaymentGatewayPayflowProImpl extends BizEntityImpl implements Payme
 	 */
 	@Override
 	public void setPaymentGatewayConfigId(PaymentGatewayConfig newPaymentGatewayConfigId) {
+		PaymentGatewayConfig oldPaymentGatewayConfigId = paymentGatewayConfigId;
 		paymentGatewayConfigId = newPaymentGatewayConfigId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.PAYMENT_GATEWAY_PAYFLOW_PRO__PAYMENT_GATEWAY_CONFIG_ID, oldPaymentGatewayConfigId, paymentGatewayConfigId));
 	}
 
 	/**
@@ -791,7 +834,10 @@ public class PaymentGatewayPayflowProImpl extends BizEntityImpl implements Payme
 	 */
 	@Override
 	public void setProxyAddress(String newProxyAddress) {
+		String oldProxyAddress = proxyAddress;
 		proxyAddress = newProxyAddress;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.PAYMENT_GATEWAY_PAYFLOW_PRO__PROXY_ADDRESS, oldProxyAddress, proxyAddress));
 	}
 
 	/**
@@ -811,7 +857,10 @@ public class PaymentGatewayPayflowProImpl extends BizEntityImpl implements Payme
 	 */
 	@Override
 	public void setProxyLogon(String newProxyLogon) {
+		String oldProxyLogon = proxyLogon;
 		proxyLogon = newProxyLogon;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.PAYMENT_GATEWAY_PAYFLOW_PRO__PROXY_LOGON, oldProxyLogon, proxyLogon));
 	}
 
 	/**
@@ -831,7 +880,10 @@ public class PaymentGatewayPayflowProImpl extends BizEntityImpl implements Payme
 	 */
 	@Override
 	public void setProxyPassword(String newProxyPassword) {
+		String oldProxyPassword = proxyPassword;
 		proxyPassword = newProxyPassword;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.PAYMENT_GATEWAY_PAYFLOW_PRO__PROXY_PASSWORD, oldProxyPassword, proxyPassword));
 	}
 
 	/**
@@ -851,7 +903,10 @@ public class PaymentGatewayPayflowProImpl extends BizEntityImpl implements Payme
 	 */
 	@Override
 	public void setProxyPort(long newProxyPort) {
+		long oldProxyPort = proxyPort;
 		proxyPort = newProxyPort;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.PAYMENT_GATEWAY_PAYFLOW_PRO__PROXY_PORT, oldProxyPort, proxyPort));
 	}
 
 	/**
@@ -871,7 +926,10 @@ public class PaymentGatewayPayflowProImpl extends BizEntityImpl implements Payme
 	 */
 	@Override
 	public void setPwd(String newPwd) {
+		String oldPwd = pwd;
 		pwd = newPwd;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.PAYMENT_GATEWAY_PAYFLOW_PRO__PWD, oldPwd, pwd));
 	}
 
 	/**
@@ -891,7 +949,10 @@ public class PaymentGatewayPayflowProImpl extends BizEntityImpl implements Payme
 	 */
 	@Override
 	public void setRedirectUrl(String newRedirectUrl) {
+		String oldRedirectUrl = redirectUrl;
 		redirectUrl = newRedirectUrl;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.PAYMENT_GATEWAY_PAYFLOW_PRO__REDIRECT_URL, oldRedirectUrl, redirectUrl));
 	}
 
 	/**
@@ -911,7 +972,10 @@ public class PaymentGatewayPayflowProImpl extends BizEntityImpl implements Payme
 	 */
 	@Override
 	public void setReturnUrl(String newReturnUrl) {
+		String oldReturnUrl = returnUrl;
 		returnUrl = newReturnUrl;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.PAYMENT_GATEWAY_PAYFLOW_PRO__RETURN_URL, oldReturnUrl, returnUrl));
 	}
 
 	/**
@@ -931,7 +995,10 @@ public class PaymentGatewayPayflowProImpl extends BizEntityImpl implements Payme
 	 */
 	@Override
 	public void setStackTraceOn(boolean newStackTraceOn) {
+		boolean oldStackTraceOn = stackTraceOn;
 		stackTraceOn = newStackTraceOn;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.PAYMENT_GATEWAY_PAYFLOW_PRO__STACK_TRACE_ON, oldStackTraceOn, stackTraceOn));
 	}
 
 	/**
@@ -951,7 +1018,10 @@ public class PaymentGatewayPayflowProImpl extends BizEntityImpl implements Payme
 	 */
 	@Override
 	public void setTimeout(long newTimeout) {
+		long oldTimeout = timeout;
 		timeout = newTimeout;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.PAYMENT_GATEWAY_PAYFLOW_PRO__TIMEOUT, oldTimeout, timeout));
 	}
 
 	/**
@@ -971,7 +1041,10 @@ public class PaymentGatewayPayflowProImpl extends BizEntityImpl implements Payme
 	 */
 	@Override
 	public void setUserId(String newUserId) {
+		String oldUserId = userId;
 		userId = newUserId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.PAYMENT_GATEWAY_PAYFLOW_PRO__USER_ID, oldUserId, userId));
 	}
 
 	/**
@@ -991,7 +1064,10 @@ public class PaymentGatewayPayflowProImpl extends BizEntityImpl implements Payme
 	 */
 	@Override
 	public void setVendor(String newVendor) {
+		String oldVendor = vendor;
 		vendor = newVendor;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.PAYMENT_GATEWAY_PAYFLOW_PRO__VENDOR, oldVendor, vendor));
 	}
 
 	/**

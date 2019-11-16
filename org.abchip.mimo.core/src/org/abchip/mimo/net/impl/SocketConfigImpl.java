@@ -11,7 +11,9 @@ import org.abchip.mimo.entity.impl.EntityImpl;
 
 import org.abchip.mimo.net.NetPackage;
 import org.abchip.mimo.net.SocketConfig;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -105,7 +107,10 @@ public class SocketConfigImpl extends EntityImpl implements SocketConfig {
 	 */
 	@Override
 	public void setAddress(String newAddress) {
+		String oldAddress = address;
 		address = newAddress;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, NetPackage.SOCKET_CONFIG__ADDRESS, oldAddress, address));
 	}
 
 	/**
@@ -125,7 +130,10 @@ public class SocketConfigImpl extends EntityImpl implements SocketConfig {
 	 */
 	@Override
 	public void setPort(int newPort) {
+		int oldPort = port;
 		port = newPort;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, NetPackage.SOCKET_CONFIG__PORT, oldPort, port));
 	}
 
 	/**

@@ -12,9 +12,11 @@ import org.abchip.mimo.biz.product.product.GoodIdentification;
 import org.abchip.mimo.biz.product.product.GoodIdentificationType;
 import org.abchip.mimo.biz.product.product.Product;
 import org.abchip.mimo.biz.product.product.ProductPackage;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -113,7 +115,10 @@ public class GoodIdentificationImpl extends BizEntityTypedImpl<GoodIdentificatio
 	 */
 	@Override
 	public void setIdValue(String newIdValue) {
+		String oldIdValue = idValue;
 		idValue = newIdValue;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ProductPackage.GOOD_IDENTIFICATION__ID_VALUE, oldIdValue, idValue));
 	}
 
 	/**
@@ -127,6 +132,8 @@ public class GoodIdentificationImpl extends BizEntityTypedImpl<GoodIdentificatio
 			InternalEObject oldGoodIdentificationTypeId = (InternalEObject)goodIdentificationTypeId;
 			goodIdentificationTypeId = (GoodIdentificationType)eResolveProxy(oldGoodIdentificationTypeId);
 			if (goodIdentificationTypeId != oldGoodIdentificationTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ProductPackage.GOOD_IDENTIFICATION__GOOD_IDENTIFICATION_TYPE_ID, oldGoodIdentificationTypeId, goodIdentificationTypeId));
 			}
 		}
 		return goodIdentificationTypeId;
@@ -148,7 +155,10 @@ public class GoodIdentificationImpl extends BizEntityTypedImpl<GoodIdentificatio
 	 */
 	@Override
 	public void setGoodIdentificationTypeId(GoodIdentificationType newGoodIdentificationTypeId) {
+		GoodIdentificationType oldGoodIdentificationTypeId = goodIdentificationTypeId;
 		goodIdentificationTypeId = newGoodIdentificationTypeId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ProductPackage.GOOD_IDENTIFICATION__GOOD_IDENTIFICATION_TYPE_ID, oldGoodIdentificationTypeId, goodIdentificationTypeId));
 	}
 
 	/**
@@ -162,6 +172,8 @@ public class GoodIdentificationImpl extends BizEntityTypedImpl<GoodIdentificatio
 			InternalEObject oldProductId = (InternalEObject)productId;
 			productId = (Product)eResolveProxy(oldProductId);
 			if (productId != oldProductId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ProductPackage.GOOD_IDENTIFICATION__PRODUCT_ID, oldProductId, productId));
 			}
 		}
 		return productId;
@@ -183,7 +195,10 @@ public class GoodIdentificationImpl extends BizEntityTypedImpl<GoodIdentificatio
 	 */
 	@Override
 	public void setProductId(Product newProductId) {
+		Product oldProductId = productId;
 		productId = newProductId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ProductPackage.GOOD_IDENTIFICATION__PRODUCT_ID, oldProductId, productId));
 	}
 
 	/**

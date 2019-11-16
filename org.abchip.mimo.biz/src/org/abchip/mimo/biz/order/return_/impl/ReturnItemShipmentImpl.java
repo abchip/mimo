@@ -14,10 +14,12 @@ import org.abchip.mimo.biz.order.return_.ReturnHeader;
 import org.abchip.mimo.biz.order.return_.ReturnItemShipment;
 import org.abchip.mimo.biz.order.return_.ReturnPackage;
 import org.abchip.mimo.biz.shipment.shipment.Shipment;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -158,7 +160,10 @@ public class ReturnItemShipmentImpl extends BizEntityImpl implements ReturnItemS
 	 */
 	@Override
 	public void setQuantity(BigDecimal newQuantity) {
+		BigDecimal oldQuantity = quantity;
 		quantity = newQuantity;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ReturnPackage.RETURN_ITEM_SHIPMENT__QUANTITY, oldQuantity, quantity));
 	}
 
 	/**
@@ -172,6 +177,8 @@ public class ReturnItemShipmentImpl extends BizEntityImpl implements ReturnItemS
 			InternalEObject oldReturnId = (InternalEObject)returnId;
 			returnId = (ReturnHeader)eResolveProxy(oldReturnId);
 			if (returnId != oldReturnId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ReturnPackage.RETURN_ITEM_SHIPMENT__RETURN_ID, oldReturnId, returnId));
 			}
 		}
 		return returnId;
@@ -193,7 +200,10 @@ public class ReturnItemShipmentImpl extends BizEntityImpl implements ReturnItemS
 	 */
 	@Override
 	public void setReturnId(ReturnHeader newReturnId) {
+		ReturnHeader oldReturnId = returnId;
 		returnId = newReturnId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ReturnPackage.RETURN_ITEM_SHIPMENT__RETURN_ID, oldReturnId, returnId));
 	}
 
 	/**
@@ -213,7 +223,10 @@ public class ReturnItemShipmentImpl extends BizEntityImpl implements ReturnItemS
 	 */
 	@Override
 	public void setReturnItemSeqId(String newReturnItemSeqId) {
+		String oldReturnItemSeqId = returnItemSeqId;
 		returnItemSeqId = newReturnItemSeqId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ReturnPackage.RETURN_ITEM_SHIPMENT__RETURN_ITEM_SEQ_ID, oldReturnItemSeqId, returnItemSeqId));
 	}
 
 	/**
@@ -227,6 +240,8 @@ public class ReturnItemShipmentImpl extends BizEntityImpl implements ReturnItemS
 			InternalEObject oldShipmentId = (InternalEObject)shipmentId;
 			shipmentId = (Shipment)eResolveProxy(oldShipmentId);
 			if (shipmentId != oldShipmentId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ReturnPackage.RETURN_ITEM_SHIPMENT__SHIPMENT_ID, oldShipmentId, shipmentId));
 			}
 		}
 		return shipmentId;
@@ -248,7 +263,10 @@ public class ReturnItemShipmentImpl extends BizEntityImpl implements ReturnItemS
 	 */
 	@Override
 	public void setShipmentId(Shipment newShipmentId) {
+		Shipment oldShipmentId = shipmentId;
 		shipmentId = newShipmentId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ReturnPackage.RETURN_ITEM_SHIPMENT__SHIPMENT_ID, oldShipmentId, shipmentId));
 	}
 
 	/**
@@ -268,7 +286,10 @@ public class ReturnItemShipmentImpl extends BizEntityImpl implements ReturnItemS
 	 */
 	@Override
 	public void setShipmentItemSeqId(String newShipmentItemSeqId) {
+		String oldShipmentItemSeqId = shipmentItemSeqId;
 		shipmentItemSeqId = newShipmentItemSeqId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ReturnPackage.RETURN_ITEM_SHIPMENT__SHIPMENT_ITEM_SEQ_ID, oldShipmentItemSeqId, shipmentItemSeqId));
 	}
 
 	/**

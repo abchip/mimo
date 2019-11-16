@@ -15,10 +15,12 @@ import org.abchip.mimo.biz.security.login.UserLogin;
 import org.abchip.mimo.biz.shipment.picklist.Picklist;
 import org.abchip.mimo.biz.shipment.picklist.PicklistPackage;
 import org.abchip.mimo.biz.shipment.picklist.PicklistStatusHistory;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -139,7 +141,10 @@ public class PicklistStatusHistoryImpl extends BizEntityImpl implements Picklist
 	 */
 	@Override
 	public void setChangeDate(Date newChangeDate) {
+		Date oldChangeDate = changeDate;
 		changeDate = newChangeDate;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PicklistPackage.PICKLIST_STATUS_HISTORY__CHANGE_DATE, oldChangeDate, changeDate));
 	}
 
 	/**
@@ -153,6 +158,8 @@ public class PicklistStatusHistoryImpl extends BizEntityImpl implements Picklist
 			InternalEObject oldChangeUserLoginId = (InternalEObject)changeUserLoginId;
 			changeUserLoginId = (UserLogin)eResolveProxy(oldChangeUserLoginId);
 			if (changeUserLoginId != oldChangeUserLoginId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PicklistPackage.PICKLIST_STATUS_HISTORY__CHANGE_USER_LOGIN_ID, oldChangeUserLoginId, changeUserLoginId));
 			}
 		}
 		return changeUserLoginId;
@@ -174,7 +181,10 @@ public class PicklistStatusHistoryImpl extends BizEntityImpl implements Picklist
 	 */
 	@Override
 	public void setChangeUserLoginId(UserLogin newChangeUserLoginId) {
+		UserLogin oldChangeUserLoginId = changeUserLoginId;
 		changeUserLoginId = newChangeUserLoginId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PicklistPackage.PICKLIST_STATUS_HISTORY__CHANGE_USER_LOGIN_ID, oldChangeUserLoginId, changeUserLoginId));
 	}
 
 	/**
@@ -188,6 +198,8 @@ public class PicklistStatusHistoryImpl extends BizEntityImpl implements Picklist
 			InternalEObject oldPicklistId = (InternalEObject)picklistId;
 			picklistId = (Picklist)eResolveProxy(oldPicklistId);
 			if (picklistId != oldPicklistId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PicklistPackage.PICKLIST_STATUS_HISTORY__PICKLIST_ID, oldPicklistId, picklistId));
 			}
 		}
 		return picklistId;
@@ -209,7 +221,10 @@ public class PicklistStatusHistoryImpl extends BizEntityImpl implements Picklist
 	 */
 	@Override
 	public void setPicklistId(Picklist newPicklistId) {
+		Picklist oldPicklistId = picklistId;
 		picklistId = newPicklistId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PicklistPackage.PICKLIST_STATUS_HISTORY__PICKLIST_ID, oldPicklistId, picklistId));
 	}
 
 	/**
@@ -223,6 +238,8 @@ public class PicklistStatusHistoryImpl extends BizEntityImpl implements Picklist
 			InternalEObject oldStatusId = (InternalEObject)statusId;
 			statusId = (StatusItem)eResolveProxy(oldStatusId);
 			if (statusId != oldStatusId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PicklistPackage.PICKLIST_STATUS_HISTORY__STATUS_ID, oldStatusId, statusId));
 			}
 		}
 		return statusId;
@@ -244,7 +261,10 @@ public class PicklistStatusHistoryImpl extends BizEntityImpl implements Picklist
 	 */
 	@Override
 	public void setStatusId(StatusItem newStatusId) {
+		StatusItem oldStatusId = statusId;
 		statusId = newStatusId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PicklistPackage.PICKLIST_STATUS_HISTORY__STATUS_ID, oldStatusId, statusId));
 	}
 
 	/**
@@ -258,6 +278,8 @@ public class PicklistStatusHistoryImpl extends BizEntityImpl implements Picklist
 			InternalEObject oldStatusIdTo = (InternalEObject)statusIdTo;
 			statusIdTo = (StatusItem)eResolveProxy(oldStatusIdTo);
 			if (statusIdTo != oldStatusIdTo) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PicklistPackage.PICKLIST_STATUS_HISTORY__STATUS_ID_TO, oldStatusIdTo, statusIdTo));
 			}
 		}
 		return statusIdTo;
@@ -279,7 +301,10 @@ public class PicklistStatusHistoryImpl extends BizEntityImpl implements Picklist
 	 */
 	@Override
 	public void setStatusIdTo(StatusItem newStatusIdTo) {
+		StatusItem oldStatusIdTo = statusIdTo;
 		statusIdTo = newStatusIdTo;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PicklistPackage.PICKLIST_STATUS_HISTORY__STATUS_ID_TO, oldStatusIdTo, statusIdTo));
 	}
 
 	/**

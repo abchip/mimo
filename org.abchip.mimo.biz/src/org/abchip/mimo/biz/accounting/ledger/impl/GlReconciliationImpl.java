@@ -17,9 +17,11 @@ import org.abchip.mimo.biz.accounting.ledger.LedgerPackage;
 import org.abchip.mimo.biz.common.status.StatusItem;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.party.party.Party;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -295,7 +297,10 @@ public class GlReconciliationImpl extends BizEntityImpl implements GlReconciliat
 	 */
 	@Override
 	public void setCreatedByUserLogin(String newCreatedByUserLogin) {
+		String oldCreatedByUserLogin = createdByUserLogin;
 		createdByUserLogin = newCreatedByUserLogin;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, LedgerPackage.GL_RECONCILIATION__CREATED_BY_USER_LOGIN, oldCreatedByUserLogin, createdByUserLogin));
 	}
 
 	/**
@@ -315,7 +320,10 @@ public class GlReconciliationImpl extends BizEntityImpl implements GlReconciliat
 	 */
 	@Override
 	public void setCreatedDate(Date newCreatedDate) {
+		Date oldCreatedDate = createdDate;
 		createdDate = newCreatedDate;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, LedgerPackage.GL_RECONCILIATION__CREATED_DATE, oldCreatedDate, createdDate));
 	}
 
 	/**
@@ -335,7 +343,10 @@ public class GlReconciliationImpl extends BizEntityImpl implements GlReconciliat
 	 */
 	@Override
 	public void setDescription(String newDescription) {
+		String oldDescription = description;
 		description = newDescription;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, LedgerPackage.GL_RECONCILIATION__DESCRIPTION, oldDescription, description));
 	}
 
 	/**
@@ -355,7 +366,10 @@ public class GlReconciliationImpl extends BizEntityImpl implements GlReconciliat
 	 */
 	@Override
 	public void setGlReconciliationName(String newGlReconciliationName) {
+		String oldGlReconciliationName = glReconciliationName;
 		glReconciliationName = newGlReconciliationName;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, LedgerPackage.GL_RECONCILIATION__GL_RECONCILIATION_NAME, oldGlReconciliationName, glReconciliationName));
 	}
 
 	/**
@@ -375,7 +389,10 @@ public class GlReconciliationImpl extends BizEntityImpl implements GlReconciliat
 	 */
 	@Override
 	public void setLastModifiedByUserLogin(String newLastModifiedByUserLogin) {
+		String oldLastModifiedByUserLogin = lastModifiedByUserLogin;
 		lastModifiedByUserLogin = newLastModifiedByUserLogin;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, LedgerPackage.GL_RECONCILIATION__LAST_MODIFIED_BY_USER_LOGIN, oldLastModifiedByUserLogin, lastModifiedByUserLogin));
 	}
 
 	/**
@@ -395,7 +412,10 @@ public class GlReconciliationImpl extends BizEntityImpl implements GlReconciliat
 	 */
 	@Override
 	public void setLastModifiedDate(Date newLastModifiedDate) {
+		Date oldLastModifiedDate = lastModifiedDate;
 		lastModifiedDate = newLastModifiedDate;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, LedgerPackage.GL_RECONCILIATION__LAST_MODIFIED_DATE, oldLastModifiedDate, lastModifiedDate));
 	}
 
 	/**
@@ -415,7 +435,10 @@ public class GlReconciliationImpl extends BizEntityImpl implements GlReconciliat
 	 */
 	@Override
 	public void setOpeningBalance(BigDecimal newOpeningBalance) {
+		BigDecimal oldOpeningBalance = openingBalance;
 		openingBalance = newOpeningBalance;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, LedgerPackage.GL_RECONCILIATION__OPENING_BALANCE, oldOpeningBalance, openingBalance));
 	}
 
 	/**
@@ -429,6 +452,8 @@ public class GlReconciliationImpl extends BizEntityImpl implements GlReconciliat
 			InternalEObject oldOrganizationPartyId = (InternalEObject)organizationPartyId;
 			organizationPartyId = (Party)eResolveProxy(oldOrganizationPartyId);
 			if (organizationPartyId != oldOrganizationPartyId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, LedgerPackage.GL_RECONCILIATION__ORGANIZATION_PARTY_ID, oldOrganizationPartyId, organizationPartyId));
 			}
 		}
 		return organizationPartyId;
@@ -450,7 +475,10 @@ public class GlReconciliationImpl extends BizEntityImpl implements GlReconciliat
 	 */
 	@Override
 	public void setOrganizationPartyId(Party newOrganizationPartyId) {
+		Party oldOrganizationPartyId = organizationPartyId;
 		organizationPartyId = newOrganizationPartyId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, LedgerPackage.GL_RECONCILIATION__ORGANIZATION_PARTY_ID, oldOrganizationPartyId, organizationPartyId));
 	}
 
 	/**
@@ -470,7 +498,10 @@ public class GlReconciliationImpl extends BizEntityImpl implements GlReconciliat
 	 */
 	@Override
 	public void setReconciledBalance(BigDecimal newReconciledBalance) {
+		BigDecimal oldReconciledBalance = reconciledBalance;
 		reconciledBalance = newReconciledBalance;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, LedgerPackage.GL_RECONCILIATION__RECONCILED_BALANCE, oldReconciledBalance, reconciledBalance));
 	}
 
 	/**
@@ -490,7 +521,10 @@ public class GlReconciliationImpl extends BizEntityImpl implements GlReconciliat
 	 */
 	@Override
 	public void setReconciledDate(Date newReconciledDate) {
+		Date oldReconciledDate = reconciledDate;
 		reconciledDate = newReconciledDate;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, LedgerPackage.GL_RECONCILIATION__RECONCILED_DATE, oldReconciledDate, reconciledDate));
 	}
 
 	/**
@@ -504,6 +538,8 @@ public class GlReconciliationImpl extends BizEntityImpl implements GlReconciliat
 			InternalEObject oldStatusId = (InternalEObject)statusId;
 			statusId = (StatusItem)eResolveProxy(oldStatusId);
 			if (statusId != oldStatusId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, LedgerPackage.GL_RECONCILIATION__STATUS_ID, oldStatusId, statusId));
 			}
 		}
 		return statusId;
@@ -525,7 +561,10 @@ public class GlReconciliationImpl extends BizEntityImpl implements GlReconciliat
 	 */
 	@Override
 	public void setStatusId(StatusItem newStatusId) {
+		StatusItem oldStatusId = statusId;
 		statusId = newStatusId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, LedgerPackage.GL_RECONCILIATION__STATUS_ID, oldStatusId, statusId));
 	}
 
 	/**
@@ -551,6 +590,8 @@ public class GlReconciliationImpl extends BizEntityImpl implements GlReconciliat
 			InternalEObject oldGlAccountId = (InternalEObject)glAccountId;
 			glAccountId = (GlAccount)eResolveProxy(oldGlAccountId);
 			if (glAccountId != oldGlAccountId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, LedgerPackage.GL_RECONCILIATION__GL_ACCOUNT_ID, oldGlAccountId, glAccountId));
 			}
 		}
 		return glAccountId;
@@ -572,7 +613,10 @@ public class GlReconciliationImpl extends BizEntityImpl implements GlReconciliat
 	 */
 	@Override
 	public void setGlAccountId(GlAccount newGlAccountId) {
+		GlAccount oldGlAccountId = glAccountId;
 		glAccountId = newGlAccountId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, LedgerPackage.GL_RECONCILIATION__GL_ACCOUNT_ID, oldGlAccountId, glAccountId));
 	}
 
 	/**
@@ -592,7 +636,10 @@ public class GlReconciliationImpl extends BizEntityImpl implements GlReconciliat
 	 */
 	@Override
 	public void setGlReconciliationId(String newGlReconciliationId) {
+		String oldGlReconciliationId = glReconciliationId;
 		glReconciliationId = newGlReconciliationId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, LedgerPackage.GL_RECONCILIATION__GL_RECONCILIATION_ID, oldGlReconciliationId, glReconciliationId));
 	}
 
 	/**

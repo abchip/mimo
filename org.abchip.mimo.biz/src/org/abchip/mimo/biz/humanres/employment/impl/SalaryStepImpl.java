@@ -15,10 +15,12 @@ import org.abchip.mimo.biz.humanres.employment.EmploymentPackage;
 import org.abchip.mimo.biz.humanres.employment.PayGrade;
 import org.abchip.mimo.biz.humanres.employment.SalaryStep;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -232,7 +234,10 @@ public class SalaryStepImpl extends BizEntityImpl implements SalaryStep {
 	 */
 	@Override
 	public void setAmount(BigDecimal newAmount) {
+		BigDecimal oldAmount = amount;
 		amount = newAmount;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, EmploymentPackage.SALARY_STEP__AMOUNT, oldAmount, amount));
 	}
 
 	/**
@@ -252,7 +257,10 @@ public class SalaryStepImpl extends BizEntityImpl implements SalaryStep {
 	 */
 	@Override
 	public void setCreatedByUserLogin(String newCreatedByUserLogin) {
+		String oldCreatedByUserLogin = createdByUserLogin;
 		createdByUserLogin = newCreatedByUserLogin;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, EmploymentPackage.SALARY_STEP__CREATED_BY_USER_LOGIN, oldCreatedByUserLogin, createdByUserLogin));
 	}
 
 	/**
@@ -272,7 +280,10 @@ public class SalaryStepImpl extends BizEntityImpl implements SalaryStep {
 	 */
 	@Override
 	public void setDateModified(Date newDateModified) {
+		Date oldDateModified = dateModified;
 		dateModified = newDateModified;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, EmploymentPackage.SALARY_STEP__DATE_MODIFIED, oldDateModified, dateModified));
 	}
 
 	/**
@@ -292,7 +303,10 @@ public class SalaryStepImpl extends BizEntityImpl implements SalaryStep {
 	 */
 	@Override
 	public void setFromDate(Date newFromDate) {
+		Date oldFromDate = fromDate;
 		fromDate = newFromDate;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, EmploymentPackage.SALARY_STEP__FROM_DATE, oldFromDate, fromDate));
 	}
 
 	/**
@@ -312,7 +326,10 @@ public class SalaryStepImpl extends BizEntityImpl implements SalaryStep {
 	 */
 	@Override
 	public void setLastModifiedByUserLogin(String newLastModifiedByUserLogin) {
+		String oldLastModifiedByUserLogin = lastModifiedByUserLogin;
 		lastModifiedByUserLogin = newLastModifiedByUserLogin;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, EmploymentPackage.SALARY_STEP__LAST_MODIFIED_BY_USER_LOGIN, oldLastModifiedByUserLogin, lastModifiedByUserLogin));
 	}
 
 	/**
@@ -326,6 +343,8 @@ public class SalaryStepImpl extends BizEntityImpl implements SalaryStep {
 			InternalEObject oldPayGradeId = (InternalEObject)payGradeId;
 			payGradeId = (PayGrade)eResolveProxy(oldPayGradeId);
 			if (payGradeId != oldPayGradeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, EmploymentPackage.SALARY_STEP__PAY_GRADE_ID, oldPayGradeId, payGradeId));
 			}
 		}
 		return payGradeId;
@@ -347,7 +366,10 @@ public class SalaryStepImpl extends BizEntityImpl implements SalaryStep {
 	 */
 	@Override
 	public void setPayGradeId(PayGrade newPayGradeId) {
+		PayGrade oldPayGradeId = payGradeId;
 		payGradeId = newPayGradeId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, EmploymentPackage.SALARY_STEP__PAY_GRADE_ID, oldPayGradeId, payGradeId));
 	}
 
 	/**
@@ -367,7 +389,10 @@ public class SalaryStepImpl extends BizEntityImpl implements SalaryStep {
 	 */
 	@Override
 	public void setSalaryStepSeqId(String newSalaryStepSeqId) {
+		String oldSalaryStepSeqId = salaryStepSeqId;
 		salaryStepSeqId = newSalaryStepSeqId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, EmploymentPackage.SALARY_STEP__SALARY_STEP_SEQ_ID, oldSalaryStepSeqId, salaryStepSeqId));
 	}
 
 	/**
@@ -387,7 +412,10 @@ public class SalaryStepImpl extends BizEntityImpl implements SalaryStep {
 	 */
 	@Override
 	public void setThruDate(Date newThruDate) {
+		Date oldThruDate = thruDate;
 		thruDate = newThruDate;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, EmploymentPackage.SALARY_STEP__THRU_DATE, oldThruDate, thruDate));
 	}
 
 	/**

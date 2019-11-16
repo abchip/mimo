@@ -11,7 +11,9 @@ import org.abchip.mimo.entity.impl.EntityNameableImpl;
 
 import org.abchip.mimo.language.grammar.Grammar;
 import org.abchip.mimo.language.grammar.GrammarPackage;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -105,7 +107,10 @@ public class GrammarImpl extends EntityNameableImpl implements Grammar {
 	 */
 	@Override
 	public void setName(String newName) {
+		String oldName = name;
 		name = newName;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, GrammarPackage.GRAMMAR__NAME, oldName, name));
 	}
 
 	/**
@@ -125,7 +130,10 @@ public class GrammarImpl extends EntityNameableImpl implements Grammar {
 	 */
 	@Override
 	public void setText(String newText) {
+		String oldText = text;
 		text = newText;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, GrammarPackage.GRAMMAR__TEXT, oldText, text));
 	}
 
 	/**

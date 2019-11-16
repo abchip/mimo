@@ -11,10 +11,12 @@ import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.order.quote.QuotePackage;
 import org.abchip.mimo.biz.order.quote.QuoteType;
 import org.abchip.mimo.biz.order.quote.QuoteTypeAttr;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -123,7 +125,10 @@ public class QuoteTypeAttrImpl extends BizEntityImpl implements QuoteTypeAttr {
 	 */
 	@Override
 	public void setAttrName(String newAttrName) {
+		String oldAttrName = attrName;
 		attrName = newAttrName;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, QuotePackage.QUOTE_TYPE_ATTR__ATTR_NAME, oldAttrName, attrName));
 	}
 
 	/**
@@ -143,7 +148,10 @@ public class QuoteTypeAttrImpl extends BizEntityImpl implements QuoteTypeAttr {
 	 */
 	@Override
 	public void setDescription(String newDescription) {
+		String oldDescription = description;
 		description = newDescription;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, QuotePackage.QUOTE_TYPE_ATTR__DESCRIPTION, oldDescription, description));
 	}
 
 	/**
@@ -157,6 +165,8 @@ public class QuoteTypeAttrImpl extends BizEntityImpl implements QuoteTypeAttr {
 			InternalEObject oldQuoteTypeId = (InternalEObject)quoteTypeId;
 			quoteTypeId = (QuoteType)eResolveProxy(oldQuoteTypeId);
 			if (quoteTypeId != oldQuoteTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, QuotePackage.QUOTE_TYPE_ATTR__QUOTE_TYPE_ID, oldQuoteTypeId, quoteTypeId));
 			}
 		}
 		return quoteTypeId;
@@ -178,7 +188,10 @@ public class QuoteTypeAttrImpl extends BizEntityImpl implements QuoteTypeAttr {
 	 */
 	@Override
 	public void setQuoteTypeId(QuoteType newQuoteTypeId) {
+		QuoteType oldQuoteTypeId = quoteTypeId;
 		quoteTypeId = newQuoteTypeId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, QuotePackage.QUOTE_TYPE_ATTR__QUOTE_TYPE_ID, oldQuoteTypeId, quoteTypeId));
 	}
 
 	/**

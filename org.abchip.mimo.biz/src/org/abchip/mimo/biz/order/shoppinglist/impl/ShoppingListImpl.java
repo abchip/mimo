@@ -21,12 +21,14 @@ import org.abchip.mimo.biz.party.party.Party;
 import org.abchip.mimo.biz.product.promo.ProductPromoCode;
 import org.abchip.mimo.biz.product.store.ProductStore;
 import org.abchip.mimo.biz.service.schedule.RecurrenceInfo;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.util.BasicInternalEList;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -444,7 +446,10 @@ public class ShoppingListImpl extends BizEntityTypedImpl<ShoppingListType> imple
 	 */
 	@Override
 	public void setCarrierPartyId(String newCarrierPartyId) {
+		String oldCarrierPartyId = carrierPartyId;
 		carrierPartyId = newCarrierPartyId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ShoppinglistPackage.SHOPPING_LIST__CARRIER_PARTY_ID, oldCarrierPartyId, carrierPartyId));
 	}
 
 	/**
@@ -464,7 +469,10 @@ public class ShoppingListImpl extends BizEntityTypedImpl<ShoppingListType> imple
 	 */
 	@Override
 	public void setCarrierRoleTypeId(String newCarrierRoleTypeId) {
+		String oldCarrierRoleTypeId = carrierRoleTypeId;
 		carrierRoleTypeId = newCarrierRoleTypeId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ShoppinglistPackage.SHOPPING_LIST__CARRIER_ROLE_TYPE_ID, oldCarrierRoleTypeId, carrierRoleTypeId));
 	}
 
 	/**
@@ -478,6 +486,8 @@ public class ShoppingListImpl extends BizEntityTypedImpl<ShoppingListType> imple
 			InternalEObject oldContactMechId = (InternalEObject)contactMechId;
 			contactMechId = (ContactMech)eResolveProxy(oldContactMechId);
 			if (contactMechId != oldContactMechId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ShoppinglistPackage.SHOPPING_LIST__CONTACT_MECH_ID, oldContactMechId, contactMechId));
 			}
 		}
 		return contactMechId;
@@ -499,7 +509,10 @@ public class ShoppingListImpl extends BizEntityTypedImpl<ShoppingListType> imple
 	 */
 	@Override
 	public void setContactMechId(ContactMech newContactMechId) {
+		ContactMech oldContactMechId = contactMechId;
 		contactMechId = newContactMechId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ShoppinglistPackage.SHOPPING_LIST__CONTACT_MECH_ID, oldContactMechId, contactMechId));
 	}
 
 	/**
@@ -519,7 +532,10 @@ public class ShoppingListImpl extends BizEntityTypedImpl<ShoppingListType> imple
 	 */
 	@Override
 	public void setCurrencyUom(String newCurrencyUom) {
+		String oldCurrencyUom = currencyUom;
 		currencyUom = newCurrencyUom;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ShoppinglistPackage.SHOPPING_LIST__CURRENCY_UOM, oldCurrencyUom, currencyUom));
 	}
 
 	/**
@@ -539,7 +555,10 @@ public class ShoppingListImpl extends BizEntityTypedImpl<ShoppingListType> imple
 	 */
 	@Override
 	public void setDescription(String newDescription) {
+		String oldDescription = description;
 		description = newDescription;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ShoppinglistPackage.SHOPPING_LIST__DESCRIPTION, oldDescription, description));
 	}
 
 	/**
@@ -559,7 +578,10 @@ public class ShoppingListImpl extends BizEntityTypedImpl<ShoppingListType> imple
 	 */
 	@Override
 	public void setIsActive(boolean newIsActive) {
+		boolean oldIsActive = isActive;
 		isActive = newIsActive;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ShoppinglistPackage.SHOPPING_LIST__IS_ACTIVE, oldIsActive, isActive));
 	}
 
 	/**
@@ -579,7 +601,10 @@ public class ShoppingListImpl extends BizEntityTypedImpl<ShoppingListType> imple
 	 */
 	@Override
 	public void setIsPublic(boolean newIsPublic) {
+		boolean oldIsPublic = isPublic;
 		isPublic = newIsPublic;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ShoppinglistPackage.SHOPPING_LIST__IS_PUBLIC, oldIsPublic, isPublic));
 	}
 
 	/**
@@ -599,7 +624,10 @@ public class ShoppingListImpl extends BizEntityTypedImpl<ShoppingListType> imple
 	 */
 	@Override
 	public void setLastAdminModified(Date newLastAdminModified) {
+		Date oldLastAdminModified = lastAdminModified;
 		lastAdminModified = newLastAdminModified;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ShoppinglistPackage.SHOPPING_LIST__LAST_ADMIN_MODIFIED, oldLastAdminModified, lastAdminModified));
 	}
 
 	/**
@@ -619,7 +647,10 @@ public class ShoppingListImpl extends BizEntityTypedImpl<ShoppingListType> imple
 	 */
 	@Override
 	public void setLastOrderedDate(Date newLastOrderedDate) {
+		Date oldLastOrderedDate = lastOrderedDate;
 		lastOrderedDate = newLastOrderedDate;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ShoppinglistPackage.SHOPPING_LIST__LAST_ORDERED_DATE, oldLastOrderedDate, lastOrderedDate));
 	}
 
 	/**
@@ -639,7 +670,10 @@ public class ShoppingListImpl extends BizEntityTypedImpl<ShoppingListType> imple
 	 */
 	@Override
 	public void setListName(String newListName) {
+		String oldListName = listName;
 		listName = newListName;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ShoppinglistPackage.SHOPPING_LIST__LIST_NAME, oldListName, listName));
 	}
 
 	/**
@@ -653,6 +687,8 @@ public class ShoppingListImpl extends BizEntityTypedImpl<ShoppingListType> imple
 			InternalEObject oldParentShoppingListId = (InternalEObject)parentShoppingListId;
 			parentShoppingListId = (ShoppingList)eResolveProxy(oldParentShoppingListId);
 			if (parentShoppingListId != oldParentShoppingListId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ShoppinglistPackage.SHOPPING_LIST__PARENT_SHOPPING_LIST_ID, oldParentShoppingListId, parentShoppingListId));
 			}
 		}
 		return parentShoppingListId;
@@ -674,7 +710,10 @@ public class ShoppingListImpl extends BizEntityTypedImpl<ShoppingListType> imple
 	 */
 	@Override
 	public void setParentShoppingListId(ShoppingList newParentShoppingListId) {
+		ShoppingList oldParentShoppingListId = parentShoppingListId;
 		parentShoppingListId = newParentShoppingListId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ShoppinglistPackage.SHOPPING_LIST__PARENT_SHOPPING_LIST_ID, oldParentShoppingListId, parentShoppingListId));
 	}
 
 	/**
@@ -688,6 +727,8 @@ public class ShoppingListImpl extends BizEntityTypedImpl<ShoppingListType> imple
 			InternalEObject oldPartyId = (InternalEObject)partyId;
 			partyId = (Party)eResolveProxy(oldPartyId);
 			if (partyId != oldPartyId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ShoppinglistPackage.SHOPPING_LIST__PARTY_ID, oldPartyId, partyId));
 			}
 		}
 		return partyId;
@@ -709,7 +750,10 @@ public class ShoppingListImpl extends BizEntityTypedImpl<ShoppingListType> imple
 	 */
 	@Override
 	public void setPartyId(Party newPartyId) {
+		Party oldPartyId = partyId;
 		partyId = newPartyId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ShoppinglistPackage.SHOPPING_LIST__PARTY_ID, oldPartyId, partyId));
 	}
 
 	/**
@@ -723,6 +767,8 @@ public class ShoppingListImpl extends BizEntityTypedImpl<ShoppingListType> imple
 			InternalEObject oldPaymentMethodId = (InternalEObject)paymentMethodId;
 			paymentMethodId = (PaymentMethod)eResolveProxy(oldPaymentMethodId);
 			if (paymentMethodId != oldPaymentMethodId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ShoppinglistPackage.SHOPPING_LIST__PAYMENT_METHOD_ID, oldPaymentMethodId, paymentMethodId));
 			}
 		}
 		return paymentMethodId;
@@ -744,7 +790,10 @@ public class ShoppingListImpl extends BizEntityTypedImpl<ShoppingListType> imple
 	 */
 	@Override
 	public void setPaymentMethodId(PaymentMethod newPaymentMethodId) {
+		PaymentMethod oldPaymentMethodId = paymentMethodId;
 		paymentMethodId = newPaymentMethodId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ShoppinglistPackage.SHOPPING_LIST__PAYMENT_METHOD_ID, oldPaymentMethodId, paymentMethodId));
 	}
 
 	/**
@@ -758,6 +807,8 @@ public class ShoppingListImpl extends BizEntityTypedImpl<ShoppingListType> imple
 			InternalEObject oldProductPromoCodeId = (InternalEObject)productPromoCodeId;
 			productPromoCodeId = (ProductPromoCode)eResolveProxy(oldProductPromoCodeId);
 			if (productPromoCodeId != oldProductPromoCodeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ShoppinglistPackage.SHOPPING_LIST__PRODUCT_PROMO_CODE_ID, oldProductPromoCodeId, productPromoCodeId));
 			}
 		}
 		return productPromoCodeId;
@@ -779,7 +830,10 @@ public class ShoppingListImpl extends BizEntityTypedImpl<ShoppingListType> imple
 	 */
 	@Override
 	public void setProductPromoCodeId(ProductPromoCode newProductPromoCodeId) {
+		ProductPromoCode oldProductPromoCodeId = productPromoCodeId;
 		productPromoCodeId = newProductPromoCodeId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ShoppinglistPackage.SHOPPING_LIST__PRODUCT_PROMO_CODE_ID, oldProductPromoCodeId, productPromoCodeId));
 	}
 
 	/**
@@ -793,6 +847,8 @@ public class ShoppingListImpl extends BizEntityTypedImpl<ShoppingListType> imple
 			InternalEObject oldProductStoreId = (InternalEObject)productStoreId;
 			productStoreId = (ProductStore)eResolveProxy(oldProductStoreId);
 			if (productStoreId != oldProductStoreId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ShoppinglistPackage.SHOPPING_LIST__PRODUCT_STORE_ID, oldProductStoreId, productStoreId));
 			}
 		}
 		return productStoreId;
@@ -814,7 +870,10 @@ public class ShoppingListImpl extends BizEntityTypedImpl<ShoppingListType> imple
 	 */
 	@Override
 	public void setProductStoreId(ProductStore newProductStoreId) {
+		ProductStore oldProductStoreId = productStoreId;
 		productStoreId = newProductStoreId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ShoppinglistPackage.SHOPPING_LIST__PRODUCT_STORE_ID, oldProductStoreId, productStoreId));
 	}
 
 	/**
@@ -828,6 +887,8 @@ public class ShoppingListImpl extends BizEntityTypedImpl<ShoppingListType> imple
 			InternalEObject oldRecurrenceInfoId = (InternalEObject)recurrenceInfoId;
 			recurrenceInfoId = (RecurrenceInfo)eResolveProxy(oldRecurrenceInfoId);
 			if (recurrenceInfoId != oldRecurrenceInfoId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ShoppinglistPackage.SHOPPING_LIST__RECURRENCE_INFO_ID, oldRecurrenceInfoId, recurrenceInfoId));
 			}
 		}
 		return recurrenceInfoId;
@@ -849,7 +910,10 @@ public class ShoppingListImpl extends BizEntityTypedImpl<ShoppingListType> imple
 	 */
 	@Override
 	public void setRecurrenceInfoId(RecurrenceInfo newRecurrenceInfoId) {
+		RecurrenceInfo oldRecurrenceInfoId = recurrenceInfoId;
 		recurrenceInfoId = newRecurrenceInfoId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ShoppinglistPackage.SHOPPING_LIST__RECURRENCE_INFO_ID, oldRecurrenceInfoId, recurrenceInfoId));
 	}
 
 	/**
@@ -869,7 +933,10 @@ public class ShoppingListImpl extends BizEntityTypedImpl<ShoppingListType> imple
 	 */
 	@Override
 	public void setShipmentMethodTypeId(String newShipmentMethodTypeId) {
+		String oldShipmentMethodTypeId = shipmentMethodTypeId;
 		shipmentMethodTypeId = newShipmentMethodTypeId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ShoppinglistPackage.SHOPPING_LIST__SHIPMENT_METHOD_TYPE_ID, oldShipmentMethodTypeId, shipmentMethodTypeId));
 	}
 
 	/**
@@ -889,7 +956,10 @@ public class ShoppingListImpl extends BizEntityTypedImpl<ShoppingListType> imple
 	 */
 	@Override
 	public void setShoppingListId(String newShoppingListId) {
+		String oldShoppingListId = shoppingListId;
 		shoppingListId = newShoppingListId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ShoppinglistPackage.SHOPPING_LIST__SHOPPING_LIST_ID, oldShoppingListId, shoppingListId));
 	}
 
 	/**
@@ -903,6 +973,8 @@ public class ShoppingListImpl extends BizEntityTypedImpl<ShoppingListType> imple
 			InternalEObject oldShoppingListTypeId = (InternalEObject)shoppingListTypeId;
 			shoppingListTypeId = (ShoppingListType)eResolveProxy(oldShoppingListTypeId);
 			if (shoppingListTypeId != oldShoppingListTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ShoppinglistPackage.SHOPPING_LIST__SHOPPING_LIST_TYPE_ID, oldShoppingListTypeId, shoppingListTypeId));
 			}
 		}
 		return shoppingListTypeId;
@@ -924,7 +996,10 @@ public class ShoppingListImpl extends BizEntityTypedImpl<ShoppingListType> imple
 	 */
 	@Override
 	public void setShoppingListTypeId(ShoppingListType newShoppingListTypeId) {
+		ShoppingListType oldShoppingListTypeId = shoppingListTypeId;
 		shoppingListTypeId = newShoppingListTypeId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ShoppinglistPackage.SHOPPING_LIST__SHOPPING_LIST_TYPE_ID, oldShoppingListTypeId, shoppingListTypeId));
 	}
 
 	/**
@@ -944,7 +1019,10 @@ public class ShoppingListImpl extends BizEntityTypedImpl<ShoppingListType> imple
 	 */
 	@Override
 	public void setVisitorId(String newVisitorId) {
+		String oldVisitorId = visitorId;
 		visitorId = newVisitorId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ShoppinglistPackage.SHOPPING_LIST__VISITOR_ID, oldVisitorId, visitorId));
 	}
 
 	/**
@@ -955,7 +1033,7 @@ public class ShoppingListImpl extends BizEntityTypedImpl<ShoppingListType> imple
 	@Override
 	public List<String> getShoppingListItems() {
 		if (shoppingListItems == null) {
-			shoppingListItems = new BasicInternalEList<String>(String.class);
+			shoppingListItems = new EDataTypeUniqueEList<String>(String.class, this, ShoppinglistPackage.SHOPPING_LIST__SHOPPING_LIST_ITEMS);
 		}
 		return shoppingListItems;
 	}
@@ -968,7 +1046,7 @@ public class ShoppingListImpl extends BizEntityTypedImpl<ShoppingListType> imple
 	@Override
 	public List<String> getShoppingListWorkEfforts() {
 		if (shoppingListWorkEfforts == null) {
-			shoppingListWorkEfforts = new BasicInternalEList<String>(String.class);
+			shoppingListWorkEfforts = new EDataTypeUniqueEList<String>(String.class, this, ShoppinglistPackage.SHOPPING_LIST__SHOPPING_LIST_WORK_EFFORTS);
 		}
 		return shoppingListWorkEfforts;
 	}

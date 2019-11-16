@@ -14,10 +14,12 @@ import org.abchip.mimo.biz.content.survey.SurveyApplType;
 import org.abchip.mimo.biz.content.survey.SurveyPackage;
 import org.abchip.mimo.biz.content.survey.SurveyTrigger;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -137,7 +139,10 @@ public class SurveyTriggerImpl extends BizEntityImpl implements SurveyTrigger {
 	 */
 	@Override
 	public void setFromDate(Date newFromDate) {
+		Date oldFromDate = fromDate;
 		fromDate = newFromDate;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SurveyPackage.SURVEY_TRIGGER__FROM_DATE, oldFromDate, fromDate));
 	}
 
 	/**
@@ -151,6 +156,8 @@ public class SurveyTriggerImpl extends BizEntityImpl implements SurveyTrigger {
 			InternalEObject oldSurveyApplTypeId = (InternalEObject)surveyApplTypeId;
 			surveyApplTypeId = (SurveyApplType)eResolveProxy(oldSurveyApplTypeId);
 			if (surveyApplTypeId != oldSurveyApplTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, SurveyPackage.SURVEY_TRIGGER__SURVEY_APPL_TYPE_ID, oldSurveyApplTypeId, surveyApplTypeId));
 			}
 		}
 		return surveyApplTypeId;
@@ -172,7 +179,10 @@ public class SurveyTriggerImpl extends BizEntityImpl implements SurveyTrigger {
 	 */
 	@Override
 	public void setSurveyApplTypeId(SurveyApplType newSurveyApplTypeId) {
+		SurveyApplType oldSurveyApplTypeId = surveyApplTypeId;
 		surveyApplTypeId = newSurveyApplTypeId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SurveyPackage.SURVEY_TRIGGER__SURVEY_APPL_TYPE_ID, oldSurveyApplTypeId, surveyApplTypeId));
 	}
 
 	/**
@@ -186,6 +196,8 @@ public class SurveyTriggerImpl extends BizEntityImpl implements SurveyTrigger {
 			InternalEObject oldSurveyId = (InternalEObject)surveyId;
 			surveyId = (Survey)eResolveProxy(oldSurveyId);
 			if (surveyId != oldSurveyId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, SurveyPackage.SURVEY_TRIGGER__SURVEY_ID, oldSurveyId, surveyId));
 			}
 		}
 		return surveyId;
@@ -207,7 +219,10 @@ public class SurveyTriggerImpl extends BizEntityImpl implements SurveyTrigger {
 	 */
 	@Override
 	public void setSurveyId(Survey newSurveyId) {
+		Survey oldSurveyId = surveyId;
 		surveyId = newSurveyId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SurveyPackage.SURVEY_TRIGGER__SURVEY_ID, oldSurveyId, surveyId));
 	}
 
 	/**
@@ -227,7 +242,10 @@ public class SurveyTriggerImpl extends BizEntityImpl implements SurveyTrigger {
 	 */
 	@Override
 	public void setThruDate(Date newThruDate) {
+		Date oldThruDate = thruDate;
 		thruDate = newThruDate;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SurveyPackage.SURVEY_TRIGGER__THRU_DATE, oldThruDate, thruDate));
 	}
 
 	/**

@@ -14,8 +14,10 @@ import org.abchip.mimo.util.DateFormat;
 import org.abchip.mimo.util.DatetimeDef;
 import org.abchip.mimo.util.DatetimeType;
 import org.abchip.mimo.util.UtilPackage;
+import org.eclipse.emf.common.notify.Notification;
 import org.abchip.mimo.util.TimeFormat;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -128,7 +130,10 @@ public class DatetimeDefImpl extends DataDefImpl<Date> implements DatetimeDef {
 	 */
 	@Override
 	public void setType(DatetimeType newType) {
+		DatetimeType oldType = type;
 		type = newType == null ? TYPE_EDEFAULT : newType;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, UtilPackage.DATETIME_DEF__TYPE, oldType, type));
 	}
 
 	/**
@@ -148,7 +153,10 @@ public class DatetimeDefImpl extends DataDefImpl<Date> implements DatetimeDef {
 	 */
 	@Override
 	public void setDateFormat(DateFormat newDateFormat) {
+		DateFormat oldDateFormat = dateFormat;
 		dateFormat = newDateFormat == null ? DATE_FORMAT_EDEFAULT : newDateFormat;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, UtilPackage.DATETIME_DEF__DATE_FORMAT, oldDateFormat, dateFormat));
 	}
 
 	/**
@@ -168,7 +176,10 @@ public class DatetimeDefImpl extends DataDefImpl<Date> implements DatetimeDef {
 	 */
 	@Override
 	public void setTimeFormat(TimeFormat newTimeFormat) {
+		TimeFormat oldTimeFormat = timeFormat;
 		timeFormat = newTimeFormat == null ? TIME_FORMAT_EDEFAULT : newTimeFormat;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, UtilPackage.DATETIME_DEF__TIME_FORMAT, oldTimeFormat, timeFormat));
 	}
 
 	/**

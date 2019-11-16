@@ -13,10 +13,12 @@ import org.abchip.mimo.biz.humanres.ability.PerfReviewItem;
 import org.abchip.mimo.biz.humanres.ability.PerfReviewItemType;
 import org.abchip.mimo.biz.impl.BizEntityTypedImpl;
 import org.abchip.mimo.biz.party.party.Party;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -189,7 +191,10 @@ public class PerfReviewItemImpl extends BizEntityTypedImpl<PerfReviewItemType> i
 	 */
 	@Override
 	public void setComments(String newComments) {
+		String oldComments = comments;
 		comments = newComments;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, AbilityPackage.PERF_REVIEW_ITEM__COMMENTS, oldComments, comments));
 	}
 
 	/**
@@ -203,6 +208,8 @@ public class PerfReviewItemImpl extends BizEntityTypedImpl<PerfReviewItemType> i
 			InternalEObject oldEmployeePartyId = (InternalEObject)employeePartyId;
 			employeePartyId = (Party)eResolveProxy(oldEmployeePartyId);
 			if (employeePartyId != oldEmployeePartyId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, AbilityPackage.PERF_REVIEW_ITEM__EMPLOYEE_PARTY_ID, oldEmployeePartyId, employeePartyId));
 			}
 		}
 		return employeePartyId;
@@ -224,7 +231,10 @@ public class PerfReviewItemImpl extends BizEntityTypedImpl<PerfReviewItemType> i
 	 */
 	@Override
 	public void setEmployeePartyId(Party newEmployeePartyId) {
+		Party oldEmployeePartyId = employeePartyId;
 		employeePartyId = newEmployeePartyId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, AbilityPackage.PERF_REVIEW_ITEM__EMPLOYEE_PARTY_ID, oldEmployeePartyId, employeePartyId));
 	}
 
 	/**
@@ -244,7 +254,10 @@ public class PerfReviewItemImpl extends BizEntityTypedImpl<PerfReviewItemType> i
 	 */
 	@Override
 	public void setEmployeeRoleTypeId(String newEmployeeRoleTypeId) {
+		String oldEmployeeRoleTypeId = employeeRoleTypeId;
 		employeeRoleTypeId = newEmployeeRoleTypeId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, AbilityPackage.PERF_REVIEW_ITEM__EMPLOYEE_ROLE_TYPE_ID, oldEmployeeRoleTypeId, employeeRoleTypeId));
 	}
 
 	/**
@@ -258,6 +271,8 @@ public class PerfReviewItemImpl extends BizEntityTypedImpl<PerfReviewItemType> i
 			InternalEObject oldPerfRatingTypeId = (InternalEObject)perfRatingTypeId;
 			perfRatingTypeId = (PerfRatingType)eResolveProxy(oldPerfRatingTypeId);
 			if (perfRatingTypeId != oldPerfRatingTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, AbilityPackage.PERF_REVIEW_ITEM__PERF_RATING_TYPE_ID, oldPerfRatingTypeId, perfRatingTypeId));
 			}
 		}
 		return perfRatingTypeId;
@@ -279,7 +294,10 @@ public class PerfReviewItemImpl extends BizEntityTypedImpl<PerfReviewItemType> i
 	 */
 	@Override
 	public void setPerfRatingTypeId(PerfRatingType newPerfRatingTypeId) {
+		PerfRatingType oldPerfRatingTypeId = perfRatingTypeId;
 		perfRatingTypeId = newPerfRatingTypeId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, AbilityPackage.PERF_REVIEW_ITEM__PERF_RATING_TYPE_ID, oldPerfRatingTypeId, perfRatingTypeId));
 	}
 
 	/**
@@ -299,7 +317,10 @@ public class PerfReviewItemImpl extends BizEntityTypedImpl<PerfReviewItemType> i
 	 */
 	@Override
 	public void setPerfReviewId(String newPerfReviewId) {
+		String oldPerfReviewId = perfReviewId;
 		perfReviewId = newPerfReviewId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, AbilityPackage.PERF_REVIEW_ITEM__PERF_REVIEW_ID, oldPerfReviewId, perfReviewId));
 	}
 
 	/**
@@ -319,7 +340,10 @@ public class PerfReviewItemImpl extends BizEntityTypedImpl<PerfReviewItemType> i
 	 */
 	@Override
 	public void setPerfReviewItemSeqId(String newPerfReviewItemSeqId) {
+		String oldPerfReviewItemSeqId = perfReviewItemSeqId;
 		perfReviewItemSeqId = newPerfReviewItemSeqId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, AbilityPackage.PERF_REVIEW_ITEM__PERF_REVIEW_ITEM_SEQ_ID, oldPerfReviewItemSeqId, perfReviewItemSeqId));
 	}
 
 	/**
@@ -333,6 +357,8 @@ public class PerfReviewItemImpl extends BizEntityTypedImpl<PerfReviewItemType> i
 			InternalEObject oldPerfReviewItemTypeId = (InternalEObject)perfReviewItemTypeId;
 			perfReviewItemTypeId = (PerfReviewItemType)eResolveProxy(oldPerfReviewItemTypeId);
 			if (perfReviewItemTypeId != oldPerfReviewItemTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, AbilityPackage.PERF_REVIEW_ITEM__PERF_REVIEW_ITEM_TYPE_ID, oldPerfReviewItemTypeId, perfReviewItemTypeId));
 			}
 		}
 		return perfReviewItemTypeId;
@@ -354,7 +380,10 @@ public class PerfReviewItemImpl extends BizEntityTypedImpl<PerfReviewItemType> i
 	 */
 	@Override
 	public void setPerfReviewItemTypeId(PerfReviewItemType newPerfReviewItemTypeId) {
+		PerfReviewItemType oldPerfReviewItemTypeId = perfReviewItemTypeId;
 		perfReviewItemTypeId = newPerfReviewItemTypeId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, AbilityPackage.PERF_REVIEW_ITEM__PERF_REVIEW_ITEM_TYPE_ID, oldPerfReviewItemTypeId, perfReviewItemTypeId));
 	}
 
 	/**

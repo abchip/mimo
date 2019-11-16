@@ -28,11 +28,13 @@ import org.abchip.mimo.biz.impl.BizEntityTypedImpl;
 import org.abchip.mimo.biz.order.order.OrderPaymentPreference;
 import org.abchip.mimo.biz.party.party.Party;
 import org.abchip.mimo.biz.party.party.RoleType;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.util.BasicInternalEList;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -344,7 +346,10 @@ public class PaymentImpl extends BizEntityTypedImpl<PaymentType> implements Paym
 	 */
 	@Override
 	public void setActualCurrencyAmount(BigDecimal newActualCurrencyAmount) {
+		BigDecimal oldActualCurrencyAmount = actualCurrencyAmount;
 		actualCurrencyAmount = newActualCurrencyAmount;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.PAYMENT__ACTUAL_CURRENCY_AMOUNT, oldActualCurrencyAmount, actualCurrencyAmount));
 	}
 
 	/**
@@ -358,6 +363,8 @@ public class PaymentImpl extends BizEntityTypedImpl<PaymentType> implements Paym
 			InternalEObject oldActualCurrencyUomId = (InternalEObject)actualCurrencyUomId;
 			actualCurrencyUomId = (Uom)eResolveProxy(oldActualCurrencyUomId);
 			if (actualCurrencyUomId != oldActualCurrencyUomId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PaymentPackage.PAYMENT__ACTUAL_CURRENCY_UOM_ID, oldActualCurrencyUomId, actualCurrencyUomId));
 			}
 		}
 		return actualCurrencyUomId;
@@ -379,7 +386,10 @@ public class PaymentImpl extends BizEntityTypedImpl<PaymentType> implements Paym
 	 */
 	@Override
 	public void setActualCurrencyUomId(Uom newActualCurrencyUomId) {
+		Uom oldActualCurrencyUomId = actualCurrencyUomId;
 		actualCurrencyUomId = newActualCurrencyUomId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.PAYMENT__ACTUAL_CURRENCY_UOM_ID, oldActualCurrencyUomId, actualCurrencyUomId));
 	}
 
 	/**
@@ -399,7 +409,10 @@ public class PaymentImpl extends BizEntityTypedImpl<PaymentType> implements Paym
 	 */
 	@Override
 	public void setAmount(BigDecimal newAmount) {
+		BigDecimal oldAmount = amount;
 		amount = newAmount;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.PAYMENT__AMOUNT, oldAmount, amount));
 	}
 
 	/**
@@ -419,7 +432,10 @@ public class PaymentImpl extends BizEntityTypedImpl<PaymentType> implements Paym
 	 */
 	@Override
 	public void setComments(String newComments) {
+		String oldComments = comments;
 		comments = newComments;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.PAYMENT__COMMENTS, oldComments, comments));
 	}
 
 	/**
@@ -433,6 +449,8 @@ public class PaymentImpl extends BizEntityTypedImpl<PaymentType> implements Paym
 			InternalEObject oldCurrencyUomId = (InternalEObject)currencyUomId;
 			currencyUomId = (Uom)eResolveProxy(oldCurrencyUomId);
 			if (currencyUomId != oldCurrencyUomId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PaymentPackage.PAYMENT__CURRENCY_UOM_ID, oldCurrencyUomId, currencyUomId));
 			}
 		}
 		return currencyUomId;
@@ -454,7 +472,10 @@ public class PaymentImpl extends BizEntityTypedImpl<PaymentType> implements Paym
 	 */
 	@Override
 	public void setCurrencyUomId(Uom newCurrencyUomId) {
+		Uom oldCurrencyUomId = currencyUomId;
 		currencyUomId = newCurrencyUomId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.PAYMENT__CURRENCY_UOM_ID, oldCurrencyUomId, currencyUomId));
 	}
 
 	/**
@@ -474,7 +495,10 @@ public class PaymentImpl extends BizEntityTypedImpl<PaymentType> implements Paym
 	 */
 	@Override
 	public void setEffectiveDate(Date newEffectiveDate) {
+		Date oldEffectiveDate = effectiveDate;
 		effectiveDate = newEffectiveDate;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.PAYMENT__EFFECTIVE_DATE, oldEffectiveDate, effectiveDate));
 	}
 
 	/**
@@ -488,6 +512,8 @@ public class PaymentImpl extends BizEntityTypedImpl<PaymentType> implements Paym
 			InternalEObject oldPartyIdFrom = (InternalEObject)partyIdFrom;
 			partyIdFrom = (Party)eResolveProxy(oldPartyIdFrom);
 			if (partyIdFrom != oldPartyIdFrom) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PaymentPackage.PAYMENT__PARTY_ID_FROM, oldPartyIdFrom, partyIdFrom));
 			}
 		}
 		return partyIdFrom;
@@ -509,7 +535,10 @@ public class PaymentImpl extends BizEntityTypedImpl<PaymentType> implements Paym
 	 */
 	@Override
 	public void setPartyIdFrom(Party newPartyIdFrom) {
+		Party oldPartyIdFrom = partyIdFrom;
 		partyIdFrom = newPartyIdFrom;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.PAYMENT__PARTY_ID_FROM, oldPartyIdFrom, partyIdFrom));
 	}
 
 	/**
@@ -523,6 +552,8 @@ public class PaymentImpl extends BizEntityTypedImpl<PaymentType> implements Paym
 			InternalEObject oldPartyIdTo = (InternalEObject)partyIdTo;
 			partyIdTo = (Party)eResolveProxy(oldPartyIdTo);
 			if (partyIdTo != oldPartyIdTo) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PaymentPackage.PAYMENT__PARTY_ID_TO, oldPartyIdTo, partyIdTo));
 			}
 		}
 		return partyIdTo;
@@ -544,7 +575,10 @@ public class PaymentImpl extends BizEntityTypedImpl<PaymentType> implements Paym
 	 */
 	@Override
 	public void setPartyIdTo(Party newPartyIdTo) {
+		Party oldPartyIdTo = partyIdTo;
 		partyIdTo = newPartyIdTo;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.PAYMENT__PARTY_ID_TO, oldPartyIdTo, partyIdTo));
 	}
 
 	/**
@@ -558,6 +592,8 @@ public class PaymentImpl extends BizEntityTypedImpl<PaymentType> implements Paym
 			InternalEObject oldPaymentPreferenceId = (InternalEObject)paymentPreferenceId;
 			paymentPreferenceId = (OrderPaymentPreference)eResolveProxy(oldPaymentPreferenceId);
 			if (paymentPreferenceId != oldPaymentPreferenceId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PaymentPackage.PAYMENT__PAYMENT_PREFERENCE_ID, oldPaymentPreferenceId, paymentPreferenceId));
 			}
 		}
 		return paymentPreferenceId;
@@ -579,7 +615,10 @@ public class PaymentImpl extends BizEntityTypedImpl<PaymentType> implements Paym
 	 */
 	@Override
 	public void setPaymentPreferenceId(OrderPaymentPreference newPaymentPreferenceId) {
+		OrderPaymentPreference oldPaymentPreferenceId = paymentPreferenceId;
 		paymentPreferenceId = newPaymentPreferenceId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.PAYMENT__PAYMENT_PREFERENCE_ID, oldPaymentPreferenceId, paymentPreferenceId));
 	}
 
 	/**
@@ -599,7 +638,10 @@ public class PaymentImpl extends BizEntityTypedImpl<PaymentType> implements Paym
 	 */
 	@Override
 	public void setPaymentRefNum(String newPaymentRefNum) {
+		String oldPaymentRefNum = paymentRefNum;
 		paymentRefNum = newPaymentRefNum;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.PAYMENT__PAYMENT_REF_NUM, oldPaymentRefNum, paymentRefNum));
 	}
 
 	/**
@@ -613,6 +655,8 @@ public class PaymentImpl extends BizEntityTypedImpl<PaymentType> implements Paym
 			InternalEObject oldRoleTypeIdTo = (InternalEObject)roleTypeIdTo;
 			roleTypeIdTo = (RoleType)eResolveProxy(oldRoleTypeIdTo);
 			if (roleTypeIdTo != oldRoleTypeIdTo) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PaymentPackage.PAYMENT__ROLE_TYPE_ID_TO, oldRoleTypeIdTo, roleTypeIdTo));
 			}
 		}
 		return roleTypeIdTo;
@@ -634,7 +678,10 @@ public class PaymentImpl extends BizEntityTypedImpl<PaymentType> implements Paym
 	 */
 	@Override
 	public void setRoleTypeIdTo(RoleType newRoleTypeIdTo) {
+		RoleType oldRoleTypeIdTo = roleTypeIdTo;
 		roleTypeIdTo = newRoleTypeIdTo;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.PAYMENT__ROLE_TYPE_ID_TO, oldRoleTypeIdTo, roleTypeIdTo));
 	}
 
 	/**
@@ -648,6 +695,8 @@ public class PaymentImpl extends BizEntityTypedImpl<PaymentType> implements Paym
 			InternalEObject oldStatusId = (InternalEObject)statusId;
 			statusId = (StatusItem)eResolveProxy(oldStatusId);
 			if (statusId != oldStatusId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PaymentPackage.PAYMENT__STATUS_ID, oldStatusId, statusId));
 			}
 		}
 		return statusId;
@@ -669,7 +718,10 @@ public class PaymentImpl extends BizEntityTypedImpl<PaymentType> implements Paym
 	 */
 	@Override
 	public void setStatusId(StatusItem newStatusId) {
+		StatusItem oldStatusId = statusId;
 		statusId = newStatusId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.PAYMENT__STATUS_ID, oldStatusId, statusId));
 	}
 
 	/**
@@ -680,7 +732,7 @@ public class PaymentImpl extends BizEntityTypedImpl<PaymentType> implements Paym
 	@Override
 	public List<String> getPaymentAttributes() {
 		if (paymentAttributes == null) {
-			paymentAttributes = new BasicInternalEList<String>(String.class);
+			paymentAttributes = new EDataTypeUniqueEList<String>(String.class, this, PaymentPackage.PAYMENT__PAYMENT_ATTRIBUTES);
 		}
 		return paymentAttributes;
 	}
@@ -756,6 +808,8 @@ public class PaymentImpl extends BizEntityTypedImpl<PaymentType> implements Paym
 			InternalEObject oldPaymentTypeId = (InternalEObject)paymentTypeId;
 			paymentTypeId = (PaymentType)eResolveProxy(oldPaymentTypeId);
 			if (paymentTypeId != oldPaymentTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PaymentPackage.PAYMENT__PAYMENT_TYPE_ID, oldPaymentTypeId, paymentTypeId));
 			}
 		}
 		return paymentTypeId;
@@ -777,7 +831,10 @@ public class PaymentImpl extends BizEntityTypedImpl<PaymentType> implements Paym
 	 */
 	@Override
 	public void setPaymentTypeId(PaymentType newPaymentTypeId) {
+		PaymentType oldPaymentTypeId = paymentTypeId;
 		paymentTypeId = newPaymentTypeId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.PAYMENT__PAYMENT_TYPE_ID, oldPaymentTypeId, paymentTypeId));
 	}
 
 	/**
@@ -791,6 +848,8 @@ public class PaymentImpl extends BizEntityTypedImpl<PaymentType> implements Paym
 			InternalEObject oldPaymentMethodTypeId = (InternalEObject)paymentMethodTypeId;
 			paymentMethodTypeId = (PaymentMethodType)eResolveProxy(oldPaymentMethodTypeId);
 			if (paymentMethodTypeId != oldPaymentMethodTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PaymentPackage.PAYMENT__PAYMENT_METHOD_TYPE_ID, oldPaymentMethodTypeId, paymentMethodTypeId));
 			}
 		}
 		return paymentMethodTypeId;
@@ -812,7 +871,10 @@ public class PaymentImpl extends BizEntityTypedImpl<PaymentType> implements Paym
 	 */
 	@Override
 	public void setPaymentMethodTypeId(PaymentMethodType newPaymentMethodTypeId) {
+		PaymentMethodType oldPaymentMethodTypeId = paymentMethodTypeId;
 		paymentMethodTypeId = newPaymentMethodTypeId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.PAYMENT__PAYMENT_METHOD_TYPE_ID, oldPaymentMethodTypeId, paymentMethodTypeId));
 	}
 
 	/**
@@ -826,6 +888,8 @@ public class PaymentImpl extends BizEntityTypedImpl<PaymentType> implements Paym
 			InternalEObject oldPaymentMethodId = (InternalEObject)paymentMethodId;
 			paymentMethodId = (PaymentMethod)eResolveProxy(oldPaymentMethodId);
 			if (paymentMethodId != oldPaymentMethodId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PaymentPackage.PAYMENT__PAYMENT_METHOD_ID, oldPaymentMethodId, paymentMethodId));
 			}
 		}
 		return paymentMethodId;
@@ -847,7 +911,10 @@ public class PaymentImpl extends BizEntityTypedImpl<PaymentType> implements Paym
 	 */
 	@Override
 	public void setPaymentMethodId(PaymentMethod newPaymentMethodId) {
+		PaymentMethod oldPaymentMethodId = paymentMethodId;
 		paymentMethodId = newPaymentMethodId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.PAYMENT__PAYMENT_METHOD_ID, oldPaymentMethodId, paymentMethodId));
 	}
 
 	/**
@@ -861,6 +928,8 @@ public class PaymentImpl extends BizEntityTypedImpl<PaymentType> implements Paym
 			InternalEObject oldPaymentGatewayResponseId = (InternalEObject)paymentGatewayResponseId;
 			paymentGatewayResponseId = (PaymentGatewayResponse)eResolveProxy(oldPaymentGatewayResponseId);
 			if (paymentGatewayResponseId != oldPaymentGatewayResponseId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PaymentPackage.PAYMENT__PAYMENT_GATEWAY_RESPONSE_ID, oldPaymentGatewayResponseId, paymentGatewayResponseId));
 			}
 		}
 		return paymentGatewayResponseId;
@@ -882,7 +951,10 @@ public class PaymentImpl extends BizEntityTypedImpl<PaymentType> implements Paym
 	 */
 	@Override
 	public void setPaymentGatewayResponseId(PaymentGatewayResponse newPaymentGatewayResponseId) {
+		PaymentGatewayResponse oldPaymentGatewayResponseId = paymentGatewayResponseId;
 		paymentGatewayResponseId = newPaymentGatewayResponseId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.PAYMENT__PAYMENT_GATEWAY_RESPONSE_ID, oldPaymentGatewayResponseId, paymentGatewayResponseId));
 	}
 
 	/**
@@ -896,6 +968,8 @@ public class PaymentImpl extends BizEntityTypedImpl<PaymentType> implements Paym
 			InternalEObject oldFinAccountTransId = (InternalEObject)finAccountTransId;
 			finAccountTransId = (FinAccountTrans)eResolveProxy(oldFinAccountTransId);
 			if (finAccountTransId != oldFinAccountTransId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PaymentPackage.PAYMENT__FIN_ACCOUNT_TRANS_ID, oldFinAccountTransId, finAccountTransId));
 			}
 		}
 		return finAccountTransId;
@@ -917,7 +991,10 @@ public class PaymentImpl extends BizEntityTypedImpl<PaymentType> implements Paym
 	 */
 	@Override
 	public void setFinAccountTransId(FinAccountTrans newFinAccountTransId) {
+		FinAccountTrans oldFinAccountTransId = finAccountTransId;
 		finAccountTransId = newFinAccountTransId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.PAYMENT__FIN_ACCOUNT_TRANS_ID, oldFinAccountTransId, finAccountTransId));
 	}
 
 	/**
@@ -931,6 +1008,8 @@ public class PaymentImpl extends BizEntityTypedImpl<PaymentType> implements Paym
 			InternalEObject oldOverrideGlAccountId = (InternalEObject)overrideGlAccountId;
 			overrideGlAccountId = (GlAccount)eResolveProxy(oldOverrideGlAccountId);
 			if (overrideGlAccountId != oldOverrideGlAccountId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PaymentPackage.PAYMENT__OVERRIDE_GL_ACCOUNT_ID, oldOverrideGlAccountId, overrideGlAccountId));
 			}
 		}
 		return overrideGlAccountId;
@@ -952,7 +1031,10 @@ public class PaymentImpl extends BizEntityTypedImpl<PaymentType> implements Paym
 	 */
 	@Override
 	public void setOverrideGlAccountId(GlAccount newOverrideGlAccountId) {
+		GlAccount oldOverrideGlAccountId = overrideGlAccountId;
 		overrideGlAccountId = newOverrideGlAccountId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.PAYMENT__OVERRIDE_GL_ACCOUNT_ID, oldOverrideGlAccountId, overrideGlAccountId));
 	}
 
 	/**
@@ -972,7 +1054,10 @@ public class PaymentImpl extends BizEntityTypedImpl<PaymentType> implements Paym
 	 */
 	@Override
 	public void setPaymentId(String newPaymentId) {
+		String oldPaymentId = paymentId;
 		paymentId = newPaymentId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.PAYMENT__PAYMENT_ID, oldPaymentId, paymentId));
 	}
 
 	/**

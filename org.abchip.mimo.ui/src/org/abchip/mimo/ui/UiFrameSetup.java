@@ -64,6 +64,7 @@ public interface UiFrameSetup extends EntityNameable {
 	 * @model id="true" required="true"
 	 * @generated
 	 */
+	@Override
 	String getName();
 
 	/**

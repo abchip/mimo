@@ -13,9 +13,11 @@ import org.abchip.mimo.biz.product.facility.Facility;
 import org.abchip.mimo.biz.product.facility.FacilityCarrierShipment;
 import org.abchip.mimo.biz.product.facility.FacilityPackage;
 import org.abchip.mimo.biz.shipment.shipment.ShipmentMethodType;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -119,6 +121,8 @@ public class FacilityCarrierShipmentImpl extends BizEntityImpl implements Facili
 			InternalEObject oldPartyId = (InternalEObject)partyId;
 			partyId = (Party)eResolveProxy(oldPartyId);
 			if (partyId != oldPartyId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, FacilityPackage.FACILITY_CARRIER_SHIPMENT__PARTY_ID, oldPartyId, partyId));
 			}
 		}
 		return partyId;
@@ -140,7 +144,10 @@ public class FacilityCarrierShipmentImpl extends BizEntityImpl implements Facili
 	 */
 	@Override
 	public void setPartyId(Party newPartyId) {
+		Party oldPartyId = partyId;
 		partyId = newPartyId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, FacilityPackage.FACILITY_CARRIER_SHIPMENT__PARTY_ID, oldPartyId, partyId));
 	}
 
 	/**
@@ -160,7 +167,10 @@ public class FacilityCarrierShipmentImpl extends BizEntityImpl implements Facili
 	 */
 	@Override
 	public void setRoleTypeId(String newRoleTypeId) {
+		String oldRoleTypeId = roleTypeId;
 		roleTypeId = newRoleTypeId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, FacilityPackage.FACILITY_CARRIER_SHIPMENT__ROLE_TYPE_ID, oldRoleTypeId, roleTypeId));
 	}
 
 	/**
@@ -174,6 +184,8 @@ public class FacilityCarrierShipmentImpl extends BizEntityImpl implements Facili
 			InternalEObject oldShipmentMethodTypeId = (InternalEObject)shipmentMethodTypeId;
 			shipmentMethodTypeId = (ShipmentMethodType)eResolveProxy(oldShipmentMethodTypeId);
 			if (shipmentMethodTypeId != oldShipmentMethodTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, FacilityPackage.FACILITY_CARRIER_SHIPMENT__SHIPMENT_METHOD_TYPE_ID, oldShipmentMethodTypeId, shipmentMethodTypeId));
 			}
 		}
 		return shipmentMethodTypeId;
@@ -195,7 +207,10 @@ public class FacilityCarrierShipmentImpl extends BizEntityImpl implements Facili
 	 */
 	@Override
 	public void setShipmentMethodTypeId(ShipmentMethodType newShipmentMethodTypeId) {
+		ShipmentMethodType oldShipmentMethodTypeId = shipmentMethodTypeId;
 		shipmentMethodTypeId = newShipmentMethodTypeId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, FacilityPackage.FACILITY_CARRIER_SHIPMENT__SHIPMENT_METHOD_TYPE_ID, oldShipmentMethodTypeId, shipmentMethodTypeId));
 	}
 
 	/**
@@ -209,6 +224,8 @@ public class FacilityCarrierShipmentImpl extends BizEntityImpl implements Facili
 			InternalEObject oldFacilityId = (InternalEObject)facilityId;
 			facilityId = (Facility)eResolveProxy(oldFacilityId);
 			if (facilityId != oldFacilityId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, FacilityPackage.FACILITY_CARRIER_SHIPMENT__FACILITY_ID, oldFacilityId, facilityId));
 			}
 		}
 		return facilityId;
@@ -230,7 +247,10 @@ public class FacilityCarrierShipmentImpl extends BizEntityImpl implements Facili
 	 */
 	@Override
 	public void setFacilityId(Facility newFacilityId) {
+		Facility oldFacilityId = facilityId;
 		facilityId = newFacilityId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, FacilityPackage.FACILITY_CARRIER_SHIPMENT__FACILITY_ID, oldFacilityId, facilityId));
 	}
 
 	/**

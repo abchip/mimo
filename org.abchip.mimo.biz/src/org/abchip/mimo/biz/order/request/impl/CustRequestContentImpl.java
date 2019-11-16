@@ -14,10 +14,12 @@ import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.order.request.CustRequest;
 import org.abchip.mimo.biz.order.request.CustRequestContent;
 import org.abchip.mimo.biz.order.request.RequestPackage;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -131,6 +133,8 @@ public class CustRequestContentImpl extends BizEntityImpl implements CustRequest
 			InternalEObject oldContentId = (InternalEObject)contentId;
 			contentId = (Content)eResolveProxy(oldContentId);
 			if (contentId != oldContentId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, RequestPackage.CUST_REQUEST_CONTENT__CONTENT_ID, oldContentId, contentId));
 			}
 		}
 		return contentId;
@@ -152,7 +156,10 @@ public class CustRequestContentImpl extends BizEntityImpl implements CustRequest
 	 */
 	@Override
 	public void setContentId(Content newContentId) {
+		Content oldContentId = contentId;
 		contentId = newContentId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, RequestPackage.CUST_REQUEST_CONTENT__CONTENT_ID, oldContentId, contentId));
 	}
 
 	/**
@@ -166,6 +173,8 @@ public class CustRequestContentImpl extends BizEntityImpl implements CustRequest
 			InternalEObject oldCustRequestId = (InternalEObject)custRequestId;
 			custRequestId = (CustRequest)eResolveProxy(oldCustRequestId);
 			if (custRequestId != oldCustRequestId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, RequestPackage.CUST_REQUEST_CONTENT__CUST_REQUEST_ID, oldCustRequestId, custRequestId));
 			}
 		}
 		return custRequestId;
@@ -187,7 +196,10 @@ public class CustRequestContentImpl extends BizEntityImpl implements CustRequest
 	 */
 	@Override
 	public void setCustRequestId(CustRequest newCustRequestId) {
+		CustRequest oldCustRequestId = custRequestId;
 		custRequestId = newCustRequestId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, RequestPackage.CUST_REQUEST_CONTENT__CUST_REQUEST_ID, oldCustRequestId, custRequestId));
 	}
 
 	/**
@@ -207,7 +219,10 @@ public class CustRequestContentImpl extends BizEntityImpl implements CustRequest
 	 */
 	@Override
 	public void setFromDate(Date newFromDate) {
+		Date oldFromDate = fromDate;
 		fromDate = newFromDate;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, RequestPackage.CUST_REQUEST_CONTENT__FROM_DATE, oldFromDate, fromDate));
 	}
 
 	/**
@@ -227,7 +242,10 @@ public class CustRequestContentImpl extends BizEntityImpl implements CustRequest
 	 */
 	@Override
 	public void setThruDate(Date newThruDate) {
+		Date oldThruDate = thruDate;
 		thruDate = newThruDate;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, RequestPackage.CUST_REQUEST_CONTENT__THRU_DATE, oldThruDate, thruDate));
 	}
 
 	/**

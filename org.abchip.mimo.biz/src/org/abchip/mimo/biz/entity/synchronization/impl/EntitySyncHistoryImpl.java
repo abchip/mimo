@@ -13,10 +13,12 @@ import org.abchip.mimo.biz.entity.synchronization.EntitySync;
 import org.abchip.mimo.biz.entity.synchronization.EntitySyncHistory;
 import org.abchip.mimo.biz.entity.synchronization.SynchronizationPackage;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -586,7 +588,10 @@ public class EntitySyncHistoryImpl extends BizEntityImpl implements EntitySyncHi
 	 */
 	@Override
 	public void setBeginningSynchTime(Date newBeginningSynchTime) {
+		Date oldBeginningSynchTime = beginningSynchTime;
 		beginningSynchTime = newBeginningSynchTime;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SynchronizationPackage.ENTITY_SYNC_HISTORY__BEGINNING_SYNCH_TIME, oldBeginningSynchTime, beginningSynchTime));
 	}
 
 	/**
@@ -600,6 +605,8 @@ public class EntitySyncHistoryImpl extends BizEntityImpl implements EntitySyncHi
 			InternalEObject oldEntitySyncId = (InternalEObject)entitySyncId;
 			entitySyncId = (EntitySync)eResolveProxy(oldEntitySyncId);
 			if (entitySyncId != oldEntitySyncId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, SynchronizationPackage.ENTITY_SYNC_HISTORY__ENTITY_SYNC_ID, oldEntitySyncId, entitySyncId));
 			}
 		}
 		return entitySyncId;
@@ -621,7 +628,10 @@ public class EntitySyncHistoryImpl extends BizEntityImpl implements EntitySyncHi
 	 */
 	@Override
 	public void setEntitySyncId(EntitySync newEntitySyncId) {
+		EntitySync oldEntitySyncId = entitySyncId;
 		entitySyncId = newEntitySyncId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SynchronizationPackage.ENTITY_SYNC_HISTORY__ENTITY_SYNC_ID, oldEntitySyncId, entitySyncId));
 	}
 
 	/**
@@ -641,7 +651,10 @@ public class EntitySyncHistoryImpl extends BizEntityImpl implements EntitySyncHi
 	 */
 	@Override
 	public void setLastCandidateEndTime(Date newLastCandidateEndTime) {
+		Date oldLastCandidateEndTime = lastCandidateEndTime;
 		lastCandidateEndTime = newLastCandidateEndTime;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SynchronizationPackage.ENTITY_SYNC_HISTORY__LAST_CANDIDATE_END_TIME, oldLastCandidateEndTime, lastCandidateEndTime));
 	}
 
 	/**
@@ -661,7 +674,10 @@ public class EntitySyncHistoryImpl extends BizEntityImpl implements EntitySyncHi
 	 */
 	@Override
 	public void setLastSplitStartTime(long newLastSplitStartTime) {
+		long oldLastSplitStartTime = lastSplitStartTime;
 		lastSplitStartTime = newLastSplitStartTime;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SynchronizationPackage.ENTITY_SYNC_HISTORY__LAST_SPLIT_START_TIME, oldLastSplitStartTime, lastSplitStartTime));
 	}
 
 	/**
@@ -681,7 +697,10 @@ public class EntitySyncHistoryImpl extends BizEntityImpl implements EntitySyncHi
 	 */
 	@Override
 	public void setLastSuccessfulSynchTime(Date newLastSuccessfulSynchTime) {
+		Date oldLastSuccessfulSynchTime = lastSuccessfulSynchTime;
 		lastSuccessfulSynchTime = newLastSuccessfulSynchTime;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SynchronizationPackage.ENTITY_SYNC_HISTORY__LAST_SUCCESSFUL_SYNCH_TIME, oldLastSuccessfulSynchTime, lastSuccessfulSynchTime));
 	}
 
 	/**
@@ -701,7 +720,10 @@ public class EntitySyncHistoryImpl extends BizEntityImpl implements EntitySyncHi
 	 */
 	@Override
 	public void setPerSplitMaxItems(long newPerSplitMaxItems) {
+		long oldPerSplitMaxItems = perSplitMaxItems;
 		perSplitMaxItems = newPerSplitMaxItems;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SynchronizationPackage.ENTITY_SYNC_HISTORY__PER_SPLIT_MAX_ITEMS, oldPerSplitMaxItems, perSplitMaxItems));
 	}
 
 	/**
@@ -721,7 +743,10 @@ public class EntitySyncHistoryImpl extends BizEntityImpl implements EntitySyncHi
 	 */
 	@Override
 	public void setPerSplitMaxMillis(long newPerSplitMaxMillis) {
+		long oldPerSplitMaxMillis = perSplitMaxMillis;
 		perSplitMaxMillis = newPerSplitMaxMillis;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SynchronizationPackage.ENTITY_SYNC_HISTORY__PER_SPLIT_MAX_MILLIS, oldPerSplitMaxMillis, perSplitMaxMillis));
 	}
 
 	/**
@@ -741,7 +766,10 @@ public class EntitySyncHistoryImpl extends BizEntityImpl implements EntitySyncHi
 	 */
 	@Override
 	public void setPerSplitMinItems(long newPerSplitMinItems) {
+		long oldPerSplitMinItems = perSplitMinItems;
 		perSplitMinItems = newPerSplitMinItems;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SynchronizationPackage.ENTITY_SYNC_HISTORY__PER_SPLIT_MIN_ITEMS, oldPerSplitMinItems, perSplitMinItems));
 	}
 
 	/**
@@ -761,7 +789,10 @@ public class EntitySyncHistoryImpl extends BizEntityImpl implements EntitySyncHi
 	 */
 	@Override
 	public void setPerSplitMinMillis(long newPerSplitMinMillis) {
+		long oldPerSplitMinMillis = perSplitMinMillis;
 		perSplitMinMillis = newPerSplitMinMillis;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SynchronizationPackage.ENTITY_SYNC_HISTORY__PER_SPLIT_MIN_MILLIS, oldPerSplitMinMillis, perSplitMinMillis));
 	}
 
 	/**
@@ -781,7 +812,10 @@ public class EntitySyncHistoryImpl extends BizEntityImpl implements EntitySyncHi
 	 */
 	@Override
 	public void setRunStatusId(String newRunStatusId) {
+		String oldRunStatusId = runStatusId;
 		runStatusId = newRunStatusId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SynchronizationPackage.ENTITY_SYNC_HISTORY__RUN_STATUS_ID, oldRunStatusId, runStatusId));
 	}
 
 	/**
@@ -801,7 +835,10 @@ public class EntitySyncHistoryImpl extends BizEntityImpl implements EntitySyncHi
 	 */
 	@Override
 	public void setRunningTimeMillis(long newRunningTimeMillis) {
+		long oldRunningTimeMillis = runningTimeMillis;
 		runningTimeMillis = newRunningTimeMillis;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SynchronizationPackage.ENTITY_SYNC_HISTORY__RUNNING_TIME_MILLIS, oldRunningTimeMillis, runningTimeMillis));
 	}
 
 	/**
@@ -821,7 +858,10 @@ public class EntitySyncHistoryImpl extends BizEntityImpl implements EntitySyncHi
 	 */
 	@Override
 	public void setStartDate(Date newStartDate) {
+		Date oldStartDate = startDate;
 		startDate = newStartDate;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SynchronizationPackage.ENTITY_SYNC_HISTORY__START_DATE, oldStartDate, startDate));
 	}
 
 	/**
@@ -841,7 +881,10 @@ public class EntitySyncHistoryImpl extends BizEntityImpl implements EntitySyncHi
 	 */
 	@Override
 	public void setToCreateInserted(long newToCreateInserted) {
+		long oldToCreateInserted = toCreateInserted;
 		toCreateInserted = newToCreateInserted;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SynchronizationPackage.ENTITY_SYNC_HISTORY__TO_CREATE_INSERTED, oldToCreateInserted, toCreateInserted));
 	}
 
 	/**
@@ -861,7 +904,10 @@ public class EntitySyncHistoryImpl extends BizEntityImpl implements EntitySyncHi
 	 */
 	@Override
 	public void setToCreateNotUpdated(long newToCreateNotUpdated) {
+		long oldToCreateNotUpdated = toCreateNotUpdated;
 		toCreateNotUpdated = newToCreateNotUpdated;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SynchronizationPackage.ENTITY_SYNC_HISTORY__TO_CREATE_NOT_UPDATED, oldToCreateNotUpdated, toCreateNotUpdated));
 	}
 
 	/**
@@ -881,7 +927,10 @@ public class EntitySyncHistoryImpl extends BizEntityImpl implements EntitySyncHi
 	 */
 	@Override
 	public void setToCreateUpdated(long newToCreateUpdated) {
+		long oldToCreateUpdated = toCreateUpdated;
 		toCreateUpdated = newToCreateUpdated;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SynchronizationPackage.ENTITY_SYNC_HISTORY__TO_CREATE_UPDATED, oldToCreateUpdated, toCreateUpdated));
 	}
 
 	/**
@@ -901,7 +950,10 @@ public class EntitySyncHistoryImpl extends BizEntityImpl implements EntitySyncHi
 	 */
 	@Override
 	public void setToRemoveAlreadyDeleted(long newToRemoveAlreadyDeleted) {
+		long oldToRemoveAlreadyDeleted = toRemoveAlreadyDeleted;
 		toRemoveAlreadyDeleted = newToRemoveAlreadyDeleted;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SynchronizationPackage.ENTITY_SYNC_HISTORY__TO_REMOVE_ALREADY_DELETED, oldToRemoveAlreadyDeleted, toRemoveAlreadyDeleted));
 	}
 
 	/**
@@ -921,7 +973,10 @@ public class EntitySyncHistoryImpl extends BizEntityImpl implements EntitySyncHi
 	 */
 	@Override
 	public void setToRemoveDeleted(long newToRemoveDeleted) {
+		long oldToRemoveDeleted = toRemoveDeleted;
 		toRemoveDeleted = newToRemoveDeleted;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SynchronizationPackage.ENTITY_SYNC_HISTORY__TO_REMOVE_DELETED, oldToRemoveDeleted, toRemoveDeleted));
 	}
 
 	/**
@@ -941,7 +996,10 @@ public class EntitySyncHistoryImpl extends BizEntityImpl implements EntitySyncHi
 	 */
 	@Override
 	public void setToStoreInserted(long newToStoreInserted) {
+		long oldToStoreInserted = toStoreInserted;
 		toStoreInserted = newToStoreInserted;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SynchronizationPackage.ENTITY_SYNC_HISTORY__TO_STORE_INSERTED, oldToStoreInserted, toStoreInserted));
 	}
 
 	/**
@@ -961,7 +1019,10 @@ public class EntitySyncHistoryImpl extends BizEntityImpl implements EntitySyncHi
 	 */
 	@Override
 	public void setToStoreNotUpdated(long newToStoreNotUpdated) {
+		long oldToStoreNotUpdated = toStoreNotUpdated;
 		toStoreNotUpdated = newToStoreNotUpdated;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SynchronizationPackage.ENTITY_SYNC_HISTORY__TO_STORE_NOT_UPDATED, oldToStoreNotUpdated, toStoreNotUpdated));
 	}
 
 	/**
@@ -981,7 +1042,10 @@ public class EntitySyncHistoryImpl extends BizEntityImpl implements EntitySyncHi
 	 */
 	@Override
 	public void setToStoreUpdated(long newToStoreUpdated) {
+		long oldToStoreUpdated = toStoreUpdated;
 		toStoreUpdated = newToStoreUpdated;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SynchronizationPackage.ENTITY_SYNC_HISTORY__TO_STORE_UPDATED, oldToStoreUpdated, toStoreUpdated));
 	}
 
 	/**
@@ -1001,7 +1065,10 @@ public class EntitySyncHistoryImpl extends BizEntityImpl implements EntitySyncHi
 	 */
 	@Override
 	public void setTotalRowsExported(long newTotalRowsExported) {
+		long oldTotalRowsExported = totalRowsExported;
 		totalRowsExported = newTotalRowsExported;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SynchronizationPackage.ENTITY_SYNC_HISTORY__TOTAL_ROWS_EXPORTED, oldTotalRowsExported, totalRowsExported));
 	}
 
 	/**
@@ -1021,7 +1088,10 @@ public class EntitySyncHistoryImpl extends BizEntityImpl implements EntitySyncHi
 	 */
 	@Override
 	public void setTotalRowsToCreate(long newTotalRowsToCreate) {
+		long oldTotalRowsToCreate = totalRowsToCreate;
 		totalRowsToCreate = newTotalRowsToCreate;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SynchronizationPackage.ENTITY_SYNC_HISTORY__TOTAL_ROWS_TO_CREATE, oldTotalRowsToCreate, totalRowsToCreate));
 	}
 
 	/**
@@ -1041,7 +1111,10 @@ public class EntitySyncHistoryImpl extends BizEntityImpl implements EntitySyncHi
 	 */
 	@Override
 	public void setTotalRowsToRemove(long newTotalRowsToRemove) {
+		long oldTotalRowsToRemove = totalRowsToRemove;
 		totalRowsToRemove = newTotalRowsToRemove;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SynchronizationPackage.ENTITY_SYNC_HISTORY__TOTAL_ROWS_TO_REMOVE, oldTotalRowsToRemove, totalRowsToRemove));
 	}
 
 	/**
@@ -1061,7 +1134,10 @@ public class EntitySyncHistoryImpl extends BizEntityImpl implements EntitySyncHi
 	 */
 	@Override
 	public void setTotalRowsToStore(long newTotalRowsToStore) {
+		long oldTotalRowsToStore = totalRowsToStore;
 		totalRowsToStore = newTotalRowsToStore;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SynchronizationPackage.ENTITY_SYNC_HISTORY__TOTAL_ROWS_TO_STORE, oldTotalRowsToStore, totalRowsToStore));
 	}
 
 	/**
@@ -1081,7 +1157,10 @@ public class EntitySyncHistoryImpl extends BizEntityImpl implements EntitySyncHi
 	 */
 	@Override
 	public void setTotalSplits(long newTotalSplits) {
+		long oldTotalSplits = totalSplits;
 		totalSplits = newTotalSplits;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SynchronizationPackage.ENTITY_SYNC_HISTORY__TOTAL_SPLITS, oldTotalSplits, totalSplits));
 	}
 
 	/**
@@ -1101,7 +1180,10 @@ public class EntitySyncHistoryImpl extends BizEntityImpl implements EntitySyncHi
 	 */
 	@Override
 	public void setTotalStoreCalls(long newTotalStoreCalls) {
+		long oldTotalStoreCalls = totalStoreCalls;
 		totalStoreCalls = newTotalStoreCalls;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SynchronizationPackage.ENTITY_SYNC_HISTORY__TOTAL_STORE_CALLS, oldTotalStoreCalls, totalStoreCalls));
 	}
 
 	/**

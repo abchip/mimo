@@ -11,7 +11,9 @@ import org.abchip.mimo.biz.accounting.tax.TaxAuthorityAssoc;
 import org.abchip.mimo.biz.accounting.tax.TaxAuthorityAssocType;
 import org.abchip.mimo.biz.accounting.tax.TaxPackage;
 import org.abchip.mimo.biz.impl.BizEntityTypeImpl;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -105,7 +107,10 @@ public class TaxAuthorityAssocTypeImpl extends BizEntityTypeImpl<TaxAuthorityAss
 	 */
 	@Override
 	public void setDescription(String newDescription) {
+		String oldDescription = description;
 		description = newDescription;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, TaxPackage.TAX_AUTHORITY_ASSOC_TYPE__DESCRIPTION, oldDescription, description));
 	}
 
 	/**
@@ -125,7 +130,10 @@ public class TaxAuthorityAssocTypeImpl extends BizEntityTypeImpl<TaxAuthorityAss
 	 */
 	@Override
 	public void setTaxAuthorityAssocTypeId(String newTaxAuthorityAssocTypeId) {
+		String oldTaxAuthorityAssocTypeId = taxAuthorityAssocTypeId;
 		taxAuthorityAssocTypeId = newTaxAuthorityAssocTypeId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, TaxPackage.TAX_AUTHORITY_ASSOC_TYPE__TAX_AUTHORITY_ASSOC_TYPE_ID, oldTaxAuthorityAssocTypeId, taxAuthorityAssocTypeId));
 	}
 
 	/**

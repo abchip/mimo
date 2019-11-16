@@ -13,7 +13,9 @@ import org.abchip.mimo.biz.impl.BizEntityTypeImpl;
 import org.abchip.mimo.biz.product.facility.FacilityGroup;
 import org.abchip.mimo.biz.product.facility.FacilityGroupType;
 import org.abchip.mimo.biz.product.facility.FacilityPackage;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -111,7 +113,10 @@ public class FacilityGroupTypeImpl extends BizEntityTypeImpl<FacilityGroup> impl
 	 */
 	@Override
 	public void setDescription(String newDescription) {
+		String oldDescription = description;
 		description = newDescription;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, FacilityPackage.FACILITY_GROUP_TYPE__DESCRIPTION, oldDescription, description));
 	}
 
 	/**
@@ -143,7 +148,10 @@ public class FacilityGroupTypeImpl extends BizEntityTypeImpl<FacilityGroup> impl
 	 */
 	@Override
 	public void setFacilityGroupTypeId(String newFacilityGroupTypeId) {
+		String oldFacilityGroupTypeId = facilityGroupTypeId;
 		facilityGroupTypeId = newFacilityGroupTypeId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, FacilityPackage.FACILITY_GROUP_TYPE__FACILITY_GROUP_TYPE_ID, oldFacilityGroupTypeId, facilityGroupTypeId));
 	}
 
 	/**

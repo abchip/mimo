@@ -15,11 +15,13 @@ import org.abchip.mimo.context.ContextPackage;
 import org.abchip.mimo.context.MessageDescription;
 import org.abchip.mimo.context.MessageFile;
 import org.abchip.mimo.entity.impl.EntityNameableImpl;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.util.BasicInternalEList;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
@@ -110,7 +112,7 @@ public class MessageFileImpl extends EntityNameableImpl implements MessageFile {
 	@Override
 	public List<MessageDescription> getMessages() {
 		if (messages == null) {
-			messages = new BasicInternalEList<MessageDescription>(MessageDescription.class);
+			messages = new EObjectContainmentEList.Resolving<MessageDescription>(MessageDescription.class, this, ContextPackage.MESSAGE_FILE__MESSAGES);
 		}
 		return messages;
 	}
@@ -132,7 +134,10 @@ public class MessageFileImpl extends EntityNameableImpl implements MessageFile {
 	 */
 	@Override
 	public void setName(String newName) {
+		String oldName = name;
 		name = newName;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ContextPackage.MESSAGE_FILE__NAME, oldName, name));
 	}
 
 	/**
@@ -289,6 +294,9 @@ public class MessageFileImpl extends EntityNameableImpl implements MessageFile {
 	 */
 	@Override
 	public void setText(String newText) {
+		String oldText = text;
 		text = newText;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ContextPackage.MESSAGE_FILE__TEXT, oldText, text));
 	}
 } // MessageFileImpl

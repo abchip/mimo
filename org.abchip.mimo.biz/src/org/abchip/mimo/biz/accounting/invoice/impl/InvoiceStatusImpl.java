@@ -15,9 +15,11 @@ import org.abchip.mimo.biz.accounting.invoice.InvoiceStatus;
 import org.abchip.mimo.biz.common.status.StatusItem;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.security.login.UserLogin;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -116,6 +118,8 @@ public class InvoiceStatusImpl extends BizEntityImpl implements InvoiceStatus {
 			InternalEObject oldChangeByUserLoginId = (InternalEObject)changeByUserLoginId;
 			changeByUserLoginId = (UserLogin)eResolveProxy(oldChangeByUserLoginId);
 			if (changeByUserLoginId != oldChangeByUserLoginId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, InvoicePackage.INVOICE_STATUS__CHANGE_BY_USER_LOGIN_ID, oldChangeByUserLoginId, changeByUserLoginId));
 			}
 		}
 		return changeByUserLoginId;
@@ -137,7 +141,10 @@ public class InvoiceStatusImpl extends BizEntityImpl implements InvoiceStatus {
 	 */
 	@Override
 	public void setChangeByUserLoginId(UserLogin newChangeByUserLoginId) {
+		UserLogin oldChangeByUserLoginId = changeByUserLoginId;
 		changeByUserLoginId = newChangeByUserLoginId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, InvoicePackage.INVOICE_STATUS__CHANGE_BY_USER_LOGIN_ID, oldChangeByUserLoginId, changeByUserLoginId));
 	}
 
 	/**
@@ -157,7 +164,10 @@ public class InvoiceStatusImpl extends BizEntityImpl implements InvoiceStatus {
 	 */
 	@Override
 	public void setStatusDate(Date newStatusDate) {
+		Date oldStatusDate = statusDate;
 		statusDate = newStatusDate;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, InvoicePackage.INVOICE_STATUS__STATUS_DATE, oldStatusDate, statusDate));
 	}
 
 	/**
@@ -171,6 +181,8 @@ public class InvoiceStatusImpl extends BizEntityImpl implements InvoiceStatus {
 			InternalEObject oldStatusId = (InternalEObject)statusId;
 			statusId = (StatusItem)eResolveProxy(oldStatusId);
 			if (statusId != oldStatusId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, InvoicePackage.INVOICE_STATUS__STATUS_ID, oldStatusId, statusId));
 			}
 		}
 		return statusId;
@@ -192,7 +204,10 @@ public class InvoiceStatusImpl extends BizEntityImpl implements InvoiceStatus {
 	 */
 	@Override
 	public void setStatusId(StatusItem newStatusId) {
+		StatusItem oldStatusId = statusId;
 		statusId = newStatusId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, InvoicePackage.INVOICE_STATUS__STATUS_ID, oldStatusId, statusId));
 	}
 
 	/**
@@ -206,6 +221,8 @@ public class InvoiceStatusImpl extends BizEntityImpl implements InvoiceStatus {
 			InternalEObject oldInvoiceId = (InternalEObject)invoiceId;
 			invoiceId = (Invoice)eResolveProxy(oldInvoiceId);
 			if (invoiceId != oldInvoiceId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, InvoicePackage.INVOICE_STATUS__INVOICE_ID, oldInvoiceId, invoiceId));
 			}
 		}
 		return invoiceId;
@@ -227,7 +244,10 @@ public class InvoiceStatusImpl extends BizEntityImpl implements InvoiceStatus {
 	 */
 	@Override
 	public void setInvoiceId(Invoice newInvoiceId) {
+		Invoice oldInvoiceId = invoiceId;
 		invoiceId = newInvoiceId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, InvoicePackage.INVOICE_STATUS__INVOICE_ID, oldInvoiceId, invoiceId));
 	}
 
 	/**

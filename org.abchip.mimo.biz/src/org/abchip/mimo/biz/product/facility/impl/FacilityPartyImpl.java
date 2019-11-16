@@ -15,9 +15,11 @@ import org.abchip.mimo.biz.party.party.RoleType;
 import org.abchip.mimo.biz.product.facility.Facility;
 import org.abchip.mimo.biz.product.facility.FacilityPackage;
 import org.abchip.mimo.biz.product.facility.FacilityParty;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -148,7 +150,10 @@ public class FacilityPartyImpl extends BizEntityImpl implements FacilityParty {
 	 */
 	@Override
 	public void setFromDate(Date newFromDate) {
+		Date oldFromDate = fromDate;
 		fromDate = newFromDate;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, FacilityPackage.FACILITY_PARTY__FROM_DATE, oldFromDate, fromDate));
 	}
 
 	/**
@@ -162,6 +167,8 @@ public class FacilityPartyImpl extends BizEntityImpl implements FacilityParty {
 			InternalEObject oldPartyId = (InternalEObject)partyId;
 			partyId = (Party)eResolveProxy(oldPartyId);
 			if (partyId != oldPartyId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, FacilityPackage.FACILITY_PARTY__PARTY_ID, oldPartyId, partyId));
 			}
 		}
 		return partyId;
@@ -183,7 +190,10 @@ public class FacilityPartyImpl extends BizEntityImpl implements FacilityParty {
 	 */
 	@Override
 	public void setPartyId(Party newPartyId) {
+		Party oldPartyId = partyId;
 		partyId = newPartyId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, FacilityPackage.FACILITY_PARTY__PARTY_ID, oldPartyId, partyId));
 	}
 
 	/**
@@ -197,6 +207,8 @@ public class FacilityPartyImpl extends BizEntityImpl implements FacilityParty {
 			InternalEObject oldRoleTypeId = (InternalEObject)roleTypeId;
 			roleTypeId = (RoleType)eResolveProxy(oldRoleTypeId);
 			if (roleTypeId != oldRoleTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, FacilityPackage.FACILITY_PARTY__ROLE_TYPE_ID, oldRoleTypeId, roleTypeId));
 			}
 		}
 		return roleTypeId;
@@ -218,7 +230,10 @@ public class FacilityPartyImpl extends BizEntityImpl implements FacilityParty {
 	 */
 	@Override
 	public void setRoleTypeId(RoleType newRoleTypeId) {
+		RoleType oldRoleTypeId = roleTypeId;
 		roleTypeId = newRoleTypeId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, FacilityPackage.FACILITY_PARTY__ROLE_TYPE_ID, oldRoleTypeId, roleTypeId));
 	}
 
 	/**
@@ -238,7 +253,10 @@ public class FacilityPartyImpl extends BizEntityImpl implements FacilityParty {
 	 */
 	@Override
 	public void setThruDate(Date newThruDate) {
+		Date oldThruDate = thruDate;
 		thruDate = newThruDate;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, FacilityPackage.FACILITY_PARTY__THRU_DATE, oldThruDate, thruDate));
 	}
 
 	/**
@@ -252,6 +270,8 @@ public class FacilityPartyImpl extends BizEntityImpl implements FacilityParty {
 			InternalEObject oldFacilityId = (InternalEObject)facilityId;
 			facilityId = (Facility)eResolveProxy(oldFacilityId);
 			if (facilityId != oldFacilityId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, FacilityPackage.FACILITY_PARTY__FACILITY_ID, oldFacilityId, facilityId));
 			}
 		}
 		return facilityId;
@@ -273,7 +293,10 @@ public class FacilityPartyImpl extends BizEntityImpl implements FacilityParty {
 	 */
 	@Override
 	public void setFacilityId(Facility newFacilityId) {
+		Facility oldFacilityId = facilityId;
 		facilityId = newFacilityId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, FacilityPackage.FACILITY_PARTY__FACILITY_ID, oldFacilityId, facilityId));
 	}
 
 	/**

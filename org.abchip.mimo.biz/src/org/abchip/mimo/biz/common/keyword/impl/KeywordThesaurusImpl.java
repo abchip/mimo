@@ -11,9 +11,11 @@ import org.abchip.mimo.biz.common.enum_.Enumeration;
 import org.abchip.mimo.biz.common.keyword.KeywordPackage;
 import org.abchip.mimo.biz.common.keyword.KeywordThesaurus;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -119,7 +121,10 @@ public class KeywordThesaurusImpl extends BizEntityImpl implements KeywordThesau
 	 */
 	@Override
 	public void setAlternateKeyword(String newAlternateKeyword) {
+		String oldAlternateKeyword = alternateKeyword;
 		alternateKeyword = newAlternateKeyword;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, KeywordPackage.KEYWORD_THESAURUS__ALTERNATE_KEYWORD, oldAlternateKeyword, alternateKeyword));
 	}
 
 	/**
@@ -139,7 +144,10 @@ public class KeywordThesaurusImpl extends BizEntityImpl implements KeywordThesau
 	 */
 	@Override
 	public void setEnteredKeyword(String newEnteredKeyword) {
+		String oldEnteredKeyword = enteredKeyword;
 		enteredKeyword = newEnteredKeyword;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, KeywordPackage.KEYWORD_THESAURUS__ENTERED_KEYWORD, oldEnteredKeyword, enteredKeyword));
 	}
 
 	/**
@@ -153,6 +161,8 @@ public class KeywordThesaurusImpl extends BizEntityImpl implements KeywordThesau
 			InternalEObject oldRelationshipEnumId = (InternalEObject)relationshipEnumId;
 			relationshipEnumId = (Enumeration)eResolveProxy(oldRelationshipEnumId);
 			if (relationshipEnumId != oldRelationshipEnumId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, KeywordPackage.KEYWORD_THESAURUS__RELATIONSHIP_ENUM_ID, oldRelationshipEnumId, relationshipEnumId));
 			}
 		}
 		return relationshipEnumId;
@@ -174,7 +184,10 @@ public class KeywordThesaurusImpl extends BizEntityImpl implements KeywordThesau
 	 */
 	@Override
 	public void setRelationshipEnumId(Enumeration newRelationshipEnumId) {
+		Enumeration oldRelationshipEnumId = relationshipEnumId;
 		relationshipEnumId = newRelationshipEnumId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, KeywordPackage.KEYWORD_THESAURUS__RELATIONSHIP_ENUM_ID, oldRelationshipEnumId, relationshipEnumId));
 	}
 
 	/**

@@ -13,9 +13,11 @@ import org.abchip.mimo.biz.impl.BizEntityTypeImpl;
 import org.abchip.mimo.biz.product.product.ProductMaint;
 import org.abchip.mimo.biz.product.product.ProductMaintType;
 import org.abchip.mimo.biz.product.product.ProductPackage;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -124,7 +126,10 @@ public class ProductMaintTypeImpl extends BizEntityTypeImpl<ProductMaint> implem
 	 */
 	@Override
 	public void setDescription(String newDescription) {
+		String oldDescription = description;
 		description = newDescription;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ProductPackage.PRODUCT_MAINT_TYPE__DESCRIPTION, oldDescription, description));
 	}
 
 	/**
@@ -138,6 +143,8 @@ public class ProductMaintTypeImpl extends BizEntityTypeImpl<ProductMaint> implem
 			InternalEObject oldParentTypeId = (InternalEObject)parentTypeId;
 			parentTypeId = (ProductMaintType)eResolveProxy(oldParentTypeId);
 			if (parentTypeId != oldParentTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ProductPackage.PRODUCT_MAINT_TYPE__PARENT_TYPE_ID, oldParentTypeId, parentTypeId));
 			}
 		}
 		return parentTypeId;
@@ -159,7 +166,10 @@ public class ProductMaintTypeImpl extends BizEntityTypeImpl<ProductMaint> implem
 	 */
 	@Override
 	public void setParentTypeId(ProductMaintType newParentTypeId) {
+		ProductMaintType oldParentTypeId = parentTypeId;
 		parentTypeId = newParentTypeId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ProductPackage.PRODUCT_MAINT_TYPE__PARENT_TYPE_ID, oldParentTypeId, parentTypeId));
 	}
 
 	/**
@@ -215,7 +225,10 @@ public class ProductMaintTypeImpl extends BizEntityTypeImpl<ProductMaint> implem
 	 */
 	@Override
 	public void setProductMaintTypeId(String newProductMaintTypeId) {
+		String oldProductMaintTypeId = productMaintTypeId;
 		productMaintTypeId = newProductMaintTypeId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ProductPackage.PRODUCT_MAINT_TYPE__PRODUCT_MAINT_TYPE_ID, oldProductMaintTypeId, productMaintTypeId));
 	}
 
 	/**

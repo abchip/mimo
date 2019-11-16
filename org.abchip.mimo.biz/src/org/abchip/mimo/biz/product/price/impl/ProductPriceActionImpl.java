@@ -14,9 +14,11 @@ import org.abchip.mimo.biz.product.price.PricePackage;
 import org.abchip.mimo.biz.product.price.ProductPriceAction;
 import org.abchip.mimo.biz.product.price.ProductPriceActionType;
 import org.abchip.mimo.biz.product.price.ProductPriceRule;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -157,7 +159,10 @@ public class ProductPriceActionImpl extends BizEntityTypedImpl<ProductPriceActio
 	 */
 	@Override
 	public void setAmount(BigDecimal newAmount) {
+		BigDecimal oldAmount = amount;
 		amount = newAmount;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PricePackage.PRODUCT_PRICE_ACTION__AMOUNT, oldAmount, amount));
 	}
 
 	/**
@@ -177,7 +182,10 @@ public class ProductPriceActionImpl extends BizEntityTypedImpl<ProductPriceActio
 	 */
 	@Override
 	public void setProductPriceActionSeqId(String newProductPriceActionSeqId) {
+		String oldProductPriceActionSeqId = productPriceActionSeqId;
 		productPriceActionSeqId = newProductPriceActionSeqId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PricePackage.PRODUCT_PRICE_ACTION__PRODUCT_PRICE_ACTION_SEQ_ID, oldProductPriceActionSeqId, productPriceActionSeqId));
 	}
 
 	/**
@@ -197,7 +205,10 @@ public class ProductPriceActionImpl extends BizEntityTypedImpl<ProductPriceActio
 	 */
 	@Override
 	public void setRateCode(String newRateCode) {
+		String oldRateCode = rateCode;
 		rateCode = newRateCode;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PricePackage.PRODUCT_PRICE_ACTION__RATE_CODE, oldRateCode, rateCode));
 	}
 
 	/**
@@ -211,6 +222,8 @@ public class ProductPriceActionImpl extends BizEntityTypedImpl<ProductPriceActio
 			InternalEObject oldProductPriceActionTypeId = (InternalEObject)productPriceActionTypeId;
 			productPriceActionTypeId = (ProductPriceActionType)eResolveProxy(oldProductPriceActionTypeId);
 			if (productPriceActionTypeId != oldProductPriceActionTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PricePackage.PRODUCT_PRICE_ACTION__PRODUCT_PRICE_ACTION_TYPE_ID, oldProductPriceActionTypeId, productPriceActionTypeId));
 			}
 		}
 		return productPriceActionTypeId;
@@ -232,7 +245,10 @@ public class ProductPriceActionImpl extends BizEntityTypedImpl<ProductPriceActio
 	 */
 	@Override
 	public void setProductPriceActionTypeId(ProductPriceActionType newProductPriceActionTypeId) {
+		ProductPriceActionType oldProductPriceActionTypeId = productPriceActionTypeId;
 		productPriceActionTypeId = newProductPriceActionTypeId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PricePackage.PRODUCT_PRICE_ACTION__PRODUCT_PRICE_ACTION_TYPE_ID, oldProductPriceActionTypeId, productPriceActionTypeId));
 	}
 
 	/**
@@ -246,6 +262,8 @@ public class ProductPriceActionImpl extends BizEntityTypedImpl<ProductPriceActio
 			InternalEObject oldProductPriceRuleId = (InternalEObject)productPriceRuleId;
 			productPriceRuleId = (ProductPriceRule)eResolveProxy(oldProductPriceRuleId);
 			if (productPriceRuleId != oldProductPriceRuleId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PricePackage.PRODUCT_PRICE_ACTION__PRODUCT_PRICE_RULE_ID, oldProductPriceRuleId, productPriceRuleId));
 			}
 		}
 		return productPriceRuleId;
@@ -267,7 +285,10 @@ public class ProductPriceActionImpl extends BizEntityTypedImpl<ProductPriceActio
 	 */
 	@Override
 	public void setProductPriceRuleId(ProductPriceRule newProductPriceRuleId) {
+		ProductPriceRule oldProductPriceRuleId = productPriceRuleId;
 		productPriceRuleId = newProductPriceRuleId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PricePackage.PRODUCT_PRICE_ACTION__PRODUCT_PRICE_RULE_ID, oldProductPriceRuleId, productPriceRuleId));
 	}
 
 	/**

@@ -10,7 +10,9 @@ package org.abchip.mimo.biz.humanres.trainings.impl;
 import org.abchip.mimo.biz.humanres.trainings.TrainingRequest;
 import org.abchip.mimo.biz.humanres.trainings.TrainingsPackage;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -87,7 +89,10 @@ public class TrainingRequestImpl extends BizEntityImpl implements TrainingReques
 	 */
 	@Override
 	public void setTrainingRequestId(String newTrainingRequestId) {
+		String oldTrainingRequestId = trainingRequestId;
 		trainingRequestId = newTrainingRequestId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, TrainingsPackage.TRAINING_REQUEST__TRAINING_REQUEST_ID, oldTrainingRequestId, trainingRequestId));
 	}
 
 	/**

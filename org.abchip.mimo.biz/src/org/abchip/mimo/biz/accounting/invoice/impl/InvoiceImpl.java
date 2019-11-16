@@ -23,11 +23,13 @@ import org.abchip.mimo.biz.party.contact.ContactMech;
 import org.abchip.mimo.biz.party.party.Party;
 import org.abchip.mimo.biz.party.party.RoleType;
 import org.abchip.mimo.biz.service.schedule.RecurrenceInfo;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.util.BasicInternalEList;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -331,6 +333,8 @@ public class InvoiceImpl extends BizEntityTypedImpl<InvoiceType> implements Invo
 			InternalEObject oldBillingAccountId = (InternalEObject)billingAccountId;
 			billingAccountId = (BillingAccount)eResolveProxy(oldBillingAccountId);
 			if (billingAccountId != oldBillingAccountId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, InvoicePackage.INVOICE__BILLING_ACCOUNT_ID, oldBillingAccountId, billingAccountId));
 			}
 		}
 		return billingAccountId;
@@ -352,7 +356,10 @@ public class InvoiceImpl extends BizEntityTypedImpl<InvoiceType> implements Invo
 	 */
 	@Override
 	public void setBillingAccountId(BillingAccount newBillingAccountId) {
+		BillingAccount oldBillingAccountId = billingAccountId;
 		billingAccountId = newBillingAccountId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, InvoicePackage.INVOICE__BILLING_ACCOUNT_ID, oldBillingAccountId, billingAccountId));
 	}
 
 	/**
@@ -366,6 +373,8 @@ public class InvoiceImpl extends BizEntityTypedImpl<InvoiceType> implements Invo
 			InternalEObject oldContactMechId = (InternalEObject)contactMechId;
 			contactMechId = (ContactMech)eResolveProxy(oldContactMechId);
 			if (contactMechId != oldContactMechId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, InvoicePackage.INVOICE__CONTACT_MECH_ID, oldContactMechId, contactMechId));
 			}
 		}
 		return contactMechId;
@@ -387,7 +396,10 @@ public class InvoiceImpl extends BizEntityTypedImpl<InvoiceType> implements Invo
 	 */
 	@Override
 	public void setContactMechId(ContactMech newContactMechId) {
+		ContactMech oldContactMechId = contactMechId;
 		contactMechId = newContactMechId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, InvoicePackage.INVOICE__CONTACT_MECH_ID, oldContactMechId, contactMechId));
 	}
 
 	/**
@@ -401,6 +413,8 @@ public class InvoiceImpl extends BizEntityTypedImpl<InvoiceType> implements Invo
 			InternalEObject oldCurrencyUomId = (InternalEObject)currencyUomId;
 			currencyUomId = (Uom)eResolveProxy(oldCurrencyUomId);
 			if (currencyUomId != oldCurrencyUomId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, InvoicePackage.INVOICE__CURRENCY_UOM_ID, oldCurrencyUomId, currencyUomId));
 			}
 		}
 		return currencyUomId;
@@ -422,7 +436,10 @@ public class InvoiceImpl extends BizEntityTypedImpl<InvoiceType> implements Invo
 	 */
 	@Override
 	public void setCurrencyUomId(Uom newCurrencyUomId) {
+		Uom oldCurrencyUomId = currencyUomId;
 		currencyUomId = newCurrencyUomId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, InvoicePackage.INVOICE__CURRENCY_UOM_ID, oldCurrencyUomId, currencyUomId));
 	}
 
 	/**
@@ -442,7 +459,10 @@ public class InvoiceImpl extends BizEntityTypedImpl<InvoiceType> implements Invo
 	 */
 	@Override
 	public void setDescription(String newDescription) {
+		String oldDescription = description;
 		description = newDescription;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, InvoicePackage.INVOICE__DESCRIPTION, oldDescription, description));
 	}
 
 	/**
@@ -462,7 +482,10 @@ public class InvoiceImpl extends BizEntityTypedImpl<InvoiceType> implements Invo
 	 */
 	@Override
 	public void setDueDate(Date newDueDate) {
+		Date oldDueDate = dueDate;
 		dueDate = newDueDate;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, InvoicePackage.INVOICE__DUE_DATE, oldDueDate, dueDate));
 	}
 
 	/**
@@ -482,7 +505,10 @@ public class InvoiceImpl extends BizEntityTypedImpl<InvoiceType> implements Invo
 	 */
 	@Override
 	public void setInvoiceDate(Date newInvoiceDate) {
+		Date oldInvoiceDate = invoiceDate;
 		invoiceDate = newInvoiceDate;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, InvoicePackage.INVOICE__INVOICE_DATE, oldInvoiceDate, invoiceDate));
 	}
 
 	/**
@@ -502,7 +528,10 @@ public class InvoiceImpl extends BizEntityTypedImpl<InvoiceType> implements Invo
 	 */
 	@Override
 	public void setInvoiceMessage(String newInvoiceMessage) {
+		String oldInvoiceMessage = invoiceMessage;
 		invoiceMessage = newInvoiceMessage;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, InvoicePackage.INVOICE__INVOICE_MESSAGE, oldInvoiceMessage, invoiceMessage));
 	}
 
 	/**
@@ -522,7 +551,10 @@ public class InvoiceImpl extends BizEntityTypedImpl<InvoiceType> implements Invo
 	 */
 	@Override
 	public void setPaidDate(Date newPaidDate) {
+		Date oldPaidDate = paidDate;
 		paidDate = newPaidDate;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, InvoicePackage.INVOICE__PAID_DATE, oldPaidDate, paidDate));
 	}
 
 	/**
@@ -536,6 +568,8 @@ public class InvoiceImpl extends BizEntityTypedImpl<InvoiceType> implements Invo
 			InternalEObject oldPartyId = (InternalEObject)partyId;
 			partyId = (Party)eResolveProxy(oldPartyId);
 			if (partyId != oldPartyId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, InvoicePackage.INVOICE__PARTY_ID, oldPartyId, partyId));
 			}
 		}
 		return partyId;
@@ -557,7 +591,10 @@ public class InvoiceImpl extends BizEntityTypedImpl<InvoiceType> implements Invo
 	 */
 	@Override
 	public void setPartyId(Party newPartyId) {
+		Party oldPartyId = partyId;
 		partyId = newPartyId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, InvoicePackage.INVOICE__PARTY_ID, oldPartyId, partyId));
 	}
 
 	/**
@@ -571,6 +608,8 @@ public class InvoiceImpl extends BizEntityTypedImpl<InvoiceType> implements Invo
 			InternalEObject oldPartyIdFrom = (InternalEObject)partyIdFrom;
 			partyIdFrom = (Party)eResolveProxy(oldPartyIdFrom);
 			if (partyIdFrom != oldPartyIdFrom) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, InvoicePackage.INVOICE__PARTY_ID_FROM, oldPartyIdFrom, partyIdFrom));
 			}
 		}
 		return partyIdFrom;
@@ -592,7 +631,10 @@ public class InvoiceImpl extends BizEntityTypedImpl<InvoiceType> implements Invo
 	 */
 	@Override
 	public void setPartyIdFrom(Party newPartyIdFrom) {
+		Party oldPartyIdFrom = partyIdFrom;
 		partyIdFrom = newPartyIdFrom;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, InvoicePackage.INVOICE__PARTY_ID_FROM, oldPartyIdFrom, partyIdFrom));
 	}
 
 	/**
@@ -606,6 +648,8 @@ public class InvoiceImpl extends BizEntityTypedImpl<InvoiceType> implements Invo
 			InternalEObject oldRecurrenceInfoId = (InternalEObject)recurrenceInfoId;
 			recurrenceInfoId = (RecurrenceInfo)eResolveProxy(oldRecurrenceInfoId);
 			if (recurrenceInfoId != oldRecurrenceInfoId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, InvoicePackage.INVOICE__RECURRENCE_INFO_ID, oldRecurrenceInfoId, recurrenceInfoId));
 			}
 		}
 		return recurrenceInfoId;
@@ -627,7 +671,10 @@ public class InvoiceImpl extends BizEntityTypedImpl<InvoiceType> implements Invo
 	 */
 	@Override
 	public void setRecurrenceInfoId(RecurrenceInfo newRecurrenceInfoId) {
+		RecurrenceInfo oldRecurrenceInfoId = recurrenceInfoId;
 		recurrenceInfoId = newRecurrenceInfoId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, InvoicePackage.INVOICE__RECURRENCE_INFO_ID, oldRecurrenceInfoId, recurrenceInfoId));
 	}
 
 	/**
@@ -647,7 +694,10 @@ public class InvoiceImpl extends BizEntityTypedImpl<InvoiceType> implements Invo
 	 */
 	@Override
 	public void setReferenceNumber(String newReferenceNumber) {
+		String oldReferenceNumber = referenceNumber;
 		referenceNumber = newReferenceNumber;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, InvoicePackage.INVOICE__REFERENCE_NUMBER, oldReferenceNumber, referenceNumber));
 	}
 
 	/**
@@ -661,6 +711,8 @@ public class InvoiceImpl extends BizEntityTypedImpl<InvoiceType> implements Invo
 			InternalEObject oldRoleTypeId = (InternalEObject)roleTypeId;
 			roleTypeId = (RoleType)eResolveProxy(oldRoleTypeId);
 			if (roleTypeId != oldRoleTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, InvoicePackage.INVOICE__ROLE_TYPE_ID, oldRoleTypeId, roleTypeId));
 			}
 		}
 		return roleTypeId;
@@ -682,7 +734,10 @@ public class InvoiceImpl extends BizEntityTypedImpl<InvoiceType> implements Invo
 	 */
 	@Override
 	public void setRoleTypeId(RoleType newRoleTypeId) {
+		RoleType oldRoleTypeId = roleTypeId;
 		roleTypeId = newRoleTypeId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, InvoicePackage.INVOICE__ROLE_TYPE_ID, oldRoleTypeId, roleTypeId));
 	}
 
 	/**
@@ -696,6 +751,8 @@ public class InvoiceImpl extends BizEntityTypedImpl<InvoiceType> implements Invo
 			InternalEObject oldStatusId = (InternalEObject)statusId;
 			statusId = (StatusItem)eResolveProxy(oldStatusId);
 			if (statusId != oldStatusId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, InvoicePackage.INVOICE__STATUS_ID, oldStatusId, statusId));
 			}
 		}
 		return statusId;
@@ -717,7 +774,10 @@ public class InvoiceImpl extends BizEntityTypedImpl<InvoiceType> implements Invo
 	 */
 	@Override
 	public void setStatusId(StatusItem newStatusId) {
+		StatusItem oldStatusId = statusId;
 		statusId = newStatusId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, InvoicePackage.INVOICE__STATUS_ID, oldStatusId, statusId));
 	}
 
 	/**
@@ -728,7 +788,7 @@ public class InvoiceImpl extends BizEntityTypedImpl<InvoiceType> implements Invo
 	@Override
 	public List<String> getInvoiceAttributes() {
 		if (invoiceAttributes == null) {
-			invoiceAttributes = new BasicInternalEList<String>(String.class);
+			invoiceAttributes = new EDataTypeUniqueEList<String>(String.class, this, InvoicePackage.INVOICE__INVOICE_ATTRIBUTES);
 		}
 		return invoiceAttributes;
 	}
@@ -741,7 +801,7 @@ public class InvoiceImpl extends BizEntityTypedImpl<InvoiceType> implements Invo
 	@Override
 	public List<String> getInvoiceItems() {
 		if (invoiceItems == null) {
-			invoiceItems = new BasicInternalEList<String>(String.class);
+			invoiceItems = new EDataTypeUniqueEList<String>(String.class, this, InvoicePackage.INVOICE__INVOICE_ITEMS);
 		}
 		return invoiceItems;
 	}
@@ -754,7 +814,7 @@ public class InvoiceImpl extends BizEntityTypedImpl<InvoiceType> implements Invo
 	@Override
 	public List<String> getInvoiceNotes() {
 		if (invoiceNotes == null) {
-			invoiceNotes = new BasicInternalEList<String>(String.class);
+			invoiceNotes = new EDataTypeUniqueEList<String>(String.class, this, InvoicePackage.INVOICE__INVOICE_NOTES);
 		}
 		return invoiceNotes;
 	}
@@ -818,6 +878,8 @@ public class InvoiceImpl extends BizEntityTypedImpl<InvoiceType> implements Invo
 			InternalEObject oldInvoiceTypeId = (InternalEObject)invoiceTypeId;
 			invoiceTypeId = (InvoiceType)eResolveProxy(oldInvoiceTypeId);
 			if (invoiceTypeId != oldInvoiceTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, InvoicePackage.INVOICE__INVOICE_TYPE_ID, oldInvoiceTypeId, invoiceTypeId));
 			}
 		}
 		return invoiceTypeId;
@@ -839,7 +901,10 @@ public class InvoiceImpl extends BizEntityTypedImpl<InvoiceType> implements Invo
 	 */
 	@Override
 	public void setInvoiceTypeId(InvoiceType newInvoiceTypeId) {
+		InvoiceType oldInvoiceTypeId = invoiceTypeId;
 		invoiceTypeId = newInvoiceTypeId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, InvoicePackage.INVOICE__INVOICE_TYPE_ID, oldInvoiceTypeId, invoiceTypeId));
 	}
 
 	/**
@@ -859,7 +924,10 @@ public class InvoiceImpl extends BizEntityTypedImpl<InvoiceType> implements Invo
 	 */
 	@Override
 	public void setInvoiceId(String newInvoiceId) {
+		String oldInvoiceId = invoiceId;
 		invoiceId = newInvoiceId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, InvoicePackage.INVOICE__INVOICE_ID, oldInvoiceId, invoiceId));
 	}
 
 	/**

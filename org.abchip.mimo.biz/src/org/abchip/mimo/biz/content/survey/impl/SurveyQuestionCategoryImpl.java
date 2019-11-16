@@ -12,10 +12,12 @@ import java.util.List;
 import org.abchip.mimo.biz.content.survey.SurveyPackage;
 import org.abchip.mimo.biz.content.survey.SurveyQuestionCategory;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -124,7 +126,10 @@ public class SurveyQuestionCategoryImpl extends BizEntityImpl implements SurveyQ
 	 */
 	@Override
 	public void setDescription(String newDescription) {
+		String oldDescription = description;
 		description = newDescription;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SurveyPackage.SURVEY_QUESTION_CATEGORY__DESCRIPTION, oldDescription, description));
 	}
 
 	/**
@@ -138,6 +143,8 @@ public class SurveyQuestionCategoryImpl extends BizEntityImpl implements SurveyQ
 			InternalEObject oldParentCategoryId = (InternalEObject)parentCategoryId;
 			parentCategoryId = (SurveyQuestionCategory)eResolveProxy(oldParentCategoryId);
 			if (parentCategoryId != oldParentCategoryId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, SurveyPackage.SURVEY_QUESTION_CATEGORY__PARENT_CATEGORY_ID, oldParentCategoryId, parentCategoryId));
 			}
 		}
 		return parentCategoryId;
@@ -159,7 +166,10 @@ public class SurveyQuestionCategoryImpl extends BizEntityImpl implements SurveyQ
 	 */
 	@Override
 	public void setParentCategoryId(SurveyQuestionCategory newParentCategoryId) {
+		SurveyQuestionCategory oldParentCategoryId = parentCategoryId;
 		parentCategoryId = newParentCategoryId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SurveyPackage.SURVEY_QUESTION_CATEGORY__PARENT_CATEGORY_ID, oldParentCategoryId, parentCategoryId));
 	}
 
 	/**
@@ -203,7 +213,10 @@ public class SurveyQuestionCategoryImpl extends BizEntityImpl implements SurveyQ
 	 */
 	@Override
 	public void setSurveyQuestionCategoryId(String newSurveyQuestionCategoryId) {
+		String oldSurveyQuestionCategoryId = surveyQuestionCategoryId;
 		surveyQuestionCategoryId = newSurveyQuestionCategoryId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SurveyPackage.SURVEY_QUESTION_CATEGORY__SURVEY_QUESTION_CATEGORY_ID, oldSurveyQuestionCategoryId, surveyQuestionCategoryId));
 	}
 
 	/**

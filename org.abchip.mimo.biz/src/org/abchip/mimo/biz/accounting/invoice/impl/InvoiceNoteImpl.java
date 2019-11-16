@@ -11,9 +11,11 @@ import org.abchip.mimo.biz.accounting.invoice.Invoice;
 import org.abchip.mimo.biz.accounting.invoice.InvoiceNote;
 import org.abchip.mimo.biz.accounting.invoice.InvoicePackage;
 import org.abchip.mimo.biz.impl.BizEntityNoteImpl;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -72,6 +74,8 @@ public class InvoiceNoteImpl extends BizEntityNoteImpl implements InvoiceNote {
 			InternalEObject oldInvoiceId = (InternalEObject)invoiceId;
 			invoiceId = (Invoice)eResolveProxy(oldInvoiceId);
 			if (invoiceId != oldInvoiceId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, InvoicePackage.INVOICE_NOTE__INVOICE_ID, oldInvoiceId, invoiceId));
 			}
 		}
 		return invoiceId;
@@ -93,7 +97,10 @@ public class InvoiceNoteImpl extends BizEntityNoteImpl implements InvoiceNote {
 	 */
 	@Override
 	public void setInvoiceId(Invoice newInvoiceId) {
+		Invoice oldInvoiceId = invoiceId;
 		invoiceId = newInvoiceId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, InvoicePackage.INVOICE_NOTE__INVOICE_ID, oldInvoiceId, invoiceId));
 	}
 
 	/**

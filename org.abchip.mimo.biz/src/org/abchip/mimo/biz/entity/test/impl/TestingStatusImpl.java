@@ -14,10 +14,12 @@ import org.abchip.mimo.biz.entity.test.TestPackage;
 import org.abchip.mimo.biz.entity.test.TestingStatus;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.security.login.UserLogin;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -145,6 +147,8 @@ public class TestingStatusImpl extends BizEntityImpl implements TestingStatus {
 			InternalEObject oldChangeByUserLoginId = (InternalEObject)changeByUserLoginId;
 			changeByUserLoginId = (UserLogin)eResolveProxy(oldChangeByUserLoginId);
 			if (changeByUserLoginId != oldChangeByUserLoginId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, TestPackage.TESTING_STATUS__CHANGE_BY_USER_LOGIN_ID, oldChangeByUserLoginId, changeByUserLoginId));
 			}
 		}
 		return changeByUserLoginId;
@@ -166,7 +170,10 @@ public class TestingStatusImpl extends BizEntityImpl implements TestingStatus {
 	 */
 	@Override
 	public void setChangeByUserLoginId(UserLogin newChangeByUserLoginId) {
+		UserLogin oldChangeByUserLoginId = changeByUserLoginId;
 		changeByUserLoginId = newChangeByUserLoginId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, TestPackage.TESTING_STATUS__CHANGE_BY_USER_LOGIN_ID, oldChangeByUserLoginId, changeByUserLoginId));
 	}
 
 	/**
@@ -186,7 +193,10 @@ public class TestingStatusImpl extends BizEntityImpl implements TestingStatus {
 	 */
 	@Override
 	public void setStatusDate(Date newStatusDate) {
+		Date oldStatusDate = statusDate;
 		statusDate = newStatusDate;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, TestPackage.TESTING_STATUS__STATUS_DATE, oldStatusDate, statusDate));
 	}
 
 	/**
@@ -200,6 +210,8 @@ public class TestingStatusImpl extends BizEntityImpl implements TestingStatus {
 			InternalEObject oldStatusId = (InternalEObject)statusId;
 			statusId = (StatusItem)eResolveProxy(oldStatusId);
 			if (statusId != oldStatusId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, TestPackage.TESTING_STATUS__STATUS_ID, oldStatusId, statusId));
 			}
 		}
 		return statusId;
@@ -221,7 +233,10 @@ public class TestingStatusImpl extends BizEntityImpl implements TestingStatus {
 	 */
 	@Override
 	public void setStatusId(StatusItem newStatusId) {
+		StatusItem oldStatusId = statusId;
 		statusId = newStatusId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, TestPackage.TESTING_STATUS__STATUS_ID, oldStatusId, statusId));
 	}
 
 	/**
@@ -241,7 +256,10 @@ public class TestingStatusImpl extends BizEntityImpl implements TestingStatus {
 	 */
 	@Override
 	public void setTestingId(String newTestingId) {
+		String oldTestingId = testingId;
 		testingId = newTestingId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, TestPackage.TESTING_STATUS__TESTING_ID, oldTestingId, testingId));
 	}
 
 	/**
@@ -261,7 +279,10 @@ public class TestingStatusImpl extends BizEntityImpl implements TestingStatus {
 	 */
 	@Override
 	public void setTestingStatusId(String newTestingStatusId) {
+		String oldTestingStatusId = testingStatusId;
 		testingStatusId = newTestingStatusId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, TestPackage.TESTING_STATUS__TESTING_STATUS_ID, oldTestingStatusId, testingStatusId));
 	}
 
 	/**

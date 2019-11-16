@@ -13,9 +13,11 @@ import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.product.facility.Facility;
 import org.abchip.mimo.biz.product.facility.FacilityLocation;
 import org.abchip.mimo.biz.product.facility.FacilityPackage;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -230,7 +232,10 @@ public class FacilityLocationImpl extends BizEntityImpl implements FacilityLocat
 	 */
 	@Override
 	public void setAisleId(String newAisleId) {
+		String oldAisleId = aisleId;
 		aisleId = newAisleId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, FacilityPackage.FACILITY_LOCATION__AISLE_ID, oldAisleId, aisleId));
 	}
 
 	/**
@@ -250,7 +255,10 @@ public class FacilityLocationImpl extends BizEntityImpl implements FacilityLocat
 	 */
 	@Override
 	public void setAreaId(String newAreaId) {
+		String oldAreaId = areaId;
 		areaId = newAreaId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, FacilityPackage.FACILITY_LOCATION__AREA_ID, oldAreaId, areaId));
 	}
 
 	/**
@@ -264,6 +272,8 @@ public class FacilityLocationImpl extends BizEntityImpl implements FacilityLocat
 			InternalEObject oldGeoPointId = (InternalEObject)geoPointId;
 			geoPointId = (GeoPoint)eResolveProxy(oldGeoPointId);
 			if (geoPointId != oldGeoPointId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, FacilityPackage.FACILITY_LOCATION__GEO_POINT_ID, oldGeoPointId, geoPointId));
 			}
 		}
 		return geoPointId;
@@ -285,7 +295,10 @@ public class FacilityLocationImpl extends BizEntityImpl implements FacilityLocat
 	 */
 	@Override
 	public void setGeoPointId(GeoPoint newGeoPointId) {
+		GeoPoint oldGeoPointId = geoPointId;
 		geoPointId = newGeoPointId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, FacilityPackage.FACILITY_LOCATION__GEO_POINT_ID, oldGeoPointId, geoPointId));
 	}
 
 	/**
@@ -305,7 +318,10 @@ public class FacilityLocationImpl extends BizEntityImpl implements FacilityLocat
 	 */
 	@Override
 	public void setLevelId(String newLevelId) {
+		String oldLevelId = levelId;
 		levelId = newLevelId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, FacilityPackage.FACILITY_LOCATION__LEVEL_ID, oldLevelId, levelId));
 	}
 
 	/**
@@ -325,7 +341,10 @@ public class FacilityLocationImpl extends BizEntityImpl implements FacilityLocat
 	 */
 	@Override
 	public void setLocationSeqId(String newLocationSeqId) {
+		String oldLocationSeqId = locationSeqId;
 		locationSeqId = newLocationSeqId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, FacilityPackage.FACILITY_LOCATION__LOCATION_SEQ_ID, oldLocationSeqId, locationSeqId));
 	}
 
 	/**
@@ -339,6 +358,8 @@ public class FacilityLocationImpl extends BizEntityImpl implements FacilityLocat
 			InternalEObject oldLocationTypeEnumId = (InternalEObject)locationTypeEnumId;
 			locationTypeEnumId = (Enumeration)eResolveProxy(oldLocationTypeEnumId);
 			if (locationTypeEnumId != oldLocationTypeEnumId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, FacilityPackage.FACILITY_LOCATION__LOCATION_TYPE_ENUM_ID, oldLocationTypeEnumId, locationTypeEnumId));
 			}
 		}
 		return locationTypeEnumId;
@@ -360,7 +381,10 @@ public class FacilityLocationImpl extends BizEntityImpl implements FacilityLocat
 	 */
 	@Override
 	public void setLocationTypeEnumId(Enumeration newLocationTypeEnumId) {
+		Enumeration oldLocationTypeEnumId = locationTypeEnumId;
 		locationTypeEnumId = newLocationTypeEnumId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, FacilityPackage.FACILITY_LOCATION__LOCATION_TYPE_ENUM_ID, oldLocationTypeEnumId, locationTypeEnumId));
 	}
 
 	/**
@@ -380,7 +404,10 @@ public class FacilityLocationImpl extends BizEntityImpl implements FacilityLocat
 	 */
 	@Override
 	public void setPositionId(String newPositionId) {
+		String oldPositionId = positionId;
 		positionId = newPositionId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, FacilityPackage.FACILITY_LOCATION__POSITION_ID, oldPositionId, positionId));
 	}
 
 	/**
@@ -400,7 +427,10 @@ public class FacilityLocationImpl extends BizEntityImpl implements FacilityLocat
 	 */
 	@Override
 	public void setSectionId(String newSectionId) {
+		String oldSectionId = sectionId;
 		sectionId = newSectionId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, FacilityPackage.FACILITY_LOCATION__SECTION_ID, oldSectionId, sectionId));
 	}
 
 	/**
@@ -414,6 +444,8 @@ public class FacilityLocationImpl extends BizEntityImpl implements FacilityLocat
 			InternalEObject oldFacilityId = (InternalEObject)facilityId;
 			facilityId = (Facility)eResolveProxy(oldFacilityId);
 			if (facilityId != oldFacilityId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, FacilityPackage.FACILITY_LOCATION__FACILITY_ID, oldFacilityId, facilityId));
 			}
 		}
 		return facilityId;
@@ -435,7 +467,10 @@ public class FacilityLocationImpl extends BizEntityImpl implements FacilityLocat
 	 */
 	@Override
 	public void setFacilityId(Facility newFacilityId) {
+		Facility oldFacilityId = facilityId;
 		facilityId = newFacilityId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, FacilityPackage.FACILITY_LOCATION__FACILITY_ID, oldFacilityId, facilityId));
 	}
 
 	/**

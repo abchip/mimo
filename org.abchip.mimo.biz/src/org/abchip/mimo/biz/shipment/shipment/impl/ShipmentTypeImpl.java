@@ -14,12 +14,14 @@ import org.abchip.mimo.biz.impl.BizEntityTypeImpl;
 import org.abchip.mimo.biz.shipment.shipment.Shipment;
 import org.abchip.mimo.biz.shipment.shipment.ShipmentType;
 import org.abchip.mimo.biz.shipment.shipment.Shipment_Package;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.util.BasicInternalEList;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -160,7 +162,10 @@ public class ShipmentTypeImpl extends BizEntityTypeImpl<Shipment> implements Shi
 	 */
 	@Override
 	public void setDescription(String newDescription) {
+		String oldDescription = description;
 		description = newDescription;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, Shipment_Package.SHIPMENT_TYPE__DESCRIPTION, oldDescription, description));
 	}
 
 	/**
@@ -180,7 +185,10 @@ public class ShipmentTypeImpl extends BizEntityTypeImpl<Shipment> implements Shi
 	 */
 	@Override
 	public void setHasTable(boolean newHasTable) {
+		boolean oldHasTable = hasTable;
 		hasTable = newHasTable;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, Shipment_Package.SHIPMENT_TYPE__HAS_TABLE, oldHasTable, hasTable));
 	}
 
 	/**
@@ -194,6 +202,8 @@ public class ShipmentTypeImpl extends BizEntityTypeImpl<Shipment> implements Shi
 			InternalEObject oldParentTypeId = (InternalEObject)parentTypeId;
 			parentTypeId = (ShipmentType)eResolveProxy(oldParentTypeId);
 			if (parentTypeId != oldParentTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, Shipment_Package.SHIPMENT_TYPE__PARENT_TYPE_ID, oldParentTypeId, parentTypeId));
 			}
 		}
 		return parentTypeId;
@@ -215,7 +225,10 @@ public class ShipmentTypeImpl extends BizEntityTypeImpl<Shipment> implements Shi
 	 */
 	@Override
 	public void setParentTypeId(ShipmentType newParentTypeId) {
+		ShipmentType oldParentTypeId = parentTypeId;
 		parentTypeId = newParentTypeId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, Shipment_Package.SHIPMENT_TYPE__PARENT_TYPE_ID, oldParentTypeId, parentTypeId));
 	}
 
 	/**
@@ -235,7 +248,10 @@ public class ShipmentTypeImpl extends BizEntityTypeImpl<Shipment> implements Shi
 	 */
 	@Override
 	public void setShipmentTypeId(String newShipmentTypeId) {
+		String oldShipmentTypeId = shipmentTypeId;
 		shipmentTypeId = newShipmentTypeId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, Shipment_Package.SHIPMENT_TYPE__SHIPMENT_TYPE_ID, oldShipmentTypeId, shipmentTypeId));
 	}
 
 	/**
@@ -246,7 +262,7 @@ public class ShipmentTypeImpl extends BizEntityTypeImpl<Shipment> implements Shi
 	@Override
 	public List<String> getShipmentTypeAttrs() {
 		if (shipmentTypeAttrs == null) {
-			shipmentTypeAttrs = new BasicInternalEList<String>(String.class);
+			shipmentTypeAttrs = new EDataTypeUniqueEList<String>(String.class, this, Shipment_Package.SHIPMENT_TYPE__SHIPMENT_TYPE_ATTRS);
 		}
 		return shipmentTypeAttrs;
 	}

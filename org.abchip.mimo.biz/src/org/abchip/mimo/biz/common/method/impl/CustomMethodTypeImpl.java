@@ -13,9 +13,11 @@ import org.abchip.mimo.biz.common.method.CustomMethod;
 import org.abchip.mimo.biz.common.method.CustomMethodType;
 import org.abchip.mimo.biz.common.method.MethodPackage;
 import org.abchip.mimo.biz.impl.BizEntityTypeImpl;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -138,7 +140,10 @@ public class CustomMethodTypeImpl extends BizEntityTypeImpl<CustomMethod> implem
 	 */
 	@Override
 	public void setDescription(String newDescription) {
+		String oldDescription = description;
 		description = newDescription;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, MethodPackage.CUSTOM_METHOD_TYPE__DESCRIPTION, oldDescription, description));
 	}
 
 	/**
@@ -158,7 +163,10 @@ public class CustomMethodTypeImpl extends BizEntityTypeImpl<CustomMethod> implem
 	 */
 	@Override
 	public void setHasTable(boolean newHasTable) {
+		boolean oldHasTable = hasTable;
 		hasTable = newHasTable;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, MethodPackage.CUSTOM_METHOD_TYPE__HAS_TABLE, oldHasTable, hasTable));
 	}
 
 	/**
@@ -172,6 +180,8 @@ public class CustomMethodTypeImpl extends BizEntityTypeImpl<CustomMethod> implem
 			InternalEObject oldParentTypeId = (InternalEObject)parentTypeId;
 			parentTypeId = (CustomMethodType)eResolveProxy(oldParentTypeId);
 			if (parentTypeId != oldParentTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, MethodPackage.CUSTOM_METHOD_TYPE__PARENT_TYPE_ID, oldParentTypeId, parentTypeId));
 			}
 		}
 		return parentTypeId;
@@ -193,7 +203,10 @@ public class CustomMethodTypeImpl extends BizEntityTypeImpl<CustomMethod> implem
 	 */
 	@Override
 	public void setParentTypeId(CustomMethodType newParentTypeId) {
+		CustomMethodType oldParentTypeId = parentTypeId;
 		parentTypeId = newParentTypeId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, MethodPackage.CUSTOM_METHOD_TYPE__PARENT_TYPE_ID, oldParentTypeId, parentTypeId));
 	}
 
 	/**
@@ -237,7 +250,10 @@ public class CustomMethodTypeImpl extends BizEntityTypeImpl<CustomMethod> implem
 	 */
 	@Override
 	public void setCustomMethodTypeId(String newCustomMethodTypeId) {
+		String oldCustomMethodTypeId = customMethodTypeId;
 		customMethodTypeId = newCustomMethodTypeId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, MethodPackage.CUSTOM_METHOD_TYPE__CUSTOM_METHOD_TYPE_ID, oldCustomMethodTypeId, customMethodTypeId));
 	}
 
 	/**

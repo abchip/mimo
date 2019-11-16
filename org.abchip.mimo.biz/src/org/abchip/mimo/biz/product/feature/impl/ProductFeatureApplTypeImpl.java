@@ -13,9 +13,11 @@ import org.abchip.mimo.biz.impl.BizEntityTypeImpl;
 import org.abchip.mimo.biz.product.feature.FeaturePackage;
 import org.abchip.mimo.biz.product.feature.ProductFeatureAppl;
 import org.abchip.mimo.biz.product.feature.ProductFeatureApplType;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -145,7 +147,10 @@ public class ProductFeatureApplTypeImpl extends BizEntityTypeImpl<ProductFeature
 	 */
 	@Override
 	public void setDescription(String newDescription) {
+		String oldDescription = description;
 		description = newDescription;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, FeaturePackage.PRODUCT_FEATURE_APPL_TYPE__DESCRIPTION, oldDescription, description));
 	}
 
 	/**
@@ -165,7 +170,10 @@ public class ProductFeatureApplTypeImpl extends BizEntityTypeImpl<ProductFeature
 	 */
 	@Override
 	public void setHasTable(boolean newHasTable) {
+		boolean oldHasTable = hasTable;
 		hasTable = newHasTable;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, FeaturePackage.PRODUCT_FEATURE_APPL_TYPE__HAS_TABLE, oldHasTable, hasTable));
 	}
 
 	/**
@@ -179,6 +187,8 @@ public class ProductFeatureApplTypeImpl extends BizEntityTypeImpl<ProductFeature
 			InternalEObject oldParentTypeId = (InternalEObject)parentTypeId;
 			parentTypeId = (ProductFeatureApplType)eResolveProxy(oldParentTypeId);
 			if (parentTypeId != oldParentTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, FeaturePackage.PRODUCT_FEATURE_APPL_TYPE__PARENT_TYPE_ID, oldParentTypeId, parentTypeId));
 			}
 		}
 		return parentTypeId;
@@ -200,7 +210,10 @@ public class ProductFeatureApplTypeImpl extends BizEntityTypeImpl<ProductFeature
 	 */
 	@Override
 	public void setParentTypeId(ProductFeatureApplType newParentTypeId) {
+		ProductFeatureApplType oldParentTypeId = parentTypeId;
 		parentTypeId = newParentTypeId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, FeaturePackage.PRODUCT_FEATURE_APPL_TYPE__PARENT_TYPE_ID, oldParentTypeId, parentTypeId));
 	}
 
 	/**
@@ -232,7 +245,10 @@ public class ProductFeatureApplTypeImpl extends BizEntityTypeImpl<ProductFeature
 	 */
 	@Override
 	public void setProductFeatureApplTypeId(String newProductFeatureApplTypeId) {
+		String oldProductFeatureApplTypeId = productFeatureApplTypeId;
 		productFeatureApplTypeId = newProductFeatureApplTypeId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, FeaturePackage.PRODUCT_FEATURE_APPL_TYPE__PRODUCT_FEATURE_APPL_TYPE_ID, oldProductFeatureApplTypeId, productFeatureApplTypeId));
 	}
 
 	/**

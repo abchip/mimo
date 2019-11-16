@@ -13,9 +13,11 @@ import java.util.List;
 import org.abchip.mimo.biz.entity.tenant.Tenant;
 import org.abchip.mimo.biz.entity.tenant.TenantPackage;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.util.BasicInternalEList;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -161,7 +163,10 @@ public class TenantImpl extends BizEntityImpl implements Tenant {
 	 */
 	@Override
 	public void setInitialPath(String newInitialPath) {
+		String oldInitialPath = initialPath;
 		initialPath = newInitialPath;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, TenantPackage.TENANT__INITIAL_PATH, oldInitialPath, initialPath));
 	}
 
 	/**
@@ -181,7 +186,10 @@ public class TenantImpl extends BizEntityImpl implements Tenant {
 	 */
 	@Override
 	public void setTenantId(String newTenantId) {
+		String oldTenantId = tenantId;
 		tenantId = newTenantId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, TenantPackage.TENANT__TENANT_ID, oldTenantId, tenantId));
 	}
 
 	/**
@@ -201,7 +209,10 @@ public class TenantImpl extends BizEntityImpl implements Tenant {
 	 */
 	@Override
 	public void setDisabled(boolean newDisabled) {
+		boolean oldDisabled = disabled;
 		disabled = newDisabled;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, TenantPackage.TENANT__DISABLED, oldDisabled, disabled));
 	}
 
 	/**
@@ -221,7 +232,10 @@ public class TenantImpl extends BizEntityImpl implements Tenant {
 	 */
 	@Override
 	public void setTenantName(String newTenantName) {
+		String oldTenantName = tenantName;
 		tenantName = newTenantName;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, TenantPackage.TENANT__TENANT_NAME, oldTenantName, tenantName));
 	}
 
 	/**
@@ -232,7 +246,7 @@ public class TenantImpl extends BizEntityImpl implements Tenant {
 	@Override
 	public List<String> getTenantDataSources() {
 		if (tenantDataSources == null) {
-			tenantDataSources = new BasicInternalEList<String>(String.class);
+			tenantDataSources = new EDataTypeUniqueEList<String>(String.class, this, TenantPackage.TENANT__TENANT_DATA_SOURCES);
 		}
 		return tenantDataSources;
 	}

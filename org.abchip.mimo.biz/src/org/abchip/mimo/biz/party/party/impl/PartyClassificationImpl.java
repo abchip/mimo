@@ -15,9 +15,11 @@ import org.abchip.mimo.biz.party.party.PartyClassification;
 import org.abchip.mimo.biz.party.party.PartyClassificationGroup;
 import org.abchip.mimo.biz.party.party.PartyClassificationType;
 import org.abchip.mimo.biz.party.party.PartyPackage;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -131,7 +133,10 @@ public class PartyClassificationImpl extends BizEntityTypedImpl<PartyClassificat
 	 */
 	@Override
 	public void setFromDate(Date newFromDate) {
+		Date oldFromDate = fromDate;
 		fromDate = newFromDate;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PartyPackage.PARTY_CLASSIFICATION__FROM_DATE, oldFromDate, fromDate));
 	}
 
 	/**
@@ -151,7 +156,10 @@ public class PartyClassificationImpl extends BizEntityTypedImpl<PartyClassificat
 	 */
 	@Override
 	public void setThruDate(Date newThruDate) {
+		Date oldThruDate = thruDate;
 		thruDate = newThruDate;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PartyPackage.PARTY_CLASSIFICATION__THRU_DATE, oldThruDate, thruDate));
 	}
 
 	/**
@@ -165,6 +173,8 @@ public class PartyClassificationImpl extends BizEntityTypedImpl<PartyClassificat
 			InternalEObject oldPartyId = (InternalEObject)partyId;
 			partyId = (Party)eResolveProxy(oldPartyId);
 			if (partyId != oldPartyId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PartyPackage.PARTY_CLASSIFICATION__PARTY_ID, oldPartyId, partyId));
 			}
 		}
 		return partyId;
@@ -186,7 +196,10 @@ public class PartyClassificationImpl extends BizEntityTypedImpl<PartyClassificat
 	 */
 	@Override
 	public void setPartyId(Party newPartyId) {
+		Party oldPartyId = partyId;
 		partyId = newPartyId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PartyPackage.PARTY_CLASSIFICATION__PARTY_ID, oldPartyId, partyId));
 	}
 
 	/**
@@ -200,6 +213,8 @@ public class PartyClassificationImpl extends BizEntityTypedImpl<PartyClassificat
 			InternalEObject oldPartyClassificationGroupId = (InternalEObject)partyClassificationGroupId;
 			partyClassificationGroupId = (PartyClassificationGroup)eResolveProxy(oldPartyClassificationGroupId);
 			if (partyClassificationGroupId != oldPartyClassificationGroupId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PartyPackage.PARTY_CLASSIFICATION__PARTY_CLASSIFICATION_GROUP_ID, oldPartyClassificationGroupId, partyClassificationGroupId));
 			}
 		}
 		return partyClassificationGroupId;
@@ -221,7 +236,10 @@ public class PartyClassificationImpl extends BizEntityTypedImpl<PartyClassificat
 	 */
 	@Override
 	public void setPartyClassificationGroupId(PartyClassificationGroup newPartyClassificationGroupId) {
+		PartyClassificationGroup oldPartyClassificationGroupId = partyClassificationGroupId;
 		partyClassificationGroupId = newPartyClassificationGroupId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PartyPackage.PARTY_CLASSIFICATION__PARTY_CLASSIFICATION_GROUP_ID, oldPartyClassificationGroupId, partyClassificationGroupId));
 	}
 
 	/**

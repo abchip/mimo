@@ -12,10 +12,12 @@ import org.abchip.mimo.biz.order.quote.Quote;
 import org.abchip.mimo.biz.order.quote.QuotePackage;
 import org.abchip.mimo.biz.order.quote.QuoteWorkEffort;
 import org.abchip.mimo.biz.workeffort.workeffort.WorkEffort;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -87,6 +89,8 @@ public class QuoteWorkEffortImpl extends BizEntityImpl implements QuoteWorkEffor
 			InternalEObject oldQuoteId = (InternalEObject)quoteId;
 			quoteId = (Quote)eResolveProxy(oldQuoteId);
 			if (quoteId != oldQuoteId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, QuotePackage.QUOTE_WORK_EFFORT__QUOTE_ID, oldQuoteId, quoteId));
 			}
 		}
 		return quoteId;
@@ -108,7 +112,10 @@ public class QuoteWorkEffortImpl extends BizEntityImpl implements QuoteWorkEffor
 	 */
 	@Override
 	public void setQuoteId(Quote newQuoteId) {
+		Quote oldQuoteId = quoteId;
 		quoteId = newQuoteId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, QuotePackage.QUOTE_WORK_EFFORT__QUOTE_ID, oldQuoteId, quoteId));
 	}
 
 	/**
@@ -122,6 +129,8 @@ public class QuoteWorkEffortImpl extends BizEntityImpl implements QuoteWorkEffor
 			InternalEObject oldWorkEffortId = (InternalEObject)workEffortId;
 			workEffortId = (WorkEffort)eResolveProxy(oldWorkEffortId);
 			if (workEffortId != oldWorkEffortId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, QuotePackage.QUOTE_WORK_EFFORT__WORK_EFFORT_ID, oldWorkEffortId, workEffortId));
 			}
 		}
 		return workEffortId;
@@ -143,7 +152,10 @@ public class QuoteWorkEffortImpl extends BizEntityImpl implements QuoteWorkEffor
 	 */
 	@Override
 	public void setWorkEffortId(WorkEffort newWorkEffortId) {
+		WorkEffort oldWorkEffortId = workEffortId;
 		workEffortId = newWorkEffortId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, QuotePackage.QUOTE_WORK_EFFORT__WORK_EFFORT_ID, oldWorkEffortId, workEffortId));
 	}
 
 	/**

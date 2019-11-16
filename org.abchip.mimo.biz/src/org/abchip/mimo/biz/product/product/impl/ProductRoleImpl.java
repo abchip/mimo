@@ -15,9 +15,11 @@ import org.abchip.mimo.biz.party.party.RoleType;
 import org.abchip.mimo.biz.product.product.Product;
 import org.abchip.mimo.biz.product.product.ProductPackage;
 import org.abchip.mimo.biz.product.product.ProductRole;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -190,7 +192,10 @@ public class ProductRoleImpl extends BizEntityImpl implements ProductRole {
 	 */
 	@Override
 	public void setComments(String newComments) {
+		String oldComments = comments;
 		comments = newComments;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ProductPackage.PRODUCT_ROLE__COMMENTS, oldComments, comments));
 	}
 
 	/**
@@ -210,7 +215,10 @@ public class ProductRoleImpl extends BizEntityImpl implements ProductRole {
 	 */
 	@Override
 	public void setFromDate(Date newFromDate) {
+		Date oldFromDate = fromDate;
 		fromDate = newFromDate;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ProductPackage.PRODUCT_ROLE__FROM_DATE, oldFromDate, fromDate));
 	}
 
 	/**
@@ -224,6 +232,8 @@ public class ProductRoleImpl extends BizEntityImpl implements ProductRole {
 			InternalEObject oldPartyId = (InternalEObject)partyId;
 			partyId = (Party)eResolveProxy(oldPartyId);
 			if (partyId != oldPartyId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ProductPackage.PRODUCT_ROLE__PARTY_ID, oldPartyId, partyId));
 			}
 		}
 		return partyId;
@@ -245,7 +255,10 @@ public class ProductRoleImpl extends BizEntityImpl implements ProductRole {
 	 */
 	@Override
 	public void setPartyId(Party newPartyId) {
+		Party oldPartyId = partyId;
 		partyId = newPartyId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ProductPackage.PRODUCT_ROLE__PARTY_ID, oldPartyId, partyId));
 	}
 
 	/**
@@ -259,6 +272,8 @@ public class ProductRoleImpl extends BizEntityImpl implements ProductRole {
 			InternalEObject oldRoleTypeId = (InternalEObject)roleTypeId;
 			roleTypeId = (RoleType)eResolveProxy(oldRoleTypeId);
 			if (roleTypeId != oldRoleTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ProductPackage.PRODUCT_ROLE__ROLE_TYPE_ID, oldRoleTypeId, roleTypeId));
 			}
 		}
 		return roleTypeId;
@@ -280,7 +295,10 @@ public class ProductRoleImpl extends BizEntityImpl implements ProductRole {
 	 */
 	@Override
 	public void setRoleTypeId(RoleType newRoleTypeId) {
+		RoleType oldRoleTypeId = roleTypeId;
 		roleTypeId = newRoleTypeId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ProductPackage.PRODUCT_ROLE__ROLE_TYPE_ID, oldRoleTypeId, roleTypeId));
 	}
 
 	/**
@@ -300,7 +318,10 @@ public class ProductRoleImpl extends BizEntityImpl implements ProductRole {
 	 */
 	@Override
 	public void setSequenceNum(long newSequenceNum) {
+		long oldSequenceNum = sequenceNum;
 		sequenceNum = newSequenceNum;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ProductPackage.PRODUCT_ROLE__SEQUENCE_NUM, oldSequenceNum, sequenceNum));
 	}
 
 	/**
@@ -320,7 +341,10 @@ public class ProductRoleImpl extends BizEntityImpl implements ProductRole {
 	 */
 	@Override
 	public void setThruDate(Date newThruDate) {
+		Date oldThruDate = thruDate;
 		thruDate = newThruDate;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ProductPackage.PRODUCT_ROLE__THRU_DATE, oldThruDate, thruDate));
 	}
 
 	/**
@@ -334,6 +358,8 @@ public class ProductRoleImpl extends BizEntityImpl implements ProductRole {
 			InternalEObject oldProductId = (InternalEObject)productId;
 			productId = (Product)eResolveProxy(oldProductId);
 			if (productId != oldProductId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ProductPackage.PRODUCT_ROLE__PRODUCT_ID, oldProductId, productId));
 			}
 		}
 		return productId;
@@ -355,7 +381,10 @@ public class ProductRoleImpl extends BizEntityImpl implements ProductRole {
 	 */
 	@Override
 	public void setProductId(Product newProductId) {
+		Product oldProductId = productId;
 		productId = newProductId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ProductPackage.PRODUCT_ROLE__PRODUCT_ID, oldProductId, productId));
 	}
 
 	/**

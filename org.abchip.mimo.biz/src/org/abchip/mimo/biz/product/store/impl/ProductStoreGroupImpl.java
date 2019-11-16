@@ -13,9 +13,11 @@ import org.abchip.mimo.biz.impl.BizEntityTypedImpl;
 import org.abchip.mimo.biz.product.store.ProductStoreGroup;
 import org.abchip.mimo.biz.product.store.ProductStoreGroupType;
 import org.abchip.mimo.biz.product.store.StorePackage;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -156,7 +158,10 @@ public class ProductStoreGroupImpl extends BizEntityTypedImpl<ProductStoreGroupT
 	 */
 	@Override
 	public void setDescription(String newDescription) {
+		String oldDescription = description;
 		description = newDescription;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, StorePackage.PRODUCT_STORE_GROUP__DESCRIPTION, oldDescription, description));
 	}
 
 	/**
@@ -176,7 +181,10 @@ public class ProductStoreGroupImpl extends BizEntityTypedImpl<ProductStoreGroupT
 	 */
 	@Override
 	public void setProductStoreGroupName(String newProductStoreGroupName) {
+		String oldProductStoreGroupName = productStoreGroupName;
 		productStoreGroupName = newProductStoreGroupName;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, StorePackage.PRODUCT_STORE_GROUP__PRODUCT_STORE_GROUP_NAME, oldProductStoreGroupName, productStoreGroupName));
 	}
 
 	/**
@@ -190,6 +198,8 @@ public class ProductStoreGroupImpl extends BizEntityTypedImpl<ProductStoreGroupT
 			InternalEObject oldProductStoreGroupTypeId = (InternalEObject)productStoreGroupTypeId;
 			productStoreGroupTypeId = (ProductStoreGroupType)eResolveProxy(oldProductStoreGroupTypeId);
 			if (productStoreGroupTypeId != oldProductStoreGroupTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, StorePackage.PRODUCT_STORE_GROUP__PRODUCT_STORE_GROUP_TYPE_ID, oldProductStoreGroupTypeId, productStoreGroupTypeId));
 			}
 		}
 		return productStoreGroupTypeId;
@@ -211,7 +221,10 @@ public class ProductStoreGroupImpl extends BizEntityTypedImpl<ProductStoreGroupT
 	 */
 	@Override
 	public void setProductStoreGroupTypeId(ProductStoreGroupType newProductStoreGroupTypeId) {
+		ProductStoreGroupType oldProductStoreGroupTypeId = productStoreGroupTypeId;
 		productStoreGroupTypeId = newProductStoreGroupTypeId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, StorePackage.PRODUCT_STORE_GROUP__PRODUCT_STORE_GROUP_TYPE_ID, oldProductStoreGroupTypeId, productStoreGroupTypeId));
 	}
 
 	/**
@@ -237,6 +250,8 @@ public class ProductStoreGroupImpl extends BizEntityTypedImpl<ProductStoreGroupT
 			InternalEObject oldPrimaryParentGroupId = (InternalEObject)primaryParentGroupId;
 			primaryParentGroupId = (ProductStoreGroup)eResolveProxy(oldPrimaryParentGroupId);
 			if (primaryParentGroupId != oldPrimaryParentGroupId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, StorePackage.PRODUCT_STORE_GROUP__PRIMARY_PARENT_GROUP_ID, oldPrimaryParentGroupId, primaryParentGroupId));
 			}
 		}
 		return primaryParentGroupId;
@@ -258,7 +273,10 @@ public class ProductStoreGroupImpl extends BizEntityTypedImpl<ProductStoreGroupT
 	 */
 	@Override
 	public void setPrimaryParentGroupId(ProductStoreGroup newPrimaryParentGroupId) {
+		ProductStoreGroup oldPrimaryParentGroupId = primaryParentGroupId;
 		primaryParentGroupId = newPrimaryParentGroupId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, StorePackage.PRODUCT_STORE_GROUP__PRIMARY_PARENT_GROUP_ID, oldPrimaryParentGroupId, primaryParentGroupId));
 	}
 
 	/**
@@ -278,7 +296,10 @@ public class ProductStoreGroupImpl extends BizEntityTypedImpl<ProductStoreGroupT
 	 */
 	@Override
 	public void setProductStoreGroupId(String newProductStoreGroupId) {
+		String oldProductStoreGroupId = productStoreGroupId;
 		productStoreGroupId = newProductStoreGroupId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, StorePackage.PRODUCT_STORE_GROUP__PRODUCT_STORE_GROUP_ID, oldProductStoreGroupId, productStoreGroupId));
 	}
 
 	/**

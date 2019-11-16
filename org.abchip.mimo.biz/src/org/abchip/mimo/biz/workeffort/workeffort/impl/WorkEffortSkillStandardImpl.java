@@ -14,10 +14,12 @@ import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.workeffort.workeffort.WorkEffort;
 import org.abchip.mimo.biz.workeffort.workeffort.WorkEffortSkillStandard;
 import org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -158,7 +160,10 @@ public class WorkEffortSkillStandardImpl extends BizEntityImpl implements WorkEf
 	 */
 	@Override
 	public void setEstimatedCost(BigDecimal newEstimatedCost) {
+		BigDecimal oldEstimatedCost = estimatedCost;
 		estimatedCost = newEstimatedCost;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WorkeffortPackage.WORK_EFFORT_SKILL_STANDARD__ESTIMATED_COST, oldEstimatedCost, estimatedCost));
 	}
 
 	/**
@@ -178,7 +183,10 @@ public class WorkEffortSkillStandardImpl extends BizEntityImpl implements WorkEf
 	 */
 	@Override
 	public void setEstimatedDuration(double newEstimatedDuration) {
+		double oldEstimatedDuration = estimatedDuration;
 		estimatedDuration = newEstimatedDuration;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WorkeffortPackage.WORK_EFFORT_SKILL_STANDARD__ESTIMATED_DURATION, oldEstimatedDuration, estimatedDuration));
 	}
 
 	/**
@@ -198,7 +206,10 @@ public class WorkEffortSkillStandardImpl extends BizEntityImpl implements WorkEf
 	 */
 	@Override
 	public void setEstimatedNumPeople(double newEstimatedNumPeople) {
+		double oldEstimatedNumPeople = estimatedNumPeople;
 		estimatedNumPeople = newEstimatedNumPeople;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WorkeffortPackage.WORK_EFFORT_SKILL_STANDARD__ESTIMATED_NUM_PEOPLE, oldEstimatedNumPeople, estimatedNumPeople));
 	}
 
 	/**
@@ -212,6 +223,8 @@ public class WorkEffortSkillStandardImpl extends BizEntityImpl implements WorkEf
 			InternalEObject oldSkillTypeId = (InternalEObject)skillTypeId;
 			skillTypeId = (SkillType)eResolveProxy(oldSkillTypeId);
 			if (skillTypeId != oldSkillTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WorkeffortPackage.WORK_EFFORT_SKILL_STANDARD__SKILL_TYPE_ID, oldSkillTypeId, skillTypeId));
 			}
 		}
 		return skillTypeId;
@@ -233,7 +246,10 @@ public class WorkEffortSkillStandardImpl extends BizEntityImpl implements WorkEf
 	 */
 	@Override
 	public void setSkillTypeId(SkillType newSkillTypeId) {
+		SkillType oldSkillTypeId = skillTypeId;
 		skillTypeId = newSkillTypeId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WorkeffortPackage.WORK_EFFORT_SKILL_STANDARD__SKILL_TYPE_ID, oldSkillTypeId, skillTypeId));
 	}
 
 	/**
@@ -247,6 +263,8 @@ public class WorkEffortSkillStandardImpl extends BizEntityImpl implements WorkEf
 			InternalEObject oldWorkEffortId = (InternalEObject)workEffortId;
 			workEffortId = (WorkEffort)eResolveProxy(oldWorkEffortId);
 			if (workEffortId != oldWorkEffortId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WorkeffortPackage.WORK_EFFORT_SKILL_STANDARD__WORK_EFFORT_ID, oldWorkEffortId, workEffortId));
 			}
 		}
 		return workEffortId;
@@ -268,7 +286,10 @@ public class WorkEffortSkillStandardImpl extends BizEntityImpl implements WorkEf
 	 */
 	@Override
 	public void setWorkEffortId(WorkEffort newWorkEffortId) {
+		WorkEffort oldWorkEffortId = workEffortId;
 		workEffortId = newWorkEffortId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WorkeffortPackage.WORK_EFFORT_SKILL_STANDARD__WORK_EFFORT_ID, oldWorkEffortId, workEffortId));
 	}
 
 	/**

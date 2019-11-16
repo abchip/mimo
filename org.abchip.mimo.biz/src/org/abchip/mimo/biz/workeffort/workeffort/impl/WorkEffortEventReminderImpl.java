@@ -15,10 +15,12 @@ import org.abchip.mimo.biz.party.party.Party;
 import org.abchip.mimo.biz.workeffort.workeffort.WorkEffort;
 import org.abchip.mimo.biz.workeffort.workeffort.WorkEffortEventReminder;
 import org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -269,6 +271,8 @@ public class WorkEffortEventReminderImpl extends BizEntityImpl implements WorkEf
 			InternalEObject oldContactMechId = (InternalEObject)contactMechId;
 			contactMechId = (ContactMech)eResolveProxy(oldContactMechId);
 			if (contactMechId != oldContactMechId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WorkeffortPackage.WORK_EFFORT_EVENT_REMINDER__CONTACT_MECH_ID, oldContactMechId, contactMechId));
 			}
 		}
 		return contactMechId;
@@ -290,7 +294,10 @@ public class WorkEffortEventReminderImpl extends BizEntityImpl implements WorkEf
 	 */
 	@Override
 	public void setContactMechId(ContactMech newContactMechId) {
+		ContactMech oldContactMechId = contactMechId;
 		contactMechId = newContactMechId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WorkeffortPackage.WORK_EFFORT_EVENT_REMINDER__CONTACT_MECH_ID, oldContactMechId, contactMechId));
 	}
 
 	/**
@@ -310,7 +317,10 @@ public class WorkEffortEventReminderImpl extends BizEntityImpl implements WorkEf
 	 */
 	@Override
 	public void setCurrentCount(long newCurrentCount) {
+		long oldCurrentCount = currentCount;
 		currentCount = newCurrentCount;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WorkeffortPackage.WORK_EFFORT_EVENT_REMINDER__CURRENT_COUNT, oldCurrentCount, currentCount));
 	}
 
 	/**
@@ -330,7 +340,10 @@ public class WorkEffortEventReminderImpl extends BizEntityImpl implements WorkEf
 	 */
 	@Override
 	public void setLocaleId(String newLocaleId) {
+		String oldLocaleId = localeId;
 		localeId = newLocaleId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WorkeffortPackage.WORK_EFFORT_EVENT_REMINDER__LOCALE_ID, oldLocaleId, localeId));
 	}
 
 	/**
@@ -344,6 +357,8 @@ public class WorkEffortEventReminderImpl extends BizEntityImpl implements WorkEf
 			InternalEObject oldPartyId = (InternalEObject)partyId;
 			partyId = (Party)eResolveProxy(oldPartyId);
 			if (partyId != oldPartyId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WorkeffortPackage.WORK_EFFORT_EVENT_REMINDER__PARTY_ID, oldPartyId, partyId));
 			}
 		}
 		return partyId;
@@ -365,7 +380,10 @@ public class WorkEffortEventReminderImpl extends BizEntityImpl implements WorkEf
 	 */
 	@Override
 	public void setPartyId(Party newPartyId) {
+		Party oldPartyId = partyId;
 		partyId = newPartyId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WorkeffortPackage.WORK_EFFORT_EVENT_REMINDER__PARTY_ID, oldPartyId, partyId));
 	}
 
 	/**
@@ -385,7 +403,10 @@ public class WorkEffortEventReminderImpl extends BizEntityImpl implements WorkEf
 	 */
 	@Override
 	public void setReminderDateTime(Date newReminderDateTime) {
+		Date oldReminderDateTime = reminderDateTime;
 		reminderDateTime = newReminderDateTime;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WorkeffortPackage.WORK_EFFORT_EVENT_REMINDER__REMINDER_DATE_TIME, oldReminderDateTime, reminderDateTime));
 	}
 
 	/**
@@ -405,7 +426,10 @@ public class WorkEffortEventReminderImpl extends BizEntityImpl implements WorkEf
 	 */
 	@Override
 	public void setReminderOffset(long newReminderOffset) {
+		long oldReminderOffset = reminderOffset;
 		reminderOffset = newReminderOffset;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WorkeffortPackage.WORK_EFFORT_EVENT_REMINDER__REMINDER_OFFSET, oldReminderOffset, reminderOffset));
 	}
 
 	/**
@@ -425,7 +449,10 @@ public class WorkEffortEventReminderImpl extends BizEntityImpl implements WorkEf
 	 */
 	@Override
 	public void setRepeatCount(long newRepeatCount) {
+		long oldRepeatCount = repeatCount;
 		repeatCount = newRepeatCount;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WorkeffortPackage.WORK_EFFORT_EVENT_REMINDER__REPEAT_COUNT, oldRepeatCount, repeatCount));
 	}
 
 	/**
@@ -445,7 +472,10 @@ public class WorkEffortEventReminderImpl extends BizEntityImpl implements WorkEf
 	 */
 	@Override
 	public void setRepeatInterval(long newRepeatInterval) {
+		long oldRepeatInterval = repeatInterval;
 		repeatInterval = newRepeatInterval;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WorkeffortPackage.WORK_EFFORT_EVENT_REMINDER__REPEAT_INTERVAL, oldRepeatInterval, repeatInterval));
 	}
 
 	/**
@@ -465,7 +495,10 @@ public class WorkEffortEventReminderImpl extends BizEntityImpl implements WorkEf
 	 */
 	@Override
 	public void setSequenceId(String newSequenceId) {
+		String oldSequenceId = sequenceId;
 		sequenceId = newSequenceId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WorkeffortPackage.WORK_EFFORT_EVENT_REMINDER__SEQUENCE_ID, oldSequenceId, sequenceId));
 	}
 
 	/**
@@ -485,7 +518,10 @@ public class WorkEffortEventReminderImpl extends BizEntityImpl implements WorkEf
 	 */
 	@Override
 	public void setTimeZoneId(String newTimeZoneId) {
+		String oldTimeZoneId = timeZoneId;
 		timeZoneId = newTimeZoneId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WorkeffortPackage.WORK_EFFORT_EVENT_REMINDER__TIME_ZONE_ID, oldTimeZoneId, timeZoneId));
 	}
 
 	/**
@@ -499,6 +535,8 @@ public class WorkEffortEventReminderImpl extends BizEntityImpl implements WorkEf
 			InternalEObject oldWorkEffortId = (InternalEObject)workEffortId;
 			workEffortId = (WorkEffort)eResolveProxy(oldWorkEffortId);
 			if (workEffortId != oldWorkEffortId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WorkeffortPackage.WORK_EFFORT_EVENT_REMINDER__WORK_EFFORT_ID, oldWorkEffortId, workEffortId));
 			}
 		}
 		return workEffortId;
@@ -520,7 +558,10 @@ public class WorkEffortEventReminderImpl extends BizEntityImpl implements WorkEf
 	 */
 	@Override
 	public void setWorkEffortId(WorkEffort newWorkEffortId) {
+		WorkEffort oldWorkEffortId = workEffortId;
 		workEffortId = newWorkEffortId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WorkeffortPackage.WORK_EFFORT_EVENT_REMINDER__WORK_EFFORT_ID, oldWorkEffortId, workEffortId));
 	}
 
 	/**

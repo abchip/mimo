@@ -14,9 +14,11 @@ import org.abchip.mimo.biz.accounting.ledger.PartyGlAccount;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.party.party.Party;
 import org.abchip.mimo.biz.party.party.RoleType;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -116,6 +118,8 @@ public class PartyGlAccountImpl extends BizEntityImpl implements PartyGlAccount 
 			InternalEObject oldOrganizationPartyId = (InternalEObject)organizationPartyId;
 			organizationPartyId = (Party)eResolveProxy(oldOrganizationPartyId);
 			if (organizationPartyId != oldOrganizationPartyId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, LedgerPackage.PARTY_GL_ACCOUNT__ORGANIZATION_PARTY_ID, oldOrganizationPartyId, organizationPartyId));
 			}
 		}
 		return organizationPartyId;
@@ -137,7 +141,10 @@ public class PartyGlAccountImpl extends BizEntityImpl implements PartyGlAccount 
 	 */
 	@Override
 	public void setOrganizationPartyId(Party newOrganizationPartyId) {
+		Party oldOrganizationPartyId = organizationPartyId;
 		organizationPartyId = newOrganizationPartyId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, LedgerPackage.PARTY_GL_ACCOUNT__ORGANIZATION_PARTY_ID, oldOrganizationPartyId, organizationPartyId));
 	}
 
 	/**
@@ -151,6 +158,8 @@ public class PartyGlAccountImpl extends BizEntityImpl implements PartyGlAccount 
 			InternalEObject oldPartyId = (InternalEObject)partyId;
 			partyId = (Party)eResolveProxy(oldPartyId);
 			if (partyId != oldPartyId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, LedgerPackage.PARTY_GL_ACCOUNT__PARTY_ID, oldPartyId, partyId));
 			}
 		}
 		return partyId;
@@ -172,7 +181,10 @@ public class PartyGlAccountImpl extends BizEntityImpl implements PartyGlAccount 
 	 */
 	@Override
 	public void setPartyId(Party newPartyId) {
+		Party oldPartyId = partyId;
 		partyId = newPartyId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, LedgerPackage.PARTY_GL_ACCOUNT__PARTY_ID, oldPartyId, partyId));
 	}
 
 	/**
@@ -186,6 +198,8 @@ public class PartyGlAccountImpl extends BizEntityImpl implements PartyGlAccount 
 			InternalEObject oldRoleTypeId = (InternalEObject)roleTypeId;
 			roleTypeId = (RoleType)eResolveProxy(oldRoleTypeId);
 			if (roleTypeId != oldRoleTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, LedgerPackage.PARTY_GL_ACCOUNT__ROLE_TYPE_ID, oldRoleTypeId, roleTypeId));
 			}
 		}
 		return roleTypeId;
@@ -207,7 +221,10 @@ public class PartyGlAccountImpl extends BizEntityImpl implements PartyGlAccount 
 	 */
 	@Override
 	public void setRoleTypeId(RoleType newRoleTypeId) {
+		RoleType oldRoleTypeId = roleTypeId;
 		roleTypeId = newRoleTypeId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, LedgerPackage.PARTY_GL_ACCOUNT__ROLE_TYPE_ID, oldRoleTypeId, roleTypeId));
 	}
 
 	/**
@@ -221,6 +238,8 @@ public class PartyGlAccountImpl extends BizEntityImpl implements PartyGlAccount 
 			InternalEObject oldGlAccountTypeId = (InternalEObject)glAccountTypeId;
 			glAccountTypeId = (GlAccountType)eResolveProxy(oldGlAccountTypeId);
 			if (glAccountTypeId != oldGlAccountTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, LedgerPackage.PARTY_GL_ACCOUNT__GL_ACCOUNT_TYPE_ID, oldGlAccountTypeId, glAccountTypeId));
 			}
 		}
 		return glAccountTypeId;
@@ -242,7 +261,10 @@ public class PartyGlAccountImpl extends BizEntityImpl implements PartyGlAccount 
 	 */
 	@Override
 	public void setGlAccountTypeId(GlAccountType newGlAccountTypeId) {
+		GlAccountType oldGlAccountTypeId = glAccountTypeId;
 		glAccountTypeId = newGlAccountTypeId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, LedgerPackage.PARTY_GL_ACCOUNT__GL_ACCOUNT_TYPE_ID, oldGlAccountTypeId, glAccountTypeId));
 	}
 
 	/**
@@ -256,6 +278,8 @@ public class PartyGlAccountImpl extends BizEntityImpl implements PartyGlAccount 
 			InternalEObject oldGlAccountId = (InternalEObject)glAccountId;
 			glAccountId = (GlAccount)eResolveProxy(oldGlAccountId);
 			if (glAccountId != oldGlAccountId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, LedgerPackage.PARTY_GL_ACCOUNT__GL_ACCOUNT_ID, oldGlAccountId, glAccountId));
 			}
 		}
 		return glAccountId;
@@ -277,7 +301,10 @@ public class PartyGlAccountImpl extends BizEntityImpl implements PartyGlAccount 
 	 */
 	@Override
 	public void setGlAccountId(GlAccount newGlAccountId) {
+		GlAccount oldGlAccountId = glAccountId;
 		glAccountId = newGlAccountId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, LedgerPackage.PARTY_GL_ACCOUNT__GL_ACCOUNT_ID, oldGlAccountId, glAccountId));
 	}
 
 	/**

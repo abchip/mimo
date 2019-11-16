@@ -12,10 +12,12 @@ import org.abchip.mimo.biz.order.request.CustRequest;
 import org.abchip.mimo.biz.order.request.CustRequestCommEvent;
 import org.abchip.mimo.biz.order.request.RequestPackage;
 import org.abchip.mimo.biz.party.communication.CommunicationEvent;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -87,6 +89,8 @@ public class CustRequestCommEventImpl extends BizEntityImpl implements CustReque
 			InternalEObject oldCommunicationEventId = (InternalEObject)communicationEventId;
 			communicationEventId = (CommunicationEvent)eResolveProxy(oldCommunicationEventId);
 			if (communicationEventId != oldCommunicationEventId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, RequestPackage.CUST_REQUEST_COMM_EVENT__COMMUNICATION_EVENT_ID, oldCommunicationEventId, communicationEventId));
 			}
 		}
 		return communicationEventId;
@@ -108,7 +112,10 @@ public class CustRequestCommEventImpl extends BizEntityImpl implements CustReque
 	 */
 	@Override
 	public void setCommunicationEventId(CommunicationEvent newCommunicationEventId) {
+		CommunicationEvent oldCommunicationEventId = communicationEventId;
 		communicationEventId = newCommunicationEventId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, RequestPackage.CUST_REQUEST_COMM_EVENT__COMMUNICATION_EVENT_ID, oldCommunicationEventId, communicationEventId));
 	}
 
 	/**
@@ -122,6 +129,8 @@ public class CustRequestCommEventImpl extends BizEntityImpl implements CustReque
 			InternalEObject oldCustRequestId = (InternalEObject)custRequestId;
 			custRequestId = (CustRequest)eResolveProxy(oldCustRequestId);
 			if (custRequestId != oldCustRequestId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, RequestPackage.CUST_REQUEST_COMM_EVENT__CUST_REQUEST_ID, oldCustRequestId, custRequestId));
 			}
 		}
 		return custRequestId;
@@ -143,7 +152,10 @@ public class CustRequestCommEventImpl extends BizEntityImpl implements CustReque
 	 */
 	@Override
 	public void setCustRequestId(CustRequest newCustRequestId) {
+		CustRequest oldCustRequestId = custRequestId;
 		custRequestId = newCustRequestId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, RequestPackage.CUST_REQUEST_COMM_EVENT__CUST_REQUEST_ID, oldCustRequestId, custRequestId));
 	}
 
 	/**

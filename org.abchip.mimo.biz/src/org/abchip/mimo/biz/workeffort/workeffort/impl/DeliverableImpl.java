@@ -13,10 +13,12 @@ import org.abchip.mimo.biz.impl.BizEntityTypedImpl;
 import org.abchip.mimo.biz.workeffort.workeffort.Deliverable;
 import org.abchip.mimo.biz.workeffort.workeffort.DeliverableType;
 import org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -146,7 +148,10 @@ public class DeliverableImpl extends BizEntityTypedImpl<DeliverableType> impleme
 	 */
 	@Override
 	public void setDeliverableId(String newDeliverableId) {
+		String oldDeliverableId = deliverableId;
 		deliverableId = newDeliverableId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WorkeffortPackage.DELIVERABLE__DELIVERABLE_ID, oldDeliverableId, deliverableId));
 	}
 
 	/**
@@ -166,7 +171,10 @@ public class DeliverableImpl extends BizEntityTypedImpl<DeliverableType> impleme
 	 */
 	@Override
 	public void setDeliverableName(String newDeliverableName) {
+		String oldDeliverableName = deliverableName;
 		deliverableName = newDeliverableName;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WorkeffortPackage.DELIVERABLE__DELIVERABLE_NAME, oldDeliverableName, deliverableName));
 	}
 
 	/**
@@ -180,6 +188,8 @@ public class DeliverableImpl extends BizEntityTypedImpl<DeliverableType> impleme
 			InternalEObject oldDeliverableTypeId = (InternalEObject)deliverableTypeId;
 			deliverableTypeId = (DeliverableType)eResolveProxy(oldDeliverableTypeId);
 			if (deliverableTypeId != oldDeliverableTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WorkeffortPackage.DELIVERABLE__DELIVERABLE_TYPE_ID, oldDeliverableTypeId, deliverableTypeId));
 			}
 		}
 		return deliverableTypeId;
@@ -201,7 +211,10 @@ public class DeliverableImpl extends BizEntityTypedImpl<DeliverableType> impleme
 	 */
 	@Override
 	public void setDeliverableTypeId(DeliverableType newDeliverableTypeId) {
+		DeliverableType oldDeliverableTypeId = deliverableTypeId;
 		deliverableTypeId = newDeliverableTypeId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WorkeffortPackage.DELIVERABLE__DELIVERABLE_TYPE_ID, oldDeliverableTypeId, deliverableTypeId));
 	}
 
 	/**
@@ -221,7 +234,10 @@ public class DeliverableImpl extends BizEntityTypedImpl<DeliverableType> impleme
 	 */
 	@Override
 	public void setDescription(String newDescription) {
+		String oldDescription = description;
 		description = newDescription;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WorkeffortPackage.DELIVERABLE__DESCRIPTION, oldDescription, description));
 	}
 
 	/**

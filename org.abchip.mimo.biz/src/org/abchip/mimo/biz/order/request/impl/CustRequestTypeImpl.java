@@ -15,12 +15,14 @@ import org.abchip.mimo.biz.order.request.CustRequest;
 import org.abchip.mimo.biz.order.request.CustRequestType;
 import org.abchip.mimo.biz.order.request.RequestPackage;
 import org.abchip.mimo.biz.party.party.Party;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.util.BasicInternalEList;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -172,7 +174,10 @@ public class CustRequestTypeImpl extends BizEntityTypeImpl<CustRequest> implemen
 	 */
 	@Override
 	public void setCustRequestTypeId(String newCustRequestTypeId) {
+		String oldCustRequestTypeId = custRequestTypeId;
 		custRequestTypeId = newCustRequestTypeId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, RequestPackage.CUST_REQUEST_TYPE__CUST_REQUEST_TYPE_ID, oldCustRequestTypeId, custRequestTypeId));
 	}
 
 	/**
@@ -192,7 +197,10 @@ public class CustRequestTypeImpl extends BizEntityTypeImpl<CustRequest> implemen
 	 */
 	@Override
 	public void setDescription(String newDescription) {
+		String oldDescription = description;
 		description = newDescription;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, RequestPackage.CUST_REQUEST_TYPE__DESCRIPTION, oldDescription, description));
 	}
 
 	/**
@@ -212,7 +220,10 @@ public class CustRequestTypeImpl extends BizEntityTypeImpl<CustRequest> implemen
 	 */
 	@Override
 	public void setHasTable(boolean newHasTable) {
+		boolean oldHasTable = hasTable;
 		hasTable = newHasTable;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, RequestPackage.CUST_REQUEST_TYPE__HAS_TABLE, oldHasTable, hasTable));
 	}
 
 	/**
@@ -226,6 +237,8 @@ public class CustRequestTypeImpl extends BizEntityTypeImpl<CustRequest> implemen
 			InternalEObject oldParentTypeId = (InternalEObject)parentTypeId;
 			parentTypeId = (CustRequestType)eResolveProxy(oldParentTypeId);
 			if (parentTypeId != oldParentTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, RequestPackage.CUST_REQUEST_TYPE__PARENT_TYPE_ID, oldParentTypeId, parentTypeId));
 			}
 		}
 		return parentTypeId;
@@ -247,7 +260,10 @@ public class CustRequestTypeImpl extends BizEntityTypeImpl<CustRequest> implemen
 	 */
 	@Override
 	public void setParentTypeId(CustRequestType newParentTypeId) {
+		CustRequestType oldParentTypeId = parentTypeId;
 		parentTypeId = newParentTypeId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, RequestPackage.CUST_REQUEST_TYPE__PARENT_TYPE_ID, oldParentTypeId, parentTypeId));
 	}
 
 	/**
@@ -261,6 +277,8 @@ public class CustRequestTypeImpl extends BizEntityTypeImpl<CustRequest> implemen
 			InternalEObject oldPartyId = (InternalEObject)partyId;
 			partyId = (Party)eResolveProxy(oldPartyId);
 			if (partyId != oldPartyId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, RequestPackage.CUST_REQUEST_TYPE__PARTY_ID, oldPartyId, partyId));
 			}
 		}
 		return partyId;
@@ -282,7 +300,10 @@ public class CustRequestTypeImpl extends BizEntityTypeImpl<CustRequest> implemen
 	 */
 	@Override
 	public void setPartyId(Party newPartyId) {
+		Party oldPartyId = partyId;
 		partyId = newPartyId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, RequestPackage.CUST_REQUEST_TYPE__PARTY_ID, oldPartyId, partyId));
 	}
 
 	/**
@@ -293,7 +314,7 @@ public class CustRequestTypeImpl extends BizEntityTypeImpl<CustRequest> implemen
 	@Override
 	public List<String> getCustRequestTypeAttrs() {
 		if (custRequestTypeAttrs == null) {
-			custRequestTypeAttrs = new BasicInternalEList<String>(String.class);
+			custRequestTypeAttrs = new EDataTypeUniqueEList<String>(String.class, this, RequestPackage.CUST_REQUEST_TYPE__CUST_REQUEST_TYPE_ATTRS);
 		}
 		return custRequestTypeAttrs;
 	}

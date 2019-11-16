@@ -14,9 +14,11 @@ import org.abchip.mimo.biz.accounting.fixedasset.FixedassetPackage;
 import org.abchip.mimo.biz.accounting.ledger.GlAccount;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.party.party.Party;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -146,6 +148,8 @@ public class FixedAssetTypeGlAccountImpl extends BizEntityImpl implements FixedA
 			InternalEObject oldAccDepGlAccountId = (InternalEObject)accDepGlAccountId;
 			accDepGlAccountId = (GlAccount)eResolveProxy(oldAccDepGlAccountId);
 			if (accDepGlAccountId != oldAccDepGlAccountId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, FixedassetPackage.FIXED_ASSET_TYPE_GL_ACCOUNT__ACC_DEP_GL_ACCOUNT_ID, oldAccDepGlAccountId, accDepGlAccountId));
 			}
 		}
 		return accDepGlAccountId;
@@ -167,7 +171,10 @@ public class FixedAssetTypeGlAccountImpl extends BizEntityImpl implements FixedA
 	 */
 	@Override
 	public void setAccDepGlAccountId(GlAccount newAccDepGlAccountId) {
+		GlAccount oldAccDepGlAccountId = accDepGlAccountId;
 		accDepGlAccountId = newAccDepGlAccountId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, FixedassetPackage.FIXED_ASSET_TYPE_GL_ACCOUNT__ACC_DEP_GL_ACCOUNT_ID, oldAccDepGlAccountId, accDepGlAccountId));
 	}
 
 	/**
@@ -181,6 +188,8 @@ public class FixedAssetTypeGlAccountImpl extends BizEntityImpl implements FixedA
 			InternalEObject oldAssetGlAccountId = (InternalEObject)assetGlAccountId;
 			assetGlAccountId = (GlAccount)eResolveProxy(oldAssetGlAccountId);
 			if (assetGlAccountId != oldAssetGlAccountId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, FixedassetPackage.FIXED_ASSET_TYPE_GL_ACCOUNT__ASSET_GL_ACCOUNT_ID, oldAssetGlAccountId, assetGlAccountId));
 			}
 		}
 		return assetGlAccountId;
@@ -202,7 +211,10 @@ public class FixedAssetTypeGlAccountImpl extends BizEntityImpl implements FixedA
 	 */
 	@Override
 	public void setAssetGlAccountId(GlAccount newAssetGlAccountId) {
+		GlAccount oldAssetGlAccountId = assetGlAccountId;
 		assetGlAccountId = newAssetGlAccountId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, FixedassetPackage.FIXED_ASSET_TYPE_GL_ACCOUNT__ASSET_GL_ACCOUNT_ID, oldAssetGlAccountId, assetGlAccountId));
 	}
 
 	/**
@@ -216,6 +228,8 @@ public class FixedAssetTypeGlAccountImpl extends BizEntityImpl implements FixedA
 			InternalEObject oldDepGlAccountId = (InternalEObject)depGlAccountId;
 			depGlAccountId = (GlAccount)eResolveProxy(oldDepGlAccountId);
 			if (depGlAccountId != oldDepGlAccountId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, FixedassetPackage.FIXED_ASSET_TYPE_GL_ACCOUNT__DEP_GL_ACCOUNT_ID, oldDepGlAccountId, depGlAccountId));
 			}
 		}
 		return depGlAccountId;
@@ -237,7 +251,10 @@ public class FixedAssetTypeGlAccountImpl extends BizEntityImpl implements FixedA
 	 */
 	@Override
 	public void setDepGlAccountId(GlAccount newDepGlAccountId) {
+		GlAccount oldDepGlAccountId = depGlAccountId;
 		depGlAccountId = newDepGlAccountId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, FixedassetPackage.FIXED_ASSET_TYPE_GL_ACCOUNT__DEP_GL_ACCOUNT_ID, oldDepGlAccountId, depGlAccountId));
 	}
 
 	/**
@@ -251,6 +268,8 @@ public class FixedAssetTypeGlAccountImpl extends BizEntityImpl implements FixedA
 			InternalEObject oldLossGlAccountId = (InternalEObject)lossGlAccountId;
 			lossGlAccountId = (GlAccount)eResolveProxy(oldLossGlAccountId);
 			if (lossGlAccountId != oldLossGlAccountId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, FixedassetPackage.FIXED_ASSET_TYPE_GL_ACCOUNT__LOSS_GL_ACCOUNT_ID, oldLossGlAccountId, lossGlAccountId));
 			}
 		}
 		return lossGlAccountId;
@@ -272,7 +291,10 @@ public class FixedAssetTypeGlAccountImpl extends BizEntityImpl implements FixedA
 	 */
 	@Override
 	public void setLossGlAccountId(GlAccount newLossGlAccountId) {
+		GlAccount oldLossGlAccountId = lossGlAccountId;
 		lossGlAccountId = newLossGlAccountId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, FixedassetPackage.FIXED_ASSET_TYPE_GL_ACCOUNT__LOSS_GL_ACCOUNT_ID, oldLossGlAccountId, lossGlAccountId));
 	}
 
 	/**
@@ -286,6 +308,8 @@ public class FixedAssetTypeGlAccountImpl extends BizEntityImpl implements FixedA
 			InternalEObject oldOrganizationPartyId = (InternalEObject)organizationPartyId;
 			organizationPartyId = (Party)eResolveProxy(oldOrganizationPartyId);
 			if (organizationPartyId != oldOrganizationPartyId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, FixedassetPackage.FIXED_ASSET_TYPE_GL_ACCOUNT__ORGANIZATION_PARTY_ID, oldOrganizationPartyId, organizationPartyId));
 			}
 		}
 		return organizationPartyId;
@@ -307,7 +331,10 @@ public class FixedAssetTypeGlAccountImpl extends BizEntityImpl implements FixedA
 	 */
 	@Override
 	public void setOrganizationPartyId(Party newOrganizationPartyId) {
+		Party oldOrganizationPartyId = organizationPartyId;
 		organizationPartyId = newOrganizationPartyId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, FixedassetPackage.FIXED_ASSET_TYPE_GL_ACCOUNT__ORGANIZATION_PARTY_ID, oldOrganizationPartyId, organizationPartyId));
 	}
 
 	/**
@@ -321,6 +348,8 @@ public class FixedAssetTypeGlAccountImpl extends BizEntityImpl implements FixedA
 			InternalEObject oldProfitGlAccountId = (InternalEObject)profitGlAccountId;
 			profitGlAccountId = (GlAccount)eResolveProxy(oldProfitGlAccountId);
 			if (profitGlAccountId != oldProfitGlAccountId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, FixedassetPackage.FIXED_ASSET_TYPE_GL_ACCOUNT__PROFIT_GL_ACCOUNT_ID, oldProfitGlAccountId, profitGlAccountId));
 			}
 		}
 		return profitGlAccountId;
@@ -342,7 +371,10 @@ public class FixedAssetTypeGlAccountImpl extends BizEntityImpl implements FixedA
 	 */
 	@Override
 	public void setProfitGlAccountId(GlAccount newProfitGlAccountId) {
+		GlAccount oldProfitGlAccountId = profitGlAccountId;
 		profitGlAccountId = newProfitGlAccountId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, FixedassetPackage.FIXED_ASSET_TYPE_GL_ACCOUNT__PROFIT_GL_ACCOUNT_ID, oldProfitGlAccountId, profitGlAccountId));
 	}
 
 	/**
@@ -356,6 +388,8 @@ public class FixedAssetTypeGlAccountImpl extends BizEntityImpl implements FixedA
 			InternalEObject oldFixedAssetTypeId = (InternalEObject)fixedAssetTypeId;
 			fixedAssetTypeId = (FixedAssetType)eResolveProxy(oldFixedAssetTypeId);
 			if (fixedAssetTypeId != oldFixedAssetTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, FixedassetPackage.FIXED_ASSET_TYPE_GL_ACCOUNT__FIXED_ASSET_TYPE_ID, oldFixedAssetTypeId, fixedAssetTypeId));
 			}
 		}
 		return fixedAssetTypeId;
@@ -377,7 +411,10 @@ public class FixedAssetTypeGlAccountImpl extends BizEntityImpl implements FixedA
 	 */
 	@Override
 	public void setFixedAssetTypeId(FixedAssetType newFixedAssetTypeId) {
+		FixedAssetType oldFixedAssetTypeId = fixedAssetTypeId;
 		fixedAssetTypeId = newFixedAssetTypeId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, FixedassetPackage.FIXED_ASSET_TYPE_GL_ACCOUNT__FIXED_ASSET_TYPE_ID, oldFixedAssetTypeId, fixedAssetTypeId));
 	}
 
 	/**
@@ -391,6 +428,8 @@ public class FixedAssetTypeGlAccountImpl extends BizEntityImpl implements FixedA
 			InternalEObject oldFixedAssetId = (InternalEObject)fixedAssetId;
 			fixedAssetId = (FixedAsset)eResolveProxy(oldFixedAssetId);
 			if (fixedAssetId != oldFixedAssetId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, FixedassetPackage.FIXED_ASSET_TYPE_GL_ACCOUNT__FIXED_ASSET_ID, oldFixedAssetId, fixedAssetId));
 			}
 		}
 		return fixedAssetId;
@@ -412,7 +451,10 @@ public class FixedAssetTypeGlAccountImpl extends BizEntityImpl implements FixedA
 	 */
 	@Override
 	public void setFixedAssetId(FixedAsset newFixedAssetId) {
+		FixedAsset oldFixedAssetId = fixedAssetId;
 		fixedAssetId = newFixedAssetId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, FixedassetPackage.FIXED_ASSET_TYPE_GL_ACCOUNT__FIXED_ASSET_ID, oldFixedAssetId, fixedAssetId));
 	}
 
 	/**

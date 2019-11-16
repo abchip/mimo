@@ -17,9 +17,11 @@ import org.abchip.mimo.biz.product.product.Product;
 import org.abchip.mimo.biz.product.product.ProductContent;
 import org.abchip.mimo.biz.product.product.ProductContentType;
 import org.abchip.mimo.biz.product.product.ProductPackage;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -271,6 +273,8 @@ public class ProductContentImpl extends BizEntityTypedImpl<ProductContentType> i
 			InternalEObject oldContentId = (InternalEObject)contentId;
 			contentId = (Content)eResolveProxy(oldContentId);
 			if (contentId != oldContentId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ProductPackage.PRODUCT_CONTENT__CONTENT_ID, oldContentId, contentId));
 			}
 		}
 		return contentId;
@@ -292,7 +296,10 @@ public class ProductContentImpl extends BizEntityTypedImpl<ProductContentType> i
 	 */
 	@Override
 	public void setContentId(Content newContentId) {
+		Content oldContentId = contentId;
 		contentId = newContentId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ProductPackage.PRODUCT_CONTENT__CONTENT_ID, oldContentId, contentId));
 	}
 
 	/**
@@ -312,7 +319,10 @@ public class ProductContentImpl extends BizEntityTypedImpl<ProductContentType> i
 	 */
 	@Override
 	public void setFromDate(Date newFromDate) {
+		Date oldFromDate = fromDate;
 		fromDate = newFromDate;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ProductPackage.PRODUCT_CONTENT__FROM_DATE, oldFromDate, fromDate));
 	}
 
 	/**
@@ -332,7 +342,10 @@ public class ProductContentImpl extends BizEntityTypedImpl<ProductContentType> i
 	 */
 	@Override
 	public void setPurchaseFromDate(Date newPurchaseFromDate) {
+		Date oldPurchaseFromDate = purchaseFromDate;
 		purchaseFromDate = newPurchaseFromDate;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ProductPackage.PRODUCT_CONTENT__PURCHASE_FROM_DATE, oldPurchaseFromDate, purchaseFromDate));
 	}
 
 	/**
@@ -352,7 +365,10 @@ public class ProductContentImpl extends BizEntityTypedImpl<ProductContentType> i
 	 */
 	@Override
 	public void setPurchaseThruDate(Date newPurchaseThruDate) {
+		Date oldPurchaseThruDate = purchaseThruDate;
 		purchaseThruDate = newPurchaseThruDate;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ProductPackage.PRODUCT_CONTENT__PURCHASE_THRU_DATE, oldPurchaseThruDate, purchaseThruDate));
 	}
 
 	/**
@@ -372,7 +388,10 @@ public class ProductContentImpl extends BizEntityTypedImpl<ProductContentType> i
 	 */
 	@Override
 	public void setSequenceNum(long newSequenceNum) {
+		long oldSequenceNum = sequenceNum;
 		sequenceNum = newSequenceNum;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ProductPackage.PRODUCT_CONTENT__SEQUENCE_NUM, oldSequenceNum, sequenceNum));
 	}
 
 	/**
@@ -392,7 +411,10 @@ public class ProductContentImpl extends BizEntityTypedImpl<ProductContentType> i
 	 */
 	@Override
 	public void setThruDate(Date newThruDate) {
+		Date oldThruDate = thruDate;
 		thruDate = newThruDate;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ProductPackage.PRODUCT_CONTENT__THRU_DATE, oldThruDate, thruDate));
 	}
 
 	/**
@@ -412,7 +434,10 @@ public class ProductContentImpl extends BizEntityTypedImpl<ProductContentType> i
 	 */
 	@Override
 	public void setUseCountLimit(long newUseCountLimit) {
+		long oldUseCountLimit = useCountLimit;
 		useCountLimit = newUseCountLimit;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ProductPackage.PRODUCT_CONTENT__USE_COUNT_LIMIT, oldUseCountLimit, useCountLimit));
 	}
 
 	/**
@@ -426,6 +451,8 @@ public class ProductContentImpl extends BizEntityTypedImpl<ProductContentType> i
 			InternalEObject oldUseRoleTypeId = (InternalEObject)useRoleTypeId;
 			useRoleTypeId = (RoleType)eResolveProxy(oldUseRoleTypeId);
 			if (useRoleTypeId != oldUseRoleTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ProductPackage.PRODUCT_CONTENT__USE_ROLE_TYPE_ID, oldUseRoleTypeId, useRoleTypeId));
 			}
 		}
 		return useRoleTypeId;
@@ -447,7 +474,10 @@ public class ProductContentImpl extends BizEntityTypedImpl<ProductContentType> i
 	 */
 	@Override
 	public void setUseRoleTypeId(RoleType newUseRoleTypeId) {
+		RoleType oldUseRoleTypeId = useRoleTypeId;
 		useRoleTypeId = newUseRoleTypeId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ProductPackage.PRODUCT_CONTENT__USE_ROLE_TYPE_ID, oldUseRoleTypeId, useRoleTypeId));
 	}
 
 	/**
@@ -467,7 +497,10 @@ public class ProductContentImpl extends BizEntityTypedImpl<ProductContentType> i
 	 */
 	@Override
 	public void setUseTime(long newUseTime) {
+		long oldUseTime = useTime;
 		useTime = newUseTime;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ProductPackage.PRODUCT_CONTENT__USE_TIME, oldUseTime, useTime));
 	}
 
 	/**
@@ -481,6 +514,8 @@ public class ProductContentImpl extends BizEntityTypedImpl<ProductContentType> i
 			InternalEObject oldUseTimeUomId = (InternalEObject)useTimeUomId;
 			useTimeUomId = (Uom)eResolveProxy(oldUseTimeUomId);
 			if (useTimeUomId != oldUseTimeUomId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ProductPackage.PRODUCT_CONTENT__USE_TIME_UOM_ID, oldUseTimeUomId, useTimeUomId));
 			}
 		}
 		return useTimeUomId;
@@ -502,7 +537,10 @@ public class ProductContentImpl extends BizEntityTypedImpl<ProductContentType> i
 	 */
 	@Override
 	public void setUseTimeUomId(Uom newUseTimeUomId) {
+		Uom oldUseTimeUomId = useTimeUomId;
 		useTimeUomId = newUseTimeUomId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ProductPackage.PRODUCT_CONTENT__USE_TIME_UOM_ID, oldUseTimeUomId, useTimeUomId));
 	}
 
 	/**
@@ -516,6 +554,8 @@ public class ProductContentImpl extends BizEntityTypedImpl<ProductContentType> i
 			InternalEObject oldProductId = (InternalEObject)productId;
 			productId = (Product)eResolveProxy(oldProductId);
 			if (productId != oldProductId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ProductPackage.PRODUCT_CONTENT__PRODUCT_ID, oldProductId, productId));
 			}
 		}
 		return productId;
@@ -537,7 +577,10 @@ public class ProductContentImpl extends BizEntityTypedImpl<ProductContentType> i
 	 */
 	@Override
 	public void setProductId(Product newProductId) {
+		Product oldProductId = productId;
 		productId = newProductId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ProductPackage.PRODUCT_CONTENT__PRODUCT_ID, oldProductId, productId));
 	}
 
 	/**
@@ -551,6 +594,8 @@ public class ProductContentImpl extends BizEntityTypedImpl<ProductContentType> i
 			InternalEObject oldProductContentTypeId = (InternalEObject)productContentTypeId;
 			productContentTypeId = (ProductContentType)eResolveProxy(oldProductContentTypeId);
 			if (productContentTypeId != oldProductContentTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ProductPackage.PRODUCT_CONTENT__PRODUCT_CONTENT_TYPE_ID, oldProductContentTypeId, productContentTypeId));
 			}
 		}
 		return productContentTypeId;
@@ -572,7 +617,10 @@ public class ProductContentImpl extends BizEntityTypedImpl<ProductContentType> i
 	 */
 	@Override
 	public void setProductContentTypeId(ProductContentType newProductContentTypeId) {
+		ProductContentType oldProductContentTypeId = productContentTypeId;
 		productContentTypeId = newProductContentTypeId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ProductPackage.PRODUCT_CONTENT__PRODUCT_CONTENT_TYPE_ID, oldProductContentTypeId, productContentTypeId));
 	}
 
 	/**

@@ -13,7 +13,9 @@ import java.util.List;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.product.inventory.InventoryPackage;
 import org.abchip.mimo.biz.product.inventory.PhysicalInventory;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -153,7 +155,10 @@ public class PhysicalInventoryImpl extends BizEntityImpl implements PhysicalInve
 	 */
 	@Override
 	public void setGeneralComments(String newGeneralComments) {
+		String oldGeneralComments = generalComments;
 		generalComments = newGeneralComments;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, InventoryPackage.PHYSICAL_INVENTORY__GENERAL_COMMENTS, oldGeneralComments, generalComments));
 	}
 
 	/**
@@ -173,7 +178,10 @@ public class PhysicalInventoryImpl extends BizEntityImpl implements PhysicalInve
 	 */
 	@Override
 	public void setPartyId(String newPartyId) {
+		String oldPartyId = partyId;
 		partyId = newPartyId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, InventoryPackage.PHYSICAL_INVENTORY__PARTY_ID, oldPartyId, partyId));
 	}
 
 	/**
@@ -193,7 +201,10 @@ public class PhysicalInventoryImpl extends BizEntityImpl implements PhysicalInve
 	 */
 	@Override
 	public void setPhysicalInventoryDate(Date newPhysicalInventoryDate) {
+		Date oldPhysicalInventoryDate = physicalInventoryDate;
 		physicalInventoryDate = newPhysicalInventoryDate;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, InventoryPackage.PHYSICAL_INVENTORY__PHYSICAL_INVENTORY_DATE, oldPhysicalInventoryDate, physicalInventoryDate));
 	}
 
 	/**
@@ -249,7 +260,10 @@ public class PhysicalInventoryImpl extends BizEntityImpl implements PhysicalInve
 	 */
 	@Override
 	public void setPhysicalInventoryId(String newPhysicalInventoryId) {
+		String oldPhysicalInventoryId = physicalInventoryId;
 		physicalInventoryId = newPhysicalInventoryId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, InventoryPackage.PHYSICAL_INVENTORY__PHYSICAL_INVENTORY_ID, oldPhysicalInventoryId, physicalInventoryId));
 	}
 
 	/**

@@ -12,9 +12,11 @@ import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.party.contact.ContactPackage;
 import org.abchip.mimo.biz.party.contact.PostalAddress;
 import org.abchip.mimo.biz.party.contact.PostalAddressBoundary;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -84,6 +86,8 @@ public class PostalAddressBoundaryImpl extends BizEntityImpl implements PostalAd
 			InternalEObject oldGeoId = (InternalEObject)geoId;
 			geoId = (Geo)eResolveProxy(oldGeoId);
 			if (geoId != oldGeoId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ContactPackage.POSTAL_ADDRESS_BOUNDARY__GEO_ID, oldGeoId, geoId));
 			}
 		}
 		return geoId;
@@ -105,7 +109,10 @@ public class PostalAddressBoundaryImpl extends BizEntityImpl implements PostalAd
 	 */
 	@Override
 	public void setGeoId(Geo newGeoId) {
+		Geo oldGeoId = geoId;
 		geoId = newGeoId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ContactPackage.POSTAL_ADDRESS_BOUNDARY__GEO_ID, oldGeoId, geoId));
 	}
 
 	/**
@@ -119,6 +126,8 @@ public class PostalAddressBoundaryImpl extends BizEntityImpl implements PostalAd
 			InternalEObject oldContactMechId = (InternalEObject)contactMechId;
 			contactMechId = (PostalAddress)eResolveProxy(oldContactMechId);
 			if (contactMechId != oldContactMechId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ContactPackage.POSTAL_ADDRESS_BOUNDARY__CONTACT_MECH_ID, oldContactMechId, contactMechId));
 			}
 		}
 		return contactMechId;
@@ -140,7 +149,10 @@ public class PostalAddressBoundaryImpl extends BizEntityImpl implements PostalAd
 	 */
 	@Override
 	public void setContactMechId(PostalAddress newContactMechId) {
+		PostalAddress oldContactMechId = contactMechId;
 		contactMechId = newContactMechId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ContactPackage.POSTAL_ADDRESS_BOUNDARY__CONTACT_MECH_ID, oldContactMechId, contactMechId));
 	}
 
 	/**

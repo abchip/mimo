@@ -12,7 +12,9 @@ import java.util.List;
 import org.abchip.mimo.biz.common.user.UserPackage;
 import org.abchip.mimo.biz.common.user.UserPrefGroupType;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -107,7 +109,10 @@ public class UserPrefGroupTypeImpl extends BizEntityImpl implements UserPrefGrou
 	 */
 	@Override
 	public void setDescription(String newDescription) {
+		String oldDescription = description;
 		description = newDescription;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, UserPackage.USER_PREF_GROUP_TYPE__DESCRIPTION, oldDescription, description));
 	}
 
 	/**
@@ -139,7 +144,10 @@ public class UserPrefGroupTypeImpl extends BizEntityImpl implements UserPrefGrou
 	 */
 	@Override
 	public void setUserPrefGroupTypeId(String newUserPrefGroupTypeId) {
+		String oldUserPrefGroupTypeId = userPrefGroupTypeId;
 		userPrefGroupTypeId = newUserPrefGroupTypeId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, UserPackage.USER_PREF_GROUP_TYPE__USER_PREF_GROUP_TYPE_ID, oldUserPrefGroupTypeId, userPrefGroupTypeId));
 	}
 
 	/**

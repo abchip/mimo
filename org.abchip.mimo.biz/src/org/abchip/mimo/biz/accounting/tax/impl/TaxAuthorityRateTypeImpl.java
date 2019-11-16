@@ -12,7 +12,9 @@ import java.util.List;
 import org.abchip.mimo.biz.accounting.tax.TaxAuthorityRateType;
 import org.abchip.mimo.biz.accounting.tax.TaxPackage;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -106,7 +108,10 @@ public class TaxAuthorityRateTypeImpl extends BizEntityImpl implements TaxAuthor
 	 */
 	@Override
 	public void setDescription(String newDescription) {
+		String oldDescription = description;
 		description = newDescription;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, TaxPackage.TAX_AUTHORITY_RATE_TYPE__DESCRIPTION, oldDescription, description));
 	}
 
 	/**
@@ -138,7 +143,10 @@ public class TaxAuthorityRateTypeImpl extends BizEntityImpl implements TaxAuthor
 	 */
 	@Override
 	public void setTaxAuthorityRateTypeId(String newTaxAuthorityRateTypeId) {
+		String oldTaxAuthorityRateTypeId = taxAuthorityRateTypeId;
 		taxAuthorityRateTypeId = newTaxAuthorityRateTypeId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, TaxPackage.TAX_AUTHORITY_RATE_TYPE__TAX_AUTHORITY_RATE_TYPE_ID, oldTaxAuthorityRateTypeId, taxAuthorityRateTypeId));
 	}
 
 	/**

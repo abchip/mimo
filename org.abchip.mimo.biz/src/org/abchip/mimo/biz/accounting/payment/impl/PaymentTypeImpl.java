@@ -14,11 +14,13 @@ import org.abchip.mimo.biz.accounting.payment.Payment;
 import org.abchip.mimo.biz.accounting.payment.PaymentPackage;
 import org.abchip.mimo.biz.accounting.payment.PaymentType;
 import org.abchip.mimo.biz.impl.BizEntityTypeImpl;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.util.BasicInternalEList;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -162,7 +164,10 @@ public class PaymentTypeImpl extends BizEntityTypeImpl<Payment> implements Payme
 	 */
 	@Override
 	public void setDescription(String newDescription) {
+		String oldDescription = description;
 		description = newDescription;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.PAYMENT_TYPE__DESCRIPTION, oldDescription, description));
 	}
 
 	/**
@@ -182,7 +187,10 @@ public class PaymentTypeImpl extends BizEntityTypeImpl<Payment> implements Payme
 	 */
 	@Override
 	public void setHasTable(boolean newHasTable) {
+		boolean oldHasTable = hasTable;
 		hasTable = newHasTable;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.PAYMENT_TYPE__HAS_TABLE, oldHasTable, hasTable));
 	}
 
 	/**
@@ -196,6 +204,8 @@ public class PaymentTypeImpl extends BizEntityTypeImpl<Payment> implements Payme
 			InternalEObject oldParentTypeId = (InternalEObject)parentTypeId;
 			parentTypeId = (PaymentType)eResolveProxy(oldParentTypeId);
 			if (parentTypeId != oldParentTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PaymentPackage.PAYMENT_TYPE__PARENT_TYPE_ID, oldParentTypeId, parentTypeId));
 			}
 		}
 		return parentTypeId;
@@ -217,7 +227,10 @@ public class PaymentTypeImpl extends BizEntityTypeImpl<Payment> implements Payme
 	 */
 	@Override
 	public void setParentTypeId(PaymentType newParentTypeId) {
+		PaymentType oldParentTypeId = parentTypeId;
 		parentTypeId = newParentTypeId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.PAYMENT_TYPE__PARENT_TYPE_ID, oldParentTypeId, parentTypeId));
 	}
 
 	/**
@@ -237,7 +250,10 @@ public class PaymentTypeImpl extends BizEntityTypeImpl<Payment> implements Payme
 	 */
 	@Override
 	public void setPaymentTypeId(String newPaymentTypeId) {
+		String oldPaymentTypeId = paymentTypeId;
 		paymentTypeId = newPaymentTypeId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.PAYMENT_TYPE__PAYMENT_TYPE_ID, oldPaymentTypeId, paymentTypeId));
 	}
 
 	/**
@@ -248,7 +264,7 @@ public class PaymentTypeImpl extends BizEntityTypeImpl<Payment> implements Payme
 	@Override
 	public List<String> getPaymentGlAccountTypeMaps() {
 		if (paymentGlAccountTypeMaps == null) {
-			paymentGlAccountTypeMaps = new BasicInternalEList<String>(String.class);
+			paymentGlAccountTypeMaps = new EDataTypeUniqueEList<String>(String.class, this, PaymentPackage.PAYMENT_TYPE__PAYMENT_GL_ACCOUNT_TYPE_MAPS);
 		}
 		return paymentGlAccountTypeMaps;
 	}
@@ -261,7 +277,7 @@ public class PaymentTypeImpl extends BizEntityTypeImpl<Payment> implements Payme
 	@Override
 	public List<String> getPaymentTypeAttrs() {
 		if (paymentTypeAttrs == null) {
-			paymentTypeAttrs = new BasicInternalEList<String>(String.class);
+			paymentTypeAttrs = new EDataTypeUniqueEList<String>(String.class, this, PaymentPackage.PAYMENT_TYPE__PAYMENT_TYPE_ATTRS);
 		}
 		return paymentTypeAttrs;
 	}

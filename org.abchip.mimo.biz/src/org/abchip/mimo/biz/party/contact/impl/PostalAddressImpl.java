@@ -14,11 +14,13 @@ import org.abchip.mimo.biz.common.geo.Geo;
 import org.abchip.mimo.biz.common.geo.GeoPoint;
 import org.abchip.mimo.biz.party.contact.ContactPackage;
 import org.abchip.mimo.biz.party.contact.PostalAddress;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.util.BasicInternalEList;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -353,7 +355,10 @@ public class PostalAddressImpl extends ContactMechImpl implements PostalAddress 
 	 */
 	@Override
 	public void setAddress1(String newAddress1) {
+		String oldAddress1 = address1;
 		address1 = newAddress1;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ContactPackage.POSTAL_ADDRESS__ADDRESS1, oldAddress1, address1));
 	}
 
 	/**
@@ -373,7 +378,10 @@ public class PostalAddressImpl extends ContactMechImpl implements PostalAddress 
 	 */
 	@Override
 	public void setAddress2(String newAddress2) {
+		String oldAddress2 = address2;
 		address2 = newAddress2;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ContactPackage.POSTAL_ADDRESS__ADDRESS2, oldAddress2, address2));
 	}
 
 	/**
@@ -393,7 +401,10 @@ public class PostalAddressImpl extends ContactMechImpl implements PostalAddress 
 	 */
 	@Override
 	public void setAttnName(String newAttnName) {
+		String oldAttnName = attnName;
 		attnName = newAttnName;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ContactPackage.POSTAL_ADDRESS__ATTN_NAME, oldAttnName, attnName));
 	}
 
 	/**
@@ -413,7 +424,10 @@ public class PostalAddressImpl extends ContactMechImpl implements PostalAddress 
 	 */
 	@Override
 	public void setCity(String newCity) {
+		String oldCity = city;
 		city = newCity;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ContactPackage.POSTAL_ADDRESS__CITY, oldCity, city));
 	}
 
 	/**
@@ -427,6 +441,8 @@ public class PostalAddressImpl extends ContactMechImpl implements PostalAddress 
 			InternalEObject oldCityGeoId = (InternalEObject)cityGeoId;
 			cityGeoId = (Geo)eResolveProxy(oldCityGeoId);
 			if (cityGeoId != oldCityGeoId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ContactPackage.POSTAL_ADDRESS__CITY_GEO_ID, oldCityGeoId, cityGeoId));
 			}
 		}
 		return cityGeoId;
@@ -448,7 +464,10 @@ public class PostalAddressImpl extends ContactMechImpl implements PostalAddress 
 	 */
 	@Override
 	public void setCityGeoId(Geo newCityGeoId) {
+		Geo oldCityGeoId = cityGeoId;
 		cityGeoId = newCityGeoId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ContactPackage.POSTAL_ADDRESS__CITY_GEO_ID, oldCityGeoId, cityGeoId));
 	}
 
 	/**
@@ -462,6 +481,8 @@ public class PostalAddressImpl extends ContactMechImpl implements PostalAddress 
 			InternalEObject oldCountryGeoId = (InternalEObject)countryGeoId;
 			countryGeoId = (Geo)eResolveProxy(oldCountryGeoId);
 			if (countryGeoId != oldCountryGeoId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ContactPackage.POSTAL_ADDRESS__COUNTRY_GEO_ID, oldCountryGeoId, countryGeoId));
 			}
 		}
 		return countryGeoId;
@@ -483,7 +504,10 @@ public class PostalAddressImpl extends ContactMechImpl implements PostalAddress 
 	 */
 	@Override
 	public void setCountryGeoId(Geo newCountryGeoId) {
+		Geo oldCountryGeoId = countryGeoId;
 		countryGeoId = newCountryGeoId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ContactPackage.POSTAL_ADDRESS__COUNTRY_GEO_ID, oldCountryGeoId, countryGeoId));
 	}
 
 	/**
@@ -497,6 +521,8 @@ public class PostalAddressImpl extends ContactMechImpl implements PostalAddress 
 			InternalEObject oldCountyGeoId = (InternalEObject)countyGeoId;
 			countyGeoId = (Geo)eResolveProxy(oldCountyGeoId);
 			if (countyGeoId != oldCountyGeoId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ContactPackage.POSTAL_ADDRESS__COUNTY_GEO_ID, oldCountyGeoId, countyGeoId));
 			}
 		}
 		return countyGeoId;
@@ -518,7 +544,10 @@ public class PostalAddressImpl extends ContactMechImpl implements PostalAddress 
 	 */
 	@Override
 	public void setCountyGeoId(Geo newCountyGeoId) {
+		Geo oldCountyGeoId = countyGeoId;
 		countyGeoId = newCountyGeoId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ContactPackage.POSTAL_ADDRESS__COUNTY_GEO_ID, oldCountyGeoId, countyGeoId));
 	}
 
 	/**
@@ -538,7 +567,10 @@ public class PostalAddressImpl extends ContactMechImpl implements PostalAddress 
 	 */
 	@Override
 	public void setDirections(String newDirections) {
+		String oldDirections = directions;
 		directions = newDirections;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ContactPackage.POSTAL_ADDRESS__DIRECTIONS, oldDirections, directions));
 	}
 
 	/**
@@ -552,6 +584,8 @@ public class PostalAddressImpl extends ContactMechImpl implements PostalAddress 
 			InternalEObject oldGeoPointId = (InternalEObject)geoPointId;
 			geoPointId = (GeoPoint)eResolveProxy(oldGeoPointId);
 			if (geoPointId != oldGeoPointId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ContactPackage.POSTAL_ADDRESS__GEO_POINT_ID, oldGeoPointId, geoPointId));
 			}
 		}
 		return geoPointId;
@@ -573,7 +607,10 @@ public class PostalAddressImpl extends ContactMechImpl implements PostalAddress 
 	 */
 	@Override
 	public void setGeoPointId(GeoPoint newGeoPointId) {
+		GeoPoint oldGeoPointId = geoPointId;
 		geoPointId = newGeoPointId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ContactPackage.POSTAL_ADDRESS__GEO_POINT_ID, oldGeoPointId, geoPointId));
 	}
 
 	/**
@@ -593,7 +630,10 @@ public class PostalAddressImpl extends ContactMechImpl implements PostalAddress 
 	 */
 	@Override
 	public void setHouseNumber(long newHouseNumber) {
+		long oldHouseNumber = houseNumber;
 		houseNumber = newHouseNumber;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ContactPackage.POSTAL_ADDRESS__HOUSE_NUMBER, oldHouseNumber, houseNumber));
 	}
 
 	/**
@@ -613,7 +653,10 @@ public class PostalAddressImpl extends ContactMechImpl implements PostalAddress 
 	 */
 	@Override
 	public void setHouseNumberExt(String newHouseNumberExt) {
+		String oldHouseNumberExt = houseNumberExt;
 		houseNumberExt = newHouseNumberExt;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ContactPackage.POSTAL_ADDRESS__HOUSE_NUMBER_EXT, oldHouseNumberExt, houseNumberExt));
 	}
 
 	/**
@@ -627,6 +670,8 @@ public class PostalAddressImpl extends ContactMechImpl implements PostalAddress 
 			InternalEObject oldMunicipalityGeoId = (InternalEObject)municipalityGeoId;
 			municipalityGeoId = (Geo)eResolveProxy(oldMunicipalityGeoId);
 			if (municipalityGeoId != oldMunicipalityGeoId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ContactPackage.POSTAL_ADDRESS__MUNICIPALITY_GEO_ID, oldMunicipalityGeoId, municipalityGeoId));
 			}
 		}
 		return municipalityGeoId;
@@ -648,7 +693,10 @@ public class PostalAddressImpl extends ContactMechImpl implements PostalAddress 
 	 */
 	@Override
 	public void setMunicipalityGeoId(Geo newMunicipalityGeoId) {
+		Geo oldMunicipalityGeoId = municipalityGeoId;
 		municipalityGeoId = newMunicipalityGeoId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ContactPackage.POSTAL_ADDRESS__MUNICIPALITY_GEO_ID, oldMunicipalityGeoId, municipalityGeoId));
 	}
 
 	/**
@@ -668,7 +716,10 @@ public class PostalAddressImpl extends ContactMechImpl implements PostalAddress 
 	 */
 	@Override
 	public void setPostalCode(String newPostalCode) {
+		String oldPostalCode = postalCode;
 		postalCode = newPostalCode;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ContactPackage.POSTAL_ADDRESS__POSTAL_CODE, oldPostalCode, postalCode));
 	}
 
 	/**
@@ -688,7 +739,10 @@ public class PostalAddressImpl extends ContactMechImpl implements PostalAddress 
 	 */
 	@Override
 	public void setPostalCodeExt(String newPostalCodeExt) {
+		String oldPostalCodeExt = postalCodeExt;
 		postalCodeExt = newPostalCodeExt;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ContactPackage.POSTAL_ADDRESS__POSTAL_CODE_EXT, oldPostalCodeExt, postalCodeExt));
 	}
 
 	/**
@@ -702,6 +756,8 @@ public class PostalAddressImpl extends ContactMechImpl implements PostalAddress 
 			InternalEObject oldPostalCodeGeoId = (InternalEObject)postalCodeGeoId;
 			postalCodeGeoId = (Geo)eResolveProxy(oldPostalCodeGeoId);
 			if (postalCodeGeoId != oldPostalCodeGeoId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ContactPackage.POSTAL_ADDRESS__POSTAL_CODE_GEO_ID, oldPostalCodeGeoId, postalCodeGeoId));
 			}
 		}
 		return postalCodeGeoId;
@@ -723,7 +779,10 @@ public class PostalAddressImpl extends ContactMechImpl implements PostalAddress 
 	 */
 	@Override
 	public void setPostalCodeGeoId(Geo newPostalCodeGeoId) {
+		Geo oldPostalCodeGeoId = postalCodeGeoId;
 		postalCodeGeoId = newPostalCodeGeoId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ContactPackage.POSTAL_ADDRESS__POSTAL_CODE_GEO_ID, oldPostalCodeGeoId, postalCodeGeoId));
 	}
 
 	/**
@@ -737,6 +796,8 @@ public class PostalAddressImpl extends ContactMechImpl implements PostalAddress 
 			InternalEObject oldStateProvinceGeoId = (InternalEObject)stateProvinceGeoId;
 			stateProvinceGeoId = (Geo)eResolveProxy(oldStateProvinceGeoId);
 			if (stateProvinceGeoId != oldStateProvinceGeoId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ContactPackage.POSTAL_ADDRESS__STATE_PROVINCE_GEO_ID, oldStateProvinceGeoId, stateProvinceGeoId));
 			}
 		}
 		return stateProvinceGeoId;
@@ -758,7 +819,10 @@ public class PostalAddressImpl extends ContactMechImpl implements PostalAddress 
 	 */
 	@Override
 	public void setStateProvinceGeoId(Geo newStateProvinceGeoId) {
+		Geo oldStateProvinceGeoId = stateProvinceGeoId;
 		stateProvinceGeoId = newStateProvinceGeoId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ContactPackage.POSTAL_ADDRESS__STATE_PROVINCE_GEO_ID, oldStateProvinceGeoId, stateProvinceGeoId));
 	}
 
 	/**
@@ -778,7 +842,10 @@ public class PostalAddressImpl extends ContactMechImpl implements PostalAddress 
 	 */
 	@Override
 	public void setToName(String newToName) {
+		String oldToName = toName;
 		toName = newToName;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ContactPackage.POSTAL_ADDRESS__TO_NAME, oldToName, toName));
 	}
 
 	/**
@@ -789,7 +856,7 @@ public class PostalAddressImpl extends ContactMechImpl implements PostalAddress 
 	@Override
 	public List<String> getPostalAddressBoundaries() {
 		if (postalAddressBoundaries == null) {
-			postalAddressBoundaries = new BasicInternalEList<String>(String.class);
+			postalAddressBoundaries = new EDataTypeUniqueEList<String>(String.class, this, ContactPackage.POSTAL_ADDRESS__POSTAL_ADDRESS_BOUNDARIES);
 		}
 		return postalAddressBoundaries;
 	}

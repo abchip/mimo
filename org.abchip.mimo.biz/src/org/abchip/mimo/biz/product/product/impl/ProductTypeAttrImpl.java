@@ -11,9 +11,11 @@ import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.product.product.ProductPackage;
 import org.abchip.mimo.biz.product.product.ProductType;
 import org.abchip.mimo.biz.product.product.ProductTypeAttr;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -122,7 +124,10 @@ public class ProductTypeAttrImpl extends BizEntityImpl implements ProductTypeAtt
 	 */
 	@Override
 	public void setDescription(String newDescription) {
+		String oldDescription = description;
 		description = newDescription;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ProductPackage.PRODUCT_TYPE_ATTR__DESCRIPTION, oldDescription, description));
 	}
 
 	/**
@@ -142,7 +147,10 @@ public class ProductTypeAttrImpl extends BizEntityImpl implements ProductTypeAtt
 	 */
 	@Override
 	public void setAttrName(String newAttrName) {
+		String oldAttrName = attrName;
 		attrName = newAttrName;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ProductPackage.PRODUCT_TYPE_ATTR__ATTR_NAME, oldAttrName, attrName));
 	}
 
 	/**
@@ -156,6 +164,8 @@ public class ProductTypeAttrImpl extends BizEntityImpl implements ProductTypeAtt
 			InternalEObject oldProductTypeId = (InternalEObject)productTypeId;
 			productTypeId = (ProductType)eResolveProxy(oldProductTypeId);
 			if (productTypeId != oldProductTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ProductPackage.PRODUCT_TYPE_ATTR__PRODUCT_TYPE_ID, oldProductTypeId, productTypeId));
 			}
 		}
 		return productTypeId;
@@ -177,7 +187,10 @@ public class ProductTypeAttrImpl extends BizEntityImpl implements ProductTypeAtt
 	 */
 	@Override
 	public void setProductTypeId(ProductType newProductTypeId) {
+		ProductType oldProductTypeId = productTypeId;
 		productTypeId = newProductTypeId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ProductPackage.PRODUCT_TYPE_ATTR__PRODUCT_TYPE_ID, oldProductTypeId, productTypeId));
 	}
 
 	/**

@@ -16,10 +16,12 @@ import org.abchip.mimo.biz.product.inventory.InventoryItem;
 import org.abchip.mimo.biz.shipment.picklist.PicklistBin;
 import org.abchip.mimo.biz.shipment.picklist.PicklistItem;
 import org.abchip.mimo.biz.shipment.picklist.PicklistPackage;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -176,6 +178,8 @@ public class PicklistItemImpl extends BizEntityImpl implements PicklistItem {
 			InternalEObject oldInventoryItemId = (InternalEObject)inventoryItemId;
 			inventoryItemId = (InventoryItem)eResolveProxy(oldInventoryItemId);
 			if (inventoryItemId != oldInventoryItemId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PicklistPackage.PICKLIST_ITEM__INVENTORY_ITEM_ID, oldInventoryItemId, inventoryItemId));
 			}
 		}
 		return inventoryItemId;
@@ -197,7 +201,10 @@ public class PicklistItemImpl extends BizEntityImpl implements PicklistItem {
 	 */
 	@Override
 	public void setInventoryItemId(InventoryItem newInventoryItemId) {
+		InventoryItem oldInventoryItemId = inventoryItemId;
 		inventoryItemId = newInventoryItemId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PicklistPackage.PICKLIST_ITEM__INVENTORY_ITEM_ID, oldInventoryItemId, inventoryItemId));
 	}
 
 	/**
@@ -211,6 +218,8 @@ public class PicklistItemImpl extends BizEntityImpl implements PicklistItem {
 			InternalEObject oldItemStatusId = (InternalEObject)itemStatusId;
 			itemStatusId = (StatusItem)eResolveProxy(oldItemStatusId);
 			if (itemStatusId != oldItemStatusId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PicklistPackage.PICKLIST_ITEM__ITEM_STATUS_ID, oldItemStatusId, itemStatusId));
 			}
 		}
 		return itemStatusId;
@@ -232,7 +241,10 @@ public class PicklistItemImpl extends BizEntityImpl implements PicklistItem {
 	 */
 	@Override
 	public void setItemStatusId(StatusItem newItemStatusId) {
+		StatusItem oldItemStatusId = itemStatusId;
 		itemStatusId = newItemStatusId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PicklistPackage.PICKLIST_ITEM__ITEM_STATUS_ID, oldItemStatusId, itemStatusId));
 	}
 
 	/**
@@ -246,6 +258,8 @@ public class PicklistItemImpl extends BizEntityImpl implements PicklistItem {
 			InternalEObject oldOrderId = (InternalEObject)orderId;
 			orderId = (OrderHeader)eResolveProxy(oldOrderId);
 			if (orderId != oldOrderId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PicklistPackage.PICKLIST_ITEM__ORDER_ID, oldOrderId, orderId));
 			}
 		}
 		return orderId;
@@ -267,7 +281,10 @@ public class PicklistItemImpl extends BizEntityImpl implements PicklistItem {
 	 */
 	@Override
 	public void setOrderId(OrderHeader newOrderId) {
+		OrderHeader oldOrderId = orderId;
 		orderId = newOrderId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PicklistPackage.PICKLIST_ITEM__ORDER_ID, oldOrderId, orderId));
 	}
 
 	/**
@@ -287,7 +304,10 @@ public class PicklistItemImpl extends BizEntityImpl implements PicklistItem {
 	 */
 	@Override
 	public void setOrderItemSeqId(String newOrderItemSeqId) {
+		String oldOrderItemSeqId = orderItemSeqId;
 		orderItemSeqId = newOrderItemSeqId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PicklistPackage.PICKLIST_ITEM__ORDER_ITEM_SEQ_ID, oldOrderItemSeqId, orderItemSeqId));
 	}
 
 	/**
@@ -301,6 +321,8 @@ public class PicklistItemImpl extends BizEntityImpl implements PicklistItem {
 			InternalEObject oldPicklistBinId = (InternalEObject)picklistBinId;
 			picklistBinId = (PicklistBin)eResolveProxy(oldPicklistBinId);
 			if (picklistBinId != oldPicklistBinId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PicklistPackage.PICKLIST_ITEM__PICKLIST_BIN_ID, oldPicklistBinId, picklistBinId));
 			}
 		}
 		return picklistBinId;
@@ -322,7 +344,10 @@ public class PicklistItemImpl extends BizEntityImpl implements PicklistItem {
 	 */
 	@Override
 	public void setPicklistBinId(PicklistBin newPicklistBinId) {
+		PicklistBin oldPicklistBinId = picklistBinId;
 		picklistBinId = newPicklistBinId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PicklistPackage.PICKLIST_ITEM__PICKLIST_BIN_ID, oldPicklistBinId, picklistBinId));
 	}
 
 	/**
@@ -342,7 +367,10 @@ public class PicklistItemImpl extends BizEntityImpl implements PicklistItem {
 	 */
 	@Override
 	public void setQuantity(BigDecimal newQuantity) {
+		BigDecimal oldQuantity = quantity;
 		quantity = newQuantity;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PicklistPackage.PICKLIST_ITEM__QUANTITY, oldQuantity, quantity));
 	}
 
 	/**
@@ -362,7 +390,10 @@ public class PicklistItemImpl extends BizEntityImpl implements PicklistItem {
 	 */
 	@Override
 	public void setShipGroupSeqId(String newShipGroupSeqId) {
+		String oldShipGroupSeqId = shipGroupSeqId;
 		shipGroupSeqId = newShipGroupSeqId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PicklistPackage.PICKLIST_ITEM__SHIP_GROUP_SEQ_ID, oldShipGroupSeqId, shipGroupSeqId));
 	}
 
 	/**

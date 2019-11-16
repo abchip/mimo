@@ -23,9 +23,11 @@ import org.abchip.mimo.biz.party.party.Party;
 import org.abchip.mimo.biz.product.feature.ProductFeature;
 import org.abchip.mimo.biz.product.inventory.InventoryItem;
 import org.abchip.mimo.biz.product.product.Product;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -334,7 +336,10 @@ public class InvoiceItemImpl extends BizEntityTypedImpl<InvoiceItemType> impleme
 	 */
 	@Override
 	public void setAmount(BigDecimal newAmount) {
+		BigDecimal oldAmount = amount;
 		amount = newAmount;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, InvoicePackage.INVOICE_ITEM__AMOUNT, oldAmount, amount));
 	}
 
 	/**
@@ -354,7 +359,10 @@ public class InvoiceItemImpl extends BizEntityTypedImpl<InvoiceItemType> impleme
 	 */
 	@Override
 	public void setDescription(String newDescription) {
+		String oldDescription = description;
 		description = newDescription;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, InvoicePackage.INVOICE_ITEM__DESCRIPTION, oldDescription, description));
 	}
 
 	/**
@@ -368,6 +376,8 @@ public class InvoiceItemImpl extends BizEntityTypedImpl<InvoiceItemType> impleme
 			InternalEObject oldInventoryItemId = (InternalEObject)inventoryItemId;
 			inventoryItemId = (InventoryItem)eResolveProxy(oldInventoryItemId);
 			if (inventoryItemId != oldInventoryItemId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, InvoicePackage.INVOICE_ITEM__INVENTORY_ITEM_ID, oldInventoryItemId, inventoryItemId));
 			}
 		}
 		return inventoryItemId;
@@ -389,7 +399,10 @@ public class InvoiceItemImpl extends BizEntityTypedImpl<InvoiceItemType> impleme
 	 */
 	@Override
 	public void setInventoryItemId(InventoryItem newInventoryItemId) {
+		InventoryItem oldInventoryItemId = inventoryItemId;
 		inventoryItemId = newInventoryItemId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, InvoicePackage.INVOICE_ITEM__INVENTORY_ITEM_ID, oldInventoryItemId, inventoryItemId));
 	}
 
 	/**
@@ -409,7 +422,10 @@ public class InvoiceItemImpl extends BizEntityTypedImpl<InvoiceItemType> impleme
 	 */
 	@Override
 	public void setInvoiceItemSeqId(String newInvoiceItemSeqId) {
+		String oldInvoiceItemSeqId = invoiceItemSeqId;
 		invoiceItemSeqId = newInvoiceItemSeqId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, InvoicePackage.INVOICE_ITEM__INVOICE_ITEM_SEQ_ID, oldInvoiceItemSeqId, invoiceItemSeqId));
 	}
 
 	/**
@@ -423,6 +439,8 @@ public class InvoiceItemImpl extends BizEntityTypedImpl<InvoiceItemType> impleme
 			InternalEObject oldOverrideGlAccountId = (InternalEObject)overrideGlAccountId;
 			overrideGlAccountId = (GlAccount)eResolveProxy(oldOverrideGlAccountId);
 			if (overrideGlAccountId != oldOverrideGlAccountId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, InvoicePackage.INVOICE_ITEM__OVERRIDE_GL_ACCOUNT_ID, oldOverrideGlAccountId, overrideGlAccountId));
 			}
 		}
 		return overrideGlAccountId;
@@ -444,7 +462,10 @@ public class InvoiceItemImpl extends BizEntityTypedImpl<InvoiceItemType> impleme
 	 */
 	@Override
 	public void setOverrideGlAccountId(GlAccount newOverrideGlAccountId) {
+		GlAccount oldOverrideGlAccountId = overrideGlAccountId;
 		overrideGlAccountId = newOverrideGlAccountId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, InvoicePackage.INVOICE_ITEM__OVERRIDE_GL_ACCOUNT_ID, oldOverrideGlAccountId, overrideGlAccountId));
 	}
 
 	/**
@@ -458,6 +479,8 @@ public class InvoiceItemImpl extends BizEntityTypedImpl<InvoiceItemType> impleme
 			InternalEObject oldOverrideOrgPartyId = (InternalEObject)overrideOrgPartyId;
 			overrideOrgPartyId = (Party)eResolveProxy(oldOverrideOrgPartyId);
 			if (overrideOrgPartyId != oldOverrideOrgPartyId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, InvoicePackage.INVOICE_ITEM__OVERRIDE_ORG_PARTY_ID, oldOverrideOrgPartyId, overrideOrgPartyId));
 			}
 		}
 		return overrideOrgPartyId;
@@ -479,7 +502,10 @@ public class InvoiceItemImpl extends BizEntityTypedImpl<InvoiceItemType> impleme
 	 */
 	@Override
 	public void setOverrideOrgPartyId(Party newOverrideOrgPartyId) {
+		Party oldOverrideOrgPartyId = overrideOrgPartyId;
 		overrideOrgPartyId = newOverrideOrgPartyId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, InvoicePackage.INVOICE_ITEM__OVERRIDE_ORG_PARTY_ID, oldOverrideOrgPartyId, overrideOrgPartyId));
 	}
 
 	/**
@@ -499,7 +525,10 @@ public class InvoiceItemImpl extends BizEntityTypedImpl<InvoiceItemType> impleme
 	 */
 	@Override
 	public void setParentInvoiceId(String newParentInvoiceId) {
+		String oldParentInvoiceId = parentInvoiceId;
 		parentInvoiceId = newParentInvoiceId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, InvoicePackage.INVOICE_ITEM__PARENT_INVOICE_ID, oldParentInvoiceId, parentInvoiceId));
 	}
 
 	/**
@@ -519,7 +548,10 @@ public class InvoiceItemImpl extends BizEntityTypedImpl<InvoiceItemType> impleme
 	 */
 	@Override
 	public void setParentInvoiceItemSeqId(String newParentInvoiceItemSeqId) {
+		String oldParentInvoiceItemSeqId = parentInvoiceItemSeqId;
 		parentInvoiceItemSeqId = newParentInvoiceItemSeqId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, InvoicePackage.INVOICE_ITEM__PARENT_INVOICE_ITEM_SEQ_ID, oldParentInvoiceItemSeqId, parentInvoiceItemSeqId));
 	}
 
 	/**
@@ -533,6 +565,8 @@ public class InvoiceItemImpl extends BizEntityTypedImpl<InvoiceItemType> impleme
 			InternalEObject oldProductFeatureId = (InternalEObject)productFeatureId;
 			productFeatureId = (ProductFeature)eResolveProxy(oldProductFeatureId);
 			if (productFeatureId != oldProductFeatureId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, InvoicePackage.INVOICE_ITEM__PRODUCT_FEATURE_ID, oldProductFeatureId, productFeatureId));
 			}
 		}
 		return productFeatureId;
@@ -554,7 +588,10 @@ public class InvoiceItemImpl extends BizEntityTypedImpl<InvoiceItemType> impleme
 	 */
 	@Override
 	public void setProductFeatureId(ProductFeature newProductFeatureId) {
+		ProductFeature oldProductFeatureId = productFeatureId;
 		productFeatureId = newProductFeatureId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, InvoicePackage.INVOICE_ITEM__PRODUCT_FEATURE_ID, oldProductFeatureId, productFeatureId));
 	}
 
 	/**
@@ -568,6 +605,8 @@ public class InvoiceItemImpl extends BizEntityTypedImpl<InvoiceItemType> impleme
 			InternalEObject oldProductId = (InternalEObject)productId;
 			productId = (Product)eResolveProxy(oldProductId);
 			if (productId != oldProductId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, InvoicePackage.INVOICE_ITEM__PRODUCT_ID, oldProductId, productId));
 			}
 		}
 		return productId;
@@ -589,7 +628,10 @@ public class InvoiceItemImpl extends BizEntityTypedImpl<InvoiceItemType> impleme
 	 */
 	@Override
 	public void setProductId(Product newProductId) {
+		Product oldProductId = productId;
 		productId = newProductId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, InvoicePackage.INVOICE_ITEM__PRODUCT_ID, oldProductId, productId));
 	}
 
 	/**
@@ -609,7 +651,10 @@ public class InvoiceItemImpl extends BizEntityTypedImpl<InvoiceItemType> impleme
 	 */
 	@Override
 	public void setQuantity(BigDecimal newQuantity) {
+		BigDecimal oldQuantity = quantity;
 		quantity = newQuantity;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, InvoicePackage.INVOICE_ITEM__QUANTITY, oldQuantity, quantity));
 	}
 
 	/**
@@ -623,6 +668,8 @@ public class InvoiceItemImpl extends BizEntityTypedImpl<InvoiceItemType> impleme
 			InternalEObject oldSalesOpportunityId = (InternalEObject)salesOpportunityId;
 			salesOpportunityId = (SalesOpportunity)eResolveProxy(oldSalesOpportunityId);
 			if (salesOpportunityId != oldSalesOpportunityId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, InvoicePackage.INVOICE_ITEM__SALES_OPPORTUNITY_ID, oldSalesOpportunityId, salesOpportunityId));
 			}
 		}
 		return salesOpportunityId;
@@ -644,7 +691,10 @@ public class InvoiceItemImpl extends BizEntityTypedImpl<InvoiceItemType> impleme
 	 */
 	@Override
 	public void setSalesOpportunityId(SalesOpportunity newSalesOpportunityId) {
+		SalesOpportunity oldSalesOpportunityId = salesOpportunityId;
 		salesOpportunityId = newSalesOpportunityId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, InvoicePackage.INVOICE_ITEM__SALES_OPPORTUNITY_ID, oldSalesOpportunityId, salesOpportunityId));
 	}
 
 	/**
@@ -658,6 +708,8 @@ public class InvoiceItemImpl extends BizEntityTypedImpl<InvoiceItemType> impleme
 			InternalEObject oldTaxAuthGeoId = (InternalEObject)taxAuthGeoId;
 			taxAuthGeoId = (Geo)eResolveProxy(oldTaxAuthGeoId);
 			if (taxAuthGeoId != oldTaxAuthGeoId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, InvoicePackage.INVOICE_ITEM__TAX_AUTH_GEO_ID, oldTaxAuthGeoId, taxAuthGeoId));
 			}
 		}
 		return taxAuthGeoId;
@@ -679,7 +731,10 @@ public class InvoiceItemImpl extends BizEntityTypedImpl<InvoiceItemType> impleme
 	 */
 	@Override
 	public void setTaxAuthGeoId(Geo newTaxAuthGeoId) {
+		Geo oldTaxAuthGeoId = taxAuthGeoId;
 		taxAuthGeoId = newTaxAuthGeoId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, InvoicePackage.INVOICE_ITEM__TAX_AUTH_GEO_ID, oldTaxAuthGeoId, taxAuthGeoId));
 	}
 
 	/**
@@ -693,6 +748,8 @@ public class InvoiceItemImpl extends BizEntityTypedImpl<InvoiceItemType> impleme
 			InternalEObject oldTaxAuthPartyId = (InternalEObject)taxAuthPartyId;
 			taxAuthPartyId = (Party)eResolveProxy(oldTaxAuthPartyId);
 			if (taxAuthPartyId != oldTaxAuthPartyId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, InvoicePackage.INVOICE_ITEM__TAX_AUTH_PARTY_ID, oldTaxAuthPartyId, taxAuthPartyId));
 			}
 		}
 		return taxAuthPartyId;
@@ -714,7 +771,10 @@ public class InvoiceItemImpl extends BizEntityTypedImpl<InvoiceItemType> impleme
 	 */
 	@Override
 	public void setTaxAuthPartyId(Party newTaxAuthPartyId) {
+		Party oldTaxAuthPartyId = taxAuthPartyId;
 		taxAuthPartyId = newTaxAuthPartyId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, InvoicePackage.INVOICE_ITEM__TAX_AUTH_PARTY_ID, oldTaxAuthPartyId, taxAuthPartyId));
 	}
 
 	/**
@@ -728,6 +788,8 @@ public class InvoiceItemImpl extends BizEntityTypedImpl<InvoiceItemType> impleme
 			InternalEObject oldTaxAuthorityRateSeqId = (InternalEObject)taxAuthorityRateSeqId;
 			taxAuthorityRateSeqId = (TaxAuthorityRateProduct)eResolveProxy(oldTaxAuthorityRateSeqId);
 			if (taxAuthorityRateSeqId != oldTaxAuthorityRateSeqId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, InvoicePackage.INVOICE_ITEM__TAX_AUTHORITY_RATE_SEQ_ID, oldTaxAuthorityRateSeqId, taxAuthorityRateSeqId));
 			}
 		}
 		return taxAuthorityRateSeqId;
@@ -749,7 +811,10 @@ public class InvoiceItemImpl extends BizEntityTypedImpl<InvoiceItemType> impleme
 	 */
 	@Override
 	public void setTaxAuthorityRateSeqId(TaxAuthorityRateProduct newTaxAuthorityRateSeqId) {
+		TaxAuthorityRateProduct oldTaxAuthorityRateSeqId = taxAuthorityRateSeqId;
 		taxAuthorityRateSeqId = newTaxAuthorityRateSeqId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, InvoicePackage.INVOICE_ITEM__TAX_AUTHORITY_RATE_SEQ_ID, oldTaxAuthorityRateSeqId, taxAuthorityRateSeqId));
 	}
 
 	/**
@@ -769,7 +834,10 @@ public class InvoiceItemImpl extends BizEntityTypedImpl<InvoiceItemType> impleme
 	 */
 	@Override
 	public void setTaxableFlag(boolean newTaxableFlag) {
+		boolean oldTaxableFlag = taxableFlag;
 		taxableFlag = newTaxableFlag;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, InvoicePackage.INVOICE_ITEM__TAXABLE_FLAG, oldTaxableFlag, taxableFlag));
 	}
 
 	/**
@@ -783,6 +851,8 @@ public class InvoiceItemImpl extends BizEntityTypedImpl<InvoiceItemType> impleme
 			InternalEObject oldUomId = (InternalEObject)uomId;
 			uomId = (Uom)eResolveProxy(oldUomId);
 			if (uomId != oldUomId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, InvoicePackage.INVOICE_ITEM__UOM_ID, oldUomId, uomId));
 			}
 		}
 		return uomId;
@@ -804,7 +874,10 @@ public class InvoiceItemImpl extends BizEntityTypedImpl<InvoiceItemType> impleme
 	 */
 	@Override
 	public void setUomId(Uom newUomId) {
+		Uom oldUomId = uomId;
 		uomId = newUomId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, InvoicePackage.INVOICE_ITEM__UOM_ID, oldUomId, uomId));
 	}
 
 	/**
@@ -818,6 +891,8 @@ public class InvoiceItemImpl extends BizEntityTypedImpl<InvoiceItemType> impleme
 			InternalEObject oldInvoiceItemTypeId = (InternalEObject)invoiceItemTypeId;
 			invoiceItemTypeId = (InvoiceItemType)eResolveProxy(oldInvoiceItemTypeId);
 			if (invoiceItemTypeId != oldInvoiceItemTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, InvoicePackage.INVOICE_ITEM__INVOICE_ITEM_TYPE_ID, oldInvoiceItemTypeId, invoiceItemTypeId));
 			}
 		}
 		return invoiceItemTypeId;
@@ -839,7 +914,10 @@ public class InvoiceItemImpl extends BizEntityTypedImpl<InvoiceItemType> impleme
 	 */
 	@Override
 	public void setInvoiceItemTypeId(InvoiceItemType newInvoiceItemTypeId) {
+		InvoiceItemType oldInvoiceItemTypeId = invoiceItemTypeId;
 		invoiceItemTypeId = newInvoiceItemTypeId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, InvoicePackage.INVOICE_ITEM__INVOICE_ITEM_TYPE_ID, oldInvoiceItemTypeId, invoiceItemTypeId));
 	}
 
 	/**
@@ -853,6 +931,8 @@ public class InvoiceItemImpl extends BizEntityTypedImpl<InvoiceItemType> impleme
 			InternalEObject oldInvoiceId = (InternalEObject)invoiceId;
 			invoiceId = (Invoice)eResolveProxy(oldInvoiceId);
 			if (invoiceId != oldInvoiceId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, InvoicePackage.INVOICE_ITEM__INVOICE_ID, oldInvoiceId, invoiceId));
 			}
 		}
 		return invoiceId;
@@ -874,7 +954,10 @@ public class InvoiceItemImpl extends BizEntityTypedImpl<InvoiceItemType> impleme
 	 */
 	@Override
 	public void setInvoiceId(Invoice newInvoiceId) {
+		Invoice oldInvoiceId = invoiceId;
 		invoiceId = newInvoiceId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, InvoicePackage.INVOICE_ITEM__INVOICE_ID, oldInvoiceId, invoiceId));
 	}
 
 	/**

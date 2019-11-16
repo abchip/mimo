@@ -13,9 +13,11 @@ import java.util.List;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.product.config.ConfigPackage;
 import org.abchip.mimo.biz.product.config.ProductConfigItem;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.util.BasicInternalEList;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -208,7 +210,10 @@ public class ProductConfigItemImpl extends BizEntityImpl implements ProductConfi
 	 */
 	@Override
 	public void setConfigItemName(String newConfigItemName) {
+		String oldConfigItemName = configItemName;
 		configItemName = newConfigItemName;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ConfigPackage.PRODUCT_CONFIG_ITEM__CONFIG_ITEM_NAME, oldConfigItemName, configItemName));
 	}
 
 	/**
@@ -228,7 +233,10 @@ public class ProductConfigItemImpl extends BizEntityImpl implements ProductConfi
 	 */
 	@Override
 	public void setConfigItemTypeId(String newConfigItemTypeId) {
+		String oldConfigItemTypeId = configItemTypeId;
 		configItemTypeId = newConfigItemTypeId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ConfigPackage.PRODUCT_CONFIG_ITEM__CONFIG_ITEM_TYPE_ID, oldConfigItemTypeId, configItemTypeId));
 	}
 
 	/**
@@ -248,7 +256,10 @@ public class ProductConfigItemImpl extends BizEntityImpl implements ProductConfi
 	 */
 	@Override
 	public void setDescription(String newDescription) {
+		String oldDescription = description;
 		description = newDescription;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ConfigPackage.PRODUCT_CONFIG_ITEM__DESCRIPTION, oldDescription, description));
 	}
 
 	/**
@@ -268,7 +279,10 @@ public class ProductConfigItemImpl extends BizEntityImpl implements ProductConfi
 	 */
 	@Override
 	public void setImageUrl(String newImageUrl) {
+		String oldImageUrl = imageUrl;
 		imageUrl = newImageUrl;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ConfigPackage.PRODUCT_CONFIG_ITEM__IMAGE_URL, oldImageUrl, imageUrl));
 	}
 
 	/**
@@ -288,7 +302,10 @@ public class ProductConfigItemImpl extends BizEntityImpl implements ProductConfi
 	 */
 	@Override
 	public void setLongDescription(String newLongDescription) {
+		String oldLongDescription = longDescription;
 		longDescription = newLongDescription;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ConfigPackage.PRODUCT_CONFIG_ITEM__LONG_DESCRIPTION, oldLongDescription, longDescription));
 	}
 
 	/**
@@ -299,7 +316,7 @@ public class ProductConfigItemImpl extends BizEntityImpl implements ProductConfi
 	@Override
 	public List<String> getConfigItemProductConfigOptions() {
 		if (configItemProductConfigOptions == null) {
-			configItemProductConfigOptions = new BasicInternalEList<String>(String.class);
+			configItemProductConfigOptions = new EDataTypeUniqueEList<String>(String.class, this, ConfigPackage.PRODUCT_CONFIG_ITEM__CONFIG_ITEM_PRODUCT_CONFIG_OPTIONS);
 		}
 		return configItemProductConfigOptions;
 	}
@@ -321,7 +338,10 @@ public class ProductConfigItemImpl extends BizEntityImpl implements ProductConfi
 	 */
 	@Override
 	public void setConfigItemId(String newConfigItemId) {
+		String oldConfigItemId = configItemId;
 		configItemId = newConfigItemId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ConfigPackage.PRODUCT_CONFIG_ITEM__CONFIG_ITEM_ID, oldConfigItemId, configItemId));
 	}
 
 	/**

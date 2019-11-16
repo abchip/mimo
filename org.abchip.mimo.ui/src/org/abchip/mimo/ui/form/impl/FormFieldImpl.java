@@ -8,9 +8,7 @@ import org.abchip.mimo.entity.impl.EntityImpl;
 
 import org.abchip.mimo.ui.form.FormField;
 import org.abchip.mimo.ui.form.FormPackage;
-
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.ecore.EClass;
 

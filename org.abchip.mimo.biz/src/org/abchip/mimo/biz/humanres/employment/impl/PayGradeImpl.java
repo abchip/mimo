@@ -10,7 +10,9 @@ package org.abchip.mimo.biz.humanres.employment.impl;
 import org.abchip.mimo.biz.humanres.employment.EmploymentPackage;
 import org.abchip.mimo.biz.humanres.employment.PayGrade;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -129,7 +131,10 @@ public class PayGradeImpl extends BizEntityImpl implements PayGrade {
 	 */
 	@Override
 	public void setComments(String newComments) {
+		String oldComments = comments;
 		comments = newComments;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, EmploymentPackage.PAY_GRADE__COMMENTS, oldComments, comments));
 	}
 
 	/**
@@ -149,7 +154,10 @@ public class PayGradeImpl extends BizEntityImpl implements PayGrade {
 	 */
 	@Override
 	public void setPayGradeId(String newPayGradeId) {
+		String oldPayGradeId = payGradeId;
 		payGradeId = newPayGradeId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, EmploymentPackage.PAY_GRADE__PAY_GRADE_ID, oldPayGradeId, payGradeId));
 	}
 
 	/**
@@ -169,7 +177,10 @@ public class PayGradeImpl extends BizEntityImpl implements PayGrade {
 	 */
 	@Override
 	public void setPayGradeName(String newPayGradeName) {
+		String oldPayGradeName = payGradeName;
 		payGradeName = newPayGradeName;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, EmploymentPackage.PAY_GRADE__PAY_GRADE_NAME, oldPayGradeName, payGradeName));
 	}
 
 	/**

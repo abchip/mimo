@@ -16,12 +16,14 @@ import org.abchip.mimo.biz.content.document.Document;
 import org.abchip.mimo.biz.content.document.DocumentPackage;
 import org.abchip.mimo.biz.content.document.DocumentType;
 import org.abchip.mimo.biz.impl.BizEntityTypedImpl;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.util.BasicInternalEList;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -225,7 +227,10 @@ public class DocumentImpl extends BizEntityTypedImpl<DocumentType> implements Do
 	 */
 	@Override
 	public void setComments(String newComments) {
+		String oldComments = comments;
 		comments = newComments;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, DocumentPackage.DOCUMENT__COMMENTS, oldComments, comments));
 	}
 
 	/**
@@ -245,7 +250,10 @@ public class DocumentImpl extends BizEntityTypedImpl<DocumentType> implements Do
 	 */
 	@Override
 	public void setDateCreated(Date newDateCreated) {
+		Date oldDateCreated = dateCreated;
 		dateCreated = newDateCreated;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, DocumentPackage.DOCUMENT__DATE_CREATED, oldDateCreated, dateCreated));
 	}
 
 	/**
@@ -265,7 +273,10 @@ public class DocumentImpl extends BizEntityTypedImpl<DocumentType> implements Do
 	 */
 	@Override
 	public void setDocumentId(String newDocumentId) {
+		String oldDocumentId = documentId;
 		documentId = newDocumentId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, DocumentPackage.DOCUMENT__DOCUMENT_ID, oldDocumentId, documentId));
 	}
 
 	/**
@@ -285,7 +296,10 @@ public class DocumentImpl extends BizEntityTypedImpl<DocumentType> implements Do
 	 */
 	@Override
 	public void setDocumentLocation(String newDocumentLocation) {
+		String oldDocumentLocation = documentLocation;
 		documentLocation = newDocumentLocation;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, DocumentPackage.DOCUMENT__DOCUMENT_LOCATION, oldDocumentLocation, documentLocation));
 	}
 
 	/**
@@ -305,7 +319,10 @@ public class DocumentImpl extends BizEntityTypedImpl<DocumentType> implements Do
 	 */
 	@Override
 	public void setDocumentText(String newDocumentText) {
+		String oldDocumentText = documentText;
 		documentText = newDocumentText;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, DocumentPackage.DOCUMENT__DOCUMENT_TEXT, oldDocumentText, documentText));
 	}
 
 	/**
@@ -319,6 +336,8 @@ public class DocumentImpl extends BizEntityTypedImpl<DocumentType> implements Do
 			InternalEObject oldDocumentTypeId = (InternalEObject)documentTypeId;
 			documentTypeId = (DocumentType)eResolveProxy(oldDocumentTypeId);
 			if (documentTypeId != oldDocumentTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, DocumentPackage.DOCUMENT__DOCUMENT_TYPE_ID, oldDocumentTypeId, documentTypeId));
 			}
 		}
 		return documentTypeId;
@@ -340,7 +359,10 @@ public class DocumentImpl extends BizEntityTypedImpl<DocumentType> implements Do
 	 */
 	@Override
 	public void setDocumentTypeId(DocumentType newDocumentTypeId) {
+		DocumentType oldDocumentTypeId = documentTypeId;
 		documentTypeId = newDocumentTypeId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, DocumentPackage.DOCUMENT__DOCUMENT_TYPE_ID, oldDocumentTypeId, documentTypeId));
 	}
 
 	/**
@@ -360,7 +382,10 @@ public class DocumentImpl extends BizEntityTypedImpl<DocumentType> implements Do
 	 */
 	@Override
 	public void setImageData(Object newImageData) {
+		Object oldImageData = imageData;
 		imageData = newImageData;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, DocumentPackage.DOCUMENT__IMAGE_DATA, oldImageData, imageData));
 	}
 
 	/**
@@ -371,7 +396,7 @@ public class DocumentImpl extends BizEntityTypedImpl<DocumentType> implements Do
 	@Override
 	public List<String> getDocumentAttributes() {
 		if (documentAttributes == null) {
-			documentAttributes = new BasicInternalEList<String>(String.class);
+			documentAttributes = new EDataTypeUniqueEList<String>(String.class, this, DocumentPackage.DOCUMENT__DOCUMENT_ATTRIBUTES);
 		}
 		return documentAttributes;
 	}

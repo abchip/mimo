@@ -9,7 +9,9 @@ package org.abchip.mimo.biz.impl;
 
 import org.abchip.mimo.biz.BizPackage;
 import org.abchip.mimo.biz.BizProviderUser;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -107,7 +109,10 @@ public class BizProviderUserImpl extends BizEntityImpl implements BizProviderUse
 	 */
 	@Override
 	public void setUser(String newUser) {
+		String oldUser = user;
 		user = newUser;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, BizPackage.BIZ_PROVIDER_USER__USER, oldUser, user));
 	}
 
 	/**
@@ -127,7 +132,10 @@ public class BizProviderUserImpl extends BizEntityImpl implements BizProviderUse
 	 */
 	@Override
 	public void setPassword(String newPassword) {
+		String oldPassword = password;
 		password = newPassword;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, BizPackage.BIZ_PROVIDER_USER__PASSWORD, oldPassword, password));
 	}
 
 	/**

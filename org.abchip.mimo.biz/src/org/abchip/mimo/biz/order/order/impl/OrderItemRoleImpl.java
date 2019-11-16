@@ -13,10 +13,12 @@ import org.abchip.mimo.biz.order.order.OrderItemRole;
 import org.abchip.mimo.biz.order.order.OrderPackage;
 import org.abchip.mimo.biz.party.party.Party;
 import org.abchip.mimo.biz.party.party.RoleType;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -120,6 +122,8 @@ public class OrderItemRoleImpl extends BizEntityImpl implements OrderItemRole {
 			InternalEObject oldOrderId = (InternalEObject)orderId;
 			orderId = (OrderHeader)eResolveProxy(oldOrderId);
 			if (orderId != oldOrderId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, OrderPackage.ORDER_ITEM_ROLE__ORDER_ID, oldOrderId, orderId));
 			}
 		}
 		return orderId;
@@ -141,7 +145,10 @@ public class OrderItemRoleImpl extends BizEntityImpl implements OrderItemRole {
 	 */
 	@Override
 	public void setOrderId(OrderHeader newOrderId) {
+		OrderHeader oldOrderId = orderId;
 		orderId = newOrderId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_ITEM_ROLE__ORDER_ID, oldOrderId, orderId));
 	}
 
 	/**
@@ -161,7 +168,10 @@ public class OrderItemRoleImpl extends BizEntityImpl implements OrderItemRole {
 	 */
 	@Override
 	public void setOrderItemSeqId(String newOrderItemSeqId) {
+		String oldOrderItemSeqId = orderItemSeqId;
 		orderItemSeqId = newOrderItemSeqId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_ITEM_ROLE__ORDER_ITEM_SEQ_ID, oldOrderItemSeqId, orderItemSeqId));
 	}
 
 	/**
@@ -175,6 +185,8 @@ public class OrderItemRoleImpl extends BizEntityImpl implements OrderItemRole {
 			InternalEObject oldPartyId = (InternalEObject)partyId;
 			partyId = (Party)eResolveProxy(oldPartyId);
 			if (partyId != oldPartyId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, OrderPackage.ORDER_ITEM_ROLE__PARTY_ID, oldPartyId, partyId));
 			}
 		}
 		return partyId;
@@ -196,7 +208,10 @@ public class OrderItemRoleImpl extends BizEntityImpl implements OrderItemRole {
 	 */
 	@Override
 	public void setPartyId(Party newPartyId) {
+		Party oldPartyId = partyId;
 		partyId = newPartyId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_ITEM_ROLE__PARTY_ID, oldPartyId, partyId));
 	}
 
 	/**
@@ -210,6 +225,8 @@ public class OrderItemRoleImpl extends BizEntityImpl implements OrderItemRole {
 			InternalEObject oldRoleTypeId = (InternalEObject)roleTypeId;
 			roleTypeId = (RoleType)eResolveProxy(oldRoleTypeId);
 			if (roleTypeId != oldRoleTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, OrderPackage.ORDER_ITEM_ROLE__ROLE_TYPE_ID, oldRoleTypeId, roleTypeId));
 			}
 		}
 		return roleTypeId;
@@ -231,7 +248,10 @@ public class OrderItemRoleImpl extends BizEntityImpl implements OrderItemRole {
 	 */
 	@Override
 	public void setRoleTypeId(RoleType newRoleTypeId) {
+		RoleType oldRoleTypeId = roleTypeId;
 		roleTypeId = newRoleTypeId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_ITEM_ROLE__ROLE_TYPE_ID, oldRoleTypeId, roleTypeId));
 	}
 
 	/**

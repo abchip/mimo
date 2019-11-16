@@ -18,12 +18,14 @@ import org.abchip.mimo.biz.product.facility.Facility;
 import org.abchip.mimo.biz.shipment.picklist.Picklist;
 import org.abchip.mimo.biz.shipment.picklist.PicklistPackage;
 import org.abchip.mimo.biz.shipment.shipment.ShipmentMethodType;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.util.BasicInternalEList;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -228,7 +230,10 @@ public class PicklistImpl extends BizEntityImpl implements Picklist {
 	 */
 	@Override
 	public void setCreatedByUserLogin(String newCreatedByUserLogin) {
+		String oldCreatedByUserLogin = createdByUserLogin;
 		createdByUserLogin = newCreatedByUserLogin;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PicklistPackage.PICKLIST__CREATED_BY_USER_LOGIN, oldCreatedByUserLogin, createdByUserLogin));
 	}
 
 	/**
@@ -248,7 +253,10 @@ public class PicklistImpl extends BizEntityImpl implements Picklist {
 	 */
 	@Override
 	public void setDescription(String newDescription) {
+		String oldDescription = description;
 		description = newDescription;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PicklistPackage.PICKLIST__DESCRIPTION, oldDescription, description));
 	}
 
 	/**
@@ -262,6 +270,8 @@ public class PicklistImpl extends BizEntityImpl implements Picklist {
 			InternalEObject oldFacilityId = (InternalEObject)facilityId;
 			facilityId = (Facility)eResolveProxy(oldFacilityId);
 			if (facilityId != oldFacilityId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PicklistPackage.PICKLIST__FACILITY_ID, oldFacilityId, facilityId));
 			}
 		}
 		return facilityId;
@@ -283,7 +293,10 @@ public class PicklistImpl extends BizEntityImpl implements Picklist {
 	 */
 	@Override
 	public void setFacilityId(Facility newFacilityId) {
+		Facility oldFacilityId = facilityId;
 		facilityId = newFacilityId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PicklistPackage.PICKLIST__FACILITY_ID, oldFacilityId, facilityId));
 	}
 
 	/**
@@ -303,7 +316,10 @@ public class PicklistImpl extends BizEntityImpl implements Picklist {
 	 */
 	@Override
 	public void setLastModifiedByUserLogin(String newLastModifiedByUserLogin) {
+		String oldLastModifiedByUserLogin = lastModifiedByUserLogin;
 		lastModifiedByUserLogin = newLastModifiedByUserLogin;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PicklistPackage.PICKLIST__LAST_MODIFIED_BY_USER_LOGIN, oldLastModifiedByUserLogin, lastModifiedByUserLogin));
 	}
 
 	/**
@@ -323,7 +339,10 @@ public class PicklistImpl extends BizEntityImpl implements Picklist {
 	 */
 	@Override
 	public void setPicklistDate(Date newPicklistDate) {
+		Date oldPicklistDate = picklistDate;
 		picklistDate = newPicklistDate;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PicklistPackage.PICKLIST__PICKLIST_DATE, oldPicklistDate, picklistDate));
 	}
 
 	/**
@@ -343,7 +362,10 @@ public class PicklistImpl extends BizEntityImpl implements Picklist {
 	 */
 	@Override
 	public void setPicklistId(String newPicklistId) {
+		String oldPicklistId = picklistId;
 		picklistId = newPicklistId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PicklistPackage.PICKLIST__PICKLIST_ID, oldPicklistId, picklistId));
 	}
 
 	/**
@@ -357,6 +379,8 @@ public class PicklistImpl extends BizEntityImpl implements Picklist {
 			InternalEObject oldShipmentMethodTypeId = (InternalEObject)shipmentMethodTypeId;
 			shipmentMethodTypeId = (ShipmentMethodType)eResolveProxy(oldShipmentMethodTypeId);
 			if (shipmentMethodTypeId != oldShipmentMethodTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PicklistPackage.PICKLIST__SHIPMENT_METHOD_TYPE_ID, oldShipmentMethodTypeId, shipmentMethodTypeId));
 			}
 		}
 		return shipmentMethodTypeId;
@@ -378,7 +402,10 @@ public class PicklistImpl extends BizEntityImpl implements Picklist {
 	 */
 	@Override
 	public void setShipmentMethodTypeId(ShipmentMethodType newShipmentMethodTypeId) {
+		ShipmentMethodType oldShipmentMethodTypeId = shipmentMethodTypeId;
 		shipmentMethodTypeId = newShipmentMethodTypeId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PicklistPackage.PICKLIST__SHIPMENT_METHOD_TYPE_ID, oldShipmentMethodTypeId, shipmentMethodTypeId));
 	}
 
 	/**
@@ -392,6 +419,8 @@ public class PicklistImpl extends BizEntityImpl implements Picklist {
 			InternalEObject oldStatusId = (InternalEObject)statusId;
 			statusId = (StatusItem)eResolveProxy(oldStatusId);
 			if (statusId != oldStatusId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PicklistPackage.PICKLIST__STATUS_ID, oldStatusId, statusId));
 			}
 		}
 		return statusId;
@@ -413,7 +442,10 @@ public class PicklistImpl extends BizEntityImpl implements Picklist {
 	 */
 	@Override
 	public void setStatusId(StatusItem newStatusId) {
+		StatusItem oldStatusId = statusId;
 		statusId = newStatusId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PicklistPackage.PICKLIST__STATUS_ID, oldStatusId, statusId));
 	}
 
 	/**
@@ -424,7 +456,7 @@ public class PicklistImpl extends BizEntityImpl implements Picklist {
 	@Override
 	public List<String> getPicklistStatusHistories() {
 		if (picklistStatusHistories == null) {
-			picklistStatusHistories = new BasicInternalEList<String>(String.class);
+			picklistStatusHistories = new EDataTypeUniqueEList<String>(String.class, this, PicklistPackage.PICKLIST__PICKLIST_STATUS_HISTORIES);
 		}
 		return picklistStatusHistories;
 	}

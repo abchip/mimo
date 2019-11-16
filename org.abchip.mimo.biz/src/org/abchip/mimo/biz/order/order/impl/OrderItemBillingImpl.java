@@ -16,10 +16,12 @@ import org.abchip.mimo.biz.order.order.OrderItemBilling;
 import org.abchip.mimo.biz.order.order.OrderPackage;
 import org.abchip.mimo.biz.shipment.issuance.ItemIssuance;
 import org.abchip.mimo.biz.shipment.receipt.ShipmentReceipt;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -203,7 +205,10 @@ public class OrderItemBillingImpl extends BizEntityImpl implements OrderItemBill
 	 */
 	@Override
 	public void setAmount(BigDecimal newAmount) {
+		BigDecimal oldAmount = amount;
 		amount = newAmount;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_ITEM_BILLING__AMOUNT, oldAmount, amount));
 	}
 
 	/**
@@ -217,6 +222,8 @@ public class OrderItemBillingImpl extends BizEntityImpl implements OrderItemBill
 			InternalEObject oldInvoiceId = (InternalEObject)invoiceId;
 			invoiceId = (Invoice)eResolveProxy(oldInvoiceId);
 			if (invoiceId != oldInvoiceId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, OrderPackage.ORDER_ITEM_BILLING__INVOICE_ID, oldInvoiceId, invoiceId));
 			}
 		}
 		return invoiceId;
@@ -238,7 +245,10 @@ public class OrderItemBillingImpl extends BizEntityImpl implements OrderItemBill
 	 */
 	@Override
 	public void setInvoiceId(Invoice newInvoiceId) {
+		Invoice oldInvoiceId = invoiceId;
 		invoiceId = newInvoiceId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_ITEM_BILLING__INVOICE_ID, oldInvoiceId, invoiceId));
 	}
 
 	/**
@@ -258,7 +268,10 @@ public class OrderItemBillingImpl extends BizEntityImpl implements OrderItemBill
 	 */
 	@Override
 	public void setInvoiceItemSeqId(String newInvoiceItemSeqId) {
+		String oldInvoiceItemSeqId = invoiceItemSeqId;
 		invoiceItemSeqId = newInvoiceItemSeqId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_ITEM_BILLING__INVOICE_ITEM_SEQ_ID, oldInvoiceItemSeqId, invoiceItemSeqId));
 	}
 
 	/**
@@ -272,6 +285,8 @@ public class OrderItemBillingImpl extends BizEntityImpl implements OrderItemBill
 			InternalEObject oldItemIssuanceId = (InternalEObject)itemIssuanceId;
 			itemIssuanceId = (ItemIssuance)eResolveProxy(oldItemIssuanceId);
 			if (itemIssuanceId != oldItemIssuanceId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, OrderPackage.ORDER_ITEM_BILLING__ITEM_ISSUANCE_ID, oldItemIssuanceId, itemIssuanceId));
 			}
 		}
 		return itemIssuanceId;
@@ -293,7 +308,10 @@ public class OrderItemBillingImpl extends BizEntityImpl implements OrderItemBill
 	 */
 	@Override
 	public void setItemIssuanceId(ItemIssuance newItemIssuanceId) {
+		ItemIssuance oldItemIssuanceId = itemIssuanceId;
 		itemIssuanceId = newItemIssuanceId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_ITEM_BILLING__ITEM_ISSUANCE_ID, oldItemIssuanceId, itemIssuanceId));
 	}
 
 	/**
@@ -307,6 +325,8 @@ public class OrderItemBillingImpl extends BizEntityImpl implements OrderItemBill
 			InternalEObject oldOrderId = (InternalEObject)orderId;
 			orderId = (OrderHeader)eResolveProxy(oldOrderId);
 			if (orderId != oldOrderId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, OrderPackage.ORDER_ITEM_BILLING__ORDER_ID, oldOrderId, orderId));
 			}
 		}
 		return orderId;
@@ -328,7 +348,10 @@ public class OrderItemBillingImpl extends BizEntityImpl implements OrderItemBill
 	 */
 	@Override
 	public void setOrderId(OrderHeader newOrderId) {
+		OrderHeader oldOrderId = orderId;
 		orderId = newOrderId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_ITEM_BILLING__ORDER_ID, oldOrderId, orderId));
 	}
 
 	/**
@@ -348,7 +371,10 @@ public class OrderItemBillingImpl extends BizEntityImpl implements OrderItemBill
 	 */
 	@Override
 	public void setOrderItemSeqId(String newOrderItemSeqId) {
+		String oldOrderItemSeqId = orderItemSeqId;
 		orderItemSeqId = newOrderItemSeqId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_ITEM_BILLING__ORDER_ITEM_SEQ_ID, oldOrderItemSeqId, orderItemSeqId));
 	}
 
 	/**
@@ -368,7 +394,10 @@ public class OrderItemBillingImpl extends BizEntityImpl implements OrderItemBill
 	 */
 	@Override
 	public void setQuantity(BigDecimal newQuantity) {
+		BigDecimal oldQuantity = quantity;
 		quantity = newQuantity;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_ITEM_BILLING__QUANTITY, oldQuantity, quantity));
 	}
 
 	/**
@@ -382,6 +411,8 @@ public class OrderItemBillingImpl extends BizEntityImpl implements OrderItemBill
 			InternalEObject oldShipmentReceiptId = (InternalEObject)shipmentReceiptId;
 			shipmentReceiptId = (ShipmentReceipt)eResolveProxy(oldShipmentReceiptId);
 			if (shipmentReceiptId != oldShipmentReceiptId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, OrderPackage.ORDER_ITEM_BILLING__SHIPMENT_RECEIPT_ID, oldShipmentReceiptId, shipmentReceiptId));
 			}
 		}
 		return shipmentReceiptId;
@@ -403,7 +434,10 @@ public class OrderItemBillingImpl extends BizEntityImpl implements OrderItemBill
 	 */
 	@Override
 	public void setShipmentReceiptId(ShipmentReceipt newShipmentReceiptId) {
+		ShipmentReceipt oldShipmentReceiptId = shipmentReceiptId;
 		shipmentReceiptId = newShipmentReceiptId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_ITEM_BILLING__SHIPMENT_RECEIPT_ID, oldShipmentReceiptId, shipmentReceiptId));
 	}
 
 	/**

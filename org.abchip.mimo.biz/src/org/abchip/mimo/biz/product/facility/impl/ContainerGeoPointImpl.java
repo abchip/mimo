@@ -13,9 +13,11 @@ import org.abchip.mimo.biz.common.geo.GeoPoint;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.product.facility.ContainerGeoPoint;
 import org.abchip.mimo.biz.product.facility.FacilityPackage;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -135,7 +137,10 @@ public class ContainerGeoPointImpl extends BizEntityImpl implements ContainerGeo
 	 */
 	@Override
 	public void setFromDate(Date newFromDate) {
+		Date oldFromDate = fromDate;
 		fromDate = newFromDate;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, FacilityPackage.CONTAINER_GEO_POINT__FROM_DATE, oldFromDate, fromDate));
 	}
 
 	/**
@@ -149,6 +154,8 @@ public class ContainerGeoPointImpl extends BizEntityImpl implements ContainerGeo
 			InternalEObject oldGeoPointId = (InternalEObject)geoPointId;
 			geoPointId = (GeoPoint)eResolveProxy(oldGeoPointId);
 			if (geoPointId != oldGeoPointId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, FacilityPackage.CONTAINER_GEO_POINT__GEO_POINT_ID, oldGeoPointId, geoPointId));
 			}
 		}
 		return geoPointId;
@@ -170,7 +177,10 @@ public class ContainerGeoPointImpl extends BizEntityImpl implements ContainerGeo
 	 */
 	@Override
 	public void setGeoPointId(GeoPoint newGeoPointId) {
+		GeoPoint oldGeoPointId = geoPointId;
 		geoPointId = newGeoPointId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, FacilityPackage.CONTAINER_GEO_POINT__GEO_POINT_ID, oldGeoPointId, geoPointId));
 	}
 
 	/**
@@ -190,7 +200,10 @@ public class ContainerGeoPointImpl extends BizEntityImpl implements ContainerGeo
 	 */
 	@Override
 	public void setThruDate(Date newThruDate) {
+		Date oldThruDate = thruDate;
 		thruDate = newThruDate;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, FacilityPackage.CONTAINER_GEO_POINT__THRU_DATE, oldThruDate, thruDate));
 	}
 
 	/**
@@ -204,6 +217,8 @@ public class ContainerGeoPointImpl extends BizEntityImpl implements ContainerGeo
 			InternalEObject oldContainerId = (InternalEObject)containerId;
 			containerId = (org.abchip.mimo.biz.product.facility.Container)eResolveProxy(oldContainerId);
 			if (containerId != oldContainerId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, FacilityPackage.CONTAINER_GEO_POINT__CONTAINER_ID, oldContainerId, containerId));
 			}
 		}
 		return containerId;
@@ -225,7 +240,10 @@ public class ContainerGeoPointImpl extends BizEntityImpl implements ContainerGeo
 	 */
 	@Override
 	public void setContainerId(org.abchip.mimo.biz.product.facility.Container newContainerId) {
+		org.abchip.mimo.biz.product.facility.Container oldContainerId = containerId;
 		containerId = newContainerId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, FacilityPackage.CONTAINER_GEO_POINT__CONTAINER_ID, oldContainerId, containerId));
 	}
 
 	/**

@@ -11,10 +11,12 @@ import org.abchip.mimo.biz.common.email.EmailPackage;
 import org.abchip.mimo.biz.common.email.EmailTemplateSetting;
 import org.abchip.mimo.biz.common.enum_.Enumeration;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -258,7 +260,10 @@ public class EmailTemplateSettingImpl extends BizEntityImpl implements EmailTemp
 	 */
 	@Override
 	public void setBccAddress(String newBccAddress) {
+		String oldBccAddress = bccAddress;
 		bccAddress = newBccAddress;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, EmailPackage.EMAIL_TEMPLATE_SETTING__BCC_ADDRESS, oldBccAddress, bccAddress));
 	}
 
 	/**
@@ -278,7 +283,10 @@ public class EmailTemplateSettingImpl extends BizEntityImpl implements EmailTemp
 	 */
 	@Override
 	public void setBodyScreenLocation(String newBodyScreenLocation) {
+		String oldBodyScreenLocation = bodyScreenLocation;
 		bodyScreenLocation = newBodyScreenLocation;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, EmailPackage.EMAIL_TEMPLATE_SETTING__BODY_SCREEN_LOCATION, oldBodyScreenLocation, bodyScreenLocation));
 	}
 
 	/**
@@ -298,7 +306,10 @@ public class EmailTemplateSettingImpl extends BizEntityImpl implements EmailTemp
 	 */
 	@Override
 	public void setCcAddress(String newCcAddress) {
+		String oldCcAddress = ccAddress;
 		ccAddress = newCcAddress;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, EmailPackage.EMAIL_TEMPLATE_SETTING__CC_ADDRESS, oldCcAddress, ccAddress));
 	}
 
 	/**
@@ -318,7 +329,10 @@ public class EmailTemplateSettingImpl extends BizEntityImpl implements EmailTemp
 	 */
 	@Override
 	public void setContentType(String newContentType) {
+		String oldContentType = contentType;
 		contentType = newContentType;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, EmailPackage.EMAIL_TEMPLATE_SETTING__CONTENT_TYPE, oldContentType, contentType));
 	}
 
 	/**
@@ -338,7 +352,10 @@ public class EmailTemplateSettingImpl extends BizEntityImpl implements EmailTemp
 	 */
 	@Override
 	public void setDescription(String newDescription) {
+		String oldDescription = description;
 		description = newDescription;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, EmailPackage.EMAIL_TEMPLATE_SETTING__DESCRIPTION, oldDescription, description));
 	}
 
 	/**
@@ -358,7 +375,10 @@ public class EmailTemplateSettingImpl extends BizEntityImpl implements EmailTemp
 	 */
 	@Override
 	public void setEmailTemplateSettingId(String newEmailTemplateSettingId) {
+		String oldEmailTemplateSettingId = emailTemplateSettingId;
 		emailTemplateSettingId = newEmailTemplateSettingId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, EmailPackage.EMAIL_TEMPLATE_SETTING__EMAIL_TEMPLATE_SETTING_ID, oldEmailTemplateSettingId, emailTemplateSettingId));
 	}
 
 	/**
@@ -372,6 +392,8 @@ public class EmailTemplateSettingImpl extends BizEntityImpl implements EmailTemp
 			InternalEObject oldEmailType = (InternalEObject)emailType;
 			emailType = (Enumeration)eResolveProxy(oldEmailType);
 			if (emailType != oldEmailType) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, EmailPackage.EMAIL_TEMPLATE_SETTING__EMAIL_TYPE, oldEmailType, emailType));
 			}
 		}
 		return emailType;
@@ -393,7 +415,10 @@ public class EmailTemplateSettingImpl extends BizEntityImpl implements EmailTemp
 	 */
 	@Override
 	public void setEmailType(Enumeration newEmailType) {
+		Enumeration oldEmailType = emailType;
 		emailType = newEmailType;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, EmailPackage.EMAIL_TEMPLATE_SETTING__EMAIL_TYPE, oldEmailType, emailType));
 	}
 
 	/**
@@ -413,7 +438,10 @@ public class EmailTemplateSettingImpl extends BizEntityImpl implements EmailTemp
 	 */
 	@Override
 	public void setFromAddress(String newFromAddress) {
+		String oldFromAddress = fromAddress;
 		fromAddress = newFromAddress;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, EmailPackage.EMAIL_TEMPLATE_SETTING__FROM_ADDRESS, oldFromAddress, fromAddress));
 	}
 
 	/**
@@ -433,7 +461,10 @@ public class EmailTemplateSettingImpl extends BizEntityImpl implements EmailTemp
 	 */
 	@Override
 	public void setSubject(String newSubject) {
+		String oldSubject = subject;
 		subject = newSubject;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, EmailPackage.EMAIL_TEMPLATE_SETTING__SUBJECT, oldSubject, subject));
 	}
 
 	/**
@@ -453,7 +484,10 @@ public class EmailTemplateSettingImpl extends BizEntityImpl implements EmailTemp
 	 */
 	@Override
 	public void setXslfoAttachScreenLocation(String newXslfoAttachScreenLocation) {
+		String oldXslfoAttachScreenLocation = xslfoAttachScreenLocation;
 		xslfoAttachScreenLocation = newXslfoAttachScreenLocation;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, EmailPackage.EMAIL_TEMPLATE_SETTING__XSLFO_ATTACH_SCREEN_LOCATION, oldXslfoAttachScreenLocation, xslfoAttachScreenLocation));
 	}
 
 	/**

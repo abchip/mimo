@@ -12,9 +12,11 @@ import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.party.agreement.Agreement;
 import org.abchip.mimo.biz.party.agreement.AgreementGeographicalApplic;
 import org.abchip.mimo.biz.party.agreement.AgreementPackage;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -109,7 +111,10 @@ public class AgreementGeographicalApplicImpl extends BizEntityImpl implements Ag
 	 */
 	@Override
 	public void setAgreementItemSeqId(String newAgreementItemSeqId) {
+		String oldAgreementItemSeqId = agreementItemSeqId;
 		agreementItemSeqId = newAgreementItemSeqId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, AgreementPackage.AGREEMENT_GEOGRAPHICAL_APPLIC__AGREEMENT_ITEM_SEQ_ID, oldAgreementItemSeqId, agreementItemSeqId));
 	}
 
 	/**
@@ -123,6 +128,8 @@ public class AgreementGeographicalApplicImpl extends BizEntityImpl implements Ag
 			InternalEObject oldGeoId = (InternalEObject)geoId;
 			geoId = (Geo)eResolveProxy(oldGeoId);
 			if (geoId != oldGeoId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, AgreementPackage.AGREEMENT_GEOGRAPHICAL_APPLIC__GEO_ID, oldGeoId, geoId));
 			}
 		}
 		return geoId;
@@ -144,7 +151,10 @@ public class AgreementGeographicalApplicImpl extends BizEntityImpl implements Ag
 	 */
 	@Override
 	public void setGeoId(Geo newGeoId) {
+		Geo oldGeoId = geoId;
 		geoId = newGeoId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, AgreementPackage.AGREEMENT_GEOGRAPHICAL_APPLIC__GEO_ID, oldGeoId, geoId));
 	}
 
 	/**
@@ -158,6 +168,8 @@ public class AgreementGeographicalApplicImpl extends BizEntityImpl implements Ag
 			InternalEObject oldAgreementId = (InternalEObject)agreementId;
 			agreementId = (Agreement)eResolveProxy(oldAgreementId);
 			if (agreementId != oldAgreementId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, AgreementPackage.AGREEMENT_GEOGRAPHICAL_APPLIC__AGREEMENT_ID, oldAgreementId, agreementId));
 			}
 		}
 		return agreementId;
@@ -179,7 +191,10 @@ public class AgreementGeographicalApplicImpl extends BizEntityImpl implements Ag
 	 */
 	@Override
 	public void setAgreementId(Agreement newAgreementId) {
+		Agreement oldAgreementId = agreementId;
 		agreementId = newAgreementId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, AgreementPackage.AGREEMENT_GEOGRAPHICAL_APPLIC__AGREEMENT_ID, oldAgreementId, agreementId));
 	}
 
 	/**

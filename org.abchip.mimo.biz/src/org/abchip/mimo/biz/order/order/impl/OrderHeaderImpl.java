@@ -25,11 +25,13 @@ import org.abchip.mimo.biz.product.facility.Facility;
 import org.abchip.mimo.biz.product.store.ProductStore;
 import org.abchip.mimo.biz.security.login.UserLogin;
 import org.abchip.mimo.biz.webapp.website.WebSite;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.util.BasicInternalEList;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
 
 /**
  * <!-- begin-user-doc --> An implementation of the model object '<em><b>Order
@@ -672,7 +674,10 @@ public class OrderHeaderImpl extends BizEntityTypedImpl<OrderType> implements Or
 	 */
 	@Override
 	public void setAgreementId(String newAgreementId) {
+		String oldAgreementId = agreementId;
 		agreementId = newAgreementId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_HEADER__AGREEMENT_ID, oldAgreementId, agreementId));
 	}
 
 	/**
@@ -685,6 +690,8 @@ public class OrderHeaderImpl extends BizEntityTypedImpl<OrderType> implements Or
 			InternalEObject oldAutoOrderShoppingListId = (InternalEObject)autoOrderShoppingListId;
 			autoOrderShoppingListId = (ShoppingList)eResolveProxy(oldAutoOrderShoppingListId);
 			if (autoOrderShoppingListId != oldAutoOrderShoppingListId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, OrderPackage.ORDER_HEADER__AUTO_ORDER_SHOPPING_LIST_ID, oldAutoOrderShoppingListId, autoOrderShoppingListId));
 			}
 		}
 		return autoOrderShoppingListId;
@@ -704,7 +711,10 @@ public class OrderHeaderImpl extends BizEntityTypedImpl<OrderType> implements Or
 	 */
 	@Override
 	public void setAutoOrderShoppingListId(ShoppingList newAutoOrderShoppingListId) {
+		ShoppingList oldAutoOrderShoppingListId = autoOrderShoppingListId;
 		autoOrderShoppingListId = newAutoOrderShoppingListId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_HEADER__AUTO_ORDER_SHOPPING_LIST_ID, oldAutoOrderShoppingListId, autoOrderShoppingListId));
 	}
 
 	/**
@@ -717,6 +727,8 @@ public class OrderHeaderImpl extends BizEntityTypedImpl<OrderType> implements Or
 			InternalEObject oldBillingAccountId = (InternalEObject)billingAccountId;
 			billingAccountId = (BillingAccount)eResolveProxy(oldBillingAccountId);
 			if (billingAccountId != oldBillingAccountId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, OrderPackage.ORDER_HEADER__BILLING_ACCOUNT_ID, oldBillingAccountId, billingAccountId));
 			}
 		}
 		return billingAccountId;
@@ -736,7 +748,10 @@ public class OrderHeaderImpl extends BizEntityTypedImpl<OrderType> implements Or
 	 */
 	@Override
 	public void setBillingAccountId(BillingAccount newBillingAccountId) {
+		BillingAccount oldBillingAccountId = billingAccountId;
 		billingAccountId = newBillingAccountId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_HEADER__BILLING_ACCOUNT_ID, oldBillingAccountId, billingAccountId));
 	}
 
 	/**
@@ -749,6 +764,8 @@ public class OrderHeaderImpl extends BizEntityTypedImpl<OrderType> implements Or
 			InternalEObject oldCreatedBy = (InternalEObject)createdBy;
 			createdBy = (UserLogin)eResolveProxy(oldCreatedBy);
 			if (createdBy != oldCreatedBy) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, OrderPackage.ORDER_HEADER__CREATED_BY, oldCreatedBy, createdBy));
 			}
 		}
 		return createdBy;
@@ -768,7 +785,10 @@ public class OrderHeaderImpl extends BizEntityTypedImpl<OrderType> implements Or
 	 */
 	@Override
 	public void setCreatedBy(UserLogin newCreatedBy) {
+		UserLogin oldCreatedBy = createdBy;
 		createdBy = newCreatedBy;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_HEADER__CREATED_BY, oldCreatedBy, createdBy));
 	}
 
 	/**
@@ -781,6 +801,8 @@ public class OrderHeaderImpl extends BizEntityTypedImpl<OrderType> implements Or
 			InternalEObject oldCurrencyUom = (InternalEObject)currencyUom;
 			currencyUom = (Uom)eResolveProxy(oldCurrencyUom);
 			if (currencyUom != oldCurrencyUom) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, OrderPackage.ORDER_HEADER__CURRENCY_UOM, oldCurrencyUom, currencyUom));
 			}
 		}
 		return currencyUom;
@@ -800,7 +822,10 @@ public class OrderHeaderImpl extends BizEntityTypedImpl<OrderType> implements Or
 	 */
 	@Override
 	public void setCurrencyUom(Uom newCurrencyUom) {
+		Uom oldCurrencyUom = currencyUom;
 		currencyUom = newCurrencyUom;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_HEADER__CURRENCY_UOM, oldCurrencyUom, currencyUom));
 	}
 
 	/**
@@ -818,7 +843,10 @@ public class OrderHeaderImpl extends BizEntityTypedImpl<OrderType> implements Or
 	 */
 	@Override
 	public void setEntryDate(Date newEntryDate) {
+		Date oldEntryDate = entryDate;
 		entryDate = newEntryDate;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_HEADER__ENTRY_DATE, oldEntryDate, entryDate));
 	}
 
 	/**
@@ -836,7 +864,10 @@ public class OrderHeaderImpl extends BizEntityTypedImpl<OrderType> implements Or
 	 */
 	@Override
 	public void setExternalId(String newExternalId) {
+		String oldExternalId = externalId;
 		externalId = newExternalId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_HEADER__EXTERNAL_ID, oldExternalId, externalId));
 	}
 
 	/**
@@ -854,7 +885,10 @@ public class OrderHeaderImpl extends BizEntityTypedImpl<OrderType> implements Or
 	 */
 	@Override
 	public void setFirstAttemptOrderId(String newFirstAttemptOrderId) {
+		String oldFirstAttemptOrderId = firstAttemptOrderId;
 		firstAttemptOrderId = newFirstAttemptOrderId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_HEADER__FIRST_ATTEMPT_ORDER_ID, oldFirstAttemptOrderId, firstAttemptOrderId));
 	}
 
 	/**
@@ -872,7 +906,10 @@ public class OrderHeaderImpl extends BizEntityTypedImpl<OrderType> implements Or
 	 */
 	@Override
 	public void setGrandTotal(BigDecimal newGrandTotal) {
+		BigDecimal oldGrandTotal = grandTotal;
 		grandTotal = newGrandTotal;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_HEADER__GRAND_TOTAL, oldGrandTotal, grandTotal));
 	}
 
 	/**
@@ -890,7 +927,10 @@ public class OrderHeaderImpl extends BizEntityTypedImpl<OrderType> implements Or
 	 */
 	@Override
 	public void setInternalCode(String newInternalCode) {
+		String oldInternalCode = internalCode;
 		internalCode = newInternalCode;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_HEADER__INTERNAL_CODE, oldInternalCode, internalCode));
 	}
 
 	/**
@@ -908,7 +948,10 @@ public class OrderHeaderImpl extends BizEntityTypedImpl<OrderType> implements Or
 	 */
 	@Override
 	public void setInvoicePerShipment(boolean newInvoicePerShipment) {
+		boolean oldInvoicePerShipment = invoicePerShipment;
 		invoicePerShipment = newInvoicePerShipment;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_HEADER__INVOICE_PER_SHIPMENT, oldInvoicePerShipment, invoicePerShipment));
 	}
 
 	/**
@@ -926,7 +969,10 @@ public class OrderHeaderImpl extends BizEntityTypedImpl<OrderType> implements Or
 	 */
 	@Override
 	public void setIsRushOrder(boolean newIsRushOrder) {
+		boolean oldIsRushOrder = isRushOrder;
 		isRushOrder = newIsRushOrder;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_HEADER__IS_RUSH_ORDER, oldIsRushOrder, isRushOrder));
 	}
 
 	/**
@@ -944,7 +990,10 @@ public class OrderHeaderImpl extends BizEntityTypedImpl<OrderType> implements Or
 	 */
 	@Override
 	public void setIsViewed(boolean newIsViewed) {
+		boolean oldIsViewed = isViewed;
 		isViewed = newIsViewed;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_HEADER__IS_VIEWED, oldIsViewed, isViewed));
 	}
 
 	/**
@@ -962,7 +1011,10 @@ public class OrderHeaderImpl extends BizEntityTypedImpl<OrderType> implements Or
 	 */
 	@Override
 	public void setNeedsInventoryIssuance(boolean newNeedsInventoryIssuance) {
+		boolean oldNeedsInventoryIssuance = needsInventoryIssuance;
 		needsInventoryIssuance = newNeedsInventoryIssuance;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_HEADER__NEEDS_INVENTORY_ISSUANCE, oldNeedsInventoryIssuance, needsInventoryIssuance));
 	}
 
 	/**
@@ -980,7 +1032,10 @@ public class OrderHeaderImpl extends BizEntityTypedImpl<OrderType> implements Or
 	 */
 	@Override
 	public void setOrderDate(Date newOrderDate) {
+		Date oldOrderDate = orderDate;
 		orderDate = newOrderDate;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_HEADER__ORDER_DATE, oldOrderDate, orderDate));
 	}
 
 	/**
@@ -998,7 +1053,10 @@ public class OrderHeaderImpl extends BizEntityTypedImpl<OrderType> implements Or
 	 */
 	@Override
 	public void setOrderId(String newOrderId) {
+		String oldOrderId = orderId;
 		orderId = newOrderId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_HEADER__ORDER_ID, oldOrderId, orderId));
 	}
 
 	/**
@@ -1016,7 +1074,10 @@ public class OrderHeaderImpl extends BizEntityTypedImpl<OrderType> implements Or
 	 */
 	@Override
 	public void setOrderName(String newOrderName) {
+		String oldOrderName = orderName;
 		orderName = newOrderName;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_HEADER__ORDER_NAME, oldOrderName, orderName));
 	}
 
 	/**
@@ -1029,6 +1090,8 @@ public class OrderHeaderImpl extends BizEntityTypedImpl<OrderType> implements Or
 			InternalEObject oldOrderTypeId = (InternalEObject)orderTypeId;
 			orderTypeId = (OrderType)eResolveProxy(oldOrderTypeId);
 			if (orderTypeId != oldOrderTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, OrderPackage.ORDER_HEADER__ORDER_TYPE_ID, oldOrderTypeId, orderTypeId));
 			}
 		}
 		return orderTypeId;
@@ -1048,7 +1111,10 @@ public class OrderHeaderImpl extends BizEntityTypedImpl<OrderType> implements Or
 	 */
 	@Override
 	public void setOrderTypeId(OrderType newOrderTypeId) {
+		OrderType oldOrderTypeId = orderTypeId;
 		orderTypeId = newOrderTypeId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_HEADER__ORDER_TYPE_ID, oldOrderTypeId, orderTypeId));
 	}
 
 	/**
@@ -1061,6 +1127,8 @@ public class OrderHeaderImpl extends BizEntityTypedImpl<OrderType> implements Or
 			InternalEObject oldOriginFacilityId = (InternalEObject)originFacilityId;
 			originFacilityId = (Facility)eResolveProxy(oldOriginFacilityId);
 			if (originFacilityId != oldOriginFacilityId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, OrderPackage.ORDER_HEADER__ORIGIN_FACILITY_ID, oldOriginFacilityId, originFacilityId));
 			}
 		}
 		return originFacilityId;
@@ -1080,7 +1148,10 @@ public class OrderHeaderImpl extends BizEntityTypedImpl<OrderType> implements Or
 	 */
 	@Override
 	public void setOriginFacilityId(Facility newOriginFacilityId) {
+		Facility oldOriginFacilityId = originFacilityId;
 		originFacilityId = newOriginFacilityId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_HEADER__ORIGIN_FACILITY_ID, oldOriginFacilityId, originFacilityId));
 	}
 
 	/**
@@ -1098,7 +1169,10 @@ public class OrderHeaderImpl extends BizEntityTypedImpl<OrderType> implements Or
 	 */
 	@Override
 	public void setPickSheetPrintedDate(Date newPickSheetPrintedDate) {
+		Date oldPickSheetPrintedDate = pickSheetPrintedDate;
 		pickSheetPrintedDate = newPickSheetPrintedDate;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_HEADER__PICK_SHEET_PRINTED_DATE, oldPickSheetPrintedDate, pickSheetPrintedDate));
 	}
 
 	/**
@@ -1116,7 +1190,10 @@ public class OrderHeaderImpl extends BizEntityTypedImpl<OrderType> implements Or
 	 */
 	@Override
 	public void setPriority(boolean newPriority) {
+		boolean oldPriority = priority;
 		priority = newPriority;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_HEADER__PRIORITY, oldPriority, priority));
 	}
 
 	/**
@@ -1129,6 +1206,8 @@ public class OrderHeaderImpl extends BizEntityTypedImpl<OrderType> implements Or
 			InternalEObject oldProductStoreId = (InternalEObject)productStoreId;
 			productStoreId = (ProductStore)eResolveProxy(oldProductStoreId);
 			if (productStoreId != oldProductStoreId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, OrderPackage.ORDER_HEADER__PRODUCT_STORE_ID, oldProductStoreId, productStoreId));
 			}
 		}
 		return productStoreId;
@@ -1148,7 +1227,10 @@ public class OrderHeaderImpl extends BizEntityTypedImpl<OrderType> implements Or
 	 */
 	@Override
 	public void setProductStoreId(ProductStore newProductStoreId) {
+		ProductStore oldProductStoreId = productStoreId;
 		productStoreId = newProductStoreId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_HEADER__PRODUCT_STORE_ID, oldProductStoreId, productStoreId));
 	}
 
 	/**
@@ -1166,7 +1248,10 @@ public class OrderHeaderImpl extends BizEntityTypedImpl<OrderType> implements Or
 	 */
 	@Override
 	public void setRemainingSubTotal(BigDecimal newRemainingSubTotal) {
+		BigDecimal oldRemainingSubTotal = remainingSubTotal;
 		remainingSubTotal = newRemainingSubTotal;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_HEADER__REMAINING_SUB_TOTAL, oldRemainingSubTotal, remainingSubTotal));
 	}
 
 	/**
@@ -1179,6 +1264,8 @@ public class OrderHeaderImpl extends BizEntityTypedImpl<OrderType> implements Or
 			InternalEObject oldSalesChannelEnumId = (InternalEObject)salesChannelEnumId;
 			salesChannelEnumId = (Enumeration)eResolveProxy(oldSalesChannelEnumId);
 			if (salesChannelEnumId != oldSalesChannelEnumId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, OrderPackage.ORDER_HEADER__SALES_CHANNEL_ENUM_ID, oldSalesChannelEnumId, salesChannelEnumId));
 			}
 		}
 		return salesChannelEnumId;
@@ -1198,7 +1285,10 @@ public class OrderHeaderImpl extends BizEntityTypedImpl<OrderType> implements Or
 	 */
 	@Override
 	public void setSalesChannelEnumId(Enumeration newSalesChannelEnumId) {
+		Enumeration oldSalesChannelEnumId = salesChannelEnumId;
 		salesChannelEnumId = newSalesChannelEnumId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_HEADER__SALES_CHANNEL_ENUM_ID, oldSalesChannelEnumId, salesChannelEnumId));
 	}
 
 	/**
@@ -1211,6 +1301,8 @@ public class OrderHeaderImpl extends BizEntityTypedImpl<OrderType> implements Or
 			InternalEObject oldStatusId = (InternalEObject)statusId;
 			statusId = (StatusItem)eResolveProxy(oldStatusId);
 			if (statusId != oldStatusId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, OrderPackage.ORDER_HEADER__STATUS_ID, oldStatusId, statusId));
 			}
 		}
 		return statusId;
@@ -1230,7 +1322,10 @@ public class OrderHeaderImpl extends BizEntityTypedImpl<OrderType> implements Or
 	 */
 	@Override
 	public void setStatusId(StatusItem newStatusId) {
+		StatusItem oldStatusId = statusId;
 		statusId = newStatusId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_HEADER__STATUS_ID, oldStatusId, statusId));
 	}
 
 	/**
@@ -1243,6 +1338,8 @@ public class OrderHeaderImpl extends BizEntityTypedImpl<OrderType> implements Or
 			InternalEObject oldSyncStatusId = (InternalEObject)syncStatusId;
 			syncStatusId = (StatusItem)eResolveProxy(oldSyncStatusId);
 			if (syncStatusId != oldSyncStatusId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, OrderPackage.ORDER_HEADER__SYNC_STATUS_ID, oldSyncStatusId, syncStatusId));
 			}
 		}
 		return syncStatusId;
@@ -1262,7 +1359,10 @@ public class OrderHeaderImpl extends BizEntityTypedImpl<OrderType> implements Or
 	 */
 	@Override
 	public void setSyncStatusId(StatusItem newSyncStatusId) {
+		StatusItem oldSyncStatusId = syncStatusId;
 		syncStatusId = newSyncStatusId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_HEADER__SYNC_STATUS_ID, oldSyncStatusId, syncStatusId));
 	}
 
 	/**
@@ -1280,7 +1380,10 @@ public class OrderHeaderImpl extends BizEntityTypedImpl<OrderType> implements Or
 	 */
 	@Override
 	public void setTerminalId(String newTerminalId) {
+		String oldTerminalId = terminalId;
 		terminalId = newTerminalId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_HEADER__TERMINAL_ID, oldTerminalId, terminalId));
 	}
 
 	/**
@@ -1298,7 +1401,10 @@ public class OrderHeaderImpl extends BizEntityTypedImpl<OrderType> implements Or
 	 */
 	@Override
 	public void setTransactionId(String newTransactionId) {
+		String oldTransactionId = transactionId;
 		transactionId = newTransactionId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_HEADER__TRANSACTION_ID, oldTransactionId, transactionId));
 	}
 
 	/**
@@ -1316,7 +1422,10 @@ public class OrderHeaderImpl extends BizEntityTypedImpl<OrderType> implements Or
 	 */
 	@Override
 	public void setVisitId(String newVisitId) {
+		String oldVisitId = visitId;
 		visitId = newVisitId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_HEADER__VISIT_ID, oldVisitId, visitId));
 	}
 
 	/**
@@ -1329,6 +1438,8 @@ public class OrderHeaderImpl extends BizEntityTypedImpl<OrderType> implements Or
 			InternalEObject oldWebSiteId = (InternalEObject)webSiteId;
 			webSiteId = (WebSite)eResolveProxy(oldWebSiteId);
 			if (webSiteId != oldWebSiteId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, OrderPackage.ORDER_HEADER__WEB_SITE_ID, oldWebSiteId, webSiteId));
 			}
 		}
 		return webSiteId;
@@ -1348,7 +1459,10 @@ public class OrderHeaderImpl extends BizEntityTypedImpl<OrderType> implements Or
 	 */
 	@Override
 	public void setWebSiteId(WebSite newWebSiteId) {
+		WebSite oldWebSiteId = webSiteId;
 		webSiteId = newWebSiteId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_HEADER__WEB_SITE_ID, oldWebSiteId, webSiteId));
 	}
 
 	/**
@@ -1358,7 +1472,7 @@ public class OrderHeaderImpl extends BizEntityTypedImpl<OrderType> implements Or
 	@Override
 	public List<String> getCommunicationEventOrders() {
 		if (communicationEventOrders == null) {
-			communicationEventOrders = new BasicInternalEList<String>(String.class);
+			communicationEventOrders = new EDataTypeUniqueEList<String>(String.class, this, OrderPackage.ORDER_HEADER__COMMUNICATION_EVENT_ORDERS);
 		}
 		return communicationEventOrders;
 	}
@@ -1370,7 +1484,7 @@ public class OrderHeaderImpl extends BizEntityTypedImpl<OrderType> implements Or
 	@Override
 	public List<String> getOrderAttributes() {
 		if (orderAttributes == null) {
-			orderAttributes = new BasicInternalEList<String>(String.class);
+			orderAttributes = new EDataTypeUniqueEList<String>(String.class, this, OrderPackage.ORDER_HEADER__ORDER_ATTRIBUTES);
 		}
 		return orderAttributes;
 	}
@@ -1382,7 +1496,7 @@ public class OrderHeaderImpl extends BizEntityTypedImpl<OrderType> implements Or
 	@Override
 	public List<String> getOrderDeliverySchedules() {
 		if (orderDeliverySchedules == null) {
-			orderDeliverySchedules = new BasicInternalEList<String>(String.class);
+			orderDeliverySchedules = new EDataTypeUniqueEList<String>(String.class, this, OrderPackage.ORDER_HEADER__ORDER_DELIVERY_SCHEDULES);
 		}
 		return orderDeliverySchedules;
 	}
@@ -1394,7 +1508,7 @@ public class OrderHeaderImpl extends BizEntityTypedImpl<OrderType> implements Or
 	@Override
 	public List<String> getOrderHeaderNotes() {
 		if (orderHeaderNotes == null) {
-			orderHeaderNotes = new BasicInternalEList<String>(String.class);
+			orderHeaderNotes = new EDataTypeUniqueEList<String>(String.class, this, OrderPackage.ORDER_HEADER__ORDER_HEADER_NOTES);
 		}
 		return orderHeaderNotes;
 	}
@@ -1406,7 +1520,7 @@ public class OrderHeaderImpl extends BizEntityTypedImpl<OrderType> implements Or
 	@Override
 	public List<String> getOrderHeaderWorkEfforts() {
 		if (orderHeaderWorkEfforts == null) {
-			orderHeaderWorkEfforts = new BasicInternalEList<String>(String.class);
+			orderHeaderWorkEfforts = new EDataTypeUniqueEList<String>(String.class, this, OrderPackage.ORDER_HEADER__ORDER_HEADER_WORK_EFFORTS);
 		}
 		return orderHeaderWorkEfforts;
 	}
@@ -1418,7 +1532,7 @@ public class OrderHeaderImpl extends BizEntityTypedImpl<OrderType> implements Or
 	@Override
 	public List<String> getOrderItems() {
 		if (orderItems == null) {
-			orderItems = new BasicInternalEList<String>(String.class);
+			orderItems = new EDataTypeUniqueEList<String>(String.class, this, OrderPackage.ORDER_HEADER__ORDER_ITEMS);
 		}
 		return orderItems;
 	}
@@ -1430,7 +1544,7 @@ public class OrderHeaderImpl extends BizEntityTypedImpl<OrderType> implements Or
 	@Override
 	public List<String> getOrderItemGroups() {
 		if (orderItemGroups == null) {
-			orderItemGroups = new BasicInternalEList<String>(String.class);
+			orderItemGroups = new EDataTypeUniqueEList<String>(String.class, this, OrderPackage.ORDER_HEADER__ORDER_ITEM_GROUPS);
 		}
 		return orderItemGroups;
 	}
@@ -1442,7 +1556,7 @@ public class OrderHeaderImpl extends BizEntityTypedImpl<OrderType> implements Or
 	@Override
 	public List<String> getOrderItemShipGroups() {
 		if (orderItemShipGroups == null) {
-			orderItemShipGroups = new BasicInternalEList<String>(String.class);
+			orderItemShipGroups = new EDataTypeUniqueEList<String>(String.class, this, OrderPackage.ORDER_HEADER__ORDER_ITEM_SHIP_GROUPS);
 		}
 		return orderItemShipGroups;
 	}
@@ -1454,7 +1568,7 @@ public class OrderHeaderImpl extends BizEntityTypedImpl<OrderType> implements Or
 	@Override
 	public List<String> getOrderProductPromoCodes() {
 		if (orderProductPromoCodes == null) {
-			orderProductPromoCodes = new BasicInternalEList<String>(String.class);
+			orderProductPromoCodes = new EDataTypeUniqueEList<String>(String.class, this, OrderPackage.ORDER_HEADER__ORDER_PRODUCT_PROMO_CODES);
 		}
 		return orderProductPromoCodes;
 	}
@@ -1466,7 +1580,7 @@ public class OrderHeaderImpl extends BizEntityTypedImpl<OrderType> implements Or
 	@Override
 	public List<String> getProductPromoUses() {
 		if (productPromoUses == null) {
-			productPromoUses = new BasicInternalEList<String>(String.class);
+			productPromoUses = new EDataTypeUniqueEList<String>(String.class, this, OrderPackage.ORDER_HEADER__PRODUCT_PROMO_USES);
 		}
 		return productPromoUses;
 	}
@@ -1478,7 +1592,7 @@ public class OrderHeaderImpl extends BizEntityTypedImpl<OrderType> implements Or
 	@Override
 	public List<String> getTrackingCodeOrders() {
 		if (trackingCodeOrders == null) {
-			trackingCodeOrders = new BasicInternalEList<String>(String.class);
+			trackingCodeOrders = new EDataTypeUniqueEList<String>(String.class, this, OrderPackage.ORDER_HEADER__TRACKING_CODE_ORDERS);
 		}
 		return trackingCodeOrders;
 	}

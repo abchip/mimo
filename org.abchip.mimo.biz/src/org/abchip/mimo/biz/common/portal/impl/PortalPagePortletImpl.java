@@ -12,9 +12,11 @@ import org.abchip.mimo.biz.common.portal.PortalPage;
 import org.abchip.mimo.biz.common.portal.PortalPagePortlet;
 import org.abchip.mimo.biz.common.portal.PortalPortlet;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -147,7 +149,10 @@ public class PortalPagePortletImpl extends BizEntityImpl implements PortalPagePo
 	 */
 	@Override
 	public void setColumnSeqId(String newColumnSeqId) {
+		String oldColumnSeqId = columnSeqId;
 		columnSeqId = newColumnSeqId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PortalPackage.PORTAL_PAGE_PORTLET__COLUMN_SEQ_ID, oldColumnSeqId, columnSeqId));
 	}
 
 	/**
@@ -167,7 +172,10 @@ public class PortalPagePortletImpl extends BizEntityImpl implements PortalPagePo
 	 */
 	@Override
 	public void setPortletSeqId(String newPortletSeqId) {
+		String oldPortletSeqId = portletSeqId;
 		portletSeqId = newPortletSeqId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PortalPackage.PORTAL_PAGE_PORTLET__PORTLET_SEQ_ID, oldPortletSeqId, portletSeqId));
 	}
 
 	/**
@@ -187,7 +195,10 @@ public class PortalPagePortletImpl extends BizEntityImpl implements PortalPagePo
 	 */
 	@Override
 	public void setSequenceNum(long newSequenceNum) {
+		long oldSequenceNum = sequenceNum;
 		sequenceNum = newSequenceNum;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PortalPackage.PORTAL_PAGE_PORTLET__SEQUENCE_NUM, oldSequenceNum, sequenceNum));
 	}
 
 	/**
@@ -201,6 +212,8 @@ public class PortalPagePortletImpl extends BizEntityImpl implements PortalPagePo
 			InternalEObject oldPortalPageId = (InternalEObject)portalPageId;
 			portalPageId = (PortalPage)eResolveProxy(oldPortalPageId);
 			if (portalPageId != oldPortalPageId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PortalPackage.PORTAL_PAGE_PORTLET__PORTAL_PAGE_ID, oldPortalPageId, portalPageId));
 			}
 		}
 		return portalPageId;
@@ -222,7 +235,10 @@ public class PortalPagePortletImpl extends BizEntityImpl implements PortalPagePo
 	 */
 	@Override
 	public void setPortalPageId(PortalPage newPortalPageId) {
+		PortalPage oldPortalPageId = portalPageId;
 		portalPageId = newPortalPageId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PortalPackage.PORTAL_PAGE_PORTLET__PORTAL_PAGE_ID, oldPortalPageId, portalPageId));
 	}
 
 	/**
@@ -236,6 +252,8 @@ public class PortalPagePortletImpl extends BizEntityImpl implements PortalPagePo
 			InternalEObject oldPortalPortletId = (InternalEObject)portalPortletId;
 			portalPortletId = (PortalPortlet)eResolveProxy(oldPortalPortletId);
 			if (portalPortletId != oldPortalPortletId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PortalPackage.PORTAL_PAGE_PORTLET__PORTAL_PORTLET_ID, oldPortalPortletId, portalPortletId));
 			}
 		}
 		return portalPortletId;
@@ -257,7 +275,10 @@ public class PortalPagePortletImpl extends BizEntityImpl implements PortalPagePo
 	 */
 	@Override
 	public void setPortalPortletId(PortalPortlet newPortalPortletId) {
+		PortalPortlet oldPortalPortletId = portalPortletId;
 		portalPortletId = newPortalPortletId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PortalPackage.PORTAL_PAGE_PORTLET__PORTAL_PORTLET_ID, oldPortalPortletId, portalPortletId));
 	}
 
 	/**

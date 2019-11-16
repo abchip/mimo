@@ -15,10 +15,12 @@ import org.abchip.mimo.biz.accounting.fixedasset.FixedAssetMeter;
 import org.abchip.mimo.biz.accounting.fixedasset.FixedassetPackage;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.product.product.ProductMeterType;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -205,7 +207,10 @@ public class FixedAssetMeterImpl extends BizEntityImpl implements FixedAssetMete
 	 */
 	@Override
 	public void setFixedAssetId(String newFixedAssetId) {
+		String oldFixedAssetId = fixedAssetId;
 		fixedAssetId = newFixedAssetId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, FixedassetPackage.FIXED_ASSET_METER__FIXED_ASSET_ID, oldFixedAssetId, fixedAssetId));
 	}
 
 	/**
@@ -225,7 +230,10 @@ public class FixedAssetMeterImpl extends BizEntityImpl implements FixedAssetMete
 	 */
 	@Override
 	public void setMaintHistSeqId(String newMaintHistSeqId) {
+		String oldMaintHistSeqId = maintHistSeqId;
 		maintHistSeqId = newMaintHistSeqId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, FixedassetPackage.FIXED_ASSET_METER__MAINT_HIST_SEQ_ID, oldMaintHistSeqId, maintHistSeqId));
 	}
 
 	/**
@@ -245,7 +253,10 @@ public class FixedAssetMeterImpl extends BizEntityImpl implements FixedAssetMete
 	 */
 	@Override
 	public void setMeterValue(BigDecimal newMeterValue) {
+		BigDecimal oldMeterValue = meterValue;
 		meterValue = newMeterValue;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, FixedassetPackage.FIXED_ASSET_METER__METER_VALUE, oldMeterValue, meterValue));
 	}
 
 	/**
@@ -259,6 +270,8 @@ public class FixedAssetMeterImpl extends BizEntityImpl implements FixedAssetMete
 			InternalEObject oldProductMeterTypeId = (InternalEObject)productMeterTypeId;
 			productMeterTypeId = (ProductMeterType)eResolveProxy(oldProductMeterTypeId);
 			if (productMeterTypeId != oldProductMeterTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, FixedassetPackage.FIXED_ASSET_METER__PRODUCT_METER_TYPE_ID, oldProductMeterTypeId, productMeterTypeId));
 			}
 		}
 		return productMeterTypeId;
@@ -280,7 +293,10 @@ public class FixedAssetMeterImpl extends BizEntityImpl implements FixedAssetMete
 	 */
 	@Override
 	public void setProductMeterTypeId(ProductMeterType newProductMeterTypeId) {
+		ProductMeterType oldProductMeterTypeId = productMeterTypeId;
 		productMeterTypeId = newProductMeterTypeId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, FixedassetPackage.FIXED_ASSET_METER__PRODUCT_METER_TYPE_ID, oldProductMeterTypeId, productMeterTypeId));
 	}
 
 	/**
@@ -300,7 +316,10 @@ public class FixedAssetMeterImpl extends BizEntityImpl implements FixedAssetMete
 	 */
 	@Override
 	public void setReadingDate(Date newReadingDate) {
+		Date oldReadingDate = readingDate;
 		readingDate = newReadingDate;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, FixedassetPackage.FIXED_ASSET_METER__READING_DATE, oldReadingDate, readingDate));
 	}
 
 	/**
@@ -320,7 +339,10 @@ public class FixedAssetMeterImpl extends BizEntityImpl implements FixedAssetMete
 	 */
 	@Override
 	public void setReadingReasonEnumId(String newReadingReasonEnumId) {
+		String oldReadingReasonEnumId = readingReasonEnumId;
 		readingReasonEnumId = newReadingReasonEnumId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, FixedassetPackage.FIXED_ASSET_METER__READING_REASON_ENUM_ID, oldReadingReasonEnumId, readingReasonEnumId));
 	}
 
 	/**
@@ -340,7 +362,10 @@ public class FixedAssetMeterImpl extends BizEntityImpl implements FixedAssetMete
 	 */
 	@Override
 	public void setWorkEffortId(String newWorkEffortId) {
+		String oldWorkEffortId = workEffortId;
 		workEffortId = newWorkEffortId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, FixedassetPackage.FIXED_ASSET_METER__WORK_EFFORT_ID, oldWorkEffortId, workEffortId));
 	}
 
 	/**

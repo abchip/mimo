@@ -11,9 +11,11 @@ import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.product.product.Product;
 import org.abchip.mimo.biz.product.product.ProductAttribute;
 import org.abchip.mimo.biz.product.product.ProductPackage;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -164,7 +166,10 @@ public class ProductAttributeImpl extends BizEntityImpl implements ProductAttrib
 	 */
 	@Override
 	public void setAttrDescription(String newAttrDescription) {
+		String oldAttrDescription = attrDescription;
 		attrDescription = newAttrDescription;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ProductPackage.PRODUCT_ATTRIBUTE__ATTR_DESCRIPTION, oldAttrDescription, attrDescription));
 	}
 
 	/**
@@ -184,7 +189,10 @@ public class ProductAttributeImpl extends BizEntityImpl implements ProductAttrib
 	 */
 	@Override
 	public void setAttrType(String newAttrType) {
+		String oldAttrType = attrType;
 		attrType = newAttrType;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ProductPackage.PRODUCT_ATTRIBUTE__ATTR_TYPE, oldAttrType, attrType));
 	}
 
 	/**
@@ -204,7 +212,10 @@ public class ProductAttributeImpl extends BizEntityImpl implements ProductAttrib
 	 */
 	@Override
 	public void setAttrValue(String newAttrValue) {
+		String oldAttrValue = attrValue;
 		attrValue = newAttrValue;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ProductPackage.PRODUCT_ATTRIBUTE__ATTR_VALUE, oldAttrValue, attrValue));
 	}
 
 	/**
@@ -218,6 +229,8 @@ public class ProductAttributeImpl extends BizEntityImpl implements ProductAttrib
 			InternalEObject oldProductId = (InternalEObject)productId;
 			productId = (Product)eResolveProxy(oldProductId);
 			if (productId != oldProductId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ProductPackage.PRODUCT_ATTRIBUTE__PRODUCT_ID, oldProductId, productId));
 			}
 		}
 		return productId;
@@ -239,7 +252,10 @@ public class ProductAttributeImpl extends BizEntityImpl implements ProductAttrib
 	 */
 	@Override
 	public void setProductId(Product newProductId) {
+		Product oldProductId = productId;
 		productId = newProductId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ProductPackage.PRODUCT_ATTRIBUTE__PRODUCT_ID, oldProductId, productId));
 	}
 
 	/**
@@ -259,7 +275,10 @@ public class ProductAttributeImpl extends BizEntityImpl implements ProductAttrib
 	 */
 	@Override
 	public void setAttrName(String newAttrName) {
+		String oldAttrName = attrName;
 		attrName = newAttrName;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ProductPackage.PRODUCT_ATTRIBUTE__ATTR_NAME, oldAttrName, attrName));
 	}
 
 	/**

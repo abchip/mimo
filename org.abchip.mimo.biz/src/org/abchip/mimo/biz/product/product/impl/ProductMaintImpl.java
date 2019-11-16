@@ -17,9 +17,11 @@ import org.abchip.mimo.biz.product.product.ProductMaintType;
 import org.abchip.mimo.biz.product.product.ProductMeterType;
 import org.abchip.mimo.biz.product.product.ProductPackage;
 import org.abchip.mimo.biz.workeffort.workeffort.WorkEffort;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -214,7 +216,10 @@ public class ProductMaintImpl extends BizEntityTypedImpl<ProductMaintType> imple
 	 */
 	@Override
 	public void setIntervalQuantity(BigDecimal newIntervalQuantity) {
+		BigDecimal oldIntervalQuantity = intervalQuantity;
 		intervalQuantity = newIntervalQuantity;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ProductPackage.PRODUCT_MAINT__INTERVAL_QUANTITY, oldIntervalQuantity, intervalQuantity));
 	}
 
 	/**
@@ -228,6 +233,8 @@ public class ProductMaintImpl extends BizEntityTypedImpl<ProductMaintType> imple
 			InternalEObject oldIntervalUomId = (InternalEObject)intervalUomId;
 			intervalUomId = (Uom)eResolveProxy(oldIntervalUomId);
 			if (intervalUomId != oldIntervalUomId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ProductPackage.PRODUCT_MAINT__INTERVAL_UOM_ID, oldIntervalUomId, intervalUomId));
 			}
 		}
 		return intervalUomId;
@@ -249,7 +256,10 @@ public class ProductMaintImpl extends BizEntityTypedImpl<ProductMaintType> imple
 	 */
 	@Override
 	public void setIntervalUomId(Uom newIntervalUomId) {
+		Uom oldIntervalUomId = intervalUomId;
 		intervalUomId = newIntervalUomId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ProductPackage.PRODUCT_MAINT__INTERVAL_UOM_ID, oldIntervalUomId, intervalUomId));
 	}
 
 	/**
@@ -269,7 +279,10 @@ public class ProductMaintImpl extends BizEntityTypedImpl<ProductMaintType> imple
 	 */
 	@Override
 	public void setMaintName(String newMaintName) {
+		String oldMaintName = maintName;
 		maintName = newMaintName;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ProductPackage.PRODUCT_MAINT__MAINT_NAME, oldMaintName, maintName));
 	}
 
 	/**
@@ -283,6 +296,8 @@ public class ProductMaintImpl extends BizEntityTypedImpl<ProductMaintType> imple
 			InternalEObject oldMaintTemplateWorkEffortId = (InternalEObject)maintTemplateWorkEffortId;
 			maintTemplateWorkEffortId = (WorkEffort)eResolveProxy(oldMaintTemplateWorkEffortId);
 			if (maintTemplateWorkEffortId != oldMaintTemplateWorkEffortId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ProductPackage.PRODUCT_MAINT__MAINT_TEMPLATE_WORK_EFFORT_ID, oldMaintTemplateWorkEffortId, maintTemplateWorkEffortId));
 			}
 		}
 		return maintTemplateWorkEffortId;
@@ -304,7 +319,10 @@ public class ProductMaintImpl extends BizEntityTypedImpl<ProductMaintType> imple
 	 */
 	@Override
 	public void setMaintTemplateWorkEffortId(WorkEffort newMaintTemplateWorkEffortId) {
+		WorkEffort oldMaintTemplateWorkEffortId = maintTemplateWorkEffortId;
 		maintTemplateWorkEffortId = newMaintTemplateWorkEffortId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ProductPackage.PRODUCT_MAINT__MAINT_TEMPLATE_WORK_EFFORT_ID, oldMaintTemplateWorkEffortId, maintTemplateWorkEffortId));
 	}
 
 	/**
@@ -324,7 +342,10 @@ public class ProductMaintImpl extends BizEntityTypedImpl<ProductMaintType> imple
 	 */
 	@Override
 	public void setProductMaintSeqId(String newProductMaintSeqId) {
+		String oldProductMaintSeqId = productMaintSeqId;
 		productMaintSeqId = newProductMaintSeqId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ProductPackage.PRODUCT_MAINT__PRODUCT_MAINT_SEQ_ID, oldProductMaintSeqId, productMaintSeqId));
 	}
 
 	/**
@@ -344,7 +365,10 @@ public class ProductMaintImpl extends BizEntityTypedImpl<ProductMaintType> imple
 	 */
 	@Override
 	public void setRepeatCount(long newRepeatCount) {
+		long oldRepeatCount = repeatCount;
 		repeatCount = newRepeatCount;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ProductPackage.PRODUCT_MAINT__REPEAT_COUNT, oldRepeatCount, repeatCount));
 	}
 
 	/**
@@ -358,6 +382,8 @@ public class ProductMaintImpl extends BizEntityTypedImpl<ProductMaintType> imple
 			InternalEObject oldProductId = (InternalEObject)productId;
 			productId = (Product)eResolveProxy(oldProductId);
 			if (productId != oldProductId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ProductPackage.PRODUCT_MAINT__PRODUCT_ID, oldProductId, productId));
 			}
 		}
 		return productId;
@@ -379,7 +405,10 @@ public class ProductMaintImpl extends BizEntityTypedImpl<ProductMaintType> imple
 	 */
 	@Override
 	public void setProductId(Product newProductId) {
+		Product oldProductId = productId;
 		productId = newProductId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ProductPackage.PRODUCT_MAINT__PRODUCT_ID, oldProductId, productId));
 	}
 
 	/**
@@ -393,6 +422,8 @@ public class ProductMaintImpl extends BizEntityTypedImpl<ProductMaintType> imple
 			InternalEObject oldProductMaintTypeId = (InternalEObject)productMaintTypeId;
 			productMaintTypeId = (ProductMaintType)eResolveProxy(oldProductMaintTypeId);
 			if (productMaintTypeId != oldProductMaintTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ProductPackage.PRODUCT_MAINT__PRODUCT_MAINT_TYPE_ID, oldProductMaintTypeId, productMaintTypeId));
 			}
 		}
 		return productMaintTypeId;
@@ -414,7 +445,10 @@ public class ProductMaintImpl extends BizEntityTypedImpl<ProductMaintType> imple
 	 */
 	@Override
 	public void setProductMaintTypeId(ProductMaintType newProductMaintTypeId) {
+		ProductMaintType oldProductMaintTypeId = productMaintTypeId;
 		productMaintTypeId = newProductMaintTypeId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ProductPackage.PRODUCT_MAINT__PRODUCT_MAINT_TYPE_ID, oldProductMaintTypeId, productMaintTypeId));
 	}
 
 	/**
@@ -428,6 +462,8 @@ public class ProductMaintImpl extends BizEntityTypedImpl<ProductMaintType> imple
 			InternalEObject oldIntervalMeterTypeId = (InternalEObject)intervalMeterTypeId;
 			intervalMeterTypeId = (ProductMeterType)eResolveProxy(oldIntervalMeterTypeId);
 			if (intervalMeterTypeId != oldIntervalMeterTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ProductPackage.PRODUCT_MAINT__INTERVAL_METER_TYPE_ID, oldIntervalMeterTypeId, intervalMeterTypeId));
 			}
 		}
 		return intervalMeterTypeId;
@@ -449,7 +485,10 @@ public class ProductMaintImpl extends BizEntityTypedImpl<ProductMaintType> imple
 	 */
 	@Override
 	public void setIntervalMeterTypeId(ProductMeterType newIntervalMeterTypeId) {
+		ProductMeterType oldIntervalMeterTypeId = intervalMeterTypeId;
 		intervalMeterTypeId = newIntervalMeterTypeId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ProductPackage.PRODUCT_MAINT__INTERVAL_METER_TYPE_ID, oldIntervalMeterTypeId, intervalMeterTypeId));
 	}
 
 	/**

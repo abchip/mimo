@@ -12,7 +12,9 @@ import java.util.List;
 import org.abchip.mimo.biz.accounting.ledger.GlFiscalType;
 import org.abchip.mimo.biz.accounting.ledger.LedgerPackage;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -106,7 +108,10 @@ public class GlFiscalTypeImpl extends BizEntityImpl implements GlFiscalType {
 	 */
 	@Override
 	public void setDescription(String newDescription) {
+		String oldDescription = description;
 		description = newDescription;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, LedgerPackage.GL_FISCAL_TYPE__DESCRIPTION, oldDescription, description));
 	}
 
 	/**
@@ -138,7 +143,10 @@ public class GlFiscalTypeImpl extends BizEntityImpl implements GlFiscalType {
 	 */
 	@Override
 	public void setGlFiscalTypeId(String newGlFiscalTypeId) {
+		String oldGlFiscalTypeId = glFiscalTypeId;
 		glFiscalTypeId = newGlFiscalTypeId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, LedgerPackage.GL_FISCAL_TYPE__GL_FISCAL_TYPE_ID, oldGlFiscalTypeId, glFiscalTypeId));
 	}
 
 	/**

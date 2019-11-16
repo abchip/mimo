@@ -15,9 +15,11 @@ import org.abchip.mimo.biz.party.party.PartyPackage;
 import org.abchip.mimo.biz.party.party.RoleType;
 import org.abchip.mimo.biz.party.party.WebSiteRole;
 import org.abchip.mimo.biz.webapp.website.WebSite;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -160,7 +162,10 @@ public class WebSiteRoleImpl extends BizEntityImpl implements WebSiteRole {
 	 */
 	@Override
 	public void setFromDate(Date newFromDate) {
+		Date oldFromDate = fromDate;
 		fromDate = newFromDate;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PartyPackage.WEB_SITE_ROLE__FROM_DATE, oldFromDate, fromDate));
 	}
 
 	/**
@@ -180,7 +185,10 @@ public class WebSiteRoleImpl extends BizEntityImpl implements WebSiteRole {
 	 */
 	@Override
 	public void setSequenceNum(long newSequenceNum) {
+		long oldSequenceNum = sequenceNum;
 		sequenceNum = newSequenceNum;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PartyPackage.WEB_SITE_ROLE__SEQUENCE_NUM, oldSequenceNum, sequenceNum));
 	}
 
 	/**
@@ -200,7 +208,10 @@ public class WebSiteRoleImpl extends BizEntityImpl implements WebSiteRole {
 	 */
 	@Override
 	public void setThruDate(Date newThruDate) {
+		Date oldThruDate = thruDate;
 		thruDate = newThruDate;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PartyPackage.WEB_SITE_ROLE__THRU_DATE, oldThruDate, thruDate));
 	}
 
 	/**
@@ -214,6 +225,8 @@ public class WebSiteRoleImpl extends BizEntityImpl implements WebSiteRole {
 			InternalEObject oldWebSiteId = (InternalEObject)webSiteId;
 			webSiteId = (WebSite)eResolveProxy(oldWebSiteId);
 			if (webSiteId != oldWebSiteId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PartyPackage.WEB_SITE_ROLE__WEB_SITE_ID, oldWebSiteId, webSiteId));
 			}
 		}
 		return webSiteId;
@@ -235,7 +248,10 @@ public class WebSiteRoleImpl extends BizEntityImpl implements WebSiteRole {
 	 */
 	@Override
 	public void setWebSiteId(WebSite newWebSiteId) {
+		WebSite oldWebSiteId = webSiteId;
 		webSiteId = newWebSiteId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PartyPackage.WEB_SITE_ROLE__WEB_SITE_ID, oldWebSiteId, webSiteId));
 	}
 
 	/**
@@ -249,6 +265,8 @@ public class WebSiteRoleImpl extends BizEntityImpl implements WebSiteRole {
 			InternalEObject oldRoleTypeId = (InternalEObject)roleTypeId;
 			roleTypeId = (RoleType)eResolveProxy(oldRoleTypeId);
 			if (roleTypeId != oldRoleTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PartyPackage.WEB_SITE_ROLE__ROLE_TYPE_ID, oldRoleTypeId, roleTypeId));
 			}
 		}
 		return roleTypeId;
@@ -270,7 +288,10 @@ public class WebSiteRoleImpl extends BizEntityImpl implements WebSiteRole {
 	 */
 	@Override
 	public void setRoleTypeId(RoleType newRoleTypeId) {
+		RoleType oldRoleTypeId = roleTypeId;
 		roleTypeId = newRoleTypeId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PartyPackage.WEB_SITE_ROLE__ROLE_TYPE_ID, oldRoleTypeId, roleTypeId));
 	}
 
 	/**
@@ -284,6 +305,8 @@ public class WebSiteRoleImpl extends BizEntityImpl implements WebSiteRole {
 			InternalEObject oldPartyId = (InternalEObject)partyId;
 			partyId = (Party)eResolveProxy(oldPartyId);
 			if (partyId != oldPartyId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PartyPackage.WEB_SITE_ROLE__PARTY_ID, oldPartyId, partyId));
 			}
 		}
 		return partyId;
@@ -305,7 +328,10 @@ public class WebSiteRoleImpl extends BizEntityImpl implements WebSiteRole {
 	 */
 	@Override
 	public void setPartyId(Party newPartyId) {
+		Party oldPartyId = partyId;
 		partyId = newPartyId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PartyPackage.WEB_SITE_ROLE__PARTY_ID, oldPartyId, partyId));
 	}
 
 	/**

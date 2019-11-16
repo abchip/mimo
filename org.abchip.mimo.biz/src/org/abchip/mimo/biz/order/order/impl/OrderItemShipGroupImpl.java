@@ -18,10 +18,12 @@ import org.abchip.mimo.biz.party.contact.ContactMech;
 import org.abchip.mimo.biz.party.party.Party;
 import org.abchip.mimo.biz.product.facility.Facility;
 import org.abchip.mimo.biz.shipment.shipment.ShipmentMethodType;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -401,6 +403,8 @@ public class OrderItemShipGroupImpl extends BizEntityImpl implements OrderItemSh
 			InternalEObject oldCarrierPartyId = (InternalEObject)carrierPartyId;
 			carrierPartyId = (Party)eResolveProxy(oldCarrierPartyId);
 			if (carrierPartyId != oldCarrierPartyId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, OrderPackage.ORDER_ITEM_SHIP_GROUP__CARRIER_PARTY_ID, oldCarrierPartyId, carrierPartyId));
 			}
 		}
 		return carrierPartyId;
@@ -422,7 +426,10 @@ public class OrderItemShipGroupImpl extends BizEntityImpl implements OrderItemSh
 	 */
 	@Override
 	public void setCarrierPartyId(Party newCarrierPartyId) {
+		Party oldCarrierPartyId = carrierPartyId;
 		carrierPartyId = newCarrierPartyId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_ITEM_SHIP_GROUP__CARRIER_PARTY_ID, oldCarrierPartyId, carrierPartyId));
 	}
 
 	/**
@@ -442,7 +449,10 @@ public class OrderItemShipGroupImpl extends BizEntityImpl implements OrderItemSh
 	 */
 	@Override
 	public void setCarrierRoleTypeId(String newCarrierRoleTypeId) {
+		String oldCarrierRoleTypeId = carrierRoleTypeId;
 		carrierRoleTypeId = newCarrierRoleTypeId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_ITEM_SHIP_GROUP__CARRIER_ROLE_TYPE_ID, oldCarrierRoleTypeId, carrierRoleTypeId));
 	}
 
 	/**
@@ -456,6 +466,8 @@ public class OrderItemShipGroupImpl extends BizEntityImpl implements OrderItemSh
 			InternalEObject oldContactMechId = (InternalEObject)contactMechId;
 			contactMechId = (ContactMech)eResolveProxy(oldContactMechId);
 			if (contactMechId != oldContactMechId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, OrderPackage.ORDER_ITEM_SHIP_GROUP__CONTACT_MECH_ID, oldContactMechId, contactMechId));
 			}
 		}
 		return contactMechId;
@@ -477,7 +489,10 @@ public class OrderItemShipGroupImpl extends BizEntityImpl implements OrderItemSh
 	 */
 	@Override
 	public void setContactMechId(ContactMech newContactMechId) {
+		ContactMech oldContactMechId = contactMechId;
 		contactMechId = newContactMechId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_ITEM_SHIP_GROUP__CONTACT_MECH_ID, oldContactMechId, contactMechId));
 	}
 
 	/**
@@ -497,7 +512,10 @@ public class OrderItemShipGroupImpl extends BizEntityImpl implements OrderItemSh
 	 */
 	@Override
 	public void setEstimatedDeliveryDate(Date newEstimatedDeliveryDate) {
+		Date oldEstimatedDeliveryDate = estimatedDeliveryDate;
 		estimatedDeliveryDate = newEstimatedDeliveryDate;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_ITEM_SHIP_GROUP__ESTIMATED_DELIVERY_DATE, oldEstimatedDeliveryDate, estimatedDeliveryDate));
 	}
 
 	/**
@@ -517,7 +535,10 @@ public class OrderItemShipGroupImpl extends BizEntityImpl implements OrderItemSh
 	 */
 	@Override
 	public void setEstimatedShipDate(Date newEstimatedShipDate) {
+		Date oldEstimatedShipDate = estimatedShipDate;
 		estimatedShipDate = newEstimatedShipDate;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_ITEM_SHIP_GROUP__ESTIMATED_SHIP_DATE, oldEstimatedShipDate, estimatedShipDate));
 	}
 
 	/**
@@ -531,6 +552,8 @@ public class OrderItemShipGroupImpl extends BizEntityImpl implements OrderItemSh
 			InternalEObject oldFacilityId = (InternalEObject)facilityId;
 			facilityId = (Facility)eResolveProxy(oldFacilityId);
 			if (facilityId != oldFacilityId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, OrderPackage.ORDER_ITEM_SHIP_GROUP__FACILITY_ID, oldFacilityId, facilityId));
 			}
 		}
 		return facilityId;
@@ -552,7 +575,10 @@ public class OrderItemShipGroupImpl extends BizEntityImpl implements OrderItemSh
 	 */
 	@Override
 	public void setFacilityId(Facility newFacilityId) {
+		Facility oldFacilityId = facilityId;
 		facilityId = newFacilityId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_ITEM_SHIP_GROUP__FACILITY_ID, oldFacilityId, facilityId));
 	}
 
 	/**
@@ -572,7 +598,10 @@ public class OrderItemShipGroupImpl extends BizEntityImpl implements OrderItemSh
 	 */
 	@Override
 	public void setGiftMessage(String newGiftMessage) {
+		String oldGiftMessage = giftMessage;
 		giftMessage = newGiftMessage;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_ITEM_SHIP_GROUP__GIFT_MESSAGE, oldGiftMessage, giftMessage));
 	}
 
 	/**
@@ -592,7 +621,10 @@ public class OrderItemShipGroupImpl extends BizEntityImpl implements OrderItemSh
 	 */
 	@Override
 	public void setIsGift(boolean newIsGift) {
+		boolean oldIsGift = isGift;
 		isGift = newIsGift;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_ITEM_SHIP_GROUP__IS_GIFT, oldIsGift, isGift));
 	}
 
 	/**
@@ -612,7 +644,10 @@ public class OrderItemShipGroupImpl extends BizEntityImpl implements OrderItemSh
 	 */
 	@Override
 	public void setMaySplit(boolean newMaySplit) {
+		boolean oldMaySplit = maySplit;
 		maySplit = newMaySplit;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_ITEM_SHIP_GROUP__MAY_SPLIT, oldMaySplit, maySplit));
 	}
 
 	/**
@@ -626,6 +661,8 @@ public class OrderItemShipGroupImpl extends BizEntityImpl implements OrderItemSh
 			InternalEObject oldOrderId = (InternalEObject)orderId;
 			orderId = (OrderHeader)eResolveProxy(oldOrderId);
 			if (orderId != oldOrderId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, OrderPackage.ORDER_ITEM_SHIP_GROUP__ORDER_ID, oldOrderId, orderId));
 			}
 		}
 		return orderId;
@@ -647,7 +684,10 @@ public class OrderItemShipGroupImpl extends BizEntityImpl implements OrderItemSh
 	 */
 	@Override
 	public void setOrderId(OrderHeader newOrderId) {
+		OrderHeader oldOrderId = orderId;
 		orderId = newOrderId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_ITEM_SHIP_GROUP__ORDER_ID, oldOrderId, orderId));
 	}
 
 	/**
@@ -667,7 +707,10 @@ public class OrderItemShipGroupImpl extends BizEntityImpl implements OrderItemSh
 	 */
 	@Override
 	public void setShipAfterDate(Date newShipAfterDate) {
+		Date oldShipAfterDate = shipAfterDate;
 		shipAfterDate = newShipAfterDate;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_ITEM_SHIP_GROUP__SHIP_AFTER_DATE, oldShipAfterDate, shipAfterDate));
 	}
 
 	/**
@@ -687,7 +730,10 @@ public class OrderItemShipGroupImpl extends BizEntityImpl implements OrderItemSh
 	 */
 	@Override
 	public void setShipByDate(Date newShipByDate) {
+		Date oldShipByDate = shipByDate;
 		shipByDate = newShipByDate;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_ITEM_SHIP_GROUP__SHIP_BY_DATE, oldShipByDate, shipByDate));
 	}
 
 	/**
@@ -707,7 +753,10 @@ public class OrderItemShipGroupImpl extends BizEntityImpl implements OrderItemSh
 	 */
 	@Override
 	public void setShipGroupSeqId(String newShipGroupSeqId) {
+		String oldShipGroupSeqId = shipGroupSeqId;
 		shipGroupSeqId = newShipGroupSeqId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_ITEM_SHIP_GROUP__SHIP_GROUP_SEQ_ID, oldShipGroupSeqId, shipGroupSeqId));
 	}
 
 	/**
@@ -721,6 +770,8 @@ public class OrderItemShipGroupImpl extends BizEntityImpl implements OrderItemSh
 			InternalEObject oldShipmentMethodTypeId = (InternalEObject)shipmentMethodTypeId;
 			shipmentMethodTypeId = (ShipmentMethodType)eResolveProxy(oldShipmentMethodTypeId);
 			if (shipmentMethodTypeId != oldShipmentMethodTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, OrderPackage.ORDER_ITEM_SHIP_GROUP__SHIPMENT_METHOD_TYPE_ID, oldShipmentMethodTypeId, shipmentMethodTypeId));
 			}
 		}
 		return shipmentMethodTypeId;
@@ -742,7 +793,10 @@ public class OrderItemShipGroupImpl extends BizEntityImpl implements OrderItemSh
 	 */
 	@Override
 	public void setShipmentMethodTypeId(ShipmentMethodType newShipmentMethodTypeId) {
+		ShipmentMethodType oldShipmentMethodTypeId = shipmentMethodTypeId;
 		shipmentMethodTypeId = newShipmentMethodTypeId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_ITEM_SHIP_GROUP__SHIPMENT_METHOD_TYPE_ID, oldShipmentMethodTypeId, shipmentMethodTypeId));
 	}
 
 	/**
@@ -762,7 +816,10 @@ public class OrderItemShipGroupImpl extends BizEntityImpl implements OrderItemSh
 	 */
 	@Override
 	public void setShippingInstructions(String newShippingInstructions) {
+		String oldShippingInstructions = shippingInstructions;
 		shippingInstructions = newShippingInstructions;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_ITEM_SHIP_GROUP__SHIPPING_INSTRUCTIONS, oldShippingInstructions, shippingInstructions));
 	}
 
 	/**
@@ -776,6 +833,8 @@ public class OrderItemShipGroupImpl extends BizEntityImpl implements OrderItemSh
 			InternalEObject oldSupplierAgreementId = (InternalEObject)supplierAgreementId;
 			supplierAgreementId = (Agreement)eResolveProxy(oldSupplierAgreementId);
 			if (supplierAgreementId != oldSupplierAgreementId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, OrderPackage.ORDER_ITEM_SHIP_GROUP__SUPPLIER_AGREEMENT_ID, oldSupplierAgreementId, supplierAgreementId));
 			}
 		}
 		return supplierAgreementId;
@@ -797,7 +856,10 @@ public class OrderItemShipGroupImpl extends BizEntityImpl implements OrderItemSh
 	 */
 	@Override
 	public void setSupplierAgreementId(Agreement newSupplierAgreementId) {
+		Agreement oldSupplierAgreementId = supplierAgreementId;
 		supplierAgreementId = newSupplierAgreementId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_ITEM_SHIP_GROUP__SUPPLIER_AGREEMENT_ID, oldSupplierAgreementId, supplierAgreementId));
 	}
 
 	/**
@@ -811,6 +873,8 @@ public class OrderItemShipGroupImpl extends BizEntityImpl implements OrderItemSh
 			InternalEObject oldSupplierPartyId = (InternalEObject)supplierPartyId;
 			supplierPartyId = (Party)eResolveProxy(oldSupplierPartyId);
 			if (supplierPartyId != oldSupplierPartyId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, OrderPackage.ORDER_ITEM_SHIP_GROUP__SUPPLIER_PARTY_ID, oldSupplierPartyId, supplierPartyId));
 			}
 		}
 		return supplierPartyId;
@@ -832,7 +896,10 @@ public class OrderItemShipGroupImpl extends BizEntityImpl implements OrderItemSh
 	 */
 	@Override
 	public void setSupplierPartyId(Party newSupplierPartyId) {
+		Party oldSupplierPartyId = supplierPartyId;
 		supplierPartyId = newSupplierPartyId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_ITEM_SHIP_GROUP__SUPPLIER_PARTY_ID, oldSupplierPartyId, supplierPartyId));
 	}
 
 	/**
@@ -846,6 +913,8 @@ public class OrderItemShipGroupImpl extends BizEntityImpl implements OrderItemSh
 			InternalEObject oldTelecomContactMechId = (InternalEObject)telecomContactMechId;
 			telecomContactMechId = (ContactMech)eResolveProxy(oldTelecomContactMechId);
 			if (telecomContactMechId != oldTelecomContactMechId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, OrderPackage.ORDER_ITEM_SHIP_GROUP__TELECOM_CONTACT_MECH_ID, oldTelecomContactMechId, telecomContactMechId));
 			}
 		}
 		return telecomContactMechId;
@@ -867,7 +936,10 @@ public class OrderItemShipGroupImpl extends BizEntityImpl implements OrderItemSh
 	 */
 	@Override
 	public void setTelecomContactMechId(ContactMech newTelecomContactMechId) {
+		ContactMech oldTelecomContactMechId = telecomContactMechId;
 		telecomContactMechId = newTelecomContactMechId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_ITEM_SHIP_GROUP__TELECOM_CONTACT_MECH_ID, oldTelecomContactMechId, telecomContactMechId));
 	}
 
 	/**
@@ -887,7 +959,10 @@ public class OrderItemShipGroupImpl extends BizEntityImpl implements OrderItemSh
 	 */
 	@Override
 	public void setTrackingNumber(String newTrackingNumber) {
+		String oldTrackingNumber = trackingNumber;
 		trackingNumber = newTrackingNumber;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_ITEM_SHIP_GROUP__TRACKING_NUMBER, oldTrackingNumber, trackingNumber));
 	}
 
 	/**
@@ -901,6 +976,8 @@ public class OrderItemShipGroupImpl extends BizEntityImpl implements OrderItemSh
 			InternalEObject oldVendorPartyId = (InternalEObject)vendorPartyId;
 			vendorPartyId = (Party)eResolveProxy(oldVendorPartyId);
 			if (vendorPartyId != oldVendorPartyId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, OrderPackage.ORDER_ITEM_SHIP_GROUP__VENDOR_PARTY_ID, oldVendorPartyId, vendorPartyId));
 			}
 		}
 		return vendorPartyId;
@@ -922,7 +999,10 @@ public class OrderItemShipGroupImpl extends BizEntityImpl implements OrderItemSh
 	 */
 	@Override
 	public void setVendorPartyId(Party newVendorPartyId) {
+		Party oldVendorPartyId = vendorPartyId;
 		vendorPartyId = newVendorPartyId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_ITEM_SHIP_GROUP__VENDOR_PARTY_ID, oldVendorPartyId, vendorPartyId));
 	}
 
 	/**

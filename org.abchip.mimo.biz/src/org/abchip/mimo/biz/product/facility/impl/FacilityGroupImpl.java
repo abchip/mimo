@@ -13,9 +13,11 @@ import org.abchip.mimo.biz.impl.BizEntityTypedImpl;
 import org.abchip.mimo.biz.product.facility.FacilityGroup;
 import org.abchip.mimo.biz.product.facility.FacilityGroupType;
 import org.abchip.mimo.biz.product.facility.FacilityPackage;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -156,7 +158,10 @@ public class FacilityGroupImpl extends BizEntityTypedImpl<FacilityGroupType> imp
 	 */
 	@Override
 	public void setDescription(String newDescription) {
+		String oldDescription = description;
 		description = newDescription;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, FacilityPackage.FACILITY_GROUP__DESCRIPTION, oldDescription, description));
 	}
 
 	/**
@@ -176,7 +181,10 @@ public class FacilityGroupImpl extends BizEntityTypedImpl<FacilityGroupType> imp
 	 */
 	@Override
 	public void setFacilityGroupName(String newFacilityGroupName) {
+		String oldFacilityGroupName = facilityGroupName;
 		facilityGroupName = newFacilityGroupName;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, FacilityPackage.FACILITY_GROUP__FACILITY_GROUP_NAME, oldFacilityGroupName, facilityGroupName));
 	}
 
 	/**
@@ -190,6 +198,8 @@ public class FacilityGroupImpl extends BizEntityTypedImpl<FacilityGroupType> imp
 			InternalEObject oldFacilityGroupTypeId = (InternalEObject)facilityGroupTypeId;
 			facilityGroupTypeId = (FacilityGroupType)eResolveProxy(oldFacilityGroupTypeId);
 			if (facilityGroupTypeId != oldFacilityGroupTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, FacilityPackage.FACILITY_GROUP__FACILITY_GROUP_TYPE_ID, oldFacilityGroupTypeId, facilityGroupTypeId));
 			}
 		}
 		return facilityGroupTypeId;
@@ -211,7 +221,10 @@ public class FacilityGroupImpl extends BizEntityTypedImpl<FacilityGroupType> imp
 	 */
 	@Override
 	public void setFacilityGroupTypeId(FacilityGroupType newFacilityGroupTypeId) {
+		FacilityGroupType oldFacilityGroupTypeId = facilityGroupTypeId;
 		facilityGroupTypeId = newFacilityGroupTypeId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, FacilityPackage.FACILITY_GROUP__FACILITY_GROUP_TYPE_ID, oldFacilityGroupTypeId, facilityGroupTypeId));
 	}
 
 	/**
@@ -225,6 +238,8 @@ public class FacilityGroupImpl extends BizEntityTypedImpl<FacilityGroupType> imp
 			InternalEObject oldPrimaryParentGroupId = (InternalEObject)primaryParentGroupId;
 			primaryParentGroupId = (FacilityGroup)eResolveProxy(oldPrimaryParentGroupId);
 			if (primaryParentGroupId != oldPrimaryParentGroupId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, FacilityPackage.FACILITY_GROUP__PRIMARY_PARENT_GROUP_ID, oldPrimaryParentGroupId, primaryParentGroupId));
 			}
 		}
 		return primaryParentGroupId;
@@ -246,7 +261,10 @@ public class FacilityGroupImpl extends BizEntityTypedImpl<FacilityGroupType> imp
 	 */
 	@Override
 	public void setPrimaryParentGroupId(FacilityGroup newPrimaryParentGroupId) {
+		FacilityGroup oldPrimaryParentGroupId = primaryParentGroupId;
 		primaryParentGroupId = newPrimaryParentGroupId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, FacilityPackage.FACILITY_GROUP__PRIMARY_PARENT_GROUP_ID, oldPrimaryParentGroupId, primaryParentGroupId));
 	}
 
 	/**
@@ -278,7 +296,10 @@ public class FacilityGroupImpl extends BizEntityTypedImpl<FacilityGroupType> imp
 	 */
 	@Override
 	public void setFacilityGroupId(String newFacilityGroupId) {
+		String oldFacilityGroupId = facilityGroupId;
 		facilityGroupId = newFacilityGroupId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, FacilityPackage.FACILITY_GROUP__FACILITY_GROUP_ID, oldFacilityGroupId, facilityGroupId));
 	}
 
 	/**

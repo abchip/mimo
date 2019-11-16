@@ -12,10 +12,12 @@ import org.abchip.mimo.biz.common.user.UserPrefGroupType;
 import org.abchip.mimo.biz.common.user.UserPreference;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.security.login.UserLogin;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -144,6 +146,8 @@ public class UserPreferenceImpl extends BizEntityImpl implements UserPreference 
 			InternalEObject oldUserLoginId = (InternalEObject)userLoginId;
 			userLoginId = (UserLogin)eResolveProxy(oldUserLoginId);
 			if (userLoginId != oldUserLoginId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, UserPackage.USER_PREFERENCE__USER_LOGIN_ID, oldUserLoginId, userLoginId));
 			}
 		}
 		return userLoginId;
@@ -165,7 +169,10 @@ public class UserPreferenceImpl extends BizEntityImpl implements UserPreference 
 	 */
 	@Override
 	public void setUserLoginId(UserLogin newUserLoginId) {
+		UserLogin oldUserLoginId = userLoginId;
 		userLoginId = newUserLoginId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, UserPackage.USER_PREFERENCE__USER_LOGIN_ID, oldUserLoginId, userLoginId));
 	}
 
 	/**
@@ -185,7 +192,10 @@ public class UserPreferenceImpl extends BizEntityImpl implements UserPreference 
 	 */
 	@Override
 	public void setUserPrefDataType(String newUserPrefDataType) {
+		String oldUserPrefDataType = userPrefDataType;
 		userPrefDataType = newUserPrefDataType;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, UserPackage.USER_PREFERENCE__USER_PREF_DATA_TYPE, oldUserPrefDataType, userPrefDataType));
 	}
 
 	/**
@@ -199,6 +209,8 @@ public class UserPreferenceImpl extends BizEntityImpl implements UserPreference 
 			InternalEObject oldUserPrefGroupTypeId = (InternalEObject)userPrefGroupTypeId;
 			userPrefGroupTypeId = (UserPrefGroupType)eResolveProxy(oldUserPrefGroupTypeId);
 			if (userPrefGroupTypeId != oldUserPrefGroupTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, UserPackage.USER_PREFERENCE__USER_PREF_GROUP_TYPE_ID, oldUserPrefGroupTypeId, userPrefGroupTypeId));
 			}
 		}
 		return userPrefGroupTypeId;
@@ -220,7 +232,10 @@ public class UserPreferenceImpl extends BizEntityImpl implements UserPreference 
 	 */
 	@Override
 	public void setUserPrefGroupTypeId(UserPrefGroupType newUserPrefGroupTypeId) {
+		UserPrefGroupType oldUserPrefGroupTypeId = userPrefGroupTypeId;
 		userPrefGroupTypeId = newUserPrefGroupTypeId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, UserPackage.USER_PREFERENCE__USER_PREF_GROUP_TYPE_ID, oldUserPrefGroupTypeId, userPrefGroupTypeId));
 	}
 
 	/**
@@ -240,7 +255,10 @@ public class UserPreferenceImpl extends BizEntityImpl implements UserPreference 
 	 */
 	@Override
 	public void setUserPrefTypeId(String newUserPrefTypeId) {
+		String oldUserPrefTypeId = userPrefTypeId;
 		userPrefTypeId = newUserPrefTypeId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, UserPackage.USER_PREFERENCE__USER_PREF_TYPE_ID, oldUserPrefTypeId, userPrefTypeId));
 	}
 
 	/**
@@ -260,7 +278,10 @@ public class UserPreferenceImpl extends BizEntityImpl implements UserPreference 
 	 */
 	@Override
 	public void setUserPrefValue(String newUserPrefValue) {
+		String oldUserPrefValue = userPrefValue;
 		userPrefValue = newUserPrefValue;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, UserPackage.USER_PREFERENCE__USER_PREF_VALUE, oldUserPrefValue, userPrefValue));
 	}
 
 	/**

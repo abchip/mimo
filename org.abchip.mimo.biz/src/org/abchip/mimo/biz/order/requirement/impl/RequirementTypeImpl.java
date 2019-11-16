@@ -14,12 +14,14 @@ import org.abchip.mimo.biz.impl.BizEntityTypeImpl;
 import org.abchip.mimo.biz.order.requirement.Requirement;
 import org.abchip.mimo.biz.order.requirement.RequirementPackage;
 import org.abchip.mimo.biz.order.requirement.RequirementType;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.util.BasicInternalEList;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -160,7 +162,10 @@ public class RequirementTypeImpl extends BizEntityTypeImpl<Requirement> implemen
 	 */
 	@Override
 	public void setDescription(String newDescription) {
+		String oldDescription = description;
 		description = newDescription;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, RequirementPackage.REQUIREMENT_TYPE__DESCRIPTION, oldDescription, description));
 	}
 
 	/**
@@ -180,7 +185,10 @@ public class RequirementTypeImpl extends BizEntityTypeImpl<Requirement> implemen
 	 */
 	@Override
 	public void setHasTable(boolean newHasTable) {
+		boolean oldHasTable = hasTable;
 		hasTable = newHasTable;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, RequirementPackage.REQUIREMENT_TYPE__HAS_TABLE, oldHasTable, hasTable));
 	}
 
 	/**
@@ -194,6 +202,8 @@ public class RequirementTypeImpl extends BizEntityTypeImpl<Requirement> implemen
 			InternalEObject oldParentTypeId = (InternalEObject)parentTypeId;
 			parentTypeId = (RequirementType)eResolveProxy(oldParentTypeId);
 			if (parentTypeId != oldParentTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, RequirementPackage.REQUIREMENT_TYPE__PARENT_TYPE_ID, oldParentTypeId, parentTypeId));
 			}
 		}
 		return parentTypeId;
@@ -215,7 +225,10 @@ public class RequirementTypeImpl extends BizEntityTypeImpl<Requirement> implemen
 	 */
 	@Override
 	public void setParentTypeId(RequirementType newParentTypeId) {
+		RequirementType oldParentTypeId = parentTypeId;
 		parentTypeId = newParentTypeId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, RequirementPackage.REQUIREMENT_TYPE__PARENT_TYPE_ID, oldParentTypeId, parentTypeId));
 	}
 
 	/**
@@ -235,7 +248,10 @@ public class RequirementTypeImpl extends BizEntityTypeImpl<Requirement> implemen
 	 */
 	@Override
 	public void setRequirementTypeId(String newRequirementTypeId) {
+		String oldRequirementTypeId = requirementTypeId;
 		requirementTypeId = newRequirementTypeId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, RequirementPackage.REQUIREMENT_TYPE__REQUIREMENT_TYPE_ID, oldRequirementTypeId, requirementTypeId));
 	}
 
 	/**
@@ -246,7 +262,7 @@ public class RequirementTypeImpl extends BizEntityTypeImpl<Requirement> implemen
 	@Override
 	public List<String> getRequirementTypeAttrs() {
 		if (requirementTypeAttrs == null) {
-			requirementTypeAttrs = new BasicInternalEList<String>(String.class);
+			requirementTypeAttrs = new EDataTypeUniqueEList<String>(String.class, this, RequirementPackage.REQUIREMENT_TYPE__REQUIREMENT_TYPE_ATTRS);
 		}
 		return requirementTypeAttrs;
 	}

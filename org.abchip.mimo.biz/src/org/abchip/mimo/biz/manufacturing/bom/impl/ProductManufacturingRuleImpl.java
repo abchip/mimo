@@ -14,10 +14,12 @@ import org.abchip.mimo.biz.manufacturing.bom.BomPackage;
 import org.abchip.mimo.biz.manufacturing.bom.ProductManufacturingRule;
 import org.abchip.mimo.biz.product.feature.ProductFeature;
 import org.abchip.mimo.biz.product.product.Product;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -275,7 +277,10 @@ public class ProductManufacturingRuleImpl extends BizEntityImpl implements Produ
 	 */
 	@Override
 	public void setRuleId(String newRuleId) {
+		String oldRuleId = ruleId;
 		ruleId = newRuleId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, BomPackage.PRODUCT_MANUFACTURING_RULE__RULE_ID, oldRuleId, ruleId));
 	}
 
 	/**
@@ -295,7 +300,10 @@ public class ProductManufacturingRuleImpl extends BizEntityImpl implements Produ
 	 */
 	@Override
 	public void setDescription(String newDescription) {
+		String oldDescription = description;
 		description = newDescription;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, BomPackage.PRODUCT_MANUFACTURING_RULE__DESCRIPTION, oldDescription, description));
 	}
 
 	/**
@@ -315,7 +323,10 @@ public class ProductManufacturingRuleImpl extends BizEntityImpl implements Produ
 	 */
 	@Override
 	public void setFromDate(Date newFromDate) {
+		Date oldFromDate = fromDate;
 		fromDate = newFromDate;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, BomPackage.PRODUCT_MANUFACTURING_RULE__FROM_DATE, oldFromDate, fromDate));
 	}
 
 	/**
@@ -329,6 +340,8 @@ public class ProductManufacturingRuleImpl extends BizEntityImpl implements Produ
 			InternalEObject oldProductFeature = (InternalEObject)productFeature;
 			productFeature = (ProductFeature)eResolveProxy(oldProductFeature);
 			if (productFeature != oldProductFeature) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, BomPackage.PRODUCT_MANUFACTURING_RULE__PRODUCT_FEATURE, oldProductFeature, productFeature));
 			}
 		}
 		return productFeature;
@@ -350,7 +363,10 @@ public class ProductManufacturingRuleImpl extends BizEntityImpl implements Produ
 	 */
 	@Override
 	public void setProductFeature(ProductFeature newProductFeature) {
+		ProductFeature oldProductFeature = productFeature;
 		productFeature = newProductFeature;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, BomPackage.PRODUCT_MANUFACTURING_RULE__PRODUCT_FEATURE, oldProductFeature, productFeature));
 	}
 
 	/**
@@ -364,6 +380,8 @@ public class ProductManufacturingRuleImpl extends BizEntityImpl implements Produ
 			InternalEObject oldProductId = (InternalEObject)productId;
 			productId = (Product)eResolveProxy(oldProductId);
 			if (productId != oldProductId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, BomPackage.PRODUCT_MANUFACTURING_RULE__PRODUCT_ID, oldProductId, productId));
 			}
 		}
 		return productId;
@@ -385,7 +403,10 @@ public class ProductManufacturingRuleImpl extends BizEntityImpl implements Produ
 	 */
 	@Override
 	public void setProductId(Product newProductId) {
+		Product oldProductId = productId;
 		productId = newProductId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, BomPackage.PRODUCT_MANUFACTURING_RULE__PRODUCT_ID, oldProductId, productId));
 	}
 
 	/**
@@ -399,6 +420,8 @@ public class ProductManufacturingRuleImpl extends BizEntityImpl implements Produ
 			InternalEObject oldProductIdFor = (InternalEObject)productIdFor;
 			productIdFor = (Product)eResolveProxy(oldProductIdFor);
 			if (productIdFor != oldProductIdFor) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, BomPackage.PRODUCT_MANUFACTURING_RULE__PRODUCT_ID_FOR, oldProductIdFor, productIdFor));
 			}
 		}
 		return productIdFor;
@@ -420,7 +443,10 @@ public class ProductManufacturingRuleImpl extends BizEntityImpl implements Produ
 	 */
 	@Override
 	public void setProductIdFor(Product newProductIdFor) {
+		Product oldProductIdFor = productIdFor;
 		productIdFor = newProductIdFor;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, BomPackage.PRODUCT_MANUFACTURING_RULE__PRODUCT_ID_FOR, oldProductIdFor, productIdFor));
 	}
 
 	/**
@@ -434,6 +460,8 @@ public class ProductManufacturingRuleImpl extends BizEntityImpl implements Produ
 			InternalEObject oldProductIdIn = (InternalEObject)productIdIn;
 			productIdIn = (Product)eResolveProxy(oldProductIdIn);
 			if (productIdIn != oldProductIdIn) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, BomPackage.PRODUCT_MANUFACTURING_RULE__PRODUCT_ID_IN, oldProductIdIn, productIdIn));
 			}
 		}
 		return productIdIn;
@@ -455,7 +483,10 @@ public class ProductManufacturingRuleImpl extends BizEntityImpl implements Produ
 	 */
 	@Override
 	public void setProductIdIn(Product newProductIdIn) {
+		Product oldProductIdIn = productIdIn;
 		productIdIn = newProductIdIn;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, BomPackage.PRODUCT_MANUFACTURING_RULE__PRODUCT_ID_IN, oldProductIdIn, productIdIn));
 	}
 
 	/**
@@ -469,6 +500,8 @@ public class ProductManufacturingRuleImpl extends BizEntityImpl implements Produ
 			InternalEObject oldProductIdInSubst = (InternalEObject)productIdInSubst;
 			productIdInSubst = (Product)eResolveProxy(oldProductIdInSubst);
 			if (productIdInSubst != oldProductIdInSubst) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, BomPackage.PRODUCT_MANUFACTURING_RULE__PRODUCT_ID_IN_SUBST, oldProductIdInSubst, productIdInSubst));
 			}
 		}
 		return productIdInSubst;
@@ -490,7 +523,10 @@ public class ProductManufacturingRuleImpl extends BizEntityImpl implements Produ
 	 */
 	@Override
 	public void setProductIdInSubst(Product newProductIdInSubst) {
+		Product oldProductIdInSubst = productIdInSubst;
 		productIdInSubst = newProductIdInSubst;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, BomPackage.PRODUCT_MANUFACTURING_RULE__PRODUCT_ID_IN_SUBST, oldProductIdInSubst, productIdInSubst));
 	}
 
 	/**
@@ -510,7 +546,10 @@ public class ProductManufacturingRuleImpl extends BizEntityImpl implements Produ
 	 */
 	@Override
 	public void setQuantity(double newQuantity) {
+		double oldQuantity = quantity;
 		quantity = newQuantity;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, BomPackage.PRODUCT_MANUFACTURING_RULE__QUANTITY, oldQuantity, quantity));
 	}
 
 	/**
@@ -530,7 +569,10 @@ public class ProductManufacturingRuleImpl extends BizEntityImpl implements Produ
 	 */
 	@Override
 	public void setRuleOperator(String newRuleOperator) {
+		String oldRuleOperator = ruleOperator;
 		ruleOperator = newRuleOperator;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, BomPackage.PRODUCT_MANUFACTURING_RULE__RULE_OPERATOR, oldRuleOperator, ruleOperator));
 	}
 
 	/**
@@ -550,7 +592,10 @@ public class ProductManufacturingRuleImpl extends BizEntityImpl implements Produ
 	 */
 	@Override
 	public void setRuleSeqId(String newRuleSeqId) {
+		String oldRuleSeqId = ruleSeqId;
 		ruleSeqId = newRuleSeqId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, BomPackage.PRODUCT_MANUFACTURING_RULE__RULE_SEQ_ID, oldRuleSeqId, ruleSeqId));
 	}
 
 	/**
@@ -570,7 +615,10 @@ public class ProductManufacturingRuleImpl extends BizEntityImpl implements Produ
 	 */
 	@Override
 	public void setThruDate(Date newThruDate) {
+		Date oldThruDate = thruDate;
 		thruDate = newThruDate;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, BomPackage.PRODUCT_MANUFACTURING_RULE__THRU_DATE, oldThruDate, thruDate));
 	}
 
 	/**

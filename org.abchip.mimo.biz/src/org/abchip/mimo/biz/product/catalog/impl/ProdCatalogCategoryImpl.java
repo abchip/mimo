@@ -15,9 +15,11 @@ import org.abchip.mimo.biz.product.catalog.ProdCatalog;
 import org.abchip.mimo.biz.product.catalog.ProdCatalogCategory;
 import org.abchip.mimo.biz.product.catalog.ProdCatalogCategoryType;
 import org.abchip.mimo.biz.product.category.ProductCategory;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -169,7 +171,10 @@ public class ProdCatalogCategoryImpl extends BizEntityTypedImpl<ProdCatalogCateg
 	 */
 	@Override
 	public void setFromDate(Date newFromDate) {
+		Date oldFromDate = fromDate;
 		fromDate = newFromDate;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, CatalogPackage.PROD_CATALOG_CATEGORY__FROM_DATE, oldFromDate, fromDate));
 	}
 
 	/**
@@ -183,6 +188,8 @@ public class ProdCatalogCategoryImpl extends BizEntityTypedImpl<ProdCatalogCateg
 			InternalEObject oldProductCategoryId = (InternalEObject)productCategoryId;
 			productCategoryId = (ProductCategory)eResolveProxy(oldProductCategoryId);
 			if (productCategoryId != oldProductCategoryId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, CatalogPackage.PROD_CATALOG_CATEGORY__PRODUCT_CATEGORY_ID, oldProductCategoryId, productCategoryId));
 			}
 		}
 		return productCategoryId;
@@ -204,7 +211,10 @@ public class ProdCatalogCategoryImpl extends BizEntityTypedImpl<ProdCatalogCateg
 	 */
 	@Override
 	public void setProductCategoryId(ProductCategory newProductCategoryId) {
+		ProductCategory oldProductCategoryId = productCategoryId;
 		productCategoryId = newProductCategoryId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, CatalogPackage.PROD_CATALOG_CATEGORY__PRODUCT_CATEGORY_ID, oldProductCategoryId, productCategoryId));
 	}
 
 	/**
@@ -224,7 +234,10 @@ public class ProdCatalogCategoryImpl extends BizEntityTypedImpl<ProdCatalogCateg
 	 */
 	@Override
 	public void setSequenceNum(long newSequenceNum) {
+		long oldSequenceNum = sequenceNum;
 		sequenceNum = newSequenceNum;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, CatalogPackage.PROD_CATALOG_CATEGORY__SEQUENCE_NUM, oldSequenceNum, sequenceNum));
 	}
 
 	/**
@@ -244,7 +257,10 @@ public class ProdCatalogCategoryImpl extends BizEntityTypedImpl<ProdCatalogCateg
 	 */
 	@Override
 	public void setThruDate(Date newThruDate) {
+		Date oldThruDate = thruDate;
 		thruDate = newThruDate;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, CatalogPackage.PROD_CATALOG_CATEGORY__THRU_DATE, oldThruDate, thruDate));
 	}
 
 	/**
@@ -258,6 +274,8 @@ public class ProdCatalogCategoryImpl extends BizEntityTypedImpl<ProdCatalogCateg
 			InternalEObject oldProdCatalogId = (InternalEObject)prodCatalogId;
 			prodCatalogId = (ProdCatalog)eResolveProxy(oldProdCatalogId);
 			if (prodCatalogId != oldProdCatalogId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, CatalogPackage.PROD_CATALOG_CATEGORY__PROD_CATALOG_ID, oldProdCatalogId, prodCatalogId));
 			}
 		}
 		return prodCatalogId;
@@ -279,7 +297,10 @@ public class ProdCatalogCategoryImpl extends BizEntityTypedImpl<ProdCatalogCateg
 	 */
 	@Override
 	public void setProdCatalogId(ProdCatalog newProdCatalogId) {
+		ProdCatalog oldProdCatalogId = prodCatalogId;
 		prodCatalogId = newProdCatalogId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, CatalogPackage.PROD_CATALOG_CATEGORY__PROD_CATALOG_ID, oldProdCatalogId, prodCatalogId));
 	}
 
 	/**
@@ -293,6 +314,8 @@ public class ProdCatalogCategoryImpl extends BizEntityTypedImpl<ProdCatalogCateg
 			InternalEObject oldProdCatalogCategoryTypeId = (InternalEObject)prodCatalogCategoryTypeId;
 			prodCatalogCategoryTypeId = (ProdCatalogCategoryType)eResolveProxy(oldProdCatalogCategoryTypeId);
 			if (prodCatalogCategoryTypeId != oldProdCatalogCategoryTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, CatalogPackage.PROD_CATALOG_CATEGORY__PROD_CATALOG_CATEGORY_TYPE_ID, oldProdCatalogCategoryTypeId, prodCatalogCategoryTypeId));
 			}
 		}
 		return prodCatalogCategoryTypeId;
@@ -314,7 +337,10 @@ public class ProdCatalogCategoryImpl extends BizEntityTypedImpl<ProdCatalogCateg
 	 */
 	@Override
 	public void setProdCatalogCategoryTypeId(ProdCatalogCategoryType newProdCatalogCategoryTypeId) {
+		ProdCatalogCategoryType oldProdCatalogCategoryTypeId = prodCatalogCategoryTypeId;
 		prodCatalogCategoryTypeId = newProdCatalogCategoryTypeId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, CatalogPackage.PROD_CATALOG_CATEGORY__PROD_CATALOG_CATEGORY_TYPE_ID, oldProdCatalogCategoryTypeId, prodCatalogCategoryTypeId));
 	}
 
 	/**

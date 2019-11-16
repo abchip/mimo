@@ -13,7 +13,9 @@ import org.abchip.mimo.biz.impl.BizEntityTypeImpl;
 import org.abchip.mimo.biz.webapp.visit.UserAgent;
 import org.abchip.mimo.biz.webapp.visit.UserAgentType;
 import org.abchip.mimo.biz.webapp.visit.VisitPackage;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -111,7 +113,10 @@ public class UserAgentTypeImpl extends BizEntityTypeImpl<UserAgent> implements U
 	 */
 	@Override
 	public void setUserAgentTypeId(String newUserAgentTypeId) {
+		String oldUserAgentTypeId = userAgentTypeId;
 		userAgentTypeId = newUserAgentTypeId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, VisitPackage.USER_AGENT_TYPE__USER_AGENT_TYPE_ID, oldUserAgentTypeId, userAgentTypeId));
 	}
 
 	/**
@@ -131,7 +136,10 @@ public class UserAgentTypeImpl extends BizEntityTypeImpl<UserAgent> implements U
 	 */
 	@Override
 	public void setDescription(String newDescription) {
+		String oldDescription = description;
 		description = newDescription;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, VisitPackage.USER_AGENT_TYPE__DESCRIPTION, oldDescription, description));
 	}
 
 	/**

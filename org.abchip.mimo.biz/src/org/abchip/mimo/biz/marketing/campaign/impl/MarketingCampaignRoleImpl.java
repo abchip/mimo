@@ -15,10 +15,12 @@ import org.abchip.mimo.biz.marketing.campaign.MarketingCampaign;
 import org.abchip.mimo.biz.marketing.campaign.MarketingCampaignRole;
 import org.abchip.mimo.biz.party.party.Party;
 import org.abchip.mimo.biz.party.party.RoleType;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -149,7 +151,10 @@ public class MarketingCampaignRoleImpl extends BizEntityImpl implements Marketin
 	 */
 	@Override
 	public void setFromDate(Date newFromDate) {
+		Date oldFromDate = fromDate;
 		fromDate = newFromDate;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, CampaignPackage.MARKETING_CAMPAIGN_ROLE__FROM_DATE, oldFromDate, fromDate));
 	}
 
 	/**
@@ -163,6 +168,8 @@ public class MarketingCampaignRoleImpl extends BizEntityImpl implements Marketin
 			InternalEObject oldMarketingCampaignId = (InternalEObject)marketingCampaignId;
 			marketingCampaignId = (MarketingCampaign)eResolveProxy(oldMarketingCampaignId);
 			if (marketingCampaignId != oldMarketingCampaignId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, CampaignPackage.MARKETING_CAMPAIGN_ROLE__MARKETING_CAMPAIGN_ID, oldMarketingCampaignId, marketingCampaignId));
 			}
 		}
 		return marketingCampaignId;
@@ -184,7 +191,10 @@ public class MarketingCampaignRoleImpl extends BizEntityImpl implements Marketin
 	 */
 	@Override
 	public void setMarketingCampaignId(MarketingCampaign newMarketingCampaignId) {
+		MarketingCampaign oldMarketingCampaignId = marketingCampaignId;
 		marketingCampaignId = newMarketingCampaignId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, CampaignPackage.MARKETING_CAMPAIGN_ROLE__MARKETING_CAMPAIGN_ID, oldMarketingCampaignId, marketingCampaignId));
 	}
 
 	/**
@@ -198,6 +208,8 @@ public class MarketingCampaignRoleImpl extends BizEntityImpl implements Marketin
 			InternalEObject oldPartyId = (InternalEObject)partyId;
 			partyId = (Party)eResolveProxy(oldPartyId);
 			if (partyId != oldPartyId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, CampaignPackage.MARKETING_CAMPAIGN_ROLE__PARTY_ID, oldPartyId, partyId));
 			}
 		}
 		return partyId;
@@ -219,7 +231,10 @@ public class MarketingCampaignRoleImpl extends BizEntityImpl implements Marketin
 	 */
 	@Override
 	public void setPartyId(Party newPartyId) {
+		Party oldPartyId = partyId;
 		partyId = newPartyId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, CampaignPackage.MARKETING_CAMPAIGN_ROLE__PARTY_ID, oldPartyId, partyId));
 	}
 
 	/**
@@ -233,6 +248,8 @@ public class MarketingCampaignRoleImpl extends BizEntityImpl implements Marketin
 			InternalEObject oldRoleTypeId = (InternalEObject)roleTypeId;
 			roleTypeId = (RoleType)eResolveProxy(oldRoleTypeId);
 			if (roleTypeId != oldRoleTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, CampaignPackage.MARKETING_CAMPAIGN_ROLE__ROLE_TYPE_ID, oldRoleTypeId, roleTypeId));
 			}
 		}
 		return roleTypeId;
@@ -254,7 +271,10 @@ public class MarketingCampaignRoleImpl extends BizEntityImpl implements Marketin
 	 */
 	@Override
 	public void setRoleTypeId(RoleType newRoleTypeId) {
+		RoleType oldRoleTypeId = roleTypeId;
 		roleTypeId = newRoleTypeId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, CampaignPackage.MARKETING_CAMPAIGN_ROLE__ROLE_TYPE_ID, oldRoleTypeId, roleTypeId));
 	}
 
 	/**
@@ -274,7 +294,10 @@ public class MarketingCampaignRoleImpl extends BizEntityImpl implements Marketin
 	 */
 	@Override
 	public void setThruDate(Date newThruDate) {
+		Date oldThruDate = thruDate;
 		thruDate = newThruDate;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, CampaignPackage.MARKETING_CAMPAIGN_ROLE__THRU_DATE, oldThruDate, thruDate));
 	}
 
 	/**

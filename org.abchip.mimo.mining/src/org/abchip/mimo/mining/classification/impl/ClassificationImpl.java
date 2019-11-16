@@ -11,13 +11,10 @@ import org.abchip.mimo.entity.Entity;
 
 import org.abchip.mimo.mining.classification.Classification;
 import org.abchip.mimo.mining.classification.ClassificationPackage;
-
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 

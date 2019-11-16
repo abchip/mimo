@@ -12,10 +12,12 @@ import org.abchip.mimo.biz.order.return_.ReturnHeaderType;
 import org.abchip.mimo.biz.order.return_.ReturnItemType;
 import org.abchip.mimo.biz.order.return_.ReturnItemTypeMap;
 import org.abchip.mimo.biz.order.return_.ReturnPackage;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -108,6 +110,8 @@ public class ReturnItemTypeMapImpl extends BizEntityImpl implements ReturnItemTy
 			InternalEObject oldReturnHeaderTypeId = (InternalEObject)returnHeaderTypeId;
 			returnHeaderTypeId = (ReturnHeaderType)eResolveProxy(oldReturnHeaderTypeId);
 			if (returnHeaderTypeId != oldReturnHeaderTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ReturnPackage.RETURN_ITEM_TYPE_MAP__RETURN_HEADER_TYPE_ID, oldReturnHeaderTypeId, returnHeaderTypeId));
 			}
 		}
 		return returnHeaderTypeId;
@@ -129,7 +133,10 @@ public class ReturnItemTypeMapImpl extends BizEntityImpl implements ReturnItemTy
 	 */
 	@Override
 	public void setReturnHeaderTypeId(ReturnHeaderType newReturnHeaderTypeId) {
+		ReturnHeaderType oldReturnHeaderTypeId = returnHeaderTypeId;
 		returnHeaderTypeId = newReturnHeaderTypeId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ReturnPackage.RETURN_ITEM_TYPE_MAP__RETURN_HEADER_TYPE_ID, oldReturnHeaderTypeId, returnHeaderTypeId));
 	}
 
 	/**
@@ -149,7 +156,10 @@ public class ReturnItemTypeMapImpl extends BizEntityImpl implements ReturnItemTy
 	 */
 	@Override
 	public void setReturnItemMapKey(String newReturnItemMapKey) {
+		String oldReturnItemMapKey = returnItemMapKey;
 		returnItemMapKey = newReturnItemMapKey;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ReturnPackage.RETURN_ITEM_TYPE_MAP__RETURN_ITEM_MAP_KEY, oldReturnItemMapKey, returnItemMapKey));
 	}
 
 	/**
@@ -163,6 +173,8 @@ public class ReturnItemTypeMapImpl extends BizEntityImpl implements ReturnItemTy
 			InternalEObject oldReturnItemTypeId = (InternalEObject)returnItemTypeId;
 			returnItemTypeId = (ReturnItemType)eResolveProxy(oldReturnItemTypeId);
 			if (returnItemTypeId != oldReturnItemTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ReturnPackage.RETURN_ITEM_TYPE_MAP__RETURN_ITEM_TYPE_ID, oldReturnItemTypeId, returnItemTypeId));
 			}
 		}
 		return returnItemTypeId;
@@ -184,7 +196,10 @@ public class ReturnItemTypeMapImpl extends BizEntityImpl implements ReturnItemTy
 	 */
 	@Override
 	public void setReturnItemTypeId(ReturnItemType newReturnItemTypeId) {
+		ReturnItemType oldReturnItemTypeId = returnItemTypeId;
 		returnItemTypeId = newReturnItemTypeId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ReturnPackage.RETURN_ITEM_TYPE_MAP__RETURN_ITEM_TYPE_ID, oldReturnItemTypeId, returnItemTypeId));
 	}
 
 	/**

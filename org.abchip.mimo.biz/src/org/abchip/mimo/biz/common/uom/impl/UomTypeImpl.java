@@ -13,9 +13,11 @@ import org.abchip.mimo.biz.common.uom.Uom;
 import org.abchip.mimo.biz.common.uom.UomPackage;
 import org.abchip.mimo.biz.common.uom.UomType;
 import org.abchip.mimo.biz.impl.BizEntityTypeImpl;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -138,7 +140,10 @@ public class UomTypeImpl extends BizEntityTypeImpl<Uom> implements UomType {
 	 */
 	@Override
 	public void setDescription(String newDescription) {
+		String oldDescription = description;
 		description = newDescription;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, UomPackage.UOM_TYPE__DESCRIPTION, oldDescription, description));
 	}
 
 	/**
@@ -158,7 +163,10 @@ public class UomTypeImpl extends BizEntityTypeImpl<Uom> implements UomType {
 	 */
 	@Override
 	public void setHasTable(boolean newHasTable) {
+		boolean oldHasTable = hasTable;
 		hasTable = newHasTable;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, UomPackage.UOM_TYPE__HAS_TABLE, oldHasTable, hasTable));
 	}
 
 	/**
@@ -172,6 +180,8 @@ public class UomTypeImpl extends BizEntityTypeImpl<Uom> implements UomType {
 			InternalEObject oldParentTypeId = (InternalEObject)parentTypeId;
 			parentTypeId = (UomType)eResolveProxy(oldParentTypeId);
 			if (parentTypeId != oldParentTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, UomPackage.UOM_TYPE__PARENT_TYPE_ID, oldParentTypeId, parentTypeId));
 			}
 		}
 		return parentTypeId;
@@ -193,7 +203,10 @@ public class UomTypeImpl extends BizEntityTypeImpl<Uom> implements UomType {
 	 */
 	@Override
 	public void setParentTypeId(UomType newParentTypeId) {
+		UomType oldParentTypeId = parentTypeId;
 		parentTypeId = newParentTypeId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, UomPackage.UOM_TYPE__PARENT_TYPE_ID, oldParentTypeId, parentTypeId));
 	}
 
 	/**
@@ -249,7 +262,10 @@ public class UomTypeImpl extends BizEntityTypeImpl<Uom> implements UomType {
 	 */
 	@Override
 	public void setUomTypeId(String newUomTypeId) {
+		String oldUomTypeId = uomTypeId;
 		uomTypeId = newUomTypeId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, UomPackage.UOM_TYPE__UOM_TYPE_ID, oldUomTypeId, uomTypeId));
 	}
 
 	/**

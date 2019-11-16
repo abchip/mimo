@@ -12,9 +12,11 @@ import org.abchip.mimo.biz.accounting.tax.TaxAuthorityGlAccount;
 import org.abchip.mimo.biz.accounting.tax.TaxPackage;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.party.party.Party;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -122,6 +124,8 @@ public class TaxAuthorityGlAccountImpl extends BizEntityImpl implements TaxAutho
 			InternalEObject oldOrganizationPartyId = (InternalEObject)organizationPartyId;
 			organizationPartyId = (Party)eResolveProxy(oldOrganizationPartyId);
 			if (organizationPartyId != oldOrganizationPartyId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, TaxPackage.TAX_AUTHORITY_GL_ACCOUNT__ORGANIZATION_PARTY_ID, oldOrganizationPartyId, organizationPartyId));
 			}
 		}
 		return organizationPartyId;
@@ -143,7 +147,10 @@ public class TaxAuthorityGlAccountImpl extends BizEntityImpl implements TaxAutho
 	 */
 	@Override
 	public void setOrganizationPartyId(Party newOrganizationPartyId) {
+		Party oldOrganizationPartyId = organizationPartyId;
 		organizationPartyId = newOrganizationPartyId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, TaxPackage.TAX_AUTHORITY_GL_ACCOUNT__ORGANIZATION_PARTY_ID, oldOrganizationPartyId, organizationPartyId));
 	}
 
 	/**
@@ -163,7 +170,10 @@ public class TaxAuthorityGlAccountImpl extends BizEntityImpl implements TaxAutho
 	 */
 	@Override
 	public void setTaxAuthGeoId(String newTaxAuthGeoId) {
+		String oldTaxAuthGeoId = taxAuthGeoId;
 		taxAuthGeoId = newTaxAuthGeoId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, TaxPackage.TAX_AUTHORITY_GL_ACCOUNT__TAX_AUTH_GEO_ID, oldTaxAuthGeoId, taxAuthGeoId));
 	}
 
 	/**
@@ -183,7 +193,10 @@ public class TaxAuthorityGlAccountImpl extends BizEntityImpl implements TaxAutho
 	 */
 	@Override
 	public void setTaxAuthPartyId(String newTaxAuthPartyId) {
+		String oldTaxAuthPartyId = taxAuthPartyId;
 		taxAuthPartyId = newTaxAuthPartyId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, TaxPackage.TAX_AUTHORITY_GL_ACCOUNT__TAX_AUTH_PARTY_ID, oldTaxAuthPartyId, taxAuthPartyId));
 	}
 
 	/**
@@ -197,6 +210,8 @@ public class TaxAuthorityGlAccountImpl extends BizEntityImpl implements TaxAutho
 			InternalEObject oldGlAccountId = (InternalEObject)glAccountId;
 			glAccountId = (GlAccount)eResolveProxy(oldGlAccountId);
 			if (glAccountId != oldGlAccountId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, TaxPackage.TAX_AUTHORITY_GL_ACCOUNT__GL_ACCOUNT_ID, oldGlAccountId, glAccountId));
 			}
 		}
 		return glAccountId;
@@ -218,7 +233,10 @@ public class TaxAuthorityGlAccountImpl extends BizEntityImpl implements TaxAutho
 	 */
 	@Override
 	public void setGlAccountId(GlAccount newGlAccountId) {
+		GlAccount oldGlAccountId = glAccountId;
 		glAccountId = newGlAccountId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, TaxPackage.TAX_AUTHORITY_GL_ACCOUNT__GL_ACCOUNT_ID, oldGlAccountId, glAccountId));
 	}
 
 	/**

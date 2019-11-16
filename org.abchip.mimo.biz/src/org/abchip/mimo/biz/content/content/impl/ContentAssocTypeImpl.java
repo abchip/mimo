@@ -11,7 +11,9 @@ import org.abchip.mimo.biz.content.content.ContentAssoc;
 import org.abchip.mimo.biz.content.content.ContentAssocType;
 import org.abchip.mimo.biz.content.content.ContentPackage;
 import org.abchip.mimo.biz.impl.BizEntityTypeImpl;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -109,7 +111,10 @@ public class ContentAssocTypeImpl extends BizEntityTypeImpl<ContentAssoc> implem
 	 */
 	@Override
 	public void setContentAssocTypeId(String newContentAssocTypeId) {
+		String oldContentAssocTypeId = contentAssocTypeId;
 		contentAssocTypeId = newContentAssocTypeId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ContentPackage.CONTENT_ASSOC_TYPE__CONTENT_ASSOC_TYPE_ID, oldContentAssocTypeId, contentAssocTypeId));
 	}
 
 	/**
@@ -129,7 +134,10 @@ public class ContentAssocTypeImpl extends BizEntityTypeImpl<ContentAssoc> implem
 	 */
 	@Override
 	public void setDescription(String newDescription) {
+		String oldDescription = description;
 		description = newDescription;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ContentPackage.CONTENT_ASSOC_TYPE__DESCRIPTION, oldDescription, description));
 	}
 
 	/**

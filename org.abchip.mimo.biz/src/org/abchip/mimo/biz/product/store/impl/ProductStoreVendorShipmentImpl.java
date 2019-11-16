@@ -13,9 +13,11 @@ import org.abchip.mimo.biz.product.store.ProductStore;
 import org.abchip.mimo.biz.product.store.ProductStoreVendorShipment;
 import org.abchip.mimo.biz.product.store.StorePackage;
 import org.abchip.mimo.biz.shipment.shipment.ShipmentMethodType;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -109,6 +111,8 @@ public class ProductStoreVendorShipmentImpl extends BizEntityImpl implements Pro
 			InternalEObject oldCarrierPartyId = (InternalEObject)carrierPartyId;
 			carrierPartyId = (Party)eResolveProxy(oldCarrierPartyId);
 			if (carrierPartyId != oldCarrierPartyId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, StorePackage.PRODUCT_STORE_VENDOR_SHIPMENT__CARRIER_PARTY_ID, oldCarrierPartyId, carrierPartyId));
 			}
 		}
 		return carrierPartyId;
@@ -130,7 +134,10 @@ public class ProductStoreVendorShipmentImpl extends BizEntityImpl implements Pro
 	 */
 	@Override
 	public void setCarrierPartyId(Party newCarrierPartyId) {
+		Party oldCarrierPartyId = carrierPartyId;
 		carrierPartyId = newCarrierPartyId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, StorePackage.PRODUCT_STORE_VENDOR_SHIPMENT__CARRIER_PARTY_ID, oldCarrierPartyId, carrierPartyId));
 	}
 
 	/**
@@ -144,6 +151,8 @@ public class ProductStoreVendorShipmentImpl extends BizEntityImpl implements Pro
 			InternalEObject oldShipmentMethodTypeId = (InternalEObject)shipmentMethodTypeId;
 			shipmentMethodTypeId = (ShipmentMethodType)eResolveProxy(oldShipmentMethodTypeId);
 			if (shipmentMethodTypeId != oldShipmentMethodTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, StorePackage.PRODUCT_STORE_VENDOR_SHIPMENT__SHIPMENT_METHOD_TYPE_ID, oldShipmentMethodTypeId, shipmentMethodTypeId));
 			}
 		}
 		return shipmentMethodTypeId;
@@ -165,7 +174,10 @@ public class ProductStoreVendorShipmentImpl extends BizEntityImpl implements Pro
 	 */
 	@Override
 	public void setShipmentMethodTypeId(ShipmentMethodType newShipmentMethodTypeId) {
+		ShipmentMethodType oldShipmentMethodTypeId = shipmentMethodTypeId;
 		shipmentMethodTypeId = newShipmentMethodTypeId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, StorePackage.PRODUCT_STORE_VENDOR_SHIPMENT__SHIPMENT_METHOD_TYPE_ID, oldShipmentMethodTypeId, shipmentMethodTypeId));
 	}
 
 	/**
@@ -179,6 +191,8 @@ public class ProductStoreVendorShipmentImpl extends BizEntityImpl implements Pro
 			InternalEObject oldVendorPartyId = (InternalEObject)vendorPartyId;
 			vendorPartyId = (Party)eResolveProxy(oldVendorPartyId);
 			if (vendorPartyId != oldVendorPartyId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, StorePackage.PRODUCT_STORE_VENDOR_SHIPMENT__VENDOR_PARTY_ID, oldVendorPartyId, vendorPartyId));
 			}
 		}
 		return vendorPartyId;
@@ -200,7 +214,10 @@ public class ProductStoreVendorShipmentImpl extends BizEntityImpl implements Pro
 	 */
 	@Override
 	public void setVendorPartyId(Party newVendorPartyId) {
+		Party oldVendorPartyId = vendorPartyId;
 		vendorPartyId = newVendorPartyId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, StorePackage.PRODUCT_STORE_VENDOR_SHIPMENT__VENDOR_PARTY_ID, oldVendorPartyId, vendorPartyId));
 	}
 
 	/**
@@ -214,6 +231,8 @@ public class ProductStoreVendorShipmentImpl extends BizEntityImpl implements Pro
 			InternalEObject oldProductStoreId = (InternalEObject)productStoreId;
 			productStoreId = (ProductStore)eResolveProxy(oldProductStoreId);
 			if (productStoreId != oldProductStoreId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, StorePackage.PRODUCT_STORE_VENDOR_SHIPMENT__PRODUCT_STORE_ID, oldProductStoreId, productStoreId));
 			}
 		}
 		return productStoreId;
@@ -235,7 +254,10 @@ public class ProductStoreVendorShipmentImpl extends BizEntityImpl implements Pro
 	 */
 	@Override
 	public void setProductStoreId(ProductStore newProductStoreId) {
+		ProductStore oldProductStoreId = productStoreId;
 		productStoreId = newProductStoreId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, StorePackage.PRODUCT_STORE_VENDOR_SHIPMENT__PRODUCT_STORE_ID, oldProductStoreId, productStoreId));
 	}
 
 	/**

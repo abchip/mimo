@@ -13,10 +13,12 @@ import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.passport.PassportPackage;
 import org.abchip.mimo.biz.passport.ThirdPartyLogin;
 import org.abchip.mimo.biz.product.store.ProductStore;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -182,6 +184,8 @@ public class ThirdPartyLoginImpl extends BizEntityImpl implements ThirdPartyLogi
 			InternalEObject oldProductStoreId = (InternalEObject)productStoreId;
 			productStoreId = (ProductStore)eResolveProxy(oldProductStoreId);
 			if (productStoreId != oldProductStoreId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PassportPackage.THIRD_PARTY_LOGIN__PRODUCT_STORE_ID, oldProductStoreId, productStoreId));
 			}
 		}
 		return productStoreId;
@@ -203,7 +207,10 @@ public class ThirdPartyLoginImpl extends BizEntityImpl implements ThirdPartyLogi
 	 */
 	@Override
 	public void setProductStoreId(ProductStore newProductStoreId) {
+		ProductStore oldProductStoreId = productStoreId;
 		productStoreId = newProductStoreId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PassportPackage.THIRD_PARTY_LOGIN__PRODUCT_STORE_ID, oldProductStoreId, productStoreId));
 	}
 
 	/**
@@ -223,7 +230,10 @@ public class ThirdPartyLoginImpl extends BizEntityImpl implements ThirdPartyLogi
 	 */
 	@Override
 	public void setLoginMethTypeId(String newLoginMethTypeId) {
+		String oldLoginMethTypeId = loginMethTypeId;
 		loginMethTypeId = newLoginMethTypeId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PassportPackage.THIRD_PARTY_LOGIN__LOGIN_METH_TYPE_ID, oldLoginMethTypeId, loginMethTypeId));
 	}
 
 	/**
@@ -243,7 +253,10 @@ public class ThirdPartyLoginImpl extends BizEntityImpl implements ThirdPartyLogi
 	 */
 	@Override
 	public void setLoginProviderId(String newLoginProviderId) {
+		String oldLoginProviderId = loginProviderId;
 		loginProviderId = newLoginProviderId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PassportPackage.THIRD_PARTY_LOGIN__LOGIN_PROVIDER_ID, oldLoginProviderId, loginProviderId));
 	}
 
 	/**
@@ -263,7 +276,10 @@ public class ThirdPartyLoginImpl extends BizEntityImpl implements ThirdPartyLogi
 	 */
 	@Override
 	public void setFromDate(Date newFromDate) {
+		Date oldFromDate = fromDate;
 		fromDate = newFromDate;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PassportPackage.THIRD_PARTY_LOGIN__FROM_DATE, oldFromDate, fromDate));
 	}
 
 	/**
@@ -283,7 +299,10 @@ public class ThirdPartyLoginImpl extends BizEntityImpl implements ThirdPartyLogi
 	 */
 	@Override
 	public void setSequenceNum(long newSequenceNum) {
+		long oldSequenceNum = sequenceNum;
 		sequenceNum = newSequenceNum;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PassportPackage.THIRD_PARTY_LOGIN__SEQUENCE_NUM, oldSequenceNum, sequenceNum));
 	}
 
 	/**
@@ -303,7 +322,10 @@ public class ThirdPartyLoginImpl extends BizEntityImpl implements ThirdPartyLogi
 	 */
 	@Override
 	public void setThruDate(Date newThruDate) {
+		Date oldThruDate = thruDate;
 		thruDate = newThruDate;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PassportPackage.THIRD_PARTY_LOGIN__THRU_DATE, oldThruDate, thruDate));
 	}
 
 	/**

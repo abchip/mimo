@@ -13,10 +13,12 @@ import org.abchip.mimo.biz.content.survey.SurveyPackage;
 import org.abchip.mimo.biz.content.survey.SurveyQuestion;
 import org.abchip.mimo.biz.content.survey.SurveyQuestionOption;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -251,7 +253,10 @@ public class SurveyQuestionOptionImpl extends BizEntityImpl implements SurveyQue
 	 */
 	@Override
 	public void setAmountBase(BigDecimal newAmountBase) {
+		BigDecimal oldAmountBase = amountBase;
 		amountBase = newAmountBase;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SurveyPackage.SURVEY_QUESTION_OPTION__AMOUNT_BASE, oldAmountBase, amountBase));
 	}
 
 	/**
@@ -271,7 +276,10 @@ public class SurveyQuestionOptionImpl extends BizEntityImpl implements SurveyQue
 	 */
 	@Override
 	public void setAmountBaseUomId(String newAmountBaseUomId) {
+		String oldAmountBaseUomId = amountBaseUomId;
 		amountBaseUomId = newAmountBaseUomId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SurveyPackage.SURVEY_QUESTION_OPTION__AMOUNT_BASE_UOM_ID, oldAmountBaseUomId, amountBaseUomId));
 	}
 
 	/**
@@ -291,7 +299,10 @@ public class SurveyQuestionOptionImpl extends BizEntityImpl implements SurveyQue
 	 */
 	@Override
 	public void setDescription(String newDescription) {
+		String oldDescription = description;
 		description = newDescription;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SurveyPackage.SURVEY_QUESTION_OPTION__DESCRIPTION, oldDescription, description));
 	}
 
 	/**
@@ -311,7 +322,10 @@ public class SurveyQuestionOptionImpl extends BizEntityImpl implements SurveyQue
 	 */
 	@Override
 	public void setDuration(long newDuration) {
+		long oldDuration = duration;
 		duration = newDuration;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SurveyPackage.SURVEY_QUESTION_OPTION__DURATION, oldDuration, duration));
 	}
 
 	/**
@@ -331,7 +345,10 @@ public class SurveyQuestionOptionImpl extends BizEntityImpl implements SurveyQue
 	 */
 	@Override
 	public void setDurationUomId(String newDurationUomId) {
+		String oldDurationUomId = durationUomId;
 		durationUomId = newDurationUomId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SurveyPackage.SURVEY_QUESTION_OPTION__DURATION_UOM_ID, oldDurationUomId, durationUomId));
 	}
 
 	/**
@@ -351,7 +368,10 @@ public class SurveyQuestionOptionImpl extends BizEntityImpl implements SurveyQue
 	 */
 	@Override
 	public void setSequenceNum(long newSequenceNum) {
+		long oldSequenceNum = sequenceNum;
 		sequenceNum = newSequenceNum;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SurveyPackage.SURVEY_QUESTION_OPTION__SEQUENCE_NUM, oldSequenceNum, sequenceNum));
 	}
 
 	/**
@@ -371,7 +391,10 @@ public class SurveyQuestionOptionImpl extends BizEntityImpl implements SurveyQue
 	 */
 	@Override
 	public void setSurveyOptionSeqId(String newSurveyOptionSeqId) {
+		String oldSurveyOptionSeqId = surveyOptionSeqId;
 		surveyOptionSeqId = newSurveyOptionSeqId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SurveyPackage.SURVEY_QUESTION_OPTION__SURVEY_OPTION_SEQ_ID, oldSurveyOptionSeqId, surveyOptionSeqId));
 	}
 
 	/**
@@ -385,6 +408,8 @@ public class SurveyQuestionOptionImpl extends BizEntityImpl implements SurveyQue
 			InternalEObject oldSurveyQuestionId = (InternalEObject)surveyQuestionId;
 			surveyQuestionId = (SurveyQuestion)eResolveProxy(oldSurveyQuestionId);
 			if (surveyQuestionId != oldSurveyQuestionId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, SurveyPackage.SURVEY_QUESTION_OPTION__SURVEY_QUESTION_ID, oldSurveyQuestionId, surveyQuestionId));
 			}
 		}
 		return surveyQuestionId;
@@ -406,7 +431,10 @@ public class SurveyQuestionOptionImpl extends BizEntityImpl implements SurveyQue
 	 */
 	@Override
 	public void setSurveyQuestionId(SurveyQuestion newSurveyQuestionId) {
+		SurveyQuestion oldSurveyQuestionId = surveyQuestionId;
 		surveyQuestionId = newSurveyQuestionId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SurveyPackage.SURVEY_QUESTION_OPTION__SURVEY_QUESTION_ID, oldSurveyQuestionId, surveyQuestionId));
 	}
 
 	/**
@@ -426,7 +454,10 @@ public class SurveyQuestionOptionImpl extends BizEntityImpl implements SurveyQue
 	 */
 	@Override
 	public void setWeightFactor(double newWeightFactor) {
+		double oldWeightFactor = weightFactor;
 		weightFactor = newWeightFactor;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SurveyPackage.SURVEY_QUESTION_OPTION__WEIGHT_FACTOR, oldWeightFactor, weightFactor));
 	}
 
 	/**

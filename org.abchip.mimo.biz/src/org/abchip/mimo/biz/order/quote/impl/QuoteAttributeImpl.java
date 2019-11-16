@@ -11,10 +11,12 @@ import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.order.quote.Quote;
 import org.abchip.mimo.biz.order.quote.QuoteAttribute;
 import org.abchip.mimo.biz.order.quote.QuotePackage;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -144,7 +146,10 @@ public class QuoteAttributeImpl extends BizEntityImpl implements QuoteAttribute 
 	 */
 	@Override
 	public void setAttrDescription(String newAttrDescription) {
+		String oldAttrDescription = attrDescription;
 		attrDescription = newAttrDescription;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, QuotePackage.QUOTE_ATTRIBUTE__ATTR_DESCRIPTION, oldAttrDescription, attrDescription));
 	}
 
 	/**
@@ -164,7 +169,10 @@ public class QuoteAttributeImpl extends BizEntityImpl implements QuoteAttribute 
 	 */
 	@Override
 	public void setAttrName(String newAttrName) {
+		String oldAttrName = attrName;
 		attrName = newAttrName;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, QuotePackage.QUOTE_ATTRIBUTE__ATTR_NAME, oldAttrName, attrName));
 	}
 
 	/**
@@ -184,7 +192,10 @@ public class QuoteAttributeImpl extends BizEntityImpl implements QuoteAttribute 
 	 */
 	@Override
 	public void setAttrValue(String newAttrValue) {
+		String oldAttrValue = attrValue;
 		attrValue = newAttrValue;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, QuotePackage.QUOTE_ATTRIBUTE__ATTR_VALUE, oldAttrValue, attrValue));
 	}
 
 	/**
@@ -198,6 +209,8 @@ public class QuoteAttributeImpl extends BizEntityImpl implements QuoteAttribute 
 			InternalEObject oldQuoteId = (InternalEObject)quoteId;
 			quoteId = (Quote)eResolveProxy(oldQuoteId);
 			if (quoteId != oldQuoteId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, QuotePackage.QUOTE_ATTRIBUTE__QUOTE_ID, oldQuoteId, quoteId));
 			}
 		}
 		return quoteId;
@@ -219,7 +232,10 @@ public class QuoteAttributeImpl extends BizEntityImpl implements QuoteAttribute 
 	 */
 	@Override
 	public void setQuoteId(Quote newQuoteId) {
+		Quote oldQuoteId = quoteId;
 		quoteId = newQuoteId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, QuotePackage.QUOTE_ATTRIBUTE__QUOTE_ID, oldQuoteId, quoteId));
 	}
 
 	/**

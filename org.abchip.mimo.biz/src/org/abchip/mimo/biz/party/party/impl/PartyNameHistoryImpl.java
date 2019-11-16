@@ -13,9 +13,11 @@ import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.party.party.Party;
 import org.abchip.mimo.biz.party.party.PartyNameHistory;
 import org.abchip.mimo.biz.party.party.PartyPackage;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -214,7 +216,10 @@ public class PartyNameHistoryImpl extends BizEntityImpl implements PartyNameHist
 	 */
 	@Override
 	public void setChangeDate(Date newChangeDate) {
+		Date oldChangeDate = changeDate;
 		changeDate = newChangeDate;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PartyPackage.PARTY_NAME_HISTORY__CHANGE_DATE, oldChangeDate, changeDate));
 	}
 
 	/**
@@ -234,7 +239,10 @@ public class PartyNameHistoryImpl extends BizEntityImpl implements PartyNameHist
 	 */
 	@Override
 	public void setFirstName(String newFirstName) {
+		String oldFirstName = firstName;
 		firstName = newFirstName;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PartyPackage.PARTY_NAME_HISTORY__FIRST_NAME, oldFirstName, firstName));
 	}
 
 	/**
@@ -254,7 +262,10 @@ public class PartyNameHistoryImpl extends BizEntityImpl implements PartyNameHist
 	 */
 	@Override
 	public void setGroupName(String newGroupName) {
+		String oldGroupName = groupName;
 		groupName = newGroupName;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PartyPackage.PARTY_NAME_HISTORY__GROUP_NAME, oldGroupName, groupName));
 	}
 
 	/**
@@ -274,7 +285,10 @@ public class PartyNameHistoryImpl extends BizEntityImpl implements PartyNameHist
 	 */
 	@Override
 	public void setLastName(String newLastName) {
+		String oldLastName = lastName;
 		lastName = newLastName;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PartyPackage.PARTY_NAME_HISTORY__LAST_NAME, oldLastName, lastName));
 	}
 
 	/**
@@ -294,7 +308,10 @@ public class PartyNameHistoryImpl extends BizEntityImpl implements PartyNameHist
 	 */
 	@Override
 	public void setMiddleName(String newMiddleName) {
+		String oldMiddleName = middleName;
 		middleName = newMiddleName;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PartyPackage.PARTY_NAME_HISTORY__MIDDLE_NAME, oldMiddleName, middleName));
 	}
 
 	/**
@@ -314,7 +331,10 @@ public class PartyNameHistoryImpl extends BizEntityImpl implements PartyNameHist
 	 */
 	@Override
 	public void setPersonalTitle(String newPersonalTitle) {
+		String oldPersonalTitle = personalTitle;
 		personalTitle = newPersonalTitle;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PartyPackage.PARTY_NAME_HISTORY__PERSONAL_TITLE, oldPersonalTitle, personalTitle));
 	}
 
 	/**
@@ -334,7 +354,10 @@ public class PartyNameHistoryImpl extends BizEntityImpl implements PartyNameHist
 	 */
 	@Override
 	public void setSuffix(String newSuffix) {
+		String oldSuffix = suffix;
 		suffix = newSuffix;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PartyPackage.PARTY_NAME_HISTORY__SUFFIX, oldSuffix, suffix));
 	}
 
 	/**
@@ -348,6 +371,8 @@ public class PartyNameHistoryImpl extends BizEntityImpl implements PartyNameHist
 			InternalEObject oldPartyId = (InternalEObject)partyId;
 			partyId = (Party)eResolveProxy(oldPartyId);
 			if (partyId != oldPartyId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PartyPackage.PARTY_NAME_HISTORY__PARTY_ID, oldPartyId, partyId));
 			}
 		}
 		return partyId;
@@ -369,7 +394,10 @@ public class PartyNameHistoryImpl extends BizEntityImpl implements PartyNameHist
 	 */
 	@Override
 	public void setPartyId(Party newPartyId) {
+		Party oldPartyId = partyId;
 		partyId = newPartyId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PartyPackage.PARTY_NAME_HISTORY__PARTY_ID, oldPartyId, partyId));
 	}
 
 	/**

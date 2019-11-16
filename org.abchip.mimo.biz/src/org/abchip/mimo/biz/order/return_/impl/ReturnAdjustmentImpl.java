@@ -23,10 +23,12 @@ import org.abchip.mimo.biz.order.return_.ReturnPackage;
 import org.abchip.mimo.biz.order.return_.ReturnType;
 import org.abchip.mimo.biz.product.promo.ProductPromo;
 import org.abchip.mimo.biz.security.login.UserLogin;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -633,7 +635,10 @@ public class ReturnAdjustmentImpl extends BizEntityTypedImpl<ReturnAdjustmentTyp
 	 */
 	@Override
 	public void setAmount(BigDecimal newAmount) {
+		BigDecimal oldAmount = amount;
 		amount = newAmount;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ReturnPackage.RETURN_ADJUSTMENT__AMOUNT, oldAmount, amount));
 	}
 
 	/**
@@ -653,7 +658,10 @@ public class ReturnAdjustmentImpl extends BizEntityTypedImpl<ReturnAdjustmentTyp
 	 */
 	@Override
 	public void setComments(String newComments) {
+		String oldComments = comments;
 		comments = newComments;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ReturnPackage.RETURN_ADJUSTMENT__COMMENTS, oldComments, comments));
 	}
 
 	/**
@@ -673,7 +681,10 @@ public class ReturnAdjustmentImpl extends BizEntityTypedImpl<ReturnAdjustmentTyp
 	 */
 	@Override
 	public void setCorrespondingProductId(String newCorrespondingProductId) {
+		String oldCorrespondingProductId = correspondingProductId;
 		correspondingProductId = newCorrespondingProductId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ReturnPackage.RETURN_ADJUSTMENT__CORRESPONDING_PRODUCT_ID, oldCorrespondingProductId, correspondingProductId));
 	}
 
 	/**
@@ -687,6 +698,8 @@ public class ReturnAdjustmentImpl extends BizEntityTypedImpl<ReturnAdjustmentTyp
 			InternalEObject oldCreatedByUserLogin = (InternalEObject)createdByUserLogin;
 			createdByUserLogin = (UserLogin)eResolveProxy(oldCreatedByUserLogin);
 			if (createdByUserLogin != oldCreatedByUserLogin) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ReturnPackage.RETURN_ADJUSTMENT__CREATED_BY_USER_LOGIN, oldCreatedByUserLogin, createdByUserLogin));
 			}
 		}
 		return createdByUserLogin;
@@ -708,7 +721,10 @@ public class ReturnAdjustmentImpl extends BizEntityTypedImpl<ReturnAdjustmentTyp
 	 */
 	@Override
 	public void setCreatedByUserLogin(UserLogin newCreatedByUserLogin) {
+		UserLogin oldCreatedByUserLogin = createdByUserLogin;
 		createdByUserLogin = newCreatedByUserLogin;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ReturnPackage.RETURN_ADJUSTMENT__CREATED_BY_USER_LOGIN, oldCreatedByUserLogin, createdByUserLogin));
 	}
 
 	/**
@@ -728,7 +744,10 @@ public class ReturnAdjustmentImpl extends BizEntityTypedImpl<ReturnAdjustmentTyp
 	 */
 	@Override
 	public void setCreatedDate(Date newCreatedDate) {
+		Date oldCreatedDate = createdDate;
 		createdDate = newCreatedDate;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ReturnPackage.RETURN_ADJUSTMENT__CREATED_DATE, oldCreatedDate, createdDate));
 	}
 
 	/**
@@ -748,7 +767,10 @@ public class ReturnAdjustmentImpl extends BizEntityTypedImpl<ReturnAdjustmentTyp
 	 */
 	@Override
 	public void setCustomerReferenceId(String newCustomerReferenceId) {
+		String oldCustomerReferenceId = customerReferenceId;
 		customerReferenceId = newCustomerReferenceId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ReturnPackage.RETURN_ADJUSTMENT__CUSTOMER_REFERENCE_ID, oldCustomerReferenceId, customerReferenceId));
 	}
 
 	/**
@@ -768,7 +790,10 @@ public class ReturnAdjustmentImpl extends BizEntityTypedImpl<ReturnAdjustmentTyp
 	 */
 	@Override
 	public void setDescription(String newDescription) {
+		String oldDescription = description;
 		description = newDescription;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ReturnPackage.RETURN_ADJUSTMENT__DESCRIPTION, oldDescription, description));
 	}
 
 	/**
@@ -788,7 +813,10 @@ public class ReturnAdjustmentImpl extends BizEntityTypedImpl<ReturnAdjustmentTyp
 	 */
 	@Override
 	public void setExemptAmount(BigDecimal newExemptAmount) {
+		BigDecimal oldExemptAmount = exemptAmount;
 		exemptAmount = newExemptAmount;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ReturnPackage.RETURN_ADJUSTMENT__EXEMPT_AMOUNT, oldExemptAmount, exemptAmount));
 	}
 
 	/**
@@ -808,7 +836,10 @@ public class ReturnAdjustmentImpl extends BizEntityTypedImpl<ReturnAdjustmentTyp
 	 */
 	@Override
 	public void setIncludeInShipping(boolean newIncludeInShipping) {
+		boolean oldIncludeInShipping = includeInShipping;
 		includeInShipping = newIncludeInShipping;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ReturnPackage.RETURN_ADJUSTMENT__INCLUDE_IN_SHIPPING, oldIncludeInShipping, includeInShipping));
 	}
 
 	/**
@@ -828,7 +859,10 @@ public class ReturnAdjustmentImpl extends BizEntityTypedImpl<ReturnAdjustmentTyp
 	 */
 	@Override
 	public void setIncludeInTax(boolean newIncludeInTax) {
+		boolean oldIncludeInTax = includeInTax;
 		includeInTax = newIncludeInTax;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ReturnPackage.RETURN_ADJUSTMENT__INCLUDE_IN_TAX, oldIncludeInTax, includeInTax));
 	}
 
 	/**
@@ -848,7 +882,10 @@ public class ReturnAdjustmentImpl extends BizEntityTypedImpl<ReturnAdjustmentTyp
 	 */
 	@Override
 	public void setLastModifiedByUserLogin(String newLastModifiedByUserLogin) {
+		String oldLastModifiedByUserLogin = lastModifiedByUserLogin;
 		lastModifiedByUserLogin = newLastModifiedByUserLogin;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ReturnPackage.RETURN_ADJUSTMENT__LAST_MODIFIED_BY_USER_LOGIN, oldLastModifiedByUserLogin, lastModifiedByUserLogin));
 	}
 
 	/**
@@ -868,7 +905,10 @@ public class ReturnAdjustmentImpl extends BizEntityTypedImpl<ReturnAdjustmentTyp
 	 */
 	@Override
 	public void setLastModifiedDate(Date newLastModifiedDate) {
+		Date oldLastModifiedDate = lastModifiedDate;
 		lastModifiedDate = newLastModifiedDate;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ReturnPackage.RETURN_ADJUSTMENT__LAST_MODIFIED_DATE, oldLastModifiedDate, lastModifiedDate));
 	}
 
 	/**
@@ -882,6 +922,8 @@ public class ReturnAdjustmentImpl extends BizEntityTypedImpl<ReturnAdjustmentTyp
 			InternalEObject oldOrderAdjustmentId = (InternalEObject)orderAdjustmentId;
 			orderAdjustmentId = (OrderAdjustment)eResolveProxy(oldOrderAdjustmentId);
 			if (orderAdjustmentId != oldOrderAdjustmentId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ReturnPackage.RETURN_ADJUSTMENT__ORDER_ADJUSTMENT_ID, oldOrderAdjustmentId, orderAdjustmentId));
 			}
 		}
 		return orderAdjustmentId;
@@ -903,7 +945,10 @@ public class ReturnAdjustmentImpl extends BizEntityTypedImpl<ReturnAdjustmentTyp
 	 */
 	@Override
 	public void setOrderAdjustmentId(OrderAdjustment newOrderAdjustmentId) {
+		OrderAdjustment oldOrderAdjustmentId = orderAdjustmentId;
 		orderAdjustmentId = newOrderAdjustmentId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ReturnPackage.RETURN_ADJUSTMENT__ORDER_ADJUSTMENT_ID, oldOrderAdjustmentId, orderAdjustmentId));
 	}
 
 	/**
@@ -917,6 +962,8 @@ public class ReturnAdjustmentImpl extends BizEntityTypedImpl<ReturnAdjustmentTyp
 			InternalEObject oldOverrideGlAccountId = (InternalEObject)overrideGlAccountId;
 			overrideGlAccountId = (GlAccount)eResolveProxy(oldOverrideGlAccountId);
 			if (overrideGlAccountId != oldOverrideGlAccountId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ReturnPackage.RETURN_ADJUSTMENT__OVERRIDE_GL_ACCOUNT_ID, oldOverrideGlAccountId, overrideGlAccountId));
 			}
 		}
 		return overrideGlAccountId;
@@ -938,7 +985,10 @@ public class ReturnAdjustmentImpl extends BizEntityTypedImpl<ReturnAdjustmentTyp
 	 */
 	@Override
 	public void setOverrideGlAccountId(GlAccount newOverrideGlAccountId) {
+		GlAccount oldOverrideGlAccountId = overrideGlAccountId;
 		overrideGlAccountId = newOverrideGlAccountId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ReturnPackage.RETURN_ADJUSTMENT__OVERRIDE_GL_ACCOUNT_ID, oldOverrideGlAccountId, overrideGlAccountId));
 	}
 
 	/**
@@ -952,6 +1002,8 @@ public class ReturnAdjustmentImpl extends BizEntityTypedImpl<ReturnAdjustmentTyp
 			InternalEObject oldPrimaryGeoId = (InternalEObject)primaryGeoId;
 			primaryGeoId = (Geo)eResolveProxy(oldPrimaryGeoId);
 			if (primaryGeoId != oldPrimaryGeoId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ReturnPackage.RETURN_ADJUSTMENT__PRIMARY_GEO_ID, oldPrimaryGeoId, primaryGeoId));
 			}
 		}
 		return primaryGeoId;
@@ -973,7 +1025,10 @@ public class ReturnAdjustmentImpl extends BizEntityTypedImpl<ReturnAdjustmentTyp
 	 */
 	@Override
 	public void setPrimaryGeoId(Geo newPrimaryGeoId) {
+		Geo oldPrimaryGeoId = primaryGeoId;
 		primaryGeoId = newPrimaryGeoId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ReturnPackage.RETURN_ADJUSTMENT__PRIMARY_GEO_ID, oldPrimaryGeoId, primaryGeoId));
 	}
 
 	/**
@@ -993,7 +1048,10 @@ public class ReturnAdjustmentImpl extends BizEntityTypedImpl<ReturnAdjustmentTyp
 	 */
 	@Override
 	public void setProductFeatureId(String newProductFeatureId) {
+		String oldProductFeatureId = productFeatureId;
 		productFeatureId = newProductFeatureId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ReturnPackage.RETURN_ADJUSTMENT__PRODUCT_FEATURE_ID, oldProductFeatureId, productFeatureId));
 	}
 
 	/**
@@ -1013,7 +1071,10 @@ public class ReturnAdjustmentImpl extends BizEntityTypedImpl<ReturnAdjustmentTyp
 	 */
 	@Override
 	public void setProductPromoActionSeqId(String newProductPromoActionSeqId) {
+		String oldProductPromoActionSeqId = productPromoActionSeqId;
 		productPromoActionSeqId = newProductPromoActionSeqId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ReturnPackage.RETURN_ADJUSTMENT__PRODUCT_PROMO_ACTION_SEQ_ID, oldProductPromoActionSeqId, productPromoActionSeqId));
 	}
 
 	/**
@@ -1027,6 +1088,8 @@ public class ReturnAdjustmentImpl extends BizEntityTypedImpl<ReturnAdjustmentTyp
 			InternalEObject oldProductPromoId = (InternalEObject)productPromoId;
 			productPromoId = (ProductPromo)eResolveProxy(oldProductPromoId);
 			if (productPromoId != oldProductPromoId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ReturnPackage.RETURN_ADJUSTMENT__PRODUCT_PROMO_ID, oldProductPromoId, productPromoId));
 			}
 		}
 		return productPromoId;
@@ -1048,7 +1111,10 @@ public class ReturnAdjustmentImpl extends BizEntityTypedImpl<ReturnAdjustmentTyp
 	 */
 	@Override
 	public void setProductPromoId(ProductPromo newProductPromoId) {
+		ProductPromo oldProductPromoId = productPromoId;
 		productPromoId = newProductPromoId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ReturnPackage.RETURN_ADJUSTMENT__PRODUCT_PROMO_ID, oldProductPromoId, productPromoId));
 	}
 
 	/**
@@ -1068,7 +1134,10 @@ public class ReturnAdjustmentImpl extends BizEntityTypedImpl<ReturnAdjustmentTyp
 	 */
 	@Override
 	public void setProductPromoRuleId(String newProductPromoRuleId) {
+		String oldProductPromoRuleId = productPromoRuleId;
 		productPromoRuleId = newProductPromoRuleId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ReturnPackage.RETURN_ADJUSTMENT__PRODUCT_PROMO_RULE_ID, oldProductPromoRuleId, productPromoRuleId));
 	}
 
 	/**
@@ -1088,7 +1157,10 @@ public class ReturnAdjustmentImpl extends BizEntityTypedImpl<ReturnAdjustmentTyp
 	 */
 	@Override
 	public void setReturnAdjustmentId(String newReturnAdjustmentId) {
+		String oldReturnAdjustmentId = returnAdjustmentId;
 		returnAdjustmentId = newReturnAdjustmentId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ReturnPackage.RETURN_ADJUSTMENT__RETURN_ADJUSTMENT_ID, oldReturnAdjustmentId, returnAdjustmentId));
 	}
 
 	/**
@@ -1102,6 +1174,8 @@ public class ReturnAdjustmentImpl extends BizEntityTypedImpl<ReturnAdjustmentTyp
 			InternalEObject oldReturnAdjustmentTypeId = (InternalEObject)returnAdjustmentTypeId;
 			returnAdjustmentTypeId = (ReturnAdjustmentType)eResolveProxy(oldReturnAdjustmentTypeId);
 			if (returnAdjustmentTypeId != oldReturnAdjustmentTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ReturnPackage.RETURN_ADJUSTMENT__RETURN_ADJUSTMENT_TYPE_ID, oldReturnAdjustmentTypeId, returnAdjustmentTypeId));
 			}
 		}
 		return returnAdjustmentTypeId;
@@ -1123,7 +1197,10 @@ public class ReturnAdjustmentImpl extends BizEntityTypedImpl<ReturnAdjustmentTyp
 	 */
 	@Override
 	public void setReturnAdjustmentTypeId(ReturnAdjustmentType newReturnAdjustmentTypeId) {
+		ReturnAdjustmentType oldReturnAdjustmentTypeId = returnAdjustmentTypeId;
 		returnAdjustmentTypeId = newReturnAdjustmentTypeId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ReturnPackage.RETURN_ADJUSTMENT__RETURN_ADJUSTMENT_TYPE_ID, oldReturnAdjustmentTypeId, returnAdjustmentTypeId));
 	}
 
 	/**
@@ -1137,6 +1214,8 @@ public class ReturnAdjustmentImpl extends BizEntityTypedImpl<ReturnAdjustmentTyp
 			InternalEObject oldReturnId = (InternalEObject)returnId;
 			returnId = (ReturnHeader)eResolveProxy(oldReturnId);
 			if (returnId != oldReturnId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ReturnPackage.RETURN_ADJUSTMENT__RETURN_ID, oldReturnId, returnId));
 			}
 		}
 		return returnId;
@@ -1158,7 +1237,10 @@ public class ReturnAdjustmentImpl extends BizEntityTypedImpl<ReturnAdjustmentTyp
 	 */
 	@Override
 	public void setReturnId(ReturnHeader newReturnId) {
+		ReturnHeader oldReturnId = returnId;
 		returnId = newReturnId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ReturnPackage.RETURN_ADJUSTMENT__RETURN_ID, oldReturnId, returnId));
 	}
 
 	/**
@@ -1178,7 +1260,10 @@ public class ReturnAdjustmentImpl extends BizEntityTypedImpl<ReturnAdjustmentTyp
 	 */
 	@Override
 	public void setReturnItemSeqId(String newReturnItemSeqId) {
+		String oldReturnItemSeqId = returnItemSeqId;
 		returnItemSeqId = newReturnItemSeqId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ReturnPackage.RETURN_ADJUSTMENT__RETURN_ITEM_SEQ_ID, oldReturnItemSeqId, returnItemSeqId));
 	}
 
 	/**
@@ -1192,6 +1277,8 @@ public class ReturnAdjustmentImpl extends BizEntityTypedImpl<ReturnAdjustmentTyp
 			InternalEObject oldReturnTypeId = (InternalEObject)returnTypeId;
 			returnTypeId = (ReturnType)eResolveProxy(oldReturnTypeId);
 			if (returnTypeId != oldReturnTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ReturnPackage.RETURN_ADJUSTMENT__RETURN_TYPE_ID, oldReturnTypeId, returnTypeId));
 			}
 		}
 		return returnTypeId;
@@ -1213,7 +1300,10 @@ public class ReturnAdjustmentImpl extends BizEntityTypedImpl<ReturnAdjustmentTyp
 	 */
 	@Override
 	public void setReturnTypeId(ReturnType newReturnTypeId) {
+		ReturnType oldReturnTypeId = returnTypeId;
 		returnTypeId = newReturnTypeId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ReturnPackage.RETURN_ADJUSTMENT__RETURN_TYPE_ID, oldReturnTypeId, returnTypeId));
 	}
 
 	/**
@@ -1227,6 +1317,8 @@ public class ReturnAdjustmentImpl extends BizEntityTypedImpl<ReturnAdjustmentTyp
 			InternalEObject oldSecondaryGeoId = (InternalEObject)secondaryGeoId;
 			secondaryGeoId = (Geo)eResolveProxy(oldSecondaryGeoId);
 			if (secondaryGeoId != oldSecondaryGeoId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ReturnPackage.RETURN_ADJUSTMENT__SECONDARY_GEO_ID, oldSecondaryGeoId, secondaryGeoId));
 			}
 		}
 		return secondaryGeoId;
@@ -1248,7 +1340,10 @@ public class ReturnAdjustmentImpl extends BizEntityTypedImpl<ReturnAdjustmentTyp
 	 */
 	@Override
 	public void setSecondaryGeoId(Geo newSecondaryGeoId) {
+		Geo oldSecondaryGeoId = secondaryGeoId;
 		secondaryGeoId = newSecondaryGeoId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ReturnPackage.RETURN_ADJUSTMENT__SECONDARY_GEO_ID, oldSecondaryGeoId, secondaryGeoId));
 	}
 
 	/**
@@ -1268,7 +1363,10 @@ public class ReturnAdjustmentImpl extends BizEntityTypedImpl<ReturnAdjustmentTyp
 	 */
 	@Override
 	public void setShipGroupSeqId(String newShipGroupSeqId) {
+		String oldShipGroupSeqId = shipGroupSeqId;
 		shipGroupSeqId = newShipGroupSeqId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ReturnPackage.RETURN_ADJUSTMENT__SHIP_GROUP_SEQ_ID, oldShipGroupSeqId, shipGroupSeqId));
 	}
 
 	/**
@@ -1288,7 +1386,10 @@ public class ReturnAdjustmentImpl extends BizEntityTypedImpl<ReturnAdjustmentTyp
 	 */
 	@Override
 	public void setSourcePercentage(BigDecimal newSourcePercentage) {
+		BigDecimal oldSourcePercentage = sourcePercentage;
 		sourcePercentage = newSourcePercentage;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ReturnPackage.RETURN_ADJUSTMENT__SOURCE_PERCENTAGE, oldSourcePercentage, sourcePercentage));
 	}
 
 	/**
@@ -1308,7 +1409,10 @@ public class ReturnAdjustmentImpl extends BizEntityTypedImpl<ReturnAdjustmentTyp
 	 */
 	@Override
 	public void setSourceReferenceId(String newSourceReferenceId) {
+		String oldSourceReferenceId = sourceReferenceId;
 		sourceReferenceId = newSourceReferenceId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ReturnPackage.RETURN_ADJUSTMENT__SOURCE_REFERENCE_ID, oldSourceReferenceId, sourceReferenceId));
 	}
 
 	/**
@@ -1328,7 +1432,10 @@ public class ReturnAdjustmentImpl extends BizEntityTypedImpl<ReturnAdjustmentTyp
 	 */
 	@Override
 	public void setTaxAuthGeoId(String newTaxAuthGeoId) {
+		String oldTaxAuthGeoId = taxAuthGeoId;
 		taxAuthGeoId = newTaxAuthGeoId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ReturnPackage.RETURN_ADJUSTMENT__TAX_AUTH_GEO_ID, oldTaxAuthGeoId, taxAuthGeoId));
 	}
 
 	/**
@@ -1348,7 +1455,10 @@ public class ReturnAdjustmentImpl extends BizEntityTypedImpl<ReturnAdjustmentTyp
 	 */
 	@Override
 	public void setTaxAuthPartyId(String newTaxAuthPartyId) {
+		String oldTaxAuthPartyId = taxAuthPartyId;
 		taxAuthPartyId = newTaxAuthPartyId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ReturnPackage.RETURN_ADJUSTMENT__TAX_AUTH_PARTY_ID, oldTaxAuthPartyId, taxAuthPartyId));
 	}
 
 	/**
@@ -1362,6 +1472,8 @@ public class ReturnAdjustmentImpl extends BizEntityTypedImpl<ReturnAdjustmentTyp
 			InternalEObject oldTaxAuthorityRateSeqId = (InternalEObject)taxAuthorityRateSeqId;
 			taxAuthorityRateSeqId = (TaxAuthorityRateProduct)eResolveProxy(oldTaxAuthorityRateSeqId);
 			if (taxAuthorityRateSeqId != oldTaxAuthorityRateSeqId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ReturnPackage.RETURN_ADJUSTMENT__TAX_AUTHORITY_RATE_SEQ_ID, oldTaxAuthorityRateSeqId, taxAuthorityRateSeqId));
 			}
 		}
 		return taxAuthorityRateSeqId;
@@ -1383,7 +1495,10 @@ public class ReturnAdjustmentImpl extends BizEntityTypedImpl<ReturnAdjustmentTyp
 	 */
 	@Override
 	public void setTaxAuthorityRateSeqId(TaxAuthorityRateProduct newTaxAuthorityRateSeqId) {
+		TaxAuthorityRateProduct oldTaxAuthorityRateSeqId = taxAuthorityRateSeqId;
 		taxAuthorityRateSeqId = newTaxAuthorityRateSeqId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ReturnPackage.RETURN_ADJUSTMENT__TAX_AUTHORITY_RATE_SEQ_ID, oldTaxAuthorityRateSeqId, taxAuthorityRateSeqId));
 	}
 
 	/**

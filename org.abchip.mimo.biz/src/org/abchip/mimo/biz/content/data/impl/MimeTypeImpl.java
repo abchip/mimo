@@ -12,7 +12,9 @@ import java.util.List;
 import org.abchip.mimo.biz.content.data.DataPackage;
 import org.abchip.mimo.biz.content.data.MimeType;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -110,7 +112,10 @@ public class MimeTypeImpl extends BizEntityImpl implements MimeType {
 	 */
 	@Override
 	public void setDescription(String newDescription) {
+		String oldDescription = description;
 		description = newDescription;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, DataPackage.MIME_TYPE__DESCRIPTION, oldDescription, description));
 	}
 
 	/**
@@ -178,7 +183,10 @@ public class MimeTypeImpl extends BizEntityImpl implements MimeType {
 	 */
 	@Override
 	public void setMimeTypeId(String newMimeTypeId) {
+		String oldMimeTypeId = mimeTypeId;
 		mimeTypeId = newMimeTypeId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, DataPackage.MIME_TYPE__MIME_TYPE_ID, oldMimeTypeId, mimeTypeId));
 	}
 
 	/**

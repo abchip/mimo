@@ -13,7 +13,9 @@ import org.abchip.mimo.biz.content.content.ContentPackage;
 import org.abchip.mimo.biz.content.content.ContentPurpose;
 import org.abchip.mimo.biz.content.content.ContentPurposeType;
 import org.abchip.mimo.biz.impl.BizEntityTypeImpl;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -111,7 +113,10 @@ public class ContentPurposeTypeImpl extends BizEntityTypeImpl<ContentPurpose> im
 	 */
 	@Override
 	public void setContentPurposeTypeId(String newContentPurposeTypeId) {
+		String oldContentPurposeTypeId = contentPurposeTypeId;
 		contentPurposeTypeId = newContentPurposeTypeId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ContentPackage.CONTENT_PURPOSE_TYPE__CONTENT_PURPOSE_TYPE_ID, oldContentPurposeTypeId, contentPurposeTypeId));
 	}
 
 	/**
@@ -131,7 +136,10 @@ public class ContentPurposeTypeImpl extends BizEntityTypeImpl<ContentPurpose> im
 	 */
 	@Override
 	public void setDescription(String newDescription) {
+		String oldDescription = description;
 		description = newDescription;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ContentPackage.CONTENT_PURPOSE_TYPE__DESCRIPTION, oldDescription, description));
 	}
 
 	/**

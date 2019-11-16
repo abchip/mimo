@@ -8,11 +8,8 @@ import org.abchip.mimo.entity.impl.EntityImpl;
 import org.abchip.mimo.ui.UIPackage;
 import org.abchip.mimo.ui.View;
 import org.abchip.mimo.ui.ViewType;
-
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**

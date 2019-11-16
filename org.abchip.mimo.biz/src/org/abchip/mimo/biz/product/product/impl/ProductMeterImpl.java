@@ -13,9 +13,11 @@ import org.abchip.mimo.biz.product.product.Product;
 import org.abchip.mimo.biz.product.product.ProductMeter;
 import org.abchip.mimo.biz.product.product.ProductMeterType;
 import org.abchip.mimo.biz.product.product.ProductPackage;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -125,7 +127,10 @@ public class ProductMeterImpl extends BizEntityTypedImpl<ProductMeterType> imple
 	 */
 	@Override
 	public void setMeterName(String newMeterName) {
+		String oldMeterName = meterName;
 		meterName = newMeterName;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ProductPackage.PRODUCT_METER__METER_NAME, oldMeterName, meterName));
 	}
 
 	/**
@@ -139,6 +144,8 @@ public class ProductMeterImpl extends BizEntityTypedImpl<ProductMeterType> imple
 			InternalEObject oldMeterUomId = (InternalEObject)meterUomId;
 			meterUomId = (Uom)eResolveProxy(oldMeterUomId);
 			if (meterUomId != oldMeterUomId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ProductPackage.PRODUCT_METER__METER_UOM_ID, oldMeterUomId, meterUomId));
 			}
 		}
 		return meterUomId;
@@ -160,7 +167,10 @@ public class ProductMeterImpl extends BizEntityTypedImpl<ProductMeterType> imple
 	 */
 	@Override
 	public void setMeterUomId(Uom newMeterUomId) {
+		Uom oldMeterUomId = meterUomId;
 		meterUomId = newMeterUomId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ProductPackage.PRODUCT_METER__METER_UOM_ID, oldMeterUomId, meterUomId));
 	}
 
 	/**
@@ -174,6 +184,8 @@ public class ProductMeterImpl extends BizEntityTypedImpl<ProductMeterType> imple
 			InternalEObject oldProductId = (InternalEObject)productId;
 			productId = (Product)eResolveProxy(oldProductId);
 			if (productId != oldProductId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ProductPackage.PRODUCT_METER__PRODUCT_ID, oldProductId, productId));
 			}
 		}
 		return productId;
@@ -195,7 +207,10 @@ public class ProductMeterImpl extends BizEntityTypedImpl<ProductMeterType> imple
 	 */
 	@Override
 	public void setProductId(Product newProductId) {
+		Product oldProductId = productId;
 		productId = newProductId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ProductPackage.PRODUCT_METER__PRODUCT_ID, oldProductId, productId));
 	}
 
 	/**
@@ -209,6 +224,8 @@ public class ProductMeterImpl extends BizEntityTypedImpl<ProductMeterType> imple
 			InternalEObject oldProductMeterTypeId = (InternalEObject)productMeterTypeId;
 			productMeterTypeId = (ProductMeterType)eResolveProxy(oldProductMeterTypeId);
 			if (productMeterTypeId != oldProductMeterTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ProductPackage.PRODUCT_METER__PRODUCT_METER_TYPE_ID, oldProductMeterTypeId, productMeterTypeId));
 			}
 		}
 		return productMeterTypeId;
@@ -230,7 +247,10 @@ public class ProductMeterImpl extends BizEntityTypedImpl<ProductMeterType> imple
 	 */
 	@Override
 	public void setProductMeterTypeId(ProductMeterType newProductMeterTypeId) {
+		ProductMeterType oldProductMeterTypeId = productMeterTypeId;
 		productMeterTypeId = newProductMeterTypeId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ProductPackage.PRODUCT_METER__PRODUCT_METER_TYPE_ID, oldProductMeterTypeId, productMeterTypeId));
 	}
 
 	/**

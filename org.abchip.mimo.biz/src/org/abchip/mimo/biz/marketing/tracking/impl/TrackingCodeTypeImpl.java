@@ -13,7 +13,9 @@ import org.abchip.mimo.biz.impl.BizEntityTypeImpl;
 import org.abchip.mimo.biz.marketing.tracking.TrackingCode;
 import org.abchip.mimo.biz.marketing.tracking.TrackingCodeType;
 import org.abchip.mimo.biz.marketing.tracking.TrackingPackage;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -111,7 +113,10 @@ public class TrackingCodeTypeImpl extends BizEntityTypeImpl<TrackingCode> implem
 	 */
 	@Override
 	public void setDescription(String newDescription) {
+		String oldDescription = description;
 		description = newDescription;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, TrackingPackage.TRACKING_CODE_TYPE__DESCRIPTION, oldDescription, description));
 	}
 
 	/**
@@ -155,7 +160,10 @@ public class TrackingCodeTypeImpl extends BizEntityTypeImpl<TrackingCode> implem
 	 */
 	@Override
 	public void setTrackingCodeTypeId(String newTrackingCodeTypeId) {
+		String oldTrackingCodeTypeId = trackingCodeTypeId;
 		trackingCodeTypeId = newTrackingCodeTypeId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, TrackingPackage.TRACKING_CODE_TYPE__TRACKING_CODE_TYPE_ID, oldTrackingCodeTypeId, trackingCodeTypeId));
 	}
 
 	/**

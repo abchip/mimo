@@ -20,12 +20,14 @@ import org.abchip.mimo.application.ServiceHook;
 import org.abchip.mimo.context.ContextDescription;
 import org.abchip.mimo.context.ContextRoot;
 import org.abchip.mimo.entity.impl.EntityNameableImpl;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.util.BasicInternalEList;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
@@ -189,7 +191,7 @@ public class ApplicationImpl extends EntityNameableImpl implements Application {
 	@Override
 	public List<ServiceCommandProvider> getCommands() {
 		if (commands == null) {
-			commands = new BasicInternalEList<ServiceCommandProvider>(ServiceCommandProvider.class);
+			commands = new EObjectContainmentEList.Resolving<ServiceCommandProvider>(ServiceCommandProvider.class, this, ApplicationPackage.APPLICATION__COMMANDS);
 		}
 		return commands;
 	}
@@ -202,7 +204,7 @@ public class ApplicationImpl extends EntityNameableImpl implements Application {
 	@Override
 	public List<ApplicationComponent> getComponents() {
 		if (components == null) {
-			components = new BasicInternalEList<ApplicationComponent>(ApplicationComponent.class);
+			components = new EObjectContainmentEList.Resolving<ApplicationComponent>(ApplicationComponent.class, this, ApplicationPackage.APPLICATION__COMPONENTS);
 		}
 		return components;
 	}
@@ -224,6 +226,8 @@ public class ApplicationImpl extends EntityNameableImpl implements Application {
 					msgs = newConfig.eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ApplicationPackage.APPLICATION__CONFIG, null, msgs);
 				}
 				if (msgs != null) msgs.dispatch();
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ApplicationPackage.APPLICATION__CONFIG, oldConfig, config));
 			}
 		}
 		return config;
@@ -244,7 +248,12 @@ public class ApplicationImpl extends EntityNameableImpl implements Application {
 	 * @generated
 	 */
 	public NotificationChain basicSetConfig(ServiceConfig newConfig, NotificationChain msgs) {
+		ServiceConfig oldConfig = config;
 		config = newConfig;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ApplicationPackage.APPLICATION__CONFIG, oldConfig, newConfig);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
 		return msgs;
 	}
 
@@ -264,6 +273,8 @@ public class ApplicationImpl extends EntityNameableImpl implements Application {
 			msgs = basicSetConfig(newConfig, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ApplicationPackage.APPLICATION__CONFIG, newConfig, newConfig));
 	}
 
 	/**
@@ -274,7 +285,7 @@ public class ApplicationImpl extends EntityNameableImpl implements Application {
 	@Override
 	public List<ServiceHook> getHooks() {
 		if (hooks == null) {
-			hooks = new BasicInternalEList<ServiceHook>(ServiceHook.class);
+			hooks = new EObjectContainmentEList.Resolving<ServiceHook>(ServiceHook.class, this, ApplicationPackage.APPLICATION__HOOKS);
 		}
 		return hooks;
 	}
@@ -296,7 +307,10 @@ public class ApplicationImpl extends EntityNameableImpl implements Application {
 	 */
 	@Override
 	public void setName(String newName) {
+		String oldName = name;
 		name = newName;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ApplicationPackage.APPLICATION__NAME, oldName, name));
 	}
 
 	/**
@@ -316,7 +330,10 @@ public class ApplicationImpl extends EntityNameableImpl implements Application {
 	 */
 	@Override
 	public void setPort(int newPort) {
+		int oldPort = port;
 		port = newPort;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ApplicationPackage.APPLICATION__PORT, oldPort, port));
 	}
 
 	/**
@@ -336,7 +353,10 @@ public class ApplicationImpl extends EntityNameableImpl implements Application {
 	 */
 	@Override
 	public void setText(String newText) {
+		String oldText = text;
 		text = newText;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ApplicationPackage.APPLICATION__TEXT, oldText, text));
 	}
 
 
@@ -546,6 +566,8 @@ public class ApplicationImpl extends EntityNameableImpl implements Application {
 					msgs = newContext.eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ApplicationPackage.APPLICATION__CONTEXT, null, msgs);
 				}
 				if (msgs != null) msgs.dispatch();
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ApplicationPackage.APPLICATION__CONTEXT, oldContext, context));
 			}
 		}
 		return context;
@@ -566,7 +588,12 @@ public class ApplicationImpl extends EntityNameableImpl implements Application {
 	 * @generated
 	 */
 	public NotificationChain basicSetContext(ContextRoot newContext, NotificationChain msgs) {
+		ContextRoot oldContext = context;
 		context = newContext;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ApplicationPackage.APPLICATION__CONTEXT, oldContext, newContext);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
 		return msgs;
 	}
 
@@ -586,6 +613,8 @@ public class ApplicationImpl extends EntityNameableImpl implements Application {
 			msgs = basicSetContext(newContext, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ApplicationPackage.APPLICATION__CONTEXT, newContext, newContext));
 	}
 
 	/**
@@ -605,6 +634,8 @@ public class ApplicationImpl extends EntityNameableImpl implements Application {
 					msgs = newContextDescription.eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ApplicationPackage.APPLICATION__CONTEXT_DESCRIPTION, null, msgs);
 				}
 				if (msgs != null) msgs.dispatch();
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ApplicationPackage.APPLICATION__CONTEXT_DESCRIPTION, oldContextDescription, contextDescription));
 			}
 		}
 		return contextDescription;
@@ -625,7 +656,12 @@ public class ApplicationImpl extends EntityNameableImpl implements Application {
 	 * @generated
 	 */
 	public NotificationChain basicSetContextDescription(ContextDescription newContextDescription, NotificationChain msgs) {
+		ContextDescription oldContextDescription = contextDescription;
 		contextDescription = newContextDescription;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ApplicationPackage.APPLICATION__CONTEXT_DESCRIPTION, oldContextDescription, newContextDescription);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
 		return msgs;
 	}
 
@@ -645,6 +681,8 @@ public class ApplicationImpl extends EntityNameableImpl implements Application {
 			msgs = basicSetContextDescription(newContextDescription, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ApplicationPackage.APPLICATION__CONTEXT_DESCRIPTION, newContextDescription, newContextDescription));
 	}
 
 } //ApplicationImpl

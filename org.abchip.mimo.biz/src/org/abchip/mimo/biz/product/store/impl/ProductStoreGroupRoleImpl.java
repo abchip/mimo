@@ -13,9 +13,11 @@ import org.abchip.mimo.biz.party.party.RoleType;
 import org.abchip.mimo.biz.product.store.ProductStoreGroup;
 import org.abchip.mimo.biz.product.store.ProductStoreGroupRole;
 import org.abchip.mimo.biz.product.store.StorePackage;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -98,6 +100,8 @@ public class ProductStoreGroupRoleImpl extends BizEntityImpl implements ProductS
 			InternalEObject oldPartyId = (InternalEObject)partyId;
 			partyId = (Party)eResolveProxy(oldPartyId);
 			if (partyId != oldPartyId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, StorePackage.PRODUCT_STORE_GROUP_ROLE__PARTY_ID, oldPartyId, partyId));
 			}
 		}
 		return partyId;
@@ -119,7 +123,10 @@ public class ProductStoreGroupRoleImpl extends BizEntityImpl implements ProductS
 	 */
 	@Override
 	public void setPartyId(Party newPartyId) {
+		Party oldPartyId = partyId;
 		partyId = newPartyId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, StorePackage.PRODUCT_STORE_GROUP_ROLE__PARTY_ID, oldPartyId, partyId));
 	}
 
 	/**
@@ -133,6 +140,8 @@ public class ProductStoreGroupRoleImpl extends BizEntityImpl implements ProductS
 			InternalEObject oldRoleTypeId = (InternalEObject)roleTypeId;
 			roleTypeId = (RoleType)eResolveProxy(oldRoleTypeId);
 			if (roleTypeId != oldRoleTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, StorePackage.PRODUCT_STORE_GROUP_ROLE__ROLE_TYPE_ID, oldRoleTypeId, roleTypeId));
 			}
 		}
 		return roleTypeId;
@@ -154,7 +163,10 @@ public class ProductStoreGroupRoleImpl extends BizEntityImpl implements ProductS
 	 */
 	@Override
 	public void setRoleTypeId(RoleType newRoleTypeId) {
+		RoleType oldRoleTypeId = roleTypeId;
 		roleTypeId = newRoleTypeId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, StorePackage.PRODUCT_STORE_GROUP_ROLE__ROLE_TYPE_ID, oldRoleTypeId, roleTypeId));
 	}
 
 	/**
@@ -168,6 +180,8 @@ public class ProductStoreGroupRoleImpl extends BizEntityImpl implements ProductS
 			InternalEObject oldProductStoreGroupId = (InternalEObject)productStoreGroupId;
 			productStoreGroupId = (ProductStoreGroup)eResolveProxy(oldProductStoreGroupId);
 			if (productStoreGroupId != oldProductStoreGroupId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, StorePackage.PRODUCT_STORE_GROUP_ROLE__PRODUCT_STORE_GROUP_ID, oldProductStoreGroupId, productStoreGroupId));
 			}
 		}
 		return productStoreGroupId;
@@ -189,7 +203,10 @@ public class ProductStoreGroupRoleImpl extends BizEntityImpl implements ProductS
 	 */
 	@Override
 	public void setProductStoreGroupId(ProductStoreGroup newProductStoreGroupId) {
+		ProductStoreGroup oldProductStoreGroupId = productStoreGroupId;
 		productStoreGroupId = newProductStoreGroupId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, StorePackage.PRODUCT_STORE_GROUP_ROLE__PRODUCT_STORE_GROUP_ID, oldProductStoreGroupId, productStoreGroupId));
 	}
 
 	/**

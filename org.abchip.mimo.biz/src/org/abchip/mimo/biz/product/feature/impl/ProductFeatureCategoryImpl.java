@@ -12,9 +12,11 @@ import java.util.List;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.product.feature.FeaturePackage;
 import org.abchip.mimo.biz.product.feature.ProductFeatureCategory;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -123,7 +125,10 @@ public class ProductFeatureCategoryImpl extends BizEntityImpl implements Product
 	 */
 	@Override
 	public void setDescription(String newDescription) {
+		String oldDescription = description;
 		description = newDescription;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, FeaturePackage.PRODUCT_FEATURE_CATEGORY__DESCRIPTION, oldDescription, description));
 	}
 
 	/**
@@ -137,6 +142,8 @@ public class ProductFeatureCategoryImpl extends BizEntityImpl implements Product
 			InternalEObject oldParentCategoryId = (InternalEObject)parentCategoryId;
 			parentCategoryId = (ProductFeatureCategory)eResolveProxy(oldParentCategoryId);
 			if (parentCategoryId != oldParentCategoryId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, FeaturePackage.PRODUCT_FEATURE_CATEGORY__PARENT_CATEGORY_ID, oldParentCategoryId, parentCategoryId));
 			}
 		}
 		return parentCategoryId;
@@ -158,7 +165,10 @@ public class ProductFeatureCategoryImpl extends BizEntityImpl implements Product
 	 */
 	@Override
 	public void setParentCategoryId(ProductFeatureCategory newParentCategoryId) {
+		ProductFeatureCategory oldParentCategoryId = parentCategoryId;
 		parentCategoryId = newParentCategoryId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, FeaturePackage.PRODUCT_FEATURE_CATEGORY__PARENT_CATEGORY_ID, oldParentCategoryId, parentCategoryId));
 	}
 
 	/**
@@ -202,7 +212,10 @@ public class ProductFeatureCategoryImpl extends BizEntityImpl implements Product
 	 */
 	@Override
 	public void setProductFeatureCategoryId(String newProductFeatureCategoryId) {
+		String oldProductFeatureCategoryId = productFeatureCategoryId;
 		productFeatureCategoryId = newProductFeatureCategoryId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, FeaturePackage.PRODUCT_FEATURE_CATEGORY__PRODUCT_FEATURE_CATEGORY_ID, oldProductFeatureCategoryId, productFeatureCategoryId));
 	}
 
 	/**

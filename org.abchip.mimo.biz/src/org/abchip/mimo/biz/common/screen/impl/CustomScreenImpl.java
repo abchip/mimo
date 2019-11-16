@@ -11,10 +11,12 @@ import org.abchip.mimo.biz.common.screen.CustomScreen;
 import org.abchip.mimo.biz.common.screen.CustomScreenType;
 import org.abchip.mimo.biz.common.screen.ScreenPackage;
 import org.abchip.mimo.biz.impl.BizEntityTypedImpl;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -165,7 +167,10 @@ public class CustomScreenImpl extends BizEntityTypedImpl<CustomScreenType> imple
 	 */
 	@Override
 	public void setCustomScreenId(String newCustomScreenId) {
+		String oldCustomScreenId = customScreenId;
 		customScreenId = newCustomScreenId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ScreenPackage.CUSTOM_SCREEN__CUSTOM_SCREEN_ID, oldCustomScreenId, customScreenId));
 	}
 
 	/**
@@ -185,7 +190,10 @@ public class CustomScreenImpl extends BizEntityTypedImpl<CustomScreenType> imple
 	 */
 	@Override
 	public void setCustomScreenLocation(String newCustomScreenLocation) {
+		String oldCustomScreenLocation = customScreenLocation;
 		customScreenLocation = newCustomScreenLocation;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ScreenPackage.CUSTOM_SCREEN__CUSTOM_SCREEN_LOCATION, oldCustomScreenLocation, customScreenLocation));
 	}
 
 	/**
@@ -205,7 +213,10 @@ public class CustomScreenImpl extends BizEntityTypedImpl<CustomScreenType> imple
 	 */
 	@Override
 	public void setCustomScreenName(String newCustomScreenName) {
+		String oldCustomScreenName = customScreenName;
 		customScreenName = newCustomScreenName;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ScreenPackage.CUSTOM_SCREEN__CUSTOM_SCREEN_NAME, oldCustomScreenName, customScreenName));
 	}
 
 	/**
@@ -219,6 +230,8 @@ public class CustomScreenImpl extends BizEntityTypedImpl<CustomScreenType> imple
 			InternalEObject oldCustomScreenTypeId = (InternalEObject)customScreenTypeId;
 			customScreenTypeId = (CustomScreenType)eResolveProxy(oldCustomScreenTypeId);
 			if (customScreenTypeId != oldCustomScreenTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ScreenPackage.CUSTOM_SCREEN__CUSTOM_SCREEN_TYPE_ID, oldCustomScreenTypeId, customScreenTypeId));
 			}
 		}
 		return customScreenTypeId;
@@ -240,7 +253,10 @@ public class CustomScreenImpl extends BizEntityTypedImpl<CustomScreenType> imple
 	 */
 	@Override
 	public void setCustomScreenTypeId(CustomScreenType newCustomScreenTypeId) {
+		CustomScreenType oldCustomScreenTypeId = customScreenTypeId;
 		customScreenTypeId = newCustomScreenTypeId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ScreenPackage.CUSTOM_SCREEN__CUSTOM_SCREEN_TYPE_ID, oldCustomScreenTypeId, customScreenTypeId));
 	}
 
 	/**
@@ -260,7 +276,10 @@ public class CustomScreenImpl extends BizEntityTypedImpl<CustomScreenType> imple
 	 */
 	@Override
 	public void setDescription(String newDescription) {
+		String oldDescription = description;
 		description = newDescription;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ScreenPackage.CUSTOM_SCREEN__DESCRIPTION, oldDescription, description));
 	}
 
 	/**

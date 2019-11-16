@@ -14,12 +14,14 @@ import org.abchip.mimo.biz.content.data.DataPackage;
 import org.abchip.mimo.biz.content.data.DataResource;
 import org.abchip.mimo.biz.content.data.DataResourceType;
 import org.abchip.mimo.biz.impl.BizEntityTypeImpl;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.util.BasicInternalEList;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -160,7 +162,10 @@ public class DataResourceTypeImpl extends BizEntityTypeImpl<DataResource> implem
 	 */
 	@Override
 	public void setDataResourceTypeId(String newDataResourceTypeId) {
+		String oldDataResourceTypeId = dataResourceTypeId;
 		dataResourceTypeId = newDataResourceTypeId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, DataPackage.DATA_RESOURCE_TYPE__DATA_RESOURCE_TYPE_ID, oldDataResourceTypeId, dataResourceTypeId));
 	}
 
 	/**
@@ -180,7 +185,10 @@ public class DataResourceTypeImpl extends BizEntityTypeImpl<DataResource> implem
 	 */
 	@Override
 	public void setDescription(String newDescription) {
+		String oldDescription = description;
 		description = newDescription;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, DataPackage.DATA_RESOURCE_TYPE__DESCRIPTION, oldDescription, description));
 	}
 
 	/**
@@ -200,7 +208,10 @@ public class DataResourceTypeImpl extends BizEntityTypeImpl<DataResource> implem
 	 */
 	@Override
 	public void setHasTable(boolean newHasTable) {
+		boolean oldHasTable = hasTable;
 		hasTable = newHasTable;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, DataPackage.DATA_RESOURCE_TYPE__HAS_TABLE, oldHasTable, hasTable));
 	}
 
 	/**
@@ -214,6 +225,8 @@ public class DataResourceTypeImpl extends BizEntityTypeImpl<DataResource> implem
 			InternalEObject oldParentTypeId = (InternalEObject)parentTypeId;
 			parentTypeId = (DataResourceType)eResolveProxy(oldParentTypeId);
 			if (parentTypeId != oldParentTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, DataPackage.DATA_RESOURCE_TYPE__PARENT_TYPE_ID, oldParentTypeId, parentTypeId));
 			}
 		}
 		return parentTypeId;
@@ -235,7 +248,10 @@ public class DataResourceTypeImpl extends BizEntityTypeImpl<DataResource> implem
 	 */
 	@Override
 	public void setParentTypeId(DataResourceType newParentTypeId) {
+		DataResourceType oldParentTypeId = parentTypeId;
 		parentTypeId = newParentTypeId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, DataPackage.DATA_RESOURCE_TYPE__PARENT_TYPE_ID, oldParentTypeId, parentTypeId));
 	}
 
 	/**
@@ -246,7 +262,7 @@ public class DataResourceTypeImpl extends BizEntityTypeImpl<DataResource> implem
 	@Override
 	public List<String> getDataResourceTypeAttrs() {
 		if (dataResourceTypeAttrs == null) {
-			dataResourceTypeAttrs = new BasicInternalEList<String>(String.class);
+			dataResourceTypeAttrs = new EDataTypeUniqueEList<String>(String.class, this, DataPackage.DATA_RESOURCE_TYPE__DATA_RESOURCE_TYPE_ATTRS);
 		}
 		return dataResourceTypeAttrs;
 	}

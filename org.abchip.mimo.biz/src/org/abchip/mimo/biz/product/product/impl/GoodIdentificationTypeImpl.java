@@ -14,11 +14,13 @@ import org.abchip.mimo.biz.impl.BizEntityTypeImpl;
 import org.abchip.mimo.biz.product.product.GoodIdentification;
 import org.abchip.mimo.biz.product.product.GoodIdentificationType;
 import org.abchip.mimo.biz.product.product.ProductPackage;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.util.BasicInternalEList;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -159,7 +161,10 @@ public class GoodIdentificationTypeImpl extends BizEntityTypeImpl<GoodIdentifica
 	 */
 	@Override
 	public void setDescription(String newDescription) {
+		String oldDescription = description;
 		description = newDescription;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ProductPackage.GOOD_IDENTIFICATION_TYPE__DESCRIPTION, oldDescription, description));
 	}
 
 	/**
@@ -179,7 +184,10 @@ public class GoodIdentificationTypeImpl extends BizEntityTypeImpl<GoodIdentifica
 	 */
 	@Override
 	public void setHasTable(boolean newHasTable) {
+		boolean oldHasTable = hasTable;
 		hasTable = newHasTable;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ProductPackage.GOOD_IDENTIFICATION_TYPE__HAS_TABLE, oldHasTable, hasTable));
 	}
 
 	/**
@@ -193,6 +201,8 @@ public class GoodIdentificationTypeImpl extends BizEntityTypeImpl<GoodIdentifica
 			InternalEObject oldParentTypeId = (InternalEObject)parentTypeId;
 			parentTypeId = (GoodIdentificationType)eResolveProxy(oldParentTypeId);
 			if (parentTypeId != oldParentTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ProductPackage.GOOD_IDENTIFICATION_TYPE__PARENT_TYPE_ID, oldParentTypeId, parentTypeId));
 			}
 		}
 		return parentTypeId;
@@ -214,7 +224,10 @@ public class GoodIdentificationTypeImpl extends BizEntityTypeImpl<GoodIdentifica
 	 */
 	@Override
 	public void setParentTypeId(GoodIdentificationType newParentTypeId) {
+		GoodIdentificationType oldParentTypeId = parentTypeId;
 		parentTypeId = newParentTypeId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ProductPackage.GOOD_IDENTIFICATION_TYPE__PARENT_TYPE_ID, oldParentTypeId, parentTypeId));
 	}
 
 	/**
@@ -225,7 +238,7 @@ public class GoodIdentificationTypeImpl extends BizEntityTypeImpl<GoodIdentifica
 	@Override
 	public List<String> getGoodIdentifications() {
 		if (goodIdentifications == null) {
-			goodIdentifications = new BasicInternalEList<String>(String.class);
+			goodIdentifications = new EDataTypeUniqueEList<String>(String.class, this, ProductPackage.GOOD_IDENTIFICATION_TYPE__GOOD_IDENTIFICATIONS);
 		}
 		return goodIdentifications;
 	}
@@ -259,7 +272,10 @@ public class GoodIdentificationTypeImpl extends BizEntityTypeImpl<GoodIdentifica
 	 */
 	@Override
 	public void setGoodIdentificationTypeId(String newGoodIdentificationTypeId) {
+		String oldGoodIdentificationTypeId = goodIdentificationTypeId;
 		goodIdentificationTypeId = newGoodIdentificationTypeId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ProductPackage.GOOD_IDENTIFICATION_TYPE__GOOD_IDENTIFICATION_TYPE_ID, oldGoodIdentificationTypeId, goodIdentificationTypeId));
 	}
 
 	/**

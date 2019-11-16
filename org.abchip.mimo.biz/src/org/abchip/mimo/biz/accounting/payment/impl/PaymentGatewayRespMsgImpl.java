@@ -11,9 +11,11 @@ import org.abchip.mimo.biz.accounting.payment.PaymentGatewayRespMsg;
 import org.abchip.mimo.biz.accounting.payment.PaymentGatewayResponse;
 import org.abchip.mimo.biz.accounting.payment.PaymentPackage;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -119,7 +121,10 @@ public class PaymentGatewayRespMsgImpl extends BizEntityImpl implements PaymentG
 	 */
 	@Override
 	public void setPaymentGatewayRespMsgId(String newPaymentGatewayRespMsgId) {
+		String oldPaymentGatewayRespMsgId = paymentGatewayRespMsgId;
 		paymentGatewayRespMsgId = newPaymentGatewayRespMsgId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.PAYMENT_GATEWAY_RESP_MSG__PAYMENT_GATEWAY_RESP_MSG_ID, oldPaymentGatewayRespMsgId, paymentGatewayRespMsgId));
 	}
 
 	/**
@@ -139,7 +144,10 @@ public class PaymentGatewayRespMsgImpl extends BizEntityImpl implements PaymentG
 	 */
 	@Override
 	public void setPgrMessage(String newPgrMessage) {
+		String oldPgrMessage = pgrMessage;
 		pgrMessage = newPgrMessage;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.PAYMENT_GATEWAY_RESP_MSG__PGR_MESSAGE, oldPgrMessage, pgrMessage));
 	}
 
 	/**
@@ -153,6 +161,8 @@ public class PaymentGatewayRespMsgImpl extends BizEntityImpl implements PaymentG
 			InternalEObject oldPaymentGatewayResponseId = (InternalEObject)paymentGatewayResponseId;
 			paymentGatewayResponseId = (PaymentGatewayResponse)eResolveProxy(oldPaymentGatewayResponseId);
 			if (paymentGatewayResponseId != oldPaymentGatewayResponseId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PaymentPackage.PAYMENT_GATEWAY_RESP_MSG__PAYMENT_GATEWAY_RESPONSE_ID, oldPaymentGatewayResponseId, paymentGatewayResponseId));
 			}
 		}
 		return paymentGatewayResponseId;
@@ -174,7 +184,10 @@ public class PaymentGatewayRespMsgImpl extends BizEntityImpl implements PaymentG
 	 */
 	@Override
 	public void setPaymentGatewayResponseId(PaymentGatewayResponse newPaymentGatewayResponseId) {
+		PaymentGatewayResponse oldPaymentGatewayResponseId = paymentGatewayResponseId;
 		paymentGatewayResponseId = newPaymentGatewayResponseId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.PAYMENT_GATEWAY_RESP_MSG__PAYMENT_GATEWAY_RESPONSE_ID, oldPaymentGatewayResponseId, paymentGatewayResponseId));
 	}
 
 	/**

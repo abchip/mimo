@@ -15,10 +15,12 @@ import org.abchip.mimo.biz.order.order.OrderHeader;
 import org.abchip.mimo.biz.order.order.OrderPackage;
 import org.abchip.mimo.biz.order.order.OrderTerm;
 import org.abchip.mimo.biz.party.agreement.TermType;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -212,7 +214,10 @@ public class OrderTermImpl extends BizEntityImpl implements OrderTerm {
 	 */
 	@Override
 	public void setDescription(String newDescription) {
+		String oldDescription = description;
 		description = newDescription;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_TERM__DESCRIPTION, oldDescription, description));
 	}
 
 	/**
@@ -226,6 +231,8 @@ public class OrderTermImpl extends BizEntityImpl implements OrderTerm {
 			InternalEObject oldOrderId = (InternalEObject)orderId;
 			orderId = (OrderHeader)eResolveProxy(oldOrderId);
 			if (orderId != oldOrderId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, OrderPackage.ORDER_TERM__ORDER_ID, oldOrderId, orderId));
 			}
 		}
 		return orderId;
@@ -247,7 +254,10 @@ public class OrderTermImpl extends BizEntityImpl implements OrderTerm {
 	 */
 	@Override
 	public void setOrderId(OrderHeader newOrderId) {
+		OrderHeader oldOrderId = orderId;
 		orderId = newOrderId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_TERM__ORDER_ID, oldOrderId, orderId));
 	}
 
 	/**
@@ -267,7 +277,10 @@ public class OrderTermImpl extends BizEntityImpl implements OrderTerm {
 	 */
 	@Override
 	public void setOrderItemSeqId(String newOrderItemSeqId) {
+		String oldOrderItemSeqId = orderItemSeqId;
 		orderItemSeqId = newOrderItemSeqId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_TERM__ORDER_ITEM_SEQ_ID, oldOrderItemSeqId, orderItemSeqId));
 	}
 
 	/**
@@ -287,7 +300,10 @@ public class OrderTermImpl extends BizEntityImpl implements OrderTerm {
 	 */
 	@Override
 	public void setTermDays(long newTermDays) {
+		long oldTermDays = termDays;
 		termDays = newTermDays;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_TERM__TERM_DAYS, oldTermDays, termDays));
 	}
 
 	/**
@@ -301,6 +317,8 @@ public class OrderTermImpl extends BizEntityImpl implements OrderTerm {
 			InternalEObject oldTermTypeId = (InternalEObject)termTypeId;
 			termTypeId = (TermType)eResolveProxy(oldTermTypeId);
 			if (termTypeId != oldTermTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, OrderPackage.ORDER_TERM__TERM_TYPE_ID, oldTermTypeId, termTypeId));
 			}
 		}
 		return termTypeId;
@@ -322,7 +340,10 @@ public class OrderTermImpl extends BizEntityImpl implements OrderTerm {
 	 */
 	@Override
 	public void setTermTypeId(TermType newTermTypeId) {
+		TermType oldTermTypeId = termTypeId;
 		termTypeId = newTermTypeId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_TERM__TERM_TYPE_ID, oldTermTypeId, termTypeId));
 	}
 
 	/**
@@ -342,7 +363,10 @@ public class OrderTermImpl extends BizEntityImpl implements OrderTerm {
 	 */
 	@Override
 	public void setTermValue(BigDecimal newTermValue) {
+		BigDecimal oldTermValue = termValue;
 		termValue = newTermValue;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_TERM__TERM_VALUE, oldTermValue, termValue));
 	}
 
 	/**
@@ -362,7 +386,10 @@ public class OrderTermImpl extends BizEntityImpl implements OrderTerm {
 	 */
 	@Override
 	public void setTextValue(String newTextValue) {
+		String oldTextValue = textValue;
 		textValue = newTextValue;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_TERM__TEXT_VALUE, oldTextValue, textValue));
 	}
 
 	/**
@@ -376,6 +403,8 @@ public class OrderTermImpl extends BizEntityImpl implements OrderTerm {
 			InternalEObject oldUomId = (InternalEObject)uomId;
 			uomId = (Uom)eResolveProxy(oldUomId);
 			if (uomId != oldUomId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, OrderPackage.ORDER_TERM__UOM_ID, oldUomId, uomId));
 			}
 		}
 		return uomId;
@@ -397,7 +426,10 @@ public class OrderTermImpl extends BizEntityImpl implements OrderTerm {
 	 */
 	@Override
 	public void setUomId(Uom newUomId) {
+		Uom oldUomId = uomId;
 		uomId = newUomId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_TERM__UOM_ID, oldUomId, uomId));
 	}
 
 	/**

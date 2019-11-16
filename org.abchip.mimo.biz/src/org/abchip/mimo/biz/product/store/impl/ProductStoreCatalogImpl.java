@@ -14,9 +14,11 @@ import org.abchip.mimo.biz.product.catalog.ProdCatalog;
 import org.abchip.mimo.biz.product.store.ProductStore;
 import org.abchip.mimo.biz.product.store.ProductStoreCatalog;
 import org.abchip.mimo.biz.product.store.StorePackage;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -157,7 +159,10 @@ public class ProductStoreCatalogImpl extends BizEntityImpl implements ProductSto
 	 */
 	@Override
 	public void setFromDate(Date newFromDate) {
+		Date oldFromDate = fromDate;
 		fromDate = newFromDate;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, StorePackage.PRODUCT_STORE_CATALOG__FROM_DATE, oldFromDate, fromDate));
 	}
 
 	/**
@@ -177,7 +182,10 @@ public class ProductStoreCatalogImpl extends BizEntityImpl implements ProductSto
 	 */
 	@Override
 	public void setSequenceNum(long newSequenceNum) {
+		long oldSequenceNum = sequenceNum;
 		sequenceNum = newSequenceNum;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, StorePackage.PRODUCT_STORE_CATALOG__SEQUENCE_NUM, oldSequenceNum, sequenceNum));
 	}
 
 	/**
@@ -197,7 +205,10 @@ public class ProductStoreCatalogImpl extends BizEntityImpl implements ProductSto
 	 */
 	@Override
 	public void setThruDate(Date newThruDate) {
+		Date oldThruDate = thruDate;
 		thruDate = newThruDate;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, StorePackage.PRODUCT_STORE_CATALOG__THRU_DATE, oldThruDate, thruDate));
 	}
 
 	/**
@@ -211,6 +222,8 @@ public class ProductStoreCatalogImpl extends BizEntityImpl implements ProductSto
 			InternalEObject oldProductStoreId = (InternalEObject)productStoreId;
 			productStoreId = (ProductStore)eResolveProxy(oldProductStoreId);
 			if (productStoreId != oldProductStoreId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, StorePackage.PRODUCT_STORE_CATALOG__PRODUCT_STORE_ID, oldProductStoreId, productStoreId));
 			}
 		}
 		return productStoreId;
@@ -232,7 +245,10 @@ public class ProductStoreCatalogImpl extends BizEntityImpl implements ProductSto
 	 */
 	@Override
 	public void setProductStoreId(ProductStore newProductStoreId) {
+		ProductStore oldProductStoreId = productStoreId;
 		productStoreId = newProductStoreId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, StorePackage.PRODUCT_STORE_CATALOG__PRODUCT_STORE_ID, oldProductStoreId, productStoreId));
 	}
 
 	/**
@@ -246,6 +262,8 @@ public class ProductStoreCatalogImpl extends BizEntityImpl implements ProductSto
 			InternalEObject oldProdCatalogId = (InternalEObject)prodCatalogId;
 			prodCatalogId = (ProdCatalog)eResolveProxy(oldProdCatalogId);
 			if (prodCatalogId != oldProdCatalogId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, StorePackage.PRODUCT_STORE_CATALOG__PROD_CATALOG_ID, oldProdCatalogId, prodCatalogId));
 			}
 		}
 		return prodCatalogId;
@@ -267,7 +285,10 @@ public class ProductStoreCatalogImpl extends BizEntityImpl implements ProductSto
 	 */
 	@Override
 	public void setProdCatalogId(ProdCatalog newProdCatalogId) {
+		ProdCatalog oldProdCatalogId = prodCatalogId;
 		prodCatalogId = newProdCatalogId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, StorePackage.PRODUCT_STORE_CATALOG__PROD_CATALOG_ID, oldProdCatalogId, prodCatalogId));
 	}
 
 	/**

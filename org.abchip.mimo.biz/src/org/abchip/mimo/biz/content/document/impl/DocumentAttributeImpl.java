@@ -11,10 +11,12 @@ import org.abchip.mimo.biz.content.document.Document;
 import org.abchip.mimo.biz.content.document.DocumentAttribute;
 import org.abchip.mimo.biz.content.document.DocumentPackage;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -144,7 +146,10 @@ public class DocumentAttributeImpl extends BizEntityImpl implements DocumentAttr
 	 */
 	@Override
 	public void setAttrDescription(String newAttrDescription) {
+		String oldAttrDescription = attrDescription;
 		attrDescription = newAttrDescription;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, DocumentPackage.DOCUMENT_ATTRIBUTE__ATTR_DESCRIPTION, oldAttrDescription, attrDescription));
 	}
 
 	/**
@@ -164,7 +169,10 @@ public class DocumentAttributeImpl extends BizEntityImpl implements DocumentAttr
 	 */
 	@Override
 	public void setAttrName(String newAttrName) {
+		String oldAttrName = attrName;
 		attrName = newAttrName;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, DocumentPackage.DOCUMENT_ATTRIBUTE__ATTR_NAME, oldAttrName, attrName));
 	}
 
 	/**
@@ -184,7 +192,10 @@ public class DocumentAttributeImpl extends BizEntityImpl implements DocumentAttr
 	 */
 	@Override
 	public void setAttrValue(String newAttrValue) {
+		String oldAttrValue = attrValue;
 		attrValue = newAttrValue;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, DocumentPackage.DOCUMENT_ATTRIBUTE__ATTR_VALUE, oldAttrValue, attrValue));
 	}
 
 	/**
@@ -198,6 +209,8 @@ public class DocumentAttributeImpl extends BizEntityImpl implements DocumentAttr
 			InternalEObject oldDocumentId = (InternalEObject)documentId;
 			documentId = (Document)eResolveProxy(oldDocumentId);
 			if (documentId != oldDocumentId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, DocumentPackage.DOCUMENT_ATTRIBUTE__DOCUMENT_ID, oldDocumentId, documentId));
 			}
 		}
 		return documentId;
@@ -219,7 +232,10 @@ public class DocumentAttributeImpl extends BizEntityImpl implements DocumentAttr
 	 */
 	@Override
 	public void setDocumentId(Document newDocumentId) {
+		Document oldDocumentId = documentId;
 		documentId = newDocumentId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, DocumentPackage.DOCUMENT_ATTRIBUTE__DOCUMENT_ID, oldDocumentId, documentId));
 	}
 
 	/**

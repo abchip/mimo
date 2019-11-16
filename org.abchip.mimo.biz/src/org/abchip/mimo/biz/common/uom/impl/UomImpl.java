@@ -14,11 +14,13 @@ import org.abchip.mimo.biz.common.uom.Uom;
 import org.abchip.mimo.biz.common.uom.UomPackage;
 import org.abchip.mimo.biz.common.uom.UomType;
 import org.abchip.mimo.biz.impl.BizEntityTypedImpl;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.util.BasicInternalEList;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -172,7 +174,10 @@ public class UomImpl extends BizEntityTypedImpl<UomType> implements Uom {
 	 */
 	@Override
 	public void setAbbreviation(String newAbbreviation) {
+		String oldAbbreviation = abbreviation;
 		abbreviation = newAbbreviation;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, UomPackage.UOM__ABBREVIATION, oldAbbreviation, abbreviation));
 	}
 
 	/**
@@ -192,7 +197,10 @@ public class UomImpl extends BizEntityTypedImpl<UomType> implements Uom {
 	 */
 	@Override
 	public void setDescription(String newDescription) {
+		String oldDescription = description;
 		description = newDescription;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, UomPackage.UOM__DESCRIPTION, oldDescription, description));
 	}
 
 	/**
@@ -212,7 +220,10 @@ public class UomImpl extends BizEntityTypedImpl<UomType> implements Uom {
 	 */
 	@Override
 	public void setNumericCode(long newNumericCode) {
+		long oldNumericCode = numericCode;
 		numericCode = newNumericCode;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, UomPackage.UOM__NUMERIC_CODE, oldNumericCode, numericCode));
 	}
 
 	/**
@@ -226,6 +237,8 @@ public class UomImpl extends BizEntityTypedImpl<UomType> implements Uom {
 			InternalEObject oldUomTypeId = (InternalEObject)uomTypeId;
 			uomTypeId = (UomType)eResolveProxy(oldUomTypeId);
 			if (uomTypeId != oldUomTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, UomPackage.UOM__UOM_TYPE_ID, oldUomTypeId, uomTypeId));
 			}
 		}
 		return uomTypeId;
@@ -247,7 +260,10 @@ public class UomImpl extends BizEntityTypedImpl<UomType> implements Uom {
 	 */
 	@Override
 	public void setUomTypeId(UomType newUomTypeId) {
+		UomType oldUomTypeId = uomTypeId;
 		uomTypeId = newUomTypeId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, UomPackage.UOM__UOM_TYPE_ID, oldUomTypeId, uomTypeId));
 	}
 
 	/**
@@ -258,7 +274,7 @@ public class UomImpl extends BizEntityTypedImpl<UomType> implements Uom {
 	@Override
 	public List<String> getMainUomConversions() {
 		if (mainUomConversions == null) {
-			mainUomConversions = new BasicInternalEList<String>(String.class);
+			mainUomConversions = new EDataTypeUniqueEList<String>(String.class, this, UomPackage.UOM__MAIN_UOM_CONVERSIONS);
 		}
 		return mainUomConversions;
 	}
@@ -1096,7 +1112,10 @@ public class UomImpl extends BizEntityTypedImpl<UomType> implements Uom {
 	 */
 	@Override
 	public void setUomId(String newUomId) {
+		String oldUomId = uomId;
 		uomId = newUomId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, UomPackage.UOM__UOM_ID, oldUomId, uomId));
 	}
 
 	/**

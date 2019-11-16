@@ -13,10 +13,12 @@ import org.abchip.mimo.biz.product.inventory.InventoryItem;
 import org.abchip.mimo.biz.workeffort.workeffort.WorkEffort;
 import org.abchip.mimo.biz.workeffort.workeffort.WorkEffortInventoryAssign;
 import org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -120,6 +122,8 @@ public class WorkEffortInventoryAssignImpl extends BizEntityImpl implements Work
 			InternalEObject oldInventoryItemId = (InternalEObject)inventoryItemId;
 			inventoryItemId = (InventoryItem)eResolveProxy(oldInventoryItemId);
 			if (inventoryItemId != oldInventoryItemId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WorkeffortPackage.WORK_EFFORT_INVENTORY_ASSIGN__INVENTORY_ITEM_ID, oldInventoryItemId, inventoryItemId));
 			}
 		}
 		return inventoryItemId;
@@ -141,7 +145,10 @@ public class WorkEffortInventoryAssignImpl extends BizEntityImpl implements Work
 	 */
 	@Override
 	public void setInventoryItemId(InventoryItem newInventoryItemId) {
+		InventoryItem oldInventoryItemId = inventoryItemId;
 		inventoryItemId = newInventoryItemId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WorkeffortPackage.WORK_EFFORT_INVENTORY_ASSIGN__INVENTORY_ITEM_ID, oldInventoryItemId, inventoryItemId));
 	}
 
 	/**
@@ -161,7 +168,10 @@ public class WorkEffortInventoryAssignImpl extends BizEntityImpl implements Work
 	 */
 	@Override
 	public void setQuantity(double newQuantity) {
+		double oldQuantity = quantity;
 		quantity = newQuantity;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WorkeffortPackage.WORK_EFFORT_INVENTORY_ASSIGN__QUANTITY, oldQuantity, quantity));
 	}
 
 	/**
@@ -175,6 +185,8 @@ public class WorkEffortInventoryAssignImpl extends BizEntityImpl implements Work
 			InternalEObject oldStatusId = (InternalEObject)statusId;
 			statusId = (StatusItem)eResolveProxy(oldStatusId);
 			if (statusId != oldStatusId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WorkeffortPackage.WORK_EFFORT_INVENTORY_ASSIGN__STATUS_ID, oldStatusId, statusId));
 			}
 		}
 		return statusId;
@@ -196,7 +208,10 @@ public class WorkEffortInventoryAssignImpl extends BizEntityImpl implements Work
 	 */
 	@Override
 	public void setStatusId(StatusItem newStatusId) {
+		StatusItem oldStatusId = statusId;
 		statusId = newStatusId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WorkeffortPackage.WORK_EFFORT_INVENTORY_ASSIGN__STATUS_ID, oldStatusId, statusId));
 	}
 
 	/**
@@ -210,6 +225,8 @@ public class WorkEffortInventoryAssignImpl extends BizEntityImpl implements Work
 			InternalEObject oldWorkEffortId = (InternalEObject)workEffortId;
 			workEffortId = (WorkEffort)eResolveProxy(oldWorkEffortId);
 			if (workEffortId != oldWorkEffortId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WorkeffortPackage.WORK_EFFORT_INVENTORY_ASSIGN__WORK_EFFORT_ID, oldWorkEffortId, workEffortId));
 			}
 		}
 		return workEffortId;
@@ -231,7 +248,10 @@ public class WorkEffortInventoryAssignImpl extends BizEntityImpl implements Work
 	 */
 	@Override
 	public void setWorkEffortId(WorkEffort newWorkEffortId) {
+		WorkEffort oldWorkEffortId = workEffortId;
 		workEffortId = newWorkEffortId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WorkeffortPackage.WORK_EFFORT_INVENTORY_ASSIGN__WORK_EFFORT_ID, oldWorkEffortId, workEffortId));
 	}
 
 	/**

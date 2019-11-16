@@ -83,6 +83,7 @@ public interface Menu extends EntityNameable {
 	 * @model id="true"
 	 * @generated
 	 */
+	@Override
 	String getName();
 
 	/**

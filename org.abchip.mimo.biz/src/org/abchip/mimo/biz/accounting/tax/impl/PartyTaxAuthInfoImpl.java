@@ -13,10 +13,12 @@ import org.abchip.mimo.biz.accounting.tax.PartyTaxAuthInfo;
 import org.abchip.mimo.biz.accounting.tax.TaxPackage;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.party.party.Party;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -220,7 +222,10 @@ public class PartyTaxAuthInfoImpl extends BizEntityImpl implements PartyTaxAuthI
 	 */
 	@Override
 	public void setFromDate(Date newFromDate) {
+		Date oldFromDate = fromDate;
 		fromDate = newFromDate;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, TaxPackage.PARTY_TAX_AUTH_INFO__FROM_DATE, oldFromDate, fromDate));
 	}
 
 	/**
@@ -240,7 +245,10 @@ public class PartyTaxAuthInfoImpl extends BizEntityImpl implements PartyTaxAuthI
 	 */
 	@Override
 	public void setIsExempt(boolean newIsExempt) {
+		boolean oldIsExempt = isExempt;
 		isExempt = newIsExempt;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, TaxPackage.PARTY_TAX_AUTH_INFO__IS_EXEMPT, oldIsExempt, isExempt));
 	}
 
 	/**
@@ -260,7 +268,10 @@ public class PartyTaxAuthInfoImpl extends BizEntityImpl implements PartyTaxAuthI
 	 */
 	@Override
 	public void setIsNexus(boolean newIsNexus) {
+		boolean oldIsNexus = isNexus;
 		isNexus = newIsNexus;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, TaxPackage.PARTY_TAX_AUTH_INFO__IS_NEXUS, oldIsNexus, isNexus));
 	}
 
 	/**
@@ -274,6 +285,8 @@ public class PartyTaxAuthInfoImpl extends BizEntityImpl implements PartyTaxAuthI
 			InternalEObject oldPartyId = (InternalEObject)partyId;
 			partyId = (Party)eResolveProxy(oldPartyId);
 			if (partyId != oldPartyId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, TaxPackage.PARTY_TAX_AUTH_INFO__PARTY_ID, oldPartyId, partyId));
 			}
 		}
 		return partyId;
@@ -295,7 +308,10 @@ public class PartyTaxAuthInfoImpl extends BizEntityImpl implements PartyTaxAuthI
 	 */
 	@Override
 	public void setPartyId(Party newPartyId) {
+		Party oldPartyId = partyId;
 		partyId = newPartyId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, TaxPackage.PARTY_TAX_AUTH_INFO__PARTY_ID, oldPartyId, partyId));
 	}
 
 	/**
@@ -315,7 +331,10 @@ public class PartyTaxAuthInfoImpl extends BizEntityImpl implements PartyTaxAuthI
 	 */
 	@Override
 	public void setPartyTaxId(String newPartyTaxId) {
+		String oldPartyTaxId = partyTaxId;
 		partyTaxId = newPartyTaxId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, TaxPackage.PARTY_TAX_AUTH_INFO__PARTY_TAX_ID, oldPartyTaxId, partyTaxId));
 	}
 
 	/**
@@ -335,7 +354,10 @@ public class PartyTaxAuthInfoImpl extends BizEntityImpl implements PartyTaxAuthI
 	 */
 	@Override
 	public void setTaxAuthGeoId(String newTaxAuthGeoId) {
+		String oldTaxAuthGeoId = taxAuthGeoId;
 		taxAuthGeoId = newTaxAuthGeoId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, TaxPackage.PARTY_TAX_AUTH_INFO__TAX_AUTH_GEO_ID, oldTaxAuthGeoId, taxAuthGeoId));
 	}
 
 	/**
@@ -355,7 +377,10 @@ public class PartyTaxAuthInfoImpl extends BizEntityImpl implements PartyTaxAuthI
 	 */
 	@Override
 	public void setTaxAuthPartyId(String newTaxAuthPartyId) {
+		String oldTaxAuthPartyId = taxAuthPartyId;
 		taxAuthPartyId = newTaxAuthPartyId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, TaxPackage.PARTY_TAX_AUTH_INFO__TAX_AUTH_PARTY_ID, oldTaxAuthPartyId, taxAuthPartyId));
 	}
 
 	/**
@@ -375,7 +400,10 @@ public class PartyTaxAuthInfoImpl extends BizEntityImpl implements PartyTaxAuthI
 	 */
 	@Override
 	public void setThruDate(Date newThruDate) {
+		Date oldThruDate = thruDate;
 		thruDate = newThruDate;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, TaxPackage.PARTY_TAX_AUTH_INFO__THRU_DATE, oldThruDate, thruDate));
 	}
 
 	/**

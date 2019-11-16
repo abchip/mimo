@@ -11,9 +11,11 @@ import org.abchip.mimo.biz.accounting.invoice.InvoicePackage;
 import org.abchip.mimo.biz.accounting.invoice.InvoiceType;
 import org.abchip.mimo.biz.accounting.invoice.InvoiceTypeAttr;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -117,7 +119,10 @@ public class InvoiceTypeAttrImpl extends BizEntityImpl implements InvoiceTypeAtt
 	 */
 	@Override
 	public void setDescription(String newDescription) {
+		String oldDescription = description;
 		description = newDescription;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, InvoicePackage.INVOICE_TYPE_ATTR__DESCRIPTION, oldDescription, description));
 	}
 
 	/**
@@ -137,7 +142,10 @@ public class InvoiceTypeAttrImpl extends BizEntityImpl implements InvoiceTypeAtt
 	 */
 	@Override
 	public void setAttrName(String newAttrName) {
+		String oldAttrName = attrName;
 		attrName = newAttrName;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, InvoicePackage.INVOICE_TYPE_ATTR__ATTR_NAME, oldAttrName, attrName));
 	}
 
 	/**
@@ -151,6 +159,8 @@ public class InvoiceTypeAttrImpl extends BizEntityImpl implements InvoiceTypeAtt
 			InternalEObject oldInvoiceTypeId = (InternalEObject)invoiceTypeId;
 			invoiceTypeId = (InvoiceType)eResolveProxy(oldInvoiceTypeId);
 			if (invoiceTypeId != oldInvoiceTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, InvoicePackage.INVOICE_TYPE_ATTR__INVOICE_TYPE_ID, oldInvoiceTypeId, invoiceTypeId));
 			}
 		}
 		return invoiceTypeId;
@@ -172,7 +182,10 @@ public class InvoiceTypeAttrImpl extends BizEntityImpl implements InvoiceTypeAtt
 	 */
 	@Override
 	public void setInvoiceTypeId(InvoiceType newInvoiceTypeId) {
+		InvoiceType oldInvoiceTypeId = invoiceTypeId;
 		invoiceTypeId = newInvoiceTypeId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, InvoicePackage.INVOICE_TYPE_ATTR__INVOICE_TYPE_ID, oldInvoiceTypeId, invoiceTypeId));
 	}
 
 	/**

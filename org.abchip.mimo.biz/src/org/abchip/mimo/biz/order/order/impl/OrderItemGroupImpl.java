@@ -11,10 +11,12 @@ import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.order.order.OrderHeader;
 import org.abchip.mimo.biz.order.order.OrderItemGroup;
 import org.abchip.mimo.biz.order.order.OrderPackage;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -144,7 +146,10 @@ public class OrderItemGroupImpl extends BizEntityImpl implements OrderItemGroup 
 	 */
 	@Override
 	public void setGroupName(String newGroupName) {
+		String oldGroupName = groupName;
 		groupName = newGroupName;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_ITEM_GROUP__GROUP_NAME, oldGroupName, groupName));
 	}
 
 	/**
@@ -158,6 +163,8 @@ public class OrderItemGroupImpl extends BizEntityImpl implements OrderItemGroup 
 			InternalEObject oldOrderId = (InternalEObject)orderId;
 			orderId = (OrderHeader)eResolveProxy(oldOrderId);
 			if (orderId != oldOrderId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, OrderPackage.ORDER_ITEM_GROUP__ORDER_ID, oldOrderId, orderId));
 			}
 		}
 		return orderId;
@@ -179,7 +186,10 @@ public class OrderItemGroupImpl extends BizEntityImpl implements OrderItemGroup 
 	 */
 	@Override
 	public void setOrderId(OrderHeader newOrderId) {
+		OrderHeader oldOrderId = orderId;
 		orderId = newOrderId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_ITEM_GROUP__ORDER_ID, oldOrderId, orderId));
 	}
 
 	/**
@@ -199,7 +209,10 @@ public class OrderItemGroupImpl extends BizEntityImpl implements OrderItemGroup 
 	 */
 	@Override
 	public void setOrderItemGroupSeqId(String newOrderItemGroupSeqId) {
+		String oldOrderItemGroupSeqId = orderItemGroupSeqId;
 		orderItemGroupSeqId = newOrderItemGroupSeqId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_ITEM_GROUP__ORDER_ITEM_GROUP_SEQ_ID, oldOrderItemGroupSeqId, orderItemGroupSeqId));
 	}
 
 	/**
@@ -219,7 +232,10 @@ public class OrderItemGroupImpl extends BizEntityImpl implements OrderItemGroup 
 	 */
 	@Override
 	public void setParentGroupSeqId(String newParentGroupSeqId) {
+		String oldParentGroupSeqId = parentGroupSeqId;
 		parentGroupSeqId = newParentGroupSeqId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_ITEM_GROUP__PARENT_GROUP_SEQ_ID, oldParentGroupSeqId, parentGroupSeqId));
 	}
 
 	/**

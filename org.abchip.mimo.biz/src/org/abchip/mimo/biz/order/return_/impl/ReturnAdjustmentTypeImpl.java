@@ -13,10 +13,12 @@ import org.abchip.mimo.biz.impl.BizEntityTypeImpl;
 import org.abchip.mimo.biz.order.return_.ReturnAdjustment;
 import org.abchip.mimo.biz.order.return_.ReturnAdjustmentType;
 import org.abchip.mimo.biz.order.return_.ReturnPackage;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -146,7 +148,10 @@ public class ReturnAdjustmentTypeImpl extends BizEntityTypeImpl<ReturnAdjustment
 	 */
 	@Override
 	public void setDescription(String newDescription) {
+		String oldDescription = description;
 		description = newDescription;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ReturnPackage.RETURN_ADJUSTMENT_TYPE__DESCRIPTION, oldDescription, description));
 	}
 
 	/**
@@ -166,7 +171,10 @@ public class ReturnAdjustmentTypeImpl extends BizEntityTypeImpl<ReturnAdjustment
 	 */
 	@Override
 	public void setHasTable(boolean newHasTable) {
+		boolean oldHasTable = hasTable;
 		hasTable = newHasTable;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ReturnPackage.RETURN_ADJUSTMENT_TYPE__HAS_TABLE, oldHasTable, hasTable));
 	}
 
 	/**
@@ -180,6 +188,8 @@ public class ReturnAdjustmentTypeImpl extends BizEntityTypeImpl<ReturnAdjustment
 			InternalEObject oldParentTypeId = (InternalEObject)parentTypeId;
 			parentTypeId = (ReturnAdjustmentType)eResolveProxy(oldParentTypeId);
 			if (parentTypeId != oldParentTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ReturnPackage.RETURN_ADJUSTMENT_TYPE__PARENT_TYPE_ID, oldParentTypeId, parentTypeId));
 			}
 		}
 		return parentTypeId;
@@ -201,7 +211,10 @@ public class ReturnAdjustmentTypeImpl extends BizEntityTypeImpl<ReturnAdjustment
 	 */
 	@Override
 	public void setParentTypeId(ReturnAdjustmentType newParentTypeId) {
+		ReturnAdjustmentType oldParentTypeId = parentTypeId;
 		parentTypeId = newParentTypeId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ReturnPackage.RETURN_ADJUSTMENT_TYPE__PARENT_TYPE_ID, oldParentTypeId, parentTypeId));
 	}
 
 	/**
@@ -257,7 +270,10 @@ public class ReturnAdjustmentTypeImpl extends BizEntityTypeImpl<ReturnAdjustment
 	 */
 	@Override
 	public void setReturnAdjustmentTypeId(String newReturnAdjustmentTypeId) {
+		String oldReturnAdjustmentTypeId = returnAdjustmentTypeId;
 		returnAdjustmentTypeId = newReturnAdjustmentTypeId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ReturnPackage.RETURN_ADJUSTMENT_TYPE__RETURN_ADJUSTMENT_TYPE_ID, oldReturnAdjustmentTypeId, returnAdjustmentTypeId));
 	}
 
 	/**

@@ -10,7 +10,9 @@ package org.abchip.mimo.biz.accounting.budget.impl;
 import org.abchip.mimo.biz.accounting.budget.BudgetPackage;
 import org.abchip.mimo.biz.accounting.budget.BudgetReviewResultType;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -123,7 +125,10 @@ public class BudgetReviewResultTypeImpl extends BizEntityImpl implements BudgetR
 	 */
 	@Override
 	public void setComments(String newComments) {
+		String oldComments = comments;
 		comments = newComments;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, BudgetPackage.BUDGET_REVIEW_RESULT_TYPE__COMMENTS, oldComments, comments));
 	}
 
 	/**
@@ -143,7 +148,10 @@ public class BudgetReviewResultTypeImpl extends BizEntityImpl implements BudgetR
 	 */
 	@Override
 	public void setDescription(String newDescription) {
+		String oldDescription = description;
 		description = newDescription;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, BudgetPackage.BUDGET_REVIEW_RESULT_TYPE__DESCRIPTION, oldDescription, description));
 	}
 
 	/**
@@ -163,7 +171,10 @@ public class BudgetReviewResultTypeImpl extends BizEntityImpl implements BudgetR
 	 */
 	@Override
 	public void setBudgetReviewResultTypeId(String newBudgetReviewResultTypeId) {
+		String oldBudgetReviewResultTypeId = budgetReviewResultTypeId;
 		budgetReviewResultTypeId = newBudgetReviewResultTypeId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, BudgetPackage.BUDGET_REVIEW_RESULT_TYPE__BUDGET_REVIEW_RESULT_TYPE_ID, oldBudgetReviewResultTypeId, budgetReviewResultTypeId));
 	}
 
 	/**

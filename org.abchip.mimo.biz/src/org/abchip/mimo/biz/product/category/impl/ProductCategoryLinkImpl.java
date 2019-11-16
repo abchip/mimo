@@ -14,9 +14,11 @@ import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.product.category.CategoryPackage;
 import org.abchip.mimo.biz.product.category.ProductCategory;
 import org.abchip.mimo.biz.product.category.ProductCategoryLink;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -325,7 +327,10 @@ public class ProductCategoryLinkImpl extends BizEntityImpl implements ProductCat
 	 */
 	@Override
 	public void setComments(String newComments) {
+		String oldComments = comments;
 		comments = newComments;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, CategoryPackage.PRODUCT_CATEGORY_LINK__COMMENTS, oldComments, comments));
 	}
 
 	/**
@@ -345,7 +350,10 @@ public class ProductCategoryLinkImpl extends BizEntityImpl implements ProductCat
 	 */
 	@Override
 	public void setDetailSubScreen(String newDetailSubScreen) {
+		String oldDetailSubScreen = detailSubScreen;
 		detailSubScreen = newDetailSubScreen;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, CategoryPackage.PRODUCT_CATEGORY_LINK__DETAIL_SUB_SCREEN, oldDetailSubScreen, detailSubScreen));
 	}
 
 	/**
@@ -365,7 +373,10 @@ public class ProductCategoryLinkImpl extends BizEntityImpl implements ProductCat
 	 */
 	@Override
 	public void setDetailText(String newDetailText) {
+		String oldDetailText = detailText;
 		detailText = newDetailText;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, CategoryPackage.PRODUCT_CATEGORY_LINK__DETAIL_TEXT, oldDetailText, detailText));
 	}
 
 	/**
@@ -385,7 +396,10 @@ public class ProductCategoryLinkImpl extends BizEntityImpl implements ProductCat
 	 */
 	@Override
 	public void setFromDate(Date newFromDate) {
+		Date oldFromDate = fromDate;
 		fromDate = newFromDate;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, CategoryPackage.PRODUCT_CATEGORY_LINK__FROM_DATE, oldFromDate, fromDate));
 	}
 
 	/**
@@ -405,7 +419,10 @@ public class ProductCategoryLinkImpl extends BizEntityImpl implements ProductCat
 	 */
 	@Override
 	public void setImageTwoUrl(String newImageTwoUrl) {
+		String oldImageTwoUrl = imageTwoUrl;
 		imageTwoUrl = newImageTwoUrl;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, CategoryPackage.PRODUCT_CATEGORY_LINK__IMAGE_TWO_URL, oldImageTwoUrl, imageTwoUrl));
 	}
 
 	/**
@@ -425,7 +442,10 @@ public class ProductCategoryLinkImpl extends BizEntityImpl implements ProductCat
 	 */
 	@Override
 	public void setImageUrl(String newImageUrl) {
+		String oldImageUrl = imageUrl;
 		imageUrl = newImageUrl;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, CategoryPackage.PRODUCT_CATEGORY_LINK__IMAGE_URL, oldImageUrl, imageUrl));
 	}
 
 	/**
@@ -445,7 +465,10 @@ public class ProductCategoryLinkImpl extends BizEntityImpl implements ProductCat
 	 */
 	@Override
 	public void setLinkInfo(String newLinkInfo) {
+		String oldLinkInfo = linkInfo;
 		linkInfo = newLinkInfo;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, CategoryPackage.PRODUCT_CATEGORY_LINK__LINK_INFO, oldLinkInfo, linkInfo));
 	}
 
 	/**
@@ -465,7 +488,10 @@ public class ProductCategoryLinkImpl extends BizEntityImpl implements ProductCat
 	 */
 	@Override
 	public void setLinkSeqId(String newLinkSeqId) {
+		String oldLinkSeqId = linkSeqId;
 		linkSeqId = newLinkSeqId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, CategoryPackage.PRODUCT_CATEGORY_LINK__LINK_SEQ_ID, oldLinkSeqId, linkSeqId));
 	}
 
 	/**
@@ -479,6 +505,8 @@ public class ProductCategoryLinkImpl extends BizEntityImpl implements ProductCat
 			InternalEObject oldLinkTypeEnumId = (InternalEObject)linkTypeEnumId;
 			linkTypeEnumId = (Enumeration)eResolveProxy(oldLinkTypeEnumId);
 			if (linkTypeEnumId != oldLinkTypeEnumId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, CategoryPackage.PRODUCT_CATEGORY_LINK__LINK_TYPE_ENUM_ID, oldLinkTypeEnumId, linkTypeEnumId));
 			}
 		}
 		return linkTypeEnumId;
@@ -500,7 +528,10 @@ public class ProductCategoryLinkImpl extends BizEntityImpl implements ProductCat
 	 */
 	@Override
 	public void setLinkTypeEnumId(Enumeration newLinkTypeEnumId) {
+		Enumeration oldLinkTypeEnumId = linkTypeEnumId;
 		linkTypeEnumId = newLinkTypeEnumId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, CategoryPackage.PRODUCT_CATEGORY_LINK__LINK_TYPE_ENUM_ID, oldLinkTypeEnumId, linkTypeEnumId));
 	}
 
 	/**
@@ -520,7 +551,10 @@ public class ProductCategoryLinkImpl extends BizEntityImpl implements ProductCat
 	 */
 	@Override
 	public void setSequenceNum(long newSequenceNum) {
+		long oldSequenceNum = sequenceNum;
 		sequenceNum = newSequenceNum;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, CategoryPackage.PRODUCT_CATEGORY_LINK__SEQUENCE_NUM, oldSequenceNum, sequenceNum));
 	}
 
 	/**
@@ -540,7 +574,10 @@ public class ProductCategoryLinkImpl extends BizEntityImpl implements ProductCat
 	 */
 	@Override
 	public void setThruDate(Date newThruDate) {
+		Date oldThruDate = thruDate;
 		thruDate = newThruDate;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, CategoryPackage.PRODUCT_CATEGORY_LINK__THRU_DATE, oldThruDate, thruDate));
 	}
 
 	/**
@@ -560,7 +597,10 @@ public class ProductCategoryLinkImpl extends BizEntityImpl implements ProductCat
 	 */
 	@Override
 	public void setTitleText(String newTitleText) {
+		String oldTitleText = titleText;
 		titleText = newTitleText;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, CategoryPackage.PRODUCT_CATEGORY_LINK__TITLE_TEXT, oldTitleText, titleText));
 	}
 
 	/**
@@ -574,6 +614,8 @@ public class ProductCategoryLinkImpl extends BizEntityImpl implements ProductCat
 			InternalEObject oldProductCategoryId = (InternalEObject)productCategoryId;
 			productCategoryId = (ProductCategory)eResolveProxy(oldProductCategoryId);
 			if (productCategoryId != oldProductCategoryId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, CategoryPackage.PRODUCT_CATEGORY_LINK__PRODUCT_CATEGORY_ID, oldProductCategoryId, productCategoryId));
 			}
 		}
 		return productCategoryId;
@@ -595,7 +637,10 @@ public class ProductCategoryLinkImpl extends BizEntityImpl implements ProductCat
 	 */
 	@Override
 	public void setProductCategoryId(ProductCategory newProductCategoryId) {
+		ProductCategory oldProductCategoryId = productCategoryId;
 		productCategoryId = newProductCategoryId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, CategoryPackage.PRODUCT_CATEGORY_LINK__PRODUCT_CATEGORY_ID, oldProductCategoryId, productCategoryId));
 	}
 
 	/**

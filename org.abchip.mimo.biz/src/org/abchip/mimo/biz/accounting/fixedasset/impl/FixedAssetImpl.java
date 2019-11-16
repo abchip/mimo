@@ -26,11 +26,13 @@ import org.abchip.mimo.biz.party.party.Party;
 import org.abchip.mimo.biz.party.party.RoleType;
 import org.abchip.mimo.biz.product.facility.Facility;
 import org.abchip.mimo.biz.product.product.Product;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.util.BasicInternalEList;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -506,6 +508,8 @@ public class FixedAssetImpl extends BizEntityTypedImpl<FixedAssetType> implement
 			InternalEObject oldAcquireOrderId = (InternalEObject)acquireOrderId;
 			acquireOrderId = (OrderHeader)eResolveProxy(oldAcquireOrderId);
 			if (acquireOrderId != oldAcquireOrderId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, FixedassetPackage.FIXED_ASSET__ACQUIRE_ORDER_ID, oldAcquireOrderId, acquireOrderId));
 			}
 		}
 		return acquireOrderId;
@@ -527,7 +531,10 @@ public class FixedAssetImpl extends BizEntityTypedImpl<FixedAssetType> implement
 	 */
 	@Override
 	public void setAcquireOrderId(OrderHeader newAcquireOrderId) {
+		OrderHeader oldAcquireOrderId = acquireOrderId;
 		acquireOrderId = newAcquireOrderId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, FixedassetPackage.FIXED_ASSET__ACQUIRE_ORDER_ID, oldAcquireOrderId, acquireOrderId));
 	}
 
 	/**
@@ -547,7 +554,10 @@ public class FixedAssetImpl extends BizEntityTypedImpl<FixedAssetType> implement
 	 */
 	@Override
 	public void setAcquireOrderItemSeqId(String newAcquireOrderItemSeqId) {
+		String oldAcquireOrderItemSeqId = acquireOrderItemSeqId;
 		acquireOrderItemSeqId = newAcquireOrderItemSeqId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, FixedassetPackage.FIXED_ASSET__ACQUIRE_ORDER_ITEM_SEQ_ID, oldAcquireOrderItemSeqId, acquireOrderItemSeqId));
 	}
 
 	/**
@@ -567,7 +577,10 @@ public class FixedAssetImpl extends BizEntityTypedImpl<FixedAssetType> implement
 	 */
 	@Override
 	public void setActualEndOfLife(Date newActualEndOfLife) {
+		Date oldActualEndOfLife = actualEndOfLife;
 		actualEndOfLife = newActualEndOfLife;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, FixedassetPackage.FIXED_ASSET__ACTUAL_END_OF_LIFE, oldActualEndOfLife, actualEndOfLife));
 	}
 
 	/**
@@ -581,6 +594,8 @@ public class FixedAssetImpl extends BizEntityTypedImpl<FixedAssetType> implement
 			InternalEObject oldCalendarId = (InternalEObject)calendarId;
 			calendarId = (TechDataCalendar)eResolveProxy(oldCalendarId);
 			if (calendarId != oldCalendarId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, FixedassetPackage.FIXED_ASSET__CALENDAR_ID, oldCalendarId, calendarId));
 			}
 		}
 		return calendarId;
@@ -602,7 +617,10 @@ public class FixedAssetImpl extends BizEntityTypedImpl<FixedAssetType> implement
 	 */
 	@Override
 	public void setCalendarId(TechDataCalendar newCalendarId) {
+		TechDataCalendar oldCalendarId = calendarId;
 		calendarId = newCalendarId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, FixedassetPackage.FIXED_ASSET__CALENDAR_ID, oldCalendarId, calendarId));
 	}
 
 	/**
@@ -616,6 +634,8 @@ public class FixedAssetImpl extends BizEntityTypedImpl<FixedAssetType> implement
 			InternalEObject oldClassEnumId = (InternalEObject)classEnumId;
 			classEnumId = (Enumeration)eResolveProxy(oldClassEnumId);
 			if (classEnumId != oldClassEnumId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, FixedassetPackage.FIXED_ASSET__CLASS_ENUM_ID, oldClassEnumId, classEnumId));
 			}
 		}
 		return classEnumId;
@@ -637,7 +657,10 @@ public class FixedAssetImpl extends BizEntityTypedImpl<FixedAssetType> implement
 	 */
 	@Override
 	public void setClassEnumId(Enumeration newClassEnumId) {
+		Enumeration oldClassEnumId = classEnumId;
 		classEnumId = newClassEnumId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, FixedassetPackage.FIXED_ASSET__CLASS_ENUM_ID, oldClassEnumId, classEnumId));
 	}
 
 	/**
@@ -657,7 +680,10 @@ public class FixedAssetImpl extends BizEntityTypedImpl<FixedAssetType> implement
 	 */
 	@Override
 	public void setDateAcquired(Date newDateAcquired) {
+		Date oldDateAcquired = dateAcquired;
 		dateAcquired = newDateAcquired;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, FixedassetPackage.FIXED_ASSET__DATE_ACQUIRED, oldDateAcquired, dateAcquired));
 	}
 
 	/**
@@ -677,7 +703,10 @@ public class FixedAssetImpl extends BizEntityTypedImpl<FixedAssetType> implement
 	 */
 	@Override
 	public void setDateLastServiced(Date newDateLastServiced) {
+		Date oldDateLastServiced = dateLastServiced;
 		dateLastServiced = newDateLastServiced;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, FixedassetPackage.FIXED_ASSET__DATE_LAST_SERVICED, oldDateLastServiced, dateLastServiced));
 	}
 
 	/**
@@ -697,7 +726,10 @@ public class FixedAssetImpl extends BizEntityTypedImpl<FixedAssetType> implement
 	 */
 	@Override
 	public void setDateNextService(Date newDateNextService) {
+		Date oldDateNextService = dateNextService;
 		dateNextService = newDateNextService;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, FixedassetPackage.FIXED_ASSET__DATE_NEXT_SERVICE, oldDateNextService, dateNextService));
 	}
 
 	/**
@@ -717,7 +749,10 @@ public class FixedAssetImpl extends BizEntityTypedImpl<FixedAssetType> implement
 	 */
 	@Override
 	public void setDepreciation(BigDecimal newDepreciation) {
+		BigDecimal oldDepreciation = depreciation;
 		depreciation = newDepreciation;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, FixedassetPackage.FIXED_ASSET__DEPRECIATION, oldDepreciation, depreciation));
 	}
 
 	/**
@@ -737,7 +772,10 @@ public class FixedAssetImpl extends BizEntityTypedImpl<FixedAssetType> implement
 	 */
 	@Override
 	public void setExpectedEndOfLife(Date newExpectedEndOfLife) {
+		Date oldExpectedEndOfLife = expectedEndOfLife;
 		expectedEndOfLife = newExpectedEndOfLife;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, FixedassetPackage.FIXED_ASSET__EXPECTED_END_OF_LIFE, oldExpectedEndOfLife, expectedEndOfLife));
 	}
 
 	/**
@@ -757,7 +795,10 @@ public class FixedAssetImpl extends BizEntityTypedImpl<FixedAssetType> implement
 	 */
 	@Override
 	public void setFixedAssetName(String newFixedAssetName) {
+		String oldFixedAssetName = fixedAssetName;
 		fixedAssetName = newFixedAssetName;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, FixedassetPackage.FIXED_ASSET__FIXED_ASSET_NAME, oldFixedAssetName, fixedAssetName));
 	}
 
 	/**
@@ -771,6 +812,8 @@ public class FixedAssetImpl extends BizEntityTypedImpl<FixedAssetType> implement
 			InternalEObject oldInstanceOfProductId = (InternalEObject)instanceOfProductId;
 			instanceOfProductId = (Product)eResolveProxy(oldInstanceOfProductId);
 			if (instanceOfProductId != oldInstanceOfProductId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, FixedassetPackage.FIXED_ASSET__INSTANCE_OF_PRODUCT_ID, oldInstanceOfProductId, instanceOfProductId));
 			}
 		}
 		return instanceOfProductId;
@@ -792,7 +835,10 @@ public class FixedAssetImpl extends BizEntityTypedImpl<FixedAssetType> implement
 	 */
 	@Override
 	public void setInstanceOfProductId(Product newInstanceOfProductId) {
+		Product oldInstanceOfProductId = instanceOfProductId;
 		instanceOfProductId = newInstanceOfProductId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, FixedassetPackage.FIXED_ASSET__INSTANCE_OF_PRODUCT_ID, oldInstanceOfProductId, instanceOfProductId));
 	}
 
 	/**
@@ -806,6 +852,8 @@ public class FixedAssetImpl extends BizEntityTypedImpl<FixedAssetType> implement
 			InternalEObject oldLocatedAtFacilityId = (InternalEObject)locatedAtFacilityId;
 			locatedAtFacilityId = (Facility)eResolveProxy(oldLocatedAtFacilityId);
 			if (locatedAtFacilityId != oldLocatedAtFacilityId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, FixedassetPackage.FIXED_ASSET__LOCATED_AT_FACILITY_ID, oldLocatedAtFacilityId, locatedAtFacilityId));
 			}
 		}
 		return locatedAtFacilityId;
@@ -827,7 +875,10 @@ public class FixedAssetImpl extends BizEntityTypedImpl<FixedAssetType> implement
 	 */
 	@Override
 	public void setLocatedAtFacilityId(Facility newLocatedAtFacilityId) {
+		Facility oldLocatedAtFacilityId = locatedAtFacilityId;
 		locatedAtFacilityId = newLocatedAtFacilityId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, FixedassetPackage.FIXED_ASSET__LOCATED_AT_FACILITY_ID, oldLocatedAtFacilityId, locatedAtFacilityId));
 	}
 
 	/**
@@ -847,7 +898,10 @@ public class FixedAssetImpl extends BizEntityTypedImpl<FixedAssetType> implement
 	 */
 	@Override
 	public void setLocatedAtLocationSeqId(String newLocatedAtLocationSeqId) {
+		String oldLocatedAtLocationSeqId = locatedAtLocationSeqId;
 		locatedAtLocationSeqId = newLocatedAtLocationSeqId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, FixedassetPackage.FIXED_ASSET__LOCATED_AT_LOCATION_SEQ_ID, oldLocatedAtLocationSeqId, locatedAtLocationSeqId));
 	}
 
 	/**
@@ -861,6 +915,8 @@ public class FixedAssetImpl extends BizEntityTypedImpl<FixedAssetType> implement
 			InternalEObject oldPartyId = (InternalEObject)partyId;
 			partyId = (Party)eResolveProxy(oldPartyId);
 			if (partyId != oldPartyId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, FixedassetPackage.FIXED_ASSET__PARTY_ID, oldPartyId, partyId));
 			}
 		}
 		return partyId;
@@ -882,7 +938,10 @@ public class FixedAssetImpl extends BizEntityTypedImpl<FixedAssetType> implement
 	 */
 	@Override
 	public void setPartyId(Party newPartyId) {
+		Party oldPartyId = partyId;
 		partyId = newPartyId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, FixedassetPackage.FIXED_ASSET__PARTY_ID, oldPartyId, partyId));
 	}
 
 	/**
@@ -902,7 +961,10 @@ public class FixedAssetImpl extends BizEntityTypedImpl<FixedAssetType> implement
 	 */
 	@Override
 	public void setProductionCapacity(BigDecimal newProductionCapacity) {
+		BigDecimal oldProductionCapacity = productionCapacity;
 		productionCapacity = newProductionCapacity;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, FixedassetPackage.FIXED_ASSET__PRODUCTION_CAPACITY, oldProductionCapacity, productionCapacity));
 	}
 
 	/**
@@ -922,7 +984,10 @@ public class FixedAssetImpl extends BizEntityTypedImpl<FixedAssetType> implement
 	 */
 	@Override
 	public void setPurchaseCost(BigDecimal newPurchaseCost) {
+		BigDecimal oldPurchaseCost = purchaseCost;
 		purchaseCost = newPurchaseCost;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, FixedassetPackage.FIXED_ASSET__PURCHASE_COST, oldPurchaseCost, purchaseCost));
 	}
 
 	/**
@@ -942,7 +1007,10 @@ public class FixedAssetImpl extends BizEntityTypedImpl<FixedAssetType> implement
 	 */
 	@Override
 	public void setPurchaseCostUomId(String newPurchaseCostUomId) {
+		String oldPurchaseCostUomId = purchaseCostUomId;
 		purchaseCostUomId = newPurchaseCostUomId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, FixedassetPackage.FIXED_ASSET__PURCHASE_COST_UOM_ID, oldPurchaseCostUomId, purchaseCostUomId));
 	}
 
 	/**
@@ -956,6 +1024,8 @@ public class FixedAssetImpl extends BizEntityTypedImpl<FixedAssetType> implement
 			InternalEObject oldRoleTypeId = (InternalEObject)roleTypeId;
 			roleTypeId = (RoleType)eResolveProxy(oldRoleTypeId);
 			if (roleTypeId != oldRoleTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, FixedassetPackage.FIXED_ASSET__ROLE_TYPE_ID, oldRoleTypeId, roleTypeId));
 			}
 		}
 		return roleTypeId;
@@ -977,7 +1047,10 @@ public class FixedAssetImpl extends BizEntityTypedImpl<FixedAssetType> implement
 	 */
 	@Override
 	public void setRoleTypeId(RoleType newRoleTypeId) {
+		RoleType oldRoleTypeId = roleTypeId;
 		roleTypeId = newRoleTypeId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, FixedassetPackage.FIXED_ASSET__ROLE_TYPE_ID, oldRoleTypeId, roleTypeId));
 	}
 
 	/**
@@ -997,7 +1070,10 @@ public class FixedAssetImpl extends BizEntityTypedImpl<FixedAssetType> implement
 	 */
 	@Override
 	public void setSalvageValue(BigDecimal newSalvageValue) {
+		BigDecimal oldSalvageValue = salvageValue;
 		salvageValue = newSalvageValue;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, FixedassetPackage.FIXED_ASSET__SALVAGE_VALUE, oldSalvageValue, salvageValue));
 	}
 
 	/**
@@ -1017,7 +1093,10 @@ public class FixedAssetImpl extends BizEntityTypedImpl<FixedAssetType> implement
 	 */
 	@Override
 	public void setSerialNumber(String newSerialNumber) {
+		String oldSerialNumber = serialNumber;
 		serialNumber = newSerialNumber;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, FixedassetPackage.FIXED_ASSET__SERIAL_NUMBER, oldSerialNumber, serialNumber));
 	}
 
 	/**
@@ -1031,6 +1110,8 @@ public class FixedAssetImpl extends BizEntityTypedImpl<FixedAssetType> implement
 			InternalEObject oldUomId = (InternalEObject)uomId;
 			uomId = (Uom)eResolveProxy(oldUomId);
 			if (uomId != oldUomId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, FixedassetPackage.FIXED_ASSET__UOM_ID, oldUomId, uomId));
 			}
 		}
 		return uomId;
@@ -1052,7 +1133,10 @@ public class FixedAssetImpl extends BizEntityTypedImpl<FixedAssetType> implement
 	 */
 	@Override
 	public void setUomId(Uom newUomId) {
+		Uom oldUomId = uomId;
 		uomId = newUomId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, FixedassetPackage.FIXED_ASSET__UOM_ID, oldUomId, uomId));
 	}
 
 	/**
@@ -1063,7 +1147,7 @@ public class FixedAssetImpl extends BizEntityTypedImpl<FixedAssetType> implement
 	@Override
 	public List<String> getFixedAssetAttributes() {
 		if (fixedAssetAttributes == null) {
-			fixedAssetAttributes = new BasicInternalEList<String>(String.class);
+			fixedAssetAttributes = new EDataTypeUniqueEList<String>(String.class, this, FixedassetPackage.FIXED_ASSET__FIXED_ASSET_ATTRIBUTES);
 		}
 		return fixedAssetAttributes;
 	}
@@ -1076,7 +1160,7 @@ public class FixedAssetImpl extends BizEntityTypedImpl<FixedAssetType> implement
 	@Override
 	public List<String> getFixedAssetIdents() {
 		if (fixedAssetIdents == null) {
-			fixedAssetIdents = new BasicInternalEList<String>(String.class);
+			fixedAssetIdents = new EDataTypeUniqueEList<String>(String.class, this, FixedassetPackage.FIXED_ASSET__FIXED_ASSET_IDENTS);
 		}
 		return fixedAssetIdents;
 	}
@@ -1089,7 +1173,7 @@ public class FixedAssetImpl extends BizEntityTypedImpl<FixedAssetType> implement
 	@Override
 	public List<String> getFixedAssetMaints() {
 		if (fixedAssetMaints == null) {
-			fixedAssetMaints = new BasicInternalEList<String>(String.class);
+			fixedAssetMaints = new EDataTypeUniqueEList<String>(String.class, this, FixedassetPackage.FIXED_ASSET__FIXED_ASSET_MAINTS);
 		}
 		return fixedAssetMaints;
 	}
@@ -1102,7 +1186,7 @@ public class FixedAssetImpl extends BizEntityTypedImpl<FixedAssetType> implement
 	@Override
 	public List<String> getFixedAssetRegistrations() {
 		if (fixedAssetRegistrations == null) {
-			fixedAssetRegistrations = new BasicInternalEList<String>(String.class);
+			fixedAssetRegistrations = new EDataTypeUniqueEList<String>(String.class, this, FixedassetPackage.FIXED_ASSET__FIXED_ASSET_REGISTRATIONS);
 		}
 		return fixedAssetRegistrations;
 	}
@@ -1238,6 +1322,8 @@ public class FixedAssetImpl extends BizEntityTypedImpl<FixedAssetType> implement
 			InternalEObject oldFixedAssetTypeId = (InternalEObject)fixedAssetTypeId;
 			fixedAssetTypeId = (FixedAssetType)eResolveProxy(oldFixedAssetTypeId);
 			if (fixedAssetTypeId != oldFixedAssetTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, FixedassetPackage.FIXED_ASSET__FIXED_ASSET_TYPE_ID, oldFixedAssetTypeId, fixedAssetTypeId));
 			}
 		}
 		return fixedAssetTypeId;
@@ -1259,7 +1345,10 @@ public class FixedAssetImpl extends BizEntityTypedImpl<FixedAssetType> implement
 	 */
 	@Override
 	public void setFixedAssetTypeId(FixedAssetType newFixedAssetTypeId) {
+		FixedAssetType oldFixedAssetTypeId = fixedAssetTypeId;
 		fixedAssetTypeId = newFixedAssetTypeId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, FixedassetPackage.FIXED_ASSET__FIXED_ASSET_TYPE_ID, oldFixedAssetTypeId, fixedAssetTypeId));
 	}
 
 	/**
@@ -1273,6 +1362,8 @@ public class FixedAssetImpl extends BizEntityTypedImpl<FixedAssetType> implement
 			InternalEObject oldParentFixedAssetId = (InternalEObject)parentFixedAssetId;
 			parentFixedAssetId = (FixedAsset)eResolveProxy(oldParentFixedAssetId);
 			if (parentFixedAssetId != oldParentFixedAssetId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, FixedassetPackage.FIXED_ASSET__PARENT_FIXED_ASSET_ID, oldParentFixedAssetId, parentFixedAssetId));
 			}
 		}
 		return parentFixedAssetId;
@@ -1294,7 +1385,10 @@ public class FixedAssetImpl extends BizEntityTypedImpl<FixedAssetType> implement
 	 */
 	@Override
 	public void setParentFixedAssetId(FixedAsset newParentFixedAssetId) {
+		FixedAsset oldParentFixedAssetId = parentFixedAssetId;
 		parentFixedAssetId = newParentFixedAssetId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, FixedassetPackage.FIXED_ASSET__PARENT_FIXED_ASSET_ID, oldParentFixedAssetId, parentFixedAssetId));
 	}
 
 	/**
@@ -1314,7 +1408,10 @@ public class FixedAssetImpl extends BizEntityTypedImpl<FixedAssetType> implement
 	 */
 	@Override
 	public void setFixedAssetId(String newFixedAssetId) {
+		String oldFixedAssetId = fixedAssetId;
 		fixedAssetId = newFixedAssetId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, FixedassetPackage.FIXED_ASSET__FIXED_ASSET_ID, oldFixedAssetId, fixedAssetId));
 	}
 
 	/**

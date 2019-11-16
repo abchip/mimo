@@ -12,7 +12,9 @@ import java.util.Date;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.service.semaphore.SemaphorePackage;
 import org.abchip.mimo.biz.service.semaphore.ServiceSemaphore;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -152,7 +154,10 @@ public class ServiceSemaphoreImpl extends BizEntityImpl implements ServiceSemaph
 	 */
 	@Override
 	public void setServiceName(String newServiceName) {
+		String oldServiceName = serviceName;
 		serviceName = newServiceName;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SemaphorePackage.SERVICE_SEMAPHORE__SERVICE_NAME, oldServiceName, serviceName));
 	}
 
 	/**
@@ -172,7 +177,10 @@ public class ServiceSemaphoreImpl extends BizEntityImpl implements ServiceSemaph
 	 */
 	@Override
 	public void setLockThread(String newLockThread) {
+		String oldLockThread = lockThread;
 		lockThread = newLockThread;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SemaphorePackage.SERVICE_SEMAPHORE__LOCK_THREAD, oldLockThread, lockThread));
 	}
 
 	/**
@@ -192,7 +200,10 @@ public class ServiceSemaphoreImpl extends BizEntityImpl implements ServiceSemaph
 	 */
 	@Override
 	public void setLockTime(Date newLockTime) {
+		Date oldLockTime = lockTime;
 		lockTime = newLockTime;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SemaphorePackage.SERVICE_SEMAPHORE__LOCK_TIME, oldLockTime, lockTime));
 	}
 
 	/**
@@ -212,7 +223,10 @@ public class ServiceSemaphoreImpl extends BizEntityImpl implements ServiceSemaph
 	 */
 	@Override
 	public void setLockedByInstanceId(String newLockedByInstanceId) {
+		String oldLockedByInstanceId = lockedByInstanceId;
 		lockedByInstanceId = newLockedByInstanceId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SemaphorePackage.SERVICE_SEMAPHORE__LOCKED_BY_INSTANCE_ID, oldLockedByInstanceId, lockedByInstanceId));
 	}
 
 	/**

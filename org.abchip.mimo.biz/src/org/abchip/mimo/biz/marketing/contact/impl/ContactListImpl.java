@@ -17,10 +17,12 @@ import org.abchip.mimo.biz.marketing.contact.ContactPackage;
 import org.abchip.mimo.biz.party.contact.ContactMechType;
 import org.abchip.mimo.biz.party.party.Party;
 import org.abchip.mimo.biz.security.login.UserLogin;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -373,7 +375,10 @@ public class ContactListImpl extends BizEntityTypedImpl<ContactListType> impleme
 	 */
 	@Override
 	public void setComments(String newComments) {
+		String oldComments = comments;
 		comments = newComments;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ContactPackage.CONTACT_LIST__COMMENTS, oldComments, comments));
 	}
 
 	/**
@@ -393,7 +398,10 @@ public class ContactListImpl extends BizEntityTypedImpl<ContactListType> impleme
 	 */
 	@Override
 	public void setContactListId(String newContactListId) {
+		String oldContactListId = contactListId;
 		contactListId = newContactListId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ContactPackage.CONTACT_LIST__CONTACT_LIST_ID, oldContactListId, contactListId));
 	}
 
 	/**
@@ -413,7 +421,10 @@ public class ContactListImpl extends BizEntityTypedImpl<ContactListType> impleme
 	 */
 	@Override
 	public void setContactListName(String newContactListName) {
+		String oldContactListName = contactListName;
 		contactListName = newContactListName;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ContactPackage.CONTACT_LIST__CONTACT_LIST_NAME, oldContactListName, contactListName));
 	}
 
 	/**
@@ -427,6 +438,8 @@ public class ContactListImpl extends BizEntityTypedImpl<ContactListType> impleme
 			InternalEObject oldContactListTypeId = (InternalEObject)contactListTypeId;
 			contactListTypeId = (ContactListType)eResolveProxy(oldContactListTypeId);
 			if (contactListTypeId != oldContactListTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ContactPackage.CONTACT_LIST__CONTACT_LIST_TYPE_ID, oldContactListTypeId, contactListTypeId));
 			}
 		}
 		return contactListTypeId;
@@ -448,7 +461,10 @@ public class ContactListImpl extends BizEntityTypedImpl<ContactListType> impleme
 	 */
 	@Override
 	public void setContactListTypeId(ContactListType newContactListTypeId) {
+		ContactListType oldContactListTypeId = contactListTypeId;
 		contactListTypeId = newContactListTypeId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ContactPackage.CONTACT_LIST__CONTACT_LIST_TYPE_ID, oldContactListTypeId, contactListTypeId));
 	}
 
 	/**
@@ -462,6 +478,8 @@ public class ContactListImpl extends BizEntityTypedImpl<ContactListType> impleme
 			InternalEObject oldContactMechTypeId = (InternalEObject)contactMechTypeId;
 			contactMechTypeId = (ContactMechType)eResolveProxy(oldContactMechTypeId);
 			if (contactMechTypeId != oldContactMechTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ContactPackage.CONTACT_LIST__CONTACT_MECH_TYPE_ID, oldContactMechTypeId, contactMechTypeId));
 			}
 		}
 		return contactMechTypeId;
@@ -483,7 +501,10 @@ public class ContactListImpl extends BizEntityTypedImpl<ContactListType> impleme
 	 */
 	@Override
 	public void setContactMechTypeId(ContactMechType newContactMechTypeId) {
+		ContactMechType oldContactMechTypeId = contactMechTypeId;
 		contactMechTypeId = newContactMechTypeId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ContactPackage.CONTACT_LIST__CONTACT_MECH_TYPE_ID, oldContactMechTypeId, contactMechTypeId));
 	}
 
 	/**
@@ -497,6 +518,8 @@ public class ContactListImpl extends BizEntityTypedImpl<ContactListType> impleme
 			InternalEObject oldCreatedByUserLogin = (InternalEObject)createdByUserLogin;
 			createdByUserLogin = (UserLogin)eResolveProxy(oldCreatedByUserLogin);
 			if (createdByUserLogin != oldCreatedByUserLogin) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ContactPackage.CONTACT_LIST__CREATED_BY_USER_LOGIN, oldCreatedByUserLogin, createdByUserLogin));
 			}
 		}
 		return createdByUserLogin;
@@ -518,7 +541,10 @@ public class ContactListImpl extends BizEntityTypedImpl<ContactListType> impleme
 	 */
 	@Override
 	public void setCreatedByUserLogin(UserLogin newCreatedByUserLogin) {
+		UserLogin oldCreatedByUserLogin = createdByUserLogin;
 		createdByUserLogin = newCreatedByUserLogin;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ContactPackage.CONTACT_LIST__CREATED_BY_USER_LOGIN, oldCreatedByUserLogin, createdByUserLogin));
 	}
 
 	/**
@@ -538,7 +564,10 @@ public class ContactListImpl extends BizEntityTypedImpl<ContactListType> impleme
 	 */
 	@Override
 	public void setDescription(String newDescription) {
+		String oldDescription = description;
 		description = newDescription;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ContactPackage.CONTACT_LIST__DESCRIPTION, oldDescription, description));
 	}
 
 	/**
@@ -558,7 +587,10 @@ public class ContactListImpl extends BizEntityTypedImpl<ContactListType> impleme
 	 */
 	@Override
 	public void setIsPublic(boolean newIsPublic) {
+		boolean oldIsPublic = isPublic;
 		isPublic = newIsPublic;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ContactPackage.CONTACT_LIST__IS_PUBLIC, oldIsPublic, isPublic));
 	}
 
 	/**
@@ -572,6 +604,8 @@ public class ContactListImpl extends BizEntityTypedImpl<ContactListType> impleme
 			InternalEObject oldLastModifiedByUserLogin = (InternalEObject)lastModifiedByUserLogin;
 			lastModifiedByUserLogin = (UserLogin)eResolveProxy(oldLastModifiedByUserLogin);
 			if (lastModifiedByUserLogin != oldLastModifiedByUserLogin) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ContactPackage.CONTACT_LIST__LAST_MODIFIED_BY_USER_LOGIN, oldLastModifiedByUserLogin, lastModifiedByUserLogin));
 			}
 		}
 		return lastModifiedByUserLogin;
@@ -593,7 +627,10 @@ public class ContactListImpl extends BizEntityTypedImpl<ContactListType> impleme
 	 */
 	@Override
 	public void setLastModifiedByUserLogin(UserLogin newLastModifiedByUserLogin) {
+		UserLogin oldLastModifiedByUserLogin = lastModifiedByUserLogin;
 		lastModifiedByUserLogin = newLastModifiedByUserLogin;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ContactPackage.CONTACT_LIST__LAST_MODIFIED_BY_USER_LOGIN, oldLastModifiedByUserLogin, lastModifiedByUserLogin));
 	}
 
 	/**
@@ -607,6 +644,8 @@ public class ContactListImpl extends BizEntityTypedImpl<ContactListType> impleme
 			InternalEObject oldMarketingCampaignId = (InternalEObject)marketingCampaignId;
 			marketingCampaignId = (MarketingCampaign)eResolveProxy(oldMarketingCampaignId);
 			if (marketingCampaignId != oldMarketingCampaignId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ContactPackage.CONTACT_LIST__MARKETING_CAMPAIGN_ID, oldMarketingCampaignId, marketingCampaignId));
 			}
 		}
 		return marketingCampaignId;
@@ -628,7 +667,10 @@ public class ContactListImpl extends BizEntityTypedImpl<ContactListType> impleme
 	 */
 	@Override
 	public void setMarketingCampaignId(MarketingCampaign newMarketingCampaignId) {
+		MarketingCampaign oldMarketingCampaignId = marketingCampaignId;
 		marketingCampaignId = newMarketingCampaignId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ContactPackage.CONTACT_LIST__MARKETING_CAMPAIGN_ID, oldMarketingCampaignId, marketingCampaignId));
 	}
 
 	/**
@@ -648,7 +690,10 @@ public class ContactListImpl extends BizEntityTypedImpl<ContactListType> impleme
 	 */
 	@Override
 	public void setOptOutScreen(String newOptOutScreen) {
+		String oldOptOutScreen = optOutScreen;
 		optOutScreen = newOptOutScreen;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ContactPackage.CONTACT_LIST__OPT_OUT_SCREEN, oldOptOutScreen, optOutScreen));
 	}
 
 	/**
@@ -662,6 +707,8 @@ public class ContactListImpl extends BizEntityTypedImpl<ContactListType> impleme
 			InternalEObject oldOwnerPartyId = (InternalEObject)ownerPartyId;
 			ownerPartyId = (Party)eResolveProxy(oldOwnerPartyId);
 			if (ownerPartyId != oldOwnerPartyId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ContactPackage.CONTACT_LIST__OWNER_PARTY_ID, oldOwnerPartyId, ownerPartyId));
 			}
 		}
 		return ownerPartyId;
@@ -683,7 +730,10 @@ public class ContactListImpl extends BizEntityTypedImpl<ContactListType> impleme
 	 */
 	@Override
 	public void setOwnerPartyId(Party newOwnerPartyId) {
+		Party oldOwnerPartyId = ownerPartyId;
 		ownerPartyId = newOwnerPartyId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ContactPackage.CONTACT_LIST__OWNER_PARTY_ID, oldOwnerPartyId, ownerPartyId));
 	}
 
 	/**
@@ -703,7 +753,10 @@ public class ContactListImpl extends BizEntityTypedImpl<ContactListType> impleme
 	 */
 	@Override
 	public void setSingleUse(boolean newSingleUse) {
+		boolean oldSingleUse = singleUse;
 		singleUse = newSingleUse;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ContactPackage.CONTACT_LIST__SINGLE_USE, oldSingleUse, singleUse));
 	}
 
 	/**
@@ -723,7 +776,10 @@ public class ContactListImpl extends BizEntityTypedImpl<ContactListType> impleme
 	 */
 	@Override
 	public void setVerifyEmailFrom(String newVerifyEmailFrom) {
+		String oldVerifyEmailFrom = verifyEmailFrom;
 		verifyEmailFrom = newVerifyEmailFrom;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ContactPackage.CONTACT_LIST__VERIFY_EMAIL_FROM, oldVerifyEmailFrom, verifyEmailFrom));
 	}
 
 	/**
@@ -743,7 +799,10 @@ public class ContactListImpl extends BizEntityTypedImpl<ContactListType> impleme
 	 */
 	@Override
 	public void setVerifyEmailScreen(String newVerifyEmailScreen) {
+		String oldVerifyEmailScreen = verifyEmailScreen;
 		verifyEmailScreen = newVerifyEmailScreen;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ContactPackage.CONTACT_LIST__VERIFY_EMAIL_SCREEN, oldVerifyEmailScreen, verifyEmailScreen));
 	}
 
 	/**
@@ -763,7 +822,10 @@ public class ContactListImpl extends BizEntityTypedImpl<ContactListType> impleme
 	 */
 	@Override
 	public void setVerifyEmailSubject(String newVerifyEmailSubject) {
+		String oldVerifyEmailSubject = verifyEmailSubject;
 		verifyEmailSubject = newVerifyEmailSubject;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ContactPackage.CONTACT_LIST__VERIFY_EMAIL_SUBJECT, oldVerifyEmailSubject, verifyEmailSubject));
 	}
 
 	/**
@@ -783,7 +845,10 @@ public class ContactListImpl extends BizEntityTypedImpl<ContactListType> impleme
 	 */
 	@Override
 	public void setVerifyEmailWebSiteId(String newVerifyEmailWebSiteId) {
+		String oldVerifyEmailWebSiteId = verifyEmailWebSiteId;
 		verifyEmailWebSiteId = newVerifyEmailWebSiteId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ContactPackage.CONTACT_LIST__VERIFY_EMAIL_WEB_SITE_ID, oldVerifyEmailWebSiteId, verifyEmailWebSiteId));
 	}
 
 	/**

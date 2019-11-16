@@ -10,7 +10,9 @@ package org.abchip.mimo.application.impl;
 
 import org.abchip.mimo.application.ApplicationPackage;
 import org.abchip.mimo.application.ServiceRegistryEntry;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -141,7 +143,10 @@ public class ServiceRegistryEntryImpl extends ServiceRefImpl implements ServiceR
 	 */
 	@Override
 	public void setInterfaceName(String newInterfaceName) {
+		String oldInterfaceName = interfaceName;
 		interfaceName = newInterfaceName;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ApplicationPackage.SERVICE_REGISTRY_ENTRY__INTERFACE_NAME, oldInterfaceName, interfaceName));
 	}
 
 	/**
@@ -161,7 +166,10 @@ public class ServiceRegistryEntryImpl extends ServiceRefImpl implements ServiceR
 	 */
 	@Override
 	public void setName(String newName) {
+		String oldName = name;
 		name = newName;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ApplicationPackage.SERVICE_REGISTRY_ENTRY__NAME, oldName, name));
 	}
 
 	/**
@@ -181,7 +189,10 @@ public class ServiceRegistryEntryImpl extends ServiceRefImpl implements ServiceR
 	 */
 	@Override
 	public void setVendor(String newVendor) {
+		String oldVendor = vendor;
 		vendor = newVendor;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ApplicationPackage.SERVICE_REGISTRY_ENTRY__VENDOR, oldVendor, vendor));
 	}
 
 	/**
@@ -201,7 +212,10 @@ public class ServiceRegistryEntryImpl extends ServiceRefImpl implements ServiceR
 	 */
 	@Override
 	public void setVersion(String newVersion) {
+		String oldVersion = version;
 		version = newVersion;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ApplicationPackage.SERVICE_REGISTRY_ENTRY__VERSION, oldVersion, version));
 	}
 
 	/**

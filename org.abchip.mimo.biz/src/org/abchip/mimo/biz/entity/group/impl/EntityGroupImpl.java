@@ -13,9 +13,11 @@ import java.util.List;
 import org.abchip.mimo.biz.entity.group.EntityGroup;
 import org.abchip.mimo.biz.entity.group.GroupPackage;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.util.BasicInternalEList;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -123,7 +125,10 @@ public class EntityGroupImpl extends BizEntityImpl implements EntityGroup {
 	 */
 	@Override
 	public void setEntityGroupId(String newEntityGroupId) {
+		String oldEntityGroupId = entityGroupId;
 		entityGroupId = newEntityGroupId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, GroupPackage.ENTITY_GROUP__ENTITY_GROUP_ID, oldEntityGroupId, entityGroupId));
 	}
 
 	/**
@@ -143,7 +148,10 @@ public class EntityGroupImpl extends BizEntityImpl implements EntityGroup {
 	 */
 	@Override
 	public void setEntityGroupName(String newEntityGroupName) {
+		String oldEntityGroupName = entityGroupName;
 		entityGroupName = newEntityGroupName;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, GroupPackage.ENTITY_GROUP__ENTITY_GROUP_NAME, oldEntityGroupName, entityGroupName));
 	}
 
 	/**
@@ -154,7 +162,7 @@ public class EntityGroupImpl extends BizEntityImpl implements EntityGroup {
 	@Override
 	public List<String> getEntityGroupEntries() {
 		if (entityGroupEntries == null) {
-			entityGroupEntries = new BasicInternalEList<String>(String.class);
+			entityGroupEntries = new EDataTypeUniqueEList<String>(String.class, this, GroupPackage.ENTITY_GROUP__ENTITY_GROUP_ENTRIES);
 		}
 		return entityGroupEntries;
 	}

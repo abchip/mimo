@@ -12,7 +12,9 @@ import java.util.List;
 import org.abchip.mimo.biz.content.data.DataPackage;
 import org.abchip.mimo.biz.content.data.MetaDataPredicate;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -110,7 +112,10 @@ public class MetaDataPredicateImpl extends BizEntityImpl implements MetaDataPred
 	 */
 	@Override
 	public void setDescription(String newDescription) {
+		String oldDescription = description;
 		description = newDescription;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, DataPackage.META_DATA_PREDICATE__DESCRIPTION, oldDescription, description));
 	}
 
 	/**
@@ -154,7 +159,10 @@ public class MetaDataPredicateImpl extends BizEntityImpl implements MetaDataPred
 	 */
 	@Override
 	public void setMetaDataPredicateId(String newMetaDataPredicateId) {
+		String oldMetaDataPredicateId = metaDataPredicateId;
 		metaDataPredicateId = newMetaDataPredicateId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, DataPackage.META_DATA_PREDICATE__META_DATA_PREDICATE_ID, oldMetaDataPredicateId, metaDataPredicateId));
 	}
 
 	/**

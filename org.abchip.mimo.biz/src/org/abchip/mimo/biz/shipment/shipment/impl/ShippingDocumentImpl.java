@@ -10,7 +10,9 @@ package org.abchip.mimo.biz.shipment.shipment.impl;
 import org.abchip.mimo.biz.content.document.impl.DocumentImpl;
 import org.abchip.mimo.biz.shipment.shipment.Shipment_Package;
 import org.abchip.mimo.biz.shipment.shipment.ShippingDocument;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -150,7 +152,10 @@ public class ShippingDocumentImpl extends DocumentImpl implements ShippingDocume
 	 */
 	@Override
 	public void setDescription(String newDescription) {
+		String oldDescription = description;
 		description = newDescription;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, Shipment_Package.SHIPPING_DOCUMENT__DESCRIPTION, oldDescription, description));
 	}
 
 	/**
@@ -170,7 +175,10 @@ public class ShippingDocumentImpl extends DocumentImpl implements ShippingDocume
 	 */
 	@Override
 	public void setShipmentId(String newShipmentId) {
+		String oldShipmentId = shipmentId;
 		shipmentId = newShipmentId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, Shipment_Package.SHIPPING_DOCUMENT__SHIPMENT_ID, oldShipmentId, shipmentId));
 	}
 
 	/**
@@ -190,7 +198,10 @@ public class ShippingDocumentImpl extends DocumentImpl implements ShippingDocume
 	 */
 	@Override
 	public void setShipmentItemSeqId(String newShipmentItemSeqId) {
+		String oldShipmentItemSeqId = shipmentItemSeqId;
 		shipmentItemSeqId = newShipmentItemSeqId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, Shipment_Package.SHIPPING_DOCUMENT__SHIPMENT_ITEM_SEQ_ID, oldShipmentItemSeqId, shipmentItemSeqId));
 	}
 
 	/**
@@ -210,7 +221,10 @@ public class ShippingDocumentImpl extends DocumentImpl implements ShippingDocume
 	 */
 	@Override
 	public void setShipmentPackageSeqId(String newShipmentPackageSeqId) {
+		String oldShipmentPackageSeqId = shipmentPackageSeqId;
 		shipmentPackageSeqId = newShipmentPackageSeqId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, Shipment_Package.SHIPPING_DOCUMENT__SHIPMENT_PACKAGE_SEQ_ID, oldShipmentPackageSeqId, shipmentPackageSeqId));
 	}
 
 	/**

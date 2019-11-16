@@ -13,9 +13,11 @@ import org.abchip.mimo.biz.party.party.Party;
 import org.abchip.mimo.biz.product.feature.ProductFeature;
 import org.abchip.mimo.biz.product.supplier.SupplierPackage;
 import org.abchip.mimo.biz.product.supplier.SupplierProductFeature;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -146,7 +148,10 @@ public class SupplierProductFeatureImpl extends BizEntityImpl implements Supplie
 	 */
 	@Override
 	public void setDescription(String newDescription) {
+		String oldDescription = description;
 		description = newDescription;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SupplierPackage.SUPPLIER_PRODUCT_FEATURE__DESCRIPTION, oldDescription, description));
 	}
 
 	/**
@@ -166,7 +171,10 @@ public class SupplierProductFeatureImpl extends BizEntityImpl implements Supplie
 	 */
 	@Override
 	public void setIdCode(String newIdCode) {
+		String oldIdCode = idCode;
 		idCode = newIdCode;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SupplierPackage.SUPPLIER_PRODUCT_FEATURE__ID_CODE, oldIdCode, idCode));
 	}
 
 	/**
@@ -180,6 +188,8 @@ public class SupplierProductFeatureImpl extends BizEntityImpl implements Supplie
 			InternalEObject oldPartyId = (InternalEObject)partyId;
 			partyId = (Party)eResolveProxy(oldPartyId);
 			if (partyId != oldPartyId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, SupplierPackage.SUPPLIER_PRODUCT_FEATURE__PARTY_ID, oldPartyId, partyId));
 			}
 		}
 		return partyId;
@@ -201,7 +211,10 @@ public class SupplierProductFeatureImpl extends BizEntityImpl implements Supplie
 	 */
 	@Override
 	public void setPartyId(Party newPartyId) {
+		Party oldPartyId = partyId;
 		partyId = newPartyId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SupplierPackage.SUPPLIER_PRODUCT_FEATURE__PARTY_ID, oldPartyId, partyId));
 	}
 
 	/**
@@ -215,6 +228,8 @@ public class SupplierProductFeatureImpl extends BizEntityImpl implements Supplie
 			InternalEObject oldUomId = (InternalEObject)uomId;
 			uomId = (Uom)eResolveProxy(oldUomId);
 			if (uomId != oldUomId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, SupplierPackage.SUPPLIER_PRODUCT_FEATURE__UOM_ID, oldUomId, uomId));
 			}
 		}
 		return uomId;
@@ -236,7 +251,10 @@ public class SupplierProductFeatureImpl extends BizEntityImpl implements Supplie
 	 */
 	@Override
 	public void setUomId(Uom newUomId) {
+		Uom oldUomId = uomId;
 		uomId = newUomId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SupplierPackage.SUPPLIER_PRODUCT_FEATURE__UOM_ID, oldUomId, uomId));
 	}
 
 	/**
@@ -250,6 +268,8 @@ public class SupplierProductFeatureImpl extends BizEntityImpl implements Supplie
 			InternalEObject oldProductFeatureId = (InternalEObject)productFeatureId;
 			productFeatureId = (ProductFeature)eResolveProxy(oldProductFeatureId);
 			if (productFeatureId != oldProductFeatureId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, SupplierPackage.SUPPLIER_PRODUCT_FEATURE__PRODUCT_FEATURE_ID, oldProductFeatureId, productFeatureId));
 			}
 		}
 		return productFeatureId;
@@ -271,7 +291,10 @@ public class SupplierProductFeatureImpl extends BizEntityImpl implements Supplie
 	 */
 	@Override
 	public void setProductFeatureId(ProductFeature newProductFeatureId) {
+		ProductFeature oldProductFeatureId = productFeatureId;
 		productFeatureId = newProductFeatureId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SupplierPackage.SUPPLIER_PRODUCT_FEATURE__PRODUCT_FEATURE_ID, oldProductFeatureId, productFeatureId));
 	}
 
 	/**

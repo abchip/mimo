@@ -15,9 +15,11 @@ import org.abchip.mimo.biz.accounting.finaccount.FinaccountPackage;
 import org.abchip.mimo.biz.common.status.StatusItem;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.security.login.UserLogin;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -135,6 +137,8 @@ public class FinAccountStatusImpl extends BizEntityImpl implements FinAccountSta
 			InternalEObject oldChangeByUserLoginId = (InternalEObject)changeByUserLoginId;
 			changeByUserLoginId = (UserLogin)eResolveProxy(oldChangeByUserLoginId);
 			if (changeByUserLoginId != oldChangeByUserLoginId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, FinaccountPackage.FIN_ACCOUNT_STATUS__CHANGE_BY_USER_LOGIN_ID, oldChangeByUserLoginId, changeByUserLoginId));
 			}
 		}
 		return changeByUserLoginId;
@@ -156,7 +160,10 @@ public class FinAccountStatusImpl extends BizEntityImpl implements FinAccountSta
 	 */
 	@Override
 	public void setChangeByUserLoginId(UserLogin newChangeByUserLoginId) {
+		UserLogin oldChangeByUserLoginId = changeByUserLoginId;
 		changeByUserLoginId = newChangeByUserLoginId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, FinaccountPackage.FIN_ACCOUNT_STATUS__CHANGE_BY_USER_LOGIN_ID, oldChangeByUserLoginId, changeByUserLoginId));
 	}
 
 	/**
@@ -176,7 +183,10 @@ public class FinAccountStatusImpl extends BizEntityImpl implements FinAccountSta
 	 */
 	@Override
 	public void setStatusDate(Date newStatusDate) {
+		Date oldStatusDate = statusDate;
 		statusDate = newStatusDate;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, FinaccountPackage.FIN_ACCOUNT_STATUS__STATUS_DATE, oldStatusDate, statusDate));
 	}
 
 	/**
@@ -196,7 +206,10 @@ public class FinAccountStatusImpl extends BizEntityImpl implements FinAccountSta
 	 */
 	@Override
 	public void setStatusEndDate(Date newStatusEndDate) {
+		Date oldStatusEndDate = statusEndDate;
 		statusEndDate = newStatusEndDate;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, FinaccountPackage.FIN_ACCOUNT_STATUS__STATUS_END_DATE, oldStatusEndDate, statusEndDate));
 	}
 
 	/**
@@ -210,6 +223,8 @@ public class FinAccountStatusImpl extends BizEntityImpl implements FinAccountSta
 			InternalEObject oldStatusId = (InternalEObject)statusId;
 			statusId = (StatusItem)eResolveProxy(oldStatusId);
 			if (statusId != oldStatusId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, FinaccountPackage.FIN_ACCOUNT_STATUS__STATUS_ID, oldStatusId, statusId));
 			}
 		}
 		return statusId;
@@ -231,7 +246,10 @@ public class FinAccountStatusImpl extends BizEntityImpl implements FinAccountSta
 	 */
 	@Override
 	public void setStatusId(StatusItem newStatusId) {
+		StatusItem oldStatusId = statusId;
 		statusId = newStatusId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, FinaccountPackage.FIN_ACCOUNT_STATUS__STATUS_ID, oldStatusId, statusId));
 	}
 
 	/**
@@ -245,6 +263,8 @@ public class FinAccountStatusImpl extends BizEntityImpl implements FinAccountSta
 			InternalEObject oldFinAccountId = (InternalEObject)finAccountId;
 			finAccountId = (FinAccount)eResolveProxy(oldFinAccountId);
 			if (finAccountId != oldFinAccountId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, FinaccountPackage.FIN_ACCOUNT_STATUS__FIN_ACCOUNT_ID, oldFinAccountId, finAccountId));
 			}
 		}
 		return finAccountId;
@@ -266,7 +286,10 @@ public class FinAccountStatusImpl extends BizEntityImpl implements FinAccountSta
 	 */
 	@Override
 	public void setFinAccountId(FinAccount newFinAccountId) {
+		FinAccount oldFinAccountId = finAccountId;
 		finAccountId = newFinAccountId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, FinaccountPackage.FIN_ACCOUNT_STATUS__FIN_ACCOUNT_ID, oldFinAccountId, finAccountId));
 	}
 
 	/**

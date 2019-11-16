@@ -11,9 +11,11 @@ import org.abchip.mimo.biz.accounting.fixedasset.FixedAsset;
 import org.abchip.mimo.biz.accounting.fixedasset.FixedAssetAttribute;
 import org.abchip.mimo.biz.accounting.fixedasset.FixedassetPackage;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -136,7 +138,10 @@ public class FixedAssetAttributeImpl extends BizEntityImpl implements FixedAsset
 	 */
 	@Override
 	public void setAttrDescription(String newAttrDescription) {
+		String oldAttrDescription = attrDescription;
 		attrDescription = newAttrDescription;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, FixedassetPackage.FIXED_ASSET_ATTRIBUTE__ATTR_DESCRIPTION, oldAttrDescription, attrDescription));
 	}
 
 	/**
@@ -156,7 +161,10 @@ public class FixedAssetAttributeImpl extends BizEntityImpl implements FixedAsset
 	 */
 	@Override
 	public void setAttrValue(String newAttrValue) {
+		String oldAttrValue = attrValue;
 		attrValue = newAttrValue;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, FixedassetPackage.FIXED_ASSET_ATTRIBUTE__ATTR_VALUE, oldAttrValue, attrValue));
 	}
 
 	/**
@@ -170,6 +178,8 @@ public class FixedAssetAttributeImpl extends BizEntityImpl implements FixedAsset
 			InternalEObject oldFixedAssetId = (InternalEObject)fixedAssetId;
 			fixedAssetId = (FixedAsset)eResolveProxy(oldFixedAssetId);
 			if (fixedAssetId != oldFixedAssetId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, FixedassetPackage.FIXED_ASSET_ATTRIBUTE__FIXED_ASSET_ID, oldFixedAssetId, fixedAssetId));
 			}
 		}
 		return fixedAssetId;
@@ -191,7 +201,10 @@ public class FixedAssetAttributeImpl extends BizEntityImpl implements FixedAsset
 	 */
 	@Override
 	public void setFixedAssetId(FixedAsset newFixedAssetId) {
+		FixedAsset oldFixedAssetId = fixedAssetId;
 		fixedAssetId = newFixedAssetId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, FixedassetPackage.FIXED_ASSET_ATTRIBUTE__FIXED_ASSET_ID, oldFixedAssetId, fixedAssetId));
 	}
 
 	/**
@@ -211,7 +224,10 @@ public class FixedAssetAttributeImpl extends BizEntityImpl implements FixedAsset
 	 */
 	@Override
 	public void setAttrName(String newAttrName) {
+		String oldAttrName = attrName;
 		attrName = newAttrName;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, FixedassetPackage.FIXED_ASSET_ATTRIBUTE__ATTR_NAME, oldAttrName, attrName));
 	}
 
 	/**

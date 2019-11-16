@@ -10,7 +10,9 @@ package org.abchip.mimo.biz.common.geo.impl;
 import org.abchip.mimo.biz.common.geo.CountryCode;
 import org.abchip.mimo.biz.common.geo.GeoPackage;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -142,7 +144,10 @@ public class CountryCodeImpl extends BizEntityImpl implements CountryCode {
 	 */
 	@Override
 	public void setCountryAbbr(String newCountryAbbr) {
+		String oldCountryAbbr = countryAbbr;
 		countryAbbr = newCountryAbbr;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, GeoPackage.COUNTRY_CODE__COUNTRY_ABBR, oldCountryAbbr, countryAbbr));
 	}
 
 	/**
@@ -162,7 +167,10 @@ public class CountryCodeImpl extends BizEntityImpl implements CountryCode {
 	 */
 	@Override
 	public void setCountryName(String newCountryName) {
+		String oldCountryName = countryName;
 		countryName = newCountryName;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, GeoPackage.COUNTRY_CODE__COUNTRY_NAME, oldCountryName, countryName));
 	}
 
 	/**
@@ -182,7 +190,10 @@ public class CountryCodeImpl extends BizEntityImpl implements CountryCode {
 	 */
 	@Override
 	public void setCountryNumber(String newCountryNumber) {
+		String oldCountryNumber = countryNumber;
 		countryNumber = newCountryNumber;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, GeoPackage.COUNTRY_CODE__COUNTRY_NUMBER, oldCountryNumber, countryNumber));
 	}
 
 	/**
@@ -202,7 +213,10 @@ public class CountryCodeImpl extends BizEntityImpl implements CountryCode {
 	 */
 	@Override
 	public void setCountryCode(String newCountryCode) {
+		String oldCountryCode = countryCode;
 		countryCode = newCountryCode;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, GeoPackage.COUNTRY_CODE__COUNTRY_CODE, oldCountryCode, countryCode));
 	}
 
 	/**

@@ -14,10 +14,12 @@ import org.abchip.mimo.biz.humanres.position.EmplPositionFulfillment;
 import org.abchip.mimo.biz.humanres.position.PositionPackage;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.party.party.Party;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -158,7 +160,10 @@ public class EmplPositionFulfillmentImpl extends BizEntityImpl implements EmplPo
 	 */
 	@Override
 	public void setComments(String newComments) {
+		String oldComments = comments;
 		comments = newComments;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PositionPackage.EMPL_POSITION_FULFILLMENT__COMMENTS, oldComments, comments));
 	}
 
 	/**
@@ -172,6 +177,8 @@ public class EmplPositionFulfillmentImpl extends BizEntityImpl implements EmplPo
 			InternalEObject oldEmplPositionId = (InternalEObject)emplPositionId;
 			emplPositionId = (EmplPosition)eResolveProxy(oldEmplPositionId);
 			if (emplPositionId != oldEmplPositionId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PositionPackage.EMPL_POSITION_FULFILLMENT__EMPL_POSITION_ID, oldEmplPositionId, emplPositionId));
 			}
 		}
 		return emplPositionId;
@@ -193,7 +200,10 @@ public class EmplPositionFulfillmentImpl extends BizEntityImpl implements EmplPo
 	 */
 	@Override
 	public void setEmplPositionId(EmplPosition newEmplPositionId) {
+		EmplPosition oldEmplPositionId = emplPositionId;
 		emplPositionId = newEmplPositionId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PositionPackage.EMPL_POSITION_FULFILLMENT__EMPL_POSITION_ID, oldEmplPositionId, emplPositionId));
 	}
 
 	/**
@@ -213,7 +223,10 @@ public class EmplPositionFulfillmentImpl extends BizEntityImpl implements EmplPo
 	 */
 	@Override
 	public void setFromDate(Date newFromDate) {
+		Date oldFromDate = fromDate;
 		fromDate = newFromDate;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PositionPackage.EMPL_POSITION_FULFILLMENT__FROM_DATE, oldFromDate, fromDate));
 	}
 
 	/**
@@ -227,6 +240,8 @@ public class EmplPositionFulfillmentImpl extends BizEntityImpl implements EmplPo
 			InternalEObject oldPartyId = (InternalEObject)partyId;
 			partyId = (Party)eResolveProxy(oldPartyId);
 			if (partyId != oldPartyId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PositionPackage.EMPL_POSITION_FULFILLMENT__PARTY_ID, oldPartyId, partyId));
 			}
 		}
 		return partyId;
@@ -248,7 +263,10 @@ public class EmplPositionFulfillmentImpl extends BizEntityImpl implements EmplPo
 	 */
 	@Override
 	public void setPartyId(Party newPartyId) {
+		Party oldPartyId = partyId;
 		partyId = newPartyId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PositionPackage.EMPL_POSITION_FULFILLMENT__PARTY_ID, oldPartyId, partyId));
 	}
 
 	/**
@@ -268,7 +286,10 @@ public class EmplPositionFulfillmentImpl extends BizEntityImpl implements EmplPo
 	 */
 	@Override
 	public void setThruDate(Date newThruDate) {
+		Date oldThruDate = thruDate;
 		thruDate = newThruDate;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PositionPackage.EMPL_POSITION_FULFILLMENT__THRU_DATE, oldThruDate, thruDate));
 	}
 
 	/**

@@ -14,9 +14,11 @@ import org.abchip.mimo.biz.party.agreement.Agreement;
 import org.abchip.mimo.biz.party.agreement.AgreementPackage;
 import org.abchip.mimo.biz.party.agreement.AgreementProductAppl;
 import org.abchip.mimo.biz.product.product.Product;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -130,7 +132,10 @@ public class AgreementProductApplImpl extends BizEntityImpl implements Agreement
 	 */
 	@Override
 	public void setAgreementItemSeqId(String newAgreementItemSeqId) {
+		String oldAgreementItemSeqId = agreementItemSeqId;
 		agreementItemSeqId = newAgreementItemSeqId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, AgreementPackage.AGREEMENT_PRODUCT_APPL__AGREEMENT_ITEM_SEQ_ID, oldAgreementItemSeqId, agreementItemSeqId));
 	}
 
 	/**
@@ -150,7 +155,10 @@ public class AgreementProductApplImpl extends BizEntityImpl implements Agreement
 	 */
 	@Override
 	public void setPrice(BigDecimal newPrice) {
+		BigDecimal oldPrice = price;
 		price = newPrice;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, AgreementPackage.AGREEMENT_PRODUCT_APPL__PRICE, oldPrice, price));
 	}
 
 	/**
@@ -164,6 +172,8 @@ public class AgreementProductApplImpl extends BizEntityImpl implements Agreement
 			InternalEObject oldProductId = (InternalEObject)productId;
 			productId = (Product)eResolveProxy(oldProductId);
 			if (productId != oldProductId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, AgreementPackage.AGREEMENT_PRODUCT_APPL__PRODUCT_ID, oldProductId, productId));
 			}
 		}
 		return productId;
@@ -185,7 +195,10 @@ public class AgreementProductApplImpl extends BizEntityImpl implements Agreement
 	 */
 	@Override
 	public void setProductId(Product newProductId) {
+		Product oldProductId = productId;
 		productId = newProductId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, AgreementPackage.AGREEMENT_PRODUCT_APPL__PRODUCT_ID, oldProductId, productId));
 	}
 
 	/**
@@ -199,6 +212,8 @@ public class AgreementProductApplImpl extends BizEntityImpl implements Agreement
 			InternalEObject oldAgreementId = (InternalEObject)agreementId;
 			agreementId = (Agreement)eResolveProxy(oldAgreementId);
 			if (agreementId != oldAgreementId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, AgreementPackage.AGREEMENT_PRODUCT_APPL__AGREEMENT_ID, oldAgreementId, agreementId));
 			}
 		}
 		return agreementId;
@@ -220,7 +235,10 @@ public class AgreementProductApplImpl extends BizEntityImpl implements Agreement
 	 */
 	@Override
 	public void setAgreementId(Agreement newAgreementId) {
+		Agreement oldAgreementId = agreementId;
 		agreementId = newAgreementId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, AgreementPackage.AGREEMENT_PRODUCT_APPL__AGREEMENT_ID, oldAgreementId, agreementId));
 	}
 
 	/**

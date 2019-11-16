@@ -15,10 +15,12 @@ import org.abchip.mimo.biz.marketing.tracking.TrackingCodeOrder;
 import org.abchip.mimo.biz.marketing.tracking.TrackingCodeType;
 import org.abchip.mimo.biz.marketing.tracking.TrackingPackage;
 import org.abchip.mimo.biz.order.order.OrderHeader;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -191,7 +193,10 @@ public class TrackingCodeOrderImpl extends BizEntityImpl implements TrackingCode
 	 */
 	@Override
 	public void setAffiliateReferredTimeStamp(Date newAffiliateReferredTimeStamp) {
+		Date oldAffiliateReferredTimeStamp = affiliateReferredTimeStamp;
 		affiliateReferredTimeStamp = newAffiliateReferredTimeStamp;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, TrackingPackage.TRACKING_CODE_ORDER__AFFILIATE_REFERRED_TIME_STAMP, oldAffiliateReferredTimeStamp, affiliateReferredTimeStamp));
 	}
 
 	/**
@@ -211,7 +216,10 @@ public class TrackingCodeOrderImpl extends BizEntityImpl implements TrackingCode
 	 */
 	@Override
 	public void setHasExported(boolean newHasExported) {
+		boolean oldHasExported = hasExported;
 		hasExported = newHasExported;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, TrackingPackage.TRACKING_CODE_ORDER__HAS_EXPORTED, oldHasExported, hasExported));
 	}
 
 	/**
@@ -231,7 +239,10 @@ public class TrackingCodeOrderImpl extends BizEntityImpl implements TrackingCode
 	 */
 	@Override
 	public void setIsBillable(boolean newIsBillable) {
+		boolean oldIsBillable = isBillable;
 		isBillable = newIsBillable;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, TrackingPackage.TRACKING_CODE_ORDER__IS_BILLABLE, oldIsBillable, isBillable));
 	}
 
 	/**
@@ -245,6 +256,8 @@ public class TrackingCodeOrderImpl extends BizEntityImpl implements TrackingCode
 			InternalEObject oldOrderId = (InternalEObject)orderId;
 			orderId = (OrderHeader)eResolveProxy(oldOrderId);
 			if (orderId != oldOrderId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, TrackingPackage.TRACKING_CODE_ORDER__ORDER_ID, oldOrderId, orderId));
 			}
 		}
 		return orderId;
@@ -266,7 +279,10 @@ public class TrackingCodeOrderImpl extends BizEntityImpl implements TrackingCode
 	 */
 	@Override
 	public void setOrderId(OrderHeader newOrderId) {
+		OrderHeader oldOrderId = orderId;
 		orderId = newOrderId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, TrackingPackage.TRACKING_CODE_ORDER__ORDER_ID, oldOrderId, orderId));
 	}
 
 	/**
@@ -286,7 +302,10 @@ public class TrackingCodeOrderImpl extends BizEntityImpl implements TrackingCode
 	 */
 	@Override
 	public void setSiteId(String newSiteId) {
+		String oldSiteId = siteId;
 		siteId = newSiteId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, TrackingPackage.TRACKING_CODE_ORDER__SITE_ID, oldSiteId, siteId));
 	}
 
 	/**
@@ -300,6 +319,8 @@ public class TrackingCodeOrderImpl extends BizEntityImpl implements TrackingCode
 			InternalEObject oldTrackingCodeId = (InternalEObject)trackingCodeId;
 			trackingCodeId = (TrackingCode)eResolveProxy(oldTrackingCodeId);
 			if (trackingCodeId != oldTrackingCodeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, TrackingPackage.TRACKING_CODE_ORDER__TRACKING_CODE_ID, oldTrackingCodeId, trackingCodeId));
 			}
 		}
 		return trackingCodeId;
@@ -321,7 +342,10 @@ public class TrackingCodeOrderImpl extends BizEntityImpl implements TrackingCode
 	 */
 	@Override
 	public void setTrackingCodeId(TrackingCode newTrackingCodeId) {
+		TrackingCode oldTrackingCodeId = trackingCodeId;
 		trackingCodeId = newTrackingCodeId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, TrackingPackage.TRACKING_CODE_ORDER__TRACKING_CODE_ID, oldTrackingCodeId, trackingCodeId));
 	}
 
 	/**
@@ -335,6 +359,8 @@ public class TrackingCodeOrderImpl extends BizEntityImpl implements TrackingCode
 			InternalEObject oldTrackingCodeTypeId = (InternalEObject)trackingCodeTypeId;
 			trackingCodeTypeId = (TrackingCodeType)eResolveProxy(oldTrackingCodeTypeId);
 			if (trackingCodeTypeId != oldTrackingCodeTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, TrackingPackage.TRACKING_CODE_ORDER__TRACKING_CODE_TYPE_ID, oldTrackingCodeTypeId, trackingCodeTypeId));
 			}
 		}
 		return trackingCodeTypeId;
@@ -356,7 +382,10 @@ public class TrackingCodeOrderImpl extends BizEntityImpl implements TrackingCode
 	 */
 	@Override
 	public void setTrackingCodeTypeId(TrackingCodeType newTrackingCodeTypeId) {
+		TrackingCodeType oldTrackingCodeTypeId = trackingCodeTypeId;
 		trackingCodeTypeId = newTrackingCodeTypeId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, TrackingPackage.TRACKING_CODE_ORDER__TRACKING_CODE_TYPE_ID, oldTrackingCodeTypeId, trackingCodeTypeId));
 	}
 
 	/**

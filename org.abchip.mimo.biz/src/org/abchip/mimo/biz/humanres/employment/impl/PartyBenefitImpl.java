@@ -17,10 +17,12 @@ import org.abchip.mimo.biz.humanres.employment.EmploymentPackage;
 import org.abchip.mimo.biz.humanres.employment.PartyBenefit;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.party.party.Party;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -267,7 +269,10 @@ public class PartyBenefitImpl extends BizEntityImpl implements PartyBenefit {
 	 */
 	@Override
 	public void setActualEmployerPaidPercent(double newActualEmployerPaidPercent) {
+		double oldActualEmployerPaidPercent = actualEmployerPaidPercent;
 		actualEmployerPaidPercent = newActualEmployerPaidPercent;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, EmploymentPackage.PARTY_BENEFIT__ACTUAL_EMPLOYER_PAID_PERCENT, oldActualEmployerPaidPercent, actualEmployerPaidPercent));
 	}
 
 	/**
@@ -287,7 +292,10 @@ public class PartyBenefitImpl extends BizEntityImpl implements PartyBenefit {
 	 */
 	@Override
 	public void setAvailableTime(long newAvailableTime) {
+		long oldAvailableTime = availableTime;
 		availableTime = newAvailableTime;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, EmploymentPackage.PARTY_BENEFIT__AVAILABLE_TIME, oldAvailableTime, availableTime));
 	}
 
 	/**
@@ -301,6 +309,8 @@ public class PartyBenefitImpl extends BizEntityImpl implements PartyBenefit {
 			InternalEObject oldBenefitTypeId = (InternalEObject)benefitTypeId;
 			benefitTypeId = (BenefitType)eResolveProxy(oldBenefitTypeId);
 			if (benefitTypeId != oldBenefitTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, EmploymentPackage.PARTY_BENEFIT__BENEFIT_TYPE_ID, oldBenefitTypeId, benefitTypeId));
 			}
 		}
 		return benefitTypeId;
@@ -322,7 +332,10 @@ public class PartyBenefitImpl extends BizEntityImpl implements PartyBenefit {
 	 */
 	@Override
 	public void setBenefitTypeId(BenefitType newBenefitTypeId) {
+		BenefitType oldBenefitTypeId = benefitTypeId;
 		benefitTypeId = newBenefitTypeId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, EmploymentPackage.PARTY_BENEFIT__BENEFIT_TYPE_ID, oldBenefitTypeId, benefitTypeId));
 	}
 
 	/**
@@ -342,7 +355,10 @@ public class PartyBenefitImpl extends BizEntityImpl implements PartyBenefit {
 	 */
 	@Override
 	public void setCost(BigDecimal newCost) {
+		BigDecimal oldCost = cost;
 		cost = newCost;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, EmploymentPackage.PARTY_BENEFIT__COST, oldCost, cost));
 	}
 
 	/**
@@ -362,7 +378,10 @@ public class PartyBenefitImpl extends BizEntityImpl implements PartyBenefit {
 	 */
 	@Override
 	public void setFromDate(Date newFromDate) {
+		Date oldFromDate = fromDate;
 		fromDate = newFromDate;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, EmploymentPackage.PARTY_BENEFIT__FROM_DATE, oldFromDate, fromDate));
 	}
 
 	/**
@@ -376,6 +395,8 @@ public class PartyBenefitImpl extends BizEntityImpl implements PartyBenefit {
 			InternalEObject oldPartyIdFrom = (InternalEObject)partyIdFrom;
 			partyIdFrom = (Party)eResolveProxy(oldPartyIdFrom);
 			if (partyIdFrom != oldPartyIdFrom) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, EmploymentPackage.PARTY_BENEFIT__PARTY_ID_FROM, oldPartyIdFrom, partyIdFrom));
 			}
 		}
 		return partyIdFrom;
@@ -397,7 +418,10 @@ public class PartyBenefitImpl extends BizEntityImpl implements PartyBenefit {
 	 */
 	@Override
 	public void setPartyIdFrom(Party newPartyIdFrom) {
+		Party oldPartyIdFrom = partyIdFrom;
 		partyIdFrom = newPartyIdFrom;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, EmploymentPackage.PARTY_BENEFIT__PARTY_ID_FROM, oldPartyIdFrom, partyIdFrom));
 	}
 
 	/**
@@ -411,6 +435,8 @@ public class PartyBenefitImpl extends BizEntityImpl implements PartyBenefit {
 			InternalEObject oldPartyIdTo = (InternalEObject)partyIdTo;
 			partyIdTo = (Party)eResolveProxy(oldPartyIdTo);
 			if (partyIdTo != oldPartyIdTo) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, EmploymentPackage.PARTY_BENEFIT__PARTY_ID_TO, oldPartyIdTo, partyIdTo));
 			}
 		}
 		return partyIdTo;
@@ -432,7 +458,10 @@ public class PartyBenefitImpl extends BizEntityImpl implements PartyBenefit {
 	 */
 	@Override
 	public void setPartyIdTo(Party newPartyIdTo) {
+		Party oldPartyIdTo = partyIdTo;
 		partyIdTo = newPartyIdTo;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, EmploymentPackage.PARTY_BENEFIT__PARTY_ID_TO, oldPartyIdTo, partyIdTo));
 	}
 
 	/**
@@ -446,6 +475,8 @@ public class PartyBenefitImpl extends BizEntityImpl implements PartyBenefit {
 			InternalEObject oldPeriodTypeId = (InternalEObject)periodTypeId;
 			periodTypeId = (PeriodType)eResolveProxy(oldPeriodTypeId);
 			if (periodTypeId != oldPeriodTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, EmploymentPackage.PARTY_BENEFIT__PERIOD_TYPE_ID, oldPeriodTypeId, periodTypeId));
 			}
 		}
 		return periodTypeId;
@@ -467,7 +498,10 @@ public class PartyBenefitImpl extends BizEntityImpl implements PartyBenefit {
 	 */
 	@Override
 	public void setPeriodTypeId(PeriodType newPeriodTypeId) {
+		PeriodType oldPeriodTypeId = periodTypeId;
 		periodTypeId = newPeriodTypeId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, EmploymentPackage.PARTY_BENEFIT__PERIOD_TYPE_ID, oldPeriodTypeId, periodTypeId));
 	}
 
 	/**
@@ -487,7 +521,10 @@ public class PartyBenefitImpl extends BizEntityImpl implements PartyBenefit {
 	 */
 	@Override
 	public void setRoleTypeIdFrom(String newRoleTypeIdFrom) {
+		String oldRoleTypeIdFrom = roleTypeIdFrom;
 		roleTypeIdFrom = newRoleTypeIdFrom;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, EmploymentPackage.PARTY_BENEFIT__ROLE_TYPE_ID_FROM, oldRoleTypeIdFrom, roleTypeIdFrom));
 	}
 
 	/**
@@ -507,7 +544,10 @@ public class PartyBenefitImpl extends BizEntityImpl implements PartyBenefit {
 	 */
 	@Override
 	public void setRoleTypeIdTo(String newRoleTypeIdTo) {
+		String oldRoleTypeIdTo = roleTypeIdTo;
 		roleTypeIdTo = newRoleTypeIdTo;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, EmploymentPackage.PARTY_BENEFIT__ROLE_TYPE_ID_TO, oldRoleTypeIdTo, roleTypeIdTo));
 	}
 
 	/**
@@ -527,7 +567,10 @@ public class PartyBenefitImpl extends BizEntityImpl implements PartyBenefit {
 	 */
 	@Override
 	public void setThruDate(Date newThruDate) {
+		Date oldThruDate = thruDate;
 		thruDate = newThruDate;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, EmploymentPackage.PARTY_BENEFIT__THRU_DATE, oldThruDate, thruDate));
 	}
 
 	/**

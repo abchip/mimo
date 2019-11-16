@@ -10,7 +10,9 @@ package org.abchip.mimo.biz.product.config.impl;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.product.config.ConfigOptionProductOption;
 import org.abchip.mimo.biz.product.config.ConfigPackage;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -213,7 +215,10 @@ public class ConfigOptionProductOptionImpl extends BizEntityImpl implements Conf
 	 */
 	@Override
 	public void setConfigId(String newConfigId) {
+		String oldConfigId = configId;
 		configId = newConfigId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ConfigPackage.CONFIG_OPTION_PRODUCT_OPTION__CONFIG_ID, oldConfigId, configId));
 	}
 
 	/**
@@ -233,7 +238,10 @@ public class ConfigOptionProductOptionImpl extends BizEntityImpl implements Conf
 	 */
 	@Override
 	public void setConfigItemId(String newConfigItemId) {
+		String oldConfigItemId = configItemId;
 		configItemId = newConfigItemId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ConfigPackage.CONFIG_OPTION_PRODUCT_OPTION__CONFIG_ITEM_ID, oldConfigItemId, configItemId));
 	}
 
 	/**
@@ -253,7 +261,10 @@ public class ConfigOptionProductOptionImpl extends BizEntityImpl implements Conf
 	 */
 	@Override
 	public void setConfigOptionId(String newConfigOptionId) {
+		String oldConfigOptionId = configOptionId;
 		configOptionId = newConfigOptionId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ConfigPackage.CONFIG_OPTION_PRODUCT_OPTION__CONFIG_OPTION_ID, oldConfigOptionId, configOptionId));
 	}
 
 	/**
@@ -273,7 +284,10 @@ public class ConfigOptionProductOptionImpl extends BizEntityImpl implements Conf
 	 */
 	@Override
 	public void setDescription(String newDescription) {
+		String oldDescription = description;
 		description = newDescription;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ConfigPackage.CONFIG_OPTION_PRODUCT_OPTION__DESCRIPTION, oldDescription, description));
 	}
 
 	/**
@@ -293,7 +307,10 @@ public class ConfigOptionProductOptionImpl extends BizEntityImpl implements Conf
 	 */
 	@Override
 	public void setProductId(String newProductId) {
+		String oldProductId = productId;
 		productId = newProductId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ConfigPackage.CONFIG_OPTION_PRODUCT_OPTION__PRODUCT_ID, oldProductId, productId));
 	}
 
 	/**
@@ -313,7 +330,10 @@ public class ConfigOptionProductOptionImpl extends BizEntityImpl implements Conf
 	 */
 	@Override
 	public void setProductOptionId(String newProductOptionId) {
+		String oldProductOptionId = productOptionId;
 		productOptionId = newProductOptionId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ConfigPackage.CONFIG_OPTION_PRODUCT_OPTION__PRODUCT_OPTION_ID, oldProductOptionId, productOptionId));
 	}
 
 	/**
@@ -333,7 +353,10 @@ public class ConfigOptionProductOptionImpl extends BizEntityImpl implements Conf
 	 */
 	@Override
 	public void setSequenceNum(long newSequenceNum) {
+		long oldSequenceNum = sequenceNum;
 		sequenceNum = newSequenceNum;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ConfigPackage.CONFIG_OPTION_PRODUCT_OPTION__SEQUENCE_NUM, oldSequenceNum, sequenceNum));
 	}
 
 	/**

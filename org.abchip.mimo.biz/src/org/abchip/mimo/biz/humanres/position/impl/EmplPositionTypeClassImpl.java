@@ -14,10 +14,12 @@ import org.abchip.mimo.biz.humanres.position.EmplPositionType;
 import org.abchip.mimo.biz.humanres.position.EmplPositionTypeClass;
 import org.abchip.mimo.biz.humanres.position.PositionPackage;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -152,6 +154,8 @@ public class EmplPositionTypeClassImpl extends BizEntityImpl implements EmplPosi
 			InternalEObject oldEmplPositionClassTypeId = (InternalEObject)emplPositionClassTypeId;
 			emplPositionClassTypeId = (EmplPositionClassType)eResolveProxy(oldEmplPositionClassTypeId);
 			if (emplPositionClassTypeId != oldEmplPositionClassTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PositionPackage.EMPL_POSITION_TYPE_CLASS__EMPL_POSITION_CLASS_TYPE_ID, oldEmplPositionClassTypeId, emplPositionClassTypeId));
 			}
 		}
 		return emplPositionClassTypeId;
@@ -173,7 +177,10 @@ public class EmplPositionTypeClassImpl extends BizEntityImpl implements EmplPosi
 	 */
 	@Override
 	public void setEmplPositionClassTypeId(EmplPositionClassType newEmplPositionClassTypeId) {
+		EmplPositionClassType oldEmplPositionClassTypeId = emplPositionClassTypeId;
 		emplPositionClassTypeId = newEmplPositionClassTypeId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PositionPackage.EMPL_POSITION_TYPE_CLASS__EMPL_POSITION_CLASS_TYPE_ID, oldEmplPositionClassTypeId, emplPositionClassTypeId));
 	}
 
 	/**
@@ -187,6 +194,8 @@ public class EmplPositionTypeClassImpl extends BizEntityImpl implements EmplPosi
 			InternalEObject oldEmplPositionTypeId = (InternalEObject)emplPositionTypeId;
 			emplPositionTypeId = (EmplPositionType)eResolveProxy(oldEmplPositionTypeId);
 			if (emplPositionTypeId != oldEmplPositionTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PositionPackage.EMPL_POSITION_TYPE_CLASS__EMPL_POSITION_TYPE_ID, oldEmplPositionTypeId, emplPositionTypeId));
 			}
 		}
 		return emplPositionTypeId;
@@ -208,7 +217,10 @@ public class EmplPositionTypeClassImpl extends BizEntityImpl implements EmplPosi
 	 */
 	@Override
 	public void setEmplPositionTypeId(EmplPositionType newEmplPositionTypeId) {
+		EmplPositionType oldEmplPositionTypeId = emplPositionTypeId;
 		emplPositionTypeId = newEmplPositionTypeId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PositionPackage.EMPL_POSITION_TYPE_CLASS__EMPL_POSITION_TYPE_ID, oldEmplPositionTypeId, emplPositionTypeId));
 	}
 
 	/**
@@ -228,7 +240,10 @@ public class EmplPositionTypeClassImpl extends BizEntityImpl implements EmplPosi
 	 */
 	@Override
 	public void setFromDate(Date newFromDate) {
+		Date oldFromDate = fromDate;
 		fromDate = newFromDate;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PositionPackage.EMPL_POSITION_TYPE_CLASS__FROM_DATE, oldFromDate, fromDate));
 	}
 
 	/**
@@ -248,7 +263,10 @@ public class EmplPositionTypeClassImpl extends BizEntityImpl implements EmplPosi
 	 */
 	@Override
 	public void setStandardHoursPerWeek(double newStandardHoursPerWeek) {
+		double oldStandardHoursPerWeek = standardHoursPerWeek;
 		standardHoursPerWeek = newStandardHoursPerWeek;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PositionPackage.EMPL_POSITION_TYPE_CLASS__STANDARD_HOURS_PER_WEEK, oldStandardHoursPerWeek, standardHoursPerWeek));
 	}
 
 	/**
@@ -268,7 +286,10 @@ public class EmplPositionTypeClassImpl extends BizEntityImpl implements EmplPosi
 	 */
 	@Override
 	public void setThruDate(Date newThruDate) {
+		Date oldThruDate = thruDate;
 		thruDate = newThruDate;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PositionPackage.EMPL_POSITION_TYPE_CLASS__THRU_DATE, oldThruDate, thruDate));
 	}
 
 	/**

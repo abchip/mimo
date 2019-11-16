@@ -17,9 +17,11 @@ import org.abchip.mimo.biz.accounting.tax.TaxPackage;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.product.category.ProductCategory;
 import org.abchip.mimo.biz.product.store.ProductStore;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -353,7 +355,10 @@ public class TaxAuthorityRateProductImpl extends BizEntityImpl implements TaxAut
 	 */
 	@Override
 	public void setDescription(String newDescription) {
+		String oldDescription = description;
 		description = newDescription;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, TaxPackage.TAX_AUTHORITY_RATE_PRODUCT__DESCRIPTION, oldDescription, description));
 	}
 
 	/**
@@ -373,7 +378,10 @@ public class TaxAuthorityRateProductImpl extends BizEntityImpl implements TaxAut
 	 */
 	@Override
 	public void setFromDate(Date newFromDate) {
+		Date oldFromDate = fromDate;
 		fromDate = newFromDate;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, TaxPackage.TAX_AUTHORITY_RATE_PRODUCT__FROM_DATE, oldFromDate, fromDate));
 	}
 
 	/**
@@ -393,7 +401,10 @@ public class TaxAuthorityRateProductImpl extends BizEntityImpl implements TaxAut
 	 */
 	@Override
 	public void setIsTaxInShippingPrice(boolean newIsTaxInShippingPrice) {
+		boolean oldIsTaxInShippingPrice = isTaxInShippingPrice;
 		isTaxInShippingPrice = newIsTaxInShippingPrice;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, TaxPackage.TAX_AUTHORITY_RATE_PRODUCT__IS_TAX_IN_SHIPPING_PRICE, oldIsTaxInShippingPrice, isTaxInShippingPrice));
 	}
 
 	/**
@@ -413,7 +424,10 @@ public class TaxAuthorityRateProductImpl extends BizEntityImpl implements TaxAut
 	 */
 	@Override
 	public void setMinItemPrice(BigDecimal newMinItemPrice) {
+		BigDecimal oldMinItemPrice = minItemPrice;
 		minItemPrice = newMinItemPrice;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, TaxPackage.TAX_AUTHORITY_RATE_PRODUCT__MIN_ITEM_PRICE, oldMinItemPrice, minItemPrice));
 	}
 
 	/**
@@ -433,7 +447,10 @@ public class TaxAuthorityRateProductImpl extends BizEntityImpl implements TaxAut
 	 */
 	@Override
 	public void setMinPurchase(BigDecimal newMinPurchase) {
+		BigDecimal oldMinPurchase = minPurchase;
 		minPurchase = newMinPurchase;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, TaxPackage.TAX_AUTHORITY_RATE_PRODUCT__MIN_PURCHASE, oldMinPurchase, minPurchase));
 	}
 
 	/**
@@ -447,6 +464,8 @@ public class TaxAuthorityRateProductImpl extends BizEntityImpl implements TaxAut
 			InternalEObject oldProductCategoryId = (InternalEObject)productCategoryId;
 			productCategoryId = (ProductCategory)eResolveProxy(oldProductCategoryId);
 			if (productCategoryId != oldProductCategoryId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, TaxPackage.TAX_AUTHORITY_RATE_PRODUCT__PRODUCT_CATEGORY_ID, oldProductCategoryId, productCategoryId));
 			}
 		}
 		return productCategoryId;
@@ -468,7 +487,10 @@ public class TaxAuthorityRateProductImpl extends BizEntityImpl implements TaxAut
 	 */
 	@Override
 	public void setProductCategoryId(ProductCategory newProductCategoryId) {
+		ProductCategory oldProductCategoryId = productCategoryId;
 		productCategoryId = newProductCategoryId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, TaxPackage.TAX_AUTHORITY_RATE_PRODUCT__PRODUCT_CATEGORY_ID, oldProductCategoryId, productCategoryId));
 	}
 
 	/**
@@ -482,6 +504,8 @@ public class TaxAuthorityRateProductImpl extends BizEntityImpl implements TaxAut
 			InternalEObject oldProductStoreId = (InternalEObject)productStoreId;
 			productStoreId = (ProductStore)eResolveProxy(oldProductStoreId);
 			if (productStoreId != oldProductStoreId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, TaxPackage.TAX_AUTHORITY_RATE_PRODUCT__PRODUCT_STORE_ID, oldProductStoreId, productStoreId));
 			}
 		}
 		return productStoreId;
@@ -503,7 +527,10 @@ public class TaxAuthorityRateProductImpl extends BizEntityImpl implements TaxAut
 	 */
 	@Override
 	public void setProductStoreId(ProductStore newProductStoreId) {
+		ProductStore oldProductStoreId = productStoreId;
 		productStoreId = newProductStoreId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, TaxPackage.TAX_AUTHORITY_RATE_PRODUCT__PRODUCT_STORE_ID, oldProductStoreId, productStoreId));
 	}
 
 	/**
@@ -523,7 +550,10 @@ public class TaxAuthorityRateProductImpl extends BizEntityImpl implements TaxAut
 	 */
 	@Override
 	public void setTaxAuthGeoId(String newTaxAuthGeoId) {
+		String oldTaxAuthGeoId = taxAuthGeoId;
 		taxAuthGeoId = newTaxAuthGeoId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, TaxPackage.TAX_AUTHORITY_RATE_PRODUCT__TAX_AUTH_GEO_ID, oldTaxAuthGeoId, taxAuthGeoId));
 	}
 
 	/**
@@ -543,7 +573,10 @@ public class TaxAuthorityRateProductImpl extends BizEntityImpl implements TaxAut
 	 */
 	@Override
 	public void setTaxAuthPartyId(String newTaxAuthPartyId) {
+		String oldTaxAuthPartyId = taxAuthPartyId;
 		taxAuthPartyId = newTaxAuthPartyId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, TaxPackage.TAX_AUTHORITY_RATE_PRODUCT__TAX_AUTH_PARTY_ID, oldTaxAuthPartyId, taxAuthPartyId));
 	}
 
 	/**
@@ -563,7 +596,10 @@ public class TaxAuthorityRateProductImpl extends BizEntityImpl implements TaxAut
 	 */
 	@Override
 	public void setTaxPercentage(BigDecimal newTaxPercentage) {
+		BigDecimal oldTaxPercentage = taxPercentage;
 		taxPercentage = newTaxPercentage;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, TaxPackage.TAX_AUTHORITY_RATE_PRODUCT__TAX_PERCENTAGE, oldTaxPercentage, taxPercentage));
 	}
 
 	/**
@@ -583,7 +619,10 @@ public class TaxAuthorityRateProductImpl extends BizEntityImpl implements TaxAut
 	 */
 	@Override
 	public void setTaxPromotions(boolean newTaxPromotions) {
+		boolean oldTaxPromotions = taxPromotions;
 		taxPromotions = newTaxPromotions;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, TaxPackage.TAX_AUTHORITY_RATE_PRODUCT__TAX_PROMOTIONS, oldTaxPromotions, taxPromotions));
 	}
 
 	/**
@@ -603,7 +642,10 @@ public class TaxAuthorityRateProductImpl extends BizEntityImpl implements TaxAut
 	 */
 	@Override
 	public void setTaxShipping(boolean newTaxShipping) {
+		boolean oldTaxShipping = taxShipping;
 		taxShipping = newTaxShipping;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, TaxPackage.TAX_AUTHORITY_RATE_PRODUCT__TAX_SHIPPING, oldTaxShipping, taxShipping));
 	}
 
 	/**
@@ -623,7 +665,10 @@ public class TaxAuthorityRateProductImpl extends BizEntityImpl implements TaxAut
 	 */
 	@Override
 	public void setThruDate(Date newThruDate) {
+		Date oldThruDate = thruDate;
 		thruDate = newThruDate;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, TaxPackage.TAX_AUTHORITY_RATE_PRODUCT__THRU_DATE, oldThruDate, thruDate));
 	}
 
 	/**
@@ -643,7 +688,10 @@ public class TaxAuthorityRateProductImpl extends BizEntityImpl implements TaxAut
 	 */
 	@Override
 	public void setTitleTransferEnumId(String newTitleTransferEnumId) {
+		String oldTitleTransferEnumId = titleTransferEnumId;
 		titleTransferEnumId = newTitleTransferEnumId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, TaxPackage.TAX_AUTHORITY_RATE_PRODUCT__TITLE_TRANSFER_ENUM_ID, oldTitleTransferEnumId, titleTransferEnumId));
 	}
 
 	/**
@@ -693,6 +741,8 @@ public class TaxAuthorityRateProductImpl extends BizEntityImpl implements TaxAut
 			InternalEObject oldTaxAuthorityRateTypeId = (InternalEObject)taxAuthorityRateTypeId;
 			taxAuthorityRateTypeId = (TaxAuthorityRateType)eResolveProxy(oldTaxAuthorityRateTypeId);
 			if (taxAuthorityRateTypeId != oldTaxAuthorityRateTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, TaxPackage.TAX_AUTHORITY_RATE_PRODUCT__TAX_AUTHORITY_RATE_TYPE_ID, oldTaxAuthorityRateTypeId, taxAuthorityRateTypeId));
 			}
 		}
 		return taxAuthorityRateTypeId;
@@ -714,7 +764,10 @@ public class TaxAuthorityRateProductImpl extends BizEntityImpl implements TaxAut
 	 */
 	@Override
 	public void setTaxAuthorityRateTypeId(TaxAuthorityRateType newTaxAuthorityRateTypeId) {
+		TaxAuthorityRateType oldTaxAuthorityRateTypeId = taxAuthorityRateTypeId;
 		taxAuthorityRateTypeId = newTaxAuthorityRateTypeId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, TaxPackage.TAX_AUTHORITY_RATE_PRODUCT__TAX_AUTHORITY_RATE_TYPE_ID, oldTaxAuthorityRateTypeId, taxAuthorityRateTypeId));
 	}
 
 	/**
@@ -734,7 +787,10 @@ public class TaxAuthorityRateProductImpl extends BizEntityImpl implements TaxAut
 	 */
 	@Override
 	public void setTaxAuthorityRateSeqId(String newTaxAuthorityRateSeqId) {
+		String oldTaxAuthorityRateSeqId = taxAuthorityRateSeqId;
 		taxAuthorityRateSeqId = newTaxAuthorityRateSeqId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, TaxPackage.TAX_AUTHORITY_RATE_PRODUCT__TAX_AUTHORITY_RATE_SEQ_ID, oldTaxAuthorityRateSeqId, taxAuthorityRateSeqId));
 	}
 
 	/**

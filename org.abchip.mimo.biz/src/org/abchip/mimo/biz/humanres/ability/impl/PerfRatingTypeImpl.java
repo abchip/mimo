@@ -12,10 +12,12 @@ import java.util.List;
 import org.abchip.mimo.biz.humanres.ability.AbilityPackage;
 import org.abchip.mimo.biz.humanres.ability.PerfRatingType;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -145,7 +147,10 @@ public class PerfRatingTypeImpl extends BizEntityImpl implements PerfRatingType 
 	 */
 	@Override
 	public void setDescription(String newDescription) {
+		String oldDescription = description;
 		description = newDescription;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, AbilityPackage.PERF_RATING_TYPE__DESCRIPTION, oldDescription, description));
 	}
 
 	/**
@@ -165,7 +170,10 @@ public class PerfRatingTypeImpl extends BizEntityImpl implements PerfRatingType 
 	 */
 	@Override
 	public void setHasTable(boolean newHasTable) {
+		boolean oldHasTable = hasTable;
 		hasTable = newHasTable;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, AbilityPackage.PERF_RATING_TYPE__HAS_TABLE, oldHasTable, hasTable));
 	}
 
 	/**
@@ -179,6 +187,8 @@ public class PerfRatingTypeImpl extends BizEntityImpl implements PerfRatingType 
 			InternalEObject oldParentTypeId = (InternalEObject)parentTypeId;
 			parentTypeId = (PerfRatingType)eResolveProxy(oldParentTypeId);
 			if (parentTypeId != oldParentTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, AbilityPackage.PERF_RATING_TYPE__PARENT_TYPE_ID, oldParentTypeId, parentTypeId));
 			}
 		}
 		return parentTypeId;
@@ -200,7 +210,10 @@ public class PerfRatingTypeImpl extends BizEntityImpl implements PerfRatingType 
 	 */
 	@Override
 	public void setParentTypeId(PerfRatingType newParentTypeId) {
+		PerfRatingType oldParentTypeId = parentTypeId;
 		parentTypeId = newParentTypeId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, AbilityPackage.PERF_RATING_TYPE__PARENT_TYPE_ID, oldParentTypeId, parentTypeId));
 	}
 
 	/**
@@ -232,7 +245,10 @@ public class PerfRatingTypeImpl extends BizEntityImpl implements PerfRatingType 
 	 */
 	@Override
 	public void setPerfRatingTypeId(String newPerfRatingTypeId) {
+		String oldPerfRatingTypeId = perfRatingTypeId;
 		perfRatingTypeId = newPerfRatingTypeId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, AbilityPackage.PERF_RATING_TYPE__PERF_RATING_TYPE_ID, oldPerfRatingTypeId, perfRatingTypeId));
 	}
 
 	/**

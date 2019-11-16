@@ -13,7 +13,9 @@ import org.abchip.mimo.biz.impl.BizEntityTypeImpl;
 import org.abchip.mimo.biz.order.requirement.RequirementPackage;
 import org.abchip.mimo.biz.order.requirement.WorkReqFulfType;
 import org.abchip.mimo.biz.order.requirement.WorkRequirementFulfillment;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -111,7 +113,10 @@ public class WorkReqFulfTypeImpl extends BizEntityTypeImpl<WorkRequirementFulfil
 	 */
 	@Override
 	public void setDescription(String newDescription) {
+		String oldDescription = description;
 		description = newDescription;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, RequirementPackage.WORK_REQ_FULF_TYPE__DESCRIPTION, oldDescription, description));
 	}
 
 	/**
@@ -143,7 +148,10 @@ public class WorkReqFulfTypeImpl extends BizEntityTypeImpl<WorkRequirementFulfil
 	 */
 	@Override
 	public void setWorkReqFulfTypeId(String newWorkReqFulfTypeId) {
+		String oldWorkReqFulfTypeId = workReqFulfTypeId;
 		workReqFulfTypeId = newWorkReqFulfTypeId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, RequirementPackage.WORK_REQ_FULF_TYPE__WORK_REQ_FULF_TYPE_ID, oldWorkReqFulfTypeId, workReqFulfTypeId));
 	}
 
 	/**

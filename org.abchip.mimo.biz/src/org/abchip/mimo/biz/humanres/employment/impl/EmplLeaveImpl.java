@@ -16,10 +16,12 @@ import org.abchip.mimo.biz.humanres.employment.EmplLeaveType;
 import org.abchip.mimo.biz.humanres.employment.EmploymentPackage;
 import org.abchip.mimo.biz.impl.BizEntityTypedImpl;
 import org.abchip.mimo.biz.party.party.Party;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -187,6 +189,8 @@ public class EmplLeaveImpl extends BizEntityTypedImpl<EmplLeaveType> implements 
 			InternalEObject oldApproverPartyId = (InternalEObject)approverPartyId;
 			approverPartyId = (Party)eResolveProxy(oldApproverPartyId);
 			if (approverPartyId != oldApproverPartyId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, EmploymentPackage.EMPL_LEAVE__APPROVER_PARTY_ID, oldApproverPartyId, approverPartyId));
 			}
 		}
 		return approverPartyId;
@@ -208,7 +212,10 @@ public class EmplLeaveImpl extends BizEntityTypedImpl<EmplLeaveType> implements 
 	 */
 	@Override
 	public void setApproverPartyId(Party newApproverPartyId) {
+		Party oldApproverPartyId = approverPartyId;
 		approverPartyId = newApproverPartyId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, EmploymentPackage.EMPL_LEAVE__APPROVER_PARTY_ID, oldApproverPartyId, approverPartyId));
 	}
 
 	/**
@@ -228,7 +235,10 @@ public class EmplLeaveImpl extends BizEntityTypedImpl<EmplLeaveType> implements 
 	 */
 	@Override
 	public void setDescription(String newDescription) {
+		String oldDescription = description;
 		description = newDescription;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, EmploymentPackage.EMPL_LEAVE__DESCRIPTION, oldDescription, description));
 	}
 
 	/**
@@ -242,6 +252,8 @@ public class EmplLeaveImpl extends BizEntityTypedImpl<EmplLeaveType> implements 
 			InternalEObject oldEmplLeaveReasonTypeId = (InternalEObject)emplLeaveReasonTypeId;
 			emplLeaveReasonTypeId = (EmplLeaveReasonType)eResolveProxy(oldEmplLeaveReasonTypeId);
 			if (emplLeaveReasonTypeId != oldEmplLeaveReasonTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, EmploymentPackage.EMPL_LEAVE__EMPL_LEAVE_REASON_TYPE_ID, oldEmplLeaveReasonTypeId, emplLeaveReasonTypeId));
 			}
 		}
 		return emplLeaveReasonTypeId;
@@ -263,7 +275,10 @@ public class EmplLeaveImpl extends BizEntityTypedImpl<EmplLeaveType> implements 
 	 */
 	@Override
 	public void setEmplLeaveReasonTypeId(EmplLeaveReasonType newEmplLeaveReasonTypeId) {
+		EmplLeaveReasonType oldEmplLeaveReasonTypeId = emplLeaveReasonTypeId;
 		emplLeaveReasonTypeId = newEmplLeaveReasonTypeId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, EmploymentPackage.EMPL_LEAVE__EMPL_LEAVE_REASON_TYPE_ID, oldEmplLeaveReasonTypeId, emplLeaveReasonTypeId));
 	}
 
 	/**
@@ -283,7 +298,10 @@ public class EmplLeaveImpl extends BizEntityTypedImpl<EmplLeaveType> implements 
 	 */
 	@Override
 	public void setFromDate(Date newFromDate) {
+		Date oldFromDate = fromDate;
 		fromDate = newFromDate;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, EmploymentPackage.EMPL_LEAVE__FROM_DATE, oldFromDate, fromDate));
 	}
 
 	/**
@@ -297,6 +315,8 @@ public class EmplLeaveImpl extends BizEntityTypedImpl<EmplLeaveType> implements 
 			InternalEObject oldLeaveStatus = (InternalEObject)leaveStatus;
 			leaveStatus = (StatusItem)eResolveProxy(oldLeaveStatus);
 			if (leaveStatus != oldLeaveStatus) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, EmploymentPackage.EMPL_LEAVE__LEAVE_STATUS, oldLeaveStatus, leaveStatus));
 			}
 		}
 		return leaveStatus;
@@ -318,7 +338,10 @@ public class EmplLeaveImpl extends BizEntityTypedImpl<EmplLeaveType> implements 
 	 */
 	@Override
 	public void setLeaveStatus(StatusItem newLeaveStatus) {
+		StatusItem oldLeaveStatus = leaveStatus;
 		leaveStatus = newLeaveStatus;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, EmploymentPackage.EMPL_LEAVE__LEAVE_STATUS, oldLeaveStatus, leaveStatus));
 	}
 
 	/**
@@ -332,6 +355,8 @@ public class EmplLeaveImpl extends BizEntityTypedImpl<EmplLeaveType> implements 
 			InternalEObject oldLeaveTypeId = (InternalEObject)leaveTypeId;
 			leaveTypeId = (EmplLeaveType)eResolveProxy(oldLeaveTypeId);
 			if (leaveTypeId != oldLeaveTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, EmploymentPackage.EMPL_LEAVE__LEAVE_TYPE_ID, oldLeaveTypeId, leaveTypeId));
 			}
 		}
 		return leaveTypeId;
@@ -353,7 +378,10 @@ public class EmplLeaveImpl extends BizEntityTypedImpl<EmplLeaveType> implements 
 	 */
 	@Override
 	public void setLeaveTypeId(EmplLeaveType newLeaveTypeId) {
+		EmplLeaveType oldLeaveTypeId = leaveTypeId;
 		leaveTypeId = newLeaveTypeId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, EmploymentPackage.EMPL_LEAVE__LEAVE_TYPE_ID, oldLeaveTypeId, leaveTypeId));
 	}
 
 	/**
@@ -367,6 +395,8 @@ public class EmplLeaveImpl extends BizEntityTypedImpl<EmplLeaveType> implements 
 			InternalEObject oldPartyId = (InternalEObject)partyId;
 			partyId = (Party)eResolveProxy(oldPartyId);
 			if (partyId != oldPartyId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, EmploymentPackage.EMPL_LEAVE__PARTY_ID, oldPartyId, partyId));
 			}
 		}
 		return partyId;
@@ -388,7 +418,10 @@ public class EmplLeaveImpl extends BizEntityTypedImpl<EmplLeaveType> implements 
 	 */
 	@Override
 	public void setPartyId(Party newPartyId) {
+		Party oldPartyId = partyId;
 		partyId = newPartyId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, EmploymentPackage.EMPL_LEAVE__PARTY_ID, oldPartyId, partyId));
 	}
 
 	/**
@@ -408,7 +441,10 @@ public class EmplLeaveImpl extends BizEntityTypedImpl<EmplLeaveType> implements 
 	 */
 	@Override
 	public void setThruDate(Date newThruDate) {
+		Date oldThruDate = thruDate;
 		thruDate = newThruDate;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, EmploymentPackage.EMPL_LEAVE__THRU_DATE, oldThruDate, thruDate));
 	}
 
 	/**

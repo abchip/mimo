@@ -13,9 +13,11 @@ import org.abchip.mimo.biz.accounting.fixedasset.FixedAssetStdCost;
 import org.abchip.mimo.biz.accounting.fixedasset.FixedAssetStdCostType;
 import org.abchip.mimo.biz.accounting.fixedasset.FixedassetPackage;
 import org.abchip.mimo.biz.impl.BizEntityTypeImpl;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -138,7 +140,10 @@ public class FixedAssetStdCostTypeImpl extends BizEntityTypeImpl<FixedAssetStdCo
 	 */
 	@Override
 	public void setDescription(String newDescription) {
+		String oldDescription = description;
 		description = newDescription;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, FixedassetPackage.FIXED_ASSET_STD_COST_TYPE__DESCRIPTION, oldDescription, description));
 	}
 
 	/**
@@ -158,7 +163,10 @@ public class FixedAssetStdCostTypeImpl extends BizEntityTypeImpl<FixedAssetStdCo
 	 */
 	@Override
 	public void setHasTable(boolean newHasTable) {
+		boolean oldHasTable = hasTable;
 		hasTable = newHasTable;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, FixedassetPackage.FIXED_ASSET_STD_COST_TYPE__HAS_TABLE, oldHasTable, hasTable));
 	}
 
 	/**
@@ -172,6 +180,8 @@ public class FixedAssetStdCostTypeImpl extends BizEntityTypeImpl<FixedAssetStdCo
 			InternalEObject oldParentTypeId = (InternalEObject)parentTypeId;
 			parentTypeId = (FixedAssetStdCostType)eResolveProxy(oldParentTypeId);
 			if (parentTypeId != oldParentTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, FixedassetPackage.FIXED_ASSET_STD_COST_TYPE__PARENT_TYPE_ID, oldParentTypeId, parentTypeId));
 			}
 		}
 		return parentTypeId;
@@ -193,7 +203,10 @@ public class FixedAssetStdCostTypeImpl extends BizEntityTypeImpl<FixedAssetStdCo
 	 */
 	@Override
 	public void setParentTypeId(FixedAssetStdCostType newParentTypeId) {
+		FixedAssetStdCostType oldParentTypeId = parentTypeId;
 		parentTypeId = newParentTypeId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, FixedassetPackage.FIXED_ASSET_STD_COST_TYPE__PARENT_TYPE_ID, oldParentTypeId, parentTypeId));
 	}
 
 	/**
@@ -225,7 +238,10 @@ public class FixedAssetStdCostTypeImpl extends BizEntityTypeImpl<FixedAssetStdCo
 	 */
 	@Override
 	public void setFixedAssetStdCostTypeId(String newFixedAssetStdCostTypeId) {
+		String oldFixedAssetStdCostTypeId = fixedAssetStdCostTypeId;
 		fixedAssetStdCostTypeId = newFixedAssetStdCostTypeId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, FixedassetPackage.FIXED_ASSET_STD_COST_TYPE__FIXED_ASSET_STD_COST_TYPE_ID, oldFixedAssetStdCostTypeId, fixedAssetStdCostTypeId));
 	}
 
 	/**

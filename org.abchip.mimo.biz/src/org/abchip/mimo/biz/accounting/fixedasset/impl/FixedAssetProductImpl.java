@@ -18,9 +18,11 @@ import org.abchip.mimo.biz.accounting.fixedasset.FixedassetPackage;
 import org.abchip.mimo.biz.common.uom.Uom;
 import org.abchip.mimo.biz.impl.BizEntityTypedImpl;
 import org.abchip.mimo.biz.product.product.Product;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -211,7 +213,10 @@ public class FixedAssetProductImpl extends BizEntityTypedImpl<FixedAssetProductT
 	 */
 	@Override
 	public void setComments(String newComments) {
+		String oldComments = comments;
 		comments = newComments;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, FixedassetPackage.FIXED_ASSET_PRODUCT__COMMENTS, oldComments, comments));
 	}
 
 	/**
@@ -231,7 +236,10 @@ public class FixedAssetProductImpl extends BizEntityTypedImpl<FixedAssetProductT
 	 */
 	@Override
 	public void setFromDate(Date newFromDate) {
+		Date oldFromDate = fromDate;
 		fromDate = newFromDate;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, FixedassetPackage.FIXED_ASSET_PRODUCT__FROM_DATE, oldFromDate, fromDate));
 	}
 
 	/**
@@ -245,6 +253,8 @@ public class FixedAssetProductImpl extends BizEntityTypedImpl<FixedAssetProductT
 			InternalEObject oldProductId = (InternalEObject)productId;
 			productId = (Product)eResolveProxy(oldProductId);
 			if (productId != oldProductId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, FixedassetPackage.FIXED_ASSET_PRODUCT__PRODUCT_ID, oldProductId, productId));
 			}
 		}
 		return productId;
@@ -266,7 +276,10 @@ public class FixedAssetProductImpl extends BizEntityTypedImpl<FixedAssetProductT
 	 */
 	@Override
 	public void setProductId(Product newProductId) {
+		Product oldProductId = productId;
 		productId = newProductId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, FixedassetPackage.FIXED_ASSET_PRODUCT__PRODUCT_ID, oldProductId, productId));
 	}
 
 	/**
@@ -286,7 +299,10 @@ public class FixedAssetProductImpl extends BizEntityTypedImpl<FixedAssetProductT
 	 */
 	@Override
 	public void setQuantity(BigDecimal newQuantity) {
+		BigDecimal oldQuantity = quantity;
 		quantity = newQuantity;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, FixedassetPackage.FIXED_ASSET_PRODUCT__QUANTITY, oldQuantity, quantity));
 	}
 
 	/**
@@ -300,6 +316,8 @@ public class FixedAssetProductImpl extends BizEntityTypedImpl<FixedAssetProductT
 			InternalEObject oldQuantityUomId = (InternalEObject)quantityUomId;
 			quantityUomId = (Uom)eResolveProxy(oldQuantityUomId);
 			if (quantityUomId != oldQuantityUomId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, FixedassetPackage.FIXED_ASSET_PRODUCT__QUANTITY_UOM_ID, oldQuantityUomId, quantityUomId));
 			}
 		}
 		return quantityUomId;
@@ -321,7 +339,10 @@ public class FixedAssetProductImpl extends BizEntityTypedImpl<FixedAssetProductT
 	 */
 	@Override
 	public void setQuantityUomId(Uom newQuantityUomId) {
+		Uom oldQuantityUomId = quantityUomId;
 		quantityUomId = newQuantityUomId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, FixedassetPackage.FIXED_ASSET_PRODUCT__QUANTITY_UOM_ID, oldQuantityUomId, quantityUomId));
 	}
 
 	/**
@@ -341,7 +362,10 @@ public class FixedAssetProductImpl extends BizEntityTypedImpl<FixedAssetProductT
 	 */
 	@Override
 	public void setSequenceNum(long newSequenceNum) {
+		long oldSequenceNum = sequenceNum;
 		sequenceNum = newSequenceNum;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, FixedassetPackage.FIXED_ASSET_PRODUCT__SEQUENCE_NUM, oldSequenceNum, sequenceNum));
 	}
 
 	/**
@@ -361,7 +385,10 @@ public class FixedAssetProductImpl extends BizEntityTypedImpl<FixedAssetProductT
 	 */
 	@Override
 	public void setThruDate(Date newThruDate) {
+		Date oldThruDate = thruDate;
 		thruDate = newThruDate;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, FixedassetPackage.FIXED_ASSET_PRODUCT__THRU_DATE, oldThruDate, thruDate));
 	}
 
 	/**
@@ -375,6 +402,8 @@ public class FixedAssetProductImpl extends BizEntityTypedImpl<FixedAssetProductT
 			InternalEObject oldFixedAssetId = (InternalEObject)fixedAssetId;
 			fixedAssetId = (FixedAsset)eResolveProxy(oldFixedAssetId);
 			if (fixedAssetId != oldFixedAssetId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, FixedassetPackage.FIXED_ASSET_PRODUCT__FIXED_ASSET_ID, oldFixedAssetId, fixedAssetId));
 			}
 		}
 		return fixedAssetId;
@@ -396,7 +425,10 @@ public class FixedAssetProductImpl extends BizEntityTypedImpl<FixedAssetProductT
 	 */
 	@Override
 	public void setFixedAssetId(FixedAsset newFixedAssetId) {
+		FixedAsset oldFixedAssetId = fixedAssetId;
 		fixedAssetId = newFixedAssetId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, FixedassetPackage.FIXED_ASSET_PRODUCT__FIXED_ASSET_ID, oldFixedAssetId, fixedAssetId));
 	}
 
 	/**
@@ -410,6 +442,8 @@ public class FixedAssetProductImpl extends BizEntityTypedImpl<FixedAssetProductT
 			InternalEObject oldFixedAssetProductTypeId = (InternalEObject)fixedAssetProductTypeId;
 			fixedAssetProductTypeId = (FixedAssetProductType)eResolveProxy(oldFixedAssetProductTypeId);
 			if (fixedAssetProductTypeId != oldFixedAssetProductTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, FixedassetPackage.FIXED_ASSET_PRODUCT__FIXED_ASSET_PRODUCT_TYPE_ID, oldFixedAssetProductTypeId, fixedAssetProductTypeId));
 			}
 		}
 		return fixedAssetProductTypeId;
@@ -431,7 +465,10 @@ public class FixedAssetProductImpl extends BizEntityTypedImpl<FixedAssetProductT
 	 */
 	@Override
 	public void setFixedAssetProductTypeId(FixedAssetProductType newFixedAssetProductTypeId) {
+		FixedAssetProductType oldFixedAssetProductTypeId = fixedAssetProductTypeId;
 		fixedAssetProductTypeId = newFixedAssetProductTypeId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, FixedassetPackage.FIXED_ASSET_PRODUCT__FIXED_ASSET_PRODUCT_TYPE_ID, oldFixedAssetProductTypeId, fixedAssetProductTypeId));
 	}
 
 	/**

@@ -13,11 +13,13 @@ import java.util.List;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.party.agreement.AgreementPackage;
 import org.abchip.mimo.biz.party.agreement.TermType;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.util.BasicInternalEList;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -158,7 +160,10 @@ public class TermTypeImpl extends BizEntityImpl implements TermType {
 	 */
 	@Override
 	public void setDescription(String newDescription) {
+		String oldDescription = description;
 		description = newDescription;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, AgreementPackage.TERM_TYPE__DESCRIPTION, oldDescription, description));
 	}
 
 	/**
@@ -178,7 +183,10 @@ public class TermTypeImpl extends BizEntityImpl implements TermType {
 	 */
 	@Override
 	public void setHasTable(boolean newHasTable) {
+		boolean oldHasTable = hasTable;
 		hasTable = newHasTable;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, AgreementPackage.TERM_TYPE__HAS_TABLE, oldHasTable, hasTable));
 	}
 
 	/**
@@ -192,6 +200,8 @@ public class TermTypeImpl extends BizEntityImpl implements TermType {
 			InternalEObject oldParentTypeId = (InternalEObject)parentTypeId;
 			parentTypeId = (TermType)eResolveProxy(oldParentTypeId);
 			if (parentTypeId != oldParentTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, AgreementPackage.TERM_TYPE__PARENT_TYPE_ID, oldParentTypeId, parentTypeId));
 			}
 		}
 		return parentTypeId;
@@ -213,7 +223,10 @@ public class TermTypeImpl extends BizEntityImpl implements TermType {
 	 */
 	@Override
 	public void setParentTypeId(TermType newParentTypeId) {
+		TermType oldParentTypeId = parentTypeId;
 		parentTypeId = newParentTypeId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, AgreementPackage.TERM_TYPE__PARENT_TYPE_ID, oldParentTypeId, parentTypeId));
 	}
 
 	/**
@@ -233,7 +246,10 @@ public class TermTypeImpl extends BizEntityImpl implements TermType {
 	 */
 	@Override
 	public void setTermTypeId(String newTermTypeId) {
+		String oldTermTypeId = termTypeId;
 		termTypeId = newTermTypeId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, AgreementPackage.TERM_TYPE__TERM_TYPE_ID, oldTermTypeId, termTypeId));
 	}
 
 	/**
@@ -244,7 +260,7 @@ public class TermTypeImpl extends BizEntityImpl implements TermType {
 	@Override
 	public List<String> getTermTypeAttrs() {
 		if (termTypeAttrs == null) {
-			termTypeAttrs = new BasicInternalEList<String>(String.class);
+			termTypeAttrs = new EDataTypeUniqueEList<String>(String.class, this, AgreementPackage.TERM_TYPE__TERM_TYPE_ATTRS);
 		}
 		return termTypeAttrs;
 	}

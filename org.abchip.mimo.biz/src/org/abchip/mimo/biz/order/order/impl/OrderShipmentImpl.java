@@ -14,10 +14,12 @@ import org.abchip.mimo.biz.order.order.OrderHeader;
 import org.abchip.mimo.biz.order.order.OrderPackage;
 import org.abchip.mimo.biz.order.order.OrderShipment;
 import org.abchip.mimo.biz.shipment.shipment.Shipment;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -173,6 +175,8 @@ public class OrderShipmentImpl extends BizEntityImpl implements OrderShipment {
 			InternalEObject oldOrderId = (InternalEObject)orderId;
 			orderId = (OrderHeader)eResolveProxy(oldOrderId);
 			if (orderId != oldOrderId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, OrderPackage.ORDER_SHIPMENT__ORDER_ID, oldOrderId, orderId));
 			}
 		}
 		return orderId;
@@ -194,7 +198,10 @@ public class OrderShipmentImpl extends BizEntityImpl implements OrderShipment {
 	 */
 	@Override
 	public void setOrderId(OrderHeader newOrderId) {
+		OrderHeader oldOrderId = orderId;
 		orderId = newOrderId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_SHIPMENT__ORDER_ID, oldOrderId, orderId));
 	}
 
 	/**
@@ -214,7 +221,10 @@ public class OrderShipmentImpl extends BizEntityImpl implements OrderShipment {
 	 */
 	@Override
 	public void setOrderItemSeqId(String newOrderItemSeqId) {
+		String oldOrderItemSeqId = orderItemSeqId;
 		orderItemSeqId = newOrderItemSeqId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_SHIPMENT__ORDER_ITEM_SEQ_ID, oldOrderItemSeqId, orderItemSeqId));
 	}
 
 	/**
@@ -234,7 +244,10 @@ public class OrderShipmentImpl extends BizEntityImpl implements OrderShipment {
 	 */
 	@Override
 	public void setQuantity(BigDecimal newQuantity) {
+		BigDecimal oldQuantity = quantity;
 		quantity = newQuantity;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_SHIPMENT__QUANTITY, oldQuantity, quantity));
 	}
 
 	/**
@@ -254,7 +267,10 @@ public class OrderShipmentImpl extends BizEntityImpl implements OrderShipment {
 	 */
 	@Override
 	public void setShipGroupSeqId(String newShipGroupSeqId) {
+		String oldShipGroupSeqId = shipGroupSeqId;
 		shipGroupSeqId = newShipGroupSeqId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_SHIPMENT__SHIP_GROUP_SEQ_ID, oldShipGroupSeqId, shipGroupSeqId));
 	}
 
 	/**
@@ -268,6 +284,8 @@ public class OrderShipmentImpl extends BizEntityImpl implements OrderShipment {
 			InternalEObject oldShipmentId = (InternalEObject)shipmentId;
 			shipmentId = (Shipment)eResolveProxy(oldShipmentId);
 			if (shipmentId != oldShipmentId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, OrderPackage.ORDER_SHIPMENT__SHIPMENT_ID, oldShipmentId, shipmentId));
 			}
 		}
 		return shipmentId;
@@ -289,7 +307,10 @@ public class OrderShipmentImpl extends BizEntityImpl implements OrderShipment {
 	 */
 	@Override
 	public void setShipmentId(Shipment newShipmentId) {
+		Shipment oldShipmentId = shipmentId;
 		shipmentId = newShipmentId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_SHIPMENT__SHIPMENT_ID, oldShipmentId, shipmentId));
 	}
 
 	/**
@@ -309,7 +330,10 @@ public class OrderShipmentImpl extends BizEntityImpl implements OrderShipment {
 	 */
 	@Override
 	public void setShipmentItemSeqId(String newShipmentItemSeqId) {
+		String oldShipmentItemSeqId = shipmentItemSeqId;
 		shipmentItemSeqId = newShipmentItemSeqId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_SHIPMENT__SHIPMENT_ITEM_SEQ_ID, oldShipmentItemSeqId, shipmentItemSeqId));
 	}
 
 	/**

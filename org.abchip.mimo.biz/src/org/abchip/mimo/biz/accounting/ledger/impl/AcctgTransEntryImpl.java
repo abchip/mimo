@@ -24,9 +24,11 @@ import org.abchip.mimo.biz.impl.BizEntityTypedImpl;
 import org.abchip.mimo.biz.party.party.Party;
 import org.abchip.mimo.biz.party.party.RoleType;
 import org.abchip.mimo.biz.product.inventory.InventoryItem;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -458,7 +460,10 @@ public class AcctgTransEntryImpl extends BizEntityTypedImpl<AcctgTransEntryType>
 	 */
 	@Override
 	public void setAcctgTransEntrySeqId(String newAcctgTransEntrySeqId) {
+		String oldAcctgTransEntrySeqId = acctgTransEntrySeqId;
 		acctgTransEntrySeqId = newAcctgTransEntrySeqId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, LedgerPackage.ACCTG_TRANS_ENTRY__ACCTG_TRANS_ENTRY_SEQ_ID, oldAcctgTransEntrySeqId, acctgTransEntrySeqId));
 	}
 
 	/**
@@ -478,7 +483,10 @@ public class AcctgTransEntryImpl extends BizEntityTypedImpl<AcctgTransEntryType>
 	 */
 	@Override
 	public void setAmount(BigDecimal newAmount) {
+		BigDecimal oldAmount = amount;
 		amount = newAmount;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, LedgerPackage.ACCTG_TRANS_ENTRY__AMOUNT, oldAmount, amount));
 	}
 
 	/**
@@ -492,6 +500,8 @@ public class AcctgTransEntryImpl extends BizEntityTypedImpl<AcctgTransEntryType>
 			InternalEObject oldCurrencyUomId = (InternalEObject)currencyUomId;
 			currencyUomId = (Uom)eResolveProxy(oldCurrencyUomId);
 			if (currencyUomId != oldCurrencyUomId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, LedgerPackage.ACCTG_TRANS_ENTRY__CURRENCY_UOM_ID, oldCurrencyUomId, currencyUomId));
 			}
 		}
 		return currencyUomId;
@@ -513,7 +523,10 @@ public class AcctgTransEntryImpl extends BizEntityTypedImpl<AcctgTransEntryType>
 	 */
 	@Override
 	public void setCurrencyUomId(Uom newCurrencyUomId) {
+		Uom oldCurrencyUomId = currencyUomId;
 		currencyUomId = newCurrencyUomId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, LedgerPackage.ACCTG_TRANS_ENTRY__CURRENCY_UOM_ID, oldCurrencyUomId, currencyUomId));
 	}
 
 	/**
@@ -533,7 +546,10 @@ public class AcctgTransEntryImpl extends BizEntityTypedImpl<AcctgTransEntryType>
 	 */
 	@Override
 	public void setDebitCreditFlag(boolean newDebitCreditFlag) {
+		boolean oldDebitCreditFlag = debitCreditFlag;
 		debitCreditFlag = newDebitCreditFlag;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, LedgerPackage.ACCTG_TRANS_ENTRY__DEBIT_CREDIT_FLAG, oldDebitCreditFlag, debitCreditFlag));
 	}
 
 	/**
@@ -553,7 +569,10 @@ public class AcctgTransEntryImpl extends BizEntityTypedImpl<AcctgTransEntryType>
 	 */
 	@Override
 	public void setDescription(String newDescription) {
+		String oldDescription = description;
 		description = newDescription;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, LedgerPackage.ACCTG_TRANS_ENTRY__DESCRIPTION, oldDescription, description));
 	}
 
 	/**
@@ -573,7 +592,10 @@ public class AcctgTransEntryImpl extends BizEntityTypedImpl<AcctgTransEntryType>
 	 */
 	@Override
 	public void setDueDate(Date newDueDate) {
+		Date oldDueDate = dueDate;
 		dueDate = newDueDate;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, LedgerPackage.ACCTG_TRANS_ENTRY__DUE_DATE, oldDueDate, dueDate));
 	}
 
 	/**
@@ -593,7 +615,10 @@ public class AcctgTransEntryImpl extends BizEntityTypedImpl<AcctgTransEntryType>
 	 */
 	@Override
 	public void setGroupId(String newGroupId) {
+		String oldGroupId = groupId;
 		groupId = newGroupId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, LedgerPackage.ACCTG_TRANS_ENTRY__GROUP_ID, oldGroupId, groupId));
 	}
 
 	/**
@@ -607,6 +632,8 @@ public class AcctgTransEntryImpl extends BizEntityTypedImpl<AcctgTransEntryType>
 			InternalEObject oldInventoryItemId = (InternalEObject)inventoryItemId;
 			inventoryItemId = (InventoryItem)eResolveProxy(oldInventoryItemId);
 			if (inventoryItemId != oldInventoryItemId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, LedgerPackage.ACCTG_TRANS_ENTRY__INVENTORY_ITEM_ID, oldInventoryItemId, inventoryItemId));
 			}
 		}
 		return inventoryItemId;
@@ -628,7 +655,10 @@ public class AcctgTransEntryImpl extends BizEntityTypedImpl<AcctgTransEntryType>
 	 */
 	@Override
 	public void setInventoryItemId(InventoryItem newInventoryItemId) {
+		InventoryItem oldInventoryItemId = inventoryItemId;
 		inventoryItemId = newInventoryItemId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, LedgerPackage.ACCTG_TRANS_ENTRY__INVENTORY_ITEM_ID, oldInventoryItemId, inventoryItemId));
 	}
 
 	/**
@@ -648,7 +678,10 @@ public class AcctgTransEntryImpl extends BizEntityTypedImpl<AcctgTransEntryType>
 	 */
 	@Override
 	public void setIsSummary(boolean newIsSummary) {
+		boolean oldIsSummary = isSummary;
 		isSummary = newIsSummary;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, LedgerPackage.ACCTG_TRANS_ENTRY__IS_SUMMARY, oldIsSummary, isSummary));
 	}
 
 	/**
@@ -668,7 +701,10 @@ public class AcctgTransEntryImpl extends BizEntityTypedImpl<AcctgTransEntryType>
 	 */
 	@Override
 	public void setOrganizationPartyId(String newOrganizationPartyId) {
+		String oldOrganizationPartyId = organizationPartyId;
 		organizationPartyId = newOrganizationPartyId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, LedgerPackage.ACCTG_TRANS_ENTRY__ORGANIZATION_PARTY_ID, oldOrganizationPartyId, organizationPartyId));
 	}
 
 	/**
@@ -688,7 +724,10 @@ public class AcctgTransEntryImpl extends BizEntityTypedImpl<AcctgTransEntryType>
 	 */
 	@Override
 	public void setOrigAmount(BigDecimal newOrigAmount) {
+		BigDecimal oldOrigAmount = origAmount;
 		origAmount = newOrigAmount;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, LedgerPackage.ACCTG_TRANS_ENTRY__ORIG_AMOUNT, oldOrigAmount, origAmount));
 	}
 
 	/**
@@ -702,6 +741,8 @@ public class AcctgTransEntryImpl extends BizEntityTypedImpl<AcctgTransEntryType>
 			InternalEObject oldOrigCurrencyUomId = (InternalEObject)origCurrencyUomId;
 			origCurrencyUomId = (Uom)eResolveProxy(oldOrigCurrencyUomId);
 			if (origCurrencyUomId != oldOrigCurrencyUomId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, LedgerPackage.ACCTG_TRANS_ENTRY__ORIG_CURRENCY_UOM_ID, oldOrigCurrencyUomId, origCurrencyUomId));
 			}
 		}
 		return origCurrencyUomId;
@@ -723,7 +764,10 @@ public class AcctgTransEntryImpl extends BizEntityTypedImpl<AcctgTransEntryType>
 	 */
 	@Override
 	public void setOrigCurrencyUomId(Uom newOrigCurrencyUomId) {
+		Uom oldOrigCurrencyUomId = origCurrencyUomId;
 		origCurrencyUomId = newOrigCurrencyUomId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, LedgerPackage.ACCTG_TRANS_ENTRY__ORIG_CURRENCY_UOM_ID, oldOrigCurrencyUomId, origCurrencyUomId));
 	}
 
 	/**
@@ -737,6 +781,8 @@ public class AcctgTransEntryImpl extends BizEntityTypedImpl<AcctgTransEntryType>
 			InternalEObject oldPartyId = (InternalEObject)partyId;
 			partyId = (Party)eResolveProxy(oldPartyId);
 			if (partyId != oldPartyId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, LedgerPackage.ACCTG_TRANS_ENTRY__PARTY_ID, oldPartyId, partyId));
 			}
 		}
 		return partyId;
@@ -758,7 +804,10 @@ public class AcctgTransEntryImpl extends BizEntityTypedImpl<AcctgTransEntryType>
 	 */
 	@Override
 	public void setPartyId(Party newPartyId) {
+		Party oldPartyId = partyId;
 		partyId = newPartyId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, LedgerPackage.ACCTG_TRANS_ENTRY__PARTY_ID, oldPartyId, partyId));
 	}
 
 	/**
@@ -778,7 +827,10 @@ public class AcctgTransEntryImpl extends BizEntityTypedImpl<AcctgTransEntryType>
 	 */
 	@Override
 	public void setProductId(String newProductId) {
+		String oldProductId = productId;
 		productId = newProductId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, LedgerPackage.ACCTG_TRANS_ENTRY__PRODUCT_ID, oldProductId, productId));
 	}
 
 	/**
@@ -792,6 +844,8 @@ public class AcctgTransEntryImpl extends BizEntityTypedImpl<AcctgTransEntryType>
 			InternalEObject oldReconcileStatusId = (InternalEObject)reconcileStatusId;
 			reconcileStatusId = (StatusItem)eResolveProxy(oldReconcileStatusId);
 			if (reconcileStatusId != oldReconcileStatusId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, LedgerPackage.ACCTG_TRANS_ENTRY__RECONCILE_STATUS_ID, oldReconcileStatusId, reconcileStatusId));
 			}
 		}
 		return reconcileStatusId;
@@ -813,7 +867,10 @@ public class AcctgTransEntryImpl extends BizEntityTypedImpl<AcctgTransEntryType>
 	 */
 	@Override
 	public void setReconcileStatusId(StatusItem newReconcileStatusId) {
+		StatusItem oldReconcileStatusId = reconcileStatusId;
 		reconcileStatusId = newReconcileStatusId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, LedgerPackage.ACCTG_TRANS_ENTRY__RECONCILE_STATUS_ID, oldReconcileStatusId, reconcileStatusId));
 	}
 
 	/**
@@ -827,6 +884,8 @@ public class AcctgTransEntryImpl extends BizEntityTypedImpl<AcctgTransEntryType>
 			InternalEObject oldRoleTypeId = (InternalEObject)roleTypeId;
 			roleTypeId = (RoleType)eResolveProxy(oldRoleTypeId);
 			if (roleTypeId != oldRoleTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, LedgerPackage.ACCTG_TRANS_ENTRY__ROLE_TYPE_ID, oldRoleTypeId, roleTypeId));
 			}
 		}
 		return roleTypeId;
@@ -848,7 +907,10 @@ public class AcctgTransEntryImpl extends BizEntityTypedImpl<AcctgTransEntryType>
 	 */
 	@Override
 	public void setRoleTypeId(RoleType newRoleTypeId) {
+		RoleType oldRoleTypeId = roleTypeId;
 		roleTypeId = newRoleTypeId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, LedgerPackage.ACCTG_TRANS_ENTRY__ROLE_TYPE_ID, oldRoleTypeId, roleTypeId));
 	}
 
 	/**
@@ -868,7 +930,10 @@ public class AcctgTransEntryImpl extends BizEntityTypedImpl<AcctgTransEntryType>
 	 */
 	@Override
 	public void setTaxId(String newTaxId) {
+		String oldTaxId = taxId;
 		taxId = newTaxId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, LedgerPackage.ACCTG_TRANS_ENTRY__TAX_ID, oldTaxId, taxId));
 	}
 
 	/**
@@ -888,7 +953,10 @@ public class AcctgTransEntryImpl extends BizEntityTypedImpl<AcctgTransEntryType>
 	 */
 	@Override
 	public void setTheirPartyId(String newTheirPartyId) {
+		String oldTheirPartyId = theirPartyId;
 		theirPartyId = newTheirPartyId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, LedgerPackage.ACCTG_TRANS_ENTRY__THEIR_PARTY_ID, oldTheirPartyId, theirPartyId));
 	}
 
 	/**
@@ -908,7 +976,10 @@ public class AcctgTransEntryImpl extends BizEntityTypedImpl<AcctgTransEntryType>
 	 */
 	@Override
 	public void setTheirProductId(String newTheirProductId) {
+		String oldTheirProductId = theirProductId;
 		theirProductId = newTheirProductId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, LedgerPackage.ACCTG_TRANS_ENTRY__THEIR_PRODUCT_ID, oldTheirProductId, theirProductId));
 	}
 
 	/**
@@ -928,7 +999,10 @@ public class AcctgTransEntryImpl extends BizEntityTypedImpl<AcctgTransEntryType>
 	 */
 	@Override
 	public void setVoucherRef(String newVoucherRef) {
+		String oldVoucherRef = voucherRef;
 		voucherRef = newVoucherRef;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, LedgerPackage.ACCTG_TRANS_ENTRY__VOUCHER_REF, oldVoucherRef, voucherRef));
 	}
 
 	/**
@@ -942,6 +1016,8 @@ public class AcctgTransEntryImpl extends BizEntityTypedImpl<AcctgTransEntryType>
 			InternalEObject oldAcctgTransEntryTypeId = (InternalEObject)acctgTransEntryTypeId;
 			acctgTransEntryTypeId = (AcctgTransEntryType)eResolveProxy(oldAcctgTransEntryTypeId);
 			if (acctgTransEntryTypeId != oldAcctgTransEntryTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, LedgerPackage.ACCTG_TRANS_ENTRY__ACCTG_TRANS_ENTRY_TYPE_ID, oldAcctgTransEntryTypeId, acctgTransEntryTypeId));
 			}
 		}
 		return acctgTransEntryTypeId;
@@ -963,7 +1039,10 @@ public class AcctgTransEntryImpl extends BizEntityTypedImpl<AcctgTransEntryType>
 	 */
 	@Override
 	public void setAcctgTransEntryTypeId(AcctgTransEntryType newAcctgTransEntryTypeId) {
+		AcctgTransEntryType oldAcctgTransEntryTypeId = acctgTransEntryTypeId;
 		acctgTransEntryTypeId = newAcctgTransEntryTypeId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, LedgerPackage.ACCTG_TRANS_ENTRY__ACCTG_TRANS_ENTRY_TYPE_ID, oldAcctgTransEntryTypeId, acctgTransEntryTypeId));
 	}
 
 	/**
@@ -977,6 +1056,8 @@ public class AcctgTransEntryImpl extends BizEntityTypedImpl<AcctgTransEntryType>
 			InternalEObject oldAcctgTransId = (InternalEObject)acctgTransId;
 			acctgTransId = (AcctgTrans)eResolveProxy(oldAcctgTransId);
 			if (acctgTransId != oldAcctgTransId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, LedgerPackage.ACCTG_TRANS_ENTRY__ACCTG_TRANS_ID, oldAcctgTransId, acctgTransId));
 			}
 		}
 		return acctgTransId;
@@ -998,7 +1079,10 @@ public class AcctgTransEntryImpl extends BizEntityTypedImpl<AcctgTransEntryType>
 	 */
 	@Override
 	public void setAcctgTransId(AcctgTrans newAcctgTransId) {
+		AcctgTrans oldAcctgTransId = acctgTransId;
 		acctgTransId = newAcctgTransId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, LedgerPackage.ACCTG_TRANS_ENTRY__ACCTG_TRANS_ID, oldAcctgTransId, acctgTransId));
 	}
 
 	/**
@@ -1012,6 +1096,8 @@ public class AcctgTransEntryImpl extends BizEntityTypedImpl<AcctgTransEntryType>
 			InternalEObject oldGlAccountTypeId = (InternalEObject)glAccountTypeId;
 			glAccountTypeId = (GlAccountType)eResolveProxy(oldGlAccountTypeId);
 			if (glAccountTypeId != oldGlAccountTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, LedgerPackage.ACCTG_TRANS_ENTRY__GL_ACCOUNT_TYPE_ID, oldGlAccountTypeId, glAccountTypeId));
 			}
 		}
 		return glAccountTypeId;
@@ -1033,7 +1119,10 @@ public class AcctgTransEntryImpl extends BizEntityTypedImpl<AcctgTransEntryType>
 	 */
 	@Override
 	public void setGlAccountTypeId(GlAccountType newGlAccountTypeId) {
+		GlAccountType oldGlAccountTypeId = glAccountTypeId;
 		glAccountTypeId = newGlAccountTypeId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, LedgerPackage.ACCTG_TRANS_ENTRY__GL_ACCOUNT_TYPE_ID, oldGlAccountTypeId, glAccountTypeId));
 	}
 
 	/**
@@ -1047,6 +1136,8 @@ public class AcctgTransEntryImpl extends BizEntityTypedImpl<AcctgTransEntryType>
 			InternalEObject oldGlAccountId = (InternalEObject)glAccountId;
 			glAccountId = (GlAccount)eResolveProxy(oldGlAccountId);
 			if (glAccountId != oldGlAccountId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, LedgerPackage.ACCTG_TRANS_ENTRY__GL_ACCOUNT_ID, oldGlAccountId, glAccountId));
 			}
 		}
 		return glAccountId;
@@ -1068,7 +1159,10 @@ public class AcctgTransEntryImpl extends BizEntityTypedImpl<AcctgTransEntryType>
 	 */
 	@Override
 	public void setGlAccountId(GlAccount newGlAccountId) {
+		GlAccount oldGlAccountId = glAccountId;
 		glAccountId = newGlAccountId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, LedgerPackage.ACCTG_TRANS_ENTRY__GL_ACCOUNT_ID, oldGlAccountId, glAccountId));
 	}
 
 	/**
@@ -1082,6 +1176,8 @@ public class AcctgTransEntryImpl extends BizEntityTypedImpl<AcctgTransEntryType>
 			InternalEObject oldSettlementTermId = (InternalEObject)settlementTermId;
 			settlementTermId = (SettlementTerm)eResolveProxy(oldSettlementTermId);
 			if (settlementTermId != oldSettlementTermId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, LedgerPackage.ACCTG_TRANS_ENTRY__SETTLEMENT_TERM_ID, oldSettlementTermId, settlementTermId));
 			}
 		}
 		return settlementTermId;
@@ -1103,7 +1199,10 @@ public class AcctgTransEntryImpl extends BizEntityTypedImpl<AcctgTransEntryType>
 	 */
 	@Override
 	public void setSettlementTermId(SettlementTerm newSettlementTermId) {
+		SettlementTerm oldSettlementTermId = settlementTermId;
 		settlementTermId = newSettlementTermId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, LedgerPackage.ACCTG_TRANS_ENTRY__SETTLEMENT_TERM_ID, oldSettlementTermId, settlementTermId));
 	}
 
 	/**

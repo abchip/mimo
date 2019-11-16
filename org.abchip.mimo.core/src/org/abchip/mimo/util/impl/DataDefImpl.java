@@ -17,7 +17,7 @@ import org.abchip.mimo.util.DataDefType;
 import org.abchip.mimo.util.UtilPackage;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.util.BasicInternalEList;
+import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -73,7 +73,7 @@ public abstract class DataDefImpl<D> extends EntityImpl implements DataDef<D> {
 	@Override
 	public List<String> getFormulas() {
 		if (formulas == null) {
-			formulas = new BasicInternalEList<String>(String.class);
+			formulas = new EDataTypeUniqueEList<String>(String.class, this, UtilPackage.DATA_DEF__FORMULAS);
 		}
 		return formulas;
 	}

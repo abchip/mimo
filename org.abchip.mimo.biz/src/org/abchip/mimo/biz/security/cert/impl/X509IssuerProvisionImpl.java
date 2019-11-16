@@ -10,7 +10,9 @@ package org.abchip.mimo.biz.security.cert.impl;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.security.cert.CertPackage;
 import org.abchip.mimo.biz.security.cert.X509IssuerProvision;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -234,7 +236,10 @@ public class X509IssuerProvisionImpl extends BizEntityImpl implements X509Issuer
 	 */
 	@Override
 	public void setCertProvisionId(String newCertProvisionId) {
+		String oldCertProvisionId = certProvisionId;
 		certProvisionId = newCertProvisionId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, CertPackage.X509_ISSUER_PROVISION__CERT_PROVISION_ID, oldCertProvisionId, certProvisionId));
 	}
 
 	/**
@@ -254,7 +259,10 @@ public class X509IssuerProvisionImpl extends BizEntityImpl implements X509Issuer
 	 */
 	@Override
 	public void setCityLocality(String newCityLocality) {
+		String oldCityLocality = cityLocality;
 		cityLocality = newCityLocality;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, CertPackage.X509_ISSUER_PROVISION__CITY_LOCALITY, oldCityLocality, cityLocality));
 	}
 
 	/**
@@ -274,7 +282,10 @@ public class X509IssuerProvisionImpl extends BizEntityImpl implements X509Issuer
 	 */
 	@Override
 	public void setCommonName(String newCommonName) {
+		String oldCommonName = commonName;
 		commonName = newCommonName;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, CertPackage.X509_ISSUER_PROVISION__COMMON_NAME, oldCommonName, commonName));
 	}
 
 	/**
@@ -294,7 +305,10 @@ public class X509IssuerProvisionImpl extends BizEntityImpl implements X509Issuer
 	 */
 	@Override
 	public void setCountry(String newCountry) {
+		String oldCountry = country;
 		country = newCountry;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, CertPackage.X509_ISSUER_PROVISION__COUNTRY, oldCountry, country));
 	}
 
 	/**
@@ -314,7 +328,10 @@ public class X509IssuerProvisionImpl extends BizEntityImpl implements X509Issuer
 	 */
 	@Override
 	public void setOrganizationName(String newOrganizationName) {
+		String oldOrganizationName = organizationName;
 		organizationName = newOrganizationName;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, CertPackage.X509_ISSUER_PROVISION__ORGANIZATION_NAME, oldOrganizationName, organizationName));
 	}
 
 	/**
@@ -334,7 +351,10 @@ public class X509IssuerProvisionImpl extends BizEntityImpl implements X509Issuer
 	 */
 	@Override
 	public void setOrganizationalUnit(String newOrganizationalUnit) {
+		String oldOrganizationalUnit = organizationalUnit;
 		organizationalUnit = newOrganizationalUnit;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, CertPackage.X509_ISSUER_PROVISION__ORGANIZATIONAL_UNIT, oldOrganizationalUnit, organizationalUnit));
 	}
 
 	/**
@@ -354,7 +374,10 @@ public class X509IssuerProvisionImpl extends BizEntityImpl implements X509Issuer
 	 */
 	@Override
 	public void setSerialNumber(String newSerialNumber) {
+		String oldSerialNumber = serialNumber;
 		serialNumber = newSerialNumber;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, CertPackage.X509_ISSUER_PROVISION__SERIAL_NUMBER, oldSerialNumber, serialNumber));
 	}
 
 	/**
@@ -374,7 +397,10 @@ public class X509IssuerProvisionImpl extends BizEntityImpl implements X509Issuer
 	 */
 	@Override
 	public void setStateProvince(String newStateProvince) {
+		String oldStateProvince = stateProvince;
 		stateProvince = newStateProvince;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, CertPackage.X509_ISSUER_PROVISION__STATE_PROVINCE, oldStateProvince, stateProvince));
 	}
 
 	/**

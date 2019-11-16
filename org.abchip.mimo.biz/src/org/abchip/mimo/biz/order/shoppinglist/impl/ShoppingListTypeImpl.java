@@ -13,7 +13,9 @@ import org.abchip.mimo.biz.impl.BizEntityTypeImpl;
 import org.abchip.mimo.biz.order.shoppinglist.ShoppingList;
 import org.abchip.mimo.biz.order.shoppinglist.ShoppingListType;
 import org.abchip.mimo.biz.order.shoppinglist.ShoppinglistPackage;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -111,7 +113,10 @@ public class ShoppingListTypeImpl extends BizEntityTypeImpl<ShoppingList> implem
 	 */
 	@Override
 	public void setDescription(String newDescription) {
+		String oldDescription = description;
 		description = newDescription;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ShoppinglistPackage.SHOPPING_LIST_TYPE__DESCRIPTION, oldDescription, description));
 	}
 
 	/**
@@ -143,7 +148,10 @@ public class ShoppingListTypeImpl extends BizEntityTypeImpl<ShoppingList> implem
 	 */
 	@Override
 	public void setShoppingListTypeId(String newShoppingListTypeId) {
+		String oldShoppingListTypeId = shoppingListTypeId;
 		shoppingListTypeId = newShoppingListTypeId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ShoppinglistPackage.SHOPPING_LIST_TYPE__SHOPPING_LIST_TYPE_ID, oldShoppingListTypeId, shoppingListTypeId));
 	}
 
 	/**

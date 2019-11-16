@@ -12,10 +12,12 @@ import java.util.List;
 import org.abchip.mimo.biz.humanres.employment.BenefitType;
 import org.abchip.mimo.biz.humanres.employment.EmploymentPackage;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -187,7 +189,10 @@ public class BenefitTypeImpl extends BizEntityImpl implements BenefitType {
 	 */
 	@Override
 	public void setBenefitName(String newBenefitName) {
+		String oldBenefitName = benefitName;
 		benefitName = newBenefitName;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, EmploymentPackage.BENEFIT_TYPE__BENEFIT_NAME, oldBenefitName, benefitName));
 	}
 
 	/**
@@ -207,7 +212,10 @@ public class BenefitTypeImpl extends BizEntityImpl implements BenefitType {
 	 */
 	@Override
 	public void setBenefitTypeId(String newBenefitTypeId) {
+		String oldBenefitTypeId = benefitTypeId;
 		benefitTypeId = newBenefitTypeId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, EmploymentPackage.BENEFIT_TYPE__BENEFIT_TYPE_ID, oldBenefitTypeId, benefitTypeId));
 	}
 
 	/**
@@ -227,7 +235,10 @@ public class BenefitTypeImpl extends BizEntityImpl implements BenefitType {
 	 */
 	@Override
 	public void setDescription(String newDescription) {
+		String oldDescription = description;
 		description = newDescription;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, EmploymentPackage.BENEFIT_TYPE__DESCRIPTION, oldDescription, description));
 	}
 
 	/**
@@ -247,7 +258,10 @@ public class BenefitTypeImpl extends BizEntityImpl implements BenefitType {
 	 */
 	@Override
 	public void setEmployerPaidPercentage(double newEmployerPaidPercentage) {
+		double oldEmployerPaidPercentage = employerPaidPercentage;
 		employerPaidPercentage = newEmployerPaidPercentage;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, EmploymentPackage.BENEFIT_TYPE__EMPLOYER_PAID_PERCENTAGE, oldEmployerPaidPercentage, employerPaidPercentage));
 	}
 
 	/**
@@ -267,7 +281,10 @@ public class BenefitTypeImpl extends BizEntityImpl implements BenefitType {
 	 */
 	@Override
 	public void setHasTable(boolean newHasTable) {
+		boolean oldHasTable = hasTable;
 		hasTable = newHasTable;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, EmploymentPackage.BENEFIT_TYPE__HAS_TABLE, oldHasTable, hasTable));
 	}
 
 	/**
@@ -281,6 +298,8 @@ public class BenefitTypeImpl extends BizEntityImpl implements BenefitType {
 			InternalEObject oldParentTypeId = (InternalEObject)parentTypeId;
 			parentTypeId = (BenefitType)eResolveProxy(oldParentTypeId);
 			if (parentTypeId != oldParentTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, EmploymentPackage.BENEFIT_TYPE__PARENT_TYPE_ID, oldParentTypeId, parentTypeId));
 			}
 		}
 		return parentTypeId;
@@ -302,7 +321,10 @@ public class BenefitTypeImpl extends BizEntityImpl implements BenefitType {
 	 */
 	@Override
 	public void setParentTypeId(BenefitType newParentTypeId) {
+		BenefitType oldParentTypeId = parentTypeId;
 		parentTypeId = newParentTypeId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, EmploymentPackage.BENEFIT_TYPE__PARENT_TYPE_ID, oldParentTypeId, parentTypeId));
 	}
 
 	/**

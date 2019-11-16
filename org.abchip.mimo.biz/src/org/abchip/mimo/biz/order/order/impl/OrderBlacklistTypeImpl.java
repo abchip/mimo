@@ -13,7 +13,9 @@ import org.abchip.mimo.biz.impl.BizEntityTypeImpl;
 import org.abchip.mimo.biz.order.order.OrderBlacklist;
 import org.abchip.mimo.biz.order.order.OrderBlacklistType;
 import org.abchip.mimo.biz.order.order.OrderPackage;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -111,7 +113,10 @@ public class OrderBlacklistTypeImpl extends BizEntityTypeImpl<OrderBlacklist> im
 	 */
 	@Override
 	public void setDescription(String newDescription) {
+		String oldDescription = description;
 		description = newDescription;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_BLACKLIST_TYPE__DESCRIPTION, oldDescription, description));
 	}
 
 	/**
@@ -143,7 +148,10 @@ public class OrderBlacklistTypeImpl extends BizEntityTypeImpl<OrderBlacklist> im
 	 */
 	@Override
 	public void setOrderBlacklistTypeId(String newOrderBlacklistTypeId) {
+		String oldOrderBlacklistTypeId = orderBlacklistTypeId;
 		orderBlacklistTypeId = newOrderBlacklistTypeId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_BLACKLIST_TYPE__ORDER_BLACKLIST_TYPE_ID, oldOrderBlacklistTypeId, orderBlacklistTypeId));
 	}
 
 	/**

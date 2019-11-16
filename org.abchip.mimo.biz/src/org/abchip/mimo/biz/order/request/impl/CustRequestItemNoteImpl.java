@@ -10,7 +10,9 @@ package org.abchip.mimo.biz.order.request.impl;
 import org.abchip.mimo.biz.impl.BizEntityNoteImpl;
 import org.abchip.mimo.biz.order.request.CustRequestItemNote;
 import org.abchip.mimo.biz.order.request.RequestPackage;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -108,7 +110,10 @@ public class CustRequestItemNoteImpl extends BizEntityNoteImpl implements CustRe
 	 */
 	@Override
 	public void setCustRequestId(String newCustRequestId) {
+		String oldCustRequestId = custRequestId;
 		custRequestId = newCustRequestId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, RequestPackage.CUST_REQUEST_ITEM_NOTE__CUST_REQUEST_ID, oldCustRequestId, custRequestId));
 	}
 
 	/**
@@ -128,7 +133,10 @@ public class CustRequestItemNoteImpl extends BizEntityNoteImpl implements CustRe
 	 */
 	@Override
 	public void setCustRequestItemSeqId(String newCustRequestItemSeqId) {
+		String oldCustRequestItemSeqId = custRequestItemSeqId;
 		custRequestItemSeqId = newCustRequestItemSeqId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, RequestPackage.CUST_REQUEST_ITEM_NOTE__CUST_REQUEST_ITEM_SEQ_ID, oldCustRequestItemSeqId, custRequestItemSeqId));
 	}
 
 	/**

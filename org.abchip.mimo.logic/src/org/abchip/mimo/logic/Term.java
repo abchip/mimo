@@ -40,6 +40,7 @@ public interface Term extends Nameable {
 	 * @model required="true"
 	 * @generated
 	 */
+	@Override
 	String getName();
 
 	/**

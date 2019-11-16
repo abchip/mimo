@@ -10,7 +10,9 @@ package org.abchip.mimo.biz.content.content.impl;
 import org.abchip.mimo.biz.content.content.ContentOperation;
 import org.abchip.mimo.biz.content.content.ContentPackage;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -108,7 +110,10 @@ public class ContentOperationImpl extends BizEntityImpl implements ContentOperat
 	 */
 	@Override
 	public void setContentOperationId(String newContentOperationId) {
+		String oldContentOperationId = contentOperationId;
 		contentOperationId = newContentOperationId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ContentPackage.CONTENT_OPERATION__CONTENT_OPERATION_ID, oldContentOperationId, contentOperationId));
 	}
 
 	/**
@@ -128,7 +133,10 @@ public class ContentOperationImpl extends BizEntityImpl implements ContentOperat
 	 */
 	@Override
 	public void setDescription(String newDescription) {
+		String oldDescription = description;
 		description = newDescription;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ContentPackage.CONTENT_OPERATION__DESCRIPTION, oldDescription, description));
 	}
 
 	/**

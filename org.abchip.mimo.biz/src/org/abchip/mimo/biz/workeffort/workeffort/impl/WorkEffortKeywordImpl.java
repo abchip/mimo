@@ -11,10 +11,12 @@ import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.workeffort.workeffort.WorkEffort;
 import org.abchip.mimo.biz.workeffort.workeffort.WorkEffortKeyword;
 import org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -123,7 +125,10 @@ public class WorkEffortKeywordImpl extends BizEntityImpl implements WorkEffortKe
 	 */
 	@Override
 	public void setKeyword(String newKeyword) {
+		String oldKeyword = keyword;
 		keyword = newKeyword;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WorkeffortPackage.WORK_EFFORT_KEYWORD__KEYWORD, oldKeyword, keyword));
 	}
 
 	/**
@@ -143,7 +148,10 @@ public class WorkEffortKeywordImpl extends BizEntityImpl implements WorkEffortKe
 	 */
 	@Override
 	public void setRelevancyWeight(long newRelevancyWeight) {
+		long oldRelevancyWeight = relevancyWeight;
 		relevancyWeight = newRelevancyWeight;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WorkeffortPackage.WORK_EFFORT_KEYWORD__RELEVANCY_WEIGHT, oldRelevancyWeight, relevancyWeight));
 	}
 
 	/**
@@ -157,6 +165,8 @@ public class WorkEffortKeywordImpl extends BizEntityImpl implements WorkEffortKe
 			InternalEObject oldWorkEffortId = (InternalEObject)workEffortId;
 			workEffortId = (WorkEffort)eResolveProxy(oldWorkEffortId);
 			if (workEffortId != oldWorkEffortId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WorkeffortPackage.WORK_EFFORT_KEYWORD__WORK_EFFORT_ID, oldWorkEffortId, workEffortId));
 			}
 		}
 		return workEffortId;
@@ -178,7 +188,10 @@ public class WorkEffortKeywordImpl extends BizEntityImpl implements WorkEffortKe
 	 */
 	@Override
 	public void setWorkEffortId(WorkEffort newWorkEffortId) {
+		WorkEffort oldWorkEffortId = workEffortId;
 		workEffortId = newWorkEffortId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WorkeffortPackage.WORK_EFFORT_KEYWORD__WORK_EFFORT_ID, oldWorkEffortId, workEffortId));
 	}
 
 	/**

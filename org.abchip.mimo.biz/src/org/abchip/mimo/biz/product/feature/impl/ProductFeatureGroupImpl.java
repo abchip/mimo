@@ -10,7 +10,9 @@ package org.abchip.mimo.biz.product.feature.impl;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.product.feature.FeaturePackage;
 import org.abchip.mimo.biz.product.feature.ProductFeatureGroup;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -108,7 +110,10 @@ public class ProductFeatureGroupImpl extends BizEntityImpl implements ProductFea
 	 */
 	@Override
 	public void setDescription(String newDescription) {
+		String oldDescription = description;
 		description = newDescription;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, FeaturePackage.PRODUCT_FEATURE_GROUP__DESCRIPTION, oldDescription, description));
 	}
 
 	/**
@@ -128,7 +133,10 @@ public class ProductFeatureGroupImpl extends BizEntityImpl implements ProductFea
 	 */
 	@Override
 	public void setProductFeatureGroupId(String newProductFeatureGroupId) {
+		String oldProductFeatureGroupId = productFeatureGroupId;
 		productFeatureGroupId = newProductFeatureGroupId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, FeaturePackage.PRODUCT_FEATURE_GROUP__PRODUCT_FEATURE_GROUP_ID, oldProductFeatureGroupId, productFeatureGroupId));
 	}
 
 	/**

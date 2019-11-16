@@ -16,10 +16,12 @@ import org.abchip.mimo.biz.order.shoppingcart.CartAbandonedLine;
 import org.abchip.mimo.biz.order.shoppingcart.ShoppingcartPackage;
 import org.abchip.mimo.biz.product.catalog.ProdCatalog;
 import org.abchip.mimo.biz.product.product.Product;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -349,7 +351,10 @@ public class CartAbandonedLineImpl extends BizEntityImpl implements CartAbandone
 	 */
 	@Override
 	public void setCartAbandonedLineSeqId(String newCartAbandonedLineSeqId) {
+		String oldCartAbandonedLineSeqId = cartAbandonedLineSeqId;
 		cartAbandonedLineSeqId = newCartAbandonedLineSeqId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ShoppingcartPackage.CART_ABANDONED_LINE__CART_ABANDONED_LINE_SEQ_ID, oldCartAbandonedLineSeqId, cartAbandonedLineSeqId));
 	}
 
 	/**
@@ -369,7 +374,10 @@ public class CartAbandonedLineImpl extends BizEntityImpl implements CartAbandone
 	 */
 	@Override
 	public void setConfigId(String newConfigId) {
+		String oldConfigId = configId;
 		configId = newConfigId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ShoppingcartPackage.CART_ABANDONED_LINE__CONFIG_ID, oldConfigId, configId));
 	}
 
 	/**
@@ -383,6 +391,8 @@ public class CartAbandonedLineImpl extends BizEntityImpl implements CartAbandone
 			InternalEObject oldProdCatalogId = (InternalEObject)prodCatalogId;
 			prodCatalogId = (ProdCatalog)eResolveProxy(oldProdCatalogId);
 			if (prodCatalogId != oldProdCatalogId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ShoppingcartPackage.CART_ABANDONED_LINE__PROD_CATALOG_ID, oldProdCatalogId, prodCatalogId));
 			}
 		}
 		return prodCatalogId;
@@ -404,7 +414,10 @@ public class CartAbandonedLineImpl extends BizEntityImpl implements CartAbandone
 	 */
 	@Override
 	public void setProdCatalogId(ProdCatalog newProdCatalogId) {
+		ProdCatalog oldProdCatalogId = prodCatalogId;
 		prodCatalogId = newProdCatalogId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ShoppingcartPackage.CART_ABANDONED_LINE__PROD_CATALOG_ID, oldProdCatalogId, prodCatalogId));
 	}
 
 	/**
@@ -418,6 +431,8 @@ public class CartAbandonedLineImpl extends BizEntityImpl implements CartAbandone
 			InternalEObject oldProductId = (InternalEObject)productId;
 			productId = (Product)eResolveProxy(oldProductId);
 			if (productId != oldProductId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ShoppingcartPackage.CART_ABANDONED_LINE__PRODUCT_ID, oldProductId, productId));
 			}
 		}
 		return productId;
@@ -439,7 +454,10 @@ public class CartAbandonedLineImpl extends BizEntityImpl implements CartAbandone
 	 */
 	@Override
 	public void setProductId(Product newProductId) {
+		Product oldProductId = productId;
 		productId = newProductId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ShoppingcartPackage.CART_ABANDONED_LINE__PRODUCT_ID, oldProductId, productId));
 	}
 
 	/**
@@ -459,7 +477,10 @@ public class CartAbandonedLineImpl extends BizEntityImpl implements CartAbandone
 	 */
 	@Override
 	public void setQuantity(BigDecimal newQuantity) {
+		BigDecimal oldQuantity = quantity;
 		quantity = newQuantity;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ShoppingcartPackage.CART_ABANDONED_LINE__QUANTITY, oldQuantity, quantity));
 	}
 
 	/**
@@ -479,7 +500,10 @@ public class CartAbandonedLineImpl extends BizEntityImpl implements CartAbandone
 	 */
 	@Override
 	public void setReserv2ndPPPerc(BigDecimal newReserv2ndPPPerc) {
+		BigDecimal oldReserv2ndPPPerc = reserv2ndPPPerc;
 		reserv2ndPPPerc = newReserv2ndPPPerc;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ShoppingcartPackage.CART_ABANDONED_LINE__RESERV2ND_PP_PERC, oldReserv2ndPPPerc, reserv2ndPPPerc));
 	}
 
 	/**
@@ -499,7 +523,10 @@ public class CartAbandonedLineImpl extends BizEntityImpl implements CartAbandone
 	 */
 	@Override
 	public void setReservLength(BigDecimal newReservLength) {
+		BigDecimal oldReservLength = reservLength;
 		reservLength = newReservLength;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ShoppingcartPackage.CART_ABANDONED_LINE__RESERV_LENGTH, oldReservLength, reservLength));
 	}
 
 	/**
@@ -519,7 +546,10 @@ public class CartAbandonedLineImpl extends BizEntityImpl implements CartAbandone
 	 */
 	@Override
 	public void setReservNthPPPerc(BigDecimal newReservNthPPPerc) {
+		BigDecimal oldReservNthPPPerc = reservNthPPPerc;
 		reservNthPPPerc = newReservNthPPPerc;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ShoppingcartPackage.CART_ABANDONED_LINE__RESERV_NTH_PP_PERC, oldReservNthPPPerc, reservNthPPPerc));
 	}
 
 	/**
@@ -539,7 +569,10 @@ public class CartAbandonedLineImpl extends BizEntityImpl implements CartAbandone
 	 */
 	@Override
 	public void setReservPersons(BigDecimal newReservPersons) {
+		BigDecimal oldReservPersons = reservPersons;
 		reservPersons = newReservPersons;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ShoppingcartPackage.CART_ABANDONED_LINE__RESERV_PERSONS, oldReservPersons, reservPersons));
 	}
 
 	/**
@@ -559,7 +592,10 @@ public class CartAbandonedLineImpl extends BizEntityImpl implements CartAbandone
 	 */
 	@Override
 	public void setReservStart(Date newReservStart) {
+		Date oldReservStart = reservStart;
 		reservStart = newReservStart;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ShoppingcartPackage.CART_ABANDONED_LINE__RESERV_START, oldReservStart, reservStart));
 	}
 
 	/**
@@ -579,7 +615,10 @@ public class CartAbandonedLineImpl extends BizEntityImpl implements CartAbandone
 	 */
 	@Override
 	public void setTotalWithAdjustments(BigDecimal newTotalWithAdjustments) {
+		BigDecimal oldTotalWithAdjustments = totalWithAdjustments;
 		totalWithAdjustments = newTotalWithAdjustments;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ShoppingcartPackage.CART_ABANDONED_LINE__TOTAL_WITH_ADJUSTMENTS, oldTotalWithAdjustments, totalWithAdjustments));
 	}
 
 	/**
@@ -599,7 +638,10 @@ public class CartAbandonedLineImpl extends BizEntityImpl implements CartAbandone
 	 */
 	@Override
 	public void setUnitPrice(BigDecimal newUnitPrice) {
+		BigDecimal oldUnitPrice = unitPrice;
 		unitPrice = newUnitPrice;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ShoppingcartPackage.CART_ABANDONED_LINE__UNIT_PRICE, oldUnitPrice, unitPrice));
 	}
 
 	/**
@@ -619,7 +661,10 @@ public class CartAbandonedLineImpl extends BizEntityImpl implements CartAbandone
 	 */
 	@Override
 	public void setWasReserved(boolean newWasReserved) {
+		boolean oldWasReserved = wasReserved;
 		wasReserved = newWasReserved;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ShoppingcartPackage.CART_ABANDONED_LINE__WAS_RESERVED, oldWasReserved, wasReserved));
 	}
 
 	/**
@@ -639,7 +684,10 @@ public class CartAbandonedLineImpl extends BizEntityImpl implements CartAbandone
 	 */
 	@Override
 	public void setVisitId(String newVisitId) {
+		String oldVisitId = visitId;
 		visitId = newVisitId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ShoppingcartPackage.CART_ABANDONED_LINE__VISIT_ID, oldVisitId, visitId));
 	}
 
 	/**

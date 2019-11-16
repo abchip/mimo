@@ -21,10 +21,12 @@ import org.abchip.mimo.biz.order.order.OrderHeader;
 import org.abchip.mimo.biz.order.order.OrderPaymentPreference;
 import org.abchip.mimo.biz.order.return_.ReturnItemResponse;
 import org.abchip.mimo.biz.order.return_.ReturnPackage;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -192,6 +194,8 @@ public class ReturnItemResponseImpl extends BizEntityImpl implements ReturnItemR
 			InternalEObject oldBillingAccountId = (InternalEObject)billingAccountId;
 			billingAccountId = (BillingAccount)eResolveProxy(oldBillingAccountId);
 			if (billingAccountId != oldBillingAccountId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ReturnPackage.RETURN_ITEM_RESPONSE__BILLING_ACCOUNT_ID, oldBillingAccountId, billingAccountId));
 			}
 		}
 		return billingAccountId;
@@ -213,7 +217,10 @@ public class ReturnItemResponseImpl extends BizEntityImpl implements ReturnItemR
 	 */
 	@Override
 	public void setBillingAccountId(BillingAccount newBillingAccountId) {
+		BillingAccount oldBillingAccountId = billingAccountId;
 		billingAccountId = newBillingAccountId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ReturnPackage.RETURN_ITEM_RESPONSE__BILLING_ACCOUNT_ID, oldBillingAccountId, billingAccountId));
 	}
 
 	/**
@@ -227,6 +234,8 @@ public class ReturnItemResponseImpl extends BizEntityImpl implements ReturnItemR
 			InternalEObject oldFinAccountTransId = (InternalEObject)finAccountTransId;
 			finAccountTransId = (FinAccountTrans)eResolveProxy(oldFinAccountTransId);
 			if (finAccountTransId != oldFinAccountTransId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ReturnPackage.RETURN_ITEM_RESPONSE__FIN_ACCOUNT_TRANS_ID, oldFinAccountTransId, finAccountTransId));
 			}
 		}
 		return finAccountTransId;
@@ -248,7 +257,10 @@ public class ReturnItemResponseImpl extends BizEntityImpl implements ReturnItemR
 	 */
 	@Override
 	public void setFinAccountTransId(FinAccountTrans newFinAccountTransId) {
+		FinAccountTrans oldFinAccountTransId = finAccountTransId;
 		finAccountTransId = newFinAccountTransId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ReturnPackage.RETURN_ITEM_RESPONSE__FIN_ACCOUNT_TRANS_ID, oldFinAccountTransId, finAccountTransId));
 	}
 
 	/**
@@ -262,6 +274,8 @@ public class ReturnItemResponseImpl extends BizEntityImpl implements ReturnItemR
 			InternalEObject oldOrderPaymentPreferenceId = (InternalEObject)orderPaymentPreferenceId;
 			orderPaymentPreferenceId = (OrderPaymentPreference)eResolveProxy(oldOrderPaymentPreferenceId);
 			if (orderPaymentPreferenceId != oldOrderPaymentPreferenceId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ReturnPackage.RETURN_ITEM_RESPONSE__ORDER_PAYMENT_PREFERENCE_ID, oldOrderPaymentPreferenceId, orderPaymentPreferenceId));
 			}
 		}
 		return orderPaymentPreferenceId;
@@ -283,7 +297,10 @@ public class ReturnItemResponseImpl extends BizEntityImpl implements ReturnItemR
 	 */
 	@Override
 	public void setOrderPaymentPreferenceId(OrderPaymentPreference newOrderPaymentPreferenceId) {
+		OrderPaymentPreference oldOrderPaymentPreferenceId = orderPaymentPreferenceId;
 		orderPaymentPreferenceId = newOrderPaymentPreferenceId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ReturnPackage.RETURN_ITEM_RESPONSE__ORDER_PAYMENT_PREFERENCE_ID, oldOrderPaymentPreferenceId, orderPaymentPreferenceId));
 	}
 
 	/**
@@ -297,6 +314,8 @@ public class ReturnItemResponseImpl extends BizEntityImpl implements ReturnItemR
 			InternalEObject oldPaymentId = (InternalEObject)paymentId;
 			paymentId = (Payment)eResolveProxy(oldPaymentId);
 			if (paymentId != oldPaymentId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ReturnPackage.RETURN_ITEM_RESPONSE__PAYMENT_ID, oldPaymentId, paymentId));
 			}
 		}
 		return paymentId;
@@ -318,7 +337,10 @@ public class ReturnItemResponseImpl extends BizEntityImpl implements ReturnItemR
 	 */
 	@Override
 	public void setPaymentId(Payment newPaymentId) {
+		Payment oldPaymentId = paymentId;
 		paymentId = newPaymentId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ReturnPackage.RETURN_ITEM_RESPONSE__PAYMENT_ID, oldPaymentId, paymentId));
 	}
 
 	/**
@@ -332,6 +354,8 @@ public class ReturnItemResponseImpl extends BizEntityImpl implements ReturnItemR
 			InternalEObject oldReplacementOrderId = (InternalEObject)replacementOrderId;
 			replacementOrderId = (OrderHeader)eResolveProxy(oldReplacementOrderId);
 			if (replacementOrderId != oldReplacementOrderId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ReturnPackage.RETURN_ITEM_RESPONSE__REPLACEMENT_ORDER_ID, oldReplacementOrderId, replacementOrderId));
 			}
 		}
 		return replacementOrderId;
@@ -353,7 +377,10 @@ public class ReturnItemResponseImpl extends BizEntityImpl implements ReturnItemR
 	 */
 	@Override
 	public void setReplacementOrderId(OrderHeader newReplacementOrderId) {
+		OrderHeader oldReplacementOrderId = replacementOrderId;
 		replacementOrderId = newReplacementOrderId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ReturnPackage.RETURN_ITEM_RESPONSE__REPLACEMENT_ORDER_ID, oldReplacementOrderId, replacementOrderId));
 	}
 
 	/**
@@ -373,7 +400,10 @@ public class ReturnItemResponseImpl extends BizEntityImpl implements ReturnItemR
 	 */
 	@Override
 	public void setResponseAmount(BigDecimal newResponseAmount) {
+		BigDecimal oldResponseAmount = responseAmount;
 		responseAmount = newResponseAmount;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ReturnPackage.RETURN_ITEM_RESPONSE__RESPONSE_AMOUNT, oldResponseAmount, responseAmount));
 	}
 
 	/**
@@ -393,7 +423,10 @@ public class ReturnItemResponseImpl extends BizEntityImpl implements ReturnItemR
 	 */
 	@Override
 	public void setResponseDate(Date newResponseDate) {
+		Date oldResponseDate = responseDate;
 		responseDate = newResponseDate;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ReturnPackage.RETURN_ITEM_RESPONSE__RESPONSE_DATE, oldResponseDate, responseDate));
 	}
 
 	/**
@@ -425,7 +458,10 @@ public class ReturnItemResponseImpl extends BizEntityImpl implements ReturnItemR
 	 */
 	@Override
 	public void setReturnItemResponseId(String newReturnItemResponseId) {
+		String oldReturnItemResponseId = returnItemResponseId;
 		returnItemResponseId = newReturnItemResponseId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ReturnPackage.RETURN_ITEM_RESPONSE__RETURN_ITEM_RESPONSE_ID, oldReturnItemResponseId, returnItemResponseId));
 	}
 
 	/**

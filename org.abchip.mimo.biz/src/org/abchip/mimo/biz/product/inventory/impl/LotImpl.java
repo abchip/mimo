@@ -15,7 +15,9 @@ import java.util.List;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.product.inventory.InventoryPackage;
 import org.abchip.mimo.biz.product.inventory.Lot;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -155,7 +157,10 @@ public class LotImpl extends BizEntityImpl implements Lot {
 	 */
 	@Override
 	public void setCreationDate(Date newCreationDate) {
+		Date oldCreationDate = creationDate;
 		creationDate = newCreationDate;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, InventoryPackage.LOT__CREATION_DATE, oldCreationDate, creationDate));
 	}
 
 	/**
@@ -175,7 +180,10 @@ public class LotImpl extends BizEntityImpl implements Lot {
 	 */
 	@Override
 	public void setExpirationDate(Date newExpirationDate) {
+		Date oldExpirationDate = expirationDate;
 		expirationDate = newExpirationDate;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, InventoryPackage.LOT__EXPIRATION_DATE, oldExpirationDate, expirationDate));
 	}
 
 	/**
@@ -195,7 +203,10 @@ public class LotImpl extends BizEntityImpl implements Lot {
 	 */
 	@Override
 	public void setQuantity(BigDecimal newQuantity) {
+		BigDecimal oldQuantity = quantity;
 		quantity = newQuantity;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, InventoryPackage.LOT__QUANTITY, oldQuantity, quantity));
 	}
 
 	/**
@@ -227,7 +238,10 @@ public class LotImpl extends BizEntityImpl implements Lot {
 	 */
 	@Override
 	public void setLotId(String newLotId) {
+		String oldLotId = lotId;
 		lotId = newLotId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, InventoryPackage.LOT__LOT_ID, oldLotId, lotId));
 	}
 
 	/**

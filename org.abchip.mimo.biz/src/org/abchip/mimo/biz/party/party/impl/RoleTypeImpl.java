@@ -13,11 +13,13 @@ import java.util.List;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.party.party.PartyPackage;
 import org.abchip.mimo.biz.party.party.RoleType;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.util.BasicInternalEList;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -161,7 +163,10 @@ public class RoleTypeImpl extends BizEntityImpl implements RoleType {
 	 */
 	@Override
 	public void setDescription(String newDescription) {
+		String oldDescription = description;
 		description = newDescription;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PartyPackage.ROLE_TYPE__DESCRIPTION, oldDescription, description));
 	}
 
 	/**
@@ -181,7 +186,10 @@ public class RoleTypeImpl extends BizEntityImpl implements RoleType {
 	 */
 	@Override
 	public void setHasTable(boolean newHasTable) {
+		boolean oldHasTable = hasTable;
 		hasTable = newHasTable;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PartyPackage.ROLE_TYPE__HAS_TABLE, oldHasTable, hasTable));
 	}
 
 	/**
@@ -195,6 +203,8 @@ public class RoleTypeImpl extends BizEntityImpl implements RoleType {
 			InternalEObject oldParentTypeId = (InternalEObject)parentTypeId;
 			parentTypeId = (RoleType)eResolveProxy(oldParentTypeId);
 			if (parentTypeId != oldParentTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PartyPackage.ROLE_TYPE__PARENT_TYPE_ID, oldParentTypeId, parentTypeId));
 			}
 		}
 		return parentTypeId;
@@ -216,7 +226,10 @@ public class RoleTypeImpl extends BizEntityImpl implements RoleType {
 	 */
 	@Override
 	public void setParentTypeId(RoleType newParentTypeId) {
+		RoleType oldParentTypeId = parentTypeId;
 		parentTypeId = newParentTypeId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PartyPackage.ROLE_TYPE__PARENT_TYPE_ID, oldParentTypeId, parentTypeId));
 	}
 
 	/**
@@ -236,7 +249,10 @@ public class RoleTypeImpl extends BizEntityImpl implements RoleType {
 	 */
 	@Override
 	public void setRoleTypeId(String newRoleTypeId) {
+		String oldRoleTypeId = roleTypeId;
 		roleTypeId = newRoleTypeId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PartyPackage.ROLE_TYPE__ROLE_TYPE_ID, oldRoleTypeId, roleTypeId));
 	}
 
 	/**
@@ -247,7 +263,7 @@ public class RoleTypeImpl extends BizEntityImpl implements RoleType {
 	@Override
 	public List<String> getRoleTypeAttrs() {
 		if (roleTypeAttrs == null) {
-			roleTypeAttrs = new BasicInternalEList<String>(String.class);
+			roleTypeAttrs = new EDataTypeUniqueEList<String>(String.class, this, PartyPackage.ROLE_TYPE__ROLE_TYPE_ATTRS);
 		}
 		return roleTypeAttrs;
 	}
@@ -260,7 +276,7 @@ public class RoleTypeImpl extends BizEntityImpl implements RoleType {
 	@Override
 	public List<String> getValidContactMechRoles() {
 		if (validContactMechRoles == null) {
-			validContactMechRoles = new BasicInternalEList<String>(String.class);
+			validContactMechRoles = new EDataTypeUniqueEList<String>(String.class, this, PartyPackage.ROLE_TYPE__VALID_CONTACT_MECH_ROLES);
 		}
 		return validContactMechRoles;
 	}

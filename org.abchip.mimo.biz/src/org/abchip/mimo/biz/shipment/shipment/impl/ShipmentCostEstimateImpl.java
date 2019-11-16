@@ -18,10 +18,12 @@ import org.abchip.mimo.biz.product.price.QuantityBreak;
 import org.abchip.mimo.biz.product.store.ProductStoreShipmentMeth;
 import org.abchip.mimo.biz.shipment.shipment.ShipmentCostEstimate;
 import org.abchip.mimo.biz.shipment.shipment.Shipment_Package;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -555,7 +557,10 @@ public class ShipmentCostEstimateImpl extends BizEntityImpl implements ShipmentC
 	 */
 	@Override
 	public void setCarrierPartyId(String newCarrierPartyId) {
+		String oldCarrierPartyId = carrierPartyId;
 		carrierPartyId = newCarrierPartyId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, Shipment_Package.SHIPMENT_COST_ESTIMATE__CARRIER_PARTY_ID, oldCarrierPartyId, carrierPartyId));
 	}
 
 	/**
@@ -575,7 +580,10 @@ public class ShipmentCostEstimateImpl extends BizEntityImpl implements ShipmentC
 	 */
 	@Override
 	public void setCarrierRoleTypeId(String newCarrierRoleTypeId) {
+		String oldCarrierRoleTypeId = carrierRoleTypeId;
 		carrierRoleTypeId = newCarrierRoleTypeId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, Shipment_Package.SHIPMENT_COST_ESTIMATE__CARRIER_ROLE_TYPE_ID, oldCarrierRoleTypeId, carrierRoleTypeId));
 	}
 
 	/**
@@ -595,7 +603,10 @@ public class ShipmentCostEstimateImpl extends BizEntityImpl implements ShipmentC
 	 */
 	@Override
 	public void setFeaturePercent(BigDecimal newFeaturePercent) {
+		BigDecimal oldFeaturePercent = featurePercent;
 		featurePercent = newFeaturePercent;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, Shipment_Package.SHIPMENT_COST_ESTIMATE__FEATURE_PERCENT, oldFeaturePercent, featurePercent));
 	}
 
 	/**
@@ -615,7 +626,10 @@ public class ShipmentCostEstimateImpl extends BizEntityImpl implements ShipmentC
 	 */
 	@Override
 	public void setFeaturePrice(BigDecimal newFeaturePrice) {
+		BigDecimal oldFeaturePrice = featurePrice;
 		featurePrice = newFeaturePrice;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, Shipment_Package.SHIPMENT_COST_ESTIMATE__FEATURE_PRICE, oldFeaturePrice, featurePrice));
 	}
 
 	/**
@@ -629,6 +643,8 @@ public class ShipmentCostEstimateImpl extends BizEntityImpl implements ShipmentC
 			InternalEObject oldGeoIdFrom = (InternalEObject)geoIdFrom;
 			geoIdFrom = (Geo)eResolveProxy(oldGeoIdFrom);
 			if (geoIdFrom != oldGeoIdFrom) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, Shipment_Package.SHIPMENT_COST_ESTIMATE__GEO_ID_FROM, oldGeoIdFrom, geoIdFrom));
 			}
 		}
 		return geoIdFrom;
@@ -650,7 +666,10 @@ public class ShipmentCostEstimateImpl extends BizEntityImpl implements ShipmentC
 	 */
 	@Override
 	public void setGeoIdFrom(Geo newGeoIdFrom) {
+		Geo oldGeoIdFrom = geoIdFrom;
 		geoIdFrom = newGeoIdFrom;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, Shipment_Package.SHIPMENT_COST_ESTIMATE__GEO_ID_FROM, oldGeoIdFrom, geoIdFrom));
 	}
 
 	/**
@@ -664,6 +683,8 @@ public class ShipmentCostEstimateImpl extends BizEntityImpl implements ShipmentC
 			InternalEObject oldGeoIdTo = (InternalEObject)geoIdTo;
 			geoIdTo = (Geo)eResolveProxy(oldGeoIdTo);
 			if (geoIdTo != oldGeoIdTo) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, Shipment_Package.SHIPMENT_COST_ESTIMATE__GEO_ID_TO, oldGeoIdTo, geoIdTo));
 			}
 		}
 		return geoIdTo;
@@ -685,7 +706,10 @@ public class ShipmentCostEstimateImpl extends BizEntityImpl implements ShipmentC
 	 */
 	@Override
 	public void setGeoIdTo(Geo newGeoIdTo) {
+		Geo oldGeoIdTo = geoIdTo;
 		geoIdTo = newGeoIdTo;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, Shipment_Package.SHIPMENT_COST_ESTIMATE__GEO_ID_TO, oldGeoIdTo, geoIdTo));
 	}
 
 	/**
@@ -705,7 +729,10 @@ public class ShipmentCostEstimateImpl extends BizEntityImpl implements ShipmentC
 	 */
 	@Override
 	public void setOrderFlatPrice(BigDecimal newOrderFlatPrice) {
+		BigDecimal oldOrderFlatPrice = orderFlatPrice;
 		orderFlatPrice = newOrderFlatPrice;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, Shipment_Package.SHIPMENT_COST_ESTIMATE__ORDER_FLAT_PRICE, oldOrderFlatPrice, orderFlatPrice));
 	}
 
 	/**
@@ -725,7 +752,10 @@ public class ShipmentCostEstimateImpl extends BizEntityImpl implements ShipmentC
 	 */
 	@Override
 	public void setOrderItemFlatPrice(BigDecimal newOrderItemFlatPrice) {
+		BigDecimal oldOrderItemFlatPrice = orderItemFlatPrice;
 		orderItemFlatPrice = newOrderItemFlatPrice;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, Shipment_Package.SHIPMENT_COST_ESTIMATE__ORDER_ITEM_FLAT_PRICE, oldOrderItemFlatPrice, orderItemFlatPrice));
 	}
 
 	/**
@@ -745,7 +775,10 @@ public class ShipmentCostEstimateImpl extends BizEntityImpl implements ShipmentC
 	 */
 	@Override
 	public void setOrderPricePercent(BigDecimal newOrderPricePercent) {
+		BigDecimal oldOrderPricePercent = orderPricePercent;
 		orderPricePercent = newOrderPricePercent;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, Shipment_Package.SHIPMENT_COST_ESTIMATE__ORDER_PRICE_PERCENT, oldOrderPricePercent, orderPricePercent));
 	}
 
 	/**
@@ -765,7 +798,10 @@ public class ShipmentCostEstimateImpl extends BizEntityImpl implements ShipmentC
 	 */
 	@Override
 	public void setOversizePrice(BigDecimal newOversizePrice) {
+		BigDecimal oldOversizePrice = oversizePrice;
 		oversizePrice = newOversizePrice;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, Shipment_Package.SHIPMENT_COST_ESTIMATE__OVERSIZE_PRICE, oldOversizePrice, oversizePrice));
 	}
 
 	/**
@@ -785,7 +821,10 @@ public class ShipmentCostEstimateImpl extends BizEntityImpl implements ShipmentC
 	 */
 	@Override
 	public void setOversizeUnit(BigDecimal newOversizeUnit) {
+		BigDecimal oldOversizeUnit = oversizeUnit;
 		oversizeUnit = newOversizeUnit;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, Shipment_Package.SHIPMENT_COST_ESTIMATE__OVERSIZE_UNIT, oldOversizeUnit, oversizeUnit));
 	}
 
 	/**
@@ -799,6 +838,8 @@ public class ShipmentCostEstimateImpl extends BizEntityImpl implements ShipmentC
 			InternalEObject oldPartyId = (InternalEObject)partyId;
 			partyId = (Party)eResolveProxy(oldPartyId);
 			if (partyId != oldPartyId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, Shipment_Package.SHIPMENT_COST_ESTIMATE__PARTY_ID, oldPartyId, partyId));
 			}
 		}
 		return partyId;
@@ -820,7 +861,10 @@ public class ShipmentCostEstimateImpl extends BizEntityImpl implements ShipmentC
 	 */
 	@Override
 	public void setPartyId(Party newPartyId) {
+		Party oldPartyId = partyId;
 		partyId = newPartyId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, Shipment_Package.SHIPMENT_COST_ESTIMATE__PARTY_ID, oldPartyId, partyId));
 	}
 
 	/**
@@ -834,6 +878,8 @@ public class ShipmentCostEstimateImpl extends BizEntityImpl implements ShipmentC
 			InternalEObject oldPriceBreakId = (InternalEObject)priceBreakId;
 			priceBreakId = (QuantityBreak)eResolveProxy(oldPriceBreakId);
 			if (priceBreakId != oldPriceBreakId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, Shipment_Package.SHIPMENT_COST_ESTIMATE__PRICE_BREAK_ID, oldPriceBreakId, priceBreakId));
 			}
 		}
 		return priceBreakId;
@@ -855,7 +901,10 @@ public class ShipmentCostEstimateImpl extends BizEntityImpl implements ShipmentC
 	 */
 	@Override
 	public void setPriceBreakId(QuantityBreak newPriceBreakId) {
+		QuantityBreak oldPriceBreakId = priceBreakId;
 		priceBreakId = newPriceBreakId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, Shipment_Package.SHIPMENT_COST_ESTIMATE__PRICE_BREAK_ID, oldPriceBreakId, priceBreakId));
 	}
 
 	/**
@@ -875,7 +924,10 @@ public class ShipmentCostEstimateImpl extends BizEntityImpl implements ShipmentC
 	 */
 	@Override
 	public void setPriceUnitPrice(BigDecimal newPriceUnitPrice) {
+		BigDecimal oldPriceUnitPrice = priceUnitPrice;
 		priceUnitPrice = newPriceUnitPrice;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, Shipment_Package.SHIPMENT_COST_ESTIMATE__PRICE_UNIT_PRICE, oldPriceUnitPrice, priceUnitPrice));
 	}
 
 	/**
@@ -889,6 +941,8 @@ public class ShipmentCostEstimateImpl extends BizEntityImpl implements ShipmentC
 			InternalEObject oldPriceUomId = (InternalEObject)priceUomId;
 			priceUomId = (Uom)eResolveProxy(oldPriceUomId);
 			if (priceUomId != oldPriceUomId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, Shipment_Package.SHIPMENT_COST_ESTIMATE__PRICE_UOM_ID, oldPriceUomId, priceUomId));
 			}
 		}
 		return priceUomId;
@@ -910,7 +964,10 @@ public class ShipmentCostEstimateImpl extends BizEntityImpl implements ShipmentC
 	 */
 	@Override
 	public void setPriceUomId(Uom newPriceUomId) {
+		Uom oldPriceUomId = priceUomId;
 		priceUomId = newPriceUomId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, Shipment_Package.SHIPMENT_COST_ESTIMATE__PRICE_UOM_ID, oldPriceUomId, priceUomId));
 	}
 
 	/**
@@ -930,7 +987,10 @@ public class ShipmentCostEstimateImpl extends BizEntityImpl implements ShipmentC
 	 */
 	@Override
 	public void setProductFeatureGroupId(String newProductFeatureGroupId) {
+		String oldProductFeatureGroupId = productFeatureGroupId;
 		productFeatureGroupId = newProductFeatureGroupId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, Shipment_Package.SHIPMENT_COST_ESTIMATE__PRODUCT_FEATURE_GROUP_ID, oldProductFeatureGroupId, productFeatureGroupId));
 	}
 
 	/**
@@ -950,7 +1010,10 @@ public class ShipmentCostEstimateImpl extends BizEntityImpl implements ShipmentC
 	 */
 	@Override
 	public void setProductStoreId(String newProductStoreId) {
+		String oldProductStoreId = productStoreId;
 		productStoreId = newProductStoreId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, Shipment_Package.SHIPMENT_COST_ESTIMATE__PRODUCT_STORE_ID, oldProductStoreId, productStoreId));
 	}
 
 	/**
@@ -964,6 +1027,8 @@ public class ShipmentCostEstimateImpl extends BizEntityImpl implements ShipmentC
 			InternalEObject oldProductStoreShipMethId = (InternalEObject)productStoreShipMethId;
 			productStoreShipMethId = (ProductStoreShipmentMeth)eResolveProxy(oldProductStoreShipMethId);
 			if (productStoreShipMethId != oldProductStoreShipMethId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, Shipment_Package.SHIPMENT_COST_ESTIMATE__PRODUCT_STORE_SHIP_METH_ID, oldProductStoreShipMethId, productStoreShipMethId));
 			}
 		}
 		return productStoreShipMethId;
@@ -985,7 +1050,10 @@ public class ShipmentCostEstimateImpl extends BizEntityImpl implements ShipmentC
 	 */
 	@Override
 	public void setProductStoreShipMethId(ProductStoreShipmentMeth newProductStoreShipMethId) {
+		ProductStoreShipmentMeth oldProductStoreShipMethId = productStoreShipMethId;
 		productStoreShipMethId = newProductStoreShipMethId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, Shipment_Package.SHIPMENT_COST_ESTIMATE__PRODUCT_STORE_SHIP_METH_ID, oldProductStoreShipMethId, productStoreShipMethId));
 	}
 
 	/**
@@ -999,6 +1067,8 @@ public class ShipmentCostEstimateImpl extends BizEntityImpl implements ShipmentC
 			InternalEObject oldQuantityBreakId = (InternalEObject)quantityBreakId;
 			quantityBreakId = (QuantityBreak)eResolveProxy(oldQuantityBreakId);
 			if (quantityBreakId != oldQuantityBreakId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, Shipment_Package.SHIPMENT_COST_ESTIMATE__QUANTITY_BREAK_ID, oldQuantityBreakId, quantityBreakId));
 			}
 		}
 		return quantityBreakId;
@@ -1020,7 +1090,10 @@ public class ShipmentCostEstimateImpl extends BizEntityImpl implements ShipmentC
 	 */
 	@Override
 	public void setQuantityBreakId(QuantityBreak newQuantityBreakId) {
+		QuantityBreak oldQuantityBreakId = quantityBreakId;
 		quantityBreakId = newQuantityBreakId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, Shipment_Package.SHIPMENT_COST_ESTIMATE__QUANTITY_BREAK_ID, oldQuantityBreakId, quantityBreakId));
 	}
 
 	/**
@@ -1040,7 +1113,10 @@ public class ShipmentCostEstimateImpl extends BizEntityImpl implements ShipmentC
 	 */
 	@Override
 	public void setQuantityUnitPrice(BigDecimal newQuantityUnitPrice) {
+		BigDecimal oldQuantityUnitPrice = quantityUnitPrice;
 		quantityUnitPrice = newQuantityUnitPrice;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, Shipment_Package.SHIPMENT_COST_ESTIMATE__QUANTITY_UNIT_PRICE, oldQuantityUnitPrice, quantityUnitPrice));
 	}
 
 	/**
@@ -1054,6 +1130,8 @@ public class ShipmentCostEstimateImpl extends BizEntityImpl implements ShipmentC
 			InternalEObject oldQuantityUomId = (InternalEObject)quantityUomId;
 			quantityUomId = (Uom)eResolveProxy(oldQuantityUomId);
 			if (quantityUomId != oldQuantityUomId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, Shipment_Package.SHIPMENT_COST_ESTIMATE__QUANTITY_UOM_ID, oldQuantityUomId, quantityUomId));
 			}
 		}
 		return quantityUomId;
@@ -1075,7 +1153,10 @@ public class ShipmentCostEstimateImpl extends BizEntityImpl implements ShipmentC
 	 */
 	@Override
 	public void setQuantityUomId(Uom newQuantityUomId) {
+		Uom oldQuantityUomId = quantityUomId;
 		quantityUomId = newQuantityUomId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, Shipment_Package.SHIPMENT_COST_ESTIMATE__QUANTITY_UOM_ID, oldQuantityUomId, quantityUomId));
 	}
 
 	/**
@@ -1089,6 +1170,8 @@ public class ShipmentCostEstimateImpl extends BizEntityImpl implements ShipmentC
 			InternalEObject oldRoleTypeId = (InternalEObject)roleTypeId;
 			roleTypeId = (RoleType)eResolveProxy(oldRoleTypeId);
 			if (roleTypeId != oldRoleTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, Shipment_Package.SHIPMENT_COST_ESTIMATE__ROLE_TYPE_ID, oldRoleTypeId, roleTypeId));
 			}
 		}
 		return roleTypeId;
@@ -1110,7 +1193,10 @@ public class ShipmentCostEstimateImpl extends BizEntityImpl implements ShipmentC
 	 */
 	@Override
 	public void setRoleTypeId(RoleType newRoleTypeId) {
+		RoleType oldRoleTypeId = roleTypeId;
 		roleTypeId = newRoleTypeId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, Shipment_Package.SHIPMENT_COST_ESTIMATE__ROLE_TYPE_ID, oldRoleTypeId, roleTypeId));
 	}
 
 	/**
@@ -1130,7 +1216,10 @@ public class ShipmentCostEstimateImpl extends BizEntityImpl implements ShipmentC
 	 */
 	@Override
 	public void setShipmentCostEstimateId(String newShipmentCostEstimateId) {
+		String oldShipmentCostEstimateId = shipmentCostEstimateId;
 		shipmentCostEstimateId = newShipmentCostEstimateId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, Shipment_Package.SHIPMENT_COST_ESTIMATE__SHIPMENT_COST_ESTIMATE_ID, oldShipmentCostEstimateId, shipmentCostEstimateId));
 	}
 
 	/**
@@ -1150,7 +1239,10 @@ public class ShipmentCostEstimateImpl extends BizEntityImpl implements ShipmentC
 	 */
 	@Override
 	public void setShipmentMethodTypeId(String newShipmentMethodTypeId) {
+		String oldShipmentMethodTypeId = shipmentMethodTypeId;
 		shipmentMethodTypeId = newShipmentMethodTypeId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, Shipment_Package.SHIPMENT_COST_ESTIMATE__SHIPMENT_METHOD_TYPE_ID, oldShipmentMethodTypeId, shipmentMethodTypeId));
 	}
 
 	/**
@@ -1170,7 +1262,10 @@ public class ShipmentCostEstimateImpl extends BizEntityImpl implements ShipmentC
 	 */
 	@Override
 	public void setShippingPricePercent(BigDecimal newShippingPricePercent) {
+		BigDecimal oldShippingPricePercent = shippingPricePercent;
 		shippingPricePercent = newShippingPricePercent;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, Shipment_Package.SHIPMENT_COST_ESTIMATE__SHIPPING_PRICE_PERCENT, oldShippingPricePercent, shippingPricePercent));
 	}
 
 	/**
@@ -1184,6 +1279,8 @@ public class ShipmentCostEstimateImpl extends BizEntityImpl implements ShipmentC
 			InternalEObject oldWeightBreakId = (InternalEObject)weightBreakId;
 			weightBreakId = (QuantityBreak)eResolveProxy(oldWeightBreakId);
 			if (weightBreakId != oldWeightBreakId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, Shipment_Package.SHIPMENT_COST_ESTIMATE__WEIGHT_BREAK_ID, oldWeightBreakId, weightBreakId));
 			}
 		}
 		return weightBreakId;
@@ -1205,7 +1302,10 @@ public class ShipmentCostEstimateImpl extends BizEntityImpl implements ShipmentC
 	 */
 	@Override
 	public void setWeightBreakId(QuantityBreak newWeightBreakId) {
+		QuantityBreak oldWeightBreakId = weightBreakId;
 		weightBreakId = newWeightBreakId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, Shipment_Package.SHIPMENT_COST_ESTIMATE__WEIGHT_BREAK_ID, oldWeightBreakId, weightBreakId));
 	}
 
 	/**
@@ -1225,7 +1325,10 @@ public class ShipmentCostEstimateImpl extends BizEntityImpl implements ShipmentC
 	 */
 	@Override
 	public void setWeightUnitPrice(BigDecimal newWeightUnitPrice) {
+		BigDecimal oldWeightUnitPrice = weightUnitPrice;
 		weightUnitPrice = newWeightUnitPrice;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, Shipment_Package.SHIPMENT_COST_ESTIMATE__WEIGHT_UNIT_PRICE, oldWeightUnitPrice, weightUnitPrice));
 	}
 
 	/**
@@ -1239,6 +1342,8 @@ public class ShipmentCostEstimateImpl extends BizEntityImpl implements ShipmentC
 			InternalEObject oldWeightUomId = (InternalEObject)weightUomId;
 			weightUomId = (Uom)eResolveProxy(oldWeightUomId);
 			if (weightUomId != oldWeightUomId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, Shipment_Package.SHIPMENT_COST_ESTIMATE__WEIGHT_UOM_ID, oldWeightUomId, weightUomId));
 			}
 		}
 		return weightUomId;
@@ -1260,7 +1365,10 @@ public class ShipmentCostEstimateImpl extends BizEntityImpl implements ShipmentC
 	 */
 	@Override
 	public void setWeightUomId(Uom newWeightUomId) {
+		Uom oldWeightUomId = weightUomId;
 		weightUomId = newWeightUomId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, Shipment_Package.SHIPMENT_COST_ESTIMATE__WEIGHT_UOM_ID, oldWeightUomId, weightUomId));
 	}
 
 	/**

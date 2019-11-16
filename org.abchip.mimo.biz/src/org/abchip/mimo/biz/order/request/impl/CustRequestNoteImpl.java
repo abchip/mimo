@@ -11,10 +11,12 @@ import org.abchip.mimo.biz.impl.BizEntityNoteImpl;
 import org.abchip.mimo.biz.order.request.CustRequest;
 import org.abchip.mimo.biz.order.request.CustRequestNote;
 import org.abchip.mimo.biz.order.request.RequestPackage;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -75,6 +77,8 @@ public class CustRequestNoteImpl extends BizEntityNoteImpl implements CustReques
 			InternalEObject oldCustRequestId = (InternalEObject)custRequestId;
 			custRequestId = (CustRequest)eResolveProxy(oldCustRequestId);
 			if (custRequestId != oldCustRequestId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, RequestPackage.CUST_REQUEST_NOTE__CUST_REQUEST_ID, oldCustRequestId, custRequestId));
 			}
 		}
 		return custRequestId;
@@ -96,7 +100,10 @@ public class CustRequestNoteImpl extends BizEntityNoteImpl implements CustReques
 	 */
 	@Override
 	public void setCustRequestId(CustRequest newCustRequestId) {
+		CustRequest oldCustRequestId = custRequestId;
 		custRequestId = newCustRequestId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, RequestPackage.CUST_REQUEST_NOTE__CUST_REQUEST_ID, oldCustRequestId, custRequestId));
 	}
 
 	/**

@@ -13,10 +13,12 @@ import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.order.order.OrderHeader;
 import org.abchip.mimo.biz.order.order.OrderItemShipGroupAssoc;
 import org.abchip.mimo.biz.order.order.OrderPackage;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -167,7 +169,10 @@ public class OrderItemShipGroupAssocImpl extends BizEntityImpl implements OrderI
 	 */
 	@Override
 	public void setCancelQuantity(BigDecimal newCancelQuantity) {
+		BigDecimal oldCancelQuantity = cancelQuantity;
 		cancelQuantity = newCancelQuantity;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_ITEM_SHIP_GROUP_ASSOC__CANCEL_QUANTITY, oldCancelQuantity, cancelQuantity));
 	}
 
 	/**
@@ -181,6 +186,8 @@ public class OrderItemShipGroupAssocImpl extends BizEntityImpl implements OrderI
 			InternalEObject oldOrderId = (InternalEObject)orderId;
 			orderId = (OrderHeader)eResolveProxy(oldOrderId);
 			if (orderId != oldOrderId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, OrderPackage.ORDER_ITEM_SHIP_GROUP_ASSOC__ORDER_ID, oldOrderId, orderId));
 			}
 		}
 		return orderId;
@@ -202,7 +209,10 @@ public class OrderItemShipGroupAssocImpl extends BizEntityImpl implements OrderI
 	 */
 	@Override
 	public void setOrderId(OrderHeader newOrderId) {
+		OrderHeader oldOrderId = orderId;
 		orderId = newOrderId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_ITEM_SHIP_GROUP_ASSOC__ORDER_ID, oldOrderId, orderId));
 	}
 
 	/**
@@ -222,7 +232,10 @@ public class OrderItemShipGroupAssocImpl extends BizEntityImpl implements OrderI
 	 */
 	@Override
 	public void setOrderItemSeqId(String newOrderItemSeqId) {
+		String oldOrderItemSeqId = orderItemSeqId;
 		orderItemSeqId = newOrderItemSeqId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_ITEM_SHIP_GROUP_ASSOC__ORDER_ITEM_SEQ_ID, oldOrderItemSeqId, orderItemSeqId));
 	}
 
 	/**
@@ -242,7 +255,10 @@ public class OrderItemShipGroupAssocImpl extends BizEntityImpl implements OrderI
 	 */
 	@Override
 	public void setQuantity(BigDecimal newQuantity) {
+		BigDecimal oldQuantity = quantity;
 		quantity = newQuantity;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_ITEM_SHIP_GROUP_ASSOC__QUANTITY, oldQuantity, quantity));
 	}
 
 	/**
@@ -262,7 +278,10 @@ public class OrderItemShipGroupAssocImpl extends BizEntityImpl implements OrderI
 	 */
 	@Override
 	public void setShipGroupSeqId(String newShipGroupSeqId) {
+		String oldShipGroupSeqId = shipGroupSeqId;
 		shipGroupSeqId = newShipGroupSeqId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_ITEM_SHIP_GROUP_ASSOC__SHIP_GROUP_SEQ_ID, oldShipGroupSeqId, shipGroupSeqId));
 	}
 
 	/**

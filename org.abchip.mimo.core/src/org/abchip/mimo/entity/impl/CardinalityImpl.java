@@ -9,7 +9,9 @@ package org.abchip.mimo.entity.impl;
 
 import org.abchip.mimo.entity.Cardinality;
 import org.abchip.mimo.entity.EntityPackage;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc --> An implementation of the model object
@@ -98,7 +100,10 @@ public abstract class CardinalityImpl extends EntityImpl implements Cardinality 
 	 */
 	@Override
 	public void setMax(int newMax) {
+		int oldMax = max;
 		max = newMax;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, EntityPackage.CARDINALITY__MAX, oldMax, max));
 	}
 
 	/**
@@ -116,7 +121,10 @@ public abstract class CardinalityImpl extends EntityImpl implements Cardinality 
 	 */
 	@Override
 	public void setMin(int newMin) {
+		int oldMin = min;
 		min = newMin;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, EntityPackage.CARDINALITY__MIN, oldMin, min));
 	}
 
 	/**

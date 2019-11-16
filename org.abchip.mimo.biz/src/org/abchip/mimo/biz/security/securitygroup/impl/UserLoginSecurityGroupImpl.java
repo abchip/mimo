@@ -14,10 +14,12 @@ import org.abchip.mimo.biz.security.login.UserLogin;
 import org.abchip.mimo.biz.security.securitygroup.SecurityGroup;
 import org.abchip.mimo.biz.security.securitygroup.SecuritygroupPackage;
 import org.abchip.mimo.biz.security.securitygroup.UserLoginSecurityGroup;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -143,7 +145,10 @@ public class UserLoginSecurityGroupImpl extends BizEntityImpl implements UserLog
 	 */
 	@Override
 	public void setFromDate(Date newFromDate) {
+		Date oldFromDate = fromDate;
 		fromDate = newFromDate;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SecuritygroupPackage.USER_LOGIN_SECURITY_GROUP__FROM_DATE, oldFromDate, fromDate));
 	}
 
 	/**
@@ -157,6 +162,8 @@ public class UserLoginSecurityGroupImpl extends BizEntityImpl implements UserLog
 			InternalEObject oldGroupId = (InternalEObject)groupId;
 			groupId = (SecurityGroup)eResolveProxy(oldGroupId);
 			if (groupId != oldGroupId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, SecuritygroupPackage.USER_LOGIN_SECURITY_GROUP__GROUP_ID, oldGroupId, groupId));
 			}
 		}
 		return groupId;
@@ -178,7 +185,10 @@ public class UserLoginSecurityGroupImpl extends BizEntityImpl implements UserLog
 	 */
 	@Override
 	public void setGroupId(SecurityGroup newGroupId) {
+		SecurityGroup oldGroupId = groupId;
 		groupId = newGroupId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SecuritygroupPackage.USER_LOGIN_SECURITY_GROUP__GROUP_ID, oldGroupId, groupId));
 	}
 
 	/**
@@ -198,7 +208,10 @@ public class UserLoginSecurityGroupImpl extends BizEntityImpl implements UserLog
 	 */
 	@Override
 	public void setThruDate(Date newThruDate) {
+		Date oldThruDate = thruDate;
 		thruDate = newThruDate;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SecuritygroupPackage.USER_LOGIN_SECURITY_GROUP__THRU_DATE, oldThruDate, thruDate));
 	}
 
 	/**
@@ -212,6 +225,8 @@ public class UserLoginSecurityGroupImpl extends BizEntityImpl implements UserLog
 			InternalEObject oldUserLoginId = (InternalEObject)userLoginId;
 			userLoginId = (UserLogin)eResolveProxy(oldUserLoginId);
 			if (userLoginId != oldUserLoginId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, SecuritygroupPackage.USER_LOGIN_SECURITY_GROUP__USER_LOGIN_ID, oldUserLoginId, userLoginId));
 			}
 		}
 		return userLoginId;
@@ -233,7 +248,10 @@ public class UserLoginSecurityGroupImpl extends BizEntityImpl implements UserLog
 	 */
 	@Override
 	public void setUserLoginId(UserLogin newUserLoginId) {
+		UserLogin oldUserLoginId = userLoginId;
 		userLoginId = newUserLoginId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SecuritygroupPackage.USER_LOGIN_SECURITY_GROUP__USER_LOGIN_ID, oldUserLoginId, userLoginId));
 	}
 
 	/**

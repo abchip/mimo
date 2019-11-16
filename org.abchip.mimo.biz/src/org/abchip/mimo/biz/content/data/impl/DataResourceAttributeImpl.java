@@ -11,10 +11,12 @@ import org.abchip.mimo.biz.content.data.DataPackage;
 import org.abchip.mimo.biz.content.data.DataResource;
 import org.abchip.mimo.biz.content.data.DataResourceAttribute;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -144,7 +146,10 @@ public class DataResourceAttributeImpl extends BizEntityImpl implements DataReso
 	 */
 	@Override
 	public void setAttrDescription(String newAttrDescription) {
+		String oldAttrDescription = attrDescription;
 		attrDescription = newAttrDescription;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, DataPackage.DATA_RESOURCE_ATTRIBUTE__ATTR_DESCRIPTION, oldAttrDescription, attrDescription));
 	}
 
 	/**
@@ -164,7 +169,10 @@ public class DataResourceAttributeImpl extends BizEntityImpl implements DataReso
 	 */
 	@Override
 	public void setAttrName(String newAttrName) {
+		String oldAttrName = attrName;
 		attrName = newAttrName;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, DataPackage.DATA_RESOURCE_ATTRIBUTE__ATTR_NAME, oldAttrName, attrName));
 	}
 
 	/**
@@ -184,7 +192,10 @@ public class DataResourceAttributeImpl extends BizEntityImpl implements DataReso
 	 */
 	@Override
 	public void setAttrValue(String newAttrValue) {
+		String oldAttrValue = attrValue;
 		attrValue = newAttrValue;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, DataPackage.DATA_RESOURCE_ATTRIBUTE__ATTR_VALUE, oldAttrValue, attrValue));
 	}
 
 	/**
@@ -198,6 +209,8 @@ public class DataResourceAttributeImpl extends BizEntityImpl implements DataReso
 			InternalEObject oldDataResourceId = (InternalEObject)dataResourceId;
 			dataResourceId = (DataResource)eResolveProxy(oldDataResourceId);
 			if (dataResourceId != oldDataResourceId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, DataPackage.DATA_RESOURCE_ATTRIBUTE__DATA_RESOURCE_ID, oldDataResourceId, dataResourceId));
 			}
 		}
 		return dataResourceId;
@@ -219,7 +232,10 @@ public class DataResourceAttributeImpl extends BizEntityImpl implements DataReso
 	 */
 	@Override
 	public void setDataResourceId(DataResource newDataResourceId) {
+		DataResource oldDataResourceId = dataResourceId;
 		dataResourceId = newDataResourceId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, DataPackage.DATA_RESOURCE_ATTRIBUTE__DATA_RESOURCE_ID, oldDataResourceId, dataResourceId));
 	}
 
 	/**

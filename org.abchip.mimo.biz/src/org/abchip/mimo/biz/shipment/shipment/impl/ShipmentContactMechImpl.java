@@ -13,10 +13,12 @@ import org.abchip.mimo.biz.shipment.shipment.Shipment;
 import org.abchip.mimo.biz.shipment.shipment.ShipmentContactMech;
 import org.abchip.mimo.biz.shipment.shipment.ShipmentContactMechType;
 import org.abchip.mimo.biz.shipment.shipment.Shipment_Package;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -99,6 +101,8 @@ public class ShipmentContactMechImpl extends BizEntityTypedImpl<ShipmentContactM
 			InternalEObject oldContactMechId = (InternalEObject)contactMechId;
 			contactMechId = (ContactMech)eResolveProxy(oldContactMechId);
 			if (contactMechId != oldContactMechId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, Shipment_Package.SHIPMENT_CONTACT_MECH__CONTACT_MECH_ID, oldContactMechId, contactMechId));
 			}
 		}
 		return contactMechId;
@@ -120,7 +124,10 @@ public class ShipmentContactMechImpl extends BizEntityTypedImpl<ShipmentContactM
 	 */
 	@Override
 	public void setContactMechId(ContactMech newContactMechId) {
+		ContactMech oldContactMechId = contactMechId;
 		contactMechId = newContactMechId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, Shipment_Package.SHIPMENT_CONTACT_MECH__CONTACT_MECH_ID, oldContactMechId, contactMechId));
 	}
 
 	/**
@@ -134,6 +141,8 @@ public class ShipmentContactMechImpl extends BizEntityTypedImpl<ShipmentContactM
 			InternalEObject oldShipmentContactMechTypeId = (InternalEObject)shipmentContactMechTypeId;
 			shipmentContactMechTypeId = (ShipmentContactMechType)eResolveProxy(oldShipmentContactMechTypeId);
 			if (shipmentContactMechTypeId != oldShipmentContactMechTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, Shipment_Package.SHIPMENT_CONTACT_MECH__SHIPMENT_CONTACT_MECH_TYPE_ID, oldShipmentContactMechTypeId, shipmentContactMechTypeId));
 			}
 		}
 		return shipmentContactMechTypeId;
@@ -155,7 +164,10 @@ public class ShipmentContactMechImpl extends BizEntityTypedImpl<ShipmentContactM
 	 */
 	@Override
 	public void setShipmentContactMechTypeId(ShipmentContactMechType newShipmentContactMechTypeId) {
+		ShipmentContactMechType oldShipmentContactMechTypeId = shipmentContactMechTypeId;
 		shipmentContactMechTypeId = newShipmentContactMechTypeId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, Shipment_Package.SHIPMENT_CONTACT_MECH__SHIPMENT_CONTACT_MECH_TYPE_ID, oldShipmentContactMechTypeId, shipmentContactMechTypeId));
 	}
 
 	/**
@@ -169,6 +181,8 @@ public class ShipmentContactMechImpl extends BizEntityTypedImpl<ShipmentContactM
 			InternalEObject oldShipmentId = (InternalEObject)shipmentId;
 			shipmentId = (Shipment)eResolveProxy(oldShipmentId);
 			if (shipmentId != oldShipmentId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, Shipment_Package.SHIPMENT_CONTACT_MECH__SHIPMENT_ID, oldShipmentId, shipmentId));
 			}
 		}
 		return shipmentId;
@@ -190,7 +204,10 @@ public class ShipmentContactMechImpl extends BizEntityTypedImpl<ShipmentContactM
 	 */
 	@Override
 	public void setShipmentId(Shipment newShipmentId) {
+		Shipment oldShipmentId = shipmentId;
 		shipmentId = newShipmentId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, Shipment_Package.SHIPMENT_CONTACT_MECH__SHIPMENT_ID, oldShipmentId, shipmentId));
 	}
 
 	/**

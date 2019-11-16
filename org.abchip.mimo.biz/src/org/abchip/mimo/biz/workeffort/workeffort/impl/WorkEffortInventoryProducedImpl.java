@@ -12,10 +12,12 @@ import org.abchip.mimo.biz.product.inventory.InventoryItem;
 import org.abchip.mimo.biz.workeffort.workeffort.WorkEffort;
 import org.abchip.mimo.biz.workeffort.workeffort.WorkEffortInventoryProduced;
 import org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -87,6 +89,8 @@ public class WorkEffortInventoryProducedImpl extends BizEntityImpl implements Wo
 			InternalEObject oldInventoryItemId = (InternalEObject)inventoryItemId;
 			inventoryItemId = (InventoryItem)eResolveProxy(oldInventoryItemId);
 			if (inventoryItemId != oldInventoryItemId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WorkeffortPackage.WORK_EFFORT_INVENTORY_PRODUCED__INVENTORY_ITEM_ID, oldInventoryItemId, inventoryItemId));
 			}
 		}
 		return inventoryItemId;
@@ -108,7 +112,10 @@ public class WorkEffortInventoryProducedImpl extends BizEntityImpl implements Wo
 	 */
 	@Override
 	public void setInventoryItemId(InventoryItem newInventoryItemId) {
+		InventoryItem oldInventoryItemId = inventoryItemId;
 		inventoryItemId = newInventoryItemId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WorkeffortPackage.WORK_EFFORT_INVENTORY_PRODUCED__INVENTORY_ITEM_ID, oldInventoryItemId, inventoryItemId));
 	}
 
 	/**
@@ -122,6 +129,8 @@ public class WorkEffortInventoryProducedImpl extends BizEntityImpl implements Wo
 			InternalEObject oldWorkEffortId = (InternalEObject)workEffortId;
 			workEffortId = (WorkEffort)eResolveProxy(oldWorkEffortId);
 			if (workEffortId != oldWorkEffortId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WorkeffortPackage.WORK_EFFORT_INVENTORY_PRODUCED__WORK_EFFORT_ID, oldWorkEffortId, workEffortId));
 			}
 		}
 		return workEffortId;
@@ -143,7 +152,10 @@ public class WorkEffortInventoryProducedImpl extends BizEntityImpl implements Wo
 	 */
 	@Override
 	public void setWorkEffortId(WorkEffort newWorkEffortId) {
+		WorkEffort oldWorkEffortId = workEffortId;
 		workEffortId = newWorkEffortId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WorkeffortPackage.WORK_EFFORT_INVENTORY_PRODUCED__WORK_EFFORT_ID, oldWorkEffortId, workEffortId));
 	}
 
 	/**

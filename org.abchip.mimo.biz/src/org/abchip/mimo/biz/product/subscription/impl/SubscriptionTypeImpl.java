@@ -14,11 +14,13 @@ import org.abchip.mimo.biz.impl.BizEntityTypeImpl;
 import org.abchip.mimo.biz.product.subscription.Subscription;
 import org.abchip.mimo.biz.product.subscription.SubscriptionPackage;
 import org.abchip.mimo.biz.product.subscription.SubscriptionType;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.util.BasicInternalEList;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -159,7 +161,10 @@ public class SubscriptionTypeImpl extends BizEntityTypeImpl<Subscription> implem
 	 */
 	@Override
 	public void setDescription(String newDescription) {
+		String oldDescription = description;
 		description = newDescription;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SubscriptionPackage.SUBSCRIPTION_TYPE__DESCRIPTION, oldDescription, description));
 	}
 
 	/**
@@ -179,7 +184,10 @@ public class SubscriptionTypeImpl extends BizEntityTypeImpl<Subscription> implem
 	 */
 	@Override
 	public void setHasTable(boolean newHasTable) {
+		boolean oldHasTable = hasTable;
 		hasTable = newHasTable;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SubscriptionPackage.SUBSCRIPTION_TYPE__HAS_TABLE, oldHasTable, hasTable));
 	}
 
 	/**
@@ -193,6 +201,8 @@ public class SubscriptionTypeImpl extends BizEntityTypeImpl<Subscription> implem
 			InternalEObject oldParentTypeId = (InternalEObject)parentTypeId;
 			parentTypeId = (SubscriptionType)eResolveProxy(oldParentTypeId);
 			if (parentTypeId != oldParentTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, SubscriptionPackage.SUBSCRIPTION_TYPE__PARENT_TYPE_ID, oldParentTypeId, parentTypeId));
 			}
 		}
 		return parentTypeId;
@@ -214,7 +224,10 @@ public class SubscriptionTypeImpl extends BizEntityTypeImpl<Subscription> implem
 	 */
 	@Override
 	public void setParentTypeId(SubscriptionType newParentTypeId) {
+		SubscriptionType oldParentTypeId = parentTypeId;
 		parentTypeId = newParentTypeId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SubscriptionPackage.SUBSCRIPTION_TYPE__PARENT_TYPE_ID, oldParentTypeId, parentTypeId));
 	}
 
 	/**
@@ -234,7 +247,10 @@ public class SubscriptionTypeImpl extends BizEntityTypeImpl<Subscription> implem
 	 */
 	@Override
 	public void setSubscriptionTypeId(String newSubscriptionTypeId) {
+		String oldSubscriptionTypeId = subscriptionTypeId;
 		subscriptionTypeId = newSubscriptionTypeId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SubscriptionPackage.SUBSCRIPTION_TYPE__SUBSCRIPTION_TYPE_ID, oldSubscriptionTypeId, subscriptionTypeId));
 	}
 
 	/**
@@ -245,7 +261,7 @@ public class SubscriptionTypeImpl extends BizEntityTypeImpl<Subscription> implem
 	@Override
 	public List<String> getSubscriptionTypeAttrs() {
 		if (subscriptionTypeAttrs == null) {
-			subscriptionTypeAttrs = new BasicInternalEList<String>(String.class);
+			subscriptionTypeAttrs = new EDataTypeUniqueEList<String>(String.class, this, SubscriptionPackage.SUBSCRIPTION_TYPE__SUBSCRIPTION_TYPE_ATTRS);
 		}
 		return subscriptionTypeAttrs;
 	}

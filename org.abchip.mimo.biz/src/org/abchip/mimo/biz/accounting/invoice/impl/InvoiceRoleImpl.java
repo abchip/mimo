@@ -17,9 +17,11 @@ import org.abchip.mimo.biz.accounting.invoice.InvoiceRole;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.party.party.Party;
 import org.abchip.mimo.biz.party.party.RoleType;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -143,7 +145,10 @@ public class InvoiceRoleImpl extends BizEntityImpl implements InvoiceRole {
 	 */
 	@Override
 	public void setDatetimePerformed(Date newDatetimePerformed) {
+		Date oldDatetimePerformed = datetimePerformed;
 		datetimePerformed = newDatetimePerformed;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, InvoicePackage.INVOICE_ROLE__DATETIME_PERFORMED, oldDatetimePerformed, datetimePerformed));
 	}
 
 	/**
@@ -157,6 +162,8 @@ public class InvoiceRoleImpl extends BizEntityImpl implements InvoiceRole {
 			InternalEObject oldPartyId = (InternalEObject)partyId;
 			partyId = (Party)eResolveProxy(oldPartyId);
 			if (partyId != oldPartyId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, InvoicePackage.INVOICE_ROLE__PARTY_ID, oldPartyId, partyId));
 			}
 		}
 		return partyId;
@@ -178,7 +185,10 @@ public class InvoiceRoleImpl extends BizEntityImpl implements InvoiceRole {
 	 */
 	@Override
 	public void setPartyId(Party newPartyId) {
+		Party oldPartyId = partyId;
 		partyId = newPartyId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, InvoicePackage.INVOICE_ROLE__PARTY_ID, oldPartyId, partyId));
 	}
 
 	/**
@@ -198,7 +208,10 @@ public class InvoiceRoleImpl extends BizEntityImpl implements InvoiceRole {
 	 */
 	@Override
 	public void setPercentage(BigDecimal newPercentage) {
+		BigDecimal oldPercentage = percentage;
 		percentage = newPercentage;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, InvoicePackage.INVOICE_ROLE__PERCENTAGE, oldPercentage, percentage));
 	}
 
 	/**
@@ -212,6 +225,8 @@ public class InvoiceRoleImpl extends BizEntityImpl implements InvoiceRole {
 			InternalEObject oldRoleTypeId = (InternalEObject)roleTypeId;
 			roleTypeId = (RoleType)eResolveProxy(oldRoleTypeId);
 			if (roleTypeId != oldRoleTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, InvoicePackage.INVOICE_ROLE__ROLE_TYPE_ID, oldRoleTypeId, roleTypeId));
 			}
 		}
 		return roleTypeId;
@@ -233,7 +248,10 @@ public class InvoiceRoleImpl extends BizEntityImpl implements InvoiceRole {
 	 */
 	@Override
 	public void setRoleTypeId(RoleType newRoleTypeId) {
+		RoleType oldRoleTypeId = roleTypeId;
 		roleTypeId = newRoleTypeId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, InvoicePackage.INVOICE_ROLE__ROLE_TYPE_ID, oldRoleTypeId, roleTypeId));
 	}
 
 	/**
@@ -247,6 +265,8 @@ public class InvoiceRoleImpl extends BizEntityImpl implements InvoiceRole {
 			InternalEObject oldInvoiceId = (InternalEObject)invoiceId;
 			invoiceId = (Invoice)eResolveProxy(oldInvoiceId);
 			if (invoiceId != oldInvoiceId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, InvoicePackage.INVOICE_ROLE__INVOICE_ID, oldInvoiceId, invoiceId));
 			}
 		}
 		return invoiceId;
@@ -268,7 +288,10 @@ public class InvoiceRoleImpl extends BizEntityImpl implements InvoiceRole {
 	 */
 	@Override
 	public void setInvoiceId(Invoice newInvoiceId) {
+		Invoice oldInvoiceId = invoiceId;
 		invoiceId = newInvoiceId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, InvoicePackage.INVOICE_ROLE__INVOICE_ID, oldInvoiceId, invoiceId));
 	}
 
 	/**

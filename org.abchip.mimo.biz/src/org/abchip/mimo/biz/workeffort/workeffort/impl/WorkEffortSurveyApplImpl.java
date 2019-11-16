@@ -14,10 +14,12 @@ import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.workeffort.workeffort.WorkEffort;
 import org.abchip.mimo.biz.workeffort.workeffort.WorkEffortSurveyAppl;
 import org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -137,7 +139,10 @@ public class WorkEffortSurveyApplImpl extends BizEntityImpl implements WorkEffor
 	 */
 	@Override
 	public void setFromDate(Date newFromDate) {
+		Date oldFromDate = fromDate;
 		fromDate = newFromDate;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WorkeffortPackage.WORK_EFFORT_SURVEY_APPL__FROM_DATE, oldFromDate, fromDate));
 	}
 
 	/**
@@ -151,6 +156,8 @@ public class WorkEffortSurveyApplImpl extends BizEntityImpl implements WorkEffor
 			InternalEObject oldSurveyId = (InternalEObject)surveyId;
 			surveyId = (Survey)eResolveProxy(oldSurveyId);
 			if (surveyId != oldSurveyId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WorkeffortPackage.WORK_EFFORT_SURVEY_APPL__SURVEY_ID, oldSurveyId, surveyId));
 			}
 		}
 		return surveyId;
@@ -172,7 +179,10 @@ public class WorkEffortSurveyApplImpl extends BizEntityImpl implements WorkEffor
 	 */
 	@Override
 	public void setSurveyId(Survey newSurveyId) {
+		Survey oldSurveyId = surveyId;
 		surveyId = newSurveyId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WorkeffortPackage.WORK_EFFORT_SURVEY_APPL__SURVEY_ID, oldSurveyId, surveyId));
 	}
 
 	/**
@@ -192,7 +202,10 @@ public class WorkEffortSurveyApplImpl extends BizEntityImpl implements WorkEffor
 	 */
 	@Override
 	public void setThruDate(Date newThruDate) {
+		Date oldThruDate = thruDate;
 		thruDate = newThruDate;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WorkeffortPackage.WORK_EFFORT_SURVEY_APPL__THRU_DATE, oldThruDate, thruDate));
 	}
 
 	/**
@@ -206,6 +219,8 @@ public class WorkEffortSurveyApplImpl extends BizEntityImpl implements WorkEffor
 			InternalEObject oldWorkEffortId = (InternalEObject)workEffortId;
 			workEffortId = (WorkEffort)eResolveProxy(oldWorkEffortId);
 			if (workEffortId != oldWorkEffortId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WorkeffortPackage.WORK_EFFORT_SURVEY_APPL__WORK_EFFORT_ID, oldWorkEffortId, workEffortId));
 			}
 		}
 		return workEffortId;
@@ -227,7 +242,10 @@ public class WorkEffortSurveyApplImpl extends BizEntityImpl implements WorkEffor
 	 */
 	@Override
 	public void setWorkEffortId(WorkEffort newWorkEffortId) {
+		WorkEffort oldWorkEffortId = workEffortId;
 		workEffortId = newWorkEffortId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WorkeffortPackage.WORK_EFFORT_SURVEY_APPL__WORK_EFFORT_ID, oldWorkEffortId, workEffortId));
 	}
 
 	/**

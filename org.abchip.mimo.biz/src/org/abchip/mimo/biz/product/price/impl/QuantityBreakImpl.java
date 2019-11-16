@@ -14,9 +14,11 @@ import org.abchip.mimo.biz.impl.BizEntityTypedImpl;
 import org.abchip.mimo.biz.product.price.PricePackage;
 import org.abchip.mimo.biz.product.price.QuantityBreak;
 import org.abchip.mimo.biz.product.price.QuantityBreakType;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -146,7 +148,10 @@ public class QuantityBreakImpl extends BizEntityTypedImpl<QuantityBreakType> imp
 	 */
 	@Override
 	public void setFromQuantity(BigDecimal newFromQuantity) {
+		BigDecimal oldFromQuantity = fromQuantity;
 		fromQuantity = newFromQuantity;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PricePackage.QUANTITY_BREAK__FROM_QUANTITY, oldFromQuantity, fromQuantity));
 	}
 
 	/**
@@ -166,7 +171,10 @@ public class QuantityBreakImpl extends BizEntityTypedImpl<QuantityBreakType> imp
 	 */
 	@Override
 	public void setQuantityBreakId(String newQuantityBreakId) {
+		String oldQuantityBreakId = quantityBreakId;
 		quantityBreakId = newQuantityBreakId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PricePackage.QUANTITY_BREAK__QUANTITY_BREAK_ID, oldQuantityBreakId, quantityBreakId));
 	}
 
 	/**
@@ -186,7 +194,10 @@ public class QuantityBreakImpl extends BizEntityTypedImpl<QuantityBreakType> imp
 	 */
 	@Override
 	public void setThruQuantity(BigDecimal newThruQuantity) {
+		BigDecimal oldThruQuantity = thruQuantity;
 		thruQuantity = newThruQuantity;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PricePackage.QUANTITY_BREAK__THRU_QUANTITY, oldThruQuantity, thruQuantity));
 	}
 
 	/**
@@ -236,6 +247,8 @@ public class QuantityBreakImpl extends BizEntityTypedImpl<QuantityBreakType> imp
 			InternalEObject oldQuantityBreakTypeId = (InternalEObject)quantityBreakTypeId;
 			quantityBreakTypeId = (QuantityBreakType)eResolveProxy(oldQuantityBreakTypeId);
 			if (quantityBreakTypeId != oldQuantityBreakTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PricePackage.QUANTITY_BREAK__QUANTITY_BREAK_TYPE_ID, oldQuantityBreakTypeId, quantityBreakTypeId));
 			}
 		}
 		return quantityBreakTypeId;
@@ -257,7 +270,10 @@ public class QuantityBreakImpl extends BizEntityTypedImpl<QuantityBreakType> imp
 	 */
 	@Override
 	public void setQuantityBreakTypeId(QuantityBreakType newQuantityBreakTypeId) {
+		QuantityBreakType oldQuantityBreakTypeId = quantityBreakTypeId;
 		quantityBreakTypeId = newQuantityBreakTypeId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PricePackage.QUANTITY_BREAK__QUANTITY_BREAK_TYPE_ID, oldQuantityBreakTypeId, quantityBreakTypeId));
 	}
 
 	/**

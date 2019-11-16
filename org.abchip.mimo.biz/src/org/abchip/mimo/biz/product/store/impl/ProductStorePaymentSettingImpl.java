@@ -15,9 +15,11 @@ import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.product.store.ProductStore;
 import org.abchip.mimo.biz.product.store.ProductStorePaymentSetting;
 import org.abchip.mimo.biz.product.store.StorePackage;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -185,6 +187,8 @@ public class ProductStorePaymentSettingImpl extends BizEntityImpl implements Pro
 			InternalEObject oldPaymentCustomMethodId = (InternalEObject)paymentCustomMethodId;
 			paymentCustomMethodId = (CustomMethod)eResolveProxy(oldPaymentCustomMethodId);
 			if (paymentCustomMethodId != oldPaymentCustomMethodId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, StorePackage.PRODUCT_STORE_PAYMENT_SETTING__PAYMENT_CUSTOM_METHOD_ID, oldPaymentCustomMethodId, paymentCustomMethodId));
 			}
 		}
 		return paymentCustomMethodId;
@@ -206,7 +210,10 @@ public class ProductStorePaymentSettingImpl extends BizEntityImpl implements Pro
 	 */
 	@Override
 	public void setPaymentCustomMethodId(CustomMethod newPaymentCustomMethodId) {
+		CustomMethod oldPaymentCustomMethodId = paymentCustomMethodId;
 		paymentCustomMethodId = newPaymentCustomMethodId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, StorePackage.PRODUCT_STORE_PAYMENT_SETTING__PAYMENT_CUSTOM_METHOD_ID, oldPaymentCustomMethodId, paymentCustomMethodId));
 	}
 
 	/**
@@ -220,6 +227,8 @@ public class ProductStorePaymentSettingImpl extends BizEntityImpl implements Pro
 			InternalEObject oldPaymentGatewayConfigId = (InternalEObject)paymentGatewayConfigId;
 			paymentGatewayConfigId = (PaymentGatewayConfig)eResolveProxy(oldPaymentGatewayConfigId);
 			if (paymentGatewayConfigId != oldPaymentGatewayConfigId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, StorePackage.PRODUCT_STORE_PAYMENT_SETTING__PAYMENT_GATEWAY_CONFIG_ID, oldPaymentGatewayConfigId, paymentGatewayConfigId));
 			}
 		}
 		return paymentGatewayConfigId;
@@ -241,7 +250,10 @@ public class ProductStorePaymentSettingImpl extends BizEntityImpl implements Pro
 	 */
 	@Override
 	public void setPaymentGatewayConfigId(PaymentGatewayConfig newPaymentGatewayConfigId) {
+		PaymentGatewayConfig oldPaymentGatewayConfigId = paymentGatewayConfigId;
 		paymentGatewayConfigId = newPaymentGatewayConfigId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, StorePackage.PRODUCT_STORE_PAYMENT_SETTING__PAYMENT_GATEWAY_CONFIG_ID, oldPaymentGatewayConfigId, paymentGatewayConfigId));
 	}
 
 	/**
@@ -255,6 +267,8 @@ public class ProductStorePaymentSettingImpl extends BizEntityImpl implements Pro
 			InternalEObject oldPaymentMethodTypeId = (InternalEObject)paymentMethodTypeId;
 			paymentMethodTypeId = (PaymentMethodType)eResolveProxy(oldPaymentMethodTypeId);
 			if (paymentMethodTypeId != oldPaymentMethodTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, StorePackage.PRODUCT_STORE_PAYMENT_SETTING__PAYMENT_METHOD_TYPE_ID, oldPaymentMethodTypeId, paymentMethodTypeId));
 			}
 		}
 		return paymentMethodTypeId;
@@ -276,7 +290,10 @@ public class ProductStorePaymentSettingImpl extends BizEntityImpl implements Pro
 	 */
 	@Override
 	public void setPaymentMethodTypeId(PaymentMethodType newPaymentMethodTypeId) {
+		PaymentMethodType oldPaymentMethodTypeId = paymentMethodTypeId;
 		paymentMethodTypeId = newPaymentMethodTypeId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, StorePackage.PRODUCT_STORE_PAYMENT_SETTING__PAYMENT_METHOD_TYPE_ID, oldPaymentMethodTypeId, paymentMethodTypeId));
 	}
 
 	/**
@@ -296,7 +313,10 @@ public class ProductStorePaymentSettingImpl extends BizEntityImpl implements Pro
 	 */
 	@Override
 	public void setPaymentPropertiesPath(String newPaymentPropertiesPath) {
+		String oldPaymentPropertiesPath = paymentPropertiesPath;
 		paymentPropertiesPath = newPaymentPropertiesPath;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, StorePackage.PRODUCT_STORE_PAYMENT_SETTING__PAYMENT_PROPERTIES_PATH, oldPaymentPropertiesPath, paymentPropertiesPath));
 	}
 
 	/**
@@ -316,7 +336,10 @@ public class ProductStorePaymentSettingImpl extends BizEntityImpl implements Pro
 	 */
 	@Override
 	public void setPaymentService(String newPaymentService) {
+		String oldPaymentService = paymentService;
 		paymentService = newPaymentService;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, StorePackage.PRODUCT_STORE_PAYMENT_SETTING__PAYMENT_SERVICE, oldPaymentService, paymentService));
 	}
 
 	/**
@@ -330,6 +353,8 @@ public class ProductStorePaymentSettingImpl extends BizEntityImpl implements Pro
 			InternalEObject oldPaymentServiceTypeEnumId = (InternalEObject)paymentServiceTypeEnumId;
 			paymentServiceTypeEnumId = (Enumeration)eResolveProxy(oldPaymentServiceTypeEnumId);
 			if (paymentServiceTypeEnumId != oldPaymentServiceTypeEnumId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, StorePackage.PRODUCT_STORE_PAYMENT_SETTING__PAYMENT_SERVICE_TYPE_ENUM_ID, oldPaymentServiceTypeEnumId, paymentServiceTypeEnumId));
 			}
 		}
 		return paymentServiceTypeEnumId;
@@ -351,7 +376,10 @@ public class ProductStorePaymentSettingImpl extends BizEntityImpl implements Pro
 	 */
 	@Override
 	public void setPaymentServiceTypeEnumId(Enumeration newPaymentServiceTypeEnumId) {
+		Enumeration oldPaymentServiceTypeEnumId = paymentServiceTypeEnumId;
 		paymentServiceTypeEnumId = newPaymentServiceTypeEnumId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, StorePackage.PRODUCT_STORE_PAYMENT_SETTING__PAYMENT_SERVICE_TYPE_ENUM_ID, oldPaymentServiceTypeEnumId, paymentServiceTypeEnumId));
 	}
 
 	/**
@@ -371,7 +399,10 @@ public class ProductStorePaymentSettingImpl extends BizEntityImpl implements Pro
 	 */
 	@Override
 	public void setApplyToAllProducts(boolean newApplyToAllProducts) {
+		boolean oldApplyToAllProducts = applyToAllProducts;
 		applyToAllProducts = newApplyToAllProducts;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, StorePackage.PRODUCT_STORE_PAYMENT_SETTING__APPLY_TO_ALL_PRODUCTS, oldApplyToAllProducts, applyToAllProducts));
 	}
 
 	/**
@@ -385,6 +416,8 @@ public class ProductStorePaymentSettingImpl extends BizEntityImpl implements Pro
 			InternalEObject oldProductStoreId = (InternalEObject)productStoreId;
 			productStoreId = (ProductStore)eResolveProxy(oldProductStoreId);
 			if (productStoreId != oldProductStoreId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, StorePackage.PRODUCT_STORE_PAYMENT_SETTING__PRODUCT_STORE_ID, oldProductStoreId, productStoreId));
 			}
 		}
 		return productStoreId;
@@ -406,7 +439,10 @@ public class ProductStorePaymentSettingImpl extends BizEntityImpl implements Pro
 	 */
 	@Override
 	public void setProductStoreId(ProductStore newProductStoreId) {
+		ProductStore oldProductStoreId = productStoreId;
 		productStoreId = newProductStoreId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, StorePackage.PRODUCT_STORE_PAYMENT_SETTING__PRODUCT_STORE_ID, oldProductStoreId, productStoreId));
 	}
 
 	/**

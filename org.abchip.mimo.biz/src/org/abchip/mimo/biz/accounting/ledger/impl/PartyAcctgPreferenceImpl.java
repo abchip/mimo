@@ -19,9 +19,11 @@ import org.abchip.mimo.biz.common.method.CustomMethod;
 import org.abchip.mimo.biz.common.uom.Uom;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.party.party.Party;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -400,6 +402,8 @@ public class PartyAcctgPreferenceImpl extends BizEntityImpl implements PartyAcct
 			InternalEObject oldBaseCurrencyUomId = (InternalEObject)baseCurrencyUomId;
 			baseCurrencyUomId = (Uom)eResolveProxy(oldBaseCurrencyUomId);
 			if (baseCurrencyUomId != oldBaseCurrencyUomId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, LedgerPackage.PARTY_ACCTG_PREFERENCE__BASE_CURRENCY_UOM_ID, oldBaseCurrencyUomId, baseCurrencyUomId));
 			}
 		}
 		return baseCurrencyUomId;
@@ -421,7 +425,10 @@ public class PartyAcctgPreferenceImpl extends BizEntityImpl implements PartyAcct
 	 */
 	@Override
 	public void setBaseCurrencyUomId(Uom newBaseCurrencyUomId) {
+		Uom oldBaseCurrencyUomId = baseCurrencyUomId;
 		baseCurrencyUomId = newBaseCurrencyUomId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, LedgerPackage.PARTY_ACCTG_PREFERENCE__BASE_CURRENCY_UOM_ID, oldBaseCurrencyUomId, baseCurrencyUomId));
 	}
 
 	/**
@@ -435,6 +442,8 @@ public class PartyAcctgPreferenceImpl extends BizEntityImpl implements PartyAcct
 			InternalEObject oldCogsMethodId = (InternalEObject)cogsMethodId;
 			cogsMethodId = (Enumeration)eResolveProxy(oldCogsMethodId);
 			if (cogsMethodId != oldCogsMethodId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, LedgerPackage.PARTY_ACCTG_PREFERENCE__COGS_METHOD_ID, oldCogsMethodId, cogsMethodId));
 			}
 		}
 		return cogsMethodId;
@@ -456,7 +465,10 @@ public class PartyAcctgPreferenceImpl extends BizEntityImpl implements PartyAcct
 	 */
 	@Override
 	public void setCogsMethodId(Enumeration newCogsMethodId) {
+		Enumeration oldCogsMethodId = cogsMethodId;
 		cogsMethodId = newCogsMethodId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, LedgerPackage.PARTY_ACCTG_PREFERENCE__COGS_METHOD_ID, oldCogsMethodId, cogsMethodId));
 	}
 
 	/**
@@ -476,7 +488,10 @@ public class PartyAcctgPreferenceImpl extends BizEntityImpl implements PartyAcct
 	 */
 	@Override
 	public void setEnableAccounting(boolean newEnableAccounting) {
+		boolean oldEnableAccounting = enableAccounting;
 		enableAccounting = newEnableAccounting;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, LedgerPackage.PARTY_ACCTG_PREFERENCE__ENABLE_ACCOUNTING, oldEnableAccounting, enableAccounting));
 	}
 
 	/**
@@ -496,7 +511,10 @@ public class PartyAcctgPreferenceImpl extends BizEntityImpl implements PartyAcct
 	 */
 	@Override
 	public void setFiscalYearStartDay(long newFiscalYearStartDay) {
+		long oldFiscalYearStartDay = fiscalYearStartDay;
 		fiscalYearStartDay = newFiscalYearStartDay;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, LedgerPackage.PARTY_ACCTG_PREFERENCE__FISCAL_YEAR_START_DAY, oldFiscalYearStartDay, fiscalYearStartDay));
 	}
 
 	/**
@@ -516,7 +534,10 @@ public class PartyAcctgPreferenceImpl extends BizEntityImpl implements PartyAcct
 	 */
 	@Override
 	public void setFiscalYearStartMonth(long newFiscalYearStartMonth) {
+		long oldFiscalYearStartMonth = fiscalYearStartMonth;
 		fiscalYearStartMonth = newFiscalYearStartMonth;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, LedgerPackage.PARTY_ACCTG_PREFERENCE__FISCAL_YEAR_START_MONTH, oldFiscalYearStartMonth, fiscalYearStartMonth));
 	}
 
 	/**
@@ -536,7 +557,10 @@ public class PartyAcctgPreferenceImpl extends BizEntityImpl implements PartyAcct
 	 */
 	@Override
 	public void setInvoiceIdPrefix(String newInvoiceIdPrefix) {
+		String oldInvoiceIdPrefix = invoiceIdPrefix;
 		invoiceIdPrefix = newInvoiceIdPrefix;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, LedgerPackage.PARTY_ACCTG_PREFERENCE__INVOICE_ID_PREFIX, oldInvoiceIdPrefix, invoiceIdPrefix));
 	}
 
 	/**
@@ -550,6 +574,8 @@ public class PartyAcctgPreferenceImpl extends BizEntityImpl implements PartyAcct
 			InternalEObject oldInvoiceSeqCustMethId = (InternalEObject)invoiceSeqCustMethId;
 			invoiceSeqCustMethId = (CustomMethod)eResolveProxy(oldInvoiceSeqCustMethId);
 			if (invoiceSeqCustMethId != oldInvoiceSeqCustMethId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, LedgerPackage.PARTY_ACCTG_PREFERENCE__INVOICE_SEQ_CUST_METH_ID, oldInvoiceSeqCustMethId, invoiceSeqCustMethId));
 			}
 		}
 		return invoiceSeqCustMethId;
@@ -571,7 +597,10 @@ public class PartyAcctgPreferenceImpl extends BizEntityImpl implements PartyAcct
 	 */
 	@Override
 	public void setInvoiceSeqCustMethId(CustomMethod newInvoiceSeqCustMethId) {
+		CustomMethod oldInvoiceSeqCustMethId = invoiceSeqCustMethId;
 		invoiceSeqCustMethId = newInvoiceSeqCustMethId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, LedgerPackage.PARTY_ACCTG_PREFERENCE__INVOICE_SEQ_CUST_METH_ID, oldInvoiceSeqCustMethId, invoiceSeqCustMethId));
 	}
 
 	/**
@@ -591,7 +620,10 @@ public class PartyAcctgPreferenceImpl extends BizEntityImpl implements PartyAcct
 	 */
 	@Override
 	public void setLastInvoiceNumber(long newLastInvoiceNumber) {
+		long oldLastInvoiceNumber = lastInvoiceNumber;
 		lastInvoiceNumber = newLastInvoiceNumber;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, LedgerPackage.PARTY_ACCTG_PREFERENCE__LAST_INVOICE_NUMBER, oldLastInvoiceNumber, lastInvoiceNumber));
 	}
 
 	/**
@@ -611,7 +643,10 @@ public class PartyAcctgPreferenceImpl extends BizEntityImpl implements PartyAcct
 	 */
 	@Override
 	public void setLastInvoiceRestartDate(Date newLastInvoiceRestartDate) {
+		Date oldLastInvoiceRestartDate = lastInvoiceRestartDate;
 		lastInvoiceRestartDate = newLastInvoiceRestartDate;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, LedgerPackage.PARTY_ACCTG_PREFERENCE__LAST_INVOICE_RESTART_DATE, oldLastInvoiceRestartDate, lastInvoiceRestartDate));
 	}
 
 	/**
@@ -631,7 +666,10 @@ public class PartyAcctgPreferenceImpl extends BizEntityImpl implements PartyAcct
 	 */
 	@Override
 	public void setLastOrderNumber(long newLastOrderNumber) {
+		long oldLastOrderNumber = lastOrderNumber;
 		lastOrderNumber = newLastOrderNumber;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, LedgerPackage.PARTY_ACCTG_PREFERENCE__LAST_ORDER_NUMBER, oldLastOrderNumber, lastOrderNumber));
 	}
 
 	/**
@@ -651,7 +689,10 @@ public class PartyAcctgPreferenceImpl extends BizEntityImpl implements PartyAcct
 	 */
 	@Override
 	public void setLastQuoteNumber(long newLastQuoteNumber) {
+		long oldLastQuoteNumber = lastQuoteNumber;
 		lastQuoteNumber = newLastQuoteNumber;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, LedgerPackage.PARTY_ACCTG_PREFERENCE__LAST_QUOTE_NUMBER, oldLastQuoteNumber, lastQuoteNumber));
 	}
 
 	/**
@@ -665,6 +706,8 @@ public class PartyAcctgPreferenceImpl extends BizEntityImpl implements PartyAcct
 			InternalEObject oldOldInvoiceSequenceEnumId = (InternalEObject)oldInvoiceSequenceEnumId;
 			oldInvoiceSequenceEnumId = (Enumeration)eResolveProxy(oldOldInvoiceSequenceEnumId);
 			if (oldInvoiceSequenceEnumId != oldOldInvoiceSequenceEnumId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, LedgerPackage.PARTY_ACCTG_PREFERENCE__OLD_INVOICE_SEQUENCE_ENUM_ID, oldOldInvoiceSequenceEnumId, oldInvoiceSequenceEnumId));
 			}
 		}
 		return oldInvoiceSequenceEnumId;
@@ -686,7 +729,10 @@ public class PartyAcctgPreferenceImpl extends BizEntityImpl implements PartyAcct
 	 */
 	@Override
 	public void setOldInvoiceSequenceEnumId(Enumeration newOldInvoiceSequenceEnumId) {
+		Enumeration oldOldInvoiceSequenceEnumId = oldInvoiceSequenceEnumId;
 		oldInvoiceSequenceEnumId = newOldInvoiceSequenceEnumId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, LedgerPackage.PARTY_ACCTG_PREFERENCE__OLD_INVOICE_SEQUENCE_ENUM_ID, oldOldInvoiceSequenceEnumId, oldInvoiceSequenceEnumId));
 	}
 
 	/**
@@ -700,6 +746,8 @@ public class PartyAcctgPreferenceImpl extends BizEntityImpl implements PartyAcct
 			InternalEObject oldOldOrderSequenceEnumId = (InternalEObject)oldOrderSequenceEnumId;
 			oldOrderSequenceEnumId = (Enumeration)eResolveProxy(oldOldOrderSequenceEnumId);
 			if (oldOrderSequenceEnumId != oldOldOrderSequenceEnumId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, LedgerPackage.PARTY_ACCTG_PREFERENCE__OLD_ORDER_SEQUENCE_ENUM_ID, oldOldOrderSequenceEnumId, oldOrderSequenceEnumId));
 			}
 		}
 		return oldOrderSequenceEnumId;
@@ -721,7 +769,10 @@ public class PartyAcctgPreferenceImpl extends BizEntityImpl implements PartyAcct
 	 */
 	@Override
 	public void setOldOrderSequenceEnumId(Enumeration newOldOrderSequenceEnumId) {
+		Enumeration oldOldOrderSequenceEnumId = oldOrderSequenceEnumId;
 		oldOrderSequenceEnumId = newOldOrderSequenceEnumId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, LedgerPackage.PARTY_ACCTG_PREFERENCE__OLD_ORDER_SEQUENCE_ENUM_ID, oldOldOrderSequenceEnumId, oldOrderSequenceEnumId));
 	}
 
 	/**
@@ -735,6 +786,8 @@ public class PartyAcctgPreferenceImpl extends BizEntityImpl implements PartyAcct
 			InternalEObject oldOldQuoteSequenceEnumId = (InternalEObject)oldQuoteSequenceEnumId;
 			oldQuoteSequenceEnumId = (Enumeration)eResolveProxy(oldOldQuoteSequenceEnumId);
 			if (oldQuoteSequenceEnumId != oldOldQuoteSequenceEnumId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, LedgerPackage.PARTY_ACCTG_PREFERENCE__OLD_QUOTE_SEQUENCE_ENUM_ID, oldOldQuoteSequenceEnumId, oldQuoteSequenceEnumId));
 			}
 		}
 		return oldQuoteSequenceEnumId;
@@ -756,7 +809,10 @@ public class PartyAcctgPreferenceImpl extends BizEntityImpl implements PartyAcct
 	 */
 	@Override
 	public void setOldQuoteSequenceEnumId(Enumeration newOldQuoteSequenceEnumId) {
+		Enumeration oldOldQuoteSequenceEnumId = oldQuoteSequenceEnumId;
 		oldQuoteSequenceEnumId = newOldQuoteSequenceEnumId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, LedgerPackage.PARTY_ACCTG_PREFERENCE__OLD_QUOTE_SEQUENCE_ENUM_ID, oldOldQuoteSequenceEnumId, oldQuoteSequenceEnumId));
 	}
 
 	/**
@@ -776,7 +832,10 @@ public class PartyAcctgPreferenceImpl extends BizEntityImpl implements PartyAcct
 	 */
 	@Override
 	public void setOrderIdPrefix(String newOrderIdPrefix) {
+		String oldOrderIdPrefix = orderIdPrefix;
 		orderIdPrefix = newOrderIdPrefix;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, LedgerPackage.PARTY_ACCTG_PREFERENCE__ORDER_ID_PREFIX, oldOrderIdPrefix, orderIdPrefix));
 	}
 
 	/**
@@ -790,6 +849,8 @@ public class PartyAcctgPreferenceImpl extends BizEntityImpl implements PartyAcct
 			InternalEObject oldOrderSeqCustMethId = (InternalEObject)orderSeqCustMethId;
 			orderSeqCustMethId = (CustomMethod)eResolveProxy(oldOrderSeqCustMethId);
 			if (orderSeqCustMethId != oldOrderSeqCustMethId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, LedgerPackage.PARTY_ACCTG_PREFERENCE__ORDER_SEQ_CUST_METH_ID, oldOrderSeqCustMethId, orderSeqCustMethId));
 			}
 		}
 		return orderSeqCustMethId;
@@ -811,7 +872,10 @@ public class PartyAcctgPreferenceImpl extends BizEntityImpl implements PartyAcct
 	 */
 	@Override
 	public void setOrderSeqCustMethId(CustomMethod newOrderSeqCustMethId) {
+		CustomMethod oldOrderSeqCustMethId = orderSeqCustMethId;
 		orderSeqCustMethId = newOrderSeqCustMethId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, LedgerPackage.PARTY_ACCTG_PREFERENCE__ORDER_SEQ_CUST_METH_ID, oldOrderSeqCustMethId, orderSeqCustMethId));
 	}
 
 	/**
@@ -825,6 +889,8 @@ public class PartyAcctgPreferenceImpl extends BizEntityImpl implements PartyAcct
 			InternalEObject oldPartyId = (InternalEObject)partyId;
 			partyId = (Party)eResolveProxy(oldPartyId);
 			if (partyId != oldPartyId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, LedgerPackage.PARTY_ACCTG_PREFERENCE__PARTY_ID, oldPartyId, partyId));
 			}
 		}
 		return partyId;
@@ -846,7 +912,10 @@ public class PartyAcctgPreferenceImpl extends BizEntityImpl implements PartyAcct
 	 */
 	@Override
 	public void setPartyId(Party newPartyId) {
+		Party oldPartyId = partyId;
 		partyId = newPartyId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, LedgerPackage.PARTY_ACCTG_PREFERENCE__PARTY_ID, oldPartyId, partyId));
 	}
 
 	/**
@@ -866,7 +935,10 @@ public class PartyAcctgPreferenceImpl extends BizEntityImpl implements PartyAcct
 	 */
 	@Override
 	public void setQuoteIdPrefix(String newQuoteIdPrefix) {
+		String oldQuoteIdPrefix = quoteIdPrefix;
 		quoteIdPrefix = newQuoteIdPrefix;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, LedgerPackage.PARTY_ACCTG_PREFERENCE__QUOTE_ID_PREFIX, oldQuoteIdPrefix, quoteIdPrefix));
 	}
 
 	/**
@@ -880,6 +952,8 @@ public class PartyAcctgPreferenceImpl extends BizEntityImpl implements PartyAcct
 			InternalEObject oldQuoteSeqCustMethId = (InternalEObject)quoteSeqCustMethId;
 			quoteSeqCustMethId = (CustomMethod)eResolveProxy(oldQuoteSeqCustMethId);
 			if (quoteSeqCustMethId != oldQuoteSeqCustMethId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, LedgerPackage.PARTY_ACCTG_PREFERENCE__QUOTE_SEQ_CUST_METH_ID, oldQuoteSeqCustMethId, quoteSeqCustMethId));
 			}
 		}
 		return quoteSeqCustMethId;
@@ -901,7 +975,10 @@ public class PartyAcctgPreferenceImpl extends BizEntityImpl implements PartyAcct
 	 */
 	@Override
 	public void setQuoteSeqCustMethId(CustomMethod newQuoteSeqCustMethId) {
+		CustomMethod oldQuoteSeqCustMethId = quoteSeqCustMethId;
 		quoteSeqCustMethId = newQuoteSeqCustMethId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, LedgerPackage.PARTY_ACCTG_PREFERENCE__QUOTE_SEQ_CUST_METH_ID, oldQuoteSeqCustMethId, quoteSeqCustMethId));
 	}
 
 	/**
@@ -915,6 +992,8 @@ public class PartyAcctgPreferenceImpl extends BizEntityImpl implements PartyAcct
 			InternalEObject oldRefundPaymentMethodId = (InternalEObject)refundPaymentMethodId;
 			refundPaymentMethodId = (PaymentMethod)eResolveProxy(oldRefundPaymentMethodId);
 			if (refundPaymentMethodId != oldRefundPaymentMethodId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, LedgerPackage.PARTY_ACCTG_PREFERENCE__REFUND_PAYMENT_METHOD_ID, oldRefundPaymentMethodId, refundPaymentMethodId));
 			}
 		}
 		return refundPaymentMethodId;
@@ -936,7 +1015,10 @@ public class PartyAcctgPreferenceImpl extends BizEntityImpl implements PartyAcct
 	 */
 	@Override
 	public void setRefundPaymentMethodId(PaymentMethod newRefundPaymentMethodId) {
+		PaymentMethod oldRefundPaymentMethodId = refundPaymentMethodId;
 		refundPaymentMethodId = newRefundPaymentMethodId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, LedgerPackage.PARTY_ACCTG_PREFERENCE__REFUND_PAYMENT_METHOD_ID, oldRefundPaymentMethodId, refundPaymentMethodId));
 	}
 
 	/**
@@ -950,6 +1032,8 @@ public class PartyAcctgPreferenceImpl extends BizEntityImpl implements PartyAcct
 			InternalEObject oldTaxFormId = (InternalEObject)taxFormId;
 			taxFormId = (Enumeration)eResolveProxy(oldTaxFormId);
 			if (taxFormId != oldTaxFormId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, LedgerPackage.PARTY_ACCTG_PREFERENCE__TAX_FORM_ID, oldTaxFormId, taxFormId));
 			}
 		}
 		return taxFormId;
@@ -971,7 +1055,10 @@ public class PartyAcctgPreferenceImpl extends BizEntityImpl implements PartyAcct
 	 */
 	@Override
 	public void setTaxFormId(Enumeration newTaxFormId) {
+		Enumeration oldTaxFormId = taxFormId;
 		taxFormId = newTaxFormId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, LedgerPackage.PARTY_ACCTG_PREFERENCE__TAX_FORM_ID, oldTaxFormId, taxFormId));
 	}
 
 	/**
@@ -991,7 +1078,10 @@ public class PartyAcctgPreferenceImpl extends BizEntityImpl implements PartyAcct
 	 */
 	@Override
 	public void setUseInvoiceIdForReturns(boolean newUseInvoiceIdForReturns) {
+		boolean oldUseInvoiceIdForReturns = useInvoiceIdForReturns;
 		useInvoiceIdForReturns = newUseInvoiceIdForReturns;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, LedgerPackage.PARTY_ACCTG_PREFERENCE__USE_INVOICE_ID_FOR_RETURNS, oldUseInvoiceIdForReturns, useInvoiceIdForReturns));
 	}
 
 	/**
@@ -1017,6 +1107,8 @@ public class PartyAcctgPreferenceImpl extends BizEntityImpl implements PartyAcct
 			InternalEObject oldErrorGlJournalId = (InternalEObject)errorGlJournalId;
 			errorGlJournalId = (GlJournal)eResolveProxy(oldErrorGlJournalId);
 			if (errorGlJournalId != oldErrorGlJournalId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, LedgerPackage.PARTY_ACCTG_PREFERENCE__ERROR_GL_JOURNAL_ID, oldErrorGlJournalId, errorGlJournalId));
 			}
 		}
 		return errorGlJournalId;
@@ -1038,7 +1130,10 @@ public class PartyAcctgPreferenceImpl extends BizEntityImpl implements PartyAcct
 	 */
 	@Override
 	public void setErrorGlJournalId(GlJournal newErrorGlJournalId) {
+		GlJournal oldErrorGlJournalId = errorGlJournalId;
 		errorGlJournalId = newErrorGlJournalId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, LedgerPackage.PARTY_ACCTG_PREFERENCE__ERROR_GL_JOURNAL_ID, oldErrorGlJournalId, errorGlJournalId));
 	}
 
 	/**

@@ -10,7 +10,9 @@ package org.abchip.mimo.biz.catalina.session.impl;
 import org.abchip.mimo.biz.catalina.session.CatalinaSession;
 import org.abchip.mimo.biz.catalina.session.SessionPackage;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -192,7 +194,10 @@ public class CatalinaSessionImpl extends BizEntityImpl implements CatalinaSessio
 	 */
 	@Override
 	public void setSessionId(String newSessionId) {
+		String oldSessionId = sessionId;
 		sessionId = newSessionId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SessionPackage.CATALINA_SESSION__SESSION_ID, oldSessionId, sessionId));
 	}
 
 	/**
@@ -212,7 +217,10 @@ public class CatalinaSessionImpl extends BizEntityImpl implements CatalinaSessio
 	 */
 	@Override
 	public void setIsValid(boolean newIsValid) {
+		boolean oldIsValid = isValid;
 		isValid = newIsValid;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SessionPackage.CATALINA_SESSION__IS_VALID, oldIsValid, isValid));
 	}
 
 	/**
@@ -232,7 +240,10 @@ public class CatalinaSessionImpl extends BizEntityImpl implements CatalinaSessio
 	 */
 	@Override
 	public void setLastAccessed(long newLastAccessed) {
+		long oldLastAccessed = lastAccessed;
 		lastAccessed = newLastAccessed;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SessionPackage.CATALINA_SESSION__LAST_ACCESSED, oldLastAccessed, lastAccessed));
 	}
 
 	/**
@@ -252,7 +263,10 @@ public class CatalinaSessionImpl extends BizEntityImpl implements CatalinaSessio
 	 */
 	@Override
 	public void setMaxIdle(long newMaxIdle) {
+		long oldMaxIdle = maxIdle;
 		maxIdle = newMaxIdle;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SessionPackage.CATALINA_SESSION__MAX_IDLE, oldMaxIdle, maxIdle));
 	}
 
 	/**
@@ -272,7 +286,10 @@ public class CatalinaSessionImpl extends BizEntityImpl implements CatalinaSessio
 	 */
 	@Override
 	public void setSessionInfo(String newSessionInfo) {
+		String oldSessionInfo = sessionInfo;
 		sessionInfo = newSessionInfo;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SessionPackage.CATALINA_SESSION__SESSION_INFO, oldSessionInfo, sessionInfo));
 	}
 
 	/**
@@ -292,7 +309,10 @@ public class CatalinaSessionImpl extends BizEntityImpl implements CatalinaSessio
 	 */
 	@Override
 	public void setSessionSize(long newSessionSize) {
+		long oldSessionSize = sessionSize;
 		sessionSize = newSessionSize;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SessionPackage.CATALINA_SESSION__SESSION_SIZE, oldSessionSize, sessionSize));
 	}
 
 	/**

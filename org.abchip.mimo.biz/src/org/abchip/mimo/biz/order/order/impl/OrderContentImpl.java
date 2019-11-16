@@ -15,10 +15,12 @@ import org.abchip.mimo.biz.order.order.OrderContent;
 import org.abchip.mimo.biz.order.order.OrderContentType;
 import org.abchip.mimo.biz.order.order.OrderHeader;
 import org.abchip.mimo.biz.order.order.OrderPackage;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -164,6 +166,8 @@ public class OrderContentImpl extends BizEntityTypedImpl<OrderContentType> imple
 			InternalEObject oldContentId = (InternalEObject)contentId;
 			contentId = (Content)eResolveProxy(oldContentId);
 			if (contentId != oldContentId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, OrderPackage.ORDER_CONTENT__CONTENT_ID, oldContentId, contentId));
 			}
 		}
 		return contentId;
@@ -185,7 +189,10 @@ public class OrderContentImpl extends BizEntityTypedImpl<OrderContentType> imple
 	 */
 	@Override
 	public void setContentId(Content newContentId) {
+		Content oldContentId = contentId;
 		contentId = newContentId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_CONTENT__CONTENT_ID, oldContentId, contentId));
 	}
 
 	/**
@@ -205,7 +212,10 @@ public class OrderContentImpl extends BizEntityTypedImpl<OrderContentType> imple
 	 */
 	@Override
 	public void setFromDate(Date newFromDate) {
+		Date oldFromDate = fromDate;
 		fromDate = newFromDate;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_CONTENT__FROM_DATE, oldFromDate, fromDate));
 	}
 
 	/**
@@ -219,6 +229,8 @@ public class OrderContentImpl extends BizEntityTypedImpl<OrderContentType> imple
 			InternalEObject oldOrderContentTypeId = (InternalEObject)orderContentTypeId;
 			orderContentTypeId = (OrderContentType)eResolveProxy(oldOrderContentTypeId);
 			if (orderContentTypeId != oldOrderContentTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, OrderPackage.ORDER_CONTENT__ORDER_CONTENT_TYPE_ID, oldOrderContentTypeId, orderContentTypeId));
 			}
 		}
 		return orderContentTypeId;
@@ -240,7 +252,10 @@ public class OrderContentImpl extends BizEntityTypedImpl<OrderContentType> imple
 	 */
 	@Override
 	public void setOrderContentTypeId(OrderContentType newOrderContentTypeId) {
+		OrderContentType oldOrderContentTypeId = orderContentTypeId;
 		orderContentTypeId = newOrderContentTypeId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_CONTENT__ORDER_CONTENT_TYPE_ID, oldOrderContentTypeId, orderContentTypeId));
 	}
 
 	/**
@@ -254,6 +269,8 @@ public class OrderContentImpl extends BizEntityTypedImpl<OrderContentType> imple
 			InternalEObject oldOrderId = (InternalEObject)orderId;
 			orderId = (OrderHeader)eResolveProxy(oldOrderId);
 			if (orderId != oldOrderId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, OrderPackage.ORDER_CONTENT__ORDER_ID, oldOrderId, orderId));
 			}
 		}
 		return orderId;
@@ -275,7 +292,10 @@ public class OrderContentImpl extends BizEntityTypedImpl<OrderContentType> imple
 	 */
 	@Override
 	public void setOrderId(OrderHeader newOrderId) {
+		OrderHeader oldOrderId = orderId;
 		orderId = newOrderId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_CONTENT__ORDER_ID, oldOrderId, orderId));
 	}
 
 	/**
@@ -295,7 +315,10 @@ public class OrderContentImpl extends BizEntityTypedImpl<OrderContentType> imple
 	 */
 	@Override
 	public void setOrderItemSeqId(String newOrderItemSeqId) {
+		String oldOrderItemSeqId = orderItemSeqId;
 		orderItemSeqId = newOrderItemSeqId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_CONTENT__ORDER_ITEM_SEQ_ID, oldOrderItemSeqId, orderItemSeqId));
 	}
 
 	/**
@@ -315,7 +338,10 @@ public class OrderContentImpl extends BizEntityTypedImpl<OrderContentType> imple
 	 */
 	@Override
 	public void setThruDate(Date newThruDate) {
+		Date oldThruDate = thruDate;
 		thruDate = newThruDate;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_CONTENT__THRU_DATE, oldThruDate, thruDate));
 	}
 
 	/**

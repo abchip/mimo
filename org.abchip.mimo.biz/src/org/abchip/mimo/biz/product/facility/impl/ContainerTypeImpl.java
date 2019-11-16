@@ -12,7 +12,9 @@ import java.util.List;
 import org.abchip.mimo.biz.impl.BizEntityTypeImpl;
 import org.abchip.mimo.biz.product.facility.ContainerType;
 import org.abchip.mimo.biz.product.facility.FacilityPackage;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -110,7 +112,10 @@ public class ContainerTypeImpl extends BizEntityTypeImpl<org.abchip.mimo.biz.pro
 	 */
 	@Override
 	public void setDescription(String newDescription) {
+		String oldDescription = description;
 		description = newDescription;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, FacilityPackage.CONTAINER_TYPE__DESCRIPTION, oldDescription, description));
 	}
 
 	/**
@@ -142,7 +147,10 @@ public class ContainerTypeImpl extends BizEntityTypeImpl<org.abchip.mimo.biz.pro
 	 */
 	@Override
 	public void setContainerTypeId(String newContainerTypeId) {
+		String oldContainerTypeId = containerTypeId;
 		containerTypeId = newContainerTypeId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, FacilityPackage.CONTAINER_TYPE__CONTAINER_TYPE_ID, oldContainerTypeId, containerTypeId));
 	}
 
 	/**

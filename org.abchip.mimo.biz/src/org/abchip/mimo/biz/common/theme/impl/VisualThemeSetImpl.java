@@ -12,7 +12,9 @@ import java.util.List;
 import org.abchip.mimo.biz.common.theme.ThemePackage;
 import org.abchip.mimo.biz.common.theme.VisualThemeSet;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -106,7 +108,10 @@ public class VisualThemeSetImpl extends BizEntityImpl implements VisualThemeSet 
 	 */
 	@Override
 	public void setDescription(String newDescription) {
+		String oldDescription = description;
 		description = newDescription;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ThemePackage.VISUAL_THEME_SET__DESCRIPTION, oldDescription, description));
 	}
 
 	/**
@@ -150,7 +155,10 @@ public class VisualThemeSetImpl extends BizEntityImpl implements VisualThemeSet 
 	 */
 	@Override
 	public void setVisualThemeSetId(String newVisualThemeSetId) {
+		String oldVisualThemeSetId = visualThemeSetId;
 		visualThemeSetId = newVisualThemeSetId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ThemePackage.VISUAL_THEME_SET__VISUAL_THEME_SET_ID, oldVisualThemeSetId, visualThemeSetId));
 	}
 
 	/**

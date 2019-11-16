@@ -13,7 +13,9 @@ import org.abchip.mimo.biz.entity.test.TestPackage;
 import org.abchip.mimo.biz.entity.test.Testing;
 import org.abchip.mimo.biz.entity.test.TestingType;
 import org.abchip.mimo.biz.impl.BizEntityTypeImpl;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -108,7 +110,10 @@ public class TestingTypeImpl extends BizEntityTypeImpl<Testing> implements Testi
 	 */
 	@Override
 	public void setDescription(String newDescription) {
+		String oldDescription = description;
 		description = newDescription;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, TestPackage.TESTING_TYPE__DESCRIPTION, oldDescription, description));
 	}
 
 	/**
@@ -140,7 +145,10 @@ public class TestingTypeImpl extends BizEntityTypeImpl<Testing> implements Testi
 	 */
 	@Override
 	public void setTestingTypeId(String newTestingTypeId) {
+		String oldTestingTypeId = testingTypeId;
 		testingTypeId = newTestingTypeId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, TestPackage.TESTING_TYPE__TESTING_TYPE_ID, oldTestingTypeId, testingTypeId));
 	}
 
 	/**

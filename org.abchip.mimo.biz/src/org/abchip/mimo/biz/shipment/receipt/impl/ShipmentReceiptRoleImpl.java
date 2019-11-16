@@ -12,10 +12,12 @@ import org.abchip.mimo.biz.party.party.Party;
 import org.abchip.mimo.biz.shipment.receipt.ReceiptPackage;
 import org.abchip.mimo.biz.shipment.receipt.ShipmentReceipt;
 import org.abchip.mimo.biz.shipment.receipt.ShipmentReceiptRole;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -108,6 +110,8 @@ public class ShipmentReceiptRoleImpl extends BizEntityImpl implements ShipmentRe
 			InternalEObject oldPartyId = (InternalEObject)partyId;
 			partyId = (Party)eResolveProxy(oldPartyId);
 			if (partyId != oldPartyId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ReceiptPackage.SHIPMENT_RECEIPT_ROLE__PARTY_ID, oldPartyId, partyId));
 			}
 		}
 		return partyId;
@@ -129,7 +133,10 @@ public class ShipmentReceiptRoleImpl extends BizEntityImpl implements ShipmentRe
 	 */
 	@Override
 	public void setPartyId(Party newPartyId) {
+		Party oldPartyId = partyId;
 		partyId = newPartyId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ReceiptPackage.SHIPMENT_RECEIPT_ROLE__PARTY_ID, oldPartyId, partyId));
 	}
 
 	/**
@@ -143,6 +150,8 @@ public class ShipmentReceiptRoleImpl extends BizEntityImpl implements ShipmentRe
 			InternalEObject oldReceiptId = (InternalEObject)receiptId;
 			receiptId = (ShipmentReceipt)eResolveProxy(oldReceiptId);
 			if (receiptId != oldReceiptId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ReceiptPackage.SHIPMENT_RECEIPT_ROLE__RECEIPT_ID, oldReceiptId, receiptId));
 			}
 		}
 		return receiptId;
@@ -164,7 +173,10 @@ public class ShipmentReceiptRoleImpl extends BizEntityImpl implements ShipmentRe
 	 */
 	@Override
 	public void setReceiptId(ShipmentReceipt newReceiptId) {
+		ShipmentReceipt oldReceiptId = receiptId;
 		receiptId = newReceiptId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ReceiptPackage.SHIPMENT_RECEIPT_ROLE__RECEIPT_ID, oldReceiptId, receiptId));
 	}
 
 	/**
@@ -184,7 +196,10 @@ public class ShipmentReceiptRoleImpl extends BizEntityImpl implements ShipmentRe
 	 */
 	@Override
 	public void setRoleTypeId(String newRoleTypeId) {
+		String oldRoleTypeId = roleTypeId;
 		roleTypeId = newRoleTypeId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ReceiptPackage.SHIPMENT_RECEIPT_ROLE__ROLE_TYPE_ID, oldRoleTypeId, roleTypeId));
 	}
 
 	/**

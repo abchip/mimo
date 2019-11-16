@@ -14,9 +14,11 @@ import org.abchip.mimo.biz.accounting.fixedasset.FixedAssetGeoPoint;
 import org.abchip.mimo.biz.accounting.fixedasset.FixedassetPackage;
 import org.abchip.mimo.biz.common.geo.GeoPoint;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -130,7 +132,10 @@ public class FixedAssetGeoPointImpl extends BizEntityImpl implements FixedAssetG
 	 */
 	@Override
 	public void setFromDate(Date newFromDate) {
+		Date oldFromDate = fromDate;
 		fromDate = newFromDate;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, FixedassetPackage.FIXED_ASSET_GEO_POINT__FROM_DATE, oldFromDate, fromDate));
 	}
 
 	/**
@@ -144,6 +149,8 @@ public class FixedAssetGeoPointImpl extends BizEntityImpl implements FixedAssetG
 			InternalEObject oldGeoPointId = (InternalEObject)geoPointId;
 			geoPointId = (GeoPoint)eResolveProxy(oldGeoPointId);
 			if (geoPointId != oldGeoPointId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, FixedassetPackage.FIXED_ASSET_GEO_POINT__GEO_POINT_ID, oldGeoPointId, geoPointId));
 			}
 		}
 		return geoPointId;
@@ -165,7 +172,10 @@ public class FixedAssetGeoPointImpl extends BizEntityImpl implements FixedAssetG
 	 */
 	@Override
 	public void setGeoPointId(GeoPoint newGeoPointId) {
+		GeoPoint oldGeoPointId = geoPointId;
 		geoPointId = newGeoPointId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, FixedassetPackage.FIXED_ASSET_GEO_POINT__GEO_POINT_ID, oldGeoPointId, geoPointId));
 	}
 
 	/**
@@ -185,7 +195,10 @@ public class FixedAssetGeoPointImpl extends BizEntityImpl implements FixedAssetG
 	 */
 	@Override
 	public void setThruDate(Date newThruDate) {
+		Date oldThruDate = thruDate;
 		thruDate = newThruDate;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, FixedassetPackage.FIXED_ASSET_GEO_POINT__THRU_DATE, oldThruDate, thruDate));
 	}
 
 	/**
@@ -199,6 +212,8 @@ public class FixedAssetGeoPointImpl extends BizEntityImpl implements FixedAssetG
 			InternalEObject oldFixedAssetId = (InternalEObject)fixedAssetId;
 			fixedAssetId = (FixedAsset)eResolveProxy(oldFixedAssetId);
 			if (fixedAssetId != oldFixedAssetId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, FixedassetPackage.FIXED_ASSET_GEO_POINT__FIXED_ASSET_ID, oldFixedAssetId, fixedAssetId));
 			}
 		}
 		return fixedAssetId;
@@ -220,7 +235,10 @@ public class FixedAssetGeoPointImpl extends BizEntityImpl implements FixedAssetG
 	 */
 	@Override
 	public void setFixedAssetId(FixedAsset newFixedAssetId) {
+		FixedAsset oldFixedAssetId = fixedAssetId;
 		fixedAssetId = newFixedAssetId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, FixedassetPackage.FIXED_ASSET_GEO_POINT__FIXED_ASSET_ID, oldFixedAssetId, fixedAssetId));
 	}
 
 	/**

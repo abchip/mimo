@@ -10,9 +10,12 @@ package org.abchip.mimo.biz.impl;
 import org.abchip.mimo.biz.BizEntityNote;
 import org.abchip.mimo.biz.BizEntityNoteData;
 import org.abchip.mimo.biz.BizPackage;
+import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -97,7 +100,10 @@ public abstract class BizEntityNoteImpl extends BizEntityImpl implements BizEnti
 	 */
 	@Override
 	public void setNoteId(String newNoteId) {
+		String oldNoteId = noteId;
 		noteId = newNoteId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, BizPackage.BIZ_ENTITY_NOTE__NOTE_ID, oldNoteId, noteId));
 	}
 
 	/**
@@ -111,6 +117,14 @@ public abstract class BizEntityNoteImpl extends BizEntityImpl implements BizEnti
 			InternalEObject oldNote = (InternalEObject)note;
 			note = (BizEntityNoteData)eResolveProxy(oldNote);
 			if (note != oldNote) {
+				InternalEObject newNote = (InternalEObject)note;
+				NotificationChain msgs = oldNote.eInverseRemove(this, EOPPOSITE_FEATURE_BASE - BizPackage.BIZ_ENTITY_NOTE__NOTE, null, null);
+				if (newNote.eInternalContainer() == null) {
+					msgs = newNote.eInverseAdd(this, EOPPOSITE_FEATURE_BASE - BizPackage.BIZ_ENTITY_NOTE__NOTE, null, msgs);
+				}
+				if (msgs != null) msgs.dispatch();
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, BizPackage.BIZ_ENTITY_NOTE__NOTE, oldNote, note));
 			}
 		}
 		return note;
@@ -130,9 +144,48 @@ public abstract class BizEntityNoteImpl extends BizEntityImpl implements BizEnti
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public NotificationChain basicSetNote(BizEntityNoteData newNote, NotificationChain msgs) {
+		BizEntityNoteData oldNote = note;
+		note = newNote;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, BizPackage.BIZ_ENTITY_NOTE__NOTE, oldNote, newNote);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public void setNote(BizEntityNoteData newNote) {
-		note = newNote;
+		if (newNote != note) {
+			NotificationChain msgs = null;
+			if (note != null)
+				msgs = ((InternalEObject)note).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - BizPackage.BIZ_ENTITY_NOTE__NOTE, null, msgs);
+			if (newNote != null)
+				msgs = ((InternalEObject)newNote).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - BizPackage.BIZ_ENTITY_NOTE__NOTE, null, msgs);
+			msgs = basicSetNote(newNote, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, BizPackage.BIZ_ENTITY_NOTE__NOTE, newNote, newNote));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case BizPackage.BIZ_ENTITY_NOTE__NOTE:
+				return basicSetNote(null, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
 
 	/**

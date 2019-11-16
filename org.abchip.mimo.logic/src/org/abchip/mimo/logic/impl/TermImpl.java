@@ -9,11 +9,8 @@ package org.abchip.mimo.logic.impl;
 
 import org.abchip.mimo.logic.LogicPackage;
 import org.abchip.mimo.logic.Term;
-
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 

@@ -7,11 +7,8 @@ import org.abchip.mimo.entity.impl.EntityImpl;
 
 import org.abchip.mimo.ui.query.QueryField;
 import org.abchip.mimo.ui.query.QueryPackage;
-
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**

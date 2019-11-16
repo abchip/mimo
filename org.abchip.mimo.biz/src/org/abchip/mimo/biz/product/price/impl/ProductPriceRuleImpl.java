@@ -15,9 +15,11 @@ import java.util.List;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.product.price.PricePackage;
 import org.abchip.mimo.biz.product.price.ProductPriceRule;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.util.BasicInternalEList;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -221,7 +223,10 @@ public class ProductPriceRuleImpl extends BizEntityImpl implements ProductPriceR
 	 */
 	@Override
 	public void setDescription(String newDescription) {
+		String oldDescription = description;
 		description = newDescription;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PricePackage.PRODUCT_PRICE_RULE__DESCRIPTION, oldDescription, description));
 	}
 
 	/**
@@ -241,7 +246,10 @@ public class ProductPriceRuleImpl extends BizEntityImpl implements ProductPriceR
 	 */
 	@Override
 	public void setFromDate(Date newFromDate) {
+		Date oldFromDate = fromDate;
 		fromDate = newFromDate;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PricePackage.PRODUCT_PRICE_RULE__FROM_DATE, oldFromDate, fromDate));
 	}
 
 	/**
@@ -261,7 +269,10 @@ public class ProductPriceRuleImpl extends BizEntityImpl implements ProductPriceR
 	 */
 	@Override
 	public void setIsSale(boolean newIsSale) {
+		boolean oldIsSale = isSale;
 		isSale = newIsSale;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PricePackage.PRODUCT_PRICE_RULE__IS_SALE, oldIsSale, isSale));
 	}
 
 	/**
@@ -281,7 +292,10 @@ public class ProductPriceRuleImpl extends BizEntityImpl implements ProductPriceR
 	 */
 	@Override
 	public void setRuleName(String newRuleName) {
+		String oldRuleName = ruleName;
 		ruleName = newRuleName;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PricePackage.PRODUCT_PRICE_RULE__RULE_NAME, oldRuleName, ruleName));
 	}
 
 	/**
@@ -301,7 +315,10 @@ public class ProductPriceRuleImpl extends BizEntityImpl implements ProductPriceR
 	 */
 	@Override
 	public void setThruDate(Date newThruDate) {
+		Date oldThruDate = thruDate;
 		thruDate = newThruDate;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PricePackage.PRODUCT_PRICE_RULE__THRU_DATE, oldThruDate, thruDate));
 	}
 
 	/**
@@ -312,7 +329,7 @@ public class ProductPriceRuleImpl extends BizEntityImpl implements ProductPriceR
 	@Override
 	public List<String> getProductPriceActions() {
 		if (productPriceActions == null) {
-			productPriceActions = new BasicInternalEList<String>(String.class);
+			productPriceActions = new EDataTypeUniqueEList<String>(String.class, this, PricePackage.PRODUCT_PRICE_RULE__PRODUCT_PRICE_ACTIONS);
 		}
 		return productPriceActions;
 	}
@@ -325,7 +342,7 @@ public class ProductPriceRuleImpl extends BizEntityImpl implements ProductPriceR
 	@Override
 	public List<String> getProductPriceConds() {
 		if (productPriceConds == null) {
-			productPriceConds = new BasicInternalEList<String>(String.class);
+			productPriceConds = new EDataTypeUniqueEList<String>(String.class, this, PricePackage.PRODUCT_PRICE_RULE__PRODUCT_PRICE_CONDS);
 		}
 		return productPriceConds;
 	}
@@ -359,7 +376,10 @@ public class ProductPriceRuleImpl extends BizEntityImpl implements ProductPriceR
 	 */
 	@Override
 	public void setProductPriceRuleId(String newProductPriceRuleId) {
+		String oldProductPriceRuleId = productPriceRuleId;
 		productPriceRuleId = newProductPriceRuleId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PricePackage.PRODUCT_PRICE_RULE__PRODUCT_PRICE_RULE_ID, oldProductPriceRuleId, productPriceRuleId));
 	}
 
 	/**

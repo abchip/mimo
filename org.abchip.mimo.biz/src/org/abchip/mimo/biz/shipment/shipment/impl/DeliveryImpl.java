@@ -18,10 +18,12 @@ import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.product.facility.Facility;
 import org.abchip.mimo.biz.shipment.shipment.Delivery;
 import org.abchip.mimo.biz.shipment.shipment.Shipment_Package;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -278,7 +280,10 @@ public class DeliveryImpl extends BizEntityImpl implements Delivery {
 	 */
 	@Override
 	public void setActualArrivalDate(Date newActualArrivalDate) {
+		Date oldActualArrivalDate = actualArrivalDate;
 		actualArrivalDate = newActualArrivalDate;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, Shipment_Package.DELIVERY__ACTUAL_ARRIVAL_DATE, oldActualArrivalDate, actualArrivalDate));
 	}
 
 	/**
@@ -298,7 +303,10 @@ public class DeliveryImpl extends BizEntityImpl implements Delivery {
 	 */
 	@Override
 	public void setActualStartDate(Date newActualStartDate) {
+		Date oldActualStartDate = actualStartDate;
 		actualStartDate = newActualStartDate;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, Shipment_Package.DELIVERY__ACTUAL_START_DATE, oldActualStartDate, actualStartDate));
 	}
 
 	/**
@@ -318,7 +326,10 @@ public class DeliveryImpl extends BizEntityImpl implements Delivery {
 	 */
 	@Override
 	public void setDeliveryId(String newDeliveryId) {
+		String oldDeliveryId = deliveryId;
 		deliveryId = newDeliveryId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, Shipment_Package.DELIVERY__DELIVERY_ID, oldDeliveryId, deliveryId));
 	}
 
 	/**
@@ -332,6 +343,8 @@ public class DeliveryImpl extends BizEntityImpl implements Delivery {
 			InternalEObject oldDestFacilityId = (InternalEObject)destFacilityId;
 			destFacilityId = (Facility)eResolveProxy(oldDestFacilityId);
 			if (destFacilityId != oldDestFacilityId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, Shipment_Package.DELIVERY__DEST_FACILITY_ID, oldDestFacilityId, destFacilityId));
 			}
 		}
 		return destFacilityId;
@@ -353,7 +366,10 @@ public class DeliveryImpl extends BizEntityImpl implements Delivery {
 	 */
 	@Override
 	public void setDestFacilityId(Facility newDestFacilityId) {
+		Facility oldDestFacilityId = destFacilityId;
 		destFacilityId = newDestFacilityId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, Shipment_Package.DELIVERY__DEST_FACILITY_ID, oldDestFacilityId, destFacilityId));
 	}
 
 	/**
@@ -373,7 +389,10 @@ public class DeliveryImpl extends BizEntityImpl implements Delivery {
 	 */
 	@Override
 	public void setEndMileage(BigDecimal newEndMileage) {
+		BigDecimal oldEndMileage = endMileage;
 		endMileage = newEndMileage;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, Shipment_Package.DELIVERY__END_MILEAGE, oldEndMileage, endMileage));
 	}
 
 	/**
@@ -393,7 +412,10 @@ public class DeliveryImpl extends BizEntityImpl implements Delivery {
 	 */
 	@Override
 	public void setEstimatedArrivalDate(Date newEstimatedArrivalDate) {
+		Date oldEstimatedArrivalDate = estimatedArrivalDate;
 		estimatedArrivalDate = newEstimatedArrivalDate;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, Shipment_Package.DELIVERY__ESTIMATED_ARRIVAL_DATE, oldEstimatedArrivalDate, estimatedArrivalDate));
 	}
 
 	/**
@@ -413,7 +435,10 @@ public class DeliveryImpl extends BizEntityImpl implements Delivery {
 	 */
 	@Override
 	public void setEstimatedStartDate(Date newEstimatedStartDate) {
+		Date oldEstimatedStartDate = estimatedStartDate;
 		estimatedStartDate = newEstimatedStartDate;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, Shipment_Package.DELIVERY__ESTIMATED_START_DATE, oldEstimatedStartDate, estimatedStartDate));
 	}
 
 	/**
@@ -427,6 +452,8 @@ public class DeliveryImpl extends BizEntityImpl implements Delivery {
 			InternalEObject oldFixedAssetId = (InternalEObject)fixedAssetId;
 			fixedAssetId = (FixedAsset)eResolveProxy(oldFixedAssetId);
 			if (fixedAssetId != oldFixedAssetId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, Shipment_Package.DELIVERY__FIXED_ASSET_ID, oldFixedAssetId, fixedAssetId));
 			}
 		}
 		return fixedAssetId;
@@ -448,7 +475,10 @@ public class DeliveryImpl extends BizEntityImpl implements Delivery {
 	 */
 	@Override
 	public void setFixedAssetId(FixedAsset newFixedAssetId) {
+		FixedAsset oldFixedAssetId = fixedAssetId;
 		fixedAssetId = newFixedAssetId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, Shipment_Package.DELIVERY__FIXED_ASSET_ID, oldFixedAssetId, fixedAssetId));
 	}
 
 	/**
@@ -468,7 +498,10 @@ public class DeliveryImpl extends BizEntityImpl implements Delivery {
 	 */
 	@Override
 	public void setFuelUsed(BigDecimal newFuelUsed) {
+		BigDecimal oldFuelUsed = fuelUsed;
 		fuelUsed = newFuelUsed;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, Shipment_Package.DELIVERY__FUEL_USED, oldFuelUsed, fuelUsed));
 	}
 
 	/**
@@ -482,6 +515,8 @@ public class DeliveryImpl extends BizEntityImpl implements Delivery {
 			InternalEObject oldOriginFacilityId = (InternalEObject)originFacilityId;
 			originFacilityId = (Facility)eResolveProxy(oldOriginFacilityId);
 			if (originFacilityId != oldOriginFacilityId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, Shipment_Package.DELIVERY__ORIGIN_FACILITY_ID, oldOriginFacilityId, originFacilityId));
 			}
 		}
 		return originFacilityId;
@@ -503,7 +538,10 @@ public class DeliveryImpl extends BizEntityImpl implements Delivery {
 	 */
 	@Override
 	public void setOriginFacilityId(Facility newOriginFacilityId) {
+		Facility oldOriginFacilityId = originFacilityId;
 		originFacilityId = newOriginFacilityId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, Shipment_Package.DELIVERY__ORIGIN_FACILITY_ID, oldOriginFacilityId, originFacilityId));
 	}
 
 	/**
@@ -523,7 +561,10 @@ public class DeliveryImpl extends BizEntityImpl implements Delivery {
 	 */
 	@Override
 	public void setStartMileage(BigDecimal newStartMileage) {
+		BigDecimal oldStartMileage = startMileage;
 		startMileage = newStartMileage;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, Shipment_Package.DELIVERY__START_MILEAGE, oldStartMileage, startMileage));
 	}
 
 	/**

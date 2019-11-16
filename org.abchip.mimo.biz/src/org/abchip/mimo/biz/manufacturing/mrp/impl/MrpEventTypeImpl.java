@@ -11,7 +11,9 @@ import org.abchip.mimo.biz.impl.BizEntityTypeImpl;
 import org.abchip.mimo.biz.manufacturing.mrp.MrpEvent;
 import org.abchip.mimo.biz.manufacturing.mrp.MrpEventType;
 import org.abchip.mimo.biz.manufacturing.mrp.MrpPackage;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -109,7 +111,10 @@ public class MrpEventTypeImpl extends BizEntityTypeImpl<MrpEvent> implements Mrp
 	 */
 	@Override
 	public void setMrpEventTypeId(String newMrpEventTypeId) {
+		String oldMrpEventTypeId = mrpEventTypeId;
 		mrpEventTypeId = newMrpEventTypeId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, MrpPackage.MRP_EVENT_TYPE__MRP_EVENT_TYPE_ID, oldMrpEventTypeId, mrpEventTypeId));
 	}
 
 	/**
@@ -129,7 +134,10 @@ public class MrpEventTypeImpl extends BizEntityTypeImpl<MrpEvent> implements Mrp
 	 */
 	@Override
 	public void setDescription(String newDescription) {
+		String oldDescription = description;
 		description = newDescription;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, MrpPackage.MRP_EVENT_TYPE__DESCRIPTION, oldDescription, description));
 	}
 
 	/**

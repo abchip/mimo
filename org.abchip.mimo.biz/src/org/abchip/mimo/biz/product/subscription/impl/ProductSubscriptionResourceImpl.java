@@ -16,9 +16,11 @@ import org.abchip.mimo.biz.product.product.Product;
 import org.abchip.mimo.biz.product.subscription.ProductSubscriptionResource;
 import org.abchip.mimo.biz.product.subscription.SubscriptionPackage;
 import org.abchip.mimo.biz.product.subscription.SubscriptionResource;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -393,7 +395,10 @@ public class ProductSubscriptionResourceImpl extends BizEntityImpl implements Pr
 	 */
 	@Override
 	public void setAvailableTime(long newAvailableTime) {
+		long oldAvailableTime = availableTime;
 		availableTime = newAvailableTime;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SubscriptionPackage.PRODUCT_SUBSCRIPTION_RESOURCE__AVAILABLE_TIME, oldAvailableTime, availableTime));
 	}
 
 	/**
@@ -407,6 +412,8 @@ public class ProductSubscriptionResourceImpl extends BizEntityImpl implements Pr
 			InternalEObject oldAvailableTimeUomId = (InternalEObject)availableTimeUomId;
 			availableTimeUomId = (Uom)eResolveProxy(oldAvailableTimeUomId);
 			if (availableTimeUomId != oldAvailableTimeUomId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, SubscriptionPackage.PRODUCT_SUBSCRIPTION_RESOURCE__AVAILABLE_TIME_UOM_ID, oldAvailableTimeUomId, availableTimeUomId));
 			}
 		}
 		return availableTimeUomId;
@@ -428,7 +435,10 @@ public class ProductSubscriptionResourceImpl extends BizEntityImpl implements Pr
 	 */
 	@Override
 	public void setAvailableTimeUomId(Uom newAvailableTimeUomId) {
+		Uom oldAvailableTimeUomId = availableTimeUomId;
 		availableTimeUomId = newAvailableTimeUomId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SubscriptionPackage.PRODUCT_SUBSCRIPTION_RESOURCE__AVAILABLE_TIME_UOM_ID, oldAvailableTimeUomId, availableTimeUomId));
 	}
 
 	/**
@@ -448,7 +458,10 @@ public class ProductSubscriptionResourceImpl extends BizEntityImpl implements Pr
 	 */
 	@Override
 	public void setCanclAutmExtTime(long newCanclAutmExtTime) {
+		long oldCanclAutmExtTime = canclAutmExtTime;
 		canclAutmExtTime = newCanclAutmExtTime;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SubscriptionPackage.PRODUCT_SUBSCRIPTION_RESOURCE__CANCL_AUTM_EXT_TIME, oldCanclAutmExtTime, canclAutmExtTime));
 	}
 
 	/**
@@ -462,6 +475,8 @@ public class ProductSubscriptionResourceImpl extends BizEntityImpl implements Pr
 			InternalEObject oldCanclAutmExtTimeUomId = (InternalEObject)canclAutmExtTimeUomId;
 			canclAutmExtTimeUomId = (Uom)eResolveProxy(oldCanclAutmExtTimeUomId);
 			if (canclAutmExtTimeUomId != oldCanclAutmExtTimeUomId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, SubscriptionPackage.PRODUCT_SUBSCRIPTION_RESOURCE__CANCL_AUTM_EXT_TIME_UOM_ID, oldCanclAutmExtTimeUomId, canclAutmExtTimeUomId));
 			}
 		}
 		return canclAutmExtTimeUomId;
@@ -483,7 +498,10 @@ public class ProductSubscriptionResourceImpl extends BizEntityImpl implements Pr
 	 */
 	@Override
 	public void setCanclAutmExtTimeUomId(Uom newCanclAutmExtTimeUomId) {
+		Uom oldCanclAutmExtTimeUomId = canclAutmExtTimeUomId;
 		canclAutmExtTimeUomId = newCanclAutmExtTimeUomId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SubscriptionPackage.PRODUCT_SUBSCRIPTION_RESOURCE__CANCL_AUTM_EXT_TIME_UOM_ID, oldCanclAutmExtTimeUomId, canclAutmExtTimeUomId));
 	}
 
 	/**
@@ -503,7 +521,10 @@ public class ProductSubscriptionResourceImpl extends BizEntityImpl implements Pr
 	 */
 	@Override
 	public void setFromDate(Date newFromDate) {
+		Date oldFromDate = fromDate;
 		fromDate = newFromDate;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SubscriptionPackage.PRODUCT_SUBSCRIPTION_RESOURCE__FROM_DATE, oldFromDate, fromDate));
 	}
 
 	/**
@@ -523,7 +544,10 @@ public class ProductSubscriptionResourceImpl extends BizEntityImpl implements Pr
 	 */
 	@Override
 	public void setAutomaticExtend(boolean newAutomaticExtend) {
+		boolean oldAutomaticExtend = automaticExtend;
 		automaticExtend = newAutomaticExtend;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SubscriptionPackage.PRODUCT_SUBSCRIPTION_RESOURCE__AUTOMATIC_EXTEND, oldAutomaticExtend, automaticExtend));
 	}
 
 	/**
@@ -543,7 +567,10 @@ public class ProductSubscriptionResourceImpl extends BizEntityImpl implements Pr
 	 */
 	@Override
 	public void setGracePeriodOnExpiry(long newGracePeriodOnExpiry) {
+		long oldGracePeriodOnExpiry = gracePeriodOnExpiry;
 		gracePeriodOnExpiry = newGracePeriodOnExpiry;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SubscriptionPackage.PRODUCT_SUBSCRIPTION_RESOURCE__GRACE_PERIOD_ON_EXPIRY, oldGracePeriodOnExpiry, gracePeriodOnExpiry));
 	}
 
 	/**
@@ -557,6 +584,8 @@ public class ProductSubscriptionResourceImpl extends BizEntityImpl implements Pr
 			InternalEObject oldGracePeriodOnExpiryUomId = (InternalEObject)gracePeriodOnExpiryUomId;
 			gracePeriodOnExpiryUomId = (Uom)eResolveProxy(oldGracePeriodOnExpiryUomId);
 			if (gracePeriodOnExpiryUomId != oldGracePeriodOnExpiryUomId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, SubscriptionPackage.PRODUCT_SUBSCRIPTION_RESOURCE__GRACE_PERIOD_ON_EXPIRY_UOM_ID, oldGracePeriodOnExpiryUomId, gracePeriodOnExpiryUomId));
 			}
 		}
 		return gracePeriodOnExpiryUomId;
@@ -578,7 +607,10 @@ public class ProductSubscriptionResourceImpl extends BizEntityImpl implements Pr
 	 */
 	@Override
 	public void setGracePeriodOnExpiryUomId(Uom newGracePeriodOnExpiryUomId) {
+		Uom oldGracePeriodOnExpiryUomId = gracePeriodOnExpiryUomId;
 		gracePeriodOnExpiryUomId = newGracePeriodOnExpiryUomId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SubscriptionPackage.PRODUCT_SUBSCRIPTION_RESOURCE__GRACE_PERIOD_ON_EXPIRY_UOM_ID, oldGracePeriodOnExpiryUomId, gracePeriodOnExpiryUomId));
 	}
 
 	/**
@@ -598,7 +630,10 @@ public class ProductSubscriptionResourceImpl extends BizEntityImpl implements Pr
 	 */
 	@Override
 	public void setMaxLifeTime(long newMaxLifeTime) {
+		long oldMaxLifeTime = maxLifeTime;
 		maxLifeTime = newMaxLifeTime;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SubscriptionPackage.PRODUCT_SUBSCRIPTION_RESOURCE__MAX_LIFE_TIME, oldMaxLifeTime, maxLifeTime));
 	}
 
 	/**
@@ -612,6 +647,8 @@ public class ProductSubscriptionResourceImpl extends BizEntityImpl implements Pr
 			InternalEObject oldMaxLifeTimeUomId = (InternalEObject)maxLifeTimeUomId;
 			maxLifeTimeUomId = (Uom)eResolveProxy(oldMaxLifeTimeUomId);
 			if (maxLifeTimeUomId != oldMaxLifeTimeUomId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, SubscriptionPackage.PRODUCT_SUBSCRIPTION_RESOURCE__MAX_LIFE_TIME_UOM_ID, oldMaxLifeTimeUomId, maxLifeTimeUomId));
 			}
 		}
 		return maxLifeTimeUomId;
@@ -633,7 +670,10 @@ public class ProductSubscriptionResourceImpl extends BizEntityImpl implements Pr
 	 */
 	@Override
 	public void setMaxLifeTimeUomId(Uom newMaxLifeTimeUomId) {
+		Uom oldMaxLifeTimeUomId = maxLifeTimeUomId;
 		maxLifeTimeUomId = newMaxLifeTimeUomId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SubscriptionPackage.PRODUCT_SUBSCRIPTION_RESOURCE__MAX_LIFE_TIME_UOM_ID, oldMaxLifeTimeUomId, maxLifeTimeUomId));
 	}
 
 	/**
@@ -653,7 +693,10 @@ public class ProductSubscriptionResourceImpl extends BizEntityImpl implements Pr
 	 */
 	@Override
 	public void setPurchaseFromDate(Date newPurchaseFromDate) {
+		Date oldPurchaseFromDate = purchaseFromDate;
 		purchaseFromDate = newPurchaseFromDate;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SubscriptionPackage.PRODUCT_SUBSCRIPTION_RESOURCE__PURCHASE_FROM_DATE, oldPurchaseFromDate, purchaseFromDate));
 	}
 
 	/**
@@ -673,7 +716,10 @@ public class ProductSubscriptionResourceImpl extends BizEntityImpl implements Pr
 	 */
 	@Override
 	public void setPurchaseThruDate(Date newPurchaseThruDate) {
+		Date oldPurchaseThruDate = purchaseThruDate;
 		purchaseThruDate = newPurchaseThruDate;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SubscriptionPackage.PRODUCT_SUBSCRIPTION_RESOURCE__PURCHASE_THRU_DATE, oldPurchaseThruDate, purchaseThruDate));
 	}
 
 	/**
@@ -693,7 +739,10 @@ public class ProductSubscriptionResourceImpl extends BizEntityImpl implements Pr
 	 */
 	@Override
 	public void setThruDate(Date newThruDate) {
+		Date oldThruDate = thruDate;
 		thruDate = newThruDate;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SubscriptionPackage.PRODUCT_SUBSCRIPTION_RESOURCE__THRU_DATE, oldThruDate, thruDate));
 	}
 
 	/**
@@ -713,7 +762,10 @@ public class ProductSubscriptionResourceImpl extends BizEntityImpl implements Pr
 	 */
 	@Override
 	public void setUseCountLimit(long newUseCountLimit) {
+		long oldUseCountLimit = useCountLimit;
 		useCountLimit = newUseCountLimit;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SubscriptionPackage.PRODUCT_SUBSCRIPTION_RESOURCE__USE_COUNT_LIMIT, oldUseCountLimit, useCountLimit));
 	}
 
 	/**
@@ -727,6 +779,8 @@ public class ProductSubscriptionResourceImpl extends BizEntityImpl implements Pr
 			InternalEObject oldUseRoleTypeId = (InternalEObject)useRoleTypeId;
 			useRoleTypeId = (RoleType)eResolveProxy(oldUseRoleTypeId);
 			if (useRoleTypeId != oldUseRoleTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, SubscriptionPackage.PRODUCT_SUBSCRIPTION_RESOURCE__USE_ROLE_TYPE_ID, oldUseRoleTypeId, useRoleTypeId));
 			}
 		}
 		return useRoleTypeId;
@@ -748,7 +802,10 @@ public class ProductSubscriptionResourceImpl extends BizEntityImpl implements Pr
 	 */
 	@Override
 	public void setUseRoleTypeId(RoleType newUseRoleTypeId) {
+		RoleType oldUseRoleTypeId = useRoleTypeId;
 		useRoleTypeId = newUseRoleTypeId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SubscriptionPackage.PRODUCT_SUBSCRIPTION_RESOURCE__USE_ROLE_TYPE_ID, oldUseRoleTypeId, useRoleTypeId));
 	}
 
 	/**
@@ -768,7 +825,10 @@ public class ProductSubscriptionResourceImpl extends BizEntityImpl implements Pr
 	 */
 	@Override
 	public void setUseTime(long newUseTime) {
+		long oldUseTime = useTime;
 		useTime = newUseTime;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SubscriptionPackage.PRODUCT_SUBSCRIPTION_RESOURCE__USE_TIME, oldUseTime, useTime));
 	}
 
 	/**
@@ -782,6 +842,8 @@ public class ProductSubscriptionResourceImpl extends BizEntityImpl implements Pr
 			InternalEObject oldUseTimeUomId = (InternalEObject)useTimeUomId;
 			useTimeUomId = (Uom)eResolveProxy(oldUseTimeUomId);
 			if (useTimeUomId != oldUseTimeUomId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, SubscriptionPackage.PRODUCT_SUBSCRIPTION_RESOURCE__USE_TIME_UOM_ID, oldUseTimeUomId, useTimeUomId));
 			}
 		}
 		return useTimeUomId;
@@ -803,7 +865,10 @@ public class ProductSubscriptionResourceImpl extends BizEntityImpl implements Pr
 	 */
 	@Override
 	public void setUseTimeUomId(Uom newUseTimeUomId) {
+		Uom oldUseTimeUomId = useTimeUomId;
 		useTimeUomId = newUseTimeUomId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SubscriptionPackage.PRODUCT_SUBSCRIPTION_RESOURCE__USE_TIME_UOM_ID, oldUseTimeUomId, useTimeUomId));
 	}
 
 	/**
@@ -817,6 +882,8 @@ public class ProductSubscriptionResourceImpl extends BizEntityImpl implements Pr
 			InternalEObject oldProductId = (InternalEObject)productId;
 			productId = (Product)eResolveProxy(oldProductId);
 			if (productId != oldProductId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, SubscriptionPackage.PRODUCT_SUBSCRIPTION_RESOURCE__PRODUCT_ID, oldProductId, productId));
 			}
 		}
 		return productId;
@@ -838,7 +905,10 @@ public class ProductSubscriptionResourceImpl extends BizEntityImpl implements Pr
 	 */
 	@Override
 	public void setProductId(Product newProductId) {
+		Product oldProductId = productId;
 		productId = newProductId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SubscriptionPackage.PRODUCT_SUBSCRIPTION_RESOURCE__PRODUCT_ID, oldProductId, productId));
 	}
 
 	/**
@@ -852,6 +922,8 @@ public class ProductSubscriptionResourceImpl extends BizEntityImpl implements Pr
 			InternalEObject oldSubscriptionResourceId = (InternalEObject)subscriptionResourceId;
 			subscriptionResourceId = (SubscriptionResource)eResolveProxy(oldSubscriptionResourceId);
 			if (subscriptionResourceId != oldSubscriptionResourceId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, SubscriptionPackage.PRODUCT_SUBSCRIPTION_RESOURCE__SUBSCRIPTION_RESOURCE_ID, oldSubscriptionResourceId, subscriptionResourceId));
 			}
 		}
 		return subscriptionResourceId;
@@ -873,7 +945,10 @@ public class ProductSubscriptionResourceImpl extends BizEntityImpl implements Pr
 	 */
 	@Override
 	public void setSubscriptionResourceId(SubscriptionResource newSubscriptionResourceId) {
+		SubscriptionResource oldSubscriptionResourceId = subscriptionResourceId;
 		subscriptionResourceId = newSubscriptionResourceId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SubscriptionPackage.PRODUCT_SUBSCRIPTION_RESOURCE__SUBSCRIPTION_RESOURCE_ID, oldSubscriptionResourceId, subscriptionResourceId));
 	}
 
 	/**

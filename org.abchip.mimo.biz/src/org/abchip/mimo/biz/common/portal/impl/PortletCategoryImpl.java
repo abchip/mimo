@@ -12,7 +12,9 @@ import java.util.List;
 import org.abchip.mimo.biz.common.portal.PortalPackage;
 import org.abchip.mimo.biz.common.portal.PortletCategory;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -106,7 +108,10 @@ public class PortletCategoryImpl extends BizEntityImpl implements PortletCategor
 	 */
 	@Override
 	public void setDescription(String newDescription) {
+		String oldDescription = description;
 		description = newDescription;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PortalPackage.PORTLET_CATEGORY__DESCRIPTION, oldDescription, description));
 	}
 
 	/**
@@ -138,7 +143,10 @@ public class PortletCategoryImpl extends BizEntityImpl implements PortletCategor
 	 */
 	@Override
 	public void setPortletCategoryId(String newPortletCategoryId) {
+		String oldPortletCategoryId = portletCategoryId;
 		portletCategoryId = newPortletCategoryId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PortalPackage.PORTLET_CATEGORY__PORTLET_CATEGORY_ID, oldPortletCategoryId, portletCategoryId));
 	}
 
 	/**

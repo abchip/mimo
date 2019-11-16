@@ -15,9 +15,11 @@ import org.abchip.mimo.biz.accounting.payment.PaymentPackage;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.party.party.Party;
 import org.abchip.mimo.biz.party.party.RoleType;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -141,7 +143,10 @@ public class BillingAccountRoleImpl extends BizEntityImpl implements BillingAcco
 	 */
 	@Override
 	public void setFromDate(Date newFromDate) {
+		Date oldFromDate = fromDate;
 		fromDate = newFromDate;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.BILLING_ACCOUNT_ROLE__FROM_DATE, oldFromDate, fromDate));
 	}
 
 	/**
@@ -155,6 +160,8 @@ public class BillingAccountRoleImpl extends BizEntityImpl implements BillingAcco
 			InternalEObject oldPartyId = (InternalEObject)partyId;
 			partyId = (Party)eResolveProxy(oldPartyId);
 			if (partyId != oldPartyId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PaymentPackage.BILLING_ACCOUNT_ROLE__PARTY_ID, oldPartyId, partyId));
 			}
 		}
 		return partyId;
@@ -176,7 +183,10 @@ public class BillingAccountRoleImpl extends BizEntityImpl implements BillingAcco
 	 */
 	@Override
 	public void setPartyId(Party newPartyId) {
+		Party oldPartyId = partyId;
 		partyId = newPartyId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.BILLING_ACCOUNT_ROLE__PARTY_ID, oldPartyId, partyId));
 	}
 
 	/**
@@ -190,6 +200,8 @@ public class BillingAccountRoleImpl extends BizEntityImpl implements BillingAcco
 			InternalEObject oldRoleTypeId = (InternalEObject)roleTypeId;
 			roleTypeId = (RoleType)eResolveProxy(oldRoleTypeId);
 			if (roleTypeId != oldRoleTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PaymentPackage.BILLING_ACCOUNT_ROLE__ROLE_TYPE_ID, oldRoleTypeId, roleTypeId));
 			}
 		}
 		return roleTypeId;
@@ -211,7 +223,10 @@ public class BillingAccountRoleImpl extends BizEntityImpl implements BillingAcco
 	 */
 	@Override
 	public void setRoleTypeId(RoleType newRoleTypeId) {
+		RoleType oldRoleTypeId = roleTypeId;
 		roleTypeId = newRoleTypeId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.BILLING_ACCOUNT_ROLE__ROLE_TYPE_ID, oldRoleTypeId, roleTypeId));
 	}
 
 	/**
@@ -231,7 +246,10 @@ public class BillingAccountRoleImpl extends BizEntityImpl implements BillingAcco
 	 */
 	@Override
 	public void setThruDate(Date newThruDate) {
+		Date oldThruDate = thruDate;
 		thruDate = newThruDate;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.BILLING_ACCOUNT_ROLE__THRU_DATE, oldThruDate, thruDate));
 	}
 
 	/**
@@ -245,6 +263,8 @@ public class BillingAccountRoleImpl extends BizEntityImpl implements BillingAcco
 			InternalEObject oldBillingAccountId = (InternalEObject)billingAccountId;
 			billingAccountId = (BillingAccount)eResolveProxy(oldBillingAccountId);
 			if (billingAccountId != oldBillingAccountId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PaymentPackage.BILLING_ACCOUNT_ROLE__BILLING_ACCOUNT_ID, oldBillingAccountId, billingAccountId));
 			}
 		}
 		return billingAccountId;
@@ -266,7 +286,10 @@ public class BillingAccountRoleImpl extends BizEntityImpl implements BillingAcco
 	 */
 	@Override
 	public void setBillingAccountId(BillingAccount newBillingAccountId) {
+		BillingAccount oldBillingAccountId = billingAccountId;
 		billingAccountId = newBillingAccountId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.BILLING_ACCOUNT_ROLE__BILLING_ACCOUNT_ID, oldBillingAccountId, billingAccountId));
 	}
 
 	/**

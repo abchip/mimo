@@ -11,9 +11,11 @@ import org.abchip.mimo.biz.accounting.payment.PaymentGatewayConfig;
 import org.abchip.mimo.biz.accounting.payment.PaymentGatewayConfigType;
 import org.abchip.mimo.biz.accounting.payment.PaymentPackage;
 import org.abchip.mimo.biz.impl.BizEntityTypedImpl;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -118,7 +120,10 @@ public class PaymentGatewayConfigImpl extends BizEntityTypedImpl<PaymentGatewayC
 	 */
 	@Override
 	public void setDescription(String newDescription) {
+		String oldDescription = description;
 		description = newDescription;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.PAYMENT_GATEWAY_CONFIG__DESCRIPTION, oldDescription, description));
 	}
 
 	/**
@@ -132,6 +137,8 @@ public class PaymentGatewayConfigImpl extends BizEntityTypedImpl<PaymentGatewayC
 			InternalEObject oldPaymentGatewayConfigTypeId = (InternalEObject)paymentGatewayConfigTypeId;
 			paymentGatewayConfigTypeId = (PaymentGatewayConfigType)eResolveProxy(oldPaymentGatewayConfigTypeId);
 			if (paymentGatewayConfigTypeId != oldPaymentGatewayConfigTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PaymentPackage.PAYMENT_GATEWAY_CONFIG__PAYMENT_GATEWAY_CONFIG_TYPE_ID, oldPaymentGatewayConfigTypeId, paymentGatewayConfigTypeId));
 			}
 		}
 		return paymentGatewayConfigTypeId;
@@ -153,7 +160,10 @@ public class PaymentGatewayConfigImpl extends BizEntityTypedImpl<PaymentGatewayC
 	 */
 	@Override
 	public void setPaymentGatewayConfigTypeId(PaymentGatewayConfigType newPaymentGatewayConfigTypeId) {
+		PaymentGatewayConfigType oldPaymentGatewayConfigTypeId = paymentGatewayConfigTypeId;
 		paymentGatewayConfigTypeId = newPaymentGatewayConfigTypeId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.PAYMENT_GATEWAY_CONFIG__PAYMENT_GATEWAY_CONFIG_TYPE_ID, oldPaymentGatewayConfigTypeId, paymentGatewayConfigTypeId));
 	}
 
 	/**
@@ -173,7 +183,10 @@ public class PaymentGatewayConfigImpl extends BizEntityTypedImpl<PaymentGatewayC
 	 */
 	@Override
 	public void setPaymentGatewayConfigId(String newPaymentGatewayConfigId) {
+		String oldPaymentGatewayConfigId = paymentGatewayConfigId;
 		paymentGatewayConfigId = newPaymentGatewayConfigId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.PAYMENT_GATEWAY_CONFIG__PAYMENT_GATEWAY_CONFIG_ID, oldPaymentGatewayConfigId, paymentGatewayConfigId));
 	}
 
 	/**

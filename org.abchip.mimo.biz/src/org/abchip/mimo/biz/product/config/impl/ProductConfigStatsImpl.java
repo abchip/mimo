@@ -11,10 +11,12 @@ import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.product.config.ConfigPackage;
 import org.abchip.mimo.biz.product.config.ProductConfigStats;
 import org.abchip.mimo.biz.product.product.Product;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -144,7 +146,10 @@ public class ProductConfigStatsImpl extends BizEntityImpl implements ProductConf
 	 */
 	@Override
 	public void setConfigId(String newConfigId) {
+		String oldConfigId = configId;
 		configId = newConfigId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ConfigPackage.PRODUCT_CONFIG_STATS__CONFIG_ID, oldConfigId, configId));
 	}
 
 	/**
@@ -164,7 +169,10 @@ public class ProductConfigStatsImpl extends BizEntityImpl implements ProductConf
 	 */
 	@Override
 	public void setConfigTypeId(String newConfigTypeId) {
+		String oldConfigTypeId = configTypeId;
 		configTypeId = newConfigTypeId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ConfigPackage.PRODUCT_CONFIG_STATS__CONFIG_TYPE_ID, oldConfigTypeId, configTypeId));
 	}
 
 	/**
@@ -184,7 +192,10 @@ public class ProductConfigStatsImpl extends BizEntityImpl implements ProductConf
 	 */
 	@Override
 	public void setNumOfConfs(long newNumOfConfs) {
+		long oldNumOfConfs = numOfConfs;
 		numOfConfs = newNumOfConfs;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ConfigPackage.PRODUCT_CONFIG_STATS__NUM_OF_CONFS, oldNumOfConfs, numOfConfs));
 	}
 
 	/**
@@ -198,6 +209,8 @@ public class ProductConfigStatsImpl extends BizEntityImpl implements ProductConf
 			InternalEObject oldProductId = (InternalEObject)productId;
 			productId = (Product)eResolveProxy(oldProductId);
 			if (productId != oldProductId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ConfigPackage.PRODUCT_CONFIG_STATS__PRODUCT_ID, oldProductId, productId));
 			}
 		}
 		return productId;
@@ -219,7 +232,10 @@ public class ProductConfigStatsImpl extends BizEntityImpl implements ProductConf
 	 */
 	@Override
 	public void setProductId(Product newProductId) {
+		Product oldProductId = productId;
 		productId = newProductId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ConfigPackage.PRODUCT_CONFIG_STATS__PRODUCT_ID, oldProductId, productId));
 	}
 
 	/**

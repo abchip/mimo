@@ -13,7 +13,9 @@ import org.abchip.mimo.biz.impl.BizEntityTypeImpl;
 import org.abchip.mimo.biz.marketing.segment.SegmentGroup;
 import org.abchip.mimo.biz.marketing.segment.SegmentGroupType;
 import org.abchip.mimo.biz.marketing.segment.SegmentPackage;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -111,7 +113,10 @@ public class SegmentGroupTypeImpl extends BizEntityTypeImpl<SegmentGroup> implem
 	 */
 	@Override
 	public void setDescription(String newDescription) {
+		String oldDescription = description;
 		description = newDescription;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SegmentPackage.SEGMENT_GROUP_TYPE__DESCRIPTION, oldDescription, description));
 	}
 
 	/**
@@ -143,7 +148,10 @@ public class SegmentGroupTypeImpl extends BizEntityTypeImpl<SegmentGroup> implem
 	 */
 	@Override
 	public void setSegmentGroupTypeId(String newSegmentGroupTypeId) {
+		String oldSegmentGroupTypeId = segmentGroupTypeId;
 		segmentGroupTypeId = newSegmentGroupTypeId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SegmentPackage.SEGMENT_GROUP_TYPE__SEGMENT_GROUP_TYPE_ID, oldSegmentGroupTypeId, segmentGroupTypeId));
 	}
 
 	/**

@@ -15,10 +15,12 @@ import org.abchip.mimo.biz.humanres.ability.PartyQual;
 import org.abchip.mimo.biz.humanres.ability.PartyQualType;
 import org.abchip.mimo.biz.impl.BizEntityTypedImpl;
 import org.abchip.mimo.biz.party.party.Party;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -202,7 +204,10 @@ public class PartyQualImpl extends BizEntityTypedImpl<PartyQualType> implements 
 	 */
 	@Override
 	public void setFromDate(Date newFromDate) {
+		Date oldFromDate = fromDate;
 		fromDate = newFromDate;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, AbilityPackage.PARTY_QUAL__FROM_DATE, oldFromDate, fromDate));
 	}
 
 	/**
@@ -216,6 +221,8 @@ public class PartyQualImpl extends BizEntityTypedImpl<PartyQualType> implements 
 			InternalEObject oldPartyId = (InternalEObject)partyId;
 			partyId = (Party)eResolveProxy(oldPartyId);
 			if (partyId != oldPartyId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, AbilityPackage.PARTY_QUAL__PARTY_ID, oldPartyId, partyId));
 			}
 		}
 		return partyId;
@@ -237,7 +244,10 @@ public class PartyQualImpl extends BizEntityTypedImpl<PartyQualType> implements 
 	 */
 	@Override
 	public void setPartyId(Party newPartyId) {
+		Party oldPartyId = partyId;
 		partyId = newPartyId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, AbilityPackage.PARTY_QUAL__PARTY_ID, oldPartyId, partyId));
 	}
 
 	/**
@@ -251,6 +261,8 @@ public class PartyQualImpl extends BizEntityTypedImpl<PartyQualType> implements 
 			InternalEObject oldPartyQualTypeId = (InternalEObject)partyQualTypeId;
 			partyQualTypeId = (PartyQualType)eResolveProxy(oldPartyQualTypeId);
 			if (partyQualTypeId != oldPartyQualTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, AbilityPackage.PARTY_QUAL__PARTY_QUAL_TYPE_ID, oldPartyQualTypeId, partyQualTypeId));
 			}
 		}
 		return partyQualTypeId;
@@ -272,7 +284,10 @@ public class PartyQualImpl extends BizEntityTypedImpl<PartyQualType> implements 
 	 */
 	@Override
 	public void setPartyQualTypeId(PartyQualType newPartyQualTypeId) {
+		PartyQualType oldPartyQualTypeId = partyQualTypeId;
 		partyQualTypeId = newPartyQualTypeId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, AbilityPackage.PARTY_QUAL__PARTY_QUAL_TYPE_ID, oldPartyQualTypeId, partyQualTypeId));
 	}
 
 	/**
@@ -292,7 +307,10 @@ public class PartyQualImpl extends BizEntityTypedImpl<PartyQualType> implements 
 	 */
 	@Override
 	public void setQualificationDesc(String newQualificationDesc) {
+		String oldQualificationDesc = qualificationDesc;
 		qualificationDesc = newQualificationDesc;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, AbilityPackage.PARTY_QUAL__QUALIFICATION_DESC, oldQualificationDesc, qualificationDesc));
 	}
 
 	/**
@@ -306,6 +324,8 @@ public class PartyQualImpl extends BizEntityTypedImpl<PartyQualType> implements 
 			InternalEObject oldStatusId = (InternalEObject)statusId;
 			statusId = (StatusItem)eResolveProxy(oldStatusId);
 			if (statusId != oldStatusId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, AbilityPackage.PARTY_QUAL__STATUS_ID, oldStatusId, statusId));
 			}
 		}
 		return statusId;
@@ -327,7 +347,10 @@ public class PartyQualImpl extends BizEntityTypedImpl<PartyQualType> implements 
 	 */
 	@Override
 	public void setStatusId(StatusItem newStatusId) {
+		StatusItem oldStatusId = statusId;
 		statusId = newStatusId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, AbilityPackage.PARTY_QUAL__STATUS_ID, oldStatusId, statusId));
 	}
 
 	/**
@@ -347,7 +370,10 @@ public class PartyQualImpl extends BizEntityTypedImpl<PartyQualType> implements 
 	 */
 	@Override
 	public void setThruDate(Date newThruDate) {
+		Date oldThruDate = thruDate;
 		thruDate = newThruDate;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, AbilityPackage.PARTY_QUAL__THRU_DATE, oldThruDate, thruDate));
 	}
 
 	/**
@@ -367,7 +393,10 @@ public class PartyQualImpl extends BizEntityTypedImpl<PartyQualType> implements 
 	 */
 	@Override
 	public void setTitle(String newTitle) {
+		String oldTitle = title;
 		title = newTitle;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, AbilityPackage.PARTY_QUAL__TITLE, oldTitle, title));
 	}
 
 	/**
@@ -381,6 +410,8 @@ public class PartyQualImpl extends BizEntityTypedImpl<PartyQualType> implements 
 			InternalEObject oldVerifStatusId = (InternalEObject)verifStatusId;
 			verifStatusId = (StatusItem)eResolveProxy(oldVerifStatusId);
 			if (verifStatusId != oldVerifStatusId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, AbilityPackage.PARTY_QUAL__VERIF_STATUS_ID, oldVerifStatusId, verifStatusId));
 			}
 		}
 		return verifStatusId;
@@ -402,7 +433,10 @@ public class PartyQualImpl extends BizEntityTypedImpl<PartyQualType> implements 
 	 */
 	@Override
 	public void setVerifStatusId(StatusItem newVerifStatusId) {
+		StatusItem oldVerifStatusId = verifStatusId;
 		verifStatusId = newVerifStatusId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, AbilityPackage.PARTY_QUAL__VERIF_STATUS_ID, oldVerifStatusId, verifStatusId));
 	}
 
 	/**

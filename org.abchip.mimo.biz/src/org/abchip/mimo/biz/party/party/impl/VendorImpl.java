@@ -11,9 +11,11 @@ import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.party.party.Party;
 import org.abchip.mimo.biz.party.party.PartyPackage;
 import org.abchip.mimo.biz.party.party.Vendor;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -155,7 +157,10 @@ public class VendorImpl extends BizEntityImpl implements Vendor {
 	 */
 	@Override
 	public void setManifestCompanyName(String newManifestCompanyName) {
+		String oldManifestCompanyName = manifestCompanyName;
 		manifestCompanyName = newManifestCompanyName;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PartyPackage.VENDOR__MANIFEST_COMPANY_NAME, oldManifestCompanyName, manifestCompanyName));
 	}
 
 	/**
@@ -175,7 +180,10 @@ public class VendorImpl extends BizEntityImpl implements Vendor {
 	 */
 	@Override
 	public void setManifestCompanyTitle(String newManifestCompanyTitle) {
+		String oldManifestCompanyTitle = manifestCompanyTitle;
 		manifestCompanyTitle = newManifestCompanyTitle;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PartyPackage.VENDOR__MANIFEST_COMPANY_TITLE, oldManifestCompanyTitle, manifestCompanyTitle));
 	}
 
 	/**
@@ -195,7 +203,10 @@ public class VendorImpl extends BizEntityImpl implements Vendor {
 	 */
 	@Override
 	public void setManifestLogoUrl(String newManifestLogoUrl) {
+		String oldManifestLogoUrl = manifestLogoUrl;
 		manifestLogoUrl = newManifestLogoUrl;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PartyPackage.VENDOR__MANIFEST_LOGO_URL, oldManifestLogoUrl, manifestLogoUrl));
 	}
 
 	/**
@@ -215,7 +226,10 @@ public class VendorImpl extends BizEntityImpl implements Vendor {
 	 */
 	@Override
 	public void setManifestPolicies(String newManifestPolicies) {
+		String oldManifestPolicies = manifestPolicies;
 		manifestPolicies = newManifestPolicies;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PartyPackage.VENDOR__MANIFEST_POLICIES, oldManifestPolicies, manifestPolicies));
 	}
 
 	/**
@@ -229,6 +243,8 @@ public class VendorImpl extends BizEntityImpl implements Vendor {
 			InternalEObject oldPartyId = (InternalEObject)partyId;
 			partyId = (Party)eResolveProxy(oldPartyId);
 			if (partyId != oldPartyId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PartyPackage.VENDOR__PARTY_ID, oldPartyId, partyId));
 			}
 		}
 		return partyId;
@@ -250,7 +266,10 @@ public class VendorImpl extends BizEntityImpl implements Vendor {
 	 */
 	@Override
 	public void setPartyId(Party newPartyId) {
+		Party oldPartyId = partyId;
 		partyId = newPartyId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PartyPackage.VENDOR__PARTY_ID, oldPartyId, partyId));
 	}
 
 	/**

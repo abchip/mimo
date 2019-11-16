@@ -12,10 +12,12 @@ import java.util.List;
 import org.abchip.mimo.biz.humanres.ability.AbilityPackage;
 import org.abchip.mimo.biz.humanres.ability.SkillType;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -145,7 +147,10 @@ public class SkillTypeImpl extends BizEntityImpl implements SkillType {
 	 */
 	@Override
 	public void setDescription(String newDescription) {
+		String oldDescription = description;
 		description = newDescription;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, AbilityPackage.SKILL_TYPE__DESCRIPTION, oldDescription, description));
 	}
 
 	/**
@@ -165,7 +170,10 @@ public class SkillTypeImpl extends BizEntityImpl implements SkillType {
 	 */
 	@Override
 	public void setHasTable(boolean newHasTable) {
+		boolean oldHasTable = hasTable;
 		hasTable = newHasTable;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, AbilityPackage.SKILL_TYPE__HAS_TABLE, oldHasTable, hasTable));
 	}
 
 	/**
@@ -179,6 +187,8 @@ public class SkillTypeImpl extends BizEntityImpl implements SkillType {
 			InternalEObject oldParentTypeId = (InternalEObject)parentTypeId;
 			parentTypeId = (SkillType)eResolveProxy(oldParentTypeId);
 			if (parentTypeId != oldParentTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, AbilityPackage.SKILL_TYPE__PARENT_TYPE_ID, oldParentTypeId, parentTypeId));
 			}
 		}
 		return parentTypeId;
@@ -200,7 +210,10 @@ public class SkillTypeImpl extends BizEntityImpl implements SkillType {
 	 */
 	@Override
 	public void setParentTypeId(SkillType newParentTypeId) {
+		SkillType oldParentTypeId = parentTypeId;
 		parentTypeId = newParentTypeId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, AbilityPackage.SKILL_TYPE__PARENT_TYPE_ID, oldParentTypeId, parentTypeId));
 	}
 
 	/**
@@ -280,7 +293,10 @@ public class SkillTypeImpl extends BizEntityImpl implements SkillType {
 	 */
 	@Override
 	public void setSkillTypeId(String newSkillTypeId) {
+		String oldSkillTypeId = skillTypeId;
 		skillTypeId = newSkillTypeId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, AbilityPackage.SKILL_TYPE__SKILL_TYPE_ID, oldSkillTypeId, skillTypeId));
 	}
 
 	/**

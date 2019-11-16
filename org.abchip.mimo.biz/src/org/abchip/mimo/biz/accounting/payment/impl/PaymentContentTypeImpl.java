@@ -13,9 +13,11 @@ import org.abchip.mimo.biz.accounting.payment.PaymentContent;
 import org.abchip.mimo.biz.accounting.payment.PaymentContentType;
 import org.abchip.mimo.biz.accounting.payment.PaymentPackage;
 import org.abchip.mimo.biz.impl.BizEntityTypeImpl;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -138,7 +140,10 @@ public class PaymentContentTypeImpl extends BizEntityTypeImpl<PaymentContent> im
 	 */
 	@Override
 	public void setDescription(String newDescription) {
+		String oldDescription = description;
 		description = newDescription;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.PAYMENT_CONTENT_TYPE__DESCRIPTION, oldDescription, description));
 	}
 
 	/**
@@ -158,7 +163,10 @@ public class PaymentContentTypeImpl extends BizEntityTypeImpl<PaymentContent> im
 	 */
 	@Override
 	public void setHasTable(boolean newHasTable) {
+		boolean oldHasTable = hasTable;
 		hasTable = newHasTable;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.PAYMENT_CONTENT_TYPE__HAS_TABLE, oldHasTable, hasTable));
 	}
 
 	/**
@@ -172,6 +180,8 @@ public class PaymentContentTypeImpl extends BizEntityTypeImpl<PaymentContent> im
 			InternalEObject oldParentTypeId = (InternalEObject)parentTypeId;
 			parentTypeId = (PaymentContentType)eResolveProxy(oldParentTypeId);
 			if (parentTypeId != oldParentTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PaymentPackage.PAYMENT_CONTENT_TYPE__PARENT_TYPE_ID, oldParentTypeId, parentTypeId));
 			}
 		}
 		return parentTypeId;
@@ -193,7 +203,10 @@ public class PaymentContentTypeImpl extends BizEntityTypeImpl<PaymentContent> im
 	 */
 	@Override
 	public void setParentTypeId(PaymentContentType newParentTypeId) {
+		PaymentContentType oldParentTypeId = parentTypeId;
 		parentTypeId = newParentTypeId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.PAYMENT_CONTENT_TYPE__PARENT_TYPE_ID, oldParentTypeId, parentTypeId));
 	}
 
 	/**
@@ -225,7 +238,10 @@ public class PaymentContentTypeImpl extends BizEntityTypeImpl<PaymentContent> im
 	 */
 	@Override
 	public void setPaymentContentTypeId(String newPaymentContentTypeId) {
+		String oldPaymentContentTypeId = paymentContentTypeId;
 		paymentContentTypeId = newPaymentContentTypeId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.PAYMENT_CONTENT_TYPE__PAYMENT_CONTENT_TYPE_ID, oldPaymentContentTypeId, paymentContentTypeId));
 	}
 
 	/**

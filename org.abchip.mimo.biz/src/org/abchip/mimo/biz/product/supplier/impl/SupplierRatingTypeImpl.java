@@ -10,7 +10,9 @@ package org.abchip.mimo.biz.product.supplier.impl;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.product.supplier.SupplierPackage;
 import org.abchip.mimo.biz.product.supplier.SupplierRatingType;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -108,7 +110,10 @@ public class SupplierRatingTypeImpl extends BizEntityImpl implements SupplierRat
 	 */
 	@Override
 	public void setDescription(String newDescription) {
+		String oldDescription = description;
 		description = newDescription;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SupplierPackage.SUPPLIER_RATING_TYPE__DESCRIPTION, oldDescription, description));
 	}
 
 	/**
@@ -128,7 +133,10 @@ public class SupplierRatingTypeImpl extends BizEntityImpl implements SupplierRat
 	 */
 	@Override
 	public void setSupplierRatingTypeId(String newSupplierRatingTypeId) {
+		String oldSupplierRatingTypeId = supplierRatingTypeId;
 		supplierRatingTypeId = newSupplierRatingTypeId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SupplierPackage.SUPPLIER_RATING_TYPE__SUPPLIER_RATING_TYPE_ID, oldSupplierRatingTypeId, supplierRatingTypeId));
 	}
 
 	/**

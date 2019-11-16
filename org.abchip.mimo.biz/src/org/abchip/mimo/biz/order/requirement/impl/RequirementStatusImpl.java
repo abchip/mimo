@@ -15,10 +15,12 @@ import org.abchip.mimo.biz.order.requirement.Requirement;
 import org.abchip.mimo.biz.order.requirement.RequirementPackage;
 import org.abchip.mimo.biz.order.requirement.RequirementStatus;
 import org.abchip.mimo.biz.security.login.UserLogin;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -122,6 +124,8 @@ public class RequirementStatusImpl extends BizEntityImpl implements RequirementS
 			InternalEObject oldChangeByUserLoginId = (InternalEObject)changeByUserLoginId;
 			changeByUserLoginId = (UserLogin)eResolveProxy(oldChangeByUserLoginId);
 			if (changeByUserLoginId != oldChangeByUserLoginId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, RequirementPackage.REQUIREMENT_STATUS__CHANGE_BY_USER_LOGIN_ID, oldChangeByUserLoginId, changeByUserLoginId));
 			}
 		}
 		return changeByUserLoginId;
@@ -143,7 +147,10 @@ public class RequirementStatusImpl extends BizEntityImpl implements RequirementS
 	 */
 	@Override
 	public void setChangeByUserLoginId(UserLogin newChangeByUserLoginId) {
+		UserLogin oldChangeByUserLoginId = changeByUserLoginId;
 		changeByUserLoginId = newChangeByUserLoginId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, RequirementPackage.REQUIREMENT_STATUS__CHANGE_BY_USER_LOGIN_ID, oldChangeByUserLoginId, changeByUserLoginId));
 	}
 
 	/**
@@ -157,6 +164,8 @@ public class RequirementStatusImpl extends BizEntityImpl implements RequirementS
 			InternalEObject oldRequirementId = (InternalEObject)requirementId;
 			requirementId = (Requirement)eResolveProxy(oldRequirementId);
 			if (requirementId != oldRequirementId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, RequirementPackage.REQUIREMENT_STATUS__REQUIREMENT_ID, oldRequirementId, requirementId));
 			}
 		}
 		return requirementId;
@@ -178,7 +187,10 @@ public class RequirementStatusImpl extends BizEntityImpl implements RequirementS
 	 */
 	@Override
 	public void setRequirementId(Requirement newRequirementId) {
+		Requirement oldRequirementId = requirementId;
 		requirementId = newRequirementId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, RequirementPackage.REQUIREMENT_STATUS__REQUIREMENT_ID, oldRequirementId, requirementId));
 	}
 
 	/**
@@ -198,7 +210,10 @@ public class RequirementStatusImpl extends BizEntityImpl implements RequirementS
 	 */
 	@Override
 	public void setStatusDate(Date newStatusDate) {
+		Date oldStatusDate = statusDate;
 		statusDate = newStatusDate;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, RequirementPackage.REQUIREMENT_STATUS__STATUS_DATE, oldStatusDate, statusDate));
 	}
 
 	/**
@@ -212,6 +227,8 @@ public class RequirementStatusImpl extends BizEntityImpl implements RequirementS
 			InternalEObject oldStatusId = (InternalEObject)statusId;
 			statusId = (StatusItem)eResolveProxy(oldStatusId);
 			if (statusId != oldStatusId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, RequirementPackage.REQUIREMENT_STATUS__STATUS_ID, oldStatusId, statusId));
 			}
 		}
 		return statusId;
@@ -233,7 +250,10 @@ public class RequirementStatusImpl extends BizEntityImpl implements RequirementS
 	 */
 	@Override
 	public void setStatusId(StatusItem newStatusId) {
+		StatusItem oldStatusId = statusId;
 		statusId = newStatusId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, RequirementPackage.REQUIREMENT_STATUS__STATUS_ID, oldStatusId, statusId));
 	}
 
 	/**

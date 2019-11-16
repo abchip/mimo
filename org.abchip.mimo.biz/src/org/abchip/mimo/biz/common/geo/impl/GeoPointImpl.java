@@ -17,9 +17,11 @@ import org.abchip.mimo.biz.common.geo.GeoPackage;
 import org.abchip.mimo.biz.common.geo.GeoPoint;
 import org.abchip.mimo.biz.common.uom.Uom;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -219,7 +221,10 @@ public class GeoPointImpl extends BizEntityImpl implements GeoPoint {
 	 */
 	@Override
 	public void setDescription(String newDescription) {
+		String oldDescription = description;
 		description = newDescription;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, GeoPackage.GEO_POINT__DESCRIPTION, oldDescription, description));
 	}
 
 	/**
@@ -239,7 +244,10 @@ public class GeoPointImpl extends BizEntityImpl implements GeoPoint {
 	 */
 	@Override
 	public void setElevation(BigDecimal newElevation) {
+		BigDecimal oldElevation = elevation;
 		elevation = newElevation;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, GeoPackage.GEO_POINT__ELEVATION, oldElevation, elevation));
 	}
 
 	/**
@@ -253,6 +261,8 @@ public class GeoPointImpl extends BizEntityImpl implements GeoPoint {
 			InternalEObject oldElevationUomId = (InternalEObject)elevationUomId;
 			elevationUomId = (Uom)eResolveProxy(oldElevationUomId);
 			if (elevationUomId != oldElevationUomId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, GeoPackage.GEO_POINT__ELEVATION_UOM_ID, oldElevationUomId, elevationUomId));
 			}
 		}
 		return elevationUomId;
@@ -274,7 +284,10 @@ public class GeoPointImpl extends BizEntityImpl implements GeoPoint {
 	 */
 	@Override
 	public void setElevationUomId(Uom newElevationUomId) {
+		Uom oldElevationUomId = elevationUomId;
 		elevationUomId = newElevationUomId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, GeoPackage.GEO_POINT__ELEVATION_UOM_ID, oldElevationUomId, elevationUomId));
 	}
 
 	/**
@@ -294,7 +307,10 @@ public class GeoPointImpl extends BizEntityImpl implements GeoPoint {
 	 */
 	@Override
 	public void setGeoPointId(String newGeoPointId) {
+		String oldGeoPointId = geoPointId;
 		geoPointId = newGeoPointId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, GeoPackage.GEO_POINT__GEO_POINT_ID, oldGeoPointId, geoPointId));
 	}
 
 	/**
@@ -314,7 +330,10 @@ public class GeoPointImpl extends BizEntityImpl implements GeoPoint {
 	 */
 	@Override
 	public void setInformation(String newInformation) {
+		String oldInformation = information;
 		information = newInformation;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, GeoPackage.GEO_POINT__INFORMATION, oldInformation, information));
 	}
 
 	/**
@@ -334,7 +353,10 @@ public class GeoPointImpl extends BizEntityImpl implements GeoPoint {
 	 */
 	@Override
 	public void setLatitude(String newLatitude) {
+		String oldLatitude = latitude;
 		latitude = newLatitude;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, GeoPackage.GEO_POINT__LATITUDE, oldLatitude, latitude));
 	}
 
 	/**
@@ -354,7 +376,10 @@ public class GeoPointImpl extends BizEntityImpl implements GeoPoint {
 	 */
 	@Override
 	public void setLongitude(String newLongitude) {
+		String oldLongitude = longitude;
 		longitude = newLongitude;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, GeoPackage.GEO_POINT__LONGITUDE, oldLongitude, longitude));
 	}
 
 	/**
@@ -404,6 +429,8 @@ public class GeoPointImpl extends BizEntityImpl implements GeoPoint {
 			InternalEObject oldDataSourceId = (InternalEObject)dataSourceId;
 			dataSourceId = (DataSource)eResolveProxy(oldDataSourceId);
 			if (dataSourceId != oldDataSourceId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, GeoPackage.GEO_POINT__DATA_SOURCE_ID, oldDataSourceId, dataSourceId));
 			}
 		}
 		return dataSourceId;
@@ -425,7 +452,10 @@ public class GeoPointImpl extends BizEntityImpl implements GeoPoint {
 	 */
 	@Override
 	public void setDataSourceId(DataSource newDataSourceId) {
+		DataSource oldDataSourceId = dataSourceId;
 		dataSourceId = newDataSourceId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, GeoPackage.GEO_POINT__DATA_SOURCE_ID, oldDataSourceId, dataSourceId));
 	}
 
 	/**
@@ -439,6 +469,8 @@ public class GeoPointImpl extends BizEntityImpl implements GeoPoint {
 			InternalEObject oldGeoPointTypeEnumId = (InternalEObject)geoPointTypeEnumId;
 			geoPointTypeEnumId = (Enumeration)eResolveProxy(oldGeoPointTypeEnumId);
 			if (geoPointTypeEnumId != oldGeoPointTypeEnumId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, GeoPackage.GEO_POINT__GEO_POINT_TYPE_ENUM_ID, oldGeoPointTypeEnumId, geoPointTypeEnumId));
 			}
 		}
 		return geoPointTypeEnumId;
@@ -460,7 +492,10 @@ public class GeoPointImpl extends BizEntityImpl implements GeoPoint {
 	 */
 	@Override
 	public void setGeoPointTypeEnumId(Enumeration newGeoPointTypeEnumId) {
+		Enumeration oldGeoPointTypeEnumId = geoPointTypeEnumId;
 		geoPointTypeEnumId = newGeoPointTypeEnumId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, GeoPackage.GEO_POINT__GEO_POINT_TYPE_ENUM_ID, oldGeoPointTypeEnumId, geoPointTypeEnumId));
 	}
 
 	/**

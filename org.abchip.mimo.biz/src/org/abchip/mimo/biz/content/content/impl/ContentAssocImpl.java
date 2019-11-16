@@ -17,10 +17,12 @@ import org.abchip.mimo.biz.content.content.ContentAssocType;
 import org.abchip.mimo.biz.content.content.ContentPackage;
 import org.abchip.mimo.biz.impl.BizEntityTypedImpl;
 import org.abchip.mimo.biz.security.login.UserLogin;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -315,6 +317,8 @@ public class ContentAssocImpl extends BizEntityTypedImpl<ContentAssocType> imple
 			InternalEObject oldContentAssocPredicateId = (InternalEObject)contentAssocPredicateId;
 			contentAssocPredicateId = (ContentAssocPredicate)eResolveProxy(oldContentAssocPredicateId);
 			if (contentAssocPredicateId != oldContentAssocPredicateId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ContentPackage.CONTENT_ASSOC__CONTENT_ASSOC_PREDICATE_ID, oldContentAssocPredicateId, contentAssocPredicateId));
 			}
 		}
 		return contentAssocPredicateId;
@@ -336,7 +340,10 @@ public class ContentAssocImpl extends BizEntityTypedImpl<ContentAssocType> imple
 	 */
 	@Override
 	public void setContentAssocPredicateId(ContentAssocPredicate newContentAssocPredicateId) {
+		ContentAssocPredicate oldContentAssocPredicateId = contentAssocPredicateId;
 		contentAssocPredicateId = newContentAssocPredicateId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ContentPackage.CONTENT_ASSOC__CONTENT_ASSOC_PREDICATE_ID, oldContentAssocPredicateId, contentAssocPredicateId));
 	}
 
 	/**
@@ -350,6 +357,8 @@ public class ContentAssocImpl extends BizEntityTypedImpl<ContentAssocType> imple
 			InternalEObject oldContentAssocTypeId = (InternalEObject)contentAssocTypeId;
 			contentAssocTypeId = (ContentAssocType)eResolveProxy(oldContentAssocTypeId);
 			if (contentAssocTypeId != oldContentAssocTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ContentPackage.CONTENT_ASSOC__CONTENT_ASSOC_TYPE_ID, oldContentAssocTypeId, contentAssocTypeId));
 			}
 		}
 		return contentAssocTypeId;
@@ -371,7 +380,10 @@ public class ContentAssocImpl extends BizEntityTypedImpl<ContentAssocType> imple
 	 */
 	@Override
 	public void setContentAssocTypeId(ContentAssocType newContentAssocTypeId) {
+		ContentAssocType oldContentAssocTypeId = contentAssocTypeId;
 		contentAssocTypeId = newContentAssocTypeId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ContentPackage.CONTENT_ASSOC__CONTENT_ASSOC_TYPE_ID, oldContentAssocTypeId, contentAssocTypeId));
 	}
 
 	/**
@@ -385,6 +397,8 @@ public class ContentAssocImpl extends BizEntityTypedImpl<ContentAssocType> imple
 			InternalEObject oldContentId = (InternalEObject)contentId;
 			contentId = (Content)eResolveProxy(oldContentId);
 			if (contentId != oldContentId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ContentPackage.CONTENT_ASSOC__CONTENT_ID, oldContentId, contentId));
 			}
 		}
 		return contentId;
@@ -406,7 +420,10 @@ public class ContentAssocImpl extends BizEntityTypedImpl<ContentAssocType> imple
 	 */
 	@Override
 	public void setContentId(Content newContentId) {
+		Content oldContentId = contentId;
 		contentId = newContentId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ContentPackage.CONTENT_ASSOC__CONTENT_ID, oldContentId, contentId));
 	}
 
 	/**
@@ -420,6 +437,8 @@ public class ContentAssocImpl extends BizEntityTypedImpl<ContentAssocType> imple
 			InternalEObject oldContentIdTo = (InternalEObject)contentIdTo;
 			contentIdTo = (Content)eResolveProxy(oldContentIdTo);
 			if (contentIdTo != oldContentIdTo) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ContentPackage.CONTENT_ASSOC__CONTENT_ID_TO, oldContentIdTo, contentIdTo));
 			}
 		}
 		return contentIdTo;
@@ -441,7 +460,10 @@ public class ContentAssocImpl extends BizEntityTypedImpl<ContentAssocType> imple
 	 */
 	@Override
 	public void setContentIdTo(Content newContentIdTo) {
+		Content oldContentIdTo = contentIdTo;
 		contentIdTo = newContentIdTo;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ContentPackage.CONTENT_ASSOC__CONTENT_ID_TO, oldContentIdTo, contentIdTo));
 	}
 
 	/**
@@ -455,6 +477,8 @@ public class ContentAssocImpl extends BizEntityTypedImpl<ContentAssocType> imple
 			InternalEObject oldCreatedByUserLogin = (InternalEObject)createdByUserLogin;
 			createdByUserLogin = (UserLogin)eResolveProxy(oldCreatedByUserLogin);
 			if (createdByUserLogin != oldCreatedByUserLogin) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ContentPackage.CONTENT_ASSOC__CREATED_BY_USER_LOGIN, oldCreatedByUserLogin, createdByUserLogin));
 			}
 		}
 		return createdByUserLogin;
@@ -476,7 +500,10 @@ public class ContentAssocImpl extends BizEntityTypedImpl<ContentAssocType> imple
 	 */
 	@Override
 	public void setCreatedByUserLogin(UserLogin newCreatedByUserLogin) {
+		UserLogin oldCreatedByUserLogin = createdByUserLogin;
 		createdByUserLogin = newCreatedByUserLogin;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ContentPackage.CONTENT_ASSOC__CREATED_BY_USER_LOGIN, oldCreatedByUserLogin, createdByUserLogin));
 	}
 
 	/**
@@ -496,7 +523,10 @@ public class ContentAssocImpl extends BizEntityTypedImpl<ContentAssocType> imple
 	 */
 	@Override
 	public void setCreatedDate(Date newCreatedDate) {
+		Date oldCreatedDate = createdDate;
 		createdDate = newCreatedDate;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ContentPackage.CONTENT_ASSOC__CREATED_DATE, oldCreatedDate, createdDate));
 	}
 
 	/**
@@ -510,6 +540,8 @@ public class ContentAssocImpl extends BizEntityTypedImpl<ContentAssocType> imple
 			InternalEObject oldDataSourceId = (InternalEObject)dataSourceId;
 			dataSourceId = (DataSource)eResolveProxy(oldDataSourceId);
 			if (dataSourceId != oldDataSourceId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ContentPackage.CONTENT_ASSOC__DATA_SOURCE_ID, oldDataSourceId, dataSourceId));
 			}
 		}
 		return dataSourceId;
@@ -531,7 +563,10 @@ public class ContentAssocImpl extends BizEntityTypedImpl<ContentAssocType> imple
 	 */
 	@Override
 	public void setDataSourceId(DataSource newDataSourceId) {
+		DataSource oldDataSourceId = dataSourceId;
 		dataSourceId = newDataSourceId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ContentPackage.CONTENT_ASSOC__DATA_SOURCE_ID, oldDataSourceId, dataSourceId));
 	}
 
 	/**
@@ -551,7 +586,10 @@ public class ContentAssocImpl extends BizEntityTypedImpl<ContentAssocType> imple
 	 */
 	@Override
 	public void setFromDate(Date newFromDate) {
+		Date oldFromDate = fromDate;
 		fromDate = newFromDate;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ContentPackage.CONTENT_ASSOC__FROM_DATE, oldFromDate, fromDate));
 	}
 
 	/**
@@ -565,6 +603,8 @@ public class ContentAssocImpl extends BizEntityTypedImpl<ContentAssocType> imple
 			InternalEObject oldLastModifiedByUserLogin = (InternalEObject)lastModifiedByUserLogin;
 			lastModifiedByUserLogin = (UserLogin)eResolveProxy(oldLastModifiedByUserLogin);
 			if (lastModifiedByUserLogin != oldLastModifiedByUserLogin) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ContentPackage.CONTENT_ASSOC__LAST_MODIFIED_BY_USER_LOGIN, oldLastModifiedByUserLogin, lastModifiedByUserLogin));
 			}
 		}
 		return lastModifiedByUserLogin;
@@ -586,7 +626,10 @@ public class ContentAssocImpl extends BizEntityTypedImpl<ContentAssocType> imple
 	 */
 	@Override
 	public void setLastModifiedByUserLogin(UserLogin newLastModifiedByUserLogin) {
+		UserLogin oldLastModifiedByUserLogin = lastModifiedByUserLogin;
 		lastModifiedByUserLogin = newLastModifiedByUserLogin;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ContentPackage.CONTENT_ASSOC__LAST_MODIFIED_BY_USER_LOGIN, oldLastModifiedByUserLogin, lastModifiedByUserLogin));
 	}
 
 	/**
@@ -606,7 +649,10 @@ public class ContentAssocImpl extends BizEntityTypedImpl<ContentAssocType> imple
 	 */
 	@Override
 	public void setLastModifiedDate(Date newLastModifiedDate) {
+		Date oldLastModifiedDate = lastModifiedDate;
 		lastModifiedDate = newLastModifiedDate;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ContentPackage.CONTENT_ASSOC__LAST_MODIFIED_DATE, oldLastModifiedDate, lastModifiedDate));
 	}
 
 	/**
@@ -626,7 +672,10 @@ public class ContentAssocImpl extends BizEntityTypedImpl<ContentAssocType> imple
 	 */
 	@Override
 	public void setLeftCoordinate(long newLeftCoordinate) {
+		long oldLeftCoordinate = leftCoordinate;
 		leftCoordinate = newLeftCoordinate;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ContentPackage.CONTENT_ASSOC__LEFT_COORDINATE, oldLeftCoordinate, leftCoordinate));
 	}
 
 	/**
@@ -646,7 +695,10 @@ public class ContentAssocImpl extends BizEntityTypedImpl<ContentAssocType> imple
 	 */
 	@Override
 	public void setMapKey(String newMapKey) {
+		String oldMapKey = mapKey;
 		mapKey = newMapKey;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ContentPackage.CONTENT_ASSOC__MAP_KEY, oldMapKey, mapKey));
 	}
 
 	/**
@@ -666,7 +718,10 @@ public class ContentAssocImpl extends BizEntityTypedImpl<ContentAssocType> imple
 	 */
 	@Override
 	public void setSequenceNum(long newSequenceNum) {
+		long oldSequenceNum = sequenceNum;
 		sequenceNum = newSequenceNum;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ContentPackage.CONTENT_ASSOC__SEQUENCE_NUM, oldSequenceNum, sequenceNum));
 	}
 
 	/**
@@ -686,7 +741,10 @@ public class ContentAssocImpl extends BizEntityTypedImpl<ContentAssocType> imple
 	 */
 	@Override
 	public void setThruDate(Date newThruDate) {
+		Date oldThruDate = thruDate;
 		thruDate = newThruDate;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ContentPackage.CONTENT_ASSOC__THRU_DATE, oldThruDate, thruDate));
 	}
 
 	/**
@@ -706,7 +764,10 @@ public class ContentAssocImpl extends BizEntityTypedImpl<ContentAssocType> imple
 	 */
 	@Override
 	public void setUpperCoordinate(long newUpperCoordinate) {
+		long oldUpperCoordinate = upperCoordinate;
 		upperCoordinate = newUpperCoordinate;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ContentPackage.CONTENT_ASSOC__UPPER_COORDINATE, oldUpperCoordinate, upperCoordinate));
 	}
 
 	/**

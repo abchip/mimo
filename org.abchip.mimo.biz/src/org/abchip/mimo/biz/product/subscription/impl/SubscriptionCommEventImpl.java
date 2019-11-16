@@ -12,9 +12,11 @@ import org.abchip.mimo.biz.party.communication.CommunicationEvent;
 import org.abchip.mimo.biz.product.subscription.Subscription;
 import org.abchip.mimo.biz.product.subscription.SubscriptionCommEvent;
 import org.abchip.mimo.biz.product.subscription.SubscriptionPackage;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -86,6 +88,8 @@ public class SubscriptionCommEventImpl extends BizEntityImpl implements Subscrip
 			InternalEObject oldCommunicationEventId = (InternalEObject)communicationEventId;
 			communicationEventId = (CommunicationEvent)eResolveProxy(oldCommunicationEventId);
 			if (communicationEventId != oldCommunicationEventId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, SubscriptionPackage.SUBSCRIPTION_COMM_EVENT__COMMUNICATION_EVENT_ID, oldCommunicationEventId, communicationEventId));
 			}
 		}
 		return communicationEventId;
@@ -107,7 +111,10 @@ public class SubscriptionCommEventImpl extends BizEntityImpl implements Subscrip
 	 */
 	@Override
 	public void setCommunicationEventId(CommunicationEvent newCommunicationEventId) {
+		CommunicationEvent oldCommunicationEventId = communicationEventId;
 		communicationEventId = newCommunicationEventId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SubscriptionPackage.SUBSCRIPTION_COMM_EVENT__COMMUNICATION_EVENT_ID, oldCommunicationEventId, communicationEventId));
 	}
 
 	/**
@@ -121,6 +128,8 @@ public class SubscriptionCommEventImpl extends BizEntityImpl implements Subscrip
 			InternalEObject oldSubscriptionId = (InternalEObject)subscriptionId;
 			subscriptionId = (Subscription)eResolveProxy(oldSubscriptionId);
 			if (subscriptionId != oldSubscriptionId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, SubscriptionPackage.SUBSCRIPTION_COMM_EVENT__SUBSCRIPTION_ID, oldSubscriptionId, subscriptionId));
 			}
 		}
 		return subscriptionId;
@@ -142,7 +151,10 @@ public class SubscriptionCommEventImpl extends BizEntityImpl implements Subscrip
 	 */
 	@Override
 	public void setSubscriptionId(Subscription newSubscriptionId) {
+		Subscription oldSubscriptionId = subscriptionId;
 		subscriptionId = newSubscriptionId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SubscriptionPackage.SUBSCRIPTION_COMM_EVENT__SUBSCRIPTION_ID, oldSubscriptionId, subscriptionId));
 	}
 
 	/**

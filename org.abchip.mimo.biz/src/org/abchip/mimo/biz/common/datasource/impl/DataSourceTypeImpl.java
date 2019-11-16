@@ -13,7 +13,9 @@ import org.abchip.mimo.biz.common.datasource.DataSource;
 import org.abchip.mimo.biz.common.datasource.DataSourceType;
 import org.abchip.mimo.biz.common.datasource.DatasourcePackage;
 import org.abchip.mimo.biz.impl.BizEntityTypeImpl;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -111,7 +113,10 @@ public class DataSourceTypeImpl extends BizEntityTypeImpl<DataSource> implements
 	 */
 	@Override
 	public void setDescription(String newDescription) {
+		String oldDescription = description;
 		description = newDescription;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, DatasourcePackage.DATA_SOURCE_TYPE__DESCRIPTION, oldDescription, description));
 	}
 
 	/**
@@ -143,7 +148,10 @@ public class DataSourceTypeImpl extends BizEntityTypeImpl<DataSource> implements
 	 */
 	@Override
 	public void setDataSourceTypeId(String newDataSourceTypeId) {
+		String oldDataSourceTypeId = dataSourceTypeId;
 		dataSourceTypeId = newDataSourceTypeId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, DatasourcePackage.DATA_SOURCE_TYPE__DATA_SOURCE_TYPE_ID, oldDataSourceTypeId, dataSourceTypeId));
 	}
 
 	/**

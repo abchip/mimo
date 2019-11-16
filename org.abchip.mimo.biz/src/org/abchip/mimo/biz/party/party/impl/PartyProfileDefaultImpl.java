@@ -12,9 +12,11 @@ import org.abchip.mimo.biz.party.party.Party;
 import org.abchip.mimo.biz.party.party.PartyPackage;
 import org.abchip.mimo.biz.party.party.PartyProfileDefault;
 import org.abchip.mimo.biz.product.store.ProductStore;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -166,7 +168,10 @@ public class PartyProfileDefaultImpl extends BizEntityImpl implements PartyProfi
 	 */
 	@Override
 	public void setDefaultBillAddr(String newDefaultBillAddr) {
+		String oldDefaultBillAddr = defaultBillAddr;
 		defaultBillAddr = newDefaultBillAddr;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PartyPackage.PARTY_PROFILE_DEFAULT__DEFAULT_BILL_ADDR, oldDefaultBillAddr, defaultBillAddr));
 	}
 
 	/**
@@ -186,7 +191,10 @@ public class PartyProfileDefaultImpl extends BizEntityImpl implements PartyProfi
 	 */
 	@Override
 	public void setDefaultPayMeth(String newDefaultPayMeth) {
+		String oldDefaultPayMeth = defaultPayMeth;
 		defaultPayMeth = newDefaultPayMeth;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PartyPackage.PARTY_PROFILE_DEFAULT__DEFAULT_PAY_METH, oldDefaultPayMeth, defaultPayMeth));
 	}
 
 	/**
@@ -206,7 +214,10 @@ public class PartyProfileDefaultImpl extends BizEntityImpl implements PartyProfi
 	 */
 	@Override
 	public void setDefaultShipAddr(String newDefaultShipAddr) {
+		String oldDefaultShipAddr = defaultShipAddr;
 		defaultShipAddr = newDefaultShipAddr;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PartyPackage.PARTY_PROFILE_DEFAULT__DEFAULT_SHIP_ADDR, oldDefaultShipAddr, defaultShipAddr));
 	}
 
 	/**
@@ -226,7 +237,10 @@ public class PartyProfileDefaultImpl extends BizEntityImpl implements PartyProfi
 	 */
 	@Override
 	public void setDefaultShipMeth(String newDefaultShipMeth) {
+		String oldDefaultShipMeth = defaultShipMeth;
 		defaultShipMeth = newDefaultShipMeth;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PartyPackage.PARTY_PROFILE_DEFAULT__DEFAULT_SHIP_METH, oldDefaultShipMeth, defaultShipMeth));
 	}
 
 	/**
@@ -240,6 +254,8 @@ public class PartyProfileDefaultImpl extends BizEntityImpl implements PartyProfi
 			InternalEObject oldProductStoreId = (InternalEObject)productStoreId;
 			productStoreId = (ProductStore)eResolveProxy(oldProductStoreId);
 			if (productStoreId != oldProductStoreId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PartyPackage.PARTY_PROFILE_DEFAULT__PRODUCT_STORE_ID, oldProductStoreId, productStoreId));
 			}
 		}
 		return productStoreId;
@@ -261,7 +277,10 @@ public class PartyProfileDefaultImpl extends BizEntityImpl implements PartyProfi
 	 */
 	@Override
 	public void setProductStoreId(ProductStore newProductStoreId) {
+		ProductStore oldProductStoreId = productStoreId;
 		productStoreId = newProductStoreId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PartyPackage.PARTY_PROFILE_DEFAULT__PRODUCT_STORE_ID, oldProductStoreId, productStoreId));
 	}
 
 	/**
@@ -275,6 +294,8 @@ public class PartyProfileDefaultImpl extends BizEntityImpl implements PartyProfi
 			InternalEObject oldPartyId = (InternalEObject)partyId;
 			partyId = (Party)eResolveProxy(oldPartyId);
 			if (partyId != oldPartyId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PartyPackage.PARTY_PROFILE_DEFAULT__PARTY_ID, oldPartyId, partyId));
 			}
 		}
 		return partyId;
@@ -296,7 +317,10 @@ public class PartyProfileDefaultImpl extends BizEntityImpl implements PartyProfi
 	 */
 	@Override
 	public void setPartyId(Party newPartyId) {
+		Party oldPartyId = partyId;
 		partyId = newPartyId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PartyPackage.PARTY_PROFILE_DEFAULT__PARTY_ID, oldPartyId, partyId));
 	}
 
 	/**

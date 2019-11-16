@@ -12,7 +12,9 @@ import java.util.List;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.webapp.visit.ProtocolType;
 import org.abchip.mimo.biz.webapp.visit.VisitPackage;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -110,7 +112,10 @@ public class ProtocolTypeImpl extends BizEntityImpl implements ProtocolType {
 	 */
 	@Override
 	public void setProtocolTypeId(String newProtocolTypeId) {
+		String oldProtocolTypeId = protocolTypeId;
 		protocolTypeId = newProtocolTypeId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, VisitPackage.PROTOCOL_TYPE__PROTOCOL_TYPE_ID, oldProtocolTypeId, protocolTypeId));
 	}
 
 	/**
@@ -130,7 +135,10 @@ public class ProtocolTypeImpl extends BizEntityImpl implements ProtocolType {
 	 */
 	@Override
 	public void setProtocolName(String newProtocolName) {
+		String oldProtocolName = protocolName;
 		protocolName = newProtocolName;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, VisitPackage.PROTOCOL_TYPE__PROTOCOL_NAME, oldProtocolName, protocolName));
 	}
 
 	/**

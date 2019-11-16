@@ -15,9 +15,11 @@ import org.abchip.mimo.biz.product.config.ConfigPackage;
 import org.abchip.mimo.biz.product.config.ProdConfItemContent;
 import org.abchip.mimo.biz.product.config.ProdConfItemContentType;
 import org.abchip.mimo.biz.product.config.ProductConfigItem;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -142,6 +144,8 @@ public class ProdConfItemContentImpl extends BizEntityTypedImpl<ProdConfItemCont
 			InternalEObject oldContentId = (InternalEObject)contentId;
 			contentId = (Content)eResolveProxy(oldContentId);
 			if (contentId != oldContentId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ConfigPackage.PROD_CONF_ITEM_CONTENT__CONTENT_ID, oldContentId, contentId));
 			}
 		}
 		return contentId;
@@ -163,7 +167,10 @@ public class ProdConfItemContentImpl extends BizEntityTypedImpl<ProdConfItemCont
 	 */
 	@Override
 	public void setContentId(Content newContentId) {
+		Content oldContentId = contentId;
 		contentId = newContentId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ConfigPackage.PROD_CONF_ITEM_CONTENT__CONTENT_ID, oldContentId, contentId));
 	}
 
 	/**
@@ -183,7 +190,10 @@ public class ProdConfItemContentImpl extends BizEntityTypedImpl<ProdConfItemCont
 	 */
 	@Override
 	public void setFromDate(Date newFromDate) {
+		Date oldFromDate = fromDate;
 		fromDate = newFromDate;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ConfigPackage.PROD_CONF_ITEM_CONTENT__FROM_DATE, oldFromDate, fromDate));
 	}
 
 	/**
@@ -203,7 +213,10 @@ public class ProdConfItemContentImpl extends BizEntityTypedImpl<ProdConfItemCont
 	 */
 	@Override
 	public void setThruDate(Date newThruDate) {
+		Date oldThruDate = thruDate;
 		thruDate = newThruDate;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ConfigPackage.PROD_CONF_ITEM_CONTENT__THRU_DATE, oldThruDate, thruDate));
 	}
 
 	/**
@@ -217,6 +230,8 @@ public class ProdConfItemContentImpl extends BizEntityTypedImpl<ProdConfItemCont
 			InternalEObject oldConfigItemId = (InternalEObject)configItemId;
 			configItemId = (ProductConfigItem)eResolveProxy(oldConfigItemId);
 			if (configItemId != oldConfigItemId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ConfigPackage.PROD_CONF_ITEM_CONTENT__CONFIG_ITEM_ID, oldConfigItemId, configItemId));
 			}
 		}
 		return configItemId;
@@ -238,7 +253,10 @@ public class ProdConfItemContentImpl extends BizEntityTypedImpl<ProdConfItemCont
 	 */
 	@Override
 	public void setConfigItemId(ProductConfigItem newConfigItemId) {
+		ProductConfigItem oldConfigItemId = configItemId;
 		configItemId = newConfigItemId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ConfigPackage.PROD_CONF_ITEM_CONTENT__CONFIG_ITEM_ID, oldConfigItemId, configItemId));
 	}
 
 	/**
@@ -252,6 +270,8 @@ public class ProdConfItemContentImpl extends BizEntityTypedImpl<ProdConfItemCont
 			InternalEObject oldConfItemContentTypeId = (InternalEObject)confItemContentTypeId;
 			confItemContentTypeId = (ProdConfItemContentType)eResolveProxy(oldConfItemContentTypeId);
 			if (confItemContentTypeId != oldConfItemContentTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ConfigPackage.PROD_CONF_ITEM_CONTENT__CONF_ITEM_CONTENT_TYPE_ID, oldConfItemContentTypeId, confItemContentTypeId));
 			}
 		}
 		return confItemContentTypeId;
@@ -273,7 +293,10 @@ public class ProdConfItemContentImpl extends BizEntityTypedImpl<ProdConfItemCont
 	 */
 	@Override
 	public void setConfItemContentTypeId(ProdConfItemContentType newConfItemContentTypeId) {
+		ProdConfItemContentType oldConfItemContentTypeId = confItemContentTypeId;
 		confItemContentTypeId = newConfItemContentTypeId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ConfigPackage.PROD_CONF_ITEM_CONTENT__CONF_ITEM_CONTENT_TYPE_ID, oldConfItemContentTypeId, confItemContentTypeId));
 	}
 
 	/**

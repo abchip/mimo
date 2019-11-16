@@ -11,9 +11,11 @@ import org.abchip.mimo.biz.accounting.finaccount.FinAccount;
 import org.abchip.mimo.biz.accounting.finaccount.FinAccountAttribute;
 import org.abchip.mimo.biz.accounting.finaccount.FinaccountPackage;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -136,7 +138,10 @@ public class FinAccountAttributeImpl extends BizEntityImpl implements FinAccount
 	 */
 	@Override
 	public void setAttrDescription(String newAttrDescription) {
+		String oldAttrDescription = attrDescription;
 		attrDescription = newAttrDescription;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, FinaccountPackage.FIN_ACCOUNT_ATTRIBUTE__ATTR_DESCRIPTION, oldAttrDescription, attrDescription));
 	}
 
 	/**
@@ -156,7 +161,10 @@ public class FinAccountAttributeImpl extends BizEntityImpl implements FinAccount
 	 */
 	@Override
 	public void setAttrValue(String newAttrValue) {
+		String oldAttrValue = attrValue;
 		attrValue = newAttrValue;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, FinaccountPackage.FIN_ACCOUNT_ATTRIBUTE__ATTR_VALUE, oldAttrValue, attrValue));
 	}
 
 	/**
@@ -170,6 +178,8 @@ public class FinAccountAttributeImpl extends BizEntityImpl implements FinAccount
 			InternalEObject oldFinAccountId = (InternalEObject)finAccountId;
 			finAccountId = (FinAccount)eResolveProxy(oldFinAccountId);
 			if (finAccountId != oldFinAccountId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, FinaccountPackage.FIN_ACCOUNT_ATTRIBUTE__FIN_ACCOUNT_ID, oldFinAccountId, finAccountId));
 			}
 		}
 		return finAccountId;
@@ -191,7 +201,10 @@ public class FinAccountAttributeImpl extends BizEntityImpl implements FinAccount
 	 */
 	@Override
 	public void setFinAccountId(FinAccount newFinAccountId) {
+		FinAccount oldFinAccountId = finAccountId;
 		finAccountId = newFinAccountId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, FinaccountPackage.FIN_ACCOUNT_ATTRIBUTE__FIN_ACCOUNT_ID, oldFinAccountId, finAccountId));
 	}
 
 	/**
@@ -211,7 +224,10 @@ public class FinAccountAttributeImpl extends BizEntityImpl implements FinAccount
 	 */
 	@Override
 	public void setAttrName(String newAttrName) {
+		String oldAttrName = attrName;
 		attrName = newAttrName;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, FinaccountPackage.FIN_ACCOUNT_ATTRIBUTE__ATTR_NAME, oldAttrName, attrName));
 	}
 
 	/**

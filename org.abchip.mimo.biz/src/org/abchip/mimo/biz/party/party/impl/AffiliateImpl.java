@@ -13,9 +13,11 @@ import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.party.party.Affiliate;
 import org.abchip.mimo.biz.party.party.Party;
 import org.abchip.mimo.biz.party.party.PartyPackage;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -233,7 +235,10 @@ public class AffiliateImpl extends BizEntityImpl implements Affiliate {
 	 */
 	@Override
 	public void setAffiliateDescription(String newAffiliateDescription) {
+		String oldAffiliateDescription = affiliateDescription;
 		affiliateDescription = newAffiliateDescription;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PartyPackage.AFFILIATE__AFFILIATE_DESCRIPTION, oldAffiliateDescription, affiliateDescription));
 	}
 
 	/**
@@ -253,7 +258,10 @@ public class AffiliateImpl extends BizEntityImpl implements Affiliate {
 	 */
 	@Override
 	public void setAffiliateName(String newAffiliateName) {
+		String oldAffiliateName = affiliateName;
 		affiliateName = newAffiliateName;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PartyPackage.AFFILIATE__AFFILIATE_NAME, oldAffiliateName, affiliateName));
 	}
 
 	/**
@@ -273,7 +281,10 @@ public class AffiliateImpl extends BizEntityImpl implements Affiliate {
 	 */
 	@Override
 	public void setDateTimeApproved(Date newDateTimeApproved) {
+		Date oldDateTimeApproved = dateTimeApproved;
 		dateTimeApproved = newDateTimeApproved;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PartyPackage.AFFILIATE__DATE_TIME_APPROVED, oldDateTimeApproved, dateTimeApproved));
 	}
 
 	/**
@@ -293,7 +304,10 @@ public class AffiliateImpl extends BizEntityImpl implements Affiliate {
 	 */
 	@Override
 	public void setDateTimeCreated(Date newDateTimeCreated) {
+		Date oldDateTimeCreated = dateTimeCreated;
 		dateTimeCreated = newDateTimeCreated;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PartyPackage.AFFILIATE__DATE_TIME_CREATED, oldDateTimeCreated, dateTimeCreated));
 	}
 
 	/**
@@ -307,6 +321,8 @@ public class AffiliateImpl extends BizEntityImpl implements Affiliate {
 			InternalEObject oldPartyId = (InternalEObject)partyId;
 			partyId = (Party)eResolveProxy(oldPartyId);
 			if (partyId != oldPartyId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PartyPackage.AFFILIATE__PARTY_ID, oldPartyId, partyId));
 			}
 		}
 		return partyId;
@@ -328,7 +344,10 @@ public class AffiliateImpl extends BizEntityImpl implements Affiliate {
 	 */
 	@Override
 	public void setPartyId(Party newPartyId) {
+		Party oldPartyId = partyId;
 		partyId = newPartyId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PartyPackage.AFFILIATE__PARTY_ID, oldPartyId, partyId));
 	}
 
 	/**
@@ -348,7 +367,10 @@ public class AffiliateImpl extends BizEntityImpl implements Affiliate {
 	 */
 	@Override
 	public void setSitePageViews(String newSitePageViews) {
+		String oldSitePageViews = sitePageViews;
 		sitePageViews = newSitePageViews;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PartyPackage.AFFILIATE__SITE_PAGE_VIEWS, oldSitePageViews, sitePageViews));
 	}
 
 	/**
@@ -368,7 +390,10 @@ public class AffiliateImpl extends BizEntityImpl implements Affiliate {
 	 */
 	@Override
 	public void setSiteType(String newSiteType) {
+		String oldSiteType = siteType;
 		siteType = newSiteType;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PartyPackage.AFFILIATE__SITE_TYPE, oldSiteType, siteType));
 	}
 
 	/**
@@ -388,7 +413,10 @@ public class AffiliateImpl extends BizEntityImpl implements Affiliate {
 	 */
 	@Override
 	public void setSiteVisitors(String newSiteVisitors) {
+		String oldSiteVisitors = siteVisitors;
 		siteVisitors = newSiteVisitors;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PartyPackage.AFFILIATE__SITE_VISITORS, oldSiteVisitors, siteVisitors));
 	}
 
 	/**
@@ -408,7 +436,10 @@ public class AffiliateImpl extends BizEntityImpl implements Affiliate {
 	 */
 	@Override
 	public void setYearEstablished(String newYearEstablished) {
+		String oldYearEstablished = yearEstablished;
 		yearEstablished = newYearEstablished;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PartyPackage.AFFILIATE__YEAR_ESTABLISHED, oldYearEstablished, yearEstablished));
 	}
 
 	/**

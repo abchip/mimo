@@ -13,10 +13,12 @@ import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.service.schedule.RuntimeData;
 import org.abchip.mimo.biz.workeffort.workeffort.ApplicationSandbox;
 import org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -188,7 +190,10 @@ public class ApplicationSandboxImpl extends BizEntityImpl implements Application
 	 */
 	@Override
 	public void setApplicationId(String newApplicationId) {
+		String oldApplicationId = applicationId;
 		applicationId = newApplicationId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WorkeffortPackage.APPLICATION_SANDBOX__APPLICATION_ID, oldApplicationId, applicationId));
 	}
 
 	/**
@@ -208,7 +213,10 @@ public class ApplicationSandboxImpl extends BizEntityImpl implements Application
 	 */
 	@Override
 	public void setFromDate(Date newFromDate) {
+		Date oldFromDate = fromDate;
 		fromDate = newFromDate;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WorkeffortPackage.APPLICATION_SANDBOX__FROM_DATE, oldFromDate, fromDate));
 	}
 
 	/**
@@ -228,7 +236,10 @@ public class ApplicationSandboxImpl extends BizEntityImpl implements Application
 	 */
 	@Override
 	public void setPartyId(String newPartyId) {
+		String oldPartyId = partyId;
 		partyId = newPartyId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WorkeffortPackage.APPLICATION_SANDBOX__PARTY_ID, oldPartyId, partyId));
 	}
 
 	/**
@@ -248,7 +259,10 @@ public class ApplicationSandboxImpl extends BizEntityImpl implements Application
 	 */
 	@Override
 	public void setRoleTypeId(String newRoleTypeId) {
+		String oldRoleTypeId = roleTypeId;
 		roleTypeId = newRoleTypeId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WorkeffortPackage.APPLICATION_SANDBOX__ROLE_TYPE_ID, oldRoleTypeId, roleTypeId));
 	}
 
 	/**
@@ -262,6 +276,8 @@ public class ApplicationSandboxImpl extends BizEntityImpl implements Application
 			InternalEObject oldRuntimeDataId = (InternalEObject)runtimeDataId;
 			runtimeDataId = (RuntimeData)eResolveProxy(oldRuntimeDataId);
 			if (runtimeDataId != oldRuntimeDataId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WorkeffortPackage.APPLICATION_SANDBOX__RUNTIME_DATA_ID, oldRuntimeDataId, runtimeDataId));
 			}
 		}
 		return runtimeDataId;
@@ -283,7 +299,10 @@ public class ApplicationSandboxImpl extends BizEntityImpl implements Application
 	 */
 	@Override
 	public void setRuntimeDataId(RuntimeData newRuntimeDataId) {
+		RuntimeData oldRuntimeDataId = runtimeDataId;
 		runtimeDataId = newRuntimeDataId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WorkeffortPackage.APPLICATION_SANDBOX__RUNTIME_DATA_ID, oldRuntimeDataId, runtimeDataId));
 	}
 
 	/**
@@ -303,7 +322,10 @@ public class ApplicationSandboxImpl extends BizEntityImpl implements Application
 	 */
 	@Override
 	public void setWorkEffortId(String newWorkEffortId) {
+		String oldWorkEffortId = workEffortId;
 		workEffortId = newWorkEffortId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WorkeffortPackage.APPLICATION_SANDBOX__WORK_EFFORT_ID, oldWorkEffortId, workEffortId));
 	}
 
 	/**

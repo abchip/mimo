@@ -12,10 +12,12 @@ import org.abchip.mimo.biz.marketing.opportunity.OpportunityPackage;
 import org.abchip.mimo.biz.marketing.opportunity.SalesOpportunity;
 import org.abchip.mimo.biz.marketing.opportunity.SalesOpportunityWorkEffort;
 import org.abchip.mimo.biz.workeffort.workeffort.WorkEffort;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -87,6 +89,8 @@ public class SalesOpportunityWorkEffortImpl extends BizEntityImpl implements Sal
 			InternalEObject oldSalesOpportunityId = (InternalEObject)salesOpportunityId;
 			salesOpportunityId = (SalesOpportunity)eResolveProxy(oldSalesOpportunityId);
 			if (salesOpportunityId != oldSalesOpportunityId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, OpportunityPackage.SALES_OPPORTUNITY_WORK_EFFORT__SALES_OPPORTUNITY_ID, oldSalesOpportunityId, salesOpportunityId));
 			}
 		}
 		return salesOpportunityId;
@@ -108,7 +112,10 @@ public class SalesOpportunityWorkEffortImpl extends BizEntityImpl implements Sal
 	 */
 	@Override
 	public void setSalesOpportunityId(SalesOpportunity newSalesOpportunityId) {
+		SalesOpportunity oldSalesOpportunityId = salesOpportunityId;
 		salesOpportunityId = newSalesOpportunityId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, OpportunityPackage.SALES_OPPORTUNITY_WORK_EFFORT__SALES_OPPORTUNITY_ID, oldSalesOpportunityId, salesOpportunityId));
 	}
 
 	/**
@@ -122,6 +129,8 @@ public class SalesOpportunityWorkEffortImpl extends BizEntityImpl implements Sal
 			InternalEObject oldWorkEffortId = (InternalEObject)workEffortId;
 			workEffortId = (WorkEffort)eResolveProxy(oldWorkEffortId);
 			if (workEffortId != oldWorkEffortId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, OpportunityPackage.SALES_OPPORTUNITY_WORK_EFFORT__WORK_EFFORT_ID, oldWorkEffortId, workEffortId));
 			}
 		}
 		return workEffortId;
@@ -143,7 +152,10 @@ public class SalesOpportunityWorkEffortImpl extends BizEntityImpl implements Sal
 	 */
 	@Override
 	public void setWorkEffortId(WorkEffort newWorkEffortId) {
+		WorkEffort oldWorkEffortId = workEffortId;
 		workEffortId = newWorkEffortId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, OpportunityPackage.SALES_OPPORTUNITY_WORK_EFFORT__WORK_EFFORT_ID, oldWorkEffortId, workEffortId));
 	}
 
 	/**

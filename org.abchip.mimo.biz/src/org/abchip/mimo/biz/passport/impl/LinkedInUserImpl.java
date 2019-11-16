@@ -11,10 +11,12 @@ import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.passport.LinkedInUser;
 import org.abchip.mimo.biz.passport.PassportPackage;
 import org.abchip.mimo.biz.product.store.ProductStore;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -144,7 +146,10 @@ public class LinkedInUserImpl extends BizEntityImpl implements LinkedInUser {
 	 */
 	@Override
 	public void setLinkedInUserId(String newLinkedInUserId) {
+		String oldLinkedInUserId = linkedInUserId;
 		linkedInUserId = newLinkedInUserId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PassportPackage.LINKED_IN_USER__LINKED_IN_USER_ID, oldLinkedInUserId, linkedInUserId));
 	}
 
 	/**
@@ -164,7 +169,10 @@ public class LinkedInUserImpl extends BizEntityImpl implements LinkedInUser {
 	 */
 	@Override
 	public void setAccessToken(String newAccessToken) {
+		String oldAccessToken = accessToken;
 		accessToken = newAccessToken;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PassportPackage.LINKED_IN_USER__ACCESS_TOKEN, oldAccessToken, accessToken));
 	}
 
 	/**
@@ -184,7 +192,10 @@ public class LinkedInUserImpl extends BizEntityImpl implements LinkedInUser {
 	 */
 	@Override
 	public void setEnvPrefix(String newEnvPrefix) {
+		String oldEnvPrefix = envPrefix;
 		envPrefix = newEnvPrefix;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PassportPackage.LINKED_IN_USER__ENV_PREFIX, oldEnvPrefix, envPrefix));
 	}
 
 	/**
@@ -198,6 +209,8 @@ public class LinkedInUserImpl extends BizEntityImpl implements LinkedInUser {
 			InternalEObject oldProductStoreId = (InternalEObject)productStoreId;
 			productStoreId = (ProductStore)eResolveProxy(oldProductStoreId);
 			if (productStoreId != oldProductStoreId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PassportPackage.LINKED_IN_USER__PRODUCT_STORE_ID, oldProductStoreId, productStoreId));
 			}
 		}
 		return productStoreId;
@@ -219,7 +232,10 @@ public class LinkedInUserImpl extends BizEntityImpl implements LinkedInUser {
 	 */
 	@Override
 	public void setProductStoreId(ProductStore newProductStoreId) {
+		ProductStore oldProductStoreId = productStoreId;
 		productStoreId = newProductStoreId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PassportPackage.LINKED_IN_USER__PRODUCT_STORE_ID, oldProductStoreId, productStoreId));
 	}
 
 	/**

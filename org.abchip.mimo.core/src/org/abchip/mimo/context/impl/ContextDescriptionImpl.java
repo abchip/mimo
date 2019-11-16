@@ -10,7 +10,9 @@ package org.abchip.mimo.context.impl;
 import org.abchip.mimo.context.ContextDescription;
 import org.abchip.mimo.context.ContextPackage;
 import org.abchip.mimo.entity.impl.EntityImpl;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc --> An implementation of the model object
@@ -175,7 +177,10 @@ public class ContextDescriptionImpl extends EntityImpl implements ContextDescrip
 	 */
 	@Override
 	public void setAnonymous(boolean newAnonymous) {
+		boolean oldAnonymous = anonymous;
 		anonymous = newAnonymous;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ContextPackage.CONTEXT_DESCRIPTION__ANONYMOUS, oldAnonymous, anonymous));
 	}
 
 	/**
@@ -193,7 +198,10 @@ public class ContextDescriptionImpl extends EntityImpl implements ContextDescrip
 	 */
 	@Override
 	public void setDataPath(String newDataPath) {
+		String oldDataPath = dataPath;
 		dataPath = newDataPath;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ContextPackage.CONTEXT_DESCRIPTION__DATA_PATH, oldDataPath, dataPath));
 	}
 
 	/**
@@ -211,7 +219,10 @@ public class ContextDescriptionImpl extends EntityImpl implements ContextDescrip
 	 */
 	@Override
 	public void setId(String newId) {
+		String oldId = id;
 		id = newId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ContextPackage.CONTEXT_DESCRIPTION__ID, oldId, id));
 	}
 
 	/**
@@ -231,7 +242,10 @@ public class ContextDescriptionImpl extends EntityImpl implements ContextDescrip
 	 */
 	@Override
 	public void setPicture(String newPicture) {
+		String oldPicture = picture;
 		picture = newPicture;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ContextPackage.CONTEXT_DESCRIPTION__PICTURE, oldPicture, picture));
 	}
 
 	/**
@@ -249,7 +263,10 @@ public class ContextDescriptionImpl extends EntityImpl implements ContextDescrip
 	 */
 	@Override
 	public void setTenant(String newTenant) {
+		String oldTenant = tenant;
 		tenant = newTenant;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ContextPackage.CONTEXT_DESCRIPTION__TENANT, oldTenant, tenant));
 	}
 
 	/**
@@ -267,7 +284,10 @@ public class ContextDescriptionImpl extends EntityImpl implements ContextDescrip
 	 */
 	@Override
 	public void setUser(String newUser) {
+		String oldUser = user;
 		user = newUser;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ContextPackage.CONTEXT_DESCRIPTION__USER, oldUser, user));
 	}
 
 	/**

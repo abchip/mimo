@@ -15,9 +15,11 @@ import org.abchip.mimo.biz.accounting.budget.BudgetReview;
 import org.abchip.mimo.biz.accounting.budget.BudgetReviewResultType;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.party.party.Party;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -141,7 +143,10 @@ public class BudgetReviewImpl extends BizEntityImpl implements BudgetReview {
 	 */
 	@Override
 	public void setBudgetReviewId(String newBudgetReviewId) {
+		String oldBudgetReviewId = budgetReviewId;
 		budgetReviewId = newBudgetReviewId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, BudgetPackage.BUDGET_REVIEW__BUDGET_REVIEW_ID, oldBudgetReviewId, budgetReviewId));
 	}
 
 	/**
@@ -155,6 +160,8 @@ public class BudgetReviewImpl extends BizEntityImpl implements BudgetReview {
 			InternalEObject oldPartyId = (InternalEObject)partyId;
 			partyId = (Party)eResolveProxy(oldPartyId);
 			if (partyId != oldPartyId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, BudgetPackage.BUDGET_REVIEW__PARTY_ID, oldPartyId, partyId));
 			}
 		}
 		return partyId;
@@ -176,7 +183,10 @@ public class BudgetReviewImpl extends BizEntityImpl implements BudgetReview {
 	 */
 	@Override
 	public void setPartyId(Party newPartyId) {
+		Party oldPartyId = partyId;
 		partyId = newPartyId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, BudgetPackage.BUDGET_REVIEW__PARTY_ID, oldPartyId, partyId));
 	}
 
 	/**
@@ -196,7 +206,10 @@ public class BudgetReviewImpl extends BizEntityImpl implements BudgetReview {
 	 */
 	@Override
 	public void setReviewDate(Date newReviewDate) {
+		Date oldReviewDate = reviewDate;
 		reviewDate = newReviewDate;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, BudgetPackage.BUDGET_REVIEW__REVIEW_DATE, oldReviewDate, reviewDate));
 	}
 
 	/**
@@ -210,6 +223,8 @@ public class BudgetReviewImpl extends BizEntityImpl implements BudgetReview {
 			InternalEObject oldBudgetId = (InternalEObject)budgetId;
 			budgetId = (Budget)eResolveProxy(oldBudgetId);
 			if (budgetId != oldBudgetId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, BudgetPackage.BUDGET_REVIEW__BUDGET_ID, oldBudgetId, budgetId));
 			}
 		}
 		return budgetId;
@@ -231,7 +246,10 @@ public class BudgetReviewImpl extends BizEntityImpl implements BudgetReview {
 	 */
 	@Override
 	public void setBudgetId(Budget newBudgetId) {
+		Budget oldBudgetId = budgetId;
 		budgetId = newBudgetId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, BudgetPackage.BUDGET_REVIEW__BUDGET_ID, oldBudgetId, budgetId));
 	}
 
 	/**
@@ -245,6 +263,8 @@ public class BudgetReviewImpl extends BizEntityImpl implements BudgetReview {
 			InternalEObject oldBudgetReviewResultTypeId = (InternalEObject)budgetReviewResultTypeId;
 			budgetReviewResultTypeId = (BudgetReviewResultType)eResolveProxy(oldBudgetReviewResultTypeId);
 			if (budgetReviewResultTypeId != oldBudgetReviewResultTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, BudgetPackage.BUDGET_REVIEW__BUDGET_REVIEW_RESULT_TYPE_ID, oldBudgetReviewResultTypeId, budgetReviewResultTypeId));
 			}
 		}
 		return budgetReviewResultTypeId;
@@ -266,7 +286,10 @@ public class BudgetReviewImpl extends BizEntityImpl implements BudgetReview {
 	 */
 	@Override
 	public void setBudgetReviewResultTypeId(BudgetReviewResultType newBudgetReviewResultTypeId) {
+		BudgetReviewResultType oldBudgetReviewResultTypeId = budgetReviewResultTypeId;
 		budgetReviewResultTypeId = newBudgetReviewResultTypeId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, BudgetPackage.BUDGET_REVIEW__BUDGET_REVIEW_RESULT_TYPE_ID, oldBudgetReviewResultTypeId, budgetReviewResultTypeId));
 	}
 
 	/**

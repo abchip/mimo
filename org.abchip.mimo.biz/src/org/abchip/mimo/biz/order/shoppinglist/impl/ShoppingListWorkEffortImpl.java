@@ -12,10 +12,12 @@ import org.abchip.mimo.biz.order.shoppinglist.ShoppingList;
 import org.abchip.mimo.biz.order.shoppinglist.ShoppingListWorkEffort;
 import org.abchip.mimo.biz.order.shoppinglist.ShoppinglistPackage;
 import org.abchip.mimo.biz.workeffort.workeffort.WorkEffort;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -87,6 +89,8 @@ public class ShoppingListWorkEffortImpl extends BizEntityImpl implements Shoppin
 			InternalEObject oldShoppingListId = (InternalEObject)shoppingListId;
 			shoppingListId = (ShoppingList)eResolveProxy(oldShoppingListId);
 			if (shoppingListId != oldShoppingListId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ShoppinglistPackage.SHOPPING_LIST_WORK_EFFORT__SHOPPING_LIST_ID, oldShoppingListId, shoppingListId));
 			}
 		}
 		return shoppingListId;
@@ -108,7 +112,10 @@ public class ShoppingListWorkEffortImpl extends BizEntityImpl implements Shoppin
 	 */
 	@Override
 	public void setShoppingListId(ShoppingList newShoppingListId) {
+		ShoppingList oldShoppingListId = shoppingListId;
 		shoppingListId = newShoppingListId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ShoppinglistPackage.SHOPPING_LIST_WORK_EFFORT__SHOPPING_LIST_ID, oldShoppingListId, shoppingListId));
 	}
 
 	/**
@@ -122,6 +129,8 @@ public class ShoppingListWorkEffortImpl extends BizEntityImpl implements Shoppin
 			InternalEObject oldWorkEffortId = (InternalEObject)workEffortId;
 			workEffortId = (WorkEffort)eResolveProxy(oldWorkEffortId);
 			if (workEffortId != oldWorkEffortId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ShoppinglistPackage.SHOPPING_LIST_WORK_EFFORT__WORK_EFFORT_ID, oldWorkEffortId, workEffortId));
 			}
 		}
 		return workEffortId;
@@ -143,7 +152,10 @@ public class ShoppingListWorkEffortImpl extends BizEntityImpl implements Shoppin
 	 */
 	@Override
 	public void setWorkEffortId(WorkEffort newWorkEffortId) {
+		WorkEffort oldWorkEffortId = workEffortId;
 		workEffortId = newWorkEffortId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ShoppinglistPackage.SHOPPING_LIST_WORK_EFFORT__WORK_EFFORT_ID, oldWorkEffortId, workEffortId));
 	}
 
 	/**

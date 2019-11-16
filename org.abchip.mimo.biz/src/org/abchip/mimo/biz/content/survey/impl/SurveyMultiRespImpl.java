@@ -11,10 +11,12 @@ import org.abchip.mimo.biz.content.survey.Survey;
 import org.abchip.mimo.biz.content.survey.SurveyMultiResp;
 import org.abchip.mimo.biz.content.survey.SurveyPackage;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -123,7 +125,10 @@ public class SurveyMultiRespImpl extends BizEntityImpl implements SurveyMultiRes
 	 */
 	@Override
 	public void setMultiRespTitle(String newMultiRespTitle) {
+		String oldMultiRespTitle = multiRespTitle;
 		multiRespTitle = newMultiRespTitle;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SurveyPackage.SURVEY_MULTI_RESP__MULTI_RESP_TITLE, oldMultiRespTitle, multiRespTitle));
 	}
 
 	/**
@@ -137,6 +142,8 @@ public class SurveyMultiRespImpl extends BizEntityImpl implements SurveyMultiRes
 			InternalEObject oldSurveyId = (InternalEObject)surveyId;
 			surveyId = (Survey)eResolveProxy(oldSurveyId);
 			if (surveyId != oldSurveyId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, SurveyPackage.SURVEY_MULTI_RESP__SURVEY_ID, oldSurveyId, surveyId));
 			}
 		}
 		return surveyId;
@@ -158,7 +165,10 @@ public class SurveyMultiRespImpl extends BizEntityImpl implements SurveyMultiRes
 	 */
 	@Override
 	public void setSurveyId(Survey newSurveyId) {
+		Survey oldSurveyId = surveyId;
 		surveyId = newSurveyId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SurveyPackage.SURVEY_MULTI_RESP__SURVEY_ID, oldSurveyId, surveyId));
 	}
 
 	/**
@@ -178,7 +188,10 @@ public class SurveyMultiRespImpl extends BizEntityImpl implements SurveyMultiRes
 	 */
 	@Override
 	public void setSurveyMultiRespId(String newSurveyMultiRespId) {
+		String oldSurveyMultiRespId = surveyMultiRespId;
 		surveyMultiRespId = newSurveyMultiRespId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SurveyPackage.SURVEY_MULTI_RESP__SURVEY_MULTI_RESP_ID, oldSurveyMultiRespId, surveyMultiRespId));
 	}
 
 	/**

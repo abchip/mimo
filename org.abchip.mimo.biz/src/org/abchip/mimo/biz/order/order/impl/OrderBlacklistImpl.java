@@ -11,10 +11,12 @@ import org.abchip.mimo.biz.impl.BizEntityTypedImpl;
 import org.abchip.mimo.biz.order.order.OrderBlacklist;
 import org.abchip.mimo.biz.order.order.OrderBlacklistType;
 import org.abchip.mimo.biz.order.order.OrderPackage;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -102,7 +104,10 @@ public class OrderBlacklistImpl extends BizEntityTypedImpl<OrderBlacklistType> i
 	 */
 	@Override
 	public void setBlacklistString(String newBlacklistString) {
+		String oldBlacklistString = blacklistString;
 		blacklistString = newBlacklistString;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_BLACKLIST__BLACKLIST_STRING, oldBlacklistString, blacklistString));
 	}
 
 	/**
@@ -116,6 +121,8 @@ public class OrderBlacklistImpl extends BizEntityTypedImpl<OrderBlacklistType> i
 			InternalEObject oldOrderBlacklistTypeId = (InternalEObject)orderBlacklistTypeId;
 			orderBlacklistTypeId = (OrderBlacklistType)eResolveProxy(oldOrderBlacklistTypeId);
 			if (orderBlacklistTypeId != oldOrderBlacklistTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, OrderPackage.ORDER_BLACKLIST__ORDER_BLACKLIST_TYPE_ID, oldOrderBlacklistTypeId, orderBlacklistTypeId));
 			}
 		}
 		return orderBlacklistTypeId;
@@ -137,7 +144,10 @@ public class OrderBlacklistImpl extends BizEntityTypedImpl<OrderBlacklistType> i
 	 */
 	@Override
 	public void setOrderBlacklistTypeId(OrderBlacklistType newOrderBlacklistTypeId) {
+		OrderBlacklistType oldOrderBlacklistTypeId = orderBlacklistTypeId;
 		orderBlacklistTypeId = newOrderBlacklistTypeId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_BLACKLIST__ORDER_BLACKLIST_TYPE_ID, oldOrderBlacklistTypeId, orderBlacklistTypeId));
 	}
 
 	/**

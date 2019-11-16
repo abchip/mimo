@@ -19,10 +19,12 @@ import org.abchip.mimo.biz.marketing.opportunity.SalesForecast;
 import org.abchip.mimo.biz.marketing.opportunity.SalesForecastHistory;
 import org.abchip.mimo.biz.party.party.Party;
 import org.abchip.mimo.biz.security.login.UserLogin;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -354,7 +356,10 @@ public class SalesForecastHistoryImpl extends BizEntityImpl implements SalesFore
 	 */
 	@Override
 	public void setBestCaseAmount(BigDecimal newBestCaseAmount) {
+		BigDecimal oldBestCaseAmount = bestCaseAmount;
 		bestCaseAmount = newBestCaseAmount;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, OpportunityPackage.SALES_FORECAST_HISTORY__BEST_CASE_AMOUNT, oldBestCaseAmount, bestCaseAmount));
 	}
 
 	/**
@@ -374,7 +379,10 @@ public class SalesForecastHistoryImpl extends BizEntityImpl implements SalesFore
 	 */
 	@Override
 	public void setChangeNote(String newChangeNote) {
+		String oldChangeNote = changeNote;
 		changeNote = newChangeNote;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, OpportunityPackage.SALES_FORECAST_HISTORY__CHANGE_NOTE, oldChangeNote, changeNote));
 	}
 
 	/**
@@ -394,7 +402,10 @@ public class SalesForecastHistoryImpl extends BizEntityImpl implements SalesFore
 	 */
 	@Override
 	public void setClosedAmount(BigDecimal newClosedAmount) {
+		BigDecimal oldClosedAmount = closedAmount;
 		closedAmount = newClosedAmount;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, OpportunityPackage.SALES_FORECAST_HISTORY__CLOSED_AMOUNT, oldClosedAmount, closedAmount));
 	}
 
 	/**
@@ -408,6 +419,8 @@ public class SalesForecastHistoryImpl extends BizEntityImpl implements SalesFore
 			InternalEObject oldCurrencyUomId = (InternalEObject)currencyUomId;
 			currencyUomId = (Uom)eResolveProxy(oldCurrencyUomId);
 			if (currencyUomId != oldCurrencyUomId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, OpportunityPackage.SALES_FORECAST_HISTORY__CURRENCY_UOM_ID, oldCurrencyUomId, currencyUomId));
 			}
 		}
 		return currencyUomId;
@@ -429,7 +442,10 @@ public class SalesForecastHistoryImpl extends BizEntityImpl implements SalesFore
 	 */
 	@Override
 	public void setCurrencyUomId(Uom newCurrencyUomId) {
+		Uom oldCurrencyUomId = currencyUomId;
 		currencyUomId = newCurrencyUomId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, OpportunityPackage.SALES_FORECAST_HISTORY__CURRENCY_UOM_ID, oldCurrencyUomId, currencyUomId));
 	}
 
 	/**
@@ -443,6 +459,8 @@ public class SalesForecastHistoryImpl extends BizEntityImpl implements SalesFore
 			InternalEObject oldCustomTimePeriodId = (InternalEObject)customTimePeriodId;
 			customTimePeriodId = (CustomTimePeriod)eResolveProxy(oldCustomTimePeriodId);
 			if (customTimePeriodId != oldCustomTimePeriodId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, OpportunityPackage.SALES_FORECAST_HISTORY__CUSTOM_TIME_PERIOD_ID, oldCustomTimePeriodId, customTimePeriodId));
 			}
 		}
 		return customTimePeriodId;
@@ -464,7 +482,10 @@ public class SalesForecastHistoryImpl extends BizEntityImpl implements SalesFore
 	 */
 	@Override
 	public void setCustomTimePeriodId(CustomTimePeriod newCustomTimePeriodId) {
+		CustomTimePeriod oldCustomTimePeriodId = customTimePeriodId;
 		customTimePeriodId = newCustomTimePeriodId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, OpportunityPackage.SALES_FORECAST_HISTORY__CUSTOM_TIME_PERIOD_ID, oldCustomTimePeriodId, customTimePeriodId));
 	}
 
 	/**
@@ -484,7 +505,10 @@ public class SalesForecastHistoryImpl extends BizEntityImpl implements SalesFore
 	 */
 	@Override
 	public void setForecastAmount(BigDecimal newForecastAmount) {
+		BigDecimal oldForecastAmount = forecastAmount;
 		forecastAmount = newForecastAmount;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, OpportunityPackage.SALES_FORECAST_HISTORY__FORECAST_AMOUNT, oldForecastAmount, forecastAmount));
 	}
 
 	/**
@@ -498,6 +522,8 @@ public class SalesForecastHistoryImpl extends BizEntityImpl implements SalesFore
 			InternalEObject oldInternalPartyId = (InternalEObject)internalPartyId;
 			internalPartyId = (Party)eResolveProxy(oldInternalPartyId);
 			if (internalPartyId != oldInternalPartyId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, OpportunityPackage.SALES_FORECAST_HISTORY__INTERNAL_PARTY_ID, oldInternalPartyId, internalPartyId));
 			}
 		}
 		return internalPartyId;
@@ -519,7 +545,10 @@ public class SalesForecastHistoryImpl extends BizEntityImpl implements SalesFore
 	 */
 	@Override
 	public void setInternalPartyId(Party newInternalPartyId) {
+		Party oldInternalPartyId = internalPartyId;
 		internalPartyId = newInternalPartyId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, OpportunityPackage.SALES_FORECAST_HISTORY__INTERNAL_PARTY_ID, oldInternalPartyId, internalPartyId));
 	}
 
 	/**
@@ -533,6 +562,8 @@ public class SalesForecastHistoryImpl extends BizEntityImpl implements SalesFore
 			InternalEObject oldModifiedByUserLoginId = (InternalEObject)modifiedByUserLoginId;
 			modifiedByUserLoginId = (UserLogin)eResolveProxy(oldModifiedByUserLoginId);
 			if (modifiedByUserLoginId != oldModifiedByUserLoginId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, OpportunityPackage.SALES_FORECAST_HISTORY__MODIFIED_BY_USER_LOGIN_ID, oldModifiedByUserLoginId, modifiedByUserLoginId));
 			}
 		}
 		return modifiedByUserLoginId;
@@ -554,7 +585,10 @@ public class SalesForecastHistoryImpl extends BizEntityImpl implements SalesFore
 	 */
 	@Override
 	public void setModifiedByUserLoginId(UserLogin newModifiedByUserLoginId) {
+		UserLogin oldModifiedByUserLoginId = modifiedByUserLoginId;
 		modifiedByUserLoginId = newModifiedByUserLoginId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, OpportunityPackage.SALES_FORECAST_HISTORY__MODIFIED_BY_USER_LOGIN_ID, oldModifiedByUserLoginId, modifiedByUserLoginId));
 	}
 
 	/**
@@ -574,7 +608,10 @@ public class SalesForecastHistoryImpl extends BizEntityImpl implements SalesFore
 	 */
 	@Override
 	public void setModifiedTimestamp(Date newModifiedTimestamp) {
+		Date oldModifiedTimestamp = modifiedTimestamp;
 		modifiedTimestamp = newModifiedTimestamp;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, OpportunityPackage.SALES_FORECAST_HISTORY__MODIFIED_TIMESTAMP, oldModifiedTimestamp, modifiedTimestamp));
 	}
 
 	/**
@@ -588,6 +625,8 @@ public class SalesForecastHistoryImpl extends BizEntityImpl implements SalesFore
 			InternalEObject oldOrganizationPartyId = (InternalEObject)organizationPartyId;
 			organizationPartyId = (Party)eResolveProxy(oldOrganizationPartyId);
 			if (organizationPartyId != oldOrganizationPartyId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, OpportunityPackage.SALES_FORECAST_HISTORY__ORGANIZATION_PARTY_ID, oldOrganizationPartyId, organizationPartyId));
 			}
 		}
 		return organizationPartyId;
@@ -609,7 +648,10 @@ public class SalesForecastHistoryImpl extends BizEntityImpl implements SalesFore
 	 */
 	@Override
 	public void setOrganizationPartyId(Party newOrganizationPartyId) {
+		Party oldOrganizationPartyId = organizationPartyId;
 		organizationPartyId = newOrganizationPartyId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, OpportunityPackage.SALES_FORECAST_HISTORY__ORGANIZATION_PARTY_ID, oldOrganizationPartyId, organizationPartyId));
 	}
 
 	/**
@@ -629,7 +671,10 @@ public class SalesForecastHistoryImpl extends BizEntityImpl implements SalesFore
 	 */
 	@Override
 	public void setParentSalesForecastId(String newParentSalesForecastId) {
+		String oldParentSalesForecastId = parentSalesForecastId;
 		parentSalesForecastId = newParentSalesForecastId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, OpportunityPackage.SALES_FORECAST_HISTORY__PARENT_SALES_FORECAST_ID, oldParentSalesForecastId, parentSalesForecastId));
 	}
 
 	/**
@@ -649,7 +694,10 @@ public class SalesForecastHistoryImpl extends BizEntityImpl implements SalesFore
 	 */
 	@Override
 	public void setPercentOfQuotaClosed(BigDecimal newPercentOfQuotaClosed) {
+		BigDecimal oldPercentOfQuotaClosed = percentOfQuotaClosed;
 		percentOfQuotaClosed = newPercentOfQuotaClosed;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, OpportunityPackage.SALES_FORECAST_HISTORY__PERCENT_OF_QUOTA_CLOSED, oldPercentOfQuotaClosed, percentOfQuotaClosed));
 	}
 
 	/**
@@ -669,7 +717,10 @@ public class SalesForecastHistoryImpl extends BizEntityImpl implements SalesFore
 	 */
 	@Override
 	public void setPercentOfQuotaForecast(BigDecimal newPercentOfQuotaForecast) {
+		BigDecimal oldPercentOfQuotaForecast = percentOfQuotaForecast;
 		percentOfQuotaForecast = newPercentOfQuotaForecast;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, OpportunityPackage.SALES_FORECAST_HISTORY__PERCENT_OF_QUOTA_FORECAST, oldPercentOfQuotaForecast, percentOfQuotaForecast));
 	}
 
 	/**
@@ -689,7 +740,10 @@ public class SalesForecastHistoryImpl extends BizEntityImpl implements SalesFore
 	 */
 	@Override
 	public void setQuotaAmount(BigDecimal newQuotaAmount) {
+		BigDecimal oldQuotaAmount = quotaAmount;
 		quotaAmount = newQuotaAmount;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, OpportunityPackage.SALES_FORECAST_HISTORY__QUOTA_AMOUNT, oldQuotaAmount, quotaAmount));
 	}
 
 	/**
@@ -709,7 +763,10 @@ public class SalesForecastHistoryImpl extends BizEntityImpl implements SalesFore
 	 */
 	@Override
 	public void setSalesForecastHistoryId(String newSalesForecastHistoryId) {
+		String oldSalesForecastHistoryId = salesForecastHistoryId;
 		salesForecastHistoryId = newSalesForecastHistoryId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, OpportunityPackage.SALES_FORECAST_HISTORY__SALES_FORECAST_HISTORY_ID, oldSalesForecastHistoryId, salesForecastHistoryId));
 	}
 
 	/**
@@ -723,6 +780,8 @@ public class SalesForecastHistoryImpl extends BizEntityImpl implements SalesFore
 			InternalEObject oldSalesForecastId = (InternalEObject)salesForecastId;
 			salesForecastId = (SalesForecast)eResolveProxy(oldSalesForecastId);
 			if (salesForecastId != oldSalesForecastId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, OpportunityPackage.SALES_FORECAST_HISTORY__SALES_FORECAST_ID, oldSalesForecastId, salesForecastId));
 			}
 		}
 		return salesForecastId;
@@ -744,7 +803,10 @@ public class SalesForecastHistoryImpl extends BizEntityImpl implements SalesFore
 	 */
 	@Override
 	public void setSalesForecastId(SalesForecast newSalesForecastId) {
+		SalesForecast oldSalesForecastId = salesForecastId;
 		salesForecastId = newSalesForecastId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, OpportunityPackage.SALES_FORECAST_HISTORY__SALES_FORECAST_ID, oldSalesForecastId, salesForecastId));
 	}
 
 	/**

@@ -15,9 +15,11 @@ import org.abchip.mimo.biz.shipment.shipment.Shipment;
 import org.abchip.mimo.biz.shipment.shipment.ShipmentBoxType;
 import org.abchip.mimo.biz.shipment.shipment.ShipmentPackage;
 import org.abchip.mimo.biz.shipment.shipment.Shipment_Package;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -258,6 +260,8 @@ public class ShipmentPackageImpl extends BizEntityImpl implements ShipmentPackag
 			InternalEObject oldShipmentId = (InternalEObject)shipmentId;
 			shipmentId = (Shipment)eResolveProxy(oldShipmentId);
 			if (shipmentId != oldShipmentId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, Shipment_Package.SHIPMENT_PACKAGE__SHIPMENT_ID, oldShipmentId, shipmentId));
 			}
 		}
 		return shipmentId;
@@ -279,7 +283,10 @@ public class ShipmentPackageImpl extends BizEntityImpl implements ShipmentPackag
 	 */
 	@Override
 	public void setShipmentId(Shipment newShipmentId) {
+		Shipment oldShipmentId = shipmentId;
 		shipmentId = newShipmentId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, Shipment_Package.SHIPMENT_PACKAGE__SHIPMENT_ID, oldShipmentId, shipmentId));
 	}
 
 	/**
@@ -299,7 +306,10 @@ public class ShipmentPackageImpl extends BizEntityImpl implements ShipmentPackag
 	 */
 	@Override
 	public void setShipmentPackageSeqId(String newShipmentPackageSeqId) {
+		String oldShipmentPackageSeqId = shipmentPackageSeqId;
 		shipmentPackageSeqId = newShipmentPackageSeqId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, Shipment_Package.SHIPMENT_PACKAGE__SHIPMENT_PACKAGE_SEQ_ID, oldShipmentPackageSeqId, shipmentPackageSeqId));
 	}
 
 	/**
@@ -319,7 +329,10 @@ public class ShipmentPackageImpl extends BizEntityImpl implements ShipmentPackag
 	 */
 	@Override
 	public void setBoxHeight(BigDecimal newBoxHeight) {
+		BigDecimal oldBoxHeight = boxHeight;
 		boxHeight = newBoxHeight;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, Shipment_Package.SHIPMENT_PACKAGE__BOX_HEIGHT, oldBoxHeight, boxHeight));
 	}
 
 	/**
@@ -339,7 +352,10 @@ public class ShipmentPackageImpl extends BizEntityImpl implements ShipmentPackag
 	 */
 	@Override
 	public void setBoxLength(BigDecimal newBoxLength) {
+		BigDecimal oldBoxLength = boxLength;
 		boxLength = newBoxLength;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, Shipment_Package.SHIPMENT_PACKAGE__BOX_LENGTH, oldBoxLength, boxLength));
 	}
 
 	/**
@@ -359,7 +375,10 @@ public class ShipmentPackageImpl extends BizEntityImpl implements ShipmentPackag
 	 */
 	@Override
 	public void setBoxWidth(BigDecimal newBoxWidth) {
+		BigDecimal oldBoxWidth = boxWidth;
 		boxWidth = newBoxWidth;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, Shipment_Package.SHIPMENT_PACKAGE__BOX_WIDTH, oldBoxWidth, boxWidth));
 	}
 
 	/**
@@ -379,7 +398,10 @@ public class ShipmentPackageImpl extends BizEntityImpl implements ShipmentPackag
 	 */
 	@Override
 	public void setDateCreated(Date newDateCreated) {
+		Date oldDateCreated = dateCreated;
 		dateCreated = newDateCreated;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, Shipment_Package.SHIPMENT_PACKAGE__DATE_CREATED, oldDateCreated, dateCreated));
 	}
 
 	/**
@@ -393,6 +415,8 @@ public class ShipmentPackageImpl extends BizEntityImpl implements ShipmentPackag
 			InternalEObject oldDimensionUomId = (InternalEObject)dimensionUomId;
 			dimensionUomId = (Uom)eResolveProxy(oldDimensionUomId);
 			if (dimensionUomId != oldDimensionUomId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, Shipment_Package.SHIPMENT_PACKAGE__DIMENSION_UOM_ID, oldDimensionUomId, dimensionUomId));
 			}
 		}
 		return dimensionUomId;
@@ -414,7 +438,10 @@ public class ShipmentPackageImpl extends BizEntityImpl implements ShipmentPackag
 	 */
 	@Override
 	public void setDimensionUomId(Uom newDimensionUomId) {
+		Uom oldDimensionUomId = dimensionUomId;
 		dimensionUomId = newDimensionUomId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, Shipment_Package.SHIPMENT_PACKAGE__DIMENSION_UOM_ID, oldDimensionUomId, dimensionUomId));
 	}
 
 	/**
@@ -434,7 +461,10 @@ public class ShipmentPackageImpl extends BizEntityImpl implements ShipmentPackag
 	 */
 	@Override
 	public void setInsuredValue(BigDecimal newInsuredValue) {
+		BigDecimal oldInsuredValue = insuredValue;
 		insuredValue = newInsuredValue;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, Shipment_Package.SHIPMENT_PACKAGE__INSURED_VALUE, oldInsuredValue, insuredValue));
 	}
 
 	/**
@@ -448,6 +478,8 @@ public class ShipmentPackageImpl extends BizEntityImpl implements ShipmentPackag
 			InternalEObject oldShipmentBoxTypeId = (InternalEObject)shipmentBoxTypeId;
 			shipmentBoxTypeId = (ShipmentBoxType)eResolveProxy(oldShipmentBoxTypeId);
 			if (shipmentBoxTypeId != oldShipmentBoxTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, Shipment_Package.SHIPMENT_PACKAGE__SHIPMENT_BOX_TYPE_ID, oldShipmentBoxTypeId, shipmentBoxTypeId));
 			}
 		}
 		return shipmentBoxTypeId;
@@ -469,7 +501,10 @@ public class ShipmentPackageImpl extends BizEntityImpl implements ShipmentPackag
 	 */
 	@Override
 	public void setShipmentBoxTypeId(ShipmentBoxType newShipmentBoxTypeId) {
+		ShipmentBoxType oldShipmentBoxTypeId = shipmentBoxTypeId;
 		shipmentBoxTypeId = newShipmentBoxTypeId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, Shipment_Package.SHIPMENT_PACKAGE__SHIPMENT_BOX_TYPE_ID, oldShipmentBoxTypeId, shipmentBoxTypeId));
 	}
 
 	/**
@@ -489,7 +524,10 @@ public class ShipmentPackageImpl extends BizEntityImpl implements ShipmentPackag
 	 */
 	@Override
 	public void setWeight(BigDecimal newWeight) {
+		BigDecimal oldWeight = weight;
 		weight = newWeight;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, Shipment_Package.SHIPMENT_PACKAGE__WEIGHT, oldWeight, weight));
 	}
 
 	/**
@@ -503,6 +541,8 @@ public class ShipmentPackageImpl extends BizEntityImpl implements ShipmentPackag
 			InternalEObject oldWeightUomId = (InternalEObject)weightUomId;
 			weightUomId = (Uom)eResolveProxy(oldWeightUomId);
 			if (weightUomId != oldWeightUomId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, Shipment_Package.SHIPMENT_PACKAGE__WEIGHT_UOM_ID, oldWeightUomId, weightUomId));
 			}
 		}
 		return weightUomId;
@@ -524,7 +564,10 @@ public class ShipmentPackageImpl extends BizEntityImpl implements ShipmentPackag
 	 */
 	@Override
 	public void setWeightUomId(Uom newWeightUomId) {
+		Uom oldWeightUomId = weightUomId;
 		weightUomId = newWeightUomId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, Shipment_Package.SHIPMENT_PACKAGE__WEIGHT_UOM_ID, oldWeightUomId, weightUomId));
 	}
 
 	/**

@@ -17,10 +17,12 @@ import org.abchip.mimo.biz.workeffort.timesheet.TimeEntry;
 import org.abchip.mimo.biz.workeffort.timesheet.Timesheet;
 import org.abchip.mimo.biz.workeffort.timesheet.TimesheetPackage;
 import org.abchip.mimo.biz.workeffort.workeffort.WorkEffort;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -257,7 +259,10 @@ public class TimeEntryImpl extends BizEntityImpl implements TimeEntry {
 	 */
 	@Override
 	public void setComments(String newComments) {
+		String oldComments = comments;
 		comments = newComments;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, TimesheetPackage.TIME_ENTRY__COMMENTS, oldComments, comments));
 	}
 
 	/**
@@ -277,7 +282,10 @@ public class TimeEntryImpl extends BizEntityImpl implements TimeEntry {
 	 */
 	@Override
 	public void setFromDate(Date newFromDate) {
+		Date oldFromDate = fromDate;
 		fromDate = newFromDate;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, TimesheetPackage.TIME_ENTRY__FROM_DATE, oldFromDate, fromDate));
 	}
 
 	/**
@@ -297,7 +305,10 @@ public class TimeEntryImpl extends BizEntityImpl implements TimeEntry {
 	 */
 	@Override
 	public void setHours(double newHours) {
+		double oldHours = hours;
 		hours = newHours;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, TimesheetPackage.TIME_ENTRY__HOURS, oldHours, hours));
 	}
 
 	/**
@@ -311,6 +322,8 @@ public class TimeEntryImpl extends BizEntityImpl implements TimeEntry {
 			InternalEObject oldInvoiceId = (InternalEObject)invoiceId;
 			invoiceId = (Invoice)eResolveProxy(oldInvoiceId);
 			if (invoiceId != oldInvoiceId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, TimesheetPackage.TIME_ENTRY__INVOICE_ID, oldInvoiceId, invoiceId));
 			}
 		}
 		return invoiceId;
@@ -332,7 +345,10 @@ public class TimeEntryImpl extends BizEntityImpl implements TimeEntry {
 	 */
 	@Override
 	public void setInvoiceId(Invoice newInvoiceId) {
+		Invoice oldInvoiceId = invoiceId;
 		invoiceId = newInvoiceId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, TimesheetPackage.TIME_ENTRY__INVOICE_ID, oldInvoiceId, invoiceId));
 	}
 
 	/**
@@ -352,7 +368,10 @@ public class TimeEntryImpl extends BizEntityImpl implements TimeEntry {
 	 */
 	@Override
 	public void setInvoiceItemSeqId(String newInvoiceItemSeqId) {
+		String oldInvoiceItemSeqId = invoiceItemSeqId;
 		invoiceItemSeqId = newInvoiceItemSeqId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, TimesheetPackage.TIME_ENTRY__INVOICE_ITEM_SEQ_ID, oldInvoiceItemSeqId, invoiceItemSeqId));
 	}
 
 	/**
@@ -366,6 +385,8 @@ public class TimeEntryImpl extends BizEntityImpl implements TimeEntry {
 			InternalEObject oldPartyId = (InternalEObject)partyId;
 			partyId = (Party)eResolveProxy(oldPartyId);
 			if (partyId != oldPartyId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, TimesheetPackage.TIME_ENTRY__PARTY_ID, oldPartyId, partyId));
 			}
 		}
 		return partyId;
@@ -387,7 +408,10 @@ public class TimeEntryImpl extends BizEntityImpl implements TimeEntry {
 	 */
 	@Override
 	public void setPartyId(Party newPartyId) {
+		Party oldPartyId = partyId;
 		partyId = newPartyId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, TimesheetPackage.TIME_ENTRY__PARTY_ID, oldPartyId, partyId));
 	}
 
 	/**
@@ -401,6 +425,8 @@ public class TimeEntryImpl extends BizEntityImpl implements TimeEntry {
 			InternalEObject oldRateTypeId = (InternalEObject)rateTypeId;
 			rateTypeId = (RateType)eResolveProxy(oldRateTypeId);
 			if (rateTypeId != oldRateTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, TimesheetPackage.TIME_ENTRY__RATE_TYPE_ID, oldRateTypeId, rateTypeId));
 			}
 		}
 		return rateTypeId;
@@ -422,7 +448,10 @@ public class TimeEntryImpl extends BizEntityImpl implements TimeEntry {
 	 */
 	@Override
 	public void setRateTypeId(RateType newRateTypeId) {
+		RateType oldRateTypeId = rateTypeId;
 		rateTypeId = newRateTypeId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, TimesheetPackage.TIME_ENTRY__RATE_TYPE_ID, oldRateTypeId, rateTypeId));
 	}
 
 	/**
@@ -442,7 +471,10 @@ public class TimeEntryImpl extends BizEntityImpl implements TimeEntry {
 	 */
 	@Override
 	public void setThruDate(Date newThruDate) {
+		Date oldThruDate = thruDate;
 		thruDate = newThruDate;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, TimesheetPackage.TIME_ENTRY__THRU_DATE, oldThruDate, thruDate));
 	}
 
 	/**
@@ -462,7 +494,10 @@ public class TimeEntryImpl extends BizEntityImpl implements TimeEntry {
 	 */
 	@Override
 	public void setTimeEntryId(String newTimeEntryId) {
+		String oldTimeEntryId = timeEntryId;
 		timeEntryId = newTimeEntryId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, TimesheetPackage.TIME_ENTRY__TIME_ENTRY_ID, oldTimeEntryId, timeEntryId));
 	}
 
 	/**
@@ -476,6 +511,8 @@ public class TimeEntryImpl extends BizEntityImpl implements TimeEntry {
 			InternalEObject oldTimesheetId = (InternalEObject)timesheetId;
 			timesheetId = (Timesheet)eResolveProxy(oldTimesheetId);
 			if (timesheetId != oldTimesheetId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, TimesheetPackage.TIME_ENTRY__TIMESHEET_ID, oldTimesheetId, timesheetId));
 			}
 		}
 		return timesheetId;
@@ -497,7 +534,10 @@ public class TimeEntryImpl extends BizEntityImpl implements TimeEntry {
 	 */
 	@Override
 	public void setTimesheetId(Timesheet newTimesheetId) {
+		Timesheet oldTimesheetId = timesheetId;
 		timesheetId = newTimesheetId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, TimesheetPackage.TIME_ENTRY__TIMESHEET_ID, oldTimesheetId, timesheetId));
 	}
 
 	/**
@@ -511,6 +551,8 @@ public class TimeEntryImpl extends BizEntityImpl implements TimeEntry {
 			InternalEObject oldWorkEffortId = (InternalEObject)workEffortId;
 			workEffortId = (WorkEffort)eResolveProxy(oldWorkEffortId);
 			if (workEffortId != oldWorkEffortId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, TimesheetPackage.TIME_ENTRY__WORK_EFFORT_ID, oldWorkEffortId, workEffortId));
 			}
 		}
 		return workEffortId;
@@ -532,7 +574,10 @@ public class TimeEntryImpl extends BizEntityImpl implements TimeEntry {
 	 */
 	@Override
 	public void setWorkEffortId(WorkEffort newWorkEffortId) {
+		WorkEffort oldWorkEffortId = workEffortId;
 		workEffortId = newWorkEffortId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, TimesheetPackage.TIME_ENTRY__WORK_EFFORT_ID, oldWorkEffortId, workEffortId));
 	}
 
 	/**

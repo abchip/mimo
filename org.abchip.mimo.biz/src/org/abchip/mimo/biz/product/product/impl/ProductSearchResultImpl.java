@@ -15,9 +15,11 @@ import java.util.List;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.product.product.ProductPackage;
 import org.abchip.mimo.biz.product.product.ProductSearchResult;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.util.BasicInternalEList;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -231,7 +233,10 @@ public class ProductSearchResultImpl extends BizEntityImpl implements ProductSea
 	 */
 	@Override
 	public void setNumResults(long newNumResults) {
+		long oldNumResults = numResults;
 		numResults = newNumResults;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ProductPackage.PRODUCT_SEARCH_RESULT__NUM_RESULTS, oldNumResults, numResults));
 	}
 
 	/**
@@ -251,7 +256,10 @@ public class ProductSearchResultImpl extends BizEntityImpl implements ProductSea
 	 */
 	@Override
 	public void setOrderByName(String newOrderByName) {
+		String oldOrderByName = orderByName;
 		orderByName = newOrderByName;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ProductPackage.PRODUCT_SEARCH_RESULT__ORDER_BY_NAME, oldOrderByName, orderByName));
 	}
 
 	/**
@@ -271,7 +279,10 @@ public class ProductSearchResultImpl extends BizEntityImpl implements ProductSea
 	 */
 	@Override
 	public void setSearchDate(Date newSearchDate) {
+		Date oldSearchDate = searchDate;
 		searchDate = newSearchDate;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ProductPackage.PRODUCT_SEARCH_RESULT__SEARCH_DATE, oldSearchDate, searchDate));
 	}
 
 	/**
@@ -291,7 +302,10 @@ public class ProductSearchResultImpl extends BizEntityImpl implements ProductSea
 	 */
 	@Override
 	public void setSecondsTotal(double newSecondsTotal) {
+		double oldSecondsTotal = secondsTotal;
 		secondsTotal = newSecondsTotal;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ProductPackage.PRODUCT_SEARCH_RESULT__SECONDS_TOTAL, oldSecondsTotal, secondsTotal));
 	}
 
 	/**
@@ -311,7 +325,10 @@ public class ProductSearchResultImpl extends BizEntityImpl implements ProductSea
 	 */
 	@Override
 	public void setVisitId(String newVisitId) {
+		String oldVisitId = visitId;
 		visitId = newVisitId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ProductPackage.PRODUCT_SEARCH_RESULT__VISIT_ID, oldVisitId, visitId));
 	}
 
 	/**
@@ -322,7 +339,7 @@ public class ProductSearchResultImpl extends BizEntityImpl implements ProductSea
 	@Override
 	public List<String> getProductSearchConstraints() {
 		if (productSearchConstraints == null) {
-			productSearchConstraints = new BasicInternalEList<String>(String.class);
+			productSearchConstraints = new EDataTypeUniqueEList<String>(String.class, this, ProductPackage.PRODUCT_SEARCH_RESULT__PRODUCT_SEARCH_CONSTRAINTS);
 		}
 		return productSearchConstraints;
 	}
@@ -344,7 +361,10 @@ public class ProductSearchResultImpl extends BizEntityImpl implements ProductSea
 	 */
 	@Override
 	public void setProductSearchResultId(String newProductSearchResultId) {
+		String oldProductSearchResultId = productSearchResultId;
 		productSearchResultId = newProductSearchResultId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ProductPackage.PRODUCT_SEARCH_RESULT__PRODUCT_SEARCH_RESULT_ID, oldProductSearchResultId, productSearchResultId));
 	}
 
 	/**
@@ -364,7 +384,10 @@ public class ProductSearchResultImpl extends BizEntityImpl implements ProductSea
 	 */
 	@Override
 	public void setIsAscending(boolean newIsAscending) {
+		boolean oldIsAscending = isAscending;
 		isAscending = newIsAscending;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ProductPackage.PRODUCT_SEARCH_RESULT__IS_ASCENDING, oldIsAscending, isAscending));
 	}
 
 	/**

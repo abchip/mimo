@@ -11,10 +11,12 @@ import org.abchip.mimo.biz.entity.tenant.Tenant;
 import org.abchip.mimo.biz.entity.tenant.TenantDataSource;
 import org.abchip.mimo.biz.entity.tenant.TenantPackage;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -156,7 +158,10 @@ public class TenantDataSourceImpl extends BizEntityImpl implements TenantDataSou
 	 */
 	@Override
 	public void setEntityGroupName(String newEntityGroupName) {
+		String oldEntityGroupName = entityGroupName;
 		entityGroupName = newEntityGroupName;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, TenantPackage.TENANT_DATA_SOURCE__ENTITY_GROUP_NAME, oldEntityGroupName, entityGroupName));
 	}
 
 	/**
@@ -176,7 +181,10 @@ public class TenantDataSourceImpl extends BizEntityImpl implements TenantDataSou
 	 */
 	@Override
 	public void setJdbcPassword(String newJdbcPassword) {
+		String oldJdbcPassword = jdbcPassword;
 		jdbcPassword = newJdbcPassword;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, TenantPackage.TENANT_DATA_SOURCE__JDBC_PASSWORD, oldJdbcPassword, jdbcPassword));
 	}
 
 	/**
@@ -196,7 +204,10 @@ public class TenantDataSourceImpl extends BizEntityImpl implements TenantDataSou
 	 */
 	@Override
 	public void setJdbcUri(String newJdbcUri) {
+		String oldJdbcUri = jdbcUri;
 		jdbcUri = newJdbcUri;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, TenantPackage.TENANT_DATA_SOURCE__JDBC_URI, oldJdbcUri, jdbcUri));
 	}
 
 	/**
@@ -216,7 +227,10 @@ public class TenantDataSourceImpl extends BizEntityImpl implements TenantDataSou
 	 */
 	@Override
 	public void setJdbcUsername(String newJdbcUsername) {
+		String oldJdbcUsername = jdbcUsername;
 		jdbcUsername = newJdbcUsername;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, TenantPackage.TENANT_DATA_SOURCE__JDBC_USERNAME, oldJdbcUsername, jdbcUsername));
 	}
 
 	/**
@@ -230,6 +244,8 @@ public class TenantDataSourceImpl extends BizEntityImpl implements TenantDataSou
 			InternalEObject oldTenantId = (InternalEObject)tenantId;
 			tenantId = (Tenant)eResolveProxy(oldTenantId);
 			if (tenantId != oldTenantId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, TenantPackage.TENANT_DATA_SOURCE__TENANT_ID, oldTenantId, tenantId));
 			}
 		}
 		return tenantId;
@@ -251,7 +267,10 @@ public class TenantDataSourceImpl extends BizEntityImpl implements TenantDataSou
 	 */
 	@Override
 	public void setTenantId(Tenant newTenantId) {
+		Tenant oldTenantId = tenantId;
 		tenantId = newTenantId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, TenantPackage.TENANT_DATA_SOURCE__TENANT_ID, oldTenantId, tenantId));
 	}
 
 	/**

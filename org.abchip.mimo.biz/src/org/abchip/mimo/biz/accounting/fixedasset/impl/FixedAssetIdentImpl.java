@@ -12,9 +12,11 @@ import org.abchip.mimo.biz.accounting.fixedasset.FixedAssetIdent;
 import org.abchip.mimo.biz.accounting.fixedasset.FixedAssetIdentType;
 import org.abchip.mimo.biz.accounting.fixedasset.FixedassetPackage;
 import org.abchip.mimo.biz.impl.BizEntityTypedImpl;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -109,7 +111,10 @@ public class FixedAssetIdentImpl extends BizEntityTypedImpl<FixedAssetIdentType>
 	 */
 	@Override
 	public void setIdValue(String newIdValue) {
+		String oldIdValue = idValue;
 		idValue = newIdValue;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, FixedassetPackage.FIXED_ASSET_IDENT__ID_VALUE, oldIdValue, idValue));
 	}
 
 	/**
@@ -123,6 +128,8 @@ public class FixedAssetIdentImpl extends BizEntityTypedImpl<FixedAssetIdentType>
 			InternalEObject oldFixedAssetId = (InternalEObject)fixedAssetId;
 			fixedAssetId = (FixedAsset)eResolveProxy(oldFixedAssetId);
 			if (fixedAssetId != oldFixedAssetId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, FixedassetPackage.FIXED_ASSET_IDENT__FIXED_ASSET_ID, oldFixedAssetId, fixedAssetId));
 			}
 		}
 		return fixedAssetId;
@@ -144,7 +151,10 @@ public class FixedAssetIdentImpl extends BizEntityTypedImpl<FixedAssetIdentType>
 	 */
 	@Override
 	public void setFixedAssetId(FixedAsset newFixedAssetId) {
+		FixedAsset oldFixedAssetId = fixedAssetId;
 		fixedAssetId = newFixedAssetId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, FixedassetPackage.FIXED_ASSET_IDENT__FIXED_ASSET_ID, oldFixedAssetId, fixedAssetId));
 	}
 
 	/**
@@ -158,6 +168,8 @@ public class FixedAssetIdentImpl extends BizEntityTypedImpl<FixedAssetIdentType>
 			InternalEObject oldFixedAssetIdentTypeId = (InternalEObject)fixedAssetIdentTypeId;
 			fixedAssetIdentTypeId = (FixedAssetIdentType)eResolveProxy(oldFixedAssetIdentTypeId);
 			if (fixedAssetIdentTypeId != oldFixedAssetIdentTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, FixedassetPackage.FIXED_ASSET_IDENT__FIXED_ASSET_IDENT_TYPE_ID, oldFixedAssetIdentTypeId, fixedAssetIdentTypeId));
 			}
 		}
 		return fixedAssetIdentTypeId;
@@ -179,7 +191,10 @@ public class FixedAssetIdentImpl extends BizEntityTypedImpl<FixedAssetIdentType>
 	 */
 	@Override
 	public void setFixedAssetIdentTypeId(FixedAssetIdentType newFixedAssetIdentTypeId) {
+		FixedAssetIdentType oldFixedAssetIdentTypeId = fixedAssetIdentTypeId;
 		fixedAssetIdentTypeId = newFixedAssetIdentTypeId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, FixedassetPackage.FIXED_ASSET_IDENT__FIXED_ASSET_IDENT_TYPE_ID, oldFixedAssetIdentTypeId, fixedAssetIdentTypeId));
 	}
 
 	/**

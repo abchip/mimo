@@ -14,9 +14,11 @@ import org.abchip.mimo.biz.party.agreement.Agreement;
 import org.abchip.mimo.biz.party.agreement.AgreementPackage;
 import org.abchip.mimo.biz.party.agreement.AgreementPromoAppl;
 import org.abchip.mimo.biz.product.promo.ProductPromo;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -168,7 +170,10 @@ public class AgreementPromoApplImpl extends BizEntityImpl implements AgreementPr
 	 */
 	@Override
 	public void setAgreementItemSeqId(String newAgreementItemSeqId) {
+		String oldAgreementItemSeqId = agreementItemSeqId;
 		agreementItemSeqId = newAgreementItemSeqId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, AgreementPackage.AGREEMENT_PROMO_APPL__AGREEMENT_ITEM_SEQ_ID, oldAgreementItemSeqId, agreementItemSeqId));
 	}
 
 	/**
@@ -188,7 +193,10 @@ public class AgreementPromoApplImpl extends BizEntityImpl implements AgreementPr
 	 */
 	@Override
 	public void setFromDate(Date newFromDate) {
+		Date oldFromDate = fromDate;
 		fromDate = newFromDate;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, AgreementPackage.AGREEMENT_PROMO_APPL__FROM_DATE, oldFromDate, fromDate));
 	}
 
 	/**
@@ -202,6 +210,8 @@ public class AgreementPromoApplImpl extends BizEntityImpl implements AgreementPr
 			InternalEObject oldProductPromoId = (InternalEObject)productPromoId;
 			productPromoId = (ProductPromo)eResolveProxy(oldProductPromoId);
 			if (productPromoId != oldProductPromoId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, AgreementPackage.AGREEMENT_PROMO_APPL__PRODUCT_PROMO_ID, oldProductPromoId, productPromoId));
 			}
 		}
 		return productPromoId;
@@ -223,7 +233,10 @@ public class AgreementPromoApplImpl extends BizEntityImpl implements AgreementPr
 	 */
 	@Override
 	public void setProductPromoId(ProductPromo newProductPromoId) {
+		ProductPromo oldProductPromoId = productPromoId;
 		productPromoId = newProductPromoId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, AgreementPackage.AGREEMENT_PROMO_APPL__PRODUCT_PROMO_ID, oldProductPromoId, productPromoId));
 	}
 
 	/**
@@ -243,7 +256,10 @@ public class AgreementPromoApplImpl extends BizEntityImpl implements AgreementPr
 	 */
 	@Override
 	public void setSequenceNum(long newSequenceNum) {
+		long oldSequenceNum = sequenceNum;
 		sequenceNum = newSequenceNum;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, AgreementPackage.AGREEMENT_PROMO_APPL__SEQUENCE_NUM, oldSequenceNum, sequenceNum));
 	}
 
 	/**
@@ -263,7 +279,10 @@ public class AgreementPromoApplImpl extends BizEntityImpl implements AgreementPr
 	 */
 	@Override
 	public void setThruDate(Date newThruDate) {
+		Date oldThruDate = thruDate;
 		thruDate = newThruDate;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, AgreementPackage.AGREEMENT_PROMO_APPL__THRU_DATE, oldThruDate, thruDate));
 	}
 
 	/**
@@ -277,6 +296,8 @@ public class AgreementPromoApplImpl extends BizEntityImpl implements AgreementPr
 			InternalEObject oldAgreementId = (InternalEObject)agreementId;
 			agreementId = (Agreement)eResolveProxy(oldAgreementId);
 			if (agreementId != oldAgreementId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, AgreementPackage.AGREEMENT_PROMO_APPL__AGREEMENT_ID, oldAgreementId, agreementId));
 			}
 		}
 		return agreementId;
@@ -298,7 +319,10 @@ public class AgreementPromoApplImpl extends BizEntityImpl implements AgreementPr
 	 */
 	@Override
 	public void setAgreementId(Agreement newAgreementId) {
+		Agreement oldAgreementId = agreementId;
 		agreementId = newAgreementId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, AgreementPackage.AGREEMENT_PROMO_APPL__AGREEMENT_ID, oldAgreementId, agreementId));
 	}
 
 	/**

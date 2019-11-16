@@ -14,11 +14,13 @@ import org.abchip.mimo.biz.impl.BizEntityTypeImpl;
 import org.abchip.mimo.biz.product.product.Product;
 import org.abchip.mimo.biz.product.product.ProductPackage;
 import org.abchip.mimo.biz.product.product.ProductType;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.util.BasicInternalEList;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -201,7 +203,10 @@ public class ProductTypeImpl extends BizEntityTypeImpl<Product> implements Produ
 	 */
 	@Override
 	public void setDescription(String newDescription) {
+		String oldDescription = description;
 		description = newDescription;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ProductPackage.PRODUCT_TYPE__DESCRIPTION, oldDescription, description));
 	}
 
 	/**
@@ -221,7 +226,10 @@ public class ProductTypeImpl extends BizEntityTypeImpl<Product> implements Produ
 	 */
 	@Override
 	public void setHasTable(boolean newHasTable) {
+		boolean oldHasTable = hasTable;
 		hasTable = newHasTable;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ProductPackage.PRODUCT_TYPE__HAS_TABLE, oldHasTable, hasTable));
 	}
 
 	/**
@@ -241,7 +249,10 @@ public class ProductTypeImpl extends BizEntityTypeImpl<Product> implements Produ
 	 */
 	@Override
 	public void setIsDigital(boolean newIsDigital) {
+		boolean oldIsDigital = isDigital;
 		isDigital = newIsDigital;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ProductPackage.PRODUCT_TYPE__IS_DIGITAL, oldIsDigital, isDigital));
 	}
 
 	/**
@@ -261,7 +272,10 @@ public class ProductTypeImpl extends BizEntityTypeImpl<Product> implements Produ
 	 */
 	@Override
 	public void setIsPhysical(boolean newIsPhysical) {
+		boolean oldIsPhysical = isPhysical;
 		isPhysical = newIsPhysical;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ProductPackage.PRODUCT_TYPE__IS_PHYSICAL, oldIsPhysical, isPhysical));
 	}
 
 	/**
@@ -275,6 +289,8 @@ public class ProductTypeImpl extends BizEntityTypeImpl<Product> implements Produ
 			InternalEObject oldParentTypeId = (InternalEObject)parentTypeId;
 			parentTypeId = (ProductType)eResolveProxy(oldParentTypeId);
 			if (parentTypeId != oldParentTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ProductPackage.PRODUCT_TYPE__PARENT_TYPE_ID, oldParentTypeId, parentTypeId));
 			}
 		}
 		return parentTypeId;
@@ -296,7 +312,10 @@ public class ProductTypeImpl extends BizEntityTypeImpl<Product> implements Produ
 	 */
 	@Override
 	public void setParentTypeId(ProductType newParentTypeId) {
+		ProductType oldParentTypeId = parentTypeId;
 		parentTypeId = newParentTypeId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ProductPackage.PRODUCT_TYPE__PARENT_TYPE_ID, oldParentTypeId, parentTypeId));
 	}
 
 	/**
@@ -316,7 +335,10 @@ public class ProductTypeImpl extends BizEntityTypeImpl<Product> implements Produ
 	 */
 	@Override
 	public void setProductTypeId(String newProductTypeId) {
+		String oldProductTypeId = productTypeId;
 		productTypeId = newProductTypeId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ProductPackage.PRODUCT_TYPE__PRODUCT_TYPE_ID, oldProductTypeId, productTypeId));
 	}
 
 	/**
@@ -327,7 +349,7 @@ public class ProductTypeImpl extends BizEntityTypeImpl<Product> implements Produ
 	@Override
 	public List<String> getProductTypeAttrs() {
 		if (productTypeAttrs == null) {
-			productTypeAttrs = new BasicInternalEList<String>(String.class);
+			productTypeAttrs = new EDataTypeUniqueEList<String>(String.class, this, ProductPackage.PRODUCT_TYPE__PRODUCT_TYPE_ATTRS);
 		}
 		return productTypeAttrs;
 	}

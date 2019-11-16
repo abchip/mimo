@@ -13,10 +13,12 @@ import org.abchip.mimo.biz.order.requirement.RequirementPackage;
 import org.abchip.mimo.biz.order.requirement.WorkReqFulfType;
 import org.abchip.mimo.biz.order.requirement.WorkRequirementFulfillment;
 import org.abchip.mimo.biz.workeffort.workeffort.WorkEffort;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -99,6 +101,8 @@ public class WorkRequirementFulfillmentImpl extends BizEntityTypedImpl<WorkReqFu
 			InternalEObject oldRequirementId = (InternalEObject)requirementId;
 			requirementId = (Requirement)eResolveProxy(oldRequirementId);
 			if (requirementId != oldRequirementId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, RequirementPackage.WORK_REQUIREMENT_FULFILLMENT__REQUIREMENT_ID, oldRequirementId, requirementId));
 			}
 		}
 		return requirementId;
@@ -120,7 +124,10 @@ public class WorkRequirementFulfillmentImpl extends BizEntityTypedImpl<WorkReqFu
 	 */
 	@Override
 	public void setRequirementId(Requirement newRequirementId) {
+		Requirement oldRequirementId = requirementId;
 		requirementId = newRequirementId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, RequirementPackage.WORK_REQUIREMENT_FULFILLMENT__REQUIREMENT_ID, oldRequirementId, requirementId));
 	}
 
 	/**
@@ -134,6 +141,8 @@ public class WorkRequirementFulfillmentImpl extends BizEntityTypedImpl<WorkReqFu
 			InternalEObject oldWorkEffortId = (InternalEObject)workEffortId;
 			workEffortId = (WorkEffort)eResolveProxy(oldWorkEffortId);
 			if (workEffortId != oldWorkEffortId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, RequirementPackage.WORK_REQUIREMENT_FULFILLMENT__WORK_EFFORT_ID, oldWorkEffortId, workEffortId));
 			}
 		}
 		return workEffortId;
@@ -155,7 +164,10 @@ public class WorkRequirementFulfillmentImpl extends BizEntityTypedImpl<WorkReqFu
 	 */
 	@Override
 	public void setWorkEffortId(WorkEffort newWorkEffortId) {
+		WorkEffort oldWorkEffortId = workEffortId;
 		workEffortId = newWorkEffortId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, RequirementPackage.WORK_REQUIREMENT_FULFILLMENT__WORK_EFFORT_ID, oldWorkEffortId, workEffortId));
 	}
 
 	/**
@@ -169,6 +181,8 @@ public class WorkRequirementFulfillmentImpl extends BizEntityTypedImpl<WorkReqFu
 			InternalEObject oldWorkReqFulfTypeId = (InternalEObject)workReqFulfTypeId;
 			workReqFulfTypeId = (WorkReqFulfType)eResolveProxy(oldWorkReqFulfTypeId);
 			if (workReqFulfTypeId != oldWorkReqFulfTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, RequirementPackage.WORK_REQUIREMENT_FULFILLMENT__WORK_REQ_FULF_TYPE_ID, oldWorkReqFulfTypeId, workReqFulfTypeId));
 			}
 		}
 		return workReqFulfTypeId;
@@ -190,7 +204,10 @@ public class WorkRequirementFulfillmentImpl extends BizEntityTypedImpl<WorkReqFu
 	 */
 	@Override
 	public void setWorkReqFulfTypeId(WorkReqFulfType newWorkReqFulfTypeId) {
+		WorkReqFulfType oldWorkReqFulfTypeId = workReqFulfTypeId;
 		workReqFulfTypeId = newWorkReqFulfTypeId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, RequirementPackage.WORK_REQUIREMENT_FULFILLMENT__WORK_REQ_FULF_TYPE_ID, oldWorkReqFulfTypeId, workReqFulfTypeId));
 	}
 
 	/**

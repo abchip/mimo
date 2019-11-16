@@ -14,9 +14,11 @@ import org.abchip.mimo.biz.accounting.payment.Payment;
 import org.abchip.mimo.biz.accounting.payment.PaymentBudgetAllocation;
 import org.abchip.mimo.biz.accounting.payment.PaymentPackage;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -130,7 +132,10 @@ public class PaymentBudgetAllocationImpl extends BizEntityImpl implements Paymen
 	 */
 	@Override
 	public void setAmount(BigDecimal newAmount) {
+		BigDecimal oldAmount = amount;
 		amount = newAmount;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.PAYMENT_BUDGET_ALLOCATION__AMOUNT, oldAmount, amount));
 	}
 
 	/**
@@ -150,7 +155,10 @@ public class PaymentBudgetAllocationImpl extends BizEntityImpl implements Paymen
 	 */
 	@Override
 	public void setBudgetItemSeqId(String newBudgetItemSeqId) {
+		String oldBudgetItemSeqId = budgetItemSeqId;
 		budgetItemSeqId = newBudgetItemSeqId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.PAYMENT_BUDGET_ALLOCATION__BUDGET_ITEM_SEQ_ID, oldBudgetItemSeqId, budgetItemSeqId));
 	}
 
 	/**
@@ -164,6 +172,8 @@ public class PaymentBudgetAllocationImpl extends BizEntityImpl implements Paymen
 			InternalEObject oldBudgetId = (InternalEObject)budgetId;
 			budgetId = (Budget)eResolveProxy(oldBudgetId);
 			if (budgetId != oldBudgetId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PaymentPackage.PAYMENT_BUDGET_ALLOCATION__BUDGET_ID, oldBudgetId, budgetId));
 			}
 		}
 		return budgetId;
@@ -185,7 +195,10 @@ public class PaymentBudgetAllocationImpl extends BizEntityImpl implements Paymen
 	 */
 	@Override
 	public void setBudgetId(Budget newBudgetId) {
+		Budget oldBudgetId = budgetId;
 		budgetId = newBudgetId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.PAYMENT_BUDGET_ALLOCATION__BUDGET_ID, oldBudgetId, budgetId));
 	}
 
 	/**
@@ -199,6 +212,8 @@ public class PaymentBudgetAllocationImpl extends BizEntityImpl implements Paymen
 			InternalEObject oldPaymentId = (InternalEObject)paymentId;
 			paymentId = (Payment)eResolveProxy(oldPaymentId);
 			if (paymentId != oldPaymentId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PaymentPackage.PAYMENT_BUDGET_ALLOCATION__PAYMENT_ID, oldPaymentId, paymentId));
 			}
 		}
 		return paymentId;
@@ -220,7 +235,10 @@ public class PaymentBudgetAllocationImpl extends BizEntityImpl implements Paymen
 	 */
 	@Override
 	public void setPaymentId(Payment newPaymentId) {
+		Payment oldPaymentId = paymentId;
 		paymentId = newPaymentId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.PAYMENT_BUDGET_ALLOCATION__PAYMENT_ID, oldPaymentId, paymentId));
 	}
 
 	/**

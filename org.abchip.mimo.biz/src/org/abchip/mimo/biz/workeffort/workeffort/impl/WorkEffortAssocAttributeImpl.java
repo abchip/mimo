@@ -12,7 +12,9 @@ import java.util.Date;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.workeffort.workeffort.WorkEffortAssocAttribute;
 import org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -215,7 +217,10 @@ public class WorkEffortAssocAttributeImpl extends BizEntityImpl implements WorkE
 	 */
 	@Override
 	public void setAttrDescription(String newAttrDescription) {
+		String oldAttrDescription = attrDescription;
 		attrDescription = newAttrDescription;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WorkeffortPackage.WORK_EFFORT_ASSOC_ATTRIBUTE__ATTR_DESCRIPTION, oldAttrDescription, attrDescription));
 	}
 
 	/**
@@ -235,7 +240,10 @@ public class WorkEffortAssocAttributeImpl extends BizEntityImpl implements WorkE
 	 */
 	@Override
 	public void setAttrName(String newAttrName) {
+		String oldAttrName = attrName;
 		attrName = newAttrName;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WorkeffortPackage.WORK_EFFORT_ASSOC_ATTRIBUTE__ATTR_NAME, oldAttrName, attrName));
 	}
 
 	/**
@@ -255,7 +263,10 @@ public class WorkEffortAssocAttributeImpl extends BizEntityImpl implements WorkE
 	 */
 	@Override
 	public void setAttrValue(String newAttrValue) {
+		String oldAttrValue = attrValue;
 		attrValue = newAttrValue;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WorkeffortPackage.WORK_EFFORT_ASSOC_ATTRIBUTE__ATTR_VALUE, oldAttrValue, attrValue));
 	}
 
 	/**
@@ -275,7 +286,10 @@ public class WorkEffortAssocAttributeImpl extends BizEntityImpl implements WorkE
 	 */
 	@Override
 	public void setFromDate(Date newFromDate) {
+		Date oldFromDate = fromDate;
 		fromDate = newFromDate;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WorkeffortPackage.WORK_EFFORT_ASSOC_ATTRIBUTE__FROM_DATE, oldFromDate, fromDate));
 	}
 
 	/**
@@ -295,7 +309,10 @@ public class WorkEffortAssocAttributeImpl extends BizEntityImpl implements WorkE
 	 */
 	@Override
 	public void setWorkEffortAssocTypeId(String newWorkEffortAssocTypeId) {
+		String oldWorkEffortAssocTypeId = workEffortAssocTypeId;
 		workEffortAssocTypeId = newWorkEffortAssocTypeId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WorkeffortPackage.WORK_EFFORT_ASSOC_ATTRIBUTE__WORK_EFFORT_ASSOC_TYPE_ID, oldWorkEffortAssocTypeId, workEffortAssocTypeId));
 	}
 
 	/**
@@ -315,7 +332,10 @@ public class WorkEffortAssocAttributeImpl extends BizEntityImpl implements WorkE
 	 */
 	@Override
 	public void setWorkEffortIdFrom(String newWorkEffortIdFrom) {
+		String oldWorkEffortIdFrom = workEffortIdFrom;
 		workEffortIdFrom = newWorkEffortIdFrom;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WorkeffortPackage.WORK_EFFORT_ASSOC_ATTRIBUTE__WORK_EFFORT_ID_FROM, oldWorkEffortIdFrom, workEffortIdFrom));
 	}
 
 	/**
@@ -335,7 +355,10 @@ public class WorkEffortAssocAttributeImpl extends BizEntityImpl implements WorkE
 	 */
 	@Override
 	public void setWorkEffortIdTo(String newWorkEffortIdTo) {
+		String oldWorkEffortIdTo = workEffortIdTo;
 		workEffortIdTo = newWorkEffortIdTo;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WorkeffortPackage.WORK_EFFORT_ASSOC_ATTRIBUTE__WORK_EFFORT_ID_TO, oldWorkEffortIdTo, workEffortIdTo));
 	}
 
 	/**

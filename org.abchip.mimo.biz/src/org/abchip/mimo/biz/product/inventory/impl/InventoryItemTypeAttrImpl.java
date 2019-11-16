@@ -11,9 +11,11 @@ import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.product.inventory.InventoryItemType;
 import org.abchip.mimo.biz.product.inventory.InventoryItemTypeAttr;
 import org.abchip.mimo.biz.product.inventory.InventoryPackage;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -122,7 +124,10 @@ public class InventoryItemTypeAttrImpl extends BizEntityImpl implements Inventor
 	 */
 	@Override
 	public void setDescription(String newDescription) {
+		String oldDescription = description;
 		description = newDescription;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, InventoryPackage.INVENTORY_ITEM_TYPE_ATTR__DESCRIPTION, oldDescription, description));
 	}
 
 	/**
@@ -142,7 +147,10 @@ public class InventoryItemTypeAttrImpl extends BizEntityImpl implements Inventor
 	 */
 	@Override
 	public void setAttrName(String newAttrName) {
+		String oldAttrName = attrName;
 		attrName = newAttrName;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, InventoryPackage.INVENTORY_ITEM_TYPE_ATTR__ATTR_NAME, oldAttrName, attrName));
 	}
 
 	/**
@@ -156,6 +164,8 @@ public class InventoryItemTypeAttrImpl extends BizEntityImpl implements Inventor
 			InternalEObject oldInventoryItemTypeId = (InternalEObject)inventoryItemTypeId;
 			inventoryItemTypeId = (InventoryItemType)eResolveProxy(oldInventoryItemTypeId);
 			if (inventoryItemTypeId != oldInventoryItemTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, InventoryPackage.INVENTORY_ITEM_TYPE_ATTR__INVENTORY_ITEM_TYPE_ID, oldInventoryItemTypeId, inventoryItemTypeId));
 			}
 		}
 		return inventoryItemTypeId;
@@ -177,7 +187,10 @@ public class InventoryItemTypeAttrImpl extends BizEntityImpl implements Inventor
 	 */
 	@Override
 	public void setInventoryItemTypeId(InventoryItemType newInventoryItemTypeId) {
+		InventoryItemType oldInventoryItemTypeId = inventoryItemTypeId;
 		inventoryItemTypeId = newInventoryItemTypeId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, InventoryPackage.INVENTORY_ITEM_TYPE_ATTR__INVENTORY_ITEM_TYPE_ID, oldInventoryItemTypeId, inventoryItemTypeId));
 	}
 
 	/**

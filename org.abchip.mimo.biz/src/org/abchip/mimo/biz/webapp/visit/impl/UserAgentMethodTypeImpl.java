@@ -12,7 +12,9 @@ import java.util.List;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.webapp.visit.UserAgentMethodType;
 import org.abchip.mimo.biz.webapp.visit.VisitPackage;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -110,7 +112,10 @@ public class UserAgentMethodTypeImpl extends BizEntityImpl implements UserAgentM
 	 */
 	@Override
 	public void setUserAgentMethodTypeId(String newUserAgentMethodTypeId) {
+		String oldUserAgentMethodTypeId = userAgentMethodTypeId;
 		userAgentMethodTypeId = newUserAgentMethodTypeId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, VisitPackage.USER_AGENT_METHOD_TYPE__USER_AGENT_METHOD_TYPE_ID, oldUserAgentMethodTypeId, userAgentMethodTypeId));
 	}
 
 	/**
@@ -130,7 +135,10 @@ public class UserAgentMethodTypeImpl extends BizEntityImpl implements UserAgentM
 	 */
 	@Override
 	public void setDescription(String newDescription) {
+		String oldDescription = description;
 		description = newDescription;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, VisitPackage.USER_AGENT_METHOD_TYPE__DESCRIPTION, oldDescription, description));
 	}
 
 	/**

@@ -14,10 +14,12 @@ import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.marketing.tracking.TrackingCode;
 import org.abchip.mimo.biz.marketing.tracking.TrackingCodeVisit;
 import org.abchip.mimo.biz.marketing.tracking.TrackingPackage;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -137,7 +139,10 @@ public class TrackingCodeVisitImpl extends BizEntityImpl implements TrackingCode
 	 */
 	@Override
 	public void setFromDate(Date newFromDate) {
+		Date oldFromDate = fromDate;
 		fromDate = newFromDate;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, TrackingPackage.TRACKING_CODE_VISIT__FROM_DATE, oldFromDate, fromDate));
 	}
 
 	/**
@@ -151,6 +156,8 @@ public class TrackingCodeVisitImpl extends BizEntityImpl implements TrackingCode
 			InternalEObject oldSourceEnumId = (InternalEObject)sourceEnumId;
 			sourceEnumId = (Enumeration)eResolveProxy(oldSourceEnumId);
 			if (sourceEnumId != oldSourceEnumId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, TrackingPackage.TRACKING_CODE_VISIT__SOURCE_ENUM_ID, oldSourceEnumId, sourceEnumId));
 			}
 		}
 		return sourceEnumId;
@@ -172,7 +179,10 @@ public class TrackingCodeVisitImpl extends BizEntityImpl implements TrackingCode
 	 */
 	@Override
 	public void setSourceEnumId(Enumeration newSourceEnumId) {
+		Enumeration oldSourceEnumId = sourceEnumId;
 		sourceEnumId = newSourceEnumId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, TrackingPackage.TRACKING_CODE_VISIT__SOURCE_ENUM_ID, oldSourceEnumId, sourceEnumId));
 	}
 
 	/**
@@ -186,6 +196,8 @@ public class TrackingCodeVisitImpl extends BizEntityImpl implements TrackingCode
 			InternalEObject oldTrackingCodeId = (InternalEObject)trackingCodeId;
 			trackingCodeId = (TrackingCode)eResolveProxy(oldTrackingCodeId);
 			if (trackingCodeId != oldTrackingCodeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, TrackingPackage.TRACKING_CODE_VISIT__TRACKING_CODE_ID, oldTrackingCodeId, trackingCodeId));
 			}
 		}
 		return trackingCodeId;
@@ -207,7 +219,10 @@ public class TrackingCodeVisitImpl extends BizEntityImpl implements TrackingCode
 	 */
 	@Override
 	public void setTrackingCodeId(TrackingCode newTrackingCodeId) {
+		TrackingCode oldTrackingCodeId = trackingCodeId;
 		trackingCodeId = newTrackingCodeId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, TrackingPackage.TRACKING_CODE_VISIT__TRACKING_CODE_ID, oldTrackingCodeId, trackingCodeId));
 	}
 
 	/**
@@ -227,7 +242,10 @@ public class TrackingCodeVisitImpl extends BizEntityImpl implements TrackingCode
 	 */
 	@Override
 	public void setVisitId(String newVisitId) {
+		String oldVisitId = visitId;
 		visitId = newVisitId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, TrackingPackage.TRACKING_CODE_VISIT__VISIT_ID, oldVisitId, visitId));
 	}
 
 	/**

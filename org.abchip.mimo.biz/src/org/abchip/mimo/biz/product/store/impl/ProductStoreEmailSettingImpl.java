@@ -12,9 +12,11 @@ import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.product.store.ProductStore;
 import org.abchip.mimo.biz.product.store.ProductStoreEmailSetting;
 import org.abchip.mimo.biz.product.store.StorePackage;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -239,7 +241,10 @@ public class ProductStoreEmailSettingImpl extends BizEntityImpl implements Produ
 	 */
 	@Override
 	public void setBccAddress(String newBccAddress) {
+		String oldBccAddress = bccAddress;
 		bccAddress = newBccAddress;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, StorePackage.PRODUCT_STORE_EMAIL_SETTING__BCC_ADDRESS, oldBccAddress, bccAddress));
 	}
 
 	/**
@@ -259,7 +264,10 @@ public class ProductStoreEmailSettingImpl extends BizEntityImpl implements Produ
 	 */
 	@Override
 	public void setBodyScreenLocation(String newBodyScreenLocation) {
+		String oldBodyScreenLocation = bodyScreenLocation;
 		bodyScreenLocation = newBodyScreenLocation;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, StorePackage.PRODUCT_STORE_EMAIL_SETTING__BODY_SCREEN_LOCATION, oldBodyScreenLocation, bodyScreenLocation));
 	}
 
 	/**
@@ -279,7 +287,10 @@ public class ProductStoreEmailSettingImpl extends BizEntityImpl implements Produ
 	 */
 	@Override
 	public void setCcAddress(String newCcAddress) {
+		String oldCcAddress = ccAddress;
 		ccAddress = newCcAddress;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, StorePackage.PRODUCT_STORE_EMAIL_SETTING__CC_ADDRESS, oldCcAddress, ccAddress));
 	}
 
 	/**
@@ -299,7 +310,10 @@ public class ProductStoreEmailSettingImpl extends BizEntityImpl implements Produ
 	 */
 	@Override
 	public void setContentType(String newContentType) {
+		String oldContentType = contentType;
 		contentType = newContentType;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, StorePackage.PRODUCT_STORE_EMAIL_SETTING__CONTENT_TYPE, oldContentType, contentType));
 	}
 
 	/**
@@ -313,6 +327,8 @@ public class ProductStoreEmailSettingImpl extends BizEntityImpl implements Produ
 			InternalEObject oldEmailType = (InternalEObject)emailType;
 			emailType = (Enumeration)eResolveProxy(oldEmailType);
 			if (emailType != oldEmailType) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, StorePackage.PRODUCT_STORE_EMAIL_SETTING__EMAIL_TYPE, oldEmailType, emailType));
 			}
 		}
 		return emailType;
@@ -334,7 +350,10 @@ public class ProductStoreEmailSettingImpl extends BizEntityImpl implements Produ
 	 */
 	@Override
 	public void setEmailType(Enumeration newEmailType) {
+		Enumeration oldEmailType = emailType;
 		emailType = newEmailType;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, StorePackage.PRODUCT_STORE_EMAIL_SETTING__EMAIL_TYPE, oldEmailType, emailType));
 	}
 
 	/**
@@ -354,7 +373,10 @@ public class ProductStoreEmailSettingImpl extends BizEntityImpl implements Produ
 	 */
 	@Override
 	public void setFromAddress(String newFromAddress) {
+		String oldFromAddress = fromAddress;
 		fromAddress = newFromAddress;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, StorePackage.PRODUCT_STORE_EMAIL_SETTING__FROM_ADDRESS, oldFromAddress, fromAddress));
 	}
 
 	/**
@@ -374,7 +396,10 @@ public class ProductStoreEmailSettingImpl extends BizEntityImpl implements Produ
 	 */
 	@Override
 	public void setSubject(String newSubject) {
+		String oldSubject = subject;
 		subject = newSubject;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, StorePackage.PRODUCT_STORE_EMAIL_SETTING__SUBJECT, oldSubject, subject));
 	}
 
 	/**
@@ -394,7 +419,10 @@ public class ProductStoreEmailSettingImpl extends BizEntityImpl implements Produ
 	 */
 	@Override
 	public void setXslfoAttachScreenLocation(String newXslfoAttachScreenLocation) {
+		String oldXslfoAttachScreenLocation = xslfoAttachScreenLocation;
 		xslfoAttachScreenLocation = newXslfoAttachScreenLocation;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, StorePackage.PRODUCT_STORE_EMAIL_SETTING__XSLFO_ATTACH_SCREEN_LOCATION, oldXslfoAttachScreenLocation, xslfoAttachScreenLocation));
 	}
 
 	/**
@@ -408,6 +436,8 @@ public class ProductStoreEmailSettingImpl extends BizEntityImpl implements Produ
 			InternalEObject oldProductStoreId = (InternalEObject)productStoreId;
 			productStoreId = (ProductStore)eResolveProxy(oldProductStoreId);
 			if (productStoreId != oldProductStoreId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, StorePackage.PRODUCT_STORE_EMAIL_SETTING__PRODUCT_STORE_ID, oldProductStoreId, productStoreId));
 			}
 		}
 		return productStoreId;
@@ -429,7 +459,10 @@ public class ProductStoreEmailSettingImpl extends BizEntityImpl implements Produ
 	 */
 	@Override
 	public void setProductStoreId(ProductStore newProductStoreId) {
+		ProductStore oldProductStoreId = productStoreId;
 		productStoreId = newProductStoreId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, StorePackage.PRODUCT_STORE_EMAIL_SETTING__PRODUCT_STORE_ID, oldProductStoreId, productStoreId));
 	}
 
 	/**

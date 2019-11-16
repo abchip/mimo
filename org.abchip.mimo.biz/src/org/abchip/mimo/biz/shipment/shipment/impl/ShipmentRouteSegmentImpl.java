@@ -23,10 +23,12 @@ import org.abchip.mimo.biz.shipment.shipment.Shipment;
 import org.abchip.mimo.biz.shipment.shipment.ShipmentMethodType;
 import org.abchip.mimo.biz.shipment.shipment.ShipmentRouteSegment;
 import org.abchip.mimo.biz.shipment.shipment.Shipment_Package;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -708,7 +710,10 @@ public class ShipmentRouteSegmentImpl extends BizEntityImpl implements ShipmentR
 	 */
 	@Override
 	public void setActualArrivalDate(Date newActualArrivalDate) {
+		Date oldActualArrivalDate = actualArrivalDate;
 		actualArrivalDate = newActualArrivalDate;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, Shipment_Package.SHIPMENT_ROUTE_SEGMENT__ACTUAL_ARRIVAL_DATE, oldActualArrivalDate, actualArrivalDate));
 	}
 
 	/**
@@ -728,7 +733,10 @@ public class ShipmentRouteSegmentImpl extends BizEntityImpl implements ShipmentR
 	 */
 	@Override
 	public void setActualCost(BigDecimal newActualCost) {
+		BigDecimal oldActualCost = actualCost;
 		actualCost = newActualCost;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, Shipment_Package.SHIPMENT_ROUTE_SEGMENT__ACTUAL_COST, oldActualCost, actualCost));
 	}
 
 	/**
@@ -748,7 +756,10 @@ public class ShipmentRouteSegmentImpl extends BizEntityImpl implements ShipmentR
 	 */
 	@Override
 	public void setActualOtherCost(BigDecimal newActualOtherCost) {
+		BigDecimal oldActualOtherCost = actualOtherCost;
 		actualOtherCost = newActualOtherCost;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, Shipment_Package.SHIPMENT_ROUTE_SEGMENT__ACTUAL_OTHER_COST, oldActualOtherCost, actualOtherCost));
 	}
 
 	/**
@@ -768,7 +779,10 @@ public class ShipmentRouteSegmentImpl extends BizEntityImpl implements ShipmentR
 	 */
 	@Override
 	public void setActualServiceCost(BigDecimal newActualServiceCost) {
+		BigDecimal oldActualServiceCost = actualServiceCost;
 		actualServiceCost = newActualServiceCost;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, Shipment_Package.SHIPMENT_ROUTE_SEGMENT__ACTUAL_SERVICE_COST, oldActualServiceCost, actualServiceCost));
 	}
 
 	/**
@@ -788,7 +802,10 @@ public class ShipmentRouteSegmentImpl extends BizEntityImpl implements ShipmentR
 	 */
 	@Override
 	public void setActualStartDate(Date newActualStartDate) {
+		Date oldActualStartDate = actualStartDate;
 		actualStartDate = newActualStartDate;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, Shipment_Package.SHIPMENT_ROUTE_SEGMENT__ACTUAL_START_DATE, oldActualStartDate, actualStartDate));
 	}
 
 	/**
@@ -808,7 +825,10 @@ public class ShipmentRouteSegmentImpl extends BizEntityImpl implements ShipmentR
 	 */
 	@Override
 	public void setActualTransportCost(BigDecimal newActualTransportCost) {
+		BigDecimal oldActualTransportCost = actualTransportCost;
 		actualTransportCost = newActualTransportCost;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, Shipment_Package.SHIPMENT_ROUTE_SEGMENT__ACTUAL_TRANSPORT_COST, oldActualTransportCost, actualTransportCost));
 	}
 
 	/**
@@ -828,7 +848,10 @@ public class ShipmentRouteSegmentImpl extends BizEntityImpl implements ShipmentR
 	 */
 	@Override
 	public void setBillingWeight(BigDecimal newBillingWeight) {
+		BigDecimal oldBillingWeight = billingWeight;
 		billingWeight = newBillingWeight;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, Shipment_Package.SHIPMENT_ROUTE_SEGMENT__BILLING_WEIGHT, oldBillingWeight, billingWeight));
 	}
 
 	/**
@@ -842,6 +865,8 @@ public class ShipmentRouteSegmentImpl extends BizEntityImpl implements ShipmentR
 			InternalEObject oldBillingWeightUomId = (InternalEObject)billingWeightUomId;
 			billingWeightUomId = (Uom)eResolveProxy(oldBillingWeightUomId);
 			if (billingWeightUomId != oldBillingWeightUomId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, Shipment_Package.SHIPMENT_ROUTE_SEGMENT__BILLING_WEIGHT_UOM_ID, oldBillingWeightUomId, billingWeightUomId));
 			}
 		}
 		return billingWeightUomId;
@@ -863,7 +888,10 @@ public class ShipmentRouteSegmentImpl extends BizEntityImpl implements ShipmentR
 	 */
 	@Override
 	public void setBillingWeightUomId(Uom newBillingWeightUomId) {
+		Uom oldBillingWeightUomId = billingWeightUomId;
 		billingWeightUomId = newBillingWeightUomId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, Shipment_Package.SHIPMENT_ROUTE_SEGMENT__BILLING_WEIGHT_UOM_ID, oldBillingWeightUomId, billingWeightUomId));
 	}
 
 	/**
@@ -883,7 +911,10 @@ public class ShipmentRouteSegmentImpl extends BizEntityImpl implements ShipmentR
 	 */
 	@Override
 	public void setCarrierDeliveryZone(String newCarrierDeliveryZone) {
+		String oldCarrierDeliveryZone = carrierDeliveryZone;
 		carrierDeliveryZone = newCarrierDeliveryZone;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, Shipment_Package.SHIPMENT_ROUTE_SEGMENT__CARRIER_DELIVERY_ZONE, oldCarrierDeliveryZone, carrierDeliveryZone));
 	}
 
 	/**
@@ -897,6 +928,8 @@ public class ShipmentRouteSegmentImpl extends BizEntityImpl implements ShipmentR
 			InternalEObject oldCarrierPartyId = (InternalEObject)carrierPartyId;
 			carrierPartyId = (Party)eResolveProxy(oldCarrierPartyId);
 			if (carrierPartyId != oldCarrierPartyId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, Shipment_Package.SHIPMENT_ROUTE_SEGMENT__CARRIER_PARTY_ID, oldCarrierPartyId, carrierPartyId));
 			}
 		}
 		return carrierPartyId;
@@ -918,7 +951,10 @@ public class ShipmentRouteSegmentImpl extends BizEntityImpl implements ShipmentR
 	 */
 	@Override
 	public void setCarrierPartyId(Party newCarrierPartyId) {
+		Party oldCarrierPartyId = carrierPartyId;
 		carrierPartyId = newCarrierPartyId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, Shipment_Package.SHIPMENT_ROUTE_SEGMENT__CARRIER_PARTY_ID, oldCarrierPartyId, carrierPartyId));
 	}
 
 	/**
@@ -938,7 +974,10 @@ public class ShipmentRouteSegmentImpl extends BizEntityImpl implements ShipmentR
 	 */
 	@Override
 	public void setCarrierRestrictionCodes(String newCarrierRestrictionCodes) {
+		String oldCarrierRestrictionCodes = carrierRestrictionCodes;
 		carrierRestrictionCodes = newCarrierRestrictionCodes;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, Shipment_Package.SHIPMENT_ROUTE_SEGMENT__CARRIER_RESTRICTION_CODES, oldCarrierRestrictionCodes, carrierRestrictionCodes));
 	}
 
 	/**
@@ -958,7 +997,10 @@ public class ShipmentRouteSegmentImpl extends BizEntityImpl implements ShipmentR
 	 */
 	@Override
 	public void setCarrierRestrictionDesc(String newCarrierRestrictionDesc) {
+		String oldCarrierRestrictionDesc = carrierRestrictionDesc;
 		carrierRestrictionDesc = newCarrierRestrictionDesc;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, Shipment_Package.SHIPMENT_ROUTE_SEGMENT__CARRIER_RESTRICTION_DESC, oldCarrierRestrictionDesc, carrierRestrictionDesc));
 	}
 
 	/**
@@ -972,6 +1014,8 @@ public class ShipmentRouteSegmentImpl extends BizEntityImpl implements ShipmentR
 			InternalEObject oldCarrierServiceStatusId = (InternalEObject)carrierServiceStatusId;
 			carrierServiceStatusId = (StatusItem)eResolveProxy(oldCarrierServiceStatusId);
 			if (carrierServiceStatusId != oldCarrierServiceStatusId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, Shipment_Package.SHIPMENT_ROUTE_SEGMENT__CARRIER_SERVICE_STATUS_ID, oldCarrierServiceStatusId, carrierServiceStatusId));
 			}
 		}
 		return carrierServiceStatusId;
@@ -993,7 +1037,10 @@ public class ShipmentRouteSegmentImpl extends BizEntityImpl implements ShipmentR
 	 */
 	@Override
 	public void setCarrierServiceStatusId(StatusItem newCarrierServiceStatusId) {
+		StatusItem oldCarrierServiceStatusId = carrierServiceStatusId;
 		carrierServiceStatusId = newCarrierServiceStatusId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, Shipment_Package.SHIPMENT_ROUTE_SEGMENT__CARRIER_SERVICE_STATUS_ID, oldCarrierServiceStatusId, carrierServiceStatusId));
 	}
 
 	/**
@@ -1007,6 +1054,8 @@ public class ShipmentRouteSegmentImpl extends BizEntityImpl implements ShipmentR
 			InternalEObject oldCurrencyUomId = (InternalEObject)currencyUomId;
 			currencyUomId = (Uom)eResolveProxy(oldCurrencyUomId);
 			if (currencyUomId != oldCurrencyUomId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, Shipment_Package.SHIPMENT_ROUTE_SEGMENT__CURRENCY_UOM_ID, oldCurrencyUomId, currencyUomId));
 			}
 		}
 		return currencyUomId;
@@ -1028,7 +1077,10 @@ public class ShipmentRouteSegmentImpl extends BizEntityImpl implements ShipmentR
 	 */
 	@Override
 	public void setCurrencyUomId(Uom newCurrencyUomId) {
+		Uom oldCurrencyUomId = currencyUomId;
 		currencyUomId = newCurrencyUomId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, Shipment_Package.SHIPMENT_ROUTE_SEGMENT__CURRENCY_UOM_ID, oldCurrencyUomId, currencyUomId));
 	}
 
 	/**
@@ -1042,6 +1094,8 @@ public class ShipmentRouteSegmentImpl extends BizEntityImpl implements ShipmentR
 			InternalEObject oldDeliveryId = (InternalEObject)deliveryId;
 			deliveryId = (Delivery)eResolveProxy(oldDeliveryId);
 			if (deliveryId != oldDeliveryId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, Shipment_Package.SHIPMENT_ROUTE_SEGMENT__DELIVERY_ID, oldDeliveryId, deliveryId));
 			}
 		}
 		return deliveryId;
@@ -1063,7 +1117,10 @@ public class ShipmentRouteSegmentImpl extends BizEntityImpl implements ShipmentR
 	 */
 	@Override
 	public void setDeliveryId(Delivery newDeliveryId) {
+		Delivery oldDeliveryId = deliveryId;
 		deliveryId = newDeliveryId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, Shipment_Package.SHIPMENT_ROUTE_SEGMENT__DELIVERY_ID, oldDeliveryId, deliveryId));
 	}
 
 	/**
@@ -1077,6 +1134,8 @@ public class ShipmentRouteSegmentImpl extends BizEntityImpl implements ShipmentR
 			InternalEObject oldDestContactMechId = (InternalEObject)destContactMechId;
 			destContactMechId = (ContactMech)eResolveProxy(oldDestContactMechId);
 			if (destContactMechId != oldDestContactMechId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, Shipment_Package.SHIPMENT_ROUTE_SEGMENT__DEST_CONTACT_MECH_ID, oldDestContactMechId, destContactMechId));
 			}
 		}
 		return destContactMechId;
@@ -1098,7 +1157,10 @@ public class ShipmentRouteSegmentImpl extends BizEntityImpl implements ShipmentR
 	 */
 	@Override
 	public void setDestContactMechId(ContactMech newDestContactMechId) {
+		ContactMech oldDestContactMechId = destContactMechId;
 		destContactMechId = newDestContactMechId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, Shipment_Package.SHIPMENT_ROUTE_SEGMENT__DEST_CONTACT_MECH_ID, oldDestContactMechId, destContactMechId));
 	}
 
 	/**
@@ -1112,6 +1174,8 @@ public class ShipmentRouteSegmentImpl extends BizEntityImpl implements ShipmentR
 			InternalEObject oldDestFacilityId = (InternalEObject)destFacilityId;
 			destFacilityId = (Facility)eResolveProxy(oldDestFacilityId);
 			if (destFacilityId != oldDestFacilityId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, Shipment_Package.SHIPMENT_ROUTE_SEGMENT__DEST_FACILITY_ID, oldDestFacilityId, destFacilityId));
 			}
 		}
 		return destFacilityId;
@@ -1133,7 +1197,10 @@ public class ShipmentRouteSegmentImpl extends BizEntityImpl implements ShipmentR
 	 */
 	@Override
 	public void setDestFacilityId(Facility newDestFacilityId) {
+		Facility oldDestFacilityId = destFacilityId;
 		destFacilityId = newDestFacilityId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, Shipment_Package.SHIPMENT_ROUTE_SEGMENT__DEST_FACILITY_ID, oldDestFacilityId, destFacilityId));
 	}
 
 	/**
@@ -1147,6 +1214,8 @@ public class ShipmentRouteSegmentImpl extends BizEntityImpl implements ShipmentR
 			InternalEObject oldDestTelecomNumberId = (InternalEObject)destTelecomNumberId;
 			destTelecomNumberId = (TelecomNumber)eResolveProxy(oldDestTelecomNumberId);
 			if (destTelecomNumberId != oldDestTelecomNumberId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, Shipment_Package.SHIPMENT_ROUTE_SEGMENT__DEST_TELECOM_NUMBER_ID, oldDestTelecomNumberId, destTelecomNumberId));
 			}
 		}
 		return destTelecomNumberId;
@@ -1168,7 +1237,10 @@ public class ShipmentRouteSegmentImpl extends BizEntityImpl implements ShipmentR
 	 */
 	@Override
 	public void setDestTelecomNumberId(TelecomNumber newDestTelecomNumberId) {
+		TelecomNumber oldDestTelecomNumberId = destTelecomNumberId;
 		destTelecomNumberId = newDestTelecomNumberId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, Shipment_Package.SHIPMENT_ROUTE_SEGMENT__DEST_TELECOM_NUMBER_ID, oldDestTelecomNumberId, destTelecomNumberId));
 	}
 
 	/**
@@ -1188,7 +1260,10 @@ public class ShipmentRouteSegmentImpl extends BizEntityImpl implements ShipmentR
 	 */
 	@Override
 	public void setEstimatedArrivalDate(Date newEstimatedArrivalDate) {
+		Date oldEstimatedArrivalDate = estimatedArrivalDate;
 		estimatedArrivalDate = newEstimatedArrivalDate;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, Shipment_Package.SHIPMENT_ROUTE_SEGMENT__ESTIMATED_ARRIVAL_DATE, oldEstimatedArrivalDate, estimatedArrivalDate));
 	}
 
 	/**
@@ -1208,7 +1283,10 @@ public class ShipmentRouteSegmentImpl extends BizEntityImpl implements ShipmentR
 	 */
 	@Override
 	public void setEstimatedStartDate(Date newEstimatedStartDate) {
+		Date oldEstimatedStartDate = estimatedStartDate;
 		estimatedStartDate = newEstimatedStartDate;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, Shipment_Package.SHIPMENT_ROUTE_SEGMENT__ESTIMATED_START_DATE, oldEstimatedStartDate, estimatedStartDate));
 	}
 
 	/**
@@ -1228,7 +1306,10 @@ public class ShipmentRouteSegmentImpl extends BizEntityImpl implements ShipmentR
 	 */
 	@Override
 	public void setHomeDeliveryDate(Date newHomeDeliveryDate) {
+		Date oldHomeDeliveryDate = homeDeliveryDate;
 		homeDeliveryDate = newHomeDeliveryDate;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, Shipment_Package.SHIPMENT_ROUTE_SEGMENT__HOME_DELIVERY_DATE, oldHomeDeliveryDate, homeDeliveryDate));
 	}
 
 	/**
@@ -1248,7 +1329,10 @@ public class ShipmentRouteSegmentImpl extends BizEntityImpl implements ShipmentR
 	 */
 	@Override
 	public void setHomeDeliveryType(String newHomeDeliveryType) {
+		String oldHomeDeliveryType = homeDeliveryType;
 		homeDeliveryType = newHomeDeliveryType;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, Shipment_Package.SHIPMENT_ROUTE_SEGMENT__HOME_DELIVERY_TYPE, oldHomeDeliveryType, homeDeliveryType));
 	}
 
 	/**
@@ -1268,7 +1352,10 @@ public class ShipmentRouteSegmentImpl extends BizEntityImpl implements ShipmentR
 	 */
 	@Override
 	public void setLastUpdatedDate(Date newLastUpdatedDate) {
+		Date oldLastUpdatedDate = lastUpdatedDate;
 		lastUpdatedDate = newLastUpdatedDate;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, Shipment_Package.SHIPMENT_ROUTE_SEGMENT__LAST_UPDATED_DATE, oldLastUpdatedDate, lastUpdatedDate));
 	}
 
 	/**
@@ -1282,6 +1369,8 @@ public class ShipmentRouteSegmentImpl extends BizEntityImpl implements ShipmentR
 			InternalEObject oldOriginContactMechId = (InternalEObject)originContactMechId;
 			originContactMechId = (ContactMech)eResolveProxy(oldOriginContactMechId);
 			if (originContactMechId != oldOriginContactMechId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, Shipment_Package.SHIPMENT_ROUTE_SEGMENT__ORIGIN_CONTACT_MECH_ID, oldOriginContactMechId, originContactMechId));
 			}
 		}
 		return originContactMechId;
@@ -1303,7 +1392,10 @@ public class ShipmentRouteSegmentImpl extends BizEntityImpl implements ShipmentR
 	 */
 	@Override
 	public void setOriginContactMechId(ContactMech newOriginContactMechId) {
+		ContactMech oldOriginContactMechId = originContactMechId;
 		originContactMechId = newOriginContactMechId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, Shipment_Package.SHIPMENT_ROUTE_SEGMENT__ORIGIN_CONTACT_MECH_ID, oldOriginContactMechId, originContactMechId));
 	}
 
 	/**
@@ -1317,6 +1409,8 @@ public class ShipmentRouteSegmentImpl extends BizEntityImpl implements ShipmentR
 			InternalEObject oldOriginFacilityId = (InternalEObject)originFacilityId;
 			originFacilityId = (Facility)eResolveProxy(oldOriginFacilityId);
 			if (originFacilityId != oldOriginFacilityId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, Shipment_Package.SHIPMENT_ROUTE_SEGMENT__ORIGIN_FACILITY_ID, oldOriginFacilityId, originFacilityId));
 			}
 		}
 		return originFacilityId;
@@ -1338,7 +1432,10 @@ public class ShipmentRouteSegmentImpl extends BizEntityImpl implements ShipmentR
 	 */
 	@Override
 	public void setOriginFacilityId(Facility newOriginFacilityId) {
+		Facility oldOriginFacilityId = originFacilityId;
 		originFacilityId = newOriginFacilityId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, Shipment_Package.SHIPMENT_ROUTE_SEGMENT__ORIGIN_FACILITY_ID, oldOriginFacilityId, originFacilityId));
 	}
 
 	/**
@@ -1352,6 +1449,8 @@ public class ShipmentRouteSegmentImpl extends BizEntityImpl implements ShipmentR
 			InternalEObject oldOriginTelecomNumberId = (InternalEObject)originTelecomNumberId;
 			originTelecomNumberId = (TelecomNumber)eResolveProxy(oldOriginTelecomNumberId);
 			if (originTelecomNumberId != oldOriginTelecomNumberId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, Shipment_Package.SHIPMENT_ROUTE_SEGMENT__ORIGIN_TELECOM_NUMBER_ID, oldOriginTelecomNumberId, originTelecomNumberId));
 			}
 		}
 		return originTelecomNumberId;
@@ -1373,7 +1472,10 @@ public class ShipmentRouteSegmentImpl extends BizEntityImpl implements ShipmentR
 	 */
 	@Override
 	public void setOriginTelecomNumberId(TelecomNumber newOriginTelecomNumberId) {
+		TelecomNumber oldOriginTelecomNumberId = originTelecomNumberId;
 		originTelecomNumberId = newOriginTelecomNumberId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, Shipment_Package.SHIPMENT_ROUTE_SEGMENT__ORIGIN_TELECOM_NUMBER_ID, oldOriginTelecomNumberId, originTelecomNumberId));
 	}
 
 	/**
@@ -1387,6 +1489,8 @@ public class ShipmentRouteSegmentImpl extends BizEntityImpl implements ShipmentR
 			InternalEObject oldShipmentId = (InternalEObject)shipmentId;
 			shipmentId = (Shipment)eResolveProxy(oldShipmentId);
 			if (shipmentId != oldShipmentId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, Shipment_Package.SHIPMENT_ROUTE_SEGMENT__SHIPMENT_ID, oldShipmentId, shipmentId));
 			}
 		}
 		return shipmentId;
@@ -1408,7 +1512,10 @@ public class ShipmentRouteSegmentImpl extends BizEntityImpl implements ShipmentR
 	 */
 	@Override
 	public void setShipmentId(Shipment newShipmentId) {
+		Shipment oldShipmentId = shipmentId;
 		shipmentId = newShipmentId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, Shipment_Package.SHIPMENT_ROUTE_SEGMENT__SHIPMENT_ID, oldShipmentId, shipmentId));
 	}
 
 	/**
@@ -1422,6 +1529,8 @@ public class ShipmentRouteSegmentImpl extends BizEntityImpl implements ShipmentR
 			InternalEObject oldShipmentMethodTypeId = (InternalEObject)shipmentMethodTypeId;
 			shipmentMethodTypeId = (ShipmentMethodType)eResolveProxy(oldShipmentMethodTypeId);
 			if (shipmentMethodTypeId != oldShipmentMethodTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, Shipment_Package.SHIPMENT_ROUTE_SEGMENT__SHIPMENT_METHOD_TYPE_ID, oldShipmentMethodTypeId, shipmentMethodTypeId));
 			}
 		}
 		return shipmentMethodTypeId;
@@ -1443,7 +1552,10 @@ public class ShipmentRouteSegmentImpl extends BizEntityImpl implements ShipmentR
 	 */
 	@Override
 	public void setShipmentMethodTypeId(ShipmentMethodType newShipmentMethodTypeId) {
+		ShipmentMethodType oldShipmentMethodTypeId = shipmentMethodTypeId;
 		shipmentMethodTypeId = newShipmentMethodTypeId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, Shipment_Package.SHIPMENT_ROUTE_SEGMENT__SHIPMENT_METHOD_TYPE_ID, oldShipmentMethodTypeId, shipmentMethodTypeId));
 	}
 
 	/**
@@ -1463,7 +1575,10 @@ public class ShipmentRouteSegmentImpl extends BizEntityImpl implements ShipmentR
 	 */
 	@Override
 	public void setShipmentRouteSegmentId(String newShipmentRouteSegmentId) {
+		String oldShipmentRouteSegmentId = shipmentRouteSegmentId;
 		shipmentRouteSegmentId = newShipmentRouteSegmentId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, Shipment_Package.SHIPMENT_ROUTE_SEGMENT__SHIPMENT_ROUTE_SEGMENT_ID, oldShipmentRouteSegmentId, shipmentRouteSegmentId));
 	}
 
 	/**
@@ -1483,7 +1598,10 @@ public class ShipmentRouteSegmentImpl extends BizEntityImpl implements ShipmentR
 	 */
 	@Override
 	public void setThirdPartyAccountNumber(String newThirdPartyAccountNumber) {
+		String oldThirdPartyAccountNumber = thirdPartyAccountNumber;
 		thirdPartyAccountNumber = newThirdPartyAccountNumber;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, Shipment_Package.SHIPMENT_ROUTE_SEGMENT__THIRD_PARTY_ACCOUNT_NUMBER, oldThirdPartyAccountNumber, thirdPartyAccountNumber));
 	}
 
 	/**
@@ -1503,7 +1621,10 @@ public class ShipmentRouteSegmentImpl extends BizEntityImpl implements ShipmentR
 	 */
 	@Override
 	public void setThirdPartyCountryGeoCode(String newThirdPartyCountryGeoCode) {
+		String oldThirdPartyCountryGeoCode = thirdPartyCountryGeoCode;
 		thirdPartyCountryGeoCode = newThirdPartyCountryGeoCode;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, Shipment_Package.SHIPMENT_ROUTE_SEGMENT__THIRD_PARTY_COUNTRY_GEO_CODE, oldThirdPartyCountryGeoCode, thirdPartyCountryGeoCode));
 	}
 
 	/**
@@ -1523,7 +1644,10 @@ public class ShipmentRouteSegmentImpl extends BizEntityImpl implements ShipmentR
 	 */
 	@Override
 	public void setThirdPartyPostalCode(String newThirdPartyPostalCode) {
+		String oldThirdPartyPostalCode = thirdPartyPostalCode;
 		thirdPartyPostalCode = newThirdPartyPostalCode;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, Shipment_Package.SHIPMENT_ROUTE_SEGMENT__THIRD_PARTY_POSTAL_CODE, oldThirdPartyPostalCode, thirdPartyPostalCode));
 	}
 
 	/**
@@ -1543,7 +1667,10 @@ public class ShipmentRouteSegmentImpl extends BizEntityImpl implements ShipmentR
 	 */
 	@Override
 	public void setTrackingDigest(String newTrackingDigest) {
+		String oldTrackingDigest = trackingDigest;
 		trackingDigest = newTrackingDigest;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, Shipment_Package.SHIPMENT_ROUTE_SEGMENT__TRACKING_DIGEST, oldTrackingDigest, trackingDigest));
 	}
 
 	/**
@@ -1563,7 +1690,10 @@ public class ShipmentRouteSegmentImpl extends BizEntityImpl implements ShipmentR
 	 */
 	@Override
 	public void setTrackingIdNumber(String newTrackingIdNumber) {
+		String oldTrackingIdNumber = trackingIdNumber;
 		trackingIdNumber = newTrackingIdNumber;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, Shipment_Package.SHIPMENT_ROUTE_SEGMENT__TRACKING_ID_NUMBER, oldTrackingIdNumber, trackingIdNumber));
 	}
 
 	/**
@@ -1583,7 +1713,10 @@ public class ShipmentRouteSegmentImpl extends BizEntityImpl implements ShipmentR
 	 */
 	@Override
 	public void setUpdatedByUserLoginId(String newUpdatedByUserLoginId) {
+		String oldUpdatedByUserLoginId = updatedByUserLoginId;
 		updatedByUserLoginId = newUpdatedByUserLoginId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, Shipment_Package.SHIPMENT_ROUTE_SEGMENT__UPDATED_BY_USER_LOGIN_ID, oldUpdatedByUserLoginId, updatedByUserLoginId));
 	}
 
 	/**
@@ -1603,7 +1736,10 @@ public class ShipmentRouteSegmentImpl extends BizEntityImpl implements ShipmentR
 	 */
 	@Override
 	public void setUpsHighValueReport(byte[] newUpsHighValueReport) {
+		byte[] oldUpsHighValueReport = upsHighValueReport;
 		upsHighValueReport = newUpsHighValueReport;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, Shipment_Package.SHIPMENT_ROUTE_SEGMENT__UPS_HIGH_VALUE_REPORT, oldUpsHighValueReport, upsHighValueReport));
 	}
 
 	/**

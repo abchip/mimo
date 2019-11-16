@@ -15,11 +15,13 @@ import org.abchip.mimo.biz.common.portal.PortalPage;
 import org.abchip.mimo.biz.content.content.Content;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.security.securitygroup.SecurityGroup;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.util.BasicInternalEList;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -230,7 +232,10 @@ public class PortalPageImpl extends BizEntityImpl implements PortalPage {
 	 */
 	@Override
 	public void setDescription(String newDescription) {
+		String oldDescription = description;
 		description = newDescription;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PortalPackage.PORTAL_PAGE__DESCRIPTION, oldDescription, description));
 	}
 
 	/**
@@ -244,6 +249,8 @@ public class PortalPageImpl extends BizEntityImpl implements PortalPage {
 			InternalEObject oldHelpContentId = (InternalEObject)helpContentId;
 			helpContentId = (Content)eResolveProxy(oldHelpContentId);
 			if (helpContentId != oldHelpContentId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PortalPackage.PORTAL_PAGE__HELP_CONTENT_ID, oldHelpContentId, helpContentId));
 			}
 		}
 		return helpContentId;
@@ -265,7 +272,10 @@ public class PortalPageImpl extends BizEntityImpl implements PortalPage {
 	 */
 	@Override
 	public void setHelpContentId(Content newHelpContentId) {
+		Content oldHelpContentId = helpContentId;
 		helpContentId = newHelpContentId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PortalPackage.PORTAL_PAGE__HELP_CONTENT_ID, oldHelpContentId, helpContentId));
 	}
 
 	/**
@@ -285,7 +295,10 @@ public class PortalPageImpl extends BizEntityImpl implements PortalPage {
 	 */
 	@Override
 	public void setOriginalPortalPageId(String newOriginalPortalPageId) {
+		String oldOriginalPortalPageId = originalPortalPageId;
 		originalPortalPageId = newOriginalPortalPageId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PortalPackage.PORTAL_PAGE__ORIGINAL_PORTAL_PAGE_ID, oldOriginalPortalPageId, originalPortalPageId));
 	}
 
 	/**
@@ -305,7 +318,10 @@ public class PortalPageImpl extends BizEntityImpl implements PortalPage {
 	 */
 	@Override
 	public void setOwnerUserLoginId(String newOwnerUserLoginId) {
+		String oldOwnerUserLoginId = ownerUserLoginId;
 		ownerUserLoginId = newOwnerUserLoginId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PortalPackage.PORTAL_PAGE__OWNER_USER_LOGIN_ID, oldOwnerUserLoginId, ownerUserLoginId));
 	}
 
 	/**
@@ -325,7 +341,10 @@ public class PortalPageImpl extends BizEntityImpl implements PortalPage {
 	 */
 	@Override
 	public void setPortalPageName(String newPortalPageName) {
+		String oldPortalPageName = portalPageName;
 		portalPageName = newPortalPageName;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PortalPackage.PORTAL_PAGE__PORTAL_PAGE_NAME, oldPortalPageName, portalPageName));
 	}
 
 	/**
@@ -339,6 +358,8 @@ public class PortalPageImpl extends BizEntityImpl implements PortalPage {
 			InternalEObject oldSecurityGroupId = (InternalEObject)securityGroupId;
 			securityGroupId = (SecurityGroup)eResolveProxy(oldSecurityGroupId);
 			if (securityGroupId != oldSecurityGroupId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PortalPackage.PORTAL_PAGE__SECURITY_GROUP_ID, oldSecurityGroupId, securityGroupId));
 			}
 		}
 		return securityGroupId;
@@ -360,7 +381,10 @@ public class PortalPageImpl extends BizEntityImpl implements PortalPage {
 	 */
 	@Override
 	public void setSecurityGroupId(SecurityGroup newSecurityGroupId) {
+		SecurityGroup oldSecurityGroupId = securityGroupId;
 		securityGroupId = newSecurityGroupId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PortalPackage.PORTAL_PAGE__SECURITY_GROUP_ID, oldSecurityGroupId, securityGroupId));
 	}
 
 	/**
@@ -380,7 +404,10 @@ public class PortalPageImpl extends BizEntityImpl implements PortalPage {
 	 */
 	@Override
 	public void setSequenceNum(long newSequenceNum) {
+		long oldSequenceNum = sequenceNum;
 		sequenceNum = newSequenceNum;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PortalPackage.PORTAL_PAGE__SEQUENCE_NUM, oldSequenceNum, sequenceNum));
 	}
 
 	/**
@@ -391,7 +418,7 @@ public class PortalPageImpl extends BizEntityImpl implements PortalPage {
 	@Override
 	public List<String> getPortalPageColumns() {
 		if (portalPageColumns == null) {
-			portalPageColumns = new BasicInternalEList<String>(String.class);
+			portalPageColumns = new EDataTypeUniqueEList<String>(String.class, this, PortalPackage.PORTAL_PAGE__PORTAL_PAGE_COLUMNS);
 		}
 		return portalPageColumns;
 	}
@@ -419,6 +446,8 @@ public class PortalPageImpl extends BizEntityImpl implements PortalPage {
 			InternalEObject oldParentPortalPageId = (InternalEObject)parentPortalPageId;
 			parentPortalPageId = (PortalPage)eResolveProxy(oldParentPortalPageId);
 			if (parentPortalPageId != oldParentPortalPageId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PortalPackage.PORTAL_PAGE__PARENT_PORTAL_PAGE_ID, oldParentPortalPageId, parentPortalPageId));
 			}
 		}
 		return parentPortalPageId;
@@ -440,7 +469,10 @@ public class PortalPageImpl extends BizEntityImpl implements PortalPage {
 	 */
 	@Override
 	public void setParentPortalPageId(PortalPage newParentPortalPageId) {
+		PortalPage oldParentPortalPageId = parentPortalPageId;
 		parentPortalPageId = newParentPortalPageId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PortalPackage.PORTAL_PAGE__PARENT_PORTAL_PAGE_ID, oldParentPortalPageId, parentPortalPageId));
 	}
 
 	/**
@@ -460,7 +492,10 @@ public class PortalPageImpl extends BizEntityImpl implements PortalPage {
 	 */
 	@Override
 	public void setPortalPageId(String newPortalPageId) {
+		String oldPortalPageId = portalPageId;
 		portalPageId = newPortalPageId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PortalPackage.PORTAL_PAGE__PORTAL_PAGE_ID, oldPortalPageId, portalPageId));
 	}
 
 	/**

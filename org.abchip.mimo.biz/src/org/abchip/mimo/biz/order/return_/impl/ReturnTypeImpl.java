@@ -12,7 +12,9 @@ import java.util.List;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.order.return_.ReturnPackage;
 import org.abchip.mimo.biz.order.return_.ReturnType;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -131,7 +133,10 @@ public class ReturnTypeImpl extends BizEntityImpl implements ReturnType {
 	 */
 	@Override
 	public void setDescription(String newDescription) {
+		String oldDescription = description;
 		description = newDescription;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ReturnPackage.RETURN_TYPE__DESCRIPTION, oldDescription, description));
 	}
 
 	/**
@@ -151,7 +156,10 @@ public class ReturnTypeImpl extends BizEntityImpl implements ReturnType {
 	 */
 	@Override
 	public void setReturnTypeId(String newReturnTypeId) {
+		String oldReturnTypeId = returnTypeId;
 		returnTypeId = newReturnTypeId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ReturnPackage.RETURN_TYPE__RETURN_TYPE_ID, oldReturnTypeId, returnTypeId));
 	}
 
 	/**
@@ -171,7 +179,10 @@ public class ReturnTypeImpl extends BizEntityImpl implements ReturnType {
 	 */
 	@Override
 	public void setSequenceId(String newSequenceId) {
+		String oldSequenceId = sequenceId;
 		sequenceId = newSequenceId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ReturnPackage.RETURN_TYPE__SEQUENCE_ID, oldSequenceId, sequenceId));
 	}
 
 	/**

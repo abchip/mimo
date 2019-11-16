@@ -12,10 +12,12 @@ import org.abchip.mimo.biz.order.return_.CommunicationEventReturn;
 import org.abchip.mimo.biz.order.return_.ReturnHeader;
 import org.abchip.mimo.biz.order.return_.ReturnPackage;
 import org.abchip.mimo.biz.party.communication.CommunicationEvent;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -87,6 +89,8 @@ public class CommunicationEventReturnImpl extends BizEntityImpl implements Commu
 			InternalEObject oldCommunicationEventId = (InternalEObject)communicationEventId;
 			communicationEventId = (CommunicationEvent)eResolveProxy(oldCommunicationEventId);
 			if (communicationEventId != oldCommunicationEventId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ReturnPackage.COMMUNICATION_EVENT_RETURN__COMMUNICATION_EVENT_ID, oldCommunicationEventId, communicationEventId));
 			}
 		}
 		return communicationEventId;
@@ -108,7 +112,10 @@ public class CommunicationEventReturnImpl extends BizEntityImpl implements Commu
 	 */
 	@Override
 	public void setCommunicationEventId(CommunicationEvent newCommunicationEventId) {
+		CommunicationEvent oldCommunicationEventId = communicationEventId;
 		communicationEventId = newCommunicationEventId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ReturnPackage.COMMUNICATION_EVENT_RETURN__COMMUNICATION_EVENT_ID, oldCommunicationEventId, communicationEventId));
 	}
 
 	/**
@@ -122,6 +129,8 @@ public class CommunicationEventReturnImpl extends BizEntityImpl implements Commu
 			InternalEObject oldReturnId = (InternalEObject)returnId;
 			returnId = (ReturnHeader)eResolveProxy(oldReturnId);
 			if (returnId != oldReturnId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ReturnPackage.COMMUNICATION_EVENT_RETURN__RETURN_ID, oldReturnId, returnId));
 			}
 		}
 		return returnId;
@@ -143,7 +152,10 @@ public class CommunicationEventReturnImpl extends BizEntityImpl implements Commu
 	 */
 	@Override
 	public void setReturnId(ReturnHeader newReturnId) {
+		ReturnHeader oldReturnId = returnId;
 		returnId = newReturnId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ReturnPackage.COMMUNICATION_EVENT_RETURN__RETURN_ID, oldReturnId, returnId));
 	}
 
 	/**

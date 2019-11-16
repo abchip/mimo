@@ -55,6 +55,7 @@ public interface Schema extends EntityNameable {
 	 * @model id="true" required="true"
 	 * @generated
 	 */
+	@Override
 	String getName();
 
 	/**

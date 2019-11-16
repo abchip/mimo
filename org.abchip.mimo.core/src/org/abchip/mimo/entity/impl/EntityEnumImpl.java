@@ -9,7 +9,9 @@ package org.abchip.mimo.entity.impl;
 
 import org.abchip.mimo.entity.EntityEnum;
 import org.abchip.mimo.entity.EntityPackage;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -103,7 +105,10 @@ public abstract class EntityEnumImpl extends EntityNameableImpl implements Entit
 	 */
 	@Override
 	public void setName(String newName) {
+		String oldName = name;
 		name = newName;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, EntityPackage.ENTITY_ENUM__NAME, oldName, name));
 	}
 
 	/**
@@ -123,7 +128,10 @@ public abstract class EntityEnumImpl extends EntityNameableImpl implements Entit
 	 */
 	@Override
 	public void setText(String newText) {
+		String oldText = text;
 		text = newText;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, EntityPackage.ENTITY_ENUM__TEXT, oldText, text));
 	}
 
 	/**

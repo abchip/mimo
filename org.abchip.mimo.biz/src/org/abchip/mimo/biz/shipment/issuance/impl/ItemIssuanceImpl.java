@@ -20,10 +20,12 @@ import org.abchip.mimo.biz.security.login.UserLogin;
 import org.abchip.mimo.biz.shipment.issuance.IssuancePackage;
 import org.abchip.mimo.biz.shipment.issuance.ItemIssuance;
 import org.abchip.mimo.biz.shipment.shipment.Shipment;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -312,7 +314,10 @@ public class ItemIssuanceImpl extends BizEntityImpl implements ItemIssuance {
 	 */
 	@Override
 	public void setCancelQuantity(BigDecimal newCancelQuantity) {
+		BigDecimal oldCancelQuantity = cancelQuantity;
 		cancelQuantity = newCancelQuantity;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, IssuancePackage.ITEM_ISSUANCE__CANCEL_QUANTITY, oldCancelQuantity, cancelQuantity));
 	}
 
 	/**
@@ -332,7 +337,10 @@ public class ItemIssuanceImpl extends BizEntityImpl implements ItemIssuance {
 	 */
 	@Override
 	public void setFixedAssetId(String newFixedAssetId) {
+		String oldFixedAssetId = fixedAssetId;
 		fixedAssetId = newFixedAssetId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, IssuancePackage.ITEM_ISSUANCE__FIXED_ASSET_ID, oldFixedAssetId, fixedAssetId));
 	}
 
 	/**
@@ -346,6 +354,8 @@ public class ItemIssuanceImpl extends BizEntityImpl implements ItemIssuance {
 			InternalEObject oldInventoryItemId = (InternalEObject)inventoryItemId;
 			inventoryItemId = (InventoryItem)eResolveProxy(oldInventoryItemId);
 			if (inventoryItemId != oldInventoryItemId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, IssuancePackage.ITEM_ISSUANCE__INVENTORY_ITEM_ID, oldInventoryItemId, inventoryItemId));
 			}
 		}
 		return inventoryItemId;
@@ -367,7 +377,10 @@ public class ItemIssuanceImpl extends BizEntityImpl implements ItemIssuance {
 	 */
 	@Override
 	public void setInventoryItemId(InventoryItem newInventoryItemId) {
+		InventoryItem oldInventoryItemId = inventoryItemId;
 		inventoryItemId = newInventoryItemId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, IssuancePackage.ITEM_ISSUANCE__INVENTORY_ITEM_ID, oldInventoryItemId, inventoryItemId));
 	}
 
 	/**
@@ -381,6 +394,8 @@ public class ItemIssuanceImpl extends BizEntityImpl implements ItemIssuance {
 			InternalEObject oldIssuedByUserLoginId = (InternalEObject)issuedByUserLoginId;
 			issuedByUserLoginId = (UserLogin)eResolveProxy(oldIssuedByUserLoginId);
 			if (issuedByUserLoginId != oldIssuedByUserLoginId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, IssuancePackage.ITEM_ISSUANCE__ISSUED_BY_USER_LOGIN_ID, oldIssuedByUserLoginId, issuedByUserLoginId));
 			}
 		}
 		return issuedByUserLoginId;
@@ -402,7 +417,10 @@ public class ItemIssuanceImpl extends BizEntityImpl implements ItemIssuance {
 	 */
 	@Override
 	public void setIssuedByUserLoginId(UserLogin newIssuedByUserLoginId) {
+		UserLogin oldIssuedByUserLoginId = issuedByUserLoginId;
 		issuedByUserLoginId = newIssuedByUserLoginId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, IssuancePackage.ITEM_ISSUANCE__ISSUED_BY_USER_LOGIN_ID, oldIssuedByUserLoginId, issuedByUserLoginId));
 	}
 
 	/**
@@ -422,7 +440,10 @@ public class ItemIssuanceImpl extends BizEntityImpl implements ItemIssuance {
 	 */
 	@Override
 	public void setIssuedDateTime(Date newIssuedDateTime) {
+		Date oldIssuedDateTime = issuedDateTime;
 		issuedDateTime = newIssuedDateTime;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, IssuancePackage.ITEM_ISSUANCE__ISSUED_DATE_TIME, oldIssuedDateTime, issuedDateTime));
 	}
 
 	/**
@@ -442,7 +463,10 @@ public class ItemIssuanceImpl extends BizEntityImpl implements ItemIssuance {
 	 */
 	@Override
 	public void setItemIssuanceId(String newItemIssuanceId) {
+		String oldItemIssuanceId = itemIssuanceId;
 		itemIssuanceId = newItemIssuanceId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, IssuancePackage.ITEM_ISSUANCE__ITEM_ISSUANCE_ID, oldItemIssuanceId, itemIssuanceId));
 	}
 
 	/**
@@ -462,7 +486,10 @@ public class ItemIssuanceImpl extends BizEntityImpl implements ItemIssuance {
 	 */
 	@Override
 	public void setMaintHistSeqId(String newMaintHistSeqId) {
+		String oldMaintHistSeqId = maintHistSeqId;
 		maintHistSeqId = newMaintHistSeqId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, IssuancePackage.ITEM_ISSUANCE__MAINT_HIST_SEQ_ID, oldMaintHistSeqId, maintHistSeqId));
 	}
 
 	/**
@@ -476,6 +503,8 @@ public class ItemIssuanceImpl extends BizEntityImpl implements ItemIssuance {
 			InternalEObject oldOrderId = (InternalEObject)orderId;
 			orderId = (OrderHeader)eResolveProxy(oldOrderId);
 			if (orderId != oldOrderId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, IssuancePackage.ITEM_ISSUANCE__ORDER_ID, oldOrderId, orderId));
 			}
 		}
 		return orderId;
@@ -497,7 +526,10 @@ public class ItemIssuanceImpl extends BizEntityImpl implements ItemIssuance {
 	 */
 	@Override
 	public void setOrderId(OrderHeader newOrderId) {
+		OrderHeader oldOrderId = orderId;
 		orderId = newOrderId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, IssuancePackage.ITEM_ISSUANCE__ORDER_ID, oldOrderId, orderId));
 	}
 
 	/**
@@ -517,7 +549,10 @@ public class ItemIssuanceImpl extends BizEntityImpl implements ItemIssuance {
 	 */
 	@Override
 	public void setOrderItemSeqId(String newOrderItemSeqId) {
+		String oldOrderItemSeqId = orderItemSeqId;
 		orderItemSeqId = newOrderItemSeqId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, IssuancePackage.ITEM_ISSUANCE__ORDER_ITEM_SEQ_ID, oldOrderItemSeqId, orderItemSeqId));
 	}
 
 	/**
@@ -537,7 +572,10 @@ public class ItemIssuanceImpl extends BizEntityImpl implements ItemIssuance {
 	 */
 	@Override
 	public void setQuantity(BigDecimal newQuantity) {
+		BigDecimal oldQuantity = quantity;
 		quantity = newQuantity;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, IssuancePackage.ITEM_ISSUANCE__QUANTITY, oldQuantity, quantity));
 	}
 
 	/**
@@ -557,7 +595,10 @@ public class ItemIssuanceImpl extends BizEntityImpl implements ItemIssuance {
 	 */
 	@Override
 	public void setShipGroupSeqId(String newShipGroupSeqId) {
+		String oldShipGroupSeqId = shipGroupSeqId;
 		shipGroupSeqId = newShipGroupSeqId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, IssuancePackage.ITEM_ISSUANCE__SHIP_GROUP_SEQ_ID, oldShipGroupSeqId, shipGroupSeqId));
 	}
 
 	/**
@@ -571,6 +612,8 @@ public class ItemIssuanceImpl extends BizEntityImpl implements ItemIssuance {
 			InternalEObject oldShipmentId = (InternalEObject)shipmentId;
 			shipmentId = (Shipment)eResolveProxy(oldShipmentId);
 			if (shipmentId != oldShipmentId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, IssuancePackage.ITEM_ISSUANCE__SHIPMENT_ID, oldShipmentId, shipmentId));
 			}
 		}
 		return shipmentId;
@@ -592,7 +635,10 @@ public class ItemIssuanceImpl extends BizEntityImpl implements ItemIssuance {
 	 */
 	@Override
 	public void setShipmentId(Shipment newShipmentId) {
+		Shipment oldShipmentId = shipmentId;
 		shipmentId = newShipmentId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, IssuancePackage.ITEM_ISSUANCE__SHIPMENT_ID, oldShipmentId, shipmentId));
 	}
 
 	/**
@@ -612,7 +658,10 @@ public class ItemIssuanceImpl extends BizEntityImpl implements ItemIssuance {
 	 */
 	@Override
 	public void setShipmentItemSeqId(String newShipmentItemSeqId) {
+		String oldShipmentItemSeqId = shipmentItemSeqId;
 		shipmentItemSeqId = newShipmentItemSeqId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, IssuancePackage.ITEM_ISSUANCE__SHIPMENT_ITEM_SEQ_ID, oldShipmentItemSeqId, shipmentItemSeqId));
 	}
 
 	/**

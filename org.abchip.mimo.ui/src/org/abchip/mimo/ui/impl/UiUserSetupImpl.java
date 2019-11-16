@@ -7,11 +7,8 @@ import org.abchip.mimo.entity.impl.EntityNameableImpl;
 
 import org.abchip.mimo.ui.UIPackage;
 import org.abchip.mimo.ui.UiUserSetup;
-
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**

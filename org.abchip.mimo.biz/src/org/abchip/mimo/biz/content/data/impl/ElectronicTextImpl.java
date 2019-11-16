@@ -9,7 +9,9 @@ package org.abchip.mimo.biz.content.data.impl;
 
 import org.abchip.mimo.biz.content.data.DataPackage;
 import org.abchip.mimo.biz.content.data.ElectronicText;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -86,7 +88,10 @@ public class ElectronicTextImpl extends DataResourceImpl implements ElectronicTe
 	 */
 	@Override
 	public void setTextData(String newTextData) {
+		String oldTextData = textData;
 		textData = newTextData;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, DataPackage.ELECTRONIC_TEXT__TEXT_DATA, oldTextData, textData));
 	}
 
 	/**

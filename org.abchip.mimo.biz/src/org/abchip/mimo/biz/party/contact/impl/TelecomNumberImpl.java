@@ -11,7 +11,9 @@ import java.util.List;
 
 import org.abchip.mimo.biz.party.contact.ContactPackage;
 import org.abchip.mimo.biz.party.contact.TelecomNumber;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -147,7 +149,10 @@ public class TelecomNumberImpl extends ContactMechImpl implements TelecomNumber 
 	 */
 	@Override
 	public void setAreaCode(String newAreaCode) {
+		String oldAreaCode = areaCode;
 		areaCode = newAreaCode;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ContactPackage.TELECOM_NUMBER__AREA_CODE, oldAreaCode, areaCode));
 	}
 
 	/**
@@ -167,7 +172,10 @@ public class TelecomNumberImpl extends ContactMechImpl implements TelecomNumber 
 	 */
 	@Override
 	public void setAskForName(String newAskForName) {
+		String oldAskForName = askForName;
 		askForName = newAskForName;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ContactPackage.TELECOM_NUMBER__ASK_FOR_NAME, oldAskForName, askForName));
 	}
 
 	/**
@@ -187,7 +195,10 @@ public class TelecomNumberImpl extends ContactMechImpl implements TelecomNumber 
 	 */
 	@Override
 	public void setContactNumber(String newContactNumber) {
+		String oldContactNumber = contactNumber;
 		contactNumber = newContactNumber;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ContactPackage.TELECOM_NUMBER__CONTACT_NUMBER, oldContactNumber, contactNumber));
 	}
 
 	/**
@@ -207,7 +218,10 @@ public class TelecomNumberImpl extends ContactMechImpl implements TelecomNumber 
 	 */
 	@Override
 	public void setCountryCode(String newCountryCode) {
+		String oldCountryCode = countryCode;
 		countryCode = newCountryCode;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ContactPackage.TELECOM_NUMBER__COUNTRY_CODE, oldCountryCode, countryCode));
 	}
 
 	/**

@@ -15,9 +15,11 @@ import org.abchip.mimo.biz.product.product.ProductContentType;
 import org.abchip.mimo.biz.product.promo.ProductPromo;
 import org.abchip.mimo.biz.product.promo.ProductPromoContent;
 import org.abchip.mimo.biz.product.promo.PromoPackage;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -142,6 +144,8 @@ public class ProductPromoContentImpl extends BizEntityImpl implements ProductPro
 			InternalEObject oldContentId = (InternalEObject)contentId;
 			contentId = (Content)eResolveProxy(oldContentId);
 			if (contentId != oldContentId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PromoPackage.PRODUCT_PROMO_CONTENT__CONTENT_ID, oldContentId, contentId));
 			}
 		}
 		return contentId;
@@ -163,7 +167,10 @@ public class ProductPromoContentImpl extends BizEntityImpl implements ProductPro
 	 */
 	@Override
 	public void setContentId(Content newContentId) {
+		Content oldContentId = contentId;
 		contentId = newContentId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PromoPackage.PRODUCT_PROMO_CONTENT__CONTENT_ID, oldContentId, contentId));
 	}
 
 	/**
@@ -183,7 +190,10 @@ public class ProductPromoContentImpl extends BizEntityImpl implements ProductPro
 	 */
 	@Override
 	public void setFromDate(Date newFromDate) {
+		Date oldFromDate = fromDate;
 		fromDate = newFromDate;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PromoPackage.PRODUCT_PROMO_CONTENT__FROM_DATE, oldFromDate, fromDate));
 	}
 
 	/**
@@ -203,7 +213,10 @@ public class ProductPromoContentImpl extends BizEntityImpl implements ProductPro
 	 */
 	@Override
 	public void setThruDate(Date newThruDate) {
+		Date oldThruDate = thruDate;
 		thruDate = newThruDate;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PromoPackage.PRODUCT_PROMO_CONTENT__THRU_DATE, oldThruDate, thruDate));
 	}
 
 	/**
@@ -217,6 +230,8 @@ public class ProductPromoContentImpl extends BizEntityImpl implements ProductPro
 			InternalEObject oldProductPromoId = (InternalEObject)productPromoId;
 			productPromoId = (ProductPromo)eResolveProxy(oldProductPromoId);
 			if (productPromoId != oldProductPromoId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PromoPackage.PRODUCT_PROMO_CONTENT__PRODUCT_PROMO_ID, oldProductPromoId, productPromoId));
 			}
 		}
 		return productPromoId;
@@ -238,7 +253,10 @@ public class ProductPromoContentImpl extends BizEntityImpl implements ProductPro
 	 */
 	@Override
 	public void setProductPromoId(ProductPromo newProductPromoId) {
+		ProductPromo oldProductPromoId = productPromoId;
 		productPromoId = newProductPromoId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PromoPackage.PRODUCT_PROMO_CONTENT__PRODUCT_PROMO_ID, oldProductPromoId, productPromoId));
 	}
 
 	/**
@@ -252,6 +270,8 @@ public class ProductPromoContentImpl extends BizEntityImpl implements ProductPro
 			InternalEObject oldProductPromoContentTypeId = (InternalEObject)productPromoContentTypeId;
 			productPromoContentTypeId = (ProductContentType)eResolveProxy(oldProductPromoContentTypeId);
 			if (productPromoContentTypeId != oldProductPromoContentTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PromoPackage.PRODUCT_PROMO_CONTENT__PRODUCT_PROMO_CONTENT_TYPE_ID, oldProductPromoContentTypeId, productPromoContentTypeId));
 			}
 		}
 		return productPromoContentTypeId;
@@ -273,7 +293,10 @@ public class ProductPromoContentImpl extends BizEntityImpl implements ProductPro
 	 */
 	@Override
 	public void setProductPromoContentTypeId(ProductContentType newProductPromoContentTypeId) {
+		ProductContentType oldProductPromoContentTypeId = productPromoContentTypeId;
 		productPromoContentTypeId = newProductPromoContentTypeId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PromoPackage.PRODUCT_PROMO_CONTENT__PRODUCT_PROMO_CONTENT_TYPE_ID, oldProductPromoContentTypeId, productPromoContentTypeId));
 	}
 
 	/**

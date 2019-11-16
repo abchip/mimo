@@ -13,7 +13,9 @@ import java.util.List;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.manufacturing.techdata.TechDataCalendarWeek;
 import org.abchip.mimo.biz.manufacturing.techdata.TechdataPackage;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -405,7 +407,10 @@ public class TechDataCalendarWeekImpl extends BizEntityImpl implements TechDataC
 	 */
 	@Override
 	public void setCalendarWeekId(String newCalendarWeekId) {
+		String oldCalendarWeekId = calendarWeekId;
 		calendarWeekId = newCalendarWeekId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, TechdataPackage.TECH_DATA_CALENDAR_WEEK__CALENDAR_WEEK_ID, oldCalendarWeekId, calendarWeekId));
 	}
 
 	/**
@@ -425,7 +430,10 @@ public class TechDataCalendarWeekImpl extends BizEntityImpl implements TechDataC
 	 */
 	@Override
 	public void setDescription(String newDescription) {
+		String oldDescription = description;
 		description = newDescription;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, TechdataPackage.TECH_DATA_CALENDAR_WEEK__DESCRIPTION, oldDescription, description));
 	}
 
 	/**
@@ -445,7 +453,10 @@ public class TechDataCalendarWeekImpl extends BizEntityImpl implements TechDataC
 	 */
 	@Override
 	public void setFridayCapacity(double newFridayCapacity) {
+		double oldFridayCapacity = fridayCapacity;
 		fridayCapacity = newFridayCapacity;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, TechdataPackage.TECH_DATA_CALENDAR_WEEK__FRIDAY_CAPACITY, oldFridayCapacity, fridayCapacity));
 	}
 
 	/**
@@ -465,7 +476,10 @@ public class TechDataCalendarWeekImpl extends BizEntityImpl implements TechDataC
 	 */
 	@Override
 	public void setFridayStartTime(Date newFridayStartTime) {
+		Date oldFridayStartTime = fridayStartTime;
 		fridayStartTime = newFridayStartTime;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, TechdataPackage.TECH_DATA_CALENDAR_WEEK__FRIDAY_START_TIME, oldFridayStartTime, fridayStartTime));
 	}
 
 	/**
@@ -485,7 +499,10 @@ public class TechDataCalendarWeekImpl extends BizEntityImpl implements TechDataC
 	 */
 	@Override
 	public void setMondayCapacity(double newMondayCapacity) {
+		double oldMondayCapacity = mondayCapacity;
 		mondayCapacity = newMondayCapacity;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, TechdataPackage.TECH_DATA_CALENDAR_WEEK__MONDAY_CAPACITY, oldMondayCapacity, mondayCapacity));
 	}
 
 	/**
@@ -505,7 +522,10 @@ public class TechDataCalendarWeekImpl extends BizEntityImpl implements TechDataC
 	 */
 	@Override
 	public void setMondayStartTime(Date newMondayStartTime) {
+		Date oldMondayStartTime = mondayStartTime;
 		mondayStartTime = newMondayStartTime;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, TechdataPackage.TECH_DATA_CALENDAR_WEEK__MONDAY_START_TIME, oldMondayStartTime, mondayStartTime));
 	}
 
 	/**
@@ -525,7 +545,10 @@ public class TechDataCalendarWeekImpl extends BizEntityImpl implements TechDataC
 	 */
 	@Override
 	public void setSaturdayCapacity(double newSaturdayCapacity) {
+		double oldSaturdayCapacity = saturdayCapacity;
 		saturdayCapacity = newSaturdayCapacity;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, TechdataPackage.TECH_DATA_CALENDAR_WEEK__SATURDAY_CAPACITY, oldSaturdayCapacity, saturdayCapacity));
 	}
 
 	/**
@@ -545,7 +568,10 @@ public class TechDataCalendarWeekImpl extends BizEntityImpl implements TechDataC
 	 */
 	@Override
 	public void setSaturdayStartTime(Date newSaturdayStartTime) {
+		Date oldSaturdayStartTime = saturdayStartTime;
 		saturdayStartTime = newSaturdayStartTime;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, TechdataPackage.TECH_DATA_CALENDAR_WEEK__SATURDAY_START_TIME, oldSaturdayStartTime, saturdayStartTime));
 	}
 
 	/**
@@ -565,7 +591,10 @@ public class TechDataCalendarWeekImpl extends BizEntityImpl implements TechDataC
 	 */
 	@Override
 	public void setSundayCapacity(double newSundayCapacity) {
+		double oldSundayCapacity = sundayCapacity;
 		sundayCapacity = newSundayCapacity;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, TechdataPackage.TECH_DATA_CALENDAR_WEEK__SUNDAY_CAPACITY, oldSundayCapacity, sundayCapacity));
 	}
 
 	/**
@@ -585,7 +614,10 @@ public class TechDataCalendarWeekImpl extends BizEntityImpl implements TechDataC
 	 */
 	@Override
 	public void setSundayStartTime(Date newSundayStartTime) {
+		Date oldSundayStartTime = sundayStartTime;
 		sundayStartTime = newSundayStartTime;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, TechdataPackage.TECH_DATA_CALENDAR_WEEK__SUNDAY_START_TIME, oldSundayStartTime, sundayStartTime));
 	}
 
 	/**
@@ -605,7 +637,10 @@ public class TechDataCalendarWeekImpl extends BizEntityImpl implements TechDataC
 	 */
 	@Override
 	public void setThursdayCapacity(double newThursdayCapacity) {
+		double oldThursdayCapacity = thursdayCapacity;
 		thursdayCapacity = newThursdayCapacity;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, TechdataPackage.TECH_DATA_CALENDAR_WEEK__THURSDAY_CAPACITY, oldThursdayCapacity, thursdayCapacity));
 	}
 
 	/**
@@ -625,7 +660,10 @@ public class TechDataCalendarWeekImpl extends BizEntityImpl implements TechDataC
 	 */
 	@Override
 	public void setThursdayStartTime(Date newThursdayStartTime) {
+		Date oldThursdayStartTime = thursdayStartTime;
 		thursdayStartTime = newThursdayStartTime;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, TechdataPackage.TECH_DATA_CALENDAR_WEEK__THURSDAY_START_TIME, oldThursdayStartTime, thursdayStartTime));
 	}
 
 	/**
@@ -645,7 +683,10 @@ public class TechDataCalendarWeekImpl extends BizEntityImpl implements TechDataC
 	 */
 	@Override
 	public void setTuesdayCapacity(double newTuesdayCapacity) {
+		double oldTuesdayCapacity = tuesdayCapacity;
 		tuesdayCapacity = newTuesdayCapacity;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, TechdataPackage.TECH_DATA_CALENDAR_WEEK__TUESDAY_CAPACITY, oldTuesdayCapacity, tuesdayCapacity));
 	}
 
 	/**
@@ -665,7 +706,10 @@ public class TechDataCalendarWeekImpl extends BizEntityImpl implements TechDataC
 	 */
 	@Override
 	public void setTuesdayStartTime(Date newTuesdayStartTime) {
+		Date oldTuesdayStartTime = tuesdayStartTime;
 		tuesdayStartTime = newTuesdayStartTime;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, TechdataPackage.TECH_DATA_CALENDAR_WEEK__TUESDAY_START_TIME, oldTuesdayStartTime, tuesdayStartTime));
 	}
 
 	/**
@@ -685,7 +729,10 @@ public class TechDataCalendarWeekImpl extends BizEntityImpl implements TechDataC
 	 */
 	@Override
 	public void setWednesdayCapacity(double newWednesdayCapacity) {
+		double oldWednesdayCapacity = wednesdayCapacity;
 		wednesdayCapacity = newWednesdayCapacity;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, TechdataPackage.TECH_DATA_CALENDAR_WEEK__WEDNESDAY_CAPACITY, oldWednesdayCapacity, wednesdayCapacity));
 	}
 
 	/**
@@ -705,7 +752,10 @@ public class TechDataCalendarWeekImpl extends BizEntityImpl implements TechDataC
 	 */
 	@Override
 	public void setWednesdayStartTime(Date newWednesdayStartTime) {
+		Date oldWednesdayStartTime = wednesdayStartTime;
 		wednesdayStartTime = newWednesdayStartTime;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, TechdataPackage.TECH_DATA_CALENDAR_WEEK__WEDNESDAY_START_TIME, oldWednesdayStartTime, wednesdayStartTime));
 	}
 
 	/**
