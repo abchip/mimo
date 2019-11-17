@@ -19,4 +19,6 @@ public class MimoConstants {
 	public static final String REGISTRY_NAME = "org.abchip.mimo.registry.name";
 	public static final String REGISTRY_VENDOR = "org.abchip.mimo.registry.vendor";
 	public static final String REGISTRY_VERSION = "org.abchip.mimo.registry.version";
+
+	public static final String DATE_TIME_FORMAT = "yyyy-MM-dd'T'HH:mm:ss.SSS";
 }

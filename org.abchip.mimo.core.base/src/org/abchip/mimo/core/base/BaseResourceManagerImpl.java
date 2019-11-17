@@ -23,11 +23,13 @@ import org.abchip.mimo.MimoResourceSetImpl;
 import org.abchip.mimo.context.ContextDescription;
 import org.abchip.mimo.context.ContextProvider;
 import org.abchip.mimo.context.ContextRoot;
+import org.abchip.mimo.context.LockManager;
 import org.abchip.mimo.entity.Entity;
 import org.abchip.mimo.entity.EntityNameable;
 import org.abchip.mimo.entity.Frame;
 import org.abchip.mimo.entity.FrameManager;
 import org.abchip.mimo.entity.SerializationType;
+import org.abchip.mimo.resource.ResourceConfig;
 import org.abchip.mimo.resource.ResourceFactory;
 import org.abchip.mimo.resource.ResourceListener;
 import org.abchip.mimo.resource.ResourceManager;
@@ -45,6 +47,8 @@ public class BaseResourceManagerImpl implements ResourceManager {
 	private ContextRoot contextRoot;
 	@Inject
 	private FrameManager frameManager;
+	@Inject
+	private LockManager lockManager;
 
 	// root ResourceSet
 	private ResourceSet resourceSet = null;
@@ -178,7 +182,8 @@ public class BaseResourceManagerImpl implements ResourceManager {
 		if (notifier == null)
 			notifier = prepareNotifier(frame);
 
-		resource.setNotifier(notifier);
+		if (notifier != null && !notifier.getListeners().isEmpty())
+			resource.setNotifier(notifier);
 	}
 
 	private <E extends EntityNameable> ResourceNotifier<E> prepareNotifier(Frame<E> frame) {
@@ -278,7 +283,13 @@ public class BaseResourceManagerImpl implements ResourceManager {
 
 		MimoResourceImpl<E> internal = getInternalResource(contextProvider, frame, tenant);
 
-		ResourceWriter<E> resourceWriter = new BaseResourceWriterImpl<E>(internal);
+		LockManager lockManager = null;
+		ResourceConfig resourceConfig = internal.getResource().getResourceConfig();
+
+		if (resourceConfig != null && resourceConfig.isLockSupport())
+			lockManager = this.lockManager;
+
+		ResourceWriter<E> resourceWriter = new BaseResourceWriterImpl<E>(internal, lockManager);
 		if (resourceWriter != null)
 			prepareListener(resourceWriter, frame);
 

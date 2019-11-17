@@ -3,11 +3,15 @@ package org.abchip.mimo;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.Map;
 
 import org.abchip.mimo.context.Context;
 import org.abchip.mimo.context.ContextProvider;
 import org.abchip.mimo.entity.EntityNameable;
+import org.abchip.mimo.entity.Frame;
 import org.abchip.mimo.resource.Resource;
 import org.abchip.mimo.resource.ResourceManager;
 import org.abchip.mimo.resource.ResourceReader;
@@ -19,6 +23,7 @@ import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceImpl;
+import org.eclipse.emf.ecore.util.EcoreUtil;
 
 public class MimoResourceImpl<E extends EntityNameable> extends ResourceImpl {
 
@@ -38,8 +43,8 @@ public class MimoResourceImpl<E extends EntityNameable> extends ResourceImpl {
 		ContextProvider contextProvider = this.getContextProvider();
 		ResourceManager resourceManager = contextProvider.getContext().get(ResourceManager.class);
 		this.resource = resourceManager.getProvider(frame).getResource(contextProvider, frame, tenant);
-		
-		if(this.resource == null)
+
+		if (this.resource == null)
 			"".toString();
 	}
 
@@ -95,8 +100,44 @@ public class MimoResourceImpl<E extends EntityNameable> extends ResourceImpl {
 
 	@Override
 	public String getURIFragment(EObject eObject) {
-		// TODO Auto-generated method stub
-		return super.getURIFragment(eObject);
+
+		String id = EcoreUtil.getID(eObject);
+		if (id != null)
+			return id;
+
+		if (eObject instanceof EntityNameable) {
+			EntityNameable entityNameable = (EntityNameable) eObject;
+
+			StringBuffer name = new StringBuffer();
+
+			Frame<?> frame = entityNameable.isa();
+			for (String key : frame.getKeys()) {
+				if (!name.toString().isEmpty())
+					name.append("/");
+				Object value = frame.getValue(entityNameable, key, false);
+				if (value == null)
+					break;
+
+				if (value instanceof EntityNameable)
+					name.append(((EntityNameable) value).getName());
+				else {
+					if (value instanceof Date) {
+						Date date = (Date) value;
+						DateFormat dateFormat = new SimpleDateFormat(MimoConstants.DATE_TIME_FORMAT);
+						value = dateFormat.format(date);
+					}
+
+					name.append(value);
+				}
+			}
+
+			if (name.toString().isEmpty())
+				throw new UnsupportedOperationException();
+
+			return name.toString();
+		}
+
+		return null;
 	}
 
 	@Override

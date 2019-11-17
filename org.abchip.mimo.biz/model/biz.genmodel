@@ -6549,6 +6549,11 @@
           <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//product/price/ProductPaymentMethodType/productPricePurposeId"/>
         </genClasses>
         <genClasses ecoreClass="biz.ecore#//product/price/ProductPrice">
+          <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//product/price/ProductPrice/productId"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//product/price/ProductPrice/productPriceTypeId"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//product/price/ProductPrice/productPricePurposeId"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//product/price/ProductPrice/currencyUomId"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//product/price/ProductPrice/productStoreGroupId"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//product/price/ProductPrice/fromDate"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//product/price/ProductPrice/createdDate"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//product/price/ProductPrice/lastModifiedDate"/>
@@ -6559,12 +6564,7 @@
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//product/price/ProductPrice/taxInPrice"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//product/price/ProductPrice/taxPercentage"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//product/price/ProductPrice/thruDate"/>
-          <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//product/price/ProductPrice/productId"/>
-          <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//product/price/ProductPrice/productPriceTypeId"/>
-          <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//product/price/ProductPrice/productPricePurposeId"/>
-          <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//product/price/ProductPrice/currencyUomId"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//product/price/ProductPrice/termUomId"/>
-          <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//product/price/ProductPrice/productStoreGroupId"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//product/price/ProductPrice/customPriceCalcService"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//product/price/ProductPrice/taxAuthPartyId"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//product/price/ProductPrice/taxAuthGeoId"/>

@@ -38,141 +38,143 @@ public class ResourceHelper {
 	}
 
 	public static <E extends EntityNameable> void firePreDeleteEvent(final ResourceWriter<E> resourceWriter, final E source) {
-		ResourceEvent<E> event = new ResourceEvent<E>() {
-
-			@Override
-			public ResourceEventType getEventType() {
-				return ResourceEventType.BEFORE_DELETE;
-			}
-
-			@Override
-			public E getSource() {
-				return source;
-			}
-
-			@Override
-			public String getNewName() {
-				return null;
-			}
-
-			@Override
-			public String getOldName() {
-				return null;
-			}
-
-			@Override
-			public ContextProvider getContextProvider() {
-				return resourceWriter.getContextProvider();
-			}
-		};
 
 		ResourceNotifier<E> resourceNotifier = resourceWriter.getNotifier();
-		if (resourceNotifier != null)
+		if (resourceNotifier != null) {
+			ResourceEvent<E> event = new ResourceEvent<E>() {
+
+				@Override
+				public ResourceEventType getEventType() {
+					return ResourceEventType.BEFORE_DELETE;
+				}
+
+				@Override
+				public E getSource() {
+					return source;
+				}
+
+				@Override
+				public String getNewName() {
+					return null;
+				}
+
+				@Override
+				public String getOldName() {
+					return null;
+				}
+
+				@Override
+				public ContextProvider getContextProvider() {
+					return resourceWriter.getContextProvider();
+				}
+			};
 			resourceNotifier.fireEvent(event);
+		}
 	}
 
 	public static <E extends EntityNameable> void firePostDeleteEvent(final ResourceWriter<E> resourceWriter, final E source) {
-		ResourceEvent<E> event = new ResourceEvent<E>() {
-
-			@Override
-			public ResourceEventType getEventType() {
-				return ResourceEventType.AFTER_DELETE;
-			}
-
-			@Override
-			public E getSource() {
-				return source;
-			}
-
-			@Override
-			public String getNewName() {
-				return null;
-			}
-
-			@Override
-			public String getOldName() {
-				return null;
-			}
-
-			@Override
-			public ContextProvider getContextProvider() {
-				return resourceWriter.getContextProvider();
-			}
-		};
 
 		ResourceNotifier<E> resourceNotifier = resourceWriter.getNotifier();
-		if (resourceNotifier != null)
+		if (resourceNotifier != null) {
+			ResourceEvent<E> event = new ResourceEvent<E>() {
+
+				@Override
+				public ResourceEventType getEventType() {
+					return ResourceEventType.AFTER_DELETE;
+				}
+
+				@Override
+				public E getSource() {
+					return source;
+				}
+
+				@Override
+				public String getNewName() {
+					return null;
+				}
+
+				@Override
+				public String getOldName() {
+					return null;
+				}
+
+				@Override
+				public ContextProvider getContextProvider() {
+					return resourceWriter.getContextProvider();
+				}
+			};
 			resourceNotifier.fireEvent(event);
+		}
 	}
 
 	public static <E extends EntityNameable> void firePreSaveEvent(final ResourceWriter<E> resourceWriter, final E source) {
 
-		ResourceEvent<E> event = new ResourceEvent<E>() {
-
-			@Override
-			public ResourceEventType getEventType() {
-				return ResourceEventType.BEFORE_SAVE;
-			}
-
-			@Override
-			public E getSource() {
-				return source;
-			}
-
-			@Override
-			public String getNewName() {
-				return null;
-			}
-
-			@Override
-			public String getOldName() {
-				return null;
-			}
-
-			@Override
-			public ContextProvider getContextProvider() {
-				return resourceWriter.getContextProvider();
-			}
-		};
-
 		ResourceNotifier<E> resourceNotifier = resourceWriter.getNotifier();
-		if (resourceNotifier != null)
+		if (resourceNotifier != null) {
+			ResourceEvent<E> event = new ResourceEvent<E>() {
+
+				@Override
+				public ResourceEventType getEventType() {
+					return ResourceEventType.BEFORE_SAVE;
+				}
+
+				@Override
+				public E getSource() {
+					return source;
+				}
+
+				@Override
+				public String getNewName() {
+					return null;
+				}
+
+				@Override
+				public String getOldName() {
+					return null;
+				}
+
+				@Override
+				public ContextProvider getContextProvider() {
+					return resourceWriter.getContextProvider();
+				}
+			};
 			resourceNotifier.fireEvent(event);
+		}
 	}
 
 	public static <E extends EntityNameable> void firePostSaveEvent(final ResourceWriter<E> resourceWriter, final E source) {
 
-		ResourceEvent<E> event = new ResourceEvent<E>() {
-
-			@Override
-			public ResourceEventType getEventType() {
-				return ResourceEventType.AFTER_SAVE;
-			}
-
-			@Override
-			public E getSource() {
-				return source;
-			}
-
-			@Override
-			public String getNewName() {
-				return null;
-			}
-
-			@Override
-			public String getOldName() {
-				return null;
-			}
-
-			@Override
-			public ContextProvider getContextProvider() {
-				return resourceWriter.getContextProvider();
-			}
-		};
-
 		ResourceNotifier<E> resourceNotifier = resourceWriter.getNotifier();
-		if (resourceNotifier != null)
+		if (resourceNotifier != null) {
+			ResourceEvent<E> event = new ResourceEvent<E>() {
+
+				@Override
+				public ResourceEventType getEventType() {
+					return ResourceEventType.AFTER_SAVE;
+				}
+
+				@Override
+				public E getSource() {
+					return source;
+				}
+
+				@Override
+				public String getNewName() {
+					return null;
+				}
+
+				@Override
+				public String getOldName() {
+					return null;
+				}
+
+				@Override
+				public ContextProvider getContextProvider() {
+					return resourceWriter.getContextProvider();
+				}
+			};
 			resourceNotifier.fireEvent(event);
+		}
 	}
 
 	private static class MyEntityIterator<E extends EntityNameable> implements EntityIterator<E> {

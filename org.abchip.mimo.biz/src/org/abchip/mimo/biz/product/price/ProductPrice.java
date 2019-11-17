@@ -29,6 +29,11 @@ import org.abchip.mimo.biz.security.login.UserLogin;
  * The following features are supported:
  * </p>
  * <ul>
+ *   <li>{@link org.abchip.mimo.biz.product.price.ProductPrice#getProductId <em>Product Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.price.ProductPrice#getProductPriceTypeId <em>Product Price Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.price.ProductPrice#getProductPricePurposeId <em>Product Price Purpose Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.price.ProductPrice#getCurrencyUomId <em>Currency Uom Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.price.ProductPrice#getProductStoreGroupId <em>Product Store Group Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.price.ProductPrice#getFromDate <em>From Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.price.ProductPrice#getCreatedDate <em>Created Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.price.ProductPrice#getLastModifiedDate <em>Last Modified Date</em>}</li>
@@ -39,12 +44,7 @@ import org.abchip.mimo.biz.security.login.UserLogin;
  *   <li>{@link org.abchip.mimo.biz.product.price.ProductPrice#isTaxInPrice <em>Tax In Price</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.price.ProductPrice#getTaxPercentage <em>Tax Percentage</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.price.ProductPrice#getThruDate <em>Thru Date</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.price.ProductPrice#getProductId <em>Product Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.price.ProductPrice#getProductPriceTypeId <em>Product Price Type Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.price.ProductPrice#getProductPricePurposeId <em>Product Price Purpose Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.price.ProductPrice#getCurrencyUomId <em>Currency Uom Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.price.ProductPrice#getTermUomId <em>Term Uom Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.price.ProductPrice#getProductStoreGroupId <em>Product Store Group Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.price.ProductPrice#getCustomPriceCalcService <em>Custom Price Calc Service</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.price.ProductPrice#getTaxAuthPartyId <em>Tax Auth Party Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.price.ProductPrice#getTaxAuthGeoId <em>Tax Auth Geo Id</em>}</li>
@@ -120,7 +120,8 @@ public interface ProductPrice extends BizEntityTyped<ProductPriceType> {
 	 * @return the value of the '<em>Currency Uom Id</em>' reference.
 	 * @see #setCurrencyUomId(Uom)
 	 * @see org.abchip.mimo.biz.product.price.PricePackage#getProductPrice_CurrencyUomId()
-	 * @model keys="uomId"
+	 * @model keys="uomId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	Uom getCurrencyUomId();
@@ -329,7 +330,8 @@ public interface ProductPrice extends BizEntityTyped<ProductPriceType> {
 	 * @return the value of the '<em>Product Id</em>' reference.
 	 * @see #setProductId(Product)
 	 * @see org.abchip.mimo.biz.product.price.PricePackage#getProductPrice_ProductId()
-	 * @model keys="productId"
+	 * @model keys="productId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	Product getProductId();
@@ -355,7 +357,8 @@ public interface ProductPrice extends BizEntityTyped<ProductPriceType> {
 	 * @return the value of the '<em>Product Store Group Id</em>' reference.
 	 * @see #setProductStoreGroupId(ProductStoreGroup)
 	 * @see org.abchip.mimo.biz.product.price.PricePackage#getProductPrice_ProductStoreGroupId()
-	 * @model keys="productStoreGroupId"
+	 * @model keys="productStoreGroupId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	ProductStoreGroup getProductStoreGroupId();
@@ -563,7 +566,8 @@ public interface ProductPrice extends BizEntityTyped<ProductPriceType> {
 	 * @return the value of the '<em>Product Price Type Id</em>' reference.
 	 * @see #setProductPriceTypeId(ProductPriceType)
 	 * @see org.abchip.mimo.biz.product.price.PricePackage#getProductPrice_ProductPriceTypeId()
-	 * @model keys="productPriceTypeId"
+	 * @model keys="productPriceTypeId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	ProductPriceType getProductPriceTypeId();
@@ -589,7 +593,8 @@ public interface ProductPrice extends BizEntityTyped<ProductPriceType> {
 	 * @return the value of the '<em>Product Price Purpose Id</em>' reference.
 	 * @see #setProductPricePurposeId(ProductPricePurpose)
 	 * @see org.abchip.mimo.biz.product.price.PricePackage#getProductPrice_ProductPricePurposeId()
-	 * @model keys="productPricePurposeId"
+	 * @model keys="productPricePurposeId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	ProductPricePurpose getProductPricePurposeId();

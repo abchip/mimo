@@ -10,9 +10,9 @@ package org.abchip.mimo.entity.impl;
 
 import java.lang.reflect.InvocationTargetException;
 import java.net.URI;
+
 import org.abchip.mimo.entity.EntityNameable;
 import org.abchip.mimo.entity.EntityPackage;
-import org.abchip.mimo.entity.Frame;
 import org.abchip.mimo.entity.Nameable;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
@@ -32,6 +32,7 @@ public abstract class EntityNameableImpl extends EntityImpl implements EntityNam
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected EntityNameableImpl() {
@@ -40,6 +41,7 @@ public abstract class EntityNameableImpl extends EntityImpl implements EntityNam
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -75,55 +77,45 @@ public abstract class EntityNameableImpl extends EntityImpl implements EntityNam
 	@Override
 	public String getName() {
 
-		StringBuffer name = new StringBuffer();
+		String uriFragment = this.getURI().getFragment();
+		if (uriFragment != null) 
+				return uriFragment;
 
-		Frame<?> frame = isa();
-		for (String key : frame.getKeys()) {
-			if (!name.toString().isEmpty())
-				name.append("/");
-			Object value = frame.getValue(this, key, false);
-			if (value instanceof EntityNameable)
-				name.append(((EntityNameable) value).getName());
-			else
-				name.append(value);
-		}
-
-		if (name.toString().isEmpty())
-			throw new UnsupportedOperationException();
-
-		return name.toString();
+		return null;
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public int eDerivedOperationID(int baseOperationID, Class<?> baseClass) {
 		if (baseClass == Nameable.class) {
 			switch (baseOperationID) {
-				case EntityPackage.NAMEABLE___GET_NAME: return EntityPackage.ENTITY_NAMEABLE___GET_NAME;
-				default: return -1;
+			case EntityPackage.NAMEABLE___GET_NAME:
+				return EntityPackage.ENTITY_NAMEABLE___GET_NAME;
+			default:
+				return -1;
 			}
 		}
 		return super.eDerivedOperationID(baseOperationID, baseClass);
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
-			case EntityPackage.ENTITY_NAMEABLE___GET_URI:
-				return getURI();
-			case EntityPackage.ENTITY_NAMEABLE___IS_PROXY:
-				return isProxy();
-			case EntityPackage.ENTITY_NAMEABLE___GET_NAME:
-				return getName();
+		case EntityPackage.ENTITY_NAMEABLE___GET_URI:
+			return getURI();
+		case EntityPackage.ENTITY_NAMEABLE___IS_PROXY:
+			return isProxy();
+		case EntityPackage.ENTITY_NAMEABLE___GET_NAME:
+			return getName();
 		}
 		return super.eInvoke(operationID, arguments);
 	}

@@ -20493,6 +20493,36 @@
             eType="#//product/price/ProductPricePurpose" eKeys="#//product/price/ProductPricePurpose/productPricePurposeId"/>
       </eClassifiers>
       <eClassifiers xsi:type="ecore:EClass" name="ProductPrice">
+        <eStructuralFeatures xsi:type="ecore:EReference" name="productId" lowerBound="1"
+            eType="#//product/product/Product" eKeys="#//product/product/Product/productId">
+          <eAnnotations source="mimo-ent-slot">
+            <details key="key" value="true"/>
+          </eAnnotations>
+        </eStructuralFeatures>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="productPriceTypeId"
+            lowerBound="1" eType="#//product/price/ProductPriceType" eKeys="#//product/price/ProductPriceType/productPriceTypeId">
+          <eAnnotations source="mimo-ent-slot">
+            <details key="key" value="true"/>
+          </eAnnotations>
+        </eStructuralFeatures>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="productPricePurposeId"
+            lowerBound="1" eType="#//product/price/ProductPricePurpose" eKeys="#//product/price/ProductPricePurpose/productPricePurposeId">
+          <eAnnotations source="mimo-ent-slot">
+            <details key="key" value="true"/>
+          </eAnnotations>
+        </eStructuralFeatures>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="currencyUomId" lowerBound="1"
+            eType="#//common/uom/Uom" eKeys="#//common/uom/Uom/uomId">
+          <eAnnotations source="mimo-ent-slot">
+            <details key="key" value="true"/>
+          </eAnnotations>
+        </eStructuralFeatures>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="productStoreGroupId"
+            lowerBound="1" eType="#//product/store/ProductStoreGroup" eKeys="#//product/store/ProductStoreGroup/productStoreGroupId">
+          <eAnnotations source="mimo-ent-slot">
+            <details key="key" value="true"/>
+          </eAnnotations>
+        </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="fromDate" lowerBound="1"
             eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate">
           <eAnnotations source="mimo-ent-slot">
@@ -20508,18 +20538,8 @@
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="taxInPrice" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="taxPercentage" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBigDecimal"/>
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="thruDate" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate"/>
-        <eStructuralFeatures xsi:type="ecore:EReference" name="productId" eType="#//product/product/Product"
-            eKeys="#//product/product/Product/productId"/>
-        <eStructuralFeatures xsi:type="ecore:EReference" name="productPriceTypeId"
-            eType="#//product/price/ProductPriceType" eKeys="#//product/price/ProductPriceType/productPriceTypeId"/>
-        <eStructuralFeatures xsi:type="ecore:EReference" name="productPricePurposeId"
-            eType="#//product/price/ProductPricePurpose" eKeys="#//product/price/ProductPricePurpose/productPricePurposeId"/>
-        <eStructuralFeatures xsi:type="ecore:EReference" name="currencyUomId" eType="#//common/uom/Uom"
-            eKeys="#//common/uom/Uom/uomId"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="termUomId" eType="#//common/uom/Uom"
             eKeys="#//common/uom/Uom/uomId"/>
-        <eStructuralFeatures xsi:type="ecore:EReference" name="productStoreGroupId"
-            eType="#//product/store/ProductStoreGroup" eKeys="#//product/store/ProductStoreGroup/productStoreGroupId"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="customPriceCalcService"
             eType="#//common/method/CustomMethod" eKeys="#//common/method/CustomMethod/customMethodId"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="taxAuthPartyId" eType="#//party/party/Party"

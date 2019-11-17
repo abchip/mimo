@@ -16,14 +16,11 @@ public class EMFCardinalityAdapter extends CardinalityImpl {
 
 	private static final long serialVersionUID = 1L;
 
-	private ETypedElement element;
-
 	public EMFCardinalityAdapter(ETypedElement element) {
-		this.element = element;
-		eSet(EntityPackage.CARDINALITY__MIN, this.element.getLowerBound());
-		eSet(EntityPackage.CARDINALITY__MAX, this.element.getUpperBound());
+		eSet(EntityPackage.CARDINALITY__MIN, element.getLowerBound());
+		eSet(EntityPackage.CARDINALITY__MAX, element.getUpperBound());
 	}
-	
+
 	@Override
 	public boolean isMandatory() {
 		return getMin() > 0 ? true : false;
@@ -33,5 +30,4 @@ public class EMFCardinalityAdapter extends CardinalityImpl {
 	public boolean isMultiple() {
 		return (getMax() == -1 || getMax() > 1) ? true : false;
 	}
-
 }
