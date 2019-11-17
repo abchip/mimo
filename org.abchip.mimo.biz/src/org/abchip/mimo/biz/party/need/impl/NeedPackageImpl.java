@@ -77,6 +77,7 @@ import org.abchip.mimo.biz.entity.crypto.CryptoPackage;
 import org.abchip.mimo.biz.entity.crypto.impl.CryptoPackageImpl;
 import org.abchip.mimo.biz.entity.group.GroupPackage;
 import org.abchip.mimo.biz.entity.group.impl.GroupPackageImpl;
+import org.abchip.mimo.biz.entity.impl.EntityPackageImpl;
 import org.abchip.mimo.biz.entity.sequence.SequencePackage;
 import org.abchip.mimo.biz.entity.sequence.impl.SequencePackageImpl;
 import org.abchip.mimo.biz.entity.synchronization.SynchronizationPackage;
@@ -196,7 +197,6 @@ import org.eclipse.emf.common.util.URI;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 
 import org.eclipse.emf.ecore.EReference;
@@ -338,6 +338,8 @@ public class NeedPackageImpl extends EPackageImpl implements NeedPackage {
 		SurveyPackageImpl theSurveyPackage = (SurveyPackageImpl)(registeredPackage instanceof SurveyPackageImpl ? registeredPackage : SurveyPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(WebsitePackage.eNS_URI);
 		WebsitePackageImpl theWebsitePackage = (WebsitePackageImpl)(registeredPackage instanceof WebsitePackageImpl ? registeredPackage : WebsitePackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(org.abchip.mimo.biz.entity.EntityPackage.eNS_URI);
+		EntityPackageImpl theEntityPackage = (EntityPackageImpl)(registeredPackage instanceof EntityPackageImpl ? registeredPackage : org.abchip.mimo.biz.entity.EntityPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(AuditPackage.eNS_URI);
 		AuditPackageImpl theAuditPackage = (AuditPackageImpl)(registeredPackage instanceof AuditPackageImpl ? registeredPackage : AuditPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(CryptoPackage.eNS_URI);
@@ -491,6 +493,7 @@ public class NeedPackageImpl extends EPackageImpl implements NeedPackage {
 		thePreferencePackage.createPackageContents();
 		theSurveyPackage.createPackageContents();
 		theWebsitePackage.createPackageContents();
+		theEntityPackage.createPackageContents();
 		theAuditPackage.createPackageContents();
 		theCryptoPackage.createPackageContents();
 		theGroupPackage.createPackageContents();
@@ -585,6 +588,7 @@ public class NeedPackageImpl extends EPackageImpl implements NeedPackage {
 		thePreferencePackage.initializePackageContents();
 		theSurveyPackage.initializePackageContents();
 		theWebsitePackage.initializePackageContents();
+		theEntityPackage.initializePackageContents();
 		theAuditPackage.initializePackageContents();
 		theCryptoPackage.initializePackageContents();
 		theGroupPackage.initializePackageContents();
@@ -681,16 +685,6 @@ public class NeedPackageImpl extends EPackageImpl implements NeedPackage {
 	@Override
 	public EAttribute getNeedType_Description() {
 		return (EAttribute)needTypeEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EOperation getNeedType__Subscriptions() {
-		return needTypeEClass.getEOperations().get(0);
 	}
 
 	/**
@@ -845,7 +839,6 @@ public class NeedPackageImpl extends EPackageImpl implements NeedPackage {
 		needTypeEClass = createEClass(NEED_TYPE);
 		createEAttribute(needTypeEClass, NEED_TYPE__NEED_TYPE_ID);
 		createEAttribute(needTypeEClass, NEED_TYPE__DESCRIPTION);
-		createEOperation(needTypeEClass, NEED_TYPE___SUBSCRIPTIONS);
 
 		partyNeedEClass = createEClass(PARTY_NEED);
 		createEAttribute(partyNeedEClass, PARTY_NEED__PARTY_NEED_ID);
@@ -899,12 +892,12 @@ public class NeedPackageImpl extends EPackageImpl implements NeedPackage {
 		needTypeEClass.getESuperTypes().add(theBizPackage.getBizEntity());
 		partyNeedEClass.getESuperTypes().add(theBizPackage.getBizEntity());
 
-		// Initialize classes, features, and operations; add parameters
+		// Initialize classes and features; add operations and parameters
 		initEClass(needTypeEClass, NeedType.class, "NeedType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getNeedType_NeedTypeId(), ecorePackage.getEString(), "needTypeId", null, 1, 1, NeedType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getNeedType_Description(), ecorePackage.getEString(), "description", null, 0, 1, NeedType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEOperation(getNeedType__Subscriptions(), ecorePackage.getEString(), "subscriptions", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(needTypeEClass, ecorePackage.getEString(), "subscriptions", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(partyNeedEClass, PartyNeed.class, "PartyNeed", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getPartyNeed_PartyNeedId(), ecorePackage.getEString(), "partyNeedId", null, 1, 1, PartyNeed.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -929,6 +922,8 @@ public class NeedPackageImpl extends EPackageImpl implements NeedPackage {
 		// Create annotations
 		// mimo-ent-frame
 		createMimoentframeAnnotations();
+		// mimo-ent-format
+		createMimoentformatAnnotations();
 		// mimo-ent-slot
 		createMimoentslotAnnotations();
 		// mimo-ent-domain
@@ -958,6 +953,64 @@ public class NeedPackageImpl extends EPackageImpl implements NeedPackage {
 	}
 
 	/**
+	 * Initializes the annotations for <b>mimo-ent-format</b>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void createMimoentformatAnnotations() {
+		String source = "mimo-ent-format";
+		addAnnotation
+		  (needTypeEClass.getEOperations().get(0),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (getNeedType_NeedTypeId(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (getNeedType_Description(),
+		   source,
+		   new String[] {
+			   "type", "description",
+			   "length", "255"
+		   });
+		addAnnotation
+		  (getPartyNeed_PartyNeedId(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (getPartyNeed_DatetimeRecorded(),
+		   source,
+		   new String[] {
+			   "type", "date-time"
+		   });
+		addAnnotation
+		  (getPartyNeed_Description(),
+		   source,
+		   new String[] {
+			   "type", "description",
+			   "length", "255"
+		   });
+		addAnnotation
+		  (getPartyNeed_VisitId(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+	}
+
+	/**
 	 * Initializes the annotations for <b>mimo-ent-slot</b>.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -966,7 +1019,7 @@ public class NeedPackageImpl extends EPackageImpl implements NeedPackage {
 	protected void createMimoentslotAnnotations() {
 		String source = "mimo-ent-slot";
 		addAnnotation
-		  (getNeedType__Subscriptions(),
+		  (needTypeEClass.getEOperations().get(0),
 		   source,
 		   new String[] {
 			   "derived", "true"
@@ -994,7 +1047,7 @@ public class NeedPackageImpl extends EPackageImpl implements NeedPackage {
 	protected void createMimoentdomainAnnotations() {
 		String source = "mimo-ent-domain";
 		addAnnotation
-		  (getNeedType__Subscriptions(),
+		  (needTypeEClass.getEOperations().get(0),
 		   source,
 		   new String[] {
 			   "frame", "Subscription",

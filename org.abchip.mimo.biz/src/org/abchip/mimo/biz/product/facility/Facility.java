@@ -66,7 +66,7 @@ public interface Facility extends BizEntityTyped<FacilityType> {
 	 * @return the value of the '<em>Closed Date</em>' attribute.
 	 * @see #setClosedDate(Date)
 	 * @see org.abchip.mimo.biz.product.facility.FacilityPackage#getFacility_ClosedDate()
-	 * @model
+	 * @model annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getClosedDate();
@@ -92,7 +92,7 @@ public interface Facility extends BizEntityTyped<FacilityType> {
 	 * @return the value of the '<em>Default Days To Ship</em>' attribute.
 	 * @see #setDefaultDaysToShip(long)
 	 * @see org.abchip.mimo.biz.product.facility.FacilityPackage#getFacility_DefaultDaysToShip()
-	 * @model
+	 * @model annotation="mimo-ent-format type='numeric' precision='20' scale='0'"
 	 * @generated
 	 */
 	long getDefaultDaysToShip();
@@ -196,7 +196,7 @@ public interface Facility extends BizEntityTyped<FacilityType> {
 	 * @return the value of the '<em>Description</em>' attribute.
 	 * @see #setDescription(String)
 	 * @see org.abchip.mimo.biz.product.facility.FacilityPackage#getFacility_Description()
-	 * @model
+	 * @model annotation="mimo-ent-format type='description' length='255'"
 	 * @generated
 	 */
 	String getDescription();
@@ -222,7 +222,7 @@ public interface Facility extends BizEntityTyped<FacilityType> {
 	 * @return the value of the '<em>Facility Name</em>' attribute.
 	 * @see #setFacilityName(String)
 	 * @see org.abchip.mimo.biz.product.facility.FacilityPackage#getFacility_FacilityName()
-	 * @model
+	 * @model annotation="mimo-ent-format type='name' length='100'"
 	 * @generated
 	 */
 	String getFacilityName();
@@ -248,7 +248,7 @@ public interface Facility extends BizEntityTyped<FacilityType> {
 	 * @return the value of the '<em>Facility Size</em>' attribute.
 	 * @see #setFacilitySize(BigDecimal)
 	 * @see org.abchip.mimo.biz.product.facility.FacilityPackage#getFacility_FacilitySize()
-	 * @model
+	 * @model annotation="mimo-ent-format type='fixed-point' precision='18' scale='6'"
 	 * @generated
 	 */
 	BigDecimal getFacilitySize();
@@ -326,7 +326,7 @@ public interface Facility extends BizEntityTyped<FacilityType> {
 	 * @return the value of the '<em>Old Square Footage</em>' attribute.
 	 * @see #setOldSquareFootage(long)
 	 * @see org.abchip.mimo.biz.product.facility.FacilityPackage#getFacility_OldSquareFootage()
-	 * @model
+	 * @model annotation="mimo-ent-format type='numeric' precision='20' scale='0'"
 	 * @generated
 	 */
 	long getOldSquareFootage();
@@ -352,7 +352,7 @@ public interface Facility extends BizEntityTyped<FacilityType> {
 	 * @return the value of the '<em>Opened Date</em>' attribute.
 	 * @see #setOpenedDate(Date)
 	 * @see org.abchip.mimo.biz.product.facility.FacilityPackage#getFacility_OpenedDate()
-	 * @model
+	 * @model annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getOpenedDate();
@@ -430,7 +430,9 @@ public interface Facility extends BizEntityTyped<FacilityType> {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Facility Attributes</em>' attribute list.
 	 * @see org.abchip.mimo.biz.product.facility.FacilityPackage#getFacility_FacilityAttributes()
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='FacilityAttribute'"
 	 * @generated
 	 */
@@ -447,7 +449,9 @@ public interface Facility extends BizEntityTyped<FacilityType> {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Facility Locations</em>' attribute list.
 	 * @see org.abchip.mimo.biz.product.facility.FacilityPackage#getFacility_FacilityLocations()
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='FacilityLocation'"
 	 * @generated
 	 */
@@ -456,7 +460,8 @@ public interface Facility extends BizEntityTyped<FacilityType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='Facility' route='parentFacilityId'"
 	 * @generated
 	 */
@@ -465,7 +470,8 @@ public interface Facility extends BizEntityTyped<FacilityType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='Container' route='facilityId'"
 	 * @generated
 	 */
@@ -474,7 +480,8 @@ public interface Facility extends BizEntityTyped<FacilityType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='Delivery' route='destFacilityId'"
 	 * @generated
 	 */
@@ -483,7 +490,8 @@ public interface Facility extends BizEntityTyped<FacilityType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ShipmentRouteSegment' route='destFacilityId'"
 	 * @generated
 	 */
@@ -492,7 +500,8 @@ public interface Facility extends BizEntityTyped<FacilityType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='Shipment' route='destinationFacilityId'"
 	 * @generated
 	 */
@@ -501,7 +510,8 @@ public interface Facility extends BizEntityTyped<FacilityType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='InventoryItem' route='facilityId'"
 	 * @generated
 	 */
@@ -510,7 +520,8 @@ public interface Facility extends BizEntityTyped<FacilityType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='InventoryTransfer' route='facilityId'"
 	 * @generated
 	 */
@@ -519,7 +530,8 @@ public interface Facility extends BizEntityTyped<FacilityType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='FixedAsset' route='locatedAtFacilityId'"
 	 * @generated
 	 */
@@ -528,7 +540,8 @@ public interface Facility extends BizEntityTyped<FacilityType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='OrderItemShipGroup' route='facilityId'"
 	 * @generated
 	 */
@@ -537,7 +550,8 @@ public interface Facility extends BizEntityTyped<FacilityType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='Delivery' route='originFacilityId'"
 	 * @generated
 	 */
@@ -546,7 +560,8 @@ public interface Facility extends BizEntityTyped<FacilityType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='OrderHeader' route='originFacilityId'"
 	 * @generated
 	 */
@@ -555,7 +570,8 @@ public interface Facility extends BizEntityTyped<FacilityType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ShipmentRouteSegment' route='originFacilityId'"
 	 * @generated
 	 */
@@ -564,7 +580,8 @@ public interface Facility extends BizEntityTyped<FacilityType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='Shipment' route='originFacilityId'"
 	 * @generated
 	 */
@@ -573,7 +590,8 @@ public interface Facility extends BizEntityTyped<FacilityType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='Picklist' route='facilityId'"
 	 * @generated
 	 */
@@ -582,7 +600,9 @@ public interface Facility extends BizEntityTyped<FacilityType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ProductFacility' route='facilityId'"
 	 * @generated
 	 */
@@ -591,7 +611,8 @@ public interface Facility extends BizEntityTyped<FacilityType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='Product' route='facilityId'"
 	 * @generated
 	 */
@@ -600,7 +621,8 @@ public interface Facility extends BizEntityTyped<FacilityType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ReorderGuideline' route='facilityId'"
 	 * @generated
 	 */
@@ -609,7 +631,8 @@ public interface Facility extends BizEntityTyped<FacilityType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='Requirement' route='facilityId'"
 	 * @generated
 	 */
@@ -618,7 +641,8 @@ public interface Facility extends BizEntityTyped<FacilityType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ReturnHeader' route='destinationFacilityId'"
 	 * @generated
 	 */
@@ -627,7 +651,8 @@ public interface Facility extends BizEntityTyped<FacilityType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='InventoryTransfer' route='facilityIdTo'"
 	 * @generated
 	 */
@@ -636,7 +661,8 @@ public interface Facility extends BizEntityTyped<FacilityType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='WorkEffort' route='facilityId'"
 	 * @generated
 	 */
@@ -732,6 +758,7 @@ public interface Facility extends BizEntityTyped<FacilityType> {
 	 * @see #setFacilityId(String)
 	 * @see org.abchip.mimo.biz.product.facility.FacilityPackage#getFacility_FacilityId()
 	 * @model id="true" required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */

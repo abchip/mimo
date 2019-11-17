@@ -47,7 +47,7 @@ public interface ProductRole extends BizEntity {
 	 * @return the value of the '<em>Comments</em>' attribute.
 	 * @see #setComments(String)
 	 * @see org.abchip.mimo.biz.product.product.ProductPackage#getProductRole_Comments()
-	 * @model
+	 * @model annotation="mimo-ent-format type='comment' length='255'"
 	 * @generated
 	 */
 	String getComments();
@@ -74,6 +74,7 @@ public interface ProductRole extends BizEntity {
 	 * @see #setFromDate(Date)
 	 * @see org.abchip.mimo.biz.product.product.ProductPackage#getProductRole_FromDate()
 	 * @model required="true"
+	 *        annotation="mimo-ent-format type='date-time'"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
@@ -152,7 +153,7 @@ public interface ProductRole extends BizEntity {
 	 * @return the value of the '<em>Sequence Num</em>' attribute.
 	 * @see #setSequenceNum(long)
 	 * @see org.abchip.mimo.biz.product.product.ProductPackage#getProductRole_SequenceNum()
-	 * @model
+	 * @model annotation="mimo-ent-format type='numeric' precision='20' scale='0'"
 	 * @generated
 	 */
 	long getSequenceNum();
@@ -178,7 +179,7 @@ public interface ProductRole extends BizEntity {
 	 * @return the value of the '<em>Thru Date</em>' attribute.
 	 * @see #setThruDate(Date)
 	 * @see org.abchip.mimo.biz.product.product.ProductPackage#getProductRole_ThruDate()
-	 * @model
+	 * @model annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getThruDate();

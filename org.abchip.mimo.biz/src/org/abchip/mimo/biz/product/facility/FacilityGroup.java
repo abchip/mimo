@@ -43,7 +43,7 @@ public interface FacilityGroup extends BizEntityTyped<FacilityGroupType> {
 	 * @return the value of the '<em>Description</em>' attribute.
 	 * @see #setDescription(String)
 	 * @see org.abchip.mimo.biz.product.facility.FacilityPackage#getFacilityGroup_Description()
-	 * @model
+	 * @model annotation="mimo-ent-format type='description' length='255'"
 	 * @generated
 	 */
 	String getDescription();
@@ -69,7 +69,7 @@ public interface FacilityGroup extends BizEntityTyped<FacilityGroupType> {
 	 * @return the value of the '<em>Facility Group Name</em>' attribute.
 	 * @see #setFacilityGroupName(String)
 	 * @see org.abchip.mimo.biz.product.facility.FacilityPackage#getFacilityGroup_FacilityGroupName()
-	 * @model
+	 * @model annotation="mimo-ent-format type='name' length='100'"
 	 * @generated
 	 */
 	String getFacilityGroupName();
@@ -139,7 +139,8 @@ public interface FacilityGroup extends BizEntityTyped<FacilityGroupType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='Facility' route='primaryFacilityGroupId'"
 	 * @generated
 	 */
@@ -157,6 +158,7 @@ public interface FacilityGroup extends BizEntityTyped<FacilityGroupType> {
 	 * @see #setFacilityGroupId(String)
 	 * @see org.abchip.mimo.biz.product.facility.FacilityPackage#getFacilityGroup_FacilityGroupId()
 	 * @model id="true" required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */

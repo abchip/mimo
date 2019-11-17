@@ -75,6 +75,7 @@ public interface OAuth2LinkedIn extends BizEntity {
 	 * @see #setFromDate(Date)
 	 * @see org.abchip.mimo.biz.passport.PassportPackage#getOAuth2LinkedIn_FromDate()
 	 * @model required="true"
+	 *        annotation="mimo-ent-format type='date-time'"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
@@ -101,7 +102,7 @@ public interface OAuth2LinkedIn extends BizEntity {
 	 * @return the value of the '<em>Api Key</em>' attribute.
 	 * @see #setApiKey(String)
 	 * @see org.abchip.mimo.biz.passport.PassportPackage#getOAuth2LinkedIn_ApiKey()
-	 * @model
+	 * @model annotation="mimo-ent-format type='short-varchar' length='60'"
 	 * @generated
 	 */
 	String getApiKey();
@@ -127,7 +128,7 @@ public interface OAuth2LinkedIn extends BizEntity {
 	 * @return the value of the '<em>Icon Url</em>' attribute.
 	 * @see #setIconUrl(String)
 	 * @see org.abchip.mimo.biz.passport.PassportPackage#getOAuth2LinkedIn_IconUrl()
-	 * @model
+	 * @model annotation="mimo-ent-format type='url' length='2000'"
 	 * @generated
 	 */
 	String getIconUrl();
@@ -153,7 +154,7 @@ public interface OAuth2LinkedIn extends BizEntity {
 	 * @return the value of the '<em>Live Return Url</em>' attribute.
 	 * @see #setLiveReturnUrl(String)
 	 * @see org.abchip.mimo.biz.passport.PassportPackage#getOAuth2LinkedIn_LiveReturnUrl()
-	 * @model
+	 * @model annotation="mimo-ent-format type='value' length='255'"
 	 * @generated
 	 */
 	String getLiveReturnUrl();
@@ -179,7 +180,7 @@ public interface OAuth2LinkedIn extends BizEntity {
 	 * @return the value of the '<em>Local Redirect Uri</em>' attribute.
 	 * @see #setLocalRedirectUri(String)
 	 * @see org.abchip.mimo.biz.passport.PassportPackage#getOAuth2LinkedIn_LocalRedirectUri()
-	 * @model
+	 * @model annotation="mimo-ent-format type='short-varchar' length='60'"
 	 * @generated
 	 */
 	String getLocalRedirectUri();
@@ -205,7 +206,7 @@ public interface OAuth2LinkedIn extends BizEntity {
 	 * @return the value of the '<em>Secret Key</em>' attribute.
 	 * @see #setSecretKey(String)
 	 * @see org.abchip.mimo.biz.passport.PassportPackage#getOAuth2LinkedIn_SecretKey()
-	 * @model
+	 * @model annotation="mimo-ent-format type='short-varchar' length='60'"
 	 * @generated
 	 */
 	String getSecretKey();
@@ -231,7 +232,7 @@ public interface OAuth2LinkedIn extends BizEntity {
 	 * @return the value of the '<em>Test Return Url</em>' attribute.
 	 * @see #setTestReturnUrl(String)
 	 * @see org.abchip.mimo.biz.passport.PassportPackage#getOAuth2LinkedIn_TestReturnUrl()
-	 * @model
+	 * @model annotation="mimo-ent-format type='value' length='255'"
 	 * @generated
 	 */
 	String getTestReturnUrl();
@@ -257,7 +258,7 @@ public interface OAuth2LinkedIn extends BizEntity {
 	 * @return the value of the '<em>Thru Date</em>' attribute.
 	 * @see #setThruDate(Date)
 	 * @see org.abchip.mimo.biz.passport.PassportPackage#getOAuth2LinkedIn_ThruDate()
-	 * @model
+	 * @model annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getThruDate();

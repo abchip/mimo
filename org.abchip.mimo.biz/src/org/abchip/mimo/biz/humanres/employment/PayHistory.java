@@ -52,7 +52,7 @@ public interface PayHistory extends BizEntity {
 	 * @return the value of the '<em>Amount</em>' attribute.
 	 * @see #setAmount(BigDecimal)
 	 * @see org.abchip.mimo.biz.humanres.employment.EmploymentPackage#getPayHistory_Amount()
-	 * @model
+	 * @model annotation="mimo-ent-format type='currency-amount' precision='18' scale='2'"
 	 * @generated
 	 */
 	BigDecimal getAmount();
@@ -78,7 +78,7 @@ public interface PayHistory extends BizEntity {
 	 * @return the value of the '<em>Comments</em>' attribute.
 	 * @see #setComments(String)
 	 * @see org.abchip.mimo.biz.humanres.employment.EmploymentPackage#getPayHistory_Comments()
-	 * @model
+	 * @model annotation="mimo-ent-format type='comment' length='255'"
 	 * @generated
 	 */
 	String getComments();
@@ -105,6 +105,7 @@ public interface PayHistory extends BizEntity {
 	 * @see #setFromDate(Date)
 	 * @see org.abchip.mimo.biz.humanres.employment.EmploymentPackage#getPayHistory_FromDate()
 	 * @model required="true"
+	 *        annotation="mimo-ent-format type='date-time'"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
@@ -132,6 +133,7 @@ public interface PayHistory extends BizEntity {
 	 * @see #setPartyIdFrom(String)
 	 * @see org.abchip.mimo.biz.humanres.employment.EmploymentPackage#getPayHistory_PartyIdFrom()
 	 * @model required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
@@ -159,6 +161,7 @@ public interface PayHistory extends BizEntity {
 	 * @see #setPartyIdTo(String)
 	 * @see org.abchip.mimo.biz.humanres.employment.EmploymentPackage#getPayHistory_PartyIdTo()
 	 * @model required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
@@ -238,6 +241,7 @@ public interface PayHistory extends BizEntity {
 	 * @see #setRoleTypeIdFrom(String)
 	 * @see org.abchip.mimo.biz.humanres.employment.EmploymentPackage#getPayHistory_RoleTypeIdFrom()
 	 * @model required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
@@ -265,6 +269,7 @@ public interface PayHistory extends BizEntity {
 	 * @see #setRoleTypeIdTo(String)
 	 * @see org.abchip.mimo.biz.humanres.employment.EmploymentPackage#getPayHistory_RoleTypeIdTo()
 	 * @model required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
@@ -291,7 +296,7 @@ public interface PayHistory extends BizEntity {
 	 * @return the value of the '<em>Salary Step Seq Id</em>' attribute.
 	 * @see #setSalaryStepSeqId(String)
 	 * @see org.abchip.mimo.biz.humanres.employment.EmploymentPackage#getPayHistory_SalaryStepSeqId()
-	 * @model
+	 * @model annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	String getSalaryStepSeqId();
@@ -317,7 +322,7 @@ public interface PayHistory extends BizEntity {
 	 * @return the value of the '<em>Thru Date</em>' attribute.
 	 * @see #setThruDate(Date)
 	 * @see org.abchip.mimo.biz.humanres.employment.EmploymentPackage#getPayHistory_ThruDate()
-	 * @model
+	 * @model annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getThruDate();

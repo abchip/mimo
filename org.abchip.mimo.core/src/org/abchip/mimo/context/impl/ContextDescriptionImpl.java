@@ -7,12 +7,10 @@
  */
 package org.abchip.mimo.context.impl;
 
-import java.lang.reflect.InvocationTargetException;
 import org.abchip.mimo.context.ContextDescription;
 import org.abchip.mimo.context.ContextPackage;
 import org.abchip.mimo.entity.impl.EntityImpl;
 import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
@@ -411,20 +409,6 @@ public class ContextDescriptionImpl extends EntityImpl implements ContextDescrip
 				return USER_EDEFAULT == null ? user != null : !USER_EDEFAULT.equals(user);
 		}
 		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
-		switch (operationID) {
-			case ContextPackage.CONTEXT_DESCRIPTION___IS_TENANT:
-				return isTenant();
-		}
-		return super.eInvoke(operationID, arguments);
 	}
 
 	/**

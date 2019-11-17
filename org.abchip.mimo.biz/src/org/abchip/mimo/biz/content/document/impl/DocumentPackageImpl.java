@@ -81,6 +81,7 @@ import org.abchip.mimo.biz.entity.crypto.CryptoPackage;
 import org.abchip.mimo.biz.entity.crypto.impl.CryptoPackageImpl;
 import org.abchip.mimo.biz.entity.group.GroupPackage;
 import org.abchip.mimo.biz.entity.group.impl.GroupPackageImpl;
+import org.abchip.mimo.biz.entity.impl.EntityPackageImpl;
 import org.abchip.mimo.biz.entity.sequence.SequencePackage;
 import org.abchip.mimo.biz.entity.sequence.impl.SequencePackageImpl;
 import org.abchip.mimo.biz.entity.synchronization.SynchronizationPackage;
@@ -198,7 +199,6 @@ import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EGenericType;
-import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 
 import org.eclipse.emf.ecore.EReference;
@@ -352,6 +352,8 @@ public class DocumentPackageImpl extends EPackageImpl implements DocumentPackage
 		SurveyPackageImpl theSurveyPackage = (SurveyPackageImpl)(registeredPackage instanceof SurveyPackageImpl ? registeredPackage : SurveyPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(WebsitePackage.eNS_URI);
 		WebsitePackageImpl theWebsitePackage = (WebsitePackageImpl)(registeredPackage instanceof WebsitePackageImpl ? registeredPackage : WebsitePackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(org.abchip.mimo.biz.entity.EntityPackage.eNS_URI);
+		EntityPackageImpl theEntityPackage = (EntityPackageImpl)(registeredPackage instanceof EntityPackageImpl ? registeredPackage : org.abchip.mimo.biz.entity.EntityPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(AuditPackage.eNS_URI);
 		AuditPackageImpl theAuditPackage = (AuditPackageImpl)(registeredPackage instanceof AuditPackageImpl ? registeredPackage : AuditPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(CryptoPackage.eNS_URI);
@@ -506,6 +508,7 @@ public class DocumentPackageImpl extends EPackageImpl implements DocumentPackage
 		thePreferencePackage.createPackageContents();
 		theSurveyPackage.createPackageContents();
 		theWebsitePackage.createPackageContents();
+		theEntityPackage.createPackageContents();
 		theAuditPackage.createPackageContents();
 		theCryptoPackage.createPackageContents();
 		theGroupPackage.createPackageContents();
@@ -600,6 +603,7 @@ public class DocumentPackageImpl extends EPackageImpl implements DocumentPackage
 		thePreferencePackage.initializePackageContents();
 		theSurveyPackage.initializePackageContents();
 		theWebsitePackage.initializePackageContents();
+		theEntityPackage.initializePackageContents();
 		theAuditPackage.initializePackageContents();
 		theCryptoPackage.initializePackageContents();
 		theGroupPackage.initializePackageContents();
@@ -875,26 +879,6 @@ public class DocumentPackageImpl extends EPackageImpl implements DocumentPackage
 	 * @generated
 	 */
 	@Override
-	public EOperation getDocumentType__ChildDocumentTypes() {
-		return documentTypeEClass.getEOperations().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EOperation getDocumentType__Documents() {
-		return documentTypeEClass.getEOperations().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public EClass getDocumentTypeAttr() {
 		return documentTypeAttrEClass;
 	}
@@ -980,8 +964,6 @@ public class DocumentPackageImpl extends EPackageImpl implements DocumentPackage
 		createEAttribute(documentTypeEClass, DOCUMENT_TYPE__HAS_TABLE);
 		createEReference(documentTypeEClass, DOCUMENT_TYPE__PARENT_TYPE_ID);
 		createEAttribute(documentTypeEClass, DOCUMENT_TYPE__DOCUMENT_TYPE_ATTRS);
-		createEOperation(documentTypeEClass, DOCUMENT_TYPE___CHILD_DOCUMENT_TYPES);
-		createEOperation(documentTypeEClass, DOCUMENT_TYPE___DOCUMENTS);
 
 		documentTypeAttrEClass = createEClass(DOCUMENT_TYPE_ATTR);
 		createEAttribute(documentTypeAttrEClass, DOCUMENT_TYPE_ATTR__ATTR_NAME);
@@ -1031,7 +1013,7 @@ public class DocumentPackageImpl extends EPackageImpl implements DocumentPackage
 		documentTypeEClass.getEGenericSuperTypes().add(g1);
 		documentTypeAttrEClass.getESuperTypes().add(theBizPackage.getBizEntity());
 
-		// Initialize classes, features, and operations; add parameters
+		// Initialize classes and features; add operations and parameters
 		initEClass(documentEClass, Document.class, "Document", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getDocument_DocumentId(), ecorePackage.getEString(), "documentId", null, 1, 1, Document.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getDocument_Comments(), ecorePackage.getEString(), "comments", null, 0, 1, Document.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1041,7 +1023,7 @@ public class DocumentPackageImpl extends EPackageImpl implements DocumentPackage
 		initEAttribute(getDocument_ImageData(), ecorePackage.getEJavaObject(), "imageData", null, 0, 1, Document.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getDocument_DocumentTypeId(), this.getDocumentType(), null, "documentTypeId", null, 0, 1, Document.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getDocument_DocumentTypeId().getEKeys().add(this.getDocumentType_DocumentTypeId());
-		initEAttribute(getDocument_DocumentAttributes(), ecorePackage.getEString(), "documentAttributes", null, 0, -1, Document.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getDocument_DocumentAttributes(), ecorePackage.getEString(), "documentAttributes", null, 1, -1, Document.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(documentAttributeEClass, DocumentAttribute.class, "DocumentAttribute", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getDocumentAttribute_AttrName(), ecorePackage.getEString(), "attrName", null, 1, 1, DocumentAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1056,11 +1038,11 @@ public class DocumentPackageImpl extends EPackageImpl implements DocumentPackage
 		initEAttribute(getDocumentType_HasTable(), ecorePackage.getEBoolean(), "hasTable", null, 0, 1, DocumentType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getDocumentType_ParentTypeId(), this.getDocumentType(), null, "parentTypeId", null, 0, 1, DocumentType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getDocumentType_ParentTypeId().getEKeys().add(this.getDocumentType_DocumentTypeId());
-		initEAttribute(getDocumentType_DocumentTypeAttrs(), ecorePackage.getEString(), "documentTypeAttrs", null, 0, -1, DocumentType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getDocumentType_DocumentTypeAttrs(), ecorePackage.getEString(), "documentTypeAttrs", null, 1, -1, DocumentType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEOperation(getDocumentType__ChildDocumentTypes(), ecorePackage.getEString(), "childDocumentTypes", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(documentTypeEClass, ecorePackage.getEString(), "childDocumentTypes", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		initEOperation(getDocumentType__Documents(), ecorePackage.getEString(), "documents", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(documentTypeEClass, ecorePackage.getEString(), "documents", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(documentTypeAttrEClass, DocumentTypeAttr.class, "DocumentTypeAttr", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getDocumentTypeAttr_AttrName(), ecorePackage.getEString(), "attrName", null, 1, 1, DocumentTypeAttr.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1069,12 +1051,148 @@ public class DocumentPackageImpl extends EPackageImpl implements DocumentPackage
 		getDocumentTypeAttr_DocumentTypeId().getEKeys().add(this.getDocumentType_DocumentTypeId());
 
 		// Create annotations
+		// mimo-ent-format
+		createMimoentformatAnnotations();
 		// mimo-ent-slot
 		createMimoentslotAnnotations();
 		// mimo-ent-domain
 		createMimoentdomainAnnotations();
 		// mimo-ent-frame
 		createMimoentframeAnnotations();
+	}
+
+	/**
+	 * Initializes the annotations for <b>mimo-ent-format</b>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void createMimoentformatAnnotations() {
+		String source = "mimo-ent-format";
+		addAnnotation
+		  (getDocument_DocumentId(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (getDocument_Comments(),
+		   source,
+		   new String[] {
+			   "type", "comment",
+			   "length", "255"
+		   });
+		addAnnotation
+		  (getDocument_DateCreated(),
+		   source,
+		   new String[] {
+			   "type", "date-time"
+		   });
+		addAnnotation
+		  (getDocument_DocumentLocation(),
+		   source,
+		   new String[] {
+			   "type", "long-varchar",
+			   "length", "255"
+		   });
+		addAnnotation
+		  (getDocument_DocumentText(),
+		   source,
+		   new String[] {
+			   "type", "long-varchar",
+			   "length", "255"
+		   });
+		addAnnotation
+		  (getDocument_ImageData(),
+		   source,
+		   new String[] {
+			   "type", "object"
+		   });
+		addAnnotation
+		  (getDocument_DocumentAttributes(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (getDocumentAttribute_AttrName(),
+		   source,
+		   new String[] {
+			   "type", "id-long",
+			   "length", "60"
+		   });
+		addAnnotation
+		  (getDocumentAttribute_AttrDescription(),
+		   source,
+		   new String[] {
+			   "type", "description",
+			   "length", "255"
+		   });
+		addAnnotation
+		  (getDocumentAttribute_AttrValue(),
+		   source,
+		   new String[] {
+			   "type", "value",
+			   "length", "255"
+		   });
+		addAnnotation
+		  (documentTypeEClass.getEOperations().get(0),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (documentTypeEClass.getEOperations().get(1),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (getDocumentType_DocumentTypeId(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (getDocumentType_Description(),
+		   source,
+		   new String[] {
+			   "type", "description",
+			   "length", "255"
+		   });
+		addAnnotation
+		  (getDocumentType_HasTable(),
+		   source,
+		   new String[] {
+			   "type", "indicator",
+			   "length", "1"
+		   });
+		addAnnotation
+		  (getDocumentType_DocumentTypeAttrs(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (getDocumentTypeAttr_AttrName(),
+		   source,
+		   new String[] {
+			   "type", "id-long",
+			   "length", "60"
+		   });
+		addAnnotation
+		  (getDocumentTypeAttr_Description(),
+		   source,
+		   new String[] {
+			   "type", "description",
+			   "length", "255"
+		   });
 	}
 
 	/**
@@ -1104,13 +1222,13 @@ public class DocumentPackageImpl extends EPackageImpl implements DocumentPackage
 			   "key", "true"
 		   });
 		addAnnotation
-		  (getDocumentType__ChildDocumentTypes(),
+		  (documentTypeEClass.getEOperations().get(0),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (getDocumentType__Documents(),
+		  (documentTypeEClass.getEOperations().get(1),
 		   source,
 		   new String[] {
 			   "derived", "true"
@@ -1153,7 +1271,7 @@ public class DocumentPackageImpl extends EPackageImpl implements DocumentPackage
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (getDocumentType__ChildDocumentTypes(),
+		  (documentTypeEClass.getEOperations().get(0),
 		   source,
 		   new String[] {
 			   "frame", "DocumentType",
@@ -1163,7 +1281,7 @@ public class DocumentPackageImpl extends EPackageImpl implements DocumentPackage
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (getDocumentType__Documents(),
+		  (documentTypeEClass.getEOperations().get(1),
 		   source,
 		   new String[] {
 			   "frame", "Document",

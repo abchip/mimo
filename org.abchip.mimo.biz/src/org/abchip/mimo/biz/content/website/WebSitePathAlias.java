@@ -47,7 +47,7 @@ public interface WebSitePathAlias extends BizEntity {
 	 * @return the value of the '<em>Alias To</em>' attribute.
 	 * @see #setAliasTo(String)
 	 * @see org.abchip.mimo.biz.content.website.WebsitePackage#getWebSitePathAlias_AliasTo()
-	 * @model
+	 * @model annotation="mimo-ent-format type='long-varchar' length='255'"
 	 * @generated
 	 */
 	String getAliasTo();
@@ -100,6 +100,7 @@ public interface WebSitePathAlias extends BizEntity {
 	 * @see #setFromDate(Date)
 	 * @see org.abchip.mimo.biz.content.website.WebsitePackage#getWebSitePathAlias_FromDate()
 	 * @model required="true"
+	 *        annotation="mimo-ent-format type='date-time'"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
@@ -126,7 +127,7 @@ public interface WebSitePathAlias extends BizEntity {
 	 * @return the value of the '<em>Map Key</em>' attribute.
 	 * @see #setMapKey(String)
 	 * @see org.abchip.mimo.biz.content.website.WebsitePackage#getWebSitePathAlias_MapKey()
-	 * @model
+	 * @model annotation="mimo-ent-format type='name' length='100'"
 	 * @generated
 	 */
 	String getMapKey();
@@ -153,6 +154,7 @@ public interface WebSitePathAlias extends BizEntity {
 	 * @see #setPathAlias(String)
 	 * @see org.abchip.mimo.biz.content.website.WebsitePackage#getWebSitePathAlias_PathAlias()
 	 * @model required="true"
+	 *        annotation="mimo-ent-format type='id-vlong' length='255'"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
@@ -179,7 +181,7 @@ public interface WebSitePathAlias extends BizEntity {
 	 * @return the value of the '<em>Thru Date</em>' attribute.
 	 * @see #setThruDate(Date)
 	 * @see org.abchip.mimo.biz.content.website.WebsitePackage#getWebSitePathAlias_ThruDate()
-	 * @model
+	 * @model annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getThruDate();

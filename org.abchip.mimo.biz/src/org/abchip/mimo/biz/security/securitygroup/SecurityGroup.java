@@ -42,7 +42,7 @@ public interface SecurityGroup extends BizEntity {
 	 * @return the value of the '<em>Description</em>' attribute.
 	 * @see #setDescription(String)
 	 * @see org.abchip.mimo.biz.security.securitygroup.SecuritygroupPackage#getSecurityGroup_Description()
-	 * @model
+	 * @model annotation="mimo-ent-format type='description' length='255'"
 	 * @generated
 	 */
 	String getDescription();
@@ -69,6 +69,7 @@ public interface SecurityGroup extends BizEntity {
 	 * @see #setGroupId(String)
 	 * @see org.abchip.mimo.biz.security.securitygroup.SecuritygroupPackage#getSecurityGroup_GroupId()
 	 * @model id="true" required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
@@ -95,7 +96,7 @@ public interface SecurityGroup extends BizEntity {
 	 * @return the value of the '<em>Group Name</em>' attribute.
 	 * @see #setGroupName(String)
 	 * @see org.abchip.mimo.biz.security.securitygroup.SecuritygroupPackage#getSecurityGroup_GroupName()
-	 * @model
+	 * @model annotation="mimo-ent-format type='value' length='255'"
 	 * @generated
 	 */
 	String getGroupName();
@@ -121,7 +122,9 @@ public interface SecurityGroup extends BizEntity {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Protected Views</em>' attribute list.
 	 * @see org.abchip.mimo.biz.security.securitygroup.SecuritygroupPackage#getSecurityGroup_ProtectedViews()
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ProtectedView'"
 	 * @generated
 	 */
@@ -130,7 +133,8 @@ public interface SecurityGroup extends BizEntity {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='PortalPage' route='securityGroupId'"
 	 * @generated
 	 */

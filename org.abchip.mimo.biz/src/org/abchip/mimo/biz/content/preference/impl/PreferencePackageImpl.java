@@ -73,12 +73,14 @@ import org.abchip.mimo.biz.content.survey.SurveyPackage;
 import org.abchip.mimo.biz.content.survey.impl.SurveyPackageImpl;
 import org.abchip.mimo.biz.content.website.WebsitePackage;
 import org.abchip.mimo.biz.content.website.impl.WebsitePackageImpl;
+import org.abchip.mimo.biz.entity.EntityPackage;
 import org.abchip.mimo.biz.entity.audit.AuditPackage;
 import org.abchip.mimo.biz.entity.audit.impl.AuditPackageImpl;
 import org.abchip.mimo.biz.entity.crypto.CryptoPackage;
 import org.abchip.mimo.biz.entity.crypto.impl.CryptoPackageImpl;
 import org.abchip.mimo.biz.entity.group.GroupPackage;
 import org.abchip.mimo.biz.entity.group.impl.GroupPackageImpl;
+import org.abchip.mimo.biz.entity.impl.EntityPackageImpl;
 import org.abchip.mimo.biz.entity.sequence.SequencePackage;
 import org.abchip.mimo.biz.entity.sequence.impl.SequencePackageImpl;
 import org.abchip.mimo.biz.entity.synchronization.SynchronizationPackage;
@@ -331,6 +333,8 @@ public class PreferencePackageImpl extends EPackageImpl implements PreferencePac
 		SurveyPackageImpl theSurveyPackage = (SurveyPackageImpl)(registeredPackage instanceof SurveyPackageImpl ? registeredPackage : SurveyPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(WebsitePackage.eNS_URI);
 		WebsitePackageImpl theWebsitePackage = (WebsitePackageImpl)(registeredPackage instanceof WebsitePackageImpl ? registeredPackage : WebsitePackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(EntityPackage.eNS_URI);
+		EntityPackageImpl theEntityPackage = (EntityPackageImpl)(registeredPackage instanceof EntityPackageImpl ? registeredPackage : EntityPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(AuditPackage.eNS_URI);
 		AuditPackageImpl theAuditPackage = (AuditPackageImpl)(registeredPackage instanceof AuditPackageImpl ? registeredPackage : AuditPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(CryptoPackage.eNS_URI);
@@ -485,6 +489,7 @@ public class PreferencePackageImpl extends EPackageImpl implements PreferencePac
 		theDocumentPackage.createPackageContents();
 		theSurveyPackage.createPackageContents();
 		theWebsitePackage.createPackageContents();
+		theEntityPackage.createPackageContents();
 		theAuditPackage.createPackageContents();
 		theCryptoPackage.createPackageContents();
 		theGroupPackage.createPackageContents();
@@ -579,6 +584,7 @@ public class PreferencePackageImpl extends EPackageImpl implements PreferencePac
 		theDocumentPackage.initializePackageContents();
 		theSurveyPackage.initializePackageContents();
 		theWebsitePackage.initializePackageContents();
+		theEntityPackage.initializePackageContents();
 		theAuditPackage.initializePackageContents();
 		theCryptoPackage.initializePackageContents();
 		theGroupPackage.initializePackageContents();
@@ -815,7 +821,7 @@ public class PreferencePackageImpl extends EPackageImpl implements PreferencePac
 		webPreferenceTypeEClass.getESuperTypes().add(theBizPackage.getBizEntity());
 		webUserPreferenceEClass.getESuperTypes().add(theBizPackage.getBizEntity());
 
-		// Initialize classes, features, and operations; add parameters
+		// Initialize classes and features; add operations and parameters
 		initEClass(webPreferenceTypeEClass, WebPreferenceType.class, "WebPreferenceType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getWebPreferenceType_WebPreferenceTypeId(), ecorePackage.getEString(), "webPreferenceTypeId", null, 1, 1, WebPreferenceType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getWebPreferenceType_Description(), ecorePackage.getEString(), "description", null, 0, 1, WebPreferenceType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -833,6 +839,8 @@ public class PreferencePackageImpl extends EPackageImpl implements PreferencePac
 		// Create annotations
 		// mimo-ent-frame
 		createMimoentframeAnnotations();
+		// mimo-ent-format
+		createMimoentformatAnnotations();
 		// mimo-ent-slot
 		createMimoentslotAnnotations();
 	}
@@ -850,6 +858,44 @@ public class PreferencePackageImpl extends EPackageImpl implements PreferencePac
 		   source,
 		   new String[] {
 			   "formula", "description"
+		   });
+	}
+
+	/**
+	 * Initializes the annotations for <b>mimo-ent-format</b>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void createMimoentformatAnnotations() {
+		String source = "mimo-ent-format";
+		addAnnotation
+		  (getWebPreferenceType_WebPreferenceTypeId(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (getWebPreferenceType_Description(),
+		   source,
+		   new String[] {
+			   "type", "description",
+			   "length", "255"
+		   });
+		addAnnotation
+		  (getWebUserPreference_VisitId(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (getWebUserPreference_WebPreferenceValue(),
+		   source,
+		   new String[] {
+			   "type", "long-varchar",
+			   "length", "255"
 		   });
 	}
 

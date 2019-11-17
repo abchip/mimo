@@ -7,13 +7,11 @@
  */
 package org.abchip.mimo.biz.party.contact.impl;
 
-import java.lang.reflect.InvocationTargetException;
 import java.util.List;
 
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.party.contact.ContactMechPurposeType;
 import org.abchip.mimo.biz.party.contact.ContactPackage;
-import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 
 /**
@@ -84,20 +82,6 @@ public class ContactMechPurposeTypeImpl extends BizEntityImpl implements Contact
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
-		switch (operationID) {
-			case ContactPackage.CONTACT_MECH_PURPOSE_TYPE___CONTACT_MECH_TYPE_PURPOSES:
-				return contactMechTypePurposes();
-		}
-		return super.eInvoke(operationID, arguments);
 	}
 
 	/**

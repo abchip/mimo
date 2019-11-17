@@ -39,6 +39,7 @@ public interface EntityKeyStore extends BizEntity {
 	 * @see #setKeyName(String)
 	 * @see org.abchip.mimo.biz.entity.crypto.CryptoPackage#getEntityKeyStore_KeyName()
 	 * @model id="true" required="true"
+	 *        annotation="mimo-ent-format type='id-vlong' length='255'"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
@@ -65,7 +66,7 @@ public interface EntityKeyStore extends BizEntity {
 	 * @return the value of the '<em>Key Text</em>' attribute.
 	 * @see #setKeyText(String)
 	 * @see org.abchip.mimo.biz.entity.crypto.CryptoPackage#getEntityKeyStore_KeyText()
-	 * @model
+	 * @model annotation="mimo-ent-format type='long-varchar' length='255'"
 	 * @generated
 	 */
 	String getKeyText();

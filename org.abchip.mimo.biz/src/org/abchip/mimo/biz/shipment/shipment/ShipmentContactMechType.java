@@ -40,7 +40,7 @@ public interface ShipmentContactMechType extends BizEntityType<ShipmentContactMe
 	 * @return the value of the '<em>Description</em>' attribute.
 	 * @see #setDescription(String)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipmentContactMechType_Description()
-	 * @model
+	 * @model annotation="mimo-ent-format type='description' length='255'"
 	 * @generated
 	 */
 	String getDescription();
@@ -58,7 +58,9 @@ public interface ShipmentContactMechType extends BizEntityType<ShipmentContactMe
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ShipmentContactMech' route='shipmentContactMechTypeId'"
 	 * @generated
 	 */
@@ -76,6 +78,7 @@ public interface ShipmentContactMechType extends BizEntityType<ShipmentContactMe
 	 * @see #setShipmentContactMechTypeId(String)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipmentContactMechType_ShipmentContactMechTypeId()
 	 * @model id="true" required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */

@@ -10,7 +10,6 @@ package org.abchip.mimo.biz.order.order;
 import org.abchip.mimo.biz.BizPackage;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
@@ -134,51 +133,6 @@ public interface OrderPackage extends EPackage {
 	 * @ordered
 	 */
 	int COMMUNICATION_EVENT_ORDER_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
-
-	/**
-	 * The operation id for the '<em>Isa</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMMUNICATION_EVENT_ORDER___ISA = BizPackage.BIZ_ENTITY___ISA;
-
-	/**
-	 * The operation id for the '<em>Get Name</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMMUNICATION_EVENT_ORDER___GET_NAME = BizPackage.BIZ_ENTITY___GET_NAME;
-
-	/**
-	 * The operation id for the '<em>Get URI</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMMUNICATION_EVENT_ORDER___GET_URI = BizPackage.BIZ_ENTITY___GET_URI;
-
-	/**
-	 * The operation id for the '<em>Is Proxy</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMMUNICATION_EVENT_ORDER___IS_PROXY = BizPackage.BIZ_ENTITY___IS_PROXY;
-
-	/**
-	 * The number of operations of the '<em>Communication Event Order</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMMUNICATION_EVENT_ORDER_OPERATION_COUNT = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.order.order.impl.OrderAdjustmentImpl <em>Adjustment</em>}' class.
@@ -560,69 +514,6 @@ public interface OrderPackage extends EPackage {
 	int ORDER_ADJUSTMENT_FEATURE_COUNT = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 36;
 
 	/**
-	 * The operation id for the '<em>Isa</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ORDER_ADJUSTMENT___ISA = BizPackage.BIZ_ENTITY_TYPED___ISA;
-
-	/**
-	 * The operation id for the '<em>Get Name</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ORDER_ADJUSTMENT___GET_NAME = BizPackage.BIZ_ENTITY_TYPED___GET_NAME;
-
-	/**
-	 * The operation id for the '<em>Get URI</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ORDER_ADJUSTMENT___GET_URI = BizPackage.BIZ_ENTITY_TYPED___GET_URI;
-
-	/**
-	 * The operation id for the '<em>Is Proxy</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ORDER_ADJUSTMENT___IS_PROXY = BizPackage.BIZ_ENTITY_TYPED___IS_PROXY;
-
-	/**
-	 * The operation id for the '<em>Get Type</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ORDER_ADJUSTMENT___GET_TYPE = BizPackage.BIZ_ENTITY_TYPED___GET_TYPE;
-
-	/**
-	 * The operation id for the '<em>Return Adjustments</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ORDER_ADJUSTMENT___RETURN_ADJUSTMENTS = BizPackage.BIZ_ENTITY_TYPED_OPERATION_COUNT + 0;
-
-	/**
-	 * The number of operations of the '<em>Adjustment</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ORDER_ADJUSTMENT_OPERATION_COUNT = BizPackage.BIZ_ENTITY_TYPED_OPERATION_COUNT + 1;
-
-	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.order.order.impl.OrderAdjustmentAttributeImpl <em>Adjustment Attribute</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -714,51 +605,6 @@ public interface OrderPackage extends EPackage {
 	int ORDER_ADJUSTMENT_ATTRIBUTE_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
 
 	/**
-	 * The operation id for the '<em>Isa</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ORDER_ADJUSTMENT_ATTRIBUTE___ISA = BizPackage.BIZ_ENTITY___ISA;
-
-	/**
-	 * The operation id for the '<em>Get Name</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ORDER_ADJUSTMENT_ATTRIBUTE___GET_NAME = BizPackage.BIZ_ENTITY___GET_NAME;
-
-	/**
-	 * The operation id for the '<em>Get URI</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ORDER_ADJUSTMENT_ATTRIBUTE___GET_URI = BizPackage.BIZ_ENTITY___GET_URI;
-
-	/**
-	 * The operation id for the '<em>Is Proxy</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ORDER_ADJUSTMENT_ATTRIBUTE___IS_PROXY = BizPackage.BIZ_ENTITY___IS_PROXY;
-
-	/**
-	 * The number of operations of the '<em>Adjustment Attribute</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ORDER_ADJUSTMENT_ATTRIBUTE_OPERATION_COUNT = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 0;
-
-	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.order.order.impl.OrderAdjustmentBillingImpl <em>Adjustment Billing</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -848,51 +694,6 @@ public interface OrderPackage extends EPackage {
 	 * @ordered
 	 */
 	int ORDER_ADJUSTMENT_BILLING_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
-
-	/**
-	 * The operation id for the '<em>Isa</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ORDER_ADJUSTMENT_BILLING___ISA = BizPackage.BIZ_ENTITY___ISA;
-
-	/**
-	 * The operation id for the '<em>Get Name</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ORDER_ADJUSTMENT_BILLING___GET_NAME = BizPackage.BIZ_ENTITY___GET_NAME;
-
-	/**
-	 * The operation id for the '<em>Get URI</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ORDER_ADJUSTMENT_BILLING___GET_URI = BizPackage.BIZ_ENTITY___GET_URI;
-
-	/**
-	 * The operation id for the '<em>Is Proxy</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ORDER_ADJUSTMENT_BILLING___IS_PROXY = BizPackage.BIZ_ENTITY___IS_PROXY;
-
-	/**
-	 * The number of operations of the '<em>Adjustment Billing</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ORDER_ADJUSTMENT_BILLING_OPERATION_COUNT = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.order.order.impl.OrderAdjustmentTypeImpl <em>Adjustment Type</em>}' class.
@@ -1004,114 +805,6 @@ public interface OrderPackage extends EPackage {
 	int ORDER_ADJUSTMENT_TYPE_FEATURE_COUNT = BizPackage.BIZ_ENTITY_TYPE_FEATURE_COUNT + 5;
 
 	/**
-	 * The operation id for the '<em>Isa</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ORDER_ADJUSTMENT_TYPE___ISA = BizPackage.BIZ_ENTITY_TYPE___ISA;
-
-	/**
-	 * The operation id for the '<em>Get Name</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ORDER_ADJUSTMENT_TYPE___GET_NAME = BizPackage.BIZ_ENTITY_TYPE___GET_NAME;
-
-	/**
-	 * The operation id for the '<em>Get URI</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ORDER_ADJUSTMENT_TYPE___GET_URI = BizPackage.BIZ_ENTITY_TYPE___GET_URI;
-
-	/**
-	 * The operation id for the '<em>Is Proxy</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ORDER_ADJUSTMENT_TYPE___IS_PROXY = BizPackage.BIZ_ENTITY_TYPE___IS_PROXY;
-
-	/**
-	 * The operation id for the '<em>Get Frame</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ORDER_ADJUSTMENT_TYPE___GET_FRAME = BizPackage.BIZ_ENTITY_TYPE___GET_FRAME;
-
-	/**
-	 * The operation id for the '<em>Get Type Id</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ORDER_ADJUSTMENT_TYPE___GET_TYPE_ID = BizPackage.BIZ_ENTITY_TYPE___GET_TYPE_ID;
-
-	/**
-	 * The operation id for the '<em>Has Table</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ORDER_ADJUSTMENT_TYPE___HAS_TABLE = BizPackage.BIZ_ENTITY_TYPE___HAS_TABLE;
-
-	/**
-	 * The operation id for the '<em>Get Text</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ORDER_ADJUSTMENT_TYPE___GET_TEXT = BizPackage.BIZ_ENTITY_TYPE___GET_TEXT;
-
-	/**
-	 * The operation id for the '<em>Child Order Adjustment Types</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ORDER_ADJUSTMENT_TYPE___CHILD_ORDER_ADJUSTMENT_TYPES = BizPackage.BIZ_ENTITY_TYPE_OPERATION_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Order Adjustments</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ORDER_ADJUSTMENT_TYPE___ORDER_ADJUSTMENTS = BizPackage.BIZ_ENTITY_TYPE_OPERATION_COUNT + 1;
-
-	/**
-	 * The operation id for the '<em>Quote Adjustments</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ORDER_ADJUSTMENT_TYPE___QUOTE_ADJUSTMENTS = BizPackage.BIZ_ENTITY_TYPE_OPERATION_COUNT + 2;
-
-	/**
-	 * The number of operations of the '<em>Adjustment Type</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ORDER_ADJUSTMENT_TYPE_OPERATION_COUNT = BizPackage.BIZ_ENTITY_TYPE_OPERATION_COUNT + 3;
-
-	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.order.order.impl.OrderAdjustmentTypeAttrImpl <em>Adjustment Type Attr</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1192,51 +885,6 @@ public interface OrderPackage extends EPackage {
 	 * @ordered
 	 */
 	int ORDER_ADJUSTMENT_TYPE_ATTR_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
-
-	/**
-	 * The operation id for the '<em>Isa</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ORDER_ADJUSTMENT_TYPE_ATTR___ISA = BizPackage.BIZ_ENTITY___ISA;
-
-	/**
-	 * The operation id for the '<em>Get Name</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ORDER_ADJUSTMENT_TYPE_ATTR___GET_NAME = BizPackage.BIZ_ENTITY___GET_NAME;
-
-	/**
-	 * The operation id for the '<em>Get URI</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ORDER_ADJUSTMENT_TYPE_ATTR___GET_URI = BizPackage.BIZ_ENTITY___GET_URI;
-
-	/**
-	 * The operation id for the '<em>Is Proxy</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ORDER_ADJUSTMENT_TYPE_ATTR___IS_PROXY = BizPackage.BIZ_ENTITY___IS_PROXY;
-
-	/**
-	 * The number of operations of the '<em>Adjustment Type Attr</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ORDER_ADJUSTMENT_TYPE_ATTR_OPERATION_COUNT = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.order.order.impl.OrderAttributeImpl <em>Attribute</em>}' class.
@@ -1330,51 +978,6 @@ public interface OrderPackage extends EPackage {
 	int ORDER_ATTRIBUTE_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
 
 	/**
-	 * The operation id for the '<em>Isa</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ORDER_ATTRIBUTE___ISA = BizPackage.BIZ_ENTITY___ISA;
-
-	/**
-	 * The operation id for the '<em>Get Name</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ORDER_ATTRIBUTE___GET_NAME = BizPackage.BIZ_ENTITY___GET_NAME;
-
-	/**
-	 * The operation id for the '<em>Get URI</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ORDER_ATTRIBUTE___GET_URI = BizPackage.BIZ_ENTITY___GET_URI;
-
-	/**
-	 * The operation id for the '<em>Is Proxy</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ORDER_ATTRIBUTE___IS_PROXY = BizPackage.BIZ_ENTITY___IS_PROXY;
-
-	/**
-	 * The number of operations of the '<em>Attribute</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ORDER_ATTRIBUTE_OPERATION_COUNT = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 0;
-
-	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.order.order.impl.OrderBlacklistImpl <em>Blacklist</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1446,60 +1049,6 @@ public interface OrderPackage extends EPackage {
 	 * @ordered
 	 */
 	int ORDER_BLACKLIST_FEATURE_COUNT = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 2;
-
-	/**
-	 * The operation id for the '<em>Isa</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ORDER_BLACKLIST___ISA = BizPackage.BIZ_ENTITY_TYPED___ISA;
-
-	/**
-	 * The operation id for the '<em>Get Name</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ORDER_BLACKLIST___GET_NAME = BizPackage.BIZ_ENTITY_TYPED___GET_NAME;
-
-	/**
-	 * The operation id for the '<em>Get URI</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ORDER_BLACKLIST___GET_URI = BizPackage.BIZ_ENTITY_TYPED___GET_URI;
-
-	/**
-	 * The operation id for the '<em>Is Proxy</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ORDER_BLACKLIST___IS_PROXY = BizPackage.BIZ_ENTITY_TYPED___IS_PROXY;
-
-	/**
-	 * The operation id for the '<em>Get Type</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ORDER_BLACKLIST___GET_TYPE = BizPackage.BIZ_ENTITY_TYPED___GET_TYPE;
-
-	/**
-	 * The number of operations of the '<em>Blacklist</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ORDER_BLACKLIST_OPERATION_COUNT = BizPackage.BIZ_ENTITY_TYPED_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.order.order.impl.OrderBlacklistTypeImpl <em>Blacklist Type</em>}' class.
@@ -1584,96 +1133,6 @@ public interface OrderPackage extends EPackage {
 	int ORDER_BLACKLIST_TYPE_FEATURE_COUNT = BizPackage.BIZ_ENTITY_TYPE_FEATURE_COUNT + 2;
 
 	/**
-	 * The operation id for the '<em>Isa</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ORDER_BLACKLIST_TYPE___ISA = BizPackage.BIZ_ENTITY_TYPE___ISA;
-
-	/**
-	 * The operation id for the '<em>Get Name</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ORDER_BLACKLIST_TYPE___GET_NAME = BizPackage.BIZ_ENTITY_TYPE___GET_NAME;
-
-	/**
-	 * The operation id for the '<em>Get URI</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ORDER_BLACKLIST_TYPE___GET_URI = BizPackage.BIZ_ENTITY_TYPE___GET_URI;
-
-	/**
-	 * The operation id for the '<em>Is Proxy</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ORDER_BLACKLIST_TYPE___IS_PROXY = BizPackage.BIZ_ENTITY_TYPE___IS_PROXY;
-
-	/**
-	 * The operation id for the '<em>Get Frame</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ORDER_BLACKLIST_TYPE___GET_FRAME = BizPackage.BIZ_ENTITY_TYPE___GET_FRAME;
-
-	/**
-	 * The operation id for the '<em>Get Type Id</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ORDER_BLACKLIST_TYPE___GET_TYPE_ID = BizPackage.BIZ_ENTITY_TYPE___GET_TYPE_ID;
-
-	/**
-	 * The operation id for the '<em>Has Table</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ORDER_BLACKLIST_TYPE___HAS_TABLE = BizPackage.BIZ_ENTITY_TYPE___HAS_TABLE;
-
-	/**
-	 * The operation id for the '<em>Get Text</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ORDER_BLACKLIST_TYPE___GET_TEXT = BizPackage.BIZ_ENTITY_TYPE___GET_TEXT;
-
-	/**
-	 * The operation id for the '<em>Order Blacklists</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ORDER_BLACKLIST_TYPE___ORDER_BLACKLISTS = BizPackage.BIZ_ENTITY_TYPE_OPERATION_COUNT + 0;
-
-	/**
-	 * The number of operations of the '<em>Blacklist Type</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ORDER_BLACKLIST_TYPE_OPERATION_COUNT = BizPackage.BIZ_ENTITY_TYPE_OPERATION_COUNT + 1;
-
-	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.order.order.impl.OrderContactMechImpl <em>Contact Mech</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1754,51 +1213,6 @@ public interface OrderPackage extends EPackage {
 	 * @ordered
 	 */
 	int ORDER_CONTACT_MECH_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
-
-	/**
-	 * The operation id for the '<em>Isa</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ORDER_CONTACT_MECH___ISA = BizPackage.BIZ_ENTITY___ISA;
-
-	/**
-	 * The operation id for the '<em>Get Name</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ORDER_CONTACT_MECH___GET_NAME = BizPackage.BIZ_ENTITY___GET_NAME;
-
-	/**
-	 * The operation id for the '<em>Get URI</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ORDER_CONTACT_MECH___GET_URI = BizPackage.BIZ_ENTITY___GET_URI;
-
-	/**
-	 * The operation id for the '<em>Is Proxy</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ORDER_CONTACT_MECH___IS_PROXY = BizPackage.BIZ_ENTITY___IS_PROXY;
-
-	/**
-	 * The number of operations of the '<em>Contact Mech</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ORDER_CONTACT_MECH_OPERATION_COUNT = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.order.order.impl.OrderContentImpl <em>Content</em>}' class.
@@ -1910,60 +1324,6 @@ public interface OrderPackage extends EPackage {
 	int ORDER_CONTENT_FEATURE_COUNT = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 6;
 
 	/**
-	 * The operation id for the '<em>Isa</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ORDER_CONTENT___ISA = BizPackage.BIZ_ENTITY_TYPED___ISA;
-
-	/**
-	 * The operation id for the '<em>Get Name</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ORDER_CONTENT___GET_NAME = BizPackage.BIZ_ENTITY_TYPED___GET_NAME;
-
-	/**
-	 * The operation id for the '<em>Get URI</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ORDER_CONTENT___GET_URI = BizPackage.BIZ_ENTITY_TYPED___GET_URI;
-
-	/**
-	 * The operation id for the '<em>Is Proxy</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ORDER_CONTENT___IS_PROXY = BizPackage.BIZ_ENTITY_TYPED___IS_PROXY;
-
-	/**
-	 * The operation id for the '<em>Get Type</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ORDER_CONTENT___GET_TYPE = BizPackage.BIZ_ENTITY_TYPED___GET_TYPE;
-
-	/**
-	 * The number of operations of the '<em>Content</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ORDER_CONTENT_OPERATION_COUNT = BizPackage.BIZ_ENTITY_TYPED_OPERATION_COUNT + 0;
-
-	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.order.order.impl.OrderContentTypeImpl <em>Content Type</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2062,96 +1422,6 @@ public interface OrderPackage extends EPackage {
 	 * @ordered
 	 */
 	int ORDER_CONTENT_TYPE_FEATURE_COUNT = BizPackage.BIZ_ENTITY_TYPE_FEATURE_COUNT + 4;
-
-	/**
-	 * The operation id for the '<em>Isa</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ORDER_CONTENT_TYPE___ISA = BizPackage.BIZ_ENTITY_TYPE___ISA;
-
-	/**
-	 * The operation id for the '<em>Get Name</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ORDER_CONTENT_TYPE___GET_NAME = BizPackage.BIZ_ENTITY_TYPE___GET_NAME;
-
-	/**
-	 * The operation id for the '<em>Get URI</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ORDER_CONTENT_TYPE___GET_URI = BizPackage.BIZ_ENTITY_TYPE___GET_URI;
-
-	/**
-	 * The operation id for the '<em>Is Proxy</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ORDER_CONTENT_TYPE___IS_PROXY = BizPackage.BIZ_ENTITY_TYPE___IS_PROXY;
-
-	/**
-	 * The operation id for the '<em>Get Frame</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ORDER_CONTENT_TYPE___GET_FRAME = BizPackage.BIZ_ENTITY_TYPE___GET_FRAME;
-
-	/**
-	 * The operation id for the '<em>Get Type Id</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ORDER_CONTENT_TYPE___GET_TYPE_ID = BizPackage.BIZ_ENTITY_TYPE___GET_TYPE_ID;
-
-	/**
-	 * The operation id for the '<em>Has Table</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ORDER_CONTENT_TYPE___HAS_TABLE = BizPackage.BIZ_ENTITY_TYPE___HAS_TABLE;
-
-	/**
-	 * The operation id for the '<em>Get Text</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ORDER_CONTENT_TYPE___GET_TEXT = BizPackage.BIZ_ENTITY_TYPE___GET_TEXT;
-
-	/**
-	 * The operation id for the '<em>Child Order Content Types</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ORDER_CONTENT_TYPE___CHILD_ORDER_CONTENT_TYPES = BizPackage.BIZ_ENTITY_TYPE_OPERATION_COUNT + 0;
-
-	/**
-	 * The number of operations of the '<em>Content Type</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ORDER_CONTENT_TYPE_OPERATION_COUNT = BizPackage.BIZ_ENTITY_TYPE_OPERATION_COUNT + 1;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.order.order.impl.OrderDeliveryScheduleImpl <em>Delivery Schedule</em>}' class.
@@ -2306,51 +1576,6 @@ public interface OrderPackage extends EPackage {
 	 * @ordered
 	 */
 	int ORDER_DELIVERY_SCHEDULE_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 11;
-
-	/**
-	 * The operation id for the '<em>Isa</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ORDER_DELIVERY_SCHEDULE___ISA = BizPackage.BIZ_ENTITY___ISA;
-
-	/**
-	 * The operation id for the '<em>Get Name</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ORDER_DELIVERY_SCHEDULE___GET_NAME = BizPackage.BIZ_ENTITY___GET_NAME;
-
-	/**
-	 * The operation id for the '<em>Get URI</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ORDER_DELIVERY_SCHEDULE___GET_URI = BizPackage.BIZ_ENTITY___GET_URI;
-
-	/**
-	 * The operation id for the '<em>Is Proxy</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ORDER_DELIVERY_SCHEDULE___IS_PROXY = BizPackage.BIZ_ENTITY___IS_PROXY;
-
-	/**
-	 * The number of operations of the '<em>Delivery Schedule</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ORDER_DELIVERY_SCHEDULE_OPERATION_COUNT = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.order.order.impl.OrderHeaderImpl <em>Header</em>}' class.
@@ -2777,213 +2002,6 @@ public interface OrderPackage extends EPackage {
 	int ORDER_HEADER_FEATURE_COUNT = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 41;
 
 	/**
-	 * The operation id for the '<em>Isa</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ORDER_HEADER___ISA = BizPackage.BIZ_ENTITY_TYPED___ISA;
-
-	/**
-	 * The operation id for the '<em>Get Name</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ORDER_HEADER___GET_NAME = BizPackage.BIZ_ENTITY_TYPED___GET_NAME;
-
-	/**
-	 * The operation id for the '<em>Get URI</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ORDER_HEADER___GET_URI = BizPackage.BIZ_ENTITY_TYPED___GET_URI;
-
-	/**
-	 * The operation id for the '<em>Is Proxy</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ORDER_HEADER___IS_PROXY = BizPackage.BIZ_ENTITY_TYPED___IS_PROXY;
-
-	/**
-	 * The operation id for the '<em>Get Type</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ORDER_HEADER___GET_TYPE = BizPackage.BIZ_ENTITY_TYPED___GET_TYPE;
-
-	/**
-	 * The operation id for the '<em>Acquire Fixed Assets</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ORDER_HEADER___ACQUIRE_FIXED_ASSETS = BizPackage.BIZ_ENTITY_TYPED_OPERATION_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Gift Card Fulfillments</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ORDER_HEADER___GIFT_CARD_FULFILLMENTS = BizPackage.BIZ_ENTITY_TYPED_OPERATION_COUNT + 1;
-
-	/**
-	 * The operation id for the '<em>Item Issuances</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ORDER_HEADER___ITEM_ISSUANCES = BizPackage.BIZ_ENTITY_TYPED_OPERATION_COUNT + 2;
-
-	/**
-	 * The operation id for the '<em>Order Adjustments</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ORDER_HEADER___ORDER_ADJUSTMENTS = BizPackage.BIZ_ENTITY_TYPED_OPERATION_COUNT + 3;
-
-	/**
-	 * The operation id for the '<em>Order Item Changes</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ORDER_HEADER___ORDER_ITEM_CHANGES = BizPackage.BIZ_ENTITY_TYPED_OPERATION_COUNT + 4;
-
-	/**
-	 * The operation id for the '<em>Order Item Price Infos</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ORDER_HEADER___ORDER_ITEM_PRICE_INFOS = BizPackage.BIZ_ENTITY_TYPED_OPERATION_COUNT + 5;
-
-	/**
-	 * The operation id for the '<em>Order Notifications</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ORDER_HEADER___ORDER_NOTIFICATIONS = BizPackage.BIZ_ENTITY_TYPED_OPERATION_COUNT + 6;
-
-	/**
-	 * The operation id for the '<em>Order Payment Preferences</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ORDER_HEADER___ORDER_PAYMENT_PREFERENCES = BizPackage.BIZ_ENTITY_TYPED_OPERATION_COUNT + 7;
-
-	/**
-	 * The operation id for the '<em>Order Statuss</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ORDER_HEADER___ORDER_STATUSS = BizPackage.BIZ_ENTITY_TYPED_OPERATION_COUNT + 8;
-
-	/**
-	 * The operation id for the '<em>Primary Picklist Bins</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ORDER_HEADER___PRIMARY_PICKLIST_BINS = BizPackage.BIZ_ENTITY_TYPED_OPERATION_COUNT + 9;
-
-	/**
-	 * The operation id for the '<em>Primary Shipments</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ORDER_HEADER___PRIMARY_SHIPMENTS = BizPackage.BIZ_ENTITY_TYPED_OPERATION_COUNT + 10;
-
-	/**
-	 * The operation id for the '<em>Purchase Fixed Asset Maints</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ORDER_HEADER___PURCHASE_FIXED_ASSET_MAINTS = BizPackage.BIZ_ENTITY_TYPED_OPERATION_COUNT + 11;
-
-	/**
-	 * The operation id for the '<em>Replacement Return Item Responses</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ORDER_HEADER___REPLACEMENT_RETURN_ITEM_RESPONSES = BizPackage.BIZ_ENTITY_TYPED_OPERATION_COUNT + 12;
-
-	/**
-	 * The operation id for the '<em>Return Items</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ORDER_HEADER___RETURN_ITEMS = BizPackage.BIZ_ENTITY_TYPED_OPERATION_COUNT + 13;
-
-	/**
-	 * The operation id for the '<em>Shipment Receipts</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ORDER_HEADER___SHIPMENT_RECEIPTS = BizPackage.BIZ_ENTITY_TYPED_OPERATION_COUNT + 14;
-
-	/**
-	 * The operation id for the '<em>Subscriptions</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ORDER_HEADER___SUBSCRIPTIONS = BizPackage.BIZ_ENTITY_TYPED_OPERATION_COUNT + 15;
-
-	/**
-	 * The operation id for the '<em>Survey Responses</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ORDER_HEADER___SURVEY_RESPONSES = BizPackage.BIZ_ENTITY_TYPED_OPERATION_COUNT + 16;
-
-	/**
-	 * The number of operations of the '<em>Header</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ORDER_HEADER_OPERATION_COUNT = BizPackage.BIZ_ENTITY_TYPED_OPERATION_COUNT + 17;
-
-	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.order.order.impl.OrderHeaderNoteImpl <em>Header Note</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3075,51 +2093,6 @@ public interface OrderPackage extends EPackage {
 	int ORDER_HEADER_NOTE_FEATURE_COUNT = BizPackage.BIZ_ENTITY_NOTE_FEATURE_COUNT + 2;
 
 	/**
-	 * The operation id for the '<em>Isa</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ORDER_HEADER_NOTE___ISA = BizPackage.BIZ_ENTITY_NOTE___ISA;
-
-	/**
-	 * The operation id for the '<em>Get Name</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ORDER_HEADER_NOTE___GET_NAME = BizPackage.BIZ_ENTITY_NOTE___GET_NAME;
-
-	/**
-	 * The operation id for the '<em>Get URI</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ORDER_HEADER_NOTE___GET_URI = BizPackage.BIZ_ENTITY_NOTE___GET_URI;
-
-	/**
-	 * The operation id for the '<em>Is Proxy</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ORDER_HEADER_NOTE___IS_PROXY = BizPackage.BIZ_ENTITY_NOTE___IS_PROXY;
-
-	/**
-	 * The number of operations of the '<em>Header Note</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ORDER_HEADER_NOTE_OPERATION_COUNT = BizPackage.BIZ_ENTITY_NOTE_OPERATION_COUNT + 0;
-
-	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.order.order.impl.OrderHeaderWorkEffortImpl <em>Header Work Effort</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3191,51 +2164,6 @@ public interface OrderPackage extends EPackage {
 	 * @ordered
 	 */
 	int ORDER_HEADER_WORK_EFFORT_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
-
-	/**
-	 * The operation id for the '<em>Isa</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ORDER_HEADER_WORK_EFFORT___ISA = BizPackage.BIZ_ENTITY___ISA;
-
-	/**
-	 * The operation id for the '<em>Get Name</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ORDER_HEADER_WORK_EFFORT___GET_NAME = BizPackage.BIZ_ENTITY___GET_NAME;
-
-	/**
-	 * The operation id for the '<em>Get URI</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ORDER_HEADER_WORK_EFFORT___GET_URI = BizPackage.BIZ_ENTITY___GET_URI;
-
-	/**
-	 * The operation id for the '<em>Is Proxy</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ORDER_HEADER_WORK_EFFORT___IS_PROXY = BizPackage.BIZ_ENTITY___IS_PROXY;
-
-	/**
-	 * The number of operations of the '<em>Header Work Effort</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ORDER_HEADER_WORK_EFFORT_OPERATION_COUNT = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.order.order.impl.OrderItemImpl <em>Item</em>}' class.
@@ -3716,60 +2644,6 @@ public interface OrderPackage extends EPackage {
 	int ORDER_ITEM_FEATURE_COUNT = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 47;
 
 	/**
-	 * The operation id for the '<em>Isa</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ORDER_ITEM___ISA = BizPackage.BIZ_ENTITY_TYPED___ISA;
-
-	/**
-	 * The operation id for the '<em>Get Name</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ORDER_ITEM___GET_NAME = BizPackage.BIZ_ENTITY_TYPED___GET_NAME;
-
-	/**
-	 * The operation id for the '<em>Get URI</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ORDER_ITEM___GET_URI = BizPackage.BIZ_ENTITY_TYPED___GET_URI;
-
-	/**
-	 * The operation id for the '<em>Is Proxy</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ORDER_ITEM___IS_PROXY = BizPackage.BIZ_ENTITY_TYPED___IS_PROXY;
-
-	/**
-	 * The operation id for the '<em>Get Type</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ORDER_ITEM___GET_TYPE = BizPackage.BIZ_ENTITY_TYPED___GET_TYPE;
-
-	/**
-	 * The number of operations of the '<em>Item</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ORDER_ITEM_OPERATION_COUNT = BizPackage.BIZ_ENTITY_TYPED_OPERATION_COUNT + 0;
-
-	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.order.order.impl.OrderItemAssocImpl <em>Item Assoc</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3897,60 +2771,6 @@ public interface OrderPackage extends EPackage {
 	int ORDER_ITEM_ASSOC_FEATURE_COUNT = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 8;
 
 	/**
-	 * The operation id for the '<em>Isa</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ORDER_ITEM_ASSOC___ISA = BizPackage.BIZ_ENTITY_TYPED___ISA;
-
-	/**
-	 * The operation id for the '<em>Get Name</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ORDER_ITEM_ASSOC___GET_NAME = BizPackage.BIZ_ENTITY_TYPED___GET_NAME;
-
-	/**
-	 * The operation id for the '<em>Get URI</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ORDER_ITEM_ASSOC___GET_URI = BizPackage.BIZ_ENTITY_TYPED___GET_URI;
-
-	/**
-	 * The operation id for the '<em>Is Proxy</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ORDER_ITEM_ASSOC___IS_PROXY = BizPackage.BIZ_ENTITY_TYPED___IS_PROXY;
-
-	/**
-	 * The operation id for the '<em>Get Type</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ORDER_ITEM_ASSOC___GET_TYPE = BizPackage.BIZ_ENTITY_TYPED___GET_TYPE;
-
-	/**
-	 * The number of operations of the '<em>Item Assoc</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ORDER_ITEM_ASSOC_OPERATION_COUNT = BizPackage.BIZ_ENTITY_TYPED_OPERATION_COUNT + 0;
-
-	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.order.order.impl.OrderItemAssocTypeImpl <em>Item Assoc Type</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -4051,96 +2871,6 @@ public interface OrderPackage extends EPackage {
 	int ORDER_ITEM_ASSOC_TYPE_FEATURE_COUNT = BizPackage.BIZ_ENTITY_TYPE_FEATURE_COUNT + 4;
 
 	/**
-	 * The operation id for the '<em>Isa</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ORDER_ITEM_ASSOC_TYPE___ISA = BizPackage.BIZ_ENTITY_TYPE___ISA;
-
-	/**
-	 * The operation id for the '<em>Get Name</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ORDER_ITEM_ASSOC_TYPE___GET_NAME = BizPackage.BIZ_ENTITY_TYPE___GET_NAME;
-
-	/**
-	 * The operation id for the '<em>Get URI</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ORDER_ITEM_ASSOC_TYPE___GET_URI = BizPackage.BIZ_ENTITY_TYPE___GET_URI;
-
-	/**
-	 * The operation id for the '<em>Is Proxy</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ORDER_ITEM_ASSOC_TYPE___IS_PROXY = BizPackage.BIZ_ENTITY_TYPE___IS_PROXY;
-
-	/**
-	 * The operation id for the '<em>Get Frame</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ORDER_ITEM_ASSOC_TYPE___GET_FRAME = BizPackage.BIZ_ENTITY_TYPE___GET_FRAME;
-
-	/**
-	 * The operation id for the '<em>Get Type Id</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ORDER_ITEM_ASSOC_TYPE___GET_TYPE_ID = BizPackage.BIZ_ENTITY_TYPE___GET_TYPE_ID;
-
-	/**
-	 * The operation id for the '<em>Has Table</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ORDER_ITEM_ASSOC_TYPE___HAS_TABLE = BizPackage.BIZ_ENTITY_TYPE___HAS_TABLE;
-
-	/**
-	 * The operation id for the '<em>Get Text</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ORDER_ITEM_ASSOC_TYPE___GET_TEXT = BizPackage.BIZ_ENTITY_TYPE___GET_TEXT;
-
-	/**
-	 * The operation id for the '<em>Child Order Item Assoc Types</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ORDER_ITEM_ASSOC_TYPE___CHILD_ORDER_ITEM_ASSOC_TYPES = BizPackage.BIZ_ENTITY_TYPE_OPERATION_COUNT + 0;
-
-	/**
-	 * The number of operations of the '<em>Item Assoc Type</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ORDER_ITEM_ASSOC_TYPE_OPERATION_COUNT = BizPackage.BIZ_ENTITY_TYPE_OPERATION_COUNT + 1;
-
-	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.order.order.impl.OrderItemAttributeImpl <em>Item Attribute</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -4239,51 +2969,6 @@ public interface OrderPackage extends EPackage {
 	 * @ordered
 	 */
 	int ORDER_ITEM_ATTRIBUTE_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 5;
-
-	/**
-	 * The operation id for the '<em>Isa</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ORDER_ITEM_ATTRIBUTE___ISA = BizPackage.BIZ_ENTITY___ISA;
-
-	/**
-	 * The operation id for the '<em>Get Name</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ORDER_ITEM_ATTRIBUTE___GET_NAME = BizPackage.BIZ_ENTITY___GET_NAME;
-
-	/**
-	 * The operation id for the '<em>Get URI</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ORDER_ITEM_ATTRIBUTE___GET_URI = BizPackage.BIZ_ENTITY___GET_URI;
-
-	/**
-	 * The operation id for the '<em>Is Proxy</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ORDER_ITEM_ATTRIBUTE___IS_PROXY = BizPackage.BIZ_ENTITY___IS_PROXY;
-
-	/**
-	 * The number of operations of the '<em>Item Attribute</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ORDER_ITEM_ATTRIBUTE_OPERATION_COUNT = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.order.order.impl.OrderItemBillingImpl <em>Item Billing</em>}' class.
@@ -4411,51 +3096,6 @@ public interface OrderPackage extends EPackage {
 	 * @ordered
 	 */
 	int ORDER_ITEM_BILLING_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 8;
-
-	/**
-	 * The operation id for the '<em>Isa</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ORDER_ITEM_BILLING___ISA = BizPackage.BIZ_ENTITY___ISA;
-
-	/**
-	 * The operation id for the '<em>Get Name</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ORDER_ITEM_BILLING___GET_NAME = BizPackage.BIZ_ENTITY___GET_NAME;
-
-	/**
-	 * The operation id for the '<em>Get URI</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ORDER_ITEM_BILLING___GET_URI = BizPackage.BIZ_ENTITY___GET_URI;
-
-	/**
-	 * The operation id for the '<em>Is Proxy</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ORDER_ITEM_BILLING___IS_PROXY = BizPackage.BIZ_ENTITY___IS_PROXY;
-
-	/**
-	 * The number of operations of the '<em>Item Billing</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ORDER_ITEM_BILLING_OPERATION_COUNT = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.order.order.impl.OrderItemChangeImpl <em>Item Change</em>}' class.
@@ -4621,51 +3261,6 @@ public interface OrderPackage extends EPackage {
 	int ORDER_ITEM_CHANGE_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 12;
 
 	/**
-	 * The operation id for the '<em>Isa</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ORDER_ITEM_CHANGE___ISA = BizPackage.BIZ_ENTITY___ISA;
-
-	/**
-	 * The operation id for the '<em>Get Name</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ORDER_ITEM_CHANGE___GET_NAME = BizPackage.BIZ_ENTITY___GET_NAME;
-
-	/**
-	 * The operation id for the '<em>Get URI</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ORDER_ITEM_CHANGE___GET_URI = BizPackage.BIZ_ENTITY___GET_URI;
-
-	/**
-	 * The operation id for the '<em>Is Proxy</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ORDER_ITEM_CHANGE___IS_PROXY = BizPackage.BIZ_ENTITY___IS_PROXY;
-
-	/**
-	 * The number of operations of the '<em>Item Change</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ORDER_ITEM_CHANGE_OPERATION_COUNT = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 0;
-
-	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.order.order.impl.OrderItemContactMechImpl <em>Item Contact Mech</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -4755,51 +3350,6 @@ public interface OrderPackage extends EPackage {
 	 * @ordered
 	 */
 	int ORDER_ITEM_CONTACT_MECH_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
-
-	/**
-	 * The operation id for the '<em>Isa</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ORDER_ITEM_CONTACT_MECH___ISA = BizPackage.BIZ_ENTITY___ISA;
-
-	/**
-	 * The operation id for the '<em>Get Name</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ORDER_ITEM_CONTACT_MECH___GET_NAME = BizPackage.BIZ_ENTITY___GET_NAME;
-
-	/**
-	 * The operation id for the '<em>Get URI</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ORDER_ITEM_CONTACT_MECH___GET_URI = BizPackage.BIZ_ENTITY___GET_URI;
-
-	/**
-	 * The operation id for the '<em>Is Proxy</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ORDER_ITEM_CONTACT_MECH___IS_PROXY = BizPackage.BIZ_ENTITY___IS_PROXY;
-
-	/**
-	 * The number of operations of the '<em>Item Contact Mech</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ORDER_ITEM_CONTACT_MECH_OPERATION_COUNT = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.order.order.impl.OrderItemGroupImpl <em>Item Group</em>}' class.
@@ -4893,51 +3443,6 @@ public interface OrderPackage extends EPackage {
 	int ORDER_ITEM_GROUP_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
 
 	/**
-	 * The operation id for the '<em>Isa</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ORDER_ITEM_GROUP___ISA = BizPackage.BIZ_ENTITY___ISA;
-
-	/**
-	 * The operation id for the '<em>Get Name</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ORDER_ITEM_GROUP___GET_NAME = BizPackage.BIZ_ENTITY___GET_NAME;
-
-	/**
-	 * The operation id for the '<em>Get URI</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ORDER_ITEM_GROUP___GET_URI = BizPackage.BIZ_ENTITY___GET_URI;
-
-	/**
-	 * The operation id for the '<em>Is Proxy</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ORDER_ITEM_GROUP___IS_PROXY = BizPackage.BIZ_ENTITY___IS_PROXY;
-
-	/**
-	 * The number of operations of the '<em>Item Group</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ORDER_ITEM_GROUP_OPERATION_COUNT = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 0;
-
-	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.order.order.impl.OrderItemGroupOrderImpl <em>Item Group Order</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -5018,51 +3523,6 @@ public interface OrderPackage extends EPackage {
 	 * @ordered
 	 */
 	int ORDER_ITEM_GROUP_ORDER_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
-
-	/**
-	 * The operation id for the '<em>Isa</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ORDER_ITEM_GROUP_ORDER___ISA = BizPackage.BIZ_ENTITY___ISA;
-
-	/**
-	 * The operation id for the '<em>Get Name</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ORDER_ITEM_GROUP_ORDER___GET_NAME = BizPackage.BIZ_ENTITY___GET_NAME;
-
-	/**
-	 * The operation id for the '<em>Get URI</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ORDER_ITEM_GROUP_ORDER___GET_URI = BizPackage.BIZ_ENTITY___GET_URI;
-
-	/**
-	 * The operation id for the '<em>Is Proxy</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ORDER_ITEM_GROUP_ORDER___IS_PROXY = BizPackage.BIZ_ENTITY___IS_PROXY;
-
-	/**
-	 * The number of operations of the '<em>Item Group Order</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ORDER_ITEM_GROUP_ORDER_OPERATION_COUNT = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.order.order.impl.OrderItemPriceInfoImpl <em>Item Price Info</em>}' class.
@@ -5192,51 +3652,6 @@ public interface OrderPackage extends EPackage {
 	int ORDER_ITEM_PRICE_INFO_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 8;
 
 	/**
-	 * The operation id for the '<em>Isa</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ORDER_ITEM_PRICE_INFO___ISA = BizPackage.BIZ_ENTITY___ISA;
-
-	/**
-	 * The operation id for the '<em>Get Name</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ORDER_ITEM_PRICE_INFO___GET_NAME = BizPackage.BIZ_ENTITY___GET_NAME;
-
-	/**
-	 * The operation id for the '<em>Get URI</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ORDER_ITEM_PRICE_INFO___GET_URI = BizPackage.BIZ_ENTITY___GET_URI;
-
-	/**
-	 * The operation id for the '<em>Is Proxy</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ORDER_ITEM_PRICE_INFO___IS_PROXY = BizPackage.BIZ_ENTITY___IS_PROXY;
-
-	/**
-	 * The number of operations of the '<em>Item Price Info</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ORDER_ITEM_PRICE_INFO_OPERATION_COUNT = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 0;
-
-	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.order.order.impl.OrderItemRoleImpl <em>Item Role</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -5326,51 +3741,6 @@ public interface OrderPackage extends EPackage {
 	 * @ordered
 	 */
 	int ORDER_ITEM_ROLE_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
-
-	/**
-	 * The operation id for the '<em>Isa</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ORDER_ITEM_ROLE___ISA = BizPackage.BIZ_ENTITY___ISA;
-
-	/**
-	 * The operation id for the '<em>Get Name</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ORDER_ITEM_ROLE___GET_NAME = BizPackage.BIZ_ENTITY___GET_NAME;
-
-	/**
-	 * The operation id for the '<em>Get URI</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ORDER_ITEM_ROLE___GET_URI = BizPackage.BIZ_ENTITY___GET_URI;
-
-	/**
-	 * The operation id for the '<em>Is Proxy</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ORDER_ITEM_ROLE___IS_PROXY = BizPackage.BIZ_ENTITY___IS_PROXY;
-
-	/**
-	 * The number of operations of the '<em>Item Role</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ORDER_ITEM_ROLE_OPERATION_COUNT = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.order.order.impl.OrderItemShipGroupImpl <em>Item Ship Group</em>}' class.
@@ -5608,51 +3978,6 @@ public interface OrderPackage extends EPackage {
 	int ORDER_ITEM_SHIP_GROUP_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 20;
 
 	/**
-	 * The operation id for the '<em>Isa</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ORDER_ITEM_SHIP_GROUP___ISA = BizPackage.BIZ_ENTITY___ISA;
-
-	/**
-	 * The operation id for the '<em>Get Name</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ORDER_ITEM_SHIP_GROUP___GET_NAME = BizPackage.BIZ_ENTITY___GET_NAME;
-
-	/**
-	 * The operation id for the '<em>Get URI</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ORDER_ITEM_SHIP_GROUP___GET_URI = BizPackage.BIZ_ENTITY___GET_URI;
-
-	/**
-	 * The operation id for the '<em>Is Proxy</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ORDER_ITEM_SHIP_GROUP___IS_PROXY = BizPackage.BIZ_ENTITY___IS_PROXY;
-
-	/**
-	 * The number of operations of the '<em>Item Ship Group</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ORDER_ITEM_SHIP_GROUP_OPERATION_COUNT = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 0;
-
-	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.order.order.impl.OrderItemShipGroupAssocImpl <em>Item Ship Group Assoc</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -5751,51 +4076,6 @@ public interface OrderPackage extends EPackage {
 	 * @ordered
 	 */
 	int ORDER_ITEM_SHIP_GROUP_ASSOC_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 5;
-
-	/**
-	 * The operation id for the '<em>Isa</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ORDER_ITEM_SHIP_GROUP_ASSOC___ISA = BizPackage.BIZ_ENTITY___ISA;
-
-	/**
-	 * The operation id for the '<em>Get Name</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ORDER_ITEM_SHIP_GROUP_ASSOC___GET_NAME = BizPackage.BIZ_ENTITY___GET_NAME;
-
-	/**
-	 * The operation id for the '<em>Get URI</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ORDER_ITEM_SHIP_GROUP_ASSOC___GET_URI = BizPackage.BIZ_ENTITY___GET_URI;
-
-	/**
-	 * The operation id for the '<em>Is Proxy</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ORDER_ITEM_SHIP_GROUP_ASSOC___IS_PROXY = BizPackage.BIZ_ENTITY___IS_PROXY;
-
-	/**
-	 * The number of operations of the '<em>Item Ship Group Assoc</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ORDER_ITEM_SHIP_GROUP_ASSOC_OPERATION_COUNT = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.order.order.impl.OrderItemShipGrpInvResImpl <em>Item Ship Grp Inv Res</em>}' class.
@@ -5979,51 +4259,6 @@ public interface OrderPackage extends EPackage {
 	int ORDER_ITEM_SHIP_GRP_INV_RES_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 14;
 
 	/**
-	 * The operation id for the '<em>Isa</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ORDER_ITEM_SHIP_GRP_INV_RES___ISA = BizPackage.BIZ_ENTITY___ISA;
-
-	/**
-	 * The operation id for the '<em>Get Name</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ORDER_ITEM_SHIP_GRP_INV_RES___GET_NAME = BizPackage.BIZ_ENTITY___GET_NAME;
-
-	/**
-	 * The operation id for the '<em>Get URI</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ORDER_ITEM_SHIP_GRP_INV_RES___GET_URI = BizPackage.BIZ_ENTITY___GET_URI;
-
-	/**
-	 * The operation id for the '<em>Is Proxy</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ORDER_ITEM_SHIP_GRP_INV_RES___IS_PROXY = BizPackage.BIZ_ENTITY___IS_PROXY;
-
-	/**
-	 * The number of operations of the '<em>Item Ship Grp Inv Res</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ORDER_ITEM_SHIP_GRP_INV_RES_OPERATION_COUNT = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 0;
-
-	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.order.order.impl.OrderItemTypeImpl <em>Item Type</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -6133,105 +4368,6 @@ public interface OrderPackage extends EPackage {
 	int ORDER_ITEM_TYPE_FEATURE_COUNT = BizPackage.BIZ_ENTITY_TYPE_FEATURE_COUNT + 5;
 
 	/**
-	 * The operation id for the '<em>Isa</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ORDER_ITEM_TYPE___ISA = BizPackage.BIZ_ENTITY_TYPE___ISA;
-
-	/**
-	 * The operation id for the '<em>Get Name</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ORDER_ITEM_TYPE___GET_NAME = BizPackage.BIZ_ENTITY_TYPE___GET_NAME;
-
-	/**
-	 * The operation id for the '<em>Get URI</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ORDER_ITEM_TYPE___GET_URI = BizPackage.BIZ_ENTITY_TYPE___GET_URI;
-
-	/**
-	 * The operation id for the '<em>Is Proxy</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ORDER_ITEM_TYPE___IS_PROXY = BizPackage.BIZ_ENTITY_TYPE___IS_PROXY;
-
-	/**
-	 * The operation id for the '<em>Get Frame</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ORDER_ITEM_TYPE___GET_FRAME = BizPackage.BIZ_ENTITY_TYPE___GET_FRAME;
-
-	/**
-	 * The operation id for the '<em>Get Type Id</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ORDER_ITEM_TYPE___GET_TYPE_ID = BizPackage.BIZ_ENTITY_TYPE___GET_TYPE_ID;
-
-	/**
-	 * The operation id for the '<em>Has Table</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ORDER_ITEM_TYPE___HAS_TABLE = BizPackage.BIZ_ENTITY_TYPE___HAS_TABLE;
-
-	/**
-	 * The operation id for the '<em>Get Text</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ORDER_ITEM_TYPE___GET_TEXT = BizPackage.BIZ_ENTITY_TYPE___GET_TEXT;
-
-	/**
-	 * The operation id for the '<em>Child Order Item Types</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ORDER_ITEM_TYPE___CHILD_ORDER_ITEM_TYPES = BizPackage.BIZ_ENTITY_TYPE_OPERATION_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Order Items</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ORDER_ITEM_TYPE___ORDER_ITEMS = BizPackage.BIZ_ENTITY_TYPE_OPERATION_COUNT + 1;
-
-	/**
-	 * The number of operations of the '<em>Item Type</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ORDER_ITEM_TYPE_OPERATION_COUNT = BizPackage.BIZ_ENTITY_TYPE_OPERATION_COUNT + 2;
-
-	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.order.order.impl.OrderItemTypeAttrImpl <em>Item Type Attr</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -6312,51 +4448,6 @@ public interface OrderPackage extends EPackage {
 	 * @ordered
 	 */
 	int ORDER_ITEM_TYPE_ATTR_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
-
-	/**
-	 * The operation id for the '<em>Isa</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ORDER_ITEM_TYPE_ATTR___ISA = BizPackage.BIZ_ENTITY___ISA;
-
-	/**
-	 * The operation id for the '<em>Get Name</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ORDER_ITEM_TYPE_ATTR___GET_NAME = BizPackage.BIZ_ENTITY___GET_NAME;
-
-	/**
-	 * The operation id for the '<em>Get URI</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ORDER_ITEM_TYPE_ATTR___GET_URI = BizPackage.BIZ_ENTITY___GET_URI;
-
-	/**
-	 * The operation id for the '<em>Is Proxy</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ORDER_ITEM_TYPE_ATTR___IS_PROXY = BizPackage.BIZ_ENTITY___IS_PROXY;
-
-	/**
-	 * The number of operations of the '<em>Item Type Attr</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ORDER_ITEM_TYPE_ATTR_OPERATION_COUNT = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.order.order.impl.OrderNotificationImpl <em>Notification</em>}' class.
@@ -6457,51 +4548,6 @@ public interface OrderPackage extends EPackage {
 	 * @ordered
 	 */
 	int ORDER_NOTIFICATION_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 5;
-
-	/**
-	 * The operation id for the '<em>Isa</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ORDER_NOTIFICATION___ISA = BizPackage.BIZ_ENTITY___ISA;
-
-	/**
-	 * The operation id for the '<em>Get Name</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ORDER_NOTIFICATION___GET_NAME = BizPackage.BIZ_ENTITY___GET_NAME;
-
-	/**
-	 * The operation id for the '<em>Get URI</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ORDER_NOTIFICATION___GET_URI = BizPackage.BIZ_ENTITY___GET_URI;
-
-	/**
-	 * The operation id for the '<em>Is Proxy</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ORDER_NOTIFICATION___IS_PROXY = BizPackage.BIZ_ENTITY___IS_PROXY;
-
-	/**
-	 * The number of operations of the '<em>Notification</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ORDER_NOTIFICATION_OPERATION_COUNT = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.order.order.impl.OrderPaymentPreferenceImpl <em>Payment Preference</em>}' class.
@@ -6775,87 +4821,6 @@ public interface OrderPackage extends EPackage {
 	int ORDER_PAYMENT_PREFERENCE_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 24;
 
 	/**
-	 * The operation id for the '<em>Isa</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ORDER_PAYMENT_PREFERENCE___ISA = BizPackage.BIZ_ENTITY___ISA;
-
-	/**
-	 * The operation id for the '<em>Get Name</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ORDER_PAYMENT_PREFERENCE___GET_NAME = BizPackage.BIZ_ENTITY___GET_NAME;
-
-	/**
-	 * The operation id for the '<em>Get URI</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ORDER_PAYMENT_PREFERENCE___GET_URI = BizPackage.BIZ_ENTITY___GET_URI;
-
-	/**
-	 * The operation id for the '<em>Is Proxy</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ORDER_PAYMENT_PREFERENCE___IS_PROXY = BizPackage.BIZ_ENTITY___IS_PROXY;
-
-	/**
-	 * The operation id for the '<em>Order Statuss</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ORDER_PAYMENT_PREFERENCE___ORDER_STATUSS = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Payment Gateway Responses</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ORDER_PAYMENT_PREFERENCE___PAYMENT_GATEWAY_RESPONSES = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 1;
-
-	/**
-	 * The operation id for the '<em>Payments</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ORDER_PAYMENT_PREFERENCE___PAYMENTS = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 2;
-
-	/**
-	 * The operation id for the '<em>Return Item Responses</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ORDER_PAYMENT_PREFERENCE___RETURN_ITEM_RESPONSES = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 3;
-
-	/**
-	 * The number of operations of the '<em>Payment Preference</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ORDER_PAYMENT_PREFERENCE_OPERATION_COUNT = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 4;
-
-	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.order.order.impl.OrderProductPromoCodeImpl <em>Product Promo Code</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -6927,51 +4892,6 @@ public interface OrderPackage extends EPackage {
 	 * @ordered
 	 */
 	int ORDER_PRODUCT_PROMO_CODE_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
-
-	/**
-	 * The operation id for the '<em>Isa</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ORDER_PRODUCT_PROMO_CODE___ISA = BizPackage.BIZ_ENTITY___ISA;
-
-	/**
-	 * The operation id for the '<em>Get Name</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ORDER_PRODUCT_PROMO_CODE___GET_NAME = BizPackage.BIZ_ENTITY___GET_NAME;
-
-	/**
-	 * The operation id for the '<em>Get URI</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ORDER_PRODUCT_PROMO_CODE___GET_URI = BizPackage.BIZ_ENTITY___GET_URI;
-
-	/**
-	 * The operation id for the '<em>Is Proxy</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ORDER_PRODUCT_PROMO_CODE___IS_PROXY = BizPackage.BIZ_ENTITY___IS_PROXY;
-
-	/**
-	 * The number of operations of the '<em>Product Promo Code</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ORDER_PRODUCT_PROMO_CODE_OPERATION_COUNT = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.order.order.impl.OrderRoleImpl <em>Role</em>}' class.
@@ -7054,51 +4974,6 @@ public interface OrderPackage extends EPackage {
 	 * @ordered
 	 */
 	int ORDER_ROLE_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
-
-	/**
-	 * The operation id for the '<em>Isa</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ORDER_ROLE___ISA = BizPackage.BIZ_ENTITY___ISA;
-
-	/**
-	 * The operation id for the '<em>Get Name</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ORDER_ROLE___GET_NAME = BizPackage.BIZ_ENTITY___GET_NAME;
-
-	/**
-	 * The operation id for the '<em>Get URI</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ORDER_ROLE___GET_URI = BizPackage.BIZ_ENTITY___GET_URI;
-
-	/**
-	 * The operation id for the '<em>Is Proxy</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ORDER_ROLE___IS_PROXY = BizPackage.BIZ_ENTITY___IS_PROXY;
-
-	/**
-	 * The number of operations of the '<em>Role</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ORDER_ROLE_OPERATION_COUNT = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.order.order.impl.OrderShipmentImpl <em>Shipment</em>}' class.
@@ -7208,51 +5083,6 @@ public interface OrderPackage extends EPackage {
 	 * @ordered
 	 */
 	int ORDER_SHIPMENT_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 6;
-
-	/**
-	 * The operation id for the '<em>Isa</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ORDER_SHIPMENT___ISA = BizPackage.BIZ_ENTITY___ISA;
-
-	/**
-	 * The operation id for the '<em>Get Name</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ORDER_SHIPMENT___GET_NAME = BizPackage.BIZ_ENTITY___GET_NAME;
-
-	/**
-	 * The operation id for the '<em>Get URI</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ORDER_SHIPMENT___GET_URI = BizPackage.BIZ_ENTITY___GET_URI;
-
-	/**
-	 * The operation id for the '<em>Is Proxy</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ORDER_SHIPMENT___IS_PROXY = BizPackage.BIZ_ENTITY___IS_PROXY;
-
-	/**
-	 * The number of operations of the '<em>Shipment</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ORDER_SHIPMENT_OPERATION_COUNT = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.order.order.impl.OrderStatusImpl <em>Status</em>}' class.
@@ -7382,51 +5212,6 @@ public interface OrderPackage extends EPackage {
 	int ORDER_STATUS_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 8;
 
 	/**
-	 * The operation id for the '<em>Isa</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ORDER_STATUS___ISA = BizPackage.BIZ_ENTITY___ISA;
-
-	/**
-	 * The operation id for the '<em>Get Name</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ORDER_STATUS___GET_NAME = BizPackage.BIZ_ENTITY___GET_NAME;
-
-	/**
-	 * The operation id for the '<em>Get URI</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ORDER_STATUS___GET_URI = BizPackage.BIZ_ENTITY___GET_URI;
-
-	/**
-	 * The operation id for the '<em>Is Proxy</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ORDER_STATUS___IS_PROXY = BizPackage.BIZ_ENTITY___IS_PROXY;
-
-	/**
-	 * The number of operations of the '<em>Status</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ORDER_STATUS_OPERATION_COUNT = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 0;
-
-	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.order.order.impl.OrderSummaryEntryImpl <em>Summary Entry</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -7534,51 +5319,6 @@ public interface OrderPackage extends EPackage {
 	 * @ordered
 	 */
 	int ORDER_SUMMARY_ENTRY_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 6;
-
-	/**
-	 * The operation id for the '<em>Isa</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ORDER_SUMMARY_ENTRY___ISA = BizPackage.BIZ_ENTITY___ISA;
-
-	/**
-	 * The operation id for the '<em>Get Name</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ORDER_SUMMARY_ENTRY___GET_NAME = BizPackage.BIZ_ENTITY___GET_NAME;
-
-	/**
-	 * The operation id for the '<em>Get URI</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ORDER_SUMMARY_ENTRY___GET_URI = BizPackage.BIZ_ENTITY___GET_URI;
-
-	/**
-	 * The operation id for the '<em>Is Proxy</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ORDER_SUMMARY_ENTRY___IS_PROXY = BizPackage.BIZ_ENTITY___IS_PROXY;
-
-	/**
-	 * The number of operations of the '<em>Summary Entry</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ORDER_SUMMARY_ENTRY_OPERATION_COUNT = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.order.order.impl.OrderTermImpl <em>Term</em>}' class.
@@ -7708,51 +5448,6 @@ public interface OrderPackage extends EPackage {
 	int ORDER_TERM_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 8;
 
 	/**
-	 * The operation id for the '<em>Isa</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ORDER_TERM___ISA = BizPackage.BIZ_ENTITY___ISA;
-
-	/**
-	 * The operation id for the '<em>Get Name</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ORDER_TERM___GET_NAME = BizPackage.BIZ_ENTITY___GET_NAME;
-
-	/**
-	 * The operation id for the '<em>Get URI</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ORDER_TERM___GET_URI = BizPackage.BIZ_ENTITY___GET_URI;
-
-	/**
-	 * The operation id for the '<em>Is Proxy</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ORDER_TERM___IS_PROXY = BizPackage.BIZ_ENTITY___IS_PROXY;
-
-	/**
-	 * The number of operations of the '<em>Term</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ORDER_TERM_OPERATION_COUNT = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 0;
-
-	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.order.order.impl.OrderTermAttributeImpl <em>Term Attribute</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -7860,51 +5555,6 @@ public interface OrderPackage extends EPackage {
 	 * @ordered
 	 */
 	int ORDER_TERM_ATTRIBUTE_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 6;
-
-	/**
-	 * The operation id for the '<em>Isa</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ORDER_TERM_ATTRIBUTE___ISA = BizPackage.BIZ_ENTITY___ISA;
-
-	/**
-	 * The operation id for the '<em>Get Name</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ORDER_TERM_ATTRIBUTE___GET_NAME = BizPackage.BIZ_ENTITY___GET_NAME;
-
-	/**
-	 * The operation id for the '<em>Get URI</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ORDER_TERM_ATTRIBUTE___GET_URI = BizPackage.BIZ_ENTITY___GET_URI;
-
-	/**
-	 * The operation id for the '<em>Is Proxy</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ORDER_TERM_ATTRIBUTE___IS_PROXY = BizPackage.BIZ_ENTITY___IS_PROXY;
-
-	/**
-	 * The number of operations of the '<em>Term Attribute</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ORDER_TERM_ATTRIBUTE_OPERATION_COUNT = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.order.order.impl.OrderTypeImpl <em>Type</em>}' class.
@@ -8016,114 +5666,6 @@ public interface OrderPackage extends EPackage {
 	int ORDER_TYPE_FEATURE_COUNT = BizPackage.BIZ_ENTITY_TYPE_FEATURE_COUNT + 5;
 
 	/**
-	 * The operation id for the '<em>Isa</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ORDER_TYPE___ISA = BizPackage.BIZ_ENTITY_TYPE___ISA;
-
-	/**
-	 * The operation id for the '<em>Get Name</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ORDER_TYPE___GET_NAME = BizPackage.BIZ_ENTITY_TYPE___GET_NAME;
-
-	/**
-	 * The operation id for the '<em>Get URI</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ORDER_TYPE___GET_URI = BizPackage.BIZ_ENTITY_TYPE___GET_URI;
-
-	/**
-	 * The operation id for the '<em>Is Proxy</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ORDER_TYPE___IS_PROXY = BizPackage.BIZ_ENTITY_TYPE___IS_PROXY;
-
-	/**
-	 * The operation id for the '<em>Get Frame</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ORDER_TYPE___GET_FRAME = BizPackage.BIZ_ENTITY_TYPE___GET_FRAME;
-
-	/**
-	 * The operation id for the '<em>Get Type Id</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ORDER_TYPE___GET_TYPE_ID = BizPackage.BIZ_ENTITY_TYPE___GET_TYPE_ID;
-
-	/**
-	 * The operation id for the '<em>Has Table</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ORDER_TYPE___HAS_TABLE = BizPackage.BIZ_ENTITY_TYPE___HAS_TABLE;
-
-	/**
-	 * The operation id for the '<em>Get Text</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ORDER_TYPE___GET_TEXT = BizPackage.BIZ_ENTITY_TYPE___GET_TEXT;
-
-	/**
-	 * The operation id for the '<em>Child Order Types</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ORDER_TYPE___CHILD_ORDER_TYPES = BizPackage.BIZ_ENTITY_TYPE_OPERATION_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Order Headers</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ORDER_TYPE___ORDER_HEADERS = BizPackage.BIZ_ENTITY_TYPE_OPERATION_COUNT + 1;
-
-	/**
-	 * The operation id for the '<em>Party Pref Doc Type Tpls</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ORDER_TYPE___PARTY_PREF_DOC_TYPE_TPLS = BizPackage.BIZ_ENTITY_TYPE_OPERATION_COUNT + 2;
-
-	/**
-	 * The number of operations of the '<em>Type</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ORDER_TYPE_OPERATION_COUNT = BizPackage.BIZ_ENTITY_TYPE_OPERATION_COUNT + 3;
-
-	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.order.order.impl.OrderTypeAttrImpl <em>Type Attr</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -8204,51 +5746,6 @@ public interface OrderPackage extends EPackage {
 	 * @ordered
 	 */
 	int ORDER_TYPE_ATTR_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
-
-	/**
-	 * The operation id for the '<em>Isa</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ORDER_TYPE_ATTR___ISA = BizPackage.BIZ_ENTITY___ISA;
-
-	/**
-	 * The operation id for the '<em>Get Name</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ORDER_TYPE_ATTR___GET_NAME = BizPackage.BIZ_ENTITY___GET_NAME;
-
-	/**
-	 * The operation id for the '<em>Get URI</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ORDER_TYPE_ATTR___GET_URI = BizPackage.BIZ_ENTITY___GET_URI;
-
-	/**
-	 * The operation id for the '<em>Is Proxy</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ORDER_TYPE_ATTR___IS_PROXY = BizPackage.BIZ_ENTITY___IS_PROXY;
-
-	/**
-	 * The number of operations of the '<em>Type Attr</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ORDER_TYPE_ATTR_OPERATION_COUNT = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.order.order.impl.ProductOrderItemImpl <em>Product Order Item</em>}' class.
@@ -8351,51 +5848,6 @@ public interface OrderPackage extends EPackage {
 	int PRODUCT_ORDER_ITEM_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 5;
 
 	/**
-	 * The operation id for the '<em>Isa</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PRODUCT_ORDER_ITEM___ISA = BizPackage.BIZ_ENTITY___ISA;
-
-	/**
-	 * The operation id for the '<em>Get Name</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PRODUCT_ORDER_ITEM___GET_NAME = BizPackage.BIZ_ENTITY___GET_NAME;
-
-	/**
-	 * The operation id for the '<em>Get URI</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PRODUCT_ORDER_ITEM___GET_URI = BizPackage.BIZ_ENTITY___GET_URI;
-
-	/**
-	 * The operation id for the '<em>Is Proxy</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PRODUCT_ORDER_ITEM___IS_PROXY = BizPackage.BIZ_ENTITY___IS_PROXY;
-
-	/**
-	 * The number of operations of the '<em>Product Order Item</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PRODUCT_ORDER_ITEM_OPERATION_COUNT = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 0;
-
-	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.order.order.impl.WorkOrderItemFulfillmentImpl <em>Work Order Item Fulfillment</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -8485,52 +5937,6 @@ public interface OrderPackage extends EPackage {
 	 * @ordered
 	 */
 	int WORK_ORDER_ITEM_FULFILLMENT_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
-
-
-	/**
-	 * The operation id for the '<em>Isa</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int WORK_ORDER_ITEM_FULFILLMENT___ISA = BizPackage.BIZ_ENTITY___ISA;
-
-	/**
-	 * The operation id for the '<em>Get Name</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int WORK_ORDER_ITEM_FULFILLMENT___GET_NAME = BizPackage.BIZ_ENTITY___GET_NAME;
-
-	/**
-	 * The operation id for the '<em>Get URI</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int WORK_ORDER_ITEM_FULFILLMENT___GET_URI = BizPackage.BIZ_ENTITY___GET_URI;
-
-	/**
-	 * The operation id for the '<em>Is Proxy</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int WORK_ORDER_ITEM_FULFILLMENT___IS_PROXY = BizPackage.BIZ_ENTITY___IS_PROXY;
-
-	/**
-	 * The number of operations of the '<em>Work Order Item Fulfillment</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int WORK_ORDER_ITEM_FULFILLMENT_OPERATION_COUNT = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 0;
 
 
 	/**
@@ -8972,16 +6378,6 @@ public interface OrderPackage extends EPackage {
 	EAttribute getOrderAdjustment_OrderAdjustmentAttributes();
 
 	/**
-	 * Returns the meta object for the '{@link org.abchip.mimo.biz.order.order.OrderAdjustment#returnAdjustments() <em>Return Adjustments</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Return Adjustments</em>' operation.
-	 * @see org.abchip.mimo.biz.order.order.OrderAdjustment#returnAdjustments()
-	 * @generated
-	 */
-	EOperation getOrderAdjustment__ReturnAdjustments();
-
-	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.biz.order.order.OrderAdjustmentAttribute <em>Adjustment Attribute</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -9155,36 +6551,6 @@ public interface OrderPackage extends EPackage {
 	EAttribute getOrderAdjustmentType_OrderAdjustmentTypeAttrs();
 
 	/**
-	 * Returns the meta object for the '{@link org.abchip.mimo.biz.order.order.OrderAdjustmentType#childOrderAdjustmentTypes() <em>Child Order Adjustment Types</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Child Order Adjustment Types</em>' operation.
-	 * @see org.abchip.mimo.biz.order.order.OrderAdjustmentType#childOrderAdjustmentTypes()
-	 * @generated
-	 */
-	EOperation getOrderAdjustmentType__ChildOrderAdjustmentTypes();
-
-	/**
-	 * Returns the meta object for the '{@link org.abchip.mimo.biz.order.order.OrderAdjustmentType#orderAdjustments() <em>Order Adjustments</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Order Adjustments</em>' operation.
-	 * @see org.abchip.mimo.biz.order.order.OrderAdjustmentType#orderAdjustments()
-	 * @generated
-	 */
-	EOperation getOrderAdjustmentType__OrderAdjustments();
-
-	/**
-	 * Returns the meta object for the '{@link org.abchip.mimo.biz.order.order.OrderAdjustmentType#quoteAdjustments() <em>Quote Adjustments</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Quote Adjustments</em>' operation.
-	 * @see org.abchip.mimo.biz.order.order.OrderAdjustmentType#quoteAdjustments()
-	 * @generated
-	 */
-	EOperation getOrderAdjustmentType__QuoteAdjustments();
-
-	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.biz.order.order.OrderAdjustmentTypeAttr <em>Adjustment Type Attr</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -9344,16 +6710,6 @@ public interface OrderPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getOrderBlacklistType_Description();
-
-	/**
-	 * Returns the meta object for the '{@link org.abchip.mimo.biz.order.order.OrderBlacklistType#orderBlacklists() <em>Order Blacklists</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Order Blacklists</em>' operation.
-	 * @see org.abchip.mimo.biz.order.order.OrderBlacklistType#orderBlacklists()
-	 * @generated
-	 */
-	EOperation getOrderBlacklistType__OrderBlacklists();
 
 	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.biz.order.order.OrderContactMech <em>Contact Mech</em>}'.
@@ -9527,16 +6883,6 @@ public interface OrderPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getOrderContentType_ParentTypeId();
-
-	/**
-	 * Returns the meta object for the '{@link org.abchip.mimo.biz.order.order.OrderContentType#childOrderContentTypes() <em>Child Order Content Types</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Child Order Content Types</em>' operation.
-	 * @see org.abchip.mimo.biz.order.order.OrderContentType#childOrderContentTypes()
-	 * @generated
-	 */
-	EOperation getOrderContentType__ChildOrderContentTypes();
 
 	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.biz.order.order.OrderDeliverySchedule <em>Delivery Schedule</em>}'.
@@ -9801,11 +7147,11 @@ public interface OrderPackage extends EPackage {
 	EAttribute getOrderHeader_InternalCode();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.order.order.OrderHeader#isInvoicePerShipment <em>Invoice Per Shipment</em>}'.
+	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.order.order.OrderHeader#getInvoicePerShipment <em>Invoice Per Shipment</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Invoice Per Shipment</em>'.
-	 * @see org.abchip.mimo.biz.order.order.OrderHeader#isInvoicePerShipment()
+	 * @see org.abchip.mimo.biz.order.order.OrderHeader#getInvoicePerShipment()
 	 * @see #getOrderHeader()
 	 * @generated
 	 */
@@ -9900,11 +7246,11 @@ public interface OrderPackage extends EPackage {
 	EAttribute getOrderHeader_PickSheetPrintedDate();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.order.order.OrderHeader#isPriority <em>Priority</em>}'.
+	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.order.order.OrderHeader#getPriority <em>Priority</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Priority</em>'.
-	 * @see org.abchip.mimo.biz.order.order.OrderHeader#isPriority()
+	 * @see org.abchip.mimo.biz.order.order.OrderHeader#getPriority()
 	 * @see #getOrderHeader()
 	 * @generated
 	 */
@@ -10131,176 +7477,6 @@ public interface OrderPackage extends EPackage {
 	EAttribute getOrderHeader_TrackingCodeOrders();
 
 	/**
-	 * Returns the meta object for the '{@link org.abchip.mimo.biz.order.order.OrderHeader#acquireFixedAssets() <em>Acquire Fixed Assets</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Acquire Fixed Assets</em>' operation.
-	 * @see org.abchip.mimo.biz.order.order.OrderHeader#acquireFixedAssets()
-	 * @generated
-	 */
-	EOperation getOrderHeader__AcquireFixedAssets();
-
-	/**
-	 * Returns the meta object for the '{@link org.abchip.mimo.biz.order.order.OrderHeader#giftCardFulfillments() <em>Gift Card Fulfillments</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Gift Card Fulfillments</em>' operation.
-	 * @see org.abchip.mimo.biz.order.order.OrderHeader#giftCardFulfillments()
-	 * @generated
-	 */
-	EOperation getOrderHeader__GiftCardFulfillments();
-
-	/**
-	 * Returns the meta object for the '{@link org.abchip.mimo.biz.order.order.OrderHeader#itemIssuances() <em>Item Issuances</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Item Issuances</em>' operation.
-	 * @see org.abchip.mimo.biz.order.order.OrderHeader#itemIssuances()
-	 * @generated
-	 */
-	EOperation getOrderHeader__ItemIssuances();
-
-	/**
-	 * Returns the meta object for the '{@link org.abchip.mimo.biz.order.order.OrderHeader#orderAdjustments() <em>Order Adjustments</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Order Adjustments</em>' operation.
-	 * @see org.abchip.mimo.biz.order.order.OrderHeader#orderAdjustments()
-	 * @generated
-	 */
-	EOperation getOrderHeader__OrderAdjustments();
-
-	/**
-	 * Returns the meta object for the '{@link org.abchip.mimo.biz.order.order.OrderHeader#orderItemChanges() <em>Order Item Changes</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Order Item Changes</em>' operation.
-	 * @see org.abchip.mimo.biz.order.order.OrderHeader#orderItemChanges()
-	 * @generated
-	 */
-	EOperation getOrderHeader__OrderItemChanges();
-
-	/**
-	 * Returns the meta object for the '{@link org.abchip.mimo.biz.order.order.OrderHeader#orderItemPriceInfos() <em>Order Item Price Infos</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Order Item Price Infos</em>' operation.
-	 * @see org.abchip.mimo.biz.order.order.OrderHeader#orderItemPriceInfos()
-	 * @generated
-	 */
-	EOperation getOrderHeader__OrderItemPriceInfos();
-
-	/**
-	 * Returns the meta object for the '{@link org.abchip.mimo.biz.order.order.OrderHeader#orderNotifications() <em>Order Notifications</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Order Notifications</em>' operation.
-	 * @see org.abchip.mimo.biz.order.order.OrderHeader#orderNotifications()
-	 * @generated
-	 */
-	EOperation getOrderHeader__OrderNotifications();
-
-	/**
-	 * Returns the meta object for the '{@link org.abchip.mimo.biz.order.order.OrderHeader#orderPaymentPreferences() <em>Order Payment Preferences</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Order Payment Preferences</em>' operation.
-	 * @see org.abchip.mimo.biz.order.order.OrderHeader#orderPaymentPreferences()
-	 * @generated
-	 */
-	EOperation getOrderHeader__OrderPaymentPreferences();
-
-	/**
-	 * Returns the meta object for the '{@link org.abchip.mimo.biz.order.order.OrderHeader#orderStatuss() <em>Order Statuss</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Order Statuss</em>' operation.
-	 * @see org.abchip.mimo.biz.order.order.OrderHeader#orderStatuss()
-	 * @generated
-	 */
-	EOperation getOrderHeader__OrderStatuss();
-
-	/**
-	 * Returns the meta object for the '{@link org.abchip.mimo.biz.order.order.OrderHeader#primaryPicklistBins() <em>Primary Picklist Bins</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Primary Picklist Bins</em>' operation.
-	 * @see org.abchip.mimo.biz.order.order.OrderHeader#primaryPicklistBins()
-	 * @generated
-	 */
-	EOperation getOrderHeader__PrimaryPicklistBins();
-
-	/**
-	 * Returns the meta object for the '{@link org.abchip.mimo.biz.order.order.OrderHeader#primaryShipments() <em>Primary Shipments</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Primary Shipments</em>' operation.
-	 * @see org.abchip.mimo.biz.order.order.OrderHeader#primaryShipments()
-	 * @generated
-	 */
-	EOperation getOrderHeader__PrimaryShipments();
-
-	/**
-	 * Returns the meta object for the '{@link org.abchip.mimo.biz.order.order.OrderHeader#purchaseFixedAssetMaints() <em>Purchase Fixed Asset Maints</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Purchase Fixed Asset Maints</em>' operation.
-	 * @see org.abchip.mimo.biz.order.order.OrderHeader#purchaseFixedAssetMaints()
-	 * @generated
-	 */
-	EOperation getOrderHeader__PurchaseFixedAssetMaints();
-
-	/**
-	 * Returns the meta object for the '{@link org.abchip.mimo.biz.order.order.OrderHeader#replacementReturnItemResponses() <em>Replacement Return Item Responses</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Replacement Return Item Responses</em>' operation.
-	 * @see org.abchip.mimo.biz.order.order.OrderHeader#replacementReturnItemResponses()
-	 * @generated
-	 */
-	EOperation getOrderHeader__ReplacementReturnItemResponses();
-
-	/**
-	 * Returns the meta object for the '{@link org.abchip.mimo.biz.order.order.OrderHeader#returnItems() <em>Return Items</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Return Items</em>' operation.
-	 * @see org.abchip.mimo.biz.order.order.OrderHeader#returnItems()
-	 * @generated
-	 */
-	EOperation getOrderHeader__ReturnItems();
-
-	/**
-	 * Returns the meta object for the '{@link org.abchip.mimo.biz.order.order.OrderHeader#shipmentReceipts() <em>Shipment Receipts</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Shipment Receipts</em>' operation.
-	 * @see org.abchip.mimo.biz.order.order.OrderHeader#shipmentReceipts()
-	 * @generated
-	 */
-	EOperation getOrderHeader__ShipmentReceipts();
-
-	/**
-	 * Returns the meta object for the '{@link org.abchip.mimo.biz.order.order.OrderHeader#subscriptions() <em>Subscriptions</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Subscriptions</em>' operation.
-	 * @see org.abchip.mimo.biz.order.order.OrderHeader#subscriptions()
-	 * @generated
-	 */
-	EOperation getOrderHeader__Subscriptions();
-
-	/**
-	 * Returns the meta object for the '{@link org.abchip.mimo.biz.order.order.OrderHeader#surveyResponses() <em>Survey Responses</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Survey Responses</em>' operation.
-	 * @see org.abchip.mimo.biz.order.order.OrderHeader#surveyResponses()
-	 * @generated
-	 */
-	EOperation getOrderHeader__SurveyResponses();
-
-	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.biz.order.order.OrderHeaderNote <em>Header Note</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -10322,11 +7498,11 @@ public interface OrderPackage extends EPackage {
 	EReference getOrderHeaderNote_OrderId();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.order.order.OrderHeaderNote#isInternalNote <em>Internal Note</em>}'.
+	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.order.order.OrderHeaderNote#getInternalNote <em>Internal Note</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Internal Note</em>'.
-	 * @see org.abchip.mimo.biz.order.order.OrderHeaderNote#isInternalNote()
+	 * @see org.abchip.mimo.biz.order.order.OrderHeaderNote#getInternalNote()
 	 * @see #getOrderHeaderNote()
 	 * @generated
 	 */
@@ -11042,16 +8218,6 @@ public interface OrderPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getOrderItemAssocType_ParentTypeId();
-
-	/**
-	 * Returns the meta object for the '{@link org.abchip.mimo.biz.order.order.OrderItemAssocType#childOrderItemAssocTypes() <em>Child Order Item Assoc Types</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Child Order Item Assoc Types</em>' operation.
-	 * @see org.abchip.mimo.biz.order.order.OrderItemAssocType#childOrderItemAssocTypes()
-	 * @generated
-	 */
-	EOperation getOrderItemAssocType__ChildOrderItemAssocTypes();
 
 	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.biz.order.order.OrderItemAttribute <em>Item Attribute</em>}'.
@@ -12044,11 +9210,11 @@ public interface OrderPackage extends EPackage {
 	EAttribute getOrderItemShipGrpInvRes_OldPickStartDate();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.order.order.OrderItemShipGrpInvRes#isPriority <em>Priority</em>}'.
+	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.order.order.OrderItemShipGrpInvRes#getPriority <em>Priority</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Priority</em>'.
-	 * @see org.abchip.mimo.biz.order.order.OrderItemShipGrpInvRes#isPriority()
+	 * @see org.abchip.mimo.biz.order.order.OrderItemShipGrpInvRes#getPriority()
 	 * @see #getOrderItemShipGrpInvRes()
 	 * @generated
 	 */
@@ -12184,26 +9350,6 @@ public interface OrderPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getOrderItemType_OrderItemTypeAttrs();
-
-	/**
-	 * Returns the meta object for the '{@link org.abchip.mimo.biz.order.order.OrderItemType#childOrderItemTypes() <em>Child Order Item Types</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Child Order Item Types</em>' operation.
-	 * @see org.abchip.mimo.biz.order.order.OrderItemType#childOrderItemTypes()
-	 * @generated
-	 */
-	EOperation getOrderItemType__ChildOrderItemTypes();
-
-	/**
-	 * Returns the meta object for the '{@link org.abchip.mimo.biz.order.order.OrderItemType#orderItems() <em>Order Items</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Order Items</em>' operation.
-	 * @see org.abchip.mimo.biz.order.order.OrderItemType#orderItems()
-	 * @generated
-	 */
-	EOperation getOrderItemType__OrderItems();
 
 	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.biz.order.order.OrderItemTypeAttr <em>Item Type Attr</em>}'.
@@ -12357,46 +9503,6 @@ public interface OrderPackage extends EPackage {
 	EReference getOrderPaymentPreference_CreatedByUserLogin();
 
 	/**
-	 * Returns the meta object for the '{@link org.abchip.mimo.biz.order.order.OrderPaymentPreference#orderStatuss() <em>Order Statuss</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Order Statuss</em>' operation.
-	 * @see org.abchip.mimo.biz.order.order.OrderPaymentPreference#orderStatuss()
-	 * @generated
-	 */
-	EOperation getOrderPaymentPreference__OrderStatuss();
-
-	/**
-	 * Returns the meta object for the '{@link org.abchip.mimo.biz.order.order.OrderPaymentPreference#paymentGatewayResponses() <em>Payment Gateway Responses</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Payment Gateway Responses</em>' operation.
-	 * @see org.abchip.mimo.biz.order.order.OrderPaymentPreference#paymentGatewayResponses()
-	 * @generated
-	 */
-	EOperation getOrderPaymentPreference__PaymentGatewayResponses();
-
-	/**
-	 * Returns the meta object for the '{@link org.abchip.mimo.biz.order.order.OrderPaymentPreference#payments() <em>Payments</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Payments</em>' operation.
-	 * @see org.abchip.mimo.biz.order.order.OrderPaymentPreference#payments()
-	 * @generated
-	 */
-	EOperation getOrderPaymentPreference__Payments();
-
-	/**
-	 * Returns the meta object for the '{@link org.abchip.mimo.biz.order.order.OrderPaymentPreference#returnItemResponses() <em>Return Item Responses</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Return Item Responses</em>' operation.
-	 * @see org.abchip.mimo.biz.order.order.OrderPaymentPreference#returnItemResponses()
-	 * @generated
-	 */
-	EOperation getOrderPaymentPreference__ReturnItemResponses();
-
-	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.order.order.OrderPaymentPreference#getCreatedDate <em>Created Date</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -12507,11 +9613,11 @@ public interface OrderPackage extends EPackage {
 	EAttribute getOrderPaymentPreference_OrderItemSeqId();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.order.order.OrderPaymentPreference#isOverflowFlag <em>Overflow Flag</em>}'.
+	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.order.order.OrderPaymentPreference#getOverflowFlag <em>Overflow Flag</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Overflow Flag</em>'.
-	 * @see org.abchip.mimo.biz.order.order.OrderPaymentPreference#isOverflowFlag()
+	 * @see org.abchip.mimo.biz.order.order.OrderPaymentPreference#getOverflowFlag()
 	 * @see #getOrderPaymentPreference()
 	 * @generated
 	 */
@@ -12540,11 +9646,11 @@ public interface OrderPackage extends EPackage {
 	EReference getOrderPaymentPreference_PaymentMethodTypeId();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.order.order.OrderPaymentPreference#isPresentFlag <em>Present Flag</em>}'.
+	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.order.order.OrderPaymentPreference#getPresentFlag <em>Present Flag</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Present Flag</em>'.
-	 * @see org.abchip.mimo.biz.order.order.OrderPaymentPreference#isPresentFlag()
+	 * @see org.abchip.mimo.biz.order.order.OrderPaymentPreference#getPresentFlag()
 	 * @see #getOrderPaymentPreference()
 	 * @generated
 	 */
@@ -12606,11 +9712,11 @@ public interface OrderPackage extends EPackage {
 	EReference getOrderPaymentPreference_StatusId();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.order.order.OrderPaymentPreference#isSwipedFlag <em>Swiped Flag</em>}'.
+	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.order.order.OrderPaymentPreference#getSwipedFlag <em>Swiped Flag</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Swiped Flag</em>'.
-	 * @see org.abchip.mimo.biz.order.order.OrderPaymentPreference#isSwipedFlag()
+	 * @see org.abchip.mimo.biz.order.order.OrderPaymentPreference#getSwipedFlag()
 	 * @see #getOrderPaymentPreference()
 	 * @generated
 	 */
@@ -13192,36 +10298,6 @@ public interface OrderPackage extends EPackage {
 	EAttribute getOrderType_OrderTypeAttrs();
 
 	/**
-	 * Returns the meta object for the '{@link org.abchip.mimo.biz.order.order.OrderType#childOrderTypes() <em>Child Order Types</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Child Order Types</em>' operation.
-	 * @see org.abchip.mimo.biz.order.order.OrderType#childOrderTypes()
-	 * @generated
-	 */
-	EOperation getOrderType__ChildOrderTypes();
-
-	/**
-	 * Returns the meta object for the '{@link org.abchip.mimo.biz.order.order.OrderType#orderHeaders() <em>Order Headers</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Order Headers</em>' operation.
-	 * @see org.abchip.mimo.biz.order.order.OrderType#orderHeaders()
-	 * @generated
-	 */
-	EOperation getOrderType__OrderHeaders();
-
-	/**
-	 * Returns the meta object for the '{@link org.abchip.mimo.biz.order.order.OrderType#partyPrefDocTypeTpls() <em>Party Pref Doc Type Tpls</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Party Pref Doc Type Tpls</em>' operation.
-	 * @see org.abchip.mimo.biz.order.order.OrderType#partyPrefDocTypeTpls()
-	 * @generated
-	 */
-	EOperation getOrderType__PartyPrefDocTypeTpls();
-
-	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.biz.order.order.OrderTypeAttr <em>Type Attr</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -13730,14 +10806,6 @@ public interface OrderPackage extends EPackage {
 		EAttribute ORDER_ADJUSTMENT__ORDER_ADJUSTMENT_ATTRIBUTES = eINSTANCE.getOrderAdjustment_OrderAdjustmentAttributes();
 
 		/**
-		 * The meta object literal for the '<em><b>Return Adjustments</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation ORDER_ADJUSTMENT___RETURN_ADJUSTMENTS = eINSTANCE.getOrderAdjustment__ReturnAdjustments();
-
-		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.biz.order.order.impl.OrderAdjustmentAttributeImpl <em>Adjustment Attribute</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -13872,30 +10940,6 @@ public interface OrderPackage extends EPackage {
 		EAttribute ORDER_ADJUSTMENT_TYPE__ORDER_ADJUSTMENT_TYPE_ATTRS = eINSTANCE.getOrderAdjustmentType_OrderAdjustmentTypeAttrs();
 
 		/**
-		 * The meta object literal for the '<em><b>Child Order Adjustment Types</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation ORDER_ADJUSTMENT_TYPE___CHILD_ORDER_ADJUSTMENT_TYPES = eINSTANCE.getOrderAdjustmentType__ChildOrderAdjustmentTypes();
-
-		/**
-		 * The meta object literal for the '<em><b>Order Adjustments</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation ORDER_ADJUSTMENT_TYPE___ORDER_ADJUSTMENTS = eINSTANCE.getOrderAdjustmentType__OrderAdjustments();
-
-		/**
-		 * The meta object literal for the '<em><b>Quote Adjustments</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation ORDER_ADJUSTMENT_TYPE___QUOTE_ADJUSTMENTS = eINSTANCE.getOrderAdjustmentType__QuoteAdjustments();
-
-		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.biz.order.order.impl.OrderAdjustmentTypeAttrImpl <em>Adjustment Type Attr</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -14022,14 +11066,6 @@ public interface OrderPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute ORDER_BLACKLIST_TYPE__DESCRIPTION = eINSTANCE.getOrderBlacklistType_Description();
-
-		/**
-		 * The meta object literal for the '<em><b>Order Blacklists</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation ORDER_BLACKLIST_TYPE___ORDER_BLACKLISTS = eINSTANCE.getOrderBlacklistType__OrderBlacklists();
 
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.biz.order.order.impl.OrderContactMechImpl <em>Contact Mech</em>}' class.
@@ -14164,14 +11200,6 @@ public interface OrderPackage extends EPackage {
 		 * @generated
 		 */
 		EReference ORDER_CONTENT_TYPE__PARENT_TYPE_ID = eINSTANCE.getOrderContentType_ParentTypeId();
-
-		/**
-		 * The meta object literal for the '<em><b>Child Order Content Types</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation ORDER_CONTENT_TYPE___CHILD_ORDER_CONTENT_TYPES = eINSTANCE.getOrderContentType__ChildOrderContentTypes();
 
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.biz.order.order.impl.OrderDeliveryScheduleImpl <em>Delivery Schedule</em>}' class.
@@ -14608,142 +11636,6 @@ public interface OrderPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute ORDER_HEADER__TRACKING_CODE_ORDERS = eINSTANCE.getOrderHeader_TrackingCodeOrders();
-
-		/**
-		 * The meta object literal for the '<em><b>Acquire Fixed Assets</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation ORDER_HEADER___ACQUIRE_FIXED_ASSETS = eINSTANCE.getOrderHeader__AcquireFixedAssets();
-
-		/**
-		 * The meta object literal for the '<em><b>Gift Card Fulfillments</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation ORDER_HEADER___GIFT_CARD_FULFILLMENTS = eINSTANCE.getOrderHeader__GiftCardFulfillments();
-
-		/**
-		 * The meta object literal for the '<em><b>Item Issuances</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation ORDER_HEADER___ITEM_ISSUANCES = eINSTANCE.getOrderHeader__ItemIssuances();
-
-		/**
-		 * The meta object literal for the '<em><b>Order Adjustments</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation ORDER_HEADER___ORDER_ADJUSTMENTS = eINSTANCE.getOrderHeader__OrderAdjustments();
-
-		/**
-		 * The meta object literal for the '<em><b>Order Item Changes</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation ORDER_HEADER___ORDER_ITEM_CHANGES = eINSTANCE.getOrderHeader__OrderItemChanges();
-
-		/**
-		 * The meta object literal for the '<em><b>Order Item Price Infos</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation ORDER_HEADER___ORDER_ITEM_PRICE_INFOS = eINSTANCE.getOrderHeader__OrderItemPriceInfos();
-
-		/**
-		 * The meta object literal for the '<em><b>Order Notifications</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation ORDER_HEADER___ORDER_NOTIFICATIONS = eINSTANCE.getOrderHeader__OrderNotifications();
-
-		/**
-		 * The meta object literal for the '<em><b>Order Payment Preferences</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation ORDER_HEADER___ORDER_PAYMENT_PREFERENCES = eINSTANCE.getOrderHeader__OrderPaymentPreferences();
-
-		/**
-		 * The meta object literal for the '<em><b>Order Statuss</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation ORDER_HEADER___ORDER_STATUSS = eINSTANCE.getOrderHeader__OrderStatuss();
-
-		/**
-		 * The meta object literal for the '<em><b>Primary Picklist Bins</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation ORDER_HEADER___PRIMARY_PICKLIST_BINS = eINSTANCE.getOrderHeader__PrimaryPicklistBins();
-
-		/**
-		 * The meta object literal for the '<em><b>Primary Shipments</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation ORDER_HEADER___PRIMARY_SHIPMENTS = eINSTANCE.getOrderHeader__PrimaryShipments();
-
-		/**
-		 * The meta object literal for the '<em><b>Purchase Fixed Asset Maints</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation ORDER_HEADER___PURCHASE_FIXED_ASSET_MAINTS = eINSTANCE.getOrderHeader__PurchaseFixedAssetMaints();
-
-		/**
-		 * The meta object literal for the '<em><b>Replacement Return Item Responses</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation ORDER_HEADER___REPLACEMENT_RETURN_ITEM_RESPONSES = eINSTANCE.getOrderHeader__ReplacementReturnItemResponses();
-
-		/**
-		 * The meta object literal for the '<em><b>Return Items</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation ORDER_HEADER___RETURN_ITEMS = eINSTANCE.getOrderHeader__ReturnItems();
-
-		/**
-		 * The meta object literal for the '<em><b>Shipment Receipts</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation ORDER_HEADER___SHIPMENT_RECEIPTS = eINSTANCE.getOrderHeader__ShipmentReceipts();
-
-		/**
-		 * The meta object literal for the '<em><b>Subscriptions</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation ORDER_HEADER___SUBSCRIPTIONS = eINSTANCE.getOrderHeader__Subscriptions();
-
-		/**
-		 * The meta object literal for the '<em><b>Survey Responses</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation ORDER_HEADER___SURVEY_RESPONSES = eINSTANCE.getOrderHeader__SurveyResponses();
 
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.biz.order.order.impl.OrderHeaderNoteImpl <em>Header Note</em>}' class.
@@ -15298,14 +12190,6 @@ public interface OrderPackage extends EPackage {
 		 * @generated
 		 */
 		EReference ORDER_ITEM_ASSOC_TYPE__PARENT_TYPE_ID = eINSTANCE.getOrderItemAssocType_ParentTypeId();
-
-		/**
-		 * The meta object literal for the '<em><b>Child Order Item Assoc Types</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation ORDER_ITEM_ASSOC_TYPE___CHILD_ORDER_ITEM_ASSOC_TYPES = eINSTANCE.getOrderItemAssocType__ChildOrderItemAssocTypes();
 
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.biz.order.order.impl.OrderItemAttributeImpl <em>Item Attribute</em>}' class.
@@ -16164,22 +13048,6 @@ public interface OrderPackage extends EPackage {
 		EAttribute ORDER_ITEM_TYPE__ORDER_ITEM_TYPE_ATTRS = eINSTANCE.getOrderItemType_OrderItemTypeAttrs();
 
 		/**
-		 * The meta object literal for the '<em><b>Child Order Item Types</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation ORDER_ITEM_TYPE___CHILD_ORDER_ITEM_TYPES = eINSTANCE.getOrderItemType__ChildOrderItemTypes();
-
-		/**
-		 * The meta object literal for the '<em><b>Order Items</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation ORDER_ITEM_TYPE___ORDER_ITEMS = eINSTANCE.getOrderItemType__OrderItems();
-
-		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.biz.order.order.impl.OrderItemTypeAttrImpl <em>Item Type Attr</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -16296,38 +13164,6 @@ public interface OrderPackage extends EPackage {
 		 * @generated
 		 */
 		EReference ORDER_PAYMENT_PREFERENCE__CREATED_BY_USER_LOGIN = eINSTANCE.getOrderPaymentPreference_CreatedByUserLogin();
-
-		/**
-		 * The meta object literal for the '<em><b>Order Statuss</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation ORDER_PAYMENT_PREFERENCE___ORDER_STATUSS = eINSTANCE.getOrderPaymentPreference__OrderStatuss();
-
-		/**
-		 * The meta object literal for the '<em><b>Payment Gateway Responses</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation ORDER_PAYMENT_PREFERENCE___PAYMENT_GATEWAY_RESPONSES = eINSTANCE.getOrderPaymentPreference__PaymentGatewayResponses();
-
-		/**
-		 * The meta object literal for the '<em><b>Payments</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation ORDER_PAYMENT_PREFERENCE___PAYMENTS = eINSTANCE.getOrderPaymentPreference__Payments();
-
-		/**
-		 * The meta object literal for the '<em><b>Return Item Responses</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation ORDER_PAYMENT_PREFERENCE___RETURN_ITEM_RESPONSES = eINSTANCE.getOrderPaymentPreference__ReturnItemResponses();
 
 		/**
 		 * The meta object literal for the '<em><b>Created Date</b></em>' attribute feature.
@@ -16928,30 +13764,6 @@ public interface OrderPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute ORDER_TYPE__ORDER_TYPE_ATTRS = eINSTANCE.getOrderType_OrderTypeAttrs();
-
-		/**
-		 * The meta object literal for the '<em><b>Child Order Types</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation ORDER_TYPE___CHILD_ORDER_TYPES = eINSTANCE.getOrderType__ChildOrderTypes();
-
-		/**
-		 * The meta object literal for the '<em><b>Order Headers</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation ORDER_TYPE___ORDER_HEADERS = eINSTANCE.getOrderType__OrderHeaders();
-
-		/**
-		 * The meta object literal for the '<em><b>Party Pref Doc Type Tpls</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation ORDER_TYPE___PARTY_PREF_DOC_TYPE_TPLS = eINSTANCE.getOrderType__PartyPrefDocTypeTpls();
 
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.biz.order.order.impl.OrderTypeAttrImpl <em>Type Attr</em>}' class.

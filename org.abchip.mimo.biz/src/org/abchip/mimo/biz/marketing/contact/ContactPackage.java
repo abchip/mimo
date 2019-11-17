@@ -10,7 +10,6 @@ package org.abchip.mimo.biz.marketing.contact;
 import org.abchip.mimo.biz.BizPackage;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
@@ -271,69 +270,6 @@ public interface ContactPackage extends EPackage {
 	int CONTACT_LIST_FEATURE_COUNT = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 17;
 
 	/**
-	 * The operation id for the '<em>Isa</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONTACT_LIST___ISA = BizPackage.BIZ_ENTITY_TYPED___ISA;
-
-	/**
-	 * The operation id for the '<em>Get Name</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONTACT_LIST___GET_NAME = BizPackage.BIZ_ENTITY_TYPED___GET_NAME;
-
-	/**
-	 * The operation id for the '<em>Get URI</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONTACT_LIST___GET_URI = BizPackage.BIZ_ENTITY_TYPED___GET_URI;
-
-	/**
-	 * The operation id for the '<em>Is Proxy</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONTACT_LIST___IS_PROXY = BizPackage.BIZ_ENTITY_TYPED___IS_PROXY;
-
-	/**
-	 * The operation id for the '<em>Get Type</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONTACT_LIST___GET_TYPE = BizPackage.BIZ_ENTITY_TYPED___GET_TYPE;
-
-	/**
-	 * The operation id for the '<em>Communication Events</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONTACT_LIST___COMMUNICATION_EVENTS = BizPackage.BIZ_ENTITY_TYPED_OPERATION_COUNT + 0;
-
-	/**
-	 * The number of operations of the '<em>List</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONTACT_LIST_OPERATION_COUNT = BizPackage.BIZ_ENTITY_TYPED_OPERATION_COUNT + 1;
-
-	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.marketing.contact.impl.ContactListCommStatusImpl <em>List Comm Status</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -452,51 +388,6 @@ public interface ContactPackage extends EPackage {
 	int CONTACT_LIST_COMM_STATUS_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 7;
 
 	/**
-	 * The operation id for the '<em>Isa</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONTACT_LIST_COMM_STATUS___ISA = BizPackage.BIZ_ENTITY___ISA;
-
-	/**
-	 * The operation id for the '<em>Get Name</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONTACT_LIST_COMM_STATUS___GET_NAME = BizPackage.BIZ_ENTITY___GET_NAME;
-
-	/**
-	 * The operation id for the '<em>Get URI</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONTACT_LIST_COMM_STATUS___GET_URI = BizPackage.BIZ_ENTITY___GET_URI;
-
-	/**
-	 * The operation id for the '<em>Is Proxy</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONTACT_LIST_COMM_STATUS___IS_PROXY = BizPackage.BIZ_ENTITY___IS_PROXY;
-
-	/**
-	 * The number of operations of the '<em>List Comm Status</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONTACT_LIST_COMM_STATUS_OPERATION_COUNT = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 0;
-
-	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.marketing.contact.impl.ContactListPartyImpl <em>List Party</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -604,51 +495,6 @@ public interface ContactPackage extends EPackage {
 	 * @ordered
 	 */
 	int CONTACT_LIST_PARTY_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 6;
-
-	/**
-	 * The operation id for the '<em>Isa</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONTACT_LIST_PARTY___ISA = BizPackage.BIZ_ENTITY___ISA;
-
-	/**
-	 * The operation id for the '<em>Get Name</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONTACT_LIST_PARTY___GET_NAME = BizPackage.BIZ_ENTITY___GET_NAME;
-
-	/**
-	 * The operation id for the '<em>Get URI</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONTACT_LIST_PARTY___GET_URI = BizPackage.BIZ_ENTITY___GET_URI;
-
-	/**
-	 * The operation id for the '<em>Is Proxy</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONTACT_LIST_PARTY___IS_PROXY = BizPackage.BIZ_ENTITY___IS_PROXY;
-
-	/**
-	 * The number of operations of the '<em>List Party</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONTACT_LIST_PARTY_OPERATION_COUNT = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.marketing.contact.impl.ContactListPartyStatusImpl <em>List Party Status</em>}' class.
@@ -769,51 +615,6 @@ public interface ContactPackage extends EPackage {
 	int CONTACT_LIST_PARTY_STATUS_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 7;
 
 	/**
-	 * The operation id for the '<em>Isa</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONTACT_LIST_PARTY_STATUS___ISA = BizPackage.BIZ_ENTITY___ISA;
-
-	/**
-	 * The operation id for the '<em>Get Name</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONTACT_LIST_PARTY_STATUS___GET_NAME = BizPackage.BIZ_ENTITY___GET_NAME;
-
-	/**
-	 * The operation id for the '<em>Get URI</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONTACT_LIST_PARTY_STATUS___GET_URI = BizPackage.BIZ_ENTITY___GET_URI;
-
-	/**
-	 * The operation id for the '<em>Is Proxy</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONTACT_LIST_PARTY_STATUS___IS_PROXY = BizPackage.BIZ_ENTITY___IS_PROXY;
-
-	/**
-	 * The number of operations of the '<em>List Party Status</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONTACT_LIST_PARTY_STATUS_OPERATION_COUNT = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 0;
-
-	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.marketing.contact.impl.ContactListTypeImpl <em>List Type</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -894,96 +695,6 @@ public interface ContactPackage extends EPackage {
 	 * @ordered
 	 */
 	int CONTACT_LIST_TYPE_FEATURE_COUNT = BizPackage.BIZ_ENTITY_TYPE_FEATURE_COUNT + 2;
-
-	/**
-	 * The operation id for the '<em>Isa</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONTACT_LIST_TYPE___ISA = BizPackage.BIZ_ENTITY_TYPE___ISA;
-
-	/**
-	 * The operation id for the '<em>Get Name</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONTACT_LIST_TYPE___GET_NAME = BizPackage.BIZ_ENTITY_TYPE___GET_NAME;
-
-	/**
-	 * The operation id for the '<em>Get URI</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONTACT_LIST_TYPE___GET_URI = BizPackage.BIZ_ENTITY_TYPE___GET_URI;
-
-	/**
-	 * The operation id for the '<em>Is Proxy</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONTACT_LIST_TYPE___IS_PROXY = BizPackage.BIZ_ENTITY_TYPE___IS_PROXY;
-
-	/**
-	 * The operation id for the '<em>Get Frame</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONTACT_LIST_TYPE___GET_FRAME = BizPackage.BIZ_ENTITY_TYPE___GET_FRAME;
-
-	/**
-	 * The operation id for the '<em>Get Type Id</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONTACT_LIST_TYPE___GET_TYPE_ID = BizPackage.BIZ_ENTITY_TYPE___GET_TYPE_ID;
-
-	/**
-	 * The operation id for the '<em>Has Table</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONTACT_LIST_TYPE___HAS_TABLE = BizPackage.BIZ_ENTITY_TYPE___HAS_TABLE;
-
-	/**
-	 * The operation id for the '<em>Get Text</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONTACT_LIST_TYPE___GET_TEXT = BizPackage.BIZ_ENTITY_TYPE___GET_TEXT;
-
-	/**
-	 * The operation id for the '<em>Contact Lists</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONTACT_LIST_TYPE___CONTACT_LISTS = BizPackage.BIZ_ENTITY_TYPE_OPERATION_COUNT + 0;
-
-	/**
-	 * The number of operations of the '<em>List Type</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONTACT_LIST_TYPE_OPERATION_COUNT = BizPackage.BIZ_ENTITY_TYPE_OPERATION_COUNT + 1;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.marketing.contact.impl.WebSiteContactListImpl <em>Web Site Contact List</em>}' class.
@@ -1075,52 +786,6 @@ public interface ContactPackage extends EPackage {
 	 * @ordered
 	 */
 	int WEB_SITE_CONTACT_LIST_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
-
-
-	/**
-	 * The operation id for the '<em>Isa</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int WEB_SITE_CONTACT_LIST___ISA = BizPackage.BIZ_ENTITY___ISA;
-
-	/**
-	 * The operation id for the '<em>Get Name</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int WEB_SITE_CONTACT_LIST___GET_NAME = BizPackage.BIZ_ENTITY___GET_NAME;
-
-	/**
-	 * The operation id for the '<em>Get URI</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int WEB_SITE_CONTACT_LIST___GET_URI = BizPackage.BIZ_ENTITY___GET_URI;
-
-	/**
-	 * The operation id for the '<em>Is Proxy</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int WEB_SITE_CONTACT_LIST___IS_PROXY = BizPackage.BIZ_ENTITY___IS_PROXY;
-
-	/**
-	 * The number of operations of the '<em>Web Site Contact List</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int WEB_SITE_CONTACT_LIST_OPERATION_COUNT = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 0;
 
 
 	/**
@@ -1264,16 +929,6 @@ public interface ContactPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getContactList_OwnerPartyId();
-
-	/**
-	 * Returns the meta object for the '{@link org.abchip.mimo.biz.marketing.contact.ContactList#communicationEvents() <em>Communication Events</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Communication Events</em>' operation.
-	 * @see org.abchip.mimo.biz.marketing.contact.ContactList#communicationEvents()
-	 * @generated
-	 */
-	EOperation getContactList__CommunicationEvents();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.marketing.contact.ContactList#isSingleUse <em>Single Use</em>}'.
@@ -1613,16 +1268,6 @@ public interface ContactPackage extends EPackage {
 	EAttribute getContactListType_Description();
 
 	/**
-	 * Returns the meta object for the '{@link org.abchip.mimo.biz.marketing.contact.ContactListType#contactLists() <em>Contact Lists</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Contact Lists</em>' operation.
-	 * @see org.abchip.mimo.biz.marketing.contact.ContactListType#contactLists()
-	 * @generated
-	 */
-	EOperation getContactListType__ContactLists();
-
-	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.biz.marketing.contact.WebSiteContactList <em>Web Site Contact List</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1803,14 +1448,6 @@ public interface ContactPackage extends EPackage {
 		 * @generated
 		 */
 		EReference CONTACT_LIST__OWNER_PARTY_ID = eINSTANCE.getContactList_OwnerPartyId();
-
-		/**
-		 * The meta object literal for the '<em><b>Communication Events</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation CONTACT_LIST___COMMUNICATION_EVENTS = eINSTANCE.getContactList__CommunicationEvents();
 
 		/**
 		 * The meta object literal for the '<em><b>Single Use</b></em>' attribute feature.
@@ -2067,14 +1704,6 @@ public interface ContactPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute CONTACT_LIST_TYPE__DESCRIPTION = eINSTANCE.getContactListType_Description();
-
-		/**
-		 * The meta object literal for the '<em><b>Contact Lists</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation CONTACT_LIST_TYPE___CONTACT_LISTS = eINSTANCE.getContactListType__ContactLists();
 
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.biz.marketing.contact.impl.WebSiteContactListImpl <em>Web Site Contact List</em>}' class.

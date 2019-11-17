@@ -58,6 +58,7 @@ public interface EntitySync extends BizEntity {
 	 * @see #setEntitySyncId(String)
 	 * @see org.abchip.mimo.biz.entity.synchronization.SynchronizationPackage#getEntitySync_EntitySyncId()
 	 * @model id="true" required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
@@ -84,7 +85,7 @@ public interface EntitySync extends BizEntity {
 	 * @return the value of the '<em>For Pull Only</em>' attribute.
 	 * @see #setForPullOnly(boolean)
 	 * @see org.abchip.mimo.biz.entity.synchronization.SynchronizationPackage#getEntitySync_ForPullOnly()
-	 * @model
+	 * @model annotation="mimo-ent-format type='indicator' length='1'"
 	 * @generated
 	 */
 	boolean isForPullOnly();
@@ -110,7 +111,7 @@ public interface EntitySync extends BizEntity {
 	 * @return the value of the '<em>For Push Only</em>' attribute.
 	 * @see #setForPushOnly(boolean)
 	 * @see org.abchip.mimo.biz.entity.synchronization.SynchronizationPackage#getEntitySync_ForPushOnly()
-	 * @model
+	 * @model annotation="mimo-ent-format type='indicator' length='1'"
 	 * @generated
 	 */
 	boolean isForPushOnly();
@@ -136,7 +137,7 @@ public interface EntitySync extends BizEntity {
 	 * @return the value of the '<em>Keep Remove Info Hours</em>' attribute.
 	 * @see #setKeepRemoveInfoHours(double)
 	 * @see org.abchip.mimo.biz.entity.synchronization.SynchronizationPackage#getEntitySync_KeepRemoveInfoHours()
-	 * @model
+	 * @model annotation="mimo-ent-format type='floating-point'"
 	 * @generated
 	 */
 	double getKeepRemoveInfoHours();
@@ -162,7 +163,7 @@ public interface EntitySync extends BizEntity {
 	 * @return the value of the '<em>Last History Start Date</em>' attribute.
 	 * @see #setLastHistoryStartDate(Date)
 	 * @see org.abchip.mimo.biz.entity.synchronization.SynchronizationPackage#getEntitySync_LastHistoryStartDate()
-	 * @model
+	 * @model annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getLastHistoryStartDate();
@@ -188,7 +189,7 @@ public interface EntitySync extends BizEntity {
 	 * @return the value of the '<em>Last Successful Synch Time</em>' attribute.
 	 * @see #setLastSuccessfulSynchTime(Date)
 	 * @see org.abchip.mimo.biz.entity.synchronization.SynchronizationPackage#getEntitySync_LastSuccessfulSynchTime()
-	 * @model
+	 * @model annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getLastSuccessfulSynchTime();
@@ -214,7 +215,7 @@ public interface EntitySync extends BizEntity {
 	 * @return the value of the '<em>Max Running No Update Millis</em>' attribute.
 	 * @see #setMaxRunningNoUpdateMillis(long)
 	 * @see org.abchip.mimo.biz.entity.synchronization.SynchronizationPackage#getEntitySync_MaxRunningNoUpdateMillis()
-	 * @model
+	 * @model annotation="mimo-ent-format type='numeric' precision='20' scale='0'"
 	 * @generated
 	 */
 	long getMaxRunningNoUpdateMillis();
@@ -240,7 +241,7 @@ public interface EntitySync extends BizEntity {
 	 * @return the value of the '<em>Offline Sync Split Millis</em>' attribute.
 	 * @see #setOfflineSyncSplitMillis(long)
 	 * @see org.abchip.mimo.biz.entity.synchronization.SynchronizationPackage#getEntitySync_OfflineSyncSplitMillis()
-	 * @model
+	 * @model annotation="mimo-ent-format type='numeric' precision='20' scale='0'"
 	 * @generated
 	 */
 	long getOfflineSyncSplitMillis();
@@ -266,7 +267,7 @@ public interface EntitySync extends BizEntity {
 	 * @return the value of the '<em>Pre Offline Synch Time</em>' attribute.
 	 * @see #setPreOfflineSynchTime(Date)
 	 * @see org.abchip.mimo.biz.entity.synchronization.SynchronizationPackage#getEntitySync_PreOfflineSynchTime()
-	 * @model
+	 * @model annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getPreOfflineSynchTime();
@@ -292,7 +293,7 @@ public interface EntitySync extends BizEntity {
 	 * @return the value of the '<em>Run Status Id</em>' attribute.
 	 * @see #setRunStatusId(String)
 	 * @see org.abchip.mimo.biz.entity.synchronization.SynchronizationPackage#getEntitySync_RunStatusId()
-	 * @model
+	 * @model annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	String getRunStatusId();
@@ -318,7 +319,7 @@ public interface EntitySync extends BizEntity {
 	 * @return the value of the '<em>Sync End Buffer Millis</em>' attribute.
 	 * @see #setSyncEndBufferMillis(long)
 	 * @see org.abchip.mimo.biz.entity.synchronization.SynchronizationPackage#getEntitySync_SyncEndBufferMillis()
-	 * @model
+	 * @model annotation="mimo-ent-format type='numeric' precision='20' scale='0'"
 	 * @generated
 	 */
 	long getSyncEndBufferMillis();
@@ -344,7 +345,7 @@ public interface EntitySync extends BizEntity {
 	 * @return the value of the '<em>Sync Split Millis</em>' attribute.
 	 * @see #setSyncSplitMillis(long)
 	 * @see org.abchip.mimo.biz.entity.synchronization.SynchronizationPackage#getEntitySync_SyncSplitMillis()
-	 * @model
+	 * @model annotation="mimo-ent-format type='numeric' precision='20' scale='0'"
 	 * @generated
 	 */
 	long getSyncSplitMillis();
@@ -370,7 +371,7 @@ public interface EntitySync extends BizEntity {
 	 * @return the value of the '<em>Target Delegator Name</em>' attribute.
 	 * @see #setTargetDelegatorName(String)
 	 * @see org.abchip.mimo.biz.entity.synchronization.SynchronizationPackage#getEntitySync_TargetDelegatorName()
-	 * @model
+	 * @model annotation="mimo-ent-format type='long-varchar' length='255'"
 	 * @generated
 	 */
 	String getTargetDelegatorName();
@@ -396,7 +397,7 @@ public interface EntitySync extends BizEntity {
 	 * @return the value of the '<em>Target Service Name</em>' attribute.
 	 * @see #setTargetServiceName(String)
 	 * @see org.abchip.mimo.biz.entity.synchronization.SynchronizationPackage#getEntitySync_TargetServiceName()
-	 * @model
+	 * @model annotation="mimo-ent-format type='long-varchar' length='255'"
 	 * @generated
 	 */
 	String getTargetServiceName();
@@ -422,7 +423,9 @@ public interface EntitySync extends BizEntity {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Entity Sync Histories</em>' attribute list.
 	 * @see org.abchip.mimo.biz.entity.synchronization.SynchronizationPackage#getEntitySync_EntitySyncHistories()
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='EntitySyncHistory'"
 	 * @generated
 	 */
@@ -439,7 +442,9 @@ public interface EntitySync extends BizEntity {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Entity Sync Includes</em>' attribute list.
 	 * @see org.abchip.mimo.biz.entity.synchronization.SynchronizationPackage#getEntitySync_EntitySyncIncludes()
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='EntitySyncInclude'"
 	 * @generated
 	 */
@@ -456,7 +461,9 @@ public interface EntitySync extends BizEntity {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Entity Sync Include Groups</em>' attribute list.
 	 * @see org.abchip.mimo.biz.entity.synchronization.SynchronizationPackage#getEntitySync_EntitySyncIncludeGroups()
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='EntitySyncIncludeGroup'"
 	 * @generated
 	 */

@@ -41,6 +41,7 @@ public interface CharacterSet extends BizEntity {
 	 * @see #setCharacterSetId(String)
 	 * @see org.abchip.mimo.biz.content.data.DataPackage#getCharacterSet_CharacterSetId()
 	 * @model id="true" required="true"
+	 *        annotation="mimo-ent-format type='id-long' length='60'"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
@@ -67,7 +68,7 @@ public interface CharacterSet extends BizEntity {
 	 * @return the value of the '<em>Description</em>' attribute.
 	 * @see #setDescription(String)
 	 * @see org.abchip.mimo.biz.content.data.DataPackage#getCharacterSet_Description()
-	 * @model
+	 * @model annotation="mimo-ent-format type='description' length='255'"
 	 * @generated
 	 */
 	String getDescription();
@@ -85,7 +86,8 @@ public interface CharacterSet extends BizEntity {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id-long' length='60'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='Content' route='characterSetId'"
 	 * @generated
 	 */
@@ -94,7 +96,8 @@ public interface CharacterSet extends BizEntity {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id-long' length='60'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='DataResource' route='characterSetId'"
 	 * @generated
 	 */

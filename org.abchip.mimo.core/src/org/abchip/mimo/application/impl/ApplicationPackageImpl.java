@@ -434,36 +434,6 @@ public class ApplicationPackageImpl extends EPackageImpl implements ApplicationP
 	 * @generated
 	 */
 	@Override
-	public EOperation getApplicationManager__Start__Class_Application_OutputStream() {
-		return applicationManagerEClass.getEOperations().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EOperation getApplicationManager__Restart__Application() {
-		return applicationManagerEClass.getEOperations().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EOperation getApplicationManager__Stop__Application() {
-		return applicationManagerEClass.getEOperations().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public EClass getApplicationModule() {
 		return applicationModuleEClass;
 	}
@@ -596,16 +566,6 @@ public class ApplicationPackageImpl extends EPackageImpl implements ApplicationP
 	@Override
 	public EAttribute getServiceRef_Status() {
 		return (EAttribute)serviceRefEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EOperation getServiceRef__GetInterfaceName() {
-		return serviceRefEClass.getEOperations().get(0);
 	}
 
 	/**
@@ -817,9 +777,6 @@ public class ApplicationPackageImpl extends EPackageImpl implements ApplicationP
 		createEAttribute(applicationComponentEClass, APPLICATION_COMPONENT__NAME);
 
 		applicationManagerEClass = createEClass(APPLICATION_MANAGER);
-		createEOperation(applicationManagerEClass, APPLICATION_MANAGER___START__CLASS_APPLICATION_OUTPUTSTREAM);
-		createEOperation(applicationManagerEClass, APPLICATION_MANAGER___RESTART__APPLICATION);
-		createEOperation(applicationManagerEClass, APPLICATION_MANAGER___STOP__APPLICATION);
 
 		applicationModuleEClass = createEClass(APPLICATION_MODULE);
 		createEAttribute(applicationModuleEClass, APPLICATION_MODULE__NAME);
@@ -840,7 +797,6 @@ public class ApplicationPackageImpl extends EPackageImpl implements ApplicationP
 		serviceRefEClass = createEClass(SERVICE_REF);
 		createEAttribute(serviceRefEClass, SERVICE_REF__CLASS_NAME);
 		createEAttribute(serviceRefEClass, SERVICE_REF__STATUS);
-		createEOperation(serviceRefEClass, SERVICE_REF___GET_INTERFACE_NAME);
 
 		serviceResourceListenerEClass = createEClass(SERVICE_RESOURCE_LISTENER);
 		createEAttribute(serviceResourceListenerEClass, SERVICE_RESOURCE_LISTENER__INTERFACE_NAME);
@@ -915,7 +871,7 @@ public class ApplicationPackageImpl extends EPackageImpl implements ApplicationP
 		serviceServletEClass.getESuperTypes().add(this.getServiceRef());
 		serviceTesterEClass.getESuperTypes().add(this.getServiceRef());
 
-		// Initialize classes, features, and operations; add parameters
+		// Initialize classes and features; add operations and parameters
 		initEClass(applicationEClass, Application.class, "Application", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getApplication_Commands(), this.getServiceCommandProvider(), null, "commands", null, 0, -1, Application.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getApplication_Components(), this.getApplicationComponent(), null, "components", null, 0, -1, Application.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -937,7 +893,7 @@ public class ApplicationPackageImpl extends EPackageImpl implements ApplicationP
 
 		initEClass(applicationManagerEClass, ApplicationManager.class, "ApplicationManager", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-		EOperation op = initEOperation(getApplicationManager__Start__Class_Application_OutputStream(), this.getApplication(), "start", 1, 1, IS_UNIQUE, IS_ORDERED);
+		EOperation op = addEOperation(applicationManagerEClass, this.getApplication(), "start", 1, 1, IS_UNIQUE, IS_ORDERED);
 		EGenericType g1 = createEGenericType(ecorePackage.getEJavaClass());
 		EGenericType g2 = createEGenericType();
 		g1.getETypeArguments().add(g2);
@@ -945,10 +901,10 @@ public class ApplicationPackageImpl extends EPackageImpl implements ApplicationP
 		addEParameter(op, this.getApplication(), "application", 1, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, theUtilPackage.getJavaOutputStream(), "output", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		op = initEOperation(getApplicationManager__Restart__Application(), ecorePackage.getEBoolean(), "restart", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = addEOperation(applicationManagerEClass, ecorePackage.getEBoolean(), "restart", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, this.getApplication(), "application", 1, 1, IS_UNIQUE, IS_ORDERED);
 
-		op = initEOperation(getApplicationManager__Stop__Application(), ecorePackage.getEBoolean(), "stop", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = addEOperation(applicationManagerEClass, ecorePackage.getEBoolean(), "stop", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, this.getApplication(), "application", 1, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(applicationModuleEClass, ApplicationModule.class, "ApplicationModule", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -971,7 +927,7 @@ public class ApplicationPackageImpl extends EPackageImpl implements ApplicationP
 		initEAttribute(getServiceRef_ClassName(), ecorePackage.getEString(), "className", null, 1, 1, ServiceRef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getServiceRef_Status(), this.getServiceStatus(), "status", null, 1, 1, ServiceRef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEOperation(getServiceRef__GetInterfaceName(), ecorePackage.getEString(), "getInterfaceName", 1, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(serviceRefEClass, ecorePackage.getEString(), "getInterfaceName", 1, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(serviceResourceListenerEClass, ServiceResourceListener.class, "ServiceResourceListener", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getServiceResourceListener_InterfaceName(), ecorePackage.getEString(), "interfaceName", "org.abchip.mimo.resource.ResourceListener", 1, 1, ServiceResourceListener.class, !IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

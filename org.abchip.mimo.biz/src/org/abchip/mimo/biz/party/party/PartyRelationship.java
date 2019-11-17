@@ -54,7 +54,7 @@ public interface PartyRelationship extends BizEntityTyped<PartyRelationshipType>
 	 * @return the value of the '<em>Comments</em>' attribute.
 	 * @see #setComments(String)
 	 * @see org.abchip.mimo.biz.party.party.PartyPackage#getPartyRelationship_Comments()
-	 * @model
+	 * @model annotation="mimo-ent-format type='comment' length='255'"
 	 * @generated
 	 */
 	String getComments();
@@ -81,6 +81,7 @@ public interface PartyRelationship extends BizEntityTyped<PartyRelationshipType>
 	 * @see #setFromDate(Date)
 	 * @see org.abchip.mimo.biz.party.party.PartyPackage#getPartyRelationship_FromDate()
 	 * @model required="true"
+	 *        annotation="mimo-ent-format type='date-time'"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
@@ -107,7 +108,7 @@ public interface PartyRelationship extends BizEntityTyped<PartyRelationshipType>
 	 * @return the value of the '<em>Permissions Enum Id</em>' attribute.
 	 * @see #setPermissionsEnumId(String)
 	 * @see org.abchip.mimo.biz.party.party.PartyPackage#getPartyRelationship_PermissionsEnumId()
-	 * @model
+	 * @model annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	String getPermissionsEnumId();
@@ -133,7 +134,7 @@ public interface PartyRelationship extends BizEntityTyped<PartyRelationshipType>
 	 * @return the value of the '<em>Position Title</em>' attribute.
 	 * @see #setPositionTitle(String)
 	 * @see org.abchip.mimo.biz.party.party.PartyPackage#getPartyRelationship_PositionTitle()
-	 * @model
+	 * @model annotation="mimo-ent-format type='name' length='100'"
 	 * @generated
 	 */
 	String getPositionTitle();
@@ -159,7 +160,7 @@ public interface PartyRelationship extends BizEntityTyped<PartyRelationshipType>
 	 * @return the value of the '<em>Relationship Name</em>' attribute.
 	 * @see #setRelationshipName(String)
 	 * @see org.abchip.mimo.biz.party.party.PartyPackage#getPartyRelationship_RelationshipName()
-	 * @model
+	 * @model annotation="mimo-ent-format type='name' length='100'"
 	 * @generated
 	 */
 	String getRelationshipName();
@@ -237,7 +238,7 @@ public interface PartyRelationship extends BizEntityTyped<PartyRelationshipType>
 	 * @return the value of the '<em>Thru Date</em>' attribute.
 	 * @see #setThruDate(Date)
 	 * @see org.abchip.mimo.biz.party.party.PartyPackage#getPartyRelationship_ThruDate()
-	 * @model
+	 * @model annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getThruDate();

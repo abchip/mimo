@@ -44,7 +44,7 @@ public interface PerfReviewItem extends BizEntityTyped<PerfReviewItemType> {
 	 * @return the value of the '<em>Comments</em>' attribute.
 	 * @see #setComments(String)
 	 * @see org.abchip.mimo.biz.humanres.ability.AbilityPackage#getPerfReviewItem_Comments()
-	 * @model
+	 * @model annotation="mimo-ent-format type='comment' length='255'"
 	 * @generated
 	 */
 	String getComments();
@@ -97,6 +97,7 @@ public interface PerfReviewItem extends BizEntityTyped<PerfReviewItemType> {
 	 * @see #setEmployeeRoleTypeId(String)
 	 * @see org.abchip.mimo.biz.humanres.ability.AbilityPackage#getPerfReviewItem_EmployeeRoleTypeId()
 	 * @model required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
@@ -150,6 +151,7 @@ public interface PerfReviewItem extends BizEntityTyped<PerfReviewItemType> {
 	 * @see #setPerfReviewId(String)
 	 * @see org.abchip.mimo.biz.humanres.ability.AbilityPackage#getPerfReviewItem_PerfReviewId()
 	 * @model required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
@@ -177,6 +179,7 @@ public interface PerfReviewItem extends BizEntityTyped<PerfReviewItemType> {
 	 * @see #setPerfReviewItemSeqId(String)
 	 * @see org.abchip.mimo.biz.humanres.ability.AbilityPackage#getPerfReviewItem_PerfReviewItemSeqId()
 	 * @model required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */

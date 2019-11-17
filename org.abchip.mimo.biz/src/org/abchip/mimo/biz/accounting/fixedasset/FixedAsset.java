@@ -104,7 +104,7 @@ public interface FixedAsset extends BizEntityTyped<FixedAssetType> {
 	 * @return the value of the '<em>Acquire Order Item Seq Id</em>' attribute.
 	 * @see #setAcquireOrderItemSeqId(String)
 	 * @see org.abchip.mimo.biz.accounting.fixedasset.FixedassetPackage#getFixedAsset_AcquireOrderItemSeqId()
-	 * @model
+	 * @model annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	String getAcquireOrderItemSeqId();
@@ -130,7 +130,7 @@ public interface FixedAsset extends BizEntityTyped<FixedAssetType> {
 	 * @return the value of the '<em>Actual End Of Life</em>' attribute.
 	 * @see #setActualEndOfLife(Date)
 	 * @see org.abchip.mimo.biz.accounting.fixedasset.FixedassetPackage#getFixedAsset_ActualEndOfLife()
-	 * @model
+	 * @model annotation="mimo-ent-format type='date'"
 	 * @generated
 	 */
 	Date getActualEndOfLife();
@@ -208,7 +208,7 @@ public interface FixedAsset extends BizEntityTyped<FixedAssetType> {
 	 * @return the value of the '<em>Date Acquired</em>' attribute.
 	 * @see #setDateAcquired(Date)
 	 * @see org.abchip.mimo.biz.accounting.fixedasset.FixedassetPackage#getFixedAsset_DateAcquired()
-	 * @model
+	 * @model annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getDateAcquired();
@@ -234,7 +234,7 @@ public interface FixedAsset extends BizEntityTyped<FixedAssetType> {
 	 * @return the value of the '<em>Date Last Serviced</em>' attribute.
 	 * @see #setDateLastServiced(Date)
 	 * @see org.abchip.mimo.biz.accounting.fixedasset.FixedassetPackage#getFixedAsset_DateLastServiced()
-	 * @model
+	 * @model annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getDateLastServiced();
@@ -260,7 +260,7 @@ public interface FixedAsset extends BizEntityTyped<FixedAssetType> {
 	 * @return the value of the '<em>Date Next Service</em>' attribute.
 	 * @see #setDateNextService(Date)
 	 * @see org.abchip.mimo.biz.accounting.fixedasset.FixedassetPackage#getFixedAsset_DateNextService()
-	 * @model
+	 * @model annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getDateNextService();
@@ -286,7 +286,7 @@ public interface FixedAsset extends BizEntityTyped<FixedAssetType> {
 	 * @return the value of the '<em>Depreciation</em>' attribute.
 	 * @see #setDepreciation(BigDecimal)
 	 * @see org.abchip.mimo.biz.accounting.fixedasset.FixedassetPackage#getFixedAsset_Depreciation()
-	 * @model
+	 * @model annotation="mimo-ent-format type='currency-amount' precision='18' scale='2'"
 	 * @generated
 	 */
 	BigDecimal getDepreciation();
@@ -312,7 +312,7 @@ public interface FixedAsset extends BizEntityTyped<FixedAssetType> {
 	 * @return the value of the '<em>Expected End Of Life</em>' attribute.
 	 * @see #setExpectedEndOfLife(Date)
 	 * @see org.abchip.mimo.biz.accounting.fixedasset.FixedassetPackage#getFixedAsset_ExpectedEndOfLife()
-	 * @model
+	 * @model annotation="mimo-ent-format type='date'"
 	 * @generated
 	 */
 	Date getExpectedEndOfLife();
@@ -338,7 +338,7 @@ public interface FixedAsset extends BizEntityTyped<FixedAssetType> {
 	 * @return the value of the '<em>Fixed Asset Name</em>' attribute.
 	 * @see #setFixedAssetName(String)
 	 * @see org.abchip.mimo.biz.accounting.fixedasset.FixedassetPackage#getFixedAsset_FixedAssetName()
-	 * @model
+	 * @model annotation="mimo-ent-format type='name' length='100'"
 	 * @generated
 	 */
 	String getFixedAssetName();
@@ -416,7 +416,7 @@ public interface FixedAsset extends BizEntityTyped<FixedAssetType> {
 	 * @return the value of the '<em>Located At Location Seq Id</em>' attribute.
 	 * @see #setLocatedAtLocationSeqId(String)
 	 * @see org.abchip.mimo.biz.accounting.fixedasset.FixedassetPackage#getFixedAsset_LocatedAtLocationSeqId()
-	 * @model
+	 * @model annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	String getLocatedAtLocationSeqId();
@@ -468,7 +468,7 @@ public interface FixedAsset extends BizEntityTyped<FixedAssetType> {
 	 * @return the value of the '<em>Production Capacity</em>' attribute.
 	 * @see #setProductionCapacity(BigDecimal)
 	 * @see org.abchip.mimo.biz.accounting.fixedasset.FixedassetPackage#getFixedAsset_ProductionCapacity()
-	 * @model
+	 * @model annotation="mimo-ent-format type='fixed-point' precision='18' scale='6'"
 	 * @generated
 	 */
 	BigDecimal getProductionCapacity();
@@ -494,7 +494,7 @@ public interface FixedAsset extends BizEntityTyped<FixedAssetType> {
 	 * @return the value of the '<em>Purchase Cost</em>' attribute.
 	 * @see #setPurchaseCost(BigDecimal)
 	 * @see org.abchip.mimo.biz.accounting.fixedasset.FixedassetPackage#getFixedAsset_PurchaseCost()
-	 * @model
+	 * @model annotation="mimo-ent-format type='currency-amount' precision='18' scale='2'"
 	 * @generated
 	 */
 	BigDecimal getPurchaseCost();
@@ -520,7 +520,7 @@ public interface FixedAsset extends BizEntityTyped<FixedAssetType> {
 	 * @return the value of the '<em>Purchase Cost Uom Id</em>' attribute.
 	 * @see #setPurchaseCostUomId(String)
 	 * @see org.abchip.mimo.biz.accounting.fixedasset.FixedassetPackage#getFixedAsset_PurchaseCostUomId()
-	 * @model
+	 * @model annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	String getPurchaseCostUomId();
@@ -572,7 +572,7 @@ public interface FixedAsset extends BizEntityTyped<FixedAssetType> {
 	 * @return the value of the '<em>Salvage Value</em>' attribute.
 	 * @see #setSalvageValue(BigDecimal)
 	 * @see org.abchip.mimo.biz.accounting.fixedasset.FixedassetPackage#getFixedAsset_SalvageValue()
-	 * @model
+	 * @model annotation="mimo-ent-format type='currency-amount' precision='18' scale='2'"
 	 * @generated
 	 */
 	BigDecimal getSalvageValue();
@@ -598,7 +598,7 @@ public interface FixedAsset extends BizEntityTyped<FixedAssetType> {
 	 * @return the value of the '<em>Serial Number</em>' attribute.
 	 * @see #setSerialNumber(String)
 	 * @see org.abchip.mimo.biz.accounting.fixedasset.FixedassetPackage#getFixedAsset_SerialNumber()
-	 * @model
+	 * @model annotation="mimo-ent-format type='long-varchar' length='255'"
 	 * @generated
 	 */
 	String getSerialNumber();
@@ -650,7 +650,9 @@ public interface FixedAsset extends BizEntityTyped<FixedAssetType> {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Fixed Asset Attributes</em>' attribute list.
 	 * @see org.abchip.mimo.biz.accounting.fixedasset.FixedassetPackage#getFixedAsset_FixedAssetAttributes()
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='FixedAssetAttribute'"
 	 * @generated
 	 */
@@ -667,7 +669,9 @@ public interface FixedAsset extends BizEntityTyped<FixedAssetType> {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Fixed Asset Idents</em>' attribute list.
 	 * @see org.abchip.mimo.biz.accounting.fixedasset.FixedassetPackage#getFixedAsset_FixedAssetIdents()
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='FixedAssetIdent'"
 	 * @generated
 	 */
@@ -684,7 +688,9 @@ public interface FixedAsset extends BizEntityTyped<FixedAssetType> {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Fixed Asset Maints</em>' attribute list.
 	 * @see org.abchip.mimo.biz.accounting.fixedasset.FixedassetPackage#getFixedAsset_FixedAssetMaints()
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='FixedAssetMaint'"
 	 * @generated
 	 */
@@ -701,7 +707,9 @@ public interface FixedAsset extends BizEntityTyped<FixedAssetType> {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Fixed Asset Registrations</em>' attribute list.
 	 * @see org.abchip.mimo.biz.accounting.fixedasset.FixedassetPackage#getFixedAsset_FixedAssetRegistrations()
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='FixedAssetRegistration'"
 	 * @generated
 	 */
@@ -710,7 +718,8 @@ public interface FixedAsset extends BizEntityTyped<FixedAssetType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='AccommodationMap' route='fixedAssetId'"
 	 * @generated
 	 */
@@ -719,7 +728,8 @@ public interface FixedAsset extends BizEntityTyped<FixedAssetType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='AccommodationSpot' route='fixedAssetId'"
 	 * @generated
 	 */
@@ -728,7 +738,8 @@ public interface FixedAsset extends BizEntityTyped<FixedAssetType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='AcctgTrans' route='fixedAssetId'"
 	 * @generated
 	 */
@@ -737,7 +748,8 @@ public interface FixedAsset extends BizEntityTyped<FixedAssetType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='FixedAsset' route='parentFixedAssetId'"
 	 * @generated
 	 */
@@ -746,7 +758,8 @@ public interface FixedAsset extends BizEntityTyped<FixedAssetType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='CostComponent' route='fixedAssetId'"
 	 * @generated
 	 */
@@ -755,7 +768,8 @@ public interface FixedAsset extends BizEntityTyped<FixedAssetType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='Delivery' route='fixedAssetId'"
 	 * @generated
 	 */
@@ -764,7 +778,9 @@ public interface FixedAsset extends BizEntityTyped<FixedAssetType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='FixedAssetDepMethod' route='fixedAssetId'"
 	 * @generated
 	 */
@@ -773,7 +789,8 @@ public interface FixedAsset extends BizEntityTyped<FixedAssetType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='InventoryItem' route='fixedAssetId'"
 	 * @generated
 	 */
@@ -782,7 +799,8 @@ public interface FixedAsset extends BizEntityTyped<FixedAssetType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='Requirement' route='fixedAssetId'"
 	 * @generated
 	 */
@@ -791,7 +809,8 @@ public interface FixedAsset extends BizEntityTyped<FixedAssetType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='WorkEffort' route='fixedAssetId'"
 	 * @generated
 	 */
@@ -861,6 +880,7 @@ public interface FixedAsset extends BizEntityTyped<FixedAssetType> {
 	 * @see #setFixedAssetId(String)
 	 * @see org.abchip.mimo.biz.accounting.fixedasset.FixedassetPackage#getFixedAsset_FixedAssetId()
 	 * @model id="true" required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */

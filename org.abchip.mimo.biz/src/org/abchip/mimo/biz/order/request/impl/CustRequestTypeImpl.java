@@ -7,7 +7,6 @@
  */
 package org.abchip.mimo.biz.order.request.impl;
 
-import java.lang.reflect.InvocationTargetException;
 import java.util.List;
 
 import org.abchip.mimo.biz.impl.BizEntityTypeImpl;
@@ -15,7 +14,6 @@ import org.abchip.mimo.biz.order.request.CustRequest;
 import org.abchip.mimo.biz.order.request.CustRequestType;
 import org.abchip.mimo.biz.order.request.RequestPackage;
 import org.abchip.mimo.biz.party.party.Party;
-import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 
 /**
@@ -218,26 +216,6 @@ public class CustRequestTypeImpl extends BizEntityTypeImpl<CustRequest> implemen
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
-		switch (operationID) {
-			case RequestPackage.CUST_REQUEST_TYPE___CHILD_CUST_REQUEST_TYPES:
-				return childCustRequestTypes();
-			case RequestPackage.CUST_REQUEST_TYPE___CUST_REQUEST_CATEGORIES:
-				return custRequestCategories();
-			case RequestPackage.CUST_REQUEST_TYPE___CUST_REQUEST_RESOLUTIONS:
-				return custRequestResolutions();
-			case RequestPackage.CUST_REQUEST_TYPE___CUST_REQUESTS:
-				return custRequests();
-		}
-		return super.eInvoke(operationID, arguments);
 	}
 
 } //CustRequestTypeImpl

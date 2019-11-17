@@ -7,7 +7,6 @@
  */
 package org.abchip.mimo.biz.party.communication.impl;
 
-import java.lang.reflect.InvocationTargetException;
 import java.util.Date;
 import java.util.List;
 
@@ -23,7 +22,6 @@ import org.abchip.mimo.biz.party.contact.ContactMech;
 import org.abchip.mimo.biz.party.contact.ContactMechType;
 import org.abchip.mimo.biz.party.party.Party;
 import org.abchip.mimo.biz.party.party.RoleType;
-import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 
 /**
@@ -671,32 +669,6 @@ public class CommunicationEventImpl extends BizEntityTypedImpl<CommunicationEven
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
-		switch (operationID) {
-			case CommunicationPackage.COMMUNICATION_EVENT___COMMUNICATION_EVENT_ORDERS:
-				return communicationEventOrders();
-			case CommunicationPackage.COMMUNICATION_EVENT___COMMUNICATION_EVENT_PRODUCTS:
-				return communicationEventProducts();
-			case CommunicationPackage.COMMUNICATION_EVENT___COMMUNICATION_EVENT_PURPOSES:
-				return communicationEventPurposes();
-			case CommunicationPackage.COMMUNICATION_EVENT___COMMUNICATION_EVENT_RETURNS:
-				return communicationEventReturns();
-			case CommunicationPackage.COMMUNICATION_EVENT___COMMUNICATION_EVENT_WORK_EFFS:
-				return communicationEventWorkEffs();
-			case CommunicationPackage.COMMUNICATION_EVENT___CUST_REQUEST_COMM_EVENTS:
-				return custRequestCommEvents();
-			case CommunicationPackage.COMMUNICATION_EVENT___SUBSCRIPTION_COMM_EVENTS:
-				return subscriptionCommEvents();
-		}
-		return super.eInvoke(operationID, arguments);
 	}
 
 	/**

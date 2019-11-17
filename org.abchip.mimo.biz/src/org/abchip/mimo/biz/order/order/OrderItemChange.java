@@ -54,7 +54,7 @@ public interface OrderItemChange extends BizEntity {
 	 * @return the value of the '<em>Cancel Quantity</em>' attribute.
 	 * @see #setCancelQuantity(BigDecimal)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderItemChange_CancelQuantity()
-	 * @model
+	 * @model annotation="mimo-ent-format type='fixed-point' precision='18' scale='6'"
 	 * @generated
 	 */
 	BigDecimal getCancelQuantity();
@@ -80,7 +80,7 @@ public interface OrderItemChange extends BizEntity {
 	 * @return the value of the '<em>Change Comments</em>' attribute.
 	 * @see #setChangeComments(String)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderItemChange_ChangeComments()
-	 * @model
+	 * @model annotation="mimo-ent-format type='comment' length='255'"
 	 * @generated
 	 */
 	String getChangeComments();
@@ -106,7 +106,7 @@ public interface OrderItemChange extends BizEntity {
 	 * @return the value of the '<em>Change Datetime</em>' attribute.
 	 * @see #setChangeDatetime(Date)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderItemChange_ChangeDatetime()
-	 * @model
+	 * @model annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getChangeDatetime();
@@ -184,7 +184,7 @@ public interface OrderItemChange extends BizEntity {
 	 * @return the value of the '<em>Item Description</em>' attribute.
 	 * @see #setItemDescription(String)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderItemChange_ItemDescription()
-	 * @model
+	 * @model annotation="mimo-ent-format type='description' length='255'"
 	 * @generated
 	 */
 	String getItemDescription();
@@ -237,6 +237,7 @@ public interface OrderItemChange extends BizEntity {
 	 * @see #setOrderItemChangeId(String)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderItemChange_OrderItemChangeId()
 	 * @model id="true" required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
@@ -263,7 +264,7 @@ public interface OrderItemChange extends BizEntity {
 	 * @return the value of the '<em>Order Item Seq Id</em>' attribute.
 	 * @see #setOrderItemSeqId(String)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderItemChange_OrderItemSeqId()
-	 * @model
+	 * @model annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	String getOrderItemSeqId();
@@ -289,7 +290,7 @@ public interface OrderItemChange extends BizEntity {
 	 * @return the value of the '<em>Quantity</em>' attribute.
 	 * @see #setQuantity(BigDecimal)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderItemChange_Quantity()
-	 * @model
+	 * @model annotation="mimo-ent-format type='fixed-point' precision='18' scale='6'"
 	 * @generated
 	 */
 	BigDecimal getQuantity();
@@ -341,7 +342,7 @@ public interface OrderItemChange extends BizEntity {
 	 * @return the value of the '<em>Unit Price</em>' attribute.
 	 * @see #setUnitPrice(BigDecimal)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderItemChange_UnitPrice()
-	 * @model
+	 * @model annotation="mimo-ent-format type='currency-amount' precision='18' scale='2'"
 	 * @generated
 	 */
 	BigDecimal getUnitPrice();

@@ -77,6 +77,7 @@ import org.abchip.mimo.biz.entity.crypto.CryptoPackage;
 import org.abchip.mimo.biz.entity.crypto.impl.CryptoPackageImpl;
 import org.abchip.mimo.biz.entity.group.GroupPackage;
 import org.abchip.mimo.biz.entity.group.impl.GroupPackageImpl;
+import org.abchip.mimo.biz.entity.impl.EntityPackageImpl;
 import org.abchip.mimo.biz.entity.sequence.SequencePackage;
 import org.abchip.mimo.biz.entity.sequence.impl.SequencePackageImpl;
 import org.abchip.mimo.biz.entity.synchronization.SynchronizationPackage;
@@ -210,7 +211,6 @@ import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EGenericType;
-import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 
 import org.eclipse.emf.ecore.EReference;
@@ -443,6 +443,8 @@ public class EmploymentPackageImpl extends EPackageImpl implements EmploymentPac
 		SurveyPackageImpl theSurveyPackage = (SurveyPackageImpl)(registeredPackage instanceof SurveyPackageImpl ? registeredPackage : SurveyPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(WebsitePackage.eNS_URI);
 		WebsitePackageImpl theWebsitePackage = (WebsitePackageImpl)(registeredPackage instanceof WebsitePackageImpl ? registeredPackage : WebsitePackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(org.abchip.mimo.biz.entity.EntityPackage.eNS_URI);
+		EntityPackageImpl theEntityPackage = (EntityPackageImpl)(registeredPackage instanceof EntityPackageImpl ? registeredPackage : org.abchip.mimo.biz.entity.EntityPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(AuditPackage.eNS_URI);
 		AuditPackageImpl theAuditPackage = (AuditPackageImpl)(registeredPackage instanceof AuditPackageImpl ? registeredPackage : AuditPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(CryptoPackage.eNS_URI);
@@ -596,6 +598,7 @@ public class EmploymentPackageImpl extends EPackageImpl implements EmploymentPac
 		thePreferencePackage.createPackageContents();
 		theSurveyPackage.createPackageContents();
 		theWebsitePackage.createPackageContents();
+		theEntityPackage.createPackageContents();
 		theAuditPackage.createPackageContents();
 		theCryptoPackage.createPackageContents();
 		theGroupPackage.createPackageContents();
@@ -690,6 +693,7 @@ public class EmploymentPackageImpl extends EPackageImpl implements EmploymentPac
 		thePreferencePackage.initializePackageContents();
 		theSurveyPackage.initializePackageContents();
 		theWebsitePackage.initializePackageContents();
+		theEntityPackage.initializePackageContents();
 		theAuditPackage.initializePackageContents();
 		theCryptoPackage.initializePackageContents();
 		theGroupPackage.initializePackageContents();
@@ -826,16 +830,6 @@ public class EmploymentPackageImpl extends EPackageImpl implements EmploymentPac
 	@Override
 	public EReference getBenefitType_ParentTypeId() {
 		return (EReference)benefitTypeEClass.getEStructuralFeatures().get(5);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EOperation getBenefitType__ChildBenefitTypes() {
-		return benefitTypeEClass.getEOperations().get(0);
 	}
 
 	/**
@@ -984,16 +978,6 @@ public class EmploymentPackageImpl extends EPackageImpl implements EmploymentPac
 	 * @generated
 	 */
 	@Override
-	public EOperation getEmplLeaveReasonType__ChildEmplLeaveReasonTypes() {
-		return emplLeaveReasonTypeEClass.getEOperations().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public EClass getEmplLeaveType() {
 		return emplLeaveTypeEClass;
 	}
@@ -1036,16 +1020,6 @@ public class EmploymentPackageImpl extends EPackageImpl implements EmploymentPac
 	@Override
 	public EReference getEmplLeaveType_ParentTypeId() {
 		return (EReference)emplLeaveTypeEClass.getEStructuralFeatures().get(3);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EOperation getEmplLeaveType__ChildEmplLeaveTypes() {
-		return emplLeaveTypeEClass.getEOperations().get(0);
 	}
 
 	/**
@@ -1286,26 +1260,6 @@ public class EmploymentPackageImpl extends EPackageImpl implements EmploymentPac
 	@Override
 	public EReference getEmploymentAppSourceType_ParentTypeId() {
 		return (EReference)employmentAppSourceTypeEClass.getEStructuralFeatures().get(3);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EOperation getEmploymentAppSourceType__ChildEmploymentAppSourceTypes() {
-		return employmentAppSourceTypeEClass.getEOperations().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EOperation getEmploymentAppSourceType__EmploymentApps() {
-		return employmentAppSourceTypeEClass.getEOperations().get(1);
 	}
 
 	/**
@@ -1904,16 +1858,6 @@ public class EmploymentPackageImpl extends EPackageImpl implements EmploymentPac
 	 * @generated
 	 */
 	@Override
-	public EOperation getTerminationType__ChildTerminationTypes() {
-		return terminationTypeEClass.getEOperations().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public EClass getUnemploymentClaim() {
 		return unemploymentClaimEClass;
 	}
@@ -2054,7 +1998,6 @@ public class EmploymentPackageImpl extends EPackageImpl implements EmploymentPac
 		createEAttribute(benefitTypeEClass, BENEFIT_TYPE__EMPLOYER_PAID_PERCENTAGE);
 		createEAttribute(benefitTypeEClass, BENEFIT_TYPE__HAS_TABLE);
 		createEReference(benefitTypeEClass, BENEFIT_TYPE__PARENT_TYPE_ID);
-		createEOperation(benefitTypeEClass, BENEFIT_TYPE___CHILD_BENEFIT_TYPES);
 
 		emplLeaveEClass = createEClass(EMPL_LEAVE);
 		createEAttribute(emplLeaveEClass, EMPL_LEAVE__FROM_DATE);
@@ -2071,14 +2014,12 @@ public class EmploymentPackageImpl extends EPackageImpl implements EmploymentPac
 		createEAttribute(emplLeaveReasonTypeEClass, EMPL_LEAVE_REASON_TYPE__DESCRIPTION);
 		createEAttribute(emplLeaveReasonTypeEClass, EMPL_LEAVE_REASON_TYPE__HAS_TABLE);
 		createEReference(emplLeaveReasonTypeEClass, EMPL_LEAVE_REASON_TYPE__PARENT_TYPE_ID);
-		createEOperation(emplLeaveReasonTypeEClass, EMPL_LEAVE_REASON_TYPE___CHILD_EMPL_LEAVE_REASON_TYPES);
 
 		emplLeaveTypeEClass = createEClass(EMPL_LEAVE_TYPE);
 		createEAttribute(emplLeaveTypeEClass, EMPL_LEAVE_TYPE__LEAVE_TYPE_ID);
 		createEAttribute(emplLeaveTypeEClass, EMPL_LEAVE_TYPE__DESCRIPTION);
 		createEAttribute(emplLeaveTypeEClass, EMPL_LEAVE_TYPE__HAS_TABLE);
 		createEReference(emplLeaveTypeEClass, EMPL_LEAVE_TYPE__PARENT_TYPE_ID);
-		createEOperation(emplLeaveTypeEClass, EMPL_LEAVE_TYPE___CHILD_EMPL_LEAVE_TYPES);
 
 		employmentEClass = createEClass(EMPLOYMENT);
 		createEAttribute(employmentEClass, EMPLOYMENT__ROLE_TYPE_ID_FROM);
@@ -2106,8 +2047,6 @@ public class EmploymentPackageImpl extends EPackageImpl implements EmploymentPac
 		createEAttribute(employmentAppSourceTypeEClass, EMPLOYMENT_APP_SOURCE_TYPE__DESCRIPTION);
 		createEAttribute(employmentAppSourceTypeEClass, EMPLOYMENT_APP_SOURCE_TYPE__HAS_TABLE);
 		createEReference(employmentAppSourceTypeEClass, EMPLOYMENT_APP_SOURCE_TYPE__PARENT_TYPE_ID);
-		createEOperation(employmentAppSourceTypeEClass, EMPLOYMENT_APP_SOURCE_TYPE___CHILD_EMPLOYMENT_APP_SOURCE_TYPES);
-		createEOperation(employmentAppSourceTypeEClass, EMPLOYMENT_APP_SOURCE_TYPE___EMPLOYMENT_APPS);
 
 		partyBenefitEClass = createEClass(PARTY_BENEFIT);
 		createEAttribute(partyBenefitEClass, PARTY_BENEFIT__ROLE_TYPE_ID_FROM);
@@ -2174,7 +2113,6 @@ public class EmploymentPackageImpl extends EPackageImpl implements EmploymentPac
 		createEAttribute(terminationTypeEClass, TERMINATION_TYPE__DESCRIPTION);
 		createEAttribute(terminationTypeEClass, TERMINATION_TYPE__HAS_TABLE);
 		createEReference(terminationTypeEClass, TERMINATION_TYPE__PARENT_TYPE_ID);
-		createEOperation(terminationTypeEClass, TERMINATION_TYPE___CHILD_TERMINATION_TYPES);
 
 		unemploymentClaimEClass = createEClass(UNEMPLOYMENT_CLAIM);
 		createEAttribute(unemploymentClaimEClass, UNEMPLOYMENT_CLAIM__UNEMPLOYMENT_CLAIM_ID);
@@ -2248,7 +2186,7 @@ public class EmploymentPackageImpl extends EPackageImpl implements EmploymentPac
 		terminationTypeEClass.getESuperTypes().add(theBizPackage.getBizEntity());
 		unemploymentClaimEClass.getESuperTypes().add(theBizPackage.getBizEntity());
 
-		// Initialize classes, features, and operations; add parameters
+		// Initialize classes and features; add operations and parameters
 		initEClass(benefitTypeEClass, BenefitType.class, "BenefitType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getBenefitType_BenefitTypeId(), ecorePackage.getEString(), "benefitTypeId", null, 1, 1, BenefitType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getBenefitType_BenefitName(), ecorePackage.getEString(), "benefitName", null, 0, 1, BenefitType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -2258,7 +2196,7 @@ public class EmploymentPackageImpl extends EPackageImpl implements EmploymentPac
 		initEReference(getBenefitType_ParentTypeId(), this.getBenefitType(), null, "parentTypeId", null, 0, 1, BenefitType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getBenefitType_ParentTypeId().getEKeys().add(this.getBenefitType_BenefitTypeId());
 
-		initEOperation(getBenefitType__ChildBenefitTypes(), ecorePackage.getEString(), "childBenefitTypes", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(benefitTypeEClass, ecorePackage.getEString(), "childBenefitTypes", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(emplLeaveEClass, EmplLeave.class, "EmplLeave", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getEmplLeave_FromDate(), ecorePackage.getEDate(), "fromDate", null, 1, 1, EmplLeave.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -2282,7 +2220,7 @@ public class EmploymentPackageImpl extends EPackageImpl implements EmploymentPac
 		initEReference(getEmplLeaveReasonType_ParentTypeId(), this.getEmplLeaveReasonType(), null, "parentTypeId", null, 0, 1, EmplLeaveReasonType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getEmplLeaveReasonType_ParentTypeId().getEKeys().add(this.getEmplLeaveReasonType_EmplLeaveReasonTypeId());
 
-		initEOperation(getEmplLeaveReasonType__ChildEmplLeaveReasonTypes(), ecorePackage.getEString(), "childEmplLeaveReasonTypes", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(emplLeaveReasonTypeEClass, ecorePackage.getEString(), "childEmplLeaveReasonTypes", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(emplLeaveTypeEClass, EmplLeaveType.class, "EmplLeaveType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getEmplLeaveType_LeaveTypeId(), ecorePackage.getEString(), "leaveTypeId", null, 1, 1, EmplLeaveType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -2291,7 +2229,7 @@ public class EmploymentPackageImpl extends EPackageImpl implements EmploymentPac
 		initEReference(getEmplLeaveType_ParentTypeId(), this.getEmplLeaveType(), null, "parentTypeId", null, 0, 1, EmplLeaveType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getEmplLeaveType_ParentTypeId().getEKeys().add(this.getEmplLeaveType_LeaveTypeId());
 
-		initEOperation(getEmplLeaveType__ChildEmplLeaveTypes(), ecorePackage.getEString(), "childEmplLeaveTypes", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(emplLeaveTypeEClass, ecorePackage.getEString(), "childEmplLeaveTypes", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(employmentEClass, Employment.class, "Employment", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getEmployment_RoleTypeIdFrom(), ecorePackage.getEString(), "roleTypeIdFrom", null, 1, 1, Employment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -2332,9 +2270,9 @@ public class EmploymentPackageImpl extends EPackageImpl implements EmploymentPac
 		initEReference(getEmploymentAppSourceType_ParentTypeId(), this.getEmploymentAppSourceType(), null, "parentTypeId", null, 0, 1, EmploymentAppSourceType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getEmploymentAppSourceType_ParentTypeId().getEKeys().add(this.getEmploymentAppSourceType_EmploymentAppSourceTypeId());
 
-		initEOperation(getEmploymentAppSourceType__ChildEmploymentAppSourceTypes(), ecorePackage.getEString(), "childEmploymentAppSourceTypes", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(employmentAppSourceTypeEClass, ecorePackage.getEString(), "childEmploymentAppSourceTypes", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		initEOperation(getEmploymentAppSourceType__EmploymentApps(), ecorePackage.getEString(), "employmentApps", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(employmentAppSourceTypeEClass, ecorePackage.getEString(), "employmentApps", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(partyBenefitEClass, PartyBenefit.class, "PartyBenefit", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getPartyBenefit_RoleTypeIdFrom(), ecorePackage.getEString(), "roleTypeIdFrom", null, 1, 1, PartyBenefit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -2414,7 +2352,7 @@ public class EmploymentPackageImpl extends EPackageImpl implements EmploymentPac
 		initEReference(getTerminationType_ParentTypeId(), this.getTerminationType(), null, "parentTypeId", null, 0, 1, TerminationType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getTerminationType_ParentTypeId().getEKeys().add(this.getTerminationType_TerminationTypeId());
 
-		initEOperation(getTerminationType__ChildTerminationTypes(), ecorePackage.getEString(), "childTerminationTypes", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(terminationTypeEClass, ecorePackage.getEString(), "childTerminationTypes", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(unemploymentClaimEClass, UnemploymentClaim.class, "UnemploymentClaim", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getUnemploymentClaim_UnemploymentClaimId(), ecorePackage.getEString(), "unemploymentClaimId", null, 1, 1, UnemploymentClaim.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -2432,6 +2370,8 @@ public class EmploymentPackageImpl extends EPackageImpl implements EmploymentPac
 		// Create annotations
 		// mimo-ent-frame
 		createMimoentframeAnnotations();
+		// mimo-ent-format
+		createMimoentformatAnnotations();
 		// mimo-ent-slot
 		createMimoentslotAnnotations();
 		// mimo-ent-domain
@@ -2497,6 +2437,547 @@ public class EmploymentPackageImpl extends EPackageImpl implements EmploymentPac
 	}
 
 	/**
+	 * Initializes the annotations for <b>mimo-ent-format</b>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void createMimoentformatAnnotations() {
+		String source = "mimo-ent-format";
+		addAnnotation
+		  (benefitTypeEClass.getEOperations().get(0),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (getBenefitType_BenefitTypeId(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (getBenefitType_BenefitName(),
+		   source,
+		   new String[] {
+			   "type", "name",
+			   "length", "100"
+		   });
+		addAnnotation
+		  (getBenefitType_Description(),
+		   source,
+		   new String[] {
+			   "type", "description",
+			   "length", "255"
+		   });
+		addAnnotation
+		  (getBenefitType_EmployerPaidPercentage(),
+		   source,
+		   new String[] {
+			   "type", "floating-point"
+		   });
+		addAnnotation
+		  (getBenefitType_HasTable(),
+		   source,
+		   new String[] {
+			   "type", "indicator",
+			   "length", "1"
+		   });
+		addAnnotation
+		  (getEmplLeave_FromDate(),
+		   source,
+		   new String[] {
+			   "type", "date-time"
+		   });
+		addAnnotation
+		  (getEmplLeave_Description(),
+		   source,
+		   new String[] {
+			   "type", "description",
+			   "length", "255"
+		   });
+		addAnnotation
+		  (getEmplLeave_ThruDate(),
+		   source,
+		   new String[] {
+			   "type", "date-time"
+		   });
+		addAnnotation
+		  (emplLeaveReasonTypeEClass.getEOperations().get(0),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (getEmplLeaveReasonType_EmplLeaveReasonTypeId(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (getEmplLeaveReasonType_Description(),
+		   source,
+		   new String[] {
+			   "type", "description",
+			   "length", "255"
+		   });
+		addAnnotation
+		  (getEmplLeaveReasonType_HasTable(),
+		   source,
+		   new String[] {
+			   "type", "indicator",
+			   "length", "1"
+		   });
+		addAnnotation
+		  (emplLeaveTypeEClass.getEOperations().get(0),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (getEmplLeaveType_LeaveTypeId(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (getEmplLeaveType_Description(),
+		   source,
+		   new String[] {
+			   "type", "description",
+			   "length", "255"
+		   });
+		addAnnotation
+		  (getEmplLeaveType_HasTable(),
+		   source,
+		   new String[] {
+			   "type", "indicator",
+			   "length", "1"
+		   });
+		addAnnotation
+		  (getEmployment_RoleTypeIdFrom(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (getEmployment_RoleTypeIdTo(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (getEmployment_FromDate(),
+		   source,
+		   new String[] {
+			   "type", "date-time"
+		   });
+		addAnnotation
+		  (getEmployment_ThruDate(),
+		   source,
+		   new String[] {
+			   "type", "date-time"
+		   });
+		addAnnotation
+		  (getEmploymentApp_ApplicationId(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (getEmploymentApp_ApplicationDate(),
+		   source,
+		   new String[] {
+			   "type", "date-time"
+		   });
+		addAnnotation
+		  (employmentAppSourceTypeEClass.getEOperations().get(0),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (employmentAppSourceTypeEClass.getEOperations().get(1),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (getEmploymentAppSourceType_EmploymentAppSourceTypeId(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (getEmploymentAppSourceType_Description(),
+		   source,
+		   new String[] {
+			   "type", "description",
+			   "length", "255"
+		   });
+		addAnnotation
+		  (getEmploymentAppSourceType_HasTable(),
+		   source,
+		   new String[] {
+			   "type", "indicator",
+			   "length", "1"
+		   });
+		addAnnotation
+		  (getPartyBenefit_RoleTypeIdFrom(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (getPartyBenefit_RoleTypeIdTo(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (getPartyBenefit_FromDate(),
+		   source,
+		   new String[] {
+			   "type", "date-time"
+		   });
+		addAnnotation
+		  (getPartyBenefit_ActualEmployerPaidPercent(),
+		   source,
+		   new String[] {
+			   "type", "floating-point"
+		   });
+		addAnnotation
+		  (getPartyBenefit_AvailableTime(),
+		   source,
+		   new String[] {
+			   "type", "numeric",
+			   "precision", "20",
+			   "scale", "0"
+		   });
+		addAnnotation
+		  (getPartyBenefit_Cost(),
+		   source,
+		   new String[] {
+			   "type", "currency-amount",
+			   "precision", "18",
+			   "scale", "2"
+		   });
+		addAnnotation
+		  (getPartyBenefit_ThruDate(),
+		   source,
+		   new String[] {
+			   "type", "date-time"
+		   });
+		addAnnotation
+		  (getPayGrade_PayGradeId(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (getPayGrade_Comments(),
+		   source,
+		   new String[] {
+			   "type", "comment",
+			   "length", "255"
+		   });
+		addAnnotation
+		  (getPayGrade_PayGradeName(),
+		   source,
+		   new String[] {
+			   "type", "name",
+			   "length", "100"
+		   });
+		addAnnotation
+		  (getPayHistory_RoleTypeIdFrom(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (getPayHistory_RoleTypeIdTo(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (getPayHistory_PartyIdFrom(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (getPayHistory_PartyIdTo(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (getPayHistory_FromDate(),
+		   source,
+		   new String[] {
+			   "type", "date-time"
+		   });
+		addAnnotation
+		  (getPayHistory_Amount(),
+		   source,
+		   new String[] {
+			   "type", "currency-amount",
+			   "precision", "18",
+			   "scale", "2"
+		   });
+		addAnnotation
+		  (getPayHistory_Comments(),
+		   source,
+		   new String[] {
+			   "type", "comment",
+			   "length", "255"
+		   });
+		addAnnotation
+		  (getPayHistory_SalaryStepSeqId(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (getPayHistory_ThruDate(),
+		   source,
+		   new String[] {
+			   "type", "date-time"
+		   });
+		addAnnotation
+		  (getPayrollPreference_RoleTypeId(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (getPayrollPreference_PayrollPreferenceSeqId(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (getPayrollPreference_AccountNumber(),
+		   source,
+		   new String[] {
+			   "type", "short-varchar",
+			   "length", "60"
+		   });
+		addAnnotation
+		  (getPayrollPreference_BankName(),
+		   source,
+		   new String[] {
+			   "type", "name",
+			   "length", "100"
+		   });
+		addAnnotation
+		  (getPayrollPreference_FlatAmount(),
+		   source,
+		   new String[] {
+			   "type", "currency-amount",
+			   "precision", "18",
+			   "scale", "2"
+		   });
+		addAnnotation
+		  (getPayrollPreference_FromDate(),
+		   source,
+		   new String[] {
+			   "type", "date-time"
+		   });
+		addAnnotation
+		  (getPayrollPreference_Percentage(),
+		   source,
+		   new String[] {
+			   "type", "floating-point"
+		   });
+		addAnnotation
+		  (getPayrollPreference_RoutingNumber(),
+		   source,
+		   new String[] {
+			   "type", "short-varchar",
+			   "length", "60"
+		   });
+		addAnnotation
+		  (getPayrollPreference_ThruDate(),
+		   source,
+		   new String[] {
+			   "type", "date-time"
+		   });
+		addAnnotation
+		  (getSalaryStep_SalaryStepSeqId(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (getSalaryStep_FromDate(),
+		   source,
+		   new String[] {
+			   "type", "date-time"
+		   });
+		addAnnotation
+		  (getSalaryStep_Amount(),
+		   source,
+		   new String[] {
+			   "type", "currency-amount",
+			   "precision", "18",
+			   "scale", "2"
+		   });
+		addAnnotation
+		  (getSalaryStep_CreatedByUserLogin(),
+		   source,
+		   new String[] {
+			   "type", "id-vlong",
+			   "length", "255"
+		   });
+		addAnnotation
+		  (getSalaryStep_DateModified(),
+		   source,
+		   new String[] {
+			   "type", "date-time"
+		   });
+		addAnnotation
+		  (getSalaryStep_LastModifiedByUserLogin(),
+		   source,
+		   new String[] {
+			   "type", "id-vlong",
+			   "length", "255"
+		   });
+		addAnnotation
+		  (getSalaryStep_ThruDate(),
+		   source,
+		   new String[] {
+			   "type", "date-time"
+		   });
+		addAnnotation
+		  (getTerminationReason_TerminationReasonId(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (getTerminationReason_Description(),
+		   source,
+		   new String[] {
+			   "type", "description",
+			   "length", "255"
+		   });
+		addAnnotation
+		  (terminationTypeEClass.getEOperations().get(0),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (getTerminationType_TerminationTypeId(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (getTerminationType_Description(),
+		   source,
+		   new String[] {
+			   "type", "description",
+			   "length", "255"
+		   });
+		addAnnotation
+		  (getTerminationType_HasTable(),
+		   source,
+		   new String[] {
+			   "type", "indicator",
+			   "length", "1"
+		   });
+		addAnnotation
+		  (getUnemploymentClaim_UnemploymentClaimId(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (getUnemploymentClaim_Description(),
+		   source,
+		   new String[] {
+			   "type", "description",
+			   "length", "255"
+		   });
+		addAnnotation
+		  (getUnemploymentClaim_FromDate(),
+		   source,
+		   new String[] {
+			   "type", "date-time"
+		   });
+		addAnnotation
+		  (getUnemploymentClaim_PartyIdFrom(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (getUnemploymentClaim_PartyIdTo(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (getUnemploymentClaim_RoleTypeIdFrom(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (getUnemploymentClaim_RoleTypeIdTo(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (getUnemploymentClaim_ThruDate(),
+		   source,
+		   new String[] {
+			   "type", "date-time"
+		   });
+		addAnnotation
+		  (getUnemploymentClaim_UnemploymentClaimDate(),
+		   source,
+		   new String[] {
+			   "type", "date-time"
+		   });
+	}
+
+	/**
 	 * Initializes the annotations for <b>mimo-ent-slot</b>.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2505,7 +2986,7 @@ public class EmploymentPackageImpl extends EPackageImpl implements EmploymentPac
 	protected void createMimoentslotAnnotations() {
 		String source = "mimo-ent-slot";
 		addAnnotation
-		  (getBenefitType__ChildBenefitTypes(),
+		  (benefitTypeEClass.getEOperations().get(0),
 		   source,
 		   new String[] {
 			   "derived", "true"
@@ -2523,7 +3004,7 @@ public class EmploymentPackageImpl extends EPackageImpl implements EmploymentPac
 			   "key", "true"
 		   });
 		addAnnotation
-		  (getEmplLeaveReasonType__ChildEmplLeaveReasonTypes(),
+		  (emplLeaveReasonTypeEClass.getEOperations().get(0),
 		   source,
 		   new String[] {
 			   "derived", "true"
@@ -2535,7 +3016,7 @@ public class EmploymentPackageImpl extends EPackageImpl implements EmploymentPac
 			   "key", "true"
 		   });
 		addAnnotation
-		  (getEmplLeaveType__ChildEmplLeaveTypes(),
+		  (emplLeaveTypeEClass.getEOperations().get(0),
 		   source,
 		   new String[] {
 			   "derived", "true"
@@ -2571,13 +3052,13 @@ public class EmploymentPackageImpl extends EPackageImpl implements EmploymentPac
 			   "key", "true"
 		   });
 		addAnnotation
-		  (getEmploymentAppSourceType__ChildEmploymentAppSourceTypes(),
+		  (employmentAppSourceTypeEClass.getEOperations().get(0),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (getEmploymentAppSourceType__EmploymentApps(),
+		  (employmentAppSourceTypeEClass.getEOperations().get(1),
 		   source,
 		   new String[] {
 			   "derived", "true"
@@ -2673,7 +3154,7 @@ public class EmploymentPackageImpl extends EPackageImpl implements EmploymentPac
 			   "key", "true"
 		   });
 		addAnnotation
-		  (getTerminationType__ChildTerminationTypes(),
+		  (terminationTypeEClass.getEOperations().get(0),
 		   source,
 		   new String[] {
 			   "derived", "true"
@@ -2701,7 +3182,7 @@ public class EmploymentPackageImpl extends EPackageImpl implements EmploymentPac
 	protected void createMimoentdomainAnnotations() {
 		String source = "mimo-ent-domain";
 		addAnnotation
-		  (getBenefitType__ChildBenefitTypes(),
+		  (benefitTypeEClass.getEOperations().get(0),
 		   source,
 		   new String[] {
 			   "frame", "BenefitType",
@@ -2711,7 +3192,7 @@ public class EmploymentPackageImpl extends EPackageImpl implements EmploymentPac
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (getEmplLeaveReasonType__ChildEmplLeaveReasonTypes(),
+		  (emplLeaveReasonTypeEClass.getEOperations().get(0),
 		   source,
 		   new String[] {
 			   "frame", "EmplLeaveReasonType",
@@ -2721,7 +3202,7 @@ public class EmploymentPackageImpl extends EPackageImpl implements EmploymentPac
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (getEmplLeaveType__ChildEmplLeaveTypes(),
+		  (emplLeaveTypeEClass.getEOperations().get(0),
 		   source,
 		   new String[] {
 			   "frame", "EmplLeaveType",
@@ -2731,7 +3212,7 @@ public class EmploymentPackageImpl extends EPackageImpl implements EmploymentPac
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (getEmploymentAppSourceType__ChildEmploymentAppSourceTypes(),
+		  (employmentAppSourceTypeEClass.getEOperations().get(0),
 		   source,
 		   new String[] {
 			   "frame", "EmploymentAppSourceType",
@@ -2741,7 +3222,7 @@ public class EmploymentPackageImpl extends EPackageImpl implements EmploymentPac
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (getEmploymentAppSourceType__EmploymentApps(),
+		  (employmentAppSourceTypeEClass.getEOperations().get(1),
 		   source,
 		   new String[] {
 			   "frame", "EmploymentApp",
@@ -2751,7 +3232,7 @@ public class EmploymentPackageImpl extends EPackageImpl implements EmploymentPac
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (getTerminationType__ChildTerminationTypes(),
+		  (terminationTypeEClass.getEOperations().get(0),
 		   source,
 		   new String[] {
 			   "frame", "TerminationType",

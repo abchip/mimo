@@ -39,6 +39,7 @@ public interface EntitySyncRemove extends BizEntity {
 	 * @see #setEntitySyncRemoveId(String)
 	 * @see org.abchip.mimo.biz.entity.synchronization.SynchronizationPackage#getEntitySyncRemove_EntitySyncRemoveId()
 	 * @model id="true" required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
@@ -65,7 +66,7 @@ public interface EntitySyncRemove extends BizEntity {
 	 * @return the value of the '<em>Primary Key Removed</em>' attribute.
 	 * @see #setPrimaryKeyRemoved(String)
 	 * @see org.abchip.mimo.biz.entity.synchronization.SynchronizationPackage#getEntitySyncRemove_PrimaryKeyRemoved()
-	 * @model
+	 * @model annotation="mimo-ent-format type='very-long'"
 	 * @generated
 	 */
 	String getPrimaryKeyRemoved();

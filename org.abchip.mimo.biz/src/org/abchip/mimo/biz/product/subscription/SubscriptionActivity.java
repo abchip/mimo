@@ -44,7 +44,7 @@ public interface SubscriptionActivity extends BizEntity {
 	 * @return the value of the '<em>Comments</em>' attribute.
 	 * @see #setComments(String)
 	 * @see org.abchip.mimo.biz.product.subscription.SubscriptionPackage#getSubscriptionActivity_Comments()
-	 * @model
+	 * @model annotation="mimo-ent-format type='comment' length='255'"
 	 * @generated
 	 */
 	String getComments();
@@ -70,7 +70,7 @@ public interface SubscriptionActivity extends BizEntity {
 	 * @return the value of the '<em>Date Sent</em>' attribute.
 	 * @see #setDateSent(Date)
 	 * @see org.abchip.mimo.biz.product.subscription.SubscriptionPackage#getSubscriptionActivity_DateSent()
-	 * @model
+	 * @model annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getDateSent();
@@ -97,6 +97,7 @@ public interface SubscriptionActivity extends BizEntity {
 	 * @see #setSubscriptionActivityId(String)
 	 * @see org.abchip.mimo.biz.product.subscription.SubscriptionPackage#getSubscriptionActivity_SubscriptionActivityId()
 	 * @model id="true" required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
@@ -123,7 +124,9 @@ public interface SubscriptionActivity extends BizEntity {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Subscription Fulfillment Pieces</em>' attribute list.
 	 * @see org.abchip.mimo.biz.product.subscription.SubscriptionPackage#getSubscriptionActivity_SubscriptionFulfillmentPieces()
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='SubscriptionFulfillmentPiece'"
 	 * @generated
 	 */

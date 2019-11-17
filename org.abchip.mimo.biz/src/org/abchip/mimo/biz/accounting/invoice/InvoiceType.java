@@ -43,7 +43,7 @@ public interface InvoiceType extends BizEntityType<Invoice> {
 	 * @return the value of the '<em>Description</em>' attribute.
 	 * @see #setDescription(String)
 	 * @see org.abchip.mimo.biz.accounting.invoice.InvoicePackage#getInvoiceType_Description()
-	 * @model
+	 * @model annotation="mimo-ent-format type='description' length='255'"
 	 * @generated
 	 */
 	String getDescription();
@@ -69,7 +69,7 @@ public interface InvoiceType extends BizEntityType<Invoice> {
 	 * @return the value of the '<em>Has Table</em>' attribute.
 	 * @see #setHasTable(boolean)
 	 * @see org.abchip.mimo.biz.accounting.invoice.InvoicePackage#getInvoiceType_HasTable()
-	 * @model
+	 * @model annotation="mimo-ent-format type='indicator' length='1'"
 	 * @generated
 	 */
 	boolean isHasTable();
@@ -121,7 +121,9 @@ public interface InvoiceType extends BizEntityType<Invoice> {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Invoice Type Attrs</em>' attribute list.
 	 * @see org.abchip.mimo.biz.accounting.invoice.InvoicePackage#getInvoiceType_InvoiceTypeAttrs()
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='InvoiceTypeAttr'"
 	 * @generated
 	 */
@@ -130,7 +132,8 @@ public interface InvoiceType extends BizEntityType<Invoice> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='InvoiceType' route='parentTypeId'"
 	 * @generated
 	 */
@@ -139,7 +142,9 @@ public interface InvoiceType extends BizEntityType<Invoice> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='InvoiceItemTypeMap' route='invoiceTypeId'"
 	 * @generated
 	 */
@@ -148,7 +153,8 @@ public interface InvoiceType extends BizEntityType<Invoice> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='Invoice' route='invoiceTypeId'"
 	 * @generated
 	 */
@@ -157,7 +163,8 @@ public interface InvoiceType extends BizEntityType<Invoice> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='PartyPrefDocTypeTpl' route='invoiceTypeId'"
 	 * @generated
 	 */
@@ -175,6 +182,7 @@ public interface InvoiceType extends BizEntityType<Invoice> {
 	 * @see #setInvoiceTypeId(String)
 	 * @see org.abchip.mimo.biz.accounting.invoice.InvoicePackage#getInvoiceType_InvoiceTypeId()
 	 * @model id="true" required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */

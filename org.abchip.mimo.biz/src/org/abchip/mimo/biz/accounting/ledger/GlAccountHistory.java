@@ -73,7 +73,7 @@ public interface GlAccountHistory extends BizEntity {
 	 * @return the value of the '<em>Ending Balance</em>' attribute.
 	 * @see #setEndingBalance(BigDecimal)
 	 * @see org.abchip.mimo.biz.accounting.ledger.LedgerPackage#getGlAccountHistory_EndingBalance()
-	 * @model
+	 * @model annotation="mimo-ent-format type='currency-amount' precision='18' scale='2'"
 	 * @generated
 	 */
 	BigDecimal getEndingBalance();
@@ -99,7 +99,7 @@ public interface GlAccountHistory extends BizEntity {
 	 * @return the value of the '<em>Opening Balance</em>' attribute.
 	 * @see #setOpeningBalance(BigDecimal)
 	 * @see org.abchip.mimo.biz.accounting.ledger.LedgerPackage#getGlAccountHistory_OpeningBalance()
-	 * @model
+	 * @model annotation="mimo-ent-format type='currency-amount' precision='18' scale='2'"
 	 * @generated
 	 */
 	BigDecimal getOpeningBalance();
@@ -151,7 +151,7 @@ public interface GlAccountHistory extends BizEntity {
 	 * @return the value of the '<em>Posted Credits</em>' attribute.
 	 * @see #setPostedCredits(BigDecimal)
 	 * @see org.abchip.mimo.biz.accounting.ledger.LedgerPackage#getGlAccountHistory_PostedCredits()
-	 * @model
+	 * @model annotation="mimo-ent-format type='currency-amount' precision='18' scale='2'"
 	 * @generated
 	 */
 	BigDecimal getPostedCredits();
@@ -177,7 +177,7 @@ public interface GlAccountHistory extends BizEntity {
 	 * @return the value of the '<em>Posted Debits</em>' attribute.
 	 * @see #setPostedDebits(BigDecimal)
 	 * @see org.abchip.mimo.biz.accounting.ledger.LedgerPackage#getGlAccountHistory_PostedDebits()
-	 * @model
+	 * @model annotation="mimo-ent-format type='currency-amount' precision='18' scale='2'"
 	 * @generated
 	 */
 	BigDecimal getPostedDebits();

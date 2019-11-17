@@ -7,14 +7,12 @@
  */
 package org.abchip.mimo.biz.order.quote.impl;
 
-import java.lang.reflect.InvocationTargetException;
 import java.util.List;
 
 import org.abchip.mimo.biz.impl.BizEntityTypeImpl;
 import org.abchip.mimo.biz.order.quote.Quote;
 import org.abchip.mimo.biz.order.quote.QuotePackage;
 import org.abchip.mimo.biz.order.quote.QuoteType;
-import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 
 /**
@@ -184,24 +182,6 @@ public class QuoteTypeImpl extends BizEntityTypeImpl<Quote> implements QuoteType
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
-		switch (operationID) {
-			case QuotePackage.QUOTE_TYPE___CHILD_QUOTE_TYPES:
-				return childQuoteTypes();
-			case QuotePackage.QUOTE_TYPE___PARTY_PREF_DOC_TYPE_TPLS:
-				return partyPrefDocTypeTpls();
-			case QuotePackage.QUOTE_TYPE___QUOTES:
-				return quotes();
-		}
-		return super.eInvoke(operationID, arguments);
 	}
 
 } //QuoteTypeImpl

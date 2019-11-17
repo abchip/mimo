@@ -56,7 +56,7 @@ public interface GlReconciliation extends BizEntity {
 	 * @return the value of the '<em>Created By User Login</em>' attribute.
 	 * @see #setCreatedByUserLogin(String)
 	 * @see org.abchip.mimo.biz.accounting.ledger.LedgerPackage#getGlReconciliation_CreatedByUserLogin()
-	 * @model
+	 * @model annotation="mimo-ent-format type='id-vlong' length='255'"
 	 * @generated
 	 */
 	String getCreatedByUserLogin();
@@ -82,7 +82,7 @@ public interface GlReconciliation extends BizEntity {
 	 * @return the value of the '<em>Created Date</em>' attribute.
 	 * @see #setCreatedDate(Date)
 	 * @see org.abchip.mimo.biz.accounting.ledger.LedgerPackage#getGlReconciliation_CreatedDate()
-	 * @model
+	 * @model annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getCreatedDate();
@@ -108,7 +108,7 @@ public interface GlReconciliation extends BizEntity {
 	 * @return the value of the '<em>Description</em>' attribute.
 	 * @see #setDescription(String)
 	 * @see org.abchip.mimo.biz.accounting.ledger.LedgerPackage#getGlReconciliation_Description()
-	 * @model
+	 * @model annotation="mimo-ent-format type='description' length='255'"
 	 * @generated
 	 */
 	String getDescription();
@@ -134,7 +134,7 @@ public interface GlReconciliation extends BizEntity {
 	 * @return the value of the '<em>Gl Reconciliation Name</em>' attribute.
 	 * @see #setGlReconciliationName(String)
 	 * @see org.abchip.mimo.biz.accounting.ledger.LedgerPackage#getGlReconciliation_GlReconciliationName()
-	 * @model
+	 * @model annotation="mimo-ent-format type='name' length='100'"
 	 * @generated
 	 */
 	String getGlReconciliationName();
@@ -160,7 +160,7 @@ public interface GlReconciliation extends BizEntity {
 	 * @return the value of the '<em>Last Modified By User Login</em>' attribute.
 	 * @see #setLastModifiedByUserLogin(String)
 	 * @see org.abchip.mimo.biz.accounting.ledger.LedgerPackage#getGlReconciliation_LastModifiedByUserLogin()
-	 * @model
+	 * @model annotation="mimo-ent-format type='id-vlong' length='255'"
 	 * @generated
 	 */
 	String getLastModifiedByUserLogin();
@@ -186,7 +186,7 @@ public interface GlReconciliation extends BizEntity {
 	 * @return the value of the '<em>Last Modified Date</em>' attribute.
 	 * @see #setLastModifiedDate(Date)
 	 * @see org.abchip.mimo.biz.accounting.ledger.LedgerPackage#getGlReconciliation_LastModifiedDate()
-	 * @model
+	 * @model annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getLastModifiedDate();
@@ -212,7 +212,7 @@ public interface GlReconciliation extends BizEntity {
 	 * @return the value of the '<em>Opening Balance</em>' attribute.
 	 * @see #setOpeningBalance(BigDecimal)
 	 * @see org.abchip.mimo.biz.accounting.ledger.LedgerPackage#getGlReconciliation_OpeningBalance()
-	 * @model
+	 * @model annotation="mimo-ent-format type='currency-amount' precision='18' scale='2'"
 	 * @generated
 	 */
 	BigDecimal getOpeningBalance();
@@ -264,7 +264,7 @@ public interface GlReconciliation extends BizEntity {
 	 * @return the value of the '<em>Reconciled Balance</em>' attribute.
 	 * @see #setReconciledBalance(BigDecimal)
 	 * @see org.abchip.mimo.biz.accounting.ledger.LedgerPackage#getGlReconciliation_ReconciledBalance()
-	 * @model
+	 * @model annotation="mimo-ent-format type='currency-amount' precision='18' scale='2'"
 	 * @generated
 	 */
 	BigDecimal getReconciledBalance();
@@ -290,7 +290,7 @@ public interface GlReconciliation extends BizEntity {
 	 * @return the value of the '<em>Reconciled Date</em>' attribute.
 	 * @see #setReconciledDate(Date)
 	 * @see org.abchip.mimo.biz.accounting.ledger.LedgerPackage#getGlReconciliation_ReconciledDate()
-	 * @model
+	 * @model annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getReconciledDate();
@@ -334,7 +334,8 @@ public interface GlReconciliation extends BizEntity {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='FinAccountTrans' route='glReconciliationId'"
 	 * @generated
 	 */
@@ -378,6 +379,7 @@ public interface GlReconciliation extends BizEntity {
 	 * @see #setGlReconciliationId(String)
 	 * @see org.abchip.mimo.biz.accounting.ledger.LedgerPackage#getGlReconciliation_GlReconciliationId()
 	 * @model id="true" required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */

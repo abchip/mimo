@@ -44,6 +44,7 @@ public interface ProductKeyword extends BizEntity {
 	 * @see #setKeyword(String)
 	 * @see org.abchip.mimo.biz.product.product.ProductPackage#getProductKeyword_Keyword()
 	 * @model required="true"
+	 *        annotation="mimo-ent-format type='short-varchar' length='60'"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
@@ -96,7 +97,7 @@ public interface ProductKeyword extends BizEntity {
 	 * @return the value of the '<em>Relevancy Weight</em>' attribute.
 	 * @see #setRelevancyWeight(long)
 	 * @see org.abchip.mimo.biz.product.product.ProductPackage#getProductKeyword_RelevancyWeight()
-	 * @model
+	 * @model annotation="mimo-ent-format type='numeric' precision='20' scale='0'"
 	 * @generated
 	 */
 	long getRelevancyWeight();

@@ -10,7 +10,6 @@ package org.abchip.mimo.biz.marketing.opportunity;
 import org.abchip.mimo.biz.BizPackage;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
@@ -262,69 +261,6 @@ public interface OpportunityPackage extends EPackage {
 	int SALES_FORECAST_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 16;
 
 	/**
-	 * The operation id for the '<em>Isa</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SALES_FORECAST___ISA = BizPackage.BIZ_ENTITY___ISA;
-
-	/**
-	 * The operation id for the '<em>Get Name</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SALES_FORECAST___GET_NAME = BizPackage.BIZ_ENTITY___GET_NAME;
-
-	/**
-	 * The operation id for the '<em>Get URI</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SALES_FORECAST___GET_URI = BizPackage.BIZ_ENTITY___GET_URI;
-
-	/**
-	 * The operation id for the '<em>Is Proxy</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SALES_FORECAST___IS_PROXY = BizPackage.BIZ_ENTITY___IS_PROXY;
-
-	/**
-	 * The operation id for the '<em>Child Sales Forecasts</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SALES_FORECAST___CHILD_SALES_FORECASTS = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Sales Forecast Histories</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SALES_FORECAST___SALES_FORECAST_HISTORIES = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 1;
-
-	/**
-	 * The number of operations of the '<em>Sales Forecast</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SALES_FORECAST_OPERATION_COUNT = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 2;
-
-	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.marketing.opportunity.impl.SalesForecastDetailImpl <em>Sales Forecast Detail</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -441,51 +377,6 @@ public interface OpportunityPackage extends EPackage {
 	 * @ordered
 	 */
 	int SALES_FORECAST_DETAIL_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 7;
-
-	/**
-	 * The operation id for the '<em>Isa</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SALES_FORECAST_DETAIL___ISA = BizPackage.BIZ_ENTITY___ISA;
-
-	/**
-	 * The operation id for the '<em>Get Name</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SALES_FORECAST_DETAIL___GET_NAME = BizPackage.BIZ_ENTITY___GET_NAME;
-
-	/**
-	 * The operation id for the '<em>Get URI</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SALES_FORECAST_DETAIL___GET_URI = BizPackage.BIZ_ENTITY___GET_URI;
-
-	/**
-	 * The operation id for the '<em>Is Proxy</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SALES_FORECAST_DETAIL___IS_PROXY = BizPackage.BIZ_ENTITY___IS_PROXY;
-
-	/**
-	 * The number of operations of the '<em>Sales Forecast Detail</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SALES_FORECAST_DETAIL_OPERATION_COUNT = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.marketing.opportunity.impl.SalesForecastHistoryImpl <em>Sales Forecast History</em>}' class.
@@ -685,51 +576,6 @@ public interface OpportunityPackage extends EPackage {
 	 * @ordered
 	 */
 	int SALES_FORECAST_HISTORY_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 16;
-
-	/**
-	 * The operation id for the '<em>Isa</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SALES_FORECAST_HISTORY___ISA = BizPackage.BIZ_ENTITY___ISA;
-
-	/**
-	 * The operation id for the '<em>Get Name</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SALES_FORECAST_HISTORY___GET_NAME = BizPackage.BIZ_ENTITY___GET_NAME;
-
-	/**
-	 * The operation id for the '<em>Get URI</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SALES_FORECAST_HISTORY___GET_URI = BizPackage.BIZ_ENTITY___GET_URI;
-
-	/**
-	 * The operation id for the '<em>Is Proxy</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SALES_FORECAST_HISTORY___IS_PROXY = BizPackage.BIZ_ENTITY___IS_PROXY;
-
-	/**
-	 * The number of operations of the '<em>Sales Forecast History</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SALES_FORECAST_HISTORY_OPERATION_COUNT = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.marketing.opportunity.impl.SalesOpportunityImpl <em>Sales Opportunity</em>}' class.
@@ -949,78 +795,6 @@ public interface OpportunityPackage extends EPackage {
 	int SALES_OPPORTUNITY_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 18;
 
 	/**
-	 * The operation id for the '<em>Isa</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SALES_OPPORTUNITY___ISA = BizPackage.BIZ_ENTITY___ISA;
-
-	/**
-	 * The operation id for the '<em>Get Name</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SALES_OPPORTUNITY___GET_NAME = BizPackage.BIZ_ENTITY___GET_NAME;
-
-	/**
-	 * The operation id for the '<em>Get URI</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SALES_OPPORTUNITY___GET_URI = BizPackage.BIZ_ENTITY___GET_URI;
-
-	/**
-	 * The operation id for the '<em>Is Proxy</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SALES_OPPORTUNITY___IS_PROXY = BizPackage.BIZ_ENTITY___IS_PROXY;
-
-	/**
-	 * The operation id for the '<em>Invoice Items</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SALES_OPPORTUNITY___INVOICE_ITEMS = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Order Items</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SALES_OPPORTUNITY___ORDER_ITEMS = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 1;
-
-	/**
-	 * The operation id for the '<em>Sales Opportunity Histories</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SALES_OPPORTUNITY___SALES_OPPORTUNITY_HISTORIES = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 2;
-
-	/**
-	 * The number of operations of the '<em>Sales Opportunity</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SALES_OPPORTUNITY_OPERATION_COUNT = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 3;
-
-	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.marketing.opportunity.impl.SalesOpportunityCompetitorImpl <em>Sales Opportunity Competitor</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1119,51 +893,6 @@ public interface OpportunityPackage extends EPackage {
 	 * @ordered
 	 */
 	int SALES_OPPORTUNITY_COMPETITOR_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 5;
-
-	/**
-	 * The operation id for the '<em>Isa</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SALES_OPPORTUNITY_COMPETITOR___ISA = BizPackage.BIZ_ENTITY___ISA;
-
-	/**
-	 * The operation id for the '<em>Get Name</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SALES_OPPORTUNITY_COMPETITOR___GET_NAME = BizPackage.BIZ_ENTITY___GET_NAME;
-
-	/**
-	 * The operation id for the '<em>Get URI</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SALES_OPPORTUNITY_COMPETITOR___GET_URI = BizPackage.BIZ_ENTITY___GET_URI;
-
-	/**
-	 * The operation id for the '<em>Is Proxy</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SALES_OPPORTUNITY_COMPETITOR___IS_PROXY = BizPackage.BIZ_ENTITY___IS_PROXY;
-
-	/**
-	 * The number of operations of the '<em>Sales Opportunity Competitor</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SALES_OPPORTUNITY_COMPETITOR_OPERATION_COUNT = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.marketing.opportunity.impl.SalesOpportunityHistoryImpl <em>Sales Opportunity History</em>}' class.
@@ -1329,51 +1058,6 @@ public interface OpportunityPackage extends EPackage {
 	int SALES_OPPORTUNITY_HISTORY_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 12;
 
 	/**
-	 * The operation id for the '<em>Isa</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SALES_OPPORTUNITY_HISTORY___ISA = BizPackage.BIZ_ENTITY___ISA;
-
-	/**
-	 * The operation id for the '<em>Get Name</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SALES_OPPORTUNITY_HISTORY___GET_NAME = BizPackage.BIZ_ENTITY___GET_NAME;
-
-	/**
-	 * The operation id for the '<em>Get URI</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SALES_OPPORTUNITY_HISTORY___GET_URI = BizPackage.BIZ_ENTITY___GET_URI;
-
-	/**
-	 * The operation id for the '<em>Is Proxy</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SALES_OPPORTUNITY_HISTORY___IS_PROXY = BizPackage.BIZ_ENTITY___IS_PROXY;
-
-	/**
-	 * The number of operations of the '<em>Sales Opportunity History</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SALES_OPPORTUNITY_HISTORY_OPERATION_COUNT = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 0;
-
-	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.marketing.opportunity.impl.SalesOpportunityQuoteImpl <em>Sales Opportunity Quote</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1445,51 +1129,6 @@ public interface OpportunityPackage extends EPackage {
 	 * @ordered
 	 */
 	int SALES_OPPORTUNITY_QUOTE_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
-
-	/**
-	 * The operation id for the '<em>Isa</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SALES_OPPORTUNITY_QUOTE___ISA = BizPackage.BIZ_ENTITY___ISA;
-
-	/**
-	 * The operation id for the '<em>Get Name</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SALES_OPPORTUNITY_QUOTE___GET_NAME = BizPackage.BIZ_ENTITY___GET_NAME;
-
-	/**
-	 * The operation id for the '<em>Get URI</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SALES_OPPORTUNITY_QUOTE___GET_URI = BizPackage.BIZ_ENTITY___GET_URI;
-
-	/**
-	 * The operation id for the '<em>Is Proxy</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SALES_OPPORTUNITY_QUOTE___IS_PROXY = BizPackage.BIZ_ENTITY___IS_PROXY;
-
-	/**
-	 * The number of operations of the '<em>Sales Opportunity Quote</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SALES_OPPORTUNITY_QUOTE_OPERATION_COUNT = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.marketing.opportunity.impl.SalesOpportunityRoleImpl <em>Sales Opportunity Role</em>}' class.
@@ -1572,51 +1211,6 @@ public interface OpportunityPackage extends EPackage {
 	 * @ordered
 	 */
 	int SALES_OPPORTUNITY_ROLE_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
-
-	/**
-	 * The operation id for the '<em>Isa</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SALES_OPPORTUNITY_ROLE___ISA = BizPackage.BIZ_ENTITY___ISA;
-
-	/**
-	 * The operation id for the '<em>Get Name</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SALES_OPPORTUNITY_ROLE___GET_NAME = BizPackage.BIZ_ENTITY___GET_NAME;
-
-	/**
-	 * The operation id for the '<em>Get URI</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SALES_OPPORTUNITY_ROLE___GET_URI = BizPackage.BIZ_ENTITY___GET_URI;
-
-	/**
-	 * The operation id for the '<em>Is Proxy</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SALES_OPPORTUNITY_ROLE___IS_PROXY = BizPackage.BIZ_ENTITY___IS_PROXY;
-
-	/**
-	 * The number of operations of the '<em>Sales Opportunity Role</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SALES_OPPORTUNITY_ROLE_OPERATION_COUNT = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.marketing.opportunity.impl.SalesOpportunityStageImpl <em>Sales Opportunity Stage</em>}' class.
@@ -1710,69 +1304,6 @@ public interface OpportunityPackage extends EPackage {
 	int SALES_OPPORTUNITY_STAGE_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
 
 	/**
-	 * The operation id for the '<em>Isa</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SALES_OPPORTUNITY_STAGE___ISA = BizPackage.BIZ_ENTITY___ISA;
-
-	/**
-	 * The operation id for the '<em>Get Name</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SALES_OPPORTUNITY_STAGE___GET_NAME = BizPackage.BIZ_ENTITY___GET_NAME;
-
-	/**
-	 * The operation id for the '<em>Get URI</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SALES_OPPORTUNITY_STAGE___GET_URI = BizPackage.BIZ_ENTITY___GET_URI;
-
-	/**
-	 * The operation id for the '<em>Is Proxy</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SALES_OPPORTUNITY_STAGE___IS_PROXY = BizPackage.BIZ_ENTITY___IS_PROXY;
-
-	/**
-	 * The operation id for the '<em>Sales Opportunities</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SALES_OPPORTUNITY_STAGE___SALES_OPPORTUNITIES = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Sales Opportunity Histories</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SALES_OPPORTUNITY_STAGE___SALES_OPPORTUNITY_HISTORIES = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 1;
-
-	/**
-	 * The number of operations of the '<em>Sales Opportunity Stage</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SALES_OPPORTUNITY_STAGE_OPERATION_COUNT = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 2;
-
-	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.marketing.opportunity.impl.SalesOpportunityTrckCodeImpl <em>Sales Opportunity Trck Code</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1855,51 +1386,6 @@ public interface OpportunityPackage extends EPackage {
 	int SALES_OPPORTUNITY_TRCK_CODE_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
 
 	/**
-	 * The operation id for the '<em>Isa</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SALES_OPPORTUNITY_TRCK_CODE___ISA = BizPackage.BIZ_ENTITY___ISA;
-
-	/**
-	 * The operation id for the '<em>Get Name</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SALES_OPPORTUNITY_TRCK_CODE___GET_NAME = BizPackage.BIZ_ENTITY___GET_NAME;
-
-	/**
-	 * The operation id for the '<em>Get URI</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SALES_OPPORTUNITY_TRCK_CODE___GET_URI = BizPackage.BIZ_ENTITY___GET_URI;
-
-	/**
-	 * The operation id for the '<em>Is Proxy</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SALES_OPPORTUNITY_TRCK_CODE___IS_PROXY = BizPackage.BIZ_ENTITY___IS_PROXY;
-
-	/**
-	 * The number of operations of the '<em>Sales Opportunity Trck Code</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SALES_OPPORTUNITY_TRCK_CODE_OPERATION_COUNT = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 0;
-
-	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.marketing.opportunity.impl.SalesOpportunityWorkEffortImpl <em>Sales Opportunity Work Effort</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1971,52 +1457,6 @@ public interface OpportunityPackage extends EPackage {
 	 * @ordered
 	 */
 	int SALES_OPPORTUNITY_WORK_EFFORT_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
-
-
-	/**
-	 * The operation id for the '<em>Isa</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SALES_OPPORTUNITY_WORK_EFFORT___ISA = BizPackage.BIZ_ENTITY___ISA;
-
-	/**
-	 * The operation id for the '<em>Get Name</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SALES_OPPORTUNITY_WORK_EFFORT___GET_NAME = BizPackage.BIZ_ENTITY___GET_NAME;
-
-	/**
-	 * The operation id for the '<em>Get URI</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SALES_OPPORTUNITY_WORK_EFFORT___GET_URI = BizPackage.BIZ_ENTITY___GET_URI;
-
-	/**
-	 * The operation id for the '<em>Is Proxy</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SALES_OPPORTUNITY_WORK_EFFORT___IS_PROXY = BizPackage.BIZ_ENTITY___IS_PROXY;
-
-	/**
-	 * The number of operations of the '<em>Sales Opportunity Work Effort</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SALES_OPPORTUNITY_WORK_EFFORT_OPERATION_COUNT = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 0;
 
 
 	/**
@@ -2204,26 +1644,6 @@ public interface OpportunityPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getSalesForecast_SalesForecastDetails();
-
-	/**
-	 * Returns the meta object for the '{@link org.abchip.mimo.biz.marketing.opportunity.SalesForecast#childSalesForecasts() <em>Child Sales Forecasts</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Child Sales Forecasts</em>' operation.
-	 * @see org.abchip.mimo.biz.marketing.opportunity.SalesForecast#childSalesForecasts()
-	 * @generated
-	 */
-	EOperation getSalesForecast__ChildSalesForecasts();
-
-	/**
-	 * Returns the meta object for the '{@link org.abchip.mimo.biz.marketing.opportunity.SalesForecast#salesForecastHistories() <em>Sales Forecast Histories</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Sales Forecast Histories</em>' operation.
-	 * @see org.abchip.mimo.biz.marketing.opportunity.SalesForecast#salesForecastHistories()
-	 * @generated
-	 */
-	EOperation getSalesForecast__SalesForecastHistories();
 
 	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.biz.marketing.opportunity.SalesForecastDetail <em>Sales Forecast Detail</em>}'.
@@ -2707,36 +2127,6 @@ public interface OpportunityPackage extends EPackage {
 	EAttribute getSalesOpportunity_SalesOpportunityWorkEfforts();
 
 	/**
-	 * Returns the meta object for the '{@link org.abchip.mimo.biz.marketing.opportunity.SalesOpportunity#invoiceItems() <em>Invoice Items</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Invoice Items</em>' operation.
-	 * @see org.abchip.mimo.biz.marketing.opportunity.SalesOpportunity#invoiceItems()
-	 * @generated
-	 */
-	EOperation getSalesOpportunity__InvoiceItems();
-
-	/**
-	 * Returns the meta object for the '{@link org.abchip.mimo.biz.marketing.opportunity.SalesOpportunity#orderItems() <em>Order Items</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Order Items</em>' operation.
-	 * @see org.abchip.mimo.biz.marketing.opportunity.SalesOpportunity#orderItems()
-	 * @generated
-	 */
-	EOperation getSalesOpportunity__OrderItems();
-
-	/**
-	 * Returns the meta object for the '{@link org.abchip.mimo.biz.marketing.opportunity.SalesOpportunity#salesOpportunityHistories() <em>Sales Opportunity Histories</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Sales Opportunity Histories</em>' operation.
-	 * @see org.abchip.mimo.biz.marketing.opportunity.SalesOpportunity#salesOpportunityHistories()
-	 * @generated
-	 */
-	EOperation getSalesOpportunity__SalesOpportunityHistories();
-
-	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.biz.marketing.opportunity.SalesOpportunityCompetitor <em>Sales Opportunity Competitor</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3073,26 +2463,6 @@ public interface OpportunityPackage extends EPackage {
 	EAttribute getSalesOpportunityStage_SequenceNum();
 
 	/**
-	 * Returns the meta object for the '{@link org.abchip.mimo.biz.marketing.opportunity.SalesOpportunityStage#salesOpportunities() <em>Sales Opportunities</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Sales Opportunities</em>' operation.
-	 * @see org.abchip.mimo.biz.marketing.opportunity.SalesOpportunityStage#salesOpportunities()
-	 * @generated
-	 */
-	EOperation getSalesOpportunityStage__SalesOpportunities();
-
-	/**
-	 * Returns the meta object for the '{@link org.abchip.mimo.biz.marketing.opportunity.SalesOpportunityStage#salesOpportunityHistories() <em>Sales Opportunity Histories</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Sales Opportunity Histories</em>' operation.
-	 * @see org.abchip.mimo.biz.marketing.opportunity.SalesOpportunityStage#salesOpportunityHistories()
-	 * @generated
-	 */
-	EOperation getSalesOpportunityStage__SalesOpportunityHistories();
-
-	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.biz.marketing.opportunity.SalesOpportunityTrckCode <em>Sales Opportunity Trck Code</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3326,22 +2696,6 @@ public interface OpportunityPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute SALES_FORECAST__SALES_FORECAST_DETAILS = eINSTANCE.getSalesForecast_SalesForecastDetails();
-
-		/**
-		 * The meta object literal for the '<em><b>Child Sales Forecasts</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation SALES_FORECAST___CHILD_SALES_FORECASTS = eINSTANCE.getSalesForecast__ChildSalesForecasts();
-
-		/**
-		 * The meta object literal for the '<em><b>Sales Forecast Histories</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation SALES_FORECAST___SALES_FORECAST_HISTORIES = eINSTANCE.getSalesForecast__SalesForecastHistories();
 
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.biz.marketing.opportunity.impl.SalesForecastDetailImpl <em>Sales Forecast Detail</em>}' class.
@@ -3702,30 +3056,6 @@ public interface OpportunityPackage extends EPackage {
 		EAttribute SALES_OPPORTUNITY__SALES_OPPORTUNITY_WORK_EFFORTS = eINSTANCE.getSalesOpportunity_SalesOpportunityWorkEfforts();
 
 		/**
-		 * The meta object literal for the '<em><b>Invoice Items</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation SALES_OPPORTUNITY___INVOICE_ITEMS = eINSTANCE.getSalesOpportunity__InvoiceItems();
-
-		/**
-		 * The meta object literal for the '<em><b>Order Items</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation SALES_OPPORTUNITY___ORDER_ITEMS = eINSTANCE.getSalesOpportunity__OrderItems();
-
-		/**
-		 * The meta object literal for the '<em><b>Sales Opportunity Histories</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation SALES_OPPORTUNITY___SALES_OPPORTUNITY_HISTORIES = eINSTANCE.getSalesOpportunity__SalesOpportunityHistories();
-
-		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.biz.marketing.opportunity.impl.SalesOpportunityCompetitorImpl <em>Sales Opportunity Competitor</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -3982,22 +3312,6 @@ public interface OpportunityPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute SALES_OPPORTUNITY_STAGE__SEQUENCE_NUM = eINSTANCE.getSalesOpportunityStage_SequenceNum();
-
-		/**
-		 * The meta object literal for the '<em><b>Sales Opportunities</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation SALES_OPPORTUNITY_STAGE___SALES_OPPORTUNITIES = eINSTANCE.getSalesOpportunityStage__SalesOpportunities();
-
-		/**
-		 * The meta object literal for the '<em><b>Sales Opportunity Histories</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation SALES_OPPORTUNITY_STAGE___SALES_OPPORTUNITY_HISTORIES = eINSTANCE.getSalesOpportunityStage__SalesOpportunityHistories();
 
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.biz.marketing.opportunity.impl.SalesOpportunityTrckCodeImpl <em>Sales Opportunity Trck Code</em>}' class.

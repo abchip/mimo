@@ -7,7 +7,6 @@
  */
 package org.abchip.mimo.biz.accounting.payment.impl;
 
-import java.lang.reflect.InvocationTargetException;
 import java.math.BigDecimal;
 import java.util.Date;
 import java.util.List;
@@ -20,7 +19,6 @@ import org.abchip.mimo.biz.common.enum_.Enumeration;
 import org.abchip.mimo.biz.common.uom.Uom;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.order.order.OrderPaymentPreference;
-import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 
 /**
@@ -483,22 +481,6 @@ public class PaymentGatewayResponseImpl extends BizEntityImpl implements Payment
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
-		switch (operationID) {
-			case PaymentPackage.PAYMENT_GATEWAY_RESPONSE___PAYMENT_GATEWAY_RESP_MSGS:
-				return paymentGatewayRespMsgs();
-			case PaymentPackage.PAYMENT_GATEWAY_RESPONSE___PAYMENTS:
-				return payments();
-		}
-		return super.eInvoke(operationID, arguments);
 	}
 
 	/**

@@ -72,7 +72,7 @@ public interface ShipmentCostEstimate extends BizEntity {
 	 * @return the value of the '<em>Carrier Party Id</em>' attribute.
 	 * @see #setCarrierPartyId(String)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipmentCostEstimate_CarrierPartyId()
-	 * @model
+	 * @model annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	String getCarrierPartyId();
@@ -98,7 +98,7 @@ public interface ShipmentCostEstimate extends BizEntity {
 	 * @return the value of the '<em>Carrier Role Type Id</em>' attribute.
 	 * @see #setCarrierRoleTypeId(String)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipmentCostEstimate_CarrierRoleTypeId()
-	 * @model
+	 * @model annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	String getCarrierRoleTypeId();
@@ -124,7 +124,7 @@ public interface ShipmentCostEstimate extends BizEntity {
 	 * @return the value of the '<em>Feature Percent</em>' attribute.
 	 * @see #setFeaturePercent(BigDecimal)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipmentCostEstimate_FeaturePercent()
-	 * @model
+	 * @model annotation="mimo-ent-format type='fixed-point' precision='18' scale='6'"
 	 * @generated
 	 */
 	BigDecimal getFeaturePercent();
@@ -150,7 +150,7 @@ public interface ShipmentCostEstimate extends BizEntity {
 	 * @return the value of the '<em>Feature Price</em>' attribute.
 	 * @see #setFeaturePrice(BigDecimal)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipmentCostEstimate_FeaturePrice()
-	 * @model
+	 * @model annotation="mimo-ent-format type='currency-amount' precision='18' scale='2'"
 	 * @generated
 	 */
 	BigDecimal getFeaturePrice();
@@ -228,7 +228,7 @@ public interface ShipmentCostEstimate extends BizEntity {
 	 * @return the value of the '<em>Order Flat Price</em>' attribute.
 	 * @see #setOrderFlatPrice(BigDecimal)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipmentCostEstimate_OrderFlatPrice()
-	 * @model
+	 * @model annotation="mimo-ent-format type='currency-amount' precision='18' scale='2'"
 	 * @generated
 	 */
 	BigDecimal getOrderFlatPrice();
@@ -254,7 +254,7 @@ public interface ShipmentCostEstimate extends BizEntity {
 	 * @return the value of the '<em>Order Item Flat Price</em>' attribute.
 	 * @see #setOrderItemFlatPrice(BigDecimal)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipmentCostEstimate_OrderItemFlatPrice()
-	 * @model
+	 * @model annotation="mimo-ent-format type='currency-amount' precision='18' scale='2'"
 	 * @generated
 	 */
 	BigDecimal getOrderItemFlatPrice();
@@ -280,7 +280,7 @@ public interface ShipmentCostEstimate extends BizEntity {
 	 * @return the value of the '<em>Order Price Percent</em>' attribute.
 	 * @see #setOrderPricePercent(BigDecimal)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipmentCostEstimate_OrderPricePercent()
-	 * @model
+	 * @model annotation="mimo-ent-format type='fixed-point' precision='18' scale='6'"
 	 * @generated
 	 */
 	BigDecimal getOrderPricePercent();
@@ -306,7 +306,7 @@ public interface ShipmentCostEstimate extends BizEntity {
 	 * @return the value of the '<em>Oversize Price</em>' attribute.
 	 * @see #setOversizePrice(BigDecimal)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipmentCostEstimate_OversizePrice()
-	 * @model
+	 * @model annotation="mimo-ent-format type='currency-amount' precision='18' scale='2'"
 	 * @generated
 	 */
 	BigDecimal getOversizePrice();
@@ -332,7 +332,7 @@ public interface ShipmentCostEstimate extends BizEntity {
 	 * @return the value of the '<em>Oversize Unit</em>' attribute.
 	 * @see #setOversizeUnit(BigDecimal)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipmentCostEstimate_OversizeUnit()
-	 * @model
+	 * @model annotation="mimo-ent-format type='fixed-point' precision='18' scale='6'"
 	 * @generated
 	 */
 	BigDecimal getOversizeUnit();
@@ -410,7 +410,7 @@ public interface ShipmentCostEstimate extends BizEntity {
 	 * @return the value of the '<em>Price Unit Price</em>' attribute.
 	 * @see #setPriceUnitPrice(BigDecimal)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipmentCostEstimate_PriceUnitPrice()
-	 * @model
+	 * @model annotation="mimo-ent-format type='currency-amount' precision='18' scale='2'"
 	 * @generated
 	 */
 	BigDecimal getPriceUnitPrice();
@@ -462,7 +462,7 @@ public interface ShipmentCostEstimate extends BizEntity {
 	 * @return the value of the '<em>Product Feature Group Id</em>' attribute.
 	 * @see #setProductFeatureGroupId(String)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipmentCostEstimate_ProductFeatureGroupId()
-	 * @model
+	 * @model annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	String getProductFeatureGroupId();
@@ -488,7 +488,7 @@ public interface ShipmentCostEstimate extends BizEntity {
 	 * @return the value of the '<em>Product Store Id</em>' attribute.
 	 * @see #setProductStoreId(String)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipmentCostEstimate_ProductStoreId()
-	 * @model
+	 * @model annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	String getProductStoreId();
@@ -566,7 +566,7 @@ public interface ShipmentCostEstimate extends BizEntity {
 	 * @return the value of the '<em>Quantity Unit Price</em>' attribute.
 	 * @see #setQuantityUnitPrice(BigDecimal)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipmentCostEstimate_QuantityUnitPrice()
-	 * @model
+	 * @model annotation="mimo-ent-format type='currency-amount' precision='18' scale='2'"
 	 * @generated
 	 */
 	BigDecimal getQuantityUnitPrice();
@@ -645,6 +645,7 @@ public interface ShipmentCostEstimate extends BizEntity {
 	 * @see #setShipmentCostEstimateId(String)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipmentCostEstimate_ShipmentCostEstimateId()
 	 * @model id="true" required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
@@ -671,7 +672,7 @@ public interface ShipmentCostEstimate extends BizEntity {
 	 * @return the value of the '<em>Shipment Method Type Id</em>' attribute.
 	 * @see #setShipmentMethodTypeId(String)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipmentCostEstimate_ShipmentMethodTypeId()
-	 * @model
+	 * @model annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	String getShipmentMethodTypeId();
@@ -697,7 +698,7 @@ public interface ShipmentCostEstimate extends BizEntity {
 	 * @return the value of the '<em>Shipping Price Percent</em>' attribute.
 	 * @see #setShippingPricePercent(BigDecimal)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipmentCostEstimate_ShippingPricePercent()
-	 * @model
+	 * @model annotation="mimo-ent-format type='fixed-point' precision='18' scale='6'"
 	 * @generated
 	 */
 	BigDecimal getShippingPricePercent();
@@ -749,7 +750,7 @@ public interface ShipmentCostEstimate extends BizEntity {
 	 * @return the value of the '<em>Weight Unit Price</em>' attribute.
 	 * @see #setWeightUnitPrice(BigDecimal)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipmentCostEstimate_WeightUnitPrice()
-	 * @model
+	 * @model annotation="mimo-ent-format type='currency-amount' precision='18' scale='2'"
 	 * @generated
 	 */
 	BigDecimal getWeightUnitPrice();

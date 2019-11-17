@@ -67,7 +67,7 @@ public interface ShoppingList extends BizEntityTyped<ShoppingListType> {
 	 * @return the value of the '<em>Carrier Party Id</em>' attribute.
 	 * @see #setCarrierPartyId(String)
 	 * @see org.abchip.mimo.biz.order.shoppinglist.ShoppinglistPackage#getShoppingList_CarrierPartyId()
-	 * @model
+	 * @model annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	String getCarrierPartyId();
@@ -93,7 +93,7 @@ public interface ShoppingList extends BizEntityTyped<ShoppingListType> {
 	 * @return the value of the '<em>Carrier Role Type Id</em>' attribute.
 	 * @see #setCarrierRoleTypeId(String)
 	 * @see org.abchip.mimo.biz.order.shoppinglist.ShoppinglistPackage#getShoppingList_CarrierRoleTypeId()
-	 * @model
+	 * @model annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	String getCarrierRoleTypeId();
@@ -145,7 +145,7 @@ public interface ShoppingList extends BizEntityTyped<ShoppingListType> {
 	 * @return the value of the '<em>Currency Uom</em>' attribute.
 	 * @see #setCurrencyUom(String)
 	 * @see org.abchip.mimo.biz.order.shoppinglist.ShoppinglistPackage#getShoppingList_CurrencyUom()
-	 * @model
+	 * @model annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	String getCurrencyUom();
@@ -171,7 +171,7 @@ public interface ShoppingList extends BizEntityTyped<ShoppingListType> {
 	 * @return the value of the '<em>Description</em>' attribute.
 	 * @see #setDescription(String)
 	 * @see org.abchip.mimo.biz.order.shoppinglist.ShoppinglistPackage#getShoppingList_Description()
-	 * @model
+	 * @model annotation="mimo-ent-format type='description' length='255'"
 	 * @generated
 	 */
 	String getDescription();
@@ -197,7 +197,7 @@ public interface ShoppingList extends BizEntityTyped<ShoppingListType> {
 	 * @return the value of the '<em>Is Active</em>' attribute.
 	 * @see #setIsActive(boolean)
 	 * @see org.abchip.mimo.biz.order.shoppinglist.ShoppinglistPackage#getShoppingList_IsActive()
-	 * @model
+	 * @model annotation="mimo-ent-format type='indicator' length='1'"
 	 * @generated
 	 */
 	boolean isIsActive();
@@ -223,7 +223,7 @@ public interface ShoppingList extends BizEntityTyped<ShoppingListType> {
 	 * @return the value of the '<em>Is Public</em>' attribute.
 	 * @see #setIsPublic(boolean)
 	 * @see org.abchip.mimo.biz.order.shoppinglist.ShoppinglistPackage#getShoppingList_IsPublic()
-	 * @model
+	 * @model annotation="mimo-ent-format type='indicator' length='1'"
 	 * @generated
 	 */
 	boolean isIsPublic();
@@ -249,7 +249,7 @@ public interface ShoppingList extends BizEntityTyped<ShoppingListType> {
 	 * @return the value of the '<em>Last Admin Modified</em>' attribute.
 	 * @see #setLastAdminModified(Date)
 	 * @see org.abchip.mimo.biz.order.shoppinglist.ShoppinglistPackage#getShoppingList_LastAdminModified()
-	 * @model
+	 * @model annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getLastAdminModified();
@@ -275,7 +275,7 @@ public interface ShoppingList extends BizEntityTyped<ShoppingListType> {
 	 * @return the value of the '<em>Last Ordered Date</em>' attribute.
 	 * @see #setLastOrderedDate(Date)
 	 * @see org.abchip.mimo.biz.order.shoppinglist.ShoppinglistPackage#getShoppingList_LastOrderedDate()
-	 * @model
+	 * @model annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getLastOrderedDate();
@@ -301,7 +301,7 @@ public interface ShoppingList extends BizEntityTyped<ShoppingListType> {
 	 * @return the value of the '<em>List Name</em>' attribute.
 	 * @see #setListName(String)
 	 * @see org.abchip.mimo.biz.order.shoppinglist.ShoppinglistPackage#getShoppingList_ListName()
-	 * @model
+	 * @model annotation="mimo-ent-format type='name' length='100'"
 	 * @generated
 	 */
 	String getListName();
@@ -483,7 +483,7 @@ public interface ShoppingList extends BizEntityTyped<ShoppingListType> {
 	 * @return the value of the '<em>Shipment Method Type Id</em>' attribute.
 	 * @see #setShipmentMethodTypeId(String)
 	 * @see org.abchip.mimo.biz.order.shoppinglist.ShoppinglistPackage#getShoppingList_ShipmentMethodTypeId()
-	 * @model
+	 * @model annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	String getShipmentMethodTypeId();
@@ -510,6 +510,7 @@ public interface ShoppingList extends BizEntityTyped<ShoppingListType> {
 	 * @see #setShoppingListId(String)
 	 * @see org.abchip.mimo.biz.order.shoppinglist.ShoppinglistPackage#getShoppingList_ShoppingListId()
 	 * @model id="true" required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
@@ -562,7 +563,7 @@ public interface ShoppingList extends BizEntityTyped<ShoppingListType> {
 	 * @return the value of the '<em>Visitor Id</em>' attribute.
 	 * @see #setVisitorId(String)
 	 * @see org.abchip.mimo.biz.order.shoppinglist.ShoppinglistPackage#getShoppingList_VisitorId()
-	 * @model
+	 * @model annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	String getVisitorId();
@@ -588,7 +589,9 @@ public interface ShoppingList extends BizEntityTyped<ShoppingListType> {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Shopping List Items</em>' attribute list.
 	 * @see org.abchip.mimo.biz.order.shoppinglist.ShoppinglistPackage#getShoppingList_ShoppingListItems()
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ShoppingListItem'"
 	 * @generated
 	 */
@@ -605,7 +608,9 @@ public interface ShoppingList extends BizEntityTyped<ShoppingListType> {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Shopping List Work Efforts</em>' attribute list.
 	 * @see org.abchip.mimo.biz.order.shoppinglist.ShoppinglistPackage#getShoppingList_ShoppingListWorkEfforts()
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ShoppingListWorkEffort'"
 	 * @generated
 	 */
@@ -614,7 +619,8 @@ public interface ShoppingList extends BizEntityTyped<ShoppingListType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='OrderHeader' route='autoOrderShoppingListId'"
 	 * @generated
 	 */
@@ -623,7 +629,8 @@ public interface ShoppingList extends BizEntityTyped<ShoppingListType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ShoppingList' route='parentShoppingListId'"
 	 * @generated
 	 */

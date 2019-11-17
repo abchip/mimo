@@ -83,6 +83,7 @@ import org.abchip.mimo.biz.entity.crypto.CryptoPackage;
 import org.abchip.mimo.biz.entity.crypto.impl.CryptoPackageImpl;
 import org.abchip.mimo.biz.entity.group.GroupPackage;
 import org.abchip.mimo.biz.entity.group.impl.GroupPackageImpl;
+import org.abchip.mimo.biz.entity.impl.EntityPackageImpl;
 import org.abchip.mimo.biz.entity.sequence.SequencePackage;
 import org.abchip.mimo.biz.entity.sequence.impl.SequencePackageImpl;
 import org.abchip.mimo.biz.entity.synchronization.SynchronizationPackage;
@@ -200,7 +201,6 @@ import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EGenericType;
-import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 
 import org.eclipse.emf.ecore.EReference;
@@ -368,6 +368,8 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		PreferencePackageImpl thePreferencePackage = (PreferencePackageImpl)(registeredPackage instanceof PreferencePackageImpl ? registeredPackage : PreferencePackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(SurveyPackage.eNS_URI);
 		SurveyPackageImpl theSurveyPackage = (SurveyPackageImpl)(registeredPackage instanceof SurveyPackageImpl ? registeredPackage : SurveyPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(org.abchip.mimo.biz.entity.EntityPackage.eNS_URI);
+		EntityPackageImpl theEntityPackage = (EntityPackageImpl)(registeredPackage instanceof EntityPackageImpl ? registeredPackage : org.abchip.mimo.biz.entity.EntityPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(AuditPackage.eNS_URI);
 		AuditPackageImpl theAuditPackage = (AuditPackageImpl)(registeredPackage instanceof AuditPackageImpl ? registeredPackage : AuditPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(CryptoPackage.eNS_URI);
@@ -522,6 +524,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		theDocumentPackage.createPackageContents();
 		thePreferencePackage.createPackageContents();
 		theSurveyPackage.createPackageContents();
+		theEntityPackage.createPackageContents();
 		theAuditPackage.createPackageContents();
 		theCryptoPackage.createPackageContents();
 		theGroupPackage.createPackageContents();
@@ -616,6 +619,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		theDocumentPackage.initializePackageContents();
 		thePreferencePackage.initializePackageContents();
 		theSurveyPackage.initializePackageContents();
+		theEntityPackage.initializePackageContents();
 		theAuditPackage.initializePackageContents();
 		theCryptoPackage.initializePackageContents();
 		theGroupPackage.initializePackageContents();
@@ -781,26 +785,6 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * @generated
 	 */
 	@Override
-	public EOperation getWebAnalyticsType__ChildWebAnalyticsTypes() {
-		return webAnalyticsTypeEClass.getEOperations().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EOperation getWebAnalyticsType__WebAnalyticsConfigs() {
-		return webAnalyticsTypeEClass.getEOperations().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public EClass getWebSiteContent() {
 		return webSiteContentEClass;
 	}
@@ -903,16 +887,6 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	@Override
 	public EReference getWebSiteContentType_ParentTypeId() {
 		return (EReference)webSiteContentTypeEClass.getEStructuralFeatures().get(3);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EOperation getWebSiteContentType__ChildWebSiteContentTypes() {
-		return webSiteContentTypeEClass.getEOperations().get(0);
 	}
 
 	/**
@@ -1144,8 +1118,6 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		createEAttribute(webAnalyticsTypeEClass, WEB_ANALYTICS_TYPE__DESCRIPTION);
 		createEAttribute(webAnalyticsTypeEClass, WEB_ANALYTICS_TYPE__HAS_TABLE);
 		createEReference(webAnalyticsTypeEClass, WEB_ANALYTICS_TYPE__PARENT_TYPE_ID);
-		createEOperation(webAnalyticsTypeEClass, WEB_ANALYTICS_TYPE___CHILD_WEB_ANALYTICS_TYPES);
-		createEOperation(webAnalyticsTypeEClass, WEB_ANALYTICS_TYPE___WEB_ANALYTICS_CONFIGS);
 
 		webSiteContentEClass = createEClass(WEB_SITE_CONTENT);
 		createEAttribute(webSiteContentEClass, WEB_SITE_CONTENT__FROM_DATE);
@@ -1159,7 +1131,6 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		createEAttribute(webSiteContentTypeEClass, WEB_SITE_CONTENT_TYPE__DESCRIPTION);
 		createEAttribute(webSiteContentTypeEClass, WEB_SITE_CONTENT_TYPE__HAS_TABLE);
 		createEReference(webSiteContentTypeEClass, WEB_SITE_CONTENT_TYPE__PARENT_TYPE_ID);
-		createEOperation(webSiteContentTypeEClass, WEB_SITE_CONTENT_TYPE___CHILD_WEB_SITE_CONTENT_TYPES);
 
 		webSitePathAliasEClass = createEClass(WEB_SITE_PATH_ALIAS);
 		createEAttribute(webSitePathAliasEClass, WEB_SITE_PATH_ALIAS__PATH_ALIAS);
@@ -1229,7 +1200,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		webSitePathAliasEClass.getESuperTypes().add(theBizPackage.getBizEntity());
 		webSitePublishPointEClass.getESuperTypes().add(theBizPackage.getBizEntity());
 
-		// Initialize classes, features, and operations; add parameters
+		// Initialize classes and features; add operations and parameters
 		initEClass(webAnalyticsConfigEClass, WebAnalyticsConfig.class, "WebAnalyticsConfig", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getWebAnalyticsConfig_WebAnalyticsCode(), ecorePackage.getEString(), "webAnalyticsCode", null, 0, 1, WebAnalyticsConfig.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getWebAnalyticsConfig_WebAnalyticsTypeId(), this.getWebAnalyticsType(), null, "webAnalyticsTypeId", null, 0, 1, WebAnalyticsConfig.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1244,9 +1215,9 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		initEReference(getWebAnalyticsType_ParentTypeId(), this.getWebAnalyticsType(), null, "parentTypeId", null, 0, 1, WebAnalyticsType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getWebAnalyticsType_ParentTypeId().getEKeys().add(this.getWebAnalyticsType_WebAnalyticsTypeId());
 
-		initEOperation(getWebAnalyticsType__ChildWebAnalyticsTypes(), ecorePackage.getEString(), "childWebAnalyticsTypes", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(webAnalyticsTypeEClass, ecorePackage.getEString(), "childWebAnalyticsTypes", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		initEOperation(getWebAnalyticsType__WebAnalyticsConfigs(), ecorePackage.getEString(), "webAnalyticsConfigs", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(webAnalyticsTypeEClass, ecorePackage.getEString(), "webAnalyticsConfigs", 1, -1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(webSiteContentEClass, WebSiteContent.class, "WebSiteContent", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getWebSiteContent_FromDate(), ecorePackage.getEDate(), "fromDate", null, 1, 1, WebSiteContent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1265,7 +1236,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		initEReference(getWebSiteContentType_ParentTypeId(), this.getWebSiteContentType(), null, "parentTypeId", null, 0, 1, WebSiteContentType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getWebSiteContentType_ParentTypeId().getEKeys().add(this.getWebSiteContentType_WebSiteContentTypeId());
 
-		initEOperation(getWebSiteContentType__ChildWebSiteContentTypes(), ecorePackage.getEString(), "childWebSiteContentTypes", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(webSiteContentTypeEClass, ecorePackage.getEString(), "childWebSiteContentTypes", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(webSitePathAliasEClass, WebSitePathAlias.class, "WebSitePathAlias", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getWebSitePathAlias_PathAlias(), ecorePackage.getEString(), "pathAlias", null, 1, 1, WebSitePathAlias.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1292,12 +1263,201 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		getWebSitePublishPoint_ContentId().getEKeys().add(theContentPackage.getContent_ContentId());
 
 		// Create annotations
+		// mimo-ent-format
+		createMimoentformatAnnotations();
 		// mimo-ent-frame
 		createMimoentframeAnnotations();
 		// mimo-ent-slot
 		createMimoentslotAnnotations();
 		// mimo-ent-domain
 		createMimoentdomainAnnotations();
+	}
+
+	/**
+	 * Initializes the annotations for <b>mimo-ent-format</b>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void createMimoentformatAnnotations() {
+		String source = "mimo-ent-format";
+		addAnnotation
+		  (getWebAnalyticsConfig_WebAnalyticsCode(),
+		   source,
+		   new String[] {
+			   "type", "very-long"
+		   });
+		addAnnotation
+		  (webAnalyticsTypeEClass.getEOperations().get(0),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (webAnalyticsTypeEClass.getEOperations().get(1),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (getWebAnalyticsType_WebAnalyticsTypeId(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (getWebAnalyticsType_Description(),
+		   source,
+		   new String[] {
+			   "type", "description",
+			   "length", "255"
+		   });
+		addAnnotation
+		  (getWebAnalyticsType_HasTable(),
+		   source,
+		   new String[] {
+			   "type", "indicator",
+			   "length", "1"
+		   });
+		addAnnotation
+		  (getWebSiteContent_FromDate(),
+		   source,
+		   new String[] {
+			   "type", "date-time"
+		   });
+		addAnnotation
+		  (getWebSiteContent_ThruDate(),
+		   source,
+		   new String[] {
+			   "type", "date-time"
+		   });
+		addAnnotation
+		  (webSiteContentTypeEClass.getEOperations().get(0),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (getWebSiteContentType_WebSiteContentTypeId(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (getWebSiteContentType_Description(),
+		   source,
+		   new String[] {
+			   "type", "description",
+			   "length", "255"
+		   });
+		addAnnotation
+		  (getWebSiteContentType_HasTable(),
+		   source,
+		   new String[] {
+			   "type", "indicator",
+			   "length", "1"
+		   });
+		addAnnotation
+		  (getWebSitePathAlias_PathAlias(),
+		   source,
+		   new String[] {
+			   "type", "id-vlong",
+			   "length", "255"
+		   });
+		addAnnotation
+		  (getWebSitePathAlias_FromDate(),
+		   source,
+		   new String[] {
+			   "type", "date-time"
+		   });
+		addAnnotation
+		  (getWebSitePathAlias_AliasTo(),
+		   source,
+		   new String[] {
+			   "type", "long-varchar",
+			   "length", "255"
+		   });
+		addAnnotation
+		  (getWebSitePathAlias_MapKey(),
+		   source,
+		   new String[] {
+			   "type", "name",
+			   "length", "100"
+		   });
+		addAnnotation
+		  (getWebSitePathAlias_ThruDate(),
+		   source,
+		   new String[] {
+			   "type", "date-time"
+		   });
+		addAnnotation
+		  (getWebSitePublishPoint_AboutContentId(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (getWebSitePublishPoint_ContentDept(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (getWebSitePublishPoint_LeftBarId(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (getWebSitePublishPoint_LineLogo(),
+		   source,
+		   new String[] {
+			   "type", "long-varchar",
+			   "length", "255"
+		   });
+		addAnnotation
+		  (getWebSitePublishPoint_Logo(),
+		   source,
+		   new String[] {
+			   "type", "long-varchar",
+			   "length", "255"
+		   });
+		addAnnotation
+		  (getWebSitePublishPoint_MedallionLogo(),
+		   source,
+		   new String[] {
+			   "type", "long-varchar",
+			   "length", "255"
+		   });
+		addAnnotation
+		  (getWebSitePublishPoint_RightBarId(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (getWebSitePublishPoint_StyleSheetFile(),
+		   source,
+		   new String[] {
+			   "type", "long-varchar",
+			   "length", "255"
+		   });
+		addAnnotation
+		  (getWebSitePublishPoint_TemplateTitle(),
+		   source,
+		   new String[] {
+			   "type", "long-varchar",
+			   "length", "255"
+		   });
 	}
 
 	/**
@@ -1309,13 +1469,13 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	protected void createMimoentslotAnnotations() {
 		String source = "mimo-ent-slot";
 		addAnnotation
-		  (getWebAnalyticsType__ChildWebAnalyticsTypes(),
+		  (webAnalyticsTypeEClass.getEOperations().get(0),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (getWebAnalyticsType__WebAnalyticsConfigs(),
+		  (webAnalyticsTypeEClass.getEOperations().get(1),
 		   source,
 		   new String[] {
 			   "derived", "true"
@@ -1333,7 +1493,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 			   "key", "true"
 		   });
 		addAnnotation
-		  (getWebSiteContentType__ChildWebSiteContentTypes(),
+		  (webSiteContentTypeEClass.getEOperations().get(0),
 		   source,
 		   new String[] {
 			   "derived", "true"
@@ -1367,7 +1527,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	protected void createMimoentdomainAnnotations() {
 		String source = "mimo-ent-domain";
 		addAnnotation
-		  (getWebAnalyticsType__ChildWebAnalyticsTypes(),
+		  (webAnalyticsTypeEClass.getEOperations().get(0),
 		   source,
 		   new String[] {
 			   "frame", "WebAnalyticsType",
@@ -1377,7 +1537,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (getWebAnalyticsType__WebAnalyticsConfigs(),
+		  (webAnalyticsTypeEClass.getEOperations().get(1),
 		   source,
 		   new String[] {
 			   "frame", "WebAnalyticsConfig",
@@ -1387,7 +1547,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (getWebSiteContentType__ChildWebSiteContentTypes(),
+		  (webSiteContentTypeEClass.getEOperations().get(0),
 		   source,
 		   new String[] {
 			   "frame", "WebSiteContentType",

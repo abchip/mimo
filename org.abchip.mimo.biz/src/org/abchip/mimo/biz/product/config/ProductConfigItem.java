@@ -45,7 +45,7 @@ public interface ProductConfigItem extends BizEntity {
 	 * @return the value of the '<em>Config Item Name</em>' attribute.
 	 * @see #setConfigItemName(String)
 	 * @see org.abchip.mimo.biz.product.config.ConfigPackage#getProductConfigItem_ConfigItemName()
-	 * @model
+	 * @model annotation="mimo-ent-format type='name' length='100'"
 	 * @generated
 	 */
 	String getConfigItemName();
@@ -71,7 +71,7 @@ public interface ProductConfigItem extends BizEntity {
 	 * @return the value of the '<em>Config Item Type Id</em>' attribute.
 	 * @see #setConfigItemTypeId(String)
 	 * @see org.abchip.mimo.biz.product.config.ConfigPackage#getProductConfigItem_ConfigItemTypeId()
-	 * @model
+	 * @model annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	String getConfigItemTypeId();
@@ -97,7 +97,7 @@ public interface ProductConfigItem extends BizEntity {
 	 * @return the value of the '<em>Description</em>' attribute.
 	 * @see #setDescription(String)
 	 * @see org.abchip.mimo.biz.product.config.ConfigPackage#getProductConfigItem_Description()
-	 * @model
+	 * @model annotation="mimo-ent-format type='description' length='255'"
 	 * @generated
 	 */
 	String getDescription();
@@ -123,7 +123,7 @@ public interface ProductConfigItem extends BizEntity {
 	 * @return the value of the '<em>Image Url</em>' attribute.
 	 * @see #setImageUrl(String)
 	 * @see org.abchip.mimo.biz.product.config.ConfigPackage#getProductConfigItem_ImageUrl()
-	 * @model
+	 * @model annotation="mimo-ent-format type='url' length='2000'"
 	 * @generated
 	 */
 	String getImageUrl();
@@ -149,7 +149,7 @@ public interface ProductConfigItem extends BizEntity {
 	 * @return the value of the '<em>Long Description</em>' attribute.
 	 * @see #setLongDescription(String)
 	 * @see org.abchip.mimo.biz.product.config.ConfigPackage#getProductConfigItem_LongDescription()
-	 * @model
+	 * @model annotation="mimo-ent-format type='very-long'"
 	 * @generated
 	 */
 	String getLongDescription();
@@ -175,7 +175,9 @@ public interface ProductConfigItem extends BizEntity {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Config Item Product Config Options</em>' attribute list.
 	 * @see org.abchip.mimo.biz.product.config.ConfigPackage#getProductConfigItem_ConfigItemProductConfigOptions()
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ProductConfigOption'"
 	 * @generated
 	 */
@@ -193,6 +195,7 @@ public interface ProductConfigItem extends BizEntity {
 	 * @see #setConfigItemId(String)
 	 * @see org.abchip.mimo.biz.product.config.ConfigPackage#getProductConfigItem_ConfigItemId()
 	 * @model id="true" required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */

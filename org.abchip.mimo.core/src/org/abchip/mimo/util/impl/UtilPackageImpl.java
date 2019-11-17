@@ -689,16 +689,6 @@ public class UtilPackageImpl extends EPackageImpl implements UtilPackage {
 	 * @generated
 	 */
 	@Override
-	public EOperation getClasses__GetAllInterfaces__Class() {
-		return classesEClass.getEOperations().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public EClass getDataDef() {
 		return dataDefEClass;
 	}
@@ -711,26 +701,6 @@ public class UtilPackageImpl extends EPackageImpl implements UtilPackage {
 	@Override
 	public EAttribute getDataDef_Formulas() {
 		return (EAttribute)dataDefEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EOperation getDataDef__GetJavaClass() {
-		return dataDefEClass.getEOperations().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EOperation getDataDef__GetDataDefType() {
-		return dataDefEClass.getEOperations().get(1);
 	}
 
 	/**
@@ -821,56 +791,6 @@ public class UtilPackageImpl extends EPackageImpl implements UtilPackage {
 	@Override
 	public EClass getFiles() {
 		return filesEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EOperation getFiles__GetBaseName__String() {
-		return filesEClass.getEOperations().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EOperation getFiles__CleanDirectory__String() {
-		return filesEClass.getEOperations().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EOperation getFiles__DeleteDirectory__String() {
-		return filesEClass.getEOperations().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EOperation getFiles__GetSeparator() {
-		return filesEClass.getEOperations().get(3);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EOperation getFiles__CopyToFile__InputStream() {
-		return filesEClass.getEOperations().get(4);
 	}
 
 	/**
@@ -1099,56 +1019,6 @@ public class UtilPackageImpl extends EPackageImpl implements UtilPackage {
 	 * @generated
 	 */
 	@Override
-	public EOperation getLists__AddFirst__List_Object() {
-		return listsEClass.getEOperations().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EOperation getLists__AddLast__List_Object() {
-		return listsEClass.getEOperations().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EOperation getLists__AddBefore__List_Object_Object() {
-		return listsEClass.getEOperations().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EOperation getLists__AddAfter__List_Object_Object() {
-		return listsEClass.getEOperations().get(3);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EOperation getLists__Slice__List_int_int() {
-		return listsEClass.getEOperations().get(4);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public EClass getNumericDef() {
 		return numericDefEClass;
 	}
@@ -1179,16 +1049,6 @@ public class UtilPackageImpl extends EPackageImpl implements UtilPackage {
 	 * @generated
 	 */
 	@Override
-	public EOperation getStreams__Copy__InputStream_OutputStream() {
-		return streamsEClass.getEOperations().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public EClass getStringDef() {
 		return stringDefEClass;
 	}
@@ -1209,186 +1069,6 @@ public class UtilPackageImpl extends EPackageImpl implements UtilPackage {
 	 * @generated
 	 */
 	@Override
-	public EOperation getStrings__AppendChars__String_String_int_boolean() {
-		return stringsEClass.getEOperations().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EOperation getStrings__CheckEquals__String_String() {
-		return stringsEClass.getEOperations().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EOperation getStrings__Escape__String() {
-		return stringsEClass.getEOperations().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EOperation getStrings__FirstToUpper__String() {
-		return stringsEClass.getEOperations().get(3);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EOperation getStrings__FirstToLower__String() {
-		return stringsEClass.getEOperations().get(4);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EOperation getStrings__IsEmptyTrim__String() {
-		return stringsEClass.getEOperations().get(5);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EOperation getStrings__IsOneOf__String_List() {
-		return stringsEClass.getEOperations().get(6);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EOperation getStrings__Left__String_int() {
-		return stringsEClass.getEOperations().get(7);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EOperation getStrings__LSet__String_int() {
-		return stringsEClass.getEOperations().get(8);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EOperation getStrings__LSet__String_int_String() {
-		return stringsEClass.getEOperations().get(9);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EOperation getStrings__RemoveFirstChar__String() {
-		return stringsEClass.getEOperations().get(10);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EOperation getStrings__RemoveLastChar__String() {
-		return stringsEClass.getEOperations().get(11);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EOperation getStrings__Right__String_int() {
-		return stringsEClass.getEOperations().get(12);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EOperation getStrings__RSet__String_int() {
-		return stringsEClass.getEOperations().get(13);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EOperation getStrings__RSet__String_int_String() {
-		return stringsEClass.getEOperations().get(14);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EOperation getStrings__String__int_String() {
-		return stringsEClass.getEOperations().get(15);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EOperation getStrings__TrimL__String() {
-		return stringsEClass.getEOperations().get(16);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EOperation getStrings__TrimR__String() {
-		return stringsEClass.getEOperations().get(17);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public EClass getThread() {
 		return threadEClass;
 	}
@@ -1399,258 +1079,8 @@ public class UtilPackageImpl extends EPackageImpl implements UtilPackage {
 	 * @generated
 	 */
 	@Override
-	public EOperation getThread__CheckRunnable() {
-		return threadEClass.getEOperations().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EOperation getThread__GetJavaThread() {
-		return threadEClass.getEOperations().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EOperation getThread__GetThreadID() {
-		return threadEClass.getEOperations().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EOperation getThread__GetThreadName() {
-		return threadEClass.getEOperations().get(3);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EOperation getThread__GetThreadPriority() {
-		return threadEClass.getEOperations().get(4);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EOperation getThread__GetThreadCPUUsage() {
-		return threadEClass.getEOperations().get(5);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EOperation getThread__GetThreadStatus() {
-		return threadEClass.getEOperations().get(6);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EOperation getThread__IsInterrupted() {
-		return threadEClass.getEOperations().get(7);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EOperation getThread__IsNative() {
-		return threadEClass.getEOperations().get(8);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EOperation getThread__IsSuspended() {
-		return threadEClass.getEOperations().get(9);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EOperation getThread__IsThreadDaemon() {
-		return threadEClass.getEOperations().get(10);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public EClass getThreads() {
 		return threadsEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EOperation getThreads__ListThreads() {
-		return threadsEClass.getEOperations().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EOperation getThreads__ListThreads__String() {
-		return threadsEClass.getEOperations().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EOperation getThreads__ListThreads__ThreadGroup() {
-		return threadsEClass.getEOperations().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EOperation getThreads__ListThreadInfos() {
-		return threadsEClass.getEOperations().get(3);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EOperation getThreads__ListThreadGroups() {
-		return threadsEClass.getEOperations().get(4);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EOperation getThreads__LookupBlockingThread__Thread() {
-		return threadsEClass.getEOperations().get(5);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EOperation getThreads__LookupLockingThread__Object() {
-		return threadsEClass.getEOperations().get(6);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EOperation getThreads__LookupThread__long() {
-		return threadsEClass.getEOperations().get(7);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EOperation getThreads__LookupThread__String() {
-		return threadsEClass.getEOperations().get(8);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EOperation getThreads__LookupThread__ThreadInfo() {
-		return threadsEClass.getEOperations().get(9);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EOperation getThreads__LookupThreadGroup__String() {
-		return threadsEClass.getEOperations().get(10);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EOperation getThreads__LookupThreadInfo__long() {
-		return threadsEClass.getEOperations().get(11);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EOperation getThreads__LookupThreadInfo__String() {
-		return threadsEClass.getEOperations().get(12);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EOperation getThreads__LookupThreadInfo__Thread() {
-		return threadsEClass.getEOperations().get(13);
 	}
 
 	/**
@@ -1779,138 +1209,8 @@ public class UtilPackageImpl extends EPackageImpl implements UtilPackage {
 	 * @generated
 	 */
 	@Override
-	public EOperation getThreadManager__CreateThread__String_Runnable() {
-		return threadManagerEClass.getEOperations().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EOperation getThreadManager__CreateThread__String_Runnable_boolean() {
-		return threadManagerEClass.getEOperations().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EOperation getThreadManager__CurrentThread() {
-		return threadManagerEClass.getEOperations().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EOperation getThreadManager__GetThreadInfo__Thread() {
-		return threadManagerEClass.getEOperations().get(3);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EOperation getThreadManager__ListThreads() {
-		return threadManagerEClass.getEOperations().get(4);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EOperation getThreadManager__LookupThread__long() {
-		return threadManagerEClass.getEOperations().get(5);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EOperation getThreadManager__LookupThread__String() {
-		return threadManagerEClass.getEOperations().get(6);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EOperation getThreadManager__Release__Thread() {
-		return threadManagerEClass.getEOperations().get(7);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EOperation getThreadManager__Start__Thread() {
-		return threadManagerEClass.getEOperations().get(8);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EOperation getThreadManager__Stop__Thread() {
-		return threadManagerEClass.getEOperations().get(9);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EOperation getThreadManager__Suspend__Thread() {
-		return threadManagerEClass.getEOperations().get(10);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public EClass getURIs() {
 		return urIsEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EOperation getURIs__GetBaseName__URI() {
-		return urIsEClass.getEOperations().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EOperation getURIs__ParseParameter__String() {
-		return urIsEClass.getEOperations().get(1);
 	}
 
 	/**
@@ -2171,12 +1471,9 @@ public class UtilPackageImpl extends EPackageImpl implements UtilPackage {
 		createEAttribute(characterDefEClass, CHARACTER_DEF__VARYING);
 
 		classesEClass = createEClass(CLASSES);
-		createEOperation(classesEClass, CLASSES___GET_ALL_INTERFACES__CLASS);
 
 		dataDefEClass = createEClass(DATA_DEF);
 		createEAttribute(dataDefEClass, DATA_DEF__FORMULAS);
-		createEOperation(dataDefEClass, DATA_DEF___GET_JAVA_CLASS);
-		createEOperation(dataDefEClass, DATA_DEF___GET_DATA_DEF_TYPE);
 
 		datetimeDefEClass = createEClass(DATETIME_DEF);
 		createEAttribute(datetimeDefEClass, DATETIME_DEF__TYPE);
@@ -2189,11 +1486,6 @@ public class UtilPackageImpl extends EPackageImpl implements UtilPackage {
 		createEAttribute(decimalDefEClass, DECIMAL_DEF__TYPE);
 
 		filesEClass = createEClass(FILES);
-		createEOperation(filesEClass, FILES___GET_BASE_NAME__STRING);
-		createEOperation(filesEClass, FILES___CLEAN_DIRECTORY__STRING);
-		createEOperation(filesEClass, FILES___DELETE_DIRECTORY__STRING);
-		createEOperation(filesEClass, FILES___GET_SEPARATOR);
-		createEOperation(filesEClass, FILES___COPY_TO_FILE__INPUTSTREAM);
 
 		floatingDefEClass = createEClass(FLOATING_DEF);
 		createEAttribute(floatingDefEClass, FLOATING_DEF__TYPE);
@@ -2239,69 +1531,20 @@ public class UtilPackageImpl extends EPackageImpl implements UtilPackage {
 		javaThreadInfoEClass = createEClass(JAVA_THREAD_INFO);
 
 		listsEClass = createEClass(LISTS);
-		createEOperation(listsEClass, LISTS___ADD_FIRST__LIST_OBJECT);
-		createEOperation(listsEClass, LISTS___ADD_LAST__LIST_OBJECT);
-		createEOperation(listsEClass, LISTS___ADD_BEFORE__LIST_OBJECT_OBJECT);
-		createEOperation(listsEClass, LISTS___ADD_AFTER__LIST_OBJECT_OBJECT);
-		createEOperation(listsEClass, LISTS___SLICE__LIST_INT_INT);
 
 		numericDefEClass = createEClass(NUMERIC_DEF);
 
 		singletonEClass = createEClass(SINGLETON);
 
 		streamsEClass = createEClass(STREAMS);
-		createEOperation(streamsEClass, STREAMS___COPY__INPUTSTREAM_OUTPUTSTREAM);
 
 		stringDefEClass = createEClass(STRING_DEF);
 
 		stringsEClass = createEClass(STRINGS);
-		createEOperation(stringsEClass, STRINGS___APPEND_CHARS__STRING_STRING_INT_BOOLEAN);
-		createEOperation(stringsEClass, STRINGS___CHECK_EQUALS__STRING_STRING);
-		createEOperation(stringsEClass, STRINGS___ESCAPE__STRING);
-		createEOperation(stringsEClass, STRINGS___FIRST_TO_UPPER__STRING);
-		createEOperation(stringsEClass, STRINGS___FIRST_TO_LOWER__STRING);
-		createEOperation(stringsEClass, STRINGS___IS_EMPTY_TRIM__STRING);
-		createEOperation(stringsEClass, STRINGS___IS_ONE_OF__STRING_LIST);
-		createEOperation(stringsEClass, STRINGS___LEFT__STRING_INT);
-		createEOperation(stringsEClass, STRINGS___LSET__STRING_INT);
-		createEOperation(stringsEClass, STRINGS___LSET__STRING_INT_STRING);
-		createEOperation(stringsEClass, STRINGS___REMOVE_FIRST_CHAR__STRING);
-		createEOperation(stringsEClass, STRINGS___REMOVE_LAST_CHAR__STRING);
-		createEOperation(stringsEClass, STRINGS___RIGHT__STRING_INT);
-		createEOperation(stringsEClass, STRINGS___RSET__STRING_INT);
-		createEOperation(stringsEClass, STRINGS___RSET__STRING_INT_STRING);
-		createEOperation(stringsEClass, STRINGS___STRING__INT_STRING);
-		createEOperation(stringsEClass, STRINGS___TRIM_L__STRING);
-		createEOperation(stringsEClass, STRINGS___TRIM_R__STRING);
 
 		threadEClass = createEClass(THREAD);
-		createEOperation(threadEClass, THREAD___CHECK_RUNNABLE);
-		createEOperation(threadEClass, THREAD___GET_JAVA_THREAD);
-		createEOperation(threadEClass, THREAD___GET_THREAD_ID);
-		createEOperation(threadEClass, THREAD___GET_THREAD_NAME);
-		createEOperation(threadEClass, THREAD___GET_THREAD_PRIORITY);
-		createEOperation(threadEClass, THREAD___GET_THREAD_CPU_USAGE);
-		createEOperation(threadEClass, THREAD___GET_THREAD_STATUS);
-		createEOperation(threadEClass, THREAD___IS_INTERRUPTED);
-		createEOperation(threadEClass, THREAD___IS_NATIVE);
-		createEOperation(threadEClass, THREAD___IS_SUSPENDED);
-		createEOperation(threadEClass, THREAD___IS_THREAD_DAEMON);
 
 		threadsEClass = createEClass(THREADS);
-		createEOperation(threadsEClass, THREADS___LIST_THREADS);
-		createEOperation(threadsEClass, THREADS___LIST_THREADS__STRING);
-		createEOperation(threadsEClass, THREADS___LIST_THREADS__THREADGROUP);
-		createEOperation(threadsEClass, THREADS___LIST_THREAD_INFOS);
-		createEOperation(threadsEClass, THREADS___LIST_THREAD_GROUPS);
-		createEOperation(threadsEClass, THREADS___LOOKUP_BLOCKING_THREAD__THREAD);
-		createEOperation(threadsEClass, THREADS___LOOKUP_LOCKING_THREAD__OBJECT);
-		createEOperation(threadsEClass, THREADS___LOOKUP_THREAD__LONG);
-		createEOperation(threadsEClass, THREADS___LOOKUP_THREAD__STRING);
-		createEOperation(threadsEClass, THREADS___LOOKUP_THREAD__THREADINFO);
-		createEOperation(threadsEClass, THREADS___LOOKUP_THREAD_GROUP__STRING);
-		createEOperation(threadsEClass, THREADS___LOOKUP_THREAD_INFO__LONG);
-		createEOperation(threadsEClass, THREADS___LOOKUP_THREAD_INFO__STRING);
-		createEOperation(threadsEClass, THREADS___LOOKUP_THREAD_INFO__THREAD);
 
 		threadInfoEClass = createEClass(THREAD_INFO);
 		createEAttribute(threadInfoEClass, THREAD_INFO__THREAD_NAME);
@@ -2316,21 +1559,8 @@ public class UtilPackageImpl extends EPackageImpl implements UtilPackage {
 		createEAttribute(threadInfoEClass, THREAD_INFO__THREAD_DAEMON);
 
 		threadManagerEClass = createEClass(THREAD_MANAGER);
-		createEOperation(threadManagerEClass, THREAD_MANAGER___CREATE_THREAD__STRING_RUNNABLE);
-		createEOperation(threadManagerEClass, THREAD_MANAGER___CREATE_THREAD__STRING_RUNNABLE_BOOLEAN);
-		createEOperation(threadManagerEClass, THREAD_MANAGER___CURRENT_THREAD);
-		createEOperation(threadManagerEClass, THREAD_MANAGER___GET_THREAD_INFO__THREAD);
-		createEOperation(threadManagerEClass, THREAD_MANAGER___LIST_THREADS);
-		createEOperation(threadManagerEClass, THREAD_MANAGER___LOOKUP_THREAD__LONG);
-		createEOperation(threadManagerEClass, THREAD_MANAGER___LOOKUP_THREAD__STRING);
-		createEOperation(threadManagerEClass, THREAD_MANAGER___RELEASE__THREAD);
-		createEOperation(threadManagerEClass, THREAD_MANAGER___START__THREAD);
-		createEOperation(threadManagerEClass, THREAD_MANAGER___STOP__THREAD);
-		createEOperation(threadManagerEClass, THREAD_MANAGER___SUSPEND__THREAD);
 
 		urIsEClass = createEClass(UR_IS);
-		createEOperation(urIsEClass, UR_IS___GET_BASE_NAME__URI);
-		createEOperation(urIsEClass, UR_IS___PARSE_PARAMETER__STRING);
 
 		// Create enums
 		binaryTypeEEnum = createEEnum(BINARY_TYPE);
@@ -2449,7 +1679,7 @@ public class UtilPackageImpl extends EPackageImpl implements UtilPackage {
 		g1.getETypeArguments().add(g2);
 		threadManagerEClass.getEGenericSuperTypes().add(g1);
 
-		// Initialize classes, features, and operations; add parameters
+		// Initialize classes and features; add operations and parameters
 		initEClass(binaryDefEClass, BinaryDef.class, "BinaryDef", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getBinaryDef_Type(), this.getBinaryType(), "type", null, 1, 1, BinaryDef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getBinaryDef_Unsigned(), ecorePackage.getEBoolean(), "unsigned", null, 0, 1, BinaryDef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -2460,7 +1690,7 @@ public class UtilPackageImpl extends EPackageImpl implements UtilPackage {
 
 		initEClass(classesEClass, Classes.class, "Classes", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-		EOperation op = initEOperation(getClasses__GetAllInterfaces__Class(), null, "getAllInterfaces", 0, -1, IS_UNIQUE, IS_ORDERED);
+		EOperation op = addEOperation(classesEClass, null, "getAllInterfaces", 0, -1, IS_UNIQUE, IS_ORDERED);
 		g1 = createEGenericType(ecorePackage.getEJavaClass());
 		g2 = createEGenericType();
 		g1.getETypeArguments().add(g2);
@@ -2473,13 +1703,13 @@ public class UtilPackageImpl extends EPackageImpl implements UtilPackage {
 		initEClass(dataDefEClass, DataDef.class, "DataDef", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getDataDef_Formulas(), ecorePackage.getEString(), "formulas", null, 0, -1, DataDef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		op = initEOperation(getDataDef__GetJavaClass(), null, "getJavaClass", 1, 1, IS_UNIQUE, IS_ORDERED);
+		op = addEOperation(dataDefEClass, null, "getJavaClass", 1, 1, IS_UNIQUE, IS_ORDERED);
 		g1 = createEGenericType(ecorePackage.getEJavaClass());
 		g2 = createEGenericType();
 		g1.getETypeArguments().add(g2);
 		initEOperation(op, g1);
 
-		initEOperation(getDataDef__GetDataDefType(), this.getDataDefType(), "getDataDefType", 1, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(dataDefEClass, this.getDataDefType(), "getDataDefType", 1, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(datetimeDefEClass, DatetimeDef.class, "DatetimeDef", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getDatetimeDef_Type(), this.getDatetimeType(), "type", null, 1, 1, DatetimeDef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -2493,20 +1723,20 @@ public class UtilPackageImpl extends EPackageImpl implements UtilPackage {
 
 		initEClass(filesEClass, Files.class, "Files", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-		op = initEOperation(getFiles__GetBaseName__String(), ecorePackage.getEString(), "getBaseName", 1, 1, IS_UNIQUE, IS_ORDERED);
+		op = addEOperation(filesEClass, ecorePackage.getEString(), "getBaseName", 1, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEString(), "fileName", 1, 1, IS_UNIQUE, IS_ORDERED);
 
-		op = initEOperation(getFiles__CleanDirectory__String(), null, "cleanDirectory", 1, 1, IS_UNIQUE, IS_ORDERED);
+		op = addEOperation(filesEClass, null, "cleanDirectory", 1, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEString(), "path", 1, 1, IS_UNIQUE, IS_ORDERED);
 		addEException(op, this.getJavaIOException());
 
-		op = initEOperation(getFiles__DeleteDirectory__String(), null, "deleteDirectory", 1, 1, IS_UNIQUE, IS_ORDERED);
+		op = addEOperation(filesEClass, null, "deleteDirectory", 1, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEString(), "path", 1, 1, IS_UNIQUE, IS_ORDERED);
 		addEException(op, this.getJavaIOException());
 
-		initEOperation(getFiles__GetSeparator(), ecorePackage.getEString(), "getSeparator", 1, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(filesEClass, ecorePackage.getEString(), "getSeparator", 1, 1, IS_UNIQUE, IS_ORDERED);
 
-		op = initEOperation(getFiles__CopyToFile__InputStream(), this.getJavaFile(), "copyToFile", 1, 1, IS_UNIQUE, IS_ORDERED);
+		op = addEOperation(filesEClass, this.getJavaFile(), "copyToFile", 1, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, this.getJavaInputStream(), "stream", 1, 1, IS_UNIQUE, IS_ORDERED);
 		addEException(op, this.getJavaIOException());
 
@@ -2555,7 +1785,7 @@ public class UtilPackageImpl extends EPackageImpl implements UtilPackage {
 
 		initEClass(listsEClass, Lists.class, "Lists", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-		op = initEOperation(getLists__AddFirst__List_Object(), null, "addFirst", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = addEOperation(listsEClass, null, "addFirst", 0, 1, IS_UNIQUE, IS_ORDERED);
 		ETypeParameter t1 = addETypeParameter(op, "E");
 		g1 = createEGenericType(this.getJavaList());
 		g2 = createEGenericType(t1);
@@ -2564,7 +1794,7 @@ public class UtilPackageImpl extends EPackageImpl implements UtilPackage {
 		g1 = createEGenericType(t1);
 		addEParameter(op, g1, "element", 1, 1, IS_UNIQUE, IS_ORDERED);
 
-		op = initEOperation(getLists__AddLast__List_Object(), null, "addLast", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = addEOperation(listsEClass, null, "addLast", 0, 1, IS_UNIQUE, IS_ORDERED);
 		t1 = addETypeParameter(op, "E");
 		g1 = createEGenericType(this.getJavaList());
 		g2 = createEGenericType(t1);
@@ -2573,7 +1803,7 @@ public class UtilPackageImpl extends EPackageImpl implements UtilPackage {
 		g1 = createEGenericType(t1);
 		addEParameter(op, g1, "element", 1, 1, IS_UNIQUE, IS_ORDERED);
 
-		op = initEOperation(getLists__AddBefore__List_Object_Object(), null, "addBefore", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = addEOperation(listsEClass, null, "addBefore", 0, 1, IS_UNIQUE, IS_ORDERED);
 		t1 = addETypeParameter(op, "E");
 		g1 = createEGenericType(this.getJavaList());
 		g2 = createEGenericType(t1);
@@ -2584,7 +1814,7 @@ public class UtilPackageImpl extends EPackageImpl implements UtilPackage {
 		g1 = createEGenericType(t1);
 		addEParameter(op, g1, "newElement", 1, 1, IS_UNIQUE, IS_ORDERED);
 
-		op = initEOperation(getLists__AddAfter__List_Object_Object(), null, "addAfter", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = addEOperation(listsEClass, null, "addAfter", 0, 1, IS_UNIQUE, IS_ORDERED);
 		t1 = addETypeParameter(op, "E");
 		g1 = createEGenericType(this.getJavaList());
 		g2 = createEGenericType(t1);
@@ -2595,7 +1825,7 @@ public class UtilPackageImpl extends EPackageImpl implements UtilPackage {
 		g1 = createEGenericType(t1);
 		addEParameter(op, g1, "newElement", 1, 1, IS_UNIQUE, IS_ORDERED);
 
-		op = initEOperation(getLists__Slice__List_int_int(), null, "slice", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = addEOperation(listsEClass, null, "slice", 0, 1, IS_UNIQUE, IS_ORDERED);
 		t1 = addETypeParameter(op, "E");
 		g1 = createEGenericType(this.getJavaList());
 		g2 = createEGenericType(t1);
@@ -2614,7 +1844,7 @@ public class UtilPackageImpl extends EPackageImpl implements UtilPackage {
 
 		initEClass(streamsEClass, Streams.class, "Streams", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-		op = initEOperation(getStreams__Copy__InputStream_OutputStream(), null, "copy", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = addEOperation(streamsEClass, null, "copy", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, this.getJavaInputStream(), "input", 1, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, this.getJavaOutputStream(), "output", 1, 1, IS_UNIQUE, IS_ORDERED);
 
@@ -2622,137 +1852,137 @@ public class UtilPackageImpl extends EPackageImpl implements UtilPackage {
 
 		initEClass(stringsEClass, Strings.class, "Strings", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-		op = initEOperation(getStrings__AppendChars__String_String_int_boolean(), ecorePackage.getEString(), "appendChars", 1, 1, IS_UNIQUE, IS_ORDERED);
+		op = addEOperation(stringsEClass, ecorePackage.getEString(), "appendChars", 1, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEString(), "string", 1, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEString(), "chars", 1, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEInt(), "times", 1, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEBoolean(), "before", 1, 1, IS_UNIQUE, IS_ORDERED);
 
-		op = initEOperation(getStrings__CheckEquals__String_String(), ecorePackage.getEBooleanObject(), "checkEquals", 1, 1, IS_UNIQUE, IS_ORDERED);
+		op = addEOperation(stringsEClass, ecorePackage.getEBooleanObject(), "checkEquals", 1, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEString(), "string1", 1, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEString(), "string2", 1, 1, IS_UNIQUE, IS_ORDERED);
 
-		op = initEOperation(getStrings__Escape__String(), ecorePackage.getEString(), "escape", 1, 1, IS_UNIQUE, IS_ORDERED);
+		op = addEOperation(stringsEClass, ecorePackage.getEString(), "escape", 1, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEString(), "string", 1, 1, IS_UNIQUE, IS_ORDERED);
 
-		op = initEOperation(getStrings__FirstToUpper__String(), ecorePackage.getEString(), "firstToUpper", 1, 1, IS_UNIQUE, IS_ORDERED);
+		op = addEOperation(stringsEClass, ecorePackage.getEString(), "firstToUpper", 1, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEString(), "string", 1, 1, IS_UNIQUE, IS_ORDERED);
 
-		op = initEOperation(getStrings__FirstToLower__String(), ecorePackage.getEString(), "firstToLower", 1, 1, IS_UNIQUE, IS_ORDERED);
+		op = addEOperation(stringsEClass, ecorePackage.getEString(), "firstToLower", 1, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEString(), "string", 1, 1, IS_UNIQUE, IS_ORDERED);
 
-		op = initEOperation(getStrings__IsEmptyTrim__String(), ecorePackage.getEBooleanObject(), "isEmptyTrim", 1, 1, IS_UNIQUE, IS_ORDERED);
+		op = addEOperation(stringsEClass, ecorePackage.getEBooleanObject(), "isEmptyTrim", 1, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEString(), "string", 1, 1, IS_UNIQUE, IS_ORDERED);
 
-		op = initEOperation(getStrings__IsOneOf__String_List(), ecorePackage.getEBooleanObject(), "isOneOf", 1, 1, IS_UNIQUE, IS_ORDERED);
+		op = addEOperation(stringsEClass, ecorePackage.getEBooleanObject(), "isOneOf", 1, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEString(), "string", 1, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEString(), "values", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		op = initEOperation(getStrings__Left__String_int(), ecorePackage.getEString(), "left", 1, 1, IS_UNIQUE, IS_ORDERED);
+		op = addEOperation(stringsEClass, ecorePackage.getEString(), "left", 1, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEString(), "string", 1, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEInt(), "nrOfChars", 1, 1, IS_UNIQUE, IS_ORDERED);
 
-		op = initEOperation(getStrings__LSet__String_int(), ecorePackage.getEString(), "lSet", 1, 1, IS_UNIQUE, IS_ORDERED);
+		op = addEOperation(stringsEClass, ecorePackage.getEString(), "lSet", 1, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEString(), "string", 1, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEInt(), "nrOfChars", 1, 1, IS_UNIQUE, IS_ORDERED);
 
-		op = initEOperation(getStrings__LSet__String_int_String(), ecorePackage.getEString(), "lSet", 1, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, ecorePackage.getEString(), "string", 1, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, ecorePackage.getEInt(), "nrOfChars", 1, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, ecorePackage.getEString(), "filler", 1, 1, IS_UNIQUE, IS_ORDERED);
-
-		op = initEOperation(getStrings__RemoveFirstChar__String(), ecorePackage.getEString(), "removeFirstChar", 1, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, ecorePackage.getEString(), "string", 1, 1, IS_UNIQUE, IS_ORDERED);
-
-		op = initEOperation(getStrings__RemoveLastChar__String(), ecorePackage.getEString(), "removeLastChar", 1, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, ecorePackage.getEString(), "string", 1, 1, IS_UNIQUE, IS_ORDERED);
-
-		op = initEOperation(getStrings__Right__String_int(), ecorePackage.getEString(), "right", 1, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, ecorePackage.getEString(), "string", 1, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, ecorePackage.getEInt(), "nrOfChars", 1, 1, IS_UNIQUE, IS_ORDERED);
-
-		op = initEOperation(getStrings__RSet__String_int(), ecorePackage.getEString(), "rSet", 1, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, ecorePackage.getEString(), "string", 1, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, ecorePackage.getEInt(), "nrOfChars", 1, 1, IS_UNIQUE, IS_ORDERED);
-
-		op = initEOperation(getStrings__RSet__String_int_String(), ecorePackage.getEString(), "rSet", 1, 1, IS_UNIQUE, IS_ORDERED);
+		op = addEOperation(stringsEClass, ecorePackage.getEString(), "lSet", 1, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEString(), "string", 1, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEInt(), "nrOfChars", 1, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEString(), "filler", 1, 1, IS_UNIQUE, IS_ORDERED);
 
-		op = initEOperation(getStrings__String__int_String(), ecorePackage.getEString(), "string", 1, 1, IS_UNIQUE, IS_ORDERED);
+		op = addEOperation(stringsEClass, ecorePackage.getEString(), "removeFirstChar", 1, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEString(), "string", 1, 1, IS_UNIQUE, IS_ORDERED);
+
+		op = addEOperation(stringsEClass, ecorePackage.getEString(), "removeLastChar", 1, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEString(), "string", 1, 1, IS_UNIQUE, IS_ORDERED);
+
+		op = addEOperation(stringsEClass, ecorePackage.getEString(), "right", 1, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEString(), "string", 1, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEInt(), "nrOfChars", 1, 1, IS_UNIQUE, IS_ORDERED);
+
+		op = addEOperation(stringsEClass, ecorePackage.getEString(), "rSet", 1, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEString(), "string", 1, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEInt(), "nrOfChars", 1, 1, IS_UNIQUE, IS_ORDERED);
+
+		op = addEOperation(stringsEClass, ecorePackage.getEString(), "rSet", 1, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEString(), "string", 1, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEInt(), "nrOfChars", 1, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEString(), "filler", 1, 1, IS_UNIQUE, IS_ORDERED);
 
-		op = initEOperation(getStrings__TrimL__String(), ecorePackage.getEString(), "trimL", 1, 1, IS_UNIQUE, IS_ORDERED);
+		op = addEOperation(stringsEClass, ecorePackage.getEString(), "string", 1, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEInt(), "nrOfChars", 1, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEString(), "filler", 1, 1, IS_UNIQUE, IS_ORDERED);
+
+		op = addEOperation(stringsEClass, ecorePackage.getEString(), "trimL", 1, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEString(), "string", 1, 1, IS_UNIQUE, IS_ORDERED);
 
-		op = initEOperation(getStrings__TrimR__String(), ecorePackage.getEString(), "trimR", 1, 1, IS_UNIQUE, IS_ORDERED);
+		op = addEOperation(stringsEClass, ecorePackage.getEString(), "trimR", 1, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEString(), "string", 1, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(threadEClass, org.abchip.mimo.util.Thread.class, "Thread", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-		initEOperation(getThread__CheckRunnable(), ecorePackage.getEBoolean(), "checkRunnable", 1, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(threadEClass, ecorePackage.getEBoolean(), "checkRunnable", 1, 1, IS_UNIQUE, IS_ORDERED);
 
-		initEOperation(getThread__GetJavaThread(), this.getJavaThread(), "getJavaThread", 1, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(threadEClass, this.getJavaThread(), "getJavaThread", 1, 1, IS_UNIQUE, IS_ORDERED);
 
-		initEOperation(getThread__GetThreadID(), ecorePackage.getELong(), "getThreadID", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(threadEClass, ecorePackage.getELong(), "getThreadID", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		initEOperation(getThread__GetThreadName(), ecorePackage.getEString(), "getThreadName", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(threadEClass, ecorePackage.getEString(), "getThreadName", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		initEOperation(getThread__GetThreadPriority(), ecorePackage.getEInt(), "getThreadPriority", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(threadEClass, ecorePackage.getEInt(), "getThreadPriority", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		initEOperation(getThread__GetThreadCPUUsage(), ecorePackage.getEDouble(), "getThreadCPUUsage", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(threadEClass, ecorePackage.getEDouble(), "getThreadCPUUsage", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		initEOperation(getThread__GetThreadStatus(), this.getThreadStatus(), "getThreadStatus", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(threadEClass, this.getThreadStatus(), "getThreadStatus", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		initEOperation(getThread__IsInterrupted(), ecorePackage.getEBoolean(), "isInterrupted", 1, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(threadEClass, ecorePackage.getEBoolean(), "isInterrupted", 1, 1, IS_UNIQUE, IS_ORDERED);
 
-		initEOperation(getThread__IsNative(), ecorePackage.getEBoolean(), "isNative", 1, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(threadEClass, ecorePackage.getEBoolean(), "isNative", 1, 1, IS_UNIQUE, IS_ORDERED);
 
-		initEOperation(getThread__IsSuspended(), ecorePackage.getEBoolean(), "isSuspended", 1, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(threadEClass, ecorePackage.getEBoolean(), "isSuspended", 1, 1, IS_UNIQUE, IS_ORDERED);
 
-		initEOperation(getThread__IsThreadDaemon(), ecorePackage.getEBoolean(), "isThreadDaemon", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(threadEClass, ecorePackage.getEBoolean(), "isThreadDaemon", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(threadsEClass, Threads.class, "Threads", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-		initEOperation(getThreads__ListThreads(), this.getJavaThread(), "listThreads", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(threadsEClass, this.getJavaThread(), "listThreads", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		op = initEOperation(getThreads__ListThreads__String(), this.getJavaThread(), "listThreads", 0, -1, IS_UNIQUE, IS_ORDERED);
+		op = addEOperation(threadsEClass, this.getJavaThread(), "listThreads", 0, -1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEString(), "threadGroup", 1, 1, IS_UNIQUE, IS_ORDERED);
 
-		op = initEOperation(getThreads__ListThreads__ThreadGroup(), this.getJavaThread(), "listThreads", 0, -1, IS_UNIQUE, IS_ORDERED);
+		op = addEOperation(threadsEClass, this.getJavaThread(), "listThreads", 0, -1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, this.getJavaThreadGroup(), "threadGroup", 1, 1, IS_UNIQUE, IS_ORDERED);
 
-		initEOperation(getThreads__ListThreadInfos(), this.getJavaThreadInfo(), "listThreadInfos", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(threadsEClass, this.getJavaThreadInfo(), "listThreadInfos", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		initEOperation(getThreads__ListThreadGroups(), this.getJavaThreadGroup(), "listThreadGroups", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(threadsEClass, this.getJavaThreadGroup(), "listThreadGroups", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		op = initEOperation(getThreads__LookupBlockingThread__Thread(), this.getJavaThread(), "lookupBlockingThread", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = addEOperation(threadsEClass, this.getJavaThread(), "lookupBlockingThread", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, this.getJavaThread(), "thread", 1, 1, IS_UNIQUE, IS_ORDERED);
 
-		op = initEOperation(getThreads__LookupLockingThread__Object(), this.getJavaThread(), "lookupLockingThread", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = addEOperation(threadsEClass, this.getJavaThread(), "lookupLockingThread", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEJavaObject(), "object", 1, 1, IS_UNIQUE, IS_ORDERED);
 
-		op = initEOperation(getThreads__LookupThread__long(), this.getJavaThread(), "lookupThread", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = addEOperation(threadsEClass, this.getJavaThread(), "lookupThread", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getELong(), "id", 1, 1, IS_UNIQUE, IS_ORDERED);
 
-		op = initEOperation(getThreads__LookupThread__String(), this.getJavaThread(), "lookupThread", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = addEOperation(threadsEClass, this.getJavaThread(), "lookupThread", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEString(), "name", 1, 1, IS_UNIQUE, IS_ORDERED);
 
-		op = initEOperation(getThreads__LookupThread__ThreadInfo(), this.getJavaThread(), "lookupThread", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = addEOperation(threadsEClass, this.getJavaThread(), "lookupThread", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, this.getJavaThreadInfo(), "info", 1, 1, IS_UNIQUE, IS_ORDERED);
 
-		op = initEOperation(getThreads__LookupThreadGroup__String(), this.getJavaThreadGroup(), "lookupThreadGroup", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = addEOperation(threadsEClass, this.getJavaThreadGroup(), "lookupThreadGroup", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEString(), "name", 1, 1, IS_UNIQUE, IS_ORDERED);
 
-		op = initEOperation(getThreads__LookupThreadInfo__long(), this.getJavaThreadInfo(), "lookupThreadInfo", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = addEOperation(threadsEClass, this.getJavaThreadInfo(), "lookupThreadInfo", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getELong(), "id", 1, 1, IS_UNIQUE, IS_ORDERED);
 
-		op = initEOperation(getThreads__LookupThreadInfo__String(), this.getJavaThreadInfo(), "lookupThreadInfo", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = addEOperation(threadsEClass, this.getJavaThreadInfo(), "lookupThreadInfo", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEString(), "name", 1, 1, IS_UNIQUE, IS_ORDERED);
 
-		op = initEOperation(getThreads__LookupThreadInfo__Thread(), this.getJavaThreadInfo(), "lookupThreadInfo", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = addEOperation(threadsEClass, this.getJavaThreadInfo(), "lookupThreadInfo", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, this.getJavaThread(), "thread", 1, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(threadInfoEClass, org.abchip.mimo.util.ThreadInfo.class, "ThreadInfo", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -2769,46 +1999,46 @@ public class UtilPackageImpl extends EPackageImpl implements UtilPackage {
 
 		initEClass(threadManagerEClass, ThreadManager.class, "ThreadManager", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-		op = initEOperation(getThreadManager__CreateThread__String_Runnable(), this.getThread(), "createThread", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = addEOperation(threadManagerEClass, this.getThread(), "createThread", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEString(), "name", 1, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, this.getJavaRunnable(), "runnable", 1, 1, IS_UNIQUE, IS_ORDERED);
 
-		op = initEOperation(getThreadManager__CreateThread__String_Runnable_boolean(), this.getThread(), "createThread", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = addEOperation(threadManagerEClass, this.getThread(), "createThread", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEString(), "name", 1, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, this.getJavaRunnable(), "runnable", 1, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEBoolean(), "daemon", 1, 1, IS_UNIQUE, IS_ORDERED);
 
-		initEOperation(getThreadManager__CurrentThread(), this.getThread(), "currentThread", 1, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(threadManagerEClass, this.getThread(), "currentThread", 1, 1, IS_UNIQUE, IS_ORDERED);
 
-		op = initEOperation(getThreadManager__GetThreadInfo__Thread(), this.getThreadInfo(), "getThreadInfo", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = addEOperation(threadManagerEClass, this.getThreadInfo(), "getThreadInfo", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, this.getThread(), "thread", 1, 1, IS_UNIQUE, IS_ORDERED);
 
-		initEOperation(getThreadManager__ListThreads(), this.getThread(), "listThreads", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(threadManagerEClass, this.getThread(), "listThreads", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		op = initEOperation(getThreadManager__LookupThread__long(), this.getThread(), "lookupThread", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = addEOperation(threadManagerEClass, this.getThread(), "lookupThread", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getELong(), "id", 1, 1, IS_UNIQUE, IS_ORDERED);
 
-		op = initEOperation(getThreadManager__LookupThread__String(), this.getThread(), "lookupThread", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = addEOperation(threadManagerEClass, this.getThread(), "lookupThread", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEString(), "name", 1, 1, IS_UNIQUE, IS_ORDERED);
 
-		op = initEOperation(getThreadManager__Release__Thread(), null, "release", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = addEOperation(threadManagerEClass, null, "release", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, this.getThread(), "thread", 1, 1, IS_UNIQUE, IS_ORDERED);
 
-		op = initEOperation(getThreadManager__Start__Thread(), null, "start", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = addEOperation(threadManagerEClass, null, "start", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, this.getThread(), "thread", 1, 1, IS_UNIQUE, IS_ORDERED);
 
-		op = initEOperation(getThreadManager__Stop__Thread(), null, "stop", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = addEOperation(threadManagerEClass, null, "stop", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, this.getThread(), "thread", 1, 1, IS_UNIQUE, IS_ORDERED);
 
-		op = initEOperation(getThreadManager__Suspend__Thread(), null, "suspend", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = addEOperation(threadManagerEClass, null, "suspend", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, this.getThread(), "thread", 1, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(urIsEClass, URIs.class, "URIs", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-		op = initEOperation(getURIs__GetBaseName__URI(), ecorePackage.getEString(), "getBaseName", 1, 1, IS_UNIQUE, IS_ORDERED);
+		op = addEOperation(urIsEClass, ecorePackage.getEString(), "getBaseName", 1, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, this.getJavaURI(), "uri", 1, 1, IS_UNIQUE, IS_ORDERED);
 
-		op = initEOperation(getURIs__ParseParameter__String(), null, "parseParameter", 1, 1, IS_UNIQUE, IS_ORDERED);
+		op = addEOperation(urIsEClass, null, "parseParameter", 1, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEString(), "query", 1, 1, IS_UNIQUE, IS_ORDERED);
 		g1 = createEGenericType(ecorePackage.getEMap());
 		g2 = createEGenericType(ecorePackage.getEString());

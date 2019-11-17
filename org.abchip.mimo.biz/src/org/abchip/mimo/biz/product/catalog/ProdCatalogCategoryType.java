@@ -41,7 +41,7 @@ public interface ProdCatalogCategoryType extends BizEntityType<ProdCatalogCatego
 	 * @return the value of the '<em>Description</em>' attribute.
 	 * @see #setDescription(String)
 	 * @see org.abchip.mimo.biz.product.catalog.CatalogPackage#getProdCatalogCategoryType_Description()
-	 * @model
+	 * @model annotation="mimo-ent-format type='description' length='255'"
 	 * @generated
 	 */
 	String getDescription();
@@ -85,7 +85,8 @@ public interface ProdCatalogCategoryType extends BizEntityType<ProdCatalogCatego
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ProdCatalogCategoryType' route='parentTypeId'"
 	 * @generated
 	 */
@@ -103,6 +104,7 @@ public interface ProdCatalogCategoryType extends BizEntityType<ProdCatalogCatego
 	 * @see #setProdCatalogCategoryTypeId(String)
 	 * @see org.abchip.mimo.biz.product.catalog.CatalogPackage#getProdCatalogCategoryType_ProdCatalogCategoryTypeId()
 	 * @model id="true" required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */

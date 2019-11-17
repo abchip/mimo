@@ -46,7 +46,7 @@ public interface TrackingCodeOrder extends BizEntity {
 	 * @return the value of the '<em>Affiliate Referred Time Stamp</em>' attribute.
 	 * @see #setAffiliateReferredTimeStamp(Date)
 	 * @see org.abchip.mimo.biz.marketing.tracking.TrackingPackage#getTrackingCodeOrder_AffiliateReferredTimeStamp()
-	 * @model
+	 * @model annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getAffiliateReferredTimeStamp();
@@ -72,7 +72,7 @@ public interface TrackingCodeOrder extends BizEntity {
 	 * @return the value of the '<em>Has Exported</em>' attribute.
 	 * @see #setHasExported(boolean)
 	 * @see org.abchip.mimo.biz.marketing.tracking.TrackingPackage#getTrackingCodeOrder_HasExported()
-	 * @model
+	 * @model annotation="mimo-ent-format type='indicator' length='1'"
 	 * @generated
 	 */
 	boolean isHasExported();
@@ -98,7 +98,7 @@ public interface TrackingCodeOrder extends BizEntity {
 	 * @return the value of the '<em>Is Billable</em>' attribute.
 	 * @see #setIsBillable(boolean)
 	 * @see org.abchip.mimo.biz.marketing.tracking.TrackingPackage#getTrackingCodeOrder_IsBillable()
-	 * @model
+	 * @model annotation="mimo-ent-format type='indicator' length='1'"
 	 * @generated
 	 */
 	boolean isIsBillable();
@@ -150,7 +150,7 @@ public interface TrackingCodeOrder extends BizEntity {
 	 * @return the value of the '<em>Site Id</em>' attribute.
 	 * @see #setSiteId(String)
 	 * @see org.abchip.mimo.biz.marketing.tracking.TrackingPackage#getTrackingCodeOrder_SiteId()
-	 * @model
+	 * @model annotation="mimo-ent-format type='long-varchar' length='255'"
 	 * @generated
 	 */
 	String getSiteId();

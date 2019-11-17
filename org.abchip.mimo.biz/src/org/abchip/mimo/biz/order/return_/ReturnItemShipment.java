@@ -44,7 +44,7 @@ public interface ReturnItemShipment extends BizEntity {
 	 * @return the value of the '<em>Quantity</em>' attribute.
 	 * @see #setQuantity(BigDecimal)
 	 * @see org.abchip.mimo.biz.order.return_.ReturnPackage#getReturnItemShipment_Quantity()
-	 * @model
+	 * @model annotation="mimo-ent-format type='fixed-point' precision='18' scale='6'"
 	 * @generated
 	 */
 	BigDecimal getQuantity();
@@ -97,6 +97,7 @@ public interface ReturnItemShipment extends BizEntity {
 	 * @see #setReturnItemSeqId(String)
 	 * @see org.abchip.mimo.biz.order.return_.ReturnPackage#getReturnItemShipment_ReturnItemSeqId()
 	 * @model required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
@@ -150,6 +151,7 @@ public interface ReturnItemShipment extends BizEntity {
 	 * @see #setShipmentItemSeqId(String)
 	 * @see org.abchip.mimo.biz.order.return_.ReturnPackage#getReturnItemShipment_ShipmentItemSeqId()
 	 * @model required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */

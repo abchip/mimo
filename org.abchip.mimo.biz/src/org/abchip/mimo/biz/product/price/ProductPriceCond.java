@@ -42,7 +42,7 @@ public interface ProductPriceCond extends BizEntity {
 	 * @return the value of the '<em>Cond Value</em>' attribute.
 	 * @see #setCondValue(String)
 	 * @see org.abchip.mimo.biz.product.price.PricePackage#getProductPriceCond_CondValue()
-	 * @model
+	 * @model annotation="mimo-ent-format type='long-varchar' length='255'"
 	 * @generated
 	 */
 	String getCondValue();
@@ -121,6 +121,7 @@ public interface ProductPriceCond extends BizEntity {
 	 * @see #setProductPriceCondSeqId(String)
 	 * @see org.abchip.mimo.biz.product.price.PricePackage#getProductPriceCond_ProductPriceCondSeqId()
 	 * @model required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */

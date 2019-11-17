@@ -44,6 +44,7 @@ public interface ConfigOptionProductOption extends BizEntity {
 	 * @see #setConfigId(String)
 	 * @see org.abchip.mimo.biz.product.config.ConfigPackage#getConfigOptionProductOption_ConfigId()
 	 * @model required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
@@ -71,6 +72,7 @@ public interface ConfigOptionProductOption extends BizEntity {
 	 * @see #setConfigItemId(String)
 	 * @see org.abchip.mimo.biz.product.config.ConfigPackage#getConfigOptionProductOption_ConfigItemId()
 	 * @model required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
@@ -98,6 +100,7 @@ public interface ConfigOptionProductOption extends BizEntity {
 	 * @see #setConfigOptionId(String)
 	 * @see org.abchip.mimo.biz.product.config.ConfigPackage#getConfigOptionProductOption_ConfigOptionId()
 	 * @model required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
@@ -124,7 +127,7 @@ public interface ConfigOptionProductOption extends BizEntity {
 	 * @return the value of the '<em>Description</em>' attribute.
 	 * @see #setDescription(String)
 	 * @see org.abchip.mimo.biz.product.config.ConfigPackage#getConfigOptionProductOption_Description()
-	 * @model
+	 * @model annotation="mimo-ent-format type='description' length='255'"
 	 * @generated
 	 */
 	String getDescription();
@@ -151,6 +154,7 @@ public interface ConfigOptionProductOption extends BizEntity {
 	 * @see #setProductId(String)
 	 * @see org.abchip.mimo.biz.product.config.ConfigPackage#getConfigOptionProductOption_ProductId()
 	 * @model required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
@@ -177,7 +181,7 @@ public interface ConfigOptionProductOption extends BizEntity {
 	 * @return the value of the '<em>Product Option Id</em>' attribute.
 	 * @see #setProductOptionId(String)
 	 * @see org.abchip.mimo.biz.product.config.ConfigPackage#getConfigOptionProductOption_ProductOptionId()
-	 * @model
+	 * @model annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	String getProductOptionId();
@@ -204,6 +208,7 @@ public interface ConfigOptionProductOption extends BizEntity {
 	 * @see #setSequenceNum(long)
 	 * @see org.abchip.mimo.biz.product.config.ConfigPackage#getConfigOptionProductOption_SequenceNum()
 	 * @model required="true"
+	 *        annotation="mimo-ent-format type='numeric' precision='20' scale='0'"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */

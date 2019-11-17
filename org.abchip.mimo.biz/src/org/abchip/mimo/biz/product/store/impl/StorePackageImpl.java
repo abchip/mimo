@@ -77,6 +77,7 @@ import org.abchip.mimo.biz.entity.crypto.CryptoPackage;
 import org.abchip.mimo.biz.entity.crypto.impl.CryptoPackageImpl;
 import org.abchip.mimo.biz.entity.group.GroupPackage;
 import org.abchip.mimo.biz.entity.group.impl.GroupPackageImpl;
+import org.abchip.mimo.biz.entity.impl.EntityPackageImpl;
 import org.abchip.mimo.biz.entity.sequence.SequencePackage;
 import org.abchip.mimo.biz.entity.sequence.impl.SequencePackageImpl;
 import org.abchip.mimo.biz.entity.synchronization.SynchronizationPackage;
@@ -212,7 +213,6 @@ import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EGenericType;
-import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 
 import org.eclipse.emf.ecore.EReference;
@@ -466,6 +466,8 @@ public class StorePackageImpl extends EPackageImpl implements StorePackage {
 		SurveyPackageImpl theSurveyPackage = (SurveyPackageImpl)(registeredPackage instanceof SurveyPackageImpl ? registeredPackage : SurveyPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(WebsitePackage.eNS_URI);
 		WebsitePackageImpl theWebsitePackage = (WebsitePackageImpl)(registeredPackage instanceof WebsitePackageImpl ? registeredPackage : WebsitePackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(org.abchip.mimo.biz.entity.EntityPackage.eNS_URI);
+		EntityPackageImpl theEntityPackage = (EntityPackageImpl)(registeredPackage instanceof EntityPackageImpl ? registeredPackage : org.abchip.mimo.biz.entity.EntityPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(AuditPackage.eNS_URI);
 		AuditPackageImpl theAuditPackage = (AuditPackageImpl)(registeredPackage instanceof AuditPackageImpl ? registeredPackage : AuditPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(CryptoPackage.eNS_URI);
@@ -619,6 +621,7 @@ public class StorePackageImpl extends EPackageImpl implements StorePackage {
 		thePreferencePackage.createPackageContents();
 		theSurveyPackage.createPackageContents();
 		theWebsitePackage.createPackageContents();
+		theEntityPackage.createPackageContents();
 		theAuditPackage.createPackageContents();
 		theCryptoPackage.createPackageContents();
 		theGroupPackage.createPackageContents();
@@ -713,6 +716,7 @@ public class StorePackageImpl extends EPackageImpl implements StorePackage {
 		thePreferencePackage.initializePackageContents();
 		theSurveyPackage.initializePackageContents();
 		theWebsitePackage.initializePackageContents();
+		theEntityPackage.initializePackageContents();
 		theAuditPackage.initializePackageContents();
 		theCryptoPackage.initializePackageContents();
 		theGroupPackage.initializePackageContents();
@@ -1657,136 +1661,6 @@ public class StorePackageImpl extends EPackageImpl implements StorePackage {
 	 * @generated
 	 */
 	@Override
-	public EOperation getProductStore__CustRequests() {
-		return productStoreEClass.getEOperations().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EOperation getProductStore__GitHubUsers() {
-		return productStoreEClass.getEOperations().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EOperation getProductStore__GoogleUsers() {
-		return productStoreEClass.getEOperations().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EOperation getProductStore__LinkedInUsers() {
-		return productStoreEClass.getEOperations().get(3);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EOperation getProductStore__OrderHeaders() {
-		return productStoreEClass.getEOperations().get(4);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EOperation getProductStore__PartyProfileDefaults() {
-		return productStoreEClass.getEOperations().get(5);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EOperation getProductStore__ProductReviews() {
-		return productStoreEClass.getEOperations().get(6);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EOperation getProductStore__ProductStoreSurveyAppls() {
-		return productStoreEClass.getEOperations().get(7);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EOperation getProductStore__Quotes() {
-		return productStoreEClass.getEOperations().get(8);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EOperation getProductStore__SegmentGroups() {
-		return productStoreEClass.getEOperations().get(9);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EOperation getProductStore__ShoppingLists() {
-		return productStoreEClass.getEOperations().get(10);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EOperation getProductStore__TaxAuthorityRateProducts() {
-		return productStoreEClass.getEOperations().get(11);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EOperation getProductStore__WebSites() {
-		return productStoreEClass.getEOperations().get(12);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public EClass getProductStoreCatalog() {
 		return productStoreCatalogEClass;
 	}
@@ -2207,16 +2081,6 @@ public class StorePackageImpl extends EPackageImpl implements StorePackage {
 	 * @generated
 	 */
 	@Override
-	public EOperation getProductStoreGroup__PrimaryProductStores() {
-		return productStoreGroupEClass.getEOperations().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public EAttribute getProductStoreGroup_ProductStoreGroupName() {
 		return (EAttribute)productStoreGroupEClass.getEStructuralFeatures().get(2);
 	}
@@ -2419,16 +2283,6 @@ public class StorePackageImpl extends EPackageImpl implements StorePackage {
 	@Override
 	public EAttribute getProductStoreGroupType_Description() {
 		return (EAttribute)productStoreGroupTypeEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EOperation getProductStoreGroupType__ProductStoreGroups() {
-		return productStoreGroupTypeEClass.getEOperations().get(0);
 	}
 
 	/**
@@ -3007,16 +2861,6 @@ public class StorePackageImpl extends EPackageImpl implements StorePackage {
 	 * @generated
 	 */
 	@Override
-	public EOperation getProductStoreShipmentMeth__ShipmentCostEstimates() {
-		return productStoreShipmentMethEClass.getEOperations().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public EReference getProductStoreShipmentMeth_ShipmentGatewayConfigId() {
 		return (EReference)productStoreShipmentMethEClass.getEStructuralFeatures().get(26);
 	}
@@ -3377,19 +3221,6 @@ public class StorePackageImpl extends EPackageImpl implements StorePackage {
 		createEAttribute(productStoreEClass, PRODUCT_STORE__OAUTH2_LINKED_INS);
 		createEAttribute(productStoreEClass, PRODUCT_STORE__PRODUCT_STORE_EMAIL_SETTINGS);
 		createEAttribute(productStoreEClass, PRODUCT_STORE__PRODUCT_STORE_FIN_ACT_SETTINGS);
-		createEOperation(productStoreEClass, PRODUCT_STORE___CUST_REQUESTS);
-		createEOperation(productStoreEClass, PRODUCT_STORE___GIT_HUB_USERS);
-		createEOperation(productStoreEClass, PRODUCT_STORE___GOOGLE_USERS);
-		createEOperation(productStoreEClass, PRODUCT_STORE___LINKED_IN_USERS);
-		createEOperation(productStoreEClass, PRODUCT_STORE___ORDER_HEADERS);
-		createEOperation(productStoreEClass, PRODUCT_STORE___PARTY_PROFILE_DEFAULTS);
-		createEOperation(productStoreEClass, PRODUCT_STORE___PRODUCT_REVIEWS);
-		createEOperation(productStoreEClass, PRODUCT_STORE___PRODUCT_STORE_SURVEY_APPLS);
-		createEOperation(productStoreEClass, PRODUCT_STORE___QUOTES);
-		createEOperation(productStoreEClass, PRODUCT_STORE___SEGMENT_GROUPS);
-		createEOperation(productStoreEClass, PRODUCT_STORE___SHOPPING_LISTS);
-		createEOperation(productStoreEClass, PRODUCT_STORE___TAX_AUTHORITY_RATE_PRODUCTS);
-		createEOperation(productStoreEClass, PRODUCT_STORE___WEB_SITES);
 
 		productStoreCatalogEClass = createEClass(PRODUCT_STORE_CATALOG);
 		createEAttribute(productStoreCatalogEClass, PRODUCT_STORE_CATALOG__FROM_DATE);
@@ -3439,7 +3270,6 @@ public class StorePackageImpl extends EPackageImpl implements StorePackage {
 		createEAttribute(productStoreGroupEClass, PRODUCT_STORE_GROUP__PRODUCT_STORE_GROUP_NAME);
 		createEReference(productStoreGroupEClass, PRODUCT_STORE_GROUP__PRODUCT_STORE_GROUP_TYPE_ID);
 		createEReference(productStoreGroupEClass, PRODUCT_STORE_GROUP__PRIMARY_PARENT_GROUP_ID);
-		createEOperation(productStoreGroupEClass, PRODUCT_STORE_GROUP___PRIMARY_PRODUCT_STORES);
 
 		productStoreGroupMemberEClass = createEClass(PRODUCT_STORE_GROUP_MEMBER);
 		createEAttribute(productStoreGroupMemberEClass, PRODUCT_STORE_GROUP_MEMBER__FROM_DATE);
@@ -3463,7 +3293,6 @@ public class StorePackageImpl extends EPackageImpl implements StorePackage {
 		productStoreGroupTypeEClass = createEClass(PRODUCT_STORE_GROUP_TYPE);
 		createEAttribute(productStoreGroupTypeEClass, PRODUCT_STORE_GROUP_TYPE__PRODUCT_STORE_GROUP_TYPE_ID);
 		createEAttribute(productStoreGroupTypeEClass, PRODUCT_STORE_GROUP_TYPE__DESCRIPTION);
-		createEOperation(productStoreGroupTypeEClass, PRODUCT_STORE_GROUP_TYPE___PRODUCT_STORE_GROUPS);
 
 		productStoreKeywordOvrdEClass = createEClass(PRODUCT_STORE_KEYWORD_OVRD);
 		createEAttribute(productStoreKeywordOvrdEClass, PRODUCT_STORE_KEYWORD_OVRD__KEYWORD);
@@ -3528,7 +3357,6 @@ public class StorePackageImpl extends EPackageImpl implements StorePackage {
 		createEReference(productStoreShipmentMethEClass, PRODUCT_STORE_SHIPMENT_METH__EXCLUDE_GEO_ID);
 		createEReference(productStoreShipmentMethEClass, PRODUCT_STORE_SHIPMENT_METH__SHIPMENT_GATEWAY_CONFIG_ID);
 		createEReference(productStoreShipmentMethEClass, PRODUCT_STORE_SHIPMENT_METH__SHIPMENT_CUSTOM_METHOD_ID);
-		createEOperation(productStoreShipmentMethEClass, PRODUCT_STORE_SHIPMENT_METH___SHIPMENT_COST_ESTIMATES);
 
 		productStoreSurveyApplEClass = createEClass(PRODUCT_STORE_SURVEY_APPL);
 		createEAttribute(productStoreSurveyApplEClass, PRODUCT_STORE_SURVEY_APPL__PRODUCT_STORE_SURVEY_ID);
@@ -3628,7 +3456,7 @@ public class StorePackageImpl extends EPackageImpl implements StorePackage {
 		productStoreVendorPaymentEClass.getESuperTypes().add(theBizPackage.getBizEntity());
 		productStoreVendorShipmentEClass.getESuperTypes().add(theBizPackage.getBizEntity());
 
-		// Initialize classes, features, and operations; add parameters
+		// Initialize classes and features; add operations and parameters
 		initEClass(productStoreEClass, ProductStore.class, "ProductStore", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getProductStore_ProductStoreId(), ecorePackage.getEString(), "productStoreId", null, 1, 1, ProductStore.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getProductStore_AddToCartRemoveIncompat(), ecorePackage.getEBoolean(), "addToCartRemoveIncompat", null, 0, 1, ProductStore.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -3667,12 +3495,12 @@ public class StorePackageImpl extends EPackageImpl implements StorePackage {
 		initEAttribute(getProductStore_OldHeaderMiddleBackground(), ecorePackage.getEString(), "oldHeaderMiddleBackground", null, 0, 1, ProductStore.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getProductStore_OldHeaderRightBackground(), ecorePackage.getEString(), "oldHeaderRightBackground", null, 0, 1, ProductStore.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getProductStore_OldStyleSheet(), ecorePackage.getEString(), "oldStyleSheet", null, 0, 1, ProductStore.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getProductStore_OneInventoryFacility(), ecorePackage.getEBoolean(), "oneInventoryFacility", null, 0, 1, ProductStore.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getProductStore_OrderDecimalQuantity(), ecorePackage.getEBoolean(), "orderDecimalQuantity", null, 0, 1, ProductStore.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getProductStore_OneInventoryFacility(), ecorePackage.getEChar(), "oneInventoryFacility", null, 0, 1, ProductStore.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getProductStore_OrderDecimalQuantity(), ecorePackage.getEChar(), "orderDecimalQuantity", null, 0, 1, ProductStore.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getProductStore_OrderNumberPrefix(), ecorePackage.getEString(), "orderNumberPrefix", null, 0, 1, ProductStore.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getProductStore_ProdSearchExcludeVariants(), ecorePackage.getEBoolean(), "prodSearchExcludeVariants", null, 0, 1, ProductStore.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getProductStore_ProrateShipping(), ecorePackage.getEBoolean(), "prorateShipping", null, 0, 1, ProductStore.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getProductStore_ProrateTaxes(), ecorePackage.getEBoolean(), "prorateTaxes", null, 0, 1, ProductStore.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getProductStore_ProdSearchExcludeVariants(), ecorePackage.getEChar(), "prodSearchExcludeVariants", null, 0, 1, ProductStore.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getProductStore_ProrateShipping(), ecorePackage.getEChar(), "prorateShipping", null, 0, 1, ProductStore.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getProductStore_ProrateTaxes(), ecorePackage.getEChar(), "prorateTaxes", null, 0, 1, ProductStore.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getProductStore_ReqReturnInventoryReceive(), ecorePackage.getEBoolean(), "reqReturnInventoryReceive", null, 0, 1, ProductStore.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getProductStore_ReqShipAddrForDigItems(), ecorePackage.getEBoolean(), "reqShipAddrForDigItems", null, 0, 1, ProductStore.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getProductStore_RequireCustomerRole(), ecorePackage.getEBoolean(), "requireCustomerRole", null, 0, 1, ProductStore.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -3726,37 +3554,37 @@ public class StorePackageImpl extends EPackageImpl implements StorePackage {
 		getProductStore_ItemCancelStatus().getEKeys().add(theStatusPackage.getStatusItem_StatusId());
 		initEReference(getProductStore_StoreCreditAccountEnumId(), theEnumPackage.getEnumeration(), null, "storeCreditAccountEnumId", null, 0, 1, ProductStore.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getProductStore_StoreCreditAccountEnumId().getEKeys().add(theEnumPackage.getEnumeration_EnumId());
-		initEAttribute(getProductStore_OAuth2GitHubs(), ecorePackage.getEString(), "oAuth2GitHubs", null, 0, -1, ProductStore.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getProductStore_OAuth2Googles(), ecorePackage.getEString(), "oAuth2Googles", null, 0, -1, ProductStore.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getProductStore_OAuth2LinkedIns(), ecorePackage.getEString(), "oAuth2LinkedIns", null, 0, -1, ProductStore.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getProductStore_ProductStoreEmailSettings(), ecorePackage.getEString(), "productStoreEmailSettings", null, 0, -1, ProductStore.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getProductStore_ProductStoreFinActSettings(), ecorePackage.getEString(), "productStoreFinActSettings", null, 0, -1, ProductStore.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getProductStore_OAuth2GitHubs(), ecorePackage.getEString(), "oAuth2GitHubs", null, 1, -1, ProductStore.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getProductStore_OAuth2Googles(), ecorePackage.getEString(), "oAuth2Googles", null, 1, -1, ProductStore.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getProductStore_OAuth2LinkedIns(), ecorePackage.getEString(), "oAuth2LinkedIns", null, 1, -1, ProductStore.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getProductStore_ProductStoreEmailSettings(), ecorePackage.getEString(), "productStoreEmailSettings", null, 1, -1, ProductStore.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getProductStore_ProductStoreFinActSettings(), ecorePackage.getEString(), "productStoreFinActSettings", null, 1, -1, ProductStore.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEOperation(getProductStore__CustRequests(), ecorePackage.getEString(), "custRequests", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(productStoreEClass, ecorePackage.getEString(), "custRequests", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		initEOperation(getProductStore__GitHubUsers(), ecorePackage.getEString(), "gitHubUsers", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(productStoreEClass, ecorePackage.getEString(), "gitHubUsers", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		initEOperation(getProductStore__GoogleUsers(), ecorePackage.getEString(), "googleUsers", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(productStoreEClass, ecorePackage.getEString(), "googleUsers", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		initEOperation(getProductStore__LinkedInUsers(), ecorePackage.getEString(), "linkedInUsers", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(productStoreEClass, ecorePackage.getEString(), "linkedInUsers", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		initEOperation(getProductStore__OrderHeaders(), ecorePackage.getEString(), "orderHeaders", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(productStoreEClass, ecorePackage.getEString(), "orderHeaders", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		initEOperation(getProductStore__PartyProfileDefaults(), ecorePackage.getEString(), "partyProfileDefaults", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(productStoreEClass, ecorePackage.getEString(), "partyProfileDefaults", 1, -1, IS_UNIQUE, IS_ORDERED);
 
-		initEOperation(getProductStore__ProductReviews(), ecorePackage.getEString(), "productReviews", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(productStoreEClass, ecorePackage.getEString(), "productReviews", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		initEOperation(getProductStore__ProductStoreSurveyAppls(), ecorePackage.getEString(), "productStoreSurveyAppls", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(productStoreEClass, ecorePackage.getEString(), "productStoreSurveyAppls", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		initEOperation(getProductStore__Quotes(), ecorePackage.getEString(), "quotes", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(productStoreEClass, ecorePackage.getEString(), "quotes", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		initEOperation(getProductStore__SegmentGroups(), ecorePackage.getEString(), "segmentGroups", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(productStoreEClass, ecorePackage.getEString(), "segmentGroups", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		initEOperation(getProductStore__ShoppingLists(), ecorePackage.getEString(), "shoppingLists", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(productStoreEClass, ecorePackage.getEString(), "shoppingLists", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		initEOperation(getProductStore__TaxAuthorityRateProducts(), ecorePackage.getEString(), "taxAuthorityRateProducts", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(productStoreEClass, ecorePackage.getEString(), "taxAuthorityRateProducts", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		initEOperation(getProductStore__WebSites(), ecorePackage.getEString(), "webSites", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(productStoreEClass, ecorePackage.getEString(), "webSites", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(productStoreCatalogEClass, ProductStoreCatalog.class, "ProductStoreCatalog", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getProductStoreCatalog_FromDate(), ecorePackage.getEDate(), "fromDate", null, 1, 1, ProductStoreCatalog.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -3819,7 +3647,7 @@ public class StorePackageImpl extends EPackageImpl implements StorePackage {
 		initEReference(getProductStoreGroup_PrimaryParentGroupId(), this.getProductStoreGroup(), null, "primaryParentGroupId", null, 0, 1, ProductStoreGroup.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getProductStoreGroup_PrimaryParentGroupId().getEKeys().add(this.getProductStoreGroup_ProductStoreGroupId());
 
-		initEOperation(getProductStoreGroup__PrimaryProductStores(), ecorePackage.getEString(), "primaryProductStores", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(productStoreGroupEClass, ecorePackage.getEString(), "primaryProductStores", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(productStoreGroupMemberEClass, ProductStoreGroupMember.class, "ProductStoreGroupMember", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getProductStoreGroupMember_FromDate(), ecorePackage.getEDate(), "fromDate", null, 1, 1, ProductStoreGroupMember.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -3851,7 +3679,7 @@ public class StorePackageImpl extends EPackageImpl implements StorePackage {
 		initEAttribute(getProductStoreGroupType_ProductStoreGroupTypeId(), ecorePackage.getEString(), "productStoreGroupTypeId", null, 1, 1, ProductStoreGroupType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getProductStoreGroupType_Description(), ecorePackage.getEString(), "description", null, 0, 1, ProductStoreGroupType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEOperation(getProductStoreGroupType__ProductStoreGroups(), ecorePackage.getEString(), "productStoreGroups", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(productStoreGroupTypeEClass, ecorePackage.getEString(), "productStoreGroups", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(productStoreKeywordOvrdEClass, ProductStoreKeywordOvrd.class, "ProductStoreKeywordOvrd", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getProductStoreKeywordOvrd_Keyword(), ecorePackage.getEString(), "keyword", null, 1, 1, ProductStoreKeywordOvrd.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -3880,7 +3708,7 @@ public class StorePackageImpl extends EPackageImpl implements StorePackage {
 
 		initEClass(productStorePromoApplEClass, ProductStorePromoAppl.class, "ProductStorePromoAppl", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getProductStorePromoAppl_FromDate(), ecorePackage.getEDate(), "fromDate", null, 1, 1, ProductStorePromoAppl.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getProductStorePromoAppl_ManualOnly(), ecorePackage.getEBoolean(), "manualOnly", null, 0, 1, ProductStorePromoAppl.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getProductStorePromoAppl_ManualOnly(), ecorePackage.getEChar(), "manualOnly", null, 0, 1, ProductStorePromoAppl.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getProductStorePromoAppl_SequenceNum(), ecorePackage.getELong(), "sequenceNum", null, 0, 1, ProductStorePromoAppl.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getProductStorePromoAppl_ThruDate(), ecorePackage.getEDate(), "thruDate", null, 0, 1, ProductStorePromoAppl.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getProductStorePromoAppl_ProductStoreId(), this.getProductStore(), null, "productStoreId", null, 0, 1, ProductStorePromoAppl.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -3935,7 +3763,7 @@ public class StorePackageImpl extends EPackageImpl implements StorePackage {
 		initEReference(getProductStoreShipmentMeth_ShipmentCustomMethodId(), theMethodPackage.getCustomMethod(), null, "shipmentCustomMethodId", null, 0, 1, ProductStoreShipmentMeth.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getProductStoreShipmentMeth_ShipmentCustomMethodId().getEKeys().add(theMethodPackage.getCustomMethod_CustomMethodId());
 
-		initEOperation(getProductStoreShipmentMeth__ShipmentCostEstimates(), ecorePackage.getEString(), "shipmentCostEstimates", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(productStoreShipmentMethEClass, ecorePackage.getEString(), "shipmentCostEstimates", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(productStoreSurveyApplEClass, ProductStoreSurveyAppl.class, "ProductStoreSurveyAppl", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getProductStoreSurveyAppl_ProductStoreSurveyId(), ecorePackage.getEString(), "productStoreSurveyId", null, 1, 1, ProductStoreSurveyAppl.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -3977,12 +3805,1188 @@ public class StorePackageImpl extends EPackageImpl implements StorePackage {
 		getProductStoreVendorShipment_CarrierPartyId().getEKeys().add(thePartyPackage.getParty_PartyId());
 
 		// Create annotations
+		// mimo-ent-format
+		createMimoentformatAnnotations();
 		// mimo-ent-slot
 		createMimoentslotAnnotations();
 		// mimo-ent-domain
 		createMimoentdomainAnnotations();
 		// mimo-ent-frame
 		createMimoentframeAnnotations();
+	}
+
+	/**
+	 * Initializes the annotations for <b>mimo-ent-format</b>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void createMimoentformatAnnotations() {
+		String source = "mimo-ent-format";
+		addAnnotation
+		  (productStoreEClass.getEOperations().get(0),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (productStoreEClass.getEOperations().get(1),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (productStoreEClass.getEOperations().get(2),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (productStoreEClass.getEOperations().get(3),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (productStoreEClass.getEOperations().get(4),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (productStoreEClass.getEOperations().get(5),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (productStoreEClass.getEOperations().get(6),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (productStoreEClass.getEOperations().get(7),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (productStoreEClass.getEOperations().get(8),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (productStoreEClass.getEOperations().get(9),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (productStoreEClass.getEOperations().get(10),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (productStoreEClass.getEOperations().get(11),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (productStoreEClass.getEOperations().get(12),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (getProductStore_ProductStoreId(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (getProductStore_AddToCartRemoveIncompat(),
+		   source,
+		   new String[] {
+			   "type", "indicator",
+			   "length", "1"
+		   });
+		addAnnotation
+		  (getProductStore_AddToCartReplaceUpsell(),
+		   source,
+		   new String[] {
+			   "type", "indicator",
+			   "length", "1"
+		   });
+		addAnnotation
+		  (getProductStore_AllowComment(),
+		   source,
+		   new String[] {
+			   "type", "indicator",
+			   "length", "1"
+		   });
+		addAnnotation
+		  (getProductStore_AllowPassword(),
+		   source,
+		   new String[] {
+			   "type", "indicator",
+			   "length", "1"
+		   });
+		addAnnotation
+		  (getProductStore_AuthDeclinedMessage(),
+		   source,
+		   new String[] {
+			   "type", "long-varchar",
+			   "length", "255"
+		   });
+		addAnnotation
+		  (getProductStore_AuthErrorMessage(),
+		   source,
+		   new String[] {
+			   "type", "long-varchar",
+			   "length", "255"
+		   });
+		addAnnotation
+		  (getProductStore_AuthFraudMessage(),
+		   source,
+		   new String[] {
+			   "type", "long-varchar",
+			   "length", "255"
+		   });
+		addAnnotation
+		  (getProductStore_AutoApproveInvoice(),
+		   source,
+		   new String[] {
+			   "type", "indicator",
+			   "length", "1"
+		   });
+		addAnnotation
+		  (getProductStore_AutoApproveOrder(),
+		   source,
+		   new String[] {
+			   "type", "indicator",
+			   "length", "1"
+		   });
+		addAnnotation
+		  (getProductStore_AutoApproveReviews(),
+		   source,
+		   new String[] {
+			   "type", "indicator",
+			   "length", "1"
+		   });
+		addAnnotation
+		  (getProductStore_AutoInvoiceDigitalItems(),
+		   source,
+		   new String[] {
+			   "type", "indicator",
+			   "length", "1"
+		   });
+		addAnnotation
+		  (getProductStore_AutoOrderCcTryExp(),
+		   source,
+		   new String[] {
+			   "type", "indicator",
+			   "length", "1"
+		   });
+		addAnnotation
+		  (getProductStore_AutoOrderCcTryLaterMax(),
+		   source,
+		   new String[] {
+			   "type", "numeric",
+			   "precision", "20",
+			   "scale", "0"
+		   });
+		addAnnotation
+		  (getProductStore_AutoOrderCcTryLaterNsf(),
+		   source,
+		   new String[] {
+			   "type", "indicator",
+			   "length", "1"
+		   });
+		addAnnotation
+		  (getProductStore_AutoOrderCcTryOtherCards(),
+		   source,
+		   new String[] {
+			   "type", "indicator",
+			   "length", "1"
+		   });
+		addAnnotation
+		  (getProductStore_AutoSaveCart(),
+		   source,
+		   new String[] {
+			   "type", "indicator",
+			   "length", "1"
+		   });
+		addAnnotation
+		  (getProductStore_BalanceResOnOrderCreation(),
+		   source,
+		   new String[] {
+			   "type", "indicator",
+			   "length", "1"
+		   });
+		addAnnotation
+		  (getProductStore_CheckGcBalance(),
+		   source,
+		   new String[] {
+			   "type", "indicator",
+			   "length", "1"
+		   });
+		addAnnotation
+		  (getProductStore_CheckInventory(),
+		   source,
+		   new String[] {
+			   "type", "indicator",
+			   "length", "1"
+		   });
+		addAnnotation
+		  (getProductStore_CompanyName(),
+		   source,
+		   new String[] {
+			   "type", "name",
+			   "length", "100"
+		   });
+		addAnnotation
+		  (getProductStore_DaysToCancelNonPay(),
+		   source,
+		   new String[] {
+			   "type", "numeric",
+			   "precision", "20",
+			   "scale", "0"
+		   });
+		addAnnotation
+		  (getProductStore_DefaultLocaleString(),
+		   source,
+		   new String[] {
+			   "type", "very-short",
+			   "length", "10"
+		   });
+		addAnnotation
+		  (getProductStore_DefaultPassword(),
+		   source,
+		   new String[] {
+			   "type", "long-varchar",
+			   "length", "255"
+		   });
+		addAnnotation
+		  (getProductStore_DefaultTimeZoneString(),
+		   source,
+		   new String[] {
+			   "type", "id-long",
+			   "length", "60"
+		   });
+		addAnnotation
+		  (getProductStore_DigProdUploadCategoryId(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (getProductStore_EnableAutoSuggestionList(),
+		   source,
+		   new String[] {
+			   "type", "indicator",
+			   "length", "1"
+		   });
+		addAnnotation
+		  (getProductStore_EnableDigProdUpload(),
+		   source,
+		   new String[] {
+			   "type", "indicator",
+			   "length", "1"
+		   });
+		addAnnotation
+		  (getProductStore_ExplodeOrderItems(),
+		   source,
+		   new String[] {
+			   "type", "indicator",
+			   "length", "1"
+		   });
+		addAnnotation
+		  (getProductStore_IsDemoStore(),
+		   source,
+		   new String[] {
+			   "type", "indicator",
+			   "length", "1"
+		   });
+		addAnnotation
+		  (getProductStore_IsImmediatelyFulfilled(),
+		   source,
+		   new String[] {
+			   "type", "indicator",
+			   "length", "1"
+		   });
+		addAnnotation
+		  (getProductStore_ManagedByLot(),
+		   source,
+		   new String[] {
+			   "type", "indicator",
+			   "length", "1"
+		   });
+		addAnnotation
+		  (getProductStore_ManualAuthIsCapture(),
+		   source,
+		   new String[] {
+			   "type", "indicator",
+			   "length", "1"
+		   });
+		addAnnotation
+		  (getProductStore_OldHeaderLogo(),
+		   source,
+		   new String[] {
+			   "type", "url",
+			   "length", "2000"
+		   });
+		addAnnotation
+		  (getProductStore_OldHeaderMiddleBackground(),
+		   source,
+		   new String[] {
+			   "type", "url",
+			   "length", "2000"
+		   });
+		addAnnotation
+		  (getProductStore_OldHeaderRightBackground(),
+		   source,
+		   new String[] {
+			   "type", "url",
+			   "length", "2000"
+		   });
+		addAnnotation
+		  (getProductStore_OldStyleSheet(),
+		   source,
+		   new String[] {
+			   "type", "url",
+			   "length", "2000"
+		   });
+		addAnnotation
+		  (getProductStore_OneInventoryFacility(),
+		   source,
+		   new String[] {
+			   "type", "indicator",
+			   "length", "1"
+		   });
+		addAnnotation
+		  (getProductStore_OrderDecimalQuantity(),
+		   source,
+		   new String[] {
+			   "type", "indicator",
+			   "length", "1"
+		   });
+		addAnnotation
+		  (getProductStore_OrderNumberPrefix(),
+		   source,
+		   new String[] {
+			   "type", "id-long",
+			   "length", "60"
+		   });
+		addAnnotation
+		  (getProductStore_ProdSearchExcludeVariants(),
+		   source,
+		   new String[] {
+			   "type", "indicator",
+			   "length", "1"
+		   });
+		addAnnotation
+		  (getProductStore_ProrateShipping(),
+		   source,
+		   new String[] {
+			   "type", "indicator",
+			   "length", "1"
+		   });
+		addAnnotation
+		  (getProductStore_ProrateTaxes(),
+		   source,
+		   new String[] {
+			   "type", "indicator",
+			   "length", "1"
+		   });
+		addAnnotation
+		  (getProductStore_ReqReturnInventoryReceive(),
+		   source,
+		   new String[] {
+			   "type", "indicator",
+			   "length", "1"
+		   });
+		addAnnotation
+		  (getProductStore_ReqShipAddrForDigItems(),
+		   source,
+		   new String[] {
+			   "type", "indicator",
+			   "length", "1"
+		   });
+		addAnnotation
+		  (getProductStore_RequireCustomerRole(),
+		   source,
+		   new String[] {
+			   "type", "indicator",
+			   "length", "1"
+		   });
+		addAnnotation
+		  (getProductStore_RequireInventory(),
+		   source,
+		   new String[] {
+			   "type", "indicator",
+			   "length", "1"
+		   });
+		addAnnotation
+		  (getProductStore_ReserveInventory(),
+		   source,
+		   new String[] {
+			   "type", "indicator",
+			   "length", "1"
+		   });
+		addAnnotation
+		  (getProductStore_RetryFailedAuths(),
+		   source,
+		   new String[] {
+			   "type", "indicator",
+			   "length", "1"
+		   });
+		addAnnotation
+		  (getProductStore_SelectPaymentTypePerItem(),
+		   source,
+		   new String[] {
+			   "type", "indicator",
+			   "length", "1"
+		   });
+		addAnnotation
+		  (getProductStore_SetOwnerUponIssuance(),
+		   source,
+		   new String[] {
+			   "type", "indicator",
+			   "length", "1"
+		   });
+		addAnnotation
+		  (getProductStore_ShipIfCaptureFails(),
+		   source,
+		   new String[] {
+			   "type", "indicator",
+			   "length", "1"
+		   });
+		addAnnotation
+		  (getProductStore_ShowCheckoutGiftOptions(),
+		   source,
+		   new String[] {
+			   "type", "indicator",
+			   "length", "1"
+		   });
+		addAnnotation
+		  (getProductStore_ShowOutOfStockProducts(),
+		   source,
+		   new String[] {
+			   "type", "indicator",
+			   "length", "1"
+		   });
+		addAnnotation
+		  (getProductStore_ShowPricesWithVatTax(),
+		   source,
+		   new String[] {
+			   "type", "indicator",
+			   "length", "1"
+		   });
+		addAnnotation
+		  (getProductStore_ShowTaxIsExempt(),
+		   source,
+		   new String[] {
+			   "type", "indicator",
+			   "length", "1"
+		   });
+		addAnnotation
+		  (getProductStore_SplitPayPrefPerShpGrp(),
+		   source,
+		   new String[] {
+			   "type", "indicator",
+			   "length", "1"
+		   });
+		addAnnotation
+		  (getProductStore_StoreCreditValidDays(),
+		   source,
+		   new String[] {
+			   "type", "numeric",
+			   "precision", "20",
+			   "scale", "0"
+		   });
+		addAnnotation
+		  (getProductStore_StoreName(),
+		   source,
+		   new String[] {
+			   "type", "name",
+			   "length", "100"
+		   });
+		addAnnotation
+		  (getProductStore_Subtitle(),
+		   source,
+		   new String[] {
+			   "type", "description",
+			   "length", "255"
+		   });
+		addAnnotation
+		  (getProductStore_Title(),
+		   source,
+		   new String[] {
+			   "type", "name",
+			   "length", "100"
+		   });
+		addAnnotation
+		  (getProductStore_UsePrimaryEmailUsername(),
+		   source,
+		   new String[] {
+			   "type", "indicator",
+			   "length", "1"
+		   });
+		addAnnotation
+		  (getProductStore_VatTaxAuthGeoId(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (getProductStore_VatTaxAuthPartyId(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (getProductStore_ViewCartOnAdd(),
+		   source,
+		   new String[] {
+			   "type", "indicator",
+			   "length", "1"
+		   });
+		addAnnotation
+		  (getProductStore_VisualThemeId(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (getProductStore_OAuth2GitHubs(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (getProductStore_OAuth2Googles(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (getProductStore_OAuth2LinkedIns(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (getProductStore_ProductStoreEmailSettings(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (getProductStore_ProductStoreFinActSettings(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (getProductStoreCatalog_FromDate(),
+		   source,
+		   new String[] {
+			   "type", "date-time"
+		   });
+		addAnnotation
+		  (getProductStoreCatalog_SequenceNum(),
+		   source,
+		   new String[] {
+			   "type", "numeric",
+			   "precision", "20",
+			   "scale", "0"
+		   });
+		addAnnotation
+		  (getProductStoreCatalog_ThruDate(),
+		   source,
+		   new String[] {
+			   "type", "date-time"
+		   });
+		addAnnotation
+		  (getProductStoreEmailSetting_BccAddress(),
+		   source,
+		   new String[] {
+			   "type", "email",
+			   "length", "320"
+		   });
+		addAnnotation
+		  (getProductStoreEmailSetting_BodyScreenLocation(),
+		   source,
+		   new String[] {
+			   "type", "long-varchar",
+			   "length", "255"
+		   });
+		addAnnotation
+		  (getProductStoreEmailSetting_CcAddress(),
+		   source,
+		   new String[] {
+			   "type", "email",
+			   "length", "320"
+		   });
+		addAnnotation
+		  (getProductStoreEmailSetting_ContentType(),
+		   source,
+		   new String[] {
+			   "type", "long-varchar",
+			   "length", "255"
+		   });
+		addAnnotation
+		  (getProductStoreEmailSetting_FromAddress(),
+		   source,
+		   new String[] {
+			   "type", "email",
+			   "length", "320"
+		   });
+		addAnnotation
+		  (getProductStoreEmailSetting_Subject(),
+		   source,
+		   new String[] {
+			   "type", "comment",
+			   "length", "255"
+		   });
+		addAnnotation
+		  (getProductStoreEmailSetting_XslfoAttachScreenLocation(),
+		   source,
+		   new String[] {
+			   "type", "long-varchar",
+			   "length", "255"
+		   });
+		addAnnotation
+		  (getProductStoreFacility_FromDate(),
+		   source,
+		   new String[] {
+			   "type", "date-time"
+		   });
+		addAnnotation
+		  (getProductStoreFacility_SequenceNum(),
+		   source,
+		   new String[] {
+			   "type", "numeric",
+			   "precision", "20",
+			   "scale", "0"
+		   });
+		addAnnotation
+		  (getProductStoreFacility_ThruDate(),
+		   source,
+		   new String[] {
+			   "type", "date-time"
+		   });
+		addAnnotation
+		  (getProductStoreFinActSetting_AccountCodeLength(),
+		   source,
+		   new String[] {
+			   "type", "numeric",
+			   "precision", "20",
+			   "scale", "0"
+		   });
+		addAnnotation
+		  (getProductStoreFinActSetting_AccountValidDays(),
+		   source,
+		   new String[] {
+			   "type", "numeric",
+			   "precision", "20",
+			   "scale", "0"
+		   });
+		addAnnotation
+		  (getProductStoreFinActSetting_AllowAuthToNegative(),
+		   source,
+		   new String[] {
+			   "type", "indicator",
+			   "length", "1"
+		   });
+		addAnnotation
+		  (getProductStoreFinActSetting_AuthValidDays(),
+		   source,
+		   new String[] {
+			   "type", "numeric",
+			   "precision", "20",
+			   "scale", "0"
+		   });
+		addAnnotation
+		  (getProductStoreFinActSetting_MinBalance(),
+		   source,
+		   new String[] {
+			   "type", "currency-amount",
+			   "precision", "18",
+			   "scale", "2"
+		   });
+		addAnnotation
+		  (getProductStoreFinActSetting_PinCodeLength(),
+		   source,
+		   new String[] {
+			   "type", "numeric",
+			   "precision", "20",
+			   "scale", "0"
+		   });
+		addAnnotation
+		  (getProductStoreFinActSetting_PurchSurveyCopyMe(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (getProductStoreFinActSetting_PurchSurveySendTo(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (getProductStoreFinActSetting_ReplenishThreshold(),
+		   source,
+		   new String[] {
+			   "type", "currency-amount",
+			   "precision", "18",
+			   "scale", "2"
+		   });
+		addAnnotation
+		  (getProductStoreFinActSetting_RequirePinCode(),
+		   source,
+		   new String[] {
+			   "type", "indicator",
+			   "length", "1"
+		   });
+		addAnnotation
+		  (getProductStoreFinActSetting_ValidateGCFinAcct(),
+		   source,
+		   new String[] {
+			   "type", "indicator",
+			   "length", "1"
+		   });
+		addAnnotation
+		  (productStoreGroupEClass.getEOperations().get(0),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (getProductStoreGroup_ProductStoreGroupId(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (getProductStoreGroup_Description(),
+		   source,
+		   new String[] {
+			   "type", "description",
+			   "length", "255"
+		   });
+		addAnnotation
+		  (getProductStoreGroup_ProductStoreGroupName(),
+		   source,
+		   new String[] {
+			   "type", "name",
+			   "length", "100"
+		   });
+		addAnnotation
+		  (getProductStoreGroupMember_FromDate(),
+		   source,
+		   new String[] {
+			   "type", "date-time"
+		   });
+		addAnnotation
+		  (getProductStoreGroupMember_SequenceNum(),
+		   source,
+		   new String[] {
+			   "type", "numeric",
+			   "precision", "20",
+			   "scale", "0"
+		   });
+		addAnnotation
+		  (getProductStoreGroupMember_ThruDate(),
+		   source,
+		   new String[] {
+			   "type", "date-time"
+		   });
+		addAnnotation
+		  (getProductStoreGroupRollup_FromDate(),
+		   source,
+		   new String[] {
+			   "type", "date-time"
+		   });
+		addAnnotation
+		  (getProductStoreGroupRollup_SequenceNum(),
+		   source,
+		   new String[] {
+			   "type", "numeric",
+			   "precision", "20",
+			   "scale", "0"
+		   });
+		addAnnotation
+		  (getProductStoreGroupRollup_ThruDate(),
+		   source,
+		   new String[] {
+			   "type", "date-time"
+		   });
+		addAnnotation
+		  (productStoreGroupTypeEClass.getEOperations().get(0),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (getProductStoreGroupType_ProductStoreGroupTypeId(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (getProductStoreGroupType_Description(),
+		   source,
+		   new String[] {
+			   "type", "description",
+			   "length", "255"
+		   });
+		addAnnotation
+		  (getProductStoreKeywordOvrd_Keyword(),
+		   source,
+		   new String[] {
+			   "type", "short-varchar",
+			   "length", "60"
+		   });
+		addAnnotation
+		  (getProductStoreKeywordOvrd_FromDate(),
+		   source,
+		   new String[] {
+			   "type", "date-time"
+		   });
+		addAnnotation
+		  (getProductStoreKeywordOvrd_Target(),
+		   source,
+		   new String[] {
+			   "type", "long-varchar",
+			   "length", "255"
+		   });
+		addAnnotation
+		  (getProductStoreKeywordOvrd_ThruDate(),
+		   source,
+		   new String[] {
+			   "type", "date-time"
+		   });
+		addAnnotation
+		  (getProductStorePaymentSetting_ApplyToAllProducts(),
+		   source,
+		   new String[] {
+			   "type", "indicator",
+			   "length", "1"
+		   });
+		addAnnotation
+		  (getProductStorePaymentSetting_PaymentPropertiesPath(),
+		   source,
+		   new String[] {
+			   "type", "value",
+			   "length", "255"
+		   });
+		addAnnotation
+		  (getProductStorePaymentSetting_PaymentService(),
+		   source,
+		   new String[] {
+			   "type", "value",
+			   "length", "255"
+		   });
+		addAnnotation
+		  (getProductStorePromoAppl_FromDate(),
+		   source,
+		   new String[] {
+			   "type", "date-time"
+		   });
+		addAnnotation
+		  (getProductStorePromoAppl_ManualOnly(),
+		   source,
+		   new String[] {
+			   "type", "indicator",
+			   "length", "1"
+		   });
+		addAnnotation
+		  (getProductStorePromoAppl_SequenceNum(),
+		   source,
+		   new String[] {
+			   "type", "numeric",
+			   "precision", "20",
+			   "scale", "0"
+		   });
+		addAnnotation
+		  (getProductStorePromoAppl_ThruDate(),
+		   source,
+		   new String[] {
+			   "type", "date-time"
+		   });
+		addAnnotation
+		  (getProductStoreRole_FromDate(),
+		   source,
+		   new String[] {
+			   "type", "date-time"
+		   });
+		addAnnotation
+		  (getProductStoreRole_SequenceNum(),
+		   source,
+		   new String[] {
+			   "type", "numeric",
+			   "precision", "20",
+			   "scale", "0"
+		   });
+		addAnnotation
+		  (getProductStoreRole_ThruDate(),
+		   source,
+		   new String[] {
+			   "type", "date-time"
+		   });
+		addAnnotation
+		  (productStoreShipmentMethEClass.getEOperations().get(0),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (getProductStoreShipmentMeth_ProductStoreShipMethId(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (getProductStoreShipmentMeth_AllowCompanyAddr(),
+		   source,
+		   new String[] {
+			   "type", "indicator",
+			   "length", "1"
+		   });
+		addAnnotation
+		  (getProductStoreShipmentMeth_AllowUspsAddr(),
+		   source,
+		   new String[] {
+			   "type", "indicator",
+			   "length", "1"
+		   });
+		addAnnotation
+		  (getProductStoreShipmentMeth_AllowancePercent(),
+		   source,
+		   new String[] {
+			   "type", "fixed-point",
+			   "precision", "18",
+			   "scale", "6"
+		   });
+		addAnnotation
+		  (getProductStoreShipmentMeth_ConfigProps(),
+		   source,
+		   new String[] {
+			   "type", "long-varchar",
+			   "length", "255"
+		   });
+		addAnnotation
+		  (getProductStoreShipmentMeth_ExcludeFeatureGroup(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (getProductStoreShipmentMeth_IncludeFeatureGroup(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (getProductStoreShipmentMeth_IncludeNoChargeItems(),
+		   source,
+		   new String[] {
+			   "type", "indicator",
+			   "length", "1"
+		   });
+		addAnnotation
+		  (getProductStoreShipmentMeth_MaxSize(),
+		   source,
+		   new String[] {
+			   "type", "fixed-point",
+			   "precision", "18",
+			   "scale", "6"
+		   });
+		addAnnotation
+		  (getProductStoreShipmentMeth_MaxTotal(),
+		   source,
+		   new String[] {
+			   "type", "currency-amount",
+			   "precision", "18",
+			   "scale", "2"
+		   });
+		addAnnotation
+		  (getProductStoreShipmentMeth_MaxWeight(),
+		   source,
+		   new String[] {
+			   "type", "fixed-point",
+			   "precision", "18",
+			   "scale", "6"
+		   });
+		addAnnotation
+		  (getProductStoreShipmentMeth_MinSize(),
+		   source,
+		   new String[] {
+			   "type", "fixed-point",
+			   "precision", "18",
+			   "scale", "6"
+		   });
+		addAnnotation
+		  (getProductStoreShipmentMeth_MinTotal(),
+		   source,
+		   new String[] {
+			   "type", "currency-amount",
+			   "precision", "18",
+			   "scale", "2"
+		   });
+		addAnnotation
+		  (getProductStoreShipmentMeth_MinWeight(),
+		   source,
+		   new String[] {
+			   "type", "fixed-point",
+			   "precision", "18",
+			   "scale", "6"
+		   });
+		addAnnotation
+		  (getProductStoreShipmentMeth_MinimumPrice(),
+		   source,
+		   new String[] {
+			   "type", "currency-amount",
+			   "precision", "18",
+			   "scale", "2"
+		   });
+		addAnnotation
+		  (getProductStoreShipmentMeth_PartyId(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (getProductStoreShipmentMeth_ProductStoreId(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (getProductStoreShipmentMeth_RequireCompanyAddr(),
+		   source,
+		   new String[] {
+			   "type", "indicator",
+			   "length", "1"
+		   });
+		addAnnotation
+		  (getProductStoreShipmentMeth_RequireUspsAddr(),
+		   source,
+		   new String[] {
+			   "type", "indicator",
+			   "length", "1"
+		   });
+		addAnnotation
+		  (getProductStoreShipmentMeth_RoleTypeId(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (getProductStoreShipmentMeth_SequenceNumber(),
+		   source,
+		   new String[] {
+			   "type", "numeric",
+			   "precision", "20",
+			   "scale", "0"
+		   });
+		addAnnotation
+		  (getProductStoreShipmentMeth_ServiceName(),
+		   source,
+		   new String[] {
+			   "type", "long-varchar",
+			   "length", "255"
+		   });
+		addAnnotation
+		  (getProductStoreSurveyAppl_ProductStoreSurveyId(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (getProductStoreSurveyAppl_FromDate(),
+		   source,
+		   new String[] {
+			   "type", "date-time"
+		   });
+		addAnnotation
+		  (getProductStoreSurveyAppl_GroupName(),
+		   source,
+		   new String[] {
+			   "type", "name",
+			   "length", "100"
+		   });
+		addAnnotation
+		  (getProductStoreSurveyAppl_ResultTemplate(),
+		   source,
+		   new String[] {
+			   "type", "long-varchar",
+			   "length", "255"
+		   });
+		addAnnotation
+		  (getProductStoreSurveyAppl_SequenceNum(),
+		   source,
+		   new String[] {
+			   "type", "numeric",
+			   "precision", "20",
+			   "scale", "0"
+		   });
+		addAnnotation
+		  (getProductStoreSurveyAppl_SurveyTemplate(),
+		   source,
+		   new String[] {
+			   "type", "long-varchar",
+			   "length", "255"
+		   });
+		addAnnotation
+		  (getProductStoreSurveyAppl_ThruDate(),
+		   source,
+		   new String[] {
+			   "type", "date-time"
+		   });
 	}
 
 	/**
@@ -3994,79 +4998,79 @@ public class StorePackageImpl extends EPackageImpl implements StorePackage {
 	protected void createMimoentslotAnnotations() {
 		String source = "mimo-ent-slot";
 		addAnnotation
-		  (getProductStore__CustRequests(),
+		  (productStoreEClass.getEOperations().get(0),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (getProductStore__GitHubUsers(),
+		  (productStoreEClass.getEOperations().get(1),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (getProductStore__GoogleUsers(),
+		  (productStoreEClass.getEOperations().get(2),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (getProductStore__LinkedInUsers(),
+		  (productStoreEClass.getEOperations().get(3),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (getProductStore__OrderHeaders(),
+		  (productStoreEClass.getEOperations().get(4),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (getProductStore__PartyProfileDefaults(),
+		  (productStoreEClass.getEOperations().get(5),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (getProductStore__ProductReviews(),
+		  (productStoreEClass.getEOperations().get(6),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (getProductStore__ProductStoreSurveyAppls(),
+		  (productStoreEClass.getEOperations().get(7),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (getProductStore__Quotes(),
+		  (productStoreEClass.getEOperations().get(8),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (getProductStore__SegmentGroups(),
+		  (productStoreEClass.getEOperations().get(9),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (getProductStore__ShoppingLists(),
+		  (productStoreEClass.getEOperations().get(10),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (getProductStore__TaxAuthorityRateProducts(),
+		  (productStoreEClass.getEOperations().get(11),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (getProductStore__WebSites(),
+		  (productStoreEClass.getEOperations().get(12),
 		   source,
 		   new String[] {
 			   "derived", "true"
@@ -4120,7 +5124,7 @@ public class StorePackageImpl extends EPackageImpl implements StorePackage {
 			   "key", "true"
 		   });
 		addAnnotation
-		  (getProductStoreGroup__PrimaryProductStores(),
+		  (productStoreGroupEClass.getEOperations().get(0),
 		   source,
 		   new String[] {
 			   "derived", "true"
@@ -4144,7 +5148,7 @@ public class StorePackageImpl extends EPackageImpl implements StorePackage {
 			   "key", "true"
 		   });
 		addAnnotation
-		  (getProductStoreGroupType__ProductStoreGroups(),
+		  (productStoreGroupTypeEClass.getEOperations().get(0),
 		   source,
 		   new String[] {
 			   "derived", "true"
@@ -4180,7 +5184,7 @@ public class StorePackageImpl extends EPackageImpl implements StorePackage {
 			   "key", "true"
 		   });
 		addAnnotation
-		  (getProductStoreShipmentMeth__ShipmentCostEstimates(),
+		  (productStoreShipmentMethEClass.getEOperations().get(0),
 		   source,
 		   new String[] {
 			   "derived", "true"
@@ -4208,7 +5212,7 @@ public class StorePackageImpl extends EPackageImpl implements StorePackage {
 	protected void createMimoentdomainAnnotations() {
 		String source = "mimo-ent-domain";
 		addAnnotation
-		  (getProductStore__CustRequests(),
+		  (productStoreEClass.getEOperations().get(0),
 		   source,
 		   new String[] {
 			   "frame", "CustRequest",
@@ -4218,7 +5222,7 @@ public class StorePackageImpl extends EPackageImpl implements StorePackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (getProductStore__GitHubUsers(),
+		  (productStoreEClass.getEOperations().get(1),
 		   source,
 		   new String[] {
 			   "frame", "GitHubUser",
@@ -4228,7 +5232,7 @@ public class StorePackageImpl extends EPackageImpl implements StorePackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (getProductStore__GoogleUsers(),
+		  (productStoreEClass.getEOperations().get(2),
 		   source,
 		   new String[] {
 			   "frame", "GoogleUser",
@@ -4238,7 +5242,7 @@ public class StorePackageImpl extends EPackageImpl implements StorePackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (getProductStore__LinkedInUsers(),
+		  (productStoreEClass.getEOperations().get(3),
 		   source,
 		   new String[] {
 			   "frame", "LinkedInUser",
@@ -4248,7 +5252,7 @@ public class StorePackageImpl extends EPackageImpl implements StorePackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (getProductStore__OrderHeaders(),
+		  (productStoreEClass.getEOperations().get(4),
 		   source,
 		   new String[] {
 			   "frame", "OrderHeader",
@@ -4258,7 +5262,7 @@ public class StorePackageImpl extends EPackageImpl implements StorePackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (getProductStore__PartyProfileDefaults(),
+		  (productStoreEClass.getEOperations().get(5),
 		   source,
 		   new String[] {
 			   "frame", "PartyProfileDefault",
@@ -4268,7 +5272,7 @@ public class StorePackageImpl extends EPackageImpl implements StorePackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (getProductStore__ProductReviews(),
+		  (productStoreEClass.getEOperations().get(6),
 		   source,
 		   new String[] {
 			   "frame", "ProductReview",
@@ -4278,7 +5282,7 @@ public class StorePackageImpl extends EPackageImpl implements StorePackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (getProductStore__ProductStoreSurveyAppls(),
+		  (productStoreEClass.getEOperations().get(7),
 		   source,
 		   new String[] {
 			   "frame", "ProductStoreSurveyAppl",
@@ -4288,7 +5292,7 @@ public class StorePackageImpl extends EPackageImpl implements StorePackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (getProductStore__Quotes(),
+		  (productStoreEClass.getEOperations().get(8),
 		   source,
 		   new String[] {
 			   "frame", "Quote",
@@ -4298,7 +5302,7 @@ public class StorePackageImpl extends EPackageImpl implements StorePackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (getProductStore__SegmentGroups(),
+		  (productStoreEClass.getEOperations().get(9),
 		   source,
 		   new String[] {
 			   "frame", "SegmentGroup",
@@ -4308,7 +5312,7 @@ public class StorePackageImpl extends EPackageImpl implements StorePackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (getProductStore__ShoppingLists(),
+		  (productStoreEClass.getEOperations().get(10),
 		   source,
 		   new String[] {
 			   "frame", "ShoppingList",
@@ -4318,7 +5322,7 @@ public class StorePackageImpl extends EPackageImpl implements StorePackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (getProductStore__TaxAuthorityRateProducts(),
+		  (productStoreEClass.getEOperations().get(11),
 		   source,
 		   new String[] {
 			   "frame", "TaxAuthorityRateProduct",
@@ -4328,7 +5332,7 @@ public class StorePackageImpl extends EPackageImpl implements StorePackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (getProductStore__WebSites(),
+		  (productStoreEClass.getEOperations().get(12),
 		   source,
 		   new String[] {
 			   "frame", "WebSite",
@@ -4383,7 +5387,7 @@ public class StorePackageImpl extends EPackageImpl implements StorePackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (getProductStoreGroup__PrimaryProductStores(),
+		  (productStoreGroupEClass.getEOperations().get(0),
 		   source,
 		   new String[] {
 			   "frame", "ProductStore",
@@ -4393,7 +5397,7 @@ public class StorePackageImpl extends EPackageImpl implements StorePackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (getProductStoreGroupType__ProductStoreGroups(),
+		  (productStoreGroupTypeEClass.getEOperations().get(0),
 		   source,
 		   new String[] {
 			   "frame", "ProductStoreGroup",
@@ -4403,7 +5407,7 @@ public class StorePackageImpl extends EPackageImpl implements StorePackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (getProductStoreShipmentMeth__ShipmentCostEstimates(),
+		  (productStoreShipmentMethEClass.getEOperations().get(0),
 		   source,
 		   new String[] {
 			   "frame", "ShipmentCostEstimate",

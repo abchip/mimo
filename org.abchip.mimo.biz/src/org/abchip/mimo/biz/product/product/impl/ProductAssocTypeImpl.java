@@ -7,14 +7,12 @@
  */
 package org.abchip.mimo.biz.product.product.impl;
 
-import java.lang.reflect.InvocationTargetException;
 import java.util.List;
 
 import org.abchip.mimo.biz.impl.BizEntityTypeImpl;
 import org.abchip.mimo.biz.product.product.ProductAssoc;
 import org.abchip.mimo.biz.product.product.ProductAssocType;
 import org.abchip.mimo.biz.product.product.ProductPackage;
-import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 
 /**
@@ -128,20 +126,6 @@ public class ProductAssocTypeImpl extends BizEntityTypeImpl<ProductAssoc> implem
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
-		switch (operationID) {
-			case ProductPackage.PRODUCT_ASSOC_TYPE___CHILD_PRODUCT_ASSOC_TYPES:
-				return childProductAssocTypes();
-		}
-		return super.eInvoke(operationID, arguments);
 	}
 
 	/**

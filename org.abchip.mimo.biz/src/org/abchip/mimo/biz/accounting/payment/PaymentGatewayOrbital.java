@@ -51,7 +51,7 @@ public interface PaymentGatewayOrbital extends BizEntity {
 	 * @return the value of the '<em>Authorization URI</em>' attribute.
 	 * @see #setAuthorizationURI(String)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPaymentGatewayOrbital_AuthorizationURI()
-	 * @model
+	 * @model annotation="mimo-ent-format type='value' length='255'"
 	 * @generated
 	 */
 	String getAuthorizationURI();
@@ -77,7 +77,7 @@ public interface PaymentGatewayOrbital extends BizEntity {
 	 * @return the value of the '<em>Connection Password</em>' attribute.
 	 * @see #setConnectionPassword(String)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPaymentGatewayOrbital_ConnectionPassword()
-	 * @model
+	 * @model annotation="mimo-ent-format type='value' length='255'"
 	 * @generated
 	 */
 	String getConnectionPassword();
@@ -103,7 +103,7 @@ public interface PaymentGatewayOrbital extends BizEntity {
 	 * @return the value of the '<em>Connection Timeout Seconds</em>' attribute.
 	 * @see #setConnectionTimeoutSeconds(long)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPaymentGatewayOrbital_ConnectionTimeoutSeconds()
-	 * @model
+	 * @model annotation="mimo-ent-format type='numeric' precision='20' scale='0'"
 	 * @generated
 	 */
 	long getConnectionTimeoutSeconds();
@@ -129,7 +129,7 @@ public interface PaymentGatewayOrbital extends BizEntity {
 	 * @return the value of the '<em>Engine Class</em>' attribute.
 	 * @see #setEngineClass(String)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPaymentGatewayOrbital_EngineClass()
-	 * @model
+	 * @model annotation="mimo-ent-format type='value' length='255'"
 	 * @generated
 	 */
 	String getEngineClass();
@@ -155,7 +155,7 @@ public interface PaymentGatewayOrbital extends BizEntity {
 	 * @return the value of the '<em>Host Name</em>' attribute.
 	 * @see #setHostName(String)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPaymentGatewayOrbital_HostName()
-	 * @model
+	 * @model annotation="mimo-ent-format type='value' length='255'"
 	 * @generated
 	 */
 	String getHostName();
@@ -181,7 +181,7 @@ public interface PaymentGatewayOrbital extends BizEntity {
 	 * @return the value of the '<em>Host Name Failover</em>' attribute.
 	 * @see #setHostNameFailover(String)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPaymentGatewayOrbital_HostNameFailover()
-	 * @model
+	 * @model annotation="mimo-ent-format type='value' length='255'"
 	 * @generated
 	 */
 	String getHostNameFailover();
@@ -207,7 +207,7 @@ public interface PaymentGatewayOrbital extends BizEntity {
 	 * @return the value of the '<em>Merchant Id</em>' attribute.
 	 * @see #setMerchantId(String)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPaymentGatewayOrbital_MerchantId()
-	 * @model
+	 * @model annotation="mimo-ent-format type='value' length='255'"
 	 * @generated
 	 */
 	String getMerchantId();
@@ -259,7 +259,7 @@ public interface PaymentGatewayOrbital extends BizEntity {
 	 * @return the value of the '<em>Port</em>' attribute.
 	 * @see #setPort(long)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPaymentGatewayOrbital_Port()
-	 * @model
+	 * @model annotation="mimo-ent-format type='numeric' precision='20' scale='0'"
 	 * @generated
 	 */
 	long getPort();
@@ -285,7 +285,7 @@ public interface PaymentGatewayOrbital extends BizEntity {
 	 * @return the value of the '<em>Port Failover</em>' attribute.
 	 * @see #setPortFailover(long)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPaymentGatewayOrbital_PortFailover()
-	 * @model
+	 * @model annotation="mimo-ent-format type='numeric' precision='20' scale='0'"
 	 * @generated
 	 */
 	long getPortFailover();
@@ -311,7 +311,7 @@ public interface PaymentGatewayOrbital extends BizEntity {
 	 * @return the value of the '<em>Read Timeout Seconds</em>' attribute.
 	 * @see #setReadTimeoutSeconds(long)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPaymentGatewayOrbital_ReadTimeoutSeconds()
-	 * @model
+	 * @model annotation="mimo-ent-format type='numeric' precision='20' scale='0'"
 	 * @generated
 	 */
 	long getReadTimeoutSeconds();
@@ -337,7 +337,7 @@ public interface PaymentGatewayOrbital extends BizEntity {
 	 * @return the value of the '<em>Response Type</em>' attribute.
 	 * @see #setResponseType(String)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPaymentGatewayOrbital_ResponseType()
-	 * @model
+	 * @model annotation="mimo-ent-format type='short-varchar' length='60'"
 	 * @generated
 	 */
 	String getResponseType();
@@ -363,7 +363,7 @@ public interface PaymentGatewayOrbital extends BizEntity {
 	 * @return the value of the '<em>Sdk Version</em>' attribute.
 	 * @see #setSdkVersion(String)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPaymentGatewayOrbital_SdkVersion()
-	 * @model
+	 * @model annotation="mimo-ent-format type='short-varchar' length='60'"
 	 * @generated
 	 */
 	String getSdkVersion();
@@ -389,7 +389,7 @@ public interface PaymentGatewayOrbital extends BizEntity {
 	 * @return the value of the '<em>Ssl Socket Factory</em>' attribute.
 	 * @see #setSslSocketFactory(String)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPaymentGatewayOrbital_SslSocketFactory()
-	 * @model
+	 * @model annotation="mimo-ent-format type='short-varchar' length='60'"
 	 * @generated
 	 */
 	String getSslSocketFactory();
@@ -415,7 +415,7 @@ public interface PaymentGatewayOrbital extends BizEntity {
 	 * @return the value of the '<em>Username</em>' attribute.
 	 * @see #setUsername(String)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPaymentGatewayOrbital_Username()
-	 * @model
+	 * @model annotation="mimo-ent-format type='short-varchar' length='60'"
 	 * @generated
 	 */
 	String getUsername();

@@ -7,14 +7,12 @@
  */
 package org.abchip.mimo.biz.accounting.ledger.impl;
 
-import java.lang.reflect.InvocationTargetException;
 import java.util.List;
 
 import org.abchip.mimo.biz.accounting.ledger.AcctgTransEntry;
 import org.abchip.mimo.biz.accounting.ledger.AcctgTransEntryType;
 import org.abchip.mimo.biz.accounting.ledger.LedgerPackage;
 import org.abchip.mimo.biz.impl.BizEntityTypeImpl;
-import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 
 /**
@@ -139,22 +137,6 @@ public class AcctgTransEntryTypeImpl extends BizEntityTypeImpl<AcctgTransEntry> 
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
-		switch (operationID) {
-			case LedgerPackage.ACCTG_TRANS_ENTRY_TYPE___ACCTG_TRANS_ENTRIES:
-				return acctgTransEntries();
-			case LedgerPackage.ACCTG_TRANS_ENTRY_TYPE___CHILD_ACCTG_TRANS_ENTRY_TYPES:
-				return childAcctgTransEntryTypes();
-		}
-		return super.eInvoke(operationID, arguments);
 	}
 
 	/**

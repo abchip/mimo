@@ -56,6 +56,7 @@ public interface RecurrenceRule extends BizEntity {
 	 * @see #setRecurrenceRuleId(String)
 	 * @see org.abchip.mimo.biz.service.schedule.SchedulePackage#getRecurrenceRule_RecurrenceRuleId()
 	 * @model id="true" required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
@@ -82,7 +83,7 @@ public interface RecurrenceRule extends BizEntity {
 	 * @return the value of the '<em>By Day List</em>' attribute.
 	 * @see #setByDayList(String)
 	 * @see org.abchip.mimo.biz.service.schedule.SchedulePackage#getRecurrenceRule_ByDayList()
-	 * @model
+	 * @model annotation="mimo-ent-format type='very-long'"
 	 * @generated
 	 */
 	String getByDayList();
@@ -108,7 +109,7 @@ public interface RecurrenceRule extends BizEntity {
 	 * @return the value of the '<em>By Hour List</em>' attribute.
 	 * @see #setByHourList(String)
 	 * @see org.abchip.mimo.biz.service.schedule.SchedulePackage#getRecurrenceRule_ByHourList()
-	 * @model
+	 * @model annotation="mimo-ent-format type='very-long'"
 	 * @generated
 	 */
 	String getByHourList();
@@ -134,7 +135,7 @@ public interface RecurrenceRule extends BizEntity {
 	 * @return the value of the '<em>By Minute List</em>' attribute.
 	 * @see #setByMinuteList(String)
 	 * @see org.abchip.mimo.biz.service.schedule.SchedulePackage#getRecurrenceRule_ByMinuteList()
-	 * @model
+	 * @model annotation="mimo-ent-format type='very-long'"
 	 * @generated
 	 */
 	String getByMinuteList();
@@ -160,7 +161,7 @@ public interface RecurrenceRule extends BizEntity {
 	 * @return the value of the '<em>By Month Day List</em>' attribute.
 	 * @see #setByMonthDayList(String)
 	 * @see org.abchip.mimo.biz.service.schedule.SchedulePackage#getRecurrenceRule_ByMonthDayList()
-	 * @model
+	 * @model annotation="mimo-ent-format type='very-long'"
 	 * @generated
 	 */
 	String getByMonthDayList();
@@ -186,7 +187,7 @@ public interface RecurrenceRule extends BizEntity {
 	 * @return the value of the '<em>By Month List</em>' attribute.
 	 * @see #setByMonthList(String)
 	 * @see org.abchip.mimo.biz.service.schedule.SchedulePackage#getRecurrenceRule_ByMonthList()
-	 * @model
+	 * @model annotation="mimo-ent-format type='very-long'"
 	 * @generated
 	 */
 	String getByMonthList();
@@ -212,7 +213,7 @@ public interface RecurrenceRule extends BizEntity {
 	 * @return the value of the '<em>By Second List</em>' attribute.
 	 * @see #setBySecondList(String)
 	 * @see org.abchip.mimo.biz.service.schedule.SchedulePackage#getRecurrenceRule_BySecondList()
-	 * @model
+	 * @model annotation="mimo-ent-format type='very-long'"
 	 * @generated
 	 */
 	String getBySecondList();
@@ -238,7 +239,7 @@ public interface RecurrenceRule extends BizEntity {
 	 * @return the value of the '<em>By Set Pos List</em>' attribute.
 	 * @see #setBySetPosList(String)
 	 * @see org.abchip.mimo.biz.service.schedule.SchedulePackage#getRecurrenceRule_BySetPosList()
-	 * @model
+	 * @model annotation="mimo-ent-format type='very-long'"
 	 * @generated
 	 */
 	String getBySetPosList();
@@ -264,7 +265,7 @@ public interface RecurrenceRule extends BizEntity {
 	 * @return the value of the '<em>By Week No List</em>' attribute.
 	 * @see #setByWeekNoList(String)
 	 * @see org.abchip.mimo.biz.service.schedule.SchedulePackage#getRecurrenceRule_ByWeekNoList()
-	 * @model
+	 * @model annotation="mimo-ent-format type='very-long'"
 	 * @generated
 	 */
 	String getByWeekNoList();
@@ -290,7 +291,7 @@ public interface RecurrenceRule extends BizEntity {
 	 * @return the value of the '<em>By Year Day List</em>' attribute.
 	 * @see #setByYearDayList(String)
 	 * @see org.abchip.mimo.biz.service.schedule.SchedulePackage#getRecurrenceRule_ByYearDayList()
-	 * @model
+	 * @model annotation="mimo-ent-format type='very-long'"
 	 * @generated
 	 */
 	String getByYearDayList();
@@ -316,7 +317,7 @@ public interface RecurrenceRule extends BizEntity {
 	 * @return the value of the '<em>Count Number</em>' attribute.
 	 * @see #setCountNumber(long)
 	 * @see org.abchip.mimo.biz.service.schedule.SchedulePackage#getRecurrenceRule_CountNumber()
-	 * @model
+	 * @model annotation="mimo-ent-format type='numeric' precision='20' scale='0'"
 	 * @generated
 	 */
 	long getCountNumber();
@@ -342,7 +343,7 @@ public interface RecurrenceRule extends BizEntity {
 	 * @return the value of the '<em>Frequency</em>' attribute.
 	 * @see #setFrequency(String)
 	 * @see org.abchip.mimo.biz.service.schedule.SchedulePackage#getRecurrenceRule_Frequency()
-	 * @model
+	 * @model annotation="mimo-ent-format type='short-varchar' length='60'"
 	 * @generated
 	 */
 	String getFrequency();
@@ -368,7 +369,7 @@ public interface RecurrenceRule extends BizEntity {
 	 * @return the value of the '<em>Interval Number</em>' attribute.
 	 * @see #setIntervalNumber(long)
 	 * @see org.abchip.mimo.biz.service.schedule.SchedulePackage#getRecurrenceRule_IntervalNumber()
-	 * @model
+	 * @model annotation="mimo-ent-format type='numeric' precision='20' scale='0'"
 	 * @generated
 	 */
 	long getIntervalNumber();
@@ -394,7 +395,7 @@ public interface RecurrenceRule extends BizEntity {
 	 * @return the value of the '<em>Until Date Time</em>' attribute.
 	 * @see #setUntilDateTime(Date)
 	 * @see org.abchip.mimo.biz.service.schedule.SchedulePackage#getRecurrenceRule_UntilDateTime()
-	 * @model
+	 * @model annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getUntilDateTime();
@@ -420,7 +421,7 @@ public interface RecurrenceRule extends BizEntity {
 	 * @return the value of the '<em>Week Start</em>' attribute.
 	 * @see #setWeekStart(String)
 	 * @see org.abchip.mimo.biz.service.schedule.SchedulePackage#getRecurrenceRule_WeekStart()
-	 * @model
+	 * @model annotation="mimo-ent-format type='short-varchar' length='60'"
 	 * @generated
 	 */
 	String getWeekStart();
@@ -446,7 +447,7 @@ public interface RecurrenceRule extends BizEntity {
 	 * @return the value of the '<em>XName</em>' attribute.
 	 * @see #setXName(String)
 	 * @see org.abchip.mimo.biz.service.schedule.SchedulePackage#getRecurrenceRule_XName()
-	 * @model
+	 * @model annotation="mimo-ent-format type='very-long'"
 	 * @generated
 	 */
 	String getXName();
@@ -464,7 +465,8 @@ public interface RecurrenceRule extends BizEntity {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='RecurrenceInfo' route='exceptionRuleId'"
 	 * @generated
 	 */
@@ -473,7 +475,8 @@ public interface RecurrenceRule extends BizEntity {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='RecurrenceInfo' route='recurrenceRuleId'"
 	 * @generated
 	 */

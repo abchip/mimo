@@ -40,12 +40,12 @@ import org.abchip.mimo.biz.security.login.UserLogin;
  *   <li>{@link org.abchip.mimo.biz.order.order.OrderPaymentPreference#getMaxAmount <em>Max Amount</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.OrderPaymentPreference#isNeedsNsfRetry <em>Needs Nsf Retry</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.OrderPaymentPreference#getOrderItemSeqId <em>Order Item Seq Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.order.OrderPaymentPreference#isOverflowFlag <em>Overflow Flag</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.order.OrderPaymentPreference#isPresentFlag <em>Present Flag</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.order.OrderPaymentPreference#getOverflowFlag <em>Overflow Flag</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.order.OrderPaymentPreference#getPresentFlag <em>Present Flag</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.OrderPaymentPreference#getProcessAttempt <em>Process Attempt</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.OrderPaymentPreference#getSecurityCode <em>Security Code</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.OrderPaymentPreference#getShipGroupSeqId <em>Ship Group Seq Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.order.OrderPaymentPreference#isSwipedFlag <em>Swiped Flag</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.order.OrderPaymentPreference#getSwipedFlag <em>Swiped Flag</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.OrderPaymentPreference#getTrack2 <em>Track2</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.OrderPaymentPreference#getOrderId <em>Order Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.OrderPaymentPreference#getProductPricePurposeId <em>Product Price Purpose Id</em>}</li>
@@ -72,7 +72,7 @@ public interface OrderPaymentPreference extends BizEntity {
 	 * @return the value of the '<em>Billing Postal Code</em>' attribute.
 	 * @see #setBillingPostalCode(String)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderPaymentPreference_BillingPostalCode()
-	 * @model
+	 * @model annotation="mimo-ent-format type='short-varchar' length='60'"
 	 * @generated
 	 */
 	String getBillingPostalCode();
@@ -124,7 +124,7 @@ public interface OrderPaymentPreference extends BizEntity {
 	 * @return the value of the '<em>Created Date</em>' attribute.
 	 * @see #setCreatedDate(Date)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderPaymentPreference_CreatedDate()
-	 * @model
+	 * @model annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getCreatedDate();
@@ -176,7 +176,7 @@ public interface OrderPaymentPreference extends BizEntity {
 	 * @return the value of the '<em>Last Modified By User Login</em>' attribute.
 	 * @see #setLastModifiedByUserLogin(String)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderPaymentPreference_LastModifiedByUserLogin()
-	 * @model
+	 * @model annotation="mimo-ent-format type='id-vlong' length='255'"
 	 * @generated
 	 */
 	String getLastModifiedByUserLogin();
@@ -202,7 +202,7 @@ public interface OrderPaymentPreference extends BizEntity {
 	 * @return the value of the '<em>Last Modified Date</em>' attribute.
 	 * @see #setLastModifiedDate(Date)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderPaymentPreference_LastModifiedDate()
-	 * @model
+	 * @model annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getLastModifiedDate();
@@ -228,7 +228,7 @@ public interface OrderPaymentPreference extends BizEntity {
 	 * @return the value of the '<em>Manual Auth Code</em>' attribute.
 	 * @see #setManualAuthCode(String)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderPaymentPreference_ManualAuthCode()
-	 * @model
+	 * @model annotation="mimo-ent-format type='short-varchar' length='60'"
 	 * @generated
 	 */
 	String getManualAuthCode();
@@ -254,7 +254,7 @@ public interface OrderPaymentPreference extends BizEntity {
 	 * @return the value of the '<em>Manual Ref Num</em>' attribute.
 	 * @see #setManualRefNum(String)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderPaymentPreference_ManualRefNum()
-	 * @model
+	 * @model annotation="mimo-ent-format type='short-varchar' length='60'"
 	 * @generated
 	 */
 	String getManualRefNum();
@@ -280,7 +280,7 @@ public interface OrderPaymentPreference extends BizEntity {
 	 * @return the value of the '<em>Max Amount</em>' attribute.
 	 * @see #setMaxAmount(BigDecimal)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderPaymentPreference_MaxAmount()
-	 * @model
+	 * @model annotation="mimo-ent-format type='currency-amount' precision='18' scale='2'"
 	 * @generated
 	 */
 	BigDecimal getMaxAmount();
@@ -306,7 +306,7 @@ public interface OrderPaymentPreference extends BizEntity {
 	 * @return the value of the '<em>Needs Nsf Retry</em>' attribute.
 	 * @see #setNeedsNsfRetry(boolean)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderPaymentPreference_NeedsNsfRetry()
-	 * @model
+	 * @model annotation="mimo-ent-format type='indicator' length='1'"
 	 * @generated
 	 */
 	boolean isNeedsNsfRetry();
@@ -358,7 +358,7 @@ public interface OrderPaymentPreference extends BizEntity {
 	 * @return the value of the '<em>Order Item Seq Id</em>' attribute.
 	 * @see #setOrderItemSeqId(String)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderPaymentPreference_OrderItemSeqId()
-	 * @model
+	 * @model annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	String getOrderItemSeqId();
@@ -382,22 +382,48 @@ public interface OrderPaymentPreference extends BizEntity {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Overflow Flag</em>' attribute.
-	 * @see #setOverflowFlag(boolean)
+	 * @see #setOverflowFlag(char)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderPaymentPreference_OverflowFlag()
-	 * @model
+	 * @model annotation="mimo-ent-format type='indicator' length='1'"
 	 * @generated
 	 */
-	boolean isOverflowFlag();
+	char getOverflowFlag();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.order.order.OrderPaymentPreference#isOverflowFlag <em>Overflow Flag</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.order.order.OrderPaymentPreference#getOverflowFlag <em>Overflow Flag</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Overflow Flag</em>' attribute.
-	 * @see #isOverflowFlag()
+	 * @see #getOverflowFlag()
 	 * @generated
 	 */
-	void setOverflowFlag(boolean value);
+	void setOverflowFlag(char value);
+
+	/**
+	 * Returns the value of the '<em><b>Present Flag</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Present Flag</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Present Flag</em>' attribute.
+	 * @see #setPresentFlag(char)
+	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderPaymentPreference_PresentFlag()
+	 * @model annotation="mimo-ent-format type='indicator' length='1'"
+	 * @generated
+	 */
+	char getPresentFlag();
+
+	/**
+	 * Sets the value of the '{@link org.abchip.mimo.biz.order.order.OrderPaymentPreference#getPresentFlag <em>Present Flag</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Present Flag</em>' attribute.
+	 * @see #getPresentFlag()
+	 * @generated
+	 */
+	void setPresentFlag(char value);
 
 	/**
 	 * Returns the value of the '<em><b>Order Payment Preference Id</b></em>' attribute.
@@ -411,6 +437,7 @@ public interface OrderPaymentPreference extends BizEntity {
 	 * @see #setOrderPaymentPreferenceId(String)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderPaymentPreference_OrderPaymentPreferenceId()
 	 * @model id="true" required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
@@ -479,32 +506,6 @@ public interface OrderPaymentPreference extends BizEntity {
 	void setPaymentMethodTypeId(PaymentMethodType value);
 
 	/**
-	 * Returns the value of the '<em><b>Present Flag</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Present Flag</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Present Flag</em>' attribute.
-	 * @see #setPresentFlag(boolean)
-	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderPaymentPreference_PresentFlag()
-	 * @model
-	 * @generated
-	 */
-	boolean isPresentFlag();
-
-	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.order.order.OrderPaymentPreference#isPresentFlag <em>Present Flag</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Present Flag</em>' attribute.
-	 * @see #isPresentFlag()
-	 * @generated
-	 */
-	void setPresentFlag(boolean value);
-
-	/**
 	 * Returns the value of the '<em><b>Process Attempt</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -515,7 +516,7 @@ public interface OrderPaymentPreference extends BizEntity {
 	 * @return the value of the '<em>Process Attempt</em>' attribute.
 	 * @see #setProcessAttempt(long)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderPaymentPreference_ProcessAttempt()
-	 * @model
+	 * @model annotation="mimo-ent-format type='numeric' precision='20' scale='0'"
 	 * @generated
 	 */
 	long getProcessAttempt();
@@ -567,7 +568,7 @@ public interface OrderPaymentPreference extends BizEntity {
 	 * @return the value of the '<em>Security Code</em>' attribute.
 	 * @see #setSecurityCode(String)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderPaymentPreference_SecurityCode()
-	 * @model
+	 * @model annotation="mimo-ent-format type='long-varchar' length='255'"
 	 * @generated
 	 */
 	String getSecurityCode();
@@ -593,7 +594,7 @@ public interface OrderPaymentPreference extends BizEntity {
 	 * @return the value of the '<em>Ship Group Seq Id</em>' attribute.
 	 * @see #setShipGroupSeqId(String)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderPaymentPreference_ShipGroupSeqId()
-	 * @model
+	 * @model annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	String getShipGroupSeqId();
@@ -607,6 +608,32 @@ public interface OrderPaymentPreference extends BizEntity {
 	 * @generated
 	 */
 	void setShipGroupSeqId(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Swiped Flag</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Swiped Flag</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Swiped Flag</em>' attribute.
+	 * @see #setSwipedFlag(char)
+	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderPaymentPreference_SwipedFlag()
+	 * @model annotation="mimo-ent-format type='indicator' length='1'"
+	 * @generated
+	 */
+	char getSwipedFlag();
+
+	/**
+	 * Sets the value of the '{@link org.abchip.mimo.biz.order.order.OrderPaymentPreference#getSwipedFlag <em>Swiped Flag</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Swiped Flag</em>' attribute.
+	 * @see #getSwipedFlag()
+	 * @generated
+	 */
+	void setSwipedFlag(char value);
 
 	/**
 	 * Returns the value of the '<em><b>Status Id</b></em>' reference.
@@ -635,32 +662,6 @@ public interface OrderPaymentPreference extends BizEntity {
 	void setStatusId(StatusItem value);
 
 	/**
-	 * Returns the value of the '<em><b>Swiped Flag</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Swiped Flag</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Swiped Flag</em>' attribute.
-	 * @see #setSwipedFlag(boolean)
-	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderPaymentPreference_SwipedFlag()
-	 * @model
-	 * @generated
-	 */
-	boolean isSwipedFlag();
-
-	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.order.order.OrderPaymentPreference#isSwipedFlag <em>Swiped Flag</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Swiped Flag</em>' attribute.
-	 * @see #isSwipedFlag()
-	 * @generated
-	 */
-	void setSwipedFlag(boolean value);
-
-	/**
 	 * Returns the value of the '<em><b>Track2</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -671,7 +672,7 @@ public interface OrderPaymentPreference extends BizEntity {
 	 * @return the value of the '<em>Track2</em>' attribute.
 	 * @see #setTrack2(String)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderPaymentPreference_Track2()
-	 * @model
+	 * @model annotation="mimo-ent-format type='long-varchar' length='255'"
 	 * @generated
 	 */
 	String getTrack2();
@@ -689,7 +690,8 @@ public interface OrderPaymentPreference extends BizEntity {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='OrderStatus' route='orderPaymentPreferenceId'"
 	 * @generated
 	 */
@@ -698,7 +700,8 @@ public interface OrderPaymentPreference extends BizEntity {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='PaymentGatewayResponse' route='orderPaymentPreferenceId'"
 	 * @generated
 	 */
@@ -707,7 +710,8 @@ public interface OrderPaymentPreference extends BizEntity {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='Payment' route='paymentPreferenceId'"
 	 * @generated
 	 */
@@ -716,7 +720,8 @@ public interface OrderPaymentPreference extends BizEntity {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ReturnItemResponse' route='orderPaymentPreferenceId'"
 	 * @generated
 	 */

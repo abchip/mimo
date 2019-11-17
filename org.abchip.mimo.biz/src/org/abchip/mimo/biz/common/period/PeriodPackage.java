@@ -10,7 +10,6 @@ package org.abchip.mimo.biz.common.period;
 import org.abchip.mimo.biz.BizPackage;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
@@ -199,87 +198,6 @@ public interface PeriodPackage extends EPackage {
 	int CUSTOM_TIME_PERIOD_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 9;
 
 	/**
-	 * The operation id for the '<em>Isa</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CUSTOM_TIME_PERIOD___ISA = BizPackage.BIZ_ENTITY___ISA;
-
-	/**
-	 * The operation id for the '<em>Get Name</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CUSTOM_TIME_PERIOD___GET_NAME = BizPackage.BIZ_ENTITY___GET_NAME;
-
-	/**
-	 * The operation id for the '<em>Get URI</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CUSTOM_TIME_PERIOD___GET_URI = BizPackage.BIZ_ENTITY___GET_URI;
-
-	/**
-	 * The operation id for the '<em>Is Proxy</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CUSTOM_TIME_PERIOD___IS_PROXY = BizPackage.BIZ_ENTITY___IS_PROXY;
-
-	/**
-	 * The operation id for the '<em>Budgets</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CUSTOM_TIME_PERIOD___BUDGETS = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Child Custom Time Periods</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CUSTOM_TIME_PERIOD___CHILD_CUSTOM_TIME_PERIODS = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 1;
-
-	/**
-	 * The operation id for the '<em>Sales Forecast Histories</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CUSTOM_TIME_PERIOD___SALES_FORECAST_HISTORIES = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 2;
-
-	/**
-	 * The operation id for the '<em>Sales Forecasts</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CUSTOM_TIME_PERIOD___SALES_FORECASTS = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 3;
-
-	/**
-	 * The number of operations of the '<em>Custom Time Period</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CUSTOM_TIME_PERIOD_OPERATION_COUNT = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 4;
-
-	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.common.period.impl.PeriodTypeImpl <em>Type</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -372,61 +290,6 @@ public interface PeriodPackage extends EPackage {
 
 
 	/**
-	 * The operation id for the '<em>Isa</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PERIOD_TYPE___ISA = BizPackage.BIZ_ENTITY___ISA;
-
-	/**
-	 * The operation id for the '<em>Get Name</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PERIOD_TYPE___GET_NAME = BizPackage.BIZ_ENTITY___GET_NAME;
-
-	/**
-	 * The operation id for the '<em>Get URI</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PERIOD_TYPE___GET_URI = BizPackage.BIZ_ENTITY___GET_URI;
-
-	/**
-	 * The operation id for the '<em>Is Proxy</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PERIOD_TYPE___IS_PROXY = BizPackage.BIZ_ENTITY___IS_PROXY;
-
-	/**
-	 * The operation id for the '<em>Custom Time Periods</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PERIOD_TYPE___CUSTOM_TIME_PERIODS = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 0;
-
-	/**
-	 * The number of operations of the '<em>Type</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PERIOD_TYPE_OPERATION_COUNT = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 1;
-
-
-	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.biz.common.period.CustomTimePeriod <em>Custom Time Period</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -479,46 +342,6 @@ public interface PeriodPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getCustomTimePeriod_OrganizationPartyId();
-
-	/**
-	 * Returns the meta object for the '{@link org.abchip.mimo.biz.common.period.CustomTimePeriod#budgets() <em>Budgets</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Budgets</em>' operation.
-	 * @see org.abchip.mimo.biz.common.period.CustomTimePeriod#budgets()
-	 * @generated
-	 */
-	EOperation getCustomTimePeriod__Budgets();
-
-	/**
-	 * Returns the meta object for the '{@link org.abchip.mimo.biz.common.period.CustomTimePeriod#childCustomTimePeriods() <em>Child Custom Time Periods</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Child Custom Time Periods</em>' operation.
-	 * @see org.abchip.mimo.biz.common.period.CustomTimePeriod#childCustomTimePeriods()
-	 * @generated
-	 */
-	EOperation getCustomTimePeriod__ChildCustomTimePeriods();
-
-	/**
-	 * Returns the meta object for the '{@link org.abchip.mimo.biz.common.period.CustomTimePeriod#salesForecastHistories() <em>Sales Forecast Histories</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Sales Forecast Histories</em>' operation.
-	 * @see org.abchip.mimo.biz.common.period.CustomTimePeriod#salesForecastHistories()
-	 * @generated
-	 */
-	EOperation getCustomTimePeriod__SalesForecastHistories();
-
-	/**
-	 * Returns the meta object for the '{@link org.abchip.mimo.biz.common.period.CustomTimePeriod#salesForecasts() <em>Sales Forecasts</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Sales Forecasts</em>' operation.
-	 * @see org.abchip.mimo.biz.common.period.CustomTimePeriod#salesForecasts()
-	 * @generated
-	 */
-	EOperation getCustomTimePeriod__SalesForecasts();
 
 	/**
 	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.common.period.CustomTimePeriod#getParentPeriodId <em>Parent Period Id</em>}'.
@@ -630,16 +453,6 @@ public interface PeriodPackage extends EPackage {
 	EReference getPeriodType_UomId();
 
 	/**
-	 * Returns the meta object for the '{@link org.abchip.mimo.biz.common.period.PeriodType#customTimePeriods() <em>Custom Time Periods</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Custom Time Periods</em>' operation.
-	 * @see org.abchip.mimo.biz.common.period.PeriodType#customTimePeriods()
-	 * @generated
-	 */
-	EOperation getPeriodType__CustomTimePeriods();
-
-	/**
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -702,38 +515,6 @@ public interface PeriodPackage extends EPackage {
 		 * @generated
 		 */
 		EReference CUSTOM_TIME_PERIOD__ORGANIZATION_PARTY_ID = eINSTANCE.getCustomTimePeriod_OrganizationPartyId();
-
-		/**
-		 * The meta object literal for the '<em><b>Budgets</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation CUSTOM_TIME_PERIOD___BUDGETS = eINSTANCE.getCustomTimePeriod__Budgets();
-
-		/**
-		 * The meta object literal for the '<em><b>Child Custom Time Periods</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation CUSTOM_TIME_PERIOD___CHILD_CUSTOM_TIME_PERIODS = eINSTANCE.getCustomTimePeriod__ChildCustomTimePeriods();
-
-		/**
-		 * The meta object literal for the '<em><b>Sales Forecast Histories</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation CUSTOM_TIME_PERIOD___SALES_FORECAST_HISTORIES = eINSTANCE.getCustomTimePeriod__SalesForecastHistories();
-
-		/**
-		 * The meta object literal for the '<em><b>Sales Forecasts</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation CUSTOM_TIME_PERIOD___SALES_FORECASTS = eINSTANCE.getCustomTimePeriod__SalesForecasts();
 
 		/**
 		 * The meta object literal for the '<em><b>Parent Period Id</b></em>' reference feature.
@@ -816,14 +597,6 @@ public interface PeriodPackage extends EPackage {
 		 * @generated
 		 */
 		EReference PERIOD_TYPE__UOM_ID = eINSTANCE.getPeriodType_UomId();
-
-		/**
-		 * The meta object literal for the '<em><b>Custom Time Periods</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation PERIOD_TYPE___CUSTOM_TIME_PERIODS = eINSTANCE.getPeriodType__CustomTimePeriods();
 
 	}
 

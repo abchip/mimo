@@ -66,7 +66,7 @@ public interface InventoryItemDetail extends BizEntity {
 	 * @return the value of the '<em>Accounting Quantity Diff</em>' attribute.
 	 * @see #setAccountingQuantityDiff(BigDecimal)
 	 * @see org.abchip.mimo.biz.product.inventory.InventoryPackage#getInventoryItemDetail_AccountingQuantityDiff()
-	 * @model
+	 * @model annotation="mimo-ent-format type='fixed-point' precision='18' scale='6'"
 	 * @generated
 	 */
 	BigDecimal getAccountingQuantityDiff();
@@ -92,7 +92,7 @@ public interface InventoryItemDetail extends BizEntity {
 	 * @return the value of the '<em>Available To Promise Diff</em>' attribute.
 	 * @see #setAvailableToPromiseDiff(BigDecimal)
 	 * @see org.abchip.mimo.biz.product.inventory.InventoryPackage#getInventoryItemDetail_AvailableToPromiseDiff()
-	 * @model
+	 * @model annotation="mimo-ent-format type='fixed-point' precision='18' scale='6'"
 	 * @generated
 	 */
 	BigDecimal getAvailableToPromiseDiff();
@@ -118,7 +118,7 @@ public interface InventoryItemDetail extends BizEntity {
 	 * @return the value of the '<em>Description</em>' attribute.
 	 * @see #setDescription(String)
 	 * @see org.abchip.mimo.biz.product.inventory.InventoryPackage#getInventoryItemDetail_Description()
-	 * @model
+	 * @model annotation="mimo-ent-format type='description' length='255'"
 	 * @generated
 	 */
 	String getDescription();
@@ -144,7 +144,7 @@ public interface InventoryItemDetail extends BizEntity {
 	 * @return the value of the '<em>Effective Date</em>' attribute.
 	 * @see #setEffectiveDate(Date)
 	 * @see org.abchip.mimo.biz.product.inventory.InventoryPackage#getInventoryItemDetail_EffectiveDate()
-	 * @model
+	 * @model annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getEffectiveDate();
@@ -170,7 +170,7 @@ public interface InventoryItemDetail extends BizEntity {
 	 * @return the value of the '<em>Fixed Asset Id</em>' attribute.
 	 * @see #setFixedAssetId(String)
 	 * @see org.abchip.mimo.biz.product.inventory.InventoryPackage#getInventoryItemDetail_FixedAssetId()
-	 * @model
+	 * @model annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	String getFixedAssetId();
@@ -197,6 +197,7 @@ public interface InventoryItemDetail extends BizEntity {
 	 * @see #setInventoryItemDetailSeqId(String)
 	 * @see org.abchip.mimo.biz.product.inventory.InventoryPackage#getInventoryItemDetail_InventoryItemDetailSeqId()
 	 * @model required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
@@ -249,7 +250,7 @@ public interface InventoryItemDetail extends BizEntity {
 	 * @return the value of the '<em>Maint Hist Seq Id</em>' attribute.
 	 * @see #setMaintHistSeqId(String)
 	 * @see org.abchip.mimo.biz.product.inventory.InventoryPackage#getInventoryItemDetail_MaintHistSeqId()
-	 * @model
+	 * @model annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	String getMaintHistSeqId();
@@ -275,7 +276,7 @@ public interface InventoryItemDetail extends BizEntity {
 	 * @return the value of the '<em>Order Id</em>' attribute.
 	 * @see #setOrderId(String)
 	 * @see org.abchip.mimo.biz.product.inventory.InventoryPackage#getInventoryItemDetail_OrderId()
-	 * @model
+	 * @model annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	String getOrderId();
@@ -301,7 +302,7 @@ public interface InventoryItemDetail extends BizEntity {
 	 * @return the value of the '<em>Order Item Seq Id</em>' attribute.
 	 * @see #setOrderItemSeqId(String)
 	 * @see org.abchip.mimo.biz.product.inventory.InventoryPackage#getInventoryItemDetail_OrderItemSeqId()
-	 * @model
+	 * @model annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	String getOrderItemSeqId();
@@ -327,7 +328,7 @@ public interface InventoryItemDetail extends BizEntity {
 	 * @return the value of the '<em>Quantity On Hand Diff</em>' attribute.
 	 * @see #setQuantityOnHandDiff(BigDecimal)
 	 * @see org.abchip.mimo.biz.product.inventory.InventoryPackage#getInventoryItemDetail_QuantityOnHandDiff()
-	 * @model
+	 * @model annotation="mimo-ent-format type='fixed-point' precision='18' scale='6'"
 	 * @generated
 	 */
 	BigDecimal getQuantityOnHandDiff();
@@ -405,7 +406,7 @@ public interface InventoryItemDetail extends BizEntity {
 	 * @return the value of the '<em>Return Id</em>' attribute.
 	 * @see #setReturnId(String)
 	 * @see org.abchip.mimo.biz.product.inventory.InventoryPackage#getInventoryItemDetail_ReturnId()
-	 * @model
+	 * @model annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	String getReturnId();
@@ -431,7 +432,7 @@ public interface InventoryItemDetail extends BizEntity {
 	 * @return the value of the '<em>Return Item Seq Id</em>' attribute.
 	 * @see #setReturnItemSeqId(String)
 	 * @see org.abchip.mimo.biz.product.inventory.InventoryPackage#getInventoryItemDetail_ReturnItemSeqId()
-	 * @model
+	 * @model annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	String getReturnItemSeqId();
@@ -457,7 +458,7 @@ public interface InventoryItemDetail extends BizEntity {
 	 * @return the value of the '<em>Ship Group Seq Id</em>' attribute.
 	 * @see #setShipGroupSeqId(String)
 	 * @see org.abchip.mimo.biz.product.inventory.InventoryPackage#getInventoryItemDetail_ShipGroupSeqId()
-	 * @model
+	 * @model annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	String getShipGroupSeqId();
@@ -483,7 +484,7 @@ public interface InventoryItemDetail extends BizEntity {
 	 * @return the value of the '<em>Shipment Id</em>' attribute.
 	 * @see #setShipmentId(String)
 	 * @see org.abchip.mimo.biz.product.inventory.InventoryPackage#getInventoryItemDetail_ShipmentId()
-	 * @model
+	 * @model annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	String getShipmentId();
@@ -509,7 +510,7 @@ public interface InventoryItemDetail extends BizEntity {
 	 * @return the value of the '<em>Shipment Item Seq Id</em>' attribute.
 	 * @see #setShipmentItemSeqId(String)
 	 * @see org.abchip.mimo.biz.product.inventory.InventoryPackage#getInventoryItemDetail_ShipmentItemSeqId()
-	 * @model
+	 * @model annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	String getShipmentItemSeqId();
@@ -535,7 +536,7 @@ public interface InventoryItemDetail extends BizEntity {
 	 * @return the value of the '<em>Unit Cost</em>' attribute.
 	 * @see #setUnitCost(BigDecimal)
 	 * @see org.abchip.mimo.biz.product.inventory.InventoryPackage#getInventoryItemDetail_UnitCost()
-	 * @model
+	 * @model annotation="mimo-ent-format type='fixed-point' precision='18' scale='6'"
 	 * @generated
 	 */
 	BigDecimal getUnitCost();

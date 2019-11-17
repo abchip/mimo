@@ -40,7 +40,7 @@ public interface JobInterviewType extends BizEntityType<JobInterview> {
 	 * @return the value of the '<em>Description</em>' attribute.
 	 * @see #setDescription(String)
 	 * @see org.abchip.mimo.biz.humanres.recruitment.RecruitmentPackage#getJobInterviewType_Description()
-	 * @model
+	 * @model annotation="mimo-ent-format type='description' length='255'"
 	 * @generated
 	 */
 	String getDescription();
@@ -58,7 +58,8 @@ public interface JobInterviewType extends BizEntityType<JobInterview> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='JobInterview' route='jobInterviewTypeId'"
 	 * @generated
 	 */
@@ -76,6 +77,7 @@ public interface JobInterviewType extends BizEntityType<JobInterview> {
 	 * @see #setJobInterviewTypeId(String)
 	 * @see org.abchip.mimo.biz.humanres.recruitment.RecruitmentPackage#getJobInterviewType_JobInterviewTypeId()
 	 * @model id="true" required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */

@@ -40,7 +40,7 @@ public interface PortletCategory extends BizEntity {
 	 * @return the value of the '<em>Description</em>' attribute.
 	 * @see #setDescription(String)
 	 * @see org.abchip.mimo.biz.common.portal.PortalPackage#getPortletCategory_Description()
-	 * @model
+	 * @model annotation="mimo-ent-format type='description' length='255'"
 	 * @generated
 	 */
 	String getDescription();
@@ -58,7 +58,9 @@ public interface PortletCategory extends BizEntity {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='PortletPortletCategory' route='portletCategoryId'"
 	 * @generated
 	 */
@@ -76,6 +78,7 @@ public interface PortletCategory extends BizEntity {
 	 * @see #setPortletCategoryId(String)
 	 * @see org.abchip.mimo.biz.common.portal.PortalPackage#getPortletCategory_PortletCategoryId()
 	 * @model id="true" required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */

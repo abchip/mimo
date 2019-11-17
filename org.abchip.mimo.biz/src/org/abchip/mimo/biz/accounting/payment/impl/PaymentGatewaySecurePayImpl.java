@@ -61,6 +61,26 @@ public class PaymentGatewaySecurePayImpl extends BizEntityImpl implements Paymen
 	 * @generated
 	 */
 	@Override
+	public boolean isEnableAmountRound() {
+		return (Boolean)eGet(PaymentPackage.Literals.PAYMENT_GATEWAY_SECURE_PAY__ENABLE_AMOUNT_ROUND, true);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setEnableAmountRound(boolean newEnableAmountRound) {
+		eSet(PaymentPackage.Literals.PAYMENT_GATEWAY_SECURE_PAY__ENABLE_AMOUNT_ROUND, newEnableAmountRound);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public String getMerchantId() {
 		return (String)eGet(PaymentPackage.Literals.PAYMENT_GATEWAY_SECURE_PAY__MERCHANT_ID, true);
 	}
@@ -93,26 +113,6 @@ public class PaymentGatewaySecurePayImpl extends BizEntityImpl implements Paymen
 	@Override
 	public void setPaymentGatewayConfigId(PaymentGatewayConfig newPaymentGatewayConfigId) {
 		eSet(PaymentPackage.Literals.PAYMENT_GATEWAY_SECURE_PAY__PAYMENT_GATEWAY_CONFIG_ID, newPaymentGatewayConfigId);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public boolean isEnableAmountRound() {
-		return (Boolean)eGet(PaymentPackage.Literals.PAYMENT_GATEWAY_SECURE_PAY__ENABLE_AMOUNT_ROUND, true);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void setEnableAmountRound(boolean newEnableAmountRound) {
-		eSet(PaymentPackage.Literals.PAYMENT_GATEWAY_SECURE_PAY__ENABLE_AMOUNT_ROUND, newEnableAmountRound);
 	}
 
 	/**

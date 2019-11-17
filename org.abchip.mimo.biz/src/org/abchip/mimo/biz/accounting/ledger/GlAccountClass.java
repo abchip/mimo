@@ -43,7 +43,7 @@ public interface GlAccountClass extends BizEntity {
 	 * @return the value of the '<em>Description</em>' attribute.
 	 * @see #setDescription(String)
 	 * @see org.abchip.mimo.biz.accounting.ledger.LedgerPackage#getGlAccountClass_Description()
-	 * @model
+	 * @model annotation="mimo-ent-format type='description' length='255'"
 	 * @generated
 	 */
 	String getDescription();
@@ -69,7 +69,7 @@ public interface GlAccountClass extends BizEntity {
 	 * @return the value of the '<em>Is Asset Class</em>' attribute.
 	 * @see #setIsAssetClass(boolean)
 	 * @see org.abchip.mimo.biz.accounting.ledger.LedgerPackage#getGlAccountClass_IsAssetClass()
-	 * @model
+	 * @model annotation="mimo-ent-format type='indicator' length='1'"
 	 * @generated
 	 */
 	boolean isIsAssetClass();
@@ -121,7 +121,7 @@ public interface GlAccountClass extends BizEntity {
 	 * @return the value of the '<em>Sequence Num</em>' attribute.
 	 * @see #setSequenceNum(long)
 	 * @see org.abchip.mimo.biz.accounting.ledger.LedgerPackage#getGlAccountClass_SequenceNum()
-	 * @model
+	 * @model annotation="mimo-ent-format type='numeric' precision='20' scale='0'"
 	 * @generated
 	 */
 	long getSequenceNum();
@@ -139,7 +139,8 @@ public interface GlAccountClass extends BizEntity {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='GlAccountClass' route='parentClassId'"
 	 * @generated
 	 */
@@ -148,7 +149,8 @@ public interface GlAccountClass extends BizEntity {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='GlAccount' route='glAccountClassId'"
 	 * @generated
 	 */
@@ -166,6 +168,7 @@ public interface GlAccountClass extends BizEntity {
 	 * @see #setGlAccountClassId(String)
 	 * @see org.abchip.mimo.biz.accounting.ledger.LedgerPackage#getGlAccountClass_GlAccountClassId()
 	 * @model id="true" required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */

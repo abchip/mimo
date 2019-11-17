@@ -44,7 +44,7 @@ public interface BenefitType extends BizEntity {
 	 * @return the value of the '<em>Benefit Name</em>' attribute.
 	 * @see #setBenefitName(String)
 	 * @see org.abchip.mimo.biz.humanres.employment.EmploymentPackage#getBenefitType_BenefitName()
-	 * @model
+	 * @model annotation="mimo-ent-format type='name' length='100'"
 	 * @generated
 	 */
 	String getBenefitName();
@@ -71,6 +71,7 @@ public interface BenefitType extends BizEntity {
 	 * @see #setBenefitTypeId(String)
 	 * @see org.abchip.mimo.biz.humanres.employment.EmploymentPackage#getBenefitType_BenefitTypeId()
 	 * @model id="true" required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
@@ -97,7 +98,7 @@ public interface BenefitType extends BizEntity {
 	 * @return the value of the '<em>Description</em>' attribute.
 	 * @see #setDescription(String)
 	 * @see org.abchip.mimo.biz.humanres.employment.EmploymentPackage#getBenefitType_Description()
-	 * @model
+	 * @model annotation="mimo-ent-format type='description' length='255'"
 	 * @generated
 	 */
 	String getDescription();
@@ -123,7 +124,7 @@ public interface BenefitType extends BizEntity {
 	 * @return the value of the '<em>Employer Paid Percentage</em>' attribute.
 	 * @see #setEmployerPaidPercentage(double)
 	 * @see org.abchip.mimo.biz.humanres.employment.EmploymentPackage#getBenefitType_EmployerPaidPercentage()
-	 * @model
+	 * @model annotation="mimo-ent-format type='floating-point'"
 	 * @generated
 	 */
 	double getEmployerPaidPercentage();
@@ -149,7 +150,7 @@ public interface BenefitType extends BizEntity {
 	 * @return the value of the '<em>Has Table</em>' attribute.
 	 * @see #setHasTable(boolean)
 	 * @see org.abchip.mimo.biz.humanres.employment.EmploymentPackage#getBenefitType_HasTable()
-	 * @model
+	 * @model annotation="mimo-ent-format type='indicator' length='1'"
 	 * @generated
 	 */
 	boolean isHasTable();
@@ -193,7 +194,8 @@ public interface BenefitType extends BizEntity {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='BenefitType' route='parentTypeId'"
 	 * @generated
 	 */

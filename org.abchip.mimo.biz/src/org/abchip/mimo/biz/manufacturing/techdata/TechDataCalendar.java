@@ -44,6 +44,7 @@ public interface TechDataCalendar extends BizEntity {
 	 * @see #setCalendarId(String)
 	 * @see org.abchip.mimo.biz.manufacturing.techdata.TechdataPackage#getTechDataCalendar_CalendarId()
 	 * @model id="true" required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
@@ -96,7 +97,7 @@ public interface TechDataCalendar extends BizEntity {
 	 * @return the value of the '<em>Description</em>' attribute.
 	 * @see #setDescription(String)
 	 * @see org.abchip.mimo.biz.manufacturing.techdata.TechdataPackage#getTechDataCalendar_Description()
-	 * @model
+	 * @model annotation="mimo-ent-format type='description' length='255'"
 	 * @generated
 	 */
 	String getDescription();
@@ -122,7 +123,9 @@ public interface TechDataCalendar extends BizEntity {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Tech Data Calendar Exc Daies</em>' attribute list.
 	 * @see org.abchip.mimo.biz.manufacturing.techdata.TechdataPackage#getTechDataCalendar_TechDataCalendarExcDaies()
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='TechDataCalendarExcDay'"
 	 * @generated
 	 */
@@ -139,7 +142,9 @@ public interface TechDataCalendar extends BizEntity {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Tech Data Calendar Exc Weeks</em>' attribute list.
 	 * @see org.abchip.mimo.biz.manufacturing.techdata.TechdataPackage#getTechDataCalendar_TechDataCalendarExcWeeks()
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='TechDataCalendarExcWeek'"
 	 * @generated
 	 */
@@ -148,7 +153,8 @@ public interface TechDataCalendar extends BizEntity {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='FixedAsset' route='calendarId'"
 	 * @generated
 	 */

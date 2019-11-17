@@ -100,6 +100,7 @@ public interface ProductPromoUse extends BizEntity {
 	 * @see #setPromoSequenceId(String)
 	 * @see org.abchip.mimo.biz.product.promo.PromoPackage#getProductPromoUse_PromoSequenceId()
 	 * @model required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
@@ -126,7 +127,7 @@ public interface ProductPromoUse extends BizEntity {
 	 * @return the value of the '<em>Quantity Left In Actions</em>' attribute.
 	 * @see #setQuantityLeftInActions(BigDecimal)
 	 * @see org.abchip.mimo.biz.product.promo.PromoPackage#getProductPromoUse_QuantityLeftInActions()
-	 * @model
+	 * @model annotation="mimo-ent-format type='fixed-point' precision='18' scale='6'"
 	 * @generated
 	 */
 	BigDecimal getQuantityLeftInActions();
@@ -152,7 +153,7 @@ public interface ProductPromoUse extends BizEntity {
 	 * @return the value of the '<em>Total Discount Amount</em>' attribute.
 	 * @see #setTotalDiscountAmount(BigDecimal)
 	 * @see org.abchip.mimo.biz.product.promo.PromoPackage#getProductPromoUse_TotalDiscountAmount()
-	 * @model
+	 * @model annotation="mimo-ent-format type='currency-amount' precision='18' scale='2'"
 	 * @generated
 	 */
 	BigDecimal getTotalDiscountAmount();

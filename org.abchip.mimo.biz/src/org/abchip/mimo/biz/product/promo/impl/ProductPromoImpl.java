@@ -7,7 +7,6 @@
  */
 package org.abchip.mimo.biz.product.promo.impl;
 
-import java.lang.reflect.InvocationTargetException;
 import java.math.BigDecimal;
 import java.util.Date;
 
@@ -18,7 +17,6 @@ import org.abchip.mimo.biz.party.party.Party;
 import org.abchip.mimo.biz.product.promo.ProductPromo;
 import org.abchip.mimo.biz.product.promo.PromoPackage;
 import org.abchip.mimo.biz.security.login.UserLogin;
-import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 
 /**
@@ -423,28 +421,6 @@ public class ProductPromoImpl extends BizEntityImpl implements ProductPromo {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
-		switch (operationID) {
-			case PromoPackage.PRODUCT_PROMO___ORDER_ADJUSTMENTS:
-				return orderAdjustments();
-			case PromoPackage.PRODUCT_PROMO___PRODUCT_PROMO_CODES:
-				return productPromoCodes();
-			case PromoPackage.PRODUCT_PROMO___PRODUCT_PROMO_USES:
-				return productPromoUses();
-			case PromoPackage.PRODUCT_PROMO___QUOTE_ADJUSTMENTS:
-				return quoteAdjustments();
-			case PromoPackage.PRODUCT_PROMO___RETURN_ADJUSTMENTS:
-				return returnAdjustments();
-		}
-		return super.eInvoke(operationID, arguments);
 	}
 
 	/**

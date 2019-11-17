@@ -10,7 +10,6 @@ package org.abchip.mimo.biz.common.datasource;
 import org.abchip.mimo.biz.BizPackage;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
@@ -145,114 +144,6 @@ public interface DatasourcePackage extends EPackage {
 	int DATA_SOURCE_FEATURE_COUNT = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 3;
 
 	/**
-	 * The operation id for the '<em>Isa</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DATA_SOURCE___ISA = BizPackage.BIZ_ENTITY_TYPED___ISA;
-
-	/**
-	 * The operation id for the '<em>Get Name</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DATA_SOURCE___GET_NAME = BizPackage.BIZ_ENTITY_TYPED___GET_NAME;
-
-	/**
-	 * The operation id for the '<em>Get URI</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DATA_SOURCE___GET_URI = BizPackage.BIZ_ENTITY_TYPED___GET_URI;
-
-	/**
-	 * The operation id for the '<em>Is Proxy</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DATA_SOURCE___IS_PROXY = BizPackage.BIZ_ENTITY_TYPED___IS_PROXY;
-
-	/**
-	 * The operation id for the '<em>Get Type</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DATA_SOURCE___GET_TYPE = BizPackage.BIZ_ENTITY_TYPED___GET_TYPE;
-
-	/**
-	 * The operation id for the '<em>Content Meta Datas</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DATA_SOURCE___CONTENT_META_DATAS = BizPackage.BIZ_ENTITY_TYPED_OPERATION_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Contents</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DATA_SOURCE___CONTENTS = BizPackage.BIZ_ENTITY_TYPED_OPERATION_COUNT + 1;
-
-	/**
-	 * The operation id for the '<em>Data Resource Meta Datas</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DATA_SOURCE___DATA_RESOURCE_META_DATAS = BizPackage.BIZ_ENTITY_TYPED_OPERATION_COUNT + 2;
-
-	/**
-	 * The operation id for the '<em>Data Resources</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DATA_SOURCE___DATA_RESOURCES = BizPackage.BIZ_ENTITY_TYPED_OPERATION_COUNT + 3;
-
-	/**
-	 * The operation id for the '<em>Geo Points</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DATA_SOURCE___GEO_POINTS = BizPackage.BIZ_ENTITY_TYPED_OPERATION_COUNT + 4;
-
-	/**
-	 * The operation id for the '<em>Parties</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DATA_SOURCE___PARTIES = BizPackage.BIZ_ENTITY_TYPED_OPERATION_COUNT + 5;
-
-	/**
-	 * The number of operations of the '<em>Data Source</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DATA_SOURCE_OPERATION_COUNT = BizPackage.BIZ_ENTITY_TYPED_OPERATION_COUNT + 6;
-
-	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.common.datasource.impl.DataSourceTypeImpl <em>Data Source Type</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -336,97 +227,6 @@ public interface DatasourcePackage extends EPackage {
 
 
 	/**
-	 * The operation id for the '<em>Isa</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DATA_SOURCE_TYPE___ISA = BizPackage.BIZ_ENTITY_TYPE___ISA;
-
-	/**
-	 * The operation id for the '<em>Get Name</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DATA_SOURCE_TYPE___GET_NAME = BizPackage.BIZ_ENTITY_TYPE___GET_NAME;
-
-	/**
-	 * The operation id for the '<em>Get URI</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DATA_SOURCE_TYPE___GET_URI = BizPackage.BIZ_ENTITY_TYPE___GET_URI;
-
-	/**
-	 * The operation id for the '<em>Is Proxy</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DATA_SOURCE_TYPE___IS_PROXY = BizPackage.BIZ_ENTITY_TYPE___IS_PROXY;
-
-	/**
-	 * The operation id for the '<em>Get Frame</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DATA_SOURCE_TYPE___GET_FRAME = BizPackage.BIZ_ENTITY_TYPE___GET_FRAME;
-
-	/**
-	 * The operation id for the '<em>Get Type Id</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DATA_SOURCE_TYPE___GET_TYPE_ID = BizPackage.BIZ_ENTITY_TYPE___GET_TYPE_ID;
-
-	/**
-	 * The operation id for the '<em>Has Table</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DATA_SOURCE_TYPE___HAS_TABLE = BizPackage.BIZ_ENTITY_TYPE___HAS_TABLE;
-
-	/**
-	 * The operation id for the '<em>Get Text</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DATA_SOURCE_TYPE___GET_TEXT = BizPackage.BIZ_ENTITY_TYPE___GET_TEXT;
-
-	/**
-	 * The operation id for the '<em>Data Sources</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DATA_SOURCE_TYPE___DATA_SOURCES = BizPackage.BIZ_ENTITY_TYPE_OPERATION_COUNT + 0;
-
-	/**
-	 * The number of operations of the '<em>Data Source Type</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DATA_SOURCE_TYPE_OPERATION_COUNT = BizPackage.BIZ_ENTITY_TYPE_OPERATION_COUNT + 1;
-
-
-	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.biz.common.datasource.DataSource <em>Data Source</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -457,66 +257,6 @@ public interface DatasourcePackage extends EPackage {
 	 * @generated
 	 */
 	EReference getDataSource_DataSourceTypeId();
-
-	/**
-	 * Returns the meta object for the '{@link org.abchip.mimo.biz.common.datasource.DataSource#contentMetaDatas() <em>Content Meta Datas</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Content Meta Datas</em>' operation.
-	 * @see org.abchip.mimo.biz.common.datasource.DataSource#contentMetaDatas()
-	 * @generated
-	 */
-	EOperation getDataSource__ContentMetaDatas();
-
-	/**
-	 * Returns the meta object for the '{@link org.abchip.mimo.biz.common.datasource.DataSource#contents() <em>Contents</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Contents</em>' operation.
-	 * @see org.abchip.mimo.biz.common.datasource.DataSource#contents()
-	 * @generated
-	 */
-	EOperation getDataSource__Contents();
-
-	/**
-	 * Returns the meta object for the '{@link org.abchip.mimo.biz.common.datasource.DataSource#dataResourceMetaDatas() <em>Data Resource Meta Datas</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Data Resource Meta Datas</em>' operation.
-	 * @see org.abchip.mimo.biz.common.datasource.DataSource#dataResourceMetaDatas()
-	 * @generated
-	 */
-	EOperation getDataSource__DataResourceMetaDatas();
-
-	/**
-	 * Returns the meta object for the '{@link org.abchip.mimo.biz.common.datasource.DataSource#dataResources() <em>Data Resources</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Data Resources</em>' operation.
-	 * @see org.abchip.mimo.biz.common.datasource.DataSource#dataResources()
-	 * @generated
-	 */
-	EOperation getDataSource__DataResources();
-
-	/**
-	 * Returns the meta object for the '{@link org.abchip.mimo.biz.common.datasource.DataSource#geoPoints() <em>Geo Points</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Geo Points</em>' operation.
-	 * @see org.abchip.mimo.biz.common.datasource.DataSource#geoPoints()
-	 * @generated
-	 */
-	EOperation getDataSource__GeoPoints();
-
-	/**
-	 * Returns the meta object for the '{@link org.abchip.mimo.biz.common.datasource.DataSource#parties() <em>Parties</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Parties</em>' operation.
-	 * @see org.abchip.mimo.biz.common.datasource.DataSource#parties()
-	 * @generated
-	 */
-	EOperation getDataSource__Parties();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.common.datasource.DataSource#getDescription <em>Description</em>}'.
@@ -560,16 +300,6 @@ public interface DatasourcePackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getDataSourceType_Description();
-
-	/**
-	 * Returns the meta object for the '{@link org.abchip.mimo.biz.common.datasource.DataSourceType#dataSources() <em>Data Sources</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Data Sources</em>' operation.
-	 * @see org.abchip.mimo.biz.common.datasource.DataSourceType#dataSources()
-	 * @generated
-	 */
-	EOperation getDataSourceType__DataSources();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -620,54 +350,6 @@ public interface DatasourcePackage extends EPackage {
 		EReference DATA_SOURCE__DATA_SOURCE_TYPE_ID = eINSTANCE.getDataSource_DataSourceTypeId();
 
 		/**
-		 * The meta object literal for the '<em><b>Content Meta Datas</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation DATA_SOURCE___CONTENT_META_DATAS = eINSTANCE.getDataSource__ContentMetaDatas();
-
-		/**
-		 * The meta object literal for the '<em><b>Contents</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation DATA_SOURCE___CONTENTS = eINSTANCE.getDataSource__Contents();
-
-		/**
-		 * The meta object literal for the '<em><b>Data Resource Meta Datas</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation DATA_SOURCE___DATA_RESOURCE_META_DATAS = eINSTANCE.getDataSource__DataResourceMetaDatas();
-
-		/**
-		 * The meta object literal for the '<em><b>Data Resources</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation DATA_SOURCE___DATA_RESOURCES = eINSTANCE.getDataSource__DataResources();
-
-		/**
-		 * The meta object literal for the '<em><b>Geo Points</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation DATA_SOURCE___GEO_POINTS = eINSTANCE.getDataSource__GeoPoints();
-
-		/**
-		 * The meta object literal for the '<em><b>Parties</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation DATA_SOURCE___PARTIES = eINSTANCE.getDataSource__Parties();
-
-		/**
 		 * The meta object literal for the '<em><b>Description</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -700,14 +382,6 @@ public interface DatasourcePackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute DATA_SOURCE_TYPE__DESCRIPTION = eINSTANCE.getDataSourceType_Description();
-
-		/**
-		 * The meta object literal for the '<em><b>Data Sources</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation DATA_SOURCE_TYPE___DATA_SOURCES = eINSTANCE.getDataSourceType__DataSources();
 
 	}
 

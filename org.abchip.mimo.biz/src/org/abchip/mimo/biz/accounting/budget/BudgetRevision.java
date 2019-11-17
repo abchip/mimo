@@ -41,7 +41,7 @@ public interface BudgetRevision extends BizEntity {
 	 * @return the value of the '<em>Date Revised</em>' attribute.
 	 * @see #setDateRevised(Date)
 	 * @see org.abchip.mimo.biz.accounting.budget.BudgetPackage#getBudgetRevision_DateRevised()
-	 * @model
+	 * @model annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getDateRevised();
@@ -68,6 +68,7 @@ public interface BudgetRevision extends BizEntity {
 	 * @see #setRevisionSeqId(String)
 	 * @see org.abchip.mimo.biz.accounting.budget.BudgetPackage#getBudgetRevision_RevisionSeqId()
 	 * @model required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */

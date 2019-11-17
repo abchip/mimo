@@ -41,7 +41,7 @@ public interface ContentRevision extends BizEntity {
 	 * @return the value of the '<em>Comments</em>' attribute.
 	 * @see #setComments(String)
 	 * @see org.abchip.mimo.biz.content.content.ContentPackage#getContentRevision_Comments()
-	 * @model
+	 * @model annotation="mimo-ent-format type='comment' length='255'"
 	 * @generated
 	 */
 	String getComments();
@@ -120,6 +120,7 @@ public interface ContentRevision extends BizEntity {
 	 * @see #setContentRevisionSeqId(String)
 	 * @see org.abchip.mimo.biz.content.content.ContentPackage#getContentRevision_ContentRevisionSeqId()
 	 * @model required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */

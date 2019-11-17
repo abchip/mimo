@@ -51,7 +51,7 @@ public interface ProductFeature extends BizEntityTyped<ProductFeatureType> {
 	 * @return the value of the '<em>Abbrev</em>' attribute.
 	 * @see #setAbbrev(String)
 	 * @see org.abchip.mimo.biz.product.feature.FeaturePackage#getProductFeature_Abbrev()
-	 * @model
+	 * @model annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	String getAbbrev();
@@ -77,7 +77,7 @@ public interface ProductFeature extends BizEntityTyped<ProductFeatureType> {
 	 * @return the value of the '<em>Default Amount</em>' attribute.
 	 * @see #setDefaultAmount(BigDecimal)
 	 * @see org.abchip.mimo.biz.product.feature.FeaturePackage#getProductFeature_DefaultAmount()
-	 * @model
+	 * @model annotation="mimo-ent-format type='currency-amount' precision='18' scale='2'"
 	 * @generated
 	 */
 	BigDecimal getDefaultAmount();
@@ -103,7 +103,7 @@ public interface ProductFeature extends BizEntityTyped<ProductFeatureType> {
 	 * @return the value of the '<em>Default Sequence Num</em>' attribute.
 	 * @see #setDefaultSequenceNum(long)
 	 * @see org.abchip.mimo.biz.product.feature.FeaturePackage#getProductFeature_DefaultSequenceNum()
-	 * @model
+	 * @model annotation="mimo-ent-format type='numeric' precision='20' scale='0'"
 	 * @generated
 	 */
 	long getDefaultSequenceNum();
@@ -129,7 +129,7 @@ public interface ProductFeature extends BizEntityTyped<ProductFeatureType> {
 	 * @return the value of the '<em>Description</em>' attribute.
 	 * @see #setDescription(String)
 	 * @see org.abchip.mimo.biz.product.feature.FeaturePackage#getProductFeature_Description()
-	 * @model
+	 * @model annotation="mimo-ent-format type='description' length='255'"
 	 * @generated
 	 */
 	String getDescription();
@@ -155,7 +155,7 @@ public interface ProductFeature extends BizEntityTyped<ProductFeatureType> {
 	 * @return the value of the '<em>Id Code</em>' attribute.
 	 * @see #setIdCode(String)
 	 * @see org.abchip.mimo.biz.product.feature.FeaturePackage#getProductFeature_IdCode()
-	 * @model
+	 * @model annotation="mimo-ent-format type='id-long' length='60'"
 	 * @generated
 	 */
 	String getIdCode();
@@ -181,7 +181,7 @@ public interface ProductFeature extends BizEntityTyped<ProductFeatureType> {
 	 * @return the value of the '<em>Number Specified</em>' attribute.
 	 * @see #setNumberSpecified(BigDecimal)
 	 * @see org.abchip.mimo.biz.product.feature.FeaturePackage#getProductFeature_NumberSpecified()
-	 * @model
+	 * @model annotation="mimo-ent-format type='fixed-point' precision='18' scale='6'"
 	 * @generated
 	 */
 	BigDecimal getNumberSpecified();
@@ -233,7 +233,9 @@ public interface ProductFeature extends BizEntityTyped<ProductFeatureType> {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Main Product Feature Iactns</em>' attribute list.
 	 * @see org.abchip.mimo.biz.product.feature.FeaturePackage#getProductFeature_MainProductFeatureIactns()
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ProductFeatureIactn'"
 	 * @generated
 	 */
@@ -242,7 +244,9 @@ public interface ProductFeature extends BizEntityTyped<ProductFeatureType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ProductFeatureIactn' route='productFeatureIdTo'"
 	 * @generated
 	 */
@@ -251,7 +255,8 @@ public interface ProductFeature extends BizEntityTyped<ProductFeatureType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='CostComponent' route='productFeatureId'"
 	 * @generated
 	 */
@@ -260,7 +265,8 @@ public interface ProductFeature extends BizEntityTyped<ProductFeatureType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='DesiredFeature' route='productFeatureId'"
 	 * @generated
 	 */
@@ -269,7 +275,8 @@ public interface ProductFeature extends BizEntityTyped<ProductFeatureType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='InvoiceItem' route='productFeatureId'"
 	 * @generated
 	 */
@@ -278,7 +285,9 @@ public interface ProductFeature extends BizEntityTyped<ProductFeatureType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ProductFeatureDataResource' route='productFeatureId'"
 	 * @generated
 	 */
@@ -287,7 +296,8 @@ public interface ProductFeature extends BizEntityTyped<ProductFeatureType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ProductManufacturingRule' route='productFeature'"
 	 * @generated
 	 */
@@ -296,7 +306,8 @@ public interface ProductFeature extends BizEntityTyped<ProductFeatureType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='QuoteItem' route='productFeatureId'"
 	 * @generated
 	 */
@@ -305,7 +316,9 @@ public interface ProductFeature extends BizEntityTyped<ProductFeatureType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='SupplierProductFeature' route='productFeatureId'"
 	 * @generated
 	 */
@@ -375,6 +388,7 @@ public interface ProductFeature extends BizEntityTyped<ProductFeatureType> {
 	 * @see #setProductFeatureId(String)
 	 * @see org.abchip.mimo.biz.product.feature.FeaturePackage#getProductFeature_ProductFeatureId()
 	 * @model id="true" required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */

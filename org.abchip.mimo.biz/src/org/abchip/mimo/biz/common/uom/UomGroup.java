@@ -39,6 +39,7 @@ public interface UomGroup extends BizEntity {
 	 * @see #setUomGroupId(String)
 	 * @see org.abchip.mimo.biz.common.uom.UomPackage#getUomGroup_UomGroupId()
 	 * @model required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */

@@ -71,7 +71,7 @@ public interface PartySkill extends BizEntity {
 	 * @return the value of the '<em>Rating</em>' attribute.
 	 * @see #setRating(long)
 	 * @see org.abchip.mimo.biz.humanres.ability.AbilityPackage#getPartySkill_Rating()
-	 * @model
+	 * @model annotation="mimo-ent-format type='numeric' precision='20' scale='0'"
 	 * @generated
 	 */
 	long getRating();
@@ -97,7 +97,7 @@ public interface PartySkill extends BizEntity {
 	 * @return the value of the '<em>Skill Level</em>' attribute.
 	 * @see #setSkillLevel(long)
 	 * @see org.abchip.mimo.biz.humanres.ability.AbilityPackage#getPartySkill_SkillLevel()
-	 * @model
+	 * @model annotation="mimo-ent-format type='numeric' precision='20' scale='0'"
 	 * @generated
 	 */
 	long getSkillLevel();
@@ -149,7 +149,7 @@ public interface PartySkill extends BizEntity {
 	 * @return the value of the '<em>Started Using Date</em>' attribute.
 	 * @see #setStartedUsingDate(Date)
 	 * @see org.abchip.mimo.biz.humanres.ability.AbilityPackage#getPartySkill_StartedUsingDate()
-	 * @model
+	 * @model annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getStartedUsingDate();
@@ -175,7 +175,7 @@ public interface PartySkill extends BizEntity {
 	 * @return the value of the '<em>Years Experience</em>' attribute.
 	 * @see #setYearsExperience(long)
 	 * @see org.abchip.mimo.biz.humanres.ability.AbilityPackage#getPartySkill_YearsExperience()
-	 * @model
+	 * @model annotation="mimo-ent-format type='numeric' precision='20' scale='0'"
 	 * @generated
 	 */
 	long getYearsExperience();

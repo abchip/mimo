@@ -10,15 +10,12 @@ package org.abchip.mimo.resource.impl;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
-
-import java.lang.reflect.InvocationTargetException;
 import java.util.List;
 import org.abchip.mimo.entity.Entity;
 import org.abchip.mimo.entity.Frame;
 import org.abchip.mimo.resource.ResourcePackage;
 import org.abchip.mimo.resource.ResourceSerializer;
 import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
@@ -254,58 +251,6 @@ public abstract class ResourceSerializerImpl<E extends Entity> extends MinimalEO
 				return frame != null;
 		}
 		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	@SuppressWarnings("unchecked")
-	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
-		switch (operationID) {
-			case ResourcePackage.RESOURCE_SERIALIZER___ADD__ENTITY:
-				add((E)arguments.get(0));
-				return null;
-			case ResourcePackage.RESOURCE_SERIALIZER___ADD_ALL__LIST:
-				addAll((List<E>)arguments.get(0));
-				return null;
-			case ResourcePackage.RESOURCE_SERIALIZER___CLEAR:
-				clear();
-				return null;
-			case ResourcePackage.RESOURCE_SERIALIZER___LOAD__INPUTSTREAM_BOOLEAN:
-				try {
-					load((InputStream)arguments.get(0), (Boolean)arguments.get(1));
-					return null;
-				}
-				catch (Throwable throwable) {
-					throw new InvocationTargetException(throwable);
-				}
-			case ResourcePackage.RESOURCE_SERIALIZER___LOAD__STRING_BOOLEAN:
-				try {
-					load((String)arguments.get(0), (Boolean)arguments.get(1));
-					return null;
-				}
-				catch (Throwable throwable) {
-					throw new InvocationTargetException(throwable);
-				}
-			case ResourcePackage.RESOURCE_SERIALIZER___SAVE__OUTPUTSTREAM:
-				try {
-					save((OutputStream)arguments.get(0));
-					return null;
-				}
-				catch (Throwable throwable) {
-					throw new InvocationTargetException(throwable);
-				}
-			case ResourcePackage.RESOURCE_SERIALIZER___GET:
-				return get();
-			case ResourcePackage.RESOURCE_SERIALIZER___GET_ALL:
-				return getAll();
-			case ResourcePackage.RESOURCE_SERIALIZER___IS_EMPTY:
-				return isEmpty();
-		}
-		return super.eInvoke(operationID, arguments);
 	}
 
 } //ResourceSerializerImpl

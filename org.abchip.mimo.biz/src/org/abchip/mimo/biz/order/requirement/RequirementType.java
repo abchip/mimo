@@ -43,7 +43,7 @@ public interface RequirementType extends BizEntityType<Requirement> {
 	 * @return the value of the '<em>Description</em>' attribute.
 	 * @see #setDescription(String)
 	 * @see org.abchip.mimo.biz.order.requirement.RequirementPackage#getRequirementType_Description()
-	 * @model
+	 * @model annotation="mimo-ent-format type='description' length='255'"
 	 * @generated
 	 */
 	String getDescription();
@@ -69,7 +69,7 @@ public interface RequirementType extends BizEntityType<Requirement> {
 	 * @return the value of the '<em>Has Table</em>' attribute.
 	 * @see #setHasTable(boolean)
 	 * @see org.abchip.mimo.biz.order.requirement.RequirementPackage#getRequirementType_HasTable()
-	 * @model
+	 * @model annotation="mimo-ent-format type='indicator' length='1'"
 	 * @generated
 	 */
 	boolean isHasTable();
@@ -122,6 +122,7 @@ public interface RequirementType extends BizEntityType<Requirement> {
 	 * @see #setRequirementTypeId(String)
 	 * @see org.abchip.mimo.biz.order.requirement.RequirementPackage#getRequirementType_RequirementTypeId()
 	 * @model id="true" required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
@@ -148,7 +149,9 @@ public interface RequirementType extends BizEntityType<Requirement> {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Requirement Type Attrs</em>' attribute list.
 	 * @see org.abchip.mimo.biz.order.requirement.RequirementPackage#getRequirementType_RequirementTypeAttrs()
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='RequirementTypeAttr'"
 	 * @generated
 	 */
@@ -157,7 +160,8 @@ public interface RequirementType extends BizEntityType<Requirement> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='RequirementType' route='parentTypeId'"
 	 * @generated
 	 */
@@ -166,7 +170,8 @@ public interface RequirementType extends BizEntityType<Requirement> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='Requirement' route='requirementTypeId'"
 	 * @generated
 	 */

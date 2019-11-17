@@ -59,7 +59,7 @@ public interface CustRequestItem extends BizEntity {
 	 * @return the value of the '<em>Config Id</em>' attribute.
 	 * @see #setConfigId(String)
 	 * @see org.abchip.mimo.biz.order.request.RequestPackage#getCustRequestItem_ConfigId()
-	 * @model
+	 * @model annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	String getConfigId();
@@ -112,6 +112,7 @@ public interface CustRequestItem extends BizEntity {
 	 * @see #setCustRequestItemSeqId(String)
 	 * @see org.abchip.mimo.biz.order.request.RequestPackage#getCustRequestItem_CustRequestItemSeqId()
 	 * @model required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
@@ -164,7 +165,7 @@ public interface CustRequestItem extends BizEntity {
 	 * @return the value of the '<em>Description</em>' attribute.
 	 * @see #setDescription(String)
 	 * @see org.abchip.mimo.biz.order.request.RequestPackage#getCustRequestItem_Description()
-	 * @model
+	 * @model annotation="mimo-ent-format type='description' length='255'"
 	 * @generated
 	 */
 	String getDescription();
@@ -190,7 +191,7 @@ public interface CustRequestItem extends BizEntity {
 	 * @return the value of the '<em>Maximum Amount</em>' attribute.
 	 * @see #setMaximumAmount(BigDecimal)
 	 * @see org.abchip.mimo.biz.order.request.RequestPackage#getCustRequestItem_MaximumAmount()
-	 * @model
+	 * @model annotation="mimo-ent-format type='currency-amount' precision='18' scale='2'"
 	 * @generated
 	 */
 	BigDecimal getMaximumAmount();
@@ -216,7 +217,7 @@ public interface CustRequestItem extends BizEntity {
 	 * @return the value of the '<em>Priority</em>' attribute.
 	 * @see #setPriority(long)
 	 * @see org.abchip.mimo.biz.order.request.RequestPackage#getCustRequestItem_Priority()
-	 * @model
+	 * @model annotation="mimo-ent-format type='numeric' precision='20' scale='0'"
 	 * @generated
 	 */
 	long getPriority();
@@ -268,7 +269,7 @@ public interface CustRequestItem extends BizEntity {
 	 * @return the value of the '<em>Quantity</em>' attribute.
 	 * @see #setQuantity(BigDecimal)
 	 * @see org.abchip.mimo.biz.order.request.RequestPackage#getCustRequestItem_Quantity()
-	 * @model
+	 * @model annotation="mimo-ent-format type='fixed-point' precision='18' scale='6'"
 	 * @generated
 	 */
 	BigDecimal getQuantity();
@@ -294,7 +295,7 @@ public interface CustRequestItem extends BizEntity {
 	 * @return the value of the '<em>Required By Date</em>' attribute.
 	 * @see #setRequiredByDate(Date)
 	 * @see org.abchip.mimo.biz.order.request.RequestPackage#getCustRequestItem_RequiredByDate()
-	 * @model
+	 * @model annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getRequiredByDate();
@@ -320,7 +321,7 @@ public interface CustRequestItem extends BizEntity {
 	 * @return the value of the '<em>Reserv Length</em>' attribute.
 	 * @see #setReservLength(BigDecimal)
 	 * @see org.abchip.mimo.biz.order.request.RequestPackage#getCustRequestItem_ReservLength()
-	 * @model
+	 * @model annotation="mimo-ent-format type='fixed-point' precision='18' scale='6'"
 	 * @generated
 	 */
 	BigDecimal getReservLength();
@@ -346,7 +347,7 @@ public interface CustRequestItem extends BizEntity {
 	 * @return the value of the '<em>Reserv Persons</em>' attribute.
 	 * @see #setReservPersons(BigDecimal)
 	 * @see org.abchip.mimo.biz.order.request.RequestPackage#getCustRequestItem_ReservPersons()
-	 * @model
+	 * @model annotation="mimo-ent-format type='fixed-point' precision='18' scale='6'"
 	 * @generated
 	 */
 	BigDecimal getReservPersons();
@@ -372,7 +373,7 @@ public interface CustRequestItem extends BizEntity {
 	 * @return the value of the '<em>Reserv Start</em>' attribute.
 	 * @see #setReservStart(Date)
 	 * @see org.abchip.mimo.biz.order.request.RequestPackage#getCustRequestItem_ReservStart()
-	 * @model
+	 * @model annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getReservStart();
@@ -398,7 +399,7 @@ public interface CustRequestItem extends BizEntity {
 	 * @return the value of the '<em>Selected Amount</em>' attribute.
 	 * @see #setSelectedAmount(BigDecimal)
 	 * @see org.abchip.mimo.biz.order.request.RequestPackage#getCustRequestItem_SelectedAmount()
-	 * @model
+	 * @model annotation="mimo-ent-format type='fixed-point' precision='18' scale='6'"
 	 * @generated
 	 */
 	BigDecimal getSelectedAmount();
@@ -424,7 +425,7 @@ public interface CustRequestItem extends BizEntity {
 	 * @return the value of the '<em>Sequence Num</em>' attribute.
 	 * @see #setSequenceNum(long)
 	 * @see org.abchip.mimo.biz.order.request.RequestPackage#getCustRequestItem_SequenceNum()
-	 * @model
+	 * @model annotation="mimo-ent-format type='numeric' precision='20' scale='0'"
 	 * @generated
 	 */
 	long getSequenceNum();
@@ -476,7 +477,7 @@ public interface CustRequestItem extends BizEntity {
 	 * @return the value of the '<em>Story</em>' attribute.
 	 * @see #setStory(String)
 	 * @see org.abchip.mimo.biz.order.request.RequestPackage#getCustRequestItem_Story()
-	 * @model
+	 * @model annotation="mimo-ent-format type='very-long'"
 	 * @generated
 	 */
 	String getStory();

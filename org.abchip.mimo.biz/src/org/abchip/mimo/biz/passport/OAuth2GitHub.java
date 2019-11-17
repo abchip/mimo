@@ -74,6 +74,7 @@ public interface OAuth2GitHub extends BizEntity {
 	 * @see #setFromDate(Date)
 	 * @see org.abchip.mimo.biz.passport.PassportPackage#getOAuth2GitHub_FromDate()
 	 * @model required="true"
+	 *        annotation="mimo-ent-format type='date-time'"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
@@ -100,7 +101,7 @@ public interface OAuth2GitHub extends BizEntity {
 	 * @return the value of the '<em>Client Id</em>' attribute.
 	 * @see #setClientId(String)
 	 * @see org.abchip.mimo.biz.passport.PassportPackage#getOAuth2GitHub_ClientId()
-	 * @model
+	 * @model annotation="mimo-ent-format type='short-varchar' length='60'"
 	 * @generated
 	 */
 	String getClientId();
@@ -126,7 +127,7 @@ public interface OAuth2GitHub extends BizEntity {
 	 * @return the value of the '<em>Client Secret</em>' attribute.
 	 * @see #setClientSecret(String)
 	 * @see org.abchip.mimo.biz.passport.PassportPackage#getOAuth2GitHub_ClientSecret()
-	 * @model
+	 * @model annotation="mimo-ent-format type='short-varchar' length='60'"
 	 * @generated
 	 */
 	String getClientSecret();
@@ -152,7 +153,7 @@ public interface OAuth2GitHub extends BizEntity {
 	 * @return the value of the '<em>Icon Url</em>' attribute.
 	 * @see #setIconUrl(String)
 	 * @see org.abchip.mimo.biz.passport.PassportPackage#getOAuth2GitHub_IconUrl()
-	 * @model
+	 * @model annotation="mimo-ent-format type='url' length='2000'"
 	 * @generated
 	 */
 	String getIconUrl();
@@ -178,7 +179,7 @@ public interface OAuth2GitHub extends BizEntity {
 	 * @return the value of the '<em>Local Redirect Uri</em>' attribute.
 	 * @see #setLocalRedirectUri(String)
 	 * @see org.abchip.mimo.biz.passport.PassportPackage#getOAuth2GitHub_LocalRedirectUri()
-	 * @model
+	 * @model annotation="mimo-ent-format type='short-varchar' length='60'"
 	 * @generated
 	 */
 	String getLocalRedirectUri();
@@ -204,7 +205,7 @@ public interface OAuth2GitHub extends BizEntity {
 	 * @return the value of the '<em>Return Url</em>' attribute.
 	 * @see #setReturnUrl(String)
 	 * @see org.abchip.mimo.biz.passport.PassportPackage#getOAuth2GitHub_ReturnUrl()
-	 * @model
+	 * @model annotation="mimo-ent-format type='value' length='255'"
 	 * @generated
 	 */
 	String getReturnUrl();
@@ -230,7 +231,7 @@ public interface OAuth2GitHub extends BizEntity {
 	 * @return the value of the '<em>Thru Date</em>' attribute.
 	 * @see #setThruDate(Date)
 	 * @see org.abchip.mimo.biz.passport.PassportPackage#getOAuth2GitHub_ThruDate()
-	 * @model
+	 * @model annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getThruDate();

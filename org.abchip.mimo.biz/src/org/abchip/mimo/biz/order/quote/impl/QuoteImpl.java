@@ -7,7 +7,6 @@
  */
 package org.abchip.mimo.biz.order.quote.impl;
 
-import java.lang.reflect.InvocationTargetException;
 import java.util.Date;
 import java.util.List;
 
@@ -20,7 +19,6 @@ import org.abchip.mimo.biz.order.quote.QuotePackage;
 import org.abchip.mimo.biz.order.quote.QuoteType;
 import org.abchip.mimo.biz.party.party.Party;
 import org.abchip.mimo.biz.product.store.ProductStore;
-import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 
 /**
@@ -394,22 +392,6 @@ public class QuoteImpl extends BizEntityTypedImpl<QuoteType> implements Quote {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
-		switch (operationID) {
-			case QuotePackage.QUOTE___QUOTE_ADJUSTMENTS:
-				return quoteAdjustments();
-			case QuotePackage.QUOTE___SALES_OPPORTUNITY_QUOTES:
-				return salesOpportunityQuotes();
-		}
-		return super.eInvoke(operationID, arguments);
 	}
 
 } //QuoteImpl

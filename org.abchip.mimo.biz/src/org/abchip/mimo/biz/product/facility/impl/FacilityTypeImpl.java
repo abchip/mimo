@@ -7,14 +7,12 @@
  */
 package org.abchip.mimo.biz.product.facility.impl;
 
-import java.lang.reflect.InvocationTargetException;
 import java.util.List;
 
 import org.abchip.mimo.biz.impl.BizEntityTypeImpl;
 import org.abchip.mimo.biz.product.facility.Facility;
 import org.abchip.mimo.biz.product.facility.FacilityPackage;
 import org.abchip.mimo.biz.product.facility.FacilityType;
-import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 
 /**
@@ -152,22 +150,6 @@ public class FacilityTypeImpl extends BizEntityTypeImpl<Facility> implements Fac
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
-		switch (operationID) {
-			case FacilityPackage.FACILITY_TYPE___CHILD_FACILITY_TYPES:
-				return childFacilityTypes();
-			case FacilityPackage.FACILITY_TYPE___FACILITIES:
-				return facilities();
-		}
-		return super.eInvoke(operationID, arguments);
 	}
 
 	/**

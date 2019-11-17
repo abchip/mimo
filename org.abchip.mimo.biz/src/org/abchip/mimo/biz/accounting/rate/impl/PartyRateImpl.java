@@ -25,7 +25,7 @@ import org.eclipse.emf.ecore.EClass;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.accounting.rate.impl.PartyRateImpl#getFromDate <em>From Date</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.rate.impl.PartyRateImpl#isDefaultRate <em>Default Rate</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.rate.impl.PartyRateImpl#getDefaultRate <em>Default Rate</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.rate.impl.PartyRateImpl#getPercentageUsed <em>Percentage Used</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.rate.impl.PartyRateImpl#getThruDate <em>Thru Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.rate.impl.PartyRateImpl#getPartyId <em>Party Id</em>}</li>
@@ -84,8 +84,8 @@ public class PartyRateImpl extends BizEntityImpl implements PartyRate {
 	 * @generated
 	 */
 	@Override
-	public boolean isDefaultRate() {
-		return (Boolean)eGet(RatePackage.Literals.PARTY_RATE__DEFAULT_RATE, true);
+	public char getDefaultRate() {
+		return (Character)eGet(RatePackage.Literals.PARTY_RATE__DEFAULT_RATE, true);
 	}
 
 	/**
@@ -94,7 +94,7 @@ public class PartyRateImpl extends BizEntityImpl implements PartyRate {
 	 * @generated
 	 */
 	@Override
-	public void setDefaultRate(boolean newDefaultRate) {
+	public void setDefaultRate(char newDefaultRate) {
 		eSet(RatePackage.Literals.PARTY_RATE__DEFAULT_RATE, newDefaultRate);
 	}
 

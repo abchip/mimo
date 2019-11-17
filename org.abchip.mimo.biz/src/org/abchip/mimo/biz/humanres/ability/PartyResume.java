@@ -97,7 +97,7 @@ public interface PartyResume extends BizEntity {
 	 * @return the value of the '<em>Resume Date</em>' attribute.
 	 * @see #setResumeDate(Date)
 	 * @see org.abchip.mimo.biz.humanres.ability.AbilityPackage#getPartyResume_ResumeDate()
-	 * @model
+	 * @model annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getResumeDate();
@@ -124,6 +124,7 @@ public interface PartyResume extends BizEntity {
 	 * @see #setResumeId(String)
 	 * @see org.abchip.mimo.biz.humanres.ability.AbilityPackage#getPartyResume_ResumeId()
 	 * @model id="true" required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
@@ -150,7 +151,7 @@ public interface PartyResume extends BizEntity {
 	 * @return the value of the '<em>Resume Text</em>' attribute.
 	 * @see #setResumeText(String)
 	 * @see org.abchip.mimo.biz.humanres.ability.AbilityPackage#getPartyResume_ResumeText()
-	 * @model
+	 * @model annotation="mimo-ent-format type='long-varchar' length='255'"
 	 * @generated
 	 */
 	String getResumeText();

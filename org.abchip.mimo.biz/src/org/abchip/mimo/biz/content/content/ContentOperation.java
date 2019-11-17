@@ -39,6 +39,7 @@ public interface ContentOperation extends BizEntity {
 	 * @see #setContentOperationId(String)
 	 * @see org.abchip.mimo.biz.content.content.ContentPackage#getContentOperation_ContentOperationId()
 	 * @model id="true" required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
@@ -65,7 +66,7 @@ public interface ContentOperation extends BizEntity {
 	 * @return the value of the '<em>Description</em>' attribute.
 	 * @see #setDescription(String)
 	 * @see org.abchip.mimo.biz.content.content.ContentPackage#getContentOperation_Description()
-	 * @model
+	 * @model annotation="mimo-ent-format type='description' length='255'"
 	 * @generated
 	 */
 	String getDescription();

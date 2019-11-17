@@ -168,26 +168,6 @@ public class MrpEventImpl extends BizEntityTypedImpl<MrpEventType> implements Mr
 	 * @generated
 	 */
 	@Override
-	public Facility getFacilityId() {
-		return (Facility)eGet(MrpPackage.Literals.MRP_EVENT__FACILITY_ID, true);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void setFacilityId(Facility newFacilityId) {
-		eSet(MrpPackage.Literals.MRP_EVENT__FACILITY_ID, newFacilityId);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public boolean isIsLate() {
 		return (Boolean)eGet(MrpPackage.Literals.MRP_EVENT__IS_LATE, true);
 	}
@@ -200,6 +180,26 @@ public class MrpEventImpl extends BizEntityTypedImpl<MrpEventType> implements Mr
 	@Override
 	public void setIsLate(boolean newIsLate) {
 		eSet(MrpPackage.Literals.MRP_EVENT__IS_LATE, newIsLate);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Facility getFacilityId() {
+		return (Facility)eGet(MrpPackage.Literals.MRP_EVENT__FACILITY_ID, true);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setFacilityId(Facility newFacilityId) {
+		eSet(MrpPackage.Literals.MRP_EVENT__FACILITY_ID, newFacilityId);
 	}
 
 	/**

@@ -119,51 +119,6 @@ public interface BizPackage extends EPackage {
 	int BIZ_ENTITY_FEATURE_COUNT = EntityPackage.ENTITY_NAMEABLE_FEATURE_COUNT + 4;
 
 	/**
-	 * The operation id for the '<em>Isa</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BIZ_ENTITY___ISA = EntityPackage.ENTITY_NAMEABLE___ISA;
-
-	/**
-	 * The operation id for the '<em>Get Name</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BIZ_ENTITY___GET_NAME = EntityPackage.ENTITY_NAMEABLE___GET_NAME;
-
-	/**
-	 * The operation id for the '<em>Get URI</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BIZ_ENTITY___GET_URI = EntityPackage.ENTITY_NAMEABLE___GET_URI;
-
-	/**
-	 * The operation id for the '<em>Is Proxy</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BIZ_ENTITY___IS_PROXY = EntityPackage.ENTITY_NAMEABLE___IS_PROXY;
-
-	/**
-	 * The number of operations of the '<em>Entity</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BIZ_ENTITY_OPERATION_COUNT = EntityPackage.ENTITY_NAMEABLE_OPERATION_COUNT + 0;
-
-	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.impl.BizEntityNoteImpl <em>Entity Note</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -235,51 +190,6 @@ public interface BizPackage extends EPackage {
 	 * @ordered
 	 */
 	int BIZ_ENTITY_NOTE_FEATURE_COUNT = BIZ_ENTITY_FEATURE_COUNT + 2;
-
-	/**
-	 * The operation id for the '<em>Isa</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BIZ_ENTITY_NOTE___ISA = BIZ_ENTITY___ISA;
-
-	/**
-	 * The operation id for the '<em>Get Name</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BIZ_ENTITY_NOTE___GET_NAME = BIZ_ENTITY___GET_NAME;
-
-	/**
-	 * The operation id for the '<em>Get URI</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BIZ_ENTITY_NOTE___GET_URI = BIZ_ENTITY___GET_URI;
-
-	/**
-	 * The operation id for the '<em>Is Proxy</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BIZ_ENTITY_NOTE___IS_PROXY = BIZ_ENTITY___IS_PROXY;
-
-	/**
-	 * The number of operations of the '<em>Entity Note</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BIZ_ENTITY_NOTE_OPERATION_COUNT = BIZ_ENTITY_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.impl.BizEntityTypedImpl <em>Entity Typed</em>}' class.
@@ -449,51 +359,6 @@ public interface BizPackage extends EPackage {
 	int BIZ_ENTITY_NOTE_DATA_FEATURE_COUNT = BIZ_ENTITY_FEATURE_COUNT + 8;
 
 	/**
-	 * The operation id for the '<em>Isa</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BIZ_ENTITY_NOTE_DATA___ISA = BIZ_ENTITY___ISA;
-
-	/**
-	 * The operation id for the '<em>Get Name</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BIZ_ENTITY_NOTE_DATA___GET_NAME = BIZ_ENTITY___GET_NAME;
-
-	/**
-	 * The operation id for the '<em>Get URI</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BIZ_ENTITY_NOTE_DATA___GET_URI = BIZ_ENTITY___GET_URI;
-
-	/**
-	 * The operation id for the '<em>Is Proxy</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BIZ_ENTITY_NOTE_DATA___IS_PROXY = BIZ_ENTITY___IS_PROXY;
-
-	/**
-	 * The number of operations of the '<em>Entity Note Data</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BIZ_ENTITY_NOTE_DATA_OPERATION_COUNT = BIZ_ENTITY_OPERATION_COUNT + 0;
-
-	/**
 	 * The feature id for the '<em><b>Created Stamp</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -537,60 +402,6 @@ public interface BizPackage extends EPackage {
 	 * @ordered
 	 */
 	int BIZ_ENTITY_TYPED_FEATURE_COUNT = EntityPackage.ENTITY_TYPED_FEATURE_COUNT + 4;
-
-	/**
-	 * The operation id for the '<em>Isa</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BIZ_ENTITY_TYPED___ISA = EntityPackage.ENTITY_TYPED___ISA;
-
-	/**
-	 * The operation id for the '<em>Get Name</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BIZ_ENTITY_TYPED___GET_NAME = EntityPackage.ENTITY_TYPED___GET_NAME;
-
-	/**
-	 * The operation id for the '<em>Get URI</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BIZ_ENTITY_TYPED___GET_URI = EntityPackage.ENTITY_TYPED___GET_URI;
-
-	/**
-	 * The operation id for the '<em>Is Proxy</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BIZ_ENTITY_TYPED___IS_PROXY = EntityPackage.ENTITY_TYPED___IS_PROXY;
-
-	/**
-	 * The operation id for the '<em>Get Type</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BIZ_ENTITY_TYPED___GET_TYPE = EntityPackage.ENTITY_TYPED___GET_TYPE;
-
-	/**
-	 * The number of operations of the '<em>Entity Typed</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BIZ_ENTITY_TYPED_OPERATION_COUNT = EntityPackage.ENTITY_TYPED_OPERATION_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Slots</b></em>' containment reference list.
@@ -647,87 +458,6 @@ public interface BizPackage extends EPackage {
 	int BIZ_ENTITY_TYPE_FEATURE_COUNT = EntityPackage.ENTITY_TYPE_FEATURE_COUNT + 4;
 
 	/**
-	 * The operation id for the '<em>Isa</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BIZ_ENTITY_TYPE___ISA = EntityPackage.ENTITY_TYPE___ISA;
-
-	/**
-	 * The operation id for the '<em>Get Name</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BIZ_ENTITY_TYPE___GET_NAME = EntityPackage.ENTITY_TYPE___GET_NAME;
-
-	/**
-	 * The operation id for the '<em>Get URI</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BIZ_ENTITY_TYPE___GET_URI = EntityPackage.ENTITY_TYPE___GET_URI;
-
-	/**
-	 * The operation id for the '<em>Is Proxy</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BIZ_ENTITY_TYPE___IS_PROXY = EntityPackage.ENTITY_TYPE___IS_PROXY;
-
-	/**
-	 * The operation id for the '<em>Get Frame</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BIZ_ENTITY_TYPE___GET_FRAME = EntityPackage.ENTITY_TYPE___GET_FRAME;
-
-	/**
-	 * The operation id for the '<em>Get Type Id</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BIZ_ENTITY_TYPE___GET_TYPE_ID = EntityPackage.ENTITY_TYPE___GET_TYPE_ID;
-
-	/**
-	 * The operation id for the '<em>Has Table</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BIZ_ENTITY_TYPE___HAS_TABLE = EntityPackage.ENTITY_TYPE___HAS_TABLE;
-
-	/**
-	 * The operation id for the '<em>Get Text</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BIZ_ENTITY_TYPE___GET_TEXT = EntityPackage.ENTITY_TYPE___GET_TEXT;
-
-	/**
-	 * The number of operations of the '<em>Entity Type</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BIZ_ENTITY_TYPE_OPERATION_COUNT = EntityPackage.ENTITY_TYPE_OPERATION_COUNT + 0;
-
-	/**
 	 * The feature id for the '<em><b>Login Type</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -771,24 +501,6 @@ public interface BizPackage extends EPackage {
 	 * @ordered
 	 */
 	int BIZ_PROVIDER_CONFIG_FEATURE_COUNT = EntityPackage.ENTITY_FEATURE_COUNT + 4;
-
-	/**
-	 * The operation id for the '<em>Isa</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BIZ_PROVIDER_CONFIG___ISA = EntityPackage.ENTITY___ISA;
-
-	/**
-	 * The number of operations of the '<em>Provider Config</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BIZ_PROVIDER_CONFIG_OPERATION_COUNT = EntityPackage.ENTITY_OPERATION_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Created Stamp</b></em>' attribute.
@@ -852,51 +564,6 @@ public interface BizPackage extends EPackage {
 	 * @ordered
 	 */
 	int BIZ_PROVIDER_USER_FEATURE_COUNT = BIZ_ENTITY_FEATURE_COUNT + 2;
-
-	/**
-	 * The operation id for the '<em>Isa</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BIZ_PROVIDER_USER___ISA = BIZ_ENTITY___ISA;
-
-	/**
-	 * The operation id for the '<em>Get Name</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BIZ_PROVIDER_USER___GET_NAME = BIZ_ENTITY___GET_NAME;
-
-	/**
-	 * The operation id for the '<em>Get URI</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BIZ_PROVIDER_USER___GET_URI = BIZ_ENTITY___GET_URI;
-
-	/**
-	 * The operation id for the '<em>Is Proxy</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BIZ_PROVIDER_USER___IS_PROXY = BIZ_ENTITY___IS_PROXY;
-
-	/**
-	 * The number of operations of the '<em>Provider User</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BIZ_PROVIDER_USER_OPERATION_COUNT = BIZ_ENTITY_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.BizLoginType <em>Login Type</em>}' enum.

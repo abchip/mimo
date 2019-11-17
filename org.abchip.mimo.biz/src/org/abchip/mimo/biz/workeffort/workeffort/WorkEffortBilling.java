@@ -68,6 +68,7 @@ public interface WorkEffortBilling extends BizEntity {
 	 * @see #setInvoiceItemSeqId(String)
 	 * @see org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage#getWorkEffortBilling_InvoiceItemSeqId()
 	 * @model required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
@@ -94,7 +95,7 @@ public interface WorkEffortBilling extends BizEntity {
 	 * @return the value of the '<em>Percentage</em>' attribute.
 	 * @see #setPercentage(double)
 	 * @see org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage#getWorkEffortBilling_Percentage()
-	 * @model
+	 * @model annotation="mimo-ent-format type='floating-point'"
 	 * @generated
 	 */
 	double getPercentage();

@@ -41,6 +41,7 @@ public interface ProtocolType extends BizEntity {
 	 * @see #setProtocolTypeId(String)
 	 * @see org.abchip.mimo.biz.webapp.visit.VisitPackage#getProtocolType_ProtocolTypeId()
 	 * @model id="true" required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
@@ -67,7 +68,7 @@ public interface ProtocolType extends BizEntity {
 	 * @return the value of the '<em>Protocol Name</em>' attribute.
 	 * @see #setProtocolName(String)
 	 * @see org.abchip.mimo.biz.webapp.visit.VisitPackage#getProtocolType_ProtocolName()
-	 * @model
+	 * @model annotation="mimo-ent-format type='name' length='100'"
 	 * @generated
 	 */
 	String getProtocolName();
@@ -85,7 +86,8 @@ public interface ProtocolType extends BizEntity {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='UserAgent' route='protocolTypeId'"
 	 * @generated
 	 */

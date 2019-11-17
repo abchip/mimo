@@ -41,7 +41,7 @@ public interface SurveyMultiRespColumn extends BizEntity {
 	 * @return the value of the '<em>Column Title</em>' attribute.
 	 * @see #setColumnTitle(String)
 	 * @see org.abchip.mimo.biz.content.survey.SurveyPackage#getSurveyMultiRespColumn_ColumnTitle()
-	 * @model
+	 * @model annotation="mimo-ent-format type='name' length='100'"
 	 * @generated
 	 */
 	String getColumnTitle();
@@ -67,7 +67,7 @@ public interface SurveyMultiRespColumn extends BizEntity {
 	 * @return the value of the '<em>Sequence Num</em>' attribute.
 	 * @see #setSequenceNum(long)
 	 * @see org.abchip.mimo.biz.content.survey.SurveyPackage#getSurveyMultiRespColumn_SequenceNum()
-	 * @model
+	 * @model annotation="mimo-ent-format type='numeric' precision='20' scale='0'"
 	 * @generated
 	 */
 	long getSequenceNum();
@@ -94,6 +94,7 @@ public interface SurveyMultiRespColumn extends BizEntity {
 	 * @see #setSurveyId(String)
 	 * @see org.abchip.mimo.biz.content.survey.SurveyPackage#getSurveyMultiRespColumn_SurveyId()
 	 * @model required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
@@ -121,6 +122,7 @@ public interface SurveyMultiRespColumn extends BizEntity {
 	 * @see #setSurveyMultiRespColId(String)
 	 * @see org.abchip.mimo.biz.content.survey.SurveyPackage#getSurveyMultiRespColumn_SurveyMultiRespColId()
 	 * @model required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
@@ -148,6 +150,7 @@ public interface SurveyMultiRespColumn extends BizEntity {
 	 * @see #setSurveyMultiRespId(String)
 	 * @see org.abchip.mimo.biz.content.survey.SurveyPackage#getSurveyMultiRespColumn_SurveyMultiRespId()
 	 * @model required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */

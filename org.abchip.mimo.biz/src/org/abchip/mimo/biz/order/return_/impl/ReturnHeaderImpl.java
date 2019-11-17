@@ -7,7 +7,6 @@
  */
 package org.abchip.mimo.biz.order.return_.impl;
 
-import java.lang.reflect.InvocationTargetException;
 import java.util.Date;
 import java.util.List;
 
@@ -24,7 +23,6 @@ import org.abchip.mimo.biz.party.contact.ContactMech;
 import org.abchip.mimo.biz.party.party.Party;
 import org.abchip.mimo.biz.product.facility.Facility;
 import org.abchip.mimo.biz.security.login.UserLogin;
-import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 
 /**
@@ -187,6 +185,26 @@ public class ReturnHeaderImpl extends BizEntityTypedImpl<ReturnHeaderType> imple
 	 * @generated
 	 */
 	@Override
+	public boolean isNeedsInventoryReceive() {
+		return (Boolean)eGet(ReturnPackage.Literals.RETURN_HEADER__NEEDS_INVENTORY_RECEIVE, true);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setNeedsInventoryReceive(boolean newNeedsInventoryReceive) {
+		eSet(ReturnPackage.Literals.RETURN_HEADER__NEEDS_INVENTORY_RECEIVE, newNeedsInventoryReceive);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public FinAccount getFinAccountId() {
 		return (FinAccount)eGet(ReturnPackage.Literals.RETURN_HEADER__FIN_ACCOUNT_ID, true);
 	}
@@ -219,26 +237,6 @@ public class ReturnHeaderImpl extends BizEntityTypedImpl<ReturnHeaderType> imple
 	@Override
 	public void setFromPartyId(Party newFromPartyId) {
 		eSet(ReturnPackage.Literals.RETURN_HEADER__FROM_PARTY_ID, newFromPartyId);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public boolean isNeedsInventoryReceive() {
-		return (Boolean)eGet(ReturnPackage.Literals.RETURN_HEADER__NEEDS_INVENTORY_RECEIVE, true);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void setNeedsInventoryReceive(boolean newNeedsInventoryReceive) {
-		eSet(ReturnPackage.Literals.RETURN_HEADER__NEEDS_INVENTORY_RECEIVE, newNeedsInventoryReceive);
 	}
 
 	/**
@@ -437,24 +435,6 @@ public class ReturnHeaderImpl extends BizEntityTypedImpl<ReturnHeaderType> imple
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
-		switch (operationID) {
-			case ReturnPackage.RETURN_HEADER___PRIMARY_SHIPMENTS:
-				return primaryShipments();
-			case ReturnPackage.RETURN_HEADER___RETURN_ADJUSTMENTS:
-				return returnAdjustments();
-			case ReturnPackage.RETURN_HEADER___RETURN_STATUSS:
-				return returnStatuss();
-		}
-		return super.eInvoke(operationID, arguments);
 	}
 
 } //ReturnHeaderImpl

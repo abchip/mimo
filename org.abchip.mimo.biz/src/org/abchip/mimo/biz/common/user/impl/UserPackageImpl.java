@@ -79,6 +79,7 @@ import org.abchip.mimo.biz.entity.crypto.CryptoPackage;
 import org.abchip.mimo.biz.entity.crypto.impl.CryptoPackageImpl;
 import org.abchip.mimo.biz.entity.group.GroupPackage;
 import org.abchip.mimo.biz.entity.group.impl.GroupPackageImpl;
+import org.abchip.mimo.biz.entity.impl.EntityPackageImpl;
 import org.abchip.mimo.biz.entity.sequence.SequencePackage;
 import org.abchip.mimo.biz.entity.sequence.impl.SequencePackageImpl;
 import org.abchip.mimo.biz.entity.synchronization.SynchronizationPackage;
@@ -195,7 +196,6 @@ import org.eclipse.emf.common.util.URI;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 
 import org.eclipse.emf.ecore.EReference;
@@ -335,6 +335,8 @@ public class UserPackageImpl extends EPackageImpl implements UserPackage {
 		SurveyPackageImpl theSurveyPackage = (SurveyPackageImpl)(registeredPackage instanceof SurveyPackageImpl ? registeredPackage : SurveyPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(WebsitePackage.eNS_URI);
 		WebsitePackageImpl theWebsitePackage = (WebsitePackageImpl)(registeredPackage instanceof WebsitePackageImpl ? registeredPackage : WebsitePackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(org.abchip.mimo.biz.entity.EntityPackage.eNS_URI);
+		EntityPackageImpl theEntityPackage = (EntityPackageImpl)(registeredPackage instanceof EntityPackageImpl ? registeredPackage : org.abchip.mimo.biz.entity.EntityPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(AuditPackage.eNS_URI);
 		AuditPackageImpl theAuditPackage = (AuditPackageImpl)(registeredPackage instanceof AuditPackageImpl ? registeredPackage : AuditPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(CryptoPackage.eNS_URI);
@@ -489,6 +491,7 @@ public class UserPackageImpl extends EPackageImpl implements UserPackage {
 		thePreferencePackage.createPackageContents();
 		theSurveyPackage.createPackageContents();
 		theWebsitePackage.createPackageContents();
+		theEntityPackage.createPackageContents();
 		theAuditPackage.createPackageContents();
 		theCryptoPackage.createPackageContents();
 		theGroupPackage.createPackageContents();
@@ -583,6 +586,7 @@ public class UserPackageImpl extends EPackageImpl implements UserPackage {
 		thePreferencePackage.initializePackageContents();
 		theSurveyPackage.initializePackageContents();
 		theWebsitePackage.initializePackageContents();
+		theEntityPackage.initializePackageContents();
 		theAuditPackage.initializePackageContents();
 		theCryptoPackage.initializePackageContents();
 		theGroupPackage.initializePackageContents();
@@ -688,16 +692,6 @@ public class UserPackageImpl extends EPackageImpl implements UserPackage {
 	 * @generated
 	 */
 	@Override
-	public EOperation getUserPrefGroupType__UserPreferences() {
-		return userPrefGroupTypeEClass.getEOperations().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public EClass getUserPreference() {
 		return userPreferenceEClass;
 	}
@@ -784,7 +778,6 @@ public class UserPackageImpl extends EPackageImpl implements UserPackage {
 		userPrefGroupTypeEClass = createEClass(USER_PREF_GROUP_TYPE);
 		createEAttribute(userPrefGroupTypeEClass, USER_PREF_GROUP_TYPE__USER_PREF_GROUP_TYPE_ID);
 		createEAttribute(userPrefGroupTypeEClass, USER_PREF_GROUP_TYPE__DESCRIPTION);
-		createEOperation(userPrefGroupTypeEClass, USER_PREF_GROUP_TYPE___USER_PREFERENCES);
 
 		userPreferenceEClass = createEClass(USER_PREFERENCE);
 		createEAttribute(userPreferenceEClass, USER_PREFERENCE__USER_PREF_TYPE_ID);
@@ -829,12 +822,12 @@ public class UserPackageImpl extends EPackageImpl implements UserPackage {
 		userPrefGroupTypeEClass.getESuperTypes().add(theBizPackage.getBizEntity());
 		userPreferenceEClass.getESuperTypes().add(theBizPackage.getBizEntity());
 
-		// Initialize classes, features, and operations; add parameters
+		// Initialize classes and features; add operations and parameters
 		initEClass(userPrefGroupTypeEClass, UserPrefGroupType.class, "UserPrefGroupType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getUserPrefGroupType_UserPrefGroupTypeId(), ecorePackage.getEString(), "userPrefGroupTypeId", null, 1, 1, UserPrefGroupType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getUserPrefGroupType_Description(), ecorePackage.getEString(), "description", null, 0, 1, UserPrefGroupType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEOperation(getUserPrefGroupType__UserPreferences(), ecorePackage.getEString(), "userPreferences", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(userPrefGroupTypeEClass, ecorePackage.getEString(), "userPreferences", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(userPreferenceEClass, UserPreference.class, "UserPreference", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getUserPreference_UserPrefTypeId(), ecorePackage.getEString(), "userPrefTypeId", null, 1, 1, UserPreference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -848,6 +841,8 @@ public class UserPackageImpl extends EPackageImpl implements UserPackage {
 		// Create annotations
 		// mimo-ent-frame
 		createMimoentframeAnnotations();
+		// mimo-ent-format
+		createMimoentformatAnnotations();
 		// mimo-ent-slot
 		createMimoentslotAnnotations();
 		// mimo-ent-domain
@@ -871,6 +866,58 @@ public class UserPackageImpl extends EPackageImpl implements UserPackage {
 	}
 
 	/**
+	 * Initializes the annotations for <b>mimo-ent-format</b>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void createMimoentformatAnnotations() {
+		String source = "mimo-ent-format";
+		addAnnotation
+		  (userPrefGroupTypeEClass.getEOperations().get(0),
+		   source,
+		   new String[] {
+			   "type", "id-long",
+			   "length", "60"
+		   });
+		addAnnotation
+		  (getUserPrefGroupType_UserPrefGroupTypeId(),
+		   source,
+		   new String[] {
+			   "type", "id-long",
+			   "length", "60"
+		   });
+		addAnnotation
+		  (getUserPrefGroupType_Description(),
+		   source,
+		   new String[] {
+			   "type", "description",
+			   "length", "255"
+		   });
+		addAnnotation
+		  (getUserPreference_UserPrefTypeId(),
+		   source,
+		   new String[] {
+			   "type", "id-long",
+			   "length", "60"
+		   });
+		addAnnotation
+		  (getUserPreference_UserPrefDataType(),
+		   source,
+		   new String[] {
+			   "type", "id-long",
+			   "length", "60"
+		   });
+		addAnnotation
+		  (getUserPreference_UserPrefValue(),
+		   source,
+		   new String[] {
+			   "type", "value",
+			   "length", "255"
+		   });
+	}
+
+	/**
 	 * Initializes the annotations for <b>mimo-ent-slot</b>.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -879,7 +926,7 @@ public class UserPackageImpl extends EPackageImpl implements UserPackage {
 	protected void createMimoentslotAnnotations() {
 		String source = "mimo-ent-slot";
 		addAnnotation
-		  (getUserPrefGroupType__UserPreferences(),
+		  (userPrefGroupTypeEClass.getEOperations().get(0),
 		   source,
 		   new String[] {
 			   "derived", "true"
@@ -907,7 +954,7 @@ public class UserPackageImpl extends EPackageImpl implements UserPackage {
 	protected void createMimoentdomainAnnotations() {
 		String source = "mimo-ent-domain";
 		addAnnotation
-		  (getUserPrefGroupType__UserPreferences(),
+		  (userPrefGroupTypeEClass.getEOperations().get(0),
 		   source,
 		   new String[] {
 			   "frame", "UserPreference",

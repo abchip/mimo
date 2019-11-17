@@ -39,7 +39,7 @@ public interface PartyIdentification extends BizEntityTyped<PartyIdentificationT
 	 * @return the value of the '<em>Id Value</em>' attribute.
 	 * @see #setIdValue(String)
 	 * @see org.abchip.mimo.biz.party.party.PartyPackage#getPartyIdentification_IdValue()
-	 * @model
+	 * @model annotation="mimo-ent-format type='id-long' length='60'"
 	 * @generated
 	 */
 	String getIdValue();

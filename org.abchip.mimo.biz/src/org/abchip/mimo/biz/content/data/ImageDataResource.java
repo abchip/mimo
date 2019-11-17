@@ -64,7 +64,7 @@ public interface ImageDataResource extends BizEntity {
 	 * @return the value of the '<em>Image Data</em>' attribute.
 	 * @see #setImageData(byte[])
 	 * @see org.abchip.mimo.biz.content.data.DataPackage#getImageDataResource_ImageData()
-	 * @model
+	 * @model annotation="mimo-ent-format type='byte-array'"
 	 * @generated
 	 */
 	byte[] getImageData();

@@ -10,7 +10,6 @@ package org.abchip.mimo.biz.accounting.finaccount;
 import org.abchip.mimo.biz.BizPackage;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
@@ -280,105 +279,6 @@ public interface FinaccountPackage extends EPackage {
 	int FIN_ACCOUNT_FEATURE_COUNT = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 18;
 
 	/**
-	 * The operation id for the '<em>Isa</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FIN_ACCOUNT___ISA = BizPackage.BIZ_ENTITY_TYPED___ISA;
-
-	/**
-	 * The operation id for the '<em>Get Name</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FIN_ACCOUNT___GET_NAME = BizPackage.BIZ_ENTITY_TYPED___GET_NAME;
-
-	/**
-	 * The operation id for the '<em>Get URI</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FIN_ACCOUNT___GET_URI = BizPackage.BIZ_ENTITY_TYPED___GET_URI;
-
-	/**
-	 * The operation id for the '<em>Is Proxy</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FIN_ACCOUNT___IS_PROXY = BizPackage.BIZ_ENTITY_TYPED___IS_PROXY;
-
-	/**
-	 * The operation id for the '<em>Get Type</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FIN_ACCOUNT___GET_TYPE = BizPackage.BIZ_ENTITY_TYPED___GET_TYPE;
-
-	/**
-	 * The operation id for the '<em>Fin Account Auths</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FIN_ACCOUNT___FIN_ACCOUNT_AUTHS = BizPackage.BIZ_ENTITY_TYPED_OPERATION_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Fin Account Transs</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FIN_ACCOUNT___FIN_ACCOUNT_TRANSS = BizPackage.BIZ_ENTITY_TYPED_OPERATION_COUNT + 1;
-
-	/**
-	 * The operation id for the '<em>Order Payment Preferences</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FIN_ACCOUNT___ORDER_PAYMENT_PREFERENCES = BizPackage.BIZ_ENTITY_TYPED_OPERATION_COUNT + 2;
-
-	/**
-	 * The operation id for the '<em>Payment Methods</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FIN_ACCOUNT___PAYMENT_METHODS = BizPackage.BIZ_ENTITY_TYPED_OPERATION_COUNT + 3;
-
-	/**
-	 * The operation id for the '<em>Return Headers</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FIN_ACCOUNT___RETURN_HEADERS = BizPackage.BIZ_ENTITY_TYPED_OPERATION_COUNT + 4;
-
-	/**
-	 * The number of operations of the '<em>Fin Account</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FIN_ACCOUNT_OPERATION_COUNT = BizPackage.BIZ_ENTITY_TYPED_OPERATION_COUNT + 5;
-
-	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.accounting.finaccount.impl.FinAccountAttributeImpl <em>Fin Account Attribute</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -468,51 +368,6 @@ public interface FinaccountPackage extends EPackage {
 	 * @ordered
 	 */
 	int FIN_ACCOUNT_ATTRIBUTE_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
-
-	/**
-	 * The operation id for the '<em>Isa</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FIN_ACCOUNT_ATTRIBUTE___ISA = BizPackage.BIZ_ENTITY___ISA;
-
-	/**
-	 * The operation id for the '<em>Get Name</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FIN_ACCOUNT_ATTRIBUTE___GET_NAME = BizPackage.BIZ_ENTITY___GET_NAME;
-
-	/**
-	 * The operation id for the '<em>Get URI</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FIN_ACCOUNT_ATTRIBUTE___GET_URI = BizPackage.BIZ_ENTITY___GET_URI;
-
-	/**
-	 * The operation id for the '<em>Is Proxy</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FIN_ACCOUNT_ATTRIBUTE___IS_PROXY = BizPackage.BIZ_ENTITY___IS_PROXY;
-
-	/**
-	 * The number of operations of the '<em>Fin Account Attribute</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FIN_ACCOUNT_ATTRIBUTE_OPERATION_COUNT = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.accounting.finaccount.impl.FinAccountAuthImpl <em>Fin Account Auth</em>}' class.
@@ -633,51 +488,6 @@ public interface FinaccountPackage extends EPackage {
 	int FIN_ACCOUNT_AUTH_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 7;
 
 	/**
-	 * The operation id for the '<em>Isa</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FIN_ACCOUNT_AUTH___ISA = BizPackage.BIZ_ENTITY___ISA;
-
-	/**
-	 * The operation id for the '<em>Get Name</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FIN_ACCOUNT_AUTH___GET_NAME = BizPackage.BIZ_ENTITY___GET_NAME;
-
-	/**
-	 * The operation id for the '<em>Get URI</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FIN_ACCOUNT_AUTH___GET_URI = BizPackage.BIZ_ENTITY___GET_URI;
-
-	/**
-	 * The operation id for the '<em>Is Proxy</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FIN_ACCOUNT_AUTH___IS_PROXY = BizPackage.BIZ_ENTITY___IS_PROXY;
-
-	/**
-	 * The number of operations of the '<em>Fin Account Auth</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FIN_ACCOUNT_AUTH_OPERATION_COUNT = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 0;
-
-	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.accounting.finaccount.impl.FinAccountRoleImpl <em>Fin Account Role</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -778,51 +588,6 @@ public interface FinaccountPackage extends EPackage {
 	int FIN_ACCOUNT_ROLE_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 5;
 
 	/**
-	 * The operation id for the '<em>Isa</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FIN_ACCOUNT_ROLE___ISA = BizPackage.BIZ_ENTITY___ISA;
-
-	/**
-	 * The operation id for the '<em>Get Name</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FIN_ACCOUNT_ROLE___GET_NAME = BizPackage.BIZ_ENTITY___GET_NAME;
-
-	/**
-	 * The operation id for the '<em>Get URI</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FIN_ACCOUNT_ROLE___GET_URI = BizPackage.BIZ_ENTITY___GET_URI;
-
-	/**
-	 * The operation id for the '<em>Is Proxy</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FIN_ACCOUNT_ROLE___IS_PROXY = BizPackage.BIZ_ENTITY___IS_PROXY;
-
-	/**
-	 * The number of operations of the '<em>Fin Account Role</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FIN_ACCOUNT_ROLE_OPERATION_COUNT = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 0;
-
-	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.accounting.finaccount.impl.FinAccountStatusImpl <em>Fin Account Status</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -921,51 +686,6 @@ public interface FinaccountPackage extends EPackage {
 	 * @ordered
 	 */
 	int FIN_ACCOUNT_STATUS_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 5;
-
-	/**
-	 * The operation id for the '<em>Isa</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FIN_ACCOUNT_STATUS___ISA = BizPackage.BIZ_ENTITY___ISA;
-
-	/**
-	 * The operation id for the '<em>Get Name</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FIN_ACCOUNT_STATUS___GET_NAME = BizPackage.BIZ_ENTITY___GET_NAME;
-
-	/**
-	 * The operation id for the '<em>Get URI</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FIN_ACCOUNT_STATUS___GET_URI = BizPackage.BIZ_ENTITY___GET_URI;
-
-	/**
-	 * The operation id for the '<em>Is Proxy</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FIN_ACCOUNT_STATUS___IS_PROXY = BizPackage.BIZ_ENTITY___IS_PROXY;
-
-	/**
-	 * The number of operations of the '<em>Fin Account Status</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FIN_ACCOUNT_STATUS_OPERATION_COUNT = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.accounting.finaccount.impl.FinAccountTransImpl <em>Fin Account Trans</em>}' class.
@@ -1167,78 +887,6 @@ public interface FinaccountPackage extends EPackage {
 	int FIN_ACCOUNT_TRANS_FEATURE_COUNT = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 16;
 
 	/**
-	 * The operation id for the '<em>Isa</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FIN_ACCOUNT_TRANS___ISA = BizPackage.BIZ_ENTITY_TYPED___ISA;
-
-	/**
-	 * The operation id for the '<em>Get Name</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FIN_ACCOUNT_TRANS___GET_NAME = BizPackage.BIZ_ENTITY_TYPED___GET_NAME;
-
-	/**
-	 * The operation id for the '<em>Get URI</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FIN_ACCOUNT_TRANS___GET_URI = BizPackage.BIZ_ENTITY_TYPED___GET_URI;
-
-	/**
-	 * The operation id for the '<em>Is Proxy</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FIN_ACCOUNT_TRANS___IS_PROXY = BizPackage.BIZ_ENTITY_TYPED___IS_PROXY;
-
-	/**
-	 * The operation id for the '<em>Get Type</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FIN_ACCOUNT_TRANS___GET_TYPE = BizPackage.BIZ_ENTITY_TYPED___GET_TYPE;
-
-	/**
-	 * The operation id for the '<em>Acctg Transs</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FIN_ACCOUNT_TRANS___ACCTG_TRANSS = BizPackage.BIZ_ENTITY_TYPED_OPERATION_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Return Item Responses</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FIN_ACCOUNT_TRANS___RETURN_ITEM_RESPONSES = BizPackage.BIZ_ENTITY_TYPED_OPERATION_COUNT + 1;
-
-	/**
-	 * The number of operations of the '<em>Fin Account Trans</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FIN_ACCOUNT_TRANS_OPERATION_COUNT = BizPackage.BIZ_ENTITY_TYPED_OPERATION_COUNT + 2;
-
-	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.accounting.finaccount.impl.FinAccountTransAttributeImpl <em>Fin Account Trans Attribute</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1328,51 +976,6 @@ public interface FinaccountPackage extends EPackage {
 	 * @ordered
 	 */
 	int FIN_ACCOUNT_TRANS_ATTRIBUTE_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
-
-	/**
-	 * The operation id for the '<em>Isa</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FIN_ACCOUNT_TRANS_ATTRIBUTE___ISA = BizPackage.BIZ_ENTITY___ISA;
-
-	/**
-	 * The operation id for the '<em>Get Name</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FIN_ACCOUNT_TRANS_ATTRIBUTE___GET_NAME = BizPackage.BIZ_ENTITY___GET_NAME;
-
-	/**
-	 * The operation id for the '<em>Get URI</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FIN_ACCOUNT_TRANS_ATTRIBUTE___GET_URI = BizPackage.BIZ_ENTITY___GET_URI;
-
-	/**
-	 * The operation id for the '<em>Is Proxy</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FIN_ACCOUNT_TRANS_ATTRIBUTE___IS_PROXY = BizPackage.BIZ_ENTITY___IS_PROXY;
-
-	/**
-	 * The number of operations of the '<em>Fin Account Trans Attribute</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FIN_ACCOUNT_TRANS_ATTRIBUTE_OPERATION_COUNT = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.accounting.finaccount.impl.FinAccountTransTypeImpl <em>Fin Account Trans Type</em>}' class.
@@ -1484,105 +1087,6 @@ public interface FinaccountPackage extends EPackage {
 	int FIN_ACCOUNT_TRANS_TYPE_FEATURE_COUNT = BizPackage.BIZ_ENTITY_TYPE_FEATURE_COUNT + 5;
 
 	/**
-	 * The operation id for the '<em>Isa</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FIN_ACCOUNT_TRANS_TYPE___ISA = BizPackage.BIZ_ENTITY_TYPE___ISA;
-
-	/**
-	 * The operation id for the '<em>Get Name</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FIN_ACCOUNT_TRANS_TYPE___GET_NAME = BizPackage.BIZ_ENTITY_TYPE___GET_NAME;
-
-	/**
-	 * The operation id for the '<em>Get URI</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FIN_ACCOUNT_TRANS_TYPE___GET_URI = BizPackage.BIZ_ENTITY_TYPE___GET_URI;
-
-	/**
-	 * The operation id for the '<em>Is Proxy</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FIN_ACCOUNT_TRANS_TYPE___IS_PROXY = BizPackage.BIZ_ENTITY_TYPE___IS_PROXY;
-
-	/**
-	 * The operation id for the '<em>Get Frame</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FIN_ACCOUNT_TRANS_TYPE___GET_FRAME = BizPackage.BIZ_ENTITY_TYPE___GET_FRAME;
-
-	/**
-	 * The operation id for the '<em>Get Type Id</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FIN_ACCOUNT_TRANS_TYPE___GET_TYPE_ID = BizPackage.BIZ_ENTITY_TYPE___GET_TYPE_ID;
-
-	/**
-	 * The operation id for the '<em>Has Table</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FIN_ACCOUNT_TRANS_TYPE___HAS_TABLE = BizPackage.BIZ_ENTITY_TYPE___HAS_TABLE;
-
-	/**
-	 * The operation id for the '<em>Get Text</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FIN_ACCOUNT_TRANS_TYPE___GET_TEXT = BizPackage.BIZ_ENTITY_TYPE___GET_TEXT;
-
-	/**
-	 * The operation id for the '<em>Child Fin Account Trans Types</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FIN_ACCOUNT_TRANS_TYPE___CHILD_FIN_ACCOUNT_TRANS_TYPES = BizPackage.BIZ_ENTITY_TYPE_OPERATION_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Fin Account Transs</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FIN_ACCOUNT_TRANS_TYPE___FIN_ACCOUNT_TRANSS = BizPackage.BIZ_ENTITY_TYPE_OPERATION_COUNT + 1;
-
-	/**
-	 * The number of operations of the '<em>Fin Account Trans Type</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FIN_ACCOUNT_TRANS_TYPE_OPERATION_COUNT = BizPackage.BIZ_ENTITY_TYPE_OPERATION_COUNT + 2;
-
-	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.accounting.finaccount.impl.FinAccountTransTypeAttrImpl <em>Fin Account Trans Type Attr</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1663,51 +1167,6 @@ public interface FinaccountPackage extends EPackage {
 	 * @ordered
 	 */
 	int FIN_ACCOUNT_TRANS_TYPE_ATTR_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
-
-	/**
-	 * The operation id for the '<em>Isa</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FIN_ACCOUNT_TRANS_TYPE_ATTR___ISA = BizPackage.BIZ_ENTITY___ISA;
-
-	/**
-	 * The operation id for the '<em>Get Name</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FIN_ACCOUNT_TRANS_TYPE_ATTR___GET_NAME = BizPackage.BIZ_ENTITY___GET_NAME;
-
-	/**
-	 * The operation id for the '<em>Get URI</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FIN_ACCOUNT_TRANS_TYPE_ATTR___GET_URI = BizPackage.BIZ_ENTITY___GET_URI;
-
-	/**
-	 * The operation id for the '<em>Is Proxy</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FIN_ACCOUNT_TRANS_TYPE_ATTR___IS_PROXY = BizPackage.BIZ_ENTITY___IS_PROXY;
-
-	/**
-	 * The number of operations of the '<em>Fin Account Trans Type Attr</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FIN_ACCOUNT_TRANS_TYPE_ATTR_OPERATION_COUNT = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.accounting.finaccount.impl.FinAccountTypeImpl <em>Fin Account Type</em>}' class.
@@ -1846,114 +1305,6 @@ public interface FinaccountPackage extends EPackage {
 	int FIN_ACCOUNT_TYPE_FEATURE_COUNT = BizPackage.BIZ_ENTITY_TYPE_FEATURE_COUNT + 8;
 
 	/**
-	 * The operation id for the '<em>Isa</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FIN_ACCOUNT_TYPE___ISA = BizPackage.BIZ_ENTITY_TYPE___ISA;
-
-	/**
-	 * The operation id for the '<em>Get Name</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FIN_ACCOUNT_TYPE___GET_NAME = BizPackage.BIZ_ENTITY_TYPE___GET_NAME;
-
-	/**
-	 * The operation id for the '<em>Get URI</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FIN_ACCOUNT_TYPE___GET_URI = BizPackage.BIZ_ENTITY_TYPE___GET_URI;
-
-	/**
-	 * The operation id for the '<em>Is Proxy</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FIN_ACCOUNT_TYPE___IS_PROXY = BizPackage.BIZ_ENTITY_TYPE___IS_PROXY;
-
-	/**
-	 * The operation id for the '<em>Get Frame</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FIN_ACCOUNT_TYPE___GET_FRAME = BizPackage.BIZ_ENTITY_TYPE___GET_FRAME;
-
-	/**
-	 * The operation id for the '<em>Get Type Id</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FIN_ACCOUNT_TYPE___GET_TYPE_ID = BizPackage.BIZ_ENTITY_TYPE___GET_TYPE_ID;
-
-	/**
-	 * The operation id for the '<em>Has Table</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FIN_ACCOUNT_TYPE___HAS_TABLE = BizPackage.BIZ_ENTITY_TYPE___HAS_TABLE;
-
-	/**
-	 * The operation id for the '<em>Get Text</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FIN_ACCOUNT_TYPE___GET_TEXT = BizPackage.BIZ_ENTITY_TYPE___GET_TEXT;
-
-	/**
-	 * The operation id for the '<em>Child Fin Account Types</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FIN_ACCOUNT_TYPE___CHILD_FIN_ACCOUNT_TYPES = BizPackage.BIZ_ENTITY_TYPE_OPERATION_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Fin Accounts</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FIN_ACCOUNT_TYPE___FIN_ACCOUNTS = BizPackage.BIZ_ENTITY_TYPE_OPERATION_COUNT + 1;
-
-	/**
-	 * The operation id for the '<em>Product Store Fin Act Settings</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FIN_ACCOUNT_TYPE___PRODUCT_STORE_FIN_ACT_SETTINGS = BizPackage.BIZ_ENTITY_TYPE_OPERATION_COUNT + 2;
-
-	/**
-	 * The number of operations of the '<em>Fin Account Type</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FIN_ACCOUNT_TYPE_OPERATION_COUNT = BizPackage.BIZ_ENTITY_TYPE_OPERATION_COUNT + 3;
-
-	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.accounting.finaccount.impl.FinAccountTypeAttrImpl <em>Fin Account Type Attr</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2045,51 +1396,6 @@ public interface FinaccountPackage extends EPackage {
 	int FIN_ACCOUNT_TYPE_ATTR_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
 
 	/**
-	 * The operation id for the '<em>Isa</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FIN_ACCOUNT_TYPE_ATTR___ISA = BizPackage.BIZ_ENTITY___ISA;
-
-	/**
-	 * The operation id for the '<em>Get Name</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FIN_ACCOUNT_TYPE_ATTR___GET_NAME = BizPackage.BIZ_ENTITY___GET_NAME;
-
-	/**
-	 * The operation id for the '<em>Get URI</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FIN_ACCOUNT_TYPE_ATTR___GET_URI = BizPackage.BIZ_ENTITY___GET_URI;
-
-	/**
-	 * The operation id for the '<em>Is Proxy</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FIN_ACCOUNT_TYPE_ATTR___IS_PROXY = BizPackage.BIZ_ENTITY___IS_PROXY;
-
-	/**
-	 * The number of operations of the '<em>Fin Account Type Attr</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FIN_ACCOUNT_TYPE_ATTR_OPERATION_COUNT = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 0;
-
-	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.accounting.finaccount.impl.FinAccountTypeGlAccountImpl <em>Fin Account Type Gl Account</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2170,52 +1476,6 @@ public interface FinaccountPackage extends EPackage {
 	 * @ordered
 	 */
 	int FIN_ACCOUNT_TYPE_GL_ACCOUNT_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
-
-
-	/**
-	 * The operation id for the '<em>Isa</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FIN_ACCOUNT_TYPE_GL_ACCOUNT___ISA = BizPackage.BIZ_ENTITY___ISA;
-
-	/**
-	 * The operation id for the '<em>Get Name</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FIN_ACCOUNT_TYPE_GL_ACCOUNT___GET_NAME = BizPackage.BIZ_ENTITY___GET_NAME;
-
-	/**
-	 * The operation id for the '<em>Get URI</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FIN_ACCOUNT_TYPE_GL_ACCOUNT___GET_URI = BizPackage.BIZ_ENTITY___GET_URI;
-
-	/**
-	 * The operation id for the '<em>Is Proxy</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FIN_ACCOUNT_TYPE_GL_ACCOUNT___IS_PROXY = BizPackage.BIZ_ENTITY___IS_PROXY;
-
-	/**
-	 * The number of operations of the '<em>Fin Account Type Gl Account</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FIN_ACCOUNT_TYPE_GL_ACCOUNT_OPERATION_COUNT = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 0;
 
 
 	/**
@@ -2425,56 +1685,6 @@ public interface FinaccountPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getFinAccount_FinAccountAttributes();
-
-	/**
-	 * Returns the meta object for the '{@link org.abchip.mimo.biz.accounting.finaccount.FinAccount#finAccountAuths() <em>Fin Account Auths</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Fin Account Auths</em>' operation.
-	 * @see org.abchip.mimo.biz.accounting.finaccount.FinAccount#finAccountAuths()
-	 * @generated
-	 */
-	EOperation getFinAccount__FinAccountAuths();
-
-	/**
-	 * Returns the meta object for the '{@link org.abchip.mimo.biz.accounting.finaccount.FinAccount#finAccountTranss() <em>Fin Account Transs</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Fin Account Transs</em>' operation.
-	 * @see org.abchip.mimo.biz.accounting.finaccount.FinAccount#finAccountTranss()
-	 * @generated
-	 */
-	EOperation getFinAccount__FinAccountTranss();
-
-	/**
-	 * Returns the meta object for the '{@link org.abchip.mimo.biz.accounting.finaccount.FinAccount#orderPaymentPreferences() <em>Order Payment Preferences</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Order Payment Preferences</em>' operation.
-	 * @see org.abchip.mimo.biz.accounting.finaccount.FinAccount#orderPaymentPreferences()
-	 * @generated
-	 */
-	EOperation getFinAccount__OrderPaymentPreferences();
-
-	/**
-	 * Returns the meta object for the '{@link org.abchip.mimo.biz.accounting.finaccount.FinAccount#paymentMethods() <em>Payment Methods</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Payment Methods</em>' operation.
-	 * @see org.abchip.mimo.biz.accounting.finaccount.FinAccount#paymentMethods()
-	 * @generated
-	 */
-	EOperation getFinAccount__PaymentMethods();
-
-	/**
-	 * Returns the meta object for the '{@link org.abchip.mimo.biz.accounting.finaccount.FinAccount#returnHeaders() <em>Return Headers</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Return Headers</em>' operation.
-	 * @see org.abchip.mimo.biz.accounting.finaccount.FinAccount#returnHeaders()
-	 * @generated
-	 */
-	EOperation getFinAccount__ReturnHeaders();
 
 	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.biz.accounting.finaccount.FinAccountAttribute <em>Fin Account Attribute</em>}'.
@@ -2934,26 +2144,6 @@ public interface FinaccountPackage extends EPackage {
 	EAttribute getFinAccountTrans_FinAccountTransAttributes();
 
 	/**
-	 * Returns the meta object for the '{@link org.abchip.mimo.biz.accounting.finaccount.FinAccountTrans#acctgTranss() <em>Acctg Transs</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Acctg Transs</em>' operation.
-	 * @see org.abchip.mimo.biz.accounting.finaccount.FinAccountTrans#acctgTranss()
-	 * @generated
-	 */
-	EOperation getFinAccountTrans__AcctgTranss();
-
-	/**
-	 * Returns the meta object for the '{@link org.abchip.mimo.biz.accounting.finaccount.FinAccountTrans#returnItemResponses() <em>Return Item Responses</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Return Item Responses</em>' operation.
-	 * @see org.abchip.mimo.biz.accounting.finaccount.FinAccountTrans#returnItemResponses()
-	 * @generated
-	 */
-	EOperation getFinAccountTrans__ReturnItemResponses();
-
-	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.biz.accounting.finaccount.FinAccountTransAttribute <em>Fin Account Trans Attribute</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3071,26 +2261,6 @@ public interface FinaccountPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getFinAccountTransType_FinAccountTransTypeAttrs();
-
-	/**
-	 * Returns the meta object for the '{@link org.abchip.mimo.biz.accounting.finaccount.FinAccountTransType#childFinAccountTransTypes() <em>Child Fin Account Trans Types</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Child Fin Account Trans Types</em>' operation.
-	 * @see org.abchip.mimo.biz.accounting.finaccount.FinAccountTransType#childFinAccountTransTypes()
-	 * @generated
-	 */
-	EOperation getFinAccountTransType__ChildFinAccountTransTypes();
-
-	/**
-	 * Returns the meta object for the '{@link org.abchip.mimo.biz.accounting.finaccount.FinAccountTransType#finAccountTranss() <em>Fin Account Transs</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Fin Account Transs</em>' operation.
-	 * @see org.abchip.mimo.biz.accounting.finaccount.FinAccountTransType#finAccountTranss()
-	 * @generated
-	 */
-	EOperation getFinAccountTransType__FinAccountTranss();
 
 	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.biz.accounting.finaccount.FinAccountTransTypeAttr <em>Fin Account Trans Type Attr</em>}'.
@@ -3232,36 +2402,6 @@ public interface FinaccountPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getFinAccountType_FinAccountTypeGlAccounts();
-
-	/**
-	 * Returns the meta object for the '{@link org.abchip.mimo.biz.accounting.finaccount.FinAccountType#childFinAccountTypes() <em>Child Fin Account Types</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Child Fin Account Types</em>' operation.
-	 * @see org.abchip.mimo.biz.accounting.finaccount.FinAccountType#childFinAccountTypes()
-	 * @generated
-	 */
-	EOperation getFinAccountType__ChildFinAccountTypes();
-
-	/**
-	 * Returns the meta object for the '{@link org.abchip.mimo.biz.accounting.finaccount.FinAccountType#finAccounts() <em>Fin Accounts</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Fin Accounts</em>' operation.
-	 * @see org.abchip.mimo.biz.accounting.finaccount.FinAccountType#finAccounts()
-	 * @generated
-	 */
-	EOperation getFinAccountType__FinAccounts();
-
-	/**
-	 * Returns the meta object for the '{@link org.abchip.mimo.biz.accounting.finaccount.FinAccountType#productStoreFinActSettings() <em>Product Store Fin Act Settings</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Product Store Fin Act Settings</em>' operation.
-	 * @see org.abchip.mimo.biz.accounting.finaccount.FinAccountType#productStoreFinActSettings()
-	 * @generated
-	 */
-	EOperation getFinAccountType__ProductStoreFinActSettings();
 
 	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.biz.accounting.finaccount.FinAccountTypeAttr <em>Fin Account Type Attr</em>}'.
@@ -3535,46 +2675,6 @@ public interface FinaccountPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute FIN_ACCOUNT__FIN_ACCOUNT_ATTRIBUTES = eINSTANCE.getFinAccount_FinAccountAttributes();
-
-		/**
-		 * The meta object literal for the '<em><b>Fin Account Auths</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation FIN_ACCOUNT___FIN_ACCOUNT_AUTHS = eINSTANCE.getFinAccount__FinAccountAuths();
-
-		/**
-		 * The meta object literal for the '<em><b>Fin Account Transs</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation FIN_ACCOUNT___FIN_ACCOUNT_TRANSS = eINSTANCE.getFinAccount__FinAccountTranss();
-
-		/**
-		 * The meta object literal for the '<em><b>Order Payment Preferences</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation FIN_ACCOUNT___ORDER_PAYMENT_PREFERENCES = eINSTANCE.getFinAccount__OrderPaymentPreferences();
-
-		/**
-		 * The meta object literal for the '<em><b>Payment Methods</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation FIN_ACCOUNT___PAYMENT_METHODS = eINSTANCE.getFinAccount__PaymentMethods();
-
-		/**
-		 * The meta object literal for the '<em><b>Return Headers</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation FIN_ACCOUNT___RETURN_HEADERS = eINSTANCE.getFinAccount__ReturnHeaders();
 
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.biz.accounting.finaccount.impl.FinAccountAttributeImpl <em>Fin Account Attribute</em>}' class.
@@ -3923,22 +3023,6 @@ public interface FinaccountPackage extends EPackage {
 		EAttribute FIN_ACCOUNT_TRANS__FIN_ACCOUNT_TRANS_ATTRIBUTES = eINSTANCE.getFinAccountTrans_FinAccountTransAttributes();
 
 		/**
-		 * The meta object literal for the '<em><b>Acctg Transs</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation FIN_ACCOUNT_TRANS___ACCTG_TRANSS = eINSTANCE.getFinAccountTrans__AcctgTranss();
-
-		/**
-		 * The meta object literal for the '<em><b>Return Item Responses</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation FIN_ACCOUNT_TRANS___RETURN_ITEM_RESPONSES = eINSTANCE.getFinAccountTrans__ReturnItemResponses();
-
-		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.biz.accounting.finaccount.impl.FinAccountTransAttributeImpl <em>Fin Account Trans Attribute</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -4029,22 +3113,6 @@ public interface FinaccountPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute FIN_ACCOUNT_TRANS_TYPE__FIN_ACCOUNT_TRANS_TYPE_ATTRS = eINSTANCE.getFinAccountTransType_FinAccountTransTypeAttrs();
-
-		/**
-		 * The meta object literal for the '<em><b>Child Fin Account Trans Types</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation FIN_ACCOUNT_TRANS_TYPE___CHILD_FIN_ACCOUNT_TRANS_TYPES = eINSTANCE.getFinAccountTransType__ChildFinAccountTransTypes();
-
-		/**
-		 * The meta object literal for the '<em><b>Fin Account Transs</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation FIN_ACCOUNT_TRANS_TYPE___FIN_ACCOUNT_TRANSS = eINSTANCE.getFinAccountTransType__FinAccountTranss();
 
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.biz.accounting.finaccount.impl.FinAccountTransTypeAttrImpl <em>Fin Account Trans Type Attr</em>}' class.
@@ -4153,30 +3221,6 @@ public interface FinaccountPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute FIN_ACCOUNT_TYPE__FIN_ACCOUNT_TYPE_GL_ACCOUNTS = eINSTANCE.getFinAccountType_FinAccountTypeGlAccounts();
-
-		/**
-		 * The meta object literal for the '<em><b>Child Fin Account Types</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation FIN_ACCOUNT_TYPE___CHILD_FIN_ACCOUNT_TYPES = eINSTANCE.getFinAccountType__ChildFinAccountTypes();
-
-		/**
-		 * The meta object literal for the '<em><b>Fin Accounts</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation FIN_ACCOUNT_TYPE___FIN_ACCOUNTS = eINSTANCE.getFinAccountType__FinAccounts();
-
-		/**
-		 * The meta object literal for the '<em><b>Product Store Fin Act Settings</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation FIN_ACCOUNT_TYPE___PRODUCT_STORE_FIN_ACT_SETTINGS = eINSTANCE.getFinAccountType__ProductStoreFinActSettings();
 
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.biz.accounting.finaccount.impl.FinAccountTypeAttrImpl <em>Fin Account Type Attr</em>}' class.

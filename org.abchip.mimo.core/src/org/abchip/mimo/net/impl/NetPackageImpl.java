@@ -235,7 +235,7 @@ public class NetPackageImpl extends EPackageImpl implements NetPackage {
 		// Add supertypes to classes
 		socketConfigEClass.getESuperTypes().add(theEntityPackage.getEntity());
 
-		// Initialize classes, features, and operations; add parameters
+		// Initialize classes and features; add operations and parameters
 		initEClass(socketConfigEClass, SocketConfig.class, "SocketConfig", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getSocketConfig_Address(), ecorePackage.getEString(), "address", null, 1, 1, SocketConfig.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getSocketConfig_Port(), ecorePackage.getEInt(), "port", null, 1, 1, SocketConfig.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

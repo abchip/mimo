@@ -10,7 +10,6 @@ package org.abchip.mimo.biz.order.return_;
 import org.abchip.mimo.biz.BizPackage;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
@@ -134,51 +133,6 @@ public interface ReturnPackage extends EPackage {
 	 * @ordered
 	 */
 	int COMMUNICATION_EVENT_RETURN_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
-
-	/**
-	 * The operation id for the '<em>Isa</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMMUNICATION_EVENT_RETURN___ISA = BizPackage.BIZ_ENTITY___ISA;
-
-	/**
-	 * The operation id for the '<em>Get Name</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMMUNICATION_EVENT_RETURN___GET_NAME = BizPackage.BIZ_ENTITY___GET_NAME;
-
-	/**
-	 * The operation id for the '<em>Get URI</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMMUNICATION_EVENT_RETURN___GET_URI = BizPackage.BIZ_ENTITY___GET_URI;
-
-	/**
-	 * The operation id for the '<em>Is Proxy</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMMUNICATION_EVENT_RETURN___IS_PROXY = BizPackage.BIZ_ENTITY___IS_PROXY;
-
-	/**
-	 * The number of operations of the '<em>Communication Event Return</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMMUNICATION_EVENT_RETURN_OPERATION_COUNT = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.order.return_.impl.ReturnAdjustmentImpl <em>Adjustment</em>}' class.
@@ -515,60 +469,6 @@ public interface ReturnPackage extends EPackage {
 	int RETURN_ADJUSTMENT_FEATURE_COUNT = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 31;
 
 	/**
-	 * The operation id for the '<em>Isa</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RETURN_ADJUSTMENT___ISA = BizPackage.BIZ_ENTITY_TYPED___ISA;
-
-	/**
-	 * The operation id for the '<em>Get Name</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RETURN_ADJUSTMENT___GET_NAME = BizPackage.BIZ_ENTITY_TYPED___GET_NAME;
-
-	/**
-	 * The operation id for the '<em>Get URI</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RETURN_ADJUSTMENT___GET_URI = BizPackage.BIZ_ENTITY_TYPED___GET_URI;
-
-	/**
-	 * The operation id for the '<em>Is Proxy</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RETURN_ADJUSTMENT___IS_PROXY = BizPackage.BIZ_ENTITY_TYPED___IS_PROXY;
-
-	/**
-	 * The operation id for the '<em>Get Type</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RETURN_ADJUSTMENT___GET_TYPE = BizPackage.BIZ_ENTITY_TYPED___GET_TYPE;
-
-	/**
-	 * The number of operations of the '<em>Adjustment</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RETURN_ADJUSTMENT_OPERATION_COUNT = BizPackage.BIZ_ENTITY_TYPED_OPERATION_COUNT + 0;
-
-	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.order.return_.impl.ReturnAdjustmentTypeImpl <em>Adjustment Type</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -669,114 +569,6 @@ public interface ReturnPackage extends EPackage {
 	int RETURN_ADJUSTMENT_TYPE_FEATURE_COUNT = BizPackage.BIZ_ENTITY_TYPE_FEATURE_COUNT + 4;
 
 	/**
-	 * The operation id for the '<em>Isa</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RETURN_ADJUSTMENT_TYPE___ISA = BizPackage.BIZ_ENTITY_TYPE___ISA;
-
-	/**
-	 * The operation id for the '<em>Get Name</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RETURN_ADJUSTMENT_TYPE___GET_NAME = BizPackage.BIZ_ENTITY_TYPE___GET_NAME;
-
-	/**
-	 * The operation id for the '<em>Get URI</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RETURN_ADJUSTMENT_TYPE___GET_URI = BizPackage.BIZ_ENTITY_TYPE___GET_URI;
-
-	/**
-	 * The operation id for the '<em>Is Proxy</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RETURN_ADJUSTMENT_TYPE___IS_PROXY = BizPackage.BIZ_ENTITY_TYPE___IS_PROXY;
-
-	/**
-	 * The operation id for the '<em>Get Frame</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RETURN_ADJUSTMENT_TYPE___GET_FRAME = BizPackage.BIZ_ENTITY_TYPE___GET_FRAME;
-
-	/**
-	 * The operation id for the '<em>Get Type Id</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RETURN_ADJUSTMENT_TYPE___GET_TYPE_ID = BizPackage.BIZ_ENTITY_TYPE___GET_TYPE_ID;
-
-	/**
-	 * The operation id for the '<em>Has Table</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RETURN_ADJUSTMENT_TYPE___HAS_TABLE = BizPackage.BIZ_ENTITY_TYPE___HAS_TABLE;
-
-	/**
-	 * The operation id for the '<em>Get Text</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RETURN_ADJUSTMENT_TYPE___GET_TEXT = BizPackage.BIZ_ENTITY_TYPE___GET_TEXT;
-
-	/**
-	 * The operation id for the '<em>Child Return Adjustment Types</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RETURN_ADJUSTMENT_TYPE___CHILD_RETURN_ADJUSTMENT_TYPES = BizPackage.BIZ_ENTITY_TYPE_OPERATION_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Return Adjustments</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RETURN_ADJUSTMENT_TYPE___RETURN_ADJUSTMENTS = BizPackage.BIZ_ENTITY_TYPE_OPERATION_COUNT + 1;
-
-	/**
-	 * The operation id for the '<em>Return Item Type Maps</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RETURN_ADJUSTMENT_TYPE___RETURN_ITEM_TYPE_MAPS = BizPackage.BIZ_ENTITY_TYPE_OPERATION_COUNT + 2;
-
-	/**
-	 * The number of operations of the '<em>Adjustment Type</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RETURN_ADJUSTMENT_TYPE_OPERATION_COUNT = BizPackage.BIZ_ENTITY_TYPE_OPERATION_COUNT + 3;
-
-	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.order.return_.impl.ReturnContactMechImpl <em>Contact Mech</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -857,51 +649,6 @@ public interface ReturnPackage extends EPackage {
 	 * @ordered
 	 */
 	int RETURN_CONTACT_MECH_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
-
-	/**
-	 * The operation id for the '<em>Isa</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RETURN_CONTACT_MECH___ISA = BizPackage.BIZ_ENTITY___ISA;
-
-	/**
-	 * The operation id for the '<em>Get Name</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RETURN_CONTACT_MECH___GET_NAME = BizPackage.BIZ_ENTITY___GET_NAME;
-
-	/**
-	 * The operation id for the '<em>Get URI</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RETURN_CONTACT_MECH___GET_URI = BizPackage.BIZ_ENTITY___GET_URI;
-
-	/**
-	 * The operation id for the '<em>Is Proxy</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RETURN_CONTACT_MECH___IS_PROXY = BizPackage.BIZ_ENTITY___IS_PROXY;
-
-	/**
-	 * The number of operations of the '<em>Contact Mech</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RETURN_CONTACT_MECH_OPERATION_COUNT = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.order.return_.impl.ReturnHeaderImpl <em>Header</em>}' class.
@@ -1112,87 +859,6 @@ public interface ReturnPackage extends EPackage {
 	int RETURN_HEADER_FEATURE_COUNT = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 17;
 
 	/**
-	 * The operation id for the '<em>Isa</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RETURN_HEADER___ISA = BizPackage.BIZ_ENTITY_TYPED___ISA;
-
-	/**
-	 * The operation id for the '<em>Get Name</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RETURN_HEADER___GET_NAME = BizPackage.BIZ_ENTITY_TYPED___GET_NAME;
-
-	/**
-	 * The operation id for the '<em>Get URI</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RETURN_HEADER___GET_URI = BizPackage.BIZ_ENTITY_TYPED___GET_URI;
-
-	/**
-	 * The operation id for the '<em>Is Proxy</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RETURN_HEADER___IS_PROXY = BizPackage.BIZ_ENTITY_TYPED___IS_PROXY;
-
-	/**
-	 * The operation id for the '<em>Get Type</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RETURN_HEADER___GET_TYPE = BizPackage.BIZ_ENTITY_TYPED___GET_TYPE;
-
-	/**
-	 * The operation id for the '<em>Primary Shipments</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RETURN_HEADER___PRIMARY_SHIPMENTS = BizPackage.BIZ_ENTITY_TYPED_OPERATION_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Return Adjustments</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RETURN_HEADER___RETURN_ADJUSTMENTS = BizPackage.BIZ_ENTITY_TYPED_OPERATION_COUNT + 1;
-
-	/**
-	 * The operation id for the '<em>Return Statuss</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RETURN_HEADER___RETURN_STATUSS = BizPackage.BIZ_ENTITY_TYPED_OPERATION_COUNT + 2;
-
-	/**
-	 * The number of operations of the '<em>Header</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RETURN_HEADER_OPERATION_COUNT = BizPackage.BIZ_ENTITY_TYPED_OPERATION_COUNT + 3;
-
-	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.order.return_.impl.ReturnHeaderTypeImpl <em>Header Type</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1282,114 +948,6 @@ public interface ReturnPackage extends EPackage {
 	 * @ordered
 	 */
 	int RETURN_HEADER_TYPE_FEATURE_COUNT = BizPackage.BIZ_ENTITY_TYPE_FEATURE_COUNT + 3;
-
-	/**
-	 * The operation id for the '<em>Isa</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RETURN_HEADER_TYPE___ISA = BizPackage.BIZ_ENTITY_TYPE___ISA;
-
-	/**
-	 * The operation id for the '<em>Get Name</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RETURN_HEADER_TYPE___GET_NAME = BizPackage.BIZ_ENTITY_TYPE___GET_NAME;
-
-	/**
-	 * The operation id for the '<em>Get URI</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RETURN_HEADER_TYPE___GET_URI = BizPackage.BIZ_ENTITY_TYPE___GET_URI;
-
-	/**
-	 * The operation id for the '<em>Is Proxy</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RETURN_HEADER_TYPE___IS_PROXY = BizPackage.BIZ_ENTITY_TYPE___IS_PROXY;
-
-	/**
-	 * The operation id for the '<em>Get Frame</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RETURN_HEADER_TYPE___GET_FRAME = BizPackage.BIZ_ENTITY_TYPE___GET_FRAME;
-
-	/**
-	 * The operation id for the '<em>Get Type Id</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RETURN_HEADER_TYPE___GET_TYPE_ID = BizPackage.BIZ_ENTITY_TYPE___GET_TYPE_ID;
-
-	/**
-	 * The operation id for the '<em>Has Table</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RETURN_HEADER_TYPE___HAS_TABLE = BizPackage.BIZ_ENTITY_TYPE___HAS_TABLE;
-
-	/**
-	 * The operation id for the '<em>Get Text</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RETURN_HEADER_TYPE___GET_TEXT = BizPackage.BIZ_ENTITY_TYPE___GET_TEXT;
-
-	/**
-	 * The operation id for the '<em>Child Return Header Types</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RETURN_HEADER_TYPE___CHILD_RETURN_HEADER_TYPES = BizPackage.BIZ_ENTITY_TYPE_OPERATION_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Return Headers</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RETURN_HEADER_TYPE___RETURN_HEADERS = BizPackage.BIZ_ENTITY_TYPE_OPERATION_COUNT + 1;
-
-	/**
-	 * The operation id for the '<em>Return Item Type Maps</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RETURN_HEADER_TYPE___RETURN_ITEM_TYPE_MAPS = BizPackage.BIZ_ENTITY_TYPE_OPERATION_COUNT + 2;
-
-	/**
-	 * The number of operations of the '<em>Header Type</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RETURN_HEADER_TYPE_OPERATION_COUNT = BizPackage.BIZ_ENTITY_TYPE_OPERATION_COUNT + 3;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.order.return_.impl.ReturnItemImpl <em>Item</em>}' class.
@@ -1582,60 +1140,6 @@ public interface ReturnPackage extends EPackage {
 	int RETURN_ITEM_FEATURE_COUNT = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 15;
 
 	/**
-	 * The operation id for the '<em>Isa</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RETURN_ITEM___ISA = BizPackage.BIZ_ENTITY_TYPED___ISA;
-
-	/**
-	 * The operation id for the '<em>Get Name</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RETURN_ITEM___GET_NAME = BizPackage.BIZ_ENTITY_TYPED___GET_NAME;
-
-	/**
-	 * The operation id for the '<em>Get URI</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RETURN_ITEM___GET_URI = BizPackage.BIZ_ENTITY_TYPED___GET_URI;
-
-	/**
-	 * The operation id for the '<em>Is Proxy</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RETURN_ITEM___IS_PROXY = BizPackage.BIZ_ENTITY_TYPED___IS_PROXY;
-
-	/**
-	 * The operation id for the '<em>Get Type</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RETURN_ITEM___GET_TYPE = BizPackage.BIZ_ENTITY_TYPED___GET_TYPE;
-
-	/**
-	 * The number of operations of the '<em>Item</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RETURN_ITEM_OPERATION_COUNT = BizPackage.BIZ_ENTITY_TYPED_OPERATION_COUNT + 0;
-
-	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.order.return_.impl.ReturnItemBillingImpl <em>Item Billing</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1752,51 +1256,6 @@ public interface ReturnPackage extends EPackage {
 	 * @ordered
 	 */
 	int RETURN_ITEM_BILLING_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 7;
-
-	/**
-	 * The operation id for the '<em>Isa</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RETURN_ITEM_BILLING___ISA = BizPackage.BIZ_ENTITY___ISA;
-
-	/**
-	 * The operation id for the '<em>Get Name</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RETURN_ITEM_BILLING___GET_NAME = BizPackage.BIZ_ENTITY___GET_NAME;
-
-	/**
-	 * The operation id for the '<em>Get URI</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RETURN_ITEM_BILLING___GET_URI = BizPackage.BIZ_ENTITY___GET_URI;
-
-	/**
-	 * The operation id for the '<em>Is Proxy</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RETURN_ITEM_BILLING___IS_PROXY = BizPackage.BIZ_ENTITY___IS_PROXY;
-
-	/**
-	 * The number of operations of the '<em>Item Billing</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RETURN_ITEM_BILLING_OPERATION_COUNT = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.order.return_.impl.ReturnItemResponseImpl <em>Item Response</em>}' class.
@@ -1926,60 +1385,6 @@ public interface ReturnPackage extends EPackage {
 	int RETURN_ITEM_RESPONSE_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 8;
 
 	/**
-	 * The operation id for the '<em>Isa</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RETURN_ITEM_RESPONSE___ISA = BizPackage.BIZ_ENTITY___ISA;
-
-	/**
-	 * The operation id for the '<em>Get Name</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RETURN_ITEM_RESPONSE___GET_NAME = BizPackage.BIZ_ENTITY___GET_NAME;
-
-	/**
-	 * The operation id for the '<em>Get URI</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RETURN_ITEM_RESPONSE___GET_URI = BizPackage.BIZ_ENTITY___GET_URI;
-
-	/**
-	 * The operation id for the '<em>Is Proxy</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RETURN_ITEM_RESPONSE___IS_PROXY = BizPackage.BIZ_ENTITY___IS_PROXY;
-
-	/**
-	 * The operation id for the '<em>Return Items</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RETURN_ITEM_RESPONSE___RETURN_ITEMS = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 0;
-
-	/**
-	 * The number of operations of the '<em>Item Response</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RETURN_ITEM_RESPONSE_OPERATION_COUNT = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 1;
-
-	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.order.return_.impl.ReturnItemShipmentImpl <em>Item Shipment</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2080,51 +1485,6 @@ public interface ReturnPackage extends EPackage {
 	int RETURN_ITEM_SHIPMENT_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 5;
 
 	/**
-	 * The operation id for the '<em>Isa</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RETURN_ITEM_SHIPMENT___ISA = BizPackage.BIZ_ENTITY___ISA;
-
-	/**
-	 * The operation id for the '<em>Get Name</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RETURN_ITEM_SHIPMENT___GET_NAME = BizPackage.BIZ_ENTITY___GET_NAME;
-
-	/**
-	 * The operation id for the '<em>Get URI</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RETURN_ITEM_SHIPMENT___GET_URI = BizPackage.BIZ_ENTITY___GET_URI;
-
-	/**
-	 * The operation id for the '<em>Is Proxy</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RETURN_ITEM_SHIPMENT___IS_PROXY = BizPackage.BIZ_ENTITY___IS_PROXY;
-
-	/**
-	 * The number of operations of the '<em>Item Shipment</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RETURN_ITEM_SHIPMENT_OPERATION_COUNT = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 0;
-
-	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.order.return_.impl.ReturnItemTypeImpl <em>Item Type</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2216,114 +1576,6 @@ public interface ReturnPackage extends EPackage {
 	int RETURN_ITEM_TYPE_FEATURE_COUNT = BizPackage.BIZ_ENTITY_TYPE_FEATURE_COUNT + 3;
 
 	/**
-	 * The operation id for the '<em>Isa</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RETURN_ITEM_TYPE___ISA = BizPackage.BIZ_ENTITY_TYPE___ISA;
-
-	/**
-	 * The operation id for the '<em>Get Name</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RETURN_ITEM_TYPE___GET_NAME = BizPackage.BIZ_ENTITY_TYPE___GET_NAME;
-
-	/**
-	 * The operation id for the '<em>Get URI</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RETURN_ITEM_TYPE___GET_URI = BizPackage.BIZ_ENTITY_TYPE___GET_URI;
-
-	/**
-	 * The operation id for the '<em>Is Proxy</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RETURN_ITEM_TYPE___IS_PROXY = BizPackage.BIZ_ENTITY_TYPE___IS_PROXY;
-
-	/**
-	 * The operation id for the '<em>Get Frame</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RETURN_ITEM_TYPE___GET_FRAME = BizPackage.BIZ_ENTITY_TYPE___GET_FRAME;
-
-	/**
-	 * The operation id for the '<em>Get Type Id</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RETURN_ITEM_TYPE___GET_TYPE_ID = BizPackage.BIZ_ENTITY_TYPE___GET_TYPE_ID;
-
-	/**
-	 * The operation id for the '<em>Has Table</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RETURN_ITEM_TYPE___HAS_TABLE = BizPackage.BIZ_ENTITY_TYPE___HAS_TABLE;
-
-	/**
-	 * The operation id for the '<em>Get Text</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RETURN_ITEM_TYPE___GET_TEXT = BizPackage.BIZ_ENTITY_TYPE___GET_TEXT;
-
-	/**
-	 * The operation id for the '<em>Child Return Item Types</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RETURN_ITEM_TYPE___CHILD_RETURN_ITEM_TYPES = BizPackage.BIZ_ENTITY_TYPE_OPERATION_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Return Item Type Maps</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RETURN_ITEM_TYPE___RETURN_ITEM_TYPE_MAPS = BizPackage.BIZ_ENTITY_TYPE_OPERATION_COUNT + 1;
-
-	/**
-	 * The operation id for the '<em>Return Items</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RETURN_ITEM_TYPE___RETURN_ITEMS = BizPackage.BIZ_ENTITY_TYPE_OPERATION_COUNT + 2;
-
-	/**
-	 * The number of operations of the '<em>Item Type</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RETURN_ITEM_TYPE_OPERATION_COUNT = BizPackage.BIZ_ENTITY_TYPE_OPERATION_COUNT + 3;
-
-	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.order.return_.impl.ReturnItemTypeMapImpl <em>Item Type Map</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2406,51 +1658,6 @@ public interface ReturnPackage extends EPackage {
 	int RETURN_ITEM_TYPE_MAP_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
 
 	/**
-	 * The operation id for the '<em>Isa</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RETURN_ITEM_TYPE_MAP___ISA = BizPackage.BIZ_ENTITY___ISA;
-
-	/**
-	 * The operation id for the '<em>Get Name</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RETURN_ITEM_TYPE_MAP___GET_NAME = BizPackage.BIZ_ENTITY___GET_NAME;
-
-	/**
-	 * The operation id for the '<em>Get URI</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RETURN_ITEM_TYPE_MAP___GET_URI = BizPackage.BIZ_ENTITY___GET_URI;
-
-	/**
-	 * The operation id for the '<em>Is Proxy</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RETURN_ITEM_TYPE_MAP___IS_PROXY = BizPackage.BIZ_ENTITY___IS_PROXY;
-
-	/**
-	 * The number of operations of the '<em>Item Type Map</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RETURN_ITEM_TYPE_MAP_OPERATION_COUNT = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 0;
-
-	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.order.return_.impl.ReturnReasonImpl <em>Reason</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2531,60 +1738,6 @@ public interface ReturnPackage extends EPackage {
 	 * @ordered
 	 */
 	int RETURN_REASON_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
-
-	/**
-	 * The operation id for the '<em>Isa</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RETURN_REASON___ISA = BizPackage.BIZ_ENTITY___ISA;
-
-	/**
-	 * The operation id for the '<em>Get Name</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RETURN_REASON___GET_NAME = BizPackage.BIZ_ENTITY___GET_NAME;
-
-	/**
-	 * The operation id for the '<em>Get URI</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RETURN_REASON___GET_URI = BizPackage.BIZ_ENTITY___GET_URI;
-
-	/**
-	 * The operation id for the '<em>Is Proxy</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RETURN_REASON___IS_PROXY = BizPackage.BIZ_ENTITY___IS_PROXY;
-
-	/**
-	 * The operation id for the '<em>Return Items</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RETURN_REASON___RETURN_ITEMS = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 0;
-
-	/**
-	 * The number of operations of the '<em>Reason</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RETURN_REASON_OPERATION_COUNT = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 1;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.order.return_.impl.ReturnStatusImpl <em>Status</em>}' class.
@@ -2696,51 +1849,6 @@ public interface ReturnPackage extends EPackage {
 	int RETURN_STATUS_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 6;
 
 	/**
-	 * The operation id for the '<em>Isa</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RETURN_STATUS___ISA = BizPackage.BIZ_ENTITY___ISA;
-
-	/**
-	 * The operation id for the '<em>Get Name</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RETURN_STATUS___GET_NAME = BizPackage.BIZ_ENTITY___GET_NAME;
-
-	/**
-	 * The operation id for the '<em>Get URI</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RETURN_STATUS___GET_URI = BizPackage.BIZ_ENTITY___GET_URI;
-
-	/**
-	 * The operation id for the '<em>Is Proxy</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RETURN_STATUS___IS_PROXY = BizPackage.BIZ_ENTITY___IS_PROXY;
-
-	/**
-	 * The number of operations of the '<em>Status</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RETURN_STATUS_OPERATION_COUNT = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 0;
-
-	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.order.return_.impl.ReturnTypeImpl <em>Type</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2821,70 +1929,6 @@ public interface ReturnPackage extends EPackage {
 	 * @ordered
 	 */
 	int RETURN_TYPE_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
-
-
-	/**
-	 * The operation id for the '<em>Isa</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RETURN_TYPE___ISA = BizPackage.BIZ_ENTITY___ISA;
-
-	/**
-	 * The operation id for the '<em>Get Name</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RETURN_TYPE___GET_NAME = BizPackage.BIZ_ENTITY___GET_NAME;
-
-	/**
-	 * The operation id for the '<em>Get URI</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RETURN_TYPE___GET_URI = BizPackage.BIZ_ENTITY___GET_URI;
-
-	/**
-	 * The operation id for the '<em>Is Proxy</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RETURN_TYPE___IS_PROXY = BizPackage.BIZ_ENTITY___IS_PROXY;
-
-	/**
-	 * The operation id for the '<em>Return Adjustments</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RETURN_TYPE___RETURN_ADJUSTMENTS = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Return Items</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RETURN_TYPE___RETURN_ITEMS = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 1;
-
-	/**
-	 * The number of operations of the '<em>Type</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RETURN_TYPE_OPERATION_COUNT = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 2;
 
 
 	/**
@@ -3325,36 +2369,6 @@ public interface ReturnPackage extends EPackage {
 	EReference getReturnAdjustmentType_ParentTypeId();
 
 	/**
-	 * Returns the meta object for the '{@link org.abchip.mimo.biz.order.return_.ReturnAdjustmentType#childReturnAdjustmentTypes() <em>Child Return Adjustment Types</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Child Return Adjustment Types</em>' operation.
-	 * @see org.abchip.mimo.biz.order.return_.ReturnAdjustmentType#childReturnAdjustmentTypes()
-	 * @generated
-	 */
-	EOperation getReturnAdjustmentType__ChildReturnAdjustmentTypes();
-
-	/**
-	 * Returns the meta object for the '{@link org.abchip.mimo.biz.order.return_.ReturnAdjustmentType#returnAdjustments() <em>Return Adjustments</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Return Adjustments</em>' operation.
-	 * @see org.abchip.mimo.biz.order.return_.ReturnAdjustmentType#returnAdjustments()
-	 * @generated
-	 */
-	EOperation getReturnAdjustmentType__ReturnAdjustments();
-
-	/**
-	 * Returns the meta object for the '{@link org.abchip.mimo.biz.order.return_.ReturnAdjustmentType#returnItemTypeMaps() <em>Return Item Type Maps</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Return Item Type Maps</em>' operation.
-	 * @see org.abchip.mimo.biz.order.return_.ReturnAdjustmentType#returnItemTypeMaps()
-	 * @generated
-	 */
-	EOperation getReturnAdjustmentType__ReturnItemTypeMaps();
-
-	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.biz.order.return_.ReturnContactMech <em>Contact Mech</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3595,36 +2609,6 @@ public interface ReturnPackage extends EPackage {
 	EAttribute getReturnHeader_ReturnItems();
 
 	/**
-	 * Returns the meta object for the '{@link org.abchip.mimo.biz.order.return_.ReturnHeader#primaryShipments() <em>Primary Shipments</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Primary Shipments</em>' operation.
-	 * @see org.abchip.mimo.biz.order.return_.ReturnHeader#primaryShipments()
-	 * @generated
-	 */
-	EOperation getReturnHeader__PrimaryShipments();
-
-	/**
-	 * Returns the meta object for the '{@link org.abchip.mimo.biz.order.return_.ReturnHeader#returnAdjustments() <em>Return Adjustments</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Return Adjustments</em>' operation.
-	 * @see org.abchip.mimo.biz.order.return_.ReturnHeader#returnAdjustments()
-	 * @generated
-	 */
-	EOperation getReturnHeader__ReturnAdjustments();
-
-	/**
-	 * Returns the meta object for the '{@link org.abchip.mimo.biz.order.return_.ReturnHeader#returnStatuss() <em>Return Statuss</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Return Statuss</em>' operation.
-	 * @see org.abchip.mimo.biz.order.return_.ReturnHeader#returnStatuss()
-	 * @generated
-	 */
-	EOperation getReturnHeader__ReturnStatuss();
-
-	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.biz.order.return_.ReturnHeaderType <em>Header Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3666,36 +2650,6 @@ public interface ReturnPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getReturnHeaderType_ParentTypeId();
-
-	/**
-	 * Returns the meta object for the '{@link org.abchip.mimo.biz.order.return_.ReturnHeaderType#childReturnHeaderTypes() <em>Child Return Header Types</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Child Return Header Types</em>' operation.
-	 * @see org.abchip.mimo.biz.order.return_.ReturnHeaderType#childReturnHeaderTypes()
-	 * @generated
-	 */
-	EOperation getReturnHeaderType__ChildReturnHeaderTypes();
-
-	/**
-	 * Returns the meta object for the '{@link org.abchip.mimo.biz.order.return_.ReturnHeaderType#returnHeaders() <em>Return Headers</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Return Headers</em>' operation.
-	 * @see org.abchip.mimo.biz.order.return_.ReturnHeaderType#returnHeaders()
-	 * @generated
-	 */
-	EOperation getReturnHeaderType__ReturnHeaders();
-
-	/**
-	 * Returns the meta object for the '{@link org.abchip.mimo.biz.order.return_.ReturnHeaderType#returnItemTypeMaps() <em>Return Item Type Maps</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Return Item Type Maps</em>' operation.
-	 * @see org.abchip.mimo.biz.order.return_.ReturnHeaderType#returnItemTypeMaps()
-	 * @generated
-	 */
-	EOperation getReturnHeaderType__ReturnItemTypeMaps();
 
 	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.biz.order.return_.ReturnItem <em>Item</em>}'.
@@ -4003,16 +2957,6 @@ public interface ReturnPackage extends EPackage {
 	EReference getReturnItemResponse_FinAccountTransId();
 
 	/**
-	 * Returns the meta object for the '{@link org.abchip.mimo.biz.order.return_.ReturnItemResponse#returnItems() <em>Return Items</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Return Items</em>' operation.
-	 * @see org.abchip.mimo.biz.order.return_.ReturnItemResponse#returnItems()
-	 * @generated
-	 */
-	EOperation getReturnItemResponse__ReturnItems();
-
-	/**
 	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.order.return_.ReturnItemResponse#getOrderPaymentPreferenceId <em>Order Payment Preference Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -4176,36 +3120,6 @@ public interface ReturnPackage extends EPackage {
 	EReference getReturnItemType_ParentTypeId();
 
 	/**
-	 * Returns the meta object for the '{@link org.abchip.mimo.biz.order.return_.ReturnItemType#childReturnItemTypes() <em>Child Return Item Types</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Child Return Item Types</em>' operation.
-	 * @see org.abchip.mimo.biz.order.return_.ReturnItemType#childReturnItemTypes()
-	 * @generated
-	 */
-	EOperation getReturnItemType__ChildReturnItemTypes();
-
-	/**
-	 * Returns the meta object for the '{@link org.abchip.mimo.biz.order.return_.ReturnItemType#returnItemTypeMaps() <em>Return Item Type Maps</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Return Item Type Maps</em>' operation.
-	 * @see org.abchip.mimo.biz.order.return_.ReturnItemType#returnItemTypeMaps()
-	 * @generated
-	 */
-	EOperation getReturnItemType__ReturnItemTypeMaps();
-
-	/**
-	 * Returns the meta object for the '{@link org.abchip.mimo.biz.order.return_.ReturnItemType#returnItems() <em>Return Items</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Return Items</em>' operation.
-	 * @see org.abchip.mimo.biz.order.return_.ReturnItemType#returnItems()
-	 * @generated
-	 */
-	EOperation getReturnItemType__ReturnItems();
-
-	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.biz.order.return_.ReturnItemTypeMap <em>Item Type Map</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -4290,16 +3204,6 @@ public interface ReturnPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getReturnReason_SequenceId();
-
-	/**
-	 * Returns the meta object for the '{@link org.abchip.mimo.biz.order.return_.ReturnReason#returnItems() <em>Return Items</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Return Items</em>' operation.
-	 * @see org.abchip.mimo.biz.order.return_.ReturnReason#returnItems()
-	 * @generated
-	 */
-	EOperation getReturnReason__ReturnItems();
 
 	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.biz.order.return_.ReturnStatus <em>Status</em>}'.
@@ -4419,26 +3323,6 @@ public interface ReturnPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getReturnType_SequenceId();
-
-	/**
-	 * Returns the meta object for the '{@link org.abchip.mimo.biz.order.return_.ReturnType#returnAdjustments() <em>Return Adjustments</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Return Adjustments</em>' operation.
-	 * @see org.abchip.mimo.biz.order.return_.ReturnType#returnAdjustments()
-	 * @generated
-	 */
-	EOperation getReturnType__ReturnAdjustments();
-
-	/**
-	 * Returns the meta object for the '{@link org.abchip.mimo.biz.order.return_.ReturnType#returnItems() <em>Return Items</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Return Items</em>' operation.
-	 * @see org.abchip.mimo.biz.order.return_.ReturnType#returnItems()
-	 * @generated
-	 */
-	EOperation getReturnType__ReturnItems();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -4789,30 +3673,6 @@ public interface ReturnPackage extends EPackage {
 		EReference RETURN_ADJUSTMENT_TYPE__PARENT_TYPE_ID = eINSTANCE.getReturnAdjustmentType_ParentTypeId();
 
 		/**
-		 * The meta object literal for the '<em><b>Child Return Adjustment Types</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation RETURN_ADJUSTMENT_TYPE___CHILD_RETURN_ADJUSTMENT_TYPES = eINSTANCE.getReturnAdjustmentType__ChildReturnAdjustmentTypes();
-
-		/**
-		 * The meta object literal for the '<em><b>Return Adjustments</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation RETURN_ADJUSTMENT_TYPE___RETURN_ADJUSTMENTS = eINSTANCE.getReturnAdjustmentType__ReturnAdjustments();
-
-		/**
-		 * The meta object literal for the '<em><b>Return Item Type Maps</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation RETURN_ADJUSTMENT_TYPE___RETURN_ITEM_TYPE_MAPS = eINSTANCE.getReturnAdjustmentType__ReturnItemTypeMaps();
-
-		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.biz.order.return_.impl.ReturnContactMechImpl <em>Contact Mech</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -4993,30 +3853,6 @@ public interface ReturnPackage extends EPackage {
 		EAttribute RETURN_HEADER__RETURN_ITEMS = eINSTANCE.getReturnHeader_ReturnItems();
 
 		/**
-		 * The meta object literal for the '<em><b>Primary Shipments</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation RETURN_HEADER___PRIMARY_SHIPMENTS = eINSTANCE.getReturnHeader__PrimaryShipments();
-
-		/**
-		 * The meta object literal for the '<em><b>Return Adjustments</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation RETURN_HEADER___RETURN_ADJUSTMENTS = eINSTANCE.getReturnHeader__ReturnAdjustments();
-
-		/**
-		 * The meta object literal for the '<em><b>Return Statuss</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation RETURN_HEADER___RETURN_STATUSS = eINSTANCE.getReturnHeader__ReturnStatuss();
-
-		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.biz.order.return_.impl.ReturnHeaderTypeImpl <em>Header Type</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -5049,30 +3885,6 @@ public interface ReturnPackage extends EPackage {
 		 * @generated
 		 */
 		EReference RETURN_HEADER_TYPE__PARENT_TYPE_ID = eINSTANCE.getReturnHeaderType_ParentTypeId();
-
-		/**
-		 * The meta object literal for the '<em><b>Child Return Header Types</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation RETURN_HEADER_TYPE___CHILD_RETURN_HEADER_TYPES = eINSTANCE.getReturnHeaderType__ChildReturnHeaderTypes();
-
-		/**
-		 * The meta object literal for the '<em><b>Return Headers</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation RETURN_HEADER_TYPE___RETURN_HEADERS = eINSTANCE.getReturnHeaderType__ReturnHeaders();
-
-		/**
-		 * The meta object literal for the '<em><b>Return Item Type Maps</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation RETURN_HEADER_TYPE___RETURN_ITEM_TYPE_MAPS = eINSTANCE.getReturnHeaderType__ReturnItemTypeMaps();
 
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.biz.order.return_.impl.ReturnItemImpl <em>Item</em>}' class.
@@ -5305,14 +4117,6 @@ public interface ReturnPackage extends EPackage {
 		EReference RETURN_ITEM_RESPONSE__FIN_ACCOUNT_TRANS_ID = eINSTANCE.getReturnItemResponse_FinAccountTransId();
 
 		/**
-		 * The meta object literal for the '<em><b>Return Items</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation RETURN_ITEM_RESPONSE___RETURN_ITEMS = eINSTANCE.getReturnItemResponse__ReturnItems();
-
-		/**
 		 * The meta object literal for the '<em><b>Order Payment Preference Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -5437,30 +4241,6 @@ public interface ReturnPackage extends EPackage {
 		EReference RETURN_ITEM_TYPE__PARENT_TYPE_ID = eINSTANCE.getReturnItemType_ParentTypeId();
 
 		/**
-		 * The meta object literal for the '<em><b>Child Return Item Types</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation RETURN_ITEM_TYPE___CHILD_RETURN_ITEM_TYPES = eINSTANCE.getReturnItemType__ChildReturnItemTypes();
-
-		/**
-		 * The meta object literal for the '<em><b>Return Item Type Maps</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation RETURN_ITEM_TYPE___RETURN_ITEM_TYPE_MAPS = eINSTANCE.getReturnItemType__ReturnItemTypeMaps();
-
-		/**
-		 * The meta object literal for the '<em><b>Return Items</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation RETURN_ITEM_TYPE___RETURN_ITEMS = eINSTANCE.getReturnItemType__ReturnItems();
-
-		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.biz.order.return_.impl.ReturnItemTypeMapImpl <em>Item Type Map</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -5527,14 +4307,6 @@ public interface ReturnPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute RETURN_REASON__SEQUENCE_ID = eINSTANCE.getReturnReason_SequenceId();
-
-		/**
-		 * The meta object literal for the '<em><b>Return Items</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation RETURN_REASON___RETURN_ITEMS = eINSTANCE.getReturnReason__ReturnItems();
 
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.biz.order.return_.impl.ReturnStatusImpl <em>Status</em>}' class.
@@ -5627,22 +4399,6 @@ public interface ReturnPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute RETURN_TYPE__SEQUENCE_ID = eINSTANCE.getReturnType_SequenceId();
-
-		/**
-		 * The meta object literal for the '<em><b>Return Adjustments</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation RETURN_TYPE___RETURN_ADJUSTMENTS = eINSTANCE.getReturnType__ReturnAdjustments();
-
-		/**
-		 * The meta object literal for the '<em><b>Return Items</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation RETURN_TYPE___RETURN_ITEMS = eINSTANCE.getReturnType__ReturnItems();
 
 	}
 

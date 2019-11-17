@@ -7,7 +7,6 @@
  */
 package org.abchip.mimo.biz.order.order.impl;
 
-import java.lang.reflect.InvocationTargetException;
 import java.math.BigDecimal;
 import java.util.Date;
 import java.util.List;
@@ -25,7 +24,6 @@ import org.abchip.mimo.biz.product.facility.Facility;
 import org.abchip.mimo.biz.product.store.ProductStore;
 import org.abchip.mimo.biz.security.login.UserLogin;
 import org.abchip.mimo.biz.webapp.website.WebSite;
-import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 
 /**
@@ -42,14 +40,14 @@ import org.eclipse.emf.ecore.EClass;
  *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderHeaderImpl#getFirstAttemptOrderId <em>First Attempt Order Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderHeaderImpl#getGrandTotal <em>Grand Total</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderHeaderImpl#getInternalCode <em>Internal Code</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderHeaderImpl#isInvoicePerShipment <em>Invoice Per Shipment</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderHeaderImpl#getInvoicePerShipment <em>Invoice Per Shipment</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderHeaderImpl#isIsRushOrder <em>Is Rush Order</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderHeaderImpl#isIsViewed <em>Is Viewed</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderHeaderImpl#isNeedsInventoryIssuance <em>Needs Inventory Issuance</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderHeaderImpl#getOrderDate <em>Order Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderHeaderImpl#getOrderName <em>Order Name</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderHeaderImpl#getPickSheetPrintedDate <em>Pick Sheet Printed Date</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderHeaderImpl#isPriority <em>Priority</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderHeaderImpl#getPriority <em>Priority</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderHeaderImpl#getRemainingSubTotal <em>Remaining Sub Total</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderHeaderImpl#getTerminalId <em>Terminal Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderHeaderImpl#getTransactionId <em>Transaction Id</em>}</li>
@@ -284,25 +282,28 @@ public class OrderHeaderImpl extends BizEntityTypedImpl<OrderType> implements Or
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public boolean isInvoicePerShipment() {
-		return (Boolean)eGet(OrderPackage.Literals.ORDER_HEADER__INVOICE_PER_SHIPMENT, true);
+	public char getInvoicePerShipment() {
+		return (Character)eGet(OrderPackage.Literals.ORDER_HEADER__INVOICE_PER_SHIPMENT, true);
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public void setInvoicePerShipment(boolean newInvoicePerShipment) {
+	public void setInvoicePerShipment(char newInvoicePerShipment) {
 		eSet(OrderPackage.Literals.ORDER_HEADER__INVOICE_PER_SHIPMENT, newInvoicePerShipment);
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -311,7 +312,8 @@ public class OrderHeaderImpl extends BizEntityTypedImpl<OrderType> implements Or
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -320,7 +322,8 @@ public class OrderHeaderImpl extends BizEntityTypedImpl<OrderType> implements Or
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -329,7 +332,8 @@ public class OrderHeaderImpl extends BizEntityTypedImpl<OrderType> implements Or
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -338,7 +342,8 @@ public class OrderHeaderImpl extends BizEntityTypedImpl<OrderType> implements Or
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -347,7 +352,8 @@ public class OrderHeaderImpl extends BizEntityTypedImpl<OrderType> implements Or
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -464,20 +470,22 @@ public class OrderHeaderImpl extends BizEntityTypedImpl<OrderType> implements Or
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public boolean isPriority() {
-		return (Boolean)eGet(OrderPackage.Literals.ORDER_HEADER__PRIORITY, true);
+	public char getPriority() {
+		return (Character)eGet(OrderPackage.Literals.ORDER_HEADER__PRIORITY, true);
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public void setPriority(boolean newPriority) {
+	public void setPriority(char newPriority) {
 		eSet(OrderPackage.Literals.ORDER_HEADER__PRIORITY, newPriority);
 	}
 
@@ -938,52 +946,6 @@ public class OrderHeaderImpl extends BizEntityTypedImpl<OrderType> implements Or
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
-		switch (operationID) {
-			case OrderPackage.ORDER_HEADER___ACQUIRE_FIXED_ASSETS:
-				return acquireFixedAssets();
-			case OrderPackage.ORDER_HEADER___GIFT_CARD_FULFILLMENTS:
-				return giftCardFulfillments();
-			case OrderPackage.ORDER_HEADER___ITEM_ISSUANCES:
-				return itemIssuances();
-			case OrderPackage.ORDER_HEADER___ORDER_ADJUSTMENTS:
-				return orderAdjustments();
-			case OrderPackage.ORDER_HEADER___ORDER_ITEM_CHANGES:
-				return orderItemChanges();
-			case OrderPackage.ORDER_HEADER___ORDER_ITEM_PRICE_INFOS:
-				return orderItemPriceInfos();
-			case OrderPackage.ORDER_HEADER___ORDER_NOTIFICATIONS:
-				return orderNotifications();
-			case OrderPackage.ORDER_HEADER___ORDER_PAYMENT_PREFERENCES:
-				return orderPaymentPreferences();
-			case OrderPackage.ORDER_HEADER___ORDER_STATUSS:
-				return orderStatuss();
-			case OrderPackage.ORDER_HEADER___PRIMARY_PICKLIST_BINS:
-				return primaryPicklistBins();
-			case OrderPackage.ORDER_HEADER___PRIMARY_SHIPMENTS:
-				return primaryShipments();
-			case OrderPackage.ORDER_HEADER___PURCHASE_FIXED_ASSET_MAINTS:
-				return purchaseFixedAssetMaints();
-			case OrderPackage.ORDER_HEADER___REPLACEMENT_RETURN_ITEM_RESPONSES:
-				return replacementReturnItemResponses();
-			case OrderPackage.ORDER_HEADER___RETURN_ITEMS:
-				return returnItems();
-			case OrderPackage.ORDER_HEADER___SHIPMENT_RECEIPTS:
-				return shipmentReceipts();
-			case OrderPackage.ORDER_HEADER___SUBSCRIPTIONS:
-				return subscriptions();
-			case OrderPackage.ORDER_HEADER___SURVEY_RESPONSES:
-				return surveyResponses();
-		}
-		return super.eInvoke(operationID, arguments);
 	}
 
 	/**

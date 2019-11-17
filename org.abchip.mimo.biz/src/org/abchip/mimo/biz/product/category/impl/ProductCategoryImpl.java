@@ -7,14 +7,12 @@
  */
 package org.abchip.mimo.biz.product.category.impl;
 
-import java.lang.reflect.InvocationTargetException;
 import java.util.List;
 
 import org.abchip.mimo.biz.impl.BizEntityTypedImpl;
 import org.abchip.mimo.biz.product.category.CategoryPackage;
 import org.abchip.mimo.biz.product.category.ProductCategory;
 import org.abchip.mimo.biz.product.category.ProductCategoryType;
-import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 
 /**
@@ -211,6 +209,26 @@ public class ProductCategoryImpl extends BizEntityTypedImpl<ProductCategoryType>
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
+	public boolean isShowInSelect() {
+		return (Boolean)eGet(CategoryPackage.Literals.PRODUCT_CATEGORY__SHOW_IN_SELECT, true);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setShowInSelect(boolean newShowInSelect) {
+		eSet(CategoryPackage.Literals.PRODUCT_CATEGORY__SHOW_IN_SELECT, newShowInSelect);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public List<String> getProductCategoryAttributes() {
@@ -295,30 +313,6 @@ public class ProductCategoryImpl extends BizEntityTypedImpl<ProductCategoryType>
 	 * @generated
 	 */
 	@Override
-	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
-		switch (operationID) {
-			case CategoryPackage.PRODUCT_CATEGORY___PRIMARY_CHILD_PRODUCT_CATEGORIES:
-				return primaryChildProductCategories();
-			case CategoryPackage.PRODUCT_CATEGORY___PRIMARY_PRODUCTS:
-				return primaryProducts();
-			case CategoryPackage.PRODUCT_CATEGORY___PRODUCT_STORE_SURVEY_APPLS:
-				return productStoreSurveyAppls();
-			case CategoryPackage.PRODUCT_CATEGORY___SALES_FORECAST_DETAILS:
-				return salesForecastDetails();
-			case CategoryPackage.PRODUCT_CATEGORY___SUBSCRIPTIONS:
-				return subscriptions();
-			case CategoryPackage.PRODUCT_CATEGORY___TAX_AUTHORITY_RATE_PRODUCTS:
-				return taxAuthorityRateProducts();
-		}
-		return super.eInvoke(operationID, arguments);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public ProductCategoryType getProductCategoryTypeId() {
 		return (ProductCategoryType)eGet(CategoryPackage.Literals.PRODUCT_CATEGORY__PRODUCT_CATEGORY_TYPE_ID, true);
 	}
@@ -331,26 +325,6 @@ public class ProductCategoryImpl extends BizEntityTypedImpl<ProductCategoryType>
 	@Override
 	public void setProductCategoryTypeId(ProductCategoryType newProductCategoryTypeId) {
 		eSet(CategoryPackage.Literals.PRODUCT_CATEGORY__PRODUCT_CATEGORY_TYPE_ID, newProductCategoryTypeId);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public boolean isShowInSelect() {
-		return (Boolean)eGet(CategoryPackage.Literals.PRODUCT_CATEGORY__SHOW_IN_SELECT, true);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void setShowInSelect(boolean newShowInSelect) {
-		eSet(CategoryPackage.Literals.PRODUCT_CATEGORY__SHOW_IN_SELECT, newShowInSelect);
 	}
 
 	/**

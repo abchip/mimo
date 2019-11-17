@@ -40,7 +40,7 @@ public interface ContactMechPurposeType extends BizEntity {
 	 * @return the value of the '<em>Description</em>' attribute.
 	 * @see #setDescription(String)
 	 * @see org.abchip.mimo.biz.party.contact.ContactPackage#getContactMechPurposeType_Description()
-	 * @model
+	 * @model annotation="mimo-ent-format type='description' length='255'"
 	 * @generated
 	 */
 	String getDescription();
@@ -58,7 +58,9 @@ public interface ContactMechPurposeType extends BizEntity {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ContactMechTypePurpose' route='contactMechPurposeTypeId'"
 	 * @generated
 	 */
@@ -76,6 +78,7 @@ public interface ContactMechPurposeType extends BizEntity {
 	 * @see #setContactMechPurposeTypeId(String)
 	 * @see org.abchip.mimo.biz.party.contact.ContactPackage#getContactMechPurposeType_ContactMechPurposeTypeId()
 	 * @model id="true" required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */

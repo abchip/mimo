@@ -81,7 +81,7 @@ public interface AcctgTrans extends BizEntityTyped<AcctgTransType> {
 	 * @return the value of the '<em>Created By User Login</em>' attribute.
 	 * @see #setCreatedByUserLogin(String)
 	 * @see org.abchip.mimo.biz.accounting.ledger.LedgerPackage#getAcctgTrans_CreatedByUserLogin()
-	 * @model
+	 * @model annotation="mimo-ent-format type='id-vlong' length='255'"
 	 * @generated
 	 */
 	String getCreatedByUserLogin();
@@ -107,7 +107,7 @@ public interface AcctgTrans extends BizEntityTyped<AcctgTransType> {
 	 * @return the value of the '<em>Created Date</em>' attribute.
 	 * @see #setCreatedDate(Date)
 	 * @see org.abchip.mimo.biz.accounting.ledger.LedgerPackage#getAcctgTrans_CreatedDate()
-	 * @model
+	 * @model annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getCreatedDate();
@@ -133,7 +133,7 @@ public interface AcctgTrans extends BizEntityTyped<AcctgTransType> {
 	 * @return the value of the '<em>Description</em>' attribute.
 	 * @see #setDescription(String)
 	 * @see org.abchip.mimo.biz.accounting.ledger.LedgerPackage#getAcctgTrans_Description()
-	 * @model
+	 * @model annotation="mimo-ent-format type='description' length='255'"
 	 * @generated
 	 */
 	String getDescription();
@@ -147,6 +147,32 @@ public interface AcctgTrans extends BizEntityTyped<AcctgTransType> {
 	 * @generated
 	 */
 	void setDescription(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Is Posted</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Is Posted</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Is Posted</em>' attribute.
+	 * @see #setIsPosted(boolean)
+	 * @see org.abchip.mimo.biz.accounting.ledger.LedgerPackage#getAcctgTrans_IsPosted()
+	 * @model annotation="mimo-ent-format type='indicator' length='1'"
+	 * @generated
+	 */
+	boolean isIsPosted();
+
+	/**
+	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.ledger.AcctgTrans#isIsPosted <em>Is Posted</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Is Posted</em>' attribute.
+	 * @see #isIsPosted()
+	 * @generated
+	 */
+	void setIsPosted(boolean value);
 
 	/**
 	 * Returns the value of the '<em><b>Group Status Id</b></em>' reference.
@@ -211,7 +237,7 @@ public interface AcctgTrans extends BizEntityTyped<AcctgTransType> {
 	 * @return the value of the '<em>Last Modified By User Login</em>' attribute.
 	 * @see #setLastModifiedByUserLogin(String)
 	 * @see org.abchip.mimo.biz.accounting.ledger.LedgerPackage#getAcctgTrans_LastModifiedByUserLogin()
-	 * @model
+	 * @model annotation="mimo-ent-format type='id-vlong' length='255'"
 	 * @generated
 	 */
 	String getLastModifiedByUserLogin();
@@ -237,7 +263,7 @@ public interface AcctgTrans extends BizEntityTyped<AcctgTransType> {
 	 * @return the value of the '<em>Last Modified Date</em>' attribute.
 	 * @see #setLastModifiedDate(Date)
 	 * @see org.abchip.mimo.biz.accounting.ledger.LedgerPackage#getAcctgTrans_LastModifiedDate()
-	 * @model
+	 * @model annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getLastModifiedDate();
@@ -341,7 +367,7 @@ public interface AcctgTrans extends BizEntityTyped<AcctgTransType> {
 	 * @return the value of the '<em>Posted Date</em>' attribute.
 	 * @see #setPostedDate(Date)
 	 * @see org.abchip.mimo.biz.accounting.ledger.LedgerPackage#getAcctgTrans_PostedDate()
-	 * @model
+	 * @model annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getPostedDate();
@@ -419,7 +445,7 @@ public interface AcctgTrans extends BizEntityTyped<AcctgTransType> {
 	 * @return the value of the '<em>Scheduled Posting Date</em>' attribute.
 	 * @see #setScheduledPostingDate(Date)
 	 * @see org.abchip.mimo.biz.accounting.ledger.LedgerPackage#getAcctgTrans_ScheduledPostingDate()
-	 * @model
+	 * @model annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getScheduledPostingDate();
@@ -471,7 +497,7 @@ public interface AcctgTrans extends BizEntityTyped<AcctgTransType> {
 	 * @return the value of the '<em>Their Acctg Trans Id</em>' attribute.
 	 * @see #setTheirAcctgTransId(String)
 	 * @see org.abchip.mimo.biz.accounting.ledger.LedgerPackage#getAcctgTrans_TheirAcctgTransId()
-	 * @model
+	 * @model annotation="mimo-ent-format type='id-long' length='60'"
 	 * @generated
 	 */
 	String getTheirAcctgTransId();
@@ -497,7 +523,7 @@ public interface AcctgTrans extends BizEntityTyped<AcctgTransType> {
 	 * @return the value of the '<em>Transaction Date</em>' attribute.
 	 * @see #setTransactionDate(Date)
 	 * @see org.abchip.mimo.biz.accounting.ledger.LedgerPackage#getAcctgTrans_TransactionDate()
-	 * @model
+	 * @model annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getTransactionDate();
@@ -523,7 +549,7 @@ public interface AcctgTrans extends BizEntityTyped<AcctgTransType> {
 	 * @return the value of the '<em>Voucher Date</em>' attribute.
 	 * @see #setVoucherDate(Date)
 	 * @see org.abchip.mimo.biz.accounting.ledger.LedgerPackage#getAcctgTrans_VoucherDate()
-	 * @model
+	 * @model annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getVoucherDate();
@@ -549,7 +575,7 @@ public interface AcctgTrans extends BizEntityTyped<AcctgTransType> {
 	 * @return the value of the '<em>Voucher Ref</em>' attribute.
 	 * @see #setVoucherRef(String)
 	 * @see org.abchip.mimo.biz.accounting.ledger.LedgerPackage#getAcctgTrans_VoucherRef()
-	 * @model
+	 * @model annotation="mimo-ent-format type='short-varchar' length='60'"
 	 * @generated
 	 */
 	String getVoucherRef();
@@ -601,7 +627,9 @@ public interface AcctgTrans extends BizEntityTyped<AcctgTransType> {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Acctg Trans Attributes</em>' attribute list.
 	 * @see org.abchip.mimo.biz.accounting.ledger.LedgerPackage#getAcctgTrans_AcctgTransAttributes()
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='AcctgTransAttribute'"
 	 * @generated
 	 */
@@ -618,7 +646,9 @@ public interface AcctgTrans extends BizEntityTyped<AcctgTransType> {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Acctg Trans Entries</em>' attribute list.
 	 * @see org.abchip.mimo.biz.accounting.ledger.LedgerPackage#getAcctgTrans_AcctgTransEntries()
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='AcctgTransEntry'"
 	 * @generated
 	 */
@@ -729,32 +759,6 @@ public interface AcctgTrans extends BizEntityTyped<AcctgTransType> {
 	void setInvoiceId(Invoice value);
 
 	/**
-	 * Returns the value of the '<em><b>Is Posted</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Is Posted</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Is Posted</em>' attribute.
-	 * @see #setIsPosted(boolean)
-	 * @see org.abchip.mimo.biz.accounting.ledger.LedgerPackage#getAcctgTrans_IsPosted()
-	 * @model
-	 * @generated
-	 */
-	boolean isIsPosted();
-
-	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.ledger.AcctgTrans#isIsPosted <em>Is Posted</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Is Posted</em>' attribute.
-	 * @see #isIsPosted()
-	 * @generated
-	 */
-	void setIsPosted(boolean value);
-
-	/**
 	 * Returns the value of the '<em><b>Fin Account Trans Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -818,6 +822,7 @@ public interface AcctgTrans extends BizEntityTyped<AcctgTransType> {
 	 * @see #setAcctgTransId(String)
 	 * @see org.abchip.mimo.biz.accounting.ledger.LedgerPackage#getAcctgTrans_AcctgTransId()
 	 * @model id="true" required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */

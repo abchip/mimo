@@ -42,7 +42,7 @@ public interface AgreementItem extends BizEntityTyped<AgreementItemType> {
 	 * @return the value of the '<em>Agreement Image</em>' attribute.
 	 * @see #setAgreementImage(Object)
 	 * @see org.abchip.mimo.biz.party.agreement.AgreementPackage#getAgreementItem_AgreementImage()
-	 * @model
+	 * @model annotation="mimo-ent-format type='object'"
 	 * @generated
 	 */
 	Object getAgreementImage();
@@ -69,6 +69,7 @@ public interface AgreementItem extends BizEntityTyped<AgreementItemType> {
 	 * @see #setAgreementItemSeqId(String)
 	 * @see org.abchip.mimo.biz.party.agreement.AgreementPackage#getAgreementItem_AgreementItemSeqId()
 	 * @model required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
@@ -95,7 +96,7 @@ public interface AgreementItem extends BizEntityTyped<AgreementItemType> {
 	 * @return the value of the '<em>Agreement Text</em>' attribute.
 	 * @see #setAgreementText(String)
 	 * @see org.abchip.mimo.biz.party.agreement.AgreementPackage#getAgreementItem_AgreementText()
-	 * @model
+	 * @model annotation="mimo-ent-format type='very-long'"
 	 * @generated
 	 */
 	String getAgreementText();
@@ -121,7 +122,7 @@ public interface AgreementItem extends BizEntityTyped<AgreementItemType> {
 	 * @return the value of the '<em>Currency Uom Id</em>' attribute.
 	 * @see #setCurrencyUomId(String)
 	 * @see org.abchip.mimo.biz.party.agreement.AgreementPackage#getAgreementItem_CurrencyUomId()
-	 * @model
+	 * @model annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	String getCurrencyUomId();

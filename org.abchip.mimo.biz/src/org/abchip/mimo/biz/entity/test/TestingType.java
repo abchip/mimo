@@ -40,7 +40,7 @@ public interface TestingType extends BizEntityType<Testing> {
 	 * @return the value of the '<em>Description</em>' attribute.
 	 * @see #setDescription(String)
 	 * @see org.abchip.mimo.biz.entity.test.TestPackage#getTestingType_Description()
-	 * @model
+	 * @model annotation="mimo-ent-format type='description' length='255'"
 	 * @generated
 	 */
 	String getDescription();
@@ -58,7 +58,8 @@ public interface TestingType extends BizEntityType<Testing> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='Testing' route='testingTypeId'"
 	 * @generated
 	 */
@@ -76,6 +77,7 @@ public interface TestingType extends BizEntityType<Testing> {
 	 * @see #setTestingTypeId(String)
 	 * @see org.abchip.mimo.biz.entity.test.TestPackage#getTestingType_TestingTypeId()
 	 * @model id="true" required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */

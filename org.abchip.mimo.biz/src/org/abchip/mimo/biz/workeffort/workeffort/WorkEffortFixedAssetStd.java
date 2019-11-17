@@ -44,7 +44,7 @@ public interface WorkEffortFixedAssetStd extends BizEntity {
 	 * @return the value of the '<em>Estimated Cost</em>' attribute.
 	 * @see #setEstimatedCost(BigDecimal)
 	 * @see org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage#getWorkEffortFixedAssetStd_EstimatedCost()
-	 * @model
+	 * @model annotation="mimo-ent-format type='currency-amount' precision='18' scale='2'"
 	 * @generated
 	 */
 	BigDecimal getEstimatedCost();
@@ -70,7 +70,7 @@ public interface WorkEffortFixedAssetStd extends BizEntity {
 	 * @return the value of the '<em>Estimated Duration</em>' attribute.
 	 * @see #setEstimatedDuration(double)
 	 * @see org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage#getWorkEffortFixedAssetStd_EstimatedDuration()
-	 * @model
+	 * @model annotation="mimo-ent-format type='floating-point'"
 	 * @generated
 	 */
 	double getEstimatedDuration();
@@ -96,7 +96,7 @@ public interface WorkEffortFixedAssetStd extends BizEntity {
 	 * @return the value of the '<em>Estimated Quantity</em>' attribute.
 	 * @see #setEstimatedQuantity(double)
 	 * @see org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage#getWorkEffortFixedAssetStd_EstimatedQuantity()
-	 * @model
+	 * @model annotation="mimo-ent-format type='floating-point'"
 	 * @generated
 	 */
 	double getEstimatedQuantity();

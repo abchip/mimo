@@ -44,7 +44,7 @@ public interface Addendum extends BizEntity {
 	 * @return the value of the '<em>Addendum Creation Date</em>' attribute.
 	 * @see #setAddendumCreationDate(Date)
 	 * @see org.abchip.mimo.biz.party.agreement.AgreementPackage#getAddendum_AddendumCreationDate()
-	 * @model
+	 * @model annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getAddendumCreationDate();
@@ -70,7 +70,7 @@ public interface Addendum extends BizEntity {
 	 * @return the value of the '<em>Addendum Effective Date</em>' attribute.
 	 * @see #setAddendumEffectiveDate(Date)
 	 * @see org.abchip.mimo.biz.party.agreement.AgreementPackage#getAddendum_AddendumEffectiveDate()
-	 * @model
+	 * @model annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getAddendumEffectiveDate();
@@ -97,6 +97,7 @@ public interface Addendum extends BizEntity {
 	 * @see #setAddendumId(String)
 	 * @see org.abchip.mimo.biz.party.agreement.AgreementPackage#getAddendum_AddendumId()
 	 * @model id="true" required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
@@ -123,7 +124,7 @@ public interface Addendum extends BizEntity {
 	 * @return the value of the '<em>Addendum Text</em>' attribute.
 	 * @see #setAddendumText(String)
 	 * @see org.abchip.mimo.biz.party.agreement.AgreementPackage#getAddendum_AddendumText()
-	 * @model
+	 * @model annotation="mimo-ent-format type='long-varchar' length='255'"
 	 * @generated
 	 */
 	String getAddendumText();
@@ -149,7 +150,7 @@ public interface Addendum extends BizEntity {
 	 * @return the value of the '<em>Agreement Item Seq Id</em>' attribute.
 	 * @see #setAgreementItemSeqId(String)
 	 * @see org.abchip.mimo.biz.party.agreement.AgreementPackage#getAddendum_AgreementItemSeqId()
-	 * @model
+	 * @model annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	String getAgreementItemSeqId();

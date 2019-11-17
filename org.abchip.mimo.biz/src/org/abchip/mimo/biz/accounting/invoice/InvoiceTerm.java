@@ -51,7 +51,7 @@ public interface InvoiceTerm extends BizEntity {
 	 * @return the value of the '<em>Description</em>' attribute.
 	 * @see #setDescription(String)
 	 * @see org.abchip.mimo.biz.accounting.invoice.InvoicePackage#getInvoiceTerm_Description()
-	 * @model
+	 * @model annotation="mimo-ent-format type='description' length='255'"
 	 * @generated
 	 */
 	String getDescription();
@@ -77,7 +77,7 @@ public interface InvoiceTerm extends BizEntity {
 	 * @return the value of the '<em>Invoice Item Seq Id</em>' attribute.
 	 * @see #setInvoiceItemSeqId(String)
 	 * @see org.abchip.mimo.biz.accounting.invoice.InvoicePackage#getInvoiceTerm_InvoiceItemSeqId()
-	 * @model
+	 * @model annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	String getInvoiceItemSeqId();
@@ -103,7 +103,7 @@ public interface InvoiceTerm extends BizEntity {
 	 * @return the value of the '<em>Term Days</em>' attribute.
 	 * @see #setTermDays(long)
 	 * @see org.abchip.mimo.biz.accounting.invoice.InvoicePackage#getInvoiceTerm_TermDays()
-	 * @model
+	 * @model annotation="mimo-ent-format type='numeric' precision='20' scale='0'"
 	 * @generated
 	 */
 	long getTermDays();
@@ -155,7 +155,7 @@ public interface InvoiceTerm extends BizEntity {
 	 * @return the value of the '<em>Term Value</em>' attribute.
 	 * @see #setTermValue(BigDecimal)
 	 * @see org.abchip.mimo.biz.accounting.invoice.InvoicePackage#getInvoiceTerm_TermValue()
-	 * @model
+	 * @model annotation="mimo-ent-format type='currency-amount' precision='18' scale='2'"
 	 * @generated
 	 */
 	BigDecimal getTermValue();
@@ -181,7 +181,7 @@ public interface InvoiceTerm extends BizEntity {
 	 * @return the value of the '<em>Text Value</em>' attribute.
 	 * @see #setTextValue(String)
 	 * @see org.abchip.mimo.biz.accounting.invoice.InvoicePackage#getInvoiceTerm_TextValue()
-	 * @model
+	 * @model annotation="mimo-ent-format type='description' length='255'"
 	 * @generated
 	 */
 	String getTextValue();
@@ -207,7 +207,7 @@ public interface InvoiceTerm extends BizEntity {
 	 * @return the value of the '<em>Uom Id</em>' attribute.
 	 * @see #setUomId(String)
 	 * @see org.abchip.mimo.biz.accounting.invoice.InvoicePackage#getInvoiceTerm_UomId()
-	 * @model
+	 * @model annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	String getUomId();
@@ -233,7 +233,9 @@ public interface InvoiceTerm extends BizEntity {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Invoice Term Attributes</em>' attribute list.
 	 * @see org.abchip.mimo.biz.accounting.invoice.InvoicePackage#getInvoiceTerm_InvoiceTermAttributes()
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='InvoiceTermAttribute'"
 	 * @generated
 	 */
@@ -277,6 +279,7 @@ public interface InvoiceTerm extends BizEntity {
 	 * @see #setInvoiceTermId(String)
 	 * @see org.abchip.mimo.biz.accounting.invoice.InvoicePackage#getInvoiceTerm_InvoiceTermId()
 	 * @model id="true" required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */

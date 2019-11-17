@@ -110,6 +110,7 @@ import org.abchip.mimo.biz.entity.crypto.CryptoPackage;
 import org.abchip.mimo.biz.entity.crypto.impl.CryptoPackageImpl;
 import org.abchip.mimo.biz.entity.group.GroupPackage;
 import org.abchip.mimo.biz.entity.group.impl.GroupPackageImpl;
+import org.abchip.mimo.biz.entity.impl.EntityPackageImpl;
 import org.abchip.mimo.biz.entity.sequence.SequencePackage;
 import org.abchip.mimo.biz.entity.sequence.impl.SequencePackageImpl;
 import org.abchip.mimo.biz.entity.synchronization.SynchronizationPackage;
@@ -227,7 +228,6 @@ import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EGenericType;
-import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 
 import org.eclipse.emf.ecore.EReference;
@@ -584,6 +584,8 @@ public class LedgerPackageImpl extends EPackageImpl implements LedgerPackage {
 		SurveyPackageImpl theSurveyPackage = (SurveyPackageImpl)(registeredPackage instanceof SurveyPackageImpl ? registeredPackage : SurveyPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(WebsitePackage.eNS_URI);
 		WebsitePackageImpl theWebsitePackage = (WebsitePackageImpl)(registeredPackage instanceof WebsitePackageImpl ? registeredPackage : WebsitePackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(org.abchip.mimo.biz.entity.EntityPackage.eNS_URI);
+		EntityPackageImpl theEntityPackage = (EntityPackageImpl)(registeredPackage instanceof EntityPackageImpl ? registeredPackage : org.abchip.mimo.biz.entity.EntityPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(AuditPackage.eNS_URI);
 		AuditPackageImpl theAuditPackage = (AuditPackageImpl)(registeredPackage instanceof AuditPackageImpl ? registeredPackage : AuditPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(CryptoPackage.eNS_URI);
@@ -738,6 +740,7 @@ public class LedgerPackageImpl extends EPackageImpl implements LedgerPackage {
 		thePreferencePackage.createPackageContents();
 		theSurveyPackage.createPackageContents();
 		theWebsitePackage.createPackageContents();
+		theEntityPackage.createPackageContents();
 		theAuditPackage.createPackageContents();
 		theCryptoPackage.createPackageContents();
 		theGroupPackage.createPackageContents();
@@ -832,6 +835,7 @@ public class LedgerPackageImpl extends EPackageImpl implements LedgerPackage {
 		thePreferencePackage.initializePackageContents();
 		theSurveyPackage.initializePackageContents();
 		theWebsitePackage.initializePackageContents();
+		theEntityPackage.initializePackageContents();
 		theAuditPackage.initializePackageContents();
 		theCryptoPackage.initializePackageContents();
 		theGroupPackage.initializePackageContents();
@@ -1577,26 +1581,6 @@ public class LedgerPackageImpl extends EPackageImpl implements LedgerPackage {
 	 * @generated
 	 */
 	@Override
-	public EOperation getAcctgTransEntryType__AcctgTransEntries() {
-		return acctgTransEntryTypeEClass.getEOperations().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EOperation getAcctgTransEntryType__ChildAcctgTransEntryTypes() {
-		return acctgTransEntryTypeEClass.getEOperations().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public EClass getAcctgTransType() {
 		return acctgTransTypeEClass;
 	}
@@ -1649,26 +1633,6 @@ public class LedgerPackageImpl extends EPackageImpl implements LedgerPackage {
 	@Override
 	public EAttribute getAcctgTransType_AcctgTransTypeAttrs() {
 		return (EAttribute)acctgTransTypeEClass.getEStructuralFeatures().get(4);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EOperation getAcctgTransType__AcctgTranss() {
-		return acctgTransTypeEClass.getEOperations().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EOperation getAcctgTransType__ChildAcctgTransTypes() {
-		return acctgTransTypeEClass.getEOperations().get(1);
 	}
 
 	/**
@@ -1857,196 +1821,6 @@ public class LedgerPackageImpl extends EPackageImpl implements LedgerPackage {
 	 * @generated
 	 */
 	@Override
-	public EOperation getGlAccount__AcctgTransEntries() {
-		return glAccountEClass.getEOperations().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EOperation getGlAccount__ChildGlAccounts() {
-		return glAccountEClass.getEOperations().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EOperation getGlAccount__DefaultInvoiceItemTypes() {
-		return glAccountEClass.getEOperations().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EOperation getGlAccount__DefaultPaymentMethodTypes() {
-		return glAccountEClass.getEOperations().get(3);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EOperation getGlAccount__FinAccountTypeGlAccounts() {
-		return glAccountEClass.getEOperations().get(4);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EOperation getGlAccount__GlAccountTypeDefaults() {
-		return glAccountEClass.getEOperations().get(5);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EOperation getGlAccount__GlReconciliations() {
-		return glAccountEClass.getEOperations().get(6);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EOperation getGlAccount__InvoiceItemTypeGlAccounts() {
-		return glAccountEClass.getEOperations().get(7);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EOperation getGlAccount__OverrideInvoiceItems() {
-		return glAccountEClass.getEOperations().get(8);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EOperation getGlAccount__OverrideOrderAdjustments() {
-		return glAccountEClass.getEOperations().get(9);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EOperation getGlAccount__OverrideOrderItems() {
-		return glAccountEClass.getEOperations().get(10);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EOperation getGlAccount__OverrideQuoteAdjustments() {
-		return glAccountEClass.getEOperations().get(11);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EOperation getGlAccount__OverrideReturnAdjustments() {
-		return glAccountEClass.getEOperations().get(12);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EOperation getGlAccount__PaymentApplications() {
-		return glAccountEClass.getEOperations().get(13);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EOperation getGlAccount__PaymentMethodTypeGlAccounts() {
-		return glAccountEClass.getEOperations().get(14);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EOperation getGlAccount__PaymentMethods() {
-		return glAccountEClass.getEOperations().get(15);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EOperation getGlAccount__Payments() {
-		return glAccountEClass.getEOperations().get(16);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EOperation getGlAccount__PostToFinAccounts() {
-		return glAccountEClass.getEOperations().get(17);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EOperation getGlAccount__VarianceReasonGlAccounts() {
-		return glAccountEClass.getEOperations().get(18);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public EClass getGlAccountCategory() {
 		return glAccountCategoryEClass;
 	}
@@ -2177,16 +1951,6 @@ public class LedgerPackageImpl extends EPackageImpl implements LedgerPackage {
 	 * @generated
 	 */
 	@Override
-	public EOperation getGlAccountCategoryType__GlAccountCategories() {
-		return glAccountCategoryTypeEClass.getEOperations().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public EClass getGlAccountClass() {
 		return glAccountClassEClass;
 	}
@@ -2237,26 +2001,6 @@ public class LedgerPackageImpl extends EPackageImpl implements LedgerPackage {
 	 * @generated
 	 */
 	@Override
-	public EOperation getGlAccountClass__ChildGlAccountClasses() {
-		return glAccountClassEClass.getEOperations().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EOperation getGlAccountClass__GlAccounts() {
-		return glAccountClassEClass.getEOperations().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public EAttribute getGlAccountClass_SequenceNum() {
 		return (EAttribute)glAccountClassEClass.getEStructuralFeatures().get(3);
 	}
@@ -2299,16 +2043,6 @@ public class LedgerPackageImpl extends EPackageImpl implements LedgerPackage {
 	@Override
 	public EReference getGlAccountGroup_GlAccountGroupTypeId() {
 		return (EReference)glAccountGroupEClass.getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EOperation getGlAccountGroup__GlAccountGroupMembers() {
-		return glAccountGroupEClass.getEOperations().get(0);
 	}
 
 	/**
@@ -2379,26 +2113,6 @@ public class LedgerPackageImpl extends EPackageImpl implements LedgerPackage {
 	@Override
 	public EAttribute getGlAccountGroupType_Description() {
 		return (EAttribute)glAccountGroupTypeEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EOperation getGlAccountGroupType__GlAccountGroupMembers() {
-		return glAccountGroupTypeEClass.getEOperations().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EOperation getGlAccountGroupType__GlAccountGroups() {
-		return glAccountGroupTypeEClass.getEOperations().get(1);
 	}
 
 	/**
@@ -2667,66 +2381,6 @@ public class LedgerPackageImpl extends EPackageImpl implements LedgerPackage {
 	 * @generated
 	 */
 	@Override
-	public EOperation getGlAccountType__AcctgTransEntries() {
-		return glAccountTypeEClass.getEOperations().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EOperation getGlAccountType__ChildGlAccountTypes() {
-		return glAccountTypeEClass.getEOperations().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EOperation getGlAccountType__CostCostComponentCalcs() {
-		return glAccountTypeEClass.getEOperations().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EOperation getGlAccountType__GlAccounts() {
-		return glAccountTypeEClass.getEOperations().get(3);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EOperation getGlAccountType__OffsettingCostComponentCalcs() {
-		return glAccountTypeEClass.getEOperations().get(4);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EOperation getGlAccountType__PaymentGlAccountTypeMaps() {
-		return glAccountTypeEClass.getEOperations().get(5);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public EClass getGlAccountTypeDefault() {
 		return glAccountTypeDefaultEClass;
 	}
@@ -2857,16 +2511,6 @@ public class LedgerPackageImpl extends EPackageImpl implements LedgerPackage {
 	 * @generated
 	 */
 	@Override
-	public EOperation getGlFiscalType__AcctgTranss() {
-		return glFiscalTypeEClass.getEOperations().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public EClass getGlJournal() {
 		return glJournalEClass;
 	}
@@ -2909,26 +2553,6 @@ public class LedgerPackageImpl extends EPackageImpl implements LedgerPackage {
 	@Override
 	public EReference getGlJournal_OrganizationPartyId() {
 		return (EReference)glJournalEClass.getEStructuralFeatures().get(4);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EOperation getGlJournal__AcctgTranss() {
-		return glJournalEClass.getEOperations().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EOperation getGlJournal__PartyAcctgPreferences() {
-		return glJournalEClass.getEOperations().get(1);
 	}
 
 	/**
@@ -3087,16 +2711,6 @@ public class LedgerPackageImpl extends EPackageImpl implements LedgerPackage {
 	 * @generated
 	 */
 	@Override
-	public EOperation getGlReconciliation__FinAccountTranss() {
-		return glReconciliationEClass.getEOperations().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public EClass getGlReconciliationEntry() {
 		return glReconciliationEntryEClass;
 	}
@@ -3177,16 +2791,6 @@ public class LedgerPackageImpl extends EPackageImpl implements LedgerPackage {
 	 * @generated
 	 */
 	@Override
-	public EOperation getGlResourceType__GlAccounts() {
-		return glResourceTypeEClass.getEOperations().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public EClass getGlXbrlClass() {
 		return glXbrlClassEClass;
 	}
@@ -3209,16 +2813,6 @@ public class LedgerPackageImpl extends EPackageImpl implements LedgerPackage {
 	@Override
 	public EAttribute getGlXbrlClass_Description() {
 		return (EAttribute)glXbrlClassEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EOperation getGlXbrlClass__GlAccounts() {
-		return glXbrlClassEClass.getEOperations().get(0);
 	}
 
 	/**
@@ -3379,16 +2973,6 @@ public class LedgerPackageImpl extends EPackageImpl implements LedgerPackage {
 	@Override
 	public EReference getPartyAcctgPreference_OldOrderSequenceEnumId() {
 		return (EReference)partyAcctgPreferenceEClass.getEStructuralFeatures().get(22);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EOperation getPartyAcctgPreference__PartyPrefDocTypeTpls() {
-		return partyAcctgPreferenceEClass.getEOperations().get(0);
 	}
 
 	/**
@@ -3757,16 +3341,6 @@ public class LedgerPackageImpl extends EPackageImpl implements LedgerPackage {
 	 * @generated
 	 */
 	@Override
-	public EOperation getProductAverageCostType__ChildProductAverageCostTypes() {
-		return productAverageCostTypeEClass.getEOperations().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public EClass getSettlementTerm() {
 		return settlementTermEClass;
 	}
@@ -3809,16 +3383,6 @@ public class LedgerPackageImpl extends EPackageImpl implements LedgerPackage {
 	@Override
 	public EAttribute getSettlementTerm_UomId() {
 		return (EAttribute)settlementTermEClass.getEStructuralFeatures().get(3);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EOperation getSettlementTerm__AcctgTransEntries() {
-		return settlementTermEClass.getEOperations().get(0);
 	}
 
 	/**
@@ -3960,8 +3524,6 @@ public class LedgerPackageImpl extends EPackageImpl implements LedgerPackage {
 		createEAttribute(acctgTransEntryTypeEClass, ACCTG_TRANS_ENTRY_TYPE__DESCRIPTION);
 		createEAttribute(acctgTransEntryTypeEClass, ACCTG_TRANS_ENTRY_TYPE__HAS_TABLE);
 		createEReference(acctgTransEntryTypeEClass, ACCTG_TRANS_ENTRY_TYPE__PARENT_TYPE_ID);
-		createEOperation(acctgTransEntryTypeEClass, ACCTG_TRANS_ENTRY_TYPE___ACCTG_TRANS_ENTRIES);
-		createEOperation(acctgTransEntryTypeEClass, ACCTG_TRANS_ENTRY_TYPE___CHILD_ACCTG_TRANS_ENTRY_TYPES);
 
 		acctgTransTypeEClass = createEClass(ACCTG_TRANS_TYPE);
 		createEAttribute(acctgTransTypeEClass, ACCTG_TRANS_TYPE__ACCTG_TRANS_TYPE_ID);
@@ -3969,8 +3531,6 @@ public class LedgerPackageImpl extends EPackageImpl implements LedgerPackage {
 		createEAttribute(acctgTransTypeEClass, ACCTG_TRANS_TYPE__HAS_TABLE);
 		createEReference(acctgTransTypeEClass, ACCTG_TRANS_TYPE__PARENT_TYPE_ID);
 		createEAttribute(acctgTransTypeEClass, ACCTG_TRANS_TYPE__ACCTG_TRANS_TYPE_ATTRS);
-		createEOperation(acctgTransTypeEClass, ACCTG_TRANS_TYPE___ACCTG_TRANSS);
-		createEOperation(acctgTransTypeEClass, ACCTG_TRANS_TYPE___CHILD_ACCTG_TRANS_TYPES);
 
 		acctgTransTypeAttrEClass = createEClass(ACCTG_TRANS_TYPE_ATTR);
 		createEAttribute(acctgTransTypeAttrEClass, ACCTG_TRANS_TYPE_ATTR__ATTR_NAME);
@@ -3991,25 +3551,6 @@ public class LedgerPackageImpl extends EPackageImpl implements LedgerPackage {
 		createEReference(glAccountEClass, GL_ACCOUNT__PARENT_GL_ACCOUNT_ID);
 		createEAttribute(glAccountEClass, GL_ACCOUNT__GL_ACCOUNT_GROUP_MEMBERS);
 		createEAttribute(glAccountEClass, GL_ACCOUNT__GL_ACCOUNT_ORGANIZATIONS);
-		createEOperation(glAccountEClass, GL_ACCOUNT___ACCTG_TRANS_ENTRIES);
-		createEOperation(glAccountEClass, GL_ACCOUNT___CHILD_GL_ACCOUNTS);
-		createEOperation(glAccountEClass, GL_ACCOUNT___DEFAULT_INVOICE_ITEM_TYPES);
-		createEOperation(glAccountEClass, GL_ACCOUNT___DEFAULT_PAYMENT_METHOD_TYPES);
-		createEOperation(glAccountEClass, GL_ACCOUNT___FIN_ACCOUNT_TYPE_GL_ACCOUNTS);
-		createEOperation(glAccountEClass, GL_ACCOUNT___GL_ACCOUNT_TYPE_DEFAULTS);
-		createEOperation(glAccountEClass, GL_ACCOUNT___GL_RECONCILIATIONS);
-		createEOperation(glAccountEClass, GL_ACCOUNT___INVOICE_ITEM_TYPE_GL_ACCOUNTS);
-		createEOperation(glAccountEClass, GL_ACCOUNT___OVERRIDE_INVOICE_ITEMS);
-		createEOperation(glAccountEClass, GL_ACCOUNT___OVERRIDE_ORDER_ADJUSTMENTS);
-		createEOperation(glAccountEClass, GL_ACCOUNT___OVERRIDE_ORDER_ITEMS);
-		createEOperation(glAccountEClass, GL_ACCOUNT___OVERRIDE_QUOTE_ADJUSTMENTS);
-		createEOperation(glAccountEClass, GL_ACCOUNT___OVERRIDE_RETURN_ADJUSTMENTS);
-		createEOperation(glAccountEClass, GL_ACCOUNT___PAYMENT_APPLICATIONS);
-		createEOperation(glAccountEClass, GL_ACCOUNT___PAYMENT_METHOD_TYPE_GL_ACCOUNTS);
-		createEOperation(glAccountEClass, GL_ACCOUNT___PAYMENT_METHODS);
-		createEOperation(glAccountEClass, GL_ACCOUNT___PAYMENTS);
-		createEOperation(glAccountEClass, GL_ACCOUNT___POST_TO_FIN_ACCOUNTS);
-		createEOperation(glAccountEClass, GL_ACCOUNT___VARIANCE_REASON_GL_ACCOUNTS);
 
 		glAccountCategoryEClass = createEClass(GL_ACCOUNT_CATEGORY);
 		createEAttribute(glAccountCategoryEClass, GL_ACCOUNT_CATEGORY__GL_ACCOUNT_CATEGORY_ID);
@@ -4026,7 +3567,6 @@ public class LedgerPackageImpl extends EPackageImpl implements LedgerPackage {
 		glAccountCategoryTypeEClass = createEClass(GL_ACCOUNT_CATEGORY_TYPE);
 		createEAttribute(glAccountCategoryTypeEClass, GL_ACCOUNT_CATEGORY_TYPE__GL_ACCOUNT_CATEGORY_TYPE_ID);
 		createEAttribute(glAccountCategoryTypeEClass, GL_ACCOUNT_CATEGORY_TYPE__DESCRIPTION);
-		createEOperation(glAccountCategoryTypeEClass, GL_ACCOUNT_CATEGORY_TYPE___GL_ACCOUNT_CATEGORIES);
 
 		glAccountClassEClass = createEClass(GL_ACCOUNT_CLASS);
 		createEAttribute(glAccountClassEClass, GL_ACCOUNT_CLASS__GL_ACCOUNT_CLASS_ID);
@@ -4034,14 +3574,11 @@ public class LedgerPackageImpl extends EPackageImpl implements LedgerPackage {
 		createEAttribute(glAccountClassEClass, GL_ACCOUNT_CLASS__IS_ASSET_CLASS);
 		createEAttribute(glAccountClassEClass, GL_ACCOUNT_CLASS__SEQUENCE_NUM);
 		createEReference(glAccountClassEClass, GL_ACCOUNT_CLASS__PARENT_CLASS_ID);
-		createEOperation(glAccountClassEClass, GL_ACCOUNT_CLASS___CHILD_GL_ACCOUNT_CLASSES);
-		createEOperation(glAccountClassEClass, GL_ACCOUNT_CLASS___GL_ACCOUNTS);
 
 		glAccountGroupEClass = createEClass(GL_ACCOUNT_GROUP);
 		createEAttribute(glAccountGroupEClass, GL_ACCOUNT_GROUP__GL_ACCOUNT_GROUP_ID);
 		createEAttribute(glAccountGroupEClass, GL_ACCOUNT_GROUP__DESCRIPTION);
 		createEReference(glAccountGroupEClass, GL_ACCOUNT_GROUP__GL_ACCOUNT_GROUP_TYPE_ID);
-		createEOperation(glAccountGroupEClass, GL_ACCOUNT_GROUP___GL_ACCOUNT_GROUP_MEMBERS);
 
 		glAccountGroupMemberEClass = createEClass(GL_ACCOUNT_GROUP_MEMBER);
 		createEReference(glAccountGroupMemberEClass, GL_ACCOUNT_GROUP_MEMBER__GL_ACCOUNT_ID);
@@ -4051,8 +3588,6 @@ public class LedgerPackageImpl extends EPackageImpl implements LedgerPackage {
 		glAccountGroupTypeEClass = createEClass(GL_ACCOUNT_GROUP_TYPE);
 		createEAttribute(glAccountGroupTypeEClass, GL_ACCOUNT_GROUP_TYPE__GL_ACCOUNT_GROUP_TYPE_ID);
 		createEAttribute(glAccountGroupTypeEClass, GL_ACCOUNT_GROUP_TYPE__DESCRIPTION);
-		createEOperation(glAccountGroupTypeEClass, GL_ACCOUNT_GROUP_TYPE___GL_ACCOUNT_GROUP_MEMBERS);
-		createEOperation(glAccountGroupTypeEClass, GL_ACCOUNT_GROUP_TYPE___GL_ACCOUNT_GROUPS);
 
 		glAccountHistoryEClass = createEClass(GL_ACCOUNT_HISTORY);
 		createEAttribute(glAccountHistoryEClass, GL_ACCOUNT_HISTORY__ENDING_BALANCE);
@@ -4083,12 +3618,6 @@ public class LedgerPackageImpl extends EPackageImpl implements LedgerPackage {
 		createEAttribute(glAccountTypeEClass, GL_ACCOUNT_TYPE__HAS_TABLE);
 		createEReference(glAccountTypeEClass, GL_ACCOUNT_TYPE__PARENT_TYPE_ID);
 		createEAttribute(glAccountTypeEClass, GL_ACCOUNT_TYPE__GL_ACCOUNT_TYPE_DEFAULTS);
-		createEOperation(glAccountTypeEClass, GL_ACCOUNT_TYPE___ACCTG_TRANS_ENTRIES);
-		createEOperation(glAccountTypeEClass, GL_ACCOUNT_TYPE___CHILD_GL_ACCOUNT_TYPES);
-		createEOperation(glAccountTypeEClass, GL_ACCOUNT_TYPE___COST_COST_COMPONENT_CALCS);
-		createEOperation(glAccountTypeEClass, GL_ACCOUNT_TYPE___GL_ACCOUNTS);
-		createEOperation(glAccountTypeEClass, GL_ACCOUNT_TYPE___OFFSETTING_COST_COMPONENT_CALCS);
-		createEOperation(glAccountTypeEClass, GL_ACCOUNT_TYPE___PAYMENT_GL_ACCOUNT_TYPE_MAPS);
 
 		glAccountTypeDefaultEClass = createEClass(GL_ACCOUNT_TYPE_DEFAULT);
 		createEReference(glAccountTypeDefaultEClass, GL_ACCOUNT_TYPE_DEFAULT__GL_ACCOUNT_TYPE_ID);
@@ -4105,7 +3634,6 @@ public class LedgerPackageImpl extends EPackageImpl implements LedgerPackage {
 		glFiscalTypeEClass = createEClass(GL_FISCAL_TYPE);
 		createEAttribute(glFiscalTypeEClass, GL_FISCAL_TYPE__GL_FISCAL_TYPE_ID);
 		createEAttribute(glFiscalTypeEClass, GL_FISCAL_TYPE__DESCRIPTION);
-		createEOperation(glFiscalTypeEClass, GL_FISCAL_TYPE___ACCTG_TRANSS);
 
 		glJournalEClass = createEClass(GL_JOURNAL);
 		createEAttribute(glJournalEClass, GL_JOURNAL__GL_JOURNAL_ID);
@@ -4113,8 +3641,6 @@ public class LedgerPackageImpl extends EPackageImpl implements LedgerPackage {
 		createEAttribute(glJournalEClass, GL_JOURNAL__IS_POSTED);
 		createEAttribute(glJournalEClass, GL_JOURNAL__POSTED_DATE);
 		createEReference(glJournalEClass, GL_JOURNAL__ORGANIZATION_PARTY_ID);
-		createEOperation(glJournalEClass, GL_JOURNAL___ACCTG_TRANSS);
-		createEOperation(glJournalEClass, GL_JOURNAL___PARTY_ACCTG_PREFERENCES);
 
 		glReconciliationEClass = createEClass(GL_RECONCILIATION);
 		createEAttribute(glReconciliationEClass, GL_RECONCILIATION__GL_RECONCILIATION_ID);
@@ -4130,7 +3656,6 @@ public class LedgerPackageImpl extends EPackageImpl implements LedgerPackage {
 		createEReference(glReconciliationEClass, GL_RECONCILIATION__GL_ACCOUNT_ID);
 		createEReference(glReconciliationEClass, GL_RECONCILIATION__ORGANIZATION_PARTY_ID);
 		createEReference(glReconciliationEClass, GL_RECONCILIATION__STATUS_ID);
-		createEOperation(glReconciliationEClass, GL_RECONCILIATION___FIN_ACCOUNT_TRANSS);
 
 		glReconciliationEntryEClass = createEClass(GL_RECONCILIATION_ENTRY);
 		createEAttribute(glReconciliationEntryEClass, GL_RECONCILIATION_ENTRY__ACCTG_TRANS_ENTRY_SEQ_ID);
@@ -4141,12 +3666,10 @@ public class LedgerPackageImpl extends EPackageImpl implements LedgerPackage {
 		glResourceTypeEClass = createEClass(GL_RESOURCE_TYPE);
 		createEAttribute(glResourceTypeEClass, GL_RESOURCE_TYPE__GL_RESOURCE_TYPE_ID);
 		createEAttribute(glResourceTypeEClass, GL_RESOURCE_TYPE__DESCRIPTION);
-		createEOperation(glResourceTypeEClass, GL_RESOURCE_TYPE___GL_ACCOUNTS);
 
 		glXbrlClassEClass = createEClass(GL_XBRL_CLASS);
 		createEAttribute(glXbrlClassEClass, GL_XBRL_CLASS__GL_XBRL_CLASS_ID);
 		createEAttribute(glXbrlClassEClass, GL_XBRL_CLASS__DESCRIPTION);
-		createEOperation(glXbrlClassEClass, GL_XBRL_CLASS___GL_ACCOUNTS);
 
 		partyAcctgPreferenceEClass = createEClass(PARTY_ACCTG_PREFERENCE);
 		createEAttribute(partyAcctgPreferenceEClass, PARTY_ACCTG_PREFERENCE__ENABLE_ACCOUNTING);
@@ -4172,7 +3695,6 @@ public class LedgerPackageImpl extends EPackageImpl implements LedgerPackage {
 		createEReference(partyAcctgPreferenceEClass, PARTY_ACCTG_PREFERENCE__OLD_INVOICE_SEQUENCE_ENUM_ID);
 		createEReference(partyAcctgPreferenceEClass, PARTY_ACCTG_PREFERENCE__OLD_QUOTE_SEQUENCE_ENUM_ID);
 		createEReference(partyAcctgPreferenceEClass, PARTY_ACCTG_PREFERENCE__OLD_ORDER_SEQUENCE_ENUM_ID);
-		createEOperation(partyAcctgPreferenceEClass, PARTY_ACCTG_PREFERENCE___PARTY_PREF_DOC_TYPE_TPLS);
 
 		partyGlAccountEClass = createEClass(PARTY_GL_ACCOUNT);
 		createEReference(partyGlAccountEClass, PARTY_GL_ACCOUNT__ORGANIZATION_PARTY_ID);
@@ -4205,14 +3727,12 @@ public class LedgerPackageImpl extends EPackageImpl implements LedgerPackage {
 		createEAttribute(productAverageCostTypeEClass, PRODUCT_AVERAGE_COST_TYPE__DESCRIPTION);
 		createEAttribute(productAverageCostTypeEClass, PRODUCT_AVERAGE_COST_TYPE__HAS_TABLE);
 		createEReference(productAverageCostTypeEClass, PRODUCT_AVERAGE_COST_TYPE__PARENT_TYPE_ID);
-		createEOperation(productAverageCostTypeEClass, PRODUCT_AVERAGE_COST_TYPE___CHILD_PRODUCT_AVERAGE_COST_TYPES);
 
 		settlementTermEClass = createEClass(SETTLEMENT_TERM);
 		createEAttribute(settlementTermEClass, SETTLEMENT_TERM__SETTLEMENT_TERM_ID);
 		createEAttribute(settlementTermEClass, SETTLEMENT_TERM__TERM_NAME);
 		createEAttribute(settlementTermEClass, SETTLEMENT_TERM__TERM_VALUE);
 		createEAttribute(settlementTermEClass, SETTLEMENT_TERM__UOM_ID);
-		createEOperation(settlementTermEClass, SETTLEMENT_TERM___ACCTG_TRANS_ENTRIES);
 
 		varianceReasonGlAccountEClass = createEClass(VARIANCE_REASON_GL_ACCOUNT);
 		createEReference(varianceReasonGlAccountEClass, VARIANCE_REASON_GL_ACCOUNT__VARIANCE_REASON_ID);
@@ -4340,7 +3860,7 @@ public class LedgerPackageImpl extends EPackageImpl implements LedgerPackage {
 		settlementTermEClass.getESuperTypes().add(theBizPackage.getBizEntity());
 		varianceReasonGlAccountEClass.getESuperTypes().add(theBizPackage.getBizEntity());
 
-		// Initialize classes, features, and operations; add parameters
+		// Initialize classes and features; add operations and parameters
 		initEClass(acctgTransEClass, AcctgTrans.class, "AcctgTrans", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getAcctgTrans_AcctgTransId(), ecorePackage.getEString(), "acctgTransId", null, 1, 1, AcctgTrans.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getAcctgTrans_CreatedByUserLogin(), ecorePackage.getEString(), "createdByUserLogin", null, 0, 1, AcctgTrans.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -4385,8 +3905,8 @@ public class LedgerPackageImpl extends EPackageImpl implements LedgerPackage {
 		getAcctgTrans_ReceiptId().getEKeys().add(theReceiptPackage.getShipmentReceipt_ReceiptId());
 		initEReference(getAcctgTrans_WorkEffortId(), theWorkeffortPackage.getWorkEffort(), null, "workEffortId", null, 0, 1, AcctgTrans.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getAcctgTrans_WorkEffortId().getEKeys().add(theWorkeffortPackage.getWorkEffort_WorkEffortId());
-		initEAttribute(getAcctgTrans_AcctgTransAttributes(), ecorePackage.getEString(), "acctgTransAttributes", null, 0, -1, AcctgTrans.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getAcctgTrans_AcctgTransEntries(), ecorePackage.getEString(), "acctgTransEntries", null, 0, -1, AcctgTrans.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getAcctgTrans_AcctgTransAttributes(), ecorePackage.getEString(), "acctgTransAttributes", null, 1, -1, AcctgTrans.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getAcctgTrans_AcctgTransEntries(), ecorePackage.getEString(), "acctgTransEntries", null, 1, -1, AcctgTrans.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(acctgTransAttributeEClass, AcctgTransAttribute.class, "AcctgTransAttribute", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getAcctgTransAttribute_AttrName(), ecorePackage.getEString(), "attrName", null, 1, 1, AcctgTransAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -4398,7 +3918,7 @@ public class LedgerPackageImpl extends EPackageImpl implements LedgerPackage {
 		initEClass(acctgTransEntryEClass, AcctgTransEntry.class, "AcctgTransEntry", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getAcctgTransEntry_AcctgTransEntrySeqId(), ecorePackage.getEString(), "acctgTransEntrySeqId", null, 1, 1, AcctgTransEntry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getAcctgTransEntry_Amount(), ecorePackage.getEBigDecimal(), "amount", null, 0, 1, AcctgTransEntry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getAcctgTransEntry_DebitCreditFlag(), ecorePackage.getEBoolean(), "debitCreditFlag", null, 0, 1, AcctgTransEntry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getAcctgTransEntry_DebitCreditFlag(), ecorePackage.getEChar(), "debitCreditFlag", null, 0, 1, AcctgTransEntry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getAcctgTransEntry_Description(), ecorePackage.getEString(), "description", null, 0, 1, AcctgTransEntry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getAcctgTransEntry_DueDate(), ecorePackage.getEDate(), "dueDate", null, 0, 1, AcctgTransEntry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getAcctgTransEntry_GroupId(), ecorePackage.getEString(), "groupId", null, 0, 1, AcctgTransEntry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -4440,9 +3960,9 @@ public class LedgerPackageImpl extends EPackageImpl implements LedgerPackage {
 		initEReference(getAcctgTransEntryType_ParentTypeId(), this.getAcctgTransEntryType(), null, "parentTypeId", null, 0, 1, AcctgTransEntryType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getAcctgTransEntryType_ParentTypeId().getEKeys().add(this.getAcctgTransEntryType_AcctgTransEntryTypeId());
 
-		initEOperation(getAcctgTransEntryType__AcctgTransEntries(), ecorePackage.getEString(), "acctgTransEntries", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(acctgTransEntryTypeEClass, ecorePackage.getEString(), "acctgTransEntries", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		initEOperation(getAcctgTransEntryType__ChildAcctgTransEntryTypes(), ecorePackage.getEString(), "childAcctgTransEntryTypes", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(acctgTransEntryTypeEClass, ecorePackage.getEString(), "childAcctgTransEntryTypes", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(acctgTransTypeEClass, AcctgTransType.class, "AcctgTransType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getAcctgTransType_AcctgTransTypeId(), ecorePackage.getEString(), "acctgTransTypeId", null, 1, 1, AcctgTransType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -4450,11 +3970,11 @@ public class LedgerPackageImpl extends EPackageImpl implements LedgerPackage {
 		initEAttribute(getAcctgTransType_HasTable(), ecorePackage.getEBoolean(), "hasTable", null, 0, 1, AcctgTransType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getAcctgTransType_ParentTypeId(), this.getAcctgTransType(), null, "parentTypeId", null, 0, 1, AcctgTransType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getAcctgTransType_ParentTypeId().getEKeys().add(this.getAcctgTransType_AcctgTransTypeId());
-		initEAttribute(getAcctgTransType_AcctgTransTypeAttrs(), ecorePackage.getEString(), "acctgTransTypeAttrs", null, 0, -1, AcctgTransType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getAcctgTransType_AcctgTransTypeAttrs(), ecorePackage.getEString(), "acctgTransTypeAttrs", null, 1, -1, AcctgTransType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEOperation(getAcctgTransType__AcctgTranss(), ecorePackage.getEString(), "acctgTranss", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(acctgTransTypeEClass, ecorePackage.getEString(), "acctgTranss", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		initEOperation(getAcctgTransType__ChildAcctgTransTypes(), ecorePackage.getEString(), "childAcctgTransTypes", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(acctgTransTypeEClass, ecorePackage.getEString(), "childAcctgTransTypes", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(acctgTransTypeAttrEClass, AcctgTransTypeAttr.class, "AcctgTransTypeAttr", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getAcctgTransTypeAttr_AttrName(), ecorePackage.getEString(), "attrName", null, 1, 1, AcctgTransTypeAttr.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -4479,46 +3999,46 @@ public class LedgerPackageImpl extends EPackageImpl implements LedgerPackage {
 		getGlAccount_GlXbrlClassId().getEKeys().add(this.getGlXbrlClass_GlXbrlClassId());
 		initEReference(getGlAccount_ParentGlAccountId(), this.getGlAccount(), null, "parentGlAccountId", null, 0, 1, GlAccount.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getGlAccount_ParentGlAccountId().getEKeys().add(this.getGlAccount_GlAccountId());
-		initEAttribute(getGlAccount_GlAccountGroupMembers(), ecorePackage.getEString(), "glAccountGroupMembers", null, 0, -1, GlAccount.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getGlAccount_GlAccountOrganizations(), ecorePackage.getEString(), "glAccountOrganizations", null, 0, -1, GlAccount.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getGlAccount_GlAccountGroupMembers(), ecorePackage.getEString(), "glAccountGroupMembers", null, 1, -1, GlAccount.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getGlAccount_GlAccountOrganizations(), ecorePackage.getEString(), "glAccountOrganizations", null, 1, -1, GlAccount.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEOperation(getGlAccount__AcctgTransEntries(), ecorePackage.getEString(), "acctgTransEntries", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(glAccountEClass, ecorePackage.getEString(), "acctgTransEntries", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		initEOperation(getGlAccount__ChildGlAccounts(), ecorePackage.getEString(), "childGlAccounts", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(glAccountEClass, ecorePackage.getEString(), "childGlAccounts", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		initEOperation(getGlAccount__DefaultInvoiceItemTypes(), ecorePackage.getEString(), "defaultInvoiceItemTypes", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(glAccountEClass, ecorePackage.getEString(), "defaultInvoiceItemTypes", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		initEOperation(getGlAccount__DefaultPaymentMethodTypes(), ecorePackage.getEString(), "defaultPaymentMethodTypes", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(glAccountEClass, ecorePackage.getEString(), "defaultPaymentMethodTypes", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		initEOperation(getGlAccount__FinAccountTypeGlAccounts(), ecorePackage.getEString(), "finAccountTypeGlAccounts", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(glAccountEClass, ecorePackage.getEString(), "finAccountTypeGlAccounts", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		initEOperation(getGlAccount__GlAccountTypeDefaults(), ecorePackage.getEString(), "glAccountTypeDefaults", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(glAccountEClass, ecorePackage.getEString(), "glAccountTypeDefaults", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		initEOperation(getGlAccount__GlReconciliations(), ecorePackage.getEString(), "glReconciliations", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(glAccountEClass, ecorePackage.getEString(), "glReconciliations", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		initEOperation(getGlAccount__InvoiceItemTypeGlAccounts(), ecorePackage.getEString(), "invoiceItemTypeGlAccounts", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(glAccountEClass, ecorePackage.getEString(), "invoiceItemTypeGlAccounts", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		initEOperation(getGlAccount__OverrideInvoiceItems(), ecorePackage.getEString(), "overrideInvoiceItems", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(glAccountEClass, ecorePackage.getEString(), "overrideInvoiceItems", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		initEOperation(getGlAccount__OverrideOrderAdjustments(), ecorePackage.getEString(), "overrideOrderAdjustments", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(glAccountEClass, ecorePackage.getEString(), "overrideOrderAdjustments", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		initEOperation(getGlAccount__OverrideOrderItems(), ecorePackage.getEString(), "overrideOrderItems", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(glAccountEClass, ecorePackage.getEString(), "overrideOrderItems", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		initEOperation(getGlAccount__OverrideQuoteAdjustments(), ecorePackage.getEString(), "overrideQuoteAdjustments", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(glAccountEClass, ecorePackage.getEString(), "overrideQuoteAdjustments", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		initEOperation(getGlAccount__OverrideReturnAdjustments(), ecorePackage.getEString(), "overrideReturnAdjustments", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(glAccountEClass, ecorePackage.getEString(), "overrideReturnAdjustments", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		initEOperation(getGlAccount__PaymentApplications(), ecorePackage.getEString(), "paymentApplications", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(glAccountEClass, ecorePackage.getEString(), "paymentApplications", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		initEOperation(getGlAccount__PaymentMethodTypeGlAccounts(), ecorePackage.getEString(), "paymentMethodTypeGlAccounts", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(glAccountEClass, ecorePackage.getEString(), "paymentMethodTypeGlAccounts", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		initEOperation(getGlAccount__PaymentMethods(), ecorePackage.getEString(), "paymentMethods", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(glAccountEClass, ecorePackage.getEString(), "paymentMethods", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		initEOperation(getGlAccount__Payments(), ecorePackage.getEString(), "payments", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(glAccountEClass, ecorePackage.getEString(), "payments", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		initEOperation(getGlAccount__PostToFinAccounts(), ecorePackage.getEString(), "postToFinAccounts", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(glAccountEClass, ecorePackage.getEString(), "postToFinAccounts", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		initEOperation(getGlAccount__VarianceReasonGlAccounts(), ecorePackage.getEString(), "varianceReasonGlAccounts", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(glAccountEClass, ecorePackage.getEString(), "varianceReasonGlAccounts", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(glAccountCategoryEClass, GlAccountCategory.class, "GlAccountCategory", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getGlAccountCategory_GlAccountCategoryId(), ecorePackage.getEString(), "glAccountCategoryId", null, 1, 1, GlAccountCategory.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -4539,7 +4059,7 @@ public class LedgerPackageImpl extends EPackageImpl implements LedgerPackage {
 		initEAttribute(getGlAccountCategoryType_GlAccountCategoryTypeId(), ecorePackage.getEString(), "glAccountCategoryTypeId", null, 1, 1, GlAccountCategoryType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getGlAccountCategoryType_Description(), ecorePackage.getEString(), "description", null, 0, 1, GlAccountCategoryType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEOperation(getGlAccountCategoryType__GlAccountCategories(), ecorePackage.getEString(), "glAccountCategories", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(glAccountCategoryTypeEClass, ecorePackage.getEString(), "glAccountCategories", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(glAccountClassEClass, GlAccountClass.class, "GlAccountClass", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getGlAccountClass_GlAccountClassId(), ecorePackage.getEString(), "glAccountClassId", null, 1, 1, GlAccountClass.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -4549,9 +4069,9 @@ public class LedgerPackageImpl extends EPackageImpl implements LedgerPackage {
 		initEReference(getGlAccountClass_ParentClassId(), this.getGlAccountClass(), null, "parentClassId", null, 0, 1, GlAccountClass.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getGlAccountClass_ParentClassId().getEKeys().add(this.getGlAccountClass_GlAccountClassId());
 
-		initEOperation(getGlAccountClass__ChildGlAccountClasses(), ecorePackage.getEString(), "childGlAccountClasses", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(glAccountClassEClass, ecorePackage.getEString(), "childGlAccountClasses", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		initEOperation(getGlAccountClass__GlAccounts(), ecorePackage.getEString(), "glAccounts", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(glAccountClassEClass, ecorePackage.getEString(), "glAccounts", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(glAccountGroupEClass, GlAccountGroup.class, "GlAccountGroup", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getGlAccountGroup_GlAccountGroupId(), ecorePackage.getEString(), "glAccountGroupId", null, 1, 1, GlAccountGroup.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -4559,7 +4079,7 @@ public class LedgerPackageImpl extends EPackageImpl implements LedgerPackage {
 		initEReference(getGlAccountGroup_GlAccountGroupTypeId(), this.getGlAccountGroupType(), null, "glAccountGroupTypeId", null, 0, 1, GlAccountGroup.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getGlAccountGroup_GlAccountGroupTypeId().getEKeys().add(this.getGlAccountGroupType_GlAccountGroupTypeId());
 
-		initEOperation(getGlAccountGroup__GlAccountGroupMembers(), ecorePackage.getEString(), "glAccountGroupMembers", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(glAccountGroupEClass, ecorePackage.getEString(), "glAccountGroupMembers", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(glAccountGroupMemberEClass, GlAccountGroupMember.class, "GlAccountGroupMember", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getGlAccountGroupMember_GlAccountId(), this.getGlAccount(), null, "glAccountId", null, 0, 1, GlAccountGroupMember.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -4573,9 +4093,9 @@ public class LedgerPackageImpl extends EPackageImpl implements LedgerPackage {
 		initEAttribute(getGlAccountGroupType_GlAccountGroupTypeId(), ecorePackage.getEString(), "glAccountGroupTypeId", null, 1, 1, GlAccountGroupType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getGlAccountGroupType_Description(), ecorePackage.getEString(), "description", null, 0, 1, GlAccountGroupType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEOperation(getGlAccountGroupType__GlAccountGroupMembers(), ecorePackage.getEString(), "glAccountGroupMembers", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(glAccountGroupTypeEClass, ecorePackage.getEString(), "glAccountGroupMembers", 1, -1, IS_UNIQUE, IS_ORDERED);
 
-		initEOperation(getGlAccountGroupType__GlAccountGroups(), ecorePackage.getEString(), "glAccountGroups", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(glAccountGroupTypeEClass, ecorePackage.getEString(), "glAccountGroups", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(glAccountHistoryEClass, GlAccountHistory.class, "GlAccountHistory", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getGlAccountHistory_EndingBalance(), ecorePackage.getEBigDecimal(), "endingBalance", null, 0, 1, GlAccountHistory.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -4615,19 +4135,19 @@ public class LedgerPackageImpl extends EPackageImpl implements LedgerPackage {
 		initEAttribute(getGlAccountType_HasTable(), ecorePackage.getEBoolean(), "hasTable", null, 0, 1, GlAccountType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getGlAccountType_ParentTypeId(), this.getGlAccountType(), null, "parentTypeId", null, 0, 1, GlAccountType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getGlAccountType_ParentTypeId().getEKeys().add(this.getGlAccountType_GlAccountTypeId());
-		initEAttribute(getGlAccountType_GlAccountTypeDefaults(), ecorePackage.getEString(), "glAccountTypeDefaults", null, 0, -1, GlAccountType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getGlAccountType_GlAccountTypeDefaults(), ecorePackage.getEString(), "glAccountTypeDefaults", null, 1, -1, GlAccountType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEOperation(getGlAccountType__AcctgTransEntries(), ecorePackage.getEString(), "acctgTransEntries", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(glAccountTypeEClass, ecorePackage.getEString(), "acctgTransEntries", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		initEOperation(getGlAccountType__ChildGlAccountTypes(), ecorePackage.getEString(), "childGlAccountTypes", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(glAccountTypeEClass, ecorePackage.getEString(), "childGlAccountTypes", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		initEOperation(getGlAccountType__CostCostComponentCalcs(), ecorePackage.getEString(), "costCostComponentCalcs", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(glAccountTypeEClass, ecorePackage.getEString(), "costCostComponentCalcs", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		initEOperation(getGlAccountType__GlAccounts(), ecorePackage.getEString(), "glAccounts", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(glAccountTypeEClass, ecorePackage.getEString(), "glAccounts", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		initEOperation(getGlAccountType__OffsettingCostComponentCalcs(), ecorePackage.getEString(), "offsettingCostComponentCalcs", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(glAccountTypeEClass, ecorePackage.getEString(), "offsettingCostComponentCalcs", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		initEOperation(getGlAccountType__PaymentGlAccountTypeMaps(), ecorePackage.getEString(), "paymentGlAccountTypeMaps", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(glAccountTypeEClass, ecorePackage.getEString(), "paymentGlAccountTypeMaps", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(glAccountTypeDefaultEClass, GlAccountTypeDefault.class, "GlAccountTypeDefault", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getGlAccountTypeDefault_GlAccountTypeId(), this.getGlAccountType(), null, "glAccountTypeId", null, 0, 1, GlAccountTypeDefault.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -4650,7 +4170,7 @@ public class LedgerPackageImpl extends EPackageImpl implements LedgerPackage {
 		initEAttribute(getGlFiscalType_GlFiscalTypeId(), ecorePackage.getEString(), "glFiscalTypeId", null, 1, 1, GlFiscalType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getGlFiscalType_Description(), ecorePackage.getEString(), "description", null, 0, 1, GlFiscalType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEOperation(getGlFiscalType__AcctgTranss(), ecorePackage.getEString(), "acctgTranss", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(glFiscalTypeEClass, ecorePackage.getEString(), "acctgTranss", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(glJournalEClass, GlJournal.class, "GlJournal", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getGlJournal_GlJournalId(), ecorePackage.getEString(), "glJournalId", null, 1, 1, GlJournal.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -4660,9 +4180,9 @@ public class LedgerPackageImpl extends EPackageImpl implements LedgerPackage {
 		initEReference(getGlJournal_OrganizationPartyId(), thePartyPackage.getParty(), null, "organizationPartyId", null, 0, 1, GlJournal.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getGlJournal_OrganizationPartyId().getEKeys().add(thePartyPackage.getParty_PartyId());
 
-		initEOperation(getGlJournal__AcctgTranss(), ecorePackage.getEString(), "acctgTranss", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(glJournalEClass, ecorePackage.getEString(), "acctgTranss", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		initEOperation(getGlJournal__PartyAcctgPreferences(), ecorePackage.getEString(), "partyAcctgPreferences", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(glJournalEClass, ecorePackage.getEString(), "partyAcctgPreferences", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(glReconciliationEClass, GlReconciliation.class, "GlReconciliation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getGlReconciliation_GlReconciliationId(), ecorePackage.getEString(), "glReconciliationId", null, 1, 1, GlReconciliation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -4682,7 +4202,7 @@ public class LedgerPackageImpl extends EPackageImpl implements LedgerPackage {
 		initEReference(getGlReconciliation_StatusId(), theStatusPackage.getStatusItem(), null, "statusId", null, 0, 1, GlReconciliation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getGlReconciliation_StatusId().getEKeys().add(theStatusPackage.getStatusItem_StatusId());
 
-		initEOperation(getGlReconciliation__FinAccountTranss(), ecorePackage.getEString(), "finAccountTranss", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(glReconciliationEClass, ecorePackage.getEString(), "finAccountTranss", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(glReconciliationEntryEClass, GlReconciliationEntry.class, "GlReconciliationEntry", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getGlReconciliationEntry_AcctgTransEntrySeqId(), ecorePackage.getEString(), "acctgTransEntrySeqId", null, 1, 1, GlReconciliationEntry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -4696,13 +4216,13 @@ public class LedgerPackageImpl extends EPackageImpl implements LedgerPackage {
 		initEAttribute(getGlResourceType_GlResourceTypeId(), ecorePackage.getEString(), "glResourceTypeId", null, 1, 1, GlResourceType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getGlResourceType_Description(), ecorePackage.getEString(), "description", null, 0, 1, GlResourceType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEOperation(getGlResourceType__GlAccounts(), ecorePackage.getEString(), "glAccounts", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(glResourceTypeEClass, ecorePackage.getEString(), "glAccounts", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(glXbrlClassEClass, GlXbrlClass.class, "GlXbrlClass", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getGlXbrlClass_GlXbrlClassId(), ecorePackage.getEString(), "glXbrlClassId", null, 1, 1, GlXbrlClass.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getGlXbrlClass_Description(), ecorePackage.getEString(), "description", null, 0, 1, GlXbrlClass.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEOperation(getGlXbrlClass__GlAccounts(), ecorePackage.getEString(), "glAccounts", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(glXbrlClassEClass, ecorePackage.getEString(), "glAccounts", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(partyAcctgPreferenceEClass, PartyAcctgPreference.class, "PartyAcctgPreference", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getPartyAcctgPreference_EnableAccounting(), ecorePackage.getEBoolean(), "enableAccounting", null, 0, 1, PartyAcctgPreference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -4741,7 +4261,7 @@ public class LedgerPackageImpl extends EPackageImpl implements LedgerPackage {
 		initEReference(getPartyAcctgPreference_OldOrderSequenceEnumId(), theEnumPackage.getEnumeration(), null, "oldOrderSequenceEnumId", null, 0, 1, PartyAcctgPreference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getPartyAcctgPreference_OldOrderSequenceEnumId().getEKeys().add(theEnumPackage.getEnumeration_EnumId());
 
-		initEOperation(getPartyAcctgPreference__PartyPrefDocTypeTpls(), ecorePackage.getEString(), "partyPrefDocTypeTpls", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(partyAcctgPreferenceEClass, ecorePackage.getEString(), "partyPrefDocTypeTpls", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(partyGlAccountEClass, PartyGlAccount.class, "PartyGlAccount", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getPartyGlAccount_OrganizationPartyId(), thePartyPackage.getParty(), null, "organizationPartyId", null, 0, 1, PartyGlAccount.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -4789,7 +4309,7 @@ public class LedgerPackageImpl extends EPackageImpl implements LedgerPackage {
 		initEReference(getProductAverageCostType_ParentTypeId(), this.getProductAverageCostType(), null, "parentTypeId", null, 0, 1, ProductAverageCostType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getProductAverageCostType_ParentTypeId().getEKeys().add(this.getProductAverageCostType_ProductAverageCostTypeId());
 
-		initEOperation(getProductAverageCostType__ChildProductAverageCostTypes(), ecorePackage.getEString(), "childProductAverageCostTypes", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(productAverageCostTypeEClass, ecorePackage.getEString(), "childProductAverageCostTypes", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(settlementTermEClass, SettlementTerm.class, "SettlementTerm", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getSettlementTerm_SettlementTermId(), ecorePackage.getEString(), "settlementTermId", null, 1, 1, SettlementTerm.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -4797,7 +4317,7 @@ public class LedgerPackageImpl extends EPackageImpl implements LedgerPackage {
 		initEAttribute(getSettlementTerm_TermValue(), ecorePackage.getELong(), "termValue", null, 0, 1, SettlementTerm.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getSettlementTerm_UomId(), ecorePackage.getEString(), "uomId", null, 0, 1, SettlementTerm.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEOperation(getSettlementTerm__AcctgTransEntries(), ecorePackage.getEString(), "acctgTransEntries", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(settlementTermEClass, ecorePackage.getEString(), "acctgTransEntries", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(varianceReasonGlAccountEClass, VarianceReasonGlAccount.class, "VarianceReasonGlAccount", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getVarianceReasonGlAccount_VarianceReasonId(), theInventoryPackage.getVarianceReason(), null, "varianceReasonId", null, 0, 1, VarianceReasonGlAccount.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -4810,6 +4330,8 @@ public class LedgerPackageImpl extends EPackageImpl implements LedgerPackage {
 		// Create annotations
 		// mimo-ent-frame
 		createMimoentframeAnnotations();
+		// mimo-ent-format
+		createMimoentformatAnnotations();
 		// mimo-ent-slot
 		createMimoentslotAnnotations();
 		// mimo-ent-domain
@@ -4929,6 +4451,1201 @@ public class LedgerPackageImpl extends EPackageImpl implements LedgerPackage {
 	}
 
 	/**
+	 * Initializes the annotations for <b>mimo-ent-format</b>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void createMimoentformatAnnotations() {
+		String source = "mimo-ent-format";
+		addAnnotation
+		  (getAcctgTrans_AcctgTransId(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (getAcctgTrans_CreatedByUserLogin(),
+		   source,
+		   new String[] {
+			   "type", "id-vlong",
+			   "length", "255"
+		   });
+		addAnnotation
+		  (getAcctgTrans_CreatedDate(),
+		   source,
+		   new String[] {
+			   "type", "date-time"
+		   });
+		addAnnotation
+		  (getAcctgTrans_Description(),
+		   source,
+		   new String[] {
+			   "type", "description",
+			   "length", "255"
+		   });
+		addAnnotation
+		  (getAcctgTrans_IsPosted(),
+		   source,
+		   new String[] {
+			   "type", "indicator",
+			   "length", "1"
+		   });
+		addAnnotation
+		  (getAcctgTrans_LastModifiedByUserLogin(),
+		   source,
+		   new String[] {
+			   "type", "id-vlong",
+			   "length", "255"
+		   });
+		addAnnotation
+		  (getAcctgTrans_LastModifiedDate(),
+		   source,
+		   new String[] {
+			   "type", "date-time"
+		   });
+		addAnnotation
+		  (getAcctgTrans_PostedDate(),
+		   source,
+		   new String[] {
+			   "type", "date-time"
+		   });
+		addAnnotation
+		  (getAcctgTrans_ScheduledPostingDate(),
+		   source,
+		   new String[] {
+			   "type", "date-time"
+		   });
+		addAnnotation
+		  (getAcctgTrans_TheirAcctgTransId(),
+		   source,
+		   new String[] {
+			   "type", "id-long",
+			   "length", "60"
+		   });
+		addAnnotation
+		  (getAcctgTrans_TransactionDate(),
+		   source,
+		   new String[] {
+			   "type", "date-time"
+		   });
+		addAnnotation
+		  (getAcctgTrans_VoucherDate(),
+		   source,
+		   new String[] {
+			   "type", "date-time"
+		   });
+		addAnnotation
+		  (getAcctgTrans_VoucherRef(),
+		   source,
+		   new String[] {
+			   "type", "short-varchar",
+			   "length", "60"
+		   });
+		addAnnotation
+		  (getAcctgTrans_AcctgTransAttributes(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (getAcctgTrans_AcctgTransEntries(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (getAcctgTransAttribute_AttrName(),
+		   source,
+		   new String[] {
+			   "type", "id-long",
+			   "length", "60"
+		   });
+		addAnnotation
+		  (getAcctgTransAttribute_AttrDescription(),
+		   source,
+		   new String[] {
+			   "type", "description",
+			   "length", "255"
+		   });
+		addAnnotation
+		  (getAcctgTransAttribute_AttrValue(),
+		   source,
+		   new String[] {
+			   "type", "value",
+			   "length", "255"
+		   });
+		addAnnotation
+		  (getAcctgTransEntry_AcctgTransEntrySeqId(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (getAcctgTransEntry_Amount(),
+		   source,
+		   new String[] {
+			   "type", "currency-amount",
+			   "precision", "18",
+			   "scale", "2"
+		   });
+		addAnnotation
+		  (getAcctgTransEntry_DebitCreditFlag(),
+		   source,
+		   new String[] {
+			   "type", "indicator",
+			   "length", "1"
+		   });
+		addAnnotation
+		  (getAcctgTransEntry_Description(),
+		   source,
+		   new String[] {
+			   "type", "description",
+			   "length", "255"
+		   });
+		addAnnotation
+		  (getAcctgTransEntry_DueDate(),
+		   source,
+		   new String[] {
+			   "type", "date"
+		   });
+		addAnnotation
+		  (getAcctgTransEntry_GroupId(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (getAcctgTransEntry_IsSummary(),
+		   source,
+		   new String[] {
+			   "type", "indicator",
+			   "length", "1"
+		   });
+		addAnnotation
+		  (getAcctgTransEntry_OrganizationPartyId(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (getAcctgTransEntry_OrigAmount(),
+		   source,
+		   new String[] {
+			   "type", "currency-amount",
+			   "precision", "18",
+			   "scale", "2"
+		   });
+		addAnnotation
+		  (getAcctgTransEntry_ProductId(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (getAcctgTransEntry_TaxId(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (getAcctgTransEntry_TheirPartyId(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (getAcctgTransEntry_TheirProductId(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (getAcctgTransEntry_VoucherRef(),
+		   source,
+		   new String[] {
+			   "type", "short-varchar",
+			   "length", "60"
+		   });
+		addAnnotation
+		  (acctgTransEntryTypeEClass.getEOperations().get(0),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (acctgTransEntryTypeEClass.getEOperations().get(1),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (getAcctgTransEntryType_AcctgTransEntryTypeId(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (getAcctgTransEntryType_Description(),
+		   source,
+		   new String[] {
+			   "type", "description",
+			   "length", "255"
+		   });
+		addAnnotation
+		  (getAcctgTransEntryType_HasTable(),
+		   source,
+		   new String[] {
+			   "type", "indicator",
+			   "length", "1"
+		   });
+		addAnnotation
+		  (acctgTransTypeEClass.getEOperations().get(0),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (acctgTransTypeEClass.getEOperations().get(1),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (getAcctgTransType_AcctgTransTypeId(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (getAcctgTransType_Description(),
+		   source,
+		   new String[] {
+			   "type", "description",
+			   "length", "255"
+		   });
+		addAnnotation
+		  (getAcctgTransType_HasTable(),
+		   source,
+		   new String[] {
+			   "type", "indicator",
+			   "length", "1"
+		   });
+		addAnnotation
+		  (getAcctgTransType_AcctgTransTypeAttrs(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (getAcctgTransTypeAttr_AttrName(),
+		   source,
+		   new String[] {
+			   "type", "id-long",
+			   "length", "60"
+		   });
+		addAnnotation
+		  (getAcctgTransTypeAttr_Description(),
+		   source,
+		   new String[] {
+			   "type", "description",
+			   "length", "255"
+		   });
+		addAnnotation
+		  (glAccountEClass.getEOperations().get(0),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (glAccountEClass.getEOperations().get(1),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (glAccountEClass.getEOperations().get(2),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (glAccountEClass.getEOperations().get(3),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (glAccountEClass.getEOperations().get(4),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (glAccountEClass.getEOperations().get(5),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (glAccountEClass.getEOperations().get(6),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (glAccountEClass.getEOperations().get(7),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (glAccountEClass.getEOperations().get(8),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (glAccountEClass.getEOperations().get(9),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (glAccountEClass.getEOperations().get(10),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (glAccountEClass.getEOperations().get(11),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (glAccountEClass.getEOperations().get(12),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (glAccountEClass.getEOperations().get(13),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (glAccountEClass.getEOperations().get(14),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (glAccountEClass.getEOperations().get(15),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (glAccountEClass.getEOperations().get(16),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (glAccountEClass.getEOperations().get(17),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (glAccountEClass.getEOperations().get(18),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (getGlAccount_GlAccountId(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (getGlAccount_AccountCode(),
+		   source,
+		   new String[] {
+			   "type", "name",
+			   "length", "100"
+		   });
+		addAnnotation
+		  (getGlAccount_AccountName(),
+		   source,
+		   new String[] {
+			   "type", "name",
+			   "length", "100"
+		   });
+		addAnnotation
+		  (getGlAccount_Description(),
+		   source,
+		   new String[] {
+			   "type", "description",
+			   "length", "255"
+		   });
+		addAnnotation
+		  (getGlAccount_ExternalId(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (getGlAccount_ProductId(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (getGlAccount_GlAccountGroupMembers(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (getGlAccount_GlAccountOrganizations(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (getGlAccountCategory_GlAccountCategoryId(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (getGlAccountCategory_Description(),
+		   source,
+		   new String[] {
+			   "type", "description",
+			   "length", "255"
+		   });
+		addAnnotation
+		  (getGlAccountCategoryMember_FromDate(),
+		   source,
+		   new String[] {
+			   "type", "date-time"
+		   });
+		addAnnotation
+		  (getGlAccountCategoryMember_AmountPercentage(),
+		   source,
+		   new String[] {
+			   "type", "fixed-point",
+			   "precision", "18",
+			   "scale", "6"
+		   });
+		addAnnotation
+		  (getGlAccountCategoryMember_ThruDate(),
+		   source,
+		   new String[] {
+			   "type", "date-time"
+		   });
+		addAnnotation
+		  (glAccountCategoryTypeEClass.getEOperations().get(0),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (getGlAccountCategoryType_GlAccountCategoryTypeId(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (getGlAccountCategoryType_Description(),
+		   source,
+		   new String[] {
+			   "type", "description",
+			   "length", "255"
+		   });
+		addAnnotation
+		  (glAccountClassEClass.getEOperations().get(0),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (glAccountClassEClass.getEOperations().get(1),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (getGlAccountClass_GlAccountClassId(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (getGlAccountClass_Description(),
+		   source,
+		   new String[] {
+			   "type", "description",
+			   "length", "255"
+		   });
+		addAnnotation
+		  (getGlAccountClass_IsAssetClass(),
+		   source,
+		   new String[] {
+			   "type", "indicator",
+			   "length", "1"
+		   });
+		addAnnotation
+		  (getGlAccountClass_SequenceNum(),
+		   source,
+		   new String[] {
+			   "type", "numeric",
+			   "precision", "20",
+			   "scale", "0"
+		   });
+		addAnnotation
+		  (glAccountGroupEClass.getEOperations().get(0),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (getGlAccountGroup_GlAccountGroupId(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (getGlAccountGroup_Description(),
+		   source,
+		   new String[] {
+			   "type", "description",
+			   "length", "255"
+		   });
+		addAnnotation
+		  (glAccountGroupTypeEClass.getEOperations().get(0),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (glAccountGroupTypeEClass.getEOperations().get(1),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (getGlAccountGroupType_GlAccountGroupTypeId(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (getGlAccountGroupType_Description(),
+		   source,
+		   new String[] {
+			   "type", "description",
+			   "length", "255"
+		   });
+		addAnnotation
+		  (getGlAccountHistory_EndingBalance(),
+		   source,
+		   new String[] {
+			   "type", "currency-amount",
+			   "precision", "18",
+			   "scale", "2"
+		   });
+		addAnnotation
+		  (getGlAccountHistory_OpeningBalance(),
+		   source,
+		   new String[] {
+			   "type", "currency-amount",
+			   "precision", "18",
+			   "scale", "2"
+		   });
+		addAnnotation
+		  (getGlAccountHistory_PostedCredits(),
+		   source,
+		   new String[] {
+			   "type", "currency-amount",
+			   "precision", "18",
+			   "scale", "2"
+		   });
+		addAnnotation
+		  (getGlAccountHistory_PostedDebits(),
+		   source,
+		   new String[] {
+			   "type", "currency-amount",
+			   "precision", "18",
+			   "scale", "2"
+		   });
+		addAnnotation
+		  (getGlAccountOrganization_FromDate(),
+		   source,
+		   new String[] {
+			   "type", "date-time"
+		   });
+		addAnnotation
+		  (getGlAccountOrganization_ThruDate(),
+		   source,
+		   new String[] {
+			   "type", "date-time"
+		   });
+		addAnnotation
+		  (getGlAccountRole_FromDate(),
+		   source,
+		   new String[] {
+			   "type", "date-time"
+		   });
+		addAnnotation
+		  (getGlAccountRole_ThruDate(),
+		   source,
+		   new String[] {
+			   "type", "date-time"
+		   });
+		addAnnotation
+		  (glAccountTypeEClass.getEOperations().get(0),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (glAccountTypeEClass.getEOperations().get(1),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (glAccountTypeEClass.getEOperations().get(2),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (glAccountTypeEClass.getEOperations().get(3),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (glAccountTypeEClass.getEOperations().get(4),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (glAccountTypeEClass.getEOperations().get(5),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (getGlAccountType_GlAccountTypeId(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (getGlAccountType_Description(),
+		   source,
+		   new String[] {
+			   "type", "description",
+			   "length", "255"
+		   });
+		addAnnotation
+		  (getGlAccountType_HasTable(),
+		   source,
+		   new String[] {
+			   "type", "indicator",
+			   "length", "1"
+		   });
+		addAnnotation
+		  (getGlAccountType_GlAccountTypeDefaults(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (getGlBudgetXref_FromDate(),
+		   source,
+		   new String[] {
+			   "type", "date-time"
+		   });
+		addAnnotation
+		  (getGlBudgetXref_AllocationPercentage(),
+		   source,
+		   new String[] {
+			   "type", "fixed-point",
+			   "precision", "18",
+			   "scale", "6"
+		   });
+		addAnnotation
+		  (getGlBudgetXref_ThruDate(),
+		   source,
+		   new String[] {
+			   "type", "date-time"
+		   });
+		addAnnotation
+		  (glFiscalTypeEClass.getEOperations().get(0),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (getGlFiscalType_GlFiscalTypeId(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (getGlFiscalType_Description(),
+		   source,
+		   new String[] {
+			   "type", "description",
+			   "length", "255"
+		   });
+		addAnnotation
+		  (glJournalEClass.getEOperations().get(0),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (glJournalEClass.getEOperations().get(1),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (getGlJournal_GlJournalId(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (getGlJournal_GlJournalName(),
+		   source,
+		   new String[] {
+			   "type", "name",
+			   "length", "100"
+		   });
+		addAnnotation
+		  (getGlJournal_IsPosted(),
+		   source,
+		   new String[] {
+			   "type", "indicator",
+			   "length", "1"
+		   });
+		addAnnotation
+		  (getGlJournal_PostedDate(),
+		   source,
+		   new String[] {
+			   "type", "date-time"
+		   });
+		addAnnotation
+		  (glReconciliationEClass.getEOperations().get(0),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (getGlReconciliation_GlReconciliationId(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (getGlReconciliation_CreatedByUserLogin(),
+		   source,
+		   new String[] {
+			   "type", "id-vlong",
+			   "length", "255"
+		   });
+		addAnnotation
+		  (getGlReconciliation_CreatedDate(),
+		   source,
+		   new String[] {
+			   "type", "date-time"
+		   });
+		addAnnotation
+		  (getGlReconciliation_Description(),
+		   source,
+		   new String[] {
+			   "type", "description",
+			   "length", "255"
+		   });
+		addAnnotation
+		  (getGlReconciliation_GlReconciliationName(),
+		   source,
+		   new String[] {
+			   "type", "name",
+			   "length", "100"
+		   });
+		addAnnotation
+		  (getGlReconciliation_LastModifiedByUserLogin(),
+		   source,
+		   new String[] {
+			   "type", "id-vlong",
+			   "length", "255"
+		   });
+		addAnnotation
+		  (getGlReconciliation_LastModifiedDate(),
+		   source,
+		   new String[] {
+			   "type", "date-time"
+		   });
+		addAnnotation
+		  (getGlReconciliation_OpeningBalance(),
+		   source,
+		   new String[] {
+			   "type", "currency-amount",
+			   "precision", "18",
+			   "scale", "2"
+		   });
+		addAnnotation
+		  (getGlReconciliation_ReconciledBalance(),
+		   source,
+		   new String[] {
+			   "type", "currency-amount",
+			   "precision", "18",
+			   "scale", "2"
+		   });
+		addAnnotation
+		  (getGlReconciliation_ReconciledDate(),
+		   source,
+		   new String[] {
+			   "type", "date-time"
+		   });
+		addAnnotation
+		  (getGlReconciliationEntry_AcctgTransEntrySeqId(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (getGlReconciliationEntry_ReconciledAmount(),
+		   source,
+		   new String[] {
+			   "type", "currency-amount",
+			   "precision", "18",
+			   "scale", "2"
+		   });
+		addAnnotation
+		  (glResourceTypeEClass.getEOperations().get(0),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (getGlResourceType_GlResourceTypeId(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (getGlResourceType_Description(),
+		   source,
+		   new String[] {
+			   "type", "description",
+			   "length", "255"
+		   });
+		addAnnotation
+		  (glXbrlClassEClass.getEOperations().get(0),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (getGlXbrlClass_GlXbrlClassId(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (getGlXbrlClass_Description(),
+		   source,
+		   new String[] {
+			   "type", "description",
+			   "length", "255"
+		   });
+		addAnnotation
+		  (partyAcctgPreferenceEClass.getEOperations().get(0),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (getPartyAcctgPreference_EnableAccounting(),
+		   source,
+		   new String[] {
+			   "type", "indicator",
+			   "length", "1"
+		   });
+		addAnnotation
+		  (getPartyAcctgPreference_FiscalYearStartDay(),
+		   source,
+		   new String[] {
+			   "type", "numeric",
+			   "precision", "20",
+			   "scale", "0"
+		   });
+		addAnnotation
+		  (getPartyAcctgPreference_FiscalYearStartMonth(),
+		   source,
+		   new String[] {
+			   "type", "numeric",
+			   "precision", "20",
+			   "scale", "0"
+		   });
+		addAnnotation
+		  (getPartyAcctgPreference_InvoiceIdPrefix(),
+		   source,
+		   new String[] {
+			   "type", "very-short",
+			   "length", "10"
+		   });
+		addAnnotation
+		  (getPartyAcctgPreference_LastInvoiceNumber(),
+		   source,
+		   new String[] {
+			   "type", "numeric",
+			   "precision", "20",
+			   "scale", "0"
+		   });
+		addAnnotation
+		  (getPartyAcctgPreference_LastInvoiceRestartDate(),
+		   source,
+		   new String[] {
+			   "type", "date-time"
+		   });
+		addAnnotation
+		  (getPartyAcctgPreference_LastOrderNumber(),
+		   source,
+		   new String[] {
+			   "type", "numeric",
+			   "precision", "20",
+			   "scale", "0"
+		   });
+		addAnnotation
+		  (getPartyAcctgPreference_LastQuoteNumber(),
+		   source,
+		   new String[] {
+			   "type", "numeric",
+			   "precision", "20",
+			   "scale", "0"
+		   });
+		addAnnotation
+		  (getPartyAcctgPreference_OrderIdPrefix(),
+		   source,
+		   new String[] {
+			   "type", "very-short",
+			   "length", "10"
+		   });
+		addAnnotation
+		  (getPartyAcctgPreference_QuoteIdPrefix(),
+		   source,
+		   new String[] {
+			   "type", "very-short",
+			   "length", "10"
+		   });
+		addAnnotation
+		  (getPartyAcctgPreference_UseInvoiceIdForReturns(),
+		   source,
+		   new String[] {
+			   "type", "indicator",
+			   "length", "1"
+		   });
+		addAnnotation
+		  (getPartyPrefDocTypeTpl_PartyPrefDocTypeTplId(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (getPartyPrefDocTypeTpl_CustomScreenId(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (getPartyPrefDocTypeTpl_FromDate(),
+		   source,
+		   new String[] {
+			   "type", "date-time"
+		   });
+		addAnnotation
+		  (getPartyPrefDocTypeTpl_ThruDate(),
+		   source,
+		   new String[] {
+			   "type", "date-time"
+		   });
+		addAnnotation
+		  (getProductAverageCost_FromDate(),
+		   source,
+		   new String[] {
+			   "type", "date-time"
+		   });
+		addAnnotation
+		  (getProductAverageCost_AverageCost(),
+		   source,
+		   new String[] {
+			   "type", "fixed-point",
+			   "precision", "18",
+			   "scale", "6"
+		   });
+		addAnnotation
+		  (getProductAverageCost_ThruDate(),
+		   source,
+		   new String[] {
+			   "type", "date-time"
+		   });
+		addAnnotation
+		  (productAverageCostTypeEClass.getEOperations().get(0),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (getProductAverageCostType_ProductAverageCostTypeId(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (getProductAverageCostType_Description(),
+		   source,
+		   new String[] {
+			   "type", "description",
+			   "length", "255"
+		   });
+		addAnnotation
+		  (getProductAverageCostType_HasTable(),
+		   source,
+		   new String[] {
+			   "type", "indicator",
+			   "length", "1"
+		   });
+		addAnnotation
+		  (settlementTermEClass.getEOperations().get(0),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (getSettlementTerm_SettlementTermId(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (getSettlementTerm_TermName(),
+		   source,
+		   new String[] {
+			   "type", "name",
+			   "length", "100"
+		   });
+		addAnnotation
+		  (getSettlementTerm_TermValue(),
+		   source,
+		   new String[] {
+			   "type", "numeric",
+			   "precision", "20",
+			   "scale", "0"
+		   });
+		addAnnotation
+		  (getSettlementTerm_UomId(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+	}
+
+	/**
 	 * Initializes the annotations for <b>mimo-ent-slot</b>.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -4967,13 +5684,13 @@ public class LedgerPackageImpl extends EPackageImpl implements LedgerPackage {
 			   "key", "true"
 		   });
 		addAnnotation
-		  (getAcctgTransEntryType__AcctgTransEntries(),
+		  (acctgTransEntryTypeEClass.getEOperations().get(0),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (getAcctgTransEntryType__ChildAcctgTransEntryTypes(),
+		  (acctgTransEntryTypeEClass.getEOperations().get(1),
 		   source,
 		   new String[] {
 			   "derived", "true"
@@ -4985,13 +5702,13 @@ public class LedgerPackageImpl extends EPackageImpl implements LedgerPackage {
 			   "key", "true"
 		   });
 		addAnnotation
-		  (getAcctgTransType__AcctgTranss(),
+		  (acctgTransTypeEClass.getEOperations().get(0),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (getAcctgTransType__ChildAcctgTransTypes(),
+		  (acctgTransTypeEClass.getEOperations().get(1),
 		   source,
 		   new String[] {
 			   "derived", "true"
@@ -5015,115 +5732,115 @@ public class LedgerPackageImpl extends EPackageImpl implements LedgerPackage {
 			   "key", "true"
 		   });
 		addAnnotation
-		  (getGlAccount__AcctgTransEntries(),
+		  (glAccountEClass.getEOperations().get(0),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (getGlAccount__ChildGlAccounts(),
+		  (glAccountEClass.getEOperations().get(1),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (getGlAccount__DefaultInvoiceItemTypes(),
+		  (glAccountEClass.getEOperations().get(2),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (getGlAccount__DefaultPaymentMethodTypes(),
+		  (glAccountEClass.getEOperations().get(3),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (getGlAccount__FinAccountTypeGlAccounts(),
+		  (glAccountEClass.getEOperations().get(4),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (getGlAccount__GlAccountTypeDefaults(),
+		  (glAccountEClass.getEOperations().get(5),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (getGlAccount__GlReconciliations(),
+		  (glAccountEClass.getEOperations().get(6),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (getGlAccount__InvoiceItemTypeGlAccounts(),
+		  (glAccountEClass.getEOperations().get(7),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (getGlAccount__OverrideInvoiceItems(),
+		  (glAccountEClass.getEOperations().get(8),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (getGlAccount__OverrideOrderAdjustments(),
+		  (glAccountEClass.getEOperations().get(9),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (getGlAccount__OverrideOrderItems(),
+		  (glAccountEClass.getEOperations().get(10),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (getGlAccount__OverrideQuoteAdjustments(),
+		  (glAccountEClass.getEOperations().get(11),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (getGlAccount__OverrideReturnAdjustments(),
+		  (glAccountEClass.getEOperations().get(12),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (getGlAccount__PaymentApplications(),
+		  (glAccountEClass.getEOperations().get(13),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (getGlAccount__PaymentMethodTypeGlAccounts(),
+		  (glAccountEClass.getEOperations().get(14),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (getGlAccount__PaymentMethods(),
+		  (glAccountEClass.getEOperations().get(15),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (getGlAccount__Payments(),
+		  (glAccountEClass.getEOperations().get(16),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (getGlAccount__PostToFinAccounts(),
+		  (glAccountEClass.getEOperations().get(17),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (getGlAccount__VarianceReasonGlAccounts(),
+		  (glAccountEClass.getEOperations().get(18),
 		   source,
 		   new String[] {
 			   "derived", "true"
@@ -5159,7 +5876,7 @@ public class LedgerPackageImpl extends EPackageImpl implements LedgerPackage {
 			   "key", "true"
 		   });
 		addAnnotation
-		  (getGlAccountCategoryType__GlAccountCategories(),
+		  (glAccountCategoryTypeEClass.getEOperations().get(0),
 		   source,
 		   new String[] {
 			   "derived", "true"
@@ -5171,13 +5888,13 @@ public class LedgerPackageImpl extends EPackageImpl implements LedgerPackage {
 			   "key", "true"
 		   });
 		addAnnotation
-		  (getGlAccountClass__ChildGlAccountClasses(),
+		  (glAccountClassEClass.getEOperations().get(0),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (getGlAccountClass__GlAccounts(),
+		  (glAccountClassEClass.getEOperations().get(1),
 		   source,
 		   new String[] {
 			   "derived", "true"
@@ -5189,7 +5906,7 @@ public class LedgerPackageImpl extends EPackageImpl implements LedgerPackage {
 			   "key", "true"
 		   });
 		addAnnotation
-		  (getGlAccountGroup__GlAccountGroupMembers(),
+		  (glAccountGroupEClass.getEOperations().get(0),
 		   source,
 		   new String[] {
 			   "derived", "true"
@@ -5201,13 +5918,13 @@ public class LedgerPackageImpl extends EPackageImpl implements LedgerPackage {
 			   "key", "true"
 		   });
 		addAnnotation
-		  (getGlAccountGroupType__GlAccountGroupMembers(),
+		  (glAccountGroupTypeEClass.getEOperations().get(0),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (getGlAccountGroupType__GlAccountGroups(),
+		  (glAccountGroupTypeEClass.getEOperations().get(1),
 		   source,
 		   new String[] {
 			   "derived", "true"
@@ -5225,37 +5942,37 @@ public class LedgerPackageImpl extends EPackageImpl implements LedgerPackage {
 			   "key", "true"
 		   });
 		addAnnotation
-		  (getGlAccountType__AcctgTransEntries(),
+		  (glAccountTypeEClass.getEOperations().get(0),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (getGlAccountType__ChildGlAccountTypes(),
+		  (glAccountTypeEClass.getEOperations().get(1),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (getGlAccountType__CostCostComponentCalcs(),
+		  (glAccountTypeEClass.getEOperations().get(2),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (getGlAccountType__GlAccounts(),
+		  (glAccountTypeEClass.getEOperations().get(3),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (getGlAccountType__OffsettingCostComponentCalcs(),
+		  (glAccountTypeEClass.getEOperations().get(4),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (getGlAccountType__PaymentGlAccountTypeMaps(),
+		  (glAccountTypeEClass.getEOperations().get(5),
 		   source,
 		   new String[] {
 			   "derived", "true"
@@ -5279,7 +5996,7 @@ public class LedgerPackageImpl extends EPackageImpl implements LedgerPackage {
 			   "key", "true"
 		   });
 		addAnnotation
-		  (getGlFiscalType__AcctgTranss(),
+		  (glFiscalTypeEClass.getEOperations().get(0),
 		   source,
 		   new String[] {
 			   "derived", "true"
@@ -5291,13 +6008,13 @@ public class LedgerPackageImpl extends EPackageImpl implements LedgerPackage {
 			   "key", "true"
 		   });
 		addAnnotation
-		  (getGlJournal__AcctgTranss(),
+		  (glJournalEClass.getEOperations().get(0),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (getGlJournal__PartyAcctgPreferences(),
+		  (glJournalEClass.getEOperations().get(1),
 		   source,
 		   new String[] {
 			   "derived", "true"
@@ -5309,7 +6026,7 @@ public class LedgerPackageImpl extends EPackageImpl implements LedgerPackage {
 			   "key", "true"
 		   });
 		addAnnotation
-		  (getGlReconciliation__FinAccountTranss(),
+		  (glReconciliationEClass.getEOperations().get(0),
 		   source,
 		   new String[] {
 			   "derived", "true"
@@ -5327,7 +6044,7 @@ public class LedgerPackageImpl extends EPackageImpl implements LedgerPackage {
 			   "key", "true"
 		   });
 		addAnnotation
-		  (getGlResourceType__GlAccounts(),
+		  (glResourceTypeEClass.getEOperations().get(0),
 		   source,
 		   new String[] {
 			   "derived", "true"
@@ -5339,7 +6056,7 @@ public class LedgerPackageImpl extends EPackageImpl implements LedgerPackage {
 			   "key", "true"
 		   });
 		addAnnotation
-		  (getGlXbrlClass__GlAccounts(),
+		  (glXbrlClassEClass.getEOperations().get(0),
 		   source,
 		   new String[] {
 			   "derived", "true"
@@ -5351,7 +6068,7 @@ public class LedgerPackageImpl extends EPackageImpl implements LedgerPackage {
 			   "key", "true"
 		   });
 		addAnnotation
-		  (getPartyAcctgPreference__PartyPrefDocTypeTpls(),
+		  (partyAcctgPreferenceEClass.getEOperations().get(0),
 		   source,
 		   new String[] {
 			   "derived", "true"
@@ -5369,7 +6086,7 @@ public class LedgerPackageImpl extends EPackageImpl implements LedgerPackage {
 			   "key", "true"
 		   });
 		addAnnotation
-		  (getProductAverageCostType__ChildProductAverageCostTypes(),
+		  (productAverageCostTypeEClass.getEOperations().get(0),
 		   source,
 		   new String[] {
 			   "derived", "true"
@@ -5381,7 +6098,7 @@ public class LedgerPackageImpl extends EPackageImpl implements LedgerPackage {
 			   "key", "true"
 		   });
 		addAnnotation
-		  (getSettlementTerm__AcctgTransEntries(),
+		  (settlementTermEClass.getEOperations().get(0),
 		   source,
 		   new String[] {
 			   "derived", "true"
@@ -5421,7 +6138,7 @@ public class LedgerPackageImpl extends EPackageImpl implements LedgerPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (getAcctgTransEntryType__AcctgTransEntries(),
+		  (acctgTransEntryTypeEClass.getEOperations().get(0),
 		   source,
 		   new String[] {
 			   "frame", "AcctgTransEntry",
@@ -5431,7 +6148,7 @@ public class LedgerPackageImpl extends EPackageImpl implements LedgerPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (getAcctgTransEntryType__ChildAcctgTransEntryTypes(),
+		  (acctgTransEntryTypeEClass.getEOperations().get(1),
 		   source,
 		   new String[] {
 			   "frame", "AcctgTransEntryType",
@@ -5441,7 +6158,7 @@ public class LedgerPackageImpl extends EPackageImpl implements LedgerPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (getAcctgTransType__AcctgTranss(),
+		  (acctgTransTypeEClass.getEOperations().get(0),
 		   source,
 		   new String[] {
 			   "frame", "AcctgTrans",
@@ -5451,7 +6168,7 @@ public class LedgerPackageImpl extends EPackageImpl implements LedgerPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (getAcctgTransType__ChildAcctgTransTypes(),
+		  (acctgTransTypeEClass.getEOperations().get(1),
 		   source,
 		   new String[] {
 			   "frame", "AcctgTransType",
@@ -5470,7 +6187,7 @@ public class LedgerPackageImpl extends EPackageImpl implements LedgerPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (getGlAccount__AcctgTransEntries(),
+		  (glAccountEClass.getEOperations().get(0),
 		   source,
 		   new String[] {
 			   "frame", "AcctgTransEntry",
@@ -5480,7 +6197,7 @@ public class LedgerPackageImpl extends EPackageImpl implements LedgerPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (getGlAccount__ChildGlAccounts(),
+		  (glAccountEClass.getEOperations().get(1),
 		   source,
 		   new String[] {
 			   "frame", "GlAccount",
@@ -5490,7 +6207,7 @@ public class LedgerPackageImpl extends EPackageImpl implements LedgerPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (getGlAccount__DefaultInvoiceItemTypes(),
+		  (glAccountEClass.getEOperations().get(2),
 		   source,
 		   new String[] {
 			   "frame", "InvoiceItemType",
@@ -5500,7 +6217,7 @@ public class LedgerPackageImpl extends EPackageImpl implements LedgerPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (getGlAccount__DefaultPaymentMethodTypes(),
+		  (glAccountEClass.getEOperations().get(3),
 		   source,
 		   new String[] {
 			   "frame", "PaymentMethodType",
@@ -5510,7 +6227,7 @@ public class LedgerPackageImpl extends EPackageImpl implements LedgerPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (getGlAccount__FinAccountTypeGlAccounts(),
+		  (glAccountEClass.getEOperations().get(4),
 		   source,
 		   new String[] {
 			   "frame", "FinAccountTypeGlAccount",
@@ -5520,7 +6237,7 @@ public class LedgerPackageImpl extends EPackageImpl implements LedgerPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (getGlAccount__GlAccountTypeDefaults(),
+		  (glAccountEClass.getEOperations().get(5),
 		   source,
 		   new String[] {
 			   "frame", "GlAccountTypeDefault",
@@ -5530,7 +6247,7 @@ public class LedgerPackageImpl extends EPackageImpl implements LedgerPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (getGlAccount__GlReconciliations(),
+		  (glAccountEClass.getEOperations().get(6),
 		   source,
 		   new String[] {
 			   "frame", "GlReconciliation",
@@ -5540,7 +6257,7 @@ public class LedgerPackageImpl extends EPackageImpl implements LedgerPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (getGlAccount__InvoiceItemTypeGlAccounts(),
+		  (glAccountEClass.getEOperations().get(7),
 		   source,
 		   new String[] {
 			   "frame", "InvoiceItemTypeGlAccount",
@@ -5550,7 +6267,7 @@ public class LedgerPackageImpl extends EPackageImpl implements LedgerPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (getGlAccount__OverrideInvoiceItems(),
+		  (glAccountEClass.getEOperations().get(8),
 		   source,
 		   new String[] {
 			   "frame", "InvoiceItem",
@@ -5560,7 +6277,7 @@ public class LedgerPackageImpl extends EPackageImpl implements LedgerPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (getGlAccount__OverrideOrderAdjustments(),
+		  (glAccountEClass.getEOperations().get(9),
 		   source,
 		   new String[] {
 			   "frame", "OrderAdjustment",
@@ -5570,7 +6287,7 @@ public class LedgerPackageImpl extends EPackageImpl implements LedgerPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (getGlAccount__OverrideOrderItems(),
+		  (glAccountEClass.getEOperations().get(10),
 		   source,
 		   new String[] {
 			   "frame", "OrderItem",
@@ -5580,7 +6297,7 @@ public class LedgerPackageImpl extends EPackageImpl implements LedgerPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (getGlAccount__OverrideQuoteAdjustments(),
+		  (glAccountEClass.getEOperations().get(11),
 		   source,
 		   new String[] {
 			   "frame", "QuoteAdjustment",
@@ -5590,7 +6307,7 @@ public class LedgerPackageImpl extends EPackageImpl implements LedgerPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (getGlAccount__OverrideReturnAdjustments(),
+		  (glAccountEClass.getEOperations().get(12),
 		   source,
 		   new String[] {
 			   "frame", "ReturnAdjustment",
@@ -5600,7 +6317,7 @@ public class LedgerPackageImpl extends EPackageImpl implements LedgerPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (getGlAccount__PaymentApplications(),
+		  (glAccountEClass.getEOperations().get(13),
 		   source,
 		   new String[] {
 			   "frame", "PaymentApplication",
@@ -5610,7 +6327,7 @@ public class LedgerPackageImpl extends EPackageImpl implements LedgerPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (getGlAccount__PaymentMethodTypeGlAccounts(),
+		  (glAccountEClass.getEOperations().get(14),
 		   source,
 		   new String[] {
 			   "frame", "PaymentMethodTypeGlAccount",
@@ -5620,7 +6337,7 @@ public class LedgerPackageImpl extends EPackageImpl implements LedgerPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (getGlAccount__PaymentMethods(),
+		  (glAccountEClass.getEOperations().get(15),
 		   source,
 		   new String[] {
 			   "frame", "PaymentMethod",
@@ -5630,7 +6347,7 @@ public class LedgerPackageImpl extends EPackageImpl implements LedgerPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (getGlAccount__Payments(),
+		  (glAccountEClass.getEOperations().get(16),
 		   source,
 		   new String[] {
 			   "frame", "Payment",
@@ -5640,7 +6357,7 @@ public class LedgerPackageImpl extends EPackageImpl implements LedgerPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (getGlAccount__PostToFinAccounts(),
+		  (glAccountEClass.getEOperations().get(17),
 		   source,
 		   new String[] {
 			   "frame", "FinAccount",
@@ -5650,7 +6367,7 @@ public class LedgerPackageImpl extends EPackageImpl implements LedgerPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (getGlAccount__VarianceReasonGlAccounts(),
+		  (glAccountEClass.getEOperations().get(18),
 		   source,
 		   new String[] {
 			   "frame", "VarianceReasonGlAccount",
@@ -5678,7 +6395,7 @@ public class LedgerPackageImpl extends EPackageImpl implements LedgerPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (getGlAccountCategoryType__GlAccountCategories(),
+		  (glAccountCategoryTypeEClass.getEOperations().get(0),
 		   source,
 		   new String[] {
 			   "frame", "GlAccountCategory",
@@ -5688,7 +6405,7 @@ public class LedgerPackageImpl extends EPackageImpl implements LedgerPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (getGlAccountClass__ChildGlAccountClasses(),
+		  (glAccountClassEClass.getEOperations().get(0),
 		   source,
 		   new String[] {
 			   "frame", "GlAccountClass",
@@ -5698,7 +6415,7 @@ public class LedgerPackageImpl extends EPackageImpl implements LedgerPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (getGlAccountClass__GlAccounts(),
+		  (glAccountClassEClass.getEOperations().get(1),
 		   source,
 		   new String[] {
 			   "frame", "GlAccount",
@@ -5708,7 +6425,7 @@ public class LedgerPackageImpl extends EPackageImpl implements LedgerPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (getGlAccountGroup__GlAccountGroupMembers(),
+		  (glAccountGroupEClass.getEOperations().get(0),
 		   source,
 		   new String[] {
 			   "frame", "GlAccountGroupMember",
@@ -5718,7 +6435,7 @@ public class LedgerPackageImpl extends EPackageImpl implements LedgerPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (getGlAccountGroupType__GlAccountGroupMembers(),
+		  (glAccountGroupTypeEClass.getEOperations().get(0),
 		   source,
 		   new String[] {
 			   "frame", "GlAccountGroupMember",
@@ -5728,7 +6445,7 @@ public class LedgerPackageImpl extends EPackageImpl implements LedgerPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (getGlAccountGroupType__GlAccountGroups(),
+		  (glAccountGroupTypeEClass.getEOperations().get(1),
 		   source,
 		   new String[] {
 			   "frame", "GlAccountGroup",
@@ -5738,7 +6455,7 @@ public class LedgerPackageImpl extends EPackageImpl implements LedgerPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (getGlAccountType__AcctgTransEntries(),
+		  (glAccountTypeEClass.getEOperations().get(0),
 		   source,
 		   new String[] {
 			   "frame", "AcctgTransEntry",
@@ -5748,7 +6465,7 @@ public class LedgerPackageImpl extends EPackageImpl implements LedgerPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (getGlAccountType__ChildGlAccountTypes(),
+		  (glAccountTypeEClass.getEOperations().get(1),
 		   source,
 		   new String[] {
 			   "frame", "GlAccountType",
@@ -5758,7 +6475,7 @@ public class LedgerPackageImpl extends EPackageImpl implements LedgerPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (getGlAccountType__CostCostComponentCalcs(),
+		  (glAccountTypeEClass.getEOperations().get(2),
 		   source,
 		   new String[] {
 			   "frame", "CostComponentCalc",
@@ -5768,7 +6485,7 @@ public class LedgerPackageImpl extends EPackageImpl implements LedgerPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (getGlAccountType__GlAccounts(),
+		  (glAccountTypeEClass.getEOperations().get(3),
 		   source,
 		   new String[] {
 			   "frame", "GlAccount",
@@ -5778,7 +6495,7 @@ public class LedgerPackageImpl extends EPackageImpl implements LedgerPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (getGlAccountType__OffsettingCostComponentCalcs(),
+		  (glAccountTypeEClass.getEOperations().get(4),
 		   source,
 		   new String[] {
 			   "frame", "CostComponentCalc",
@@ -5788,7 +6505,7 @@ public class LedgerPackageImpl extends EPackageImpl implements LedgerPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (getGlAccountType__PaymentGlAccountTypeMaps(),
+		  (glAccountTypeEClass.getEOperations().get(5),
 		   source,
 		   new String[] {
 			   "frame", "PaymentGlAccountTypeMap",
@@ -5807,7 +6524,7 @@ public class LedgerPackageImpl extends EPackageImpl implements LedgerPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (getGlFiscalType__AcctgTranss(),
+		  (glFiscalTypeEClass.getEOperations().get(0),
 		   source,
 		   new String[] {
 			   "frame", "AcctgTrans",
@@ -5817,7 +6534,7 @@ public class LedgerPackageImpl extends EPackageImpl implements LedgerPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (getGlJournal__AcctgTranss(),
+		  (glJournalEClass.getEOperations().get(0),
 		   source,
 		   new String[] {
 			   "frame", "AcctgTrans",
@@ -5827,7 +6544,7 @@ public class LedgerPackageImpl extends EPackageImpl implements LedgerPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (getGlJournal__PartyAcctgPreferences(),
+		  (glJournalEClass.getEOperations().get(1),
 		   source,
 		   new String[] {
 			   "frame", "PartyAcctgPreference",
@@ -5837,7 +6554,7 @@ public class LedgerPackageImpl extends EPackageImpl implements LedgerPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (getGlReconciliation__FinAccountTranss(),
+		  (glReconciliationEClass.getEOperations().get(0),
 		   source,
 		   new String[] {
 			   "frame", "FinAccountTrans",
@@ -5847,7 +6564,7 @@ public class LedgerPackageImpl extends EPackageImpl implements LedgerPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (getGlResourceType__GlAccounts(),
+		  (glResourceTypeEClass.getEOperations().get(0),
 		   source,
 		   new String[] {
 			   "frame", "GlAccount",
@@ -5857,7 +6574,7 @@ public class LedgerPackageImpl extends EPackageImpl implements LedgerPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (getGlXbrlClass__GlAccounts(),
+		  (glXbrlClassEClass.getEOperations().get(0),
 		   source,
 		   new String[] {
 			   "frame", "GlAccount",
@@ -5867,7 +6584,7 @@ public class LedgerPackageImpl extends EPackageImpl implements LedgerPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (getPartyAcctgPreference__PartyPrefDocTypeTpls(),
+		  (partyAcctgPreferenceEClass.getEOperations().get(0),
 		   source,
 		   new String[] {
 			   "frame", "PartyPrefDocTypeTpl",
@@ -5877,7 +6594,7 @@ public class LedgerPackageImpl extends EPackageImpl implements LedgerPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (getProductAverageCostType__ChildProductAverageCostTypes(),
+		  (productAverageCostTypeEClass.getEOperations().get(0),
 		   source,
 		   new String[] {
 			   "frame", "ProductAverageCostType",
@@ -5887,7 +6604,7 @@ public class LedgerPackageImpl extends EPackageImpl implements LedgerPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (getSettlementTerm__AcctgTransEntries(),
+		  (settlementTermEClass.getEOperations().get(0),
 		   source,
 		   new String[] {
 			   "frame", "AcctgTransEntry",

@@ -39,7 +39,7 @@ public interface PayGrade extends BizEntity {
 	 * @return the value of the '<em>Comments</em>' attribute.
 	 * @see #setComments(String)
 	 * @see org.abchip.mimo.biz.humanres.employment.EmploymentPackage#getPayGrade_Comments()
-	 * @model
+	 * @model annotation="mimo-ent-format type='comment' length='255'"
 	 * @generated
 	 */
 	String getComments();
@@ -66,6 +66,7 @@ public interface PayGrade extends BizEntity {
 	 * @see #setPayGradeId(String)
 	 * @see org.abchip.mimo.biz.humanres.employment.EmploymentPackage#getPayGrade_PayGradeId()
 	 * @model id="true" required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
@@ -92,7 +93,7 @@ public interface PayGrade extends BizEntity {
 	 * @return the value of the '<em>Pay Grade Name</em>' attribute.
 	 * @see #setPayGradeName(String)
 	 * @see org.abchip.mimo.biz.humanres.employment.EmploymentPackage#getPayGrade_PayGradeName()
-	 * @model
+	 * @model annotation="mimo-ent-format type='name' length='100'"
 	 * @generated
 	 */
 	String getPayGradeName();

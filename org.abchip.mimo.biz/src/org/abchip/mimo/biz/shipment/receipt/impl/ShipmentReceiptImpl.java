@@ -7,7 +7,6 @@
  */
 package org.abchip.mimo.biz.shipment.receipt.impl;
 
-import java.lang.reflect.InvocationTargetException;
 import java.math.BigDecimal;
 
 import java.util.Date;
@@ -23,7 +22,6 @@ import org.abchip.mimo.biz.shipment.receipt.ReceiptPackage;
 import org.abchip.mimo.biz.shipment.receipt.RejectionReason;
 import org.abchip.mimo.biz.shipment.receipt.ShipmentReceipt;
 import org.abchip.mimo.biz.shipment.shipment.Shipment;
-import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 
 /**
@@ -421,22 +419,6 @@ public class ShipmentReceiptImpl extends BizEntityImpl implements ShipmentReceip
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
-		switch (operationID) {
-			case ReceiptPackage.SHIPMENT_RECEIPT___ACCTG_TRANSS:
-				return acctgTranss();
-			case ReceiptPackage.SHIPMENT_RECEIPT___INVENTORY_ITEM_DETAILS:
-				return inventoryItemDetails();
-		}
-		return super.eInvoke(operationID, arguments);
 	}
 
 } //ShipmentReceiptImpl

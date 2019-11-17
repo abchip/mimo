@@ -43,7 +43,7 @@ public interface ContactMech extends BizEntityTyped<ContactMechType> {
 	 * @return the value of the '<em>Info String</em>' attribute.
 	 * @see #setInfoString(String)
 	 * @see org.abchip.mimo.biz.party.contact.ContactPackage#getContactMech_InfoString()
-	 * @model
+	 * @model annotation="mimo-ent-format type='long-varchar' length='255'"
 	 * @generated
 	 */
 	String getInfoString();
@@ -69,7 +69,9 @@ public interface ContactMech extends BizEntityTyped<ContactMechType> {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Contact Mech Attributes</em>' attribute list.
 	 * @see org.abchip.mimo.biz.party.contact.ContactPackage#getContactMech_ContactMechAttributes()
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ContactMechAttribute'"
 	 * @generated
 	 */
@@ -86,7 +88,9 @@ public interface ContactMech extends BizEntityTyped<ContactMechType> {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>From Contact Mech Links</em>' attribute list.
 	 * @see org.abchip.mimo.biz.party.contact.ContactPackage#getContactMech_FromContactMechLinks()
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ContactMechLink'"
 	 * @generated
 	 */
@@ -95,7 +99,8 @@ public interface ContactMech extends BizEntityTyped<ContactMechType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='BillingAccount' route='contactMechId'"
 	 * @generated
 	 */
@@ -104,7 +109,8 @@ public interface ContactMech extends BizEntityTyped<ContactMechType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='CheckAccount' route='contactMechId'"
 	 * @generated
 	 */
@@ -113,7 +119,8 @@ public interface ContactMech extends BizEntityTyped<ContactMechType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='CreditCard' route='contactMechId'"
 	 * @generated
 	 */
@@ -122,7 +129,8 @@ public interface ContactMech extends BizEntityTyped<ContactMechType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ShipmentRouteSegment' route='destContactMechId'"
 	 * @generated
 	 */
@@ -131,7 +139,8 @@ public interface ContactMech extends BizEntityTyped<ContactMechType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='Shipment' route='destinationContactMechId'"
 	 * @generated
 	 */
@@ -140,7 +149,8 @@ public interface ContactMech extends BizEntityTyped<ContactMechType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='EftAccount' route='contactMechId'"
 	 * @generated
 	 */
@@ -149,7 +159,8 @@ public interface ContactMech extends BizEntityTyped<ContactMechType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='CommunicationEvent' route='contactMechIdFrom'"
 	 * @generated
 	 */
@@ -158,7 +169,8 @@ public interface ContactMech extends BizEntityTyped<ContactMechType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='CustRequest' route='fulfillContactMechId'"
 	 * @generated
 	 */
@@ -167,7 +179,8 @@ public interface ContactMech extends BizEntityTyped<ContactMechType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='GiftCard' route='contactMechId'"
 	 * @generated
 	 */
@@ -176,7 +189,8 @@ public interface ContactMech extends BizEntityTyped<ContactMechType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='Invoice' route='contactMechId'"
 	 * @generated
 	 */
@@ -185,7 +199,8 @@ public interface ContactMech extends BizEntityTyped<ContactMechType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='OrderItemShipGroup' route='contactMechId'"
 	 * @generated
 	 */
@@ -194,7 +209,8 @@ public interface ContactMech extends BizEntityTyped<ContactMechType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ShipmentRouteSegment' route='originContactMechId'"
 	 * @generated
 	 */
@@ -203,7 +219,8 @@ public interface ContactMech extends BizEntityTyped<ContactMechType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='Shipment' route='originContactMechId'"
 	 * @generated
 	 */
@@ -212,7 +229,8 @@ public interface ContactMech extends BizEntityTyped<ContactMechType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='PayPalPaymentMethod' route='contactMechId'"
 	 * @generated
 	 */
@@ -221,7 +239,8 @@ public interface ContactMech extends BizEntityTyped<ContactMechType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ReturnHeader' route='originContactMechId'"
 	 * @generated
 	 */
@@ -230,7 +249,8 @@ public interface ContactMech extends BizEntityTyped<ContactMechType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ShipmentContactMech' route='contactMechId'"
 	 * @generated
 	 */
@@ -239,7 +259,8 @@ public interface ContactMech extends BizEntityTyped<ContactMechType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ShoppingList' route='contactMechId'"
 	 * @generated
 	 */
@@ -248,7 +269,8 @@ public interface ContactMech extends BizEntityTyped<ContactMechType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='Subscription' route='contactMechId'"
 	 * @generated
 	 */
@@ -257,7 +279,8 @@ public interface ContactMech extends BizEntityTyped<ContactMechType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='OrderItemShipGroup' route='telecomContactMechId'"
 	 * @generated
 	 */
@@ -266,7 +289,8 @@ public interface ContactMech extends BizEntityTyped<ContactMechType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='CommunicationEvent' route='contactMechIdTo'"
 	 * @generated
 	 */
@@ -275,7 +299,9 @@ public interface ContactMech extends BizEntityTyped<ContactMechType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ContactMechLink' route='contactMechIdTo'"
 	 * @generated
 	 */
@@ -284,7 +310,8 @@ public interface ContactMech extends BizEntityTyped<ContactMechType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='WorkEffortEventReminder' route='contactMechId'"
 	 * @generated
 	 */
@@ -328,6 +355,7 @@ public interface ContactMech extends BizEntityTyped<ContactMechType> {
 	 * @see #setContactMechId(String)
 	 * @see org.abchip.mimo.biz.party.contact.ContactPackage#getContactMech_ContactMechId()
 	 * @model id="true" required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */

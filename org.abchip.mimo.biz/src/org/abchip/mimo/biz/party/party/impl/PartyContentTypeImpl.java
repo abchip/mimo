@@ -7,14 +7,12 @@
  */
 package org.abchip.mimo.biz.party.party.impl;
 
-import java.lang.reflect.InvocationTargetException;
 import java.util.List;
 
 import org.abchip.mimo.biz.impl.BizEntityTypeImpl;
 import org.abchip.mimo.biz.party.party.PartyContent;
 import org.abchip.mimo.biz.party.party.PartyContentType;
 import org.abchip.mimo.biz.party.party.PartyPackage;
-import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 
 /**
@@ -106,20 +104,6 @@ public class PartyContentTypeImpl extends BizEntityTypeImpl<PartyContent> implem
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
-		switch (operationID) {
-			case PartyPackage.PARTY_CONTENT_TYPE___CHILD_PARTY_CONTENT_TYPES:
-				return childPartyContentTypes();
-		}
-		return super.eInvoke(operationID, arguments);
 	}
 
 	/**

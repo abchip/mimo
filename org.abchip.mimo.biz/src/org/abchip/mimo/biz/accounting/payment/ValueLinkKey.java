@@ -51,7 +51,7 @@ public interface ValueLinkKey extends BizEntity {
 	 * @return the value of the '<em>Created By Terminal</em>' attribute.
 	 * @see #setCreatedByTerminal(String)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getValueLinkKey_CreatedByTerminal()
-	 * @model
+	 * @model annotation="mimo-ent-format type='short-varchar' length='60'"
 	 * @generated
 	 */
 	String getCreatedByTerminal();
@@ -77,7 +77,7 @@ public interface ValueLinkKey extends BizEntity {
 	 * @return the value of the '<em>Created By User Login</em>' attribute.
 	 * @see #setCreatedByUserLogin(String)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getValueLinkKey_CreatedByUserLogin()
-	 * @model
+	 * @model annotation="mimo-ent-format type='id-vlong' length='255'"
 	 * @generated
 	 */
 	String getCreatedByUserLogin();
@@ -103,7 +103,7 @@ public interface ValueLinkKey extends BizEntity {
 	 * @return the value of the '<em>Created Date</em>' attribute.
 	 * @see #setCreatedDate(Date)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getValueLinkKey_CreatedDate()
-	 * @model
+	 * @model annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getCreatedDate();
@@ -129,7 +129,7 @@ public interface ValueLinkKey extends BizEntity {
 	 * @return the value of the '<em>Exchange Key</em>' attribute.
 	 * @see #setExchangeKey(String)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getValueLinkKey_ExchangeKey()
-	 * @model
+	 * @model annotation="mimo-ent-format type='very-long'"
 	 * @generated
 	 */
 	String getExchangeKey();
@@ -155,7 +155,7 @@ public interface ValueLinkKey extends BizEntity {
 	 * @return the value of the '<em>Last Modified By Terminal</em>' attribute.
 	 * @see #setLastModifiedByTerminal(String)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getValueLinkKey_LastModifiedByTerminal()
-	 * @model
+	 * @model annotation="mimo-ent-format type='short-varchar' length='60'"
 	 * @generated
 	 */
 	String getLastModifiedByTerminal();
@@ -181,7 +181,7 @@ public interface ValueLinkKey extends BizEntity {
 	 * @return the value of the '<em>Last Modified By User Login</em>' attribute.
 	 * @see #setLastModifiedByUserLogin(String)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getValueLinkKey_LastModifiedByUserLogin()
-	 * @model
+	 * @model annotation="mimo-ent-format type='id-vlong' length='255'"
 	 * @generated
 	 */
 	String getLastModifiedByUserLogin();
@@ -207,7 +207,7 @@ public interface ValueLinkKey extends BizEntity {
 	 * @return the value of the '<em>Last Modified Date</em>' attribute.
 	 * @see #setLastModifiedDate(Date)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getValueLinkKey_LastModifiedDate()
-	 * @model
+	 * @model annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getLastModifiedDate();
@@ -233,7 +233,7 @@ public interface ValueLinkKey extends BizEntity {
 	 * @return the value of the '<em>Last Working Key</em>' attribute.
 	 * @see #setLastWorkingKey(String)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getValueLinkKey_LastWorkingKey()
-	 * @model
+	 * @model annotation="mimo-ent-format type='very-long'"
 	 * @generated
 	 */
 	String getLastWorkingKey();
@@ -260,6 +260,7 @@ public interface ValueLinkKey extends BizEntity {
 	 * @see #setMerchantId(String)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getValueLinkKey_MerchantId()
 	 * @model id="true" required="true"
+	 *        annotation="mimo-ent-format type='id-vlong' length='255'"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
@@ -286,7 +287,7 @@ public interface ValueLinkKey extends BizEntity {
 	 * @return the value of the '<em>Private Key</em>' attribute.
 	 * @see #setPrivateKey(String)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getValueLinkKey_PrivateKey()
-	 * @model
+	 * @model annotation="mimo-ent-format type='very-long'"
 	 * @generated
 	 */
 	String getPrivateKey();
@@ -312,7 +313,7 @@ public interface ValueLinkKey extends BizEntity {
 	 * @return the value of the '<em>Public Key</em>' attribute.
 	 * @see #setPublicKey(String)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getValueLinkKey_PublicKey()
-	 * @model
+	 * @model annotation="mimo-ent-format type='very-long'"
 	 * @generated
 	 */
 	String getPublicKey();
@@ -338,7 +339,7 @@ public interface ValueLinkKey extends BizEntity {
 	 * @return the value of the '<em>Working Key</em>' attribute.
 	 * @see #setWorkingKey(String)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getValueLinkKey_WorkingKey()
-	 * @model
+	 * @model annotation="mimo-ent-format type='very-long'"
 	 * @generated
 	 */
 	String getWorkingKey();
@@ -364,7 +365,7 @@ public interface ValueLinkKey extends BizEntity {
 	 * @return the value of the '<em>Working Key Index</em>' attribute.
 	 * @see #setWorkingKeyIndex(long)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getValueLinkKey_WorkingKeyIndex()
-	 * @model
+	 * @model annotation="mimo-ent-format type='numeric' precision='20' scale='0'"
 	 * @generated
 	 */
 	long getWorkingKeyIndex();

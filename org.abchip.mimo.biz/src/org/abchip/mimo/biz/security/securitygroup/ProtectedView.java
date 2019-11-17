@@ -67,7 +67,7 @@ public interface ProtectedView extends BizEntity {
 	 * @return the value of the '<em>Max Hits</em>' attribute.
 	 * @see #setMaxHits(long)
 	 * @see org.abchip.mimo.biz.security.securitygroup.SecuritygroupPackage#getProtectedView_MaxHits()
-	 * @model
+	 * @model annotation="mimo-ent-format type='numeric' precision='20' scale='0'"
 	 * @generated
 	 */
 	long getMaxHits();
@@ -93,7 +93,7 @@ public interface ProtectedView extends BizEntity {
 	 * @return the value of the '<em>Max Hits Duration</em>' attribute.
 	 * @see #setMaxHitsDuration(long)
 	 * @see org.abchip.mimo.biz.security.securitygroup.SecuritygroupPackage#getProtectedView_MaxHitsDuration()
-	 * @model
+	 * @model annotation="mimo-ent-format type='numeric' precision='20' scale='0'"
 	 * @generated
 	 */
 	long getMaxHitsDuration();
@@ -119,7 +119,7 @@ public interface ProtectedView extends BizEntity {
 	 * @return the value of the '<em>Tarpit Duration</em>' attribute.
 	 * @see #setTarpitDuration(long)
 	 * @see org.abchip.mimo.biz.security.securitygroup.SecuritygroupPackage#getProtectedView_TarpitDuration()
-	 * @model
+	 * @model annotation="mimo-ent-format type='numeric' precision='20' scale='0'"
 	 * @generated
 	 */
 	long getTarpitDuration();
@@ -146,6 +146,7 @@ public interface ProtectedView extends BizEntity {
 	 * @see #setViewNameId(String)
 	 * @see org.abchip.mimo.biz.security.securitygroup.SecuritygroupPackage#getProtectedView_ViewNameId()
 	 * @model required="true"
+	 *        annotation="mimo-ent-format type='id-long' length='60'"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */

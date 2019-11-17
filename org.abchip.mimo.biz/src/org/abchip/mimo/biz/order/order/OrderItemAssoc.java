@@ -99,6 +99,7 @@ public interface OrderItemAssoc extends BizEntityTyped<OrderItemAssocType> {
 	 * @see #setOrderItemSeqId(String)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderItemAssoc_OrderItemSeqId()
 	 * @model required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
@@ -125,7 +126,7 @@ public interface OrderItemAssoc extends BizEntityTyped<OrderItemAssocType> {
 	 * @return the value of the '<em>Quantity</em>' attribute.
 	 * @see #setQuantity(BigDecimal)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderItemAssoc_Quantity()
-	 * @model
+	 * @model annotation="mimo-ent-format type='fixed-point' precision='18' scale='6'"
 	 * @generated
 	 */
 	BigDecimal getQuantity();
@@ -152,6 +153,7 @@ public interface OrderItemAssoc extends BizEntityTyped<OrderItemAssocType> {
 	 * @see #setShipGroupSeqId(String)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderItemAssoc_ShipGroupSeqId()
 	 * @model required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
@@ -205,6 +207,7 @@ public interface OrderItemAssoc extends BizEntityTyped<OrderItemAssocType> {
 	 * @see #setToOrderItemSeqId(String)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderItemAssoc_ToOrderItemSeqId()
 	 * @model required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
@@ -232,6 +235,7 @@ public interface OrderItemAssoc extends BizEntityTyped<OrderItemAssocType> {
 	 * @see #setToShipGroupSeqId(String)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderItemAssoc_ToShipGroupSeqId()
 	 * @model required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */

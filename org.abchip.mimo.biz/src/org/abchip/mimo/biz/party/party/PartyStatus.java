@@ -71,6 +71,7 @@ public interface PartyStatus extends BizEntity {
 	 * @see #setStatusDate(Date)
 	 * @see org.abchip.mimo.biz.party.party.PartyPackage#getPartyStatus_StatusDate()
 	 * @model required="true"
+	 *        annotation="mimo-ent-format type='date-time'"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */

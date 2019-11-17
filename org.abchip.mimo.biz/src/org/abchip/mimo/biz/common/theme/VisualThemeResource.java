@@ -41,7 +41,7 @@ public interface VisualThemeResource extends BizEntity {
 	 * @return the value of the '<em>Resource Value</em>' attribute.
 	 * @see #setResourceValue(String)
 	 * @see org.abchip.mimo.biz.common.theme.ThemePackage#getVisualThemeResource_ResourceValue()
-	 * @model
+	 * @model annotation="mimo-ent-format type='value' length='255'"
 	 * @generated
 	 */
 	String getResourceValue();
@@ -68,6 +68,7 @@ public interface VisualThemeResource extends BizEntity {
 	 * @see #setSequenceId(String)
 	 * @see org.abchip.mimo.biz.common.theme.ThemePackage#getVisualThemeResource_SequenceId()
 	 * @model required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */

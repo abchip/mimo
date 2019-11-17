@@ -7,14 +7,12 @@
  */
 package org.abchip.mimo.biz.order.return_.impl;
 
-import java.lang.reflect.InvocationTargetException;
 import java.util.List;
 
 import org.abchip.mimo.biz.impl.BizEntityTypeImpl;
 import org.abchip.mimo.biz.order.return_.ReturnItem;
 import org.abchip.mimo.biz.order.return_.ReturnItemType;
 import org.abchip.mimo.biz.order.return_.ReturnPackage;
-import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 
 /**
@@ -131,24 +129,6 @@ public class ReturnItemTypeImpl extends BizEntityTypeImpl<ReturnItem> implements
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
-		switch (operationID) {
-			case ReturnPackage.RETURN_ITEM_TYPE___CHILD_RETURN_ITEM_TYPES:
-				return childReturnItemTypes();
-			case ReturnPackage.RETURN_ITEM_TYPE___RETURN_ITEM_TYPE_MAPS:
-				return returnItemTypeMaps();
-			case ReturnPackage.RETURN_ITEM_TYPE___RETURN_ITEMS:
-				return returnItems();
-		}
-		return super.eInvoke(operationID, arguments);
 	}
 
 	/**

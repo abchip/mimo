@@ -43,7 +43,7 @@ public interface RequirementBudgetAllocation extends BizEntity {
 	 * @return the value of the '<em>Amount</em>' attribute.
 	 * @see #setAmount(BigDecimal)
 	 * @see org.abchip.mimo.biz.order.requirement.RequirementPackage#getRequirementBudgetAllocation_Amount()
-	 * @model
+	 * @model annotation="mimo-ent-format type='currency-amount' precision='18' scale='2'"
 	 * @generated
 	 */
 	BigDecimal getAmount();
@@ -96,6 +96,7 @@ public interface RequirementBudgetAllocation extends BizEntity {
 	 * @see #setBudgetItemSeqId(String)
 	 * @see org.abchip.mimo.biz.order.requirement.RequirementPackage#getRequirementBudgetAllocation_BudgetItemSeqId()
 	 * @model required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */

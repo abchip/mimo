@@ -57,6 +57,7 @@ public interface CartAbandonedLine extends BizEntity {
 	 * @see #setCartAbandonedLineSeqId(String)
 	 * @see org.abchip.mimo.biz.order.shoppingcart.ShoppingcartPackage#getCartAbandonedLine_CartAbandonedLineSeqId()
 	 * @model required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
@@ -83,7 +84,7 @@ public interface CartAbandonedLine extends BizEntity {
 	 * @return the value of the '<em>Config Id</em>' attribute.
 	 * @see #setConfigId(String)
 	 * @see org.abchip.mimo.biz.order.shoppingcart.ShoppingcartPackage#getCartAbandonedLine_ConfigId()
-	 * @model
+	 * @model annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	String getConfigId();
@@ -161,7 +162,7 @@ public interface CartAbandonedLine extends BizEntity {
 	 * @return the value of the '<em>Quantity</em>' attribute.
 	 * @see #setQuantity(BigDecimal)
 	 * @see org.abchip.mimo.biz.order.shoppingcart.ShoppingcartPackage#getCartAbandonedLine_Quantity()
-	 * @model
+	 * @model annotation="mimo-ent-format type='fixed-point' precision='18' scale='6'"
 	 * @generated
 	 */
 	BigDecimal getQuantity();
@@ -187,7 +188,7 @@ public interface CartAbandonedLine extends BizEntity {
 	 * @return the value of the '<em>Reserv2nd PP Perc</em>' attribute.
 	 * @see #setReserv2ndPPPerc(BigDecimal)
 	 * @see org.abchip.mimo.biz.order.shoppingcart.ShoppingcartPackage#getCartAbandonedLine_Reserv2ndPPPerc()
-	 * @model
+	 * @model annotation="mimo-ent-format type='fixed-point' precision='18' scale='6'"
 	 * @generated
 	 */
 	BigDecimal getReserv2ndPPPerc();
@@ -213,7 +214,7 @@ public interface CartAbandonedLine extends BizEntity {
 	 * @return the value of the '<em>Reserv Length</em>' attribute.
 	 * @see #setReservLength(BigDecimal)
 	 * @see org.abchip.mimo.biz.order.shoppingcart.ShoppingcartPackage#getCartAbandonedLine_ReservLength()
-	 * @model
+	 * @model annotation="mimo-ent-format type='fixed-point' precision='18' scale='6'"
 	 * @generated
 	 */
 	BigDecimal getReservLength();
@@ -239,7 +240,7 @@ public interface CartAbandonedLine extends BizEntity {
 	 * @return the value of the '<em>Reserv Nth PP Perc</em>' attribute.
 	 * @see #setReservNthPPPerc(BigDecimal)
 	 * @see org.abchip.mimo.biz.order.shoppingcart.ShoppingcartPackage#getCartAbandonedLine_ReservNthPPPerc()
-	 * @model
+	 * @model annotation="mimo-ent-format type='fixed-point' precision='18' scale='6'"
 	 * @generated
 	 */
 	BigDecimal getReservNthPPPerc();
@@ -265,7 +266,7 @@ public interface CartAbandonedLine extends BizEntity {
 	 * @return the value of the '<em>Reserv Persons</em>' attribute.
 	 * @see #setReservPersons(BigDecimal)
 	 * @see org.abchip.mimo.biz.order.shoppingcart.ShoppingcartPackage#getCartAbandonedLine_ReservPersons()
-	 * @model
+	 * @model annotation="mimo-ent-format type='fixed-point' precision='18' scale='6'"
 	 * @generated
 	 */
 	BigDecimal getReservPersons();
@@ -291,7 +292,7 @@ public interface CartAbandonedLine extends BizEntity {
 	 * @return the value of the '<em>Reserv Start</em>' attribute.
 	 * @see #setReservStart(Date)
 	 * @see org.abchip.mimo.biz.order.shoppingcart.ShoppingcartPackage#getCartAbandonedLine_ReservStart()
-	 * @model
+	 * @model annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getReservStart();
@@ -317,7 +318,7 @@ public interface CartAbandonedLine extends BizEntity {
 	 * @return the value of the '<em>Total With Adjustments</em>' attribute.
 	 * @see #setTotalWithAdjustments(BigDecimal)
 	 * @see org.abchip.mimo.biz.order.shoppingcart.ShoppingcartPackage#getCartAbandonedLine_TotalWithAdjustments()
-	 * @model
+	 * @model annotation="mimo-ent-format type='currency-amount' precision='18' scale='2'"
 	 * @generated
 	 */
 	BigDecimal getTotalWithAdjustments();
@@ -343,7 +344,7 @@ public interface CartAbandonedLine extends BizEntity {
 	 * @return the value of the '<em>Unit Price</em>' attribute.
 	 * @see #setUnitPrice(BigDecimal)
 	 * @see org.abchip.mimo.biz.order.shoppingcart.ShoppingcartPackage#getCartAbandonedLine_UnitPrice()
-	 * @model
+	 * @model annotation="mimo-ent-format type='currency-amount' precision='18' scale='2'"
 	 * @generated
 	 */
 	BigDecimal getUnitPrice();
@@ -369,7 +370,7 @@ public interface CartAbandonedLine extends BizEntity {
 	 * @return the value of the '<em>Was Reserved</em>' attribute.
 	 * @see #setWasReserved(boolean)
 	 * @see org.abchip.mimo.biz.order.shoppingcart.ShoppingcartPackage#getCartAbandonedLine_WasReserved()
-	 * @model
+	 * @model annotation="mimo-ent-format type='indicator' length='1'"
 	 * @generated
 	 */
 	boolean isWasReserved();
@@ -396,6 +397,7 @@ public interface CartAbandonedLine extends BizEntity {
 	 * @see #setVisitId(String)
 	 * @see org.abchip.mimo.biz.order.shoppingcart.ShoppingcartPackage#getCartAbandonedLine_VisitId()
 	 * @model required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */

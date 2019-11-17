@@ -28,7 +28,7 @@ import org.abchip.mimo.biz.product.inventory.InventoryItem;
  *   <li>{@link org.abchip.mimo.biz.order.order.OrderItemShipGrpInvRes#getCreatedDatetime <em>Created Datetime</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.OrderItemShipGrpInvRes#getCurrentPromisedDate <em>Current Promised Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.OrderItemShipGrpInvRes#getOldPickStartDate <em>Old Pick Start Date</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.order.OrderItemShipGrpInvRes#isPriority <em>Priority</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.order.OrderItemShipGrpInvRes#getPriority <em>Priority</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.OrderItemShipGrpInvRes#getPromisedDatetime <em>Promised Datetime</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.OrderItemShipGrpInvRes#getQuantity <em>Quantity</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.OrderItemShipGrpInvRes#getQuantityNotAvailable <em>Quantity Not Available</em>}</li>
@@ -55,7 +55,7 @@ public interface OrderItemShipGrpInvRes extends BizEntity {
 	 * @return the value of the '<em>Created Datetime</em>' attribute.
 	 * @see #setCreatedDatetime(Date)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderItemShipGrpInvRes_CreatedDatetime()
-	 * @model
+	 * @model annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getCreatedDatetime();
@@ -81,7 +81,7 @@ public interface OrderItemShipGrpInvRes extends BizEntity {
 	 * @return the value of the '<em>Current Promised Date</em>' attribute.
 	 * @see #setCurrentPromisedDate(Date)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderItemShipGrpInvRes_CurrentPromisedDate()
-	 * @model
+	 * @model annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getCurrentPromisedDate();
@@ -133,7 +133,7 @@ public interface OrderItemShipGrpInvRes extends BizEntity {
 	 * @return the value of the '<em>Old Pick Start Date</em>' attribute.
 	 * @see #setOldPickStartDate(Date)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderItemShipGrpInvRes_OldPickStartDate()
-	 * @model
+	 * @model annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getOldPickStartDate();
@@ -157,22 +157,22 @@ public interface OrderItemShipGrpInvRes extends BizEntity {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Priority</em>' attribute.
-	 * @see #setPriority(boolean)
+	 * @see #setPriority(char)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderItemShipGrpInvRes_Priority()
-	 * @model
+	 * @model annotation="mimo-ent-format type='indicator' length='1'"
 	 * @generated
 	 */
-	boolean isPriority();
+	char getPriority();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.order.order.OrderItemShipGrpInvRes#isPriority <em>Priority</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.order.order.OrderItemShipGrpInvRes#getPriority <em>Priority</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Priority</em>' attribute.
-	 * @see #isPriority()
+	 * @see #getPriority()
 	 * @generated
 	 */
-	void setPriority(boolean value);
+	void setPriority(char value);
 
 	/**
 	 * Returns the value of the '<em><b>Order Id</b></em>' reference.
@@ -212,6 +212,7 @@ public interface OrderItemShipGrpInvRes extends BizEntity {
 	 * @see #setOrderItemSeqId(String)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderItemShipGrpInvRes_OrderItemSeqId()
 	 * @model required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
@@ -238,7 +239,7 @@ public interface OrderItemShipGrpInvRes extends BizEntity {
 	 * @return the value of the '<em>Promised Datetime</em>' attribute.
 	 * @see #setPromisedDatetime(Date)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderItemShipGrpInvRes_PromisedDatetime()
-	 * @model
+	 * @model annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getPromisedDatetime();
@@ -264,7 +265,7 @@ public interface OrderItemShipGrpInvRes extends BizEntity {
 	 * @return the value of the '<em>Quantity</em>' attribute.
 	 * @see #setQuantity(BigDecimal)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderItemShipGrpInvRes_Quantity()
-	 * @model
+	 * @model annotation="mimo-ent-format type='fixed-point' precision='18' scale='6'"
 	 * @generated
 	 */
 	BigDecimal getQuantity();
@@ -290,7 +291,7 @@ public interface OrderItemShipGrpInvRes extends BizEntity {
 	 * @return the value of the '<em>Quantity Not Available</em>' attribute.
 	 * @see #setQuantityNotAvailable(BigDecimal)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderItemShipGrpInvRes_QuantityNotAvailable()
-	 * @model
+	 * @model annotation="mimo-ent-format type='fixed-point' precision='18' scale='6'"
 	 * @generated
 	 */
 	BigDecimal getQuantityNotAvailable();
@@ -316,7 +317,7 @@ public interface OrderItemShipGrpInvRes extends BizEntity {
 	 * @return the value of the '<em>Reserve Order Enum Id</em>' attribute.
 	 * @see #setReserveOrderEnumId(String)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderItemShipGrpInvRes_ReserveOrderEnumId()
-	 * @model
+	 * @model annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	String getReserveOrderEnumId();
@@ -342,7 +343,7 @@ public interface OrderItemShipGrpInvRes extends BizEntity {
 	 * @return the value of the '<em>Reserved Datetime</em>' attribute.
 	 * @see #setReservedDatetime(Date)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderItemShipGrpInvRes_ReservedDatetime()
-	 * @model
+	 * @model annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getReservedDatetime();
@@ -368,7 +369,7 @@ public interface OrderItemShipGrpInvRes extends BizEntity {
 	 * @return the value of the '<em>Sequence Id</em>' attribute.
 	 * @see #setSequenceId(long)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderItemShipGrpInvRes_SequenceId()
-	 * @model
+	 * @model annotation="mimo-ent-format type='numeric' precision='20' scale='0'"
 	 * @generated
 	 */
 	long getSequenceId();
@@ -395,6 +396,7 @@ public interface OrderItemShipGrpInvRes extends BizEntity {
 	 * @see #setShipGroupSeqId(String)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderItemShipGrpInvRes_ShipGroupSeqId()
 	 * @model required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */

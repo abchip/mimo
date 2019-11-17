@@ -64,7 +64,7 @@ public interface VideoDataResource extends BizEntity {
 	 * @return the value of the '<em>Video Data</em>' attribute.
 	 * @see #setVideoData(byte[])
 	 * @see org.abchip.mimo.biz.content.data.DataPackage#getVideoDataResource_VideoData()
-	 * @model
+	 * @model annotation="mimo-ent-format type='byte-array'"
 	 * @generated
 	 */
 	byte[] getVideoData();

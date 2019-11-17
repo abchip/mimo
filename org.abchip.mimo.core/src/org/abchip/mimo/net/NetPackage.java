@@ -100,25 +100,6 @@ public interface NetPackage extends EPackage {
 
 
 	/**
-	 * The operation id for the '<em>Isa</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SOCKET_CONFIG___ISA = EntityPackage.ENTITY___ISA;
-
-	/**
-	 * The number of operations of the '<em>Socket Config</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SOCKET_CONFIG_OPERATION_COUNT = EntityPackage.ENTITY_OPERATION_COUNT + 0;
-
-
-	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.net.SocketConfig <em>Socket Config</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

@@ -103,7 +103,7 @@ public interface Timesheet extends BizEntity {
 	 * @return the value of the '<em>Comments</em>' attribute.
 	 * @see #setComments(String)
 	 * @see org.abchip.mimo.biz.workeffort.timesheet.TimesheetPackage#getTimesheet_Comments()
-	 * @model
+	 * @model annotation="mimo-ent-format type='comment' length='255'"
 	 * @generated
 	 */
 	String getComments();
@@ -129,7 +129,7 @@ public interface Timesheet extends BizEntity {
 	 * @return the value of the '<em>From Date</em>' attribute.
 	 * @see #setFromDate(Date)
 	 * @see org.abchip.mimo.biz.workeffort.timesheet.TimesheetPackage#getTimesheet_FromDate()
-	 * @model
+	 * @model annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getFromDate();
@@ -207,7 +207,7 @@ public interface Timesheet extends BizEntity {
 	 * @return the value of the '<em>Thru Date</em>' attribute.
 	 * @see #setThruDate(Date)
 	 * @see org.abchip.mimo.biz.workeffort.timesheet.TimesheetPackage#getTimesheet_ThruDate()
-	 * @model
+	 * @model annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getThruDate();
@@ -225,7 +225,8 @@ public interface Timesheet extends BizEntity {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='TimeEntry' route='timesheetId'"
 	 * @generated
 	 */
@@ -243,6 +244,7 @@ public interface Timesheet extends BizEntity {
 	 * @see #setTimesheetId(String)
 	 * @see org.abchip.mimo.biz.workeffort.timesheet.TimesheetPackage#getTimesheet_TimesheetId()
 	 * @model id="true" required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */

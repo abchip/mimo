@@ -221,7 +221,7 @@ public class MimoPackageImpl extends EPackageImpl implements MimoPackage {
 
 		// Add supertypes to classes
 
-		// Initialize classes, features, and operations; add parameters
+		// Initialize classes and features; add operations and parameters
 		initEClass(mimoEClass, Mimo.class, "Mimo", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		// Create resource

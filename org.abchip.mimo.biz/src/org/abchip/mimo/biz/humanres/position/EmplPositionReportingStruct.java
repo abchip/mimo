@@ -22,7 +22,7 @@ import org.abchip.mimo.biz.BizEntity;
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.humanres.position.EmplPositionReportingStruct#getFromDate <em>From Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.position.EmplPositionReportingStruct#getComments <em>Comments</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.humanres.position.EmplPositionReportingStruct#isPrimaryFlag <em>Primary Flag</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.humanres.position.EmplPositionReportingStruct#getPrimaryFlag <em>Primary Flag</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.position.EmplPositionReportingStruct#getThruDate <em>Thru Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.position.EmplPositionReportingStruct#getEmplPositionIdReportingTo <em>Empl Position Id Reporting To</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.position.EmplPositionReportingStruct#getEmplPositionIdManagedBy <em>Empl Position Id Managed By</em>}</li>
@@ -44,7 +44,7 @@ public interface EmplPositionReportingStruct extends BizEntity {
 	 * @return the value of the '<em>Comments</em>' attribute.
 	 * @see #setComments(String)
 	 * @see org.abchip.mimo.biz.humanres.position.PositionPackage#getEmplPositionReportingStruct_Comments()
-	 * @model
+	 * @model annotation="mimo-ent-format type='comment' length='255'"
 	 * @generated
 	 */
 	String getComments();
@@ -68,22 +68,22 @@ public interface EmplPositionReportingStruct extends BizEntity {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Primary Flag</em>' attribute.
-	 * @see #setPrimaryFlag(boolean)
+	 * @see #setPrimaryFlag(char)
 	 * @see org.abchip.mimo.biz.humanres.position.PositionPackage#getEmplPositionReportingStruct_PrimaryFlag()
-	 * @model
+	 * @model annotation="mimo-ent-format type='indicator' length='1'"
 	 * @generated
 	 */
-	boolean isPrimaryFlag();
+	char getPrimaryFlag();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.humanres.position.EmplPositionReportingStruct#isPrimaryFlag <em>Primary Flag</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.humanres.position.EmplPositionReportingStruct#getPrimaryFlag <em>Primary Flag</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Primary Flag</em>' attribute.
-	 * @see #isPrimaryFlag()
+	 * @see #getPrimaryFlag()
 	 * @generated
 	 */
-	void setPrimaryFlag(boolean value);
+	void setPrimaryFlag(char value);
 
 	/**
 	 * Returns the value of the '<em><b>Empl Position Id Managed By</b></em>' reference.
@@ -149,6 +149,7 @@ public interface EmplPositionReportingStruct extends BizEntity {
 	 * @see #setFromDate(Date)
 	 * @see org.abchip.mimo.biz.humanres.position.PositionPackage#getEmplPositionReportingStruct_FromDate()
 	 * @model required="true"
+	 *        annotation="mimo-ent-format type='date-time'"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
@@ -175,7 +176,7 @@ public interface EmplPositionReportingStruct extends BizEntity {
 	 * @return the value of the '<em>Thru Date</em>' attribute.
 	 * @see #setThruDate(Date)
 	 * @see org.abchip.mimo.biz.humanres.position.PositionPackage#getEmplPositionReportingStruct_ThruDate()
-	 * @model
+	 * @model annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getThruDate();

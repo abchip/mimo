@@ -32,46 +32,6 @@ public class JavaResourceImpl extends BizEntityImpl implements JavaResource {
 	 */
 	private static final long serialVersionUID = 1L;
 	/**
-	 * The default value of the '{@link #getResourceName() <em>Resource Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getResourceName()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String RESOURCE_NAME_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getResourceName() <em>Resource Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getResourceName()
-	 * @generated
-	 * @ordered
-	 */
-	protected String resourceName = RESOURCE_NAME_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getResourceValue() <em>Resource Value</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getResourceValue()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final byte[] RESOURCE_VALUE_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getResourceValue() <em>Resource Value</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getResourceValue()
-	 * @generated
-	 * @ordered
-	 */
-	protected byte[] resourceValue = RESOURCE_VALUE_EDEFAULT;
-
-	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -97,7 +57,7 @@ public class JavaResourceImpl extends BizEntityImpl implements JavaResource {
 	 */
 	@Override
 	public String getResourceName() {
-		return resourceName;
+		return (String)eGet(EntityPackage.Literals.JAVA_RESOURCE__RESOURCE_NAME, true);
 	}
 
 	/**
@@ -107,7 +67,7 @@ public class JavaResourceImpl extends BizEntityImpl implements JavaResource {
 	 */
 	@Override
 	public void setResourceName(String newResourceName) {
-		resourceName = newResourceName;
+		eSet(EntityPackage.Literals.JAVA_RESOURCE__RESOURCE_NAME, newResourceName);
 	}
 
 	/**
@@ -117,7 +77,7 @@ public class JavaResourceImpl extends BizEntityImpl implements JavaResource {
 	 */
 	@Override
 	public byte[] getResourceValue() {
-		return resourceValue;
+		return (byte[])eGet(EntityPackage.Literals.JAVA_RESOURCE__RESOURCE_VALUE, true);
 	}
 
 	/**
@@ -127,93 +87,7 @@ public class JavaResourceImpl extends BizEntityImpl implements JavaResource {
 	 */
 	@Override
 	public void setResourceValue(byte[] newResourceValue) {
-		resourceValue = newResourceValue;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
-			case EntityPackage.JAVA_RESOURCE__RESOURCE_NAME:
-				return getResourceName();
-			case EntityPackage.JAVA_RESOURCE__RESOURCE_VALUE:
-				return getResourceValue();
-		}
-		return super.eGet(featureID, resolve, coreType);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
-			case EntityPackage.JAVA_RESOURCE__RESOURCE_NAME:
-				setResourceName((String)newValue);
-				return;
-			case EntityPackage.JAVA_RESOURCE__RESOURCE_VALUE:
-				setResourceValue((byte[])newValue);
-				return;
-		}
-		super.eSet(featureID, newValue);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void eUnset(int featureID) {
-		switch (featureID) {
-			case EntityPackage.JAVA_RESOURCE__RESOURCE_NAME:
-				setResourceName(RESOURCE_NAME_EDEFAULT);
-				return;
-			case EntityPackage.JAVA_RESOURCE__RESOURCE_VALUE:
-				setResourceValue(RESOURCE_VALUE_EDEFAULT);
-				return;
-		}
-		super.eUnset(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public boolean eIsSet(int featureID) {
-		switch (featureID) {
-			case EntityPackage.JAVA_RESOURCE__RESOURCE_NAME:
-				return RESOURCE_NAME_EDEFAULT == null ? resourceName != null : !RESOURCE_NAME_EDEFAULT.equals(resourceName);
-			case EntityPackage.JAVA_RESOURCE__RESOURCE_VALUE:
-				return RESOURCE_VALUE_EDEFAULT == null ? resourceValue != null : !RESOURCE_VALUE_EDEFAULT.equals(resourceValue);
-		}
-		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String toString() {
-		if (eIsProxy()) return super.toString();
-
-		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (resourceName: ");
-		result.append(resourceName);
-		result.append(", resourceValue: ");
-		result.append(resourceValue);
-		result.append(')');
-		return result.toString();
+		eSet(EntityPackage.Literals.JAVA_RESOURCE__RESOURCE_VALUE, newResourceValue);
 	}
 
 } //JavaResourceImpl

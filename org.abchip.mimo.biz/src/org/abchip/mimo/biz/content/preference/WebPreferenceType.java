@@ -38,7 +38,7 @@ public interface WebPreferenceType extends BizEntity {
 	 * @return the value of the '<em>Description</em>' attribute.
 	 * @see #setDescription(String)
 	 * @see org.abchip.mimo.biz.content.preference.PreferencePackage#getWebPreferenceType_Description()
-	 * @model
+	 * @model annotation="mimo-ent-format type='description' length='255'"
 	 * @generated
 	 */
 	String getDescription();
@@ -65,6 +65,7 @@ public interface WebPreferenceType extends BizEntity {
 	 * @see #setWebPreferenceTypeId(String)
 	 * @see org.abchip.mimo.biz.content.preference.PreferencePackage#getWebPreferenceType_WebPreferenceTypeId()
 	 * @model id="true" required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */

@@ -79,6 +79,7 @@ import org.abchip.mimo.biz.entity.crypto.CryptoPackage;
 import org.abchip.mimo.biz.entity.crypto.impl.CryptoPackageImpl;
 import org.abchip.mimo.biz.entity.group.GroupPackage;
 import org.abchip.mimo.biz.entity.group.impl.GroupPackageImpl;
+import org.abchip.mimo.biz.entity.impl.EntityPackageImpl;
 import org.abchip.mimo.biz.entity.sequence.SequencePackage;
 import org.abchip.mimo.biz.entity.sequence.impl.SequencePackageImpl;
 import org.abchip.mimo.biz.entity.synchronization.SynchronizationPackage;
@@ -196,7 +197,6 @@ import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EGenericType;
-import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 
 import org.eclipse.emf.ecore.EReference;
@@ -336,6 +336,8 @@ public class DatasourcePackageImpl extends EPackageImpl implements DatasourcePac
 		SurveyPackageImpl theSurveyPackage = (SurveyPackageImpl)(registeredPackage instanceof SurveyPackageImpl ? registeredPackage : SurveyPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(WebsitePackage.eNS_URI);
 		WebsitePackageImpl theWebsitePackage = (WebsitePackageImpl)(registeredPackage instanceof WebsitePackageImpl ? registeredPackage : WebsitePackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(org.abchip.mimo.biz.entity.EntityPackage.eNS_URI);
+		EntityPackageImpl theEntityPackage = (EntityPackageImpl)(registeredPackage instanceof EntityPackageImpl ? registeredPackage : org.abchip.mimo.biz.entity.EntityPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(AuditPackage.eNS_URI);
 		AuditPackageImpl theAuditPackage = (AuditPackageImpl)(registeredPackage instanceof AuditPackageImpl ? registeredPackage : AuditPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(CryptoPackage.eNS_URI);
@@ -490,6 +492,7 @@ public class DatasourcePackageImpl extends EPackageImpl implements DatasourcePac
 		thePreferencePackage.createPackageContents();
 		theSurveyPackage.createPackageContents();
 		theWebsitePackage.createPackageContents();
+		theEntityPackage.createPackageContents();
 		theAuditPackage.createPackageContents();
 		theCryptoPackage.createPackageContents();
 		theGroupPackage.createPackageContents();
@@ -584,6 +587,7 @@ public class DatasourcePackageImpl extends EPackageImpl implements DatasourcePac
 		thePreferencePackage.initializePackageContents();
 		theSurveyPackage.initializePackageContents();
 		theWebsitePackage.initializePackageContents();
+		theEntityPackage.initializePackageContents();
 		theAuditPackage.initializePackageContents();
 		theCryptoPackage.initializePackageContents();
 		theGroupPackage.initializePackageContents();
@@ -689,66 +693,6 @@ public class DatasourcePackageImpl extends EPackageImpl implements DatasourcePac
 	 * @generated
 	 */
 	@Override
-	public EOperation getDataSource__ContentMetaDatas() {
-		return dataSourceEClass.getEOperations().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EOperation getDataSource__Contents() {
-		return dataSourceEClass.getEOperations().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EOperation getDataSource__DataResourceMetaDatas() {
-		return dataSourceEClass.getEOperations().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EOperation getDataSource__DataResources() {
-		return dataSourceEClass.getEOperations().get(3);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EOperation getDataSource__GeoPoints() {
-		return dataSourceEClass.getEOperations().get(4);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EOperation getDataSource__Parties() {
-		return dataSourceEClass.getEOperations().get(5);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public EAttribute getDataSource_Description() {
 		return (EAttribute)dataSourceEClass.getEStructuralFeatures().get(1);
 	}
@@ -789,16 +733,6 @@ public class DatasourcePackageImpl extends EPackageImpl implements DatasourcePac
 	 * @generated
 	 */
 	@Override
-	public EOperation getDataSourceType__DataSources() {
-		return dataSourceTypeEClass.getEOperations().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public DatasourceFactory getDatasourceFactory() {
 		return (DatasourceFactory)getEFactoryInstance();
 	}
@@ -826,17 +760,10 @@ public class DatasourcePackageImpl extends EPackageImpl implements DatasourcePac
 		createEAttribute(dataSourceEClass, DATA_SOURCE__DATA_SOURCE_ID);
 		createEAttribute(dataSourceEClass, DATA_SOURCE__DESCRIPTION);
 		createEReference(dataSourceEClass, DATA_SOURCE__DATA_SOURCE_TYPE_ID);
-		createEOperation(dataSourceEClass, DATA_SOURCE___CONTENT_META_DATAS);
-		createEOperation(dataSourceEClass, DATA_SOURCE___CONTENTS);
-		createEOperation(dataSourceEClass, DATA_SOURCE___DATA_RESOURCE_META_DATAS);
-		createEOperation(dataSourceEClass, DATA_SOURCE___DATA_RESOURCES);
-		createEOperation(dataSourceEClass, DATA_SOURCE___GEO_POINTS);
-		createEOperation(dataSourceEClass, DATA_SOURCE___PARTIES);
 
 		dataSourceTypeEClass = createEClass(DATA_SOURCE_TYPE);
 		createEAttribute(dataSourceTypeEClass, DATA_SOURCE_TYPE__DATA_SOURCE_TYPE_ID);
 		createEAttribute(dataSourceTypeEClass, DATA_SOURCE_TYPE__DESCRIPTION);
-		createEOperation(dataSourceTypeEClass, DATA_SOURCE_TYPE___DATA_SOURCES);
 	}
 
 	/**
@@ -879,34 +806,36 @@ public class DatasourcePackageImpl extends EPackageImpl implements DatasourcePac
 		g1.getETypeArguments().add(g2);
 		dataSourceTypeEClass.getEGenericSuperTypes().add(g1);
 
-		// Initialize classes, features, and operations; add parameters
+		// Initialize classes and features; add operations and parameters
 		initEClass(dataSourceEClass, DataSource.class, "DataSource", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getDataSource_DataSourceId(), ecorePackage.getEString(), "dataSourceId", null, 1, 1, DataSource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getDataSource_Description(), ecorePackage.getEString(), "description", null, 0, 1, DataSource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getDataSource_DataSourceTypeId(), this.getDataSourceType(), null, "dataSourceTypeId", null, 0, 1, DataSource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getDataSource_DataSourceTypeId().getEKeys().add(this.getDataSourceType_DataSourceTypeId());
 
-		initEOperation(getDataSource__ContentMetaDatas(), ecorePackage.getEString(), "contentMetaDatas", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(dataSourceEClass, ecorePackage.getEString(), "contentMetaDatas", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		initEOperation(getDataSource__Contents(), ecorePackage.getEString(), "contents", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(dataSourceEClass, ecorePackage.getEString(), "contents", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		initEOperation(getDataSource__DataResourceMetaDatas(), ecorePackage.getEString(), "dataResourceMetaDatas", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(dataSourceEClass, ecorePackage.getEString(), "dataResourceMetaDatas", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		initEOperation(getDataSource__DataResources(), ecorePackage.getEString(), "dataResources", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(dataSourceEClass, ecorePackage.getEString(), "dataResources", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		initEOperation(getDataSource__GeoPoints(), ecorePackage.getEString(), "geoPoints", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(dataSourceEClass, ecorePackage.getEString(), "geoPoints", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		initEOperation(getDataSource__Parties(), ecorePackage.getEString(), "parties", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(dataSourceEClass, ecorePackage.getEString(), "parties", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(dataSourceTypeEClass, DataSourceType.class, "DataSourceType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getDataSourceType_DataSourceTypeId(), ecorePackage.getEString(), "dataSourceTypeId", null, 1, 1, DataSourceType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getDataSourceType_Description(), ecorePackage.getEString(), "description", null, 0, 1, DataSourceType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEOperation(getDataSourceType__DataSources(), ecorePackage.getEString(), "dataSources", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(dataSourceTypeEClass, ecorePackage.getEString(), "dataSources", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		// Create annotations
 		// mimo-ent-frame
 		createMimoentframeAnnotations();
+		// mimo-ent-format
+		createMimoentformatAnnotations();
 		// mimo-ent-slot
 		createMimoentslotAnnotations();
 		// mimo-ent-domain
@@ -936,6 +865,93 @@ public class DatasourcePackageImpl extends EPackageImpl implements DatasourcePac
 	}
 
 	/**
+	 * Initializes the annotations for <b>mimo-ent-format</b>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void createMimoentformatAnnotations() {
+		String source = "mimo-ent-format";
+		addAnnotation
+		  (dataSourceEClass.getEOperations().get(0),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (dataSourceEClass.getEOperations().get(1),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (dataSourceEClass.getEOperations().get(2),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (dataSourceEClass.getEOperations().get(3),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (dataSourceEClass.getEOperations().get(4),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (dataSourceEClass.getEOperations().get(5),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (getDataSource_DataSourceId(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (getDataSource_Description(),
+		   source,
+		   new String[] {
+			   "type", "description",
+			   "length", "255"
+		   });
+		addAnnotation
+		  (dataSourceTypeEClass.getEOperations().get(0),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (getDataSourceType_DataSourceTypeId(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (getDataSourceType_Description(),
+		   source,
+		   new String[] {
+			   "type", "description",
+			   "length", "255"
+		   });
+	}
+
+	/**
 	 * Initializes the annotations for <b>mimo-ent-slot</b>.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -944,37 +960,37 @@ public class DatasourcePackageImpl extends EPackageImpl implements DatasourcePac
 	protected void createMimoentslotAnnotations() {
 		String source = "mimo-ent-slot";
 		addAnnotation
-		  (getDataSource__ContentMetaDatas(),
+		  (dataSourceEClass.getEOperations().get(0),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (getDataSource__Contents(),
+		  (dataSourceEClass.getEOperations().get(1),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (getDataSource__DataResourceMetaDatas(),
+		  (dataSourceEClass.getEOperations().get(2),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (getDataSource__DataResources(),
+		  (dataSourceEClass.getEOperations().get(3),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (getDataSource__GeoPoints(),
+		  (dataSourceEClass.getEOperations().get(4),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (getDataSource__Parties(),
+		  (dataSourceEClass.getEOperations().get(5),
 		   source,
 		   new String[] {
 			   "derived", "true"
@@ -986,7 +1002,7 @@ public class DatasourcePackageImpl extends EPackageImpl implements DatasourcePac
 			   "key", "true"
 		   });
 		addAnnotation
-		  (getDataSourceType__DataSources(),
+		  (dataSourceTypeEClass.getEOperations().get(0),
 		   source,
 		   new String[] {
 			   "derived", "true"
@@ -1008,7 +1024,7 @@ public class DatasourcePackageImpl extends EPackageImpl implements DatasourcePac
 	protected void createMimoentdomainAnnotations() {
 		String source = "mimo-ent-domain";
 		addAnnotation
-		  (getDataSource__ContentMetaDatas(),
+		  (dataSourceEClass.getEOperations().get(0),
 		   source,
 		   new String[] {
 			   "frame", "ContentMetaData",
@@ -1018,7 +1034,7 @@ public class DatasourcePackageImpl extends EPackageImpl implements DatasourcePac
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (getDataSource__Contents(),
+		  (dataSourceEClass.getEOperations().get(1),
 		   source,
 		   new String[] {
 			   "frame", "Content",
@@ -1028,7 +1044,7 @@ public class DatasourcePackageImpl extends EPackageImpl implements DatasourcePac
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (getDataSource__DataResourceMetaDatas(),
+		  (dataSourceEClass.getEOperations().get(2),
 		   source,
 		   new String[] {
 			   "frame", "DataResourceMetaData",
@@ -1038,7 +1054,7 @@ public class DatasourcePackageImpl extends EPackageImpl implements DatasourcePac
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (getDataSource__DataResources(),
+		  (dataSourceEClass.getEOperations().get(3),
 		   source,
 		   new String[] {
 			   "frame", "DataResource",
@@ -1048,7 +1064,7 @@ public class DatasourcePackageImpl extends EPackageImpl implements DatasourcePac
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (getDataSource__GeoPoints(),
+		  (dataSourceEClass.getEOperations().get(4),
 		   source,
 		   new String[] {
 			   "frame", "GeoPoint",
@@ -1058,7 +1074,7 @@ public class DatasourcePackageImpl extends EPackageImpl implements DatasourcePac
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (getDataSource__Parties(),
+		  (dataSourceEClass.getEOperations().get(5),
 		   source,
 		   new String[] {
 			   "frame", "Party",
@@ -1068,7 +1084,7 @@ public class DatasourcePackageImpl extends EPackageImpl implements DatasourcePac
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (getDataSourceType__DataSources(),
+		  (dataSourceTypeEClass.getEOperations().get(0),
 		   source,
 		   new String[] {
 			   "frame", "DataSource",

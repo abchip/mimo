@@ -10,7 +10,6 @@ package org.abchip.mimo.biz.content.data;
 import org.abchip.mimo.biz.BizPackage;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
@@ -136,51 +135,6 @@ public interface DataPackage extends EPackage {
 	int AUDIO_DATA_RESOURCE_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
 
 	/**
-	 * The operation id for the '<em>Isa</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int AUDIO_DATA_RESOURCE___ISA = BizPackage.BIZ_ENTITY___ISA;
-
-	/**
-	 * The operation id for the '<em>Get Name</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int AUDIO_DATA_RESOURCE___GET_NAME = BizPackage.BIZ_ENTITY___GET_NAME;
-
-	/**
-	 * The operation id for the '<em>Get URI</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int AUDIO_DATA_RESOURCE___GET_URI = BizPackage.BIZ_ENTITY___GET_URI;
-
-	/**
-	 * The operation id for the '<em>Is Proxy</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int AUDIO_DATA_RESOURCE___IS_PROXY = BizPackage.BIZ_ENTITY___IS_PROXY;
-
-	/**
-	 * The number of operations of the '<em>Audio Data Resource</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int AUDIO_DATA_RESOURCE_OPERATION_COUNT = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 0;
-
-	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.content.data.impl.CharacterSetImpl <em>Character Set</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -252,69 +206,6 @@ public interface DataPackage extends EPackage {
 	 * @ordered
 	 */
 	int CHARACTER_SET_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
-
-	/**
-	 * The operation id for the '<em>Isa</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CHARACTER_SET___ISA = BizPackage.BIZ_ENTITY___ISA;
-
-	/**
-	 * The operation id for the '<em>Get Name</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CHARACTER_SET___GET_NAME = BizPackage.BIZ_ENTITY___GET_NAME;
-
-	/**
-	 * The operation id for the '<em>Get URI</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CHARACTER_SET___GET_URI = BizPackage.BIZ_ENTITY___GET_URI;
-
-	/**
-	 * The operation id for the '<em>Is Proxy</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CHARACTER_SET___IS_PROXY = BizPackage.BIZ_ENTITY___IS_PROXY;
-
-	/**
-	 * The operation id for the '<em>Contents</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CHARACTER_SET___CONTENTS = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Data Resources</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CHARACTER_SET___DATA_RESOURCES = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 1;
-
-	/**
-	 * The number of operations of the '<em>Character Set</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CHARACTER_SET_OPERATION_COUNT = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 2;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.content.data.impl.DataCategoryImpl <em>Category</em>}' class.
@@ -397,69 +288,6 @@ public interface DataPackage extends EPackage {
 	 * @ordered
 	 */
 	int DATA_CATEGORY_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
-
-	/**
-	 * The operation id for the '<em>Isa</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DATA_CATEGORY___ISA = BizPackage.BIZ_ENTITY___ISA;
-
-	/**
-	 * The operation id for the '<em>Get Name</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DATA_CATEGORY___GET_NAME = BizPackage.BIZ_ENTITY___GET_NAME;
-
-	/**
-	 * The operation id for the '<em>Get URI</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DATA_CATEGORY___GET_URI = BizPackage.BIZ_ENTITY___GET_URI;
-
-	/**
-	 * The operation id for the '<em>Is Proxy</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DATA_CATEGORY___IS_PROXY = BizPackage.BIZ_ENTITY___IS_PROXY;
-
-	/**
-	 * The operation id for the '<em>Child Data Categories</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DATA_CATEGORY___CHILD_DATA_CATEGORIES = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Data Resources</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DATA_CATEGORY___DATA_RESOURCES = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 1;
-
-	/**
-	 * The number of operations of the '<em>Category</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DATA_CATEGORY_OPERATION_COUNT = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 2;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.content.data.impl.DataResourceImpl <em>Resource</em>}' class.
@@ -724,78 +552,6 @@ public interface DataPackage extends EPackage {
 	int DATA_RESOURCE_FEATURE_COUNT = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 23;
 
 	/**
-	 * The operation id for the '<em>Isa</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DATA_RESOURCE___ISA = BizPackage.BIZ_ENTITY_TYPED___ISA;
-
-	/**
-	 * The operation id for the '<em>Get Name</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DATA_RESOURCE___GET_NAME = BizPackage.BIZ_ENTITY_TYPED___GET_NAME;
-
-	/**
-	 * The operation id for the '<em>Get URI</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DATA_RESOURCE___GET_URI = BizPackage.BIZ_ENTITY_TYPED___GET_URI;
-
-	/**
-	 * The operation id for the '<em>Is Proxy</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DATA_RESOURCE___IS_PROXY = BizPackage.BIZ_ENTITY_TYPED___IS_PROXY;
-
-	/**
-	 * The operation id for the '<em>Get Type</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DATA_RESOURCE___GET_TYPE = BizPackage.BIZ_ENTITY_TYPED___GET_TYPE;
-
-	/**
-	 * The operation id for the '<em>Contents</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DATA_RESOURCE___CONTENTS = BizPackage.BIZ_ENTITY_TYPED_OPERATION_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Template Contents</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DATA_RESOURCE___TEMPLATE_CONTENTS = BizPackage.BIZ_ENTITY_TYPED_OPERATION_COUNT + 1;
-
-	/**
-	 * The number of operations of the '<em>Resource</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DATA_RESOURCE_OPERATION_COUNT = BizPackage.BIZ_ENTITY_TYPED_OPERATION_COUNT + 2;
-
-	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.content.data.impl.DataResourceAttributeImpl <em>Resource Attribute</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -885,51 +641,6 @@ public interface DataPackage extends EPackage {
 	 * @ordered
 	 */
 	int DATA_RESOURCE_ATTRIBUTE_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
-
-	/**
-	 * The operation id for the '<em>Isa</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DATA_RESOURCE_ATTRIBUTE___ISA = BizPackage.BIZ_ENTITY___ISA;
-
-	/**
-	 * The operation id for the '<em>Get Name</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DATA_RESOURCE_ATTRIBUTE___GET_NAME = BizPackage.BIZ_ENTITY___GET_NAME;
-
-	/**
-	 * The operation id for the '<em>Get URI</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DATA_RESOURCE_ATTRIBUTE___GET_URI = BizPackage.BIZ_ENTITY___GET_URI;
-
-	/**
-	 * The operation id for the '<em>Is Proxy</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DATA_RESOURCE_ATTRIBUTE___IS_PROXY = BizPackage.BIZ_ENTITY___IS_PROXY;
-
-	/**
-	 * The number of operations of the '<em>Resource Attribute</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DATA_RESOURCE_ATTRIBUTE_OPERATION_COUNT = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.content.data.impl.DataResourceMetaDataImpl <em>Resource Meta Data</em>}' class.
@@ -1023,51 +734,6 @@ public interface DataPackage extends EPackage {
 	int DATA_RESOURCE_META_DATA_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
 
 	/**
-	 * The operation id for the '<em>Isa</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DATA_RESOURCE_META_DATA___ISA = BizPackage.BIZ_ENTITY___ISA;
-
-	/**
-	 * The operation id for the '<em>Get Name</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DATA_RESOURCE_META_DATA___GET_NAME = BizPackage.BIZ_ENTITY___GET_NAME;
-
-	/**
-	 * The operation id for the '<em>Get URI</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DATA_RESOURCE_META_DATA___GET_URI = BizPackage.BIZ_ENTITY___GET_URI;
-
-	/**
-	 * The operation id for the '<em>Is Proxy</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DATA_RESOURCE_META_DATA___IS_PROXY = BizPackage.BIZ_ENTITY___IS_PROXY;
-
-	/**
-	 * The number of operations of the '<em>Resource Meta Data</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DATA_RESOURCE_META_DATA_OPERATION_COUNT = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 0;
-
-	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.content.data.impl.DataResourcePurposeImpl <em>Resource Purpose</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1139,51 +805,6 @@ public interface DataPackage extends EPackage {
 	 * @ordered
 	 */
 	int DATA_RESOURCE_PURPOSE_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
-
-	/**
-	 * The operation id for the '<em>Isa</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DATA_RESOURCE_PURPOSE___ISA = BizPackage.BIZ_ENTITY___ISA;
-
-	/**
-	 * The operation id for the '<em>Get Name</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DATA_RESOURCE_PURPOSE___GET_NAME = BizPackage.BIZ_ENTITY___GET_NAME;
-
-	/**
-	 * The operation id for the '<em>Get URI</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DATA_RESOURCE_PURPOSE___GET_URI = BizPackage.BIZ_ENTITY___GET_URI;
-
-	/**
-	 * The operation id for the '<em>Is Proxy</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DATA_RESOURCE_PURPOSE___IS_PROXY = BizPackage.BIZ_ENTITY___IS_PROXY;
-
-	/**
-	 * The number of operations of the '<em>Resource Purpose</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DATA_RESOURCE_PURPOSE_OPERATION_COUNT = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.content.data.impl.DataResourceRoleImpl <em>Resource Role</em>}' class.
@@ -1284,51 +905,6 @@ public interface DataPackage extends EPackage {
 	 * @ordered
 	 */
 	int DATA_RESOURCE_ROLE_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 5;
-
-	/**
-	 * The operation id for the '<em>Isa</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DATA_RESOURCE_ROLE___ISA = BizPackage.BIZ_ENTITY___ISA;
-
-	/**
-	 * The operation id for the '<em>Get Name</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DATA_RESOURCE_ROLE___GET_NAME = BizPackage.BIZ_ENTITY___GET_NAME;
-
-	/**
-	 * The operation id for the '<em>Get URI</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DATA_RESOURCE_ROLE___GET_URI = BizPackage.BIZ_ENTITY___GET_URI;
-
-	/**
-	 * The operation id for the '<em>Is Proxy</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DATA_RESOURCE_ROLE___IS_PROXY = BizPackage.BIZ_ENTITY___IS_PROXY;
-
-	/**
-	 * The number of operations of the '<em>Resource Role</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DATA_RESOURCE_ROLE_OPERATION_COUNT = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.content.data.impl.DataResourceTypeImpl <em>Resource Type</em>}' class.
@@ -1440,105 +1016,6 @@ public interface DataPackage extends EPackage {
 	int DATA_RESOURCE_TYPE_FEATURE_COUNT = BizPackage.BIZ_ENTITY_TYPE_FEATURE_COUNT + 5;
 
 	/**
-	 * The operation id for the '<em>Isa</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DATA_RESOURCE_TYPE___ISA = BizPackage.BIZ_ENTITY_TYPE___ISA;
-
-	/**
-	 * The operation id for the '<em>Get Name</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DATA_RESOURCE_TYPE___GET_NAME = BizPackage.BIZ_ENTITY_TYPE___GET_NAME;
-
-	/**
-	 * The operation id for the '<em>Get URI</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DATA_RESOURCE_TYPE___GET_URI = BizPackage.BIZ_ENTITY_TYPE___GET_URI;
-
-	/**
-	 * The operation id for the '<em>Is Proxy</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DATA_RESOURCE_TYPE___IS_PROXY = BizPackage.BIZ_ENTITY_TYPE___IS_PROXY;
-
-	/**
-	 * The operation id for the '<em>Get Frame</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DATA_RESOURCE_TYPE___GET_FRAME = BizPackage.BIZ_ENTITY_TYPE___GET_FRAME;
-
-	/**
-	 * The operation id for the '<em>Get Type Id</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DATA_RESOURCE_TYPE___GET_TYPE_ID = BizPackage.BIZ_ENTITY_TYPE___GET_TYPE_ID;
-
-	/**
-	 * The operation id for the '<em>Has Table</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DATA_RESOURCE_TYPE___HAS_TABLE = BizPackage.BIZ_ENTITY_TYPE___HAS_TABLE;
-
-	/**
-	 * The operation id for the '<em>Get Text</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DATA_RESOURCE_TYPE___GET_TEXT = BizPackage.BIZ_ENTITY_TYPE___GET_TEXT;
-
-	/**
-	 * The operation id for the '<em>Child Data Resource Types</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DATA_RESOURCE_TYPE___CHILD_DATA_RESOURCE_TYPES = BizPackage.BIZ_ENTITY_TYPE_OPERATION_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Data Resources</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DATA_RESOURCE_TYPE___DATA_RESOURCES = BizPackage.BIZ_ENTITY_TYPE_OPERATION_COUNT + 1;
-
-	/**
-	 * The number of operations of the '<em>Resource Type</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DATA_RESOURCE_TYPE_OPERATION_COUNT = BizPackage.BIZ_ENTITY_TYPE_OPERATION_COUNT + 2;
-
-	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.content.data.impl.DataResourceTypeAttrImpl <em>Resource Type Attr</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1621,51 +1098,6 @@ public interface DataPackage extends EPackage {
 	int DATA_RESOURCE_TYPE_ATTR_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
 
 	/**
-	 * The operation id for the '<em>Isa</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DATA_RESOURCE_TYPE_ATTR___ISA = BizPackage.BIZ_ENTITY___ISA;
-
-	/**
-	 * The operation id for the '<em>Get Name</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DATA_RESOURCE_TYPE_ATTR___GET_NAME = BizPackage.BIZ_ENTITY___GET_NAME;
-
-	/**
-	 * The operation id for the '<em>Get URI</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DATA_RESOURCE_TYPE_ATTR___GET_URI = BizPackage.BIZ_ENTITY___GET_URI;
-
-	/**
-	 * The operation id for the '<em>Is Proxy</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DATA_RESOURCE_TYPE_ATTR___IS_PROXY = BizPackage.BIZ_ENTITY___IS_PROXY;
-
-	/**
-	 * The number of operations of the '<em>Resource Type Attr</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DATA_RESOURCE_TYPE_ATTR_OPERATION_COUNT = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 0;
-
-	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.content.data.impl.DataTemplateTypeImpl <em>Template Type</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1746,60 +1178,6 @@ public interface DataPackage extends EPackage {
 	 * @ordered
 	 */
 	int DATA_TEMPLATE_TYPE_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
-
-	/**
-	 * The operation id for the '<em>Isa</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DATA_TEMPLATE_TYPE___ISA = BizPackage.BIZ_ENTITY___ISA;
-
-	/**
-	 * The operation id for the '<em>Get Name</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DATA_TEMPLATE_TYPE___GET_NAME = BizPackage.BIZ_ENTITY___GET_NAME;
-
-	/**
-	 * The operation id for the '<em>Get URI</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DATA_TEMPLATE_TYPE___GET_URI = BizPackage.BIZ_ENTITY___GET_URI;
-
-	/**
-	 * The operation id for the '<em>Is Proxy</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DATA_TEMPLATE_TYPE___IS_PROXY = BizPackage.BIZ_ENTITY___IS_PROXY;
-
-	/**
-	 * The operation id for the '<em>Data Resources</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DATA_TEMPLATE_TYPE___DATA_RESOURCES = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 0;
-
-	/**
-	 * The number of operations of the '<em>Template Type</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DATA_TEMPLATE_TYPE_OPERATION_COUNT = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 1;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.content.data.impl.ElectronicTextImpl <em>Electronic Text</em>}' class.
@@ -2073,78 +1451,6 @@ public interface DataPackage extends EPackage {
 	int ELECTRONIC_TEXT_FEATURE_COUNT = DATA_RESOURCE_FEATURE_COUNT + 1;
 
 	/**
-	 * The operation id for the '<em>Isa</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ELECTRONIC_TEXT___ISA = DATA_RESOURCE___ISA;
-
-	/**
-	 * The operation id for the '<em>Get Name</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ELECTRONIC_TEXT___GET_NAME = DATA_RESOURCE___GET_NAME;
-
-	/**
-	 * The operation id for the '<em>Get URI</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ELECTRONIC_TEXT___GET_URI = DATA_RESOURCE___GET_URI;
-
-	/**
-	 * The operation id for the '<em>Is Proxy</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ELECTRONIC_TEXT___IS_PROXY = DATA_RESOURCE___IS_PROXY;
-
-	/**
-	 * The operation id for the '<em>Get Type</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ELECTRONIC_TEXT___GET_TYPE = DATA_RESOURCE___GET_TYPE;
-
-	/**
-	 * The operation id for the '<em>Contents</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ELECTRONIC_TEXT___CONTENTS = DATA_RESOURCE___CONTENTS;
-
-	/**
-	 * The operation id for the '<em>Template Contents</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ELECTRONIC_TEXT___TEMPLATE_CONTENTS = DATA_RESOURCE___TEMPLATE_CONTENTS;
-
-	/**
-	 * The number of operations of the '<em>Electronic Text</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ELECTRONIC_TEXT_OPERATION_COUNT = DATA_RESOURCE_OPERATION_COUNT + 0;
-
-	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.content.data.impl.FileExtensionImpl <em>File Extension</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2216,51 +1522,6 @@ public interface DataPackage extends EPackage {
 	 * @ordered
 	 */
 	int FILE_EXTENSION_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
-
-	/**
-	 * The operation id for the '<em>Isa</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FILE_EXTENSION___ISA = BizPackage.BIZ_ENTITY___ISA;
-
-	/**
-	 * The operation id for the '<em>Get Name</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FILE_EXTENSION___GET_NAME = BizPackage.BIZ_ENTITY___GET_NAME;
-
-	/**
-	 * The operation id for the '<em>Get URI</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FILE_EXTENSION___GET_URI = BizPackage.BIZ_ENTITY___GET_URI;
-
-	/**
-	 * The operation id for the '<em>Is Proxy</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FILE_EXTENSION___IS_PROXY = BizPackage.BIZ_ENTITY___IS_PROXY;
-
-	/**
-	 * The number of operations of the '<em>File Extension</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FILE_EXTENSION_OPERATION_COUNT = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.content.data.impl.ImageDataResourceImpl <em>Image Data Resource</em>}' class.
@@ -2336,51 +1597,6 @@ public interface DataPackage extends EPackage {
 	int IMAGE_DATA_RESOURCE_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
 
 	/**
-	 * The operation id for the '<em>Isa</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int IMAGE_DATA_RESOURCE___ISA = BizPackage.BIZ_ENTITY___ISA;
-
-	/**
-	 * The operation id for the '<em>Get Name</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int IMAGE_DATA_RESOURCE___GET_NAME = BizPackage.BIZ_ENTITY___GET_NAME;
-
-	/**
-	 * The operation id for the '<em>Get URI</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int IMAGE_DATA_RESOURCE___GET_URI = BizPackage.BIZ_ENTITY___GET_URI;
-
-	/**
-	 * The operation id for the '<em>Is Proxy</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int IMAGE_DATA_RESOURCE___IS_PROXY = BizPackage.BIZ_ENTITY___IS_PROXY;
-
-	/**
-	 * The number of operations of the '<em>Image Data Resource</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int IMAGE_DATA_RESOURCE_OPERATION_COUNT = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 0;
-
-	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.content.data.impl.MetaDataPredicateImpl <em>Meta Data Predicate</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2452,69 +1668,6 @@ public interface DataPackage extends EPackage {
 	 * @ordered
 	 */
 	int META_DATA_PREDICATE_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
-
-	/**
-	 * The operation id for the '<em>Isa</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int META_DATA_PREDICATE___ISA = BizPackage.BIZ_ENTITY___ISA;
-
-	/**
-	 * The operation id for the '<em>Get Name</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int META_DATA_PREDICATE___GET_NAME = BizPackage.BIZ_ENTITY___GET_NAME;
-
-	/**
-	 * The operation id for the '<em>Get URI</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int META_DATA_PREDICATE___GET_URI = BizPackage.BIZ_ENTITY___GET_URI;
-
-	/**
-	 * The operation id for the '<em>Is Proxy</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int META_DATA_PREDICATE___IS_PROXY = BizPackage.BIZ_ENTITY___IS_PROXY;
-
-	/**
-	 * The operation id for the '<em>Content Meta Datas</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int META_DATA_PREDICATE___CONTENT_META_DATAS = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Data Resource Meta Datas</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int META_DATA_PREDICATE___DATA_RESOURCE_META_DATAS = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 1;
-
-	/**
-	 * The number of operations of the '<em>Meta Data Predicate</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int META_DATA_PREDICATE_OPERATION_COUNT = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 2;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.content.data.impl.MimeTypeImpl <em>Mime Type</em>}' class.
@@ -2590,87 +1743,6 @@ public interface DataPackage extends EPackage {
 	int MIME_TYPE_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
 
 	/**
-	 * The operation id for the '<em>Isa</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MIME_TYPE___ISA = BizPackage.BIZ_ENTITY___ISA;
-
-	/**
-	 * The operation id for the '<em>Get Name</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MIME_TYPE___GET_NAME = BizPackage.BIZ_ENTITY___GET_NAME;
-
-	/**
-	 * The operation id for the '<em>Get URI</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MIME_TYPE___GET_URI = BizPackage.BIZ_ENTITY___GET_URI;
-
-	/**
-	 * The operation id for the '<em>Is Proxy</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MIME_TYPE___IS_PROXY = BizPackage.BIZ_ENTITY___IS_PROXY;
-
-	/**
-	 * The operation id for the '<em>Communication Events</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MIME_TYPE___COMMUNICATION_EVENTS = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Contents</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MIME_TYPE___CONTENTS = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 1;
-
-	/**
-	 * The operation id for the '<em>Data Resources</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MIME_TYPE___DATA_RESOURCES = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 2;
-
-	/**
-	 * The operation id for the '<em>File Extensions</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MIME_TYPE___FILE_EXTENSIONS = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 3;
-
-	/**
-	 * The number of operations of the '<em>Mime Type</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MIME_TYPE_OPERATION_COUNT = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 4;
-
-	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.content.data.impl.MimeTypeHtmlTemplateImpl <em>Mime Type Html Template</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2744,51 +1816,6 @@ public interface DataPackage extends EPackage {
 	int MIME_TYPE_HTML_TEMPLATE_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
 
 	/**
-	 * The operation id for the '<em>Isa</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MIME_TYPE_HTML_TEMPLATE___ISA = BizPackage.BIZ_ENTITY___ISA;
-
-	/**
-	 * The operation id for the '<em>Get Name</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MIME_TYPE_HTML_TEMPLATE___GET_NAME = BizPackage.BIZ_ENTITY___GET_NAME;
-
-	/**
-	 * The operation id for the '<em>Get URI</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MIME_TYPE_HTML_TEMPLATE___GET_URI = BizPackage.BIZ_ENTITY___GET_URI;
-
-	/**
-	 * The operation id for the '<em>Is Proxy</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MIME_TYPE_HTML_TEMPLATE___IS_PROXY = BizPackage.BIZ_ENTITY___IS_PROXY;
-
-	/**
-	 * The number of operations of the '<em>Mime Type Html Template</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MIME_TYPE_HTML_TEMPLATE_OPERATION_COUNT = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 0;
-
-	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.content.data.impl.OtherDataResourceImpl <em>Other Data Resource</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2860,51 +1887,6 @@ public interface DataPackage extends EPackage {
 	 * @ordered
 	 */
 	int OTHER_DATA_RESOURCE_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
-
-	/**
-	 * The operation id for the '<em>Isa</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int OTHER_DATA_RESOURCE___ISA = BizPackage.BIZ_ENTITY___ISA;
-
-	/**
-	 * The operation id for the '<em>Get Name</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int OTHER_DATA_RESOURCE___GET_NAME = BizPackage.BIZ_ENTITY___GET_NAME;
-
-	/**
-	 * The operation id for the '<em>Get URI</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int OTHER_DATA_RESOURCE___GET_URI = BizPackage.BIZ_ENTITY___GET_URI;
-
-	/**
-	 * The operation id for the '<em>Is Proxy</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int OTHER_DATA_RESOURCE___IS_PROXY = BizPackage.BIZ_ENTITY___IS_PROXY;
-
-	/**
-	 * The number of operations of the '<em>Other Data Resource</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int OTHER_DATA_RESOURCE_OPERATION_COUNT = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.content.data.impl.VideoDataResourceImpl <em>Video Data Resource</em>}' class.
@@ -2981,52 +1963,6 @@ public interface DataPackage extends EPackage {
 
 
 	/**
-	 * The operation id for the '<em>Isa</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int VIDEO_DATA_RESOURCE___ISA = BizPackage.BIZ_ENTITY___ISA;
-
-	/**
-	 * The operation id for the '<em>Get Name</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int VIDEO_DATA_RESOURCE___GET_NAME = BizPackage.BIZ_ENTITY___GET_NAME;
-
-	/**
-	 * The operation id for the '<em>Get URI</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int VIDEO_DATA_RESOURCE___GET_URI = BizPackage.BIZ_ENTITY___GET_URI;
-
-	/**
-	 * The operation id for the '<em>Is Proxy</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int VIDEO_DATA_RESOURCE___IS_PROXY = BizPackage.BIZ_ENTITY___IS_PROXY;
-
-	/**
-	 * The number of operations of the '<em>Video Data Resource</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int VIDEO_DATA_RESOURCE_OPERATION_COUNT = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 0;
-
-
-	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.biz.content.data.AudioDataResource <em>Audio Data Resource</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3091,26 +2027,6 @@ public interface DataPackage extends EPackage {
 	EAttribute getCharacterSet_Description();
 
 	/**
-	 * Returns the meta object for the '{@link org.abchip.mimo.biz.content.data.CharacterSet#contents() <em>Contents</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Contents</em>' operation.
-	 * @see org.abchip.mimo.biz.content.data.CharacterSet#contents()
-	 * @generated
-	 */
-	EOperation getCharacterSet__Contents();
-
-	/**
-	 * Returns the meta object for the '{@link org.abchip.mimo.biz.content.data.CharacterSet#dataResources() <em>Data Resources</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Data Resources</em>' operation.
-	 * @see org.abchip.mimo.biz.content.data.CharacterSet#dataResources()
-	 * @generated
-	 */
-	EOperation getCharacterSet__DataResources();
-
-	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.biz.content.data.DataCategory <em>Category</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3152,26 +2068,6 @@ public interface DataPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getDataCategory_ParentCategoryId();
-
-	/**
-	 * Returns the meta object for the '{@link org.abchip.mimo.biz.content.data.DataCategory#childDataCategories() <em>Child Data Categories</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Child Data Categories</em>' operation.
-	 * @see org.abchip.mimo.biz.content.data.DataCategory#childDataCategories()
-	 * @generated
-	 */
-	EOperation getDataCategory__ChildDataCategories();
-
-	/**
-	 * Returns the meta object for the '{@link org.abchip.mimo.biz.content.data.DataCategory#dataResources() <em>Data Resources</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Data Resources</em>' operation.
-	 * @see org.abchip.mimo.biz.content.data.DataCategory#dataResources()
-	 * @generated
-	 */
-	EOperation getDataCategory__DataResources();
 
 	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.biz.content.data.DataResource <em>Resource</em>}'.
@@ -3435,26 +2331,6 @@ public interface DataPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getDataResource_ProductFeatureDataResources();
-
-	/**
-	 * Returns the meta object for the '{@link org.abchip.mimo.biz.content.data.DataResource#contents() <em>Contents</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Contents</em>' operation.
-	 * @see org.abchip.mimo.biz.content.data.DataResource#contents()
-	 * @generated
-	 */
-	EOperation getDataResource__Contents();
-
-	/**
-	 * Returns the meta object for the '{@link org.abchip.mimo.biz.content.data.DataResource#templateContents() <em>Template Contents</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Template Contents</em>' operation.
-	 * @see org.abchip.mimo.biz.content.data.DataResource#templateContents()
-	 * @generated
-	 */
-	EOperation getDataResource__TemplateContents();
 
 	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.biz.content.data.DataResourceAttribute <em>Resource Attribute</em>}'.
@@ -3727,26 +2603,6 @@ public interface DataPackage extends EPackage {
 	EAttribute getDataResourceType_DataResourceTypeAttrs();
 
 	/**
-	 * Returns the meta object for the '{@link org.abchip.mimo.biz.content.data.DataResourceType#childDataResourceTypes() <em>Child Data Resource Types</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Child Data Resource Types</em>' operation.
-	 * @see org.abchip.mimo.biz.content.data.DataResourceType#childDataResourceTypes()
-	 * @generated
-	 */
-	EOperation getDataResourceType__ChildDataResourceTypes();
-
-	/**
-	 * Returns the meta object for the '{@link org.abchip.mimo.biz.content.data.DataResourceType#dataResources() <em>Data Resources</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Data Resources</em>' operation.
-	 * @see org.abchip.mimo.biz.content.data.DataResourceType#dataResources()
-	 * @generated
-	 */
-	EOperation getDataResourceType__DataResources();
-
-	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.biz.content.data.DataResourceTypeAttr <em>Resource Type Attr</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3831,16 +2687,6 @@ public interface DataPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getDataTemplateType_Extension();
-
-	/**
-	 * Returns the meta object for the '{@link org.abchip.mimo.biz.content.data.DataTemplateType#dataResources() <em>Data Resources</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Data Resources</em>' operation.
-	 * @see org.abchip.mimo.biz.content.data.DataTemplateType#dataResources()
-	 * @generated
-	 */
-	EOperation getDataTemplateType__DataResources();
 
 	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.biz.content.data.ElectronicText <em>Electronic Text</em>}'.
@@ -3960,26 +2806,6 @@ public interface DataPackage extends EPackage {
 	EAttribute getMetaDataPredicate_Description();
 
 	/**
-	 * Returns the meta object for the '{@link org.abchip.mimo.biz.content.data.MetaDataPredicate#contentMetaDatas() <em>Content Meta Datas</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Content Meta Datas</em>' operation.
-	 * @see org.abchip.mimo.biz.content.data.MetaDataPredicate#contentMetaDatas()
-	 * @generated
-	 */
-	EOperation getMetaDataPredicate__ContentMetaDatas();
-
-	/**
-	 * Returns the meta object for the '{@link org.abchip.mimo.biz.content.data.MetaDataPredicate#dataResourceMetaDatas() <em>Data Resource Meta Datas</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Data Resource Meta Datas</em>' operation.
-	 * @see org.abchip.mimo.biz.content.data.MetaDataPredicate#dataResourceMetaDatas()
-	 * @generated
-	 */
-	EOperation getMetaDataPredicate__DataResourceMetaDatas();
-
-	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.biz.content.data.MimeType <em>Mime Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -4010,46 +2836,6 @@ public interface DataPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getMimeType_Description();
-
-	/**
-	 * Returns the meta object for the '{@link org.abchip.mimo.biz.content.data.MimeType#communicationEvents() <em>Communication Events</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Communication Events</em>' operation.
-	 * @see org.abchip.mimo.biz.content.data.MimeType#communicationEvents()
-	 * @generated
-	 */
-	EOperation getMimeType__CommunicationEvents();
-
-	/**
-	 * Returns the meta object for the '{@link org.abchip.mimo.biz.content.data.MimeType#contents() <em>Contents</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Contents</em>' operation.
-	 * @see org.abchip.mimo.biz.content.data.MimeType#contents()
-	 * @generated
-	 */
-	EOperation getMimeType__Contents();
-
-	/**
-	 * Returns the meta object for the '{@link org.abchip.mimo.biz.content.data.MimeType#dataResources() <em>Data Resources</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Data Resources</em>' operation.
-	 * @see org.abchip.mimo.biz.content.data.MimeType#dataResources()
-	 * @generated
-	 */
-	EOperation getMimeType__DataResources();
-
-	/**
-	 * Returns the meta object for the '{@link org.abchip.mimo.biz.content.data.MimeType#fileExtensions() <em>File Extensions</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>File Extensions</em>' operation.
-	 * @see org.abchip.mimo.biz.content.data.MimeType#fileExtensions()
-	 * @generated
-	 */
-	EOperation getMimeType__FileExtensions();
 
 	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.biz.content.data.MimeTypeHtmlTemplate <em>Mime Type Html Template</em>}'.
@@ -4222,22 +3008,6 @@ public interface DataPackage extends EPackage {
 		EAttribute CHARACTER_SET__DESCRIPTION = eINSTANCE.getCharacterSet_Description();
 
 		/**
-		 * The meta object literal for the '<em><b>Contents</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation CHARACTER_SET___CONTENTS = eINSTANCE.getCharacterSet__Contents();
-
-		/**
-		 * The meta object literal for the '<em><b>Data Resources</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation CHARACTER_SET___DATA_RESOURCES = eINSTANCE.getCharacterSet__DataResources();
-
-		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.biz.content.data.impl.DataCategoryImpl <em>Category</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -4270,22 +3040,6 @@ public interface DataPackage extends EPackage {
 		 * @generated
 		 */
 		EReference DATA_CATEGORY__PARENT_CATEGORY_ID = eINSTANCE.getDataCategory_ParentCategoryId();
-
-		/**
-		 * The meta object literal for the '<em><b>Child Data Categories</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation DATA_CATEGORY___CHILD_DATA_CATEGORIES = eINSTANCE.getDataCategory__ChildDataCategories();
-
-		/**
-		 * The meta object literal for the '<em><b>Data Resources</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation DATA_CATEGORY___DATA_RESOURCES = eINSTANCE.getDataCategory__DataResources();
 
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.biz.content.data.impl.DataResourceImpl <em>Resource</em>}' class.
@@ -4480,22 +3234,6 @@ public interface DataPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute DATA_RESOURCE__PRODUCT_FEATURE_DATA_RESOURCES = eINSTANCE.getDataResource_ProductFeatureDataResources();
-
-		/**
-		 * The meta object literal for the '<em><b>Contents</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation DATA_RESOURCE___CONTENTS = eINSTANCE.getDataResource__Contents();
-
-		/**
-		 * The meta object literal for the '<em><b>Template Contents</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation DATA_RESOURCE___TEMPLATE_CONTENTS = eINSTANCE.getDataResource__TemplateContents();
 
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.biz.content.data.impl.DataResourceAttributeImpl <em>Resource Attribute</em>}' class.
@@ -4708,22 +3446,6 @@ public interface DataPackage extends EPackage {
 		EAttribute DATA_RESOURCE_TYPE__DATA_RESOURCE_TYPE_ATTRS = eINSTANCE.getDataResourceType_DataResourceTypeAttrs();
 
 		/**
-		 * The meta object literal for the '<em><b>Child Data Resource Types</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation DATA_RESOURCE_TYPE___CHILD_DATA_RESOURCE_TYPES = eINSTANCE.getDataResourceType__ChildDataResourceTypes();
-
-		/**
-		 * The meta object literal for the '<em><b>Data Resources</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation DATA_RESOURCE_TYPE___DATA_RESOURCES = eINSTANCE.getDataResourceType__DataResources();
-
-		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.biz.content.data.impl.DataResourceTypeAttrImpl <em>Resource Type Attr</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -4790,14 +3512,6 @@ public interface DataPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute DATA_TEMPLATE_TYPE__EXTENSION = eINSTANCE.getDataTemplateType_Extension();
-
-		/**
-		 * The meta object literal for the '<em><b>Data Resources</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation DATA_TEMPLATE_TYPE___DATA_RESOURCES = eINSTANCE.getDataTemplateType__DataResources();
 
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.biz.content.data.impl.ElectronicTextImpl <em>Electronic Text</em>}' class.
@@ -4896,22 +3610,6 @@ public interface DataPackage extends EPackage {
 		EAttribute META_DATA_PREDICATE__DESCRIPTION = eINSTANCE.getMetaDataPredicate_Description();
 
 		/**
-		 * The meta object literal for the '<em><b>Content Meta Datas</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation META_DATA_PREDICATE___CONTENT_META_DATAS = eINSTANCE.getMetaDataPredicate__ContentMetaDatas();
-
-		/**
-		 * The meta object literal for the '<em><b>Data Resource Meta Datas</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation META_DATA_PREDICATE___DATA_RESOURCE_META_DATAS = eINSTANCE.getMetaDataPredicate__DataResourceMetaDatas();
-
-		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.biz.content.data.impl.MimeTypeImpl <em>Mime Type</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -4936,38 +3634,6 @@ public interface DataPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute MIME_TYPE__DESCRIPTION = eINSTANCE.getMimeType_Description();
-
-		/**
-		 * The meta object literal for the '<em><b>Communication Events</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation MIME_TYPE___COMMUNICATION_EVENTS = eINSTANCE.getMimeType__CommunicationEvents();
-
-		/**
-		 * The meta object literal for the '<em><b>Contents</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation MIME_TYPE___CONTENTS = eINSTANCE.getMimeType__Contents();
-
-		/**
-		 * The meta object literal for the '<em><b>Data Resources</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation MIME_TYPE___DATA_RESOURCES = eINSTANCE.getMimeType__DataResources();
-
-		/**
-		 * The meta object literal for the '<em><b>File Extensions</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation MIME_TYPE___FILE_EXTENSIONS = eINSTANCE.getMimeType__FileExtensions();
 
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.biz.content.data.impl.MimeTypeHtmlTemplateImpl <em>Mime Type Html Template</em>}' class.

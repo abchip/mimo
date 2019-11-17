@@ -143,7 +143,7 @@ public interface Invoice extends BizEntityTyped<InvoiceType> {
 	 * @return the value of the '<em>Description</em>' attribute.
 	 * @see #setDescription(String)
 	 * @see org.abchip.mimo.biz.accounting.invoice.InvoicePackage#getInvoice_Description()
-	 * @model
+	 * @model annotation="mimo-ent-format type='description' length='255'"
 	 * @generated
 	 */
 	String getDescription();
@@ -169,7 +169,7 @@ public interface Invoice extends BizEntityTyped<InvoiceType> {
 	 * @return the value of the '<em>Due Date</em>' attribute.
 	 * @see #setDueDate(Date)
 	 * @see org.abchip.mimo.biz.accounting.invoice.InvoicePackage#getInvoice_DueDate()
-	 * @model
+	 * @model annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getDueDate();
@@ -195,7 +195,7 @@ public interface Invoice extends BizEntityTyped<InvoiceType> {
 	 * @return the value of the '<em>Invoice Date</em>' attribute.
 	 * @see #setInvoiceDate(Date)
 	 * @see org.abchip.mimo.biz.accounting.invoice.InvoicePackage#getInvoice_InvoiceDate()
-	 * @model
+	 * @model annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getInvoiceDate();
@@ -221,7 +221,7 @@ public interface Invoice extends BizEntityTyped<InvoiceType> {
 	 * @return the value of the '<em>Invoice Message</em>' attribute.
 	 * @see #setInvoiceMessage(String)
 	 * @see org.abchip.mimo.biz.accounting.invoice.InvoicePackage#getInvoice_InvoiceMessage()
-	 * @model
+	 * @model annotation="mimo-ent-format type='long-varchar' length='255'"
 	 * @generated
 	 */
 	String getInvoiceMessage();
@@ -247,7 +247,7 @@ public interface Invoice extends BizEntityTyped<InvoiceType> {
 	 * @return the value of the '<em>Paid Date</em>' attribute.
 	 * @see #setPaidDate(Date)
 	 * @see org.abchip.mimo.biz.accounting.invoice.InvoicePackage#getInvoice_PaidDate()
-	 * @model
+	 * @model annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getPaidDate();
@@ -351,7 +351,7 @@ public interface Invoice extends BizEntityTyped<InvoiceType> {
 	 * @return the value of the '<em>Reference Number</em>' attribute.
 	 * @see #setReferenceNumber(String)
 	 * @see org.abchip.mimo.biz.accounting.invoice.InvoicePackage#getInvoice_ReferenceNumber()
-	 * @model
+	 * @model annotation="mimo-ent-format type='short-varchar' length='60'"
 	 * @generated
 	 */
 	String getReferenceNumber();
@@ -429,7 +429,9 @@ public interface Invoice extends BizEntityTyped<InvoiceType> {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Invoice Attributes</em>' attribute list.
 	 * @see org.abchip.mimo.biz.accounting.invoice.InvoicePackage#getInvoice_InvoiceAttributes()
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='InvoiceAttribute'"
 	 * @generated
 	 */
@@ -446,7 +448,9 @@ public interface Invoice extends BizEntityTyped<InvoiceType> {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Invoice Items</em>' attribute list.
 	 * @see org.abchip.mimo.biz.accounting.invoice.InvoicePackage#getInvoice_InvoiceItems()
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='InvoiceItem'"
 	 * @generated
 	 */
@@ -463,7 +467,9 @@ public interface Invoice extends BizEntityTyped<InvoiceType> {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Invoice Notes</em>' attribute list.
 	 * @see org.abchip.mimo.biz.accounting.invoice.InvoicePackage#getInvoice_InvoiceNotes()
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='InvoiceNote'"
 	 * @generated
 	 */
@@ -472,7 +478,8 @@ public interface Invoice extends BizEntityTyped<InvoiceType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='AcctgTrans' route='invoiceId'"
 	 * @generated
 	 */
@@ -481,7 +488,8 @@ public interface Invoice extends BizEntityTyped<InvoiceType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='InvoiceTerm' route='invoiceId'"
 	 * @generated
 	 */
@@ -490,7 +498,8 @@ public interface Invoice extends BizEntityTyped<InvoiceType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='PaymentApplication' route='invoiceId'"
 	 * @generated
 	 */
@@ -499,7 +508,8 @@ public interface Invoice extends BizEntityTyped<InvoiceType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='TimeEntry' route='invoiceId'"
 	 * @generated
 	 */
@@ -543,6 +553,7 @@ public interface Invoice extends BizEntityTyped<InvoiceType> {
 	 * @see #setInvoiceId(String)
 	 * @see org.abchip.mimo.biz.accounting.invoice.InvoicePackage#getInvoice_InvoiceId()
 	 * @model id="true" required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */

@@ -116,7 +116,7 @@ public interface SalesOpportunity extends BizEntity {
 	 * @return the value of the '<em>Data Source Id</em>' attribute.
 	 * @see #setDataSourceId(String)
 	 * @see org.abchip.mimo.biz.marketing.opportunity.OpportunityPackage#getSalesOpportunity_DataSourceId()
-	 * @model
+	 * @model annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	String getDataSourceId();
@@ -142,7 +142,7 @@ public interface SalesOpportunity extends BizEntity {
 	 * @return the value of the '<em>Description</em>' attribute.
 	 * @see #setDescription(String)
 	 * @see org.abchip.mimo.biz.marketing.opportunity.OpportunityPackage#getSalesOpportunity_Description()
-	 * @model
+	 * @model annotation="mimo-ent-format type='very-long'"
 	 * @generated
 	 */
 	String getDescription();
@@ -168,7 +168,7 @@ public interface SalesOpportunity extends BizEntity {
 	 * @return the value of the '<em>Estimated Amount</em>' attribute.
 	 * @see #setEstimatedAmount(BigDecimal)
 	 * @see org.abchip.mimo.biz.marketing.opportunity.OpportunityPackage#getSalesOpportunity_EstimatedAmount()
-	 * @model
+	 * @model annotation="mimo-ent-format type='currency-amount' precision='18' scale='2'"
 	 * @generated
 	 */
 	BigDecimal getEstimatedAmount();
@@ -194,7 +194,7 @@ public interface SalesOpportunity extends BizEntity {
 	 * @return the value of the '<em>Estimated Close Date</em>' attribute.
 	 * @see #setEstimatedCloseDate(Date)
 	 * @see org.abchip.mimo.biz.marketing.opportunity.OpportunityPackage#getSalesOpportunity_EstimatedCloseDate()
-	 * @model
+	 * @model annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getEstimatedCloseDate();
@@ -220,7 +220,7 @@ public interface SalesOpportunity extends BizEntity {
 	 * @return the value of the '<em>Estimated Probability</em>' attribute.
 	 * @see #setEstimatedProbability(BigDecimal)
 	 * @see org.abchip.mimo.biz.marketing.opportunity.OpportunityPackage#getSalesOpportunity_EstimatedProbability()
-	 * @model
+	 * @model annotation="mimo-ent-format type='fixed-point' precision='18' scale='6'"
 	 * @generated
 	 */
 	BigDecimal getEstimatedProbability();
@@ -272,7 +272,7 @@ public interface SalesOpportunity extends BizEntity {
 	 * @return the value of the '<em>Next Step</em>' attribute.
 	 * @see #setNextStep(String)
 	 * @see org.abchip.mimo.biz.marketing.opportunity.OpportunityPackage#getSalesOpportunity_NextStep()
-	 * @model
+	 * @model annotation="mimo-ent-format type='very-long'"
 	 * @generated
 	 */
 	String getNextStep();
@@ -298,7 +298,7 @@ public interface SalesOpportunity extends BizEntity {
 	 * @return the value of the '<em>Next Step Date</em>' attribute.
 	 * @see #setNextStepDate(Date)
 	 * @see org.abchip.mimo.biz.marketing.opportunity.OpportunityPackage#getSalesOpportunity_NextStepDate()
-	 * @model
+	 * @model annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getNextStepDate();
@@ -324,7 +324,7 @@ public interface SalesOpportunity extends BizEntity {
 	 * @return the value of the '<em>Opportunity Name</em>' attribute.
 	 * @see #setOpportunityName(String)
 	 * @see org.abchip.mimo.biz.marketing.opportunity.OpportunityPackage#getSalesOpportunity_OpportunityName()
-	 * @model
+	 * @model annotation="mimo-ent-format type='name' length='100'"
 	 * @generated
 	 */
 	String getOpportunityName();
@@ -377,6 +377,7 @@ public interface SalesOpportunity extends BizEntity {
 	 * @see #setSalesOpportunityId(String)
 	 * @see org.abchip.mimo.biz.marketing.opportunity.OpportunityPackage#getSalesOpportunity_SalesOpportunityId()
 	 * @model id="true" required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
@@ -429,7 +430,9 @@ public interface SalesOpportunity extends BizEntity {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Sales Opportunity Competitors</em>' attribute list.
 	 * @see org.abchip.mimo.biz.marketing.opportunity.OpportunityPackage#getSalesOpportunity_SalesOpportunityCompetitors()
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='SalesOpportunityCompetitor'"
 	 * @generated
 	 */
@@ -446,7 +449,9 @@ public interface SalesOpportunity extends BizEntity {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Sales Opportunity Quotes</em>' attribute list.
 	 * @see org.abchip.mimo.biz.marketing.opportunity.OpportunityPackage#getSalesOpportunity_SalesOpportunityQuotes()
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='SalesOpportunityQuote'"
 	 * @generated
 	 */
@@ -463,7 +468,9 @@ public interface SalesOpportunity extends BizEntity {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Sales Opportunity Trck Codes</em>' attribute list.
 	 * @see org.abchip.mimo.biz.marketing.opportunity.OpportunityPackage#getSalesOpportunity_SalesOpportunityTrckCodes()
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='SalesOpportunityTrckCode'"
 	 * @generated
 	 */
@@ -480,7 +487,9 @@ public interface SalesOpportunity extends BizEntity {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Sales Opportunity Work Efforts</em>' attribute list.
 	 * @see org.abchip.mimo.biz.marketing.opportunity.OpportunityPackage#getSalesOpportunity_SalesOpportunityWorkEfforts()
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='SalesOpportunityWorkEffort'"
 	 * @generated
 	 */
@@ -489,7 +498,8 @@ public interface SalesOpportunity extends BizEntity {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='InvoiceItem' route='salesOpportunityId'"
 	 * @generated
 	 */
@@ -498,7 +508,8 @@ public interface SalesOpportunity extends BizEntity {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='OrderItem' route='salesOpportunityId'"
 	 * @generated
 	 */
@@ -507,7 +518,8 @@ public interface SalesOpportunity extends BizEntity {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='SalesOpportunityHistory' route='salesOpportunityId'"
 	 * @generated
 	 */

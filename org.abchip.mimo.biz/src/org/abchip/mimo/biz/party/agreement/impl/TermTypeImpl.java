@@ -7,13 +7,11 @@
  */
 package org.abchip.mimo.biz.party.agreement.impl;
 
-import java.lang.reflect.InvocationTargetException;
 import java.util.List;
 
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.party.agreement.AgreementPackage;
 import org.abchip.mimo.biz.party.agreement.TermType;
-import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 
 /**
@@ -195,26 +193,6 @@ public class TermTypeImpl extends BizEntityImpl implements TermType {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
-		switch (operationID) {
-			case AgreementPackage.TERM_TYPE___AGREEMENT_TERMS:
-				return agreementTerms();
-			case AgreementPackage.TERM_TYPE___BILLING_ACCOUNT_TERMS:
-				return billingAccountTerms();
-			case AgreementPackage.TERM_TYPE___CHILD_TERM_TYPES:
-				return childTermTypes();
-			case AgreementPackage.TERM_TYPE___INVOICE_TERMS:
-				return invoiceTerms();
-		}
-		return super.eInvoke(operationID, arguments);
 	}
 
 } //TermTypeImpl

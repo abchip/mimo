@@ -39,6 +39,7 @@ public interface ProductPromoCodeEmail extends BizEntity {
 	 * @see #setEmailAddress(String)
 	 * @see org.abchip.mimo.biz.product.promo.PromoPackage#getProductPromoCodeEmail_EmailAddress()
 	 * @model required="true"
+	 *        annotation="mimo-ent-format type='email' length='320'"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */

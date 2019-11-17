@@ -68,6 +68,26 @@ public class ProductStorePaymentSettingImpl extends BizEntityImpl implements Pro
 	 * @generated
 	 */
 	@Override
+	public boolean isApplyToAllProducts() {
+		return (Boolean)eGet(StorePackage.Literals.PRODUCT_STORE_PAYMENT_SETTING__APPLY_TO_ALL_PRODUCTS, true);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setApplyToAllProducts(boolean newApplyToAllProducts) {
+		eSet(StorePackage.Literals.PRODUCT_STORE_PAYMENT_SETTING__APPLY_TO_ALL_PRODUCTS, newApplyToAllProducts);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public CustomMethod getPaymentCustomMethodId() {
 		return (CustomMethod)eGet(StorePackage.Literals.PRODUCT_STORE_PAYMENT_SETTING__PAYMENT_CUSTOM_METHOD_ID, true);
 	}
@@ -180,26 +200,6 @@ public class ProductStorePaymentSettingImpl extends BizEntityImpl implements Pro
 	@Override
 	public void setPaymentServiceTypeEnumId(Enumeration newPaymentServiceTypeEnumId) {
 		eSet(StorePackage.Literals.PRODUCT_STORE_PAYMENT_SETTING__PAYMENT_SERVICE_TYPE_ENUM_ID, newPaymentServiceTypeEnumId);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public boolean isApplyToAllProducts() {
-		return (Boolean)eGet(StorePackage.Literals.PRODUCT_STORE_PAYMENT_SETTING__APPLY_TO_ALL_PRODUCTS, true);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void setApplyToAllProducts(boolean newApplyToAllProducts) {
-		eSet(StorePackage.Literals.PRODUCT_STORE_PAYMENT_SETTING__APPLY_TO_ALL_PRODUCTS, newApplyToAllProducts);
 	}
 
 	/**

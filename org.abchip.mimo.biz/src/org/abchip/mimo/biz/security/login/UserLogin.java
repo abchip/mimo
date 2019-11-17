@@ -60,7 +60,7 @@ public interface UserLogin extends BizEntity {
 	 * @return the value of the '<em>Current Password</em>' attribute.
 	 * @see #setCurrentPassword(String)
 	 * @see org.abchip.mimo.biz.security.login.LoginPackage#getUserLogin_CurrentPassword()
-	 * @model
+	 * @model annotation="mimo-ent-format type='long-varchar' length='255'"
 	 * @generated
 	 */
 	String getCurrentPassword();
@@ -86,7 +86,7 @@ public interface UserLogin extends BizEntity {
 	 * @return the value of the '<em>Disabled By</em>' attribute.
 	 * @see #setDisabledBy(String)
 	 * @see org.abchip.mimo.biz.security.login.LoginPackage#getUserLogin_DisabledBy()
-	 * @model
+	 * @model annotation="mimo-ent-format type='id-vlong' length='255'"
 	 * @generated
 	 */
 	String getDisabledBy();
@@ -112,7 +112,7 @@ public interface UserLogin extends BizEntity {
 	 * @return the value of the '<em>Disabled Date Time</em>' attribute.
 	 * @see #setDisabledDateTime(Date)
 	 * @see org.abchip.mimo.biz.security.login.LoginPackage#getUserLogin_DisabledDateTime()
-	 * @model
+	 * @model annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getDisabledDateTime();
@@ -138,7 +138,7 @@ public interface UserLogin extends BizEntity {
 	 * @return the value of the '<em>Enabled</em>' attribute.
 	 * @see #setEnabled(boolean)
 	 * @see org.abchip.mimo.biz.security.login.LoginPackage#getUserLogin_Enabled()
-	 * @model
+	 * @model annotation="mimo-ent-format type='indicator' length='1'"
 	 * @generated
 	 */
 	boolean isEnabled();
@@ -164,7 +164,7 @@ public interface UserLogin extends BizEntity {
 	 * @return the value of the '<em>External Auth Id</em>' attribute.
 	 * @see #setExternalAuthId(String)
 	 * @see org.abchip.mimo.biz.security.login.LoginPackage#getUserLogin_ExternalAuthId()
-	 * @model
+	 * @model annotation="mimo-ent-format type='id-vlong' length='255'"
 	 * @generated
 	 */
 	String getExternalAuthId();
@@ -190,7 +190,7 @@ public interface UserLogin extends BizEntity {
 	 * @return the value of the '<em>Has Logged Out</em>' attribute.
 	 * @see #setHasLoggedOut(boolean)
 	 * @see org.abchip.mimo.biz.security.login.LoginPackage#getUserLogin_HasLoggedOut()
-	 * @model
+	 * @model annotation="mimo-ent-format type='indicator' length='1'"
 	 * @generated
 	 */
 	boolean isHasLoggedOut();
@@ -216,7 +216,7 @@ public interface UserLogin extends BizEntity {
 	 * @return the value of the '<em>Is System</em>' attribute.
 	 * @see #setIsSystem(boolean)
 	 * @see org.abchip.mimo.biz.security.login.LoginPackage#getUserLogin_IsSystem()
-	 * @model
+	 * @model annotation="mimo-ent-format type='indicator' length='1'"
 	 * @generated
 	 */
 	boolean isIsSystem();
@@ -242,7 +242,7 @@ public interface UserLogin extends BizEntity {
 	 * @return the value of the '<em>Last Currency Uom</em>' attribute.
 	 * @see #setLastCurrencyUom(String)
 	 * @see org.abchip.mimo.biz.security.login.LoginPackage#getUserLogin_LastCurrencyUom()
-	 * @model
+	 * @model annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	String getLastCurrencyUom();
@@ -268,7 +268,7 @@ public interface UserLogin extends BizEntity {
 	 * @return the value of the '<em>Last Locale</em>' attribute.
 	 * @see #setLastLocale(String)
 	 * @see org.abchip.mimo.biz.security.login.LoginPackage#getUserLogin_LastLocale()
-	 * @model
+	 * @model annotation="mimo-ent-format type='very-short' length='10'"
 	 * @generated
 	 */
 	String getLastLocale();
@@ -294,7 +294,7 @@ public interface UserLogin extends BizEntity {
 	 * @return the value of the '<em>Last Time Zone</em>' attribute.
 	 * @see #setLastTimeZone(String)
 	 * @see org.abchip.mimo.biz.security.login.LoginPackage#getUserLogin_LastTimeZone()
-	 * @model
+	 * @model annotation="mimo-ent-format type='id-long' length='60'"
 	 * @generated
 	 */
 	String getLastTimeZone();
@@ -346,7 +346,7 @@ public interface UserLogin extends BizEntity {
 	 * @return the value of the '<em>Password Hint</em>' attribute.
 	 * @see #setPasswordHint(String)
 	 * @see org.abchip.mimo.biz.security.login.LoginPackage#getUserLogin_PasswordHint()
-	 * @model
+	 * @model annotation="mimo-ent-format type='description' length='255'"
 	 * @generated
 	 */
 	String getPasswordHint();
@@ -372,7 +372,7 @@ public interface UserLogin extends BizEntity {
 	 * @return the value of the '<em>Require Password Change</em>' attribute.
 	 * @see #setRequirePasswordChange(boolean)
 	 * @see org.abchip.mimo.biz.security.login.LoginPackage#getUserLogin_RequirePasswordChange()
-	 * @model
+	 * @model annotation="mimo-ent-format type='indicator' length='1'"
 	 * @generated
 	 */
 	boolean isRequirePasswordChange();
@@ -398,7 +398,7 @@ public interface UserLogin extends BizEntity {
 	 * @return the value of the '<em>Successive Failed Logins</em>' attribute.
 	 * @see #setSuccessiveFailedLogins(long)
 	 * @see org.abchip.mimo.biz.security.login.LoginPackage#getUserLogin_SuccessiveFailedLogins()
-	 * @model
+	 * @model annotation="mimo-ent-format type='numeric' precision='20' scale='0'"
 	 * @generated
 	 */
 	long getSuccessiveFailedLogins();
@@ -424,7 +424,7 @@ public interface UserLogin extends BizEntity {
 	 * @return the value of the '<em>User Ldap Dn</em>' attribute.
 	 * @see #setUserLdapDn(String)
 	 * @see org.abchip.mimo.biz.security.login.LoginPackage#getUserLogin_UserLdapDn()
-	 * @model
+	 * @model annotation="mimo-ent-format type='id-vlong' length='255'"
 	 * @generated
 	 */
 	String getUserLdapDn();
@@ -451,6 +451,7 @@ public interface UserLogin extends BizEntity {
 	 * @see #setUserLoginId(String)
 	 * @see org.abchip.mimo.biz.security.login.LoginPackage#getUserLogin_UserLoginId()
 	 * @model id="true" required="true"
+	 *        annotation="mimo-ent-format type='id-vlong' length='255'"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
@@ -477,7 +478,9 @@ public interface UserLogin extends BizEntity {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>User Login Histories</em>' attribute list.
 	 * @see org.abchip.mimo.biz.security.login.LoginPackage#getUserLogin_UserLoginHistories()
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-format type='id-vlong' length='255'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='UserLoginHistory'"
 	 * @generated
 	 */
@@ -494,7 +497,9 @@ public interface UserLogin extends BizEntity {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>User Login Password Histories</em>' attribute list.
 	 * @see org.abchip.mimo.biz.security.login.LoginPackage#getUserLogin_UserLoginPasswordHistories()
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-format type='id-vlong' length='255'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='UserLoginPasswordHistory'"
 	 * @generated
 	 */
@@ -511,7 +516,9 @@ public interface UserLogin extends BizEntity {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>User Preferences</em>' attribute list.
 	 * @see org.abchip.mimo.biz.security.login.LoginPackage#getUserLogin_UserPreferences()
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-format type='id-vlong' length='255'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='UserPreference'"
 	 * @generated
 	 */
@@ -520,7 +527,8 @@ public interface UserLogin extends BizEntity {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id-vlong' length='255'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='Timesheet' route='approvedByUserLoginId'"
 	 * @generated
 	 */
@@ -529,7 +537,8 @@ public interface UserLogin extends BizEntity {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id-vlong' length='255'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='JobSandbox' route='authUserLoginId'"
 	 * @generated
 	 */
@@ -538,7 +547,8 @@ public interface UserLogin extends BizEntity {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id-vlong' length='255'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='BudgetStatus' route='changeByUserLoginId'"
 	 * @generated
 	 */
@@ -547,7 +557,8 @@ public interface UserLogin extends BizEntity {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id-vlong' length='255'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='CustRequestStatus' route='changeByUserLoginId'"
 	 * @generated
 	 */
@@ -556,7 +567,8 @@ public interface UserLogin extends BizEntity {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id-vlong' length='255'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='OrderItem' route='changeByUserLoginId'"
 	 * @generated
 	 */
@@ -565,7 +577,8 @@ public interface UserLogin extends BizEntity {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id-vlong' length='255'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='RequirementStatus' route='changeByUserLoginId'"
 	 * @generated
 	 */
@@ -574,7 +587,8 @@ public interface UserLogin extends BizEntity {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id-vlong' length='255'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ReturnStatus' route='changeByUserLoginId'"
 	 * @generated
 	 */
@@ -583,7 +597,8 @@ public interface UserLogin extends BizEntity {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id-vlong' length='255'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ShipmentStatus' route='changeByUserLoginId'"
 	 * @generated
 	 */
@@ -592,7 +607,8 @@ public interface UserLogin extends BizEntity {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id-vlong' length='255'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='TestingStatus' route='changeByUserLoginId'"
 	 * @generated
 	 */
@@ -601,7 +617,8 @@ public interface UserLogin extends BizEntity {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id-vlong' length='255'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='PicklistStatusHistory' route='changeUserLoginId'"
 	 * @generated
 	 */
@@ -610,7 +627,8 @@ public interface UserLogin extends BizEntity {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id-vlong' length='255'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ProductPriceChange' route='changedByUserLogin'"
 	 * @generated
 	 */
@@ -619,7 +637,8 @@ public interface UserLogin extends BizEntity {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id-vlong' length='255'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ContactList' route='createdByUserLogin'"
 	 * @generated
 	 */
@@ -628,7 +647,8 @@ public interface UserLogin extends BizEntity {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id-vlong' length='255'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='Content' route='createdByUserLogin'"
 	 * @generated
 	 */
@@ -637,7 +657,8 @@ public interface UserLogin extends BizEntity {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id-vlong' length='255'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='DataResource' route='createdByUserLogin'"
 	 * @generated
 	 */
@@ -646,7 +667,8 @@ public interface UserLogin extends BizEntity {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id-vlong' length='255'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='OrderHeader' route='createdBy'"
 	 * @generated
 	 */
@@ -655,7 +677,8 @@ public interface UserLogin extends BizEntity {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id-vlong' length='255'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='Party' route='createdByUserLogin'"
 	 * @generated
 	 */
@@ -664,7 +687,8 @@ public interface UserLogin extends BizEntity {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id-vlong' length='255'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ProductPromoCode' route='createdByUserLogin'"
 	 * @generated
 	 */
@@ -673,7 +697,8 @@ public interface UserLogin extends BizEntity {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id-vlong' length='255'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ProductPromo' route='createdByUserLogin'"
 	 * @generated
 	 */
@@ -682,7 +707,8 @@ public interface UserLogin extends BizEntity {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id-vlong' length='255'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='Product' route='createdByUserLogin'"
 	 * @generated
 	 */
@@ -691,7 +717,8 @@ public interface UserLogin extends BizEntity {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id-vlong' length='255'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='SalesForecast' route='createdByUserLoginId'"
 	 * @generated
 	 */
@@ -700,7 +727,8 @@ public interface UserLogin extends BizEntity {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id-vlong' length='255'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='OrderItem' route='dontCancelSetUserLogin'"
 	 * @generated
 	 */
@@ -709,7 +737,8 @@ public interface UserLogin extends BizEntity {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id-vlong' length='255'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ItemIssuance' route='issuedByUserLoginId'"
 	 * @generated
 	 */
@@ -718,7 +747,8 @@ public interface UserLogin extends BizEntity {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id-vlong' length='255'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ContactList' route='lastModifiedByUserLogin'"
 	 * @generated
 	 */
@@ -727,7 +757,8 @@ public interface UserLogin extends BizEntity {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id-vlong' length='255'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='Content' route='lastModifiedByUserLogin'"
 	 * @generated
 	 */
@@ -736,7 +767,8 @@ public interface UserLogin extends BizEntity {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id-vlong' length='255'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='DataResource' route='lastModifiedByUserLogin'"
 	 * @generated
 	 */
@@ -745,7 +777,8 @@ public interface UserLogin extends BizEntity {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id-vlong' length='255'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='Party' route='lastModifiedByUserLogin'"
 	 * @generated
 	 */
@@ -754,7 +787,8 @@ public interface UserLogin extends BizEntity {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id-vlong' length='255'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ProductPromoCode' route='lastModifiedByUserLogin'"
 	 * @generated
 	 */
@@ -763,7 +797,8 @@ public interface UserLogin extends BizEntity {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id-vlong' length='255'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ProductPromo' route='lastModifiedByUserLogin'"
 	 * @generated
 	 */
@@ -772,7 +807,8 @@ public interface UserLogin extends BizEntity {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id-vlong' length='255'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='Product' route='lastModifiedByUserLogin'"
 	 * @generated
 	 */
@@ -781,7 +817,8 @@ public interface UserLogin extends BizEntity {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id-vlong' length='255'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='SalesForecastHistory' route='modifiedByUserLoginId'"
 	 * @generated
 	 */
@@ -790,7 +827,8 @@ public interface UserLogin extends BizEntity {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id-vlong' length='255'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='SalesForecast' route='modifiedByUserLoginId'"
 	 * @generated
 	 */
@@ -799,7 +837,8 @@ public interface UserLogin extends BizEntity {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id-vlong' length='255'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='OrderAdjustment' route='createdByUserLogin'"
 	 * @generated
 	 */
@@ -808,7 +847,8 @@ public interface UserLogin extends BizEntity {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id-vlong' length='255'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='OrderItemChange' route='changeUserLogin'"
 	 * @generated
 	 */
@@ -817,7 +857,8 @@ public interface UserLogin extends BizEntity {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id-vlong' length='255'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='OrderPaymentPreference' route='createdByUserLogin'"
 	 * @generated
 	 */
@@ -826,7 +867,8 @@ public interface UserLogin extends BizEntity {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id-vlong' length='255'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='OrderStatus' route='statusUserLogin'"
 	 * @generated
 	 */
@@ -835,7 +877,8 @@ public interface UserLogin extends BizEntity {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id-vlong' length='255'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ProductReview' route='userLoginId'"
 	 * @generated
 	 */
@@ -844,7 +887,8 @@ public interface UserLogin extends BizEntity {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id-vlong' length='255'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='QuoteAdjustment' route='createdByUserLogin'"
 	 * @generated
 	 */
@@ -853,7 +897,8 @@ public interface UserLogin extends BizEntity {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id-vlong' length='255'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ReturnAdjustment' route='createdByUserLogin'"
 	 * @generated
 	 */
@@ -862,7 +907,8 @@ public interface UserLogin extends BizEntity {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id-vlong' length='255'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ReturnHeader' route='createdBy'"
 	 * @generated
 	 */
@@ -871,7 +917,8 @@ public interface UserLogin extends BizEntity {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id-vlong' length='255'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='JobSandbox' route='runAsUser'"
 	 * @generated
 	 */
@@ -880,7 +927,8 @@ public interface UserLogin extends BizEntity {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id-vlong' length='255'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='SalesOpportunity' route='createdByUserLogin'"
 	 * @generated
 	 */
@@ -889,7 +937,8 @@ public interface UserLogin extends BizEntity {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id-vlong' length='255'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='SalesOpportunityHistory' route='modifiedByUserLogin'"
 	 * @generated
 	 */
@@ -898,7 +947,8 @@ public interface UserLogin extends BizEntity {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id-vlong' length='255'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ShipmentReceipt' route='receivedByUserLoginId'"
 	 * @generated
 	 */
@@ -907,7 +957,9 @@ public interface UserLogin extends BizEntity {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-format type='id-vlong' length='255'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='UserLoginSecurityQuestion' route='userLoginId'"
 	 * @generated
 	 */
@@ -916,7 +968,8 @@ public interface UserLogin extends BizEntity {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id-vlong' length='255'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='Visitor' route='userLoginId'"
 	 * @generated
 	 */

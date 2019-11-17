@@ -42,7 +42,7 @@ public interface ShipmentGatewayUsps extends ShipmentGatewayConfig {
 	 * @return the value of the '<em>Access Password</em>' attribute.
 	 * @see #setAccessPassword(String)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipmentGatewayUsps_AccessPassword()
-	 * @model
+	 * @model annotation="mimo-ent-format type='value' length='255'"
 	 * @generated
 	 */
 	String getAccessPassword();
@@ -68,7 +68,7 @@ public interface ShipmentGatewayUsps extends ShipmentGatewayConfig {
 	 * @return the value of the '<em>Access User Id</em>' attribute.
 	 * @see #setAccessUserId(String)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipmentGatewayUsps_AccessUserId()
-	 * @model
+	 * @model annotation="mimo-ent-format type='value' length='255'"
 	 * @generated
 	 */
 	String getAccessUserId();
@@ -94,7 +94,7 @@ public interface ShipmentGatewayUsps extends ShipmentGatewayConfig {
 	 * @return the value of the '<em>Connect Timeout</em>' attribute.
 	 * @see #setConnectTimeout(long)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipmentGatewayUsps_ConnectTimeout()
-	 * @model
+	 * @model annotation="mimo-ent-format type='numeric' precision='20' scale='0'"
 	 * @generated
 	 */
 	long getConnectTimeout();
@@ -120,7 +120,7 @@ public interface ShipmentGatewayUsps extends ShipmentGatewayConfig {
 	 * @return the value of the '<em>Connect Url</em>' attribute.
 	 * @see #setConnectUrl(String)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipmentGatewayUsps_ConnectUrl()
-	 * @model
+	 * @model annotation="mimo-ent-format type='value' length='255'"
 	 * @generated
 	 */
 	String getConnectUrl();
@@ -146,7 +146,7 @@ public interface ShipmentGatewayUsps extends ShipmentGatewayConfig {
 	 * @return the value of the '<em>Connect Url Labels</em>' attribute.
 	 * @see #setConnectUrlLabels(String)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipmentGatewayUsps_ConnectUrlLabels()
-	 * @model
+	 * @model annotation="mimo-ent-format type='value' length='255'"
 	 * @generated
 	 */
 	String getConnectUrlLabels();
@@ -172,7 +172,7 @@ public interface ShipmentGatewayUsps extends ShipmentGatewayConfig {
 	 * @return the value of the '<em>Max Estimate Weight</em>' attribute.
 	 * @see #setMaxEstimateWeight(long)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipmentGatewayUsps_MaxEstimateWeight()
-	 * @model
+	 * @model annotation="mimo-ent-format type='numeric' precision='20' scale='0'"
 	 * @generated
 	 */
 	long getMaxEstimateWeight();
@@ -198,7 +198,7 @@ public interface ShipmentGatewayUsps extends ShipmentGatewayConfig {
 	 * @return the value of the '<em>Test</em>' attribute.
 	 * @see #setTest(String)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipmentGatewayUsps_Test()
-	 * @model
+	 * @model annotation="mimo-ent-format type='short-varchar' length='60'"
 	 * @generated
 	 */
 	String getTest();

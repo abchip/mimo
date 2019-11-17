@@ -40,7 +40,7 @@ public interface RejectionReason extends BizEntity {
 	 * @return the value of the '<em>Description</em>' attribute.
 	 * @see #setDescription(String)
 	 * @see org.abchip.mimo.biz.shipment.receipt.ReceiptPackage#getRejectionReason_Description()
-	 * @model
+	 * @model annotation="mimo-ent-format type='description' length='255'"
 	 * @generated
 	 */
 	String getDescription();
@@ -58,7 +58,8 @@ public interface RejectionReason extends BizEntity {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ShipmentReceipt' route='rejectionId'"
 	 * @generated
 	 */
@@ -76,6 +77,7 @@ public interface RejectionReason extends BizEntity {
 	 * @see #setRejectionId(String)
 	 * @see org.abchip.mimo.biz.shipment.receipt.ReceiptPackage#getRejectionReason_RejectionId()
 	 * @model id="true" required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */

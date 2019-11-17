@@ -44,7 +44,7 @@ public interface CountryAddressFormat extends BizEntity {
 	 * @return the value of the '<em>Address Format</em>' attribute.
 	 * @see #setAddressFormat(String)
 	 * @see org.abchip.mimo.biz.common.geo.GeoPackage#getCountryAddressFormat_AddressFormat()
-	 * @model
+	 * @model annotation="mimo-ent-format type='long-varchar' length='255'"
 	 * @generated
 	 */
 	String getAddressFormat();
@@ -60,6 +60,32 @@ public interface CountryAddressFormat extends BizEntity {
 	void setAddressFormat(String value);
 
 	/**
+	 * Returns the value of the '<em><b>Has Postal Code Ext</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Has Postal Code Ext</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Has Postal Code Ext</em>' attribute.
+	 * @see #setHasPostalCodeExt(boolean)
+	 * @see org.abchip.mimo.biz.common.geo.GeoPackage#getCountryAddressFormat_HasPostalCodeExt()
+	 * @model annotation="mimo-ent-format type='indicator' length='1'"
+	 * @generated
+	 */
+	boolean isHasPostalCodeExt();
+
+	/**
+	 * Sets the value of the '{@link org.abchip.mimo.biz.common.geo.CountryAddressFormat#isHasPostalCodeExt <em>Has Postal Code Ext</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Has Postal Code Ext</em>' attribute.
+	 * @see #isHasPostalCodeExt()
+	 * @generated
+	 */
+	void setHasPostalCodeExt(boolean value);
+
+	/**
 	 * Returns the value of the '<em><b>Postal Code Regex</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -70,7 +96,7 @@ public interface CountryAddressFormat extends BizEntity {
 	 * @return the value of the '<em>Postal Code Regex</em>' attribute.
 	 * @see #setPostalCodeRegex(String)
 	 * @see org.abchip.mimo.biz.common.geo.GeoPackage#getCountryAddressFormat_PostalCodeRegex()
-	 * @model
+	 * @model annotation="mimo-ent-format type='long-varchar' length='255'"
 	 * @generated
 	 */
 	String getPostalCodeRegex();
@@ -96,7 +122,7 @@ public interface CountryAddressFormat extends BizEntity {
 	 * @return the value of the '<em>Require Postal Code</em>' attribute.
 	 * @see #setRequirePostalCode(boolean)
 	 * @see org.abchip.mimo.biz.common.geo.GeoPackage#getCountryAddressFormat_RequirePostalCode()
-	 * @model
+	 * @model annotation="mimo-ent-format type='indicator' length='1'"
 	 * @generated
 	 */
 	boolean isRequirePostalCode();
@@ -122,7 +148,7 @@ public interface CountryAddressFormat extends BizEntity {
 	 * @return the value of the '<em>Require Postal Code Ext</em>' attribute.
 	 * @see #setRequirePostalCodeExt(boolean)
 	 * @see org.abchip.mimo.biz.common.geo.GeoPackage#getCountryAddressFormat_RequirePostalCodeExt()
-	 * @model
+	 * @model annotation="mimo-ent-format type='indicator' length='1'"
 	 * @generated
 	 */
 	boolean isRequirePostalCodeExt();
@@ -148,7 +174,7 @@ public interface CountryAddressFormat extends BizEntity {
 	 * @return the value of the '<em>Require State Province Id</em>' attribute.
 	 * @see #setRequireStateProvinceId(String)
 	 * @see org.abchip.mimo.biz.common.geo.GeoPackage#getCountryAddressFormat_RequireStateProvinceId()
-	 * @model
+	 * @model annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	String getRequireStateProvinceId();
@@ -188,32 +214,6 @@ public interface CountryAddressFormat extends BizEntity {
 	 * @generated
 	 */
 	void setGeoAssocTypeId(GeoAssocType value);
-
-	/**
-	 * Returns the value of the '<em><b>Has Postal Code Ext</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Has Postal Code Ext</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Has Postal Code Ext</em>' attribute.
-	 * @see #setHasPostalCodeExt(boolean)
-	 * @see org.abchip.mimo.biz.common.geo.GeoPackage#getCountryAddressFormat_HasPostalCodeExt()
-	 * @model
-	 * @generated
-	 */
-	boolean isHasPostalCodeExt();
-
-	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.common.geo.CountryAddressFormat#isHasPostalCodeExt <em>Has Postal Code Ext</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Has Postal Code Ext</em>' attribute.
-	 * @see #isHasPostalCodeExt()
-	 * @generated
-	 */
-	void setHasPostalCodeExt(boolean value);
 
 	/**
 	 * Returns the value of the '<em><b>Geo Id</b></em>' reference.

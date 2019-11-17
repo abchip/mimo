@@ -47,6 +47,7 @@ public interface FixedAssetRegistration extends BizEntity {
 	 * @see #setFromDate(Date)
 	 * @see org.abchip.mimo.biz.accounting.fixedasset.FixedassetPackage#getFixedAssetRegistration_FromDate()
 	 * @model required="true"
+	 *        annotation="mimo-ent-format type='date-time'"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
@@ -99,7 +100,7 @@ public interface FixedAssetRegistration extends BizEntity {
 	 * @return the value of the '<em>License Number</em>' attribute.
 	 * @see #setLicenseNumber(String)
 	 * @see org.abchip.mimo.biz.accounting.fixedasset.FixedassetPackage#getFixedAssetRegistration_LicenseNumber()
-	 * @model
+	 * @model annotation="mimo-ent-format type='long-varchar' length='255'"
 	 * @generated
 	 */
 	String getLicenseNumber();
@@ -125,7 +126,7 @@ public interface FixedAssetRegistration extends BizEntity {
 	 * @return the value of the '<em>Registration Date</em>' attribute.
 	 * @see #setRegistrationDate(Date)
 	 * @see org.abchip.mimo.biz.accounting.fixedasset.FixedassetPackage#getFixedAssetRegistration_RegistrationDate()
-	 * @model
+	 * @model annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getRegistrationDate();
@@ -151,7 +152,7 @@ public interface FixedAssetRegistration extends BizEntity {
 	 * @return the value of the '<em>Registration Number</em>' attribute.
 	 * @see #setRegistrationNumber(String)
 	 * @see org.abchip.mimo.biz.accounting.fixedasset.FixedassetPackage#getFixedAssetRegistration_RegistrationNumber()
-	 * @model
+	 * @model annotation="mimo-ent-format type='long-varchar' length='255'"
 	 * @generated
 	 */
 	String getRegistrationNumber();
@@ -177,7 +178,7 @@ public interface FixedAssetRegistration extends BizEntity {
 	 * @return the value of the '<em>Thru Date</em>' attribute.
 	 * @see #setThruDate(Date)
 	 * @see org.abchip.mimo.biz.accounting.fixedasset.FixedassetPackage#getFixedAssetRegistration_ThruDate()
-	 * @model
+	 * @model annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getThruDate();

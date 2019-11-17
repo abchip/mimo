@@ -72,6 +72,7 @@ public interface FinAccountStatus extends BizEntity {
 	 * @see #setStatusDate(Date)
 	 * @see org.abchip.mimo.biz.accounting.finaccount.FinaccountPackage#getFinAccountStatus_StatusDate()
 	 * @model required="true"
+	 *        annotation="mimo-ent-format type='date-time'"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
@@ -98,7 +99,7 @@ public interface FinAccountStatus extends BizEntity {
 	 * @return the value of the '<em>Status End Date</em>' attribute.
 	 * @see #setStatusEndDate(Date)
 	 * @see org.abchip.mimo.biz.accounting.finaccount.FinaccountPackage#getFinAccountStatus_StatusEndDate()
-	 * @model
+	 * @model annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getStatusEndDate();

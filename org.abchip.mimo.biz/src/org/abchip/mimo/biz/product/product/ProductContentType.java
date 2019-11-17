@@ -42,7 +42,7 @@ public interface ProductContentType extends BizEntityType<ProductContent> {
 	 * @return the value of the '<em>Description</em>' attribute.
 	 * @see #setDescription(String)
 	 * @see org.abchip.mimo.biz.product.product.ProductPackage#getProductContentType_Description()
-	 * @model
+	 * @model annotation="mimo-ent-format type='description' length='255'"
 	 * @generated
 	 */
 	String getDescription();
@@ -68,7 +68,7 @@ public interface ProductContentType extends BizEntityType<ProductContent> {
 	 * @return the value of the '<em>Has Table</em>' attribute.
 	 * @see #setHasTable(boolean)
 	 * @see org.abchip.mimo.biz.product.product.ProductPackage#getProductContentType_HasTable()
-	 * @model
+	 * @model annotation="mimo-ent-format type='indicator' length='1'"
 	 * @generated
 	 */
 	boolean isHasTable();
@@ -112,7 +112,8 @@ public interface ProductContentType extends BizEntityType<ProductContent> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ProductContentType' route='parentTypeId'"
 	 * @generated
 	 */
@@ -130,6 +131,7 @@ public interface ProductContentType extends BizEntityType<ProductContent> {
 	 * @see #setProductContentTypeId(String)
 	 * @see org.abchip.mimo.biz.product.product.ProductPackage#getProductContentType_ProductContentTypeId()
 	 * @model id="true" required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */

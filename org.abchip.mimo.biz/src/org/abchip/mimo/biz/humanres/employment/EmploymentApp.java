@@ -51,7 +51,7 @@ public interface EmploymentApp extends BizEntity {
 	 * @return the value of the '<em>Application Date</em>' attribute.
 	 * @see #setApplicationDate(Date)
 	 * @see org.abchip.mimo.biz.humanres.employment.EmploymentPackage#getEmploymentApp_ApplicationDate()
-	 * @model
+	 * @model annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getApplicationDate();
@@ -78,6 +78,7 @@ public interface EmploymentApp extends BizEntity {
 	 * @see #setApplicationId(String)
 	 * @see org.abchip.mimo.biz.humanres.employment.EmploymentPackage#getEmploymentApp_ApplicationId()
 	 * @model id="true" required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */

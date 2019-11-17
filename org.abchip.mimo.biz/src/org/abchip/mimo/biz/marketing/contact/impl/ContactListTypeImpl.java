@@ -7,14 +7,12 @@
  */
 package org.abchip.mimo.biz.marketing.contact.impl;
 
-import java.lang.reflect.InvocationTargetException;
 import java.util.List;
 
 import org.abchip.mimo.biz.impl.BizEntityTypeImpl;
 import org.abchip.mimo.biz.marketing.contact.ContactList;
 import org.abchip.mimo.biz.marketing.contact.ContactListType;
 import org.abchip.mimo.biz.marketing.contact.ContactPackage;
-import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 
 /**
@@ -107,20 +105,6 @@ public class ContactListTypeImpl extends BizEntityTypeImpl<ContactList> implemen
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
-		switch (operationID) {
-			case ContactPackage.CONTACT_LIST_TYPE___CONTACT_LISTS:
-				return contactLists();
-		}
-		return super.eInvoke(operationID, arguments);
 	}
 
 } //ContactListTypeImpl

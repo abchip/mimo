@@ -10,7 +10,6 @@ package org.abchip.mimo.biz.service.schedule;
 import org.abchip.mimo.biz.BizPackage;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
@@ -197,51 +196,6 @@ public interface SchedulePackage extends EPackage {
 	 * @ordered
 	 */
 	int JOB_MANAGER_LOCK_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 9;
-
-	/**
-	 * The operation id for the '<em>Isa</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int JOB_MANAGER_LOCK___ISA = BizPackage.BIZ_ENTITY___ISA;
-
-	/**
-	 * The operation id for the '<em>Get Name</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int JOB_MANAGER_LOCK___GET_NAME = BizPackage.BIZ_ENTITY___GET_NAME;
-
-	/**
-	 * The operation id for the '<em>Get URI</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int JOB_MANAGER_LOCK___GET_URI = BizPackage.BIZ_ENTITY___GET_URI;
-
-	/**
-	 * The operation id for the '<em>Is Proxy</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int JOB_MANAGER_LOCK___IS_PROXY = BizPackage.BIZ_ENTITY___IS_PROXY;
-
-	/**
-	 * The number of operations of the '<em>Job Manager Lock</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int JOB_MANAGER_LOCK_OPERATION_COUNT = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.service.schedule.impl.JobSandboxImpl <em>Job Sandbox</em>}' class.
@@ -506,60 +460,6 @@ public interface SchedulePackage extends EPackage {
 	int JOB_SANDBOX_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 23;
 
 	/**
-	 * The operation id for the '<em>Isa</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int JOB_SANDBOX___ISA = BizPackage.BIZ_ENTITY___ISA;
-
-	/**
-	 * The operation id for the '<em>Get Name</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int JOB_SANDBOX___GET_NAME = BizPackage.BIZ_ENTITY___GET_NAME;
-
-	/**
-	 * The operation id for the '<em>Get URI</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int JOB_SANDBOX___GET_URI = BizPackage.BIZ_ENTITY___GET_URI;
-
-	/**
-	 * The operation id for the '<em>Is Proxy</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int JOB_SANDBOX___IS_PROXY = BizPackage.BIZ_ENTITY___IS_PROXY;
-
-	/**
-	 * The operation id for the '<em>Product Group Orders</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int JOB_SANDBOX___PRODUCT_GROUP_ORDERS = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 0;
-
-	/**
-	 * The number of operations of the '<em>Job Sandbox</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int JOB_SANDBOX_OPERATION_COUNT = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 1;
-
-	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.service.schedule.impl.RecurrenceInfoImpl <em>Recurrence Info</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -676,87 +576,6 @@ public interface SchedulePackage extends EPackage {
 	 * @ordered
 	 */
 	int RECURRENCE_INFO_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 7;
-
-	/**
-	 * The operation id for the '<em>Isa</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RECURRENCE_INFO___ISA = BizPackage.BIZ_ENTITY___ISA;
-
-	/**
-	 * The operation id for the '<em>Get Name</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RECURRENCE_INFO___GET_NAME = BizPackage.BIZ_ENTITY___GET_NAME;
-
-	/**
-	 * The operation id for the '<em>Get URI</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RECURRENCE_INFO___GET_URI = BizPackage.BIZ_ENTITY___GET_URI;
-
-	/**
-	 * The operation id for the '<em>Is Proxy</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RECURRENCE_INFO___IS_PROXY = BizPackage.BIZ_ENTITY___IS_PROXY;
-
-	/**
-	 * The operation id for the '<em>Invoices</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RECURRENCE_INFO___INVOICES = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Job Sandboxs</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RECURRENCE_INFO___JOB_SANDBOXS = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 1;
-
-	/**
-	 * The operation id for the '<em>Shopping Lists</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RECURRENCE_INFO___SHOPPING_LISTS = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 2;
-
-	/**
-	 * The operation id for the '<em>Work Efforts</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RECURRENCE_INFO___WORK_EFFORTS = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 3;
-
-	/**
-	 * The number of operations of the '<em>Recurrence Info</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RECURRENCE_INFO_OPERATION_COUNT = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 4;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.service.schedule.impl.RecurrenceRuleImpl <em>Recurrence Rule</em>}' class.
@@ -958,69 +777,6 @@ public interface SchedulePackage extends EPackage {
 	int RECURRENCE_RULE_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 16;
 
 	/**
-	 * The operation id for the '<em>Isa</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RECURRENCE_RULE___ISA = BizPackage.BIZ_ENTITY___ISA;
-
-	/**
-	 * The operation id for the '<em>Get Name</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RECURRENCE_RULE___GET_NAME = BizPackage.BIZ_ENTITY___GET_NAME;
-
-	/**
-	 * The operation id for the '<em>Get URI</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RECURRENCE_RULE___GET_URI = BizPackage.BIZ_ENTITY___GET_URI;
-
-	/**
-	 * The operation id for the '<em>Is Proxy</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RECURRENCE_RULE___IS_PROXY = BizPackage.BIZ_ENTITY___IS_PROXY;
-
-	/**
-	 * The operation id for the '<em>Exception Recurrence Infos</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RECURRENCE_RULE___EXCEPTION_RECURRENCE_INFOS = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Recurrence Infos</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RECURRENCE_RULE___RECURRENCE_INFOS = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 1;
-
-	/**
-	 * The number of operations of the '<em>Recurrence Rule</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RECURRENCE_RULE_OPERATION_COUNT = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 2;
-
-	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.service.schedule.impl.RuntimeDataImpl <em>Runtime Data</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1092,78 +848,6 @@ public interface SchedulePackage extends EPackage {
 	 * @ordered
 	 */
 	int RUNTIME_DATA_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
-
-	/**
-	 * The operation id for the '<em>Isa</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RUNTIME_DATA___ISA = BizPackage.BIZ_ENTITY___ISA;
-
-	/**
-	 * The operation id for the '<em>Get Name</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RUNTIME_DATA___GET_NAME = BizPackage.BIZ_ENTITY___GET_NAME;
-
-	/**
-	 * The operation id for the '<em>Get URI</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RUNTIME_DATA___GET_URI = BizPackage.BIZ_ENTITY___GET_URI;
-
-	/**
-	 * The operation id for the '<em>Is Proxy</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RUNTIME_DATA___IS_PROXY = BizPackage.BIZ_ENTITY___IS_PROXY;
-
-	/**
-	 * The operation id for the '<em>Application Sandboxs</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RUNTIME_DATA___APPLICATION_SANDBOXS = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Job Sandboxs</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RUNTIME_DATA___JOB_SANDBOXS = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 1;
-
-	/**
-	 * The operation id for the '<em>Work Efforts</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RUNTIME_DATA___WORK_EFFORTS = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 2;
-
-	/**
-	 * The number of operations of the '<em>Runtime Data</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RUNTIME_DATA_OPERATION_COUNT = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 3;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.service.schedule.impl.TemporalExpressionImpl <em>Temporal Expression</em>}' class.
@@ -1311,78 +995,6 @@ public interface SchedulePackage extends EPackage {
 	int TEMPORAL_EXPRESSION_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 10;
 
 	/**
-	 * The operation id for the '<em>Isa</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TEMPORAL_EXPRESSION___ISA = BizPackage.BIZ_ENTITY___ISA;
-
-	/**
-	 * The operation id for the '<em>Get Name</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TEMPORAL_EXPRESSION___GET_NAME = BizPackage.BIZ_ENTITY___GET_NAME;
-
-	/**
-	 * The operation id for the '<em>Get URI</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TEMPORAL_EXPRESSION___GET_URI = BizPackage.BIZ_ENTITY___GET_URI;
-
-	/**
-	 * The operation id for the '<em>Is Proxy</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TEMPORAL_EXPRESSION___IS_PROXY = BizPackage.BIZ_ENTITY___IS_PROXY;
-
-	/**
-	 * The operation id for the '<em>Job Sandboxs</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TEMPORAL_EXPRESSION___JOB_SANDBOXS = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>To Temporal Expression Assocs</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TEMPORAL_EXPRESSION___TO_TEMPORAL_EXPRESSION_ASSOCS = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 1;
-
-	/**
-	 * The operation id for the '<em>Work Efforts</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TEMPORAL_EXPRESSION___WORK_EFFORTS = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 2;
-
-	/**
-	 * The number of operations of the '<em>Temporal Expression</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TEMPORAL_EXPRESSION_OPERATION_COUNT = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 3;
-
-	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.service.schedule.impl.TemporalExpressionAssocImpl <em>Temporal Expression Assoc</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1463,52 +1075,6 @@ public interface SchedulePackage extends EPackage {
 	 * @ordered
 	 */
 	int TEMPORAL_EXPRESSION_ASSOC_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
-
-
-	/**
-	 * The operation id for the '<em>Isa</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TEMPORAL_EXPRESSION_ASSOC___ISA = BizPackage.BIZ_ENTITY___ISA;
-
-	/**
-	 * The operation id for the '<em>Get Name</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TEMPORAL_EXPRESSION_ASSOC___GET_NAME = BizPackage.BIZ_ENTITY___GET_NAME;
-
-	/**
-	 * The operation id for the '<em>Get URI</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TEMPORAL_EXPRESSION_ASSOC___GET_URI = BizPackage.BIZ_ENTITY___GET_URI;
-
-	/**
-	 * The operation id for the '<em>Is Proxy</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TEMPORAL_EXPRESSION_ASSOC___IS_PROXY = BizPackage.BIZ_ENTITY___IS_PROXY;
-
-	/**
-	 * The number of operations of the '<em>Temporal Expression Assoc</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TEMPORAL_EXPRESSION_ASSOC_OPERATION_COUNT = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 0;
 
 
 	/**
@@ -1873,16 +1439,6 @@ public interface SchedulePackage extends EPackage {
 	EReference getJobSandbox_StatusId();
 
 	/**
-	 * Returns the meta object for the '{@link org.abchip.mimo.biz.service.schedule.JobSandbox#productGroupOrders() <em>Product Group Orders</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Product Group Orders</em>' operation.
-	 * @see org.abchip.mimo.biz.service.schedule.JobSandbox#productGroupOrders()
-	 * @generated
-	 */
-	EOperation getJobSandbox__ProductGroupOrders();
-
-	/**
 	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.service.schedule.JobSandbox#getTempExprId <em>Temp Expr Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1935,46 +1491,6 @@ public interface SchedulePackage extends EPackage {
 	 * @generated
 	 */
 	EReference getRecurrenceInfo_ExceptionRuleId();
-
-	/**
-	 * Returns the meta object for the '{@link org.abchip.mimo.biz.service.schedule.RecurrenceInfo#invoices() <em>Invoices</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Invoices</em>' operation.
-	 * @see org.abchip.mimo.biz.service.schedule.RecurrenceInfo#invoices()
-	 * @generated
-	 */
-	EOperation getRecurrenceInfo__Invoices();
-
-	/**
-	 * Returns the meta object for the '{@link org.abchip.mimo.biz.service.schedule.RecurrenceInfo#jobSandboxs() <em>Job Sandboxs</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Job Sandboxs</em>' operation.
-	 * @see org.abchip.mimo.biz.service.schedule.RecurrenceInfo#jobSandboxs()
-	 * @generated
-	 */
-	EOperation getRecurrenceInfo__JobSandboxs();
-
-	/**
-	 * Returns the meta object for the '{@link org.abchip.mimo.biz.service.schedule.RecurrenceInfo#shoppingLists() <em>Shopping Lists</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Shopping Lists</em>' operation.
-	 * @see org.abchip.mimo.biz.service.schedule.RecurrenceInfo#shoppingLists()
-	 * @generated
-	 */
-	EOperation getRecurrenceInfo__ShoppingLists();
-
-	/**
-	 * Returns the meta object for the '{@link org.abchip.mimo.biz.service.schedule.RecurrenceInfo#workEfforts() <em>Work Efforts</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Work Efforts</em>' operation.
-	 * @see org.abchip.mimo.biz.service.schedule.RecurrenceInfo#workEfforts()
-	 * @generated
-	 */
-	EOperation getRecurrenceInfo__WorkEfforts();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.service.schedule.RecurrenceInfo#getRecurrenceCount <em>Recurrence Count</em>}'.
@@ -2207,26 +1723,6 @@ public interface SchedulePackage extends EPackage {
 	EAttribute getRecurrenceRule_XName();
 
 	/**
-	 * Returns the meta object for the '{@link org.abchip.mimo.biz.service.schedule.RecurrenceRule#exceptionRecurrenceInfos() <em>Exception Recurrence Infos</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Exception Recurrence Infos</em>' operation.
-	 * @see org.abchip.mimo.biz.service.schedule.RecurrenceRule#exceptionRecurrenceInfos()
-	 * @generated
-	 */
-	EOperation getRecurrenceRule__ExceptionRecurrenceInfos();
-
-	/**
-	 * Returns the meta object for the '{@link org.abchip.mimo.biz.service.schedule.RecurrenceRule#recurrenceInfos() <em>Recurrence Infos</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Recurrence Infos</em>' operation.
-	 * @see org.abchip.mimo.biz.service.schedule.RecurrenceRule#recurrenceInfos()
-	 * @generated
-	 */
-	EOperation getRecurrenceRule__RecurrenceInfos();
-
-	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.biz.service.schedule.RuntimeData <em>Runtime Data</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2257,36 +1753,6 @@ public interface SchedulePackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getRuntimeData_RuntimeInfo();
-
-	/**
-	 * Returns the meta object for the '{@link org.abchip.mimo.biz.service.schedule.RuntimeData#applicationSandboxs() <em>Application Sandboxs</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Application Sandboxs</em>' operation.
-	 * @see org.abchip.mimo.biz.service.schedule.RuntimeData#applicationSandboxs()
-	 * @generated
-	 */
-	EOperation getRuntimeData__ApplicationSandboxs();
-
-	/**
-	 * Returns the meta object for the '{@link org.abchip.mimo.biz.service.schedule.RuntimeData#jobSandboxs() <em>Job Sandboxs</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Job Sandboxs</em>' operation.
-	 * @see org.abchip.mimo.biz.service.schedule.RuntimeData#jobSandboxs()
-	 * @generated
-	 */
-	EOperation getRuntimeData__JobSandboxs();
-
-	/**
-	 * Returns the meta object for the '{@link org.abchip.mimo.biz.service.schedule.RuntimeData#workEfforts() <em>Work Efforts</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Work Efforts</em>' operation.
-	 * @see org.abchip.mimo.biz.service.schedule.RuntimeData#workEfforts()
-	 * @generated
-	 */
-	EOperation getRuntimeData__WorkEfforts();
 
 	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.biz.service.schedule.TemporalExpression <em>Temporal Expression</em>}'.
@@ -2407,36 +1873,6 @@ public interface SchedulePackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getTemporalExpression_FromTemporalExpressionAssocs();
-
-	/**
-	 * Returns the meta object for the '{@link org.abchip.mimo.biz.service.schedule.TemporalExpression#jobSandboxs() <em>Job Sandboxs</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Job Sandboxs</em>' operation.
-	 * @see org.abchip.mimo.biz.service.schedule.TemporalExpression#jobSandboxs()
-	 * @generated
-	 */
-	EOperation getTemporalExpression__JobSandboxs();
-
-	/**
-	 * Returns the meta object for the '{@link org.abchip.mimo.biz.service.schedule.TemporalExpression#toTemporalExpressionAssocs() <em>To Temporal Expression Assocs</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>To Temporal Expression Assocs</em>' operation.
-	 * @see org.abchip.mimo.biz.service.schedule.TemporalExpression#toTemporalExpressionAssocs()
-	 * @generated
-	 */
-	EOperation getTemporalExpression__ToTemporalExpressionAssocs();
-
-	/**
-	 * Returns the meta object for the '{@link org.abchip.mimo.biz.service.schedule.TemporalExpression#workEfforts() <em>Work Efforts</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Work Efforts</em>' operation.
-	 * @see org.abchip.mimo.biz.service.schedule.TemporalExpression#workEfforts()
-	 * @generated
-	 */
-	EOperation getTemporalExpression__WorkEfforts();
 
 	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.biz.service.schedule.TemporalExpressionAssoc <em>Temporal Expression Assoc</em>}'.
@@ -2772,14 +2208,6 @@ public interface SchedulePackage extends EPackage {
 		EReference JOB_SANDBOX__STATUS_ID = eINSTANCE.getJobSandbox_StatusId();
 
 		/**
-		 * The meta object literal for the '<em><b>Product Group Orders</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation JOB_SANDBOX___PRODUCT_GROUP_ORDERS = eINSTANCE.getJobSandbox__ProductGroupOrders();
-
-		/**
 		 * The meta object literal for the '<em><b>Temp Expr Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -2820,38 +2248,6 @@ public interface SchedulePackage extends EPackage {
 		 * @generated
 		 */
 		EReference RECURRENCE_INFO__EXCEPTION_RULE_ID = eINSTANCE.getRecurrenceInfo_ExceptionRuleId();
-
-		/**
-		 * The meta object literal for the '<em><b>Invoices</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation RECURRENCE_INFO___INVOICES = eINSTANCE.getRecurrenceInfo__Invoices();
-
-		/**
-		 * The meta object literal for the '<em><b>Job Sandboxs</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation RECURRENCE_INFO___JOB_SANDBOXS = eINSTANCE.getRecurrenceInfo__JobSandboxs();
-
-		/**
-		 * The meta object literal for the '<em><b>Shopping Lists</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation RECURRENCE_INFO___SHOPPING_LISTS = eINSTANCE.getRecurrenceInfo__ShoppingLists();
-
-		/**
-		 * The meta object literal for the '<em><b>Work Efforts</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation RECURRENCE_INFO___WORK_EFFORTS = eINSTANCE.getRecurrenceInfo__WorkEfforts();
 
 		/**
 		 * The meta object literal for the '<em><b>Recurrence Count</b></em>' attribute feature.
@@ -3024,22 +2420,6 @@ public interface SchedulePackage extends EPackage {
 		EAttribute RECURRENCE_RULE__XNAME = eINSTANCE.getRecurrenceRule_XName();
 
 		/**
-		 * The meta object literal for the '<em><b>Exception Recurrence Infos</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation RECURRENCE_RULE___EXCEPTION_RECURRENCE_INFOS = eINSTANCE.getRecurrenceRule__ExceptionRecurrenceInfos();
-
-		/**
-		 * The meta object literal for the '<em><b>Recurrence Infos</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation RECURRENCE_RULE___RECURRENCE_INFOS = eINSTANCE.getRecurrenceRule__RecurrenceInfos();
-
-		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.biz.service.schedule.impl.RuntimeDataImpl <em>Runtime Data</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -3064,30 +2444,6 @@ public interface SchedulePackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute RUNTIME_DATA__RUNTIME_INFO = eINSTANCE.getRuntimeData_RuntimeInfo();
-
-		/**
-		 * The meta object literal for the '<em><b>Application Sandboxs</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation RUNTIME_DATA___APPLICATION_SANDBOXS = eINSTANCE.getRuntimeData__ApplicationSandboxs();
-
-		/**
-		 * The meta object literal for the '<em><b>Job Sandboxs</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation RUNTIME_DATA___JOB_SANDBOXS = eINSTANCE.getRuntimeData__JobSandboxs();
-
-		/**
-		 * The meta object literal for the '<em><b>Work Efforts</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation RUNTIME_DATA___WORK_EFFORTS = eINSTANCE.getRuntimeData__WorkEfforts();
 
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.biz.service.schedule.impl.TemporalExpressionImpl <em>Temporal Expression</em>}' class.
@@ -3178,30 +2534,6 @@ public interface SchedulePackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute TEMPORAL_EXPRESSION__FROM_TEMPORAL_EXPRESSION_ASSOCS = eINSTANCE.getTemporalExpression_FromTemporalExpressionAssocs();
-
-		/**
-		 * The meta object literal for the '<em><b>Job Sandboxs</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation TEMPORAL_EXPRESSION___JOB_SANDBOXS = eINSTANCE.getTemporalExpression__JobSandboxs();
-
-		/**
-		 * The meta object literal for the '<em><b>To Temporal Expression Assocs</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation TEMPORAL_EXPRESSION___TO_TEMPORAL_EXPRESSION_ASSOCS = eINSTANCE.getTemporalExpression__ToTemporalExpressionAssocs();
-
-		/**
-		 * The meta object literal for the '<em><b>Work Efforts</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation TEMPORAL_EXPRESSION___WORK_EFFORTS = eINSTANCE.getTemporalExpression__WorkEfforts();
 
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.biz.service.schedule.impl.TemporalExpressionAssocImpl <em>Temporal Expression Assoc</em>}' class.

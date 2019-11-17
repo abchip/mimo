@@ -7,7 +7,6 @@
  */
 package org.abchip.mimo.biz.marketing.opportunity.impl;
 
-import java.lang.reflect.InvocationTargetException;
 import java.math.BigDecimal;
 import java.util.List;
 
@@ -18,7 +17,6 @@ import org.abchip.mimo.biz.marketing.opportunity.OpportunityPackage;
 import org.abchip.mimo.biz.marketing.opportunity.SalesForecast;
 import org.abchip.mimo.biz.party.party.Party;
 import org.abchip.mimo.biz.security.login.UserLogin;
-import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 
 /**
@@ -407,22 +405,6 @@ public class SalesForecastImpl extends BizEntityImpl implements SalesForecast {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
-		switch (operationID) {
-			case OpportunityPackage.SALES_FORECAST___CHILD_SALES_FORECASTS:
-				return childSalesForecasts();
-			case OpportunityPackage.SALES_FORECAST___SALES_FORECAST_HISTORIES:
-				return salesForecastHistories();
-		}
-		return super.eInvoke(operationID, arguments);
 	}
 
 } //SalesForecastImpl

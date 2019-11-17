@@ -10,7 +10,6 @@ package org.abchip.mimo.biz.product.inventory;
 import org.abchip.mimo.biz.BizPackage;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
@@ -406,150 +405,6 @@ public interface InventoryPackage extends EPackage {
 	int INVENTORY_ITEM_FEATURE_COUNT = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 32;
 
 	/**
-	 * The operation id for the '<em>Isa</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INVENTORY_ITEM___ISA = BizPackage.BIZ_ENTITY_TYPED___ISA;
-
-	/**
-	 * The operation id for the '<em>Get Name</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INVENTORY_ITEM___GET_NAME = BizPackage.BIZ_ENTITY_TYPED___GET_NAME;
-
-	/**
-	 * The operation id for the '<em>Get URI</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INVENTORY_ITEM___GET_URI = BizPackage.BIZ_ENTITY_TYPED___GET_URI;
-
-	/**
-	 * The operation id for the '<em>Is Proxy</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INVENTORY_ITEM___IS_PROXY = BizPackage.BIZ_ENTITY_TYPED___IS_PROXY;
-
-	/**
-	 * The operation id for the '<em>Get Type</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INVENTORY_ITEM___GET_TYPE = BizPackage.BIZ_ENTITY_TYPED___GET_TYPE;
-
-	/**
-	 * The operation id for the '<em>Acctg Trans Entries</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INVENTORY_ITEM___ACCTG_TRANS_ENTRIES = BizPackage.BIZ_ENTITY_TYPED_OPERATION_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Acctg Transs</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INVENTORY_ITEM___ACCTG_TRANSS = BizPackage.BIZ_ENTITY_TYPED_OPERATION_COUNT + 1;
-
-	/**
-	 * The operation id for the '<em>From Order Items</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INVENTORY_ITEM___FROM_ORDER_ITEMS = BizPackage.BIZ_ENTITY_TYPED_OPERATION_COUNT + 2;
-
-	/**
-	 * The operation id for the '<em>Inventory Transfers</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INVENTORY_ITEM___INVENTORY_TRANSFERS = BizPackage.BIZ_ENTITY_TYPED_OPERATION_COUNT + 3;
-
-	/**
-	 * The operation id for the '<em>Invoice Items</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INVENTORY_ITEM___INVOICE_ITEMS = BizPackage.BIZ_ENTITY_TYPED_OPERATION_COUNT + 4;
-
-	/**
-	 * The operation id for the '<em>Item Issuances</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INVENTORY_ITEM___ITEM_ISSUANCES = BizPackage.BIZ_ENTITY_TYPED_OPERATION_COUNT + 5;
-
-	/**
-	 * The operation id for the '<em>Shipment Receipts</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INVENTORY_ITEM___SHIPMENT_RECEIPTS = BizPackage.BIZ_ENTITY_TYPED_OPERATION_COUNT + 6;
-
-	/**
-	 * The operation id for the '<em>Subscriptions</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INVENTORY_ITEM___SUBSCRIPTIONS = BizPackage.BIZ_ENTITY_TYPED_OPERATION_COUNT + 7;
-
-	/**
-	 * The operation id for the '<em>Work Effort Inventory Assigns</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INVENTORY_ITEM___WORK_EFFORT_INVENTORY_ASSIGNS = BizPackage.BIZ_ENTITY_TYPED_OPERATION_COUNT + 8;
-
-	/**
-	 * The operation id for the '<em>Work Effort Inventory Produceds</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INVENTORY_ITEM___WORK_EFFORT_INVENTORY_PRODUCEDS = BizPackage.BIZ_ENTITY_TYPED_OPERATION_COUNT + 9;
-
-	/**
-	 * The number of operations of the '<em>Item</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INVENTORY_ITEM_OPERATION_COUNT = BizPackage.BIZ_ENTITY_TYPED_OPERATION_COUNT + 10;
-
-	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.product.inventory.impl.InventoryItemAttributeImpl <em>Item Attribute</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -639,51 +494,6 @@ public interface InventoryPackage extends EPackage {
 	 * @ordered
 	 */
 	int INVENTORY_ITEM_ATTRIBUTE_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
-
-	/**
-	 * The operation id for the '<em>Isa</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INVENTORY_ITEM_ATTRIBUTE___ISA = BizPackage.BIZ_ENTITY___ISA;
-
-	/**
-	 * The operation id for the '<em>Get Name</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INVENTORY_ITEM_ATTRIBUTE___GET_NAME = BizPackage.BIZ_ENTITY___GET_NAME;
-
-	/**
-	 * The operation id for the '<em>Get URI</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INVENTORY_ITEM_ATTRIBUTE___GET_URI = BizPackage.BIZ_ENTITY___GET_URI;
-
-	/**
-	 * The operation id for the '<em>Is Proxy</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INVENTORY_ITEM_ATTRIBUTE___IS_PROXY = BizPackage.BIZ_ENTITY___IS_PROXY;
-
-	/**
-	 * The number of operations of the '<em>Item Attribute</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INVENTORY_ITEM_ATTRIBUTE_OPERATION_COUNT = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.product.inventory.impl.InventoryItemDetailImpl <em>Item Detail</em>}' class.
@@ -939,51 +749,6 @@ public interface InventoryPackage extends EPackage {
 	int INVENTORY_ITEM_DETAIL_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 22;
 
 	/**
-	 * The operation id for the '<em>Isa</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INVENTORY_ITEM_DETAIL___ISA = BizPackage.BIZ_ENTITY___ISA;
-
-	/**
-	 * The operation id for the '<em>Get Name</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INVENTORY_ITEM_DETAIL___GET_NAME = BizPackage.BIZ_ENTITY___GET_NAME;
-
-	/**
-	 * The operation id for the '<em>Get URI</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INVENTORY_ITEM_DETAIL___GET_URI = BizPackage.BIZ_ENTITY___GET_URI;
-
-	/**
-	 * The operation id for the '<em>Is Proxy</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INVENTORY_ITEM_DETAIL___IS_PROXY = BizPackage.BIZ_ENTITY___IS_PROXY;
-
-	/**
-	 * The number of operations of the '<em>Item Detail</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INVENTORY_ITEM_DETAIL_OPERATION_COUNT = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 0;
-
-	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.product.inventory.impl.InventoryItemLabelImpl <em>Item Label</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1064,69 +829,6 @@ public interface InventoryPackage extends EPackage {
 	 * @ordered
 	 */
 	int INVENTORY_ITEM_LABEL_FEATURE_COUNT = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 3;
-
-	/**
-	 * The operation id for the '<em>Isa</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INVENTORY_ITEM_LABEL___ISA = BizPackage.BIZ_ENTITY_TYPED___ISA;
-
-	/**
-	 * The operation id for the '<em>Get Name</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INVENTORY_ITEM_LABEL___GET_NAME = BizPackage.BIZ_ENTITY_TYPED___GET_NAME;
-
-	/**
-	 * The operation id for the '<em>Get URI</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INVENTORY_ITEM_LABEL___GET_URI = BizPackage.BIZ_ENTITY_TYPED___GET_URI;
-
-	/**
-	 * The operation id for the '<em>Is Proxy</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INVENTORY_ITEM_LABEL___IS_PROXY = BizPackage.BIZ_ENTITY_TYPED___IS_PROXY;
-
-	/**
-	 * The operation id for the '<em>Get Type</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INVENTORY_ITEM_LABEL___GET_TYPE = BizPackage.BIZ_ENTITY_TYPED___GET_TYPE;
-
-	/**
-	 * The operation id for the '<em>Inventory Item Label Appls</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INVENTORY_ITEM_LABEL___INVENTORY_ITEM_LABEL_APPLS = BizPackage.BIZ_ENTITY_TYPED_OPERATION_COUNT + 0;
-
-	/**
-	 * The number of operations of the '<em>Item Label</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INVENTORY_ITEM_LABEL_OPERATION_COUNT = BizPackage.BIZ_ENTITY_TYPED_OPERATION_COUNT + 1;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.product.inventory.impl.InventoryItemLabelApplImpl <em>Item Label Appl</em>}' class.
@@ -1218,51 +920,6 @@ public interface InventoryPackage extends EPackage {
 	 * @ordered
 	 */
 	int INVENTORY_ITEM_LABEL_APPL_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
-
-	/**
-	 * The operation id for the '<em>Isa</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INVENTORY_ITEM_LABEL_APPL___ISA = BizPackage.BIZ_ENTITY___ISA;
-
-	/**
-	 * The operation id for the '<em>Get Name</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INVENTORY_ITEM_LABEL_APPL___GET_NAME = BizPackage.BIZ_ENTITY___GET_NAME;
-
-	/**
-	 * The operation id for the '<em>Get URI</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INVENTORY_ITEM_LABEL_APPL___GET_URI = BizPackage.BIZ_ENTITY___GET_URI;
-
-	/**
-	 * The operation id for the '<em>Is Proxy</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INVENTORY_ITEM_LABEL_APPL___IS_PROXY = BizPackage.BIZ_ENTITY___IS_PROXY;
-
-	/**
-	 * The number of operations of the '<em>Item Label Appl</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INVENTORY_ITEM_LABEL_APPL_OPERATION_COUNT = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.product.inventory.impl.InventoryItemLabelTypeImpl <em>Item Label Type</em>}' class.
@@ -1363,114 +1020,6 @@ public interface InventoryPackage extends EPackage {
 	 * @ordered
 	 */
 	int INVENTORY_ITEM_LABEL_TYPE_FEATURE_COUNT = BizPackage.BIZ_ENTITY_TYPE_FEATURE_COUNT + 4;
-
-	/**
-	 * The operation id for the '<em>Isa</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INVENTORY_ITEM_LABEL_TYPE___ISA = BizPackage.BIZ_ENTITY_TYPE___ISA;
-
-	/**
-	 * The operation id for the '<em>Get Name</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INVENTORY_ITEM_LABEL_TYPE___GET_NAME = BizPackage.BIZ_ENTITY_TYPE___GET_NAME;
-
-	/**
-	 * The operation id for the '<em>Get URI</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INVENTORY_ITEM_LABEL_TYPE___GET_URI = BizPackage.BIZ_ENTITY_TYPE___GET_URI;
-
-	/**
-	 * The operation id for the '<em>Is Proxy</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INVENTORY_ITEM_LABEL_TYPE___IS_PROXY = BizPackage.BIZ_ENTITY_TYPE___IS_PROXY;
-
-	/**
-	 * The operation id for the '<em>Get Frame</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INVENTORY_ITEM_LABEL_TYPE___GET_FRAME = BizPackage.BIZ_ENTITY_TYPE___GET_FRAME;
-
-	/**
-	 * The operation id for the '<em>Get Type Id</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INVENTORY_ITEM_LABEL_TYPE___GET_TYPE_ID = BizPackage.BIZ_ENTITY_TYPE___GET_TYPE_ID;
-
-	/**
-	 * The operation id for the '<em>Has Table</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INVENTORY_ITEM_LABEL_TYPE___HAS_TABLE = BizPackage.BIZ_ENTITY_TYPE___HAS_TABLE;
-
-	/**
-	 * The operation id for the '<em>Get Text</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INVENTORY_ITEM_LABEL_TYPE___GET_TEXT = BizPackage.BIZ_ENTITY_TYPE___GET_TEXT;
-
-	/**
-	 * The operation id for the '<em>Child Inventory Item Label Types</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INVENTORY_ITEM_LABEL_TYPE___CHILD_INVENTORY_ITEM_LABEL_TYPES = BizPackage.BIZ_ENTITY_TYPE_OPERATION_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Inventory Item Label Appls</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INVENTORY_ITEM_LABEL_TYPE___INVENTORY_ITEM_LABEL_APPLS = BizPackage.BIZ_ENTITY_TYPE_OPERATION_COUNT + 1;
-
-	/**
-	 * The operation id for the '<em>Inventory Item Labels</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INVENTORY_ITEM_LABEL_TYPE___INVENTORY_ITEM_LABELS = BizPackage.BIZ_ENTITY_TYPE_OPERATION_COUNT + 2;
-
-	/**
-	 * The number of operations of the '<em>Item Label Type</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INVENTORY_ITEM_LABEL_TYPE_OPERATION_COUNT = BizPackage.BIZ_ENTITY_TYPE_OPERATION_COUNT + 3;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.product.inventory.impl.InventoryItemStatusImpl <em>Item Status</em>}' class.
@@ -1591,51 +1140,6 @@ public interface InventoryPackage extends EPackage {
 	int INVENTORY_ITEM_STATUS_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 7;
 
 	/**
-	 * The operation id for the '<em>Isa</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INVENTORY_ITEM_STATUS___ISA = BizPackage.BIZ_ENTITY___ISA;
-
-	/**
-	 * The operation id for the '<em>Get Name</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INVENTORY_ITEM_STATUS___GET_NAME = BizPackage.BIZ_ENTITY___GET_NAME;
-
-	/**
-	 * The operation id for the '<em>Get URI</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INVENTORY_ITEM_STATUS___GET_URI = BizPackage.BIZ_ENTITY___GET_URI;
-
-	/**
-	 * The operation id for the '<em>Is Proxy</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INVENTORY_ITEM_STATUS___IS_PROXY = BizPackage.BIZ_ENTITY___IS_PROXY;
-
-	/**
-	 * The number of operations of the '<em>Item Status</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INVENTORY_ITEM_STATUS_OPERATION_COUNT = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 0;
-
-	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.product.inventory.impl.InventoryItemTempResImpl <em>Item Temp Res</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1734,51 +1238,6 @@ public interface InventoryPackage extends EPackage {
 	 * @ordered
 	 */
 	int INVENTORY_ITEM_TEMP_RES_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 5;
-
-	/**
-	 * The operation id for the '<em>Isa</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INVENTORY_ITEM_TEMP_RES___ISA = BizPackage.BIZ_ENTITY___ISA;
-
-	/**
-	 * The operation id for the '<em>Get Name</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INVENTORY_ITEM_TEMP_RES___GET_NAME = BizPackage.BIZ_ENTITY___GET_NAME;
-
-	/**
-	 * The operation id for the '<em>Get URI</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INVENTORY_ITEM_TEMP_RES___GET_URI = BizPackage.BIZ_ENTITY___GET_URI;
-
-	/**
-	 * The operation id for the '<em>Is Proxy</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INVENTORY_ITEM_TEMP_RES___IS_PROXY = BizPackage.BIZ_ENTITY___IS_PROXY;
-
-	/**
-	 * The number of operations of the '<em>Item Temp Res</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INVENTORY_ITEM_TEMP_RES_OPERATION_COUNT = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.product.inventory.impl.InventoryItemTypeImpl <em>Item Type</em>}' class.
@@ -1890,123 +1349,6 @@ public interface InventoryPackage extends EPackage {
 	int INVENTORY_ITEM_TYPE_FEATURE_COUNT = BizPackage.BIZ_ENTITY_TYPE_FEATURE_COUNT + 5;
 
 	/**
-	 * The operation id for the '<em>Isa</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INVENTORY_ITEM_TYPE___ISA = BizPackage.BIZ_ENTITY_TYPE___ISA;
-
-	/**
-	 * The operation id for the '<em>Get Name</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INVENTORY_ITEM_TYPE___GET_NAME = BizPackage.BIZ_ENTITY_TYPE___GET_NAME;
-
-	/**
-	 * The operation id for the '<em>Get URI</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INVENTORY_ITEM_TYPE___GET_URI = BizPackage.BIZ_ENTITY_TYPE___GET_URI;
-
-	/**
-	 * The operation id for the '<em>Is Proxy</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INVENTORY_ITEM_TYPE___IS_PROXY = BizPackage.BIZ_ENTITY_TYPE___IS_PROXY;
-
-	/**
-	 * The operation id for the '<em>Get Frame</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INVENTORY_ITEM_TYPE___GET_FRAME = BizPackage.BIZ_ENTITY_TYPE___GET_FRAME;
-
-	/**
-	 * The operation id for the '<em>Get Type Id</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INVENTORY_ITEM_TYPE___GET_TYPE_ID = BizPackage.BIZ_ENTITY_TYPE___GET_TYPE_ID;
-
-	/**
-	 * The operation id for the '<em>Has Table</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INVENTORY_ITEM_TYPE___HAS_TABLE = BizPackage.BIZ_ENTITY_TYPE___HAS_TABLE;
-
-	/**
-	 * The operation id for the '<em>Get Text</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INVENTORY_ITEM_TYPE___GET_TEXT = BizPackage.BIZ_ENTITY_TYPE___GET_TEXT;
-
-	/**
-	 * The operation id for the '<em>Child Inventory Item Types</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INVENTORY_ITEM_TYPE___CHILD_INVENTORY_ITEM_TYPES = BizPackage.BIZ_ENTITY_TYPE_OPERATION_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Default Facilities</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INVENTORY_ITEM_TYPE___DEFAULT_FACILITIES = BizPackage.BIZ_ENTITY_TYPE_OPERATION_COUNT + 1;
-
-	/**
-	 * The operation id for the '<em>Inventory Items</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INVENTORY_ITEM_TYPE___INVENTORY_ITEMS = BizPackage.BIZ_ENTITY_TYPE_OPERATION_COUNT + 2;
-
-	/**
-	 * The operation id for the '<em>Products</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INVENTORY_ITEM_TYPE___PRODUCTS = BizPackage.BIZ_ENTITY_TYPE_OPERATION_COUNT + 3;
-
-	/**
-	 * The number of operations of the '<em>Item Type</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INVENTORY_ITEM_TYPE_OPERATION_COUNT = BizPackage.BIZ_ENTITY_TYPE_OPERATION_COUNT + 4;
-
-	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.product.inventory.impl.InventoryItemTypeAttrImpl <em>Item Type Attr</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2087,51 +1429,6 @@ public interface InventoryPackage extends EPackage {
 	 * @ordered
 	 */
 	int INVENTORY_ITEM_TYPE_ATTR_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
-
-	/**
-	 * The operation id for the '<em>Isa</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INVENTORY_ITEM_TYPE_ATTR___ISA = BizPackage.BIZ_ENTITY___ISA;
-
-	/**
-	 * The operation id for the '<em>Get Name</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INVENTORY_ITEM_TYPE_ATTR___GET_NAME = BizPackage.BIZ_ENTITY___GET_NAME;
-
-	/**
-	 * The operation id for the '<em>Get URI</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INVENTORY_ITEM_TYPE_ATTR___GET_URI = BizPackage.BIZ_ENTITY___GET_URI;
-
-	/**
-	 * The operation id for the '<em>Is Proxy</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INVENTORY_ITEM_TYPE_ATTR___IS_PROXY = BizPackage.BIZ_ENTITY___IS_PROXY;
-
-	/**
-	 * The number of operations of the '<em>Item Type Attr</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INVENTORY_ITEM_TYPE_ATTR_OPERATION_COUNT = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.product.inventory.impl.InventoryItemVarianceImpl <em>Item Variance</em>}' class.
@@ -2241,51 +1538,6 @@ public interface InventoryPackage extends EPackage {
 	 * @ordered
 	 */
 	int INVENTORY_ITEM_VARIANCE_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 6;
-
-	/**
-	 * The operation id for the '<em>Isa</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INVENTORY_ITEM_VARIANCE___ISA = BizPackage.BIZ_ENTITY___ISA;
-
-	/**
-	 * The operation id for the '<em>Get Name</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INVENTORY_ITEM_VARIANCE___GET_NAME = BizPackage.BIZ_ENTITY___GET_NAME;
-
-	/**
-	 * The operation id for the '<em>Get URI</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INVENTORY_ITEM_VARIANCE___GET_URI = BizPackage.BIZ_ENTITY___GET_URI;
-
-	/**
-	 * The operation id for the '<em>Is Proxy</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INVENTORY_ITEM_VARIANCE___IS_PROXY = BizPackage.BIZ_ENTITY___IS_PROXY;
-
-	/**
-	 * The number of operations of the '<em>Item Variance</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INVENTORY_ITEM_VARIANCE_OPERATION_COUNT = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.product.inventory.impl.InventoryTransferImpl <em>Transfer</em>}' class.
@@ -2460,51 +1712,6 @@ public interface InventoryPackage extends EPackage {
 	int INVENTORY_TRANSFER_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 13;
 
 	/**
-	 * The operation id for the '<em>Isa</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INVENTORY_TRANSFER___ISA = BizPackage.BIZ_ENTITY___ISA;
-
-	/**
-	 * The operation id for the '<em>Get Name</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INVENTORY_TRANSFER___GET_NAME = BizPackage.BIZ_ENTITY___GET_NAME;
-
-	/**
-	 * The operation id for the '<em>Get URI</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INVENTORY_TRANSFER___GET_URI = BizPackage.BIZ_ENTITY___GET_URI;
-
-	/**
-	 * The operation id for the '<em>Is Proxy</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INVENTORY_TRANSFER___IS_PROXY = BizPackage.BIZ_ENTITY___IS_PROXY;
-
-	/**
-	 * The number of operations of the '<em>Transfer</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INVENTORY_TRANSFER_OPERATION_COUNT = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 0;
-
-	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.product.inventory.impl.LotImpl <em>Lot</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2594,60 +1801,6 @@ public interface InventoryPackage extends EPackage {
 	 * @ordered
 	 */
 	int LOT_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
-
-	/**
-	 * The operation id for the '<em>Isa</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int LOT___ISA = BizPackage.BIZ_ENTITY___ISA;
-
-	/**
-	 * The operation id for the '<em>Get Name</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int LOT___GET_NAME = BizPackage.BIZ_ENTITY___GET_NAME;
-
-	/**
-	 * The operation id for the '<em>Get URI</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int LOT___GET_URI = BizPackage.BIZ_ENTITY___GET_URI;
-
-	/**
-	 * The operation id for the '<em>Is Proxy</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int LOT___IS_PROXY = BizPackage.BIZ_ENTITY___IS_PROXY;
-
-	/**
-	 * The operation id for the '<em>Inventory Items</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int LOT___INVENTORY_ITEMS = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 0;
-
-	/**
-	 * The number of operations of the '<em>Lot</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int LOT_OPERATION_COUNT = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 1;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.product.inventory.impl.PhysicalInventoryImpl <em>Physical Inventory</em>}' class.
@@ -2741,78 +1894,6 @@ public interface InventoryPackage extends EPackage {
 	int PHYSICAL_INVENTORY_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
 
 	/**
-	 * The operation id for the '<em>Isa</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PHYSICAL_INVENTORY___ISA = BizPackage.BIZ_ENTITY___ISA;
-
-	/**
-	 * The operation id for the '<em>Get Name</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PHYSICAL_INVENTORY___GET_NAME = BizPackage.BIZ_ENTITY___GET_NAME;
-
-	/**
-	 * The operation id for the '<em>Get URI</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PHYSICAL_INVENTORY___GET_URI = BizPackage.BIZ_ENTITY___GET_URI;
-
-	/**
-	 * The operation id for the '<em>Is Proxy</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PHYSICAL_INVENTORY___IS_PROXY = BizPackage.BIZ_ENTITY___IS_PROXY;
-
-	/**
-	 * The operation id for the '<em>Acctg Transs</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PHYSICAL_INVENTORY___ACCTG_TRANSS = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Inventory Item Details</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PHYSICAL_INVENTORY___INVENTORY_ITEM_DETAILS = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 1;
-
-	/**
-	 * The operation id for the '<em>Inventory Item Variances</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PHYSICAL_INVENTORY___INVENTORY_ITEM_VARIANCES = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 2;
-
-	/**
-	 * The number of operations of the '<em>Physical Inventory</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PHYSICAL_INVENTORY_OPERATION_COUNT = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 3;
-
-	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.product.inventory.impl.VarianceReasonImpl <em>Variance Reason</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2893,61 +1974,6 @@ public interface InventoryPackage extends EPackage {
 	 * @ordered
 	 */
 	int VARIANCE_REASON_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
-
-
-	/**
-	 * The operation id for the '<em>Isa</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int VARIANCE_REASON___ISA = BizPackage.BIZ_ENTITY___ISA;
-
-	/**
-	 * The operation id for the '<em>Get Name</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int VARIANCE_REASON___GET_NAME = BizPackage.BIZ_ENTITY___GET_NAME;
-
-	/**
-	 * The operation id for the '<em>Get URI</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int VARIANCE_REASON___GET_URI = BizPackage.BIZ_ENTITY___GET_URI;
-
-	/**
-	 * The operation id for the '<em>Is Proxy</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int VARIANCE_REASON___IS_PROXY = BizPackage.BIZ_ENTITY___IS_PROXY;
-
-	/**
-	 * The operation id for the '<em>Inventory Item Variances</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int VARIANCE_REASON___INVENTORY_ITEM_VARIANCES = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 0;
-
-	/**
-	 * The number of operations of the '<em>Variance Reason</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int VARIANCE_REASON_OPERATION_COUNT = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 1;
 
 
 	/**
@@ -3313,106 +2339,6 @@ public interface InventoryPackage extends EPackage {
 	EAttribute getInventoryItem_InventoryItemVariances();
 
 	/**
-	 * Returns the meta object for the '{@link org.abchip.mimo.biz.product.inventory.InventoryItem#acctgTransEntries() <em>Acctg Trans Entries</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Acctg Trans Entries</em>' operation.
-	 * @see org.abchip.mimo.biz.product.inventory.InventoryItem#acctgTransEntries()
-	 * @generated
-	 */
-	EOperation getInventoryItem__AcctgTransEntries();
-
-	/**
-	 * Returns the meta object for the '{@link org.abchip.mimo.biz.product.inventory.InventoryItem#acctgTranss() <em>Acctg Transs</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Acctg Transs</em>' operation.
-	 * @see org.abchip.mimo.biz.product.inventory.InventoryItem#acctgTranss()
-	 * @generated
-	 */
-	EOperation getInventoryItem__AcctgTranss();
-
-	/**
-	 * Returns the meta object for the '{@link org.abchip.mimo.biz.product.inventory.InventoryItem#fromOrderItems() <em>From Order Items</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>From Order Items</em>' operation.
-	 * @see org.abchip.mimo.biz.product.inventory.InventoryItem#fromOrderItems()
-	 * @generated
-	 */
-	EOperation getInventoryItem__FromOrderItems();
-
-	/**
-	 * Returns the meta object for the '{@link org.abchip.mimo.biz.product.inventory.InventoryItem#inventoryTransfers() <em>Inventory Transfers</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Inventory Transfers</em>' operation.
-	 * @see org.abchip.mimo.biz.product.inventory.InventoryItem#inventoryTransfers()
-	 * @generated
-	 */
-	EOperation getInventoryItem__InventoryTransfers();
-
-	/**
-	 * Returns the meta object for the '{@link org.abchip.mimo.biz.product.inventory.InventoryItem#invoiceItems() <em>Invoice Items</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Invoice Items</em>' operation.
-	 * @see org.abchip.mimo.biz.product.inventory.InventoryItem#invoiceItems()
-	 * @generated
-	 */
-	EOperation getInventoryItem__InvoiceItems();
-
-	/**
-	 * Returns the meta object for the '{@link org.abchip.mimo.biz.product.inventory.InventoryItem#itemIssuances() <em>Item Issuances</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Item Issuances</em>' operation.
-	 * @see org.abchip.mimo.biz.product.inventory.InventoryItem#itemIssuances()
-	 * @generated
-	 */
-	EOperation getInventoryItem__ItemIssuances();
-
-	/**
-	 * Returns the meta object for the '{@link org.abchip.mimo.biz.product.inventory.InventoryItem#shipmentReceipts() <em>Shipment Receipts</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Shipment Receipts</em>' operation.
-	 * @see org.abchip.mimo.biz.product.inventory.InventoryItem#shipmentReceipts()
-	 * @generated
-	 */
-	EOperation getInventoryItem__ShipmentReceipts();
-
-	/**
-	 * Returns the meta object for the '{@link org.abchip.mimo.biz.product.inventory.InventoryItem#subscriptions() <em>Subscriptions</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Subscriptions</em>' operation.
-	 * @see org.abchip.mimo.biz.product.inventory.InventoryItem#subscriptions()
-	 * @generated
-	 */
-	EOperation getInventoryItem__Subscriptions();
-
-	/**
-	 * Returns the meta object for the '{@link org.abchip.mimo.biz.product.inventory.InventoryItem#workEffortInventoryAssigns() <em>Work Effort Inventory Assigns</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Work Effort Inventory Assigns</em>' operation.
-	 * @see org.abchip.mimo.biz.product.inventory.InventoryItem#workEffortInventoryAssigns()
-	 * @generated
-	 */
-	EOperation getInventoryItem__WorkEffortInventoryAssigns();
-
-	/**
-	 * Returns the meta object for the '{@link org.abchip.mimo.biz.product.inventory.InventoryItem#workEffortInventoryProduceds() <em>Work Effort Inventory Produceds</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Work Effort Inventory Produceds</em>' operation.
-	 * @see org.abchip.mimo.biz.product.inventory.InventoryItem#workEffortInventoryProduceds()
-	 * @generated
-	 */
-	EOperation getInventoryItem__WorkEffortInventoryProduceds();
-
-	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.biz.product.inventory.InventoryItemAttribute <em>Item Attribute</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3762,16 +2688,6 @@ public interface InventoryPackage extends EPackage {
 	EReference getInventoryItemLabel_InventoryItemLabelTypeId();
 
 	/**
-	 * Returns the meta object for the '{@link org.abchip.mimo.biz.product.inventory.InventoryItemLabel#inventoryItemLabelAppls() <em>Inventory Item Label Appls</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Inventory Item Label Appls</em>' operation.
-	 * @see org.abchip.mimo.biz.product.inventory.InventoryItemLabel#inventoryItemLabelAppls()
-	 * @generated
-	 */
-	EOperation getInventoryItemLabel__InventoryItemLabelAppls();
-
-	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.biz.product.inventory.InventoryItemLabelAppl <em>Item Label Appl</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3878,36 +2794,6 @@ public interface InventoryPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getInventoryItemLabelType_ParentTypeId();
-
-	/**
-	 * Returns the meta object for the '{@link org.abchip.mimo.biz.product.inventory.InventoryItemLabelType#childInventoryItemLabelTypes() <em>Child Inventory Item Label Types</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Child Inventory Item Label Types</em>' operation.
-	 * @see org.abchip.mimo.biz.product.inventory.InventoryItemLabelType#childInventoryItemLabelTypes()
-	 * @generated
-	 */
-	EOperation getInventoryItemLabelType__ChildInventoryItemLabelTypes();
-
-	/**
-	 * Returns the meta object for the '{@link org.abchip.mimo.biz.product.inventory.InventoryItemLabelType#inventoryItemLabelAppls() <em>Inventory Item Label Appls</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Inventory Item Label Appls</em>' operation.
-	 * @see org.abchip.mimo.biz.product.inventory.InventoryItemLabelType#inventoryItemLabelAppls()
-	 * @generated
-	 */
-	EOperation getInventoryItemLabelType__InventoryItemLabelAppls();
-
-	/**
-	 * Returns the meta object for the '{@link org.abchip.mimo.biz.product.inventory.InventoryItemLabelType#inventoryItemLabels() <em>Inventory Item Labels</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Inventory Item Labels</em>' operation.
-	 * @see org.abchip.mimo.biz.product.inventory.InventoryItemLabelType#inventoryItemLabels()
-	 * @generated
-	 */
-	EOperation getInventoryItemLabelType__InventoryItemLabels();
 
 	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.biz.product.inventory.InventoryItemStatus <em>Item Status</em>}'.
@@ -4125,46 +3011,6 @@ public interface InventoryPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getInventoryItemType_InventoryItemTypeAttrs();
-
-	/**
-	 * Returns the meta object for the '{@link org.abchip.mimo.biz.product.inventory.InventoryItemType#childInventoryItemTypes() <em>Child Inventory Item Types</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Child Inventory Item Types</em>' operation.
-	 * @see org.abchip.mimo.biz.product.inventory.InventoryItemType#childInventoryItemTypes()
-	 * @generated
-	 */
-	EOperation getInventoryItemType__ChildInventoryItemTypes();
-
-	/**
-	 * Returns the meta object for the '{@link org.abchip.mimo.biz.product.inventory.InventoryItemType#defaultFacilities() <em>Default Facilities</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Default Facilities</em>' operation.
-	 * @see org.abchip.mimo.biz.product.inventory.InventoryItemType#defaultFacilities()
-	 * @generated
-	 */
-	EOperation getInventoryItemType__DefaultFacilities();
-
-	/**
-	 * Returns the meta object for the '{@link org.abchip.mimo.biz.product.inventory.InventoryItemType#inventoryItems() <em>Inventory Items</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Inventory Items</em>' operation.
-	 * @see org.abchip.mimo.biz.product.inventory.InventoryItemType#inventoryItems()
-	 * @generated
-	 */
-	EOperation getInventoryItemType__InventoryItems();
-
-	/**
-	 * Returns the meta object for the '{@link org.abchip.mimo.biz.product.inventory.InventoryItemType#products() <em>Products</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Products</em>' operation.
-	 * @see org.abchip.mimo.biz.product.inventory.InventoryItemType#products()
-	 * @generated
-	 */
-	EOperation getInventoryItemType__Products();
 
 	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.biz.product.inventory.InventoryItemTypeAttr <em>Item Type Attr</em>}'.
@@ -4493,16 +3339,6 @@ public interface InventoryPackage extends EPackage {
 	EAttribute getLot_Quantity();
 
 	/**
-	 * Returns the meta object for the '{@link org.abchip.mimo.biz.product.inventory.Lot#inventoryItems() <em>Inventory Items</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Inventory Items</em>' operation.
-	 * @see org.abchip.mimo.biz.product.inventory.Lot#inventoryItems()
-	 * @generated
-	 */
-	EOperation getLot__InventoryItems();
-
-	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.biz.product.inventory.PhysicalInventory <em>Physical Inventory</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -4557,36 +3393,6 @@ public interface InventoryPackage extends EPackage {
 	EAttribute getPhysicalInventory_PhysicalInventoryDate();
 
 	/**
-	 * Returns the meta object for the '{@link org.abchip.mimo.biz.product.inventory.PhysicalInventory#acctgTranss() <em>Acctg Transs</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Acctg Transs</em>' operation.
-	 * @see org.abchip.mimo.biz.product.inventory.PhysicalInventory#acctgTranss()
-	 * @generated
-	 */
-	EOperation getPhysicalInventory__AcctgTranss();
-
-	/**
-	 * Returns the meta object for the '{@link org.abchip.mimo.biz.product.inventory.PhysicalInventory#inventoryItemDetails() <em>Inventory Item Details</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Inventory Item Details</em>' operation.
-	 * @see org.abchip.mimo.biz.product.inventory.PhysicalInventory#inventoryItemDetails()
-	 * @generated
-	 */
-	EOperation getPhysicalInventory__InventoryItemDetails();
-
-	/**
-	 * Returns the meta object for the '{@link org.abchip.mimo.biz.product.inventory.PhysicalInventory#inventoryItemVariances() <em>Inventory Item Variances</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Inventory Item Variances</em>' operation.
-	 * @see org.abchip.mimo.biz.product.inventory.PhysicalInventory#inventoryItemVariances()
-	 * @generated
-	 */
-	EOperation getPhysicalInventory__InventoryItemVariances();
-
-	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.biz.product.inventory.VarianceReason <em>Variance Reason</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -4628,16 +3434,6 @@ public interface InventoryPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getVarianceReason_VarianceReasonGlAccounts();
-
-	/**
-	 * Returns the meta object for the '{@link org.abchip.mimo.biz.product.inventory.VarianceReason#inventoryItemVariances() <em>Inventory Item Variances</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Inventory Item Variances</em>' operation.
-	 * @see org.abchip.mimo.biz.product.inventory.VarianceReason#inventoryItemVariances()
-	 * @generated
-	 */
-	EOperation getVarianceReason__InventoryItemVariances();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -4928,86 +3724,6 @@ public interface InventoryPackage extends EPackage {
 		EAttribute INVENTORY_ITEM__INVENTORY_ITEM_VARIANCES = eINSTANCE.getInventoryItem_InventoryItemVariances();
 
 		/**
-		 * The meta object literal for the '<em><b>Acctg Trans Entries</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation INVENTORY_ITEM___ACCTG_TRANS_ENTRIES = eINSTANCE.getInventoryItem__AcctgTransEntries();
-
-		/**
-		 * The meta object literal for the '<em><b>Acctg Transs</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation INVENTORY_ITEM___ACCTG_TRANSS = eINSTANCE.getInventoryItem__AcctgTranss();
-
-		/**
-		 * The meta object literal for the '<em><b>From Order Items</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation INVENTORY_ITEM___FROM_ORDER_ITEMS = eINSTANCE.getInventoryItem__FromOrderItems();
-
-		/**
-		 * The meta object literal for the '<em><b>Inventory Transfers</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation INVENTORY_ITEM___INVENTORY_TRANSFERS = eINSTANCE.getInventoryItem__InventoryTransfers();
-
-		/**
-		 * The meta object literal for the '<em><b>Invoice Items</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation INVENTORY_ITEM___INVOICE_ITEMS = eINSTANCE.getInventoryItem__InvoiceItems();
-
-		/**
-		 * The meta object literal for the '<em><b>Item Issuances</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation INVENTORY_ITEM___ITEM_ISSUANCES = eINSTANCE.getInventoryItem__ItemIssuances();
-
-		/**
-		 * The meta object literal for the '<em><b>Shipment Receipts</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation INVENTORY_ITEM___SHIPMENT_RECEIPTS = eINSTANCE.getInventoryItem__ShipmentReceipts();
-
-		/**
-		 * The meta object literal for the '<em><b>Subscriptions</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation INVENTORY_ITEM___SUBSCRIPTIONS = eINSTANCE.getInventoryItem__Subscriptions();
-
-		/**
-		 * The meta object literal for the '<em><b>Work Effort Inventory Assigns</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation INVENTORY_ITEM___WORK_EFFORT_INVENTORY_ASSIGNS = eINSTANCE.getInventoryItem__WorkEffortInventoryAssigns();
-
-		/**
-		 * The meta object literal for the '<em><b>Work Effort Inventory Produceds</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation INVENTORY_ITEM___WORK_EFFORT_INVENTORY_PRODUCEDS = eINSTANCE.getInventoryItem__WorkEffortInventoryProduceds();
-
-		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.biz.product.inventory.impl.InventoryItemAttributeImpl <em>Item Attribute</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -5270,14 +3986,6 @@ public interface InventoryPackage extends EPackage {
 		EReference INVENTORY_ITEM_LABEL__INVENTORY_ITEM_LABEL_TYPE_ID = eINSTANCE.getInventoryItemLabel_InventoryItemLabelTypeId();
 
 		/**
-		 * The meta object literal for the '<em><b>Inventory Item Label Appls</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation INVENTORY_ITEM_LABEL___INVENTORY_ITEM_LABEL_APPLS = eINSTANCE.getInventoryItemLabel__InventoryItemLabelAppls();
-
-		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.biz.product.inventory.impl.InventoryItemLabelApplImpl <em>Item Label Appl</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -5360,30 +4068,6 @@ public interface InventoryPackage extends EPackage {
 		 * @generated
 		 */
 		EReference INVENTORY_ITEM_LABEL_TYPE__PARENT_TYPE_ID = eINSTANCE.getInventoryItemLabelType_ParentTypeId();
-
-		/**
-		 * The meta object literal for the '<em><b>Child Inventory Item Label Types</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation INVENTORY_ITEM_LABEL_TYPE___CHILD_INVENTORY_ITEM_LABEL_TYPES = eINSTANCE.getInventoryItemLabelType__ChildInventoryItemLabelTypes();
-
-		/**
-		 * The meta object literal for the '<em><b>Inventory Item Label Appls</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation INVENTORY_ITEM_LABEL_TYPE___INVENTORY_ITEM_LABEL_APPLS = eINSTANCE.getInventoryItemLabelType__InventoryItemLabelAppls();
-
-		/**
-		 * The meta object literal for the '<em><b>Inventory Item Labels</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation INVENTORY_ITEM_LABEL_TYPE___INVENTORY_ITEM_LABELS = eINSTANCE.getInventoryItemLabelType__InventoryItemLabels();
 
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.biz.product.inventory.impl.InventoryItemStatusImpl <em>Item Status</em>}' class.
@@ -5550,38 +4234,6 @@ public interface InventoryPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute INVENTORY_ITEM_TYPE__INVENTORY_ITEM_TYPE_ATTRS = eINSTANCE.getInventoryItemType_InventoryItemTypeAttrs();
-
-		/**
-		 * The meta object literal for the '<em><b>Child Inventory Item Types</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation INVENTORY_ITEM_TYPE___CHILD_INVENTORY_ITEM_TYPES = eINSTANCE.getInventoryItemType__ChildInventoryItemTypes();
-
-		/**
-		 * The meta object literal for the '<em><b>Default Facilities</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation INVENTORY_ITEM_TYPE___DEFAULT_FACILITIES = eINSTANCE.getInventoryItemType__DefaultFacilities();
-
-		/**
-		 * The meta object literal for the '<em><b>Inventory Items</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation INVENTORY_ITEM_TYPE___INVENTORY_ITEMS = eINSTANCE.getInventoryItemType__InventoryItems();
-
-		/**
-		 * The meta object literal for the '<em><b>Products</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation INVENTORY_ITEM_TYPE___PRODUCTS = eINSTANCE.getInventoryItemType__Products();
 
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.biz.product.inventory.impl.InventoryItemTypeAttrImpl <em>Item Type Attr</em>}' class.
@@ -5832,14 +4484,6 @@ public interface InventoryPackage extends EPackage {
 		EAttribute LOT__QUANTITY = eINSTANCE.getLot_Quantity();
 
 		/**
-		 * The meta object literal for the '<em><b>Inventory Items</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation LOT___INVENTORY_ITEMS = eINSTANCE.getLot__InventoryItems();
-
-		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.biz.product.inventory.impl.PhysicalInventoryImpl <em>Physical Inventory</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -5882,30 +4526,6 @@ public interface InventoryPackage extends EPackage {
 		EAttribute PHYSICAL_INVENTORY__PHYSICAL_INVENTORY_DATE = eINSTANCE.getPhysicalInventory_PhysicalInventoryDate();
 
 		/**
-		 * The meta object literal for the '<em><b>Acctg Transs</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation PHYSICAL_INVENTORY___ACCTG_TRANSS = eINSTANCE.getPhysicalInventory__AcctgTranss();
-
-		/**
-		 * The meta object literal for the '<em><b>Inventory Item Details</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation PHYSICAL_INVENTORY___INVENTORY_ITEM_DETAILS = eINSTANCE.getPhysicalInventory__InventoryItemDetails();
-
-		/**
-		 * The meta object literal for the '<em><b>Inventory Item Variances</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation PHYSICAL_INVENTORY___INVENTORY_ITEM_VARIANCES = eINSTANCE.getPhysicalInventory__InventoryItemVariances();
-
-		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.biz.product.inventory.impl.VarianceReasonImpl <em>Variance Reason</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -5938,14 +4558,6 @@ public interface InventoryPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute VARIANCE_REASON__VARIANCE_REASON_GL_ACCOUNTS = eINSTANCE.getVarianceReason_VarianceReasonGlAccounts();
-
-		/**
-		 * The meta object literal for the '<em><b>Inventory Item Variances</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation VARIANCE_REASON___INVENTORY_ITEM_VARIANCES = eINSTANCE.getVarianceReason__InventoryItemVariances();
 
 	}
 

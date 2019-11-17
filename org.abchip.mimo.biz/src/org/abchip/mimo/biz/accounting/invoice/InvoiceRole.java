@@ -47,7 +47,7 @@ public interface InvoiceRole extends BizEntity {
 	 * @return the value of the '<em>Datetime Performed</em>' attribute.
 	 * @see #setDatetimePerformed(Date)
 	 * @see org.abchip.mimo.biz.accounting.invoice.InvoicePackage#getInvoiceRole_DatetimePerformed()
-	 * @model
+	 * @model annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getDatetimePerformed();
@@ -99,7 +99,7 @@ public interface InvoiceRole extends BizEntity {
 	 * @return the value of the '<em>Percentage</em>' attribute.
 	 * @see #setPercentage(BigDecimal)
 	 * @see org.abchip.mimo.biz.accounting.invoice.InvoicePackage#getInvoiceRole_Percentage()
-	 * @model
+	 * @model annotation="mimo-ent-format type='fixed-point' precision='18' scale='6'"
 	 * @generated
 	 */
 	BigDecimal getPercentage();

@@ -56,7 +56,7 @@ public interface ProductStoreFinActSetting extends BizEntity {
 	 * @return the value of the '<em>Account Code Length</em>' attribute.
 	 * @see #setAccountCodeLength(long)
 	 * @see org.abchip.mimo.biz.product.store.StorePackage#getProductStoreFinActSetting_AccountCodeLength()
-	 * @model
+	 * @model annotation="mimo-ent-format type='numeric' precision='20' scale='0'"
 	 * @generated
 	 */
 	long getAccountCodeLength();
@@ -82,7 +82,7 @@ public interface ProductStoreFinActSetting extends BizEntity {
 	 * @return the value of the '<em>Account Valid Days</em>' attribute.
 	 * @see #setAccountValidDays(long)
 	 * @see org.abchip.mimo.biz.product.store.StorePackage#getProductStoreFinActSetting_AccountValidDays()
-	 * @model
+	 * @model annotation="mimo-ent-format type='numeric' precision='20' scale='0'"
 	 * @generated
 	 */
 	long getAccountValidDays();
@@ -108,7 +108,7 @@ public interface ProductStoreFinActSetting extends BizEntity {
 	 * @return the value of the '<em>Allow Auth To Negative</em>' attribute.
 	 * @see #setAllowAuthToNegative(boolean)
 	 * @see org.abchip.mimo.biz.product.store.StorePackage#getProductStoreFinActSetting_AllowAuthToNegative()
-	 * @model
+	 * @model annotation="mimo-ent-format type='indicator' length='1'"
 	 * @generated
 	 */
 	boolean isAllowAuthToNegative();
@@ -134,7 +134,7 @@ public interface ProductStoreFinActSetting extends BizEntity {
 	 * @return the value of the '<em>Auth Valid Days</em>' attribute.
 	 * @see #setAuthValidDays(long)
 	 * @see org.abchip.mimo.biz.product.store.StorePackage#getProductStoreFinActSetting_AuthValidDays()
-	 * @model
+	 * @model annotation="mimo-ent-format type='numeric' precision='20' scale='0'"
 	 * @generated
 	 */
 	long getAuthValidDays();
@@ -186,7 +186,7 @@ public interface ProductStoreFinActSetting extends BizEntity {
 	 * @return the value of the '<em>Min Balance</em>' attribute.
 	 * @see #setMinBalance(BigDecimal)
 	 * @see org.abchip.mimo.biz.product.store.StorePackage#getProductStoreFinActSetting_MinBalance()
-	 * @model
+	 * @model annotation="mimo-ent-format type='currency-amount' precision='18' scale='2'"
 	 * @generated
 	 */
 	BigDecimal getMinBalance();
@@ -212,7 +212,7 @@ public interface ProductStoreFinActSetting extends BizEntity {
 	 * @return the value of the '<em>Pin Code Length</em>' attribute.
 	 * @see #setPinCodeLength(long)
 	 * @see org.abchip.mimo.biz.product.store.StorePackage#getProductStoreFinActSetting_PinCodeLength()
-	 * @model
+	 * @model annotation="mimo-ent-format type='numeric' precision='20' scale='0'"
 	 * @generated
 	 */
 	long getPinCodeLength();
@@ -238,7 +238,7 @@ public interface ProductStoreFinActSetting extends BizEntity {
 	 * @return the value of the '<em>Purch Survey Copy Me</em>' attribute.
 	 * @see #setPurchSurveyCopyMe(String)
 	 * @see org.abchip.mimo.biz.product.store.StorePackage#getProductStoreFinActSetting_PurchSurveyCopyMe()
-	 * @model
+	 * @model annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	String getPurchSurveyCopyMe();
@@ -264,7 +264,7 @@ public interface ProductStoreFinActSetting extends BizEntity {
 	 * @return the value of the '<em>Purch Survey Send To</em>' attribute.
 	 * @see #setPurchSurveySendTo(String)
 	 * @see org.abchip.mimo.biz.product.store.StorePackage#getProductStoreFinActSetting_PurchSurveySendTo()
-	 * @model
+	 * @model annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	String getPurchSurveySendTo();
@@ -342,7 +342,7 @@ public interface ProductStoreFinActSetting extends BizEntity {
 	 * @return the value of the '<em>Replenish Threshold</em>' attribute.
 	 * @see #setReplenishThreshold(BigDecimal)
 	 * @see org.abchip.mimo.biz.product.store.StorePackage#getProductStoreFinActSetting_ReplenishThreshold()
-	 * @model
+	 * @model annotation="mimo-ent-format type='currency-amount' precision='18' scale='2'"
 	 * @generated
 	 */
 	BigDecimal getReplenishThreshold();
@@ -368,7 +368,7 @@ public interface ProductStoreFinActSetting extends BizEntity {
 	 * @return the value of the '<em>Require Pin Code</em>' attribute.
 	 * @see #setRequirePinCode(boolean)
 	 * @see org.abchip.mimo.biz.product.store.StorePackage#getProductStoreFinActSetting_RequirePinCode()
-	 * @model
+	 * @model annotation="mimo-ent-format type='indicator' length='1'"
 	 * @generated
 	 */
 	boolean isRequirePinCode();
@@ -394,7 +394,7 @@ public interface ProductStoreFinActSetting extends BizEntity {
 	 * @return the value of the '<em>Validate GC Fin Acct</em>' attribute.
 	 * @see #setValidateGCFinAcct(boolean)
 	 * @see org.abchip.mimo.biz.product.store.StorePackage#getProductStoreFinActSetting_ValidateGCFinAcct()
-	 * @model
+	 * @model annotation="mimo-ent-format type='indicator' length='1'"
 	 * @generated
 	 */
 	boolean isValidateGCFinAcct();

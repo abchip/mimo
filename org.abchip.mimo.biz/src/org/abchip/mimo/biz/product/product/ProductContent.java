@@ -80,6 +80,7 @@ public interface ProductContent extends BizEntityTyped<ProductContentType> {
 	 * @see #setFromDate(Date)
 	 * @see org.abchip.mimo.biz.product.product.ProductPackage#getProductContent_FromDate()
 	 * @model required="true"
+	 *        annotation="mimo-ent-format type='date-time'"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
@@ -106,7 +107,7 @@ public interface ProductContent extends BizEntityTyped<ProductContentType> {
 	 * @return the value of the '<em>Purchase From Date</em>' attribute.
 	 * @see #setPurchaseFromDate(Date)
 	 * @see org.abchip.mimo.biz.product.product.ProductPackage#getProductContent_PurchaseFromDate()
-	 * @model
+	 * @model annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getPurchaseFromDate();
@@ -132,7 +133,7 @@ public interface ProductContent extends BizEntityTyped<ProductContentType> {
 	 * @return the value of the '<em>Purchase Thru Date</em>' attribute.
 	 * @see #setPurchaseThruDate(Date)
 	 * @see org.abchip.mimo.biz.product.product.ProductPackage#getProductContent_PurchaseThruDate()
-	 * @model
+	 * @model annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getPurchaseThruDate();
@@ -158,7 +159,7 @@ public interface ProductContent extends BizEntityTyped<ProductContentType> {
 	 * @return the value of the '<em>Sequence Num</em>' attribute.
 	 * @see #setSequenceNum(long)
 	 * @see org.abchip.mimo.biz.product.product.ProductPackage#getProductContent_SequenceNum()
-	 * @model
+	 * @model annotation="mimo-ent-format type='numeric' precision='20' scale='0'"
 	 * @generated
 	 */
 	long getSequenceNum();
@@ -184,7 +185,7 @@ public interface ProductContent extends BizEntityTyped<ProductContentType> {
 	 * @return the value of the '<em>Thru Date</em>' attribute.
 	 * @see #setThruDate(Date)
 	 * @see org.abchip.mimo.biz.product.product.ProductPackage#getProductContent_ThruDate()
-	 * @model
+	 * @model annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getThruDate();
@@ -210,7 +211,7 @@ public interface ProductContent extends BizEntityTyped<ProductContentType> {
 	 * @return the value of the '<em>Use Count Limit</em>' attribute.
 	 * @see #setUseCountLimit(long)
 	 * @see org.abchip.mimo.biz.product.product.ProductPackage#getProductContent_UseCountLimit()
-	 * @model
+	 * @model annotation="mimo-ent-format type='numeric' precision='20' scale='0'"
 	 * @generated
 	 */
 	long getUseCountLimit();
@@ -262,7 +263,7 @@ public interface ProductContent extends BizEntityTyped<ProductContentType> {
 	 * @return the value of the '<em>Use Time</em>' attribute.
 	 * @see #setUseTime(long)
 	 * @see org.abchip.mimo.biz.product.product.ProductPackage#getProductContent_UseTime()
-	 * @model
+	 * @model annotation="mimo-ent-format type='numeric' precision='20' scale='0'"
 	 * @generated
 	 */
 	long getUseTime();

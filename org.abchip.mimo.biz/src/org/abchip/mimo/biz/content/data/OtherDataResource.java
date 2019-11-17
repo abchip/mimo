@@ -38,7 +38,7 @@ public interface OtherDataResource extends BizEntity {
 	 * @return the value of the '<em>Data Resource Content</em>' attribute.
 	 * @see #setDataResourceContent(byte[])
 	 * @see org.abchip.mimo.biz.content.data.DataPackage#getOtherDataResource_DataResourceContent()
-	 * @model
+	 * @model annotation="mimo-ent-format type='byte-array'"
 	 * @generated
 	 */
 	byte[] getDataResourceContent();

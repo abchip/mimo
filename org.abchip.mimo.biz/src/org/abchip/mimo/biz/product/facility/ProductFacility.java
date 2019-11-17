@@ -47,7 +47,7 @@ public interface ProductFacility extends BizEntity {
 	 * @return the value of the '<em>Days To Ship</em>' attribute.
 	 * @see #setDaysToShip(long)
 	 * @see org.abchip.mimo.biz.product.facility.FacilityPackage#getProductFacility_DaysToShip()
-	 * @model
+	 * @model annotation="mimo-ent-format type='numeric' precision='20' scale='0'"
 	 * @generated
 	 */
 	long getDaysToShip();
@@ -73,7 +73,7 @@ public interface ProductFacility extends BizEntity {
 	 * @return the value of the '<em>Last Inventory Count</em>' attribute.
 	 * @see #setLastInventoryCount(BigDecimal)
 	 * @see org.abchip.mimo.biz.product.facility.FacilityPackage#getProductFacility_LastInventoryCount()
-	 * @model
+	 * @model annotation="mimo-ent-format type='fixed-point' precision='18' scale='6'"
 	 * @generated
 	 */
 	BigDecimal getLastInventoryCount();
@@ -99,7 +99,7 @@ public interface ProductFacility extends BizEntity {
 	 * @return the value of the '<em>Minimum Stock</em>' attribute.
 	 * @see #setMinimumStock(BigDecimal)
 	 * @see org.abchip.mimo.biz.product.facility.FacilityPackage#getProductFacility_MinimumStock()
-	 * @model
+	 * @model annotation="mimo-ent-format type='fixed-point' precision='18' scale='6'"
 	 * @generated
 	 */
 	BigDecimal getMinimumStock();
@@ -151,7 +151,7 @@ public interface ProductFacility extends BizEntity {
 	 * @return the value of the '<em>Reorder Quantity</em>' attribute.
 	 * @see #setReorderQuantity(BigDecimal)
 	 * @see org.abchip.mimo.biz.product.facility.FacilityPackage#getProductFacility_ReorderQuantity()
-	 * @model
+	 * @model annotation="mimo-ent-format type='fixed-point' precision='18' scale='6'"
 	 * @generated
 	 */
 	BigDecimal getReorderQuantity();

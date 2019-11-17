@@ -52,7 +52,7 @@ public interface GeoPoint extends BizEntity {
 	 * @return the value of the '<em>Description</em>' attribute.
 	 * @see #setDescription(String)
 	 * @see org.abchip.mimo.biz.common.geo.GeoPackage#getGeoPoint_Description()
-	 * @model
+	 * @model annotation="mimo-ent-format type='description' length='255'"
 	 * @generated
 	 */
 	String getDescription();
@@ -78,7 +78,7 @@ public interface GeoPoint extends BizEntity {
 	 * @return the value of the '<em>Elevation</em>' attribute.
 	 * @see #setElevation(BigDecimal)
 	 * @see org.abchip.mimo.biz.common.geo.GeoPackage#getGeoPoint_Elevation()
-	 * @model
+	 * @model annotation="mimo-ent-format type='fixed-point' precision='18' scale='6'"
 	 * @generated
 	 */
 	BigDecimal getElevation();
@@ -131,6 +131,7 @@ public interface GeoPoint extends BizEntity {
 	 * @see #setGeoPointId(String)
 	 * @see org.abchip.mimo.biz.common.geo.GeoPackage#getGeoPoint_GeoPointId()
 	 * @model id="true" required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
@@ -157,7 +158,7 @@ public interface GeoPoint extends BizEntity {
 	 * @return the value of the '<em>Information</em>' attribute.
 	 * @see #setInformation(String)
 	 * @see org.abchip.mimo.biz.common.geo.GeoPackage#getGeoPoint_Information()
-	 * @model
+	 * @model annotation="mimo-ent-format type='comment' length='255'"
 	 * @generated
 	 */
 	String getInformation();
@@ -183,7 +184,8 @@ public interface GeoPoint extends BizEntity {
 	 * @return the value of the '<em>Latitude</em>' attribute.
 	 * @see #setLatitude(String)
 	 * @see org.abchip.mimo.biz.common.geo.GeoPackage#getGeoPoint_Latitude()
-	 * @model
+	 * @model required="true"
+	 *        annotation="mimo-ent-format type='short-varchar' length='60'"
 	 * @generated
 	 */
 	String getLatitude();
@@ -209,7 +211,8 @@ public interface GeoPoint extends BizEntity {
 	 * @return the value of the '<em>Longitude</em>' attribute.
 	 * @see #setLongitude(String)
 	 * @see org.abchip.mimo.biz.common.geo.GeoPackage#getGeoPoint_Longitude()
-	 * @model
+	 * @model required="true"
+	 *        annotation="mimo-ent-format type='short-varchar' length='60'"
 	 * @generated
 	 */
 	String getLongitude();
@@ -227,7 +230,8 @@ public interface GeoPoint extends BizEntity {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='Facility' route='geoPointId'"
 	 * @generated
 	 */
@@ -236,7 +240,8 @@ public interface GeoPoint extends BizEntity {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='FacilityLocation' route='geoPointId'"
 	 * @generated
 	 */
@@ -245,7 +250,8 @@ public interface GeoPoint extends BizEntity {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='PostalAddress' route='geoPointId'"
 	 * @generated
 	 */

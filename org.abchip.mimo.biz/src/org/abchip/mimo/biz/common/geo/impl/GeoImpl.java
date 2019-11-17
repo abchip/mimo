@@ -7,14 +7,12 @@
  */
 package org.abchip.mimo.biz.common.geo.impl;
 
-import java.lang.reflect.InvocationTargetException;
 import java.util.List;
 
 import org.abchip.mimo.biz.common.geo.Geo;
 import org.abchip.mimo.biz.common.geo.GeoPackage;
 import org.abchip.mimo.biz.common.geo.GeoType;
 import org.abchip.mimo.biz.impl.BizEntityTypedImpl;
-import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 
 /**
@@ -494,70 +492,6 @@ public class GeoImpl extends BizEntityTypedImpl<GeoType> implements Geo {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
-		switch (operationID) {
-			case GeoPackage.GEO___ASSOC_GEO_ASSOCS:
-				return assocGeoAssocs();
-			case GeoPackage.GEO___CITY_POSTAL_ADDRESSES:
-				return cityPostalAddresses();
-			case GeoPackage.GEO___COST_COMPONENTS:
-				return costComponents();
-			case GeoPackage.GEO___COUNTRY_POSTAL_ADDRESSES:
-				return countryPostalAddresses();
-			case GeoPackage.GEO___COUNTY_POSTAL_ADDRESSES:
-				return countyPostalAddresses();
-			case GeoPackage.GEO___EXCLUDE_PRODUCT_STORE_SHIPMENT_METHS:
-				return excludeProductStoreShipmentMeths();
-			case GeoPackage.GEO___FROM_SHIPMENT_COST_ESTIMATES:
-				return fromShipmentCostEstimates();
-			case GeoPackage.GEO___INCLUDE_PRODUCT_STORE_SHIPMENT_METHS:
-				return includeProductStoreShipmentMeths();
-			case GeoPackage.GEO___MUNICIPALITY_POSTAL_ADDRESSES:
-				return municipalityPostalAddresses();
-			case GeoPackage.GEO___ORIGIN_PRODUCTS:
-				return originProducts();
-			case GeoPackage.GEO___PAYMENT_APPLICATIONS:
-				return paymentApplications();
-			case GeoPackage.GEO___POSTAL_ADDRESS_BOUNDARIES:
-				return postalAddressBoundaries();
-			case GeoPackage.GEO___POSTAL_CODE_POSTAL_ADDRESSES:
-				return postalCodePostalAddresses();
-			case GeoPackage.GEO___PRIMARY_ORDER_ADJUSTMENTS:
-				return primaryOrderAdjustments();
-			case GeoPackage.GEO___PRIMARY_QUOTE_ADJUSTMENTS:
-				return primaryQuoteAdjustments();
-			case GeoPackage.GEO___PRIMARY_RETURN_ADJUSTMENTS:
-				return primaryReturnAdjustments();
-			case GeoPackage.GEO___PRODUCT_GEOS:
-				return productGeos();
-			case GeoPackage.GEO___REORDER_GUIDELINES:
-				return reorderGuidelines();
-			case GeoPackage.GEO___SECONDARY_ORDER_ADJUSTMENTS:
-				return secondaryOrderAdjustments();
-			case GeoPackage.GEO___SECONDARY_QUOTE_ADJUSTMENTS:
-				return secondaryQuoteAdjustments();
-			case GeoPackage.GEO___SECONDARY_RETURN_ADJUSTMENTS:
-				return secondaryReturnAdjustments();
-			case GeoPackage.GEO___SEGMENT_GROUP_GEOS:
-				return segmentGroupGeos();
-			case GeoPackage.GEO___STATE_PROVINCE_POSTAL_ADDRESSES:
-				return stateProvincePostalAddresses();
-			case GeoPackage.GEO___SURVEY_QUESTIONS:
-				return surveyQuestions();
-			case GeoPackage.GEO___TAX_INVOICE_ITEMS:
-				return taxInvoiceItems();
-			case GeoPackage.GEO___TO_SHIPMENT_COST_ESTIMATES:
-				return toShipmentCostEstimates();
-		}
-		return super.eInvoke(operationID, arguments);
 	}
 
 	/**

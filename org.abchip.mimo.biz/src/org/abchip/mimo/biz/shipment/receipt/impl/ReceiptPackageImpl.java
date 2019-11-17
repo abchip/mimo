@@ -77,6 +77,7 @@ import org.abchip.mimo.biz.entity.crypto.CryptoPackage;
 import org.abchip.mimo.biz.entity.crypto.impl.CryptoPackageImpl;
 import org.abchip.mimo.biz.entity.group.GroupPackage;
 import org.abchip.mimo.biz.entity.group.impl.GroupPackageImpl;
+import org.abchip.mimo.biz.entity.impl.EntityPackageImpl;
 import org.abchip.mimo.biz.entity.sequence.SequencePackage;
 import org.abchip.mimo.biz.entity.sequence.impl.SequencePackageImpl;
 import org.abchip.mimo.biz.entity.synchronization.SynchronizationPackage;
@@ -197,7 +198,6 @@ import org.eclipse.emf.common.util.URI;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 
 import org.eclipse.emf.ecore.EReference;
@@ -346,6 +346,8 @@ public class ReceiptPackageImpl extends EPackageImpl implements ReceiptPackage {
 		SurveyPackageImpl theSurveyPackage = (SurveyPackageImpl)(registeredPackage instanceof SurveyPackageImpl ? registeredPackage : SurveyPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(WebsitePackage.eNS_URI);
 		WebsitePackageImpl theWebsitePackage = (WebsitePackageImpl)(registeredPackage instanceof WebsitePackageImpl ? registeredPackage : WebsitePackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(org.abchip.mimo.biz.entity.EntityPackage.eNS_URI);
+		EntityPackageImpl theEntityPackage = (EntityPackageImpl)(registeredPackage instanceof EntityPackageImpl ? registeredPackage : org.abchip.mimo.biz.entity.EntityPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(AuditPackage.eNS_URI);
 		AuditPackageImpl theAuditPackage = (AuditPackageImpl)(registeredPackage instanceof AuditPackageImpl ? registeredPackage : AuditPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(CryptoPackage.eNS_URI);
@@ -499,6 +501,7 @@ public class ReceiptPackageImpl extends EPackageImpl implements ReceiptPackage {
 		thePreferencePackage.createPackageContents();
 		theSurveyPackage.createPackageContents();
 		theWebsitePackage.createPackageContents();
+		theEntityPackage.createPackageContents();
 		theAuditPackage.createPackageContents();
 		theCryptoPackage.createPackageContents();
 		theGroupPackage.createPackageContents();
@@ -593,6 +596,7 @@ public class ReceiptPackageImpl extends EPackageImpl implements ReceiptPackage {
 		thePreferencePackage.initializePackageContents();
 		theSurveyPackage.initializePackageContents();
 		theWebsitePackage.initializePackageContents();
+		theEntityPackage.initializePackageContents();
 		theAuditPackage.initializePackageContents();
 		theCryptoPackage.initializePackageContents();
 		theGroupPackage.initializePackageContents();
@@ -689,16 +693,6 @@ public class ReceiptPackageImpl extends EPackageImpl implements ReceiptPackage {
 	@Override
 	public EAttribute getRejectionReason_Description() {
 		return (EAttribute)rejectionReasonEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EOperation getRejectionReason__ShipmentReceipts() {
-		return rejectionReasonEClass.getEOperations().get(0);
 	}
 
 	/**
@@ -857,26 +851,6 @@ public class ReceiptPackageImpl extends EPackageImpl implements ReceiptPackage {
 	 * @generated
 	 */
 	@Override
-	public EOperation getShipmentReceipt__AcctgTranss() {
-		return shipmentReceiptEClass.getEOperations().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EOperation getShipmentReceipt__InventoryItemDetails() {
-		return shipmentReceiptEClass.getEOperations().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public EAttribute getShipmentReceipt_ShipmentItemSeqId() {
 		return (EAttribute)shipmentReceiptEClass.getEStructuralFeatures().get(8);
 	}
@@ -963,7 +937,6 @@ public class ReceiptPackageImpl extends EPackageImpl implements ReceiptPackage {
 		rejectionReasonEClass = createEClass(REJECTION_REASON);
 		createEAttribute(rejectionReasonEClass, REJECTION_REASON__REJECTION_ID);
 		createEAttribute(rejectionReasonEClass, REJECTION_REASON__DESCRIPTION);
-		createEOperation(rejectionReasonEClass, REJECTION_REASON___SHIPMENT_RECEIPTS);
 
 		shipmentReceiptEClass = createEClass(SHIPMENT_RECEIPT);
 		createEAttribute(shipmentReceiptEClass, SHIPMENT_RECEIPT__RECEIPT_ID);
@@ -982,8 +955,6 @@ public class ReceiptPackageImpl extends EPackageImpl implements ReceiptPackage {
 		createEReference(shipmentReceiptEClass, SHIPMENT_RECEIPT__REJECTION_ID);
 		createEReference(shipmentReceiptEClass, SHIPMENT_RECEIPT__RECEIVED_BY_USER_LOGIN_ID);
 		createEReference(shipmentReceiptEClass, SHIPMENT_RECEIPT__SHIPMENT_ID);
-		createEOperation(shipmentReceiptEClass, SHIPMENT_RECEIPT___ACCTG_TRANSS);
-		createEOperation(shipmentReceiptEClass, SHIPMENT_RECEIPT___INVENTORY_ITEM_DETAILS);
 
 		shipmentReceiptRoleEClass = createEClass(SHIPMENT_RECEIPT_ROLE);
 		createEAttribute(shipmentReceiptRoleEClass, SHIPMENT_RECEIPT_ROLE__ROLE_TYPE_ID);
@@ -1032,12 +1003,12 @@ public class ReceiptPackageImpl extends EPackageImpl implements ReceiptPackage {
 		shipmentReceiptEClass.getESuperTypes().add(theBizPackage.getBizEntity());
 		shipmentReceiptRoleEClass.getESuperTypes().add(theBizPackage.getBizEntity());
 
-		// Initialize classes, features, and operations; add parameters
+		// Initialize classes and features; add operations and parameters
 		initEClass(rejectionReasonEClass, RejectionReason.class, "RejectionReason", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getRejectionReason_RejectionId(), ecorePackage.getEString(), "rejectionId", null, 1, 1, RejectionReason.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getRejectionReason_Description(), ecorePackage.getEString(), "description", null, 0, 1, RejectionReason.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEOperation(getRejectionReason__ShipmentReceipts(), ecorePackage.getEString(), "shipmentReceipts", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(rejectionReasonEClass, ecorePackage.getEString(), "shipmentReceipts", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(shipmentReceiptEClass, ShipmentReceipt.class, "ShipmentReceipt", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getShipmentReceipt_ReceiptId(), ecorePackage.getEString(), "receiptId", null, 1, 1, ShipmentReceipt.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1063,9 +1034,9 @@ public class ReceiptPackageImpl extends EPackageImpl implements ReceiptPackage {
 		initEReference(getShipmentReceipt_ShipmentId(), theShipment_Package.getShipment(), null, "shipmentId", null, 0, 1, ShipmentReceipt.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getShipmentReceipt_ShipmentId().getEKeys().add(theShipment_Package.getShipment_ShipmentId());
 
-		initEOperation(getShipmentReceipt__AcctgTranss(), ecorePackage.getEString(), "acctgTranss", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(shipmentReceiptEClass, ecorePackage.getEString(), "acctgTranss", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		initEOperation(getShipmentReceipt__InventoryItemDetails(), ecorePackage.getEString(), "inventoryItemDetails", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(shipmentReceiptEClass, ecorePackage.getEString(), "inventoryItemDetails", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(shipmentReceiptRoleEClass, ShipmentReceiptRole.class, "ShipmentReceiptRole", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getShipmentReceiptRole_RoleTypeId(), ecorePackage.getEString(), "roleTypeId", null, 1, 1, ShipmentReceiptRole.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1077,6 +1048,8 @@ public class ReceiptPackageImpl extends EPackageImpl implements ReceiptPackage {
 		// Create annotations
 		// mimo-ent-frame
 		createMimoentframeAnnotations();
+		// mimo-ent-format
+		createMimoentformatAnnotations();
 		// mimo-ent-slot
 		createMimoentslotAnnotations();
 		// mimo-ent-domain
@@ -1100,6 +1073,129 @@ public class ReceiptPackageImpl extends EPackageImpl implements ReceiptPackage {
 	}
 
 	/**
+	 * Initializes the annotations for <b>mimo-ent-format</b>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void createMimoentformatAnnotations() {
+		String source = "mimo-ent-format";
+		addAnnotation
+		  (rejectionReasonEClass.getEOperations().get(0),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (getRejectionReason_RejectionId(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (getRejectionReason_Description(),
+		   source,
+		   new String[] {
+			   "type", "description",
+			   "length", "255"
+		   });
+		addAnnotation
+		  (shipmentReceiptEClass.getEOperations().get(0),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (shipmentReceiptEClass.getEOperations().get(1),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (getShipmentReceipt_ReceiptId(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (getShipmentReceipt_DatetimeReceived(),
+		   source,
+		   new String[] {
+			   "type", "date-time"
+		   });
+		addAnnotation
+		  (getShipmentReceipt_ItemDescription(),
+		   source,
+		   new String[] {
+			   "type", "description",
+			   "length", "255"
+		   });
+		addAnnotation
+		  (getShipmentReceipt_OrderItemSeqId(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (getShipmentReceipt_QuantityAccepted(),
+		   source,
+		   new String[] {
+			   "type", "fixed-point",
+			   "precision", "18",
+			   "scale", "6"
+		   });
+		addAnnotation
+		  (getShipmentReceipt_QuantityRejected(),
+		   source,
+		   new String[] {
+			   "type", "fixed-point",
+			   "precision", "18",
+			   "scale", "6"
+		   });
+		addAnnotation
+		  (getShipmentReceipt_ReturnId(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (getShipmentReceipt_ReturnItemSeqId(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (getShipmentReceipt_ShipmentItemSeqId(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (getShipmentReceipt_ShipmentPackageSeqId(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (getShipmentReceiptRole_RoleTypeId(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+	}
+
+	/**
 	 * Initializes the annotations for <b>mimo-ent-slot</b>.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1108,7 +1204,7 @@ public class ReceiptPackageImpl extends EPackageImpl implements ReceiptPackage {
 	protected void createMimoentslotAnnotations() {
 		String source = "mimo-ent-slot";
 		addAnnotation
-		  (getRejectionReason__ShipmentReceipts(),
+		  (rejectionReasonEClass.getEOperations().get(0),
 		   source,
 		   new String[] {
 			   "derived", "true"
@@ -1120,13 +1216,13 @@ public class ReceiptPackageImpl extends EPackageImpl implements ReceiptPackage {
 			   "key", "true"
 		   });
 		addAnnotation
-		  (getShipmentReceipt__AcctgTranss(),
+		  (shipmentReceiptEClass.getEOperations().get(0),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (getShipmentReceipt__InventoryItemDetails(),
+		  (shipmentReceiptEClass.getEOperations().get(1),
 		   source,
 		   new String[] {
 			   "derived", "true"
@@ -1154,7 +1250,7 @@ public class ReceiptPackageImpl extends EPackageImpl implements ReceiptPackage {
 	protected void createMimoentdomainAnnotations() {
 		String source = "mimo-ent-domain";
 		addAnnotation
-		  (getRejectionReason__ShipmentReceipts(),
+		  (rejectionReasonEClass.getEOperations().get(0),
 		   source,
 		   new String[] {
 			   "frame", "ShipmentReceipt",
@@ -1164,7 +1260,7 @@ public class ReceiptPackageImpl extends EPackageImpl implements ReceiptPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (getShipmentReceipt__AcctgTranss(),
+		  (shipmentReceiptEClass.getEOperations().get(0),
 		   source,
 		   new String[] {
 			   "frame", "AcctgTrans",
@@ -1174,7 +1270,7 @@ public class ReceiptPackageImpl extends EPackageImpl implements ReceiptPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (getShipmentReceipt__InventoryItemDetails(),
+		  (shipmentReceiptEClass.getEOperations().get(1),
 		   source,
 		   new String[] {
 			   "frame", "InventoryItemDetail",

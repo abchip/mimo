@@ -39,6 +39,7 @@ public interface MrpEventType extends BizEntityType<MrpEvent> {
 	 * @see #setMrpEventTypeId(String)
 	 * @see org.abchip.mimo.biz.manufacturing.mrp.MrpPackage#getMrpEventType_MrpEventTypeId()
 	 * @model id="true" required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
@@ -65,7 +66,7 @@ public interface MrpEventType extends BizEntityType<MrpEvent> {
 	 * @return the value of the '<em>Description</em>' attribute.
 	 * @see #setDescription(String)
 	 * @see org.abchip.mimo.biz.manufacturing.mrp.MrpPackage#getMrpEventType_Description()
-	 * @model
+	 * @model annotation="mimo-ent-format type='description' length='255'"
 	 * @generated
 	 */
 	String getDescription();

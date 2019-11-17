@@ -7,7 +7,6 @@
  */
 package org.abchip.mimo.biz.accounting.ledger.impl;
 
-import java.lang.reflect.InvocationTargetException;
 import java.util.Date;
 import java.util.List;
 
@@ -20,7 +19,6 @@ import org.abchip.mimo.biz.common.method.CustomMethod;
 import org.abchip.mimo.biz.common.uom.Uom;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.party.party.Party;
-import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 
 /**
@@ -88,6 +86,26 @@ public class PartyAcctgPreferenceImpl extends BizEntityImpl implements PartyAcct
 	 * @generated
 	 */
 	@Override
+	public boolean isEnableAccounting() {
+		return (Boolean)eGet(LedgerPackage.Literals.PARTY_ACCTG_PREFERENCE__ENABLE_ACCOUNTING, true);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setEnableAccounting(boolean newEnableAccounting) {
+		eSet(LedgerPackage.Literals.PARTY_ACCTG_PREFERENCE__ENABLE_ACCOUNTING, newEnableAccounting);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public Uom getBaseCurrencyUomId() {
 		return (Uom)eGet(LedgerPackage.Literals.PARTY_ACCTG_PREFERENCE__BASE_CURRENCY_UOM_ID, true);
 	}
@@ -120,26 +138,6 @@ public class PartyAcctgPreferenceImpl extends BizEntityImpl implements PartyAcct
 	@Override
 	public void setCogsMethodId(Enumeration newCogsMethodId) {
 		eSet(LedgerPackage.Literals.PARTY_ACCTG_PREFERENCE__COGS_METHOD_ID, newCogsMethodId);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public boolean isEnableAccounting() {
-		return (Boolean)eGet(LedgerPackage.Literals.PARTY_ACCTG_PREFERENCE__ENABLE_ACCOUNTING, true);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void setEnableAccounting(boolean newEnableAccounting) {
-		eSet(LedgerPackage.Literals.PARTY_ACCTG_PREFERENCE__ENABLE_ACCOUNTING, newEnableAccounting);
 	}
 
 	/**
@@ -448,6 +446,26 @@ public class PartyAcctgPreferenceImpl extends BizEntityImpl implements PartyAcct
 	 * @generated
 	 */
 	@Override
+	public boolean isUseInvoiceIdForReturns() {
+		return (Boolean)eGet(LedgerPackage.Literals.PARTY_ACCTG_PREFERENCE__USE_INVOICE_ID_FOR_RETURNS, true);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setUseInvoiceIdForReturns(boolean newUseInvoiceIdForReturns) {
+		eSet(LedgerPackage.Literals.PARTY_ACCTG_PREFERENCE__USE_INVOICE_ID_FOR_RETURNS, newUseInvoiceIdForReturns);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public CustomMethod getQuoteSeqCustMethId() {
 		return (CustomMethod)eGet(LedgerPackage.Literals.PARTY_ACCTG_PREFERENCE__QUOTE_SEQ_CUST_METH_ID, true);
 	}
@@ -508,44 +526,10 @@ public class PartyAcctgPreferenceImpl extends BizEntityImpl implements PartyAcct
 	 * @generated
 	 */
 	@Override
-	public boolean isUseInvoiceIdForReturns() {
-		return (Boolean)eGet(LedgerPackage.Literals.PARTY_ACCTG_PREFERENCE__USE_INVOICE_ID_FOR_RETURNS, true);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void setUseInvoiceIdForReturns(boolean newUseInvoiceIdForReturns) {
-		eSet(LedgerPackage.Literals.PARTY_ACCTG_PREFERENCE__USE_INVOICE_ID_FOR_RETURNS, newUseInvoiceIdForReturns);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public List<String> partyPrefDocTypeTpls() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
-		switch (operationID) {
-			case LedgerPackage.PARTY_ACCTG_PREFERENCE___PARTY_PREF_DOC_TYPE_TPLS:
-				return partyPrefDocTypeTpls();
-		}
-		return super.eInvoke(operationID, arguments);
 	}
 
 	/**

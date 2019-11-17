@@ -44,7 +44,7 @@ public interface PartyGroup extends Party {
 	 * @return the value of the '<em>Annual Revenue</em>' attribute.
 	 * @see #setAnnualRevenue(BigDecimal)
 	 * @see org.abchip.mimo.biz.party.party.PartyPackage#getPartyGroup_AnnualRevenue()
-	 * @model
+	 * @model annotation="mimo-ent-format type='currency-amount' precision='18' scale='2'"
 	 * @generated
 	 */
 	BigDecimal getAnnualRevenue();
@@ -70,7 +70,7 @@ public interface PartyGroup extends Party {
 	 * @return the value of the '<em>Comments</em>' attribute.
 	 * @see #setComments(String)
 	 * @see org.abchip.mimo.biz.party.party.PartyPackage#getPartyGroup_Comments()
-	 * @model
+	 * @model annotation="mimo-ent-format type='comment' length='255'"
 	 * @generated
 	 */
 	String getComments();
@@ -96,7 +96,7 @@ public interface PartyGroup extends Party {
 	 * @return the value of the '<em>Group Name</em>' attribute.
 	 * @see #setGroupName(String)
 	 * @see org.abchip.mimo.biz.party.party.PartyPackage#getPartyGroup_GroupName()
-	 * @model
+	 * @model annotation="mimo-ent-format type='name' length='100'"
 	 * @generated
 	 */
 	String getGroupName();
@@ -122,7 +122,7 @@ public interface PartyGroup extends Party {
 	 * @return the value of the '<em>Group Name Local</em>' attribute.
 	 * @see #setGroupNameLocal(String)
 	 * @see org.abchip.mimo.biz.party.party.PartyPackage#getPartyGroup_GroupNameLocal()
-	 * @model
+	 * @model annotation="mimo-ent-format type='name' length='100'"
 	 * @generated
 	 */
 	String getGroupNameLocal();
@@ -148,7 +148,7 @@ public interface PartyGroup extends Party {
 	 * @return the value of the '<em>Logo Image Url</em>' attribute.
 	 * @see #setLogoImageUrl(String)
 	 * @see org.abchip.mimo.biz.party.party.PartyPackage#getPartyGroup_LogoImageUrl()
-	 * @model
+	 * @model annotation="mimo-ent-format type='url' length='2000'"
 	 * @generated
 	 */
 	String getLogoImageUrl();
@@ -174,7 +174,7 @@ public interface PartyGroup extends Party {
 	 * @return the value of the '<em>Num Employees</em>' attribute.
 	 * @see #setNumEmployees(long)
 	 * @see org.abchip.mimo.biz.party.party.PartyPackage#getPartyGroup_NumEmployees()
-	 * @model
+	 * @model annotation="mimo-ent-format type='numeric' precision='20' scale='0'"
 	 * @generated
 	 */
 	long getNumEmployees();
@@ -200,7 +200,7 @@ public interface PartyGroup extends Party {
 	 * @return the value of the '<em>Office Site Name</em>' attribute.
 	 * @see #setOfficeSiteName(String)
 	 * @see org.abchip.mimo.biz.party.party.PartyPackage#getPartyGroup_OfficeSiteName()
-	 * @model
+	 * @model annotation="mimo-ent-format type='name' length='100'"
 	 * @generated
 	 */
 	String getOfficeSiteName();
@@ -226,7 +226,7 @@ public interface PartyGroup extends Party {
 	 * @return the value of the '<em>Ticker Symbol</em>' attribute.
 	 * @see #setTickerSymbol(String)
 	 * @see org.abchip.mimo.biz.party.party.PartyPackage#getPartyGroup_TickerSymbol()
-	 * @model
+	 * @model annotation="mimo-ent-format type='very-short' length='10'"
 	 * @generated
 	 */
 	String getTickerSymbol();

@@ -66,6 +66,7 @@ public interface WorkEffortTransBox extends BizEntity {
 	 * @see #setToActivityId(String)
 	 * @see org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage#getWorkEffortTransBox_ToActivityId()
 	 * @model required="true"
+	 *        annotation="mimo-ent-format type='id-long' length='60'"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
@@ -93,6 +94,7 @@ public interface WorkEffortTransBox extends BizEntity {
 	 * @see #setTransitionId(String)
 	 * @see org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage#getWorkEffortTransBox_TransitionId()
 	 * @model required="true"
+	 *        annotation="mimo-ent-format type='id-long' length='60'"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */

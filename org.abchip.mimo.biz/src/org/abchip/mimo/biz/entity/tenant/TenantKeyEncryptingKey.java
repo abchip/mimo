@@ -38,7 +38,7 @@ public interface TenantKeyEncryptingKey extends BizEntity {
 	 * @return the value of the '<em>Kek Text</em>' attribute.
 	 * @see #setKekText(String)
 	 * @see org.abchip.mimo.biz.entity.tenant.TenantPackage#getTenantKeyEncryptingKey_KekText()
-	 * @model
+	 * @model annotation="mimo-ent-format type='long-varchar' length='255'"
 	 * @generated
 	 */
 	String getKekText();

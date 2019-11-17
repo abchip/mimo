@@ -45,7 +45,7 @@ public interface FacilityContactMech extends BizEntity {
 	 * @return the value of the '<em>Comments</em>' attribute.
 	 * @see #setComments(String)
 	 * @see org.abchip.mimo.biz.product.facility.FacilityPackage#getFacilityContactMech_Comments()
-	 * @model
+	 * @model annotation="mimo-ent-format type='comment' length='255'"
 	 * @generated
 	 */
 	String getComments();
@@ -97,7 +97,7 @@ public interface FacilityContactMech extends BizEntity {
 	 * @return the value of the '<em>Extension</em>' attribute.
 	 * @see #setExtension(String)
 	 * @see org.abchip.mimo.biz.product.facility.FacilityPackage#getFacilityContactMech_Extension()
-	 * @model
+	 * @model annotation="mimo-ent-format type='very-short' length='10'"
 	 * @generated
 	 */
 	String getExtension();
@@ -124,6 +124,7 @@ public interface FacilityContactMech extends BizEntity {
 	 * @see #setFromDate(Date)
 	 * @see org.abchip.mimo.biz.product.facility.FacilityPackage#getFacilityContactMech_FromDate()
 	 * @model required="true"
+	 *        annotation="mimo-ent-format type='date-time'"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
@@ -150,7 +151,7 @@ public interface FacilityContactMech extends BizEntity {
 	 * @return the value of the '<em>Thru Date</em>' attribute.
 	 * @see #setThruDate(Date)
 	 * @see org.abchip.mimo.biz.product.facility.FacilityPackage#getFacilityContactMech_ThruDate()
-	 * @model
+	 * @model annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getThruDate();

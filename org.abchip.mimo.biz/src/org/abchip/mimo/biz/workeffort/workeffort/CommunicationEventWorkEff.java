@@ -66,7 +66,7 @@ public interface CommunicationEventWorkEff extends BizEntity {
 	 * @return the value of the '<em>Description</em>' attribute.
 	 * @see #setDescription(String)
 	 * @see org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage#getCommunicationEventWorkEff_Description()
-	 * @model
+	 * @model annotation="mimo-ent-format type='description' length='255'"
 	 * @generated
 	 */
 	String getDescription();

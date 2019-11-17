@@ -10,7 +10,6 @@ package org.abchip.mimo.biz.accounting.tax;
 import org.abchip.mimo.biz.BizPackage;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
@@ -190,51 +189,6 @@ public interface TaxPackage extends EPackage {
 	int PARTY_TAX_AUTH_INFO_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 8;
 
 	/**
-	 * The operation id for the '<em>Isa</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PARTY_TAX_AUTH_INFO___ISA = BizPackage.BIZ_ENTITY___ISA;
-
-	/**
-	 * The operation id for the '<em>Get Name</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PARTY_TAX_AUTH_INFO___GET_NAME = BizPackage.BIZ_ENTITY___GET_NAME;
-
-	/**
-	 * The operation id for the '<em>Get URI</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PARTY_TAX_AUTH_INFO___GET_URI = BizPackage.BIZ_ENTITY___GET_URI;
-
-	/**
-	 * The operation id for the '<em>Is Proxy</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PARTY_TAX_AUTH_INFO___IS_PROXY = BizPackage.BIZ_ENTITY___IS_PROXY;
-
-	/**
-	 * The number of operations of the '<em>Party Tax Auth Info</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PARTY_TAX_AUTH_INFO_OPERATION_COUNT = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 0;
-
-	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.accounting.tax.impl.TaxAuthorityImpl <em>Authority</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -333,51 +287,6 @@ public interface TaxPackage extends EPackage {
 	 * @ordered
 	 */
 	int TAX_AUTHORITY_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 5;
-
-	/**
-	 * The operation id for the '<em>Isa</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TAX_AUTHORITY___ISA = BizPackage.BIZ_ENTITY___ISA;
-
-	/**
-	 * The operation id for the '<em>Get Name</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TAX_AUTHORITY___GET_NAME = BizPackage.BIZ_ENTITY___GET_NAME;
-
-	/**
-	 * The operation id for the '<em>Get URI</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TAX_AUTHORITY___GET_URI = BizPackage.BIZ_ENTITY___GET_URI;
-
-	/**
-	 * The operation id for the '<em>Is Proxy</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TAX_AUTHORITY___IS_PROXY = BizPackage.BIZ_ENTITY___IS_PROXY;
-
-	/**
-	 * The number of operations of the '<em>Authority</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TAX_AUTHORITY_OPERATION_COUNT = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.accounting.tax.impl.TaxAuthorityAssocImpl <em>Authority Assoc</em>}' class.
@@ -498,60 +407,6 @@ public interface TaxPackage extends EPackage {
 	int TAX_AUTHORITY_ASSOC_FEATURE_COUNT = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 7;
 
 	/**
-	 * The operation id for the '<em>Isa</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TAX_AUTHORITY_ASSOC___ISA = BizPackage.BIZ_ENTITY_TYPED___ISA;
-
-	/**
-	 * The operation id for the '<em>Get Name</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TAX_AUTHORITY_ASSOC___GET_NAME = BizPackage.BIZ_ENTITY_TYPED___GET_NAME;
-
-	/**
-	 * The operation id for the '<em>Get URI</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TAX_AUTHORITY_ASSOC___GET_URI = BizPackage.BIZ_ENTITY_TYPED___GET_URI;
-
-	/**
-	 * The operation id for the '<em>Is Proxy</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TAX_AUTHORITY_ASSOC___IS_PROXY = BizPackage.BIZ_ENTITY_TYPED___IS_PROXY;
-
-	/**
-	 * The operation id for the '<em>Get Type</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TAX_AUTHORITY_ASSOC___GET_TYPE = BizPackage.BIZ_ENTITY_TYPED___GET_TYPE;
-
-	/**
-	 * The number of operations of the '<em>Authority Assoc</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TAX_AUTHORITY_ASSOC_OPERATION_COUNT = BizPackage.BIZ_ENTITY_TYPED_OPERATION_COUNT + 0;
-
-	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.accounting.tax.impl.TaxAuthorityAssocTypeImpl <em>Authority Assoc Type</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -634,87 +489,6 @@ public interface TaxPackage extends EPackage {
 	int TAX_AUTHORITY_ASSOC_TYPE_FEATURE_COUNT = BizPackage.BIZ_ENTITY_TYPE_FEATURE_COUNT + 2;
 
 	/**
-	 * The operation id for the '<em>Isa</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TAX_AUTHORITY_ASSOC_TYPE___ISA = BizPackage.BIZ_ENTITY_TYPE___ISA;
-
-	/**
-	 * The operation id for the '<em>Get Name</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TAX_AUTHORITY_ASSOC_TYPE___GET_NAME = BizPackage.BIZ_ENTITY_TYPE___GET_NAME;
-
-	/**
-	 * The operation id for the '<em>Get URI</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TAX_AUTHORITY_ASSOC_TYPE___GET_URI = BizPackage.BIZ_ENTITY_TYPE___GET_URI;
-
-	/**
-	 * The operation id for the '<em>Is Proxy</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TAX_AUTHORITY_ASSOC_TYPE___IS_PROXY = BizPackage.BIZ_ENTITY_TYPE___IS_PROXY;
-
-	/**
-	 * The operation id for the '<em>Get Frame</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TAX_AUTHORITY_ASSOC_TYPE___GET_FRAME = BizPackage.BIZ_ENTITY_TYPE___GET_FRAME;
-
-	/**
-	 * The operation id for the '<em>Get Type Id</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TAX_AUTHORITY_ASSOC_TYPE___GET_TYPE_ID = BizPackage.BIZ_ENTITY_TYPE___GET_TYPE_ID;
-
-	/**
-	 * The operation id for the '<em>Has Table</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TAX_AUTHORITY_ASSOC_TYPE___HAS_TABLE = BizPackage.BIZ_ENTITY_TYPE___HAS_TABLE;
-
-	/**
-	 * The operation id for the '<em>Get Text</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TAX_AUTHORITY_ASSOC_TYPE___GET_TEXT = BizPackage.BIZ_ENTITY_TYPE___GET_TEXT;
-
-	/**
-	 * The number of operations of the '<em>Authority Assoc Type</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TAX_AUTHORITY_ASSOC_TYPE_OPERATION_COUNT = BizPackage.BIZ_ENTITY_TYPE_OPERATION_COUNT + 0;
-
-	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.accounting.tax.impl.TaxAuthorityCategoryImpl <em>Authority Category</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -795,51 +569,6 @@ public interface TaxPackage extends EPackage {
 	 * @ordered
 	 */
 	int TAX_AUTHORITY_CATEGORY_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
-
-	/**
-	 * The operation id for the '<em>Isa</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TAX_AUTHORITY_CATEGORY___ISA = BizPackage.BIZ_ENTITY___ISA;
-
-	/**
-	 * The operation id for the '<em>Get Name</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TAX_AUTHORITY_CATEGORY___GET_NAME = BizPackage.BIZ_ENTITY___GET_NAME;
-
-	/**
-	 * The operation id for the '<em>Get URI</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TAX_AUTHORITY_CATEGORY___GET_URI = BizPackage.BIZ_ENTITY___GET_URI;
-
-	/**
-	 * The operation id for the '<em>Is Proxy</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TAX_AUTHORITY_CATEGORY___IS_PROXY = BizPackage.BIZ_ENTITY___IS_PROXY;
-
-	/**
-	 * The number of operations of the '<em>Authority Category</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TAX_AUTHORITY_CATEGORY_OPERATION_COUNT = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.accounting.tax.impl.TaxAuthorityGlAccountImpl <em>Authority Gl Account</em>}' class.
@@ -931,51 +660,6 @@ public interface TaxPackage extends EPackage {
 	 * @ordered
 	 */
 	int TAX_AUTHORITY_GL_ACCOUNT_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
-
-	/**
-	 * The operation id for the '<em>Isa</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TAX_AUTHORITY_GL_ACCOUNT___ISA = BizPackage.BIZ_ENTITY___ISA;
-
-	/**
-	 * The operation id for the '<em>Get Name</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TAX_AUTHORITY_GL_ACCOUNT___GET_NAME = BizPackage.BIZ_ENTITY___GET_NAME;
-
-	/**
-	 * The operation id for the '<em>Get URI</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TAX_AUTHORITY_GL_ACCOUNT___GET_URI = BizPackage.BIZ_ENTITY___GET_URI;
-
-	/**
-	 * The operation id for the '<em>Is Proxy</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TAX_AUTHORITY_GL_ACCOUNT___IS_PROXY = BizPackage.BIZ_ENTITY___IS_PROXY;
-
-	/**
-	 * The number of operations of the '<em>Authority Gl Account</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TAX_AUTHORITY_GL_ACCOUNT_OPERATION_COUNT = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.accounting.tax.impl.TaxAuthorityRateProductImpl <em>Authority Rate Product</em>}' class.
@@ -1177,78 +861,6 @@ public interface TaxPackage extends EPackage {
 	int TAX_AUTHORITY_RATE_PRODUCT_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 16;
 
 	/**
-	 * The operation id for the '<em>Isa</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TAX_AUTHORITY_RATE_PRODUCT___ISA = BizPackage.BIZ_ENTITY___ISA;
-
-	/**
-	 * The operation id for the '<em>Get Name</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TAX_AUTHORITY_RATE_PRODUCT___GET_NAME = BizPackage.BIZ_ENTITY___GET_NAME;
-
-	/**
-	 * The operation id for the '<em>Get URI</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TAX_AUTHORITY_RATE_PRODUCT___GET_URI = BizPackage.BIZ_ENTITY___GET_URI;
-
-	/**
-	 * The operation id for the '<em>Is Proxy</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TAX_AUTHORITY_RATE_PRODUCT___IS_PROXY = BizPackage.BIZ_ENTITY___IS_PROXY;
-
-	/**
-	 * The operation id for the '<em>Invoice Items</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TAX_AUTHORITY_RATE_PRODUCT___INVOICE_ITEMS = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Order Adjustments</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TAX_AUTHORITY_RATE_PRODUCT___ORDER_ADJUSTMENTS = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 1;
-
-	/**
-	 * The operation id for the '<em>Return Adjustments</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TAX_AUTHORITY_RATE_PRODUCT___RETURN_ADJUSTMENTS = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 2;
-
-	/**
-	 * The number of operations of the '<em>Authority Rate Product</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TAX_AUTHORITY_RATE_PRODUCT_OPERATION_COUNT = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 3;
-
-	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.accounting.tax.impl.TaxAuthorityRateTypeImpl <em>Authority Rate Type</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1320,60 +932,6 @@ public interface TaxPackage extends EPackage {
 	 * @ordered
 	 */
 	int TAX_AUTHORITY_RATE_TYPE_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
-
-	/**
-	 * The operation id for the '<em>Isa</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TAX_AUTHORITY_RATE_TYPE___ISA = BizPackage.BIZ_ENTITY___ISA;
-
-	/**
-	 * The operation id for the '<em>Get Name</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TAX_AUTHORITY_RATE_TYPE___GET_NAME = BizPackage.BIZ_ENTITY___GET_NAME;
-
-	/**
-	 * The operation id for the '<em>Get URI</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TAX_AUTHORITY_RATE_TYPE___GET_URI = BizPackage.BIZ_ENTITY___GET_URI;
-
-	/**
-	 * The operation id for the '<em>Is Proxy</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TAX_AUTHORITY_RATE_TYPE___IS_PROXY = BizPackage.BIZ_ENTITY___IS_PROXY;
-
-	/**
-	 * The operation id for the '<em>Tax Authority Rate Products</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TAX_AUTHORITY_RATE_TYPE___TAX_AUTHORITY_RATE_PRODUCTS = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 0;
-
-	/**
-	 * The number of operations of the '<em>Authority Rate Type</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TAX_AUTHORITY_RATE_TYPE_OPERATION_COUNT = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 1;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.accounting.tax.impl.ZipSalesRuleLookupImpl <em>Zip Sales Rule Lookup</em>}' class.
@@ -1492,51 +1050,6 @@ public interface TaxPackage extends EPackage {
 	 * @ordered
 	 */
 	int ZIP_SALES_RULE_LOOKUP_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 7;
-
-	/**
-	 * The operation id for the '<em>Isa</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ZIP_SALES_RULE_LOOKUP___ISA = BizPackage.BIZ_ENTITY___ISA;
-
-	/**
-	 * The operation id for the '<em>Get Name</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ZIP_SALES_RULE_LOOKUP___GET_NAME = BizPackage.BIZ_ENTITY___GET_NAME;
-
-	/**
-	 * The operation id for the '<em>Get URI</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ZIP_SALES_RULE_LOOKUP___GET_URI = BizPackage.BIZ_ENTITY___GET_URI;
-
-	/**
-	 * The operation id for the '<em>Is Proxy</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ZIP_SALES_RULE_LOOKUP___IS_PROXY = BizPackage.BIZ_ENTITY___IS_PROXY;
-
-	/**
-	 * The number of operations of the '<em>Zip Sales Rule Lookup</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ZIP_SALES_RULE_LOOKUP_OPERATION_COUNT = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.accounting.tax.impl.ZipSalesTaxLookupImpl <em>Zip Sales Tax Lookup</em>}' class.
@@ -1790,52 +1303,6 @@ public interface TaxPackage extends EPackage {
 	 * @ordered
 	 */
 	int ZIP_SALES_TAX_LOOKUP_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 22;
-
-
-	/**
-	 * The operation id for the '<em>Isa</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ZIP_SALES_TAX_LOOKUP___ISA = BizPackage.BIZ_ENTITY___ISA;
-
-	/**
-	 * The operation id for the '<em>Get Name</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ZIP_SALES_TAX_LOOKUP___GET_NAME = BizPackage.BIZ_ENTITY___GET_NAME;
-
-	/**
-	 * The operation id for the '<em>Get URI</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ZIP_SALES_TAX_LOOKUP___GET_URI = BizPackage.BIZ_ENTITY___GET_URI;
-
-	/**
-	 * The operation id for the '<em>Is Proxy</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ZIP_SALES_TAX_LOOKUP___IS_PROXY = BizPackage.BIZ_ENTITY___IS_PROXY;
-
-	/**
-	 * The number of operations of the '<em>Zip Sales Tax Lookup</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ZIP_SALES_TAX_LOOKUP_OPERATION_COUNT = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 0;
 
 
 	/**
@@ -2305,36 +1772,6 @@ public interface TaxPackage extends EPackage {
 	EReference getTaxAuthorityRateProduct_ProductCategoryId();
 
 	/**
-	 * Returns the meta object for the '{@link org.abchip.mimo.biz.accounting.tax.TaxAuthorityRateProduct#invoiceItems() <em>Invoice Items</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Invoice Items</em>' operation.
-	 * @see org.abchip.mimo.biz.accounting.tax.TaxAuthorityRateProduct#invoiceItems()
-	 * @generated
-	 */
-	EOperation getTaxAuthorityRateProduct__InvoiceItems();
-
-	/**
-	 * Returns the meta object for the '{@link org.abchip.mimo.biz.accounting.tax.TaxAuthorityRateProduct#orderAdjustments() <em>Order Adjustments</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Order Adjustments</em>' operation.
-	 * @see org.abchip.mimo.biz.accounting.tax.TaxAuthorityRateProduct#orderAdjustments()
-	 * @generated
-	 */
-	EOperation getTaxAuthorityRateProduct__OrderAdjustments();
-
-	/**
-	 * Returns the meta object for the '{@link org.abchip.mimo.biz.accounting.tax.TaxAuthorityRateProduct#returnAdjustments() <em>Return Adjustments</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Return Adjustments</em>' operation.
-	 * @see org.abchip.mimo.biz.accounting.tax.TaxAuthorityRateProduct#returnAdjustments()
-	 * @generated
-	 */
-	EOperation getTaxAuthorityRateProduct__ReturnAdjustments();
-
-	/**
 	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.accounting.tax.TaxAuthorityRateProduct#getProductStoreId <em>Product Store Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2390,22 +1827,22 @@ public interface TaxPackage extends EPackage {
 	EAttribute getTaxAuthorityRateProduct_TaxPercentage();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.accounting.tax.TaxAuthorityRateProduct#isTaxPromotions <em>Tax Promotions</em>}'.
+	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.accounting.tax.TaxAuthorityRateProduct#getTaxPromotions <em>Tax Promotions</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Tax Promotions</em>'.
-	 * @see org.abchip.mimo.biz.accounting.tax.TaxAuthorityRateProduct#isTaxPromotions()
+	 * @see org.abchip.mimo.biz.accounting.tax.TaxAuthorityRateProduct#getTaxPromotions()
 	 * @see #getTaxAuthorityRateProduct()
 	 * @generated
 	 */
 	EAttribute getTaxAuthorityRateProduct_TaxPromotions();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.accounting.tax.TaxAuthorityRateProduct#isTaxShipping <em>Tax Shipping</em>}'.
+	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.accounting.tax.TaxAuthorityRateProduct#getTaxShipping <em>Tax Shipping</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Tax Shipping</em>'.
-	 * @see org.abchip.mimo.biz.accounting.tax.TaxAuthorityRateProduct#isTaxShipping()
+	 * @see org.abchip.mimo.biz.accounting.tax.TaxAuthorityRateProduct#getTaxShipping()
 	 * @see #getTaxAuthorityRateProduct()
 	 * @generated
 	 */
@@ -2464,16 +1901,6 @@ public interface TaxPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getTaxAuthorityRateType_Description();
-
-	/**
-	 * Returns the meta object for the '{@link org.abchip.mimo.biz.accounting.tax.TaxAuthorityRateType#taxAuthorityRateProducts() <em>Tax Authority Rate Products</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Tax Authority Rate Products</em>' operation.
-	 * @see org.abchip.mimo.biz.accounting.tax.TaxAuthorityRateType#taxAuthorityRateProducts()
-	 * @generated
-	 */
-	EOperation getTaxAuthorityRateType__TaxAuthorityRateProducts();
 
 	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.biz.accounting.tax.ZipSalesRuleLookup <em>Zip Sales Rule Lookup</em>}'.
@@ -2694,11 +2121,11 @@ public interface TaxPackage extends EPackage {
 	EAttribute getZipSalesTaxLookup_ComboUseTax();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.accounting.tax.ZipSalesTaxLookup#isCountyDefault <em>County Default</em>}'.
+	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.accounting.tax.ZipSalesTaxLookup#getCountyDefault <em>County Default</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>County Default</em>'.
-	 * @see org.abchip.mimo.biz.accounting.tax.ZipSalesTaxLookup#isCountyDefault()
+	 * @see org.abchip.mimo.biz.accounting.tax.ZipSalesTaxLookup#getCountyDefault()
 	 * @see #getZipSalesTaxLookup()
 	 * @generated
 	 */
@@ -2760,11 +2187,11 @@ public interface TaxPackage extends EPackage {
 	EAttribute getZipSalesTaxLookup_CountyUseTax();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.accounting.tax.ZipSalesTaxLookup#isGeneralDefault <em>General Default</em>}'.
+	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.accounting.tax.ZipSalesTaxLookup#getGeneralDefault <em>General Default</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>General Default</em>'.
-	 * @see org.abchip.mimo.biz.accounting.tax.ZipSalesTaxLookup#isGeneralDefault()
+	 * @see org.abchip.mimo.biz.accounting.tax.ZipSalesTaxLookup#getGeneralDefault()
 	 * @see #getZipSalesTaxLookup()
 	 * @generated
 	 */
@@ -2782,11 +2209,11 @@ public interface TaxPackage extends EPackage {
 	EAttribute getZipSalesTaxLookup_GeoCode();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.accounting.tax.ZipSalesTaxLookup#isInsideCity <em>Inside City</em>}'.
+	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.accounting.tax.ZipSalesTaxLookup#getInsideCity <em>Inside City</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Inside City</em>'.
-	 * @see org.abchip.mimo.biz.accounting.tax.ZipSalesTaxLookup#isInsideCity()
+	 * @see org.abchip.mimo.biz.accounting.tax.ZipSalesTaxLookup#getInsideCity()
 	 * @see #getZipSalesTaxLookup()
 	 * @generated
 	 */
@@ -3195,30 +2622,6 @@ public interface TaxPackage extends EPackage {
 		EReference TAX_AUTHORITY_RATE_PRODUCT__PRODUCT_CATEGORY_ID = eINSTANCE.getTaxAuthorityRateProduct_ProductCategoryId();
 
 		/**
-		 * The meta object literal for the '<em><b>Invoice Items</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation TAX_AUTHORITY_RATE_PRODUCT___INVOICE_ITEMS = eINSTANCE.getTaxAuthorityRateProduct__InvoiceItems();
-
-		/**
-		 * The meta object literal for the '<em><b>Order Adjustments</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation TAX_AUTHORITY_RATE_PRODUCT___ORDER_ADJUSTMENTS = eINSTANCE.getTaxAuthorityRateProduct__OrderAdjustments();
-
-		/**
-		 * The meta object literal for the '<em><b>Return Adjustments</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation TAX_AUTHORITY_RATE_PRODUCT___RETURN_ADJUSTMENTS = eINSTANCE.getTaxAuthorityRateProduct__ReturnAdjustments();
-
-		/**
 		 * The meta object literal for the '<em><b>Product Store Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -3315,14 +2718,6 @@ public interface TaxPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute TAX_AUTHORITY_RATE_TYPE__DESCRIPTION = eINSTANCE.getTaxAuthorityRateType_Description();
-
-		/**
-		 * The meta object literal for the '<em><b>Tax Authority Rate Products</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation TAX_AUTHORITY_RATE_TYPE___TAX_AUTHORITY_RATE_PRODUCTS = eINSTANCE.getTaxAuthorityRateType__TaxAuthorityRateProducts();
 
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.biz.accounting.tax.impl.ZipSalesRuleLookupImpl <em>Zip Sales Rule Lookup</em>}' class.

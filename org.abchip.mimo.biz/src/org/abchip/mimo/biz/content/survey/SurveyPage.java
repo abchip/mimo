@@ -40,7 +40,7 @@ public interface SurveyPage extends BizEntity {
 	 * @return the value of the '<em>Page Name</em>' attribute.
 	 * @see #setPageName(String)
 	 * @see org.abchip.mimo.biz.content.survey.SurveyPackage#getSurveyPage_PageName()
-	 * @model
+	 * @model annotation="mimo-ent-format type='name' length='100'"
 	 * @generated
 	 */
 	String getPageName();
@@ -66,7 +66,7 @@ public interface SurveyPage extends BizEntity {
 	 * @return the value of the '<em>Sequence Num</em>' attribute.
 	 * @see #setSequenceNum(long)
 	 * @see org.abchip.mimo.biz.content.survey.SurveyPackage#getSurveyPage_SequenceNum()
-	 * @model
+	 * @model annotation="mimo-ent-format type='numeric' precision='20' scale='0'"
 	 * @generated
 	 */
 	long getSequenceNum();
@@ -119,6 +119,7 @@ public interface SurveyPage extends BizEntity {
 	 * @see #setSurveyPageSeqId(String)
 	 * @see org.abchip.mimo.biz.content.survey.SurveyPackage#getSurveyPage_SurveyPageSeqId()
 	 * @model required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */

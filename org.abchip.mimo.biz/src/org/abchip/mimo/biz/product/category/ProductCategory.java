@@ -50,7 +50,7 @@ public interface ProductCategory extends BizEntityTyped<ProductCategoryType> {
 	 * @return the value of the '<em>Category Image Url</em>' attribute.
 	 * @see #setCategoryImageUrl(String)
 	 * @see org.abchip.mimo.biz.product.category.CategoryPackage#getProductCategory_CategoryImageUrl()
-	 * @model
+	 * @model annotation="mimo-ent-format type='url' length='2000'"
 	 * @generated
 	 */
 	String getCategoryImageUrl();
@@ -76,7 +76,7 @@ public interface ProductCategory extends BizEntityTyped<ProductCategoryType> {
 	 * @return the value of the '<em>Category Name</em>' attribute.
 	 * @see #setCategoryName(String)
 	 * @see org.abchip.mimo.biz.product.category.CategoryPackage#getProductCategory_CategoryName()
-	 * @model
+	 * @model annotation="mimo-ent-format type='name' length='100'"
 	 * @generated
 	 */
 	String getCategoryName();
@@ -102,7 +102,7 @@ public interface ProductCategory extends BizEntityTyped<ProductCategoryType> {
 	 * @return the value of the '<em>Description</em>' attribute.
 	 * @see #setDescription(String)
 	 * @see org.abchip.mimo.biz.product.category.CategoryPackage#getProductCategory_Description()
-	 * @model
+	 * @model annotation="mimo-ent-format type='description' length='255'"
 	 * @generated
 	 */
 	String getDescription();
@@ -128,7 +128,7 @@ public interface ProductCategory extends BizEntityTyped<ProductCategoryType> {
 	 * @return the value of the '<em>Detail Screen</em>' attribute.
 	 * @see #setDetailScreen(String)
 	 * @see org.abchip.mimo.biz.product.category.CategoryPackage#getProductCategory_DetailScreen()
-	 * @model
+	 * @model annotation="mimo-ent-format type='long-varchar' length='255'"
 	 * @generated
 	 */
 	String getDetailScreen();
@@ -154,7 +154,7 @@ public interface ProductCategory extends BizEntityTyped<ProductCategoryType> {
 	 * @return the value of the '<em>Link One Image Url</em>' attribute.
 	 * @see #setLinkOneImageUrl(String)
 	 * @see org.abchip.mimo.biz.product.category.CategoryPackage#getProductCategory_LinkOneImageUrl()
-	 * @model
+	 * @model annotation="mimo-ent-format type='url' length='2000'"
 	 * @generated
 	 */
 	String getLinkOneImageUrl();
@@ -180,7 +180,7 @@ public interface ProductCategory extends BizEntityTyped<ProductCategoryType> {
 	 * @return the value of the '<em>Link Two Image Url</em>' attribute.
 	 * @see #setLinkTwoImageUrl(String)
 	 * @see org.abchip.mimo.biz.product.category.CategoryPackage#getProductCategory_LinkTwoImageUrl()
-	 * @model
+	 * @model annotation="mimo-ent-format type='url' length='2000'"
 	 * @generated
 	 */
 	String getLinkTwoImageUrl();
@@ -206,7 +206,7 @@ public interface ProductCategory extends BizEntityTyped<ProductCategoryType> {
 	 * @return the value of the '<em>Long Description</em>' attribute.
 	 * @see #setLongDescription(String)
 	 * @see org.abchip.mimo.biz.product.category.CategoryPackage#getProductCategory_LongDescription()
-	 * @model
+	 * @model annotation="mimo-ent-format type='very-long'"
 	 * @generated
 	 */
 	String getLongDescription();
@@ -222,6 +222,32 @@ public interface ProductCategory extends BizEntityTyped<ProductCategoryType> {
 	void setLongDescription(String value);
 
 	/**
+	 * Returns the value of the '<em><b>Show In Select</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Show In Select</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Show In Select</em>' attribute.
+	 * @see #setShowInSelect(boolean)
+	 * @see org.abchip.mimo.biz.product.category.CategoryPackage#getProductCategory_ShowInSelect()
+	 * @model annotation="mimo-ent-format type='indicator' length='1'"
+	 * @generated
+	 */
+	boolean isShowInSelect();
+
+	/**
+	 * Sets the value of the '{@link org.abchip.mimo.biz.product.category.ProductCategory#isShowInSelect <em>Show In Select</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Show In Select</em>' attribute.
+	 * @see #isShowInSelect()
+	 * @generated
+	 */
+	void setShowInSelect(boolean value);
+
+	/**
 	 * Returns the value of the '<em><b>Product Category Attributes</b></em>' attribute list.
 	 * The list contents are of type {@link java.lang.String}.
 	 * <!-- begin-user-doc -->
@@ -232,7 +258,9 @@ public interface ProductCategory extends BizEntityTyped<ProductCategoryType> {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Product Category Attributes</em>' attribute list.
 	 * @see org.abchip.mimo.biz.product.category.CategoryPackage#getProductCategory_ProductCategoryAttributes()
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ProductCategoryAttribute'"
 	 * @generated
 	 */
@@ -241,7 +269,8 @@ public interface ProductCategory extends BizEntityTyped<ProductCategoryType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ProductCategory' route='primaryParentCategoryId'"
 	 * @generated
 	 */
@@ -250,7 +279,8 @@ public interface ProductCategory extends BizEntityTyped<ProductCategoryType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='Product' route='primaryProductCategoryId'"
 	 * @generated
 	 */
@@ -259,7 +289,8 @@ public interface ProductCategory extends BizEntityTyped<ProductCategoryType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ProductStoreSurveyAppl' route='productCategoryId'"
 	 * @generated
 	 */
@@ -268,7 +299,8 @@ public interface ProductCategory extends BizEntityTyped<ProductCategoryType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='SalesForecastDetail' route='productCategoryId'"
 	 * @generated
 	 */
@@ -277,7 +309,8 @@ public interface ProductCategory extends BizEntityTyped<ProductCategoryType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='Subscription' route='productCategoryId'"
 	 * @generated
 	 */
@@ -286,7 +319,8 @@ public interface ProductCategory extends BizEntityTyped<ProductCategoryType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='TaxAuthorityRateProduct' route='productCategoryId'"
 	 * @generated
 	 */
@@ -317,32 +351,6 @@ public interface ProductCategory extends BizEntityTyped<ProductCategoryType> {
 	 * @generated
 	 */
 	void setProductCategoryTypeId(ProductCategoryType value);
-
-	/**
-	 * Returns the value of the '<em><b>Show In Select</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Show In Select</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Show In Select</em>' attribute.
-	 * @see #setShowInSelect(boolean)
-	 * @see org.abchip.mimo.biz.product.category.CategoryPackage#getProductCategory_ShowInSelect()
-	 * @model
-	 * @generated
-	 */
-	boolean isShowInSelect();
-
-	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.product.category.ProductCategory#isShowInSelect <em>Show In Select</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Show In Select</em>' attribute.
-	 * @see #isShowInSelect()
-	 * @generated
-	 */
-	void setShowInSelect(boolean value);
 
 	/**
 	 * Returns the value of the '<em><b>Primary Parent Category Id</b></em>' reference.
@@ -382,6 +390,7 @@ public interface ProductCategory extends BizEntityTyped<ProductCategoryType> {
 	 * @see #setProductCategoryId(String)
 	 * @see org.abchip.mimo.biz.product.category.CategoryPackage#getProductCategory_ProductCategoryId()
 	 * @model id="true" required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */

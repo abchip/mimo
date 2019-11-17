@@ -42,6 +42,7 @@ public interface CustomScreen extends BizEntityTyped<CustomScreenType> {
 	 * @see #setCustomScreenId(String)
 	 * @see org.abchip.mimo.biz.common.screen.ScreenPackage#getCustomScreen_CustomScreenId()
 	 * @model id="true" required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
@@ -68,7 +69,7 @@ public interface CustomScreen extends BizEntityTyped<CustomScreenType> {
 	 * @return the value of the '<em>Custom Screen Location</em>' attribute.
 	 * @see #setCustomScreenLocation(String)
 	 * @see org.abchip.mimo.biz.common.screen.ScreenPackage#getCustomScreen_CustomScreenLocation()
-	 * @model
+	 * @model annotation="mimo-ent-format type='long-varchar' length='255'"
 	 * @generated
 	 */
 	String getCustomScreenLocation();
@@ -94,7 +95,7 @@ public interface CustomScreen extends BizEntityTyped<CustomScreenType> {
 	 * @return the value of the '<em>Custom Screen Name</em>' attribute.
 	 * @see #setCustomScreenName(String)
 	 * @see org.abchip.mimo.biz.common.screen.ScreenPackage#getCustomScreen_CustomScreenName()
-	 * @model
+	 * @model annotation="mimo-ent-format type='long-varchar' length='255'"
 	 * @generated
 	 */
 	String getCustomScreenName();
@@ -146,7 +147,7 @@ public interface CustomScreen extends BizEntityTyped<CustomScreenType> {
 	 * @return the value of the '<em>Description</em>' attribute.
 	 * @see #setDescription(String)
 	 * @see org.abchip.mimo.biz.common.screen.ScreenPackage#getCustomScreen_Description()
-	 * @model
+	 * @model annotation="mimo-ent-format type='description' length='255'"
 	 * @generated
 	 */
 	String getDescription();

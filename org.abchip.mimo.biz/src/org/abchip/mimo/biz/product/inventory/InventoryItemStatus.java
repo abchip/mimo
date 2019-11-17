@@ -73,7 +73,7 @@ public interface InventoryItemStatus extends BizEntity {
 	 * @return the value of the '<em>Owner Party Id</em>' attribute.
 	 * @see #setOwnerPartyId(String)
 	 * @see org.abchip.mimo.biz.product.inventory.InventoryPackage#getInventoryItemStatus_OwnerPartyId()
-	 * @model
+	 * @model annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	String getOwnerPartyId();
@@ -99,7 +99,7 @@ public interface InventoryItemStatus extends BizEntity {
 	 * @return the value of the '<em>Product Id</em>' attribute.
 	 * @see #setProductId(String)
 	 * @see org.abchip.mimo.biz.product.inventory.InventoryPackage#getInventoryItemStatus_ProductId()
-	 * @model
+	 * @model annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	String getProductId();
@@ -126,6 +126,7 @@ public interface InventoryItemStatus extends BizEntity {
 	 * @see #setStatusDatetime(Date)
 	 * @see org.abchip.mimo.biz.product.inventory.InventoryPackage#getInventoryItemStatus_StatusDatetime()
 	 * @model required="true"
+	 *        annotation="mimo-ent-format type='date-time'"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
@@ -152,7 +153,7 @@ public interface InventoryItemStatus extends BizEntity {
 	 * @return the value of the '<em>Status End Datetime</em>' attribute.
 	 * @see #setStatusEndDatetime(Date)
 	 * @see org.abchip.mimo.biz.product.inventory.InventoryPackage#getInventoryItemStatus_StatusEndDatetime()
-	 * @model
+	 * @model annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getStatusEndDatetime();

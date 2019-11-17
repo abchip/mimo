@@ -7,14 +7,12 @@
  */
 package org.abchip.mimo.biz.webapp.visit.impl;
 
-import java.lang.reflect.InvocationTargetException;
 import java.util.List;
 
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.security.login.UserLogin;
 import org.abchip.mimo.biz.webapp.visit.VisitPackage;
 import org.abchip.mimo.biz.webapp.visit.Visitor;
-import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 
 /**
@@ -127,20 +125,6 @@ public class VisitorImpl extends BizEntityImpl implements Visitor {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
-		switch (operationID) {
-			case VisitPackage.VISITOR___VISITS:
-				return visits();
-		}
-		return super.eInvoke(operationID, arguments);
 	}
 
 } //VisitorImpl

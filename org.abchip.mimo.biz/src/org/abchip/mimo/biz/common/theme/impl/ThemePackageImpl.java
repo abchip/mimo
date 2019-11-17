@@ -80,6 +80,7 @@ import org.abchip.mimo.biz.entity.crypto.CryptoPackage;
 import org.abchip.mimo.biz.entity.crypto.impl.CryptoPackageImpl;
 import org.abchip.mimo.biz.entity.group.GroupPackage;
 import org.abchip.mimo.biz.entity.group.impl.GroupPackageImpl;
+import org.abchip.mimo.biz.entity.impl.EntityPackageImpl;
 import org.abchip.mimo.biz.entity.sequence.SequencePackage;
 import org.abchip.mimo.biz.entity.sequence.impl.SequencePackageImpl;
 import org.abchip.mimo.biz.entity.synchronization.SynchronizationPackage;
@@ -196,7 +197,6 @@ import org.eclipse.emf.common.util.URI;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 
 import org.eclipse.emf.ecore.EReference;
@@ -343,6 +343,8 @@ public class ThemePackageImpl extends EPackageImpl implements ThemePackage {
 		SurveyPackageImpl theSurveyPackage = (SurveyPackageImpl)(registeredPackage instanceof SurveyPackageImpl ? registeredPackage : SurveyPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(WebsitePackage.eNS_URI);
 		WebsitePackageImpl theWebsitePackage = (WebsitePackageImpl)(registeredPackage instanceof WebsitePackageImpl ? registeredPackage : WebsitePackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(org.abchip.mimo.biz.entity.EntityPackage.eNS_URI);
+		EntityPackageImpl theEntityPackage = (EntityPackageImpl)(registeredPackage instanceof EntityPackageImpl ? registeredPackage : org.abchip.mimo.biz.entity.EntityPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(AuditPackage.eNS_URI);
 		AuditPackageImpl theAuditPackage = (AuditPackageImpl)(registeredPackage instanceof AuditPackageImpl ? registeredPackage : AuditPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(CryptoPackage.eNS_URI);
@@ -497,6 +499,7 @@ public class ThemePackageImpl extends EPackageImpl implements ThemePackage {
 		thePreferencePackage.createPackageContents();
 		theSurveyPackage.createPackageContents();
 		theWebsitePackage.createPackageContents();
+		theEntityPackage.createPackageContents();
 		theAuditPackage.createPackageContents();
 		theCryptoPackage.createPackageContents();
 		theGroupPackage.createPackageContents();
@@ -591,6 +594,7 @@ public class ThemePackageImpl extends EPackageImpl implements ThemePackage {
 		thePreferencePackage.initializePackageContents();
 		theSurveyPackage.initializePackageContents();
 		theWebsitePackage.initializePackageContents();
+		theEntityPackage.initializePackageContents();
 		theAuditPackage.initializePackageContents();
 		theCryptoPackage.initializePackageContents();
 		theGroupPackage.initializePackageContents();
@@ -786,26 +790,6 @@ public class ThemePackageImpl extends EPackageImpl implements ThemePackage {
 	 * @generated
 	 */
 	@Override
-	public EOperation getVisualThemeSet__VisualThemes() {
-		return visualThemeSetEClass.getEOperations().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EOperation getVisualThemeSet__WebSites() {
-		return visualThemeSetEClass.getEOperations().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public ThemeFactory getThemeFactory() {
 		return (ThemeFactory)getEFactoryInstance();
 	}
@@ -843,8 +827,6 @@ public class ThemePackageImpl extends EPackageImpl implements ThemePackage {
 		visualThemeSetEClass = createEClass(VISUAL_THEME_SET);
 		createEAttribute(visualThemeSetEClass, VISUAL_THEME_SET__VISUAL_THEME_SET_ID);
 		createEAttribute(visualThemeSetEClass, VISUAL_THEME_SET__DESCRIPTION);
-		createEOperation(visualThemeSetEClass, VISUAL_THEME_SET___VISUAL_THEMES);
-		createEOperation(visualThemeSetEClass, VISUAL_THEME_SET___WEB_SITES);
 	}
 
 	/**
@@ -883,7 +865,7 @@ public class ThemePackageImpl extends EPackageImpl implements ThemePackage {
 		visualThemeResourceEClass.getESuperTypes().add(theBizPackage.getBizEntity());
 		visualThemeSetEClass.getESuperTypes().add(theBizPackage.getBizEntity());
 
-		// Initialize classes, features, and operations; add parameters
+		// Initialize classes and features; add operations and parameters
 		initEClass(visualThemeEClass, VisualTheme.class, "VisualTheme", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getVisualTheme_VisualThemeId(), ecorePackage.getEString(), "visualThemeId", null, 1, 1, VisualTheme.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getVisualTheme_Description(), ecorePackage.getEString(), "description", null, 0, 1, VisualTheme.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -902,13 +884,15 @@ public class ThemePackageImpl extends EPackageImpl implements ThemePackage {
 		initEAttribute(getVisualThemeSet_VisualThemeSetId(), ecorePackage.getEString(), "visualThemeSetId", null, 1, 1, VisualThemeSet.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getVisualThemeSet_Description(), ecorePackage.getEString(), "description", null, 0, 1, VisualThemeSet.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEOperation(getVisualThemeSet__VisualThemes(), ecorePackage.getEString(), "visualThemes", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(visualThemeSetEClass, ecorePackage.getEString(), "visualThemes", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		initEOperation(getVisualThemeSet__WebSites(), ecorePackage.getEString(), "webSites", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(visualThemeSetEClass, ecorePackage.getEString(), "webSites", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		// Create annotations
 		// mimo-ent-frame
 		createMimoentframeAnnotations();
+		// mimo-ent-format
+		createMimoentformatAnnotations();
 		// mimo-ent-slot
 		createMimoentslotAnnotations();
 		// mimo-ent-domain
@@ -938,6 +922,72 @@ public class ThemePackageImpl extends EPackageImpl implements ThemePackage {
 	}
 
 	/**
+	 * Initializes the annotations for <b>mimo-ent-format</b>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void createMimoentformatAnnotations() {
+		String source = "mimo-ent-format";
+		addAnnotation
+		  (getVisualTheme_VisualThemeId(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (getVisualTheme_Description(),
+		   source,
+		   new String[] {
+			   "type", "description",
+			   "length", "255"
+		   });
+		addAnnotation
+		  (getVisualThemeResource_SequenceId(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (getVisualThemeResource_ResourceValue(),
+		   source,
+		   new String[] {
+			   "type", "value",
+			   "length", "255"
+		   });
+		addAnnotation
+		  (visualThemeSetEClass.getEOperations().get(0),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (visualThemeSetEClass.getEOperations().get(1),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (getVisualThemeSet_VisualThemeSetId(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (getVisualThemeSet_Description(),
+		   source,
+		   new String[] {
+			   "type", "description",
+			   "length", "255"
+		   });
+	}
+
+	/**
 	 * Initializes the annotations for <b>mimo-ent-slot</b>.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -958,13 +1008,13 @@ public class ThemePackageImpl extends EPackageImpl implements ThemePackage {
 			   "key", "true"
 		   });
 		addAnnotation
-		  (getVisualThemeSet__VisualThemes(),
+		  (visualThemeSetEClass.getEOperations().get(0),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (getVisualThemeSet__WebSites(),
+		  (visualThemeSetEClass.getEOperations().get(1),
 		   source,
 		   new String[] {
 			   "derived", "true"
@@ -986,7 +1036,7 @@ public class ThemePackageImpl extends EPackageImpl implements ThemePackage {
 	protected void createMimoentdomainAnnotations() {
 		String source = "mimo-ent-domain";
 		addAnnotation
-		  (getVisualThemeSet__VisualThemes(),
+		  (visualThemeSetEClass.getEOperations().get(0),
 		   source,
 		   new String[] {
 			   "frame", "VisualTheme",
@@ -996,7 +1046,7 @@ public class ThemePackageImpl extends EPackageImpl implements ThemePackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (getVisualThemeSet__WebSites(),
+		  (visualThemeSetEClass.getEOperations().get(1),
 		   source,
 		   new String[] {
 			   "frame", "WebSite",

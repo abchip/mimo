@@ -43,7 +43,7 @@ public interface ProductPriceAutoNotice extends BizEntity {
 	 * @return the value of the '<em>Facility Id</em>' attribute.
 	 * @see #setFacilityId(String)
 	 * @see org.abchip.mimo.biz.product.price.PricePackage#getProductPriceAutoNotice_FacilityId()
-	 * @model
+	 * @model annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	String getFacilityId();
@@ -69,7 +69,7 @@ public interface ProductPriceAutoNotice extends BizEntity {
 	 * @return the value of the '<em>From Date</em>' attribute.
 	 * @see #setFromDate(Date)
 	 * @see org.abchip.mimo.biz.product.price.PricePackage#getProductPriceAutoNotice_FromDate()
-	 * @model
+	 * @model annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getFromDate();
@@ -96,6 +96,7 @@ public interface ProductPriceAutoNotice extends BizEntity {
 	 * @see #setProductPriceNoticeId(String)
 	 * @see org.abchip.mimo.biz.product.price.PricePackage#getProductPriceAutoNotice_ProductPriceNoticeId()
 	 * @model id="true" required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
@@ -122,7 +123,7 @@ public interface ProductPriceAutoNotice extends BizEntity {
 	 * @return the value of the '<em>Run Date</em>' attribute.
 	 * @see #setRunDate(Date)
 	 * @see org.abchip.mimo.biz.product.price.PricePackage#getProductPriceAutoNotice_RunDate()
-	 * @model
+	 * @model annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getRunDate();
@@ -148,7 +149,7 @@ public interface ProductPriceAutoNotice extends BizEntity {
 	 * @return the value of the '<em>Thru Date</em>' attribute.
 	 * @see #setThruDate(Date)
 	 * @see org.abchip.mimo.biz.product.price.PricePackage#getProductPriceAutoNotice_ThruDate()
-	 * @model
+	 * @model annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getThruDate();

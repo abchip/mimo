@@ -51,7 +51,7 @@ public interface PerfReview extends BizEntity {
 	 * @return the value of the '<em>Comments</em>' attribute.
 	 * @see #setComments(String)
 	 * @see org.abchip.mimo.biz.humanres.ability.AbilityPackage#getPerfReview_Comments()
-	 * @model
+	 * @model annotation="mimo-ent-format type='comment' length='255'"
 	 * @generated
 	 */
 	String getComments();
@@ -130,6 +130,7 @@ public interface PerfReview extends BizEntity {
 	 * @see #setEmployeeRoleTypeId(String)
 	 * @see org.abchip.mimo.biz.humanres.ability.AbilityPackage#getPerfReview_EmployeeRoleTypeId()
 	 * @model required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
@@ -156,7 +157,7 @@ public interface PerfReview extends BizEntity {
 	 * @return the value of the '<em>From Date</em>' attribute.
 	 * @see #setFromDate(Date)
 	 * @see org.abchip.mimo.biz.humanres.ability.AbilityPackage#getPerfReview_FromDate()
-	 * @model
+	 * @model annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getFromDate();
@@ -208,7 +209,7 @@ public interface PerfReview extends BizEntity {
 	 * @return the value of the '<em>Manager Role Type Id</em>' attribute.
 	 * @see #setManagerRoleTypeId(String)
 	 * @see org.abchip.mimo.biz.humanres.ability.AbilityPackage#getPerfReview_ManagerRoleTypeId()
-	 * @model
+	 * @model annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	String getManagerRoleTypeId();
@@ -261,6 +262,7 @@ public interface PerfReview extends BizEntity {
 	 * @see #setPerfReviewId(String)
 	 * @see org.abchip.mimo.biz.humanres.ability.AbilityPackage#getPerfReview_PerfReviewId()
 	 * @model required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
@@ -287,7 +289,7 @@ public interface PerfReview extends BizEntity {
 	 * @return the value of the '<em>Thru Date</em>' attribute.
 	 * @see #setThruDate(Date)
 	 * @see org.abchip.mimo.biz.humanres.ability.AbilityPackage#getPerfReview_ThruDate()
-	 * @model
+	 * @model annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getThruDate();

@@ -10,7 +10,6 @@ package org.abchip.mimo.biz.humanres.recruitment;
 import org.abchip.mimo.biz.BizPackage;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
@@ -190,60 +189,6 @@ public interface RecruitmentPackage extends EPackage {
 	int JOB_INTERVIEW_FEATURE_COUNT = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 8;
 
 	/**
-	 * The operation id for the '<em>Isa</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int JOB_INTERVIEW___ISA = BizPackage.BIZ_ENTITY_TYPED___ISA;
-
-	/**
-	 * The operation id for the '<em>Get Name</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int JOB_INTERVIEW___GET_NAME = BizPackage.BIZ_ENTITY_TYPED___GET_NAME;
-
-	/**
-	 * The operation id for the '<em>Get URI</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int JOB_INTERVIEW___GET_URI = BizPackage.BIZ_ENTITY_TYPED___GET_URI;
-
-	/**
-	 * The operation id for the '<em>Is Proxy</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int JOB_INTERVIEW___IS_PROXY = BizPackage.BIZ_ENTITY_TYPED___IS_PROXY;
-
-	/**
-	 * The operation id for the '<em>Get Type</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int JOB_INTERVIEW___GET_TYPE = BizPackage.BIZ_ENTITY_TYPED___GET_TYPE;
-
-	/**
-	 * The number of operations of the '<em>Job Interview</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int JOB_INTERVIEW_OPERATION_COUNT = BizPackage.BIZ_ENTITY_TYPED_OPERATION_COUNT + 0;
-
-	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.humanres.recruitment.impl.JobInterviewTypeImpl <em>Job Interview Type</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -324,96 +269,6 @@ public interface RecruitmentPackage extends EPackage {
 	 * @ordered
 	 */
 	int JOB_INTERVIEW_TYPE_FEATURE_COUNT = BizPackage.BIZ_ENTITY_TYPE_FEATURE_COUNT + 2;
-
-	/**
-	 * The operation id for the '<em>Isa</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int JOB_INTERVIEW_TYPE___ISA = BizPackage.BIZ_ENTITY_TYPE___ISA;
-
-	/**
-	 * The operation id for the '<em>Get Name</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int JOB_INTERVIEW_TYPE___GET_NAME = BizPackage.BIZ_ENTITY_TYPE___GET_NAME;
-
-	/**
-	 * The operation id for the '<em>Get URI</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int JOB_INTERVIEW_TYPE___GET_URI = BizPackage.BIZ_ENTITY_TYPE___GET_URI;
-
-	/**
-	 * The operation id for the '<em>Is Proxy</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int JOB_INTERVIEW_TYPE___IS_PROXY = BizPackage.BIZ_ENTITY_TYPE___IS_PROXY;
-
-	/**
-	 * The operation id for the '<em>Get Frame</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int JOB_INTERVIEW_TYPE___GET_FRAME = BizPackage.BIZ_ENTITY_TYPE___GET_FRAME;
-
-	/**
-	 * The operation id for the '<em>Get Type Id</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int JOB_INTERVIEW_TYPE___GET_TYPE_ID = BizPackage.BIZ_ENTITY_TYPE___GET_TYPE_ID;
-
-	/**
-	 * The operation id for the '<em>Has Table</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int JOB_INTERVIEW_TYPE___HAS_TABLE = BizPackage.BIZ_ENTITY_TYPE___HAS_TABLE;
-
-	/**
-	 * The operation id for the '<em>Get Text</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int JOB_INTERVIEW_TYPE___GET_TEXT = BizPackage.BIZ_ENTITY_TYPE___GET_TEXT;
-
-	/**
-	 * The operation id for the '<em>Job Interviews</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int JOB_INTERVIEW_TYPE___JOB_INTERVIEWS = BizPackage.BIZ_ENTITY_TYPE_OPERATION_COUNT + 0;
-
-	/**
-	 * The number of operations of the '<em>Job Interview Type</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int JOB_INTERVIEW_TYPE_OPERATION_COUNT = BizPackage.BIZ_ENTITY_TYPE_OPERATION_COUNT + 1;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.humanres.recruitment.impl.JobRequisitionImpl <em>Job Requisition</em>}' class.
@@ -598,70 +453,6 @@ public interface RecruitmentPackage extends EPackage {
 
 
 	/**
-	 * The operation id for the '<em>Isa</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int JOB_REQUISITION___ISA = BizPackage.BIZ_ENTITY___ISA;
-
-	/**
-	 * The operation id for the '<em>Get Name</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int JOB_REQUISITION___GET_NAME = BizPackage.BIZ_ENTITY___GET_NAME;
-
-	/**
-	 * The operation id for the '<em>Get URI</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int JOB_REQUISITION___GET_URI = BizPackage.BIZ_ENTITY___GET_URI;
-
-	/**
-	 * The operation id for the '<em>Is Proxy</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int JOB_REQUISITION___IS_PROXY = BizPackage.BIZ_ENTITY___IS_PROXY;
-
-	/**
-	 * The operation id for the '<em>Employment Apps</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int JOB_REQUISITION___EMPLOYMENT_APPS = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Job Interviews</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int JOB_REQUISITION___JOB_INTERVIEWS = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 1;
-
-	/**
-	 * The number of operations of the '<em>Job Requisition</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int JOB_REQUISITION_OPERATION_COUNT = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 2;
-
-
-	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.biz.humanres.recruitment.JobInterview <em>Job Interview</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -792,16 +583,6 @@ public interface RecruitmentPackage extends EPackage {
 	EAttribute getJobInterviewType_Description();
 
 	/**
-	 * Returns the meta object for the '{@link org.abchip.mimo.biz.humanres.recruitment.JobInterviewType#jobInterviews() <em>Job Interviews</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Job Interviews</em>' operation.
-	 * @see org.abchip.mimo.biz.humanres.recruitment.JobInterviewType#jobInterviews()
-	 * @generated
-	 */
-	EOperation getJobInterviewType__JobInterviews();
-
-	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.biz.humanres.recruitment.JobRequisition <em>Job Requisition</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -878,11 +659,11 @@ public interface RecruitmentPackage extends EPackage {
 	EAttribute getJobRequisition_ExperienceYears();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.humanres.recruitment.JobRequisition#isGender <em>Gender</em>}'.
+	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.humanres.recruitment.JobRequisition#getGender <em>Gender</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Gender</em>'.
-	 * @see org.abchip.mimo.biz.humanres.recruitment.JobRequisition#isGender()
+	 * @see org.abchip.mimo.biz.humanres.recruitment.JobRequisition#getGender()
 	 * @see #getJobRequisition()
 	 * @generated
 	 */
@@ -909,26 +690,6 @@ public interface RecruitmentPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getJobRequisition_JobPostingTypeEnumId();
-
-	/**
-	 * Returns the meta object for the '{@link org.abchip.mimo.biz.humanres.recruitment.JobRequisition#employmentApps() <em>Employment Apps</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Employment Apps</em>' operation.
-	 * @see org.abchip.mimo.biz.humanres.recruitment.JobRequisition#employmentApps()
-	 * @generated
-	 */
-	EOperation getJobRequisition__EmploymentApps();
-
-	/**
-	 * Returns the meta object for the '{@link org.abchip.mimo.biz.humanres.recruitment.JobRequisition#jobInterviews() <em>Job Interviews</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Job Interviews</em>' operation.
-	 * @see org.abchip.mimo.biz.humanres.recruitment.JobRequisition#jobInterviews()
-	 * @generated
-	 */
-	EOperation getJobRequisition__JobInterviews();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.humanres.recruitment.JobRequisition#getJobRequisitionDate <em>Job Requisition Date</em>}'.
@@ -1108,14 +869,6 @@ public interface RecruitmentPackage extends EPackage {
 		EAttribute JOB_INTERVIEW_TYPE__DESCRIPTION = eINSTANCE.getJobInterviewType_Description();
 
 		/**
-		 * The meta object literal for the '<em><b>Job Interviews</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation JOB_INTERVIEW_TYPE___JOB_INTERVIEWS = eINSTANCE.getJobInterviewType__JobInterviews();
-
-		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.biz.humanres.recruitment.impl.JobRequisitionImpl <em>Job Requisition</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1196,22 +949,6 @@ public interface RecruitmentPackage extends EPackage {
 		 * @generated
 		 */
 		EReference JOB_REQUISITION__JOB_POSTING_TYPE_ENUM_ID = eINSTANCE.getJobRequisition_JobPostingTypeEnumId();
-
-		/**
-		 * The meta object literal for the '<em><b>Employment Apps</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation JOB_REQUISITION___EMPLOYMENT_APPS = eINSTANCE.getJobRequisition__EmploymentApps();
-
-		/**
-		 * The meta object literal for the '<em><b>Job Interviews</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation JOB_REQUISITION___JOB_INTERVIEWS = eINSTANCE.getJobRequisition__JobInterviews();
 
 		/**
 		 * The meta object literal for the '<em><b>Job Requisition Date</b></em>' attribute feature.

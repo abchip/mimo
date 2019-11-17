@@ -7,7 +7,6 @@
  */
 package org.abchip.mimo.biz.shipment.shipment.impl;
 
-import java.lang.reflect.InvocationTargetException;
 import java.math.BigDecimal;
 import java.util.Date;
 import java.util.List;
@@ -26,7 +25,6 @@ import org.abchip.mimo.biz.shipment.shipment.Shipment;
 import org.abchip.mimo.biz.shipment.shipment.ShipmentType;
 import org.abchip.mimo.biz.shipment.shipment.Shipment_Package;
 import org.abchip.mimo.biz.workeffort.workeffort.WorkEffort;
-import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 
 /**
@@ -802,26 +800,6 @@ public class ShipmentImpl extends BizEntityTypedImpl<ShipmentType> implements Sh
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
-		switch (operationID) {
-			case Shipment_Package.SHIPMENT___ACCTG_TRANSS:
-				return acctgTranss();
-			case Shipment_Package.SHIPMENT___ITEM_ISSUANCES:
-				return itemIssuances();
-			case Shipment_Package.SHIPMENT___SHIPMENT_RECEIPTS:
-				return shipmentReceipts();
-			case Shipment_Package.SHIPMENT___SHIPMENT_STATUSS:
-				return shipmentStatuss();
-		}
-		return super.eInvoke(operationID, arguments);
 	}
 
 } //ShipmentImpl

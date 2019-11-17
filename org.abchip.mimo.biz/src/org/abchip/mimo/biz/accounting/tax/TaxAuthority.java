@@ -33,6 +33,58 @@ import org.abchip.mimo.biz.party.party.Party;
  */
 public interface TaxAuthority extends BizEntity {
 	/**
+	 * Returns the value of the '<em><b>Include Tax In Price</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Include Tax In Price</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Include Tax In Price</em>' attribute.
+	 * @see #setIncludeTaxInPrice(boolean)
+	 * @see org.abchip.mimo.biz.accounting.tax.TaxPackage#getTaxAuthority_IncludeTaxInPrice()
+	 * @model annotation="mimo-ent-format type='indicator' length='1'"
+	 * @generated
+	 */
+	boolean isIncludeTaxInPrice();
+
+	/**
+	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.tax.TaxAuthority#isIncludeTaxInPrice <em>Include Tax In Price</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Include Tax In Price</em>' attribute.
+	 * @see #isIncludeTaxInPrice()
+	 * @generated
+	 */
+	void setIncludeTaxInPrice(boolean value);
+
+	/**
+	 * Returns the value of the '<em><b>Require Tax Id For Exemption</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Require Tax Id For Exemption</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Require Tax Id For Exemption</em>' attribute.
+	 * @see #setRequireTaxIdForExemption(boolean)
+	 * @see org.abchip.mimo.biz.accounting.tax.TaxPackage#getTaxAuthority_RequireTaxIdForExemption()
+	 * @model annotation="mimo-ent-format type='indicator' length='1'"
+	 * @generated
+	 */
+	boolean isRequireTaxIdForExemption();
+
+	/**
+	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.tax.TaxAuthority#isRequireTaxIdForExemption <em>Require Tax Id For Exemption</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Require Tax Id For Exemption</em>' attribute.
+	 * @see #isRequireTaxIdForExemption()
+	 * @generated
+	 */
+	void setRequireTaxIdForExemption(boolean value);
+
+	/**
 	 * Returns the value of the '<em><b>Tax Auth Geo Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -85,58 +137,6 @@ public interface TaxAuthority extends BizEntity {
 	void setTaxAuthPartyId(Party value);
 
 	/**
-	 * Returns the value of the '<em><b>Include Tax In Price</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Include Tax In Price</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Include Tax In Price</em>' attribute.
-	 * @see #setIncludeTaxInPrice(boolean)
-	 * @see org.abchip.mimo.biz.accounting.tax.TaxPackage#getTaxAuthority_IncludeTaxInPrice()
-	 * @model
-	 * @generated
-	 */
-	boolean isIncludeTaxInPrice();
-
-	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.tax.TaxAuthority#isIncludeTaxInPrice <em>Include Tax In Price</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Include Tax In Price</em>' attribute.
-	 * @see #isIncludeTaxInPrice()
-	 * @generated
-	 */
-	void setIncludeTaxInPrice(boolean value);
-
-	/**
-	 * Returns the value of the '<em><b>Require Tax Id For Exemption</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Require Tax Id For Exemption</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Require Tax Id For Exemption</em>' attribute.
-	 * @see #setRequireTaxIdForExemption(boolean)
-	 * @see org.abchip.mimo.biz.accounting.tax.TaxPackage#getTaxAuthority_RequireTaxIdForExemption()
-	 * @model
-	 * @generated
-	 */
-	boolean isRequireTaxIdForExemption();
-
-	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.tax.TaxAuthority#isRequireTaxIdForExemption <em>Require Tax Id For Exemption</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Require Tax Id For Exemption</em>' attribute.
-	 * @see #isRequireTaxIdForExemption()
-	 * @generated
-	 */
-	void setRequireTaxIdForExemption(boolean value);
-
-	/**
 	 * Returns the value of the '<em><b>Tax Id Format Pattern</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -147,7 +147,7 @@ public interface TaxAuthority extends BizEntity {
 	 * @return the value of the '<em>Tax Id Format Pattern</em>' attribute.
 	 * @see #setTaxIdFormatPattern(String)
 	 * @see org.abchip.mimo.biz.accounting.tax.TaxPackage#getTaxAuthority_TaxIdFormatPattern()
-	 * @model
+	 * @model annotation="mimo-ent-format type='long-varchar' length='255'"
 	 * @generated
 	 */
 	String getTaxIdFormatPattern();

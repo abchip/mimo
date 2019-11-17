@@ -41,7 +41,7 @@ public interface Vendor extends BizEntity {
 	 * @return the value of the '<em>Manifest Company Name</em>' attribute.
 	 * @see #setManifestCompanyName(String)
 	 * @see org.abchip.mimo.biz.party.party.PartyPackage#getVendor_ManifestCompanyName()
-	 * @model
+	 * @model annotation="mimo-ent-format type='name' length='100'"
 	 * @generated
 	 */
 	String getManifestCompanyName();
@@ -67,7 +67,7 @@ public interface Vendor extends BizEntity {
 	 * @return the value of the '<em>Manifest Company Title</em>' attribute.
 	 * @see #setManifestCompanyTitle(String)
 	 * @see org.abchip.mimo.biz.party.party.PartyPackage#getVendor_ManifestCompanyTitle()
-	 * @model
+	 * @model annotation="mimo-ent-format type='name' length='100'"
 	 * @generated
 	 */
 	String getManifestCompanyTitle();
@@ -93,7 +93,7 @@ public interface Vendor extends BizEntity {
 	 * @return the value of the '<em>Manifest Logo Url</em>' attribute.
 	 * @see #setManifestLogoUrl(String)
 	 * @see org.abchip.mimo.biz.party.party.PartyPackage#getVendor_ManifestLogoUrl()
-	 * @model
+	 * @model annotation="mimo-ent-format type='url' length='2000'"
 	 * @generated
 	 */
 	String getManifestLogoUrl();
@@ -119,7 +119,7 @@ public interface Vendor extends BizEntity {
 	 * @return the value of the '<em>Manifest Policies</em>' attribute.
 	 * @see #setManifestPolicies(String)
 	 * @see org.abchip.mimo.biz.party.party.PartyPackage#getVendor_ManifestPolicies()
-	 * @model
+	 * @model annotation="mimo-ent-format type='very-long'"
 	 * @generated
 	 */
 	String getManifestPolicies();

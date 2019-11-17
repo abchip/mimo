@@ -53,7 +53,7 @@ public interface OrderDeliverySchedule extends BizEntity {
 	 * @return the value of the '<em>Cartons</em>' attribute.
 	 * @see #setCartons(long)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderDeliverySchedule_Cartons()
-	 * @model
+	 * @model annotation="mimo-ent-format type='numeric' precision='20' scale='0'"
 	 * @generated
 	 */
 	long getCartons();
@@ -79,7 +79,7 @@ public interface OrderDeliverySchedule extends BizEntity {
 	 * @return the value of the '<em>Estimated Ready Date</em>' attribute.
 	 * @see #setEstimatedReadyDate(Date)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderDeliverySchedule_EstimatedReadyDate()
-	 * @model
+	 * @model annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getEstimatedReadyDate();
@@ -132,6 +132,7 @@ public interface OrderDeliverySchedule extends BizEntity {
 	 * @see #setOrderItemSeqId(String)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderDeliverySchedule_OrderItemSeqId()
 	 * @model required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
@@ -158,7 +159,7 @@ public interface OrderDeliverySchedule extends BizEntity {
 	 * @return the value of the '<em>Skids Pallets</em>' attribute.
 	 * @see #setSkidsPallets(long)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderDeliverySchedule_SkidsPallets()
-	 * @model
+	 * @model annotation="mimo-ent-format type='numeric' precision='20' scale='0'"
 	 * @generated
 	 */
 	long getSkidsPallets();
@@ -210,7 +211,7 @@ public interface OrderDeliverySchedule extends BizEntity {
 	 * @return the value of the '<em>Total Cubic Size</em>' attribute.
 	 * @see #setTotalCubicSize(BigDecimal)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderDeliverySchedule_TotalCubicSize()
-	 * @model
+	 * @model annotation="mimo-ent-format type='fixed-point' precision='18' scale='6'"
 	 * @generated
 	 */
 	BigDecimal getTotalCubicSize();
@@ -262,7 +263,7 @@ public interface OrderDeliverySchedule extends BizEntity {
 	 * @return the value of the '<em>Total Weight</em>' attribute.
 	 * @see #setTotalWeight(BigDecimal)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderDeliverySchedule_TotalWeight()
-	 * @model
+	 * @model annotation="mimo-ent-format type='fixed-point' precision='18' scale='6'"
 	 * @generated
 	 */
 	BigDecimal getTotalWeight();
@@ -314,7 +315,7 @@ public interface OrderDeliverySchedule extends BizEntity {
 	 * @return the value of the '<em>Units Pieces</em>' attribute.
 	 * @see #setUnitsPieces(BigDecimal)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderDeliverySchedule_UnitsPieces()
-	 * @model
+	 * @model annotation="mimo-ent-format type='fixed-point' precision='18' scale='6'"
 	 * @generated
 	 */
 	BigDecimal getUnitsPieces();

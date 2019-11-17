@@ -46,7 +46,7 @@ public interface ProductStoreEmailSetting extends BizEntity {
 	 * @return the value of the '<em>Bcc Address</em>' attribute.
 	 * @see #setBccAddress(String)
 	 * @see org.abchip.mimo.biz.product.store.StorePackage#getProductStoreEmailSetting_BccAddress()
-	 * @model
+	 * @model annotation="mimo-ent-format type='email' length='320'"
 	 * @generated
 	 */
 	String getBccAddress();
@@ -72,7 +72,7 @@ public interface ProductStoreEmailSetting extends BizEntity {
 	 * @return the value of the '<em>Body Screen Location</em>' attribute.
 	 * @see #setBodyScreenLocation(String)
 	 * @see org.abchip.mimo.biz.product.store.StorePackage#getProductStoreEmailSetting_BodyScreenLocation()
-	 * @model
+	 * @model annotation="mimo-ent-format type='long-varchar' length='255'"
 	 * @generated
 	 */
 	String getBodyScreenLocation();
@@ -98,7 +98,7 @@ public interface ProductStoreEmailSetting extends BizEntity {
 	 * @return the value of the '<em>Cc Address</em>' attribute.
 	 * @see #setCcAddress(String)
 	 * @see org.abchip.mimo.biz.product.store.StorePackage#getProductStoreEmailSetting_CcAddress()
-	 * @model
+	 * @model annotation="mimo-ent-format type='email' length='320'"
 	 * @generated
 	 */
 	String getCcAddress();
@@ -124,7 +124,7 @@ public interface ProductStoreEmailSetting extends BizEntity {
 	 * @return the value of the '<em>Content Type</em>' attribute.
 	 * @see #setContentType(String)
 	 * @see org.abchip.mimo.biz.product.store.StorePackage#getProductStoreEmailSetting_ContentType()
-	 * @model
+	 * @model annotation="mimo-ent-format type='long-varchar' length='255'"
 	 * @generated
 	 */
 	String getContentType();
@@ -176,7 +176,7 @@ public interface ProductStoreEmailSetting extends BizEntity {
 	 * @return the value of the '<em>From Address</em>' attribute.
 	 * @see #setFromAddress(String)
 	 * @see org.abchip.mimo.biz.product.store.StorePackage#getProductStoreEmailSetting_FromAddress()
-	 * @model
+	 * @model annotation="mimo-ent-format type='email' length='320'"
 	 * @generated
 	 */
 	String getFromAddress();
@@ -202,7 +202,7 @@ public interface ProductStoreEmailSetting extends BizEntity {
 	 * @return the value of the '<em>Subject</em>' attribute.
 	 * @see #setSubject(String)
 	 * @see org.abchip.mimo.biz.product.store.StorePackage#getProductStoreEmailSetting_Subject()
-	 * @model
+	 * @model annotation="mimo-ent-format type='comment' length='255'"
 	 * @generated
 	 */
 	String getSubject();
@@ -228,7 +228,7 @@ public interface ProductStoreEmailSetting extends BizEntity {
 	 * @return the value of the '<em>Xslfo Attach Screen Location</em>' attribute.
 	 * @see #setXslfoAttachScreenLocation(String)
 	 * @see org.abchip.mimo.biz.product.store.StorePackage#getProductStoreEmailSetting_XslfoAttachScreenLocation()
-	 * @model
+	 * @model annotation="mimo-ent-format type='long-varchar' length='255'"
 	 * @generated
 	 */
 	String getXslfoAttachScreenLocation();

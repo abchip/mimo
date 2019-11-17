@@ -39,7 +39,7 @@ public interface FixedAssetIdent extends BizEntityTyped<FixedAssetIdentType> {
 	 * @return the value of the '<em>Id Value</em>' attribute.
 	 * @see #setIdValue(String)
 	 * @see org.abchip.mimo.biz.accounting.fixedasset.FixedassetPackage#getFixedAssetIdent_IdValue()
-	 * @model
+	 * @model annotation="mimo-ent-format type='long-varchar' length='255'"
 	 * @generated
 	 */
 	String getIdValue();

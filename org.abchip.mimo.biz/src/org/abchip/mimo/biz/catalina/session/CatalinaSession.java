@@ -43,6 +43,7 @@ public interface CatalinaSession extends BizEntity {
 	 * @see #setSessionId(String)
 	 * @see org.abchip.mimo.biz.catalina.session.SessionPackage#getCatalinaSession_SessionId()
 	 * @model id="true" required="true"
+	 *        annotation="mimo-ent-format type='id-long' length='60'"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
@@ -69,7 +70,7 @@ public interface CatalinaSession extends BizEntity {
 	 * @return the value of the '<em>Is Valid</em>' attribute.
 	 * @see #setIsValid(boolean)
 	 * @see org.abchip.mimo.biz.catalina.session.SessionPackage#getCatalinaSession_IsValid()
-	 * @model
+	 * @model annotation="mimo-ent-format type='indicator' length='1'"
 	 * @generated
 	 */
 	boolean isIsValid();
@@ -95,7 +96,7 @@ public interface CatalinaSession extends BizEntity {
 	 * @return the value of the '<em>Last Accessed</em>' attribute.
 	 * @see #setLastAccessed(long)
 	 * @see org.abchip.mimo.biz.catalina.session.SessionPackage#getCatalinaSession_LastAccessed()
-	 * @model
+	 * @model annotation="mimo-ent-format type='numeric' precision='20' scale='0'"
 	 * @generated
 	 */
 	long getLastAccessed();
@@ -121,7 +122,7 @@ public interface CatalinaSession extends BizEntity {
 	 * @return the value of the '<em>Max Idle</em>' attribute.
 	 * @see #setMaxIdle(long)
 	 * @see org.abchip.mimo.biz.catalina.session.SessionPackage#getCatalinaSession_MaxIdle()
-	 * @model
+	 * @model annotation="mimo-ent-format type='numeric' precision='20' scale='0'"
 	 * @generated
 	 */
 	long getMaxIdle();
@@ -147,7 +148,7 @@ public interface CatalinaSession extends BizEntity {
 	 * @return the value of the '<em>Session Info</em>' attribute.
 	 * @see #setSessionInfo(String)
 	 * @see org.abchip.mimo.biz.catalina.session.SessionPackage#getCatalinaSession_SessionInfo()
-	 * @model
+	 * @model annotation="mimo-ent-format type='blob'"
 	 * @generated
 	 */
 	String getSessionInfo();
@@ -173,7 +174,7 @@ public interface CatalinaSession extends BizEntity {
 	 * @return the value of the '<em>Session Size</em>' attribute.
 	 * @see #setSessionSize(long)
 	 * @see org.abchip.mimo.biz.catalina.session.SessionPackage#getCatalinaSession_SessionSize()
-	 * @model
+	 * @model annotation="mimo-ent-format type='numeric' precision='20' scale='0'"
 	 * @generated
 	 */
 	long getSessionSize();

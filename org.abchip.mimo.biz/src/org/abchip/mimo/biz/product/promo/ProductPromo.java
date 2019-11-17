@@ -60,7 +60,7 @@ public interface ProductPromo extends BizEntity {
 	 * @return the value of the '<em>Billback Factor</em>' attribute.
 	 * @see #setBillbackFactor(BigDecimal)
 	 * @see org.abchip.mimo.biz.product.promo.PromoPackage#getProductPromo_BillbackFactor()
-	 * @model
+	 * @model annotation="mimo-ent-format type='fixed-point' precision='18' scale='6'"
 	 * @generated
 	 */
 	BigDecimal getBillbackFactor();
@@ -112,7 +112,7 @@ public interface ProductPromo extends BizEntity {
 	 * @return the value of the '<em>Created Date</em>' attribute.
 	 * @see #setCreatedDate(Date)
 	 * @see org.abchip.mimo.biz.product.promo.PromoPackage#getProductPromo_CreatedDate()
-	 * @model
+	 * @model annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getCreatedDate();
@@ -164,7 +164,7 @@ public interface ProductPromo extends BizEntity {
 	 * @return the value of the '<em>Last Modified Date</em>' attribute.
 	 * @see #setLastModifiedDate(Date)
 	 * @see org.abchip.mimo.biz.product.promo.PromoPackage#getProductPromo_LastModifiedDate()
-	 * @model
+	 * @model annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getLastModifiedDate();
@@ -216,7 +216,7 @@ public interface ProductPromo extends BizEntity {
 	 * @return the value of the '<em>Promo Name</em>' attribute.
 	 * @see #setPromoName(String)
 	 * @see org.abchip.mimo.biz.product.promo.PromoPackage#getProductPromo_PromoName()
-	 * @model
+	 * @model annotation="mimo-ent-format type='name' length='100'"
 	 * @generated
 	 */
 	String getPromoName();
@@ -242,7 +242,7 @@ public interface ProductPromo extends BizEntity {
 	 * @return the value of the '<em>Promo Text</em>' attribute.
 	 * @see #setPromoText(String)
 	 * @see org.abchip.mimo.biz.product.promo.PromoPackage#getProductPromo_PromoText()
-	 * @model
+	 * @model annotation="mimo-ent-format type='description' length='255'"
 	 * @generated
 	 */
 	String getPromoText();
@@ -268,7 +268,7 @@ public interface ProductPromo extends BizEntity {
 	 * @return the value of the '<em>Require Code</em>' attribute.
 	 * @see #setRequireCode(boolean)
 	 * @see org.abchip.mimo.biz.product.promo.PromoPackage#getProductPromo_RequireCode()
-	 * @model
+	 * @model annotation="mimo-ent-format type='indicator' length='1'"
 	 * @generated
 	 */
 	boolean isRequireCode();
@@ -294,7 +294,7 @@ public interface ProductPromo extends BizEntity {
 	 * @return the value of the '<em>Show To Customer</em>' attribute.
 	 * @see #setShowToCustomer(boolean)
 	 * @see org.abchip.mimo.biz.product.promo.PromoPackage#getProductPromo_ShowToCustomer()
-	 * @model
+	 * @model annotation="mimo-ent-format type='indicator' length='1'"
 	 * @generated
 	 */
 	boolean isShowToCustomer();
@@ -320,7 +320,7 @@ public interface ProductPromo extends BizEntity {
 	 * @return the value of the '<em>Use Limit Per Customer</em>' attribute.
 	 * @see #setUseLimitPerCustomer(long)
 	 * @see org.abchip.mimo.biz.product.promo.PromoPackage#getProductPromo_UseLimitPerCustomer()
-	 * @model
+	 * @model annotation="mimo-ent-format type='numeric' precision='20' scale='0'"
 	 * @generated
 	 */
 	long getUseLimitPerCustomer();
@@ -346,7 +346,7 @@ public interface ProductPromo extends BizEntity {
 	 * @return the value of the '<em>Use Limit Per Order</em>' attribute.
 	 * @see #setUseLimitPerOrder(long)
 	 * @see org.abchip.mimo.biz.product.promo.PromoPackage#getProductPromo_UseLimitPerOrder()
-	 * @model
+	 * @model annotation="mimo-ent-format type='numeric' precision='20' scale='0'"
 	 * @generated
 	 */
 	long getUseLimitPerOrder();
@@ -372,7 +372,7 @@ public interface ProductPromo extends BizEntity {
 	 * @return the value of the '<em>Use Limit Per Promotion</em>' attribute.
 	 * @see #setUseLimitPerPromotion(long)
 	 * @see org.abchip.mimo.biz.product.promo.PromoPackage#getProductPromo_UseLimitPerPromotion()
-	 * @model
+	 * @model annotation="mimo-ent-format type='numeric' precision='20' scale='0'"
 	 * @generated
 	 */
 	long getUseLimitPerPromotion();
@@ -398,7 +398,7 @@ public interface ProductPromo extends BizEntity {
 	 * @return the value of the '<em>User Entered</em>' attribute.
 	 * @see #setUserEntered(boolean)
 	 * @see org.abchip.mimo.biz.product.promo.PromoPackage#getProductPromo_UserEntered()
-	 * @model
+	 * @model annotation="mimo-ent-format type='indicator' length='1'"
 	 * @generated
 	 */
 	boolean isUserEntered();
@@ -424,7 +424,9 @@ public interface ProductPromo extends BizEntity {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Product Promo Rules</em>' attribute list.
 	 * @see org.abchip.mimo.biz.product.promo.PromoPackage#getProductPromo_ProductPromoRules()
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ProductPromoRule'"
 	 * @generated
 	 */
@@ -433,7 +435,8 @@ public interface ProductPromo extends BizEntity {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='OrderAdjustment' route='productPromoId'"
 	 * @generated
 	 */
@@ -442,7 +445,8 @@ public interface ProductPromo extends BizEntity {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ProductPromoCode' route='productPromoId'"
 	 * @generated
 	 */
@@ -451,7 +455,8 @@ public interface ProductPromo extends BizEntity {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ProductPromoUse' route='productPromoId'"
 	 * @generated
 	 */
@@ -460,7 +465,8 @@ public interface ProductPromo extends BizEntity {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='QuoteAdjustment' route='productPromoId'"
 	 * @generated
 	 */
@@ -469,7 +475,8 @@ public interface ProductPromo extends BizEntity {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ReturnAdjustment' route='productPromoId'"
 	 * @generated
 	 */
@@ -487,6 +494,7 @@ public interface ProductPromo extends BizEntity {
 	 * @see #setProductPromoId(String)
 	 * @see org.abchip.mimo.biz.product.promo.PromoPackage#getProductPromo_ProductPromoId()
 	 * @model id="true" required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */

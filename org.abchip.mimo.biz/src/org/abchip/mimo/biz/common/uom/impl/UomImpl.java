@@ -7,14 +7,12 @@
  */
 package org.abchip.mimo.biz.common.uom.impl;
 
-import java.lang.reflect.InvocationTargetException;
 import java.util.List;
 
 import org.abchip.mimo.biz.common.uom.Uom;
 import org.abchip.mimo.biz.common.uom.UomPackage;
 import org.abchip.mimo.biz.common.uom.UomType;
 import org.abchip.mimo.biz.impl.BizEntityTypedImpl;
-import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 
 /**
@@ -964,154 +962,6 @@ public class UomImpl extends BizEntityTypedImpl<UomType> implements Uom {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
-		switch (operationID) {
-			case UomPackage.UOM___ACTUAL_CURRENCY_PAYMENTS:
-				return actualCurrencyPayments();
-			case UomPackage.UOM___AVAILABLE_TIME_SUBSCRIPTIONS:
-				return availableTimeSubscriptions();
-			case UomPackage.UOM___BILLING_ACCOUNT_TERMS:
-				return billingAccountTerms();
-			case UomPackage.UOM___BILLING_ACCOUNTS:
-				return billingAccounts();
-			case UomPackage.UOM___BILLING_WEIGHT_SHIPMENT_ROUTE_SEGMENTS:
-				return billingWeightShipmentRouteSegments();
-			case UomPackage.UOM___CANCEL_TIME_SUBSCRIPTIONS:
-				return cancelTimeSubscriptions();
-			case UomPackage.UOM___CONV_TO_UOM_CONVERSIONS:
-				return convToUomConversions();
-			case UomPackage.UOM___COST_COMPONENT_CALCS:
-				return costComponentCalcs();
-			case UomPackage.UOM___CURRENCY_ACCTG_TRANS_ENTRIES:
-				return currencyAcctgTransEntries();
-			case UomPackage.UOM___CURRENCY_COST_COMPONENTS:
-				return currencyCostComponents();
-			case UomPackage.UOM___CURRENCY_CUST_REQUESTS:
-				return currencyCustRequests();
-			case UomPackage.UOM___CURRENCY_FIN_ACCOUNTS:
-				return currencyFinAccounts();
-			case UomPackage.UOM___CURRENCY_INVENTORY_ITEMS:
-				return currencyInventoryItems();
-			case UomPackage.UOM___CURRENCY_INVOICES:
-				return currencyInvoices();
-			case UomPackage.UOM___CURRENCY_PAYMENTS:
-				return currencyPayments();
-			case UomPackage.UOM___CURRENCY_SHIPMENT_ROUTE_SEGMENTS:
-				return currencyShipmentRouteSegments();
-			case UomPackage.UOM___CURRENCY_SHIPMENTS:
-				return currencyShipments();
-			case UomPackage.UOM___DEFAULT_PRODUCT_METER_TYPES:
-				return defaultProductMeterTypes();
-			case UomPackage.UOM___DEPTH_PRODUCTS:
-				return depthProducts();
-			case UomPackage.UOM___DIAMETER_PRODUCTS:
-				return diameterProducts();
-			case UomPackage.UOM___DIMENSION_FACILITIES:
-				return dimensionFacilities();
-			case UomPackage.UOM___DIMENSION_SHIPMENT_BOX_TYPES:
-				return dimensionShipmentBoxTypes();
-			case UomPackage.UOM___DIMENSION_SHIPMENT_PACKAGES:
-				return dimensionShipmentPackages();
-			case UomPackage.UOM___ELEVATION_GEO_POINTS:
-				return elevationGeoPoints();
-			case UomPackage.UOM___FACILITY_SIZE_FACILITIES:
-				return facilitySizeFacilities();
-			case UomPackage.UOM___FIXED_ASSETS:
-				return fixedAssets();
-			case UomPackage.UOM___GRACE_PERIOD_SUBSCRIPTIONS:
-				return gracePeriodSubscriptions();
-			case UomPackage.UOM___HEIGHT_PRODUCTS:
-				return heightProducts();
-			case UomPackage.UOM___INTERVAL_FIXED_ASSET_MAINTS:
-				return intervalFixedAssetMaints();
-			case UomPackage.UOM___INTERVAL_PRODUCT_MAINTS:
-				return intervalProductMaints();
-			case UomPackage.UOM___INVENTORY_ITEMS:
-				return inventoryItems();
-			case UomPackage.UOM___INVOICE_ITEMS:
-				return invoiceItems();
-			case UomPackage.UOM___MARKETING_CAMPAIGNS:
-				return marketingCampaigns();
-			case UomPackage.UOM___MAX_LIFE_TIME_SUBSCRIPTIONS:
-				return maxLifeTimeSubscriptions();
-			case UomPackage.UOM___MAXIMUM_AMOUNT_CUST_REQUESTS:
-				return maximumAmountCustRequests();
-			case UomPackage.UOM___METER_PRODUCT_METERS:
-				return meterProductMeters();
-			case UomPackage.UOM___MONEY_WORK_EFFORTS:
-				return moneyWorkEfforts();
-			case UomPackage.UOM___ORDER_HEADERS:
-				return orderHeaders();
-			case UomPackage.UOM___ORIG_CURRENCY_ACCTG_TRANS_ENTRIES:
-				return origCurrencyAcctgTransEntries();
-			case UomPackage.UOM___PARTIES:
-				return parties();
-			case UomPackage.UOM___PARTY_ACCTG_PREFERENCES:
-				return partyAcctgPreferences();
-			case UomPackage.UOM___PAYMENT_GATEWAY_RESPONSES:
-				return paymentGatewayResponses();
-			case UomPackage.UOM___PERIOD_TYPES:
-				return periodTypes();
-			case UomPackage.UOM___PRICE_SHIPMENT_COST_ESTIMATES:
-				return priceShipmentCostEstimates();
-			case UomPackage.UOM___PRODUCT_FEATURES:
-				return productFeatures();
-			case UomPackage.UOM___PRODUCT_STORES:
-				return productStores();
-			case UomPackage.UOM___QUANTITY_PRODUCTS:
-				return quantityProducts();
-			case UomPackage.UOM___QUANTITY_SALES_FORECAST_DETAILS:
-				return quantitySalesForecastDetails();
-			case UomPackage.UOM___QUANTITY_SHIPMENT_COST_ESTIMATES:
-				return quantityShipmentCostEstimates();
-			case UomPackage.UOM___QUOTE_ITEMS:
-				return quoteItems();
-			case UomPackage.UOM___QUOTES:
-				return quotes();
-			case UomPackage.UOM___RECURRING_FREQ_ORDER_ITEMS:
-				return recurringFreqOrderItems();
-			case UomPackage.UOM___RETURN_HEADERS:
-				return returnHeaders();
-			case UomPackage.UOM___SALES_FORECAST_HISTORIES:
-				return salesForecastHistories();
-			case UomPackage.UOM___SALES_FORECASTS:
-				return salesForecasts();
-			case UomPackage.UOM___SALES_OPPORTUNITIES:
-				return salesOpportunities();
-			case UomPackage.UOM___SALES_OPPORTUNITY_HISTORIES:
-				return salesOpportunityHistories();
-			case UomPackage.UOM___SUPPLIER_PRODUCT_FEATURES:
-				return supplierProductFeatures();
-			case UomPackage.UOM___TOTAL_CUBIC_ORDER_DELIVERY_SCHEDULES:
-				return totalCubicOrderDeliverySchedules();
-			case UomPackage.UOM___TOTAL_WEIGHT_ORDER_DELIVERY_SCHEDULES:
-				return totalWeightOrderDeliverySchedules();
-			case UomPackage.UOM___UOM_GROUPS:
-				return uomGroups();
-			case UomPackage.UOM___USE_TIME_SUBSCRIPTIONS:
-				return useTimeSubscriptions();
-			case UomPackage.UOM___WEIGHT_FACILITIES:
-				return weightFacilities();
-			case UomPackage.UOM___WEIGHT_PRODUCTS:
-				return weightProducts();
-			case UomPackage.UOM___WEIGHT_SHIPMENT_BOX_TYPES:
-				return weightShipmentBoxTypes();
-			case UomPackage.UOM___WEIGHT_SHIPMENT_COST_ESTIMATES:
-				return weightShipmentCostEstimates();
-			case UomPackage.UOM___WEIGHT_SHIPMENT_PACKAGES:
-				return weightShipmentPackages();
-			case UomPackage.UOM___WIDTH_PRODUCTS:
-				return widthProducts();
-		}
-		return super.eInvoke(operationID, arguments);
 	}
 
 	/**

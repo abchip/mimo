@@ -47,7 +47,7 @@ public interface Budget extends BizEntityTyped<BudgetType> {
 	 * @return the value of the '<em>Comments</em>' attribute.
 	 * @see #setComments(String)
 	 * @see org.abchip.mimo.biz.accounting.budget.BudgetPackage#getBudget_Comments()
-	 * @model
+	 * @model annotation="mimo-ent-format type='comment' length='255'"
 	 * @generated
 	 */
 	String getComments();
@@ -99,7 +99,9 @@ public interface Budget extends BizEntityTyped<BudgetType> {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Budget Attributes</em>' attribute list.
 	 * @see org.abchip.mimo.biz.accounting.budget.BudgetPackage#getBudget_BudgetAttributes()
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='BudgetAttribute'"
 	 * @generated
 	 */
@@ -116,7 +118,9 @@ public interface Budget extends BizEntityTyped<BudgetType> {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Budget Items</em>' attribute list.
 	 * @see org.abchip.mimo.biz.accounting.budget.BudgetPackage#getBudget_BudgetItems()
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='BudgetItem'"
 	 * @generated
 	 */
@@ -133,7 +137,9 @@ public interface Budget extends BizEntityTyped<BudgetType> {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Budget Revisions</em>' attribute list.
 	 * @see org.abchip.mimo.biz.accounting.budget.BudgetPackage#getBudget_BudgetRevisions()
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='BudgetRevision'"
 	 * @generated
 	 */
@@ -150,7 +156,9 @@ public interface Budget extends BizEntityTyped<BudgetType> {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Budget Statuss</em>' attribute list.
 	 * @see org.abchip.mimo.biz.accounting.budget.BudgetPackage#getBudget_BudgetStatuss()
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='BudgetStatus'"
 	 * @generated
 	 */
@@ -159,7 +167,8 @@ public interface Budget extends BizEntityTyped<BudgetType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='BudgetScenarioApplication' route='budgetId'"
 	 * @generated
 	 */
@@ -203,6 +212,7 @@ public interface Budget extends BizEntityTyped<BudgetType> {
 	 * @see #setBudgetId(String)
 	 * @see org.abchip.mimo.biz.accounting.budget.BudgetPackage#getBudget_BudgetId()
 	 * @model id="true" required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */

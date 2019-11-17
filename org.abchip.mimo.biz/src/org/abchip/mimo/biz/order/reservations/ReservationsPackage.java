@@ -10,7 +10,6 @@ package org.abchip.mimo.biz.order.reservations;
 import org.abchip.mimo.biz.BizPackage;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
@@ -164,61 +163,6 @@ public interface ReservationsPackage extends EPackage {
 
 
 	/**
-	 * The operation id for the '<em>Isa</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ACCOMMODATION_SPOT___ISA = BizPackage.BIZ_ENTITY___ISA;
-
-	/**
-	 * The operation id for the '<em>Get Name</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ACCOMMODATION_SPOT___GET_NAME = BizPackage.BIZ_ENTITY___GET_NAME;
-
-	/**
-	 * The operation id for the '<em>Get URI</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ACCOMMODATION_SPOT___GET_URI = BizPackage.BIZ_ENTITY___GET_URI;
-
-	/**
-	 * The operation id for the '<em>Is Proxy</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ACCOMMODATION_SPOT___IS_PROXY = BizPackage.BIZ_ENTITY___IS_PROXY;
-
-	/**
-	 * The operation id for the '<em>Work Efforts</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ACCOMMODATION_SPOT___WORK_EFFORTS = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 0;
-
-	/**
-	 * The number of operations of the '<em>Accommodation Spot</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ACCOMMODATION_SPOT_OPERATION_COUNT = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 1;
-
-
-	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.biz.order.reservations.AccommodationSpot <em>Accommodation Spot</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -271,16 +215,6 @@ public interface ReservationsPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getAccommodationSpot_FixedAssetId();
-
-	/**
-	 * Returns the meta object for the '{@link org.abchip.mimo.biz.order.reservations.AccommodationSpot#workEfforts() <em>Work Efforts</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Work Efforts</em>' operation.
-	 * @see org.abchip.mimo.biz.order.reservations.AccommodationSpot#workEfforts()
-	 * @generated
-	 */
-	EOperation getAccommodationSpot__WorkEfforts();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.order.reservations.AccommodationSpot#getNumberOfSpaces <em>Number Of Spaces</em>}'.
@@ -356,14 +290,6 @@ public interface ReservationsPackage extends EPackage {
 		 * @generated
 		 */
 		EReference ACCOMMODATION_SPOT__FIXED_ASSET_ID = eINSTANCE.getAccommodationSpot_FixedAssetId();
-
-		/**
-		 * The meta object literal for the '<em><b>Work Efforts</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation ACCOMMODATION_SPOT___WORK_EFFORTS = eINSTANCE.getAccommodationSpot__WorkEfforts();
 
 		/**
 		 * The meta object literal for the '<em><b>Number Of Spaces</b></em>' attribute feature.

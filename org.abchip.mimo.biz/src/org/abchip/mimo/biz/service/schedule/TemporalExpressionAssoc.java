@@ -91,7 +91,7 @@ public interface TemporalExpressionAssoc extends BizEntity {
 	 * @return the value of the '<em>Expr Assoc Type</em>' attribute.
 	 * @see #setExprAssocType(String)
 	 * @see org.abchip.mimo.biz.service.schedule.SchedulePackage#getTemporalExpressionAssoc_ExprAssocType()
-	 * @model
+	 * @model annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	String getExprAssocType();

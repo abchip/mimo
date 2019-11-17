@@ -70,6 +70,7 @@ public interface OrderRequirementCommitment extends BizEntity {
 	 * @see #setOrderItemSeqId(String)
 	 * @see org.abchip.mimo.biz.order.requirement.RequirementPackage#getOrderRequirementCommitment_OrderItemSeqId()
 	 * @model required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
@@ -96,7 +97,7 @@ public interface OrderRequirementCommitment extends BizEntity {
 	 * @return the value of the '<em>Quantity</em>' attribute.
 	 * @see #setQuantity(BigDecimal)
 	 * @see org.abchip.mimo.biz.order.requirement.RequirementPackage#getOrderRequirementCommitment_Quantity()
-	 * @model
+	 * @model annotation="mimo-ent-format type='fixed-point' precision='18' scale='6'"
 	 * @generated
 	 */
 	BigDecimal getQuantity();

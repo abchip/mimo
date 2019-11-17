@@ -71,7 +71,7 @@ public interface TestingStatus extends BizEntity {
 	 * @return the value of the '<em>Status Date</em>' attribute.
 	 * @see #setStatusDate(Date)
 	 * @see org.abchip.mimo.biz.entity.test.TestPackage#getTestingStatus_StatusDate()
-	 * @model
+	 * @model annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getStatusDate();
@@ -123,7 +123,7 @@ public interface TestingStatus extends BizEntity {
 	 * @return the value of the '<em>Testing Id</em>' attribute.
 	 * @see #setTestingId(String)
 	 * @see org.abchip.mimo.biz.entity.test.TestPackage#getTestingStatus_TestingId()
-	 * @model
+	 * @model annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	String getTestingId();
@@ -150,6 +150,7 @@ public interface TestingStatus extends BizEntity {
 	 * @see #setTestingStatusId(String)
 	 * @see org.abchip.mimo.biz.entity.test.TestPackage#getTestingStatus_TestingStatusId()
 	 * @model id="true" required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */

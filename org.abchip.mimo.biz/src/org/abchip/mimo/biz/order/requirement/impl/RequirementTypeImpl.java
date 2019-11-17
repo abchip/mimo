@@ -7,14 +7,12 @@
  */
 package org.abchip.mimo.biz.order.requirement.impl;
 
-import java.lang.reflect.InvocationTargetException;
 import java.util.List;
 
 import org.abchip.mimo.biz.impl.BizEntityTypeImpl;
 import org.abchip.mimo.biz.order.requirement.Requirement;
 import org.abchip.mimo.biz.order.requirement.RequirementPackage;
 import org.abchip.mimo.biz.order.requirement.RequirementType;
-import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 
 /**
@@ -172,22 +170,6 @@ public class RequirementTypeImpl extends BizEntityTypeImpl<Requirement> implemen
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
-		switch (operationID) {
-			case RequirementPackage.REQUIREMENT_TYPE___CHILD_REQUIREMENT_TYPES:
-				return childRequirementTypes();
-			case RequirementPackage.REQUIREMENT_TYPE___REQUIREMENTS:
-				return requirements();
-		}
-		return super.eInvoke(operationID, arguments);
 	}
 
 } //RequirementTypeImpl

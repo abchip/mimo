@@ -47,7 +47,7 @@ public interface Geo extends BizEntityTyped<GeoType> {
 	 * @return the value of the '<em>Abbreviation</em>' attribute.
 	 * @see #setAbbreviation(String)
 	 * @see org.abchip.mimo.biz.common.geo.GeoPackage#getGeo_Abbreviation()
-	 * @model
+	 * @model annotation="mimo-ent-format type='short-varchar' length='60'"
 	 * @generated
 	 */
 	String getAbbreviation();
@@ -73,7 +73,7 @@ public interface Geo extends BizEntityTyped<GeoType> {
 	 * @return the value of the '<em>Geo Code</em>' attribute.
 	 * @see #setGeoCode(String)
 	 * @see org.abchip.mimo.biz.common.geo.GeoPackage#getGeo_GeoCode()
-	 * @model
+	 * @model annotation="mimo-ent-format type='short-varchar' length='60'"
 	 * @generated
 	 */
 	String getGeoCode();
@@ -99,7 +99,7 @@ public interface Geo extends BizEntityTyped<GeoType> {
 	 * @return the value of the '<em>Geo Name</em>' attribute.
 	 * @see #setGeoName(String)
 	 * @see org.abchip.mimo.biz.common.geo.GeoPackage#getGeo_GeoName()
-	 * @model
+	 * @model annotation="mimo-ent-format type='name' length='100'"
 	 * @generated
 	 */
 	String getGeoName();
@@ -125,7 +125,7 @@ public interface Geo extends BizEntityTyped<GeoType> {
 	 * @return the value of the '<em>Geo Sec Code</em>' attribute.
 	 * @see #setGeoSecCode(String)
 	 * @see org.abchip.mimo.biz.common.geo.GeoPackage#getGeo_GeoSecCode()
-	 * @model
+	 * @model annotation="mimo-ent-format type='short-varchar' length='60'"
 	 * @generated
 	 */
 	String getGeoSecCode();
@@ -151,7 +151,7 @@ public interface Geo extends BizEntityTyped<GeoType> {
 	 * @return the value of the '<em>Well Known Text</em>' attribute.
 	 * @see #setWellKnownText(String)
 	 * @see org.abchip.mimo.biz.common.geo.GeoPackage#getGeo_WellKnownText()
-	 * @model
+	 * @model annotation="mimo-ent-format type='very-long'"
 	 * @generated
 	 */
 	String getWellKnownText();
@@ -177,7 +177,9 @@ public interface Geo extends BizEntityTyped<GeoType> {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Main Geo Assocs</em>' attribute list.
 	 * @see org.abchip.mimo.biz.common.geo.GeoPackage#getGeo_MainGeoAssocs()
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='GeoAssoc'"
 	 * @generated
 	 */
@@ -194,7 +196,9 @@ public interface Geo extends BizEntityTyped<GeoType> {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Tax Auth Tax Authorities</em>' attribute list.
 	 * @see org.abchip.mimo.biz.common.geo.GeoPackage#getGeo_TaxAuthTaxAuthorities()
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='TaxAuthority'"
 	 * @generated
 	 */
@@ -203,7 +207,9 @@ public interface Geo extends BizEntityTyped<GeoType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='GeoAssoc' route='geoIdTo'"
 	 * @generated
 	 */
@@ -212,7 +218,8 @@ public interface Geo extends BizEntityTyped<GeoType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='PostalAddress' route='cityGeoId'"
 	 * @generated
 	 */
@@ -221,7 +228,8 @@ public interface Geo extends BizEntityTyped<GeoType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='CostComponent' route='geoId'"
 	 * @generated
 	 */
@@ -230,7 +238,8 @@ public interface Geo extends BizEntityTyped<GeoType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='PostalAddress' route='countryGeoId'"
 	 * @generated
 	 */
@@ -239,7 +248,8 @@ public interface Geo extends BizEntityTyped<GeoType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='PostalAddress' route='countyGeoId'"
 	 * @generated
 	 */
@@ -248,7 +258,8 @@ public interface Geo extends BizEntityTyped<GeoType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ProductStoreShipmentMeth' route='excludeGeoId'"
 	 * @generated
 	 */
@@ -257,7 +268,8 @@ public interface Geo extends BizEntityTyped<GeoType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ShipmentCostEstimate' route='geoIdFrom'"
 	 * @generated
 	 */
@@ -266,7 +278,8 @@ public interface Geo extends BizEntityTyped<GeoType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ProductStoreShipmentMeth' route='includeGeoId'"
 	 * @generated
 	 */
@@ -275,7 +288,8 @@ public interface Geo extends BizEntityTyped<GeoType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='PostalAddress' route='municipalityGeoId'"
 	 * @generated
 	 */
@@ -284,7 +298,8 @@ public interface Geo extends BizEntityTyped<GeoType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='Product' route='originGeoId'"
 	 * @generated
 	 */
@@ -293,7 +308,8 @@ public interface Geo extends BizEntityTyped<GeoType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='PaymentApplication' route='taxAuthGeoId'"
 	 * @generated
 	 */
@@ -302,7 +318,9 @@ public interface Geo extends BizEntityTyped<GeoType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='PostalAddressBoundary' route='geoId'"
 	 * @generated
 	 */
@@ -311,7 +329,8 @@ public interface Geo extends BizEntityTyped<GeoType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='PostalAddress' route='postalCodeGeoId'"
 	 * @generated
 	 */
@@ -320,7 +339,8 @@ public interface Geo extends BizEntityTyped<GeoType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='OrderAdjustment' route='primaryGeoId'"
 	 * @generated
 	 */
@@ -329,7 +349,8 @@ public interface Geo extends BizEntityTyped<GeoType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='QuoteAdjustment' route='primaryGeoId'"
 	 * @generated
 	 */
@@ -338,7 +359,8 @@ public interface Geo extends BizEntityTyped<GeoType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ReturnAdjustment' route='primaryGeoId'"
 	 * @generated
 	 */
@@ -347,7 +369,9 @@ public interface Geo extends BizEntityTyped<GeoType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ProductGeo' route='geoId'"
 	 * @generated
 	 */
@@ -356,7 +380,8 @@ public interface Geo extends BizEntityTyped<GeoType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ReorderGuideline' route='geoId'"
 	 * @generated
 	 */
@@ -365,7 +390,8 @@ public interface Geo extends BizEntityTyped<GeoType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='OrderAdjustment' route='secondaryGeoId'"
 	 * @generated
 	 */
@@ -374,7 +400,8 @@ public interface Geo extends BizEntityTyped<GeoType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='QuoteAdjustment' route='secondaryGeoId'"
 	 * @generated
 	 */
@@ -383,7 +410,8 @@ public interface Geo extends BizEntityTyped<GeoType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ReturnAdjustment' route='secondaryGeoId'"
 	 * @generated
 	 */
@@ -392,7 +420,9 @@ public interface Geo extends BizEntityTyped<GeoType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='SegmentGroupGeo' route='geoId'"
 	 * @generated
 	 */
@@ -401,7 +431,8 @@ public interface Geo extends BizEntityTyped<GeoType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='PostalAddress' route='stateProvinceGeoId'"
 	 * @generated
 	 */
@@ -410,7 +441,8 @@ public interface Geo extends BizEntityTyped<GeoType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='SurveyQuestion' route='geoId'"
 	 * @generated
 	 */
@@ -419,7 +451,8 @@ public interface Geo extends BizEntityTyped<GeoType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='InvoiceItem' route='taxAuthGeoId'"
 	 * @generated
 	 */
@@ -428,7 +461,8 @@ public interface Geo extends BizEntityTyped<GeoType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ShipmentCostEstimate' route='geoIdTo'"
 	 * @generated
 	 */
@@ -472,6 +506,7 @@ public interface Geo extends BizEntityTyped<GeoType> {
 	 * @see #setGeoId(String)
 	 * @see org.abchip.mimo.biz.common.geo.GeoPackage#getGeo_GeoId()
 	 * @model id="true" required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */

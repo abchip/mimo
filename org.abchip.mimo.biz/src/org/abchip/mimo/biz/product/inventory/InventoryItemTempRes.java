@@ -99,7 +99,7 @@ public interface InventoryItemTempRes extends BizEntity {
 	 * @return the value of the '<em>Quantity</em>' attribute.
 	 * @see #setQuantity(BigDecimal)
 	 * @see org.abchip.mimo.biz.product.inventory.InventoryPackage#getInventoryItemTempRes_Quantity()
-	 * @model
+	 * @model annotation="mimo-ent-format type='fixed-point' precision='18' scale='6'"
 	 * @generated
 	 */
 	BigDecimal getQuantity();
@@ -125,7 +125,7 @@ public interface InventoryItemTempRes extends BizEntity {
 	 * @return the value of the '<em>Reserved Date</em>' attribute.
 	 * @see #setReservedDate(Date)
 	 * @see org.abchip.mimo.biz.product.inventory.InventoryPackage#getInventoryItemTempRes_ReservedDate()
-	 * @model
+	 * @model annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getReservedDate();
@@ -152,6 +152,7 @@ public interface InventoryItemTempRes extends BizEntity {
 	 * @see #setVisitId(String)
 	 * @see org.abchip.mimo.biz.product.inventory.InventoryPackage#getInventoryItemTempRes_VisitId()
 	 * @model required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */

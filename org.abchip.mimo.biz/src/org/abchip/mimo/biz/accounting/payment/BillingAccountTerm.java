@@ -49,7 +49,7 @@ public interface BillingAccountTerm extends BizEntity {
 	 * @return the value of the '<em>Term Days</em>' attribute.
 	 * @see #setTermDays(long)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getBillingAccountTerm_TermDays()
-	 * @model
+	 * @model annotation="mimo-ent-format type='numeric' precision='20' scale='0'"
 	 * @generated
 	 */
 	long getTermDays();
@@ -101,7 +101,7 @@ public interface BillingAccountTerm extends BizEntity {
 	 * @return the value of the '<em>Term Value</em>' attribute.
 	 * @see #setTermValue(BigDecimal)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getBillingAccountTerm_TermValue()
-	 * @model
+	 * @model annotation="mimo-ent-format type='currency-amount' precision='18' scale='2'"
 	 * @generated
 	 */
 	BigDecimal getTermValue();
@@ -153,7 +153,9 @@ public interface BillingAccountTerm extends BizEntity {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Billing Account Term Attrs</em>' attribute list.
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getBillingAccountTerm_BillingAccountTermAttrs()
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='BillingAccountTermAttr'"
 	 * @generated
 	 */
@@ -197,6 +199,7 @@ public interface BillingAccountTerm extends BizEntity {
 	 * @see #setBillingAccountTermId(String)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getBillingAccountTerm_BillingAccountTermId()
 	 * @model id="true" required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */

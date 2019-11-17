@@ -69,6 +69,7 @@ public interface FacilityCarrierShipment extends BizEntity {
 	 * @see #setRoleTypeId(String)
 	 * @see org.abchip.mimo.biz.product.facility.FacilityPackage#getFacilityCarrierShipment_RoleTypeId()
 	 * @model required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */

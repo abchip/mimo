@@ -53,7 +53,7 @@ public interface PartyBenefit extends BizEntity {
 	 * @return the value of the '<em>Actual Employer Paid Percent</em>' attribute.
 	 * @see #setActualEmployerPaidPercent(double)
 	 * @see org.abchip.mimo.biz.humanres.employment.EmploymentPackage#getPartyBenefit_ActualEmployerPaidPercent()
-	 * @model
+	 * @model annotation="mimo-ent-format type='floating-point'"
 	 * @generated
 	 */
 	double getActualEmployerPaidPercent();
@@ -79,7 +79,7 @@ public interface PartyBenefit extends BizEntity {
 	 * @return the value of the '<em>Available Time</em>' attribute.
 	 * @see #setAvailableTime(long)
 	 * @see org.abchip.mimo.biz.humanres.employment.EmploymentPackage#getPartyBenefit_AvailableTime()
-	 * @model
+	 * @model annotation="mimo-ent-format type='numeric' precision='20' scale='0'"
 	 * @generated
 	 */
 	long getAvailableTime();
@@ -131,7 +131,7 @@ public interface PartyBenefit extends BizEntity {
 	 * @return the value of the '<em>Cost</em>' attribute.
 	 * @see #setCost(BigDecimal)
 	 * @see org.abchip.mimo.biz.humanres.employment.EmploymentPackage#getPartyBenefit_Cost()
-	 * @model
+	 * @model annotation="mimo-ent-format type='currency-amount' precision='18' scale='2'"
 	 * @generated
 	 */
 	BigDecimal getCost();
@@ -158,6 +158,7 @@ public interface PartyBenefit extends BizEntity {
 	 * @see #setFromDate(Date)
 	 * @see org.abchip.mimo.biz.humanres.employment.EmploymentPackage#getPartyBenefit_FromDate()
 	 * @model required="true"
+	 *        annotation="mimo-ent-format type='date-time'"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
@@ -263,6 +264,7 @@ public interface PartyBenefit extends BizEntity {
 	 * @see #setRoleTypeIdFrom(String)
 	 * @see org.abchip.mimo.biz.humanres.employment.EmploymentPackage#getPartyBenefit_RoleTypeIdFrom()
 	 * @model required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
@@ -290,6 +292,7 @@ public interface PartyBenefit extends BizEntity {
 	 * @see #setRoleTypeIdTo(String)
 	 * @see org.abchip.mimo.biz.humanres.employment.EmploymentPackage#getPartyBenefit_RoleTypeIdTo()
 	 * @model required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
@@ -316,7 +319,7 @@ public interface PartyBenefit extends BizEntity {
 	 * @return the value of the '<em>Thru Date</em>' attribute.
 	 * @see #setThruDate(Date)
 	 * @see org.abchip.mimo.biz.humanres.employment.EmploymentPackage#getPartyBenefit_ThruDate()
-	 * @model
+	 * @model annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getThruDate();

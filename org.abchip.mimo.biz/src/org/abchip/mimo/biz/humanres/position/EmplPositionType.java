@@ -42,7 +42,7 @@ public interface EmplPositionType extends BizEntityType<EmplPosition> {
 	 * @return the value of the '<em>Description</em>' attribute.
 	 * @see #setDescription(String)
 	 * @see org.abchip.mimo.biz.humanres.position.PositionPackage#getEmplPositionType_Description()
-	 * @model
+	 * @model annotation="mimo-ent-format type='description' length='255'"
 	 * @generated
 	 */
 	String getDescription();
@@ -68,7 +68,7 @@ public interface EmplPositionType extends BizEntityType<EmplPosition> {
 	 * @return the value of the '<em>Has Table</em>' attribute.
 	 * @see #setHasTable(boolean)
 	 * @see org.abchip.mimo.biz.humanres.position.PositionPackage#getEmplPositionType_HasTable()
-	 * @model
+	 * @model annotation="mimo-ent-format type='indicator' length='1'"
 	 * @generated
 	 */
 	boolean isHasTable();
@@ -95,6 +95,7 @@ public interface EmplPositionType extends BizEntityType<EmplPosition> {
 	 * @see #setEmplPositionTypeId(String)
 	 * @see org.abchip.mimo.biz.humanres.position.PositionPackage#getEmplPositionType_EmplPositionTypeId()
 	 * @model id="true" required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
@@ -139,7 +140,8 @@ public interface EmplPositionType extends BizEntityType<EmplPosition> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='EmplPositionType' route='parentTypeId'"
 	 * @generated
 	 */
@@ -148,7 +150,8 @@ public interface EmplPositionType extends BizEntityType<EmplPosition> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='EmplPosition' route='emplPositionTypeId'"
 	 * @generated
 	 */

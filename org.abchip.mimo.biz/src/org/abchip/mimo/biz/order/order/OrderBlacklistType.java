@@ -40,7 +40,7 @@ public interface OrderBlacklistType extends BizEntityType<OrderBlacklist> {
 	 * @return the value of the '<em>Description</em>' attribute.
 	 * @see #setDescription(String)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderBlacklistType_Description()
-	 * @model
+	 * @model annotation="mimo-ent-format type='description' length='255'"
 	 * @generated
 	 */
 	String getDescription();
@@ -58,7 +58,9 @@ public interface OrderBlacklistType extends BizEntityType<OrderBlacklist> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='OrderBlacklist' route='orderBlacklistTypeId'"
 	 * @generated
 	 */
@@ -76,6 +78,7 @@ public interface OrderBlacklistType extends BizEntityType<OrderBlacklist> {
 	 * @see #setOrderBlacklistTypeId(String)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderBlacklistType_OrderBlacklistTypeId()
 	 * @model id="true" required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */

@@ -42,7 +42,7 @@ public interface QuoteTermAttribute extends BizEntity {
 	 * @return the value of the '<em>Attr Description</em>' attribute.
 	 * @see #setAttrDescription(String)
 	 * @see org.abchip.mimo.biz.order.quote.QuotePackage#getQuoteTermAttribute_AttrDescription()
-	 * @model
+	 * @model annotation="mimo-ent-format type='description' length='255'"
 	 * @generated
 	 */
 	String getAttrDescription();
@@ -69,6 +69,7 @@ public interface QuoteTermAttribute extends BizEntity {
 	 * @see #setAttrName(String)
 	 * @see org.abchip.mimo.biz.order.quote.QuotePackage#getQuoteTermAttribute_AttrName()
 	 * @model required="true"
+	 *        annotation="mimo-ent-format type='id-long' length='60'"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
@@ -95,7 +96,7 @@ public interface QuoteTermAttribute extends BizEntity {
 	 * @return the value of the '<em>Attr Value</em>' attribute.
 	 * @see #setAttrValue(String)
 	 * @see org.abchip.mimo.biz.order.quote.QuotePackage#getQuoteTermAttribute_AttrValue()
-	 * @model
+	 * @model annotation="mimo-ent-format type='value' length='255'"
 	 * @generated
 	 */
 	String getAttrValue();
@@ -122,6 +123,7 @@ public interface QuoteTermAttribute extends BizEntity {
 	 * @see #setQuoteId(String)
 	 * @see org.abchip.mimo.biz.order.quote.QuotePackage#getQuoteTermAttribute_QuoteId()
 	 * @model required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
@@ -149,6 +151,7 @@ public interface QuoteTermAttribute extends BizEntity {
 	 * @see #setQuoteItemSeqId(String)
 	 * @see org.abchip.mimo.biz.order.quote.QuotePackage#getQuoteTermAttribute_QuoteItemSeqId()
 	 * @model required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
@@ -176,6 +179,7 @@ public interface QuoteTermAttribute extends BizEntity {
 	 * @see #setTermTypeId(String)
 	 * @see org.abchip.mimo.biz.order.quote.QuotePackage#getQuoteTermAttribute_TermTypeId()
 	 * @model required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */

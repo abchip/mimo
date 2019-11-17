@@ -50,6 +50,7 @@ public interface NoteData extends BizEntity {
 	 * @see #setNoteId(String)
 	 * @see org.abchip.mimo.biz.common.note.NotePackage#getNoteData_NoteId()
 	 * @model id="true" required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
@@ -76,7 +77,7 @@ public interface NoteData extends BizEntity {
 	 * @return the value of the '<em>More Info Item Id</em>' attribute.
 	 * @see #setMoreInfoItemId(String)
 	 * @see org.abchip.mimo.biz.common.note.NotePackage#getNoteData_MoreInfoItemId()
-	 * @model
+	 * @model annotation="mimo-ent-format type='value' length='255'"
 	 * @generated
 	 */
 	String getMoreInfoItemId();
@@ -102,7 +103,7 @@ public interface NoteData extends BizEntity {
 	 * @return the value of the '<em>More Info Item Name</em>' attribute.
 	 * @see #setMoreInfoItemName(String)
 	 * @see org.abchip.mimo.biz.common.note.NotePackage#getNoteData_MoreInfoItemName()
-	 * @model
+	 * @model annotation="mimo-ent-format type='value' length='255'"
 	 * @generated
 	 */
 	String getMoreInfoItemName();
@@ -128,7 +129,7 @@ public interface NoteData extends BizEntity {
 	 * @return the value of the '<em>More Info Url</em>' attribute.
 	 * @see #setMoreInfoUrl(String)
 	 * @see org.abchip.mimo.biz.common.note.NotePackage#getNoteData_MoreInfoUrl()
-	 * @model
+	 * @model annotation="mimo-ent-format type='value' length='255'"
 	 * @generated
 	 */
 	String getMoreInfoUrl();
@@ -154,7 +155,7 @@ public interface NoteData extends BizEntity {
 	 * @return the value of the '<em>Note Date Time</em>' attribute.
 	 * @see #setNoteDateTime(Date)
 	 * @see org.abchip.mimo.biz.common.note.NotePackage#getNoteData_NoteDateTime()
-	 * @model
+	 * @model annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getNoteDateTime();
@@ -180,7 +181,7 @@ public interface NoteData extends BizEntity {
 	 * @return the value of the '<em>Note Info</em>' attribute.
 	 * @see #setNoteInfo(String)
 	 * @see org.abchip.mimo.biz.common.note.NotePackage#getNoteData_NoteInfo()
-	 * @model
+	 * @model annotation="mimo-ent-format type='very-long'"
 	 * @generated
 	 */
 	String getNoteInfo();
@@ -206,7 +207,7 @@ public interface NoteData extends BizEntity {
 	 * @return the value of the '<em>Note Name</em>' attribute.
 	 * @see #setNoteName(String)
 	 * @see org.abchip.mimo.biz.common.note.NotePackage#getNoteData_NoteName()
-	 * @model
+	 * @model annotation="mimo-ent-format type='name' length='100'"
 	 * @generated
 	 */
 	String getNoteName();
@@ -250,7 +251,9 @@ public interface NoteData extends BizEntity {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='CustRequestNote' route='noteId'"
 	 * @generated
 	 */
@@ -259,7 +262,9 @@ public interface NoteData extends BizEntity {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='InvoiceNote' route='noteId'"
 	 * @generated
 	 */
@@ -268,7 +273,9 @@ public interface NoteData extends BizEntity {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='MarketingCampaignNote' route='noteId'"
 	 * @generated
 	 */
@@ -277,7 +284,9 @@ public interface NoteData extends BizEntity {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='OrderHeaderNote' route='noteId'"
 	 * @generated
 	 */
@@ -286,7 +295,9 @@ public interface NoteData extends BizEntity {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='PartyNote' route='noteId'"
 	 * @generated
 	 */
@@ -295,7 +306,9 @@ public interface NoteData extends BizEntity {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='QuoteNote' route='noteId'"
 	 * @generated
 	 */
@@ -304,7 +317,9 @@ public interface NoteData extends BizEntity {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='WorkEffortNote' route='noteId'"
 	 * @generated
 	 */
@@ -313,7 +328,8 @@ public interface NoteData extends BizEntity {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='WorkEffort' route='noteId'"
 	 * @generated
 	 */

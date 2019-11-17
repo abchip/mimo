@@ -89,7 +89,7 @@ public interface Party extends BizEntityTyped<PartyType> {
 	 * @return the value of the '<em>Created Date</em>' attribute.
 	 * @see #setCreatedDate(Date)
 	 * @see org.abchip.mimo.biz.party.party.PartyPackage#getParty_CreatedDate()
-	 * @model
+	 * @model annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getCreatedDate();
@@ -141,7 +141,7 @@ public interface Party extends BizEntityTyped<PartyType> {
 	 * @return the value of the '<em>Description</em>' attribute.
 	 * @see #setDescription(String)
 	 * @see org.abchip.mimo.biz.party.party.PartyPackage#getParty_Description()
-	 * @model
+	 * @model annotation="mimo-ent-format type='very-long'"
 	 * @generated
 	 */
 	String getDescription();
@@ -167,7 +167,7 @@ public interface Party extends BizEntityTyped<PartyType> {
 	 * @return the value of the '<em>External Id</em>' attribute.
 	 * @see #setExternalId(String)
 	 * @see org.abchip.mimo.biz.party.party.PartyPackage#getParty_ExternalId()
-	 * @model
+	 * @model annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	String getExternalId();
@@ -193,7 +193,7 @@ public interface Party extends BizEntityTyped<PartyType> {
 	 * @return the value of the '<em>Is Unread</em>' attribute.
 	 * @see #setIsUnread(boolean)
 	 * @see org.abchip.mimo.biz.party.party.PartyPackage#getParty_IsUnread()
-	 * @model
+	 * @model annotation="mimo-ent-format type='indicator' length='1'"
 	 * @generated
 	 */
 	boolean isIsUnread();
@@ -245,7 +245,7 @@ public interface Party extends BizEntityTyped<PartyType> {
 	 * @return the value of the '<em>Last Modified Date</em>' attribute.
 	 * @see #setLastModifiedDate(Date)
 	 * @see org.abchip.mimo.biz.party.party.PartyPackage#getParty_LastModifiedDate()
-	 * @model
+	 * @model annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getLastModifiedDate();
@@ -323,7 +323,9 @@ public interface Party extends BizEntityTyped<PartyType> {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Party Attributes</em>' attribute list.
 	 * @see org.abchip.mimo.biz.party.party.PartyPackage#getParty_PartyAttributes()
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='PartyAttribute'"
 	 * @generated
 	 */
@@ -340,7 +342,9 @@ public interface Party extends BizEntityTyped<PartyType> {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Party Identifications</em>' attribute list.
 	 * @see org.abchip.mimo.biz.party.party.PartyPackage#getParty_PartyIdentifications()
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='PartyIdentification'"
 	 * @generated
 	 */
@@ -357,7 +361,9 @@ public interface Party extends BizEntityTyped<PartyType> {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Party Name Histories</em>' attribute list.
 	 * @see org.abchip.mimo.biz.party.party.PartyPackage#getParty_PartyNameHistories()
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='PartyNameHistory'"
 	 * @generated
 	 */
@@ -374,7 +380,9 @@ public interface Party extends BizEntityTyped<PartyType> {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Party Notes</em>' attribute list.
 	 * @see org.abchip.mimo.biz.party.party.PartyPackage#getParty_PartyNotes()
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='PartyNote'"
 	 * @generated
 	 */
@@ -391,7 +399,9 @@ public interface Party extends BizEntityTyped<PartyType> {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Party Profile Defaults</em>' attribute list.
 	 * @see org.abchip.mimo.biz.party.party.PartyPackage#getParty_PartyProfileDefaults()
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='PartyProfileDefault'"
 	 * @generated
 	 */
@@ -408,7 +418,9 @@ public interface Party extends BizEntityTyped<PartyType> {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Party Roles</em>' attribute list.
 	 * @see org.abchip.mimo.biz.party.party.PartyPackage#getParty_PartyRoles()
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='PartyRole'"
 	 * @generated
 	 */
@@ -425,7 +437,9 @@ public interface Party extends BizEntityTyped<PartyType> {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Party Skills</em>' attribute list.
 	 * @see org.abchip.mimo.biz.party.party.PartyPackage#getParty_PartySkills()
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='PartySkill'"
 	 * @generated
 	 */
@@ -442,7 +456,9 @@ public interface Party extends BizEntityTyped<PartyType> {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Supplier Product Features</em>' attribute list.
 	 * @see org.abchip.mimo.biz.party.party.PartyPackage#getParty_SupplierProductFeatures()
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='SupplierProductFeature'"
 	 * @generated
 	 */
@@ -451,7 +467,8 @@ public interface Party extends BizEntityTyped<PartyType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='AcctgTransEntry' route='partyId'"
 	 * @generated
 	 */
@@ -460,7 +477,8 @@ public interface Party extends BizEntityTyped<PartyType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='AcctgTrans' route='partyId'"
 	 * @generated
 	 */
@@ -469,7 +487,8 @@ public interface Party extends BizEntityTyped<PartyType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='EmploymentApp' route='applyingPartyId'"
 	 * @generated
 	 */
@@ -478,7 +497,8 @@ public interface Party extends BizEntityTyped<PartyType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='EmploymentApp' route='approverPartyId'"
 	 * @generated
 	 */
@@ -487,7 +507,8 @@ public interface Party extends BizEntityTyped<PartyType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='OrderItemShipGroup' route='carrierPartyId'"
 	 * @generated
 	 */
@@ -496,7 +517,9 @@ public interface Party extends BizEntityTyped<PartyType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='CarrierShipmentBoxType' route='partyId'"
 	 * @generated
 	 */
@@ -505,7 +528,8 @@ public interface Party extends BizEntityTyped<PartyType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ShipmentRouteSegment' route='carrierPartyId'"
 	 * @generated
 	 */
@@ -514,7 +538,8 @@ public interface Party extends BizEntityTyped<PartyType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='Timesheet' route='clientPartyId'"
 	 * @generated
 	 */
@@ -523,7 +548,8 @@ public interface Party extends BizEntityTyped<PartyType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ContentRevision' route='committedByPartyId'"
 	 * @generated
 	 */
@@ -532,7 +558,8 @@ public interface Party extends BizEntityTyped<PartyType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ContentApproval' route='partyId'"
 	 * @generated
 	 */
@@ -541,7 +568,8 @@ public interface Party extends BizEntityTyped<PartyType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='CostComponent' route='partyId'"
 	 * @generated
 	 */
@@ -550,7 +578,8 @@ public interface Party extends BizEntityTyped<PartyType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='CustRequestType' route='partyId'"
 	 * @generated
 	 */
@@ -559,7 +588,8 @@ public interface Party extends BizEntityTyped<PartyType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='EmplPosition' route='partyId'"
 	 * @generated
 	 */
@@ -568,7 +598,8 @@ public interface Party extends BizEntityTyped<PartyType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='FinAccountTrans' route='partyId'"
 	 * @generated
 	 */
@@ -577,7 +608,8 @@ public interface Party extends BizEntityTyped<PartyType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='FixedAsset' route='partyId'"
 	 * @generated
 	 */
@@ -586,7 +618,8 @@ public interface Party extends BizEntityTyped<PartyType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='Agreement' route='partyIdFrom'"
 	 * @generated
 	 */
@@ -595,7 +628,8 @@ public interface Party extends BizEntityTyped<PartyType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='CommunicationEvent' route='partyIdFrom'"
 	 * @generated
 	 */
@@ -604,7 +638,8 @@ public interface Party extends BizEntityTyped<PartyType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='CustRequest' route='fromPartyId'"
 	 * @generated
 	 */
@@ -613,7 +648,8 @@ public interface Party extends BizEntityTyped<PartyType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='Invoice' route='partyIdFrom'"
 	 * @generated
 	 */
@@ -622,7 +658,8 @@ public interface Party extends BizEntityTyped<PartyType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='Payment' route='partyIdFrom'"
 	 * @generated
 	 */
@@ -631,7 +668,8 @@ public interface Party extends BizEntityTyped<PartyType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='Shipment' route='partyIdFrom'"
 	 * @generated
 	 */
@@ -640,7 +678,8 @@ public interface Party extends BizEntityTyped<PartyType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='GiftCardFulfillment' route='partyId'"
 	 * @generated
 	 */
@@ -649,7 +688,9 @@ public interface Party extends BizEntityTyped<PartyType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='GlAccountOrganization' route='organizationPartyId'"
 	 * @generated
 	 */
@@ -658,7 +699,8 @@ public interface Party extends BizEntityTyped<PartyType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='GlJournal' route='organizationPartyId'"
 	 * @generated
 	 */
@@ -667,7 +709,8 @@ public interface Party extends BizEntityTyped<PartyType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='GlReconciliation' route='organizationPartyId'"
 	 * @generated
 	 */
@@ -676,7 +719,8 @@ public interface Party extends BizEntityTyped<PartyType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='FixedAssetRegistration' route='govAgencyPartyId'"
 	 * @generated
 	 */
@@ -685,7 +729,8 @@ public interface Party extends BizEntityTyped<PartyType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='SalesForecastHistory' route='internalPartyId'"
 	 * @generated
 	 */
@@ -694,7 +739,8 @@ public interface Party extends BizEntityTyped<PartyType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='SalesForecast' route='internalPartyId'"
 	 * @generated
 	 */
@@ -703,7 +749,8 @@ public interface Party extends BizEntityTyped<PartyType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='JobInterview' route='jobIntervieweePartyId'"
 	 * @generated
 	 */
@@ -712,7 +759,8 @@ public interface Party extends BizEntityTyped<PartyType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='JobInterview' route='jobInterviewerPartyId'"
 	 * @generated
 	 */
@@ -721,7 +769,8 @@ public interface Party extends BizEntityTyped<PartyType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='InventoryItem' route='partyId'"
 	 * @generated
 	 */
@@ -730,7 +779,8 @@ public interface Party extends BizEntityTyped<PartyType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='Invoice' route='partyId'"
 	 * @generated
 	 */
@@ -739,7 +789,8 @@ public interface Party extends BizEntityTyped<PartyType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='NoteData' route='noteParty'"
 	 * @generated
 	 */
@@ -748,7 +799,8 @@ public interface Party extends BizEntityTyped<PartyType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='CustomTimePeriod' route='organizationPartyId'"
 	 * @generated
 	 */
@@ -757,7 +809,9 @@ public interface Party extends BizEntityTyped<PartyType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='FinAccountTypeGlAccount' route='organizationPartyId'"
 	 * @generated
 	 */
@@ -766,7 +820,8 @@ public interface Party extends BizEntityTyped<PartyType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='FinAccount' route='organizationPartyId'"
 	 * @generated
 	 */
@@ -775,7 +830,9 @@ public interface Party extends BizEntityTyped<PartyType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='GlAccountTypeDefault' route='organizationPartyId'"
 	 * @generated
 	 */
@@ -784,7 +841,9 @@ public interface Party extends BizEntityTyped<PartyType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='InvoiceItemTypeGlAccount' route='organizationPartyId'"
 	 * @generated
 	 */
@@ -793,7 +852,9 @@ public interface Party extends BizEntityTyped<PartyType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='PaymentMethodTypeGlAccount' route='organizationPartyId'"
 	 * @generated
 	 */
@@ -802,7 +863,8 @@ public interface Party extends BizEntityTyped<PartyType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='SalesForecastHistory' route='organizationPartyId'"
 	 * @generated
 	 */
@@ -811,7 +873,8 @@ public interface Party extends BizEntityTyped<PartyType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='SalesForecast' route='organizationPartyId'"
 	 * @generated
 	 */
@@ -820,7 +883,9 @@ public interface Party extends BizEntityTyped<PartyType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='VarianceReasonGlAccount' route='organizationPartyId'"
 	 * @generated
 	 */
@@ -829,7 +894,8 @@ public interface Party extends BizEntityTyped<PartyType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='Subscription' route='originatedFromPartyId'"
 	 * @generated
 	 */
@@ -838,7 +904,8 @@ public interface Party extends BizEntityTyped<PartyType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='InvoiceItem' route='overrideOrgPartyId'"
 	 * @generated
 	 */
@@ -847,7 +914,8 @@ public interface Party extends BizEntityTyped<PartyType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ContactList' route='ownerPartyId'"
 	 * @generated
 	 */
@@ -856,7 +924,8 @@ public interface Party extends BizEntityTyped<PartyType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='Facility' route='ownerPartyId'"
 	 * @generated
 	 */
@@ -865,7 +934,8 @@ public interface Party extends BizEntityTyped<PartyType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='FinAccount' route='ownerPartyId'"
 	 * @generated
 	 */
@@ -874,7 +944,8 @@ public interface Party extends BizEntityTyped<PartyType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='InventoryItem' route='ownerPartyId'"
 	 * @generated
 	 */
@@ -883,7 +954,8 @@ public interface Party extends BizEntityTyped<PartyType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='PartyInvitation' route='partyIdFrom'"
 	 * @generated
 	 */
@@ -892,7 +964,8 @@ public interface Party extends BizEntityTyped<PartyType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='PartyPrefDocTypeTpl' route='partyId'"
 	 * @generated
 	 */
@@ -901,7 +974,8 @@ public interface Party extends BizEntityTyped<PartyType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='PartyResume' route='partyId'"
 	 * @generated
 	 */
@@ -910,7 +984,9 @@ public interface Party extends BizEntityTyped<PartyType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='PaymentGlAccountTypeMap' route='organizationPartyId'"
 	 * @generated
 	 */
@@ -919,7 +995,8 @@ public interface Party extends BizEntityTyped<PartyType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='PaymentMethod' route='partyId'"
 	 * @generated
 	 */
@@ -928,7 +1005,8 @@ public interface Party extends BizEntityTyped<PartyType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='FinAccountTrans' route='performedByPartyId'"
 	 * @generated
 	 */
@@ -937,7 +1015,9 @@ public interface Party extends BizEntityTyped<PartyType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ProductPromoCodeParty' route='partyId'"
 	 * @generated
 	 */
@@ -946,7 +1026,8 @@ public interface Party extends BizEntityTyped<PartyType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ProductPromoUse' route='partyId'"
 	 * @generated
 	 */
@@ -955,7 +1036,8 @@ public interface Party extends BizEntityTyped<PartyType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ProductPromo' route='overrideOrgPartyId'"
 	 * @generated
 	 */
@@ -964,7 +1046,8 @@ public interface Party extends BizEntityTyped<PartyType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ProductStoreShipmentMeth' route='companyPartyId'"
 	 * @generated
 	 */
@@ -973,7 +1056,8 @@ public interface Party extends BizEntityTyped<PartyType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ProductStore' route='payToPartyId'"
 	 * @generated
 	 */
@@ -982,7 +1066,8 @@ public interface Party extends BizEntityTyped<PartyType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='Quote' route='partyId'"
 	 * @generated
 	 */
@@ -991,7 +1076,8 @@ public interface Party extends BizEntityTyped<PartyType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='EmploymentApp' route='referredByPartyId'"
 	 * @generated
 	 */
@@ -1000,7 +1086,8 @@ public interface Party extends BizEntityTyped<PartyType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ReorderGuideline' route='partyId'"
 	 * @generated
 	 */
@@ -1009,7 +1096,8 @@ public interface Party extends BizEntityTyped<PartyType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ReturnHeader' route='fromPartyId'"
 	 * @generated
 	 */
@@ -1018,7 +1106,8 @@ public interface Party extends BizEntityTyped<PartyType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ShipmentCostEstimate' route='partyId'"
 	 * @generated
 	 */
@@ -1027,7 +1116,8 @@ public interface Party extends BizEntityTyped<PartyType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ShoppingList' route='partyId'"
 	 * @generated
 	 */
@@ -1036,7 +1126,8 @@ public interface Party extends BizEntityTyped<PartyType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='Subscription' route='partyId'"
 	 * @generated
 	 */
@@ -1045,7 +1136,8 @@ public interface Party extends BizEntityTyped<PartyType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='OrderItemShipGroup' route='supplierPartyId'"
 	 * @generated
 	 */
@@ -1054,7 +1146,8 @@ public interface Party extends BizEntityTyped<PartyType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='SurveyResponse' route='partyId'"
 	 * @generated
 	 */
@@ -1063,7 +1156,9 @@ public interface Party extends BizEntityTyped<PartyType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='TaxAuthority' route='taxAuthPartyId'"
 	 * @generated
 	 */
@@ -1072,7 +1167,8 @@ public interface Party extends BizEntityTyped<PartyType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='InvoiceItem' route='taxAuthPartyId'"
 	 * @generated
 	 */
@@ -1081,7 +1177,8 @@ public interface Party extends BizEntityTyped<PartyType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='TimeEntry' route='partyId'"
 	 * @generated
 	 */
@@ -1090,7 +1187,8 @@ public interface Party extends BizEntityTyped<PartyType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='Timesheet' route='partyId'"
 	 * @generated
 	 */
@@ -1099,7 +1197,8 @@ public interface Party extends BizEntityTyped<PartyType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='Agreement' route='partyIdTo'"
 	 * @generated
 	 */
@@ -1108,7 +1207,8 @@ public interface Party extends BizEntityTyped<PartyType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='CommunicationEvent' route='partyIdTo'"
 	 * @generated
 	 */
@@ -1117,7 +1217,9 @@ public interface Party extends BizEntityTyped<PartyType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='PartyInvitationGroupAssoc' route='partyIdTo'"
 	 * @generated
 	 */
@@ -1126,7 +1228,8 @@ public interface Party extends BizEntityTyped<PartyType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='Payment' route='partyIdTo'"
 	 * @generated
 	 */
@@ -1135,7 +1238,8 @@ public interface Party extends BizEntityTyped<PartyType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ReturnHeader' route='toPartyId'"
 	 * @generated
 	 */
@@ -1144,7 +1248,8 @@ public interface Party extends BizEntityTyped<PartyType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='Shipment' route='partyIdTo'"
 	 * @generated
 	 */
@@ -1153,7 +1258,8 @@ public interface Party extends BizEntityTyped<PartyType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='UserLoginHistory' route='partyId'"
 	 * @generated
 	 */
@@ -1162,7 +1268,8 @@ public interface Party extends BizEntityTyped<PartyType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='UserLogin' route='partyId'"
 	 * @generated
 	 */
@@ -1171,7 +1278,8 @@ public interface Party extends BizEntityTyped<PartyType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='OrderItemShipGroup' route='vendorPartyId'"
 	 * @generated
 	 */
@@ -1180,7 +1288,8 @@ public interface Party extends BizEntityTyped<PartyType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='WorkEffortEventReminder' route='partyId'"
 	 * @generated
 	 */
@@ -1224,6 +1333,7 @@ public interface Party extends BizEntityTyped<PartyType> {
 	 * @see #setPartyId(String)
 	 * @see org.abchip.mimo.biz.party.party.PartyPackage#getParty_PartyId()
 	 * @model id="true" required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */

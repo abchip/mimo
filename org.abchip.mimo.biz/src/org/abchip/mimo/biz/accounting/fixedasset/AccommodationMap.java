@@ -44,6 +44,7 @@ public interface AccommodationMap extends BizEntityTyped<AccommodationMapType> {
 	 * @see #setAccommodationMapId(String)
 	 * @see org.abchip.mimo.biz.accounting.fixedasset.FixedassetPackage#getAccommodationMap_AccommodationMapId()
 	 * @model id="true" required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
@@ -70,7 +71,7 @@ public interface AccommodationMap extends BizEntityTyped<AccommodationMapType> {
 	 * @return the value of the '<em>Number Of Spaces</em>' attribute.
 	 * @see #setNumberOfSpaces(long)
 	 * @see org.abchip.mimo.biz.accounting.fixedasset.FixedassetPackage#getAccommodationMap_NumberOfSpaces()
-	 * @model
+	 * @model annotation="mimo-ent-format type='numeric' precision='20' scale='0'"
 	 * @generated
 	 */
 	long getNumberOfSpaces();
@@ -88,7 +89,8 @@ public interface AccommodationMap extends BizEntityTyped<AccommodationMapType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='WorkEffort' route='accommodationMapId'"
 	 * @generated
 	 */

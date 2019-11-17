@@ -395,26 +395,6 @@ public class OrderItemImpl extends BizEntityTypedImpl<OrderItemType> implements 
 	 * @generated
 	 */
 	@Override
-	public InventoryItem getFromInventoryItemId() {
-		return (InventoryItem)eGet(OrderPackage.Literals.ORDER_ITEM__FROM_INVENTORY_ITEM_ID, true);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void setFromInventoryItemId(InventoryItem newFromInventoryItemId) {
-		eSet(OrderPackage.Literals.ORDER_ITEM__FROM_INVENTORY_ITEM_ID, newFromInventoryItemId);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public boolean isIsItemGroupPrimary() {
 		return (Boolean)eGet(OrderPackage.Literals.ORDER_ITEM__IS_ITEM_GROUP_PRIMARY, true);
 	}
@@ -467,6 +447,26 @@ public class OrderItemImpl extends BizEntityTypedImpl<OrderItemType> implements 
 	@Override
 	public void setIsPromo(boolean newIsPromo) {
 		eSet(OrderPackage.Literals.ORDER_ITEM__IS_PROMO, newIsPromo);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public InventoryItem getFromInventoryItemId() {
+		return (InventoryItem)eGet(OrderPackage.Literals.ORDER_ITEM__FROM_INVENTORY_ITEM_ID, true);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setFromInventoryItemId(InventoryItem newFromInventoryItemId) {
+		eSet(OrderPackage.Literals.ORDER_ITEM__FROM_INVENTORY_ITEM_ID, newFromInventoryItemId);
 	}
 
 	/**

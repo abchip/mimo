@@ -22,7 +22,7 @@ import org.abchip.mimo.biz.product.promo.ProductPromo;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.product.store.ProductStorePromoAppl#getFromDate <em>From Date</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.store.ProductStorePromoAppl#isManualOnly <em>Manual Only</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.store.ProductStorePromoAppl#getManualOnly <em>Manual Only</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.store.ProductStorePromoAppl#getSequenceNum <em>Sequence Num</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.store.ProductStorePromoAppl#getThruDate <em>Thru Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.store.ProductStorePromoAppl#getProductStoreId <em>Product Store Id</em>}</li>
@@ -46,6 +46,7 @@ public interface ProductStorePromoAppl extends BizEntity {
 	 * @see #setFromDate(Date)
 	 * @see org.abchip.mimo.biz.product.store.StorePackage#getProductStorePromoAppl_FromDate()
 	 * @model required="true"
+	 *        annotation="mimo-ent-format type='date-time'"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
@@ -70,22 +71,22 @@ public interface ProductStorePromoAppl extends BizEntity {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Manual Only</em>' attribute.
-	 * @see #setManualOnly(boolean)
+	 * @see #setManualOnly(char)
 	 * @see org.abchip.mimo.biz.product.store.StorePackage#getProductStorePromoAppl_ManualOnly()
-	 * @model
+	 * @model annotation="mimo-ent-format type='indicator' length='1'"
 	 * @generated
 	 */
-	boolean isManualOnly();
+	char getManualOnly();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.product.store.ProductStorePromoAppl#isManualOnly <em>Manual Only</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.product.store.ProductStorePromoAppl#getManualOnly <em>Manual Only</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Manual Only</em>' attribute.
-	 * @see #isManualOnly()
+	 * @see #getManualOnly()
 	 * @generated
 	 */
-	void setManualOnly(boolean value);
+	void setManualOnly(char value);
 
 	/**
 	 * Returns the value of the '<em><b>Sequence Num</b></em>' attribute.
@@ -98,7 +99,7 @@ public interface ProductStorePromoAppl extends BizEntity {
 	 * @return the value of the '<em>Sequence Num</em>' attribute.
 	 * @see #setSequenceNum(long)
 	 * @see org.abchip.mimo.biz.product.store.StorePackage#getProductStorePromoAppl_SequenceNum()
-	 * @model
+	 * @model annotation="mimo-ent-format type='numeric' precision='20' scale='0'"
 	 * @generated
 	 */
 	long getSequenceNum();
@@ -124,7 +125,7 @@ public interface ProductStorePromoAppl extends BizEntity {
 	 * @return the value of the '<em>Thru Date</em>' attribute.
 	 * @see #setThruDate(Date)
 	 * @see org.abchip.mimo.biz.product.store.StorePackage#getProductStorePromoAppl_ThruDate()
-	 * @model
+	 * @model annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getThruDate();

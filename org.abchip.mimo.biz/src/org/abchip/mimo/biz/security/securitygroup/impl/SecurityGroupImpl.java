@@ -7,13 +7,11 @@
  */
 package org.abchip.mimo.biz.security.securitygroup.impl;
 
-import java.lang.reflect.InvocationTargetException;
 import java.util.List;
 
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.security.securitygroup.SecurityGroup;
 import org.abchip.mimo.biz.security.securitygroup.SecuritygroupPackage;
-import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 
 /**
@@ -139,20 +137,6 @@ public class SecurityGroupImpl extends BizEntityImpl implements SecurityGroup {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
-		switch (operationID) {
-			case SecuritygroupPackage.SECURITY_GROUP___PORTAL_PAGES:
-				return portalPages();
-		}
-		return super.eInvoke(operationID, arguments);
 	}
 
 } //SecurityGroupImpl

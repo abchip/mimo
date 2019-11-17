@@ -56,7 +56,7 @@ public interface ShipmentGatewayUps extends ShipmentGatewayConfig {
 	 * @return the value of the '<em>Access License Number</em>' attribute.
 	 * @see #setAccessLicenseNumber(String)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipmentGatewayUps_AccessLicenseNumber()
-	 * @model
+	 * @model annotation="mimo-ent-format type='value' length='255'"
 	 * @generated
 	 */
 	String getAccessLicenseNumber();
@@ -82,7 +82,7 @@ public interface ShipmentGatewayUps extends ShipmentGatewayConfig {
 	 * @return the value of the '<em>Access Password</em>' attribute.
 	 * @see #setAccessPassword(String)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipmentGatewayUps_AccessPassword()
-	 * @model
+	 * @model annotation="mimo-ent-format type='value' length='255'"
 	 * @generated
 	 */
 	String getAccessPassword();
@@ -108,7 +108,7 @@ public interface ShipmentGatewayUps extends ShipmentGatewayConfig {
 	 * @return the value of the '<em>Access User Id</em>' attribute.
 	 * @see #setAccessUserId(String)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipmentGatewayUps_AccessUserId()
-	 * @model
+	 * @model annotation="mimo-ent-format type='value' length='255'"
 	 * @generated
 	 */
 	String getAccessUserId();
@@ -134,7 +134,7 @@ public interface ShipmentGatewayUps extends ShipmentGatewayConfig {
 	 * @return the value of the '<em>Bill Shipper Account Number</em>' attribute.
 	 * @see #setBillShipperAccountNumber(String)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipmentGatewayUps_BillShipperAccountNumber()
-	 * @model
+	 * @model annotation="mimo-ent-format type='value' length='255'"
 	 * @generated
 	 */
 	String getBillShipperAccountNumber();
@@ -160,7 +160,7 @@ public interface ShipmentGatewayUps extends ShipmentGatewayConfig {
 	 * @return the value of the '<em>Cod Allow Cod</em>' attribute.
 	 * @see #setCodAllowCod(String)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipmentGatewayUps_CodAllowCod()
-	 * @model
+	 * @model annotation="mimo-ent-format type='value' length='255'"
 	 * @generated
 	 */
 	String getCodAllowCod();
@@ -186,7 +186,7 @@ public interface ShipmentGatewayUps extends ShipmentGatewayConfig {
 	 * @return the value of the '<em>Cod Funds Code</em>' attribute.
 	 * @see #setCodFundsCode(String)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipmentGatewayUps_CodFundsCode()
-	 * @model
+	 * @model annotation="mimo-ent-format type='short-varchar' length='60'"
 	 * @generated
 	 */
 	String getCodFundsCode();
@@ -212,7 +212,7 @@ public interface ShipmentGatewayUps extends ShipmentGatewayConfig {
 	 * @return the value of the '<em>Cod Surcharge Amount</em>' attribute.
 	 * @see #setCodSurchargeAmount(BigDecimal)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipmentGatewayUps_CodSurchargeAmount()
-	 * @model
+	 * @model annotation="mimo-ent-format type='fixed-point' precision='18' scale='6'"
 	 * @generated
 	 */
 	BigDecimal getCodSurchargeAmount();
@@ -238,7 +238,7 @@ public interface ShipmentGatewayUps extends ShipmentGatewayConfig {
 	 * @return the value of the '<em>Cod Surcharge Apply To Package</em>' attribute.
 	 * @see #setCodSurchargeApplyToPackage(String)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipmentGatewayUps_CodSurchargeApplyToPackage()
-	 * @model
+	 * @model annotation="mimo-ent-format type='short-varchar' length='60'"
 	 * @generated
 	 */
 	String getCodSurchargeApplyToPackage();
@@ -264,7 +264,7 @@ public interface ShipmentGatewayUps extends ShipmentGatewayConfig {
 	 * @return the value of the '<em>Cod Surcharge Currency Uom Id</em>' attribute.
 	 * @see #setCodSurchargeCurrencyUomId(String)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipmentGatewayUps_CodSurchargeCurrencyUomId()
-	 * @model
+	 * @model annotation="mimo-ent-format type='short-varchar' length='60'"
 	 * @generated
 	 */
 	String getCodSurchargeCurrencyUomId();
@@ -290,7 +290,7 @@ public interface ShipmentGatewayUps extends ShipmentGatewayConfig {
 	 * @return the value of the '<em>Connect Timeout</em>' attribute.
 	 * @see #setConnectTimeout(long)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipmentGatewayUps_ConnectTimeout()
-	 * @model
+	 * @model annotation="mimo-ent-format type='numeric' precision='20' scale='0'"
 	 * @generated
 	 */
 	long getConnectTimeout();
@@ -316,7 +316,7 @@ public interface ShipmentGatewayUps extends ShipmentGatewayConfig {
 	 * @return the value of the '<em>Connect Url</em>' attribute.
 	 * @see #setConnectUrl(String)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipmentGatewayUps_ConnectUrl()
-	 * @model
+	 * @model annotation="mimo-ent-format type='value' length='255'"
 	 * @generated
 	 */
 	String getConnectUrl();
@@ -342,7 +342,7 @@ public interface ShipmentGatewayUps extends ShipmentGatewayConfig {
 	 * @return the value of the '<em>Customer Classification</em>' attribute.
 	 * @see #setCustomerClassification(String)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipmentGatewayUps_CustomerClassification()
-	 * @model
+	 * @model annotation="mimo-ent-format type='short-varchar' length='60'"
 	 * @generated
 	 */
 	String getCustomerClassification();
@@ -368,7 +368,7 @@ public interface ShipmentGatewayUps extends ShipmentGatewayConfig {
 	 * @return the value of the '<em>Default Return Label Memo</em>' attribute.
 	 * @see #setDefaultReturnLabelMemo(String)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipmentGatewayUps_DefaultReturnLabelMemo()
-	 * @model
+	 * @model annotation="mimo-ent-format type='value' length='255'"
 	 * @generated
 	 */
 	String getDefaultReturnLabelMemo();
@@ -394,7 +394,7 @@ public interface ShipmentGatewayUps extends ShipmentGatewayConfig {
 	 * @return the value of the '<em>Default Return Label Subject</em>' attribute.
 	 * @see #setDefaultReturnLabelSubject(String)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipmentGatewayUps_DefaultReturnLabelSubject()
-	 * @model
+	 * @model annotation="mimo-ent-format type='value' length='255'"
 	 * @generated
 	 */
 	String getDefaultReturnLabelSubject();
@@ -420,7 +420,7 @@ public interface ShipmentGatewayUps extends ShipmentGatewayConfig {
 	 * @return the value of the '<em>Max Estimate Weight</em>' attribute.
 	 * @see #setMaxEstimateWeight(BigDecimal)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipmentGatewayUps_MaxEstimateWeight()
-	 * @model
+	 * @model annotation="mimo-ent-format type='fixed-point' precision='18' scale='6'"
 	 * @generated
 	 */
 	BigDecimal getMaxEstimateWeight();
@@ -446,7 +446,7 @@ public interface ShipmentGatewayUps extends ShipmentGatewayConfig {
 	 * @return the value of the '<em>Min Estimate Weight</em>' attribute.
 	 * @see #setMinEstimateWeight(BigDecimal)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipmentGatewayUps_MinEstimateWeight()
-	 * @model
+	 * @model annotation="mimo-ent-format type='fixed-point' precision='18' scale='6'"
 	 * @generated
 	 */
 	BigDecimal getMinEstimateWeight();
@@ -472,7 +472,7 @@ public interface ShipmentGatewayUps extends ShipmentGatewayConfig {
 	 * @return the value of the '<em>Save Cert Info</em>' attribute.
 	 * @see #setSaveCertInfo(String)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipmentGatewayUps_SaveCertInfo()
-	 * @model
+	 * @model annotation="mimo-ent-format type='short-varchar' length='60'"
 	 * @generated
 	 */
 	String getSaveCertInfo();
@@ -498,7 +498,7 @@ public interface ShipmentGatewayUps extends ShipmentGatewayConfig {
 	 * @return the value of the '<em>Save Cert Path</em>' attribute.
 	 * @see #setSaveCertPath(String)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipmentGatewayUps_SaveCertPath()
-	 * @model
+	 * @model annotation="mimo-ent-format type='value' length='255'"
 	 * @generated
 	 */
 	String getSaveCertPath();
@@ -524,7 +524,7 @@ public interface ShipmentGatewayUps extends ShipmentGatewayConfig {
 	 * @return the value of the '<em>Shipper Number</em>' attribute.
 	 * @see #setShipperNumber(String)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipmentGatewayUps_ShipperNumber()
-	 * @model
+	 * @model annotation="mimo-ent-format type='value' length='255'"
 	 * @generated
 	 */
 	String getShipperNumber();
@@ -550,7 +550,7 @@ public interface ShipmentGatewayUps extends ShipmentGatewayConfig {
 	 * @return the value of the '<em>Shipper Pickup Type</em>' attribute.
 	 * @see #setShipperPickupType(String)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipmentGatewayUps_ShipperPickupType()
-	 * @model
+	 * @model annotation="mimo-ent-format type='short-varchar' length='60'"
 	 * @generated
 	 */
 	String getShipperPickupType();

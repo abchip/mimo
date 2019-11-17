@@ -94,7 +94,7 @@ public interface OrderItem extends BizEntityTyped<OrderItemType> {
 	 * @return the value of the '<em>Auto Cancel Date</em>' attribute.
 	 * @see #setAutoCancelDate(Date)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderItem_AutoCancelDate()
-	 * @model
+	 * @model annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getAutoCancelDate();
@@ -120,7 +120,7 @@ public interface OrderItem extends BizEntityTyped<OrderItemType> {
 	 * @return the value of the '<em>Budget Id</em>' attribute.
 	 * @see #setBudgetId(String)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderItem_BudgetId()
-	 * @model
+	 * @model annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	String getBudgetId();
@@ -146,7 +146,7 @@ public interface OrderItem extends BizEntityTyped<OrderItemType> {
 	 * @return the value of the '<em>Budget Item Seq Id</em>' attribute.
 	 * @see #setBudgetItemSeqId(String)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderItem_BudgetItemSeqId()
-	 * @model
+	 * @model annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	String getBudgetItemSeqId();
@@ -172,7 +172,7 @@ public interface OrderItem extends BizEntityTyped<OrderItemType> {
 	 * @return the value of the '<em>Cancel Back Order Date</em>' attribute.
 	 * @see #setCancelBackOrderDate(Date)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderItem_CancelBackOrderDate()
-	 * @model
+	 * @model annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getCancelBackOrderDate();
@@ -198,7 +198,7 @@ public interface OrderItem extends BizEntityTyped<OrderItemType> {
 	 * @return the value of the '<em>Cancel Quantity</em>' attribute.
 	 * @see #setCancelQuantity(BigDecimal)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderItem_CancelQuantity()
-	 * @model
+	 * @model annotation="mimo-ent-format type='fixed-point' precision='18' scale='6'"
 	 * @generated
 	 */
 	BigDecimal getCancelQuantity();
@@ -250,7 +250,7 @@ public interface OrderItem extends BizEntityTyped<OrderItemType> {
 	 * @return the value of the '<em>Comments</em>' attribute.
 	 * @see #setComments(String)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderItem_Comments()
-	 * @model
+	 * @model annotation="mimo-ent-format type='comment' length='255'"
 	 * @generated
 	 */
 	String getComments();
@@ -276,7 +276,7 @@ public interface OrderItem extends BizEntityTyped<OrderItemType> {
 	 * @return the value of the '<em>Corresponding Po Id</em>' attribute.
 	 * @see #setCorrespondingPoId(String)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderItem_CorrespondingPoId()
-	 * @model
+	 * @model annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	String getCorrespondingPoId();
@@ -302,7 +302,7 @@ public interface OrderItem extends BizEntityTyped<OrderItemType> {
 	 * @return the value of the '<em>Deployment Id</em>' attribute.
 	 * @see #setDeploymentId(String)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderItem_DeploymentId()
-	 * @model
+	 * @model annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	String getDeploymentId();
@@ -328,7 +328,7 @@ public interface OrderItem extends BizEntityTyped<OrderItemType> {
 	 * @return the value of the '<em>Dont Cancel Set Date</em>' attribute.
 	 * @see #setDontCancelSetDate(Date)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderItem_DontCancelSetDate()
-	 * @model
+	 * @model annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getDontCancelSetDate();
@@ -380,7 +380,7 @@ public interface OrderItem extends BizEntityTyped<OrderItemType> {
 	 * @return the value of the '<em>Estimated Delivery Date</em>' attribute.
 	 * @see #setEstimatedDeliveryDate(Date)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderItem_EstimatedDeliveryDate()
-	 * @model
+	 * @model annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getEstimatedDeliveryDate();
@@ -406,7 +406,7 @@ public interface OrderItem extends BizEntityTyped<OrderItemType> {
 	 * @return the value of the '<em>Estimated Ship Date</em>' attribute.
 	 * @see #setEstimatedShipDate(Date)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderItem_EstimatedShipDate()
-	 * @model
+	 * @model annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getEstimatedShipDate();
@@ -432,7 +432,7 @@ public interface OrderItem extends BizEntityTyped<OrderItemType> {
 	 * @return the value of the '<em>External Id</em>' attribute.
 	 * @see #setExternalId(String)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderItem_ExternalId()
-	 * @model
+	 * @model annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	String getExternalId();
@@ -446,6 +446,84 @@ public interface OrderItem extends BizEntityTyped<OrderItemType> {
 	 * @generated
 	 */
 	void setExternalId(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Is Item Group Primary</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Is Item Group Primary</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Is Item Group Primary</em>' attribute.
+	 * @see #setIsItemGroupPrimary(boolean)
+	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderItem_IsItemGroupPrimary()
+	 * @model annotation="mimo-ent-format type='indicator' length='1'"
+	 * @generated
+	 */
+	boolean isIsItemGroupPrimary();
+
+	/**
+	 * Sets the value of the '{@link org.abchip.mimo.biz.order.order.OrderItem#isIsItemGroupPrimary <em>Is Item Group Primary</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Is Item Group Primary</em>' attribute.
+	 * @see #isIsItemGroupPrimary()
+	 * @generated
+	 */
+	void setIsItemGroupPrimary(boolean value);
+
+	/**
+	 * Returns the value of the '<em><b>Is Modified Price</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Is Modified Price</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Is Modified Price</em>' attribute.
+	 * @see #setIsModifiedPrice(boolean)
+	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderItem_IsModifiedPrice()
+	 * @model annotation="mimo-ent-format type='indicator' length='1'"
+	 * @generated
+	 */
+	boolean isIsModifiedPrice();
+
+	/**
+	 * Sets the value of the '{@link org.abchip.mimo.biz.order.order.OrderItem#isIsModifiedPrice <em>Is Modified Price</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Is Modified Price</em>' attribute.
+	 * @see #isIsModifiedPrice()
+	 * @generated
+	 */
+	void setIsModifiedPrice(boolean value);
+
+	/**
+	 * Returns the value of the '<em><b>Is Promo</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Is Promo</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Is Promo</em>' attribute.
+	 * @see #setIsPromo(boolean)
+	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderItem_IsPromo()
+	 * @model annotation="mimo-ent-format type='indicator' length='1'"
+	 * @generated
+	 */
+	boolean isIsPromo();
+
+	/**
+	 * Sets the value of the '{@link org.abchip.mimo.biz.order.order.OrderItem#isIsPromo <em>Is Promo</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Is Promo</em>' attribute.
+	 * @see #isIsPromo()
+	 * @generated
+	 */
+	void setIsPromo(boolean value);
 
 	/**
 	 * Returns the value of the '<em><b>From Inventory Item Id</b></em>' reference.
@@ -474,84 +552,6 @@ public interface OrderItem extends BizEntityTyped<OrderItemType> {
 	void setFromInventoryItemId(InventoryItem value);
 
 	/**
-	 * Returns the value of the '<em><b>Is Item Group Primary</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Is Item Group Primary</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Is Item Group Primary</em>' attribute.
-	 * @see #setIsItemGroupPrimary(boolean)
-	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderItem_IsItemGroupPrimary()
-	 * @model
-	 * @generated
-	 */
-	boolean isIsItemGroupPrimary();
-
-	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.order.order.OrderItem#isIsItemGroupPrimary <em>Is Item Group Primary</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Is Item Group Primary</em>' attribute.
-	 * @see #isIsItemGroupPrimary()
-	 * @generated
-	 */
-	void setIsItemGroupPrimary(boolean value);
-
-	/**
-	 * Returns the value of the '<em><b>Is Modified Price</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Is Modified Price</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Is Modified Price</em>' attribute.
-	 * @see #setIsModifiedPrice(boolean)
-	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderItem_IsModifiedPrice()
-	 * @model
-	 * @generated
-	 */
-	boolean isIsModifiedPrice();
-
-	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.order.order.OrderItem#isIsModifiedPrice <em>Is Modified Price</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Is Modified Price</em>' attribute.
-	 * @see #isIsModifiedPrice()
-	 * @generated
-	 */
-	void setIsModifiedPrice(boolean value);
-
-	/**
-	 * Returns the value of the '<em><b>Is Promo</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Is Promo</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Is Promo</em>' attribute.
-	 * @see #setIsPromo(boolean)
-	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderItem_IsPromo()
-	 * @model
-	 * @generated
-	 */
-	boolean isIsPromo();
-
-	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.order.order.OrderItem#isIsPromo <em>Is Promo</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Is Promo</em>' attribute.
-	 * @see #isIsPromo()
-	 * @generated
-	 */
-	void setIsPromo(boolean value);
-
-	/**
 	 * Returns the value of the '<em><b>Item Description</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -562,7 +562,7 @@ public interface OrderItem extends BizEntityTyped<OrderItemType> {
 	 * @return the value of the '<em>Item Description</em>' attribute.
 	 * @see #setItemDescription(String)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderItem_ItemDescription()
-	 * @model
+	 * @model annotation="mimo-ent-format type='description' length='255'"
 	 * @generated
 	 */
 	String getItemDescription();
@@ -614,7 +614,7 @@ public interface OrderItem extends BizEntityTyped<OrderItemType> {
 	 * @return the value of the '<em>Order Item Group Seq Id</em>' attribute.
 	 * @see #setOrderItemGroupSeqId(String)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderItem_OrderItemGroupSeqId()
-	 * @model
+	 * @model annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	String getOrderItemGroupSeqId();
@@ -641,6 +641,7 @@ public interface OrderItem extends BizEntityTyped<OrderItemType> {
 	 * @see #setOrderItemSeqId(String)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderItem_OrderItemSeqId()
 	 * @model required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
@@ -719,7 +720,7 @@ public interface OrderItem extends BizEntityTyped<OrderItemType> {
 	 * @return the value of the '<em>Prod Catalog Id</em>' attribute.
 	 * @see #setProdCatalogId(String)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderItem_ProdCatalogId()
-	 * @model
+	 * @model annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	String getProdCatalogId();
@@ -745,7 +746,7 @@ public interface OrderItem extends BizEntityTyped<OrderItemType> {
 	 * @return the value of the '<em>Product Category Id</em>' attribute.
 	 * @see #setProductCategoryId(String)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderItem_ProductCategoryId()
-	 * @model
+	 * @model annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	String getProductCategoryId();
@@ -771,7 +772,7 @@ public interface OrderItem extends BizEntityTyped<OrderItemType> {
 	 * @return the value of the '<em>Product Feature Id</em>' attribute.
 	 * @see #setProductFeatureId(String)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderItem_ProductFeatureId()
-	 * @model
+	 * @model annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	String getProductFeatureId();
@@ -823,7 +824,7 @@ public interface OrderItem extends BizEntityTyped<OrderItemType> {
 	 * @return the value of the '<em>Quantity</em>' attribute.
 	 * @see #setQuantity(BigDecimal)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderItem_Quantity()
-	 * @model
+	 * @model annotation="mimo-ent-format type='fixed-point' precision='18' scale='6'"
 	 * @generated
 	 */
 	BigDecimal getQuantity();
@@ -849,7 +850,7 @@ public interface OrderItem extends BizEntityTyped<OrderItemType> {
 	 * @return the value of the '<em>Quote Id</em>' attribute.
 	 * @see #setQuoteId(String)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderItem_QuoteId()
-	 * @model
+	 * @model annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	String getQuoteId();
@@ -875,7 +876,7 @@ public interface OrderItem extends BizEntityTyped<OrderItemType> {
 	 * @return the value of the '<em>Quote Item Seq Id</em>' attribute.
 	 * @see #setQuoteItemSeqId(String)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderItem_QuoteItemSeqId()
-	 * @model
+	 * @model annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	String getQuoteItemSeqId();
@@ -927,7 +928,7 @@ public interface OrderItem extends BizEntityTyped<OrderItemType> {
 	 * @return the value of the '<em>Reserve After Date</em>' attribute.
 	 * @see #setReserveAfterDate(Date)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderItem_ReserveAfterDate()
-	 * @model
+	 * @model annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getReserveAfterDate();
@@ -979,7 +980,7 @@ public interface OrderItem extends BizEntityTyped<OrderItemType> {
 	 * @return the value of the '<em>Selected Amount</em>' attribute.
 	 * @see #setSelectedAmount(BigDecimal)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderItem_SelectedAmount()
-	 * @model
+	 * @model annotation="mimo-ent-format type='fixed-point' precision='18' scale='6'"
 	 * @generated
 	 */
 	BigDecimal getSelectedAmount();
@@ -1005,7 +1006,7 @@ public interface OrderItem extends BizEntityTyped<OrderItemType> {
 	 * @return the value of the '<em>Ship After Date</em>' attribute.
 	 * @see #setShipAfterDate(Date)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderItem_ShipAfterDate()
-	 * @model
+	 * @model annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getShipAfterDate();
@@ -1031,7 +1032,7 @@ public interface OrderItem extends BizEntityTyped<OrderItemType> {
 	 * @return the value of the '<em>Ship Before Date</em>' attribute.
 	 * @see #setShipBeforeDate(Date)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderItem_ShipBeforeDate()
-	 * @model
+	 * @model annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getShipBeforeDate();
@@ -1057,7 +1058,7 @@ public interface OrderItem extends BizEntityTyped<OrderItemType> {
 	 * @return the value of the '<em>Shopping List Id</em>' attribute.
 	 * @see #setShoppingListId(String)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderItem_ShoppingListId()
-	 * @model
+	 * @model annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	String getShoppingListId();
@@ -1083,7 +1084,7 @@ public interface OrderItem extends BizEntityTyped<OrderItemType> {
 	 * @return the value of the '<em>Shopping List Item Seq Id</em>' attribute.
 	 * @see #setShoppingListItemSeqId(String)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderItem_ShoppingListItemSeqId()
-	 * @model
+	 * @model annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	String getShoppingListItemSeqId();
@@ -1135,7 +1136,7 @@ public interface OrderItem extends BizEntityTyped<OrderItemType> {
 	 * @return the value of the '<em>Subscription Id</em>' attribute.
 	 * @see #setSubscriptionId(String)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderItem_SubscriptionId()
-	 * @model
+	 * @model annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	String getSubscriptionId();
@@ -1161,7 +1162,7 @@ public interface OrderItem extends BizEntityTyped<OrderItemType> {
 	 * @return the value of the '<em>Supplier Product Id</em>' attribute.
 	 * @see #setSupplierProductId(String)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderItem_SupplierProductId()
-	 * @model
+	 * @model annotation="mimo-ent-format type='id-long' length='60'"
 	 * @generated
 	 */
 	String getSupplierProductId();
@@ -1213,7 +1214,7 @@ public interface OrderItem extends BizEntityTyped<OrderItemType> {
 	 * @return the value of the '<em>Unit Average Cost</em>' attribute.
 	 * @see #setUnitAverageCost(BigDecimal)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderItem_UnitAverageCost()
-	 * @model
+	 * @model annotation="mimo-ent-format type='currency-amount' precision='18' scale='2'"
 	 * @generated
 	 */
 	BigDecimal getUnitAverageCost();
@@ -1239,7 +1240,7 @@ public interface OrderItem extends BizEntityTyped<OrderItemType> {
 	 * @return the value of the '<em>Unit List Price</em>' attribute.
 	 * @see #setUnitListPrice(BigDecimal)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderItem_UnitListPrice()
-	 * @model
+	 * @model annotation="mimo-ent-format type='currency-precise' precision='18' scale='3'"
 	 * @generated
 	 */
 	BigDecimal getUnitListPrice();
@@ -1265,7 +1266,7 @@ public interface OrderItem extends BizEntityTyped<OrderItemType> {
 	 * @return the value of the '<em>Unit Price</em>' attribute.
 	 * @see #setUnitPrice(BigDecimal)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderItem_UnitPrice()
-	 * @model
+	 * @model annotation="mimo-ent-format type='currency-precise' precision='18' scale='3'"
 	 * @generated
 	 */
 	BigDecimal getUnitPrice();
@@ -1291,7 +1292,7 @@ public interface OrderItem extends BizEntityTyped<OrderItemType> {
 	 * @return the value of the '<em>Unit Recurring Price</em>' attribute.
 	 * @see #setUnitRecurringPrice(BigDecimal)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderItem_UnitRecurringPrice()
-	 * @model
+	 * @model annotation="mimo-ent-format type='currency-amount' precision='18' scale='2'"
 	 * @generated
 	 */
 	BigDecimal getUnitRecurringPrice();

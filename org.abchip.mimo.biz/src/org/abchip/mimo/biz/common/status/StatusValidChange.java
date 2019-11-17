@@ -40,7 +40,7 @@ public interface StatusValidChange extends BizEntity {
 	 * @return the value of the '<em>Condition Expression</em>' attribute.
 	 * @see #setConditionExpression(String)
 	 * @see org.abchip.mimo.biz.common.status.StatusPackage#getStatusValidChange_ConditionExpression()
-	 * @model
+	 * @model annotation="mimo-ent-format type='long-varchar' length='255'"
 	 * @generated
 	 */
 	String getConditionExpression();
@@ -66,7 +66,7 @@ public interface StatusValidChange extends BizEntity {
 	 * @return the value of the '<em>Transition Name</em>' attribute.
 	 * @see #setTransitionName(String)
 	 * @see org.abchip.mimo.biz.common.status.StatusPackage#getStatusValidChange_TransitionName()
-	 * @model
+	 * @model annotation="mimo-ent-format type='name' length='100'"
 	 * @generated
 	 */
 	String getTransitionName();

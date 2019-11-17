@@ -22,7 +22,7 @@ import org.abchip.mimo.biz.BizEntity;
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.PaymentGatewayClearCommerce#getEffectiveAlias <em>Effective Alias</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.PaymentGatewayClearCommerce#isEnableCVM <em>Enable CVM</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.PaymentGatewayClearCommerce#getGroupId <em>Group Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.payment.PaymentGatewayClearCommerce#isProcessMode <em>Process Mode</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.payment.PaymentGatewayClearCommerce#getProcessMode <em>Process Mode</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.PaymentGatewayClearCommerce#getPwd <em>Pwd</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.PaymentGatewayClearCommerce#getServerURL <em>Server URL</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.PaymentGatewayClearCommerce#getSourceId <em>Source Id</em>}</li>
@@ -47,7 +47,7 @@ public interface PaymentGatewayClearCommerce extends BizEntity {
 	 * @return the value of the '<em>Client Id</em>' attribute.
 	 * @see #setClientId(String)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPaymentGatewayClearCommerce_ClientId()
-	 * @model
+	 * @model annotation="mimo-ent-format type='short-varchar' length='60'"
 	 * @generated
 	 */
 	String getClientId();
@@ -73,7 +73,7 @@ public interface PaymentGatewayClearCommerce extends BizEntity {
 	 * @return the value of the '<em>Effective Alias</em>' attribute.
 	 * @see #setEffectiveAlias(String)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPaymentGatewayClearCommerce_EffectiveAlias()
-	 * @model
+	 * @model annotation="mimo-ent-format type='short-varchar' length='60'"
 	 * @generated
 	 */
 	String getEffectiveAlias();
@@ -99,7 +99,7 @@ public interface PaymentGatewayClearCommerce extends BizEntity {
 	 * @return the value of the '<em>Enable CVM</em>' attribute.
 	 * @see #setEnableCVM(boolean)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPaymentGatewayClearCommerce_EnableCVM()
-	 * @model
+	 * @model annotation="mimo-ent-format type='indicator' length='1'"
 	 * @generated
 	 */
 	boolean isEnableCVM();
@@ -125,7 +125,7 @@ public interface PaymentGatewayClearCommerce extends BizEntity {
 	 * @return the value of the '<em>Group Id</em>' attribute.
 	 * @see #setGroupId(String)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPaymentGatewayClearCommerce_GroupId()
-	 * @model
+	 * @model annotation="mimo-ent-format type='short-varchar' length='60'"
 	 * @generated
 	 */
 	String getGroupId();
@@ -149,22 +149,22 @@ public interface PaymentGatewayClearCommerce extends BizEntity {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Process Mode</em>' attribute.
-	 * @see #setProcessMode(boolean)
+	 * @see #setProcessMode(char)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPaymentGatewayClearCommerce_ProcessMode()
-	 * @model
+	 * @model annotation="mimo-ent-format type='indicator' length='1'"
 	 * @generated
 	 */
-	boolean isProcessMode();
+	char getProcessMode();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.payment.PaymentGatewayClearCommerce#isProcessMode <em>Process Mode</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.payment.PaymentGatewayClearCommerce#getProcessMode <em>Process Mode</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Process Mode</em>' attribute.
-	 * @see #isProcessMode()
+	 * @see #getProcessMode()
 	 * @generated
 	 */
-	void setProcessMode(boolean value);
+	void setProcessMode(char value);
 
 	/**
 	 * Returns the value of the '<em><b>Payment Gateway Config Id</b></em>' reference.
@@ -203,7 +203,7 @@ public interface PaymentGatewayClearCommerce extends BizEntity {
 	 * @return the value of the '<em>Pwd</em>' attribute.
 	 * @see #setPwd(String)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPaymentGatewayClearCommerce_Pwd()
-	 * @model
+	 * @model annotation="mimo-ent-format type='value' length='255'"
 	 * @generated
 	 */
 	String getPwd();
@@ -229,7 +229,7 @@ public interface PaymentGatewayClearCommerce extends BizEntity {
 	 * @return the value of the '<em>Server URL</em>' attribute.
 	 * @see #setServerURL(String)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPaymentGatewayClearCommerce_ServerURL()
-	 * @model
+	 * @model annotation="mimo-ent-format type='value' length='255'"
 	 * @generated
 	 */
 	String getServerURL();
@@ -255,7 +255,7 @@ public interface PaymentGatewayClearCommerce extends BizEntity {
 	 * @return the value of the '<em>Source Id</em>' attribute.
 	 * @see #setSourceId(String)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPaymentGatewayClearCommerce_SourceId()
-	 * @model
+	 * @model annotation="mimo-ent-format type='short-varchar' length='60'"
 	 * @generated
 	 */
 	String getSourceId();
@@ -281,7 +281,7 @@ public interface PaymentGatewayClearCommerce extends BizEntity {
 	 * @return the value of the '<em>User Alias</em>' attribute.
 	 * @see #setUserAlias(String)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPaymentGatewayClearCommerce_UserAlias()
-	 * @model
+	 * @model annotation="mimo-ent-format type='short-varchar' length='60'"
 	 * @generated
 	 */
 	String getUserAlias();
@@ -307,7 +307,7 @@ public interface PaymentGatewayClearCommerce extends BizEntity {
 	 * @return the value of the '<em>Username</em>' attribute.
 	 * @see #setUsername(String)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPaymentGatewayClearCommerce_Username()
-	 * @model
+	 * @model annotation="mimo-ent-format type='short-varchar' length='60'"
 	 * @generated
 	 */
 	String getUsername();

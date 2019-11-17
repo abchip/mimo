@@ -59,6 +59,7 @@ public interface WebSite extends BizEntity {
 	 * @see #setWebSiteId(String)
 	 * @see org.abchip.mimo.biz.webapp.website.WebsitePackage#getWebSite_WebSiteId()
 	 * @model id="true" required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
@@ -85,7 +86,7 @@ public interface WebSite extends BizEntity {
 	 * @return the value of the '<em>Allow Product Store Change</em>' attribute.
 	 * @see #setAllowProductStoreChange(boolean)
 	 * @see org.abchip.mimo.biz.webapp.website.WebsitePackage#getWebSite_AllowProductStoreChange()
-	 * @model
+	 * @model annotation="mimo-ent-format type='indicator' length='1'"
 	 * @generated
 	 */
 	boolean isAllowProductStoreChange();
@@ -111,7 +112,7 @@ public interface WebSite extends BizEntity {
 	 * @return the value of the '<em>Cookie Domain</em>' attribute.
 	 * @see #setCookieDomain(String)
 	 * @see org.abchip.mimo.biz.webapp.website.WebsitePackage#getWebSite_CookieDomain()
-	 * @model
+	 * @model annotation="mimo-ent-format type='long-varchar' length='255'"
 	 * @generated
 	 */
 	String getCookieDomain();
@@ -137,7 +138,7 @@ public interface WebSite extends BizEntity {
 	 * @return the value of the '<em>Display Maintenance Page</em>' attribute.
 	 * @see #setDisplayMaintenancePage(boolean)
 	 * @see org.abchip.mimo.biz.webapp.website.WebsitePackage#getWebSite_DisplayMaintenancePage()
-	 * @model
+	 * @model annotation="mimo-ent-format type='indicator' length='1'"
 	 * @generated
 	 */
 	boolean isDisplayMaintenancePage();
@@ -163,7 +164,7 @@ public interface WebSite extends BizEntity {
 	 * @return the value of the '<em>Enable Https</em>' attribute.
 	 * @see #setEnableHttps(boolean)
 	 * @see org.abchip.mimo.biz.webapp.website.WebsitePackage#getWebSite_EnableHttps()
-	 * @model
+	 * @model annotation="mimo-ent-format type='indicator' length='1'"
 	 * @generated
 	 */
 	boolean isEnableHttps();
@@ -189,7 +190,7 @@ public interface WebSite extends BizEntity {
 	 * @return the value of the '<em>Hosted Path Alias</em>' attribute.
 	 * @see #setHostedPathAlias(String)
 	 * @see org.abchip.mimo.biz.webapp.website.WebsitePackage#getWebSite_HostedPathAlias()
-	 * @model
+	 * @model annotation="mimo-ent-format type='short-varchar' length='60'"
 	 * @generated
 	 */
 	String getHostedPathAlias();
@@ -215,7 +216,7 @@ public interface WebSite extends BizEntity {
 	 * @return the value of the '<em>Http Host</em>' attribute.
 	 * @see #setHttpHost(String)
 	 * @see org.abchip.mimo.biz.webapp.website.WebsitePackage#getWebSite_HttpHost()
-	 * @model
+	 * @model annotation="mimo-ent-format type='long-varchar' length='255'"
 	 * @generated
 	 */
 	String getHttpHost();
@@ -241,7 +242,7 @@ public interface WebSite extends BizEntity {
 	 * @return the value of the '<em>Http Port</em>' attribute.
 	 * @see #setHttpPort(String)
 	 * @see org.abchip.mimo.biz.webapp.website.WebsitePackage#getWebSite_HttpPort()
-	 * @model
+	 * @model annotation="mimo-ent-format type='very-short' length='10'"
 	 * @generated
 	 */
 	String getHttpPort();
@@ -267,7 +268,7 @@ public interface WebSite extends BizEntity {
 	 * @return the value of the '<em>Https Host</em>' attribute.
 	 * @see #setHttpsHost(String)
 	 * @see org.abchip.mimo.biz.webapp.website.WebsitePackage#getWebSite_HttpsHost()
-	 * @model
+	 * @model annotation="mimo-ent-format type='long-varchar' length='255'"
 	 * @generated
 	 */
 	String getHttpsHost();
@@ -293,7 +294,7 @@ public interface WebSite extends BizEntity {
 	 * @return the value of the '<em>Https Port</em>' attribute.
 	 * @see #setHttpsPort(String)
 	 * @see org.abchip.mimo.biz.webapp.website.WebsitePackage#getWebSite_HttpsPort()
-	 * @model
+	 * @model annotation="mimo-ent-format type='very-short' length='10'"
 	 * @generated
 	 */
 	String getHttpsPort();
@@ -319,7 +320,7 @@ public interface WebSite extends BizEntity {
 	 * @return the value of the '<em>Is Default</em>' attribute.
 	 * @see #setIsDefault(boolean)
 	 * @see org.abchip.mimo.biz.webapp.website.WebsitePackage#getWebSite_IsDefault()
-	 * @model
+	 * @model annotation="mimo-ent-format type='indicator' length='1'"
 	 * @generated
 	 */
 	boolean isIsDefault();
@@ -371,7 +372,7 @@ public interface WebSite extends BizEntity {
 	 * @return the value of the '<em>Secure Content Prefix</em>' attribute.
 	 * @see #setSecureContentPrefix(String)
 	 * @see org.abchip.mimo.biz.webapp.website.WebsitePackage#getWebSite_SecureContentPrefix()
-	 * @model
+	 * @model annotation="mimo-ent-format type='url' length='2000'"
 	 * @generated
 	 */
 	String getSecureContentPrefix();
@@ -397,7 +398,7 @@ public interface WebSite extends BizEntity {
 	 * @return the value of the '<em>Site Name</em>' attribute.
 	 * @see #setSiteName(String)
 	 * @see org.abchip.mimo.biz.webapp.website.WebsitePackage#getWebSite_SiteName()
-	 * @model
+	 * @model annotation="mimo-ent-format type='name' length='100'"
 	 * @generated
 	 */
 	String getSiteName();
@@ -423,7 +424,7 @@ public interface WebSite extends BizEntity {
 	 * @return the value of the '<em>Standard Content Prefix</em>' attribute.
 	 * @see #setStandardContentPrefix(String)
 	 * @see org.abchip.mimo.biz.webapp.website.WebsitePackage#getWebSite_StandardContentPrefix()
-	 * @model
+	 * @model annotation="mimo-ent-format type='url' length='2000'"
 	 * @generated
 	 */
 	String getStandardContentPrefix();
@@ -475,7 +476,7 @@ public interface WebSite extends BizEntity {
 	 * @return the value of the '<em>Webapp Path</em>' attribute.
 	 * @see #setWebappPath(String)
 	 * @see org.abchip.mimo.biz.webapp.website.WebsitePackage#getWebSite_WebappPath()
-	 * @model
+	 * @model annotation="mimo-ent-format type='long-varchar' length='255'"
 	 * @generated
 	 */
 	String getWebappPath();
@@ -501,7 +502,9 @@ public interface WebSite extends BizEntity {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Web Analytics Configs</em>' attribute list.
 	 * @see org.abchip.mimo.biz.webapp.website.WebsitePackage#getWebSite_WebAnalyticsConfigs()
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='WebAnalyticsConfig'"
 	 * @generated
 	 */
@@ -510,7 +513,8 @@ public interface WebSite extends BizEntity {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='OrderHeader' route='webSiteId'"
 	 * @generated
 	 */
@@ -519,7 +523,8 @@ public interface WebSite extends BizEntity {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='SubscriptionResource' route='webSiteId'"
 	 * @generated
 	 */
@@ -528,7 +533,8 @@ public interface WebSite extends BizEntity {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='WebPage' route='webSiteId'"
 	 * @generated
 	 */

@@ -42,7 +42,7 @@ public interface CarrierShipmentMethod extends BizEntity {
 	 * @return the value of the '<em>Carrier Service Code</em>' attribute.
 	 * @see #setCarrierServiceCode(String)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getCarrierShipmentMethod_CarrierServiceCode()
-	 * @model
+	 * @model annotation="mimo-ent-format type='short-varchar' length='60'"
 	 * @generated
 	 */
 	String getCarrierServiceCode();
@@ -95,6 +95,7 @@ public interface CarrierShipmentMethod extends BizEntity {
 	 * @see #setRoleTypeId(String)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getCarrierShipmentMethod_RoleTypeId()
 	 * @model required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
@@ -121,7 +122,7 @@ public interface CarrierShipmentMethod extends BizEntity {
 	 * @return the value of the '<em>Sequence Number</em>' attribute.
 	 * @see #setSequenceNumber(long)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getCarrierShipmentMethod_SequenceNumber()
-	 * @model
+	 * @model annotation="mimo-ent-format type='numeric' precision='20' scale='0'"
 	 * @generated
 	 */
 	long getSequenceNumber();

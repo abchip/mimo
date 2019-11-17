@@ -49,7 +49,7 @@ public interface UomConversionDated extends BizEntity {
 	 * @return the value of the '<em>Conversion Factor</em>' attribute.
 	 * @see #setConversionFactor(double)
 	 * @see org.abchip.mimo.biz.common.uom.UomPackage#getUomConversionDated_ConversionFactor()
-	 * @model
+	 * @model annotation="mimo-ent-format type='floating-point'"
 	 * @generated
 	 */
 	double getConversionFactor();
@@ -75,7 +75,7 @@ public interface UomConversionDated extends BizEntity {
 	 * @return the value of the '<em>Decimal Scale</em>' attribute.
 	 * @see #setDecimalScale(long)
 	 * @see org.abchip.mimo.biz.common.uom.UomPackage#getUomConversionDated_DecimalScale()
-	 * @model
+	 * @model annotation="mimo-ent-format type='numeric' precision='20' scale='0'"
 	 * @generated
 	 */
 	long getDecimalScale();
@@ -102,6 +102,7 @@ public interface UomConversionDated extends BizEntity {
 	 * @see #setFromDate(Date)
 	 * @see org.abchip.mimo.biz.common.uom.UomPackage#getUomConversionDated_FromDate()
 	 * @model required="true"
+	 *        annotation="mimo-ent-format type='date-time'"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
@@ -128,7 +129,7 @@ public interface UomConversionDated extends BizEntity {
 	 * @return the value of the '<em>Rounding Mode</em>' attribute.
 	 * @see #setRoundingMode(String)
 	 * @see org.abchip.mimo.biz.common.uom.UomPackage#getUomConversionDated_RoundingMode()
-	 * @model
+	 * @model annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	String getRoundingMode();
@@ -154,7 +155,7 @@ public interface UomConversionDated extends BizEntity {
 	 * @return the value of the '<em>Thru Date</em>' attribute.
 	 * @see #setThruDate(Date)
 	 * @see org.abchip.mimo.biz.common.uom.UomPackage#getUomConversionDated_ThruDate()
-	 * @model
+	 * @model annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getThruDate();

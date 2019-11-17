@@ -34,8 +34,8 @@ import org.abchip.mimo.biz.product.store.ProductStore;
  *   <li>{@link org.abchip.mimo.biz.accounting.tax.TaxAuthorityRateProduct#getTaxAuthGeoId <em>Tax Auth Geo Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.tax.TaxAuthorityRateProduct#getTaxAuthPartyId <em>Tax Auth Party Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.tax.TaxAuthorityRateProduct#getTaxPercentage <em>Tax Percentage</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.tax.TaxAuthorityRateProduct#isTaxPromotions <em>Tax Promotions</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.tax.TaxAuthorityRateProduct#isTaxShipping <em>Tax Shipping</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.tax.TaxAuthorityRateProduct#getTaxPromotions <em>Tax Promotions</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.tax.TaxAuthorityRateProduct#getTaxShipping <em>Tax Shipping</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.tax.TaxAuthorityRateProduct#getThruDate <em>Thru Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.tax.TaxAuthorityRateProduct#getTitleTransferEnumId <em>Title Transfer Enum Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.tax.TaxAuthorityRateProduct#getTaxAuthorityRateTypeId <em>Tax Authority Rate Type Id</em>}</li>
@@ -59,7 +59,7 @@ public interface TaxAuthorityRateProduct extends BizEntity {
 	 * @return the value of the '<em>Description</em>' attribute.
 	 * @see #setDescription(String)
 	 * @see org.abchip.mimo.biz.accounting.tax.TaxPackage#getTaxAuthorityRateProduct_Description()
-	 * @model
+	 * @model annotation="mimo-ent-format type='description' length='255'"
 	 * @generated
 	 */
 	String getDescription();
@@ -85,7 +85,7 @@ public interface TaxAuthorityRateProduct extends BizEntity {
 	 * @return the value of the '<em>From Date</em>' attribute.
 	 * @see #setFromDate(Date)
 	 * @see org.abchip.mimo.biz.accounting.tax.TaxPackage#getTaxAuthorityRateProduct_FromDate()
-	 * @model
+	 * @model annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getFromDate();
@@ -111,7 +111,7 @@ public interface TaxAuthorityRateProduct extends BizEntity {
 	 * @return the value of the '<em>Is Tax In Shipping Price</em>' attribute.
 	 * @see #setIsTaxInShippingPrice(boolean)
 	 * @see org.abchip.mimo.biz.accounting.tax.TaxPackage#getTaxAuthorityRateProduct_IsTaxInShippingPrice()
-	 * @model
+	 * @model annotation="mimo-ent-format type='indicator' length='1'"
 	 * @generated
 	 */
 	boolean isIsTaxInShippingPrice();
@@ -137,7 +137,7 @@ public interface TaxAuthorityRateProduct extends BizEntity {
 	 * @return the value of the '<em>Min Item Price</em>' attribute.
 	 * @see #setMinItemPrice(BigDecimal)
 	 * @see org.abchip.mimo.biz.accounting.tax.TaxPackage#getTaxAuthorityRateProduct_MinItemPrice()
-	 * @model
+	 * @model annotation="mimo-ent-format type='currency-amount' precision='18' scale='2'"
 	 * @generated
 	 */
 	BigDecimal getMinItemPrice();
@@ -163,7 +163,7 @@ public interface TaxAuthorityRateProduct extends BizEntity {
 	 * @return the value of the '<em>Min Purchase</em>' attribute.
 	 * @see #setMinPurchase(BigDecimal)
 	 * @see org.abchip.mimo.biz.accounting.tax.TaxPackage#getTaxAuthorityRateProduct_MinPurchase()
-	 * @model
+	 * @model annotation="mimo-ent-format type='currency-amount' precision='18' scale='2'"
 	 * @generated
 	 */
 	BigDecimal getMinPurchase();
@@ -241,7 +241,7 @@ public interface TaxAuthorityRateProduct extends BizEntity {
 	 * @return the value of the '<em>Tax Auth Geo Id</em>' attribute.
 	 * @see #setTaxAuthGeoId(String)
 	 * @see org.abchip.mimo.biz.accounting.tax.TaxPackage#getTaxAuthorityRateProduct_TaxAuthGeoId()
-	 * @model
+	 * @model annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	String getTaxAuthGeoId();
@@ -267,7 +267,7 @@ public interface TaxAuthorityRateProduct extends BizEntity {
 	 * @return the value of the '<em>Tax Auth Party Id</em>' attribute.
 	 * @see #setTaxAuthPartyId(String)
 	 * @see org.abchip.mimo.biz.accounting.tax.TaxPackage#getTaxAuthorityRateProduct_TaxAuthPartyId()
-	 * @model
+	 * @model annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	String getTaxAuthPartyId();
@@ -293,7 +293,7 @@ public interface TaxAuthorityRateProduct extends BizEntity {
 	 * @return the value of the '<em>Tax Percentage</em>' attribute.
 	 * @see #setTaxPercentage(BigDecimal)
 	 * @see org.abchip.mimo.biz.accounting.tax.TaxPackage#getTaxAuthorityRateProduct_TaxPercentage()
-	 * @model
+	 * @model annotation="mimo-ent-format type='fixed-point' precision='18' scale='6'"
 	 * @generated
 	 */
 	BigDecimal getTaxPercentage();
@@ -317,22 +317,22 @@ public interface TaxAuthorityRateProduct extends BizEntity {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Tax Promotions</em>' attribute.
-	 * @see #setTaxPromotions(boolean)
+	 * @see #setTaxPromotions(char)
 	 * @see org.abchip.mimo.biz.accounting.tax.TaxPackage#getTaxAuthorityRateProduct_TaxPromotions()
-	 * @model
+	 * @model annotation="mimo-ent-format type='indicator' length='1'"
 	 * @generated
 	 */
-	boolean isTaxPromotions();
+	char getTaxPromotions();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.tax.TaxAuthorityRateProduct#isTaxPromotions <em>Tax Promotions</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.tax.TaxAuthorityRateProduct#getTaxPromotions <em>Tax Promotions</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Tax Promotions</em>' attribute.
-	 * @see #isTaxPromotions()
+	 * @see #getTaxPromotions()
 	 * @generated
 	 */
-	void setTaxPromotions(boolean value);
+	void setTaxPromotions(char value);
 
 	/**
 	 * Returns the value of the '<em><b>Tax Shipping</b></em>' attribute.
@@ -343,22 +343,22 @@ public interface TaxAuthorityRateProduct extends BizEntity {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Tax Shipping</em>' attribute.
-	 * @see #setTaxShipping(boolean)
+	 * @see #setTaxShipping(char)
 	 * @see org.abchip.mimo.biz.accounting.tax.TaxPackage#getTaxAuthorityRateProduct_TaxShipping()
-	 * @model
+	 * @model annotation="mimo-ent-format type='indicator' length='1'"
 	 * @generated
 	 */
-	boolean isTaxShipping();
+	char getTaxShipping();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.tax.TaxAuthorityRateProduct#isTaxShipping <em>Tax Shipping</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.tax.TaxAuthorityRateProduct#getTaxShipping <em>Tax Shipping</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Tax Shipping</em>' attribute.
-	 * @see #isTaxShipping()
+	 * @see #getTaxShipping()
 	 * @generated
 	 */
-	void setTaxShipping(boolean value);
+	void setTaxShipping(char value);
 
 	/**
 	 * Returns the value of the '<em><b>Thru Date</b></em>' attribute.
@@ -371,7 +371,7 @@ public interface TaxAuthorityRateProduct extends BizEntity {
 	 * @return the value of the '<em>Thru Date</em>' attribute.
 	 * @see #setThruDate(Date)
 	 * @see org.abchip.mimo.biz.accounting.tax.TaxPackage#getTaxAuthorityRateProduct_ThruDate()
-	 * @model
+	 * @model annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getThruDate();
@@ -397,7 +397,7 @@ public interface TaxAuthorityRateProduct extends BizEntity {
 	 * @return the value of the '<em>Title Transfer Enum Id</em>' attribute.
 	 * @see #setTitleTransferEnumId(String)
 	 * @see org.abchip.mimo.biz.accounting.tax.TaxPackage#getTaxAuthorityRateProduct_TitleTransferEnumId()
-	 * @model
+	 * @model annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	String getTitleTransferEnumId();
@@ -415,7 +415,8 @@ public interface TaxAuthorityRateProduct extends BizEntity {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='InvoiceItem' route='taxAuthorityRateSeqId'"
 	 * @generated
 	 */
@@ -424,7 +425,8 @@ public interface TaxAuthorityRateProduct extends BizEntity {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='OrderAdjustment' route='taxAuthorityRateSeqId'"
 	 * @generated
 	 */
@@ -433,7 +435,8 @@ public interface TaxAuthorityRateProduct extends BizEntity {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ReturnAdjustment' route='taxAuthorityRateSeqId'"
 	 * @generated
 	 */
@@ -477,6 +480,7 @@ public interface TaxAuthorityRateProduct extends BizEntity {
 	 * @see #setTaxAuthorityRateSeqId(String)
 	 * @see org.abchip.mimo.biz.accounting.tax.TaxPackage#getTaxAuthorityRateProduct_TaxAuthorityRateSeqId()
 	 * @model id="true" required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */

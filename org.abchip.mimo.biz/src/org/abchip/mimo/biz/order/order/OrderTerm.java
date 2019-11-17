@@ -48,7 +48,7 @@ public interface OrderTerm extends BizEntity {
 	 * @return the value of the '<em>Description</em>' attribute.
 	 * @see #setDescription(String)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderTerm_Description()
-	 * @model
+	 * @model annotation="mimo-ent-format type='description' length='255'"
 	 * @generated
 	 */
 	String getDescription();
@@ -101,6 +101,7 @@ public interface OrderTerm extends BizEntity {
 	 * @see #setOrderItemSeqId(String)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderTerm_OrderItemSeqId()
 	 * @model required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
@@ -127,7 +128,7 @@ public interface OrderTerm extends BizEntity {
 	 * @return the value of the '<em>Term Days</em>' attribute.
 	 * @see #setTermDays(long)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderTerm_TermDays()
-	 * @model
+	 * @model annotation="mimo-ent-format type='numeric' precision='20' scale='0'"
 	 * @generated
 	 */
 	long getTermDays();
@@ -179,7 +180,7 @@ public interface OrderTerm extends BizEntity {
 	 * @return the value of the '<em>Term Value</em>' attribute.
 	 * @see #setTermValue(BigDecimal)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderTerm_TermValue()
-	 * @model
+	 * @model annotation="mimo-ent-format type='currency-amount' precision='18' scale='2'"
 	 * @generated
 	 */
 	BigDecimal getTermValue();
@@ -205,7 +206,7 @@ public interface OrderTerm extends BizEntity {
 	 * @return the value of the '<em>Text Value</em>' attribute.
 	 * @see #setTextValue(String)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderTerm_TextValue()
-	 * @model
+	 * @model annotation="mimo-ent-format type='description' length='255'"
 	 * @generated
 	 */
 	String getTextValue();

@@ -69,6 +69,7 @@ public interface TechDataCalendarExcWeek extends BizEntity {
 	 * @see #setExceptionDateStart(Date)
 	 * @see org.abchip.mimo.biz.manufacturing.techdata.TechdataPackage#getTechDataCalendarExcWeek_ExceptionDateStart()
 	 * @model required="true"
+	 *        annotation="mimo-ent-format type='date'"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
@@ -121,7 +122,7 @@ public interface TechDataCalendarExcWeek extends BizEntity {
 	 * @return the value of the '<em>Description</em>' attribute.
 	 * @see #setDescription(String)
 	 * @see org.abchip.mimo.biz.manufacturing.techdata.TechdataPackage#getTechDataCalendarExcWeek_Description()
-	 * @model
+	 * @model annotation="mimo-ent-format type='description' length='255'"
 	 * @generated
 	 */
 	String getDescription();

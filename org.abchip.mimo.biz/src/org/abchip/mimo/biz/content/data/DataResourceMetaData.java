@@ -119,7 +119,7 @@ public interface DataResourceMetaData extends BizEntity {
 	 * @return the value of the '<em>Meta Data Value</em>' attribute.
 	 * @see #setMetaDataValue(String)
 	 * @see org.abchip.mimo.biz.content.data.DataPackage#getDataResourceMetaData_MetaDataValue()
-	 * @model
+	 * @model annotation="mimo-ent-format type='value' length='255'"
 	 * @generated
 	 */
 	String getMetaDataValue();

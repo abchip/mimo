@@ -64,7 +64,7 @@ public interface MimeTypeHtmlTemplate extends BizEntity {
 	 * @return the value of the '<em>Template Location</em>' attribute.
 	 * @see #setTemplateLocation(String)
 	 * @see org.abchip.mimo.biz.content.data.DataPackage#getMimeTypeHtmlTemplate_TemplateLocation()
-	 * @model
+	 * @model annotation="mimo-ent-format type='long-varchar' length='255'"
 	 * @generated
 	 */
 	String getTemplateLocation();

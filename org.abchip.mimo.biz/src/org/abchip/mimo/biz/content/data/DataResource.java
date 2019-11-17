@@ -119,7 +119,7 @@ public interface DataResource extends BizEntityTyped<DataResourceType> {
 	 * @return the value of the '<em>Created Date</em>' attribute.
 	 * @see #setCreatedDate(Date)
 	 * @see org.abchip.mimo.biz.content.data.DataPackage#getDataResource_CreatedDate()
-	 * @model
+	 * @model annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getCreatedDate();
@@ -172,6 +172,7 @@ public interface DataResource extends BizEntityTyped<DataResourceType> {
 	 * @see #setDataResourceId(String)
 	 * @see org.abchip.mimo.biz.content.data.DataPackage#getDataResource_DataResourceId()
 	 * @model id="true" required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
@@ -198,7 +199,7 @@ public interface DataResource extends BizEntityTyped<DataResourceType> {
 	 * @return the value of the '<em>Data Resource Name</em>' attribute.
 	 * @see #setDataResourceName(String)
 	 * @see org.abchip.mimo.biz.content.data.DataPackage#getDataResource_DataResourceName()
-	 * @model
+	 * @model annotation="mimo-ent-format type='value' length='255'"
 	 * @generated
 	 */
 	String getDataResourceName();
@@ -212,6 +213,32 @@ public interface DataResource extends BizEntityTyped<DataResourceType> {
 	 * @generated
 	 */
 	void setDataResourceName(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Is Public</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Is Public</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Is Public</em>' attribute.
+	 * @see #setIsPublic(boolean)
+	 * @see org.abchip.mimo.biz.content.data.DataPackage#getDataResource_IsPublic()
+	 * @model annotation="mimo-ent-format type='indicator' length='1'"
+	 * @generated
+	 */
+	boolean isIsPublic();
+
+	/**
+	 * Sets the value of the '{@link org.abchip.mimo.biz.content.data.DataResource#isIsPublic <em>Is Public</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Is Public</em>' attribute.
+	 * @see #isIsPublic()
+	 * @generated
+	 */
+	void setIsPublic(boolean value);
 
 	/**
 	 * Returns the value of the '<em><b>Data Resource Type Id</b></em>' reference.
@@ -292,32 +319,6 @@ public interface DataResource extends BizEntityTyped<DataResourceType> {
 	void setDataTemplateTypeId(DataTemplateType value);
 
 	/**
-	 * Returns the value of the '<em><b>Is Public</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Is Public</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Is Public</em>' attribute.
-	 * @see #setIsPublic(boolean)
-	 * @see org.abchip.mimo.biz.content.data.DataPackage#getDataResource_IsPublic()
-	 * @model
-	 * @generated
-	 */
-	boolean isIsPublic();
-
-	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.content.data.DataResource#isIsPublic <em>Is Public</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Is Public</em>' attribute.
-	 * @see #isIsPublic()
-	 * @generated
-	 */
-	void setIsPublic(boolean value);
-
-	/**
 	 * Returns the value of the '<em><b>Last Modified By User Login</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -354,7 +355,7 @@ public interface DataResource extends BizEntityTyped<DataResourceType> {
 	 * @return the value of the '<em>Last Modified Date</em>' attribute.
 	 * @see #setLastModifiedDate(Date)
 	 * @see org.abchip.mimo.biz.content.data.DataPackage#getDataResource_LastModifiedDate()
-	 * @model
+	 * @model annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getLastModifiedDate();
@@ -380,7 +381,7 @@ public interface DataResource extends BizEntityTyped<DataResourceType> {
 	 * @return the value of the '<em>Locale String</em>' attribute.
 	 * @see #setLocaleString(String)
 	 * @see org.abchip.mimo.biz.content.data.DataPackage#getDataResource_LocaleString()
-	 * @model
+	 * @model annotation="mimo-ent-format type='very-short' length='10'"
 	 * @generated
 	 */
 	String getLocaleString();
@@ -432,7 +433,7 @@ public interface DataResource extends BizEntityTyped<DataResourceType> {
 	 * @return the value of the '<em>Object Info</em>' attribute.
 	 * @see #setObjectInfo(String)
 	 * @see org.abchip.mimo.biz.content.data.DataPackage#getDataResource_ObjectInfo()
-	 * @model
+	 * @model annotation="mimo-ent-format type='long-varchar' length='255'"
 	 * @generated
 	 */
 	String getObjectInfo();
@@ -458,7 +459,7 @@ public interface DataResource extends BizEntityTyped<DataResourceType> {
 	 * @return the value of the '<em>Related Detail Id</em>' attribute.
 	 * @see #setRelatedDetailId(String)
 	 * @see org.abchip.mimo.biz.content.data.DataPackage#getDataResource_RelatedDetailId()
-	 * @model
+	 * @model annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	String getRelatedDetailId();
@@ -562,7 +563,9 @@ public interface DataResource extends BizEntityTyped<DataResourceType> {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Data Resource Attributes</em>' attribute list.
 	 * @see org.abchip.mimo.biz.content.data.DataPackage#getDataResource_DataResourceAttributes()
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='DataResourceAttribute'"
 	 * @generated
 	 */
@@ -579,7 +582,9 @@ public interface DataResource extends BizEntityTyped<DataResourceType> {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Data Resource Meta Datas</em>' attribute list.
 	 * @see org.abchip.mimo.biz.content.data.DataPackage#getDataResource_DataResourceMetaDatas()
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='DataResourceMetaData'"
 	 * @generated
 	 */
@@ -596,7 +601,9 @@ public interface DataResource extends BizEntityTyped<DataResourceType> {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Data Resource Purposes</em>' attribute list.
 	 * @see org.abchip.mimo.biz.content.data.DataPackage#getDataResource_DataResourcePurposes()
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='DataResourcePurpose'"
 	 * @generated
 	 */
@@ -613,7 +620,9 @@ public interface DataResource extends BizEntityTyped<DataResourceType> {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Product Feature Data Resources</em>' attribute list.
 	 * @see org.abchip.mimo.biz.content.data.DataPackage#getDataResource_ProductFeatureDataResources()
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ProductFeatureDataResource'"
 	 * @generated
 	 */
@@ -622,7 +631,8 @@ public interface DataResource extends BizEntityTyped<DataResourceType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='Content' route='dataResourceId'"
 	 * @generated
 	 */
@@ -631,7 +641,8 @@ public interface DataResource extends BizEntityTyped<DataResourceType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='Content' route='templateDataResourceId'"
 	 * @generated
 	 */

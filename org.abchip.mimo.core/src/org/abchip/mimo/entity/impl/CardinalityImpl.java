@@ -7,11 +7,9 @@
  */
 package org.abchip.mimo.entity.impl;
 
-import java.lang.reflect.InvocationTargetException;
 import org.abchip.mimo.entity.Cardinality;
 import org.abchip.mimo.entity.EntityPackage;
 import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
@@ -219,22 +217,6 @@ public abstract class CardinalityImpl extends EntityImpl implements Cardinality 
 				return min != MIN_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
-		switch (operationID) {
-			case EntityPackage.CARDINALITY___IS_MANDATORY:
-				return isMandatory();
-			case EntityPackage.CARDINALITY___IS_MULTIPLE:
-				return isMultiple();
-		}
-		return super.eInvoke(operationID, arguments);
 	}
 
 	/**

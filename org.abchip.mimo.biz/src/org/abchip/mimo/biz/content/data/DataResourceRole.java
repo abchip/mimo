@@ -71,6 +71,7 @@ public interface DataResourceRole extends BizEntity {
 	 * @see #setFromDate(Date)
 	 * @see org.abchip.mimo.biz.content.data.DataPackage#getDataResourceRole_FromDate()
 	 * @model required="true"
+	 *        annotation="mimo-ent-format type='date-time'"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
@@ -124,6 +125,7 @@ public interface DataResourceRole extends BizEntity {
 	 * @see #setRoleTypeId(String)
 	 * @see org.abchip.mimo.biz.content.data.DataPackage#getDataResourceRole_RoleTypeId()
 	 * @model required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
@@ -150,7 +152,7 @@ public interface DataResourceRole extends BizEntity {
 	 * @return the value of the '<em>Thru Date</em>' attribute.
 	 * @see #setThruDate(Date)
 	 * @see org.abchip.mimo.biz.content.data.DataPackage#getDataResourceRole_ThruDate()
-	 * @model
+	 * @model annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getThruDate();

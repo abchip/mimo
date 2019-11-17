@@ -50,7 +50,7 @@ public interface ProductAverageCost extends BizEntityTyped<ProductAverageCostTyp
 	 * @return the value of the '<em>Average Cost</em>' attribute.
 	 * @see #setAverageCost(BigDecimal)
 	 * @see org.abchip.mimo.biz.accounting.ledger.LedgerPackage#getProductAverageCost_AverageCost()
-	 * @model
+	 * @model annotation="mimo-ent-format type='fixed-point' precision='18' scale='6'"
 	 * @generated
 	 */
 	BigDecimal getAverageCost();
@@ -103,6 +103,7 @@ public interface ProductAverageCost extends BizEntityTyped<ProductAverageCostTyp
 	 * @see #setFromDate(Date)
 	 * @see org.abchip.mimo.biz.accounting.ledger.LedgerPackage#getProductAverageCost_FromDate()
 	 * @model required="true"
+	 *        annotation="mimo-ent-format type='date-time'"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
@@ -181,7 +182,7 @@ public interface ProductAverageCost extends BizEntityTyped<ProductAverageCostTyp
 	 * @return the value of the '<em>Thru Date</em>' attribute.
 	 * @see #setThruDate(Date)
 	 * @see org.abchip.mimo.biz.accounting.ledger.LedgerPackage#getProductAverageCost_ThruDate()
-	 * @model
+	 * @model annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getThruDate();

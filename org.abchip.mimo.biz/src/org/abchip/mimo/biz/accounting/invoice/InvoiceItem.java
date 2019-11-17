@@ -66,7 +66,7 @@ public interface InvoiceItem extends BizEntityTyped<InvoiceItemType> {
 	 * @return the value of the '<em>Amount</em>' attribute.
 	 * @see #setAmount(BigDecimal)
 	 * @see org.abchip.mimo.biz.accounting.invoice.InvoicePackage#getInvoiceItem_Amount()
-	 * @model
+	 * @model annotation="mimo-ent-format type='currency-precise' precision='18' scale='3'"
 	 * @generated
 	 */
 	BigDecimal getAmount();
@@ -92,7 +92,7 @@ public interface InvoiceItem extends BizEntityTyped<InvoiceItemType> {
 	 * @return the value of the '<em>Description</em>' attribute.
 	 * @see #setDescription(String)
 	 * @see org.abchip.mimo.biz.accounting.invoice.InvoicePackage#getInvoiceItem_Description()
-	 * @model
+	 * @model annotation="mimo-ent-format type='description' length='255'"
 	 * @generated
 	 */
 	String getDescription();
@@ -145,6 +145,7 @@ public interface InvoiceItem extends BizEntityTyped<InvoiceItemType> {
 	 * @see #setInvoiceItemSeqId(String)
 	 * @see org.abchip.mimo.biz.accounting.invoice.InvoicePackage#getInvoiceItem_InvoiceItemSeqId()
 	 * @model required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
@@ -223,7 +224,7 @@ public interface InvoiceItem extends BizEntityTyped<InvoiceItemType> {
 	 * @return the value of the '<em>Parent Invoice Id</em>' attribute.
 	 * @see #setParentInvoiceId(String)
 	 * @see org.abchip.mimo.biz.accounting.invoice.InvoicePackage#getInvoiceItem_ParentInvoiceId()
-	 * @model
+	 * @model annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	String getParentInvoiceId();
@@ -249,7 +250,7 @@ public interface InvoiceItem extends BizEntityTyped<InvoiceItemType> {
 	 * @return the value of the '<em>Parent Invoice Item Seq Id</em>' attribute.
 	 * @see #setParentInvoiceItemSeqId(String)
 	 * @see org.abchip.mimo.biz.accounting.invoice.InvoicePackage#getInvoiceItem_ParentInvoiceItemSeqId()
-	 * @model
+	 * @model annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	String getParentInvoiceItemSeqId();
@@ -327,7 +328,7 @@ public interface InvoiceItem extends BizEntityTyped<InvoiceItemType> {
 	 * @return the value of the '<em>Quantity</em>' attribute.
 	 * @see #setQuantity(BigDecimal)
 	 * @see org.abchip.mimo.biz.accounting.invoice.InvoicePackage#getInvoiceItem_Quantity()
-	 * @model
+	 * @model annotation="mimo-ent-format type='fixed-point' precision='18' scale='6'"
 	 * @generated
 	 */
 	BigDecimal getQuantity();
@@ -341,6 +342,32 @@ public interface InvoiceItem extends BizEntityTyped<InvoiceItemType> {
 	 * @generated
 	 */
 	void setQuantity(BigDecimal value);
+
+	/**
+	 * Returns the value of the '<em><b>Taxable Flag</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Taxable Flag</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Taxable Flag</em>' attribute.
+	 * @see #setTaxableFlag(boolean)
+	 * @see org.abchip.mimo.biz.accounting.invoice.InvoicePackage#getInvoiceItem_TaxableFlag()
+	 * @model annotation="mimo-ent-format type='indicator' length='1'"
+	 * @generated
+	 */
+	boolean isTaxableFlag();
+
+	/**
+	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.invoice.InvoiceItem#isTaxableFlag <em>Taxable Flag</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Taxable Flag</em>' attribute.
+	 * @see #isTaxableFlag()
+	 * @generated
+	 */
+	void setTaxableFlag(boolean value);
 
 	/**
 	 * Returns the value of the '<em><b>Sales Opportunity Id</b></em>' reference.
@@ -445,32 +472,6 @@ public interface InvoiceItem extends BizEntityTyped<InvoiceItemType> {
 	 * @generated
 	 */
 	void setTaxAuthorityRateSeqId(TaxAuthorityRateProduct value);
-
-	/**
-	 * Returns the value of the '<em><b>Taxable Flag</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Taxable Flag</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Taxable Flag</em>' attribute.
-	 * @see #setTaxableFlag(boolean)
-	 * @see org.abchip.mimo.biz.accounting.invoice.InvoicePackage#getInvoiceItem_TaxableFlag()
-	 * @model
-	 * @generated
-	 */
-	boolean isTaxableFlag();
-
-	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.invoice.InvoiceItem#isTaxableFlag <em>Taxable Flag</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Taxable Flag</em>' attribute.
-	 * @see #isTaxableFlag()
-	 * @generated
-	 */
-	void setTaxableFlag(boolean value);
 
 	/**
 	 * Returns the value of the '<em><b>Uom Id</b></em>' reference.

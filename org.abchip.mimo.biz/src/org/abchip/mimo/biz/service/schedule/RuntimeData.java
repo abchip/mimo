@@ -41,6 +41,7 @@ public interface RuntimeData extends BizEntity {
 	 * @see #setRuntimeDataId(String)
 	 * @see org.abchip.mimo.biz.service.schedule.SchedulePackage#getRuntimeData_RuntimeDataId()
 	 * @model id="true" required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
@@ -67,7 +68,7 @@ public interface RuntimeData extends BizEntity {
 	 * @return the value of the '<em>Runtime Info</em>' attribute.
 	 * @see #setRuntimeInfo(String)
 	 * @see org.abchip.mimo.biz.service.schedule.SchedulePackage#getRuntimeData_RuntimeInfo()
-	 * @model
+	 * @model annotation="mimo-ent-format type='very-long'"
 	 * @generated
 	 */
 	String getRuntimeInfo();
@@ -85,7 +86,8 @@ public interface RuntimeData extends BizEntity {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ApplicationSandbox' route='runtimeDataId'"
 	 * @generated
 	 */
@@ -94,7 +96,8 @@ public interface RuntimeData extends BizEntity {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='JobSandbox' route='runtimeDataId'"
 	 * @generated
 	 */
@@ -103,7 +106,8 @@ public interface RuntimeData extends BizEntity {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='WorkEffort' route='runtimeDataId'"
 	 * @generated
 	 */

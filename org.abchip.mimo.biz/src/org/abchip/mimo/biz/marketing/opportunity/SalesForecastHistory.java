@@ -60,7 +60,7 @@ public interface SalesForecastHistory extends BizEntity {
 	 * @return the value of the '<em>Best Case Amount</em>' attribute.
 	 * @see #setBestCaseAmount(BigDecimal)
 	 * @see org.abchip.mimo.biz.marketing.opportunity.OpportunityPackage#getSalesForecastHistory_BestCaseAmount()
-	 * @model
+	 * @model annotation="mimo-ent-format type='currency-amount' precision='18' scale='2'"
 	 * @generated
 	 */
 	BigDecimal getBestCaseAmount();
@@ -86,7 +86,7 @@ public interface SalesForecastHistory extends BizEntity {
 	 * @return the value of the '<em>Change Note</em>' attribute.
 	 * @see #setChangeNote(String)
 	 * @see org.abchip.mimo.biz.marketing.opportunity.OpportunityPackage#getSalesForecastHistory_ChangeNote()
-	 * @model
+	 * @model annotation="mimo-ent-format type='very-long'"
 	 * @generated
 	 */
 	String getChangeNote();
@@ -112,7 +112,7 @@ public interface SalesForecastHistory extends BizEntity {
 	 * @return the value of the '<em>Closed Amount</em>' attribute.
 	 * @see #setClosedAmount(BigDecimal)
 	 * @see org.abchip.mimo.biz.marketing.opportunity.OpportunityPackage#getSalesForecastHistory_ClosedAmount()
-	 * @model
+	 * @model annotation="mimo-ent-format type='currency-amount' precision='18' scale='2'"
 	 * @generated
 	 */
 	BigDecimal getClosedAmount();
@@ -190,7 +190,7 @@ public interface SalesForecastHistory extends BizEntity {
 	 * @return the value of the '<em>Forecast Amount</em>' attribute.
 	 * @see #setForecastAmount(BigDecimal)
 	 * @see org.abchip.mimo.biz.marketing.opportunity.OpportunityPackage#getSalesForecastHistory_ForecastAmount()
-	 * @model
+	 * @model annotation="mimo-ent-format type='currency-amount' precision='18' scale='2'"
 	 * @generated
 	 */
 	BigDecimal getForecastAmount();
@@ -268,7 +268,7 @@ public interface SalesForecastHistory extends BizEntity {
 	 * @return the value of the '<em>Modified Timestamp</em>' attribute.
 	 * @see #setModifiedTimestamp(Date)
 	 * @see org.abchip.mimo.biz.marketing.opportunity.OpportunityPackage#getSalesForecastHistory_ModifiedTimestamp()
-	 * @model
+	 * @model annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getModifiedTimestamp();
@@ -320,7 +320,7 @@ public interface SalesForecastHistory extends BizEntity {
 	 * @return the value of the '<em>Parent Sales Forecast Id</em>' attribute.
 	 * @see #setParentSalesForecastId(String)
 	 * @see org.abchip.mimo.biz.marketing.opportunity.OpportunityPackage#getSalesForecastHistory_ParentSalesForecastId()
-	 * @model
+	 * @model annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	String getParentSalesForecastId();
@@ -346,7 +346,7 @@ public interface SalesForecastHistory extends BizEntity {
 	 * @return the value of the '<em>Percent Of Quota Closed</em>' attribute.
 	 * @see #setPercentOfQuotaClosed(BigDecimal)
 	 * @see org.abchip.mimo.biz.marketing.opportunity.OpportunityPackage#getSalesForecastHistory_PercentOfQuotaClosed()
-	 * @model
+	 * @model annotation="mimo-ent-format type='fixed-point' precision='18' scale='6'"
 	 * @generated
 	 */
 	BigDecimal getPercentOfQuotaClosed();
@@ -372,7 +372,7 @@ public interface SalesForecastHistory extends BizEntity {
 	 * @return the value of the '<em>Percent Of Quota Forecast</em>' attribute.
 	 * @see #setPercentOfQuotaForecast(BigDecimal)
 	 * @see org.abchip.mimo.biz.marketing.opportunity.OpportunityPackage#getSalesForecastHistory_PercentOfQuotaForecast()
-	 * @model
+	 * @model annotation="mimo-ent-format type='fixed-point' precision='18' scale='6'"
 	 * @generated
 	 */
 	BigDecimal getPercentOfQuotaForecast();
@@ -398,7 +398,7 @@ public interface SalesForecastHistory extends BizEntity {
 	 * @return the value of the '<em>Quota Amount</em>' attribute.
 	 * @see #setQuotaAmount(BigDecimal)
 	 * @see org.abchip.mimo.biz.marketing.opportunity.OpportunityPackage#getSalesForecastHistory_QuotaAmount()
-	 * @model
+	 * @model annotation="mimo-ent-format type='currency-amount' precision='18' scale='2'"
 	 * @generated
 	 */
 	BigDecimal getQuotaAmount();
@@ -425,6 +425,7 @@ public interface SalesForecastHistory extends BizEntity {
 	 * @see #setSalesForecastHistoryId(String)
 	 * @see org.abchip.mimo.biz.marketing.opportunity.OpportunityPackage#getSalesForecastHistory_SalesForecastHistoryId()
 	 * @model id="true" required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */

@@ -45,7 +45,7 @@ public interface ProductType extends BizEntityType<Product> {
 	 * @return the value of the '<em>Description</em>' attribute.
 	 * @see #setDescription(String)
 	 * @see org.abchip.mimo.biz.product.product.ProductPackage#getProductType_Description()
-	 * @model
+	 * @model annotation="mimo-ent-format type='description' length='255'"
 	 * @generated
 	 */
 	String getDescription();
@@ -71,7 +71,7 @@ public interface ProductType extends BizEntityType<Product> {
 	 * @return the value of the '<em>Has Table</em>' attribute.
 	 * @see #setHasTable(boolean)
 	 * @see org.abchip.mimo.biz.product.product.ProductPackage#getProductType_HasTable()
-	 * @model
+	 * @model annotation="mimo-ent-format type='indicator' length='1'"
 	 * @generated
 	 */
 	boolean isHasTable();
@@ -97,7 +97,7 @@ public interface ProductType extends BizEntityType<Product> {
 	 * @return the value of the '<em>Is Digital</em>' attribute.
 	 * @see #setIsDigital(boolean)
 	 * @see org.abchip.mimo.biz.product.product.ProductPackage#getProductType_IsDigital()
-	 * @model
+	 * @model annotation="mimo-ent-format type='indicator' length='1'"
 	 * @generated
 	 */
 	boolean isIsDigital();
@@ -123,7 +123,7 @@ public interface ProductType extends BizEntityType<Product> {
 	 * @return the value of the '<em>Is Physical</em>' attribute.
 	 * @see #setIsPhysical(boolean)
 	 * @see org.abchip.mimo.biz.product.product.ProductPackage#getProductType_IsPhysical()
-	 * @model
+	 * @model annotation="mimo-ent-format type='indicator' length='1'"
 	 * @generated
 	 */
 	boolean isIsPhysical();
@@ -176,6 +176,7 @@ public interface ProductType extends BizEntityType<Product> {
 	 * @see #setProductTypeId(String)
 	 * @see org.abchip.mimo.biz.product.product.ProductPackage#getProductType_ProductTypeId()
 	 * @model id="true" required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
@@ -202,7 +203,9 @@ public interface ProductType extends BizEntityType<Product> {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Product Type Attrs</em>' attribute list.
 	 * @see org.abchip.mimo.biz.product.product.ProductPackage#getProductType_ProductTypeAttrs()
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ProductTypeAttr'"
 	 * @generated
 	 */
@@ -211,7 +214,8 @@ public interface ProductType extends BizEntityType<Product> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ProductType' route='parentTypeId'"
 	 * @generated
 	 */
@@ -220,7 +224,8 @@ public interface ProductType extends BizEntityType<Product> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='Product' route='productTypeId'"
 	 * @generated
 	 */

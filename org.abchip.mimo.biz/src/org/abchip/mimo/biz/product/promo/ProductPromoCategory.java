@@ -47,6 +47,7 @@ public interface ProductPromoCategory extends BizEntity {
 	 * @see #setAndGroupId(String)
 	 * @see org.abchip.mimo.biz.product.promo.PromoPackage#getProductPromoCategory_AndGroupId()
 	 * @model required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
@@ -73,7 +74,7 @@ public interface ProductPromoCategory extends BizEntity {
 	 * @return the value of the '<em>Include Sub Categories</em>' attribute.
 	 * @see #setIncludeSubCategories(boolean)
 	 * @see org.abchip.mimo.biz.product.promo.PromoPackage#getProductPromoCategory_IncludeSubCategories()
-	 * @model
+	 * @model annotation="mimo-ent-format type='indicator' length='1'"
 	 * @generated
 	 */
 	boolean isIncludeSubCategories();
@@ -100,6 +101,7 @@ public interface ProductPromoCategory extends BizEntity {
 	 * @see #setProductPromoActionSeqId(String)
 	 * @see org.abchip.mimo.biz.product.promo.PromoPackage#getProductPromoCategory_ProductPromoActionSeqId()
 	 * @model required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
@@ -153,6 +155,7 @@ public interface ProductPromoCategory extends BizEntity {
 	 * @see #setProductPromoCondSeqId(String)
 	 * @see org.abchip.mimo.biz.product.promo.PromoPackage#getProductPromoCategory_ProductPromoCondSeqId()
 	 * @model required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
@@ -180,6 +183,7 @@ public interface ProductPromoCategory extends BizEntity {
 	 * @see #setProductPromoRuleId(String)
 	 * @see org.abchip.mimo.biz.product.promo.PromoPackage#getProductPromoCategory_ProductPromoRuleId()
 	 * @model required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */

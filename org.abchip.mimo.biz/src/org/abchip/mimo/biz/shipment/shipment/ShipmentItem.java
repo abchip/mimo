@@ -70,7 +70,7 @@ public interface ShipmentItem extends BizEntity {
 	 * @return the value of the '<em>Quantity</em>' attribute.
 	 * @see #setQuantity(BigDecimal)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipmentItem_Quantity()
-	 * @model
+	 * @model annotation="mimo-ent-format type='fixed-point' precision='18' scale='6'"
 	 * @generated
 	 */
 	BigDecimal getQuantity();
@@ -96,7 +96,7 @@ public interface ShipmentItem extends BizEntity {
 	 * @return the value of the '<em>Shipment Content Description</em>' attribute.
 	 * @see #setShipmentContentDescription(String)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipmentItem_ShipmentContentDescription()
-	 * @model
+	 * @model annotation="mimo-ent-format type='description' length='255'"
 	 * @generated
 	 */
 	String getShipmentContentDescription();
@@ -149,6 +149,7 @@ public interface ShipmentItem extends BizEntity {
 	 * @see #setShipmentItemSeqId(String)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipmentItem_ShipmentItemSeqId()
 	 * @model required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */

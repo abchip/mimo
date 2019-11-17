@@ -72,6 +72,7 @@ public interface TechDataCalendarExcDay extends BizEntity {
 	 * @see #setExceptionDateStartTime(Date)
 	 * @see org.abchip.mimo.biz.manufacturing.techdata.TechdataPackage#getTechDataCalendarExcDay_ExceptionDateStartTime()
 	 * @model required="true"
+	 *        annotation="mimo-ent-format type='date-time'"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
@@ -98,7 +99,7 @@ public interface TechDataCalendarExcDay extends BizEntity {
 	 * @return the value of the '<em>Description</em>' attribute.
 	 * @see #setDescription(String)
 	 * @see org.abchip.mimo.biz.manufacturing.techdata.TechdataPackage#getTechDataCalendarExcDay_Description()
-	 * @model
+	 * @model annotation="mimo-ent-format type='description' length='255'"
 	 * @generated
 	 */
 	String getDescription();
@@ -124,7 +125,7 @@ public interface TechDataCalendarExcDay extends BizEntity {
 	 * @return the value of the '<em>Exception Capacity</em>' attribute.
 	 * @see #setExceptionCapacity(BigDecimal)
 	 * @see org.abchip.mimo.biz.manufacturing.techdata.TechdataPackage#getTechDataCalendarExcDay_ExceptionCapacity()
-	 * @model
+	 * @model annotation="mimo-ent-format type='fixed-point' precision='18' scale='6'"
 	 * @generated
 	 */
 	BigDecimal getExceptionCapacity();
@@ -150,7 +151,7 @@ public interface TechDataCalendarExcDay extends BizEntity {
 	 * @return the value of the '<em>Used Capacity</em>' attribute.
 	 * @see #setUsedCapacity(BigDecimal)
 	 * @see org.abchip.mimo.biz.manufacturing.techdata.TechdataPackage#getTechDataCalendarExcDay_UsedCapacity()
-	 * @model
+	 * @model annotation="mimo-ent-format type='fixed-point' precision='18' scale='6'"
 	 * @generated
 	 */
 	BigDecimal getUsedCapacity();

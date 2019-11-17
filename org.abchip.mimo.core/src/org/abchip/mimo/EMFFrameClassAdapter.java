@@ -10,7 +10,9 @@ package org.abchip.mimo;
 
 import java.lang.reflect.Method;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.abchip.mimo.entity.Entity;
 import org.abchip.mimo.entity.EntityNameable;
@@ -39,6 +41,8 @@ public class EMFFrameClassAdapter<E extends Entity> extends FrameImpl<E> {
 	 */
 	private static final long serialVersionUID = 1L;
 	private EClass eClass;
+	private Map<String, Slot> slots = null;
+
 	int routesNumber = 0;
 
 	private FrameManager frameManager = null;
@@ -106,6 +110,10 @@ public class EMFFrameClassAdapter<E extends Entity> extends FrameImpl<E> {
 			this.getSlots().add(new EMFSlotAdapter(this, operation));
 			routesNumber++;
 		}
+
+		this.slots = new HashMap<String, Slot>();
+		for (Slot slot : getSlots())
+			this.slots.put(slot.getName(), slot);
 	}
 
 	@SuppressWarnings({ "rawtypes", "unchecked" })
@@ -131,6 +139,9 @@ public class EMFFrameClassAdapter<E extends Entity> extends FrameImpl<E> {
 
 	@Override
 	public Slot getSlot(String name) {
+
+		if (this.slots != null)
+			return this.slots.get(name);
 
 		for (Slot slot : getSlots())
 			if (slot.getName().equals(name))

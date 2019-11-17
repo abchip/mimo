@@ -77,6 +77,7 @@ import org.abchip.mimo.biz.entity.crypto.CryptoPackage;
 import org.abchip.mimo.biz.entity.crypto.impl.CryptoPackageImpl;
 import org.abchip.mimo.biz.entity.group.GroupPackage;
 import org.abchip.mimo.biz.entity.group.impl.GroupPackageImpl;
+import org.abchip.mimo.biz.entity.impl.EntityPackageImpl;
 import org.abchip.mimo.biz.entity.sequence.SequencePackage;
 import org.abchip.mimo.biz.entity.sequence.impl.SequencePackageImpl;
 import org.abchip.mimo.biz.entity.synchronization.SynchronizationPackage;
@@ -196,7 +197,6 @@ import org.eclipse.emf.common.util.URI;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 
 import org.eclipse.emf.ecore.EReference;
@@ -338,6 +338,8 @@ public class IssuancePackageImpl extends EPackageImpl implements IssuancePackage
 		SurveyPackageImpl theSurveyPackage = (SurveyPackageImpl)(registeredPackage instanceof SurveyPackageImpl ? registeredPackage : SurveyPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(WebsitePackage.eNS_URI);
 		WebsitePackageImpl theWebsitePackage = (WebsitePackageImpl)(registeredPackage instanceof WebsitePackageImpl ? registeredPackage : WebsitePackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(org.abchip.mimo.biz.entity.EntityPackage.eNS_URI);
+		EntityPackageImpl theEntityPackage = (EntityPackageImpl)(registeredPackage instanceof EntityPackageImpl ? registeredPackage : org.abchip.mimo.biz.entity.EntityPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(AuditPackage.eNS_URI);
 		AuditPackageImpl theAuditPackage = (AuditPackageImpl)(registeredPackage instanceof AuditPackageImpl ? registeredPackage : AuditPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(CryptoPackage.eNS_URI);
@@ -491,6 +493,7 @@ public class IssuancePackageImpl extends EPackageImpl implements IssuancePackage
 		thePreferencePackage.createPackageContents();
 		theSurveyPackage.createPackageContents();
 		theWebsitePackage.createPackageContents();
+		theEntityPackage.createPackageContents();
 		theAuditPackage.createPackageContents();
 		theCryptoPackage.createPackageContents();
 		theGroupPackage.createPackageContents();
@@ -585,6 +588,7 @@ public class IssuancePackageImpl extends EPackageImpl implements IssuancePackage
 		thePreferencePackage.initializePackageContents();
 		theSurveyPackage.initializePackageContents();
 		theWebsitePackage.initializePackageContents();
+		theEntityPackage.initializePackageContents();
 		theAuditPackage.initializePackageContents();
 		theCryptoPackage.initializePackageContents();
 		theGroupPackage.initializePackageContents();
@@ -711,26 +715,6 @@ public class IssuancePackageImpl extends EPackageImpl implements IssuancePackage
 	@Override
 	public EReference getItemIssuance_IssuedByUserLoginId() {
 		return (EReference)itemIssuanceEClass.getEStructuralFeatures().get(12);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EOperation getItemIssuance__InventoryItemDetails() {
-		return itemIssuanceEClass.getEOperations().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EOperation getItemIssuance__InventoryTransfers() {
-		return itemIssuanceEClass.getEOperations().get(1);
 	}
 
 	/**
@@ -896,8 +880,6 @@ public class IssuancePackageImpl extends EPackageImpl implements IssuancePackage
 		createEReference(itemIssuanceEClass, ITEM_ISSUANCE__SHIPMENT_ID);
 		createEReference(itemIssuanceEClass, ITEM_ISSUANCE__ORDER_ID);
 		createEReference(itemIssuanceEClass, ITEM_ISSUANCE__ISSUED_BY_USER_LOGIN_ID);
-		createEOperation(itemIssuanceEClass, ITEM_ISSUANCE___INVENTORY_ITEM_DETAILS);
-		createEOperation(itemIssuanceEClass, ITEM_ISSUANCE___INVENTORY_TRANSFERS);
 
 		itemIssuanceRoleEClass = createEClass(ITEM_ISSUANCE_ROLE);
 		createEAttribute(itemIssuanceRoleEClass, ITEM_ISSUANCE_ROLE__ROLE_TYPE_ID);
@@ -944,7 +926,7 @@ public class IssuancePackageImpl extends EPackageImpl implements IssuancePackage
 		itemIssuanceEClass.getESuperTypes().add(theBizPackage.getBizEntity());
 		itemIssuanceRoleEClass.getESuperTypes().add(theBizPackage.getBizEntity());
 
-		// Initialize classes, features, and operations; add parameters
+		// Initialize classes and features; add operations and parameters
 		initEClass(itemIssuanceEClass, ItemIssuance.class, "ItemIssuance", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getItemIssuance_ItemIssuanceId(), ecorePackage.getEString(), "itemIssuanceId", null, 1, 1, ItemIssuance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getItemIssuance_CancelQuantity(), ecorePackage.getEBigDecimal(), "cancelQuantity", null, 0, 1, ItemIssuance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -964,9 +946,9 @@ public class IssuancePackageImpl extends EPackageImpl implements IssuancePackage
 		initEReference(getItemIssuance_IssuedByUserLoginId(), theLoginPackage.getUserLogin(), null, "issuedByUserLoginId", null, 0, 1, ItemIssuance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getItemIssuance_IssuedByUserLoginId().getEKeys().add(theLoginPackage.getUserLogin_UserLoginId());
 
-		initEOperation(getItemIssuance__InventoryItemDetails(), ecorePackage.getEString(), "inventoryItemDetails", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(itemIssuanceEClass, ecorePackage.getEString(), "inventoryItemDetails", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		initEOperation(getItemIssuance__InventoryTransfers(), ecorePackage.getEString(), "inventoryTransfers", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(itemIssuanceEClass, ecorePackage.getEString(), "inventoryTransfers", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(itemIssuanceRoleEClass, ItemIssuanceRole.class, "ItemIssuanceRole", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getItemIssuanceRole_RoleTypeId(), ecorePackage.getEString(), "roleTypeId", null, 1, 1, ItemIssuanceRole.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -976,10 +958,107 @@ public class IssuancePackageImpl extends EPackageImpl implements IssuancePackage
 		getItemIssuanceRole_PartyId().getEKeys().add(thePartyPackage.getParty_PartyId());
 
 		// Create annotations
+		// mimo-ent-format
+		createMimoentformatAnnotations();
 		// mimo-ent-slot
 		createMimoentslotAnnotations();
 		// mimo-ent-domain
 		createMimoentdomainAnnotations();
+	}
+
+	/**
+	 * Initializes the annotations for <b>mimo-ent-format</b>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void createMimoentformatAnnotations() {
+		String source = "mimo-ent-format";
+		addAnnotation
+		  (itemIssuanceEClass.getEOperations().get(0),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (itemIssuanceEClass.getEOperations().get(1),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (getItemIssuance_ItemIssuanceId(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (getItemIssuance_CancelQuantity(),
+		   source,
+		   new String[] {
+			   "type", "fixed-point",
+			   "precision", "18",
+			   "scale", "6"
+		   });
+		addAnnotation
+		  (getItemIssuance_FixedAssetId(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (getItemIssuance_IssuedDateTime(),
+		   source,
+		   new String[] {
+			   "type", "date-time"
+		   });
+		addAnnotation
+		  (getItemIssuance_MaintHistSeqId(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (getItemIssuance_OrderItemSeqId(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (getItemIssuance_Quantity(),
+		   source,
+		   new String[] {
+			   "type", "fixed-point",
+			   "precision", "18",
+			   "scale", "6"
+		   });
+		addAnnotation
+		  (getItemIssuance_ShipGroupSeqId(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (getItemIssuance_ShipmentItemSeqId(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (getItemIssuanceRole_RoleTypeId(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
 	}
 
 	/**
@@ -991,13 +1070,13 @@ public class IssuancePackageImpl extends EPackageImpl implements IssuancePackage
 	protected void createMimoentslotAnnotations() {
 		String source = "mimo-ent-slot";
 		addAnnotation
-		  (getItemIssuance__InventoryItemDetails(),
+		  (itemIssuanceEClass.getEOperations().get(0),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (getItemIssuance__InventoryTransfers(),
+		  (itemIssuanceEClass.getEOperations().get(1),
 		   source,
 		   new String[] {
 			   "derived", "true"
@@ -1025,7 +1104,7 @@ public class IssuancePackageImpl extends EPackageImpl implements IssuancePackage
 	protected void createMimoentdomainAnnotations() {
 		String source = "mimo-ent-domain";
 		addAnnotation
-		  (getItemIssuance__InventoryItemDetails(),
+		  (itemIssuanceEClass.getEOperations().get(0),
 		   source,
 		   new String[] {
 			   "frame", "InventoryItemDetail",
@@ -1035,7 +1114,7 @@ public class IssuancePackageImpl extends EPackageImpl implements IssuancePackage
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (getItemIssuance__InventoryTransfers(),
+		  (itemIssuanceEClass.getEOperations().get(1),
 		   source,
 		   new String[] {
 			   "frame", "InventoryTransfer",

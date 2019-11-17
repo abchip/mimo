@@ -45,7 +45,7 @@ public interface GlJournal extends BizEntity {
 	 * @return the value of the '<em>Gl Journal Name</em>' attribute.
 	 * @see #setGlJournalName(String)
 	 * @see org.abchip.mimo.biz.accounting.ledger.LedgerPackage#getGlJournal_GlJournalName()
-	 * @model
+	 * @model annotation="mimo-ent-format type='name' length='100'"
 	 * @generated
 	 */
 	String getGlJournalName();
@@ -71,7 +71,7 @@ public interface GlJournal extends BizEntity {
 	 * @return the value of the '<em>Is Posted</em>' attribute.
 	 * @see #setIsPosted(boolean)
 	 * @see org.abchip.mimo.biz.accounting.ledger.LedgerPackage#getGlJournal_IsPosted()
-	 * @model
+	 * @model annotation="mimo-ent-format type='indicator' length='1'"
 	 * @generated
 	 */
 	boolean isIsPosted();
@@ -123,7 +123,7 @@ public interface GlJournal extends BizEntity {
 	 * @return the value of the '<em>Posted Date</em>' attribute.
 	 * @see #setPostedDate(Date)
 	 * @see org.abchip.mimo.biz.accounting.ledger.LedgerPackage#getGlJournal_PostedDate()
-	 * @model
+	 * @model annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getPostedDate();
@@ -141,7 +141,8 @@ public interface GlJournal extends BizEntity {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='AcctgTrans' route='glJournalId'"
 	 * @generated
 	 */
@@ -150,7 +151,8 @@ public interface GlJournal extends BizEntity {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='PartyAcctgPreference' route='errorGlJournalId'"
 	 * @generated
 	 */
@@ -168,6 +170,7 @@ public interface GlJournal extends BizEntity {
 	 * @see #setGlJournalId(String)
 	 * @see org.abchip.mimo.biz.accounting.ledger.LedgerPackage#getGlJournal_GlJournalId()
 	 * @model id="true" required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */

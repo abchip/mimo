@@ -77,6 +77,7 @@ public interface ShipmentPackage extends BizEntity {
 	 * @see #setShipmentPackageSeqId(String)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipmentPackage_ShipmentPackageSeqId()
 	 * @model required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
@@ -103,7 +104,7 @@ public interface ShipmentPackage extends BizEntity {
 	 * @return the value of the '<em>Box Height</em>' attribute.
 	 * @see #setBoxHeight(BigDecimal)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipmentPackage_BoxHeight()
-	 * @model
+	 * @model annotation="mimo-ent-format type='fixed-point' precision='18' scale='6'"
 	 * @generated
 	 */
 	BigDecimal getBoxHeight();
@@ -129,7 +130,7 @@ public interface ShipmentPackage extends BizEntity {
 	 * @return the value of the '<em>Box Length</em>' attribute.
 	 * @see #setBoxLength(BigDecimal)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipmentPackage_BoxLength()
-	 * @model
+	 * @model annotation="mimo-ent-format type='fixed-point' precision='18' scale='6'"
 	 * @generated
 	 */
 	BigDecimal getBoxLength();
@@ -155,7 +156,7 @@ public interface ShipmentPackage extends BizEntity {
 	 * @return the value of the '<em>Box Width</em>' attribute.
 	 * @see #setBoxWidth(BigDecimal)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipmentPackage_BoxWidth()
-	 * @model
+	 * @model annotation="mimo-ent-format type='fixed-point' precision='18' scale='6'"
 	 * @generated
 	 */
 	BigDecimal getBoxWidth();
@@ -181,7 +182,7 @@ public interface ShipmentPackage extends BizEntity {
 	 * @return the value of the '<em>Date Created</em>' attribute.
 	 * @see #setDateCreated(Date)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipmentPackage_DateCreated()
-	 * @model
+	 * @model annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getDateCreated();
@@ -233,7 +234,7 @@ public interface ShipmentPackage extends BizEntity {
 	 * @return the value of the '<em>Insured Value</em>' attribute.
 	 * @see #setInsuredValue(BigDecimal)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipmentPackage_InsuredValue()
-	 * @model
+	 * @model annotation="mimo-ent-format type='currency-amount' precision='18' scale='2'"
 	 * @generated
 	 */
 	BigDecimal getInsuredValue();
@@ -285,7 +286,7 @@ public interface ShipmentPackage extends BizEntity {
 	 * @return the value of the '<em>Weight</em>' attribute.
 	 * @see #setWeight(BigDecimal)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipmentPackage_Weight()
-	 * @model
+	 * @model annotation="mimo-ent-format type='fixed-point' precision='18' scale='6'"
 	 * @generated
 	 */
 	BigDecimal getWeight();

@@ -44,7 +44,7 @@ public interface SupplierProductFeature extends BizEntity {
 	 * @return the value of the '<em>Description</em>' attribute.
 	 * @see #setDescription(String)
 	 * @see org.abchip.mimo.biz.product.supplier.SupplierPackage#getSupplierProductFeature_Description()
-	 * @model
+	 * @model annotation="mimo-ent-format type='name' length='100'"
 	 * @generated
 	 */
 	String getDescription();
@@ -70,7 +70,7 @@ public interface SupplierProductFeature extends BizEntity {
 	 * @return the value of the '<em>Id Code</em>' attribute.
 	 * @see #setIdCode(String)
 	 * @see org.abchip.mimo.biz.product.supplier.SupplierPackage#getSupplierProductFeature_IdCode()
-	 * @model
+	 * @model annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	String getIdCode();

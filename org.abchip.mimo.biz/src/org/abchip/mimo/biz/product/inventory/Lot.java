@@ -45,7 +45,7 @@ public interface Lot extends BizEntity {
 	 * @return the value of the '<em>Creation Date</em>' attribute.
 	 * @see #setCreationDate(Date)
 	 * @see org.abchip.mimo.biz.product.inventory.InventoryPackage#getLot_CreationDate()
-	 * @model
+	 * @model annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getCreationDate();
@@ -71,7 +71,7 @@ public interface Lot extends BizEntity {
 	 * @return the value of the '<em>Expiration Date</em>' attribute.
 	 * @see #setExpirationDate(Date)
 	 * @see org.abchip.mimo.biz.product.inventory.InventoryPackage#getLot_ExpirationDate()
-	 * @model
+	 * @model annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getExpirationDate();
@@ -97,7 +97,7 @@ public interface Lot extends BizEntity {
 	 * @return the value of the '<em>Quantity</em>' attribute.
 	 * @see #setQuantity(BigDecimal)
 	 * @see org.abchip.mimo.biz.product.inventory.InventoryPackage#getLot_Quantity()
-	 * @model
+	 * @model annotation="mimo-ent-format type='fixed-point' precision='18' scale='6'"
 	 * @generated
 	 */
 	BigDecimal getQuantity();
@@ -115,7 +115,8 @@ public interface Lot extends BizEntity {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='InventoryItem' route='lotId'"
 	 * @generated
 	 */
@@ -133,6 +134,7 @@ public interface Lot extends BizEntity {
 	 * @see #setLotId(String)
 	 * @see org.abchip.mimo.biz.product.inventory.InventoryPackage#getLot_LotId()
 	 * @model id="true" required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */

@@ -22,7 +22,7 @@ import org.abchip.mimo.biz.party.party.Party;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.accounting.rate.PartyRate#getFromDate <em>From Date</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.rate.PartyRate#isDefaultRate <em>Default Rate</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.rate.PartyRate#getDefaultRate <em>Default Rate</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.rate.PartyRate#getPercentageUsed <em>Percentage Used</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.rate.PartyRate#getThruDate <em>Thru Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.rate.PartyRate#getPartyId <em>Party Id</em>}</li>
@@ -46,6 +46,7 @@ public interface PartyRate extends BizEntity {
 	 * @see #setFromDate(Date)
 	 * @see org.abchip.mimo.biz.accounting.rate.RatePackage#getPartyRate_FromDate()
 	 * @model required="true"
+	 *        annotation="mimo-ent-format type='date-time'"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
@@ -70,22 +71,22 @@ public interface PartyRate extends BizEntity {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Default Rate</em>' attribute.
-	 * @see #setDefaultRate(boolean)
+	 * @see #setDefaultRate(char)
 	 * @see org.abchip.mimo.biz.accounting.rate.RatePackage#getPartyRate_DefaultRate()
-	 * @model
+	 * @model annotation="mimo-ent-format type='indicator' length='1'"
 	 * @generated
 	 */
-	boolean isDefaultRate();
+	char getDefaultRate();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.rate.PartyRate#isDefaultRate <em>Default Rate</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.rate.PartyRate#getDefaultRate <em>Default Rate</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Default Rate</em>' attribute.
-	 * @see #isDefaultRate()
+	 * @see #getDefaultRate()
 	 * @generated
 	 */
-	void setDefaultRate(boolean value);
+	void setDefaultRate(char value);
 
 	/**
 	 * Returns the value of the '<em><b>Party Id</b></em>' reference.
@@ -124,7 +125,7 @@ public interface PartyRate extends BizEntity {
 	 * @return the value of the '<em>Percentage Used</em>' attribute.
 	 * @see #setPercentageUsed(double)
 	 * @see org.abchip.mimo.biz.accounting.rate.RatePackage#getPartyRate_PercentageUsed()
-	 * @model
+	 * @model annotation="mimo-ent-format type='floating-point'"
 	 * @generated
 	 */
 	double getPercentageUsed();
@@ -150,7 +151,7 @@ public interface PartyRate extends BizEntity {
 	 * @return the value of the '<em>Thru Date</em>' attribute.
 	 * @see #setThruDate(Date)
 	 * @see org.abchip.mimo.biz.accounting.rate.RatePackage#getPartyRate_ThruDate()
-	 * @model
+	 * @model annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getThruDate();

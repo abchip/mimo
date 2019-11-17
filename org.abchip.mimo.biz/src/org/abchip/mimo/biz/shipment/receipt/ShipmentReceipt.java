@@ -63,7 +63,7 @@ public interface ShipmentReceipt extends BizEntity {
 	 * @return the value of the '<em>Datetime Received</em>' attribute.
 	 * @see #setDatetimeReceived(Date)
 	 * @see org.abchip.mimo.biz.shipment.receipt.ReceiptPackage#getShipmentReceipt_DatetimeReceived()
-	 * @model
+	 * @model annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getDatetimeReceived();
@@ -115,7 +115,7 @@ public interface ShipmentReceipt extends BizEntity {
 	 * @return the value of the '<em>Item Description</em>' attribute.
 	 * @see #setItemDescription(String)
 	 * @see org.abchip.mimo.biz.shipment.receipt.ReceiptPackage#getShipmentReceipt_ItemDescription()
-	 * @model
+	 * @model annotation="mimo-ent-format type='description' length='255'"
 	 * @generated
 	 */
 	String getItemDescription();
@@ -167,7 +167,7 @@ public interface ShipmentReceipt extends BizEntity {
 	 * @return the value of the '<em>Order Item Seq Id</em>' attribute.
 	 * @see #setOrderItemSeqId(String)
 	 * @see org.abchip.mimo.biz.shipment.receipt.ReceiptPackage#getShipmentReceipt_OrderItemSeqId()
-	 * @model
+	 * @model annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	String getOrderItemSeqId();
@@ -219,7 +219,7 @@ public interface ShipmentReceipt extends BizEntity {
 	 * @return the value of the '<em>Quantity Accepted</em>' attribute.
 	 * @see #setQuantityAccepted(BigDecimal)
 	 * @see org.abchip.mimo.biz.shipment.receipt.ReceiptPackage#getShipmentReceipt_QuantityAccepted()
-	 * @model
+	 * @model annotation="mimo-ent-format type='fixed-point' precision='18' scale='6'"
 	 * @generated
 	 */
 	BigDecimal getQuantityAccepted();
@@ -245,7 +245,7 @@ public interface ShipmentReceipt extends BizEntity {
 	 * @return the value of the '<em>Quantity Rejected</em>' attribute.
 	 * @see #setQuantityRejected(BigDecimal)
 	 * @see org.abchip.mimo.biz.shipment.receipt.ReceiptPackage#getShipmentReceipt_QuantityRejected()
-	 * @model
+	 * @model annotation="mimo-ent-format type='fixed-point' precision='18' scale='6'"
 	 * @generated
 	 */
 	BigDecimal getQuantityRejected();
@@ -272,6 +272,7 @@ public interface ShipmentReceipt extends BizEntity {
 	 * @see #setReceiptId(String)
 	 * @see org.abchip.mimo.biz.shipment.receipt.ReceiptPackage#getShipmentReceipt_ReceiptId()
 	 * @model id="true" required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
@@ -350,7 +351,7 @@ public interface ShipmentReceipt extends BizEntity {
 	 * @return the value of the '<em>Return Id</em>' attribute.
 	 * @see #setReturnId(String)
 	 * @see org.abchip.mimo.biz.shipment.receipt.ReceiptPackage#getShipmentReceipt_ReturnId()
-	 * @model
+	 * @model annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	String getReturnId();
@@ -376,7 +377,7 @@ public interface ShipmentReceipt extends BizEntity {
 	 * @return the value of the '<em>Return Item Seq Id</em>' attribute.
 	 * @see #setReturnItemSeqId(String)
 	 * @see org.abchip.mimo.biz.shipment.receipt.ReceiptPackage#getShipmentReceipt_ReturnItemSeqId()
-	 * @model
+	 * @model annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	String getReturnItemSeqId();
@@ -428,7 +429,7 @@ public interface ShipmentReceipt extends BizEntity {
 	 * @return the value of the '<em>Shipment Item Seq Id</em>' attribute.
 	 * @see #setShipmentItemSeqId(String)
 	 * @see org.abchip.mimo.biz.shipment.receipt.ReceiptPackage#getShipmentReceipt_ShipmentItemSeqId()
-	 * @model
+	 * @model annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	String getShipmentItemSeqId();
@@ -454,7 +455,7 @@ public interface ShipmentReceipt extends BizEntity {
 	 * @return the value of the '<em>Shipment Package Seq Id</em>' attribute.
 	 * @see #setShipmentPackageSeqId(String)
 	 * @see org.abchip.mimo.biz.shipment.receipt.ReceiptPackage#getShipmentReceipt_ShipmentPackageSeqId()
-	 * @model
+	 * @model annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	String getShipmentPackageSeqId();
@@ -472,7 +473,8 @@ public interface ShipmentReceipt extends BizEntity {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='AcctgTrans' route='receiptId'"
 	 * @generated
 	 */
@@ -481,7 +483,8 @@ public interface ShipmentReceipt extends BizEntity {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='InventoryItemDetail' route='receiptId'"
 	 * @generated
 	 */

@@ -40,7 +40,7 @@ public interface GeoAssocType extends BizEntityType<GeoAssoc> {
 	 * @return the value of the '<em>Description</em>' attribute.
 	 * @see #setDescription(String)
 	 * @see org.abchip.mimo.biz.common.geo.GeoPackage#getGeoAssocType_Description()
-	 * @model
+	 * @model annotation="mimo-ent-format type='description' length='255'"
 	 * @generated
 	 */
 	String getDescription();
@@ -58,7 +58,8 @@ public interface GeoAssocType extends BizEntityType<GeoAssoc> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='CountryAddressFormat' route='geoAssocTypeId'"
 	 * @generated
 	 */
@@ -67,7 +68,8 @@ public interface GeoAssocType extends BizEntityType<GeoAssoc> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='GeoAssoc' route='geoAssocTypeId'"
 	 * @generated
 	 */
@@ -85,6 +87,7 @@ public interface GeoAssocType extends BizEntityType<GeoAssoc> {
 	 * @see #setGeoAssocTypeId(String)
 	 * @see org.abchip.mimo.biz.common.geo.GeoPackage#getGeoAssocType_GeoAssocTypeId()
 	 * @model id="true" required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */

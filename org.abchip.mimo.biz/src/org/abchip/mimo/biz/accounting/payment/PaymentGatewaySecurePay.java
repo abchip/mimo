@@ -32,6 +32,32 @@ import org.abchip.mimo.biz.BizEntity;
  */
 public interface PaymentGatewaySecurePay extends BizEntity {
 	/**
+	 * Returns the value of the '<em><b>Enable Amount Round</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Enable Amount Round</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Enable Amount Round</em>' attribute.
+	 * @see #setEnableAmountRound(boolean)
+	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPaymentGatewaySecurePay_EnableAmountRound()
+	 * @model annotation="mimo-ent-format type='indicator' length='1'"
+	 * @generated
+	 */
+	boolean isEnableAmountRound();
+
+	/**
+	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.payment.PaymentGatewaySecurePay#isEnableAmountRound <em>Enable Amount Round</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Enable Amount Round</em>' attribute.
+	 * @see #isEnableAmountRound()
+	 * @generated
+	 */
+	void setEnableAmountRound(boolean value);
+
+	/**
 	 * Returns the value of the '<em><b>Merchant Id</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -42,7 +68,7 @@ public interface PaymentGatewaySecurePay extends BizEntity {
 	 * @return the value of the '<em>Merchant Id</em>' attribute.
 	 * @see #setMerchantId(String)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPaymentGatewaySecurePay_MerchantId()
-	 * @model
+	 * @model annotation="mimo-ent-format type='value' length='255'"
 	 * @generated
 	 */
 	String getMerchantId();
@@ -84,32 +110,6 @@ public interface PaymentGatewaySecurePay extends BizEntity {
 	void setPaymentGatewayConfigId(PaymentGatewayConfig value);
 
 	/**
-	 * Returns the value of the '<em><b>Enable Amount Round</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Enable Amount Round</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Enable Amount Round</em>' attribute.
-	 * @see #setEnableAmountRound(boolean)
-	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPaymentGatewaySecurePay_EnableAmountRound()
-	 * @model
-	 * @generated
-	 */
-	boolean isEnableAmountRound();
-
-	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.payment.PaymentGatewaySecurePay#isEnableAmountRound <em>Enable Amount Round</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Enable Amount Round</em>' attribute.
-	 * @see #isEnableAmountRound()
-	 * @generated
-	 */
-	void setEnableAmountRound(boolean value);
-
-	/**
 	 * Returns the value of the '<em><b>Process Timeout</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -120,7 +120,7 @@ public interface PaymentGatewaySecurePay extends BizEntity {
 	 * @return the value of the '<em>Process Timeout</em>' attribute.
 	 * @see #setProcessTimeout(long)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPaymentGatewaySecurePay_ProcessTimeout()
-	 * @model
+	 * @model annotation="mimo-ent-format type='numeric' precision='20' scale='0'"
 	 * @generated
 	 */
 	long getProcessTimeout();
@@ -146,7 +146,7 @@ public interface PaymentGatewaySecurePay extends BizEntity {
 	 * @return the value of the '<em>Pwd</em>' attribute.
 	 * @see #setPwd(String)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPaymentGatewaySecurePay_Pwd()
-	 * @model
+	 * @model annotation="mimo-ent-format type='value' length='255'"
 	 * @generated
 	 */
 	String getPwd();
@@ -172,7 +172,7 @@ public interface PaymentGatewaySecurePay extends BizEntity {
 	 * @return the value of the '<em>Server URL</em>' attribute.
 	 * @see #setServerURL(String)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPaymentGatewaySecurePay_ServerURL()
-	 * @model
+	 * @model annotation="mimo-ent-format type='value' length='255'"
 	 * @generated
 	 */
 	String getServerURL();

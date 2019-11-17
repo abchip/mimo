@@ -49,6 +49,7 @@ public interface OrderSummaryEntry extends BizEntity {
 	 * @see #setEntryDate(Date)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderSummaryEntry_EntryDate()
 	 * @model required="true"
+	 *        annotation="mimo-ent-format type='date'"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
@@ -101,7 +102,7 @@ public interface OrderSummaryEntry extends BizEntity {
 	 * @return the value of the '<em>Gross Sales</em>' attribute.
 	 * @see #setGrossSales(BigDecimal)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderSummaryEntry_GrossSales()
-	 * @model
+	 * @model annotation="mimo-ent-format type='currency-amount' precision='18' scale='2'"
 	 * @generated
 	 */
 	BigDecimal getGrossSales();
@@ -127,7 +128,7 @@ public interface OrderSummaryEntry extends BizEntity {
 	 * @return the value of the '<em>Product Cost</em>' attribute.
 	 * @see #setProductCost(BigDecimal)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderSummaryEntry_ProductCost()
-	 * @model
+	 * @model annotation="mimo-ent-format type='currency-amount' precision='18' scale='2'"
 	 * @generated
 	 */
 	BigDecimal getProductCost();
@@ -179,7 +180,7 @@ public interface OrderSummaryEntry extends BizEntity {
 	 * @return the value of the '<em>Total Quantity</em>' attribute.
 	 * @see #setTotalQuantity(BigDecimal)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderSummaryEntry_TotalQuantity()
-	 * @model
+	 * @model annotation="mimo-ent-format type='fixed-point' precision='18' scale='6'"
 	 * @generated
 	 */
 	BigDecimal getTotalQuantity();

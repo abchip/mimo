@@ -7,7 +7,6 @@
  */
 package org.abchip.mimo.biz.common.geo.impl;
 
-import java.lang.reflect.InvocationTargetException;
 import java.math.BigDecimal;
 
 import java.util.List;
@@ -18,7 +17,6 @@ import org.abchip.mimo.biz.common.geo.GeoPackage;
 import org.abchip.mimo.biz.common.geo.GeoPoint;
 import org.abchip.mimo.biz.common.uom.Uom;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
-import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 
 /**
@@ -240,24 +238,6 @@ public class GeoPointImpl extends BizEntityImpl implements GeoPoint {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
-		switch (operationID) {
-			case GeoPackage.GEO_POINT___FACILITIES:
-				return facilities();
-			case GeoPackage.GEO_POINT___FACILITY_LOCATIONS:
-				return facilityLocations();
-			case GeoPackage.GEO_POINT___POSTAL_ADDRESSES:
-				return postalAddresses();
-		}
-		return super.eInvoke(operationID, arguments);
 	}
 
 	/**

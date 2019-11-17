@@ -40,7 +40,7 @@ public interface CostComponentAttribute extends BizEntity {
 	 * @return the value of the '<em>Attr Description</em>' attribute.
 	 * @see #setAttrDescription(String)
 	 * @see org.abchip.mimo.biz.product.cost.CostPackage#getCostComponentAttribute_AttrDescription()
-	 * @model
+	 * @model annotation="mimo-ent-format type='description' length='255'"
 	 * @generated
 	 */
 	String getAttrDescription();
@@ -66,7 +66,7 @@ public interface CostComponentAttribute extends BizEntity {
 	 * @return the value of the '<em>Attr Value</em>' attribute.
 	 * @see #setAttrValue(String)
 	 * @see org.abchip.mimo.biz.product.cost.CostPackage#getCostComponentAttribute_AttrValue()
-	 * @model
+	 * @model annotation="mimo-ent-format type='value' length='255'"
 	 * @generated
 	 */
 	String getAttrValue();
@@ -119,6 +119,7 @@ public interface CostComponentAttribute extends BizEntity {
 	 * @see #setAttrName(String)
 	 * @see org.abchip.mimo.biz.product.cost.CostPackage#getCostComponentAttribute_AttrName()
 	 * @model required="true"
+	 *        annotation="mimo-ent-format type='id-long' length='60'"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */

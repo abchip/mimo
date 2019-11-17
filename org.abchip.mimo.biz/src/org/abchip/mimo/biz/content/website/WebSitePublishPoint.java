@@ -47,7 +47,7 @@ public interface WebSitePublishPoint extends BizEntity {
 	 * @return the value of the '<em>About Content Id</em>' attribute.
 	 * @see #setAboutContentId(String)
 	 * @see org.abchip.mimo.biz.content.website.WebsitePackage#getWebSitePublishPoint_AboutContentId()
-	 * @model
+	 * @model annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	String getAboutContentId();
@@ -73,7 +73,7 @@ public interface WebSitePublishPoint extends BizEntity {
 	 * @return the value of the '<em>Content Dept</em>' attribute.
 	 * @see #setContentDept(String)
 	 * @see org.abchip.mimo.biz.content.website.WebsitePackage#getWebSitePublishPoint_ContentDept()
-	 * @model
+	 * @model annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	String getContentDept();
@@ -125,7 +125,7 @@ public interface WebSitePublishPoint extends BizEntity {
 	 * @return the value of the '<em>Left Bar Id</em>' attribute.
 	 * @see #setLeftBarId(String)
 	 * @see org.abchip.mimo.biz.content.website.WebsitePackage#getWebSitePublishPoint_LeftBarId()
-	 * @model
+	 * @model annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	String getLeftBarId();
@@ -151,7 +151,7 @@ public interface WebSitePublishPoint extends BizEntity {
 	 * @return the value of the '<em>Line Logo</em>' attribute.
 	 * @see #setLineLogo(String)
 	 * @see org.abchip.mimo.biz.content.website.WebsitePackage#getWebSitePublishPoint_LineLogo()
-	 * @model
+	 * @model annotation="mimo-ent-format type='long-varchar' length='255'"
 	 * @generated
 	 */
 	String getLineLogo();
@@ -177,7 +177,7 @@ public interface WebSitePublishPoint extends BizEntity {
 	 * @return the value of the '<em>Logo</em>' attribute.
 	 * @see #setLogo(String)
 	 * @see org.abchip.mimo.biz.content.website.WebsitePackage#getWebSitePublishPoint_Logo()
-	 * @model
+	 * @model annotation="mimo-ent-format type='long-varchar' length='255'"
 	 * @generated
 	 */
 	String getLogo();
@@ -203,7 +203,7 @@ public interface WebSitePublishPoint extends BizEntity {
 	 * @return the value of the '<em>Medallion Logo</em>' attribute.
 	 * @see #setMedallionLogo(String)
 	 * @see org.abchip.mimo.biz.content.website.WebsitePackage#getWebSitePublishPoint_MedallionLogo()
-	 * @model
+	 * @model annotation="mimo-ent-format type='long-varchar' length='255'"
 	 * @generated
 	 */
 	String getMedallionLogo();
@@ -229,7 +229,7 @@ public interface WebSitePublishPoint extends BizEntity {
 	 * @return the value of the '<em>Right Bar Id</em>' attribute.
 	 * @see #setRightBarId(String)
 	 * @see org.abchip.mimo.biz.content.website.WebsitePackage#getWebSitePublishPoint_RightBarId()
-	 * @model
+	 * @model annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	String getRightBarId();
@@ -255,7 +255,7 @@ public interface WebSitePublishPoint extends BizEntity {
 	 * @return the value of the '<em>Style Sheet File</em>' attribute.
 	 * @see #setStyleSheetFile(String)
 	 * @see org.abchip.mimo.biz.content.website.WebsitePackage#getWebSitePublishPoint_StyleSheetFile()
-	 * @model
+	 * @model annotation="mimo-ent-format type='long-varchar' length='255'"
 	 * @generated
 	 */
 	String getStyleSheetFile();
@@ -281,7 +281,7 @@ public interface WebSitePublishPoint extends BizEntity {
 	 * @return the value of the '<em>Template Title</em>' attribute.
 	 * @see #setTemplateTitle(String)
 	 * @see org.abchip.mimo.biz.content.website.WebsitePackage#getWebSitePublishPoint_TemplateTitle()
-	 * @model
+	 * @model annotation="mimo-ent-format type='long-varchar' length='255'"
 	 * @generated
 	 */
 	String getTemplateTitle();

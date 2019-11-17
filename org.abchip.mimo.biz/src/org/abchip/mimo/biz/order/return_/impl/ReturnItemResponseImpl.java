@@ -7,7 +7,6 @@
  */
 package org.abchip.mimo.biz.order.return_.impl;
 
-import java.lang.reflect.InvocationTargetException;
 import java.math.BigDecimal;
 
 import java.util.Date;
@@ -22,7 +21,6 @@ import org.abchip.mimo.biz.order.order.OrderHeader;
 import org.abchip.mimo.biz.order.order.OrderPaymentPreference;
 import org.abchip.mimo.biz.order.return_.ReturnItemResponse;
 import org.abchip.mimo.biz.order.return_.ReturnPackage;
-import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 
 /**
@@ -220,20 +218,6 @@ public class ReturnItemResponseImpl extends BizEntityImpl implements ReturnItemR
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
-		switch (operationID) {
-			case ReturnPackage.RETURN_ITEM_RESPONSE___RETURN_ITEMS:
-				return returnItems();
-		}
-		return super.eInvoke(operationID, arguments);
 	}
 
 	/**

@@ -56,7 +56,7 @@ public interface Agreement extends BizEntityTyped<AgreementType> {
 	 * @return the value of the '<em>Agreement Date</em>' attribute.
 	 * @see #setAgreementDate(Date)
 	 * @see org.abchip.mimo.biz.party.agreement.AgreementPackage#getAgreement_AgreementDate()
-	 * @model
+	 * @model annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getAgreementDate();
@@ -82,7 +82,7 @@ public interface Agreement extends BizEntityTyped<AgreementType> {
 	 * @return the value of the '<em>Description</em>' attribute.
 	 * @see #setDescription(String)
 	 * @see org.abchip.mimo.biz.party.agreement.AgreementPackage#getAgreement_Description()
-	 * @model
+	 * @model annotation="mimo-ent-format type='description' length='255'"
 	 * @generated
 	 */
 	String getDescription();
@@ -108,7 +108,7 @@ public interface Agreement extends BizEntityTyped<AgreementType> {
 	 * @return the value of the '<em>From Date</em>' attribute.
 	 * @see #setFromDate(Date)
 	 * @see org.abchip.mimo.biz.party.agreement.AgreementPackage#getAgreement_FromDate()
-	 * @model
+	 * @model annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getFromDate();
@@ -264,7 +264,7 @@ public interface Agreement extends BizEntityTyped<AgreementType> {
 	 * @return the value of the '<em>Text Data</em>' attribute.
 	 * @see #setTextData(String)
 	 * @see org.abchip.mimo.biz.party.agreement.AgreementPackage#getAgreement_TextData()
-	 * @model
+	 * @model annotation="mimo-ent-format type='very-long'"
 	 * @generated
 	 */
 	String getTextData();
@@ -290,7 +290,7 @@ public interface Agreement extends BizEntityTyped<AgreementType> {
 	 * @return the value of the '<em>Thru Date</em>' attribute.
 	 * @see #setThruDate(Date)
 	 * @see org.abchip.mimo.biz.party.agreement.AgreementPackage#getAgreement_ThruDate()
-	 * @model
+	 * @model annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getThruDate();
@@ -316,7 +316,9 @@ public interface Agreement extends BizEntityTyped<AgreementType> {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Agreement Attributes</em>' attribute list.
 	 * @see org.abchip.mimo.biz.party.agreement.AgreementPackage#getAgreement_AgreementAttributes()
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='AgreementAttribute'"
 	 * @generated
 	 */
@@ -333,7 +335,9 @@ public interface Agreement extends BizEntityTyped<AgreementType> {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Agreement Items</em>' attribute list.
 	 * @see org.abchip.mimo.biz.party.agreement.AgreementPackage#getAgreement_AgreementItems()
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='AgreementItem'"
 	 * @generated
 	 */
@@ -342,7 +346,8 @@ public interface Agreement extends BizEntityTyped<AgreementType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='Addendum' route='agreementId'"
 	 * @generated
 	 */
@@ -351,7 +356,8 @@ public interface Agreement extends BizEntityTyped<AgreementType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='AgreementTerm' route='agreementId'"
 	 * @generated
 	 */
@@ -360,7 +366,8 @@ public interface Agreement extends BizEntityTyped<AgreementType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='OrderItemShipGroup' route='supplierAgreementId'"
 	 * @generated
 	 */
@@ -404,6 +411,7 @@ public interface Agreement extends BizEntityTyped<AgreementType> {
 	 * @see #setAgreementId(String)
 	 * @see org.abchip.mimo.biz.party.agreement.AgreementPackage#getAgreement_AgreementId()
 	 * @model id="true" required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */

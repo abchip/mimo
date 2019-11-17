@@ -7,7 +7,6 @@
  */
 package org.abchip.mimo.biz.marketing.campaign.impl;
 
-import java.lang.reflect.InvocationTargetException;
 import java.math.BigDecimal;
 import java.util.Date;
 
@@ -18,7 +17,6 @@ import org.abchip.mimo.biz.common.uom.Uom;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.marketing.campaign.CampaignPackage;
 import org.abchip.mimo.biz.marketing.campaign.MarketingCampaign;
-import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 
 /**
@@ -516,26 +514,6 @@ public class MarketingCampaignImpl extends BizEntityImpl implements MarketingCam
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
-		switch (operationID) {
-			case CampaignPackage.MARKETING_CAMPAIGN___CHILD_MARKETING_CAMPAIGNS:
-				return childMarketingCampaigns();
-			case CampaignPackage.MARKETING_CAMPAIGN___CONTACT_LISTS:
-				return contactLists();
-			case CampaignPackage.MARKETING_CAMPAIGN___SALES_OPPORTUNITIES:
-				return salesOpportunities();
-			case CampaignPackage.MARKETING_CAMPAIGN___TRACKING_CODES:
-				return trackingCodes();
-		}
-		return super.eInvoke(operationID, arguments);
 	}
 
 } //MarketingCampaignImpl

@@ -50,7 +50,7 @@ public interface PaymentApplication extends BizEntity {
 	 * @return the value of the '<em>Amount Applied</em>' attribute.
 	 * @see #setAmountApplied(BigDecimal)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPaymentApplication_AmountApplied()
-	 * @model
+	 * @model annotation="mimo-ent-format type='currency-amount' precision='18' scale='2'"
 	 * @generated
 	 */
 	BigDecimal getAmountApplied();
@@ -76,7 +76,7 @@ public interface PaymentApplication extends BizEntity {
 	 * @return the value of the '<em>Invoice Item Seq Id</em>' attribute.
 	 * @see #setInvoiceItemSeqId(String)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPaymentApplication_InvoiceItemSeqId()
-	 * @model
+	 * @model annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	String getInvoiceItemSeqId();
@@ -103,6 +103,7 @@ public interface PaymentApplication extends BizEntity {
 	 * @see #setPaymentApplicationId(String)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPaymentApplication_PaymentApplicationId()
 	 * @model id="true" required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */

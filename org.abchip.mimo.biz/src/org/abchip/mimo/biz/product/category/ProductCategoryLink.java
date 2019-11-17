@@ -52,7 +52,7 @@ public interface ProductCategoryLink extends BizEntity {
 	 * @return the value of the '<em>Comments</em>' attribute.
 	 * @see #setComments(String)
 	 * @see org.abchip.mimo.biz.product.category.CategoryPackage#getProductCategoryLink_Comments()
-	 * @model
+	 * @model annotation="mimo-ent-format type='comment' length='255'"
 	 * @generated
 	 */
 	String getComments();
@@ -78,7 +78,7 @@ public interface ProductCategoryLink extends BizEntity {
 	 * @return the value of the '<em>Detail Sub Screen</em>' attribute.
 	 * @see #setDetailSubScreen(String)
 	 * @see org.abchip.mimo.biz.product.category.CategoryPackage#getProductCategoryLink_DetailSubScreen()
-	 * @model
+	 * @model annotation="mimo-ent-format type='long-varchar' length='255'"
 	 * @generated
 	 */
 	String getDetailSubScreen();
@@ -104,7 +104,7 @@ public interface ProductCategoryLink extends BizEntity {
 	 * @return the value of the '<em>Detail Text</em>' attribute.
 	 * @see #setDetailText(String)
 	 * @see org.abchip.mimo.biz.product.category.CategoryPackage#getProductCategoryLink_DetailText()
-	 * @model
+	 * @model annotation="mimo-ent-format type='very-long'"
 	 * @generated
 	 */
 	String getDetailText();
@@ -131,6 +131,7 @@ public interface ProductCategoryLink extends BizEntity {
 	 * @see #setFromDate(Date)
 	 * @see org.abchip.mimo.biz.product.category.CategoryPackage#getProductCategoryLink_FromDate()
 	 * @model required="true"
+	 *        annotation="mimo-ent-format type='date-time'"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
@@ -157,7 +158,7 @@ public interface ProductCategoryLink extends BizEntity {
 	 * @return the value of the '<em>Image Two Url</em>' attribute.
 	 * @see #setImageTwoUrl(String)
 	 * @see org.abchip.mimo.biz.product.category.CategoryPackage#getProductCategoryLink_ImageTwoUrl()
-	 * @model
+	 * @model annotation="mimo-ent-format type='url' length='2000'"
 	 * @generated
 	 */
 	String getImageTwoUrl();
@@ -183,7 +184,7 @@ public interface ProductCategoryLink extends BizEntity {
 	 * @return the value of the '<em>Image Url</em>' attribute.
 	 * @see #setImageUrl(String)
 	 * @see org.abchip.mimo.biz.product.category.CategoryPackage#getProductCategoryLink_ImageUrl()
-	 * @model
+	 * @model annotation="mimo-ent-format type='url' length='2000'"
 	 * @generated
 	 */
 	String getImageUrl();
@@ -209,7 +210,7 @@ public interface ProductCategoryLink extends BizEntity {
 	 * @return the value of the '<em>Link Info</em>' attribute.
 	 * @see #setLinkInfo(String)
 	 * @see org.abchip.mimo.biz.product.category.CategoryPackage#getProductCategoryLink_LinkInfo()
-	 * @model
+	 * @model annotation="mimo-ent-format type='long-varchar' length='255'"
 	 * @generated
 	 */
 	String getLinkInfo();
@@ -236,6 +237,7 @@ public interface ProductCategoryLink extends BizEntity {
 	 * @see #setLinkSeqId(String)
 	 * @see org.abchip.mimo.biz.product.category.CategoryPackage#getProductCategoryLink_LinkSeqId()
 	 * @model required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
@@ -288,7 +290,7 @@ public interface ProductCategoryLink extends BizEntity {
 	 * @return the value of the '<em>Sequence Num</em>' attribute.
 	 * @see #setSequenceNum(long)
 	 * @see org.abchip.mimo.biz.product.category.CategoryPackage#getProductCategoryLink_SequenceNum()
-	 * @model
+	 * @model annotation="mimo-ent-format type='numeric' precision='20' scale='0'"
 	 * @generated
 	 */
 	long getSequenceNum();
@@ -314,7 +316,7 @@ public interface ProductCategoryLink extends BizEntity {
 	 * @return the value of the '<em>Thru Date</em>' attribute.
 	 * @see #setThruDate(Date)
 	 * @see org.abchip.mimo.biz.product.category.CategoryPackage#getProductCategoryLink_ThruDate()
-	 * @model
+	 * @model annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getThruDate();
@@ -340,7 +342,7 @@ public interface ProductCategoryLink extends BizEntity {
 	 * @return the value of the '<em>Title Text</em>' attribute.
 	 * @see #setTitleText(String)
 	 * @see org.abchip.mimo.biz.product.category.CategoryPackage#getProductCategoryLink_TitleText()
-	 * @model
+	 * @model annotation="mimo-ent-format type='description' length='255'"
 	 * @generated
 	 */
 	String getTitleText();

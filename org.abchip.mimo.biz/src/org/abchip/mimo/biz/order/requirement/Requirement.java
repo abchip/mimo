@@ -67,7 +67,7 @@ public interface Requirement extends BizEntityTyped<RequirementType> {
 	 * @return the value of the '<em>Created By User Login</em>' attribute.
 	 * @see #setCreatedByUserLogin(String)
 	 * @see org.abchip.mimo.biz.order.requirement.RequirementPackage#getRequirement_CreatedByUserLogin()
-	 * @model
+	 * @model annotation="mimo-ent-format type='id-vlong' length='255'"
 	 * @generated
 	 */
 	String getCreatedByUserLogin();
@@ -93,7 +93,7 @@ public interface Requirement extends BizEntityTyped<RequirementType> {
 	 * @return the value of the '<em>Created Date</em>' attribute.
 	 * @see #setCreatedDate(Date)
 	 * @see org.abchip.mimo.biz.order.requirement.RequirementPackage#getRequirement_CreatedDate()
-	 * @model
+	 * @model annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getCreatedDate();
@@ -145,7 +145,7 @@ public interface Requirement extends BizEntityTyped<RequirementType> {
 	 * @return the value of the '<em>Description</em>' attribute.
 	 * @see #setDescription(String)
 	 * @see org.abchip.mimo.biz.order.requirement.RequirementPackage#getRequirement_Description()
-	 * @model
+	 * @model annotation="mimo-ent-format type='description' length='255'"
 	 * @generated
 	 */
 	String getDescription();
@@ -171,7 +171,7 @@ public interface Requirement extends BizEntityTyped<RequirementType> {
 	 * @return the value of the '<em>Estimated Budget</em>' attribute.
 	 * @see #setEstimatedBudget(BigDecimal)
 	 * @see org.abchip.mimo.biz.order.requirement.RequirementPackage#getRequirement_EstimatedBudget()
-	 * @model
+	 * @model annotation="mimo-ent-format type='currency-amount' precision='18' scale='2'"
 	 * @generated
 	 */
 	BigDecimal getEstimatedBudget();
@@ -249,7 +249,7 @@ public interface Requirement extends BizEntityTyped<RequirementType> {
 	 * @return the value of the '<em>Last Modified By User Login</em>' attribute.
 	 * @see #setLastModifiedByUserLogin(String)
 	 * @see org.abchip.mimo.biz.order.requirement.RequirementPackage#getRequirement_LastModifiedByUserLogin()
-	 * @model
+	 * @model annotation="mimo-ent-format type='id-vlong' length='255'"
 	 * @generated
 	 */
 	String getLastModifiedByUserLogin();
@@ -275,7 +275,7 @@ public interface Requirement extends BizEntityTyped<RequirementType> {
 	 * @return the value of the '<em>Last Modified Date</em>' attribute.
 	 * @see #setLastModifiedDate(Date)
 	 * @see org.abchip.mimo.biz.order.requirement.RequirementPackage#getRequirement_LastModifiedDate()
-	 * @model
+	 * @model annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getLastModifiedDate();
@@ -327,7 +327,7 @@ public interface Requirement extends BizEntityTyped<RequirementType> {
 	 * @return the value of the '<em>Quantity</em>' attribute.
 	 * @see #setQuantity(BigDecimal)
 	 * @see org.abchip.mimo.biz.order.requirement.RequirementPackage#getRequirement_Quantity()
-	 * @model
+	 * @model annotation="mimo-ent-format type='fixed-point' precision='18' scale='6'"
 	 * @generated
 	 */
 	BigDecimal getQuantity();
@@ -353,7 +353,7 @@ public interface Requirement extends BizEntityTyped<RequirementType> {
 	 * @return the value of the '<em>Reason</em>' attribute.
 	 * @see #setReason(String)
 	 * @see org.abchip.mimo.biz.order.requirement.RequirementPackage#getRequirement_Reason()
-	 * @model
+	 * @model annotation="mimo-ent-format type='long-varchar' length='255'"
 	 * @generated
 	 */
 	String getReason();
@@ -379,7 +379,7 @@ public interface Requirement extends BizEntityTyped<RequirementType> {
 	 * @return the value of the '<em>Required By Date</em>' attribute.
 	 * @see #setRequiredByDate(Date)
 	 * @see org.abchip.mimo.biz.order.requirement.RequirementPackage#getRequirement_RequiredByDate()
-	 * @model
+	 * @model annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getRequiredByDate();
@@ -406,6 +406,7 @@ public interface Requirement extends BizEntityTyped<RequirementType> {
 	 * @see #setRequirementId(String)
 	 * @see org.abchip.mimo.biz.order.requirement.RequirementPackage#getRequirement_RequirementId()
 	 * @model id="true" required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
@@ -432,7 +433,7 @@ public interface Requirement extends BizEntityTyped<RequirementType> {
 	 * @return the value of the '<em>Requirement Start Date</em>' attribute.
 	 * @see #setRequirementStartDate(Date)
 	 * @see org.abchip.mimo.biz.order.requirement.RequirementPackage#getRequirement_RequirementStartDate()
-	 * @model
+	 * @model annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getRequirementStartDate();
@@ -510,7 +511,7 @@ public interface Requirement extends BizEntityTyped<RequirementType> {
 	 * @return the value of the '<em>Use Case</em>' attribute.
 	 * @see #setUseCase(String)
 	 * @see org.abchip.mimo.biz.order.requirement.RequirementPackage#getRequirement_UseCase()
-	 * @model
+	 * @model annotation="mimo-ent-format type='very-long'"
 	 * @generated
 	 */
 	String getUseCase();
@@ -536,7 +537,9 @@ public interface Requirement extends BizEntityTyped<RequirementType> {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Requirement Attributes</em>' attribute list.
 	 * @see org.abchip.mimo.biz.order.requirement.RequirementPackage#getRequirement_RequirementAttributes()
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='RequirementAttribute'"
 	 * @generated
 	 */
@@ -553,7 +556,9 @@ public interface Requirement extends BizEntityTyped<RequirementType> {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Requirement Statuss</em>' attribute list.
 	 * @see org.abchip.mimo.biz.order.requirement.RequirementPackage#getRequirement_RequirementStatuss()
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='RequirementStatus'"
 	 * @generated
 	 */
@@ -570,7 +575,9 @@ public interface Requirement extends BizEntityTyped<RequirementType> {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Work Requirement Fulfillments</em>' attribute list.
 	 * @see org.abchip.mimo.biz.order.requirement.RequirementPackage#getRequirement_WorkRequirementFulfillments()
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='WorkRequirementFulfillment'"
 	 * @generated
 	 */
@@ -579,7 +586,9 @@ public interface Requirement extends BizEntityTyped<RequirementType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='DesiredFeature' route='requirementId'"
 	 * @generated
 	 */

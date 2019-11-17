@@ -7,7 +7,6 @@
  */
 package org.abchip.mimo.biz.service.schedule.impl;
 
-import java.lang.reflect.InvocationTargetException;
 import java.util.Date;
 import java.util.List;
 
@@ -15,7 +14,6 @@ import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.service.schedule.RecurrenceInfo;
 import org.abchip.mimo.biz.service.schedule.RecurrenceRule;
 import org.abchip.mimo.biz.service.schedule.SchedulePackage;
-import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 
 /**
@@ -248,26 +246,6 @@ public class RecurrenceInfoImpl extends BizEntityImpl implements RecurrenceInfo 
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
-		switch (operationID) {
-			case SchedulePackage.RECURRENCE_INFO___INVOICES:
-				return invoices();
-			case SchedulePackage.RECURRENCE_INFO___JOB_SANDBOXS:
-				return jobSandboxs();
-			case SchedulePackage.RECURRENCE_INFO___SHOPPING_LISTS:
-				return shoppingLists();
-			case SchedulePackage.RECURRENCE_INFO___WORK_EFFORTS:
-				return workEfforts();
-		}
-		return super.eInvoke(operationID, arguments);
 	}
 
 } //RecurrenceInfoImpl

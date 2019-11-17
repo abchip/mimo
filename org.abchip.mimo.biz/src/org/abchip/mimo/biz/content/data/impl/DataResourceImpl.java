@@ -7,7 +7,6 @@
  */
 package org.abchip.mimo.biz.content.data.impl;
 
-import java.lang.reflect.InvocationTargetException;
 import java.util.Date;
 
 import java.util.List;
@@ -25,7 +24,6 @@ import org.abchip.mimo.biz.content.survey.Survey;
 import org.abchip.mimo.biz.content.survey.SurveyResponse;
 import org.abchip.mimo.biz.impl.BizEntityTypedImpl;
 import org.abchip.mimo.biz.security.login.UserLogin;
-import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 
 /**
@@ -214,6 +212,26 @@ public class DataResourceImpl extends BizEntityTypedImpl<DataResourceType> imple
 	 * @generated
 	 */
 	@Override
+	public boolean isIsPublic() {
+		return (Boolean)eGet(DataPackage.Literals.DATA_RESOURCE__IS_PUBLIC, true);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setIsPublic(boolean newIsPublic) {
+		eSet(DataPackage.Literals.DATA_RESOURCE__IS_PUBLIC, newIsPublic);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public DataResourceType getDataResourceTypeId() {
 		return (DataResourceType)eGet(DataPackage.Literals.DATA_RESOURCE__DATA_RESOURCE_TYPE_ID, true);
 	}
@@ -266,26 +284,6 @@ public class DataResourceImpl extends BizEntityTypedImpl<DataResourceType> imple
 	@Override
 	public void setDataTemplateTypeId(DataTemplateType newDataTemplateTypeId) {
 		eSet(DataPackage.Literals.DATA_RESOURCE__DATA_TEMPLATE_TYPE_ID, newDataTemplateTypeId);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public boolean isIsPublic() {
-		return (Boolean)eGet(DataPackage.Literals.DATA_RESOURCE__IS_PUBLIC, true);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void setIsPublic(boolean newIsPublic) {
-		eSet(DataPackage.Literals.DATA_RESOURCE__IS_PUBLIC, newIsPublic);
 	}
 
 	/**
@@ -534,22 +532,6 @@ public class DataResourceImpl extends BizEntityTypedImpl<DataResourceType> imple
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
-		switch (operationID) {
-			case DataPackage.DATA_RESOURCE___CONTENTS:
-				return contents();
-			case DataPackage.DATA_RESOURCE___TEMPLATE_CONTENTS:
-				return templateContents();
-		}
-		return super.eInvoke(operationID, arguments);
 	}
 
 } //DataResourceImpl

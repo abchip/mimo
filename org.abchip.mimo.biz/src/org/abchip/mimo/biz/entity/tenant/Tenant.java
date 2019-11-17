@@ -43,7 +43,7 @@ public interface Tenant extends BizEntity {
 	 * @return the value of the '<em>Initial Path</em>' attribute.
 	 * @see #setInitialPath(String)
 	 * @see org.abchip.mimo.biz.entity.tenant.TenantPackage#getTenant_InitialPath()
-	 * @model
+	 * @model annotation="mimo-ent-format type='value' length='255'"
 	 * @generated
 	 */
 	String getInitialPath();
@@ -70,6 +70,7 @@ public interface Tenant extends BizEntity {
 	 * @see #setTenantId(String)
 	 * @see org.abchip.mimo.biz.entity.tenant.TenantPackage#getTenant_TenantId()
 	 * @model id="true" required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
@@ -96,7 +97,7 @@ public interface Tenant extends BizEntity {
 	 * @return the value of the '<em>Disabled</em>' attribute.
 	 * @see #setDisabled(boolean)
 	 * @see org.abchip.mimo.biz.entity.tenant.TenantPackage#getTenant_Disabled()
-	 * @model
+	 * @model annotation="mimo-ent-format type='indicator' length='1'"
 	 * @generated
 	 */
 	boolean isDisabled();
@@ -122,7 +123,7 @@ public interface Tenant extends BizEntity {
 	 * @return the value of the '<em>Tenant Name</em>' attribute.
 	 * @see #setTenantName(String)
 	 * @see org.abchip.mimo.biz.entity.tenant.TenantPackage#getTenant_TenantName()
-	 * @model
+	 * @model annotation="mimo-ent-format type='name' length='100'"
 	 * @generated
 	 */
 	String getTenantName();
@@ -148,7 +149,9 @@ public interface Tenant extends BizEntity {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Tenant Data Sources</em>' attribute list.
 	 * @see org.abchip.mimo.biz.entity.tenant.TenantPackage#getTenant_TenantDataSources()
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='TenantDataSource'"
 	 * @generated
 	 */
@@ -157,7 +160,9 @@ public interface Tenant extends BizEntity {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='TenantComponent' route='tenantId'"
 	 * @generated
 	 */
@@ -166,7 +171,8 @@ public interface Tenant extends BizEntity {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='TenantDomainName' route='tenantId'"
 	 * @generated
 	 */

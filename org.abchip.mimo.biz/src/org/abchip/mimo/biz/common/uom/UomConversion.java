@@ -43,7 +43,7 @@ public interface UomConversion extends BizEntity {
 	 * @return the value of the '<em>Conversion Factor</em>' attribute.
 	 * @see #setConversionFactor(double)
 	 * @see org.abchip.mimo.biz.common.uom.UomPackage#getUomConversion_ConversionFactor()
-	 * @model
+	 * @model annotation="mimo-ent-format type='floating-point'"
 	 * @generated
 	 */
 	double getConversionFactor();
@@ -69,7 +69,7 @@ public interface UomConversion extends BizEntity {
 	 * @return the value of the '<em>Decimal Scale</em>' attribute.
 	 * @see #setDecimalScale(long)
 	 * @see org.abchip.mimo.biz.common.uom.UomPackage#getUomConversion_DecimalScale()
-	 * @model
+	 * @model annotation="mimo-ent-format type='numeric' precision='20' scale='0'"
 	 * @generated
 	 */
 	long getDecimalScale();
@@ -95,7 +95,7 @@ public interface UomConversion extends BizEntity {
 	 * @return the value of the '<em>Rounding Mode</em>' attribute.
 	 * @see #setRoundingMode(String)
 	 * @see org.abchip.mimo.biz.common.uom.UomPackage#getUomConversion_RoundingMode()
-	 * @model
+	 * @model annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	String getRoundingMode();

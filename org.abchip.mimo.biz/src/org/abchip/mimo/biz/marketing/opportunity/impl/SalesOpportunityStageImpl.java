@@ -7,7 +7,6 @@
  */
 package org.abchip.mimo.biz.marketing.opportunity.impl;
 
-import java.lang.reflect.InvocationTargetException;
 import java.math.BigDecimal;
 
 import java.util.List;
@@ -15,7 +14,6 @@ import java.util.List;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.marketing.opportunity.OpportunityPackage;
 import org.abchip.mimo.biz.marketing.opportunity.SalesOpportunityStage;
-import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 
 /**
@@ -161,22 +159,6 @@ public class SalesOpportunityStageImpl extends BizEntityImpl implements SalesOpp
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
-		switch (operationID) {
-			case OpportunityPackage.SALES_OPPORTUNITY_STAGE___SALES_OPPORTUNITIES:
-				return salesOpportunities();
-			case OpportunityPackage.SALES_OPPORTUNITY_STAGE___SALES_OPPORTUNITY_HISTORIES:
-				return salesOpportunityHistories();
-		}
-		return super.eInvoke(operationID, arguments);
 	}
 
 } //SalesOpportunityStageImpl

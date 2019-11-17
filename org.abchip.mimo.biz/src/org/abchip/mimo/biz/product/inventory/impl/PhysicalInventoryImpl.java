@@ -7,14 +7,12 @@
  */
 package org.abchip.mimo.biz.product.inventory.impl;
 
-import java.lang.reflect.InvocationTargetException;
 import java.util.Date;
 import java.util.List;
 
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.product.inventory.InventoryPackage;
 import org.abchip.mimo.biz.product.inventory.PhysicalInventory;
-import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 
 /**
@@ -152,24 +150,6 @@ public class PhysicalInventoryImpl extends BizEntityImpl implements PhysicalInve
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
-		switch (operationID) {
-			case InventoryPackage.PHYSICAL_INVENTORY___ACCTG_TRANSS:
-				return acctgTranss();
-			case InventoryPackage.PHYSICAL_INVENTORY___INVENTORY_ITEM_DETAILS:
-				return inventoryItemDetails();
-			case InventoryPackage.PHYSICAL_INVENTORY___INVENTORY_ITEM_VARIANCES:
-				return inventoryItemVariances();
-		}
-		return super.eInvoke(operationID, arguments);
 	}
 
 	/**

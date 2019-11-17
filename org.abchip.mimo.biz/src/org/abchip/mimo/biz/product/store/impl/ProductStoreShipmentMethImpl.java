@@ -7,7 +7,6 @@
  */
 package org.abchip.mimo.biz.product.store.impl;
 
-import java.lang.reflect.InvocationTargetException;
 import java.math.BigDecimal;
 import java.util.List;
 
@@ -19,7 +18,6 @@ import org.abchip.mimo.biz.product.store.ProductStoreShipmentMeth;
 import org.abchip.mimo.biz.product.store.StorePackage;
 import org.abchip.mimo.biz.shipment.shipment.ShipmentGatewayConfig;
 import org.abchip.mimo.biz.shipment.shipment.ShipmentMethodType;
-import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 
 /**
@@ -213,26 +211,6 @@ public class ProductStoreShipmentMethImpl extends BizEntityImpl implements Produ
 	 * @generated
 	 */
 	@Override
-	public Geo getIncludeGeoId() {
-		return (Geo)eGet(StorePackage.Literals.PRODUCT_STORE_SHIPMENT_METH__INCLUDE_GEO_ID, true);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void setIncludeGeoId(Geo newIncludeGeoId) {
-		eSet(StorePackage.Literals.PRODUCT_STORE_SHIPMENT_METH__INCLUDE_GEO_ID, newIncludeGeoId);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public boolean isIncludeNoChargeItems() {
 		return (Boolean)eGet(StorePackage.Literals.PRODUCT_STORE_SHIPMENT_METH__INCLUDE_NO_CHARGE_ITEMS, true);
 	}
@@ -245,6 +223,26 @@ public class ProductStoreShipmentMethImpl extends BizEntityImpl implements Produ
 	@Override
 	public void setIncludeNoChargeItems(boolean newIncludeNoChargeItems) {
 		eSet(StorePackage.Literals.PRODUCT_STORE_SHIPMENT_METH__INCLUDE_NO_CHARGE_ITEMS, newIncludeNoChargeItems);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Geo getIncludeGeoId() {
+		return (Geo)eGet(StorePackage.Literals.PRODUCT_STORE_SHIPMENT_METH__INCLUDE_GEO_ID, true);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setIncludeGeoId(Geo newIncludeGeoId) {
+		eSet(StorePackage.Literals.PRODUCT_STORE_SHIPMENT_METH__INCLUDE_GEO_ID, newIncludeGeoId);
 	}
 
 	/**
@@ -657,20 +655,6 @@ public class ProductStoreShipmentMethImpl extends BizEntityImpl implements Produ
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
-		switch (operationID) {
-			case StorePackage.PRODUCT_STORE_SHIPMENT_METH___SHIPMENT_COST_ESTIMATES:
-				return shipmentCostEstimates();
-		}
-		return super.eInvoke(operationID, arguments);
 	}
 
 } //ProductStoreShipmentMethImpl

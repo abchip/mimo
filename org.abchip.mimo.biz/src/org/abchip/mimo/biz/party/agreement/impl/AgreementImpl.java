@@ -7,7 +7,6 @@
  */
 package org.abchip.mimo.biz.party.agreement.impl;
 
-import java.lang.reflect.InvocationTargetException;
 import java.util.Date;
 import java.util.List;
 
@@ -18,7 +17,6 @@ import org.abchip.mimo.biz.party.agreement.AgreementType;
 import org.abchip.mimo.biz.party.party.Party;
 import org.abchip.mimo.biz.party.party.RoleType;
 import org.abchip.mimo.biz.product.product.Product;
-import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 
 /**
@@ -327,24 +325,6 @@ public class AgreementImpl extends BizEntityTypedImpl<AgreementType> implements 
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
-		switch (operationID) {
-			case AgreementPackage.AGREEMENT___ADDENDUMS:
-				return addendums();
-			case AgreementPackage.AGREEMENT___AGREEMENT_TERMS:
-				return agreementTerms();
-			case AgreementPackage.AGREEMENT___SUPPLIER_ORDER_ITEM_SHIP_GROUPS:
-				return supplierOrderItemShipGroups();
-		}
-		return super.eInvoke(operationID, arguments);
 	}
 
 	/**

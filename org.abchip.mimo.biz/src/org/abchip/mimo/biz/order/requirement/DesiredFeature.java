@@ -20,7 +20,7 @@ import org.abchip.mimo.biz.product.feature.ProductFeature;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.order.requirement.DesiredFeature#getDesiredFeatureId <em>Desired Feature Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.requirement.DesiredFeature#isOptionalInd <em>Optional Ind</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.requirement.DesiredFeature#getOptionalInd <em>Optional Ind</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.requirement.DesiredFeature#getRequirementId <em>Requirement Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.requirement.DesiredFeature#getProductFeatureId <em>Product Feature Id</em>}</li>
  * </ul>
@@ -42,6 +42,7 @@ public interface DesiredFeature extends BizEntity {
 	 * @see #setDesiredFeatureId(String)
 	 * @see org.abchip.mimo.biz.order.requirement.RequirementPackage#getDesiredFeature_DesiredFeatureId()
 	 * @model required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
@@ -56,6 +57,32 @@ public interface DesiredFeature extends BizEntity {
 	 * @generated
 	 */
 	void setDesiredFeatureId(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Optional Ind</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Optional Ind</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Optional Ind</em>' attribute.
+	 * @see #setOptionalInd(char)
+	 * @see org.abchip.mimo.biz.order.requirement.RequirementPackage#getDesiredFeature_OptionalInd()
+	 * @model annotation="mimo-ent-format type='indicator' length='1'"
+	 * @generated
+	 */
+	char getOptionalInd();
+
+	/**
+	 * Sets the value of the '{@link org.abchip.mimo.biz.order.requirement.DesiredFeature#getOptionalInd <em>Optional Ind</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Optional Ind</em>' attribute.
+	 * @see #getOptionalInd()
+	 * @generated
+	 */
+	void setOptionalInd(char value);
 
 	/**
 	 * Returns the value of the '<em><b>Product Feature Id</b></em>' reference.
@@ -108,31 +135,5 @@ public interface DesiredFeature extends BizEntity {
 	 * @generated
 	 */
 	void setRequirementId(Requirement value);
-
-	/**
-	 * Returns the value of the '<em><b>Optional Ind</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Optional Ind</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Optional Ind</em>' attribute.
-	 * @see #setOptionalInd(boolean)
-	 * @see org.abchip.mimo.biz.order.requirement.RequirementPackage#getDesiredFeature_OptionalInd()
-	 * @model
-	 * @generated
-	 */
-	boolean isOptionalInd();
-
-	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.order.requirement.DesiredFeature#isOptionalInd <em>Optional Ind</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Optional Ind</em>' attribute.
-	 * @see #isOptionalInd()
-	 * @generated
-	 */
-	void setOptionalInd(boolean value);
 
 } // DesiredFeature

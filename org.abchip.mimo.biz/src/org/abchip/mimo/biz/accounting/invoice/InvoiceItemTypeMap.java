@@ -40,6 +40,7 @@ public interface InvoiceItemTypeMap extends BizEntity {
 	 * @see #setInvoiceItemMapKey(String)
 	 * @see org.abchip.mimo.biz.accounting.invoice.InvoicePackage#getInvoiceItemTypeMap_InvoiceItemMapKey()
 	 * @model required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */

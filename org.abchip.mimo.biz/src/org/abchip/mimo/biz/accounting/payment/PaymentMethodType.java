@@ -43,7 +43,7 @@ public interface PaymentMethodType extends BizEntityType<PaymentMethod> {
 	 * @return the value of the '<em>Description</em>' attribute.
 	 * @see #setDescription(String)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPaymentMethodType_Description()
-	 * @model
+	 * @model annotation="mimo-ent-format type='description' length='255'"
 	 * @generated
 	 */
 	String getDescription();
@@ -96,6 +96,7 @@ public interface PaymentMethodType extends BizEntityType<PaymentMethod> {
 	 * @see #setPaymentMethodTypeId(String)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPaymentMethodType_PaymentMethodTypeId()
 	 * @model id="true" required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
@@ -122,7 +123,9 @@ public interface PaymentMethodType extends BizEntityType<PaymentMethod> {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Payment Method Type Gl Accounts</em>' attribute list.
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPaymentMethodType_PaymentMethodTypeGlAccounts()
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='PaymentMethodTypeGlAccount'"
 	 * @generated
 	 */
@@ -131,7 +134,8 @@ public interface PaymentMethodType extends BizEntityType<PaymentMethod> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='OrderPaymentPreference' route='paymentMethodTypeId'"
 	 * @generated
 	 */
@@ -140,7 +144,8 @@ public interface PaymentMethodType extends BizEntityType<PaymentMethod> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='PaymentGatewayResponse' route='paymentMethodTypeId'"
 	 * @generated
 	 */
@@ -149,7 +154,8 @@ public interface PaymentMethodType extends BizEntityType<PaymentMethod> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='PaymentMethod' route='paymentMethodTypeId'"
 	 * @generated
 	 */
@@ -158,7 +164,8 @@ public interface PaymentMethodType extends BizEntityType<PaymentMethod> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='Payment' route='paymentMethodTypeId'"
 	 * @generated
 	 */

@@ -7,13 +7,11 @@
  */
 package org.abchip.mimo.biz.accounting.ledger.impl;
 
-import java.lang.reflect.InvocationTargetException;
 import java.util.List;
 
 import org.abchip.mimo.biz.accounting.ledger.GlFiscalType;
 import org.abchip.mimo.biz.accounting.ledger.LedgerPackage;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
-import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 
 /**
@@ -84,20 +82,6 @@ public class GlFiscalTypeImpl extends BizEntityImpl implements GlFiscalType {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
-		switch (operationID) {
-			case LedgerPackage.GL_FISCAL_TYPE___ACCTG_TRANSS:
-				return acctgTranss();
-		}
-		return super.eInvoke(operationID, arguments);
 	}
 
 	/**

@@ -7,13 +7,11 @@
  */
 package org.abchip.mimo.biz.humanres.employment.impl;
 
-import java.lang.reflect.InvocationTargetException;
 import java.util.List;
 
 import org.abchip.mimo.biz.humanres.employment.EmploymentPackage;
 import org.abchip.mimo.biz.humanres.employment.TerminationType;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
-import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 
 /**
@@ -127,20 +125,6 @@ public class TerminationTypeImpl extends BizEntityImpl implements TerminationTyp
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
-		switch (operationID) {
-			case EmploymentPackage.TERMINATION_TYPE___CHILD_TERMINATION_TYPES:
-				return childTerminationTypes();
-		}
-		return super.eInvoke(operationID, arguments);
 	}
 
 	/**

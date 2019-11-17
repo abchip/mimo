@@ -7,7 +7,6 @@
  */
 package org.abchip.mimo.biz.accounting.finaccount.impl;
 
-import java.lang.reflect.InvocationTargetException;
 import java.math.BigDecimal;
 import java.util.Date;
 
@@ -21,7 +20,6 @@ import org.abchip.mimo.biz.accounting.payment.PaymentMethod;
 import org.abchip.mimo.biz.common.uom.Uom;
 import org.abchip.mimo.biz.impl.BizEntityTypedImpl;
 import org.abchip.mimo.biz.party.party.Party;
-import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 
 /**
@@ -447,28 +445,6 @@ public class FinAccountImpl extends BizEntityTypedImpl<FinAccountType> implement
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
-		switch (operationID) {
-			case FinaccountPackage.FIN_ACCOUNT___FIN_ACCOUNT_AUTHS:
-				return finAccountAuths();
-			case FinaccountPackage.FIN_ACCOUNT___FIN_ACCOUNT_TRANSS:
-				return finAccountTranss();
-			case FinaccountPackage.FIN_ACCOUNT___ORDER_PAYMENT_PREFERENCES:
-				return orderPaymentPreferences();
-			case FinaccountPackage.FIN_ACCOUNT___PAYMENT_METHODS:
-				return paymentMethods();
-			case FinaccountPackage.FIN_ACCOUNT___RETURN_HEADERS:
-				return returnHeaders();
-		}
-		return super.eInvoke(operationID, arguments);
 	}
 
 	/**

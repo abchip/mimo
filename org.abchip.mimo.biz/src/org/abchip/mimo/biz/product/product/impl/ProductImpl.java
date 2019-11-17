@@ -7,7 +7,6 @@
  */
 package org.abchip.mimo.biz.product.product.impl;
 
-import java.lang.reflect.InvocationTargetException;
 import java.math.BigDecimal;
 import java.util.Date;
 import java.util.List;
@@ -25,7 +24,6 @@ import org.abchip.mimo.biz.product.product.ProductPackage;
 import org.abchip.mimo.biz.product.product.ProductType;
 import org.abchip.mimo.biz.security.login.UserLogin;
 import org.abchip.mimo.biz.shipment.shipment.ShipmentBoxType;
-import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 
 /**
@@ -40,7 +38,7 @@ import org.eclipse.emf.ecore.EClass;
  *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductImpl#isAutoCreateKeywords <em>Auto Create Keywords</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductImpl#getBillOfMaterialLevel <em>Bill Of Material Level</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductImpl#getBrandName <em>Brand Name</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductImpl#isChargeShipping <em>Charge Shipping</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductImpl#getChargeShipping <em>Charge Shipping</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductImpl#getComments <em>Comments</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductImpl#getConfigId <em>Config Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductImpl#getCreatedDate <em>Created Date</em>}</li>
@@ -60,7 +58,7 @@ import org.eclipse.emf.ecore.EClass;
  *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductImpl#getLongDescription <em>Long Description</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductImpl#getLotIdFilledIn <em>Lot Id Filled In</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductImpl#getMediumImageUrl <em>Medium Image Url</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductImpl#isOrderDecimalQuantity <em>Order Decimal Quantity</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductImpl#getOrderDecimalQuantity <em>Order Decimal Quantity</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductImpl#getOriginalImageUrl <em>Original Image Url</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductImpl#getPiecesIncluded <em>Pieces Included</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductImpl#getPriceDetailText <em>Price Detail Text</em>}</li>
@@ -167,26 +165,6 @@ public class ProductImpl extends BizEntityTypedImpl<ProductType> implements Prod
 	 * @generated
 	 */
 	@Override
-	public boolean isAutoCreateKeywords() {
-		return (Boolean)eGet(ProductPackage.Literals.PRODUCT__AUTO_CREATE_KEYWORDS, true);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void setAutoCreateKeywords(boolean newAutoCreateKeywords) {
-		eSet(ProductPackage.Literals.PRODUCT__AUTO_CREATE_KEYWORDS, newAutoCreateKeywords);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public long getBillOfMaterialLevel() {
 		return (Long)eGet(ProductPackage.Literals.PRODUCT__BILL_OF_MATERIAL_LEVEL, true);
 	}
@@ -227,8 +205,8 @@ public class ProductImpl extends BizEntityTypedImpl<ProductType> implements Prod
 	 * @generated
 	 */
 	@Override
-	public boolean isChargeShipping() {
-		return (Boolean)eGet(ProductPackage.Literals.PRODUCT__CHARGE_SHIPPING, true);
+	public char getChargeShipping() {
+		return (Character)eGet(ProductPackage.Literals.PRODUCT__CHARGE_SHIPPING, true);
 	}
 
 	/**
@@ -237,7 +215,7 @@ public class ProductImpl extends BizEntityTypedImpl<ProductType> implements Prod
 	 * @generated
 	 */
 	@Override
-	public void setChargeShipping(boolean newChargeShipping) {
+	public void setChargeShipping(char newChargeShipping) {
 		eSet(ProductPackage.Literals.PRODUCT__CHARGE_SHIPPING, newChargeShipping);
 	}
 
@@ -467,26 +445,6 @@ public class ProductImpl extends BizEntityTypedImpl<ProductType> implements Prod
 	 * @generated
 	 */
 	@Override
-	public Uom getHeightUomId() {
-		return (Uom)eGet(ProductPackage.Literals.PRODUCT__HEIGHT_UOM_ID, true);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void setHeightUomId(Uom newHeightUomId) {
-		eSet(ProductPackage.Literals.PRODUCT__HEIGHT_UOM_ID, newHeightUomId);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public boolean isInShippingBox() {
 		return (Boolean)eGet(ProductPackage.Literals.PRODUCT__IN_SHIPPING_BOX, true);
 	}
@@ -519,6 +477,26 @@ public class ProductImpl extends BizEntityTypedImpl<ProductType> implements Prod
 	@Override
 	public void setIncludeInPromotions(boolean newIncludeInPromotions) {
 		eSet(ProductPackage.Literals.PRODUCT__INCLUDE_IN_PROMOTIONS, newIncludeInPromotions);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Uom getHeightUomId() {
+		return (Uom)eGet(ProductPackage.Literals.PRODUCT__HEIGHT_UOM_ID, true);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setHeightUomId(Uom newHeightUomId) {
+		eSet(ProductPackage.Literals.PRODUCT__HEIGHT_UOM_ID, newHeightUomId);
 	}
 
 	/**
@@ -747,8 +725,8 @@ public class ProductImpl extends BizEntityTypedImpl<ProductType> implements Prod
 	 * @generated
 	 */
 	@Override
-	public boolean isOrderDecimalQuantity() {
-		return (Boolean)eGet(ProductPackage.Literals.PRODUCT__ORDER_DECIMAL_QUANTITY, true);
+	public char getOrderDecimalQuantity() {
+		return (Character)eGet(ProductPackage.Literals.PRODUCT__ORDER_DECIMAL_QUANTITY, true);
 	}
 
 	/**
@@ -757,7 +735,7 @@ public class ProductImpl extends BizEntityTypedImpl<ProductType> implements Prod
 	 * @generated
 	 */
 	@Override
-	public void setOrderDecimalQuantity(boolean newOrderDecimalQuantity) {
+	public void setOrderDecimalQuantity(char newOrderDecimalQuantity) {
 		eSet(ProductPackage.Literals.PRODUCT__ORDER_DECIMAL_QUANTITY, newOrderDecimalQuantity);
 	}
 
@@ -1825,70 +1803,6 @@ public class ProductImpl extends BizEntityTypedImpl<ProductType> implements Prod
 	 * @generated
 	 */
 	@Override
-	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
-		switch (operationID) {
-			case ProductPackage.PRODUCT___AGREEMENTS:
-				return agreements();
-			case ProductPackage.PRODUCT___CART_ABANDONED_LINES:
-				return cartAbandonedLines();
-			case ProductPackage.PRODUCT___COST_COMPONENTS:
-				return costComponents();
-			case ProductPackage.PRODUCT___CUST_REQUEST_ITEMS:
-				return custRequestItems();
-			case ProductPackage.PRODUCT___GOOD_IDENTIFICATIONS:
-				return goodIdentifications();
-			case ProductPackage.PRODUCT___INSTANCE_OF_FIXED_ASSETS:
-				return instanceOfFixedAssets();
-			case ProductPackage.PRODUCT___INVENTORY_ITEMS:
-				return inventoryItems();
-			case ProductPackage.PRODUCT___INVOICE_ITEMS:
-				return invoiceItems();
-			case ProductPackage.PRODUCT___ORDER_ITEMS:
-				return orderItems();
-			case ProductPackage.PRODUCT___PRODUCT_FOR_PRODUCT_MANUFACTURING_RULES:
-				return productForProductManufacturingRules();
-			case ProductPackage.PRODUCT___PRODUCT_GROUP_ORDERS:
-				return productGroupOrders();
-			case ProductPackage.PRODUCT___PRODUCT_IN_PRODUCT_MANUFACTURING_RULES:
-				return productInProductManufacturingRules();
-			case ProductPackage.PRODUCT___PRODUCT_MANUFACTURING_RULES:
-				return productManufacturingRules();
-			case ProductPackage.PRODUCT___PRODUCT_PRODUCT_CONFIG_STATSS:
-				return productProductConfigStatss();
-			case ProductPackage.PRODUCT___PRODUCT_REVIEWS:
-				return productReviews();
-			case ProductPackage.PRODUCT___PRODUCT_STORE_SURVEY_APPLS:
-				return productStoreSurveyAppls();
-			case ProductPackage.PRODUCT___PRODUCT_SUBST_PRODUCT_MANUFACTURING_RULES:
-				return productSubstProductManufacturingRules();
-			case ProductPackage.PRODUCT___QUOTE_ITEMS:
-				return quoteItems();
-			case ProductPackage.PRODUCT___REORDER_GUIDELINES:
-				return reorderGuidelines();
-			case ProductPackage.PRODUCT___REQUIREMENTS:
-				return requirements();
-			case ProductPackage.PRODUCT___RETURN_ITEMS:
-				return returnItems();
-			case ProductPackage.PRODUCT___SALES_FORECAST_DETAILS:
-				return salesForecastDetails();
-			case ProductPackage.PRODUCT___SHIPMENT_ITEMS:
-				return shipmentItems();
-			case ProductPackage.PRODUCT___SHIPMENT_RECEIPTS:
-				return shipmentReceipts();
-			case ProductPackage.PRODUCT___SHOPPING_LIST_ITEMS:
-				return shoppingListItems();
-			case ProductPackage.PRODUCT___SUBSCRIPTIONS:
-				return subscriptions();
-		}
-		return super.eInvoke(operationID, arguments);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public ProductType getProductTypeId() {
 		return (ProductType)eGet(ProductPackage.Literals.PRODUCT__PRODUCT_TYPE_ID, true);
 	}
@@ -1981,6 +1895,26 @@ public class ProductImpl extends BizEntityTypedImpl<ProductType> implements Prod
 	@Override
 	public void setProductId(String newProductId) {
 		eSet(ProductPackage.Literals.PRODUCT__PRODUCT_ID, newProductId);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public boolean isAutoCreateKeywords() {
+		return (Boolean)eGet(ProductPackage.Literals.PRODUCT__AUTO_CREATE_KEYWORDS, true);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setAutoCreateKeywords(boolean newAutoCreateKeywords) {
+		eSet(ProductPackage.Literals.PRODUCT__AUTO_CREATE_KEYWORDS, newAutoCreateKeywords);
 	}
 
 } //ProductImpl

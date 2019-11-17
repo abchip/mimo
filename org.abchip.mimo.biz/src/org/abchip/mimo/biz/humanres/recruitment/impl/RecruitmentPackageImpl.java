@@ -77,6 +77,7 @@ import org.abchip.mimo.biz.entity.crypto.CryptoPackage;
 import org.abchip.mimo.biz.entity.crypto.impl.CryptoPackageImpl;
 import org.abchip.mimo.biz.entity.group.GroupPackage;
 import org.abchip.mimo.biz.entity.group.impl.GroupPackageImpl;
+import org.abchip.mimo.biz.entity.impl.EntityPackageImpl;
 import org.abchip.mimo.biz.entity.sequence.SequencePackage;
 import org.abchip.mimo.biz.entity.sequence.impl.SequencePackageImpl;
 import org.abchip.mimo.biz.entity.synchronization.SynchronizationPackage;
@@ -198,7 +199,6 @@ import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EGenericType;
-import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 
 import org.eclipse.emf.ecore.EReference;
@@ -347,6 +347,8 @@ public class RecruitmentPackageImpl extends EPackageImpl implements RecruitmentP
 		SurveyPackageImpl theSurveyPackage = (SurveyPackageImpl)(registeredPackage instanceof SurveyPackageImpl ? registeredPackage : SurveyPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(WebsitePackage.eNS_URI);
 		WebsitePackageImpl theWebsitePackage = (WebsitePackageImpl)(registeredPackage instanceof WebsitePackageImpl ? registeredPackage : WebsitePackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(org.abchip.mimo.biz.entity.EntityPackage.eNS_URI);
+		EntityPackageImpl theEntityPackage = (EntityPackageImpl)(registeredPackage instanceof EntityPackageImpl ? registeredPackage : org.abchip.mimo.biz.entity.EntityPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(AuditPackage.eNS_URI);
 		AuditPackageImpl theAuditPackage = (AuditPackageImpl)(registeredPackage instanceof AuditPackageImpl ? registeredPackage : AuditPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(CryptoPackage.eNS_URI);
@@ -500,6 +502,7 @@ public class RecruitmentPackageImpl extends EPackageImpl implements RecruitmentP
 		thePreferencePackage.createPackageContents();
 		theSurveyPackage.createPackageContents();
 		theWebsitePackage.createPackageContents();
+		theEntityPackage.createPackageContents();
 		theAuditPackage.createPackageContents();
 		theCryptoPackage.createPackageContents();
 		theGroupPackage.createPackageContents();
@@ -594,6 +597,7 @@ public class RecruitmentPackageImpl extends EPackageImpl implements RecruitmentP
 		thePreferencePackage.initializePackageContents();
 		theSurveyPackage.initializePackageContents();
 		theWebsitePackage.initializePackageContents();
+		theEntityPackage.initializePackageContents();
 		theAuditPackage.initializePackageContents();
 		theCryptoPackage.initializePackageContents();
 		theGroupPackage.initializePackageContents();
@@ -788,16 +792,6 @@ public class RecruitmentPackageImpl extends EPackageImpl implements RecruitmentP
 	 * @generated
 	 */
 	@Override
-	public EOperation getJobInterviewType__JobInterviews() {
-		return jobInterviewTypeEClass.getEOperations().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public EClass getJobRequisition() {
 		return jobRequisitionEClass;
 	}
@@ -898,26 +892,6 @@ public class RecruitmentPackageImpl extends EPackageImpl implements RecruitmentP
 	 * @generated
 	 */
 	@Override
-	public EOperation getJobRequisition__EmploymentApps() {
-		return jobRequisitionEClass.getEOperations().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EOperation getJobRequisition__JobInterviews() {
-		return jobRequisitionEClass.getEOperations().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public EAttribute getJobRequisition_JobRequisitionDate() {
 		return (EAttribute)jobRequisitionEClass.getEStructuralFeatures().get(7);
 	}
@@ -1004,7 +978,6 @@ public class RecruitmentPackageImpl extends EPackageImpl implements RecruitmentP
 		jobInterviewTypeEClass = createEClass(JOB_INTERVIEW_TYPE);
 		createEAttribute(jobInterviewTypeEClass, JOB_INTERVIEW_TYPE__JOB_INTERVIEW_TYPE_ID);
 		createEAttribute(jobInterviewTypeEClass, JOB_INTERVIEW_TYPE__DESCRIPTION);
-		createEOperation(jobInterviewTypeEClass, JOB_INTERVIEW_TYPE___JOB_INTERVIEWS);
 
 		jobRequisitionEClass = createEClass(JOB_REQUISITION);
 		createEAttribute(jobRequisitionEClass, JOB_REQUISITION__JOB_REQUISITION_ID);
@@ -1021,8 +994,6 @@ public class RecruitmentPackageImpl extends EPackageImpl implements RecruitmentP
 		createEReference(jobRequisitionEClass, JOB_REQUISITION__SKILL_TYPE_ID);
 		createEReference(jobRequisitionEClass, JOB_REQUISITION__EXAM_TYPE_ENUM_ID);
 		createEReference(jobRequisitionEClass, JOB_REQUISITION__JOB_POSTING_TYPE_ENUM_ID);
-		createEOperation(jobRequisitionEClass, JOB_REQUISITION___EMPLOYMENT_APPS);
-		createEOperation(jobRequisitionEClass, JOB_REQUISITION___JOB_INTERVIEWS);
 	}
 
 	/**
@@ -1069,7 +1040,7 @@ public class RecruitmentPackageImpl extends EPackageImpl implements RecruitmentP
 		jobInterviewTypeEClass.getEGenericSuperTypes().add(g1);
 		jobRequisitionEClass.getESuperTypes().add(theBizPackage.getBizEntity());
 
-		// Initialize classes, features, and operations; add parameters
+		// Initialize classes and features; add operations and parameters
 		initEClass(jobInterviewEClass, JobInterview.class, "JobInterview", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getJobInterview_JobInterviewId(), ecorePackage.getEString(), "jobInterviewId", null, 1, 1, JobInterview.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getJobInterview_JobInterviewDate(), ecorePackage.getEDate(), "jobInterviewDate", null, 0, 1, JobInterview.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1089,7 +1060,7 @@ public class RecruitmentPackageImpl extends EPackageImpl implements RecruitmentP
 		initEAttribute(getJobInterviewType_JobInterviewTypeId(), ecorePackage.getEString(), "jobInterviewTypeId", null, 1, 1, JobInterviewType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getJobInterviewType_Description(), ecorePackage.getEString(), "description", null, 0, 1, JobInterviewType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEOperation(getJobInterviewType__JobInterviews(), ecorePackage.getEString(), "jobInterviews", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(jobInterviewTypeEClass, ecorePackage.getEString(), "jobInterviews", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(jobRequisitionEClass, JobRequisition.class, "JobRequisition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getJobRequisition_JobRequisitionId(), ecorePackage.getEString(), "jobRequisitionId", null, 1, 1, JobRequisition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1097,7 +1068,7 @@ public class RecruitmentPackageImpl extends EPackageImpl implements RecruitmentP
 		initEAttribute(getJobRequisition_DurationMonths(), ecorePackage.getELong(), "durationMonths", null, 0, 1, JobRequisition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getJobRequisition_ExperienceMonths(), ecorePackage.getELong(), "experienceMonths", null, 0, 1, JobRequisition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getJobRequisition_ExperienceYears(), ecorePackage.getELong(), "experienceYears", null, 0, 1, JobRequisition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getJobRequisition_Gender(), ecorePackage.getEBoolean(), "gender", null, 0, 1, JobRequisition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getJobRequisition_Gender(), ecorePackage.getEChar(), "gender", null, 0, 1, JobRequisition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getJobRequisition_JobLocation(), ecorePackage.getEString(), "jobLocation", null, 0, 1, JobRequisition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getJobRequisition_JobRequisitionDate(), ecorePackage.getEDate(), "jobRequisitionDate", null, 0, 1, JobRequisition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getJobRequisition_NoOfResources(), ecorePackage.getELong(), "noOfResources", null, 0, 1, JobRequisition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1110,17 +1081,164 @@ public class RecruitmentPackageImpl extends EPackageImpl implements RecruitmentP
 		initEReference(getJobRequisition_JobPostingTypeEnumId(), theEnumPackage.getEnumeration(), null, "jobPostingTypeEnumId", null, 0, 1, JobRequisition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getJobRequisition_JobPostingTypeEnumId().getEKeys().add(theEnumPackage.getEnumeration_EnumId());
 
-		initEOperation(getJobRequisition__EmploymentApps(), ecorePackage.getEString(), "employmentApps", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(jobRequisitionEClass, ecorePackage.getEString(), "employmentApps", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		initEOperation(getJobRequisition__JobInterviews(), ecorePackage.getEString(), "jobInterviews", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(jobRequisitionEClass, ecorePackage.getEString(), "jobInterviews", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		// Create annotations
+		// mimo-ent-format
+		createMimoentformatAnnotations();
 		// mimo-ent-slot
 		createMimoentslotAnnotations();
 		// mimo-ent-frame
 		createMimoentframeAnnotations();
 		// mimo-ent-domain
 		createMimoentdomainAnnotations();
+	}
+
+	/**
+	 * Initializes the annotations for <b>mimo-ent-format</b>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void createMimoentformatAnnotations() {
+		String source = "mimo-ent-format";
+		addAnnotation
+		  (getJobInterview_JobInterviewId(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (getJobInterview_JobInterviewDate(),
+		   source,
+		   new String[] {
+			   "type", "date"
+		   });
+		addAnnotation
+		  (getJobInterview_JobInterviewResult(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (jobInterviewTypeEClass.getEOperations().get(0),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (getJobInterviewType_JobInterviewTypeId(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (getJobInterviewType_Description(),
+		   source,
+		   new String[] {
+			   "type", "description",
+			   "length", "255"
+		   });
+		addAnnotation
+		  (jobRequisitionEClass.getEOperations().get(0),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (jobRequisitionEClass.getEOperations().get(1),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (getJobRequisition_JobRequisitionId(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (getJobRequisition_Age(),
+		   source,
+		   new String[] {
+			   "type", "numeric",
+			   "precision", "20",
+			   "scale", "0"
+		   });
+		addAnnotation
+		  (getJobRequisition_DurationMonths(),
+		   source,
+		   new String[] {
+			   "type", "numeric",
+			   "precision", "20",
+			   "scale", "0"
+		   });
+		addAnnotation
+		  (getJobRequisition_ExperienceMonths(),
+		   source,
+		   new String[] {
+			   "type", "numeric",
+			   "precision", "20",
+			   "scale", "0"
+		   });
+		addAnnotation
+		  (getJobRequisition_ExperienceYears(),
+		   source,
+		   new String[] {
+			   "type", "numeric",
+			   "precision", "20",
+			   "scale", "0"
+		   });
+		addAnnotation
+		  (getJobRequisition_Gender(),
+		   source,
+		   new String[] {
+			   "type", "indicator",
+			   "length", "1"
+		   });
+		addAnnotation
+		  (getJobRequisition_JobLocation(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (getJobRequisition_JobRequisitionDate(),
+		   source,
+		   new String[] {
+			   "type", "date"
+		   });
+		addAnnotation
+		  (getJobRequisition_NoOfResources(),
+		   source,
+		   new String[] {
+			   "type", "numeric",
+			   "precision", "20",
+			   "scale", "0"
+		   });
+		addAnnotation
+		  (getJobRequisition_Qualification(),
+		   source,
+		   new String[] {
+			   "type", "id-long",
+			   "length", "60"
+		   });
+		addAnnotation
+		  (getJobRequisition_RequiredOnDate(),
+		   source,
+		   new String[] {
+			   "type", "date"
+		   });
 	}
 
 	/**
@@ -1138,7 +1256,7 @@ public class RecruitmentPackageImpl extends EPackageImpl implements RecruitmentP
 			   "key", "true"
 		   });
 		addAnnotation
-		  (getJobInterviewType__JobInterviews(),
+		  (jobInterviewTypeEClass.getEOperations().get(0),
 		   source,
 		   new String[] {
 			   "derived", "true"
@@ -1150,13 +1268,13 @@ public class RecruitmentPackageImpl extends EPackageImpl implements RecruitmentP
 			   "key", "true"
 		   });
 		addAnnotation
-		  (getJobRequisition__EmploymentApps(),
+		  (jobRequisitionEClass.getEOperations().get(0),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (getJobRequisition__JobInterviews(),
+		  (jobRequisitionEClass.getEOperations().get(1),
 		   source,
 		   new String[] {
 			   "derived", "true"
@@ -1178,7 +1296,7 @@ public class RecruitmentPackageImpl extends EPackageImpl implements RecruitmentP
 	protected void createMimoentdomainAnnotations() {
 		String source = "mimo-ent-domain";
 		addAnnotation
-		  (getJobInterviewType__JobInterviews(),
+		  (jobInterviewTypeEClass.getEOperations().get(0),
 		   source,
 		   new String[] {
 			   "frame", "JobInterview",
@@ -1188,7 +1306,7 @@ public class RecruitmentPackageImpl extends EPackageImpl implements RecruitmentP
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (getJobRequisition__EmploymentApps(),
+		  (jobRequisitionEClass.getEOperations().get(0),
 		   source,
 		   new String[] {
 			   "frame", "EmploymentApp",
@@ -1198,7 +1316,7 @@ public class RecruitmentPackageImpl extends EPackageImpl implements RecruitmentP
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (getJobRequisition__JobInterviews(),
+		  (jobRequisitionEClass.getEOperations().get(1),
 		   source,
 		   new String[] {
 			   "frame", "JobInterview",

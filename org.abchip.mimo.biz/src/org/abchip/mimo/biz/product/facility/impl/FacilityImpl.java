@@ -7,7 +7,6 @@
  */
 package org.abchip.mimo.biz.product.facility.impl;
 
-import java.lang.reflect.InvocationTargetException;
 import java.math.BigDecimal;
 import java.util.Date;
 import java.util.List;
@@ -22,7 +21,6 @@ import org.abchip.mimo.biz.product.facility.FacilityPackage;
 import org.abchip.mimo.biz.product.facility.FacilityType;
 import org.abchip.mimo.biz.product.inventory.InventoryItemType;
 import org.abchip.mimo.biz.product.store.ProductStore;
-import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 
 /**
@@ -634,60 +632,6 @@ public class FacilityImpl extends BizEntityTypedImpl<FacilityType> implements Fa
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
-		switch (operationID) {
-			case FacilityPackage.FACILITY___CHILD_FACILITIES:
-				return childFacilities();
-			case FacilityPackage.FACILITY___CONTAINERS:
-				return containers();
-			case FacilityPackage.FACILITY___DEST_DELIVERIES:
-				return destDeliveries();
-			case FacilityPackage.FACILITY___DEST_SHIPMENT_ROUTE_SEGMENTS:
-				return destShipmentRouteSegments();
-			case FacilityPackage.FACILITY___DESTINATION_SHIPMENTS:
-				return destinationShipments();
-			case FacilityPackage.FACILITY___INVENTORY_ITEMS:
-				return inventoryItems();
-			case FacilityPackage.FACILITY___INVENTORY_TRANSFERS:
-				return inventoryTransfers();
-			case FacilityPackage.FACILITY___LOCATED_AT_FIXED_ASSETS:
-				return locatedAtFixedAssets();
-			case FacilityPackage.FACILITY___ORDER_ITEM_SHIP_GROUPS:
-				return orderItemShipGroups();
-			case FacilityPackage.FACILITY___ORIGIN_DELIVERIES:
-				return originDeliveries();
-			case FacilityPackage.FACILITY___ORIGIN_ORDER_HEADERS:
-				return originOrderHeaders();
-			case FacilityPackage.FACILITY___ORIGIN_SHIPMENT_ROUTE_SEGMENTS:
-				return originShipmentRouteSegments();
-			case FacilityPackage.FACILITY___ORIGIN_SHIPMENTS:
-				return originShipments();
-			case FacilityPackage.FACILITY___PICKLISTS:
-				return picklists();
-			case FacilityPackage.FACILITY___PRODUCT_FACILITIES:
-				return productFacilities();
-			case FacilityPackage.FACILITY___PRODUCTS:
-				return products();
-			case FacilityPackage.FACILITY___REORDER_GUIDELINES:
-				return reorderGuidelines();
-			case FacilityPackage.FACILITY___REQUIREMENTS:
-				return requirements();
-			case FacilityPackage.FACILITY___RETURN_HEADERS:
-				return returnHeaders();
-			case FacilityPackage.FACILITY___TO_INVENTORY_TRANSFERS:
-				return toInventoryTransfers();
-			case FacilityPackage.FACILITY___WORK_EFFORTS:
-				return workEfforts();
-		}
-		return super.eInvoke(operationID, arguments);
 	}
 
 	/**

@@ -39,7 +39,7 @@ public interface GlAccountCategory extends BizEntityTyped<GlAccountCategoryType>
 	 * @return the value of the '<em>Description</em>' attribute.
 	 * @see #setDescription(String)
 	 * @see org.abchip.mimo.biz.accounting.ledger.LedgerPackage#getGlAccountCategory_Description()
-	 * @model
+	 * @model annotation="mimo-ent-format type='description' length='255'"
 	 * @generated
 	 */
 	String getDescription();
@@ -92,6 +92,7 @@ public interface GlAccountCategory extends BizEntityTyped<GlAccountCategoryType>
 	 * @see #setGlAccountCategoryId(String)
 	 * @see org.abchip.mimo.biz.accounting.ledger.LedgerPackage#getGlAccountCategory_GlAccountCategoryId()
 	 * @model id="true" required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */

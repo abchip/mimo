@@ -53,7 +53,7 @@ public interface TimeEntry extends BizEntity {
 	 * @return the value of the '<em>Comments</em>' attribute.
 	 * @see #setComments(String)
 	 * @see org.abchip.mimo.biz.workeffort.timesheet.TimesheetPackage#getTimeEntry_Comments()
-	 * @model
+	 * @model annotation="mimo-ent-format type='comment' length='255'"
 	 * @generated
 	 */
 	String getComments();
@@ -79,7 +79,7 @@ public interface TimeEntry extends BizEntity {
 	 * @return the value of the '<em>From Date</em>' attribute.
 	 * @see #setFromDate(Date)
 	 * @see org.abchip.mimo.biz.workeffort.timesheet.TimesheetPackage#getTimeEntry_FromDate()
-	 * @model
+	 * @model annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getFromDate();
@@ -105,7 +105,7 @@ public interface TimeEntry extends BizEntity {
 	 * @return the value of the '<em>Hours</em>' attribute.
 	 * @see #setHours(double)
 	 * @see org.abchip.mimo.biz.workeffort.timesheet.TimesheetPackage#getTimeEntry_Hours()
-	 * @model
+	 * @model annotation="mimo-ent-format type='floating-point'"
 	 * @generated
 	 */
 	double getHours();
@@ -157,7 +157,7 @@ public interface TimeEntry extends BizEntity {
 	 * @return the value of the '<em>Invoice Item Seq Id</em>' attribute.
 	 * @see #setInvoiceItemSeqId(String)
 	 * @see org.abchip.mimo.biz.workeffort.timesheet.TimesheetPackage#getTimeEntry_InvoiceItemSeqId()
-	 * @model
+	 * @model annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	String getInvoiceItemSeqId();
@@ -235,7 +235,7 @@ public interface TimeEntry extends BizEntity {
 	 * @return the value of the '<em>Thru Date</em>' attribute.
 	 * @see #setThruDate(Date)
 	 * @see org.abchip.mimo.biz.workeffort.timesheet.TimesheetPackage#getTimeEntry_ThruDate()
-	 * @model
+	 * @model annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getThruDate();
@@ -262,6 +262,7 @@ public interface TimeEntry extends BizEntity {
 	 * @see #setTimeEntryId(String)
 	 * @see org.abchip.mimo.biz.workeffort.timesheet.TimesheetPackage#getTimeEntry_TimeEntryId()
 	 * @model id="true" required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */

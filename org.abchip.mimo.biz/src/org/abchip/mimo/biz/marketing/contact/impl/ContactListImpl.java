@@ -7,7 +7,6 @@
  */
 package org.abchip.mimo.biz.marketing.contact.impl;
 
-import java.lang.reflect.InvocationTargetException;
 import java.util.List;
 
 import org.abchip.mimo.biz.impl.BizEntityTypedImpl;
@@ -18,7 +17,6 @@ import org.abchip.mimo.biz.marketing.contact.ContactPackage;
 import org.abchip.mimo.biz.party.contact.ContactMechType;
 import org.abchip.mimo.biz.party.party.Party;
 import org.abchip.mimo.biz.security.login.UserLogin;
-import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 
 /**
@@ -301,26 +299,6 @@ public class ContactListImpl extends BizEntityTypedImpl<ContactListType> impleme
 	 * @generated
 	 */
 	@Override
-	public Party getOwnerPartyId() {
-		return (Party)eGet(ContactPackage.Literals.CONTACT_LIST__OWNER_PARTY_ID, true);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void setOwnerPartyId(Party newOwnerPartyId) {
-		eSet(ContactPackage.Literals.CONTACT_LIST__OWNER_PARTY_ID, newOwnerPartyId);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public boolean isSingleUse() {
 		return (Boolean)eGet(ContactPackage.Literals.CONTACT_LIST__SINGLE_USE, true);
 	}
@@ -333,6 +311,26 @@ public class ContactListImpl extends BizEntityTypedImpl<ContactListType> impleme
 	@Override
 	public void setSingleUse(boolean newSingleUse) {
 		eSet(ContactPackage.Literals.CONTACT_LIST__SINGLE_USE, newSingleUse);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Party getOwnerPartyId() {
+		return (Party)eGet(ContactPackage.Literals.CONTACT_LIST__OWNER_PARTY_ID, true);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setOwnerPartyId(Party newOwnerPartyId) {
+		eSet(ContactPackage.Literals.CONTACT_LIST__OWNER_PARTY_ID, newOwnerPartyId);
 	}
 
 	/**
@@ -425,20 +423,6 @@ public class ContactListImpl extends BizEntityTypedImpl<ContactListType> impleme
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
-		switch (operationID) {
-			case ContactPackage.CONTACT_LIST___COMMUNICATION_EVENTS:
-				return communicationEvents();
-		}
-		return super.eInvoke(operationID, arguments);
 	}
 
 } //ContactListImpl

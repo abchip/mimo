@@ -79,6 +79,7 @@ import org.abchip.mimo.biz.entity.group.EntityGroup;
 import org.abchip.mimo.biz.entity.group.EntityGroupEntry;
 import org.abchip.mimo.biz.entity.group.GroupFactory;
 import org.abchip.mimo.biz.entity.group.GroupPackage;
+import org.abchip.mimo.biz.entity.impl.EntityPackageImpl;
 import org.abchip.mimo.biz.entity.sequence.SequencePackage;
 import org.abchip.mimo.biz.entity.sequence.impl.SequencePackageImpl;
 import org.abchip.mimo.biz.entity.synchronization.SynchronizationPackage;
@@ -195,7 +196,6 @@ import org.eclipse.emf.common.util.URI;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 
 import org.eclipse.emf.ecore.EReference;
@@ -337,6 +337,8 @@ public class GroupPackageImpl extends EPackageImpl implements GroupPackage {
 		SurveyPackageImpl theSurveyPackage = (SurveyPackageImpl)(registeredPackage instanceof SurveyPackageImpl ? registeredPackage : SurveyPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(WebsitePackage.eNS_URI);
 		WebsitePackageImpl theWebsitePackage = (WebsitePackageImpl)(registeredPackage instanceof WebsitePackageImpl ? registeredPackage : WebsitePackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(org.abchip.mimo.biz.entity.EntityPackage.eNS_URI);
+		EntityPackageImpl theEntityPackage = (EntityPackageImpl)(registeredPackage instanceof EntityPackageImpl ? registeredPackage : org.abchip.mimo.biz.entity.EntityPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(AuditPackage.eNS_URI);
 		AuditPackageImpl theAuditPackage = (AuditPackageImpl)(registeredPackage instanceof AuditPackageImpl ? registeredPackage : AuditPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(CryptoPackage.eNS_URI);
@@ -490,6 +492,7 @@ public class GroupPackageImpl extends EPackageImpl implements GroupPackage {
 		thePreferencePackage.createPackageContents();
 		theSurveyPackage.createPackageContents();
 		theWebsitePackage.createPackageContents();
+		theEntityPackage.createPackageContents();
 		theAuditPackage.createPackageContents();
 		theCryptoPackage.createPackageContents();
 		theSequencePackage.createPackageContents();
@@ -584,6 +587,7 @@ public class GroupPackageImpl extends EPackageImpl implements GroupPackage {
 		thePreferencePackage.initializePackageContents();
 		theSurveyPackage.initializePackageContents();
 		theWebsitePackage.initializePackageContents();
+		theEntityPackage.initializePackageContents();
 		theAuditPackage.initializePackageContents();
 		theCryptoPackage.initializePackageContents();
 		theSequencePackage.initializePackageContents();
@@ -698,16 +702,6 @@ public class GroupPackageImpl extends EPackageImpl implements GroupPackage {
 	 * @generated
 	 */
 	@Override
-	public EOperation getEntityGroup__EntitySyncIncludeGroups() {
-		return entityGroupEClass.getEOperations().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public EClass getEntityGroupEntry() {
 		return entityGroupEntryEClass;
 	}
@@ -775,7 +769,6 @@ public class GroupPackageImpl extends EPackageImpl implements GroupPackage {
 		createEAttribute(entityGroupEClass, ENTITY_GROUP__ENTITY_GROUP_ID);
 		createEAttribute(entityGroupEClass, ENTITY_GROUP__ENTITY_GROUP_NAME);
 		createEAttribute(entityGroupEClass, ENTITY_GROUP__ENTITY_GROUP_ENTRIES);
-		createEOperation(entityGroupEClass, ENTITY_GROUP___ENTITY_SYNC_INCLUDE_GROUPS);
 
 		entityGroupEntryEClass = createEClass(ENTITY_GROUP_ENTRY);
 		createEAttribute(entityGroupEntryEClass, ENTITY_GROUP_ENTRY__ENTITY_OR_PACKAGE);
@@ -817,13 +810,13 @@ public class GroupPackageImpl extends EPackageImpl implements GroupPackage {
 		entityGroupEClass.getESuperTypes().add(theBizPackage.getBizEntity());
 		entityGroupEntryEClass.getESuperTypes().add(theBizPackage.getBizEntity());
 
-		// Initialize classes, features, and operations; add parameters
+		// Initialize classes and features; add operations and parameters
 		initEClass(entityGroupEClass, EntityGroup.class, "EntityGroup", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getEntityGroup_EntityGroupId(), ecorePackage.getEString(), "entityGroupId", null, 1, 1, EntityGroup.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getEntityGroup_EntityGroupName(), ecorePackage.getEString(), "entityGroupName", null, 0, 1, EntityGroup.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getEntityGroup_EntityGroupEntries(), ecorePackage.getEString(), "entityGroupEntries", null, 0, -1, EntityGroup.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getEntityGroup_EntityGroupEntries(), ecorePackage.getEString(), "entityGroupEntries", null, 1, -1, EntityGroup.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEOperation(getEntityGroup__EntitySyncIncludeGroups(), ecorePackage.getEString(), "entitySyncIncludeGroups", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(entityGroupEClass, ecorePackage.getEString(), "entitySyncIncludeGroups", 1, -1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(entityGroupEntryEClass, EntityGroupEntry.class, "EntityGroupEntry", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getEntityGroupEntry_EntityOrPackage(), ecorePackage.getEString(), "entityOrPackage", null, 1, 1, EntityGroupEntry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -832,10 +825,64 @@ public class GroupPackageImpl extends EPackageImpl implements GroupPackage {
 		getEntityGroupEntry_EntityGroupId().getEKeys().add(this.getEntityGroup_EntityGroupId());
 
 		// Create annotations
+		// mimo-ent-format
+		createMimoentformatAnnotations();
 		// mimo-ent-slot
 		createMimoentslotAnnotations();
 		// mimo-ent-domain
 		createMimoentdomainAnnotations();
+	}
+
+	/**
+	 * Initializes the annotations for <b>mimo-ent-format</b>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void createMimoentformatAnnotations() {
+		String source = "mimo-ent-format";
+		addAnnotation
+		  (entityGroupEClass.getEOperations().get(0),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (getEntityGroup_EntityGroupId(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (getEntityGroup_EntityGroupName(),
+		   source,
+		   new String[] {
+			   "type", "name",
+			   "length", "100"
+		   });
+		addAnnotation
+		  (getEntityGroup_EntityGroupEntries(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (getEntityGroupEntry_EntityOrPackage(),
+		   source,
+		   new String[] {
+			   "type", "long-varchar",
+			   "length", "255"
+		   });
+		addAnnotation
+		  (getEntityGroupEntry_ApplEnumId(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
 	}
 
 	/**
@@ -847,7 +894,7 @@ public class GroupPackageImpl extends EPackageImpl implements GroupPackage {
 	protected void createMimoentslotAnnotations() {
 		String source = "mimo-ent-slot";
 		addAnnotation
-		  (getEntityGroup__EntitySyncIncludeGroups(),
+		  (entityGroupEClass.getEOperations().get(0),
 		   source,
 		   new String[] {
 			   "derived", "true"
@@ -881,7 +928,7 @@ public class GroupPackageImpl extends EPackageImpl implements GroupPackage {
 	protected void createMimoentdomainAnnotations() {
 		String source = "mimo-ent-domain";
 		addAnnotation
-		  (getEntityGroup__EntitySyncIncludeGroups(),
+		  (entityGroupEClass.getEOperations().get(0),
 		   source,
 		   new String[] {
 			   "frame", "EntitySyncIncludeGroup",

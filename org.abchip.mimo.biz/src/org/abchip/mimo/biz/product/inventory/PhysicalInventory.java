@@ -43,7 +43,7 @@ public interface PhysicalInventory extends BizEntity {
 	 * @return the value of the '<em>General Comments</em>' attribute.
 	 * @see #setGeneralComments(String)
 	 * @see org.abchip.mimo.biz.product.inventory.InventoryPackage#getPhysicalInventory_GeneralComments()
-	 * @model
+	 * @model annotation="mimo-ent-format type='comment' length='255'"
 	 * @generated
 	 */
 	String getGeneralComments();
@@ -69,7 +69,7 @@ public interface PhysicalInventory extends BizEntity {
 	 * @return the value of the '<em>Party Id</em>' attribute.
 	 * @see #setPartyId(String)
 	 * @see org.abchip.mimo.biz.product.inventory.InventoryPackage#getPhysicalInventory_PartyId()
-	 * @model
+	 * @model annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	String getPartyId();
@@ -95,7 +95,7 @@ public interface PhysicalInventory extends BizEntity {
 	 * @return the value of the '<em>Physical Inventory Date</em>' attribute.
 	 * @see #setPhysicalInventoryDate(Date)
 	 * @see org.abchip.mimo.biz.product.inventory.InventoryPackage#getPhysicalInventory_PhysicalInventoryDate()
-	 * @model
+	 * @model annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getPhysicalInventoryDate();
@@ -113,7 +113,8 @@ public interface PhysicalInventory extends BizEntity {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='AcctgTrans' route='physicalInventoryId'"
 	 * @generated
 	 */
@@ -122,7 +123,8 @@ public interface PhysicalInventory extends BizEntity {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='InventoryItemDetail' route='physicalInventoryId'"
 	 * @generated
 	 */
@@ -131,7 +133,9 @@ public interface PhysicalInventory extends BizEntity {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='InventoryItemVariance' route='physicalInventoryId'"
 	 * @generated
 	 */
@@ -149,6 +153,7 @@ public interface PhysicalInventory extends BizEntity {
 	 * @see #setPhysicalInventoryId(String)
 	 * @see org.abchip.mimo.biz.product.inventory.InventoryPackage#getPhysicalInventory_PhysicalInventoryId()
 	 * @model id="true" required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */

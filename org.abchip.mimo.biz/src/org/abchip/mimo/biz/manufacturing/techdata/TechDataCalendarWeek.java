@@ -56,6 +56,7 @@ public interface TechDataCalendarWeek extends BizEntity {
 	 * @see #setCalendarWeekId(String)
 	 * @see org.abchip.mimo.biz.manufacturing.techdata.TechdataPackage#getTechDataCalendarWeek_CalendarWeekId()
 	 * @model id="true" required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
@@ -82,7 +83,7 @@ public interface TechDataCalendarWeek extends BizEntity {
 	 * @return the value of the '<em>Description</em>' attribute.
 	 * @see #setDescription(String)
 	 * @see org.abchip.mimo.biz.manufacturing.techdata.TechdataPackage#getTechDataCalendarWeek_Description()
-	 * @model
+	 * @model annotation="mimo-ent-format type='description' length='255'"
 	 * @generated
 	 */
 	String getDescription();
@@ -108,7 +109,7 @@ public interface TechDataCalendarWeek extends BizEntity {
 	 * @return the value of the '<em>Friday Capacity</em>' attribute.
 	 * @see #setFridayCapacity(double)
 	 * @see org.abchip.mimo.biz.manufacturing.techdata.TechdataPackage#getTechDataCalendarWeek_FridayCapacity()
-	 * @model
+	 * @model annotation="mimo-ent-format type='floating-point'"
 	 * @generated
 	 */
 	double getFridayCapacity();
@@ -134,7 +135,7 @@ public interface TechDataCalendarWeek extends BizEntity {
 	 * @return the value of the '<em>Friday Start Time</em>' attribute.
 	 * @see #setFridayStartTime(Date)
 	 * @see org.abchip.mimo.biz.manufacturing.techdata.TechdataPackage#getTechDataCalendarWeek_FridayStartTime()
-	 * @model
+	 * @model annotation="mimo-ent-format type='time'"
 	 * @generated
 	 */
 	Date getFridayStartTime();
@@ -160,7 +161,7 @@ public interface TechDataCalendarWeek extends BizEntity {
 	 * @return the value of the '<em>Monday Capacity</em>' attribute.
 	 * @see #setMondayCapacity(double)
 	 * @see org.abchip.mimo.biz.manufacturing.techdata.TechdataPackage#getTechDataCalendarWeek_MondayCapacity()
-	 * @model
+	 * @model annotation="mimo-ent-format type='floating-point'"
 	 * @generated
 	 */
 	double getMondayCapacity();
@@ -186,7 +187,7 @@ public interface TechDataCalendarWeek extends BizEntity {
 	 * @return the value of the '<em>Monday Start Time</em>' attribute.
 	 * @see #setMondayStartTime(Date)
 	 * @see org.abchip.mimo.biz.manufacturing.techdata.TechdataPackage#getTechDataCalendarWeek_MondayStartTime()
-	 * @model
+	 * @model annotation="mimo-ent-format type='time'"
 	 * @generated
 	 */
 	Date getMondayStartTime();
@@ -212,7 +213,7 @@ public interface TechDataCalendarWeek extends BizEntity {
 	 * @return the value of the '<em>Saturday Capacity</em>' attribute.
 	 * @see #setSaturdayCapacity(double)
 	 * @see org.abchip.mimo.biz.manufacturing.techdata.TechdataPackage#getTechDataCalendarWeek_SaturdayCapacity()
-	 * @model
+	 * @model annotation="mimo-ent-format type='floating-point'"
 	 * @generated
 	 */
 	double getSaturdayCapacity();
@@ -238,7 +239,7 @@ public interface TechDataCalendarWeek extends BizEntity {
 	 * @return the value of the '<em>Saturday Start Time</em>' attribute.
 	 * @see #setSaturdayStartTime(Date)
 	 * @see org.abchip.mimo.biz.manufacturing.techdata.TechdataPackage#getTechDataCalendarWeek_SaturdayStartTime()
-	 * @model
+	 * @model annotation="mimo-ent-format type='time'"
 	 * @generated
 	 */
 	Date getSaturdayStartTime();
@@ -264,7 +265,7 @@ public interface TechDataCalendarWeek extends BizEntity {
 	 * @return the value of the '<em>Sunday Capacity</em>' attribute.
 	 * @see #setSundayCapacity(double)
 	 * @see org.abchip.mimo.biz.manufacturing.techdata.TechdataPackage#getTechDataCalendarWeek_SundayCapacity()
-	 * @model
+	 * @model annotation="mimo-ent-format type='floating-point'"
 	 * @generated
 	 */
 	double getSundayCapacity();
@@ -290,7 +291,7 @@ public interface TechDataCalendarWeek extends BizEntity {
 	 * @return the value of the '<em>Sunday Start Time</em>' attribute.
 	 * @see #setSundayStartTime(Date)
 	 * @see org.abchip.mimo.biz.manufacturing.techdata.TechdataPackage#getTechDataCalendarWeek_SundayStartTime()
-	 * @model
+	 * @model annotation="mimo-ent-format type='time'"
 	 * @generated
 	 */
 	Date getSundayStartTime();
@@ -316,7 +317,7 @@ public interface TechDataCalendarWeek extends BizEntity {
 	 * @return the value of the '<em>Thursday Capacity</em>' attribute.
 	 * @see #setThursdayCapacity(double)
 	 * @see org.abchip.mimo.biz.manufacturing.techdata.TechdataPackage#getTechDataCalendarWeek_ThursdayCapacity()
-	 * @model
+	 * @model annotation="mimo-ent-format type='floating-point'"
 	 * @generated
 	 */
 	double getThursdayCapacity();
@@ -342,7 +343,7 @@ public interface TechDataCalendarWeek extends BizEntity {
 	 * @return the value of the '<em>Thursday Start Time</em>' attribute.
 	 * @see #setThursdayStartTime(Date)
 	 * @see org.abchip.mimo.biz.manufacturing.techdata.TechdataPackage#getTechDataCalendarWeek_ThursdayStartTime()
-	 * @model
+	 * @model annotation="mimo-ent-format type='time'"
 	 * @generated
 	 */
 	Date getThursdayStartTime();
@@ -368,7 +369,7 @@ public interface TechDataCalendarWeek extends BizEntity {
 	 * @return the value of the '<em>Tuesday Capacity</em>' attribute.
 	 * @see #setTuesdayCapacity(double)
 	 * @see org.abchip.mimo.biz.manufacturing.techdata.TechdataPackage#getTechDataCalendarWeek_TuesdayCapacity()
-	 * @model
+	 * @model annotation="mimo-ent-format type='floating-point'"
 	 * @generated
 	 */
 	double getTuesdayCapacity();
@@ -394,7 +395,7 @@ public interface TechDataCalendarWeek extends BizEntity {
 	 * @return the value of the '<em>Tuesday Start Time</em>' attribute.
 	 * @see #setTuesdayStartTime(Date)
 	 * @see org.abchip.mimo.biz.manufacturing.techdata.TechdataPackage#getTechDataCalendarWeek_TuesdayStartTime()
-	 * @model
+	 * @model annotation="mimo-ent-format type='time'"
 	 * @generated
 	 */
 	Date getTuesdayStartTime();
@@ -420,7 +421,7 @@ public interface TechDataCalendarWeek extends BizEntity {
 	 * @return the value of the '<em>Wednesday Capacity</em>' attribute.
 	 * @see #setWednesdayCapacity(double)
 	 * @see org.abchip.mimo.biz.manufacturing.techdata.TechdataPackage#getTechDataCalendarWeek_WednesdayCapacity()
-	 * @model
+	 * @model annotation="mimo-ent-format type='floating-point'"
 	 * @generated
 	 */
 	double getWednesdayCapacity();
@@ -446,7 +447,7 @@ public interface TechDataCalendarWeek extends BizEntity {
 	 * @return the value of the '<em>Wednesday Start Time</em>' attribute.
 	 * @see #setWednesdayStartTime(Date)
 	 * @see org.abchip.mimo.biz.manufacturing.techdata.TechdataPackage#getTechDataCalendarWeek_WednesdayStartTime()
-	 * @model
+	 * @model annotation="mimo-ent-format type='time'"
 	 * @generated
 	 */
 	Date getWednesdayStartTime();
@@ -464,7 +465,8 @@ public interface TechDataCalendarWeek extends BizEntity {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='TechDataCalendarExcWeek' route='calendarWeekId'"
 	 * @generated
 	 */
@@ -473,7 +475,8 @@ public interface TechDataCalendarWeek extends BizEntity {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='TechDataCalendar' route='calendarWeekId'"
 	 * @generated
 	 */

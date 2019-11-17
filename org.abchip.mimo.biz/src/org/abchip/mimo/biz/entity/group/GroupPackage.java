@@ -10,7 +10,6 @@ package org.abchip.mimo.biz.entity.group;
 import org.abchip.mimo.biz.BizPackage;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
@@ -145,60 +144,6 @@ public interface GroupPackage extends EPackage {
 	int ENTITY_GROUP_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
 
 	/**
-	 * The operation id for the '<em>Isa</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ENTITY_GROUP___ISA = BizPackage.BIZ_ENTITY___ISA;
-
-	/**
-	 * The operation id for the '<em>Get Name</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ENTITY_GROUP___GET_NAME = BizPackage.BIZ_ENTITY___GET_NAME;
-
-	/**
-	 * The operation id for the '<em>Get URI</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ENTITY_GROUP___GET_URI = BizPackage.BIZ_ENTITY___GET_URI;
-
-	/**
-	 * The operation id for the '<em>Is Proxy</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ENTITY_GROUP___IS_PROXY = BizPackage.BIZ_ENTITY___IS_PROXY;
-
-	/**
-	 * The operation id for the '<em>Entity Sync Include Groups</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ENTITY_GROUP___ENTITY_SYNC_INCLUDE_GROUPS = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 0;
-
-	/**
-	 * The number of operations of the '<em>Entity Group</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ENTITY_GROUP_OPERATION_COUNT = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 1;
-
-	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.entity.group.impl.EntityGroupEntryImpl <em>Entity Group Entry</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -282,52 +227,6 @@ public interface GroupPackage extends EPackage {
 
 
 	/**
-	 * The operation id for the '<em>Isa</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ENTITY_GROUP_ENTRY___ISA = BizPackage.BIZ_ENTITY___ISA;
-
-	/**
-	 * The operation id for the '<em>Get Name</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ENTITY_GROUP_ENTRY___GET_NAME = BizPackage.BIZ_ENTITY___GET_NAME;
-
-	/**
-	 * The operation id for the '<em>Get URI</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ENTITY_GROUP_ENTRY___GET_URI = BizPackage.BIZ_ENTITY___GET_URI;
-
-	/**
-	 * The operation id for the '<em>Is Proxy</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ENTITY_GROUP_ENTRY___IS_PROXY = BizPackage.BIZ_ENTITY___IS_PROXY;
-
-	/**
-	 * The number of operations of the '<em>Entity Group Entry</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ENTITY_GROUP_ENTRY_OPERATION_COUNT = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 0;
-
-
-	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.biz.entity.group.EntityGroup <em>Entity Group</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -369,16 +268,6 @@ public interface GroupPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getEntityGroup_EntityGroupEntries();
-
-	/**
-	 * Returns the meta object for the '{@link org.abchip.mimo.biz.entity.group.EntityGroup#entitySyncIncludeGroups() <em>Entity Sync Include Groups</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Entity Sync Include Groups</em>' operation.
-	 * @see org.abchip.mimo.biz.entity.group.EntityGroup#entitySyncIncludeGroups()
-	 * @generated
-	 */
-	EOperation getEntityGroup__EntitySyncIncludeGroups();
 
 	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.biz.entity.group.EntityGroupEntry <em>Entity Group Entry</em>}'.
@@ -478,14 +367,6 @@ public interface GroupPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute ENTITY_GROUP__ENTITY_GROUP_ENTRIES = eINSTANCE.getEntityGroup_EntityGroupEntries();
-
-		/**
-		 * The meta object literal for the '<em><b>Entity Sync Include Groups</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation ENTITY_GROUP___ENTITY_SYNC_INCLUDE_GROUPS = eINSTANCE.getEntityGroup__EntitySyncIncludeGroups();
 
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.biz.entity.group.impl.EntityGroupEntryImpl <em>Entity Group Entry</em>}' class.

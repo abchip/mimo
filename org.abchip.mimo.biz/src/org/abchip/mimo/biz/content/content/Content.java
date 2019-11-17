@@ -101,7 +101,7 @@ public interface Content extends BizEntityTyped<ContentType> {
 	 * @return the value of the '<em>Child Branch Count</em>' attribute.
 	 * @see #setChildBranchCount(long)
 	 * @see org.abchip.mimo.biz.content.content.ContentPackage#getContent_ChildBranchCount()
-	 * @model
+	 * @model annotation="mimo-ent-format type='numeric' precision='20' scale='0'"
 	 * @generated
 	 */
 	long getChildBranchCount();
@@ -127,7 +127,7 @@ public interface Content extends BizEntityTyped<ContentType> {
 	 * @return the value of the '<em>Child Leaf Count</em>' attribute.
 	 * @see #setChildLeafCount(long)
 	 * @see org.abchip.mimo.biz.content.content.ContentPackage#getContent_ChildLeafCount()
-	 * @model
+	 * @model annotation="mimo-ent-format type='numeric' precision='20' scale='0'"
 	 * @generated
 	 */
 	long getChildLeafCount();
@@ -154,6 +154,7 @@ public interface Content extends BizEntityTyped<ContentType> {
 	 * @see #setContentId(String)
 	 * @see org.abchip.mimo.biz.content.content.ContentPackage#getContent_ContentId()
 	 * @model id="true" required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
@@ -180,7 +181,7 @@ public interface Content extends BizEntityTyped<ContentType> {
 	 * @return the value of the '<em>Content Name</em>' attribute.
 	 * @see #setContentName(String)
 	 * @see org.abchip.mimo.biz.content.content.ContentPackage#getContent_ContentName()
-	 * @model
+	 * @model annotation="mimo-ent-format type='value' length='255'"
 	 * @generated
 	 */
 	String getContentName();
@@ -258,7 +259,7 @@ public interface Content extends BizEntityTyped<ContentType> {
 	 * @return the value of the '<em>Created Date</em>' attribute.
 	 * @see #setCreatedDate(Date)
 	 * @see org.abchip.mimo.biz.content.content.ContentPackage#getContent_CreatedDate()
-	 * @model
+	 * @model annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getCreatedDate();
@@ -388,7 +389,7 @@ public interface Content extends BizEntityTyped<ContentType> {
 	 * @return the value of the '<em>Description</em>' attribute.
 	 * @see #setDescription(String)
 	 * @see org.abchip.mimo.biz.content.content.ContentPackage#getContent_Description()
-	 * @model
+	 * @model annotation="mimo-ent-format type='description' length='255'"
 	 * @generated
 	 */
 	String getDescription();
@@ -466,7 +467,7 @@ public interface Content extends BizEntityTyped<ContentType> {
 	 * @return the value of the '<em>Last Modified Date</em>' attribute.
 	 * @see #setLastModifiedDate(Date)
 	 * @see org.abchip.mimo.biz.content.content.ContentPackage#getContent_LastModifiedDate()
-	 * @model
+	 * @model annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getLastModifiedDate();
@@ -492,7 +493,7 @@ public interface Content extends BizEntityTyped<ContentType> {
 	 * @return the value of the '<em>Locale String</em>' attribute.
 	 * @see #setLocaleString(String)
 	 * @see org.abchip.mimo.biz.content.content.ContentPackage#getContent_LocaleString()
-	 * @model
+	 * @model annotation="mimo-ent-format type='very-short' length='10'"
 	 * @generated
 	 */
 	String getLocaleString();
@@ -596,7 +597,7 @@ public interface Content extends BizEntityTyped<ContentType> {
 	 * @return the value of the '<em>Service Name</em>' attribute.
 	 * @see #setServiceName(String)
 	 * @see org.abchip.mimo.biz.content.content.ContentPackage#getContent_ServiceName()
-	 * @model
+	 * @model annotation="mimo-ent-format type='long-varchar' length='255'"
 	 * @generated
 	 */
 	String getServiceName();
@@ -674,7 +675,9 @@ public interface Content extends BizEntityTyped<ContentType> {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Content Attributes</em>' attribute list.
 	 * @see org.abchip.mimo.biz.content.content.ContentPackage#getContent_ContentAttributes()
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ContentAttribute'"
 	 * @generated
 	 */
@@ -691,7 +694,9 @@ public interface Content extends BizEntityTyped<ContentType> {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Content Keywords</em>' attribute list.
 	 * @see org.abchip.mimo.biz.content.content.ContentPackage#getContent_ContentKeywords()
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ContentKeyword'"
 	 * @generated
 	 */
@@ -708,7 +713,9 @@ public interface Content extends BizEntityTyped<ContentType> {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Content Meta Datas</em>' attribute list.
 	 * @see org.abchip.mimo.biz.content.content.ContentPackage#getContent_ContentMetaDatas()
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ContentMetaData'"
 	 * @generated
 	 */
@@ -725,7 +732,9 @@ public interface Content extends BizEntityTyped<ContentType> {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Content Purposes</em>' attribute list.
 	 * @see org.abchip.mimo.biz.content.content.ContentPackage#getContent_ContentPurposes()
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ContentPurpose'"
 	 * @generated
 	 */
@@ -742,7 +751,9 @@ public interface Content extends BizEntityTyped<ContentType> {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Content Revisions</em>' attribute list.
 	 * @see org.abchip.mimo.biz.content.content.ContentPackage#getContent_ContentRevisions()
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ContentRevision'"
 	 * @generated
 	 */
@@ -751,7 +762,8 @@ public interface Content extends BizEntityTyped<ContentType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ContentApproval' route='contentId'"
 	 * @generated
 	 */
@@ -760,7 +772,8 @@ public interface Content extends BizEntityTyped<ContentType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='PartyResume' route='contentId'"
 	 * @generated
 	 */
@@ -769,7 +782,8 @@ public interface Content extends BizEntityTyped<ContentType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='PortalPage' route='helpContentId'"
 	 * @generated
 	 */
@@ -778,7 +792,8 @@ public interface Content extends BizEntityTyped<ContentType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ServerHitBin' route='internalContentId'"
 	 * @generated
 	 */
@@ -787,7 +802,8 @@ public interface Content extends BizEntityTyped<ContentType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='SubscriptionResource' route='contentId'"
 	 * @generated
 	 */
@@ -796,7 +812,8 @@ public interface Content extends BizEntityTyped<ContentType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='WebPage' route='contentId'"
 	 * @generated
 	 */

@@ -44,7 +44,7 @@ public interface Enumeration extends BizEntityTyped<EnumerationType> {
 	 * @return the value of the '<em>Description</em>' attribute.
 	 * @see #setDescription(String)
 	 * @see org.abchip.mimo.biz.common.enum_.EnumPackage#getEnumeration_Description()
-	 * @model
+	 * @model annotation="mimo-ent-format type='description' length='255'"
 	 * @generated
 	 */
 	String getDescription();
@@ -70,7 +70,7 @@ public interface Enumeration extends BizEntityTyped<EnumerationType> {
 	 * @return the value of the '<em>Enum Code</em>' attribute.
 	 * @see #setEnumCode(String)
 	 * @see org.abchip.mimo.biz.common.enum_.EnumPackage#getEnumeration_EnumCode()
-	 * @model
+	 * @model annotation="mimo-ent-format type='short-varchar' length='60'"
 	 * @generated
 	 */
 	String getEnumCode();
@@ -96,7 +96,7 @@ public interface Enumeration extends BizEntityTyped<EnumerationType> {
 	 * @return the value of the '<em>Sequence Id</em>' attribute.
 	 * @see #setSequenceId(String)
 	 * @see org.abchip.mimo.biz.common.enum_.EnumPackage#getEnumeration_SequenceId()
-	 * @model
+	 * @model annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	String getSequenceId();
@@ -122,7 +122,9 @@ public interface Enumeration extends BizEntityTyped<EnumerationType> {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>User Login Security Questions</em>' attribute list.
 	 * @see org.abchip.mimo.biz.common.enum_.EnumPackage#getEnumeration_UserLoginSecurityQuestions()
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='UserLoginSecurityQuestion'"
 	 * @generated
 	 */
@@ -131,7 +133,8 @@ public interface Enumeration extends BizEntityTyped<EnumerationType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='FixedAsset' route='classEnumId'"
 	 * @generated
 	 */
@@ -140,7 +143,8 @@ public interface Enumeration extends BizEntityTyped<EnumerationType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='PartyAcctgPreference' route='cogsMethodId'"
 	 * @generated
 	 */
@@ -149,7 +153,8 @@ public interface Enumeration extends BizEntityTyped<EnumerationType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='CommunicationEvent' route='reasonEnumId'"
 	 * @generated
 	 */
@@ -158,7 +163,8 @@ public interface Enumeration extends BizEntityTyped<EnumerationType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ProductStore' route='defaultSalesChannelEnumId'"
 	 * @generated
 	 */
@@ -167,7 +173,8 @@ public interface Enumeration extends BizEntityTyped<EnumerationType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='EmailTemplateSetting' route='emailType'"
 	 * @generated
 	 */
@@ -176,7 +183,8 @@ public interface Enumeration extends BizEntityTyped<EnumerationType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='Person' route='employmentStatusEnumId'"
 	 * @generated
 	 */
@@ -185,7 +193,8 @@ public interface Enumeration extends BizEntityTyped<EnumerationType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='JobRequisition' route='examTypeEnumId'"
 	 * @generated
 	 */
@@ -194,7 +203,8 @@ public interface Enumeration extends BizEntityTyped<EnumerationType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='GeoPoint' route='geoPointTypeEnumId'"
 	 * @generated
 	 */
@@ -203,7 +213,8 @@ public interface Enumeration extends BizEntityTyped<EnumerationType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='GiftCardFulfillment' route='typeEnumId'"
 	 * @generated
 	 */
@@ -212,7 +223,8 @@ public interface Enumeration extends BizEntityTyped<EnumerationType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ProductPriceCond' route='inputParamEnumId'"
 	 * @generated
 	 */
@@ -221,7 +233,8 @@ public interface Enumeration extends BizEntityTyped<EnumerationType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='PartyAcctgPreference' route='oldInvoiceSequenceEnumId'"
 	 * @generated
 	 */
@@ -230,7 +243,8 @@ public interface Enumeration extends BizEntityTyped<EnumerationType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='JobInterview' route='gradeSecuredEnumId'"
 	 * @generated
 	 */
@@ -239,7 +253,8 @@ public interface Enumeration extends BizEntityTyped<EnumerationType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='JobRequisition' route='jobPostingTypeEnumId'"
 	 * @generated
 	 */
@@ -248,7 +263,8 @@ public interface Enumeration extends BizEntityTyped<EnumerationType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ProductPriceCond' route='operatorEnumId'"
 	 * @generated
 	 */
@@ -257,7 +273,8 @@ public interface Enumeration extends BizEntityTyped<EnumerationType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='OrderItemChange' route='changeTypeEnumId'"
 	 * @generated
 	 */
@@ -266,7 +283,8 @@ public interface Enumeration extends BizEntityTyped<EnumerationType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='OrderNotification' route='emailType'"
 	 * @generated
 	 */
@@ -275,7 +293,8 @@ public interface Enumeration extends BizEntityTyped<EnumerationType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='PartyAcctgPreference' route='oldOrderSequenceEnumId'"
 	 * @generated
 	 */
@@ -284,7 +303,8 @@ public interface Enumeration extends BizEntityTyped<EnumerationType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='Content' route='privilegeEnumId'"
 	 * @generated
 	 */
@@ -293,7 +313,8 @@ public interface Enumeration extends BizEntityTyped<EnumerationType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ProductGeo' route='productGeoEnumId'"
 	 * @generated
 	 */
@@ -302,7 +323,9 @@ public interface Enumeration extends BizEntityTyped<EnumerationType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ProductStoreEmailSetting' route='emailType'"
 	 * @generated
 	 */
@@ -311,7 +334,8 @@ public interface Enumeration extends BizEntityTyped<EnumerationType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='PartyAcctgPreference' route='oldQuoteSequenceEnumId'"
 	 * @generated
 	 */
@@ -320,7 +344,8 @@ public interface Enumeration extends BizEntityTyped<EnumerationType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='Product' route='ratingTypeEnum'"
 	 * @generated
 	 */
@@ -329,7 +354,8 @@ public interface Enumeration extends BizEntityTyped<EnumerationType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='FinAccountTrans' route='reasonEnumId'"
 	 * @generated
 	 */
@@ -338,7 +364,8 @@ public interface Enumeration extends BizEntityTyped<EnumerationType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='InventoryItemDetail' route='reasonEnumId'"
 	 * @generated
 	 */
@@ -347,7 +374,8 @@ public interface Enumeration extends BizEntityTyped<EnumerationType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='JobManagerLock' route='reasonEnumId'"
 	 * @generated
 	 */
@@ -356,7 +384,8 @@ public interface Enumeration extends BizEntityTyped<EnumerationType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='OrderItemChange' route='reasonEnumId'"
 	 * @generated
 	 */
@@ -365,7 +394,8 @@ public interface Enumeration extends BizEntityTyped<EnumerationType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='KeywordThesaurus' route='relationshipEnumId'"
 	 * @generated
 	 */
@@ -374,7 +404,8 @@ public interface Enumeration extends BizEntityTyped<EnumerationType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='FinAccountType' route='replenishEnumId'"
 	 * @generated
 	 */
@@ -383,7 +414,8 @@ public interface Enumeration extends BizEntityTyped<EnumerationType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ProductStoreFinActSetting' route='replenishMethodEnumId'"
 	 * @generated
 	 */
@@ -392,7 +424,8 @@ public interface Enumeration extends BizEntityTyped<EnumerationType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ProductFacility' route='requirementMethodEnumId'"
 	 * @generated
 	 */
@@ -401,7 +434,8 @@ public interface Enumeration extends BizEntityTyped<EnumerationType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ProductStore' route='requirementMethodEnumId'"
 	 * @generated
 	 */
@@ -410,7 +444,8 @@ public interface Enumeration extends BizEntityTyped<EnumerationType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='Product' route='requirementMethodEnumId'"
 	 * @generated
 	 */
@@ -419,7 +454,8 @@ public interface Enumeration extends BizEntityTyped<EnumerationType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ProductStore' route='reserveOrderEnumId'"
 	 * @generated
 	 */
@@ -428,7 +464,8 @@ public interface Enumeration extends BizEntityTyped<EnumerationType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='Person' route='residenceStatusEnumId'"
 	 * @generated
 	 */
@@ -437,7 +474,8 @@ public interface Enumeration extends BizEntityTyped<EnumerationType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='CustRequest' route='salesChannelEnumId'"
 	 * @generated
 	 */
@@ -446,7 +484,8 @@ public interface Enumeration extends BizEntityTyped<EnumerationType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='OrderHeader' route='salesChannelEnumId'"
 	 * @generated
 	 */
@@ -455,7 +494,8 @@ public interface Enumeration extends BizEntityTyped<EnumerationType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='Quote' route='salesChannelEnumId'"
 	 * @generated
 	 */
@@ -464,7 +504,8 @@ public interface Enumeration extends BizEntityTyped<EnumerationType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='WorkEffort' route='scopeEnumId'"
 	 * @generated
 	 */
@@ -473,7 +514,8 @@ public interface Enumeration extends BizEntityTyped<EnumerationType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='PaymentGatewayResponse' route='paymentServiceTypeEnumId'"
 	 * @generated
 	 */
@@ -482,7 +524,8 @@ public interface Enumeration extends BizEntityTyped<EnumerationType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ProductStore' route='storeCreditAccountEnumId'"
 	 * @generated
 	 */
@@ -491,7 +534,8 @@ public interface Enumeration extends BizEntityTyped<EnumerationType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='PartyAcctgPreference' route='taxFormId'"
 	 * @generated
 	 */
@@ -500,7 +544,8 @@ public interface Enumeration extends BizEntityTyped<EnumerationType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='PaymentGatewayResponse' route='transCodeEnumId'"
 	 * @generated
 	 */
@@ -509,7 +554,8 @@ public interface Enumeration extends BizEntityTyped<EnumerationType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='FacilityLocation' route='locationTypeEnumId'"
 	 * @generated
 	 */
@@ -518,7 +564,8 @@ public interface Enumeration extends BizEntityTyped<EnumerationType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='SalesOpportunity' route='typeEnumId'"
 	 * @generated
 	 */
@@ -527,7 +574,8 @@ public interface Enumeration extends BizEntityTyped<EnumerationType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='Product' route='virtualVariantMethodEnum'"
 	 * @generated
 	 */
@@ -571,6 +619,7 @@ public interface Enumeration extends BizEntityTyped<EnumerationType> {
 	 * @see #setEnumId(String)
 	 * @see org.abchip.mimo.biz.common.enum_.EnumPackage#getEnumeration_EnumId()
 	 * @model id="true" required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */

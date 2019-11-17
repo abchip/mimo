@@ -42,7 +42,7 @@ public interface SettlementTerm extends BizEntity {
 	 * @return the value of the '<em>Term Name</em>' attribute.
 	 * @see #setTermName(String)
 	 * @see org.abchip.mimo.biz.accounting.ledger.LedgerPackage#getSettlementTerm_TermName()
-	 * @model
+	 * @model annotation="mimo-ent-format type='name' length='100'"
 	 * @generated
 	 */
 	String getTermName();
@@ -68,7 +68,7 @@ public interface SettlementTerm extends BizEntity {
 	 * @return the value of the '<em>Term Value</em>' attribute.
 	 * @see #setTermValue(long)
 	 * @see org.abchip.mimo.biz.accounting.ledger.LedgerPackage#getSettlementTerm_TermValue()
-	 * @model
+	 * @model annotation="mimo-ent-format type='numeric' precision='20' scale='0'"
 	 * @generated
 	 */
 	long getTermValue();
@@ -94,7 +94,7 @@ public interface SettlementTerm extends BizEntity {
 	 * @return the value of the '<em>Uom Id</em>' attribute.
 	 * @see #setUomId(String)
 	 * @see org.abchip.mimo.biz.accounting.ledger.LedgerPackage#getSettlementTerm_UomId()
-	 * @model
+	 * @model annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	String getUomId();
@@ -112,7 +112,8 @@ public interface SettlementTerm extends BizEntity {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='AcctgTransEntry' route='settlementTermId'"
 	 * @generated
 	 */
@@ -130,6 +131,7 @@ public interface SettlementTerm extends BizEntity {
 	 * @see #setSettlementTermId(String)
 	 * @see org.abchip.mimo.biz.accounting.ledger.LedgerPackage#getSettlementTerm_SettlementTermId()
 	 * @model id="true" required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */

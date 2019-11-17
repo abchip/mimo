@@ -8,7 +8,6 @@
  */
 package org.abchip.mimo.resource.impl;
 
-import java.lang.reflect.InvocationTargetException;
 import org.abchip.mimo.context.ContextProvider;
 import org.abchip.mimo.entity.EntityIterator;
 import org.abchip.mimo.entity.EntityNameable;
@@ -17,7 +16,6 @@ import org.abchip.mimo.resource.ResourceNotifier;
 import org.abchip.mimo.resource.ResourcePackage;
 import org.abchip.mimo.resource.ResourceReader;
 import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
@@ -278,41 +276,5 @@ public abstract class ResourceReaderImpl<E extends EntityNameable> extends Minim
 				return notifier != null;
 		}
 		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
-		switch (operationID) {
-			case ResourcePackage.RESOURCE_READER___FIND:
-				return find();
-			case ResourcePackage.RESOURCE_READER___FIND__STRING:
-				return find((String)arguments.get(0));
-			case ResourcePackage.RESOURCE_READER___FIND__STRING_STRING:
-				return find((String)arguments.get(0), (String)arguments.get(1));
-			case ResourcePackage.RESOURCE_READER___FIND__STRING_STRING_STRING:
-				return find((String)arguments.get(0), (String)arguments.get(1), (String)arguments.get(2));
-			case ResourcePackage.RESOURCE_READER___FIND__STRING_STRING_STRING_INT:
-				return find((String)arguments.get(0), (String)arguments.get(1), (String)arguments.get(2), (Integer)arguments.get(3));
-			case ResourcePackage.RESOURCE_READER___FIND__STRING_STRING_STRING_INT_BOOLEAN:
-				return find((String)arguments.get(0), (String)arguments.get(1), (String)arguments.get(2), (Integer)arguments.get(3), (Boolean)arguments.get(4));
-			case ResourcePackage.RESOURCE_READER___FIRST:
-				return first();
-			case ResourcePackage.RESOURCE_READER___FIRST__BOOLEAN:
-				return first((Boolean)arguments.get(0));
-			case ResourcePackage.RESOURCE_READER___GET_FRAME:
-				return getFrame();
-			case ResourcePackage.RESOURCE_READER___LOOKUP__STRING:
-				return lookup((String)arguments.get(0));
-			case ResourcePackage.RESOURCE_READER___LOOKUP__STRING_BOOLEAN:
-				return lookup((String)arguments.get(0), (Boolean)arguments.get(1));
-			case ResourcePackage.RESOURCE_READER___GET_CONTEXT_PROVIDER:
-				return getContextProvider();
-		}
-		return super.eInvoke(operationID, arguments);
 	}
 } // QResourceImpl

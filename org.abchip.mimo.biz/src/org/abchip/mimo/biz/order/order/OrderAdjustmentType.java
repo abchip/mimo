@@ -43,7 +43,7 @@ public interface OrderAdjustmentType extends BizEntityType<OrderAdjustment> {
 	 * @return the value of the '<em>Description</em>' attribute.
 	 * @see #setDescription(String)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderAdjustmentType_Description()
-	 * @model
+	 * @model annotation="mimo-ent-format type='description' length='255'"
 	 * @generated
 	 */
 	String getDescription();
@@ -69,7 +69,7 @@ public interface OrderAdjustmentType extends BizEntityType<OrderAdjustment> {
 	 * @return the value of the '<em>Has Table</em>' attribute.
 	 * @see #setHasTable(boolean)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderAdjustmentType_HasTable()
-	 * @model
+	 * @model annotation="mimo-ent-format type='indicator' length='1'"
 	 * @generated
 	 */
 	boolean isHasTable();
@@ -96,6 +96,7 @@ public interface OrderAdjustmentType extends BizEntityType<OrderAdjustment> {
 	 * @see #setOrderAdjustmentTypeId(String)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderAdjustmentType_OrderAdjustmentTypeId()
 	 * @model id="true" required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
@@ -148,7 +149,9 @@ public interface OrderAdjustmentType extends BizEntityType<OrderAdjustment> {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Order Adjustment Type Attrs</em>' attribute list.
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderAdjustmentType_OrderAdjustmentTypeAttrs()
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='OrderAdjustmentTypeAttr'"
 	 * @generated
 	 */
@@ -157,7 +160,8 @@ public interface OrderAdjustmentType extends BizEntityType<OrderAdjustment> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='OrderAdjustmentType' route='parentTypeId'"
 	 * @generated
 	 */
@@ -166,7 +170,8 @@ public interface OrderAdjustmentType extends BizEntityType<OrderAdjustment> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='OrderAdjustment' route='orderAdjustmentTypeId'"
 	 * @generated
 	 */
@@ -175,7 +180,8 @@ public interface OrderAdjustmentType extends BizEntityType<OrderAdjustment> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='QuoteAdjustment' route='quoteAdjustmentTypeId'"
 	 * @generated
 	 */

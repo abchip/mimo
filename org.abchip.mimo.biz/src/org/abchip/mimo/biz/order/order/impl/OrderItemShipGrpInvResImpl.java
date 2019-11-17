@@ -31,7 +31,7 @@ import org.eclipse.emf.ecore.EClass;
  *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderItemShipGrpInvResImpl#getCreatedDatetime <em>Created Datetime</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderItemShipGrpInvResImpl#getCurrentPromisedDate <em>Current Promised Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderItemShipGrpInvResImpl#getOldPickStartDate <em>Old Pick Start Date</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderItemShipGrpInvResImpl#isPriority <em>Priority</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderItemShipGrpInvResImpl#getPriority <em>Priority</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderItemShipGrpInvResImpl#getPromisedDatetime <em>Promised Datetime</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderItemShipGrpInvResImpl#getQuantity <em>Quantity</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderItemShipGrpInvResImpl#getQuantityNotAvailable <em>Quantity Not Available</em>}</li>
@@ -155,8 +155,8 @@ public class OrderItemShipGrpInvResImpl extends BizEntityImpl implements OrderIt
 	 * @generated
 	 */
 	@Override
-	public boolean isPriority() {
-		return (Boolean)eGet(OrderPackage.Literals.ORDER_ITEM_SHIP_GRP_INV_RES__PRIORITY, true);
+	public char getPriority() {
+		return (Character)eGet(OrderPackage.Literals.ORDER_ITEM_SHIP_GRP_INV_RES__PRIORITY, true);
 	}
 
 	/**
@@ -165,7 +165,7 @@ public class OrderItemShipGrpInvResImpl extends BizEntityImpl implements OrderIt
 	 * @generated
 	 */
 	@Override
-	public void setPriority(boolean newPriority) {
+	public void setPriority(char newPriority) {
 		eSet(OrderPackage.Literals.ORDER_ITEM_SHIP_GRP_INV_RES__PRIORITY, newPriority);
 	}
 

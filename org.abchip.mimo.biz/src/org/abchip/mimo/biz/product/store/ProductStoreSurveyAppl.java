@@ -54,7 +54,7 @@ public interface ProductStoreSurveyAppl extends BizEntity {
 	 * @return the value of the '<em>From Date</em>' attribute.
 	 * @see #setFromDate(Date)
 	 * @see org.abchip.mimo.biz.product.store.StorePackage#getProductStoreSurveyAppl_FromDate()
-	 * @model
+	 * @model annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getFromDate();
@@ -80,7 +80,7 @@ public interface ProductStoreSurveyAppl extends BizEntity {
 	 * @return the value of the '<em>Group Name</em>' attribute.
 	 * @see #setGroupName(String)
 	 * @see org.abchip.mimo.biz.product.store.StorePackage#getProductStoreSurveyAppl_GroupName()
-	 * @model
+	 * @model annotation="mimo-ent-format type='name' length='100'"
 	 * @generated
 	 */
 	String getGroupName();
@@ -107,6 +107,7 @@ public interface ProductStoreSurveyAppl extends BizEntity {
 	 * @see #setProductStoreSurveyId(String)
 	 * @see org.abchip.mimo.biz.product.store.StorePackage#getProductStoreSurveyAppl_ProductStoreSurveyId()
 	 * @model id="true" required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
@@ -133,7 +134,7 @@ public interface ProductStoreSurveyAppl extends BizEntity {
 	 * @return the value of the '<em>Result Template</em>' attribute.
 	 * @see #setResultTemplate(String)
 	 * @see org.abchip.mimo.biz.product.store.StorePackage#getProductStoreSurveyAppl_ResultTemplate()
-	 * @model
+	 * @model annotation="mimo-ent-format type='long-varchar' length='255'"
 	 * @generated
 	 */
 	String getResultTemplate();
@@ -159,7 +160,7 @@ public interface ProductStoreSurveyAppl extends BizEntity {
 	 * @return the value of the '<em>Sequence Num</em>' attribute.
 	 * @see #setSequenceNum(long)
 	 * @see org.abchip.mimo.biz.product.store.StorePackage#getProductStoreSurveyAppl_SequenceNum()
-	 * @model
+	 * @model annotation="mimo-ent-format type='numeric' precision='20' scale='0'"
 	 * @generated
 	 */
 	long getSequenceNum();
@@ -237,7 +238,7 @@ public interface ProductStoreSurveyAppl extends BizEntity {
 	 * @return the value of the '<em>Survey Template</em>' attribute.
 	 * @see #setSurveyTemplate(String)
 	 * @see org.abchip.mimo.biz.product.store.StorePackage#getProductStoreSurveyAppl_SurveyTemplate()
-	 * @model
+	 * @model annotation="mimo-ent-format type='long-varchar' length='255'"
 	 * @generated
 	 */
 	String getSurveyTemplate();
@@ -263,7 +264,7 @@ public interface ProductStoreSurveyAppl extends BizEntity {
 	 * @return the value of the '<em>Thru Date</em>' attribute.
 	 * @see #setThruDate(Date)
 	 * @see org.abchip.mimo.biz.product.store.StorePackage#getProductStoreSurveyAppl_ThruDate()
-	 * @model
+	 * @model annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getThruDate();

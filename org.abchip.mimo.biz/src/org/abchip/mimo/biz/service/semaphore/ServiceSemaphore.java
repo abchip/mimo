@@ -43,6 +43,7 @@ public interface ServiceSemaphore extends BizEntity {
 	 * @see #setServiceName(String)
 	 * @see org.abchip.mimo.biz.service.semaphore.SemaphorePackage#getServiceSemaphore_ServiceName()
 	 * @model id="true" required="true"
+	 *        annotation="mimo-ent-format type='name' length='100'"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
@@ -69,7 +70,7 @@ public interface ServiceSemaphore extends BizEntity {
 	 * @return the value of the '<em>Lock Thread</em>' attribute.
 	 * @see #setLockThread(String)
 	 * @see org.abchip.mimo.biz.service.semaphore.SemaphorePackage#getServiceSemaphore_LockThread()
-	 * @model
+	 * @model annotation="mimo-ent-format type='name' length='100'"
 	 * @generated
 	 */
 	String getLockThread();
@@ -95,7 +96,7 @@ public interface ServiceSemaphore extends BizEntity {
 	 * @return the value of the '<em>Lock Time</em>' attribute.
 	 * @see #setLockTime(Date)
 	 * @see org.abchip.mimo.biz.service.semaphore.SemaphorePackage#getServiceSemaphore_LockTime()
-	 * @model
+	 * @model annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getLockTime();
@@ -121,7 +122,7 @@ public interface ServiceSemaphore extends BizEntity {
 	 * @return the value of the '<em>Locked By Instance Id</em>' attribute.
 	 * @see #setLockedByInstanceId(String)
 	 * @see org.abchip.mimo.biz.service.semaphore.SemaphorePackage#getServiceSemaphore_LockedByInstanceId()
-	 * @model
+	 * @model annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	String getLockedByInstanceId();

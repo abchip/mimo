@@ -49,7 +49,7 @@ public interface PortalPortlet extends BizEntity {
 	 * @return the value of the '<em>Description</em>' attribute.
 	 * @see #setDescription(String)
 	 * @see org.abchip.mimo.biz.common.portal.PortalPackage#getPortalPortlet_Description()
-	 * @model
+	 * @model annotation="mimo-ent-format type='description' length='255'"
 	 * @generated
 	 */
 	String getDescription();
@@ -75,7 +75,7 @@ public interface PortalPortlet extends BizEntity {
 	 * @return the value of the '<em>Edit Form Location</em>' attribute.
 	 * @see #setEditFormLocation(String)
 	 * @see org.abchip.mimo.biz.common.portal.PortalPackage#getPortalPortlet_EditFormLocation()
-	 * @model
+	 * @model annotation="mimo-ent-format type='long-varchar' length='255'"
 	 * @generated
 	 */
 	String getEditFormLocation();
@@ -101,7 +101,7 @@ public interface PortalPortlet extends BizEntity {
 	 * @return the value of the '<em>Edit Form Name</em>' attribute.
 	 * @see #setEditFormName(String)
 	 * @see org.abchip.mimo.biz.common.portal.PortalPackage#getPortalPortlet_EditFormName()
-	 * @model
+	 * @model annotation="mimo-ent-format type='long-varchar' length='255'"
 	 * @generated
 	 */
 	String getEditFormName();
@@ -127,7 +127,7 @@ public interface PortalPortlet extends BizEntity {
 	 * @return the value of the '<em>Portlet Name</em>' attribute.
 	 * @see #setPortletName(String)
 	 * @see org.abchip.mimo.biz.common.portal.PortalPackage#getPortalPortlet_PortletName()
-	 * @model
+	 * @model annotation="mimo-ent-format type='name' length='100'"
 	 * @generated
 	 */
 	String getPortletName();
@@ -153,7 +153,7 @@ public interface PortalPortlet extends BizEntity {
 	 * @return the value of the '<em>Screen Location</em>' attribute.
 	 * @see #setScreenLocation(String)
 	 * @see org.abchip.mimo.biz.common.portal.PortalPackage#getPortalPortlet_ScreenLocation()
-	 * @model
+	 * @model annotation="mimo-ent-format type='long-varchar' length='255'"
 	 * @generated
 	 */
 	String getScreenLocation();
@@ -179,7 +179,7 @@ public interface PortalPortlet extends BizEntity {
 	 * @return the value of the '<em>Screen Name</em>' attribute.
 	 * @see #setScreenName(String)
 	 * @see org.abchip.mimo.biz.common.portal.PortalPackage#getPortalPortlet_ScreenName()
-	 * @model
+	 * @model annotation="mimo-ent-format type='long-varchar' length='255'"
 	 * @generated
 	 */
 	String getScreenName();
@@ -205,7 +205,7 @@ public interface PortalPortlet extends BizEntity {
 	 * @return the value of the '<em>Screenshot</em>' attribute.
 	 * @see #setScreenshot(String)
 	 * @see org.abchip.mimo.biz.common.portal.PortalPackage#getPortalPortlet_Screenshot()
-	 * @model
+	 * @model annotation="mimo-ent-format type='url' length='2000'"
 	 * @generated
 	 */
 	String getScreenshot();
@@ -231,7 +231,7 @@ public interface PortalPortlet extends BizEntity {
 	 * @return the value of the '<em>Security Main Action</em>' attribute.
 	 * @see #setSecurityMainAction(String)
 	 * @see org.abchip.mimo.biz.common.portal.PortalPackage#getPortalPortlet_SecurityMainAction()
-	 * @model
+	 * @model annotation="mimo-ent-format type='short-varchar' length='60'"
 	 * @generated
 	 */
 	String getSecurityMainAction();
@@ -257,7 +257,7 @@ public interface PortalPortlet extends BizEntity {
 	 * @return the value of the '<em>Security Service Name</em>' attribute.
 	 * @see #setSecurityServiceName(String)
 	 * @see org.abchip.mimo.biz.common.portal.PortalPackage#getPortalPortlet_SecurityServiceName()
-	 * @model
+	 * @model annotation="mimo-ent-format type='long-varchar' length='255'"
 	 * @generated
 	 */
 	String getSecurityServiceName();
@@ -283,7 +283,9 @@ public interface PortalPortlet extends BizEntity {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Portlet Portlet Categories</em>' attribute list.
 	 * @see org.abchip.mimo.biz.common.portal.PortalPackage#getPortalPortlet_PortletPortletCategories()
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='PortletPortletCategory'"
 	 * @generated
 	 */
@@ -301,6 +303,7 @@ public interface PortalPortlet extends BizEntity {
 	 * @see #setPortalPortletId(String)
 	 * @see org.abchip.mimo.biz.common.portal.PortalPackage#getPortalPortlet_PortalPortletId()
 	 * @model id="true" required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */

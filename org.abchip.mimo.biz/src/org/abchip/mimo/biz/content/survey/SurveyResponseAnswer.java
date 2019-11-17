@@ -59,7 +59,7 @@ public interface SurveyResponseAnswer extends BizEntity {
 	 * @return the value of the '<em>Amount Base</em>' attribute.
 	 * @see #setAmountBase(BigDecimal)
 	 * @see org.abchip.mimo.biz.content.survey.SurveyPackage#getSurveyResponseAnswer_AmountBase()
-	 * @model
+	 * @model annotation="mimo-ent-format type='currency-amount' precision='18' scale='2'"
 	 * @generated
 	 */
 	BigDecimal getAmountBase();
@@ -85,7 +85,7 @@ public interface SurveyResponseAnswer extends BizEntity {
 	 * @return the value of the '<em>Amount Base Uom Id</em>' attribute.
 	 * @see #setAmountBaseUomId(String)
 	 * @see org.abchip.mimo.biz.content.survey.SurveyPackage#getSurveyResponseAnswer_AmountBaseUomId()
-	 * @model
+	 * @model annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	String getAmountBaseUomId();
@@ -111,7 +111,7 @@ public interface SurveyResponseAnswer extends BizEntity {
 	 * @return the value of the '<em>Answered Date</em>' attribute.
 	 * @see #setAnsweredDate(Date)
 	 * @see org.abchip.mimo.biz.content.survey.SurveyPackage#getSurveyResponseAnswer_AnsweredDate()
-	 * @model
+	 * @model annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getAnsweredDate();
@@ -137,7 +137,7 @@ public interface SurveyResponseAnswer extends BizEntity {
 	 * @return the value of the '<em>Boolean Response</em>' attribute.
 	 * @see #setBooleanResponse(boolean)
 	 * @see org.abchip.mimo.biz.content.survey.SurveyPackage#getSurveyResponseAnswer_BooleanResponse()
-	 * @model
+	 * @model annotation="mimo-ent-format type='indicator' length='1'"
 	 * @generated
 	 */
 	boolean isBooleanResponse();
@@ -189,7 +189,7 @@ public interface SurveyResponseAnswer extends BizEntity {
 	 * @return the value of the '<em>Currency Response</em>' attribute.
 	 * @see #setCurrencyResponse(BigDecimal)
 	 * @see org.abchip.mimo.biz.content.survey.SurveyPackage#getSurveyResponseAnswer_CurrencyResponse()
-	 * @model
+	 * @model annotation="mimo-ent-format type='currency-amount' precision='18' scale='2'"
 	 * @generated
 	 */
 	BigDecimal getCurrencyResponse();
@@ -215,7 +215,7 @@ public interface SurveyResponseAnswer extends BizEntity {
 	 * @return the value of the '<em>Duration</em>' attribute.
 	 * @see #setDuration(long)
 	 * @see org.abchip.mimo.biz.content.survey.SurveyPackage#getSurveyResponseAnswer_Duration()
-	 * @model
+	 * @model annotation="mimo-ent-format type='numeric' precision='20' scale='0'"
 	 * @generated
 	 */
 	long getDuration();
@@ -241,7 +241,7 @@ public interface SurveyResponseAnswer extends BizEntity {
 	 * @return the value of the '<em>Duration Uom Id</em>' attribute.
 	 * @see #setDurationUomId(String)
 	 * @see org.abchip.mimo.biz.content.survey.SurveyPackage#getSurveyResponseAnswer_DurationUomId()
-	 * @model
+	 * @model annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	String getDurationUomId();
@@ -267,7 +267,7 @@ public interface SurveyResponseAnswer extends BizEntity {
 	 * @return the value of the '<em>Float Response</em>' attribute.
 	 * @see #setFloatResponse(double)
 	 * @see org.abchip.mimo.biz.content.survey.SurveyPackage#getSurveyResponseAnswer_FloatResponse()
-	 * @model
+	 * @model annotation="mimo-ent-format type='floating-point'"
 	 * @generated
 	 */
 	double getFloatResponse();
@@ -293,7 +293,7 @@ public interface SurveyResponseAnswer extends BizEntity {
 	 * @return the value of the '<em>Numeric Response</em>' attribute.
 	 * @see #setNumericResponse(long)
 	 * @see org.abchip.mimo.biz.content.survey.SurveyPackage#getSurveyResponseAnswer_NumericResponse()
-	 * @model
+	 * @model annotation="mimo-ent-format type='numeric' precision='20' scale='0'"
 	 * @generated
 	 */
 	long getNumericResponse();
@@ -319,7 +319,7 @@ public interface SurveyResponseAnswer extends BizEntity {
 	 * @return the value of the '<em>Sequence Num</em>' attribute.
 	 * @see #setSequenceNum(long)
 	 * @see org.abchip.mimo.biz.content.survey.SurveyPackage#getSurveyResponseAnswer_SequenceNum()
-	 * @model
+	 * @model annotation="mimo-ent-format type='numeric' precision='20' scale='0'"
 	 * @generated
 	 */
 	long getSequenceNum();
@@ -346,6 +346,7 @@ public interface SurveyResponseAnswer extends BizEntity {
 	 * @see #setSurveyMultiRespColId(String)
 	 * @see org.abchip.mimo.biz.content.survey.SurveyPackage#getSurveyResponseAnswer_SurveyMultiRespColId()
 	 * @model required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
@@ -372,7 +373,7 @@ public interface SurveyResponseAnswer extends BizEntity {
 	 * @return the value of the '<em>Survey Multi Resp Id</em>' attribute.
 	 * @see #setSurveyMultiRespId(String)
 	 * @see org.abchip.mimo.biz.content.survey.SurveyPackage#getSurveyResponseAnswer_SurveyMultiRespId()
-	 * @model
+	 * @model annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	String getSurveyMultiRespId();
@@ -398,7 +399,7 @@ public interface SurveyResponseAnswer extends BizEntity {
 	 * @return the value of the '<em>Survey Option Seq Id</em>' attribute.
 	 * @see #setSurveyOptionSeqId(String)
 	 * @see org.abchip.mimo.biz.content.survey.SurveyPackage#getSurveyResponseAnswer_SurveyOptionSeqId()
-	 * @model
+	 * @model annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	String getSurveyOptionSeqId();
@@ -476,7 +477,7 @@ public interface SurveyResponseAnswer extends BizEntity {
 	 * @return the value of the '<em>Text Response</em>' attribute.
 	 * @see #setTextResponse(String)
 	 * @see org.abchip.mimo.biz.content.survey.SurveyPackage#getSurveyResponseAnswer_TextResponse()
-	 * @model
+	 * @model annotation="mimo-ent-format type='very-long'"
 	 * @generated
 	 */
 	String getTextResponse();
@@ -502,7 +503,7 @@ public interface SurveyResponseAnswer extends BizEntity {
 	 * @return the value of the '<em>Weight Factor</em>' attribute.
 	 * @see #setWeightFactor(double)
 	 * @see org.abchip.mimo.biz.content.survey.SurveyPackage#getSurveyResponseAnswer_WeightFactor()
-	 * @model
+	 * @model annotation="mimo-ent-format type='floating-point'"
 	 * @generated
 	 */
 	double getWeightFactor();

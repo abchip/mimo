@@ -41,7 +41,7 @@ public interface ReturnType extends BizEntity {
 	 * @return the value of the '<em>Description</em>' attribute.
 	 * @see #setDescription(String)
 	 * @see org.abchip.mimo.biz.order.return_.ReturnPackage#getReturnType_Description()
-	 * @model
+	 * @model annotation="mimo-ent-format type='description' length='255'"
 	 * @generated
 	 */
 	String getDescription();
@@ -68,6 +68,7 @@ public interface ReturnType extends BizEntity {
 	 * @see #setReturnTypeId(String)
 	 * @see org.abchip.mimo.biz.order.return_.ReturnPackage#getReturnType_ReturnTypeId()
 	 * @model id="true" required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
@@ -94,7 +95,7 @@ public interface ReturnType extends BizEntity {
 	 * @return the value of the '<em>Sequence Id</em>' attribute.
 	 * @see #setSequenceId(String)
 	 * @see org.abchip.mimo.biz.order.return_.ReturnPackage#getReturnType_SequenceId()
-	 * @model
+	 * @model annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	String getSequenceId();
@@ -112,7 +113,8 @@ public interface ReturnType extends BizEntity {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ReturnAdjustment' route='returnTypeId'"
 	 * @generated
 	 */
@@ -121,7 +123,8 @@ public interface ReturnType extends BizEntity {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ReturnItem' route='returnTypeId'"
 	 * @generated
 	 */

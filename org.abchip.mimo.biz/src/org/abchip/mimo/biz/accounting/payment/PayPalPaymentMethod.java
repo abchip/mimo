@@ -19,8 +19,8 @@ import org.abchip.mimo.biz.party.contact.ContactMech;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.accounting.payment.PayPalPaymentMethod#isAvsAddr <em>Avs Addr</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.payment.PayPalPaymentMethod#isAvsZip <em>Avs Zip</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.payment.PayPalPaymentMethod#getAvsAddr <em>Avs Addr</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.payment.PayPalPaymentMethod#getAvsZip <em>Avs Zip</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.PayPalPaymentMethod#getCorrelationId <em>Correlation Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.PayPalPaymentMethod#getExpressCheckoutToken <em>Express Checkout Token</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.PayPalPaymentMethod#getPayerId <em>Payer Id</em>}</li>
@@ -35,6 +35,58 @@ import org.abchip.mimo.biz.party.contact.ContactMech;
  * @generated
  */
 public interface PayPalPaymentMethod extends BizEntity {
+	/**
+	 * Returns the value of the '<em><b>Avs Addr</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Avs Addr</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Avs Addr</em>' attribute.
+	 * @see #setAvsAddr(char)
+	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPayPalPaymentMethod_AvsAddr()
+	 * @model annotation="mimo-ent-format type='indicator' length='1'"
+	 * @generated
+	 */
+	char getAvsAddr();
+
+	/**
+	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.payment.PayPalPaymentMethod#getAvsAddr <em>Avs Addr</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Avs Addr</em>' attribute.
+	 * @see #getAvsAddr()
+	 * @generated
+	 */
+	void setAvsAddr(char value);
+
+	/**
+	 * Returns the value of the '<em><b>Avs Zip</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Avs Zip</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Avs Zip</em>' attribute.
+	 * @see #setAvsZip(char)
+	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPayPalPaymentMethod_AvsZip()
+	 * @model annotation="mimo-ent-format type='indicator' length='1'"
+	 * @generated
+	 */
+	char getAvsZip();
+
+	/**
+	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.payment.PayPalPaymentMethod#getAvsZip <em>Avs Zip</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Avs Zip</em>' attribute.
+	 * @see #getAvsZip()
+	 * @generated
+	 */
+	void setAvsZip(char value);
+
 	/**
 	 * Returns the value of the '<em><b>Contact Mech Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
@@ -72,7 +124,7 @@ public interface PayPalPaymentMethod extends BizEntity {
 	 * @return the value of the '<em>Correlation Id</em>' attribute.
 	 * @see #setCorrelationId(String)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPayPalPaymentMethod_CorrelationId()
-	 * @model
+	 * @model annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	String getCorrelationId();
@@ -98,7 +150,7 @@ public interface PayPalPaymentMethod extends BizEntity {
 	 * @return the value of the '<em>Express Checkout Token</em>' attribute.
 	 * @see #setExpressCheckoutToken(String)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPayPalPaymentMethod_ExpressCheckoutToken()
-	 * @model
+	 * @model annotation="mimo-ent-format type='short-varchar' length='60'"
 	 * @generated
 	 */
 	String getExpressCheckoutToken();
@@ -124,7 +176,7 @@ public interface PayPalPaymentMethod extends BizEntity {
 	 * @return the value of the '<em>Payer Id</em>' attribute.
 	 * @see #setPayerId(String)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPayPalPaymentMethod_PayerId()
-	 * @model
+	 * @model annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	String getPayerId();
@@ -150,7 +202,7 @@ public interface PayPalPaymentMethod extends BizEntity {
 	 * @return the value of the '<em>Payer Status</em>' attribute.
 	 * @see #setPayerStatus(String)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPayPalPaymentMethod_PayerStatus()
-	 * @model
+	 * @model annotation="mimo-ent-format type='short-varchar' length='60'"
 	 * @generated
 	 */
 	String getPayerStatus();
@@ -192,58 +244,6 @@ public interface PayPalPaymentMethod extends BizEntity {
 	void setPaymentMethodId(PaymentMethod value);
 
 	/**
-	 * Returns the value of the '<em><b>Avs Addr</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Avs Addr</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Avs Addr</em>' attribute.
-	 * @see #setAvsAddr(boolean)
-	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPayPalPaymentMethod_AvsAddr()
-	 * @model
-	 * @generated
-	 */
-	boolean isAvsAddr();
-
-	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.payment.PayPalPaymentMethod#isAvsAddr <em>Avs Addr</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Avs Addr</em>' attribute.
-	 * @see #isAvsAddr()
-	 * @generated
-	 */
-	void setAvsAddr(boolean value);
-
-	/**
-	 * Returns the value of the '<em><b>Avs Zip</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Avs Zip</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Avs Zip</em>' attribute.
-	 * @see #setAvsZip(boolean)
-	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPayPalPaymentMethod_AvsZip()
-	 * @model
-	 * @generated
-	 */
-	boolean isAvsZip();
-
-	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.payment.PayPalPaymentMethod#isAvsZip <em>Avs Zip</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Avs Zip</em>' attribute.
-	 * @see #isAvsZip()
-	 * @generated
-	 */
-	void setAvsZip(boolean value);
-
-	/**
 	 * Returns the value of the '<em><b>Transaction Id</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -254,7 +254,7 @@ public interface PayPalPaymentMethod extends BizEntity {
 	 * @return the value of the '<em>Transaction Id</em>' attribute.
 	 * @see #setTransactionId(String)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPayPalPaymentMethod_TransactionId()
-	 * @model
+	 * @model annotation="mimo-ent-format type='short-varchar' length='60'"
 	 * @generated
 	 */
 	String getTransactionId();

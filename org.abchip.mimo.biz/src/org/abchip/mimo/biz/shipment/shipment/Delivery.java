@@ -55,7 +55,7 @@ public interface Delivery extends BizEntity {
 	 * @return the value of the '<em>Actual Arrival Date</em>' attribute.
 	 * @see #setActualArrivalDate(Date)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getDelivery_ActualArrivalDate()
-	 * @model
+	 * @model annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getActualArrivalDate();
@@ -81,7 +81,7 @@ public interface Delivery extends BizEntity {
 	 * @return the value of the '<em>Actual Start Date</em>' attribute.
 	 * @see #setActualStartDate(Date)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getDelivery_ActualStartDate()
-	 * @model
+	 * @model annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getActualStartDate();
@@ -108,6 +108,7 @@ public interface Delivery extends BizEntity {
 	 * @see #setDeliveryId(String)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getDelivery_DeliveryId()
 	 * @model id="true" required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
@@ -160,7 +161,7 @@ public interface Delivery extends BizEntity {
 	 * @return the value of the '<em>End Mileage</em>' attribute.
 	 * @see #setEndMileage(BigDecimal)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getDelivery_EndMileage()
-	 * @model
+	 * @model annotation="mimo-ent-format type='fixed-point' precision='18' scale='6'"
 	 * @generated
 	 */
 	BigDecimal getEndMileage();
@@ -186,7 +187,7 @@ public interface Delivery extends BizEntity {
 	 * @return the value of the '<em>Estimated Arrival Date</em>' attribute.
 	 * @see #setEstimatedArrivalDate(Date)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getDelivery_EstimatedArrivalDate()
-	 * @model
+	 * @model annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getEstimatedArrivalDate();
@@ -212,7 +213,7 @@ public interface Delivery extends BizEntity {
 	 * @return the value of the '<em>Estimated Start Date</em>' attribute.
 	 * @see #setEstimatedStartDate(Date)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getDelivery_EstimatedStartDate()
-	 * @model
+	 * @model annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getEstimatedStartDate();
@@ -264,7 +265,7 @@ public interface Delivery extends BizEntity {
 	 * @return the value of the '<em>Fuel Used</em>' attribute.
 	 * @see #setFuelUsed(BigDecimal)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getDelivery_FuelUsed()
-	 * @model
+	 * @model annotation="mimo-ent-format type='fixed-point' precision='18' scale='6'"
 	 * @generated
 	 */
 	BigDecimal getFuelUsed();
@@ -316,7 +317,7 @@ public interface Delivery extends BizEntity {
 	 * @return the value of the '<em>Start Mileage</em>' attribute.
 	 * @see #setStartMileage(BigDecimal)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getDelivery_StartMileage()
-	 * @model
+	 * @model annotation="mimo-ent-format type='fixed-point' precision='18' scale='6'"
 	 * @generated
 	 */
 	BigDecimal getStartMileage();
@@ -334,7 +335,8 @@ public interface Delivery extends BizEntity {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ShipmentRouteSegment' route='deliveryId'"
 	 * @generated
 	 */

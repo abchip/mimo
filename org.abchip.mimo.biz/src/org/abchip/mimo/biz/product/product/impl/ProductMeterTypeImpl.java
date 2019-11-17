@@ -7,7 +7,6 @@
  */
 package org.abchip.mimo.biz.product.product.impl;
 
-import java.lang.reflect.InvocationTargetException;
 import java.util.List;
 
 import org.abchip.mimo.biz.common.uom.Uom;
@@ -15,7 +14,6 @@ import org.abchip.mimo.biz.impl.BizEntityTypeImpl;
 import org.abchip.mimo.biz.product.product.ProductMeter;
 import org.abchip.mimo.biz.product.product.ProductMeterType;
 import org.abchip.mimo.biz.product.product.ProductPackage;
-import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 
 /**
@@ -132,24 +130,6 @@ public class ProductMeterTypeImpl extends BizEntityTypeImpl<ProductMeter> implem
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
-		switch (operationID) {
-			case ProductPackage.PRODUCT_METER_TYPE___INTERVAL_FIXED_ASSET_MAINTS:
-				return intervalFixedAssetMaints();
-			case ProductPackage.PRODUCT_METER_TYPE___INTERVAL_PRODUCT_MAINTS:
-				return intervalProductMaints();
-			case ProductPackage.PRODUCT_METER_TYPE___PRODUCT_METERS:
-				return productMeters();
-		}
-		return super.eInvoke(operationID, arguments);
 	}
 
 	/**

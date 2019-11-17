@@ -41,7 +41,7 @@ public interface PortalPagePortlet extends BizEntity {
 	 * @return the value of the '<em>Column Seq Id</em>' attribute.
 	 * @see #setColumnSeqId(String)
 	 * @see org.abchip.mimo.biz.common.portal.PortalPackage#getPortalPagePortlet_ColumnSeqId()
-	 * @model
+	 * @model annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	String getColumnSeqId();
@@ -68,6 +68,7 @@ public interface PortalPagePortlet extends BizEntity {
 	 * @see #setPortletSeqId(String)
 	 * @see org.abchip.mimo.biz.common.portal.PortalPackage#getPortalPagePortlet_PortletSeqId()
 	 * @model required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
@@ -94,7 +95,7 @@ public interface PortalPagePortlet extends BizEntity {
 	 * @return the value of the '<em>Sequence Num</em>' attribute.
 	 * @see #setSequenceNum(long)
 	 * @see org.abchip.mimo.biz.common.portal.PortalPackage#getPortalPagePortlet_SequenceNum()
-	 * @model
+	 * @model annotation="mimo-ent-format type='numeric' precision='20' scale='0'"
 	 * @generated
 	 */
 	long getSequenceNum();

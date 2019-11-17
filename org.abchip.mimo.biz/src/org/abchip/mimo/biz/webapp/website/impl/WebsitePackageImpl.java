@@ -75,6 +75,7 @@ import org.abchip.mimo.biz.entity.crypto.CryptoPackage;
 import org.abchip.mimo.biz.entity.crypto.impl.CryptoPackageImpl;
 import org.abchip.mimo.biz.entity.group.GroupPackage;
 import org.abchip.mimo.biz.entity.group.impl.GroupPackageImpl;
+import org.abchip.mimo.biz.entity.impl.EntityPackageImpl;
 import org.abchip.mimo.biz.entity.sequence.SequencePackage;
 import org.abchip.mimo.biz.entity.sequence.impl.SequencePackageImpl;
 import org.abchip.mimo.biz.entity.synchronization.SynchronizationPackage;
@@ -195,7 +196,6 @@ import org.eclipse.emf.common.util.URI;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 
 import org.eclipse.emf.ecore.EReference;
@@ -337,6 +337,8 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		SurveyPackageImpl theSurveyPackage = (SurveyPackageImpl)(registeredPackage instanceof SurveyPackageImpl ? registeredPackage : SurveyPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(org.abchip.mimo.biz.content.website.WebsitePackage.eNS_URI);
 		org.abchip.mimo.biz.content.website.impl.WebsitePackageImpl theWebsitePackage_1 = (org.abchip.mimo.biz.content.website.impl.WebsitePackageImpl)(registeredPackage instanceof org.abchip.mimo.biz.content.website.impl.WebsitePackageImpl ? registeredPackage : org.abchip.mimo.biz.content.website.WebsitePackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(org.abchip.mimo.biz.entity.EntityPackage.eNS_URI);
+		EntityPackageImpl theEntityPackage = (EntityPackageImpl)(registeredPackage instanceof EntityPackageImpl ? registeredPackage : org.abchip.mimo.biz.entity.EntityPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(AuditPackage.eNS_URI);
 		AuditPackageImpl theAuditPackage = (AuditPackageImpl)(registeredPackage instanceof AuditPackageImpl ? registeredPackage : AuditPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(CryptoPackage.eNS_URI);
@@ -490,6 +492,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		thePreferencePackage.createPackageContents();
 		theSurveyPackage.createPackageContents();
 		theWebsitePackage_1.createPackageContents();
+		theEntityPackage.createPackageContents();
 		theAuditPackage.createPackageContents();
 		theCryptoPackage.createPackageContents();
 		theGroupPackage.createPackageContents();
@@ -584,6 +587,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		thePreferencePackage.initializePackageContents();
 		theSurveyPackage.initializePackageContents();
 		theWebsitePackage_1.initializePackageContents();
+		theEntityPackage.initializePackageContents();
 		theAuditPackage.initializePackageContents();
 		theCryptoPackage.initializePackageContents();
 		theGroupPackage.initializePackageContents();
@@ -898,36 +902,6 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * @generated
 	 */
 	@Override
-	public EOperation getWebSite__OrderHeaders() {
-		return webSiteEClass.getEOperations().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EOperation getWebSite__SubscriptionResources() {
-		return webSiteEClass.getEOperations().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EOperation getWebSite__WebPages() {
-		return webSiteEClass.getEOperations().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public WebsiteFactory getWebsiteFactory() {
 		return (WebsiteFactory)getEFactoryInstance();
 	}
@@ -976,9 +950,6 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		createEReference(webSiteEClass, WEB_SITE__VISUAL_THEME_SET_ID);
 		createEReference(webSiteEClass, WEB_SITE__PRODUCT_STORE_ID);
 		createEAttribute(webSiteEClass, WEB_SITE__WEB_ANALYTICS_CONFIGS);
-		createEOperation(webSiteEClass, WEB_SITE___ORDER_HEADERS);
-		createEOperation(webSiteEClass, WEB_SITE___SUBSCRIPTION_RESOURCES);
-		createEOperation(webSiteEClass, WEB_SITE___WEB_PAGES);
 	}
 
 	/**
@@ -1018,7 +989,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		webPageEClass.getESuperTypes().add(theBizPackage.getBizEntity());
 		webSiteEClass.getESuperTypes().add(theBizPackage.getBizEntity());
 
-		// Initialize classes, features, and operations; add parameters
+		// Initialize classes and features; add operations and parameters
 		initEClass(webPageEClass, WebPage.class, "WebPage", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getWebPage_WebPageId(), ecorePackage.getEString(), "webPageId", null, 1, 1, WebPage.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getWebPage_PageName(), ecorePackage.getEString(), "pageName", null, 0, 1, WebPage.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1047,19 +1018,178 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		getWebSite_VisualThemeSetId().getEKeys().add(theThemePackage.getVisualThemeSet_VisualThemeSetId());
 		initEReference(getWebSite_ProductStoreId(), theStorePackage.getProductStore(), null, "productStoreId", null, 0, 1, WebSite.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getWebSite_ProductStoreId().getEKeys().add(theStorePackage.getProductStore_ProductStoreId());
-		initEAttribute(getWebSite_WebAnalyticsConfigs(), ecorePackage.getEString(), "webAnalyticsConfigs", null, 0, -1, WebSite.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getWebSite_WebAnalyticsConfigs(), ecorePackage.getEString(), "webAnalyticsConfigs", null, 1, -1, WebSite.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEOperation(getWebSite__OrderHeaders(), ecorePackage.getEString(), "orderHeaders", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(webSiteEClass, ecorePackage.getEString(), "orderHeaders", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		initEOperation(getWebSite__SubscriptionResources(), ecorePackage.getEString(), "subscriptionResources", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(webSiteEClass, ecorePackage.getEString(), "subscriptionResources", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		initEOperation(getWebSite__WebPages(), ecorePackage.getEString(), "webPages", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(webSiteEClass, ecorePackage.getEString(), "webPages", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		// Create annotations
+		// mimo-ent-format
+		createMimoentformatAnnotations();
 		// mimo-ent-slot
 		createMimoentslotAnnotations();
 		// mimo-ent-domain
 		createMimoentdomainAnnotations();
+	}
+
+	/**
+	 * Initializes the annotations for <b>mimo-ent-format</b>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void createMimoentformatAnnotations() {
+		String source = "mimo-ent-format";
+		addAnnotation
+		  (getWebPage_WebPageId(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (getWebPage_PageName(),
+		   source,
+		   new String[] {
+			   "type", "name",
+			   "length", "100"
+		   });
+		addAnnotation
+		  (webSiteEClass.getEOperations().get(0),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (webSiteEClass.getEOperations().get(1),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (webSiteEClass.getEOperations().get(2),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (getWebSite_WebSiteId(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (getWebSite_AllowProductStoreChange(),
+		   source,
+		   new String[] {
+			   "type", "indicator",
+			   "length", "1"
+		   });
+		addAnnotation
+		  (getWebSite_CookieDomain(),
+		   source,
+		   new String[] {
+			   "type", "long-varchar",
+			   "length", "255"
+		   });
+		addAnnotation
+		  (getWebSite_DisplayMaintenancePage(),
+		   source,
+		   new String[] {
+			   "type", "indicator",
+			   "length", "1"
+		   });
+		addAnnotation
+		  (getWebSite_EnableHttps(),
+		   source,
+		   new String[] {
+			   "type", "indicator",
+			   "length", "1"
+		   });
+		addAnnotation
+		  (getWebSite_HostedPathAlias(),
+		   source,
+		   new String[] {
+			   "type", "short-varchar",
+			   "length", "60"
+		   });
+		addAnnotation
+		  (getWebSite_HttpHost(),
+		   source,
+		   new String[] {
+			   "type", "long-varchar",
+			   "length", "255"
+		   });
+		addAnnotation
+		  (getWebSite_HttpPort(),
+		   source,
+		   new String[] {
+			   "type", "very-short",
+			   "length", "10"
+		   });
+		addAnnotation
+		  (getWebSite_HttpsHost(),
+		   source,
+		   new String[] {
+			   "type", "long-varchar",
+			   "length", "255"
+		   });
+		addAnnotation
+		  (getWebSite_HttpsPort(),
+		   source,
+		   new String[] {
+			   "type", "very-short",
+			   "length", "10"
+		   });
+		addAnnotation
+		  (getWebSite_IsDefault(),
+		   source,
+		   new String[] {
+			   "type", "indicator",
+			   "length", "1"
+		   });
+		addAnnotation
+		  (getWebSite_SecureContentPrefix(),
+		   source,
+		   new String[] {
+			   "type", "url",
+			   "length", "2000"
+		   });
+		addAnnotation
+		  (getWebSite_SiteName(),
+		   source,
+		   new String[] {
+			   "type", "name",
+			   "length", "100"
+		   });
+		addAnnotation
+		  (getWebSite_StandardContentPrefix(),
+		   source,
+		   new String[] {
+			   "type", "url",
+			   "length", "2000"
+		   });
+		addAnnotation
+		  (getWebSite_WebappPath(),
+		   source,
+		   new String[] {
+			   "type", "long-varchar",
+			   "length", "255"
+		   });
+		addAnnotation
+		  (getWebSite_WebAnalyticsConfigs(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
 	}
 
 	/**
@@ -1077,19 +1207,19 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 			   "key", "true"
 		   });
 		addAnnotation
-		  (getWebSite__OrderHeaders(),
+		  (webSiteEClass.getEOperations().get(0),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (getWebSite__SubscriptionResources(),
+		  (webSiteEClass.getEOperations().get(1),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (getWebSite__WebPages(),
+		  (webSiteEClass.getEOperations().get(2),
 		   source,
 		   new String[] {
 			   "derived", "true"
@@ -1117,7 +1247,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	protected void createMimoentdomainAnnotations() {
 		String source = "mimo-ent-domain";
 		addAnnotation
-		  (getWebSite__OrderHeaders(),
+		  (webSiteEClass.getEOperations().get(0),
 		   source,
 		   new String[] {
 			   "frame", "OrderHeader",
@@ -1127,7 +1257,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (getWebSite__SubscriptionResources(),
+		  (webSiteEClass.getEOperations().get(1),
 		   source,
 		   new String[] {
 			   "frame", "SubscriptionResource",
@@ -1137,7 +1267,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (getWebSite__WebPages(),
+		  (webSiteEClass.getEOperations().get(2),
 		   source,
 		   new String[] {
 			   "frame", "WebPage",

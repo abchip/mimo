@@ -45,7 +45,7 @@ public interface SegmentGroup extends BizEntityTyped<SegmentGroupType> {
 	 * @return the value of the '<em>Description</em>' attribute.
 	 * @see #setDescription(String)
 	 * @see org.abchip.mimo.biz.marketing.segment.SegmentPackage#getSegmentGroup_Description()
-	 * @model
+	 * @model annotation="mimo-ent-format type='description' length='255'"
 	 * @generated
 	 */
 	String getDescription();
@@ -98,6 +98,7 @@ public interface SegmentGroup extends BizEntityTyped<SegmentGroupType> {
 	 * @see #setSegmentGroupId(String)
 	 * @see org.abchip.mimo.biz.marketing.segment.SegmentPackage#getSegmentGroup_SegmentGroupId()
 	 * @model id="true" required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
@@ -150,7 +151,9 @@ public interface SegmentGroup extends BizEntityTyped<SegmentGroupType> {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Segment Group Classifications</em>' attribute list.
 	 * @see org.abchip.mimo.biz.marketing.segment.SegmentPackage#getSegmentGroup_SegmentGroupClassifications()
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='SegmentGroupClassification'"
 	 * @generated
 	 */
@@ -167,7 +170,9 @@ public interface SegmentGroup extends BizEntityTyped<SegmentGroupType> {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Segment Group Geos</em>' attribute list.
 	 * @see org.abchip.mimo.biz.marketing.segment.SegmentPackage#getSegmentGroup_SegmentGroupGeos()
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='SegmentGroupGeo'"
 	 * @generated
 	 */

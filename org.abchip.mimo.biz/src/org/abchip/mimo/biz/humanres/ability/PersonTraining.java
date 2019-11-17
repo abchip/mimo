@@ -51,7 +51,7 @@ public interface PersonTraining extends BizEntity {
 	 * @return the value of the '<em>Approval Status</em>' attribute.
 	 * @see #setApprovalStatus(String)
 	 * @see org.abchip.mimo.biz.humanres.ability.AbilityPackage#getPersonTraining_ApprovalStatus()
-	 * @model
+	 * @model annotation="mimo-ent-format type='short-varchar' length='60'"
 	 * @generated
 	 */
 	String getApprovalStatus();
@@ -104,6 +104,7 @@ public interface PersonTraining extends BizEntity {
 	 * @see #setFromDate(Date)
 	 * @see org.abchip.mimo.biz.humanres.ability.AbilityPackage#getPersonTraining_FromDate()
 	 * @model required="true"
+	 *        annotation="mimo-ent-format type='date-time'"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
@@ -156,7 +157,7 @@ public interface PersonTraining extends BizEntity {
 	 * @return the value of the '<em>Reason</em>' attribute.
 	 * @see #setReason(String)
 	 * @see org.abchip.mimo.biz.humanres.ability.AbilityPackage#getPersonTraining_Reason()
-	 * @model
+	 * @model annotation="mimo-ent-format type='description' length='255'"
 	 * @generated
 	 */
 	String getReason();
@@ -182,7 +183,7 @@ public interface PersonTraining extends BizEntity {
 	 * @return the value of the '<em>Thru Date</em>' attribute.
 	 * @see #setThruDate(Date)
 	 * @see org.abchip.mimo.biz.humanres.ability.AbilityPackage#getPersonTraining_ThruDate()
-	 * @model
+	 * @model annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getThruDate();

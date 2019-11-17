@@ -39,7 +39,7 @@ public interface TarpittedLoginView extends BizEntity {
 	 * @return the value of the '<em>Tarpit Release Date Time</em>' attribute.
 	 * @see #setTarpitReleaseDateTime(long)
 	 * @see org.abchip.mimo.biz.security.securitygroup.SecuritygroupPackage#getTarpittedLoginView_TarpitReleaseDateTime()
-	 * @model
+	 * @model annotation="mimo-ent-format type='numeric' precision='20' scale='0'"
 	 * @generated
 	 */
 	long getTarpitReleaseDateTime();
@@ -66,6 +66,7 @@ public interface TarpittedLoginView extends BizEntity {
 	 * @see #setUserLoginId(String)
 	 * @see org.abchip.mimo.biz.security.securitygroup.SecuritygroupPackage#getTarpittedLoginView_UserLoginId()
 	 * @model required="true"
+	 *        annotation="mimo-ent-format type='id-vlong' length='255'"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
@@ -93,6 +94,7 @@ public interface TarpittedLoginView extends BizEntity {
 	 * @see #setViewNameId(String)
 	 * @see org.abchip.mimo.biz.security.securitygroup.SecuritygroupPackage#getTarpittedLoginView_ViewNameId()
 	 * @model required="true"
+	 *        annotation="mimo-ent-format type='id-long' length='60'"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */

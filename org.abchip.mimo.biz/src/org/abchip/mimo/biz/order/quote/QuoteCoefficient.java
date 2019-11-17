@@ -42,6 +42,7 @@ public interface QuoteCoefficient extends BizEntity {
 	 * @see #setCoeffName(String)
 	 * @see org.abchip.mimo.biz.order.quote.QuotePackage#getQuoteCoefficient_CoeffName()
 	 * @model required="true"
+	 *        annotation="mimo-ent-format type='id-long' length='60'"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
@@ -68,7 +69,7 @@ public interface QuoteCoefficient extends BizEntity {
 	 * @return the value of the '<em>Coeff Value</em>' attribute.
 	 * @see #setCoeffValue(BigDecimal)
 	 * @see org.abchip.mimo.biz.order.quote.QuotePackage#getQuoteCoefficient_CoeffValue()
-	 * @model
+	 * @model annotation="mimo-ent-format type='fixed-point' precision='18' scale='6'"
 	 * @generated
 	 */
 	BigDecimal getCoeffValue();

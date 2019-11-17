@@ -9,7 +9,6 @@ package org.abchip.mimo.context.impl;
 
 import java.io.IOException;
 import java.lang.annotation.Annotation;
-import java.lang.reflect.InvocationTargetException;
 import java.net.URL;
 import java.util.List;
 
@@ -17,7 +16,6 @@ import org.abchip.mimo.context.AdapterFactory;
 import org.abchip.mimo.context.Context;
 import org.abchip.mimo.context.ContextDescription;
 import org.abchip.mimo.context.ContextPackage;
-import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
@@ -95,63 +93,6 @@ public abstract class ContextImpl extends MinimalEObjectImpl.Container implement
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	@SuppressWarnings({"rawtypes", "unchecked" })
-	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
-		switch (operationID) {
-			case ContextPackage.CONTEXT___CLOSE:
-				close();
-				return null;
-			case ContextPackage.CONTEXT___GET__CLASS:
-				return get((Class)arguments.get(0));
-			case ContextPackage.CONTEXT___GET_ADAPTER__OBJECT_CLASS:
-				return getAdapter(arguments.get(0), (Class)arguments.get(1));
-			case ContextPackage.CONTEXT___INJECT__OBJECT:
-				inject(arguments.get(0));
-				return null;
-			case ContextPackage.CONTEXT___IS_CLOSED:
-				return isClosed();
-			case ContextPackage.CONTEXT___INVOKE__OBJECT_CLASS:
-				invoke(arguments.get(0), (Class)arguments.get(1));
-				return null;
-			case ContextPackage.CONTEXT___MAKE__CLASS:
-				return make((Class)arguments.get(0));
-			case ContextPackage.CONTEXT___REGISTER_ADAPTER_FACTORY__ADAPTERFACTORY_CLASS:
-				registerAdapterFactory((AdapterFactory)arguments.get(0), (Class)arguments.get(1));
-				return null;
-			case ContextPackage.CONTEXT___SET__CLASS_OBJECT:
-				set((Class)arguments.get(0), arguments.get(1));
-				return null;
-			case ContextPackage.CONTEXT___SET__STRING_OBJECT:
-				set((String)arguments.get(0), arguments.get(1));
-				return null;
-			case ContextPackage.CONTEXT___GET_RESOURCE__CLASS_STRING:
-				try {
-					return getResource((Class<?>)arguments.get(0), (String)arguments.get(1));
-				}
-				catch (Throwable throwable) {
-					throw new InvocationTargetException(throwable);
-				}
-			case ContextPackage.CONTEXT___GET_RESOURCES__CLASS_STRING:
-				try {
-					return getResources((Class<?>)arguments.get(0), (String)arguments.get(1));
-				}
-				catch (Throwable throwable) {
-					throw new InvocationTargetException(throwable);
-				}
-			case ContextPackage.CONTEXT___GET_CONTEXT:
-				return getContext();
-			case ContextPackage.CONTEXT___GET_CONTEXT_DESCRIPTION:
-				return getContextDescription();
-		}
-		return super.eInvoke(operationID, arguments);
 	}
 
 	/**

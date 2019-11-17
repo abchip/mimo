@@ -10,7 +10,6 @@ package org.abchip.mimo.biz.shipment.receipt;
 import org.abchip.mimo.biz.BizPackage;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
@@ -134,60 +133,6 @@ public interface ReceiptPackage extends EPackage {
 	 * @ordered
 	 */
 	int REJECTION_REASON_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
-
-	/**
-	 * The operation id for the '<em>Isa</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REJECTION_REASON___ISA = BizPackage.BIZ_ENTITY___ISA;
-
-	/**
-	 * The operation id for the '<em>Get Name</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REJECTION_REASON___GET_NAME = BizPackage.BIZ_ENTITY___GET_NAME;
-
-	/**
-	 * The operation id for the '<em>Get URI</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REJECTION_REASON___GET_URI = BizPackage.BIZ_ENTITY___GET_URI;
-
-	/**
-	 * The operation id for the '<em>Is Proxy</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REJECTION_REASON___IS_PROXY = BizPackage.BIZ_ENTITY___IS_PROXY;
-
-	/**
-	 * The operation id for the '<em>Shipment Receipts</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REJECTION_REASON___SHIPMENT_RECEIPTS = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 0;
-
-	/**
-	 * The number of operations of the '<em>Rejection Reason</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REJECTION_REASON_OPERATION_COUNT = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 1;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.shipment.receipt.impl.ShipmentReceiptImpl <em>Shipment Receipt</em>}' class.
@@ -389,69 +334,6 @@ public interface ReceiptPackage extends EPackage {
 	int SHIPMENT_RECEIPT_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 16;
 
 	/**
-	 * The operation id for the '<em>Isa</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SHIPMENT_RECEIPT___ISA = BizPackage.BIZ_ENTITY___ISA;
-
-	/**
-	 * The operation id for the '<em>Get Name</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SHIPMENT_RECEIPT___GET_NAME = BizPackage.BIZ_ENTITY___GET_NAME;
-
-	/**
-	 * The operation id for the '<em>Get URI</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SHIPMENT_RECEIPT___GET_URI = BizPackage.BIZ_ENTITY___GET_URI;
-
-	/**
-	 * The operation id for the '<em>Is Proxy</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SHIPMENT_RECEIPT___IS_PROXY = BizPackage.BIZ_ENTITY___IS_PROXY;
-
-	/**
-	 * The operation id for the '<em>Acctg Transs</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SHIPMENT_RECEIPT___ACCTG_TRANSS = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Inventory Item Details</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SHIPMENT_RECEIPT___INVENTORY_ITEM_DETAILS = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 1;
-
-	/**
-	 * The number of operations of the '<em>Shipment Receipt</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SHIPMENT_RECEIPT_OPERATION_COUNT = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 2;
-
-	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.shipment.receipt.impl.ShipmentReceiptRoleImpl <em>Shipment Receipt Role</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -535,52 +417,6 @@ public interface ReceiptPackage extends EPackage {
 
 
 	/**
-	 * The operation id for the '<em>Isa</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SHIPMENT_RECEIPT_ROLE___ISA = BizPackage.BIZ_ENTITY___ISA;
-
-	/**
-	 * The operation id for the '<em>Get Name</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SHIPMENT_RECEIPT_ROLE___GET_NAME = BizPackage.BIZ_ENTITY___GET_NAME;
-
-	/**
-	 * The operation id for the '<em>Get URI</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SHIPMENT_RECEIPT_ROLE___GET_URI = BizPackage.BIZ_ENTITY___GET_URI;
-
-	/**
-	 * The operation id for the '<em>Is Proxy</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SHIPMENT_RECEIPT_ROLE___IS_PROXY = BizPackage.BIZ_ENTITY___IS_PROXY;
-
-	/**
-	 * The number of operations of the '<em>Shipment Receipt Role</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SHIPMENT_RECEIPT_ROLE_OPERATION_COUNT = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 0;
-
-
-	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.biz.shipment.receipt.RejectionReason <em>Rejection Reason</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -611,16 +447,6 @@ public interface ReceiptPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getRejectionReason_Description();
-
-	/**
-	 * Returns the meta object for the '{@link org.abchip.mimo.biz.shipment.receipt.RejectionReason#shipmentReceipts() <em>Shipment Receipts</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Shipment Receipts</em>' operation.
-	 * @see org.abchip.mimo.biz.shipment.receipt.RejectionReason#shipmentReceipts()
-	 * @generated
-	 */
-	EOperation getRejectionReason__ShipmentReceipts();
 
 	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.biz.shipment.receipt.ShipmentReceipt <em>Shipment Receipt</em>}'.
@@ -787,26 +613,6 @@ public interface ReceiptPackage extends EPackage {
 	EReference getShipmentReceipt_ShipmentId();
 
 	/**
-	 * Returns the meta object for the '{@link org.abchip.mimo.biz.shipment.receipt.ShipmentReceipt#acctgTranss() <em>Acctg Transs</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Acctg Transs</em>' operation.
-	 * @see org.abchip.mimo.biz.shipment.receipt.ShipmentReceipt#acctgTranss()
-	 * @generated
-	 */
-	EOperation getShipmentReceipt__AcctgTranss();
-
-	/**
-	 * Returns the meta object for the '{@link org.abchip.mimo.biz.shipment.receipt.ShipmentReceipt#inventoryItemDetails() <em>Inventory Item Details</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Inventory Item Details</em>' operation.
-	 * @see org.abchip.mimo.biz.shipment.receipt.ShipmentReceipt#inventoryItemDetails()
-	 * @generated
-	 */
-	EOperation getShipmentReceipt__InventoryItemDetails();
-
-	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.shipment.receipt.ShipmentReceipt#getShipmentItemSeqId <em>Shipment Item Seq Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -918,14 +724,6 @@ public interface ReceiptPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute REJECTION_REASON__DESCRIPTION = eINSTANCE.getRejectionReason_Description();
-
-		/**
-		 * The meta object literal for the '<em><b>Shipment Receipts</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation REJECTION_REASON___SHIPMENT_RECEIPTS = eINSTANCE.getRejectionReason__ShipmentReceipts();
 
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.biz.shipment.receipt.impl.ShipmentReceiptImpl <em>Shipment Receipt</em>}' class.
@@ -1048,22 +846,6 @@ public interface ReceiptPackage extends EPackage {
 		 * @generated
 		 */
 		EReference SHIPMENT_RECEIPT__SHIPMENT_ID = eINSTANCE.getShipmentReceipt_ShipmentId();
-
-		/**
-		 * The meta object literal for the '<em><b>Acctg Transs</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation SHIPMENT_RECEIPT___ACCTG_TRANSS = eINSTANCE.getShipmentReceipt__AcctgTranss();
-
-		/**
-		 * The meta object literal for the '<em><b>Inventory Item Details</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation SHIPMENT_RECEIPT___INVENTORY_ITEM_DETAILS = eINSTANCE.getShipmentReceipt__InventoryItemDetails();
 
 		/**
 		 * The meta object literal for the '<em><b>Shipment Item Seq Id</b></em>' attribute feature.

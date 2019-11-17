@@ -21,8 +21,8 @@ import org.eclipse.emf.ecore.EClass;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.PaymentGatewayWorldPayImpl#isAuthMode <em>Auth Mode</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.PaymentGatewayWorldPayImpl#isFixContact <em>Fix Contact</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.PaymentGatewayWorldPayImpl#getAuthMode <em>Auth Mode</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.PaymentGatewayWorldPayImpl#getFixContact <em>Fix Contact</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.PaymentGatewayWorldPayImpl#isHideContact <em>Hide Contact</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.PaymentGatewayWorldPayImpl#isHideCurrency <em>Hide Currency</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.PaymentGatewayWorldPayImpl#getInstId <em>Inst Id</em>}</li>
@@ -58,6 +58,86 @@ public class PaymentGatewayWorldPayImpl extends BizEntityImpl implements Payment
 	@Override
 	protected EClass eStaticClass() {
 		return PaymentPackage.Literals.PAYMENT_GATEWAY_WORLD_PAY;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public char getAuthMode() {
+		return (Character)eGet(PaymentPackage.Literals.PAYMENT_GATEWAY_WORLD_PAY__AUTH_MODE, true);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setAuthMode(char newAuthMode) {
+		eSet(PaymentPackage.Literals.PAYMENT_GATEWAY_WORLD_PAY__AUTH_MODE, newAuthMode);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public char getFixContact() {
+		return (Character)eGet(PaymentPackage.Literals.PAYMENT_GATEWAY_WORLD_PAY__FIX_CONTACT, true);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setFixContact(char newFixContact) {
+		eSet(PaymentPackage.Literals.PAYMENT_GATEWAY_WORLD_PAY__FIX_CONTACT, newFixContact);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public boolean isHideContact() {
+		return (Boolean)eGet(PaymentPackage.Literals.PAYMENT_GATEWAY_WORLD_PAY__HIDE_CONTACT, true);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setHideContact(boolean newHideContact) {
+		eSet(PaymentPackage.Literals.PAYMENT_GATEWAY_WORLD_PAY__HIDE_CONTACT, newHideContact);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public boolean isHideCurrency() {
+		return (Boolean)eGet(PaymentPackage.Literals.PAYMENT_GATEWAY_WORLD_PAY__HIDE_CURRENCY, true);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setHideCurrency(boolean newHideCurrency) {
+		eSet(PaymentPackage.Literals.PAYMENT_GATEWAY_WORLD_PAY__HIDE_CURRENCY, newHideCurrency);
 	}
 
 	/**
@@ -138,86 +218,6 @@ public class PaymentGatewayWorldPayImpl extends BizEntityImpl implements Payment
 	@Override
 	public void setPaymentGatewayConfigId(PaymentGatewayConfig newPaymentGatewayConfigId) {
 		eSet(PaymentPackage.Literals.PAYMENT_GATEWAY_WORLD_PAY__PAYMENT_GATEWAY_CONFIG_ID, newPaymentGatewayConfigId);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public boolean isAuthMode() {
-		return (Boolean)eGet(PaymentPackage.Literals.PAYMENT_GATEWAY_WORLD_PAY__AUTH_MODE, true);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void setAuthMode(boolean newAuthMode) {
-		eSet(PaymentPackage.Literals.PAYMENT_GATEWAY_WORLD_PAY__AUTH_MODE, newAuthMode);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public boolean isFixContact() {
-		return (Boolean)eGet(PaymentPackage.Literals.PAYMENT_GATEWAY_WORLD_PAY__FIX_CONTACT, true);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void setFixContact(boolean newFixContact) {
-		eSet(PaymentPackage.Literals.PAYMENT_GATEWAY_WORLD_PAY__FIX_CONTACT, newFixContact);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public boolean isHideContact() {
-		return (Boolean)eGet(PaymentPackage.Literals.PAYMENT_GATEWAY_WORLD_PAY__HIDE_CONTACT, true);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void setHideContact(boolean newHideContact) {
-		eSet(PaymentPackage.Literals.PAYMENT_GATEWAY_WORLD_PAY__HIDE_CONTACT, newHideContact);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public boolean isHideCurrency() {
-		return (Boolean)eGet(PaymentPackage.Literals.PAYMENT_GATEWAY_WORLD_PAY__HIDE_CURRENCY, true);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void setHideCurrency(boolean newHideCurrency) {
-		eSet(PaymentPackage.Literals.PAYMENT_GATEWAY_WORLD_PAY__HIDE_CURRENCY, newHideCurrency);
 	}
 
 	/**

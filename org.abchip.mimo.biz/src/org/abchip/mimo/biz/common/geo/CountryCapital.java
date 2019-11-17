@@ -35,7 +35,7 @@ public interface CountryCapital extends CountryCode {
 	 * @return the value of the '<em>Country Capital</em>' attribute.
 	 * @see #setCountryCapital(String)
 	 * @see org.abchip.mimo.biz.common.geo.GeoPackage#getCountryCapital_CountryCapital()
-	 * @model
+	 * @model annotation="mimo-ent-format type='description' length='255'"
 	 * @generated
 	 */
 	String getCountryCapital();

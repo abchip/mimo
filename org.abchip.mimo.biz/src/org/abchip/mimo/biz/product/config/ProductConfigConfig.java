@@ -42,6 +42,7 @@ public interface ProductConfigConfig extends BizEntity {
 	 * @see #setConfigId(String)
 	 * @see org.abchip.mimo.biz.product.config.ConfigPackage#getProductConfigConfig_ConfigId()
 	 * @model required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
@@ -69,6 +70,7 @@ public interface ProductConfigConfig extends BizEntity {
 	 * @see #setConfigOptionId(String)
 	 * @see org.abchip.mimo.biz.product.config.ConfigPackage#getProductConfigConfig_ConfigOptionId()
 	 * @model required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
@@ -95,7 +97,7 @@ public interface ProductConfigConfig extends BizEntity {
 	 * @return the value of the '<em>Description</em>' attribute.
 	 * @see #setDescription(String)
 	 * @see org.abchip.mimo.biz.product.config.ConfigPackage#getProductConfigConfig_Description()
-	 * @model
+	 * @model annotation="mimo-ent-format type='description' length='255'"
 	 * @generated
 	 */
 	String getDescription();
@@ -122,6 +124,7 @@ public interface ProductConfigConfig extends BizEntity {
 	 * @see #setSequenceNum(long)
 	 * @see org.abchip.mimo.biz.product.config.ConfigPackage#getProductConfigConfig_SequenceNum()
 	 * @model required="true"
+	 *        annotation="mimo-ent-format type='numeric' precision='20' scale='0'"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */

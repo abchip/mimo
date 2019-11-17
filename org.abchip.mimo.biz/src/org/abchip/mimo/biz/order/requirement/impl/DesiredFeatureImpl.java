@@ -23,7 +23,7 @@ import org.eclipse.emf.ecore.EClass;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.order.requirement.impl.DesiredFeatureImpl#getDesiredFeatureId <em>Desired Feature Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.requirement.impl.DesiredFeatureImpl#isOptionalInd <em>Optional Ind</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.requirement.impl.DesiredFeatureImpl#getOptionalInd <em>Optional Ind</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.requirement.impl.DesiredFeatureImpl#getRequirementId <em>Requirement Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.requirement.impl.DesiredFeatureImpl#getProductFeatureId <em>Product Feature Id</em>}</li>
  * </ul>
@@ -81,6 +81,26 @@ public class DesiredFeatureImpl extends BizEntityImpl implements DesiredFeature 
 	 * @generated
 	 */
 	@Override
+	public char getOptionalInd() {
+		return (Character)eGet(RequirementPackage.Literals.DESIRED_FEATURE__OPTIONAL_IND, true);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setOptionalInd(char newOptionalInd) {
+		eSet(RequirementPackage.Literals.DESIRED_FEATURE__OPTIONAL_IND, newOptionalInd);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public ProductFeature getProductFeatureId() {
 		return (ProductFeature)eGet(RequirementPackage.Literals.DESIRED_FEATURE__PRODUCT_FEATURE_ID, true);
 	}
@@ -113,26 +133,6 @@ public class DesiredFeatureImpl extends BizEntityImpl implements DesiredFeature 
 	@Override
 	public void setRequirementId(Requirement newRequirementId) {
 		eSet(RequirementPackage.Literals.DESIRED_FEATURE__REQUIREMENT_ID, newRequirementId);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public boolean isOptionalInd() {
-		return (Boolean)eGet(RequirementPackage.Literals.DESIRED_FEATURE__OPTIONAL_IND, true);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void setOptionalInd(boolean newOptionalInd) {
-		eSet(RequirementPackage.Literals.DESIRED_FEATURE__OPTIONAL_IND, newOptionalInd);
 	}
 
 } //DesiredFeatureImpl

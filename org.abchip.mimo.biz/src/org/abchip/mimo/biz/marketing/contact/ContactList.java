@@ -59,7 +59,7 @@ public interface ContactList extends BizEntityTyped<ContactListType> {
 	 * @return the value of the '<em>Comments</em>' attribute.
 	 * @see #setComments(String)
 	 * @see org.abchip.mimo.biz.marketing.contact.ContactPackage#getContactList_Comments()
-	 * @model
+	 * @model annotation="mimo-ent-format type='comment' length='255'"
 	 * @generated
 	 */
 	String getComments();
@@ -86,6 +86,7 @@ public interface ContactList extends BizEntityTyped<ContactListType> {
 	 * @see #setContactListId(String)
 	 * @see org.abchip.mimo.biz.marketing.contact.ContactPackage#getContactList_ContactListId()
 	 * @model id="true" required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
@@ -112,7 +113,7 @@ public interface ContactList extends BizEntityTyped<ContactListType> {
 	 * @return the value of the '<em>Contact List Name</em>' attribute.
 	 * @see #setContactListName(String)
 	 * @see org.abchip.mimo.biz.marketing.contact.ContactPackage#getContactList_ContactListName()
-	 * @model
+	 * @model annotation="mimo-ent-format type='name' length='100'"
 	 * @generated
 	 */
 	String getContactListName();
@@ -216,7 +217,7 @@ public interface ContactList extends BizEntityTyped<ContactListType> {
 	 * @return the value of the '<em>Description</em>' attribute.
 	 * @see #setDescription(String)
 	 * @see org.abchip.mimo.biz.marketing.contact.ContactPackage#getContactList_Description()
-	 * @model
+	 * @model annotation="mimo-ent-format type='description' length='255'"
 	 * @generated
 	 */
 	String getDescription();
@@ -242,7 +243,7 @@ public interface ContactList extends BizEntityTyped<ContactListType> {
 	 * @return the value of the '<em>Is Public</em>' attribute.
 	 * @see #setIsPublic(boolean)
 	 * @see org.abchip.mimo.biz.marketing.contact.ContactPackage#getContactList_IsPublic()
-	 * @model
+	 * @model annotation="mimo-ent-format type='indicator' length='1'"
 	 * @generated
 	 */
 	boolean isIsPublic();
@@ -320,7 +321,7 @@ public interface ContactList extends BizEntityTyped<ContactListType> {
 	 * @return the value of the '<em>Opt Out Screen</em>' attribute.
 	 * @see #setOptOutScreen(String)
 	 * @see org.abchip.mimo.biz.marketing.contact.ContactPackage#getContactList_OptOutScreen()
-	 * @model
+	 * @model annotation="mimo-ent-format type='long-varchar' length='255'"
 	 * @generated
 	 */
 	String getOptOutScreen();
@@ -334,6 +335,32 @@ public interface ContactList extends BizEntityTyped<ContactListType> {
 	 * @generated
 	 */
 	void setOptOutScreen(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Single Use</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Single Use</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Single Use</em>' attribute.
+	 * @see #setSingleUse(boolean)
+	 * @see org.abchip.mimo.biz.marketing.contact.ContactPackage#getContactList_SingleUse()
+	 * @model annotation="mimo-ent-format type='indicator' length='1'"
+	 * @generated
+	 */
+	boolean isSingleUse();
+
+	/**
+	 * Sets the value of the '{@link org.abchip.mimo.biz.marketing.contact.ContactList#isSingleUse <em>Single Use</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Single Use</em>' attribute.
+	 * @see #isSingleUse()
+	 * @generated
+	 */
+	void setSingleUse(boolean value);
 
 	/**
 	 * Returns the value of the '<em><b>Owner Party Id</b></em>' reference.
@@ -362,32 +389,6 @@ public interface ContactList extends BizEntityTyped<ContactListType> {
 	void setOwnerPartyId(Party value);
 
 	/**
-	 * Returns the value of the '<em><b>Single Use</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Single Use</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Single Use</em>' attribute.
-	 * @see #setSingleUse(boolean)
-	 * @see org.abchip.mimo.biz.marketing.contact.ContactPackage#getContactList_SingleUse()
-	 * @model
-	 * @generated
-	 */
-	boolean isSingleUse();
-
-	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.marketing.contact.ContactList#isSingleUse <em>Single Use</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Single Use</em>' attribute.
-	 * @see #isSingleUse()
-	 * @generated
-	 */
-	void setSingleUse(boolean value);
-
-	/**
 	 * Returns the value of the '<em><b>Verify Email From</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -398,7 +399,7 @@ public interface ContactList extends BizEntityTyped<ContactListType> {
 	 * @return the value of the '<em>Verify Email From</em>' attribute.
 	 * @see #setVerifyEmailFrom(String)
 	 * @see org.abchip.mimo.biz.marketing.contact.ContactPackage#getContactList_VerifyEmailFrom()
-	 * @model
+	 * @model annotation="mimo-ent-format type='long-varchar' length='255'"
 	 * @generated
 	 */
 	String getVerifyEmailFrom();
@@ -424,7 +425,7 @@ public interface ContactList extends BizEntityTyped<ContactListType> {
 	 * @return the value of the '<em>Verify Email Screen</em>' attribute.
 	 * @see #setVerifyEmailScreen(String)
 	 * @see org.abchip.mimo.biz.marketing.contact.ContactPackage#getContactList_VerifyEmailScreen()
-	 * @model
+	 * @model annotation="mimo-ent-format type='long-varchar' length='255'"
 	 * @generated
 	 */
 	String getVerifyEmailScreen();
@@ -450,7 +451,7 @@ public interface ContactList extends BizEntityTyped<ContactListType> {
 	 * @return the value of the '<em>Verify Email Subject</em>' attribute.
 	 * @see #setVerifyEmailSubject(String)
 	 * @see org.abchip.mimo.biz.marketing.contact.ContactPackage#getContactList_VerifyEmailSubject()
-	 * @model
+	 * @model annotation="mimo-ent-format type='long-varchar' length='255'"
 	 * @generated
 	 */
 	String getVerifyEmailSubject();
@@ -476,7 +477,7 @@ public interface ContactList extends BizEntityTyped<ContactListType> {
 	 * @return the value of the '<em>Verify Email Web Site Id</em>' attribute.
 	 * @see #setVerifyEmailWebSiteId(String)
 	 * @see org.abchip.mimo.biz.marketing.contact.ContactPackage#getContactList_VerifyEmailWebSiteId()
-	 * @model
+	 * @model annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	String getVerifyEmailWebSiteId();
@@ -494,7 +495,8 @@ public interface ContactList extends BizEntityTyped<ContactListType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='CommunicationEvent' route='contactListId'"
 	 * @generated
 	 */

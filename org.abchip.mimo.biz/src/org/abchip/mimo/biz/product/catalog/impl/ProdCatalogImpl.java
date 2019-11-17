@@ -7,13 +7,11 @@
  */
 package org.abchip.mimo.biz.product.catalog.impl;
 
-import java.lang.reflect.InvocationTargetException;
 import java.util.List;
 
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.product.catalog.CatalogPackage;
 import org.abchip.mimo.biz.product.catalog.ProdCatalog;
-import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 
 /**
@@ -232,20 +230,6 @@ public class ProdCatalogImpl extends BizEntityImpl implements ProdCatalog {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
-		switch (operationID) {
-			case CatalogPackage.PROD_CATALOG___CART_ABANDONED_LINES:
-				return cartAbandonedLines();
-		}
-		return super.eInvoke(operationID, arguments);
 	}
 
 	/**

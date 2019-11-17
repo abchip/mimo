@@ -50,7 +50,7 @@ public interface ContentApproval extends BizEntity {
 	 * @return the value of the '<em>Approval Date</em>' attribute.
 	 * @see #setApprovalDate(Date)
 	 * @see org.abchip.mimo.biz.content.content.ContentPackage#getContentApproval_ApprovalDate()
-	 * @model
+	 * @model annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getApprovalDate();
@@ -102,7 +102,7 @@ public interface ContentApproval extends BizEntity {
 	 * @return the value of the '<em>Comments</em>' attribute.
 	 * @see #setComments(String)
 	 * @see org.abchip.mimo.biz.content.content.ContentPackage#getContentApproval_Comments()
-	 * @model
+	 * @model annotation="mimo-ent-format type='comment' length='255'"
 	 * @generated
 	 */
 	String getComments();
@@ -129,6 +129,7 @@ public interface ContentApproval extends BizEntity {
 	 * @see #setContentApprovalId(String)
 	 * @see org.abchip.mimo.biz.content.content.ContentPackage#getContentApproval_ContentApprovalId()
 	 * @model id="true" required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
@@ -181,7 +182,7 @@ public interface ContentApproval extends BizEntity {
 	 * @return the value of the '<em>Content Revision Seq Id</em>' attribute.
 	 * @see #setContentRevisionSeqId(String)
 	 * @see org.abchip.mimo.biz.content.content.ContentPackage#getContentApproval_ContentRevisionSeqId()
-	 * @model
+	 * @model annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	String getContentRevisionSeqId();
@@ -259,7 +260,7 @@ public interface ContentApproval extends BizEntity {
 	 * @return the value of the '<em>Sequence Num</em>' attribute.
 	 * @see #setSequenceNum(long)
 	 * @see org.abchip.mimo.biz.content.content.ContentPackage#getContentApproval_SequenceNum()
-	 * @model
+	 * @model annotation="mimo-ent-format type='numeric' precision='20' scale='0'"
 	 * @generated
 	 */
 	long getSequenceNum();

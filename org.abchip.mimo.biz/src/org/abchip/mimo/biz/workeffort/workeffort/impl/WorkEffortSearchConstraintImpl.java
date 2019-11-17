@@ -22,8 +22,8 @@ import org.eclipse.emf.ecore.EClass;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortSearchConstraintImpl#getConstraintSeqId <em>Constraint Seq Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortSearchConstraintImpl#isAnyPrefix <em>Any Prefix</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortSearchConstraintImpl#isAnySuffix <em>Any Suffix</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortSearchConstraintImpl#getAnyPrefix <em>Any Prefix</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortSearchConstraintImpl#getAnySuffix <em>Any Suffix</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortSearchConstraintImpl#getConstraintName <em>Constraint Name</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortSearchConstraintImpl#getHighValue <em>High Value</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortSearchConstraintImpl#isIncludeSubWorkEfforts <em>Include Sub Work Efforts</em>}</li>
@@ -107,8 +107,8 @@ public class WorkEffortSearchConstraintImpl extends BizEntityImpl implements Wor
 	 * @generated
 	 */
 	@Override
-	public boolean isAnyPrefix() {
-		return (Boolean)eGet(WorkeffortPackage.Literals.WORK_EFFORT_SEARCH_CONSTRAINT__ANY_PREFIX, true);
+	public char getAnyPrefix() {
+		return (Character)eGet(WorkeffortPackage.Literals.WORK_EFFORT_SEARCH_CONSTRAINT__ANY_PREFIX, true);
 	}
 
 	/**
@@ -117,7 +117,7 @@ public class WorkEffortSearchConstraintImpl extends BizEntityImpl implements Wor
 	 * @generated
 	 */
 	@Override
-	public void setAnyPrefix(boolean newAnyPrefix) {
+	public void setAnyPrefix(char newAnyPrefix) {
 		eSet(WorkeffortPackage.Literals.WORK_EFFORT_SEARCH_CONSTRAINT__ANY_PREFIX, newAnyPrefix);
 	}
 
@@ -127,8 +127,8 @@ public class WorkEffortSearchConstraintImpl extends BizEntityImpl implements Wor
 	 * @generated
 	 */
 	@Override
-	public boolean isAnySuffix() {
-		return (Boolean)eGet(WorkeffortPackage.Literals.WORK_EFFORT_SEARCH_CONSTRAINT__ANY_SUFFIX, true);
+	public char getAnySuffix() {
+		return (Character)eGet(WorkeffortPackage.Literals.WORK_EFFORT_SEARCH_CONSTRAINT__ANY_SUFFIX, true);
 	}
 
 	/**
@@ -137,7 +137,7 @@ public class WorkEffortSearchConstraintImpl extends BizEntityImpl implements Wor
 	 * @generated
 	 */
 	@Override
-	public void setAnySuffix(boolean newAnySuffix) {
+	public void setAnySuffix(char newAnySuffix) {
 		eSet(WorkeffortPackage.Literals.WORK_EFFORT_SEARCH_CONSTRAINT__ANY_SUFFIX, newAnySuffix);
 	}
 

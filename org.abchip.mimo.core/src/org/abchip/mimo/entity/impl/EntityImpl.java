@@ -8,12 +8,10 @@
  */
 package org.abchip.mimo.entity.impl;
 
-import java.lang.reflect.InvocationTargetException;
 import org.abchip.mimo.EMFFrameHelper;
 import org.abchip.mimo.entity.Entity;
 import org.abchip.mimo.entity.EntityPackage;
 import org.abchip.mimo.entity.Frame;
-import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
@@ -55,19 +53,5 @@ public abstract class EntityImpl extends MinimalEObjectImpl.Container implements
 	public Frame<? extends Entity> isa() {
 
 		return EMFFrameHelper.getFrames(null).get(eClass().getName());
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
-		switch (operationID) {
-			case EntityPackage.ENTITY___ISA:
-				return isa();
-		}
-		return super.eInvoke(operationID, arguments);
 	}
 } // EntityImpl

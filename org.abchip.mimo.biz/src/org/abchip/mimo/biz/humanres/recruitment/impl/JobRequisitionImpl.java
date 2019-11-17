@@ -7,7 +7,6 @@
  */
 package org.abchip.mimo.biz.humanres.recruitment.impl;
 
-import java.lang.reflect.InvocationTargetException;
 import java.util.Date;
 
 import java.util.List;
@@ -17,7 +16,6 @@ import org.abchip.mimo.biz.humanres.ability.SkillType;
 import org.abchip.mimo.biz.humanres.recruitment.JobRequisition;
 import org.abchip.mimo.biz.humanres.recruitment.RecruitmentPackage;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
-import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 
 /**
@@ -33,7 +31,7 @@ import org.eclipse.emf.ecore.EClass;
  *   <li>{@link org.abchip.mimo.biz.humanres.recruitment.impl.JobRequisitionImpl#getDurationMonths <em>Duration Months</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.recruitment.impl.JobRequisitionImpl#getExperienceMonths <em>Experience Months</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.recruitment.impl.JobRequisitionImpl#getExperienceYears <em>Experience Years</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.humanres.recruitment.impl.JobRequisitionImpl#isGender <em>Gender</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.humanres.recruitment.impl.JobRequisitionImpl#getGender <em>Gender</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.recruitment.impl.JobRequisitionImpl#getJobLocation <em>Job Location</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.recruitment.impl.JobRequisitionImpl#getJobRequisitionDate <em>Job Requisition Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.recruitment.impl.JobRequisitionImpl#getNoOfResources <em>No Of Resources</em>}</li>
@@ -177,8 +175,8 @@ public class JobRequisitionImpl extends BizEntityImpl implements JobRequisition 
 	 * @generated
 	 */
 	@Override
-	public boolean isGender() {
-		return (Boolean)eGet(RecruitmentPackage.Literals.JOB_REQUISITION__GENDER, true);
+	public char getGender() {
+		return (Character)eGet(RecruitmentPackage.Literals.JOB_REQUISITION__GENDER, true);
 	}
 
 	/**
@@ -187,7 +185,7 @@ public class JobRequisitionImpl extends BizEntityImpl implements JobRequisition 
 	 * @generated
 	 */
 	@Override
-	public void setGender(boolean newGender) {
+	public void setGender(char newGender) {
 		eSet(RecruitmentPackage.Literals.JOB_REQUISITION__GENDER, newGender);
 	}
 
@@ -373,22 +371,6 @@ public class JobRequisitionImpl extends BizEntityImpl implements JobRequisition 
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
-		switch (operationID) {
-			case RecruitmentPackage.JOB_REQUISITION___EMPLOYMENT_APPS:
-				return employmentApps();
-			case RecruitmentPackage.JOB_REQUISITION___JOB_INTERVIEWS:
-				return jobInterviews();
-		}
-		return super.eInvoke(operationID, arguments);
 	}
 
 } //JobRequisitionImpl

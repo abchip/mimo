@@ -49,7 +49,7 @@ public interface ProductFeatureAppl extends BizEntityTyped<ProductFeatureApplTyp
 	 * @return the value of the '<em>Amount</em>' attribute.
 	 * @see #setAmount(BigDecimal)
 	 * @see org.abchip.mimo.biz.product.feature.FeaturePackage#getProductFeatureAppl_Amount()
-	 * @model
+	 * @model annotation="mimo-ent-format type='currency-amount' precision='18' scale='2'"
 	 * @generated
 	 */
 	BigDecimal getAmount();
@@ -76,6 +76,7 @@ public interface ProductFeatureAppl extends BizEntityTyped<ProductFeatureApplTyp
 	 * @see #setFromDate(Date)
 	 * @see org.abchip.mimo.biz.product.feature.FeaturePackage#getProductFeatureAppl_FromDate()
 	 * @model required="true"
+	 *        annotation="mimo-ent-format type='date-time'"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
@@ -128,7 +129,7 @@ public interface ProductFeatureAppl extends BizEntityTyped<ProductFeatureApplTyp
 	 * @return the value of the '<em>Recurring Amount</em>' attribute.
 	 * @see #setRecurringAmount(BigDecimal)
 	 * @see org.abchip.mimo.biz.product.feature.FeaturePackage#getProductFeatureAppl_RecurringAmount()
-	 * @model
+	 * @model annotation="mimo-ent-format type='currency-amount' precision='18' scale='2'"
 	 * @generated
 	 */
 	BigDecimal getRecurringAmount();
@@ -154,7 +155,7 @@ public interface ProductFeatureAppl extends BizEntityTyped<ProductFeatureApplTyp
 	 * @return the value of the '<em>Sequence Num</em>' attribute.
 	 * @see #setSequenceNum(long)
 	 * @see org.abchip.mimo.biz.product.feature.FeaturePackage#getProductFeatureAppl_SequenceNum()
-	 * @model
+	 * @model annotation="mimo-ent-format type='numeric' precision='20' scale='0'"
 	 * @generated
 	 */
 	long getSequenceNum();
@@ -180,7 +181,7 @@ public interface ProductFeatureAppl extends BizEntityTyped<ProductFeatureApplTyp
 	 * @return the value of the '<em>Thru Date</em>' attribute.
 	 * @see #setThruDate(Date)
 	 * @see org.abchip.mimo.biz.product.feature.FeaturePackage#getProductFeatureAppl_ThruDate()
-	 * @model
+	 * @model annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getThruDate();

@@ -10,7 +10,6 @@ package org.abchip.mimo.biz.shipment.issuance;
 import org.abchip.mimo.biz.BizPackage;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
@@ -235,69 +234,6 @@ public interface IssuancePackage extends EPackage {
 	int ITEM_ISSUANCE_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 13;
 
 	/**
-	 * The operation id for the '<em>Isa</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ITEM_ISSUANCE___ISA = BizPackage.BIZ_ENTITY___ISA;
-
-	/**
-	 * The operation id for the '<em>Get Name</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ITEM_ISSUANCE___GET_NAME = BizPackage.BIZ_ENTITY___GET_NAME;
-
-	/**
-	 * The operation id for the '<em>Get URI</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ITEM_ISSUANCE___GET_URI = BizPackage.BIZ_ENTITY___GET_URI;
-
-	/**
-	 * The operation id for the '<em>Is Proxy</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ITEM_ISSUANCE___IS_PROXY = BizPackage.BIZ_ENTITY___IS_PROXY;
-
-	/**
-	 * The operation id for the '<em>Inventory Item Details</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ITEM_ISSUANCE___INVENTORY_ITEM_DETAILS = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Inventory Transfers</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ITEM_ISSUANCE___INVENTORY_TRANSFERS = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 1;
-
-	/**
-	 * The number of operations of the '<em>Item Issuance</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ITEM_ISSUANCE_OPERATION_COUNT = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 2;
-
-	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.shipment.issuance.impl.ItemIssuanceRoleImpl <em>Item Issuance Role</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -381,52 +317,6 @@ public interface IssuancePackage extends EPackage {
 
 
 	/**
-	 * The operation id for the '<em>Isa</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ITEM_ISSUANCE_ROLE___ISA = BizPackage.BIZ_ENTITY___ISA;
-
-	/**
-	 * The operation id for the '<em>Get Name</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ITEM_ISSUANCE_ROLE___GET_NAME = BizPackage.BIZ_ENTITY___GET_NAME;
-
-	/**
-	 * The operation id for the '<em>Get URI</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ITEM_ISSUANCE_ROLE___GET_URI = BizPackage.BIZ_ENTITY___GET_URI;
-
-	/**
-	 * The operation id for the '<em>Is Proxy</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ITEM_ISSUANCE_ROLE___IS_PROXY = BizPackage.BIZ_ENTITY___IS_PROXY;
-
-	/**
-	 * The number of operations of the '<em>Item Issuance Role</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ITEM_ISSUANCE_ROLE_OPERATION_COUNT = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 0;
-
-
-	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.biz.shipment.issuance.ItemIssuance <em>Item Issuance</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -490,26 +380,6 @@ public interface IssuancePackage extends EPackage {
 	 * @generated
 	 */
 	EReference getItemIssuance_IssuedByUserLoginId();
-
-	/**
-	 * Returns the meta object for the '{@link org.abchip.mimo.biz.shipment.issuance.ItemIssuance#inventoryItemDetails() <em>Inventory Item Details</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Inventory Item Details</em>' operation.
-	 * @see org.abchip.mimo.biz.shipment.issuance.ItemIssuance#inventoryItemDetails()
-	 * @generated
-	 */
-	EOperation getItemIssuance__InventoryItemDetails();
-
-	/**
-	 * Returns the meta object for the '{@link org.abchip.mimo.biz.shipment.issuance.ItemIssuance#inventoryTransfers() <em>Inventory Transfers</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Inventory Transfers</em>' operation.
-	 * @see org.abchip.mimo.biz.shipment.issuance.ItemIssuance#inventoryTransfers()
-	 * @generated
-	 */
-	EOperation getItemIssuance__InventoryTransfers();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.shipment.issuance.ItemIssuance#getIssuedDateTime <em>Issued Date Time</em>}'.
@@ -713,22 +583,6 @@ public interface IssuancePackage extends EPackage {
 		 * @generated
 		 */
 		EReference ITEM_ISSUANCE__ISSUED_BY_USER_LOGIN_ID = eINSTANCE.getItemIssuance_IssuedByUserLoginId();
-
-		/**
-		 * The meta object literal for the '<em><b>Inventory Item Details</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation ITEM_ISSUANCE___INVENTORY_ITEM_DETAILS = eINSTANCE.getItemIssuance__InventoryItemDetails();
-
-		/**
-		 * The meta object literal for the '<em><b>Inventory Transfers</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation ITEM_ISSUANCE___INVENTORY_TRANSFERS = eINSTANCE.getItemIssuance__InventoryTransfers();
 
 		/**
 		 * The meta object literal for the '<em><b>Issued Date Time</b></em>' attribute feature.

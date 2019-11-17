@@ -7,14 +7,12 @@
  */
 package org.abchip.mimo.biz.accounting.ledger.impl;
 
-import java.lang.reflect.InvocationTargetException;
 import java.util.List;
 
 import org.abchip.mimo.biz.accounting.ledger.GlAccountCategory;
 import org.abchip.mimo.biz.accounting.ledger.GlAccountCategoryType;
 import org.abchip.mimo.biz.accounting.ledger.LedgerPackage;
 import org.abchip.mimo.biz.impl.BizEntityTypeImpl;
-import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 
 /**
@@ -85,20 +83,6 @@ public class GlAccountCategoryTypeImpl extends BizEntityTypeImpl<GlAccountCatego
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
-		switch (operationID) {
-			case LedgerPackage.GL_ACCOUNT_CATEGORY_TYPE___GL_ACCOUNT_CATEGORIES:
-				return glAccountCategories();
-		}
-		return super.eInvoke(operationID, arguments);
 	}
 
 	/**

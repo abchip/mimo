@@ -45,6 +45,7 @@ public interface BudgetReview extends BizEntity {
 	 * @see #setBudgetReviewId(String)
 	 * @see org.abchip.mimo.biz.accounting.budget.BudgetPackage#getBudgetReview_BudgetReviewId()
 	 * @model required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
@@ -97,7 +98,7 @@ public interface BudgetReview extends BizEntity {
 	 * @return the value of the '<em>Review Date</em>' attribute.
 	 * @see #setReviewDate(Date)
 	 * @see org.abchip.mimo.biz.accounting.budget.BudgetPackage#getBudgetReview_ReviewDate()
-	 * @model
+	 * @model annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getReviewDate();

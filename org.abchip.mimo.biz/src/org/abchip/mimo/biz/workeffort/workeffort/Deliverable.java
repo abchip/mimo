@@ -43,6 +43,7 @@ public interface Deliverable extends BizEntityTyped<DeliverableType> {
 	 * @see #setDeliverableId(String)
 	 * @see org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage#getDeliverable_DeliverableId()
 	 * @model id="true" required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
@@ -69,7 +70,7 @@ public interface Deliverable extends BizEntityTyped<DeliverableType> {
 	 * @return the value of the '<em>Deliverable Name</em>' attribute.
 	 * @see #setDeliverableName(String)
 	 * @see org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage#getDeliverable_DeliverableName()
-	 * @model
+	 * @model annotation="mimo-ent-format type='name' length='100'"
 	 * @generated
 	 */
 	String getDeliverableName();
@@ -121,7 +122,7 @@ public interface Deliverable extends BizEntityTyped<DeliverableType> {
 	 * @return the value of the '<em>Description</em>' attribute.
 	 * @see #setDescription(String)
 	 * @see org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage#getDeliverable_Description()
-	 * @model
+	 * @model annotation="mimo-ent-format type='description' length='255'"
 	 * @generated
 	 */
 	String getDescription();
@@ -139,7 +140,8 @@ public interface Deliverable extends BizEntityTyped<DeliverableType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='Requirement' route='deliverableId'"
 	 * @generated
 	 */
@@ -148,7 +150,9 @@ public interface Deliverable extends BizEntityTyped<DeliverableType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='WorkEffortDeliverableProd' route='deliverableId'"
 	 * @generated
 	 */

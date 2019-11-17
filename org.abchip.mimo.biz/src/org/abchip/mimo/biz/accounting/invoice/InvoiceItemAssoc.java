@@ -52,7 +52,7 @@ public interface InvoiceItemAssoc extends BizEntityTyped<InvoiceItemAssocType> {
 	 * @return the value of the '<em>Amount</em>' attribute.
 	 * @see #setAmount(BigDecimal)
 	 * @see org.abchip.mimo.biz.accounting.invoice.InvoicePackage#getInvoiceItemAssoc_Amount()
-	 * @model
+	 * @model annotation="mimo-ent-format type='currency-amount' precision='18' scale='2'"
 	 * @generated
 	 */
 	BigDecimal getAmount();
@@ -79,6 +79,7 @@ public interface InvoiceItemAssoc extends BizEntityTyped<InvoiceItemAssocType> {
 	 * @see #setFromDate(Date)
 	 * @see org.abchip.mimo.biz.accounting.invoice.InvoicePackage#getInvoiceItemAssoc_FromDate()
 	 * @model required="true"
+	 *        annotation="mimo-ent-format type='date-time'"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
@@ -106,6 +107,7 @@ public interface InvoiceItemAssoc extends BizEntityTyped<InvoiceItemAssocType> {
 	 * @see #setInvoiceIdFrom(String)
 	 * @see org.abchip.mimo.biz.accounting.invoice.InvoicePackage#getInvoiceItemAssoc_InvoiceIdFrom()
 	 * @model required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
@@ -133,6 +135,7 @@ public interface InvoiceItemAssoc extends BizEntityTyped<InvoiceItemAssocType> {
 	 * @see #setInvoiceIdTo(String)
 	 * @see org.abchip.mimo.biz.accounting.invoice.InvoicePackage#getInvoiceItemAssoc_InvoiceIdTo()
 	 * @model required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
@@ -160,6 +163,7 @@ public interface InvoiceItemAssoc extends BizEntityTyped<InvoiceItemAssocType> {
 	 * @see #setInvoiceItemSeqIdFrom(String)
 	 * @see org.abchip.mimo.biz.accounting.invoice.InvoicePackage#getInvoiceItemAssoc_InvoiceItemSeqIdFrom()
 	 * @model required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
@@ -187,6 +191,7 @@ public interface InvoiceItemAssoc extends BizEntityTyped<InvoiceItemAssocType> {
 	 * @see #setInvoiceItemSeqIdTo(String)
 	 * @see org.abchip.mimo.biz.accounting.invoice.InvoicePackage#getInvoiceItemAssoc_InvoiceItemSeqIdTo()
 	 * @model required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
@@ -265,7 +270,7 @@ public interface InvoiceItemAssoc extends BizEntityTyped<InvoiceItemAssocType> {
 	 * @return the value of the '<em>Quantity</em>' attribute.
 	 * @see #setQuantity(BigDecimal)
 	 * @see org.abchip.mimo.biz.accounting.invoice.InvoicePackage#getInvoiceItemAssoc_Quantity()
-	 * @model
+	 * @model annotation="mimo-ent-format type='fixed-point' precision='18' scale='6'"
 	 * @generated
 	 */
 	BigDecimal getQuantity();
@@ -291,7 +296,7 @@ public interface InvoiceItemAssoc extends BizEntityTyped<InvoiceItemAssocType> {
 	 * @return the value of the '<em>Thru Date</em>' attribute.
 	 * @see #setThruDate(Date)
 	 * @see org.abchip.mimo.biz.accounting.invoice.InvoicePackage#getInvoiceItemAssoc_ThruDate()
-	 * @model
+	 * @model annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getThruDate();

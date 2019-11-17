@@ -96,6 +96,7 @@ public interface EmplPositionTypeClass extends BizEntity {
 	 * @see #setFromDate(Date)
 	 * @see org.abchip.mimo.biz.humanres.position.PositionPackage#getEmplPositionTypeClass_FromDate()
 	 * @model required="true"
+	 *        annotation="mimo-ent-format type='date-time'"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
@@ -122,7 +123,7 @@ public interface EmplPositionTypeClass extends BizEntity {
 	 * @return the value of the '<em>Standard Hours Per Week</em>' attribute.
 	 * @see #setStandardHoursPerWeek(double)
 	 * @see org.abchip.mimo.biz.humanres.position.PositionPackage#getEmplPositionTypeClass_StandardHoursPerWeek()
-	 * @model
+	 * @model annotation="mimo-ent-format type='floating-point'"
 	 * @generated
 	 */
 	double getStandardHoursPerWeek();
@@ -148,7 +149,7 @@ public interface EmplPositionTypeClass extends BizEntity {
 	 * @return the value of the '<em>Thru Date</em>' attribute.
 	 * @see #setThruDate(Date)
 	 * @see org.abchip.mimo.biz.humanres.position.PositionPackage#getEmplPositionTypeClass_ThruDate()
-	 * @model
+	 * @model annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getThruDate();

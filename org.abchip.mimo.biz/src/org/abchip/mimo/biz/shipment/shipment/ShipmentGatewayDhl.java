@@ -45,7 +45,7 @@ public interface ShipmentGatewayDhl extends ShipmentGatewayConfig {
 	 * @return the value of the '<em>Access Account Nbr</em>' attribute.
 	 * @see #setAccessAccountNbr(String)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipmentGatewayDhl_AccessAccountNbr()
-	 * @model
+	 * @model annotation="mimo-ent-format type='value' length='255'"
 	 * @generated
 	 */
 	String getAccessAccountNbr();
@@ -71,7 +71,7 @@ public interface ShipmentGatewayDhl extends ShipmentGatewayConfig {
 	 * @return the value of the '<em>Access Password</em>' attribute.
 	 * @see #setAccessPassword(String)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipmentGatewayDhl_AccessPassword()
-	 * @model
+	 * @model annotation="mimo-ent-format type='value' length='255'"
 	 * @generated
 	 */
 	String getAccessPassword();
@@ -97,7 +97,7 @@ public interface ShipmentGatewayDhl extends ShipmentGatewayConfig {
 	 * @return the value of the '<em>Access Shipping Key</em>' attribute.
 	 * @see #setAccessShippingKey(String)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipmentGatewayDhl_AccessShippingKey()
-	 * @model
+	 * @model annotation="mimo-ent-format type='value' length='255'"
 	 * @generated
 	 */
 	String getAccessShippingKey();
@@ -123,7 +123,7 @@ public interface ShipmentGatewayDhl extends ShipmentGatewayConfig {
 	 * @return the value of the '<em>Access User Id</em>' attribute.
 	 * @see #setAccessUserId(String)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipmentGatewayDhl_AccessUserId()
-	 * @model
+	 * @model annotation="mimo-ent-format type='value' length='255'"
 	 * @generated
 	 */
 	String getAccessUserId();
@@ -149,7 +149,7 @@ public interface ShipmentGatewayDhl extends ShipmentGatewayConfig {
 	 * @return the value of the '<em>Connect Timeout</em>' attribute.
 	 * @see #setConnectTimeout(long)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipmentGatewayDhl_ConnectTimeout()
-	 * @model
+	 * @model annotation="mimo-ent-format type='numeric' precision='20' scale='0'"
 	 * @generated
 	 */
 	long getConnectTimeout();
@@ -175,7 +175,7 @@ public interface ShipmentGatewayDhl extends ShipmentGatewayConfig {
 	 * @return the value of the '<em>Connect Url</em>' attribute.
 	 * @see #setConnectUrl(String)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipmentGatewayDhl_ConnectUrl()
-	 * @model
+	 * @model annotation="mimo-ent-format type='value' length='255'"
 	 * @generated
 	 */
 	String getConnectUrl();
@@ -201,7 +201,7 @@ public interface ShipmentGatewayDhl extends ShipmentGatewayConfig {
 	 * @return the value of the '<em>Head Action</em>' attribute.
 	 * @see #setHeadAction(String)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipmentGatewayDhl_HeadAction()
-	 * @model
+	 * @model annotation="mimo-ent-format type='value' length='255'"
 	 * @generated
 	 */
 	String getHeadAction();
@@ -227,7 +227,7 @@ public interface ShipmentGatewayDhl extends ShipmentGatewayConfig {
 	 * @return the value of the '<em>Head Version</em>' attribute.
 	 * @see #setHeadVersion(String)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipmentGatewayDhl_HeadVersion()
-	 * @model
+	 * @model annotation="mimo-ent-format type='short-varchar' length='60'"
 	 * @generated
 	 */
 	String getHeadVersion();
@@ -253,7 +253,7 @@ public interface ShipmentGatewayDhl extends ShipmentGatewayConfig {
 	 * @return the value of the '<em>Label Image Format</em>' attribute.
 	 * @see #setLabelImageFormat(String)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipmentGatewayDhl_LabelImageFormat()
-	 * @model
+	 * @model annotation="mimo-ent-format type='short-varchar' length='60'"
 	 * @generated
 	 */
 	String getLabelImageFormat();
@@ -279,7 +279,7 @@ public interface ShipmentGatewayDhl extends ShipmentGatewayConfig {
 	 * @return the value of the '<em>Rate Estimate Template</em>' attribute.
 	 * @see #setRateEstimateTemplate(String)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipmentGatewayDhl_RateEstimateTemplate()
-	 * @model
+	 * @model annotation="mimo-ent-format type='value' length='255'"
 	 * @generated
 	 */
 	String getRateEstimateTemplate();

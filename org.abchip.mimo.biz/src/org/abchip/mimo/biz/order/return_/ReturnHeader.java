@@ -169,7 +169,7 @@ public interface ReturnHeader extends BizEntityTyped<ReturnHeaderType> {
 	 * @return the value of the '<em>Entry Date</em>' attribute.
 	 * @see #setEntryDate(Date)
 	 * @see org.abchip.mimo.biz.order.return_.ReturnPackage#getReturnHeader_EntryDate()
-	 * @model
+	 * @model annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getEntryDate();
@@ -183,6 +183,32 @@ public interface ReturnHeader extends BizEntityTyped<ReturnHeaderType> {
 	 * @generated
 	 */
 	void setEntryDate(Date value);
+
+	/**
+	 * Returns the value of the '<em><b>Needs Inventory Receive</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Needs Inventory Receive</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Needs Inventory Receive</em>' attribute.
+	 * @see #setNeedsInventoryReceive(boolean)
+	 * @see org.abchip.mimo.biz.order.return_.ReturnPackage#getReturnHeader_NeedsInventoryReceive()
+	 * @model annotation="mimo-ent-format type='indicator' length='1'"
+	 * @generated
+	 */
+	boolean isNeedsInventoryReceive();
+
+	/**
+	 * Sets the value of the '{@link org.abchip.mimo.biz.order.return_.ReturnHeader#isNeedsInventoryReceive <em>Needs Inventory Receive</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Needs Inventory Receive</em>' attribute.
+	 * @see #isNeedsInventoryReceive()
+	 * @generated
+	 */
+	void setNeedsInventoryReceive(boolean value);
 
 	/**
 	 * Returns the value of the '<em><b>Fin Account Id</b></em>' reference.
@@ -235,32 +261,6 @@ public interface ReturnHeader extends BizEntityTyped<ReturnHeaderType> {
 	 * @generated
 	 */
 	void setFromPartyId(Party value);
-
-	/**
-	 * Returns the value of the '<em><b>Needs Inventory Receive</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Needs Inventory Receive</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Needs Inventory Receive</em>' attribute.
-	 * @see #setNeedsInventoryReceive(boolean)
-	 * @see org.abchip.mimo.biz.order.return_.ReturnPackage#getReturnHeader_NeedsInventoryReceive()
-	 * @model
-	 * @generated
-	 */
-	boolean isNeedsInventoryReceive();
-
-	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.order.return_.ReturnHeader#isNeedsInventoryReceive <em>Needs Inventory Receive</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Needs Inventory Receive</em>' attribute.
-	 * @see #isNeedsInventoryReceive()
-	 * @generated
-	 */
-	void setNeedsInventoryReceive(boolean value);
 
 	/**
 	 * Returns the value of the '<em><b>Origin Contact Mech Id</b></em>' reference.
@@ -352,6 +352,7 @@ public interface ReturnHeader extends BizEntityTyped<ReturnHeaderType> {
 	 * @see #setReturnId(String)
 	 * @see org.abchip.mimo.biz.order.return_.ReturnPackage#getReturnHeader_ReturnId()
 	 * @model id="true" required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
@@ -404,7 +405,7 @@ public interface ReturnHeader extends BizEntityTyped<ReturnHeaderType> {
 	 * @return the value of the '<em>Supplier Rma Id</em>' attribute.
 	 * @see #setSupplierRmaId(String)
 	 * @see org.abchip.mimo.biz.order.return_.ReturnPackage#getReturnHeader_SupplierRmaId()
-	 * @model
+	 * @model annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	String getSupplierRmaId();
@@ -456,7 +457,9 @@ public interface ReturnHeader extends BizEntityTyped<ReturnHeaderType> {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Communication Event Returns</em>' attribute list.
 	 * @see org.abchip.mimo.biz.order.return_.ReturnPackage#getReturnHeader_CommunicationEventReturns()
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='CommunicationEventReturn'"
 	 * @generated
 	 */
@@ -473,7 +476,9 @@ public interface ReturnHeader extends BizEntityTyped<ReturnHeaderType> {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Return Items</em>' attribute list.
 	 * @see org.abchip.mimo.biz.order.return_.ReturnPackage#getReturnHeader_ReturnItems()
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ReturnItem'"
 	 * @generated
 	 */
@@ -482,7 +487,8 @@ public interface ReturnHeader extends BizEntityTyped<ReturnHeaderType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='Shipment' route='primaryReturnId'"
 	 * @generated
 	 */
@@ -491,7 +497,8 @@ public interface ReturnHeader extends BizEntityTyped<ReturnHeaderType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ReturnAdjustment' route='returnId'"
 	 * @generated
 	 */
@@ -500,7 +507,8 @@ public interface ReturnHeader extends BizEntityTyped<ReturnHeaderType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ReturnStatus' route='returnId'"
 	 * @generated
 	 */

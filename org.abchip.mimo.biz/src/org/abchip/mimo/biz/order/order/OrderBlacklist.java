@@ -39,6 +39,7 @@ public interface OrderBlacklist extends BizEntityTyped<OrderBlacklistType> {
 	 * @see #setBlacklistString(String)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderBlacklist_BlacklistString()
 	 * @model required="true"
+	 *        annotation="mimo-ent-format type='long-varchar' length='255'"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */

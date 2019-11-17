@@ -89,7 +89,7 @@ public interface OrderItemShipGroup extends BizEntity {
 	 * @return the value of the '<em>Carrier Role Type Id</em>' attribute.
 	 * @see #setCarrierRoleTypeId(String)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderItemShipGroup_CarrierRoleTypeId()
-	 * @model
+	 * @model annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	String getCarrierRoleTypeId();
@@ -141,7 +141,7 @@ public interface OrderItemShipGroup extends BizEntity {
 	 * @return the value of the '<em>Estimated Delivery Date</em>' attribute.
 	 * @see #setEstimatedDeliveryDate(Date)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderItemShipGroup_EstimatedDeliveryDate()
-	 * @model
+	 * @model annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getEstimatedDeliveryDate();
@@ -167,7 +167,7 @@ public interface OrderItemShipGroup extends BizEntity {
 	 * @return the value of the '<em>Estimated Ship Date</em>' attribute.
 	 * @see #setEstimatedShipDate(Date)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderItemShipGroup_EstimatedShipDate()
-	 * @model
+	 * @model annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getEstimatedShipDate();
@@ -219,7 +219,7 @@ public interface OrderItemShipGroup extends BizEntity {
 	 * @return the value of the '<em>Gift Message</em>' attribute.
 	 * @see #setGiftMessage(String)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderItemShipGroup_GiftMessage()
-	 * @model
+	 * @model annotation="mimo-ent-format type='long-varchar' length='255'"
 	 * @generated
 	 */
 	String getGiftMessage();
@@ -245,7 +245,7 @@ public interface OrderItemShipGroup extends BizEntity {
 	 * @return the value of the '<em>Is Gift</em>' attribute.
 	 * @see #setIsGift(boolean)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderItemShipGroup_IsGift()
-	 * @model
+	 * @model annotation="mimo-ent-format type='indicator' length='1'"
 	 * @generated
 	 */
 	boolean isIsGift();
@@ -271,7 +271,7 @@ public interface OrderItemShipGroup extends BizEntity {
 	 * @return the value of the '<em>May Split</em>' attribute.
 	 * @see #setMaySplit(boolean)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderItemShipGroup_MaySplit()
-	 * @model
+	 * @model annotation="mimo-ent-format type='indicator' length='1'"
 	 * @generated
 	 */
 	boolean isMaySplit();
@@ -323,7 +323,7 @@ public interface OrderItemShipGroup extends BizEntity {
 	 * @return the value of the '<em>Ship After Date</em>' attribute.
 	 * @see #setShipAfterDate(Date)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderItemShipGroup_ShipAfterDate()
-	 * @model
+	 * @model annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getShipAfterDate();
@@ -349,7 +349,7 @@ public interface OrderItemShipGroup extends BizEntity {
 	 * @return the value of the '<em>Ship By Date</em>' attribute.
 	 * @see #setShipByDate(Date)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderItemShipGroup_ShipByDate()
-	 * @model
+	 * @model annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getShipByDate();
@@ -376,6 +376,7 @@ public interface OrderItemShipGroup extends BizEntity {
 	 * @see #setShipGroupSeqId(String)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderItemShipGroup_ShipGroupSeqId()
 	 * @model required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
@@ -428,7 +429,7 @@ public interface OrderItemShipGroup extends BizEntity {
 	 * @return the value of the '<em>Shipping Instructions</em>' attribute.
 	 * @see #setShippingInstructions(String)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderItemShipGroup_ShippingInstructions()
-	 * @model
+	 * @model annotation="mimo-ent-format type='long-varchar' length='255'"
 	 * @generated
 	 */
 	String getShippingInstructions();
@@ -532,7 +533,7 @@ public interface OrderItemShipGroup extends BizEntity {
 	 * @return the value of the '<em>Tracking Number</em>' attribute.
 	 * @see #setTrackingNumber(String)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderItemShipGroup_TrackingNumber()
-	 * @model
+	 * @model annotation="mimo-ent-format type='short-varchar' length='60'"
 	 * @generated
 	 */
 	String getTrackingNumber();

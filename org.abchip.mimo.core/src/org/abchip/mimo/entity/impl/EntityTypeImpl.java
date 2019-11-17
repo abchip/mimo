@@ -7,7 +7,6 @@
  */
 package org.abchip.mimo.entity.impl;
 
-import java.lang.reflect.InvocationTargetException;
 import java.util.Collection;
 import java.util.List;
 
@@ -16,7 +15,6 @@ import org.abchip.mimo.entity.EntityType;
 import org.abchip.mimo.entity.EntityTyped;
 import org.abchip.mimo.entity.Frame;
 import org.abchip.mimo.entity.Slot;
-import org.abchip.mimo.entity.Textable;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
@@ -203,42 +201,6 @@ public abstract class EntityTypeImpl<E extends EntityTyped<?>> extends EntityNam
 				return slots != null && !slots.isEmpty();
 		}
 		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public int eDerivedOperationID(int baseOperationID, Class<?> baseClass) {
-		if (baseClass == Textable.class) {
-			switch (baseOperationID) {
-				case EntityPackage.TEXTABLE___GET_TEXT: return EntityPackage.ENTITY_TYPE___GET_TEXT;
-				default: return -1;
-			}
-		}
-		return super.eDerivedOperationID(baseOperationID, baseClass);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
-		switch (operationID) {
-			case EntityPackage.ENTITY_TYPE___GET_FRAME:
-				return getFrame();
-			case EntityPackage.ENTITY_TYPE___GET_TYPE_ID:
-				return getTypeId();
-			case EntityPackage.ENTITY_TYPE___HAS_TABLE:
-				return hasTable();
-			case EntityPackage.ENTITY_TYPE___GET_TEXT:
-				return getText();
-		}
-		return super.eInvoke(operationID, arguments);
 	}
 
 } //EntityTypeImpl

@@ -7,14 +7,12 @@
  */
 package org.abchip.mimo.biz.workeffort.workeffort.impl;
 
-import java.lang.reflect.InvocationTargetException;
 import java.util.List;
 
 import org.abchip.mimo.biz.impl.BizEntityTypeImpl;
 import org.abchip.mimo.biz.workeffort.workeffort.WorkEffort;
 import org.abchip.mimo.biz.workeffort.workeffort.WorkEffortType;
 import org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage;
-import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 
 /**
@@ -172,22 +170,6 @@ public class WorkEffortTypeImpl extends BizEntityTypeImpl<WorkEffort> implements
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
-		switch (operationID) {
-			case WorkeffortPackage.WORK_EFFORT_TYPE___CHILD_WORK_EFFORT_TYPES:
-				return childWorkEffortTypes();
-			case WorkeffortPackage.WORK_EFFORT_TYPE___WORK_EFFORTS:
-				return workEfforts();
-		}
-		return super.eInvoke(operationID, arguments);
 	}
 
 } //WorkEffortTypeImpl

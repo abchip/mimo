@@ -7,14 +7,12 @@
  */
 package org.abchip.mimo.biz.webapp.visit.impl;
 
-import java.lang.reflect.InvocationTargetException;
 import java.util.List;
 
 import org.abchip.mimo.biz.impl.BizEntityTypeImpl;
 import org.abchip.mimo.biz.webapp.visit.ServerHit;
 import org.abchip.mimo.biz.webapp.visit.ServerHitType;
 import org.abchip.mimo.biz.webapp.visit.VisitPackage;
-import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 
 /**
@@ -106,20 +104,6 @@ public class ServerHitTypeImpl extends BizEntityTypeImpl<ServerHit> implements S
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
-		switch (operationID) {
-			case VisitPackage.SERVER_HIT_TYPE___SERVER_HIT_BINS:
-				return serverHitBins();
-		}
-		return super.eInvoke(operationID, arguments);
 	}
 
 } //ServerHitTypeImpl

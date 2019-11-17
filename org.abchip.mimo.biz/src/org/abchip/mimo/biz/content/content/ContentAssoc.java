@@ -185,7 +185,7 @@ public interface ContentAssoc extends BizEntityTyped<ContentAssocType> {
 	 * @return the value of the '<em>Created Date</em>' attribute.
 	 * @see #setCreatedDate(Date)
 	 * @see org.abchip.mimo.biz.content.content.ContentPackage#getContentAssoc_CreatedDate()
-	 * @model
+	 * @model annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getCreatedDate();
@@ -238,6 +238,7 @@ public interface ContentAssoc extends BizEntityTyped<ContentAssocType> {
 	 * @see #setFromDate(Date)
 	 * @see org.abchip.mimo.biz.content.content.ContentPackage#getContentAssoc_FromDate()
 	 * @model required="true"
+	 *        annotation="mimo-ent-format type='date-time'"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
@@ -290,7 +291,7 @@ public interface ContentAssoc extends BizEntityTyped<ContentAssocType> {
 	 * @return the value of the '<em>Last Modified Date</em>' attribute.
 	 * @see #setLastModifiedDate(Date)
 	 * @see org.abchip.mimo.biz.content.content.ContentPackage#getContentAssoc_LastModifiedDate()
-	 * @model
+	 * @model annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getLastModifiedDate();
@@ -316,7 +317,7 @@ public interface ContentAssoc extends BizEntityTyped<ContentAssocType> {
 	 * @return the value of the '<em>Left Coordinate</em>' attribute.
 	 * @see #setLeftCoordinate(long)
 	 * @see org.abchip.mimo.biz.content.content.ContentPackage#getContentAssoc_LeftCoordinate()
-	 * @model
+	 * @model annotation="mimo-ent-format type='numeric' precision='20' scale='0'"
 	 * @generated
 	 */
 	long getLeftCoordinate();
@@ -342,7 +343,7 @@ public interface ContentAssoc extends BizEntityTyped<ContentAssocType> {
 	 * @return the value of the '<em>Map Key</em>' attribute.
 	 * @see #setMapKey(String)
 	 * @see org.abchip.mimo.biz.content.content.ContentPackage#getContentAssoc_MapKey()
-	 * @model
+	 * @model annotation="mimo-ent-format type='name' length='100'"
 	 * @generated
 	 */
 	String getMapKey();
@@ -368,7 +369,7 @@ public interface ContentAssoc extends BizEntityTyped<ContentAssocType> {
 	 * @return the value of the '<em>Sequence Num</em>' attribute.
 	 * @see #setSequenceNum(long)
 	 * @see org.abchip.mimo.biz.content.content.ContentPackage#getContentAssoc_SequenceNum()
-	 * @model
+	 * @model annotation="mimo-ent-format type='numeric' precision='20' scale='0'"
 	 * @generated
 	 */
 	long getSequenceNum();
@@ -394,7 +395,7 @@ public interface ContentAssoc extends BizEntityTyped<ContentAssocType> {
 	 * @return the value of the '<em>Thru Date</em>' attribute.
 	 * @see #setThruDate(Date)
 	 * @see org.abchip.mimo.biz.content.content.ContentPackage#getContentAssoc_ThruDate()
-	 * @model
+	 * @model annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getThruDate();
@@ -420,7 +421,7 @@ public interface ContentAssoc extends BizEntityTyped<ContentAssocType> {
 	 * @return the value of the '<em>Upper Coordinate</em>' attribute.
 	 * @see #setUpperCoordinate(long)
 	 * @see org.abchip.mimo.biz.content.content.ContentPackage#getContentAssoc_UpperCoordinate()
-	 * @model
+	 * @model annotation="mimo-ent-format type='numeric' precision='20' scale='0'"
 	 * @generated
 	 */
 	long getUpperCoordinate();

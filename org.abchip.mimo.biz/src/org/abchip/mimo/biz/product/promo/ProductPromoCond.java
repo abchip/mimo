@@ -46,7 +46,7 @@ public interface ProductPromoCond extends BizEntity {
 	 * @return the value of the '<em>Cond Value</em>' attribute.
 	 * @see #setCondValue(String)
 	 * @see org.abchip.mimo.biz.product.promo.PromoPackage#getProductPromoCond_CondValue()
-	 * @model
+	 * @model annotation="mimo-ent-format type='long-varchar' length='255'"
 	 * @generated
 	 */
 	String getCondValue();
@@ -150,7 +150,7 @@ public interface ProductPromoCond extends BizEntity {
 	 * @return the value of the '<em>Other Value</em>' attribute.
 	 * @see #setOtherValue(String)
 	 * @see org.abchip.mimo.biz.product.promo.PromoPackage#getProductPromoCond_OtherValue()
-	 * @model
+	 * @model annotation="mimo-ent-format type='long-varchar' length='255'"
 	 * @generated
 	 */
 	String getOtherValue();
@@ -177,6 +177,7 @@ public interface ProductPromoCond extends BizEntity {
 	 * @see #setProductPromoCondSeqId(String)
 	 * @see org.abchip.mimo.biz.product.promo.PromoPackage#getProductPromoCond_ProductPromoCondSeqId()
 	 * @model required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
@@ -204,6 +205,7 @@ public interface ProductPromoCond extends BizEntity {
 	 * @see #setProductPromoRuleId(String)
 	 * @see org.abchip.mimo.biz.product.promo.PromoPackage#getProductPromoCond_ProductPromoRuleId()
 	 * @model required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */

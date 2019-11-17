@@ -25,7 +25,7 @@ import org.eclipse.emf.ecore.EClass;
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.PaymentGatewayClearCommerceImpl#getEffectiveAlias <em>Effective Alias</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.PaymentGatewayClearCommerceImpl#isEnableCVM <em>Enable CVM</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.PaymentGatewayClearCommerceImpl#getGroupId <em>Group Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.PaymentGatewayClearCommerceImpl#isProcessMode <em>Process Mode</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.PaymentGatewayClearCommerceImpl#getProcessMode <em>Process Mode</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.PaymentGatewayClearCommerceImpl#getPwd <em>Pwd</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.PaymentGatewayClearCommerceImpl#getServerURL <em>Server URL</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.PaymentGatewayClearCommerceImpl#getSourceId <em>Source Id</em>}</li>
@@ -146,8 +146,8 @@ public class PaymentGatewayClearCommerceImpl extends BizEntityImpl implements Pa
 	 * @generated
 	 */
 	@Override
-	public boolean isProcessMode() {
-		return (Boolean)eGet(PaymentPackage.Literals.PAYMENT_GATEWAY_CLEAR_COMMERCE__PROCESS_MODE, true);
+	public char getProcessMode() {
+		return (Character)eGet(PaymentPackage.Literals.PAYMENT_GATEWAY_CLEAR_COMMERCE__PROCESS_MODE, true);
 	}
 
 	/**
@@ -156,7 +156,7 @@ public class PaymentGatewayClearCommerceImpl extends BizEntityImpl implements Pa
 	 * @generated
 	 */
 	@Override
-	public void setProcessMode(boolean newProcessMode) {
+	public void setProcessMode(char newProcessMode) {
 		eSet(PaymentPackage.Literals.PAYMENT_GATEWAY_CLEAR_COMMERCE__PROCESS_MODE, newProcessMode);
 	}
 

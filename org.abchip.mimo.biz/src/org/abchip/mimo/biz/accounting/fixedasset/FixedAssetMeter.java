@@ -49,6 +49,7 @@ public interface FixedAssetMeter extends BizEntity {
 	 * @see #setFixedAssetId(String)
 	 * @see org.abchip.mimo.biz.accounting.fixedasset.FixedassetPackage#getFixedAssetMeter_FixedAssetId()
 	 * @model required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
@@ -75,7 +76,7 @@ public interface FixedAssetMeter extends BizEntity {
 	 * @return the value of the '<em>Maint Hist Seq Id</em>' attribute.
 	 * @see #setMaintHistSeqId(String)
 	 * @see org.abchip.mimo.biz.accounting.fixedasset.FixedassetPackage#getFixedAssetMeter_MaintHistSeqId()
-	 * @model
+	 * @model annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	String getMaintHistSeqId();
@@ -101,7 +102,7 @@ public interface FixedAssetMeter extends BizEntity {
 	 * @return the value of the '<em>Meter Value</em>' attribute.
 	 * @see #setMeterValue(BigDecimal)
 	 * @see org.abchip.mimo.biz.accounting.fixedasset.FixedassetPackage#getFixedAssetMeter_MeterValue()
-	 * @model
+	 * @model annotation="mimo-ent-format type='fixed-point' precision='18' scale='6'"
 	 * @generated
 	 */
 	BigDecimal getMeterValue();
@@ -154,6 +155,7 @@ public interface FixedAssetMeter extends BizEntity {
 	 * @see #setReadingDate(Date)
 	 * @see org.abchip.mimo.biz.accounting.fixedasset.FixedassetPackage#getFixedAssetMeter_ReadingDate()
 	 * @model required="true"
+	 *        annotation="mimo-ent-format type='date-time'"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
@@ -180,7 +182,7 @@ public interface FixedAssetMeter extends BizEntity {
 	 * @return the value of the '<em>Reading Reason Enum Id</em>' attribute.
 	 * @see #setReadingReasonEnumId(String)
 	 * @see org.abchip.mimo.biz.accounting.fixedasset.FixedassetPackage#getFixedAssetMeter_ReadingReasonEnumId()
-	 * @model
+	 * @model annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	String getReadingReasonEnumId();
@@ -206,7 +208,7 @@ public interface FixedAssetMeter extends BizEntity {
 	 * @return the value of the '<em>Work Effort Id</em>' attribute.
 	 * @see #setWorkEffortId(String)
 	 * @see org.abchip.mimo.biz.accounting.fixedasset.FixedassetPackage#getFixedAssetMeter_WorkEffortId()
-	 * @model
+	 * @model annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	String getWorkEffortId();

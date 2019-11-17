@@ -38,7 +38,7 @@ public interface TestingSubtype extends BizEntity {
 	 * @return the value of the '<em>Subtype Description</em>' attribute.
 	 * @see #setSubtypeDescription(String)
 	 * @see org.abchip.mimo.biz.entity.test.TestPackage#getTestingSubtype_SubtypeDescription()
-	 * @model
+	 * @model annotation="mimo-ent-format type='description' length='255'"
 	 * @generated
 	 */
 	String getSubtypeDescription();
@@ -65,6 +65,7 @@ public interface TestingSubtype extends BizEntity {
 	 * @see #setTestingTypeId(String)
 	 * @see org.abchip.mimo.biz.entity.test.TestPackage#getTestingSubtype_TestingTypeId()
 	 * @model id="true" required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */

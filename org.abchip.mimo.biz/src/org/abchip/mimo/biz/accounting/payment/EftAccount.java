@@ -44,7 +44,7 @@ public interface EftAccount extends PaymentMethod {
 	 * @return the value of the '<em>Account Number</em>' attribute.
 	 * @see #setAccountNumber(String)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getEftAccount_AccountNumber()
-	 * @model
+	 * @model annotation="mimo-ent-format type='long-varchar' length='255'"
 	 * @generated
 	 */
 	String getAccountNumber();
@@ -70,7 +70,7 @@ public interface EftAccount extends PaymentMethod {
 	 * @return the value of the '<em>Account Type</em>' attribute.
 	 * @see #setAccountType(String)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getEftAccount_AccountType()
-	 * @model
+	 * @model annotation="mimo-ent-format type='short-varchar' length='60'"
 	 * @generated
 	 */
 	String getAccountType();
@@ -96,7 +96,7 @@ public interface EftAccount extends PaymentMethod {
 	 * @return the value of the '<em>Bank Name</em>' attribute.
 	 * @see #setBankName(String)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getEftAccount_BankName()
-	 * @model
+	 * @model annotation="mimo-ent-format type='name' length='100'"
 	 * @generated
 	 */
 	String getBankName();
@@ -122,7 +122,7 @@ public interface EftAccount extends PaymentMethod {
 	 * @return the value of the '<em>Company Name On Account</em>' attribute.
 	 * @see #setCompanyNameOnAccount(String)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getEftAccount_CompanyNameOnAccount()
-	 * @model
+	 * @model annotation="mimo-ent-format type='name' length='100'"
 	 * @generated
 	 */
 	String getCompanyNameOnAccount();
@@ -174,7 +174,7 @@ public interface EftAccount extends PaymentMethod {
 	 * @return the value of the '<em>Name On Account</em>' attribute.
 	 * @see #setNameOnAccount(String)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getEftAccount_NameOnAccount()
-	 * @model
+	 * @model annotation="mimo-ent-format type='name' length='100'"
 	 * @generated
 	 */
 	String getNameOnAccount();
@@ -200,7 +200,7 @@ public interface EftAccount extends PaymentMethod {
 	 * @return the value of the '<em>Routing Number</em>' attribute.
 	 * @see #setRoutingNumber(String)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getEftAccount_RoutingNumber()
-	 * @model
+	 * @model annotation="mimo-ent-format type='short-varchar' length='60'"
 	 * @generated
 	 */
 	String getRoutingNumber();
@@ -226,7 +226,7 @@ public interface EftAccount extends PaymentMethod {
 	 * @return the value of the '<em>Years At Bank</em>' attribute.
 	 * @see #setYearsAtBank(long)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getEftAccount_YearsAtBank()
-	 * @model
+	 * @model annotation="mimo-ent-format type='numeric' precision='20' scale='0'"
 	 * @generated
 	 */
 	long getYearsAtBank();

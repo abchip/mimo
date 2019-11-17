@@ -7,14 +7,12 @@
  */
 package org.abchip.mimo.biz.order.order.impl;
 
-import java.lang.reflect.InvocationTargetException;
 import java.util.List;
 
 import org.abchip.mimo.biz.impl.BizEntityTypeImpl;
 import org.abchip.mimo.biz.order.order.OrderAdjustment;
 import org.abchip.mimo.biz.order.order.OrderAdjustmentType;
 import org.abchip.mimo.biz.order.order.OrderPackage;
-import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 
 /**
@@ -184,24 +182,6 @@ public class OrderAdjustmentTypeImpl extends BizEntityTypeImpl<OrderAdjustment> 
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
-		switch (operationID) {
-			case OrderPackage.ORDER_ADJUSTMENT_TYPE___CHILD_ORDER_ADJUSTMENT_TYPES:
-				return childOrderAdjustmentTypes();
-			case OrderPackage.ORDER_ADJUSTMENT_TYPE___ORDER_ADJUSTMENTS:
-				return orderAdjustments();
-			case OrderPackage.ORDER_ADJUSTMENT_TYPE___QUOTE_ADJUSTMENTS:
-				return quoteAdjustments();
-		}
-		return super.eInvoke(operationID, arguments);
 	}
 
 } //OrderAdjustmentTypeImpl

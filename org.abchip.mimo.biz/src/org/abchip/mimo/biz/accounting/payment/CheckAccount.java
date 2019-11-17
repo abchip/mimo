@@ -46,7 +46,7 @@ public interface CheckAccount extends BizEntity {
 	 * @return the value of the '<em>Account Number</em>' attribute.
 	 * @see #setAccountNumber(String)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getCheckAccount_AccountNumber()
-	 * @model
+	 * @model annotation="mimo-ent-format type='long-varchar' length='255'"
 	 * @generated
 	 */
 	String getAccountNumber();
@@ -72,7 +72,7 @@ public interface CheckAccount extends BizEntity {
 	 * @return the value of the '<em>Account Type</em>' attribute.
 	 * @see #setAccountType(String)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getCheckAccount_AccountType()
-	 * @model
+	 * @model annotation="mimo-ent-format type='short-varchar' length='60'"
 	 * @generated
 	 */
 	String getAccountType();
@@ -98,7 +98,7 @@ public interface CheckAccount extends BizEntity {
 	 * @return the value of the '<em>Bank Name</em>' attribute.
 	 * @see #setBankName(String)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getCheckAccount_BankName()
-	 * @model
+	 * @model annotation="mimo-ent-format type='name' length='100'"
 	 * @generated
 	 */
 	String getBankName();
@@ -124,7 +124,7 @@ public interface CheckAccount extends BizEntity {
 	 * @return the value of the '<em>Branch Code</em>' attribute.
 	 * @see #setBranchCode(String)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getCheckAccount_BranchCode()
-	 * @model
+	 * @model annotation="mimo-ent-format type='short-varchar' length='60'"
 	 * @generated
 	 */
 	String getBranchCode();
@@ -150,7 +150,7 @@ public interface CheckAccount extends BizEntity {
 	 * @return the value of the '<em>Company Name On Account</em>' attribute.
 	 * @see #setCompanyNameOnAccount(String)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getCheckAccount_CompanyNameOnAccount()
-	 * @model
+	 * @model annotation="mimo-ent-format type='name' length='100'"
 	 * @generated
 	 */
 	String getCompanyNameOnAccount();
@@ -202,7 +202,7 @@ public interface CheckAccount extends BizEntity {
 	 * @return the value of the '<em>Name On Account</em>' attribute.
 	 * @see #setNameOnAccount(String)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getCheckAccount_NameOnAccount()
-	 * @model
+	 * @model annotation="mimo-ent-format type='name' length='100'"
 	 * @generated
 	 */
 	String getNameOnAccount();
@@ -254,7 +254,7 @@ public interface CheckAccount extends BizEntity {
 	 * @return the value of the '<em>Routing Number</em>' attribute.
 	 * @see #setRoutingNumber(String)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getCheckAccount_RoutingNumber()
-	 * @model
+	 * @model annotation="mimo-ent-format type='short-varchar' length='60'"
 	 * @generated
 	 */
 	String getRoutingNumber();

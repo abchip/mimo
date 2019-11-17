@@ -10,7 +10,6 @@ package org.abchip.mimo.biz.marketing.campaign;
 import org.abchip.mimo.biz.BizPackage;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
@@ -298,87 +297,6 @@ public interface CampaignPackage extends EPackage {
 	int MARKETING_CAMPAIGN_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 20;
 
 	/**
-	 * The operation id for the '<em>Isa</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MARKETING_CAMPAIGN___ISA = BizPackage.BIZ_ENTITY___ISA;
-
-	/**
-	 * The operation id for the '<em>Get Name</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MARKETING_CAMPAIGN___GET_NAME = BizPackage.BIZ_ENTITY___GET_NAME;
-
-	/**
-	 * The operation id for the '<em>Get URI</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MARKETING_CAMPAIGN___GET_URI = BizPackage.BIZ_ENTITY___GET_URI;
-
-	/**
-	 * The operation id for the '<em>Is Proxy</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MARKETING_CAMPAIGN___IS_PROXY = BizPackage.BIZ_ENTITY___IS_PROXY;
-
-	/**
-	 * The operation id for the '<em>Child Marketing Campaigns</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MARKETING_CAMPAIGN___CHILD_MARKETING_CAMPAIGNS = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Contact Lists</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MARKETING_CAMPAIGN___CONTACT_LISTS = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 1;
-
-	/**
-	 * The operation id for the '<em>Sales Opportunities</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MARKETING_CAMPAIGN___SALES_OPPORTUNITIES = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 2;
-
-	/**
-	 * The operation id for the '<em>Tracking Codes</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MARKETING_CAMPAIGN___TRACKING_CODES = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 3;
-
-	/**
-	 * The number of operations of the '<em>Marketing Campaign</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MARKETING_CAMPAIGN_OPERATION_COUNT = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 4;
-
-	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.marketing.campaign.impl.MarketingCampaignNoteImpl <em>Marketing Campaign Note</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -459,51 +377,6 @@ public interface CampaignPackage extends EPackage {
 	 * @ordered
 	 */
 	int MARKETING_CAMPAIGN_NOTE_FEATURE_COUNT = BizPackage.BIZ_ENTITY_NOTE_FEATURE_COUNT + 1;
-
-	/**
-	 * The operation id for the '<em>Isa</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MARKETING_CAMPAIGN_NOTE___ISA = BizPackage.BIZ_ENTITY_NOTE___ISA;
-
-	/**
-	 * The operation id for the '<em>Get Name</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MARKETING_CAMPAIGN_NOTE___GET_NAME = BizPackage.BIZ_ENTITY_NOTE___GET_NAME;
-
-	/**
-	 * The operation id for the '<em>Get URI</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MARKETING_CAMPAIGN_NOTE___GET_URI = BizPackage.BIZ_ENTITY_NOTE___GET_URI;
-
-	/**
-	 * The operation id for the '<em>Is Proxy</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MARKETING_CAMPAIGN_NOTE___IS_PROXY = BizPackage.BIZ_ENTITY_NOTE___IS_PROXY;
-
-	/**
-	 * The number of operations of the '<em>Marketing Campaign Note</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MARKETING_CAMPAIGN_NOTE_OPERATION_COUNT = BizPackage.BIZ_ENTITY_NOTE_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.marketing.campaign.impl.MarketingCampaignPriceImpl <em>Marketing Campaign Price</em>}' class.
@@ -597,51 +470,6 @@ public interface CampaignPackage extends EPackage {
 	int MARKETING_CAMPAIGN_PRICE_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
 
 	/**
-	 * The operation id for the '<em>Isa</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MARKETING_CAMPAIGN_PRICE___ISA = BizPackage.BIZ_ENTITY___ISA;
-
-	/**
-	 * The operation id for the '<em>Get Name</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MARKETING_CAMPAIGN_PRICE___GET_NAME = BizPackage.BIZ_ENTITY___GET_NAME;
-
-	/**
-	 * The operation id for the '<em>Get URI</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MARKETING_CAMPAIGN_PRICE___GET_URI = BizPackage.BIZ_ENTITY___GET_URI;
-
-	/**
-	 * The operation id for the '<em>Is Proxy</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MARKETING_CAMPAIGN_PRICE___IS_PROXY = BizPackage.BIZ_ENTITY___IS_PROXY;
-
-	/**
-	 * The number of operations of the '<em>Marketing Campaign Price</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MARKETING_CAMPAIGN_PRICE_OPERATION_COUNT = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 0;
-
-	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.marketing.campaign.impl.MarketingCampaignPromoImpl <em>Marketing Campaign Promo</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -731,51 +559,6 @@ public interface CampaignPackage extends EPackage {
 	 * @ordered
 	 */
 	int MARKETING_CAMPAIGN_PROMO_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
-
-	/**
-	 * The operation id for the '<em>Isa</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MARKETING_CAMPAIGN_PROMO___ISA = BizPackage.BIZ_ENTITY___ISA;
-
-	/**
-	 * The operation id for the '<em>Get Name</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MARKETING_CAMPAIGN_PROMO___GET_NAME = BizPackage.BIZ_ENTITY___GET_NAME;
-
-	/**
-	 * The operation id for the '<em>Get URI</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MARKETING_CAMPAIGN_PROMO___GET_URI = BizPackage.BIZ_ENTITY___GET_URI;
-
-	/**
-	 * The operation id for the '<em>Is Proxy</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MARKETING_CAMPAIGN_PROMO___IS_PROXY = BizPackage.BIZ_ENTITY___IS_PROXY;
-
-	/**
-	 * The number of operations of the '<em>Marketing Campaign Promo</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MARKETING_CAMPAIGN_PROMO_OPERATION_COUNT = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.marketing.campaign.impl.MarketingCampaignRoleImpl <em>Marketing Campaign Role</em>}' class.
@@ -876,52 +659,6 @@ public interface CampaignPackage extends EPackage {
 	 * @ordered
 	 */
 	int MARKETING_CAMPAIGN_ROLE_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 5;
-
-
-	/**
-	 * The operation id for the '<em>Isa</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MARKETING_CAMPAIGN_ROLE___ISA = BizPackage.BIZ_ENTITY___ISA;
-
-	/**
-	 * The operation id for the '<em>Get Name</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MARKETING_CAMPAIGN_ROLE___GET_NAME = BizPackage.BIZ_ENTITY___GET_NAME;
-
-	/**
-	 * The operation id for the '<em>Get URI</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MARKETING_CAMPAIGN_ROLE___GET_URI = BizPackage.BIZ_ENTITY___GET_URI;
-
-	/**
-	 * The operation id for the '<em>Is Proxy</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MARKETING_CAMPAIGN_ROLE___IS_PROXY = BizPackage.BIZ_ENTITY___IS_PROXY;
-
-	/**
-	 * The number of operations of the '<em>Marketing Campaign Role</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MARKETING_CAMPAIGN_ROLE_OPERATION_COUNT = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 0;
 
 
 	/**
@@ -1153,46 +890,6 @@ public interface CampaignPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getMarketingCampaign_MarketingCampaignNotes();
-
-	/**
-	 * Returns the meta object for the '{@link org.abchip.mimo.biz.marketing.campaign.MarketingCampaign#childMarketingCampaigns() <em>Child Marketing Campaigns</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Child Marketing Campaigns</em>' operation.
-	 * @see org.abchip.mimo.biz.marketing.campaign.MarketingCampaign#childMarketingCampaigns()
-	 * @generated
-	 */
-	EOperation getMarketingCampaign__ChildMarketingCampaigns();
-
-	/**
-	 * Returns the meta object for the '{@link org.abchip.mimo.biz.marketing.campaign.MarketingCampaign#contactLists() <em>Contact Lists</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Contact Lists</em>' operation.
-	 * @see org.abchip.mimo.biz.marketing.campaign.MarketingCampaign#contactLists()
-	 * @generated
-	 */
-	EOperation getMarketingCampaign__ContactLists();
-
-	/**
-	 * Returns the meta object for the '{@link org.abchip.mimo.biz.marketing.campaign.MarketingCampaign#salesOpportunities() <em>Sales Opportunities</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Sales Opportunities</em>' operation.
-	 * @see org.abchip.mimo.biz.marketing.campaign.MarketingCampaign#salesOpportunities()
-	 * @generated
-	 */
-	EOperation getMarketingCampaign__SalesOpportunities();
-
-	/**
-	 * Returns the meta object for the '{@link org.abchip.mimo.biz.marketing.campaign.MarketingCampaign#trackingCodes() <em>Tracking Codes</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Tracking Codes</em>' operation.
-	 * @see org.abchip.mimo.biz.marketing.campaign.MarketingCampaign#trackingCodes()
-	 * @generated
-	 */
-	EOperation getMarketingCampaign__TrackingCodes();
 
 	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.biz.marketing.campaign.MarketingCampaignNote <em>Marketing Campaign Note</em>}'.
@@ -1579,38 +1276,6 @@ public interface CampaignPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute MARKETING_CAMPAIGN__MARKETING_CAMPAIGN_NOTES = eINSTANCE.getMarketingCampaign_MarketingCampaignNotes();
-
-		/**
-		 * The meta object literal for the '<em><b>Child Marketing Campaigns</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation MARKETING_CAMPAIGN___CHILD_MARKETING_CAMPAIGNS = eINSTANCE.getMarketingCampaign__ChildMarketingCampaigns();
-
-		/**
-		 * The meta object literal for the '<em><b>Contact Lists</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation MARKETING_CAMPAIGN___CONTACT_LISTS = eINSTANCE.getMarketingCampaign__ContactLists();
-
-		/**
-		 * The meta object literal for the '<em><b>Sales Opportunities</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation MARKETING_CAMPAIGN___SALES_OPPORTUNITIES = eINSTANCE.getMarketingCampaign__SalesOpportunities();
-
-		/**
-		 * The meta object literal for the '<em><b>Tracking Codes</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation MARKETING_CAMPAIGN___TRACKING_CODES = eINSTANCE.getMarketingCampaign__TrackingCodes();
 
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.biz.marketing.campaign.impl.MarketingCampaignNoteImpl <em>Marketing Campaign Note</em>}' class.

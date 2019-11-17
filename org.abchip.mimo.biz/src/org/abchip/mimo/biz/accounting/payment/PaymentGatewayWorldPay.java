@@ -18,8 +18,8 @@ import org.abchip.mimo.biz.BizEntity;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.accounting.payment.PaymentGatewayWorldPay#isAuthMode <em>Auth Mode</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.payment.PaymentGatewayWorldPay#isFixContact <em>Fix Contact</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.payment.PaymentGatewayWorldPay#getAuthMode <em>Auth Mode</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.payment.PaymentGatewayWorldPay#getFixContact <em>Fix Contact</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.PaymentGatewayWorldPay#isHideContact <em>Hide Contact</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.PaymentGatewayWorldPay#isHideCurrency <em>Hide Currency</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.PaymentGatewayWorldPay#getInstId <em>Inst Id</em>}</li>
@@ -37,6 +37,110 @@ import org.abchip.mimo.biz.BizEntity;
  */
 public interface PaymentGatewayWorldPay extends BizEntity {
 	/**
+	 * Returns the value of the '<em><b>Auth Mode</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Auth Mode</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Auth Mode</em>' attribute.
+	 * @see #setAuthMode(char)
+	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPaymentGatewayWorldPay_AuthMode()
+	 * @model annotation="mimo-ent-format type='indicator' length='1'"
+	 * @generated
+	 */
+	char getAuthMode();
+
+	/**
+	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.payment.PaymentGatewayWorldPay#getAuthMode <em>Auth Mode</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Auth Mode</em>' attribute.
+	 * @see #getAuthMode()
+	 * @generated
+	 */
+	void setAuthMode(char value);
+
+	/**
+	 * Returns the value of the '<em><b>Fix Contact</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Fix Contact</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Fix Contact</em>' attribute.
+	 * @see #setFixContact(char)
+	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPaymentGatewayWorldPay_FixContact()
+	 * @model annotation="mimo-ent-format type='indicator' length='1'"
+	 * @generated
+	 */
+	char getFixContact();
+
+	/**
+	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.payment.PaymentGatewayWorldPay#getFixContact <em>Fix Contact</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Fix Contact</em>' attribute.
+	 * @see #getFixContact()
+	 * @generated
+	 */
+	void setFixContact(char value);
+
+	/**
+	 * Returns the value of the '<em><b>Hide Contact</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Hide Contact</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Hide Contact</em>' attribute.
+	 * @see #setHideContact(boolean)
+	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPaymentGatewayWorldPay_HideContact()
+	 * @model annotation="mimo-ent-format type='indicator' length='1'"
+	 * @generated
+	 */
+	boolean isHideContact();
+
+	/**
+	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.payment.PaymentGatewayWorldPay#isHideContact <em>Hide Contact</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Hide Contact</em>' attribute.
+	 * @see #isHideContact()
+	 * @generated
+	 */
+	void setHideContact(boolean value);
+
+	/**
+	 * Returns the value of the '<em><b>Hide Currency</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Hide Currency</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Hide Currency</em>' attribute.
+	 * @see #setHideCurrency(boolean)
+	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPaymentGatewayWorldPay_HideCurrency()
+	 * @model annotation="mimo-ent-format type='indicator' length='1'"
+	 * @generated
+	 */
+	boolean isHideCurrency();
+
+	/**
+	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.payment.PaymentGatewayWorldPay#isHideCurrency <em>Hide Currency</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Hide Currency</em>' attribute.
+	 * @see #isHideCurrency()
+	 * @generated
+	 */
+	void setHideCurrency(boolean value);
+
+	/**
 	 * Returns the value of the '<em><b>Inst Id</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -47,7 +151,7 @@ public interface PaymentGatewayWorldPay extends BizEntity {
 	 * @return the value of the '<em>Inst Id</em>' attribute.
 	 * @see #setInstId(String)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPaymentGatewayWorldPay_InstId()
-	 * @model
+	 * @model annotation="mimo-ent-format type='value' length='255'"
 	 * @generated
 	 */
 	String getInstId();
@@ -73,7 +177,7 @@ public interface PaymentGatewayWorldPay extends BizEntity {
 	 * @return the value of the '<em>Lang Id</em>' attribute.
 	 * @see #setLangId(String)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPaymentGatewayWorldPay_LangId()
-	 * @model
+	 * @model annotation="mimo-ent-format type='short-varchar' length='60'"
 	 * @generated
 	 */
 	String getLangId();
@@ -99,7 +203,7 @@ public interface PaymentGatewayWorldPay extends BizEntity {
 	 * @return the value of the '<em>No Language Menu</em>' attribute.
 	 * @see #setNoLanguageMenu(boolean)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPaymentGatewayWorldPay_NoLanguageMenu()
-	 * @model
+	 * @model annotation="mimo-ent-format type='indicator' length='1'"
 	 * @generated
 	 */
 	boolean isNoLanguageMenu();
@@ -141,110 +245,6 @@ public interface PaymentGatewayWorldPay extends BizEntity {
 	void setPaymentGatewayConfigId(PaymentGatewayConfig value);
 
 	/**
-	 * Returns the value of the '<em><b>Auth Mode</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Auth Mode</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Auth Mode</em>' attribute.
-	 * @see #setAuthMode(boolean)
-	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPaymentGatewayWorldPay_AuthMode()
-	 * @model
-	 * @generated
-	 */
-	boolean isAuthMode();
-
-	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.payment.PaymentGatewayWorldPay#isAuthMode <em>Auth Mode</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Auth Mode</em>' attribute.
-	 * @see #isAuthMode()
-	 * @generated
-	 */
-	void setAuthMode(boolean value);
-
-	/**
-	 * Returns the value of the '<em><b>Fix Contact</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Fix Contact</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Fix Contact</em>' attribute.
-	 * @see #setFixContact(boolean)
-	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPaymentGatewayWorldPay_FixContact()
-	 * @model
-	 * @generated
-	 */
-	boolean isFixContact();
-
-	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.payment.PaymentGatewayWorldPay#isFixContact <em>Fix Contact</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Fix Contact</em>' attribute.
-	 * @see #isFixContact()
-	 * @generated
-	 */
-	void setFixContact(boolean value);
-
-	/**
-	 * Returns the value of the '<em><b>Hide Contact</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Hide Contact</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Hide Contact</em>' attribute.
-	 * @see #setHideContact(boolean)
-	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPaymentGatewayWorldPay_HideContact()
-	 * @model
-	 * @generated
-	 */
-	boolean isHideContact();
-
-	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.payment.PaymentGatewayWorldPay#isHideContact <em>Hide Contact</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Hide Contact</em>' attribute.
-	 * @see #isHideContact()
-	 * @generated
-	 */
-	void setHideContact(boolean value);
-
-	/**
-	 * Returns the value of the '<em><b>Hide Currency</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Hide Currency</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Hide Currency</em>' attribute.
-	 * @see #setHideCurrency(boolean)
-	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPaymentGatewayWorldPay_HideCurrency()
-	 * @model
-	 * @generated
-	 */
-	boolean isHideCurrency();
-
-	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.payment.PaymentGatewayWorldPay#isHideCurrency <em>Hide Currency</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Hide Currency</em>' attribute.
-	 * @see #isHideCurrency()
-	 * @generated
-	 */
-	void setHideCurrency(boolean value);
-
-	/**
 	 * Returns the value of the '<em><b>Redirect Url</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -255,7 +255,7 @@ public interface PaymentGatewayWorldPay extends BizEntity {
 	 * @return the value of the '<em>Redirect Url</em>' attribute.
 	 * @see #setRedirectUrl(String)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPaymentGatewayWorldPay_RedirectUrl()
-	 * @model
+	 * @model annotation="mimo-ent-format type='value' length='255'"
 	 * @generated
 	 */
 	String getRedirectUrl();
@@ -281,7 +281,7 @@ public interface PaymentGatewayWorldPay extends BizEntity {
 	 * @return the value of the '<em>Test Mode</em>' attribute.
 	 * @see #setTestMode(long)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPaymentGatewayWorldPay_TestMode()
-	 * @model
+	 * @model annotation="mimo-ent-format type='numeric' precision='20' scale='0'"
 	 * @generated
 	 */
 	long getTestMode();
@@ -307,7 +307,7 @@ public interface PaymentGatewayWorldPay extends BizEntity {
 	 * @return the value of the '<em>With Delivery</em>' attribute.
 	 * @see #setWithDelivery(boolean)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPaymentGatewayWorldPay_WithDelivery()
-	 * @model
+	 * @model annotation="mimo-ent-format type='indicator' length='1'"
 	 * @generated
 	 */
 	boolean isWithDelivery();

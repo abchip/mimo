@@ -42,7 +42,7 @@ public interface ProductCalculatedInfo extends BizEntity {
 	 * @return the value of the '<em>Average Customer Rating</em>' attribute.
 	 * @see #setAverageCustomerRating(BigDecimal)
 	 * @see org.abchip.mimo.biz.product.product.ProductPackage#getProductCalculatedInfo_AverageCustomerRating()
-	 * @model
+	 * @model annotation="mimo-ent-format type='fixed-point' precision='18' scale='6'"
 	 * @generated
 	 */
 	BigDecimal getAverageCustomerRating();
@@ -94,7 +94,7 @@ public interface ProductCalculatedInfo extends BizEntity {
 	 * @return the value of the '<em>Total Quantity Ordered</em>' attribute.
 	 * @see #setTotalQuantityOrdered(BigDecimal)
 	 * @see org.abchip.mimo.biz.product.product.ProductPackage#getProductCalculatedInfo_TotalQuantityOrdered()
-	 * @model
+	 * @model annotation="mimo-ent-format type='fixed-point' precision='18' scale='6'"
 	 * @generated
 	 */
 	BigDecimal getTotalQuantityOrdered();
@@ -120,7 +120,7 @@ public interface ProductCalculatedInfo extends BizEntity {
 	 * @return the value of the '<em>Total Times Viewed</em>' attribute.
 	 * @see #setTotalTimesViewed(long)
 	 * @see org.abchip.mimo.biz.product.product.ProductPackage#getProductCalculatedInfo_TotalTimesViewed()
-	 * @model
+	 * @model annotation="mimo-ent-format type='numeric' precision='20' scale='0'"
 	 * @generated
 	 */
 	long getTotalTimesViewed();

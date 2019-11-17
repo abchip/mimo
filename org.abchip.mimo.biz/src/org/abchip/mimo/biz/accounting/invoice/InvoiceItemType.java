@@ -72,7 +72,7 @@ public interface InvoiceItemType extends BizEntityType<InvoiceItem> {
 	 * @return the value of the '<em>Description</em>' attribute.
 	 * @see #setDescription(String)
 	 * @see org.abchip.mimo.biz.accounting.invoice.InvoicePackage#getInvoiceItemType_Description()
-	 * @model
+	 * @model annotation="mimo-ent-format type='description' length='255'"
 	 * @generated
 	 */
 	String getDescription();
@@ -98,7 +98,7 @@ public interface InvoiceItemType extends BizEntityType<InvoiceItem> {
 	 * @return the value of the '<em>Has Table</em>' attribute.
 	 * @see #setHasTable(boolean)
 	 * @see org.abchip.mimo.biz.accounting.invoice.InvoicePackage#getInvoiceItemType_HasTable()
-	 * @model
+	 * @model annotation="mimo-ent-format type='indicator' length='1'"
 	 * @generated
 	 */
 	boolean isHasTable();
@@ -150,7 +150,9 @@ public interface InvoiceItemType extends BizEntityType<InvoiceItem> {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Invoice Item Type Attrs</em>' attribute list.
 	 * @see org.abchip.mimo.biz.accounting.invoice.InvoicePackage#getInvoiceItemType_InvoiceItemTypeAttrs()
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='InvoiceItemTypeAttr'"
 	 * @generated
 	 */
@@ -167,7 +169,9 @@ public interface InvoiceItemType extends BizEntityType<InvoiceItem> {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Invoice Item Type Gl Accounts</em>' attribute list.
 	 * @see org.abchip.mimo.biz.accounting.invoice.InvoicePackage#getInvoiceItemType_InvoiceItemTypeGlAccounts()
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='InvoiceItemTypeGlAccount'"
 	 * @generated
 	 */
@@ -176,7 +180,8 @@ public interface InvoiceItemType extends BizEntityType<InvoiceItem> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='AgreementTerm' route='invoiceItemTypeId'"
 	 * @generated
 	 */
@@ -185,7 +190,8 @@ public interface InvoiceItemType extends BizEntityType<InvoiceItem> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='InvoiceItemType' route='parentTypeId'"
 	 * @generated
 	 */
@@ -194,7 +200,8 @@ public interface InvoiceItemType extends BizEntityType<InvoiceItem> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='InvoiceItemTypeMap' route='invoiceItemTypeId'"
 	 * @generated
 	 */
@@ -203,7 +210,8 @@ public interface InvoiceItemType extends BizEntityType<InvoiceItem> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='InvoiceItem' route='invoiceItemTypeId'"
 	 * @generated
 	 */
@@ -221,6 +229,7 @@ public interface InvoiceItemType extends BizEntityType<InvoiceItem> {
 	 * @see #setInvoiceItemTypeId(String)
 	 * @see org.abchip.mimo.biz.accounting.invoice.InvoicePackage#getInvoiceItemType_InvoiceItemTypeId()
 	 * @model id="true" required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */

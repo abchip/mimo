@@ -42,7 +42,7 @@ public interface BudgetScenarioRule extends BizEntity {
 	 * @return the value of the '<em>Amount Change</em>' attribute.
 	 * @see #setAmountChange(BigDecimal)
 	 * @see org.abchip.mimo.biz.accounting.budget.BudgetPackage#getBudgetScenarioRule_AmountChange()
-	 * @model
+	 * @model annotation="mimo-ent-format type='currency-amount' precision='18' scale='2'"
 	 * @generated
 	 */
 	BigDecimal getAmountChange();
@@ -68,7 +68,7 @@ public interface BudgetScenarioRule extends BizEntity {
 	 * @return the value of the '<em>Percentage Change</em>' attribute.
 	 * @see #setPercentageChange(BigDecimal)
 	 * @see org.abchip.mimo.biz.accounting.budget.BudgetPackage#getBudgetScenarioRule_PercentageChange()
-	 * @model
+	 * @model annotation="mimo-ent-format type='fixed-point' precision='18' scale='6'"
 	 * @generated
 	 */
 	BigDecimal getPercentageChange();

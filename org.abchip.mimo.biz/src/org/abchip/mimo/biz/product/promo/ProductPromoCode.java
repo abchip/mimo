@@ -81,7 +81,7 @@ public interface ProductPromoCode extends BizEntity {
 	 * @return the value of the '<em>Created Date</em>' attribute.
 	 * @see #setCreatedDate(Date)
 	 * @see org.abchip.mimo.biz.product.promo.PromoPackage#getProductPromoCode_CreatedDate()
-	 * @model
+	 * @model annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getCreatedDate();
@@ -107,7 +107,7 @@ public interface ProductPromoCode extends BizEntity {
 	 * @return the value of the '<em>From Date</em>' attribute.
 	 * @see #setFromDate(Date)
 	 * @see org.abchip.mimo.biz.product.promo.PromoPackage#getProductPromoCode_FromDate()
-	 * @model
+	 * @model annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getFromDate();
@@ -159,7 +159,7 @@ public interface ProductPromoCode extends BizEntity {
 	 * @return the value of the '<em>Last Modified Date</em>' attribute.
 	 * @see #setLastModifiedDate(Date)
 	 * @see org.abchip.mimo.biz.product.promo.PromoPackage#getProductPromoCode_LastModifiedDate()
-	 * @model
+	 * @model annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getLastModifiedDate();
@@ -175,6 +175,32 @@ public interface ProductPromoCode extends BizEntity {
 	void setLastModifiedDate(Date value);
 
 	/**
+	 * Returns the value of the '<em><b>Require Email Or Party</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Require Email Or Party</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Require Email Or Party</em>' attribute.
+	 * @see #setRequireEmailOrParty(boolean)
+	 * @see org.abchip.mimo.biz.product.promo.PromoPackage#getProductPromoCode_RequireEmailOrParty()
+	 * @model annotation="mimo-ent-format type='indicator' length='1'"
+	 * @generated
+	 */
+	boolean isRequireEmailOrParty();
+
+	/**
+	 * Sets the value of the '{@link org.abchip.mimo.biz.product.promo.ProductPromoCode#isRequireEmailOrParty <em>Require Email Or Party</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Require Email Or Party</em>' attribute.
+	 * @see #isRequireEmailOrParty()
+	 * @generated
+	 */
+	void setRequireEmailOrParty(boolean value);
+
+	/**
 	 * Returns the value of the '<em><b>Thru Date</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -185,7 +211,7 @@ public interface ProductPromoCode extends BizEntity {
 	 * @return the value of the '<em>Thru Date</em>' attribute.
 	 * @see #setThruDate(Date)
 	 * @see org.abchip.mimo.biz.product.promo.PromoPackage#getProductPromoCode_ThruDate()
-	 * @model
+	 * @model annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getThruDate();
@@ -211,7 +237,7 @@ public interface ProductPromoCode extends BizEntity {
 	 * @return the value of the '<em>Use Limit Per Code</em>' attribute.
 	 * @see #setUseLimitPerCode(long)
 	 * @see org.abchip.mimo.biz.product.promo.PromoPackage#getProductPromoCode_UseLimitPerCode()
-	 * @model
+	 * @model annotation="mimo-ent-format type='numeric' precision='20' scale='0'"
 	 * @generated
 	 */
 	long getUseLimitPerCode();
@@ -237,7 +263,7 @@ public interface ProductPromoCode extends BizEntity {
 	 * @return the value of the '<em>Use Limit Per Customer</em>' attribute.
 	 * @see #setUseLimitPerCustomer(long)
 	 * @see org.abchip.mimo.biz.product.promo.PromoPackage#getProductPromoCode_UseLimitPerCustomer()
-	 * @model
+	 * @model annotation="mimo-ent-format type='numeric' precision='20' scale='0'"
 	 * @generated
 	 */
 	long getUseLimitPerCustomer();
@@ -263,7 +289,7 @@ public interface ProductPromoCode extends BizEntity {
 	 * @return the value of the '<em>User Entered</em>' attribute.
 	 * @see #setUserEntered(boolean)
 	 * @see org.abchip.mimo.biz.product.promo.PromoPackage#getProductPromoCode_UserEntered()
-	 * @model
+	 * @model annotation="mimo-ent-format type='indicator' length='1'"
 	 * @generated
 	 */
 	boolean isUserEntered();
@@ -289,7 +315,9 @@ public interface ProductPromoCode extends BizEntity {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Product Promo Code Emails</em>' attribute list.
 	 * @see org.abchip.mimo.biz.product.promo.PromoPackage#getProductPromoCode_ProductPromoCodeEmails()
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ProductPromoCodeEmail'"
 	 * @generated
 	 */
@@ -306,7 +334,9 @@ public interface ProductPromoCode extends BizEntity {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Product Promo Code Parties</em>' attribute list.
 	 * @see org.abchip.mimo.biz.product.promo.PromoPackage#getProductPromoCode_ProductPromoCodeParties()
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ProductPromoCodeParty'"
 	 * @generated
 	 */
@@ -315,7 +345,9 @@ public interface ProductPromoCode extends BizEntity {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='OrderProductPromoCode' route='productPromoCodeId'"
 	 * @generated
 	 */
@@ -324,7 +356,8 @@ public interface ProductPromoCode extends BizEntity {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ProductPromoUse' route='productPromoCodeId'"
 	 * @generated
 	 */
@@ -333,7 +366,8 @@ public interface ProductPromoCode extends BizEntity {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ShoppingList' route='productPromoCodeId'"
 	 * @generated
 	 */
@@ -366,32 +400,6 @@ public interface ProductPromoCode extends BizEntity {
 	void setProductPromoId(ProductPromo value);
 
 	/**
-	 * Returns the value of the '<em><b>Require Email Or Party</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Require Email Or Party</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Require Email Or Party</em>' attribute.
-	 * @see #setRequireEmailOrParty(boolean)
-	 * @see org.abchip.mimo.biz.product.promo.PromoPackage#getProductPromoCode_RequireEmailOrParty()
-	 * @model
-	 * @generated
-	 */
-	boolean isRequireEmailOrParty();
-
-	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.product.promo.ProductPromoCode#isRequireEmailOrParty <em>Require Email Or Party</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Require Email Or Party</em>' attribute.
-	 * @see #isRequireEmailOrParty()
-	 * @generated
-	 */
-	void setRequireEmailOrParty(boolean value);
-
-	/**
 	 * Returns the value of the '<em><b>Product Promo Code Id</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -403,6 +411,7 @@ public interface ProductPromoCode extends BizEntity {
 	 * @see #setProductPromoCodeId(String)
 	 * @see org.abchip.mimo.biz.product.promo.PromoPackage#getProductPromoCode_ProductPromoCodeId()
 	 * @model id="true" required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */

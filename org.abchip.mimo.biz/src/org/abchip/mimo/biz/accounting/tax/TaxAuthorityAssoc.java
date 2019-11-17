@@ -46,6 +46,7 @@ public interface TaxAuthorityAssoc extends BizEntityTyped<TaxAuthorityAssocType>
 	 * @see #setFromDate(Date)
 	 * @see org.abchip.mimo.biz.accounting.tax.TaxPackage#getTaxAuthorityAssoc_FromDate()
 	 * @model required="true"
+	 *        annotation="mimo-ent-format type='date-time'"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
@@ -73,6 +74,7 @@ public interface TaxAuthorityAssoc extends BizEntityTyped<TaxAuthorityAssocType>
 	 * @see #setTaxAuthGeoId(String)
 	 * @see org.abchip.mimo.biz.accounting.tax.TaxPackage#getTaxAuthorityAssoc_TaxAuthGeoId()
 	 * @model required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
@@ -100,6 +102,7 @@ public interface TaxAuthorityAssoc extends BizEntityTyped<TaxAuthorityAssocType>
 	 * @see #setTaxAuthPartyId(String)
 	 * @see org.abchip.mimo.biz.accounting.tax.TaxPackage#getTaxAuthorityAssoc_TaxAuthPartyId()
 	 * @model required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
@@ -126,7 +129,7 @@ public interface TaxAuthorityAssoc extends BizEntityTyped<TaxAuthorityAssocType>
 	 * @return the value of the '<em>Thru Date</em>' attribute.
 	 * @see #setThruDate(Date)
 	 * @see org.abchip.mimo.biz.accounting.tax.TaxPackage#getTaxAuthorityAssoc_ThruDate()
-	 * @model
+	 * @model annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getThruDate();
@@ -153,6 +156,7 @@ public interface TaxAuthorityAssoc extends BizEntityTyped<TaxAuthorityAssocType>
 	 * @see #setToTaxAuthGeoId(String)
 	 * @see org.abchip.mimo.biz.accounting.tax.TaxPackage#getTaxAuthorityAssoc_ToTaxAuthGeoId()
 	 * @model required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
@@ -180,6 +184,7 @@ public interface TaxAuthorityAssoc extends BizEntityTyped<TaxAuthorityAssocType>
 	 * @see #setToTaxAuthPartyId(String)
 	 * @see org.abchip.mimo.biz.accounting.tax.TaxPackage#getTaxAuthorityAssoc_ToTaxAuthPartyId()
 	 * @model required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */

@@ -44,6 +44,7 @@ public interface CustomMethod extends BizEntityTyped<CustomMethodType> {
 	 * @see #setCustomMethodId(String)
 	 * @see org.abchip.mimo.biz.common.method.MethodPackage#getCustomMethod_CustomMethodId()
 	 * @model id="true" required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
@@ -70,7 +71,7 @@ public interface CustomMethod extends BizEntityTyped<CustomMethodType> {
 	 * @return the value of the '<em>Custom Method Name</em>' attribute.
 	 * @see #setCustomMethodName(String)
 	 * @see org.abchip.mimo.biz.common.method.MethodPackage#getCustomMethod_CustomMethodName()
-	 * @model
+	 * @model annotation="mimo-ent-format type='long-varchar' length='255'"
 	 * @generated
 	 */
 	String getCustomMethodName();
@@ -96,7 +97,7 @@ public interface CustomMethod extends BizEntityTyped<CustomMethodType> {
 	 * @return the value of the '<em>Description</em>' attribute.
 	 * @see #setDescription(String)
 	 * @see org.abchip.mimo.biz.common.method.MethodPackage#getCustomMethod_Description()
-	 * @model
+	 * @model annotation="mimo-ent-format type='description' length='255'"
 	 * @generated
 	 */
 	String getDescription();
@@ -122,7 +123,9 @@ public interface CustomMethod extends BizEntityTyped<CustomMethodType> {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Fixed Asset Dep Methods</em>' attribute list.
 	 * @see org.abchip.mimo.biz.common.method.MethodPackage#getCustomMethod_FixedAssetDepMethods()
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='FixedAssetDepMethod'"
 	 * @generated
 	 */
@@ -131,7 +134,8 @@ public interface CustomMethod extends BizEntityTyped<CustomMethodType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='Content' route='customMethodId'"
 	 * @generated
 	 */
@@ -140,7 +144,8 @@ public interface CustomMethod extends BizEntityTyped<CustomMethodType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='CostComponentCalc' route='costCustomMethodId'"
 	 * @generated
 	 */
@@ -149,7 +154,8 @@ public interface CustomMethod extends BizEntityTyped<CustomMethodType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='PartyAcctgPreference' route='invoiceSeqCustMethId'"
 	 * @generated
 	 */
@@ -158,7 +164,8 @@ public interface CustomMethod extends BizEntityTyped<CustomMethodType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='PartyAcctgPreference' route='orderSeqCustMethId'"
 	 * @generated
 	 */
@@ -167,7 +174,8 @@ public interface CustomMethod extends BizEntityTyped<CustomMethodType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ProductStoreShipmentMeth' route='shipmentCustomMethodId'"
 	 * @generated
 	 */
@@ -176,7 +184,8 @@ public interface CustomMethod extends BizEntityTyped<CustomMethodType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='PartyAcctgPreference' route='quoteSeqCustMethId'"
 	 * @generated
 	 */
@@ -185,7 +194,8 @@ public interface CustomMethod extends BizEntityTyped<CustomMethodType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='UomConversion' route='customMethodId'"
 	 * @generated
 	 */
@@ -194,7 +204,8 @@ public interface CustomMethod extends BizEntityTyped<CustomMethodType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='WorkEffort' route='estimateCalcMethod'"
 	 * @generated
 	 */

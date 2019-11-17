@@ -87,7 +87,7 @@ public interface Quote extends BizEntityTyped<QuoteType> {
 	 * @return the value of the '<em>Description</em>' attribute.
 	 * @see #setDescription(String)
 	 * @see org.abchip.mimo.biz.order.quote.QuotePackage#getQuote_Description()
-	 * @model
+	 * @model annotation="mimo-ent-format type='description' length='255'"
 	 * @generated
 	 */
 	String getDescription();
@@ -113,7 +113,7 @@ public interface Quote extends BizEntityTyped<QuoteType> {
 	 * @return the value of the '<em>Issue Date</em>' attribute.
 	 * @see #setIssueDate(Date)
 	 * @see org.abchip.mimo.biz.order.quote.QuotePackage#getQuote_IssueDate()
-	 * @model
+	 * @model annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getIssueDate();
@@ -192,6 +192,7 @@ public interface Quote extends BizEntityTyped<QuoteType> {
 	 * @see #setQuoteId(String)
 	 * @see org.abchip.mimo.biz.order.quote.QuotePackage#getQuote_QuoteId()
 	 * @model id="true" required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
@@ -218,7 +219,7 @@ public interface Quote extends BizEntityTyped<QuoteType> {
 	 * @return the value of the '<em>Quote Name</em>' attribute.
 	 * @see #setQuoteName(String)
 	 * @see org.abchip.mimo.biz.order.quote.QuotePackage#getQuote_QuoteName()
-	 * @model
+	 * @model annotation="mimo-ent-format type='name' length='100'"
 	 * @generated
 	 */
 	String getQuoteName();
@@ -322,7 +323,7 @@ public interface Quote extends BizEntityTyped<QuoteType> {
 	 * @return the value of the '<em>Valid From Date</em>' attribute.
 	 * @see #setValidFromDate(Date)
 	 * @see org.abchip.mimo.biz.order.quote.QuotePackage#getQuote_ValidFromDate()
-	 * @model
+	 * @model annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getValidFromDate();
@@ -348,7 +349,7 @@ public interface Quote extends BizEntityTyped<QuoteType> {
 	 * @return the value of the '<em>Valid Thru Date</em>' attribute.
 	 * @see #setValidThruDate(Date)
 	 * @see org.abchip.mimo.biz.order.quote.QuotePackage#getQuote_ValidThruDate()
-	 * @model
+	 * @model annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getValidThruDate();
@@ -374,7 +375,9 @@ public interface Quote extends BizEntityTyped<QuoteType> {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Quote Attributes</em>' attribute list.
 	 * @see org.abchip.mimo.biz.order.quote.QuotePackage#getQuote_QuoteAttributes()
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='QuoteAttribute'"
 	 * @generated
 	 */
@@ -391,7 +394,9 @@ public interface Quote extends BizEntityTyped<QuoteType> {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Quote Coefficients</em>' attribute list.
 	 * @see org.abchip.mimo.biz.order.quote.QuotePackage#getQuote_QuoteCoefficients()
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='QuoteCoefficient'"
 	 * @generated
 	 */
@@ -408,7 +413,9 @@ public interface Quote extends BizEntityTyped<QuoteType> {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Quote Items</em>' attribute list.
 	 * @see org.abchip.mimo.biz.order.quote.QuotePackage#getQuote_QuoteItems()
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='QuoteItem'"
 	 * @generated
 	 */
@@ -425,7 +432,9 @@ public interface Quote extends BizEntityTyped<QuoteType> {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Quote Notes</em>' attribute list.
 	 * @see org.abchip.mimo.biz.order.quote.QuotePackage#getQuote_QuoteNotes()
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='QuoteNote'"
 	 * @generated
 	 */
@@ -442,7 +451,9 @@ public interface Quote extends BizEntityTyped<QuoteType> {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Quote Work Efforts</em>' attribute list.
 	 * @see org.abchip.mimo.biz.order.quote.QuotePackage#getQuote_QuoteWorkEfforts()
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='QuoteWorkEffort'"
 	 * @generated
 	 */
@@ -451,7 +462,8 @@ public interface Quote extends BizEntityTyped<QuoteType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='QuoteAdjustment' route='quoteId'"
 	 * @generated
 	 */
@@ -460,7 +472,9 @@ public interface Quote extends BizEntityTyped<QuoteType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='SalesOpportunityQuote' route='quoteId'"
 	 * @generated
 	 */

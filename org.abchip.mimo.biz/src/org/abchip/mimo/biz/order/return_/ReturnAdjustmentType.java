@@ -42,7 +42,7 @@ public interface ReturnAdjustmentType extends BizEntityType<ReturnAdjustment> {
 	 * @return the value of the '<em>Description</em>' attribute.
 	 * @see #setDescription(String)
 	 * @see org.abchip.mimo.biz.order.return_.ReturnPackage#getReturnAdjustmentType_Description()
-	 * @model
+	 * @model annotation="mimo-ent-format type='description' length='255'"
 	 * @generated
 	 */
 	String getDescription();
@@ -68,7 +68,7 @@ public interface ReturnAdjustmentType extends BizEntityType<ReturnAdjustment> {
 	 * @return the value of the '<em>Has Table</em>' attribute.
 	 * @see #setHasTable(boolean)
 	 * @see org.abchip.mimo.biz.order.return_.ReturnPackage#getReturnAdjustmentType_HasTable()
-	 * @model
+	 * @model annotation="mimo-ent-format type='indicator' length='1'"
 	 * @generated
 	 */
 	boolean isHasTable();
@@ -112,7 +112,8 @@ public interface ReturnAdjustmentType extends BizEntityType<ReturnAdjustment> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ReturnAdjustmentType' route='parentTypeId'"
 	 * @generated
 	 */
@@ -121,7 +122,8 @@ public interface ReturnAdjustmentType extends BizEntityType<ReturnAdjustment> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ReturnAdjustment' route='returnAdjustmentTypeId'"
 	 * @generated
 	 */
@@ -130,7 +132,8 @@ public interface ReturnAdjustmentType extends BizEntityType<ReturnAdjustment> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ReturnItemTypeMap' route='returnItemTypeId'"
 	 * @generated
 	 */
@@ -148,6 +151,7 @@ public interface ReturnAdjustmentType extends BizEntityType<ReturnAdjustment> {
 	 * @see #setReturnAdjustmentTypeId(String)
 	 * @see org.abchip.mimo.biz.order.return_.ReturnPackage#getReturnAdjustmentType_ReturnAdjustmentTypeId()
 	 * @model id="true" required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */

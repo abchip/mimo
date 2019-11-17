@@ -84,6 +84,26 @@ public class CountryAddressFormatImpl extends BizEntityImpl implements CountryAd
 	 * @generated
 	 */
 	@Override
+	public boolean isHasPostalCodeExt() {
+		return (Boolean)eGet(GeoPackage.Literals.COUNTRY_ADDRESS_FORMAT__HAS_POSTAL_CODE_EXT, true);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setHasPostalCodeExt(boolean newHasPostalCodeExt) {
+		eSet(GeoPackage.Literals.COUNTRY_ADDRESS_FORMAT__HAS_POSTAL_CODE_EXT, newHasPostalCodeExt);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public String getPostalCodeRegex() {
 		return (String)eGet(GeoPackage.Literals.COUNTRY_ADDRESS_FORMAT__POSTAL_CODE_REGEX, true);
 	}
@@ -176,26 +196,6 @@ public class CountryAddressFormatImpl extends BizEntityImpl implements CountryAd
 	@Override
 	public void setGeoAssocTypeId(GeoAssocType newGeoAssocTypeId) {
 		eSet(GeoPackage.Literals.COUNTRY_ADDRESS_FORMAT__GEO_ASSOC_TYPE_ID, newGeoAssocTypeId);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public boolean isHasPostalCodeExt() {
-		return (Boolean)eGet(GeoPackage.Literals.COUNTRY_ADDRESS_FORMAT__HAS_POSTAL_CODE_EXT, true);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void setHasPostalCodeExt(boolean newHasPostalCodeExt) {
-		eSet(GeoPackage.Literals.COUNTRY_ADDRESS_FORMAT__HAS_POSTAL_CODE_EXT, newHasPostalCodeExt);
 	}
 
 	/**

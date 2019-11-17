@@ -84,6 +84,7 @@ public interface ServerHit extends BizEntityTyped<ServerHitType> {
 	 * @see #setContentId(String)
 	 * @see org.abchip.mimo.biz.webapp.visit.VisitPackage#getServerHit_ContentId()
 	 * @model required="true"
+	 *        annotation="mimo-ent-format type='id-vlong' length='255'"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
@@ -111,6 +112,7 @@ public interface ServerHit extends BizEntityTyped<ServerHitType> {
 	 * @see #setHitStartDateTime(Date)
 	 * @see org.abchip.mimo.biz.webapp.visit.VisitPackage#getServerHit_HitStartDateTime()
 	 * @model required="true"
+	 *        annotation="mimo-ent-format type='date-time'"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
@@ -215,7 +217,7 @@ public interface ServerHit extends BizEntityTyped<ServerHitType> {
 	 * @return the value of the '<em>Num Of Bytes</em>' attribute.
 	 * @see #setNumOfBytes(long)
 	 * @see org.abchip.mimo.biz.webapp.visit.VisitPackage#getServerHit_NumOfBytes()
-	 * @model
+	 * @model annotation="mimo-ent-format type='numeric' precision='20' scale='0'"
 	 * @generated
 	 */
 	long getNumOfBytes();
@@ -293,7 +295,7 @@ public interface ServerHit extends BizEntityTyped<ServerHitType> {
 	 * @return the value of the '<em>Referrer Url</em>' attribute.
 	 * @see #setReferrerUrl(String)
 	 * @see org.abchip.mimo.biz.webapp.visit.VisitPackage#getServerHit_ReferrerUrl()
-	 * @model
+	 * @model annotation="mimo-ent-format type='url' length='2000'"
 	 * @generated
 	 */
 	String getReferrerUrl();
@@ -319,7 +321,7 @@ public interface ServerHit extends BizEntityTyped<ServerHitType> {
 	 * @return the value of the '<em>Request Url</em>' attribute.
 	 * @see #setRequestUrl(String)
 	 * @see org.abchip.mimo.biz.webapp.visit.VisitPackage#getServerHit_RequestUrl()
-	 * @model
+	 * @model annotation="mimo-ent-format type='url' length='2000'"
 	 * @generated
 	 */
 	String getRequestUrl();
@@ -345,7 +347,7 @@ public interface ServerHit extends BizEntityTyped<ServerHitType> {
 	 * @return the value of the '<em>Running Time Millis</em>' attribute.
 	 * @see #setRunningTimeMillis(long)
 	 * @see org.abchip.mimo.biz.webapp.visit.VisitPackage#getServerHit_RunningTimeMillis()
-	 * @model
+	 * @model annotation="mimo-ent-format type='numeric' precision='20' scale='0'"
 	 * @generated
 	 */
 	long getRunningTimeMillis();
@@ -371,7 +373,7 @@ public interface ServerHit extends BizEntityTyped<ServerHitType> {
 	 * @return the value of the '<em>Server Host Name</em>' attribute.
 	 * @see #setServerHostName(String)
 	 * @see org.abchip.mimo.biz.webapp.visit.VisitPackage#getServerHit_ServerHostName()
-	 * @model
+	 * @model annotation="mimo-ent-format type='long-varchar' length='255'"
 	 * @generated
 	 */
 	String getServerHostName();
@@ -397,7 +399,7 @@ public interface ServerHit extends BizEntityTyped<ServerHitType> {
 	 * @return the value of the '<em>Server Ip Address</em>' attribute.
 	 * @see #setServerIpAddress(String)
 	 * @see org.abchip.mimo.biz.webapp.visit.VisitPackage#getServerHit_ServerIpAddress()
-	 * @model
+	 * @model annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	String getServerIpAddress();
@@ -423,7 +425,7 @@ public interface ServerHit extends BizEntityTyped<ServerHitType> {
 	 * @return the value of the '<em>Status Id</em>' attribute.
 	 * @see #setStatusId(String)
 	 * @see org.abchip.mimo.biz.webapp.visit.VisitPackage#getServerHit_StatusId()
-	 * @model
+	 * @model annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	String getStatusId();
@@ -449,7 +451,7 @@ public interface ServerHit extends BizEntityTyped<ServerHitType> {
 	 * @return the value of the '<em>User Login Id</em>' attribute.
 	 * @see #setUserLoginId(String)
 	 * @see org.abchip.mimo.biz.webapp.visit.VisitPackage#getServerHit_UserLoginId()
-	 * @model
+	 * @model annotation="mimo-ent-format type='id-vlong' length='255'"
 	 * @generated
 	 */
 	String getUserLoginId();

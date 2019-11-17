@@ -77,7 +77,7 @@ public interface ReturnAdjustment extends BizEntityTyped<ReturnAdjustmentType> {
 	 * @return the value of the '<em>Amount</em>' attribute.
 	 * @see #setAmount(BigDecimal)
 	 * @see org.abchip.mimo.biz.order.return_.ReturnPackage#getReturnAdjustment_Amount()
-	 * @model
+	 * @model annotation="mimo-ent-format type='currency-precise' precision='18' scale='3'"
 	 * @generated
 	 */
 	BigDecimal getAmount();
@@ -103,7 +103,7 @@ public interface ReturnAdjustment extends BizEntityTyped<ReturnAdjustmentType> {
 	 * @return the value of the '<em>Comments</em>' attribute.
 	 * @see #setComments(String)
 	 * @see org.abchip.mimo.biz.order.return_.ReturnPackage#getReturnAdjustment_Comments()
-	 * @model
+	 * @model annotation="mimo-ent-format type='comment' length='255'"
 	 * @generated
 	 */
 	String getComments();
@@ -129,7 +129,7 @@ public interface ReturnAdjustment extends BizEntityTyped<ReturnAdjustmentType> {
 	 * @return the value of the '<em>Corresponding Product Id</em>' attribute.
 	 * @see #setCorrespondingProductId(String)
 	 * @see org.abchip.mimo.biz.order.return_.ReturnPackage#getReturnAdjustment_CorrespondingProductId()
-	 * @model
+	 * @model annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	String getCorrespondingProductId();
@@ -181,7 +181,7 @@ public interface ReturnAdjustment extends BizEntityTyped<ReturnAdjustmentType> {
 	 * @return the value of the '<em>Created Date</em>' attribute.
 	 * @see #setCreatedDate(Date)
 	 * @see org.abchip.mimo.biz.order.return_.ReturnPackage#getReturnAdjustment_CreatedDate()
-	 * @model
+	 * @model annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getCreatedDate();
@@ -207,7 +207,7 @@ public interface ReturnAdjustment extends BizEntityTyped<ReturnAdjustmentType> {
 	 * @return the value of the '<em>Customer Reference Id</em>' attribute.
 	 * @see #setCustomerReferenceId(String)
 	 * @see org.abchip.mimo.biz.order.return_.ReturnPackage#getReturnAdjustment_CustomerReferenceId()
-	 * @model
+	 * @model annotation="mimo-ent-format type='id-long' length='60'"
 	 * @generated
 	 */
 	String getCustomerReferenceId();
@@ -233,7 +233,7 @@ public interface ReturnAdjustment extends BizEntityTyped<ReturnAdjustmentType> {
 	 * @return the value of the '<em>Description</em>' attribute.
 	 * @see #setDescription(String)
 	 * @see org.abchip.mimo.biz.order.return_.ReturnPackage#getReturnAdjustment_Description()
-	 * @model
+	 * @model annotation="mimo-ent-format type='description' length='255'"
 	 * @generated
 	 */
 	String getDescription();
@@ -259,7 +259,7 @@ public interface ReturnAdjustment extends BizEntityTyped<ReturnAdjustmentType> {
 	 * @return the value of the '<em>Exempt Amount</em>' attribute.
 	 * @see #setExemptAmount(BigDecimal)
 	 * @see org.abchip.mimo.biz.order.return_.ReturnPackage#getReturnAdjustment_ExemptAmount()
-	 * @model
+	 * @model annotation="mimo-ent-format type='currency-amount' precision='18' scale='2'"
 	 * @generated
 	 */
 	BigDecimal getExemptAmount();
@@ -285,7 +285,7 @@ public interface ReturnAdjustment extends BizEntityTyped<ReturnAdjustmentType> {
 	 * @return the value of the '<em>Include In Shipping</em>' attribute.
 	 * @see #setIncludeInShipping(boolean)
 	 * @see org.abchip.mimo.biz.order.return_.ReturnPackage#getReturnAdjustment_IncludeInShipping()
-	 * @model
+	 * @model annotation="mimo-ent-format type='indicator' length='1'"
 	 * @generated
 	 */
 	boolean isIncludeInShipping();
@@ -311,7 +311,7 @@ public interface ReturnAdjustment extends BizEntityTyped<ReturnAdjustmentType> {
 	 * @return the value of the '<em>Include In Tax</em>' attribute.
 	 * @see #setIncludeInTax(boolean)
 	 * @see org.abchip.mimo.biz.order.return_.ReturnPackage#getReturnAdjustment_IncludeInTax()
-	 * @model
+	 * @model annotation="mimo-ent-format type='indicator' length='1'"
 	 * @generated
 	 */
 	boolean isIncludeInTax();
@@ -337,7 +337,7 @@ public interface ReturnAdjustment extends BizEntityTyped<ReturnAdjustmentType> {
 	 * @return the value of the '<em>Last Modified By User Login</em>' attribute.
 	 * @see #setLastModifiedByUserLogin(String)
 	 * @see org.abchip.mimo.biz.order.return_.ReturnPackage#getReturnAdjustment_LastModifiedByUserLogin()
-	 * @model
+	 * @model annotation="mimo-ent-format type='id-vlong' length='255'"
 	 * @generated
 	 */
 	String getLastModifiedByUserLogin();
@@ -363,7 +363,7 @@ public interface ReturnAdjustment extends BizEntityTyped<ReturnAdjustmentType> {
 	 * @return the value of the '<em>Last Modified Date</em>' attribute.
 	 * @see #setLastModifiedDate(Date)
 	 * @see org.abchip.mimo.biz.order.return_.ReturnPackage#getReturnAdjustment_LastModifiedDate()
-	 * @model
+	 * @model annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getLastModifiedDate();
@@ -467,7 +467,7 @@ public interface ReturnAdjustment extends BizEntityTyped<ReturnAdjustmentType> {
 	 * @return the value of the '<em>Product Feature Id</em>' attribute.
 	 * @see #setProductFeatureId(String)
 	 * @see org.abchip.mimo.biz.order.return_.ReturnPackage#getReturnAdjustment_ProductFeatureId()
-	 * @model
+	 * @model annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	String getProductFeatureId();
@@ -493,7 +493,7 @@ public interface ReturnAdjustment extends BizEntityTyped<ReturnAdjustmentType> {
 	 * @return the value of the '<em>Product Promo Action Seq Id</em>' attribute.
 	 * @see #setProductPromoActionSeqId(String)
 	 * @see org.abchip.mimo.biz.order.return_.ReturnPackage#getReturnAdjustment_ProductPromoActionSeqId()
-	 * @model
+	 * @model annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	String getProductPromoActionSeqId();
@@ -545,7 +545,7 @@ public interface ReturnAdjustment extends BizEntityTyped<ReturnAdjustmentType> {
 	 * @return the value of the '<em>Product Promo Rule Id</em>' attribute.
 	 * @see #setProductPromoRuleId(String)
 	 * @see org.abchip.mimo.biz.order.return_.ReturnPackage#getReturnAdjustment_ProductPromoRuleId()
-	 * @model
+	 * @model annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	String getProductPromoRuleId();
@@ -572,6 +572,7 @@ public interface ReturnAdjustment extends BizEntityTyped<ReturnAdjustmentType> {
 	 * @see #setReturnAdjustmentId(String)
 	 * @see org.abchip.mimo.biz.order.return_.ReturnPackage#getReturnAdjustment_ReturnAdjustmentId()
 	 * @model id="true" required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
@@ -650,7 +651,7 @@ public interface ReturnAdjustment extends BizEntityTyped<ReturnAdjustmentType> {
 	 * @return the value of the '<em>Return Item Seq Id</em>' attribute.
 	 * @see #setReturnItemSeqId(String)
 	 * @see org.abchip.mimo.biz.order.return_.ReturnPackage#getReturnAdjustment_ReturnItemSeqId()
-	 * @model
+	 * @model annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	String getReturnItemSeqId();
@@ -728,7 +729,7 @@ public interface ReturnAdjustment extends BizEntityTyped<ReturnAdjustmentType> {
 	 * @return the value of the '<em>Ship Group Seq Id</em>' attribute.
 	 * @see #setShipGroupSeqId(String)
 	 * @see org.abchip.mimo.biz.order.return_.ReturnPackage#getReturnAdjustment_ShipGroupSeqId()
-	 * @model
+	 * @model annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	String getShipGroupSeqId();
@@ -754,7 +755,7 @@ public interface ReturnAdjustment extends BizEntityTyped<ReturnAdjustmentType> {
 	 * @return the value of the '<em>Source Percentage</em>' attribute.
 	 * @see #setSourcePercentage(BigDecimal)
 	 * @see org.abchip.mimo.biz.order.return_.ReturnPackage#getReturnAdjustment_SourcePercentage()
-	 * @model
+	 * @model annotation="mimo-ent-format type='fixed-point' precision='18' scale='6'"
 	 * @generated
 	 */
 	BigDecimal getSourcePercentage();
@@ -780,7 +781,7 @@ public interface ReturnAdjustment extends BizEntityTyped<ReturnAdjustmentType> {
 	 * @return the value of the '<em>Source Reference Id</em>' attribute.
 	 * @see #setSourceReferenceId(String)
 	 * @see org.abchip.mimo.biz.order.return_.ReturnPackage#getReturnAdjustment_SourceReferenceId()
-	 * @model
+	 * @model annotation="mimo-ent-format type='id-long' length='60'"
 	 * @generated
 	 */
 	String getSourceReferenceId();
@@ -806,7 +807,7 @@ public interface ReturnAdjustment extends BizEntityTyped<ReturnAdjustmentType> {
 	 * @return the value of the '<em>Tax Auth Geo Id</em>' attribute.
 	 * @see #setTaxAuthGeoId(String)
 	 * @see org.abchip.mimo.biz.order.return_.ReturnPackage#getReturnAdjustment_TaxAuthGeoId()
-	 * @model
+	 * @model annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	String getTaxAuthGeoId();
@@ -832,7 +833,7 @@ public interface ReturnAdjustment extends BizEntityTyped<ReturnAdjustmentType> {
 	 * @return the value of the '<em>Tax Auth Party Id</em>' attribute.
 	 * @see #setTaxAuthPartyId(String)
 	 * @see org.abchip.mimo.biz.order.return_.ReturnPackage#getReturnAdjustment_TaxAuthPartyId()
-	 * @model
+	 * @model annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	String getTaxAuthPartyId();

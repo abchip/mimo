@@ -56,7 +56,7 @@ public interface ReturnItem extends BizEntityTyped<ReturnItemType> {
 	 * @return the value of the '<em>Description</em>' attribute.
 	 * @see #setDescription(String)
 	 * @see org.abchip.mimo.biz.order.return_.ReturnPackage#getReturnItem_Description()
-	 * @model
+	 * @model annotation="mimo-ent-format type='description' length='255'"
 	 * @generated
 	 */
 	String getDescription();
@@ -134,7 +134,7 @@ public interface ReturnItem extends BizEntityTyped<ReturnItemType> {
 	 * @return the value of the '<em>Order Item Seq Id</em>' attribute.
 	 * @see #setOrderItemSeqId(String)
 	 * @see org.abchip.mimo.biz.order.return_.ReturnPackage#getReturnItem_OrderItemSeqId()
-	 * @model
+	 * @model annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	String getOrderItemSeqId();
@@ -186,7 +186,7 @@ public interface ReturnItem extends BizEntityTyped<ReturnItemType> {
 	 * @return the value of the '<em>Received Quantity</em>' attribute.
 	 * @see #setReceivedQuantity(BigDecimal)
 	 * @see org.abchip.mimo.biz.order.return_.ReturnPackage#getReturnItem_ReceivedQuantity()
-	 * @model
+	 * @model annotation="mimo-ent-format type='fixed-point' precision='18' scale='6'"
 	 * @generated
 	 */
 	BigDecimal getReceivedQuantity();
@@ -265,6 +265,7 @@ public interface ReturnItem extends BizEntityTyped<ReturnItemType> {
 	 * @see #setReturnItemSeqId(String)
 	 * @see org.abchip.mimo.biz.order.return_.ReturnPackage#getReturnItem_ReturnItemSeqId()
 	 * @model required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
@@ -317,7 +318,7 @@ public interface ReturnItem extends BizEntityTyped<ReturnItemType> {
 	 * @return the value of the '<em>Return Price</em>' attribute.
 	 * @see #setReturnPrice(BigDecimal)
 	 * @see org.abchip.mimo.biz.order.return_.ReturnPackage#getReturnItem_ReturnPrice()
-	 * @model
+	 * @model annotation="mimo-ent-format type='currency-amount' precision='18' scale='2'"
 	 * @generated
 	 */
 	BigDecimal getReturnPrice();
@@ -343,7 +344,7 @@ public interface ReturnItem extends BizEntityTyped<ReturnItemType> {
 	 * @return the value of the '<em>Return Quantity</em>' attribute.
 	 * @see #setReturnQuantity(BigDecimal)
 	 * @see org.abchip.mimo.biz.order.return_.ReturnPackage#getReturnItem_ReturnQuantity()
-	 * @model
+	 * @model annotation="mimo-ent-format type='fixed-point' precision='18' scale='6'"
 	 * @generated
 	 */
 	BigDecimal getReturnQuantity();

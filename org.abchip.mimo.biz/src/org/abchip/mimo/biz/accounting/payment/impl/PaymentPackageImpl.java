@@ -120,6 +120,7 @@ import org.abchip.mimo.biz.entity.crypto.CryptoPackage;
 import org.abchip.mimo.biz.entity.crypto.impl.CryptoPackageImpl;
 import org.abchip.mimo.biz.entity.group.GroupPackage;
 import org.abchip.mimo.biz.entity.group.impl.GroupPackageImpl;
+import org.abchip.mimo.biz.entity.impl.EntityPackageImpl;
 import org.abchip.mimo.biz.entity.sequence.SequencePackage;
 import org.abchip.mimo.biz.entity.sequence.impl.SequencePackageImpl;
 import org.abchip.mimo.biz.entity.synchronization.SynchronizationPackage;
@@ -237,7 +238,6 @@ import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EGenericType;
-import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 
 import org.eclipse.emf.ecore.EReference;
@@ -664,6 +664,8 @@ public class PaymentPackageImpl extends EPackageImpl implements PaymentPackage {
 		SurveyPackageImpl theSurveyPackage = (SurveyPackageImpl)(registeredPackage instanceof SurveyPackageImpl ? registeredPackage : SurveyPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(WebsitePackage.eNS_URI);
 		WebsitePackageImpl theWebsitePackage = (WebsitePackageImpl)(registeredPackage instanceof WebsitePackageImpl ? registeredPackage : WebsitePackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(org.abchip.mimo.biz.entity.EntityPackage.eNS_URI);
+		EntityPackageImpl theEntityPackage = (EntityPackageImpl)(registeredPackage instanceof EntityPackageImpl ? registeredPackage : org.abchip.mimo.biz.entity.EntityPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(AuditPackage.eNS_URI);
 		AuditPackageImpl theAuditPackage = (AuditPackageImpl)(registeredPackage instanceof AuditPackageImpl ? registeredPackage : AuditPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(CryptoPackage.eNS_URI);
@@ -818,6 +820,7 @@ public class PaymentPackageImpl extends EPackageImpl implements PaymentPackage {
 		thePreferencePackage.createPackageContents();
 		theSurveyPackage.createPackageContents();
 		theWebsitePackage.createPackageContents();
+		theEntityPackage.createPackageContents();
 		theAuditPackage.createPackageContents();
 		theCryptoPackage.createPackageContents();
 		theGroupPackage.createPackageContents();
@@ -912,6 +915,7 @@ public class PaymentPackageImpl extends EPackageImpl implements PaymentPackage {
 		thePreferencePackage.initializePackageContents();
 		theSurveyPackage.initializePackageContents();
 		theWebsitePackage.initializePackageContents();
+		theEntityPackage.initializePackageContents();
 		theAuditPackage.initializePackageContents();
 		theCryptoPackage.initializePackageContents();
 		theGroupPackage.initializePackageContents();
@@ -1009,66 +1013,6 @@ public class PaymentPackageImpl extends EPackageImpl implements PaymentPackage {
 	@Override
 	public EReference getBillingAccount_AccountCurrencyUomId() {
 		return (EReference)billingAccountEClass.getEStructuralFeatures().get(7);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EOperation getBillingAccount__BillingAccountTerms() {
-		return billingAccountEClass.getEOperations().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EOperation getBillingAccount__Invoices() {
-		return billingAccountEClass.getEOperations().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EOperation getBillingAccount__OrderHeaders() {
-		return billingAccountEClass.getEOperations().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EOperation getBillingAccount__PaymentApplications() {
-		return billingAccountEClass.getEOperations().get(3);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EOperation getBillingAccount__ReturnHeaders() {
-		return billingAccountEClass.getEOperations().get(4);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EOperation getBillingAccount__ReturnItemResponses() {
-		return billingAccountEClass.getEOperations().get(5);
 	}
 
 	/**
@@ -1727,26 +1671,6 @@ public class PaymentPackageImpl extends EPackageImpl implements PaymentPackage {
 	 * @generated
 	 */
 	@Override
-	public EOperation getDeductionType__ChildDeductionTypes() {
-		return deductionTypeEClass.getEOperations().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EOperation getDeductionType__Deductions() {
-		return deductionTypeEClass.getEOperations().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public EClass getEftAccount() {
 		return eftAccountEClass;
 	}
@@ -2347,56 +2271,6 @@ public class PaymentPackageImpl extends EPackageImpl implements PaymentPackage {
 	 * @generated
 	 */
 	@Override
-	public EOperation getPayment__AcctgTranss() {
-		return paymentEClass.getEOperations().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EOperation getPayment__Deductions() {
-		return paymentEClass.getEOperations().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EOperation getPayment__PaymentApplications() {
-		return paymentEClass.getEOperations().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EOperation getPayment__ReturnItemResponses() {
-		return paymentEClass.getEOperations().get(3);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EOperation getPayment__ToPaymentApplications() {
-		return paymentEClass.getEOperations().get(4);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public EClass getPaymentApplication() {
 		return paymentApplicationEClass;
 	}
@@ -2699,16 +2573,6 @@ public class PaymentPackageImpl extends EPackageImpl implements PaymentPackage {
 	@Override
 	public EReference getPaymentContentType_ParentTypeId() {
 		return (EReference)paymentContentTypeEClass.getEStructuralFeatures().get(3);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EOperation getPaymentContentType__ChildPaymentContentTypes() {
-		return paymentContentTypeEClass.getEOperations().get(0);
 	}
 
 	/**
@@ -3119,26 +2983,6 @@ public class PaymentPackageImpl extends EPackageImpl implements PaymentPackage {
 	@Override
 	public EReference getPaymentGatewayConfigType_ParentTypeId() {
 		return (EReference)paymentGatewayConfigTypeEClass.getEStructuralFeatures().get(3);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EOperation getPaymentGatewayConfigType__ChildPaymentGatewayConfigTypes() {
-		return paymentGatewayConfigTypeEClass.getEOperations().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EOperation getPaymentGatewayConfigType__PaymentGatewayConfigs() {
-		return paymentGatewayConfigTypeEClass.getEOperations().get(1);
 	}
 
 	/**
@@ -4147,26 +3991,6 @@ public class PaymentPackageImpl extends EPackageImpl implements PaymentPackage {
 	 * @generated
 	 */
 	@Override
-	public EOperation getPaymentGatewayResponse__PaymentGatewayRespMsgs() {
-		return paymentGatewayResponseEClass.getEOperations().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EOperation getPaymentGatewayResponse__Payments() {
-		return paymentGatewayResponseEClass.getEOperations().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public EReference getPaymentGatewayResponse_PaymentMethodTypeId() {
 		return (EReference)paymentGatewayResponseEClass.getEStructuralFeatures().get(20);
 	}
@@ -4797,26 +4621,6 @@ public class PaymentPackageImpl extends EPackageImpl implements PaymentPackage {
 	 * @generated
 	 */
 	@Override
-	public EOperation getPaymentGroupType__ChildPaymentGroupTypes() {
-		return paymentGroupTypeEClass.getEOperations().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EOperation getPaymentGroupType__PaymentGroups() {
-		return paymentGroupTypeEClass.getEOperations().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public EClass getPaymentMethod() {
 		return paymentMethodEClass;
 	}
@@ -4849,76 +4653,6 @@ public class PaymentPackageImpl extends EPackageImpl implements PaymentPackage {
 	@Override
 	public EReference getPaymentMethod_FinAccountId() {
 		return (EReference)paymentMethodEClass.getEStructuralFeatures().get(7);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EOperation getPaymentMethod__OrderPaymentPreferences() {
-		return paymentMethodEClass.getEOperations().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EOperation getPaymentMethod__PartyAcctgPreferences() {
-		return paymentMethodEClass.getEOperations().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EOperation getPaymentMethod__PaymentGatewayResponses() {
-		return paymentMethodEClass.getEOperations().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EOperation getPaymentMethod__Payments() {
-		return paymentMethodEClass.getEOperations().get(3);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EOperation getPaymentMethod__ReplenishFinAccounts() {
-		return paymentMethodEClass.getEOperations().get(4);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EOperation getPaymentMethod__ReturnHeaders() {
-		return paymentMethodEClass.getEOperations().get(5);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EOperation getPaymentMethod__ShoppingLists() {
-		return paymentMethodEClass.getEOperations().get(6);
 	}
 
 	/**
@@ -5019,46 +4753,6 @@ public class PaymentPackageImpl extends EPackageImpl implements PaymentPackage {
 	@Override
 	public EAttribute getPaymentMethodType_PaymentMethodTypeGlAccounts() {
 		return (EAttribute)paymentMethodTypeEClass.getEStructuralFeatures().get(3);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EOperation getPaymentMethodType__OrderPaymentPreferences() {
-		return paymentMethodTypeEClass.getEOperations().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EOperation getPaymentMethodType__PaymentGatewayResponses() {
-		return paymentMethodTypeEClass.getEOperations().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EOperation getPaymentMethodType__PaymentMethods() {
-		return paymentMethodTypeEClass.getEOperations().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EOperation getPaymentMethodType__Payments() {
-		return paymentMethodTypeEClass.getEOperations().get(3);
 	}
 
 	/**
@@ -5169,26 +4863,6 @@ public class PaymentPackageImpl extends EPackageImpl implements PaymentPackage {
 	@Override
 	public EAttribute getPaymentType_PaymentTypeAttrs() {
 		return (EAttribute)paymentTypeEClass.getEStructuralFeatures().get(5);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EOperation getPaymentType__ChildPaymentTypes() {
-		return paymentTypeEClass.getEOperations().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EOperation getPaymentType__Payments() {
-		return paymentTypeEClass.getEOperations().get(1);
 	}
 
 	/**
@@ -5409,12 +5083,6 @@ public class PaymentPackageImpl extends EPackageImpl implements PaymentPackage {
 		createEAttribute(billingAccountEClass, BILLING_ACCOUNT__THRU_DATE);
 		createEReference(billingAccountEClass, BILLING_ACCOUNT__CONTACT_MECH_ID);
 		createEReference(billingAccountEClass, BILLING_ACCOUNT__ACCOUNT_CURRENCY_UOM_ID);
-		createEOperation(billingAccountEClass, BILLING_ACCOUNT___BILLING_ACCOUNT_TERMS);
-		createEOperation(billingAccountEClass, BILLING_ACCOUNT___INVOICES);
-		createEOperation(billingAccountEClass, BILLING_ACCOUNT___ORDER_HEADERS);
-		createEOperation(billingAccountEClass, BILLING_ACCOUNT___PAYMENT_APPLICATIONS);
-		createEOperation(billingAccountEClass, BILLING_ACCOUNT___RETURN_HEADERS);
-		createEOperation(billingAccountEClass, BILLING_ACCOUNT___RETURN_ITEM_RESPONSES);
 
 		billingAccountRoleEClass = createEClass(BILLING_ACCOUNT_ROLE);
 		createEAttribute(billingAccountRoleEClass, BILLING_ACCOUNT_ROLE__FROM_DATE);
@@ -5482,8 +5150,6 @@ public class PaymentPackageImpl extends EPackageImpl implements PaymentPackage {
 		createEAttribute(deductionTypeEClass, DEDUCTION_TYPE__DESCRIPTION);
 		createEAttribute(deductionTypeEClass, DEDUCTION_TYPE__HAS_TABLE);
 		createEReference(deductionTypeEClass, DEDUCTION_TYPE__PARENT_TYPE_ID);
-		createEOperation(deductionTypeEClass, DEDUCTION_TYPE___CHILD_DEDUCTION_TYPES);
-		createEOperation(deductionTypeEClass, DEDUCTION_TYPE___DEDUCTIONS);
 
 		eftAccountEClass = createEClass(EFT_ACCOUNT);
 		createEAttribute(eftAccountEClass, EFT_ACCOUNT__ACCOUNT_NUMBER);
@@ -5549,11 +5215,6 @@ public class PaymentPackageImpl extends EPackageImpl implements PaymentPackage {
 		createEReference(paymentEClass, PAYMENT__FIN_ACCOUNT_TRANS_ID);
 		createEReference(paymentEClass, PAYMENT__OVERRIDE_GL_ACCOUNT_ID);
 		createEAttribute(paymentEClass, PAYMENT__PAYMENT_ATTRIBUTES);
-		createEOperation(paymentEClass, PAYMENT___ACCTG_TRANSS);
-		createEOperation(paymentEClass, PAYMENT___DEDUCTIONS);
-		createEOperation(paymentEClass, PAYMENT___PAYMENT_APPLICATIONS);
-		createEOperation(paymentEClass, PAYMENT___RETURN_ITEM_RESPONSES);
-		createEOperation(paymentEClass, PAYMENT___TO_PAYMENT_APPLICATIONS);
 
 		paymentApplicationEClass = createEClass(PAYMENT_APPLICATION);
 		createEAttribute(paymentApplicationEClass, PAYMENT_APPLICATION__PAYMENT_APPLICATION_ID);
@@ -5590,7 +5251,6 @@ public class PaymentPackageImpl extends EPackageImpl implements PaymentPackage {
 		createEAttribute(paymentContentTypeEClass, PAYMENT_CONTENT_TYPE__DESCRIPTION);
 		createEAttribute(paymentContentTypeEClass, PAYMENT_CONTENT_TYPE__HAS_TABLE);
 		createEReference(paymentContentTypeEClass, PAYMENT_CONTENT_TYPE__PARENT_TYPE_ID);
-		createEOperation(paymentContentTypeEClass, PAYMENT_CONTENT_TYPE___CHILD_PAYMENT_CONTENT_TYPES);
 
 		paymentGatewayAuthorizeNetEClass = createEClass(PAYMENT_GATEWAY_AUTHORIZE_NET);
 		createEAttribute(paymentGatewayAuthorizeNetEClass, PAYMENT_GATEWAY_AUTHORIZE_NET__API_VERSION);
@@ -5636,8 +5296,6 @@ public class PaymentPackageImpl extends EPackageImpl implements PaymentPackage {
 		createEAttribute(paymentGatewayConfigTypeEClass, PAYMENT_GATEWAY_CONFIG_TYPE__DESCRIPTION);
 		createEAttribute(paymentGatewayConfigTypeEClass, PAYMENT_GATEWAY_CONFIG_TYPE__HAS_TABLE);
 		createEReference(paymentGatewayConfigTypeEClass, PAYMENT_GATEWAY_CONFIG_TYPE__PARENT_TYPE_ID);
-		createEOperation(paymentGatewayConfigTypeEClass, PAYMENT_GATEWAY_CONFIG_TYPE___CHILD_PAYMENT_GATEWAY_CONFIG_TYPES);
-		createEOperation(paymentGatewayConfigTypeEClass, PAYMENT_GATEWAY_CONFIG_TYPE___PAYMENT_GATEWAY_CONFIGS);
 
 		paymentGatewayCyberSourceEClass = createEClass(PAYMENT_GATEWAY_CYBER_SOURCE);
 		createEAttribute(paymentGatewayCyberSourceEClass, PAYMENT_GATEWAY_CYBER_SOURCE__API_VERSION);
@@ -5755,8 +5413,6 @@ public class PaymentPackageImpl extends EPackageImpl implements PaymentPackage {
 		createEReference(paymentGatewayResponseEClass, PAYMENT_GATEWAY_RESPONSE__ORDER_PAYMENT_PREFERENCE_ID);
 		createEReference(paymentGatewayResponseEClass, PAYMENT_GATEWAY_RESPONSE__PAYMENT_METHOD_TYPE_ID);
 		createEReference(paymentGatewayResponseEClass, PAYMENT_GATEWAY_RESPONSE__PAYMENT_METHOD_ID);
-		createEOperation(paymentGatewayResponseEClass, PAYMENT_GATEWAY_RESPONSE___PAYMENT_GATEWAY_RESP_MSGS);
-		createEOperation(paymentGatewayResponseEClass, PAYMENT_GATEWAY_RESPONSE___PAYMENTS);
 
 		paymentGatewaySagePayEClass = createEClass(PAYMENT_GATEWAY_SAGE_PAY);
 		createEAttribute(paymentGatewaySagePayEClass, PAYMENT_GATEWAY_SAGE_PAY__AUTHENTICATION_TRANS_TYPE);
@@ -5817,8 +5473,6 @@ public class PaymentPackageImpl extends EPackageImpl implements PaymentPackage {
 		createEAttribute(paymentGroupTypeEClass, PAYMENT_GROUP_TYPE__DESCRIPTION);
 		createEAttribute(paymentGroupTypeEClass, PAYMENT_GROUP_TYPE__HAS_TABLE);
 		createEReference(paymentGroupTypeEClass, PAYMENT_GROUP_TYPE__PARENT_TYPE_ID);
-		createEOperation(paymentGroupTypeEClass, PAYMENT_GROUP_TYPE___CHILD_PAYMENT_GROUP_TYPES);
-		createEOperation(paymentGroupTypeEClass, PAYMENT_GROUP_TYPE___PAYMENT_GROUPS);
 
 		paymentMethodEClass = createEClass(PAYMENT_METHOD);
 		createEAttribute(paymentMethodEClass, PAYMENT_METHOD__PAYMENT_METHOD_ID);
@@ -5829,23 +5483,12 @@ public class PaymentPackageImpl extends EPackageImpl implements PaymentPackage {
 		createEReference(paymentMethodEClass, PAYMENT_METHOD__PARTY_ID);
 		createEReference(paymentMethodEClass, PAYMENT_METHOD__GL_ACCOUNT_ID);
 		createEReference(paymentMethodEClass, PAYMENT_METHOD__FIN_ACCOUNT_ID);
-		createEOperation(paymentMethodEClass, PAYMENT_METHOD___ORDER_PAYMENT_PREFERENCES);
-		createEOperation(paymentMethodEClass, PAYMENT_METHOD___PARTY_ACCTG_PREFERENCES);
-		createEOperation(paymentMethodEClass, PAYMENT_METHOD___PAYMENT_GATEWAY_RESPONSES);
-		createEOperation(paymentMethodEClass, PAYMENT_METHOD___PAYMENTS);
-		createEOperation(paymentMethodEClass, PAYMENT_METHOD___REPLENISH_FIN_ACCOUNTS);
-		createEOperation(paymentMethodEClass, PAYMENT_METHOD___RETURN_HEADERS);
-		createEOperation(paymentMethodEClass, PAYMENT_METHOD___SHOPPING_LISTS);
 
 		paymentMethodTypeEClass = createEClass(PAYMENT_METHOD_TYPE);
 		createEAttribute(paymentMethodTypeEClass, PAYMENT_METHOD_TYPE__PAYMENT_METHOD_TYPE_ID);
 		createEAttribute(paymentMethodTypeEClass, PAYMENT_METHOD_TYPE__DESCRIPTION);
 		createEReference(paymentMethodTypeEClass, PAYMENT_METHOD_TYPE__DEFAULT_GL_ACCOUNT_ID);
 		createEAttribute(paymentMethodTypeEClass, PAYMENT_METHOD_TYPE__PAYMENT_METHOD_TYPE_GL_ACCOUNTS);
-		createEOperation(paymentMethodTypeEClass, PAYMENT_METHOD_TYPE___ORDER_PAYMENT_PREFERENCES);
-		createEOperation(paymentMethodTypeEClass, PAYMENT_METHOD_TYPE___PAYMENT_GATEWAY_RESPONSES);
-		createEOperation(paymentMethodTypeEClass, PAYMENT_METHOD_TYPE___PAYMENT_METHODS);
-		createEOperation(paymentMethodTypeEClass, PAYMENT_METHOD_TYPE___PAYMENTS);
 
 		paymentMethodTypeGlAccountEClass = createEClass(PAYMENT_METHOD_TYPE_GL_ACCOUNT);
 		createEReference(paymentMethodTypeGlAccountEClass, PAYMENT_METHOD_TYPE_GL_ACCOUNT__PAYMENT_METHOD_TYPE_ID);
@@ -5859,8 +5502,6 @@ public class PaymentPackageImpl extends EPackageImpl implements PaymentPackage {
 		createEReference(paymentTypeEClass, PAYMENT_TYPE__PARENT_TYPE_ID);
 		createEAttribute(paymentTypeEClass, PAYMENT_TYPE__PAYMENT_GL_ACCOUNT_TYPE_MAPS);
 		createEAttribute(paymentTypeEClass, PAYMENT_TYPE__PAYMENT_TYPE_ATTRS);
-		createEOperation(paymentTypeEClass, PAYMENT_TYPE___CHILD_PAYMENT_TYPES);
-		createEOperation(paymentTypeEClass, PAYMENT_TYPE___PAYMENTS);
 
 		paymentTypeAttrEClass = createEClass(PAYMENT_TYPE_ATTR);
 		createEAttribute(paymentTypeAttrEClass, PAYMENT_TYPE_ATTR__ATTR_NAME);
@@ -6008,7 +5649,7 @@ public class PaymentPackageImpl extends EPackageImpl implements PaymentPackage {
 		paymentTypeAttrEClass.getESuperTypes().add(theBizPackage.getBizEntity());
 		valueLinkKeyEClass.getESuperTypes().add(theBizPackage.getBizEntity());
 
-		// Initialize classes, features, and operations; add parameters
+		// Initialize classes and features; add operations and parameters
 		initEClass(billingAccountEClass, BillingAccount.class, "BillingAccount", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getBillingAccount_BillingAccountId(), ecorePackage.getEString(), "billingAccountId", null, 1, 1, BillingAccount.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getBillingAccount_AccountLimit(), ecorePackage.getEBigDecimal(), "accountLimit", null, 0, 1, BillingAccount.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -6021,17 +5662,17 @@ public class PaymentPackageImpl extends EPackageImpl implements PaymentPackage {
 		initEReference(getBillingAccount_AccountCurrencyUomId(), theUomPackage.getUom(), null, "accountCurrencyUomId", null, 0, 1, BillingAccount.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getBillingAccount_AccountCurrencyUomId().getEKeys().add(theUomPackage.getUom_UomId());
 
-		initEOperation(getBillingAccount__BillingAccountTerms(), ecorePackage.getEString(), "billingAccountTerms", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(billingAccountEClass, ecorePackage.getEString(), "billingAccountTerms", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		initEOperation(getBillingAccount__Invoices(), ecorePackage.getEString(), "invoices", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(billingAccountEClass, ecorePackage.getEString(), "invoices", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		initEOperation(getBillingAccount__OrderHeaders(), ecorePackage.getEString(), "orderHeaders", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(billingAccountEClass, ecorePackage.getEString(), "orderHeaders", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		initEOperation(getBillingAccount__PaymentApplications(), ecorePackage.getEString(), "paymentApplications", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(billingAccountEClass, ecorePackage.getEString(), "paymentApplications", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		initEOperation(getBillingAccount__ReturnHeaders(), ecorePackage.getEString(), "returnHeaders", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(billingAccountEClass, ecorePackage.getEString(), "returnHeaders", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		initEOperation(getBillingAccount__ReturnItemResponses(), ecorePackage.getEString(), "returnItemResponses", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(billingAccountEClass, ecorePackage.getEString(), "returnItemResponses", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(billingAccountRoleEClass, BillingAccountRole.class, "BillingAccountRole", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getBillingAccountRole_FromDate(), ecorePackage.getEDate(), "fromDate", null, 1, 1, BillingAccountRole.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -6053,7 +5694,7 @@ public class PaymentPackageImpl extends EPackageImpl implements PaymentPackage {
 		getBillingAccountTerm_TermTypeId().getEKeys().add(theAgreementPackage.getTermType_TermTypeId());
 		initEReference(getBillingAccountTerm_BillingAccountId(), this.getBillingAccount(), null, "billingAccountId", null, 0, 1, BillingAccountTerm.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getBillingAccountTerm_BillingAccountId().getEKeys().add(this.getBillingAccount_BillingAccountId());
-		initEAttribute(getBillingAccountTerm_BillingAccountTermAttrs(), ecorePackage.getEString(), "billingAccountTermAttrs", null, 0, -1, BillingAccountTerm.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getBillingAccountTerm_BillingAccountTermAttrs(), ecorePackage.getEString(), "billingAccountTermAttrs", null, 1, -1, BillingAccountTerm.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(billingAccountTermAttrEClass, BillingAccountTermAttr.class, "BillingAccountTermAttr", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getBillingAccountTermAttr_AttrName(), ecorePackage.getEString(), "attrName", null, 1, 1, BillingAccountTermAttr.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -6113,9 +5754,9 @@ public class PaymentPackageImpl extends EPackageImpl implements PaymentPackage {
 		initEReference(getDeductionType_ParentTypeId(), this.getDeductionType(), null, "parentTypeId", null, 0, 1, DeductionType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getDeductionType_ParentTypeId().getEKeys().add(this.getDeductionType_DeductionTypeId());
 
-		initEOperation(getDeductionType__ChildDeductionTypes(), ecorePackage.getEString(), "childDeductionTypes", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(deductionTypeEClass, ecorePackage.getEString(), "childDeductionTypes", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		initEOperation(getDeductionType__Deductions(), ecorePackage.getEString(), "deductions", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(deductionTypeEClass, ecorePackage.getEString(), "deductions", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(eftAccountEClass, EftAccount.class, "EftAccount", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getEftAccount_AccountNumber(), ecorePackage.getEString(), "accountNumber", null, 0, 1, EftAccount.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -6156,8 +5797,8 @@ public class PaymentPackageImpl extends EPackageImpl implements PaymentPackage {
 		getGiftCardFulfillment_SurveyResponseId().getEKeys().add(theSurveyPackage.getSurveyResponse_SurveyResponseId());
 
 		initEClass(payPalPaymentMethodEClass, PayPalPaymentMethod.class, "PayPalPaymentMethod", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getPayPalPaymentMethod_AvsAddr(), ecorePackage.getEBoolean(), "avsAddr", null, 0, 1, PayPalPaymentMethod.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getPayPalPaymentMethod_AvsZip(), ecorePackage.getEBoolean(), "avsZip", null, 0, 1, PayPalPaymentMethod.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getPayPalPaymentMethod_AvsAddr(), ecorePackage.getEChar(), "avsAddr", null, 0, 1, PayPalPaymentMethod.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getPayPalPaymentMethod_AvsZip(), ecorePackage.getEChar(), "avsZip", null, 0, 1, PayPalPaymentMethod.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getPayPalPaymentMethod_CorrelationId(), ecorePackage.getEString(), "correlationId", null, 0, 1, PayPalPaymentMethod.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getPayPalPaymentMethod_ExpressCheckoutToken(), ecorePackage.getEString(), "expressCheckoutToken", null, 0, 1, PayPalPaymentMethod.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getPayPalPaymentMethod_PayerId(), ecorePackage.getEString(), "payerId", null, 0, 1, PayPalPaymentMethod.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -6201,17 +5842,17 @@ public class PaymentPackageImpl extends EPackageImpl implements PaymentPackage {
 		getPayment_FinAccountTransId().getEKeys().add(theFinaccountPackage.getFinAccountTrans_FinAccountTransId());
 		initEReference(getPayment_OverrideGlAccountId(), theLedgerPackage.getGlAccount(), null, "overrideGlAccountId", null, 0, 1, Payment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getPayment_OverrideGlAccountId().getEKeys().add(theLedgerPackage.getGlAccount_GlAccountId());
-		initEAttribute(getPayment_PaymentAttributes(), ecorePackage.getEString(), "paymentAttributes", null, 0, -1, Payment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getPayment_PaymentAttributes(), ecorePackage.getEString(), "paymentAttributes", null, 1, -1, Payment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEOperation(getPayment__AcctgTranss(), ecorePackage.getEString(), "acctgTranss", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(paymentEClass, ecorePackage.getEString(), "acctgTranss", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		initEOperation(getPayment__Deductions(), ecorePackage.getEString(), "deductions", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(paymentEClass, ecorePackage.getEString(), "deductions", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		initEOperation(getPayment__PaymentApplications(), ecorePackage.getEString(), "paymentApplications", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(paymentEClass, ecorePackage.getEString(), "paymentApplications", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		initEOperation(getPayment__ReturnItemResponses(), ecorePackage.getEString(), "returnItemResponses", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(paymentEClass, ecorePackage.getEString(), "returnItemResponses", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		initEOperation(getPayment__ToPaymentApplications(), ecorePackage.getEString(), "toPaymentApplications", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(paymentEClass, ecorePackage.getEString(), "toPaymentApplications", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(paymentApplicationEClass, PaymentApplication.class, "PaymentApplication", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getPaymentApplication_PaymentApplicationId(), ecorePackage.getEString(), "paymentApplicationId", null, 1, 1, PaymentApplication.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -6262,7 +5903,7 @@ public class PaymentPackageImpl extends EPackageImpl implements PaymentPackage {
 		initEReference(getPaymentContentType_ParentTypeId(), this.getPaymentContentType(), null, "parentTypeId", null, 0, 1, PaymentContentType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getPaymentContentType_ParentTypeId().getEKeys().add(this.getPaymentContentType_PaymentContentTypeId());
 
-		initEOperation(getPaymentContentType__ChildPaymentContentTypes(), ecorePackage.getEString(), "childPaymentContentTypes", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(paymentContentTypeEClass, ecorePackage.getEString(), "childPaymentContentTypes", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(paymentGatewayAuthorizeNetEClass, PaymentGatewayAuthorizeNet.class, "PaymentGatewayAuthorizeNet", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getPaymentGatewayAuthorizeNet_ApiVersion(), ecorePackage.getEString(), "apiVersion", null, 0, 1, PaymentGatewayAuthorizeNet.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -6291,7 +5932,7 @@ public class PaymentPackageImpl extends EPackageImpl implements PaymentPackage {
 		initEAttribute(getPaymentGatewayClearCommerce_EffectiveAlias(), ecorePackage.getEString(), "effectiveAlias", null, 0, 1, PaymentGatewayClearCommerce.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getPaymentGatewayClearCommerce_EnableCVM(), ecorePackage.getEBoolean(), "enableCVM", null, 0, 1, PaymentGatewayClearCommerce.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getPaymentGatewayClearCommerce_GroupId(), ecorePackage.getEString(), "groupId", null, 0, 1, PaymentGatewayClearCommerce.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getPaymentGatewayClearCommerce_ProcessMode(), ecorePackage.getEBoolean(), "processMode", null, 0, 1, PaymentGatewayClearCommerce.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getPaymentGatewayClearCommerce_ProcessMode(), ecorePackage.getEChar(), "processMode", null, 0, 1, PaymentGatewayClearCommerce.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getPaymentGatewayClearCommerce_Pwd(), ecorePackage.getEString(), "pwd", null, 0, 1, PaymentGatewayClearCommerce.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getPaymentGatewayClearCommerce_ServerURL(), ecorePackage.getEString(), "serverURL", null, 0, 1, PaymentGatewayClearCommerce.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getPaymentGatewayClearCommerce_SourceId(), ecorePackage.getEString(), "sourceId", null, 0, 1, PaymentGatewayClearCommerce.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -6313,9 +5954,9 @@ public class PaymentPackageImpl extends EPackageImpl implements PaymentPackage {
 		initEReference(getPaymentGatewayConfigType_ParentTypeId(), this.getPaymentGatewayConfigType(), null, "parentTypeId", null, 0, 1, PaymentGatewayConfigType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getPaymentGatewayConfigType_ParentTypeId().getEKeys().add(this.getPaymentGatewayConfigType_PaymentGatewayConfigTypeId());
 
-		initEOperation(getPaymentGatewayConfigType__ChildPaymentGatewayConfigTypes(), ecorePackage.getEString(), "childPaymentGatewayConfigTypes", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(paymentGatewayConfigTypeEClass, ecorePackage.getEString(), "childPaymentGatewayConfigTypes", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		initEOperation(getPaymentGatewayConfigType__PaymentGatewayConfigs(), ecorePackage.getEString(), "paymentGatewayConfigs", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(paymentGatewayConfigTypeEClass, ecorePackage.getEString(), "paymentGatewayConfigs", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(paymentGatewayCyberSourceEClass, PaymentGatewayCyberSource.class, "PaymentGatewayCyberSource", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getPaymentGatewayCyberSource_ApiVersion(), ecorePackage.getEString(), "apiVersion", null, 0, 1, PaymentGatewayCyberSource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -6323,7 +5964,7 @@ public class PaymentPackageImpl extends EPackageImpl implements PaymentPackage {
 		initEAttribute(getPaymentGatewayCyberSource_AvsDeclineCodes(), ecorePackage.getEString(), "avsDeclineCodes", null, 0, 1, PaymentGatewayCyberSource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getPaymentGatewayCyberSource_DisableBillAvs(), ecorePackage.getEBoolean(), "disableBillAvs", null, 0, 1, PaymentGatewayCyberSource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getPaymentGatewayCyberSource_EnableDav(), ecorePackage.getEBoolean(), "enableDav", null, 0, 1, PaymentGatewayCyberSource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getPaymentGatewayCyberSource_FraudScore(), ecorePackage.getEBoolean(), "fraudScore", null, 0, 1, PaymentGatewayCyberSource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getPaymentGatewayCyberSource_FraudScore(), ecorePackage.getEChar(), "fraudScore", null, 0, 1, PaymentGatewayCyberSource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getPaymentGatewayCyberSource_IgnoreAvs(), ecorePackage.getEString(), "ignoreAvs", null, 0, 1, PaymentGatewayCyberSource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getPaymentGatewayCyberSource_KeysDir(), ecorePackage.getEString(), "keysDir", null, 0, 1, PaymentGatewayCyberSource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getPaymentGatewayCyberSource_KeysFile(), ecorePackage.getEString(), "keysFile", null, 0, 1, PaymentGatewayCyberSource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -6395,7 +6036,7 @@ public class PaymentPackageImpl extends EPackageImpl implements PaymentPackage {
 		initEAttribute(getPaymentGatewayPayflowPro_LoggingLevel(), ecorePackage.getELong(), "loggingLevel", null, 0, 1, PaymentGatewayPayflowPro.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getPaymentGatewayPayflowPro_MaxLogFileSize(), ecorePackage.getELong(), "maxLogFileSize", null, 0, 1, PaymentGatewayPayflowPro.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getPaymentGatewayPayflowPro_Partner(), ecorePackage.getEString(), "partner", null, 0, 1, PaymentGatewayPayflowPro.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getPaymentGatewayPayflowPro_PreAuth(), ecorePackage.getEBoolean(), "preAuth", null, 0, 1, PaymentGatewayPayflowPro.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getPaymentGatewayPayflowPro_PreAuth(), ecorePackage.getEChar(), "preAuth", null, 0, 1, PaymentGatewayPayflowPro.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getPaymentGatewayPayflowPro_ProxyAddress(), ecorePackage.getEString(), "proxyAddress", null, 0, 1, PaymentGatewayPayflowPro.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getPaymentGatewayPayflowPro_ProxyLogon(), ecorePackage.getEString(), "proxyLogon", null, 0, 1, PaymentGatewayPayflowPro.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getPaymentGatewayPayflowPro_ProxyPassword(), ecorePackage.getEString(), "proxyPassword", null, 0, 1, PaymentGatewayPayflowPro.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -6446,9 +6087,9 @@ public class PaymentPackageImpl extends EPackageImpl implements PaymentPackage {
 		initEReference(getPaymentGatewayResponse_PaymentMethodId(), this.getPaymentMethod(), null, "paymentMethodId", null, 0, 1, PaymentGatewayResponse.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getPaymentGatewayResponse_PaymentMethodId().getEKeys().add(this.getPaymentMethod_PaymentMethodId());
 
-		initEOperation(getPaymentGatewayResponse__PaymentGatewayRespMsgs(), ecorePackage.getEString(), "paymentGatewayRespMsgs", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(paymentGatewayResponseEClass, ecorePackage.getEString(), "paymentGatewayRespMsgs", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		initEOperation(getPaymentGatewayResponse__Payments(), ecorePackage.getEString(), "payments", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(paymentGatewayResponseEClass, ecorePackage.getEString(), "payments", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(paymentGatewaySagePayEClass, PaymentGatewaySagePay.class, "PaymentGatewaySagePay", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getPaymentGatewaySagePay_AuthenticationTransType(), ecorePackage.getEString(), "authenticationTransType", null, 0, 1, PaymentGatewaySagePay.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -6477,8 +6118,8 @@ public class PaymentPackageImpl extends EPackageImpl implements PaymentPackage {
 		getPaymentGatewaySecurePay_PaymentGatewayConfigId().getEKeys().add(this.getPaymentGatewayConfig_PaymentGatewayConfigId());
 
 		initEClass(paymentGatewayWorldPayEClass, PaymentGatewayWorldPay.class, "PaymentGatewayWorldPay", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getPaymentGatewayWorldPay_AuthMode(), ecorePackage.getEBoolean(), "authMode", null, 0, 1, PaymentGatewayWorldPay.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getPaymentGatewayWorldPay_FixContact(), ecorePackage.getEBoolean(), "fixContact", null, 0, 1, PaymentGatewayWorldPay.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getPaymentGatewayWorldPay_AuthMode(), ecorePackage.getEChar(), "authMode", null, 0, 1, PaymentGatewayWorldPay.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getPaymentGatewayWorldPay_FixContact(), ecorePackage.getEChar(), "fixContact", null, 0, 1, PaymentGatewayWorldPay.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getPaymentGatewayWorldPay_HideContact(), ecorePackage.getEBoolean(), "hideContact", null, 0, 1, PaymentGatewayWorldPay.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getPaymentGatewayWorldPay_HideCurrency(), ecorePackage.getEBoolean(), "hideCurrency", null, 0, 1, PaymentGatewayWorldPay.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getPaymentGatewayWorldPay_InstId(), ecorePackage.getEString(), "instId", null, 0, 1, PaymentGatewayWorldPay.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -6520,9 +6161,9 @@ public class PaymentPackageImpl extends EPackageImpl implements PaymentPackage {
 		initEReference(getPaymentGroupType_ParentTypeId(), this.getPaymentGroupType(), null, "parentTypeId", null, 0, 1, PaymentGroupType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getPaymentGroupType_ParentTypeId().getEKeys().add(this.getPaymentGroupType_PaymentGroupTypeId());
 
-		initEOperation(getPaymentGroupType__ChildPaymentGroupTypes(), ecorePackage.getEString(), "childPaymentGroupTypes", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(paymentGroupTypeEClass, ecorePackage.getEString(), "childPaymentGroupTypes", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		initEOperation(getPaymentGroupType__PaymentGroups(), ecorePackage.getEString(), "paymentGroups", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(paymentGroupTypeEClass, ecorePackage.getEString(), "paymentGroups", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(paymentMethodEClass, PaymentMethod.class, "PaymentMethod", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getPaymentMethod_PaymentMethodId(), ecorePackage.getEString(), "paymentMethodId", null, 1, 1, PaymentMethod.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -6538,34 +6179,34 @@ public class PaymentPackageImpl extends EPackageImpl implements PaymentPackage {
 		initEReference(getPaymentMethod_FinAccountId(), theFinaccountPackage.getFinAccount(), null, "finAccountId", null, 0, 1, PaymentMethod.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getPaymentMethod_FinAccountId().getEKeys().add(theFinaccountPackage.getFinAccount_FinAccountId());
 
-		initEOperation(getPaymentMethod__OrderPaymentPreferences(), ecorePackage.getEString(), "orderPaymentPreferences", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(paymentMethodEClass, ecorePackage.getEString(), "orderPaymentPreferences", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		initEOperation(getPaymentMethod__PartyAcctgPreferences(), ecorePackage.getEString(), "partyAcctgPreferences", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(paymentMethodEClass, ecorePackage.getEString(), "partyAcctgPreferences", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		initEOperation(getPaymentMethod__PaymentGatewayResponses(), ecorePackage.getEString(), "paymentGatewayResponses", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(paymentMethodEClass, ecorePackage.getEString(), "paymentGatewayResponses", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		initEOperation(getPaymentMethod__Payments(), ecorePackage.getEString(), "payments", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(paymentMethodEClass, ecorePackage.getEString(), "payments", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		initEOperation(getPaymentMethod__ReplenishFinAccounts(), ecorePackage.getEString(), "replenishFinAccounts", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(paymentMethodEClass, ecorePackage.getEString(), "replenishFinAccounts", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		initEOperation(getPaymentMethod__ReturnHeaders(), ecorePackage.getEString(), "returnHeaders", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(paymentMethodEClass, ecorePackage.getEString(), "returnHeaders", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		initEOperation(getPaymentMethod__ShoppingLists(), ecorePackage.getEString(), "shoppingLists", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(paymentMethodEClass, ecorePackage.getEString(), "shoppingLists", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(paymentMethodTypeEClass, PaymentMethodType.class, "PaymentMethodType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getPaymentMethodType_PaymentMethodTypeId(), ecorePackage.getEString(), "paymentMethodTypeId", null, 1, 1, PaymentMethodType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getPaymentMethodType_Description(), ecorePackage.getEString(), "description", null, 0, 1, PaymentMethodType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getPaymentMethodType_DefaultGlAccountId(), theLedgerPackage.getGlAccount(), null, "defaultGlAccountId", null, 0, 1, PaymentMethodType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getPaymentMethodType_DefaultGlAccountId().getEKeys().add(theLedgerPackage.getGlAccount_GlAccountId());
-		initEAttribute(getPaymentMethodType_PaymentMethodTypeGlAccounts(), ecorePackage.getEString(), "paymentMethodTypeGlAccounts", null, 0, -1, PaymentMethodType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getPaymentMethodType_PaymentMethodTypeGlAccounts(), ecorePackage.getEString(), "paymentMethodTypeGlAccounts", null, 1, -1, PaymentMethodType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEOperation(getPaymentMethodType__OrderPaymentPreferences(), ecorePackage.getEString(), "orderPaymentPreferences", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(paymentMethodTypeEClass, ecorePackage.getEString(), "orderPaymentPreferences", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		initEOperation(getPaymentMethodType__PaymentGatewayResponses(), ecorePackage.getEString(), "paymentGatewayResponses", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(paymentMethodTypeEClass, ecorePackage.getEString(), "paymentGatewayResponses", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		initEOperation(getPaymentMethodType__PaymentMethods(), ecorePackage.getEString(), "paymentMethods", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(paymentMethodTypeEClass, ecorePackage.getEString(), "paymentMethods", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		initEOperation(getPaymentMethodType__Payments(), ecorePackage.getEString(), "payments", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(paymentMethodTypeEClass, ecorePackage.getEString(), "payments", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(paymentMethodTypeGlAccountEClass, PaymentMethodTypeGlAccount.class, "PaymentMethodTypeGlAccount", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getPaymentMethodTypeGlAccount_PaymentMethodTypeId(), this.getPaymentMethodType(), null, "paymentMethodTypeId", null, 0, 1, PaymentMethodTypeGlAccount.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -6581,12 +6222,12 @@ public class PaymentPackageImpl extends EPackageImpl implements PaymentPackage {
 		initEAttribute(getPaymentType_HasTable(), ecorePackage.getEBoolean(), "hasTable", null, 0, 1, PaymentType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getPaymentType_ParentTypeId(), this.getPaymentType(), null, "parentTypeId", null, 0, 1, PaymentType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getPaymentType_ParentTypeId().getEKeys().add(this.getPaymentType_PaymentTypeId());
-		initEAttribute(getPaymentType_PaymentGlAccountTypeMaps(), ecorePackage.getEString(), "paymentGlAccountTypeMaps", null, 0, -1, PaymentType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getPaymentType_PaymentTypeAttrs(), ecorePackage.getEString(), "paymentTypeAttrs", null, 0, -1, PaymentType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getPaymentType_PaymentGlAccountTypeMaps(), ecorePackage.getEString(), "paymentGlAccountTypeMaps", null, 1, -1, PaymentType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getPaymentType_PaymentTypeAttrs(), ecorePackage.getEString(), "paymentTypeAttrs", null, 1, -1, PaymentType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEOperation(getPaymentType__ChildPaymentTypes(), ecorePackage.getEString(), "childPaymentTypes", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(paymentTypeEClass, ecorePackage.getEString(), "childPaymentTypes", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		initEOperation(getPaymentType__Payments(), ecorePackage.getEString(), "payments", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(paymentTypeEClass, ecorePackage.getEString(), "payments", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(paymentTypeAttrEClass, PaymentTypeAttr.class, "PaymentTypeAttr", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getPaymentTypeAttr_AttrName(), ecorePackage.getEString(), "attrName", null, 1, 1, PaymentTypeAttr.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -6612,6 +6253,8 @@ public class PaymentPackageImpl extends EPackageImpl implements PaymentPackage {
 		// Create annotations
 		// mimo-ent-frame
 		createMimoentframeAnnotations();
+		// mimo-ent-format
+		createMimoentformatAnnotations();
 		// mimo-ent-slot
 		createMimoentslotAnnotations();
 		// mimo-ent-domain
@@ -6707,6 +6350,2198 @@ public class PaymentPackageImpl extends EPackageImpl implements PaymentPackage {
 	}
 
 	/**
+	 * Initializes the annotations for <b>mimo-ent-format</b>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void createMimoentformatAnnotations() {
+		String source = "mimo-ent-format";
+		addAnnotation
+		  (billingAccountEClass.getEOperations().get(0),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (billingAccountEClass.getEOperations().get(1),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (billingAccountEClass.getEOperations().get(2),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (billingAccountEClass.getEOperations().get(3),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (billingAccountEClass.getEOperations().get(4),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (billingAccountEClass.getEOperations().get(5),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (getBillingAccount_BillingAccountId(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (getBillingAccount_AccountLimit(),
+		   source,
+		   new String[] {
+			   "type", "currency-amount",
+			   "precision", "18",
+			   "scale", "2"
+		   });
+		addAnnotation
+		  (getBillingAccount_Description(),
+		   source,
+		   new String[] {
+			   "type", "description",
+			   "length", "255"
+		   });
+		addAnnotation
+		  (getBillingAccount_ExternalAccountId(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (getBillingAccount_FromDate(),
+		   source,
+		   new String[] {
+			   "type", "date-time"
+		   });
+		addAnnotation
+		  (getBillingAccount_ThruDate(),
+		   source,
+		   new String[] {
+			   "type", "date-time"
+		   });
+		addAnnotation
+		  (getBillingAccountRole_FromDate(),
+		   source,
+		   new String[] {
+			   "type", "date-time"
+		   });
+		addAnnotation
+		  (getBillingAccountRole_ThruDate(),
+		   source,
+		   new String[] {
+			   "type", "date-time"
+		   });
+		addAnnotation
+		  (getBillingAccountTerm_BillingAccountTermId(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (getBillingAccountTerm_TermDays(),
+		   source,
+		   new String[] {
+			   "type", "numeric",
+			   "precision", "20",
+			   "scale", "0"
+		   });
+		addAnnotation
+		  (getBillingAccountTerm_TermValue(),
+		   source,
+		   new String[] {
+			   "type", "currency-amount",
+			   "precision", "18",
+			   "scale", "2"
+		   });
+		addAnnotation
+		  (getBillingAccountTerm_BillingAccountTermAttrs(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (getBillingAccountTermAttr_AttrName(),
+		   source,
+		   new String[] {
+			   "type", "id-long",
+			   "length", "60"
+		   });
+		addAnnotation
+		  (getBillingAccountTermAttr_AttrValue(),
+		   source,
+		   new String[] {
+			   "type", "value",
+			   "length", "255"
+		   });
+		addAnnotation
+		  (getCheckAccount_AccountNumber(),
+		   source,
+		   new String[] {
+			   "type", "long-varchar",
+			   "length", "255"
+		   });
+		addAnnotation
+		  (getCheckAccount_AccountType(),
+		   source,
+		   new String[] {
+			   "type", "short-varchar",
+			   "length", "60"
+		   });
+		addAnnotation
+		  (getCheckAccount_BankName(),
+		   source,
+		   new String[] {
+			   "type", "name",
+			   "length", "100"
+		   });
+		addAnnotation
+		  (getCheckAccount_BranchCode(),
+		   source,
+		   new String[] {
+			   "type", "short-varchar",
+			   "length", "60"
+		   });
+		addAnnotation
+		  (getCheckAccount_CompanyNameOnAccount(),
+		   source,
+		   new String[] {
+			   "type", "name",
+			   "length", "100"
+		   });
+		addAnnotation
+		  (getCheckAccount_NameOnAccount(),
+		   source,
+		   new String[] {
+			   "type", "name",
+			   "length", "100"
+		   });
+		addAnnotation
+		  (getCheckAccount_RoutingNumber(),
+		   source,
+		   new String[] {
+			   "type", "short-varchar",
+			   "length", "60"
+		   });
+		addAnnotation
+		  (getCreditCard_CardNumber(),
+		   source,
+		   new String[] {
+			   "type", "credit-card-number",
+			   "length", "255"
+		   });
+		addAnnotation
+		  (getCreditCard_CardType(),
+		   source,
+		   new String[] {
+			   "type", "short-varchar",
+			   "length", "60"
+		   });
+		addAnnotation
+		  (getCreditCard_CompanyNameOnCard(),
+		   source,
+		   new String[] {
+			   "type", "name",
+			   "length", "100"
+		   });
+		addAnnotation
+		  (getCreditCard_ConsecutiveFailedAuths(),
+		   source,
+		   new String[] {
+			   "type", "numeric",
+			   "precision", "20",
+			   "scale", "0"
+		   });
+		addAnnotation
+		  (getCreditCard_ConsecutiveFailedNsf(),
+		   source,
+		   new String[] {
+			   "type", "numeric",
+			   "precision", "20",
+			   "scale", "0"
+		   });
+		addAnnotation
+		  (getCreditCard_ExpireDate(),
+		   source,
+		   new String[] {
+			   "type", "credit-card-date",
+			   "length", "7"
+		   });
+		addAnnotation
+		  (getCreditCard_FirstNameOnCard(),
+		   source,
+		   new String[] {
+			   "type", "name",
+			   "length", "100"
+		   });
+		addAnnotation
+		  (getCreditCard_IssueNumber(),
+		   source,
+		   new String[] {
+			   "type", "credit-card-date",
+			   "length", "7"
+		   });
+		addAnnotation
+		  (getCreditCard_LastFailedAuthDate(),
+		   source,
+		   new String[] {
+			   "type", "date-time"
+		   });
+		addAnnotation
+		  (getCreditCard_LastFailedNsfDate(),
+		   source,
+		   new String[] {
+			   "type", "date-time"
+		   });
+		addAnnotation
+		  (getCreditCard_LastNameOnCard(),
+		   source,
+		   new String[] {
+			   "type", "name",
+			   "length", "100"
+		   });
+		addAnnotation
+		  (getCreditCard_MiddleNameOnCard(),
+		   source,
+		   new String[] {
+			   "type", "name",
+			   "length", "100"
+		   });
+		addAnnotation
+		  (getCreditCard_SuffixOnCard(),
+		   source,
+		   new String[] {
+			   "type", "name",
+			   "length", "100"
+		   });
+		addAnnotation
+		  (getCreditCard_TitleOnCard(),
+		   source,
+		   new String[] {
+			   "type", "name",
+			   "length", "100"
+		   });
+		addAnnotation
+		  (getCreditCard_ValidFromDate(),
+		   source,
+		   new String[] {
+			   "type", "credit-card-date",
+			   "length", "7"
+		   });
+		addAnnotation
+		  (getCreditCardTypeGlAccount_CardType(),
+		   source,
+		   new String[] {
+			   "type", "short-varchar",
+			   "length", "60"
+		   });
+		addAnnotation
+		  (getCreditCardTypeGlAccount_OrganizationPartyId(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (getCreditCardTypeGlAccount_GlAccountId(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (getDeduction_DeductionId(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (getDeduction_Amount(),
+		   source,
+		   new String[] {
+			   "type", "currency-amount",
+			   "precision", "18",
+			   "scale", "2"
+		   });
+		addAnnotation
+		  (deductionTypeEClass.getEOperations().get(0),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (deductionTypeEClass.getEOperations().get(1),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (getDeductionType_DeductionTypeId(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (getDeductionType_Description(),
+		   source,
+		   new String[] {
+			   "type", "description",
+			   "length", "255"
+		   });
+		addAnnotation
+		  (getDeductionType_HasTable(),
+		   source,
+		   new String[] {
+			   "type", "indicator",
+			   "length", "1"
+		   });
+		addAnnotation
+		  (getEftAccount_AccountNumber(),
+		   source,
+		   new String[] {
+			   "type", "long-varchar",
+			   "length", "255"
+		   });
+		addAnnotation
+		  (getEftAccount_AccountType(),
+		   source,
+		   new String[] {
+			   "type", "short-varchar",
+			   "length", "60"
+		   });
+		addAnnotation
+		  (getEftAccount_BankName(),
+		   source,
+		   new String[] {
+			   "type", "name",
+			   "length", "100"
+		   });
+		addAnnotation
+		  (getEftAccount_CompanyNameOnAccount(),
+		   source,
+		   new String[] {
+			   "type", "name",
+			   "length", "100"
+		   });
+		addAnnotation
+		  (getEftAccount_NameOnAccount(),
+		   source,
+		   new String[] {
+			   "type", "name",
+			   "length", "100"
+		   });
+		addAnnotation
+		  (getEftAccount_RoutingNumber(),
+		   source,
+		   new String[] {
+			   "type", "short-varchar",
+			   "length", "60"
+		   });
+		addAnnotation
+		  (getEftAccount_YearsAtBank(),
+		   source,
+		   new String[] {
+			   "type", "numeric",
+			   "precision", "20",
+			   "scale", "0"
+		   });
+		addAnnotation
+		  (getGiftCard_CardNumber(),
+		   source,
+		   new String[] {
+			   "type", "long-varchar",
+			   "length", "255"
+		   });
+		addAnnotation
+		  (getGiftCard_ExpireDate(),
+		   source,
+		   new String[] {
+			   "type", "credit-card-date",
+			   "length", "7"
+		   });
+		addAnnotation
+		  (getGiftCard_PinNumber(),
+		   source,
+		   new String[] {
+			   "type", "long-varchar",
+			   "length", "255"
+		   });
+		addAnnotation
+		  (getGiftCardFulfillment_FulfillmentId(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (getGiftCardFulfillment_Amount(),
+		   source,
+		   new String[] {
+			   "type", "currency-amount",
+			   "precision", "18",
+			   "scale", "2"
+		   });
+		addAnnotation
+		  (getGiftCardFulfillment_AuthCode(),
+		   source,
+		   new String[] {
+			   "type", "short-varchar",
+			   "length", "60"
+		   });
+		addAnnotation
+		  (getGiftCardFulfillment_CardNumber(),
+		   source,
+		   new String[] {
+			   "type", "long-varchar",
+			   "length", "255"
+		   });
+		addAnnotation
+		  (getGiftCardFulfillment_FulfillmentDate(),
+		   source,
+		   new String[] {
+			   "type", "date-time"
+		   });
+		addAnnotation
+		  (getGiftCardFulfillment_MerchantId(),
+		   source,
+		   new String[] {
+			   "type", "id-vlong",
+			   "length", "255"
+		   });
+		addAnnotation
+		  (getGiftCardFulfillment_OrderItemSeqId(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (getGiftCardFulfillment_PinNumber(),
+		   source,
+		   new String[] {
+			   "type", "long-varchar",
+			   "length", "255"
+		   });
+		addAnnotation
+		  (getGiftCardFulfillment_ReferenceNum(),
+		   source,
+		   new String[] {
+			   "type", "short-varchar",
+			   "length", "60"
+		   });
+		addAnnotation
+		  (getGiftCardFulfillment_ResponseCode(),
+		   source,
+		   new String[] {
+			   "type", "short-varchar",
+			   "length", "60"
+		   });
+		addAnnotation
+		  (getPayPalPaymentMethod_AvsAddr(),
+		   source,
+		   new String[] {
+			   "type", "indicator",
+			   "length", "1"
+		   });
+		addAnnotation
+		  (getPayPalPaymentMethod_AvsZip(),
+		   source,
+		   new String[] {
+			   "type", "indicator",
+			   "length", "1"
+		   });
+		addAnnotation
+		  (getPayPalPaymentMethod_CorrelationId(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (getPayPalPaymentMethod_ExpressCheckoutToken(),
+		   source,
+		   new String[] {
+			   "type", "short-varchar",
+			   "length", "60"
+		   });
+		addAnnotation
+		  (getPayPalPaymentMethod_PayerId(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (getPayPalPaymentMethod_PayerStatus(),
+		   source,
+		   new String[] {
+			   "type", "short-varchar",
+			   "length", "60"
+		   });
+		addAnnotation
+		  (getPayPalPaymentMethod_TransactionId(),
+		   source,
+		   new String[] {
+			   "type", "short-varchar",
+			   "length", "60"
+		   });
+		addAnnotation
+		  (paymentEClass.getEOperations().get(0),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (paymentEClass.getEOperations().get(1),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (paymentEClass.getEOperations().get(2),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (paymentEClass.getEOperations().get(3),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (paymentEClass.getEOperations().get(4),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (getPayment_PaymentId(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (getPayment_ActualCurrencyAmount(),
+		   source,
+		   new String[] {
+			   "type", "currency-amount",
+			   "precision", "18",
+			   "scale", "2"
+		   });
+		addAnnotation
+		  (getPayment_Amount(),
+		   source,
+		   new String[] {
+			   "type", "currency-amount",
+			   "precision", "18",
+			   "scale", "2"
+		   });
+		addAnnotation
+		  (getPayment_Comments(),
+		   source,
+		   new String[] {
+			   "type", "comment",
+			   "length", "255"
+		   });
+		addAnnotation
+		  (getPayment_EffectiveDate(),
+		   source,
+		   new String[] {
+			   "type", "date-time"
+		   });
+		addAnnotation
+		  (getPayment_PaymentRefNum(),
+		   source,
+		   new String[] {
+			   "type", "short-varchar",
+			   "length", "60"
+		   });
+		addAnnotation
+		  (getPayment_PaymentAttributes(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (getPaymentApplication_PaymentApplicationId(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (getPaymentApplication_AmountApplied(),
+		   source,
+		   new String[] {
+			   "type", "currency-amount",
+			   "precision", "18",
+			   "scale", "2"
+		   });
+		addAnnotation
+		  (getPaymentApplication_InvoiceItemSeqId(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (getPaymentAttribute_AttrName(),
+		   source,
+		   new String[] {
+			   "type", "id-long",
+			   "length", "60"
+		   });
+		addAnnotation
+		  (getPaymentAttribute_AttrDescription(),
+		   source,
+		   new String[] {
+			   "type", "description",
+			   "length", "255"
+		   });
+		addAnnotation
+		  (getPaymentAttribute_AttrValue(),
+		   source,
+		   new String[] {
+			   "type", "value",
+			   "length", "255"
+		   });
+		addAnnotation
+		  (getPaymentBudgetAllocation_BudgetItemSeqId(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (getPaymentBudgetAllocation_Amount(),
+		   source,
+		   new String[] {
+			   "type", "currency-amount",
+			   "precision", "18",
+			   "scale", "2"
+		   });
+		addAnnotation
+		  (getPaymentContent_FromDate(),
+		   source,
+		   new String[] {
+			   "type", "date-time"
+		   });
+		addAnnotation
+		  (getPaymentContent_ThruDate(),
+		   source,
+		   new String[] {
+			   "type", "date-time"
+		   });
+		addAnnotation
+		  (paymentContentTypeEClass.getEOperations().get(0),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (getPaymentContentType_PaymentContentTypeId(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (getPaymentContentType_Description(),
+		   source,
+		   new String[] {
+			   "type", "description",
+			   "length", "255"
+		   });
+		addAnnotation
+		  (getPaymentContentType_HasTable(),
+		   source,
+		   new String[] {
+			   "type", "indicator",
+			   "length", "1"
+		   });
+		addAnnotation
+		  (getPaymentGatewayAuthorizeNet_ApiVersion(),
+		   source,
+		   new String[] {
+			   "type", "short-varchar",
+			   "length", "60"
+		   });
+		addAnnotation
+		  (getPaymentGatewayAuthorizeNet_CertificateAlias(),
+		   source,
+		   new String[] {
+			   "type", "value",
+			   "length", "255"
+		   });
+		addAnnotation
+		  (getPaymentGatewayAuthorizeNet_CpDeviceType(),
+		   source,
+		   new String[] {
+			   "type", "short-varchar",
+			   "length", "60"
+		   });
+		addAnnotation
+		  (getPaymentGatewayAuthorizeNet_CpMarketType(),
+		   source,
+		   new String[] {
+			   "type", "short-varchar",
+			   "length", "60"
+		   });
+		addAnnotation
+		  (getPaymentGatewayAuthorizeNet_CpVersion(),
+		   source,
+		   new String[] {
+			   "type", "short-varchar",
+			   "length", "60"
+		   });
+		addAnnotation
+		  (getPaymentGatewayAuthorizeNet_DelimitedData(),
+		   source,
+		   new String[] {
+			   "type", "short-varchar",
+			   "length", "60"
+		   });
+		addAnnotation
+		  (getPaymentGatewayAuthorizeNet_DelimiterChar(),
+		   source,
+		   new String[] {
+			   "type", "short-varchar",
+			   "length", "60"
+		   });
+		addAnnotation
+		  (getPaymentGatewayAuthorizeNet_DuplicateWindow(),
+		   source,
+		   new String[] {
+			   "type", "numeric",
+			   "precision", "20",
+			   "scale", "0"
+		   });
+		addAnnotation
+		  (getPaymentGatewayAuthorizeNet_EmailCustomer(),
+		   source,
+		   new String[] {
+			   "type", "short-varchar",
+			   "length", "60"
+		   });
+		addAnnotation
+		  (getPaymentGatewayAuthorizeNet_EmailMerchant(),
+		   source,
+		   new String[] {
+			   "type", "short-varchar",
+			   "length", "60"
+		   });
+		addAnnotation
+		  (getPaymentGatewayAuthorizeNet_Method(),
+		   source,
+		   new String[] {
+			   "type", "short-varchar",
+			   "length", "60"
+		   });
+		addAnnotation
+		  (getPaymentGatewayAuthorizeNet_Pwd(),
+		   source,
+		   new String[] {
+			   "type", "value",
+			   "length", "255"
+		   });
+		addAnnotation
+		  (getPaymentGatewayAuthorizeNet_RelayResponse(),
+		   source,
+		   new String[] {
+			   "type", "short-varchar",
+			   "length", "60"
+		   });
+		addAnnotation
+		  (getPaymentGatewayAuthorizeNet_TestMode(),
+		   source,
+		   new String[] {
+			   "type", "short-varchar",
+			   "length", "60"
+		   });
+		addAnnotation
+		  (getPaymentGatewayAuthorizeNet_TranKey(),
+		   source,
+		   new String[] {
+			   "type", "value",
+			   "length", "255"
+		   });
+		addAnnotation
+		  (getPaymentGatewayAuthorizeNet_TransDescription(),
+		   source,
+		   new String[] {
+			   "type", "value",
+			   "length", "255"
+		   });
+		addAnnotation
+		  (getPaymentGatewayAuthorizeNet_TransactionUrl(),
+		   source,
+		   new String[] {
+			   "type", "value",
+			   "length", "255"
+		   });
+		addAnnotation
+		  (getPaymentGatewayAuthorizeNet_UserId(),
+		   source,
+		   new String[] {
+			   "type", "value",
+			   "length", "255"
+		   });
+		addAnnotation
+		  (getPaymentGatewayClearCommerce_ClientId(),
+		   source,
+		   new String[] {
+			   "type", "short-varchar",
+			   "length", "60"
+		   });
+		addAnnotation
+		  (getPaymentGatewayClearCommerce_EffectiveAlias(),
+		   source,
+		   new String[] {
+			   "type", "short-varchar",
+			   "length", "60"
+		   });
+		addAnnotation
+		  (getPaymentGatewayClearCommerce_EnableCVM(),
+		   source,
+		   new String[] {
+			   "type", "indicator",
+			   "length", "1"
+		   });
+		addAnnotation
+		  (getPaymentGatewayClearCommerce_GroupId(),
+		   source,
+		   new String[] {
+			   "type", "short-varchar",
+			   "length", "60"
+		   });
+		addAnnotation
+		  (getPaymentGatewayClearCommerce_ProcessMode(),
+		   source,
+		   new String[] {
+			   "type", "indicator",
+			   "length", "1"
+		   });
+		addAnnotation
+		  (getPaymentGatewayClearCommerce_Pwd(),
+		   source,
+		   new String[] {
+			   "type", "value",
+			   "length", "255"
+		   });
+		addAnnotation
+		  (getPaymentGatewayClearCommerce_ServerURL(),
+		   source,
+		   new String[] {
+			   "type", "value",
+			   "length", "255"
+		   });
+		addAnnotation
+		  (getPaymentGatewayClearCommerce_SourceId(),
+		   source,
+		   new String[] {
+			   "type", "short-varchar",
+			   "length", "60"
+		   });
+		addAnnotation
+		  (getPaymentGatewayClearCommerce_UserAlias(),
+		   source,
+		   new String[] {
+			   "type", "short-varchar",
+			   "length", "60"
+		   });
+		addAnnotation
+		  (getPaymentGatewayClearCommerce_Username(),
+		   source,
+		   new String[] {
+			   "type", "short-varchar",
+			   "length", "60"
+		   });
+		addAnnotation
+		  (getPaymentGatewayConfig_PaymentGatewayConfigId(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (getPaymentGatewayConfig_Description(),
+		   source,
+		   new String[] {
+			   "type", "description",
+			   "length", "255"
+		   });
+		addAnnotation
+		  (paymentGatewayConfigTypeEClass.getEOperations().get(0),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (paymentGatewayConfigTypeEClass.getEOperations().get(1),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (getPaymentGatewayConfigType_PaymentGatewayConfigTypeId(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (getPaymentGatewayConfigType_Description(),
+		   source,
+		   new String[] {
+			   "type", "description",
+			   "length", "255"
+		   });
+		addAnnotation
+		  (getPaymentGatewayConfigType_HasTable(),
+		   source,
+		   new String[] {
+			   "type", "indicator",
+			   "length", "1"
+		   });
+		addAnnotation
+		  (getPaymentGatewayCyberSource_ApiVersion(),
+		   source,
+		   new String[] {
+			   "type", "short-varchar",
+			   "length", "60"
+		   });
+		addAnnotation
+		  (getPaymentGatewayCyberSource_AutoBill(),
+		   source,
+		   new String[] {
+			   "type", "short-varchar",
+			   "length", "60"
+		   });
+		addAnnotation
+		  (getPaymentGatewayCyberSource_AvsDeclineCodes(),
+		   source,
+		   new String[] {
+			   "type", "value",
+			   "length", "255"
+		   });
+		addAnnotation
+		  (getPaymentGatewayCyberSource_DisableBillAvs(),
+		   source,
+		   new String[] {
+			   "type", "indicator",
+			   "length", "1"
+		   });
+		addAnnotation
+		  (getPaymentGatewayCyberSource_EnableDav(),
+		   source,
+		   new String[] {
+			   "type", "indicator",
+			   "length", "1"
+		   });
+		addAnnotation
+		  (getPaymentGatewayCyberSource_FraudScore(),
+		   source,
+		   new String[] {
+			   "type", "indicator",
+			   "length", "1"
+		   });
+		addAnnotation
+		  (getPaymentGatewayCyberSource_IgnoreAvs(),
+		   source,
+		   new String[] {
+			   "type", "short-varchar",
+			   "length", "60"
+		   });
+		addAnnotation
+		  (getPaymentGatewayCyberSource_KeysDir(),
+		   source,
+		   new String[] {
+			   "type", "value",
+			   "length", "255"
+		   });
+		addAnnotation
+		  (getPaymentGatewayCyberSource_KeysFile(),
+		   source,
+		   new String[] {
+			   "type", "value",
+			   "length", "255"
+		   });
+		addAnnotation
+		  (getPaymentGatewayCyberSource_LogDir(),
+		   source,
+		   new String[] {
+			   "type", "value",
+			   "length", "255"
+		   });
+		addAnnotation
+		  (getPaymentGatewayCyberSource_LogEnabled(),
+		   source,
+		   new String[] {
+			   "type", "short-varchar",
+			   "length", "60"
+		   });
+		addAnnotation
+		  (getPaymentGatewayCyberSource_LogFile(),
+		   source,
+		   new String[] {
+			   "type", "value",
+			   "length", "255"
+		   });
+		addAnnotation
+		  (getPaymentGatewayCyberSource_LogSize(),
+		   source,
+		   new String[] {
+			   "type", "numeric",
+			   "precision", "20",
+			   "scale", "0"
+		   });
+		addAnnotation
+		  (getPaymentGatewayCyberSource_MerchantContact(),
+		   source,
+		   new String[] {
+			   "type", "value",
+			   "length", "255"
+		   });
+		addAnnotation
+		  (getPaymentGatewayCyberSource_MerchantDescr(),
+		   source,
+		   new String[] {
+			   "type", "value",
+			   "length", "255"
+		   });
+		addAnnotation
+		  (getPaymentGatewayCyberSource_MerchantId(),
+		   source,
+		   new String[] {
+			   "type", "value",
+			   "length", "255"
+		   });
+		addAnnotation
+		  (getPaymentGatewayCyberSource_Production(),
+		   source,
+		   new String[] {
+			   "type", "short-varchar",
+			   "length", "60"
+		   });
+		addAnnotation
+		  (getPaymentGatewayEway_CustomerId(),
+		   source,
+		   new String[] {
+			   "type", "value",
+			   "length", "255"
+		   });
+		addAnnotation
+		  (getPaymentGatewayEway_EnableBeagle(),
+		   source,
+		   new String[] {
+			   "type", "short-varchar",
+			   "length", "60"
+		   });
+		addAnnotation
+		  (getPaymentGatewayEway_EnableCvn(),
+		   source,
+		   new String[] {
+			   "type", "short-varchar",
+			   "length", "60"
+		   });
+		addAnnotation
+		  (getPaymentGatewayEway_RefundPwd(),
+		   source,
+		   new String[] {
+			   "type", "value",
+			   "length", "255"
+		   });
+		addAnnotation
+		  (getPaymentGatewayEway_TestMode(),
+		   source,
+		   new String[] {
+			   "type", "short-varchar",
+			   "length", "60"
+		   });
+		addAnnotation
+		  (getPaymentGatewayOrbital_AuthorizationURI(),
+		   source,
+		   new String[] {
+			   "type", "value",
+			   "length", "255"
+		   });
+		addAnnotation
+		  (getPaymentGatewayOrbital_ConnectionPassword(),
+		   source,
+		   new String[] {
+			   "type", "value",
+			   "length", "255"
+		   });
+		addAnnotation
+		  (getPaymentGatewayOrbital_ConnectionTimeoutSeconds(),
+		   source,
+		   new String[] {
+			   "type", "numeric",
+			   "precision", "20",
+			   "scale", "0"
+		   });
+		addAnnotation
+		  (getPaymentGatewayOrbital_EngineClass(),
+		   source,
+		   new String[] {
+			   "type", "value",
+			   "length", "255"
+		   });
+		addAnnotation
+		  (getPaymentGatewayOrbital_HostName(),
+		   source,
+		   new String[] {
+			   "type", "value",
+			   "length", "255"
+		   });
+		addAnnotation
+		  (getPaymentGatewayOrbital_HostNameFailover(),
+		   source,
+		   new String[] {
+			   "type", "value",
+			   "length", "255"
+		   });
+		addAnnotation
+		  (getPaymentGatewayOrbital_MerchantId(),
+		   source,
+		   new String[] {
+			   "type", "value",
+			   "length", "255"
+		   });
+		addAnnotation
+		  (getPaymentGatewayOrbital_Port(),
+		   source,
+		   new String[] {
+			   "type", "numeric",
+			   "precision", "20",
+			   "scale", "0"
+		   });
+		addAnnotation
+		  (getPaymentGatewayOrbital_PortFailover(),
+		   source,
+		   new String[] {
+			   "type", "numeric",
+			   "precision", "20",
+			   "scale", "0"
+		   });
+		addAnnotation
+		  (getPaymentGatewayOrbital_ReadTimeoutSeconds(),
+		   source,
+		   new String[] {
+			   "type", "numeric",
+			   "precision", "20",
+			   "scale", "0"
+		   });
+		addAnnotation
+		  (getPaymentGatewayOrbital_ResponseType(),
+		   source,
+		   new String[] {
+			   "type", "short-varchar",
+			   "length", "60"
+		   });
+		addAnnotation
+		  (getPaymentGatewayOrbital_SdkVersion(),
+		   source,
+		   new String[] {
+			   "type", "short-varchar",
+			   "length", "60"
+		   });
+		addAnnotation
+		  (getPaymentGatewayOrbital_SslSocketFactory(),
+		   source,
+		   new String[] {
+			   "type", "short-varchar",
+			   "length", "60"
+		   });
+		addAnnotation
+		  (getPaymentGatewayOrbital_Username(),
+		   source,
+		   new String[] {
+			   "type", "short-varchar",
+			   "length", "60"
+		   });
+		addAnnotation
+		  (getPaymentGatewayPayPal_ApiEnvironment(),
+		   source,
+		   new String[] {
+			   "type", "short-varchar",
+			   "length", "60"
+		   });
+		addAnnotation
+		  (getPaymentGatewayPayPal_ApiPassword(),
+		   source,
+		   new String[] {
+			   "type", "short-varchar",
+			   "length", "60"
+		   });
+		addAnnotation
+		  (getPaymentGatewayPayPal_ApiSignature(),
+		   source,
+		   new String[] {
+			   "type", "short-varchar",
+			   "length", "60"
+		   });
+		addAnnotation
+		  (getPaymentGatewayPayPal_ApiUserName(),
+		   source,
+		   new String[] {
+			   "type", "short-varchar",
+			   "length", "60"
+		   });
+		addAnnotation
+		  (getPaymentGatewayPayPal_BusinessEmail(),
+		   source,
+		   new String[] {
+			   "type", "value",
+			   "length", "255"
+		   });
+		addAnnotation
+		  (getPaymentGatewayPayPal_CancelReturnUrl(),
+		   source,
+		   new String[] {
+			   "type", "value",
+			   "length", "255"
+		   });
+		addAnnotation
+		  (getPaymentGatewayPayPal_ConfirmTemplate(),
+		   source,
+		   new String[] {
+			   "type", "value",
+			   "length", "255"
+		   });
+		addAnnotation
+		  (getPaymentGatewayPayPal_ConfirmUrl(),
+		   source,
+		   new String[] {
+			   "type", "value",
+			   "length", "255"
+		   });
+		addAnnotation
+		  (getPaymentGatewayPayPal_ImageUrl(),
+		   source,
+		   new String[] {
+			   "type", "value",
+			   "length", "255"
+		   });
+		addAnnotation
+		  (getPaymentGatewayPayPal_NotifyUrl(),
+		   source,
+		   new String[] {
+			   "type", "value",
+			   "length", "255"
+		   });
+		addAnnotation
+		  (getPaymentGatewayPayPal_RedirectUrl(),
+		   source,
+		   new String[] {
+			   "type", "value",
+			   "length", "255"
+		   });
+		addAnnotation
+		  (getPaymentGatewayPayPal_RequireConfirmedShipping(),
+		   source,
+		   new String[] {
+			   "type", "indicator",
+			   "length", "1"
+		   });
+		addAnnotation
+		  (getPaymentGatewayPayPal_ReturnUrl(),
+		   source,
+		   new String[] {
+			   "type", "value",
+			   "length", "255"
+		   });
+		addAnnotation
+		  (getPaymentGatewayPayPal_ShippingCallbackUrl(),
+		   source,
+		   new String[] {
+			   "type", "url",
+			   "length", "2000"
+		   });
+		addAnnotation
+		  (getPaymentGatewayPayflowPro_CancelReturnUrl(),
+		   source,
+		   new String[] {
+			   "type", "value",
+			   "length", "255"
+		   });
+		addAnnotation
+		  (getPaymentGatewayPayflowPro_CertsPath(),
+		   source,
+		   new String[] {
+			   "type", "value",
+			   "length", "255"
+		   });
+		addAnnotation
+		  (getPaymentGatewayPayflowPro_CheckAvs(),
+		   source,
+		   new String[] {
+			   "type", "indicator",
+			   "length", "1"
+		   });
+		addAnnotation
+		  (getPaymentGatewayPayflowPro_CheckCvv2(),
+		   source,
+		   new String[] {
+			   "type", "indicator",
+			   "length", "1"
+		   });
+		addAnnotation
+		  (getPaymentGatewayPayflowPro_EnableTransmit(),
+		   source,
+		   new String[] {
+			   "type", "value",
+			   "length", "255"
+		   });
+		addAnnotation
+		  (getPaymentGatewayPayflowPro_HostAddress(),
+		   source,
+		   new String[] {
+			   "type", "value",
+			   "length", "255"
+		   });
+		addAnnotation
+		  (getPaymentGatewayPayflowPro_HostPort(),
+		   source,
+		   new String[] {
+			   "type", "numeric",
+			   "precision", "20",
+			   "scale", "0"
+		   });
+		addAnnotation
+		  (getPaymentGatewayPayflowPro_LogFileName(),
+		   source,
+		   new String[] {
+			   "type", "value",
+			   "length", "255"
+		   });
+		addAnnotation
+		  (getPaymentGatewayPayflowPro_LoggingLevel(),
+		   source,
+		   new String[] {
+			   "type", "numeric",
+			   "precision", "20",
+			   "scale", "0"
+		   });
+		addAnnotation
+		  (getPaymentGatewayPayflowPro_MaxLogFileSize(),
+		   source,
+		   new String[] {
+			   "type", "numeric",
+			   "precision", "20",
+			   "scale", "0"
+		   });
+		addAnnotation
+		  (getPaymentGatewayPayflowPro_Partner(),
+		   source,
+		   new String[] {
+			   "type", "short-varchar",
+			   "length", "60"
+		   });
+		addAnnotation
+		  (getPaymentGatewayPayflowPro_PreAuth(),
+		   source,
+		   new String[] {
+			   "type", "indicator",
+			   "length", "1"
+		   });
+		addAnnotation
+		  (getPaymentGatewayPayflowPro_ProxyAddress(),
+		   source,
+		   new String[] {
+			   "type", "value",
+			   "length", "255"
+		   });
+		addAnnotation
+		  (getPaymentGatewayPayflowPro_ProxyLogon(),
+		   source,
+		   new String[] {
+			   "type", "value",
+			   "length", "255"
+		   });
+		addAnnotation
+		  (getPaymentGatewayPayflowPro_ProxyPassword(),
+		   source,
+		   new String[] {
+			   "type", "value",
+			   "length", "255"
+		   });
+		addAnnotation
+		  (getPaymentGatewayPayflowPro_ProxyPort(),
+		   source,
+		   new String[] {
+			   "type", "numeric",
+			   "precision", "20",
+			   "scale", "0"
+		   });
+		addAnnotation
+		  (getPaymentGatewayPayflowPro_Pwd(),
+		   source,
+		   new String[] {
+			   "type", "value",
+			   "length", "255"
+		   });
+		addAnnotation
+		  (getPaymentGatewayPayflowPro_RedirectUrl(),
+		   source,
+		   new String[] {
+			   "type", "value",
+			   "length", "255"
+		   });
+		addAnnotation
+		  (getPaymentGatewayPayflowPro_ReturnUrl(),
+		   source,
+		   new String[] {
+			   "type", "value",
+			   "length", "255"
+		   });
+		addAnnotation
+		  (getPaymentGatewayPayflowPro_StackTraceOn(),
+		   source,
+		   new String[] {
+			   "type", "indicator",
+			   "length", "1"
+		   });
+		addAnnotation
+		  (getPaymentGatewayPayflowPro_Timeout(),
+		   source,
+		   new String[] {
+			   "type", "numeric",
+			   "precision", "20",
+			   "scale", "0"
+		   });
+		addAnnotation
+		  (getPaymentGatewayPayflowPro_UserId(),
+		   source,
+		   new String[] {
+			   "type", "short-varchar",
+			   "length", "60"
+		   });
+		addAnnotation
+		  (getPaymentGatewayPayflowPro_Vendor(),
+		   source,
+		   new String[] {
+			   "type", "short-varchar",
+			   "length", "60"
+		   });
+		addAnnotation
+		  (getPaymentGatewayRespMsg_PaymentGatewayRespMsgId(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (getPaymentGatewayRespMsg_PgrMessage(),
+		   source,
+		   new String[] {
+			   "type", "very-long"
+		   });
+		addAnnotation
+		  (paymentGatewayResponseEClass.getEOperations().get(0),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (paymentGatewayResponseEClass.getEOperations().get(1),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (getPaymentGatewayResponse_PaymentGatewayResponseId(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (getPaymentGatewayResponse_AltReference(),
+		   source,
+		   new String[] {
+			   "type", "short-varchar",
+			   "length", "60"
+		   });
+		addAnnotation
+		  (getPaymentGatewayResponse_Amount(),
+		   source,
+		   new String[] {
+			   "type", "currency-amount",
+			   "precision", "18",
+			   "scale", "2"
+		   });
+		addAnnotation
+		  (getPaymentGatewayResponse_GatewayAvsResult(),
+		   source,
+		   new String[] {
+			   "type", "short-varchar",
+			   "length", "60"
+		   });
+		addAnnotation
+		  (getPaymentGatewayResponse_GatewayCode(),
+		   source,
+		   new String[] {
+			   "type", "short-varchar",
+			   "length", "60"
+		   });
+		addAnnotation
+		  (getPaymentGatewayResponse_GatewayCvResult(),
+		   source,
+		   new String[] {
+			   "type", "short-varchar",
+			   "length", "60"
+		   });
+		addAnnotation
+		  (getPaymentGatewayResponse_GatewayFlag(),
+		   source,
+		   new String[] {
+			   "type", "short-varchar",
+			   "length", "60"
+		   });
+		addAnnotation
+		  (getPaymentGatewayResponse_GatewayMessage(),
+		   source,
+		   new String[] {
+			   "type", "long-varchar",
+			   "length", "255"
+		   });
+		addAnnotation
+		  (getPaymentGatewayResponse_GatewayScoreResult(),
+		   source,
+		   new String[] {
+			   "type", "short-varchar",
+			   "length", "60"
+		   });
+		addAnnotation
+		  (getPaymentGatewayResponse_ReferenceNum(),
+		   source,
+		   new String[] {
+			   "type", "short-varchar",
+			   "length", "60"
+		   });
+		addAnnotation
+		  (getPaymentGatewayResponse_ResultBadCardNumber(),
+		   source,
+		   new String[] {
+			   "type", "indicator",
+			   "length", "1"
+		   });
+		addAnnotation
+		  (getPaymentGatewayResponse_ResultBadExpire(),
+		   source,
+		   new String[] {
+			   "type", "indicator",
+			   "length", "1"
+		   });
+		addAnnotation
+		  (getPaymentGatewayResponse_ResultDeclined(),
+		   source,
+		   new String[] {
+			   "type", "indicator",
+			   "length", "1"
+		   });
+		addAnnotation
+		  (getPaymentGatewayResponse_ResultNsf(),
+		   source,
+		   new String[] {
+			   "type", "indicator",
+			   "length", "1"
+		   });
+		addAnnotation
+		  (getPaymentGatewayResponse_SubReference(),
+		   source,
+		   new String[] {
+			   "type", "short-varchar",
+			   "length", "60"
+		   });
+		addAnnotation
+		  (getPaymentGatewayResponse_TransactionDate(),
+		   source,
+		   new String[] {
+			   "type", "date-time"
+		   });
+		addAnnotation
+		  (getPaymentGatewaySagePay_AuthenticationTransType(),
+		   source,
+		   new String[] {
+			   "type", "short-varchar",
+			   "length", "60"
+		   });
+		addAnnotation
+		  (getPaymentGatewaySagePay_AuthenticationUrl(),
+		   source,
+		   new String[] {
+			   "type", "long-varchar",
+			   "length", "255"
+		   });
+		addAnnotation
+		  (getPaymentGatewaySagePay_AuthoriseTransType(),
+		   source,
+		   new String[] {
+			   "type", "short-varchar",
+			   "length", "60"
+		   });
+		addAnnotation
+		  (getPaymentGatewaySagePay_AuthoriseUrl(),
+		   source,
+		   new String[] {
+			   "type", "long-varchar",
+			   "length", "255"
+		   });
+		addAnnotation
+		  (getPaymentGatewaySagePay_ProductionHost(),
+		   source,
+		   new String[] {
+			   "type", "short-varchar",
+			   "length", "60"
+		   });
+		addAnnotation
+		  (getPaymentGatewaySagePay_ProtocolVersion(),
+		   source,
+		   new String[] {
+			   "type", "very-short",
+			   "length", "10"
+		   });
+		addAnnotation
+		  (getPaymentGatewaySagePay_RefundUrl(),
+		   source,
+		   new String[] {
+			   "type", "long-varchar",
+			   "length", "255"
+		   });
+		addAnnotation
+		  (getPaymentGatewaySagePay_ReleaseTransType(),
+		   source,
+		   new String[] {
+			   "type", "short-varchar",
+			   "length", "60"
+		   });
+		addAnnotation
+		  (getPaymentGatewaySagePay_ReleaseUrl(),
+		   source,
+		   new String[] {
+			   "type", "long-varchar",
+			   "length", "255"
+		   });
+		addAnnotation
+		  (getPaymentGatewaySagePay_SagePayMode(),
+		   source,
+		   new String[] {
+			   "type", "short-varchar",
+			   "length", "60"
+		   });
+		addAnnotation
+		  (getPaymentGatewaySagePay_TestingHost(),
+		   source,
+		   new String[] {
+			   "type", "short-varchar",
+			   "length", "60"
+		   });
+		addAnnotation
+		  (getPaymentGatewaySagePay_Vendor(),
+		   source,
+		   new String[] {
+			   "type", "short-varchar",
+			   "length", "60"
+		   });
+		addAnnotation
+		  (getPaymentGatewaySagePay_VoidUrl(),
+		   source,
+		   new String[] {
+			   "type", "long-varchar",
+			   "length", "255"
+		   });
+		addAnnotation
+		  (getPaymentGatewaySecurePay_EnableAmountRound(),
+		   source,
+		   new String[] {
+			   "type", "indicator",
+			   "length", "1"
+		   });
+		addAnnotation
+		  (getPaymentGatewaySecurePay_MerchantId(),
+		   source,
+		   new String[] {
+			   "type", "value",
+			   "length", "255"
+		   });
+		addAnnotation
+		  (getPaymentGatewaySecurePay_ProcessTimeout(),
+		   source,
+		   new String[] {
+			   "type", "numeric",
+			   "precision", "20",
+			   "scale", "0"
+		   });
+		addAnnotation
+		  (getPaymentGatewaySecurePay_Pwd(),
+		   source,
+		   new String[] {
+			   "type", "value",
+			   "length", "255"
+		   });
+		addAnnotation
+		  (getPaymentGatewaySecurePay_ServerURL(),
+		   source,
+		   new String[] {
+			   "type", "value",
+			   "length", "255"
+		   });
+		addAnnotation
+		  (getPaymentGatewayWorldPay_AuthMode(),
+		   source,
+		   new String[] {
+			   "type", "indicator",
+			   "length", "1"
+		   });
+		addAnnotation
+		  (getPaymentGatewayWorldPay_FixContact(),
+		   source,
+		   new String[] {
+			   "type", "indicator",
+			   "length", "1"
+		   });
+		addAnnotation
+		  (getPaymentGatewayWorldPay_HideContact(),
+		   source,
+		   new String[] {
+			   "type", "indicator",
+			   "length", "1"
+		   });
+		addAnnotation
+		  (getPaymentGatewayWorldPay_HideCurrency(),
+		   source,
+		   new String[] {
+			   "type", "indicator",
+			   "length", "1"
+		   });
+		addAnnotation
+		  (getPaymentGatewayWorldPay_InstId(),
+		   source,
+		   new String[] {
+			   "type", "value",
+			   "length", "255"
+		   });
+		addAnnotation
+		  (getPaymentGatewayWorldPay_LangId(),
+		   source,
+		   new String[] {
+			   "type", "short-varchar",
+			   "length", "60"
+		   });
+		addAnnotation
+		  (getPaymentGatewayWorldPay_NoLanguageMenu(),
+		   source,
+		   new String[] {
+			   "type", "indicator",
+			   "length", "1"
+		   });
+		addAnnotation
+		  (getPaymentGatewayWorldPay_RedirectUrl(),
+		   source,
+		   new String[] {
+			   "type", "value",
+			   "length", "255"
+		   });
+		addAnnotation
+		  (getPaymentGatewayWorldPay_TestMode(),
+		   source,
+		   new String[] {
+			   "type", "numeric",
+			   "precision", "20",
+			   "scale", "0"
+		   });
+		addAnnotation
+		  (getPaymentGatewayWorldPay_WithDelivery(),
+		   source,
+		   new String[] {
+			   "type", "indicator",
+			   "length", "1"
+		   });
+		addAnnotation
+		  (getPaymentGroup_PaymentGroupId(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (getPaymentGroup_PaymentGroupName(),
+		   source,
+		   new String[] {
+			   "type", "name",
+			   "length", "100"
+		   });
+		addAnnotation
+		  (getPaymentGroupMember_FromDate(),
+		   source,
+		   new String[] {
+			   "type", "date-time"
+		   });
+		addAnnotation
+		  (getPaymentGroupMember_SequenceNum(),
+		   source,
+		   new String[] {
+			   "type", "numeric",
+			   "precision", "20",
+			   "scale", "0"
+		   });
+		addAnnotation
+		  (getPaymentGroupMember_ThruDate(),
+		   source,
+		   new String[] {
+			   "type", "date-time"
+		   });
+		addAnnotation
+		  (paymentGroupTypeEClass.getEOperations().get(0),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (paymentGroupTypeEClass.getEOperations().get(1),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (getPaymentGroupType_PaymentGroupTypeId(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (getPaymentGroupType_Description(),
+		   source,
+		   new String[] {
+			   "type", "description",
+			   "length", "255"
+		   });
+		addAnnotation
+		  (getPaymentGroupType_HasTable(),
+		   source,
+		   new String[] {
+			   "type", "indicator",
+			   "length", "1"
+		   });
+		addAnnotation
+		  (paymentMethodEClass.getEOperations().get(0),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (paymentMethodEClass.getEOperations().get(1),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (paymentMethodEClass.getEOperations().get(2),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (paymentMethodEClass.getEOperations().get(3),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (paymentMethodEClass.getEOperations().get(4),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (paymentMethodEClass.getEOperations().get(5),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (paymentMethodEClass.getEOperations().get(6),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (getPaymentMethod_PaymentMethodId(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (getPaymentMethod_Description(),
+		   source,
+		   new String[] {
+			   "type", "description",
+			   "length", "255"
+		   });
+		addAnnotation
+		  (getPaymentMethod_FromDate(),
+		   source,
+		   new String[] {
+			   "type", "date-time"
+		   });
+		addAnnotation
+		  (getPaymentMethod_ThruDate(),
+		   source,
+		   new String[] {
+			   "type", "date-time"
+		   });
+		addAnnotation
+		  (paymentMethodTypeEClass.getEOperations().get(0),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (paymentMethodTypeEClass.getEOperations().get(1),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (paymentMethodTypeEClass.getEOperations().get(2),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (paymentMethodTypeEClass.getEOperations().get(3),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (getPaymentMethodType_PaymentMethodTypeId(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (getPaymentMethodType_Description(),
+		   source,
+		   new String[] {
+			   "type", "description",
+			   "length", "255"
+		   });
+		addAnnotation
+		  (getPaymentMethodType_PaymentMethodTypeGlAccounts(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (paymentTypeEClass.getEOperations().get(0),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (paymentTypeEClass.getEOperations().get(1),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (getPaymentType_PaymentTypeId(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (getPaymentType_Description(),
+		   source,
+		   new String[] {
+			   "type", "description",
+			   "length", "255"
+		   });
+		addAnnotation
+		  (getPaymentType_HasTable(),
+		   source,
+		   new String[] {
+			   "type", "indicator",
+			   "length", "1"
+		   });
+		addAnnotation
+		  (getPaymentType_PaymentGlAccountTypeMaps(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (getPaymentType_PaymentTypeAttrs(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (getPaymentTypeAttr_AttrName(),
+		   source,
+		   new String[] {
+			   "type", "id-long",
+			   "length", "60"
+		   });
+		addAnnotation
+		  (getPaymentTypeAttr_Description(),
+		   source,
+		   new String[] {
+			   "type", "description",
+			   "length", "255"
+		   });
+		addAnnotation
+		  (getValueLinkKey_MerchantId(),
+		   source,
+		   new String[] {
+			   "type", "id-vlong",
+			   "length", "255"
+		   });
+		addAnnotation
+		  (getValueLinkKey_CreatedByTerminal(),
+		   source,
+		   new String[] {
+			   "type", "short-varchar",
+			   "length", "60"
+		   });
+		addAnnotation
+		  (getValueLinkKey_CreatedByUserLogin(),
+		   source,
+		   new String[] {
+			   "type", "id-vlong",
+			   "length", "255"
+		   });
+		addAnnotation
+		  (getValueLinkKey_CreatedDate(),
+		   source,
+		   new String[] {
+			   "type", "date-time"
+		   });
+		addAnnotation
+		  (getValueLinkKey_ExchangeKey(),
+		   source,
+		   new String[] {
+			   "type", "very-long"
+		   });
+		addAnnotation
+		  (getValueLinkKey_LastModifiedByTerminal(),
+		   source,
+		   new String[] {
+			   "type", "short-varchar",
+			   "length", "60"
+		   });
+		addAnnotation
+		  (getValueLinkKey_LastModifiedByUserLogin(),
+		   source,
+		   new String[] {
+			   "type", "id-vlong",
+			   "length", "255"
+		   });
+		addAnnotation
+		  (getValueLinkKey_LastModifiedDate(),
+		   source,
+		   new String[] {
+			   "type", "date-time"
+		   });
+		addAnnotation
+		  (getValueLinkKey_LastWorkingKey(),
+		   source,
+		   new String[] {
+			   "type", "very-long"
+		   });
+		addAnnotation
+		  (getValueLinkKey_PrivateKey(),
+		   source,
+		   new String[] {
+			   "type", "very-long"
+		   });
+		addAnnotation
+		  (getValueLinkKey_PublicKey(),
+		   source,
+		   new String[] {
+			   "type", "very-long"
+		   });
+		addAnnotation
+		  (getValueLinkKey_WorkingKey(),
+		   source,
+		   new String[] {
+			   "type", "very-long"
+		   });
+		addAnnotation
+		  (getValueLinkKey_WorkingKeyIndex(),
+		   source,
+		   new String[] {
+			   "type", "numeric",
+			   "precision", "20",
+			   "scale", "0"
+		   });
+	}
+
+	/**
 	 * Initializes the annotations for <b>mimo-ent-slot</b>.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -6715,37 +8550,37 @@ public class PaymentPackageImpl extends EPackageImpl implements PaymentPackage {
 	protected void createMimoentslotAnnotations() {
 		String source = "mimo-ent-slot";
 		addAnnotation
-		  (getBillingAccount__BillingAccountTerms(),
+		  (billingAccountEClass.getEOperations().get(0),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (getBillingAccount__Invoices(),
+		  (billingAccountEClass.getEOperations().get(1),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (getBillingAccount__OrderHeaders(),
+		  (billingAccountEClass.getEOperations().get(2),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (getBillingAccount__PaymentApplications(),
+		  (billingAccountEClass.getEOperations().get(3),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (getBillingAccount__ReturnHeaders(),
+		  (billingAccountEClass.getEOperations().get(4),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (getBillingAccount__ReturnItemResponses(),
+		  (billingAccountEClass.getEOperations().get(5),
 		   source,
 		   new String[] {
 			   "derived", "true"
@@ -6799,13 +8634,13 @@ public class PaymentPackageImpl extends EPackageImpl implements PaymentPackage {
 			   "key", "true"
 		   });
 		addAnnotation
-		  (getDeductionType__ChildDeductionTypes(),
+		  (deductionTypeEClass.getEOperations().get(0),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (getDeductionType__Deductions(),
+		  (deductionTypeEClass.getEOperations().get(1),
 		   source,
 		   new String[] {
 			   "derived", "true"
@@ -6823,31 +8658,31 @@ public class PaymentPackageImpl extends EPackageImpl implements PaymentPackage {
 			   "key", "true"
 		   });
 		addAnnotation
-		  (getPayment__AcctgTranss(),
+		  (paymentEClass.getEOperations().get(0),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (getPayment__Deductions(),
+		  (paymentEClass.getEOperations().get(1),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (getPayment__PaymentApplications(),
+		  (paymentEClass.getEOperations().get(2),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (getPayment__ReturnItemResponses(),
+		  (paymentEClass.getEOperations().get(3),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (getPayment__ToPaymentApplications(),
+		  (paymentEClass.getEOperations().get(4),
 		   source,
 		   new String[] {
 			   "derived", "true"
@@ -6889,7 +8724,7 @@ public class PaymentPackageImpl extends EPackageImpl implements PaymentPackage {
 			   "key", "true"
 		   });
 		addAnnotation
-		  (getPaymentContentType__ChildPaymentContentTypes(),
+		  (paymentContentTypeEClass.getEOperations().get(0),
 		   source,
 		   new String[] {
 			   "derived", "true"
@@ -6907,13 +8742,13 @@ public class PaymentPackageImpl extends EPackageImpl implements PaymentPackage {
 			   "key", "true"
 		   });
 		addAnnotation
-		  (getPaymentGatewayConfigType__ChildPaymentGatewayConfigTypes(),
+		  (paymentGatewayConfigTypeEClass.getEOperations().get(0),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (getPaymentGatewayConfigType__PaymentGatewayConfigs(),
+		  (paymentGatewayConfigTypeEClass.getEOperations().get(1),
 		   source,
 		   new String[] {
 			   "derived", "true"
@@ -6931,13 +8766,13 @@ public class PaymentPackageImpl extends EPackageImpl implements PaymentPackage {
 			   "key", "true"
 		   });
 		addAnnotation
-		  (getPaymentGatewayResponse__PaymentGatewayRespMsgs(),
+		  (paymentGatewayResponseEClass.getEOperations().get(0),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (getPaymentGatewayResponse__Payments(),
+		  (paymentGatewayResponseEClass.getEOperations().get(1),
 		   source,
 		   new String[] {
 			   "derived", "true"
@@ -6961,13 +8796,13 @@ public class PaymentPackageImpl extends EPackageImpl implements PaymentPackage {
 			   "key", "true"
 		   });
 		addAnnotation
-		  (getPaymentGroupType__ChildPaymentGroupTypes(),
+		  (paymentGroupTypeEClass.getEOperations().get(0),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (getPaymentGroupType__PaymentGroups(),
+		  (paymentGroupTypeEClass.getEOperations().get(1),
 		   source,
 		   new String[] {
 			   "derived", "true"
@@ -6979,43 +8814,43 @@ public class PaymentPackageImpl extends EPackageImpl implements PaymentPackage {
 			   "key", "true"
 		   });
 		addAnnotation
-		  (getPaymentMethod__OrderPaymentPreferences(),
+		  (paymentMethodEClass.getEOperations().get(0),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (getPaymentMethod__PartyAcctgPreferences(),
+		  (paymentMethodEClass.getEOperations().get(1),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (getPaymentMethod__PaymentGatewayResponses(),
+		  (paymentMethodEClass.getEOperations().get(2),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (getPaymentMethod__Payments(),
+		  (paymentMethodEClass.getEOperations().get(3),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (getPaymentMethod__ReplenishFinAccounts(),
+		  (paymentMethodEClass.getEOperations().get(4),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (getPaymentMethod__ReturnHeaders(),
+		  (paymentMethodEClass.getEOperations().get(5),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (getPaymentMethod__ShoppingLists(),
+		  (paymentMethodEClass.getEOperations().get(6),
 		   source,
 		   new String[] {
 			   "derived", "true"
@@ -7027,25 +8862,25 @@ public class PaymentPackageImpl extends EPackageImpl implements PaymentPackage {
 			   "key", "true"
 		   });
 		addAnnotation
-		  (getPaymentMethodType__OrderPaymentPreferences(),
+		  (paymentMethodTypeEClass.getEOperations().get(0),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (getPaymentMethodType__PaymentGatewayResponses(),
+		  (paymentMethodTypeEClass.getEOperations().get(1),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (getPaymentMethodType__PaymentMethods(),
+		  (paymentMethodTypeEClass.getEOperations().get(2),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (getPaymentMethodType__Payments(),
+		  (paymentMethodTypeEClass.getEOperations().get(3),
 		   source,
 		   new String[] {
 			   "derived", "true"
@@ -7063,13 +8898,13 @@ public class PaymentPackageImpl extends EPackageImpl implements PaymentPackage {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (getPaymentType__ChildPaymentTypes(),
+		  (paymentTypeEClass.getEOperations().get(0),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (getPaymentType__Payments(),
+		  (paymentTypeEClass.getEOperations().get(1),
 		   source,
 		   new String[] {
 			   "derived", "true"
@@ -7115,7 +8950,7 @@ public class PaymentPackageImpl extends EPackageImpl implements PaymentPackage {
 	protected void createMimoentdomainAnnotations() {
 		String source = "mimo-ent-domain";
 		addAnnotation
-		  (getBillingAccount__BillingAccountTerms(),
+		  (billingAccountEClass.getEOperations().get(0),
 		   source,
 		   new String[] {
 			   "frame", "BillingAccountTerm",
@@ -7125,7 +8960,7 @@ public class PaymentPackageImpl extends EPackageImpl implements PaymentPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (getBillingAccount__Invoices(),
+		  (billingAccountEClass.getEOperations().get(1),
 		   source,
 		   new String[] {
 			   "frame", "Invoice",
@@ -7135,7 +8970,7 @@ public class PaymentPackageImpl extends EPackageImpl implements PaymentPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (getBillingAccount__OrderHeaders(),
+		  (billingAccountEClass.getEOperations().get(2),
 		   source,
 		   new String[] {
 			   "frame", "OrderHeader",
@@ -7145,7 +8980,7 @@ public class PaymentPackageImpl extends EPackageImpl implements PaymentPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (getBillingAccount__PaymentApplications(),
+		  (billingAccountEClass.getEOperations().get(3),
 		   source,
 		   new String[] {
 			   "frame", "PaymentApplication",
@@ -7155,7 +8990,7 @@ public class PaymentPackageImpl extends EPackageImpl implements PaymentPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (getBillingAccount__ReturnHeaders(),
+		  (billingAccountEClass.getEOperations().get(4),
 		   source,
 		   new String[] {
 			   "frame", "ReturnHeader",
@@ -7165,7 +9000,7 @@ public class PaymentPackageImpl extends EPackageImpl implements PaymentPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (getBillingAccount__ReturnItemResponses(),
+		  (billingAccountEClass.getEOperations().get(5),
 		   source,
 		   new String[] {
 			   "frame", "ReturnItemResponse",
@@ -7184,7 +9019,7 @@ public class PaymentPackageImpl extends EPackageImpl implements PaymentPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (getDeductionType__ChildDeductionTypes(),
+		  (deductionTypeEClass.getEOperations().get(0),
 		   source,
 		   new String[] {
 			   "frame", "DeductionType",
@@ -7194,7 +9029,7 @@ public class PaymentPackageImpl extends EPackageImpl implements PaymentPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (getDeductionType__Deductions(),
+		  (deductionTypeEClass.getEOperations().get(1),
 		   source,
 		   new String[] {
 			   "frame", "Deduction",
@@ -7204,7 +9039,7 @@ public class PaymentPackageImpl extends EPackageImpl implements PaymentPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (getPayment__AcctgTranss(),
+		  (paymentEClass.getEOperations().get(0),
 		   source,
 		   new String[] {
 			   "frame", "AcctgTrans",
@@ -7214,7 +9049,7 @@ public class PaymentPackageImpl extends EPackageImpl implements PaymentPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (getPayment__Deductions(),
+		  (paymentEClass.getEOperations().get(1),
 		   source,
 		   new String[] {
 			   "frame", "Deduction",
@@ -7224,7 +9059,7 @@ public class PaymentPackageImpl extends EPackageImpl implements PaymentPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (getPayment__PaymentApplications(),
+		  (paymentEClass.getEOperations().get(2),
 		   source,
 		   new String[] {
 			   "frame", "PaymentApplication",
@@ -7234,7 +9069,7 @@ public class PaymentPackageImpl extends EPackageImpl implements PaymentPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (getPayment__ReturnItemResponses(),
+		  (paymentEClass.getEOperations().get(3),
 		   source,
 		   new String[] {
 			   "frame", "ReturnItemResponse",
@@ -7244,7 +9079,7 @@ public class PaymentPackageImpl extends EPackageImpl implements PaymentPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (getPayment__ToPaymentApplications(),
+		  (paymentEClass.getEOperations().get(4),
 		   source,
 		   new String[] {
 			   "frame", "PaymentApplication",
@@ -7263,7 +9098,7 @@ public class PaymentPackageImpl extends EPackageImpl implements PaymentPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (getPaymentContentType__ChildPaymentContentTypes(),
+		  (paymentContentTypeEClass.getEOperations().get(0),
 		   source,
 		   new String[] {
 			   "frame", "PaymentContentType",
@@ -7273,7 +9108,7 @@ public class PaymentPackageImpl extends EPackageImpl implements PaymentPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (getPaymentGatewayConfigType__ChildPaymentGatewayConfigTypes(),
+		  (paymentGatewayConfigTypeEClass.getEOperations().get(0),
 		   source,
 		   new String[] {
 			   "frame", "PaymentGatewayConfigType",
@@ -7283,7 +9118,7 @@ public class PaymentPackageImpl extends EPackageImpl implements PaymentPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (getPaymentGatewayConfigType__PaymentGatewayConfigs(),
+		  (paymentGatewayConfigTypeEClass.getEOperations().get(1),
 		   source,
 		   new String[] {
 			   "frame", "PaymentGatewayConfig",
@@ -7293,7 +9128,7 @@ public class PaymentPackageImpl extends EPackageImpl implements PaymentPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (getPaymentGatewayResponse__PaymentGatewayRespMsgs(),
+		  (paymentGatewayResponseEClass.getEOperations().get(0),
 		   source,
 		   new String[] {
 			   "frame", "PaymentGatewayRespMsg",
@@ -7303,7 +9138,7 @@ public class PaymentPackageImpl extends EPackageImpl implements PaymentPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (getPaymentGatewayResponse__Payments(),
+		  (paymentGatewayResponseEClass.getEOperations().get(1),
 		   source,
 		   new String[] {
 			   "frame", "Payment",
@@ -7313,7 +9148,7 @@ public class PaymentPackageImpl extends EPackageImpl implements PaymentPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (getPaymentGroupType__ChildPaymentGroupTypes(),
+		  (paymentGroupTypeEClass.getEOperations().get(0),
 		   source,
 		   new String[] {
 			   "frame", "PaymentGroupType",
@@ -7323,7 +9158,7 @@ public class PaymentPackageImpl extends EPackageImpl implements PaymentPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (getPaymentGroupType__PaymentGroups(),
+		  (paymentGroupTypeEClass.getEOperations().get(1),
 		   source,
 		   new String[] {
 			   "frame", "PaymentGroup",
@@ -7333,7 +9168,7 @@ public class PaymentPackageImpl extends EPackageImpl implements PaymentPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (getPaymentMethod__OrderPaymentPreferences(),
+		  (paymentMethodEClass.getEOperations().get(0),
 		   source,
 		   new String[] {
 			   "frame", "OrderPaymentPreference",
@@ -7343,7 +9178,7 @@ public class PaymentPackageImpl extends EPackageImpl implements PaymentPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (getPaymentMethod__PartyAcctgPreferences(),
+		  (paymentMethodEClass.getEOperations().get(1),
 		   source,
 		   new String[] {
 			   "frame", "PartyAcctgPreference",
@@ -7353,7 +9188,7 @@ public class PaymentPackageImpl extends EPackageImpl implements PaymentPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (getPaymentMethod__PaymentGatewayResponses(),
+		  (paymentMethodEClass.getEOperations().get(2),
 		   source,
 		   new String[] {
 			   "frame", "PaymentGatewayResponse",
@@ -7363,7 +9198,7 @@ public class PaymentPackageImpl extends EPackageImpl implements PaymentPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (getPaymentMethod__Payments(),
+		  (paymentMethodEClass.getEOperations().get(3),
 		   source,
 		   new String[] {
 			   "frame", "Payment",
@@ -7373,7 +9208,7 @@ public class PaymentPackageImpl extends EPackageImpl implements PaymentPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (getPaymentMethod__ReplenishFinAccounts(),
+		  (paymentMethodEClass.getEOperations().get(4),
 		   source,
 		   new String[] {
 			   "frame", "FinAccount",
@@ -7383,7 +9218,7 @@ public class PaymentPackageImpl extends EPackageImpl implements PaymentPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (getPaymentMethod__ReturnHeaders(),
+		  (paymentMethodEClass.getEOperations().get(5),
 		   source,
 		   new String[] {
 			   "frame", "ReturnHeader",
@@ -7393,7 +9228,7 @@ public class PaymentPackageImpl extends EPackageImpl implements PaymentPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (getPaymentMethod__ShoppingLists(),
+		  (paymentMethodEClass.getEOperations().get(6),
 		   source,
 		   new String[] {
 			   "frame", "ShoppingList",
@@ -7403,7 +9238,7 @@ public class PaymentPackageImpl extends EPackageImpl implements PaymentPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (getPaymentMethodType__OrderPaymentPreferences(),
+		  (paymentMethodTypeEClass.getEOperations().get(0),
 		   source,
 		   new String[] {
 			   "frame", "OrderPaymentPreference",
@@ -7413,7 +9248,7 @@ public class PaymentPackageImpl extends EPackageImpl implements PaymentPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (getPaymentMethodType__PaymentGatewayResponses(),
+		  (paymentMethodTypeEClass.getEOperations().get(1),
 		   source,
 		   new String[] {
 			   "frame", "PaymentGatewayResponse",
@@ -7423,7 +9258,7 @@ public class PaymentPackageImpl extends EPackageImpl implements PaymentPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (getPaymentMethodType__PaymentMethods(),
+		  (paymentMethodTypeEClass.getEOperations().get(2),
 		   source,
 		   new String[] {
 			   "frame", "PaymentMethod",
@@ -7433,7 +9268,7 @@ public class PaymentPackageImpl extends EPackageImpl implements PaymentPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (getPaymentMethodType__Payments(),
+		  (paymentMethodTypeEClass.getEOperations().get(3),
 		   source,
 		   new String[] {
 			   "frame", "Payment",
@@ -7452,7 +9287,7 @@ public class PaymentPackageImpl extends EPackageImpl implements PaymentPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (getPaymentType__ChildPaymentTypes(),
+		  (paymentTypeEClass.getEOperations().get(0),
 		   source,
 		   new String[] {
 			   "frame", "PaymentType",
@@ -7462,7 +9297,7 @@ public class PaymentPackageImpl extends EPackageImpl implements PaymentPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (getPaymentType__Payments(),
+		  (paymentTypeEClass.getEOperations().get(1),
 		   source,
 		   new String[] {
 			   "frame", "Payment",

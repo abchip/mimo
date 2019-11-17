@@ -91,7 +91,7 @@ public interface ContentPurpose extends BizEntityTyped<ContentPurposeType> {
 	 * @return the value of the '<em>Sequence Num</em>' attribute.
 	 * @see #setSequenceNum(long)
 	 * @see org.abchip.mimo.biz.content.content.ContentPackage#getContentPurpose_SequenceNum()
-	 * @model
+	 * @model annotation="mimo-ent-format type='numeric' precision='20' scale='0'"
 	 * @generated
 	 */
 	long getSequenceNum();

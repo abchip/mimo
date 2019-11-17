@@ -505,26 +505,6 @@ public class VisitImpl extends BizEntityImpl implements Visit {
 	 * @generated
 	 */
 	@Override
-	public UserAgent getUserAgentId() {
-		return (UserAgent)eGet(VisitPackage.Literals.VISIT__USER_AGENT_ID, true);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void setUserAgentId(UserAgent newUserAgentId) {
-		eSet(VisitPackage.Literals.VISIT__USER_AGENT_ID, newUserAgentId);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public boolean isUserCreated() {
 		return (Boolean)eGet(VisitPackage.Literals.VISIT__USER_CREATED, true);
 	}
@@ -537,6 +517,26 @@ public class VisitImpl extends BizEntityImpl implements Visit {
 	@Override
 	public void setUserCreated(boolean newUserCreated) {
 		eSet(VisitPackage.Literals.VISIT__USER_CREATED, newUserCreated);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public UserAgent getUserAgentId() {
+		return (UserAgent)eGet(VisitPackage.Literals.VISIT__USER_AGENT_ID, true);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setUserAgentId(UserAgent newUserAgentId) {
+		eSet(VisitPackage.Literals.VISIT__USER_AGENT_ID, newUserAgentId);
 	}
 
 	/**

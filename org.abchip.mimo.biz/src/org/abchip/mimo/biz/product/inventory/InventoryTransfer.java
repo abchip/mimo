@@ -55,7 +55,7 @@ public interface InventoryTransfer extends BizEntity {
 	 * @return the value of the '<em>Comments</em>' attribute.
 	 * @see #setComments(String)
 	 * @see org.abchip.mimo.biz.product.inventory.InventoryPackage#getInventoryTransfer_Comments()
-	 * @model
+	 * @model annotation="mimo-ent-format type='comment' length='255'"
 	 * @generated
 	 */
 	String getComments();
@@ -82,6 +82,7 @@ public interface InventoryTransfer extends BizEntity {
 	 * @see #setInventoryTransferId(String)
 	 * @see org.abchip.mimo.biz.product.inventory.InventoryPackage#getInventoryTransfer_InventoryTransferId()
 	 * @model id="true" required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
@@ -134,7 +135,7 @@ public interface InventoryTransfer extends BizEntity {
 	 * @return the value of the '<em>Location Seq Id</em>' attribute.
 	 * @see #setLocationSeqId(String)
 	 * @see org.abchip.mimo.biz.product.inventory.InventoryPackage#getInventoryTransfer_LocationSeqId()
-	 * @model
+	 * @model annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	String getLocationSeqId();
@@ -160,7 +161,7 @@ public interface InventoryTransfer extends BizEntity {
 	 * @return the value of the '<em>Location Seq Id To</em>' attribute.
 	 * @see #setLocationSeqIdTo(String)
 	 * @see org.abchip.mimo.biz.product.inventory.InventoryPackage#getInventoryTransfer_LocationSeqIdTo()
-	 * @model
+	 * @model annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	String getLocationSeqIdTo();
@@ -186,7 +187,7 @@ public interface InventoryTransfer extends BizEntity {
 	 * @return the value of the '<em>Receive Date</em>' attribute.
 	 * @see #setReceiveDate(Date)
 	 * @see org.abchip.mimo.biz.product.inventory.InventoryPackage#getInventoryTransfer_ReceiveDate()
-	 * @model
+	 * @model annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getReceiveDate();
@@ -212,7 +213,7 @@ public interface InventoryTransfer extends BizEntity {
 	 * @return the value of the '<em>Send Date</em>' attribute.
 	 * @see #setSendDate(Date)
 	 * @see org.abchip.mimo.biz.product.inventory.InventoryPackage#getInventoryTransfer_SendDate()
-	 * @model
+	 * @model annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getSendDate();

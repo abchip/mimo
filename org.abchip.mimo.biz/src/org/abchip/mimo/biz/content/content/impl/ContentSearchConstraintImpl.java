@@ -22,8 +22,8 @@ import org.eclipse.emf.ecore.EClass;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.content.content.impl.ContentSearchConstraintImpl#getConstraintSeqId <em>Constraint Seq Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.content.content.impl.ContentSearchConstraintImpl#isAnyPrefix <em>Any Prefix</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.content.content.impl.ContentSearchConstraintImpl#isAnySuffix <em>Any Suffix</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.content.content.impl.ContentSearchConstraintImpl#getAnyPrefix <em>Any Prefix</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.content.content.impl.ContentSearchConstraintImpl#getAnySuffix <em>Any Suffix</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.content.impl.ContentSearchConstraintImpl#getConstraintName <em>Constraint Name</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.content.impl.ContentSearchConstraintImpl#getHighValue <em>High Value</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.content.impl.ContentSearchConstraintImpl#isIncludeSubCategories <em>Include Sub Categories</em>}</li>
@@ -107,8 +107,8 @@ public class ContentSearchConstraintImpl extends BizEntityImpl implements Conten
 	 * @generated
 	 */
 	@Override
-	public boolean isAnyPrefix() {
-		return (Boolean)eGet(ContentPackage.Literals.CONTENT_SEARCH_CONSTRAINT__ANY_PREFIX, true);
+	public char getAnyPrefix() {
+		return (Character)eGet(ContentPackage.Literals.CONTENT_SEARCH_CONSTRAINT__ANY_PREFIX, true);
 	}
 
 	/**
@@ -117,7 +117,7 @@ public class ContentSearchConstraintImpl extends BizEntityImpl implements Conten
 	 * @generated
 	 */
 	@Override
-	public void setAnyPrefix(boolean newAnyPrefix) {
+	public void setAnyPrefix(char newAnyPrefix) {
 		eSet(ContentPackage.Literals.CONTENT_SEARCH_CONSTRAINT__ANY_PREFIX, newAnyPrefix);
 	}
 
@@ -127,8 +127,8 @@ public class ContentSearchConstraintImpl extends BizEntityImpl implements Conten
 	 * @generated
 	 */
 	@Override
-	public boolean isAnySuffix() {
-		return (Boolean)eGet(ContentPackage.Literals.CONTENT_SEARCH_CONSTRAINT__ANY_SUFFIX, true);
+	public char getAnySuffix() {
+		return (Character)eGet(ContentPackage.Literals.CONTENT_SEARCH_CONSTRAINT__ANY_SUFFIX, true);
 	}
 
 	/**
@@ -137,7 +137,7 @@ public class ContentSearchConstraintImpl extends BizEntityImpl implements Conten
 	 * @generated
 	 */
 	@Override
-	public void setAnySuffix(boolean newAnySuffix) {
+	public void setAnySuffix(char newAnySuffix) {
 		eSet(ContentPackage.Literals.CONTENT_SEARCH_CONSTRAINT__ANY_SUFFIX, newAnySuffix);
 	}
 

@@ -53,7 +53,7 @@ public interface ProductPromoAction extends BizEntity {
 	 * @return the value of the '<em>Amount</em>' attribute.
 	 * @see #setAmount(BigDecimal)
 	 * @see org.abchip.mimo.biz.product.promo.PromoPackage#getProductPromoAction_Amount()
-	 * @model
+	 * @model annotation="mimo-ent-format type='fixed-point' precision='18' scale='6'"
 	 * @generated
 	 */
 	BigDecimal getAmount();
@@ -131,7 +131,7 @@ public interface ProductPromoAction extends BizEntity {
 	 * @return the value of the '<em>Party Id</em>' attribute.
 	 * @see #setPartyId(String)
 	 * @see org.abchip.mimo.biz.product.promo.PromoPackage#getProductPromoAction_PartyId()
-	 * @model
+	 * @model annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	String getPartyId();
@@ -157,7 +157,7 @@ public interface ProductPromoAction extends BizEntity {
 	 * @return the value of the '<em>Product Id</em>' attribute.
 	 * @see #setProductId(String)
 	 * @see org.abchip.mimo.biz.product.promo.PromoPackage#getProductPromoAction_ProductId()
-	 * @model
+	 * @model annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	String getProductId();
@@ -210,6 +210,7 @@ public interface ProductPromoAction extends BizEntity {
 	 * @see #setProductPromoActionSeqId(String)
 	 * @see org.abchip.mimo.biz.product.promo.PromoPackage#getProductPromoAction_ProductPromoActionSeqId()
 	 * @model required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
@@ -237,6 +238,7 @@ public interface ProductPromoAction extends BizEntity {
 	 * @see #setProductPromoRuleId(String)
 	 * @see org.abchip.mimo.biz.product.promo.PromoPackage#getProductPromoAction_ProductPromoRuleId()
 	 * @model required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
@@ -263,7 +265,7 @@ public interface ProductPromoAction extends BizEntity {
 	 * @return the value of the '<em>Quantity</em>' attribute.
 	 * @see #setQuantity(BigDecimal)
 	 * @see org.abchip.mimo.biz.product.promo.PromoPackage#getProductPromoAction_Quantity()
-	 * @model
+	 * @model annotation="mimo-ent-format type='fixed-point' precision='18' scale='6'"
 	 * @generated
 	 */
 	BigDecimal getQuantity();
@@ -289,7 +291,7 @@ public interface ProductPromoAction extends BizEntity {
 	 * @return the value of the '<em>Service Name</em>' attribute.
 	 * @see #setServiceName(String)
 	 * @see org.abchip.mimo.biz.product.promo.PromoPackage#getProductPromoAction_ServiceName()
-	 * @model
+	 * @model annotation="mimo-ent-format type='long-varchar' length='255'"
 	 * @generated
 	 */
 	String getServiceName();
@@ -315,7 +317,7 @@ public interface ProductPromoAction extends BizEntity {
 	 * @return the value of the '<em>Use Cart Quantity</em>' attribute.
 	 * @see #setUseCartQuantity(boolean)
 	 * @see org.abchip.mimo.biz.product.promo.PromoPackage#getProductPromoAction_UseCartQuantity()
-	 * @model
+	 * @model annotation="mimo-ent-format type='indicator' length='1'"
 	 * @generated
 	 */
 	boolean isUseCartQuantity();

@@ -7,7 +7,6 @@
  */
 package org.abchip.mimo.biz.accounting.finaccount.impl;
 
-import java.lang.reflect.InvocationTargetException;
 import java.util.List;
 
 import org.abchip.mimo.biz.accounting.finaccount.FinAccount;
@@ -15,7 +14,6 @@ import org.abchip.mimo.biz.accounting.finaccount.FinAccountType;
 import org.abchip.mimo.biz.accounting.finaccount.FinaccountPackage;
 import org.abchip.mimo.biz.common.enum_.Enumeration;
 import org.abchip.mimo.biz.impl.BizEntityTypeImpl;
-import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 
 /**
@@ -198,24 +196,6 @@ public class FinAccountTypeImpl extends BizEntityTypeImpl<FinAccount> implements
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
-		switch (operationID) {
-			case FinaccountPackage.FIN_ACCOUNT_TYPE___CHILD_FIN_ACCOUNT_TYPES:
-				return childFinAccountTypes();
-			case FinaccountPackage.FIN_ACCOUNT_TYPE___FIN_ACCOUNTS:
-				return finAccounts();
-			case FinaccountPackage.FIN_ACCOUNT_TYPE___PRODUCT_STORE_FIN_ACT_SETTINGS:
-				return productStoreFinActSettings();
-		}
-		return super.eInvoke(operationID, arguments);
 	}
 
 	/**

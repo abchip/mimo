@@ -44,6 +44,7 @@ public interface AgreementProductAppl extends BizEntity {
 	 * @see #setAgreementItemSeqId(String)
 	 * @see org.abchip.mimo.biz.party.agreement.AgreementPackage#getAgreementProductAppl_AgreementItemSeqId()
 	 * @model required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
@@ -70,7 +71,7 @@ public interface AgreementProductAppl extends BizEntity {
 	 * @return the value of the '<em>Price</em>' attribute.
 	 * @see #setPrice(BigDecimal)
 	 * @see org.abchip.mimo.biz.party.agreement.AgreementPackage#getAgreementProductAppl_Price()
-	 * @model
+	 * @model annotation="mimo-ent-format type='currency-precise' precision='18' scale='3'"
 	 * @generated
 	 */
 	BigDecimal getPrice();

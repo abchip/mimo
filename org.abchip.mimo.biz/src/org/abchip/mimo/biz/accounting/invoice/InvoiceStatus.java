@@ -71,6 +71,7 @@ public interface InvoiceStatus extends BizEntity {
 	 * @see #setStatusDate(Date)
 	 * @see org.abchip.mimo.biz.accounting.invoice.InvoicePackage#getInvoiceStatus_StatusDate()
 	 * @model required="true"
+	 *        annotation="mimo-ent-format type='date-time'"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */

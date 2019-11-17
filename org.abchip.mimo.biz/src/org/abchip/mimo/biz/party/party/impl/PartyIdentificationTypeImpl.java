@@ -7,14 +7,12 @@
  */
 package org.abchip.mimo.biz.party.party.impl;
 
-import java.lang.reflect.InvocationTargetException;
 import java.util.List;
 
 import org.abchip.mimo.biz.impl.BizEntityTypeImpl;
 import org.abchip.mimo.biz.party.party.PartyIdentification;
 import org.abchip.mimo.biz.party.party.PartyIdentificationType;
 import org.abchip.mimo.biz.party.party.PartyPackage;
-import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 
 /**
@@ -139,22 +137,6 @@ public class PartyIdentificationTypeImpl extends BizEntityTypeImpl<PartyIdentifi
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
-		switch (operationID) {
-			case PartyPackage.PARTY_IDENTIFICATION_TYPE___CHILD_PARTY_IDENTIFICATION_TYPES:
-				return childPartyIdentificationTypes();
-			case PartyPackage.PARTY_IDENTIFICATION_TYPE___PARTY_IDENTIFICATIONS:
-				return partyIdentifications();
-		}
-		return super.eInvoke(operationID, arguments);
 	}
 
 	/**

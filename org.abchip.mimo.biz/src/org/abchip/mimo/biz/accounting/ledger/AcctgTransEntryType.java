@@ -42,7 +42,7 @@ public interface AcctgTransEntryType extends BizEntityType<AcctgTransEntry> {
 	 * @return the value of the '<em>Description</em>' attribute.
 	 * @see #setDescription(String)
 	 * @see org.abchip.mimo.biz.accounting.ledger.LedgerPackage#getAcctgTransEntryType_Description()
-	 * @model
+	 * @model annotation="mimo-ent-format type='description' length='255'"
 	 * @generated
 	 */
 	String getDescription();
@@ -68,7 +68,7 @@ public interface AcctgTransEntryType extends BizEntityType<AcctgTransEntry> {
 	 * @return the value of the '<em>Has Table</em>' attribute.
 	 * @see #setHasTable(boolean)
 	 * @see org.abchip.mimo.biz.accounting.ledger.LedgerPackage#getAcctgTransEntryType_HasTable()
-	 * @model
+	 * @model annotation="mimo-ent-format type='indicator' length='1'"
 	 * @generated
 	 */
 	boolean isHasTable();
@@ -112,7 +112,8 @@ public interface AcctgTransEntryType extends BizEntityType<AcctgTransEntry> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='AcctgTransEntry' route='acctgTransEntryTypeId'"
 	 * @generated
 	 */
@@ -121,7 +122,8 @@ public interface AcctgTransEntryType extends BizEntityType<AcctgTransEntry> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='AcctgTransEntryType' route='parentTypeId'"
 	 * @generated
 	 */
@@ -139,6 +141,7 @@ public interface AcctgTransEntryType extends BizEntityType<AcctgTransEntry> {
 	 * @see #setAcctgTransEntryTypeId(String)
 	 * @see org.abchip.mimo.biz.accounting.ledger.LedgerPackage#getAcctgTransEntryType_AcctgTransEntryTypeId()
 	 * @model id="true" required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */

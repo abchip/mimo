@@ -47,7 +47,7 @@ public interface FacilityLocation extends BizEntity {
 	 * @return the value of the '<em>Aisle Id</em>' attribute.
 	 * @see #setAisleId(String)
 	 * @see org.abchip.mimo.biz.product.facility.FacilityPackage#getFacilityLocation_AisleId()
-	 * @model
+	 * @model annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	String getAisleId();
@@ -73,7 +73,7 @@ public interface FacilityLocation extends BizEntity {
 	 * @return the value of the '<em>Area Id</em>' attribute.
 	 * @see #setAreaId(String)
 	 * @see org.abchip.mimo.biz.product.facility.FacilityPackage#getFacilityLocation_AreaId()
-	 * @model
+	 * @model annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	String getAreaId();
@@ -125,7 +125,7 @@ public interface FacilityLocation extends BizEntity {
 	 * @return the value of the '<em>Level Id</em>' attribute.
 	 * @see #setLevelId(String)
 	 * @see org.abchip.mimo.biz.product.facility.FacilityPackage#getFacilityLocation_LevelId()
-	 * @model
+	 * @model annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	String getLevelId();
@@ -152,6 +152,7 @@ public interface FacilityLocation extends BizEntity {
 	 * @see #setLocationSeqId(String)
 	 * @see org.abchip.mimo.biz.product.facility.FacilityPackage#getFacilityLocation_LocationSeqId()
 	 * @model required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
@@ -204,7 +205,7 @@ public interface FacilityLocation extends BizEntity {
 	 * @return the value of the '<em>Position Id</em>' attribute.
 	 * @see #setPositionId(String)
 	 * @see org.abchip.mimo.biz.product.facility.FacilityPackage#getFacilityLocation_PositionId()
-	 * @model
+	 * @model annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	String getPositionId();
@@ -230,7 +231,7 @@ public interface FacilityLocation extends BizEntity {
 	 * @return the value of the '<em>Section Id</em>' attribute.
 	 * @see #setSectionId(String)
 	 * @see org.abchip.mimo.biz.product.facility.FacilityPackage#getFacilityLocation_SectionId()
-	 * @model
+	 * @model annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	String getSectionId();

@@ -51,7 +51,7 @@ public interface ShoppingListItem extends BizEntity {
 	 * @return the value of the '<em>Config Id</em>' attribute.
 	 * @see #setConfigId(String)
 	 * @see org.abchip.mimo.biz.order.shoppinglist.ShoppinglistPackage#getShoppingListItem_ConfigId()
-	 * @model
+	 * @model annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	String getConfigId();
@@ -77,7 +77,7 @@ public interface ShoppingListItem extends BizEntity {
 	 * @return the value of the '<em>Modified Price</em>' attribute.
 	 * @see #setModifiedPrice(BigDecimal)
 	 * @see org.abchip.mimo.biz.order.shoppinglist.ShoppinglistPackage#getShoppingListItem_ModifiedPrice()
-	 * @model
+	 * @model annotation="mimo-ent-format type='currency-precise' precision='18' scale='3'"
 	 * @generated
 	 */
 	BigDecimal getModifiedPrice();
@@ -129,7 +129,7 @@ public interface ShoppingListItem extends BizEntity {
 	 * @return the value of the '<em>Quantity</em>' attribute.
 	 * @see #setQuantity(BigDecimal)
 	 * @see org.abchip.mimo.biz.order.shoppinglist.ShoppinglistPackage#getShoppingListItem_Quantity()
-	 * @model
+	 * @model annotation="mimo-ent-format type='fixed-point' precision='18' scale='6'"
 	 * @generated
 	 */
 	BigDecimal getQuantity();
@@ -155,7 +155,7 @@ public interface ShoppingListItem extends BizEntity {
 	 * @return the value of the '<em>Quantity Purchased</em>' attribute.
 	 * @see #setQuantityPurchased(BigDecimal)
 	 * @see org.abchip.mimo.biz.order.shoppinglist.ShoppinglistPackage#getShoppingListItem_QuantityPurchased()
-	 * @model
+	 * @model annotation="mimo-ent-format type='fixed-point' precision='18' scale='6'"
 	 * @generated
 	 */
 	BigDecimal getQuantityPurchased();
@@ -181,7 +181,7 @@ public interface ShoppingListItem extends BizEntity {
 	 * @return the value of the '<em>Reserv Length</em>' attribute.
 	 * @see #setReservLength(BigDecimal)
 	 * @see org.abchip.mimo.biz.order.shoppinglist.ShoppinglistPackage#getShoppingListItem_ReservLength()
-	 * @model
+	 * @model annotation="mimo-ent-format type='fixed-point' precision='18' scale='6'"
 	 * @generated
 	 */
 	BigDecimal getReservLength();
@@ -207,7 +207,7 @@ public interface ShoppingListItem extends BizEntity {
 	 * @return the value of the '<em>Reserv Persons</em>' attribute.
 	 * @see #setReservPersons(BigDecimal)
 	 * @see org.abchip.mimo.biz.order.shoppinglist.ShoppinglistPackage#getShoppingListItem_ReservPersons()
-	 * @model
+	 * @model annotation="mimo-ent-format type='fixed-point' precision='18' scale='6'"
 	 * @generated
 	 */
 	BigDecimal getReservPersons();
@@ -233,7 +233,7 @@ public interface ShoppingListItem extends BizEntity {
 	 * @return the value of the '<em>Reserv Start</em>' attribute.
 	 * @see #setReservStart(Date)
 	 * @see org.abchip.mimo.biz.order.shoppinglist.ShoppinglistPackage#getShoppingListItem_ReservStart()
-	 * @model
+	 * @model annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getReservStart();
@@ -286,6 +286,7 @@ public interface ShoppingListItem extends BizEntity {
 	 * @see #setShoppingListItemSeqId(String)
 	 * @see org.abchip.mimo.biz.order.shoppinglist.ShoppinglistPackage#getShoppingListItem_ShoppingListItemSeqId()
 	 * @model required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */

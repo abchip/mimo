@@ -19,8 +19,8 @@ import org.abchip.mimo.biz.BizEntity;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.content.content.ContentSearchConstraint#getConstraintSeqId <em>Constraint Seq Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.content.content.ContentSearchConstraint#isAnyPrefix <em>Any Prefix</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.content.content.ContentSearchConstraint#isAnySuffix <em>Any Suffix</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.content.content.ContentSearchConstraint#getAnyPrefix <em>Any Prefix</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.content.content.ContentSearchConstraint#getAnySuffix <em>Any Suffix</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.content.ContentSearchConstraint#getConstraintName <em>Constraint Name</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.content.ContentSearchConstraint#getHighValue <em>High Value</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.content.ContentSearchConstraint#isIncludeSubCategories <em>Include Sub Categories</em>}</li>
@@ -47,7 +47,7 @@ public interface ContentSearchConstraint extends BizEntity {
 	 * @return the value of the '<em>Constraint Name</em>' attribute.
 	 * @see #setConstraintName(String)
 	 * @see org.abchip.mimo.biz.content.content.ContentPackage#getContentSearchConstraint_ConstraintName()
-	 * @model
+	 * @model annotation="mimo-ent-format type='long-varchar' length='255'"
 	 * @generated
 	 */
 	String getConstraintName();
@@ -74,6 +74,7 @@ public interface ContentSearchConstraint extends BizEntity {
 	 * @see #setConstraintSeqId(String)
 	 * @see org.abchip.mimo.biz.content.content.ContentPackage#getContentSearchConstraint_ConstraintSeqId()
 	 * @model required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
@@ -98,22 +99,22 @@ public interface ContentSearchConstraint extends BizEntity {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Any Prefix</em>' attribute.
-	 * @see #setAnyPrefix(boolean)
+	 * @see #setAnyPrefix(char)
 	 * @see org.abchip.mimo.biz.content.content.ContentPackage#getContentSearchConstraint_AnyPrefix()
-	 * @model
+	 * @model annotation="mimo-ent-format type='indicator' length='1'"
 	 * @generated
 	 */
-	boolean isAnyPrefix();
+	char getAnyPrefix();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.content.content.ContentSearchConstraint#isAnyPrefix <em>Any Prefix</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.content.content.ContentSearchConstraint#getAnyPrefix <em>Any Prefix</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Any Prefix</em>' attribute.
-	 * @see #isAnyPrefix()
+	 * @see #getAnyPrefix()
 	 * @generated
 	 */
-	void setAnyPrefix(boolean value);
+	void setAnyPrefix(char value);
 
 	/**
 	 * Returns the value of the '<em><b>Any Suffix</b></em>' attribute.
@@ -124,22 +125,22 @@ public interface ContentSearchConstraint extends BizEntity {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Any Suffix</em>' attribute.
-	 * @see #setAnySuffix(boolean)
+	 * @see #setAnySuffix(char)
 	 * @see org.abchip.mimo.biz.content.content.ContentPackage#getContentSearchConstraint_AnySuffix()
-	 * @model
+	 * @model annotation="mimo-ent-format type='indicator' length='1'"
 	 * @generated
 	 */
-	boolean isAnySuffix();
+	char getAnySuffix();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.content.content.ContentSearchConstraint#isAnySuffix <em>Any Suffix</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.content.content.ContentSearchConstraint#getAnySuffix <em>Any Suffix</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Any Suffix</em>' attribute.
-	 * @see #isAnySuffix()
+	 * @see #getAnySuffix()
 	 * @generated
 	 */
-	void setAnySuffix(boolean value);
+	void setAnySuffix(char value);
 
 	/**
 	 * Returns the value of the '<em><b>Content Search Result Id</b></em>' reference.
@@ -178,7 +179,7 @@ public interface ContentSearchConstraint extends BizEntity {
 	 * @return the value of the '<em>High Value</em>' attribute.
 	 * @see #setHighValue(String)
 	 * @see org.abchip.mimo.biz.content.content.ContentPackage#getContentSearchConstraint_HighValue()
-	 * @model
+	 * @model annotation="mimo-ent-format type='short-varchar' length='60'"
 	 * @generated
 	 */
 	String getHighValue();
@@ -204,7 +205,7 @@ public interface ContentSearchConstraint extends BizEntity {
 	 * @return the value of the '<em>Include Sub Categories</em>' attribute.
 	 * @see #setIncludeSubCategories(boolean)
 	 * @see org.abchip.mimo.biz.content.content.ContentPackage#getContentSearchConstraint_IncludeSubCategories()
-	 * @model
+	 * @model annotation="mimo-ent-format type='indicator' length='1'"
 	 * @generated
 	 */
 	boolean isIncludeSubCategories();
@@ -230,7 +231,7 @@ public interface ContentSearchConstraint extends BizEntity {
 	 * @return the value of the '<em>Info String</em>' attribute.
 	 * @see #setInfoString(String)
 	 * @see org.abchip.mimo.biz.content.content.ContentPackage#getContentSearchConstraint_InfoString()
-	 * @model
+	 * @model annotation="mimo-ent-format type='long-varchar' length='255'"
 	 * @generated
 	 */
 	String getInfoString();
@@ -256,7 +257,7 @@ public interface ContentSearchConstraint extends BizEntity {
 	 * @return the value of the '<em>Is And</em>' attribute.
 	 * @see #setIsAnd(boolean)
 	 * @see org.abchip.mimo.biz.content.content.ContentPackage#getContentSearchConstraint_IsAnd()
-	 * @model
+	 * @model annotation="mimo-ent-format type='indicator' length='1'"
 	 * @generated
 	 */
 	boolean isIsAnd();
@@ -282,7 +283,7 @@ public interface ContentSearchConstraint extends BizEntity {
 	 * @return the value of the '<em>Low Value</em>' attribute.
 	 * @see #setLowValue(String)
 	 * @see org.abchip.mimo.biz.content.content.ContentPackage#getContentSearchConstraint_LowValue()
-	 * @model
+	 * @model annotation="mimo-ent-format type='short-varchar' length='60'"
 	 * @generated
 	 */
 	String getLowValue();
@@ -308,7 +309,7 @@ public interface ContentSearchConstraint extends BizEntity {
 	 * @return the value of the '<em>Remove Stems</em>' attribute.
 	 * @see #setRemoveStems(boolean)
 	 * @see org.abchip.mimo.biz.content.content.ContentPackage#getContentSearchConstraint_RemoveStems()
-	 * @model
+	 * @model annotation="mimo-ent-format type='indicator' length='1'"
 	 * @generated
 	 */
 	boolean isRemoveStems();

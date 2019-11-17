@@ -47,7 +47,7 @@ public interface Affiliate extends BizEntity {
 	 * @return the value of the '<em>Affiliate Description</em>' attribute.
 	 * @see #setAffiliateDescription(String)
 	 * @see org.abchip.mimo.biz.party.party.PartyPackage#getAffiliate_AffiliateDescription()
-	 * @model
+	 * @model annotation="mimo-ent-format type='description' length='255'"
 	 * @generated
 	 */
 	String getAffiliateDescription();
@@ -73,7 +73,7 @@ public interface Affiliate extends BizEntity {
 	 * @return the value of the '<em>Affiliate Name</em>' attribute.
 	 * @see #setAffiliateName(String)
 	 * @see org.abchip.mimo.biz.party.party.PartyPackage#getAffiliate_AffiliateName()
-	 * @model
+	 * @model annotation="mimo-ent-format type='name' length='100'"
 	 * @generated
 	 */
 	String getAffiliateName();
@@ -99,7 +99,7 @@ public interface Affiliate extends BizEntity {
 	 * @return the value of the '<em>Date Time Approved</em>' attribute.
 	 * @see #setDateTimeApproved(Date)
 	 * @see org.abchip.mimo.biz.party.party.PartyPackage#getAffiliate_DateTimeApproved()
-	 * @model
+	 * @model annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getDateTimeApproved();
@@ -125,7 +125,7 @@ public interface Affiliate extends BizEntity {
 	 * @return the value of the '<em>Date Time Created</em>' attribute.
 	 * @see #setDateTimeCreated(Date)
 	 * @see org.abchip.mimo.biz.party.party.PartyPackage#getAffiliate_DateTimeCreated()
-	 * @model
+	 * @model annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getDateTimeCreated();
@@ -177,7 +177,7 @@ public interface Affiliate extends BizEntity {
 	 * @return the value of the '<em>Site Page Views</em>' attribute.
 	 * @see #setSitePageViews(String)
 	 * @see org.abchip.mimo.biz.party.party.PartyPackage#getAffiliate_SitePageViews()
-	 * @model
+	 * @model annotation="mimo-ent-format type='comment' length='255'"
 	 * @generated
 	 */
 	String getSitePageViews();
@@ -203,7 +203,7 @@ public interface Affiliate extends BizEntity {
 	 * @return the value of the '<em>Site Type</em>' attribute.
 	 * @see #setSiteType(String)
 	 * @see org.abchip.mimo.biz.party.party.PartyPackage#getAffiliate_SiteType()
-	 * @model
+	 * @model annotation="mimo-ent-format type='comment' length='255'"
 	 * @generated
 	 */
 	String getSiteType();
@@ -229,7 +229,7 @@ public interface Affiliate extends BizEntity {
 	 * @return the value of the '<em>Site Visitors</em>' attribute.
 	 * @see #setSiteVisitors(String)
 	 * @see org.abchip.mimo.biz.party.party.PartyPackage#getAffiliate_SiteVisitors()
-	 * @model
+	 * @model annotation="mimo-ent-format type='comment' length='255'"
 	 * @generated
 	 */
 	String getSiteVisitors();
@@ -255,7 +255,7 @@ public interface Affiliate extends BizEntity {
 	 * @return the value of the '<em>Year Established</em>' attribute.
 	 * @see #setYearEstablished(String)
 	 * @see org.abchip.mimo.biz.party.party.PartyPackage#getAffiliate_YearEstablished()
-	 * @model
+	 * @model annotation="mimo-ent-format type='very-short' length='10'"
 	 * @generated
 	 */
 	String getYearEstablished();

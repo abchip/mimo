@@ -7,7 +7,6 @@
  */
 package org.abchip.mimo.biz.accounting.tax.impl;
 
-import java.lang.reflect.InvocationTargetException;
 import java.math.BigDecimal;
 import java.util.Date;
 import java.util.List;
@@ -18,7 +17,6 @@ import org.abchip.mimo.biz.accounting.tax.TaxPackage;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.product.category.ProductCategory;
 import org.abchip.mimo.biz.product.store.ProductStore;
-import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 
 /**
@@ -38,8 +36,8 @@ import org.eclipse.emf.ecore.EClass;
  *   <li>{@link org.abchip.mimo.biz.accounting.tax.impl.TaxAuthorityRateProductImpl#getTaxAuthGeoId <em>Tax Auth Geo Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.tax.impl.TaxAuthorityRateProductImpl#getTaxAuthPartyId <em>Tax Auth Party Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.tax.impl.TaxAuthorityRateProductImpl#getTaxPercentage <em>Tax Percentage</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.tax.impl.TaxAuthorityRateProductImpl#isTaxPromotions <em>Tax Promotions</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.tax.impl.TaxAuthorityRateProductImpl#isTaxShipping <em>Tax Shipping</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.tax.impl.TaxAuthorityRateProductImpl#getTaxPromotions <em>Tax Promotions</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.tax.impl.TaxAuthorityRateProductImpl#getTaxShipping <em>Tax Shipping</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.tax.impl.TaxAuthorityRateProductImpl#getThruDate <em>Thru Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.tax.impl.TaxAuthorityRateProductImpl#getTitleTransferEnumId <em>Title Transfer Enum Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.tax.impl.TaxAuthorityRateProductImpl#getTaxAuthorityRateTypeId <em>Tax Authority Rate Type Id</em>}</li>
@@ -279,8 +277,8 @@ public class TaxAuthorityRateProductImpl extends BizEntityImpl implements TaxAut
 	 * @generated
 	 */
 	@Override
-	public boolean isTaxPromotions() {
-		return (Boolean)eGet(TaxPackage.Literals.TAX_AUTHORITY_RATE_PRODUCT__TAX_PROMOTIONS, true);
+	public char getTaxPromotions() {
+		return (Character)eGet(TaxPackage.Literals.TAX_AUTHORITY_RATE_PRODUCT__TAX_PROMOTIONS, true);
 	}
 
 	/**
@@ -289,7 +287,7 @@ public class TaxAuthorityRateProductImpl extends BizEntityImpl implements TaxAut
 	 * @generated
 	 */
 	@Override
-	public void setTaxPromotions(boolean newTaxPromotions) {
+	public void setTaxPromotions(char newTaxPromotions) {
 		eSet(TaxPackage.Literals.TAX_AUTHORITY_RATE_PRODUCT__TAX_PROMOTIONS, newTaxPromotions);
 	}
 
@@ -299,8 +297,8 @@ public class TaxAuthorityRateProductImpl extends BizEntityImpl implements TaxAut
 	 * @generated
 	 */
 	@Override
-	public boolean isTaxShipping() {
-		return (Boolean)eGet(TaxPackage.Literals.TAX_AUTHORITY_RATE_PRODUCT__TAX_SHIPPING, true);
+	public char getTaxShipping() {
+		return (Character)eGet(TaxPackage.Literals.TAX_AUTHORITY_RATE_PRODUCT__TAX_SHIPPING, true);
 	}
 
 	/**
@@ -309,7 +307,7 @@ public class TaxAuthorityRateProductImpl extends BizEntityImpl implements TaxAut
 	 * @generated
 	 */
 	@Override
-	public void setTaxShipping(boolean newTaxShipping) {
+	public void setTaxShipping(char newTaxShipping) {
 		eSet(TaxPackage.Literals.TAX_AUTHORITY_RATE_PRODUCT__TAX_SHIPPING, newTaxShipping);
 	}
 
@@ -387,24 +385,6 @@ public class TaxAuthorityRateProductImpl extends BizEntityImpl implements TaxAut
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
-		switch (operationID) {
-			case TaxPackage.TAX_AUTHORITY_RATE_PRODUCT___INVOICE_ITEMS:
-				return invoiceItems();
-			case TaxPackage.TAX_AUTHORITY_RATE_PRODUCT___ORDER_ADJUSTMENTS:
-				return orderAdjustments();
-			case TaxPackage.TAX_AUTHORITY_RATE_PRODUCT___RETURN_ADJUSTMENTS:
-				return returnAdjustments();
-		}
-		return super.eInvoke(operationID, arguments);
 	}
 
 	/**

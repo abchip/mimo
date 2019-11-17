@@ -40,7 +40,7 @@ public interface GiftCard extends PaymentMethod {
 	 * @return the value of the '<em>Card Number</em>' attribute.
 	 * @see #setCardNumber(String)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getGiftCard_CardNumber()
-	 * @model
+	 * @model annotation="mimo-ent-format type='long-varchar' length='255'"
 	 * @generated
 	 */
 	String getCardNumber();
@@ -92,7 +92,7 @@ public interface GiftCard extends PaymentMethod {
 	 * @return the value of the '<em>Expire Date</em>' attribute.
 	 * @see #setExpireDate(String)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getGiftCard_ExpireDate()
-	 * @model
+	 * @model annotation="mimo-ent-format type='credit-card-date' length='7'"
 	 * @generated
 	 */
 	String getExpireDate();
@@ -118,7 +118,7 @@ public interface GiftCard extends PaymentMethod {
 	 * @return the value of the '<em>Pin Number</em>' attribute.
 	 * @see #setPinNumber(String)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getGiftCard_PinNumber()
-	 * @model
+	 * @model annotation="mimo-ent-format type='long-varchar' length='255'"
 	 * @generated
 	 */
 	String getPinNumber();

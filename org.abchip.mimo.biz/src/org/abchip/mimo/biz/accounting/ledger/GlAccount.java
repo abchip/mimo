@@ -51,7 +51,7 @@ public interface GlAccount extends BizEntityTyped<GlAccountType> {
 	 * @return the value of the '<em>Account Code</em>' attribute.
 	 * @see #setAccountCode(String)
 	 * @see org.abchip.mimo.biz.accounting.ledger.LedgerPackage#getGlAccount_AccountCode()
-	 * @model
+	 * @model annotation="mimo-ent-format type='name' length='100'"
 	 * @generated
 	 */
 	String getAccountCode();
@@ -77,7 +77,7 @@ public interface GlAccount extends BizEntityTyped<GlAccountType> {
 	 * @return the value of the '<em>Account Name</em>' attribute.
 	 * @see #setAccountName(String)
 	 * @see org.abchip.mimo.biz.accounting.ledger.LedgerPackage#getGlAccount_AccountName()
-	 * @model
+	 * @model annotation="mimo-ent-format type='name' length='100'"
 	 * @generated
 	 */
 	String getAccountName();
@@ -103,7 +103,7 @@ public interface GlAccount extends BizEntityTyped<GlAccountType> {
 	 * @return the value of the '<em>Description</em>' attribute.
 	 * @see #setDescription(String)
 	 * @see org.abchip.mimo.biz.accounting.ledger.LedgerPackage#getGlAccount_Description()
-	 * @model
+	 * @model annotation="mimo-ent-format type='description' length='255'"
 	 * @generated
 	 */
 	String getDescription();
@@ -129,7 +129,7 @@ public interface GlAccount extends BizEntityTyped<GlAccountType> {
 	 * @return the value of the '<em>External Id</em>' attribute.
 	 * @see #setExternalId(String)
 	 * @see org.abchip.mimo.biz.accounting.ledger.LedgerPackage#getGlAccount_ExternalId()
-	 * @model
+	 * @model annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	String getExternalId();
@@ -155,7 +155,7 @@ public interface GlAccount extends BizEntityTyped<GlAccountType> {
 	 * @return the value of the '<em>Product Id</em>' attribute.
 	 * @see #setProductId(String)
 	 * @see org.abchip.mimo.biz.accounting.ledger.LedgerPackage#getGlAccount_ProductId()
-	 * @model
+	 * @model annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	String getProductId();
@@ -181,7 +181,9 @@ public interface GlAccount extends BizEntityTyped<GlAccountType> {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Gl Account Group Members</em>' attribute list.
 	 * @see org.abchip.mimo.biz.accounting.ledger.LedgerPackage#getGlAccount_GlAccountGroupMembers()
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='GlAccountGroupMember'"
 	 * @generated
 	 */
@@ -198,7 +200,9 @@ public interface GlAccount extends BizEntityTyped<GlAccountType> {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Gl Account Organizations</em>' attribute list.
 	 * @see org.abchip.mimo.biz.accounting.ledger.LedgerPackage#getGlAccount_GlAccountOrganizations()
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='GlAccountOrganization'"
 	 * @generated
 	 */
@@ -207,7 +211,8 @@ public interface GlAccount extends BizEntityTyped<GlAccountType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='AcctgTransEntry' route='glAccountId'"
 	 * @generated
 	 */
@@ -216,7 +221,8 @@ public interface GlAccount extends BizEntityTyped<GlAccountType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='GlAccount' route='parentGlAccountId'"
 	 * @generated
 	 */
@@ -225,7 +231,8 @@ public interface GlAccount extends BizEntityTyped<GlAccountType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='InvoiceItemType' route='defaultGlAccountId'"
 	 * @generated
 	 */
@@ -234,7 +241,8 @@ public interface GlAccount extends BizEntityTyped<GlAccountType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='PaymentMethodType' route='defaultGlAccountId'"
 	 * @generated
 	 */
@@ -243,7 +251,8 @@ public interface GlAccount extends BizEntityTyped<GlAccountType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='FinAccountTypeGlAccount' route='glAccountId'"
 	 * @generated
 	 */
@@ -252,7 +261,8 @@ public interface GlAccount extends BizEntityTyped<GlAccountType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='GlAccountTypeDefault' route='glAccountId'"
 	 * @generated
 	 */
@@ -261,7 +271,8 @@ public interface GlAccount extends BizEntityTyped<GlAccountType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='GlReconciliation' route='glAccountId'"
 	 * @generated
 	 */
@@ -270,7 +281,8 @@ public interface GlAccount extends BizEntityTyped<GlAccountType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='InvoiceItemTypeGlAccount' route='glAccountId'"
 	 * @generated
 	 */
@@ -279,7 +291,8 @@ public interface GlAccount extends BizEntityTyped<GlAccountType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='InvoiceItem' route='overrideGlAccountId'"
 	 * @generated
 	 */
@@ -288,7 +301,8 @@ public interface GlAccount extends BizEntityTyped<GlAccountType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='OrderAdjustment' route='overrideGlAccountId'"
 	 * @generated
 	 */
@@ -297,7 +311,8 @@ public interface GlAccount extends BizEntityTyped<GlAccountType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='OrderItem' route='overrideGlAccountId'"
 	 * @generated
 	 */
@@ -306,7 +321,8 @@ public interface GlAccount extends BizEntityTyped<GlAccountType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='QuoteAdjustment' route='overrideGlAccountId'"
 	 * @generated
 	 */
@@ -315,7 +331,8 @@ public interface GlAccount extends BizEntityTyped<GlAccountType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ReturnAdjustment' route='overrideGlAccountId'"
 	 * @generated
 	 */
@@ -324,7 +341,8 @@ public interface GlAccount extends BizEntityTyped<GlAccountType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='PaymentApplication' route='overrideGlAccountId'"
 	 * @generated
 	 */
@@ -333,7 +351,8 @@ public interface GlAccount extends BizEntityTyped<GlAccountType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='PaymentMethodTypeGlAccount' route='glAccountId'"
 	 * @generated
 	 */
@@ -342,7 +361,8 @@ public interface GlAccount extends BizEntityTyped<GlAccountType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='PaymentMethod' route='glAccountId'"
 	 * @generated
 	 */
@@ -351,7 +371,8 @@ public interface GlAccount extends BizEntityTyped<GlAccountType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='Payment' route='overrideGlAccountId'"
 	 * @generated
 	 */
@@ -360,7 +381,8 @@ public interface GlAccount extends BizEntityTyped<GlAccountType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='FinAccount' route='postToGlAccountId'"
 	 * @generated
 	 */
@@ -369,7 +391,8 @@ public interface GlAccount extends BizEntityTyped<GlAccountType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='VarianceReasonGlAccount' route='glAccountId'"
 	 * @generated
 	 */
@@ -517,6 +540,7 @@ public interface GlAccount extends BizEntityTyped<GlAccountType> {
 	 * @see #setGlAccountId(String)
 	 * @see org.abchip.mimo.biz.accounting.ledger.LedgerPackage#getGlAccount_GlAccountId()
 	 * @model id="true" required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */

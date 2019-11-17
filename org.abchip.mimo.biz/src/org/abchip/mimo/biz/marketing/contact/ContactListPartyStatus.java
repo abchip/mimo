@@ -46,6 +46,7 @@ public interface ContactListPartyStatus extends BizEntity {
 	 * @see #setContactListId(String)
 	 * @see org.abchip.mimo.biz.marketing.contact.ContactPackage#getContactListPartyStatus_ContactListId()
 	 * @model required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
@@ -73,6 +74,7 @@ public interface ContactListPartyStatus extends BizEntity {
 	 * @see #setFromDate(Date)
 	 * @see org.abchip.mimo.biz.marketing.contact.ContactPackage#getContactListPartyStatus_FromDate()
 	 * @model required="true"
+	 *        annotation="mimo-ent-format type='date-time'"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
@@ -99,7 +101,7 @@ public interface ContactListPartyStatus extends BizEntity {
 	 * @return the value of the '<em>Opt In Verify Code</em>' attribute.
 	 * @see #setOptInVerifyCode(String)
 	 * @see org.abchip.mimo.biz.marketing.contact.ContactPackage#getContactListPartyStatus_OptInVerifyCode()
-	 * @model
+	 * @model annotation="mimo-ent-format type='short-varchar' length='60'"
 	 * @generated
 	 */
 	String getOptInVerifyCode();
@@ -126,6 +128,7 @@ public interface ContactListPartyStatus extends BizEntity {
 	 * @see #setPartyId(String)
 	 * @see org.abchip.mimo.biz.marketing.contact.ContactPackage#getContactListPartyStatus_PartyId()
 	 * @model required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
@@ -152,7 +155,7 @@ public interface ContactListPartyStatus extends BizEntity {
 	 * @return the value of the '<em>Set By User Login Id</em>' attribute.
 	 * @see #setSetByUserLoginId(String)
 	 * @see org.abchip.mimo.biz.marketing.contact.ContactPackage#getContactListPartyStatus_SetByUserLoginId()
-	 * @model
+	 * @model annotation="mimo-ent-format type='id-vlong' length='255'"
 	 * @generated
 	 */
 	String getSetByUserLoginId();
@@ -179,6 +182,7 @@ public interface ContactListPartyStatus extends BizEntity {
 	 * @see #setStatusDate(Date)
 	 * @see org.abchip.mimo.biz.marketing.contact.ContactPackage#getContactListPartyStatus_StatusDate()
 	 * @model required="true"
+	 *        annotation="mimo-ent-format type='date-time'"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
@@ -205,7 +209,7 @@ public interface ContactListPartyStatus extends BizEntity {
 	 * @return the value of the '<em>Status Id</em>' attribute.
 	 * @see #setStatusId(String)
 	 * @see org.abchip.mimo.biz.marketing.contact.ContactPackage#getContactListPartyStatus_StatusId()
-	 * @model
+	 * @model annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	String getStatusId();

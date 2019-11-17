@@ -42,6 +42,7 @@ public interface TenantDataSource extends BizEntity {
 	 * @see #setEntityGroupName(String)
 	 * @see org.abchip.mimo.biz.entity.tenant.TenantPackage#getTenantDataSource_EntityGroupName()
 	 * @model required="true"
+	 *        annotation="mimo-ent-format type='name' length='100'"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
@@ -68,7 +69,7 @@ public interface TenantDataSource extends BizEntity {
 	 * @return the value of the '<em>Jdbc Password</em>' attribute.
 	 * @see #setJdbcPassword(String)
 	 * @see org.abchip.mimo.biz.entity.tenant.TenantPackage#getTenantDataSource_JdbcPassword()
-	 * @model
+	 * @model annotation="mimo-ent-format type='long-varchar' length='255'"
 	 * @generated
 	 */
 	String getJdbcPassword();
@@ -94,7 +95,7 @@ public interface TenantDataSource extends BizEntity {
 	 * @return the value of the '<em>Jdbc Uri</em>' attribute.
 	 * @see #setJdbcUri(String)
 	 * @see org.abchip.mimo.biz.entity.tenant.TenantPackage#getTenantDataSource_JdbcUri()
-	 * @model
+	 * @model annotation="mimo-ent-format type='long-varchar' length='255'"
 	 * @generated
 	 */
 	String getJdbcUri();
@@ -120,7 +121,7 @@ public interface TenantDataSource extends BizEntity {
 	 * @return the value of the '<em>Jdbc Username</em>' attribute.
 	 * @see #setJdbcUsername(String)
 	 * @see org.abchip.mimo.biz.entity.tenant.TenantPackage#getTenantDataSource_JdbcUsername()
-	 * @model
+	 * @model annotation="mimo-ent-format type='long-varchar' length='255'"
 	 * @generated
 	 */
 	String getJdbcUsername();

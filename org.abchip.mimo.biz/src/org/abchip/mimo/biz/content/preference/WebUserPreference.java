@@ -96,6 +96,7 @@ public interface WebUserPreference extends BizEntity {
 	 * @see #setVisitId(String)
 	 * @see org.abchip.mimo.biz.content.preference.PreferencePackage#getWebUserPreference_VisitId()
 	 * @model required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
@@ -148,7 +149,7 @@ public interface WebUserPreference extends BizEntity {
 	 * @return the value of the '<em>Web Preference Value</em>' attribute.
 	 * @see #setWebPreferenceValue(String)
 	 * @see org.abchip.mimo.biz.content.preference.PreferencePackage#getWebUserPreference_WebPreferenceValue()
-	 * @model
+	 * @model annotation="mimo-ent-format type='long-varchar' length='255'"
 	 * @generated
 	 */
 	String getWebPreferenceValue();

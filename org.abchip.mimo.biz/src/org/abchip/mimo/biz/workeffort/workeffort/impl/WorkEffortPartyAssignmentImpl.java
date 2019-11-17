@@ -138,6 +138,26 @@ public class WorkEffortPartyAssignmentImpl extends BizEntityImpl implements Work
 	 * @generated
 	 */
 	@Override
+	public boolean isMustRsvp() {
+		return (Boolean)eGet(WorkeffortPackage.Literals.WORK_EFFORT_PARTY_ASSIGNMENT__MUST_RSVP, true);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setMustRsvp(boolean newMustRsvp) {
+		eSet(WorkeffortPackage.Literals.WORK_EFFORT_PARTY_ASSIGNMENT__MUST_RSVP, newMustRsvp);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public Enumeration getDelegateReasonEnumId() {
 		return (Enumeration)eGet(WorkeffortPackage.Literals.WORK_EFFORT_PARTY_ASSIGNMENT__DELEGATE_REASON_ENUM_ID, true);
 	}
@@ -190,26 +210,6 @@ public class WorkEffortPartyAssignmentImpl extends BizEntityImpl implements Work
 	@Override
 	public void setFacilityId(Facility newFacilityId) {
 		eSet(WorkeffortPackage.Literals.WORK_EFFORT_PARTY_ASSIGNMENT__FACILITY_ID, newFacilityId);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public boolean isMustRsvp() {
-		return (Boolean)eGet(WorkeffortPackage.Literals.WORK_EFFORT_PARTY_ASSIGNMENT__MUST_RSVP, true);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void setMustRsvp(boolean newMustRsvp) {
-		eSet(WorkeffortPackage.Literals.WORK_EFFORT_PARTY_ASSIGNMENT__MUST_RSVP, newMustRsvp);
 	}
 
 	/**

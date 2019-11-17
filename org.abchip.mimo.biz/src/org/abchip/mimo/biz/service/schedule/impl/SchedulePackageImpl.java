@@ -77,6 +77,7 @@ import org.abchip.mimo.biz.entity.crypto.CryptoPackage;
 import org.abchip.mimo.biz.entity.crypto.impl.CryptoPackageImpl;
 import org.abchip.mimo.biz.entity.group.GroupPackage;
 import org.abchip.mimo.biz.entity.group.impl.GroupPackageImpl;
+import org.abchip.mimo.biz.entity.impl.EntityPackageImpl;
 import org.abchip.mimo.biz.entity.sequence.SequencePackage;
 import org.abchip.mimo.biz.entity.sequence.impl.SequencePackageImpl;
 import org.abchip.mimo.biz.entity.synchronization.SynchronizationPackage;
@@ -200,7 +201,6 @@ import org.eclipse.emf.common.util.URI;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 
 import org.eclipse.emf.ecore.EReference;
@@ -377,6 +377,8 @@ public class SchedulePackageImpl extends EPackageImpl implements SchedulePackage
 		SurveyPackageImpl theSurveyPackage = (SurveyPackageImpl)(registeredPackage instanceof SurveyPackageImpl ? registeredPackage : SurveyPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(WebsitePackage.eNS_URI);
 		WebsitePackageImpl theWebsitePackage = (WebsitePackageImpl)(registeredPackage instanceof WebsitePackageImpl ? registeredPackage : WebsitePackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(org.abchip.mimo.biz.entity.EntityPackage.eNS_URI);
+		EntityPackageImpl theEntityPackage = (EntityPackageImpl)(registeredPackage instanceof EntityPackageImpl ? registeredPackage : org.abchip.mimo.biz.entity.EntityPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(AuditPackage.eNS_URI);
 		AuditPackageImpl theAuditPackage = (AuditPackageImpl)(registeredPackage instanceof AuditPackageImpl ? registeredPackage : AuditPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(CryptoPackage.eNS_URI);
@@ -530,6 +532,7 @@ public class SchedulePackageImpl extends EPackageImpl implements SchedulePackage
 		thePreferencePackage.createPackageContents();
 		theSurveyPackage.createPackageContents();
 		theWebsitePackage.createPackageContents();
+		theEntityPackage.createPackageContents();
 		theAuditPackage.createPackageContents();
 		theCryptoPackage.createPackageContents();
 		theGroupPackage.createPackageContents();
@@ -624,6 +627,7 @@ public class SchedulePackageImpl extends EPackageImpl implements SchedulePackage
 		thePreferencePackage.initializePackageContents();
 		theSurveyPackage.initializePackageContents();
 		theWebsitePackage.initializePackageContents();
+		theEntityPackage.initializePackageContents();
 		theAuditPackage.initializePackageContents();
 		theCryptoPackage.initializePackageContents();
 		theGroupPackage.initializePackageContents();
@@ -1028,16 +1032,6 @@ public class SchedulePackageImpl extends EPackageImpl implements SchedulePackage
 	 * @generated
 	 */
 	@Override
-	public EOperation getJobSandbox__ProductGroupOrders() {
-		return jobSandboxEClass.getEOperations().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public EReference getJobSandbox_TempExprId() {
 		return (EReference)jobSandboxEClass.getEStructuralFeatures().get(18);
 	}
@@ -1080,46 +1074,6 @@ public class SchedulePackageImpl extends EPackageImpl implements SchedulePackage
 	@Override
 	public EReference getRecurrenceInfo_ExceptionRuleId() {
 		return (EReference)recurrenceInfoEClass.getEStructuralFeatures().get(6);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EOperation getRecurrenceInfo__Invoices() {
-		return recurrenceInfoEClass.getEOperations().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EOperation getRecurrenceInfo__JobSandboxs() {
-		return recurrenceInfoEClass.getEOperations().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EOperation getRecurrenceInfo__ShoppingLists() {
-		return recurrenceInfoEClass.getEOperations().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EOperation getRecurrenceInfo__WorkEfforts() {
-		return recurrenceInfoEClass.getEOperations().get(3);
 	}
 
 	/**
@@ -1338,26 +1292,6 @@ public class SchedulePackageImpl extends EPackageImpl implements SchedulePackage
 	 * @generated
 	 */
 	@Override
-	public EOperation getRecurrenceRule__ExceptionRecurrenceInfos() {
-		return recurrenceRuleEClass.getEOperations().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EOperation getRecurrenceRule__RecurrenceInfos() {
-		return recurrenceRuleEClass.getEOperations().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public EClass getRuntimeData() {
 		return runtimeDataEClass;
 	}
@@ -1380,36 +1314,6 @@ public class SchedulePackageImpl extends EPackageImpl implements SchedulePackage
 	@Override
 	public EAttribute getRuntimeData_RuntimeInfo() {
 		return (EAttribute)runtimeDataEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EOperation getRuntimeData__ApplicationSandboxs() {
-		return runtimeDataEClass.getEOperations().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EOperation getRuntimeData__JobSandboxs() {
-		return runtimeDataEClass.getEOperations().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EOperation getRuntimeData__WorkEfforts() {
-		return runtimeDataEClass.getEOperations().get(2);
 	}
 
 	/**
@@ -1528,36 +1432,6 @@ public class SchedulePackageImpl extends EPackageImpl implements SchedulePackage
 	 * @generated
 	 */
 	@Override
-	public EOperation getTemporalExpression__JobSandboxs() {
-		return temporalExpressionEClass.getEOperations().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EOperation getTemporalExpression__ToTemporalExpressionAssocs() {
-		return temporalExpressionEClass.getEOperations().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EOperation getTemporalExpression__WorkEfforts() {
-		return temporalExpressionEClass.getEOperations().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public EClass getTemporalExpressionAssoc() {
 		return temporalExpressionAssocEClass;
 	}
@@ -1656,7 +1530,6 @@ public class SchedulePackageImpl extends EPackageImpl implements SchedulePackage
 		createEReference(jobSandboxEClass, JOB_SANDBOX__AUTH_USER_LOGIN_ID);
 		createEReference(jobSandboxEClass, JOB_SANDBOX__RUN_AS_USER);
 		createEReference(jobSandboxEClass, JOB_SANDBOX__STATUS_ID);
-		createEOperation(jobSandboxEClass, JOB_SANDBOX___PRODUCT_GROUP_ORDERS);
 
 		recurrenceInfoEClass = createEClass(RECURRENCE_INFO);
 		createEAttribute(recurrenceInfoEClass, RECURRENCE_INFO__RECURRENCE_INFO_ID);
@@ -1666,10 +1539,6 @@ public class SchedulePackageImpl extends EPackageImpl implements SchedulePackage
 		createEAttribute(recurrenceInfoEClass, RECURRENCE_INFO__START_DATE_TIME);
 		createEReference(recurrenceInfoEClass, RECURRENCE_INFO__RECURRENCE_RULE_ID);
 		createEReference(recurrenceInfoEClass, RECURRENCE_INFO__EXCEPTION_RULE_ID);
-		createEOperation(recurrenceInfoEClass, RECURRENCE_INFO___INVOICES);
-		createEOperation(recurrenceInfoEClass, RECURRENCE_INFO___JOB_SANDBOXS);
-		createEOperation(recurrenceInfoEClass, RECURRENCE_INFO___SHOPPING_LISTS);
-		createEOperation(recurrenceInfoEClass, RECURRENCE_INFO___WORK_EFFORTS);
 
 		recurrenceRuleEClass = createEClass(RECURRENCE_RULE);
 		createEAttribute(recurrenceRuleEClass, RECURRENCE_RULE__RECURRENCE_RULE_ID);
@@ -1688,15 +1557,10 @@ public class SchedulePackageImpl extends EPackageImpl implements SchedulePackage
 		createEAttribute(recurrenceRuleEClass, RECURRENCE_RULE__UNTIL_DATE_TIME);
 		createEAttribute(recurrenceRuleEClass, RECURRENCE_RULE__WEEK_START);
 		createEAttribute(recurrenceRuleEClass, RECURRENCE_RULE__XNAME);
-		createEOperation(recurrenceRuleEClass, RECURRENCE_RULE___EXCEPTION_RECURRENCE_INFOS);
-		createEOperation(recurrenceRuleEClass, RECURRENCE_RULE___RECURRENCE_INFOS);
 
 		runtimeDataEClass = createEClass(RUNTIME_DATA);
 		createEAttribute(runtimeDataEClass, RUNTIME_DATA__RUNTIME_DATA_ID);
 		createEAttribute(runtimeDataEClass, RUNTIME_DATA__RUNTIME_INFO);
-		createEOperation(runtimeDataEClass, RUNTIME_DATA___APPLICATION_SANDBOXS);
-		createEOperation(runtimeDataEClass, RUNTIME_DATA___JOB_SANDBOXS);
-		createEOperation(runtimeDataEClass, RUNTIME_DATA___WORK_EFFORTS);
 
 		temporalExpressionEClass = createEClass(TEMPORAL_EXPRESSION);
 		createEAttribute(temporalExpressionEClass, TEMPORAL_EXPRESSION__TEMP_EXPR_ID);
@@ -1709,9 +1573,6 @@ public class SchedulePackageImpl extends EPackageImpl implements SchedulePackage
 		createEAttribute(temporalExpressionEClass, TEMPORAL_EXPRESSION__STRING2);
 		createEAttribute(temporalExpressionEClass, TEMPORAL_EXPRESSION__TEMP_EXPR_TYPE_ID);
 		createEAttribute(temporalExpressionEClass, TEMPORAL_EXPRESSION__FROM_TEMPORAL_EXPRESSION_ASSOCS);
-		createEOperation(temporalExpressionEClass, TEMPORAL_EXPRESSION___JOB_SANDBOXS);
-		createEOperation(temporalExpressionEClass, TEMPORAL_EXPRESSION___TO_TEMPORAL_EXPRESSION_ASSOCS);
-		createEOperation(temporalExpressionEClass, TEMPORAL_EXPRESSION___WORK_EFFORTS);
 
 		temporalExpressionAssocEClass = createEClass(TEMPORAL_EXPRESSION_ASSOC);
 		createEAttribute(temporalExpressionAssocEClass, TEMPORAL_EXPRESSION_ASSOC__EXPR_ASSOC_TYPE);
@@ -1761,7 +1622,7 @@ public class SchedulePackageImpl extends EPackageImpl implements SchedulePackage
 		temporalExpressionEClass.getESuperTypes().add(theBizPackage.getBizEntity());
 		temporalExpressionAssocEClass.getESuperTypes().add(theBizPackage.getBizEntity());
 
-		// Initialize classes, features, and operations; add parameters
+		// Initialize classes and features; add operations and parameters
 		initEClass(jobManagerLockEClass, JobManagerLock.class, "JobManagerLock", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getJobManagerLock_InstanceId(), ecorePackage.getEString(), "instanceId", null, 1, 1, JobManagerLock.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getJobManagerLock_FromDate(), ecorePackage.getEDate(), "fromDate", null, 1, 1, JobManagerLock.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1805,7 +1666,7 @@ public class SchedulePackageImpl extends EPackageImpl implements SchedulePackage
 		initEReference(getJobSandbox_StatusId(), theStatusPackage.getStatusItem(), null, "statusId", null, 0, 1, JobSandbox.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getJobSandbox_StatusId().getEKeys().add(theStatusPackage.getStatusItem_StatusId());
 
-		initEOperation(getJobSandbox__ProductGroupOrders(), ecorePackage.getEString(), "productGroupOrders", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(jobSandboxEClass, ecorePackage.getEString(), "productGroupOrders", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(recurrenceInfoEClass, RecurrenceInfo.class, "RecurrenceInfo", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getRecurrenceInfo_RecurrenceInfoId(), ecorePackage.getEString(), "recurrenceInfoId", null, 1, 1, RecurrenceInfo.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1818,13 +1679,13 @@ public class SchedulePackageImpl extends EPackageImpl implements SchedulePackage
 		initEReference(getRecurrenceInfo_ExceptionRuleId(), this.getRecurrenceRule(), null, "exceptionRuleId", null, 0, 1, RecurrenceInfo.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getRecurrenceInfo_ExceptionRuleId().getEKeys().add(this.getRecurrenceRule_RecurrenceRuleId());
 
-		initEOperation(getRecurrenceInfo__Invoices(), ecorePackage.getEString(), "invoices", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(recurrenceInfoEClass, ecorePackage.getEString(), "invoices", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		initEOperation(getRecurrenceInfo__JobSandboxs(), ecorePackage.getEString(), "jobSandboxs", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(recurrenceInfoEClass, ecorePackage.getEString(), "jobSandboxs", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		initEOperation(getRecurrenceInfo__ShoppingLists(), ecorePackage.getEString(), "shoppingLists", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(recurrenceInfoEClass, ecorePackage.getEString(), "shoppingLists", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		initEOperation(getRecurrenceInfo__WorkEfforts(), ecorePackage.getEString(), "workEfforts", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(recurrenceInfoEClass, ecorePackage.getEString(), "workEfforts", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(recurrenceRuleEClass, RecurrenceRule.class, "RecurrenceRule", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getRecurrenceRule_RecurrenceRuleId(), ecorePackage.getEString(), "recurrenceRuleId", null, 1, 1, RecurrenceRule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1844,19 +1705,19 @@ public class SchedulePackageImpl extends EPackageImpl implements SchedulePackage
 		initEAttribute(getRecurrenceRule_WeekStart(), ecorePackage.getEString(), "weekStart", null, 0, 1, RecurrenceRule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getRecurrenceRule_XName(), ecorePackage.getEString(), "xName", null, 0, 1, RecurrenceRule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEOperation(getRecurrenceRule__ExceptionRecurrenceInfos(), ecorePackage.getEString(), "exceptionRecurrenceInfos", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(recurrenceRuleEClass, ecorePackage.getEString(), "exceptionRecurrenceInfos", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		initEOperation(getRecurrenceRule__RecurrenceInfos(), ecorePackage.getEString(), "recurrenceInfos", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(recurrenceRuleEClass, ecorePackage.getEString(), "recurrenceInfos", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(runtimeDataEClass, RuntimeData.class, "RuntimeData", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getRuntimeData_RuntimeDataId(), ecorePackage.getEString(), "runtimeDataId", null, 1, 1, RuntimeData.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getRuntimeData_RuntimeInfo(), ecorePackage.getEString(), "runtimeInfo", null, 0, 1, RuntimeData.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEOperation(getRuntimeData__ApplicationSandboxs(), ecorePackage.getEString(), "applicationSandboxs", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(runtimeDataEClass, ecorePackage.getEString(), "applicationSandboxs", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		initEOperation(getRuntimeData__JobSandboxs(), ecorePackage.getEString(), "jobSandboxs", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(runtimeDataEClass, ecorePackage.getEString(), "jobSandboxs", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		initEOperation(getRuntimeData__WorkEfforts(), ecorePackage.getEString(), "workEfforts", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(runtimeDataEClass, ecorePackage.getEString(), "workEfforts", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(temporalExpressionEClass, TemporalExpression.class, "TemporalExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getTemporalExpression_TempExprId(), ecorePackage.getEString(), "tempExprId", null, 1, 1, TemporalExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1868,13 +1729,13 @@ public class SchedulePackageImpl extends EPackageImpl implements SchedulePackage
 		initEAttribute(getTemporalExpression_String1(), ecorePackage.getEString(), "string1", null, 0, 1, TemporalExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getTemporalExpression_String2(), ecorePackage.getEString(), "string2", null, 0, 1, TemporalExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getTemporalExpression_TempExprTypeId(), ecorePackage.getEString(), "tempExprTypeId", null, 0, 1, TemporalExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getTemporalExpression_FromTemporalExpressionAssocs(), ecorePackage.getEString(), "fromTemporalExpressionAssocs", null, 0, -1, TemporalExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getTemporalExpression_FromTemporalExpressionAssocs(), ecorePackage.getEString(), "fromTemporalExpressionAssocs", null, 1, -1, TemporalExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEOperation(getTemporalExpression__JobSandboxs(), ecorePackage.getEString(), "jobSandboxs", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(temporalExpressionEClass, ecorePackage.getEString(), "jobSandboxs", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		initEOperation(getTemporalExpression__ToTemporalExpressionAssocs(), ecorePackage.getEString(), "toTemporalExpressionAssocs", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(temporalExpressionEClass, ecorePackage.getEString(), "toTemporalExpressionAssocs", 1, -1, IS_UNIQUE, IS_ORDERED);
 
-		initEOperation(getTemporalExpression__WorkEfforts(), ecorePackage.getEString(), "workEfforts", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(temporalExpressionEClass, ecorePackage.getEString(), "workEfforts", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(temporalExpressionAssocEClass, TemporalExpressionAssoc.class, "TemporalExpressionAssoc", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getTemporalExpressionAssoc_ExprAssocType(), ecorePackage.getEString(), "exprAssocType", null, 0, 1, TemporalExpressionAssoc.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1884,12 +1745,512 @@ public class SchedulePackageImpl extends EPackageImpl implements SchedulePackage
 		getTemporalExpressionAssoc_ToTempExprId().getEKeys().add(this.getTemporalExpression_TempExprId());
 
 		// Create annotations
+		// mimo-ent-format
+		createMimoentformatAnnotations();
 		// mimo-ent-slot
 		createMimoentslotAnnotations();
 		// mimo-ent-domain
 		createMimoentdomainAnnotations();
 		// mimo-ent-frame
 		createMimoentframeAnnotations();
+	}
+
+	/**
+	 * Initializes the annotations for <b>mimo-ent-format</b>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void createMimoentformatAnnotations() {
+		String source = "mimo-ent-format";
+		addAnnotation
+		  (getJobManagerLock_InstanceId(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (getJobManagerLock_FromDate(),
+		   source,
+		   new String[] {
+			   "type", "date-time"
+		   });
+		addAnnotation
+		  (getJobManagerLock_Comments(),
+		   source,
+		   new String[] {
+			   "type", "comment",
+			   "length", "255"
+		   });
+		addAnnotation
+		  (getJobManagerLock_CreatedByUserLogin(),
+		   source,
+		   new String[] {
+			   "type", "id-vlong",
+			   "length", "255"
+		   });
+		addAnnotation
+		  (getJobManagerLock_CreatedDate(),
+		   source,
+		   new String[] {
+			   "type", "date-time"
+		   });
+		addAnnotation
+		  (getJobManagerLock_LastModifiedByUserLogin(),
+		   source,
+		   new String[] {
+			   "type", "id-vlong",
+			   "length", "255"
+		   });
+		addAnnotation
+		  (getJobManagerLock_LastModifiedDate(),
+		   source,
+		   new String[] {
+			   "type", "date-time"
+		   });
+		addAnnotation
+		  (getJobManagerLock_ThruDate(),
+		   source,
+		   new String[] {
+			   "type", "date-time"
+		   });
+		addAnnotation
+		  (jobSandboxEClass.getEOperations().get(0),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (getJobSandbox_JobId(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (getJobSandbox_CancelDateTime(),
+		   source,
+		   new String[] {
+			   "type", "date-time"
+		   });
+		addAnnotation
+		  (getJobSandbox_CurrentRecurrenceCount(),
+		   source,
+		   new String[] {
+			   "type", "numeric",
+			   "precision", "20",
+			   "scale", "0"
+		   });
+		addAnnotation
+		  (getJobSandbox_CurrentRetryCount(),
+		   source,
+		   new String[] {
+			   "type", "numeric",
+			   "precision", "20",
+			   "scale", "0"
+		   });
+		addAnnotation
+		  (getJobSandbox_FinishDateTime(),
+		   source,
+		   new String[] {
+			   "type", "date-time"
+		   });
+		addAnnotation
+		  (getJobSandbox_JobName(),
+		   source,
+		   new String[] {
+			   "type", "name",
+			   "length", "100"
+		   });
+		addAnnotation
+		  (getJobSandbox_JobResult(),
+		   source,
+		   new String[] {
+			   "type", "value",
+			   "length", "255"
+		   });
+		addAnnotation
+		  (getJobSandbox_LoaderName(),
+		   source,
+		   new String[] {
+			   "type", "name",
+			   "length", "100"
+		   });
+		addAnnotation
+		  (getJobSandbox_MaxRecurrenceCount(),
+		   source,
+		   new String[] {
+			   "type", "numeric",
+			   "precision", "20",
+			   "scale", "0"
+		   });
+		addAnnotation
+		  (getJobSandbox_MaxRetry(),
+		   source,
+		   new String[] {
+			   "type", "numeric",
+			   "precision", "20",
+			   "scale", "0"
+		   });
+		addAnnotation
+		  (getJobSandbox_ParentJobId(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (getJobSandbox_PoolId(),
+		   source,
+		   new String[] {
+			   "type", "name",
+			   "length", "100"
+		   });
+		addAnnotation
+		  (getJobSandbox_PreviousJobId(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (getJobSandbox_RunByInstanceId(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (getJobSandbox_RunTime(),
+		   source,
+		   new String[] {
+			   "type", "date-time"
+		   });
+		addAnnotation
+		  (getJobSandbox_ServiceName(),
+		   source,
+		   new String[] {
+			   "type", "name",
+			   "length", "100"
+		   });
+		addAnnotation
+		  (getJobSandbox_StartDateTime(),
+		   source,
+		   new String[] {
+			   "type", "date-time"
+		   });
+		addAnnotation
+		  (recurrenceInfoEClass.getEOperations().get(0),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (recurrenceInfoEClass.getEOperations().get(1),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (recurrenceInfoEClass.getEOperations().get(2),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (recurrenceInfoEClass.getEOperations().get(3),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (getRecurrenceInfo_RecurrenceInfoId(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (getRecurrenceInfo_ExceptionDateTimes(),
+		   source,
+		   new String[] {
+			   "type", "very-long"
+		   });
+		addAnnotation
+		  (getRecurrenceInfo_RecurrenceCount(),
+		   source,
+		   new String[] {
+			   "type", "numeric",
+			   "precision", "20",
+			   "scale", "0"
+		   });
+		addAnnotation
+		  (getRecurrenceInfo_RecurrenceDateTimes(),
+		   source,
+		   new String[] {
+			   "type", "very-long"
+		   });
+		addAnnotation
+		  (getRecurrenceInfo_StartDateTime(),
+		   source,
+		   new String[] {
+			   "type", "date-time"
+		   });
+		addAnnotation
+		  (recurrenceRuleEClass.getEOperations().get(0),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (recurrenceRuleEClass.getEOperations().get(1),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (getRecurrenceRule_RecurrenceRuleId(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (getRecurrenceRule_ByDayList(),
+		   source,
+		   new String[] {
+			   "type", "very-long"
+		   });
+		addAnnotation
+		  (getRecurrenceRule_ByHourList(),
+		   source,
+		   new String[] {
+			   "type", "very-long"
+		   });
+		addAnnotation
+		  (getRecurrenceRule_ByMinuteList(),
+		   source,
+		   new String[] {
+			   "type", "very-long"
+		   });
+		addAnnotation
+		  (getRecurrenceRule_ByMonthDayList(),
+		   source,
+		   new String[] {
+			   "type", "very-long"
+		   });
+		addAnnotation
+		  (getRecurrenceRule_ByMonthList(),
+		   source,
+		   new String[] {
+			   "type", "very-long"
+		   });
+		addAnnotation
+		  (getRecurrenceRule_BySecondList(),
+		   source,
+		   new String[] {
+			   "type", "very-long"
+		   });
+		addAnnotation
+		  (getRecurrenceRule_BySetPosList(),
+		   source,
+		   new String[] {
+			   "type", "very-long"
+		   });
+		addAnnotation
+		  (getRecurrenceRule_ByWeekNoList(),
+		   source,
+		   new String[] {
+			   "type", "very-long"
+		   });
+		addAnnotation
+		  (getRecurrenceRule_ByYearDayList(),
+		   source,
+		   new String[] {
+			   "type", "very-long"
+		   });
+		addAnnotation
+		  (getRecurrenceRule_CountNumber(),
+		   source,
+		   new String[] {
+			   "type", "numeric",
+			   "precision", "20",
+			   "scale", "0"
+		   });
+		addAnnotation
+		  (getRecurrenceRule_Frequency(),
+		   source,
+		   new String[] {
+			   "type", "short-varchar",
+			   "length", "60"
+		   });
+		addAnnotation
+		  (getRecurrenceRule_IntervalNumber(),
+		   source,
+		   new String[] {
+			   "type", "numeric",
+			   "precision", "20",
+			   "scale", "0"
+		   });
+		addAnnotation
+		  (getRecurrenceRule_UntilDateTime(),
+		   source,
+		   new String[] {
+			   "type", "date-time"
+		   });
+		addAnnotation
+		  (getRecurrenceRule_WeekStart(),
+		   source,
+		   new String[] {
+			   "type", "short-varchar",
+			   "length", "60"
+		   });
+		addAnnotation
+		  (getRecurrenceRule_XName(),
+		   source,
+		   new String[] {
+			   "type", "very-long"
+		   });
+		addAnnotation
+		  (runtimeDataEClass.getEOperations().get(0),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (runtimeDataEClass.getEOperations().get(1),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (runtimeDataEClass.getEOperations().get(2),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (getRuntimeData_RuntimeDataId(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (getRuntimeData_RuntimeInfo(),
+		   source,
+		   new String[] {
+			   "type", "very-long"
+		   });
+		addAnnotation
+		  (temporalExpressionEClass.getEOperations().get(0),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (temporalExpressionEClass.getEOperations().get(1),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (temporalExpressionEClass.getEOperations().get(2),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (getTemporalExpression_TempExprId(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (getTemporalExpression_Date1(),
+		   source,
+		   new String[] {
+			   "type", "date-time"
+		   });
+		addAnnotation
+		  (getTemporalExpression_Date2(),
+		   source,
+		   new String[] {
+			   "type", "date-time"
+		   });
+		addAnnotation
+		  (getTemporalExpression_Description(),
+		   source,
+		   new String[] {
+			   "type", "description",
+			   "length", "255"
+		   });
+		addAnnotation
+		  (getTemporalExpression_Integer1(),
+		   source,
+		   new String[] {
+			   "type", "numeric",
+			   "precision", "20",
+			   "scale", "0"
+		   });
+		addAnnotation
+		  (getTemporalExpression_Integer2(),
+		   source,
+		   new String[] {
+			   "type", "numeric",
+			   "precision", "20",
+			   "scale", "0"
+		   });
+		addAnnotation
+		  (getTemporalExpression_String1(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (getTemporalExpression_String2(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (getTemporalExpression_TempExprTypeId(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (getTemporalExpression_FromTemporalExpressionAssocs(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (getTemporalExpressionAssoc_ExprAssocType(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
 	}
 
 	/**
@@ -1913,7 +2274,7 @@ public class SchedulePackageImpl extends EPackageImpl implements SchedulePackage
 			   "key", "true"
 		   });
 		addAnnotation
-		  (getJobSandbox__ProductGroupOrders(),
+		  (jobSandboxEClass.getEOperations().get(0),
 		   source,
 		   new String[] {
 			   "derived", "true"
@@ -1925,25 +2286,25 @@ public class SchedulePackageImpl extends EPackageImpl implements SchedulePackage
 			   "key", "true"
 		   });
 		addAnnotation
-		  (getRecurrenceInfo__Invoices(),
+		  (recurrenceInfoEClass.getEOperations().get(0),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (getRecurrenceInfo__JobSandboxs(),
+		  (recurrenceInfoEClass.getEOperations().get(1),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (getRecurrenceInfo__ShoppingLists(),
+		  (recurrenceInfoEClass.getEOperations().get(2),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (getRecurrenceInfo__WorkEfforts(),
+		  (recurrenceInfoEClass.getEOperations().get(3),
 		   source,
 		   new String[] {
 			   "derived", "true"
@@ -1955,13 +2316,13 @@ public class SchedulePackageImpl extends EPackageImpl implements SchedulePackage
 			   "key", "true"
 		   });
 		addAnnotation
-		  (getRecurrenceRule__ExceptionRecurrenceInfos(),
+		  (recurrenceRuleEClass.getEOperations().get(0),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (getRecurrenceRule__RecurrenceInfos(),
+		  (recurrenceRuleEClass.getEOperations().get(1),
 		   source,
 		   new String[] {
 			   "derived", "true"
@@ -1973,19 +2334,19 @@ public class SchedulePackageImpl extends EPackageImpl implements SchedulePackage
 			   "key", "true"
 		   });
 		addAnnotation
-		  (getRuntimeData__ApplicationSandboxs(),
+		  (runtimeDataEClass.getEOperations().get(0),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (getRuntimeData__JobSandboxs(),
+		  (runtimeDataEClass.getEOperations().get(1),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (getRuntimeData__WorkEfforts(),
+		  (runtimeDataEClass.getEOperations().get(2),
 		   source,
 		   new String[] {
 			   "derived", "true"
@@ -1997,19 +2358,19 @@ public class SchedulePackageImpl extends EPackageImpl implements SchedulePackage
 			   "key", "true"
 		   });
 		addAnnotation
-		  (getTemporalExpression__JobSandboxs(),
+		  (temporalExpressionEClass.getEOperations().get(0),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (getTemporalExpression__ToTemporalExpressionAssocs(),
+		  (temporalExpressionEClass.getEOperations().get(1),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (getTemporalExpression__WorkEfforts(),
+		  (temporalExpressionEClass.getEOperations().get(2),
 		   source,
 		   new String[] {
 			   "derived", "true"
@@ -2037,7 +2398,7 @@ public class SchedulePackageImpl extends EPackageImpl implements SchedulePackage
 	protected void createMimoentdomainAnnotations() {
 		String source = "mimo-ent-domain";
 		addAnnotation
-		  (getJobSandbox__ProductGroupOrders(),
+		  (jobSandboxEClass.getEOperations().get(0),
 		   source,
 		   new String[] {
 			   "frame", "ProductGroupOrder",
@@ -2047,7 +2408,7 @@ public class SchedulePackageImpl extends EPackageImpl implements SchedulePackage
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (getRecurrenceInfo__Invoices(),
+		  (recurrenceInfoEClass.getEOperations().get(0),
 		   source,
 		   new String[] {
 			   "frame", "Invoice",
@@ -2057,7 +2418,7 @@ public class SchedulePackageImpl extends EPackageImpl implements SchedulePackage
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (getRecurrenceInfo__JobSandboxs(),
+		  (recurrenceInfoEClass.getEOperations().get(1),
 		   source,
 		   new String[] {
 			   "frame", "JobSandbox",
@@ -2067,7 +2428,7 @@ public class SchedulePackageImpl extends EPackageImpl implements SchedulePackage
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (getRecurrenceInfo__ShoppingLists(),
+		  (recurrenceInfoEClass.getEOperations().get(2),
 		   source,
 		   new String[] {
 			   "frame", "ShoppingList",
@@ -2077,7 +2438,7 @@ public class SchedulePackageImpl extends EPackageImpl implements SchedulePackage
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (getRecurrenceInfo__WorkEfforts(),
+		  (recurrenceInfoEClass.getEOperations().get(3),
 		   source,
 		   new String[] {
 			   "frame", "WorkEffort",
@@ -2087,7 +2448,7 @@ public class SchedulePackageImpl extends EPackageImpl implements SchedulePackage
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (getRecurrenceRule__ExceptionRecurrenceInfos(),
+		  (recurrenceRuleEClass.getEOperations().get(0),
 		   source,
 		   new String[] {
 			   "frame", "RecurrenceInfo",
@@ -2097,7 +2458,7 @@ public class SchedulePackageImpl extends EPackageImpl implements SchedulePackage
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (getRecurrenceRule__RecurrenceInfos(),
+		  (recurrenceRuleEClass.getEOperations().get(1),
 		   source,
 		   new String[] {
 			   "frame", "RecurrenceInfo",
@@ -2107,7 +2468,7 @@ public class SchedulePackageImpl extends EPackageImpl implements SchedulePackage
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (getRuntimeData__ApplicationSandboxs(),
+		  (runtimeDataEClass.getEOperations().get(0),
 		   source,
 		   new String[] {
 			   "frame", "ApplicationSandbox",
@@ -2117,7 +2478,7 @@ public class SchedulePackageImpl extends EPackageImpl implements SchedulePackage
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (getRuntimeData__JobSandboxs(),
+		  (runtimeDataEClass.getEOperations().get(1),
 		   source,
 		   new String[] {
 			   "frame", "JobSandbox",
@@ -2127,7 +2488,7 @@ public class SchedulePackageImpl extends EPackageImpl implements SchedulePackage
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (getRuntimeData__WorkEfforts(),
+		  (runtimeDataEClass.getEOperations().get(2),
 		   source,
 		   new String[] {
 			   "frame", "WorkEffort",
@@ -2137,7 +2498,7 @@ public class SchedulePackageImpl extends EPackageImpl implements SchedulePackage
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (getTemporalExpression__JobSandboxs(),
+		  (temporalExpressionEClass.getEOperations().get(0),
 		   source,
 		   new String[] {
 			   "frame", "JobSandbox",
@@ -2147,7 +2508,7 @@ public class SchedulePackageImpl extends EPackageImpl implements SchedulePackage
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (getTemporalExpression__ToTemporalExpressionAssocs(),
+		  (temporalExpressionEClass.getEOperations().get(1),
 		   source,
 		   new String[] {
 			   "frame", "TemporalExpressionAssoc",
@@ -2157,7 +2518,7 @@ public class SchedulePackageImpl extends EPackageImpl implements SchedulePackage
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (getTemporalExpression__WorkEfforts(),
+		  (temporalExpressionEClass.getEOperations().get(2),
 		   source,
 		   new String[] {
 			   "frame", "WorkEffort",

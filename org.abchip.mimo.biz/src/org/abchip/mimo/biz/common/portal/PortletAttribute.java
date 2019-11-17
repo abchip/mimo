@@ -43,7 +43,7 @@ public interface PortletAttribute extends BizEntity {
 	 * @return the value of the '<em>Attr Description</em>' attribute.
 	 * @see #setAttrDescription(String)
 	 * @see org.abchip.mimo.biz.common.portal.PortalPackage#getPortletAttribute_AttrDescription()
-	 * @model
+	 * @model annotation="mimo-ent-format type='description' length='255'"
 	 * @generated
 	 */
 	String getAttrDescription();
@@ -70,6 +70,7 @@ public interface PortletAttribute extends BizEntity {
 	 * @see #setAttrName(String)
 	 * @see org.abchip.mimo.biz.common.portal.PortalPackage#getPortletAttribute_AttrName()
 	 * @model required="true"
+	 *        annotation="mimo-ent-format type='id-long' length='60'"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
@@ -96,7 +97,7 @@ public interface PortletAttribute extends BizEntity {
 	 * @return the value of the '<em>Attr Type</em>' attribute.
 	 * @see #setAttrType(String)
 	 * @see org.abchip.mimo.biz.common.portal.PortalPackage#getPortletAttribute_AttrType()
-	 * @model
+	 * @model annotation="mimo-ent-format type='value' length='255'"
 	 * @generated
 	 */
 	String getAttrType();
@@ -122,7 +123,7 @@ public interface PortletAttribute extends BizEntity {
 	 * @return the value of the '<em>Attr Value</em>' attribute.
 	 * @see #setAttrValue(String)
 	 * @see org.abchip.mimo.biz.common.portal.PortalPackage#getPortletAttribute_AttrValue()
-	 * @model
+	 * @model annotation="mimo-ent-format type='value' length='255'"
 	 * @generated
 	 */
 	String getAttrValue();
@@ -149,6 +150,7 @@ public interface PortletAttribute extends BizEntity {
 	 * @see #setPortalPageId(String)
 	 * @see org.abchip.mimo.biz.common.portal.PortalPackage#getPortletAttribute_PortalPageId()
 	 * @model required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
@@ -176,6 +178,7 @@ public interface PortletAttribute extends BizEntity {
 	 * @see #setPortletSeqId(String)
 	 * @see org.abchip.mimo.biz.common.portal.PortalPackage#getPortletAttribute_PortletSeqId()
 	 * @model required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */

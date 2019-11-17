@@ -55,7 +55,7 @@ public interface ShipmentPackageRouteSeg extends BizEntity {
 	 * @return the value of the '<em>Box Number</em>' attribute.
 	 * @see #setBoxNumber(String)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipmentPackageRouteSeg_BoxNumber()
-	 * @model
+	 * @model annotation="mimo-ent-format type='short-varchar' length='60'"
 	 * @generated
 	 */
 	String getBoxNumber();
@@ -81,7 +81,7 @@ public interface ShipmentPackageRouteSeg extends BizEntity {
 	 * @return the value of the '<em>Cod Amount</em>' attribute.
 	 * @see #setCodAmount(BigDecimal)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipmentPackageRouteSeg_CodAmount()
-	 * @model
+	 * @model annotation="mimo-ent-format type='currency-amount' precision='18' scale='2'"
 	 * @generated
 	 */
 	BigDecimal getCodAmount();
@@ -133,7 +133,7 @@ public interface ShipmentPackageRouteSeg extends BizEntity {
 	 * @return the value of the '<em>Insured Amount</em>' attribute.
 	 * @see #setInsuredAmount(BigDecimal)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipmentPackageRouteSeg_InsuredAmount()
-	 * @model
+	 * @model annotation="mimo-ent-format type='currency-amount' precision='18' scale='2'"
 	 * @generated
 	 */
 	BigDecimal getInsuredAmount();
@@ -159,7 +159,7 @@ public interface ShipmentPackageRouteSeg extends BizEntity {
 	 * @return the value of the '<em>International Invoice</em>' attribute.
 	 * @see #setInternationalInvoice(byte[])
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipmentPackageRouteSeg_InternationalInvoice()
-	 * @model
+	 * @model annotation="mimo-ent-format type='byte-array'"
 	 * @generated
 	 */
 	byte[] getInternationalInvoice();
@@ -185,7 +185,7 @@ public interface ShipmentPackageRouteSeg extends BizEntity {
 	 * @return the value of the '<em>Label Html</em>' attribute.
 	 * @see #setLabelHtml(String)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipmentPackageRouteSeg_LabelHtml()
-	 * @model
+	 * @model annotation="mimo-ent-format type='very-long'"
 	 * @generated
 	 */
 	String getLabelHtml();
@@ -211,7 +211,7 @@ public interface ShipmentPackageRouteSeg extends BizEntity {
 	 * @return the value of the '<em>Label Image</em>' attribute.
 	 * @see #setLabelImage(byte[])
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipmentPackageRouteSeg_LabelImage()
-	 * @model
+	 * @model annotation="mimo-ent-format type='byte-array'"
 	 * @generated
 	 */
 	byte[] getLabelImage();
@@ -237,7 +237,7 @@ public interface ShipmentPackageRouteSeg extends BizEntity {
 	 * @return the value of the '<em>Label Intl Sign Image</em>' attribute.
 	 * @see #setLabelIntlSignImage(byte[])
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipmentPackageRouteSeg_LabelIntlSignImage()
-	 * @model
+	 * @model annotation="mimo-ent-format type='byte-array'"
 	 * @generated
 	 */
 	byte[] getLabelIntlSignImage();
@@ -263,7 +263,7 @@ public interface ShipmentPackageRouteSeg extends BizEntity {
 	 * @return the value of the '<em>Label Printed</em>' attribute.
 	 * @see #setLabelPrinted(boolean)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipmentPackageRouteSeg_LabelPrinted()
-	 * @model
+	 * @model annotation="mimo-ent-format type='indicator' length='1'"
 	 * @generated
 	 */
 	boolean isLabelPrinted();
@@ -289,7 +289,7 @@ public interface ShipmentPackageRouteSeg extends BizEntity {
 	 * @return the value of the '<em>Package Other Cost</em>' attribute.
 	 * @see #setPackageOtherCost(BigDecimal)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipmentPackageRouteSeg_PackageOtherCost()
-	 * @model
+	 * @model annotation="mimo-ent-format type='currency-amount' precision='18' scale='2'"
 	 * @generated
 	 */
 	BigDecimal getPackageOtherCost();
@@ -315,7 +315,7 @@ public interface ShipmentPackageRouteSeg extends BizEntity {
 	 * @return the value of the '<em>Package Service Cost</em>' attribute.
 	 * @see #setPackageServiceCost(BigDecimal)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipmentPackageRouteSeg_PackageServiceCost()
-	 * @model
+	 * @model annotation="mimo-ent-format type='currency-amount' precision='18' scale='2'"
 	 * @generated
 	 */
 	BigDecimal getPackageServiceCost();
@@ -341,7 +341,7 @@ public interface ShipmentPackageRouteSeg extends BizEntity {
 	 * @return the value of the '<em>Package Transport Cost</em>' attribute.
 	 * @see #setPackageTransportCost(BigDecimal)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipmentPackageRouteSeg_PackageTransportCost()
-	 * @model
+	 * @model annotation="mimo-ent-format type='currency-amount' precision='18' scale='2'"
 	 * @generated
 	 */
 	BigDecimal getPackageTransportCost();
@@ -394,6 +394,7 @@ public interface ShipmentPackageRouteSeg extends BizEntity {
 	 * @see #setShipmentPackageSeqId(String)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipmentPackageRouteSeg_ShipmentPackageSeqId()
 	 * @model required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
@@ -421,6 +422,7 @@ public interface ShipmentPackageRouteSeg extends BizEntity {
 	 * @see #setShipmentRouteSegmentId(String)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipmentPackageRouteSeg_ShipmentRouteSegmentId()
 	 * @model required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
@@ -447,7 +449,7 @@ public interface ShipmentPackageRouteSeg extends BizEntity {
 	 * @return the value of the '<em>Tracking Code</em>' attribute.
 	 * @see #setTrackingCode(String)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipmentPackageRouteSeg_TrackingCode()
-	 * @model
+	 * @model annotation="mimo-ent-format type='short-varchar' length='60'"
 	 * @generated
 	 */
 	String getTrackingCode();

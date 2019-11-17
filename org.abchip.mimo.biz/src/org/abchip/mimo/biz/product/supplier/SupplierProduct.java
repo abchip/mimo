@@ -63,7 +63,7 @@ public interface SupplierProduct extends BizEntity {
 	 * @return the value of the '<em>Agreement Id</em>' attribute.
 	 * @see #setAgreementId(String)
 	 * @see org.abchip.mimo.biz.product.supplier.SupplierPackage#getSupplierProduct_AgreementId()
-	 * @model
+	 * @model annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	String getAgreementId();
@@ -89,7 +89,7 @@ public interface SupplierProduct extends BizEntity {
 	 * @return the value of the '<em>Agreement Item Seq Id</em>' attribute.
 	 * @see #setAgreementItemSeqId(String)
 	 * @see org.abchip.mimo.biz.product.supplier.SupplierPackage#getSupplierProduct_AgreementItemSeqId()
-	 * @model
+	 * @model annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	String getAgreementItemSeqId();
@@ -116,6 +116,7 @@ public interface SupplierProduct extends BizEntity {
 	 * @see #setAvailableFromDate(Date)
 	 * @see org.abchip.mimo.biz.product.supplier.SupplierPackage#getSupplierProduct_AvailableFromDate()
 	 * @model required="true"
+	 *        annotation="mimo-ent-format type='date-time'"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
@@ -142,7 +143,7 @@ public interface SupplierProduct extends BizEntity {
 	 * @return the value of the '<em>Available Thru Date</em>' attribute.
 	 * @see #setAvailableThruDate(Date)
 	 * @see org.abchip.mimo.biz.product.supplier.SupplierPackage#getSupplierProduct_AvailableThruDate()
-	 * @model
+	 * @model annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getAvailableThruDate();
@@ -168,7 +169,7 @@ public interface SupplierProduct extends BizEntity {
 	 * @return the value of the '<em>Can Drop Ship</em>' attribute.
 	 * @see #setCanDropShip(boolean)
 	 * @see org.abchip.mimo.biz.product.supplier.SupplierPackage#getSupplierProduct_CanDropShip()
-	 * @model
+	 * @model annotation="mimo-ent-format type='indicator' length='1'"
 	 * @generated
 	 */
 	boolean isCanDropShip();
@@ -194,7 +195,7 @@ public interface SupplierProduct extends BizEntity {
 	 * @return the value of the '<em>Comments</em>' attribute.
 	 * @see #setComments(String)
 	 * @see org.abchip.mimo.biz.product.supplier.SupplierPackage#getSupplierProduct_Comments()
-	 * @model
+	 * @model annotation="mimo-ent-format type='comment' length='255'"
 	 * @generated
 	 */
 	String getComments();
@@ -246,7 +247,7 @@ public interface SupplierProduct extends BizEntity {
 	 * @return the value of the '<em>Last Price</em>' attribute.
 	 * @see #setLastPrice(BigDecimal)
 	 * @see org.abchip.mimo.biz.product.supplier.SupplierPackage#getSupplierProduct_LastPrice()
-	 * @model
+	 * @model annotation="mimo-ent-format type='currency-precise' precision='18' scale='3'"
 	 * @generated
 	 */
 	BigDecimal getLastPrice();
@@ -273,6 +274,7 @@ public interface SupplierProduct extends BizEntity {
 	 * @see #setMinimumOrderQuantity(BigDecimal)
 	 * @see org.abchip.mimo.biz.product.supplier.SupplierPackage#getSupplierProduct_MinimumOrderQuantity()
 	 * @model required="true"
+	 *        annotation="mimo-ent-format type='fixed-point' precision='18' scale='6'"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
@@ -299,7 +301,7 @@ public interface SupplierProduct extends BizEntity {
 	 * @return the value of the '<em>Order Qty Increments</em>' attribute.
 	 * @see #setOrderQtyIncrements(BigDecimal)
 	 * @see org.abchip.mimo.biz.product.supplier.SupplierPackage#getSupplierProduct_OrderQtyIncrements()
-	 * @model
+	 * @model annotation="mimo-ent-format type='fixed-point' precision='18' scale='6'"
 	 * @generated
 	 */
 	BigDecimal getOrderQtyIncrements();
@@ -377,7 +379,7 @@ public interface SupplierProduct extends BizEntity {
 	 * @return the value of the '<em>Shipping Price</em>' attribute.
 	 * @see #setShippingPrice(BigDecimal)
 	 * @see org.abchip.mimo.biz.product.supplier.SupplierPackage#getSupplierProduct_ShippingPrice()
-	 * @model
+	 * @model annotation="mimo-ent-format type='currency-precise' precision='18' scale='3'"
 	 * @generated
 	 */
 	BigDecimal getShippingPrice();
@@ -403,7 +405,7 @@ public interface SupplierProduct extends BizEntity {
 	 * @return the value of the '<em>Standard Lead Time Days</em>' attribute.
 	 * @see #setStandardLeadTimeDays(BigDecimal)
 	 * @see org.abchip.mimo.biz.product.supplier.SupplierPackage#getSupplierProduct_StandardLeadTimeDays()
-	 * @model
+	 * @model annotation="mimo-ent-format type='fixed-point' precision='18' scale='6'"
 	 * @generated
 	 */
 	BigDecimal getStandardLeadTimeDays();
@@ -429,7 +431,7 @@ public interface SupplierProduct extends BizEntity {
 	 * @return the value of the '<em>Supplier Product Id</em>' attribute.
 	 * @see #setSupplierProductId(String)
 	 * @see org.abchip.mimo.biz.product.supplier.SupplierPackage#getSupplierProduct_SupplierProductId()
-	 * @model
+	 * @model annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	String getSupplierProductId();
@@ -455,7 +457,7 @@ public interface SupplierProduct extends BizEntity {
 	 * @return the value of the '<em>Supplier Product Name</em>' attribute.
 	 * @see #setSupplierProductName(String)
 	 * @see org.abchip.mimo.biz.product.supplier.SupplierPackage#getSupplierProduct_SupplierProductName()
-	 * @model
+	 * @model annotation="mimo-ent-format type='name' length='100'"
 	 * @generated
 	 */
 	String getSupplierProductName();
@@ -481,7 +483,7 @@ public interface SupplierProduct extends BizEntity {
 	 * @return the value of the '<em>Units Included</em>' attribute.
 	 * @see #setUnitsIncluded(BigDecimal)
 	 * @see org.abchip.mimo.biz.product.supplier.SupplierPackage#getSupplierProduct_UnitsIncluded()
-	 * @model
+	 * @model annotation="mimo-ent-format type='fixed-point' precision='18' scale='6'"
 	 * @generated
 	 */
 	BigDecimal getUnitsIncluded();

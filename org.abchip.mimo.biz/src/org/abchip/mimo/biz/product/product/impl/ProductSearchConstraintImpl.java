@@ -22,8 +22,8 @@ import org.eclipse.emf.ecore.EClass;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductSearchConstraintImpl#getConstraintSeqId <em>Constraint Seq Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductSearchConstraintImpl#isAnyPrefix <em>Any Prefix</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductSearchConstraintImpl#isAnySuffix <em>Any Suffix</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductSearchConstraintImpl#getAnyPrefix <em>Any Prefix</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductSearchConstraintImpl#getAnySuffix <em>Any Suffix</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductSearchConstraintImpl#getConstraintName <em>Constraint Name</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductSearchConstraintImpl#getHighValue <em>High Value</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductSearchConstraintImpl#isIncludeSubCategories <em>Include Sub Categories</em>}</li>
@@ -107,8 +107,8 @@ public class ProductSearchConstraintImpl extends BizEntityImpl implements Produc
 	 * @generated
 	 */
 	@Override
-	public boolean isAnyPrefix() {
-		return (Boolean)eGet(ProductPackage.Literals.PRODUCT_SEARCH_CONSTRAINT__ANY_PREFIX, true);
+	public char getAnyPrefix() {
+		return (Character)eGet(ProductPackage.Literals.PRODUCT_SEARCH_CONSTRAINT__ANY_PREFIX, true);
 	}
 
 	/**
@@ -117,7 +117,7 @@ public class ProductSearchConstraintImpl extends BizEntityImpl implements Produc
 	 * @generated
 	 */
 	@Override
-	public void setAnyPrefix(boolean newAnyPrefix) {
+	public void setAnyPrefix(char newAnyPrefix) {
 		eSet(ProductPackage.Literals.PRODUCT_SEARCH_CONSTRAINT__ANY_PREFIX, newAnyPrefix);
 	}
 
@@ -127,8 +127,8 @@ public class ProductSearchConstraintImpl extends BizEntityImpl implements Produc
 	 * @generated
 	 */
 	@Override
-	public boolean isAnySuffix() {
-		return (Boolean)eGet(ProductPackage.Literals.PRODUCT_SEARCH_CONSTRAINT__ANY_SUFFIX, true);
+	public char getAnySuffix() {
+		return (Character)eGet(ProductPackage.Literals.PRODUCT_SEARCH_CONSTRAINT__ANY_SUFFIX, true);
 	}
 
 	/**
@@ -137,7 +137,7 @@ public class ProductSearchConstraintImpl extends BizEntityImpl implements Produc
 	 * @generated
 	 */
 	@Override
-	public void setAnySuffix(boolean newAnySuffix) {
+	public void setAnySuffix(char newAnySuffix) {
 		eSet(ProductPackage.Literals.PRODUCT_SEARCH_CONSTRAINT__ANY_SUFFIX, newAnySuffix);
 	}
 

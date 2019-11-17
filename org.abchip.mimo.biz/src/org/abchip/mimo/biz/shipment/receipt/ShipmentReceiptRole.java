@@ -93,6 +93,7 @@ public interface ShipmentReceiptRole extends BizEntity {
 	 * @see #setRoleTypeId(String)
 	 * @see org.abchip.mimo.biz.shipment.receipt.ReceiptPackage#getShipmentReceiptRole_RoleTypeId()
 	 * @model required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */

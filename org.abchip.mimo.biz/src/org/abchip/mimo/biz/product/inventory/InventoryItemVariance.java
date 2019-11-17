@@ -44,7 +44,7 @@ public interface InventoryItemVariance extends BizEntity {
 	 * @return the value of the '<em>Available To Promise Var</em>' attribute.
 	 * @see #setAvailableToPromiseVar(BigDecimal)
 	 * @see org.abchip.mimo.biz.product.inventory.InventoryPackage#getInventoryItemVariance_AvailableToPromiseVar()
-	 * @model
+	 * @model annotation="mimo-ent-format type='fixed-point' precision='18' scale='6'"
 	 * @generated
 	 */
 	BigDecimal getAvailableToPromiseVar();
@@ -70,7 +70,7 @@ public interface InventoryItemVariance extends BizEntity {
 	 * @return the value of the '<em>Comments</em>' attribute.
 	 * @see #setComments(String)
 	 * @see org.abchip.mimo.biz.product.inventory.InventoryPackage#getInventoryItemVariance_Comments()
-	 * @model
+	 * @model annotation="mimo-ent-format type='comment' length='255'"
 	 * @generated
 	 */
 	String getComments();
@@ -96,7 +96,7 @@ public interface InventoryItemVariance extends BizEntity {
 	 * @return the value of the '<em>Quantity On Hand Var</em>' attribute.
 	 * @see #setQuantityOnHandVar(BigDecimal)
 	 * @see org.abchip.mimo.biz.product.inventory.InventoryPackage#getInventoryItemVariance_QuantityOnHandVar()
-	 * @model
+	 * @model annotation="mimo-ent-format type='fixed-point' precision='18' scale='6'"
 	 * @generated
 	 */
 	BigDecimal getQuantityOnHandVar();

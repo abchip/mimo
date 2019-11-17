@@ -42,6 +42,7 @@ public interface PlatformType extends BizEntity {
 	 * @see #setPlatformTypeId(String)
 	 * @see org.abchip.mimo.biz.webapp.visit.VisitPackage#getPlatformType_PlatformTypeId()
 	 * @model id="true" required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
@@ -68,7 +69,7 @@ public interface PlatformType extends BizEntity {
 	 * @return the value of the '<em>Platform Name</em>' attribute.
 	 * @see #setPlatformName(String)
 	 * @see org.abchip.mimo.biz.webapp.visit.VisitPackage#getPlatformType_PlatformName()
-	 * @model
+	 * @model annotation="mimo-ent-format type='name' length='100'"
 	 * @generated
 	 */
 	String getPlatformName();
@@ -94,7 +95,7 @@ public interface PlatformType extends BizEntity {
 	 * @return the value of the '<em>Platform Version</em>' attribute.
 	 * @see #setPlatformVersion(String)
 	 * @see org.abchip.mimo.biz.webapp.visit.VisitPackage#getPlatformType_PlatformVersion()
-	 * @model
+	 * @model annotation="mimo-ent-format type='very-short' length='10'"
 	 * @generated
 	 */
 	String getPlatformVersion();
@@ -112,7 +113,8 @@ public interface PlatformType extends BizEntity {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='UserAgent' route='platformTypeId'"
 	 * @generated
 	 */

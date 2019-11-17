@@ -50,7 +50,7 @@ public interface PortalPage extends BizEntity {
 	 * @return the value of the '<em>Description</em>' attribute.
 	 * @see #setDescription(String)
 	 * @see org.abchip.mimo.biz.common.portal.PortalPackage#getPortalPage_Description()
-	 * @model
+	 * @model annotation="mimo-ent-format type='description' length='255'"
 	 * @generated
 	 */
 	String getDescription();
@@ -102,7 +102,7 @@ public interface PortalPage extends BizEntity {
 	 * @return the value of the '<em>Original Portal Page Id</em>' attribute.
 	 * @see #setOriginalPortalPageId(String)
 	 * @see org.abchip.mimo.biz.common.portal.PortalPackage#getPortalPage_OriginalPortalPageId()
-	 * @model
+	 * @model annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	String getOriginalPortalPageId();
@@ -128,7 +128,7 @@ public interface PortalPage extends BizEntity {
 	 * @return the value of the '<em>Owner User Login Id</em>' attribute.
 	 * @see #setOwnerUserLoginId(String)
 	 * @see org.abchip.mimo.biz.common.portal.PortalPackage#getPortalPage_OwnerUserLoginId()
-	 * @model
+	 * @model annotation="mimo-ent-format type='id-vlong' length='255'"
 	 * @generated
 	 */
 	String getOwnerUserLoginId();
@@ -154,7 +154,7 @@ public interface PortalPage extends BizEntity {
 	 * @return the value of the '<em>Portal Page Name</em>' attribute.
 	 * @see #setPortalPageName(String)
 	 * @see org.abchip.mimo.biz.common.portal.PortalPackage#getPortalPage_PortalPageName()
-	 * @model
+	 * @model annotation="mimo-ent-format type='name' length='100'"
 	 * @generated
 	 */
 	String getPortalPageName();
@@ -206,7 +206,7 @@ public interface PortalPage extends BizEntity {
 	 * @return the value of the '<em>Sequence Num</em>' attribute.
 	 * @see #setSequenceNum(long)
 	 * @see org.abchip.mimo.biz.common.portal.PortalPackage#getPortalPage_SequenceNum()
-	 * @model
+	 * @model annotation="mimo-ent-format type='numeric' precision='20' scale='0'"
 	 * @generated
 	 */
 	long getSequenceNum();
@@ -232,7 +232,9 @@ public interface PortalPage extends BizEntity {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Portal Page Columns</em>' attribute list.
 	 * @see org.abchip.mimo.biz.common.portal.PortalPackage#getPortalPage_PortalPageColumns()
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='PortalPageColumn'"
 	 * @generated
 	 */
@@ -241,7 +243,8 @@ public interface PortalPage extends BizEntity {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='PortalPage' route='parentPortalPageId'"
 	 * @generated
 	 */
@@ -285,6 +288,7 @@ public interface PortalPage extends BizEntity {
 	 * @see #setPortalPageId(String)
 	 * @see org.abchip.mimo.biz.common.portal.PortalPackage#getPortalPage_PortalPageId()
 	 * @model id="true" required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */

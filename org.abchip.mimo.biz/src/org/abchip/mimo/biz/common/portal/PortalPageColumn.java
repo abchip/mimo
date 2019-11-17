@@ -41,6 +41,7 @@ public interface PortalPageColumn extends BizEntity {
 	 * @see #setColumnSeqId(String)
 	 * @see org.abchip.mimo.biz.common.portal.PortalPackage#getPortalPageColumn_ColumnSeqId()
 	 * @model required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
@@ -67,7 +68,7 @@ public interface PortalPageColumn extends BizEntity {
 	 * @return the value of the '<em>Column Width Percentage</em>' attribute.
 	 * @see #setColumnWidthPercentage(long)
 	 * @see org.abchip.mimo.biz.common.portal.PortalPackage#getPortalPageColumn_ColumnWidthPercentage()
-	 * @model
+	 * @model annotation="mimo-ent-format type='numeric' precision='20' scale='0'"
 	 * @generated
 	 */
 	long getColumnWidthPercentage();
@@ -93,7 +94,7 @@ public interface PortalPageColumn extends BizEntity {
 	 * @return the value of the '<em>Column Width Pixels</em>' attribute.
 	 * @see #setColumnWidthPixels(long)
 	 * @see org.abchip.mimo.biz.common.portal.PortalPackage#getPortalPageColumn_ColumnWidthPixels()
-	 * @model
+	 * @model annotation="mimo-ent-format type='numeric' precision='20' scale='0'"
 	 * @generated
 	 */
 	long getColumnWidthPixels();

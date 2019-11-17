@@ -41,6 +41,7 @@ public interface ServerHitType extends BizEntityType<ServerHit> {
 	 * @see #setHitTypeId(String)
 	 * @see org.abchip.mimo.biz.webapp.visit.VisitPackage#getServerHitType_HitTypeId()
 	 * @model id="true" required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
@@ -67,7 +68,7 @@ public interface ServerHitType extends BizEntityType<ServerHit> {
 	 * @return the value of the '<em>Description</em>' attribute.
 	 * @see #setDescription(String)
 	 * @see org.abchip.mimo.biz.webapp.visit.VisitPackage#getServerHitType_Description()
-	 * @model
+	 * @model annotation="mimo-ent-format type='description' length='255'"
 	 * @generated
 	 */
 	String getDescription();
@@ -85,7 +86,8 @@ public interface ServerHitType extends BizEntityType<ServerHit> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ServerHitBin' route='hitTypeId'"
 	 * @generated
 	 */

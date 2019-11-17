@@ -41,6 +41,7 @@ public interface UserAgentType extends BizEntityType<UserAgent> {
 	 * @see #setUserAgentTypeId(String)
 	 * @see org.abchip.mimo.biz.webapp.visit.VisitPackage#getUserAgentType_UserAgentTypeId()
 	 * @model id="true" required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
@@ -67,7 +68,7 @@ public interface UserAgentType extends BizEntityType<UserAgent> {
 	 * @return the value of the '<em>Description</em>' attribute.
 	 * @see #setDescription(String)
 	 * @see org.abchip.mimo.biz.webapp.visit.VisitPackage#getUserAgentType_Description()
-	 * @model
+	 * @model annotation="mimo-ent-format type='description' length='255'"
 	 * @generated
 	 */
 	String getDescription();
@@ -85,7 +86,8 @@ public interface UserAgentType extends BizEntityType<UserAgent> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='UserAgent' route='userAgentTypeId'"
 	 * @generated
 	 */

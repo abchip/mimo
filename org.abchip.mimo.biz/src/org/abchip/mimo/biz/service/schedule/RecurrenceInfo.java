@@ -47,6 +47,7 @@ public interface RecurrenceInfo extends BizEntity {
 	 * @see #setRecurrenceInfoId(String)
 	 * @see org.abchip.mimo.biz.service.schedule.SchedulePackage#getRecurrenceInfo_RecurrenceInfoId()
 	 * @model id="true" required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
@@ -73,7 +74,7 @@ public interface RecurrenceInfo extends BizEntity {
 	 * @return the value of the '<em>Exception Date Times</em>' attribute.
 	 * @see #setExceptionDateTimes(String)
 	 * @see org.abchip.mimo.biz.service.schedule.SchedulePackage#getRecurrenceInfo_ExceptionDateTimes()
-	 * @model
+	 * @model annotation="mimo-ent-format type='very-long'"
 	 * @generated
 	 */
 	String getExceptionDateTimes();
@@ -125,7 +126,7 @@ public interface RecurrenceInfo extends BizEntity {
 	 * @return the value of the '<em>Recurrence Count</em>' attribute.
 	 * @see #setRecurrenceCount(long)
 	 * @see org.abchip.mimo.biz.service.schedule.SchedulePackage#getRecurrenceInfo_RecurrenceCount()
-	 * @model
+	 * @model annotation="mimo-ent-format type='numeric' precision='20' scale='0'"
 	 * @generated
 	 */
 	long getRecurrenceCount();
@@ -151,7 +152,7 @@ public interface RecurrenceInfo extends BizEntity {
 	 * @return the value of the '<em>Recurrence Date Times</em>' attribute.
 	 * @see #setRecurrenceDateTimes(String)
 	 * @see org.abchip.mimo.biz.service.schedule.SchedulePackage#getRecurrenceInfo_RecurrenceDateTimes()
-	 * @model
+	 * @model annotation="mimo-ent-format type='very-long'"
 	 * @generated
 	 */
 	String getRecurrenceDateTimes();
@@ -203,7 +204,7 @@ public interface RecurrenceInfo extends BizEntity {
 	 * @return the value of the '<em>Start Date Time</em>' attribute.
 	 * @see #setStartDateTime(Date)
 	 * @see org.abchip.mimo.biz.service.schedule.SchedulePackage#getRecurrenceInfo_StartDateTime()
-	 * @model
+	 * @model annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getStartDateTime();
@@ -221,7 +222,8 @@ public interface RecurrenceInfo extends BizEntity {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='Invoice' route='recurrenceInfoId'"
 	 * @generated
 	 */
@@ -230,7 +232,8 @@ public interface RecurrenceInfo extends BizEntity {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='JobSandbox' route='recurrenceInfoId'"
 	 * @generated
 	 */
@@ -239,7 +242,8 @@ public interface RecurrenceInfo extends BizEntity {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ShoppingList' route='recurrenceInfoId'"
 	 * @generated
 	 */
@@ -248,7 +252,8 @@ public interface RecurrenceInfo extends BizEntity {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='WorkEffort' route='recurrenceInfoId'"
 	 * @generated
 	 */

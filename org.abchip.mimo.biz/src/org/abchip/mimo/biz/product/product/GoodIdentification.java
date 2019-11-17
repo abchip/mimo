@@ -39,7 +39,7 @@ public interface GoodIdentification extends BizEntityTyped<GoodIdentificationTyp
 	 * @return the value of the '<em>Id Value</em>' attribute.
 	 * @see #setIdValue(String)
 	 * @see org.abchip.mimo.biz.product.product.ProductPackage#getGoodIdentification_IdValue()
-	 * @model
+	 * @model annotation="mimo-ent-format type='id-long' length='60'"
 	 * @generated
 	 */
 	String getIdValue();

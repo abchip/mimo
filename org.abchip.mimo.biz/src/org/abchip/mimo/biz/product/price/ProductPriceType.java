@@ -38,7 +38,7 @@ public interface ProductPriceType extends BizEntityType<ProductPrice> {
 	 * @return the value of the '<em>Description</em>' attribute.
 	 * @see #setDescription(String)
 	 * @see org.abchip.mimo.biz.product.price.PricePackage#getProductPriceType_Description()
-	 * @model
+	 * @model annotation="mimo-ent-format type='description' length='255'"
 	 * @generated
 	 */
 	String getDescription();
@@ -65,6 +65,7 @@ public interface ProductPriceType extends BizEntityType<ProductPrice> {
 	 * @see #setProductPriceTypeId(String)
 	 * @see org.abchip.mimo.biz.product.price.PricePackage#getProductPriceType_ProductPriceTypeId()
 	 * @model id="true" required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */

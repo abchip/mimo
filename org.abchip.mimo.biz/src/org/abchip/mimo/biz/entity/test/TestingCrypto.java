@@ -41,7 +41,7 @@ public interface TestingCrypto extends BizEntity {
 	 * @return the value of the '<em>Encrypted Value</em>' attribute.
 	 * @see #setEncryptedValue(String)
 	 * @see org.abchip.mimo.biz.entity.test.TestPackage#getTestingCrypto_EncryptedValue()
-	 * @model
+	 * @model annotation="mimo-ent-format type='description' length='255'"
 	 * @generated
 	 */
 	String getEncryptedValue();
@@ -67,7 +67,7 @@ public interface TestingCrypto extends BizEntity {
 	 * @return the value of the '<em>Salted Encrypted Value</em>' attribute.
 	 * @see #setSaltedEncryptedValue(String)
 	 * @see org.abchip.mimo.biz.entity.test.TestPackage#getTestingCrypto_SaltedEncryptedValue()
-	 * @model
+	 * @model annotation="mimo-ent-format type='description' length='255'"
 	 * @generated
 	 */
 	String getSaltedEncryptedValue();
@@ -94,6 +94,7 @@ public interface TestingCrypto extends BizEntity {
 	 * @see #setTestingCryptoId(String)
 	 * @see org.abchip.mimo.biz.entity.test.TestPackage#getTestingCrypto_TestingCryptoId()
 	 * @model id="true" required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
@@ -120,7 +121,7 @@ public interface TestingCrypto extends BizEntity {
 	 * @return the value of the '<em>Testing Crypto Type Id</em>' attribute.
 	 * @see #setTestingCryptoTypeId(String)
 	 * @see org.abchip.mimo.biz.entity.test.TestPackage#getTestingCrypto_TestingCryptoTypeId()
-	 * @model
+	 * @model annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	String getTestingCryptoTypeId();
@@ -146,7 +147,7 @@ public interface TestingCrypto extends BizEntity {
 	 * @return the value of the '<em>Unencrypted Value</em>' attribute.
 	 * @see #setUnencryptedValue(String)
 	 * @see org.abchip.mimo.biz.entity.test.TestPackage#getTestingCrypto_UnencryptedValue()
-	 * @model
+	 * @model annotation="mimo-ent-format type='description' length='255'"
 	 * @generated
 	 */
 	String getUnencryptedValue();

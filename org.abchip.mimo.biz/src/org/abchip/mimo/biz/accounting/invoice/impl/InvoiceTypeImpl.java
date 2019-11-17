@@ -7,14 +7,12 @@
  */
 package org.abchip.mimo.biz.accounting.invoice.impl;
 
-import java.lang.reflect.InvocationTargetException;
 import java.util.List;
 
 import org.abchip.mimo.biz.accounting.invoice.Invoice;
 import org.abchip.mimo.biz.accounting.invoice.InvoicePackage;
 import org.abchip.mimo.biz.accounting.invoice.InvoiceType;
 import org.abchip.mimo.biz.impl.BizEntityTypeImpl;
-import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 
 /**
@@ -175,26 +173,6 @@ public class InvoiceTypeImpl extends BizEntityTypeImpl<Invoice> implements Invoi
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
-		switch (operationID) {
-			case InvoicePackage.INVOICE_TYPE___CHILD_INVOICE_TYPES:
-				return childInvoiceTypes();
-			case InvoicePackage.INVOICE_TYPE___INVOICE_ITEM_TYPE_MAPS:
-				return invoiceItemTypeMaps();
-			case InvoicePackage.INVOICE_TYPE___INVOICES:
-				return invoices();
-			case InvoicePackage.INVOICE_TYPE___PARTY_PREF_DOC_TYPE_TPLS:
-				return partyPrefDocTypeTpls();
-		}
-		return super.eInvoke(operationID, arguments);
 	}
 
 	/**

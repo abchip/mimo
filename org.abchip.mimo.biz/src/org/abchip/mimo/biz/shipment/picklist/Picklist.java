@@ -52,7 +52,7 @@ public interface Picklist extends BizEntity {
 	 * @return the value of the '<em>Created By User Login</em>' attribute.
 	 * @see #setCreatedByUserLogin(String)
 	 * @see org.abchip.mimo.biz.shipment.picklist.PicklistPackage#getPicklist_CreatedByUserLogin()
-	 * @model
+	 * @model annotation="mimo-ent-format type='id-vlong' length='255'"
 	 * @generated
 	 */
 	String getCreatedByUserLogin();
@@ -78,7 +78,7 @@ public interface Picklist extends BizEntity {
 	 * @return the value of the '<em>Description</em>' attribute.
 	 * @see #setDescription(String)
 	 * @see org.abchip.mimo.biz.shipment.picklist.PicklistPackage#getPicklist_Description()
-	 * @model
+	 * @model annotation="mimo-ent-format type='description' length='255'"
 	 * @generated
 	 */
 	String getDescription();
@@ -130,7 +130,7 @@ public interface Picklist extends BizEntity {
 	 * @return the value of the '<em>Last Modified By User Login</em>' attribute.
 	 * @see #setLastModifiedByUserLogin(String)
 	 * @see org.abchip.mimo.biz.shipment.picklist.PicklistPackage#getPicklist_LastModifiedByUserLogin()
-	 * @model
+	 * @model annotation="mimo-ent-format type='id-vlong' length='255'"
 	 * @generated
 	 */
 	String getLastModifiedByUserLogin();
@@ -156,7 +156,7 @@ public interface Picklist extends BizEntity {
 	 * @return the value of the '<em>Picklist Date</em>' attribute.
 	 * @see #setPicklistDate(Date)
 	 * @see org.abchip.mimo.biz.shipment.picklist.PicklistPackage#getPicklist_PicklistDate()
-	 * @model
+	 * @model annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getPicklistDate();
@@ -183,6 +183,7 @@ public interface Picklist extends BizEntity {
 	 * @see #setPicklistId(String)
 	 * @see org.abchip.mimo.biz.shipment.picklist.PicklistPackage#getPicklist_PicklistId()
 	 * @model id="true" required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
@@ -261,7 +262,9 @@ public interface Picklist extends BizEntity {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Picklist Status Histories</em>' attribute list.
 	 * @see org.abchip.mimo.biz.shipment.picklist.PicklistPackage#getPicklist_PicklistStatusHistories()
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='PicklistStatusHistory'"
 	 * @generated
 	 */
@@ -270,7 +273,8 @@ public interface Picklist extends BizEntity {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='PicklistBin' route='picklistId'"
 	 * @generated
 	 */

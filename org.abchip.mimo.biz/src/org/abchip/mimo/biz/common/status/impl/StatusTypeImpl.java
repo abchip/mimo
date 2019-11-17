@@ -7,14 +7,12 @@
  */
 package org.abchip.mimo.biz.common.status.impl;
 
-import java.lang.reflect.InvocationTargetException;
 import java.util.List;
 
 import org.abchip.mimo.biz.common.status.StatusItem;
 import org.abchip.mimo.biz.common.status.StatusPackage;
 import org.abchip.mimo.biz.common.status.StatusType;
 import org.abchip.mimo.biz.impl.BizEntityTypeImpl;
-import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 
 /**
@@ -139,22 +137,6 @@ public class StatusTypeImpl extends BizEntityTypeImpl<StatusItem> implements Sta
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
-		switch (operationID) {
-			case StatusPackage.STATUS_TYPE___CHILD_STATUS_TYPES:
-				return childStatusTypes();
-			case StatusPackage.STATUS_TYPE___STATUS_ITEMS:
-				return statusItems();
-		}
-		return super.eInvoke(operationID, arguments);
 	}
 
 	/**

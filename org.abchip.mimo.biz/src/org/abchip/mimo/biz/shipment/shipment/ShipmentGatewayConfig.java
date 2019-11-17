@@ -41,7 +41,7 @@ public interface ShipmentGatewayConfig extends BizEntityTyped<ShipmentGatewayCon
 	 * @return the value of the '<em>Description</em>' attribute.
 	 * @see #setDescription(String)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipmentGatewayConfig_Description()
-	 * @model
+	 * @model annotation="mimo-ent-format type='description' length='255'"
 	 * @generated
 	 */
 	String getDescription();
@@ -85,7 +85,8 @@ public interface ShipmentGatewayConfig extends BizEntityTyped<ShipmentGatewayCon
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ProductStoreShipmentMeth' route='shipmentGatewayConfigId'"
 	 * @generated
 	 */
@@ -103,6 +104,7 @@ public interface ShipmentGatewayConfig extends BizEntityTyped<ShipmentGatewayCon
 	 * @see #setShipmentGatewayConfigId(String)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipmentGatewayConfig_ShipmentGatewayConfigId()
 	 * @model id="true" required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */

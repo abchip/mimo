@@ -8,7 +8,6 @@
  */
 package org.abchip.mimo.util.impl;
 
-import java.lang.reflect.InvocationTargetException;
 import java.util.Collection;
 import java.util.List;
 
@@ -161,22 +160,6 @@ public abstract class DataDefImpl<D> extends EntityImpl implements DataDef<D> {
 				return formulas != null && !formulas.isEmpty();
 		}
 		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
-		switch (operationID) {
-			case UtilPackage.DATA_DEF___GET_JAVA_CLASS:
-				return getJavaClass();
-			case UtilPackage.DATA_DEF___GET_DATA_DEF_TYPE:
-				return getDataDefType();
-		}
-		return super.eInvoke(operationID, arguments);
 	}
 
 	/**

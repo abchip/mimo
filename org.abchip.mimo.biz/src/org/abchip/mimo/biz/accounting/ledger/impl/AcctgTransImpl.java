@@ -163,6 +163,26 @@ public class AcctgTransImpl extends BizEntityTypedImpl<AcctgTransType> implement
 	 * @generated
 	 */
 	@Override
+	public boolean isIsPosted() {
+		return (Boolean)eGet(LedgerPackage.Literals.ACCTG_TRANS__IS_POSTED, true);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setIsPosted(boolean newIsPosted) {
+		eSet(LedgerPackage.Literals.ACCTG_TRANS__IS_POSTED, newIsPosted);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public StatusItem getGroupStatusId() {
 		return (StatusItem)eGet(LedgerPackage.Literals.ACCTG_TRANS__GROUP_STATUS_ID, true);
 	}
@@ -597,26 +617,6 @@ public class AcctgTransImpl extends BizEntityTypedImpl<AcctgTransType> implement
 	@Override
 	public void setInvoiceId(Invoice newInvoiceId) {
 		eSet(LedgerPackage.Literals.ACCTG_TRANS__INVOICE_ID, newInvoiceId);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public boolean isIsPosted() {
-		return (Boolean)eGet(LedgerPackage.Literals.ACCTG_TRANS__IS_POSTED, true);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void setIsPosted(boolean newIsPosted) {
-		eSet(LedgerPackage.Literals.ACCTG_TRANS__IS_POSTED, newIsPosted);
 	}
 
 	/**

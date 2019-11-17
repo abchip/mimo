@@ -41,6 +41,7 @@ public interface KeywordThesaurus extends BizEntity {
 	 * @see #setAlternateKeyword(String)
 	 * @see org.abchip.mimo.biz.common.keyword.KeywordPackage#getKeywordThesaurus_AlternateKeyword()
 	 * @model required="true"
+	 *        annotation="mimo-ent-format type='long-varchar' length='255'"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
@@ -68,6 +69,7 @@ public interface KeywordThesaurus extends BizEntity {
 	 * @see #setEnteredKeyword(String)
 	 * @see org.abchip.mimo.biz.common.keyword.KeywordPackage#getKeywordThesaurus_EnteredKeyword()
 	 * @model required="true"
+	 *        annotation="mimo-ent-format type='long-varchar' length='255'"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */

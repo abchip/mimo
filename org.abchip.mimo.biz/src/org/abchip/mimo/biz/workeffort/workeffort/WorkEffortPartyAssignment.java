@@ -110,7 +110,7 @@ public interface WorkEffortPartyAssignment extends BizEntity {
 	 * @return the value of the '<em>Comments</em>' attribute.
 	 * @see #setComments(String)
 	 * @see org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage#getWorkEffortPartyAssignment_Comments()
-	 * @model
+	 * @model annotation="mimo-ent-format type='comment' length='255'"
 	 * @generated
 	 */
 	String getComments();
@@ -124,6 +124,32 @@ public interface WorkEffortPartyAssignment extends BizEntity {
 	 * @generated
 	 */
 	void setComments(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Must Rsvp</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Must Rsvp</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Must Rsvp</em>' attribute.
+	 * @see #setMustRsvp(boolean)
+	 * @see org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage#getWorkEffortPartyAssignment_MustRsvp()
+	 * @model annotation="mimo-ent-format type='indicator' length='1'"
+	 * @generated
+	 */
+	boolean isMustRsvp();
+
+	/**
+	 * Sets the value of the '{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffortPartyAssignment#isMustRsvp <em>Must Rsvp</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Must Rsvp</em>' attribute.
+	 * @see #isMustRsvp()
+	 * @generated
+	 */
+	void setMustRsvp(boolean value);
 
 	/**
 	 * Returns the value of the '<em><b>Delegate Reason Enum Id</b></em>' reference.
@@ -204,32 +230,6 @@ public interface WorkEffortPartyAssignment extends BizEntity {
 	void setFacilityId(Facility value);
 
 	/**
-	 * Returns the value of the '<em><b>Must Rsvp</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Must Rsvp</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Must Rsvp</em>' attribute.
-	 * @see #setMustRsvp(boolean)
-	 * @see org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage#getWorkEffortPartyAssignment_MustRsvp()
-	 * @model
-	 * @generated
-	 */
-	boolean isMustRsvp();
-
-	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffortPartyAssignment#isMustRsvp <em>Must Rsvp</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Must Rsvp</em>' attribute.
-	 * @see #isMustRsvp()
-	 * @generated
-	 */
-	void setMustRsvp(boolean value);
-
-	/**
 	 * Returns the value of the '<em><b>From Date</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -241,6 +241,7 @@ public interface WorkEffortPartyAssignment extends BizEntity {
 	 * @see #setFromDate(Date)
 	 * @see org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage#getWorkEffortPartyAssignment_FromDate()
 	 * @model required="true"
+	 *        annotation="mimo-ent-format type='date-time'"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
@@ -319,7 +320,7 @@ public interface WorkEffortPartyAssignment extends BizEntity {
 	 * @return the value of the '<em>Status Date Time</em>' attribute.
 	 * @see #setStatusDateTime(Date)
 	 * @see org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage#getWorkEffortPartyAssignment_StatusDateTime()
-	 * @model
+	 * @model annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getStatusDateTime();
@@ -371,7 +372,7 @@ public interface WorkEffortPartyAssignment extends BizEntity {
 	 * @return the value of the '<em>Thru Date</em>' attribute.
 	 * @see #setThruDate(Date)
 	 * @see org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage#getWorkEffortPartyAssignment_ThruDate()
-	 * @model
+	 * @model annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getThruDate();

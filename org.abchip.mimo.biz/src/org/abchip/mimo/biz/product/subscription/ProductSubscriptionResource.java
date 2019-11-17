@@ -60,7 +60,7 @@ public interface ProductSubscriptionResource extends BizEntity {
 	 * @return the value of the '<em>Available Time</em>' attribute.
 	 * @see #setAvailableTime(long)
 	 * @see org.abchip.mimo.biz.product.subscription.SubscriptionPackage#getProductSubscriptionResource_AvailableTime()
-	 * @model
+	 * @model annotation="mimo-ent-format type='numeric' precision='20' scale='0'"
 	 * @generated
 	 */
 	long getAvailableTime();
@@ -112,7 +112,7 @@ public interface ProductSubscriptionResource extends BizEntity {
 	 * @return the value of the '<em>Cancl Autm Ext Time</em>' attribute.
 	 * @see #setCanclAutmExtTime(long)
 	 * @see org.abchip.mimo.biz.product.subscription.SubscriptionPackage#getProductSubscriptionResource_CanclAutmExtTime()
-	 * @model
+	 * @model annotation="mimo-ent-format type='numeric' precision='20' scale='0'"
 	 * @generated
 	 */
 	long getCanclAutmExtTime();
@@ -165,6 +165,7 @@ public interface ProductSubscriptionResource extends BizEntity {
 	 * @see #setFromDate(Date)
 	 * @see org.abchip.mimo.biz.product.subscription.SubscriptionPackage#getProductSubscriptionResource_FromDate()
 	 * @model required="true"
+	 *        annotation="mimo-ent-format type='date-time'"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
@@ -191,7 +192,7 @@ public interface ProductSubscriptionResource extends BizEntity {
 	 * @return the value of the '<em>Automatic Extend</em>' attribute.
 	 * @see #setAutomaticExtend(boolean)
 	 * @see org.abchip.mimo.biz.product.subscription.SubscriptionPackage#getProductSubscriptionResource_AutomaticExtend()
-	 * @model
+	 * @model annotation="mimo-ent-format type='indicator' length='1'"
 	 * @generated
 	 */
 	boolean isAutomaticExtend();
@@ -217,7 +218,7 @@ public interface ProductSubscriptionResource extends BizEntity {
 	 * @return the value of the '<em>Grace Period On Expiry</em>' attribute.
 	 * @see #setGracePeriodOnExpiry(long)
 	 * @see org.abchip.mimo.biz.product.subscription.SubscriptionPackage#getProductSubscriptionResource_GracePeriodOnExpiry()
-	 * @model
+	 * @model annotation="mimo-ent-format type='numeric' precision='20' scale='0'"
 	 * @generated
 	 */
 	long getGracePeriodOnExpiry();
@@ -269,7 +270,7 @@ public interface ProductSubscriptionResource extends BizEntity {
 	 * @return the value of the '<em>Max Life Time</em>' attribute.
 	 * @see #setMaxLifeTime(long)
 	 * @see org.abchip.mimo.biz.product.subscription.SubscriptionPackage#getProductSubscriptionResource_MaxLifeTime()
-	 * @model
+	 * @model annotation="mimo-ent-format type='numeric' precision='20' scale='0'"
 	 * @generated
 	 */
 	long getMaxLifeTime();
@@ -321,7 +322,7 @@ public interface ProductSubscriptionResource extends BizEntity {
 	 * @return the value of the '<em>Purchase From Date</em>' attribute.
 	 * @see #setPurchaseFromDate(Date)
 	 * @see org.abchip.mimo.biz.product.subscription.SubscriptionPackage#getProductSubscriptionResource_PurchaseFromDate()
-	 * @model
+	 * @model annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getPurchaseFromDate();
@@ -347,7 +348,7 @@ public interface ProductSubscriptionResource extends BizEntity {
 	 * @return the value of the '<em>Purchase Thru Date</em>' attribute.
 	 * @see #setPurchaseThruDate(Date)
 	 * @see org.abchip.mimo.biz.product.subscription.SubscriptionPackage#getProductSubscriptionResource_PurchaseThruDate()
-	 * @model
+	 * @model annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getPurchaseThruDate();
@@ -373,7 +374,7 @@ public interface ProductSubscriptionResource extends BizEntity {
 	 * @return the value of the '<em>Thru Date</em>' attribute.
 	 * @see #setThruDate(Date)
 	 * @see org.abchip.mimo.biz.product.subscription.SubscriptionPackage#getProductSubscriptionResource_ThruDate()
-	 * @model
+	 * @model annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getThruDate();
@@ -399,7 +400,7 @@ public interface ProductSubscriptionResource extends BizEntity {
 	 * @return the value of the '<em>Use Count Limit</em>' attribute.
 	 * @see #setUseCountLimit(long)
 	 * @see org.abchip.mimo.biz.product.subscription.SubscriptionPackage#getProductSubscriptionResource_UseCountLimit()
-	 * @model
+	 * @model annotation="mimo-ent-format type='numeric' precision='20' scale='0'"
 	 * @generated
 	 */
 	long getUseCountLimit();
@@ -451,7 +452,7 @@ public interface ProductSubscriptionResource extends BizEntity {
 	 * @return the value of the '<em>Use Time</em>' attribute.
 	 * @see #setUseTime(long)
 	 * @see org.abchip.mimo.biz.product.subscription.SubscriptionPackage#getProductSubscriptionResource_UseTime()
-	 * @model
+	 * @model annotation="mimo-ent-format type='numeric' precision='20' scale='0'"
 	 * @generated
 	 */
 	long getUseTime();

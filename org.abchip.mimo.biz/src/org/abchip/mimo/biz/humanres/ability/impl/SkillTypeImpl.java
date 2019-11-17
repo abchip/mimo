@@ -7,13 +7,11 @@
  */
 package org.abchip.mimo.biz.humanres.ability.impl;
 
-import java.lang.reflect.InvocationTargetException;
 import java.util.List;
 
 import org.abchip.mimo.biz.humanres.ability.AbilityPackage;
 import org.abchip.mimo.biz.humanres.ability.SkillType;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
-import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 
 /**
@@ -175,28 +173,6 @@ public class SkillTypeImpl extends BizEntityImpl implements SkillType {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
-		switch (operationID) {
-			case AbilityPackage.SKILL_TYPE___CHILD_SKILL_TYPES:
-				return childSkillTypes();
-			case AbilityPackage.SKILL_TYPE___JOB_REQUISITIONS:
-				return jobRequisitions();
-			case AbilityPackage.SKILL_TYPE___PARTY_SKILLS:
-				return partySkills();
-			case AbilityPackage.SKILL_TYPE___QUOTE_ITEMS:
-				return quoteItems();
-			case AbilityPackage.SKILL_TYPE___WORK_EFFORT_SKILL_STANDARDS:
-				return workEffortSkillStandards();
-		}
-		return super.eInvoke(operationID, arguments);
 	}
 
 	/**

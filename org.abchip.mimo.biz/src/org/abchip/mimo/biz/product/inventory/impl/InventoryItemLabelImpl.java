@@ -7,14 +7,12 @@
  */
 package org.abchip.mimo.biz.product.inventory.impl;
 
-import java.lang.reflect.InvocationTargetException;
 import java.util.List;
 
 import org.abchip.mimo.biz.impl.BizEntityTypedImpl;
 import org.abchip.mimo.biz.product.inventory.InventoryItemLabel;
 import org.abchip.mimo.biz.product.inventory.InventoryItemLabelType;
 import org.abchip.mimo.biz.product.inventory.InventoryPackage;
-import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 
 /**
@@ -107,20 +105,6 @@ public class InventoryItemLabelImpl extends BizEntityTypedImpl<InventoryItemLabe
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
-		switch (operationID) {
-			case InventoryPackage.INVENTORY_ITEM_LABEL___INVENTORY_ITEM_LABEL_APPLS:
-				return inventoryItemLabelAppls();
-		}
-		return super.eInvoke(operationID, arguments);
 	}
 
 	/**

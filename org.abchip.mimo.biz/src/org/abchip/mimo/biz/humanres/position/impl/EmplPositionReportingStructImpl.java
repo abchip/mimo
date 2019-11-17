@@ -25,7 +25,7 @@ import org.eclipse.emf.ecore.EClass;
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.humanres.position.impl.EmplPositionReportingStructImpl#getFromDate <em>From Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.position.impl.EmplPositionReportingStructImpl#getComments <em>Comments</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.humanres.position.impl.EmplPositionReportingStructImpl#isPrimaryFlag <em>Primary Flag</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.humanres.position.impl.EmplPositionReportingStructImpl#getPrimaryFlag <em>Primary Flag</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.position.impl.EmplPositionReportingStructImpl#getThruDate <em>Thru Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.position.impl.EmplPositionReportingStructImpl#getEmplPositionIdReportingTo <em>Empl Position Id Reporting To</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.position.impl.EmplPositionReportingStructImpl#getEmplPositionIdManagedBy <em>Empl Position Id Managed By</em>}</li>
@@ -84,8 +84,8 @@ public class EmplPositionReportingStructImpl extends BizEntityImpl implements Em
 	 * @generated
 	 */
 	@Override
-	public boolean isPrimaryFlag() {
-		return (Boolean)eGet(PositionPackage.Literals.EMPL_POSITION_REPORTING_STRUCT__PRIMARY_FLAG, true);
+	public char getPrimaryFlag() {
+		return (Character)eGet(PositionPackage.Literals.EMPL_POSITION_REPORTING_STRUCT__PRIMARY_FLAG, true);
 	}
 
 	/**
@@ -94,7 +94,7 @@ public class EmplPositionReportingStructImpl extends BizEntityImpl implements Em
 	 * @generated
 	 */
 	@Override
-	public void setPrimaryFlag(boolean newPrimaryFlag) {
+	public void setPrimaryFlag(char newPrimaryFlag) {
 		eSet(PositionPackage.Literals.EMPL_POSITION_REPORTING_STRUCT__PRIMARY_FLAG, newPrimaryFlag);
 	}
 

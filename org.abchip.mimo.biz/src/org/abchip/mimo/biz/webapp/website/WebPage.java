@@ -42,6 +42,7 @@ public interface WebPage extends BizEntity {
 	 * @see #setWebPageId(String)
 	 * @see org.abchip.mimo.biz.webapp.website.WebsitePackage#getWebPage_WebPageId()
 	 * @model id="true" required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
@@ -94,7 +95,7 @@ public interface WebPage extends BizEntity {
 	 * @return the value of the '<em>Page Name</em>' attribute.
 	 * @see #setPageName(String)
 	 * @see org.abchip.mimo.biz.webapp.website.WebsitePackage#getWebPage_PageName()
-	 * @model
+	 * @model annotation="mimo-ent-format type='name' length='100'"
 	 * @generated
 	 */
 	String getPageName();

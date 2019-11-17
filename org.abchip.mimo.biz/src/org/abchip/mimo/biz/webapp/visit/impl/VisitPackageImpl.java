@@ -77,6 +77,7 @@ import org.abchip.mimo.biz.entity.crypto.CryptoPackage;
 import org.abchip.mimo.biz.entity.crypto.impl.CryptoPackageImpl;
 import org.abchip.mimo.biz.entity.group.GroupPackage;
 import org.abchip.mimo.biz.entity.group.impl.GroupPackageImpl;
+import org.abchip.mimo.biz.entity.impl.EntityPackageImpl;
 import org.abchip.mimo.biz.entity.sequence.SequencePackage;
 import org.abchip.mimo.biz.entity.sequence.impl.SequencePackageImpl;
 import org.abchip.mimo.biz.entity.synchronization.SynchronizationPackage;
@@ -205,7 +206,6 @@ import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EGenericType;
-import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 
 import org.eclipse.emf.ecore.EReference;
@@ -410,6 +410,8 @@ public class VisitPackageImpl extends EPackageImpl implements VisitPackage {
 		SurveyPackageImpl theSurveyPackage = (SurveyPackageImpl)(registeredPackage instanceof SurveyPackageImpl ? registeredPackage : SurveyPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(WebsitePackage.eNS_URI);
 		WebsitePackageImpl theWebsitePackage = (WebsitePackageImpl)(registeredPackage instanceof WebsitePackageImpl ? registeredPackage : WebsitePackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(org.abchip.mimo.biz.entity.EntityPackage.eNS_URI);
+		EntityPackageImpl theEntityPackage = (EntityPackageImpl)(registeredPackage instanceof EntityPackageImpl ? registeredPackage : org.abchip.mimo.biz.entity.EntityPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(AuditPackage.eNS_URI);
 		AuditPackageImpl theAuditPackage = (AuditPackageImpl)(registeredPackage instanceof AuditPackageImpl ? registeredPackage : AuditPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(CryptoPackage.eNS_URI);
@@ -563,6 +565,7 @@ public class VisitPackageImpl extends EPackageImpl implements VisitPackage {
 		thePreferencePackage.createPackageContents();
 		theSurveyPackage.createPackageContents();
 		theWebsitePackage.createPackageContents();
+		theEntityPackage.createPackageContents();
 		theAuditPackage.createPackageContents();
 		theCryptoPackage.createPackageContents();
 		theGroupPackage.createPackageContents();
@@ -657,6 +660,7 @@ public class VisitPackageImpl extends EPackageImpl implements VisitPackage {
 		thePreferencePackage.initializePackageContents();
 		theSurveyPackage.initializePackageContents();
 		theWebsitePackage.initializePackageContents();
+		theEntityPackage.initializePackageContents();
 		theAuditPackage.initializePackageContents();
 		theCryptoPackage.initializePackageContents();
 		theGroupPackage.initializePackageContents();
@@ -771,16 +775,6 @@ public class VisitPackageImpl extends EPackageImpl implements VisitPackage {
 	 * @generated
 	 */
 	@Override
-	public EOperation getBrowserType__UserAgents() {
-		return browserTypeEClass.getEOperations().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public EClass getPlatformType() {
 		return platformTypeEClass;
 	}
@@ -821,16 +815,6 @@ public class VisitPackageImpl extends EPackageImpl implements VisitPackage {
 	 * @generated
 	 */
 	@Override
-	public EOperation getPlatformType__UserAgents() {
-		return platformTypeEClass.getEOperations().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public EClass getProtocolType() {
 		return protocolTypeEClass;
 	}
@@ -853,16 +837,6 @@ public class VisitPackageImpl extends EPackageImpl implements VisitPackage {
 	@Override
 	public EAttribute getProtocolType_ProtocolName() {
 		return (EAttribute)protocolTypeEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EOperation getProtocolType__UserAgents() {
-		return protocolTypeEClass.getEOperations().get(0);
 	}
 
 	/**
@@ -1201,16 +1175,6 @@ public class VisitPackageImpl extends EPackageImpl implements VisitPackage {
 	 * @generated
 	 */
 	@Override
-	public EOperation getServerHitType__ServerHitBins() {
-		return serverHitTypeEClass.getEOperations().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public EClass getUserAgent() {
 		return userAgentEClass;
 	}
@@ -1271,16 +1235,6 @@ public class VisitPackageImpl extends EPackageImpl implements VisitPackage {
 	 * @generated
 	 */
 	@Override
-	public EOperation getUserAgent__Visits() {
-		return userAgentEClass.getEOperations().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public EReference getUserAgent_UserAgentTypeId() {
 		return (EReference)userAgentEClass.getEStructuralFeatures().get(4);
 	}
@@ -1321,16 +1275,6 @@ public class VisitPackageImpl extends EPackageImpl implements VisitPackage {
 	 * @generated
 	 */
 	@Override
-	public EOperation getUserAgentMethodType__UserAgents() {
-		return userAgentMethodTypeEClass.getEOperations().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public EClass getUserAgentType() {
 		return userAgentTypeEClass;
 	}
@@ -1353,16 +1297,6 @@ public class VisitPackageImpl extends EPackageImpl implements VisitPackage {
 	@Override
 	public EAttribute getUserAgentType_Description() {
 		return (EAttribute)userAgentTypeEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EOperation getUserAgentType__UserAgents() {
-		return userAgentTypeEClass.getEOperations().get(0);
 	}
 
 	/**
@@ -1681,16 +1615,6 @@ public class VisitPackageImpl extends EPackageImpl implements VisitPackage {
 	 * @generated
 	 */
 	@Override
-	public EOperation getVisitor__Visits() {
-		return visitorEClass.getEOperations().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public VisitFactory getVisitFactory() {
 		return (VisitFactory)getEFactoryInstance();
 	}
@@ -1718,18 +1642,15 @@ public class VisitPackageImpl extends EPackageImpl implements VisitPackage {
 		createEAttribute(browserTypeEClass, BROWSER_TYPE__BROWSER_TYPE_ID);
 		createEAttribute(browserTypeEClass, BROWSER_TYPE__BROWSER_NAME);
 		createEAttribute(browserTypeEClass, BROWSER_TYPE__BROWSER_VERSION);
-		createEOperation(browserTypeEClass, BROWSER_TYPE___USER_AGENTS);
 
 		platformTypeEClass = createEClass(PLATFORM_TYPE);
 		createEAttribute(platformTypeEClass, PLATFORM_TYPE__PLATFORM_TYPE_ID);
 		createEAttribute(platformTypeEClass, PLATFORM_TYPE__PLATFORM_NAME);
 		createEAttribute(platformTypeEClass, PLATFORM_TYPE__PLATFORM_VERSION);
-		createEOperation(platformTypeEClass, PLATFORM_TYPE___USER_AGENTS);
 
 		protocolTypeEClass = createEClass(PROTOCOL_TYPE);
 		createEAttribute(protocolTypeEClass, PROTOCOL_TYPE__PROTOCOL_TYPE_ID);
 		createEAttribute(protocolTypeEClass, PROTOCOL_TYPE__PROTOCOL_NAME);
-		createEOperation(protocolTypeEClass, PROTOCOL_TYPE___USER_AGENTS);
 
 		serverHitEClass = createEClass(SERVER_HIT);
 		createEAttribute(serverHitEClass, SERVER_HIT__CONTENT_ID);
@@ -1766,7 +1687,6 @@ public class VisitPackageImpl extends EPackageImpl implements VisitPackage {
 		serverHitTypeEClass = createEClass(SERVER_HIT_TYPE);
 		createEAttribute(serverHitTypeEClass, SERVER_HIT_TYPE__HIT_TYPE_ID);
 		createEAttribute(serverHitTypeEClass, SERVER_HIT_TYPE__DESCRIPTION);
-		createEOperation(serverHitTypeEClass, SERVER_HIT_TYPE___SERVER_HIT_BINS);
 
 		userAgentEClass = createEClass(USER_AGENT);
 		createEAttribute(userAgentEClass, USER_AGENT__USER_AGENT_ID);
@@ -1775,17 +1695,14 @@ public class VisitPackageImpl extends EPackageImpl implements VisitPackage {
 		createEReference(userAgentEClass, USER_AGENT__PROTOCOL_TYPE_ID);
 		createEReference(userAgentEClass, USER_AGENT__USER_AGENT_TYPE_ID);
 		createEReference(userAgentEClass, USER_AGENT__USER_AGENT_METHOD_TYPE_ID);
-		createEOperation(userAgentEClass, USER_AGENT___VISITS);
 
 		userAgentMethodTypeEClass = createEClass(USER_AGENT_METHOD_TYPE);
 		createEAttribute(userAgentMethodTypeEClass, USER_AGENT_METHOD_TYPE__USER_AGENT_METHOD_TYPE_ID);
 		createEAttribute(userAgentMethodTypeEClass, USER_AGENT_METHOD_TYPE__DESCRIPTION);
-		createEOperation(userAgentMethodTypeEClass, USER_AGENT_METHOD_TYPE___USER_AGENTS);
 
 		userAgentTypeEClass = createEClass(USER_AGENT_TYPE);
 		createEAttribute(userAgentTypeEClass, USER_AGENT_TYPE__USER_AGENT_TYPE_ID);
 		createEAttribute(userAgentTypeEClass, USER_AGENT_TYPE__DESCRIPTION);
-		createEOperation(userAgentTypeEClass, USER_AGENT_TYPE___USER_AGENTS);
 
 		visitEClass = createEClass(VISIT);
 		createEAttribute(visitEClass, VISIT__VISIT_ID);
@@ -1819,7 +1736,6 @@ public class VisitPackageImpl extends EPackageImpl implements VisitPackage {
 		createEAttribute(visitorEClass, VISITOR__VISITOR_ID);
 		createEAttribute(visitorEClass, VISITOR__PARTY_ID);
 		createEReference(visitorEClass, VISITOR__USER_LOGIN_ID);
-		createEOperation(visitorEClass, VISITOR___VISITS);
 	}
 
 	/**
@@ -1881,26 +1797,26 @@ public class VisitPackageImpl extends EPackageImpl implements VisitPackage {
 		visitEClass.getESuperTypes().add(theBizPackage.getBizEntity());
 		visitorEClass.getESuperTypes().add(theBizPackage.getBizEntity());
 
-		// Initialize classes, features, and operations; add parameters
+		// Initialize classes and features; add operations and parameters
 		initEClass(browserTypeEClass, BrowserType.class, "BrowserType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getBrowserType_BrowserTypeId(), ecorePackage.getEString(), "browserTypeId", null, 1, 1, BrowserType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getBrowserType_BrowserName(), ecorePackage.getEString(), "browserName", null, 0, 1, BrowserType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getBrowserType_BrowserVersion(), ecorePackage.getEString(), "browserVersion", null, 0, 1, BrowserType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEOperation(getBrowserType__UserAgents(), ecorePackage.getEString(), "userAgents", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(browserTypeEClass, ecorePackage.getEString(), "userAgents", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(platformTypeEClass, PlatformType.class, "PlatformType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getPlatformType_PlatformTypeId(), ecorePackage.getEString(), "platformTypeId", null, 1, 1, PlatformType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getPlatformType_PlatformName(), ecorePackage.getEString(), "platformName", null, 0, 1, PlatformType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getPlatformType_PlatformVersion(), ecorePackage.getEString(), "platformVersion", null, 0, 1, PlatformType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEOperation(getPlatformType__UserAgents(), ecorePackage.getEString(), "userAgents", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(platformTypeEClass, ecorePackage.getEString(), "userAgents", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(protocolTypeEClass, ProtocolType.class, "ProtocolType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getProtocolType_ProtocolTypeId(), ecorePackage.getEString(), "protocolTypeId", null, 1, 1, ProtocolType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getProtocolType_ProtocolName(), ecorePackage.getEString(), "protocolName", null, 0, 1, ProtocolType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEOperation(getProtocolType__UserAgents(), ecorePackage.getEString(), "userAgents", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(protocolTypeEClass, ecorePackage.getEString(), "userAgents", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(serverHitEClass, ServerHit.class, "ServerHit", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getServerHit_ContentId(), ecorePackage.getEString(), "contentId", null, 1, 1, ServerHit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1946,7 +1862,7 @@ public class VisitPackageImpl extends EPackageImpl implements VisitPackage {
 		initEAttribute(getServerHitType_HitTypeId(), ecorePackage.getEString(), "hitTypeId", null, 1, 1, ServerHitType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getServerHitType_Description(), ecorePackage.getEString(), "description", null, 0, 1, ServerHitType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEOperation(getServerHitType__ServerHitBins(), ecorePackage.getEString(), "serverHitBins", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(serverHitTypeEClass, ecorePackage.getEString(), "serverHitBins", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(userAgentEClass, UserAgent.class, "UserAgent", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getUserAgent_UserAgentId(), ecorePackage.getEString(), "userAgentId", null, 1, 1, UserAgent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1961,19 +1877,19 @@ public class VisitPackageImpl extends EPackageImpl implements VisitPackage {
 		initEReference(getUserAgent_UserAgentMethodTypeId(), this.getUserAgentMethodType(), null, "userAgentMethodTypeId", null, 0, 1, UserAgent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getUserAgent_UserAgentMethodTypeId().getEKeys().add(this.getUserAgentMethodType_UserAgentMethodTypeId());
 
-		initEOperation(getUserAgent__Visits(), ecorePackage.getEString(), "visits", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(userAgentEClass, ecorePackage.getEString(), "visits", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(userAgentMethodTypeEClass, UserAgentMethodType.class, "UserAgentMethodType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getUserAgentMethodType_UserAgentMethodTypeId(), ecorePackage.getEString(), "userAgentMethodTypeId", null, 1, 1, UserAgentMethodType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getUserAgentMethodType_Description(), ecorePackage.getEString(), "description", null, 0, 1, UserAgentMethodType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEOperation(getUserAgentMethodType__UserAgents(), ecorePackage.getEString(), "userAgents", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(userAgentMethodTypeEClass, ecorePackage.getEString(), "userAgents", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(userAgentTypeEClass, UserAgentType.class, "UserAgentType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getUserAgentType_UserAgentTypeId(), ecorePackage.getEString(), "userAgentTypeId", null, 1, 1, UserAgentType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getUserAgentType_Description(), ecorePackage.getEString(), "description", null, 0, 1, UserAgentType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEOperation(getUserAgentType__UserAgents(), ecorePackage.getEString(), "userAgents", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(userAgentTypeEClass, ecorePackage.getEString(), "userAgents", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(visitEClass, Visit.class, "Visit", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getVisit_VisitId(), ecorePackage.getEString(), "visitId", null, 1, 1, Visit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -2011,15 +1927,511 @@ public class VisitPackageImpl extends EPackageImpl implements VisitPackage {
 		initEReference(getVisitor_UserLoginId(), theLoginPackage.getUserLogin(), null, "userLoginId", null, 0, 1, Visitor.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getVisitor_UserLoginId().getEKeys().add(theLoginPackage.getUserLogin_UserLoginId());
 
-		initEOperation(getVisitor__Visits(), ecorePackage.getEString(), "visits", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(visitorEClass, ecorePackage.getEString(), "visits", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		// Create annotations
+		// mimo-ent-format
+		createMimoentformatAnnotations();
 		// mimo-ent-slot
 		createMimoentslotAnnotations();
 		// mimo-ent-domain
 		createMimoentdomainAnnotations();
 		// mimo-ent-frame
 		createMimoentframeAnnotations();
+	}
+
+	/**
+	 * Initializes the annotations for <b>mimo-ent-format</b>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void createMimoentformatAnnotations() {
+		String source = "mimo-ent-format";
+		addAnnotation
+		  (browserTypeEClass.getEOperations().get(0),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (getBrowserType_BrowserTypeId(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (getBrowserType_BrowserName(),
+		   source,
+		   new String[] {
+			   "type", "name",
+			   "length", "100"
+		   });
+		addAnnotation
+		  (getBrowserType_BrowserVersion(),
+		   source,
+		   new String[] {
+			   "type", "very-short",
+			   "length", "10"
+		   });
+		addAnnotation
+		  (platformTypeEClass.getEOperations().get(0),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (getPlatformType_PlatformTypeId(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (getPlatformType_PlatformName(),
+		   source,
+		   new String[] {
+			   "type", "name",
+			   "length", "100"
+		   });
+		addAnnotation
+		  (getPlatformType_PlatformVersion(),
+		   source,
+		   new String[] {
+			   "type", "very-short",
+			   "length", "10"
+		   });
+		addAnnotation
+		  (protocolTypeEClass.getEOperations().get(0),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (getProtocolType_ProtocolTypeId(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (getProtocolType_ProtocolName(),
+		   source,
+		   new String[] {
+			   "type", "name",
+			   "length", "100"
+		   });
+		addAnnotation
+		  (getServerHit_ContentId(),
+		   source,
+		   new String[] {
+			   "type", "id-vlong",
+			   "length", "255"
+		   });
+		addAnnotation
+		  (getServerHit_HitStartDateTime(),
+		   source,
+		   new String[] {
+			   "type", "date-time"
+		   });
+		addAnnotation
+		  (getServerHit_NumOfBytes(),
+		   source,
+		   new String[] {
+			   "type", "numeric",
+			   "precision", "20",
+			   "scale", "0"
+		   });
+		addAnnotation
+		  (getServerHit_ReferrerUrl(),
+		   source,
+		   new String[] {
+			   "type", "url",
+			   "length", "2000"
+		   });
+		addAnnotation
+		  (getServerHit_RequestUrl(),
+		   source,
+		   new String[] {
+			   "type", "url",
+			   "length", "2000"
+		   });
+		addAnnotation
+		  (getServerHit_RunningTimeMillis(),
+		   source,
+		   new String[] {
+			   "type", "numeric",
+			   "precision", "20",
+			   "scale", "0"
+		   });
+		addAnnotation
+		  (getServerHit_ServerHostName(),
+		   source,
+		   new String[] {
+			   "type", "long-varchar",
+			   "length", "255"
+		   });
+		addAnnotation
+		  (getServerHit_ServerIpAddress(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (getServerHit_StatusId(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (getServerHit_UserLoginId(),
+		   source,
+		   new String[] {
+			   "type", "id-vlong",
+			   "length", "255"
+		   });
+		addAnnotation
+		  (getServerHitBin_ServerHitBinId(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (getServerHitBin_BinEndDateTime(),
+		   source,
+		   new String[] {
+			   "type", "date-time"
+		   });
+		addAnnotation
+		  (getServerHitBin_BinStartDateTime(),
+		   source,
+		   new String[] {
+			   "type", "date-time"
+		   });
+		addAnnotation
+		  (getServerHitBin_ContentId(),
+		   source,
+		   new String[] {
+			   "type", "id-vlong",
+			   "length", "255"
+		   });
+		addAnnotation
+		  (getServerHitBin_MaxTimeMillis(),
+		   source,
+		   new String[] {
+			   "type", "numeric",
+			   "precision", "20",
+			   "scale", "0"
+		   });
+		addAnnotation
+		  (getServerHitBin_MinTimeMillis(),
+		   source,
+		   new String[] {
+			   "type", "numeric",
+			   "precision", "20",
+			   "scale", "0"
+		   });
+		addAnnotation
+		  (getServerHitBin_NumberHits(),
+		   source,
+		   new String[] {
+			   "type", "numeric",
+			   "precision", "20",
+			   "scale", "0"
+		   });
+		addAnnotation
+		  (getServerHitBin_ServerHostName(),
+		   source,
+		   new String[] {
+			   "type", "long-varchar",
+			   "length", "255"
+		   });
+		addAnnotation
+		  (getServerHitBin_ServerIpAddress(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (getServerHitBin_TotalTimeMillis(),
+		   source,
+		   new String[] {
+			   "type", "numeric",
+			   "precision", "20",
+			   "scale", "0"
+		   });
+		addAnnotation
+		  (serverHitTypeEClass.getEOperations().get(0),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (getServerHitType_HitTypeId(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (getServerHitType_Description(),
+		   source,
+		   new String[] {
+			   "type", "description",
+			   "length", "255"
+		   });
+		addAnnotation
+		  (userAgentEClass.getEOperations().get(0),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (getUserAgent_UserAgentId(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (userAgentMethodTypeEClass.getEOperations().get(0),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (getUserAgentMethodType_UserAgentMethodTypeId(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (getUserAgentMethodType_Description(),
+		   source,
+		   new String[] {
+			   "type", "description",
+			   "length", "255"
+		   });
+		addAnnotation
+		  (userAgentTypeEClass.getEOperations().get(0),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (getUserAgentType_UserAgentTypeId(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (getUserAgentType_Description(),
+		   source,
+		   new String[] {
+			   "type", "description",
+			   "length", "255"
+		   });
+		addAnnotation
+		  (getVisit_VisitId(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (getVisit_ClientHostName(),
+		   source,
+		   new String[] {
+			   "type", "long-varchar",
+			   "length", "255"
+		   });
+		addAnnotation
+		  (getVisit_ClientIpAddress(),
+		   source,
+		   new String[] {
+			   "type", "short-varchar",
+			   "length", "60"
+		   });
+		addAnnotation
+		  (getVisit_ClientIpCountryGeoId(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (getVisit_ClientIpIspName(),
+		   source,
+		   new String[] {
+			   "type", "short-varchar",
+			   "length", "60"
+		   });
+		addAnnotation
+		  (getVisit_ClientIpPostalCode(),
+		   source,
+		   new String[] {
+			   "type", "short-varchar",
+			   "length", "60"
+		   });
+		addAnnotation
+		  (getVisit_ClientIpStateProvGeoId(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (getVisit_ClientUser(),
+		   source,
+		   new String[] {
+			   "type", "short-varchar",
+			   "length", "60"
+		   });
+		addAnnotation
+		  (getVisit_ContactMechId(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (getVisit_Cookie(),
+		   source,
+		   new String[] {
+			   "type", "short-varchar",
+			   "length", "60"
+		   });
+		addAnnotation
+		  (getVisit_FromDate(),
+		   source,
+		   new String[] {
+			   "type", "date-time"
+		   });
+		addAnnotation
+		  (getVisit_InitialLocale(),
+		   source,
+		   new String[] {
+			   "type", "short-varchar",
+			   "length", "60"
+		   });
+		addAnnotation
+		  (getVisit_InitialReferrer(),
+		   source,
+		   new String[] {
+			   "type", "url",
+			   "length", "2000"
+		   });
+		addAnnotation
+		  (getVisit_InitialRequest(),
+		   source,
+		   new String[] {
+			   "type", "url",
+			   "length", "2000"
+		   });
+		addAnnotation
+		  (getVisit_InitialUserAgent(),
+		   source,
+		   new String[] {
+			   "type", "long-varchar",
+			   "length", "255"
+		   });
+		addAnnotation
+		  (getVisit_PartyId(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (getVisit_RoleTypeId(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (getVisit_ServerHostName(),
+		   source,
+		   new String[] {
+			   "type", "long-varchar",
+			   "length", "255"
+		   });
+		addAnnotation
+		  (getVisit_ServerIpAddress(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (getVisit_SessionId(),
+		   source,
+		   new String[] {
+			   "type", "id-vlong",
+			   "length", "255"
+		   });
+		addAnnotation
+		  (getVisit_ThruDate(),
+		   source,
+		   new String[] {
+			   "type", "date-time"
+		   });
+		addAnnotation
+		  (getVisit_UserCreated(),
+		   source,
+		   new String[] {
+			   "type", "indicator",
+			   "length", "1"
+		   });
+		addAnnotation
+		  (getVisit_UserLoginId(),
+		   source,
+		   new String[] {
+			   "type", "id-vlong",
+			   "length", "255"
+		   });
+		addAnnotation
+		  (getVisit_WebappName(),
+		   source,
+		   new String[] {
+			   "type", "short-varchar",
+			   "length", "60"
+		   });
+		addAnnotation
+		  (visitorEClass.getEOperations().get(0),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (getVisitor_VisitorId(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (getVisitor_PartyId(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
 	}
 
 	/**
@@ -2031,7 +2443,7 @@ public class VisitPackageImpl extends EPackageImpl implements VisitPackage {
 	protected void createMimoentslotAnnotations() {
 		String source = "mimo-ent-slot";
 		addAnnotation
-		  (getBrowserType__UserAgents(),
+		  (browserTypeEClass.getEOperations().get(0),
 		   source,
 		   new String[] {
 			   "derived", "true"
@@ -2043,7 +2455,7 @@ public class VisitPackageImpl extends EPackageImpl implements VisitPackage {
 			   "key", "true"
 		   });
 		addAnnotation
-		  (getPlatformType__UserAgents(),
+		  (platformTypeEClass.getEOperations().get(0),
 		   source,
 		   new String[] {
 			   "derived", "true"
@@ -2055,7 +2467,7 @@ public class VisitPackageImpl extends EPackageImpl implements VisitPackage {
 			   "key", "true"
 		   });
 		addAnnotation
-		  (getProtocolType__UserAgents(),
+		  (protocolTypeEClass.getEOperations().get(0),
 		   source,
 		   new String[] {
 			   "derived", "true"
@@ -2085,7 +2497,7 @@ public class VisitPackageImpl extends EPackageImpl implements VisitPackage {
 			   "key", "true"
 		   });
 		addAnnotation
-		  (getServerHitType__ServerHitBins(),
+		  (serverHitTypeEClass.getEOperations().get(0),
 		   source,
 		   new String[] {
 			   "derived", "true"
@@ -2097,7 +2509,7 @@ public class VisitPackageImpl extends EPackageImpl implements VisitPackage {
 			   "key", "true"
 		   });
 		addAnnotation
-		  (getUserAgent__Visits(),
+		  (userAgentEClass.getEOperations().get(0),
 		   source,
 		   new String[] {
 			   "derived", "true"
@@ -2109,7 +2521,7 @@ public class VisitPackageImpl extends EPackageImpl implements VisitPackage {
 			   "key", "true"
 		   });
 		addAnnotation
-		  (getUserAgentMethodType__UserAgents(),
+		  (userAgentMethodTypeEClass.getEOperations().get(0),
 		   source,
 		   new String[] {
 			   "derived", "true"
@@ -2121,7 +2533,7 @@ public class VisitPackageImpl extends EPackageImpl implements VisitPackage {
 			   "key", "true"
 		   });
 		addAnnotation
-		  (getUserAgentType__UserAgents(),
+		  (userAgentTypeEClass.getEOperations().get(0),
 		   source,
 		   new String[] {
 			   "derived", "true"
@@ -2139,7 +2551,7 @@ public class VisitPackageImpl extends EPackageImpl implements VisitPackage {
 			   "key", "true"
 		   });
 		addAnnotation
-		  (getVisitor__Visits(),
+		  (visitorEClass.getEOperations().get(0),
 		   source,
 		   new String[] {
 			   "derived", "true"
@@ -2161,7 +2573,7 @@ public class VisitPackageImpl extends EPackageImpl implements VisitPackage {
 	protected void createMimoentdomainAnnotations() {
 		String source = "mimo-ent-domain";
 		addAnnotation
-		  (getBrowserType__UserAgents(),
+		  (browserTypeEClass.getEOperations().get(0),
 		   source,
 		   new String[] {
 			   "frame", "UserAgent",
@@ -2171,7 +2583,7 @@ public class VisitPackageImpl extends EPackageImpl implements VisitPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (getPlatformType__UserAgents(),
+		  (platformTypeEClass.getEOperations().get(0),
 		   source,
 		   new String[] {
 			   "frame", "UserAgent",
@@ -2181,7 +2593,7 @@ public class VisitPackageImpl extends EPackageImpl implements VisitPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (getProtocolType__UserAgents(),
+		  (protocolTypeEClass.getEOperations().get(0),
 		   source,
 		   new String[] {
 			   "frame", "UserAgent",
@@ -2191,7 +2603,7 @@ public class VisitPackageImpl extends EPackageImpl implements VisitPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (getServerHitType__ServerHitBins(),
+		  (serverHitTypeEClass.getEOperations().get(0),
 		   source,
 		   new String[] {
 			   "frame", "ServerHitBin",
@@ -2201,7 +2613,7 @@ public class VisitPackageImpl extends EPackageImpl implements VisitPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (getUserAgent__Visits(),
+		  (userAgentEClass.getEOperations().get(0),
 		   source,
 		   new String[] {
 			   "frame", "Visit",
@@ -2211,7 +2623,7 @@ public class VisitPackageImpl extends EPackageImpl implements VisitPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (getUserAgentMethodType__UserAgents(),
+		  (userAgentMethodTypeEClass.getEOperations().get(0),
 		   source,
 		   new String[] {
 			   "frame", "UserAgent",
@@ -2221,7 +2633,7 @@ public class VisitPackageImpl extends EPackageImpl implements VisitPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (getUserAgentType__UserAgents(),
+		  (userAgentTypeEClass.getEOperations().get(0),
 		   source,
 		   new String[] {
 			   "frame", "UserAgent",
@@ -2231,7 +2643,7 @@ public class VisitPackageImpl extends EPackageImpl implements VisitPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (getVisitor__Visits(),
+		  (visitorEClass.getEOperations().get(0),
 		   source,
 		   new String[] {
 			   "frame", "Visit",

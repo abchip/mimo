@@ -7,8 +7,6 @@
  */
 package org.abchip.mimo.context.impl;
 
-import java.lang.reflect.InvocationTargetException;
-
 import java.util.Collection;
 import java.util.List;
 
@@ -284,20 +282,6 @@ public class MessageFileImpl extends EntityNameableImpl implements MessageFile {
 				return TEXT_EDEFAULT == null ? text != null : !TEXT_EDEFAULT.equals(text);
 		}
 		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
-		switch (operationID) {
-			case ContextPackage.MESSAGE_FILE___LOOKUP__STRING:
-				return lookup((String)arguments.get(0));
-		}
-		return super.eInvoke(operationID, arguments);
 	}
 
 	/**

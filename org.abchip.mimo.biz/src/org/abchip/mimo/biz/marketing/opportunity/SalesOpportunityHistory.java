@@ -54,7 +54,7 @@ public interface SalesOpportunityHistory extends BizEntity {
 	 * @return the value of the '<em>Change Note</em>' attribute.
 	 * @see #setChangeNote(String)
 	 * @see org.abchip.mimo.biz.marketing.opportunity.OpportunityPackage#getSalesOpportunityHistory_ChangeNote()
-	 * @model
+	 * @model annotation="mimo-ent-format type='very-long'"
 	 * @generated
 	 */
 	String getChangeNote();
@@ -106,7 +106,7 @@ public interface SalesOpportunityHistory extends BizEntity {
 	 * @return the value of the '<em>Description</em>' attribute.
 	 * @see #setDescription(String)
 	 * @see org.abchip.mimo.biz.marketing.opportunity.OpportunityPackage#getSalesOpportunityHistory_Description()
-	 * @model
+	 * @model annotation="mimo-ent-format type='very-long'"
 	 * @generated
 	 */
 	String getDescription();
@@ -132,7 +132,7 @@ public interface SalesOpportunityHistory extends BizEntity {
 	 * @return the value of the '<em>Estimated Amount</em>' attribute.
 	 * @see #setEstimatedAmount(BigDecimal)
 	 * @see org.abchip.mimo.biz.marketing.opportunity.OpportunityPackage#getSalesOpportunityHistory_EstimatedAmount()
-	 * @model
+	 * @model annotation="mimo-ent-format type='currency-amount' precision='18' scale='2'"
 	 * @generated
 	 */
 	BigDecimal getEstimatedAmount();
@@ -158,7 +158,7 @@ public interface SalesOpportunityHistory extends BizEntity {
 	 * @return the value of the '<em>Estimated Close Date</em>' attribute.
 	 * @see #setEstimatedCloseDate(Date)
 	 * @see org.abchip.mimo.biz.marketing.opportunity.OpportunityPackage#getSalesOpportunityHistory_EstimatedCloseDate()
-	 * @model
+	 * @model annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getEstimatedCloseDate();
@@ -184,7 +184,7 @@ public interface SalesOpportunityHistory extends BizEntity {
 	 * @return the value of the '<em>Estimated Probability</em>' attribute.
 	 * @see #setEstimatedProbability(BigDecimal)
 	 * @see org.abchip.mimo.biz.marketing.opportunity.OpportunityPackage#getSalesOpportunityHistory_EstimatedProbability()
-	 * @model
+	 * @model annotation="mimo-ent-format type='fixed-point' precision='18' scale='6'"
 	 * @generated
 	 */
 	BigDecimal getEstimatedProbability();
@@ -236,7 +236,7 @@ public interface SalesOpportunityHistory extends BizEntity {
 	 * @return the value of the '<em>Modified Timestamp</em>' attribute.
 	 * @see #setModifiedTimestamp(Date)
 	 * @see org.abchip.mimo.biz.marketing.opportunity.OpportunityPackage#getSalesOpportunityHistory_ModifiedTimestamp()
-	 * @model
+	 * @model annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getModifiedTimestamp();
@@ -262,7 +262,7 @@ public interface SalesOpportunityHistory extends BizEntity {
 	 * @return the value of the '<em>Next Step</em>' attribute.
 	 * @see #setNextStep(String)
 	 * @see org.abchip.mimo.biz.marketing.opportunity.OpportunityPackage#getSalesOpportunityHistory_NextStep()
-	 * @model
+	 * @model annotation="mimo-ent-format type='very-long'"
 	 * @generated
 	 */
 	String getNextStep();
@@ -315,6 +315,7 @@ public interface SalesOpportunityHistory extends BizEntity {
 	 * @see #setSalesOpportunityHistoryId(String)
 	 * @see org.abchip.mimo.biz.marketing.opportunity.OpportunityPackage#getSalesOpportunityHistory_SalesOpportunityHistoryId()
 	 * @model id="true" required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */

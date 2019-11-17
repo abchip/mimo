@@ -41,7 +41,7 @@ public interface DataCategory extends BizEntity {
 	 * @return the value of the '<em>Category Name</em>' attribute.
 	 * @see #setCategoryName(String)
 	 * @see org.abchip.mimo.biz.content.data.DataPackage#getDataCategory_CategoryName()
-	 * @model
+	 * @model annotation="mimo-ent-format type='name' length='100'"
 	 * @generated
 	 */
 	String getCategoryName();
@@ -68,6 +68,7 @@ public interface DataCategory extends BizEntity {
 	 * @see #setDataCategoryId(String)
 	 * @see org.abchip.mimo.biz.content.data.DataPackage#getDataCategory_DataCategoryId()
 	 * @model id="true" required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
@@ -112,7 +113,8 @@ public interface DataCategory extends BizEntity {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='DataCategory' route='parentCategoryId'"
 	 * @generated
 	 */
@@ -121,7 +123,8 @@ public interface DataCategory extends BizEntity {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='DataResource' route='dataCategoryId'"
 	 * @generated
 	 */

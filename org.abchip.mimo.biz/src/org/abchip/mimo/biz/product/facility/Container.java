@@ -42,7 +42,7 @@ public interface Container extends BizEntityTyped<ContainerType> {
 	 * @return the value of the '<em>Description</em>' attribute.
 	 * @see #setDescription(String)
 	 * @see org.abchip.mimo.biz.product.facility.FacilityPackage#getContainer_Description()
-	 * @model
+	 * @model annotation="mimo-ent-format type='description' length='255'"
 	 * @generated
 	 */
 	String getDescription();
@@ -112,7 +112,8 @@ public interface Container extends BizEntityTyped<ContainerType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='InventoryItem' route='containerId'"
 	 * @generated
 	 */
@@ -121,7 +122,8 @@ public interface Container extends BizEntityTyped<ContainerType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='InventoryTransfer' route='containerId'"
 	 * @generated
 	 */
@@ -130,7 +132,8 @@ public interface Container extends BizEntityTyped<ContainerType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='InventoryTransfer' route='containerIdTo'"
 	 * @generated
 	 */
@@ -148,6 +151,7 @@ public interface Container extends BizEntityTyped<ContainerType> {
 	 * @see #setContainerId(String)
 	 * @see org.abchip.mimo.biz.product.facility.FacilityPackage#getContainer_ContainerId()
 	 * @model id="true" required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */

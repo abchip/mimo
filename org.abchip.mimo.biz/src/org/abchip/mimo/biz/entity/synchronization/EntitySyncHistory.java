@@ -64,7 +64,7 @@ public interface EntitySyncHistory extends BizEntity {
 	 * @return the value of the '<em>Beginning Synch Time</em>' attribute.
 	 * @see #setBeginningSynchTime(Date)
 	 * @see org.abchip.mimo.biz.entity.synchronization.SynchronizationPackage#getEntitySyncHistory_BeginningSynchTime()
-	 * @model
+	 * @model annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getBeginningSynchTime();
@@ -116,7 +116,7 @@ public interface EntitySyncHistory extends BizEntity {
 	 * @return the value of the '<em>Last Candidate End Time</em>' attribute.
 	 * @see #setLastCandidateEndTime(Date)
 	 * @see org.abchip.mimo.biz.entity.synchronization.SynchronizationPackage#getEntitySyncHistory_LastCandidateEndTime()
-	 * @model
+	 * @model annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getLastCandidateEndTime();
@@ -142,7 +142,7 @@ public interface EntitySyncHistory extends BizEntity {
 	 * @return the value of the '<em>Last Split Start Time</em>' attribute.
 	 * @see #setLastSplitStartTime(long)
 	 * @see org.abchip.mimo.biz.entity.synchronization.SynchronizationPackage#getEntitySyncHistory_LastSplitStartTime()
-	 * @model
+	 * @model annotation="mimo-ent-format type='numeric' precision='20' scale='0'"
 	 * @generated
 	 */
 	long getLastSplitStartTime();
@@ -168,7 +168,7 @@ public interface EntitySyncHistory extends BizEntity {
 	 * @return the value of the '<em>Last Successful Synch Time</em>' attribute.
 	 * @see #setLastSuccessfulSynchTime(Date)
 	 * @see org.abchip.mimo.biz.entity.synchronization.SynchronizationPackage#getEntitySyncHistory_LastSuccessfulSynchTime()
-	 * @model
+	 * @model annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getLastSuccessfulSynchTime();
@@ -194,7 +194,7 @@ public interface EntitySyncHistory extends BizEntity {
 	 * @return the value of the '<em>Per Split Max Items</em>' attribute.
 	 * @see #setPerSplitMaxItems(long)
 	 * @see org.abchip.mimo.biz.entity.synchronization.SynchronizationPackage#getEntitySyncHistory_PerSplitMaxItems()
-	 * @model
+	 * @model annotation="mimo-ent-format type='numeric' precision='20' scale='0'"
 	 * @generated
 	 */
 	long getPerSplitMaxItems();
@@ -220,7 +220,7 @@ public interface EntitySyncHistory extends BizEntity {
 	 * @return the value of the '<em>Per Split Max Millis</em>' attribute.
 	 * @see #setPerSplitMaxMillis(long)
 	 * @see org.abchip.mimo.biz.entity.synchronization.SynchronizationPackage#getEntitySyncHistory_PerSplitMaxMillis()
-	 * @model
+	 * @model annotation="mimo-ent-format type='numeric' precision='20' scale='0'"
 	 * @generated
 	 */
 	long getPerSplitMaxMillis();
@@ -246,7 +246,7 @@ public interface EntitySyncHistory extends BizEntity {
 	 * @return the value of the '<em>Per Split Min Items</em>' attribute.
 	 * @see #setPerSplitMinItems(long)
 	 * @see org.abchip.mimo.biz.entity.synchronization.SynchronizationPackage#getEntitySyncHistory_PerSplitMinItems()
-	 * @model
+	 * @model annotation="mimo-ent-format type='numeric' precision='20' scale='0'"
 	 * @generated
 	 */
 	long getPerSplitMinItems();
@@ -272,7 +272,7 @@ public interface EntitySyncHistory extends BizEntity {
 	 * @return the value of the '<em>Per Split Min Millis</em>' attribute.
 	 * @see #setPerSplitMinMillis(long)
 	 * @see org.abchip.mimo.biz.entity.synchronization.SynchronizationPackage#getEntitySyncHistory_PerSplitMinMillis()
-	 * @model
+	 * @model annotation="mimo-ent-format type='numeric' precision='20' scale='0'"
 	 * @generated
 	 */
 	long getPerSplitMinMillis();
@@ -298,7 +298,7 @@ public interface EntitySyncHistory extends BizEntity {
 	 * @return the value of the '<em>Run Status Id</em>' attribute.
 	 * @see #setRunStatusId(String)
 	 * @see org.abchip.mimo.biz.entity.synchronization.SynchronizationPackage#getEntitySyncHistory_RunStatusId()
-	 * @model
+	 * @model annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	String getRunStatusId();
@@ -324,7 +324,7 @@ public interface EntitySyncHistory extends BizEntity {
 	 * @return the value of the '<em>Running Time Millis</em>' attribute.
 	 * @see #setRunningTimeMillis(long)
 	 * @see org.abchip.mimo.biz.entity.synchronization.SynchronizationPackage#getEntitySyncHistory_RunningTimeMillis()
-	 * @model
+	 * @model annotation="mimo-ent-format type='numeric' precision='20' scale='0'"
 	 * @generated
 	 */
 	long getRunningTimeMillis();
@@ -351,6 +351,7 @@ public interface EntitySyncHistory extends BizEntity {
 	 * @see #setStartDate(Date)
 	 * @see org.abchip.mimo.biz.entity.synchronization.SynchronizationPackage#getEntitySyncHistory_StartDate()
 	 * @model required="true"
+	 *        annotation="mimo-ent-format type='date-time'"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
@@ -377,7 +378,7 @@ public interface EntitySyncHistory extends BizEntity {
 	 * @return the value of the '<em>To Create Inserted</em>' attribute.
 	 * @see #setToCreateInserted(long)
 	 * @see org.abchip.mimo.biz.entity.synchronization.SynchronizationPackage#getEntitySyncHistory_ToCreateInserted()
-	 * @model
+	 * @model annotation="mimo-ent-format type='numeric' precision='20' scale='0'"
 	 * @generated
 	 */
 	long getToCreateInserted();
@@ -403,7 +404,7 @@ public interface EntitySyncHistory extends BizEntity {
 	 * @return the value of the '<em>To Create Not Updated</em>' attribute.
 	 * @see #setToCreateNotUpdated(long)
 	 * @see org.abchip.mimo.biz.entity.synchronization.SynchronizationPackage#getEntitySyncHistory_ToCreateNotUpdated()
-	 * @model
+	 * @model annotation="mimo-ent-format type='numeric' precision='20' scale='0'"
 	 * @generated
 	 */
 	long getToCreateNotUpdated();
@@ -429,7 +430,7 @@ public interface EntitySyncHistory extends BizEntity {
 	 * @return the value of the '<em>To Create Updated</em>' attribute.
 	 * @see #setToCreateUpdated(long)
 	 * @see org.abchip.mimo.biz.entity.synchronization.SynchronizationPackage#getEntitySyncHistory_ToCreateUpdated()
-	 * @model
+	 * @model annotation="mimo-ent-format type='numeric' precision='20' scale='0'"
 	 * @generated
 	 */
 	long getToCreateUpdated();
@@ -455,7 +456,7 @@ public interface EntitySyncHistory extends BizEntity {
 	 * @return the value of the '<em>To Remove Already Deleted</em>' attribute.
 	 * @see #setToRemoveAlreadyDeleted(long)
 	 * @see org.abchip.mimo.biz.entity.synchronization.SynchronizationPackage#getEntitySyncHistory_ToRemoveAlreadyDeleted()
-	 * @model
+	 * @model annotation="mimo-ent-format type='numeric' precision='20' scale='0'"
 	 * @generated
 	 */
 	long getToRemoveAlreadyDeleted();
@@ -481,7 +482,7 @@ public interface EntitySyncHistory extends BizEntity {
 	 * @return the value of the '<em>To Remove Deleted</em>' attribute.
 	 * @see #setToRemoveDeleted(long)
 	 * @see org.abchip.mimo.biz.entity.synchronization.SynchronizationPackage#getEntitySyncHistory_ToRemoveDeleted()
-	 * @model
+	 * @model annotation="mimo-ent-format type='numeric' precision='20' scale='0'"
 	 * @generated
 	 */
 	long getToRemoveDeleted();
@@ -507,7 +508,7 @@ public interface EntitySyncHistory extends BizEntity {
 	 * @return the value of the '<em>To Store Inserted</em>' attribute.
 	 * @see #setToStoreInserted(long)
 	 * @see org.abchip.mimo.biz.entity.synchronization.SynchronizationPackage#getEntitySyncHistory_ToStoreInserted()
-	 * @model
+	 * @model annotation="mimo-ent-format type='numeric' precision='20' scale='0'"
 	 * @generated
 	 */
 	long getToStoreInserted();
@@ -533,7 +534,7 @@ public interface EntitySyncHistory extends BizEntity {
 	 * @return the value of the '<em>To Store Not Updated</em>' attribute.
 	 * @see #setToStoreNotUpdated(long)
 	 * @see org.abchip.mimo.biz.entity.synchronization.SynchronizationPackage#getEntitySyncHistory_ToStoreNotUpdated()
-	 * @model
+	 * @model annotation="mimo-ent-format type='numeric' precision='20' scale='0'"
 	 * @generated
 	 */
 	long getToStoreNotUpdated();
@@ -559,7 +560,7 @@ public interface EntitySyncHistory extends BizEntity {
 	 * @return the value of the '<em>To Store Updated</em>' attribute.
 	 * @see #setToStoreUpdated(long)
 	 * @see org.abchip.mimo.biz.entity.synchronization.SynchronizationPackage#getEntitySyncHistory_ToStoreUpdated()
-	 * @model
+	 * @model annotation="mimo-ent-format type='numeric' precision='20' scale='0'"
 	 * @generated
 	 */
 	long getToStoreUpdated();
@@ -585,7 +586,7 @@ public interface EntitySyncHistory extends BizEntity {
 	 * @return the value of the '<em>Total Rows Exported</em>' attribute.
 	 * @see #setTotalRowsExported(long)
 	 * @see org.abchip.mimo.biz.entity.synchronization.SynchronizationPackage#getEntitySyncHistory_TotalRowsExported()
-	 * @model
+	 * @model annotation="mimo-ent-format type='numeric' precision='20' scale='0'"
 	 * @generated
 	 */
 	long getTotalRowsExported();
@@ -611,7 +612,7 @@ public interface EntitySyncHistory extends BizEntity {
 	 * @return the value of the '<em>Total Rows To Create</em>' attribute.
 	 * @see #setTotalRowsToCreate(long)
 	 * @see org.abchip.mimo.biz.entity.synchronization.SynchronizationPackage#getEntitySyncHistory_TotalRowsToCreate()
-	 * @model
+	 * @model annotation="mimo-ent-format type='numeric' precision='20' scale='0'"
 	 * @generated
 	 */
 	long getTotalRowsToCreate();
@@ -637,7 +638,7 @@ public interface EntitySyncHistory extends BizEntity {
 	 * @return the value of the '<em>Total Rows To Remove</em>' attribute.
 	 * @see #setTotalRowsToRemove(long)
 	 * @see org.abchip.mimo.biz.entity.synchronization.SynchronizationPackage#getEntitySyncHistory_TotalRowsToRemove()
-	 * @model
+	 * @model annotation="mimo-ent-format type='numeric' precision='20' scale='0'"
 	 * @generated
 	 */
 	long getTotalRowsToRemove();
@@ -663,7 +664,7 @@ public interface EntitySyncHistory extends BizEntity {
 	 * @return the value of the '<em>Total Rows To Store</em>' attribute.
 	 * @see #setTotalRowsToStore(long)
 	 * @see org.abchip.mimo.biz.entity.synchronization.SynchronizationPackage#getEntitySyncHistory_TotalRowsToStore()
-	 * @model
+	 * @model annotation="mimo-ent-format type='numeric' precision='20' scale='0'"
 	 * @generated
 	 */
 	long getTotalRowsToStore();
@@ -689,7 +690,7 @@ public interface EntitySyncHistory extends BizEntity {
 	 * @return the value of the '<em>Total Splits</em>' attribute.
 	 * @see #setTotalSplits(long)
 	 * @see org.abchip.mimo.biz.entity.synchronization.SynchronizationPackage#getEntitySyncHistory_TotalSplits()
-	 * @model
+	 * @model annotation="mimo-ent-format type='numeric' precision='20' scale='0'"
 	 * @generated
 	 */
 	long getTotalSplits();
@@ -715,7 +716,7 @@ public interface EntitySyncHistory extends BizEntity {
 	 * @return the value of the '<em>Total Store Calls</em>' attribute.
 	 * @see #setTotalStoreCalls(long)
 	 * @see org.abchip.mimo.biz.entity.synchronization.SynchronizationPackage#getEntitySyncHistory_TotalStoreCalls()
-	 * @model
+	 * @model annotation="mimo-ent-format type='numeric' precision='20' scale='0'"
 	 * @generated
 	 */
 	long getTotalStoreCalls();

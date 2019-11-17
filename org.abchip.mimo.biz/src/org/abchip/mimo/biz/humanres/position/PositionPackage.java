@@ -10,7 +10,6 @@ package org.abchip.mimo.biz.humanres.position;
 import org.abchip.mimo.biz.BizPackage;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
@@ -244,69 +243,6 @@ public interface PositionPackage extends EPackage {
 	int EMPL_POSITION_FEATURE_COUNT = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 14;
 
 	/**
-	 * The operation id for the '<em>Isa</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EMPL_POSITION___ISA = BizPackage.BIZ_ENTITY_TYPED___ISA;
-
-	/**
-	 * The operation id for the '<em>Get Name</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EMPL_POSITION___GET_NAME = BizPackage.BIZ_ENTITY_TYPED___GET_NAME;
-
-	/**
-	 * The operation id for the '<em>Get URI</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EMPL_POSITION___GET_URI = BizPackage.BIZ_ENTITY_TYPED___GET_URI;
-
-	/**
-	 * The operation id for the '<em>Is Proxy</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EMPL_POSITION___IS_PROXY = BizPackage.BIZ_ENTITY_TYPED___IS_PROXY;
-
-	/**
-	 * The operation id for the '<em>Get Type</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EMPL_POSITION___GET_TYPE = BizPackage.BIZ_ENTITY_TYPED___GET_TYPE;
-
-	/**
-	 * The operation id for the '<em>Employment Apps</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EMPL_POSITION___EMPLOYMENT_APPS = BizPackage.BIZ_ENTITY_TYPED_OPERATION_COUNT + 0;
-
-	/**
-	 * The number of operations of the '<em>Empl Position</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EMPL_POSITION_OPERATION_COUNT = BizPackage.BIZ_ENTITY_TYPED_OPERATION_COUNT + 1;
-
-	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.humanres.position.impl.EmplPositionClassTypeImpl <em>Empl Position Class Type</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -396,60 +332,6 @@ public interface PositionPackage extends EPackage {
 	 * @ordered
 	 */
 	int EMPL_POSITION_CLASS_TYPE_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
-
-	/**
-	 * The operation id for the '<em>Isa</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EMPL_POSITION_CLASS_TYPE___ISA = BizPackage.BIZ_ENTITY___ISA;
-
-	/**
-	 * The operation id for the '<em>Get Name</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EMPL_POSITION_CLASS_TYPE___GET_NAME = BizPackage.BIZ_ENTITY___GET_NAME;
-
-	/**
-	 * The operation id for the '<em>Get URI</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EMPL_POSITION_CLASS_TYPE___GET_URI = BizPackage.BIZ_ENTITY___GET_URI;
-
-	/**
-	 * The operation id for the '<em>Is Proxy</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EMPL_POSITION_CLASS_TYPE___IS_PROXY = BizPackage.BIZ_ENTITY___IS_PROXY;
-
-	/**
-	 * The operation id for the '<em>Child Empl Position Class Types</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EMPL_POSITION_CLASS_TYPE___CHILD_EMPL_POSITION_CLASS_TYPES = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 0;
-
-	/**
-	 * The number of operations of the '<em>Empl Position Class Type</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EMPL_POSITION_CLASS_TYPE_OPERATION_COUNT = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 1;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.humanres.position.impl.EmplPositionFulfillmentImpl <em>Empl Position Fulfillment</em>}' class.
@@ -550,51 +432,6 @@ public interface PositionPackage extends EPackage {
 	 * @ordered
 	 */
 	int EMPL_POSITION_FULFILLMENT_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 5;
-
-	/**
-	 * The operation id for the '<em>Isa</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EMPL_POSITION_FULFILLMENT___ISA = BizPackage.BIZ_ENTITY___ISA;
-
-	/**
-	 * The operation id for the '<em>Get Name</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EMPL_POSITION_FULFILLMENT___GET_NAME = BizPackage.BIZ_ENTITY___GET_NAME;
-
-	/**
-	 * The operation id for the '<em>Get URI</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EMPL_POSITION_FULFILLMENT___GET_URI = BizPackage.BIZ_ENTITY___GET_URI;
-
-	/**
-	 * The operation id for the '<em>Is Proxy</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EMPL_POSITION_FULFILLMENT___IS_PROXY = BizPackage.BIZ_ENTITY___IS_PROXY;
-
-	/**
-	 * The number of operations of the '<em>Empl Position Fulfillment</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EMPL_POSITION_FULFILLMENT_OPERATION_COUNT = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.humanres.position.impl.EmplPositionReportingStructImpl <em>Empl Position Reporting Struct</em>}' class.
@@ -706,51 +543,6 @@ public interface PositionPackage extends EPackage {
 	int EMPL_POSITION_REPORTING_STRUCT_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 6;
 
 	/**
-	 * The operation id for the '<em>Isa</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EMPL_POSITION_REPORTING_STRUCT___ISA = BizPackage.BIZ_ENTITY___ISA;
-
-	/**
-	 * The operation id for the '<em>Get Name</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EMPL_POSITION_REPORTING_STRUCT___GET_NAME = BizPackage.BIZ_ENTITY___GET_NAME;
-
-	/**
-	 * The operation id for the '<em>Get URI</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EMPL_POSITION_REPORTING_STRUCT___GET_URI = BizPackage.BIZ_ENTITY___GET_URI;
-
-	/**
-	 * The operation id for the '<em>Is Proxy</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EMPL_POSITION_REPORTING_STRUCT___IS_PROXY = BizPackage.BIZ_ENTITY___IS_PROXY;
-
-	/**
-	 * The number of operations of the '<em>Empl Position Reporting Struct</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EMPL_POSITION_REPORTING_STRUCT_OPERATION_COUNT = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 0;
-
-	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.humanres.position.impl.EmplPositionResponsibilityImpl <em>Empl Position Responsibility</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -849,51 +641,6 @@ public interface PositionPackage extends EPackage {
 	 * @ordered
 	 */
 	int EMPL_POSITION_RESPONSIBILITY_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 5;
-
-	/**
-	 * The operation id for the '<em>Isa</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EMPL_POSITION_RESPONSIBILITY___ISA = BizPackage.BIZ_ENTITY___ISA;
-
-	/**
-	 * The operation id for the '<em>Get Name</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EMPL_POSITION_RESPONSIBILITY___GET_NAME = BizPackage.BIZ_ENTITY___GET_NAME;
-
-	/**
-	 * The operation id for the '<em>Get URI</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EMPL_POSITION_RESPONSIBILITY___GET_URI = BizPackage.BIZ_ENTITY___GET_URI;
-
-	/**
-	 * The operation id for the '<em>Is Proxy</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EMPL_POSITION_RESPONSIBILITY___IS_PROXY = BizPackage.BIZ_ENTITY___IS_PROXY;
-
-	/**
-	 * The number of operations of the '<em>Empl Position Responsibility</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EMPL_POSITION_RESPONSIBILITY_OPERATION_COUNT = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.humanres.position.impl.EmplPositionTypeImpl <em>Empl Position Type</em>}' class.
@@ -996,105 +743,6 @@ public interface PositionPackage extends EPackage {
 	int EMPL_POSITION_TYPE_FEATURE_COUNT = BizPackage.BIZ_ENTITY_TYPE_FEATURE_COUNT + 4;
 
 	/**
-	 * The operation id for the '<em>Isa</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EMPL_POSITION_TYPE___ISA = BizPackage.BIZ_ENTITY_TYPE___ISA;
-
-	/**
-	 * The operation id for the '<em>Get Name</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EMPL_POSITION_TYPE___GET_NAME = BizPackage.BIZ_ENTITY_TYPE___GET_NAME;
-
-	/**
-	 * The operation id for the '<em>Get URI</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EMPL_POSITION_TYPE___GET_URI = BizPackage.BIZ_ENTITY_TYPE___GET_URI;
-
-	/**
-	 * The operation id for the '<em>Is Proxy</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EMPL_POSITION_TYPE___IS_PROXY = BizPackage.BIZ_ENTITY_TYPE___IS_PROXY;
-
-	/**
-	 * The operation id for the '<em>Get Frame</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EMPL_POSITION_TYPE___GET_FRAME = BizPackage.BIZ_ENTITY_TYPE___GET_FRAME;
-
-	/**
-	 * The operation id for the '<em>Get Type Id</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EMPL_POSITION_TYPE___GET_TYPE_ID = BizPackage.BIZ_ENTITY_TYPE___GET_TYPE_ID;
-
-	/**
-	 * The operation id for the '<em>Has Table</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EMPL_POSITION_TYPE___HAS_TABLE = BizPackage.BIZ_ENTITY_TYPE___HAS_TABLE;
-
-	/**
-	 * The operation id for the '<em>Get Text</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EMPL_POSITION_TYPE___GET_TEXT = BizPackage.BIZ_ENTITY_TYPE___GET_TEXT;
-
-	/**
-	 * The operation id for the '<em>Child Empl Position Types</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EMPL_POSITION_TYPE___CHILD_EMPL_POSITION_TYPES = BizPackage.BIZ_ENTITY_TYPE_OPERATION_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Empl Positions</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EMPL_POSITION_TYPE___EMPL_POSITIONS = BizPackage.BIZ_ENTITY_TYPE_OPERATION_COUNT + 1;
-
-	/**
-	 * The number of operations of the '<em>Empl Position Type</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EMPL_POSITION_TYPE_OPERATION_COUNT = BizPackage.BIZ_ENTITY_TYPE_OPERATION_COUNT + 2;
-
-	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.humanres.position.impl.EmplPositionTypeClassImpl <em>Empl Position Type Class</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1193,51 +841,6 @@ public interface PositionPackage extends EPackage {
 	 * @ordered
 	 */
 	int EMPL_POSITION_TYPE_CLASS_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 5;
-
-	/**
-	 * The operation id for the '<em>Isa</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EMPL_POSITION_TYPE_CLASS___ISA = BizPackage.BIZ_ENTITY___ISA;
-
-	/**
-	 * The operation id for the '<em>Get Name</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EMPL_POSITION_TYPE_CLASS___GET_NAME = BizPackage.BIZ_ENTITY___GET_NAME;
-
-	/**
-	 * The operation id for the '<em>Get URI</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EMPL_POSITION_TYPE_CLASS___GET_URI = BizPackage.BIZ_ENTITY___GET_URI;
-
-	/**
-	 * The operation id for the '<em>Is Proxy</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EMPL_POSITION_TYPE_CLASS___IS_PROXY = BizPackage.BIZ_ENTITY___IS_PROXY;
-
-	/**
-	 * The number of operations of the '<em>Empl Position Type Class</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EMPL_POSITION_TYPE_CLASS_OPERATION_COUNT = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.humanres.position.impl.EmplPositionTypeRateImpl <em>Empl Position Type Rate</em>}' class.
@@ -1349,51 +952,6 @@ public interface PositionPackage extends EPackage {
 	int EMPL_POSITION_TYPE_RATE_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 6;
 
 	/**
-	 * The operation id for the '<em>Isa</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EMPL_POSITION_TYPE_RATE___ISA = BizPackage.BIZ_ENTITY___ISA;
-
-	/**
-	 * The operation id for the '<em>Get Name</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EMPL_POSITION_TYPE_RATE___GET_NAME = BizPackage.BIZ_ENTITY___GET_NAME;
-
-	/**
-	 * The operation id for the '<em>Get URI</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EMPL_POSITION_TYPE_RATE___GET_URI = BizPackage.BIZ_ENTITY___GET_URI;
-
-	/**
-	 * The operation id for the '<em>Is Proxy</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EMPL_POSITION_TYPE_RATE___IS_PROXY = BizPackage.BIZ_ENTITY___IS_PROXY;
-
-	/**
-	 * The number of operations of the '<em>Empl Position Type Rate</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EMPL_POSITION_TYPE_RATE_OPERATION_COUNT = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 0;
-
-	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.humanres.position.impl.ValidResponsibilityImpl <em>Valid Responsibility</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1495,52 +1053,6 @@ public interface PositionPackage extends EPackage {
 
 
 	/**
-	 * The operation id for the '<em>Isa</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int VALID_RESPONSIBILITY___ISA = BizPackage.BIZ_ENTITY___ISA;
-
-	/**
-	 * The operation id for the '<em>Get Name</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int VALID_RESPONSIBILITY___GET_NAME = BizPackage.BIZ_ENTITY___GET_NAME;
-
-	/**
-	 * The operation id for the '<em>Get URI</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int VALID_RESPONSIBILITY___GET_URI = BizPackage.BIZ_ENTITY___GET_URI;
-
-	/**
-	 * The operation id for the '<em>Is Proxy</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int VALID_RESPONSIBILITY___IS_PROXY = BizPackage.BIZ_ENTITY___IS_PROXY;
-
-	/**
-	 * The number of operations of the '<em>Valid Responsibility</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int VALID_RESPONSIBILITY_OPERATION_COUNT = BizPackage.BIZ_ENTITY_OPERATION_COUNT + 0;
-
-
-	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.biz.humanres.position.EmplPosition <em>Empl Position</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1617,16 +1129,6 @@ public interface PositionPackage extends EPackage {
 	EReference getEmplPosition_EmplPositionTypeId();
 
 	/**
-	 * Returns the meta object for the '{@link org.abchip.mimo.biz.humanres.position.EmplPosition#employmentApps() <em>Employment Apps</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Employment Apps</em>' operation.
-	 * @see org.abchip.mimo.biz.humanres.position.EmplPosition#employmentApps()
-	 * @generated
-	 */
-	EOperation getEmplPosition__EmploymentApps();
-
-	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.humanres.position.EmplPosition#getEstimatedFromDate <em>Estimated From Date</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1660,11 +1162,11 @@ public interface PositionPackage extends EPackage {
 	EAttribute getEmplPosition_ExemptFlag();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.humanres.position.EmplPosition#isFulltimeFlag <em>Fulltime Flag</em>}'.
+	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.humanres.position.EmplPosition#getFulltimeFlag <em>Fulltime Flag</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Fulltime Flag</em>'.
-	 * @see org.abchip.mimo.biz.humanres.position.EmplPosition#isFulltimeFlag()
+	 * @see org.abchip.mimo.biz.humanres.position.EmplPosition#getFulltimeFlag()
 	 * @see #getEmplPosition()
 	 * @generated
 	 */
@@ -1682,11 +1184,11 @@ public interface PositionPackage extends EPackage {
 	EReference getEmplPosition_PartyId();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.humanres.position.EmplPosition#isSalaryFlag <em>Salary Flag</em>}'.
+	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.humanres.position.EmplPosition#getSalaryFlag <em>Salary Flag</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Salary Flag</em>'.
-	 * @see org.abchip.mimo.biz.humanres.position.EmplPosition#isSalaryFlag()
+	 * @see org.abchip.mimo.biz.humanres.position.EmplPosition#getSalaryFlag()
 	 * @see #getEmplPosition()
 	 * @generated
 	 */
@@ -1704,11 +1206,11 @@ public interface PositionPackage extends EPackage {
 	EReference getEmplPosition_StatusId();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.humanres.position.EmplPosition#isTemporaryFlag <em>Temporary Flag</em>}'.
+	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.humanres.position.EmplPosition#getTemporaryFlag <em>Temporary Flag</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Temporary Flag</em>'.
-	 * @see org.abchip.mimo.biz.humanres.position.EmplPosition#isTemporaryFlag()
+	 * @see org.abchip.mimo.biz.humanres.position.EmplPosition#getTemporaryFlag()
 	 * @see #getEmplPosition()
 	 * @generated
 	 */
@@ -1767,16 +1269,6 @@ public interface PositionPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getEmplPositionClassType_ParentTypeId();
-
-	/**
-	 * Returns the meta object for the '{@link org.abchip.mimo.biz.humanres.position.EmplPositionClassType#childEmplPositionClassTypes() <em>Child Empl Position Class Types</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Child Empl Position Class Types</em>' operation.
-	 * @see org.abchip.mimo.biz.humanres.position.EmplPositionClassType#childEmplPositionClassTypes()
-	 * @generated
-	 */
-	EOperation getEmplPositionClassType__ChildEmplPositionClassTypes();
 
 	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.biz.humanres.position.EmplPositionFulfillment <em>Empl Position Fulfillment</em>}'.
@@ -1898,11 +1390,11 @@ public interface PositionPackage extends EPackage {
 	EAttribute getEmplPositionReportingStruct_Comments();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.humanres.position.EmplPositionReportingStruct#isPrimaryFlag <em>Primary Flag</em>}'.
+	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.humanres.position.EmplPositionReportingStruct#getPrimaryFlag <em>Primary Flag</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Primary Flag</em>'.
-	 * @see org.abchip.mimo.biz.humanres.position.EmplPositionReportingStruct#isPrimaryFlag()
+	 * @see org.abchip.mimo.biz.humanres.position.EmplPositionReportingStruct#getPrimaryFlag()
 	 * @see #getEmplPositionReportingStruct()
 	 * @generated
 	 */
@@ -2037,26 +1529,6 @@ public interface PositionPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getEmplPositionType_ParentTypeId();
-
-	/**
-	 * Returns the meta object for the '{@link org.abchip.mimo.biz.humanres.position.EmplPositionType#childEmplPositionTypes() <em>Child Empl Position Types</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Child Empl Position Types</em>' operation.
-	 * @see org.abchip.mimo.biz.humanres.position.EmplPositionType#childEmplPositionTypes()
-	 * @generated
-	 */
-	EOperation getEmplPositionType__ChildEmplPositionTypes();
-
-	/**
-	 * Returns the meta object for the '{@link org.abchip.mimo.biz.humanres.position.EmplPositionType#emplPositions() <em>Empl Positions</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Empl Positions</em>' operation.
-	 * @see org.abchip.mimo.biz.humanres.position.EmplPositionType#emplPositions()
-	 * @generated
-	 */
-	EOperation getEmplPositionType__EmplPositions();
 
 	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.biz.humanres.position.EmplPositionTypeClass <em>Empl Position Type Class</em>}'.
@@ -2345,14 +1817,6 @@ public interface PositionPackage extends EPackage {
 		EReference EMPL_POSITION__EMPL_POSITION_TYPE_ID = eINSTANCE.getEmplPosition_EmplPositionTypeId();
 
 		/**
-		 * The meta object literal for the '<em><b>Employment Apps</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation EMPL_POSITION___EMPLOYMENT_APPS = eINSTANCE.getEmplPosition__EmploymentApps();
-
-		/**
 		 * The meta object literal for the '<em><b>Estimated From Date</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -2457,14 +1921,6 @@ public interface PositionPackage extends EPackage {
 		 * @generated
 		 */
 		EReference EMPL_POSITION_CLASS_TYPE__PARENT_TYPE_ID = eINSTANCE.getEmplPositionClassType_ParentTypeId();
-
-		/**
-		 * The meta object literal for the '<em><b>Child Empl Position Class Types</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation EMPL_POSITION_CLASS_TYPE___CHILD_EMPL_POSITION_CLASS_TYPES = eINSTANCE.getEmplPositionClassType__ChildEmplPositionClassTypes();
 
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.biz.humanres.position.impl.EmplPositionFulfillmentImpl <em>Empl Position Fulfillment</em>}' class.
@@ -2665,22 +2121,6 @@ public interface PositionPackage extends EPackage {
 		 * @generated
 		 */
 		EReference EMPL_POSITION_TYPE__PARENT_TYPE_ID = eINSTANCE.getEmplPositionType_ParentTypeId();
-
-		/**
-		 * The meta object literal for the '<em><b>Child Empl Position Types</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation EMPL_POSITION_TYPE___CHILD_EMPL_POSITION_TYPES = eINSTANCE.getEmplPositionType__ChildEmplPositionTypes();
-
-		/**
-		 * The meta object literal for the '<em><b>Empl Positions</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation EMPL_POSITION_TYPE___EMPL_POSITIONS = eINSTANCE.getEmplPositionType__EmplPositions();
 
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.biz.humanres.position.impl.EmplPositionTypeClassImpl <em>Empl Position Type Class</em>}' class.

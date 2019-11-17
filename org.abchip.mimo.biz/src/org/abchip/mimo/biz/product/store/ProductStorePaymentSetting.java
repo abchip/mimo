@@ -38,6 +38,32 @@ import org.abchip.mimo.biz.common.method.CustomMethod;
  */
 public interface ProductStorePaymentSetting extends BizEntity {
 	/**
+	 * Returns the value of the '<em><b>Apply To All Products</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Apply To All Products</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Apply To All Products</em>' attribute.
+	 * @see #setApplyToAllProducts(boolean)
+	 * @see org.abchip.mimo.biz.product.store.StorePackage#getProductStorePaymentSetting_ApplyToAllProducts()
+	 * @model annotation="mimo-ent-format type='indicator' length='1'"
+	 * @generated
+	 */
+	boolean isApplyToAllProducts();
+
+	/**
+	 * Sets the value of the '{@link org.abchip.mimo.biz.product.store.ProductStorePaymentSetting#isApplyToAllProducts <em>Apply To All Products</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Apply To All Products</em>' attribute.
+	 * @see #isApplyToAllProducts()
+	 * @generated
+	 */
+	void setApplyToAllProducts(boolean value);
+
+	/**
 	 * Returns the value of the '<em><b>Payment Custom Method Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -126,7 +152,7 @@ public interface ProductStorePaymentSetting extends BizEntity {
 	 * @return the value of the '<em>Payment Properties Path</em>' attribute.
 	 * @see #setPaymentPropertiesPath(String)
 	 * @see org.abchip.mimo.biz.product.store.StorePackage#getProductStorePaymentSetting_PaymentPropertiesPath()
-	 * @model
+	 * @model annotation="mimo-ent-format type='value' length='255'"
 	 * @generated
 	 */
 	String getPaymentPropertiesPath();
@@ -152,7 +178,7 @@ public interface ProductStorePaymentSetting extends BizEntity {
 	 * @return the value of the '<em>Payment Service</em>' attribute.
 	 * @see #setPaymentService(String)
 	 * @see org.abchip.mimo.biz.product.store.StorePackage#getProductStorePaymentSetting_PaymentService()
-	 * @model
+	 * @model annotation="mimo-ent-format type='value' length='255'"
 	 * @generated
 	 */
 	String getPaymentService();
@@ -192,32 +218,6 @@ public interface ProductStorePaymentSetting extends BizEntity {
 	 * @generated
 	 */
 	void setPaymentServiceTypeEnumId(Enumeration value);
-
-	/**
-	 * Returns the value of the '<em><b>Apply To All Products</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Apply To All Products</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Apply To All Products</em>' attribute.
-	 * @see #setApplyToAllProducts(boolean)
-	 * @see org.abchip.mimo.biz.product.store.StorePackage#getProductStorePaymentSetting_ApplyToAllProducts()
-	 * @model
-	 * @generated
-	 */
-	boolean isApplyToAllProducts();
-
-	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.product.store.ProductStorePaymentSetting#isApplyToAllProducts <em>Apply To All Products</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Apply To All Products</em>' attribute.
-	 * @see #isApplyToAllProducts()
-	 * @generated
-	 */
-	void setApplyToAllProducts(boolean value);
 
 	/**
 	 * Returns the value of the '<em><b>Product Store Id</b></em>' reference.

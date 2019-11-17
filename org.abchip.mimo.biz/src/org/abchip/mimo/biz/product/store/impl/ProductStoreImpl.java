@@ -7,7 +7,6 @@
  */
 package org.abchip.mimo.biz.product.store.impl;
 
-import java.lang.reflect.InvocationTargetException;
 import java.util.List;
 
 import org.abchip.mimo.biz.common.enum_.Enumeration;
@@ -19,7 +18,6 @@ import org.abchip.mimo.biz.product.facility.Facility;
 import org.abchip.mimo.biz.product.store.ProductStore;
 import org.abchip.mimo.biz.product.store.ProductStoreGroup;
 import org.abchip.mimo.biz.product.store.StorePackage;
-import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 
 /**
@@ -67,12 +65,12 @@ import org.eclipse.emf.ecore.EClass;
  *   <li>{@link org.abchip.mimo.biz.product.store.impl.ProductStoreImpl#getOldHeaderMiddleBackground <em>Old Header Middle Background</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.store.impl.ProductStoreImpl#getOldHeaderRightBackground <em>Old Header Right Background</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.store.impl.ProductStoreImpl#getOldStyleSheet <em>Old Style Sheet</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.store.impl.ProductStoreImpl#isOneInventoryFacility <em>One Inventory Facility</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.store.impl.ProductStoreImpl#isOrderDecimalQuantity <em>Order Decimal Quantity</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.store.impl.ProductStoreImpl#getOneInventoryFacility <em>One Inventory Facility</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.store.impl.ProductStoreImpl#getOrderDecimalQuantity <em>Order Decimal Quantity</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.store.impl.ProductStoreImpl#getOrderNumberPrefix <em>Order Number Prefix</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.store.impl.ProductStoreImpl#isProdSearchExcludeVariants <em>Prod Search Exclude Variants</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.store.impl.ProductStoreImpl#isProrateShipping <em>Prorate Shipping</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.store.impl.ProductStoreImpl#isProrateTaxes <em>Prorate Taxes</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.store.impl.ProductStoreImpl#getProdSearchExcludeVariants <em>Prod Search Exclude Variants</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.store.impl.ProductStoreImpl#getProrateShipping <em>Prorate Shipping</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.store.impl.ProductStoreImpl#getProrateTaxes <em>Prorate Taxes</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.store.impl.ProductStoreImpl#isReqReturnInventoryReceive <em>Req Return Inventory Receive</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.store.impl.ProductStoreImpl#isReqShipAddrForDigItems <em>Req Ship Addr For Dig Items</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.store.impl.ProductStoreImpl#isRequireCustomerRole <em>Require Customer Role</em>}</li>
@@ -611,26 +609,6 @@ public class ProductStoreImpl extends BizEntityImpl implements ProductStore {
 	 * @generated
 	 */
 	@Override
-	public StatusItem getDigitalItemApprovedStatus() {
-		return (StatusItem)eGet(StorePackage.Literals.PRODUCT_STORE__DIGITAL_ITEM_APPROVED_STATUS, true);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void setDigitalItemApprovedStatus(StatusItem newDigitalItemApprovedStatus) {
-		eSet(StorePackage.Literals.PRODUCT_STORE__DIGITAL_ITEM_APPROVED_STATUS, newDigitalItemApprovedStatus);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public boolean isEnableAutoSuggestionList() {
 		return (Boolean)eGet(StorePackage.Literals.PRODUCT_STORE__ENABLE_AUTO_SUGGESTION_LIST, true);
 	}
@@ -683,6 +661,106 @@ public class ProductStoreImpl extends BizEntityImpl implements ProductStore {
 	@Override
 	public void setExplodeOrderItems(boolean newExplodeOrderItems) {
 		eSet(StorePackage.Literals.PRODUCT_STORE__EXPLODE_ORDER_ITEMS, newExplodeOrderItems);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public boolean isIsDemoStore() {
+		return (Boolean)eGet(StorePackage.Literals.PRODUCT_STORE__IS_DEMO_STORE, true);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setIsDemoStore(boolean newIsDemoStore) {
+		eSet(StorePackage.Literals.PRODUCT_STORE__IS_DEMO_STORE, newIsDemoStore);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public boolean isIsImmediatelyFulfilled() {
+		return (Boolean)eGet(StorePackage.Literals.PRODUCT_STORE__IS_IMMEDIATELY_FULFILLED, true);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setIsImmediatelyFulfilled(boolean newIsImmediatelyFulfilled) {
+		eSet(StorePackage.Literals.PRODUCT_STORE__IS_IMMEDIATELY_FULFILLED, newIsImmediatelyFulfilled);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public boolean isManagedByLot() {
+		return (Boolean)eGet(StorePackage.Literals.PRODUCT_STORE__MANAGED_BY_LOT, true);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setManagedByLot(boolean newManagedByLot) {
+		eSet(StorePackage.Literals.PRODUCT_STORE__MANAGED_BY_LOT, newManagedByLot);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public boolean isManualAuthIsCapture() {
+		return (Boolean)eGet(StorePackage.Literals.PRODUCT_STORE__MANUAL_AUTH_IS_CAPTURE, true);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setManualAuthIsCapture(boolean newManualAuthIsCapture) {
+		eSet(StorePackage.Literals.PRODUCT_STORE__MANUAL_AUTH_IS_CAPTURE, newManualAuthIsCapture);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public StatusItem getDigitalItemApprovedStatus() {
+		return (StatusItem)eGet(StorePackage.Literals.PRODUCT_STORE__DIGITAL_ITEM_APPROVED_STATUS, true);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setDigitalItemApprovedStatus(StatusItem newDigitalItemApprovedStatus) {
+		eSet(StorePackage.Literals.PRODUCT_STORE__DIGITAL_ITEM_APPROVED_STATUS, newDigitalItemApprovedStatus);
 	}
 
 	/**
@@ -811,46 +889,6 @@ public class ProductStoreImpl extends BizEntityImpl implements ProductStore {
 	 * @generated
 	 */
 	@Override
-	public boolean isManagedByLot() {
-		return (Boolean)eGet(StorePackage.Literals.PRODUCT_STORE__MANAGED_BY_LOT, true);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void setManagedByLot(boolean newManagedByLot) {
-		eSet(StorePackage.Literals.PRODUCT_STORE__MANAGED_BY_LOT, newManagedByLot);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public boolean isManualAuthIsCapture() {
-		return (Boolean)eGet(StorePackage.Literals.PRODUCT_STORE__MANUAL_AUTH_IS_CAPTURE, true);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void setManualAuthIsCapture(boolean newManualAuthIsCapture) {
-		eSet(StorePackage.Literals.PRODUCT_STORE__MANUAL_AUTH_IS_CAPTURE, newManualAuthIsCapture);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public String getOldHeaderLogo() {
 		return (String)eGet(StorePackage.Literals.PRODUCT_STORE__OLD_HEADER_LOGO, true);
 	}
@@ -931,8 +969,8 @@ public class ProductStoreImpl extends BizEntityImpl implements ProductStore {
 	 * @generated
 	 */
 	@Override
-	public boolean isOneInventoryFacility() {
-		return (Boolean)eGet(StorePackage.Literals.PRODUCT_STORE__ONE_INVENTORY_FACILITY, true);
+	public char getOneInventoryFacility() {
+		return (Character)eGet(StorePackage.Literals.PRODUCT_STORE__ONE_INVENTORY_FACILITY, true);
 	}
 
 	/**
@@ -941,7 +979,7 @@ public class ProductStoreImpl extends BizEntityImpl implements ProductStore {
 	 * @generated
 	 */
 	@Override
-	public void setOneInventoryFacility(boolean newOneInventoryFacility) {
+	public void setOneInventoryFacility(char newOneInventoryFacility) {
 		eSet(StorePackage.Literals.PRODUCT_STORE__ONE_INVENTORY_FACILITY, newOneInventoryFacility);
 	}
 
@@ -951,8 +989,8 @@ public class ProductStoreImpl extends BizEntityImpl implements ProductStore {
 	 * @generated
 	 */
 	@Override
-	public boolean isOrderDecimalQuantity() {
-		return (Boolean)eGet(StorePackage.Literals.PRODUCT_STORE__ORDER_DECIMAL_QUANTITY, true);
+	public char getOrderDecimalQuantity() {
+		return (Character)eGet(StorePackage.Literals.PRODUCT_STORE__ORDER_DECIMAL_QUANTITY, true);
 	}
 
 	/**
@@ -961,7 +999,7 @@ public class ProductStoreImpl extends BizEntityImpl implements ProductStore {
 	 * @generated
 	 */
 	@Override
-	public void setOrderDecimalQuantity(boolean newOrderDecimalQuantity) {
+	public void setOrderDecimalQuantity(char newOrderDecimalQuantity) {
 		eSet(StorePackage.Literals.PRODUCT_STORE__ORDER_DECIMAL_QUANTITY, newOrderDecimalQuantity);
 	}
 
@@ -991,8 +1029,8 @@ public class ProductStoreImpl extends BizEntityImpl implements ProductStore {
 	 * @generated
 	 */
 	@Override
-	public Party getPayToPartyId() {
-		return (Party)eGet(StorePackage.Literals.PRODUCT_STORE__PAY_TO_PARTY_ID, true);
+	public char getProdSearchExcludeVariants() {
+		return (Character)eGet(StorePackage.Literals.PRODUCT_STORE__PROD_SEARCH_EXCLUDE_VARIANTS, true);
 	}
 
 	/**
@@ -1001,8 +1039,8 @@ public class ProductStoreImpl extends BizEntityImpl implements ProductStore {
 	 * @generated
 	 */
 	@Override
-	public void setPayToPartyId(Party newPayToPartyId) {
-		eSet(StorePackage.Literals.PRODUCT_STORE__PAY_TO_PARTY_ID, newPayToPartyId);
+	public void setProdSearchExcludeVariants(char newProdSearchExcludeVariants) {
+		eSet(StorePackage.Literals.PRODUCT_STORE__PROD_SEARCH_EXCLUDE_VARIANTS, newProdSearchExcludeVariants);
 	}
 
 	/**
@@ -1011,8 +1049,8 @@ public class ProductStoreImpl extends BizEntityImpl implements ProductStore {
 	 * @generated
 	 */
 	@Override
-	public Enumeration getRequirementMethodEnumId() {
-		return (Enumeration)eGet(StorePackage.Literals.PRODUCT_STORE__REQUIREMENT_METHOD_ENUM_ID, true);
+	public char getProrateShipping() {
+		return (Character)eGet(StorePackage.Literals.PRODUCT_STORE__PRORATE_SHIPPING, true);
 	}
 
 	/**
@@ -1021,8 +1059,108 @@ public class ProductStoreImpl extends BizEntityImpl implements ProductStore {
 	 * @generated
 	 */
 	@Override
-	public void setRequirementMethodEnumId(Enumeration newRequirementMethodEnumId) {
-		eSet(StorePackage.Literals.PRODUCT_STORE__REQUIREMENT_METHOD_ENUM_ID, newRequirementMethodEnumId);
+	public void setProrateShipping(char newProrateShipping) {
+		eSet(StorePackage.Literals.PRODUCT_STORE__PRORATE_SHIPPING, newProrateShipping);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public char getProrateTaxes() {
+		return (Character)eGet(StorePackage.Literals.PRODUCT_STORE__PRORATE_TAXES, true);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setProrateTaxes(char newProrateTaxes) {
+		eSet(StorePackage.Literals.PRODUCT_STORE__PRORATE_TAXES, newProrateTaxes);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public boolean isReqReturnInventoryReceive() {
+		return (Boolean)eGet(StorePackage.Literals.PRODUCT_STORE__REQ_RETURN_INVENTORY_RECEIVE, true);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setReqReturnInventoryReceive(boolean newReqReturnInventoryReceive) {
+		eSet(StorePackage.Literals.PRODUCT_STORE__REQ_RETURN_INVENTORY_RECEIVE, newReqReturnInventoryReceive);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public boolean isReqShipAddrForDigItems() {
+		return (Boolean)eGet(StorePackage.Literals.PRODUCT_STORE__REQ_SHIP_ADDR_FOR_DIG_ITEMS, true);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setReqShipAddrForDigItems(boolean newReqShipAddrForDigItems) {
+		eSet(StorePackage.Literals.PRODUCT_STORE__REQ_SHIP_ADDR_FOR_DIG_ITEMS, newReqShipAddrForDigItems);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public boolean isRequireCustomerRole() {
+		return (Boolean)eGet(StorePackage.Literals.PRODUCT_STORE__REQUIRE_CUSTOMER_ROLE, true);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setRequireCustomerRole(boolean newRequireCustomerRole) {
+		eSet(StorePackage.Literals.PRODUCT_STORE__REQUIRE_CUSTOMER_ROLE, newRequireCustomerRole);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public boolean isRequireInventory() {
+		return (Boolean)eGet(StorePackage.Literals.PRODUCT_STORE__REQUIRE_INVENTORY, true);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setRequireInventory(boolean newRequireInventory) {
+		eSet(StorePackage.Literals.PRODUCT_STORE__REQUIRE_INVENTORY, newRequireInventory);
 	}
 
 	/**
@@ -1043,26 +1181,6 @@ public class ProductStoreImpl extends BizEntityImpl implements ProductStore {
 	@Override
 	public void setReserveInventory(boolean newReserveInventory) {
 		eSet(StorePackage.Literals.PRODUCT_STORE__RESERVE_INVENTORY, newReserveInventory);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Enumeration getReserveOrderEnumId() {
-		return (Enumeration)eGet(StorePackage.Literals.PRODUCT_STORE__RESERVE_ORDER_ENUM_ID, true);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void setReserveOrderEnumId(Enumeration newReserveOrderEnumId) {
-		eSet(StorePackage.Literals.PRODUCT_STORE__RESERVE_ORDER_ENUM_ID, newReserveOrderEnumId);
 	}
 
 	/**
@@ -1243,6 +1361,66 @@ public class ProductStoreImpl extends BizEntityImpl implements ProductStore {
 	@Override
 	public void setSplitPayPrefPerShpGrp(boolean newSplitPayPrefPerShpGrp) {
 		eSet(StorePackage.Literals.PRODUCT_STORE__SPLIT_PAY_PREF_PER_SHP_GRP, newSplitPayPrefPerShpGrp);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Party getPayToPartyId() {
+		return (Party)eGet(StorePackage.Literals.PRODUCT_STORE__PAY_TO_PARTY_ID, true);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setPayToPartyId(Party newPayToPartyId) {
+		eSet(StorePackage.Literals.PRODUCT_STORE__PAY_TO_PARTY_ID, newPayToPartyId);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Enumeration getRequirementMethodEnumId() {
+		return (Enumeration)eGet(StorePackage.Literals.PRODUCT_STORE__REQUIREMENT_METHOD_ENUM_ID, true);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setRequirementMethodEnumId(Enumeration newRequirementMethodEnumId) {
+		eSet(StorePackage.Literals.PRODUCT_STORE__REQUIREMENT_METHOD_ENUM_ID, newRequirementMethodEnumId);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Enumeration getReserveOrderEnumId() {
+		return (Enumeration)eGet(StorePackage.Literals.PRODUCT_STORE__RESERVE_ORDER_ENUM_ID, true);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setReserveOrderEnumId(Enumeration newReserveOrderEnumId) {
+		eSet(StorePackage.Literals.PRODUCT_STORE__RESERVE_ORDER_ENUM_ID, newReserveOrderEnumId);
 	}
 
 	/**
@@ -1662,44 +1840,6 @@ public class ProductStoreImpl extends BizEntityImpl implements ProductStore {
 	 * @generated
 	 */
 	@Override
-	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
-		switch (operationID) {
-			case StorePackage.PRODUCT_STORE___CUST_REQUESTS:
-				return custRequests();
-			case StorePackage.PRODUCT_STORE___GIT_HUB_USERS:
-				return gitHubUsers();
-			case StorePackage.PRODUCT_STORE___GOOGLE_USERS:
-				return googleUsers();
-			case StorePackage.PRODUCT_STORE___LINKED_IN_USERS:
-				return linkedInUsers();
-			case StorePackage.PRODUCT_STORE___ORDER_HEADERS:
-				return orderHeaders();
-			case StorePackage.PRODUCT_STORE___PARTY_PROFILE_DEFAULTS:
-				return partyProfileDefaults();
-			case StorePackage.PRODUCT_STORE___PRODUCT_REVIEWS:
-				return productReviews();
-			case StorePackage.PRODUCT_STORE___PRODUCT_STORE_SURVEY_APPLS:
-				return productStoreSurveyAppls();
-			case StorePackage.PRODUCT_STORE___QUOTES:
-				return quotes();
-			case StorePackage.PRODUCT_STORE___SEGMENT_GROUPS:
-				return segmentGroups();
-			case StorePackage.PRODUCT_STORE___SHOPPING_LISTS:
-				return shoppingLists();
-			case StorePackage.PRODUCT_STORE___TAX_AUTHORITY_RATE_PRODUCTS:
-				return taxAuthorityRateProducts();
-			case StorePackage.PRODUCT_STORE___WEB_SITES:
-				return webSites();
-		}
-		return super.eInvoke(operationID, arguments);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public ProductStoreGroup getPrimaryStoreGroupId() {
 		return (ProductStoreGroup)eGet(StorePackage.Literals.PRODUCT_STORE__PRIMARY_STORE_GROUP_ID, true);
 	}
@@ -1720,146 +1860,6 @@ public class ProductStoreImpl extends BizEntityImpl implements ProductStore {
 	 * @generated
 	 */
 	@Override
-	public boolean isProdSearchExcludeVariants() {
-		return (Boolean)eGet(StorePackage.Literals.PRODUCT_STORE__PROD_SEARCH_EXCLUDE_VARIANTS, true);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void setProdSearchExcludeVariants(boolean newProdSearchExcludeVariants) {
-		eSet(StorePackage.Literals.PRODUCT_STORE__PROD_SEARCH_EXCLUDE_VARIANTS, newProdSearchExcludeVariants);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public boolean isProrateShipping() {
-		return (Boolean)eGet(StorePackage.Literals.PRODUCT_STORE__PRORATE_SHIPPING, true);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void setProrateShipping(boolean newProrateShipping) {
-		eSet(StorePackage.Literals.PRODUCT_STORE__PRORATE_SHIPPING, newProrateShipping);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public boolean isProrateTaxes() {
-		return (Boolean)eGet(StorePackage.Literals.PRODUCT_STORE__PRORATE_TAXES, true);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void setProrateTaxes(boolean newProrateTaxes) {
-		eSet(StorePackage.Literals.PRODUCT_STORE__PRORATE_TAXES, newProrateTaxes);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public boolean isReqReturnInventoryReceive() {
-		return (Boolean)eGet(StorePackage.Literals.PRODUCT_STORE__REQ_RETURN_INVENTORY_RECEIVE, true);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void setReqReturnInventoryReceive(boolean newReqReturnInventoryReceive) {
-		eSet(StorePackage.Literals.PRODUCT_STORE__REQ_RETURN_INVENTORY_RECEIVE, newReqReturnInventoryReceive);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public boolean isReqShipAddrForDigItems() {
-		return (Boolean)eGet(StorePackage.Literals.PRODUCT_STORE__REQ_SHIP_ADDR_FOR_DIG_ITEMS, true);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void setReqShipAddrForDigItems(boolean newReqShipAddrForDigItems) {
-		eSet(StorePackage.Literals.PRODUCT_STORE__REQ_SHIP_ADDR_FOR_DIG_ITEMS, newReqShipAddrForDigItems);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public boolean isRequireCustomerRole() {
-		return (Boolean)eGet(StorePackage.Literals.PRODUCT_STORE__REQUIRE_CUSTOMER_ROLE, true);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void setRequireCustomerRole(boolean newRequireCustomerRole) {
-		eSet(StorePackage.Literals.PRODUCT_STORE__REQUIRE_CUSTOMER_ROLE, newRequireCustomerRole);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public boolean isRequireInventory() {
-		return (Boolean)eGet(StorePackage.Literals.PRODUCT_STORE__REQUIRE_INVENTORY, true);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void setRequireInventory(boolean newRequireInventory) {
-		eSet(StorePackage.Literals.PRODUCT_STORE__REQUIRE_INVENTORY, newRequireInventory);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public Facility getInventoryFacilityId() {
 		return (Facility)eGet(StorePackage.Literals.PRODUCT_STORE__INVENTORY_FACILITY_ID, true);
 	}
@@ -1872,46 +1872,6 @@ public class ProductStoreImpl extends BizEntityImpl implements ProductStore {
 	@Override
 	public void setInventoryFacilityId(Facility newInventoryFacilityId) {
 		eSet(StorePackage.Literals.PRODUCT_STORE__INVENTORY_FACILITY_ID, newInventoryFacilityId);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public boolean isIsDemoStore() {
-		return (Boolean)eGet(StorePackage.Literals.PRODUCT_STORE__IS_DEMO_STORE, true);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void setIsDemoStore(boolean newIsDemoStore) {
-		eSet(StorePackage.Literals.PRODUCT_STORE__IS_DEMO_STORE, newIsDemoStore);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public boolean isIsImmediatelyFulfilled() {
-		return (Boolean)eGet(StorePackage.Literals.PRODUCT_STORE__IS_IMMEDIATELY_FULFILLED, true);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void setIsImmediatelyFulfilled(boolean newIsImmediatelyFulfilled) {
-		eSet(StorePackage.Literals.PRODUCT_STORE__IS_IMMEDIATELY_FULFILLED, newIsImmediatelyFulfilled);
 	}
 
 	/**

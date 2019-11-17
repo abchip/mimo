@@ -50,7 +50,7 @@ public interface PartyPrefDocTypeTpl extends BizEntity {
 	 * @return the value of the '<em>Custom Screen Id</em>' attribute.
 	 * @see #setCustomScreenId(String)
 	 * @see org.abchip.mimo.biz.accounting.ledger.LedgerPackage#getPartyPrefDocTypeTpl_CustomScreenId()
-	 * @model
+	 * @model annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	String getCustomScreenId();
@@ -76,7 +76,7 @@ public interface PartyPrefDocTypeTpl extends BizEntity {
 	 * @return the value of the '<em>From Date</em>' attribute.
 	 * @see #setFromDate(Date)
 	 * @see org.abchip.mimo.biz.accounting.ledger.LedgerPackage#getPartyPrefDocTypeTpl_FromDate()
-	 * @model
+	 * @model annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getFromDate();
@@ -181,6 +181,7 @@ public interface PartyPrefDocTypeTpl extends BizEntity {
 	 * @see #setPartyPrefDocTypeTplId(String)
 	 * @see org.abchip.mimo.biz.accounting.ledger.LedgerPackage#getPartyPrefDocTypeTpl_PartyPrefDocTypeTplId()
 	 * @model id="true" required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
@@ -233,7 +234,7 @@ public interface PartyPrefDocTypeTpl extends BizEntity {
 	 * @return the value of the '<em>Thru Date</em>' attribute.
 	 * @see #setThruDate(Date)
 	 * @see org.abchip.mimo.biz.accounting.ledger.LedgerPackage#getPartyPrefDocTypeTpl_ThruDate()
-	 * @model
+	 * @model annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getThruDate();

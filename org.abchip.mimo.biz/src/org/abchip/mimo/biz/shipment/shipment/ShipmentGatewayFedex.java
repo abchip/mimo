@@ -48,7 +48,7 @@ public interface ShipmentGatewayFedex extends ShipmentGatewayConfig {
 	 * @return the value of the '<em>Access Account Nbr</em>' attribute.
 	 * @see #setAccessAccountNbr(String)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipmentGatewayFedex_AccessAccountNbr()
-	 * @model
+	 * @model annotation="mimo-ent-format type='value' length='255'"
 	 * @generated
 	 */
 	String getAccessAccountNbr();
@@ -74,7 +74,7 @@ public interface ShipmentGatewayFedex extends ShipmentGatewayConfig {
 	 * @return the value of the '<em>Access Meter Number</em>' attribute.
 	 * @see #setAccessMeterNumber(String)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipmentGatewayFedex_AccessMeterNumber()
-	 * @model
+	 * @model annotation="mimo-ent-format type='value' length='255'"
 	 * @generated
 	 */
 	String getAccessMeterNumber();
@@ -100,7 +100,7 @@ public interface ShipmentGatewayFedex extends ShipmentGatewayConfig {
 	 * @return the value of the '<em>Access User Key</em>' attribute.
 	 * @see #setAccessUserKey(String)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipmentGatewayFedex_AccessUserKey()
-	 * @model
+	 * @model annotation="mimo-ent-format type='value' length='255'"
 	 * @generated
 	 */
 	String getAccessUserKey();
@@ -126,7 +126,7 @@ public interface ShipmentGatewayFedex extends ShipmentGatewayConfig {
 	 * @return the value of the '<em>Access User Pwd</em>' attribute.
 	 * @see #setAccessUserPwd(String)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipmentGatewayFedex_AccessUserPwd()
-	 * @model
+	 * @model annotation="mimo-ent-format type='value' length='255'"
 	 * @generated
 	 */
 	String getAccessUserPwd();
@@ -152,7 +152,7 @@ public interface ShipmentGatewayFedex extends ShipmentGatewayConfig {
 	 * @return the value of the '<em>Connect Soap Url</em>' attribute.
 	 * @see #setConnectSoapUrl(String)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipmentGatewayFedex_ConnectSoapUrl()
-	 * @model
+	 * @model annotation="mimo-ent-format type='value' length='255'"
 	 * @generated
 	 */
 	String getConnectSoapUrl();
@@ -178,7 +178,7 @@ public interface ShipmentGatewayFedex extends ShipmentGatewayConfig {
 	 * @return the value of the '<em>Connect Timeout</em>' attribute.
 	 * @see #setConnectTimeout(long)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipmentGatewayFedex_ConnectTimeout()
-	 * @model
+	 * @model annotation="mimo-ent-format type='numeric' precision='20' scale='0'"
 	 * @generated
 	 */
 	long getConnectTimeout();
@@ -204,7 +204,7 @@ public interface ShipmentGatewayFedex extends ShipmentGatewayConfig {
 	 * @return the value of the '<em>Connect Url</em>' attribute.
 	 * @see #setConnectUrl(String)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipmentGatewayFedex_ConnectUrl()
-	 * @model
+	 * @model annotation="mimo-ent-format type='value' length='255'"
 	 * @generated
 	 */
 	String getConnectUrl();
@@ -230,7 +230,7 @@ public interface ShipmentGatewayFedex extends ShipmentGatewayConfig {
 	 * @return the value of the '<em>Default Dropoff Type</em>' attribute.
 	 * @see #setDefaultDropoffType(String)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipmentGatewayFedex_DefaultDropoffType()
-	 * @model
+	 * @model annotation="mimo-ent-format type='value' length='255'"
 	 * @generated
 	 */
 	String getDefaultDropoffType();
@@ -256,7 +256,7 @@ public interface ShipmentGatewayFedex extends ShipmentGatewayConfig {
 	 * @return the value of the '<em>Default Packaging Type</em>' attribute.
 	 * @see #setDefaultPackagingType(String)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipmentGatewayFedex_DefaultPackagingType()
-	 * @model
+	 * @model annotation="mimo-ent-format type='value' length='255'"
 	 * @generated
 	 */
 	String getDefaultPackagingType();
@@ -282,7 +282,7 @@ public interface ShipmentGatewayFedex extends ShipmentGatewayConfig {
 	 * @return the value of the '<em>Label Image Type</em>' attribute.
 	 * @see #setLabelImageType(String)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipmentGatewayFedex_LabelImageType()
-	 * @model
+	 * @model annotation="mimo-ent-format type='short-varchar' length='60'"
 	 * @generated
 	 */
 	String getLabelImageType();
@@ -308,7 +308,7 @@ public interface ShipmentGatewayFedex extends ShipmentGatewayConfig {
 	 * @return the value of the '<em>Rate Estimate Template</em>' attribute.
 	 * @see #setRateEstimateTemplate(String)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipmentGatewayFedex_RateEstimateTemplate()
-	 * @model
+	 * @model annotation="mimo-ent-format type='value' length='255'"
 	 * @generated
 	 */
 	String getRateEstimateTemplate();
@@ -334,7 +334,7 @@ public interface ShipmentGatewayFedex extends ShipmentGatewayConfig {
 	 * @return the value of the '<em>Template Shipment</em>' attribute.
 	 * @see #setTemplateShipment(String)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipmentGatewayFedex_TemplateShipment()
-	 * @model
+	 * @model annotation="mimo-ent-format type='value' length='255'"
 	 * @generated
 	 */
 	String getTemplateShipment();
@@ -360,7 +360,7 @@ public interface ShipmentGatewayFedex extends ShipmentGatewayConfig {
 	 * @return the value of the '<em>Template Subscription</em>' attribute.
 	 * @see #setTemplateSubscription(String)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipmentGatewayFedex_TemplateSubscription()
-	 * @model
+	 * @model annotation="mimo-ent-format type='value' length='255'"
 	 * @generated
 	 */
 	String getTemplateSubscription();

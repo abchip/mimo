@@ -306,6 +306,26 @@ public class InvoiceItemImpl extends BizEntityTypedImpl<InvoiceItemType> impleme
 	 * @generated
 	 */
 	@Override
+	public boolean isTaxableFlag() {
+		return (Boolean)eGet(InvoicePackage.Literals.INVOICE_ITEM__TAXABLE_FLAG, true);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setTaxableFlag(boolean newTaxableFlag) {
+		eSet(InvoicePackage.Literals.INVOICE_ITEM__TAXABLE_FLAG, newTaxableFlag);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public SalesOpportunity getSalesOpportunityId() {
 		return (SalesOpportunity)eGet(InvoicePackage.Literals.INVOICE_ITEM__SALES_OPPORTUNITY_ID, true);
 	}
@@ -378,26 +398,6 @@ public class InvoiceItemImpl extends BizEntityTypedImpl<InvoiceItemType> impleme
 	@Override
 	public void setTaxAuthorityRateSeqId(TaxAuthorityRateProduct newTaxAuthorityRateSeqId) {
 		eSet(InvoicePackage.Literals.INVOICE_ITEM__TAX_AUTHORITY_RATE_SEQ_ID, newTaxAuthorityRateSeqId);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public boolean isTaxableFlag() {
-		return (Boolean)eGet(InvoicePackage.Literals.INVOICE_ITEM__TAXABLE_FLAG, true);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void setTaxableFlag(boolean newTaxableFlag) {
-		eSet(InvoicePackage.Literals.INVOICE_ITEM__TAXABLE_FLAG, newTaxableFlag);
 	}
 
 	/**

@@ -48,7 +48,7 @@ public interface ProductPriceRule extends BizEntity {
 	 * @return the value of the '<em>Description</em>' attribute.
 	 * @see #setDescription(String)
 	 * @see org.abchip.mimo.biz.product.price.PricePackage#getProductPriceRule_Description()
-	 * @model
+	 * @model annotation="mimo-ent-format type='description' length='255'"
 	 * @generated
 	 */
 	String getDescription();
@@ -74,7 +74,7 @@ public interface ProductPriceRule extends BizEntity {
 	 * @return the value of the '<em>From Date</em>' attribute.
 	 * @see #setFromDate(Date)
 	 * @see org.abchip.mimo.biz.product.price.PricePackage#getProductPriceRule_FromDate()
-	 * @model
+	 * @model annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getFromDate();
@@ -100,7 +100,7 @@ public interface ProductPriceRule extends BizEntity {
 	 * @return the value of the '<em>Is Sale</em>' attribute.
 	 * @see #setIsSale(boolean)
 	 * @see org.abchip.mimo.biz.product.price.PricePackage#getProductPriceRule_IsSale()
-	 * @model
+	 * @model annotation="mimo-ent-format type='indicator' length='1'"
 	 * @generated
 	 */
 	boolean isIsSale();
@@ -126,7 +126,7 @@ public interface ProductPriceRule extends BizEntity {
 	 * @return the value of the '<em>Rule Name</em>' attribute.
 	 * @see #setRuleName(String)
 	 * @see org.abchip.mimo.biz.product.price.PricePackage#getProductPriceRule_RuleName()
-	 * @model
+	 * @model annotation="mimo-ent-format type='name' length='100'"
 	 * @generated
 	 */
 	String getRuleName();
@@ -152,7 +152,7 @@ public interface ProductPriceRule extends BizEntity {
 	 * @return the value of the '<em>Thru Date</em>' attribute.
 	 * @see #setThruDate(Date)
 	 * @see org.abchip.mimo.biz.product.price.PricePackage#getProductPriceRule_ThruDate()
-	 * @model
+	 * @model annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getThruDate();
@@ -178,7 +178,9 @@ public interface ProductPriceRule extends BizEntity {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Product Price Actions</em>' attribute list.
 	 * @see org.abchip.mimo.biz.product.price.PricePackage#getProductPriceRule_ProductPriceActions()
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ProductPriceAction'"
 	 * @generated
 	 */
@@ -195,7 +197,9 @@ public interface ProductPriceRule extends BizEntity {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Product Price Conds</em>' attribute list.
 	 * @see org.abchip.mimo.biz.product.price.PricePackage#getProductPriceRule_ProductPriceConds()
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ProductPriceCond'"
 	 * @generated
 	 */
@@ -204,7 +208,8 @@ public interface ProductPriceRule extends BizEntity {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='OrderItemPriceInfo' route='productPriceRuleId'"
 	 * @generated
 	 */
@@ -222,6 +227,7 @@ public interface ProductPriceRule extends BizEntity {
 	 * @see #setProductPriceRuleId(String)
 	 * @see org.abchip.mimo.biz.product.price.PricePackage#getProductPriceRule_ProductPriceRuleId()
 	 * @model id="true" required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */

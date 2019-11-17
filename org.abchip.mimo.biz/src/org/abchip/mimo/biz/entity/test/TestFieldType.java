@@ -51,7 +51,7 @@ public interface TestFieldType extends BizEntity {
 	 * @return the value of the '<em>Blob Field</em>' attribute.
 	 * @see #setBlobField(String)
 	 * @see org.abchip.mimo.biz.entity.test.TestPackage#getTestFieldType_BlobField()
-	 * @model
+	 * @model annotation="mimo-ent-format type='blob'"
 	 * @generated
 	 */
 	String getBlobField();
@@ -77,7 +77,7 @@ public interface TestFieldType extends BizEntity {
 	 * @return the value of the '<em>Byte Array Field</em>' attribute.
 	 * @see #setByteArrayField(byte[])
 	 * @see org.abchip.mimo.biz.entity.test.TestPackage#getTestFieldType_ByteArrayField()
-	 * @model
+	 * @model annotation="mimo-ent-format type='byte-array'"
 	 * @generated
 	 */
 	byte[] getByteArrayField();
@@ -103,7 +103,7 @@ public interface TestFieldType extends BizEntity {
 	 * @return the value of the '<em>Clob Field</em>' attribute.
 	 * @see #setClobField(String)
 	 * @see org.abchip.mimo.biz.entity.test.TestPackage#getTestFieldType_ClobField()
-	 * @model
+	 * @model annotation="mimo-ent-format type='very-long'"
 	 * @generated
 	 */
 	String getClobField();
@@ -129,7 +129,7 @@ public interface TestFieldType extends BizEntity {
 	 * @return the value of the '<em>Date Field</em>' attribute.
 	 * @see #setDateField(Date)
 	 * @see org.abchip.mimo.biz.entity.test.TestPackage#getTestFieldType_DateField()
-	 * @model
+	 * @model annotation="mimo-ent-format type='date'"
 	 * @generated
 	 */
 	Date getDateField();
@@ -155,7 +155,7 @@ public interface TestFieldType extends BizEntity {
 	 * @return the value of the '<em>Date Time Field</em>' attribute.
 	 * @see #setDateTimeField(Date)
 	 * @see org.abchip.mimo.biz.entity.test.TestPackage#getTestFieldType_DateTimeField()
-	 * @model
+	 * @model annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getDateTimeField();
@@ -181,7 +181,7 @@ public interface TestFieldType extends BizEntity {
 	 * @return the value of the '<em>Fixed Point Field</em>' attribute.
 	 * @see #setFixedPointField(BigDecimal)
 	 * @see org.abchip.mimo.biz.entity.test.TestPackage#getTestFieldType_FixedPointField()
-	 * @model
+	 * @model annotation="mimo-ent-format type='fixed-point' precision='18' scale='6'"
 	 * @generated
 	 */
 	BigDecimal getFixedPointField();
@@ -207,7 +207,7 @@ public interface TestFieldType extends BizEntity {
 	 * @return the value of the '<em>Floating Point Field</em>' attribute.
 	 * @see #setFloatingPointField(double)
 	 * @see org.abchip.mimo.biz.entity.test.TestPackage#getTestFieldType_FloatingPointField()
-	 * @model
+	 * @model annotation="mimo-ent-format type='floating-point'"
 	 * @generated
 	 */
 	double getFloatingPointField();
@@ -233,7 +233,7 @@ public interface TestFieldType extends BizEntity {
 	 * @return the value of the '<em>Numeric Field</em>' attribute.
 	 * @see #setNumericField(long)
 	 * @see org.abchip.mimo.biz.entity.test.TestPackage#getTestFieldType_NumericField()
-	 * @model
+	 * @model annotation="mimo-ent-format type='numeric' precision='20' scale='0'"
 	 * @generated
 	 */
 	long getNumericField();
@@ -259,7 +259,7 @@ public interface TestFieldType extends BizEntity {
 	 * @return the value of the '<em>Object Field</em>' attribute.
 	 * @see #setObjectField(Object)
 	 * @see org.abchip.mimo.biz.entity.test.TestPackage#getTestFieldType_ObjectField()
-	 * @model
+	 * @model annotation="mimo-ent-format type='object'"
 	 * @generated
 	 */
 	Object getObjectField();
@@ -286,6 +286,7 @@ public interface TestFieldType extends BizEntity {
 	 * @see #setTestFieldTypeId(String)
 	 * @see org.abchip.mimo.biz.entity.test.TestPackage#getTestFieldType_TestFieldTypeId()
 	 * @model id="true" required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
@@ -312,7 +313,7 @@ public interface TestFieldType extends BizEntity {
 	 * @return the value of the '<em>Time Field</em>' attribute.
 	 * @see #setTimeField(Date)
 	 * @see org.abchip.mimo.biz.entity.test.TestPackage#getTestFieldType_TimeField()
-	 * @model
+	 * @model annotation="mimo-ent-format type='time'"
 	 * @generated
 	 */
 	Date getTimeField();

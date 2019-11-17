@@ -41,7 +41,7 @@ public interface CarrierShipmentBoxType extends BizEntity {
 	 * @return the value of the '<em>Oversize Code</em>' attribute.
 	 * @see #setOversizeCode(String)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getCarrierShipmentBoxType_OversizeCode()
-	 * @model
+	 * @model annotation="mimo-ent-format type='very-short' length='10'"
 	 * @generated
 	 */
 	String getOversizeCode();
@@ -67,7 +67,7 @@ public interface CarrierShipmentBoxType extends BizEntity {
 	 * @return the value of the '<em>Packaging Type Code</em>' attribute.
 	 * @see #setPackagingTypeCode(String)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getCarrierShipmentBoxType_PackagingTypeCode()
-	 * @model
+	 * @model annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	String getPackagingTypeCode();

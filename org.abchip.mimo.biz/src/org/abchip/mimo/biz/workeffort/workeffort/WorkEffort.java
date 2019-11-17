@@ -167,7 +167,7 @@ public interface WorkEffort extends BizEntityTyped<WorkEffortType> {
 	 * @return the value of the '<em>Actual Completion Date</em>' attribute.
 	 * @see #setActualCompletionDate(Date)
 	 * @see org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage#getWorkEffort_ActualCompletionDate()
-	 * @model
+	 * @model annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getActualCompletionDate();
@@ -193,7 +193,7 @@ public interface WorkEffort extends BizEntityTyped<WorkEffortType> {
 	 * @return the value of the '<em>Actual Milli Seconds</em>' attribute.
 	 * @see #setActualMilliSeconds(double)
 	 * @see org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage#getWorkEffort_ActualMilliSeconds()
-	 * @model
+	 * @model annotation="mimo-ent-format type='floating-point'"
 	 * @generated
 	 */
 	double getActualMilliSeconds();
@@ -219,7 +219,7 @@ public interface WorkEffort extends BizEntityTyped<WorkEffortType> {
 	 * @return the value of the '<em>Actual Setup Millis</em>' attribute.
 	 * @see #setActualSetupMillis(double)
 	 * @see org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage#getWorkEffort_ActualSetupMillis()
-	 * @model
+	 * @model annotation="mimo-ent-format type='floating-point'"
 	 * @generated
 	 */
 	double getActualSetupMillis();
@@ -245,7 +245,7 @@ public interface WorkEffort extends BizEntityTyped<WorkEffortType> {
 	 * @return the value of the '<em>Actual Start Date</em>' attribute.
 	 * @see #setActualStartDate(Date)
 	 * @see org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage#getWorkEffort_ActualStartDate()
-	 * @model
+	 * @model annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getActualStartDate();
@@ -271,7 +271,7 @@ public interface WorkEffort extends BizEntityTyped<WorkEffortType> {
 	 * @return the value of the '<em>Created By User Login</em>' attribute.
 	 * @see #setCreatedByUserLogin(String)
 	 * @see org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage#getWorkEffort_CreatedByUserLogin()
-	 * @model
+	 * @model annotation="mimo-ent-format type='id-vlong' length='255'"
 	 * @generated
 	 */
 	String getCreatedByUserLogin();
@@ -297,7 +297,7 @@ public interface WorkEffort extends BizEntityTyped<WorkEffortType> {
 	 * @return the value of the '<em>Created Date</em>' attribute.
 	 * @see #setCreatedDate(Date)
 	 * @see org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage#getWorkEffort_CreatedDate()
-	 * @model
+	 * @model annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getCreatedDate();
@@ -349,7 +349,7 @@ public interface WorkEffort extends BizEntityTyped<WorkEffortType> {
 	 * @return the value of the '<em>Description</em>' attribute.
 	 * @see #setDescription(String)
 	 * @see org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage#getWorkEffort_Description()
-	 * @model
+	 * @model annotation="mimo-ent-format type='description' length='255'"
 	 * @generated
 	 */
 	String getDescription();
@@ -401,7 +401,7 @@ public interface WorkEffort extends BizEntityTyped<WorkEffortType> {
 	 * @return the value of the '<em>Estimated Completion Date</em>' attribute.
 	 * @see #setEstimatedCompletionDate(Date)
 	 * @see org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage#getWorkEffort_EstimatedCompletionDate()
-	 * @model
+	 * @model annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getEstimatedCompletionDate();
@@ -427,7 +427,7 @@ public interface WorkEffort extends BizEntityTyped<WorkEffortType> {
 	 * @return the value of the '<em>Estimated Milli Seconds</em>' attribute.
 	 * @see #setEstimatedMilliSeconds(double)
 	 * @see org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage#getWorkEffort_EstimatedMilliSeconds()
-	 * @model
+	 * @model annotation="mimo-ent-format type='floating-point'"
 	 * @generated
 	 */
 	double getEstimatedMilliSeconds();
@@ -453,7 +453,7 @@ public interface WorkEffort extends BizEntityTyped<WorkEffortType> {
 	 * @return the value of the '<em>Estimated Setup Millis</em>' attribute.
 	 * @see #setEstimatedSetupMillis(double)
 	 * @see org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage#getWorkEffort_EstimatedSetupMillis()
-	 * @model
+	 * @model annotation="mimo-ent-format type='floating-point'"
 	 * @generated
 	 */
 	double getEstimatedSetupMillis();
@@ -479,7 +479,7 @@ public interface WorkEffort extends BizEntityTyped<WorkEffortType> {
 	 * @return the value of the '<em>Estimated Start Date</em>' attribute.
 	 * @see #setEstimatedStartDate(Date)
 	 * @see org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage#getWorkEffort_EstimatedStartDate()
-	 * @model
+	 * @model annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getEstimatedStartDate();
@@ -557,7 +557,7 @@ public interface WorkEffort extends BizEntityTyped<WorkEffortType> {
 	 * @return the value of the '<em>Info Url</em>' attribute.
 	 * @see #setInfoUrl(String)
 	 * @see org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage#getWorkEffort_InfoUrl()
-	 * @model
+	 * @model annotation="mimo-ent-format type='long-varchar' length='255'"
 	 * @generated
 	 */
 	String getInfoUrl();
@@ -583,7 +583,7 @@ public interface WorkEffort extends BizEntityTyped<WorkEffortType> {
 	 * @return the value of the '<em>Last Modified By User Login</em>' attribute.
 	 * @see #setLastModifiedByUserLogin(String)
 	 * @see org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage#getWorkEffort_LastModifiedByUserLogin()
-	 * @model
+	 * @model annotation="mimo-ent-format type='id-vlong' length='255'"
 	 * @generated
 	 */
 	String getLastModifiedByUserLogin();
@@ -609,7 +609,7 @@ public interface WorkEffort extends BizEntityTyped<WorkEffortType> {
 	 * @return the value of the '<em>Last Modified Date</em>' attribute.
 	 * @see #setLastModifiedDate(Date)
 	 * @see org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage#getWorkEffort_LastModifiedDate()
-	 * @model
+	 * @model annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getLastModifiedDate();
@@ -635,7 +635,7 @@ public interface WorkEffort extends BizEntityTyped<WorkEffortType> {
 	 * @return the value of the '<em>Last Status Update</em>' attribute.
 	 * @see #setLastStatusUpdate(Date)
 	 * @see org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage#getWorkEffort_LastStatusUpdate()
-	 * @model
+	 * @model annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getLastStatusUpdate();
@@ -661,7 +661,7 @@ public interface WorkEffort extends BizEntityTyped<WorkEffortType> {
 	 * @return the value of the '<em>Location Desc</em>' attribute.
 	 * @see #setLocationDesc(String)
 	 * @see org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage#getWorkEffort_LocationDesc()
-	 * @model
+	 * @model annotation="mimo-ent-format type='description' length='255'"
 	 * @generated
 	 */
 	String getLocationDesc();
@@ -739,7 +739,7 @@ public interface WorkEffort extends BizEntityTyped<WorkEffortType> {
 	 * @return the value of the '<em>Percent Complete</em>' attribute.
 	 * @see #setPercentComplete(long)
 	 * @see org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage#getWorkEffort_PercentComplete()
-	 * @model
+	 * @model annotation="mimo-ent-format type='numeric' precision='20' scale='0'"
 	 * @generated
 	 */
 	long getPercentComplete();
@@ -765,7 +765,7 @@ public interface WorkEffort extends BizEntityTyped<WorkEffortType> {
 	 * @return the value of the '<em>Priority</em>' attribute.
 	 * @see #setPriority(long)
 	 * @see org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage#getWorkEffort_Priority()
-	 * @model
+	 * @model annotation="mimo-ent-format type='numeric' precision='20' scale='0'"
 	 * @generated
 	 */
 	long getPriority();
@@ -791,7 +791,7 @@ public interface WorkEffort extends BizEntityTyped<WorkEffortType> {
 	 * @return the value of the '<em>Quantity Produced</em>' attribute.
 	 * @see #setQuantityProduced(BigDecimal)
 	 * @see org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage#getWorkEffort_QuantityProduced()
-	 * @model
+	 * @model annotation="mimo-ent-format type='fixed-point' precision='18' scale='6'"
 	 * @generated
 	 */
 	BigDecimal getQuantityProduced();
@@ -817,7 +817,7 @@ public interface WorkEffort extends BizEntityTyped<WorkEffortType> {
 	 * @return the value of the '<em>Quantity Rejected</em>' attribute.
 	 * @see #setQuantityRejected(BigDecimal)
 	 * @see org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage#getWorkEffort_QuantityRejected()
-	 * @model
+	 * @model annotation="mimo-ent-format type='fixed-point' precision='18' scale='6'"
 	 * @generated
 	 */
 	BigDecimal getQuantityRejected();
@@ -843,7 +843,7 @@ public interface WorkEffort extends BizEntityTyped<WorkEffortType> {
 	 * @return the value of the '<em>Quantity To Produce</em>' attribute.
 	 * @see #setQuantityToProduce(BigDecimal)
 	 * @see org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage#getWorkEffort_QuantityToProduce()
-	 * @model
+	 * @model annotation="mimo-ent-format type='fixed-point' precision='18' scale='6'"
 	 * @generated
 	 */
 	BigDecimal getQuantityToProduce();
@@ -895,7 +895,7 @@ public interface WorkEffort extends BizEntityTyped<WorkEffortType> {
 	 * @return the value of the '<em>Reserv2nd PP Perc</em>' attribute.
 	 * @see #setReserv2ndPPPerc(BigDecimal)
 	 * @see org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage#getWorkEffort_Reserv2ndPPPerc()
-	 * @model
+	 * @model annotation="mimo-ent-format type='fixed-point' precision='18' scale='6'"
 	 * @generated
 	 */
 	BigDecimal getReserv2ndPPPerc();
@@ -921,7 +921,7 @@ public interface WorkEffort extends BizEntityTyped<WorkEffortType> {
 	 * @return the value of the '<em>Reserv Nth PP Perc</em>' attribute.
 	 * @see #setReservNthPPPerc(BigDecimal)
 	 * @see org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage#getWorkEffort_ReservNthPPPerc()
-	 * @model
+	 * @model annotation="mimo-ent-format type='fixed-point' precision='18' scale='6'"
 	 * @generated
 	 */
 	BigDecimal getReservNthPPPerc();
@@ -947,7 +947,7 @@ public interface WorkEffort extends BizEntityTyped<WorkEffortType> {
 	 * @return the value of the '<em>Reserv Persons</em>' attribute.
 	 * @see #setReservPersons(BigDecimal)
 	 * @see org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage#getWorkEffort_ReservPersons()
-	 * @model
+	 * @model annotation="mimo-ent-format type='fixed-point' precision='18' scale='6'"
 	 * @generated
 	 */
 	BigDecimal getReservPersons();
@@ -973,7 +973,7 @@ public interface WorkEffort extends BizEntityTyped<WorkEffortType> {
 	 * @return the value of the '<em>Revision Number</em>' attribute.
 	 * @see #setRevisionNumber(long)
 	 * @see org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage#getWorkEffort_RevisionNumber()
-	 * @model
+	 * @model annotation="mimo-ent-format type='numeric' precision='20' scale='0'"
 	 * @generated
 	 */
 	long getRevisionNumber();
@@ -987,6 +987,32 @@ public interface WorkEffort extends BizEntityTyped<WorkEffortType> {
 	 * @generated
 	 */
 	void setRevisionNumber(long value);
+
+	/**
+	 * Returns the value of the '<em><b>Send Notification Email</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Send Notification Email</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Send Notification Email</em>' attribute.
+	 * @see #setSendNotificationEmail(boolean)
+	 * @see org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage#getWorkEffort_SendNotificationEmail()
+	 * @model annotation="mimo-ent-format type='indicator' length='1'"
+	 * @generated
+	 */
+	boolean isSendNotificationEmail();
+
+	/**
+	 * Sets the value of the '{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffort#isSendNotificationEmail <em>Send Notification Email</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Send Notification Email</em>' attribute.
+	 * @see #isSendNotificationEmail()
+	 * @generated
+	 */
+	void setSendNotificationEmail(boolean value);
 
 	/**
 	 * Returns the value of the '<em><b>Runtime Data Id</b></em>' reference.
@@ -1041,32 +1067,6 @@ public interface WorkEffort extends BizEntityTyped<WorkEffortType> {
 	void setScopeEnumId(Enumeration value);
 
 	/**
-	 * Returns the value of the '<em><b>Send Notification Email</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Send Notification Email</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Send Notification Email</em>' attribute.
-	 * @see #setSendNotificationEmail(boolean)
-	 * @see org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage#getWorkEffort_SendNotificationEmail()
-	 * @model
-	 * @generated
-	 */
-	boolean isSendNotificationEmail();
-
-	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffort#isSendNotificationEmail <em>Send Notification Email</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Send Notification Email</em>' attribute.
-	 * @see #isSendNotificationEmail()
-	 * @generated
-	 */
-	void setSendNotificationEmail(boolean value);
-
-	/**
 	 * Returns the value of the '<em><b>Service Loader Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -1077,7 +1077,7 @@ public interface WorkEffort extends BizEntityTyped<WorkEffortType> {
 	 * @return the value of the '<em>Service Loader Name</em>' attribute.
 	 * @see #setServiceLoaderName(String)
 	 * @see org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage#getWorkEffort_ServiceLoaderName()
-	 * @model
+	 * @model annotation="mimo-ent-format type='name' length='100'"
 	 * @generated
 	 */
 	String getServiceLoaderName();
@@ -1103,7 +1103,7 @@ public interface WorkEffort extends BizEntityTyped<WorkEffortType> {
 	 * @return the value of the '<em>Show As Enum Id</em>' attribute.
 	 * @see #setShowAsEnumId(String)
 	 * @see org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage#getWorkEffort_ShowAsEnumId()
-	 * @model
+	 * @model annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	String getShowAsEnumId();
@@ -1129,7 +1129,7 @@ public interface WorkEffort extends BizEntityTyped<WorkEffortType> {
 	 * @return the value of the '<em>Source Reference Id</em>' attribute.
 	 * @see #setSourceReferenceId(String)
 	 * @see org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage#getWorkEffort_SourceReferenceId()
-	 * @model
+	 * @model annotation="mimo-ent-format type='id-long' length='60'"
 	 * @generated
 	 */
 	String getSourceReferenceId();
@@ -1155,7 +1155,7 @@ public interface WorkEffort extends BizEntityTyped<WorkEffortType> {
 	 * @return the value of the '<em>Special Terms</em>' attribute.
 	 * @see #setSpecialTerms(String)
 	 * @see org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage#getWorkEffort_SpecialTerms()
-	 * @model
+	 * @model annotation="mimo-ent-format type='long-varchar' length='255'"
 	 * @generated
 	 */
 	String getSpecialTerms();
@@ -1207,7 +1207,7 @@ public interface WorkEffort extends BizEntityTyped<WorkEffortType> {
 	 * @return the value of the '<em>Time Transparency</em>' attribute.
 	 * @see #setTimeTransparency(long)
 	 * @see org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage#getWorkEffort_TimeTransparency()
-	 * @model
+	 * @model annotation="mimo-ent-format type='numeric' precision='20' scale='0'"
 	 * @generated
 	 */
 	long getTimeTransparency();
@@ -1233,7 +1233,7 @@ public interface WorkEffort extends BizEntityTyped<WorkEffortType> {
 	 * @return the value of the '<em>Total Milli Seconds Allowed</em>' attribute.
 	 * @see #setTotalMilliSecondsAllowed(double)
 	 * @see org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage#getWorkEffort_TotalMilliSecondsAllowed()
-	 * @model
+	 * @model annotation="mimo-ent-format type='floating-point'"
 	 * @generated
 	 */
 	double getTotalMilliSecondsAllowed();
@@ -1259,7 +1259,7 @@ public interface WorkEffort extends BizEntityTyped<WorkEffortType> {
 	 * @return the value of the '<em>Total Money Allowed</em>' attribute.
 	 * @see #setTotalMoneyAllowed(BigDecimal)
 	 * @see org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage#getWorkEffort_TotalMoneyAllowed()
-	 * @model
+	 * @model annotation="mimo-ent-format type='currency-amount' precision='18' scale='2'"
 	 * @generated
 	 */
 	BigDecimal getTotalMoneyAllowed();
@@ -1285,7 +1285,7 @@ public interface WorkEffort extends BizEntityTyped<WorkEffortType> {
 	 * @return the value of the '<em>Universal Id</em>' attribute.
 	 * @see #setUniversalId(String)
 	 * @see org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage#getWorkEffort_UniversalId()
-	 * @model
+	 * @model annotation="mimo-ent-format type='short-varchar' length='60'"
 	 * @generated
 	 */
 	String getUniversalId();
@@ -1312,6 +1312,7 @@ public interface WorkEffort extends BizEntityTyped<WorkEffortType> {
 	 * @see #setWorkEffortId(String)
 	 * @see org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage#getWorkEffort_WorkEffortId()
 	 * @model id="true" required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
@@ -1338,7 +1339,7 @@ public interface WorkEffort extends BizEntityTyped<WorkEffortType> {
 	 * @return the value of the '<em>Work Effort Name</em>' attribute.
 	 * @see #setWorkEffortName(String)
 	 * @see org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage#getWorkEffort_WorkEffortName()
-	 * @model
+	 * @model annotation="mimo-ent-format type='name' length='100'"
 	 * @generated
 	 */
 	String getWorkEffortName();
@@ -1442,7 +1443,9 @@ public interface WorkEffort extends BizEntityTyped<WorkEffortType> {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Communication Event Work Effs</em>' attribute list.
 	 * @see org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage#getWorkEffort_CommunicationEventWorkEffs()
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='CommunicationEventWorkEff'"
 	 * @generated
 	 */
@@ -1459,7 +1462,9 @@ public interface WorkEffort extends BizEntityTyped<WorkEffortType> {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Work Effort Attributes</em>' attribute list.
 	 * @see org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage#getWorkEffort_WorkEffortAttributes()
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='WorkEffortAttribute'"
 	 * @generated
 	 */
@@ -1476,7 +1481,9 @@ public interface WorkEffort extends BizEntityTyped<WorkEffortType> {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Work Effort Deliverable Prods</em>' attribute list.
 	 * @see org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage#getWorkEffort_WorkEffortDeliverableProds()
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='WorkEffortDeliverableProd'"
 	 * @generated
 	 */
@@ -1493,7 +1500,9 @@ public interface WorkEffort extends BizEntityTyped<WorkEffortType> {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Work Effort Event Reminders</em>' attribute list.
 	 * @see org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage#getWorkEffort_WorkEffortEventReminders()
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='WorkEffortEventReminder'"
 	 * @generated
 	 */
@@ -1510,7 +1519,9 @@ public interface WorkEffort extends BizEntityTyped<WorkEffortType> {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Work Effort Fixed Asset Stds</em>' attribute list.
 	 * @see org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage#getWorkEffort_WorkEffortFixedAssetStds()
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='WorkEffortFixedAssetStd'"
 	 * @generated
 	 */
@@ -1527,7 +1538,9 @@ public interface WorkEffort extends BizEntityTyped<WorkEffortType> {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Work Effort Inventory Assigns</em>' attribute list.
 	 * @see org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage#getWorkEffort_WorkEffortInventoryAssigns()
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='WorkEffortInventoryAssign'"
 	 * @generated
 	 */
@@ -1544,7 +1557,9 @@ public interface WorkEffort extends BizEntityTyped<WorkEffortType> {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Work Effort Inventory Produceds</em>' attribute list.
 	 * @see org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage#getWorkEffort_WorkEffortInventoryProduceds()
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='WorkEffortInventoryProduced'"
 	 * @generated
 	 */
@@ -1561,7 +1576,9 @@ public interface WorkEffort extends BizEntityTyped<WorkEffortType> {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Work Effort Keywords</em>' attribute list.
 	 * @see org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage#getWorkEffort_WorkEffortKeywords()
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='WorkEffortKeyword'"
 	 * @generated
 	 */
@@ -1578,7 +1595,9 @@ public interface WorkEffort extends BizEntityTyped<WorkEffortType> {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Work Effort Notes</em>' attribute list.
 	 * @see org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage#getWorkEffort_WorkEffortNotes()
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='WorkEffortNote'"
 	 * @generated
 	 */
@@ -1595,7 +1614,9 @@ public interface WorkEffort extends BizEntityTyped<WorkEffortType> {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Work Effort Skill Standards</em>' attribute list.
 	 * @see org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage#getWorkEffort_WorkEffortSkillStandards()
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='WorkEffortSkillStandard'"
 	 * @generated
 	 */
@@ -1604,7 +1625,8 @@ public interface WorkEffort extends BizEntityTyped<WorkEffortType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='AcctgTrans' route='workEffortId'"
 	 * @generated
 	 */
@@ -1613,7 +1635,8 @@ public interface WorkEffort extends BizEntityTyped<WorkEffortType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='WorkEffort' route='workEffortParentId'"
 	 * @generated
 	 */
@@ -1622,7 +1645,8 @@ public interface WorkEffort extends BizEntityTyped<WorkEffortType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='CostComponent' route='workEffortId'"
 	 * @generated
 	 */
@@ -1631,7 +1655,9 @@ public interface WorkEffort extends BizEntityTyped<WorkEffortType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='CustRequestWorkEffort' route='workEffortId'"
 	 * @generated
 	 */
@@ -1640,7 +1666,8 @@ public interface WorkEffort extends BizEntityTyped<WorkEffortType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='Shipment' route='estimatedArrivalWorkEffId'"
 	 * @generated
 	 */
@@ -1649,7 +1676,8 @@ public interface WorkEffort extends BizEntityTyped<WorkEffortType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='Shipment' route='estimatedShipWorkEffId'"
 	 * @generated
 	 */
@@ -1658,7 +1686,8 @@ public interface WorkEffort extends BizEntityTyped<WorkEffortType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='InventoryItemDetail' route='workEffortId'"
 	 * @generated
 	 */
@@ -1667,7 +1696,8 @@ public interface WorkEffort extends BizEntityTyped<WorkEffortType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ProductMaint' route='maintTemplateWorkEffortId'"
 	 * @generated
 	 */
@@ -1676,7 +1706,9 @@ public interface WorkEffort extends BizEntityTyped<WorkEffortType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='OrderHeaderWorkEffort' route='workEffortId'"
 	 * @generated
 	 */
@@ -1685,7 +1717,8 @@ public interface WorkEffort extends BizEntityTyped<WorkEffortType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='QuoteItem' route='workEffortId'"
 	 * @generated
 	 */
@@ -1694,7 +1727,9 @@ public interface WorkEffort extends BizEntityTyped<WorkEffortType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='QuoteWorkEffort' route='workEffortId'"
 	 * @generated
 	 */
@@ -1703,7 +1738,9 @@ public interface WorkEffort extends BizEntityTyped<WorkEffortType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='SalesOpportunityWorkEffort' route='workEffortId'"
 	 * @generated
 	 */
@@ -1712,7 +1749,8 @@ public interface WorkEffort extends BizEntityTyped<WorkEffortType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='FixedAssetMaint' route='scheduleWorkEffortId'"
 	 * @generated
 	 */
@@ -1721,7 +1759,9 @@ public interface WorkEffort extends BizEntityTyped<WorkEffortType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ShoppingListWorkEffort' route='workEffortId'"
 	 * @generated
 	 */
@@ -1730,7 +1770,8 @@ public interface WorkEffort extends BizEntityTyped<WorkEffortType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='TimeEntry' route='workEffortId'"
 	 * @generated
 	 */
@@ -1739,7 +1780,9 @@ public interface WorkEffort extends BizEntityTyped<WorkEffortType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='WorkRequirementFulfillment' route='workEffortId'"
 	 * @generated
 	 */

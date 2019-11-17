@@ -78,7 +78,7 @@ public interface ProductFeaturePrice extends BizEntity {
 	 * @return the value of the '<em>Created Date</em>' attribute.
 	 * @see #setCreatedDate(Date)
 	 * @see org.abchip.mimo.biz.product.price.PricePackage#getProductFeaturePrice_CreatedDate()
-	 * @model
+	 * @model annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getCreatedDate();
@@ -131,6 +131,7 @@ public interface ProductFeaturePrice extends BizEntity {
 	 * @see #setFromDate(Date)
 	 * @see org.abchip.mimo.biz.product.price.PricePackage#getProductFeaturePrice_FromDate()
 	 * @model required="true"
+	 *        annotation="mimo-ent-format type='date-time'"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
@@ -183,7 +184,7 @@ public interface ProductFeaturePrice extends BizEntity {
 	 * @return the value of the '<em>Last Modified Date</em>' attribute.
 	 * @see #setLastModifiedDate(Date)
 	 * @see org.abchip.mimo.biz.product.price.PricePackage#getProductFeaturePrice_LastModifiedDate()
-	 * @model
+	 * @model annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getLastModifiedDate();
@@ -209,7 +210,7 @@ public interface ProductFeaturePrice extends BizEntity {
 	 * @return the value of the '<em>Price</em>' attribute.
 	 * @see #setPrice(BigDecimal)
 	 * @see org.abchip.mimo.biz.product.price.PricePackage#getProductFeaturePrice_Price()
-	 * @model
+	 * @model annotation="mimo-ent-format type='currency-precise' precision='18' scale='3'"
 	 * @generated
 	 */
 	BigDecimal getPrice();
@@ -236,6 +237,7 @@ public interface ProductFeaturePrice extends BizEntity {
 	 * @see #setProductFeatureId(String)
 	 * @see org.abchip.mimo.biz.product.price.PricePackage#getProductFeaturePrice_ProductFeatureId()
 	 * @model required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
@@ -262,7 +264,7 @@ public interface ProductFeaturePrice extends BizEntity {
 	 * @return the value of the '<em>Thru Date</em>' attribute.
 	 * @see #setThruDate(Date)
 	 * @see org.abchip.mimo.biz.product.price.PricePackage#getProductFeaturePrice_ThruDate()
-	 * @model
+	 * @model annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getThruDate();

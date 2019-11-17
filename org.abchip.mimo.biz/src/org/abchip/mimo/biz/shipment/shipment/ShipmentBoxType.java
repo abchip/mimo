@@ -50,7 +50,7 @@ public interface ShipmentBoxType extends BizEntity {
 	 * @return the value of the '<em>Box Height</em>' attribute.
 	 * @see #setBoxHeight(BigDecimal)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipmentBoxType_BoxHeight()
-	 * @model
+	 * @model annotation="mimo-ent-format type='fixed-point' precision='18' scale='6'"
 	 * @generated
 	 */
 	BigDecimal getBoxHeight();
@@ -76,7 +76,7 @@ public interface ShipmentBoxType extends BizEntity {
 	 * @return the value of the '<em>Box Length</em>' attribute.
 	 * @see #setBoxLength(BigDecimal)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipmentBoxType_BoxLength()
-	 * @model
+	 * @model annotation="mimo-ent-format type='fixed-point' precision='18' scale='6'"
 	 * @generated
 	 */
 	BigDecimal getBoxLength();
@@ -102,7 +102,7 @@ public interface ShipmentBoxType extends BizEntity {
 	 * @return the value of the '<em>Box Weight</em>' attribute.
 	 * @see #setBoxWeight(BigDecimal)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipmentBoxType_BoxWeight()
-	 * @model
+	 * @model annotation="mimo-ent-format type='fixed-point' precision='18' scale='6'"
 	 * @generated
 	 */
 	BigDecimal getBoxWeight();
@@ -128,7 +128,7 @@ public interface ShipmentBoxType extends BizEntity {
 	 * @return the value of the '<em>Box Width</em>' attribute.
 	 * @see #setBoxWidth(BigDecimal)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipmentBoxType_BoxWidth()
-	 * @model
+	 * @model annotation="mimo-ent-format type='fixed-point' precision='18' scale='6'"
 	 * @generated
 	 */
 	BigDecimal getBoxWidth();
@@ -154,7 +154,7 @@ public interface ShipmentBoxType extends BizEntity {
 	 * @return the value of the '<em>Description</em>' attribute.
 	 * @see #setDescription(String)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipmentBoxType_Description()
-	 * @model
+	 * @model annotation="mimo-ent-format type='description' length='255'"
 	 * @generated
 	 */
 	String getDescription();
@@ -207,6 +207,7 @@ public interface ShipmentBoxType extends BizEntity {
 	 * @see #setShipmentBoxTypeId(String)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipmentBoxType_ShipmentBoxTypeId()
 	 * @model id="true" required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
@@ -259,7 +260,9 @@ public interface ShipmentBoxType extends BizEntity {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Carrier Shipment Box Types</em>' attribute list.
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipmentBoxType_CarrierShipmentBoxTypes()
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='CarrierShipmentBoxType'"
 	 * @generated
 	 */
@@ -268,7 +271,8 @@ public interface ShipmentBoxType extends BizEntity {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='Product' route='defaultShipmentBoxTypeId'"
 	 * @generated
 	 */
@@ -277,7 +281,8 @@ public interface ShipmentBoxType extends BizEntity {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ShipmentPackage' route='shipmentBoxTypeId'"
 	 * @generated
 	 */

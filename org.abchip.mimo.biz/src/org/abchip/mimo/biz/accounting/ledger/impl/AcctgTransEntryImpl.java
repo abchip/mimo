@@ -36,7 +36,7 @@ import org.eclipse.emf.ecore.EClass;
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.accounting.ledger.impl.AcctgTransEntryImpl#getAcctgTransEntrySeqId <em>Acctg Trans Entry Seq Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.ledger.impl.AcctgTransEntryImpl#getAmount <em>Amount</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.ledger.impl.AcctgTransEntryImpl#isDebitCreditFlag <em>Debit Credit Flag</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.ledger.impl.AcctgTransEntryImpl#getDebitCreditFlag <em>Debit Credit Flag</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.ledger.impl.AcctgTransEntryImpl#getDescription <em>Description</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.ledger.impl.AcctgTransEntryImpl#getDueDate <em>Due Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.ledger.impl.AcctgTransEntryImpl#getGroupId <em>Group Id</em>}</li>
@@ -133,6 +133,26 @@ public class AcctgTransEntryImpl extends BizEntityTypedImpl<AcctgTransEntryType>
 	 * @generated
 	 */
 	@Override
+	public char getDebitCreditFlag() {
+		return (Character)eGet(LedgerPackage.Literals.ACCTG_TRANS_ENTRY__DEBIT_CREDIT_FLAG, true);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setDebitCreditFlag(char newDebitCreditFlag) {
+		eSet(LedgerPackage.Literals.ACCTG_TRANS_ENTRY__DEBIT_CREDIT_FLAG, newDebitCreditFlag);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public Uom getCurrencyUomId() {
 		return (Uom)eGet(LedgerPackage.Literals.ACCTG_TRANS_ENTRY__CURRENCY_UOM_ID, true);
 	}
@@ -145,26 +165,6 @@ public class AcctgTransEntryImpl extends BizEntityTypedImpl<AcctgTransEntryType>
 	@Override
 	public void setCurrencyUomId(Uom newCurrencyUomId) {
 		eSet(LedgerPackage.Literals.ACCTG_TRANS_ENTRY__CURRENCY_UOM_ID, newCurrencyUomId);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public boolean isDebitCreditFlag() {
-		return (Boolean)eGet(LedgerPackage.Literals.ACCTG_TRANS_ENTRY__DEBIT_CREDIT_FLAG, true);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void setDebitCreditFlag(boolean newDebitCreditFlag) {
-		eSet(LedgerPackage.Literals.ACCTG_TRANS_ENTRY__DEBIT_CREDIT_FLAG, newDebitCreditFlag);
 	}
 
 	/**
@@ -233,26 +233,6 @@ public class AcctgTransEntryImpl extends BizEntityTypedImpl<AcctgTransEntryType>
 	 * @generated
 	 */
 	@Override
-	public InventoryItem getInventoryItemId() {
-		return (InventoryItem)eGet(LedgerPackage.Literals.ACCTG_TRANS_ENTRY__INVENTORY_ITEM_ID, true);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void setInventoryItemId(InventoryItem newInventoryItemId) {
-		eSet(LedgerPackage.Literals.ACCTG_TRANS_ENTRY__INVENTORY_ITEM_ID, newInventoryItemId);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public boolean isIsSummary() {
 		return (Boolean)eGet(LedgerPackage.Literals.ACCTG_TRANS_ENTRY__IS_SUMMARY, true);
 	}
@@ -265,6 +245,26 @@ public class AcctgTransEntryImpl extends BizEntityTypedImpl<AcctgTransEntryType>
 	@Override
 	public void setIsSummary(boolean newIsSummary) {
 		eSet(LedgerPackage.Literals.ACCTG_TRANS_ENTRY__IS_SUMMARY, newIsSummary);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public InventoryItem getInventoryItemId() {
+		return (InventoryItem)eGet(LedgerPackage.Literals.ACCTG_TRANS_ENTRY__INVENTORY_ITEM_ID, true);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setInventoryItemId(InventoryItem newInventoryItemId) {
+		eSet(LedgerPackage.Literals.ACCTG_TRANS_ENTRY__INVENTORY_ITEM_ID, newInventoryItemId);
 	}
 
 	/**

@@ -40,7 +40,7 @@ public interface WebAnalyticsConfig extends BizEntity {
 	 * @return the value of the '<em>Web Analytics Code</em>' attribute.
 	 * @see #setWebAnalyticsCode(String)
 	 * @see org.abchip.mimo.biz.content.website.WebsitePackage#getWebAnalyticsConfig_WebAnalyticsCode()
-	 * @model
+	 * @model annotation="mimo-ent-format type='very-long'"
 	 * @generated
 	 */
 	String getWebAnalyticsCode();

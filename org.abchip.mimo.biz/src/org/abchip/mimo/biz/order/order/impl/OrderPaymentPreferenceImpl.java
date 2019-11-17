@@ -7,7 +7,6 @@
  */
 package org.abchip.mimo.biz.order.order.impl;
 
-import java.lang.reflect.InvocationTargetException;
 import java.math.BigDecimal;
 
 import java.util.Date;
@@ -24,7 +23,6 @@ import org.abchip.mimo.biz.order.order.OrderPackage;
 import org.abchip.mimo.biz.order.order.OrderPaymentPreference;
 import org.abchip.mimo.biz.product.price.ProductPricePurpose;
 import org.abchip.mimo.biz.security.login.UserLogin;
-import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 
 /**
@@ -45,12 +43,12 @@ import org.eclipse.emf.ecore.EClass;
  *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderPaymentPreferenceImpl#getMaxAmount <em>Max Amount</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderPaymentPreferenceImpl#isNeedsNsfRetry <em>Needs Nsf Retry</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderPaymentPreferenceImpl#getOrderItemSeqId <em>Order Item Seq Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderPaymentPreferenceImpl#isOverflowFlag <em>Overflow Flag</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderPaymentPreferenceImpl#isPresentFlag <em>Present Flag</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderPaymentPreferenceImpl#getOverflowFlag <em>Overflow Flag</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderPaymentPreferenceImpl#getPresentFlag <em>Present Flag</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderPaymentPreferenceImpl#getProcessAttempt <em>Process Attempt</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderPaymentPreferenceImpl#getSecurityCode <em>Security Code</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderPaymentPreferenceImpl#getShipGroupSeqId <em>Ship Group Seq Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderPaymentPreferenceImpl#isSwipedFlag <em>Swiped Flag</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderPaymentPreferenceImpl#getSwipedFlag <em>Swiped Flag</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderPaymentPreferenceImpl#getTrack2 <em>Track2</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderPaymentPreferenceImpl#getOrderId <em>Order Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderPaymentPreferenceImpl#getProductPricePurposeId <em>Product Price Purpose Id</em>}</li>
@@ -334,8 +332,8 @@ public class OrderPaymentPreferenceImpl extends BizEntityImpl implements OrderPa
 	 * @generated
 	 */
 	@Override
-	public boolean isOverflowFlag() {
-		return (Boolean)eGet(OrderPackage.Literals.ORDER_PAYMENT_PREFERENCE__OVERFLOW_FLAG, true);
+	public char getOverflowFlag() {
+		return (Character)eGet(OrderPackage.Literals.ORDER_PAYMENT_PREFERENCE__OVERFLOW_FLAG, true);
 	}
 
 	/**
@@ -344,8 +342,28 @@ public class OrderPaymentPreferenceImpl extends BizEntityImpl implements OrderPa
 	 * @generated
 	 */
 	@Override
-	public void setOverflowFlag(boolean newOverflowFlag) {
+	public void setOverflowFlag(char newOverflowFlag) {
 		eSet(OrderPackage.Literals.ORDER_PAYMENT_PREFERENCE__OVERFLOW_FLAG, newOverflowFlag);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public char getPresentFlag() {
+		return (Character)eGet(OrderPackage.Literals.ORDER_PAYMENT_PREFERENCE__PRESENT_FLAG, true);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setPresentFlag(char newPresentFlag) {
+		eSet(OrderPackage.Literals.ORDER_PAYMENT_PREFERENCE__PRESENT_FLAG, newPresentFlag);
 	}
 
 	/**
@@ -406,26 +424,6 @@ public class OrderPaymentPreferenceImpl extends BizEntityImpl implements OrderPa
 	@Override
 	public void setPaymentMethodTypeId(PaymentMethodType newPaymentMethodTypeId) {
 		eSet(OrderPackage.Literals.ORDER_PAYMENT_PREFERENCE__PAYMENT_METHOD_TYPE_ID, newPaymentMethodTypeId);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public boolean isPresentFlag() {
-		return (Boolean)eGet(OrderPackage.Literals.ORDER_PAYMENT_PREFERENCE__PRESENT_FLAG, true);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void setPresentFlag(boolean newPresentFlag) {
-		eSet(OrderPackage.Literals.ORDER_PAYMENT_PREFERENCE__PRESENT_FLAG, newPresentFlag);
 	}
 
 	/**
@@ -514,6 +512,26 @@ public class OrderPaymentPreferenceImpl extends BizEntityImpl implements OrderPa
 	 * @generated
 	 */
 	@Override
+	public char getSwipedFlag() {
+		return (Character)eGet(OrderPackage.Literals.ORDER_PAYMENT_PREFERENCE__SWIPED_FLAG, true);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setSwipedFlag(char newSwipedFlag) {
+		eSet(OrderPackage.Literals.ORDER_PAYMENT_PREFERENCE__SWIPED_FLAG, newSwipedFlag);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public StatusItem getStatusId() {
 		return (StatusItem)eGet(OrderPackage.Literals.ORDER_PAYMENT_PREFERENCE__STATUS_ID, true);
 	}
@@ -526,26 +544,6 @@ public class OrderPaymentPreferenceImpl extends BizEntityImpl implements OrderPa
 	@Override
 	public void setStatusId(StatusItem newStatusId) {
 		eSet(OrderPackage.Literals.ORDER_PAYMENT_PREFERENCE__STATUS_ID, newStatusId);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public boolean isSwipedFlag() {
-		return (Boolean)eGet(OrderPackage.Literals.ORDER_PAYMENT_PREFERENCE__SWIPED_FLAG, true);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void setSwipedFlag(boolean newSwipedFlag) {
-		eSet(OrderPackage.Literals.ORDER_PAYMENT_PREFERENCE__SWIPED_FLAG, newSwipedFlag);
 	}
 
 	/**
@@ -614,26 +612,6 @@ public class OrderPaymentPreferenceImpl extends BizEntityImpl implements OrderPa
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
-		switch (operationID) {
-			case OrderPackage.ORDER_PAYMENT_PREFERENCE___ORDER_STATUSS:
-				return orderStatuss();
-			case OrderPackage.ORDER_PAYMENT_PREFERENCE___PAYMENT_GATEWAY_RESPONSES:
-				return paymentGatewayResponses();
-			case OrderPackage.ORDER_PAYMENT_PREFERENCE___PAYMENTS:
-				return payments();
-			case OrderPackage.ORDER_PAYMENT_PREFERENCE___RETURN_ITEM_RESPONSES:
-				return returnItemResponses();
-		}
-		return super.eInvoke(operationID, arguments);
 	}
 
 } //OrderPaymentPreferenceImpl

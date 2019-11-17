@@ -764,8 +764,33 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 		initEAttribute(getJavaResource_ResourceValue(), ecorePackage.getEByteArray(), "resourceValue", null, 0, 1, JavaResource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Create annotations
+		// mimo-ent-format
+		createMimoentformatAnnotations();
 		// mimo-ent-slot
 		createMimoentslotAnnotations();
+	}
+
+	/**
+	 * Initializes the annotations for <b>mimo-ent-format</b>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void createMimoentformatAnnotations() {
+		String source = "mimo-ent-format";
+		addAnnotation
+		  (getJavaResource_ResourceName(),
+		   source,
+		   new String[] {
+			   "type", "id-vlong",
+			   "length", "255"
+		   });
+		addAnnotation
+		  (getJavaResource_ResourceValue(),
+		   source,
+		   new String[] {
+			   "type", "byte-array"
+		   });
 	}
 
 	/**

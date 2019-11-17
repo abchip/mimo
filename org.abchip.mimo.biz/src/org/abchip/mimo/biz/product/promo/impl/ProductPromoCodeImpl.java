@@ -7,7 +7,6 @@
  */
 package org.abchip.mimo.biz.product.promo.impl;
 
-import java.lang.reflect.InvocationTargetException;
 import java.util.Date;
 import java.util.List;
 
@@ -16,7 +15,6 @@ import org.abchip.mimo.biz.product.promo.ProductPromo;
 import org.abchip.mimo.biz.product.promo.ProductPromoCode;
 import org.abchip.mimo.biz.product.promo.PromoPackage;
 import org.abchip.mimo.biz.security.login.UserLogin;
-import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 
 /**
@@ -176,6 +174,26 @@ public class ProductPromoCodeImpl extends BizEntityImpl implements ProductPromoC
 	 * @generated
 	 */
 	@Override
+	public boolean isRequireEmailOrParty() {
+		return (Boolean)eGet(PromoPackage.Literals.PRODUCT_PROMO_CODE__REQUIRE_EMAIL_OR_PARTY, true);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setRequireEmailOrParty(boolean newRequireEmailOrParty) {
+		eSet(PromoPackage.Literals.PRODUCT_PROMO_CODE__REQUIRE_EMAIL_OR_PARTY, newRequireEmailOrParty);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public Date getThruDate() {
 		return (Date)eGet(PromoPackage.Literals.PRODUCT_PROMO_CODE__THRU_DATE, true);
 	}
@@ -314,24 +332,6 @@ public class ProductPromoCodeImpl extends BizEntityImpl implements ProductPromoC
 	 * @generated
 	 */
 	@Override
-	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
-		switch (operationID) {
-			case PromoPackage.PRODUCT_PROMO_CODE___ORDER_PRODUCT_PROMO_CODES:
-				return orderProductPromoCodes();
-			case PromoPackage.PRODUCT_PROMO_CODE___PRODUCT_PROMO_USES:
-				return productPromoUses();
-			case PromoPackage.PRODUCT_PROMO_CODE___SHOPPING_LISTS:
-				return shoppingLists();
-		}
-		return super.eInvoke(operationID, arguments);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public ProductPromo getProductPromoId() {
 		return (ProductPromo)eGet(PromoPackage.Literals.PRODUCT_PROMO_CODE__PRODUCT_PROMO_ID, true);
 	}
@@ -344,26 +344,6 @@ public class ProductPromoCodeImpl extends BizEntityImpl implements ProductPromoC
 	@Override
 	public void setProductPromoId(ProductPromo newProductPromoId) {
 		eSet(PromoPackage.Literals.PRODUCT_PROMO_CODE__PRODUCT_PROMO_ID, newProductPromoId);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public boolean isRequireEmailOrParty() {
-		return (Boolean)eGet(PromoPackage.Literals.PRODUCT_PROMO_CODE__REQUIRE_EMAIL_OR_PARTY, true);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void setRequireEmailOrParty(boolean newRequireEmailOrParty) {
-		eSet(PromoPackage.Literals.PRODUCT_PROMO_CODE__REQUIRE_EMAIL_OR_PARTY, newRequireEmailOrParty);
 	}
 
 	/**

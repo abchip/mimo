@@ -80,7 +80,7 @@ public interface FixedAssetMaint extends BizEntity {
 	 * @return the value of the '<em>Interval Quantity</em>' attribute.
 	 * @see #setIntervalQuantity(BigDecimal)
 	 * @see org.abchip.mimo.biz.accounting.fixedasset.FixedassetPackage#getFixedAssetMaint_IntervalQuantity()
-	 * @model
+	 * @model annotation="mimo-ent-format type='fixed-point' precision='18' scale='6'"
 	 * @generated
 	 */
 	BigDecimal getIntervalQuantity();
@@ -133,6 +133,7 @@ public interface FixedAssetMaint extends BizEntity {
 	 * @see #setMaintHistSeqId(String)
 	 * @see org.abchip.mimo.biz.accounting.fixedasset.FixedassetPackage#getFixedAssetMaint_MaintHistSeqId()
 	 * @model required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
@@ -159,7 +160,7 @@ public interface FixedAssetMaint extends BizEntity {
 	 * @return the value of the '<em>Product Maint Seq Id</em>' attribute.
 	 * @see #setProductMaintSeqId(String)
 	 * @see org.abchip.mimo.biz.accounting.fixedasset.FixedassetPackage#getFixedAssetMaint_ProductMaintSeqId()
-	 * @model
+	 * @model annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	String getProductMaintSeqId();

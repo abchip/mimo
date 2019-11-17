@@ -43,7 +43,7 @@ public interface ProductPriceAction extends BizEntityTyped<ProductPriceActionTyp
 	 * @return the value of the '<em>Amount</em>' attribute.
 	 * @see #setAmount(BigDecimal)
 	 * @see org.abchip.mimo.biz.product.price.PricePackage#getProductPriceAction_Amount()
-	 * @model
+	 * @model annotation="mimo-ent-format type='fixed-point' precision='18' scale='6'"
 	 * @generated
 	 */
 	BigDecimal getAmount();
@@ -70,6 +70,7 @@ public interface ProductPriceAction extends BizEntityTyped<ProductPriceActionTyp
 	 * @see #setProductPriceActionSeqId(String)
 	 * @see org.abchip.mimo.biz.product.price.PricePackage#getProductPriceAction_ProductPriceActionSeqId()
 	 * @model required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
@@ -96,7 +97,7 @@ public interface ProductPriceAction extends BizEntityTyped<ProductPriceActionTyp
 	 * @return the value of the '<em>Rate Code</em>' attribute.
 	 * @see #setRateCode(String)
 	 * @see org.abchip.mimo.biz.product.price.PricePackage#getProductPriceAction_RateCode()
-	 * @model
+	 * @model annotation="mimo-ent-format type='short-varchar' length='60'"
 	 * @generated
 	 */
 	String getRateCode();

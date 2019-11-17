@@ -7,7 +7,6 @@
  */
 package org.abchip.mimo.biz.accounting.budget.impl;
 
-import java.lang.reflect.InvocationTargetException;
 import java.util.List;
 
 import org.abchip.mimo.biz.accounting.budget.Budget;
@@ -15,7 +14,6 @@ import org.abchip.mimo.biz.accounting.budget.BudgetPackage;
 import org.abchip.mimo.biz.accounting.budget.BudgetType;
 import org.abchip.mimo.biz.common.period.CustomTimePeriod;
 import org.abchip.mimo.biz.impl.BizEntityTypedImpl;
-import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 
 /**
@@ -156,20 +154,6 @@ public class BudgetImpl extends BizEntityTypedImpl<BudgetType> implements Budget
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
-		switch (operationID) {
-			case BudgetPackage.BUDGET___BUDGET_SCENARIO_APPLICATIONS:
-				return budgetScenarioApplications();
-		}
-		return super.eInvoke(operationID, arguments);
 	}
 
 	/**

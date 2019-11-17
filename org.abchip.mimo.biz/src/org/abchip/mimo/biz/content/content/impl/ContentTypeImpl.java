@@ -7,14 +7,12 @@
  */
 package org.abchip.mimo.biz.content.content.impl;
 
-import java.lang.reflect.InvocationTargetException;
 import java.util.List;
 
 import org.abchip.mimo.biz.content.content.Content;
 import org.abchip.mimo.biz.content.content.ContentPackage;
 import org.abchip.mimo.biz.content.content.ContentType;
 import org.abchip.mimo.biz.impl.BizEntityTypeImpl;
-import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 
 /**
@@ -172,22 +170,6 @@ public class ContentTypeImpl extends BizEntityTypeImpl<Content> implements Conte
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
-		switch (operationID) {
-			case ContentPackage.CONTENT_TYPE___CHILD_CONTENT_TYPES:
-				return childContentTypes();
-			case ContentPackage.CONTENT_TYPE___CONTENTS:
-				return contents();
-		}
-		return super.eInvoke(operationID, arguments);
 	}
 
 } //ContentTypeImpl

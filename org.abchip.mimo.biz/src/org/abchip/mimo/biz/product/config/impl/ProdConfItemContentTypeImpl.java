@@ -7,14 +7,12 @@
  */
 package org.abchip.mimo.biz.product.config.impl;
 
-import java.lang.reflect.InvocationTargetException;
 import java.util.List;
 
 import org.abchip.mimo.biz.impl.BizEntityTypeImpl;
 import org.abchip.mimo.biz.product.config.ConfigPackage;
 import org.abchip.mimo.biz.product.config.ProdConfItemContent;
 import org.abchip.mimo.biz.product.config.ProdConfItemContentType;
-import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 
 /**
@@ -128,20 +126,6 @@ public class ProdConfItemContentTypeImpl extends BizEntityTypeImpl<ProdConfItemC
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
-		switch (operationID) {
-			case ConfigPackage.PROD_CONF_ITEM_CONTENT_TYPE___CHILD_PROD_CONF_ITEM_CONTENT_TYPES:
-				return childProdConfItemContentTypes();
-		}
-		return super.eInvoke(operationID, arguments);
 	}
 
 	/**

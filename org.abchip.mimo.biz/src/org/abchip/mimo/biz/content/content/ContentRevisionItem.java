@@ -43,6 +43,7 @@ public interface ContentRevisionItem extends BizEntity {
 	 * @see #setContentId(String)
 	 * @see org.abchip.mimo.biz.content.content.ContentPackage#getContentRevisionItem_ContentId()
 	 * @model required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
@@ -70,6 +71,7 @@ public interface ContentRevisionItem extends BizEntity {
 	 * @see #setContentRevisionSeqId(String)
 	 * @see org.abchip.mimo.biz.content.content.ContentPackage#getContentRevisionItem_ContentRevisionSeqId()
 	 * @model required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
@@ -97,6 +99,7 @@ public interface ContentRevisionItem extends BizEntity {
 	 * @see #setItemContentId(String)
 	 * @see org.abchip.mimo.biz.content.content.ContentPackage#getContentRevisionItem_ItemContentId()
 	 * @model required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */

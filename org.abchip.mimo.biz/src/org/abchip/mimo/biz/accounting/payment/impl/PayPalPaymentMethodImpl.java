@@ -22,8 +22,8 @@ import org.eclipse.emf.ecore.EClass;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.PayPalPaymentMethodImpl#isAvsAddr <em>Avs Addr</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.PayPalPaymentMethodImpl#isAvsZip <em>Avs Zip</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.PayPalPaymentMethodImpl#getAvsAddr <em>Avs Addr</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.PayPalPaymentMethodImpl#getAvsZip <em>Avs Zip</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.PayPalPaymentMethodImpl#getCorrelationId <em>Correlation Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.PayPalPaymentMethodImpl#getExpressCheckoutToken <em>Express Checkout Token</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.PayPalPaymentMethodImpl#getPayerId <em>Payer Id</em>}</li>
@@ -57,6 +57,46 @@ public class PayPalPaymentMethodImpl extends BizEntityImpl implements PayPalPaym
 	@Override
 	protected EClass eStaticClass() {
 		return PaymentPackage.Literals.PAY_PAL_PAYMENT_METHOD;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public char getAvsAddr() {
+		return (Character)eGet(PaymentPackage.Literals.PAY_PAL_PAYMENT_METHOD__AVS_ADDR, true);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setAvsAddr(char newAvsAddr) {
+		eSet(PaymentPackage.Literals.PAY_PAL_PAYMENT_METHOD__AVS_ADDR, newAvsAddr);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public char getAvsZip() {
+		return (Character)eGet(PaymentPackage.Literals.PAY_PAL_PAYMENT_METHOD__AVS_ZIP, true);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setAvsZip(char newAvsZip) {
+		eSet(PaymentPackage.Literals.PAY_PAL_PAYMENT_METHOD__AVS_ZIP, newAvsZip);
 	}
 
 	/**
@@ -177,46 +217,6 @@ public class PayPalPaymentMethodImpl extends BizEntityImpl implements PayPalPaym
 	@Override
 	public void setPaymentMethodId(PaymentMethod newPaymentMethodId) {
 		eSet(PaymentPackage.Literals.PAY_PAL_PAYMENT_METHOD__PAYMENT_METHOD_ID, newPaymentMethodId);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public boolean isAvsAddr() {
-		return (Boolean)eGet(PaymentPackage.Literals.PAY_PAL_PAYMENT_METHOD__AVS_ADDR, true);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void setAvsAddr(boolean newAvsAddr) {
-		eSet(PaymentPackage.Literals.PAY_PAL_PAYMENT_METHOD__AVS_ADDR, newAvsAddr);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public boolean isAvsZip() {
-		return (Boolean)eGet(PaymentPackage.Literals.PAY_PAL_PAYMENT_METHOD__AVS_ZIP, true);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void setAvsZip(boolean newAvsZip) {
-		eSet(PaymentPackage.Literals.PAY_PAL_PAYMENT_METHOD__AVS_ZIP, newAvsZip);
 	}
 
 	/**

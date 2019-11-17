@@ -12,7 +12,6 @@ import org.abchip.mimo.util.UtilPackage;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EEnum;
-import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
@@ -84,24 +83,6 @@ public interface EntityPackage extends EPackage {
 	int ENTITY_FEATURE_COUNT = 0;
 
 	/**
-	 * The operation id for the '<em>Isa</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ENTITY___ISA = 0;
-
-	/**
-	 * The number of operations of the '<em>Entity</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ENTITY_OPERATION_COUNT = 1;
-
-	/**
 	 * The meta object id for the '{@link org.abchip.mimo.entity.impl.CardinalityImpl <em>Cardinality</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -137,42 +118,6 @@ public interface EntityPackage extends EPackage {
 	 * @ordered
 	 */
 	int CARDINALITY_FEATURE_COUNT = ENTITY_FEATURE_COUNT + 2;
-
-	/**
-	 * The operation id for the '<em>Isa</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CARDINALITY___ISA = ENTITY___ISA;
-
-	/**
-	 * The operation id for the '<em>Is Mandatory</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CARDINALITY___IS_MANDATORY = ENTITY_OPERATION_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Is Multiple</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CARDINALITY___IS_MULTIPLE = ENTITY_OPERATION_COUNT + 1;
-
-	/**
-	 * The number of operations of the '<em>Cardinality</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CARDINALITY_OPERATION_COUNT = ENTITY_OPERATION_COUNT + 2;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.entity.impl.DefaultImpl <em>Default</em>}' class.
@@ -212,42 +157,6 @@ public interface EntityPackage extends EPackage {
 	int DEFAULT_FEATURE_COUNT = ENTITY_FEATURE_COUNT + 2;
 
 	/**
-	 * The operation id for the '<em>Isa</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DEFAULT___ISA = ENTITY___ISA;
-
-	/**
-	 * The operation id for the '<em>Clear</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DEFAULT___CLEAR = ENTITY_OPERATION_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Is Empty</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DEFAULT___IS_EMPTY = ENTITY_OPERATION_COUNT + 1;
-
-	/**
-	 * The number of operations of the '<em>Default</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DEFAULT_OPERATION_COUNT = ENTITY_OPERATION_COUNT + 2;
-
-	/**
 	 * The meta object id for the '{@link org.abchip.mimo.entity.impl.DomainImpl <em>Domain</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -285,24 +194,6 @@ public interface EntityPackage extends EPackage {
 	int DOMAIN_FEATURE_COUNT = ENTITY_FEATURE_COUNT + 2;
 
 	/**
-	 * The operation id for the '<em>Isa</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DOMAIN___ISA = ENTITY___ISA;
-
-	/**
-	 * The number of operations of the '<em>Domain</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DOMAIN_OPERATION_COUNT = ENTITY_OPERATION_COUNT + 0;
-
-	/**
 	 * The meta object id for the '{@link org.abchip.mimo.entity.impl.EntityContainerImpl <em>Container</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -338,24 +229,6 @@ public interface EntityPackage extends EPackage {
 	 * @ordered
 	 */
 	int ENTITY_CONTAINER_FEATURE_COUNT = ENTITY_FEATURE_COUNT + 2;
-
-	/**
-	 * The operation id for the '<em>Isa</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ENTITY_CONTAINER___ISA = ENTITY___ISA;
-
-	/**
-	 * The number of operations of the '<em>Container</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ENTITY_CONTAINER_OPERATION_COUNT = ENTITY_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.entity.impl.EntityInfoImpl <em>Info</em>}' class.
@@ -413,15 +286,6 @@ public interface EntityPackage extends EPackage {
 	int ENTITY_INFO_FEATURE_COUNT = 4;
 
 	/**
-	 * The number of operations of the '<em>Info</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ENTITY_INFO_OPERATION_COUNT = 0;
-
-	/**
 	 * The meta object id for the '{@link org.abchip.mimo.entity.EntityIterator <em>Iterator</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -449,51 +313,6 @@ public interface EntityPackage extends EPackage {
 	 * @ordered
 	 */
 	int ENTITY_NAMEABLE_FEATURE_COUNT = ENTITY_FEATURE_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Isa</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ENTITY_NAMEABLE___ISA = ENTITY___ISA;
-
-	/**
-	 * The operation id for the '<em>Get Name</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ENTITY_NAMEABLE___GET_NAME = ENTITY_OPERATION_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Get URI</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ENTITY_NAMEABLE___GET_URI = ENTITY_OPERATION_COUNT + 1;
-
-	/**
-	 * The operation id for the '<em>Is Proxy</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ENTITY_NAMEABLE___IS_PROXY = ENTITY_OPERATION_COUNT + 2;
-
-	/**
-	 * The number of operations of the '<em>Nameable</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ENTITY_NAMEABLE_OPERATION_COUNT = ENTITY_OPERATION_COUNT + 3;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.entity.impl.EntityEnumImpl <em>Enum</em>}' class.
@@ -533,60 +352,6 @@ public interface EntityPackage extends EPackage {
 	int ENTITY_ENUM_FEATURE_COUNT = ENTITY_NAMEABLE_FEATURE_COUNT + 2;
 
 	/**
-	 * The operation id for the '<em>Isa</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ENTITY_ENUM___ISA = ENTITY_NAMEABLE___ISA;
-
-	/**
-	 * The operation id for the '<em>Get Name</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ENTITY_ENUM___GET_NAME = ENTITY_NAMEABLE___GET_NAME;
-
-	/**
-	 * The operation id for the '<em>Get URI</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ENTITY_ENUM___GET_URI = ENTITY_NAMEABLE___GET_URI;
-
-	/**
-	 * The operation id for the '<em>Is Proxy</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ENTITY_ENUM___IS_PROXY = ENTITY_NAMEABLE___IS_PROXY;
-
-	/**
-	 * The operation id for the '<em>Get Text</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ENTITY_ENUM___GET_TEXT = ENTITY_NAMEABLE_OPERATION_COUNT + 0;
-
-	/**
-	 * The number of operations of the '<em>Enum</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ENTITY_ENUM_OPERATION_COUNT = ENTITY_NAMEABLE_OPERATION_COUNT + 1;
-
-	/**
 	 * The number of structural features of the '<em>Iterator</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -594,42 +359,6 @@ public interface EntityPackage extends EPackage {
 	 * @ordered
 	 */
 	int ENTITY_ITERATOR_FEATURE_COUNT = UtilPackage.JAVA_ITERATOR_FEATURE_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Has Next</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ENTITY_ITERATOR___HAS_NEXT = UtilPackage.JAVA_ITERATOR_OPERATION_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Next</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ENTITY_ITERATOR___NEXT = UtilPackage.JAVA_ITERATOR_OPERATION_COUNT + 1;
-
-	/**
-	 * The operation id for the '<em>Remove</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ENTITY_ITERATOR___REMOVE = UtilPackage.JAVA_ITERATOR_OPERATION_COUNT + 2;
-
-	/**
-	 * The number of operations of the '<em>Iterator</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ENTITY_ITERATOR_OPERATION_COUNT = UtilPackage.JAVA_ITERATOR_OPERATION_COUNT + 3;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.entity.impl.FacetImpl <em>Facet</em>}' class.
@@ -691,60 +420,6 @@ public interface EntityPackage extends EPackage {
 	int ENTITY_TYPED_FEATURE_COUNT = ENTITY_NAMEABLE_FEATURE_COUNT + 0;
 
 	/**
-	 * The operation id for the '<em>Isa</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ENTITY_TYPED___ISA = ENTITY_NAMEABLE___ISA;
-
-	/**
-	 * The operation id for the '<em>Get Name</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ENTITY_TYPED___GET_NAME = ENTITY_NAMEABLE___GET_NAME;
-
-	/**
-	 * The operation id for the '<em>Get URI</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ENTITY_TYPED___GET_URI = ENTITY_NAMEABLE___GET_URI;
-
-	/**
-	 * The operation id for the '<em>Is Proxy</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ENTITY_TYPED___IS_PROXY = ENTITY_NAMEABLE___IS_PROXY;
-
-	/**
-	 * The operation id for the '<em>Get Type</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ENTITY_TYPED___GET_TYPE = ENTITY_NAMEABLE_OPERATION_COUNT + 0;
-
-	/**
-	 * The number of operations of the '<em>Typed</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ENTITY_TYPED_OPERATION_COUNT = ENTITY_NAMEABLE_OPERATION_COUNT + 1;
-
-	/**
 	 * The meta object id for the '{@link org.abchip.mimo.entity.impl.EntityTypeImpl <em>Type</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -773,87 +448,6 @@ public interface EntityPackage extends EPackage {
 	int ENTITY_TYPE_FEATURE_COUNT = ENTITY_NAMEABLE_FEATURE_COUNT + 1;
 
 	/**
-	 * The operation id for the '<em>Isa</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ENTITY_TYPE___ISA = ENTITY_NAMEABLE___ISA;
-
-	/**
-	 * The operation id for the '<em>Get Name</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ENTITY_TYPE___GET_NAME = ENTITY_NAMEABLE___GET_NAME;
-
-	/**
-	 * The operation id for the '<em>Get URI</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ENTITY_TYPE___GET_URI = ENTITY_NAMEABLE___GET_URI;
-
-	/**
-	 * The operation id for the '<em>Is Proxy</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ENTITY_TYPE___IS_PROXY = ENTITY_NAMEABLE___IS_PROXY;
-
-	/**
-	 * The operation id for the '<em>Get Frame</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ENTITY_TYPE___GET_FRAME = ENTITY_NAMEABLE_OPERATION_COUNT + 1;
-
-	/**
-	 * The operation id for the '<em>Get Type Id</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ENTITY_TYPE___GET_TYPE_ID = ENTITY_NAMEABLE_OPERATION_COUNT + 2;
-
-	/**
-	 * The operation id for the '<em>Has Table</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ENTITY_TYPE___HAS_TABLE = ENTITY_NAMEABLE_OPERATION_COUNT + 3;
-
-	/**
-	 * The operation id for the '<em>Get Text</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ENTITY_TYPE___GET_TEXT = ENTITY_NAMEABLE_OPERATION_COUNT + 4;
-
-	/**
-	 * The number of operations of the '<em>Type</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ENTITY_TYPE_OPERATION_COUNT = ENTITY_NAMEABLE_OPERATION_COUNT + 5;
-
-	/**
 	 * The number of structural features of the '<em>Facet</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -861,24 +455,6 @@ public interface EntityPackage extends EPackage {
 	 * @ordered
 	 */
 	int FACET_FEATURE_COUNT = ENTITY_FEATURE_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Isa</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FACET___ISA = ENTITY___ISA;
-
-	/**
-	 * The number of operations of the '<em>Facet</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FACET_OPERATION_COUNT = ENTITY_OPERATION_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Abstract</b></em>' attribute.
@@ -971,105 +547,6 @@ public interface EntityPackage extends EPackage {
 	int FRAME_FEATURE_COUNT = ENTITY_NAMEABLE_FEATURE_COUNT + 9;
 
 	/**
-	 * The operation id for the '<em>Isa</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FRAME___ISA = ENTITY_NAMEABLE___ISA;
-
-	/**
-	 * The operation id for the '<em>Get Name</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FRAME___GET_NAME = ENTITY_NAMEABLE___GET_NAME;
-
-	/**
-	 * The operation id for the '<em>Get URI</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FRAME___GET_URI = ENTITY_NAMEABLE___GET_URI;
-
-	/**
-	 * The operation id for the '<em>Is Proxy</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FRAME___IS_PROXY = ENTITY_NAMEABLE___IS_PROXY;
-
-	/**
-	 * The operation id for the '<em>Ako</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FRAME___AKO = ENTITY_NAMEABLE_OPERATION_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Create Entity</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FRAME___CREATE_ENTITY = ENTITY_NAMEABLE_OPERATION_COUNT + 1;
-
-	/**
-	 * The operation id for the '<em>Get Slot</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FRAME___GET_SLOT__STRING = ENTITY_NAMEABLE_OPERATION_COUNT + 2;
-
-	/**
-	 * The operation id for the '<em>Get Super Frames</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FRAME___GET_SUPER_FRAMES = ENTITY_NAMEABLE_OPERATION_COUNT + 3;
-
-	/**
-	 * The operation id for the '<em>Get Value</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FRAME___GET_VALUE__ENTITY_STRING_BOOLEAN = ENTITY_NAMEABLE_OPERATION_COUNT + 4;
-
-	/**
-	 * The operation id for the '<em>Set Value</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FRAME___SET_VALUE__ENTITY_STRING_OBJECT = ENTITY_NAMEABLE_OPERATION_COUNT + 5;
-
-	/**
-	 * The number of operations of the '<em>Frame</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FRAME_OPERATION_COUNT = ENTITY_NAMEABLE_OPERATION_COUNT + 6;
-
-	/**
 	 * The number of structural features of the '<em>Frame Manager</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1079,60 +556,6 @@ public interface EntityPackage extends EPackage {
 	int FRAME_MANAGER_FEATURE_COUNT = 0;
 
 	/**
-	 * The operation id for the '<em>Create Proxy</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FRAME_MANAGER___CREATE_PROXY__FRAME_STRING = 0;
-
-	/**
-	 * The operation id for the '<em>Create Proxy</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FRAME_MANAGER___CREATE_PROXY__CLASS_STRING = 1;
-
-	/**
-	 * The operation id for the '<em>Get Frame Reader</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FRAME_MANAGER___GET_FRAME_READER__CONTEXTPROVIDER = 2;
-
-	/**
-	 * The operation id for the '<em>Get Frame</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FRAME_MANAGER___GET_FRAME__STRING = 3;
-
-	/**
-	 * The operation id for the '<em>Get Frame</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FRAME_MANAGER___GET_FRAME__CLASS = 4;
-
-	/**
-	 * The number of operations of the '<em>Frame Manager</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FRAME_MANAGER_OPERATION_COUNT = 5;
-
-	/**
 	 * The number of structural features of the '<em>Nameable</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1140,24 +563,6 @@ public interface EntityPackage extends EPackage {
 	 * @ordered
 	 */
 	int NAMEABLE_FEATURE_COUNT = 0;
-
-	/**
-	 * The operation id for the '<em>Get Name</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int NAMEABLE___GET_NAME = 0;
-
-	/**
-	 * The number of operations of the '<em>Nameable</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int NAMEABLE_OPERATION_COUNT = 1;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.entity.impl.SlotImpl <em>Slot</em>}' class.
@@ -1269,114 +674,6 @@ public interface EntityPackage extends EPackage {
 	int SLOT_FEATURE_COUNT = ENTITY_NAMEABLE_FEATURE_COUNT + 10;
 
 	/**
-	 * The operation id for the '<em>Isa</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SLOT___ISA = ENTITY_NAMEABLE___ISA;
-
-	/**
-	 * The operation id for the '<em>Get Name</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SLOT___GET_NAME = ENTITY_NAMEABLE___GET_NAME;
-
-	/**
-	 * The operation id for the '<em>Get URI</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SLOT___GET_URI = ENTITY_NAMEABLE___GET_URI;
-
-	/**
-	 * The operation id for the '<em>Is Proxy</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SLOT___IS_PROXY = ENTITY_NAMEABLE___IS_PROXY;
-
-	/**
-	 * The operation id for the '<em>Get Text</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SLOT___GET_TEXT = ENTITY_NAMEABLE_OPERATION_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Get Value</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SLOT___GET_VALUE__STRING = ENTITY_NAMEABLE_OPERATION_COUNT + 1;
-
-	/**
-	 * The operation id for the '<em>Is Boolean</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SLOT___IS_BOOLEAN = ENTITY_NAMEABLE_OPERATION_COUNT + 2;
-
-	/**
-	 * The operation id for the '<em>Is Date</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SLOT___IS_DATE = ENTITY_NAMEABLE_OPERATION_COUNT + 3;
-
-	/**
-	 * The operation id for the '<em>Is Enum</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SLOT___IS_ENUM = ENTITY_NAMEABLE_OPERATION_COUNT + 4;
-
-	/**
-	 * The operation id for the '<em>Is Numeric</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SLOT___IS_NUMERIC = ENTITY_NAMEABLE_OPERATION_COUNT + 5;
-
-	/**
-	 * The operation id for the '<em>Is String</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SLOT___IS_STRING = ENTITY_NAMEABLE_OPERATION_COUNT + 6;
-
-	/**
-	 * The number of operations of the '<em>Slot</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SLOT_OPERATION_COUNT = ENTITY_NAMEABLE_OPERATION_COUNT + 7;
-
-	/**
 	 * The meta object id for the '{@link org.abchip.mimo.entity.Textable <em>Textable</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1394,24 +691,6 @@ public interface EntityPackage extends EPackage {
 	 * @ordered
 	 */
 	int TEXTABLE_FEATURE_COUNT = 0;
-
-	/**
-	 * The operation id for the '<em>Get Text</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TEXTABLE___GET_TEXT = 0;
-
-	/**
-	 * The number of operations of the '<em>Textable</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TEXTABLE_OPERATION_COUNT = 1;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.entity.SerializationType <em>Serialization Type</em>}' enum.
@@ -1457,26 +736,6 @@ public interface EntityPackage extends EPackage {
 	EAttribute getCardinality_Min();
 
 	/**
-	 * Returns the meta object for the '{@link org.abchip.mimo.entity.Cardinality#isMandatory() <em>Is Mandatory</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Is Mandatory</em>' operation.
-	 * @see org.abchip.mimo.entity.Cardinality#isMandatory()
-	 * @generated
-	 */
-	EOperation getCardinality__IsMandatory();
-
-	/**
-	 * Returns the meta object for the '{@link org.abchip.mimo.entity.Cardinality#isMultiple() <em>Is Multiple</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Is Multiple</em>' operation.
-	 * @see org.abchip.mimo.entity.Cardinality#isMultiple()
-	 * @generated
-	 */
-	EOperation getCardinality__IsMultiple();
-
-	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.entity.Default <em>Default</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1507,26 +766,6 @@ public interface EntityPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getDefault_Values();
-
-	/**
-	 * Returns the meta object for the '{@link org.abchip.mimo.entity.Default#clear() <em>Clear</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Clear</em>' operation.
-	 * @see org.abchip.mimo.entity.Default#clear()
-	 * @generated
-	 */
-	EOperation getDefault__Clear();
-
-	/**
-	 * Returns the meta object for the '{@link org.abchip.mimo.entity.Default#isEmpty() <em>Is Empty</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Is Empty</em>' operation.
-	 * @see org.abchip.mimo.entity.Default#isEmpty()
-	 * @generated
-	 */
-	EOperation getDefault__IsEmpty();
 
 	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.entity.Domain <em>Domain</em>}'.
@@ -1569,16 +808,6 @@ public interface EntityPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getEntity();
-
-	/**
-	 * Returns the meta object for the '{@link org.abchip.mimo.entity.Entity#isa() <em>Isa</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Isa</em>' operation.
-	 * @see org.abchip.mimo.entity.Entity#isa()
-	 * @generated
-	 */
-	EOperation getEntity__Isa();
 
 	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.entity.EntityContainer <em>Container</em>}'.
@@ -1709,36 +938,6 @@ public interface EntityPackage extends EPackage {
 	EClass getEntityIterator();
 
 	/**
-	 * Returns the meta object for the '{@link org.abchip.mimo.entity.EntityIterator#hasNext() <em>Has Next</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Has Next</em>' operation.
-	 * @see org.abchip.mimo.entity.EntityIterator#hasNext()
-	 * @generated
-	 */
-	EOperation getEntityIterator__HasNext();
-
-	/**
-	 * Returns the meta object for the '{@link org.abchip.mimo.entity.EntityIterator#next() <em>Next</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Next</em>' operation.
-	 * @see org.abchip.mimo.entity.EntityIterator#next()
-	 * @generated
-	 */
-	EOperation getEntityIterator__Next();
-
-	/**
-	 * Returns the meta object for the '{@link org.abchip.mimo.entity.EntityIterator#remove() <em>Remove</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Remove</em>' operation.
-	 * @see org.abchip.mimo.entity.EntityIterator#remove()
-	 * @generated
-	 */
-	EOperation getEntityIterator__Remove();
-
-	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.entity.EntityNameable <em>Nameable</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1749,26 +948,6 @@ public interface EntityPackage extends EPackage {
 	EClass getEntityNameable();
 
 	/**
-	 * Returns the meta object for the '{@link org.abchip.mimo.entity.EntityNameable#getURI() <em>Get URI</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Get URI</em>' operation.
-	 * @see org.abchip.mimo.entity.EntityNameable#getURI()
-	 * @generated
-	 */
-	EOperation getEntityNameable__GetURI();
-
-	/**
-	 * Returns the meta object for the '{@link org.abchip.mimo.entity.EntityNameable#isProxy() <em>Is Proxy</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Is Proxy</em>' operation.
-	 * @see org.abchip.mimo.entity.EntityNameable#isProxy()
-	 * @generated
-	 */
-	EOperation getEntityNameable__IsProxy();
-
-	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.entity.EntityTyped <em>Typed</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1777,16 +956,6 @@ public interface EntityPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getEntityTyped();
-
-	/**
-	 * Returns the meta object for the '{@link org.abchip.mimo.entity.EntityTyped#getType() <em>Get Type</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Get Type</em>' operation.
-	 * @see org.abchip.mimo.entity.EntityTyped#getType()
-	 * @generated
-	 */
-	EOperation getEntityTyped__GetType();
 
 	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.entity.EntityType <em>Type</em>}'.
@@ -1808,46 +977,6 @@ public interface EntityPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getEntityType_Slots();
-
-	/**
-	 * Returns the meta object for the '{@link org.abchip.mimo.entity.EntityType#getFrame() <em>Get Frame</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Get Frame</em>' operation.
-	 * @see org.abchip.mimo.entity.EntityType#getFrame()
-	 * @generated
-	 */
-	EOperation getEntityType__GetFrame();
-
-	/**
-	 * Returns the meta object for the '{@link org.abchip.mimo.entity.EntityType#getTypeId() <em>Get Type Id</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Get Type Id</em>' operation.
-	 * @see org.abchip.mimo.entity.EntityType#getTypeId()
-	 * @generated
-	 */
-	EOperation getEntityType__GetTypeId();
-
-	/**
-	 * Returns the meta object for the '{@link org.abchip.mimo.entity.EntityType#hasTable() <em>Has Table</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Has Table</em>' operation.
-	 * @see org.abchip.mimo.entity.EntityType#hasTable()
-	 * @generated
-	 */
-	EOperation getEntityType__HasTable();
-
-	/**
-	 * Returns the meta object for the '{@link org.abchip.mimo.entity.EntityType#getText() <em>Get Text</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Get Text</em>' operation.
-	 * @see org.abchip.mimo.entity.EntityType#getText()
-	 * @generated
-	 */
-	EOperation getEntityType__GetText();
 
 	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.entity.Facet <em>Facet</em>}'.
@@ -1969,66 +1098,6 @@ public interface EntityPackage extends EPackage {
 	EAttribute getFrame_TextFormula();
 
 	/**
-	 * Returns the meta object for the '{@link org.abchip.mimo.entity.Frame#ako() <em>Ako</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Ako</em>' operation.
-	 * @see org.abchip.mimo.entity.Frame#ako()
-	 * @generated
-	 */
-	EOperation getFrame__Ako();
-
-	/**
-	 * Returns the meta object for the '{@link org.abchip.mimo.entity.Frame#createEntity() <em>Create Entity</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Create Entity</em>' operation.
-	 * @see org.abchip.mimo.entity.Frame#createEntity()
-	 * @generated
-	 */
-	EOperation getFrame__CreateEntity();
-
-	/**
-	 * Returns the meta object for the '{@link org.abchip.mimo.entity.Frame#getSlot(java.lang.String) <em>Get Slot</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Get Slot</em>' operation.
-	 * @see org.abchip.mimo.entity.Frame#getSlot(java.lang.String)
-	 * @generated
-	 */
-	EOperation getFrame__GetSlot__String();
-
-	/**
-	 * Returns the meta object for the '{@link org.abchip.mimo.entity.Frame#getSuperFrames() <em>Get Super Frames</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Get Super Frames</em>' operation.
-	 * @see org.abchip.mimo.entity.Frame#getSuperFrames()
-	 * @generated
-	 */
-	EOperation getFrame__GetSuperFrames();
-
-	/**
-	 * Returns the meta object for the '{@link org.abchip.mimo.entity.Frame#getValue(org.abchip.mimo.entity.Entity, java.lang.String, boolean) <em>Get Value</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Get Value</em>' operation.
-	 * @see org.abchip.mimo.entity.Frame#getValue(org.abchip.mimo.entity.Entity, java.lang.String, boolean)
-	 * @generated
-	 */
-	EOperation getFrame__GetValue__Entity_String_boolean();
-
-	/**
-	 * Returns the meta object for the '{@link org.abchip.mimo.entity.Frame#setValue(org.abchip.mimo.entity.Entity, java.lang.String, java.lang.Object) <em>Set Value</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Set Value</em>' operation.
-	 * @see org.abchip.mimo.entity.Frame#setValue(org.abchip.mimo.entity.Entity, java.lang.String, java.lang.Object)
-	 * @generated
-	 */
-	EOperation getFrame__SetValue__Entity_String_Object();
-
-	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.entity.FrameManager <em>Frame Manager</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2039,56 +1108,6 @@ public interface EntityPackage extends EPackage {
 	EClass getFrameManager();
 
 	/**
-	 * Returns the meta object for the '{@link org.abchip.mimo.entity.FrameManager#createProxy(org.abchip.mimo.entity.Frame, java.lang.String) <em>Create Proxy</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Create Proxy</em>' operation.
-	 * @see org.abchip.mimo.entity.FrameManager#createProxy(org.abchip.mimo.entity.Frame, java.lang.String)
-	 * @generated
-	 */
-	EOperation getFrameManager__CreateProxy__Frame_String();
-
-	/**
-	 * Returns the meta object for the '{@link org.abchip.mimo.entity.FrameManager#createProxy(java.lang.Class, java.lang.String) <em>Create Proxy</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Create Proxy</em>' operation.
-	 * @see org.abchip.mimo.entity.FrameManager#createProxy(java.lang.Class, java.lang.String)
-	 * @generated
-	 */
-	EOperation getFrameManager__CreateProxy__Class_String();
-
-	/**
-	 * Returns the meta object for the '{@link org.abchip.mimo.entity.FrameManager#getFrameReader(org.abchip.mimo.context.ContextProvider) <em>Get Frame Reader</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Get Frame Reader</em>' operation.
-	 * @see org.abchip.mimo.entity.FrameManager#getFrameReader(org.abchip.mimo.context.ContextProvider)
-	 * @generated
-	 */
-	EOperation getFrameManager__GetFrameReader__ContextProvider();
-
-	/**
-	 * Returns the meta object for the '{@link org.abchip.mimo.entity.FrameManager#getFrame(java.lang.String) <em>Get Frame</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Get Frame</em>' operation.
-	 * @see org.abchip.mimo.entity.FrameManager#getFrame(java.lang.String)
-	 * @generated
-	 */
-	EOperation getFrameManager__GetFrame__String();
-
-	/**
-	 * Returns the meta object for the '{@link org.abchip.mimo.entity.FrameManager#getFrame(java.lang.Class) <em>Get Frame</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Get Frame</em>' operation.
-	 * @see org.abchip.mimo.entity.FrameManager#getFrame(java.lang.Class)
-	 * @generated
-	 */
-	EOperation getFrameManager__GetFrame__Class();
-
-	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.entity.Nameable <em>Nameable</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2097,16 +1116,6 @@ public interface EntityPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getNameable();
-
-	/**
-	 * Returns the meta object for the '{@link org.abchip.mimo.entity.Nameable#getName() <em>Get Name</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Get Name</em>' operation.
-	 * @see org.abchip.mimo.entity.Nameable#getName()
-	 * @generated
-	 */
-	EOperation getNameable__GetName();
 
 	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.entity.Slot <em>Slot</em>}'.
@@ -2174,66 +1183,6 @@ public interface EntityPackage extends EPackage {
 	EAttribute getSlot_Text();
 
 	/**
-	 * Returns the meta object for the '{@link org.abchip.mimo.entity.Slot#getValue(java.lang.String) <em>Get Value</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Get Value</em>' operation.
-	 * @see org.abchip.mimo.entity.Slot#getValue(java.lang.String)
-	 * @generated
-	 */
-	EOperation getSlot__GetValue__String();
-
-	/**
-	 * Returns the meta object for the '{@link org.abchip.mimo.entity.Slot#isBoolean() <em>Is Boolean</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Is Boolean</em>' operation.
-	 * @see org.abchip.mimo.entity.Slot#isBoolean()
-	 * @generated
-	 */
-	EOperation getSlot__IsBoolean();
-
-	/**
-	 * Returns the meta object for the '{@link org.abchip.mimo.entity.Slot#isDate() <em>Is Date</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Is Date</em>' operation.
-	 * @see org.abchip.mimo.entity.Slot#isDate()
-	 * @generated
-	 */
-	EOperation getSlot__IsDate();
-
-	/**
-	 * Returns the meta object for the '{@link org.abchip.mimo.entity.Slot#isEnum() <em>Is Enum</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Is Enum</em>' operation.
-	 * @see org.abchip.mimo.entity.Slot#isEnum()
-	 * @generated
-	 */
-	EOperation getSlot__IsEnum();
-
-	/**
-	 * Returns the meta object for the '{@link org.abchip.mimo.entity.Slot#isNumeric() <em>Is Numeric</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Is Numeric</em>' operation.
-	 * @see org.abchip.mimo.entity.Slot#isNumeric()
-	 * @generated
-	 */
-	EOperation getSlot__IsNumeric();
-
-	/**
-	 * Returns the meta object for the '{@link org.abchip.mimo.entity.Slot#isString() <em>Is String</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Is String</em>' operation.
-	 * @see org.abchip.mimo.entity.Slot#isString()
-	 * @generated
-	 */
-	EOperation getSlot__IsString();
-
-	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.entity.Slot#getDefaultValue <em>Default Value</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2299,16 +1248,6 @@ public interface EntityPackage extends EPackage {
 	EClass getTextable();
 
 	/**
-	 * Returns the meta object for the '{@link org.abchip.mimo.entity.Textable#getText() <em>Get Text</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Get Text</em>' operation.
-	 * @see org.abchip.mimo.entity.Textable#getText()
-	 * @generated
-	 */
-	EOperation getTextable__GetText();
-
-	/**
 	 * Returns the meta object for enum '{@link org.abchip.mimo.entity.SerializationType <em>Serialization Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2367,22 +1306,6 @@ public interface EntityPackage extends EPackage {
 		EAttribute CARDINALITY__MIN = eINSTANCE.getCardinality_Min();
 
 		/**
-		 * The meta object literal for the '<em><b>Is Mandatory</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation CARDINALITY___IS_MANDATORY = eINSTANCE.getCardinality__IsMandatory();
-
-		/**
-		 * The meta object literal for the '<em><b>Is Multiple</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation CARDINALITY___IS_MULTIPLE = eINSTANCE.getCardinality__IsMultiple();
-
-		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.entity.impl.DefaultImpl <em>Default</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -2407,22 +1330,6 @@ public interface EntityPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute DEFAULT__VALUES = eINSTANCE.getDefault_Values();
-
-		/**
-		 * The meta object literal for the '<em><b>Clear</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation DEFAULT___CLEAR = eINSTANCE.getDefault__Clear();
-
-		/**
-		 * The meta object literal for the '<em><b>Is Empty</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation DEFAULT___IS_EMPTY = eINSTANCE.getDefault__IsEmpty();
 
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.entity.impl.DomainImpl <em>Domain</em>}' class.
@@ -2459,14 +1366,6 @@ public interface EntityPackage extends EPackage {
 		 * @generated
 		 */
 		EClass ENTITY = eINSTANCE.getEntity();
-
-		/**
-		 * The meta object literal for the '<em><b>Isa</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation ENTITY___ISA = eINSTANCE.getEntity__Isa();
 
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.entity.impl.EntityContainerImpl <em>Container</em>}' class.
@@ -2573,30 +1472,6 @@ public interface EntityPackage extends EPackage {
 		EClass ENTITY_ITERATOR = eINSTANCE.getEntityIterator();
 
 		/**
-		 * The meta object literal for the '<em><b>Has Next</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation ENTITY_ITERATOR___HAS_NEXT = eINSTANCE.getEntityIterator__HasNext();
-
-		/**
-		 * The meta object literal for the '<em><b>Next</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation ENTITY_ITERATOR___NEXT = eINSTANCE.getEntityIterator__Next();
-
-		/**
-		 * The meta object literal for the '<em><b>Remove</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation ENTITY_ITERATOR___REMOVE = eINSTANCE.getEntityIterator__Remove();
-
-		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.entity.impl.EntityNameableImpl <em>Nameable</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -2607,22 +1482,6 @@ public interface EntityPackage extends EPackage {
 		EClass ENTITY_NAMEABLE = eINSTANCE.getEntityNameable();
 
 		/**
-		 * The meta object literal for the '<em><b>Get URI</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation ENTITY_NAMEABLE___GET_URI = eINSTANCE.getEntityNameable__GetURI();
-
-		/**
-		 * The meta object literal for the '<em><b>Is Proxy</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation ENTITY_NAMEABLE___IS_PROXY = eINSTANCE.getEntityNameable__IsProxy();
-
-		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.entity.impl.EntityTypedImpl <em>Typed</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -2631,14 +1490,6 @@ public interface EntityPackage extends EPackage {
 		 * @generated
 		 */
 		EClass ENTITY_TYPED = eINSTANCE.getEntityTyped();
-
-		/**
-		 * The meta object literal for the '<em><b>Get Type</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation ENTITY_TYPED___GET_TYPE = eINSTANCE.getEntityTyped__GetType();
 
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.entity.impl.EntityTypeImpl <em>Type</em>}' class.
@@ -2657,38 +1508,6 @@ public interface EntityPackage extends EPackage {
 		 * @generated
 		 */
 		EReference ENTITY_TYPE__SLOTS = eINSTANCE.getEntityType_Slots();
-
-		/**
-		 * The meta object literal for the '<em><b>Get Frame</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation ENTITY_TYPE___GET_FRAME = eINSTANCE.getEntityType__GetFrame();
-
-		/**
-		 * The meta object literal for the '<em><b>Get Type Id</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation ENTITY_TYPE___GET_TYPE_ID = eINSTANCE.getEntityType__GetTypeId();
-
-		/**
-		 * The meta object literal for the '<em><b>Has Table</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation ENTITY_TYPE___HAS_TABLE = eINSTANCE.getEntityType__HasTable();
-
-		/**
-		 * The meta object literal for the '<em><b>Get Text</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation ENTITY_TYPE___GET_TEXT = eINSTANCE.getEntityType__GetText();
 
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.entity.impl.FacetImpl <em>Facet</em>}' class.
@@ -2783,54 +1602,6 @@ public interface EntityPackage extends EPackage {
 		EAttribute FRAME__TEXT_FORMULA = eINSTANCE.getFrame_TextFormula();
 
 		/**
-		 * The meta object literal for the '<em><b>Ako</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation FRAME___AKO = eINSTANCE.getFrame__Ako();
-
-		/**
-		 * The meta object literal for the '<em><b>Create Entity</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation FRAME___CREATE_ENTITY = eINSTANCE.getFrame__CreateEntity();
-
-		/**
-		 * The meta object literal for the '<em><b>Get Slot</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation FRAME___GET_SLOT__STRING = eINSTANCE.getFrame__GetSlot__String();
-
-		/**
-		 * The meta object literal for the '<em><b>Get Super Frames</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation FRAME___GET_SUPER_FRAMES = eINSTANCE.getFrame__GetSuperFrames();
-
-		/**
-		 * The meta object literal for the '<em><b>Get Value</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation FRAME___GET_VALUE__ENTITY_STRING_BOOLEAN = eINSTANCE.getFrame__GetValue__Entity_String_boolean();
-
-		/**
-		 * The meta object literal for the '<em><b>Set Value</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation FRAME___SET_VALUE__ENTITY_STRING_OBJECT = eINSTANCE.getFrame__SetValue__Entity_String_Object();
-
-		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.entity.FrameManager <em>Frame Manager</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -2841,46 +1612,6 @@ public interface EntityPackage extends EPackage {
 		EClass FRAME_MANAGER = eINSTANCE.getFrameManager();
 
 		/**
-		 * The meta object literal for the '<em><b>Create Proxy</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation FRAME_MANAGER___CREATE_PROXY__FRAME_STRING = eINSTANCE.getFrameManager__CreateProxy__Frame_String();
-
-		/**
-		 * The meta object literal for the '<em><b>Create Proxy</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation FRAME_MANAGER___CREATE_PROXY__CLASS_STRING = eINSTANCE.getFrameManager__CreateProxy__Class_String();
-
-		/**
-		 * The meta object literal for the '<em><b>Get Frame Reader</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation FRAME_MANAGER___GET_FRAME_READER__CONTEXTPROVIDER = eINSTANCE.getFrameManager__GetFrameReader__ContextProvider();
-
-		/**
-		 * The meta object literal for the '<em><b>Get Frame</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation FRAME_MANAGER___GET_FRAME__STRING = eINSTANCE.getFrameManager__GetFrame__String();
-
-		/**
-		 * The meta object literal for the '<em><b>Get Frame</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation FRAME_MANAGER___GET_FRAME__CLASS = eINSTANCE.getFrameManager__GetFrame__Class();
-
-		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.entity.Nameable <em>Nameable</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -2889,14 +1620,6 @@ public interface EntityPackage extends EPackage {
 		 * @generated
 		 */
 		EClass NAMEABLE = eINSTANCE.getNameable();
-
-		/**
-		 * The meta object literal for the '<em><b>Get Name</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation NAMEABLE___GET_NAME = eINSTANCE.getNameable__GetName();
 
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.entity.impl.SlotImpl <em>Slot</em>}' class.
@@ -2949,54 +1672,6 @@ public interface EntityPackage extends EPackage {
 		EAttribute SLOT__TEXT = eINSTANCE.getSlot_Text();
 
 		/**
-		 * The meta object literal for the '<em><b>Get Value</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation SLOT___GET_VALUE__STRING = eINSTANCE.getSlot__GetValue__String();
-
-		/**
-		 * The meta object literal for the '<em><b>Is Boolean</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation SLOT___IS_BOOLEAN = eINSTANCE.getSlot__IsBoolean();
-
-		/**
-		 * The meta object literal for the '<em><b>Is Date</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation SLOT___IS_DATE = eINSTANCE.getSlot__IsDate();
-
-		/**
-		 * The meta object literal for the '<em><b>Is Enum</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation SLOT___IS_ENUM = eINSTANCE.getSlot__IsEnum();
-
-		/**
-		 * The meta object literal for the '<em><b>Is Numeric</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation SLOT___IS_NUMERIC = eINSTANCE.getSlot__IsNumeric();
-
-		/**
-		 * The meta object literal for the '<em><b>Is String</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation SLOT___IS_STRING = eINSTANCE.getSlot__IsString();
-
-		/**
 		 * The meta object literal for the '<em><b>Default Value</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -3045,14 +1720,6 @@ public interface EntityPackage extends EPackage {
 		 * @generated
 		 */
 		EClass TEXTABLE = eINSTANCE.getTextable();
-
-		/**
-		 * The meta object literal for the '<em><b>Get Text</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation TEXTABLE___GET_TEXT = eINSTANCE.getTextable__GetText();
 
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.entity.SerializationType <em>Serialization Type</em>}' enum.

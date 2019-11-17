@@ -42,6 +42,7 @@ public interface LinkedInUser extends BizEntity {
 	 * @see #setLinkedInUserId(String)
 	 * @see org.abchip.mimo.biz.passport.PassportPackage#getLinkedInUser_LinkedInUserId()
 	 * @model id="true" required="true"
+	 *        annotation="mimo-ent-format type='id-vlong' length='255'"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
@@ -68,7 +69,7 @@ public interface LinkedInUser extends BizEntity {
 	 * @return the value of the '<em>Access Token</em>' attribute.
 	 * @see #setAccessToken(String)
 	 * @see org.abchip.mimo.biz.passport.PassportPackage#getLinkedInUser_AccessToken()
-	 * @model
+	 * @model annotation="mimo-ent-format type='url' length='2000'"
 	 * @generated
 	 */
 	String getAccessToken();
@@ -94,7 +95,7 @@ public interface LinkedInUser extends BizEntity {
 	 * @return the value of the '<em>Env Prefix</em>' attribute.
 	 * @see #setEnvPrefix(String)
 	 * @see org.abchip.mimo.biz.passport.PassportPackage#getLinkedInUser_EnvPrefix()
-	 * @model
+	 * @model annotation="mimo-ent-format type='short-varchar' length='60'"
 	 * @generated
 	 */
 	String getEnvPrefix();

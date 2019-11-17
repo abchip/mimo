@@ -43,7 +43,7 @@ public interface QuantityBreak extends BizEntityTyped<QuantityBreakType> {
 	 * @return the value of the '<em>From Quantity</em>' attribute.
 	 * @see #setFromQuantity(BigDecimal)
 	 * @see org.abchip.mimo.biz.product.price.PricePackage#getQuantityBreak_FromQuantity()
-	 * @model
+	 * @model annotation="mimo-ent-format type='fixed-point' precision='18' scale='6'"
 	 * @generated
 	 */
 	BigDecimal getFromQuantity();
@@ -70,6 +70,7 @@ public interface QuantityBreak extends BizEntityTyped<QuantityBreakType> {
 	 * @see #setQuantityBreakId(String)
 	 * @see org.abchip.mimo.biz.product.price.PricePackage#getQuantityBreak_QuantityBreakId()
 	 * @model id="true" required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
@@ -96,7 +97,7 @@ public interface QuantityBreak extends BizEntityTyped<QuantityBreakType> {
 	 * @return the value of the '<em>Thru Quantity</em>' attribute.
 	 * @see #setThruQuantity(BigDecimal)
 	 * @see org.abchip.mimo.biz.product.price.PricePackage#getQuantityBreak_ThruQuantity()
-	 * @model
+	 * @model annotation="mimo-ent-format type='fixed-point' precision='18' scale='6'"
 	 * @generated
 	 */
 	BigDecimal getThruQuantity();
@@ -114,7 +115,8 @@ public interface QuantityBreak extends BizEntityTyped<QuantityBreakType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ShipmentCostEstimate' route='priceBreakId'"
 	 * @generated
 	 */
@@ -123,7 +125,8 @@ public interface QuantityBreak extends BizEntityTyped<QuantityBreakType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ShipmentCostEstimate' route='quantityBreakId'"
 	 * @generated
 	 */
@@ -132,7 +135,8 @@ public interface QuantityBreak extends BizEntityTyped<QuantityBreakType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ShipmentCostEstimate' route='weightBreakId'"
 	 * @generated
 	 */

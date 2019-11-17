@@ -46,6 +46,7 @@ public interface ZipSalesRuleLookup extends BizEntity {
 	 * @see #setCity(String)
 	 * @see org.abchip.mimo.biz.accounting.tax.TaxPackage#getZipSalesRuleLookup_City()
 	 * @model required="true"
+	 *        annotation="mimo-ent-format type='short-varchar' length='60'"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
@@ -73,6 +74,7 @@ public interface ZipSalesRuleLookup extends BizEntity {
 	 * @see #setCounty(String)
 	 * @see org.abchip.mimo.biz.accounting.tax.TaxPackage#getZipSalesRuleLookup_County()
 	 * @model required="true"
+	 *        annotation="mimo-ent-format type='short-varchar' length='60'"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
@@ -100,6 +102,7 @@ public interface ZipSalesRuleLookup extends BizEntity {
 	 * @see #setFromDate(Date)
 	 * @see org.abchip.mimo.biz.accounting.tax.TaxPackage#getZipSalesRuleLookup_FromDate()
 	 * @model required="true"
+	 *        annotation="mimo-ent-format type='date-time'"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
@@ -126,7 +129,7 @@ public interface ZipSalesRuleLookup extends BizEntity {
 	 * @return the value of the '<em>Id Code</em>' attribute.
 	 * @see #setIdCode(String)
 	 * @see org.abchip.mimo.biz.accounting.tax.TaxPackage#getZipSalesRuleLookup_IdCode()
-	 * @model
+	 * @model annotation="mimo-ent-format type='short-varchar' length='60'"
 	 * @generated
 	 */
 	String getIdCode();
@@ -152,7 +155,7 @@ public interface ZipSalesRuleLookup extends BizEntity {
 	 * @return the value of the '<em>Ship Cond</em>' attribute.
 	 * @see #setShipCond(String)
 	 * @see org.abchip.mimo.biz.accounting.tax.TaxPackage#getZipSalesRuleLookup_ShipCond()
-	 * @model
+	 * @model annotation="mimo-ent-format type='long-varchar' length='255'"
 	 * @generated
 	 */
 	String getShipCond();
@@ -179,6 +182,7 @@ public interface ZipSalesRuleLookup extends BizEntity {
 	 * @see #setStateCode(String)
 	 * @see org.abchip.mimo.biz.accounting.tax.TaxPackage#getZipSalesRuleLookup_StateCode()
 	 * @model required="true"
+	 *        annotation="mimo-ent-format type='short-varchar' length='60'"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
@@ -205,7 +209,7 @@ public interface ZipSalesRuleLookup extends BizEntity {
 	 * @return the value of the '<em>Taxable</em>' attribute.
 	 * @see #setTaxable(String)
 	 * @see org.abchip.mimo.biz.accounting.tax.TaxPackage#getZipSalesRuleLookup_Taxable()
-	 * @model
+	 * @model annotation="mimo-ent-format type='short-varchar' length='60'"
 	 * @generated
 	 */
 	String getTaxable();

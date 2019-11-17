@@ -50,7 +50,7 @@ public interface Survey extends BizEntity {
 	 * @return the value of the '<em>Acro Form Content Id</em>' attribute.
 	 * @see #setAcroFormContentId(String)
 	 * @see org.abchip.mimo.biz.content.survey.SurveyPackage#getSurvey_AcroFormContentId()
-	 * @model
+	 * @model annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	String getAcroFormContentId();
@@ -76,7 +76,7 @@ public interface Survey extends BizEntity {
 	 * @return the value of the '<em>Allow Multiple</em>' attribute.
 	 * @see #setAllowMultiple(boolean)
 	 * @see org.abchip.mimo.biz.content.survey.SurveyPackage#getSurvey_AllowMultiple()
-	 * @model
+	 * @model annotation="mimo-ent-format type='indicator' length='1'"
 	 * @generated
 	 */
 	boolean isAllowMultiple();
@@ -102,7 +102,7 @@ public interface Survey extends BizEntity {
 	 * @return the value of the '<em>Allow Update</em>' attribute.
 	 * @see #setAllowUpdate(boolean)
 	 * @see org.abchip.mimo.biz.content.survey.SurveyPackage#getSurvey_AllowUpdate()
-	 * @model
+	 * @model annotation="mimo-ent-format type='indicator' length='1'"
 	 * @generated
 	 */
 	boolean isAllowUpdate();
@@ -128,7 +128,7 @@ public interface Survey extends BizEntity {
 	 * @return the value of the '<em>Comments</em>' attribute.
 	 * @see #setComments(String)
 	 * @see org.abchip.mimo.biz.content.survey.SurveyPackage#getSurvey_Comments()
-	 * @model
+	 * @model annotation="mimo-ent-format type='comment' length='255'"
 	 * @generated
 	 */
 	String getComments();
@@ -154,7 +154,7 @@ public interface Survey extends BizEntity {
 	 * @return the value of the '<em>Description</em>' attribute.
 	 * @see #setDescription(String)
 	 * @see org.abchip.mimo.biz.content.survey.SurveyPackage#getSurvey_Description()
-	 * @model
+	 * @model annotation="mimo-ent-format type='description' length='255'"
 	 * @generated
 	 */
 	String getDescription();
@@ -180,7 +180,7 @@ public interface Survey extends BizEntity {
 	 * @return the value of the '<em>Is Anonymous</em>' attribute.
 	 * @see #setIsAnonymous(boolean)
 	 * @see org.abchip.mimo.biz.content.survey.SurveyPackage#getSurvey_IsAnonymous()
-	 * @model
+	 * @model annotation="mimo-ent-format type='indicator' length='1'"
 	 * @generated
 	 */
 	boolean isIsAnonymous();
@@ -206,7 +206,7 @@ public interface Survey extends BizEntity {
 	 * @return the value of the '<em>Response Service</em>' attribute.
 	 * @see #setResponseService(String)
 	 * @see org.abchip.mimo.biz.content.survey.SurveyPackage#getSurvey_ResponseService()
-	 * @model
+	 * @model annotation="mimo-ent-format type='long-varchar' length='255'"
 	 * @generated
 	 */
 	String getResponseService();
@@ -232,7 +232,7 @@ public interface Survey extends BizEntity {
 	 * @return the value of the '<em>Submit Caption</em>' attribute.
 	 * @see #setSubmitCaption(String)
 	 * @see org.abchip.mimo.biz.content.survey.SurveyPackage#getSurvey_SubmitCaption()
-	 * @model
+	 * @model annotation="mimo-ent-format type='short-varchar' length='60'"
 	 * @generated
 	 */
 	String getSubmitCaption();
@@ -259,6 +259,7 @@ public interface Survey extends BizEntity {
 	 * @see #setSurveyId(String)
 	 * @see org.abchip.mimo.biz.content.survey.SurveyPackage#getSurvey_SurveyId()
 	 * @model id="true" required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
@@ -285,7 +286,7 @@ public interface Survey extends BizEntity {
 	 * @return the value of the '<em>Survey Name</em>' attribute.
 	 * @see #setSurveyName(String)
 	 * @see org.abchip.mimo.biz.content.survey.SurveyPackage#getSurvey_SurveyName()
-	 * @model
+	 * @model annotation="mimo-ent-format type='name' length='100'"
 	 * @generated
 	 */
 	String getSurveyName();
@@ -311,7 +312,9 @@ public interface Survey extends BizEntity {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Survey Multi Resps</em>' attribute list.
 	 * @see org.abchip.mimo.biz.content.survey.SurveyPackage#getSurvey_SurveyMultiResps()
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='SurveyMultiResp'"
 	 * @generated
 	 */
@@ -328,7 +331,9 @@ public interface Survey extends BizEntity {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Survey Pages</em>' attribute list.
 	 * @see org.abchip.mimo.biz.content.survey.SurveyPackage#getSurvey_SurveyPages()
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='SurveyPage'"
 	 * @generated
 	 */
@@ -337,7 +342,8 @@ public interface Survey extends BizEntity {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='DataResource' route='surveyId'"
 	 * @generated
 	 */
@@ -346,7 +352,8 @@ public interface Survey extends BizEntity {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ProductStoreFinActSetting' route='purchaseSurveyId'"
 	 * @generated
 	 */
@@ -355,7 +362,8 @@ public interface Survey extends BizEntity {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ProductStoreSurveyAppl' route='surveyId'"
 	 * @generated
 	 */
@@ -364,7 +372,8 @@ public interface Survey extends BizEntity {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='SurveyResponse' route='surveyId'"
 	 * @generated
 	 */

@@ -7,13 +7,11 @@
  */
 package org.abchip.mimo.biz.order.return_.impl;
 
-import java.lang.reflect.InvocationTargetException;
 import java.util.List;
 
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.order.return_.ReturnPackage;
 import org.abchip.mimo.biz.order.return_.ReturnType;
-import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 
 /**
@@ -138,22 +136,6 @@ public class ReturnTypeImpl extends BizEntityImpl implements ReturnType {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
-		switch (operationID) {
-			case ReturnPackage.RETURN_TYPE___RETURN_ADJUSTMENTS:
-				return returnAdjustments();
-			case ReturnPackage.RETURN_TYPE___RETURN_ITEMS:
-				return returnItems();
-		}
-		return super.eInvoke(operationID, arguments);
 	}
 
 } //ReturnTypeImpl

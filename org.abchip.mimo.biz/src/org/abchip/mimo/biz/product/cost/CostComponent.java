@@ -62,7 +62,7 @@ public interface CostComponent extends BizEntityTyped<CostComponentType> {
 	 * @return the value of the '<em>Cost</em>' attribute.
 	 * @see #setCost(BigDecimal)
 	 * @see org.abchip.mimo.biz.product.cost.CostPackage#getCostComponent_Cost()
-	 * @model
+	 * @model annotation="mimo-ent-format type='fixed-point' precision='18' scale='6'"
 	 * @generated
 	 */
 	BigDecimal getCost();
@@ -140,7 +140,7 @@ public interface CostComponent extends BizEntityTyped<CostComponentType> {
 	 * @return the value of the '<em>From Date</em>' attribute.
 	 * @see #setFromDate(Date)
 	 * @see org.abchip.mimo.biz.product.cost.CostPackage#getCostComponent_FromDate()
-	 * @model
+	 * @model annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getFromDate();
@@ -270,7 +270,7 @@ public interface CostComponent extends BizEntityTyped<CostComponentType> {
 	 * @return the value of the '<em>Thru Date</em>' attribute.
 	 * @see #setThruDate(Date)
 	 * @see org.abchip.mimo.biz.product.cost.CostPackage#getCostComponent_ThruDate()
-	 * @model
+	 * @model annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getThruDate();
@@ -322,7 +322,9 @@ public interface CostComponent extends BizEntityTyped<CostComponentType> {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Cost Component Attributes</em>' attribute list.
 	 * @see org.abchip.mimo.biz.product.cost.CostPackage#getCostComponent_CostComponentAttributes()
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='CostComponentAttribute'"
 	 * @generated
 	 */
@@ -392,6 +394,7 @@ public interface CostComponent extends BizEntityTyped<CostComponentType> {
 	 * @see #setCostComponentId(String)
 	 * @see org.abchip.mimo.biz.product.cost.CostPackage#getCostComponent_CostComponentId()
 	 * @model id="true" required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */

@@ -7,13 +7,11 @@
  */
 package org.abchip.mimo.biz.shipment.receipt.impl;
 
-import java.lang.reflect.InvocationTargetException;
 import java.util.List;
 
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.shipment.receipt.ReceiptPackage;
 import org.abchip.mimo.biz.shipment.receipt.RejectionReason;
-import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 
 /**
@@ -85,20 +83,6 @@ public class RejectionReasonImpl extends BizEntityImpl implements RejectionReaso
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
-		switch (operationID) {
-			case ReceiptPackage.REJECTION_REASON___SHIPMENT_RECEIPTS:
-				return shipmentReceipts();
-		}
-		return super.eInvoke(operationID, arguments);
 	}
 
 	/**

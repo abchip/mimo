@@ -7,13 +7,11 @@
  */
 package org.abchip.mimo.biz.accounting.rate.impl;
 
-import java.lang.reflect.InvocationTargetException;
 import java.util.List;
 
 import org.abchip.mimo.biz.accounting.rate.RatePackage;
 import org.abchip.mimo.biz.accounting.rate.RateType;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
-import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 
 /**
@@ -84,20 +82,6 @@ public class RateTypeImpl extends BizEntityImpl implements RateType {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
-		switch (operationID) {
-			case RatePackage.RATE_TYPE___TIME_ENTRIES:
-				return timeEntries();
-		}
-		return super.eInvoke(operationID, arguments);
 	}
 
 	/**

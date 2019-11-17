@@ -45,6 +45,7 @@ public interface ProductFacilityLocation extends BizEntity {
 	 * @see #setLocationSeqId(String)
 	 * @see org.abchip.mimo.biz.product.facility.FacilityPackage#getProductFacilityLocation_LocationSeqId()
 	 * @model required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
@@ -71,7 +72,7 @@ public interface ProductFacilityLocation extends BizEntity {
 	 * @return the value of the '<em>Minimum Stock</em>' attribute.
 	 * @see #setMinimumStock(BigDecimal)
 	 * @see org.abchip.mimo.biz.product.facility.FacilityPackage#getProductFacilityLocation_MinimumStock()
-	 * @model
+	 * @model annotation="mimo-ent-format type='fixed-point' precision='18' scale='6'"
 	 * @generated
 	 */
 	BigDecimal getMinimumStock();
@@ -97,7 +98,7 @@ public interface ProductFacilityLocation extends BizEntity {
 	 * @return the value of the '<em>Move Quantity</em>' attribute.
 	 * @see #setMoveQuantity(BigDecimal)
 	 * @see org.abchip.mimo.biz.product.facility.FacilityPackage#getProductFacilityLocation_MoveQuantity()
-	 * @model
+	 * @model annotation="mimo-ent-format type='fixed-point' precision='18' scale='6'"
 	 * @generated
 	 */
 	BigDecimal getMoveQuantity();

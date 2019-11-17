@@ -77,6 +77,7 @@ import org.abchip.mimo.biz.entity.crypto.CryptoPackage;
 import org.abchip.mimo.biz.entity.crypto.impl.CryptoPackageImpl;
 import org.abchip.mimo.biz.entity.group.GroupPackage;
 import org.abchip.mimo.biz.entity.group.impl.GroupPackageImpl;
+import org.abchip.mimo.biz.entity.impl.EntityPackageImpl;
 import org.abchip.mimo.biz.entity.sequence.SequencePackage;
 import org.abchip.mimo.biz.entity.sequence.impl.SequencePackageImpl;
 import org.abchip.mimo.biz.entity.synchronization.SynchronizationPackage;
@@ -203,7 +204,6 @@ import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EGenericType;
-import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 
 import org.eclipse.emf.ecore.EReference;
@@ -387,6 +387,8 @@ public class CommunicationPackageImpl extends EPackageImpl implements Communicat
 		SurveyPackageImpl theSurveyPackage = (SurveyPackageImpl)(registeredPackage instanceof SurveyPackageImpl ? registeredPackage : SurveyPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(WebsitePackage.eNS_URI);
 		WebsitePackageImpl theWebsitePackage = (WebsitePackageImpl)(registeredPackage instanceof WebsitePackageImpl ? registeredPackage : WebsitePackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(org.abchip.mimo.biz.entity.EntityPackage.eNS_URI);
+		EntityPackageImpl theEntityPackage = (EntityPackageImpl)(registeredPackage instanceof EntityPackageImpl ? registeredPackage : org.abchip.mimo.biz.entity.EntityPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(AuditPackage.eNS_URI);
 		AuditPackageImpl theAuditPackage = (AuditPackageImpl)(registeredPackage instanceof AuditPackageImpl ? registeredPackage : AuditPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(CryptoPackage.eNS_URI);
@@ -540,6 +542,7 @@ public class CommunicationPackageImpl extends EPackageImpl implements Communicat
 		thePreferencePackage.createPackageContents();
 		theSurveyPackage.createPackageContents();
 		theWebsitePackage.createPackageContents();
+		theEntityPackage.createPackageContents();
 		theAuditPackage.createPackageContents();
 		theCryptoPackage.createPackageContents();
 		theGroupPackage.createPackageContents();
@@ -634,6 +637,7 @@ public class CommunicationPackageImpl extends EPackageImpl implements Communicat
 		thePreferencePackage.initializePackageContents();
 		theSurveyPackage.initializePackageContents();
 		theWebsitePackage.initializePackageContents();
+		theEntityPackage.initializePackageContents();
 		theAuditPackage.initializePackageContents();
 		theCryptoPackage.initializePackageContents();
 		theGroupPackage.initializePackageContents();
@@ -1038,76 +1042,6 @@ public class CommunicationPackageImpl extends EPackageImpl implements Communicat
 	 * @generated
 	 */
 	@Override
-	public EOperation getCommunicationEvent__CommunicationEventOrders() {
-		return communicationEventEClass.getEOperations().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EOperation getCommunicationEvent__CommunicationEventProducts() {
-		return communicationEventEClass.getEOperations().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EOperation getCommunicationEvent__CommunicationEventPurposes() {
-		return communicationEventEClass.getEOperations().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EOperation getCommunicationEvent__CommunicationEventReturns() {
-		return communicationEventEClass.getEOperations().get(3);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EOperation getCommunicationEvent__CommunicationEventWorkEffs() {
-		return communicationEventEClass.getEOperations().get(4);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EOperation getCommunicationEvent__CustRequestCommEvents() {
-		return communicationEventEClass.getEOperations().get(5);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EOperation getCommunicationEvent__SubscriptionCommEvents() {
-		return communicationEventEClass.getEOperations().get(6);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public EReference getCommunicationEvent_RoleTypeIdFrom() {
 		return (EReference)communicationEventEClass.getEStructuralFeatures().get(19);
 	}
@@ -1248,16 +1182,6 @@ public class CommunicationPackageImpl extends EPackageImpl implements Communicat
 	 * @generated
 	 */
 	@Override
-	public EOperation getCommunicationEventPrpTyp__ChildCommunicationEventPrpTyps() {
-		return communicationEventPrpTypEClass.getEOperations().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public EClass getCommunicationEventPurpose() {
 		return communicationEventPurposeEClass;
 	}
@@ -1388,26 +1312,6 @@ public class CommunicationPackageImpl extends EPackageImpl implements Communicat
 	 * @generated
 	 */
 	@Override
-	public EOperation getCommunicationEventType__ChildCommunicationEventTypes() {
-		return communicationEventTypeEClass.getEOperations().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EOperation getCommunicationEventType__CommunicationEvents() {
-		return communicationEventTypeEClass.getEOperations().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public EAttribute getCommunicationEventType_Description() {
 		return (EAttribute)communicationEventTypeEClass.getEStructuralFeatures().get(1);
 	}
@@ -1501,13 +1405,6 @@ public class CommunicationPackageImpl extends EPackageImpl implements Communicat
 		createEReference(communicationEventEClass, COMMUNICATION_EVENT__CONTACT_LIST_ID);
 		createEReference(communicationEventEClass, COMMUNICATION_EVENT__CONTENT_MIME_TYPE_ID);
 		createEReference(communicationEventEClass, COMMUNICATION_EVENT__REASON_ENUM_ID);
-		createEOperation(communicationEventEClass, COMMUNICATION_EVENT___COMMUNICATION_EVENT_ORDERS);
-		createEOperation(communicationEventEClass, COMMUNICATION_EVENT___COMMUNICATION_EVENT_PRODUCTS);
-		createEOperation(communicationEventEClass, COMMUNICATION_EVENT___COMMUNICATION_EVENT_PURPOSES);
-		createEOperation(communicationEventEClass, COMMUNICATION_EVENT___COMMUNICATION_EVENT_RETURNS);
-		createEOperation(communicationEventEClass, COMMUNICATION_EVENT___COMMUNICATION_EVENT_WORK_EFFS);
-		createEOperation(communicationEventEClass, COMMUNICATION_EVENT___CUST_REQUEST_COMM_EVENTS);
-		createEOperation(communicationEventEClass, COMMUNICATION_EVENT___SUBSCRIPTION_COMM_EVENTS);
 
 		communicationEventProductEClass = createEClass(COMMUNICATION_EVENT_PRODUCT);
 		createEReference(communicationEventProductEClass, COMMUNICATION_EVENT_PRODUCT__PRODUCT_ID);
@@ -1519,7 +1416,6 @@ public class CommunicationPackageImpl extends EPackageImpl implements Communicat
 		createEAttribute(communicationEventPrpTypEClass, COMMUNICATION_EVENT_PRP_TYP__HAS_TABLE);
 		createEReference(communicationEventPrpTypEClass, COMMUNICATION_EVENT_PRP_TYP__PARENT_TYPE_ID);
 		createEAttribute(communicationEventPrpTypEClass, COMMUNICATION_EVENT_PRP_TYP__COMMUNICATION_EVENT_PURPOSES);
-		createEOperation(communicationEventPrpTypEClass, COMMUNICATION_EVENT_PRP_TYP___CHILD_COMMUNICATION_EVENT_PRP_TYPS);
 
 		communicationEventPurposeEClass = createEClass(COMMUNICATION_EVENT_PURPOSE);
 		createEAttribute(communicationEventPurposeEClass, COMMUNICATION_EVENT_PURPOSE__DESCRIPTION);
@@ -1539,8 +1435,6 @@ public class CommunicationPackageImpl extends EPackageImpl implements Communicat
 		createEAttribute(communicationEventTypeEClass, COMMUNICATION_EVENT_TYPE__HAS_TABLE);
 		createEReference(communicationEventTypeEClass, COMMUNICATION_EVENT_TYPE__PARENT_TYPE_ID);
 		createEReference(communicationEventTypeEClass, COMMUNICATION_EVENT_TYPE__CONTACT_MECH_TYPE_ID);
-		createEOperation(communicationEventTypeEClass, COMMUNICATION_EVENT_TYPE___CHILD_COMMUNICATION_EVENT_TYPES);
-		createEOperation(communicationEventTypeEClass, COMMUNICATION_EVENT_TYPE___COMMUNICATION_EVENTS);
 	}
 
 	/**
@@ -1597,7 +1491,7 @@ public class CommunicationPackageImpl extends EPackageImpl implements Communicat
 		g1.getETypeArguments().add(g2);
 		communicationEventTypeEClass.getEGenericSuperTypes().add(g1);
 
-		// Initialize classes, features, and operations; add parameters
+		// Initialize classes and features; add operations and parameters
 		initEClass(commContentAssocTypeEClass, CommContentAssocType.class, "CommContentAssocType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getCommContentAssocType_CommContentAssocTypeId(), ecorePackage.getEString(), "commContentAssocTypeId", null, 1, 1, CommContentAssocType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getCommContentAssocType_Description(), ecorePackage.getEString(), "description", null, 0, 1, CommContentAssocType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1654,19 +1548,19 @@ public class CommunicationPackageImpl extends EPackageImpl implements Communicat
 		initEReference(getCommunicationEvent_ReasonEnumId(), theEnumPackage.getEnumeration(), null, "reasonEnumId", null, 0, 1, CommunicationEvent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getCommunicationEvent_ReasonEnumId().getEKeys().add(theEnumPackage.getEnumeration_EnumId());
 
-		initEOperation(getCommunicationEvent__CommunicationEventOrders(), ecorePackage.getEString(), "communicationEventOrders", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(communicationEventEClass, ecorePackage.getEString(), "communicationEventOrders", 1, -1, IS_UNIQUE, IS_ORDERED);
 
-		initEOperation(getCommunicationEvent__CommunicationEventProducts(), ecorePackage.getEString(), "communicationEventProducts", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(communicationEventEClass, ecorePackage.getEString(), "communicationEventProducts", 1, -1, IS_UNIQUE, IS_ORDERED);
 
-		initEOperation(getCommunicationEvent__CommunicationEventPurposes(), ecorePackage.getEString(), "communicationEventPurposes", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(communicationEventEClass, ecorePackage.getEString(), "communicationEventPurposes", 1, -1, IS_UNIQUE, IS_ORDERED);
 
-		initEOperation(getCommunicationEvent__CommunicationEventReturns(), ecorePackage.getEString(), "communicationEventReturns", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(communicationEventEClass, ecorePackage.getEString(), "communicationEventReturns", 1, -1, IS_UNIQUE, IS_ORDERED);
 
-		initEOperation(getCommunicationEvent__CommunicationEventWorkEffs(), ecorePackage.getEString(), "communicationEventWorkEffs", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(communicationEventEClass, ecorePackage.getEString(), "communicationEventWorkEffs", 1, -1, IS_UNIQUE, IS_ORDERED);
 
-		initEOperation(getCommunicationEvent__CustRequestCommEvents(), ecorePackage.getEString(), "custRequestCommEvents", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(communicationEventEClass, ecorePackage.getEString(), "custRequestCommEvents", 1, -1, IS_UNIQUE, IS_ORDERED);
 
-		initEOperation(getCommunicationEvent__SubscriptionCommEvents(), ecorePackage.getEString(), "subscriptionCommEvents", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(communicationEventEClass, ecorePackage.getEString(), "subscriptionCommEvents", 1, -1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(communicationEventProductEClass, CommunicationEventProduct.class, "CommunicationEventProduct", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getCommunicationEventProduct_ProductId(), theProductPackage.getProduct(), null, "productId", null, 0, 1, CommunicationEventProduct.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1680,9 +1574,9 @@ public class CommunicationPackageImpl extends EPackageImpl implements Communicat
 		initEAttribute(getCommunicationEventPrpTyp_HasTable(), ecorePackage.getEBoolean(), "hasTable", null, 0, 1, CommunicationEventPrpTyp.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getCommunicationEventPrpTyp_ParentTypeId(), this.getCommunicationEventPrpTyp(), null, "parentTypeId", null, 0, 1, CommunicationEventPrpTyp.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getCommunicationEventPrpTyp_ParentTypeId().getEKeys().add(this.getCommunicationEventPrpTyp_CommunicationEventPrpTypId());
-		initEAttribute(getCommunicationEventPrpTyp_CommunicationEventPurposes(), ecorePackage.getEString(), "communicationEventPurposes", null, 0, -1, CommunicationEventPrpTyp.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getCommunicationEventPrpTyp_CommunicationEventPurposes(), ecorePackage.getEString(), "communicationEventPurposes", null, 1, -1, CommunicationEventPrpTyp.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEOperation(getCommunicationEventPrpTyp__ChildCommunicationEventPrpTyps(), ecorePackage.getEString(), "childCommunicationEventPrpTyps", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(communicationEventPrpTypEClass, ecorePackage.getEString(), "childCommunicationEventPrpTyps", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(communicationEventPurposeEClass, CommunicationEventPurpose.class, "CommunicationEventPurpose", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getCommunicationEventPurpose_Description(), ecorePackage.getEString(), "description", null, 0, 1, CommunicationEventPurpose.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1712,13 +1606,15 @@ public class CommunicationPackageImpl extends EPackageImpl implements Communicat
 		initEReference(getCommunicationEventType_ContactMechTypeId(), theContactPackage_1.getContactMechType(), null, "contactMechTypeId", null, 0, 1, CommunicationEventType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getCommunicationEventType_ContactMechTypeId().getEKeys().add(theContactPackage_1.getContactMechType_ContactMechTypeId());
 
-		initEOperation(getCommunicationEventType__ChildCommunicationEventTypes(), ecorePackage.getEString(), "childCommunicationEventTypes", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(communicationEventTypeEClass, ecorePackage.getEString(), "childCommunicationEventTypes", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		initEOperation(getCommunicationEventType__CommunicationEvents(), ecorePackage.getEString(), "communicationEvents", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(communicationEventTypeEClass, ecorePackage.getEString(), "communicationEvents", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		// Create annotations
 		// mimo-ent-frame
 		createMimoentframeAnnotations();
+		// mimo-ent-format
+		createMimoentformatAnnotations();
 		// mimo-ent-slot
 		createMimoentslotAnnotations();
 		// mimo-ent-domain
@@ -1760,6 +1656,272 @@ public class CommunicationPackageImpl extends EPackageImpl implements Communicat
 	}
 
 	/**
+	 * Initializes the annotations for <b>mimo-ent-format</b>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void createMimoentformatAnnotations() {
+		String source = "mimo-ent-format";
+		addAnnotation
+		  (getCommContentAssocType_CommContentAssocTypeId(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (getCommContentAssocType_Description(),
+		   source,
+		   new String[] {
+			   "type", "description",
+			   "length", "255"
+		   });
+		addAnnotation
+		  (getCommEventContentAssoc_FromDate(),
+		   source,
+		   new String[] {
+			   "type", "date-time"
+		   });
+		addAnnotation
+		  (getCommEventContentAssoc_SequenceNum(),
+		   source,
+		   new String[] {
+			   "type", "numeric",
+			   "precision", "20",
+			   "scale", "0"
+		   });
+		addAnnotation
+		  (getCommEventContentAssoc_ThruDate(),
+		   source,
+		   new String[] {
+			   "type", "date-time"
+		   });
+		addAnnotation
+		  (communicationEventEClass.getEOperations().get(0),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (communicationEventEClass.getEOperations().get(1),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (communicationEventEClass.getEOperations().get(2),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (communicationEventEClass.getEOperations().get(3),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (communicationEventEClass.getEOperations().get(4),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (communicationEventEClass.getEOperations().get(5),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (communicationEventEClass.getEOperations().get(6),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (getCommunicationEvent_CommunicationEventId(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (getCommunicationEvent_BccString(),
+		   source,
+		   new String[] {
+			   "type", "very-long"
+		   });
+		addAnnotation
+		  (getCommunicationEvent_CcString(),
+		   source,
+		   new String[] {
+			   "type", "very-long"
+		   });
+		addAnnotation
+		  (getCommunicationEvent_Content(),
+		   source,
+		   new String[] {
+			   "type", "very-long"
+		   });
+		addAnnotation
+		  (getCommunicationEvent_DatetimeEnded(),
+		   source,
+		   new String[] {
+			   "type", "date-time"
+		   });
+		addAnnotation
+		  (getCommunicationEvent_DatetimeStarted(),
+		   source,
+		   new String[] {
+			   "type", "date-time"
+		   });
+		addAnnotation
+		  (getCommunicationEvent_EntryDate(),
+		   source,
+		   new String[] {
+			   "type", "date-time"
+		   });
+		addAnnotation
+		  (getCommunicationEvent_FromString(),
+		   source,
+		   new String[] {
+			   "type", "very-long"
+		   });
+		addAnnotation
+		  (getCommunicationEvent_HeaderString(),
+		   source,
+		   new String[] {
+			   "type", "very-long"
+		   });
+		addAnnotation
+		  (getCommunicationEvent_MessageId(),
+		   source,
+		   new String[] {
+			   "type", "value",
+			   "length", "255"
+		   });
+		addAnnotation
+		  (getCommunicationEvent_Note(),
+		   source,
+		   new String[] {
+			   "type", "comment",
+			   "length", "255"
+		   });
+		addAnnotation
+		  (getCommunicationEvent_OrigCommEventId(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (getCommunicationEvent_ParentCommEventId(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (getCommunicationEvent_Subject(),
+		   source,
+		   new String[] {
+			   "type", "long-varchar",
+			   "length", "255"
+		   });
+		addAnnotation
+		  (getCommunicationEvent_ToString(),
+		   source,
+		   new String[] {
+			   "type", "very-long"
+		   });
+		addAnnotation
+		  (communicationEventPrpTypEClass.getEOperations().get(0),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (getCommunicationEventPrpTyp_CommunicationEventPrpTypId(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (getCommunicationEventPrpTyp_Description(),
+		   source,
+		   new String[] {
+			   "type", "description",
+			   "length", "255"
+		   });
+		addAnnotation
+		  (getCommunicationEventPrpTyp_HasTable(),
+		   source,
+		   new String[] {
+			   "type", "indicator",
+			   "length", "1"
+		   });
+		addAnnotation
+		  (getCommunicationEventPrpTyp_CommunicationEventPurposes(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (getCommunicationEventPurpose_Description(),
+		   source,
+		   new String[] {
+			   "type", "description",
+			   "length", "255"
+		   });
+		addAnnotation
+		  (communicationEventTypeEClass.getEOperations().get(0),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (communicationEventTypeEClass.getEOperations().get(1),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (getCommunicationEventType_CommunicationEventTypeId(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (getCommunicationEventType_Description(),
+		   source,
+		   new String[] {
+			   "type", "description",
+			   "length", "255"
+		   });
+		addAnnotation
+		  (getCommunicationEventType_HasTable(),
+		   source,
+		   new String[] {
+			   "type", "indicator",
+			   "length", "1"
+		   });
+	}
+
+	/**
 	 * Initializes the annotations for <b>mimo-ent-slot</b>.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1780,43 +1942,43 @@ public class CommunicationPackageImpl extends EPackageImpl implements Communicat
 			   "key", "true"
 		   });
 		addAnnotation
-		  (getCommunicationEvent__CommunicationEventOrders(),
+		  (communicationEventEClass.getEOperations().get(0),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (getCommunicationEvent__CommunicationEventProducts(),
+		  (communicationEventEClass.getEOperations().get(1),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (getCommunicationEvent__CommunicationEventPurposes(),
+		  (communicationEventEClass.getEOperations().get(2),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (getCommunicationEvent__CommunicationEventReturns(),
+		  (communicationEventEClass.getEOperations().get(3),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (getCommunicationEvent__CommunicationEventWorkEffs(),
+		  (communicationEventEClass.getEOperations().get(4),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (getCommunicationEvent__CustRequestCommEvents(),
+		  (communicationEventEClass.getEOperations().get(5),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (getCommunicationEvent__SubscriptionCommEvents(),
+		  (communicationEventEClass.getEOperations().get(6),
 		   source,
 		   new String[] {
 			   "derived", "true"
@@ -1828,7 +1990,7 @@ public class CommunicationPackageImpl extends EPackageImpl implements Communicat
 			   "key", "true"
 		   });
 		addAnnotation
-		  (getCommunicationEventPrpTyp__ChildCommunicationEventPrpTyps(),
+		  (communicationEventPrpTypEClass.getEOperations().get(0),
 		   source,
 		   new String[] {
 			   "derived", "true"
@@ -1846,13 +2008,13 @@ public class CommunicationPackageImpl extends EPackageImpl implements Communicat
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (getCommunicationEventType__ChildCommunicationEventTypes(),
+		  (communicationEventTypeEClass.getEOperations().get(0),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (getCommunicationEventType__CommunicationEvents(),
+		  (communicationEventTypeEClass.getEOperations().get(1),
 		   source,
 		   new String[] {
 			   "derived", "true"
@@ -1874,7 +2036,7 @@ public class CommunicationPackageImpl extends EPackageImpl implements Communicat
 	protected void createMimoentdomainAnnotations() {
 		String source = "mimo-ent-domain";
 		addAnnotation
-		  (getCommunicationEvent__CommunicationEventOrders(),
+		  (communicationEventEClass.getEOperations().get(0),
 		   source,
 		   new String[] {
 			   "frame", "CommunicationEventOrder",
@@ -1884,7 +2046,7 @@ public class CommunicationPackageImpl extends EPackageImpl implements Communicat
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (getCommunicationEvent__CommunicationEventProducts(),
+		  (communicationEventEClass.getEOperations().get(1),
 		   source,
 		   new String[] {
 			   "frame", "CommunicationEventProduct",
@@ -1894,7 +2056,7 @@ public class CommunicationPackageImpl extends EPackageImpl implements Communicat
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (getCommunicationEvent__CommunicationEventPurposes(),
+		  (communicationEventEClass.getEOperations().get(2),
 		   source,
 		   new String[] {
 			   "frame", "CommunicationEventPurpose",
@@ -1904,7 +2066,7 @@ public class CommunicationPackageImpl extends EPackageImpl implements Communicat
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (getCommunicationEvent__CommunicationEventReturns(),
+		  (communicationEventEClass.getEOperations().get(3),
 		   source,
 		   new String[] {
 			   "frame", "CommunicationEventReturn",
@@ -1914,7 +2076,7 @@ public class CommunicationPackageImpl extends EPackageImpl implements Communicat
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (getCommunicationEvent__CommunicationEventWorkEffs(),
+		  (communicationEventEClass.getEOperations().get(4),
 		   source,
 		   new String[] {
 			   "frame", "CommunicationEventWorkEff",
@@ -1924,7 +2086,7 @@ public class CommunicationPackageImpl extends EPackageImpl implements Communicat
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (getCommunicationEvent__CustRequestCommEvents(),
+		  (communicationEventEClass.getEOperations().get(5),
 		   source,
 		   new String[] {
 			   "frame", "CustRequestCommEvent",
@@ -1934,7 +2096,7 @@ public class CommunicationPackageImpl extends EPackageImpl implements Communicat
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (getCommunicationEvent__SubscriptionCommEvents(),
+		  (communicationEventEClass.getEOperations().get(6),
 		   source,
 		   new String[] {
 			   "frame", "SubscriptionCommEvent",
@@ -1944,7 +2106,7 @@ public class CommunicationPackageImpl extends EPackageImpl implements Communicat
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (getCommunicationEventPrpTyp__ChildCommunicationEventPrpTyps(),
+		  (communicationEventPrpTypEClass.getEOperations().get(0),
 		   source,
 		   new String[] {
 			   "frame", "CommunicationEventPrpTyp",
@@ -1963,7 +2125,7 @@ public class CommunicationPackageImpl extends EPackageImpl implements Communicat
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (getCommunicationEventType__ChildCommunicationEventTypes(),
+		  (communicationEventTypeEClass.getEOperations().get(0),
 		   source,
 		   new String[] {
 			   "frame", "CommunicationEventType",
@@ -1973,7 +2135,7 @@ public class CommunicationPackageImpl extends EPackageImpl implements Communicat
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (getCommunicationEventType__CommunicationEvents(),
+		  (communicationEventTypeEClass.getEOperations().get(1),
 		   source,
 		   new String[] {
 			   "frame", "CommunicationEvent",

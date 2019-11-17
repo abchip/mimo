@@ -7,14 +7,12 @@
  */
 package org.abchip.mimo.biz.order.shoppinglist.impl;
 
-import java.lang.reflect.InvocationTargetException;
 import java.util.List;
 
 import org.abchip.mimo.biz.impl.BizEntityTypeImpl;
 import org.abchip.mimo.biz.order.shoppinglist.ShoppingList;
 import org.abchip.mimo.biz.order.shoppinglist.ShoppingListType;
 import org.abchip.mimo.biz.order.shoppinglist.ShoppinglistPackage;
-import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 
 /**
@@ -86,20 +84,6 @@ public class ShoppingListTypeImpl extends BizEntityTypeImpl<ShoppingList> implem
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
-		switch (operationID) {
-			case ShoppinglistPackage.SHOPPING_LIST_TYPE___SHOPPING_LISTS:
-				return shoppingLists();
-		}
-		return super.eInvoke(operationID, arguments);
 	}
 
 	/**

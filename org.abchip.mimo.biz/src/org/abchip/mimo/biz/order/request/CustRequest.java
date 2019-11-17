@@ -73,7 +73,7 @@ public interface CustRequest extends BizEntityTyped<CustRequestType> {
 	 * @return the value of the '<em>Closed Date Time</em>' attribute.
 	 * @see #setClosedDateTime(Date)
 	 * @see org.abchip.mimo.biz.order.request.RequestPackage#getCustRequest_ClosedDateTime()
-	 * @model
+	 * @model annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getClosedDateTime();
@@ -99,7 +99,7 @@ public interface CustRequest extends BizEntityTyped<CustRequestType> {
 	 * @return the value of the '<em>Created By User Login</em>' attribute.
 	 * @see #setCreatedByUserLogin(String)
 	 * @see org.abchip.mimo.biz.order.request.RequestPackage#getCustRequest_CreatedByUserLogin()
-	 * @model
+	 * @model annotation="mimo-ent-format type='id-vlong' length='255'"
 	 * @generated
 	 */
 	String getCreatedByUserLogin();
@@ -125,7 +125,7 @@ public interface CustRequest extends BizEntityTyped<CustRequestType> {
 	 * @return the value of the '<em>Created Date</em>' attribute.
 	 * @see #setCreatedDate(Date)
 	 * @see org.abchip.mimo.biz.order.request.RequestPackage#getCustRequest_CreatedDate()
-	 * @model
+	 * @model annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getCreatedDate();
@@ -203,7 +203,7 @@ public interface CustRequest extends BizEntityTyped<CustRequestType> {
 	 * @return the value of the '<em>Cust Request Date</em>' attribute.
 	 * @see #setCustRequestDate(Date)
 	 * @see org.abchip.mimo.biz.order.request.RequestPackage#getCustRequest_CustRequestDate()
-	 * @model
+	 * @model annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getCustRequestDate();
@@ -230,6 +230,7 @@ public interface CustRequest extends BizEntityTyped<CustRequestType> {
 	 * @see #setCustRequestId(String)
 	 * @see org.abchip.mimo.biz.order.request.RequestPackage#getCustRequest_CustRequestId()
 	 * @model id="true" required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
@@ -256,7 +257,7 @@ public interface CustRequest extends BizEntityTyped<CustRequestType> {
 	 * @return the value of the '<em>Cust Request Name</em>' attribute.
 	 * @see #setCustRequestName(String)
 	 * @see org.abchip.mimo.biz.order.request.RequestPackage#getCustRequest_CustRequestName()
-	 * @model
+	 * @model annotation="mimo-ent-format type='name' length='100'"
 	 * @generated
 	 */
 	String getCustRequestName();
@@ -308,7 +309,7 @@ public interface CustRequest extends BizEntityTyped<CustRequestType> {
 	 * @return the value of the '<em>Description</em>' attribute.
 	 * @see #setDescription(String)
 	 * @see org.abchip.mimo.biz.order.request.RequestPackage#getCustRequest_Description()
-	 * @model
+	 * @model annotation="mimo-ent-format type='description' length='255'"
 	 * @generated
 	 */
 	String getDescription();
@@ -386,7 +387,7 @@ public interface CustRequest extends BizEntityTyped<CustRequestType> {
 	 * @return the value of the '<em>Internal Comment</em>' attribute.
 	 * @see #setInternalComment(String)
 	 * @see org.abchip.mimo.biz.order.request.RequestPackage#getCustRequest_InternalComment()
-	 * @model
+	 * @model annotation="mimo-ent-format type='comment' length='255'"
 	 * @generated
 	 */
 	String getInternalComment();
@@ -412,7 +413,7 @@ public interface CustRequest extends BizEntityTyped<CustRequestType> {
 	 * @return the value of the '<em>Last Modified By User Login</em>' attribute.
 	 * @see #setLastModifiedByUserLogin(String)
 	 * @see org.abchip.mimo.biz.order.request.RequestPackage#getCustRequest_LastModifiedByUserLogin()
-	 * @model
+	 * @model annotation="mimo-ent-format type='id-vlong' length='255'"
 	 * @generated
 	 */
 	String getLastModifiedByUserLogin();
@@ -438,7 +439,7 @@ public interface CustRequest extends BizEntityTyped<CustRequestType> {
 	 * @return the value of the '<em>Last Modified Date</em>' attribute.
 	 * @see #setLastModifiedDate(Date)
 	 * @see org.abchip.mimo.biz.order.request.RequestPackage#getCustRequest_LastModifiedDate()
-	 * @model
+	 * @model annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getLastModifiedDate();
@@ -490,7 +491,7 @@ public interface CustRequest extends BizEntityTyped<CustRequestType> {
 	 * @return the value of the '<em>Open Date Time</em>' attribute.
 	 * @see #setOpenDateTime(Date)
 	 * @see org.abchip.mimo.biz.order.request.RequestPackage#getCustRequest_OpenDateTime()
-	 * @model
+	 * @model annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getOpenDateTime();
@@ -516,7 +517,7 @@ public interface CustRequest extends BizEntityTyped<CustRequestType> {
 	 * @return the value of the '<em>Priority</em>' attribute.
 	 * @see #setPriority(long)
 	 * @see org.abchip.mimo.biz.order.request.RequestPackage#getCustRequest_Priority()
-	 * @model
+	 * @model annotation="mimo-ent-format type='numeric' precision='20' scale='0'"
 	 * @generated
 	 */
 	long getPriority();
@@ -568,7 +569,7 @@ public interface CustRequest extends BizEntityTyped<CustRequestType> {
 	 * @return the value of the '<em>Reason</em>' attribute.
 	 * @see #setReason(String)
 	 * @see org.abchip.mimo.biz.order.request.RequestPackage#getCustRequest_Reason()
-	 * @model
+	 * @model annotation="mimo-ent-format type='description' length='255'"
 	 * @generated
 	 */
 	String getReason();
@@ -594,7 +595,7 @@ public interface CustRequest extends BizEntityTyped<CustRequestType> {
 	 * @return the value of the '<em>Response Required Date</em>' attribute.
 	 * @see #setResponseRequiredDate(Date)
 	 * @see org.abchip.mimo.biz.order.request.RequestPackage#getCustRequest_ResponseRequiredDate()
-	 * @model
+	 * @model annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getResponseRequiredDate();
@@ -672,7 +673,9 @@ public interface CustRequest extends BizEntityTyped<CustRequestType> {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Cust Request Attributes</em>' attribute list.
 	 * @see org.abchip.mimo.biz.order.request.RequestPackage#getCustRequest_CustRequestAttributes()
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='CustRequestAttribute'"
 	 * @generated
 	 */
@@ -689,7 +692,9 @@ public interface CustRequest extends BizEntityTyped<CustRequestType> {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Cust Request Comm Events</em>' attribute list.
 	 * @see org.abchip.mimo.biz.order.request.RequestPackage#getCustRequest_CustRequestCommEvents()
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='CustRequestCommEvent'"
 	 * @generated
 	 */
@@ -706,7 +711,9 @@ public interface CustRequest extends BizEntityTyped<CustRequestType> {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Cust Request Items</em>' attribute list.
 	 * @see org.abchip.mimo.biz.order.request.RequestPackage#getCustRequest_CustRequestItems()
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='CustRequestItem'"
 	 * @generated
 	 */
@@ -723,7 +730,9 @@ public interface CustRequest extends BizEntityTyped<CustRequestType> {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Cust Request Notes</em>' attribute list.
 	 * @see org.abchip.mimo.biz.order.request.RequestPackage#getCustRequest_CustRequestNotes()
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='CustRequestNote'"
 	 * @generated
 	 */
@@ -740,7 +749,9 @@ public interface CustRequest extends BizEntityTyped<CustRequestType> {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Cust Request Work Efforts</em>' attribute list.
 	 * @see org.abchip.mimo.biz.order.request.RequestPackage#getCustRequest_CustRequestWorkEfforts()
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='CustRequestWorkEffort'"
 	 * @generated
 	 */
@@ -749,7 +760,8 @@ public interface CustRequest extends BizEntityTyped<CustRequestType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='CustRequestStatus' route='custRequestId'"
 	 * @generated
 	 */
@@ -758,7 +770,8 @@ public interface CustRequest extends BizEntityTyped<CustRequestType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='QuoteItem' route='custRequestId'"
 	 * @generated
 	 */

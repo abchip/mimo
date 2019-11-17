@@ -79,7 +79,7 @@ public interface ProductPriceChange extends BizEntity {
 	 * @return the value of the '<em>Changed Date</em>' attribute.
 	 * @see #setChangedDate(Date)
 	 * @see org.abchip.mimo.biz.product.price.PricePackage#getProductPriceChange_ChangedDate()
-	 * @model
+	 * @model annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getChangedDate();
@@ -105,7 +105,7 @@ public interface ProductPriceChange extends BizEntity {
 	 * @return the value of the '<em>Currency Uom Id</em>' attribute.
 	 * @see #setCurrencyUomId(String)
 	 * @see org.abchip.mimo.biz.product.price.PricePackage#getProductPriceChange_CurrencyUomId()
-	 * @model
+	 * @model annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	String getCurrencyUomId();
@@ -131,7 +131,7 @@ public interface ProductPriceChange extends BizEntity {
 	 * @return the value of the '<em>From Date</em>' attribute.
 	 * @see #setFromDate(Date)
 	 * @see org.abchip.mimo.biz.product.price.PricePackage#getProductPriceChange_FromDate()
-	 * @model
+	 * @model annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getFromDate();
@@ -157,7 +157,7 @@ public interface ProductPriceChange extends BizEntity {
 	 * @return the value of the '<em>Old Price</em>' attribute.
 	 * @see #setOldPrice(BigDecimal)
 	 * @see org.abchip.mimo.biz.product.price.PricePackage#getProductPriceChange_OldPrice()
-	 * @model
+	 * @model annotation="mimo-ent-format type='currency-amount' precision='18' scale='2'"
 	 * @generated
 	 */
 	BigDecimal getOldPrice();
@@ -183,7 +183,7 @@ public interface ProductPriceChange extends BizEntity {
 	 * @return the value of the '<em>Price</em>' attribute.
 	 * @see #setPrice(BigDecimal)
 	 * @see org.abchip.mimo.biz.product.price.PricePackage#getProductPriceChange_Price()
-	 * @model
+	 * @model annotation="mimo-ent-format type='currency-amount' precision='18' scale='2'"
 	 * @generated
 	 */
 	BigDecimal getPrice();
@@ -209,7 +209,7 @@ public interface ProductPriceChange extends BizEntity {
 	 * @return the value of the '<em>Product Id</em>' attribute.
 	 * @see #setProductId(String)
 	 * @see org.abchip.mimo.biz.product.price.PricePackage#getProductPriceChange_ProductId()
-	 * @model
+	 * @model annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	String getProductId();
@@ -236,6 +236,7 @@ public interface ProductPriceChange extends BizEntity {
 	 * @see #setProductPriceChangeId(String)
 	 * @see org.abchip.mimo.biz.product.price.PricePackage#getProductPriceChange_ProductPriceChangeId()
 	 * @model id="true" required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
@@ -262,7 +263,7 @@ public interface ProductPriceChange extends BizEntity {
 	 * @return the value of the '<em>Product Price Purpose Id</em>' attribute.
 	 * @see #setProductPricePurposeId(String)
 	 * @see org.abchip.mimo.biz.product.price.PricePackage#getProductPriceChange_ProductPricePurposeId()
-	 * @model
+	 * @model annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	String getProductPricePurposeId();
@@ -288,7 +289,7 @@ public interface ProductPriceChange extends BizEntity {
 	 * @return the value of the '<em>Product Price Type Id</em>' attribute.
 	 * @see #setProductPriceTypeId(String)
 	 * @see org.abchip.mimo.biz.product.price.PricePackage#getProductPriceChange_ProductPriceTypeId()
-	 * @model
+	 * @model annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	String getProductPriceTypeId();
@@ -314,7 +315,7 @@ public interface ProductPriceChange extends BizEntity {
 	 * @return the value of the '<em>Product Store Group Id</em>' attribute.
 	 * @see #setProductStoreGroupId(String)
 	 * @see org.abchip.mimo.biz.product.price.PricePackage#getProductPriceChange_ProductStoreGroupId()
-	 * @model
+	 * @model annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	String getProductStoreGroupId();
@@ -340,7 +341,7 @@ public interface ProductPriceChange extends BizEntity {
 	 * @return the value of the '<em>Thru Date</em>' attribute.
 	 * @see #setThruDate(Date)
 	 * @see org.abchip.mimo.biz.product.price.PricePackage#getProductPriceChange_ThruDate()
-	 * @model
+	 * @model annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getThruDate();

@@ -61,46 +61,6 @@ public class TaxAuthorityImpl extends BizEntityImpl implements TaxAuthority {
 	 * @generated
 	 */
 	@Override
-	public Geo getTaxAuthGeoId() {
-		return (Geo)eGet(TaxPackage.Literals.TAX_AUTHORITY__TAX_AUTH_GEO_ID, true);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void setTaxAuthGeoId(Geo newTaxAuthGeoId) {
-		eSet(TaxPackage.Literals.TAX_AUTHORITY__TAX_AUTH_GEO_ID, newTaxAuthGeoId);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Party getTaxAuthPartyId() {
-		return (Party)eGet(TaxPackage.Literals.TAX_AUTHORITY__TAX_AUTH_PARTY_ID, true);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void setTaxAuthPartyId(Party newTaxAuthPartyId) {
-		eSet(TaxPackage.Literals.TAX_AUTHORITY__TAX_AUTH_PARTY_ID, newTaxAuthPartyId);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public boolean isIncludeTaxInPrice() {
 		return (Boolean)eGet(TaxPackage.Literals.TAX_AUTHORITY__INCLUDE_TAX_IN_PRICE, true);
 	}
@@ -133,6 +93,46 @@ public class TaxAuthorityImpl extends BizEntityImpl implements TaxAuthority {
 	@Override
 	public void setRequireTaxIdForExemption(boolean newRequireTaxIdForExemption) {
 		eSet(TaxPackage.Literals.TAX_AUTHORITY__REQUIRE_TAX_ID_FOR_EXEMPTION, newRequireTaxIdForExemption);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Geo getTaxAuthGeoId() {
+		return (Geo)eGet(TaxPackage.Literals.TAX_AUTHORITY__TAX_AUTH_GEO_ID, true);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setTaxAuthGeoId(Geo newTaxAuthGeoId) {
+		eSet(TaxPackage.Literals.TAX_AUTHORITY__TAX_AUTH_GEO_ID, newTaxAuthGeoId);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Party getTaxAuthPartyId() {
+		return (Party)eGet(TaxPackage.Literals.TAX_AUTHORITY__TAX_AUTH_PARTY_ID, true);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setTaxAuthPartyId(Party newTaxAuthPartyId) {
+		eSet(TaxPackage.Literals.TAX_AUTHORITY__TAX_AUTH_PARTY_ID, newTaxAuthPartyId);
 	}
 
 	/**

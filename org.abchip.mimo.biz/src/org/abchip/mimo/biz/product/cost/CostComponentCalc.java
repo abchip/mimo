@@ -129,7 +129,7 @@ public interface CostComponentCalc extends BizEntity {
 	 * @return the value of the '<em>Description</em>' attribute.
 	 * @see #setDescription(String)
 	 * @see org.abchip.mimo.biz.product.cost.CostPackage#getCostComponentCalc_Description()
-	 * @model
+	 * @model annotation="mimo-ent-format type='description' length='255'"
 	 * @generated
 	 */
 	String getDescription();
@@ -155,7 +155,7 @@ public interface CostComponentCalc extends BizEntity {
 	 * @return the value of the '<em>Fixed Cost</em>' attribute.
 	 * @see #setFixedCost(BigDecimal)
 	 * @see org.abchip.mimo.biz.product.cost.CostPackage#getCostComponentCalc_FixedCost()
-	 * @model
+	 * @model annotation="mimo-ent-format type='currency-amount' precision='18' scale='2'"
 	 * @generated
 	 */
 	BigDecimal getFixedCost();
@@ -207,7 +207,7 @@ public interface CostComponentCalc extends BizEntity {
 	 * @return the value of the '<em>Per Milli Second</em>' attribute.
 	 * @see #setPerMilliSecond(long)
 	 * @see org.abchip.mimo.biz.product.cost.CostPackage#getCostComponentCalc_PerMilliSecond()
-	 * @model
+	 * @model annotation="mimo-ent-format type='numeric' precision='20' scale='0'"
 	 * @generated
 	 */
 	long getPerMilliSecond();
@@ -233,7 +233,7 @@ public interface CostComponentCalc extends BizEntity {
 	 * @return the value of the '<em>Variable Cost</em>' attribute.
 	 * @see #setVariableCost(BigDecimal)
 	 * @see org.abchip.mimo.biz.product.cost.CostPackage#getCostComponentCalc_VariableCost()
-	 * @model
+	 * @model annotation="mimo-ent-format type='currency-amount' precision='18' scale='2'"
 	 * @generated
 	 */
 	BigDecimal getVariableCost();
@@ -251,7 +251,8 @@ public interface CostComponentCalc extends BizEntity {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='CostComponent' route='costComponentCalcId'"
 	 * @generated
 	 */
@@ -269,6 +270,7 @@ public interface CostComponentCalc extends BizEntity {
 	 * @see #setCostComponentCalcId(String)
 	 * @see org.abchip.mimo.biz.product.cost.CostPackage#getCostComponentCalc_CostComponentCalcId()
 	 * @model id="true" required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */

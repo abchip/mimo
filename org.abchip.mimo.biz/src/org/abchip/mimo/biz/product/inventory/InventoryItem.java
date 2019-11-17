@@ -80,7 +80,7 @@ public interface InventoryItem extends BizEntityTyped<InventoryItemType> {
 	 * @return the value of the '<em>Accounting Quantity Total</em>' attribute.
 	 * @see #setAccountingQuantityTotal(BigDecimal)
 	 * @see org.abchip.mimo.biz.product.inventory.InventoryPackage#getInventoryItem_AccountingQuantityTotal()
-	 * @model
+	 * @model annotation="mimo-ent-format type='fixed-point' precision='18' scale='6'"
 	 * @generated
 	 */
 	BigDecimal getAccountingQuantityTotal();
@@ -106,7 +106,7 @@ public interface InventoryItem extends BizEntityTyped<InventoryItemType> {
 	 * @return the value of the '<em>Activation Number</em>' attribute.
 	 * @see #setActivationNumber(String)
 	 * @see org.abchip.mimo.biz.product.inventory.InventoryPackage#getInventoryItem_ActivationNumber()
-	 * @model
+	 * @model annotation="mimo-ent-format type='value' length='255'"
 	 * @generated
 	 */
 	String getActivationNumber();
@@ -132,7 +132,7 @@ public interface InventoryItem extends BizEntityTyped<InventoryItemType> {
 	 * @return the value of the '<em>Activation Valid Thru</em>' attribute.
 	 * @see #setActivationValidThru(Date)
 	 * @see org.abchip.mimo.biz.product.inventory.InventoryPackage#getInventoryItem_ActivationValidThru()
-	 * @model
+	 * @model annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getActivationValidThru();
@@ -158,7 +158,7 @@ public interface InventoryItem extends BizEntityTyped<InventoryItemType> {
 	 * @return the value of the '<em>Available To Promise Total</em>' attribute.
 	 * @see #setAvailableToPromiseTotal(BigDecimal)
 	 * @see org.abchip.mimo.biz.product.inventory.InventoryPackage#getInventoryItem_AvailableToPromiseTotal()
-	 * @model
+	 * @model annotation="mimo-ent-format type='fixed-point' precision='18' scale='6'"
 	 * @generated
 	 */
 	BigDecimal getAvailableToPromiseTotal();
@@ -184,7 +184,7 @@ public interface InventoryItem extends BizEntityTyped<InventoryItemType> {
 	 * @return the value of the '<em>Bin Number</em>' attribute.
 	 * @see #setBinNumber(String)
 	 * @see org.abchip.mimo.biz.product.inventory.InventoryPackage#getInventoryItem_BinNumber()
-	 * @model
+	 * @model annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	String getBinNumber();
@@ -210,7 +210,7 @@ public interface InventoryItem extends BizEntityTyped<InventoryItemType> {
 	 * @return the value of the '<em>Comments</em>' attribute.
 	 * @see #setComments(String)
 	 * @see org.abchip.mimo.biz.product.inventory.InventoryPackage#getInventoryItem_Comments()
-	 * @model
+	 * @model annotation="mimo-ent-format type='comment' length='255'"
 	 * @generated
 	 */
 	String getComments();
@@ -262,7 +262,7 @@ public interface InventoryItem extends BizEntityTyped<InventoryItemType> {
 	 * @return the value of the '<em>Datetime Manufactured</em>' attribute.
 	 * @see #setDatetimeManufactured(Date)
 	 * @see org.abchip.mimo.biz.product.inventory.InventoryPackage#getInventoryItem_DatetimeManufactured()
-	 * @model
+	 * @model annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getDatetimeManufactured();
@@ -288,7 +288,7 @@ public interface InventoryItem extends BizEntityTyped<InventoryItemType> {
 	 * @return the value of the '<em>Datetime Received</em>' attribute.
 	 * @see #setDatetimeReceived(Date)
 	 * @see org.abchip.mimo.biz.product.inventory.InventoryPackage#getInventoryItem_DatetimeReceived()
-	 * @model
+	 * @model annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getDatetimeReceived();
@@ -314,7 +314,7 @@ public interface InventoryItem extends BizEntityTyped<InventoryItemType> {
 	 * @return the value of the '<em>Expire Date</em>' attribute.
 	 * @see #setExpireDate(Date)
 	 * @see org.abchip.mimo.biz.product.inventory.InventoryPackage#getInventoryItem_ExpireDate()
-	 * @model
+	 * @model annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getExpireDate();
@@ -366,7 +366,7 @@ public interface InventoryItem extends BizEntityTyped<InventoryItemType> {
 	 * @return the value of the '<em>Location Seq Id</em>' attribute.
 	 * @see #setLocationSeqId(String)
 	 * @see org.abchip.mimo.biz.product.inventory.InventoryPackage#getInventoryItem_LocationSeqId()
-	 * @model
+	 * @model annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	String getLocationSeqId();
@@ -392,7 +392,7 @@ public interface InventoryItem extends BizEntityTyped<InventoryItemType> {
 	 * @return the value of the '<em>Old Available To Promise</em>' attribute.
 	 * @see #setOldAvailableToPromise(BigDecimal)
 	 * @see org.abchip.mimo.biz.product.inventory.InventoryPackage#getInventoryItem_OldAvailableToPromise()
-	 * @model
+	 * @model annotation="mimo-ent-format type='fixed-point' precision='18' scale='6'"
 	 * @generated
 	 */
 	BigDecimal getOldAvailableToPromise();
@@ -418,7 +418,7 @@ public interface InventoryItem extends BizEntityTyped<InventoryItemType> {
 	 * @return the value of the '<em>Old Quantity On Hand</em>' attribute.
 	 * @see #setOldQuantityOnHand(BigDecimal)
 	 * @see org.abchip.mimo.biz.product.inventory.InventoryPackage#getInventoryItem_OldQuantityOnHand()
-	 * @model
+	 * @model annotation="mimo-ent-format type='fixed-point' precision='18' scale='6'"
 	 * @generated
 	 */
 	BigDecimal getOldQuantityOnHand();
@@ -522,7 +522,7 @@ public interface InventoryItem extends BizEntityTyped<InventoryItemType> {
 	 * @return the value of the '<em>Quantity On Hand Total</em>' attribute.
 	 * @see #setQuantityOnHandTotal(BigDecimal)
 	 * @see org.abchip.mimo.biz.product.inventory.InventoryPackage#getInventoryItem_QuantityOnHandTotal()
-	 * @model
+	 * @model annotation="mimo-ent-format type='fixed-point' precision='18' scale='6'"
 	 * @generated
 	 */
 	BigDecimal getQuantityOnHandTotal();
@@ -548,7 +548,7 @@ public interface InventoryItem extends BizEntityTyped<InventoryItemType> {
 	 * @return the value of the '<em>Serial Number</em>' attribute.
 	 * @see #setSerialNumber(String)
 	 * @see org.abchip.mimo.biz.product.inventory.InventoryPackage#getInventoryItem_SerialNumber()
-	 * @model
+	 * @model annotation="mimo-ent-format type='value' length='255'"
 	 * @generated
 	 */
 	String getSerialNumber();
@@ -574,7 +574,7 @@ public interface InventoryItem extends BizEntityTyped<InventoryItemType> {
 	 * @return the value of the '<em>Soft Identifier</em>' attribute.
 	 * @see #setSoftIdentifier(String)
 	 * @see org.abchip.mimo.biz.product.inventory.InventoryPackage#getInventoryItem_SoftIdentifier()
-	 * @model
+	 * @model annotation="mimo-ent-format type='value' length='255'"
 	 * @generated
 	 */
 	String getSoftIdentifier();
@@ -626,7 +626,7 @@ public interface InventoryItem extends BizEntityTyped<InventoryItemType> {
 	 * @return the value of the '<em>Unit Cost</em>' attribute.
 	 * @see #setUnitCost(BigDecimal)
 	 * @see org.abchip.mimo.biz.product.inventory.InventoryPackage#getInventoryItem_UnitCost()
-	 * @model
+	 * @model annotation="mimo-ent-format type='fixed-point' precision='18' scale='6'"
 	 * @generated
 	 */
 	BigDecimal getUnitCost();
@@ -678,7 +678,9 @@ public interface InventoryItem extends BizEntityTyped<InventoryItemType> {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Inventory Item Attributes</em>' attribute list.
 	 * @see org.abchip.mimo.biz.product.inventory.InventoryPackage#getInventoryItem_InventoryItemAttributes()
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='InventoryItemAttribute'"
 	 * @generated
 	 */
@@ -695,7 +697,9 @@ public interface InventoryItem extends BizEntityTyped<InventoryItemType> {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Inventory Item Details</em>' attribute list.
 	 * @see org.abchip.mimo.biz.product.inventory.InventoryPackage#getInventoryItem_InventoryItemDetails()
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='InventoryItemDetail'"
 	 * @generated
 	 */
@@ -712,7 +716,9 @@ public interface InventoryItem extends BizEntityTyped<InventoryItemType> {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Inventory Item Label Appls</em>' attribute list.
 	 * @see org.abchip.mimo.biz.product.inventory.InventoryPackage#getInventoryItem_InventoryItemLabelAppls()
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='InventoryItemLabelAppl'"
 	 * @generated
 	 */
@@ -729,7 +735,9 @@ public interface InventoryItem extends BizEntityTyped<InventoryItemType> {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Inventory Item Variances</em>' attribute list.
 	 * @see org.abchip.mimo.biz.product.inventory.InventoryPackage#getInventoryItem_InventoryItemVariances()
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='InventoryItemVariance'"
 	 * @generated
 	 */
@@ -738,7 +746,8 @@ public interface InventoryItem extends BizEntityTyped<InventoryItemType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='AcctgTransEntry' route='inventoryItemId'"
 	 * @generated
 	 */
@@ -747,7 +756,8 @@ public interface InventoryItem extends BizEntityTyped<InventoryItemType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='AcctgTrans' route='inventoryItemId'"
 	 * @generated
 	 */
@@ -756,7 +766,8 @@ public interface InventoryItem extends BizEntityTyped<InventoryItemType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='OrderItem' route='fromInventoryItemId'"
 	 * @generated
 	 */
@@ -765,7 +776,8 @@ public interface InventoryItem extends BizEntityTyped<InventoryItemType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='InventoryTransfer' route='inventoryItemId'"
 	 * @generated
 	 */
@@ -774,7 +786,8 @@ public interface InventoryItem extends BizEntityTyped<InventoryItemType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='InvoiceItem' route='inventoryItemId'"
 	 * @generated
 	 */
@@ -783,7 +796,8 @@ public interface InventoryItem extends BizEntityTyped<InventoryItemType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ItemIssuance' route='inventoryItemId'"
 	 * @generated
 	 */
@@ -792,7 +806,8 @@ public interface InventoryItem extends BizEntityTyped<InventoryItemType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ShipmentReceipt' route='inventoryItemId'"
 	 * @generated
 	 */
@@ -801,7 +816,8 @@ public interface InventoryItem extends BizEntityTyped<InventoryItemType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='Subscription' route='inventoryItemId'"
 	 * @generated
 	 */
@@ -810,7 +826,9 @@ public interface InventoryItem extends BizEntityTyped<InventoryItemType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='WorkEffortInventoryAssign' route='inventoryItemId'"
 	 * @generated
 	 */
@@ -819,7 +837,9 @@ public interface InventoryItem extends BizEntityTyped<InventoryItemType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='WorkEffortInventoryProduced' route='inventoryItemId'"
 	 * @generated
 	 */
@@ -941,6 +961,7 @@ public interface InventoryItem extends BizEntityTyped<InventoryItemType> {
 	 * @see #setInventoryItemId(String)
 	 * @see org.abchip.mimo.biz.product.inventory.InventoryPackage#getInventoryItem_InventoryItemId()
 	 * @model id="true" required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */

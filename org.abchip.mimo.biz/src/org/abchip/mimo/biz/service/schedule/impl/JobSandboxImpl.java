@@ -7,7 +7,6 @@
  */
 package org.abchip.mimo.biz.service.schedule.impl;
 
-import java.lang.reflect.InvocationTargetException;
 import java.util.Date;
 import java.util.List;
 
@@ -19,7 +18,6 @@ import org.abchip.mimo.biz.service.schedule.RecurrenceInfo;
 import org.abchip.mimo.biz.service.schedule.RuntimeData;
 import org.abchip.mimo.biz.service.schedule.SchedulePackage;
 import org.abchip.mimo.biz.service.schedule.TemporalExpression;
-import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 
 /**
@@ -552,20 +550,6 @@ public class JobSandboxImpl extends BizEntityImpl implements JobSandbox {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
-		switch (operationID) {
-			case SchedulePackage.JOB_SANDBOX___PRODUCT_GROUP_ORDERS:
-				return productGroupOrders();
-		}
-		return super.eInvoke(operationID, arguments);
 	}
 
 } //JobSandboxImpl

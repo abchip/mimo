@@ -50,7 +50,7 @@ public interface ProductGroupOrder extends BizEntity {
 	 * @return the value of the '<em>From Date</em>' attribute.
 	 * @see #setFromDate(Date)
 	 * @see org.abchip.mimo.biz.product.product.ProductPackage#getProductGroupOrder_FromDate()
-	 * @model
+	 * @model annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getFromDate();
@@ -77,6 +77,7 @@ public interface ProductGroupOrder extends BizEntity {
 	 * @see #setGroupOrderId(String)
 	 * @see org.abchip.mimo.biz.product.product.ProductPackage#getProductGroupOrder_GroupOrderId()
 	 * @model id="true" required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
@@ -129,7 +130,7 @@ public interface ProductGroupOrder extends BizEntity {
 	 * @return the value of the '<em>Req Order Qty</em>' attribute.
 	 * @see #setReqOrderQty(BigDecimal)
 	 * @see org.abchip.mimo.biz.product.product.ProductPackage#getProductGroupOrder_ReqOrderQty()
-	 * @model
+	 * @model annotation="mimo-ent-format type='fixed-point' precision='18' scale='6'"
 	 * @generated
 	 */
 	BigDecimal getReqOrderQty();
@@ -155,7 +156,7 @@ public interface ProductGroupOrder extends BizEntity {
 	 * @return the value of the '<em>Sold Order Qty</em>' attribute.
 	 * @see #setSoldOrderQty(BigDecimal)
 	 * @see org.abchip.mimo.biz.product.product.ProductPackage#getProductGroupOrder_SoldOrderQty()
-	 * @model
+	 * @model annotation="mimo-ent-format type='fixed-point' precision='18' scale='6'"
 	 * @generated
 	 */
 	BigDecimal getSoldOrderQty();
@@ -207,7 +208,7 @@ public interface ProductGroupOrder extends BizEntity {
 	 * @return the value of the '<em>Thru Date</em>' attribute.
 	 * @see #setThruDate(Date)
 	 * @see org.abchip.mimo.biz.product.product.ProductPackage#getProductGroupOrder_ThruDate()
-	 * @model
+	 * @model annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getThruDate();

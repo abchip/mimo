@@ -29,11 +29,11 @@ import org.eclipse.emf.ecore.EClass;
  *   <li>{@link org.abchip.mimo.biz.party.party.impl.PersonImpl#isExistingCustomer <em>Existing Customer</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.party.impl.PersonImpl#getFirstName <em>First Name</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.party.impl.PersonImpl#getFirstNameLocal <em>First Name Local</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.party.party.impl.PersonImpl#isGender <em>Gender</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.party.party.impl.PersonImpl#getGender <em>Gender</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.party.impl.PersonImpl#getHeight <em>Height</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.party.impl.PersonImpl#getLastName <em>Last Name</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.party.impl.PersonImpl#getLastNameLocal <em>Last Name Local</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.party.party.impl.PersonImpl#isMaritalStatus <em>Marital Status</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.party.party.impl.PersonImpl#getMaritalStatus <em>Marital Status</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.party.impl.PersonImpl#getMemberId <em>Member Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.party.impl.PersonImpl#getMiddleName <em>Middle Name</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.party.impl.PersonImpl#getMiddleNameLocal <em>Middle Name Local</em>}</li>
@@ -167,26 +167,6 @@ public class PersonImpl extends PartyImpl implements Person {
 	 * @generated
 	 */
 	@Override
-	public Enumeration getEmploymentStatusEnumId() {
-		return (Enumeration)eGet(PartyPackage.Literals.PERSON__EMPLOYMENT_STATUS_ENUM_ID, true);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void setEmploymentStatusEnumId(Enumeration newEmploymentStatusEnumId) {
-		eSet(PartyPackage.Literals.PERSON__EMPLOYMENT_STATUS_ENUM_ID, newEmploymentStatusEnumId);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public boolean isExistingCustomer() {
 		return (Boolean)eGet(PartyPackage.Literals.PERSON__EXISTING_CUSTOMER, true);
 	}
@@ -199,6 +179,26 @@ public class PersonImpl extends PartyImpl implements Person {
 	@Override
 	public void setExistingCustomer(boolean newExistingCustomer) {
 		eSet(PartyPackage.Literals.PERSON__EXISTING_CUSTOMER, newExistingCustomer);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Enumeration getEmploymentStatusEnumId() {
+		return (Enumeration)eGet(PartyPackage.Literals.PERSON__EMPLOYMENT_STATUS_ENUM_ID, true);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setEmploymentStatusEnumId(Enumeration newEmploymentStatusEnumId) {
+		eSet(PartyPackage.Literals.PERSON__EMPLOYMENT_STATUS_ENUM_ID, newEmploymentStatusEnumId);
 	}
 
 	/**
@@ -247,8 +247,8 @@ public class PersonImpl extends PartyImpl implements Person {
 	 * @generated
 	 */
 	@Override
-	public boolean isGender() {
-		return (Boolean)eGet(PartyPackage.Literals.PERSON__GENDER, true);
+	public char getGender() {
+		return (Character)eGet(PartyPackage.Literals.PERSON__GENDER, true);
 	}
 
 	/**
@@ -257,7 +257,7 @@ public class PersonImpl extends PartyImpl implements Person {
 	 * @generated
 	 */
 	@Override
-	public void setGender(boolean newGender) {
+	public void setGender(char newGender) {
 		eSet(PartyPackage.Literals.PERSON__GENDER, newGender);
 	}
 
@@ -327,8 +327,8 @@ public class PersonImpl extends PartyImpl implements Person {
 	 * @generated
 	 */
 	@Override
-	public boolean isMaritalStatus() {
-		return (Boolean)eGet(PartyPackage.Literals.PERSON__MARITAL_STATUS, true);
+	public char getMaritalStatus() {
+		return (Character)eGet(PartyPackage.Literals.PERSON__MARITAL_STATUS, true);
 	}
 
 	/**
@@ -337,7 +337,7 @@ public class PersonImpl extends PartyImpl implements Person {
 	 * @generated
 	 */
 	@Override
-	public void setMaritalStatus(boolean newMaritalStatus) {
+	public void setMaritalStatus(char newMaritalStatus) {
 		eSet(PartyPackage.Literals.PERSON__MARITAL_STATUS, newMaritalStatus);
 	}
 

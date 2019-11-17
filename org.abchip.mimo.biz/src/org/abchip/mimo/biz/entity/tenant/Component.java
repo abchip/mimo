@@ -42,6 +42,7 @@ public interface Component extends BizEntity {
 	 * @see #setComponentName(String)
 	 * @see org.abchip.mimo.biz.entity.tenant.TenantPackage#getComponent_ComponentName()
 	 * @model id="true" required="true"
+	 *        annotation="mimo-ent-format type='name' length='100'"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
@@ -68,7 +69,7 @@ public interface Component extends BizEntity {
 	 * @return the value of the '<em>Root Location</em>' attribute.
 	 * @see #setRootLocation(String)
 	 * @see org.abchip.mimo.biz.entity.tenant.TenantPackage#getComponent_RootLocation()
-	 * @model
+	 * @model annotation="mimo-ent-format type='description' length='255'"
 	 * @generated
 	 */
 	String getRootLocation();
@@ -94,7 +95,9 @@ public interface Component extends BizEntity {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Tenant Components</em>' attribute list.
 	 * @see org.abchip.mimo.biz.entity.tenant.TenantPackage#getComponent_TenantComponents()
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-format type='name' length='100'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='TenantComponent'"
 	 * @generated
 	 */

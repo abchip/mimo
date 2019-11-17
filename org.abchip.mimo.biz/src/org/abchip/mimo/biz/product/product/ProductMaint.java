@@ -49,7 +49,7 @@ public interface ProductMaint extends BizEntityTyped<ProductMaintType> {
 	 * @return the value of the '<em>Interval Quantity</em>' attribute.
 	 * @see #setIntervalQuantity(BigDecimal)
 	 * @see org.abchip.mimo.biz.product.product.ProductPackage#getProductMaint_IntervalQuantity()
-	 * @model
+	 * @model annotation="mimo-ent-format type='fixed-point' precision='18' scale='6'"
 	 * @generated
 	 */
 	BigDecimal getIntervalQuantity();
@@ -101,7 +101,7 @@ public interface ProductMaint extends BizEntityTyped<ProductMaintType> {
 	 * @return the value of the '<em>Maint Name</em>' attribute.
 	 * @see #setMaintName(String)
 	 * @see org.abchip.mimo.biz.product.product.ProductPackage#getProductMaint_MaintName()
-	 * @model
+	 * @model annotation="mimo-ent-format type='name' length='100'"
 	 * @generated
 	 */
 	String getMaintName();
@@ -154,6 +154,7 @@ public interface ProductMaint extends BizEntityTyped<ProductMaintType> {
 	 * @see #setProductMaintSeqId(String)
 	 * @see org.abchip.mimo.biz.product.product.ProductPackage#getProductMaint_ProductMaintSeqId()
 	 * @model required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
@@ -180,7 +181,7 @@ public interface ProductMaint extends BizEntityTyped<ProductMaintType> {
 	 * @return the value of the '<em>Repeat Count</em>' attribute.
 	 * @see #setRepeatCount(long)
 	 * @see org.abchip.mimo.biz.product.product.ProductPackage#getProductMaint_RepeatCount()
-	 * @model
+	 * @model annotation="mimo-ent-format type='numeric' precision='20' scale='0'"
 	 * @generated
 	 */
 	long getRepeatCount();

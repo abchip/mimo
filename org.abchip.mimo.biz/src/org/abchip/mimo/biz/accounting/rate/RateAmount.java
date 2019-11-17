@@ -81,6 +81,7 @@ public interface RateAmount extends BizEntity {
 	 * @see #setFromDate(Date)
 	 * @see org.abchip.mimo.biz.accounting.rate.RatePackage#getRateAmount_FromDate()
 	 * @model required="true"
+	 *        annotation="mimo-ent-format type='date-time'"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
@@ -159,7 +160,7 @@ public interface RateAmount extends BizEntity {
 	 * @return the value of the '<em>Rate Amount</em>' attribute.
 	 * @see #setRateAmount(BigDecimal)
 	 * @see org.abchip.mimo.biz.accounting.rate.RatePackage#getRateAmount_RateAmount()
-	 * @model
+	 * @model annotation="mimo-ent-format type='currency-amount' precision='18' scale='2'"
 	 * @generated
 	 */
 	BigDecimal getRateAmount();
@@ -211,7 +212,7 @@ public interface RateAmount extends BizEntity {
 	 * @return the value of the '<em>Thru Date</em>' attribute.
 	 * @see #setThruDate(Date)
 	 * @see org.abchip.mimo.biz.accounting.rate.RatePackage#getRateAmount_ThruDate()
-	 * @model
+	 * @model annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getThruDate();

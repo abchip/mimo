@@ -50,7 +50,7 @@ public interface PartyInvitation extends BizEntity {
 	 * @return the value of the '<em>Email Address</em>' attribute.
 	 * @see #setEmailAddress(String)
 	 * @see org.abchip.mimo.biz.party.party.PartyPackage#getPartyInvitation_EmailAddress()
-	 * @model
+	 * @model annotation="mimo-ent-format type='long-varchar' length='255'"
 	 * @generated
 	 */
 	String getEmailAddress();
@@ -76,7 +76,7 @@ public interface PartyInvitation extends BizEntity {
 	 * @return the value of the '<em>Last Invite Date</em>' attribute.
 	 * @see #setLastInviteDate(Date)
 	 * @see org.abchip.mimo.biz.party.party.PartyPackage#getPartyInvitation_LastInviteDate()
-	 * @model
+	 * @model annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getLastInviteDate();
@@ -102,7 +102,7 @@ public interface PartyInvitation extends BizEntity {
 	 * @return the value of the '<em>Party Id</em>' attribute.
 	 * @see #setPartyId(String)
 	 * @see org.abchip.mimo.biz.party.party.PartyPackage#getPartyInvitation_PartyId()
-	 * @model
+	 * @model annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	String getPartyId();
@@ -154,7 +154,7 @@ public interface PartyInvitation extends BizEntity {
 	 * @return the value of the '<em>To Name</em>' attribute.
 	 * @see #setToName(String)
 	 * @see org.abchip.mimo.biz.party.party.PartyPackage#getPartyInvitation_ToName()
-	 * @model
+	 * @model annotation="mimo-ent-format type='name' length='100'"
 	 * @generated
 	 */
 	String getToName();
@@ -180,7 +180,9 @@ public interface PartyInvitation extends BizEntity {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Party Invitation Group Assocs</em>' attribute list.
 	 * @see org.abchip.mimo.biz.party.party.PartyPackage#getPartyInvitation_PartyInvitationGroupAssocs()
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='PartyInvitationGroupAssoc'"
 	 * @generated
 	 */
@@ -197,7 +199,9 @@ public interface PartyInvitation extends BizEntity {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Party Invitation Role Assocs</em>' attribute list.
 	 * @see org.abchip.mimo.biz.party.party.PartyPackage#getPartyInvitation_PartyInvitationRoleAssocs()
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='PartyInvitationRoleAssoc'"
 	 * @generated
 	 */
@@ -241,6 +245,7 @@ public interface PartyInvitation extends BizEntity {
 	 * @see #setPartyInvitationId(String)
 	 * @see org.abchip.mimo.biz.party.party.PartyPackage#getPartyInvitation_PartyInvitationId()
 	 * @model id="true" required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */

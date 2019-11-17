@@ -39,7 +39,7 @@ public interface SurveyMultiResp extends BizEntity {
 	 * @return the value of the '<em>Multi Resp Title</em>' attribute.
 	 * @see #setMultiRespTitle(String)
 	 * @see org.abchip.mimo.biz.content.survey.SurveyPackage#getSurveyMultiResp_MultiRespTitle()
-	 * @model
+	 * @model annotation="mimo-ent-format type='name' length='100'"
 	 * @generated
 	 */
 	String getMultiRespTitle();
@@ -92,6 +92,7 @@ public interface SurveyMultiResp extends BizEntity {
 	 * @see #setSurveyMultiRespId(String)
 	 * @see org.abchip.mimo.biz.content.survey.SurveyPackage#getSurveyMultiResp_SurveyMultiRespId()
 	 * @model required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */

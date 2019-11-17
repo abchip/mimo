@@ -7,14 +7,12 @@
  */
 package org.abchip.mimo.biz.product.store.impl;
 
-import java.lang.reflect.InvocationTargetException;
 import java.util.List;
 
 import org.abchip.mimo.biz.impl.BizEntityTypedImpl;
 import org.abchip.mimo.biz.product.store.ProductStoreGroup;
 import org.abchip.mimo.biz.product.store.ProductStoreGroupType;
 import org.abchip.mimo.biz.product.store.StorePackage;
-import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 
 /**
@@ -129,20 +127,6 @@ public class ProductStoreGroupImpl extends BizEntityTypedImpl<ProductStoreGroupT
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
-		switch (operationID) {
-			case StorePackage.PRODUCT_STORE_GROUP___PRIMARY_PRODUCT_STORES:
-				return primaryProductStores();
-		}
-		return super.eInvoke(operationID, arguments);
 	}
 
 	/**

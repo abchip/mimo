@@ -47,7 +47,7 @@ public interface EmailTemplateSetting extends BizEntity {
 	 * @return the value of the '<em>Bcc Address</em>' attribute.
 	 * @see #setBccAddress(String)
 	 * @see org.abchip.mimo.biz.common.email.EmailPackage#getEmailTemplateSetting_BccAddress()
-	 * @model
+	 * @model annotation="mimo-ent-format type='email' length='320'"
 	 * @generated
 	 */
 	String getBccAddress();
@@ -73,7 +73,7 @@ public interface EmailTemplateSetting extends BizEntity {
 	 * @return the value of the '<em>Body Screen Location</em>' attribute.
 	 * @see #setBodyScreenLocation(String)
 	 * @see org.abchip.mimo.biz.common.email.EmailPackage#getEmailTemplateSetting_BodyScreenLocation()
-	 * @model
+	 * @model annotation="mimo-ent-format type='long-varchar' length='255'"
 	 * @generated
 	 */
 	String getBodyScreenLocation();
@@ -99,7 +99,7 @@ public interface EmailTemplateSetting extends BizEntity {
 	 * @return the value of the '<em>Cc Address</em>' attribute.
 	 * @see #setCcAddress(String)
 	 * @see org.abchip.mimo.biz.common.email.EmailPackage#getEmailTemplateSetting_CcAddress()
-	 * @model
+	 * @model annotation="mimo-ent-format type='email' length='320'"
 	 * @generated
 	 */
 	String getCcAddress();
@@ -125,7 +125,7 @@ public interface EmailTemplateSetting extends BizEntity {
 	 * @return the value of the '<em>Content Type</em>' attribute.
 	 * @see #setContentType(String)
 	 * @see org.abchip.mimo.biz.common.email.EmailPackage#getEmailTemplateSetting_ContentType()
-	 * @model
+	 * @model annotation="mimo-ent-format type='long-varchar' length='255'"
 	 * @generated
 	 */
 	String getContentType();
@@ -151,7 +151,7 @@ public interface EmailTemplateSetting extends BizEntity {
 	 * @return the value of the '<em>Description</em>' attribute.
 	 * @see #setDescription(String)
 	 * @see org.abchip.mimo.biz.common.email.EmailPackage#getEmailTemplateSetting_Description()
-	 * @model
+	 * @model annotation="mimo-ent-format type='description' length='255'"
 	 * @generated
 	 */
 	String getDescription();
@@ -178,6 +178,7 @@ public interface EmailTemplateSetting extends BizEntity {
 	 * @see #setEmailTemplateSettingId(String)
 	 * @see org.abchip.mimo.biz.common.email.EmailPackage#getEmailTemplateSetting_EmailTemplateSettingId()
 	 * @model id="true" required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
@@ -230,7 +231,7 @@ public interface EmailTemplateSetting extends BizEntity {
 	 * @return the value of the '<em>From Address</em>' attribute.
 	 * @see #setFromAddress(String)
 	 * @see org.abchip.mimo.biz.common.email.EmailPackage#getEmailTemplateSetting_FromAddress()
-	 * @model
+	 * @model annotation="mimo-ent-format type='email' length='320'"
 	 * @generated
 	 */
 	String getFromAddress();
@@ -256,7 +257,7 @@ public interface EmailTemplateSetting extends BizEntity {
 	 * @return the value of the '<em>Subject</em>' attribute.
 	 * @see #setSubject(String)
 	 * @see org.abchip.mimo.biz.common.email.EmailPackage#getEmailTemplateSetting_Subject()
-	 * @model
+	 * @model annotation="mimo-ent-format type='comment' length='255'"
 	 * @generated
 	 */
 	String getSubject();
@@ -282,7 +283,7 @@ public interface EmailTemplateSetting extends BizEntity {
 	 * @return the value of the '<em>Xslfo Attach Screen Location</em>' attribute.
 	 * @see #setXslfoAttachScreenLocation(String)
 	 * @see org.abchip.mimo.biz.common.email.EmailPackage#getEmailTemplateSetting_XslfoAttachScreenLocation()
-	 * @model
+	 * @model annotation="mimo-ent-format type='long-varchar' length='255'"
 	 * @generated
 	 */
 	String getXslfoAttachScreenLocation();

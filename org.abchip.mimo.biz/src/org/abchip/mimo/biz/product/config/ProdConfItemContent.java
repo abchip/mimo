@@ -71,6 +71,7 @@ public interface ProdConfItemContent extends BizEntityTyped<ProdConfItemContentT
 	 * @see #setFromDate(Date)
 	 * @see org.abchip.mimo.biz.product.config.ConfigPackage#getProdConfItemContent_FromDate()
 	 * @model required="true"
+	 *        annotation="mimo-ent-format type='date-time'"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
@@ -97,7 +98,7 @@ public interface ProdConfItemContent extends BizEntityTyped<ProdConfItemContentT
 	 * @return the value of the '<em>Thru Date</em>' attribute.
 	 * @see #setThruDate(Date)
 	 * @see org.abchip.mimo.biz.product.config.ConfigPackage#getProdConfItemContent_ThruDate()
-	 * @model
+	 * @model annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getThruDate();

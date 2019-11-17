@@ -53,6 +53,7 @@ public interface ShipmentTimeEstimate extends BizEntity {
 	 * @see #setFromDate(Date)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipmentTimeEstimate_FromDate()
 	 * @model required="true"
+	 *        annotation="mimo-ent-format type='date-time'"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
@@ -131,7 +132,7 @@ public interface ShipmentTimeEstimate extends BizEntity {
 	 * @return the value of the '<em>Lead Time</em>' attribute.
 	 * @see #setLeadTime(BigDecimal)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipmentTimeEstimate_LeadTime()
-	 * @model
+	 * @model annotation="mimo-ent-format type='fixed-point' precision='18' scale='6'"
 	 * @generated
 	 */
 	BigDecimal getLeadTime();
@@ -184,6 +185,7 @@ public interface ShipmentTimeEstimate extends BizEntity {
 	 * @see #setPartyId(String)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipmentTimeEstimate_PartyId()
 	 * @model required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
@@ -211,6 +213,7 @@ public interface ShipmentTimeEstimate extends BizEntity {
 	 * @see #setRoleTypeId(String)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipmentTimeEstimate_RoleTypeId()
 	 * @model required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
@@ -237,7 +240,7 @@ public interface ShipmentTimeEstimate extends BizEntity {
 	 * @return the value of the '<em>Sequence Number</em>' attribute.
 	 * @see #setSequenceNumber(long)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipmentTimeEstimate_SequenceNumber()
-	 * @model
+	 * @model annotation="mimo-ent-format type='numeric' precision='20' scale='0'"
 	 * @generated
 	 */
 	long getSequenceNumber();
@@ -264,6 +267,7 @@ public interface ShipmentTimeEstimate extends BizEntity {
 	 * @see #setShipmentMethodTypeId(String)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipmentTimeEstimate_ShipmentMethodTypeId()
 	 * @model required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
@@ -290,7 +294,7 @@ public interface ShipmentTimeEstimate extends BizEntity {
 	 * @return the value of the '<em>Thru Date</em>' attribute.
 	 * @see #setThruDate(Date)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipmentTimeEstimate_ThruDate()
-	 * @model
+	 * @model annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getThruDate();

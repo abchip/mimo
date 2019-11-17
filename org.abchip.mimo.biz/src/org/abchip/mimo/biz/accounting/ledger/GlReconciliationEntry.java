@@ -43,6 +43,7 @@ public interface GlReconciliationEntry extends BizEntity {
 	 * @see #setAcctgTransEntrySeqId(String)
 	 * @see org.abchip.mimo.biz.accounting.ledger.LedgerPackage#getGlReconciliationEntry_AcctgTransEntrySeqId()
 	 * @model required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
@@ -69,7 +70,7 @@ public interface GlReconciliationEntry extends BizEntity {
 	 * @return the value of the '<em>Reconciled Amount</em>' attribute.
 	 * @see #setReconciledAmount(BigDecimal)
 	 * @see org.abchip.mimo.biz.accounting.ledger.LedgerPackage#getGlReconciliationEntry_ReconciledAmount()
-	 * @model
+	 * @model annotation="mimo-ent-format type='currency-amount' precision='18' scale='2'"
 	 * @generated
 	 */
 	BigDecimal getReconciledAmount();

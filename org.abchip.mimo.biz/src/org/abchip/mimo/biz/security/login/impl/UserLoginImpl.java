@@ -7,7 +7,6 @@
  */
 package org.abchip.mimo.biz.security.login.impl;
 
-import java.lang.reflect.InvocationTargetException;
 import java.util.Date;
 
 import java.util.List;
@@ -16,7 +15,6 @@ import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.party.party.Party;
 import org.abchip.mimo.biz.security.login.LoginPackage;
 import org.abchip.mimo.biz.security.login.UserLogin;
-import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 
 /**
@@ -967,108 +965,6 @@ public class UserLoginImpl extends BizEntityImpl implements UserLogin {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
-		switch (operationID) {
-			case LoginPackage.USER_LOGIN___APPROVED_BY_TIMESHEETS:
-				return approvedByTimesheets();
-			case LoginPackage.USER_LOGIN___AUTH_JOB_SANDBOXS:
-				return authJobSandboxs();
-			case LoginPackage.USER_LOGIN___CHANGE_BY_BUDGET_STATUSS:
-				return changeByBudgetStatuss();
-			case LoginPackage.USER_LOGIN___CHANGE_BY_CUST_REQUEST_STATUSS:
-				return changeByCustRequestStatuss();
-			case LoginPackage.USER_LOGIN___CHANGE_BY_ORDER_ITEMS:
-				return changeByOrderItems();
-			case LoginPackage.USER_LOGIN___CHANGE_BY_REQUIREMENT_STATUSS:
-				return changeByRequirementStatuss();
-			case LoginPackage.USER_LOGIN___CHANGE_BY_RETURN_STATUSS:
-				return changeByReturnStatuss();
-			case LoginPackage.USER_LOGIN___CHANGE_BY_SHIPMENT_STATUSS:
-				return changeByShipmentStatuss();
-			case LoginPackage.USER_LOGIN___CHANGE_BY_TESTING_STATUSS:
-				return changeByTestingStatuss();
-			case LoginPackage.USER_LOGIN___CHANGE_PICKLIST_STATUS_HISTORIES:
-				return changePicklistStatusHistories();
-			case LoginPackage.USER_LOGIN___CHANGED_BY_PRODUCT_PRICE_CHANGES:
-				return changedByProductPriceChanges();
-			case LoginPackage.USER_LOGIN___CREATED_BY_CONTACT_LISTS:
-				return createdByContactLists();
-			case LoginPackage.USER_LOGIN___CREATED_BY_CONTENTS:
-				return createdByContents();
-			case LoginPackage.USER_LOGIN___CREATED_BY_DATA_RESOURCES:
-				return createdByDataResources();
-			case LoginPackage.USER_LOGIN___CREATED_BY_ORDER_HEADERS:
-				return createdByOrderHeaders();
-			case LoginPackage.USER_LOGIN___CREATED_BY_PARTIES:
-				return createdByParties();
-			case LoginPackage.USER_LOGIN___CREATED_BY_PRODUCT_PROMO_CODES:
-				return createdByProductPromoCodes();
-			case LoginPackage.USER_LOGIN___CREATED_BY_PRODUCT_PROMOS:
-				return createdByProductPromos();
-			case LoginPackage.USER_LOGIN___CREATED_BY_PRODUCTS:
-				return createdByProducts();
-			case LoginPackage.USER_LOGIN___CREATED_BY_SALES_FORECASTS:
-				return createdBySalesForecasts();
-			case LoginPackage.USER_LOGIN___DONT_CANCEL_SET_ORDER_ITEMS:
-				return dontCancelSetOrderItems();
-			case LoginPackage.USER_LOGIN___ISSUED_BY_ITEM_ISSUANCES:
-				return issuedByItemIssuances();
-			case LoginPackage.USER_LOGIN___LAST_MODIFIED_BY_CONTACT_LISTS:
-				return lastModifiedByContactLists();
-			case LoginPackage.USER_LOGIN___LAST_MODIFIED_BY_CONTENTS:
-				return lastModifiedByContents();
-			case LoginPackage.USER_LOGIN___LAST_MODIFIED_BY_DATA_RESOURCES:
-				return lastModifiedByDataResources();
-			case LoginPackage.USER_LOGIN___LAST_MODIFIED_BY_PARTIES:
-				return lastModifiedByParties();
-			case LoginPackage.USER_LOGIN___LAST_MODIFIED_BY_PRODUCT_PROMO_CODES:
-				return lastModifiedByProductPromoCodes();
-			case LoginPackage.USER_LOGIN___LAST_MODIFIED_BY_PRODUCT_PROMOS:
-				return lastModifiedByProductPromos();
-			case LoginPackage.USER_LOGIN___LAST_MODIFIED_BY_PRODUCTS:
-				return lastModifiedByProducts();
-			case LoginPackage.USER_LOGIN___MODIFIED_BY_SALES_FORECAST_HISTORIES:
-				return modifiedBySalesForecastHistories();
-			case LoginPackage.USER_LOGIN___MODIFIED_BY_SALES_FORECASTS:
-				return modifiedBySalesForecasts();
-			case LoginPackage.USER_LOGIN___ORDER_ADJUSTMENTS:
-				return orderAdjustments();
-			case LoginPackage.USER_LOGIN___ORDER_ITEM_CHANGES:
-				return orderItemChanges();
-			case LoginPackage.USER_LOGIN___ORDER_PAYMENT_PREFERENCES:
-				return orderPaymentPreferences();
-			case LoginPackage.USER_LOGIN___ORDER_STATUSS:
-				return orderStatuss();
-			case LoginPackage.USER_LOGIN___PRODUCT_REVIEWS:
-				return productReviews();
-			case LoginPackage.USER_LOGIN___QUOTE_ADJUSTMENTS:
-				return quoteAdjustments();
-			case LoginPackage.USER_LOGIN___RETURN_ADJUSTMENTS:
-				return returnAdjustments();
-			case LoginPackage.USER_LOGIN___RETURN_HEADERS:
-				return returnHeaders();
-			case LoginPackage.USER_LOGIN___RUN_AS_JOB_SANDBOXS:
-				return runAsJobSandboxs();
-			case LoginPackage.USER_LOGIN___SALES_OPPORTUNITIES:
-				return salesOpportunities();
-			case LoginPackage.USER_LOGIN___SALES_OPPORTUNITY_HISTORIES:
-				return salesOpportunityHistories();
-			case LoginPackage.USER_LOGIN___SHIPMENT_RECEIPTS:
-				return shipmentReceipts();
-			case LoginPackage.USER_LOGIN___USER_LOGIN_SECURITY_QUESTIONS:
-				return userLoginSecurityQuestions();
-			case LoginPackage.USER_LOGIN___VISITORS:
-				return visitors();
-		}
-		return super.eInvoke(operationID, arguments);
 	}
 
 } //UserLoginImpl

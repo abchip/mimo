@@ -40,7 +40,7 @@ public interface CountryCode extends BizEntity {
 	 * @return the value of the '<em>Country Abbr</em>' attribute.
 	 * @see #setCountryAbbr(String)
 	 * @see org.abchip.mimo.biz.common.geo.GeoPackage#getCountryCode_CountryAbbr()
-	 * @model
+	 * @model annotation="mimo-ent-format type='short-varchar' length='60'"
 	 * @generated
 	 */
 	String getCountryAbbr();
@@ -66,7 +66,7 @@ public interface CountryCode extends BizEntity {
 	 * @return the value of the '<em>Country Name</em>' attribute.
 	 * @see #setCountryName(String)
 	 * @see org.abchip.mimo.biz.common.geo.GeoPackage#getCountryCode_CountryName()
-	 * @model
+	 * @model annotation="mimo-ent-format type='description' length='255'"
 	 * @generated
 	 */
 	String getCountryName();
@@ -92,7 +92,7 @@ public interface CountryCode extends BizEntity {
 	 * @return the value of the '<em>Country Number</em>' attribute.
 	 * @see #setCountryNumber(String)
 	 * @see org.abchip.mimo.biz.common.geo.GeoPackage#getCountryCode_CountryNumber()
-	 * @model
+	 * @model annotation="mimo-ent-format type='short-varchar' length='60'"
 	 * @generated
 	 */
 	String getCountryNumber();
@@ -119,6 +119,7 @@ public interface CountryCode extends BizEntity {
 	 * @see #setCountryCode(String)
 	 * @see org.abchip.mimo.biz.common.geo.GeoPackage#getCountryCode_CountryCode()
 	 * @model id="true" required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */

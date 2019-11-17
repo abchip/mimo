@@ -82,7 +82,7 @@ public interface ShipmentRouteSegment extends BizEntity {
 	 * @return the value of the '<em>Actual Arrival Date</em>' attribute.
 	 * @see #setActualArrivalDate(Date)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipmentRouteSegment_ActualArrivalDate()
-	 * @model
+	 * @model annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getActualArrivalDate();
@@ -108,7 +108,7 @@ public interface ShipmentRouteSegment extends BizEntity {
 	 * @return the value of the '<em>Actual Cost</em>' attribute.
 	 * @see #setActualCost(BigDecimal)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipmentRouteSegment_ActualCost()
-	 * @model
+	 * @model annotation="mimo-ent-format type='currency-amount' precision='18' scale='2'"
 	 * @generated
 	 */
 	BigDecimal getActualCost();
@@ -134,7 +134,7 @@ public interface ShipmentRouteSegment extends BizEntity {
 	 * @return the value of the '<em>Actual Other Cost</em>' attribute.
 	 * @see #setActualOtherCost(BigDecimal)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipmentRouteSegment_ActualOtherCost()
-	 * @model
+	 * @model annotation="mimo-ent-format type='currency-amount' precision='18' scale='2'"
 	 * @generated
 	 */
 	BigDecimal getActualOtherCost();
@@ -160,7 +160,7 @@ public interface ShipmentRouteSegment extends BizEntity {
 	 * @return the value of the '<em>Actual Service Cost</em>' attribute.
 	 * @see #setActualServiceCost(BigDecimal)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipmentRouteSegment_ActualServiceCost()
-	 * @model
+	 * @model annotation="mimo-ent-format type='currency-amount' precision='18' scale='2'"
 	 * @generated
 	 */
 	BigDecimal getActualServiceCost();
@@ -186,7 +186,7 @@ public interface ShipmentRouteSegment extends BizEntity {
 	 * @return the value of the '<em>Actual Start Date</em>' attribute.
 	 * @see #setActualStartDate(Date)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipmentRouteSegment_ActualStartDate()
-	 * @model
+	 * @model annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getActualStartDate();
@@ -212,7 +212,7 @@ public interface ShipmentRouteSegment extends BizEntity {
 	 * @return the value of the '<em>Actual Transport Cost</em>' attribute.
 	 * @see #setActualTransportCost(BigDecimal)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipmentRouteSegment_ActualTransportCost()
-	 * @model
+	 * @model annotation="mimo-ent-format type='currency-amount' precision='18' scale='2'"
 	 * @generated
 	 */
 	BigDecimal getActualTransportCost();
@@ -238,7 +238,7 @@ public interface ShipmentRouteSegment extends BizEntity {
 	 * @return the value of the '<em>Billing Weight</em>' attribute.
 	 * @see #setBillingWeight(BigDecimal)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipmentRouteSegment_BillingWeight()
-	 * @model
+	 * @model annotation="mimo-ent-format type='fixed-point' precision='18' scale='6'"
 	 * @generated
 	 */
 	BigDecimal getBillingWeight();
@@ -290,7 +290,7 @@ public interface ShipmentRouteSegment extends BizEntity {
 	 * @return the value of the '<em>Carrier Delivery Zone</em>' attribute.
 	 * @see #setCarrierDeliveryZone(String)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipmentRouteSegment_CarrierDeliveryZone()
-	 * @model
+	 * @model annotation="mimo-ent-format type='short-varchar' length='60'"
 	 * @generated
 	 */
 	String getCarrierDeliveryZone();
@@ -342,7 +342,7 @@ public interface ShipmentRouteSegment extends BizEntity {
 	 * @return the value of the '<em>Carrier Restriction Codes</em>' attribute.
 	 * @see #setCarrierRestrictionCodes(String)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipmentRouteSegment_CarrierRestrictionCodes()
-	 * @model
+	 * @model annotation="mimo-ent-format type='short-varchar' length='60'"
 	 * @generated
 	 */
 	String getCarrierRestrictionCodes();
@@ -368,7 +368,7 @@ public interface ShipmentRouteSegment extends BizEntity {
 	 * @return the value of the '<em>Carrier Restriction Desc</em>' attribute.
 	 * @see #setCarrierRestrictionDesc(String)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipmentRouteSegment_CarrierRestrictionDesc()
-	 * @model
+	 * @model annotation="mimo-ent-format type='very-long'"
 	 * @generated
 	 */
 	String getCarrierRestrictionDesc();
@@ -550,7 +550,7 @@ public interface ShipmentRouteSegment extends BizEntity {
 	 * @return the value of the '<em>Estimated Arrival Date</em>' attribute.
 	 * @see #setEstimatedArrivalDate(Date)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipmentRouteSegment_EstimatedArrivalDate()
-	 * @model
+	 * @model annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getEstimatedArrivalDate();
@@ -576,7 +576,7 @@ public interface ShipmentRouteSegment extends BizEntity {
 	 * @return the value of the '<em>Estimated Start Date</em>' attribute.
 	 * @see #setEstimatedStartDate(Date)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipmentRouteSegment_EstimatedStartDate()
-	 * @model
+	 * @model annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getEstimatedStartDate();
@@ -602,7 +602,7 @@ public interface ShipmentRouteSegment extends BizEntity {
 	 * @return the value of the '<em>Home Delivery Date</em>' attribute.
 	 * @see #setHomeDeliveryDate(Date)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipmentRouteSegment_HomeDeliveryDate()
-	 * @model
+	 * @model annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getHomeDeliveryDate();
@@ -628,7 +628,7 @@ public interface ShipmentRouteSegment extends BizEntity {
 	 * @return the value of the '<em>Home Delivery Type</em>' attribute.
 	 * @see #setHomeDeliveryType(String)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipmentRouteSegment_HomeDeliveryType()
-	 * @model
+	 * @model annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	String getHomeDeliveryType();
@@ -654,7 +654,7 @@ public interface ShipmentRouteSegment extends BizEntity {
 	 * @return the value of the '<em>Last Updated Date</em>' attribute.
 	 * @see #setLastUpdatedDate(Date)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipmentRouteSegment_LastUpdatedDate()
-	 * @model
+	 * @model annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getLastUpdatedDate();
@@ -811,6 +811,7 @@ public interface ShipmentRouteSegment extends BizEntity {
 	 * @see #setShipmentRouteSegmentId(String)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipmentRouteSegment_ShipmentRouteSegmentId()
 	 * @model required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
@@ -837,7 +838,7 @@ public interface ShipmentRouteSegment extends BizEntity {
 	 * @return the value of the '<em>Third Party Account Number</em>' attribute.
 	 * @see #setThirdPartyAccountNumber(String)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipmentRouteSegment_ThirdPartyAccountNumber()
-	 * @model
+	 * @model annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	String getThirdPartyAccountNumber();
@@ -863,7 +864,7 @@ public interface ShipmentRouteSegment extends BizEntity {
 	 * @return the value of the '<em>Third Party Country Geo Code</em>' attribute.
 	 * @see #setThirdPartyCountryGeoCode(String)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipmentRouteSegment_ThirdPartyCountryGeoCode()
-	 * @model
+	 * @model annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	String getThirdPartyCountryGeoCode();
@@ -889,7 +890,7 @@ public interface ShipmentRouteSegment extends BizEntity {
 	 * @return the value of the '<em>Third Party Postal Code</em>' attribute.
 	 * @see #setThirdPartyPostalCode(String)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipmentRouteSegment_ThirdPartyPostalCode()
-	 * @model
+	 * @model annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	String getThirdPartyPostalCode();
@@ -915,7 +916,7 @@ public interface ShipmentRouteSegment extends BizEntity {
 	 * @return the value of the '<em>Tracking Digest</em>' attribute.
 	 * @see #setTrackingDigest(String)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipmentRouteSegment_TrackingDigest()
-	 * @model
+	 * @model annotation="mimo-ent-format type='very-long'"
 	 * @generated
 	 */
 	String getTrackingDigest();
@@ -941,7 +942,7 @@ public interface ShipmentRouteSegment extends BizEntity {
 	 * @return the value of the '<em>Tracking Id Number</em>' attribute.
 	 * @see #setTrackingIdNumber(String)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipmentRouteSegment_TrackingIdNumber()
-	 * @model
+	 * @model annotation="mimo-ent-format type='short-varchar' length='60'"
 	 * @generated
 	 */
 	String getTrackingIdNumber();
@@ -967,7 +968,7 @@ public interface ShipmentRouteSegment extends BizEntity {
 	 * @return the value of the '<em>Updated By User Login Id</em>' attribute.
 	 * @see #setUpdatedByUserLoginId(String)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipmentRouteSegment_UpdatedByUserLoginId()
-	 * @model
+	 * @model annotation="mimo-ent-format type='id-vlong' length='255'"
 	 * @generated
 	 */
 	String getUpdatedByUserLoginId();
@@ -993,7 +994,7 @@ public interface ShipmentRouteSegment extends BizEntity {
 	 * @return the value of the '<em>Ups High Value Report</em>' attribute.
 	 * @see #setUpsHighValueReport(byte[])
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipmentRouteSegment_UpsHighValueReport()
-	 * @model
+	 * @model annotation="mimo-ent-format type='byte-array'"
 	 * @generated
 	 */
 	byte[] getUpsHighValueReport();

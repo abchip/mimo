@@ -77,7 +77,7 @@ public interface WorkEffortEventReminder extends BizEntity {
 	 * @return the value of the '<em>Current Count</em>' attribute.
 	 * @see #setCurrentCount(long)
 	 * @see org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage#getWorkEffortEventReminder_CurrentCount()
-	 * @model
+	 * @model annotation="mimo-ent-format type='numeric' precision='20' scale='0'"
 	 * @generated
 	 */
 	long getCurrentCount();
@@ -103,7 +103,7 @@ public interface WorkEffortEventReminder extends BizEntity {
 	 * @return the value of the '<em>Locale Id</em>' attribute.
 	 * @see #setLocaleId(String)
 	 * @see org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage#getWorkEffortEventReminder_LocaleId()
-	 * @model
+	 * @model annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	String getLocaleId();
@@ -155,7 +155,7 @@ public interface WorkEffortEventReminder extends BizEntity {
 	 * @return the value of the '<em>Reminder Date Time</em>' attribute.
 	 * @see #setReminderDateTime(Date)
 	 * @see org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage#getWorkEffortEventReminder_ReminderDateTime()
-	 * @model
+	 * @model annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getReminderDateTime();
@@ -181,7 +181,7 @@ public interface WorkEffortEventReminder extends BizEntity {
 	 * @return the value of the '<em>Reminder Offset</em>' attribute.
 	 * @see #setReminderOffset(long)
 	 * @see org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage#getWorkEffortEventReminder_ReminderOffset()
-	 * @model
+	 * @model annotation="mimo-ent-format type='numeric' precision='20' scale='0'"
 	 * @generated
 	 */
 	long getReminderOffset();
@@ -207,7 +207,7 @@ public interface WorkEffortEventReminder extends BizEntity {
 	 * @return the value of the '<em>Repeat Count</em>' attribute.
 	 * @see #setRepeatCount(long)
 	 * @see org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage#getWorkEffortEventReminder_RepeatCount()
-	 * @model
+	 * @model annotation="mimo-ent-format type='numeric' precision='20' scale='0'"
 	 * @generated
 	 */
 	long getRepeatCount();
@@ -233,7 +233,7 @@ public interface WorkEffortEventReminder extends BizEntity {
 	 * @return the value of the '<em>Repeat Interval</em>' attribute.
 	 * @see #setRepeatInterval(long)
 	 * @see org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage#getWorkEffortEventReminder_RepeatInterval()
-	 * @model
+	 * @model annotation="mimo-ent-format type='numeric' precision='20' scale='0'"
 	 * @generated
 	 */
 	long getRepeatInterval();
@@ -260,6 +260,7 @@ public interface WorkEffortEventReminder extends BizEntity {
 	 * @see #setSequenceId(String)
 	 * @see org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage#getWorkEffortEventReminder_SequenceId()
 	 * @model required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
@@ -286,7 +287,7 @@ public interface WorkEffortEventReminder extends BizEntity {
 	 * @return the value of the '<em>Time Zone Id</em>' attribute.
 	 * @see #setTimeZoneId(String)
 	 * @see org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage#getWorkEffortEventReminder_TimeZoneId()
-	 * @model
+	 * @model annotation="mimo-ent-format type='id-long' length='60'"
 	 * @generated
 	 */
 	String getTimeZoneId();

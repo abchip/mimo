@@ -7,13 +7,11 @@
  */
 package org.abchip.mimo.biz.service.schedule.impl;
 
-import java.lang.reflect.InvocationTargetException;
 import java.util.List;
 
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.service.schedule.RuntimeData;
 import org.abchip.mimo.biz.service.schedule.SchedulePackage;
-import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 
 /**
@@ -129,24 +127,6 @@ public class RuntimeDataImpl extends BizEntityImpl implements RuntimeData {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
-		switch (operationID) {
-			case SchedulePackage.RUNTIME_DATA___APPLICATION_SANDBOXS:
-				return applicationSandboxs();
-			case SchedulePackage.RUNTIME_DATA___JOB_SANDBOXS:
-				return jobSandboxs();
-			case SchedulePackage.RUNTIME_DATA___WORK_EFFORTS:
-				return workEfforts();
-		}
-		return super.eInvoke(operationID, arguments);
 	}
 
 } //RuntimeDataImpl

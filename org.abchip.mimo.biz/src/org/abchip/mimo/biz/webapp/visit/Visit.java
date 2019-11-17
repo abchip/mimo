@@ -65,6 +65,7 @@ public interface Visit extends BizEntity {
 	 * @see #setVisitId(String)
 	 * @see org.abchip.mimo.biz.webapp.visit.VisitPackage#getVisit_VisitId()
 	 * @model id="true" required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
@@ -91,7 +92,7 @@ public interface Visit extends BizEntity {
 	 * @return the value of the '<em>Client Host Name</em>' attribute.
 	 * @see #setClientHostName(String)
 	 * @see org.abchip.mimo.biz.webapp.visit.VisitPackage#getVisit_ClientHostName()
-	 * @model
+	 * @model annotation="mimo-ent-format type='long-varchar' length='255'"
 	 * @generated
 	 */
 	String getClientHostName();
@@ -117,7 +118,7 @@ public interface Visit extends BizEntity {
 	 * @return the value of the '<em>Client Ip Address</em>' attribute.
 	 * @see #setClientIpAddress(String)
 	 * @see org.abchip.mimo.biz.webapp.visit.VisitPackage#getVisit_ClientIpAddress()
-	 * @model
+	 * @model annotation="mimo-ent-format type='short-varchar' length='60'"
 	 * @generated
 	 */
 	String getClientIpAddress();
@@ -143,7 +144,7 @@ public interface Visit extends BizEntity {
 	 * @return the value of the '<em>Client Ip Country Geo Id</em>' attribute.
 	 * @see #setClientIpCountryGeoId(String)
 	 * @see org.abchip.mimo.biz.webapp.visit.VisitPackage#getVisit_ClientIpCountryGeoId()
-	 * @model
+	 * @model annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	String getClientIpCountryGeoId();
@@ -169,7 +170,7 @@ public interface Visit extends BizEntity {
 	 * @return the value of the '<em>Client Ip Isp Name</em>' attribute.
 	 * @see #setClientIpIspName(String)
 	 * @see org.abchip.mimo.biz.webapp.visit.VisitPackage#getVisit_ClientIpIspName()
-	 * @model
+	 * @model annotation="mimo-ent-format type='short-varchar' length='60'"
 	 * @generated
 	 */
 	String getClientIpIspName();
@@ -195,7 +196,7 @@ public interface Visit extends BizEntity {
 	 * @return the value of the '<em>Client Ip Postal Code</em>' attribute.
 	 * @see #setClientIpPostalCode(String)
 	 * @see org.abchip.mimo.biz.webapp.visit.VisitPackage#getVisit_ClientIpPostalCode()
-	 * @model
+	 * @model annotation="mimo-ent-format type='short-varchar' length='60'"
 	 * @generated
 	 */
 	String getClientIpPostalCode();
@@ -221,7 +222,7 @@ public interface Visit extends BizEntity {
 	 * @return the value of the '<em>Client Ip State Prov Geo Id</em>' attribute.
 	 * @see #setClientIpStateProvGeoId(String)
 	 * @see org.abchip.mimo.biz.webapp.visit.VisitPackage#getVisit_ClientIpStateProvGeoId()
-	 * @model
+	 * @model annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	String getClientIpStateProvGeoId();
@@ -247,7 +248,7 @@ public interface Visit extends BizEntity {
 	 * @return the value of the '<em>Client User</em>' attribute.
 	 * @see #setClientUser(String)
 	 * @see org.abchip.mimo.biz.webapp.visit.VisitPackage#getVisit_ClientUser()
-	 * @model
+	 * @model annotation="mimo-ent-format type='short-varchar' length='60'"
 	 * @generated
 	 */
 	String getClientUser();
@@ -273,7 +274,7 @@ public interface Visit extends BizEntity {
 	 * @return the value of the '<em>Contact Mech Id</em>' attribute.
 	 * @see #setContactMechId(String)
 	 * @see org.abchip.mimo.biz.webapp.visit.VisitPackage#getVisit_ContactMechId()
-	 * @model
+	 * @model annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	String getContactMechId();
@@ -299,7 +300,7 @@ public interface Visit extends BizEntity {
 	 * @return the value of the '<em>Cookie</em>' attribute.
 	 * @see #setCookie(String)
 	 * @see org.abchip.mimo.biz.webapp.visit.VisitPackage#getVisit_Cookie()
-	 * @model
+	 * @model annotation="mimo-ent-format type='short-varchar' length='60'"
 	 * @generated
 	 */
 	String getCookie();
@@ -325,7 +326,7 @@ public interface Visit extends BizEntity {
 	 * @return the value of the '<em>From Date</em>' attribute.
 	 * @see #setFromDate(Date)
 	 * @see org.abchip.mimo.biz.webapp.visit.VisitPackage#getVisit_FromDate()
-	 * @model
+	 * @model annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getFromDate();
@@ -351,7 +352,7 @@ public interface Visit extends BizEntity {
 	 * @return the value of the '<em>Initial Locale</em>' attribute.
 	 * @see #setInitialLocale(String)
 	 * @see org.abchip.mimo.biz.webapp.visit.VisitPackage#getVisit_InitialLocale()
-	 * @model
+	 * @model annotation="mimo-ent-format type='short-varchar' length='60'"
 	 * @generated
 	 */
 	String getInitialLocale();
@@ -377,7 +378,7 @@ public interface Visit extends BizEntity {
 	 * @return the value of the '<em>Initial Referrer</em>' attribute.
 	 * @see #setInitialReferrer(String)
 	 * @see org.abchip.mimo.biz.webapp.visit.VisitPackage#getVisit_InitialReferrer()
-	 * @model
+	 * @model annotation="mimo-ent-format type='url' length='2000'"
 	 * @generated
 	 */
 	String getInitialReferrer();
@@ -403,7 +404,7 @@ public interface Visit extends BizEntity {
 	 * @return the value of the '<em>Initial Request</em>' attribute.
 	 * @see #setInitialRequest(String)
 	 * @see org.abchip.mimo.biz.webapp.visit.VisitPackage#getVisit_InitialRequest()
-	 * @model
+	 * @model annotation="mimo-ent-format type='url' length='2000'"
 	 * @generated
 	 */
 	String getInitialRequest();
@@ -429,7 +430,7 @@ public interface Visit extends BizEntity {
 	 * @return the value of the '<em>Initial User Agent</em>' attribute.
 	 * @see #setInitialUserAgent(String)
 	 * @see org.abchip.mimo.biz.webapp.visit.VisitPackage#getVisit_InitialUserAgent()
-	 * @model
+	 * @model annotation="mimo-ent-format type='long-varchar' length='255'"
 	 * @generated
 	 */
 	String getInitialUserAgent();
@@ -455,7 +456,7 @@ public interface Visit extends BizEntity {
 	 * @return the value of the '<em>Party Id</em>' attribute.
 	 * @see #setPartyId(String)
 	 * @see org.abchip.mimo.biz.webapp.visit.VisitPackage#getVisit_PartyId()
-	 * @model
+	 * @model annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	String getPartyId();
@@ -481,7 +482,7 @@ public interface Visit extends BizEntity {
 	 * @return the value of the '<em>Role Type Id</em>' attribute.
 	 * @see #setRoleTypeId(String)
 	 * @see org.abchip.mimo.biz.webapp.visit.VisitPackage#getVisit_RoleTypeId()
-	 * @model
+	 * @model annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	String getRoleTypeId();
@@ -507,7 +508,7 @@ public interface Visit extends BizEntity {
 	 * @return the value of the '<em>Server Host Name</em>' attribute.
 	 * @see #setServerHostName(String)
 	 * @see org.abchip.mimo.biz.webapp.visit.VisitPackage#getVisit_ServerHostName()
-	 * @model
+	 * @model annotation="mimo-ent-format type='long-varchar' length='255'"
 	 * @generated
 	 */
 	String getServerHostName();
@@ -533,7 +534,7 @@ public interface Visit extends BizEntity {
 	 * @return the value of the '<em>Server Ip Address</em>' attribute.
 	 * @see #setServerIpAddress(String)
 	 * @see org.abchip.mimo.biz.webapp.visit.VisitPackage#getVisit_ServerIpAddress()
-	 * @model
+	 * @model annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	String getServerIpAddress();
@@ -559,7 +560,7 @@ public interface Visit extends BizEntity {
 	 * @return the value of the '<em>Session Id</em>' attribute.
 	 * @see #setSessionId(String)
 	 * @see org.abchip.mimo.biz.webapp.visit.VisitPackage#getVisit_SessionId()
-	 * @model
+	 * @model annotation="mimo-ent-format type='id-vlong' length='255'"
 	 * @generated
 	 */
 	String getSessionId();
@@ -585,7 +586,7 @@ public interface Visit extends BizEntity {
 	 * @return the value of the '<em>Thru Date</em>' attribute.
 	 * @see #setThruDate(Date)
 	 * @see org.abchip.mimo.biz.webapp.visit.VisitPackage#getVisit_ThruDate()
-	 * @model
+	 * @model annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getThruDate();
@@ -599,6 +600,32 @@ public interface Visit extends BizEntity {
 	 * @generated
 	 */
 	void setThruDate(Date value);
+
+	/**
+	 * Returns the value of the '<em><b>User Created</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>User Created</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>User Created</em>' attribute.
+	 * @see #setUserCreated(boolean)
+	 * @see org.abchip.mimo.biz.webapp.visit.VisitPackage#getVisit_UserCreated()
+	 * @model annotation="mimo-ent-format type='indicator' length='1'"
+	 * @generated
+	 */
+	boolean isUserCreated();
+
+	/**
+	 * Sets the value of the '{@link org.abchip.mimo.biz.webapp.visit.Visit#isUserCreated <em>User Created</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>User Created</em>' attribute.
+	 * @see #isUserCreated()
+	 * @generated
+	 */
+	void setUserCreated(boolean value);
 
 	/**
 	 * Returns the value of the '<em><b>User Agent Id</b></em>' reference.
@@ -627,32 +654,6 @@ public interface Visit extends BizEntity {
 	void setUserAgentId(UserAgent value);
 
 	/**
-	 * Returns the value of the '<em><b>User Created</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>User Created</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>User Created</em>' attribute.
-	 * @see #setUserCreated(boolean)
-	 * @see org.abchip.mimo.biz.webapp.visit.VisitPackage#getVisit_UserCreated()
-	 * @model
-	 * @generated
-	 */
-	boolean isUserCreated();
-
-	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.webapp.visit.Visit#isUserCreated <em>User Created</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>User Created</em>' attribute.
-	 * @see #isUserCreated()
-	 * @generated
-	 */
-	void setUserCreated(boolean value);
-
-	/**
 	 * Returns the value of the '<em><b>User Login Id</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -663,7 +664,7 @@ public interface Visit extends BizEntity {
 	 * @return the value of the '<em>User Login Id</em>' attribute.
 	 * @see #setUserLoginId(String)
 	 * @see org.abchip.mimo.biz.webapp.visit.VisitPackage#getVisit_UserLoginId()
-	 * @model
+	 * @model annotation="mimo-ent-format type='id-vlong' length='255'"
 	 * @generated
 	 */
 	String getUserLoginId();
@@ -715,7 +716,7 @@ public interface Visit extends BizEntity {
 	 * @return the value of the '<em>Webapp Name</em>' attribute.
 	 * @see #setWebappName(String)
 	 * @see org.abchip.mimo.biz.webapp.visit.VisitPackage#getVisit_WebappName()
-	 * @model
+	 * @model annotation="mimo-ent-format type='short-varchar' length='60'"
 	 * @generated
 	 */
 	String getWebappName();

@@ -29,7 +29,7 @@ import org.abchip.mimo.biz.product.inventory.InventoryItem;
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.accounting.ledger.AcctgTransEntry#getAcctgTransEntrySeqId <em>Acctg Trans Entry Seq Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.ledger.AcctgTransEntry#getAmount <em>Amount</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.ledger.AcctgTransEntry#isDebitCreditFlag <em>Debit Credit Flag</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.ledger.AcctgTransEntry#getDebitCreditFlag <em>Debit Credit Flag</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.ledger.AcctgTransEntry#getDescription <em>Description</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.ledger.AcctgTransEntry#getDueDate <em>Due Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.ledger.AcctgTransEntry#getGroupId <em>Group Id</em>}</li>
@@ -71,6 +71,7 @@ public interface AcctgTransEntry extends BizEntityTyped<AcctgTransEntryType> {
 	 * @see #setAcctgTransEntrySeqId(String)
 	 * @see org.abchip.mimo.biz.accounting.ledger.LedgerPackage#getAcctgTransEntry_AcctgTransEntrySeqId()
 	 * @model required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
@@ -97,7 +98,7 @@ public interface AcctgTransEntry extends BizEntityTyped<AcctgTransEntryType> {
 	 * @return the value of the '<em>Amount</em>' attribute.
 	 * @see #setAmount(BigDecimal)
 	 * @see org.abchip.mimo.biz.accounting.ledger.LedgerPackage#getAcctgTransEntry_Amount()
-	 * @model
+	 * @model annotation="mimo-ent-format type='currency-amount' precision='18' scale='2'"
 	 * @generated
 	 */
 	BigDecimal getAmount();
@@ -111,6 +112,32 @@ public interface AcctgTransEntry extends BizEntityTyped<AcctgTransEntryType> {
 	 * @generated
 	 */
 	void setAmount(BigDecimal value);
+
+	/**
+	 * Returns the value of the '<em><b>Debit Credit Flag</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Debit Credit Flag</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Debit Credit Flag</em>' attribute.
+	 * @see #setDebitCreditFlag(char)
+	 * @see org.abchip.mimo.biz.accounting.ledger.LedgerPackage#getAcctgTransEntry_DebitCreditFlag()
+	 * @model annotation="mimo-ent-format type='indicator' length='1'"
+	 * @generated
+	 */
+	char getDebitCreditFlag();
+
+	/**
+	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.ledger.AcctgTransEntry#getDebitCreditFlag <em>Debit Credit Flag</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Debit Credit Flag</em>' attribute.
+	 * @see #getDebitCreditFlag()
+	 * @generated
+	 */
+	void setDebitCreditFlag(char value);
 
 	/**
 	 * Returns the value of the '<em><b>Currency Uom Id</b></em>' reference.
@@ -139,32 +166,6 @@ public interface AcctgTransEntry extends BizEntityTyped<AcctgTransEntryType> {
 	void setCurrencyUomId(Uom value);
 
 	/**
-	 * Returns the value of the '<em><b>Debit Credit Flag</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Debit Credit Flag</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Debit Credit Flag</em>' attribute.
-	 * @see #setDebitCreditFlag(boolean)
-	 * @see org.abchip.mimo.biz.accounting.ledger.LedgerPackage#getAcctgTransEntry_DebitCreditFlag()
-	 * @model
-	 * @generated
-	 */
-	boolean isDebitCreditFlag();
-
-	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.ledger.AcctgTransEntry#isDebitCreditFlag <em>Debit Credit Flag</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Debit Credit Flag</em>' attribute.
-	 * @see #isDebitCreditFlag()
-	 * @generated
-	 */
-	void setDebitCreditFlag(boolean value);
-
-	/**
 	 * Returns the value of the '<em><b>Description</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -175,7 +176,7 @@ public interface AcctgTransEntry extends BizEntityTyped<AcctgTransEntryType> {
 	 * @return the value of the '<em>Description</em>' attribute.
 	 * @see #setDescription(String)
 	 * @see org.abchip.mimo.biz.accounting.ledger.LedgerPackage#getAcctgTransEntry_Description()
-	 * @model
+	 * @model annotation="mimo-ent-format type='description' length='255'"
 	 * @generated
 	 */
 	String getDescription();
@@ -201,7 +202,7 @@ public interface AcctgTransEntry extends BizEntityTyped<AcctgTransEntryType> {
 	 * @return the value of the '<em>Due Date</em>' attribute.
 	 * @see #setDueDate(Date)
 	 * @see org.abchip.mimo.biz.accounting.ledger.LedgerPackage#getAcctgTransEntry_DueDate()
-	 * @model
+	 * @model annotation="mimo-ent-format type='date'"
 	 * @generated
 	 */
 	Date getDueDate();
@@ -227,7 +228,7 @@ public interface AcctgTransEntry extends BizEntityTyped<AcctgTransEntryType> {
 	 * @return the value of the '<em>Group Id</em>' attribute.
 	 * @see #setGroupId(String)
 	 * @see org.abchip.mimo.biz.accounting.ledger.LedgerPackage#getAcctgTransEntry_GroupId()
-	 * @model
+	 * @model annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	String getGroupId();
@@ -241,6 +242,32 @@ public interface AcctgTransEntry extends BizEntityTyped<AcctgTransEntryType> {
 	 * @generated
 	 */
 	void setGroupId(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Is Summary</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Is Summary</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Is Summary</em>' attribute.
+	 * @see #setIsSummary(boolean)
+	 * @see org.abchip.mimo.biz.accounting.ledger.LedgerPackage#getAcctgTransEntry_IsSummary()
+	 * @model annotation="mimo-ent-format type='indicator' length='1'"
+	 * @generated
+	 */
+	boolean isIsSummary();
+
+	/**
+	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.ledger.AcctgTransEntry#isIsSummary <em>Is Summary</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Is Summary</em>' attribute.
+	 * @see #isIsSummary()
+	 * @generated
+	 */
+	void setIsSummary(boolean value);
 
 	/**
 	 * Returns the value of the '<em><b>Inventory Item Id</b></em>' reference.
@@ -269,32 +296,6 @@ public interface AcctgTransEntry extends BizEntityTyped<AcctgTransEntryType> {
 	void setInventoryItemId(InventoryItem value);
 
 	/**
-	 * Returns the value of the '<em><b>Is Summary</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Is Summary</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Is Summary</em>' attribute.
-	 * @see #setIsSummary(boolean)
-	 * @see org.abchip.mimo.biz.accounting.ledger.LedgerPackage#getAcctgTransEntry_IsSummary()
-	 * @model
-	 * @generated
-	 */
-	boolean isIsSummary();
-
-	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.ledger.AcctgTransEntry#isIsSummary <em>Is Summary</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Is Summary</em>' attribute.
-	 * @see #isIsSummary()
-	 * @generated
-	 */
-	void setIsSummary(boolean value);
-
-	/**
 	 * Returns the value of the '<em><b>Organization Party Id</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -305,7 +306,7 @@ public interface AcctgTransEntry extends BizEntityTyped<AcctgTransEntryType> {
 	 * @return the value of the '<em>Organization Party Id</em>' attribute.
 	 * @see #setOrganizationPartyId(String)
 	 * @see org.abchip.mimo.biz.accounting.ledger.LedgerPackage#getAcctgTransEntry_OrganizationPartyId()
-	 * @model
+	 * @model annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	String getOrganizationPartyId();
@@ -331,7 +332,7 @@ public interface AcctgTransEntry extends BizEntityTyped<AcctgTransEntryType> {
 	 * @return the value of the '<em>Orig Amount</em>' attribute.
 	 * @see #setOrigAmount(BigDecimal)
 	 * @see org.abchip.mimo.biz.accounting.ledger.LedgerPackage#getAcctgTransEntry_OrigAmount()
-	 * @model
+	 * @model annotation="mimo-ent-format type='currency-amount' precision='18' scale='2'"
 	 * @generated
 	 */
 	BigDecimal getOrigAmount();
@@ -409,7 +410,7 @@ public interface AcctgTransEntry extends BizEntityTyped<AcctgTransEntryType> {
 	 * @return the value of the '<em>Product Id</em>' attribute.
 	 * @see #setProductId(String)
 	 * @see org.abchip.mimo.biz.accounting.ledger.LedgerPackage#getAcctgTransEntry_ProductId()
-	 * @model
+	 * @model annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	String getProductId();
@@ -487,7 +488,7 @@ public interface AcctgTransEntry extends BizEntityTyped<AcctgTransEntryType> {
 	 * @return the value of the '<em>Tax Id</em>' attribute.
 	 * @see #setTaxId(String)
 	 * @see org.abchip.mimo.biz.accounting.ledger.LedgerPackage#getAcctgTransEntry_TaxId()
-	 * @model
+	 * @model annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	String getTaxId();
@@ -513,7 +514,7 @@ public interface AcctgTransEntry extends BizEntityTyped<AcctgTransEntryType> {
 	 * @return the value of the '<em>Their Party Id</em>' attribute.
 	 * @see #setTheirPartyId(String)
 	 * @see org.abchip.mimo.biz.accounting.ledger.LedgerPackage#getAcctgTransEntry_TheirPartyId()
-	 * @model
+	 * @model annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	String getTheirPartyId();
@@ -539,7 +540,7 @@ public interface AcctgTransEntry extends BizEntityTyped<AcctgTransEntryType> {
 	 * @return the value of the '<em>Their Product Id</em>' attribute.
 	 * @see #setTheirProductId(String)
 	 * @see org.abchip.mimo.biz.accounting.ledger.LedgerPackage#getAcctgTransEntry_TheirProductId()
-	 * @model
+	 * @model annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	String getTheirProductId();
@@ -565,7 +566,7 @@ public interface AcctgTransEntry extends BizEntityTyped<AcctgTransEntryType> {
 	 * @return the value of the '<em>Voucher Ref</em>' attribute.
 	 * @see #setVoucherRef(String)
 	 * @see org.abchip.mimo.biz.accounting.ledger.LedgerPackage#getAcctgTransEntry_VoucherRef()
-	 * @model
+	 * @model annotation="mimo-ent-format type='short-varchar' length='60'"
 	 * @generated
 	 */
 	String getVoucherRef();

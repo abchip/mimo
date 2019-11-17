@@ -51,7 +51,7 @@ public interface PaymentGatewayPayPal extends BizEntity {
 	 * @return the value of the '<em>Api Environment</em>' attribute.
 	 * @see #setApiEnvironment(String)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPaymentGatewayPayPal_ApiEnvironment()
-	 * @model
+	 * @model annotation="mimo-ent-format type='short-varchar' length='60'"
 	 * @generated
 	 */
 	String getApiEnvironment();
@@ -77,7 +77,7 @@ public interface PaymentGatewayPayPal extends BizEntity {
 	 * @return the value of the '<em>Api Password</em>' attribute.
 	 * @see #setApiPassword(String)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPaymentGatewayPayPal_ApiPassword()
-	 * @model
+	 * @model annotation="mimo-ent-format type='short-varchar' length='60'"
 	 * @generated
 	 */
 	String getApiPassword();
@@ -103,7 +103,7 @@ public interface PaymentGatewayPayPal extends BizEntity {
 	 * @return the value of the '<em>Api Signature</em>' attribute.
 	 * @see #setApiSignature(String)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPaymentGatewayPayPal_ApiSignature()
-	 * @model
+	 * @model annotation="mimo-ent-format type='short-varchar' length='60'"
 	 * @generated
 	 */
 	String getApiSignature();
@@ -129,7 +129,7 @@ public interface PaymentGatewayPayPal extends BizEntity {
 	 * @return the value of the '<em>Api User Name</em>' attribute.
 	 * @see #setApiUserName(String)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPaymentGatewayPayPal_ApiUserName()
-	 * @model
+	 * @model annotation="mimo-ent-format type='short-varchar' length='60'"
 	 * @generated
 	 */
 	String getApiUserName();
@@ -155,7 +155,7 @@ public interface PaymentGatewayPayPal extends BizEntity {
 	 * @return the value of the '<em>Business Email</em>' attribute.
 	 * @see #setBusinessEmail(String)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPaymentGatewayPayPal_BusinessEmail()
-	 * @model
+	 * @model annotation="mimo-ent-format type='value' length='255'"
 	 * @generated
 	 */
 	String getBusinessEmail();
@@ -181,7 +181,7 @@ public interface PaymentGatewayPayPal extends BizEntity {
 	 * @return the value of the '<em>Cancel Return Url</em>' attribute.
 	 * @see #setCancelReturnUrl(String)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPaymentGatewayPayPal_CancelReturnUrl()
-	 * @model
+	 * @model annotation="mimo-ent-format type='value' length='255'"
 	 * @generated
 	 */
 	String getCancelReturnUrl();
@@ -207,7 +207,7 @@ public interface PaymentGatewayPayPal extends BizEntity {
 	 * @return the value of the '<em>Confirm Template</em>' attribute.
 	 * @see #setConfirmTemplate(String)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPaymentGatewayPayPal_ConfirmTemplate()
-	 * @model
+	 * @model annotation="mimo-ent-format type='value' length='255'"
 	 * @generated
 	 */
 	String getConfirmTemplate();
@@ -233,7 +233,7 @@ public interface PaymentGatewayPayPal extends BizEntity {
 	 * @return the value of the '<em>Confirm Url</em>' attribute.
 	 * @see #setConfirmUrl(String)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPaymentGatewayPayPal_ConfirmUrl()
-	 * @model
+	 * @model annotation="mimo-ent-format type='value' length='255'"
 	 * @generated
 	 */
 	String getConfirmUrl();
@@ -259,7 +259,7 @@ public interface PaymentGatewayPayPal extends BizEntity {
 	 * @return the value of the '<em>Image Url</em>' attribute.
 	 * @see #setImageUrl(String)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPaymentGatewayPayPal_ImageUrl()
-	 * @model
+	 * @model annotation="mimo-ent-format type='value' length='255'"
 	 * @generated
 	 */
 	String getImageUrl();
@@ -285,7 +285,7 @@ public interface PaymentGatewayPayPal extends BizEntity {
 	 * @return the value of the '<em>Notify Url</em>' attribute.
 	 * @see #setNotifyUrl(String)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPaymentGatewayPayPal_NotifyUrl()
-	 * @model
+	 * @model annotation="mimo-ent-format type='value' length='255'"
 	 * @generated
 	 */
 	String getNotifyUrl();
@@ -337,7 +337,7 @@ public interface PaymentGatewayPayPal extends BizEntity {
 	 * @return the value of the '<em>Redirect Url</em>' attribute.
 	 * @see #setRedirectUrl(String)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPaymentGatewayPayPal_RedirectUrl()
-	 * @model
+	 * @model annotation="mimo-ent-format type='value' length='255'"
 	 * @generated
 	 */
 	String getRedirectUrl();
@@ -363,7 +363,7 @@ public interface PaymentGatewayPayPal extends BizEntity {
 	 * @return the value of the '<em>Require Confirmed Shipping</em>' attribute.
 	 * @see #setRequireConfirmedShipping(boolean)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPaymentGatewayPayPal_RequireConfirmedShipping()
-	 * @model
+	 * @model annotation="mimo-ent-format type='indicator' length='1'"
 	 * @generated
 	 */
 	boolean isRequireConfirmedShipping();
@@ -389,7 +389,7 @@ public interface PaymentGatewayPayPal extends BizEntity {
 	 * @return the value of the '<em>Return Url</em>' attribute.
 	 * @see #setReturnUrl(String)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPaymentGatewayPayPal_ReturnUrl()
-	 * @model
+	 * @model annotation="mimo-ent-format type='value' length='255'"
 	 * @generated
 	 */
 	String getReturnUrl();
@@ -415,7 +415,7 @@ public interface PaymentGatewayPayPal extends BizEntity {
 	 * @return the value of the '<em>Shipping Callback Url</em>' attribute.
 	 * @see #setShippingCallbackUrl(String)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPaymentGatewayPayPal_ShippingCallbackUrl()
-	 * @model
+	 * @model annotation="mimo-ent-format type='url' length='2000'"
 	 * @generated
 	 */
 	String getShippingCallbackUrl();

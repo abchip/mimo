@@ -60,7 +60,7 @@ public interface SalesForecast extends BizEntity {
 	 * @return the value of the '<em>Best Case Amount</em>' attribute.
 	 * @see #setBestCaseAmount(BigDecimal)
 	 * @see org.abchip.mimo.biz.marketing.opportunity.OpportunityPackage#getSalesForecast_BestCaseAmount()
-	 * @model
+	 * @model annotation="mimo-ent-format type='currency-amount' precision='18' scale='2'"
 	 * @generated
 	 */
 	BigDecimal getBestCaseAmount();
@@ -86,7 +86,7 @@ public interface SalesForecast extends BizEntity {
 	 * @return the value of the '<em>Closed Amount</em>' attribute.
 	 * @see #setClosedAmount(BigDecimal)
 	 * @see org.abchip.mimo.biz.marketing.opportunity.OpportunityPackage#getSalesForecast_ClosedAmount()
-	 * @model
+	 * @model annotation="mimo-ent-format type='currency-amount' precision='18' scale='2'"
 	 * @generated
 	 */
 	BigDecimal getClosedAmount();
@@ -190,7 +190,7 @@ public interface SalesForecast extends BizEntity {
 	 * @return the value of the '<em>Forecast Amount</em>' attribute.
 	 * @see #setForecastAmount(BigDecimal)
 	 * @see org.abchip.mimo.biz.marketing.opportunity.OpportunityPackage#getSalesForecast_ForecastAmount()
-	 * @model
+	 * @model annotation="mimo-ent-format type='currency-amount' precision='18' scale='2'"
 	 * @generated
 	 */
 	BigDecimal getForecastAmount();
@@ -320,7 +320,7 @@ public interface SalesForecast extends BizEntity {
 	 * @return the value of the '<em>Percent Of Quota Closed</em>' attribute.
 	 * @see #setPercentOfQuotaClosed(BigDecimal)
 	 * @see org.abchip.mimo.biz.marketing.opportunity.OpportunityPackage#getSalesForecast_PercentOfQuotaClosed()
-	 * @model
+	 * @model annotation="mimo-ent-format type='fixed-point' precision='18' scale='6'"
 	 * @generated
 	 */
 	BigDecimal getPercentOfQuotaClosed();
@@ -346,7 +346,7 @@ public interface SalesForecast extends BizEntity {
 	 * @return the value of the '<em>Percent Of Quota Forecast</em>' attribute.
 	 * @see #setPercentOfQuotaForecast(BigDecimal)
 	 * @see org.abchip.mimo.biz.marketing.opportunity.OpportunityPackage#getSalesForecast_PercentOfQuotaForecast()
-	 * @model
+	 * @model annotation="mimo-ent-format type='fixed-point' precision='18' scale='6'"
 	 * @generated
 	 */
 	BigDecimal getPercentOfQuotaForecast();
@@ -372,7 +372,7 @@ public interface SalesForecast extends BizEntity {
 	 * @return the value of the '<em>Pipeline Amount</em>' attribute.
 	 * @see #setPipelineAmount(BigDecimal)
 	 * @see org.abchip.mimo.biz.marketing.opportunity.OpportunityPackage#getSalesForecast_PipelineAmount()
-	 * @model
+	 * @model annotation="mimo-ent-format type='currency-amount' precision='18' scale='2'"
 	 * @generated
 	 */
 	BigDecimal getPipelineAmount();
@@ -398,7 +398,7 @@ public interface SalesForecast extends BizEntity {
 	 * @return the value of the '<em>Quota Amount</em>' attribute.
 	 * @see #setQuotaAmount(BigDecimal)
 	 * @see org.abchip.mimo.biz.marketing.opportunity.OpportunityPackage#getSalesForecast_QuotaAmount()
-	 * @model
+	 * @model annotation="mimo-ent-format type='currency-amount' precision='18' scale='2'"
 	 * @generated
 	 */
 	BigDecimal getQuotaAmount();
@@ -425,6 +425,7 @@ public interface SalesForecast extends BizEntity {
 	 * @see #setSalesForecastId(String)
 	 * @see org.abchip.mimo.biz.marketing.opportunity.OpportunityPackage#getSalesForecast_SalesForecastId()
 	 * @model id="true" required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
@@ -451,7 +452,9 @@ public interface SalesForecast extends BizEntity {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Sales Forecast Details</em>' attribute list.
 	 * @see org.abchip.mimo.biz.marketing.opportunity.OpportunityPackage#getSalesForecast_SalesForecastDetails()
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='SalesForecastDetail'"
 	 * @generated
 	 */
@@ -460,7 +463,8 @@ public interface SalesForecast extends BizEntity {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='SalesForecast' route='parentSalesForecastId'"
 	 * @generated
 	 */
@@ -469,7 +473,8 @@ public interface SalesForecast extends BizEntity {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='SalesForecastHistory' route='salesForecastId'"
 	 * @generated
 	 */

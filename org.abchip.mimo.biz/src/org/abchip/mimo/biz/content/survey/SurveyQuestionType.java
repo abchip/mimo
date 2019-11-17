@@ -40,7 +40,7 @@ public interface SurveyQuestionType extends BizEntityType<SurveyQuestion> {
 	 * @return the value of the '<em>Description</em>' attribute.
 	 * @see #setDescription(String)
 	 * @see org.abchip.mimo.biz.content.survey.SurveyPackage#getSurveyQuestionType_Description()
-	 * @model
+	 * @model annotation="mimo-ent-format type='description' length='255'"
 	 * @generated
 	 */
 	String getDescription();
@@ -58,7 +58,8 @@ public interface SurveyQuestionType extends BizEntityType<SurveyQuestion> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='SurveyQuestion' route='surveyQuestionTypeId'"
 	 * @generated
 	 */
@@ -76,6 +77,7 @@ public interface SurveyQuestionType extends BizEntityType<SurveyQuestion> {
 	 * @see #setSurveyQuestionTypeId(String)
 	 * @see org.abchip.mimo.biz.content.survey.SurveyPackage#getSurveyQuestionType_SurveyQuestionTypeId()
 	 * @model id="true" required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */

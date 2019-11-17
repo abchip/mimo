@@ -53,6 +53,7 @@ public interface ProductManufacturingRule extends BizEntity {
 	 * @see #setRuleId(String)
 	 * @see org.abchip.mimo.biz.manufacturing.bom.BomPackage#getProductManufacturingRule_RuleId()
 	 * @model id="true" required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
@@ -79,7 +80,7 @@ public interface ProductManufacturingRule extends BizEntity {
 	 * @return the value of the '<em>Description</em>' attribute.
 	 * @see #setDescription(String)
 	 * @see org.abchip.mimo.biz.manufacturing.bom.BomPackage#getProductManufacturingRule_Description()
-	 * @model
+	 * @model annotation="mimo-ent-format type='description' length='255'"
 	 * @generated
 	 */
 	String getDescription();
@@ -105,7 +106,7 @@ public interface ProductManufacturingRule extends BizEntity {
 	 * @return the value of the '<em>From Date</em>' attribute.
 	 * @see #setFromDate(Date)
 	 * @see org.abchip.mimo.biz.manufacturing.bom.BomPackage#getProductManufacturingRule_FromDate()
-	 * @model
+	 * @model annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getFromDate();
@@ -261,7 +262,7 @@ public interface ProductManufacturingRule extends BizEntity {
 	 * @return the value of the '<em>Quantity</em>' attribute.
 	 * @see #setQuantity(double)
 	 * @see org.abchip.mimo.biz.manufacturing.bom.BomPackage#getProductManufacturingRule_Quantity()
-	 * @model
+	 * @model annotation="mimo-ent-format type='floating-point'"
 	 * @generated
 	 */
 	double getQuantity();
@@ -287,7 +288,7 @@ public interface ProductManufacturingRule extends BizEntity {
 	 * @return the value of the '<em>Rule Operator</em>' attribute.
 	 * @see #setRuleOperator(String)
 	 * @see org.abchip.mimo.biz.manufacturing.bom.BomPackage#getProductManufacturingRule_RuleOperator()
-	 * @model
+	 * @model annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	String getRuleOperator();
@@ -313,7 +314,7 @@ public interface ProductManufacturingRule extends BizEntity {
 	 * @return the value of the '<em>Rule Seq Id</em>' attribute.
 	 * @see #setRuleSeqId(String)
 	 * @see org.abchip.mimo.biz.manufacturing.bom.BomPackage#getProductManufacturingRule_RuleSeqId()
-	 * @model
+	 * @model annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	String getRuleSeqId();
@@ -339,7 +340,7 @@ public interface ProductManufacturingRule extends BizEntity {
 	 * @return the value of the '<em>Thru Date</em>' attribute.
 	 * @see #setThruDate(Date)
 	 * @see org.abchip.mimo.biz.manufacturing.bom.BomPackage#getProductManufacturingRule_ThruDate()
-	 * @model
+	 * @model annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getThruDate();

@@ -7,13 +7,11 @@
  */
 package org.abchip.mimo.biz.common.portal.impl;
 
-import java.lang.reflect.InvocationTargetException;
 import java.util.List;
 
 import org.abchip.mimo.biz.common.portal.PortalPackage;
 import org.abchip.mimo.biz.common.portal.PortletCategory;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
-import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 
 /**
@@ -84,20 +82,6 @@ public class PortletCategoryImpl extends BizEntityImpl implements PortletCategor
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
-		switch (operationID) {
-			case PortalPackage.PORTLET_CATEGORY___PORTLET_PORTLET_CATEGORIES:
-				return portletPortletCategories();
-		}
-		return super.eInvoke(operationID, arguments);
 	}
 
 	/**

@@ -45,7 +45,7 @@ public interface StatusItem extends BizEntityTyped<StatusType> {
 	 * @return the value of the '<em>Description</em>' attribute.
 	 * @see #setDescription(String)
 	 * @see org.abchip.mimo.biz.common.status.StatusPackage#getStatusItem_Description()
-	 * @model
+	 * @model annotation="mimo-ent-format type='description' length='255'"
 	 * @generated
 	 */
 	String getDescription();
@@ -71,7 +71,7 @@ public interface StatusItem extends BizEntityTyped<StatusType> {
 	 * @return the value of the '<em>Sequence Id</em>' attribute.
 	 * @see #setSequenceId(String)
 	 * @see org.abchip.mimo.biz.common.status.StatusPackage#getStatusItem_SequenceId()
-	 * @model
+	 * @model annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	String getSequenceId();
@@ -97,7 +97,7 @@ public interface StatusItem extends BizEntityTyped<StatusType> {
 	 * @return the value of the '<em>Status Code</em>' attribute.
 	 * @see #setStatusCode(String)
 	 * @see org.abchip.mimo.biz.common.status.StatusPackage#getStatusItem_StatusCode()
-	 * @model
+	 * @model annotation="mimo-ent-format type='short-varchar' length='60'"
 	 * @generated
 	 */
 	String getStatusCode();
@@ -149,7 +149,9 @@ public interface StatusItem extends BizEntityTyped<StatusType> {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Shipment Statuss</em>' attribute list.
 	 * @see org.abchip.mimo.biz.common.status.StatusPackage#getStatusItem_ShipmentStatuss()
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ShipmentStatus'"
 	 * @generated
 	 */
@@ -166,7 +168,9 @@ public interface StatusItem extends BizEntityTyped<StatusType> {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Main Status Valid Changes</em>' attribute list.
 	 * @see org.abchip.mimo.biz.common.status.StatusPackage#getStatusItem_MainStatusValidChanges()
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='StatusValidChange'"
 	 * @generated
 	 */
@@ -175,7 +179,8 @@ public interface StatusItem extends BizEntityTyped<StatusType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='AcctgTransEntry' route='reconcileStatusId'"
 	 * @generated
 	 */
@@ -184,7 +189,8 @@ public interface StatusItem extends BizEntityTyped<StatusType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='AcctgTrans' route='groupStatusId'"
 	 * @generated
 	 */
@@ -193,7 +199,8 @@ public interface StatusItem extends BizEntityTyped<StatusType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ContentApproval' route='approvalStatusId'"
 	 * @generated
 	 */
@@ -202,7 +209,9 @@ public interface StatusItem extends BizEntityTyped<StatusType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='BudgetStatus' route='statusId'"
 	 * @generated
 	 */
@@ -211,7 +220,8 @@ public interface StatusItem extends BizEntityTyped<StatusType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ShipmentRouteSegment' route='carrierServiceStatusId'"
 	 * @generated
 	 */
@@ -220,7 +230,8 @@ public interface StatusItem extends BizEntityTyped<StatusType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='CommunicationEvent' route='statusId'"
 	 * @generated
 	 */
@@ -229,7 +240,8 @@ public interface StatusItem extends BizEntityTyped<StatusType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='Content' route='statusId'"
 	 * @generated
 	 */
@@ -238,7 +250,8 @@ public interface StatusItem extends BizEntityTyped<StatusType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='WorkEffort' route='currentStatusId'"
 	 * @generated
 	 */
@@ -247,7 +260,8 @@ public interface StatusItem extends BizEntityTyped<StatusType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='CustRequestItem' route='statusId'"
 	 * @generated
 	 */
@@ -256,7 +270,8 @@ public interface StatusItem extends BizEntityTyped<StatusType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='CustRequestStatus' route='statusId'"
 	 * @generated
 	 */
@@ -265,7 +280,8 @@ public interface StatusItem extends BizEntityTyped<StatusType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='CustRequest' route='statusId'"
 	 * @generated
 	 */
@@ -274,7 +290,8 @@ public interface StatusItem extends BizEntityTyped<StatusType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='DataResource' route='statusId'"
 	 * @generated
 	 */
@@ -283,7 +300,8 @@ public interface StatusItem extends BizEntityTyped<StatusType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ProductStore' route='digitalItemApprovedStatus'"
 	 * @generated
 	 */
@@ -292,7 +310,8 @@ public interface StatusItem extends BizEntityTyped<StatusType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='EmplPosition' route='statusId'"
 	 * @generated
 	 */
@@ -301,7 +320,8 @@ public interface StatusItem extends BizEntityTyped<StatusType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='EmploymentApp' route='statusId'"
 	 * @generated
 	 */
@@ -310,7 +330,8 @@ public interface StatusItem extends BizEntityTyped<StatusType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='FinAccountTrans' route='statusId'"
 	 * @generated
 	 */
@@ -319,7 +340,8 @@ public interface StatusItem extends BizEntityTyped<StatusType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='FixedAssetMaint' route='statusId'"
 	 * @generated
 	 */
@@ -328,7 +350,8 @@ public interface StatusItem extends BizEntityTyped<StatusType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='GlReconciliation' route='statusId'"
 	 * @generated
 	 */
@@ -337,7 +360,8 @@ public interface StatusItem extends BizEntityTyped<StatusType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ProductStore' route='headerApprovedStatus'"
 	 * @generated
 	 */
@@ -346,7 +370,8 @@ public interface StatusItem extends BizEntityTyped<StatusType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ProductStore' route='headerCancelStatus'"
 	 * @generated
 	 */
@@ -355,7 +380,8 @@ public interface StatusItem extends BizEntityTyped<StatusType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ProductStore' route='headerDeclinedStatus'"
 	 * @generated
 	 */
@@ -364,7 +390,8 @@ public interface StatusItem extends BizEntityTyped<StatusType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='InventoryItem' route='statusId'"
 	 * @generated
 	 */
@@ -373,7 +400,8 @@ public interface StatusItem extends BizEntityTyped<StatusType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ReturnItem' route='expectedItemStatus'"
 	 * @generated
 	 */
@@ -382,7 +410,8 @@ public interface StatusItem extends BizEntityTyped<StatusType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='InventoryTransfer' route='statusId'"
 	 * @generated
 	 */
@@ -391,7 +420,8 @@ public interface StatusItem extends BizEntityTyped<StatusType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='Invoice' route='statusId'"
 	 * @generated
 	 */
@@ -400,7 +430,8 @@ public interface StatusItem extends BizEntityTyped<StatusType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ProductStore' route='itemApprovedStatus'"
 	 * @generated
 	 */
@@ -409,7 +440,8 @@ public interface StatusItem extends BizEntityTyped<StatusType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ProductStore' route='itemCancelStatus'"
 	 * @generated
 	 */
@@ -418,7 +450,8 @@ public interface StatusItem extends BizEntityTyped<StatusType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ProductStore' route='itemDeclinedStatus'"
 	 * @generated
 	 */
@@ -427,7 +460,8 @@ public interface StatusItem extends BizEntityTyped<StatusType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='JobSandbox' route='statusId'"
 	 * @generated
 	 */
@@ -436,7 +470,8 @@ public interface StatusItem extends BizEntityTyped<StatusType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='MarketingCampaign' route='statusId'"
 	 * @generated
 	 */
@@ -445,7 +480,8 @@ public interface StatusItem extends BizEntityTyped<StatusType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='OrderDeliverySchedule' route='statusId'"
 	 * @generated
 	 */
@@ -454,7 +490,8 @@ public interface StatusItem extends BizEntityTyped<StatusType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='OrderHeader' route='statusId'"
 	 * @generated
 	 */
@@ -463,7 +500,8 @@ public interface StatusItem extends BizEntityTyped<StatusType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='OrderItem' route='statusId'"
 	 * @generated
 	 */
@@ -472,7 +510,8 @@ public interface StatusItem extends BizEntityTyped<StatusType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='OrderPaymentPreference' route='statusId'"
 	 * @generated
 	 */
@@ -481,7 +520,8 @@ public interface StatusItem extends BizEntityTyped<StatusType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='OrderStatus' route='statusId'"
 	 * @generated
 	 */
@@ -490,7 +530,8 @@ public interface StatusItem extends BizEntityTyped<StatusType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='Party' route='statusId'"
 	 * @generated
 	 */
@@ -499,7 +540,8 @@ public interface StatusItem extends BizEntityTyped<StatusType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='PartyInvitation' route='statusId'"
 	 * @generated
 	 */
@@ -508,7 +550,8 @@ public interface StatusItem extends BizEntityTyped<StatusType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='Payment' route='statusId'"
 	 * @generated
 	 */
@@ -517,7 +560,8 @@ public interface StatusItem extends BizEntityTyped<StatusType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='PicklistStatusHistory' route='statusId'"
 	 * @generated
 	 */
@@ -526,7 +570,8 @@ public interface StatusItem extends BizEntityTyped<StatusType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='Picklist' route='statusId'"
 	 * @generated
 	 */
@@ -535,7 +580,8 @@ public interface StatusItem extends BizEntityTyped<StatusType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ProductGroupOrder' route='statusId'"
 	 * @generated
 	 */
@@ -544,7 +590,8 @@ public interface StatusItem extends BizEntityTyped<StatusType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ProductReview' route='statusId'"
 	 * @generated
 	 */
@@ -553,7 +600,8 @@ public interface StatusItem extends BizEntityTyped<StatusType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='Quote' route='statusId'"
 	 * @generated
 	 */
@@ -562,7 +610,9 @@ public interface StatusItem extends BizEntityTyped<StatusType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='RequirementStatus' route='statusId'"
 	 * @generated
 	 */
@@ -571,7 +621,8 @@ public interface StatusItem extends BizEntityTyped<StatusType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='Requirement' route='statusId'"
 	 * @generated
 	 */
@@ -580,7 +631,8 @@ public interface StatusItem extends BizEntityTyped<StatusType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ReturnHeader' route='statusId'"
 	 * @generated
 	 */
@@ -589,7 +641,8 @@ public interface StatusItem extends BizEntityTyped<StatusType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ReturnItem' route='statusId'"
 	 * @generated
 	 */
@@ -598,7 +651,8 @@ public interface StatusItem extends BizEntityTyped<StatusType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ReturnStatus' route='statusId'"
 	 * @generated
 	 */
@@ -607,7 +661,8 @@ public interface StatusItem extends BizEntityTyped<StatusType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='Shipment' route='statusId'"
 	 * @generated
 	 */
@@ -616,7 +671,8 @@ public interface StatusItem extends BizEntityTyped<StatusType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='SurveyResponse' route='statusId'"
 	 * @generated
 	 */
@@ -625,7 +681,8 @@ public interface StatusItem extends BizEntityTyped<StatusType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='OrderHeader' route='syncStatusId'"
 	 * @generated
 	 */
@@ -634,7 +691,8 @@ public interface StatusItem extends BizEntityTyped<StatusType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='OrderItem' route='syncStatusId'"
 	 * @generated
 	 */
@@ -643,7 +701,8 @@ public interface StatusItem extends BizEntityTyped<StatusType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='TestingStatus' route='statusId'"
 	 * @generated
 	 */
@@ -652,7 +711,8 @@ public interface StatusItem extends BizEntityTyped<StatusType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='Timesheet' route='statusId'"
 	 * @generated
 	 */
@@ -661,7 +721,8 @@ public interface StatusItem extends BizEntityTyped<StatusType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='PicklistStatusHistory' route='statusIdTo'"
 	 * @generated
 	 */
@@ -670,7 +731,9 @@ public interface StatusItem extends BizEntityTyped<StatusType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='StatusValidChange' route='statusIdTo'"
 	 * @generated
 	 */
@@ -679,7 +742,8 @@ public interface StatusItem extends BizEntityTyped<StatusType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='UnemploymentClaim' route='statusId'"
 	 * @generated
 	 */
@@ -688,7 +752,8 @@ public interface StatusItem extends BizEntityTyped<StatusType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='WorkEffortInventoryAssign' route='statusId'"
 	 * @generated
 	 */
@@ -706,6 +771,7 @@ public interface StatusItem extends BizEntityTyped<StatusType> {
 	 * @see #setStatusId(String)
 	 * @see org.abchip.mimo.biz.common.status.StatusPackage#getStatusItem_StatusId()
 	 * @model id="true" required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */

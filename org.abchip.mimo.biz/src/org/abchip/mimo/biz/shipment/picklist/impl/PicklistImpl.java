@@ -7,7 +7,6 @@
  */
 package org.abchip.mimo.biz.shipment.picklist.impl;
 
-import java.lang.reflect.InvocationTargetException;
 import java.util.Date;
 
 import java.util.List;
@@ -18,7 +17,6 @@ import org.abchip.mimo.biz.product.facility.Facility;
 import org.abchip.mimo.biz.shipment.picklist.Picklist;
 import org.abchip.mimo.biz.shipment.picklist.PicklistPackage;
 import org.abchip.mimo.biz.shipment.shipment.ShipmentMethodType;
-import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 
 /**
@@ -248,20 +246,6 @@ public class PicklistImpl extends BizEntityImpl implements Picklist {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
-		switch (operationID) {
-			case PicklistPackage.PICKLIST___PICKLIST_BINS:
-				return picklistBins();
-		}
-		return super.eInvoke(operationID, arguments);
 	}
 
 } //PicklistImpl

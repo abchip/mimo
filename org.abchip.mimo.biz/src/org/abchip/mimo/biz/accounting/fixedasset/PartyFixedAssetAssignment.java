@@ -49,7 +49,7 @@ public interface PartyFixedAssetAssignment extends BizEntity {
 	 * @return the value of the '<em>Allocated Date</em>' attribute.
 	 * @see #setAllocatedDate(Date)
 	 * @see org.abchip.mimo.biz.accounting.fixedasset.FixedassetPackage#getPartyFixedAssetAssignment_AllocatedDate()
-	 * @model
+	 * @model annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getAllocatedDate();
@@ -75,7 +75,7 @@ public interface PartyFixedAssetAssignment extends BizEntity {
 	 * @return the value of the '<em>Comments</em>' attribute.
 	 * @see #setComments(String)
 	 * @see org.abchip.mimo.biz.accounting.fixedasset.FixedassetPackage#getPartyFixedAssetAssignment_Comments()
-	 * @model
+	 * @model annotation="mimo-ent-format type='comment' length='255'"
 	 * @generated
 	 */
 	String getComments();
@@ -102,6 +102,7 @@ public interface PartyFixedAssetAssignment extends BizEntity {
 	 * @see #setFromDate(Date)
 	 * @see org.abchip.mimo.biz.accounting.fixedasset.FixedassetPackage#getPartyFixedAssetAssignment_FromDate()
 	 * @model required="true"
+	 *        annotation="mimo-ent-format type='date-time'"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
@@ -206,7 +207,7 @@ public interface PartyFixedAssetAssignment extends BizEntity {
 	 * @return the value of the '<em>Thru Date</em>' attribute.
 	 * @see #setThruDate(Date)
 	 * @see org.abchip.mimo.biz.accounting.fixedasset.FixedassetPackage#getPartyFixedAssetAssignment_ThruDate()
-	 * @model
+	 * @model annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getThruDate();

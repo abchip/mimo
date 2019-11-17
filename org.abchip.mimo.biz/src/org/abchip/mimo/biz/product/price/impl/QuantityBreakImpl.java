@@ -7,7 +7,6 @@
  */
 package org.abchip.mimo.biz.product.price.impl;
 
-import java.lang.reflect.InvocationTargetException;
 import java.math.BigDecimal;
 import java.util.List;
 
@@ -15,7 +14,6 @@ import org.abchip.mimo.biz.impl.BizEntityTypedImpl;
 import org.abchip.mimo.biz.product.price.PricePackage;
 import org.abchip.mimo.biz.product.price.QuantityBreak;
 import org.abchip.mimo.biz.product.price.QuantityBreakType;
-import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 
 /**
@@ -153,24 +151,6 @@ public class QuantityBreakImpl extends BizEntityTypedImpl<QuantityBreakType> imp
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
-		switch (operationID) {
-			case PricePackage.QUANTITY_BREAK___PRICE_SHIPMENT_COST_ESTIMATES:
-				return priceShipmentCostEstimates();
-			case PricePackage.QUANTITY_BREAK___QUANTITY_SHIPMENT_COST_ESTIMATES:
-				return quantityShipmentCostEstimates();
-			case PricePackage.QUANTITY_BREAK___WEIGHT_SHIPMENT_COST_ESTIMATES:
-				return weightShipmentCostEstimates();
-		}
-		return super.eInvoke(operationID, arguments);
 	}
 
 	/**

@@ -152,7 +152,7 @@ public interface ContactListCommStatus extends BizEntity {
 	 * @return the value of the '<em>Message Id</em>' attribute.
 	 * @see #setMessageId(String)
 	 * @see org.abchip.mimo.biz.marketing.contact.ContactPackage#getContactListCommStatus_MessageId()
-	 * @model
+	 * @model annotation="mimo-ent-format type='value' length='255'"
 	 * @generated
 	 */
 	String getMessageId();

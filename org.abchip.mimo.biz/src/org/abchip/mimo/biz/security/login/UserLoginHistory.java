@@ -23,7 +23,7 @@ import org.abchip.mimo.biz.party.party.Party;
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.security.login.UserLoginHistory#getFromDate <em>From Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.security.login.UserLoginHistory#getPasswordUsed <em>Password Used</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.security.login.UserLoginHistory#isSuccessfulLogin <em>Successful Login</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.security.login.UserLoginHistory#getSuccessfulLogin <em>Successful Login</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.security.login.UserLoginHistory#getThruDate <em>Thru Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.security.login.UserLoginHistory#getVisitId <em>Visit Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.security.login.UserLoginHistory#getUserLoginId <em>User Login Id</em>}</li>
@@ -48,6 +48,7 @@ public interface UserLoginHistory extends BizEntity {
 	 * @see #setFromDate(Date)
 	 * @see org.abchip.mimo.biz.security.login.LoginPackage#getUserLoginHistory_FromDate()
 	 * @model required="true"
+	 *        annotation="mimo-ent-format type='date-time'"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
@@ -126,7 +127,7 @@ public interface UserLoginHistory extends BizEntity {
 	 * @return the value of the '<em>Password Used</em>' attribute.
 	 * @see #setPasswordUsed(String)
 	 * @see org.abchip.mimo.biz.security.login.LoginPackage#getUserLoginHistory_PasswordUsed()
-	 * @model
+	 * @model annotation="mimo-ent-format type='long-varchar' length='255'"
 	 * @generated
 	 */
 	String getPasswordUsed();
@@ -150,22 +151,22 @@ public interface UserLoginHistory extends BizEntity {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Successful Login</em>' attribute.
-	 * @see #setSuccessfulLogin(boolean)
+	 * @see #setSuccessfulLogin(char)
 	 * @see org.abchip.mimo.biz.security.login.LoginPackage#getUserLoginHistory_SuccessfulLogin()
-	 * @model
+	 * @model annotation="mimo-ent-format type='indicator' length='1'"
 	 * @generated
 	 */
-	boolean isSuccessfulLogin();
+	char getSuccessfulLogin();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.security.login.UserLoginHistory#isSuccessfulLogin <em>Successful Login</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.security.login.UserLoginHistory#getSuccessfulLogin <em>Successful Login</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Successful Login</em>' attribute.
-	 * @see #isSuccessfulLogin()
+	 * @see #getSuccessfulLogin()
 	 * @generated
 	 */
-	void setSuccessfulLogin(boolean value);
+	void setSuccessfulLogin(char value);
 
 	/**
 	 * Returns the value of the '<em><b>Thru Date</b></em>' attribute.
@@ -178,7 +179,7 @@ public interface UserLoginHistory extends BizEntity {
 	 * @return the value of the '<em>Thru Date</em>' attribute.
 	 * @see #setThruDate(Date)
 	 * @see org.abchip.mimo.biz.security.login.LoginPackage#getUserLoginHistory_ThruDate()
-	 * @model
+	 * @model annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getThruDate();
@@ -230,7 +231,7 @@ public interface UserLoginHistory extends BizEntity {
 	 * @return the value of the '<em>Visit Id</em>' attribute.
 	 * @see #setVisitId(String)
 	 * @see org.abchip.mimo.biz.security.login.LoginPackage#getUserLoginHistory_VisitId()
-	 * @model
+	 * @model annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	String getVisitId();

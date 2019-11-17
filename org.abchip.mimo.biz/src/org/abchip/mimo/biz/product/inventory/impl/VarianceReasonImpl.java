@@ -7,13 +7,11 @@
  */
 package org.abchip.mimo.biz.product.inventory.impl;
 
-import java.lang.reflect.InvocationTargetException;
 import java.util.List;
 
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.product.inventory.InventoryPackage;
 import org.abchip.mimo.biz.product.inventory.VarianceReason;
-import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 
 /**
@@ -117,20 +115,6 @@ public class VarianceReasonImpl extends BizEntityImpl implements VarianceReason 
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
-		switch (operationID) {
-			case InventoryPackage.VARIANCE_REASON___INVENTORY_ITEM_VARIANCES:
-				return inventoryItemVariances();
-		}
-		return super.eInvoke(operationID, arguments);
 	}
 
 } //VarianceReasonImpl

@@ -7,7 +7,6 @@
  */
 package org.abchip.mimo.biz.order.shoppinglist.impl;
 
-import java.lang.reflect.InvocationTargetException;
 import java.util.Date;
 import java.util.List;
 
@@ -21,7 +20,6 @@ import org.abchip.mimo.biz.party.party.Party;
 import org.abchip.mimo.biz.product.promo.ProductPromoCode;
 import org.abchip.mimo.biz.product.store.ProductStore;
 import org.abchip.mimo.biz.service.schedule.RecurrenceInfo;
-import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 
 /**
@@ -527,22 +525,6 @@ public class ShoppingListImpl extends BizEntityTypedImpl<ShoppingListType> imple
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
-		switch (operationID) {
-			case ShoppinglistPackage.SHOPPING_LIST___AUTO_ORDER_ORDER_HEADERS:
-				return autoOrderOrderHeaders();
-			case ShoppinglistPackage.SHOPPING_LIST___CHILD_SHOPPING_LISTS:
-				return childShoppingLists();
-		}
-		return super.eInvoke(operationID, arguments);
 	}
 
 } //ShoppingListImpl

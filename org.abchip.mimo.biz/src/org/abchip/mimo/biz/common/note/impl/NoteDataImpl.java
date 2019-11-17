@@ -7,7 +7,6 @@
  */
 package org.abchip.mimo.biz.common.note.impl;
 
-import java.lang.reflect.InvocationTargetException;
 import java.util.Date;
 import java.util.List;
 
@@ -15,7 +14,6 @@ import org.abchip.mimo.biz.common.note.NoteData;
 import org.abchip.mimo.biz.common.note.NotePackage;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.party.party.Party;
-import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 
 /**
@@ -316,34 +314,6 @@ public class NoteDataImpl extends BizEntityImpl implements NoteData {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
-		switch (operationID) {
-			case NotePackage.NOTE_DATA___CUST_REQUEST_NOTES:
-				return custRequestNotes();
-			case NotePackage.NOTE_DATA___INVOICE_NOTES:
-				return invoiceNotes();
-			case NotePackage.NOTE_DATA___MARKETING_CAMPAIGN_NOTES:
-				return marketingCampaignNotes();
-			case NotePackage.NOTE_DATA___ORDER_HEADER_NOTES:
-				return orderHeaderNotes();
-			case NotePackage.NOTE_DATA___PARTY_NOTES:
-				return partyNotes();
-			case NotePackage.NOTE_DATA___QUOTE_NOTES:
-				return quoteNotes();
-			case NotePackage.NOTE_DATA___WORK_EFFORT_NOTES:
-				return workEffortNotes();
-			case NotePackage.NOTE_DATA___WORK_EFFORTS:
-				return workEfforts();
-		}
-		return super.eInvoke(operationID, arguments);
 	}
 
 } //NoteDataImpl

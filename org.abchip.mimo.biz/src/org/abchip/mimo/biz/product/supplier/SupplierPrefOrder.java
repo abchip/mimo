@@ -38,7 +38,7 @@ public interface SupplierPrefOrder extends BizEntity {
 	 * @return the value of the '<em>Description</em>' attribute.
 	 * @see #setDescription(String)
 	 * @see org.abchip.mimo.biz.product.supplier.SupplierPackage#getSupplierPrefOrder_Description()
-	 * @model
+	 * @model annotation="mimo-ent-format type='description' length='255'"
 	 * @generated
 	 */
 	String getDescription();
@@ -65,6 +65,7 @@ public interface SupplierPrefOrder extends BizEntity {
 	 * @see #setSupplierPrefOrderId(String)
 	 * @see org.abchip.mimo.biz.product.supplier.SupplierPackage#getSupplierPrefOrder_SupplierPrefOrderId()
 	 * @model id="true" required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */

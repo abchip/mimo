@@ -7,14 +7,12 @@
  */
 package org.abchip.mimo.biz.accounting.fixedasset.impl;
 
-import java.lang.reflect.InvocationTargetException;
 import java.util.List;
 
 import org.abchip.mimo.biz.accounting.fixedasset.FixedAssetStdCost;
 import org.abchip.mimo.biz.accounting.fixedasset.FixedAssetStdCostType;
 import org.abchip.mimo.biz.accounting.fixedasset.FixedassetPackage;
 import org.abchip.mimo.biz.impl.BizEntityTypeImpl;
-import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 
 /**
@@ -127,20 +125,6 @@ public class FixedAssetStdCostTypeImpl extends BizEntityTypeImpl<FixedAssetStdCo
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
-		switch (operationID) {
-			case FixedassetPackage.FIXED_ASSET_STD_COST_TYPE___CHILD_FIXED_ASSET_STD_COST_TYPES:
-				return childFixedAssetStdCostTypes();
-		}
-		return super.eInvoke(operationID, arguments);
 	}
 
 	/**

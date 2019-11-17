@@ -7,7 +7,6 @@
  */
 package org.abchip.mimo.biz.accounting.invoice.impl;
 
-import java.lang.reflect.InvocationTargetException;
 import java.util.Date;
 
 import java.util.List;
@@ -23,7 +22,6 @@ import org.abchip.mimo.biz.party.contact.ContactMech;
 import org.abchip.mimo.biz.party.party.Party;
 import org.abchip.mimo.biz.party.party.RoleType;
 import org.abchip.mimo.biz.service.schedule.RecurrenceInfo;
-import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 
 /**
@@ -440,26 +438,6 @@ public class InvoiceImpl extends BizEntityTypedImpl<InvoiceType> implements Invo
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
-		switch (operationID) {
-			case InvoicePackage.INVOICE___ACCTG_TRANSS:
-				return acctgTranss();
-			case InvoicePackage.INVOICE___INVOICE_TERMS:
-				return invoiceTerms();
-			case InvoicePackage.INVOICE___PAYMENT_APPLICATIONS:
-				return paymentApplications();
-			case InvoicePackage.INVOICE___TIME_ENTRIES:
-				return timeEntries();
-		}
-		return super.eInvoke(operationID, arguments);
 	}
 
 	/**

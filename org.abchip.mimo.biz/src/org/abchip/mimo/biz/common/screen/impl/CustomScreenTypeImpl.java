@@ -7,14 +7,12 @@
  */
 package org.abchip.mimo.biz.common.screen.impl;
 
-import java.lang.reflect.InvocationTargetException;
 import java.util.List;
 
 import org.abchip.mimo.biz.common.screen.CustomScreen;
 import org.abchip.mimo.biz.common.screen.CustomScreenType;
 import org.abchip.mimo.biz.common.screen.ScreenPackage;
 import org.abchip.mimo.biz.impl.BizEntityTypeImpl;
-import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 
 /**
@@ -160,22 +158,6 @@ public class CustomScreenTypeImpl extends BizEntityTypeImpl<CustomScreen> implem
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
-		switch (operationID) {
-			case ScreenPackage.CUSTOM_SCREEN_TYPE___CHILD_CUSTOM_SCREEN_TYPES:
-				return childCustomScreenTypes();
-			case ScreenPackage.CUSTOM_SCREEN_TYPE___CUSTOM_SCREENS:
-				return customScreens();
-		}
-		return super.eInvoke(operationID, arguments);
 	}
 
 } //CustomScreenTypeImpl

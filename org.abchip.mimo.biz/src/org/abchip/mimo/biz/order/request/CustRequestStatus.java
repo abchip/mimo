@@ -98,7 +98,7 @@ public interface CustRequestStatus extends BizEntity {
 	 * @return the value of the '<em>Cust Request Item Seq Id</em>' attribute.
 	 * @see #setCustRequestItemSeqId(String)
 	 * @see org.abchip.mimo.biz.order.request.RequestPackage#getCustRequestStatus_CustRequestItemSeqId()
-	 * @model
+	 * @model annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	String getCustRequestItemSeqId();
@@ -125,6 +125,7 @@ public interface CustRequestStatus extends BizEntity {
 	 * @see #setCustRequestStatusId(String)
 	 * @see org.abchip.mimo.biz.order.request.RequestPackage#getCustRequestStatus_CustRequestStatusId()
 	 * @model id="true" required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
@@ -151,7 +152,7 @@ public interface CustRequestStatus extends BizEntity {
 	 * @return the value of the '<em>Status Date</em>' attribute.
 	 * @see #setStatusDate(Date)
 	 * @see org.abchip.mimo.biz.order.request.RequestPackage#getCustRequestStatus_StatusDate()
-	 * @model
+	 * @model annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getStatusDate();

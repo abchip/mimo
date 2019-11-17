@@ -41,7 +41,7 @@ public interface VarianceReason extends BizEntity {
 	 * @return the value of the '<em>Description</em>' attribute.
 	 * @see #setDescription(String)
 	 * @see org.abchip.mimo.biz.product.inventory.InventoryPackage#getVarianceReason_Description()
-	 * @model
+	 * @model annotation="mimo-ent-format type='description' length='255'"
 	 * @generated
 	 */
 	String getDescription();
@@ -68,6 +68,7 @@ public interface VarianceReason extends BizEntity {
 	 * @see #setVarianceReasonId(String)
 	 * @see org.abchip.mimo.biz.product.inventory.InventoryPackage#getVarianceReason_VarianceReasonId()
 	 * @model id="true" required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
@@ -94,7 +95,9 @@ public interface VarianceReason extends BizEntity {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Variance Reason Gl Accounts</em>' attribute list.
 	 * @see org.abchip.mimo.biz.product.inventory.InventoryPackage#getVarianceReason_VarianceReasonGlAccounts()
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='VarianceReasonGlAccount'"
 	 * @generated
 	 */
@@ -103,7 +106,8 @@ public interface VarianceReason extends BizEntity {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='InventoryItemVariance' route='varianceReasonId'"
 	 * @generated
 	 */

@@ -7,7 +7,6 @@
  */
 package org.abchip.mimo.biz.humanres.position.impl;
 
-import java.lang.reflect.InvocationTargetException;
 import java.util.Date;
 
 import java.util.List;
@@ -18,7 +17,6 @@ import org.abchip.mimo.biz.humanres.position.EmplPositionType;
 import org.abchip.mimo.biz.humanres.position.PositionPackage;
 import org.abchip.mimo.biz.impl.BizEntityTypedImpl;
 import org.abchip.mimo.biz.party.party.Party;
-import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 
 /**
@@ -37,9 +35,9 @@ import org.eclipse.emf.ecore.EClass;
  *   <li>{@link org.abchip.mimo.biz.humanres.position.impl.EmplPositionImpl#getEstimatedFromDate <em>Estimated From Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.position.impl.EmplPositionImpl#getEstimatedThruDate <em>Estimated Thru Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.position.impl.EmplPositionImpl#isExemptFlag <em>Exempt Flag</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.humanres.position.impl.EmplPositionImpl#isFulltimeFlag <em>Fulltime Flag</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.humanres.position.impl.EmplPositionImpl#isSalaryFlag <em>Salary Flag</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.humanres.position.impl.EmplPositionImpl#isTemporaryFlag <em>Temporary Flag</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.humanres.position.impl.EmplPositionImpl#getFulltimeFlag <em>Fulltime Flag</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.humanres.position.impl.EmplPositionImpl#getSalaryFlag <em>Salary Flag</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.humanres.position.impl.EmplPositionImpl#getTemporaryFlag <em>Temporary Flag</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.position.impl.EmplPositionImpl#getStatusId <em>Status Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.position.impl.EmplPositionImpl#getPartyId <em>Party Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.position.impl.EmplPositionImpl#getEmplPositionTypeId <em>Empl Position Type Id</em>}</li>
@@ -258,8 +256,8 @@ public class EmplPositionImpl extends BizEntityTypedImpl<EmplPositionType> imple
 	 * @generated
 	 */
 	@Override
-	public boolean isFulltimeFlag() {
-		return (Boolean)eGet(PositionPackage.Literals.EMPL_POSITION__FULLTIME_FLAG, true);
+	public char getFulltimeFlag() {
+		return (Character)eGet(PositionPackage.Literals.EMPL_POSITION__FULLTIME_FLAG, true);
 	}
 
 	/**
@@ -268,8 +266,48 @@ public class EmplPositionImpl extends BizEntityTypedImpl<EmplPositionType> imple
 	 * @generated
 	 */
 	@Override
-	public void setFulltimeFlag(boolean newFulltimeFlag) {
+	public void setFulltimeFlag(char newFulltimeFlag) {
 		eSet(PositionPackage.Literals.EMPL_POSITION__FULLTIME_FLAG, newFulltimeFlag);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public char getSalaryFlag() {
+		return (Character)eGet(PositionPackage.Literals.EMPL_POSITION__SALARY_FLAG, true);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setSalaryFlag(char newSalaryFlag) {
+		eSet(PositionPackage.Literals.EMPL_POSITION__SALARY_FLAG, newSalaryFlag);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public char getTemporaryFlag() {
+		return (Character)eGet(PositionPackage.Literals.EMPL_POSITION__TEMPORARY_FLAG, true);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setTemporaryFlag(char newTemporaryFlag) {
+		eSet(PositionPackage.Literals.EMPL_POSITION__TEMPORARY_FLAG, newTemporaryFlag);
 	}
 
 	/**
@@ -298,26 +336,6 @@ public class EmplPositionImpl extends BizEntityTypedImpl<EmplPositionType> imple
 	 * @generated
 	 */
 	@Override
-	public boolean isSalaryFlag() {
-		return (Boolean)eGet(PositionPackage.Literals.EMPL_POSITION__SALARY_FLAG, true);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void setSalaryFlag(boolean newSalaryFlag) {
-		eSet(PositionPackage.Literals.EMPL_POSITION__SALARY_FLAG, newSalaryFlag);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public StatusItem getStatusId() {
 		return (StatusItem)eGet(PositionPackage.Literals.EMPL_POSITION__STATUS_ID, true);
 	}
@@ -338,44 +356,10 @@ public class EmplPositionImpl extends BizEntityTypedImpl<EmplPositionType> imple
 	 * @generated
 	 */
 	@Override
-	public boolean isTemporaryFlag() {
-		return (Boolean)eGet(PositionPackage.Literals.EMPL_POSITION__TEMPORARY_FLAG, true);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void setTemporaryFlag(boolean newTemporaryFlag) {
-		eSet(PositionPackage.Literals.EMPL_POSITION__TEMPORARY_FLAG, newTemporaryFlag);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public List<String> employmentApps() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
-		switch (operationID) {
-			case PositionPackage.EMPL_POSITION___EMPLOYMENT_APPS:
-				return employmentApps();
-		}
-		return super.eInvoke(operationID, arguments);
 	}
 
 } //EmplPositionImpl

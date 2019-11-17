@@ -53,7 +53,7 @@ public interface CreditCard extends PaymentMethod {
 	 * @return the value of the '<em>Card Number</em>' attribute.
 	 * @see #setCardNumber(String)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getCreditCard_CardNumber()
-	 * @model
+	 * @model annotation="mimo-ent-format type='credit-card-number' length='255'"
 	 * @generated
 	 */
 	String getCardNumber();
@@ -79,7 +79,7 @@ public interface CreditCard extends PaymentMethod {
 	 * @return the value of the '<em>Card Type</em>' attribute.
 	 * @see #setCardType(String)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getCreditCard_CardType()
-	 * @model
+	 * @model annotation="mimo-ent-format type='short-varchar' length='60'"
 	 * @generated
 	 */
 	String getCardType();
@@ -105,7 +105,7 @@ public interface CreditCard extends PaymentMethod {
 	 * @return the value of the '<em>Company Name On Card</em>' attribute.
 	 * @see #setCompanyNameOnCard(String)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getCreditCard_CompanyNameOnCard()
-	 * @model
+	 * @model annotation="mimo-ent-format type='name' length='100'"
 	 * @generated
 	 */
 	String getCompanyNameOnCard();
@@ -131,7 +131,7 @@ public interface CreditCard extends PaymentMethod {
 	 * @return the value of the '<em>Consecutive Failed Auths</em>' attribute.
 	 * @see #setConsecutiveFailedAuths(long)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getCreditCard_ConsecutiveFailedAuths()
-	 * @model
+	 * @model annotation="mimo-ent-format type='numeric' precision='20' scale='0'"
 	 * @generated
 	 */
 	long getConsecutiveFailedAuths();
@@ -157,7 +157,7 @@ public interface CreditCard extends PaymentMethod {
 	 * @return the value of the '<em>Consecutive Failed Nsf</em>' attribute.
 	 * @see #setConsecutiveFailedNsf(long)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getCreditCard_ConsecutiveFailedNsf()
-	 * @model
+	 * @model annotation="mimo-ent-format type='numeric' precision='20' scale='0'"
 	 * @generated
 	 */
 	long getConsecutiveFailedNsf();
@@ -209,7 +209,7 @@ public interface CreditCard extends PaymentMethod {
 	 * @return the value of the '<em>Expire Date</em>' attribute.
 	 * @see #setExpireDate(String)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getCreditCard_ExpireDate()
-	 * @model
+	 * @model annotation="mimo-ent-format type='credit-card-date' length='7'"
 	 * @generated
 	 */
 	String getExpireDate();
@@ -235,7 +235,7 @@ public interface CreditCard extends PaymentMethod {
 	 * @return the value of the '<em>First Name On Card</em>' attribute.
 	 * @see #setFirstNameOnCard(String)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getCreditCard_FirstNameOnCard()
-	 * @model
+	 * @model annotation="mimo-ent-format type='name' length='100'"
 	 * @generated
 	 */
 	String getFirstNameOnCard();
@@ -261,7 +261,7 @@ public interface CreditCard extends PaymentMethod {
 	 * @return the value of the '<em>Issue Number</em>' attribute.
 	 * @see #setIssueNumber(String)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getCreditCard_IssueNumber()
-	 * @model
+	 * @model annotation="mimo-ent-format type='credit-card-date' length='7'"
 	 * @generated
 	 */
 	String getIssueNumber();
@@ -287,7 +287,7 @@ public interface CreditCard extends PaymentMethod {
 	 * @return the value of the '<em>Last Failed Auth Date</em>' attribute.
 	 * @see #setLastFailedAuthDate(Date)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getCreditCard_LastFailedAuthDate()
-	 * @model
+	 * @model annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getLastFailedAuthDate();
@@ -313,7 +313,7 @@ public interface CreditCard extends PaymentMethod {
 	 * @return the value of the '<em>Last Failed Nsf Date</em>' attribute.
 	 * @see #setLastFailedNsfDate(Date)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getCreditCard_LastFailedNsfDate()
-	 * @model
+	 * @model annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getLastFailedNsfDate();
@@ -339,7 +339,7 @@ public interface CreditCard extends PaymentMethod {
 	 * @return the value of the '<em>Last Name On Card</em>' attribute.
 	 * @see #setLastNameOnCard(String)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getCreditCard_LastNameOnCard()
-	 * @model
+	 * @model annotation="mimo-ent-format type='name' length='100'"
 	 * @generated
 	 */
 	String getLastNameOnCard();
@@ -365,7 +365,7 @@ public interface CreditCard extends PaymentMethod {
 	 * @return the value of the '<em>Middle Name On Card</em>' attribute.
 	 * @see #setMiddleNameOnCard(String)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getCreditCard_MiddleNameOnCard()
-	 * @model
+	 * @model annotation="mimo-ent-format type='name' length='100'"
 	 * @generated
 	 */
 	String getMiddleNameOnCard();
@@ -391,7 +391,7 @@ public interface CreditCard extends PaymentMethod {
 	 * @return the value of the '<em>Suffix On Card</em>' attribute.
 	 * @see #setSuffixOnCard(String)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getCreditCard_SuffixOnCard()
-	 * @model
+	 * @model annotation="mimo-ent-format type='name' length='100'"
 	 * @generated
 	 */
 	String getSuffixOnCard();
@@ -417,7 +417,7 @@ public interface CreditCard extends PaymentMethod {
 	 * @return the value of the '<em>Title On Card</em>' attribute.
 	 * @see #setTitleOnCard(String)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getCreditCard_TitleOnCard()
-	 * @model
+	 * @model annotation="mimo-ent-format type='name' length='100'"
 	 * @generated
 	 */
 	String getTitleOnCard();
@@ -443,7 +443,7 @@ public interface CreditCard extends PaymentMethod {
 	 * @return the value of the '<em>Valid From Date</em>' attribute.
 	 * @see #setValidFromDate(String)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getCreditCard_ValidFromDate()
-	 * @model
+	 * @model annotation="mimo-ent-format type='credit-card-date' length='7'"
 	 * @generated
 	 */
 	String getValidFromDate();

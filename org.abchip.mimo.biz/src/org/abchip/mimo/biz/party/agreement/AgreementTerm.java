@@ -57,7 +57,7 @@ public interface AgreementTerm extends BizEntity {
 	 * @return the value of the '<em>Agreement Item Seq Id</em>' attribute.
 	 * @see #setAgreementItemSeqId(String)
 	 * @see org.abchip.mimo.biz.party.agreement.AgreementPackage#getAgreementTerm_AgreementItemSeqId()
-	 * @model
+	 * @model annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	String getAgreementItemSeqId();
@@ -83,7 +83,7 @@ public interface AgreementTerm extends BizEntity {
 	 * @return the value of the '<em>Description</em>' attribute.
 	 * @see #setDescription(String)
 	 * @see org.abchip.mimo.biz.party.agreement.AgreementPackage#getAgreementTerm_Description()
-	 * @model
+	 * @model annotation="mimo-ent-format type='description' length='255'"
 	 * @generated
 	 */
 	String getDescription();
@@ -109,7 +109,7 @@ public interface AgreementTerm extends BizEntity {
 	 * @return the value of the '<em>From Date</em>' attribute.
 	 * @see #setFromDate(Date)
 	 * @see org.abchip.mimo.biz.party.agreement.AgreementPackage#getAgreementTerm_FromDate()
-	 * @model
+	 * @model annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getFromDate();
@@ -161,7 +161,7 @@ public interface AgreementTerm extends BizEntity {
 	 * @return the value of the '<em>Max Quantity</em>' attribute.
 	 * @see #setMaxQuantity(double)
 	 * @see org.abchip.mimo.biz.party.agreement.AgreementPackage#getAgreementTerm_MaxQuantity()
-	 * @model
+	 * @model annotation="mimo-ent-format type='floating-point'"
 	 * @generated
 	 */
 	double getMaxQuantity();
@@ -187,7 +187,7 @@ public interface AgreementTerm extends BizEntity {
 	 * @return the value of the '<em>Min Quantity</em>' attribute.
 	 * @see #setMinQuantity(double)
 	 * @see org.abchip.mimo.biz.party.agreement.AgreementPackage#getAgreementTerm_MinQuantity()
-	 * @model
+	 * @model annotation="mimo-ent-format type='floating-point'"
 	 * @generated
 	 */
 	double getMinQuantity();
@@ -213,7 +213,7 @@ public interface AgreementTerm extends BizEntity {
 	 * @return the value of the '<em>Term Days</em>' attribute.
 	 * @see #setTermDays(long)
 	 * @see org.abchip.mimo.biz.party.agreement.AgreementPackage#getAgreementTerm_TermDays()
-	 * @model
+	 * @model annotation="mimo-ent-format type='numeric' precision='20' scale='0'"
 	 * @generated
 	 */
 	long getTermDays();
@@ -239,7 +239,7 @@ public interface AgreementTerm extends BizEntity {
 	 * @return the value of the '<em>Term Value</em>' attribute.
 	 * @see #setTermValue(BigDecimal)
 	 * @see org.abchip.mimo.biz.party.agreement.AgreementPackage#getAgreementTerm_TermValue()
-	 * @model
+	 * @model annotation="mimo-ent-format type='currency-precise' precision='18' scale='3'"
 	 * @generated
 	 */
 	BigDecimal getTermValue();
@@ -265,7 +265,7 @@ public interface AgreementTerm extends BizEntity {
 	 * @return the value of the '<em>Text Value</em>' attribute.
 	 * @see #setTextValue(String)
 	 * @see org.abchip.mimo.biz.party.agreement.AgreementPackage#getAgreementTerm_TextValue()
-	 * @model
+	 * @model annotation="mimo-ent-format type='description' length='255'"
 	 * @generated
 	 */
 	String getTextValue();
@@ -291,7 +291,7 @@ public interface AgreementTerm extends BizEntity {
 	 * @return the value of the '<em>Thru Date</em>' attribute.
 	 * @see #setThruDate(Date)
 	 * @see org.abchip.mimo.biz.party.agreement.AgreementPackage#getAgreementTerm_ThruDate()
-	 * @model
+	 * @model annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getThruDate();
@@ -317,7 +317,9 @@ public interface AgreementTerm extends BizEntity {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Agreement Term Attributes</em>' attribute list.
 	 * @see org.abchip.mimo.biz.party.agreement.AgreementPackage#getAgreementTerm_AgreementTermAttributes()
-	 * @model annotation="mimo-ent-slot derived='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='AgreementTermAttribute'"
 	 * @generated
 	 */
@@ -387,6 +389,7 @@ public interface AgreementTerm extends BizEntity {
 	 * @see #setAgreementTermId(String)
 	 * @see org.abchip.mimo.biz.party.agreement.AgreementPackage#getAgreementTerm_AgreementTermId()
 	 * @model id="true" required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */

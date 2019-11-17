@@ -50,7 +50,7 @@ public interface SurveyQuestionAppl extends BizEntity {
 	 * @return the value of the '<em>External Field Ref</em>' attribute.
 	 * @see #setExternalFieldRef(String)
 	 * @see org.abchip.mimo.biz.content.survey.SurveyPackage#getSurveyQuestionAppl_ExternalFieldRef()
-	 * @model
+	 * @model annotation="mimo-ent-format type='long-varchar' length='255'"
 	 * @generated
 	 */
 	String getExternalFieldRef();
@@ -76,7 +76,7 @@ public interface SurveyQuestionAppl extends BizEntity {
 	 * @return the value of the '<em>Required Field</em>' attribute.
 	 * @see #setRequiredField(boolean)
 	 * @see org.abchip.mimo.biz.content.survey.SurveyPackage#getSurveyQuestionAppl_RequiredField()
-	 * @model
+	 * @model annotation="mimo-ent-format type='indicator' length='1'"
 	 * @generated
 	 */
 	boolean isRequiredField();
@@ -103,6 +103,7 @@ public interface SurveyQuestionAppl extends BizEntity {
 	 * @see #setFromDate(Date)
 	 * @see org.abchip.mimo.biz.content.survey.SurveyPackage#getSurveyQuestionAppl_FromDate()
 	 * @model required="true"
+	 *        annotation="mimo-ent-format type='date-time'"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
@@ -129,7 +130,7 @@ public interface SurveyQuestionAppl extends BizEntity {
 	 * @return the value of the '<em>Sequence Num</em>' attribute.
 	 * @see #setSequenceNum(long)
 	 * @see org.abchip.mimo.biz.content.survey.SurveyPackage#getSurveyQuestionAppl_SequenceNum()
-	 * @model
+	 * @model annotation="mimo-ent-format type='numeric' precision='20' scale='0'"
 	 * @generated
 	 */
 	long getSequenceNum();
@@ -181,7 +182,7 @@ public interface SurveyQuestionAppl extends BizEntity {
 	 * @return the value of the '<em>Survey Multi Resp Col Id</em>' attribute.
 	 * @see #setSurveyMultiRespColId(String)
 	 * @see org.abchip.mimo.biz.content.survey.SurveyPackage#getSurveyQuestionAppl_SurveyMultiRespColId()
-	 * @model
+	 * @model annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	String getSurveyMultiRespColId();
@@ -207,7 +208,7 @@ public interface SurveyQuestionAppl extends BizEntity {
 	 * @return the value of the '<em>Survey Multi Resp Id</em>' attribute.
 	 * @see #setSurveyMultiRespId(String)
 	 * @see org.abchip.mimo.biz.content.survey.SurveyPackage#getSurveyQuestionAppl_SurveyMultiRespId()
-	 * @model
+	 * @model annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	String getSurveyMultiRespId();
@@ -233,7 +234,7 @@ public interface SurveyQuestionAppl extends BizEntity {
 	 * @return the value of the '<em>Survey Page Seq Id</em>' attribute.
 	 * @see #setSurveyPageSeqId(String)
 	 * @see org.abchip.mimo.biz.content.survey.SurveyPackage#getSurveyQuestionAppl_SurveyPageSeqId()
-	 * @model
+	 * @model annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	String getSurveyPageSeqId();
@@ -285,7 +286,7 @@ public interface SurveyQuestionAppl extends BizEntity {
 	 * @return the value of the '<em>Thru Date</em>' attribute.
 	 * @see #setThruDate(Date)
 	 * @see org.abchip.mimo.biz.content.survey.SurveyPackage#getSurveyQuestionAppl_ThruDate()
-	 * @model
+	 * @model annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getThruDate();
@@ -311,7 +312,7 @@ public interface SurveyQuestionAppl extends BizEntity {
 	 * @return the value of the '<em>With Survey Option Seq Id</em>' attribute.
 	 * @see #setWithSurveyOptionSeqId(String)
 	 * @see org.abchip.mimo.biz.content.survey.SurveyPackage#getSurveyQuestionAppl_WithSurveyOptionSeqId()
-	 * @model
+	 * @model annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	String getWithSurveyOptionSeqId();
@@ -337,7 +338,7 @@ public interface SurveyQuestionAppl extends BizEntity {
 	 * @return the value of the '<em>With Survey Question Id</em>' attribute.
 	 * @see #setWithSurveyQuestionId(String)
 	 * @see org.abchip.mimo.biz.content.survey.SurveyPackage#getSurveyQuestionAppl_WithSurveyQuestionId()
-	 * @model
+	 * @model annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	String getWithSurveyQuestionId();
