@@ -22,10 +22,10 @@ import org.abchip.mimo.context.AuthenticationUserPassword;
 import org.abchip.mimo.context.ContextFactory;
 import org.abchip.mimo.context.ContextProvider;
 import org.abchip.mimo.entity.FrameManager;
-import org.abchip.mimo.resource.ResourceReader;
-import org.abchip.mimo.resource.ResourceWriter;
 import org.abchip.mimo.resource.ResourceManager;
 import org.abchip.mimo.resource.ResourceProvider;
+import org.abchip.mimo.resource.ResourceReader;
+import org.abchip.mimo.resource.ResourceWriter;
 import org.abchip.mimo.tester.Test;
 import org.abchip.mimo.tester.TestAsserter;
 import org.abchip.mimo.tester.TestStarted;
@@ -88,9 +88,9 @@ public class PartyTest {
 		testAsserter.assertNotNull("Person Writer", personWriter);
 		if (personWriter != null) {
 			Person person = PartyFactory.eINSTANCE.createPerson();
-			person.setPreferredCurrencyUomId(frameManager.createProxy(Uom.class, "EUR"));
-			person.setStatusId(frameManager.createProxy(StatusItem.class, "PARTY_ENABLED"));
-			person.setPartyTypeId(frameManager.createProxy(PartyType.class, "PERSON"));
+			person.setPreferredCurrencyUomId(frameManager.getFrame(Uom.class).createProxy("EUR"));
+			person.setStatusId(frameManager.getFrame(StatusItem.class).createProxy("PARTY_ENABLED"));
+			person.setPartyTypeId(frameManager.getFrame(PartyType.class).createProxy("PERSON"));
 			person.setPartyId(partyId);
 			person.setFirstName("Test hacker party person");
 			personWriter.create(person);
@@ -110,9 +110,9 @@ public class PartyTest {
 
 		if (groupWriter != null) {
 			PartyGroup partyGroup = PartyFactory.eINSTANCE.createPartyGroup();
-			partyGroup.setPreferredCurrencyUomId(frameManager.createProxy(Uom.class, "EUR"));
-			partyGroup.setStatusId(frameManager.createProxy(StatusItem.class, "PARTY_ENABLED"));
-			partyGroup.setPartyTypeId(frameManager.createProxy(PartyType.class, "PARTY_GROUP"));
+			partyGroup.setPreferredCurrencyUomId(frameManager.getFrame(Uom.class).createProxy("EUR"));
+			partyGroup.setStatusId(frameManager.getFrame(StatusItem.class).createProxy("PARTY_ENABLED"));
+			partyGroup.setPartyTypeId(frameManager.getFrame(PartyType.class).createProxy("PARTY_GROUP"));
 			partyGroup.setPartyId(partyId);
 			partyGroup.setGroupName("Test hacker party group");
 			groupWriter.create(partyGroup);

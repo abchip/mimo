@@ -26,7 +26,6 @@ import org.abchip.mimo.context.ContextProvider;
 import org.abchip.mimo.context.Logger;
 import org.abchip.mimo.entity.EntityNameable;
 import org.abchip.mimo.entity.Frame;
-import org.abchip.mimo.entity.FrameManager;
 import org.abchip.mimo.entity.SerializationType;
 import org.abchip.mimo.resource.Resource;
 import org.abchip.mimo.resource.ResourceManager;
@@ -40,7 +39,6 @@ public class NIOResourcempl<E extends EntityNameable> extends ResourceImpl<E> {
 	 */
 	private static final long serialVersionUID = 1L;
 
-	private FrameManager frameManager;
 	private Logger logger;
 	private NIOPathManager pathManager = null;
 	private ResourceSerializer<E> resourceSerializer = null;
@@ -49,7 +47,6 @@ public class NIOResourcempl<E extends EntityNameable> extends ResourceImpl<E> {
 
 	public NIOResourcempl(ContextProvider contextProvider, Frame<E> frame, String tenant, NIOPathManager pathManager) {
 
-		this.frameManager = contextProvider.getContext().get(FrameManager.class);
 		this.logger = contextProvider.getContext().get(Logger.class);
 		this.pathManager = pathManager;
 
@@ -127,7 +124,7 @@ public class NIOResourcempl<E extends EntityNameable> extends ResourceImpl<E> {
 				return null;
 
 			if (proxy)
-				return frameManager.createProxy(getFrame(), name);
+				return getFrame().createProxy(name);
 
 			E entity = null;
 			try (InputStream inputStream = Files.newInputStream(file)) {
@@ -186,7 +183,7 @@ public class NIOResourcempl<E extends EntityNameable> extends ResourceImpl<E> {
 					i++;
 
 					if (proxy) {
-						this.resourceSerializer.add(frameManager.createProxy(getFrame(), name));
+						this.resourceSerializer.add(getFrame().createProxy(name));
 						continue;
 					}
 
@@ -194,7 +191,7 @@ public class NIOResourcempl<E extends EntityNameable> extends ResourceImpl<E> {
 
 						this.resourceSerializer.load(inputStream, true);
 					} catch (Exception e) {
-						this.resourceSerializer.add(frameManager.createProxy(getFrame(), name));
+						this.resourceSerializer.add(getFrame().createProxy(name));
 						logger.error(e);
 					}
 				}

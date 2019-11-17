@@ -25,22 +25,6 @@ public interface FrameManager {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model required="true" frameRequired="true" nameRequired="true"
-	 * @generated
-	 */
-	<E extends EntityNameable> E createProxy(Frame<E> frame, String name);
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model required="true" klassRequired="true" nameRequired="true"
-	 * @generated
-	 */
-	<E extends EntityNameable> E createProxy(Class<E> klass, String name);
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
 	 * @model contextProviderRequired="true"
 	 * @generated
 	 */

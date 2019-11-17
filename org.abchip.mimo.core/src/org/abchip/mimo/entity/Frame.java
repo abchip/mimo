@@ -80,6 +80,14 @@ public interface Frame<E extends Entity> extends EntityNameable {
 	E createEntity();
 
 	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model required="true" nameRequired="true"
+	 * @generated
+	 */
+	E createProxy(String name);
+
+	/**
 	 * Returns the value of the '<em><b>Keys</b></em>' attribute list.
 	 * The list contents are of type {@link java.lang.String}.
 	 * <!-- begin-user-doc -->

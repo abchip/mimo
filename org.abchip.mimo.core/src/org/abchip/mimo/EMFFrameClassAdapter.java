@@ -15,7 +15,6 @@ import java.util.List;
 import java.util.Map;
 
 import org.abchip.mimo.entity.Entity;
-import org.abchip.mimo.entity.EntityNameable;
 import org.abchip.mimo.entity.EntityPackage;
 import org.abchip.mimo.entity.Frame;
 import org.abchip.mimo.entity.FrameManager;
@@ -221,9 +220,10 @@ public class EMFFrameClassAdapter<E extends Entity> extends FrameImpl<E> {
 				// frameRef = frameManager.getFrame("Person");
 				// }
 
-				@SuppressWarnings("unchecked")
-				EntityNameable entity = this.frameManager.createProxy((Frame<EntityNameable>) frameRef, value.toString());
-				eObject.eSet(eFeature, entity);
+				Entity entity = frameRef.createProxy(value.toString());
+
+				if (entity != null)
+					eObject.eSet(eFeature, entity);
 			} else
 				System.err.println("Unexpected condition: bvtw4a87ny4r9tycsa9et6");
 		} else {

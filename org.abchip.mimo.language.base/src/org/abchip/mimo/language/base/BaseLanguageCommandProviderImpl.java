@@ -32,11 +32,11 @@ public class BaseLanguageCommandProviderImpl implements CommandProvider {
 		for (Language language : resourceManager.getResourceReader(contextRoot, Language.class).find()) {
 			System.out.println(language);
 
-			LanguagePlanet mars = frameManager.createProxy(LanguagePlanet.class, "mars");
+			LanguagePlanet mars = frameManager.getFrame(LanguagePlanet.class).createProxy("mars");
 			language.getPlanets().add(mars);
 			language.getPlanets().get(0);
 
-			LanguagePlanet moon = frameManager.createProxy(LanguagePlanet.class, "moon");
+			LanguagePlanet moon = frameManager.getFrame(LanguagePlanet.class).createProxy("moon");
 			language.getPlanetsCont().add(moon);
 			language.getPlanetsCont().get(0);
 

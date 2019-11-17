@@ -18,6 +18,7 @@ import org.abchip.mimo.entity.Slot;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
@@ -48,8 +49,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
 public abstract class FrameImpl<E extends Entity> extends EntityNameableImpl implements Frame<E> {
 	/**
 	 * The default value of the '{@link #isAbstract() <em>Abstract</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see #isAbstract()
 	 * @generated
 	 * @ordered
@@ -57,8 +57,7 @@ public abstract class FrameImpl<E extends Entity> extends EntityNameableImpl imp
 	protected static final boolean ABSTRACT_EDEFAULT = false;
 	/**
 	 * The cached value of the '{@link #isAbstract() <em>Abstract</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see #isAbstract()
 	 * @generated
 	 * @ordered
@@ -66,8 +65,7 @@ public abstract class FrameImpl<E extends Entity> extends EntityNameableImpl imp
 	protected boolean abstract_ = ABSTRACT_EDEFAULT;
 	/**
 	 * The default value of the '{@link #isAutoIncrement() <em>Auto Increment</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see #isAutoIncrement()
 	 * @generated
 	 * @ordered
@@ -75,8 +73,7 @@ public abstract class FrameImpl<E extends Entity> extends EntityNameableImpl imp
 	protected static final boolean AUTO_INCREMENT_EDEFAULT = false;
 	/**
 	 * The cached value of the '{@link #isAutoIncrement() <em>Auto Increment</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see #isAutoIncrement()
 	 * @generated
 	 * @ordered
@@ -84,26 +81,25 @@ public abstract class FrameImpl<E extends Entity> extends EntityNameableImpl imp
 	protected boolean autoIncrement = AUTO_INCREMENT_EDEFAULT;
 	/**
 	 * The cached value of the '{@link #getKeys() <em>Keys</em>}' attribute list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see #getKeys()
 	 * @generated
 	 * @ordered
 	 */
 	protected EList<String> keys;
 	/**
-	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * The default value of the '{@link #getName() <em>Name</em>}' attribute. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @see #getName()
 	 * @generated
 	 * @ordered
 	 */
 	protected static final String NAME_EDEFAULT = null;
 	/**
-	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @see #getName()
 	 * @generated
 	 * @ordered
@@ -111,8 +107,7 @@ public abstract class FrameImpl<E extends Entity> extends EntityNameableImpl imp
 	protected String name = NAME_EDEFAULT;
 	/**
 	 * The cached value of the '{@link #getSlots() <em>Slots</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see #getSlots()
 	 * @generated
 	 * @ordered
@@ -120,8 +115,7 @@ public abstract class FrameImpl<E extends Entity> extends EntityNameableImpl imp
 	protected EList<Slot> slots;
 	/**
 	 * The default value of the '{@link #getSlotsNumber() <em>Slots Number</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see #getSlotsNumber()
 	 * @generated
 	 * @ordered
@@ -129,8 +123,7 @@ public abstract class FrameImpl<E extends Entity> extends EntityNameableImpl imp
 	protected static final int SLOTS_NUMBER_EDEFAULT = 0;
 	/**
 	 * The cached value of the '{@link #getSlotsNumber() <em>Slots Number</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see #getSlotsNumber()
 	 * @generated
 	 * @ordered
@@ -138,8 +131,7 @@ public abstract class FrameImpl<E extends Entity> extends EntityNameableImpl imp
 	protected int slotsNumber = SLOTS_NUMBER_EDEFAULT;
 	/**
 	 * The default value of the '{@link #getRoutesNumber() <em>Routes Number</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see #getRoutesNumber()
 	 * @generated
 	 * @ordered
@@ -147,8 +139,7 @@ public abstract class FrameImpl<E extends Entity> extends EntityNameableImpl imp
 	protected static final int ROUTES_NUMBER_EDEFAULT = 0;
 	/**
 	 * The cached value of the '{@link #getRoutesNumber() <em>Routes Number</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see #getRoutesNumber()
 	 * @generated
 	 * @ordered
@@ -156,8 +147,7 @@ public abstract class FrameImpl<E extends Entity> extends EntityNameableImpl imp
 	protected int routesNumber = ROUTES_NUMBER_EDEFAULT;
 	/**
 	 * The cached value of the '{@link #getSuperNames() <em>Super Names</em>}' attribute list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see #getSuperNames()
 	 * @generated
 	 * @ordered
@@ -165,8 +155,7 @@ public abstract class FrameImpl<E extends Entity> extends EntityNameableImpl imp
 	protected EList<String> superNames;
 	/**
 	 * The default value of the '{@link #getTextFormula() <em>Text Formula</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see #getTextFormula()
 	 * @generated
 	 * @ordered
@@ -174,8 +163,7 @@ public abstract class FrameImpl<E extends Entity> extends EntityNameableImpl imp
 	protected static final String TEXT_FORMULA_EDEFAULT = null;
 	/**
 	 * The cached value of the '{@link #getTextFormula() <em>Text Formula</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see #getTextFormula()
 	 * @generated
 	 * @ordered
@@ -242,6 +230,30 @@ public abstract class FrameImpl<E extends Entity> extends EntityNameableImpl imp
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated NOT
+	 */
+	@Override
+	public E createProxy(String name) {
+
+		E proxy = this.createEntity();
+
+		InternalEObject internalEObject = (InternalEObject) proxy;
+		URI uri = URI.createHierarchicalURI("mimo", null, null, new String[] { this.getName() }, null, name);
+		internalEObject.eSetProxyURI(uri);
+
+		Entity entity = (Entity) internalEObject;
+		Frame<?> domainFrame = entity.isa();
+		for (String key : domainFrame.getKeys()) {
+			domainFrame.setValue(entity, key, name.toString());
+			break;
+		}
+
+		return proxy;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -259,6 +271,7 @@ public abstract class FrameImpl<E extends Entity> extends EntityNameableImpl imp
 	 */
 	@Override
 	public abstract Slot getSlot(String name);
+
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
@@ -361,8 +374,7 @@ public abstract class FrameImpl<E extends Entity> extends EntityNameableImpl imp
 	public abstract void setValue(Entity entity, String slotName, Object value);
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -375,8 +387,7 @@ public abstract class FrameImpl<E extends Entity> extends EntityNameableImpl imp
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -405,8 +416,7 @@ public abstract class FrameImpl<E extends Entity> extends EntityNameableImpl imp
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -438,8 +448,7 @@ public abstract class FrameImpl<E extends Entity> extends EntityNameableImpl imp
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -468,8 +477,7 @@ public abstract class FrameImpl<E extends Entity> extends EntityNameableImpl imp
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -498,8 +506,7 @@ public abstract class FrameImpl<E extends Entity> extends EntityNameableImpl imp
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override

@@ -17,8 +17,6 @@ import org.abchip.mimo.entity.Frame;
 import org.abchip.mimo.entity.FrameManager;
 import org.abchip.mimo.resource.ResourceHelper;
 import org.abchip.mimo.resource.ResourceReader;
-import org.eclipse.emf.common.util.URI;
-import org.eclipse.emf.ecore.InternalEObject;
 
 public class EMFFrameManagerImpl implements FrameManager {
 
@@ -44,29 +42,5 @@ public class EMFFrameManagerImpl implements FrameManager {
 	@Override
 	public <E extends Entity> Frame<E> getFrame(Class<E> klass) {
 		return (Frame<E>) EMFFrameHelper.getFrames(this).get(klass.getSimpleName());
-	}
-
-	@Override
-	public <E extends EntityNameable> E createProxy(Class<E> klass, String name) {
-		return createProxy(getFrame(klass), name);
-	}
-
-	@Override
-	public <E extends EntityNameable> E createProxy(Frame<E> frame, String name) {
-
-		E proxy = frame.createEntity();
-
-		InternalEObject internalEObject = (InternalEObject) proxy;
-		URI uri = URI.createHierarchicalURI("mimo", null, null, new String[] { frame.getName() }, null, name);
-		internalEObject.eSetProxyURI(uri);
-
-		Entity entity = (Entity) internalEObject;
-		Frame<?> domainFrame = entity.isa();
-		for (String key : domainFrame.getKeys()) {
-			domainFrame.setValue(entity, key, name.toString());
-			break;
-		}
-
-		return proxy;
 	}
 }

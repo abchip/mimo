@@ -30,8 +30,8 @@ import org.abchip.mimo.context.ContextProvider;
 import org.abchip.mimo.core.http.servlet.BaseServlet;
 import org.abchip.mimo.entity.EntityNameable;
 import org.abchip.mimo.entity.FrameManager;
-import org.abchip.mimo.resource.ResourceWriter;
 import org.abchip.mimo.resource.ResourceManager;
+import org.abchip.mimo.resource.ResourceWriter;
 import org.abchip.mimo.util.Strings;
 import org.apache.poi.hssf.usermodel.HSSFCell;
 import org.apache.poi.hssf.usermodel.HSSFRow;
@@ -87,9 +87,9 @@ public class ImportPeopleServlet extends BaseServlet {
 
 						Person person = PartyFactory.eINSTANCE.createPerson();
 						// Party
-						person.setPreferredCurrencyUomId(frameManager.createProxy(Uom.class, "EUR"));
-						person.setStatusId(frameManager.createProxy(StatusItem.class, "PARTY_ENABLED"));
-						person.setPartyTypeId(frameManager.createProxy(PartyType.class, "PERSON"));
+						person.setPreferredCurrencyUomId(frameManager.getFrame(Uom.class).createProxy("EUR"));
+						person.setStatusId(frameManager.getFrame(StatusItem.class).createProxy("PARTY_ENABLED"));
+						person.setPartyTypeId(frameManager.getFrame(PartyType.class).createProxy("PERSON"));
 						// Person
 						person.setPartyId(id);
 						person.setFirstName(Strings.qINSTANCE.escape(name));
@@ -99,7 +99,7 @@ public class ImportPeopleServlet extends BaseServlet {
 						// Party Role
 						PartyRole partyRole = PartyFactory.eINSTANCE.createPartyRole();
 						partyRole.setPartyId(person);
-						partyRole.setRoleTypeId(frameManager.createProxy(RoleType.class, "CUSTOMER"));
+						partyRole.setRoleTypeId(frameManager.getFrame(RoleType.class).createProxy("CUSTOMER"));
 						partyRoleWriter.create(partyRole, true);
 
 						// PartyTaxAuthInfo

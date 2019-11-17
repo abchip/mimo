@@ -36,35 +36,30 @@ public class PartyCommandProviderImpl implements CommandProvider {
 	private ResourceManager resourceManager;
 
 	public <E extends EntityNameable> void _testParty(CommandInterpreter interpreter) throws Exception {
-		
+
 		ResourceReader<Party> partyReader = resourceManager.getResourceReader(contextRoot, Party.class);
 		Party party = partyReader.lookup("10000");
 		System.out.println(party.getURI());
 		System.out.println(party.getPartyTypeId().getName());
-//		System.out.println(party.getPreferredCurrencyUomId().getNumericCode());
+		// System.out.println(party.getPreferredCurrencyUomId().getNumericCode());
 		System.out.println(party.getCreatedByUserLogin().getPartyId().getName());
 		/*
-		party = frameManager.createEntity(Party.class); 
-		party.setPartyId("ABC");
-		party.setDescription("abcdefg");
-		PartyType partyType = frameManager.createEntity(PartyType.class);
-		partyType.setPartyTypeId("DEF");
-		partyType.setDescription("hilmnopq");
-		party.setPartyTypeId(partyType);
-		
-		ResourceSerializer<Party> partySerializer = resourceManager.createEntitySerializer(Party.class, SerializationType.JAVA_SCRIPT_OBJECT_NOTATION);
-		partySerializer.add(party);
-				
-		for(Party party2: partyReader.find()) {
-			partySerializer.add(party2);
-			party2.getPartyTypeId().getName();
-			break;
-		}
-		
-		partySerializer.save(System.out);
-		partySerializer.clear();*/
+		 * party = frameManager.createEntity(Party.class); party.setPartyId("ABC");
+		 * party.setDescription("abcdefg"); PartyType partyType =
+		 * frameManager.createEntity(PartyType.class); partyType.setPartyTypeId("DEF");
+		 * partyType.setDescription("hilmnopq"); party.setPartyTypeId(partyType);
+		 * 
+		 * ResourceSerializer<Party> partySerializer =
+		 * resourceManager.createEntitySerializer(Party.class).createProxy(
+		 * SerializationType.JAVA_SCRIPT_OBJECT_NOTATION); partySerializer.add(party);
+		 * 
+		 * for(Party party2: partyReader.find()) { partySerializer.add(party2);
+		 * party2.getPartyTypeId().getName(); break; }
+		 * 
+		 * partySerializer.save(System.out); partySerializer.clear();
+		 */
 	}
-	
+
 	public <E extends EntityNameable> void _hackerParty(CommandInterpreter interpreter) throws Exception {
 
 		String id = interpreter.nextArgument();
@@ -73,9 +68,9 @@ public class PartyCommandProviderImpl implements CommandProvider {
 		ResourceWriter<Person> personWriter = resourceManager.getResourceWriter(contextRoot, Person.class);
 
 		Person person = PartyFactory.eINSTANCE.createPerson();
-		person.setPreferredCurrencyUomId(frameManager.createProxy(Uom.class, "EUR"));
-		person.setStatusId(frameManager.createProxy(StatusItem.class, "PARTY_ENABLED"));
-		person.setPartyTypeId(frameManager.createProxy(PartyType.class, "PERSON"));
+		person.setPreferredCurrencyUomId(frameManager.getFrame(Uom.class).createProxy("EUR"));
+		person.setStatusId(frameManager.getFrame(StatusItem.class).createProxy("PARTY_ENABLED"));
+		person.setPartyTypeId(frameManager.getFrame(PartyType.class).createProxy("PERSON"));
 		person.setPartyId(id);
 		person.setFirstName("Test hacker party person");
 		personWriter.create(person);
@@ -84,9 +79,9 @@ public class PartyCommandProviderImpl implements CommandProvider {
 		ResourceWriter<PartyGroup> groupWriter = resourceManager.getResourceWriter(contextRoot, PartyGroup.class);
 
 		PartyGroup partyGroup = PartyFactory.eINSTANCE.createPartyGroup();
-		partyGroup.setPreferredCurrencyUomId(frameManager.createProxy(Uom.class, "EUR"));
-		partyGroup.setStatusId(frameManager.createProxy(StatusItem.class, "PARTY_ENABLED"));
-		partyGroup.setPartyTypeId(frameManager.createProxy(PartyType.class, "PARTY_GROUP"));
+		partyGroup.setPreferredCurrencyUomId(frameManager.getFrame(Uom.class).createProxy("EUR"));
+		partyGroup.setStatusId(frameManager.getFrame(StatusItem.class).createProxy("PARTY_ENABLED"));
+		partyGroup.setPartyTypeId(frameManager.getFrame(PartyType.class).createProxy("PARTY_GROUP"));
 		partyGroup.setPartyId(id);
 		partyGroup.setGroupName("Test hacker party group");
 		groupWriter.create(partyGroup);
