@@ -14,14 +14,13 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import org.abchip.mimo.data.Strings;
 import org.abchip.mimo.entity.Entity;
 import org.abchip.mimo.entity.EntityPackage;
 import org.abchip.mimo.entity.Frame;
 import org.abchip.mimo.entity.Slot;
 import org.abchip.mimo.entity.impl.FrameImpl;
-import org.abchip.mimo.resource.ResourceReader;
 import org.abchip.mimo.util.Lists;
+import org.abchip.mimo.util.Strings;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EAnnotation;
 import org.eclipse.emf.ecore.EClass;
@@ -44,12 +43,12 @@ public class EMFFrameClassAdapter<E extends Entity> extends FrameImpl<E> {
 
 	int routesNumber = 0;
 
-	private ResourceReader<Frame<?>> frameReader = null;
+	private Map<String, E> entities = null;
 
-	public EMFFrameClassAdapter(ResourceReader<Frame<?>> frameReader, EClass eClass) {
+	public EMFFrameClassAdapter(Map<String, E> entities, EClass eClass) {
 		super();
 
-		this.frameReader = frameReader;
+		this.entities = entities;
 		this.eClass = eClass;
 
 		eSet(EntityPackage.FRAME__NAME, this.eClass.getName());
@@ -124,11 +123,14 @@ public class EMFFrameClassAdapter<E extends Entity> extends FrameImpl<E> {
 			return null;
 
 		EClass eAko = classes.get(0);
-		Frame<? super E> akoFrame = (Frame<? super E>) EMFFrameHelper.getFrames(this.frameReader).get(eAko.getName());
+		Frame<? super E> akoFrame = (Frame<? super E>) this.entities.get(eAko.getName());
 		if (akoFrame != null)
 			return akoFrame;
-		else
-			return new EMFFrameClassAdapter(frameReader, eAko);
+		else {
+			akoFrame = new EMFFrameClassAdapter(this.entities, eAko);
+			this.entities.put(eAko.getName(), (E) akoFrame);
+			return akoFrame;
+		}
 	}
 
 	@Override
@@ -212,7 +214,7 @@ public class EMFFrameClassAdapter<E extends Entity> extends FrameImpl<E> {
 		if (eFeature instanceof EReference) {
 			EReference eReference = (EReference) eFeature;
 			EClassifier eClassifier = eReference.getEType();
-			Frame<?> frameRef = frameReader.lookup(eClassifier.getName());
+			Frame<?> frameRef = (Frame<?>) this.entities.get(eClassifier.getName());
 			if (frameRef != null) {
 				Entity entity = frameRef.createProxy(value.toString());
 				if (entity != null)

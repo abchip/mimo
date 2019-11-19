@@ -21,7 +21,6 @@ import javax.servlet.http.HttpServletResponse;
 import org.abchip.mimo.context.ContextProvider;
 import org.abchip.mimo.core.http.servlet.BaseServlet;
 import org.abchip.mimo.entity.Frame;
-import org.abchip.mimo.entity.FrameManager;
 import org.abchip.mimo.entity.SerializationType;
 import org.abchip.mimo.entity.Slot;
 import org.abchip.mimo.resource.Resource;
@@ -43,8 +42,6 @@ public class LookupContextMenuServlet extends BaseServlet {
 
 	@Inject
 	private ResourceManager resourceManager;
-	@Inject
-	private FrameManager frameManager;
 
 	protected void execute(ContextProvider contextProvider, HttpServletRequest request, HttpServletResponse response) throws IOException {
 
@@ -52,7 +49,7 @@ public class LookupContextMenuServlet extends BaseServlet {
 		if (frameName == null)
 			return;
 
-		Frame<?> frame = frameManager.getFrame(contextProvider, frameName);
+		Frame<?> frame = resourceManager.getFrame(contextProvider, frameName);
 		if (frame == null)
 			return;
 
@@ -133,7 +130,7 @@ public class LookupContextMenuServlet extends BaseServlet {
 
 	private String getIcon(ContextProvider contextProvider, String frameName) {
 
-		Frame<?> frame = frameManager.getFrame(contextProvider, frameName);
+		Frame<?> frame = resourceManager.getFrame(contextProvider, frameName);
 		if (frame == null)
 			return null;
 

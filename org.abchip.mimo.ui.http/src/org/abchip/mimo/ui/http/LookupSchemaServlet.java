@@ -20,7 +20,6 @@ import org.abchip.mimo.context.ContextProvider;
 import org.abchip.mimo.core.http.servlet.BaseServlet;
 import org.abchip.mimo.entity.Domain;
 import org.abchip.mimo.entity.Frame;
-import org.abchip.mimo.entity.FrameManager;
 import org.abchip.mimo.entity.SerializationType;
 import org.abchip.mimo.entity.Slot;
 import org.abchip.mimo.resource.Resource;
@@ -41,8 +40,6 @@ public class LookupSchemaServlet extends BaseServlet {
 
 	@Inject
 	private ResourceManager resourceManager;
-	@Inject
-	private FrameManager frameManager;
 
 	protected void execute(ContextProvider contextProvider, HttpServletRequest request, HttpServletResponse response) throws IOException {
 
@@ -50,7 +47,7 @@ public class LookupSchemaServlet extends BaseServlet {
 		String name = request.getParameter("name");
 		String prototype = request.getParameter("prototype");
 
-		Frame<?> frame = frameManager.getFrame(contextProvider, frameName);
+		Frame<?> frame = resourceManager.getFrame(contextProvider, frameName);
 		if (frame == null)
 			return;
 
@@ -145,7 +142,7 @@ public class LookupSchemaServlet extends BaseServlet {
 
 		ResourceReader<UiFrameSetup> frameSetupReader = resourceManager.getResourceReader(contextProvider, UiFrameSetup.class, Resource.TENANT_MASTER);
 
-		Frame<?> frame = frameManager.getFrame(contextProvider, domain.getFrame());
+		Frame<?> frame = resourceManager.getFrame(contextProvider, domain.getFrame());
 		if (frame == null)
 			return;
 

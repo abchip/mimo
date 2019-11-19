@@ -16,9 +16,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.abchip.mimo.context.ContextProvider;
 import org.abchip.mimo.core.http.servlet.BaseServlet;
-import org.abchip.mimo.data.Strings;
 import org.abchip.mimo.entity.Frame;
-import org.abchip.mimo.entity.FrameManager;
 import org.abchip.mimo.entity.SerializationType;
 import org.abchip.mimo.entity.Slot;
 import org.abchip.mimo.resource.Resource;
@@ -28,6 +26,7 @@ import org.abchip.mimo.ui.query.Query;
 import org.abchip.mimo.ui.query.QueryFactory;
 import org.abchip.mimo.ui.query.QueryField;
 import org.abchip.mimo.util.Lists;
+import org.abchip.mimo.util.Strings;
 
 public class LookupQueryServlet extends BaseServlet {
 
@@ -35,8 +34,6 @@ public class LookupQueryServlet extends BaseServlet {
 
 	@Inject
 	private ResourceManager resourceManager;
-	@Inject
-	private FrameManager frameManager;
 
 	protected void execute(ContextProvider contextProvider, HttpServletRequest request, HttpServletResponse response) throws IOException {
 
@@ -44,7 +41,7 @@ public class LookupQueryServlet extends BaseServlet {
 		String name = request.getParameter("name");
 		String prototype = request.getParameter("prototype");
 
-		Frame<?> frame = frameManager.getFrame(contextProvider, frameName);
+		Frame<?> frame = resourceManager.getFrame(contextProvider, frameName);
 		if (frame == null)
 			return;
 

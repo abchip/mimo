@@ -19,7 +19,15 @@ import java.net.URI;
  * @model abstract="true"
  * @generated
  */
-public interface EntityNameable extends Entity, Nameable {
+public interface EntityNameable extends Entity {
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model kind="operation" required="true"
+	 * @generated
+	 */
+	String getName();
 
 	/**
 	 * <!-- begin-user-doc -->

@@ -7,7 +7,7 @@
  */
 package org.abchip.mimo.logic;
 
-import org.abchip.mimo.entity.Nameable;
+import org.abchip.mimo.entity.EntityNameable;
 
 /**
  * <!-- begin-user-doc -->
@@ -25,7 +25,7 @@ import org.abchip.mimo.entity.Nameable;
  * @model
  * @generated
  */
-public interface Term extends Nameable {
+public interface Term extends EntityNameable {
 	/**
 	 * Returns the value of the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->

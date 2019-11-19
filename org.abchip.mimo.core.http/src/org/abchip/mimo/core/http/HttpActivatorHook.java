@@ -59,7 +59,5 @@ public class HttpActivatorHook {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-
 	}
-
 }

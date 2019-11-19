@@ -11,11 +11,10 @@ package org.abchip.mimo.core.base;
 import javax.inject.Inject;
 
 import org.abchip.mimo.context.ContextRoot;
-import org.abchip.mimo.data.Strings;
 import org.abchip.mimo.entity.EntityNameable;
 import org.abchip.mimo.entity.Frame;
-import org.abchip.mimo.entity.FrameManager;
 import org.abchip.mimo.resource.ResourceManager;
+import org.abchip.mimo.util.Strings;
 import org.eclipse.osgi.framework.console.CommandInterpreter;
 import org.eclipse.osgi.framework.console.CommandProvider;
 
@@ -25,16 +24,14 @@ public class BaseEntityCommandProviderImpl implements CommandProvider {
 	private ContextRoot contextRoot;
 	@Inject
 	private ResourceManager resourceManager;
-	@Inject
-	private FrameManager frameManager;
-	
+
 	public <E extends EntityNameable> void _find(CommandInterpreter interpreter) throws Exception {
 
 		String frameName = Strings.qINSTANCE.firstToUpper(interpreter.nextArgument());
 		String order = interpreter.nextArgument();
 
 		@SuppressWarnings("unchecked")
-		Frame<E> frame = (Frame<E>) frameManager.getFrame(contextRoot, frameName);
+		Frame<E> frame = (Frame<E>) resourceManager.getFrame(contextRoot, frameName);
 		if (frame == null)
 			interpreter.print("Frame not found: " + frameName);
 
@@ -47,7 +44,7 @@ public class BaseEntityCommandProviderImpl implements CommandProvider {
 
 		String frameName = Strings.qINSTANCE.firstToUpper(interpreter.nextArgument());
 		@SuppressWarnings("unchecked")
-		Frame<E> frame = (Frame<E>) frameManager.getFrame(contextRoot, frameName);
+		Frame<E> frame = (Frame<E>) resourceManager.getFrame(contextRoot, frameName);
 		if (frame == null)
 			interpreter.print("Frame not found: " + frameName);
 

@@ -381,16 +381,6 @@ public interface EntityPackage extends EPackage {
 	int FRAME = 12;
 
 	/**
-	 * The meta object id for the '{@link org.abchip.mimo.entity.Nameable <em>Nameable</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.abchip.mimo.entity.Nameable
-	 * @see org.abchip.mimo.entity.impl.EntityPackageImpl#getNameable()
-	 * @generated
-	 */
-	int NAMEABLE = 14;
-
-	/**
 	 * The meta object id for the '{@link org.abchip.mimo.entity.impl.EntityTypedImpl <em>Typed</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -465,13 +455,22 @@ public interface EntityPackage extends EPackage {
 	int FRAME__AUTO_INCREMENT = ENTITY_NAMEABLE_FEATURE_COUNT + 1;
 
 	/**
+	 * The feature id for the '<em><b>Enum</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FRAME__ENUM = ENTITY_NAMEABLE_FEATURE_COUNT + 2;
+
+	/**
 	 * The feature id for the '<em><b>Keys</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int FRAME__KEYS = ENTITY_NAMEABLE_FEATURE_COUNT + 2;
+	int FRAME__KEYS = ENTITY_NAMEABLE_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -480,7 +479,7 @@ public interface EntityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FRAME__NAME = ENTITY_NAMEABLE_FEATURE_COUNT + 3;
+	int FRAME__NAME = ENTITY_NAMEABLE_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Slots</b></em>' containment reference list.
@@ -489,7 +488,7 @@ public interface EntityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FRAME__SLOTS = ENTITY_NAMEABLE_FEATURE_COUNT + 4;
+	int FRAME__SLOTS = ENTITY_NAMEABLE_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Slots Number</b></em>' attribute.
@@ -498,7 +497,7 @@ public interface EntityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FRAME__SLOTS_NUMBER = ENTITY_NAMEABLE_FEATURE_COUNT + 5;
+	int FRAME__SLOTS_NUMBER = ENTITY_NAMEABLE_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Routes Number</b></em>' attribute.
@@ -507,7 +506,7 @@ public interface EntityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FRAME__ROUTES_NUMBER = ENTITY_NAMEABLE_FEATURE_COUNT + 6;
+	int FRAME__ROUTES_NUMBER = ENTITY_NAMEABLE_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>Super Names</b></em>' attribute list.
@@ -516,7 +515,7 @@ public interface EntityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FRAME__SUPER_NAMES = ENTITY_NAMEABLE_FEATURE_COUNT + 7;
+	int FRAME__SUPER_NAMES = ENTITY_NAMEABLE_FEATURE_COUNT + 8;
 
 	/**
 	 * The feature id for the '<em><b>Text Formula</b></em>' attribute.
@@ -525,7 +524,7 @@ public interface EntityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FRAME__TEXT_FORMULA = ENTITY_NAMEABLE_FEATURE_COUNT + 8;
+	int FRAME__TEXT_FORMULA = ENTITY_NAMEABLE_FEATURE_COUNT + 9;
 
 	/**
 	 * The number of structural features of the '<em>Frame</em>' class.
@@ -534,35 +533,7 @@ public interface EntityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FRAME_FEATURE_COUNT = ENTITY_NAMEABLE_FEATURE_COUNT + 9;
-
-	/**
-	 * The meta object id for the '{@link org.abchip.mimo.entity.FrameManager <em>Frame Manager</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.abchip.mimo.entity.FrameManager
-	 * @see org.abchip.mimo.entity.impl.EntityPackageImpl#getFrameManager()
-	 * @generated
-	 */
-	int FRAME_MANAGER = 13;
-
-	/**
-	 * The number of structural features of the '<em>Frame Manager</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FRAME_MANAGER_FEATURE_COUNT = 0;
-
-	/**
-	 * The number of structural features of the '<em>Nameable</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int NAMEABLE_FEATURE_COUNT = 0;
+	int FRAME_FEATURE_COUNT = ENTITY_NAMEABLE_FEATURE_COUNT + 10;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.entity.impl.SlotImpl <em>Slot</em>}' class.
@@ -572,7 +543,7 @@ public interface EntityPackage extends EPackage {
 	 * @see org.abchip.mimo.entity.impl.EntityPackageImpl#getSlot()
 	 * @generated
 	 */
-	int SLOT = 15;
+	int SLOT = 13;
 
 	/**
 	 * The feature id for the '<em><b>Cardinality</b></em>' containment reference.
@@ -681,7 +652,7 @@ public interface EntityPackage extends EPackage {
 	 * @see org.abchip.mimo.entity.impl.EntityPackageImpl#getTextable()
 	 * @generated
 	 */
-	int TEXTABLE = 16;
+	int TEXTABLE = 14;
 
 	/**
 	 * The number of structural features of the '<em>Textable</em>' class.
@@ -700,7 +671,7 @@ public interface EntityPackage extends EPackage {
 	 * @see org.abchip.mimo.entity.impl.EntityPackageImpl#getSerializationType()
 	 * @generated
 	 */
-	int SERIALIZATION_TYPE = 17;
+	int SERIALIZATION_TYPE = 15;
 
 
 	/**
@@ -1021,6 +992,17 @@ public interface EntityPackage extends EPackage {
 	EAttribute getFrame_AutoIncrement();
 
 	/**
+	 * Returns the meta object for the attribute '{@link org.abchip.mimo.entity.Frame#isEnum <em>Enum</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Enum</em>'.
+	 * @see org.abchip.mimo.entity.Frame#isEnum()
+	 * @see #getFrame()
+	 * @generated
+	 */
+	EAttribute getFrame_Enum();
+
+	/**
 	 * Returns the meta object for the attribute list '{@link org.abchip.mimo.entity.Frame#getKeys <em>Keys</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1096,26 +1078,6 @@ public interface EntityPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getFrame_TextFormula();
-
-	/**
-	 * Returns the meta object for class '{@link org.abchip.mimo.entity.FrameManager <em>Frame Manager</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Frame Manager</em>'.
-	 * @see org.abchip.mimo.entity.FrameManager
-	 * @generated
-	 */
-	EClass getFrameManager();
-
-	/**
-	 * Returns the meta object for class '{@link org.abchip.mimo.entity.Nameable <em>Nameable</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Nameable</em>'.
-	 * @see org.abchip.mimo.entity.Nameable
-	 * @generated
-	 */
-	EClass getNameable();
 
 	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.entity.Slot <em>Slot</em>}'.
@@ -1546,6 +1508,14 @@ public interface EntityPackage extends EPackage {
 		EAttribute FRAME__AUTO_INCREMENT = eINSTANCE.getFrame_AutoIncrement();
 
 		/**
+		 * The meta object literal for the '<em><b>Enum</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute FRAME__ENUM = eINSTANCE.getFrame_Enum();
+
+		/**
 		 * The meta object literal for the '<em><b>Keys</b></em>' attribute list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1600,26 +1570,6 @@ public interface EntityPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute FRAME__TEXT_FORMULA = eINSTANCE.getFrame_TextFormula();
-
-		/**
-		 * The meta object literal for the '{@link org.abchip.mimo.entity.FrameManager <em>Frame Manager</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see org.abchip.mimo.entity.FrameManager
-		 * @see org.abchip.mimo.entity.impl.EntityPackageImpl#getFrameManager()
-		 * @generated
-		 */
-		EClass FRAME_MANAGER = eINSTANCE.getFrameManager();
-
-		/**
-		 * The meta object literal for the '{@link org.abchip.mimo.entity.Nameable <em>Nameable</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see org.abchip.mimo.entity.Nameable
-		 * @see org.abchip.mimo.entity.impl.EntityPackageImpl#getNameable()
-		 * @generated
-		 */
-		EClass NAMEABLE = eINSTANCE.getNameable();
 
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.entity.impl.SlotImpl <em>Slot</em>}' class.

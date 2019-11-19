@@ -7,12 +7,12 @@
  */
 package org.abchip.mimo.logic.impl;
 
+import org.abchip.mimo.entity.impl.EntityNameableImpl;
 import org.abchip.mimo.logic.LogicPackage;
 import org.abchip.mimo.logic.Term;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -27,7 +27,12 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  *
  * @generated
  */
-public class TermImpl extends MinimalEObjectImpl.Container implements Term {
+public class TermImpl extends EntityNameableImpl implements Term {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
 	/**
 	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->

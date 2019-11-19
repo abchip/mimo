@@ -30,22 +30,29 @@ public class MimoResourceImpl<E extends EntityNameable> extends ResourceImpl {
 	private Resource<E> resource = null;
 	private ResourceReader<E> resourceReader = null;
 
+	@SuppressWarnings("unchecked")
 	public MimoResourceImpl(ResourceSet resourceSet, URI uri) {
 		super(uri);
 
 		this.resourceSet = resourceSet;
 
-		String frame = getURI().segment(0);
+		String frameName = getURI().segment(0);
 		String tenant = null;
 		if (getURI().hasQuery())
 			tenant = URIs.qINSTANCE.parseParameter(getURI().query()).get("tenant");
 
 		ContextProvider contextProvider = this.getContextProvider();
 		ResourceManager resourceManager = contextProvider.getContext().get(ResourceManager.class);
-		this.resource = resourceManager.getProvider(this.getContextProvider(), frame).getResource(contextProvider, frame, tenant);
 
-		if (this.resource == null)
-			"".toString();
+		if (Frame.class.getSimpleName().equals(frameName)) {
+			this.resource = EMFResourceProviderImpl.internalGetResource(contextProvider, null, tenant);
+		} else {
+			Frame<E> frame = (Frame<E>) resourceManager.getFrame(getContextProvider(), frameName);
+			if (frame.isEnum()) {
+				this.resource = EMFResourceProviderImpl.internalGetResource(contextProvider, frame, tenant);
+			} else
+				this.resource = resourceManager.getResourceProvider(this.getContextProvider(), frame).getResource(contextProvider, frame, tenant);
+		}
 	}
 
 	public Resource<E> getResource() {

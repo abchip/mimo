@@ -28,11 +28,18 @@ public class EMFResourceImpl<E extends EntityNameable> extends ResourceImpl<E> {
 	private Frame<E> frame = null;
 	private Map<String, E> entities = null;
 	
-	protected EMFResourceImpl(Frame<E> frame, Map<String, E> entities) {
+	protected EMFResourceImpl(Frame<E> frame) {
 		this.frame = frame;
-		this.entities = entities;
 	}
 
+	@SuppressWarnings("unchecked")
+	protected void setEntities(Map<String, E> entities) {
+		this.entities = entities;
+		
+		if(frame == null)
+			this.frame = (Frame<E>) this.entities.get(Frame.class.getSimpleName());
+	}
+	
 	@Override
 	public String getTenant() {
 		return null;

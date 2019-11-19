@@ -55,6 +55,62 @@ public interface ResourceManager {
 	 * @model contextProviderRequired="true" klassRequired="true"
 	 * @generated
 	 */
+	<E extends EntityNameable> Frame<E> getFrame(ContextProvider contextProvider, Class<E> klass);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model contextProviderRequired="true" klassRequired="true" tenantRequired="true"
+	 * @generated
+	 */
+	<E extends EntityNameable> Frame<E> getFrame(ContextProvider contextProvider, Class<E> klass, String tenant);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model contextProviderRequired="true" frameRequired="true"
+	 * @generated
+	 */
+	Frame<?> getFrame(ContextProvider contextProvider, String frame);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model contextProviderRequired="true" frameRequired="true" tenantRequired="true"
+	 * @generated
+	 */
+	Frame<?> getFrame(ContextProvider contextProvider, String frame, String tenant);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model contextProviderRequired="true" klassRequired="true"
+	 * @generated
+	 */
+	<E extends EntityNameable> ResourceProvider getResourceProvider(ContextProvider contextProvider, Class<E> klass);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model contextProviderRequired="true" frameRequired="true"
+	 * @generated
+	 */
+	<E extends EntityNameable> ResourceProvider getResourceProvider(ContextProvider contextProvider, Frame<E> frame);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model contextProviderRequired="true" frameRequired="true"
+	 * @generated
+	 */
+	<E extends EntityNameable> ResourceProvider getResourceProvider(ContextProvider contextProvider, String frame);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model contextProviderRequired="true" klassRequired="true"
+	 * @generated
+	 */
 	<E extends EntityNameable> ResourceReader<E> getResourceReader(ContextProvider contextProvider, Class<E> klass);
 
 	/**
@@ -144,30 +200,6 @@ public interface ResourceManager {
 	 * @generated
 	 */
 	<E extends EntityNameable> ResourceWriter<E> getResourceWriter(ContextProvider contextProvider, String frame, String tenant);
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model contextProviderRequired="true" klassRequired="true"
-	 * @generated
-	 */
-	<E extends EntityNameable> ResourceProvider getProvider(ContextProvider contextProvider, Class<E> klass);
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model contextProviderRequired="true" frameRequired="true"
-	 * @generated
-	 */
-	<E extends EntityNameable> ResourceProvider getProvider(ContextProvider contextProvider, Frame<E> frame);
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model contextProviderRequired="true" frameRequired="true"
-	 * @generated
-	 */
-	<E extends EntityNameable> ResourceProvider getProvider(ContextProvider contextProvider, String frame);
 
 	/**
 	 * <!-- begin-user-doc -->

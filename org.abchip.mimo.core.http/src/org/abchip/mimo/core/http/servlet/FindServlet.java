@@ -15,15 +15,14 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.abchip.mimo.context.ContextProvider;
-import org.abchip.mimo.data.Strings;
 import org.abchip.mimo.entity.EntityNameable;
 import org.abchip.mimo.entity.Frame;
-import org.abchip.mimo.entity.FrameManager;
 import org.abchip.mimo.entity.SerializationType;
 import org.abchip.mimo.entity.Slot;
 import org.abchip.mimo.resource.ResourceManager;
 import org.abchip.mimo.resource.ResourceReader;
 import org.abchip.mimo.resource.ResourceSerializer;
+import org.abchip.mimo.util.Strings;
 
 public class FindServlet extends BaseServlet {
 
@@ -31,8 +30,6 @@ public class FindServlet extends BaseServlet {
 
 	@Inject
 	private ResourceManager resourceManager;
-	@Inject
-	private FrameManager frameManager;
 	
 	protected void execute(ContextProvider contextProvider, HttpServletRequest request, HttpServletResponse response) throws IOException {
 		_execute(contextProvider, request, response);
@@ -54,7 +51,7 @@ public class FindServlet extends BaseServlet {
 		String[] keys = request.getParameterValues("keys");
 
 		@SuppressWarnings("unchecked")
-		Frame<E> frame = (Frame<E>) frameManager.getFrame(contextProvider, frameName);
+		Frame<E> frame = (Frame<E>) resourceManager.getFrame(contextProvider, frameName);
 		if (frame == null)
 			return;
 		

@@ -11,7 +11,6 @@ package org.abchip.mimo.language.base;
 import javax.inject.Inject;
 
 import org.abchip.mimo.context.ContextRoot;
-import org.abchip.mimo.entity.FrameManager;
 import org.abchip.mimo.language.Language;
 import org.abchip.mimo.language.LanguagePlanet;
 import org.abchip.mimo.resource.ResourceManager;
@@ -24,19 +23,17 @@ public class BaseLanguageCommandProviderImpl implements CommandProvider {
 	private ContextRoot contextRoot;
 	@Inject
 	private ResourceManager resourceManager;
-	@Inject
-	private FrameManager frameManager;
 	
 	public void _lang(CommandInterpreter interpreter) throws Exception {
 
 		for (Language language : resourceManager.getResourceReader(contextRoot, Language.class).find()) {
 			System.out.println(language);
 
-			LanguagePlanet mars = frameManager.getFrame(contextRoot, LanguagePlanet.class).createProxy("mars");
+			LanguagePlanet mars = resourceManager.getFrame(contextRoot, LanguagePlanet.class).createProxy("mars");
 			language.getPlanets().add(mars);
 			language.getPlanets().get(0);
 
-			LanguagePlanet moon = frameManager.getFrame(contextRoot, LanguagePlanet.class).createProxy("moon");
+			LanguagePlanet moon = resourceManager.getFrame(contextRoot, LanguagePlanet.class).createProxy("moon");
 			language.getPlanetsCont().add(moon);
 			language.getPlanetsCont().get(0);
 

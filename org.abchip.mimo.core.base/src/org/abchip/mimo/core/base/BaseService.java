@@ -8,25 +8,43 @@
  */
 package org.abchip.mimo.core.base;
 
+import javax.annotation.PostConstruct;
+import javax.inject.Inject;
+
 import org.abchip.mimo.MimoResourceFactoryImpl;
 import org.abchip.mimo.MimoResourceImpl;
 import org.abchip.mimo.MimoResourceSetImpl;
 import org.abchip.mimo.context.ContextDescription;
 import org.abchip.mimo.context.ContextProvider;
 import org.abchip.mimo.context.ContextRoot;
+import org.abchip.mimo.context.LockManager;
 import org.abchip.mimo.entity.EntityNameable;
-import org.abchip.mimo.entity.Frame;
-import org.abchip.mimo.resource.ResourceFactory;
-import org.abchip.mimo.resource.ResourceListener;
-import org.abchip.mimo.resource.ResourceNotifier;
-import org.abchip.mimo.resource.ResourceReader;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 
 public class BaseService {
 
+	@Inject
+	private ContextRoot contextRoot;
+	@Inject
+	private LockManager lockManager;
+
 	// root ResourceSet
 	private ResourceSet resourceSet = null;
+
+	@PostConstruct
+	protected void init() {
+		this.resourceSet = new MimoResourceSetImpl(contextRoot);
+		this.resourceSet.getResourceFactoryRegistry().getProtocolToFactoryMap().put("mimo", new MimoResourceFactoryImpl(resourceSet));
+	}
+
+	protected ContextRoot getContextRoot() {
+		return this.contextRoot;
+	}
+
+	protected LockManager getLockManager() {
+		return this.lockManager;
+	}
 
 	protected final void checkAuthorization(ContextProvider contextProvider, String tenant) {
 		ContextDescription contextDescription = contextProvider.getContextDescription();
@@ -66,34 +84,4 @@ public class BaseService {
 
 		return resourceSet;
 	}
-
-	@SuppressWarnings("unchecked")
-	protected <E extends EntityNameable> void prepareListener(ResourceReader<E> resource) {
-
-		ResourceNotifier<E> notifier = (ResourceNotifier<E>) notifiers.get(resource.getFrame().getName());
-		if (notifier == null)
-			notifier = prepareNotifier(resource.getFrame());
-
-		if (notifier != null && !notifier.getListeners().isEmpty())
-			resource.setNotifier(notifier);
-	}
-
-	protected <E extends EntityNameable> ResourceNotifier<E> prepareNotifier(Frame<E> frame) {
-
-		ResourceNotifier<E> notifier = ResourceFactory.eINSTANCE.createResourceNotifier();
-		notifiers.put(frame.getName(), notifier);
-
-		for (Frame<?> ako : frame.getSuperFrames()) {
-
-			@SuppressWarnings("unchecked")
-			ResourceNotifier<E> typedNotifier = (ResourceNotifier<E>) notifiers.get(ako.getName());
-			if (typedNotifier != null) {
-				for (ResourceListener<E> resourceListener : typedNotifier.getListeners())
-					notifier.registerListener(resourceListener);
-			}
-		}
-
-		return notifier;
-	}
-
 }

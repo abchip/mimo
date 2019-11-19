@@ -15,10 +15,10 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.abchip.mimo.context.ContextProvider;
-import org.abchip.mimo.data.Strings;
 import org.abchip.mimo.entity.EntityNameable;
 import org.abchip.mimo.resource.ResourceManager;
 import org.abchip.mimo.resource.ResourceReader;
+import org.abchip.mimo.util.Strings;
 
 public class FindNamesServlet extends BaseServlet {
 

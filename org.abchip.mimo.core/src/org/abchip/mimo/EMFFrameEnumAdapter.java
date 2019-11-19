@@ -29,6 +29,7 @@ public class EMFFrameEnumAdapter<E extends Entity> extends FrameImpl<E> {
 		super();
 
 		this.eEnum = eEnum;
+		this.enum_ = true;
 
 		eSet(EntityPackage.FRAME__NAME, this.eEnum.getName());
 	}

@@ -11,10 +11,10 @@ import javax.inject.Inject;
 
 import org.abchip.mimo.entity.EntityPackage;
 import org.abchip.mimo.entity.Frame;
-import org.abchip.mimo.entity.FrameManager;
 import org.abchip.mimo.logic.MindManager;
 import org.abchip.mimo.logic.Term;
 import org.abchip.mimo.logic.Theory;
+import org.abchip.mimo.resource.ResourceManager;
 import org.abchip.mimo.tester.Test;
 import org.abchip.mimo.tester.TestRunner;
 import org.abchip.mimo.tester.TestStarted;
@@ -23,7 +23,7 @@ import org.abchip.mimo.tester.TestStarted;
 public class TestLogic {
 
 	@Inject
-	private FrameManager frameManager;
+	private ResourceManager resourceManager;
 	@Inject
 	private MindManager mindManager;
 	@Inject
@@ -32,7 +32,7 @@ public class TestLogic {
 	@TestStarted
 	public void start() {
 
-		Frame<?> frame = frameManager.getFrame(testRunner, EntityPackage.eINSTANCE.getFrame().getName());
+		Frame<?> frame = resourceManager.getFrame(testRunner, EntityPackage.eINSTANCE.getFrame().getName());
 
 		Theory theory = mindManager.buildTheory(testRunner, frame);
 

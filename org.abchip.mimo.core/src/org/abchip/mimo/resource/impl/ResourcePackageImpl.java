@@ -665,6 +665,79 @@ public class ResourcePackageImpl extends EPackageImpl implements ResourcePackage
 		g1.getETypeArguments().add(g2);
 		initEOperation(op, g1);
 
+		op = addEOperation(resourceManagerEClass, null, "getFrame", 0, 1, IS_UNIQUE, IS_ORDERED);
+		t1 = addETypeParameter(op, "E");
+		g1 = createEGenericType(theEntityPackage.getEntityNameable());
+		t1.getEBounds().add(g1);
+		addEParameter(op, theContextPackage.getContextProvider(), "contextProvider", 1, 1, IS_UNIQUE, IS_ORDERED);
+		g1 = createEGenericType(ecorePackage.getEJavaClass());
+		g2 = createEGenericType(t1);
+		g1.getETypeArguments().add(g2);
+		addEParameter(op, g1, "klass", 1, 1, IS_UNIQUE, IS_ORDERED);
+		g1 = createEGenericType(theEntityPackage.getFrame());
+		g2 = createEGenericType(t1);
+		g1.getETypeArguments().add(g2);
+		initEOperation(op, g1);
+
+		op = addEOperation(resourceManagerEClass, null, "getFrame", 0, 1, IS_UNIQUE, IS_ORDERED);
+		t1 = addETypeParameter(op, "E");
+		g1 = createEGenericType(theEntityPackage.getEntityNameable());
+		t1.getEBounds().add(g1);
+		addEParameter(op, theContextPackage.getContextProvider(), "contextProvider", 1, 1, IS_UNIQUE, IS_ORDERED);
+		g1 = createEGenericType(ecorePackage.getEJavaClass());
+		g2 = createEGenericType(t1);
+		g1.getETypeArguments().add(g2);
+		addEParameter(op, g1, "klass", 1, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEString(), "tenant", 1, 1, IS_UNIQUE, IS_ORDERED);
+		g1 = createEGenericType(theEntityPackage.getFrame());
+		g2 = createEGenericType(t1);
+		g1.getETypeArguments().add(g2);
+		initEOperation(op, g1);
+
+		op = addEOperation(resourceManagerEClass, null, "getFrame", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, theContextPackage.getContextProvider(), "contextProvider", 1, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEString(), "frame", 1, 1, IS_UNIQUE, IS_ORDERED);
+		g1 = createEGenericType(theEntityPackage.getFrame());
+		g2 = createEGenericType();
+		g1.getETypeArguments().add(g2);
+		initEOperation(op, g1);
+
+		op = addEOperation(resourceManagerEClass, null, "getFrame", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, theContextPackage.getContextProvider(), "contextProvider", 1, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEString(), "frame", 1, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEString(), "tenant", 1, 1, IS_UNIQUE, IS_ORDERED);
+		g1 = createEGenericType(theEntityPackage.getFrame());
+		g2 = createEGenericType();
+		g1.getETypeArguments().add(g2);
+		initEOperation(op, g1);
+
+		op = addEOperation(resourceManagerEClass, this.getResourceProvider(), "getResourceProvider", 0, 1, IS_UNIQUE, IS_ORDERED);
+		t1 = addETypeParameter(op, "E");
+		g1 = createEGenericType(theEntityPackage.getEntityNameable());
+		t1.getEBounds().add(g1);
+		addEParameter(op, theContextPackage.getContextProvider(), "contextProvider", 1, 1, IS_UNIQUE, IS_ORDERED);
+		g1 = createEGenericType(ecorePackage.getEJavaClass());
+		g2 = createEGenericType(t1);
+		g1.getETypeArguments().add(g2);
+		addEParameter(op, g1, "klass", 1, 1, IS_UNIQUE, IS_ORDERED);
+
+		op = addEOperation(resourceManagerEClass, this.getResourceProvider(), "getResourceProvider", 0, 1, IS_UNIQUE, IS_ORDERED);
+		t1 = addETypeParameter(op, "E");
+		g1 = createEGenericType(theEntityPackage.getEntityNameable());
+		t1.getEBounds().add(g1);
+		addEParameter(op, theContextPackage.getContextProvider(), "contextProvider", 1, 1, IS_UNIQUE, IS_ORDERED);
+		g1 = createEGenericType(theEntityPackage.getFrame());
+		g2 = createEGenericType(t1);
+		g1.getETypeArguments().add(g2);
+		addEParameter(op, g1, "frame", 1, 1, IS_UNIQUE, IS_ORDERED);
+
+		op = addEOperation(resourceManagerEClass, this.getResourceProvider(), "getResourceProvider", 0, 1, IS_UNIQUE, IS_ORDERED);
+		t1 = addETypeParameter(op, "E");
+		g1 = createEGenericType(theEntityPackage.getEntityNameable());
+		t1.getEBounds().add(g1);
+		addEParameter(op, theContextPackage.getContextProvider(), "contextProvider", 1, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEString(), "frame", 1, 1, IS_UNIQUE, IS_ORDERED);
+
 		op = addEOperation(resourceManagerEClass, null, "getResourceReader", 0, 1, IS_UNIQUE, IS_ORDERED);
 		t1 = addETypeParameter(op, "E");
 		g1 = createEGenericType(theEntityPackage.getEntityNameable());
@@ -826,33 +899,6 @@ public class ResourcePackageImpl extends EPackageImpl implements ResourcePackage
 		g2 = createEGenericType(t1);
 		g1.getETypeArguments().add(g2);
 		initEOperation(op, g1);
-
-		op = addEOperation(resourceManagerEClass, this.getResourceProvider(), "getProvider", 0, 1, IS_UNIQUE, IS_ORDERED);
-		t1 = addETypeParameter(op, "E");
-		g1 = createEGenericType(theEntityPackage.getEntityNameable());
-		t1.getEBounds().add(g1);
-		addEParameter(op, theContextPackage.getContextProvider(), "contextProvider", 1, 1, IS_UNIQUE, IS_ORDERED);
-		g1 = createEGenericType(ecorePackage.getEJavaClass());
-		g2 = createEGenericType(t1);
-		g1.getETypeArguments().add(g2);
-		addEParameter(op, g1, "klass", 1, 1, IS_UNIQUE, IS_ORDERED);
-
-		op = addEOperation(resourceManagerEClass, this.getResourceProvider(), "getProvider", 0, 1, IS_UNIQUE, IS_ORDERED);
-		t1 = addETypeParameter(op, "E");
-		g1 = createEGenericType(theEntityPackage.getEntityNameable());
-		t1.getEBounds().add(g1);
-		addEParameter(op, theContextPackage.getContextProvider(), "contextProvider", 1, 1, IS_UNIQUE, IS_ORDERED);
-		g1 = createEGenericType(theEntityPackage.getFrame());
-		g2 = createEGenericType(t1);
-		g1.getETypeArguments().add(g2);
-		addEParameter(op, g1, "frame", 1, 1, IS_UNIQUE, IS_ORDERED);
-
-		op = addEOperation(resourceManagerEClass, this.getResourceProvider(), "getProvider", 0, 1, IS_UNIQUE, IS_ORDERED);
-		t1 = addETypeParameter(op, "E");
-		g1 = createEGenericType(theEntityPackage.getEntityNameable());
-		t1.getEBounds().add(g1);
-		addEParameter(op, theContextPackage.getContextProvider(), "contextProvider", 1, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, ecorePackage.getEString(), "frame", 1, 1, IS_UNIQUE, IS_ORDERED);
 
 		op = addEOperation(resourceManagerEClass, null, "registerListener", 0, 1, IS_UNIQUE, IS_ORDERED);
 		t1 = addETypeParameter(op, "E");

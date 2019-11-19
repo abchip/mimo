@@ -8,9 +8,9 @@
 package org.abchip.mimo.language.gf;
 
 import org.abchip.mimo.context.ContextProvider;
-import org.abchip.mimo.data.Strings;
 import org.abchip.mimo.language.LanguageExpression;
 import org.abchip.mimo.language.LanguageLinearizer;
+import org.abchip.mimo.util.Strings;
 import org.grammaticalframework.pgf.Concr;
 import org.grammaticalframework.pgf.Expr;
 

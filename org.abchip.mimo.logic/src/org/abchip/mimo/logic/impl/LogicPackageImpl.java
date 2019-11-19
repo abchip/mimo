@@ -368,7 +368,7 @@ public class LogicPackageImpl extends EPackageImpl implements LogicPackage {
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
-		termEClass.getESuperTypes().add(theEntityPackage.getNameable());
+		termEClass.getESuperTypes().add(theEntityPackage.getEntityNameable());
 		reasonerEClass.getESuperTypes().add(theJavaPackage.getJavaCloseable());
 
 		// Initialize classes and features; add operations and parameters

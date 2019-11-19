@@ -20,6 +20,7 @@ import java.util.List;
  * <ul>
  *   <li>{@link org.abchip.mimo.entity.Frame#isAbstract <em>Abstract</em>}</li>
  *   <li>{@link org.abchip.mimo.entity.Frame#isAutoIncrement <em>Auto Increment</em>}</li>
+ *   <li>{@link org.abchip.mimo.entity.Frame#isEnum <em>Enum</em>}</li>
  *   <li>{@link org.abchip.mimo.entity.Frame#getKeys <em>Keys</em>}</li>
  *   <li>{@link org.abchip.mimo.entity.Frame#getName <em>Name</em>}</li>
  *   <li>{@link org.abchip.mimo.entity.Frame#getSlots <em>Slots</em>}</li>
@@ -264,4 +265,30 @@ public interface Frame<E extends Entity> extends EntityNameable {
 	 * @generated
 	 */
 	void setAutoIncrement(boolean value);
+
+	/**
+	 * Returns the value of the '<em><b>Enum</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Enum</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Enum</em>' attribute.
+	 * @see #setEnum(boolean)
+	 * @see org.abchip.mimo.entity.EntityPackage#getFrame_Enum()
+	 * @model
+	 * @generated
+	 */
+	boolean isEnum();
+
+	/**
+	 * Sets the value of the '{@link org.abchip.mimo.entity.Frame#isEnum <em>Enum</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Enum</em>' attribute.
+	 * @see #isEnum()
+	 * @generated
+	 */
+	void setEnum(boolean value);
 } // Frame

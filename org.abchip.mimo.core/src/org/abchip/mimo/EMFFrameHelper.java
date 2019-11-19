@@ -17,7 +17,7 @@ import org.abchip.mimo.entity.Entity;
 import org.abchip.mimo.entity.EntityEnum;
 import org.abchip.mimo.entity.EntityPackage;
 import org.abchip.mimo.entity.Frame;
-import org.abchip.mimo.resource.ResourceReader;
+import org.abchip.mimo.resource.Resource;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EClassifier;
 import org.eclipse.emf.ecore.EDataType;
@@ -30,7 +30,7 @@ public class EMFFrameHelper {
 
 	private static Map<String, Frame<?>> publicFrames = null;
 
-	public static Map<String, Frame<?>> getFrames(ResourceReader<Frame<?>> frameReader) {
+	public static Map<String, Frame<?>> getFrames(Resource<Frame<?>> frameReader) {
 
 		if (publicFrames == null) {
 			synchronized (EMFFrameHelper.class) {
@@ -82,7 +82,7 @@ public class EMFFrameHelper {
 		return ePackage;
 	}
 
-	private static synchronized void loadFrames(ResourceReader<Frame<?>> frameReader) {
+	private static synchronized void loadFrames(Resource<Frame<?>> frameResource) {
 
 		Map<String, Frame<?>> tempFrames = new HashMap<String, Frame<?>>();
 		if (publicFrames == null)
@@ -103,11 +103,13 @@ public class EMFFrameHelper {
 				if (eClassifier instanceof EClass) {
 					EClass eClass = (EClass) eClassifier;
 					if (EntityPackage.eINSTANCE.getEntity().isSuperTypeOf(eClass)) {
-						tempFrames.put(eClass.getName(), new EMFFrameClassAdapter<>(frameReader, eClass));
+						if(!tempFrames.containsKey(eClass.getName()))
+							tempFrames.put(eClass.getName(), new EMFFrameClassAdapter<>(tempFrames, eClass));
 					}
 				} else if (eClassifier instanceof EEnum) {
 					EEnum eEnum = (EEnum) eClassifier;
-					tempFrames.put(eEnum.getName(), new EMFFrameEnumAdapter<>(eEnum));
+					if(!tempFrames.containsKey(eEnum.getName()))
+						tempFrames.put(eEnum.getName(), new EMFFrameEnumAdapter<>(eEnum));
 				} else if (eClassifier instanceof EDataType) {
 					// TODO
 				} else {

@@ -35,6 +35,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <ul>
  *   <li>{@link org.abchip.mimo.entity.impl.FrameImpl#isAbstract <em>Abstract</em>}</li>
  *   <li>{@link org.abchip.mimo.entity.impl.FrameImpl#isAutoIncrement <em>Auto Increment</em>}</li>
+ *   <li>{@link org.abchip.mimo.entity.impl.FrameImpl#isEnum <em>Enum</em>}</li>
  *   <li>{@link org.abchip.mimo.entity.impl.FrameImpl#getKeys <em>Keys</em>}</li>
  *   <li>{@link org.abchip.mimo.entity.impl.FrameImpl#getName <em>Name</em>}</li>
  *   <li>{@link org.abchip.mimo.entity.impl.FrameImpl#getSlots <em>Slots</em>}</li>
@@ -79,6 +80,24 @@ public abstract class FrameImpl<E extends Entity> extends EntityNameableImpl imp
 	 * @ordered
 	 */
 	protected boolean autoIncrement = AUTO_INCREMENT_EDEFAULT;
+	/**
+	 * The default value of the '{@link #isEnum() <em>Enum</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isEnum()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final boolean ENUM_EDEFAULT = false;
+	/**
+	 * The cached value of the '{@link #isEnum() <em>Enum</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isEnum()
+	 * @generated
+	 * @ordered
+	 */
+	protected boolean enum_ = ENUM_EDEFAULT;
 	/**
 	 * The cached value of the '{@link #getKeys() <em>Keys</em>}' attribute list.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -397,6 +416,8 @@ public abstract class FrameImpl<E extends Entity> extends EntityNameableImpl imp
 				return isAbstract();
 			case EntityPackage.FRAME__AUTO_INCREMENT:
 				return isAutoIncrement();
+			case EntityPackage.FRAME__ENUM:
+				return isEnum();
 			case EntityPackage.FRAME__KEYS:
 				return getKeys();
 			case EntityPackage.FRAME__NAME:
@@ -429,6 +450,9 @@ public abstract class FrameImpl<E extends Entity> extends EntityNameableImpl imp
 			case EntityPackage.FRAME__AUTO_INCREMENT:
 				setAutoIncrement((Boolean)newValue);
 				return;
+			case EntityPackage.FRAME__ENUM:
+				setEnum((Boolean)newValue);
+				return;
 			case EntityPackage.FRAME__KEYS:
 				getKeys().clear();
 				getKeys().addAll((Collection<? extends String>)newValue);
@@ -460,6 +484,9 @@ public abstract class FrameImpl<E extends Entity> extends EntityNameableImpl imp
 			case EntityPackage.FRAME__AUTO_INCREMENT:
 				setAutoIncrement(AUTO_INCREMENT_EDEFAULT);
 				return;
+			case EntityPackage.FRAME__ENUM:
+				setEnum(ENUM_EDEFAULT);
+				return;
 			case EntityPackage.FRAME__KEYS:
 				getKeys().clear();
 				return;
@@ -487,6 +514,8 @@ public abstract class FrameImpl<E extends Entity> extends EntityNameableImpl imp
 				return abstract_ != ABSTRACT_EDEFAULT;
 			case EntityPackage.FRAME__AUTO_INCREMENT:
 				return autoIncrement != AUTO_INCREMENT_EDEFAULT;
+			case EntityPackage.FRAME__ENUM:
+				return enum_ != ENUM_EDEFAULT;
 			case EntityPackage.FRAME__KEYS:
 				return keys != null && !keys.isEmpty();
 			case EntityPackage.FRAME__NAME:
@@ -518,6 +547,8 @@ public abstract class FrameImpl<E extends Entity> extends EntityNameableImpl imp
 		result.append(abstract_);
 		result.append(", autoIncrement: ");
 		result.append(autoIncrement);
+		result.append(", enum: ");
+		result.append(enum_);
 		result.append(", keys: ");
 		result.append(keys);
 		result.append(", name: ");
@@ -574,6 +605,29 @@ public abstract class FrameImpl<E extends Entity> extends EntityNameableImpl imp
 		autoIncrement = newAutoIncrement;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, EntityPackage.FRAME__AUTO_INCREMENT, oldAutoIncrement, autoIncrement));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public boolean isEnum() {
+		return enum_;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setEnum(boolean newEnum) {
+		boolean oldEnum = enum_;
+		enum_ = newEnum;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, EntityPackage.FRAME__ENUM, oldEnum, enum_));
 	}
 
 } // FrameImpl

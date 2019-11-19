@@ -30,7 +30,7 @@
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="rule" eType="#//Term" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Term" eSuperTypes="../../org.abchip.mimo.core/model/mimo.ecore#//entity/Nameable">
+  <eClassifiers xsi:type="ecore:EClass" name="Term" eSuperTypes="../../org.abchip.mimo.core/model/mimo.ecore#//entity/EntityNameable">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Theory">

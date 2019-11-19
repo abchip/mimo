@@ -961,7 +961,7 @@ public class OrderHeaderImpl extends BizEntityTypedImpl<OrderType> implements Or
 
 		OrderStatusImpl statusId = (OrderStatusImpl) eGet(OrderPackage.ORDER_HEADER__STATUS_ID, false, true);
 
-		if (statusId.getName().equals("ORDER_CREATED") || statusId.equals("ORDER_PROCESSING") || statusId.equals("ORDER_HOLD"))
+		if (statusId.getName().equals("ORDER_CREATED") || statusId.getName().equals("ORDER_PROCESSING") || statusId.getName().equals("ORDER_HOLD"))
 			return true;
 		else
 			return false;

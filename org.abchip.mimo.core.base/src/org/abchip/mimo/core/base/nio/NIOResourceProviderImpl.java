@@ -41,7 +41,7 @@ public class NIOResourceProviderImpl extends ResourceProviderImpl {
 
 		this.pathManager = new NIOPathManager(contextRoot.getContextDescription().getDataPath());
 
-		resourceManager.registerProvider(EntityNameable.class, this);
+		resourceManager.registerProvider(contextRoot, EntityNameable.class, this);
 	}
 
 	@Override
