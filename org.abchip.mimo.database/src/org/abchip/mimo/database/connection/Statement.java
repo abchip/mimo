@@ -20,7 +20,7 @@ import java.sql.SQLException;
  *
  *
  * @see org.abchip.mimo.database.connection.DatabaseConnectionPackage#getStatement()
- * @model interface="true" abstract="true" superTypes="org.abchip.mimo.util.JavaCloseable"
+ * @model interface="true" abstract="true" superTypes="org.abchip.mimo.java.JavaCloseable"
  * @generated
  */
 public interface Statement extends Closeable {

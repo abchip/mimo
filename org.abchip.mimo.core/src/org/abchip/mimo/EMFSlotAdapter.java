@@ -10,6 +10,7 @@ package org.abchip.mimo;
 
 import java.util.Date;
 
+import org.abchip.mimo.data.Strings;
 import org.abchip.mimo.entity.Domain;
 import org.abchip.mimo.entity.Entity;
 import org.abchip.mimo.entity.EntityFactory;
@@ -17,7 +18,6 @@ import org.abchip.mimo.entity.EntityPackage;
 import org.abchip.mimo.entity.Frame;
 import org.abchip.mimo.entity.Slot;
 import org.abchip.mimo.entity.impl.SlotImpl;
-import org.abchip.mimo.util.Strings;
 import org.eclipse.emf.ecore.EAnnotation;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;

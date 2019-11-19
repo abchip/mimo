@@ -51,7 +51,7 @@ public class NIOResourcempl<E extends EntityNameable> extends ResourceImpl<E> {
 		this.pathManager = pathManager;
 
 		ResourceManager resourceManager = contextProvider.getContext().get(ResourceManager.class);
-		this.resourceSerializer = resourceManager.createResourceSerializer(frame, SerializationType.XML_METADATA_INTERCHANGE);
+		this.resourceSerializer = resourceManager.createResourceSerializer(contextProvider, frame, SerializationType.XML_METADATA_INTERCHANGE);
 
 		this.tenant = tenant;
 	}

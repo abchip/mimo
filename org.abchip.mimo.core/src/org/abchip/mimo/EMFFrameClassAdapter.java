@@ -14,14 +14,14 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import org.abchip.mimo.data.Strings;
 import org.abchip.mimo.entity.Entity;
 import org.abchip.mimo.entity.EntityPackage;
 import org.abchip.mimo.entity.Frame;
-import org.abchip.mimo.entity.FrameManager;
 import org.abchip.mimo.entity.Slot;
 import org.abchip.mimo.entity.impl.FrameImpl;
+import org.abchip.mimo.resource.ResourceReader;
 import org.abchip.mimo.util.Lists;
-import org.abchip.mimo.util.Strings;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EAnnotation;
 import org.eclipse.emf.ecore.EClass;
@@ -44,12 +44,12 @@ public class EMFFrameClassAdapter<E extends Entity> extends FrameImpl<E> {
 
 	int routesNumber = 0;
 
-	private FrameManager frameManager = null;
+	private ResourceReader<Frame<?>> frameReader = null;
 
-	public EMFFrameClassAdapter(FrameManager frameManager, EClass eClass) {
+	public EMFFrameClassAdapter(ResourceReader<Frame<?>> frameReader, EClass eClass) {
 		super();
 
-		this.frameManager = frameManager;
+		this.frameReader = frameReader;
 		this.eClass = eClass;
 
 		eSet(EntityPackage.FRAME__NAME, this.eClass.getName());
@@ -124,11 +124,11 @@ public class EMFFrameClassAdapter<E extends Entity> extends FrameImpl<E> {
 			return null;
 
 		EClass eAko = classes.get(0);
-		Frame<? super E> akoFrame = (Frame<? super E>) EMFFrameHelper.getFrames(this.frameManager).get(eAko.getName());
+		Frame<? super E> akoFrame = (Frame<? super E>) EMFFrameHelper.getFrames(this.frameReader).get(eAko.getName());
 		if (akoFrame != null)
 			return akoFrame;
 		else
-			return new EMFFrameClassAdapter(frameManager, eAko);
+			return new EMFFrameClassAdapter(frameReader, eAko);
 	}
 
 	@Override
@@ -212,16 +212,9 @@ public class EMFFrameClassAdapter<E extends Entity> extends FrameImpl<E> {
 		if (eFeature instanceof EReference) {
 			EReference eReference = (EReference) eFeature;
 			EClassifier eClassifier = eReference.getEType();
-			Frame<?> frameRef = frameManager.getFrame(eClassifier.getName());
+			Frame<?> frameRef = frameReader.lookup(eClassifier.getName());
 			if (frameRef != null) {
-
-				// if(frameRef.getSuperNames().contains("EntityTyped")) {
-				// if(value.toString().equals("DemoRepStore"))
-				// frameRef = frameManager.getFrame("Person");
-				// }
-
 				Entity entity = frameRef.createProxy(value.toString());
-
 				if (entity != null)
 					eObject.eSet(eFeature, entity);
 			} else

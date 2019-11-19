@@ -26,7 +26,7 @@ public interface URIs {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @model required="true" uriDataType="org.abchip.mimo.util.JavaURI" uriRequired="true"
+	 * @model required="true" uriDataType="org.abchip.mimo.java.JavaURI" uriRequired="true"
 	 * @generated
 	 */
 	String getBaseName(URI uri);

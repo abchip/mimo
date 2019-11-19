@@ -12,8 +12,7 @@ import javax.inject.Inject;
 
 import org.abchip.mimo.entity.EntityPackage;
 import org.abchip.mimo.entity.Frame;
-import org.abchip.mimo.entity.FrameManager;
-import org.abchip.mimo.resource.ResourceReader;
+import org.abchip.mimo.resource.ResourceManager;
 import org.abchip.mimo.tester.Test;
 import org.abchip.mimo.tester.TestAsserter;
 import org.abchip.mimo.tester.TestRunner;
@@ -27,19 +26,16 @@ public class TestFrame {
 	@Inject
 	private TestRunner testRunner;
 	@Inject
-	public FrameManager frameManager;
+	public ResourceManager resourceManager;
 
 	@TestStarted
 	public void main() {
-		testAsserter.assertNotNull("FrameManager", frameManager);
-
 		testFrame();
 	}
 
 	private void testFrame() {
 
-		ResourceReader<Frame<?>> frameReader = frameManager.getFrameReader(testRunner);
-		for (Frame<?> frame : frameReader.find()) {
+		for (Frame<?> frame : resourceManager.getResourceReader(testRunner, Frame.class).find()) {
 			if (!frame.isAbstract() && frame.getSuperNames().contains(EntityPackage.eINSTANCE.getEntityNameable().getName()))
 				testAsserter.assertNotNull("Entity creation " + frame.getName(), frame.createEntity());
 		}

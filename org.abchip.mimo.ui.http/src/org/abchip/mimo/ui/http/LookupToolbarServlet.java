@@ -29,9 +29,9 @@ public class LookupToolbarServlet extends BaseServlet {
 	private static final long serialVersionUID = 1L;
 
 	@Inject
-	private FrameManager frameManager;
-	@Inject
 	private ResourceManager resourceManager;
+	@Inject
+	private FrameManager frameManager;
 
 	protected void execute(ContextProvider contextProvider, HttpServletRequest request, HttpServletResponse response) throws IOException {
 
@@ -39,7 +39,7 @@ public class LookupToolbarServlet extends BaseServlet {
 		if (frameName == null)
 			return;
 
-		Frame<?> frame = frameManager.getFrame(frameName);
+		Frame<?> frame = frameManager.getFrame(contextProvider, frameName);
 		if (frame == null)
 			return;
 
@@ -56,7 +56,7 @@ public class LookupToolbarServlet extends BaseServlet {
 				toolbar.getElements().addAll(toolbarAko.getElements());
 		}
 
-		ResourceSerializer<Toolbar> entitySerializer = resourceManager.createResourceSerializer(Toolbar.class, SerializationType.JAVA_SCRIPT_OBJECT_NOTATION);
+		ResourceSerializer<Toolbar> entitySerializer = resourceManager.createResourceSerializer(contextProvider, Toolbar.class, SerializationType.JAVA_SCRIPT_OBJECT_NOTATION);
 		if (toolbar != null)
 			entitySerializer.add(toolbar);
 		entitySerializer.save(response.getOutputStream());

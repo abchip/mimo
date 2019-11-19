@@ -30,9 +30,13 @@ import org.abchip.mimo.application.ServiceTester;
 import org.abchip.mimo.context.ContextPackage;
 
 import org.abchip.mimo.context.impl.ContextPackageImpl;
+import org.abchip.mimo.data.DataPackage;
+import org.abchip.mimo.data.impl.DataPackageImpl;
 import org.abchip.mimo.entity.EntityPackage;
 import org.abchip.mimo.entity.impl.EntityPackageImpl;
 import org.abchip.mimo.impl.MimoPackageImpl;
+import org.abchip.mimo.java.JavaPackage;
+import org.abchip.mimo.java.impl.JavaPackageImpl;
 import org.abchip.mimo.net.NetPackage;
 import org.abchip.mimo.net.impl.NetPackageImpl;
 import org.abchip.mimo.resource.ResourcePackage;
@@ -213,8 +217,12 @@ public class ApplicationPackageImpl extends EPackageImpl implements ApplicationP
 		MimoPackageImpl theMimoPackage = (MimoPackageImpl)(registeredPackage instanceof MimoPackageImpl ? registeredPackage : MimoPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(ContextPackage.eNS_URI);
 		ContextPackageImpl theContextPackage = (ContextPackageImpl)(registeredPackage instanceof ContextPackageImpl ? registeredPackage : ContextPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(DataPackage.eNS_URI);
+		DataPackageImpl theDataPackage = (DataPackageImpl)(registeredPackage instanceof DataPackageImpl ? registeredPackage : DataPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(EntityPackage.eNS_URI);
 		EntityPackageImpl theEntityPackage = (EntityPackageImpl)(registeredPackage instanceof EntityPackageImpl ? registeredPackage : EntityPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(JavaPackage.eNS_URI);
+		JavaPackageImpl theJavaPackage = (JavaPackageImpl)(registeredPackage instanceof JavaPackageImpl ? registeredPackage : JavaPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(NetPackage.eNS_URI);
 		NetPackageImpl theNetPackage = (NetPackageImpl)(registeredPackage instanceof NetPackageImpl ? registeredPackage : NetPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(ResourcePackage.eNS_URI);
@@ -226,7 +234,9 @@ public class ApplicationPackageImpl extends EPackageImpl implements ApplicationP
 		theApplicationPackage.createPackageContents();
 		theMimoPackage.createPackageContents();
 		theContextPackage.createPackageContents();
+		theDataPackage.createPackageContents();
 		theEntityPackage.createPackageContents();
+		theJavaPackage.createPackageContents();
 		theNetPackage.createPackageContents();
 		theResourcePackage.createPackageContents();
 		theUtilPackage.createPackageContents();
@@ -235,7 +245,9 @@ public class ApplicationPackageImpl extends EPackageImpl implements ApplicationP
 		theApplicationPackage.initializePackageContents();
 		theMimoPackage.initializePackageContents();
 		theContextPackage.initializePackageContents();
+		theDataPackage.initializePackageContents();
 		theEntityPackage.initializePackageContents();
+		theJavaPackage.initializePackageContents();
 		theNetPackage.initializePackageContents();
 		theResourcePackage.initializePackageContents();
 		theUtilPackage.initializePackageContents();
@@ -848,7 +860,7 @@ public class ApplicationPackageImpl extends EPackageImpl implements ApplicationP
 		// Obtain other dependent packages
 		EntityPackage theEntityPackage = (EntityPackage)EPackage.Registry.INSTANCE.getEPackage(EntityPackage.eNS_URI);
 		ContextPackage theContextPackage = (ContextPackage)EPackage.Registry.INSTANCE.getEPackage(ContextPackage.eNS_URI);
-		UtilPackage theUtilPackage = (UtilPackage)EPackage.Registry.INSTANCE.getEPackage(UtilPackage.eNS_URI);
+		JavaPackage theJavaPackage = (JavaPackage)EPackage.Registry.INSTANCE.getEPackage(JavaPackage.eNS_URI);
 
 		// Create type parameters
 
@@ -899,7 +911,7 @@ public class ApplicationPackageImpl extends EPackageImpl implements ApplicationP
 		g1.getETypeArguments().add(g2);
 		addEParameter(op, g1, "context", 1, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, this.getApplication(), "application", 1, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, theUtilPackage.getJavaOutputStream(), "output", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, theJavaPackage.getJavaOutputStream(), "output", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		op = addEOperation(applicationManagerEClass, ecorePackage.getEBoolean(), "restart", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, this.getApplication(), "application", 1, 1, IS_UNIQUE, IS_ORDERED);

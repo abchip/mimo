@@ -30,7 +30,7 @@ public interface Threads extends Singleton<Threads> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model type="org.abchip.mimo.util.JavaThread"
+	 * @model type="org.abchip.mimo.java.JavaThread"
 	 * @generated
 	 */
 	List<Thread> listThreads();
@@ -38,7 +38,7 @@ public interface Threads extends Singleton<Threads> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model type="org.abchip.mimo.util.JavaThread" threadGroupRequired="true"
+	 * @model type="org.abchip.mimo.java.JavaThread" threadGroupRequired="true"
 	 * @generated
 	 */
 	List<Thread> listThreads(String threadGroup);
@@ -46,7 +46,7 @@ public interface Threads extends Singleton<Threads> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model type="org.abchip.mimo.util.JavaThread" threadGroupType="org.abchip.mimo.util.JavaThreadGroup" threadGroupRequired="true"
+	 * @model type="org.abchip.mimo.java.JavaThread" threadGroupType="org.abchip.mimo.java.JavaThreadGroup" threadGroupRequired="true"
 	 * @generated
 	 */
 	List<Thread> listThreads(ThreadGroup threadGroup);
@@ -54,7 +54,7 @@ public interface Threads extends Singleton<Threads> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model type="org.abchip.mimo.util.JavaThreadInfo"
+	 * @model type="org.abchip.mimo.java.JavaThreadInfo"
 	 * @generated
 	 */
 	List<ThreadInfo> listThreadInfos();
@@ -62,7 +62,7 @@ public interface Threads extends Singleton<Threads> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model type="org.abchip.mimo.util.JavaThreadGroup"
+	 * @model type="org.abchip.mimo.java.JavaThreadGroup"
 	 * @generated
 	 */
 	List<ThreadGroup> listThreadGroups();
@@ -70,7 +70,7 @@ public interface Threads extends Singleton<Threads> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model type="org.abchip.mimo.util.JavaThread" threadType="org.abchip.mimo.util.JavaThread" threadRequired="true"
+	 * @model type="org.abchip.mimo.java.JavaThread" threadType="org.abchip.mimo.java.JavaThread" threadRequired="true"
 	 * @generated
 	 */
 	Thread lookupBlockingThread(Thread thread);
@@ -78,7 +78,7 @@ public interface Threads extends Singleton<Threads> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model type="org.abchip.mimo.util.JavaThread" objectRequired="true"
+	 * @model type="org.abchip.mimo.java.JavaThread" objectRequired="true"
 	 * @generated
 	 */
 	Thread lookupLockingThread(Object object);
@@ -86,7 +86,7 @@ public interface Threads extends Singleton<Threads> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model type="org.abchip.mimo.util.JavaThread" idRequired="true"
+	 * @model type="org.abchip.mimo.java.JavaThread" idRequired="true"
 	 * @generated
 	 */
 	Thread lookupThread(long id);
@@ -94,7 +94,7 @@ public interface Threads extends Singleton<Threads> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model type="org.abchip.mimo.util.JavaThread" nameRequired="true"
+	 * @model type="org.abchip.mimo.java.JavaThread" nameRequired="true"
 	 * @generated
 	 */
 	Thread lookupThread(String name);
@@ -102,7 +102,7 @@ public interface Threads extends Singleton<Threads> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model type="org.abchip.mimo.util.JavaThread" infoType="org.abchip.mimo.util.JavaThreadInfo" infoRequired="true"
+	 * @model type="org.abchip.mimo.java.JavaThread" infoType="org.abchip.mimo.java.JavaThreadInfo" infoRequired="true"
 	 * @generated
 	 */
 	Thread lookupThread(ThreadInfo info);
@@ -110,7 +110,7 @@ public interface Threads extends Singleton<Threads> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model type="org.abchip.mimo.util.JavaThreadGroup" nameRequired="true"
+	 * @model type="org.abchip.mimo.java.JavaThreadGroup" nameRequired="true"
 	 * @generated
 	 */
 	ThreadGroup lookupThreadGroup(String name);
@@ -118,7 +118,7 @@ public interface Threads extends Singleton<Threads> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model type="org.abchip.mimo.util.JavaThreadInfo" idRequired="true"
+	 * @model type="org.abchip.mimo.java.JavaThreadInfo" idRequired="true"
 	 * @generated
 	 */
 	ThreadInfo lookupThreadInfo(long id);
@@ -126,7 +126,7 @@ public interface Threads extends Singleton<Threads> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model type="org.abchip.mimo.util.JavaThreadInfo" nameRequired="true"
+	 * @model type="org.abchip.mimo.java.JavaThreadInfo" nameRequired="true"
 	 * @generated
 	 */
 	ThreadInfo lookupThreadInfo(String name);
@@ -134,7 +134,7 @@ public interface Threads extends Singleton<Threads> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model type="org.abchip.mimo.util.JavaThreadInfo" threadType="org.abchip.mimo.util.JavaThread" threadRequired="true"
+	 * @model type="org.abchip.mimo.java.JavaThreadInfo" threadType="org.abchip.mimo.java.JavaThread" threadRequired="true"
 	 * @generated
 	 */
 	ThreadInfo lookupThreadInfo(Thread thread);

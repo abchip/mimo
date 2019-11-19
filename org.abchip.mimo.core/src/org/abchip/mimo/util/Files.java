@@ -35,7 +35,7 @@ public interface Files {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model exceptions="org.abchip.mimo.util.JavaIOException" pathRequired="true"
+	 * @model exceptions="org.abchip.mimo.java.JavaIOException" pathRequired="true"
 	 * @generated
 	 */
 	void cleanDirectory(String path) throws IOException;
@@ -43,7 +43,7 @@ public interface Files {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model exceptions="org.abchip.mimo.util.JavaIOException" pathRequired="true"
+	 * @model exceptions="org.abchip.mimo.java.JavaIOException" pathRequired="true"
 	 * @generated
 	 */
 	void deleteDirectory(String path) throws IOException;
@@ -59,7 +59,7 @@ public interface Files {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model type="org.abchip.mimo.util.JavaFile" required="true" exceptions="org.abchip.mimo.util.JavaIOException" streamDataType="org.abchip.mimo.util.JavaInputStream" streamRequired="true"
+	 * @model type="org.abchip.mimo.java.JavaFile" required="true" exceptions="org.abchip.mimo.java.JavaIOException" streamDataType="org.abchip.mimo.java.JavaInputStream" streamRequired="true"
 	 * @generated
 	 */
 	File copyToFile(InputStream stream) throws IOException;

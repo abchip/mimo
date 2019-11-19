@@ -61,7 +61,7 @@ public interface Capability extends Entity {
 	 * @return the value of the '<em>Entity URI</em>' attribute.
 	 * @see #setEntityURI(URI)
 	 * @see org.abchip.mimo.context.ContextPackage#getCapability_EntityURI()
-	 * @model dataType="org.abchip.mimo.util.JavaURI" required="true"
+	 * @model dataType="org.abchip.mimo.java.JavaURI" required="true"
 	 * @generated
 	 */
 	URI getEntityURI();

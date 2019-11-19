@@ -22,10 +22,10 @@ import java.io.Serializable;
 public interface Entity extends Serializable {
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @model kind="operation" required="true"
 	 * @generated
 	 */
-	Frame<?> isa();
+	<E extends Entity> Frame<E> isa();
 } // Entity

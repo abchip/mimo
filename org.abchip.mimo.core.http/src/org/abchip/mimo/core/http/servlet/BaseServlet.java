@@ -14,7 +14,6 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.UUID;
 
-import javax.inject.Inject;
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -27,8 +26,6 @@ import org.abchip.mimo.context.ContextProvider;
 import org.abchip.mimo.core.http.ContextUtils;
 import org.abchip.mimo.core.http.HttpUtils;
 import org.abchip.mimo.core.http.MultipartSupportPart;
-import org.abchip.mimo.resource.ResourceManager;
-import org.abchip.mimo.resource.ResourceProvider;
 import org.apache.commons.fileupload.FileUploadException;
 import org.apache.commons.fileupload.disk.DiskFileItem;
 import org.apache.commons.fileupload.disk.DiskFileItemFactory;
@@ -36,24 +33,7 @@ import org.apache.commons.fileupload.servlet.ServletFileUpload;
 
 public abstract class BaseServlet extends HttpServlet {
 
-	@Inject
-	private ResourceManager resourceManager;
-
 	private static final long serialVersionUID = 1L;
-
-	private ResourceProvider resourceProvider = null;
-
-	protected ResourceProvider getDefaultProvider() {
-		if (this.resourceProvider == null) {
-			synchronized (this) {
-				if (this.resourceProvider == null) {
-					this.resourceProvider = resourceManager.getProvider("UserLogin");
-				}
-			}
-		}
-
-		return this.resourceProvider;
-	}
 
 	@Override
 	protected final void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -83,7 +63,7 @@ public abstract class BaseServlet extends HttpServlet {
 		}
 
 		execute(contextProvider, request, response);
-		
+
 		response.flushBuffer();
 	}
 

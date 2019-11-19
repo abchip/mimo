@@ -33,7 +33,7 @@ public interface QueryParser extends StatementParser {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model dataType="org.abchip.mimo.database.query.SQLQueryParseResult" exceptions="org.abchip.mimo.database.DatabaseException" streamDataType="org.abchip.mimo.util.JavaInputStream" streamRequired="true"
+	 * @model dataType="org.abchip.mimo.database.query.SQLQueryParseResult" exceptions="org.abchip.mimo.database.DatabaseException" streamDataType="org.abchip.mimo.java.JavaInputStream" streamRequired="true"
 	 * @generated
 	 */
 	SQLQueryParseResult parseQuery(InputStream stream) throws SQLException;

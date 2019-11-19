@@ -27,4 +27,52 @@ public interface AuthenticationManager {
 	 */
 	Identity<Authentication> authenticate(Authentication authentication);
 
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model authenticationRequired="true" createRequired="true"
+	 * @generated
+	 */
+	boolean checkLogin(AuthenticationUserToken authentication, boolean create);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model contextProviderRequired="true"
+	 * @generated
+	 */
+	boolean isActive(ContextProvider contextProvider);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model contextIdRequired="true" authenticationRequired="true"
+	 * @generated
+	 */
+	ContextProvider login(String contextId, AuthenticationAnonymous authentication);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model contextIdRequired="true" authenticationRequired="true"
+	 * @generated
+	 */
+	ContextProvider login(String contextId, AuthenticationUserPassword authentication);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model contextIdRequired="true" authenticationRequired="true"
+	 * @generated
+	 */
+	ContextProvider login(String contextId, AuthenticationUserToken authentication);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model contextProviderRequired="true"
+	 * @generated
+	 */
+	void logout(ContextProvider contextProvider);
+
 } // AuthenticationManager

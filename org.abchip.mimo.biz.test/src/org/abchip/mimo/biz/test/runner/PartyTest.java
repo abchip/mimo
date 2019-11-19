@@ -17,13 +17,11 @@ import org.abchip.mimo.biz.party.party.PartyFactory;
 import org.abchip.mimo.biz.party.party.PartyGroup;
 import org.abchip.mimo.biz.party.party.PartyType;
 import org.abchip.mimo.biz.party.party.Person;
-import org.abchip.mimo.biz.security.login.UserLogin;
+import org.abchip.mimo.context.AuthenticationManager;
 import org.abchip.mimo.context.AuthenticationUserPassword;
 import org.abchip.mimo.context.ContextFactory;
 import org.abchip.mimo.context.ContextProvider;
-import org.abchip.mimo.entity.FrameManager;
 import org.abchip.mimo.resource.ResourceManager;
-import org.abchip.mimo.resource.ResourceProvider;
 import org.abchip.mimo.resource.ResourceReader;
 import org.abchip.mimo.resource.ResourceWriter;
 import org.abchip.mimo.tester.Test;
@@ -35,24 +33,19 @@ public class PartyTest {
 
 	@Inject
 	public transient TestAsserter testAsserter;
-
-	@Inject
-	private FrameManager frameManager;
-
 	@Inject
 	private ResourceManager resourceManager;
+	@Inject
+	private AuthenticationManager authenticationManager;
 
 	@TestStarted
 	public void doTest() {
-
-		// login
-		ResourceProvider resourceProvider = resourceManager.getProvider(UserLogin.class);
 
 		AuthenticationUserPassword authentication = ContextFactory.eINSTANCE.createAuthenticationUserPassword();
 		authentication.setUser("user-test");
 		authentication.setPassword("ofbiz");
 
-		ContextProvider contextProvider = resourceProvider.login(null, authentication);
+		ContextProvider contextProvider = authenticationManager.login(null, authentication);
 		testAsserter.assertNotNull("Connection to Ofbiz", contextProvider);
 
 		if (contextProvider == null)
@@ -88,9 +81,9 @@ public class PartyTest {
 		testAsserter.assertNotNull("Person Writer", personWriter);
 		if (personWriter != null) {
 			Person person = PartyFactory.eINSTANCE.createPerson();
-			person.setPreferredCurrencyUomId(frameManager.getFrame(Uom.class).createProxy("EUR"));
-			person.setStatusId(frameManager.getFrame(StatusItem.class).createProxy("PARTY_ENABLED"));
-			person.setPartyTypeId(frameManager.getFrame(PartyType.class).createProxy("PERSON"));
+			person.setPreferredCurrencyUomId(resourceManager.getFrame(contextProvider, Uom.class).createProxy("EUR"));
+			person.setStatusId(resourceManager.getFrame(contextProvider, StatusItem.class).createProxy("PARTY_ENABLED"));
+			person.setPartyTypeId(resourceManager.getFrame(contextProvider, PartyType.class).createProxy("PERSON"));
 			person.setPartyId(partyId);
 			person.setFirstName("Test hacker party person");
 			personWriter.create(person);
@@ -110,9 +103,9 @@ public class PartyTest {
 
 		if (groupWriter != null) {
 			PartyGroup partyGroup = PartyFactory.eINSTANCE.createPartyGroup();
-			partyGroup.setPreferredCurrencyUomId(frameManager.getFrame(Uom.class).createProxy("EUR"));
-			partyGroup.setStatusId(frameManager.getFrame(StatusItem.class).createProxy("PARTY_ENABLED"));
-			partyGroup.setPartyTypeId(frameManager.getFrame(PartyType.class).createProxy("PARTY_GROUP"));
+			partyGroup.setPreferredCurrencyUomId(resourceManager.getFrame(contextProvider, Uom.class).createProxy("EUR"));
+			partyGroup.setStatusId(resourceManager.getFrame(contextProvider, StatusItem.class).createProxy("PARTY_ENABLED"));
+			partyGroup.setPartyTypeId(resourceManager.getFrame(contextProvider, PartyType.class).createProxy("PARTY_GROUP"));
 			partyGroup.setPartyId(partyId);
 			partyGroup.setGroupName("Test hacker party group");
 			groupWriter.create(partyGroup);

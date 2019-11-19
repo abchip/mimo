@@ -19,7 +19,7 @@ import org.abchip.mimo.resource.ResourceWriter;
 
 public class BaseResourceWriterImpl<E extends EntityNameable> extends BaseResourceReaderImpl<E> implements ResourceWriter<E> {
 
-	private LockManager lockManager;
+	private LockManager lockManager = null;
 
 	public BaseResourceWriterImpl(MimoResourceImpl<E> internal, LockManager lockManager) {
 		super(internal);

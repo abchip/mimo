@@ -9,8 +9,7 @@ package org.abchip.mimo.logic;
 
 import org.abchip.mimo.entity.EntityPackage;
 
-import org.abchip.mimo.util.UtilPackage;
-
+import org.abchip.mimo.java.JavaPackage;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
@@ -248,7 +247,7 @@ public interface LogicPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REASONER_FEATURE_COUNT = UtilPackage.JAVA_CLOSEABLE_FEATURE_COUNT + 0;
+	int REASONER_FEATURE_COUNT = JavaPackage.JAVA_CLOSEABLE_FEATURE_COUNT + 0;
 
 
 	/**

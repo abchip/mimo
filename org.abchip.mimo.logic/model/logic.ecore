@@ -39,12 +39,12 @@
         eType="#//Term" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Reasoner" abstract="true" interface="true"
-      eSuperTypes="../../org.abchip.mimo.core/model/mimo.ecore#//util/JavaCloseable">
+      eSuperTypes="../../org.abchip.mimo.core/model/mimo.ecore#//java/JavaCloseable">
     <eOperations name="buildQuestion" lowerBound="1" eType="#//Question">
       <eParameters name="question" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     </eOperations>
     <eOperations name="close"/>
-    <eOperations name="loadTheory" eExceptions="ecore:EDataType ../../org.abchip.mimo.core/model/mimo.ecore#//util/JavaIOException">
+    <eOperations name="loadTheory" eExceptions="ecore:EDataType ../../org.abchip.mimo.core/model/mimo.ecore#//java/JavaIOException">
       <eParameters name="theory" lowerBound="1" eType="#//Theory"/>
     </eOperations>
     <eOperations name="query" lowerBound="1" upperBound="-1" eType="#//Goal">
@@ -53,6 +53,6 @@
     <eOperations name="query" lowerBound="1" upperBound="-1" eType="#//Goal">
       <eParameters name="question" lowerBound="1" eType="#//Question"/>
     </eOperations>
-    <eOperations name="reload" eExceptions="ecore:EDataType ../../org.abchip.mimo.core/model/mimo.ecore#//util/JavaIOException"/>
+    <eOperations name="reload" eExceptions="ecore:EDataType ../../org.abchip.mimo.core/model/mimo.ecore#//java/JavaIOException"/>
   </eClassifiers>
 </ecore:EPackage>

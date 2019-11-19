@@ -22,7 +22,7 @@ public interface ExceptionManager {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model dataType="org.abchip.mimo.context.MessageException" contextProviderRequired="true" messageType="org.abchip.mimo.util.JavaEnum" messageRequired="true" EBounds="org.abchip.mimo.util.JavaEnum"
+	 * @model dataType="org.abchip.mimo.context.MessageException" contextProviderRequired="true" messageType="org.abchip.mimo.java.JavaEnum" messageRequired="true" EBounds="org.abchip.mimo.java.JavaEnum"
 	 * @generated
 	 */
 	<E extends Enum<E>> MessageException prepareException(ContextProvider contextProvider, Enum<E> message);
@@ -30,7 +30,7 @@ public interface ExceptionManager {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model dataType="org.abchip.mimo.context.MessageException" contextProviderRequired="true" messageType="org.abchip.mimo.util.JavaEnum" messageRequired="true" variableRequired="true" EBounds="org.abchip.mimo.util.JavaEnum"
+	 * @model dataType="org.abchip.mimo.context.MessageException" contextProviderRequired="true" messageType="org.abchip.mimo.java.JavaEnum" messageRequired="true" variableRequired="true" EBounds="org.abchip.mimo.java.JavaEnum"
 	 * @generated
 	 */
 	<E extends Enum<E>> MessageException prepareException(ContextProvider contextProvider, Enum<E> message, Object variable);
@@ -38,7 +38,7 @@ public interface ExceptionManager {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model dataType="org.abchip.mimo.context.MessageException" contextProviderRequired="true" messageType="org.abchip.mimo.util.JavaEnum" messageRequired="true" variablesDataType="org.abchip.mimo.context.MessageVariableList" variablesRequired="true" EBounds="org.abchip.mimo.util.JavaEnum"
+	 * @model dataType="org.abchip.mimo.context.MessageException" contextProviderRequired="true" messageType="org.abchip.mimo.java.JavaEnum" messageRequired="true" variablesDataType="org.abchip.mimo.context.MessageVariableList" variablesRequired="true" EBounds="org.abchip.mimo.java.JavaEnum"
 	 * @generated
 	 */
 	<E extends Enum<E>> MessageException prepareException(ContextProvider contextProvider, Enum<E> message, Object[] variables);

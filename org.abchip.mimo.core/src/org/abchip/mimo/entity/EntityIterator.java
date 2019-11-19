@@ -17,7 +17,7 @@ import java.util.Iterator;
  *
  *
  * @see org.abchip.mimo.entity.EntityPackage#getEntityIterator()
- * @model interface="true" abstract="true" superTypes="org.abchip.mimo.util.JavaIterator&lt;E&gt; org.abchip.mimo.util.JavaIterable&lt;E&gt;"
+ * @model interface="true" abstract="true" superTypes="org.abchip.mimo.java.JavaIterator&lt;E&gt; org.abchip.mimo.java.JavaIterable&lt;E&gt;"
  * @generated
  */
 public interface EntityIterator<E extends Entity> extends Iterator<E>, Iterable<E> {

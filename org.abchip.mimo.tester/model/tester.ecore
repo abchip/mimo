@@ -163,15 +163,15 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="TestSuiteRunner" abstract="true" interface="true">
     <eGenericSuperTypes eClassifier="#//TestRunner"/>
-    <eGenericSuperTypes eClassifier="ecore:EClass ../../org.abchip.mimo.core/model/mimo.ecore#//util/JavaCallable">
-      <eTypeArguments eClassifier="ecore:EClass ../../org.abchip.mimo.core/model/mimo.ecore#//util/JavaList">
+    <eGenericSuperTypes eClassifier="ecore:EClass ../../org.abchip.mimo.core/model/mimo.ecore#//java/JavaCallable">
+      <eTypeArguments eClassifier="ecore:EClass ../../org.abchip.mimo.core/model/mimo.ecore#//java/JavaList">
         <eTypeArguments eClassifier="#//TestResult"/>
       </eTypeArguments>
     </eGenericSuperTypes>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="TestUnitRunner" abstract="true" interface="true">
     <eGenericSuperTypes eClassifier="#//TestRunner"/>
-    <eGenericSuperTypes eClassifier="ecore:EClass ../../org.abchip.mimo.core/model/mimo.ecore#//util/JavaCallable">
+    <eGenericSuperTypes eClassifier="ecore:EClass ../../org.abchip.mimo.core/model/mimo.ecore#//java/JavaCallable">
       <eTypeArguments eClassifier="#//TestResult"/>
     </eGenericSuperTypes>
   </eClassifiers>

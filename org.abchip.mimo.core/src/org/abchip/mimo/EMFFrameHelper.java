@@ -17,7 +17,7 @@ import org.abchip.mimo.entity.Entity;
 import org.abchip.mimo.entity.EntityEnum;
 import org.abchip.mimo.entity.EntityPackage;
 import org.abchip.mimo.entity.Frame;
-import org.abchip.mimo.entity.FrameManager;
+import org.abchip.mimo.resource.ResourceReader;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EClassifier;
 import org.eclipse.emf.ecore.EDataType;
@@ -30,12 +30,12 @@ public class EMFFrameHelper {
 
 	private static Map<String, Frame<?>> publicFrames = null;
 
-	public static Map<String, Frame<?>> getFrames(FrameManager frameManager) {
+	public static Map<String, Frame<?>> getFrames(ResourceReader<Frame<?>> frameReader) {
 
 		if (publicFrames == null) {
 			synchronized (EMFFrameHelper.class) {
 				if (publicFrames == null) {
-					loadFrames(frameManager);
+					loadFrames(frameReader);
 				}
 			}
 		}
@@ -45,17 +45,17 @@ public class EMFFrameHelper {
 
 	public static Map<String, EntityEnum> getEnumerators(Frame<EntityEnum> frame) {
 		Map<String, EntityEnum> enums = new HashMap<String, EntityEnum>();
-		
-		EMFFrameEnumAdapter<EntityEnum>  frameEnum = (EMFFrameEnumAdapter<EntityEnum>) frame;
+
+		EMFFrameEnumAdapter<EntityEnum> frameEnum = (EMFFrameEnumAdapter<EntityEnum>) frame;
 		EEnum eEnum = frameEnum.getEEnum();
-		
-		for(EEnumLiteral eEnumLiteral : eEnum.getELiterals()) {
+
+		for (EEnumLiteral eEnumLiteral : eEnum.getELiterals()) {
 			EntityEnum entity = new EMFEntityEnumAdapter(eEnumLiteral);
 			enums.put(eEnumLiteral.getName(), entity);
 		}
 		return enums;
 	}
-	
+
 	public static String getPackageURI(Class<? extends Entity> klass) {
 
 		Package _package = null;
@@ -82,14 +82,14 @@ public class EMFFrameHelper {
 		return ePackage;
 	}
 
-	private static synchronized void loadFrames(FrameManager frameManager) {
+	private static synchronized void loadFrames(ResourceReader<Frame<?>> frameReader) {
 
 		Map<String, Frame<?>> tempFrames = new HashMap<String, Frame<?>>();
-		if(publicFrames == null)
+		if (publicFrames == null)
 			publicFrames = tempFrames;
-		
+
 		EntityPackage.eINSTANCE.getEntity();
-		
+
 		for (Entry<?, ?> entry : EPackage.Registry.INSTANCE.entrySet()) {
 
 			EPackage ePackage = null;
@@ -103,24 +103,21 @@ public class EMFFrameHelper {
 				if (eClassifier instanceof EClass) {
 					EClass eClass = (EClass) eClassifier;
 					if (EntityPackage.eINSTANCE.getEntity().isSuperTypeOf(eClass)) {
-						tempFrames.put(eClass.getName(), new EMFFrameClassAdapter<>(frameManager, eClass));
+						tempFrames.put(eClass.getName(), new EMFFrameClassAdapter<>(frameReader, eClass));
 					}
-				}
-				else if (eClassifier instanceof EEnum) {
+				} else if (eClassifier instanceof EEnum) {
 					EEnum eEnum = (EEnum) eClassifier;
 					tempFrames.put(eEnum.getName(), new EMFFrameEnumAdapter<>(eEnum));
-				}
-				else if (eClassifier instanceof EDataType) {
+				} else if (eClassifier instanceof EDataType) {
 					// TODO
-				}
-				else {
+				} else {
 					System.out.println(eClassifier.getName());
 				}
 			}
 		}
 
 		Collections.unmodifiableMap(tempFrames);
-		
+
 		publicFrames = tempFrames;
 	}
 }

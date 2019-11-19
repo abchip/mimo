@@ -12,7 +12,7 @@ import java.text.CharacterIterator;
 import java.text.StringCharacterIterator;
 import java.util.List;
 
-import org.abchip.mimo.util.Strings;
+import org.abchip.mimo.data.Strings;
 import org.apache.commons.lang.StringEscapeUtils;
 
 public class BaseStringsImpl implements Strings {

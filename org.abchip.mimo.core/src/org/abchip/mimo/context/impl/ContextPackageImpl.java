@@ -39,10 +39,14 @@ import org.abchip.mimo.context.ContextPackage;
 import org.abchip.mimo.context.UserClass;
 import org.abchip.mimo.context.UserProfile;
 
+import org.abchip.mimo.data.DataPackage;
+import org.abchip.mimo.data.impl.DataPackageImpl;
 import org.abchip.mimo.entity.EntityPackage;
 
 import org.abchip.mimo.entity.impl.EntityPackageImpl;
 import org.abchip.mimo.impl.MimoPackageImpl;
+import org.abchip.mimo.java.JavaPackage;
+import org.abchip.mimo.java.impl.JavaPackageImpl;
 import org.abchip.mimo.net.NetPackage;
 import org.abchip.mimo.net.impl.NetPackageImpl;
 import org.abchip.mimo.resource.ResourcePackage;
@@ -309,8 +313,12 @@ public class ContextPackageImpl extends EPackageImpl implements ContextPackage {
 		MimoPackageImpl theMimoPackage = (MimoPackageImpl)(registeredPackage instanceof MimoPackageImpl ? registeredPackage : MimoPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(ApplicationPackage.eNS_URI);
 		ApplicationPackageImpl theApplicationPackage = (ApplicationPackageImpl)(registeredPackage instanceof ApplicationPackageImpl ? registeredPackage : ApplicationPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(DataPackage.eNS_URI);
+		DataPackageImpl theDataPackage = (DataPackageImpl)(registeredPackage instanceof DataPackageImpl ? registeredPackage : DataPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(EntityPackage.eNS_URI);
 		EntityPackageImpl theEntityPackage = (EntityPackageImpl)(registeredPackage instanceof EntityPackageImpl ? registeredPackage : EntityPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(JavaPackage.eNS_URI);
+		JavaPackageImpl theJavaPackage = (JavaPackageImpl)(registeredPackage instanceof JavaPackageImpl ? registeredPackage : JavaPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(NetPackage.eNS_URI);
 		NetPackageImpl theNetPackage = (NetPackageImpl)(registeredPackage instanceof NetPackageImpl ? registeredPackage : NetPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(ResourcePackage.eNS_URI);
@@ -322,7 +330,9 @@ public class ContextPackageImpl extends EPackageImpl implements ContextPackage {
 		theContextPackage.createPackageContents();
 		theMimoPackage.createPackageContents();
 		theApplicationPackage.createPackageContents();
+		theDataPackage.createPackageContents();
 		theEntityPackage.createPackageContents();
+		theJavaPackage.createPackageContents();
 		theNetPackage.createPackageContents();
 		theResourcePackage.createPackageContents();
 		theUtilPackage.createPackageContents();
@@ -331,7 +341,9 @@ public class ContextPackageImpl extends EPackageImpl implements ContextPackage {
 		theContextPackage.initializePackageContents();
 		theMimoPackage.initializePackageContents();
 		theApplicationPackage.initializePackageContents();
+		theDataPackage.initializePackageContents();
 		theEntityPackage.initializePackageContents();
+		theJavaPackage.initializePackageContents();
 		theNetPackage.initializePackageContents();
 		theResourcePackage.initializePackageContents();
 		theUtilPackage.initializePackageContents();
@@ -1052,7 +1064,8 @@ public class ContextPackageImpl extends EPackageImpl implements ContextPackage {
 
 		// Obtain other dependent packages
 		EntityPackage theEntityPackage = (EntityPackage)EPackage.Registry.INSTANCE.getEPackage(EntityPackage.eNS_URI);
-		UtilPackage theUtilPackage = (UtilPackage)EPackage.Registry.INSTANCE.getEPackage(UtilPackage.eNS_URI);
+		JavaPackage theJavaPackage = (JavaPackage)EPackage.Registry.INSTANCE.getEPackage(JavaPackage.eNS_URI);
+		DataPackage theDataPackage = (DataPackage)EPackage.Registry.INSTANCE.getEPackage(DataPackage.eNS_URI);
 
 		// Create type parameters
 		ETypeParameter entityLockerEClass_N = addETypeParameter(entityLockerEClass, "N");
@@ -1065,7 +1078,7 @@ public class ContextPackageImpl extends EPackageImpl implements ContextPackage {
 		entityLockerEClass_N.getEBounds().add(g1);
 		g1 = createEGenericType(theEntityPackage.getEntity());
 		identityEClass_T.getEBounds().add(g1);
-		g1 = createEGenericType(theUtilPackage.getDataDef());
+		g1 = createEGenericType(theDataPackage.getDataDef());
 		EGenericType g2 = createEGenericType();
 		g1.getETypeArguments().add(g2);
 		messageDataFieldEClass_DD.getEBounds().add(g1);
@@ -1115,6 +1128,28 @@ public class ContextPackageImpl extends EPackageImpl implements ContextPackage {
 		g1.getETypeArguments().add(g2);
 		initEOperation(op, g1);
 
+		op = addEOperation(authenticationManagerEClass, ecorePackage.getEBoolean(), "checkLogin", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, this.getAuthenticationUserToken(), "authentication", 1, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEBoolean(), "create", 1, 1, IS_UNIQUE, IS_ORDERED);
+
+		op = addEOperation(authenticationManagerEClass, ecorePackage.getEBoolean(), "isActive", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, this.getContextProvider(), "contextProvider", 1, 1, IS_UNIQUE, IS_ORDERED);
+
+		op = addEOperation(authenticationManagerEClass, this.getContextProvider(), "login", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEString(), "contextId", 1, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, this.getAuthenticationAnonymous(), "authentication", 1, 1, IS_UNIQUE, IS_ORDERED);
+
+		op = addEOperation(authenticationManagerEClass, this.getContextProvider(), "login", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEString(), "contextId", 1, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, this.getAuthenticationUserPassword(), "authentication", 1, 1, IS_UNIQUE, IS_ORDERED);
+
+		op = addEOperation(authenticationManagerEClass, this.getContextProvider(), "login", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEString(), "contextId", 1, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, this.getAuthenticationUserToken(), "authentication", 1, 1, IS_UNIQUE, IS_ORDERED);
+
+		op = addEOperation(authenticationManagerEClass, null, "logout", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, this.getContextProvider(), "contextProvider", 1, 1, IS_UNIQUE, IS_ORDERED);
+
 		initEClass(authenticationUserPasswordEClass, AuthenticationUserPassword.class, "AuthenticationUserPassword", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getAuthenticationUserPassword_User(), ecorePackage.getEString(), "user", null, 1, 1, AuthenticationUserPassword.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getAuthenticationUserPassword_Password(), ecorePackage.getEString(), "password", null, 1, 1, AuthenticationUserPassword.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1131,7 +1166,7 @@ public class ContextPackageImpl extends EPackageImpl implements ContextPackage {
 
 		initEClass(capabilityEClass, Capability.class, "Capability", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getCapability_Rights(), this.getCapabilityRight(), "rights", null, 0, -1, Capability.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getCapability_EntityURI(), theUtilPackage.getJavaURI(), "entityURI", null, 1, 1, Capability.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getCapability_EntityURI(), theJavaPackage.getJavaURI(), "entityURI", null, 1, 1, Capability.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		addEOperation(capabilityEClass, ecorePackage.getEString(), "getEntityName", 1, 1, IS_UNIQUE, IS_ORDERED);
 
@@ -1167,7 +1202,7 @@ public class ContextPackageImpl extends EPackageImpl implements ContextPackage {
 
 		op = addEOperation(contextEClass, null, "invoke", 0, 1, IS_UNIQUE, IS_ORDERED);
 		t1 = addETypeParameter(op, "A");
-		g1 = createEGenericType(theUtilPackage.getJavaAnnotation());
+		g1 = createEGenericType(theJavaPackage.getJavaAnnotation());
 		t1.getEBounds().add(g1);
 		addEParameter(op, ecorePackage.getEJavaObject(), "object", 1, 1, IS_UNIQUE, IS_ORDERED);
 		g1 = createEGenericType(ecorePackage.getEJavaClass());
@@ -1207,21 +1242,21 @@ public class ContextPackageImpl extends EPackageImpl implements ContextPackage {
 		addEParameter(op, ecorePackage.getEString(), "name", 1, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEJavaObject(), "object", 1, 1, IS_UNIQUE, IS_ORDERED);
 
-		op = addEOperation(contextEClass, theUtilPackage.getJavaURL(), "getResource", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = addEOperation(contextEClass, theJavaPackage.getJavaURL(), "getResource", 0, 1, IS_UNIQUE, IS_ORDERED);
 		g1 = createEGenericType(ecorePackage.getEJavaClass());
 		g2 = createEGenericType();
 		g1.getETypeArguments().add(g2);
 		addEParameter(op, g1, "context", 1, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEString(), "path", 1, 1, IS_UNIQUE, IS_ORDERED);
-		addEException(op, theUtilPackage.getJavaIOException());
+		addEException(op, theJavaPackage.getJavaIOException());
 
-		op = addEOperation(contextEClass, theUtilPackage.getJavaURL(), "getResources", 0, -1, IS_UNIQUE, IS_ORDERED);
+		op = addEOperation(contextEClass, theJavaPackage.getJavaURL(), "getResources", 0, -1, IS_UNIQUE, IS_ORDERED);
 		g1 = createEGenericType(ecorePackage.getEJavaClass());
 		g2 = createEGenericType();
 		g1.getETypeArguments().add(g2);
 		addEParameter(op, g1, "context", 1, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEString(), "path", 1, 1, IS_UNIQUE, IS_ORDERED);
-		addEException(op, theUtilPackage.getJavaIOException());
+		addEException(op, theJavaPackage.getJavaIOException());
 
 		initEClass(contextDescriptionEClass, ContextDescription.class, "ContextDescription", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getContextDescription_Anonymous(), ecorePackage.getEBoolean(), "anonymous", null, 0, 1, ContextDescription.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1287,7 +1322,7 @@ public class ContextPackageImpl extends EPackageImpl implements ContextPackage {
 		addEParameter(op, ecorePackage.getEString(), "name", 1, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEJavaObject(), "object", 1, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEBoolean(), "remoteExport", 0, 1, IS_UNIQUE, IS_ORDERED);
-		g1 = createEGenericType(theUtilPackage.getJavaDictionary());
+		g1 = createEGenericType(theJavaPackage.getJavaDictionary());
 		g2 = createEGenericType(ecorePackage.getEString());
 		g1.getETypeArguments().add(g2);
 		g2 = createEGenericType(ecorePackage.getEString());
@@ -1296,7 +1331,7 @@ public class ContextPackageImpl extends EPackageImpl implements ContextPackage {
 
 		initEClass(entityLockerEClass, EntityLocker.class, "EntityLocker", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-		addEOperation(entityLockerEClass, theUtilPackage.getJavaURI(), "getAddress", 1, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(entityLockerEClass, theJavaPackage.getJavaURI(), "getAddress", 1, 1, IS_UNIQUE, IS_ORDERED);
 
 		op = addEOperation(entityLockerEClass, ecorePackage.getEBoolean(), "isLocked", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, this.getLockType(), "lockType", 1, 1, IS_UNIQUE, IS_ORDERED);
@@ -1315,25 +1350,25 @@ public class ContextPackageImpl extends EPackageImpl implements ContextPackage {
 
 		op = addEOperation(exceptionManagerEClass, this.getMessageException(), "prepareException", 0, 1, IS_UNIQUE, IS_ORDERED);
 		t1 = addETypeParameter(op, "E");
-		g1 = createEGenericType(theUtilPackage.getJavaEnum());
+		g1 = createEGenericType(theJavaPackage.getJavaEnum());
 		t1.getEBounds().add(g1);
 		addEParameter(op, this.getContextProvider(), "contextProvider", 1, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, theUtilPackage.getJavaEnum(), "message", 1, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, theJavaPackage.getJavaEnum(), "message", 1, 1, IS_UNIQUE, IS_ORDERED);
 
 		op = addEOperation(exceptionManagerEClass, this.getMessageException(), "prepareException", 0, 1, IS_UNIQUE, IS_ORDERED);
 		t1 = addETypeParameter(op, "E");
-		g1 = createEGenericType(theUtilPackage.getJavaEnum());
+		g1 = createEGenericType(theJavaPackage.getJavaEnum());
 		t1.getEBounds().add(g1);
 		addEParameter(op, this.getContextProvider(), "contextProvider", 1, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, theUtilPackage.getJavaEnum(), "message", 1, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, theJavaPackage.getJavaEnum(), "message", 1, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEJavaObject(), "variable", 1, 1, IS_UNIQUE, IS_ORDERED);
 
 		op = addEOperation(exceptionManagerEClass, this.getMessageException(), "prepareException", 0, 1, IS_UNIQUE, IS_ORDERED);
 		t1 = addETypeParameter(op, "E");
-		g1 = createEGenericType(theUtilPackage.getJavaEnum());
+		g1 = createEGenericType(theJavaPackage.getJavaEnum());
 		t1.getEBounds().add(g1);
 		addEParameter(op, this.getContextProvider(), "contextProvider", 1, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, theUtilPackage.getJavaEnum(), "message", 1, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, theJavaPackage.getJavaEnum(), "message", 1, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, this.getMessageVariableList(), "variables", 1, 1, IS_UNIQUE, IS_ORDERED);
 
 		op = addEOperation(exceptionManagerEClass, this.getMessageException(), "prepareException", 0, 1, IS_UNIQUE, IS_ORDERED);
@@ -1345,7 +1380,7 @@ public class ContextPackageImpl extends EPackageImpl implements ContextPackage {
 
 		initEClass(identityEClass, Identity.class, "Identity", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-		addEOperation(identityEClass, theUtilPackage.getJavaPrincipal(), "getJavaPrincipal", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(identityEClass, theJavaPackage.getJavaPrincipal(), "getJavaPrincipal", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(lockManagerEClass, LockManager.class, "LockManager", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -1354,7 +1389,7 @@ public class ContextPackageImpl extends EPackageImpl implements ContextPackage {
 		g1 = createEGenericType(theEntityPackage.getEntityNameable());
 		t1.getEBounds().add(g1);
 		addEParameter(op, this.getContextProvider(), "contextProvider", 1, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, theUtilPackage.getJavaURI(), "address", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, theJavaPackage.getJavaURI(), "address", 0, 1, IS_UNIQUE, IS_ORDERED);
 		g1 = createEGenericType(this.getEntityLocker());
 		g2 = createEGenericType(t1);
 		g1.getETypeArguments().add(g2);
@@ -1372,13 +1407,13 @@ public class ContextPackageImpl extends EPackageImpl implements ContextPackage {
 		g1.getETypeArguments().add(g2);
 		initEOperation(op, g1);
 
-		op = addEOperation(lockManagerEClass, theUtilPackage.getJavaConcurrentMap(), "getConcurrentMap", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = addEOperation(lockManagerEClass, theJavaPackage.getJavaConcurrentMap(), "getConcurrentMap", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addETypeParameter(op, "K");
 		addETypeParameter(op, "V");
 		addEParameter(op, this.getContextProvider(), "contextProvider", 1, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEString(), "name", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		op = addEOperation(lockManagerEClass, theUtilPackage.getJavaBlockingQueue(), "getQueue", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = addEOperation(lockManagerEClass, theJavaPackage.getJavaBlockingQueue(), "getQueue", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addETypeParameter(op, "E");
 		addEParameter(op, this.getContextProvider(), "contextProvider", 1, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEString(), "name", 0, 1, IS_UNIQUE, IS_ORDERED);
@@ -1389,41 +1424,41 @@ public class ContextPackageImpl extends EPackageImpl implements ContextPackage {
 		addEParameter(op, ecorePackage.getEString(), "message", 1, 1, IS_UNIQUE, IS_ORDERED);
 
 		op = addEOperation(loggerEClass, null, "debug", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, theUtilPackage.getJavaThrowable(), "throwable", 1, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, theJavaPackage.getJavaThrowable(), "throwable", 1, 1, IS_UNIQUE, IS_ORDERED);
 
 		op = addEOperation(loggerEClass, null, "debug", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEString(), "message", 1, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, theUtilPackage.getJavaThrowable(), "throwable", 1, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, theJavaPackage.getJavaThrowable(), "throwable", 1, 1, IS_UNIQUE, IS_ORDERED);
 
 		op = addEOperation(loggerEClass, null, "error", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEString(), "message", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		op = addEOperation(loggerEClass, null, "error", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, theUtilPackage.getJavaThrowable(), "throwable", 1, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, theJavaPackage.getJavaThrowable(), "throwable", 1, 1, IS_UNIQUE, IS_ORDERED);
 
 		op = addEOperation(loggerEClass, null, "error", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEString(), "message", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, theUtilPackage.getJavaThrowable(), "throwable", 1, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, theJavaPackage.getJavaThrowable(), "throwable", 1, 1, IS_UNIQUE, IS_ORDERED);
 
 		op = addEOperation(loggerEClass, null, "info", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEString(), "message", 1, 1, IS_UNIQUE, IS_ORDERED);
 
 		op = addEOperation(loggerEClass, null, "info", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, theUtilPackage.getJavaThrowable(), "throwable", 1, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, theJavaPackage.getJavaThrowable(), "throwable", 1, 1, IS_UNIQUE, IS_ORDERED);
 
 		op = addEOperation(loggerEClass, null, "info", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEString(), "message", 1, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, theUtilPackage.getJavaThrowable(), "throwable", 1, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, theJavaPackage.getJavaThrowable(), "throwable", 1, 1, IS_UNIQUE, IS_ORDERED);
 
 		op = addEOperation(loggerEClass, null, "warning", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEString(), "message", 1, 1, IS_UNIQUE, IS_ORDERED);
 
 		op = addEOperation(loggerEClass, null, "warning", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, theUtilPackage.getJavaThrowable(), "throwable", 1, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, theJavaPackage.getJavaThrowable(), "throwable", 1, 1, IS_UNIQUE, IS_ORDERED);
 
 		op = addEOperation(loggerEClass, null, "warning", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEString(), "message", 1, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, theUtilPackage.getJavaThrowable(), "throwable", 1, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, theJavaPackage.getJavaThrowable(), "throwable", 1, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(messageDescriptionEClass, MessageDescription.class, "MessageDescription", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getMessageDescription_Name(), ecorePackage.getEString(), "name", null, 1, 1, MessageDescription.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1437,7 +1472,7 @@ public class ContextPackageImpl extends EPackageImpl implements ContextPackage {
 
 		initEClass(messageDataFieldEClass, MessageDataField.class, "MessageDataField", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getMessageDataField_OutputMask(), ecorePackage.getEString(), "outputMask", null, 0, 1, MessageDataField.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		g1 = createEGenericType(theUtilPackage.getDataDef());
+		g1 = createEGenericType(theDataPackage.getDataDef());
 		g2 = createEGenericType();
 		g1.getETypeArguments().add(g2);
 		initEReference(getMessageDataField_Definition(), g1, null, "definition", null, 0, 1, MessageDataField.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1449,7 +1484,7 @@ public class ContextPackageImpl extends EPackageImpl implements ContextPackage {
 
 		op = addEOperation(messageFileEClass, this.getMessageDescription(), "lookup", 1, 1, IS_UNIQUE, IS_ORDERED);
 		t1 = addETypeParameter(op, "E");
-		g1 = createEGenericType(theUtilPackage.getJavaEnum());
+		g1 = createEGenericType(theJavaPackage.getJavaEnum());
 		t1.getEBounds().add(g1);
 		addEParameter(op, ecorePackage.getEString(), "name", 1, 1, IS_UNIQUE, IS_ORDERED);
 

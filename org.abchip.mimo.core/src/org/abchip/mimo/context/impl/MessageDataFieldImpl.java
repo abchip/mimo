@@ -10,8 +10,8 @@ package org.abchip.mimo.context.impl;
 
 import org.abchip.mimo.context.ContextPackage;
 import org.abchip.mimo.context.MessageDataField;
+import org.abchip.mimo.data.DataDef;
 import org.abchip.mimo.entity.impl.EntityImpl;
-import org.abchip.mimo.util.DataDef;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.ecore.EClass;

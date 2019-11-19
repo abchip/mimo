@@ -118,6 +118,28 @@
         <genOperations ecoreOperation="mimo.ecore#//context/AuthenticationManager/authenticate">
           <genParameters ecoreParameter="mimo.ecore#//context/AuthenticationManager/authenticate/authentication"/>
         </genOperations>
+        <genOperations ecoreOperation="mimo.ecore#//context/AuthenticationManager/checkLogin">
+          <genParameters ecoreParameter="mimo.ecore#//context/AuthenticationManager/checkLogin/authentication"/>
+          <genParameters ecoreParameter="mimo.ecore#//context/AuthenticationManager/checkLogin/create"/>
+        </genOperations>
+        <genOperations ecoreOperation="mimo.ecore#//context/AuthenticationManager/isActive">
+          <genParameters ecoreParameter="mimo.ecore#//context/AuthenticationManager/isActive/contextProvider"/>
+        </genOperations>
+        <genOperations ecoreOperation="mimo.ecore#//context/AuthenticationManager/login">
+          <genParameters ecoreParameter="mimo.ecore#//context/AuthenticationManager/login/contextId"/>
+          <genParameters ecoreParameter="mimo.ecore#//context/AuthenticationManager/login/authentication"/>
+        </genOperations>
+        <genOperations ecoreOperation="mimo.ecore#//context/AuthenticationManager/login.1">
+          <genParameters ecoreParameter="mimo.ecore#//context/AuthenticationManager/login.1/contextId"/>
+          <genParameters ecoreParameter="mimo.ecore#//context/AuthenticationManager/login.1/authentication"/>
+        </genOperations>
+        <genOperations ecoreOperation="mimo.ecore#//context/AuthenticationManager/login.2">
+          <genParameters ecoreParameter="mimo.ecore#//context/AuthenticationManager/login.2/contextId"/>
+          <genParameters ecoreParameter="mimo.ecore#//context/AuthenticationManager/login.2/authentication"/>
+        </genOperations>
+        <genOperations ecoreOperation="mimo.ecore#//context/AuthenticationManager/logout">
+          <genParameters ecoreParameter="mimo.ecore#//context/AuthenticationManager/logout/contextProvider"/>
+        </genOperations>
       </genClasses>
       <genClasses image="false" ecoreClass="mimo.ecore#//context/AuthenticationUserPassword">
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//context/AuthenticationUserPassword/user"/>
@@ -388,6 +410,95 @@
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//context/UserProfile/userClass"/>
       </genClasses>
     </nestedGenPackages>
+    <nestedGenPackages prefix="Data" disposableProviderFactory="true" adapterFactory="false"
+        ecorePackage="mimo.ecore#//data">
+      <genEnums typeSafeEnumCompatible="false" ecoreEnum="mimo.ecore#//data/BinaryType">
+        <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//data/BinaryType/Byte"/>
+        <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//data/BinaryType/Short"/>
+        <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//data/BinaryType/Integer"/>
+        <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//data/BinaryType/Long"/>
+      </genEnums>
+      <genEnums typeSafeEnumCompatible="false" ecoreEnum="mimo.ecore#//data/DataDefType">
+        <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//data/DataDefType/Adapter"/>
+        <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//data/DataDefType/Array"/>
+        <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//data/DataDefType/Binary"/>
+        <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//data/DataDefType/Buffer"/>
+        <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//data/DataDefType/Character"/>
+        <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//data/DataDefType/DataStruct"/>
+        <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//data/DataDefType/Datetime"/>
+        <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//data/DataDefType/Decimal"/>
+        <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//data/DataDefType/Floating"/>
+        <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//data/DataDefType/Hexadecimal"/>
+        <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//data/DataDefType/Identity"/>
+        <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//data/DataDefType/Indicator"/>
+        <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//data/DataDefType/List"/>
+        <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//data/DataDefType/Pointer"/>
+        <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//data/DataDefType/Scroller"/>
+        <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//data/DataDefType/String"/>
+        <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//data/DataDefType/Stroller"/>
+        <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//data/DataDefType/Struct"/>
+        <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//data/DataDefType/Wrapper"/>
+      </genEnums>
+      <genEnums typeSafeEnumCompatible="false" ecoreEnum="mimo.ecore#//data/DatetimeType">
+        <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//data/DatetimeType/Date"/>
+        <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//data/DatetimeType/Time"/>
+        <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//data/DatetimeType/TimeStamp"/>
+      </genEnums>
+      <genEnums typeSafeEnumCompatible="false" ecoreEnum="mimo.ecore#//data/DateFormat">
+        <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//data/DateFormat/ISO"/>
+        <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//data/DateFormat/MDY"/>
+        <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//data/DateFormat/DMY"/>
+        <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//data/DateFormat/YMD"/>
+        <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//data/DateFormat/YYMD"/>
+        <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//data/DateFormat/JUL"/>
+        <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//data/DateFormat/USA"/>
+        <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//data/DateFormat/EUR"/>
+      </genEnums>
+      <genEnums typeSafeEnumCompatible="false" ecoreEnum="mimo.ecore#//data/DecimalType">
+        <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//data/DecimalType/Zoned"/>
+        <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//data/DecimalType/Packed"/>
+      </genEnums>
+      <genEnums typeSafeEnumCompatible="false" ecoreEnum="mimo.ecore#//data/FloatingType">
+        <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//data/FloatingType/Float"/>
+        <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//data/FloatingType/Double"/>
+      </genEnums>
+      <genEnums typeSafeEnumCompatible="false" ecoreEnum="mimo.ecore#//data/TimeFormat">
+        <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//data/TimeFormat/ISO"/>
+        <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//data/TimeFormat/HMS"/>
+        <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//data/TimeFormat/USA"/>
+        <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//data/TimeFormat/EUR"/>
+      </genEnums>
+      <genClasses ecoreClass="mimo.ecore#//data/BinaryDef">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//data/BinaryDef/type"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//data/BinaryDef/unsigned"/>
+      </genClasses>
+      <genClasses ecoreClass="mimo.ecore#//data/CharacterDef">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//data/CharacterDef/length"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//data/CharacterDef/varying"/>
+      </genClasses>
+      <genClasses image="false" ecoreClass="mimo.ecore#//data/DataDef">
+        <genTypeParameters ecoreTypeParameter="mimo.ecore#//data/DataDef/D"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//data/DataDef/formulas"/>
+        <genOperations ecoreOperation="mimo.ecore#//data/DataDef/getJavaClass"/>
+        <genOperations ecoreOperation="mimo.ecore#//data/DataDef/getDataDefType"/>
+      </genClasses>
+      <genClasses ecoreClass="mimo.ecore#//data/DatetimeDef">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//data/DatetimeDef/type"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//data/DatetimeDef/dateFormat"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//data/DatetimeDef/timeFormat"/>
+      </genClasses>
+      <genClasses ecoreClass="mimo.ecore#//data/DecimalDef">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//data/DecimalDef/precision"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//data/DecimalDef/scale"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//data/DecimalDef/type"/>
+      </genClasses>
+      <genClasses ecoreClass="mimo.ecore#//data/FloatingDef">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//data/FloatingDef/type"/>
+      </genClasses>
+      <genClasses ecoreClass="mimo.ecore#//data/IdentityDef"/>
+      <genClasses ecoreClass="mimo.ecore#//data/NumericDef"/>
+      <genClasses ecoreClass="mimo.ecore#//data/StringDef"/>
+    </nestedGenPackages>
     <nestedGenPackages prefix="Entity" basePackage="org.abchip.mimo" disposableProviderFactory="true"
         adapterFactory="false" contentTypeIdentifier="" ecorePackage="mimo.ecore#//entity">
       <genEnums typeSafeEnumCompatible="false" ecoreEnum="mimo.ecore#//entity/SerializationType">
@@ -411,7 +522,9 @@
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//entity/Domain/route"/>
       </genClasses>
       <genClasses ecoreClass="mimo.ecore#//entity/Entity">
-        <genOperations ecoreOperation="mimo.ecore#//entity/Entity/isa"/>
+        <genOperations ecoreOperation="mimo.ecore#//entity/Entity/isa">
+          <genTypeParameters ecoreTypeParameter="mimo.ecore#//entity/Entity/isa/E"/>
+        </genOperations>
       </genClasses>
       <genClasses ecoreClass="mimo.ecore#//entity/EntityContainer">
         <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mimo.ecore#//entity/EntityContainer/contents"/>
@@ -483,15 +596,31 @@
         </genOperations>
       </genClasses>
       <genClasses image="false" ecoreClass="mimo.ecore#//entity/FrameManager">
-        <genOperations ecoreOperation="mimo.ecore#//entity/FrameManager/getFrameReader">
-          <genParameters ecoreParameter="mimo.ecore#//entity/FrameManager/getFrameReader/contextProvider"/>
+        <genOperations ecoreOperation="mimo.ecore#//entity/FrameManager/createProxy">
+          <genParameters ecoreParameter="mimo.ecore#//entity/FrameManager/createProxy/contextProvider"/>
+          <genParameters ecoreParameter="mimo.ecore#//entity/FrameManager/createProxy/klass"/>
+          <genParameters ecoreParameter="mimo.ecore#//entity/FrameManager/createProxy/name"/>
+          <genTypeParameters ecoreTypeParameter="mimo.ecore#//entity/FrameManager/createProxy/E"/>
         </genOperations>
         <genOperations ecoreOperation="mimo.ecore#//entity/FrameManager/getFrame">
-          <genParameters ecoreParameter="mimo.ecore#//entity/FrameManager/getFrame/name"/>
+          <genParameters ecoreParameter="mimo.ecore#//entity/FrameManager/getFrame/contextProvider"/>
+          <genParameters ecoreParameter="mimo.ecore#//entity/FrameManager/getFrame/klass"/>
+          <genTypeParameters ecoreTypeParameter="mimo.ecore#//entity/FrameManager/getFrame/E"/>
         </genOperations>
         <genOperations ecoreOperation="mimo.ecore#//entity/FrameManager/getFrame.1">
+          <genParameters ecoreParameter="mimo.ecore#//entity/FrameManager/getFrame.1/contextProvider"/>
           <genParameters ecoreParameter="mimo.ecore#//entity/FrameManager/getFrame.1/klass"/>
+          <genParameters ecoreParameter="mimo.ecore#//entity/FrameManager/getFrame.1/tenant"/>
           <genTypeParameters ecoreTypeParameter="mimo.ecore#//entity/FrameManager/getFrame.1/E"/>
+        </genOperations>
+        <genOperations ecoreOperation="mimo.ecore#//entity/FrameManager/getFrame.2">
+          <genParameters ecoreParameter="mimo.ecore#//entity/FrameManager/getFrame.2/contextProvider"/>
+          <genParameters ecoreParameter="mimo.ecore#//entity/FrameManager/getFrame.2/frame"/>
+        </genOperations>
+        <genOperations ecoreOperation="mimo.ecore#//entity/FrameManager/getFrame.3">
+          <genParameters ecoreParameter="mimo.ecore#//entity/FrameManager/getFrame.3/contextProvider"/>
+          <genParameters ecoreParameter="mimo.ecore#//entity/FrameManager/getFrame.3/frame"/>
+          <genParameters ecoreParameter="mimo.ecore#//entity/FrameManager/getFrame.3/tenant"/>
         </genOperations>
       </genClasses>
       <genClasses image="false" ecoreClass="mimo.ecore#//entity/Nameable">
@@ -520,6 +649,55 @@
       <genClasses image="false" ecoreClass="mimo.ecore#//entity/Textable">
         <genOperations ecoreOperation="mimo.ecore#//entity/Textable/getText"/>
       </genClasses>
+    </nestedGenPackages>
+    <nestedGenPackages prefix="Java" disposableProviderFactory="true" adapterFactory="false"
+        ecorePackage="mimo.ecore#//java">
+      <genDataTypes ecoreDataType="mimo.ecore#//java/JavaAnnotation"/>
+      <genDataTypes ecoreDataType="mimo.ecore#//java/JavaDictionary">
+        <genTypeParameters ecoreTypeParameter="mimo.ecore#//java/JavaDictionary/K"/>
+        <genTypeParameters ecoreTypeParameter="mimo.ecore#//java/JavaDictionary/V"/>
+      </genDataTypes>
+      <genDataTypes ecoreDataType="mimo.ecore#//java/JavaException"/>
+      <genDataTypes ecoreDataType="mimo.ecore#//java/JavaInputStream"/>
+      <genDataTypes ecoreDataType="mimo.ecore#//java/JavaIOException"/>
+      <genDataTypes ecoreDataType="mimo.ecore#//java/JavaMap">
+        <genTypeParameters ecoreTypeParameter="mimo.ecore#//java/JavaMap/K"/>
+        <genTypeParameters ecoreTypeParameter="mimo.ecore#//java/JavaMap/V"/>
+      </genDataTypes>
+      <genDataTypes ecoreDataType="mimo.ecore#//java/JavaOutputStream"/>
+      <genDataTypes ecoreDataType="mimo.ecore#//java/JavaProperties"/>
+      <genDataTypes ecoreDataType="mimo.ecore#//java/JavaThrowable"/>
+      <genDataTypes ecoreDataType="mimo.ecore#//java/JavaType"/>
+      <genDataTypes ecoreDataType="mimo.ecore#//java/JavaURI"/>
+      <genDataTypes ecoreDataType="mimo.ecore#//java/JavaURL"/>
+      <genDataTypes ecoreDataType="mimo.ecore#//java/JavaWriter"/>
+      <genClasses image="false" ecoreClass="mimo.ecore#//java/JavaByteBuffer"/>
+      <genClasses image="false" ecoreClass="mimo.ecore#//java/JavaBlockingQueue"/>
+      <genClasses image="false" ecoreClass="mimo.ecore#//java/JavaCallable">
+        <genTypeParameters ecoreTypeParameter="mimo.ecore#//java/JavaCallable/V"/>
+      </genClasses>
+      <genClasses image="false" ecoreClass="mimo.ecore#//java/JavaCharset"/>
+      <genClasses image="false" ecoreClass="mimo.ecore#//java/JavaCloseable"/>
+      <genClasses image="false" ecoreClass="mimo.ecore#//java/JavaConcurrentMap"/>
+      <genClasses image="false" ecoreClass="mimo.ecore#//java/JavaEnum"/>
+      <genClasses image="false" ecoreClass="mimo.ecore#//java/JavaExecutorService"/>
+      <genClasses image="false" ecoreClass="mimo.ecore#//java/JavaFile"/>
+      <genClasses image="false" ecoreClass="mimo.ecore#//java/JavaIterable">
+        <genTypeParameters ecoreTypeParameter="mimo.ecore#//java/JavaIterable/T"/>
+      </genClasses>
+      <genClasses image="false" ecoreClass="mimo.ecore#//java/JavaIterator">
+        <genTypeParameters ecoreTypeParameter="mimo.ecore#//java/JavaIterator/T"/>
+      </genClasses>
+      <genClasses image="false" ecoreClass="mimo.ecore#//java/JavaList">
+        <genTypeParameters ecoreTypeParameter="mimo.ecore#//java/JavaList/E"/>
+      </genClasses>
+      <genClasses image="false" ecoreClass="mimo.ecore#//java/JavaNumber"/>
+      <genClasses image="false" ecoreClass="mimo.ecore#//java/JavaPrincipal"/>
+      <genClasses image="false" ecoreClass="mimo.ecore#//java/JavaRunnable"/>
+      <genClasses image="false" ecoreClass="mimo.ecore#//java/JavaSerializable"/>
+      <genClasses image="false" ecoreClass="mimo.ecore#//java/JavaThread"/>
+      <genClasses image="false" ecoreClass="mimo.ecore#//java/JavaThreadGroup"/>
+      <genClasses image="false" ecoreClass="mimo.ecore#//java/JavaThreadInfo"/>
     </nestedGenPackages>
     <nestedGenPackages prefix="Net" basePackage="org.abchip.mimo" disposableProviderFactory="true"
         adapterFactory="false" ecorePackage="mimo.ecore#//net">
@@ -587,16 +765,19 @@
       </genClasses>
       <genClasses image="false" ecoreClass="mimo.ecore#//resource/ResourceManager">
         <genOperations ecoreOperation="mimo.ecore#//resource/ResourceManager/createResourceSerializer">
+          <genParameters ecoreParameter="mimo.ecore#//resource/ResourceManager/createResourceSerializer/contextProvider"/>
           <genParameters ecoreParameter="mimo.ecore#//resource/ResourceManager/createResourceSerializer/klass"/>
           <genParameters ecoreParameter="mimo.ecore#//resource/ResourceManager/createResourceSerializer/serializationType"/>
           <genTypeParameters ecoreTypeParameter="mimo.ecore#//resource/ResourceManager/createResourceSerializer/E"/>
         </genOperations>
         <genOperations ecoreOperation="mimo.ecore#//resource/ResourceManager/createResourceSerializer.1">
+          <genParameters ecoreParameter="mimo.ecore#//resource/ResourceManager/createResourceSerializer.1/contextProvider"/>
           <genParameters ecoreParameter="mimo.ecore#//resource/ResourceManager/createResourceSerializer.1/frame"/>
           <genParameters ecoreParameter="mimo.ecore#//resource/ResourceManager/createResourceSerializer.1/serializationType"/>
           <genTypeParameters ecoreTypeParameter="mimo.ecore#//resource/ResourceManager/createResourceSerializer.1/E"/>
         </genOperations>
         <genOperations ecoreOperation="mimo.ecore#//resource/ResourceManager/createResourceSerializer.2">
+          <genParameters ecoreParameter="mimo.ecore#//resource/ResourceManager/createResourceSerializer.2/contextProvider"/>
           <genParameters ecoreParameter="mimo.ecore#//resource/ResourceManager/createResourceSerializer.2/frame"/>
           <genParameters ecoreParameter="mimo.ecore#//resource/ResourceManager/createResourceSerializer.2/serializationType"/>
           <genTypeParameters ecoreTypeParameter="mimo.ecore#//resource/ResourceManager/createResourceSerializer.2/E"/>
@@ -668,43 +849,52 @@
           <genTypeParameters ecoreTypeParameter="mimo.ecore#//resource/ResourceManager/getResourceWriter.5/E"/>
         </genOperations>
         <genOperations ecoreOperation="mimo.ecore#//resource/ResourceManager/getProvider">
+          <genParameters ecoreParameter="mimo.ecore#//resource/ResourceManager/getProvider/contextProvider"/>
           <genParameters ecoreParameter="mimo.ecore#//resource/ResourceManager/getProvider/klass"/>
           <genTypeParameters ecoreTypeParameter="mimo.ecore#//resource/ResourceManager/getProvider/E"/>
         </genOperations>
         <genOperations ecoreOperation="mimo.ecore#//resource/ResourceManager/getProvider.1">
+          <genParameters ecoreParameter="mimo.ecore#//resource/ResourceManager/getProvider.1/contextProvider"/>
           <genParameters ecoreParameter="mimo.ecore#//resource/ResourceManager/getProvider.1/frame"/>
           <genTypeParameters ecoreTypeParameter="mimo.ecore#//resource/ResourceManager/getProvider.1/E"/>
         </genOperations>
         <genOperations ecoreOperation="mimo.ecore#//resource/ResourceManager/getProvider.2">
+          <genParameters ecoreParameter="mimo.ecore#//resource/ResourceManager/getProvider.2/contextProvider"/>
           <genParameters ecoreParameter="mimo.ecore#//resource/ResourceManager/getProvider.2/frame"/>
           <genTypeParameters ecoreTypeParameter="mimo.ecore#//resource/ResourceManager/getProvider.2/E"/>
         </genOperations>
         <genOperations ecoreOperation="mimo.ecore#//resource/ResourceManager/registerListener">
+          <genParameters ecoreParameter="mimo.ecore#//resource/ResourceManager/registerListener/contextProvider"/>
           <genParameters ecoreParameter="mimo.ecore#//resource/ResourceManager/registerListener/klass"/>
           <genParameters ecoreParameter="mimo.ecore#//resource/ResourceManager/registerListener/listener"/>
           <genTypeParameters ecoreTypeParameter="mimo.ecore#//resource/ResourceManager/registerListener/E"/>
         </genOperations>
         <genOperations ecoreOperation="mimo.ecore#//resource/ResourceManager/registerListener.1">
+          <genParameters ecoreParameter="mimo.ecore#//resource/ResourceManager/registerListener.1/contextProvider"/>
           <genParameters ecoreParameter="mimo.ecore#//resource/ResourceManager/registerListener.1/frame"/>
           <genParameters ecoreParameter="mimo.ecore#//resource/ResourceManager/registerListener.1/listener"/>
           <genTypeParameters ecoreTypeParameter="mimo.ecore#//resource/ResourceManager/registerListener.1/E"/>
         </genOperations>
         <genOperations ecoreOperation="mimo.ecore#//resource/ResourceManager/registerListener.2">
+          <genParameters ecoreParameter="mimo.ecore#//resource/ResourceManager/registerListener.2/contextProvider"/>
           <genParameters ecoreParameter="mimo.ecore#//resource/ResourceManager/registerListener.2/frame"/>
           <genParameters ecoreParameter="mimo.ecore#//resource/ResourceManager/registerListener.2/listener"/>
           <genTypeParameters ecoreTypeParameter="mimo.ecore#//resource/ResourceManager/registerListener.2/E"/>
         </genOperations>
         <genOperations ecoreOperation="mimo.ecore#//resource/ResourceManager/registerProvider">
+          <genParameters ecoreParameter="mimo.ecore#//resource/ResourceManager/registerProvider/contextProvider"/>
           <genParameters ecoreParameter="mimo.ecore#//resource/ResourceManager/registerProvider/klass"/>
           <genParameters ecoreParameter="mimo.ecore#//resource/ResourceManager/registerProvider/provider"/>
           <genTypeParameters ecoreTypeParameter="mimo.ecore#//resource/ResourceManager/registerProvider/E"/>
         </genOperations>
         <genOperations ecoreOperation="mimo.ecore#//resource/ResourceManager/registerProvider.1">
+          <genParameters ecoreParameter="mimo.ecore#//resource/ResourceManager/registerProvider.1/contextProvider"/>
           <genParameters ecoreParameter="mimo.ecore#//resource/ResourceManager/registerProvider.1/frame"/>
           <genParameters ecoreParameter="mimo.ecore#//resource/ResourceManager/registerProvider.1/provider"/>
           <genTypeParameters ecoreTypeParameter="mimo.ecore#//resource/ResourceManager/registerProvider.1/E"/>
         </genOperations>
         <genOperations ecoreOperation="mimo.ecore#//resource/ResourceManager/registerProvider.2">
+          <genParameters ecoreParameter="mimo.ecore#//resource/ResourceManager/registerProvider.2/contextProvider"/>
           <genParameters ecoreParameter="mimo.ecore#//resource/ResourceManager/registerProvider.2/frame"/>
           <genParameters ecoreParameter="mimo.ecore#//resource/ResourceManager/registerProvider.2/provider"/>
           <genTypeParameters ecoreTypeParameter="mimo.ecore#//resource/ResourceManager/registerProvider.2/E"/>
@@ -721,10 +911,6 @@
         </genOperations>
       </genClasses>
       <genClasses image="false" ecoreClass="mimo.ecore#//resource/ResourceProvider">
-        <genOperations ecoreOperation="mimo.ecore#//resource/ResourceProvider/checkLogin">
-          <genParameters ecoreParameter="mimo.ecore#//resource/ResourceProvider/checkLogin/authentication"/>
-          <genParameters ecoreParameter="mimo.ecore#//resource/ResourceProvider/checkLogin/create"/>
-        </genOperations>
         <genOperations ecoreOperation="mimo.ecore#//resource/ResourceProvider/getResource">
           <genParameters ecoreParameter="mimo.ecore#//resource/ResourceProvider/getResource/contextProvider"/>
           <genParameters ecoreParameter="mimo.ecore#//resource/ResourceProvider/getResource/klass"/>
@@ -757,24 +943,6 @@
           <genParameters ecoreParameter="mimo.ecore#//resource/ResourceProvider/getResource.5/frame"/>
           <genParameters ecoreParameter="mimo.ecore#//resource/ResourceProvider/getResource.5/tenant"/>
           <genTypeParameters ecoreTypeParameter="mimo.ecore#//resource/ResourceProvider/getResource.5/E"/>
-        </genOperations>
-        <genOperations ecoreOperation="mimo.ecore#//resource/ResourceProvider/isActive">
-          <genParameters ecoreParameter="mimo.ecore#//resource/ResourceProvider/isActive/contextProvider"/>
-        </genOperations>
-        <genOperations ecoreOperation="mimo.ecore#//resource/ResourceProvider/login">
-          <genParameters ecoreParameter="mimo.ecore#//resource/ResourceProvider/login/contextId"/>
-          <genParameters ecoreParameter="mimo.ecore#//resource/ResourceProvider/login/authentication"/>
-        </genOperations>
-        <genOperations ecoreOperation="mimo.ecore#//resource/ResourceProvider/login.1">
-          <genParameters ecoreParameter="mimo.ecore#//resource/ResourceProvider/login.1/contextId"/>
-          <genParameters ecoreParameter="mimo.ecore#//resource/ResourceProvider/login.1/authentication"/>
-        </genOperations>
-        <genOperations ecoreOperation="mimo.ecore#//resource/ResourceProvider/login.2">
-          <genParameters ecoreParameter="mimo.ecore#//resource/ResourceProvider/login.2/contextId"/>
-          <genParameters ecoreParameter="mimo.ecore#//resource/ResourceProvider/login.2/authentication"/>
-        </genOperations>
-        <genOperations ecoreOperation="mimo.ecore#//resource/ResourceProvider/logout">
-          <genParameters ecoreParameter="mimo.ecore#//resource/ResourceProvider/logout/contextProvider"/>
         </genOperations>
       </genClasses>
       <genClasses image="false" ecoreClass="mimo.ecore#//resource/ResourceProviderRegistry"/>
@@ -813,6 +981,7 @@
           <genParameters ecoreParameter="mimo.ecore#//resource/ResourceReader/first.1/proxy"/>
         </genOperations>
         <genOperations ecoreOperation="mimo.ecore#//resource/ResourceReader/getFrame"/>
+        <genOperations ecoreOperation="mimo.ecore#//resource/ResourceReader/getTenant"/>
         <genOperations ecoreOperation="mimo.ecore#//resource/ResourceReader/lookup">
           <genParameters ecoreParameter="mimo.ecore#//resource/ResourceReader/lookup/name"/>
         </genOperations>
@@ -868,56 +1037,6 @@
     </nestedGenPackages>
     <nestedGenPackages prefix="Util" basePackage="org.abchip.mimo" disposableProviderFactory="true"
         adapterFactory="false" ecorePackage="mimo.ecore#//util">
-      <genEnums typeSafeEnumCompatible="false" ecoreEnum="mimo.ecore#//util/BinaryType">
-        <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//util/BinaryType/Byte"/>
-        <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//util/BinaryType/Short"/>
-        <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//util/BinaryType/Integer"/>
-        <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//util/BinaryType/Long"/>
-      </genEnums>
-      <genEnums typeSafeEnumCompatible="false" ecoreEnum="mimo.ecore#//util/DataDefType">
-        <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//util/DataDefType/Adapter"/>
-        <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//util/DataDefType/Array"/>
-        <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//util/DataDefType/Binary"/>
-        <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//util/DataDefType/Buffer"/>
-        <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//util/DataDefType/Character"/>
-        <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//util/DataDefType/DataStruct"/>
-        <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//util/DataDefType/Datetime"/>
-        <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//util/DataDefType/Decimal"/>
-        <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//util/DataDefType/Floating"/>
-        <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//util/DataDefType/Hexadecimal"/>
-        <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//util/DataDefType/Identity"/>
-        <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//util/DataDefType/Indicator"/>
-        <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//util/DataDefType/List"/>
-        <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//util/DataDefType/Pointer"/>
-        <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//util/DataDefType/Scroller"/>
-        <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//util/DataDefType/String"/>
-        <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//util/DataDefType/Stroller"/>
-        <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//util/DataDefType/Struct"/>
-        <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//util/DataDefType/Wrapper"/>
-      </genEnums>
-      <genEnums typeSafeEnumCompatible="false" ecoreEnum="mimo.ecore#//util/DatetimeType">
-        <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//util/DatetimeType/Date"/>
-        <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//util/DatetimeType/Time"/>
-        <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//util/DatetimeType/TimeStamp"/>
-      </genEnums>
-      <genEnums typeSafeEnumCompatible="false" ecoreEnum="mimo.ecore#//util/DateFormat">
-        <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//util/DateFormat/ISO"/>
-        <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//util/DateFormat/MDY"/>
-        <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//util/DateFormat/DMY"/>
-        <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//util/DateFormat/YMD"/>
-        <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//util/DateFormat/YYMD"/>
-        <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//util/DateFormat/JUL"/>
-        <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//util/DateFormat/USA"/>
-        <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//util/DateFormat/EUR"/>
-      </genEnums>
-      <genEnums typeSafeEnumCompatible="false" ecoreEnum="mimo.ecore#//util/DecimalType">
-        <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//util/DecimalType/Zoned"/>
-        <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//util/DecimalType/Packed"/>
-      </genEnums>
-      <genEnums typeSafeEnumCompatible="false" ecoreEnum="mimo.ecore#//util/FloatingType">
-        <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//util/FloatingType/Float"/>
-        <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//util/FloatingType/Double"/>
-      </genEnums>
       <genEnums typeSafeEnumCompatible="false" ecoreEnum="mimo.ecore#//util/ThreadStatus">
         <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//util/ThreadStatus/New"/>
         <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//util/ThreadStatus/Runnable"/>
@@ -926,59 +1045,10 @@
         <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//util/ThreadStatus/TimedWaiting"/>
         <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//util/ThreadStatus/Terminated"/>
       </genEnums>
-      <genEnums typeSafeEnumCompatible="false" ecoreEnum="mimo.ecore#//util/TimeFormat">
-        <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//util/TimeFormat/ISO"/>
-        <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//util/TimeFormat/HMS"/>
-        <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//util/TimeFormat/USA"/>
-        <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//util/TimeFormat/EUR"/>
-      </genEnums>
-      <genDataTypes ecoreDataType="mimo.ecore#//util/JavaAnnotation"/>
-      <genDataTypes ecoreDataType="mimo.ecore#//util/JavaDictionary">
-        <genTypeParameters ecoreTypeParameter="mimo.ecore#//util/JavaDictionary/K"/>
-        <genTypeParameters ecoreTypeParameter="mimo.ecore#//util/JavaDictionary/V"/>
-      </genDataTypes>
-      <genDataTypes ecoreDataType="mimo.ecore#//util/JavaException"/>
-      <genDataTypes ecoreDataType="mimo.ecore#//util/JavaInputStream"/>
-      <genDataTypes ecoreDataType="mimo.ecore#//util/JavaIOException"/>
-      <genDataTypes ecoreDataType="mimo.ecore#//util/JavaMap">
-        <genTypeParameters ecoreTypeParameter="mimo.ecore#//util/JavaMap/K"/>
-        <genTypeParameters ecoreTypeParameter="mimo.ecore#//util/JavaMap/V"/>
-      </genDataTypes>
-      <genDataTypes ecoreDataType="mimo.ecore#//util/JavaOutputStream"/>
-      <genDataTypes ecoreDataType="mimo.ecore#//util/JavaProperties"/>
-      <genDataTypes ecoreDataType="mimo.ecore#//util/JavaThrowable"/>
-      <genDataTypes ecoreDataType="mimo.ecore#//util/JavaType"/>
-      <genDataTypes ecoreDataType="mimo.ecore#//util/JavaURI"/>
-      <genDataTypes ecoreDataType="mimo.ecore#//util/JavaURL"/>
-      <genDataTypes ecoreDataType="mimo.ecore#//util/JavaWriter"/>
-      <genClasses ecoreClass="mimo.ecore#//util/BinaryDef">
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//util/BinaryDef/type"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//util/BinaryDef/unsigned"/>
-      </genClasses>
-      <genClasses ecoreClass="mimo.ecore#//util/CharacterDef">
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//util/CharacterDef/length"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//util/CharacterDef/varying"/>
-      </genClasses>
       <genClasses image="false" ecoreClass="mimo.ecore#//util/Classes">
         <genOperations ecoreOperation="mimo.ecore#//util/Classes/getAllInterfaces">
           <genParameters ecoreParameter="mimo.ecore#//util/Classes/getAllInterfaces/input"/>
         </genOperations>
-      </genClasses>
-      <genClasses image="false" ecoreClass="mimo.ecore#//util/DataDef">
-        <genTypeParameters ecoreTypeParameter="mimo.ecore#//util/DataDef/D"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//util/DataDef/formulas"/>
-        <genOperations ecoreOperation="mimo.ecore#//util/DataDef/getJavaClass"/>
-        <genOperations ecoreOperation="mimo.ecore#//util/DataDef/getDataDefType"/>
-      </genClasses>
-      <genClasses ecoreClass="mimo.ecore#//util/DatetimeDef">
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//util/DatetimeDef/type"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//util/DatetimeDef/dateFormat"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//util/DatetimeDef/timeFormat"/>
-      </genClasses>
-      <genClasses ecoreClass="mimo.ecore#//util/DecimalDef">
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//util/DecimalDef/precision"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//util/DecimalDef/scale"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//util/DecimalDef/type"/>
       </genClasses>
       <genClasses image="false" ecoreClass="mimo.ecore#//util/Files">
         <genOperations ecoreOperation="mimo.ecore#//util/Files/getBaseName">
@@ -995,37 +1065,6 @@
           <genParameters ecoreParameter="mimo.ecore#//util/Files/copyToFile/stream"/>
         </genOperations>
       </genClasses>
-      <genClasses ecoreClass="mimo.ecore#//util/FloatingDef">
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//util/FloatingDef/type"/>
-      </genClasses>
-      <genClasses ecoreClass="mimo.ecore#//util/IdentityDef"/>
-      <genClasses image="false" ecoreClass="mimo.ecore#//util/JavaByteBuffer"/>
-      <genClasses image="false" ecoreClass="mimo.ecore#//util/JavaBlockingQueue"/>
-      <genClasses image="false" ecoreClass="mimo.ecore#//util/JavaCallable">
-        <genTypeParameters ecoreTypeParameter="mimo.ecore#//util/JavaCallable/V"/>
-      </genClasses>
-      <genClasses image="false" ecoreClass="mimo.ecore#//util/JavaCharset"/>
-      <genClasses image="false" ecoreClass="mimo.ecore#//util/JavaCloseable"/>
-      <genClasses image="false" ecoreClass="mimo.ecore#//util/JavaConcurrentMap"/>
-      <genClasses image="false" ecoreClass="mimo.ecore#//util/JavaEnum"/>
-      <genClasses image="false" ecoreClass="mimo.ecore#//util/JavaExecutorService"/>
-      <genClasses image="false" ecoreClass="mimo.ecore#//util/JavaFile"/>
-      <genClasses image="false" ecoreClass="mimo.ecore#//util/JavaIterable">
-        <genTypeParameters ecoreTypeParameter="mimo.ecore#//util/JavaIterable/T"/>
-      </genClasses>
-      <genClasses image="false" ecoreClass="mimo.ecore#//util/JavaIterator">
-        <genTypeParameters ecoreTypeParameter="mimo.ecore#//util/JavaIterator/T"/>
-      </genClasses>
-      <genClasses image="false" ecoreClass="mimo.ecore#//util/JavaList">
-        <genTypeParameters ecoreTypeParameter="mimo.ecore#//util/JavaList/E"/>
-      </genClasses>
-      <genClasses image="false" ecoreClass="mimo.ecore#//util/JavaNumber"/>
-      <genClasses image="false" ecoreClass="mimo.ecore#//util/JavaPrincipal"/>
-      <genClasses image="false" ecoreClass="mimo.ecore#//util/JavaRunnable"/>
-      <genClasses image="false" ecoreClass="mimo.ecore#//util/JavaSerializable"/>
-      <genClasses image="false" ecoreClass="mimo.ecore#//util/JavaThread"/>
-      <genClasses image="false" ecoreClass="mimo.ecore#//util/JavaThreadGroup"/>
-      <genClasses image="false" ecoreClass="mimo.ecore#//util/JavaThreadInfo"/>
       <genClasses image="false" ecoreClass="mimo.ecore#//util/Lists">
         <genOperations ecoreOperation="mimo.ecore#//util/Lists/addFirst">
           <genParameters ecoreParameter="mimo.ecore#//util/Lists/addFirst/list"/>
@@ -1056,7 +1095,6 @@
           <genTypeParameters ecoreTypeParameter="mimo.ecore#//util/Lists/slice/E"/>
         </genOperations>
       </genClasses>
-      <genClasses ecoreClass="mimo.ecore#//util/NumericDef"/>
       <genClasses image="false" ecoreClass="mimo.ecore#//util/Singleton">
         <genTypeParameters ecoreTypeParameter="mimo.ecore#//util/Singleton/S"/>
       </genClasses>
@@ -1066,7 +1104,6 @@
           <genParameters ecoreParameter="mimo.ecore#//util/Streams/copy/output"/>
         </genOperations>
       </genClasses>
-      <genClasses ecoreClass="mimo.ecore#//util/StringDef"/>
       <genClasses image="false" ecoreClass="mimo.ecore#//util/Strings">
         <genOperations ecoreOperation="mimo.ecore#//util/Strings/appendChars">
           <genParameters ecoreParameter="mimo.ecore#//util/Strings/appendChars/string"/>

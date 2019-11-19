@@ -25,7 +25,7 @@ public interface Thread extends Entity {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model kind="operation" type="org.abchip.mimo.util.JavaThread" required="true"
+	 * @model kind="operation" type="org.abchip.mimo.java.JavaThread" required="true"
 	 * @generated
 	 */
 	java.lang.Thread getJavaThread();

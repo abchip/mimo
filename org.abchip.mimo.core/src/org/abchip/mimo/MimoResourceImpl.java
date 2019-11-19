@@ -42,7 +42,7 @@ public class MimoResourceImpl<E extends EntityNameable> extends ResourceImpl {
 
 		ContextProvider contextProvider = this.getContextProvider();
 		ResourceManager resourceManager = contextProvider.getContext().get(ResourceManager.class);
-		this.resource = resourceManager.getProvider(frame).getResource(contextProvider, frame, tenant);
+		this.resource = resourceManager.getProvider(this.getContextProvider(), frame).getResource(contextProvider, frame, tenant);
 
 		if (this.resource == null)
 			"".toString();

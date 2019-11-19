@@ -92,7 +92,7 @@ public interface PreparedStatement extends Statement {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model exceptions="org.abchip.mimo.database.DatabaseException" positionRequired="true" valueType="org.abchip.mimo.util.JavaNumber" valueRequired="true"
+	 * @model exceptions="org.abchip.mimo.database.DatabaseException" positionRequired="true" valueType="org.abchip.mimo.java.JavaNumber" valueRequired="true"
 	 * @generated
 	 */
 	void setNumber(int position, Number value) throws SQLException;

@@ -21,8 +21,7 @@ import org.abchip.mimo.context.ContextPackage;
 
 import org.abchip.mimo.entity.EntityPackage;
 
-import org.abchip.mimo.util.UtilPackage;
-
+import org.abchip.mimo.java.JavaPackage;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EEnum;
@@ -287,7 +286,7 @@ public class AudioPackageImpl extends EPackageImpl implements AudioPackage {
 		// Obtain other dependent packages
 		EntityPackage theEntityPackage = (EntityPackage)EPackage.Registry.INSTANCE.getEPackage(EntityPackage.eNS_URI);
 		ContextPackage theContextPackage = (ContextPackage)EPackage.Registry.INSTANCE.getEPackage(ContextPackage.eNS_URI);
-		UtilPackage theUtilPackage = (UtilPackage)EPackage.Registry.INSTANCE.getEPackage(UtilPackage.eNS_URI);
+		JavaPackage theJavaPackage = (JavaPackage)EPackage.Registry.INSTANCE.getEPackage(JavaPackage.eNS_URI);
 
 		// Create type parameters
 
@@ -323,7 +322,7 @@ public class AudioPackageImpl extends EPackageImpl implements AudioPackage {
 
 		initEClass(audioRecorderEClass, AudioRecorder.class, "AudioRecorder", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-		addEOperation(audioRecorderEClass, theUtilPackage.getJavaOutputStream(), "getOutputStream", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(audioRecorderEClass, theJavaPackage.getJavaOutputStream(), "getOutputStream", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		addEOperation(audioRecorderEClass, ecorePackage.getEBoolean(), "isStopped", 1, 1, IS_UNIQUE, IS_ORDERED);
 

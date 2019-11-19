@@ -34,7 +34,7 @@ import org.abchip.mimo.database.impl.DatabasePackageImpl;
 import org.abchip.mimo.database.query.DatabaseQueryPackage;
 
 import org.abchip.mimo.database.query.impl.DatabaseQueryPackageImpl;
-import org.abchip.mimo.util.UtilPackage;
+import org.abchip.mimo.java.JavaPackage;
 import org.eclipse.datatools.modelbase.sql.accesscontrol.SQLAccessControlPackage;
 
 import org.eclipse.datatools.modelbase.sql.constraints.SQLConstraintsPackage;
@@ -472,7 +472,7 @@ public class DatabaseConnectionPackageImpl extends EPackageImpl implements Datab
 		ContextPackage theContextPackage = (ContextPackage)EPackage.Registry.INSTANCE.getEPackage(ContextPackage.eNS_URI);
 		DatabasePackage theDatabasePackage = (DatabasePackage)EPackage.Registry.INSTANCE.getEPackage(DatabasePackage.eNS_URI);
 		EcorePackage theEcorePackage = (EcorePackage)EPackage.Registry.INSTANCE.getEPackage(EcorePackage.eNS_URI);
-		UtilPackage theUtilPackage = (UtilPackage)EPackage.Registry.INSTANCE.getEPackage(UtilPackage.eNS_URI);
+		JavaPackage theJavaPackage = (JavaPackage)EPackage.Registry.INSTANCE.getEPackage(JavaPackage.eNS_URI);
 
 		// Create type parameters
 
@@ -482,7 +482,7 @@ public class DatabaseConnectionPackageImpl extends EPackageImpl implements Datab
 		connectionEClass.getESuperTypes().add(theContextPackage.getContextProvider());
 		connectionCredentialsEClass.getESuperTypes().add(theContextPackage.getAuthenticationUserPassword());
 		preparedStatementEClass.getESuperTypes().add(this.getStatement());
-		statementEClass.getESuperTypes().add(theUtilPackage.getJavaCloseable());
+		statementEClass.getESuperTypes().add(theJavaPackage.getJavaCloseable());
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(connectionEClass, Connection.class, "Connection", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -605,7 +605,7 @@ public class DatabaseConnectionPackageImpl extends EPackageImpl implements Datab
 
 		op = addEOperation(preparedStatementEClass, null, "setNumber", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEInt(), "position", 1, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, theUtilPackage.getJavaNumber(), "value", 1, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, theJavaPackage.getJavaNumber(), "value", 1, 1, IS_UNIQUE, IS_ORDERED);
 		addEException(op, theDatabasePackage.getDatabaseException());
 
 		op = addEOperation(preparedStatementEClass, null, "setString", 0, 1, IS_UNIQUE, IS_ORDERED);

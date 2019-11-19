@@ -19,38 +19,26 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import org.abchip.mimo.context.AuthenticationAnonymous;
+import org.abchip.mimo.context.AuthenticationManager;
 import org.abchip.mimo.context.ContextFactory;
 import org.abchip.mimo.context.ContextProvider;
 import org.abchip.mimo.entity.EntityNameable;
-import org.abchip.mimo.resource.ResourceReader;
 import org.abchip.mimo.resource.ResourceManager;
-import org.abchip.mimo.resource.ResourceProvider;
+import org.abchip.mimo.resource.ResourceReader;
 
 public class GitHubRedirectServlet extends HttpServlet {
 
 	private static final long serialVersionUID = 1L;
 
-    public static final String TokenEndpoint = "https://github.com";
+	public static final String TokenEndpoint = "https://github.com";
 	public static final String AuthorizeUri = "/login/oauth/authorize";
-    public static final String DEFAULT_SCOPE = "user,gist,user:email";
-
+	public static final String DEFAULT_SCOPE = "user,gist,user:email";
 
 	@Inject
 	private ResourceManager resourceManager;
 
-	private ResourceProvider resourceProvider = null;
-
-	protected ResourceProvider getDefaultProvider() {
-		if (this.resourceProvider == null) {
-			synchronized (this) {
-				if (this.resourceProvider == null) {
-					this.resourceProvider = resourceManager.getProvider("UserLogin");
-				}
-			}
-		}
-
-		return this.resourceProvider;
-	}
+	@Inject
+	private AuthenticationManager authenticationManager;
 
 	@Override
 	protected final void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -65,12 +53,12 @@ public class GitHubRedirectServlet extends HttpServlet {
 
 		// anonymous access
 		AuthenticationAnonymous authentication = ContextFactory.eINSTANCE.createAuthenticationAnonymous();
-		ContextProvider contextProvider = getDefaultProvider().login(null, authentication);
+		ContextProvider contextProvider = authenticationManager.login(null, authentication);
 
 		ResourceReader<EntityNameable> oauth2Reader = resourceManager.getResourceReader(contextProvider, "OAuth2GitHub");
 		EntityNameable oauth2GitHub = oauth2Reader.first();
 
-		getDefaultProvider().logout(contextProvider);
+		authenticationManager.logout(contextProvider);
 		contextProvider.getContext().close();
 
 		if (oauth2GitHub == null) {
@@ -82,11 +70,8 @@ public class GitHubRedirectServlet extends HttpServlet {
 		String returnURI = oauth2GitHub.isa().getValue(oauth2GitHub, "returnUrl", false).toString();
 		// Get user authorization code
 		try {
-			String location = TokenEndpoint + AuthorizeUri + "?client_id=" + clientId 
-											+ "&response_type=code" 
-											+ "&scope=" + DEFAULT_SCOPE 
-											+ "&redirect_uri="+ URLEncoder.encode(returnURI, "UTF8")
-											+ "&state=" + session.getId();
+			String location = TokenEndpoint + AuthorizeUri + "?client_id=" + clientId + "&response_type=code" + "&scope=" + DEFAULT_SCOPE + "&redirect_uri="
+					+ URLEncoder.encode(returnURI, "UTF8") + "&state=" + session.getId();
 
 			response.sendRedirect(location);
 		} catch (Exception e) {

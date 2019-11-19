@@ -40,9 +40,9 @@ public class LookupSchemaServlet extends BaseServlet {
 	private static final long serialVersionUID = 1L;
 
 	@Inject
-	private FrameManager frameManager;
-	@Inject
 	private ResourceManager resourceManager;
+	@Inject
+	private FrameManager frameManager;
 
 	protected void execute(ContextProvider contextProvider, HttpServletRequest request, HttpServletResponse response) throws IOException {
 
@@ -50,7 +50,7 @@ public class LookupSchemaServlet extends BaseServlet {
 		String name = request.getParameter("name");
 		String prototype = request.getParameter("prototype");
 
-		Frame<?> frame = frameManager.getFrame(frameName);
+		Frame<?> frame = frameManager.getFrame(contextProvider, frameName);
 		if (frame == null)
 			return;
 
@@ -95,7 +95,7 @@ public class LookupSchemaServlet extends BaseServlet {
 			}
 		}
 
-		ResourceSerializer<Schema> entitySerializer = resourceManager.createResourceSerializer(Schema.class, SerializationType.JAVA_SCRIPT_OBJECT_NOTATION);
+		ResourceSerializer<Schema> entitySerializer = resourceManager.createResourceSerializer(contextProvider, Schema.class, SerializationType.JAVA_SCRIPT_OBJECT_NOTATION);
 		if (schema != null) {
 			completeSchema(contextProvider, schema);
 			entitySerializer.add(schema);
@@ -145,7 +145,7 @@ public class LookupSchemaServlet extends BaseServlet {
 
 		ResourceReader<UiFrameSetup> frameSetupReader = resourceManager.getResourceReader(contextProvider, UiFrameSetup.class, Resource.TENANT_MASTER);
 
-		Frame<?> frame = frameManager.getFrame(domain.getFrame());
+		Frame<?> frame = frameManager.getFrame(contextProvider, domain.getFrame());
 		if (frame == null)
 			return;
 

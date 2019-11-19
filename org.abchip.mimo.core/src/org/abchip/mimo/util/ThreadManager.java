@@ -27,7 +27,7 @@ public interface ThreadManager extends Singleton<ThreadManager> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model nameRequired="true" runnableType="org.abchip.mimo.util.JavaRunnable" runnableRequired="true"
+	 * @model nameRequired="true" runnableType="org.abchip.mimo.java.JavaRunnable" runnableRequired="true"
 	 * @generated
 	 */
 	org.abchip.mimo.util.Thread createThread(String name, Runnable runnable);
@@ -35,7 +35,7 @@ public interface ThreadManager extends Singleton<ThreadManager> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model nameRequired="true" runnableType="org.abchip.mimo.util.JavaRunnable" runnableRequired="true" daemonRequired="true"
+	 * @model nameRequired="true" runnableType="org.abchip.mimo.java.JavaRunnable" runnableRequired="true" daemonRequired="true"
 	 * @generated
 	 */
 	org.abchip.mimo.util.Thread createThread(String name, Runnable runnable, boolean daemon);

@@ -19,6 +19,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import org.abchip.mimo.context.AuthenticationAnonymous;
+import org.abchip.mimo.context.AuthenticationManager;
 import org.abchip.mimo.context.AuthenticationUserPassword;
 import org.abchip.mimo.context.ContextDescription;
 import org.abchip.mimo.context.ContextFactory;
@@ -28,7 +29,6 @@ import org.abchip.mimo.core.http.HttpUtils;
 import org.abchip.mimo.entity.EntityNameable;
 import org.abchip.mimo.entity.SerializationType;
 import org.abchip.mimo.resource.ResourceManager;
-import org.abchip.mimo.resource.ResourceProvider;
 import org.abchip.mimo.resource.ResourceReader;
 import org.abchip.mimo.resource.ResourceSerializer;
 import org.eclipse.jetty.http.HttpHeader;
@@ -40,19 +40,8 @@ public class LoginServlet extends HttpServlet {
 	@Inject
 	private ResourceManager resourceManager;
 
-	private ResourceProvider resourceProvider = null;
-
-	protected ResourceProvider getDefaultProvider() {
-		if (this.resourceProvider == null) {
-			synchronized (this) {
-				if (this.resourceProvider == null) {
-					this.resourceProvider = resourceManager.getProvider("UserLogin");
-				}
-			}
-		}
-
-		return this.resourceProvider;
-	}
+	@Inject
+	private AuthenticationManager authenticationManager;
 
 	@Override
 	protected final void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -80,7 +69,7 @@ public class LoginServlet extends HttpServlet {
 
 			// anonymous access
 			AuthenticationAnonymous authentication = ContextFactory.eINSTANCE.createAuthenticationAnonymous();
-			ContextProvider contextProvider = getDefaultProvider().login(null, authentication);
+			ContextProvider contextProvider = authenticationManager.login(null, authentication);
 
 			String entityName = "OAuth2" + provider;
 
@@ -103,13 +92,14 @@ public class LoginServlet extends HttpServlet {
 			ContextDescription tempContextDescription = ContextFactory.eINSTANCE.createContextDescription();
 			tempContextDescription.setId(session.getId());
 			tempContextDescription.setAnonymous(true);
-			ResourceSerializer<ContextDescription> serializer = resourceManager.createResourceSerializer(ContextDescription.class, SerializationType.JAVA_SCRIPT_OBJECT_NOTATION);
+			ResourceSerializer<ContextDescription> serializer = resourceManager.createResourceSerializer(contextProvider, ContextDescription.class,
+					SerializationType.JAVA_SCRIPT_OBJECT_NOTATION);
 			serializer.add(tempContextDescription);
 			serializer.save(response.getOutputStream());
 
 			response.flushBuffer();
 
-			getDefaultProvider().logout(contextProvider);
+			authenticationManager.logout(contextProvider);
 			contextProvider.getContext().close();
 
 			return;
@@ -132,14 +122,14 @@ public class LoginServlet extends HttpServlet {
 			user = fields[0];
 
 		// invalid session
-		if (contextProvider != null && !this.getDefaultProvider().isActive(contextProvider)) {
+		if (contextProvider != null && !authenticationManager.isActive(contextProvider)) {
 			contextProvider = null;
 		}
 
 		// close previous
 		if (contextProvider != null) {
 			ContextUtils.removeContextProvider(session.getId());
-			this.getDefaultProvider().logout(contextProvider);
+			authenticationManager.logout(contextProvider);
 			contextProvider.getContext().close();
 			contextProvider = null;
 		}
@@ -153,7 +143,7 @@ public class LoginServlet extends HttpServlet {
 			authentication.setPassword(password);
 			authentication.setTenant(tenant);
 
-			contextProvider = this.getDefaultProvider().login(session.getId(), authentication);
+			contextProvider = authenticationManager.login(session.getId(), authentication);
 			ContextUtils.addContextProvider(contextProvider);
 		}
 
@@ -164,7 +154,7 @@ public class LoginServlet extends HttpServlet {
 
 		response.setStatus(HttpServletResponse.SC_OK);
 
-		ResourceSerializer<ContextDescription> serializer = resourceManager.createResourceSerializer(ContextDescription.class, SerializationType.JAVA_SCRIPT_OBJECT_NOTATION);
+		ResourceSerializer<ContextDescription> serializer = resourceManager.createResourceSerializer(contextProvider, ContextDescription.class, SerializationType.JAVA_SCRIPT_OBJECT_NOTATION);
 		serializer.add(contextProvider.getContext().getContextDescription());
 		serializer.save(response.getOutputStream());
 

@@ -85,7 +85,7 @@ public interface ResourceSerializer<E extends Entity> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model exceptions="org.abchip.mimo.util.JavaIOException" contentDataType="org.abchip.mimo.util.JavaInputStream" contentRequired="true" appendRequired="true"
+	 * @model exceptions="org.abchip.mimo.java.JavaIOException" contentDataType="org.abchip.mimo.java.JavaInputStream" contentRequired="true" appendRequired="true"
 	 * @generated
 	 */
 	void load(InputStream content, boolean append) throws IOException;
@@ -93,7 +93,7 @@ public interface ResourceSerializer<E extends Entity> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model exceptions="org.abchip.mimo.util.JavaIOException" contentRequired="true" appendRequired="true"
+	 * @model exceptions="org.abchip.mimo.java.JavaIOException" contentRequired="true" appendRequired="true"
 	 * @generated
 	 */
 	void load(String content, boolean append) throws IOException;
@@ -101,7 +101,7 @@ public interface ResourceSerializer<E extends Entity> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model exceptions="org.abchip.mimo.util.JavaIOException" outputStreamDataType="org.abchip.mimo.util.JavaOutputStream" outputStreamRequired="true"
+	 * @model exceptions="org.abchip.mimo.java.JavaIOException" outputStreamDataType="org.abchip.mimo.java.JavaOutputStream" outputStreamRequired="true"
 	 * @generated
 	 */
 	void save(OutputStream outputStream) throws IOException;

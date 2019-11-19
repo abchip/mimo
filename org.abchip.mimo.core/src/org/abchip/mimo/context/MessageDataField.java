@@ -8,8 +8,8 @@
  */
 package org.abchip.mimo.context;
 
+import org.abchip.mimo.data.DataDef;
 import org.abchip.mimo.entity.Entity;
-import org.abchip.mimo.util.DataDef;
 
 /**
  * <!-- begin-user-doc -->

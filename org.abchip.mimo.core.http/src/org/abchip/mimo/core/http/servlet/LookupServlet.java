@@ -15,20 +15,17 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.abchip.mimo.context.ContextProvider;
+import org.abchip.mimo.data.Strings;
 import org.abchip.mimo.entity.EntityNameable;
-import org.abchip.mimo.entity.Frame;
-import org.abchip.mimo.entity.FrameManager;
 import org.abchip.mimo.entity.SerializationType;
-import org.abchip.mimo.resource.ResourceSerializer;
 import org.abchip.mimo.resource.ResourceManager;
-import org.abchip.mimo.util.Strings;
+import org.abchip.mimo.resource.ResourceReader;
+import org.abchip.mimo.resource.ResourceSerializer;
 
 public class LookupServlet extends BaseServlet {
 
 	private static final long serialVersionUID = 1L;
 
-	@Inject
-	private FrameManager frameManger;
 	@Inject
 	private ResourceManager resourceManager;
 
@@ -41,20 +38,14 @@ public class LookupServlet extends BaseServlet {
 		String frameName = Strings.qINSTANCE.firstToUpper(request.getParameter("frame"));
 		String name = request.getParameter("name");
 
-		@SuppressWarnings("unchecked")
-		Frame<E> frame = (Frame<E>) frameManger.getFrameReader(contextProvider).lookup(frameName);
-		if (frame == null) {
-			response.setStatus(HttpServletResponse.SC_BAD_REQUEST);
-			return;
-		}
-
-		E entity = resourceManager.getResourceReader(contextProvider, frame).lookup(name);
+		ResourceReader<E> entityReader = resourceManager.getResourceReader(contextProvider, frameName);
+		E entity = entityReader.lookup(name);
 		if (entity == null)
 			response.setStatus(HttpServletResponse.SC_NOT_FOUND);
 		else {
 			response.setStatus(HttpServletResponse.SC_FOUND);
-			
-			ResourceSerializer<E> entitySerializer = resourceManager.createResourceSerializer(frame, SerializationType.JAVA_SCRIPT_OBJECT_NOTATION);
+
+			ResourceSerializer<E> entitySerializer = resourceManager.createResourceSerializer(contextProvider, frameName, SerializationType.JAVA_SCRIPT_OBJECT_NOTATION);
 			entitySerializer.add(entity);
 			entitySerializer.save(response.getOutputStream());
 		}

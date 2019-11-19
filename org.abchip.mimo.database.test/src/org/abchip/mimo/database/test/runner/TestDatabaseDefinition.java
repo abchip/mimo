@@ -15,6 +15,8 @@ import java.util.List;
 
 import javax.inject.Inject;
 
+import org.abchip.mimo.data.CharacterDef;
+import org.abchip.mimo.data.DataFactory;
 import org.abchip.mimo.database.DatabaseManager;
 import org.abchip.mimo.database.connection.Connection;
 import org.abchip.mimo.database.connection.ConnectionManager;
@@ -30,9 +32,7 @@ import org.abchip.mimo.database.definition.ViewDef;
 import org.abchip.mimo.tester.Test;
 import org.abchip.mimo.tester.TestStarted;
 import org.abchip.mimo.tester.base.BaseTestHelper;
-import org.abchip.mimo.util.CharacterDef;
 import org.abchip.mimo.util.Files;
-import org.abchip.mimo.util.UtilFactory;
 import org.eclipse.datatools.modelbase.sql.constraints.Index;
 import org.eclipse.datatools.modelbase.sql.schema.SQLObject;
 import org.eclipse.datatools.modelbase.sql.schema.Schema;
@@ -67,7 +67,7 @@ public class TestDatabaseDefinition {
 		schema = databaseManager.createSchema(connection, schemaName, schemaDef);
 
 		// tables
-		for (URL tableURL: connection.getContext().getResources(this.getClass(), "/resources/schemas/" + schemaName + "/tables")) {
+		for (URL tableURL : connection.getContext().getResources(this.getClass(), "/resources/schemas/" + schemaName + "/tables")) {
 			String fileName = files.getBaseName(tableURL.getFile());
 
 			DatabaseObjectDef file = (DatabaseObjectDef) BaseTestHelper.load(tableURL);
@@ -83,7 +83,7 @@ public class TestDatabaseDefinition {
 		}
 
 		// views
-		for (URL viewURL: connection.getContext().getResources(this.getClass(), "/resources/schemas/" + schemaName + "/views")) {
+		for (URL viewURL : connection.getContext().getResources(this.getClass(), "/resources/schemas/" + schemaName + "/views")) {
 			String fileName = files.getBaseName(viewURL.getFile());
 
 			DatabaseObjectDef file = (DatabaseObjectDef) BaseTestHelper.load(viewURL);
@@ -99,7 +99,7 @@ public class TestDatabaseDefinition {
 		}
 
 		// indices
-		for (URL indexURL: connection.getContext().getResources(this.getClass(), "/resources/schemas/" + schemaName + "/indices")) {
+		for (URL indexURL : connection.getContext().getResources(this.getClass(), "/resources/schemas/" + schemaName + "/indices")) {
 			String fileName = files.getBaseName(indexURL.getFile());
 
 			DatabaseObjectDef file = (DatabaseObjectDef) BaseTestHelper.load(indexURL);
@@ -149,7 +149,7 @@ public class TestDatabaseDefinition {
 
 		for (int i = 1; i <= 3; i++) {
 			TableColumnDef column = DatabaseDefinitionFactory.eINSTANCE.createTableColumnDef();
-			CharacterDef characterDef = UtilFactory.eINSTANCE.createCharacterDef();
+			CharacterDef characterDef = DataFactory.eINSTANCE.createCharacterDef();
 			characterDef.setLength(10);
 			column.setDefinition(characterDef);
 			column.setName("COL" + i);

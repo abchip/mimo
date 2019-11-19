@@ -28,11 +28,10 @@ import org.abchip.mimo.biz.party.party.Person;
 import org.abchip.mimo.biz.party.party.RoleType;
 import org.abchip.mimo.context.ContextProvider;
 import org.abchip.mimo.core.http.servlet.BaseServlet;
+import org.abchip.mimo.data.Strings;
 import org.abchip.mimo.entity.EntityNameable;
-import org.abchip.mimo.entity.FrameManager;
 import org.abchip.mimo.resource.ResourceManager;
 import org.abchip.mimo.resource.ResourceWriter;
-import org.abchip.mimo.util.Strings;
 import org.apache.poi.hssf.usermodel.HSSFCell;
 import org.apache.poi.hssf.usermodel.HSSFRow;
 import org.apache.poi.hssf.usermodel.HSSFSheet;
@@ -43,8 +42,6 @@ public class ImportPeopleServlet extends BaseServlet {
 
 	private static final long serialVersionUID = 1L;
 
-	@Inject
-	private FrameManager frameManager;
 	@Inject
 	private ResourceManager resourceManager;
 
@@ -87,9 +84,9 @@ public class ImportPeopleServlet extends BaseServlet {
 
 						Person person = PartyFactory.eINSTANCE.createPerson();
 						// Party
-						person.setPreferredCurrencyUomId(frameManager.getFrame(Uom.class).createProxy("EUR"));
-						person.setStatusId(frameManager.getFrame(StatusItem.class).createProxy("PARTY_ENABLED"));
-						person.setPartyTypeId(frameManager.getFrame(PartyType.class).createProxy("PERSON"));
+						person.setPreferredCurrencyUomId(resourceManager.getFrame(contextProvider, Uom.class).createProxy("EUR"));
+						person.setStatusId(resourceManager.getFrame(contextProvider, StatusItem.class).createProxy("PARTY_ENABLED"));
+						person.setPartyTypeId(resourceManager.getFrame(contextProvider, PartyType.class).createProxy("PERSON"));
 						// Person
 						person.setPartyId(id);
 						person.setFirstName(Strings.qINSTANCE.escape(name));
@@ -99,7 +96,7 @@ public class ImportPeopleServlet extends BaseServlet {
 						// Party Role
 						PartyRole partyRole = PartyFactory.eINSTANCE.createPartyRole();
 						partyRole.setPartyId(person);
-						partyRole.setRoleTypeId(frameManager.getFrame(RoleType.class).createProxy("CUSTOMER"));
+						partyRole.setRoleTypeId(resourceManager.getFrame(contextProvider, RoleType.class).createProxy("CUSTOMER"));
 						partyRoleWriter.create(partyRole, true);
 
 						// PartyTaxAuthInfo
@@ -112,16 +109,6 @@ public class ImportPeopleServlet extends BaseServlet {
 						partyTaxAuthInfo.setIsExempt(true);
 						partyTaxAuthInfo.setIsNexus(true);
 						partyTaxAuthInfoWriter.create(partyTaxAuthInfo, true);
-
-						// ContactMech (TODO)
-						/*
-						 * ContactMech contactMech = frameManager.createEntity(ContactMech.class);
-						 * contactMech.setCntactMechId(???);
-						 * contactMech.setContactMechTypeId("POSTAL_ADDRESS");
-						 */
-						// PartyContactMech
-						// PartyContactMechPurpose
-						// PostalAddress
 					}
 				}
 			}

@@ -149,5 +149,13 @@ public interface ResourceReader<E extends EntityNameable> {
 	 * @model kind="operation" required="true"
 	 * @generated
 	 */
+	String getTenant();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model kind="operation" required="true"
+	 * @generated
+	 */
 	ContextProvider getContextProvider();
 } // Resource

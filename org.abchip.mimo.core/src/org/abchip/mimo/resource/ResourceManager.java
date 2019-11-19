@@ -28,98 +28,26 @@ public interface ResourceManager {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model klassRequired="true" serializationTypeRequired="true"
+	 * @model contextProviderRequired="true" klassRequired="true" serializationTypeRequired="true"
 	 * @generated
 	 */
-	<E extends Entity> ResourceSerializer<E> createResourceSerializer(Class<E> klass, SerializationType serializationType);
+	<E extends Entity> ResourceSerializer<E> createResourceSerializer(ContextProvider contextProvider, Class<E> klass, SerializationType serializationType);
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model frameRequired="true" serializationTypeRequired="true"
+	 * @model contextProviderRequired="true" frameRequired="true" serializationTypeRequired="true"
 	 * @generated
 	 */
-	<E extends Entity> ResourceSerializer<E> createResourceSerializer(Frame<E> frame, SerializationType serializationType);
+	<E extends Entity> ResourceSerializer<E> createResourceSerializer(ContextProvider contextProvider, Frame<E> frame, SerializationType serializationType);
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model frameRequired="true" serializationTypeRequired="true"
+	 * @model contextProviderRequired="true" frameRequired="true" serializationTypeRequired="true"
 	 * @generated
 	 */
-	<E extends Entity> ResourceSerializer<E> createResourceSerializer(String frame, SerializationType serializationType);
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model klassRequired="true" listenerRequired="true"
-	 * @generated
-	 */
-	<E extends EntityNameable> void registerListener(Class<E> klass, ResourceListener<E> listener);
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model frameRequired="true" listenerRequired="true"
-	 * @generated
-	 */
-	<E extends EntityNameable> void registerListener(Frame<E> frame, ResourceListener<E> listener);
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model frameRequired="true" listenerRequired="true"
-	 * @generated
-	 */
-	<E extends EntityNameable> void registerListener(String frame, ResourceListener<E> listener);
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model klassRequired="true" providerRequired="true"
-	 * @generated
-	 */
-	<E extends EntityNameable> void registerProvider(Class<E> klass, ResourceProvider provider);
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model frameRequired="true" providerRequired="true"
-	 * @generated
-	 */
-	<E extends EntityNameable> void registerProvider(Frame<E> frame, ResourceProvider provider);
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model frameRequired="true" providerRequired="true"
-	 * @generated
-	 */
-	<E extends EntityNameable> void registerProvider(String frame, ResourceProvider provider);
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model klassRequired="true"
-	 * @generated
-	 */
-	<E extends EntityNameable> ResourceProvider getProvider(Class<E> klass);
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model frameRequired="true"
-	 * @generated
-	 */
-	<E extends EntityNameable> ResourceProvider getProvider(Frame<E> frame);
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model frameRequired="true"
-	 * @generated
-	 */
-	<E extends EntityNameable> ResourceProvider getProvider(String frame);
+	<E extends Entity> ResourceSerializer<E> createResourceSerializer(ContextProvider contextProvider, String frame, SerializationType serializationType);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -216,5 +144,77 @@ public interface ResourceManager {
 	 * @generated
 	 */
 	<E extends EntityNameable> ResourceWriter<E> getResourceWriter(ContextProvider contextProvider, String frame, String tenant);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model contextProviderRequired="true" klassRequired="true"
+	 * @generated
+	 */
+	<E extends EntityNameable> ResourceProvider getProvider(ContextProvider contextProvider, Class<E> klass);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model contextProviderRequired="true" frameRequired="true"
+	 * @generated
+	 */
+	<E extends EntityNameable> ResourceProvider getProvider(ContextProvider contextProvider, Frame<E> frame);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model contextProviderRequired="true" frameRequired="true"
+	 * @generated
+	 */
+	<E extends EntityNameable> ResourceProvider getProvider(ContextProvider contextProvider, String frame);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model contextProviderRequired="true" klassRequired="true" listenerRequired="true"
+	 * @generated
+	 */
+	<E extends EntityNameable> void registerListener(ContextProvider contextProvider, Class<E> klass, ResourceListener<E> listener);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model contextProviderRequired="true" frameRequired="true" listenerRequired="true"
+	 * @generated
+	 */
+	<E extends EntityNameable> void registerListener(ContextProvider contextProvider, Frame<E> frame, ResourceListener<E> listener);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model contextProviderRequired="true" frameRequired="true" listenerRequired="true"
+	 * @generated
+	 */
+	<E extends EntityNameable> void registerListener(ContextProvider contextProvider, String frame, ResourceListener<E> listener);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model contextProviderRequired="true" klassRequired="true" providerRequired="true"
+	 * @generated
+	 */
+	<E extends EntityNameable> void registerProvider(ContextProvider contextProvider, Class<E> klass, ResourceProvider provider);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model contextProviderRequired="true" frameRequired="true" providerRequired="true"
+	 * @generated
+	 */
+	<E extends EntityNameable> void registerProvider(ContextProvider contextProvider, Frame<E> frame, ResourceProvider provider);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model contextProviderRequired="true" frameRequired="true" providerRequired="true"
+	 * @generated
+	 */
+	<E extends EntityNameable> void registerProvider(ContextProvider contextProvider, String frame, ResourceProvider provider);
 
 } // ResourceManager

@@ -37,8 +37,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 public abstract class ResourceReaderImpl<E extends EntityNameable> extends MinimalEObjectImpl.Container implements ResourceReader<E> {
 	/**
 	 * The cached value of the '{@link #getNotifier() <em>Notifier</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see #getNotifier()
 	 * @generated
 	 * @ordered
@@ -81,8 +80,7 @@ public abstract class ResourceReaderImpl<E extends EntityNameable> extends Minim
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public ResourceNotifier<E> basicGetNotifier() {
@@ -216,11 +214,18 @@ public abstract class ResourceReaderImpl<E extends EntityNameable> extends Minim
 	 * @generated NOT
 	 */
 	@Override
+	public abstract String getTenant();
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated NOT
+	 */
+	@Override
 	public abstract ContextProvider getContextProvider();
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -234,8 +239,7 @@ public abstract class ResourceReaderImpl<E extends EntityNameable> extends Minim
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -250,8 +254,7 @@ public abstract class ResourceReaderImpl<E extends EntityNameable> extends Minim
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -265,8 +268,7 @@ public abstract class ResourceReaderImpl<E extends EntityNameable> extends Minim
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override

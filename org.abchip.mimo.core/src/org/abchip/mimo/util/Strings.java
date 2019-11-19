@@ -1,10 +1,9 @@
 /**
- *  Copyright (c) 2017, 2019 ABChip and others.
- *  All rights reserved. This program and the accompanying materials
- *  are made available under the terms of the Eclipse Public License v1.0
- *  which accompanies this distribution, and is available at
- *  http://www.eclipse.org/legal/epl-v10.html
- *
+ * Copyright (c) 2017, 2019 ABChip and others.
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  */
 package org.abchip.mimo.util;
 
@@ -21,9 +20,6 @@ import java.util.List;
  * @generated
  */
 public interface Strings extends Singleton<Strings> {
-	
-	Strings qINSTANCE = null;
-	
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -31,6 +27,22 @@ public interface Strings extends Singleton<Strings> {
 	 * @generated
 	 */
 	String appendChars(String string, String chars, int times, boolean before);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model required="true" string1Required="true" string2Required="true"
+	 * @generated
+	 */
+	Boolean checkEquals(String string1, String string2);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model required="true" stringRequired="true"
+	 * @generated
+	 */
+	String escape(String string);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -54,38 +66,6 @@ public interface Strings extends Singleton<Strings> {
 	 * @model required="true" stringRequired="true"
 	 * @generated
 	 */
-	String removeFirstChar(String string);
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model required="true" stringRequired="true"
-	 * @generated
-	 */
-	String removeLastChar(String string);
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model required="true" stringRequired="true"
-	 * @generated
-	 */
-	String trimL(String string);
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model required="true" stringRequired="true"
-	 * @generated
-	 */
-	String trimR(String string);
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model required="true" stringRequired="true"
-	 * @generated
-	 */
 	Boolean isEmptyTrim(String string);
 
 	/**
@@ -95,22 +75,6 @@ public interface Strings extends Singleton<Strings> {
 	 * @generated
 	 */
 	Boolean isOneOf(String string, List<String> values);
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model required="true" string1Required="true" string2Required="true"
-	 * @generated
-	 */
-	Boolean checkEquals(String string1, String string2);
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model required="true" stringRequired="true"
-	 * @generated
-	 */
-	String escape(String string);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -139,10 +103,26 @@ public interface Strings extends Singleton<Strings> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model required="true" nrOfCharsRequired="true" fillerRequired="true"
+	 * @model required="true" stringRequired="true"
 	 * @generated
 	 */
-	String string(int nrOfChars, String filler);
+	String removeFirstChar(String string);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model required="true" stringRequired="true"
+	 * @generated
+	 */
+	String removeLastChar(String string);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model required="true" stringRequired="true" nrOfCharsRequired="true"
+	 * @generated
+	 */
+	String right(String string, int nrOfChars);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -163,9 +143,25 @@ public interface Strings extends Singleton<Strings> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model required="true" stringRequired="true" nrOfCharsRequired="true"
+	 * @model required="true" nrOfCharsRequired="true" fillerRequired="true"
 	 * @generated
 	 */
-	String right(String string, int nrOfChars);
+	String string(int nrOfChars, String filler);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model required="true" stringRequired="true"
+	 * @generated
+	 */
+	String trimL(String string);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model required="true" stringRequired="true"
+	 * @generated
+	 */
+	String trimR(String string);
 
 } // Strings

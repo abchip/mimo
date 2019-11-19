@@ -28,7 +28,7 @@ public interface DefinitionParser extends StatementParser {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model exceptions="org.abchip.mimo.database.DatabaseException" streamDataType="org.abchip.mimo.util.JavaInputStream" streamRequired="true"
+	 * @model exceptions="org.abchip.mimo.database.DatabaseException" streamDataType="org.abchip.mimo.java.JavaInputStream" streamRequired="true"
 	 * @generated
 	 */
 	DefinitionParseResult parseDefinition(InputStream stream) throws SQLException;

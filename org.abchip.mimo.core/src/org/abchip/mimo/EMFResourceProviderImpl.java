@@ -17,19 +17,19 @@ import org.abchip.mimo.context.ContextProvider;
 import org.abchip.mimo.entity.EntityEnum;
 import org.abchip.mimo.entity.EntityNameable;
 import org.abchip.mimo.entity.Frame;
-import org.abchip.mimo.entity.FrameManager;
 import org.abchip.mimo.resource.Resource;
 import org.abchip.mimo.resource.ResourceConfig;
 import org.abchip.mimo.resource.ResourceFactory;
 import org.abchip.mimo.resource.ResourceManager;
+import org.abchip.mimo.resource.ResourceReader;
 import org.abchip.mimo.resource.impl.ResourceProviderImpl;
 
 public class EMFResourceProviderImpl extends ResourceProviderImpl {
 
 	@Inject
 	private ResourceManager resourceManager;
-	@Inject
-	private FrameManager frameManager;
+
+	private ResourceReader<Frame<?>> frameReader;
 
 	private ResourceConfig resourceConfig;
 
@@ -59,7 +59,7 @@ public class EMFResourceProviderImpl extends ResourceProviderImpl {
 		Resource<E> resource = null;
 
 		if (isFrame(frame)) {
-			resource = new EMFResourceImpl<E>(frame, (Map<String, E>) EMFFrameHelper.getFrames(frameManager));
+			resource = new EMFResourceImpl<E>(frame, (Map<String, E>) EMFFrameHelper.getFrames(frameReader));
 		} else if (isEnum(frame)) {
 			resource = new EMFResourceImpl<E>(frame, (Map<String, E>) EMFFrameHelper.getEnumerators((Frame<EntityEnum>) frame));
 		}

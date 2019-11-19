@@ -18,6 +18,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import org.abchip.mimo.context.AuthenticationAnonymous;
+import org.abchip.mimo.context.AuthenticationManager;
 import org.abchip.mimo.context.ContextDescription;
 import org.abchip.mimo.context.ContextFactory;
 import org.abchip.mimo.context.ContextProvider;
@@ -25,7 +26,6 @@ import org.abchip.mimo.core.http.ContextUtils;
 import org.abchip.mimo.core.http.HttpUtils;
 import org.abchip.mimo.entity.SerializationType;
 import org.abchip.mimo.resource.ResourceManager;
-import org.abchip.mimo.resource.ResourceProvider;
 import org.abchip.mimo.resource.ResourceSerializer;
 
 public class StatusServlet extends HttpServlet {
@@ -34,21 +34,9 @@ public class StatusServlet extends HttpServlet {
 
 	@Inject
 	private ResourceManager resourceManager;
-
-	private ResourceProvider resourceProvider = null;
-
-	protected ResourceProvider getDefaultProvider() {
-		if (this.resourceProvider == null) {
-			synchronized (this) {
-				if (this.resourceProvider == null) {
-					this.resourceProvider = resourceManager.getProvider("UserLogin");
-				}
-			}
-		}
-
-		return this.resourceProvider;
-	}
-
+	@Inject
+	private AuthenticationManager authenticationManager;
+	
 	@Override
 	protected final void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		doPost(request, response);
@@ -63,7 +51,7 @@ public class StatusServlet extends HttpServlet {
 		ContextProvider contextProvider = ContextUtils.getContextProvider(session.getId());
 
 		// invalid session
-		if (contextProvider != null && !this.getDefaultProvider().isActive(contextProvider)) {
+		if (contextProvider != null && !authenticationManager.isActive(contextProvider)) {
 			contextProvider = null;
 			// TODO reactivate context on provider
 		}
@@ -73,7 +61,7 @@ public class StatusServlet extends HttpServlet {
 			ContextUtils.removeContextProvider(session.getId());
 
 			AuthenticationAnonymous authentication = ContextFactory.eINSTANCE.createAuthenticationAnonymous();
-			contextProvider = getDefaultProvider().login(session.getId(), authentication);
+			contextProvider = authenticationManager.login(session.getId(), authentication);
 
 			ContextUtils.addContextProvider(contextProvider);
 		}
@@ -85,7 +73,7 @@ public class StatusServlet extends HttpServlet {
 
 		response.setStatus(HttpServletResponse.SC_ACCEPTED);
 
-		ResourceSerializer<ContextDescription> serializer = resourceManager.createResourceSerializer(ContextDescription.class, SerializationType.JAVA_SCRIPT_OBJECT_NOTATION);
+		ResourceSerializer<ContextDescription> serializer = resourceManager.createResourceSerializer(contextProvider, ContextDescription.class, SerializationType.JAVA_SCRIPT_OBJECT_NOTATION);
 		serializer.add(contextProvider.getContext().getContextDescription());
 		serializer.save(response.getOutputStream());
 

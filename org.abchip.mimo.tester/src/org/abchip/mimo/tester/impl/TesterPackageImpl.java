@@ -11,6 +11,7 @@ import org.abchip.mimo.MimoPackage;
 import org.abchip.mimo.context.ContextPackage;
 
 import org.abchip.mimo.entity.EntityPackage;
+import org.abchip.mimo.java.JavaPackage;
 import org.abchip.mimo.tester.Asserter;
 import org.abchip.mimo.tester.AssertionFailed;
 import org.abchip.mimo.tester.AssertionResult;
@@ -29,7 +30,6 @@ import org.abchip.mimo.tester.TestSuiteRunner;
 import org.abchip.mimo.tester.TestUnitRunner;
 import org.abchip.mimo.tester.TesterFactory;
 import org.abchip.mimo.tester.TesterPackage;
-import org.abchip.mimo.util.UtilPackage;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EEnum;
@@ -635,7 +635,7 @@ public class TesterPackageImpl extends EPackageImpl implements TesterPackage {
 		// Obtain other dependent packages
 		EntityPackage theEntityPackage = (EntityPackage)EPackage.Registry.INSTANCE.getEPackage(EntityPackage.eNS_URI);
 		ContextPackage theContextPackage = (ContextPackage)EPackage.Registry.INSTANCE.getEPackage(ContextPackage.eNS_URI);
-		UtilPackage theUtilPackage = (UtilPackage)EPackage.Registry.INSTANCE.getEPackage(UtilPackage.eNS_URI);
+		JavaPackage theJavaPackage = (JavaPackage)EPackage.Registry.INSTANCE.getEPackage(JavaPackage.eNS_URI);
 
 		// Create type parameters
 
@@ -650,15 +650,15 @@ public class TesterPackageImpl extends EPackageImpl implements TesterPackage {
 		testResultEClass.getESuperTypes().add(theEntityPackage.getEntity());
 		EGenericType g1 = createEGenericType(this.getTestRunner());
 		testSuiteRunnerEClass.getEGenericSuperTypes().add(g1);
-		g1 = createEGenericType(theUtilPackage.getJavaCallable());
-		EGenericType g2 = createEGenericType(theUtilPackage.getJavaList());
+		g1 = createEGenericType(theJavaPackage.getJavaCallable());
+		EGenericType g2 = createEGenericType(theJavaPackage.getJavaList());
 		g1.getETypeArguments().add(g2);
 		EGenericType g3 = createEGenericType(this.getTestResult());
 		g2.getETypeArguments().add(g3);
 		testSuiteRunnerEClass.getEGenericSuperTypes().add(g1);
 		g1 = createEGenericType(this.getTestRunner());
 		testUnitRunnerEClass.getEGenericSuperTypes().add(g1);
-		g1 = createEGenericType(theUtilPackage.getJavaCallable());
+		g1 = createEGenericType(theJavaPackage.getJavaCallable());
 		g2 = createEGenericType(this.getTestResult());
 		g1.getETypeArguments().add(g2);
 		testUnitRunnerEClass.getEGenericSuperTypes().add(g1);

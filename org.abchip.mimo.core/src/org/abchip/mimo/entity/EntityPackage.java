@@ -8,7 +8,7 @@
  */
 package org.abchip.mimo.entity;
 
-import org.abchip.mimo.util.UtilPackage;
+import org.abchip.mimo.java.JavaPackage;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EEnum;
@@ -358,7 +358,7 @@ public interface EntityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_ITERATOR_FEATURE_COUNT = UtilPackage.JAVA_ITERATOR_FEATURE_COUNT + 0;
+	int ENTITY_ITERATOR_FEATURE_COUNT = JavaPackage.JAVA_ITERATOR_FEATURE_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.entity.impl.FacetImpl <em>Facet</em>}' class.
@@ -379,16 +379,6 @@ public interface EntityPackage extends EPackage {
 	 * @generated
 	 */
 	int FRAME = 12;
-
-	/**
-	 * The meta object id for the '{@link org.abchip.mimo.entity.FrameManager <em>Frame Manager</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.abchip.mimo.entity.FrameManager
-	 * @see org.abchip.mimo.entity.impl.EntityPackageImpl#getFrameManager()
-	 * @generated
-	 */
-	int FRAME_MANAGER = 13;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.entity.Nameable <em>Nameable</em>}' class.
@@ -545,6 +535,16 @@ public interface EntityPackage extends EPackage {
 	 * @ordered
 	 */
 	int FRAME_FEATURE_COUNT = ENTITY_NAMEABLE_FEATURE_COUNT + 9;
+
+	/**
+	 * The meta object id for the '{@link org.abchip.mimo.entity.FrameManager <em>Frame Manager</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.abchip.mimo.entity.FrameManager
+	 * @see org.abchip.mimo.entity.impl.EntityPackageImpl#getFrameManager()
+	 * @generated
+	 */
+	int FRAME_MANAGER = 13;
 
 	/**
 	 * The number of structural features of the '<em>Frame Manager</em>' class.

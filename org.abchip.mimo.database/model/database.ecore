@@ -298,7 +298,7 @@
       </eOperations>
       <eOperations name="setNumber" eExceptions="#//DatabaseException">
         <eParameters name="position" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
-        <eParameters name="value" lowerBound="1" eType="ecore:EClass ../../org.abchip.mimo.core/model/mimo.ecore#//util/JavaNumber"/>
+        <eParameters name="value" lowerBound="1" eType="ecore:EClass ../../org.abchip.mimo.core/model/mimo.ecore#//java/JavaNumber"/>
       </eOperations>
       <eOperations name="setString" eExceptions="#//DatabaseException">
         <eParameters name="position" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
@@ -310,7 +310,7 @@
       </eOperations>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="Statement" abstract="true" interface="true"
-        eSuperTypes="../../org.abchip.mimo.core/model/mimo.ecore#//util/JavaCloseable">
+        eSuperTypes="../../org.abchip.mimo.core/model/mimo.ecore#//java/JavaCloseable">
       <eOperations name="close" lowerBound="1"/>
       <eOperations name="execute" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
           eExceptions="#//DatabaseException">
@@ -397,7 +397,7 @@
         interface="true" eSuperTypes="#//query/StatementParser">
       <eOperations name="parseDefinition" eType="#//definition/DefinitionParseResult"
           eExceptions="#//DatabaseException">
-        <eParameters name="stream" lowerBound="1" eType="ecore:EDataType ../../org.abchip.mimo.core/model/mimo.ecore#//util/JavaInputStream"/>
+        <eParameters name="stream" lowerBound="1" eType="ecore:EDataType ../../org.abchip.mimo.core/model/mimo.ecore#//java/JavaInputStream"/>
       </eOperations>
       <eOperations name="parseDefinition" eType="#//definition/DefinitionParseResult"
           eExceptions="#//DatabaseException">
@@ -585,7 +585,7 @@
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="default" eType="ecore:EDataType ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EBoolean"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="definition" lowerBound="1"
           containment="true">
-        <eGenericType eClassifier="ecore:EClass ../../org.abchip.mimo.core/model/mimo.ecore#//util/DataDef">
+        <eGenericType eClassifier="ecore:EClass ../../org.abchip.mimo.core/model/mimo.ecore#//data/DataDef">
           <eTypeArguments/>
         </eGenericType>
       </eStructuralFeatures>
@@ -654,7 +654,7 @@
     <eClassifiers xsi:type="ecore:EClass" name="QueryParser" abstract="true" interface="true"
         eSuperTypes="#//query/StatementParser">
       <eOperations name="parseQuery" eType="#//query/SQLQueryParseResult" eExceptions="#//DatabaseException">
-        <eParameters name="stream" lowerBound="1" eType="ecore:EDataType ../../org.abchip.mimo.core/model/mimo.ecore#//util/JavaInputStream"/>
+        <eParameters name="stream" lowerBound="1" eType="ecore:EDataType ../../org.abchip.mimo.core/model/mimo.ecore#//java/JavaInputStream"/>
       </eOperations>
       <eOperations name="parseQuery" eType="#//query/SQLQueryParseResult" eExceptions="#//DatabaseException">
         <eParameters name="sql" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>

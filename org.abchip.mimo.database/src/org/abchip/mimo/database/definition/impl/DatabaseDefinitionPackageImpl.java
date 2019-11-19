@@ -10,6 +10,7 @@ package org.abchip.mimo.database.definition.impl;
 
 import org.abchip.mimo.MimoPackage;
 import org.abchip.mimo.context.ContextPackage;
+import org.abchip.mimo.data.DataPackage;
 import org.abchip.mimo.database.DatabasePackage;
 
 import org.abchip.mimo.database.connection.DatabaseConnectionPackage;
@@ -60,7 +61,7 @@ import org.abchip.mimo.database.query.DatabaseQueryPackage;
 import org.abchip.mimo.database.query.impl.DatabaseQueryPackageImpl;
 
 import org.abchip.mimo.entity.EntityPackage;
-import org.abchip.mimo.util.UtilPackage;
+import org.abchip.mimo.java.JavaPackage;
 import org.eclipse.datatools.modelbase.sql.accesscontrol.SQLAccessControlPackage;
 
 import org.eclipse.datatools.modelbase.sql.constraints.SQLConstraintsPackage;
@@ -1424,12 +1425,13 @@ public class DatabaseDefinitionPackageImpl extends EPackageImpl implements Datab
 		DatabasePackage theDatabasePackage = (DatabasePackage)EPackage.Registry.INSTANCE.getEPackage(DatabasePackage.eNS_URI);
 		EcorePackage theEcorePackage = (EcorePackage)EPackage.Registry.INSTANCE.getEPackage(EcorePackage.eNS_URI);
 		DatabaseQueryPackage theDatabaseQueryPackage = (DatabaseQueryPackage)EPackage.Registry.INSTANCE.getEPackage(DatabaseQueryPackage.eNS_URI);
-		UtilPackage theUtilPackage = (UtilPackage)EPackage.Registry.INSTANCE.getEPackage(UtilPackage.eNS_URI);
+		JavaPackage theJavaPackage = (JavaPackage)EPackage.Registry.INSTANCE.getEPackage(JavaPackage.eNS_URI);
 		ContextPackage theContextPackage = (ContextPackage)EPackage.Registry.INSTANCE.getEPackage(ContextPackage.eNS_URI);
 		DatabaseConnectionPackage theDatabaseConnectionPackage = (DatabaseConnectionPackage)EPackage.Registry.INSTANCE.getEPackage(DatabaseConnectionPackage.eNS_URI);
 		SQLTablesPackage theSQLTablesPackage = (SQLTablesPackage)EPackage.Registry.INSTANCE.getEPackage(SQLTablesPackage.eNS_URI);
 		SQLSchemaPackage theSQLSchemaPackage = (SQLSchemaPackage)EPackage.Registry.INSTANCE.getEPackage(SQLSchemaPackage.eNS_URI);
 		SQLConstraintsPackage theSQLConstraintsPackage = (SQLConstraintsPackage)EPackage.Registry.INSTANCE.getEPackage(SQLConstraintsPackage.eNS_URI);
+		DataPackage theDataPackage = (DataPackage)EPackage.Registry.INSTANCE.getEPackage(DataPackage.eNS_URI);
 		EntityPackage theEntityPackage = (EntityPackage)EPackage.Registry.INSTANCE.getEPackage(EntityPackage.eNS_URI);
 
 		// Create type parameters
@@ -1508,7 +1510,7 @@ public class DatabaseDefinitionPackageImpl extends EPackageImpl implements Datab
 		initEClass(definitionParserEClass, DefinitionParser.class, "DefinitionParser", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		EOperation op = addEOperation(definitionParserEClass, this.getDefinitionParseResult(), "parseDefinition", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, theUtilPackage.getJavaInputStream(), "stream", 1, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, theJavaPackage.getJavaInputStream(), "stream", 1, 1, IS_UNIQUE, IS_ORDERED);
 		addEException(op, theDatabasePackage.getDatabaseException());
 
 		op = addEOperation(definitionParserEClass, this.getDefinitionParseResult(), "parseDefinition", 0, 1, IS_UNIQUE, IS_ORDERED);
@@ -1666,7 +1668,7 @@ public class DatabaseDefinitionPackageImpl extends EPackageImpl implements Datab
 
 		initEClass(tableColumnDefEClass, TableColumnDef.class, "TableColumnDef", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getTableColumnDef_Default(), theEcorePackage.getEBoolean(), "default", null, 0, 1, TableColumnDef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		g1 = createEGenericType(theUtilPackage.getDataDef());
+		g1 = createEGenericType(theDataPackage.getDataDef());
 		g2 = createEGenericType();
 		g1.getETypeArguments().add(g2);
 		initEReference(getTableColumnDef_Definition(), g1, null, "definition", null, 1, 1, TableColumnDef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

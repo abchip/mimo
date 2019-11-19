@@ -13,6 +13,8 @@ import java.util.List;
 import javax.inject.Inject;
 
 import org.abchip.mimo.context.ContextRoot;
+import org.abchip.mimo.data.DataFactory;
+import org.abchip.mimo.data.IdentityDef;
 import org.abchip.mimo.database.CatalogContainer;
 import org.abchip.mimo.database.DatabaseContainer;
 import org.abchip.mimo.database.DatabaseCoreRuntimeException;
@@ -31,8 +33,6 @@ import org.abchip.mimo.database.definition.ViewDef;
 import org.abchip.mimo.database.query.QueryParser;
 import org.abchip.mimo.database.query.QueryParserRegistry;
 import org.abchip.mimo.database.query.QueryWriter;
-import org.abchip.mimo.util.IdentityDef;
-import org.abchip.mimo.util.UtilFactory;
 import org.eclipse.datatools.modelbase.sql.constraints.Index;
 import org.eclipse.datatools.modelbase.sql.query.QuerySelect;
 import org.eclipse.datatools.modelbase.sql.query.QuerySelectStatement;
@@ -128,7 +128,7 @@ public class BaseDatabaseManagerImpl implements DatabaseManager {
 			tableDef = (TableDef) EcoreUtil.copy((EObject) tableDef);
 
 			TableColumnDef pkTableComColumnDef = DatabaseDefinitionFactory.eINSTANCE.createTableColumnDef();
-			IdentityDef identityDef = UtilFactory.eINSTANCE.createIdentityDef();
+			IdentityDef identityDef = DataFactory.eINSTANCE.createIdentityDef();
 			pkTableComColumnDef.setDefinition(identityDef);
 
 			pkTableComColumnDef.setName(TABLE_COLUMN_RELATIVE_RECORD_NUMBER_NAME);
@@ -192,7 +192,7 @@ public class BaseDatabaseManagerImpl implements DatabaseManager {
 			}
 
 			TableColumnDef pkTableComColumnDef = DatabaseDefinitionFactory.eINSTANCE.createTableColumnDef();
-			IdentityDef identityDef = UtilFactory.eINSTANCE.createIdentityDef();
+			IdentityDef identityDef = DataFactory.eINSTANCE.createIdentityDef();
 			pkTableComColumnDef.setDefinition(identityDef);
 
 			pkTableComColumnDef.setName(TABLE_COLUMN_RELATIVE_RECORD_NUMBER_NAME);
@@ -376,10 +376,10 @@ public class BaseDatabaseManagerImpl implements DatabaseManager {
 
 	@Override
 	public void renameIndex(Connection connection, Index index, String newName) throws SQLException {
-		
+
 		CatalogContainer catalogContainer = getCatalogContainer(connection);
 		DefinitionWriter definitionWriter = catalogContainer.getCatalogContext().get(DefinitionWriter.class);
-		
+
 		try (Statement statement = connection.createStatement(true)) {
 			String command = definitionWriter.renameIndex(index, newName);
 			statement.setQueryTimeout(60);

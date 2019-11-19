@@ -24,7 +24,7 @@ public interface ApplicationManager {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model required="true" contextRequired="true" applicationRequired="true" outputDataType="org.abchip.mimo.util.JavaOutputStream"
+	 * @model required="true" contextRequired="true" applicationRequired="true" outputDataType="org.abchip.mimo.java.JavaOutputStream"
 	 * @generated
 	 */
 	Application start(Class<?> context, Application application, OutputStream output);

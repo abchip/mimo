@@ -24,7 +24,7 @@ public interface EntityNameable extends Entity, Nameable {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model kind="operation" dataType="org.abchip.mimo.util.JavaURI" required="true"
+	 * @model kind="operation" dataType="org.abchip.mimo.java.JavaURI" required="true"
 	 * @generated
 	 */
 	URI getURI();

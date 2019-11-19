@@ -18,7 +18,7 @@ import java.util.concurrent.Callable;
  *
  *
  * @see org.abchip.mimo.tester.TesterPackage#getTestSuiteRunner()
- * @model interface="true" abstract="true" superTypes="org.abchip.mimo.tester.TestRunner org.abchip.mimo.util.JavaCallable&lt;org.abchip.mimo.util.JavaList&lt;org.abchip.mimo.tester.TestResult&gt;&gt;"
+ * @model interface="true" abstract="true" superTypes="org.abchip.mimo.tester.TestRunner org.abchip.mimo.java.JavaCallable&lt;org.abchip.mimo.java.JavaList&lt;org.abchip.mimo.tester.TestResult&gt;&gt;"
  * @generated
  */
 public interface TestSuiteRunner extends TestRunner, Callable<List<TestResult>> {

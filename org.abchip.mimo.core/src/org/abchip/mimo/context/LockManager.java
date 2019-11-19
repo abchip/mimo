@@ -27,7 +27,7 @@ public interface LockManager {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model contextProviderRequired="true" addressDataType="org.abchip.mimo.util.JavaURI"
+	 * @model contextProviderRequired="true" addressDataType="org.abchip.mimo.java.JavaURI"
 	 * @generated
 	 */
 	<N extends EntityNameable> EntityLocker<N> getLocker(ContextProvider contextProvider, URI address);
@@ -43,7 +43,7 @@ public interface LockManager {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model type="org.abchip.mimo.util.JavaConcurrentMap" contextProviderRequired="true"
+	 * @model type="org.abchip.mimo.java.JavaConcurrentMap" contextProviderRequired="true"
 	 * @generated
 	 */
 	<K, V> ConcurrentMap<K, V> getConcurrentMap(ContextProvider contextProvider, String name);
@@ -51,7 +51,7 @@ public interface LockManager {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model type="org.abchip.mimo.util.JavaBlockingQueue" contextProviderRequired="true"
+	 * @model type="org.abchip.mimo.java.JavaBlockingQueue" contextProviderRequired="true"
 	 * @generated
 	 */
 	<E> BlockingQueue<E> getQueue(ContextProvider contextProvider, String name);

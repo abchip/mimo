@@ -8,6 +8,9 @@
  */
 package org.abchip.mimo.database.db2;
 
+import org.abchip.mimo.data.CharacterDef;
+import org.abchip.mimo.data.DataDef;
+import org.abchip.mimo.data.DecimalDef;
 import org.abchip.mimo.database.DatabaseManager;
 import org.abchip.mimo.database.base.BaseDefinitionWriterImpl;
 import org.abchip.mimo.database.definition.IndexColumnDef;
@@ -16,9 +19,6 @@ import org.abchip.mimo.database.definition.OrderingType;
 import org.abchip.mimo.database.definition.SchemaDef;
 import org.abchip.mimo.database.definition.TableColumnDef;
 import org.abchip.mimo.database.definition.TableDef;
-import org.abchip.mimo.util.CharacterDef;
-import org.abchip.mimo.util.DataDef;
-import org.abchip.mimo.util.DecimalDef;
 import org.eclipse.datatools.modelbase.sql.constraints.Index;
 import org.eclipse.datatools.modelbase.sql.schema.Schema;
 import org.eclipse.datatools.modelbase.sql.schema.helper.SQLObjectNameHelper;

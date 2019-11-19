@@ -25,7 +25,7 @@
     </eOperations>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="AudioRecorder" abstract="true" interface="true">
-    <eOperations name="getOutputStream" eType="ecore:EDataType ../../org.abchip.mimo.core/model/mimo.ecore#//util/JavaOutputStream"/>
+    <eOperations name="getOutputStream" eType="ecore:EDataType ../../org.abchip.mimo.core/model/mimo.ecore#//java/JavaOutputStream"/>
     <eOperations name="isStopped" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
     <eOperations name="start"/>
     <eOperations name="stop"/>

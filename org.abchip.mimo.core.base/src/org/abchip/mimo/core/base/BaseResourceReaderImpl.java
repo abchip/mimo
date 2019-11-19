@@ -40,6 +40,11 @@ public class BaseResourceReaderImpl<E extends EntityNameable> extends ResourceRe
 	}
 
 	@Override
+	public String getTenant() {
+		return this.internal.getResource().getTenant();
+	}
+
+	@Override
 	public ContextProvider getContextProvider() {
 		return this.internal.getContextProvider();
 	}

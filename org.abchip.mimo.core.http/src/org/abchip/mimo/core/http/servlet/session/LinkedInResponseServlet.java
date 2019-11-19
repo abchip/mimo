@@ -20,14 +20,14 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import org.abchip.mimo.context.AuthenticationAnonymous;
+import org.abchip.mimo.context.AuthenticationManager;
 import org.abchip.mimo.context.AuthenticationUserToken;
 import org.abchip.mimo.context.ContextFactory;
 import org.abchip.mimo.context.ContextProvider;
 import org.abchip.mimo.core.http.ContextUtils;
 import org.abchip.mimo.entity.EntityNameable;
-import org.abchip.mimo.resource.ResourceReader;
 import org.abchip.mimo.resource.ResourceManager;
-import org.abchip.mimo.resource.ResourceProvider;
+import org.abchip.mimo.resource.ResourceReader;
 import org.apache.http.HttpStatus;
 import org.apache.http.client.config.CookieSpecs;
 import org.apache.http.client.config.RequestConfig;
@@ -51,19 +51,8 @@ public class LinkedInResponseServlet extends HttpServlet {
 	@Inject
 	private ResourceManager resourceManager;
 
-	private ResourceProvider resourceProvider = null;
-
-	protected ResourceProvider getDefaultProvider() {
-		if (this.resourceProvider == null) {
-			synchronized (this) {
-				if (this.resourceProvider == null) {
-					this.resourceProvider = resourceManager.getProvider("UserLogin");
-				}
-			}
-		}
-
-		return this.resourceProvider;
-	}
+	@Inject
+	private AuthenticationManager authenticationManager;
 
 	@Override
 	protected final void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -89,14 +78,14 @@ public class LinkedInResponseServlet extends HttpServlet {
 		}
 
 		AuthenticationAnonymous authentication = ContextFactory.eINSTANCE.createAuthenticationAnonymous();
-		ContextProvider contextProvider = getDefaultProvider().login(null, authentication);
+		ContextProvider contextProvider = authenticationManager.login(null, authentication);
 
 		// dovremmo accedere con ProductStore e data
 		String entityName = "OAuth2LinkedIn";
 		ResourceReader<?> oauth2Reader = resourceManager.getResourceReader(contextProvider, entityName);
 		EntityNameable oauth2LinkedIn = oauth2Reader.first();
 
-		this.getDefaultProvider().logout(contextProvider);
+		this.authenticationManager.logout(contextProvider);
 		contextProvider.getContext().close();
 
 		if (oauth2LinkedIn == null) {
@@ -142,9 +131,9 @@ public class LinkedInResponseServlet extends HttpServlet {
 		authenticationUserToken.setAccessToken(accessToken);
 		authenticationUserToken.setProvider("LinkedIn");
 
-		if (this.getDefaultProvider().checkLogin(authenticationUserToken, true)) {
+		if (authenticationManager.checkLogin(authenticationUserToken, true)) {
 			ContextUtils.removeContextProvider(state);
-			contextProvider = this.getDefaultProvider().login(state, authenticationUserToken);
+			contextProvider = authenticationManager.login(state, authenticationUserToken);
 			ContextUtils.addContextProvider(contextProvider);
 
 			String location = response.encodeURL("http://localhost:8081");

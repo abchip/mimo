@@ -23,7 +23,7 @@ public interface AudioRecorder {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model kind="operation" dataType="org.abchip.mimo.util.JavaOutputStream"
+	 * @model kind="operation" dataType="org.abchip.mimo.java.JavaOutputStream"
 	 * @generated
 	 */
 	OutputStream getOutputStream();

@@ -17,11 +17,15 @@ import org.abchip.mimo.context.ContextPackage;
 
 import org.abchip.mimo.context.impl.ContextPackageImpl;
 
+import org.abchip.mimo.data.DataPackage;
+import org.abchip.mimo.data.impl.DataPackageImpl;
 import org.abchip.mimo.entity.EntityPackage;
 
 import org.abchip.mimo.entity.impl.EntityPackageImpl;
 import org.abchip.mimo.impl.MimoPackageImpl;
 
+import org.abchip.mimo.java.JavaPackage;
+import org.abchip.mimo.java.impl.JavaPackageImpl;
 import org.abchip.mimo.net.NetFactory;
 import org.abchip.mimo.net.NetPackage;
 import org.abchip.mimo.net.SocketConfig;
@@ -105,8 +109,12 @@ public class NetPackageImpl extends EPackageImpl implements NetPackage {
 		ApplicationPackageImpl theApplicationPackage = (ApplicationPackageImpl)(registeredPackage instanceof ApplicationPackageImpl ? registeredPackage : ApplicationPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(ContextPackage.eNS_URI);
 		ContextPackageImpl theContextPackage = (ContextPackageImpl)(registeredPackage instanceof ContextPackageImpl ? registeredPackage : ContextPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(DataPackage.eNS_URI);
+		DataPackageImpl theDataPackage = (DataPackageImpl)(registeredPackage instanceof DataPackageImpl ? registeredPackage : DataPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(EntityPackage.eNS_URI);
 		EntityPackageImpl theEntityPackage = (EntityPackageImpl)(registeredPackage instanceof EntityPackageImpl ? registeredPackage : EntityPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(JavaPackage.eNS_URI);
+		JavaPackageImpl theJavaPackage = (JavaPackageImpl)(registeredPackage instanceof JavaPackageImpl ? registeredPackage : JavaPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(ResourcePackage.eNS_URI);
 		ResourcePackageImpl theResourcePackage = (ResourcePackageImpl)(registeredPackage instanceof ResourcePackageImpl ? registeredPackage : ResourcePackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(UtilPackage.eNS_URI);
@@ -117,7 +125,9 @@ public class NetPackageImpl extends EPackageImpl implements NetPackage {
 		theMimoPackage.createPackageContents();
 		theApplicationPackage.createPackageContents();
 		theContextPackage.createPackageContents();
+		theDataPackage.createPackageContents();
 		theEntityPackage.createPackageContents();
+		theJavaPackage.createPackageContents();
 		theResourcePackage.createPackageContents();
 		theUtilPackage.createPackageContents();
 
@@ -126,7 +136,9 @@ public class NetPackageImpl extends EPackageImpl implements NetPackage {
 		theMimoPackage.initializePackageContents();
 		theApplicationPackage.initializePackageContents();
 		theContextPackage.initializePackageContents();
+		theDataPackage.initializePackageContents();
 		theEntityPackage.initializePackageContents();
+		theJavaPackage.initializePackageContents();
 		theResourcePackage.initializePackageContents();
 		theUtilPackage.initializePackageContents();
 

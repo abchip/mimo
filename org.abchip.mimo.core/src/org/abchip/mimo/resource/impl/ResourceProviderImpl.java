@@ -9,9 +9,6 @@ package org.abchip.mimo.resource.impl;
 
 import javax.inject.Inject;
 
-import org.abchip.mimo.context.AuthenticationAnonymous;
-import org.abchip.mimo.context.AuthenticationUserPassword;
-import org.abchip.mimo.context.AuthenticationUserToken;
 import org.abchip.mimo.context.ContextProvider;
 import org.abchip.mimo.entity.EntityNameable;
 import org.abchip.mimo.entity.Frame;
@@ -35,85 +32,21 @@ public abstract class ResourceProviderImpl extends MinimalEObjectImpl.Container 
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected ResourceProviderImpl() {
 		super();
 	}
-	
+
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	protected EClass eStaticClass() {
 		return ResourcePackage.Literals.RESOURCE_PROVIDER;
-	}
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public boolean isActive(ContextProvider contextProvider) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public ContextProvider login(String contextId, AuthenticationAnonymous authentication) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public ContextProvider login(String contextId, AuthenticationUserPassword authentication) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public ContextProvider login(String contextId, AuthenticationUserToken authentication) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public boolean checkLogin(AuthenticationUserToken authentication, boolean create) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void logout(ContextProvider contextProvider) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
 	}
 
 	/**
@@ -141,10 +74,9 @@ public abstract class ResourceProviderImpl extends MinimalEObjectImpl.Container 
 	 * 
 	 * @generated NOT
 	 */
-	@SuppressWarnings("unchecked")
 	@Override
 	public final <E extends EntityNameable> Resource<E> getResource(ContextProvider contextProvider, String frame) {
-		return getResource(contextProvider, (Frame<E>) frameManager.getFrame(frame));
+		return getResource(contextProvider, frame, null);
 	}
 
 	/**
@@ -165,9 +97,9 @@ public abstract class ResourceProviderImpl extends MinimalEObjectImpl.Container 
 	@SuppressWarnings("unchecked")
 	@Override
 	public <E extends EntityNameable> Resource<E> getResource(ContextProvider contextProvider, String frame, String tenant) {
-		return getResource(contextProvider, (Frame<E>) frameManager.getFrame(frame), tenant);
+		return getResource(contextProvider, (Frame<E>) frameManager.getFrame(contextProvider, frame, tenant), tenant);
 	}
-	
+
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
@@ -180,10 +112,10 @@ public abstract class ResourceProviderImpl extends MinimalEObjectImpl.Container 
 			if (contextProvider.getContextDescription().isTenant())
 				tenant = contextProvider.getContextDescription().getTenant();
 		} else if (tenant.equals(Resource.TENANT_MASTER))
-			tenant = null;	
+			tenant = null;
 
 		return doGetResource(contextProvider, frame, tenant);
 	}
-	
+
 	public abstract <E extends EntityNameable> Resource<E> doGetResource(ContextProvider contextProvider, Frame<E> frame, String tenant);
 } // ResourceProviderImpl

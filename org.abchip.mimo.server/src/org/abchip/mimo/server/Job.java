@@ -12,8 +12,8 @@ import java.util.List;
 
 import org.abchip.mimo.context.Context;
 import org.abchip.mimo.context.ContextProvider;
+import org.abchip.mimo.data.DateFormat;
 import org.abchip.mimo.entity.EntityNameable;
-import org.abchip.mimo.util.DateFormat;
 
 /**
  * <!-- begin-user-doc -->
@@ -127,7 +127,7 @@ public interface Job extends EntityNameable, ContextProvider {
 	/**
 	 * Returns the value of the '<em><b>Date Format</b></em>' attribute.
 	 * The default value is <code>"DMY"</code>.
-	 * The literals are from the enumeration {@link org.abchip.mimo.util.DateFormat}.
+	 * The literals are from the enumeration {@link org.abchip.mimo.data.DateFormat}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Date Format</em>' attribute isn't clear,
@@ -135,7 +135,7 @@ public interface Job extends EntityNameable, ContextProvider {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Date Format</em>' attribute.
-	 * @see org.abchip.mimo.util.DateFormat
+	 * @see org.abchip.mimo.data.DateFormat
 	 * @see #setDateFormat(DateFormat)
 	 * @see org.abchip.mimo.server.ServerPackage#getJob_DateFormat()
 	 * @model default="DMY"
@@ -148,7 +148,7 @@ public interface Job extends EntityNameable, ContextProvider {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Date Format</em>' attribute.
-	 * @see org.abchip.mimo.util.DateFormat
+	 * @see org.abchip.mimo.data.DateFormat
 	 * @see #getDateFormat()
 	 * @generated
 	 */

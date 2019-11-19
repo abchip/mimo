@@ -10,6 +10,7 @@ package org.abchip.mimo.core.base.util;
 
 import java.util.concurrent.atomic.AtomicBoolean;
 
+import org.abchip.mimo.entity.Entity;
 import org.abchip.mimo.entity.Frame;
 import org.abchip.mimo.util.ThreadStatus;
 
@@ -97,7 +98,7 @@ public class BaseThreadImpl extends Thread implements org.abchip.mimo.util.Threa
 	}
 
 	@Override
-	public Frame<?> isa() {
+	public <E extends Entity> Frame<E> isa() {
 		// TODO Auto-generated method stub
 		return null;
 	}

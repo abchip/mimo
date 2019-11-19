@@ -10,6 +10,7 @@ package org.abchip.mimo.server.impl;
 import org.abchip.mimo.MimoPackage;
 import org.abchip.mimo.context.ContextPackage;
 
+import org.abchip.mimo.data.DataPackage;
 import org.abchip.mimo.entity.EntityPackage;
 import org.abchip.mimo.server.Job;
 import org.abchip.mimo.server.JobCapability;
@@ -1029,6 +1030,7 @@ public class ServerPackageImpl extends EPackageImpl implements ServerPackage {
 		// Obtain other dependent packages
 		EntityPackage theEntityPackage = (EntityPackage)EPackage.Registry.INSTANCE.getEPackage(EntityPackage.eNS_URI);
 		ContextPackage theContextPackage = (ContextPackage)EPackage.Registry.INSTANCE.getEPackage(ContextPackage.eNS_URI);
+		DataPackage theDataPackage = (DataPackage)EPackage.Registry.INSTANCE.getEPackage(DataPackage.eNS_URI);
 		UtilPackage theUtilPackage = (UtilPackage)EPackage.Registry.INSTANCE.getEPackage(UtilPackage.eNS_URI);
 
 		// Create type parameters
@@ -1054,7 +1056,7 @@ public class ServerPackageImpl extends EPackageImpl implements ServerPackage {
 		initEReference(getJob_Context(), theContextPackage.getContext(), null, "context", null, 0, 1, Job.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getJob_CreationDate(), ecorePackage.getEDate(), "creationDate", null, 1, 1, Job.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getJob_CurrentResource(), ecorePackage.getEString(), "currentResource", "QGPL", 0, 1, Job.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getJob_DateFormat(), theUtilPackage.getDateFormat(), "dateFormat", "DMY", 0, 1, Job.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getJob_DateFormat(), theDataPackage.getDateFormat(), "dateFormat", "DMY", 0, 1, Job.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getJob_DateSeparator(), ecorePackage.getEString(), "dateSeparator", "/", 0, 1, Job.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getJob_DestroyDate(), ecorePackage.getEDate(), "destroyDate", null, 0, 1, Job.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getJob_JobID(), ecorePackage.getEString(), "jobID", null, 1, 1, Job.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

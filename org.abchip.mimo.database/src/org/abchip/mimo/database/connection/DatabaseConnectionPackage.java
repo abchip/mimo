@@ -9,7 +9,7 @@
 package org.abchip.mimo.database.connection;
 
 import org.abchip.mimo.context.ContextPackage;
-import org.abchip.mimo.util.UtilPackage;
+import org.abchip.mimo.java.JavaPackage;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EDataType;
@@ -239,7 +239,7 @@ public interface DatabaseConnectionPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STATEMENT_FEATURE_COUNT = UtilPackage.JAVA_CLOSEABLE_FEATURE_COUNT + 0;
+	int STATEMENT_FEATURE_COUNT = JavaPackage.JAVA_CLOSEABLE_FEATURE_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.database.connection.PreparedStatement <em>Prepared Statement</em>}' class.

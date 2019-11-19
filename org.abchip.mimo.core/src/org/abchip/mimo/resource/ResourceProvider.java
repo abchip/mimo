@@ -9,9 +9,6 @@
  */
 package org.abchip.mimo.resource;
 
-import org.abchip.mimo.context.AuthenticationAnonymous;
-import org.abchip.mimo.context.AuthenticationUserPassword;
-import org.abchip.mimo.context.AuthenticationUserToken;
 import org.abchip.mimo.context.ContextProvider;
 import org.abchip.mimo.entity.EntityNameable;
 import org.abchip.mimo.entity.Frame;
@@ -26,46 +23,6 @@ import org.abchip.mimo.entity.Frame;
  * @generated
  */
 public interface ResourceProvider {
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model contextProviderRequired="true"
-	 * @generated
-	 */
-	boolean isActive(ContextProvider contextProvider);
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model contextIdRequired="true" authenticationRequired="true"
-	 * @generated
-	 */
-	ContextProvider login(String contextId, AuthenticationAnonymous authentication);
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model contextIdRequired="true" authenticationRequired="true"
-	 * @generated
-	 */
-	ContextProvider login(String contextId, AuthenticationUserPassword authentication);
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model contextIdRequired="true" authenticationRequired="true"
-	 * @generated
-	 */
-	ContextProvider login(String contextId, AuthenticationUserToken authentication);
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model authenticationRequired="true" createRequired="true"
-	 * @generated
-	 */
-	boolean checkLogin(AuthenticationUserToken authentication, boolean create);
-
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -113,13 +70,5 @@ public interface ResourceProvider {
 	 * @generated
 	 */
 	<E extends EntityNameable> Resource<E> getResource(ContextProvider contextProvider, String frame, String tenant);
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model contextProviderRequired="true"
-	 * @generated
-	 */
-	void logout(ContextProvider contextProvider);
 
 } // ResourceProvider

@@ -18,7 +18,6 @@ import org.abchip.mimo.audio.AudioManager;
 import org.abchip.mimo.audio.AudioStyle;
 import org.abchip.mimo.entity.EntityIterator;
 import org.abchip.mimo.entity.Frame;
-import org.abchip.mimo.entity.FrameManager;
 import org.abchip.mimo.entity.Slot;
 import org.abchip.mimo.language.Language;
 import org.abchip.mimo.language.LanguageManager;
@@ -39,8 +38,6 @@ import org.abchip.mimo.tester.TestStarted;
 @Test(entity = "Twitter")
 public class TestTwitter {
 
-	@Inject
-	private FrameManager frameManager;
 	@Inject
 	private TwitterManager twitterManager;
 	@Inject
@@ -72,9 +69,7 @@ public class TestTwitter {
 
 		Tweet t = tweetReader.lookup("939830847619944449");
 
-		ResourceReader<Frame<?>> frameReader = frameManager.getFrameReader(testRunner);
-		EntityIterator<Frame<?>> frameIterator = frameReader.find();
-		for (Frame<?> frame : frameIterator) {
+		for (Frame<?> frame : resourceManager.getResourceReader(testRunner, Frame.class).find()) {
 			String text = "The frame " + frame.getName() + " has the following properties:";
 			// audioManager.play(testRunner, AudioStyle.A, text, true, true);
 			StringBuffer sb = new StringBuffer();

@@ -8,7 +8,7 @@
  */
 package org.abchip.mimo.database.definition;
 
-import org.abchip.mimo.util.DataDef;
+import org.abchip.mimo.data.DataDef;
 
 /**
  * <!-- begin-user-doc -->

@@ -21,11 +21,10 @@ import org.abchip.mimo.biz.product.category.ProductCategory;
 import org.abchip.mimo.biz.product.category.ProductCategoryType;
 import org.abchip.mimo.context.ContextProvider;
 import org.abchip.mimo.core.http.servlet.BaseServlet;
+import org.abchip.mimo.data.Strings;
 import org.abchip.mimo.entity.EntityNameable;
-import org.abchip.mimo.entity.FrameManager;
 import org.abchip.mimo.resource.ResourceManager;
 import org.abchip.mimo.resource.ResourceWriter;
-import org.abchip.mimo.util.Strings;
 import org.apache.poi.hssf.usermodel.HSSFCell;
 import org.apache.poi.hssf.usermodel.HSSFRow;
 import org.apache.poi.hssf.usermodel.HSSFSheet;
@@ -36,8 +35,6 @@ public class ImportProductCategoriesServlet extends BaseServlet {
 
 	private static final long serialVersionUID = 1L;
 
-	@Inject
-	private FrameManager frameManager;
 	@Inject
 	private ResourceManager resourceManager;
 
@@ -72,7 +69,7 @@ public class ImportProductCategoriesServlet extends BaseServlet {
 
 							ProductCategory productCategory = CategoryFactory.eINSTANCE.createProductCategory();
 							productCategory.setProductCategoryId(codeId);
-							productCategory.setProductCategoryTypeId(frameManager.getFrame(ProductCategoryType.class).createProxy("MATERIALS_CATEGORY"));
+							productCategory.setProductCategoryTypeId(resourceManager.getFrame(contextProvider, ProductCategoryType.class).createProxy("MATERIALS_CATEGORY"));
 							productCategory.setCategoryName(Strings.qINSTANCE.escape(description));
 							productCategoryWriter.create(productCategory, true);
 						}

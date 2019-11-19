@@ -262,5 +262,10 @@ public class ResourceHelper {
 		public ContextProvider getContextProvider() {
 			return this.contextProvider;
 		}
+
+		@Override
+		public String getTenant() {
+			return contextProvider.getContextDescription().getTenant();
+		}
 	}
 }

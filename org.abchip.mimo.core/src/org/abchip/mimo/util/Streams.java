@@ -25,7 +25,7 @@ public interface Streams {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model inputDataType="org.abchip.mimo.util.JavaInputStream" inputRequired="true" outputDataType="org.abchip.mimo.util.JavaOutputStream" outputRequired="true"
+	 * @model inputDataType="org.abchip.mimo.java.JavaInputStream" inputRequired="true" outputDataType="org.abchip.mimo.java.JavaOutputStream" outputRequired="true"
 	 * @generated
 	 */
 	void copy(InputStream input, OutputStream output);

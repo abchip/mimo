@@ -10,8 +10,8 @@ package org.abchip.mimo.context.impl;
 
 import org.abchip.mimo.context.*;
 
+import org.abchip.mimo.data.DataDef;
 import org.abchip.mimo.entity.Entity;
-import org.abchip.mimo.util.DataDef;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EObject;

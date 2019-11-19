@@ -13,6 +13,7 @@ import org.abchip.mimo.context.ContextPackage;
 
 import org.abchip.mimo.entity.EntityPackage;
 
+import org.abchip.mimo.java.JavaPackage;
 import org.abchip.mimo.logic.Goal;
 import org.abchip.mimo.logic.LogicFactory;
 import org.abchip.mimo.logic.LogicPackage;
@@ -21,9 +22,6 @@ import org.abchip.mimo.logic.Question;
 import org.abchip.mimo.logic.Reasoner;
 import org.abchip.mimo.logic.Term;
 import org.abchip.mimo.logic.Theory;
-
-import org.abchip.mimo.util.UtilPackage;
-
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EGenericType;
@@ -363,7 +361,7 @@ public class LogicPackageImpl extends EPackageImpl implements LogicPackage {
 		// Obtain other dependent packages
 		EntityPackage theEntityPackage = (EntityPackage)EPackage.Registry.INSTANCE.getEPackage(EntityPackage.eNS_URI);
 		ContextPackage theContextPackage = (ContextPackage)EPackage.Registry.INSTANCE.getEPackage(ContextPackage.eNS_URI);
-		UtilPackage theUtilPackage = (UtilPackage)EPackage.Registry.INSTANCE.getEPackage(UtilPackage.eNS_URI);
+		JavaPackage theJavaPackage = (JavaPackage)EPackage.Registry.INSTANCE.getEPackage(JavaPackage.eNS_URI);
 
 		// Create type parameters
 
@@ -371,7 +369,7 @@ public class LogicPackageImpl extends EPackageImpl implements LogicPackage {
 
 		// Add supertypes to classes
 		termEClass.getESuperTypes().add(theEntityPackage.getNameable());
-		reasonerEClass.getESuperTypes().add(theUtilPackage.getJavaCloseable());
+		reasonerEClass.getESuperTypes().add(theJavaPackage.getJavaCloseable());
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(goalEClass, Goal.class, "Goal", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -414,7 +412,7 @@ public class LogicPackageImpl extends EPackageImpl implements LogicPackage {
 
 		op = addEOperation(reasonerEClass, null, "loadTheory", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, this.getTheory(), "theory", 1, 1, IS_UNIQUE, IS_ORDERED);
-		addEException(op, theUtilPackage.getJavaIOException());
+		addEException(op, theJavaPackage.getJavaIOException());
 
 		op = addEOperation(reasonerEClass, this.getGoal(), "query", 1, -1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEString(), "question", 1, 1, IS_UNIQUE, IS_ORDERED);
@@ -423,7 +421,7 @@ public class LogicPackageImpl extends EPackageImpl implements LogicPackage {
 		addEParameter(op, this.getQuestion(), "question", 1, 1, IS_UNIQUE, IS_ORDERED);
 
 		op = addEOperation(reasonerEClass, null, "reload", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEException(op, theUtilPackage.getJavaIOException());
+		addEException(op, theJavaPackage.getJavaIOException());
 
 		// Create resource
 		createResource(eNS_URI);

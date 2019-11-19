@@ -26,7 +26,7 @@ public interface Identity<T extends Entity> extends Entity {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model kind="operation" type="org.abchip.mimo.util.JavaPrincipal"
+	 * @model kind="operation" type="org.abchip.mimo.java.JavaPrincipal"
 	 * @generated
 	 */
 	Principal getJavaPrincipal();

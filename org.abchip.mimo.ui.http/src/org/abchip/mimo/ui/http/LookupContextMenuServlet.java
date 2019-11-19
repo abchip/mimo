@@ -42,9 +42,9 @@ public class LookupContextMenuServlet extends BaseServlet {
 	private static final long serialVersionUID = 1L;
 
 	@Inject
-	private FrameManager frameManager;
-	@Inject
 	private ResourceManager resourceManager;
+	@Inject
+	private FrameManager frameManager;
 
 	protected void execute(ContextProvider contextProvider, HttpServletRequest request, HttpServletResponse response) throws IOException {
 
@@ -52,7 +52,7 @@ public class LookupContextMenuServlet extends BaseServlet {
 		if (frameName == null)
 			return;
 
-		Frame<?> frame = frameManager.getFrame(frameName);
+		Frame<?> frame = frameManager.getFrame(contextProvider, frameName);
 		if (frame == null)
 			return;
 
@@ -104,7 +104,7 @@ public class LookupContextMenuServlet extends BaseServlet {
 		if (!groupRoutes.getData().isEmpty())
 			contextMenu.getElements().add(groupRoutes);
 
-		ResourceSerializer<ContextMenu> entitySerializer = resourceManager.createResourceSerializer(ContextMenu.class, SerializationType.JAVA_SCRIPT_OBJECT_NOTATION);
+		ResourceSerializer<ContextMenu> entitySerializer = resourceManager.createResourceSerializer(contextProvider, ContextMenu.class, SerializationType.JAVA_SCRIPT_OBJECT_NOTATION);
 		TreeIterator<EObject> features = ((EObject) contextMenu).eAllContents();
 
 		features.forEachRemaining(new Consumer<EObject>() {
@@ -133,13 +133,12 @@ public class LookupContextMenuServlet extends BaseServlet {
 
 	private String getIcon(ContextProvider contextProvider, String frameName) {
 
-		String icon = null;
-
-		ResourceReader<UiFrameSetup> frameSetupReader = resourceManager.getResourceReader(contextProvider, UiFrameSetup.class, Resource.TENANT_MASTER);
-
-		Frame<?> frame = frameManager.getFrame(frameName);
+		Frame<?> frame = frameManager.getFrame(contextProvider, frameName);
 		if (frame == null)
-			return icon;
+			return null;
+
+		String icon = null;
+		ResourceReader<UiFrameSetup> frameSetupReader = resourceManager.getResourceReader(contextProvider, UiFrameSetup.class, Resource.TENANT_MASTER);
 
 		List<String> frameNames = new ArrayList<String>(frame.getSuperNames());
 		Lists.qINSTANCE.addFirst(frameNames, frameName);

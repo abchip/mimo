@@ -9,6 +9,7 @@
 package org.abchip.mimo.entity.impl;
 
 import org.abchip.mimo.EMFFrameHelper;
+import org.abchip.mimo.MimoResourceImpl;
 import org.abchip.mimo.entity.Entity;
 import org.abchip.mimo.entity.EntityPackage;
 import org.abchip.mimo.entity.Frame;
@@ -49,9 +50,13 @@ public abstract class EntityImpl extends MinimalEObjectImpl.Container implements
 	 * 
 	 * @generated NOT
 	 */
+	@SuppressWarnings({ "unchecked", "rawtypes" })
 	@Override
-	public Frame<? extends Entity> isa() {
-
-		return EMFFrameHelper.getFrames(null).get(eClass().getName());
+	public <E extends Entity> Frame<E> isa() {
+		if (this.eResource() instanceof MimoResourceImpl) {
+			MimoResourceImpl interal = (MimoResourceImpl) this.eResource();
+			return interal.getResource().getFrame();
+		} else
+			return (Frame<E>) EMFFrameHelper.getFrames(null).get(eClass().getName());
 	}
 } // EntityImpl

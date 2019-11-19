@@ -17,12 +17,16 @@ import org.abchip.mimo.context.ContextPackage;
 
 import org.abchip.mimo.context.impl.ContextPackageImpl;
 
+import org.abchip.mimo.data.DataPackage;
+import org.abchip.mimo.data.impl.DataPackageImpl;
 import org.abchip.mimo.entity.EntityPackage;
 
 import org.abchip.mimo.entity.impl.EntityPackageImpl;
 
 import org.abchip.mimo.impl.MimoPackageImpl;
 
+import org.abchip.mimo.java.JavaPackage;
+import org.abchip.mimo.java.impl.JavaPackageImpl;
 import org.abchip.mimo.net.NetPackage;
 
 import org.abchip.mimo.net.impl.NetPackageImpl;
@@ -200,8 +204,12 @@ public class ResourcePackageImpl extends EPackageImpl implements ResourcePackage
 		ApplicationPackageImpl theApplicationPackage = (ApplicationPackageImpl)(registeredPackage instanceof ApplicationPackageImpl ? registeredPackage : ApplicationPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(ContextPackage.eNS_URI);
 		ContextPackageImpl theContextPackage = (ContextPackageImpl)(registeredPackage instanceof ContextPackageImpl ? registeredPackage : ContextPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(DataPackage.eNS_URI);
+		DataPackageImpl theDataPackage = (DataPackageImpl)(registeredPackage instanceof DataPackageImpl ? registeredPackage : DataPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(EntityPackage.eNS_URI);
 		EntityPackageImpl theEntityPackage = (EntityPackageImpl)(registeredPackage instanceof EntityPackageImpl ? registeredPackage : EntityPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(JavaPackage.eNS_URI);
+		JavaPackageImpl theJavaPackage = (JavaPackageImpl)(registeredPackage instanceof JavaPackageImpl ? registeredPackage : JavaPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(NetPackage.eNS_URI);
 		NetPackageImpl theNetPackage = (NetPackageImpl)(registeredPackage instanceof NetPackageImpl ? registeredPackage : NetPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(UtilPackage.eNS_URI);
@@ -212,7 +220,9 @@ public class ResourcePackageImpl extends EPackageImpl implements ResourcePackage
 		theMimoPackage.createPackageContents();
 		theApplicationPackage.createPackageContents();
 		theContextPackage.createPackageContents();
+		theDataPackage.createPackageContents();
 		theEntityPackage.createPackageContents();
+		theJavaPackage.createPackageContents();
 		theNetPackage.createPackageContents();
 		theUtilPackage.createPackageContents();
 
@@ -221,7 +231,9 @@ public class ResourcePackageImpl extends EPackageImpl implements ResourcePackage
 		theMimoPackage.initializePackageContents();
 		theApplicationPackage.initializePackageContents();
 		theContextPackage.initializePackageContents();
+		theDataPackage.initializePackageContents();
 		theEntityPackage.initializePackageContents();
+		theJavaPackage.initializePackageContents();
 		theNetPackage.initializePackageContents();
 		theUtilPackage.initializePackageContents();
 
@@ -500,7 +512,7 @@ public class ResourcePackageImpl extends EPackageImpl implements ResourcePackage
 		// Obtain other dependent packages
 		EntityPackage theEntityPackage = (EntityPackage)EPackage.Registry.INSTANCE.getEPackage(EntityPackage.eNS_URI);
 		ContextPackage theContextPackage = (ContextPackage)EPackage.Registry.INSTANCE.getEPackage(ContextPackage.eNS_URI);
-		UtilPackage theUtilPackage = (UtilPackage)EPackage.Registry.INSTANCE.getEPackage(UtilPackage.eNS_URI);
+		JavaPackage theJavaPackage = (JavaPackage)EPackage.Registry.INSTANCE.getEPackage(JavaPackage.eNS_URI);
 
 		// Create type parameters
 		ETypeParameter resourceEClass_E = addETypeParameter(resourceEClass, "E");
@@ -615,6 +627,7 @@ public class ResourcePackageImpl extends EPackageImpl implements ResourcePackage
 		ETypeParameter t1 = addETypeParameter(op, "E");
 		g1 = createEGenericType(theEntityPackage.getEntity());
 		t1.getEBounds().add(g1);
+		addEParameter(op, theContextPackage.getContextProvider(), "contextProvider", 1, 1, IS_UNIQUE, IS_ORDERED);
 		g1 = createEGenericType(ecorePackage.getEJavaClass());
 		g2 = createEGenericType(t1);
 		g1.getETypeArguments().add(g2);
@@ -629,6 +642,7 @@ public class ResourcePackageImpl extends EPackageImpl implements ResourcePackage
 		t1 = addETypeParameter(op, "E");
 		g1 = createEGenericType(theEntityPackage.getEntity());
 		t1.getEBounds().add(g1);
+		addEParameter(op, theContextPackage.getContextProvider(), "contextProvider", 1, 1, IS_UNIQUE, IS_ORDERED);
 		g1 = createEGenericType(theEntityPackage.getFrame());
 		g2 = createEGenericType(t1);
 		g1.getETypeArguments().add(g2);
@@ -643,6 +657,7 @@ public class ResourcePackageImpl extends EPackageImpl implements ResourcePackage
 		t1 = addETypeParameter(op, "E");
 		g1 = createEGenericType(theEntityPackage.getEntity());
 		t1.getEBounds().add(g1);
+		addEParameter(op, theContextPackage.getContextProvider(), "contextProvider", 1, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEString(), "frame", 1, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, theEntityPackage.getSerializationType(), "serializationType", 1, 1, IS_UNIQUE, IS_ORDERED);
 		g1 = createEGenericType(this.getResourceSerializer());
@@ -816,6 +831,7 @@ public class ResourcePackageImpl extends EPackageImpl implements ResourcePackage
 		t1 = addETypeParameter(op, "E");
 		g1 = createEGenericType(theEntityPackage.getEntityNameable());
 		t1.getEBounds().add(g1);
+		addEParameter(op, theContextPackage.getContextProvider(), "contextProvider", 1, 1, IS_UNIQUE, IS_ORDERED);
 		g1 = createEGenericType(ecorePackage.getEJavaClass());
 		g2 = createEGenericType(t1);
 		g1.getETypeArguments().add(g2);
@@ -825,6 +841,7 @@ public class ResourcePackageImpl extends EPackageImpl implements ResourcePackage
 		t1 = addETypeParameter(op, "E");
 		g1 = createEGenericType(theEntityPackage.getEntityNameable());
 		t1.getEBounds().add(g1);
+		addEParameter(op, theContextPackage.getContextProvider(), "contextProvider", 1, 1, IS_UNIQUE, IS_ORDERED);
 		g1 = createEGenericType(theEntityPackage.getFrame());
 		g2 = createEGenericType(t1);
 		g1.getETypeArguments().add(g2);
@@ -834,12 +851,14 @@ public class ResourcePackageImpl extends EPackageImpl implements ResourcePackage
 		t1 = addETypeParameter(op, "E");
 		g1 = createEGenericType(theEntityPackage.getEntityNameable());
 		t1.getEBounds().add(g1);
+		addEParameter(op, theContextPackage.getContextProvider(), "contextProvider", 1, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEString(), "frame", 1, 1, IS_UNIQUE, IS_ORDERED);
 
 		op = addEOperation(resourceManagerEClass, null, "registerListener", 0, 1, IS_UNIQUE, IS_ORDERED);
 		t1 = addETypeParameter(op, "E");
 		g1 = createEGenericType(theEntityPackage.getEntityNameable());
 		t1.getEBounds().add(g1);
+		addEParameter(op, theContextPackage.getContextProvider(), "contextProvider", 1, 1, IS_UNIQUE, IS_ORDERED);
 		g1 = createEGenericType(ecorePackage.getEJavaClass());
 		g2 = createEGenericType(t1);
 		g1.getETypeArguments().add(g2);
@@ -853,6 +872,7 @@ public class ResourcePackageImpl extends EPackageImpl implements ResourcePackage
 		t1 = addETypeParameter(op, "E");
 		g1 = createEGenericType(theEntityPackage.getEntityNameable());
 		t1.getEBounds().add(g1);
+		addEParameter(op, theContextPackage.getContextProvider(), "contextProvider", 1, 1, IS_UNIQUE, IS_ORDERED);
 		g1 = createEGenericType(theEntityPackage.getFrame());
 		g2 = createEGenericType(t1);
 		g1.getETypeArguments().add(g2);
@@ -866,6 +886,7 @@ public class ResourcePackageImpl extends EPackageImpl implements ResourcePackage
 		t1 = addETypeParameter(op, "E");
 		g1 = createEGenericType(theEntityPackage.getEntityNameable());
 		t1.getEBounds().add(g1);
+		addEParameter(op, theContextPackage.getContextProvider(), "contextProvider", 1, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEString(), "frame", 1, 1, IS_UNIQUE, IS_ORDERED);
 		g1 = createEGenericType(this.getResourceListener());
 		g2 = createEGenericType(t1);
@@ -876,6 +897,7 @@ public class ResourcePackageImpl extends EPackageImpl implements ResourcePackage
 		t1 = addETypeParameter(op, "E");
 		g1 = createEGenericType(theEntityPackage.getEntityNameable());
 		t1.getEBounds().add(g1);
+		addEParameter(op, theContextPackage.getContextProvider(), "contextProvider", 1, 1, IS_UNIQUE, IS_ORDERED);
 		g1 = createEGenericType(ecorePackage.getEJavaClass());
 		g2 = createEGenericType(t1);
 		g1.getETypeArguments().add(g2);
@@ -886,6 +908,7 @@ public class ResourcePackageImpl extends EPackageImpl implements ResourcePackage
 		t1 = addETypeParameter(op, "E");
 		g1 = createEGenericType(theEntityPackage.getEntityNameable());
 		t1.getEBounds().add(g1);
+		addEParameter(op, theContextPackage.getContextProvider(), "contextProvider", 1, 1, IS_UNIQUE, IS_ORDERED);
 		g1 = createEGenericType(theEntityPackage.getFrame());
 		g2 = createEGenericType(t1);
 		g1.getETypeArguments().add(g2);
@@ -896,6 +919,7 @@ public class ResourcePackageImpl extends EPackageImpl implements ResourcePackage
 		t1 = addETypeParameter(op, "E");
 		g1 = createEGenericType(theEntityPackage.getEntityNameable());
 		t1.getEBounds().add(g1);
+		addEParameter(op, theContextPackage.getContextProvider(), "contextProvider", 1, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEString(), "frame", 1, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, this.getResourceProvider(), "provider", 1, 1, IS_UNIQUE, IS_ORDERED);
 
@@ -921,10 +945,6 @@ public class ResourcePackageImpl extends EPackageImpl implements ResourcePackage
 
 		initEClass(resourceProviderEClass, ResourceProvider.class, "ResourceProvider", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-		op = addEOperation(resourceProviderEClass, ecorePackage.getEBoolean(), "checkLogin", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, theContextPackage.getAuthenticationUserToken(), "authentication", 1, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, ecorePackage.getEBoolean(), "create", 1, 1, IS_UNIQUE, IS_ORDERED);
-
 		op = addEOperation(resourceProviderEClass, null, "getResource", 1, 1, IS_UNIQUE, IS_ORDERED);
 		t1 = addETypeParameter(op, "E");
 		g1 = createEGenericType(theEntityPackage.getEntityNameable());
@@ -1005,24 +1025,6 @@ public class ResourcePackageImpl extends EPackageImpl implements ResourcePackage
 		g2 = createEGenericType(t1);
 		g1.getETypeArguments().add(g2);
 		initEOperation(op, g1);
-
-		op = addEOperation(resourceProviderEClass, ecorePackage.getEBoolean(), "isActive", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, theContextPackage.getContextProvider(), "contextProvider", 1, 1, IS_UNIQUE, IS_ORDERED);
-
-		op = addEOperation(resourceProviderEClass, theContextPackage.getContextProvider(), "login", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, ecorePackage.getEString(), "contextId", 1, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, theContextPackage.getAuthenticationAnonymous(), "authentication", 1, 1, IS_UNIQUE, IS_ORDERED);
-
-		op = addEOperation(resourceProviderEClass, theContextPackage.getContextProvider(), "login", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, ecorePackage.getEString(), "contextId", 1, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, theContextPackage.getAuthenticationUserPassword(), "authentication", 1, 1, IS_UNIQUE, IS_ORDERED);
-
-		op = addEOperation(resourceProviderEClass, theContextPackage.getContextProvider(), "login", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, ecorePackage.getEString(), "contextId", 1, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, theContextPackage.getAuthenticationUserToken(), "authentication", 1, 1, IS_UNIQUE, IS_ORDERED);
-
-		op = addEOperation(resourceProviderEClass, null, "logout", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, theContextPackage.getContextProvider(), "contextProvider", 1, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(resourceProviderRegistryEClass, ResourceProviderRegistry.class, "ResourceProviderRegistry", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -1098,6 +1100,8 @@ public class ResourcePackageImpl extends EPackageImpl implements ResourcePackage
 		g1.getETypeArguments().add(g2);
 		initEOperation(op, g1);
 
+		addEOperation(resourceReaderEClass, ecorePackage.getEString(), "getTenant", 1, 1, IS_UNIQUE, IS_ORDERED);
+
 		op = addEOperation(resourceReaderEClass, null, "lookup", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEString(), "name", 1, 1, IS_UNIQUE, IS_ORDERED);
 		g1 = createEGenericType(resourceReaderEClass_E);
@@ -1128,18 +1132,18 @@ public class ResourcePackageImpl extends EPackageImpl implements ResourcePackage
 		addEOperation(resourceSerializerEClass, null, "clear", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		op = addEOperation(resourceSerializerEClass, null, "load", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, theUtilPackage.getJavaInputStream(), "content", 1, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, theJavaPackage.getJavaInputStream(), "content", 1, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEBoolean(), "append", 1, 1, IS_UNIQUE, IS_ORDERED);
-		addEException(op, theUtilPackage.getJavaIOException());
+		addEException(op, theJavaPackage.getJavaIOException());
 
 		op = addEOperation(resourceSerializerEClass, null, "load", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEString(), "content", 1, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEBoolean(), "append", 1, 1, IS_UNIQUE, IS_ORDERED);
-		addEException(op, theUtilPackage.getJavaIOException());
+		addEException(op, theJavaPackage.getJavaIOException());
 
 		op = addEOperation(resourceSerializerEClass, null, "save", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, theUtilPackage.getJavaOutputStream(), "outputStream", 1, 1, IS_UNIQUE, IS_ORDERED);
-		addEException(op, theUtilPackage.getJavaIOException());
+		addEParameter(op, theJavaPackage.getJavaOutputStream(), "outputStream", 1, 1, IS_UNIQUE, IS_ORDERED);
+		addEException(op, theJavaPackage.getJavaIOException());
 
 		op = addEOperation(resourceSerializerEClass, null, "get", 0, 1, IS_UNIQUE, IS_ORDERED);
 		g1 = createEGenericType(resourceSerializerEClass_E);

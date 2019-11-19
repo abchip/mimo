@@ -72,7 +72,7 @@ public interface ContextRoot extends Context {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model nameRequired="true" objectRequired="true" dictionaryDataType="org.abchip.mimo.util.JavaDictionary&lt;org.eclipse.emf.ecore.EString, org.eclipse.emf.ecore.EString&gt;"
+	 * @model nameRequired="true" objectRequired="true" dictionaryDataType="org.abchip.mimo.java.JavaDictionary&lt;org.eclipse.emf.ecore.EString, org.eclipse.emf.ecore.EString&gt;"
 	 * @generated
 	 */
 	void set(String name, Object object, boolean remoteExport, Dictionary<String, String> dictionary);

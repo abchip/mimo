@@ -27,7 +27,7 @@ public interface Lists extends Singleton<Lists> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model listType="org.abchip.mimo.util.JavaList&lt;E&gt;" listRequired="true" listMany="false" elementRequired="true"
+	 * @model listType="org.abchip.mimo.java.JavaList&lt;E&gt;" listRequired="true" listMany="false" elementRequired="true"
 	 * @generated
 	 */
 	<E> void addFirst(List<E> list, E element);
@@ -35,7 +35,7 @@ public interface Lists extends Singleton<Lists> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model listType="org.abchip.mimo.util.JavaList&lt;E&gt;" listRequired="true" listMany="false" elementRequired="true"
+	 * @model listType="org.abchip.mimo.java.JavaList&lt;E&gt;" listRequired="true" listMany="false" elementRequired="true"
 	 * @generated
 	 */
 	<E> void addLast(List<E> list, E element);
@@ -43,7 +43,7 @@ public interface Lists extends Singleton<Lists> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model listType="org.abchip.mimo.util.JavaList&lt;E&gt;" listRequired="true" listMany="false" oldElementRequired="true" newElementRequired="true"
+	 * @model listType="org.abchip.mimo.java.JavaList&lt;E&gt;" listRequired="true" listMany="false" oldElementRequired="true" newElementRequired="true"
 	 * @generated
 	 */
 	<E> void addBefore(List<E> list, E oldElement, E newElement);
@@ -51,7 +51,7 @@ public interface Lists extends Singleton<Lists> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model listType="org.abchip.mimo.util.JavaList&lt;E&gt;" listRequired="true" listMany="false" oldElementRequired="true" newElementRequired="true"
+	 * @model listType="org.abchip.mimo.java.JavaList&lt;E&gt;" listRequired="true" listMany="false" oldElementRequired="true" newElementRequired="true"
 	 * @generated
 	 */
 	<E> void addAfter(List<E> list, E oldElement, E newElement);
@@ -59,7 +59,7 @@ public interface Lists extends Singleton<Lists> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model type="org.abchip.mimo.util.JavaList&lt;E&gt;" many="false" listType="org.abchip.mimo.util.JavaList&lt;E&gt;" listRequired="true" listMany="false" indexRequired="true" limitRequired="true"
+	 * @model type="org.abchip.mimo.java.JavaList&lt;E&gt;" many="false" listType="org.abchip.mimo.java.JavaList&lt;E&gt;" listRequired="true" listMany="false" indexRequired="true" limitRequired="true"
 	 * @generated
 	 */
 	<E> List<E> slice(List<E> list, int index, int limit);

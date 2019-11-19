@@ -33,7 +33,7 @@ import org.abchip.mimo.database.query.QueryWriter;
 import org.abchip.mimo.database.query.QueryWriterRegistry;
 import org.abchip.mimo.database.query.StatementParser;
 import org.abchip.mimo.database.query.StatementWriter;
-import org.abchip.mimo.util.UtilPackage;
+import org.abchip.mimo.java.JavaPackage;
 import org.eclipse.datatools.modelbase.sql.accesscontrol.SQLAccessControlPackage;
 
 import org.eclipse.datatools.modelbase.sql.constraints.SQLConstraintsPackage;
@@ -440,7 +440,7 @@ public class DatabaseQueryPackageImpl extends EPackageImpl implements DatabaseQu
 		DatabasePackage theDatabasePackage = (DatabasePackage)EPackage.Registry.INSTANCE.getEPackage(DatabasePackage.eNS_URI);
 		SQLQueryModelPackage theSQLQueryModelPackage = (SQLQueryModelPackage)EPackage.Registry.INSTANCE.getEPackage(SQLQueryModelPackage.eNS_URI);
 		ContextPackage theContextPackage = (ContextPackage)EPackage.Registry.INSTANCE.getEPackage(ContextPackage.eNS_URI);
-		UtilPackage theUtilPackage = (UtilPackage)EPackage.Registry.INSTANCE.getEPackage(UtilPackage.eNS_URI);
+		JavaPackage theJavaPackage = (JavaPackage)EPackage.Registry.INSTANCE.getEPackage(JavaPackage.eNS_URI);
 
 		// Create type parameters
 
@@ -494,7 +494,7 @@ public class DatabaseQueryPackageImpl extends EPackageImpl implements DatabaseQu
 		initEClass(queryParserEClass, QueryParser.class, "QueryParser", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		op = addEOperation(queryParserEClass, this.getSQLQueryParseResult(), "parseQuery", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, theUtilPackage.getJavaInputStream(), "stream", 1, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, theJavaPackage.getJavaInputStream(), "stream", 1, 1, IS_UNIQUE, IS_ORDERED);
 		addEException(op, theDatabasePackage.getDatabaseException());
 
 		op = addEOperation(queryParserEClass, this.getSQLQueryParseResult(), "parseQuery", 0, 1, IS_UNIQUE, IS_ORDERED);

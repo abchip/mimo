@@ -15,19 +15,15 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.abchip.mimo.context.ContextProvider;
+import org.abchip.mimo.data.Strings;
 import org.abchip.mimo.entity.EntityNameable;
-import org.abchip.mimo.entity.Frame;
-import org.abchip.mimo.entity.FrameManager;
-import org.abchip.mimo.resource.ResourceReader;
 import org.abchip.mimo.resource.ResourceManager;
-import org.abchip.mimo.util.Strings;
+import org.abchip.mimo.resource.ResourceReader;
 
 public class FindNamesServlet extends BaseServlet {
 
 	private static final long serialVersionUID = 1L;
 
-	@Inject
-	private FrameManager frameManger;
 	@Inject
 	private ResourceManager resourceManager;
 
@@ -40,16 +36,11 @@ public class FindNamesServlet extends BaseServlet {
 		String frameName = Strings.qINSTANCE.firstToUpper(request.getParameter("frame"));
 		String filter = request.getParameter("filter");
 
-		@SuppressWarnings("unchecked")
-		Frame<E> frame = (Frame<E>) frameManger.getFrameReader(contextProvider).lookup(frameName);
-		if (frame == null)
-			return;
-
-		ResourceReader<E> entityReader = resourceManager.getResourceReader(contextProvider, frame);
+		ResourceReader<E> entityReader = resourceManager.getResourceReader(contextProvider, frameName);
 		if (entityReader == null) {
 			response.setStatus(HttpServletResponse.SC_NO_CONTENT);
 			response.getWriter().write("[]");
-			
+
 			return;
 		}
 

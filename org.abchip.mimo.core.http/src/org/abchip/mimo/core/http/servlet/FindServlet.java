@@ -15,6 +15,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.abchip.mimo.context.ContextProvider;
+import org.abchip.mimo.data.Strings;
 import org.abchip.mimo.entity.EntityNameable;
 import org.abchip.mimo.entity.Frame;
 import org.abchip.mimo.entity.FrameManager;
@@ -23,17 +24,16 @@ import org.abchip.mimo.entity.Slot;
 import org.abchip.mimo.resource.ResourceManager;
 import org.abchip.mimo.resource.ResourceReader;
 import org.abchip.mimo.resource.ResourceSerializer;
-import org.abchip.mimo.util.Strings;
 
 public class FindServlet extends BaseServlet {
 
 	private static final long serialVersionUID = 1L;
 
 	@Inject
-	private FrameManager frameManger;
-	@Inject
 	private ResourceManager resourceManager;
-
+	@Inject
+	private FrameManager frameManager;
+	
 	protected void execute(ContextProvider contextProvider, HttpServletRequest request, HttpServletResponse response) throws IOException {
 		_execute(contextProvider, request, response);
 	}
@@ -54,10 +54,10 @@ public class FindServlet extends BaseServlet {
 		String[] keys = request.getParameterValues("keys");
 
 		@SuppressWarnings("unchecked")
-		Frame<E> frame = (Frame<E>) frameManger.getFrameReader(contextProvider).lookup(frameName);
+		Frame<E> frame = (Frame<E>) frameManager.getFrame(contextProvider, frameName);
 		if (frame == null)
 			return;
-
+		
 		if (keys != null) {
 			StringBuffer sb = new StringBuffer();
 			int i = 0;
@@ -82,7 +82,7 @@ public class FindServlet extends BaseServlet {
 		response.setStatus(HttpServletResponse.SC_FOUND);
 
 		ResourceReader<E> entityReader = resourceManager.getResourceReader(contextProvider, frame);
-		ResourceSerializer<E> entitySerializer = resourceManager.createResourceSerializer(frame, SerializationType.JAVA_SCRIPT_OBJECT_NOTATION);
+		ResourceSerializer<E> entitySerializer = resourceManager.createResourceSerializer(contextProvider, frame, SerializationType.JAVA_SCRIPT_OBJECT_NOTATION);
 		for (E entity : entityReader.find(filter, fields, order, Integer.parseInt(limit), Boolean.parseBoolean(proxy)))
 			entitySerializer.add(entity);
 

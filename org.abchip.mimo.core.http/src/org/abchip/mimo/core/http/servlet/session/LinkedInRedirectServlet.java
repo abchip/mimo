@@ -20,12 +20,12 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import org.abchip.mimo.context.AuthenticationAnonymous;
+import org.abchip.mimo.context.AuthenticationManager;
 import org.abchip.mimo.context.ContextFactory;
 import org.abchip.mimo.context.ContextProvider;
 import org.abchip.mimo.entity.EntityNameable;
-import org.abchip.mimo.resource.ResourceReader;
 import org.abchip.mimo.resource.ResourceManager;
-import org.abchip.mimo.resource.ResourceProvider;
+import org.abchip.mimo.resource.ResourceReader;
 
 public class LinkedInRedirectServlet extends HttpServlet {
 
@@ -38,19 +38,8 @@ public class LinkedInRedirectServlet extends HttpServlet {
 	@Inject
 	private ResourceManager resourceManager;
 
-	private ResourceProvider resourceProvider = null;
-
-	protected ResourceProvider getDefaultProvider() {
-		if (this.resourceProvider == null) {
-			synchronized (this) {
-				if (this.resourceProvider == null) {
-					this.resourceProvider = resourceManager.getProvider("UserLogin");
-				}
-			}
-		}
-
-		return this.resourceProvider;
-	}
+	@Inject
+	private AuthenticationManager authenticationManager;
 
 	@Override
 	protected final void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -65,12 +54,12 @@ public class LinkedInRedirectServlet extends HttpServlet {
 
 		// anonymous access
 		AuthenticationAnonymous authentication = ContextFactory.eINSTANCE.createAuthenticationAnonymous();
-		ContextProvider contextProvider = getDefaultProvider().login(null, authentication);
+		ContextProvider contextProvider = authenticationManager.login(null, authentication);
 
 		ResourceReader<?> oauth2Reader = resourceManager.getResourceReader(contextProvider, "OAuth2LinkedIn");
 		EntityNameable oauth2LinkedIn = oauth2Reader.first();
 
-		getDefaultProvider().logout(contextProvider);
+		authenticationManager.logout(contextProvider);
 		contextProvider.getContext().close();
 
 		if (oauth2LinkedIn == null) {

@@ -67,7 +67,7 @@ public interface Context extends ContextProvider {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model objectRequired="true" qualifierRequired="true" ABounds="org.abchip.mimo.util.JavaAnnotation"
+	 * @model objectRequired="true" qualifierRequired="true" ABounds="org.abchip.mimo.java.JavaAnnotation"
 	 * @generated
 	 */
 	<A extends Annotation> void invoke(Object object, Class<A> qualifier);
@@ -107,7 +107,7 @@ public interface Context extends ContextProvider {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model dataType="org.abchip.mimo.util.JavaURL" exceptions="org.abchip.mimo.util.JavaIOException" contextRequired="true" pathRequired="true"
+	 * @model dataType="org.abchip.mimo.java.JavaURL" exceptions="org.abchip.mimo.java.JavaIOException" contextRequired="true" pathRequired="true"
 	 * @generated
 	 */
 	URL getResource(Class<?> context, String path) throws IOException;
@@ -115,7 +115,7 @@ public interface Context extends ContextProvider {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model dataType="org.abchip.mimo.util.JavaURL" exceptions="org.abchip.mimo.util.JavaIOException" contextRequired="true" pathRequired="true"
+	 * @model dataType="org.abchip.mimo.java.JavaURL" exceptions="org.abchip.mimo.java.JavaIOException" contextRequired="true" pathRequired="true"
 	 * @generated
 	 */
 	List<URL> getResources(Class<?> context, String path) throws IOException;

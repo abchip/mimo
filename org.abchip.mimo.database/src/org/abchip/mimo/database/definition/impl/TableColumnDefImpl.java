@@ -13,9 +13,9 @@
  */
 package org.abchip.mimo.database.definition.impl;
 
+import org.abchip.mimo.data.DataDef;
 import org.abchip.mimo.database.definition.DatabaseDefinitionPackage;
 import org.abchip.mimo.database.definition.TableColumnDef;
-import org.abchip.mimo.util.DataDef;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.ecore.EClass;
