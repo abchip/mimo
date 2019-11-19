@@ -189,7 +189,7 @@ public class DocumentImpl extends BizEntityTypedImpl<DocumentType> implements Do
 	 */
 	@Override
 	public Object getImageData() {
-		return eGet(DocumentPackage.Literals.DOCUMENT__IMAGE_DATA, true);
+		return (Object)eGet(DocumentPackage.Literals.DOCUMENT__IMAGE_DATA, true);
 	}
 
 	/**

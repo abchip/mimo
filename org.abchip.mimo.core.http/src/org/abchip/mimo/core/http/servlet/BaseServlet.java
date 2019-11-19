@@ -22,7 +22,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import javax.servlet.http.Part;
 
-import org.abchip.mimo.context.ContextProvider;
+import org.abchip.mimo.context.Context;
 import org.abchip.mimo.core.http.ContextUtils;
 import org.abchip.mimo.core.http.HttpUtils;
 import org.abchip.mimo.core.http.MultipartSupportPart;
@@ -46,28 +46,28 @@ public abstract class BaseServlet extends HttpServlet {
 		HttpSession session = request.getSession();
 		System.out.println(session.getId() + ": " + getServletName() + " " + HttpUtils.getParametersAsString(request));
 
-		ContextProvider contextProvider = ContextUtils.getContextProvider(session.getId());
+		Context context = ContextUtils.getContext(session.getId());
 
 		// invalid session
-		// if (contextProvider != null &&
-		// !this.getDefaultProvider().isActive(contextProvider)) {
-		// contextProvider = null;
+		// if (context != null &&
+		// !this.getDefaultProvider().isActive(context)) {
+		// context = null;
 		// TODO reactivate context on provider
 		// }
 
 		// invalid access
-		if (contextProvider == null) {
-			ContextUtils.removeContextProvider(session.getId());
+		if (context == null) {
+			ContextUtils.removeContext(session.getId());
 			response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
 			return;
 		}
 
-		execute(contextProvider, request, response);
+		execute(context, request, response);
 
 		response.flushBuffer();
 	}
 
-	protected abstract void execute(ContextProvider contextProvider, HttpServletRequest request, HttpServletResponse response) throws IOException;
+	protected abstract void execute(Context context, HttpServletRequest request, HttpServletResponse response) throws IOException;
 
 	protected Map<String, Part> parseRequest(HttpServletRequest request) throws IOException, ServletException {
 

@@ -22,33 +22,33 @@ public interface ExceptionManager {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model dataType="org.abchip.mimo.context.MessageException" contextProviderRequired="true" messageType="org.abchip.mimo.java.JavaEnum" messageRequired="true" EBounds="org.abchip.mimo.java.JavaEnum"
+	 * @model dataType="org.abchip.mimo.context.MessageException" contextRequired="true" messageType="org.abchip.mimo.java.JavaEnum" messageRequired="true" EBounds="org.abchip.mimo.java.JavaEnum"
 	 * @generated
 	 */
-	<E extends Enum<E>> MessageException prepareException(ContextProvider contextProvider, Enum<E> message);
+	<E extends Enum<E>> MessageException prepareException(Context context, Enum<E> message);
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model dataType="org.abchip.mimo.context.MessageException" contextProviderRequired="true" messageType="org.abchip.mimo.java.JavaEnum" messageRequired="true" variableRequired="true" EBounds="org.abchip.mimo.java.JavaEnum"
+	 * @model dataType="org.abchip.mimo.context.MessageException" contextRequired="true" messageType="org.abchip.mimo.java.JavaEnum" messageRequired="true" variableRequired="true" EBounds="org.abchip.mimo.java.JavaEnum"
 	 * @generated
 	 */
-	<E extends Enum<E>> MessageException prepareException(ContextProvider contextProvider, Enum<E> message, Object variable);
+	<E extends Enum<E>> MessageException prepareException(Context context, Enum<E> message, Object variable);
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model dataType="org.abchip.mimo.context.MessageException" contextProviderRequired="true" messageType="org.abchip.mimo.java.JavaEnum" messageRequired="true" variablesDataType="org.abchip.mimo.context.MessageVariableList" variablesRequired="true" EBounds="org.abchip.mimo.java.JavaEnum"
+	 * @model dataType="org.abchip.mimo.context.MessageException" contextRequired="true" messageType="org.abchip.mimo.java.JavaEnum" messageRequired="true" variablesDataType="org.abchip.mimo.context.MessageVariableList" variablesRequired="true" EBounds="org.abchip.mimo.java.JavaEnum"
 	 * @generated
 	 */
-	<E extends Enum<E>> MessageException prepareException(ContextProvider contextProvider, Enum<E> message, Object[] variables);
+	<E extends Enum<E>> MessageException prepareException(Context context, Enum<E> message, Object[] variables);
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model dataType="org.abchip.mimo.context.MessageException" contextProviderRequired="true" messageRequired="true" messageFileNameRequired="true" messageFileLibRequired="true" variablesDataType="org.abchip.mimo.context.MessageVariableList" variablesRequired="true"
+	 * @model dataType="org.abchip.mimo.context.MessageException" contextRequired="true" messageRequired="true" messageFileNameRequired="true" messageFileLibRequired="true" variablesDataType="org.abchip.mimo.context.MessageVariableList" variablesRequired="true"
 	 * @generated
 	 */
-	MessageException prepareException(ContextProvider contextProvider, String message, String messageFileName, String messageFileLib, Object[] variables);
+	MessageException prepareException(Context context, String message, String messageFileName, String messageFileLib, Object[] variables);
 
 } // ExceptionManager

@@ -11,7 +11,7 @@ package org.abchip.mimo.core.base.nio;
 import javax.annotation.PostConstruct;
 import javax.inject.Inject;
 
-import org.abchip.mimo.context.ContextProvider;
+import org.abchip.mimo.context.Context;
 import org.abchip.mimo.context.ContextRoot;
 import org.abchip.mimo.entity.EntityNameable;
 import org.abchip.mimo.entity.Frame;
@@ -45,12 +45,12 @@ public class NIOResourceProviderImpl extends ResourceProviderImpl {
 	}
 
 	@Override
-	public <E extends EntityNameable> Resource<E> doGetResource(ContextProvider contextProvider, Frame<E> frame, String tenant) {
+	public <E extends EntityNameable> Resource<E> doGetResource(Context context, Frame<E> frame, String tenant) {
 
 		if(pathManager == null)
 			return null;
 		
-		Resource<E> resource = new NIOResourcempl<E>(contextProvider, frame, tenant, pathManager);
+		Resource<E> resource = new NIOResourcempl<E>(context, frame, tenant, pathManager);
 		resource.setResourceConfig(this.resourceConfig);
 
 		return resource;

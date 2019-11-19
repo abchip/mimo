@@ -230,7 +230,7 @@ public class TestFieldTypeImpl extends BizEntityImpl implements TestFieldType {
 	 */
 	@Override
 	public Object getObjectField() {
-		return eGet(TestPackage.Literals.TEST_FIELD_TYPE__OBJECT_FIELD, true);
+		return (Object)eGet(TestPackage.Literals.TEST_FIELD_TYPE__OBJECT_FIELD, true);
 	}
 
 	/**

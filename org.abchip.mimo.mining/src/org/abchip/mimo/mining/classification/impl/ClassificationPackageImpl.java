@@ -291,7 +291,7 @@ public class ClassificationPackageImpl extends EPackageImpl implements Classific
 		ETypeParameter t1 = addETypeParameter(op, "E");
 		g1 = createEGenericType(theEntityPackage.getEntity());
 		t1.getEBounds().add(g1);
-		addEParameter(op, theContextPackage.getContextProvider(), "contextProvider", 1, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, theContextPackage.getContext(), "context", 1, 1, IS_UNIQUE, IS_ORDERED);
 		g1 = createEGenericType(ecorePackage.getEJavaClass());
 		g2 = createEGenericType(t1);
 		g1.getETypeArguments().add(g2);

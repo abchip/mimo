@@ -199,6 +199,7 @@
         <genOperations ecoreOperation="database.ecore#//connection/Connection/getCatalog"/>
         <genOperations ecoreOperation="database.ecore#//connection/Connection/getCatalogGenerationStrategy"/>
         <genOperations ecoreOperation="database.ecore#//connection/Connection/getCatalogMetaData"/>
+        <genOperations ecoreOperation="database.ecore#//connection/Connection/getContext"/>
         <genOperations ecoreOperation="database.ecore#//connection/Connection/prepareStatement">
           <genParameters ecoreParameter="database.ecore#//connection/Connection/prepareStatement/sql"/>
         </genOperations>

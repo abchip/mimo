@@ -381,14 +381,14 @@ public class LogicPackageImpl extends EPackageImpl implements LogicPackage {
 		ETypeParameter t1 = addETypeParameter(op, "E");
 		EGenericType g1 = createEGenericType(theEntityPackage.getEntity());
 		t1.getEBounds().add(g1);
-		addEParameter(op, theContextPackage.getContextProvider(), "contextProvider", 1, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, theContextPackage.getContext(), "context", 1, 1, IS_UNIQUE, IS_ORDERED);
 		g1 = createEGenericType(theEntityPackage.getFrame());
 		EGenericType g2 = createEGenericType(t1);
 		g1.getETypeArguments().add(g2);
 		addEParameter(op, g1, "frame", 1, 1, IS_UNIQUE, IS_ORDERED);
 
 		op = addEOperation(mindManagerEClass, this.getReasoner(), "createReasoner", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, theContextPackage.getContextProvider(), "contextProvider", 1, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, theContextPackage.getContext(), "context", 1, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(questionEClass, Question.class, "Question", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getQuestion_Object(), this.getTerm(), null, "object", null, 0, 1, Question.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

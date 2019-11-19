@@ -7,7 +7,7 @@
  */
 package org.abchip.mimo.audio;
 
-import org.abchip.mimo.context.ContextProvider;
+import org.abchip.mimo.context.Context;
 
 /**
  * <!-- begin-user-doc -->
@@ -23,25 +23,25 @@ public interface AudioManager {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model contextProviderRequired="true"
+	 * @model contextRequired="true"
 	 * @generated
 	 */
-	AudioRecorder record(ContextProvider contextProvider);
+	AudioRecorder record(Context context);
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model contextProviderRequired="true" audioRequired="true" startRequired="true" waitEndRequired="true"
+	 * @model contextRequired="true" audioRequired="true" startRequired="true" waitEndRequired="true"
 	 * @generated
 	 */
-	AudioPlayer play(ContextProvider contextProvider, Audio audio, boolean start, boolean waitEnd);
+	AudioPlayer play(Context context, Audio audio, boolean start, boolean waitEnd);
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model contextProviderRequired="true" styleRequired="true" textRequired="true" startRequired="true" waitEndRequired="true"
+	 * @model contextRequired="true" styleRequired="true" textRequired="true" startRequired="true" waitEndRequired="true"
 	 * @generated
 	 */
-	AudioPlayer play(ContextProvider contextProvider, AudioStyle style, String text, boolean start, boolean waitEnd);
+	AudioPlayer play(Context context, AudioStyle style, String text, boolean start, boolean waitEnd);
 
 } // AudioManager

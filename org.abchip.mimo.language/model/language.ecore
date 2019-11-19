@@ -23,11 +23,11 @@
       <eGenericType eClassifier="ecore:EClass ../../org.abchip.mimo.mining/model/mining.ecore#//classification/Classification">
         <eTypeArguments eClassifier="#//Language"/>
       </eGenericType>
-      <eParameters name="contextProvider" lowerBound="1" eType="ecore:EClass ../../org.abchip.mimo.core/model/mimo.ecore#//context/ContextProvider"/>
+      <eParameters name="context" lowerBound="1" eType="ecore:EClass ../../org.abchip.mimo.core/model/mimo.ecore#//context/Context"/>
       <eParameters name="text" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     </eOperations>
     <eOperations name="translate" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
-      <eParameters name="contextProvider" lowerBound="1" eType="ecore:EClass ../../org.abchip.mimo.core/model/mimo.ecore#//context/ContextProvider"/>
+      <eParameters name="context" lowerBound="1" eType="ecore:EClass ../../org.abchip.mimo.core/model/mimo.ecore#//context/Context"/>
       <eParameters name="languageSource" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       <eParameters name="text" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       <eParameters name="languageTarget" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -35,7 +35,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="LanguageParser" abstract="true" interface="true">
     <eOperations name="parse" lowerBound="1" eType="#//LanguageExpression">
-      <eParameters name="contextProvider" lowerBound="1" eType="ecore:EClass ../../org.abchip.mimo.core/model/mimo.ecore#//context/ContextProvider"/>
+      <eParameters name="context" lowerBound="1" eType="ecore:EClass ../../org.abchip.mimo.core/model/mimo.ecore#//context/Context"/>
       <eParameters name="language" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       <eParameters name="text" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     </eOperations>
@@ -64,7 +64,7 @@
   <eClassifiers xsi:type="ecore:EClass" name="LanguageLinearizer" abstract="true"
       interface="true">
     <eOperations name="linearize" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
-      <eParameters name="contextProvider" lowerBound="1" eType="ecore:EClass ../../org.abchip.mimo.core/model/mimo.ecore#//context/ContextProvider"/>
+      <eParameters name="context" lowerBound="1" eType="ecore:EClass ../../org.abchip.mimo.core/model/mimo.ecore#//context/Context"/>
       <eParameters name="language" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       <eParameters name="expression" lowerBound="1" eType="#//LanguageExpression"/>
     </eOperations>

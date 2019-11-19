@@ -24,7 +24,7 @@ import org.abchip.mimo.audio.AudioManager;
 import org.abchip.mimo.audio.AudioPlayer;
 import org.abchip.mimo.audio.AudioRecorder;
 import org.abchip.mimo.audio.AudioStyle;
-import org.abchip.mimo.context.ContextProvider;
+import org.abchip.mimo.context.Context;
 
 import com.sun.speech.freetts.Voice;
 import com.sun.speech.freetts.VoiceManager;
@@ -41,12 +41,12 @@ public class SPH4AudioManagerImpl implements AudioManager {
 	}
 
 	@Override
-	public AudioRecorder record(ContextProvider contextProvider) {
+	public AudioRecorder record(Context context) {
 		return new SPH4AudioRecorderImpl();
 	}
 
 	@Override
-	public AudioPlayer play(ContextProvider contextProvider, Audio audio, boolean start, boolean waitEnd) {
+	public AudioPlayer play(Context context, Audio audio, boolean start, boolean waitEnd) {
 
 		AudioPlayer audioPlayer = new SPH4AudioPlayerImpl(audio);
 		if (start)
@@ -64,7 +64,7 @@ public class SPH4AudioManagerImpl implements AudioManager {
 	}
 
 	@Override
-	public AudioPlayer play(ContextProvider contextProvider, AudioStyle style, String text, boolean start, boolean waitEnd) {
+	public AudioPlayer play(Context context, AudioStyle style, String text, boolean start, boolean waitEnd) {
 
 //		play(text);
 		

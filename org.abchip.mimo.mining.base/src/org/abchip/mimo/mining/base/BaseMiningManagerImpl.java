@@ -11,7 +11,7 @@ import java.util.List;
 
 import javax.inject.Inject;
 
-import org.abchip.mimo.context.ContextProvider;
+import org.abchip.mimo.context.Context;
 import org.abchip.mimo.entity.Entity;
 import org.abchip.mimo.mining.MiningManager;
 import org.abchip.mimo.mining.classification.Classification;
@@ -24,13 +24,13 @@ public class BaseMiningManagerImpl implements MiningManager {
 	private ClassifierRegistry classifierRegistry;
 	
 	@Override
-	public <E extends Entity> List<Classification<E>> classify(ContextProvider contextProvider, Class<E> klass, Object object) {
+	public <E extends Entity> List<Classification<E>> classify(Context context, Class<E> klass, Object object) {
 
 		Classifier classifier = lookupClassifier(klass, object.getClass());
 		if(classifier == null)
 			return null;
 		
-		return classifier.classify(contextProvider, klass, object);
+		return classifier.classify(context, klass, object);
 	}
 
 	@Override

@@ -349,7 +349,7 @@ public class TwitterPackageImpl extends EPackageImpl implements TwitterPackage {
 		initEClass(twitterManagerEClass, TwitterManager.class, "TwitterManager", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		EOperation op = addEOperation(twitterManagerEClass, null, "search", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, theContextPackage.getContextProvider(), "contextProvider", 1, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, theContextPackage.getContext(), "context", 1, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEString(), "language", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEString(), "query", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEInt(), "maxNumber", 0, 1, IS_UNIQUE, IS_ORDERED);

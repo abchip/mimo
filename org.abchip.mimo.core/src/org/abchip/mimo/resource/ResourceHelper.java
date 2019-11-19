@@ -16,7 +16,7 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
-import org.abchip.mimo.context.ContextProvider;
+import org.abchip.mimo.context.Context;
 import org.abchip.mimo.entity.EntityIterator;
 import org.abchip.mimo.entity.EntityNameable;
 import org.abchip.mimo.entity.Frame;
@@ -33,8 +33,8 @@ public class ResourceHelper {
 		return new MyEntityIterator<E>(iterator);
 	}
 
-	public static <E extends EntityNameable> ResourceReader<E> wrapReader(ContextProvider contextProvider, Frame<E> frame, Map<String, E> entities) {
-		return new MapReader<E>(contextProvider, frame, entities);
+	public static <E extends EntityNameable> ResourceReader<E> wrapReader(Context context, Frame<E> frame, Map<String, E> entities) {
+		return new MapReader<E>(context, frame, entities);
 	}
 
 	public static <E extends EntityNameable> void firePreDeleteEvent(final ResourceWriter<E> resourceWriter, final E source) {
@@ -64,8 +64,8 @@ public class ResourceHelper {
 				}
 
 				@Override
-				public ContextProvider getContextProvider() {
-					return resourceWriter.getContextProvider();
+				public Context getContext() {
+					return resourceWriter.getContext();
 				}
 			};
 			resourceNotifier.fireEvent(event);
@@ -99,8 +99,8 @@ public class ResourceHelper {
 				}
 
 				@Override
-				public ContextProvider getContextProvider() {
-					return resourceWriter.getContextProvider();
+				public Context getContext() {
+					return resourceWriter.getContext();
 				}
 			};
 			resourceNotifier.fireEvent(event);
@@ -134,8 +134,8 @@ public class ResourceHelper {
 				}
 
 				@Override
-				public ContextProvider getContextProvider() {
-					return resourceWriter.getContextProvider();
+				public Context getContext() {
+					return resourceWriter.getContext();
 				}
 			};
 			resourceNotifier.fireEvent(event);
@@ -169,8 +169,8 @@ public class ResourceHelper {
 				}
 
 				@Override
-				public ContextProvider getContextProvider() {
-					return resourceWriter.getContextProvider();
+				public Context getContext() {
+					return resourceWriter.getContext();
 				}
 			};
 			resourceNotifier.fireEvent(event);
@@ -211,11 +211,11 @@ public class ResourceHelper {
 	private static class MapReader<E extends EntityNameable> extends ResourceReaderImpl<E> {
 
 		private Frame<E> frame;
-		private ContextProvider contextProvider;
+		private Context context;
 		private Map<String, E> entities = null;
 
-		public MapReader(ContextProvider contextProvider, Frame<E> frame, Map<String, E> entities) {
-			this.contextProvider = contextProvider;
+		public MapReader(Context context, Frame<E> frame, Map<String, E> entities) {
+			this.context = context;
 			this.frame = frame;
 			this.entities = entities;
 		}
@@ -259,13 +259,13 @@ public class ResourceHelper {
 		}
 
 		@Override
-		public ContextProvider getContextProvider() {
-			return this.contextProvider;
+		public Context getContext() {
+			return this.context;
 		}
 
 		@Override
 		public String getTenant() {
-			return contextProvider.getContextDescription().getTenant();
+			return context.getContextDescription().getTenant();
 		}
 	}
 }

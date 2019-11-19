@@ -7,7 +7,7 @@
  */
 package org.abchip.mimo.social.twitter;
 
-import org.abchip.mimo.context.ContextProvider;
+import org.abchip.mimo.context.Context;
 import org.abchip.mimo.entity.EntityIterator;
 
 /**
@@ -24,9 +24,9 @@ public interface TwitterManager {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model contextProviderRequired="true"
+	 * @model contextRequired="true"
 	 * @generated
 	 */
-	EntityIterator<Tweet> search(ContextProvider contextProvider, String language, String query, int maxNumber);
+	EntityIterator<Tweet> search(Context context, String language, String query, int maxNumber);
 
 } // TwitterManager

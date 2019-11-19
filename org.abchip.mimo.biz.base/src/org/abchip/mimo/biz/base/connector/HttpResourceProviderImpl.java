@@ -15,7 +15,7 @@ import org.abchip.mimo.biz.BizEntity;
 import org.abchip.mimo.biz.BizEntityNote;
 import org.abchip.mimo.biz.BizEntityType;
 import org.abchip.mimo.biz.BizEntityTyped;
-import org.abchip.mimo.context.ContextProvider;
+import org.abchip.mimo.context.Context;
 import org.abchip.mimo.context.ContextRoot;
 import org.abchip.mimo.edi.entity.EdiFrameSetup;
 import org.abchip.mimo.edi.message.Message;
@@ -59,13 +59,13 @@ public class HttpResourceProviderImpl extends ResourceProviderImpl {
 	}
 
 	@Override
-	public <E extends EntityNameable> Resource<E> doGetResource(ContextProvider contextProvider, Frame<E> frame, String tenant) {
+	public <E extends EntityNameable> Resource<E> doGetResource(Context context, Frame<E> frame, String tenant) {
 
-		HttpConnector connector = contextProvider.getContext().get(HttpConnector.class);
+		HttpConnector connector = context.get(HttpConnector.class);
 		if (connector == null)
 			return null;
 
-		Resource<E> resource = new HttpResourceImpl<E>(contextProvider, frame, tenant, connector);
+		Resource<E> resource = new HttpResourceImpl<E>(context, frame, tenant, connector);
 		resource.setResourceConfig(this.resourceConfig);
 
 		return resource;

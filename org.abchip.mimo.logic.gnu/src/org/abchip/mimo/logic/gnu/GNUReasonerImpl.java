@@ -18,7 +18,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.StringTokenizer;
 
-import org.abchip.mimo.context.ContextProvider;
+import org.abchip.mimo.context.Context;
 import org.abchip.mimo.logic.Goal;
 import org.abchip.mimo.logic.LogicFactory;
 import org.abchip.mimo.logic.Question;
@@ -32,13 +32,13 @@ import gnu.prolog.vm.Environment;
 
 public class GNUReasonerImpl implements Reasoner {
 
-	private ContextProvider contextProvider;
+	private Context context;
 
 	private Environment environment = null;
 	private Map<String, Theory> theories = null;
 
-	public GNUReasonerImpl(ContextProvider contextProvider) {
-		this.contextProvider = contextProvider;
+	public GNUReasonerImpl(Context context) {
+		this.context = context;
 
 		theories = new HashMap<String, Theory>();
 	}
@@ -68,7 +68,7 @@ public class GNUReasonerImpl implements Reasoner {
 
 		environment = new GNUEnvironment();
 
-		URL resource = contextProvider.getContext().getResource(this.getClass(), "/theories/asup_base.pl");
+		URL resource = context.getResource(this.getClass(), "/theories/asup_base.pl");
 		// environment.ensureLoaded(AtomTerm.get(resource.getFile()));
 
 		PrologTextLoaderState ptls = environment.getPrologTextLoaderState();

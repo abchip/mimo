@@ -23,7 +23,7 @@ import java.util.List;
  * @model abstract="true"
  * @generated
  */
-public interface Context extends ContextProvider {
+public interface Context {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -47,6 +47,14 @@ public interface Context extends ContextProvider {
 	 * @generated
 	 */
 	<T extends Object> T getAdapter(Object adaptable, Class<T> adapter);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model kind="operation" required="true"
+	 * @generated
+	 */
+	ContextDescription getContextDescription();
 
 	/**
 	 * <!-- begin-user-doc -->

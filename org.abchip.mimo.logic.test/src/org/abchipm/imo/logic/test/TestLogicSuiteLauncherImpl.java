@@ -10,7 +10,7 @@ package org.abchipm.imo.logic.test;
 
 import javax.inject.Inject;
 
-import org.abchip.mimo.context.ContextProvider;
+import org.abchip.mimo.context.Context;
 import org.abchip.mimo.tester.TestManager;
 import org.abchip.mimo.tester.TestSuiteLauncher;
 import org.abchip.mimo.tester.TestSuiteRunner;
@@ -21,7 +21,7 @@ public class TestLogicSuiteLauncherImpl implements TestSuiteLauncher {
 	private TestManager testManager;
 
 	@Override
-	public TestSuiteRunner createSuite(ContextProvider contextProvider) {
-		return new TestLogicSuiteRunnerImpl(contextProvider.getContext(), testManager, null);
+	public TestSuiteRunner createSuite(Context context) {
+		return new TestLogicSuiteRunnerImpl(context, testManager, null);
 	}	
 }

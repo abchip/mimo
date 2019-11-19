@@ -646,7 +646,6 @@ public class TesterPackageImpl extends EPackageImpl implements TesterPackage {
 		assertionResultEClass.getESuperTypes().add(theEntityPackage.getEntityNameable());
 		assertionSuccessEClass.getESuperTypes().add(this.getAssertionResult());
 		testAsserterEClass.getESuperTypes().add(this.getAsserter());
-		testRunnerEClass.getESuperTypes().add(theContextPackage.getContextProvider());
 		testResultEClass.getESuperTypes().add(theEntityPackage.getEntity());
 		EGenericType g1 = createEGenericType(this.getTestRunner());
 		testSuiteRunnerEClass.getEGenericSuperTypes().add(g1);
@@ -765,11 +764,11 @@ public class TesterPackageImpl extends EPackageImpl implements TesterPackage {
 		initEClass(testManagerEClass, TestManager.class, "TestManager", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		op = addEOperation(testManagerEClass, this.getTestSuiteRunner(), "prepareSuiteRunner", 0, -1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, theContextPackage.getContextProvider(), "contextProvider", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, theContextPackage.getContext(), "context", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEString(), "component", 1, 1, IS_UNIQUE, IS_ORDERED);
 
 		op = addEOperation(testManagerEClass, this.getTestUnitRunner(), "prepareUnitRunner", 1, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, theContextPackage.getContextProvider(), "contextProvider", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, theContextPackage.getContext(), "context", 0, 1, IS_UNIQUE, IS_ORDERED);
 		g1 = createEGenericType(ecorePackage.getEJavaClass());
 		g2 = createEGenericType();
 		g1.getETypeArguments().add(g2);
@@ -782,6 +781,8 @@ public class TesterPackageImpl extends EPackageImpl implements TesterPackage {
 
 		op = addEOperation(testRunnerEClass, null, "removeListener", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, this.getTestRunnerListener(), "listener", 1, 1, IS_UNIQUE, IS_ORDERED);
+
+		addEOperation(testRunnerEClass, theContextPackage.getContext(), "getContext", 1, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(testRunnerEventEClass, TestRunnerEvent.class, "TestRunnerEvent", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getTestRunnerEvent_Source(), this.getTestRunner(), null, "source", null, 1, 1, TestRunnerEvent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -808,7 +809,7 @@ public class TesterPackageImpl extends EPackageImpl implements TesterPackage {
 		initEClass(testSuiteLauncherEClass, TestSuiteLauncher.class, "TestSuiteLauncher", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		op = addEOperation(testSuiteLauncherEClass, this.getTestSuiteRunner(), "createSuite", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, theContextPackage.getContextProvider(), "contextProvider", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, theContextPackage.getContext(), "context", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(testSuiteRunnerEClass, TestSuiteRunner.class, "TestSuiteRunner", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 

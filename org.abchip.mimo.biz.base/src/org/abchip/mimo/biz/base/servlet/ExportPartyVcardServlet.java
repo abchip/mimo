@@ -14,7 +14,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.abchip.mimo.biz.base.service.PartyServices;
-import org.abchip.mimo.context.ContextProvider;
+import org.abchip.mimo.context.Context;
 import org.abchip.mimo.core.http.servlet.BaseServlet;
 import org.abchip.mimo.entity.EntityNameable;
 
@@ -25,17 +25,17 @@ public class ExportPartyVcardServlet extends BaseServlet {
 
 	private static final long serialVersionUID = 1L;
 
-	protected void execute(ContextProvider contextProvider, HttpServletRequest request, HttpServletResponse response) throws IOException {
-		_execute(contextProvider, request, response);
+	protected void execute(Context context, HttpServletRequest request, HttpServletResponse response) throws IOException {
+		_execute(context, request, response);
 	}
 
-	private <E extends EntityNameable> void _execute(ContextProvider contextProvider, HttpServletRequest request, HttpServletResponse response) throws IOException {
+	private <E extends EntityNameable> void _execute(Context context, HttpServletRequest request, HttpServletResponse response) throws IOException {
 
 		String partyId = request.getParameter("partyId");
 
 		try {
 
-			VCard vcard = PartyServices.createVcardFromParty(contextProvider, partyId);
+			VCard vcard = PartyServices.createVcardFromParty(context, partyId);
 
 			response.setStatus(HttpServletResponse.SC_OK);
 			response.addHeader("Content-disposition", "attachment; filename=" + partyId + ".vcf");

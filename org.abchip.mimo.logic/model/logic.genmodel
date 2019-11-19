@@ -14,12 +14,12 @@
     </genClasses>
     <genClasses image="false" ecoreClass="logic.ecore#//MindManager">
       <genOperations ecoreOperation="logic.ecore#//MindManager/buildTheory">
-        <genParameters ecoreParameter="logic.ecore#//MindManager/buildTheory/contextProvider"/>
+        <genParameters ecoreParameter="logic.ecore#//MindManager/buildTheory/context"/>
         <genParameters ecoreParameter="logic.ecore#//MindManager/buildTheory/frame"/>
         <genTypeParameters ecoreTypeParameter="logic.ecore#//MindManager/buildTheory/E"/>
       </genOperations>
       <genOperations ecoreOperation="logic.ecore#//MindManager/createReasoner">
-        <genParameters ecoreParameter="logic.ecore#//MindManager/createReasoner/contextProvider"/>
+        <genParameters ecoreParameter="logic.ecore#//MindManager/createReasoner/context"/>
       </genOperations>
     </genClasses>
     <genClasses ecoreClass="logic.ecore#//Question">

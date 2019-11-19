@@ -19,7 +19,7 @@ import javax.servlet.http.Part;
 import org.abchip.mimo.biz.product.category.CategoryFactory;
 import org.abchip.mimo.biz.product.category.ProductCategory;
 import org.abchip.mimo.biz.product.category.ProductCategoryType;
-import org.abchip.mimo.context.ContextProvider;
+import org.abchip.mimo.context.Context;
 import org.abchip.mimo.core.http.servlet.BaseServlet;
 import org.abchip.mimo.entity.EntityNameable;
 import org.abchip.mimo.resource.ResourceManager;
@@ -38,15 +38,15 @@ public class ImportProductCategoriesServlet extends BaseServlet {
 	@Inject
 	private ResourceManager resourceManager;
 
-	protected void execute(ContextProvider contextProvider, HttpServletRequest request, HttpServletResponse response) throws IOException {
-		_execute(contextProvider, request, response);
+	protected void execute(Context context, HttpServletRequest request, HttpServletResponse response) throws IOException {
+		_execute(context, request, response);
 	}
 
-	private <E extends EntityNameable> void _execute(ContextProvider contextProvider, HttpServletRequest request, HttpServletResponse response) throws IOException {
+	private <E extends EntityNameable> void _execute(Context context, HttpServletRequest request, HttpServletResponse response) throws IOException {
 
 		try {
 
-			ResourceWriter<ProductCategory> productCategoryWriter = resourceManager.getResourceWriter(contextProvider, ProductCategory.class);
+			ResourceWriter<ProductCategory> productCategoryWriter = resourceManager.getResourceWriter(context, ProductCategory.class);
 
 			for (Part filePart : parseRequest(request).values()) {
 				if (!filePart.getName().equals("upload"))
@@ -69,7 +69,7 @@ public class ImportProductCategoriesServlet extends BaseServlet {
 
 							ProductCategory productCategory = CategoryFactory.eINSTANCE.createProductCategory();
 							productCategory.setProductCategoryId(codeId);
-							productCategory.setProductCategoryTypeId(resourceManager.getFrame(contextProvider, ProductCategoryType.class).createProxy("MATERIALS_CATEGORY"));
+							productCategory.setProductCategoryTypeId(resourceManager.getFrame(context, ProductCategoryType.class).createProxy("MATERIALS_CATEGORY"));
 							productCategory.setCategoryName(Strings.qINSTANCE.escape(description));
 							productCategoryWriter.create(productCategory, true);
 						}

@@ -8,16 +8,16 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="AudioManager" abstract="true" interface="true">
     <eOperations name="record" eType="#//AudioRecorder">
-      <eParameters name="contextProvider" lowerBound="1" eType="ecore:EClass ../../org.abchip.mimo.core/model/mimo.ecore#//context/ContextProvider"/>
+      <eParameters name="context" lowerBound="1" eType="ecore:EClass ../../org.abchip.mimo.core/model/mimo.ecore#//context/Context"/>
     </eOperations>
     <eOperations name="play" eType="#//AudioPlayer">
-      <eParameters name="contextProvider" lowerBound="1" eType="ecore:EClass ../../org.abchip.mimo.core/model/mimo.ecore#//context/ContextProvider"/>
+      <eParameters name="context" lowerBound="1" eType="ecore:EClass ../../org.abchip.mimo.core/model/mimo.ecore#//context/Context"/>
       <eParameters name="audio" lowerBound="1" eType="#//Audio"/>
       <eParameters name="start" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
       <eParameters name="waitEnd" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
     </eOperations>
     <eOperations name="play" eType="#//AudioPlayer">
-      <eParameters name="contextProvider" lowerBound="1" eType="ecore:EClass ../../org.abchip.mimo.core/model/mimo.ecore#//context/ContextProvider"/>
+      <eParameters name="context" lowerBound="1" eType="ecore:EClass ../../org.abchip.mimo.core/model/mimo.ecore#//context/Context"/>
       <eParameters name="style" lowerBound="1" eType="#//AudioStyle"/>
       <eParameters name="text" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       <eParameters name="start" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>

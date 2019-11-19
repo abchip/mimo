@@ -45,46 +45,46 @@ public class TestAudio {
 	@TestStarted
 	public void start() throws InterruptedException {
 
-		audioManager.play(testRunner, AudioStyle.A, "Hi Diana, there is a kitchen to clean!!", true, true);
+		audioManager.play(testRunner.getContext(), AudioStyle.A, "Hi Diana, there is a kitchen to clean!!", true, true);
 
-		audioManager.play(testRunner, AudioStyle.A, "Hi Mattia, how are you?", true, true);
+		audioManager.play(testRunner.getContext(), AudioStyle.A, "Hi Mattia, how are you?", true, true);
 
 		readFrames();
 
 		// recordAudio();
 
-		ResourceReader<Audio> audioReader = resourceManager.getResourceReader(testRunner, Audio.class);
+		ResourceReader<Audio> audioReader = resourceManager.getResourceReader(testRunner.getContext(), Audio.class);
 		for (Audio audio : audioReader.find()) {
 
 			asserter.assertNotNull("Audio content", audio.getContent());
 
-			audioManager.play(testRunner, audio, true, true);
+			audioManager.play(testRunner.getContext(), audio, true, true);
 
-			Classification<Language> classification = languageManager.classifyLanguage(testRunner, audio.getText());
+			Classification<Language> classification = languageManager.classifyLanguage(testRunner.getContext(), audio.getText());
 			System.out.println(classification);
 		}
 	}
 
 	private void readFrames() throws InterruptedException {
 
-		audioManager.play(testRunner, AudioStyle.A, "I found the following frames in the system", true, true);
+		audioManager.play(testRunner.getContext(), AudioStyle.A, "I found the following frames in the system", true, true);
 
-		for (Frame<?> frame : resourceManager.getResourceReader(testRunner, Frame.class).find()) {
-			audioManager.play(testRunner, AudioStyle.B, frame.getName(), true, true);
+		for (Frame<?> frame : resourceManager.getResourceReader(testRunner.getContext(), Frame.class).find()) {
+			audioManager.play(testRunner.getContext(), AudioStyle.B, frame.getName(), true, true);
 		}
 
-		audioManager.play(testRunner, AudioStyle.A, "I found the following languages in the system", true, true);
+		audioManager.play(testRunner.getContext(), AudioStyle.A, "I found the following languages in the system", true, true);
 
-		ResourceReader<Language> languageReader = resourceManager.getResourceReader(testRunner, Language.class);
+		ResourceReader<Language> languageReader = resourceManager.getResourceReader(testRunner.getContext(), Language.class);
 		for (Language language : languageReader.find()) {
-			audioManager.play(testRunner, AudioStyle.B, language.getText(), true, true);
+			audioManager.play(testRunner.getContext(), AudioStyle.B, language.getText(), true, true);
 		}
 	}
 
 	@SuppressWarnings("unused")
 	private void recordAudio() throws InterruptedException {
 
-		AudioRecorder audioRecorder = audioManager.record(testRunner);
+		AudioRecorder audioRecorder = audioManager.record(testRunner.getContext());
 		audioRecorder.start();
 		Thread.sleep(5000);
 		audioRecorder.stop();
@@ -94,7 +94,7 @@ public class TestAudio {
 		audio.setText("Mimo audio test");
 		audio.setContent(((ByteArrayOutputStream) audioRecorder.getOutputStream()).toByteArray());
 
-		ResourceWriter<Audio> audioWriter = resourceManager.getResourceWriter(testRunner, Audio.class);
+		ResourceWriter<Audio> audioWriter = resourceManager.getResourceWriter(testRunner.getContext(), Audio.class);
 		audioWriter.create(audio);
 	}
 }

@@ -30,7 +30,7 @@ public class BaseResourceWriterImpl<E extends EntityNameable> extends BaseResour
 	@Override
 	public String nextSequence() {
 
-		Context context = internal.getContextProvider().getContext();
+		Context context = internal.getContext();
 		EntityLocker<?> entityLocker = lock(context, this.getFrame());
 
 		try {
@@ -43,7 +43,7 @@ public class BaseResourceWriterImpl<E extends EntityNameable> extends BaseResour
 	@Override
 	public void delete(E entity) {
 
-		Context context = internal.getContextProvider().getContext();
+		Context context = internal.getContext();
 		EntityLocker<?> entityLocker = lock(context, entity);
 
 		try {
@@ -66,7 +66,7 @@ public class BaseResourceWriterImpl<E extends EntityNameable> extends BaseResour
 	@Override
 	public void create(E entity, boolean update) {
 
-		Context context = internal.getContextProvider().getContext();
+		Context context = internal.getContext();
 		EntityLocker<?> entityLocker = lock(context, entity);
 
 		try {
@@ -84,7 +84,7 @@ public class BaseResourceWriterImpl<E extends EntityNameable> extends BaseResour
 	@Override
 	public void update(E entity) {
 
-		Context context = internal.getContextProvider().getContext();
+		Context context = internal.getContext();
 		EntityLocker<?> entityLocker = lock(context, entity);
 
 		try {

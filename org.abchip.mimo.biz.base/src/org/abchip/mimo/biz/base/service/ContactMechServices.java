@@ -4,23 +4,23 @@ import org.abchip.mimo.biz.party.contact.ContactMech;
 import org.abchip.mimo.biz.party.contact.PartyContactMech;
 import org.abchip.mimo.biz.party.contact.PostalAddress;
 import org.abchip.mimo.biz.party.contact.TelecomNumber;
-import org.abchip.mimo.context.ContextProvider;
+import org.abchip.mimo.context.Context;
 import org.abchip.mimo.resource.ResourceManager;
 import org.abchip.mimo.resource.ResourceReader;
 
 public class ContactMechServices {
 
-	public static PostalAddress getLatestPostaAddress(ContextProvider contextProvider, String partyId) {
+	public static PostalAddress getLatestPostaAddress(Context context, String partyId) {
 		
-		ResourceManager resourceManager = contextProvider.getContext().get(ResourceManager.class);
+		ResourceManager resourceManager = context.get(ResourceManager.class);
 		
 		String filter = "partyId = \"" + partyId + "\"  AND thruDate IS NULL";
 		String order = "-fromDate";
-		ResourceReader<PartyContactMech> partyContactMechReader = resourceManager.getResourceReader(contextProvider, PartyContactMech.class);
-		ResourceReader<PostalAddress> postalAddressReader = resourceManager.getResourceReader(contextProvider, PostalAddress.class);
+		ResourceReader<PartyContactMech> partyContactMechReader = resourceManager.getResourceReader(context, PartyContactMech.class);
+		ResourceReader<PostalAddress> postalAddressReader = resourceManager.getResourceReader(context, PostalAddress.class);
 		PostalAddress postalAddress = null;
 		for (PartyContactMech partyContactMech : partyContactMechReader.find(filter, null, order)) {
-			ResourceReader<ContactMech> contactMechReader = resourceManager.getResourceReader(contextProvider, ContactMech.class);
+			ResourceReader<ContactMech> contactMechReader = resourceManager.getResourceReader(context, ContactMech.class);
 			ContactMech contactMech = contactMechReader.lookup(partyContactMech.getContactMechId().getContactMechId());
 
 			if (!contactMech.getContactMechTypeId().getContactMechTypeId().equals("POSTAL_ADDRESS"))
@@ -32,19 +32,19 @@ public class ContactMechServices {
 		return postalAddress;
 	}
 	
-	public static TelecomNumber getLatestTelecomNumber(ContextProvider contextProvider, String partyId) {
+	public static TelecomNumber getLatestTelecomNumber(Context context, String partyId) {
 		
-		ResourceManager resourceManager = contextProvider.getContext().get(ResourceManager.class);
+		ResourceManager resourceManager = context.get(ResourceManager.class);
 
 		String filter = "partyId = \"" + partyId + "\"  AND thruDate IS NULL";
 		String order = "-fromDate";
-		ResourceReader<PartyContactMech> partyContactMechReader = resourceManager.getResourceReader(contextProvider,
+		ResourceReader<PartyContactMech> partyContactMechReader = resourceManager.getResourceReader(context,
 				PartyContactMech.class);
-		ResourceReader<TelecomNumber> telecomNumberReader = resourceManager.getResourceReader(contextProvider,
+		ResourceReader<TelecomNumber> telecomNumberReader = resourceManager.getResourceReader(context,
 				TelecomNumber.class);
 		TelecomNumber telecomNumber = null;
 		for (PartyContactMech partyContactMech : partyContactMechReader.find(filter, null, order)) {
-			ResourceReader<ContactMech> contactMechReader = resourceManager.getResourceReader(contextProvider,
+			ResourceReader<ContactMech> contactMechReader = resourceManager.getResourceReader(context,
 					ContactMech.class);
 			ContactMech contactMech = contactMechReader.lookup(partyContactMech.getContactMechId().getContactMechId());
 
@@ -57,18 +57,18 @@ public class ContactMechServices {
 		return telecomNumber;
 	}
 	
-	public static String getLatestEmail(ContextProvider contextProvider, String partyId) {
+	public static String getLatestEmail(Context context, String partyId) {
 		
-		ResourceManager resourceManager = contextProvider.getContext().get(ResourceManager.class);
+		ResourceManager resourceManager = context.get(ResourceManager.class);
 
 		String filter = "partyId = \"" + partyId + "\"  AND thruDate IS NULL";
 		String order = "-fromDate";
-		ResourceReader<PartyContactMech> partyContactMechReader = resourceManager.getResourceReader(contextProvider,
+		ResourceReader<PartyContactMech> partyContactMechReader = resourceManager.getResourceReader(context,
 				PartyContactMech.class);
 		String email = "";
 
 		for (PartyContactMech partyContactMech : partyContactMechReader.find(filter, null, order)) {
-			ResourceReader<ContactMech> contactMechReader = resourceManager.getResourceReader(contextProvider,
+			ResourceReader<ContactMech> contactMechReader = resourceManager.getResourceReader(context,
 					ContactMech.class);
 			ContactMech contactMech = contactMechReader.lookup(partyContactMech.getContactMechId().getContactMechId());
 

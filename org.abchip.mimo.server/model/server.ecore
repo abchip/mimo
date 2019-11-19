@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="server" nsURI="http://www.abchip.org/mimo/server" nsPrefix="mimo-srv">
-  <eClassifiers xsi:type="ecore:EClass" name="Job" eSuperTypes="../../org.abchip.mimo.core/model/mimo.ecore#//entity/EntityNameable ../../org.abchip.mimo.core/model/mimo.ecore#//context/ContextProvider">
+  <eClassifiers xsi:type="ecore:EClass" name="Job" eSuperTypes="../../org.abchip.mimo.core/model/mimo.ecore#//entity/EntityNameable">
     <eOperations name="getJobStatus" lowerBound="1" eType="#//JobStatus"/>
     <eOperations name="getCPUUsage" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
     <eOperations name="getLastMessage" lowerBound="1" eType="#//JobMessage"/>
@@ -226,7 +226,7 @@
     <eLiterals name="Interactive" value="20" literal="INT"/>
     <eLiterals name="Batch" value="30" literal="BCH"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="System" eSuperTypes="../../org.abchip.mimo.core/model/mimo.ecore#//entity/EntityNameable ../../org.abchip.mimo.core/model/mimo.ecore#//context/ContextProvider">
+  <eClassifiers xsi:type="ecore:EClass" name="System" eSuperTypes="../../org.abchip.mimo.core/model/mimo.ecore#//entity/EntityNameable">
     <eOperations name="getAvailableProcessors" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     <eOperations name="getLoadAverage" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="context" eType="ecore:EClass ../../org.abchip.mimo.core/model/mimo.ecore#//context/Context"

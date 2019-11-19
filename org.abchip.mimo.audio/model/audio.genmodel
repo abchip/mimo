@@ -20,16 +20,16 @@
     </genClasses>
     <genClasses image="false" ecoreClass="audio.ecore#//AudioManager">
       <genOperations ecoreOperation="audio.ecore#//AudioManager/record">
-        <genParameters ecoreParameter="audio.ecore#//AudioManager/record/contextProvider"/>
+        <genParameters ecoreParameter="audio.ecore#//AudioManager/record/context"/>
       </genOperations>
       <genOperations ecoreOperation="audio.ecore#//AudioManager/play">
-        <genParameters ecoreParameter="audio.ecore#//AudioManager/play/contextProvider"/>
+        <genParameters ecoreParameter="audio.ecore#//AudioManager/play/context"/>
         <genParameters ecoreParameter="audio.ecore#//AudioManager/play/audio"/>
         <genParameters ecoreParameter="audio.ecore#//AudioManager/play/start"/>
         <genParameters ecoreParameter="audio.ecore#//AudioManager/play/waitEnd"/>
       </genOperations>
       <genOperations ecoreOperation="audio.ecore#//AudioManager/play.1">
-        <genParameters ecoreParameter="audio.ecore#//AudioManager/play.1/contextProvider"/>
+        <genParameters ecoreParameter="audio.ecore#//AudioManager/play.1/context"/>
         <genParameters ecoreParameter="audio.ecore#//AudioManager/play.1/style"/>
         <genParameters ecoreParameter="audio.ecore#//AudioManager/play.1/text"/>
         <genParameters ecoreParameter="audio.ecore#//AudioManager/play.1/start"/>

@@ -22,7 +22,7 @@ import javax.servlet.http.HttpSession;
 import org.abchip.mimo.context.AuthenticationAnonymous;
 import org.abchip.mimo.context.AuthenticationManager;
 import org.abchip.mimo.context.ContextFactory;
-import org.abchip.mimo.context.ContextProvider;
+import org.abchip.mimo.context.Context;
 import org.abchip.mimo.entity.EntityNameable;
 import org.abchip.mimo.resource.ResourceManager;
 import org.abchip.mimo.resource.ResourceReader;
@@ -54,13 +54,13 @@ public class LinkedInRedirectServlet extends HttpServlet {
 
 		// anonymous access
 		AuthenticationAnonymous authentication = ContextFactory.eINSTANCE.createAuthenticationAnonymous();
-		ContextProvider contextProvider = authenticationManager.login(null, authentication);
+		Context context = authenticationManager.login(null, authentication);
 
-		ResourceReader<?> oauth2Reader = resourceManager.getResourceReader(contextProvider, "OAuth2LinkedIn");
+		ResourceReader<?> oauth2Reader = resourceManager.getResourceReader(context, "OAuth2LinkedIn");
 		EntityNameable oauth2LinkedIn = oauth2Reader.first();
 
-		authenticationManager.logout(contextProvider);
-		contextProvider.getContext().close();
+		authenticationManager.logout(context);
+		context.close();
 
 		if (oauth2LinkedIn == null) {
 			response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);

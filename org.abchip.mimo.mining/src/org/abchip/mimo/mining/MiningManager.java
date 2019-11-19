@@ -8,7 +8,7 @@
 package org.abchip.mimo.mining;
 
 import java.util.List;
-import org.abchip.mimo.context.ContextProvider;
+import org.abchip.mimo.context.Context;
 
 import org.abchip.mimo.entity.Entity;
 
@@ -29,10 +29,10 @@ public interface MiningManager {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model required="true" contextProviderRequired="true" klassRequired="true" objectRequired="true"
+	 * @model required="true" contextRequired="true" klassRequired="true" objectRequired="true"
 	 * @generated
 	 */
-	<E extends Entity> List<Classification<E>> classify(ContextProvider contextProvider, Class<E> klass, Object object);
+	<E extends Entity> List<Classification<E>> classify(Context context, Class<E> klass, Object object);
 
 	/**
 	 * <!-- begin-user-doc -->

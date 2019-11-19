@@ -11,7 +11,7 @@
       adapterFactory="false" contentTypeIdentifier="" ecorePackage="mining.ecore#/">
     <genClasses image="false" ecoreClass="mining.ecore#//MiningManager">
       <genOperations ecoreOperation="mining.ecore#//MiningManager/classify">
-        <genParameters ecoreParameter="mining.ecore#//MiningManager/classify/contextProvider"/>
+        <genParameters ecoreParameter="mining.ecore#//MiningManager/classify/context"/>
         <genParameters ecoreParameter="mining.ecore#//MiningManager/classify/klass"/>
         <genParameters ecoreParameter="mining.ecore#//MiningManager/classify/object"/>
         <genTypeParameters ecoreTypeParameter="mining.ecore#//MiningManager/classify/E"/>
@@ -31,7 +31,7 @@
       </genClasses>
       <genClasses image="false" ecoreClass="mining.ecore#//classification/Classifier">
         <genOperations ecoreOperation="mining.ecore#//classification/Classifier/classify">
-          <genParameters ecoreParameter="mining.ecore#//classification/Classifier/classify/contextProvider"/>
+          <genParameters ecoreParameter="mining.ecore#//classification/Classifier/classify/context"/>
           <genParameters ecoreParameter="mining.ecore#//classification/Classifier/classify/klass"/>
           <genParameters ecoreParameter="mining.ecore#//classification/Classifier/classify/object"/>
           <genTypeParameters ecoreTypeParameter="mining.ecore#//classification/Classifier/classify/E"/>

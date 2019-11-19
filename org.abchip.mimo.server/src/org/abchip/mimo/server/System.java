@@ -9,7 +9,6 @@
 package org.abchip.mimo.server;
 
 import org.abchip.mimo.context.Context;
-import org.abchip.mimo.context.ContextProvider;
 import org.abchip.mimo.entity.EntityNameable;
 
 /**
@@ -33,7 +32,7 @@ import org.abchip.mimo.entity.EntityNameable;
  * @model
  * @generated
  */
-public interface System extends EntityNameable, ContextProvider {
+public interface System extends EntityNameable {
 
 	public static final long LOCK_TIMEOUT = 1000;
 	
@@ -51,7 +50,6 @@ public interface System extends EntityNameable, ContextProvider {
 	 * @model containment="true" resolveProxies="true" transient="true"
 	 * @generated
 	 */
-	@Override
 	Context getContext();
 
 	/**

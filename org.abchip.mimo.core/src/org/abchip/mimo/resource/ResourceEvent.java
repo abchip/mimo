@@ -8,7 +8,7 @@
  */
 package org.abchip.mimo.resource;
 
-import org.abchip.mimo.context.ContextProvider;
+import org.abchip.mimo.context.Context;
 import org.abchip.mimo.entity.EntityNameable;
 
 /**
@@ -28,7 +28,7 @@ public interface ResourceEvent<E extends EntityNameable> {
 	 * @model kind="operation" required="true"
 	 * @generated
 	 */
-	ContextProvider getContextProvider();
+	Context getContext();
 
 	/**
 	 * <!-- begin-user-doc -->

@@ -78,11 +78,6 @@ public class BaseTestContextImpl extends ContextImpl {
 	public void set(String name, Object object) {
 		delegate.set(name, object);
 	}
-	
-	@Override
-	public Context getContext() {
-		return this;
-	}
 
 	public <T> T getAdapter(Object adaptable, Class<T> adapter) {
 		return delegate.getAdapter(adaptable, adapter);

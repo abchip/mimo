@@ -8,7 +8,7 @@
  */
 package org.abchip.mimo.resource.impl;
 
-import org.abchip.mimo.context.ContextProvider;
+import org.abchip.mimo.context.Context;
 import org.abchip.mimo.entity.EntityIterator;
 import org.abchip.mimo.entity.EntityNameable;
 import org.abchip.mimo.entity.Frame;
@@ -222,7 +222,7 @@ public abstract class ResourceReaderImpl<E extends EntityNameable> extends Minim
 	 * @generated NOT
 	 */
 	@Override
-	public abstract ContextProvider getContextProvider();
+	public abstract Context getContext();
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->

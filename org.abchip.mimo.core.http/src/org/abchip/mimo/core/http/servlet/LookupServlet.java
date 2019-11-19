@@ -14,7 +14,7 @@ import javax.inject.Inject;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import org.abchip.mimo.context.ContextProvider;
+import org.abchip.mimo.context.Context;
 import org.abchip.mimo.entity.EntityNameable;
 import org.abchip.mimo.entity.SerializationType;
 import org.abchip.mimo.resource.ResourceManager;
@@ -29,23 +29,23 @@ public class LookupServlet extends BaseServlet {
 	@Inject
 	private ResourceManager resourceManager;
 
-	protected void execute(ContextProvider contextProvider, HttpServletRequest request, HttpServletResponse response) throws IOException {
-		_execute(contextProvider, request, response);
+	protected void execute(Context context, HttpServletRequest request, HttpServletResponse response) throws IOException {
+		_execute(context, request, response);
 	}
 
-	private <E extends EntityNameable> void _execute(ContextProvider contextProvider, HttpServletRequest request, HttpServletResponse response) throws IOException {
+	private <E extends EntityNameable> void _execute(Context context, HttpServletRequest request, HttpServletResponse response) throws IOException {
 
 		String frameName = Strings.qINSTANCE.firstToUpper(request.getParameter("frame"));
 		String name = request.getParameter("name");
 
-		ResourceReader<E> entityReader = resourceManager.getResourceReader(contextProvider, frameName);
+		ResourceReader<E> entityReader = resourceManager.getResourceReader(context, frameName);
 		E entity = entityReader.lookup(name);
 		if (entity == null)
 			response.setStatus(HttpServletResponse.SC_NOT_FOUND);
 		else {
 			response.setStatus(HttpServletResponse.SC_FOUND);
 
-			ResourceSerializer<E> entitySerializer = resourceManager.createResourceSerializer(contextProvider, frameName, SerializationType.JAVA_SCRIPT_OBJECT_NOTATION);
+			ResourceSerializer<E> entitySerializer = resourceManager.createResourceSerializer(context, frameName, SerializationType.JAVA_SCRIPT_OBJECT_NOTATION);
 			entitySerializer.add(entity);
 			entitySerializer.save(response.getOutputStream());
 		}

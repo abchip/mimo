@@ -38,11 +38,11 @@
     </genClasses>
     <genClasses image="false" ecoreClass="language.ecore#//LanguageManager">
       <genOperations ecoreOperation="language.ecore#//LanguageManager/classifyLanguage">
-        <genParameters ecoreParameter="language.ecore#//LanguageManager/classifyLanguage/contextProvider"/>
+        <genParameters ecoreParameter="language.ecore#//LanguageManager/classifyLanguage/context"/>
         <genParameters ecoreParameter="language.ecore#//LanguageManager/classifyLanguage/text"/>
       </genOperations>
       <genOperations ecoreOperation="language.ecore#//LanguageManager/translate">
-        <genParameters ecoreParameter="language.ecore#//LanguageManager/translate/contextProvider"/>
+        <genParameters ecoreParameter="language.ecore#//LanguageManager/translate/context"/>
         <genParameters ecoreParameter="language.ecore#//LanguageManager/translate/languageSource"/>
         <genParameters ecoreParameter="language.ecore#//LanguageManager/translate/text"/>
         <genParameters ecoreParameter="language.ecore#//LanguageManager/translate/languageTarget"/>
@@ -50,7 +50,7 @@
     </genClasses>
     <genClasses image="false" ecoreClass="language.ecore#//LanguageParser">
       <genOperations ecoreOperation="language.ecore#//LanguageParser/parse">
-        <genParameters ecoreParameter="language.ecore#//LanguageParser/parse/contextProvider"/>
+        <genParameters ecoreParameter="language.ecore#//LanguageParser/parse/context"/>
         <genParameters ecoreParameter="language.ecore#//LanguageParser/parse/language"/>
         <genParameters ecoreParameter="language.ecore#//LanguageParser/parse/text"/>
       </genOperations>
@@ -58,7 +58,7 @@
     <genClasses image="false" ecoreClass="language.ecore#//LanguageParserRegistry"/>
     <genClasses image="false" ecoreClass="language.ecore#//LanguageLinearizer">
       <genOperations ecoreOperation="language.ecore#//LanguageLinearizer/linearize">
-        <genParameters ecoreParameter="language.ecore#//LanguageLinearizer/linearize/contextProvider"/>
+        <genParameters ecoreParameter="language.ecore#//LanguageLinearizer/linearize/context"/>
         <genParameters ecoreParameter="language.ecore#//LanguageLinearizer/linearize/language"/>
         <genParameters ecoreParameter="language.ecore#//LanguageLinearizer/linearize/expression"/>
       </genOperations>

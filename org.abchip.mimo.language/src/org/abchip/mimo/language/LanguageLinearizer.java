@@ -7,7 +7,7 @@
  */
 package org.abchip.mimo.language;
 
-import org.abchip.mimo.context.ContextProvider;
+import org.abchip.mimo.context.Context;
 
 /**
  * <!-- begin-user-doc -->
@@ -23,9 +23,9 @@ public interface LanguageLinearizer {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model required="true" contextProviderRequired="true" languageRequired="true" expressionRequired="true"
+	 * @model required="true" contextRequired="true" languageRequired="true" expressionRequired="true"
 	 * @generated
 	 */
-	String linearize(ContextProvider contextProvider, String language, LanguageExpression expression);
+	String linearize(Context context, String language, LanguageExpression expression);
 
 } // LanguageLinearizer

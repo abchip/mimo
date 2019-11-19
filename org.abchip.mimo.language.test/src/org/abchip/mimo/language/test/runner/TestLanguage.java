@@ -30,14 +30,14 @@ public class TestLanguage {
 	@TestStarted
 	public void start() {
 		
-		String text = languageManager.translate(testRunner, "ita", "Marco è un fotografo", "eng");
+		String text = languageManager.translate(testRunner.getContext(), "ita", "Marco è un fotografo", "eng");
 		asserter.assertEquals("Text translation", "Marco is a photographer", text);
 		
-		Classification<Language> classification = languageManager.classifyLanguage(testRunner, "Hello, world!!");
-		classification = languageManager.classifyLanguage(testRunner, "Hey, chiquito!!");
-		classification = languageManager.classifyLanguage(testRunner, "Ciao, mondo!!");		
+		Classification<Language> classification = languageManager.classifyLanguage(testRunner.getContext(), "Hello, world!!");
+		classification = languageManager.classifyLanguage(testRunner.getContext(), "Hey, chiquito!!");
+		classification = languageManager.classifyLanguage(testRunner.getContext(), "Ciao, mondo!!");		
 		
-		classification = languageManager.classifyLanguage(testRunner, "If you can dream it, you can do it. 【夢見ることができれば、それは実現できる。】-　Walt Disney　（ウォルト・ディズニー）");				
+		classification = languageManager.classifyLanguage(testRunner.getContext(), "If you can dream it, you can do it. 【夢見ることができれば、それは実現できる。】-　Walt Disney　（ウォルト・ディズニー）");				
 		asserter.assertEquals("Language classification", "eng", classification.getEntity().getName());
 	}
 }

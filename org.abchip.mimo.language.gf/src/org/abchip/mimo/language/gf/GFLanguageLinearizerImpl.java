@@ -7,7 +7,7 @@
  */
 package org.abchip.mimo.language.gf;
 
-import org.abchip.mimo.context.ContextProvider;
+import org.abchip.mimo.context.Context;
 import org.abchip.mimo.language.LanguageExpression;
 import org.abchip.mimo.language.LanguageLinearizer;
 import org.abchip.mimo.util.Strings;
@@ -19,7 +19,7 @@ public class GFLanguageLinearizerImpl implements LanguageLinearizer {
 	
 	
 	@Override
-	public String linearize(ContextProvider contextProvider, String language, LanguageExpression expression) {
+	public String linearize(Context context, String language, LanguageExpression expression) {
 
 		Concr syntaxBuilder = GFGrammarLoader.get().getConcr("App"+Strings.qINSTANCE.firstToUpper(language));
 		Expr rawExpression = (Expr) expression.getExpressionRow();	

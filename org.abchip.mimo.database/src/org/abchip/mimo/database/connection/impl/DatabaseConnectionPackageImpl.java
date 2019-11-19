@@ -469,8 +469,8 @@ public class DatabaseConnectionPackageImpl extends EPackageImpl implements Datab
 		setNsURI(eNS_URI);
 
 		// Obtain other dependent packages
-		ContextPackage theContextPackage = (ContextPackage)EPackage.Registry.INSTANCE.getEPackage(ContextPackage.eNS_URI);
 		DatabasePackage theDatabasePackage = (DatabasePackage)EPackage.Registry.INSTANCE.getEPackage(DatabasePackage.eNS_URI);
+		ContextPackage theContextPackage = (ContextPackage)EPackage.Registry.INSTANCE.getEPackage(ContextPackage.eNS_URI);
 		EcorePackage theEcorePackage = (EcorePackage)EPackage.Registry.INSTANCE.getEPackage(EcorePackage.eNS_URI);
 		JavaPackage theJavaPackage = (JavaPackage)EPackage.Registry.INSTANCE.getEPackage(JavaPackage.eNS_URI);
 
@@ -479,7 +479,6 @@ public class DatabaseConnectionPackageImpl extends EPackageImpl implements Datab
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
-		connectionEClass.getESuperTypes().add(theContextPackage.getContextProvider());
 		connectionCredentialsEClass.getESuperTypes().add(theContextPackage.getAuthenticationUserPassword());
 		preparedStatementEClass.getESuperTypes().add(this.getStatement());
 		statementEClass.getESuperTypes().add(theJavaPackage.getJavaCloseable());
@@ -518,6 +517,8 @@ public class DatabaseConnectionPackageImpl extends EPackageImpl implements Datab
 		addEOperation(connectionEClass, theDatabasePackage.getCatalogGenerationStrategy(), "getCatalogGenerationStrategy", 1, 1, IS_UNIQUE, IS_ORDERED);
 
 		addEOperation(connectionEClass, theDatabasePackage.getCatalogMetaData(), "getCatalogMetaData", 1, 1, IS_UNIQUE, IS_ORDERED);
+
+		addEOperation(connectionEClass, theContextPackage.getContext(), "getContext", 1, 1, IS_UNIQUE, IS_ORDERED);
 
 		op = addEOperation(connectionEClass, this.getPreparedStatement(), "prepareStatement", 1, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEString(), "sql", 1, 1, IS_UNIQUE, IS_ORDERED);

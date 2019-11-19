@@ -14,7 +14,7 @@ import javax.inject.Inject;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import org.abchip.mimo.context.ContextProvider;
+import org.abchip.mimo.context.Context;
 import org.abchip.mimo.core.http.servlet.BaseServlet;
 import org.abchip.mimo.entity.Frame;
 import org.abchip.mimo.entity.SerializationType;
@@ -35,17 +35,17 @@ public class LookupQueryServlet extends BaseServlet {
 	@Inject
 	private ResourceManager resourceManager;
 
-	protected void execute(ContextProvider contextProvider, HttpServletRequest request, HttpServletResponse response) throws IOException {
+	protected void execute(Context context, HttpServletRequest request, HttpServletResponse response) throws IOException {
 
 		String frameName = request.getParameter("frame");
 		String name = request.getParameter("name");
 		String prototype = request.getParameter("prototype");
 
-		Frame<?> frame = resourceManager.getFrame(contextProvider, frameName);
+		Frame<?> frame = resourceManager.getFrame(context, frameName);
 		if (frame == null)
 			return;
 
-		Query query = resourceManager.getResourceReader(contextProvider, Query.class, Resource.TENANT_MASTER).lookup(name);
+		Query query = resourceManager.getResourceReader(context, Query.class, Resource.TENANT_MASTER).lookup(name);
 
 		if (query == null && prototype != null && prototype.equalsIgnoreCase(Boolean.TRUE.toString())) {
 			query = QueryFactory.eINSTANCE.createQuery();
@@ -80,7 +80,7 @@ public class LookupQueryServlet extends BaseServlet {
 			}
 		}
 
-		ResourceSerializer<Query> entitySerializer = resourceManager.createResourceSerializer(contextProvider, Query.class, SerializationType.JAVA_SCRIPT_OBJECT_NOTATION);
+		ResourceSerializer<Query> entitySerializer = resourceManager.createResourceSerializer(context, Query.class, SerializationType.JAVA_SCRIPT_OBJECT_NOTATION);
 		if (query != null)
 			entitySerializer.add(query);
 		entitySerializer.save(response.getOutputStream());

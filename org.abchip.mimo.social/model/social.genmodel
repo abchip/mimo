@@ -27,7 +27,7 @@
       </genClasses>
       <genClasses image="false" ecoreClass="social.ecore#//twitter/TwitterManager">
         <genOperations ecoreOperation="social.ecore#//twitter/TwitterManager/search">
-          <genParameters ecoreParameter="social.ecore#//twitter/TwitterManager/search/contextProvider"/>
+          <genParameters ecoreParameter="social.ecore#//twitter/TwitterManager/search/context"/>
           <genParameters ecoreParameter="social.ecore#//twitter/TwitterManager/search/language"/>
           <genParameters ecoreParameter="social.ecore#//twitter/TwitterManager/search/query"/>
           <genParameters ecoreParameter="social.ecore#//twitter/TwitterManager/search/maxNumber"/>

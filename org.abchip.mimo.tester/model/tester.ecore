@@ -104,11 +104,11 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="TestManager" abstract="true" interface="true">
     <eOperations name="prepareSuiteRunner" upperBound="-1" eType="#//TestSuiteRunner">
-      <eParameters name="contextProvider" eType="ecore:EClass ../../org.abchip.mimo.core/model/mimo.ecore#//context/ContextProvider"/>
+      <eParameters name="context" eType="ecore:EClass ../../org.abchip.mimo.core/model/mimo.ecore#//context/Context"/>
       <eParameters name="component" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     </eOperations>
     <eOperations name="prepareUnitRunner" lowerBound="1" eType="#//TestUnitRunner">
-      <eParameters name="contextProvider" eType="ecore:EClass ../../org.abchip.mimo.core/model/mimo.ecore#//context/ContextProvider"/>
+      <eParameters name="context" eType="ecore:EClass ../../org.abchip.mimo.core/model/mimo.ecore#//context/Context"/>
       <eParameters name="klass" lowerBound="1">
         <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaClass">
           <eTypeArguments/>
@@ -116,14 +116,14 @@
       </eParameters>
     </eOperations>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="TestRunner" abstract="true" interface="true"
-      eSuperTypes="../../org.abchip.mimo.core/model/mimo.ecore#//context/ContextProvider">
+  <eClassifiers xsi:type="ecore:EClass" name="TestRunner" abstract="true" interface="true">
     <eOperations name="registerListener">
       <eParameters name="listener" lowerBound="1" eType="#//TestRunnerListener"/>
     </eOperations>
     <eOperations name="removeListener">
       <eParameters name="listener" lowerBound="1" eType="#//TestRunnerListener"/>
     </eOperations>
+    <eOperations name="getContext" lowerBound="1" eType="ecore:EClass ../../org.abchip.mimo.core/model/mimo.ecore#//context/Context"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="TestRunnerEvent">
     <eStructuralFeatures xsi:type="ecore:EReference" name="source" lowerBound="1"
@@ -158,7 +158,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="TestSuiteLauncher" abstract="true" interface="true">
     <eOperations name="createSuite" eType="#//TestSuiteRunner">
-      <eParameters name="contextProvider" eType="ecore:EClass ../../org.abchip.mimo.core/model/mimo.ecore#//context/ContextProvider"/>
+      <eParameters name="context" eType="ecore:EClass ../../org.abchip.mimo.core/model/mimo.ecore#//context/Context"/>
     </eOperations>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="TestSuiteRunner" abstract="true" interface="true">

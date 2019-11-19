@@ -14,7 +14,7 @@ import javax.inject.Inject;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import org.abchip.mimo.context.ContextProvider;
+import org.abchip.mimo.context.Context;
 import org.abchip.mimo.entity.EntityNameable;
 import org.abchip.mimo.entity.SerializationType;
 import org.abchip.mimo.resource.ResourceSerializer;
@@ -28,16 +28,16 @@ public class SaveServlet extends BaseServlet {
 	@Inject
 	private ResourceManager resourceManager;
 
-	protected void execute(ContextProvider contextProvider, HttpServletRequest request, HttpServletResponse response) throws IOException {
-		_execute(contextProvider, request, response);
+	protected void execute(Context context, HttpServletRequest request, HttpServletResponse response) throws IOException {
+		_execute(context, request, response);
 	}
 
-	private <E extends EntityNameable> void _execute(ContextProvider contextProvider, HttpServletRequest request, HttpServletResponse response) throws IOException {
+	private <E extends EntityNameable> void _execute(Context context, HttpServletRequest request, HttpServletResponse response) throws IOException {
 
 		String frame = request.getParameter("frame");
 		String json = request.getParameter("json");
 
-		ResourceSerializer<E> entitySerializer = resourceManager.createResourceSerializer(contextProvider, frame, SerializationType.JAVA_SCRIPT_OBJECT_NOTATION);
+		ResourceSerializer<E> entitySerializer = resourceManager.createResourceSerializer(context, frame, SerializationType.JAVA_SCRIPT_OBJECT_NOTATION);
 
 		if (!json.contains("\"eClass\""))
 			json = json.replaceFirst("\\{", "{\"eClass\":\"" + entitySerializer.getFrame().getURI() + "\",");
@@ -45,7 +45,7 @@ public class SaveServlet extends BaseServlet {
 		entitySerializer.load(json, false);
 		E entity = entitySerializer.get();
 
-		ResourceWriter<E> entityWriter = resourceManager.getResourceWriter(contextProvider, frame);
+		ResourceWriter<E> entityWriter = resourceManager.getResourceWriter(context, frame);
 		entityWriter.create(entity, true);
 
 		response.setStatus(HttpServletResponse.SC_OK);

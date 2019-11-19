@@ -14,7 +14,6 @@ import java.util.List;
 
 import org.abchip.mimo.MimoConstants;
 import org.abchip.mimo.context.Context;
-import org.abchip.mimo.context.ContextProvider;
 import org.abchip.mimo.tester.TestManager;
 import org.abchip.mimo.tester.TestSuiteLauncher;
 import org.abchip.mimo.tester.TestSuiteRunner;
@@ -28,7 +27,7 @@ import org.osgi.framework.ServiceReference;
 public class BaseTestManagerImpl implements TestManager {
 
 	@Override
-	public TestUnitRunner prepareUnitRunner(ContextProvider contextProvider, Class<?> klass) {
+	public TestUnitRunner prepareUnitRunner(Context context, Class<?> klass) {
 
 		Bundle bundle = FrameworkUtil.getBundle(klass);
 		String classURI = MimoConstants.SCHEME_NAME + ":/bundle/" + bundle.getSymbolicName() + "/" + klass.getName();
@@ -41,14 +40,14 @@ public class BaseTestManagerImpl implements TestManager {
 		if (testClass == null)
 			throw new RuntimeException("Invalid runner: " + classURI);
 
-		Context testContext = new BaseTestContextImpl(contextProvider.getContext());
+		Context testContext = new BaseTestContextImpl(context);
 		TestUnitRunner testRunner = new BaseTestUnitRunnerImpl(testContext, testClass);
 
 		return testRunner;
 	}
 
 	@Override
-	public List<TestSuiteRunner> prepareSuiteRunner(ContextProvider contextProvider, String component) {
+	public List<TestSuiteRunner> prepareSuiteRunner(Context context, String component) {
 		BundleContext bundleContext = FrameworkUtil.getBundle(Context.class).getBundleContext();
 
 		// Search QTestLauncher services for specific component
@@ -68,7 +67,7 @@ public class BaseTestManagerImpl implements TestManager {
 		for (ServiceReference<TestSuiteLauncher> serviceRef : serviceReferences) {
 			TestSuiteLauncher testSuiteLauncher = bundleContext.getService(serviceRef);
 
-			Context testContext = new BaseTestContextImpl(contextProvider.getContext());
+			Context testContext = new BaseTestContextImpl(context);
 			TestSuiteRunner suiteRunner = testSuiteLauncher.createSuite(testContext);
 			suiteRunners.add(suiteRunner);
 		}

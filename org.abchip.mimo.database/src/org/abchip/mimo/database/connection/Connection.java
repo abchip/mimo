@@ -11,7 +11,7 @@ package org.abchip.mimo.database.connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-import org.abchip.mimo.context.ContextProvider;
+import org.abchip.mimo.context.Context;
 import org.abchip.mimo.database.CatalogGenerationStrategy;
 import org.abchip.mimo.database.CatalogMetaData;
 
@@ -25,7 +25,7 @@ import org.abchip.mimo.database.CatalogMetaData;
  * @model interface="true" abstract="true"
  * @generated
  */
-public interface Connection extends ContextProvider {
+public interface Connection {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -105,6 +105,14 @@ public interface Connection extends ContextProvider {
 	 * @generated
 	 */
 	CatalogMetaData getCatalogMetaData();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model kind="operation" required="true"
+	 * @generated
+	 */
+	Context getContext();
 
 	/**
 	 * <!-- begin-user-doc -->

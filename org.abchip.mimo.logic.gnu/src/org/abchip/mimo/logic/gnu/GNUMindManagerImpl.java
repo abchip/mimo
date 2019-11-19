@@ -10,7 +10,7 @@ package org.abchip.mimo.logic.gnu;
 
 import java.io.IOException;
 
-import org.abchip.mimo.context.ContextProvider;
+import org.abchip.mimo.context.Context;
 import org.abchip.mimo.entity.Entity;
 import org.abchip.mimo.entity.Frame;
 import org.abchip.mimo.logic.MindManager;
@@ -20,14 +20,14 @@ import org.abchip.mimo.logic.Theory;
 public class GNUMindManagerImpl implements MindManager {
 
 	@Override
-	public <E extends Entity> Theory buildTheory(ContextProvider contextProvider, Frame<E> frame) {
+	public <E extends Entity> Theory buildTheory(Context context, Frame<E> frame) {
 		return GNUTheoryBuilder.buildTheory(frame);
 	}
 
 	@Override
-	public Reasoner createReasoner(ContextProvider contextProvider) {
+	public Reasoner createReasoner(Context context) {
 		
-		Reasoner reasoner = new GNUReasonerImpl(contextProvider);
+		Reasoner reasoner = new GNUReasonerImpl(context);
 		try {
 			reasoner.reload();
 		} catch (IOException e) {

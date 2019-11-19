@@ -498,7 +498,7 @@ public class LanguagePackageImpl extends EPackageImpl implements LanguagePackage
 		initEClass(languageManagerEClass, LanguageManager.class, "LanguageManager", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		EOperation op = addEOperation(languageManagerEClass, null, "classifyLanguage", 1, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, theContextPackage.getContextProvider(), "contextProvider", 1, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, theContextPackage.getContext(), "context", 1, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEString(), "text", 1, 1, IS_UNIQUE, IS_ORDERED);
 		g1 = createEGenericType(theClassificationPackage.getClassification());
 		g2 = createEGenericType(this.getLanguage());
@@ -506,7 +506,7 @@ public class LanguagePackageImpl extends EPackageImpl implements LanguagePackage
 		initEOperation(op, g1);
 
 		op = addEOperation(languageManagerEClass, ecorePackage.getEString(), "translate", 1, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, theContextPackage.getContextProvider(), "contextProvider", 1, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, theContextPackage.getContext(), "context", 1, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEString(), "languageSource", 1, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEString(), "text", 1, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEString(), "languageTarget", 1, 1, IS_UNIQUE, IS_ORDERED);
@@ -514,7 +514,7 @@ public class LanguagePackageImpl extends EPackageImpl implements LanguagePackage
 		initEClass(languageParserEClass, LanguageParser.class, "LanguageParser", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		op = addEOperation(languageParserEClass, this.getLanguageExpression(), "parse", 1, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, theContextPackage.getContextProvider(), "contextProvider", 1, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, theContextPackage.getContext(), "context", 1, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEString(), "language", 1, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEString(), "text", 1, 1, IS_UNIQUE, IS_ORDERED);
 
@@ -523,7 +523,7 @@ public class LanguagePackageImpl extends EPackageImpl implements LanguagePackage
 		initEClass(languageLinearizerEClass, LanguageLinearizer.class, "LanguageLinearizer", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		op = addEOperation(languageLinearizerEClass, ecorePackage.getEString(), "linearize", 1, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, theContextPackage.getContextProvider(), "contextProvider", 1, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, theContextPackage.getContext(), "context", 1, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEString(), "language", 1, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, this.getLanguageExpression(), "expression", 1, 1, IS_UNIQUE, IS_ORDERED);
 

@@ -8,7 +8,7 @@
 package org.abchip.mimo.tester;
 
 import java.util.List;
-import org.abchip.mimo.context.ContextProvider;
+import org.abchip.mimo.context.Context;
 
 /**
  * <!-- begin-user-doc -->
@@ -27,7 +27,7 @@ public interface TestManager {
 	 * @model componentRequired="true"
 	 * @generated
 	 */
-	List<TestSuiteRunner> prepareSuiteRunner(ContextProvider contextProvider, String component);
+	List<TestSuiteRunner> prepareSuiteRunner(Context context, String component);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -35,6 +35,6 @@ public interface TestManager {
 	 * @model required="true" klassRequired="true"
 	 * @generated
 	 */
-	TestUnitRunner prepareUnitRunner(ContextProvider contextProvider, Class<?> klass);
+	TestUnitRunner prepareUnitRunner(Context context, Class<?> klass);
 
 } // QTestManager

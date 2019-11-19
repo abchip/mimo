@@ -7,7 +7,7 @@
  */
 package org.abchip.mimo.tester;
 
-import org.abchip.mimo.context.ContextProvider;
+import org.abchip.mimo.context.Context;
 
 /**
  * <!-- begin-user-doc -->
@@ -26,6 +26,6 @@ public interface TestSuiteLauncher {
 	 * @model
 	 * @generated
 	 */
-	TestSuiteRunner createSuite(ContextProvider contextProvider);
+	TestSuiteRunner createSuite(Context context);
 
 } // QTestSuiteLauncher

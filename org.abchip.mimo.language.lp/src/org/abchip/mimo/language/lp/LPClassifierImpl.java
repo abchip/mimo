@@ -11,7 +11,7 @@ import java.util.Map;
 import javax.annotation.PostConstruct;
 import javax.inject.Inject;
 
-import org.abchip.mimo.context.ContextProvider;
+import org.abchip.mimo.context.Context;
 import org.abchip.mimo.context.ContextRoot;
 import org.abchip.mimo.entity.Entity;
 import org.abchip.mimo.entity.EntityNameable;
@@ -65,8 +65,8 @@ public class LPClassifierImpl implements Classifier {
 	}
 
 	@Override
-	public <E extends Entity> List<Classification<E>> classify(ContextProvider contextProvider, Class<E> klass, Object object) {
-		return classifyLanguage(contextProvider, (String) object);
+	public <E extends Entity> List<Classification<E>> classify(Context context, Class<E> klass, Object object) {
+		return classifyLanguage(context, (String) object);
 	}
 
 	@Override
@@ -85,7 +85,7 @@ public class LPClassifierImpl implements Classifier {
 	}
 
 	@SuppressWarnings("unchecked")
-	private <E extends Entity> List<Classification<E>> classifyLanguage(ContextProvider contextProvider, String text) {
+	private <E extends Entity> List<Classification<E>> classifyLanguage(Context context, String text) {
 
 		ScoredClassification lpClassification = classifier.classify(text);
 

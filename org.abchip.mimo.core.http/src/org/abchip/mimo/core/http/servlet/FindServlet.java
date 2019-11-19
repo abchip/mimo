@@ -14,7 +14,7 @@ import javax.inject.Inject;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import org.abchip.mimo.context.ContextProvider;
+import org.abchip.mimo.context.Context;
 import org.abchip.mimo.entity.EntityNameable;
 import org.abchip.mimo.entity.Frame;
 import org.abchip.mimo.entity.SerializationType;
@@ -31,11 +31,11 @@ public class FindServlet extends BaseServlet {
 	@Inject
 	private ResourceManager resourceManager;
 	
-	protected void execute(ContextProvider contextProvider, HttpServletRequest request, HttpServletResponse response) throws IOException {
-		_execute(contextProvider, request, response);
+	protected void execute(Context context, HttpServletRequest request, HttpServletResponse response) throws IOException {
+		_execute(context, request, response);
 	}
 
-	private <E extends EntityNameable> void _execute(ContextProvider contextProvider, HttpServletRequest request, HttpServletResponse response) throws IOException {
+	private <E extends EntityNameable> void _execute(Context context, HttpServletRequest request, HttpServletResponse response) throws IOException {
 
 		String frameName = Strings.qINSTANCE.firstToUpper(request.getParameter("frame"));
 		String filter = request.getParameter("filter");
@@ -51,7 +51,7 @@ public class FindServlet extends BaseServlet {
 		String[] keys = request.getParameterValues("keys");
 
 		@SuppressWarnings("unchecked")
-		Frame<E> frame = (Frame<E>) resourceManager.getFrame(contextProvider, frameName);
+		Frame<E> frame = (Frame<E>) resourceManager.getFrame(context, frameName);
 		if (frame == null)
 			return;
 		
@@ -78,8 +78,8 @@ public class FindServlet extends BaseServlet {
 
 		response.setStatus(HttpServletResponse.SC_FOUND);
 
-		ResourceReader<E> entityReader = resourceManager.getResourceReader(contextProvider, frame);
-		ResourceSerializer<E> entitySerializer = resourceManager.createResourceSerializer(contextProvider, frame, SerializationType.JAVA_SCRIPT_OBJECT_NOTATION);
+		ResourceReader<E> entityReader = resourceManager.getResourceReader(context, frame);
+		ResourceSerializer<E> entitySerializer = resourceManager.createResourceSerializer(context, frame, SerializationType.JAVA_SCRIPT_OBJECT_NOTATION);
 		for (E entity : entityReader.find(filter, fields, order, Integer.parseInt(limit), Boolean.parseBoolean(proxy)))
 			entitySerializer.add(entity);
 

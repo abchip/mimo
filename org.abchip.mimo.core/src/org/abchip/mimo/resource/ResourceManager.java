@@ -8,7 +8,7 @@
  */
 package org.abchip.mimo.resource;
 
-import org.abchip.mimo.context.ContextProvider;
+import org.abchip.mimo.context.Context;
 import org.abchip.mimo.entity.Entity;
 import org.abchip.mimo.entity.EntityNameable;
 import org.abchip.mimo.entity.Frame;
@@ -28,225 +28,225 @@ public interface ResourceManager {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model contextProviderRequired="true" klassRequired="true" serializationTypeRequired="true"
+	 * @model contextRequired="true" klassRequired="true" serializationTypeRequired="true"
 	 * @generated
 	 */
-	<E extends Entity> ResourceSerializer<E> createResourceSerializer(ContextProvider contextProvider, Class<E> klass, SerializationType serializationType);
+	<E extends Entity> ResourceSerializer<E> createResourceSerializer(Context context, Class<E> klass, SerializationType serializationType);
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model contextProviderRequired="true" frameRequired="true" serializationTypeRequired="true"
+	 * @model contextRequired="true" frameRequired="true" serializationTypeRequired="true"
 	 * @generated
 	 */
-	<E extends Entity> ResourceSerializer<E> createResourceSerializer(ContextProvider contextProvider, Frame<E> frame, SerializationType serializationType);
+	<E extends Entity> ResourceSerializer<E> createResourceSerializer(Context context, Frame<E> frame, SerializationType serializationType);
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model contextProviderRequired="true" frameRequired="true" serializationTypeRequired="true"
+	 * @model contextRequired="true" frameRequired="true" serializationTypeRequired="true"
 	 * @generated
 	 */
-	<E extends Entity> ResourceSerializer<E> createResourceSerializer(ContextProvider contextProvider, String frame, SerializationType serializationType);
+	<E extends Entity> ResourceSerializer<E> createResourceSerializer(Context context, String frame, SerializationType serializationType);
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model contextProviderRequired="true" klassRequired="true"
+	 * @model contextRequired="true" klassRequired="true"
 	 * @generated
 	 */
-	<E extends EntityNameable> Frame<E> getFrame(ContextProvider contextProvider, Class<E> klass);
+	<E extends EntityNameable> Frame<E> getFrame(Context context, Class<E> klass);
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model contextProviderRequired="true" klassRequired="true" tenantRequired="true"
+	 * @model contextRequired="true" klassRequired="true" tenantRequired="true"
 	 * @generated
 	 */
-	<E extends EntityNameable> Frame<E> getFrame(ContextProvider contextProvider, Class<E> klass, String tenant);
+	<E extends EntityNameable> Frame<E> getFrame(Context context, Class<E> klass, String tenant);
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model contextProviderRequired="true" frameRequired="true"
+	 * @model contextRequired="true" frameRequired="true"
 	 * @generated
 	 */
-	Frame<?> getFrame(ContextProvider contextProvider, String frame);
+	Frame<?> getFrame(Context context, String frame);
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model contextProviderRequired="true" frameRequired="true" tenantRequired="true"
+	 * @model contextRequired="true" frameRequired="true" tenantRequired="true"
 	 * @generated
 	 */
-	Frame<?> getFrame(ContextProvider contextProvider, String frame, String tenant);
+	Frame<?> getFrame(Context context, String frame, String tenant);
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model contextProviderRequired="true" klassRequired="true"
+	 * @model contextRequired="true" klassRequired="true"
 	 * @generated
 	 */
-	<E extends EntityNameable> ResourceProvider getResourceProvider(ContextProvider contextProvider, Class<E> klass);
+	<E extends EntityNameable> ResourceProvider getResourceProvider(Context context, Class<E> klass);
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model contextProviderRequired="true" frameRequired="true"
+	 * @model contextRequired="true" frameRequired="true"
 	 * @generated
 	 */
-	<E extends EntityNameable> ResourceProvider getResourceProvider(ContextProvider contextProvider, Frame<E> frame);
+	<E extends EntityNameable> ResourceProvider getResourceProvider(Context context, Frame<E> frame);
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model contextProviderRequired="true" frameRequired="true"
+	 * @model contextRequired="true" frameRequired="true"
 	 * @generated
 	 */
-	<E extends EntityNameable> ResourceProvider getResourceProvider(ContextProvider contextProvider, String frame);
+	<E extends EntityNameable> ResourceProvider getResourceProvider(Context context, String frame);
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model contextProviderRequired="true" klassRequired="true"
+	 * @model contextRequired="true" klassRequired="true"
 	 * @generated
 	 */
-	<E extends EntityNameable> ResourceReader<E> getResourceReader(ContextProvider contextProvider, Class<E> klass);
+	<E extends EntityNameable> ResourceReader<E> getResourceReader(Context context, Class<E> klass);
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model contextProviderRequired="true" frameRequired="true"
+	 * @model contextRequired="true" frameRequired="true"
 	 * @generated
 	 */
-	<E extends EntityNameable> ResourceReader<E> getResourceReader(ContextProvider contextProvider, Frame<E> frame);
+	<E extends EntityNameable> ResourceReader<E> getResourceReader(Context context, Frame<E> frame);
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model contextProviderRequired="true" frameRequired="true"
+	 * @model contextRequired="true" frameRequired="true"
 	 * @generated
 	 */
-	<E extends EntityNameable> ResourceReader<E> getResourceReader(ContextProvider contextProvider, String frame);
+	<E extends EntityNameable> ResourceReader<E> getResourceReader(Context context, String frame);
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model contextProviderRequired="true" klassRequired="true" tenantRequired="true"
+	 * @model contextRequired="true" klassRequired="true" tenantRequired="true"
 	 * @generated
 	 */
-	<E extends EntityNameable> ResourceReader<E> getResourceReader(ContextProvider contextProvider, Class<E> klass, String tenant);
+	<E extends EntityNameable> ResourceReader<E> getResourceReader(Context context, Class<E> klass, String tenant);
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model contextProviderRequired="true" frameRequired="true" tenantRequired="true"
+	 * @model contextRequired="true" frameRequired="true" tenantRequired="true"
 	 * @generated
 	 */
-	<E extends EntityNameable> ResourceReader<E> getResourceReader(ContextProvider contextProvider, Frame<E> frame, String tenant);
+	<E extends EntityNameable> ResourceReader<E> getResourceReader(Context context, Frame<E> frame, String tenant);
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model contextProviderRequired="true" frameRequired="true" tenantRequired="true"
+	 * @model contextRequired="true" frameRequired="true" tenantRequired="true"
 	 * @generated
 	 */
-	<E extends EntityNameable> ResourceReader<E> getResourceReader(ContextProvider contextProvider, String frame, String tenant);
+	<E extends EntityNameable> ResourceReader<E> getResourceReader(Context context, String frame, String tenant);
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model contextProviderRequired="true" klassRequired="true"
+	 * @model contextRequired="true" klassRequired="true"
 	 * @generated
 	 */
-	<E extends EntityNameable> ResourceWriter<E> getResourceWriter(ContextProvider contextProvider, Class<E> klass);
+	<E extends EntityNameable> ResourceWriter<E> getResourceWriter(Context context, Class<E> klass);
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model contextProviderRequired="true" frameRequired="true"
+	 * @model contextRequired="true" frameRequired="true"
 	 * @generated
 	 */
-	<E extends EntityNameable> ResourceWriter<E> getResourceWriter(ContextProvider contextProvider, Frame<E> frame);
+	<E extends EntityNameable> ResourceWriter<E> getResourceWriter(Context context, Frame<E> frame);
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model contextProviderRequired="true" frameRequired="true"
+	 * @model contextRequired="true" frameRequired="true"
 	 * @generated
 	 */
-	<E extends EntityNameable> ResourceWriter<E> getResourceWriter(ContextProvider contextProvider, String frame);
+	<E extends EntityNameable> ResourceWriter<E> getResourceWriter(Context context, String frame);
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model contextProviderRequired="true" klassRequired="true" tenantRequired="true"
+	 * @model contextRequired="true" klassRequired="true" tenantRequired="true"
 	 * @generated
 	 */
-	<E extends EntityNameable> ResourceWriter<E> getResourceWriter(ContextProvider contextProvider, Class<E> klass, String tenant);
+	<E extends EntityNameable> ResourceWriter<E> getResourceWriter(Context context, Class<E> klass, String tenant);
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model contextProviderRequired="true" frameRequired="true" tenantRequired="true"
+	 * @model contextRequired="true" frameRequired="true" tenantRequired="true"
 	 * @generated
 	 */
-	<E extends EntityNameable> ResourceWriter<E> getResourceWriter(ContextProvider contextProvider, Frame<E> frame, String tenant);
+	<E extends EntityNameable> ResourceWriter<E> getResourceWriter(Context context, Frame<E> frame, String tenant);
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model contextProviderRequired="true" frameRequired="true" tenantRequired="true"
+	 * @model contextRequired="true" frameRequired="true" tenantRequired="true"
 	 * @generated
 	 */
-	<E extends EntityNameable> ResourceWriter<E> getResourceWriter(ContextProvider contextProvider, String frame, String tenant);
+	<E extends EntityNameable> ResourceWriter<E> getResourceWriter(Context context, String frame, String tenant);
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model contextProviderRequired="true" klassRequired="true" listenerRequired="true"
+	 * @model contextRequired="true" klassRequired="true" listenerRequired="true"
 	 * @generated
 	 */
-	<E extends EntityNameable> void registerListener(ContextProvider contextProvider, Class<E> klass, ResourceListener<E> listener);
+	<E extends EntityNameable> void registerListener(Context context, Class<E> klass, ResourceListener<E> listener);
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model contextProviderRequired="true" frameRequired="true" listenerRequired="true"
+	 * @model contextRequired="true" frameRequired="true" listenerRequired="true"
 	 * @generated
 	 */
-	<E extends EntityNameable> void registerListener(ContextProvider contextProvider, Frame<E> frame, ResourceListener<E> listener);
+	<E extends EntityNameable> void registerListener(Context context, Frame<E> frame, ResourceListener<E> listener);
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model contextProviderRequired="true" frameRequired="true" listenerRequired="true"
+	 * @model contextRequired="true" frameRequired="true" listenerRequired="true"
 	 * @generated
 	 */
-	<E extends EntityNameable> void registerListener(ContextProvider contextProvider, String frame, ResourceListener<E> listener);
+	<E extends EntityNameable> void registerListener(Context context, String frame, ResourceListener<E> listener);
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model contextProviderRequired="true" klassRequired="true" providerRequired="true"
+	 * @model contextRequired="true" klassRequired="true" providerRequired="true"
 	 * @generated
 	 */
-	<E extends EntityNameable> void registerProvider(ContextProvider contextProvider, Class<E> klass, ResourceProvider provider);
+	<E extends EntityNameable> void registerProvider(Context context, Class<E> klass, ResourceProvider provider);
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model contextProviderRequired="true" frameRequired="true" providerRequired="true"
+	 * @model contextRequired="true" frameRequired="true" providerRequired="true"
 	 * @generated
 	 */
-	<E extends EntityNameable> void registerProvider(ContextProvider contextProvider, Frame<E> frame, ResourceProvider provider);
+	<E extends EntityNameable> void registerProvider(Context context, Frame<E> frame, ResourceProvider provider);
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model contextProviderRequired="true" frameRequired="true" providerRequired="true"
+	 * @model contextRequired="true" frameRequired="true" providerRequired="true"
 	 * @generated
 	 */
-	<E extends EntityNameable> void registerProvider(ContextProvider contextProvider, String frame, ResourceProvider provider);
+	<E extends EntityNameable> void registerProvider(Context context, String frame, ResourceProvider provider);
 
 } // ResourceManager

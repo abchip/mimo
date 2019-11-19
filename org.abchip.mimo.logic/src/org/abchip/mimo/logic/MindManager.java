@@ -7,7 +7,7 @@
  */
 package org.abchip.mimo.logic;
 
-import org.abchip.mimo.context.ContextProvider;
+import org.abchip.mimo.context.Context;
 
 import org.abchip.mimo.entity.Entity;
 import org.abchip.mimo.entity.Frame;
@@ -26,17 +26,17 @@ public interface MindManager {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model contextProviderRequired="true" frameRequired="true"
+	 * @model contextRequired="true" frameRequired="true"
 	 * @generated
 	 */
-	<E extends Entity> Theory buildTheory(ContextProvider contextProvider, Frame<E> frame);
+	<E extends Entity> Theory buildTheory(Context context, Frame<E> frame);
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model contextProviderRequired="true"
+	 * @model contextRequired="true"
 	 * @generated
 	 */
-	Reasoner createReasoner(ContextProvider contextProvider);
+	Reasoner createReasoner(Context context);
 
 } // MindManager

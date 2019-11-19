@@ -16,7 +16,7 @@ import javax.inject.Inject;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import org.abchip.mimo.context.ContextProvider;
+import org.abchip.mimo.context.Context;
 import org.abchip.mimo.core.http.servlet.BaseServlet;
 import org.abchip.mimo.entity.Domain;
 import org.abchip.mimo.entity.Frame;
@@ -42,17 +42,17 @@ public class LookupFormServlet extends BaseServlet {
 	@Inject
 	private ResourceManager resourceManager;
 
-	protected void execute(ContextProvider contextProvider, HttpServletRequest request, HttpServletResponse response) throws IOException {
+	protected void execute(Context context, HttpServletRequest request, HttpServletResponse response) throws IOException {
 
 		String frameName = request.getParameter("frame");
 		String name = request.getParameter("name");
 		String prototype = request.getParameter("prototype");
 
-		Frame<?> frame = resourceManager.getFrame(contextProvider, frameName);
+		Frame<?> frame = resourceManager.getFrame(context, frameName);
 		if (frame == null)
 			return;
 
-		Form form = resourceManager.getResourceReader(contextProvider, Form.class, Resource.TENANT_MASTER).lookup(name);
+		Form form = resourceManager.getResourceReader(context, Form.class, Resource.TENANT_MASTER).lookup(name);
 
 		if (form == null && prototype != null && prototype.equalsIgnoreCase(Boolean.TRUE.toString())) {
 			form = FormFactory.eINSTANCE.createForm();
@@ -95,9 +95,9 @@ public class LookupFormServlet extends BaseServlet {
 			}
 		}
 
-		ResourceSerializer<Form> entitySerializer = resourceManager.createResourceSerializer(contextProvider, Form.class, SerializationType.JAVA_SCRIPT_OBJECT_NOTATION);
+		ResourceSerializer<Form> entitySerializer = resourceManager.createResourceSerializer(context, Form.class, SerializationType.JAVA_SCRIPT_OBJECT_NOTATION);
 		if (form != null) {
-			completeForm(contextProvider, form);
+			completeForm(context, form);
 			entitySerializer.add(form);
 		}
 		entitySerializer.save(response.getOutputStream());
@@ -149,21 +149,21 @@ public class LookupFormServlet extends BaseServlet {
 		return field;
 	}
 
-	private void completeForm(ContextProvider contextProvider, Form form) {
+	private void completeForm(Context context, Form form) {
 		for (FormField formField : form.getFields())
-			completeFormField(contextProvider, formField);
+			completeFormField(context, formField);
 	}
 
-	private void completeFormField(ContextProvider contextProvider, FormField formField) {
+	private void completeFormField(Context context, FormField formField) {
 
 		Domain domain = formField.getDomain();
 
 		if (domain == null)
 			return;
 
-		ResourceReader<UiFrameSetup> frameSetupReader = resourceManager.getResourceReader(contextProvider, UiFrameSetup.class);
+		ResourceReader<UiFrameSetup> frameSetupReader = resourceManager.getResourceReader(context, UiFrameSetup.class);
 
-		Frame<?> frame = resourceManager.getFrame(contextProvider, domain.getFrame());
+		Frame<?> frame = resourceManager.getFrame(context, domain.getFrame());
 		if (frame == null)
 			return;
 

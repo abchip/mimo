@@ -21,7 +21,7 @@ import org.abchip.mimo.context.AuthenticationAnonymous;
 import org.abchip.mimo.context.AuthenticationManager;
 import org.abchip.mimo.context.ContextDescription;
 import org.abchip.mimo.context.ContextFactory;
-import org.abchip.mimo.context.ContextProvider;
+import org.abchip.mimo.context.Context;
 import org.abchip.mimo.core.http.ContextUtils;
 import org.abchip.mimo.core.http.HttpUtils;
 import org.abchip.mimo.entity.SerializationType;
@@ -48,33 +48,33 @@ public class StatusServlet extends HttpServlet {
 		HttpSession session = request.getSession();
 		System.out.println(session.getId() + ": " + getServletName() + " " + HttpUtils.getParametersAsString(request));
 
-		ContextProvider contextProvider = ContextUtils.getContextProvider(session.getId());
+		Context context = ContextUtils.getContext(session.getId());
 
 		// invalid session
-		if (contextProvider != null && !authenticationManager.isActive(contextProvider)) {
-			contextProvider = null;
+		if (context != null && !authenticationManager.isActive(context)) {
+			context = null;
 			// TODO reactivate context on provider
 		}
 
 		// new session with anonymous user
-		if (contextProvider == null) {
-			ContextUtils.removeContextProvider(session.getId());
+		if (context == null) {
+			ContextUtils.removeContext(session.getId());
 
 			AuthenticationAnonymous authentication = ContextFactory.eINSTANCE.createAuthenticationAnonymous();
-			contextProvider = authenticationManager.login(session.getId(), authentication);
+			context = authenticationManager.login(session.getId(), authentication);
 
-			ContextUtils.addContextProvider(contextProvider);
+			ContextUtils.addContext(context);
 		}
 
-		if (contextProvider == null) {
+		if (context == null) {
 			response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
 			return;
 		}
 
 		response.setStatus(HttpServletResponse.SC_ACCEPTED);
 
-		ResourceSerializer<ContextDescription> serializer = resourceManager.createResourceSerializer(contextProvider, ContextDescription.class, SerializationType.JAVA_SCRIPT_OBJECT_NOTATION);
-		serializer.add(contextProvider.getContext().getContextDescription());
+		ResourceSerializer<ContextDescription> serializer = resourceManager.createResourceSerializer(context, ContextDescription.class, SerializationType.JAVA_SCRIPT_OBJECT_NOTATION);
+		serializer.add(context.getContextDescription());
 		serializer.save(response.getOutputStream());
 
 		response.flushBuffer();

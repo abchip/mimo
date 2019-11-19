@@ -7,8 +7,6 @@
  */
 package org.abchip.mimo.tester;
 
-import org.abchip.mimo.context.ContextPackage;
-
 import org.abchip.mimo.entity.EntityPackage;
 
 import org.eclipse.emf.ecore.EAttribute;
@@ -277,7 +275,7 @@ public interface TesterPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TEST_RUNNER_FEATURE_COUNT = ContextPackage.CONTEXT_PROVIDER_FEATURE_COUNT + 0;
+	int TEST_RUNNER_FEATURE_COUNT = 0;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.tester.impl.TestRunnerEventImpl <em>Test Runner Event</em>}' class.

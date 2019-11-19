@@ -8,7 +8,7 @@
  */
 package org.abchip.mimo.resource;
 
-import org.abchip.mimo.context.ContextProvider;
+import org.abchip.mimo.context.Context;
 import org.abchip.mimo.entity.EntityIterator;
 import org.abchip.mimo.entity.EntityNameable;
 import org.abchip.mimo.entity.Frame;
@@ -141,6 +141,14 @@ public interface ResourceReader<E extends EntityNameable> {
 	 * @model kind="operation" required="true"
 	 * @generated
 	 */
+	Context getContext();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model kind="operation" required="true"
+	 * @generated
+	 */
 	Frame<E> getFrame();
 
 	/**
@@ -150,12 +158,4 @@ public interface ResourceReader<E extends EntityNameable> {
 	 * @generated
 	 */
 	String getTenant();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model kind="operation" required="true"
-	 * @generated
-	 */
-	ContextProvider getContextProvider();
 } // Resource

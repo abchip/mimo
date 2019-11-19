@@ -11,7 +11,6 @@ package org.abchip.mimo.application;
 import java.util.List;
 
 import org.abchip.mimo.context.Context;
-import org.abchip.mimo.context.ContextProvider;
 import org.abchip.mimo.entity.EntityNameable;
 
 /**
@@ -35,7 +34,7 @@ import org.abchip.mimo.entity.EntityNameable;
  * @model
  * @generated
  */
-public interface ApplicationComponent extends EntityNameable, ContextProvider {
+public interface ApplicationComponent extends EntityNameable, Context {
 	/**
 	 * Returns the value of the '<em><b>Config</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
@@ -76,7 +75,6 @@ public interface ApplicationComponent extends EntityNameable, ContextProvider {
 	 * @model containment="true" resolveProxies="true" transient="true"
 	 * @generated
 	 */
-	@Override
 	Context getContext();
 
 	/**

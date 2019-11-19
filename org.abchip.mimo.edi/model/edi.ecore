@@ -6,7 +6,7 @@
       <eTypeParameters name="E">
         <eBounds eClassifier="ecore:EClass ../../org.abchip.mimo.core/model/mimo.ecore#//entity/EntityNameable"/>
       </eTypeParameters>
-      <eParameters name="contextProvider" lowerBound="1" eType="ecore:EClass ../../org.abchip.mimo.core/model/mimo.ecore#//context/ContextProvider"/>
+      <eParameters name="context" lowerBound="1" eType="ecore:EClass ../../org.abchip.mimo.core/model/mimo.ecore#//context/Context"/>
       <eParameters name="entity" lowerBound="1">
         <eGenericType eTypeParameter="#//EdiManager/writeMessage/E"/>
       </eParameters>

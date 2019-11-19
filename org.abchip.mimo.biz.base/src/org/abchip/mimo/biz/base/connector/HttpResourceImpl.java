@@ -17,7 +17,7 @@ import java.util.List;
 
 import javax.servlet.http.HttpServletResponse;
 
-import org.abchip.mimo.context.ContextProvider;
+import org.abchip.mimo.context.Context;
 import org.abchip.mimo.context.Logger;
 import org.abchip.mimo.entity.EntityNameable;
 import org.abchip.mimo.entity.Frame;
@@ -42,12 +42,12 @@ public class HttpResourceImpl<E extends EntityNameable> extends ResourceImpl<E> 
 
 	private String tenant = null;
 
-	public HttpResourceImpl(ContextProvider contextProvider, Frame<E> frame, String tenant, HttpConnector connector) {
-		this.logger = contextProvider.getContext().get(Logger.class);
+	public HttpResourceImpl(Context context, Frame<E> frame, String tenant, HttpConnector connector) {
+		this.logger = context.get(Logger.class);
 		this.connector = connector;
 
-		ResourceManager resourceManager = contextProvider.getContext().get(ResourceManager.class);
-		this.resourceSerializer = resourceManager.createResourceSerializer(contextProvider, frame, SerializationType.JAVA_SCRIPT_OBJECT_NOTATION);
+		ResourceManager resourceManager = context.get(ResourceManager.class);
+		this.resourceSerializer = resourceManager.createResourceSerializer(context, frame, SerializationType.JAVA_SCRIPT_OBJECT_NOTATION);
 
 		this.tenant = tenant;
 	}

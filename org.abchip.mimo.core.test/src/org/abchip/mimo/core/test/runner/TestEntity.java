@@ -36,7 +36,7 @@ public class TestEntity {
 
 	private void testRead() {
 
-		ResourceReader<ObjectA> entityReader = resourceManager.getResourceReader(testRunner, ObjectA.class);
+		ResourceReader<ObjectA> entityReader = resourceManager.getResourceReader(testRunner.getContext(), ObjectA.class);
 
 		EntityIterator<ObjectA> entityIterator = entityReader.find();
 		while (entityIterator.hasNext()) {
@@ -47,7 +47,7 @@ public class TestEntity {
 
 	private void testWrite() {
 		try {
-			ResourceWriter<ObjectA> entityWriter = resourceManager.getResourceWriter(testRunner, ObjectA.class);
+			ResourceWriter<ObjectA> entityWriter = resourceManager.getResourceWriter(testRunner.getContext(), ObjectA.class);
 
 			ObjectA objectA = TestFactory.eINSTANCE.createObjectA();
 			objectA.setName("PIPPO");
@@ -77,7 +77,7 @@ public class TestEntity {
 
 	private void testDelete() {
 
-		ResourceWriter<ObjectA> entityWriter = resourceManager.getResourceWriter(testRunner, ObjectA.class);
+		ResourceWriter<ObjectA> entityWriter = resourceManager.getResourceWriter(testRunner.getContext(), ObjectA.class);
 
 		EntityIterator<ObjectA> objectIterator = entityWriter.find();
 		while (objectIterator.hasNext()) {

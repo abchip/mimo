@@ -7,7 +7,7 @@
  */
 package org.abchip.mimo.language;
 
-import org.abchip.mimo.context.ContextProvider;
+import org.abchip.mimo.context.Context;
 import org.abchip.mimo.mining.classification.Classification;
 
 
@@ -26,16 +26,16 @@ public interface LanguageManager {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model required="true" contextProviderRequired="true" textRequired="true"
+	 * @model required="true" contextRequired="true" textRequired="true"
 	 * @generated
 	 */
-	Classification<Language> classifyLanguage(ContextProvider contextProvider, String text);
+	Classification<Language> classifyLanguage(Context context, String text);
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model required="true" contextProviderRequired="true" languageSourceRequired="true" textRequired="true" languageTargetRequired="true"
+	 * @model required="true" contextRequired="true" languageSourceRequired="true" textRequired="true" languageTargetRequired="true"
 	 * @generated
 	 */
-	String translate(ContextProvider contextProvider, String languageSource, String text, String languageTarget);
+	String translate(Context context, String languageSource, String text, String languageTarget);
 } // LanguageManager

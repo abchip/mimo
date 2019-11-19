@@ -23,7 +23,7 @@ import org.abchip.mimo.context.AuthenticationAnonymous;
 import org.abchip.mimo.context.AuthenticationManager;
 import org.abchip.mimo.context.AuthenticationUserToken;
 import org.abchip.mimo.context.ContextFactory;
-import org.abchip.mimo.context.ContextProvider;
+import org.abchip.mimo.context.Context;
 import org.abchip.mimo.core.http.ContextUtils;
 import org.abchip.mimo.entity.EntityNameable;
 import org.abchip.mimo.resource.ResourceManager;
@@ -84,15 +84,15 @@ public class GitHubResponseServlet extends HttpServlet {
 		}
 
 		AuthenticationAnonymous authentication = ContextFactory.eINSTANCE.createAuthenticationAnonymous();
-		ContextProvider contextProvider = authenticationManager.login(null, authentication);
+		Context context = authenticationManager.login(null, authentication);
 
 		// dovremmo accedere con ProductStore e data
 		String entityName = "OAuth2GitHub";
-		ResourceReader<?> oauth2Reader = resourceManager.getResourceReader(contextProvider, entityName);
+		ResourceReader<?> oauth2Reader = resourceManager.getResourceReader(context, entityName);
 		EntityNameable oauth2GitHub = oauth2Reader.first();
 
-		authenticationManager.logout(contextProvider);
-		contextProvider.getContext().close();
+		authenticationManager.logout(context);
+		context.close();
 
 		if (oauth2GitHub == null) {
 			response.sendError(HttpServletResponse.SC_BAD_REQUEST, "Error! GitHub get OAuth2 configuration error");
@@ -140,9 +140,9 @@ public class GitHubResponseServlet extends HttpServlet {
 		authenticationUserToken.setProvider("GitHub");
 
 		if (authenticationManager.checkLogin(authenticationUserToken, true)) {
-			ContextUtils.removeContextProvider(state);
-			contextProvider = authenticationManager.login(state, authenticationUserToken);
-			ContextUtils.addContextProvider(contextProvider);
+			ContextUtils.removeContext(state);
+			context = authenticationManager.login(state, authenticationUserToken);
+			ContextUtils.addContext(context);
 
 			String location = response.encodeURL("http://localhost:8081");
 			// System.err.println(("Response location: " + location));

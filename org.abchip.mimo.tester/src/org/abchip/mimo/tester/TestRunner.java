@@ -7,7 +7,7 @@
  */
 package org.abchip.mimo.tester;
 
-import org.abchip.mimo.context.ContextProvider;
+import org.abchip.mimo.context.Context;
 
 /**
  * <!-- begin-user-doc -->
@@ -19,7 +19,7 @@ import org.abchip.mimo.context.ContextProvider;
  * @model interface="true" abstract="true"
  * @generated
  */
-public interface TestRunner extends ContextProvider {
+public interface TestRunner {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -35,5 +35,13 @@ public interface TestRunner extends ContextProvider {
 	 * @generated
 	 */
 	void removeListener(TestRunnerListener listener);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model kind="operation" required="true"
+	 * @generated
+	 */
+	Context getContext();
 
 } // QTestRunner

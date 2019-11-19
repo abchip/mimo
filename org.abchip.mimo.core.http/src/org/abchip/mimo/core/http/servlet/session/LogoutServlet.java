@@ -16,7 +16,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import org.abchip.mimo.context.AuthenticationManager;
-import org.abchip.mimo.context.ContextProvider;
+import org.abchip.mimo.context.Context;
 import org.abchip.mimo.core.http.ContextUtils;
 import org.abchip.mimo.core.http.servlet.BaseServlet;
 
@@ -27,13 +27,13 @@ public class LogoutServlet extends BaseServlet {
 	@Inject
 	private AuthenticationManager authenticationManager;
 	
-	protected void execute(ContextProvider contextProvider, HttpServletRequest request, HttpServletResponse response) throws IOException {
+	protected void execute(Context context, HttpServletRequest request, HttpServletResponse response) throws IOException {
 
 		HttpSession session = request.getSession();
 		
-		ContextUtils.removeContextProvider(session.getId());
-		authenticationManager.logout(contextProvider);
-		contextProvider.getContext().close();
+		ContextUtils.removeContext(session.getId());
+		authenticationManager.logout(context);
+		context.close();
 		
 		response.setStatus(HttpServletResponse.SC_ACCEPTED);
 		

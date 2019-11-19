@@ -10,24 +10,24 @@ package org.abchip.mimo.core.http;
 
 import java.util.WeakHashMap;
 
-import org.abchip.mimo.context.ContextProvider;
+import org.abchip.mimo.context.Context;
 
 public class ContextUtils {
 
-	private static WeakHashMap<String, ContextProvider> contexts = new WeakHashMap<String, ContextProvider>();
+	private static WeakHashMap<String, Context> contexts = new WeakHashMap<String, Context>();
 
-	public static ContextProvider getContextProvider(String contextId) {
+	public static Context getContext(String contextId) {
 		return contexts.get(contextId);
 	}
 
-	public static void addContextProvider(ContextProvider contextProvider) {
-		if (contextProvider == null)
+	public static void addContext(Context context) {
+		if (context == null)
 			return;
 
-		contexts.put(contextProvider.getContextDescription().getId(), contextProvider);
+		contexts.put(context.getContextDescription().getId(), context);
 	}
 
-	public static void removeContextProvider(String contextId) {
+	public static void removeContext(String contextId) {
 		if (contextId == null)
 			return;
 

@@ -70,7 +70,7 @@ public class BaseJobManagerImpl implements JobManager {
 	public JobCapability create(Identity<?> identity, String jobName) {
 
 		Job startupJob = systemManager.getJobKernel();
-		ResourceReader<UserProfile> userResource = resourceManager.getResourceReader(startupJob, UserProfile.class);
+		ResourceReader<UserProfile> userResource = resourceManager.getResourceReader(startupJob.getContext(), UserProfile.class);
 
 		// check credential
 		UserProfile userProfile = userResource.lookup(identity.getJavaPrincipal().getName());
@@ -86,7 +86,7 @@ public class BaseJobManagerImpl implements JobManager {
 		fireEvent(jobEvent);
 
 		// save
-		ResourceWriter<Job> jobWriter = resourceManager.getResourceWriter(job, Job.class);
+		ResourceWriter<Job> jobWriter = resourceManager.getResourceWriter(job.getContext(), Job.class);
 		jobWriter.create(job);
 
 		jobEvent.setType(JobEventType.STARTED);
@@ -157,7 +157,7 @@ public class BaseJobManagerImpl implements JobManager {
 		String filter = "jobReference.jobName = \"" + name + "\" AND jobReference.jobNumber = " + number + " AND jobReference.jobUser = \"" + user + "'";
 		Job jobTarget = null;
 
-		ResourceReader<Job> jobReader = resourceManager.getResourceReader(jobCaller, Job.class);
+		ResourceReader<Job> jobReader = resourceManager.getResourceReader(jobCaller.getContext(), Job.class);
 		EntityIterator<Job> jobs = jobReader.find(filter);
 
 		// first element
@@ -204,7 +204,7 @@ public class BaseJobManagerImpl implements JobManager {
 			jobListener.handleEvent(jobEvent);
 
 		// save destroy date job
-		ResourceWriter<Job> jobWriter = resourceManager.getResourceWriter(job, Job.class);
+		ResourceWriter<Job> jobWriter = resourceManager.getResourceWriter(job.getContext(), Job.class);
 		job.setDestroyDate(new Date());
 		jobWriter.update(job);
 

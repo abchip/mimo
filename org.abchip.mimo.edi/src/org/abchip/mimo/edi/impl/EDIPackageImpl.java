@@ -213,7 +213,7 @@ public class EDIPackageImpl extends EPackageImpl implements EDIPackage {
 		ETypeParameter t1 = addETypeParameter(op, "E");
 		EGenericType g1 = createEGenericType(theEntityPackage_1.getEntityNameable());
 		t1.getEBounds().add(g1);
-		addEParameter(op, theContextPackage.getContextProvider(), "contextProvider", 1, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, theContextPackage.getContext(), "context", 1, 1, IS_UNIQUE, IS_ORDERED);
 		g1 = createEGenericType(t1);
 		addEParameter(op, g1, "entity", 1, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, theEntityPackage.getEntityEvent(), "event", 1, 1, IS_UNIQUE, IS_ORDERED);

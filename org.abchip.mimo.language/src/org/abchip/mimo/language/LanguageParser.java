@@ -7,7 +7,7 @@
  */
 package org.abchip.mimo.language;
 
-import org.abchip.mimo.context.ContextProvider;
+import org.abchip.mimo.context.Context;
 
 /**
  * <!-- begin-user-doc -->
@@ -23,9 +23,9 @@ public interface LanguageParser {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model required="true" contextProviderRequired="true" languageRequired="true" textRequired="true"
+	 * @model required="true" contextRequired="true" languageRequired="true" textRequired="true"
 	 * @generated
 	 */
-	LanguageExpression parse(ContextProvider contextProvider, String language, String text);
+	LanguageExpression parse(Context context, String language, String text);
 
 } // LanguageParser

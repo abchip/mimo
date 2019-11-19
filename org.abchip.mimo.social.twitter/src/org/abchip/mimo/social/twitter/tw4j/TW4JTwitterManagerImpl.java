@@ -5,7 +5,7 @@ import java.util.List;
 
 import javax.annotation.PostConstruct;
 
-import org.abchip.mimo.context.ContextProvider;
+import org.abchip.mimo.context.Context;
 import org.abchip.mimo.entity.EntityIterator;
 import org.abchip.mimo.resource.ResourceHelper;
 import org.abchip.mimo.social.twitter.Tweet;
@@ -40,7 +40,7 @@ public class TW4JTwitterManagerImpl implements TwitterManager {
 	}
 	
 	@Override
-	public EntityIterator<Tweet> search(ContextProvider contextProvider, String language, String query, int maxNumber) {
+	public EntityIterator<Tweet> search(Context context, String language, String query, int maxNumber) {
 
 		List<Tweet> tweets = new ArrayList<Tweet>();
 		

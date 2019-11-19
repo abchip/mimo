@@ -21,7 +21,6 @@ import java.util.Map;
 import javax.annotation.PostConstruct;
 
 import org.abchip.mimo.context.AdapterFactory;
-import org.abchip.mimo.context.Context;
 import org.abchip.mimo.context.ContextDescription;
 import org.abchip.mimo.context.impl.ContextImpl;
 import org.eclipse.e4.core.contexts.ContextInjectionFactory;
@@ -47,11 +46,6 @@ public abstract class E4ContextImpl extends ContextImpl {
 
 	protected void initializeContext(IEclipseContext eclipseContext) {
 		eclipseContext.set(ADAPTER_FACTORIES_NAME, new HashMap<Class<?>, List<AdapterFactory>>());
-	}
-
-	@Override
-	public Context getContext() {
-		return this;
 	}
 
 	@Override

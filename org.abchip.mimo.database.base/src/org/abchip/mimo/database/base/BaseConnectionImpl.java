@@ -15,7 +15,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.abchip.mimo.context.Context;
-import org.abchip.mimo.context.ContextDescription;
 import org.abchip.mimo.database.CatalogContainer;
 import org.abchip.mimo.database.CatalogGenerationStrategy;
 import org.abchip.mimo.database.CatalogMetaData;
@@ -172,14 +171,6 @@ public class BaseConnectionImpl implements Connection {
 	@Override
 	public Context getContext() {
 		return context;
-	}
-
-	@Override
-	public ContextDescription getContextDescription() {
-		if (this.context != null)
-			return this.context.getContextDescription();
-		else
-			return null;
 	}
 	
 	private java.sql.Connection getRawConnection() throws SQLException {

@@ -1039,7 +1039,6 @@ public class ServerPackageImpl extends EPackageImpl implements ServerPackage {
 
 		// Add supertypes to classes
 		jobEClass.getESuperTypes().add(theEntityPackage.getEntityNameable());
-		jobEClass.getESuperTypes().add(theContextPackage.getContextProvider());
 		jobCapabilityEClass.getESuperTypes().add(theContextPackage.getCapability());
 		jobDescriptionEClass.getESuperTypes().add(theEntityPackage.getEntityNameable());
 		jobDescriptionEClass.getESuperTypes().add(theEntityPackage.getTextable());
@@ -1049,7 +1048,6 @@ public class ServerPackageImpl extends EPackageImpl implements ServerPackage {
 		jobReferenceEClass.getESuperTypes().add(theEntityPackage.getEntity());
 		jobRunInfoEClass.getESuperTypes().add(theEntityPackage.getEntity());
 		systemEClass.getESuperTypes().add(theEntityPackage.getEntityNameable());
-		systemEClass.getESuperTypes().add(theContextPackage.getContextProvider());
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(jobEClass, Job.class, "Job", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);

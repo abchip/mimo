@@ -32,9 +32,9 @@ public class TestLogic {
 	@TestStarted
 	public void start() {
 
-		Frame<?> frame = resourceManager.getFrame(testRunner, EntityPackage.eINSTANCE.getFrame().getName());
+		Frame<?> frame = resourceManager.getFrame(testRunner.getContext(), EntityPackage.eINSTANCE.getFrame().getName());
 
-		Theory theory = mindManager.buildTheory(testRunner, frame);
+		Theory theory = mindManager.buildTheory(testRunner.getContext(), frame);
 
 		for (Term mindTerm : theory.getFacts())
 			mindTerm.toString();

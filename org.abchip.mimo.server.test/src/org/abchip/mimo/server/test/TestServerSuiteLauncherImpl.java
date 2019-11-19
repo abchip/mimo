@@ -11,7 +11,6 @@ package org.abchip.mimo.server.test;
 import javax.inject.Inject;
 
 import org.abchip.mimo.context.Context;
-import org.abchip.mimo.context.ContextProvider;
 import org.abchip.mimo.tester.Test;
 import org.abchip.mimo.tester.TestManager;
 import org.abchip.mimo.tester.TestSuiteLauncher;
@@ -24,8 +23,8 @@ public class TestServerSuiteLauncherImpl implements TestSuiteLauncher {
 	private TestManager testManager;
 
 	@Override
-	public TestSuiteRunner createSuite(ContextProvider contextProvider) {
-		return new InternalSuiteDirectoryRunnerImpl(contextProvider.getContext(), testManager, null);
+	public TestSuiteRunner createSuite(Context context) {
+		return new InternalSuiteDirectoryRunnerImpl(context, testManager, null);
 	}
 
 	@Test(category = "Server")

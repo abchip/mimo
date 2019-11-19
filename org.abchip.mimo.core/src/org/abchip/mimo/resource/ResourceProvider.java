@@ -9,7 +9,7 @@
  */
 package org.abchip.mimo.resource;
 
-import org.abchip.mimo.context.ContextProvider;
+import org.abchip.mimo.context.Context;
 import org.abchip.mimo.entity.EntityNameable;
 import org.abchip.mimo.entity.Frame;
 
@@ -26,49 +26,49 @@ public interface ResourceProvider {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model required="true" contextProviderRequired="true" klassRequired="true"
+	 * @model required="true" contextRequired="true" klassRequired="true"
 	 * @generated
 	 */
-	<E extends EntityNameable> Resource<E> getResource(ContextProvider contextProvider, Class<E> klass);
+	<E extends EntityNameable> Resource<E> getResource(Context context, Class<E> klass);
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model required="true" contextProviderRequired="true" frameRequired="true"
+	 * @model required="true" contextRequired="true" frameRequired="true"
 	 * @generated
 	 */
-	<E extends EntityNameable> Resource<E> getResource(ContextProvider contextProvider, Frame<E> frame);
+	<E extends EntityNameable> Resource<E> getResource(Context context, Frame<E> frame);
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model required="true" contextProviderRequired="true" frameRequired="true"
+	 * @model required="true" contextRequired="true" frameRequired="true"
 	 * @generated
 	 */
-	<E extends EntityNameable> Resource<E> getResource(ContextProvider contextProvider, String frame);
+	<E extends EntityNameable> Resource<E> getResource(Context context, String frame);
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model required="true" contextProviderRequired="true" klassRequired="true" tenantRequired="true"
+	 * @model required="true" contextRequired="true" klassRequired="true" tenantRequired="true"
 	 * @generated
 	 */
-	<E extends EntityNameable> Resource<E> getResource(ContextProvider contextProvider, Class<E> klass, String tenant);
+	<E extends EntityNameable> Resource<E> getResource(Context context, Class<E> klass, String tenant);
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model required="true" contextProviderRequired="true" frameRequired="true" tenantRequired="true"
+	 * @model required="true" contextRequired="true" frameRequired="true" tenantRequired="true"
 	 * @generated
 	 */
-	<E extends EntityNameable> Resource<E> getResource(ContextProvider contextProvider, Frame<E> frame, String tenant);
+	<E extends EntityNameable> Resource<E> getResource(Context context, Frame<E> frame, String tenant);
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model required="true" contextProviderRequired="true" frameRequired="true" tenantRequired="true"
+	 * @model required="true" contextRequired="true" frameRequired="true" tenantRequired="true"
 	 * @generated
 	 */
-	<E extends EntityNameable> Resource<E> getResource(ContextProvider contextProvider, String frame, String tenant);
+	<E extends EntityNameable> Resource<E> getResource(Context context, String frame, String tenant);
 
 } // ResourceProvider

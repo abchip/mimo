@@ -26,7 +26,7 @@ import org.abchip.mimo.biz.party.party.PartyRole;
 import org.abchip.mimo.biz.party.party.PartyType;
 import org.abchip.mimo.biz.party.party.Person;
 import org.abchip.mimo.biz.party.party.RoleType;
-import org.abchip.mimo.context.ContextProvider;
+import org.abchip.mimo.context.Context;
 import org.abchip.mimo.core.http.servlet.BaseServlet;
 import org.abchip.mimo.entity.EntityNameable;
 import org.abchip.mimo.resource.ResourceManager;
@@ -45,17 +45,17 @@ public class ImportPeopleServlet extends BaseServlet {
 	@Inject
 	private ResourceManager resourceManager;
 
-	protected void execute(ContextProvider contextProvider, HttpServletRequest request, HttpServletResponse response) throws IOException {
-		_execute(contextProvider, request, response);
+	protected void execute(Context context, HttpServletRequest request, HttpServletResponse response) throws IOException {
+		_execute(context, request, response);
 	}
 
-	private <E extends EntityNameable> void _execute(ContextProvider contextProvider, HttpServletRequest request, HttpServletResponse response) throws IOException {
+	private <E extends EntityNameable> void _execute(Context context, HttpServletRequest request, HttpServletResponse response) throws IOException {
 
 		try {
 
-			ResourceWriter<Person> personWriter = resourceManager.getResourceWriter(contextProvider, Person.class);
-			ResourceWriter<PartyRole> partyRoleWriter = resourceManager.getResourceWriter(contextProvider, PartyRole.class);
-			ResourceWriter<PartyTaxAuthInfo> partyTaxAuthInfoWriter = resourceManager.getResourceWriter(contextProvider, PartyTaxAuthInfo.class);
+			ResourceWriter<Person> personWriter = resourceManager.getResourceWriter(context, Person.class);
+			ResourceWriter<PartyRole> partyRoleWriter = resourceManager.getResourceWriter(context, PartyRole.class);
+			ResourceWriter<PartyTaxAuthInfo> partyTaxAuthInfoWriter = resourceManager.getResourceWriter(context, PartyTaxAuthInfo.class);
 
 			for (Part filePart : parseRequest(request).values()) {
 				if (!filePart.getName().equals("upload"))
@@ -84,9 +84,9 @@ public class ImportPeopleServlet extends BaseServlet {
 
 						Person person = PartyFactory.eINSTANCE.createPerson();
 						// Party
-						person.setPreferredCurrencyUomId(resourceManager.getFrame(contextProvider, Uom.class).createProxy("EUR"));
-						person.setStatusId(resourceManager.getFrame(contextProvider, StatusItem.class).createProxy("PARTY_ENABLED"));
-						person.setPartyTypeId(resourceManager.getFrame(contextProvider, PartyType.class).createProxy("PERSON"));
+						person.setPreferredCurrencyUomId(resourceManager.getFrame(context, Uom.class).createProxy("EUR"));
+						person.setStatusId(resourceManager.getFrame(context, StatusItem.class).createProxy("PARTY_ENABLED"));
+						person.setPartyTypeId(resourceManager.getFrame(context, PartyType.class).createProxy("PERSON"));
 						// Person
 						person.setPartyId(id);
 						person.setFirstName(Strings.qINSTANCE.escape(name));
@@ -96,7 +96,7 @@ public class ImportPeopleServlet extends BaseServlet {
 						// Party Role
 						PartyRole partyRole = PartyFactory.eINSTANCE.createPartyRole();
 						partyRole.setPartyId(person);
-						partyRole.setRoleTypeId(resourceManager.getFrame(contextProvider, RoleType.class).createProxy("CUSTOMER"));
+						partyRole.setRoleTypeId(resourceManager.getFrame(context, RoleType.class).createProxy("CUSTOMER"));
 						partyRoleWriter.create(partyRole, true);
 
 						// PartyTaxAuthInfo

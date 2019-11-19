@@ -5,7 +5,7 @@ import org.abchip.mimo.biz.party.contact.TelecomNumber;
 import org.abchip.mimo.biz.party.party.Party;
 import org.abchip.mimo.biz.party.party.PartyGroup;
 import org.abchip.mimo.biz.party.party.Person;
-import org.abchip.mimo.context.ContextProvider;
+import org.abchip.mimo.context.Context;
 import org.abchip.mimo.resource.ResourceManager;
 import org.abchip.mimo.resource.ResourceReader;
 
@@ -19,13 +19,13 @@ import ezvcard.property.Telephone;
 
 public class PartyServices {
 
-	public static VCard createVcardFromParty(ContextProvider contextProvider, String partyId) {
+	public static VCard createVcardFromParty(Context context, String partyId) {
 
-		ResourceManager resourceManager = contextProvider.getContext().get(ResourceManager.class);
+		ResourceManager resourceManager = context.get(ResourceManager.class);
 
-		ResourceReader<Party> partyReader = resourceManager.getResourceReader(contextProvider, Party.class);
-		ResourceReader<Person> personReader = resourceManager.getResourceReader(contextProvider, Person.class);
-		ResourceReader<PartyGroup> partyGroupReader = resourceManager.getResourceReader(contextProvider, PartyGroup.class);
+		ResourceReader<Party> partyReader = resourceManager.getResourceReader(context, Party.class);
+		ResourceReader<Person> personReader = resourceManager.getResourceReader(context, Person.class);
+		ResourceReader<PartyGroup> partyGroupReader = resourceManager.getResourceReader(context, PartyGroup.class);
 		Party partyEntity = partyReader.lookup(partyId);
 
 		VCard vcard = new VCard();
@@ -83,20 +83,20 @@ public class PartyServices {
 			vcard.setStructuredName(structuredName);
 
 			// PostalAddress
-			writeLatestPostalAddress(contextProvider, vcard, partyId);
+			writeLatestPostalAddress(context, vcard, partyId);
 
 			// TelecomNumber
-			writeLatestTelecomNumber(contextProvider, vcard, partyId);
+			writeLatestTelecomNumber(context, vcard, partyId);
 
 			// E-mail
-			writeLatestEmail(contextProvider, vcard, partyId);
+			writeLatestEmail(context, vcard, partyId);
 		}
 
 		return vcard;
 	}
 
-	private static void writeLatestPostalAddress(ContextProvider contextProvider, VCard vcard, String partyId) {
-		PostalAddress postalAddress = ContactMechServices.getLatestPostaAddress(contextProvider, partyId);
+	private static void writeLatestPostalAddress(Context context, VCard vcard, String partyId) {
+		PostalAddress postalAddress = ContactMechServices.getLatestPostaAddress(context, partyId);
 		if (postalAddress == null)
 			return;
 
@@ -118,8 +118,8 @@ public class PartyServices {
 		vcard.addAddress(address);
 	}
 
-	private static void writeLatestTelecomNumber(ContextProvider contextProvider, VCard vcard, String partyId) {
-		TelecomNumber telecomNumber = ContactMechServices.getLatestTelecomNumber(contextProvider, partyId);
+	private static void writeLatestTelecomNumber(Context context, VCard vcard, String partyId) {
+		TelecomNumber telecomNumber = ContactMechServices.getLatestTelecomNumber(context, partyId);
 		if (telecomNumber == null)
 			return;
 
@@ -134,8 +134,8 @@ public class PartyServices {
 		vcard.addTelephoneNumber(tel);
 	}
 
-	private static void writeLatestEmail(ContextProvider contextProvider, VCard vcard, String partyId) {
-		String email = ContactMechServices.getLatestEmail(contextProvider, partyId);
+	private static void writeLatestEmail(Context context, VCard vcard, String partyId) {
+		String email = ContactMechServices.getLatestEmail(context, partyId);
 		if (email.isEmpty())
 			return;
 		vcard.addEmail(new Email(email));

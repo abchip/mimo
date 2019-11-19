@@ -15,7 +15,7 @@ import org.abchip.mimo.MimoResourceFactoryImpl;
 import org.abchip.mimo.MimoResourceImpl;
 import org.abchip.mimo.MimoResourceSetImpl;
 import org.abchip.mimo.context.ContextDescription;
-import org.abchip.mimo.context.ContextProvider;
+import org.abchip.mimo.context.Context;
 import org.abchip.mimo.context.ContextRoot;
 import org.abchip.mimo.context.LockManager;
 import org.abchip.mimo.entity.EntityNameable;
@@ -46,8 +46,8 @@ public class BaseService {
 		return this.lockManager;
 	}
 
-	protected final void checkAuthorization(ContextProvider contextProvider, String tenant) {
-		ContextDescription contextDescription = contextProvider.getContextDescription();
+	protected final void checkAuthorization(Context context, String tenant) {
+		ContextDescription contextDescription = context.getContextDescription();
 
 		// check authorization
 		if (contextDescription.isTenant()) {
@@ -59,26 +59,26 @@ public class BaseService {
 		// check frame authorization
 	}
 
-	protected <E extends EntityNameable> MimoResourceImpl<E> getInternalResource(ContextProvider contextProvider, String frame, String tenant) {
+	protected <E extends EntityNameable> MimoResourceImpl<E> getInternalResource(Context context, String frame, String tenant) {
 
 		URI uri = URI.createHierarchicalURI("mimo", null, null, new String[] { frame }, null, null);
 		@SuppressWarnings("unchecked")
-		MimoResourceImpl<E> internal = (MimoResourceImpl<E>) getResourceSet(contextProvider).getResource(uri, true);
+		MimoResourceImpl<E> internal = (MimoResourceImpl<E>) getResourceSet(context).getResource(uri, true);
 
 		return internal;
 	}
 
-	private ResourceSet getResourceSet(ContextProvider contextProvider) {
+	private ResourceSet getResourceSet(Context context) {
 
-		if (contextProvider.getContext() instanceof ContextRoot)
+		if (context instanceof ContextRoot)
 			return resourceSet;
 
-		ResourceSet resourceSet = contextProvider.getContext().get(ResourceSet.class);
+		ResourceSet resourceSet = context.get(ResourceSet.class);
 		if (resourceSet == null) {
-			synchronized (contextProvider.getContext()) {
-				resourceSet = new MimoResourceSetImpl(contextProvider);
+			synchronized (context) {
+				resourceSet = new MimoResourceSetImpl(context);
 				resourceSet.getResourceFactoryRegistry().getProtocolToFactoryMap().put("mimo", new MimoResourceFactoryImpl(resourceSet));
-				contextProvider.getContext().set(ResourceSet.class, resourceSet);
+				context.set(ResourceSet.class, resourceSet);
 			}
 		}
 

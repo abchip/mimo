@@ -9,7 +9,6 @@ import java.util.Date;
 import java.util.Map;
 
 import org.abchip.mimo.context.Context;
-import org.abchip.mimo.context.ContextProvider;
 import org.abchip.mimo.entity.EntityNameable;
 import org.abchip.mimo.entity.Frame;
 import org.abchip.mimo.resource.Resource;
@@ -41,17 +40,16 @@ public class MimoResourceImpl<E extends EntityNameable> extends ResourceImpl {
 		if (getURI().hasQuery())
 			tenant = URIs.qINSTANCE.parseParameter(getURI().query()).get("tenant");
 
-		ContextProvider contextProvider = this.getContextProvider();
-		ResourceManager resourceManager = contextProvider.getContext().get(ResourceManager.class);
+		ResourceManager resourceManager = this.getContext().get(ResourceManager.class);
 
 		if (Frame.class.getSimpleName().equals(frameName)) {
-			this.resource = EMFResourceProviderImpl.internalGetResource(contextProvider, null, tenant);
+			this.resource = EMFResourceProviderImpl.internalGetResource(this.getContext(), null, tenant);
 		} else {
-			Frame<E> frame = (Frame<E>) resourceManager.getFrame(getContextProvider(), frameName);
+			Frame<E> frame = (Frame<E>) resourceManager.getFrame(getContext(), frameName);
 			if (frame.isEnum()) {
-				this.resource = EMFResourceProviderImpl.internalGetResource(contextProvider, frame, tenant);
+				this.resource = EMFResourceProviderImpl.internalGetResource(this.getContext(), frame, tenant);
 			} else
-				this.resource = resourceManager.getResourceProvider(this.getContextProvider(), frame).getResource(contextProvider, frame, tenant);
+				this.resource = resourceManager.getResourceProvider(this.getContext(), frame).getResource(this.getContext(), frame, tenant);
 		}
 	}
 
@@ -64,9 +62,8 @@ public class MimoResourceImpl<E extends EntityNameable> extends ResourceImpl {
 		if (this.resourceReader == null) {
 			synchronized (this) {
 				if (this.resourceReader == null) {
-					Context context = this.getContextProvider().getContext();
-					ResourceManager resourceManager = context.get(ResourceManager.class);
-					this.resourceReader = resourceManager.getResourceReader(context, this.resource.getFrame(), this.resource.getTenant());
+					ResourceManager resourceManager = this.getContext().get(ResourceManager.class);
+					this.resourceReader = resourceManager.getResourceReader(this.getContext(), this.resource.getFrame(), this.resource.getTenant());
 				}
 			}
 		}
@@ -74,12 +71,12 @@ public class MimoResourceImpl<E extends EntityNameable> extends ResourceImpl {
 		return this.resourceReader;
 	}
 
-	public ContextProvider getContextProvider() {
+	public Context getContext() {
 		if (!(this.getResourceSet() instanceof MimoResourceSetImpl))
 			return null;
 
 		MimoResourceSetImpl resourceSet = (MimoResourceSetImpl) this.getResourceSet();
-		return resourceSet.getContextProvider();
+		return resourceSet.getContext();
 	}
 
 	@Override

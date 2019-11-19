@@ -11,7 +11,6 @@ package org.abchip.mimo.server.impl;
 import java.lang.management.ManagementFactory;
 
 import org.abchip.mimo.context.Context;
-import org.abchip.mimo.context.ContextDescription;
 import org.abchip.mimo.entity.impl.EntityNameableImpl;
 import org.abchip.mimo.server.ServerPackage;
 import org.abchip.mimo.server.SystemStatus;
@@ -374,18 +373,6 @@ public class SystemImpl extends EntityNameableImpl implements org.abchip.mimo.se
 	 */
 	public double getLoadAverage() {
 		return ManagementFactory.getOperatingSystemMXBean().getSystemLoadAverage();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public ContextDescription getContextDescription() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
 	}
 
 	/**

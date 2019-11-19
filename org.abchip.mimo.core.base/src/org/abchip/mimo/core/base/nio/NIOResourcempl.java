@@ -22,7 +22,7 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 
-import org.abchip.mimo.context.ContextProvider;
+import org.abchip.mimo.context.Context;
 import org.abchip.mimo.context.Logger;
 import org.abchip.mimo.entity.EntityNameable;
 import org.abchip.mimo.entity.Frame;
@@ -45,13 +45,13 @@ public class NIOResourcempl<E extends EntityNameable> extends ResourceImpl<E> {
 
 	private String tenant = null;
 
-	public NIOResourcempl(ContextProvider contextProvider, Frame<E> frame, String tenant, NIOPathManager pathManager) {
+	public NIOResourcempl(Context context, Frame<E> frame, String tenant, NIOPathManager pathManager) {
 
-		this.logger = contextProvider.getContext().get(Logger.class);
+		this.logger = context.get(Logger.class);
 		this.pathManager = pathManager;
 
-		ResourceManager resourceManager = contextProvider.getContext().get(ResourceManager.class);
-		this.resourceSerializer = resourceManager.createResourceSerializer(contextProvider, frame, SerializationType.XML_METADATA_INTERCHANGE);
+		ResourceManager resourceManager = context.get(ResourceManager.class);
+		this.resourceSerializer = resourceManager.createResourceSerializer(context, frame, SerializationType.XML_METADATA_INTERCHANGE);
 
 		this.tenant = tenant;
 	}

@@ -27,33 +27,33 @@ public interface LockManager {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model contextProviderRequired="true" addressDataType="org.abchip.mimo.java.JavaURI"
+	 * @model contextRequired="true" addressDataType="org.abchip.mimo.java.JavaURI"
 	 * @generated
 	 */
-	<N extends EntityNameable> EntityLocker<N> getLocker(ContextProvider contextProvider, URI address);
+	<N extends EntityNameable> EntityLocker<N> getLocker(Context context, URI address);
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model contextProviderRequired="true"
+	 * @model contextRequired="true"
 	 * @generated
 	 */
-	<N extends EntityNameable> EntityLocker<N> getLocker(ContextProvider contextProvider, N object);
+	<N extends EntityNameable> EntityLocker<N> getLocker(Context context, N object);
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model type="org.abchip.mimo.java.JavaConcurrentMap" contextProviderRequired="true"
+	 * @model type="org.abchip.mimo.java.JavaConcurrentMap" contextRequired="true"
 	 * @generated
 	 */
-	<K, V> ConcurrentMap<K, V> getConcurrentMap(ContextProvider contextProvider, String name);
+	<K, V> ConcurrentMap<K, V> getConcurrentMap(Context context, String name);
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model type="org.abchip.mimo.java.JavaBlockingQueue" contextProviderRequired="true"
+	 * @model type="org.abchip.mimo.java.JavaBlockingQueue" contextRequired="true"
 	 * @generated
 	 */
-	<E> BlockingQueue<E> getQueue(ContextProvider contextProvider, String name);
+	<E> BlockingQueue<E> getQueue(Context context, String name);
 
 } // LockManager

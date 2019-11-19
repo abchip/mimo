@@ -10,7 +10,7 @@ package org.abchip.mimo;
 
 import java.util.WeakHashMap;
 
-import org.abchip.mimo.context.ContextProvider;
+import org.abchip.mimo.context.Context;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.impl.ResourceImpl;
@@ -18,18 +18,18 @@ import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 
 public class MimoResourceSetImpl extends ResourceSetImpl {
 
-	private ContextProvider contextProvider;
+	private Context context;
 
-	public MimoResourceSetImpl(ContextProvider contextProvider) {
+	public MimoResourceSetImpl(Context context) {
 		super();
 
-		this.contextProvider = contextProvider;
+		this.context = context;
 
 		this.setURIResourceMap(new WeakHashMap<URI, Resource>());
 	}
 
-	public ContextProvider getContextProvider() {
-		return this.contextProvider;
+	public Context getContext() {
+		return this.context;
 	}
 
 	@Override

@@ -14,7 +14,7 @@ import java.util.Iterator;
 import java.util.List;
 
 import org.abchip.mimo.MimoResourceImpl;
-import org.abchip.mimo.context.ContextProvider;
+import org.abchip.mimo.context.Context;
 import org.abchip.mimo.entity.EntityIterator;
 import org.abchip.mimo.entity.EntityNameable;
 import org.abchip.mimo.entity.Frame;
@@ -45,8 +45,8 @@ public class BaseResourceReaderImpl<E extends EntityNameable> extends ResourceRe
 	}
 
 	@Override
-	public ContextProvider getContextProvider() {
-		return this.internal.getContextProvider();
+	public Context getContext() {
+		return this.internal.getContext();
 	}
 
 	@Override

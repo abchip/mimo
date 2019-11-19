@@ -9,7 +9,7 @@
       <eTypeParameters name="E">
         <eBounds eClassifier="ecore:EClass ../../org.abchip.mimo.core/model/mimo.ecore#//entity/Entity"/>
       </eTypeParameters>
-      <eParameters name="contextProvider" lowerBound="1" eType="ecore:EClass ../../org.abchip.mimo.core/model/mimo.ecore#//context/ContextProvider"/>
+      <eParameters name="context" lowerBound="1" eType="ecore:EClass ../../org.abchip.mimo.core/model/mimo.ecore#//context/Context"/>
       <eParameters name="klass" lowerBound="1">
         <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaClass">
           <eTypeArguments eTypeParameter="#//MiningManager/classify/E"/>
@@ -50,7 +50,7 @@
         <eTypeParameters name="E">
           <eBounds eClassifier="ecore:EClass ../../org.abchip.mimo.core/model/mimo.ecore#//entity/Entity"/>
         </eTypeParameters>
-        <eParameters name="contextProvider" lowerBound="1" eType="ecore:EClass ../../org.abchip.mimo.core/model/mimo.ecore#//context/ContextProvider"/>
+        <eParameters name="context" lowerBound="1" eType="ecore:EClass ../../org.abchip.mimo.core/model/mimo.ecore#//context/Context"/>
         <eParameters name="klass" lowerBound="1">
           <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaClass">
             <eTypeArguments eTypeParameter="#//classification/Classifier/classify/E"/>

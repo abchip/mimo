@@ -39,7 +39,7 @@ import org.abchip.mimo.context.AuthenticationManager;
 import org.abchip.mimo.context.AuthenticationUserPassword;
 import org.abchip.mimo.context.AuthenticationUserToken;
 import org.abchip.mimo.context.ContextFactory;
-import org.abchip.mimo.context.ContextProvider;
+import org.abchip.mimo.context.Context;
 import org.abchip.mimo.context.ContextRoot;
 import org.abchip.mimo.context.Identity;
 import org.abchip.mimo.context.impl.IdentityImpl;
@@ -362,14 +362,14 @@ public class HttpAuthenticationManagerImpl implements AuthenticationManager {
 	}
 
 	@Override
-	public boolean isActive(ContextProvider contextProvider) {
+	public boolean isActive(Context context) {
 
-		if (contextProvider == null)
+		if (context == null)
 			return false;
 
 		try {
 			String url = "/entityCheckStatus?set=1";
-			try (CloseableHttpResponse response = getConnector(contextProvider).execute(url, null)) {
+			try (CloseableHttpResponse response = getConnector(context).execute(url, null)) {
 				if (response != null && response.getStatusLine().getStatusCode() == HttpServletResponse.SC_OK)
 					return true;
 			}
@@ -381,7 +381,7 @@ public class HttpAuthenticationManagerImpl implements AuthenticationManager {
 	}
 
 	@Override
-	public ContextProvider login(String contextId, AuthenticationAnonymous authentication) {
+	public Context login(String contextId, AuthenticationAnonymous authentication) {
 
 		BizProviderUser user = this.providerConfig.getPublicUser();
 		if (user == null)
@@ -390,32 +390,32 @@ public class HttpAuthenticationManagerImpl implements AuthenticationManager {
 		AuthenticationUserPassword authenticationUserPassword = ContextFactory.eINSTANCE.createAuthenticationUserPassword();
 		authenticationUserPassword.setUser(user.getName());
 		authenticationUserPassword.setPassword(user.getPassword());
-		ContextProvider contextProvider = this.login(contextId, authenticationUserPassword);
+		Context context = this.login(contextId, authenticationUserPassword);
 
-		if (contextProvider != null)
-			contextProvider.getContext().getContextDescription().setAnonymous(true);
+		if (context != null)
+			context.getContextDescription().setAnonymous(true);
 
-		return contextProvider;
+		return context;
 	}
 
 	@Override
-	public ContextProvider login(String contextId, AuthenticationUserPassword authentication) {
+	public Context login(String contextId, AuthenticationUserPassword authentication) {
 
 		HttpConnector connector = connect(authentication.getUser(), authentication.getPassword(), authentication.getTenant());
 		if (connector == null)
 			return null;
 
-		ContextProvider contextProvider = contextRoot.createChildContext(contextId);
-		contextProvider.getContext().set(HttpConnector.class, connector);
+		Context context = contextRoot.createChildContext(contextId);
+		context.set(HttpConnector.class, connector);
 
-		contextProvider.getContext().getContextDescription().setUser(authentication.getUser());
-		contextProvider.getContext().getContextDescription().setTenant(authentication.getTenant());
+		context.getContextDescription().setUser(authentication.getUser());
+		context.getContextDescription().setTenant(authentication.getTenant());
 
-		return contextProvider;
+		return context;
 	}
 
 	@Override
-	public ContextProvider login(String contextId, AuthenticationUserToken authentication) {
+	public Context login(String contextId, AuthenticationUserToken authentication) {
 
 		// from previous httpClient
 		AuthenticationUserPassword authenticationUserPassword = ContextFactory.eINSTANCE.createAuthenticationUserPassword();
@@ -442,19 +442,19 @@ public class HttpAuthenticationManagerImpl implements AuthenticationManager {
 			return null;
 		}
 
-		ContextProvider contextProvider = login(contextId, authenticationUserPassword);
-		if (contextProvider == null)
+		Context context = login(contextId, authenticationUserPassword);
+		if (context == null)
 			return null;
 
-		contextProvider.getContext().getContextDescription().setPicture(authentication.getPicture());
+		context.getContextDescription().setPicture(authentication.getPicture());
 
-		return contextProvider;
+		return context;
 	}
 
 	@Override
-	public void logout(ContextProvider contextProvider) {
+	public void logout(Context context) {
 
-		HttpConnector connector = getConnector(contextProvider);
+		HttpConnector connector = getConnector(context);
 		try {
 			switch (providerConfig.getLoginType()) {
 			case JSON_WEB_TOKEN:
@@ -469,14 +469,14 @@ public class HttpAuthenticationManagerImpl implements AuthenticationManager {
 		}
 
 		// TODO
-		contextProvider.getContext().set(HttpConnector.class, null);
+		context.set(HttpConnector.class, null);
 	}
 
-	private HttpConnector getConnector(ContextProvider contextProvider) {
+	private HttpConnector getConnector(Context context) {
 
 		HttpConnector connector = null;
-		if (contextProvider != null)
-			connector = contextProvider.getContext().get(HttpConnector.class);
+		if (context != null)
+			connector = context.get(HttpConnector.class);
 
 		return connector;
 	}
