@@ -103,13 +103,13 @@ public class EMFFrameHelper {
 				if (eClassifier instanceof EClass) {
 					EClass eClass = (EClass) eClassifier;
 					if (EntityPackage.eINSTANCE.getEntity().isSuperTypeOf(eClass)) {
-						if(!tempFrames.containsKey(eClass.getName()))
-							tempFrames.put(eClass.getName(), new EMFFrameClassAdapter<>(tempFrames, eClass));
+						// if(!tempFrames.containsKey(eClass.getName()))
+						tempFrames.put(eClass.getName(), new EMFFrameClassAdapter<>(tempFrames, eClass));
 					}
 				} else if (eClassifier instanceof EEnum) {
 					EEnum eEnum = (EEnum) eClassifier;
-					if(!tempFrames.containsKey(eEnum.getName()))
-						tempFrames.put(eEnum.getName(), new EMFFrameEnumAdapter<>(eEnum));
+					// if(!tempFrames.containsKey(eEnum.getName()))
+					tempFrames.put(eEnum.getName(), new EMFFrameEnumAdapter<>(eEnum));
 				} else if (eClassifier instanceof EDataType) {
 					// TODO
 				} else {
