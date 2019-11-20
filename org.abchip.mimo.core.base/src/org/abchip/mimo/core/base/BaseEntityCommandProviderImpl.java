@@ -11,7 +11,7 @@ package org.abchip.mimo.core.base;
 import javax.inject.Inject;
 
 import org.abchip.mimo.context.ContextRoot;
-import org.abchip.mimo.entity.EntityNameable;
+import org.abchip.mimo.entity.EntityIdentifiable;
 import org.abchip.mimo.entity.Frame;
 import org.abchip.mimo.resource.ResourceManager;
 import org.abchip.mimo.util.Strings;
@@ -25,7 +25,7 @@ public class BaseEntityCommandProviderImpl implements CommandProvider {
 	@Inject
 	private ResourceManager resourceManager;
 
-	public <E extends EntityNameable> void _find(CommandInterpreter interpreter) throws Exception {
+	public <E extends EntityIdentifiable> void _find(CommandInterpreter interpreter) throws Exception {
 
 		String frameName = Strings.qINSTANCE.firstToUpper(interpreter.nextArgument());
 		String order = interpreter.nextArgument();
@@ -36,11 +36,11 @@ public class BaseEntityCommandProviderImpl implements CommandProvider {
 			interpreter.print("Frame not found: " + frameName);
 
 		for (E entity : resourceManager.getResourceReader(contextRoot, frame).find(null, null, order)) {
-			System.out.println(entity.getName());
+			System.out.println(entity.getID());
 		}
 	}
 
-	public <E extends EntityNameable> void _lookup(CommandInterpreter interpreter) throws Exception {
+	public <E extends EntityIdentifiable> void _lookup(CommandInterpreter interpreter) throws Exception {
 
 		String frameName = Strings.qINSTANCE.firstToUpper(interpreter.nextArgument());
 		@SuppressWarnings("unchecked")

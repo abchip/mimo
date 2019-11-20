@@ -293,13 +293,12 @@ public class AudioPackageImpl extends EPackageImpl implements AudioPackage {
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
-		audioEClass.getESuperTypes().add(theEntityPackage.getEntityNameable());
-		audioEClass.getESuperTypes().add(theEntityPackage.getTextable());
+		audioEClass.getESuperTypes().add(theEntityPackage.getEntityIdentifiable());
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(audioEClass, Audio.class, "Audio", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getAudio_Content(), ecorePackage.getEByteArray(), "content", null, 0, 1, Audio.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getAudio_Name(), ecorePackage.getEString(), "name", null, 1, 1, Audio.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getAudio_Name(), ecorePackage.getEString(), "name", null, 1, 1, Audio.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getAudio_Text(), ecorePackage.getEString(), "text", null, 1, 1, Audio.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(audioManagerEClass, AudioManager.class, "AudioManager", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);

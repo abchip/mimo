@@ -7,7 +7,7 @@
  */
 package org.abchip.mimo.language.grammar.impl;
 
-import org.abchip.mimo.entity.impl.EntityNameableImpl;
+import org.abchip.mimo.entity.impl.EntityIdentifiableImpl;
 
 import org.abchip.mimo.language.grammar.Grammar;
 import org.abchip.mimo.language.grammar.GrammarPackage;
@@ -29,7 +29,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *
  * @generated
  */
-public class GrammarImpl extends EntityNameableImpl implements Grammar {
+public class GrammarImpl extends EntityIdentifiableImpl implements Grammar {
 	/**
 	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->

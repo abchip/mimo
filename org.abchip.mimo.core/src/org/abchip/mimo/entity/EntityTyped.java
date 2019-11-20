@@ -18,7 +18,7 @@ package org.abchip.mimo.entity;
  * @model
  * @generated
  */
-public interface EntityTyped<T extends EntityType<?>> extends EntityNameable {
+public interface EntityTyped<T extends EntityType<?>> extends EntityIdentifiable {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

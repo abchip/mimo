@@ -16,7 +16,7 @@ package org.abchip.mimo.database.definition.impl;
 import org.abchip.mimo.database.definition.DatabaseDefinitionPackage;
 import org.abchip.mimo.database.definition.TableDef;
 import org.abchip.mimo.database.definition.TableTerm;
-import org.abchip.mimo.entity.impl.EntityNameableImpl;
+import org.abchip.mimo.entity.impl.EntityIdentifiableImpl;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.ecore.EClass;
@@ -39,7 +39,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *
  * @generated
  */
-public class TableTermImpl extends EntityNameableImpl implements TableTerm {
+public class TableTermImpl extends EntityIdentifiableImpl implements TableTerm {
 	/**
 	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->

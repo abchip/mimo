@@ -10,8 +10,7 @@ package org.abchip.mimo.server.impl;
 
 import java.util.Collection;
 import java.util.List;
-
-import org.abchip.mimo.entity.impl.EntityNameableImpl;
+import org.abchip.mimo.entity.impl.EntityImpl;
 import org.abchip.mimo.server.Job;
 import org.abchip.mimo.server.JobLog;
 import org.abchip.mimo.server.JobLogEntry;
@@ -39,7 +38,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *
  * @generated
  */
-public class JobLogImpl extends EntityNameableImpl implements JobLog {
+public class JobLogImpl extends EntityImpl implements JobLog {
 	/**
 	 *
 	 */
@@ -215,13 +214,4 @@ public class JobLogImpl extends EntityNameableImpl implements JobLog {
 		}
 		return super.eIsSet(featureID);
 	}
-
-	@Override
-	public String getName() {
-		if(getJob() != null)
-			return getJob().getJobID();
-		else
-			return null;
-	}
-
 } // JobLogImpl

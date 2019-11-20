@@ -34,7 +34,7 @@ import java.util.List;
  * @model abstract="true"
  * @generated
  */
-public interface Frame<E extends Entity> extends EntityNameable {
+public interface Frame<E extends Entity> extends EntityIdentifiable {
 
 	public final static String NS_PREFIX_FRAME = EntityPackage.eNS_PREFIX + "-frame";
 
@@ -52,7 +52,6 @@ public interface Frame<E extends Entity> extends EntityNameable {
 	 * @model id="true" required="true" changeable="false"
 	 * @generated
 	 */
-	@Override
 	String getName();
 
 	/**

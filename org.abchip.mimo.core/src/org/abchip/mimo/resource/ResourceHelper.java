@@ -18,26 +18,26 @@ import java.util.Map;
 
 import org.abchip.mimo.context.Context;
 import org.abchip.mimo.entity.EntityIterator;
-import org.abchip.mimo.entity.EntityNameable;
+import org.abchip.mimo.entity.EntityIdentifiable;
 import org.abchip.mimo.entity.Frame;
 import org.abchip.mimo.resource.impl.ResourceReaderImpl;
 import org.abchip.mimo.util.Lists;
 
 public class ResourceHelper {
 
-	public static <E extends EntityNameable> EntityIterator<E> wrapIterator(Collection<E> collection) {
+	public static <E extends EntityIdentifiable> EntityIterator<E> wrapIterator(Collection<E> collection) {
 		return ResourceHelper.wrapIterator(collection.iterator());
 	}
 
-	public static <E extends EntityNameable> EntityIterator<E> wrapIterator(Iterator<E> iterator) {
+	public static <E extends EntityIdentifiable> EntityIterator<E> wrapIterator(Iterator<E> iterator) {
 		return new MyEntityIterator<E>(iterator);
 	}
 
-	public static <E extends EntityNameable> ResourceReader<E> wrapReader(Context context, Frame<E> frame, Map<String, E> entities) {
+	public static <E extends EntityIdentifiable> ResourceReader<E> wrapReader(Context context, Frame<E> frame, Map<String, E> entities) {
 		return new MapReader<E>(context, frame, entities);
 	}
 
-	public static <E extends EntityNameable> void firePreDeleteEvent(final ResourceWriter<E> resourceWriter, final E source) {
+	public static <E extends EntityIdentifiable> void firePreDeleteEvent(final ResourceWriter<E> resourceWriter, final E source) {
 
 		ResourceNotifier<E> resourceNotifier = resourceWriter.getNotifier();
 		if (resourceNotifier != null) {
@@ -72,7 +72,7 @@ public class ResourceHelper {
 		}
 	}
 
-	public static <E extends EntityNameable> void firePostDeleteEvent(final ResourceWriter<E> resourceWriter, final E source) {
+	public static <E extends EntityIdentifiable> void firePostDeleteEvent(final ResourceWriter<E> resourceWriter, final E source) {
 
 		ResourceNotifier<E> resourceNotifier = resourceWriter.getNotifier();
 		if (resourceNotifier != null) {
@@ -107,7 +107,7 @@ public class ResourceHelper {
 		}
 	}
 
-	public static <E extends EntityNameable> void firePreSaveEvent(final ResourceWriter<E> resourceWriter, final E source) {
+	public static <E extends EntityIdentifiable> void firePreSaveEvent(final ResourceWriter<E> resourceWriter, final E source) {
 
 		ResourceNotifier<E> resourceNotifier = resourceWriter.getNotifier();
 		if (resourceNotifier != null) {
@@ -142,7 +142,7 @@ public class ResourceHelper {
 		}
 	}
 
-	public static <E extends EntityNameable> void firePostSaveEvent(final ResourceWriter<E> resourceWriter, final E source) {
+	public static <E extends EntityIdentifiable> void firePostSaveEvent(final ResourceWriter<E> resourceWriter, final E source) {
 
 		ResourceNotifier<E> resourceNotifier = resourceWriter.getNotifier();
 		if (resourceNotifier != null) {
@@ -177,7 +177,7 @@ public class ResourceHelper {
 		}
 	}
 
-	private static class MyEntityIterator<E extends EntityNameable> implements EntityIterator<E> {
+	private static class MyEntityIterator<E extends EntityIdentifiable> implements EntityIterator<E> {
 
 		private Iterator<E> iterator;
 
@@ -208,7 +208,7 @@ public class ResourceHelper {
 		}
 	}
 
-	private static class MapReader<E extends EntityNameable> extends ResourceReaderImpl<E> {
+	private static class MapReader<E extends EntityIdentifiable> extends ResourceReaderImpl<E> {
 
 		private Frame<E> frame;
 		private Context context;
@@ -231,14 +231,14 @@ public class ResourceHelper {
 
 				@Override
 				public int compare(E o1, E o2) {
-					return o1.getName().compareTo(o2.getName());
+					return o1.getID().compareTo(o2.getID());
 				}
 			});
 
 			Collections.sort(values, new Comparator<E>() {
 				@Override
 				public int compare(E o1, E o2) {
-					return o1.getName().compareTo(o2.getName());
+					return o1.getID().compareTo(o2.getID());
 				}
 			});
 

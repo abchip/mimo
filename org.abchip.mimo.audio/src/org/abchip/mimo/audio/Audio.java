@@ -7,8 +7,7 @@
  */
 package org.abchip.mimo.audio;
 
-import org.abchip.mimo.entity.EntityNameable;
-import org.abchip.mimo.entity.Textable;
+import org.abchip.mimo.entity.EntityIdentifiable;
 
 /**
  * <!-- begin-user-doc -->
@@ -28,7 +27,7 @@ import org.abchip.mimo.entity.Textable;
  * @model
  * @generated
  */
-public interface Audio extends EntityNameable, Textable {
+public interface Audio extends EntityIdentifiable {
 	/**
 	 * Returns the value of the '<em><b>Content</b></em>' attribute.
 	 * <!-- begin-user-doc -->
@@ -66,7 +65,7 @@ public interface Audio extends EntityNameable, Textable {
 	 * @return the value of the '<em>Name</em>' attribute.
 	 * @see #setName(String)
 	 * @see org.abchip.mimo.audio.AudioPackage#getAudio_Name()
-	 * @model required="true"
+	 * @model id="true" required="true"
 	 * @generated
 	 */
 	String getName();

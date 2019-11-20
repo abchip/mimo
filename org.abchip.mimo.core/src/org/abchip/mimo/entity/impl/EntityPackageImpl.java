@@ -25,7 +25,7 @@ import org.abchip.mimo.entity.EntityEnum;
 import org.abchip.mimo.entity.EntityFactory;
 import org.abchip.mimo.entity.EntityInfo;
 import org.abchip.mimo.entity.EntityIterator;
-import org.abchip.mimo.entity.EntityNameable;
+import org.abchip.mimo.entity.EntityIdentifiable;
 import org.abchip.mimo.entity.EntityPackage;
 import org.abchip.mimo.entity.Facet;
 import org.abchip.mimo.entity.Frame;
@@ -33,7 +33,6 @@ import org.abchip.mimo.entity.EntityType;
 import org.abchip.mimo.entity.EntityTyped;
 import org.abchip.mimo.entity.SerializationType;
 import org.abchip.mimo.entity.Slot;
-import org.abchip.mimo.entity.Textable;
 import org.abchip.mimo.impl.MimoPackageImpl;
 
 import org.abchip.mimo.java.JavaPackage;
@@ -110,6 +109,13 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	private EClass entityIdentifiableEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	private EClass entityEnumEClass = null;
 
 	/**
@@ -118,13 +124,6 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 	 * @generated
 	 */
 	private EClass entityIteratorEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass entityNameableEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -160,13 +159,6 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 	 * @generated
 	 */
 	private EClass slotEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass textableEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -456,6 +448,16 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 	 * @generated
 	 */
 	@Override
+	public EClass getEntityIdentifiable() {
+		return entityIdentifiableEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EClass getEntityEnum() {
 		return entityEnumEClass;
 	}
@@ -488,16 +490,6 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 	@Override
 	public EClass getEntityIterator() {
 		return entityIteratorEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EClass getEntityNameable() {
-		return entityNameableEClass;
 	}
 
 	/**
@@ -766,16 +758,6 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 	 * @generated
 	 */
 	@Override
-	public EClass getTextable() {
-		return textableEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public EEnum getSerializationType() {
 		return serializationTypeEEnum;
 	}
@@ -827,19 +809,19 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 		createEReference(entityContainerEClass, ENTITY_CONTAINER__CONTENTS);
 		createEAttribute(entityContainerEClass, ENTITY_CONTAINER__NAME);
 
+		entityEnumEClass = createEClass(ENTITY_ENUM);
+		createEAttribute(entityEnumEClass, ENTITY_ENUM__NAME);
+		createEAttribute(entityEnumEClass, ENTITY_ENUM__TEXT);
+
 		entityInfoEClass = createEClass(ENTITY_INFO);
 		createEAttribute(entityInfoEClass, ENTITY_INFO__CREATED_STAMP);
 		createEAttribute(entityInfoEClass, ENTITY_INFO__CREATED_TX_STAMP);
 		createEAttribute(entityInfoEClass, ENTITY_INFO__LAST_UPDATED_STAMP);
 		createEAttribute(entityInfoEClass, ENTITY_INFO__LAST_UPDATED_TX_STAMP);
 
-		entityEnumEClass = createEClass(ENTITY_ENUM);
-		createEAttribute(entityEnumEClass, ENTITY_ENUM__NAME);
-		createEAttribute(entityEnumEClass, ENTITY_ENUM__TEXT);
+		entityIdentifiableEClass = createEClass(ENTITY_IDENTIFIABLE);
 
 		entityIteratorEClass = createEClass(ENTITY_ITERATOR);
-
-		entityNameableEClass = createEClass(ENTITY_NAMEABLE);
 
 		entityTypedEClass = createEClass(ENTITY_TYPED);
 
@@ -871,8 +853,6 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 		createEAttribute(slotEClass, SLOT__NAME);
 		createEAttribute(slotEClass, SLOT__ROUTE);
 		createEAttribute(slotEClass, SLOT__TEXT);
-
-		textableEClass = createEClass(TEXTABLE);
 
 		// Create enums
 		serializationTypeEEnum = createEEnum(SERIALIZATION_TYPE);
@@ -929,8 +909,8 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 		defaultEClass.getESuperTypes().add(this.getEntity());
 		domainEClass.getESuperTypes().add(this.getEntity());
 		entityContainerEClass.getESuperTypes().add(this.getEntity());
-		entityEnumEClass.getESuperTypes().add(this.getEntityNameable());
-		entityEnumEClass.getESuperTypes().add(this.getTextable());
+		entityEnumEClass.getESuperTypes().add(this.getEntityIdentifiable());
+		entityIdentifiableEClass.getESuperTypes().add(this.getEntity());
 		g1 = createEGenericType(theJavaPackage.getJavaIterator());
 		g2 = createEGenericType(entityIteratorEClass_E);
 		g1.getETypeArguments().add(g2);
@@ -939,14 +919,11 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 		g2 = createEGenericType(entityIteratorEClass_E);
 		g1.getETypeArguments().add(g2);
 		entityIteratorEClass.getEGenericSuperTypes().add(g1);
-		entityNameableEClass.getESuperTypes().add(this.getEntity());
-		entityTypedEClass.getESuperTypes().add(this.getEntityNameable());
-		entityTypeEClass.getESuperTypes().add(this.getEntityNameable());
-		entityTypeEClass.getESuperTypes().add(this.getTextable());
+		entityTypedEClass.getESuperTypes().add(this.getEntityIdentifiable());
+		entityTypeEClass.getESuperTypes().add(this.getEntityIdentifiable());
 		facetEClass.getESuperTypes().add(this.getEntity());
-		frameEClass.getESuperTypes().add(this.getEntityNameable());
-		slotEClass.getESuperTypes().add(this.getEntityNameable());
-		slotEClass.getESuperTypes().add(this.getTextable());
+		frameEClass.getESuperTypes().add(this.getEntityIdentifiable());
+		slotEClass.getESuperTypes().add(this.getEntityIdentifiable());
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(cardinalityEClass, Cardinality.class, "Cardinality", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -981,8 +958,12 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 		initEOperation(op, g1);
 
 		initEClass(entityContainerEClass, EntityContainer.class, "EntityContainer", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getEntityContainer_Contents(), this.getEntityNameable(), null, "contents", null, 0, -1, EntityContainer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getEntityContainer_Contents(), this.getEntityIdentifiable(), null, "contents", null, 0, -1, EntityContainer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getEntityContainer_Name(), ecorePackage.getEString(), "name", null, 1, 1, EntityContainer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(entityEnumEClass, EntityEnum.class, "EntityEnum", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getEntityEnum_Name(), ecorePackage.getEString(), "name", null, 1, 1, EntityEnum.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getEntityEnum_Text(), ecorePackage.getEString(), "text", null, 1, 1, EntityEnum.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(entityInfoEClass, EntityInfo.class, "EntityInfo", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getEntityInfo_CreatedStamp(), ecorePackage.getEDate(), "createdStamp", null, 0, 1, EntityInfo.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -990,9 +971,13 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 		initEAttribute(getEntityInfo_LastUpdatedStamp(), ecorePackage.getEDate(), "lastUpdatedStamp", null, 0, 1, EntityInfo.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getEntityInfo_LastUpdatedTxStamp(), ecorePackage.getEDate(), "lastUpdatedTxStamp", null, 0, 1, EntityInfo.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(entityEnumEClass, EntityEnum.class, "EntityEnum", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getEntityEnum_Name(), ecorePackage.getEString(), "name", null, 1, 1, EntityEnum.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getEntityEnum_Text(), ecorePackage.getEString(), "text", null, 1, 1, EntityEnum.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(entityIdentifiableEClass, EntityIdentifiable.class, "EntityIdentifiable", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		addEOperation(entityIdentifiableEClass, ecorePackage.getEString(), "getID", 1, 1, IS_UNIQUE, IS_ORDERED);
+
+		addEOperation(entityIdentifiableEClass, theJavaPackage.getJavaURI(), "getURI", 1, 1, IS_UNIQUE, IS_ORDERED);
+
+		addEOperation(entityIdentifiableEClass, ecorePackage.getEBoolean(), "isProxy", 1, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(entityIteratorEClass, EntityIterator.class, "EntityIterator", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -1003,14 +988,6 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 		initEOperation(op, g1);
 
 		addEOperation(entityIteratorEClass, null, "remove", 0, 1, IS_UNIQUE, IS_ORDERED);
-
-		initEClass(entityNameableEClass, EntityNameable.class, "EntityNameable", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-		addEOperation(entityNameableEClass, ecorePackage.getEString(), "getName", 1, 1, IS_UNIQUE, IS_ORDERED);
-
-		addEOperation(entityNameableEClass, theJavaPackage.getJavaURI(), "getURI", 1, 1, IS_UNIQUE, IS_ORDERED);
-
-		addEOperation(entityNameableEClass, ecorePackage.getEBoolean(), "isProxy", 1, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(entityTypedEClass, EntityTyped.class, "EntityTyped", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -1109,10 +1086,6 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 		addEOperation(slotEClass, ecorePackage.getEBoolean(), "isNumeric", 1, 1, IS_UNIQUE, IS_ORDERED);
 
 		addEOperation(slotEClass, ecorePackage.getEBoolean(), "isString", 1, 1, IS_UNIQUE, IS_ORDERED);
-
-		initEClass(textableEClass, Textable.class, "Textable", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-		addEOperation(textableEClass, ecorePackage.getEString(), "getText", 1, 1, IS_UNIQUE, IS_ORDERED);
 
 		// Initialize enums and add enum literals
 		initEEnum(serializationTypeEEnum, SerializationType.class, "SerializationType");

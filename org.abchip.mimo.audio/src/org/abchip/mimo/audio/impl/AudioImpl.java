@@ -10,7 +10,7 @@ package org.abchip.mimo.audio.impl;
 import org.abchip.mimo.audio.Audio;
 import org.abchip.mimo.audio.AudioPackage;
 
-import org.abchip.mimo.entity.impl.EntityNameableImpl;
+import org.abchip.mimo.entity.impl.EntityIdentifiableImpl;
 
 import org.eclipse.emf.common.notify.Notification;
 
@@ -33,7 +33,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *
  * @generated
  */
-public class AudioImpl extends EntityNameableImpl implements Audio {
+public class AudioImpl extends EntityIdentifiableImpl implements Audio {
 	/**
 	 * 
 	 */

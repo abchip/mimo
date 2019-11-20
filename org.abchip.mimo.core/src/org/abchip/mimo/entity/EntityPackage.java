@@ -231,6 +231,25 @@ public interface EntityPackage extends EPackage {
 	int ENTITY_CONTAINER_FEATURE_COUNT = ENTITY_FEATURE_COUNT + 2;
 
 	/**
+	 * The meta object id for the '{@link org.abchip.mimo.entity.impl.EntityIdentifiableImpl <em>Identifiable</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.abchip.mimo.entity.impl.EntityIdentifiableImpl
+	 * @see org.abchip.mimo.entity.impl.EntityPackageImpl#getEntityIdentifiable()
+	 * @generated
+	 */
+	int ENTITY_IDENTIFIABLE = 7;
+
+	/**
+	 * The number of structural features of the '<em>Identifiable</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENTITY_IDENTIFIABLE_FEATURE_COUNT = ENTITY_FEATURE_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link org.abchip.mimo.entity.impl.EntityInfoImpl <em>Info</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -238,7 +257,54 @@ public interface EntityPackage extends EPackage {
 	 * @see org.abchip.mimo.entity.impl.EntityPackageImpl#getEntityInfo()
 	 * @generated
 	 */
-	int ENTITY_INFO = 5;
+	int ENTITY_INFO = 6;
+
+	/**
+	 * The meta object id for the '{@link org.abchip.mimo.entity.EntityIterator <em>Iterator</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.abchip.mimo.entity.EntityIterator
+	 * @see org.abchip.mimo.entity.impl.EntityPackageImpl#getEntityIterator()
+	 * @generated
+	 */
+	int ENTITY_ITERATOR = 8;
+
+	/**
+	 * The meta object id for the '{@link org.abchip.mimo.entity.impl.EntityEnumImpl <em>Enum</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.abchip.mimo.entity.impl.EntityEnumImpl
+	 * @see org.abchip.mimo.entity.impl.EntityPackageImpl#getEntityEnum()
+	 * @generated
+	 */
+	int ENTITY_ENUM = 5;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENTITY_ENUM__NAME = ENTITY_IDENTIFIABLE_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Text</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENTITY_ENUM__TEXT = ENTITY_IDENTIFIABLE_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of structural features of the '<em>Enum</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENTITY_ENUM_FEATURE_COUNT = ENTITY_IDENTIFIABLE_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Created Stamp</b></em>' attribute.
@@ -286,72 +352,6 @@ public interface EntityPackage extends EPackage {
 	int ENTITY_INFO_FEATURE_COUNT = 4;
 
 	/**
-	 * The meta object id for the '{@link org.abchip.mimo.entity.EntityIterator <em>Iterator</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.abchip.mimo.entity.EntityIterator
-	 * @see org.abchip.mimo.entity.impl.EntityPackageImpl#getEntityIterator()
-	 * @generated
-	 */
-	int ENTITY_ITERATOR = 7;
-
-	/**
-	 * The meta object id for the '{@link org.abchip.mimo.entity.impl.EntityNameableImpl <em>Nameable</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.abchip.mimo.entity.impl.EntityNameableImpl
-	 * @see org.abchip.mimo.entity.impl.EntityPackageImpl#getEntityNameable()
-	 * @generated
-	 */
-	int ENTITY_NAMEABLE = 8;
-
-	/**
-	 * The number of structural features of the '<em>Nameable</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ENTITY_NAMEABLE_FEATURE_COUNT = ENTITY_FEATURE_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link org.abchip.mimo.entity.impl.EntityEnumImpl <em>Enum</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.abchip.mimo.entity.impl.EntityEnumImpl
-	 * @see org.abchip.mimo.entity.impl.EntityPackageImpl#getEntityEnum()
-	 * @generated
-	 */
-	int ENTITY_ENUM = 6;
-
-	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ENTITY_ENUM__NAME = ENTITY_NAMEABLE_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Text</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ENTITY_ENUM__TEXT = ENTITY_NAMEABLE_FEATURE_COUNT + 1;
-
-	/**
-	 * The number of structural features of the '<em>Enum</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ENTITY_ENUM_FEATURE_COUNT = ENTITY_NAMEABLE_FEATURE_COUNT + 2;
-
-	/**
 	 * The number of structural features of the '<em>Iterator</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -397,7 +397,7 @@ public interface EntityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_TYPED_FEATURE_COUNT = ENTITY_NAMEABLE_FEATURE_COUNT + 0;
+	int ENTITY_TYPED_FEATURE_COUNT = ENTITY_IDENTIFIABLE_FEATURE_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.entity.impl.EntityTypeImpl <em>Type</em>}' class.
@@ -416,7 +416,7 @@ public interface EntityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_TYPE__SLOTS = ENTITY_NAMEABLE_FEATURE_COUNT + 0;
+	int ENTITY_TYPE__SLOTS = ENTITY_IDENTIFIABLE_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of structural features of the '<em>Type</em>' class.
@@ -425,7 +425,7 @@ public interface EntityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_TYPE_FEATURE_COUNT = ENTITY_NAMEABLE_FEATURE_COUNT + 1;
+	int ENTITY_TYPE_FEATURE_COUNT = ENTITY_IDENTIFIABLE_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Facet</em>' class.
@@ -443,7 +443,7 @@ public interface EntityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FRAME__ABSTRACT = ENTITY_NAMEABLE_FEATURE_COUNT + 0;
+	int FRAME__ABSTRACT = ENTITY_IDENTIFIABLE_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Auto Increment</b></em>' attribute.
@@ -452,7 +452,7 @@ public interface EntityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FRAME__AUTO_INCREMENT = ENTITY_NAMEABLE_FEATURE_COUNT + 1;
+	int FRAME__AUTO_INCREMENT = ENTITY_IDENTIFIABLE_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Enum</b></em>' attribute.
@@ -461,7 +461,7 @@ public interface EntityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FRAME__ENUM = ENTITY_NAMEABLE_FEATURE_COUNT + 2;
+	int FRAME__ENUM = ENTITY_IDENTIFIABLE_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Keys</b></em>' attribute list.
@@ -470,7 +470,7 @@ public interface EntityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FRAME__KEYS = ENTITY_NAMEABLE_FEATURE_COUNT + 3;
+	int FRAME__KEYS = ENTITY_IDENTIFIABLE_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -479,7 +479,7 @@ public interface EntityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FRAME__NAME = ENTITY_NAMEABLE_FEATURE_COUNT + 4;
+	int FRAME__NAME = ENTITY_IDENTIFIABLE_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Slots</b></em>' containment reference list.
@@ -488,7 +488,7 @@ public interface EntityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FRAME__SLOTS = ENTITY_NAMEABLE_FEATURE_COUNT + 5;
+	int FRAME__SLOTS = ENTITY_IDENTIFIABLE_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Slots Number</b></em>' attribute.
@@ -497,7 +497,7 @@ public interface EntityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FRAME__SLOTS_NUMBER = ENTITY_NAMEABLE_FEATURE_COUNT + 6;
+	int FRAME__SLOTS_NUMBER = ENTITY_IDENTIFIABLE_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Routes Number</b></em>' attribute.
@@ -506,7 +506,7 @@ public interface EntityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FRAME__ROUTES_NUMBER = ENTITY_NAMEABLE_FEATURE_COUNT + 7;
+	int FRAME__ROUTES_NUMBER = ENTITY_IDENTIFIABLE_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>Super Names</b></em>' attribute list.
@@ -515,7 +515,7 @@ public interface EntityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FRAME__SUPER_NAMES = ENTITY_NAMEABLE_FEATURE_COUNT + 8;
+	int FRAME__SUPER_NAMES = ENTITY_IDENTIFIABLE_FEATURE_COUNT + 8;
 
 	/**
 	 * The feature id for the '<em><b>Text Formula</b></em>' attribute.
@@ -524,7 +524,7 @@ public interface EntityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FRAME__TEXT_FORMULA = ENTITY_NAMEABLE_FEATURE_COUNT + 9;
+	int FRAME__TEXT_FORMULA = ENTITY_IDENTIFIABLE_FEATURE_COUNT + 9;
 
 	/**
 	 * The number of structural features of the '<em>Frame</em>' class.
@@ -533,7 +533,7 @@ public interface EntityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FRAME_FEATURE_COUNT = ENTITY_NAMEABLE_FEATURE_COUNT + 10;
+	int FRAME_FEATURE_COUNT = ENTITY_IDENTIFIABLE_FEATURE_COUNT + 10;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.entity.impl.SlotImpl <em>Slot</em>}' class.
@@ -552,7 +552,7 @@ public interface EntityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SLOT__CARDINALITY = ENTITY_NAMEABLE_FEATURE_COUNT + 0;
+	int SLOT__CARDINALITY = ENTITY_IDENTIFIABLE_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Containment</b></em>' attribute.
@@ -561,7 +561,7 @@ public interface EntityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SLOT__CONTAINMENT = ENTITY_NAMEABLE_FEATURE_COUNT + 1;
+	int SLOT__CONTAINMENT = ENTITY_IDENTIFIABLE_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Default Value</b></em>' attribute.
@@ -570,7 +570,7 @@ public interface EntityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SLOT__DEFAULT_VALUE = ENTITY_NAMEABLE_FEATURE_COUNT + 2;
+	int SLOT__DEFAULT_VALUE = ENTITY_IDENTIFIABLE_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Derived</b></em>' attribute.
@@ -579,7 +579,7 @@ public interface EntityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SLOT__DERIVED = ENTITY_NAMEABLE_FEATURE_COUNT + 3;
+	int SLOT__DERIVED = ENTITY_IDENTIFIABLE_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Domain</b></em>' containment reference.
@@ -588,7 +588,7 @@ public interface EntityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SLOT__DOMAIN = ENTITY_NAMEABLE_FEATURE_COUNT + 4;
+	int SLOT__DOMAIN = ENTITY_IDENTIFIABLE_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Group</b></em>' attribute.
@@ -597,7 +597,7 @@ public interface EntityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SLOT__GROUP = ENTITY_NAMEABLE_FEATURE_COUNT + 5;
+	int SLOT__GROUP = ENTITY_IDENTIFIABLE_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Key</b></em>' attribute.
@@ -606,7 +606,7 @@ public interface EntityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SLOT__KEY = ENTITY_NAMEABLE_FEATURE_COUNT + 6;
+	int SLOT__KEY = ENTITY_IDENTIFIABLE_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -615,7 +615,7 @@ public interface EntityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SLOT__NAME = ENTITY_NAMEABLE_FEATURE_COUNT + 7;
+	int SLOT__NAME = ENTITY_IDENTIFIABLE_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>Route</b></em>' attribute.
@@ -624,7 +624,7 @@ public interface EntityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SLOT__ROUTE = ENTITY_NAMEABLE_FEATURE_COUNT + 8;
+	int SLOT__ROUTE = ENTITY_IDENTIFIABLE_FEATURE_COUNT + 8;
 
 	/**
 	 * The feature id for the '<em><b>Text</b></em>' attribute.
@@ -633,7 +633,7 @@ public interface EntityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SLOT__TEXT = ENTITY_NAMEABLE_FEATURE_COUNT + 9;
+	int SLOT__TEXT = ENTITY_IDENTIFIABLE_FEATURE_COUNT + 9;
 
 	/**
 	 * The number of structural features of the '<em>Slot</em>' class.
@@ -642,26 +642,7 @@ public interface EntityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SLOT_FEATURE_COUNT = ENTITY_NAMEABLE_FEATURE_COUNT + 10;
-
-	/**
-	 * The meta object id for the '{@link org.abchip.mimo.entity.Textable <em>Textable</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.abchip.mimo.entity.Textable
-	 * @see org.abchip.mimo.entity.impl.EntityPackageImpl#getTextable()
-	 * @generated
-	 */
-	int TEXTABLE = 14;
-
-	/**
-	 * The number of structural features of the '<em>Textable</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TEXTABLE_FEATURE_COUNT = 0;
+	int SLOT_FEATURE_COUNT = ENTITY_IDENTIFIABLE_FEATURE_COUNT + 10;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.entity.SerializationType <em>Serialization Type</em>}' enum.
@@ -671,7 +652,7 @@ public interface EntityPackage extends EPackage {
 	 * @see org.abchip.mimo.entity.impl.EntityPackageImpl#getSerializationType()
 	 * @generated
 	 */
-	int SERIALIZATION_TYPE = 15;
+	int SERIALIZATION_TYPE = 14;
 
 
 	/**
@@ -867,6 +848,16 @@ public interface EntityPackage extends EPackage {
 	EAttribute getEntityInfo_LastUpdatedTxStamp();
 
 	/**
+	 * Returns the meta object for class '{@link org.abchip.mimo.entity.EntityIdentifiable <em>Identifiable</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Identifiable</em>'.
+	 * @see org.abchip.mimo.entity.EntityIdentifiable
+	 * @generated
+	 */
+	EClass getEntityIdentifiable();
+
+	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.entity.EntityEnum <em>Enum</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -907,16 +898,6 @@ public interface EntityPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getEntityIterator();
-
-	/**
-	 * Returns the meta object for class '{@link org.abchip.mimo.entity.EntityNameable <em>Nameable</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Nameable</em>'.
-	 * @see org.abchip.mimo.entity.EntityNameable
-	 * @generated
-	 */
-	EClass getEntityNameable();
 
 	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.entity.EntityTyped <em>Typed</em>}'.
@@ -1200,16 +1181,6 @@ public interface EntityPackage extends EPackage {
 	EAttribute getSlot_Key();
 
 	/**
-	 * Returns the meta object for class '{@link org.abchip.mimo.entity.Textable <em>Textable</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Textable</em>'.
-	 * @see org.abchip.mimo.entity.Textable
-	 * @generated
-	 */
-	EClass getTextable();
-
-	/**
 	 * Returns the meta object for enum '{@link org.abchip.mimo.entity.SerializationType <em>Serialization Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1398,6 +1369,16 @@ public interface EntityPackage extends EPackage {
 		EAttribute ENTITY_INFO__LAST_UPDATED_TX_STAMP = eINSTANCE.getEntityInfo_LastUpdatedTxStamp();
 
 		/**
+		 * The meta object literal for the '{@link org.abchip.mimo.entity.impl.EntityIdentifiableImpl <em>Identifiable</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.abchip.mimo.entity.impl.EntityIdentifiableImpl
+		 * @see org.abchip.mimo.entity.impl.EntityPackageImpl#getEntityIdentifiable()
+		 * @generated
+		 */
+		EClass ENTITY_IDENTIFIABLE = eINSTANCE.getEntityIdentifiable();
+
+		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.entity.impl.EntityEnumImpl <em>Enum</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1432,16 +1413,6 @@ public interface EntityPackage extends EPackage {
 		 * @generated
 		 */
 		EClass ENTITY_ITERATOR = eINSTANCE.getEntityIterator();
-
-		/**
-		 * The meta object literal for the '{@link org.abchip.mimo.entity.impl.EntityNameableImpl <em>Nameable</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see org.abchip.mimo.entity.impl.EntityNameableImpl
-		 * @see org.abchip.mimo.entity.impl.EntityPackageImpl#getEntityNameable()
-		 * @generated
-		 */
-		EClass ENTITY_NAMEABLE = eINSTANCE.getEntityNameable();
 
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.entity.impl.EntityTypedImpl <em>Typed</em>}' class.
@@ -1660,16 +1631,6 @@ public interface EntityPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute SLOT__KEY = eINSTANCE.getSlot_Key();
-
-		/**
-		 * The meta object literal for the '{@link org.abchip.mimo.entity.Textable <em>Textable</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see org.abchip.mimo.entity.Textable
-		 * @see org.abchip.mimo.entity.impl.EntityPackageImpl#getTextable()
-		 * @generated
-		 */
-		EClass TEXTABLE = eINSTANCE.getTextable();
 
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.entity.SerializationType <em>Serialization Type</em>}' enum.

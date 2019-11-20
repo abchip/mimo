@@ -1064,7 +1064,7 @@ public interface DatabaseDefinitionPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TABLE_TERM__NAME = EntityPackage.ENTITY_NAMEABLE_FEATURE_COUNT + 0;
+	int TABLE_TERM__NAME = EntityPackage.ENTITY_IDENTIFIABLE_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Table Def</b></em>' containment reference.
@@ -1073,7 +1073,7 @@ public interface DatabaseDefinitionPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TABLE_TERM__TABLE_DEF = EntityPackage.ENTITY_NAMEABLE_FEATURE_COUNT + 1;
+	int TABLE_TERM__TABLE_DEF = EntityPackage.ENTITY_IDENTIFIABLE_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Table Term</em>' class.
@@ -1082,7 +1082,7 @@ public interface DatabaseDefinitionPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TABLE_TERM_FEATURE_COUNT = EntityPackage.ENTITY_NAMEABLE_FEATURE_COUNT + 2;
+	int TABLE_TERM_FEATURE_COUNT = EntityPackage.ENTITY_IDENTIFIABLE_FEATURE_COUNT + 2;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.database.definition.impl.ViewDefImpl <em>View Def</em>}' class.

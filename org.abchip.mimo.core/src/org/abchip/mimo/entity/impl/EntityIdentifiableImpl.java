@@ -10,7 +10,7 @@ package org.abchip.mimo.entity.impl;
 
 import java.net.URI;
 
-import org.abchip.mimo.entity.EntityNameable;
+import org.abchip.mimo.entity.EntityIdentifiable;
 import org.abchip.mimo.entity.EntityPackage;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.util.EcoreUtil;
@@ -21,7 +21,7 @@ import org.eclipse.emf.ecore.util.EcoreUtil;
  *
  * @generated
  */
-public abstract class EntityNameableImpl extends EntityImpl implements EntityNameable {
+public abstract class EntityIdentifiableImpl extends EntityImpl implements EntityIdentifiable {
 	/**
 	 *
 	 */
@@ -31,7 +31,7 @@ public abstract class EntityNameableImpl extends EntityImpl implements EntityNam
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected EntityNameableImpl() {
+	protected EntityIdentifiableImpl() {
 		super();
 	}
 
@@ -41,7 +41,7 @@ public abstract class EntityNameableImpl extends EntityImpl implements EntityNam
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return EntityPackage.Literals.ENTITY_NAMEABLE;
+		return EntityPackage.Literals.ENTITY_IDENTIFIABLE;
 	}
 
 	/**
@@ -70,8 +70,12 @@ public abstract class EntityNameableImpl extends EntityImpl implements EntityNam
 	 * @generated NOT
 	 */
 	@Override
-	public String getName() {
+	public String getID() {
 
+		String id = EcoreUtil.getID(this);
+		if(id != null)
+				return id;
+			
 		String uriFragment = this.getURI().getFragment();
 		if (uriFragment != null) 
 				return uriFragment;
@@ -79,4 +83,4 @@ public abstract class EntityNameableImpl extends EntityImpl implements EntityNam
 		return null;
 	}
 
-} // EntityNameableImpl
+} // EntityIdentifiableImpl

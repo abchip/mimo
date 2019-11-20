@@ -28,7 +28,7 @@ import org.abchip.mimo.biz.party.party.Person;
 import org.abchip.mimo.biz.party.party.RoleType;
 import org.abchip.mimo.context.Context;
 import org.abchip.mimo.core.http.servlet.BaseServlet;
-import org.abchip.mimo.entity.EntityNameable;
+import org.abchip.mimo.entity.EntityIdentifiable;
 import org.abchip.mimo.resource.ResourceManager;
 import org.abchip.mimo.resource.ResourceWriter;
 import org.abchip.mimo.util.Strings;
@@ -49,7 +49,7 @@ public class ImportPeopleServlet extends BaseServlet {
 		_execute(context, request, response);
 	}
 
-	private <E extends EntityNameable> void _execute(Context context, HttpServletRequest request, HttpServletResponse response) throws IOException {
+	private <E extends EntityIdentifiable> void _execute(Context context, HttpServletRequest request, HttpServletResponse response) throws IOException {
 
 		try {
 

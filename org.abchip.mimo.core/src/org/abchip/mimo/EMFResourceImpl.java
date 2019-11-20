@@ -14,11 +14,11 @@ import java.util.Comparator;
 import java.util.List;
 import java.util.Map;
 
-import org.abchip.mimo.entity.EntityNameable;
+import org.abchip.mimo.entity.EntityIdentifiable;
 import org.abchip.mimo.entity.Frame;
 import org.abchip.mimo.resource.impl.ResourceImpl;
 
-public class EMFResourceImpl<E extends EntityNameable> extends ResourceImpl<E> {
+public class EMFResourceImpl<E extends EntityIdentifiable> extends ResourceImpl<E> {
 
 	/**
 	 * 
@@ -67,7 +67,7 @@ public class EMFResourceImpl<E extends EntityNameable> extends ResourceImpl<E> {
 		Collections.sort(entities, new Comparator<E>() {
 			@Override
 			public int compare(E e1, E e2) {
-				return e1.getName().compareTo(e2.getName());
+				return e1.getID().compareTo(e2.getID());
 			}
 		});
 

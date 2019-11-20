@@ -3,7 +3,7 @@
  */
 package org.abchip.mimo.ui;
 
-import org.abchip.mimo.entity.EntityNameable;
+import org.abchip.mimo.entity.EntityIdentifiable;
 
 /**
  * <!-- begin-user-doc -->
@@ -21,7 +21,7 @@ import org.abchip.mimo.entity.EntityNameable;
  * @model
  * @generated
  */
-public interface UiUserSetup extends EntityNameable {
+public interface UiUserSetup extends EntityIdentifiable {
 	/**
 	 * Returns the value of the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
@@ -36,7 +36,6 @@ public interface UiUserSetup extends EntityNameable {
 	 * @model id="true" required="true"
 	 * @generated
 	 */
-	@Override
 	String getName();
 
 	/**

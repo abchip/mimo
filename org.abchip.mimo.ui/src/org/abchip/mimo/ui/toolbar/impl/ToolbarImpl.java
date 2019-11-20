@@ -6,7 +6,7 @@ package org.abchip.mimo.ui.toolbar.impl;
 import java.util.Collection;
 import java.util.List;
 
-import org.abchip.mimo.entity.impl.EntityNameableImpl;
+import org.abchip.mimo.entity.impl.EntityIdentifiableImpl;
 
 import org.abchip.mimo.ui.toolbar.Toolbar;
 import org.abchip.mimo.ui.toolbar.ToolbarPackage;
@@ -36,7 +36,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *
  * @generated
  */
-public class ToolbarImpl extends EntityNameableImpl implements Toolbar {
+public class ToolbarImpl extends EntityIdentifiableImpl implements Toolbar {
 	/**
 	 * 
 	 */

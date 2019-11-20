@@ -10,7 +10,7 @@ package org.abchip.mimo.entity.impl;
 import java.util.Collection;
 import java.util.List;
 import org.abchip.mimo.entity.EntityContainer;
-import org.abchip.mimo.entity.EntityNameable;
+import org.abchip.mimo.entity.EntityIdentifiable;
 import org.abchip.mimo.entity.EntityPackage;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
@@ -44,7 +44,7 @@ public class EntityContainerImpl extends EntityImpl implements EntityContainer {
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<EntityNameable> contents;
+	protected EList<EntityIdentifiable> contents;
 	/**
 	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -92,9 +92,9 @@ public class EntityContainerImpl extends EntityImpl implements EntityContainer {
 	 * @generated
 	 */
 	@Override
-	public List<EntityNameable> getContents() {
+	public List<EntityIdentifiable> getContents() {
 		if (contents == null) {
-			contents = new EObjectContainmentEList.Resolving<EntityNameable>(EntityNameable.class, this, EntityPackage.ENTITY_CONTAINER__CONTENTS);
+			contents = new EObjectContainmentEList.Resolving<EntityIdentifiable>(EntityIdentifiable.class, this, EntityPackage.ENTITY_CONTAINER__CONTENTS);
 		}
 		return contents;
 	}
@@ -163,7 +163,7 @@ public class EntityContainerImpl extends EntityImpl implements EntityContainer {
 		switch (featureID) {
 			case EntityPackage.ENTITY_CONTAINER__CONTENTS:
 				getContents().clear();
-				getContents().addAll((Collection<? extends EntityNameable>)newValue);
+				getContents().addAll((Collection<? extends EntityIdentifiable>)newValue);
 				return;
 			case EntityPackage.ENTITY_CONTAINER__NAME:
 				setName((String)newValue);

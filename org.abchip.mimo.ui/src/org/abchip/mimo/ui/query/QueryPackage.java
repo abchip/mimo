@@ -75,7 +75,7 @@ public interface QueryPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int QUERY__FIELDS = EntityPackage.ENTITY_NAMEABLE_FEATURE_COUNT + 0;
+	int QUERY__FIELDS = EntityPackage.ENTITY_IDENTIFIABLE_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -84,7 +84,7 @@ public interface QueryPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int QUERY__NAME = EntityPackage.ENTITY_NAMEABLE_FEATURE_COUNT + 1;
+	int QUERY__NAME = EntityPackage.ENTITY_IDENTIFIABLE_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Query</em>' class.
@@ -93,7 +93,7 @@ public interface QueryPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int QUERY_FEATURE_COUNT = EntityPackage.ENTITY_NAMEABLE_FEATURE_COUNT + 2;
+	int QUERY_FEATURE_COUNT = EntityPackage.ENTITY_IDENTIFIABLE_FEATURE_COUNT + 2;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.ui.query.impl.QueryFieldImpl <em>Field</em>}' class.

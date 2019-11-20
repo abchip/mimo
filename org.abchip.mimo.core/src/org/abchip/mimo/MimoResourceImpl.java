@@ -9,7 +9,7 @@ import java.util.Date;
 import java.util.Map;
 
 import org.abchip.mimo.context.Context;
-import org.abchip.mimo.entity.EntityNameable;
+import org.abchip.mimo.entity.EntityIdentifiable;
 import org.abchip.mimo.entity.Frame;
 import org.abchip.mimo.resource.Resource;
 import org.abchip.mimo.resource.ResourceManager;
@@ -24,7 +24,7 @@ import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceImpl;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 
-public class MimoResourceImpl<E extends EntityNameable> extends ResourceImpl {
+public class MimoResourceImpl<E extends EntityIdentifiable> extends ResourceImpl {
 
 	private Resource<E> resource = null;
 	private ResourceReader<E> resourceReader = null;
@@ -109,21 +109,21 @@ public class MimoResourceImpl<E extends EntityNameable> extends ResourceImpl {
 		if (id != null)
 			return id;
 
-		if (eObject instanceof EntityNameable) {
-			EntityNameable entityNameable = (EntityNameable) eObject;
+		if (eObject instanceof EntityIdentifiable) {
+			EntityIdentifiable entityIdentifiable = (EntityIdentifiable) eObject;
 
 			StringBuffer name = new StringBuffer();
 
-			Frame<?> frame = entityNameable.isa();
+			Frame<?> frame = entityIdentifiable.isa();
 			for (String key : frame.getKeys()) {
 				if (!name.toString().isEmpty())
 					name.append("/");
-				Object value = frame.getValue(entityNameable, key, false);
+				Object value = frame.getValue(entityIdentifiable, key, false);
 				if (value == null)
 					break;
 
-				if (value instanceof EntityNameable)
-					name.append(((EntityNameable) value).getName());
+				if (value instanceof EntityIdentifiable)
+					name.append(((EntityIdentifiable) value).getID());
 				else {
 					if (value instanceof Date) {
 						Date date = (Date) value;

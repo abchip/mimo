@@ -82,7 +82,7 @@ public interface ServerPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int JOB__CONTEXT = EntityPackage.ENTITY_NAMEABLE_FEATURE_COUNT + 0;
+	int JOB__CONTEXT = EntityPackage.ENTITY_IDENTIFIABLE_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Creation Date</b></em>' attribute.
@@ -91,7 +91,7 @@ public interface ServerPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int JOB__CREATION_DATE = EntityPackage.ENTITY_NAMEABLE_FEATURE_COUNT + 1;
+	int JOB__CREATION_DATE = EntityPackage.ENTITY_IDENTIFIABLE_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Current Resource</b></em>' attribute.
@@ -100,7 +100,7 @@ public interface ServerPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int JOB__CURRENT_RESOURCE = EntityPackage.ENTITY_NAMEABLE_FEATURE_COUNT + 2;
+	int JOB__CURRENT_RESOURCE = EntityPackage.ENTITY_IDENTIFIABLE_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Date Format</b></em>' attribute.
@@ -109,7 +109,7 @@ public interface ServerPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int JOB__DATE_FORMAT = EntityPackage.ENTITY_NAMEABLE_FEATURE_COUNT + 3;
+	int JOB__DATE_FORMAT = EntityPackage.ENTITY_IDENTIFIABLE_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Date Separator</b></em>' attribute.
@@ -118,7 +118,7 @@ public interface ServerPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int JOB__DATE_SEPARATOR = EntityPackage.ENTITY_NAMEABLE_FEATURE_COUNT + 4;
+	int JOB__DATE_SEPARATOR = EntityPackage.ENTITY_IDENTIFIABLE_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Destroy Date</b></em>' attribute.
@@ -127,7 +127,7 @@ public interface ServerPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int JOB__DESTROY_DATE = EntityPackage.ENTITY_NAMEABLE_FEATURE_COUNT + 5;
+	int JOB__DESTROY_DATE = EntityPackage.ENTITY_IDENTIFIABLE_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Job ID</b></em>' attribute.
@@ -136,7 +136,7 @@ public interface ServerPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int JOB__JOB_ID = EntityPackage.ENTITY_NAMEABLE_FEATURE_COUNT + 6;
+	int JOB__JOB_ID = EntityPackage.ENTITY_IDENTIFIABLE_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Job Reference</b></em>' containment reference.
@@ -145,7 +145,7 @@ public interface ServerPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int JOB__JOB_REFERENCE = EntityPackage.ENTITY_NAMEABLE_FEATURE_COUNT + 7;
+	int JOB__JOB_REFERENCE = EntityPackage.ENTITY_IDENTIFIABLE_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>Job Run Info</b></em>' containment reference.
@@ -154,7 +154,7 @@ public interface ServerPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int JOB__JOB_RUN_INFO = EntityPackage.ENTITY_NAMEABLE_FEATURE_COUNT + 8;
+	int JOB__JOB_RUN_INFO = EntityPackage.ENTITY_IDENTIFIABLE_FEATURE_COUNT + 8;
 
 	/**
 	 * The feature id for the '<em><b>Job Thread</b></em>' reference.
@@ -163,7 +163,7 @@ public interface ServerPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int JOB__JOB_THREAD = EntityPackage.ENTITY_NAMEABLE_FEATURE_COUNT + 9;
+	int JOB__JOB_THREAD = EntityPackage.ENTITY_IDENTIFIABLE_FEATURE_COUNT + 9;
 
 	/**
 	 * The feature id for the '<em><b>Job Type</b></em>' attribute.
@@ -172,7 +172,7 @@ public interface ServerPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int JOB__JOB_TYPE = EntityPackage.ENTITY_NAMEABLE_FEATURE_COUNT + 10;
+	int JOB__JOB_TYPE = EntityPackage.ENTITY_IDENTIFIABLE_FEATURE_COUNT + 10;
 
 	/**
 	 * The feature id for the '<em><b>Messages</b></em>' containment reference list.
@@ -181,7 +181,7 @@ public interface ServerPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int JOB__MESSAGES = EntityPackage.ENTITY_NAMEABLE_FEATURE_COUNT + 11;
+	int JOB__MESSAGES = EntityPackage.ENTITY_IDENTIFIABLE_FEATURE_COUNT + 11;
 
 	/**
 	 * The feature id for the '<em><b>System</b></em>' reference.
@@ -190,7 +190,7 @@ public interface ServerPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int JOB__SYSTEM = EntityPackage.ENTITY_NAMEABLE_FEATURE_COUNT + 12;
+	int JOB__SYSTEM = EntityPackage.ENTITY_IDENTIFIABLE_FEATURE_COUNT + 12;
 
 	/**
 	 * The feature id for the '<em><b>Time Separator</b></em>' attribute.
@@ -199,7 +199,7 @@ public interface ServerPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int JOB__TIME_SEPARATOR = EntityPackage.ENTITY_NAMEABLE_FEATURE_COUNT + 13;
+	int JOB__TIME_SEPARATOR = EntityPackage.ENTITY_IDENTIFIABLE_FEATURE_COUNT + 13;
 
 	/**
 	 * The number of structural features of the '<em>Job</em>' class.
@@ -208,7 +208,7 @@ public interface ServerPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int JOB_FEATURE_COUNT = EntityPackage.ENTITY_NAMEABLE_FEATURE_COUNT + 14;
+	int JOB_FEATURE_COUNT = EntityPackage.ENTITY_IDENTIFIABLE_FEATURE_COUNT + 14;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.server.impl.JobCapabilityImpl <em>Job Capability</em>}' class.
@@ -300,7 +300,7 @@ public interface ServerPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int JOB_DESCRIPTION__NAME = EntityPackage.ENTITY_NAMEABLE_FEATURE_COUNT + 0;
+	int JOB_DESCRIPTION__NAME = EntityPackage.ENTITY_IDENTIFIABLE_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Text</b></em>' attribute.
@@ -309,7 +309,7 @@ public interface ServerPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int JOB_DESCRIPTION__TEXT = EntityPackage.ENTITY_NAMEABLE_FEATURE_COUNT + 1;
+	int JOB_DESCRIPTION__TEXT = EntityPackage.ENTITY_IDENTIFIABLE_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>User</b></em>' attribute.
@@ -318,7 +318,7 @@ public interface ServerPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int JOB_DESCRIPTION__USER = EntityPackage.ENTITY_NAMEABLE_FEATURE_COUNT + 2;
+	int JOB_DESCRIPTION__USER = EntityPackage.ENTITY_IDENTIFIABLE_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of structural features of the '<em>Job Description</em>' class.
@@ -327,7 +327,7 @@ public interface ServerPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int JOB_DESCRIPTION_FEATURE_COUNT = EntityPackage.ENTITY_NAMEABLE_FEATURE_COUNT + 3;
+	int JOB_DESCRIPTION_FEATURE_COUNT = EntityPackage.ENTITY_IDENTIFIABLE_FEATURE_COUNT + 3;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.server.impl.JobEventImpl <em>Job Event</em>}' class.
@@ -402,7 +402,7 @@ public interface ServerPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int JOB_LOG__JOB = EntityPackage.ENTITY_NAMEABLE_FEATURE_COUNT + 0;
+	int JOB_LOG__JOB = EntityPackage.ENTITY_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Entries</b></em>' containment reference list.
@@ -411,7 +411,7 @@ public interface ServerPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int JOB_LOG__ENTRIES = EntityPackage.ENTITY_NAMEABLE_FEATURE_COUNT + 1;
+	int JOB_LOG__ENTRIES = EntityPackage.ENTITY_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Job Log</em>' class.
@@ -420,7 +420,7 @@ public interface ServerPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int JOB_LOG_FEATURE_COUNT = EntityPackage.ENTITY_NAMEABLE_FEATURE_COUNT + 2;
+	int JOB_LOG_FEATURE_COUNT = EntityPackage.ENTITY_FEATURE_COUNT + 2;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.server.impl.JobLogEntryImpl <em>Job Log Entry</em>}' class.
@@ -634,7 +634,7 @@ public interface ServerPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SYSTEM__CONTEXT = EntityPackage.ENTITY_NAMEABLE_FEATURE_COUNT + 0;
+	int SYSTEM__CONTEXT = EntityPackage.ENTITY_IDENTIFIABLE_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Last Job Number</b></em>' attribute.
@@ -643,7 +643,7 @@ public interface ServerPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SYSTEM__LAST_JOB_NUMBER = EntityPackage.ENTITY_NAMEABLE_FEATURE_COUNT + 1;
+	int SYSTEM__LAST_JOB_NUMBER = EntityPackage.ENTITY_IDENTIFIABLE_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -652,7 +652,7 @@ public interface ServerPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SYSTEM__NAME = EntityPackage.ENTITY_NAMEABLE_FEATURE_COUNT + 2;
+	int SYSTEM__NAME = EntityPackage.ENTITY_IDENTIFIABLE_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Port</b></em>' attribute.
@@ -661,7 +661,7 @@ public interface ServerPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SYSTEM__PORT = EntityPackage.ENTITY_NAMEABLE_FEATURE_COUNT + 3;
+	int SYSTEM__PORT = EntityPackage.ENTITY_IDENTIFIABLE_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Status</b></em>' attribute.
@@ -670,7 +670,7 @@ public interface ServerPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SYSTEM__STATUS = EntityPackage.ENTITY_NAMEABLE_FEATURE_COUNT + 4;
+	int SYSTEM__STATUS = EntityPackage.ENTITY_IDENTIFIABLE_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>System User</b></em>' attribute.
@@ -679,7 +679,7 @@ public interface ServerPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SYSTEM__SYSTEM_USER = EntityPackage.ENTITY_NAMEABLE_FEATURE_COUNT + 5;
+	int SYSTEM__SYSTEM_USER = EntityPackage.ENTITY_IDENTIFIABLE_FEATURE_COUNT + 5;
 
 	/**
 	 * The number of structural features of the '<em>System</em>' class.
@@ -688,7 +688,7 @@ public interface ServerPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SYSTEM_FEATURE_COUNT = EntityPackage.ENTITY_NAMEABLE_FEATURE_COUNT + 6;
+	int SYSTEM_FEATURE_COUNT = EntityPackage.ENTITY_IDENTIFIABLE_FEATURE_COUNT + 6;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.server.impl.SystemEventImpl <em>System Event</em>}' class.

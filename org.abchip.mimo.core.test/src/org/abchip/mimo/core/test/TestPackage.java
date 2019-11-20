@@ -80,7 +80,7 @@ public interface TestPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OBJECT_A__NAME = EntityPackage.ENTITY_NAMEABLE_FEATURE_COUNT + 0;
+	int OBJECT_A__NAME = EntityPackage.ENTITY_IDENTIFIABLE_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Text</b></em>' attribute.
@@ -89,7 +89,7 @@ public interface TestPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OBJECT_A__TEXT = EntityPackage.ENTITY_NAMEABLE_FEATURE_COUNT + 1;
+	int OBJECT_A__TEXT = EntityPackage.ENTITY_IDENTIFIABLE_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Object B</b></em>' containment reference.
@@ -98,7 +98,7 @@ public interface TestPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OBJECT_A__OBJECT_B = EntityPackage.ENTITY_NAMEABLE_FEATURE_COUNT + 2;
+	int OBJECT_A__OBJECT_B = EntityPackage.ENTITY_IDENTIFIABLE_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of structural features of the '<em>Object A</em>' class.
@@ -107,7 +107,7 @@ public interface TestPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OBJECT_A_FEATURE_COUNT = EntityPackage.ENTITY_NAMEABLE_FEATURE_COUNT + 3;
+	int OBJECT_A_FEATURE_COUNT = EntityPackage.ENTITY_IDENTIFIABLE_FEATURE_COUNT + 3;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.core.test.impl.ObjectBImpl <em>Object B</em>}' class.
@@ -126,7 +126,7 @@ public interface TestPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OBJECT_B__NAME = EntityPackage.ENTITY_NAMEABLE_FEATURE_COUNT + 0;
+	int OBJECT_B__NAME = EntityPackage.ENTITY_IDENTIFIABLE_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Enum1</b></em>' attribute.
@@ -135,7 +135,7 @@ public interface TestPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OBJECT_B__ENUM1 = EntityPackage.ENTITY_NAMEABLE_FEATURE_COUNT + 1;
+	int OBJECT_B__ENUM1 = EntityPackage.ENTITY_IDENTIFIABLE_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Object B</em>' class.
@@ -144,7 +144,7 @@ public interface TestPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OBJECT_B_FEATURE_COUNT = EntityPackage.ENTITY_NAMEABLE_FEATURE_COUNT + 2;
+	int OBJECT_B_FEATURE_COUNT = EntityPackage.ENTITY_IDENTIFIABLE_FEATURE_COUNT + 2;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.core.test.Enum1 <em>Enum1</em>}' enum.

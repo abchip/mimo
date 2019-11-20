@@ -10,7 +10,7 @@ package org.abchip.mimo.resource;
 
 import java.util.List;
 
-import org.abchip.mimo.entity.EntityNameable;
+import org.abchip.mimo.entity.EntityIdentifiable;
 
 /**
  * <!-- begin-user-doc --> A representation of the model object '
@@ -21,7 +21,7 @@ import org.abchip.mimo.entity.EntityNameable;
  * @model
  * @generated
  */
-public interface ResourceNotifier<E extends EntityNameable> {
+public interface ResourceNotifier<E extends EntityIdentifiable> {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->

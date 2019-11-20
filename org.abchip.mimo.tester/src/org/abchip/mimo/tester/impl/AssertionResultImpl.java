@@ -7,7 +7,7 @@
  */
 package org.abchip.mimo.tester.impl;
 
-import org.abchip.mimo.entity.impl.EntityNameableImpl;
+import org.abchip.mimo.entity.impl.EntityImpl;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
@@ -29,7 +29,7 @@ import org.abchip.mimo.tester.TesterPackage;
  *
  * @generated
  */
-public abstract class AssertionResultImpl extends EntityNameableImpl implements AssertionResult {
+public abstract class AssertionResultImpl extends EntityImpl implements AssertionResult {
 	/**
 	 * 
 	 */

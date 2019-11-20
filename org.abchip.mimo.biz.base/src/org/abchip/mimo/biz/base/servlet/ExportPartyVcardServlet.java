@@ -16,7 +16,7 @@ import javax.servlet.http.HttpServletResponse;
 import org.abchip.mimo.biz.base.service.PartyServices;
 import org.abchip.mimo.context.Context;
 import org.abchip.mimo.core.http.servlet.BaseServlet;
-import org.abchip.mimo.entity.EntityNameable;
+import org.abchip.mimo.entity.EntityIdentifiable;
 
 import ezvcard.Ezvcard;
 import ezvcard.VCard;
@@ -29,7 +29,7 @@ public class ExportPartyVcardServlet extends BaseServlet {
 		_execute(context, request, response);
 	}
 
-	private <E extends EntityNameable> void _execute(Context context, HttpServletRequest request, HttpServletResponse response) throws IOException {
+	private <E extends EntityIdentifiable> void _execute(Context context, HttpServletRequest request, HttpServletResponse response) throws IOException {
 
 		String partyId = request.getParameter("partyId");
 

@@ -17,17 +17,17 @@ import java.util.concurrent.LinkedBlockingQueue;
 import org.abchip.mimo.context.Context;
 import org.abchip.mimo.context.EntityLocker;
 import org.abchip.mimo.context.LockManager;
-import org.abchip.mimo.entity.EntityNameable;
+import org.abchip.mimo.entity.EntityIdentifiable;
 
 public class BaseLockManagerImpl implements LockManager {
 
 	@Override
-	public <N extends EntityNameable> EntityLocker<N> getLocker(Context context, URI address) {
+	public <N extends EntityIdentifiable> EntityLocker<N> getLocker(Context context, URI address) {
 		return new BaseLockerImpl<N>(address);
 	}
 
 	@Override
-	public <N extends EntityNameable> EntityLocker<N> getLocker(Context context, N entity) {
+	public <N extends EntityIdentifiable> EntityLocker<N> getLocker(Context context, N entity) {
 		return getLocker(context, entity.getURI());
 	}
 

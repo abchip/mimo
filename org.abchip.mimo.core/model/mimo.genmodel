@@ -527,26 +527,26 @@
         <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mimo.ecore#//entity/EntityContainer/contents"/>
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//entity/EntityContainer/name"/>
       </genClasses>
+      <genClasses image="false" ecoreClass="mimo.ecore#//entity/EntityEnum">
+        <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//entity/EntityEnum/name"/>
+        <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//entity/EntityEnum/text"/>
+      </genClasses>
       <genClasses image="false" ecoreClass="mimo.ecore#//entity/EntityInfo">
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//entity/EntityInfo/createdStamp"/>
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//entity/EntityInfo/createdTxStamp"/>
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//entity/EntityInfo/lastUpdatedStamp"/>
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//entity/EntityInfo/lastUpdatedTxStamp"/>
       </genClasses>
-      <genClasses image="false" ecoreClass="mimo.ecore#//entity/EntityEnum">
-        <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//entity/EntityEnum/name"/>
-        <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//entity/EntityEnum/text"/>
+      <genClasses image="false" ecoreClass="mimo.ecore#//entity/EntityIdentifiable">
+        <genOperations ecoreOperation="mimo.ecore#//entity/EntityIdentifiable/getID"/>
+        <genOperations ecoreOperation="mimo.ecore#//entity/EntityIdentifiable/getURI"/>
+        <genOperations ecoreOperation="mimo.ecore#//entity/EntityIdentifiable/isProxy"/>
       </genClasses>
       <genClasses image="false" ecoreClass="mimo.ecore#//entity/EntityIterator">
         <genTypeParameters ecoreTypeParameter="mimo.ecore#//entity/EntityIterator/E"/>
         <genOperations ecoreOperation="mimo.ecore#//entity/EntityIterator/hasNext"/>
         <genOperations ecoreOperation="mimo.ecore#//entity/EntityIterator/next"/>
         <genOperations ecoreOperation="mimo.ecore#//entity/EntityIterator/remove"/>
-      </genClasses>
-      <genClasses ecoreClass="mimo.ecore#//entity/EntityNameable">
-        <genOperations ecoreOperation="mimo.ecore#//entity/EntityNameable/getName"/>
-        <genOperations ecoreOperation="mimo.ecore#//entity/EntityNameable/getURI"/>
-        <genOperations ecoreOperation="mimo.ecore#//entity/EntityNameable/isProxy"/>
       </genClasses>
       <genClasses ecoreClass="mimo.ecore#//entity/EntityTyped">
         <genTypeParameters ecoreTypeParameter="mimo.ecore#//entity/EntityTyped/T"/>
@@ -613,9 +613,6 @@
         <genOperations ecoreOperation="mimo.ecore#//entity/Slot/isEnum"/>
         <genOperations ecoreOperation="mimo.ecore#//entity/Slot/isNumeric"/>
         <genOperations ecoreOperation="mimo.ecore#//entity/Slot/isString"/>
-      </genClasses>
-      <genClasses image="false" ecoreClass="mimo.ecore#//entity/Textable">
-        <genOperations ecoreOperation="mimo.ecore#//entity/Textable/getText"/>
       </genClasses>
     </nestedGenPackages>
     <nestedGenPackages prefix="Java" disposableProviderFactory="true" adapterFactory="false"

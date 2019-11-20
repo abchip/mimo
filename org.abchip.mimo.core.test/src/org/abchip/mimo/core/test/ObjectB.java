@@ -2,7 +2,7 @@
  */
 package org.abchip.mimo.core.test;
 
-import org.abchip.mimo.entity.EntityNameable;
+import org.abchip.mimo.entity.EntityIdentifiable;
 import org.eclipse.emf.ecore.EObject;
 
 
@@ -23,7 +23,7 @@ import org.eclipse.emf.ecore.EObject;
  * @model
  * @generated
  */
-public interface ObjectB extends EObject, EntityNameable {
+public interface ObjectB extends EObject, EntityIdentifiable {
 	/**
 	 * Returns the value of the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
@@ -35,7 +35,7 @@ public interface ObjectB extends EObject, EntityNameable {
 	 * @return the value of the '<em>Name</em>' attribute.
 	 * @see #setName(String)
 	 * @see org.abchip.mimo.core.test.TestPackage#getObjectB_Name()
-	 * @model required="true"
+	 * @model id="true" required="true"
 	 * @generated
 	 */
 	String getName();

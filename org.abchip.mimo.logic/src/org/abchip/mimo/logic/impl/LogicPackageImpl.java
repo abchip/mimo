@@ -368,7 +368,7 @@ public class LogicPackageImpl extends EPackageImpl implements LogicPackage {
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
-		termEClass.getESuperTypes().add(theEntityPackage.getEntityNameable());
+		termEClass.getESuperTypes().add(theEntityPackage.getEntityIdentifiable());
 		reasonerEClass.getESuperTypes().add(theJavaPackage.getJavaCloseable());
 
 		// Initialize classes and features; add operations and parameters
@@ -397,7 +397,7 @@ public class LogicPackageImpl extends EPackageImpl implements LogicPackage {
 		initEReference(getQuestion_Rule(), this.getTerm(), null, "rule", null, 0, 1, Question.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(termEClass, Term.class, "Term", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getTerm_Name(), ecorePackage.getEString(), "name", null, 1, 1, Term.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getTerm_Name(), ecorePackage.getEString(), "name", null, 1, 1, Term.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(theoryEClass, Theory.class, "Theory", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getTheory_Name(), ecorePackage.getEString(), "name", null, 1, 1, Theory.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

@@ -7,7 +7,7 @@
  */
 package org.abchip.mimo.edi.entity;
 
-import org.abchip.mimo.entity.EntityNameable;
+import org.abchip.mimo.entity.EntityIdentifiable;
 
 /**
  * <!-- begin-user-doc -->
@@ -29,7 +29,7 @@ import org.abchip.mimo.entity.EntityNameable;
  * @model
  * @generated
  */
-public interface EdiFrameSetup extends EntityNameable {
+public interface EdiFrameSetup extends EntityIdentifiable {
 	/**
 	 * Returns the value of the '<em><b>Message Type</b></em>' attribute.
 	 * <!-- begin-user-doc -->

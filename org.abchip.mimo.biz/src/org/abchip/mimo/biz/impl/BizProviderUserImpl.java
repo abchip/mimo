@@ -90,14 +90,4 @@ public class BizProviderUserImpl extends BizEntityImpl implements BizProviderUse
 		eSet(BizPackage.Literals.BIZ_PROVIDER_USER__PASSWORD, newPassword);
 	}
 
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated NOT
-	 */
-	@Override
-	public String getName() {
-		return this.getUser();
-	}
-
 } //BizProviderUserImpl

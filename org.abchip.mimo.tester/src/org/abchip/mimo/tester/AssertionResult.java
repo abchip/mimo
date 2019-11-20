@@ -7,7 +7,7 @@
  */
 package org.abchip.mimo.tester;
 
-import org.abchip.mimo.entity.EntityNameable;
+import org.abchip.mimo.entity.Entity;
 
 /**
  * <!-- begin-user-doc --> A representation of the model object '
@@ -26,7 +26,7 @@ import org.abchip.mimo.entity.EntityNameable;
  * @model abstract="true"
  * @generated
  */
-public interface AssertionResult extends EntityNameable {
+public interface AssertionResult extends Entity {
 	/**
 	 * Returns the value of the '<em><b>Message</b></em>' attribute. <!--
 	 * begin-user-doc -->

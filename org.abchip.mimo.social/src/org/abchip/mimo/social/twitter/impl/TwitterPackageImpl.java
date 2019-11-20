@@ -328,8 +328,7 @@ public class TwitterPackageImpl extends EPackageImpl implements TwitterPackage {
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
-		tweetEClass.getESuperTypes().add(theEntityPackage.getEntityNameable());
-		tweetEClass.getESuperTypes().add(theEntityPackage.getTextable());
+		tweetEClass.getESuperTypes().add(theEntityPackage.getEntityIdentifiable());
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(tweetEClass, Tweet.class, "Tweet", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);

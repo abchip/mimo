@@ -7,7 +7,7 @@
  */
 package org.abchip.mimo.resource.impl;
 
-import org.abchip.mimo.entity.EntityNameable;
+import org.abchip.mimo.entity.EntityIdentifiable;
 
 import org.abchip.mimo.resource.*;
 
@@ -118,7 +118,7 @@ public class ResourceFactoryImpl extends EFactoryImpl implements ResourceFactory
 	 * @generated
 	 */
 	@Override
-	public <E extends EntityNameable> ResourceNotifier<E> createResourceNotifier() {
+	public <E extends EntityIdentifiable> ResourceNotifier<E> createResourceNotifier() {
 		ResourceNotifierImpl<E> resourceNotifier = new ResourceNotifierImpl<E>();
 		return resourceNotifier;
 	}

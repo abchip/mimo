@@ -1038,16 +1038,15 @@ public class ServerPackageImpl extends EPackageImpl implements ServerPackage {
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
-		jobEClass.getESuperTypes().add(theEntityPackage.getEntityNameable());
+		jobEClass.getESuperTypes().add(theEntityPackage.getEntityIdentifiable());
 		jobCapabilityEClass.getESuperTypes().add(theContextPackage.getCapability());
-		jobDescriptionEClass.getESuperTypes().add(theEntityPackage.getEntityNameable());
-		jobDescriptionEClass.getESuperTypes().add(theEntityPackage.getTextable());
-		jobLogEClass.getESuperTypes().add(theEntityPackage.getEntityNameable());
+		jobDescriptionEClass.getESuperTypes().add(theEntityPackage.getEntityIdentifiable());
+		jobLogEClass.getESuperTypes().add(theEntityPackage.getEntity());
 		jobLogEntryEClass.getESuperTypes().add(theEntityPackage.getEntity());
 		jobMessageEClass.getESuperTypes().add(theEntityPackage.getEntity());
 		jobReferenceEClass.getESuperTypes().add(theEntityPackage.getEntity());
 		jobRunInfoEClass.getESuperTypes().add(theEntityPackage.getEntity());
-		systemEClass.getESuperTypes().add(theEntityPackage.getEntityNameable());
+		systemEClass.getESuperTypes().add(theEntityPackage.getEntityIdentifiable());
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(jobEClass, Job.class, "Job", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -1089,7 +1088,7 @@ public class ServerPackageImpl extends EPackageImpl implements ServerPackage {
 		initEAttribute(getJobCapability_Text(), ecorePackage.getEString(), "text", null, 1, 1, JobCapability.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(jobDescriptionEClass, JobDescription.class, "JobDescription", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getJobDescription_Name(), ecorePackage.getEString(), "name", null, 1, 1, JobDescription.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getJobDescription_Name(), ecorePackage.getEString(), "name", null, 1, 1, JobDescription.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getJobDescription_Text(), ecorePackage.getEString(), "text", null, 1, 1, JobDescription.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getJobDescription_User(), ecorePackage.getEString(), "user", null, 0, 1, JobDescription.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
@@ -1242,7 +1241,7 @@ public class ServerPackageImpl extends EPackageImpl implements ServerPackage {
 		initEClass(systemEClass, org.abchip.mimo.server.System.class, "System", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getSystem_Context(), theContextPackage.getContext(), null, "context", null, 0, 1, org.abchip.mimo.server.System.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getSystem_LastJobNumber(), ecorePackage.getEInt(), "lastJobNumber", null, 0, 1, org.abchip.mimo.server.System.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getSystem_Name(), ecorePackage.getEString(), "name", null, 1, 1, org.abchip.mimo.server.System.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getSystem_Name(), ecorePackage.getEString(), "name", null, 1, 1, org.abchip.mimo.server.System.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getSystem_Port(), ecorePackage.getEInt(), "port", null, 1, 1, org.abchip.mimo.server.System.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getSystem_Status(), this.getSystemStatus(), "status", "STP", 1, 1, org.abchip.mimo.server.System.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getSystem_SystemUser(), ecorePackage.getEString(), "systemUser", null, 1, 1, org.abchip.mimo.server.System.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

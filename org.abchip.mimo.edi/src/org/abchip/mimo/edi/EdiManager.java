@@ -9,7 +9,7 @@ package org.abchip.mimo.edi;
 
 import org.abchip.mimo.context.Context;
 import org.abchip.mimo.edi.entity.EntityEvent;
-import org.abchip.mimo.entity.EntityNameable;
+import org.abchip.mimo.entity.EntityIdentifiable;
 
 
 /**
@@ -30,5 +30,5 @@ public interface EdiManager {
 	 * @model contextRequired="true" entityRequired="true" eventRequired="true"
 	 * @generated
 	 */
-	<E extends EntityNameable> void writeMessage(Context context, E entity, EntityEvent event);
+	<E extends EntityIdentifiable> void writeMessage(Context context, E entity, EntityEvent event);
 } // EdiManager

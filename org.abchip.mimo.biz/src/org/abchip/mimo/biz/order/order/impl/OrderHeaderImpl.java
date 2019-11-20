@@ -18,6 +18,7 @@ import org.abchip.mimo.biz.common.uom.Uom;
 import org.abchip.mimo.biz.impl.BizEntityTypedImpl;
 import org.abchip.mimo.biz.order.order.OrderHeader;
 import org.abchip.mimo.biz.order.order.OrderPackage;
+import org.abchip.mimo.biz.order.order.OrderStatus;
 import org.abchip.mimo.biz.order.order.OrderType;
 import org.abchip.mimo.biz.order.shoppinglist.ShoppingList;
 import org.abchip.mimo.biz.product.facility.Facility;
@@ -282,8 +283,7 @@ public class OrderHeaderImpl extends BizEntityTypedImpl<OrderType> implements Or
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -292,8 +292,7 @@ public class OrderHeaderImpl extends BizEntityTypedImpl<OrderType> implements Or
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -302,8 +301,7 @@ public class OrderHeaderImpl extends BizEntityTypedImpl<OrderType> implements Or
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -312,8 +310,7 @@ public class OrderHeaderImpl extends BizEntityTypedImpl<OrderType> implements Or
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -322,8 +319,7 @@ public class OrderHeaderImpl extends BizEntityTypedImpl<OrderType> implements Or
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -332,8 +328,7 @@ public class OrderHeaderImpl extends BizEntityTypedImpl<OrderType> implements Or
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -342,8 +337,7 @@ public class OrderHeaderImpl extends BizEntityTypedImpl<OrderType> implements Or
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -352,8 +346,7 @@ public class OrderHeaderImpl extends BizEntityTypedImpl<OrderType> implements Or
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -470,8 +463,7 @@ public class OrderHeaderImpl extends BizEntityTypedImpl<OrderType> implements Or
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -480,8 +472,7 @@ public class OrderHeaderImpl extends BizEntityTypedImpl<OrderType> implements Or
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -959,9 +950,9 @@ public class OrderHeaderImpl extends BizEntityTypedImpl<OrderType> implements Or
 		if (!eIsSet(OrderPackage.ORDER_HEADER__STATUS_ID))
 			return false;
 
-		OrderStatusImpl statusId = (OrderStatusImpl) eGet(OrderPackage.ORDER_HEADER__STATUS_ID, false, true);
+		OrderStatus statusId = (OrderStatus) eGet(OrderPackage.ORDER_HEADER__STATUS_ID, false, true);
 
-		if (statusId.getName().equals("ORDER_CREATED") || statusId.getName().equals("ORDER_PROCESSING") || statusId.getName().equals("ORDER_HOLD"))
+		if (statusId.getID().equals("ORDER_CREATED") || statusId.getID().equals("ORDER_PROCESSING") || statusId.getID().equals("ORDER_HOLD"))
 			return true;
 		else
 			return false;

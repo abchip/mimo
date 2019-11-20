@@ -13,11 +13,11 @@ import org.abchip.mimo.context.Context;
 import org.abchip.mimo.context.EntityLocker;
 import org.abchip.mimo.context.LockManager;
 import org.abchip.mimo.context.LockType;
-import org.abchip.mimo.entity.EntityNameable;
+import org.abchip.mimo.entity.EntityIdentifiable;
 import org.abchip.mimo.resource.ResourceHelper;
 import org.abchip.mimo.resource.ResourceWriter;
 
-public class BaseResourceWriterImpl<E extends EntityNameable> extends BaseResourceReaderImpl<E> implements ResourceWriter<E> {
+public class BaseResourceWriterImpl<E extends EntityIdentifiable> extends BaseResourceReaderImpl<E> implements ResourceWriter<E> {
 
 	private LockManager lockManager = null;
 
@@ -99,7 +99,7 @@ public class BaseResourceWriterImpl<E extends EntityNameable> extends BaseResour
 		}
 	}
 
-	private <N extends EntityNameable> EntityLocker<N> lock(Context context, N entity) {
+	private <N extends EntityIdentifiable> EntityLocker<N> lock(Context context, N entity) {
 
 		if (lockManager == null)
 			return null;

@@ -4,9 +4,7 @@
 package org.abchip.mimo.ui.menu;
 
 import java.util.List;
-
-import org.abchip.mimo.entity.EntityNameable;
-
+import org.abchip.mimo.entity.EntityIdentifiable;
 import org.abchip.mimo.ui.DataNode;
 
 /**
@@ -27,7 +25,7 @@ import org.abchip.mimo.ui.DataNode;
  * @model
  * @generated
  */
-public interface ContextMenu extends EntityNameable {
+public interface ContextMenu extends EntityIdentifiable {
 	/**
 	 * Returns the value of the '<em><b>Elements</b></em>' containment reference list.
 	 * The list contents are of type {@link org.abchip.mimo.ui.DataNode}.
@@ -84,7 +82,6 @@ public interface ContextMenu extends EntityNameable {
 	 * @model id="true"
 	 * @generated
 	 */
-	@Override
 	String getName();
 
 	/**

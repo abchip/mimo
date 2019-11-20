@@ -10,7 +10,7 @@ package org.abchip.mimo.server;
 
 import java.util.List;
 
-import org.abchip.mimo.entity.EntityNameable;
+import org.abchip.mimo.entity.Entity;
 
 /**
  * <!-- begin-user-doc --> A representation of the model object '
@@ -28,7 +28,7 @@ import org.abchip.mimo.entity.EntityNameable;
  * @model
  * @generated
  */
-public interface JobLog extends EntityNameable {
+public interface JobLog extends Entity {
 	/**
 	 * Returns the value of the '<em><b>Job</b></em>' reference.
 	 * <!-- begin-user-doc -->

@@ -13,7 +13,7 @@ import org.abchip.mimo.biz.BizEntity;
 import org.abchip.mimo.biz.BizPackage;
 import org.abchip.mimo.entity.EntityInfo;
 import org.abchip.mimo.entity.EntityPackage;
-import org.abchip.mimo.entity.impl.EntityNameableImpl;
+import org.abchip.mimo.entity.impl.EntityIdentifiableImpl;
 import org.eclipse.emf.ecore.EClass;
 
 /**
@@ -32,7 +32,7 @@ import org.eclipse.emf.ecore.EClass;
  *
  * @generated
  */
-public abstract class BizEntityImpl extends EntityNameableImpl implements BizEntity {
+public abstract class BizEntityImpl extends EntityIdentifiableImpl implements BizEntity {
 	/**
 	 * 
 	 */

@@ -77,7 +77,7 @@ public interface EntityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EDI_FRAME_SETUP__MESSAGE_TYPE = org.abchip.mimo.entity.EntityPackage.ENTITY_NAMEABLE_FEATURE_COUNT + 0;
+	int EDI_FRAME_SETUP__MESSAGE_TYPE = org.abchip.mimo.entity.EntityPackage.ENTITY_IDENTIFIABLE_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Frame</b></em>' attribute.
@@ -86,7 +86,7 @@ public interface EntityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EDI_FRAME_SETUP__FRAME = org.abchip.mimo.entity.EntityPackage.ENTITY_NAMEABLE_FEATURE_COUNT + 1;
+	int EDI_FRAME_SETUP__FRAME = org.abchip.mimo.entity.EntityPackage.ENTITY_IDENTIFIABLE_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Entity Condition</b></em>' attribute.
@@ -95,7 +95,7 @@ public interface EntityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EDI_FRAME_SETUP__ENTITY_CONDITION = org.abchip.mimo.entity.EntityPackage.ENTITY_NAMEABLE_FEATURE_COUNT + 2;
+	int EDI_FRAME_SETUP__ENTITY_CONDITION = org.abchip.mimo.entity.EntityPackage.ENTITY_IDENTIFIABLE_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Entity Event</b></em>' attribute.
@@ -104,7 +104,7 @@ public interface EntityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EDI_FRAME_SETUP__ENTITY_EVENT = org.abchip.mimo.entity.EntityPackage.ENTITY_NAMEABLE_FEATURE_COUNT + 3;
+	int EDI_FRAME_SETUP__ENTITY_EVENT = org.abchip.mimo.entity.EntityPackage.ENTITY_IDENTIFIABLE_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Encrypt</b></em>' attribute.
@@ -113,7 +113,7 @@ public interface EntityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EDI_FRAME_SETUP__ENCRYPT = org.abchip.mimo.entity.EntityPackage.ENTITY_NAMEABLE_FEATURE_COUNT + 4;
+	int EDI_FRAME_SETUP__ENCRYPT = org.abchip.mimo.entity.EntityPackage.ENTITY_IDENTIFIABLE_FEATURE_COUNT + 4;
 
 	/**
 	 * The number of structural features of the '<em>Edi Frame Setup</em>' class.
@@ -122,7 +122,7 @@ public interface EntityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EDI_FRAME_SETUP_FEATURE_COUNT = org.abchip.mimo.entity.EntityPackage.ENTITY_NAMEABLE_FEATURE_COUNT + 5;
+	int EDI_FRAME_SETUP_FEATURE_COUNT = org.abchip.mimo.entity.EntityPackage.ENTITY_IDENTIFIABLE_FEATURE_COUNT + 5;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.edi.entity.EntityCondition <em>Condition</em>}' enum.

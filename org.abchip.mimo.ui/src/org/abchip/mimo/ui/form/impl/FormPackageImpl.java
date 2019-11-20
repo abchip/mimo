@@ -351,7 +351,7 @@ public class FormPackageImpl extends EPackageImpl implements FormPackage {
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
-		formEClass.getESuperTypes().add(theEntityPackage.getEntityNameable());
+		formEClass.getESuperTypes().add(theEntityPackage.getEntityIdentifiable());
 		formFieldEClass.getESuperTypes().add(theEntityPackage.getEntity());
 
 		// Initialize classes and features; add operations and parameters

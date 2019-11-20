@@ -80,7 +80,7 @@ public interface LanguagePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LANGUAGE__ISO_639_1 = EntityPackage.ENTITY_NAMEABLE_FEATURE_COUNT + 0;
+	int LANGUAGE__ISO_639_1 = EntityPackage.ENTITY_IDENTIFIABLE_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -89,7 +89,7 @@ public interface LanguagePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LANGUAGE__NAME = EntityPackage.ENTITY_NAMEABLE_FEATURE_COUNT + 1;
+	int LANGUAGE__NAME = EntityPackage.ENTITY_IDENTIFIABLE_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Scope</b></em>' attribute.
@@ -98,7 +98,7 @@ public interface LanguagePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LANGUAGE__SCOPE = EntityPackage.ENTITY_NAMEABLE_FEATURE_COUNT + 2;
+	int LANGUAGE__SCOPE = EntityPackage.ENTITY_IDENTIFIABLE_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Text</b></em>' attribute.
@@ -107,7 +107,7 @@ public interface LanguagePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LANGUAGE__TEXT = EntityPackage.ENTITY_NAMEABLE_FEATURE_COUNT + 3;
+	int LANGUAGE__TEXT = EntityPackage.ENTITY_IDENTIFIABLE_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Type</b></em>' attribute.
@@ -116,7 +116,7 @@ public interface LanguagePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LANGUAGE__TYPE = EntityPackage.ENTITY_NAMEABLE_FEATURE_COUNT + 4;
+	int LANGUAGE__TYPE = EntityPackage.ENTITY_IDENTIFIABLE_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Planets</b></em>' reference list.
@@ -125,7 +125,7 @@ public interface LanguagePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LANGUAGE__PLANETS = EntityPackage.ENTITY_NAMEABLE_FEATURE_COUNT + 5;
+	int LANGUAGE__PLANETS = EntityPackage.ENTITY_IDENTIFIABLE_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Planets Cont</b></em>' containment reference list.
@@ -134,7 +134,7 @@ public interface LanguagePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LANGUAGE__PLANETS_CONT = EntityPackage.ENTITY_NAMEABLE_FEATURE_COUNT + 6;
+	int LANGUAGE__PLANETS_CONT = EntityPackage.ENTITY_IDENTIFIABLE_FEATURE_COUNT + 6;
 
 	/**
 	 * The number of structural features of the '<em>Language</em>' class.
@@ -143,7 +143,7 @@ public interface LanguagePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LANGUAGE_FEATURE_COUNT = EntityPackage.ENTITY_NAMEABLE_FEATURE_COUNT + 7;
+	int LANGUAGE_FEATURE_COUNT = EntityPackage.ENTITY_IDENTIFIABLE_FEATURE_COUNT + 7;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.language.impl.LanguageExpressionImpl <em>Expression</em>}' class.
@@ -285,7 +285,7 @@ public interface LanguagePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LANGUAGE_PLANET__NAME = EntityPackage.ENTITY_NAMEABLE_FEATURE_COUNT + 0;
+	int LANGUAGE_PLANET__NAME = EntityPackage.ENTITY_IDENTIFIABLE_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of structural features of the '<em>Planet</em>' class.
@@ -294,7 +294,7 @@ public interface LanguagePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LANGUAGE_PLANET_FEATURE_COUNT = EntityPackage.ENTITY_NAMEABLE_FEATURE_COUNT + 1;
+	int LANGUAGE_PLANET_FEATURE_COUNT = EntityPackage.ENTITY_IDENTIFIABLE_FEATURE_COUNT + 1;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.language.LanguageScope <em>Scope</em>}' enum.

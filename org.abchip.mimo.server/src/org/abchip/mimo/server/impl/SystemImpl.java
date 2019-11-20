@@ -11,7 +11,7 @@ package org.abchip.mimo.server.impl;
 import java.lang.management.ManagementFactory;
 
 import org.abchip.mimo.context.Context;
-import org.abchip.mimo.entity.impl.EntityNameableImpl;
+import org.abchip.mimo.entity.impl.EntityIdentifiableImpl;
 import org.abchip.mimo.server.ServerPackage;
 import org.abchip.mimo.server.SystemStatus;
 import org.eclipse.emf.common.notify.Notification;
@@ -39,7 +39,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *
  * @generated
  */
-public class SystemImpl extends EntityNameableImpl implements org.abchip.mimo.server.System {
+public class SystemImpl extends EntityIdentifiableImpl implements org.abchip.mimo.server.System {
 	/**
 	 * 
 	 */

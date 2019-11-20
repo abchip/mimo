@@ -11,7 +11,7 @@ import java.util.Collection;
 import java.util.Date;
 import java.util.List;
 
-import org.abchip.mimo.entity.impl.EntityNameableImpl;
+import org.abchip.mimo.entity.impl.EntityIdentifiableImpl;
 import org.abchip.mimo.social.twitter.Tweet;
 import org.abchip.mimo.social.twitter.TwitterPackage;
 import org.eclipse.emf.common.notify.Notification;
@@ -43,7 +43,7 @@ import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
  *
  * @generated
  */
-public class TweetImpl extends EntityNameableImpl implements Tweet {
+public class TweetImpl extends EntityIdentifiableImpl implements Tweet {
 	/**
 	 * 
 	 */
@@ -659,15 +659,5 @@ public class TweetImpl extends EntityNameableImpl implements Tweet {
 		result.append(userMentions);
 		result.append(')');
 		return result.toString();
-	}
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @generated NOT
-	 */
-	@Override
-	public String getName() {
-		return Long.toString(getId());
 	}
 } // TweetImpl

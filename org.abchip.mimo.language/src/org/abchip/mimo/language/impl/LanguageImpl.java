@@ -9,7 +9,7 @@ package org.abchip.mimo.language.impl;
 
 import java.util.Collection;
 import java.util.List;
-import org.abchip.mimo.entity.impl.EntityNameableImpl;
+import org.abchip.mimo.entity.impl.EntityIdentifiableImpl;
 
 import org.abchip.mimo.language.Language;
 import org.abchip.mimo.language.LanguagePackage;
@@ -46,7 +46,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *
  * @generated
  */
-public class LanguageImpl extends EntityNameableImpl implements Language {
+public class LanguageImpl extends EntityIdentifiableImpl implements Language {
 	/**
 	 * The default value of the '{@link #getIso_639_1() <em>Iso 639 1</em>}' attribute.
 	 * <!-- begin-user-doc -->

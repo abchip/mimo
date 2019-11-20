@@ -10,7 +10,7 @@ package org.abchip.mimo.resource;
 
 import java.util.List;
 import org.abchip.mimo.entity.Entity;
-import org.abchip.mimo.entity.EntityNameable;
+import org.abchip.mimo.entity.EntityIdentifiable;
 import org.abchip.mimo.entity.Frame;
 
 /**
@@ -28,7 +28,7 @@ import org.abchip.mimo.entity.Frame;
  * @model abstract="true"
  * @generated
  */
-public interface Resource<E extends EntityNameable> extends Entity {
+public interface Resource<E extends EntityIdentifiable> extends Entity {
 
 	public static String TENANT_MASTER = "*MASTER";
 	

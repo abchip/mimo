@@ -643,7 +643,7 @@ public class TesterPackageImpl extends EPackageImpl implements TesterPackage {
 
 		// Add supertypes to classes
 		assertionFailedEClass.getESuperTypes().add(this.getAssertionResult());
-		assertionResultEClass.getESuperTypes().add(theEntityPackage.getEntityNameable());
+		assertionResultEClass.getESuperTypes().add(theEntityPackage.getEntity());
 		assertionSuccessEClass.getESuperTypes().add(this.getAssertionResult());
 		testAsserterEClass.getESuperTypes().add(this.getAsserter());
 		testResultEClass.getESuperTypes().add(theEntityPackage.getEntity());
@@ -661,7 +661,7 @@ public class TesterPackageImpl extends EPackageImpl implements TesterPackage {
 		g2 = createEGenericType(this.getTestResult());
 		g1.getETypeArguments().add(g2);
 		testUnitRunnerEClass.getEGenericSuperTypes().add(g1);
-		testObjectEClass.getESuperTypes().add(theEntityPackage.getEntityNameable());
+		testObjectEClass.getESuperTypes().add(theEntityPackage.getEntityIdentifiable());
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(asserterEClass, Asserter.class, "Asserter", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -816,7 +816,7 @@ public class TesterPackageImpl extends EPackageImpl implements TesterPackage {
 		initEClass(testUnitRunnerEClass, TestUnitRunner.class, "TestUnitRunner", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(testObjectEClass, TestObject.class, "TestObject", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getTestObject_Name(), ecorePackage.getEString(), "name", null, 1, 1, TestObject.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getTestObject_Name(), ecorePackage.getEString(), "name", null, 1, 1, TestObject.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getTestObject_StringProperty(), ecorePackage.getEString(), "stringProperty", null, 0, 1, TestObject.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getTestObject_IntegerProperty(), ecorePackage.getEInt(), "integerProperty", null, 0, 1, TestObject.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getTestObject_ObjectReference(), this.getTestObject(), null, "objectReference", null, 0, 1, TestObject.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

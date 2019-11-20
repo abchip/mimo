@@ -7,7 +7,7 @@
  */
 package org.abchip.mimo.language.impl;
 
-import org.abchip.mimo.entity.impl.EntityNameableImpl;
+import org.abchip.mimo.entity.impl.EntityIdentifiableImpl;
 
 import org.abchip.mimo.language.LanguagePackage;
 import org.abchip.mimo.language.LanguagePlanet;
@@ -28,7 +28,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *
  * @generated
  */
-public class LanguagePlanetImpl extends EntityNameableImpl implements LanguagePlanet {
+public class LanguagePlanetImpl extends EntityIdentifiableImpl implements LanguagePlanet {
 	/**
 	 * 
 	 */

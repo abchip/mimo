@@ -35,7 +35,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *
  * @generated
  */
-public abstract class EntityTypeImpl<E extends EntityTyped<?>> extends EntityNameableImpl implements EntityType<E> {
+public abstract class EntityTypeImpl<E extends EntityTyped<?>> extends EntityIdentifiableImpl implements EntityType<E> {
 	/**
 	 * The cached value of the '{@link #getSlots() <em>Slots</em>}' containment reference list.
 	 * <!-- begin-user-doc -->

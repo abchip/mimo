@@ -4,7 +4,7 @@
   <eClassifiers xsi:type="ecore:EClass" name="EdiManager" abstract="true" interface="true">
     <eOperations name="writeMessage">
       <eTypeParameters name="E">
-        <eBounds eClassifier="ecore:EClass ../../org.abchip.mimo.core/model/mimo.ecore#//entity/EntityNameable"/>
+        <eBounds eClassifier="ecore:EClass ../../org.abchip.mimo.core/model/mimo.ecore#//entity/EntityIdentifiable"/>
       </eTypeParameters>
       <eParameters name="context" lowerBound="1" eType="ecore:EClass ../../org.abchip.mimo.core/model/mimo.ecore#//context/Context"/>
       <eParameters name="entity" lowerBound="1">
@@ -14,7 +14,7 @@
     </eOperations>
   </eClassifiers>
   <eSubpackages name="entity" nsURI="http://www.abchip.org/mimo/edi/entity" nsPrefix="mimo-edi-ent">
-    <eClassifiers xsi:type="ecore:EClass" name="EdiFrameSetup" eSuperTypes="../../org.abchip.mimo.core/model/mimo.ecore#//entity/EntityNameable">
+    <eClassifiers xsi:type="ecore:EClass" name="EdiFrameSetup" eSuperTypes="../../org.abchip.mimo.core/model/mimo.ecore#//entity/EntityIdentifiable">
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="messageType" lowerBound="1"
           eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
         <eAnnotations source="mimo-ent-slot">

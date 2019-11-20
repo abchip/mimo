@@ -1468,7 +1468,7 @@ public class DatabaseDefinitionPackageImpl extends EPackageImpl implements Datab
 		schemaDefEClass.getESuperTypes().add(this.getDatabaseObjectDef());
 		tableDefEClass.getESuperTypes().add(this.getDatabaseObjectDef());
 		tableColumnDefEClass.getESuperTypes().add(this.getDatabaseObjectDef());
-		tableTermEClass.getESuperTypes().add(theEntityPackage.getEntityNameable());
+		tableTermEClass.getESuperTypes().add(theEntityPackage.getEntityIdentifiable());
 		viewDefEClass.getESuperTypes().add(this.getTableDef());
 
 		// Initialize classes and features; add operations and parameters
@@ -1676,7 +1676,7 @@ public class DatabaseDefinitionPackageImpl extends EPackageImpl implements Datab
 		initEAttribute(getTableColumnDef_Nullable(), ecorePackage.getEBoolean(), "nullable", null, 0, 1, TableColumnDef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(tableTermEClass, TableTerm.class, "TableTerm", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getTableTerm_Name(), ecorePackage.getEString(), "name", null, 1, 1, TableTerm.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getTableTerm_Name(), ecorePackage.getEString(), "name", null, 1, 1, TableTerm.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getTableTerm_TableDef(), this.getTableDef(), null, "tableDef", null, 0, 1, TableTerm.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(viewDefEClass, ViewDef.class, "ViewDef", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);

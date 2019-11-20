@@ -9,7 +9,7 @@
 package org.abchip.mimo.server;
 
 import org.abchip.mimo.context.Context;
-import org.abchip.mimo.entity.EntityNameable;
+import org.abchip.mimo.entity.EntityIdentifiable;
 
 /**
  * <!-- begin-user-doc -->
@@ -32,7 +32,7 @@ import org.abchip.mimo.entity.EntityNameable;
  * @model
  * @generated
  */
-public interface System extends EntityNameable {
+public interface System extends EntityIdentifiable {
 
 	public static final long LOCK_TIMEOUT = 1000;
 	
@@ -99,10 +99,9 @@ public interface System extends EntityNameable {
 	 * @return the value of the '<em>Name</em>' attribute.
 	 * @see #setName(String)
 	 * @see org.abchip.mimo.server.ServerPackage#getSystem_Name()
-	 * @model required="true"
+	 * @model id="true" required="true"
 	 * @generated
 	 */
-	@Override
 	String getName();
 
 	/**

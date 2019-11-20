@@ -10,7 +10,7 @@ package org.abchip.mimo.resource;
 
 import org.abchip.mimo.context.Context;
 import org.abchip.mimo.entity.Entity;
-import org.abchip.mimo.entity.EntityNameable;
+import org.abchip.mimo.entity.EntityIdentifiable;
 import org.abchip.mimo.entity.Frame;
 import org.abchip.mimo.entity.SerializationType;
 
@@ -55,7 +55,7 @@ public interface ResourceManager {
 	 * @model contextRequired="true" klassRequired="true"
 	 * @generated
 	 */
-	<E extends EntityNameable> Frame<E> getFrame(Context context, Class<E> klass);
+	<E extends EntityIdentifiable> Frame<E> getFrame(Context context, Class<E> klass);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -63,7 +63,7 @@ public interface ResourceManager {
 	 * @model contextRequired="true" klassRequired="true" tenantRequired="true"
 	 * @generated
 	 */
-	<E extends EntityNameable> Frame<E> getFrame(Context context, Class<E> klass, String tenant);
+	<E extends EntityIdentifiable> Frame<E> getFrame(Context context, Class<E> klass, String tenant);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -87,7 +87,7 @@ public interface ResourceManager {
 	 * @model contextRequired="true" klassRequired="true"
 	 * @generated
 	 */
-	<E extends EntityNameable> ResourceProvider getResourceProvider(Context context, Class<E> klass);
+	<E extends EntityIdentifiable> ResourceProvider getResourceProvider(Context context, Class<E> klass);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -95,7 +95,7 @@ public interface ResourceManager {
 	 * @model contextRequired="true" frameRequired="true"
 	 * @generated
 	 */
-	<E extends EntityNameable> ResourceProvider getResourceProvider(Context context, Frame<E> frame);
+	<E extends EntityIdentifiable> ResourceProvider getResourceProvider(Context context, Frame<E> frame);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -103,7 +103,7 @@ public interface ResourceManager {
 	 * @model contextRequired="true" frameRequired="true"
 	 * @generated
 	 */
-	<E extends EntityNameable> ResourceProvider getResourceProvider(Context context, String frame);
+	<E extends EntityIdentifiable> ResourceProvider getResourceProvider(Context context, String frame);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -111,7 +111,7 @@ public interface ResourceManager {
 	 * @model contextRequired="true" klassRequired="true"
 	 * @generated
 	 */
-	<E extends EntityNameable> ResourceReader<E> getResourceReader(Context context, Class<E> klass);
+	<E extends EntityIdentifiable> ResourceReader<E> getResourceReader(Context context, Class<E> klass);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -119,7 +119,7 @@ public interface ResourceManager {
 	 * @model contextRequired="true" frameRequired="true"
 	 * @generated
 	 */
-	<E extends EntityNameable> ResourceReader<E> getResourceReader(Context context, Frame<E> frame);
+	<E extends EntityIdentifiable> ResourceReader<E> getResourceReader(Context context, Frame<E> frame);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -127,7 +127,7 @@ public interface ResourceManager {
 	 * @model contextRequired="true" frameRequired="true"
 	 * @generated
 	 */
-	<E extends EntityNameable> ResourceReader<E> getResourceReader(Context context, String frame);
+	<E extends EntityIdentifiable> ResourceReader<E> getResourceReader(Context context, String frame);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -135,7 +135,7 @@ public interface ResourceManager {
 	 * @model contextRequired="true" klassRequired="true" tenantRequired="true"
 	 * @generated
 	 */
-	<E extends EntityNameable> ResourceReader<E> getResourceReader(Context context, Class<E> klass, String tenant);
+	<E extends EntityIdentifiable> ResourceReader<E> getResourceReader(Context context, Class<E> klass, String tenant);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -143,7 +143,7 @@ public interface ResourceManager {
 	 * @model contextRequired="true" frameRequired="true" tenantRequired="true"
 	 * @generated
 	 */
-	<E extends EntityNameable> ResourceReader<E> getResourceReader(Context context, Frame<E> frame, String tenant);
+	<E extends EntityIdentifiable> ResourceReader<E> getResourceReader(Context context, Frame<E> frame, String tenant);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -151,7 +151,7 @@ public interface ResourceManager {
 	 * @model contextRequired="true" frameRequired="true" tenantRequired="true"
 	 * @generated
 	 */
-	<E extends EntityNameable> ResourceReader<E> getResourceReader(Context context, String frame, String tenant);
+	<E extends EntityIdentifiable> ResourceReader<E> getResourceReader(Context context, String frame, String tenant);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -159,7 +159,7 @@ public interface ResourceManager {
 	 * @model contextRequired="true" klassRequired="true"
 	 * @generated
 	 */
-	<E extends EntityNameable> ResourceWriter<E> getResourceWriter(Context context, Class<E> klass);
+	<E extends EntityIdentifiable> ResourceWriter<E> getResourceWriter(Context context, Class<E> klass);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -167,7 +167,7 @@ public interface ResourceManager {
 	 * @model contextRequired="true" frameRequired="true"
 	 * @generated
 	 */
-	<E extends EntityNameable> ResourceWriter<E> getResourceWriter(Context context, Frame<E> frame);
+	<E extends EntityIdentifiable> ResourceWriter<E> getResourceWriter(Context context, Frame<E> frame);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -175,7 +175,7 @@ public interface ResourceManager {
 	 * @model contextRequired="true" frameRequired="true"
 	 * @generated
 	 */
-	<E extends EntityNameable> ResourceWriter<E> getResourceWriter(Context context, String frame);
+	<E extends EntityIdentifiable> ResourceWriter<E> getResourceWriter(Context context, String frame);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -183,7 +183,7 @@ public interface ResourceManager {
 	 * @model contextRequired="true" klassRequired="true" tenantRequired="true"
 	 * @generated
 	 */
-	<E extends EntityNameable> ResourceWriter<E> getResourceWriter(Context context, Class<E> klass, String tenant);
+	<E extends EntityIdentifiable> ResourceWriter<E> getResourceWriter(Context context, Class<E> klass, String tenant);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -191,7 +191,7 @@ public interface ResourceManager {
 	 * @model contextRequired="true" frameRequired="true" tenantRequired="true"
 	 * @generated
 	 */
-	<E extends EntityNameable> ResourceWriter<E> getResourceWriter(Context context, Frame<E> frame, String tenant);
+	<E extends EntityIdentifiable> ResourceWriter<E> getResourceWriter(Context context, Frame<E> frame, String tenant);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -199,7 +199,7 @@ public interface ResourceManager {
 	 * @model contextRequired="true" frameRequired="true" tenantRequired="true"
 	 * @generated
 	 */
-	<E extends EntityNameable> ResourceWriter<E> getResourceWriter(Context context, String frame, String tenant);
+	<E extends EntityIdentifiable> ResourceWriter<E> getResourceWriter(Context context, String frame, String tenant);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -207,7 +207,7 @@ public interface ResourceManager {
 	 * @model contextRequired="true" klassRequired="true" listenerRequired="true"
 	 * @generated
 	 */
-	<E extends EntityNameable> void registerListener(Context context, Class<E> klass, ResourceListener<E> listener);
+	<E extends EntityIdentifiable> void registerListener(Context context, Class<E> klass, ResourceListener<E> listener);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -215,7 +215,7 @@ public interface ResourceManager {
 	 * @model contextRequired="true" frameRequired="true" listenerRequired="true"
 	 * @generated
 	 */
-	<E extends EntityNameable> void registerListener(Context context, Frame<E> frame, ResourceListener<E> listener);
+	<E extends EntityIdentifiable> void registerListener(Context context, Frame<E> frame, ResourceListener<E> listener);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -223,7 +223,7 @@ public interface ResourceManager {
 	 * @model contextRequired="true" frameRequired="true" listenerRequired="true"
 	 * @generated
 	 */
-	<E extends EntityNameable> void registerListener(Context context, String frame, ResourceListener<E> listener);
+	<E extends EntityIdentifiable> void registerListener(Context context, String frame, ResourceListener<E> listener);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -231,7 +231,7 @@ public interface ResourceManager {
 	 * @model contextRequired="true" klassRequired="true" providerRequired="true"
 	 * @generated
 	 */
-	<E extends EntityNameable> void registerProvider(Context context, Class<E> klass, ResourceProvider provider);
+	<E extends EntityIdentifiable> void registerProvider(Context context, Class<E> klass, ResourceProvider provider);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -239,7 +239,7 @@ public interface ResourceManager {
 	 * @model contextRequired="true" frameRequired="true" providerRequired="true"
 	 * @generated
 	 */
-	<E extends EntityNameable> void registerProvider(Context context, Frame<E> frame, ResourceProvider provider);
+	<E extends EntityIdentifiable> void registerProvider(Context context, Frame<E> frame, ResourceProvider provider);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -247,6 +247,6 @@ public interface ResourceManager {
 	 * @model contextRequired="true" frameRequired="true" providerRequired="true"
 	 * @generated
 	 */
-	<E extends EntityNameable> void registerProvider(Context context, String frame, ResourceProvider provider);
+	<E extends EntityIdentifiable> void registerProvider(Context context, String frame, ResourceProvider provider);
 
 } // ResourceManager

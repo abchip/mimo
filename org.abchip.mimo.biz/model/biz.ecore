@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="biz" nsURI="http://www.abchip.org/mimo/biz" nsPrefix="biz">
-  <eClassifiers xsi:type="ecore:EClass" name="BizEntity" abstract="true" eSuperTypes="../../org.abchip.mimo.core/model/mimo.ecore#//entity/EntityNameable ../../org.abchip.mimo.core/model/mimo.ecore#//entity/EntityInfo"/>
+  <eClassifiers xsi:type="ecore:EClass" name="BizEntity" abstract="true" eSuperTypes="../../org.abchip.mimo.core/model/mimo.ecore#//entity/EntityIdentifiable ../../org.abchip.mimo.core/model/mimo.ecore#//entity/EntityInfo"/>
   <eClassifiers xsi:type="ecore:EClass" name="BizEntityNote" abstract="true" eSuperTypes="#//BizEntity">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="noteId" lowerBound="1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
@@ -67,7 +67,8 @@
         containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="BizProviderUser" eSuperTypes="#//BizEntity">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="user" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="user" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        iD="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="password" lowerBound="1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>

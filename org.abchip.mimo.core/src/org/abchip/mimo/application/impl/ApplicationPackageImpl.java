@@ -867,10 +867,9 @@ public class ApplicationPackageImpl extends EPackageImpl implements ApplicationP
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
-		applicationEClass.getESuperTypes().add(theEntityPackage.getEntityNameable());
-		applicationEClass.getESuperTypes().add(theEntityPackage.getTextable());
+		applicationEClass.getESuperTypes().add(theEntityPackage.getEntityIdentifiable());
 		applicationEClass.getESuperTypes().add(theContextPackage.getContext());
-		applicationComponentEClass.getESuperTypes().add(theEntityPackage.getEntityNameable());
+		applicationComponentEClass.getESuperTypes().add(theEntityPackage.getEntityIdentifiable());
 		applicationComponentEClass.getESuperTypes().add(theContextPackage.getContext());
 		applicationModuleEClass.getESuperTypes().add(theEntityPackage.getEntity());
 		serviceCommandProviderEClass.getESuperTypes().add(this.getServiceRef());
@@ -901,7 +900,7 @@ public class ApplicationPackageImpl extends EPackageImpl implements ApplicationP
 		initEReference(getApplicationComponent_Hooks(), this.getServiceHook(), null, "hooks", null, 0, -1, ApplicationComponent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getApplicationComponent_Commands(), this.getServiceCommandProvider(), null, "commands", null, 0, -1, ApplicationComponent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getApplicationComponent_Modules(), this.getApplicationModule(), null, "modules", null, 0, -1, ApplicationComponent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getApplicationComponent_Name(), ecorePackage.getEString(), "name", null, 1, 1, ApplicationComponent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getApplicationComponent_Name(), ecorePackage.getEString(), "name", null, 1, 1, ApplicationComponent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(applicationManagerEClass, ApplicationManager.class, "ApplicationManager", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 

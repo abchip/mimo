@@ -10,7 +10,6 @@ package org.abchip.mimo.context;
 import java.util.List;
 
 import org.abchip.mimo.entity.Entity;
-import org.abchip.mimo.entity.Textable;
 
 /**
  * <!-- begin-user-doc -->
@@ -32,7 +31,7 @@ import org.abchip.mimo.entity.Textable;
  * @model
  * @generated
  */
-public interface MessageDescription extends Entity, Textable {
+public interface MessageDescription extends Entity {
 	/**
 	 * Returns the value of the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->

@@ -19,7 +19,7 @@ import org.eclipse.emf.ecore.EClass;
  *
  * @generated
  */
-public class EntityTypedImpl<T extends EntityType<?>> extends EntityNameableImpl implements EntityTyped<T> {
+public class EntityTypedImpl<T extends EntityType<?>> extends EntityIdentifiableImpl implements EntityTyped<T> {
 	/**
 	 * 
 	 */

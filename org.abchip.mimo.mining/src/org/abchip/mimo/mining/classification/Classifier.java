@@ -11,7 +11,7 @@ import java.util.List;
 import org.abchip.mimo.context.Context;
 
 import org.abchip.mimo.entity.Entity;
-import org.abchip.mimo.entity.EntityNameable;
+import org.abchip.mimo.entity.EntityIdentifiable;
 
 /**
  * <!-- begin-user-doc -->
@@ -46,6 +46,6 @@ public interface Classifier {
 	 * @model required="true" klassRequired="true" objectRequired="true"
 	 * @generated
 	 */
-	<E extends EntityNameable> Evaluator buildEvaluator(Class<E> klass, Class<?> object);
+	<E extends EntityIdentifiable> Evaluator buildEvaluator(Class<E> klass, Class<?> object);
 
 } // Classifier

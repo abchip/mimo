@@ -12,7 +12,7 @@ import java.net.URI;
 import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.ConcurrentMap;
 
-import org.abchip.mimo.entity.EntityNameable;
+import org.abchip.mimo.entity.EntityIdentifiable;
 
 /**
  * <!-- begin-user-doc --> A representation of the model object '
@@ -30,7 +30,7 @@ public interface LockManager {
 	 * @model contextRequired="true" addressDataType="org.abchip.mimo.java.JavaURI"
 	 * @generated
 	 */
-	<N extends EntityNameable> EntityLocker<N> getLocker(Context context, URI address);
+	<N extends EntityIdentifiable> EntityLocker<N> getLocker(Context context, URI address);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -38,7 +38,7 @@ public interface LockManager {
 	 * @model contextRequired="true"
 	 * @generated
 	 */
-	<N extends EntityNameable> EntityLocker<N> getLocker(Context context, N object);
+	<N extends EntityIdentifiable> EntityLocker<N> getLocker(Context context, N object);
 
 	/**
 	 * <!-- begin-user-doc -->

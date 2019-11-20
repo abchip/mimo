@@ -611,7 +611,7 @@ public interface ContextPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MESSAGE_FILE__MESSAGES = EntityPackage.ENTITY_NAMEABLE_FEATURE_COUNT + 0;
+	int MESSAGE_FILE__MESSAGES = EntityPackage.ENTITY_IDENTIFIABLE_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -620,7 +620,7 @@ public interface ContextPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MESSAGE_FILE__NAME = EntityPackage.ENTITY_NAMEABLE_FEATURE_COUNT + 1;
+	int MESSAGE_FILE__NAME = EntityPackage.ENTITY_IDENTIFIABLE_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Text</b></em>' attribute.
@@ -629,7 +629,7 @@ public interface ContextPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MESSAGE_FILE__TEXT = EntityPackage.ENTITY_NAMEABLE_FEATURE_COUNT + 2;
+	int MESSAGE_FILE__TEXT = EntityPackage.ENTITY_IDENTIFIABLE_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of structural features of the '<em>Message File</em>' class.
@@ -638,7 +638,7 @@ public interface ContextPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MESSAGE_FILE_FEATURE_COUNT = EntityPackage.ENTITY_NAMEABLE_FEATURE_COUNT + 3;
+	int MESSAGE_FILE_FEATURE_COUNT = EntityPackage.ENTITY_IDENTIFIABLE_FEATURE_COUNT + 3;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.context.Registry <em>Registry</em>}' class.
@@ -695,7 +695,7 @@ public interface ContextPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int USER_PROFILE__JOB_DESCRIPTION = EntityPackage.ENTITY_NAMEABLE_FEATURE_COUNT + 0;
+	int USER_PROFILE__JOB_DESCRIPTION = EntityPackage.ENTITY_IDENTIFIABLE_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -704,7 +704,7 @@ public interface ContextPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int USER_PROFILE__NAME = EntityPackage.ENTITY_NAMEABLE_FEATURE_COUNT + 1;
+	int USER_PROFILE__NAME = EntityPackage.ENTITY_IDENTIFIABLE_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Text</b></em>' attribute.
@@ -713,7 +713,7 @@ public interface ContextPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int USER_PROFILE__TEXT = EntityPackage.ENTITY_NAMEABLE_FEATURE_COUNT + 2;
+	int USER_PROFILE__TEXT = EntityPackage.ENTITY_IDENTIFIABLE_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>User Class</b></em>' attribute.
@@ -722,7 +722,7 @@ public interface ContextPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int USER_PROFILE__USER_CLASS = EntityPackage.ENTITY_NAMEABLE_FEATURE_COUNT + 3;
+	int USER_PROFILE__USER_CLASS = EntityPackage.ENTITY_IDENTIFIABLE_FEATURE_COUNT + 3;
 
 	/**
 	 * The number of structural features of the '<em>User Profile</em>' class.
@@ -731,7 +731,7 @@ public interface ContextPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int USER_PROFILE_FEATURE_COUNT = EntityPackage.ENTITY_NAMEABLE_FEATURE_COUNT + 4;
+	int USER_PROFILE_FEATURE_COUNT = EntityPackage.ENTITY_IDENTIFIABLE_FEATURE_COUNT + 4;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.context.CapabilityRight <em>Capability Right</em>}' enum.

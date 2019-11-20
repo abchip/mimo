@@ -13,7 +13,7 @@ import javax.inject.Inject;
 
 import org.abchip.mimo.context.Context;
 import org.abchip.mimo.context.ContextRoot;
-import org.abchip.mimo.entity.EntityNameable;
+import org.abchip.mimo.entity.EntityIdentifiable;
 import org.abchip.mimo.entity.Frame;
 import org.abchip.mimo.resource.Resource;
 import org.abchip.mimo.resource.ResourceConfig;
@@ -41,11 +41,11 @@ public class NIOResourceProviderImpl extends ResourceProviderImpl {
 
 		this.pathManager = new NIOPathManager(contextRoot.getContextDescription().getDataPath());
 
-		resourceManager.registerProvider(contextRoot, EntityNameable.class, this);
+		resourceManager.registerProvider(contextRoot, EntityIdentifiable.class, this);
 	}
 
 	@Override
-	public <E extends EntityNameable> Resource<E> doGetResource(Context context, Frame<E> frame, String tenant) {
+	public <E extends EntityIdentifiable> Resource<E> doGetResource(Context context, Frame<E> frame, String tenant) {
 
 		if(pathManager == null)
 			return null;

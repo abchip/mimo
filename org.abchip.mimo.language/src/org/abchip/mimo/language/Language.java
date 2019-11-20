@@ -8,8 +8,7 @@
 package org.abchip.mimo.language;
 
 import java.util.List;
-import org.abchip.mimo.entity.EntityNameable;
-import org.abchip.mimo.entity.Textable;
+import org.abchip.mimo.entity.EntityIdentifiable;
 
 /**
  * <!-- begin-user-doc -->
@@ -33,7 +32,7 @@ import org.abchip.mimo.entity.Textable;
  * @model
  * @generated
  */
-public interface Language extends EntityNameable, Textable {
+public interface Language extends EntityIdentifiable {
 	/**
 	 * Returns the value of the '<em><b>Iso 639 1</b></em>' attribute.
 	 * <!-- begin-user-doc -->

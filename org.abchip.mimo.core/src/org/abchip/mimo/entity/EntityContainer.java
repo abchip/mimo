@@ -29,7 +29,7 @@ import java.util.List;
 public interface EntityContainer extends Entity {
 	/**
 	 * Returns the value of the '<em><b>Contents</b></em>' containment reference list.
-	 * The list contents are of type {@link org.abchip.mimo.entity.EntityNameable}.
+	 * The list contents are of type {@link org.abchip.mimo.entity.EntityIdentifiable}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Contents</em>' containment reference list isn't clear,
@@ -41,7 +41,7 @@ public interface EntityContainer extends Entity {
 	 * @model containment="true" resolveProxies="true"
 	 * @generated
 	 */
-	List<EntityNameable> getContents();
+	List<EntityIdentifiable> getContents();
 
 	/**
 	 * Returns the value of the '<em><b>Name</b></em>' attribute.

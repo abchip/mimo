@@ -15,9 +15,6 @@ import java.util.concurrent.ThreadFactory;
 import javax.annotation.PostConstruct;
 import javax.inject.Inject;
 
-import org.abchip.mimo.resource.ResourceReader;
-import org.abchip.mimo.resource.ResourceWriter;
-import org.abchip.mimo.resource.ResourceManager;
 import org.abchip.mimo.server.Job;
 import org.abchip.mimo.server.JobLog;
 import org.abchip.mimo.server.JobLogEntry;
@@ -31,19 +28,17 @@ import org.abchip.mimo.util.ThreadManager;
 public class BaseJobLogManagerImpl implements JobLogManager {
 
 	@Inject
-	private ResourceManager resourceManager;
-	@Inject
 	private JobManager jobManager;
 	@Inject
 	private ThreadManager threadManager;
-	
+
 	private ExecutorService jobLogExecutor;
-	
+
 	@PostConstruct
 	private void init() {
-		jobLogExecutor = Executors.newCachedThreadPool(new JobLogThreadFactory(threadManager));		
+		jobLogExecutor = Executors.newCachedThreadPool(new JobLogThreadFactory(threadManager));
 	}
-	
+
 	@Override
 	public void info(Job job, String message) {
 		addEntry(job, 10, message);
@@ -86,9 +81,9 @@ public class BaseJobLogManagerImpl implements JobLogManager {
 				jobLog.getEntries().add(entry);
 
 				// save
-				ResourceWriter<JobLog> jobLogWriter = resourceManager.getResourceWriter(job.getContext()
-						, JobLog.class);
-				jobLogWriter.create(jobLog, true);
+				// ResourceWriter<JobLog> jobLogWriter =
+				// resourceManager.getResourceWriter(job.getContext(), JobLog.class);
+				// jobLogWriter.create(jobLog, true);
 			}
 		};
 	}
@@ -103,7 +98,6 @@ public class BaseJobLogManagerImpl implements JobLogManager {
 		return jobLog;
 	}
 
-
 	@Override
 	public JobLog lookup(String contextID, JobReference jobReference) {
 		return lookup(contextID, jobReference.getJobName(), jobReference.getJobUser(), jobReference.getJobNumber());
@@ -111,26 +105,27 @@ public class BaseJobLogManagerImpl implements JobLogManager {
 
 	@Override
 	public JobLog lookup(String contextID, String name, String user, int number) {
-		Job jobCaller = jobManager.lookup(contextID);
+//		Job jobCaller = jobManager.lookup(contextID);
 
 		Job jobTarget = jobManager.lookup(contextID, name, user, number);
 		if (jobTarget == null)
 			return null;
 
-		ResourceReader<JobLog> jobLogReader = resourceManager.getResourceReader(jobCaller.getContext(), JobLog.class);
-		JobLog jobLog = jobLogReader.lookup(jobTarget.getJobID());
+		// ResourceReader<JobLog> jobLogReader =
+		// resourceManager.getResourceReader(jobCaller.getContext(), JobLog.class);
+		// JobLog jobLog = jobLogReader.lookup(jobTarget.getJobID());
 
-		return jobLog;
+		return null;
 	}
-	
+
 	private class JobLogThreadFactory implements ThreadFactory {
 
 		private ThreadManager threadManager;
-		
+
 		public JobLogThreadFactory(ThreadManager threadManager) {
 			this.threadManager = threadManager;
 		}
-		
+
 		@Override
 		public Thread newThread(Runnable runnable) {
 			org.abchip.mimo.util.Thread thread = threadManager.createThread("job-logger", runnable);

@@ -268,17 +268,17 @@ public class TestPackageImpl extends EPackageImpl implements TestPackage {
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
-		objectAEClass.getESuperTypes().add(theEntityPackage.getEntityNameable());
-		objectBEClass.getESuperTypes().add(theEntityPackage.getEntityNameable());
+		objectAEClass.getESuperTypes().add(theEntityPackage.getEntityIdentifiable());
+		objectBEClass.getESuperTypes().add(theEntityPackage.getEntityIdentifiable());
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(objectAEClass, ObjectA.class, "ObjectA", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getObjectA_Name(), ecorePackage.getEString(), "name", null, 0, 1, ObjectA.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getObjectA_Name(), ecorePackage.getEString(), "name", null, 1, 1, ObjectA.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getObjectA_Text(), ecorePackage.getEString(), "text", null, 0, 1, ObjectA.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getObjectA_ObjectB(), this.getObjectB(), null, "objectB", null, 1, 1, ObjectA.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(objectBEClass, ObjectB.class, "ObjectB", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getObjectB_Name(), ecorePackage.getEString(), "name", null, 1, 1, ObjectB.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getObjectB_Name(), ecorePackage.getEString(), "name", null, 1, 1, ObjectB.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getObjectB_Enum1(), this.getEnum1(), "enum1", null, 1, 1, ObjectB.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Initialize enums and add enum literals

@@ -388,7 +388,7 @@ public class HttpAuthenticationManagerImpl implements AuthenticationManager {
 			return null;
 
 		AuthenticationUserPassword authenticationUserPassword = ContextFactory.eINSTANCE.createAuthenticationUserPassword();
-		authenticationUserPassword.setUser(user.getName());
+		authenticationUserPassword.setUser(user.getUser());
 		authenticationUserPassword.setPassword(user.getPassword());
 		Context context = this.login(contextId, authenticationUserPassword);
 

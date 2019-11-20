@@ -75,7 +75,7 @@ public interface SchemaPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SCHEMA__COLUMNS = EntityPackage.ENTITY_NAMEABLE_FEATURE_COUNT + 0;
+	int SCHEMA__COLUMNS = EntityPackage.ENTITY_IDENTIFIABLE_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -84,7 +84,7 @@ public interface SchemaPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SCHEMA__NAME = EntityPackage.ENTITY_NAMEABLE_FEATURE_COUNT + 1;
+	int SCHEMA__NAME = EntityPackage.ENTITY_IDENTIFIABLE_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Schema</em>' class.
@@ -93,7 +93,7 @@ public interface SchemaPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SCHEMA_FEATURE_COUNT = EntityPackage.ENTITY_NAMEABLE_FEATURE_COUNT + 2;
+	int SCHEMA_FEATURE_COUNT = EntityPackage.ENTITY_IDENTIFIABLE_FEATURE_COUNT + 2;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.ui.schema.impl.SchemaColumnImpl <em>Column</em>}' class.

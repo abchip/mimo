@@ -5,9 +5,7 @@ package org.abchip.mimo.ui.menu.impl;
 
 import java.util.Collection;
 import java.util.List;
-
-import org.abchip.mimo.entity.impl.EntityNameableImpl;
-
+import org.abchip.mimo.entity.impl.EntityIdentifiableImpl;
 import org.abchip.mimo.ui.DataNode;
 
 import org.abchip.mimo.ui.menu.ContextMenu;
@@ -38,7 +36,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *
  * @generated
  */
-public class ContextMenuImpl extends EntityNameableImpl implements ContextMenu {
+public class ContextMenuImpl extends EntityIdentifiableImpl implements ContextMenu {
 	/**
 	 * 
 	 */

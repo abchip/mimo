@@ -419,14 +419,13 @@ public class GrammarPackageImpl extends EPackageImpl implements GrammarPackage {
 		// Add supertypes to classes
 		adjectiveEClass.getESuperTypes().add(this.getWord());
 		dialogEClass.getESuperTypes().add(theEntityPackage.getEntity());
-		grammarEClass.getESuperTypes().add(theEntityPackage.getEntityNameable());
-		grammarEClass.getESuperTypes().add(theEntityPackage.getTextable());
+		grammarEClass.getESuperTypes().add(theEntityPackage.getEntityIdentifiable());
 		nounEClass.getESuperTypes().add(this.getWord());
 		predicateEClass.getESuperTypes().add(theEntityPackage.getEntity());
 		pronounEClass.getESuperTypes().add(this.getWord());
 		sentenceEClass.getESuperTypes().add(theEntityPackage.getEntity());
 		verbEClass.getESuperTypes().add(this.getWord());
-		wordEClass.getESuperTypes().add(theEntityPackage.getEntityNameable());
+		wordEClass.getESuperTypes().add(theEntityPackage.getEntityIdentifiable());
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(adjectiveEClass, Adjective.class, "Adjective", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);

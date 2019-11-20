@@ -5,7 +5,7 @@ package org.abchip.mimo.ui.toolbar;
 
 import java.util.List;
 
-import org.abchip.mimo.entity.EntityNameable;
+import org.abchip.mimo.entity.EntityIdentifiable;
 
 /**
  * <!-- begin-user-doc -->
@@ -24,7 +24,7 @@ import org.abchip.mimo.entity.EntityNameable;
  * @model
  * @generated
  */
-public interface Toolbar extends EntityNameable {
+public interface Toolbar extends EntityIdentifiable {
 	/**
 	 * Returns the value of the '<em><b>Elements</b></em>' containment reference list.
 	 * The list contents are of type {@link org.abchip.mimo.ui.toolbar.ToolbarView}.
@@ -55,7 +55,6 @@ public interface Toolbar extends EntityNameable {
 	 * @model id="true" required="true"
 	 * @generated
 	 */
-	@Override
 	String getName();
 
 	/**

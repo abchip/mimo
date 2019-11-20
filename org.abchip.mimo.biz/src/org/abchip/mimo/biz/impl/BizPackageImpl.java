@@ -1223,7 +1223,7 @@ public class BizPackageImpl extends EPackageImpl implements BizPackage {
 		bizEntityTypeEClass_E.getEBounds().add(g1);
 
 		// Add supertypes to classes
-		bizEntityEClass.getESuperTypes().add(theEntityPackage_1.getEntityNameable());
+		bizEntityEClass.getESuperTypes().add(theEntityPackage_1.getEntityIdentifiable());
 		bizEntityEClass.getESuperTypes().add(theEntityPackage_1.getEntityInfo());
 		bizEntityNoteEClass.getESuperTypes().add(this.getBizEntity());
 		bizEntityNoteDataEClass.getESuperTypes().add(this.getBizEntity());
@@ -1270,7 +1270,7 @@ public class BizPackageImpl extends EPackageImpl implements BizPackage {
 		initEReference(getBizProviderConfig_SystemUser(), this.getBizProviderUser(), null, "systemUser", null, 0, 1, BizProviderConfig.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(bizProviderUserEClass, BizProviderUser.class, "BizProviderUser", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getBizProviderUser_User(), ecorePackage.getEString(), "user", null, 1, 1, BizProviderUser.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getBizProviderUser_User(), ecorePackage.getEString(), "user", null, 1, 1, BizProviderUser.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getBizProviderUser_Password(), ecorePackage.getEString(), "password", null, 1, 1, BizProviderUser.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Initialize enums and add enum literals

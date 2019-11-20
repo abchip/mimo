@@ -314,7 +314,7 @@ public class ClassificationPackageImpl extends EPackageImpl implements Classific
 
 		op = addEOperation(classifierEClass, this.getEvaluator(), "buildEvaluator", 1, 1, IS_UNIQUE, IS_ORDERED);
 		t1 = addETypeParameter(op, "E");
-		g1 = createEGenericType(theEntityPackage.getEntityNameable());
+		g1 = createEGenericType(theEntityPackage.getEntityIdentifiable());
 		t1.getEBounds().add(g1);
 		g1 = createEGenericType(ecorePackage.getEJavaClass());
 		g2 = createEGenericType(t1);

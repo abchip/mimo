@@ -8,7 +8,7 @@
 package org.abchip.mimo.biz;
 
 import org.abchip.mimo.entity.EntityInfo;
-import org.abchip.mimo.entity.EntityNameable;
+import org.abchip.mimo.entity.EntityIdentifiable;
 
 /**
  * <!-- begin-user-doc -->
@@ -20,6 +20,6 @@ import org.abchip.mimo.entity.EntityNameable;
  * @model abstract="true"
  * @generated
  */
-public interface BizEntity extends EntityNameable, EntityInfo {
+public interface BizEntity extends EntityIdentifiable, EntityInfo {
 
 } // BizEntity
