@@ -910,6 +910,10 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 		domainEClass.getESuperTypes().add(this.getEntity());
 		entityContainerEClass.getESuperTypes().add(this.getEntity());
 		entityEnumEClass.getESuperTypes().add(this.getEntityIdentifiable());
+<<<<<<< HEAD
+=======
+		entityEnumEClass.getESuperTypes().add(this.getTextable());
+>>>>>>> branch 'master' of https://github.com/abchip/mimo.git
 		entityIdentifiableEClass.getESuperTypes().add(this.getEntity());
 		g1 = createEGenericType(theJavaPackage.getJavaIterator());
 		g2 = createEGenericType(entityIteratorEClass_E);
@@ -921,9 +925,17 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 		entityIteratorEClass.getEGenericSuperTypes().add(g1);
 		entityTypedEClass.getESuperTypes().add(this.getEntityIdentifiable());
 		entityTypeEClass.getESuperTypes().add(this.getEntityIdentifiable());
+<<<<<<< HEAD
+=======
+		entityTypeEClass.getESuperTypes().add(this.getTextable());
+>>>>>>> branch 'master' of https://github.com/abchip/mimo.git
 		facetEClass.getESuperTypes().add(this.getEntity());
 		frameEClass.getESuperTypes().add(this.getEntityIdentifiable());
 		slotEClass.getESuperTypes().add(this.getEntityIdentifiable());
+<<<<<<< HEAD
+=======
+		slotEClass.getESuperTypes().add(this.getTextable());
+>>>>>>> branch 'master' of https://github.com/abchip/mimo.git
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(cardinalityEClass, Cardinality.class, "Cardinality", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);

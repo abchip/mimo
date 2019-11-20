@@ -9,6 +9,10 @@ package org.abchip.mimo.language;
 
 import java.util.List;
 import org.abchip.mimo.entity.EntityIdentifiable;
+<<<<<<< HEAD
+=======
+import org.abchip.mimo.entity.Textable;
+>>>>>>> branch 'master' of https://github.com/abchip/mimo.git
 
 /**
  * <!-- begin-user-doc -->
@@ -32,7 +36,11 @@ import org.abchip.mimo.entity.EntityIdentifiable;
  * @model
  * @generated
  */
+<<<<<<< HEAD
 public interface Language extends EntityIdentifiable {
+=======
+public interface Language extends EntityIdentifiable, Textable {
+>>>>>>> branch 'master' of https://github.com/abchip/mimo.git
 	/**
 	 * Returns the value of the '<em><b>Iso 639 1</b></em>' attribute.
 	 * <!-- begin-user-doc -->

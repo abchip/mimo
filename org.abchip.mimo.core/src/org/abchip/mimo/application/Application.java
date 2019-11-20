@@ -13,6 +13,10 @@ import org.abchip.mimo.context.Context;
 import org.abchip.mimo.context.ContextDescription;
 import org.abchip.mimo.context.ContextRoot;
 import org.abchip.mimo.entity.EntityIdentifiable;
+<<<<<<< HEAD
+=======
+import org.abchip.mimo.entity.Textable;
+>>>>>>> branch 'master' of https://github.com/abchip/mimo.git
 
 
 /**
@@ -39,7 +43,11 @@ import org.abchip.mimo.entity.EntityIdentifiable;
  * @model
  * @generated
  */
+<<<<<<< HEAD
 public interface Application extends EntityIdentifiable, Context {
+=======
+public interface Application extends EntityIdentifiable, Textable, Context {
+>>>>>>> branch 'master' of https://github.com/abchip/mimo.git
 
 	/**
 	 * Returns the value of the '<em><b>Commands</b></em>' containment reference list.

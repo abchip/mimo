@@ -294,6 +294,10 @@ public class AudioPackageImpl extends EPackageImpl implements AudioPackage {
 
 		// Add supertypes to classes
 		audioEClass.getESuperTypes().add(theEntityPackage.getEntityIdentifiable());
+<<<<<<< HEAD
+=======
+		audioEClass.getESuperTypes().add(theEntityPackage.getTextable());
+>>>>>>> branch 'master' of https://github.com/abchip/mimo.git
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(audioEClass, Audio.class, "Audio", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);

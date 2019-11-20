@@ -10,6 +10,10 @@ package org.abchip.mimo.context;
 
 import java.util.List;
 import org.abchip.mimo.entity.EntityIdentifiable;
+<<<<<<< HEAD
+=======
+import org.abchip.mimo.entity.Textable;
+>>>>>>> branch 'master' of https://github.com/abchip/mimo.git
 
 /**
  * <!-- begin-user-doc --> A representation of the model object '
@@ -28,7 +32,11 @@ import org.abchip.mimo.entity.EntityIdentifiable;
  * @model
  * @generated
  */
+<<<<<<< HEAD
 public interface MessageFile extends EntityIdentifiable {
+=======
+public interface MessageFile extends EntityIdentifiable, Textable {
+>>>>>>> branch 'master' of https://github.com/abchip/mimo.git
 	/**
 	 * Returns the value of the '<em><b>Messages</b></em>' containment reference list.
 	 * The list contents are of type {@link org.abchip.mimo.context.MessageDescription}.

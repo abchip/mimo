@@ -1075,7 +1075,13 @@ public class ContextPackageImpl extends EPackageImpl implements ContextPackage {
 		messageDescriptionEClass.getESuperTypes().add(theEntityPackage.getEntity());
 		messageDataFieldEClass.getESuperTypes().add(theEntityPackage.getEntity());
 		messageFileEClass.getESuperTypes().add(theEntityPackage.getEntityIdentifiable());
+<<<<<<< HEAD
 		userProfileEClass.getESuperTypes().add(theEntityPackage.getEntityIdentifiable());
+=======
+		messageFileEClass.getESuperTypes().add(theEntityPackage.getTextable());
+		userProfileEClass.getESuperTypes().add(theEntityPackage.getEntityIdentifiable());
+		userProfileEClass.getESuperTypes().add(theEntityPackage.getTextable());
+>>>>>>> branch 'master' of https://github.com/abchip/mimo.git
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(adapterFactoryEClass, AdapterFactory.class, "AdapterFactory", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);

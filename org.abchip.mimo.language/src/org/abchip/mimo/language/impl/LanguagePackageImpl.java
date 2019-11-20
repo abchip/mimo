@@ -471,6 +471,10 @@ public class LanguagePackageImpl extends EPackageImpl implements LanguagePackage
 
 		// Add supertypes to classes
 		languageEClass.getESuperTypes().add(theEntityPackage.getEntityIdentifiable());
+<<<<<<< HEAD
+=======
+		languageEClass.getESuperTypes().add(theEntityPackage.getTextable());
+>>>>>>> branch 'master' of https://github.com/abchip/mimo.git
 		EGenericType g1 = createEGenericType(theContextPackage.getRegistry());
 		EGenericType g2 = createEGenericType(this.getLanguageParser());
 		g1.getETypeArguments().add(g2);

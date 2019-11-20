@@ -32,7 +32,11 @@ package org.abchip.mimo.entity;
  * @model abstract="true"
  * @generated
  */
+<<<<<<< HEAD
 public interface Slot extends EntityIdentifiable {
+=======
+public interface Slot extends EntityIdentifiable, Textable {
+>>>>>>> branch 'master' of https://github.com/abchip/mimo.git
 
 	public final static String NS_PREFIX_SLOT = EntityPackage.eNS_PREFIX + "-slot";
 	public final static String NS_PREFIX_DOMAIN = EntityPackage.eNS_PREFIX + "-domain";

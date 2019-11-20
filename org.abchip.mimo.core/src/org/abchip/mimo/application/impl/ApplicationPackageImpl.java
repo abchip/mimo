@@ -868,6 +868,10 @@ public class ApplicationPackageImpl extends EPackageImpl implements ApplicationP
 
 		// Add supertypes to classes
 		applicationEClass.getESuperTypes().add(theEntityPackage.getEntityIdentifiable());
+<<<<<<< HEAD
+=======
+		applicationEClass.getESuperTypes().add(theEntityPackage.getTextable());
+>>>>>>> branch 'master' of https://github.com/abchip/mimo.git
 		applicationEClass.getESuperTypes().add(theContextPackage.getContext());
 		applicationComponentEClass.getESuperTypes().add(theEntityPackage.getEntityIdentifiable());
 		applicationComponentEClass.getESuperTypes().add(theContextPackage.getContext());

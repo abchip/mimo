@@ -420,6 +420,10 @@ public class GrammarPackageImpl extends EPackageImpl implements GrammarPackage {
 		adjectiveEClass.getESuperTypes().add(this.getWord());
 		dialogEClass.getESuperTypes().add(theEntityPackage.getEntity());
 		grammarEClass.getESuperTypes().add(theEntityPackage.getEntityIdentifiable());
+<<<<<<< HEAD
+=======
+		grammarEClass.getESuperTypes().add(theEntityPackage.getTextable());
+>>>>>>> branch 'master' of https://github.com/abchip/mimo.git
 		nounEClass.getESuperTypes().add(this.getWord());
 		predicateEClass.getESuperTypes().add(theEntityPackage.getEntity());
 		pronounEClass.getESuperTypes().add(this.getWord());

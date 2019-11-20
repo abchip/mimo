@@ -643,6 +643,28 @@ public interface EntityPackage extends EPackage {
 	 * @ordered
 	 */
 	int SLOT_FEATURE_COUNT = ENTITY_IDENTIFIABLE_FEATURE_COUNT + 10;
+<<<<<<< HEAD
+=======
+
+	/**
+	 * The meta object id for the '{@link org.abchip.mimo.entity.Textable <em>Textable</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.abchip.mimo.entity.Textable
+	 * @see org.abchip.mimo.entity.impl.EntityPackageImpl#getTextable()
+	 * @generated
+	 */
+	int TEXTABLE = 14;
+
+	/**
+	 * The number of structural features of the '<em>Textable</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TEXTABLE_FEATURE_COUNT = 0;
+>>>>>>> branch 'master' of https://github.com/abchip/mimo.git
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.entity.SerializationType <em>Serialization Type</em>}' enum.

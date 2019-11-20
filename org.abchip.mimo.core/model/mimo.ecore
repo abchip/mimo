@@ -4,7 +4,11 @@
   <eClassifiers xsi:type="ecore:EClass" name="Mimo"/>
   <eSubpackages name="application" nsURI="http://www.abchip.org/mimo/application"
       nsPrefix="mimo-app">
+<<<<<<< HEAD
     <eClassifiers xsi:type="ecore:EClass" name="Application" eSuperTypes="#//entity/EntityIdentifiable #//context/Context">
+=======
+    <eClassifiers xsi:type="ecore:EClass" name="Application" eSuperTypes="#//entity/EntityIdentifiable #//entity/Textable #//context/Context">
+>>>>>>> branch 'master' of https://github.com/abchip/mimo.git
       <eStructuralFeatures xsi:type="ecore:EReference" name="commands" upperBound="-1"
           eType="#//application/ServiceCommandProvider" containment="true"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="components" upperBound="-1"
@@ -522,7 +526,11 @@
       </eStructuralFeatures>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EDataType" name="MessageException" instanceClassName="org.abchip.mimo.context.MessageException"/>
+<<<<<<< HEAD
     <eClassifiers xsi:type="ecore:EClass" name="MessageFile" eSuperTypes="#//entity/EntityIdentifiable">
+=======
+    <eClassifiers xsi:type="ecore:EClass" name="MessageFile" eSuperTypes="#//entity/EntityIdentifiable #//entity/Textable">
+>>>>>>> branch 'master' of https://github.com/abchip/mimo.git
       <eOperations name="lookup" lowerBound="1" eType="#//context/MessageDescription">
         <eTypeParameters name="E">
           <eBounds eClassifier="#//java/JavaEnum"/>
@@ -572,7 +580,11 @@
     <eClassifiers xsi:type="ecore:EEnum" name="UserClass">
       <eLiterals name="User" value="10" literal="USR"/>
     </eClassifiers>
+<<<<<<< HEAD
     <eClassifiers xsi:type="ecore:EClass" name="UserProfile" eSuperTypes="#//entity/EntityIdentifiable">
+=======
+    <eClassifiers xsi:type="ecore:EClass" name="UserProfile" eSuperTypes="#//entity/EntityIdentifiable #//entity/Textable">
+>>>>>>> branch 'master' of https://github.com/abchip/mimo.git
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="jobDescription" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1"
           eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
@@ -745,7 +757,11 @@
           eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
           iD="true"/>
     </eClassifiers>
+<<<<<<< HEAD
     <eClassifiers xsi:type="ecore:EClass" name="EntityEnum" abstract="true" eSuperTypes="#//entity/EntityIdentifiable">
+=======
+    <eClassifiers xsi:type="ecore:EClass" name="EntityEnum" abstract="true" eSuperTypes="#//entity/EntityIdentifiable #//entity/Textable">
+>>>>>>> branch 'master' of https://github.com/abchip/mimo.git
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1"
           eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
           iD="true"/>
@@ -806,7 +822,11 @@
         <eGenericType eTypeParameter="#//entity/EntityTyped/T"/>
       </eOperations>
     </eClassifiers>
+<<<<<<< HEAD
     <eClassifiers xsi:type="ecore:EClass" name="EntityType" abstract="true" eSuperTypes="#//entity/EntityIdentifiable">
+=======
+    <eClassifiers xsi:type="ecore:EClass" name="EntityType" abstract="true" eSuperTypes="#//entity/EntityIdentifiable #//entity/Textable">
+>>>>>>> branch 'master' of https://github.com/abchip/mimo.git
       <eTypeParameters name="E">
         <eBounds eClassifier="#//entity/EntityTyped">
           <eTypeArguments/>
@@ -885,7 +905,11 @@
       <eLiterals name="XML_Metadata_Interchange" value="10" literal="XMI"/>
       <eLiterals name="JavaScript_Object_Notation" value="20" literal="JSON"/>
     </eClassifiers>
+<<<<<<< HEAD
     <eClassifiers xsi:type="ecore:EClass" name="Slot" abstract="true" eSuperTypes="#//entity/EntityIdentifiable">
+=======
+    <eClassifiers xsi:type="ecore:EClass" name="Slot" abstract="true" eSuperTypes="#//entity/EntityIdentifiable #//entity/Textable">
+>>>>>>> branch 'master' of https://github.com/abchip/mimo.git
       <eOperations name="getValue" eType="#//entity/Entity">
         <eParameters name="nsPrefix" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       </eOperations>

@@ -1041,6 +1041,10 @@ public class ServerPackageImpl extends EPackageImpl implements ServerPackage {
 		jobEClass.getESuperTypes().add(theEntityPackage.getEntityIdentifiable());
 		jobCapabilityEClass.getESuperTypes().add(theContextPackage.getCapability());
 		jobDescriptionEClass.getESuperTypes().add(theEntityPackage.getEntityIdentifiable());
+<<<<<<< HEAD
+=======
+		jobDescriptionEClass.getESuperTypes().add(theEntityPackage.getTextable());
+>>>>>>> branch 'master' of https://github.com/abchip/mimo.git
 		jobLogEClass.getESuperTypes().add(theEntityPackage.getEntity());
 		jobLogEntryEClass.getESuperTypes().add(theEntityPackage.getEntity());
 		jobMessageEClass.getESuperTypes().add(theEntityPackage.getEntity());
