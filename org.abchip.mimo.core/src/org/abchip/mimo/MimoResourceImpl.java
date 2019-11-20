@@ -13,6 +13,7 @@ import org.abchip.mimo.entity.EntityIdentifiable;
 import org.abchip.mimo.entity.Frame;
 import org.abchip.mimo.resource.Resource;
 import org.abchip.mimo.resource.ResourceManager;
+import org.abchip.mimo.resource.ResourceProviderRegistry;
 import org.abchip.mimo.resource.ResourceReader;
 import org.abchip.mimo.util.URIs;
 import org.eclipse.emf.common.notify.NotificationChain;
@@ -40,16 +41,17 @@ public class MimoResourceImpl<E extends EntityIdentifiable> extends ResourceImpl
 		if (getURI().hasQuery())
 			tenant = URIs.qINSTANCE.parseParameter(getURI().query()).get("tenant");
 
-		ResourceManager resourceManager = this.getContext().get(ResourceManager.class);
-
 		if (Frame.class.getSimpleName().equals(frameName)) {
 			this.resource = EMFResourceProviderImpl.internalGetResource(this.getContext(), null, tenant);
 		} else {
+			ResourceManager resourceManager = this.getContext().get(ResourceManager.class);
 			Frame<E> frame = (Frame<E>) resourceManager.getFrame(getContext(), frameName);
 			if (frame.isEnum()) {
 				this.resource = EMFResourceProviderImpl.internalGetResource(this.getContext(), frame, tenant);
-			} else
-				this.resource = resourceManager.getResourceProvider(this.getContext(), frame).getResource(this.getContext(), frame, tenant);
+			} else {
+				ResourceProviderRegistry resourceProviderRegistry = this.getContext().get(ResourceProviderRegistry.class);
+				this.resource = resourceProviderRegistry.getResourceProvider(this.getContext(), frame).getResource(this.getContext(), frame, tenant);
+			}
 		}
 	}
 

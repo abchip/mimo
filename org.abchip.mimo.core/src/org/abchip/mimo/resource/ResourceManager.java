@@ -87,30 +87,6 @@ public interface ResourceManager {
 	 * @model contextRequired="true" klassRequired="true"
 	 * @generated
 	 */
-	<E extends EntityIdentifiable> ResourceProvider getResourceProvider(Context context, Class<E> klass);
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model contextRequired="true" frameRequired="true"
-	 * @generated
-	 */
-	<E extends EntityIdentifiable> ResourceProvider getResourceProvider(Context context, Frame<E> frame);
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model contextRequired="true" frameRequired="true"
-	 * @generated
-	 */
-	<E extends EntityIdentifiable> ResourceProvider getResourceProvider(Context context, String frame);
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model contextRequired="true" klassRequired="true"
-	 * @generated
-	 */
 	<E extends EntityIdentifiable> ResourceReader<E> getResourceReader(Context context, Class<E> klass);
 
 	/**
@@ -224,29 +200,5 @@ public interface ResourceManager {
 	 * @generated
 	 */
 	<E extends EntityIdentifiable> void registerListener(Context context, String frame, ResourceListener<E> listener);
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model contextRequired="true" klassRequired="true" providerRequired="true"
-	 * @generated
-	 */
-	<E extends EntityIdentifiable> void registerProvider(Context context, Class<E> klass, ResourceProvider provider);
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model contextRequired="true" frameRequired="true" providerRequired="true"
-	 * @generated
-	 */
-	<E extends EntityIdentifiable> void registerProvider(Context context, Frame<E> frame, ResourceProvider provider);
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model contextRequired="true" frameRequired="true" providerRequired="true"
-	 * @generated
-	 */
-	<E extends EntityIdentifiable> void registerProvider(Context context, String frame, ResourceProvider provider);
 
 } // ResourceManager

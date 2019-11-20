@@ -215,17 +215,6 @@ public class BaseApplicationStarter {
 
 		println("+service " + serviceRef);
 
-		// registry
-		if (serviceRef instanceof ServiceRegistry) {
-			ServiceRegistry serviceRegistry = (ServiceRegistry) serviceRef;
-			// service entries
-			for (ServiceRegistryEntry serviceChildRef : serviceRegistry.getEntries()) {
-				messageLevel++;
-				registerService(component, serviceChildRef);
-				messageLevel--;
-			}
-		}
-
 		// registry entry
 		Dictionary<String, String> dictionary = new Hashtable<String, String>();
 		if (serviceRef instanceof ServiceRegistryEntry) {
@@ -253,6 +242,18 @@ public class BaseApplicationStarter {
 
 		registerService(component, interfaceName, service, remoteExport, dictionary);
 
+		// registry
+		if (serviceRef instanceof ServiceRegistry) {
+			ServiceRegistry serviceRegistry = (ServiceRegistry) serviceRef;
+			// service entries
+			for (ServiceRegistryEntry serviceChildRef : serviceRegistry.getEntries()) {
+				messageLevel++;
+				registerService(component, serviceChildRef);
+				messageLevel--;
+			}
+		}
+
+		// servlet
 		if (serviceRef instanceof ServiceServlet) {
 			ServiceServlet serviceServlet = (ServiceServlet) serviceRef;
 

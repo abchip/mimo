@@ -21,7 +21,7 @@ import org.abchip.mimo.entity.Frame;
 import org.abchip.mimo.resource.Resource;
 import org.abchip.mimo.resource.ResourceConfig;
 import org.abchip.mimo.resource.ResourceFactory;
-import org.abchip.mimo.resource.ResourceManager;
+import org.abchip.mimo.resource.ResourceProviderRegistry;
 import org.abchip.mimo.resource.impl.ResourceProviderImpl;
 
 public class EMFResourceProviderImpl extends ResourceProviderImpl {
@@ -29,7 +29,7 @@ public class EMFResourceProviderImpl extends ResourceProviderImpl {
 	@Inject
 	private ContextRoot contextRoot;
 	@Inject
-	private ResourceManager resourceManager;
+	private ResourceProviderRegistry resourceProviderRegistry;
 
 	private static ResourceConfig EMF_RESOURCE_CONFIG;
 
@@ -40,8 +40,8 @@ public class EMFResourceProviderImpl extends ResourceProviderImpl {
 		EMF_RESOURCE_CONFIG.setLockSupport(true);
 		EMF_RESOURCE_CONFIG.setOrderSupport(true);
 
-		resourceManager.registerProvider(contextRoot, Frame.class, this);
-		resourceManager.registerProvider(contextRoot, EntityEnum.class, this);
+		resourceProviderRegistry.registerProvider(contextRoot, Frame.class, this);
+		resourceProviderRegistry.registerProvider(contextRoot, EntityEnum.class, this);
 	}
 
 	private static boolean isFrame(Frame<?> frame) {

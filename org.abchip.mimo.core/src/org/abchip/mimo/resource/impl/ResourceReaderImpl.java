@@ -29,8 +29,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- * <li>{@link org.abchip.mimo.resource.impl.ResourceReaderImpl#getNotifier
- * <em>Notifier</em>}</li>
+ *   <li>{@link org.abchip.mimo.resource.impl.ResourceReaderImpl#getNotifier <em>Notifier</em>}</li>
  * </ul>
  *
  * @generated
@@ -39,7 +38,6 @@ public abstract class ResourceReaderImpl<E extends EntityIdentifiable> extends M
 	/**
 	 * The cached value of the '{@link #getNotifier() <em>Notifier</em>}' reference.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @see #getNotifier()
 	 * @generated
 	 * @ordered
@@ -48,7 +46,6 @@ public abstract class ResourceReaderImpl<E extends EntityIdentifiable> extends M
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	protected ResourceReaderImpl() {
@@ -57,7 +54,6 @@ public abstract class ResourceReaderImpl<E extends EntityIdentifiable> extends M
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
@@ -67,15 +63,14 @@ public abstract class ResourceReaderImpl<E extends EntityIdentifiable> extends M
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public ResourceNotifier<E> getNotifier() {
-		if (notifier != null && ((EObject) notifier).eIsProxy()) {
-			InternalEObject oldNotifier = (InternalEObject) notifier;
-			notifier = (ResourceNotifier<E>) eResolveProxy(oldNotifier);
+		if (notifier != null && ((EObject)notifier).eIsProxy()) {
+			InternalEObject oldNotifier = (InternalEObject)notifier;
+			notifier = (ResourceNotifier<E>)eResolveProxy(oldNotifier);
 			if (notifier != oldNotifier) {
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ResourcePackage.RESOURCE_READER__NOTIFIER, oldNotifier, notifier));
@@ -86,7 +81,6 @@ public abstract class ResourceReaderImpl<E extends EntityIdentifiable> extends M
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public ResourceNotifier<E> basicGetNotifier() {
@@ -95,7 +89,6 @@ public abstract class ResourceReaderImpl<E extends EntityIdentifiable> extends M
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
@@ -234,61 +227,56 @@ public abstract class ResourceReaderImpl<E extends EntityIdentifiable> extends M
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case ResourcePackage.RESOURCE_READER__NOTIFIER:
-			if (resolve)
-				return getNotifier();
-			return basicGetNotifier();
+			case ResourcePackage.RESOURCE_READER__NOTIFIER:
+				if (resolve) return getNotifier();
+				return basicGetNotifier();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case ResourcePackage.RESOURCE_READER__NOTIFIER:
-			setNotifier((ResourceNotifier<E>) newValue);
-			return;
+			case ResourcePackage.RESOURCE_READER__NOTIFIER:
+				setNotifier((ResourceNotifier<E>)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case ResourcePackage.RESOURCE_READER__NOTIFIER:
-			setNotifier((ResourceNotifier<E>) null);
-			return;
+			case ResourcePackage.RESOURCE_READER__NOTIFIER:
+				setNotifier((ResourceNotifier<E>)null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case ResourcePackage.RESOURCE_READER__NOTIFIER:
-			return notifier != null;
+			case ResourcePackage.RESOURCE_READER__NOTIFIER:
+				return notifier != null;
 		}
 		return super.eIsSet(featureID);
 	}

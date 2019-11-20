@@ -8,14 +8,11 @@
  */
 package org.abchip.mimo.core.base;
 
-import java.util.Dictionary;
 import java.util.HashMap;
-import java.util.Hashtable;
 import java.util.Map;
 
 import javax.annotation.PostConstruct;
 
-import org.abchip.mimo.MimoConstants;
 import org.abchip.mimo.MimoResourceImpl;
 import org.abchip.mimo.context.Context;
 import org.abchip.mimo.context.LockManager;
@@ -28,12 +25,11 @@ import org.abchip.mimo.resource.ResourceFactory;
 import org.abchip.mimo.resource.ResourceListener;
 import org.abchip.mimo.resource.ResourceManager;
 import org.abchip.mimo.resource.ResourceNotifier;
-import org.abchip.mimo.resource.ResourceProvider;
 import org.abchip.mimo.resource.ResourceReader;
 import org.abchip.mimo.resource.ResourceSerializer;
 import org.abchip.mimo.resource.ResourceWriter;
 
-public class BaseResourceManagerImpl extends BaseService implements ResourceManager {
+public class BaseResourceManagerImpl extends BaseResource implements ResourceManager {
 
 	private Map<String, ResourceNotifier<?>> notifiers = null;
 
@@ -65,45 +61,22 @@ public class BaseResourceManagerImpl extends BaseService implements ResourceMana
 
 	@Override
 	public <E extends EntityIdentifiable> Frame<E> getFrame(Context context, Class<E> klass) {
-		return getFrame(context, klass, null);
+		return super.getFrame(context, klass);
 	}
 
-	@SuppressWarnings("unchecked")
 	@Override
 	public <E extends EntityIdentifiable> Frame<E> getFrame(Context context, Class<E> klass, String tenant) {
-		return (Frame<E>) getFrame(context, klass.getSimpleName(), tenant);
+		return super.getFrame(context, klass, tenant);
 	}
 
 	@Override
 	public Frame<?> getFrame(Context context, String frame) {
-		return getFrame(context, frame, null);
+		return super.getFrame(context, frame);
 	}
 
 	@Override
 	public Frame<?> getFrame(Context context, String frame, String tenant) {
-		MimoResourceImpl<Frame<?>> internal = getInternalResource(context, Frame.class.getSimpleName(), tenant);
-		return internal.getResource().read(frame, null, false);
-	}
-
-	@Override
-	public <E extends EntityIdentifiable> ResourceProvider getResourceProvider(Context context, Class<E> klass) {
-		return getResourceProvider(context, klass.getSimpleName());
-	}
-
-	@Override
-	public <E extends EntityIdentifiable> ResourceProvider getResourceProvider(Context context, String frameName) {
-
-		@SuppressWarnings("unchecked")
-		Frame<E> frame = (Frame<E>) this.getFrame(context, frameName);
-		if (frame == null)
-			return null;
-
-		return getResourceProvider(context, frame);
-	}
-
-	@Override
-	public <E extends EntityIdentifiable> ResourceProvider getResourceProvider(Context context, Frame<E> frame) {
-		return getProvider(context, frame);
+		return super.getFrame(context, frame, tenant);
 	}
 
 	@Override
@@ -212,46 +185,6 @@ public class BaseResourceManagerImpl extends BaseService implements ResourceMana
 			notifier = prepareNotifier(context, frame);
 
 		notifier.registerListener(listener);
-	}
-
-	@Override
-	public <E extends EntityIdentifiable> void registerProvider(Context context, Class<E> klass, ResourceProvider provider) {
-		registerProvider(context, klass.getSimpleName(), provider);
-	}
-
-	@Override
-	public <E extends EntityIdentifiable> void registerProvider(Context context, Frame<E> frame, ResourceProvider provider) {
-		registerProvider(context, frame.getName(), provider);
-	}
-
-	@Override
-	public <E extends EntityIdentifiable> void registerProvider(Context context, String frameName, ResourceProvider provider) {
-		Dictionary<String, String> dictionary = new Hashtable<String, String>();
-		dictionary.put(MimoConstants.DOMAIN_NAME, "mimo");
-		dictionary.put(MimoConstants.PROVIDER_FRAME, frameName);
-
-		this.getContextRoot().set(ResourceProvider.class.getName(), provider, false, dictionary);
-	}
-
-	private ResourceProvider getProvider(Context context, Frame<?> frame) {
-		String filter = "(" + MimoConstants.PROVIDER_FRAME + "=" + frame.getName() + ")";
-
-		ResourceProvider resourceProvider = null;
-
-		for (ResourceProvider rp : this.getContextRoot().getAll(ResourceProvider.class, filter)) {
-			resourceProvider = rp;
-			break;
-		}
-
-		if (resourceProvider == null) {
-			for (Frame<?> ako : frame.getSuperFrames()) {
-				resourceProvider = getProvider(context, ako);
-				if (resourceProvider != null)
-					break;
-			}
-		}
-
-		return resourceProvider;
 	}
 
 	@SuppressWarnings("unchecked")

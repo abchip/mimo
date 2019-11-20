@@ -18,7 +18,7 @@ import org.abchip.mimo.entity.Frame;
 import org.abchip.mimo.resource.Resource;
 import org.abchip.mimo.resource.ResourceConfig;
 import org.abchip.mimo.resource.ResourceFactory;
-import org.abchip.mimo.resource.ResourceManager;
+import org.abchip.mimo.resource.ResourceProviderRegistry;
 import org.abchip.mimo.resource.impl.ResourceProviderImpl;
 
 public class NIOResourceProviderImpl extends ResourceProviderImpl {
@@ -26,7 +26,7 @@ public class NIOResourceProviderImpl extends ResourceProviderImpl {
 	@Inject
 	private ContextRoot contextRoot;
 	@Inject
-	private ResourceManager resourceManager;
+	private ResourceProviderRegistry resourceProviderRegistry;
 
 	private NIOPathManager pathManager;
 
@@ -41,15 +41,15 @@ public class NIOResourceProviderImpl extends ResourceProviderImpl {
 
 		this.pathManager = new NIOPathManager(contextRoot.getContextDescription().getDataPath());
 
-		resourceManager.registerProvider(contextRoot, EntityIdentifiable.class, this);
+		resourceProviderRegistry.registerProvider(contextRoot, EntityIdentifiable.class, this);
 	}
 
 	@Override
 	public <E extends EntityIdentifiable> Resource<E> doGetResource(Context context, Frame<E> frame, String tenant) {
 
-		if(pathManager == null)
+		if (pathManager == null)
 			return null;
-		
+
 		Resource<E> resource = new NIOResourcempl<E>(context, frame, tenant, pathManager);
 		resource.setResourceConfig(this.resourceConfig);
 

@@ -27,7 +27,7 @@ import org.abchip.mimo.entity.Frame;
 import org.abchip.mimo.resource.Resource;
 import org.abchip.mimo.resource.ResourceConfig;
 import org.abchip.mimo.resource.ResourceFactory;
-import org.abchip.mimo.resource.ResourceManager;
+import org.abchip.mimo.resource.ResourceProviderRegistry;
 import org.abchip.mimo.resource.impl.ResourceProviderImpl;
 
 public class HttpResourceProviderImpl extends ResourceProviderImpl {
@@ -35,7 +35,7 @@ public class HttpResourceProviderImpl extends ResourceProviderImpl {
 	@Inject
 	private ContextRoot contextRoot;
 	@Inject
-	private ResourceManager resourceManager;
+	private ResourceProviderRegistry resourceProviderRegistry;
 
 	private ResourceConfig resourceConfig;
 
@@ -46,16 +46,16 @@ public class HttpResourceProviderImpl extends ResourceProviderImpl {
 		this.resourceConfig.setLockSupport(false);
 		this.resourceConfig.setOrderSupport(false);
 
-		resourceManager.registerProvider(contextRoot, BizEntity.class, this);
-		resourceManager.registerProvider(contextRoot, BizEntityTyped.class, this);
-		resourceManager.registerProvider(contextRoot, BizEntityType.class, this);
-		resourceManager.registerProvider(contextRoot, BizEntityNote.class, this);
+		resourceProviderRegistry.registerProvider(contextRoot, BizEntity.class, this);
+		resourceProviderRegistry.registerProvider(contextRoot, BizEntityTyped.class, this);
+		resourceProviderRegistry.registerProvider(contextRoot, BizEntityType.class, this);
+		resourceProviderRegistry.registerProvider(contextRoot, BizEntityNote.class, this);
 
-		resourceManager.registerProvider(contextRoot, EdiFrameSetup.class, this);
-		resourceManager.registerProvider(contextRoot, MessageType.class, this);
-		resourceManager.registerProvider(contextRoot, Message.class, this);
-		resourceManager.registerProvider(contextRoot, Transmission.class, this);
-		resourceManager.registerProvider(contextRoot, TransmissionType.class, this);
+		resourceProviderRegistry.registerProvider(contextRoot, EdiFrameSetup.class, this);
+		resourceProviderRegistry.registerProvider(contextRoot, MessageType.class, this);
+		resourceProviderRegistry.registerProvider(contextRoot, Message.class, this);
+		resourceProviderRegistry.registerProvider(contextRoot, Transmission.class, this);
+		resourceProviderRegistry.registerProvider(contextRoot, TransmissionType.class, this);
 	}
 
 	@Override
