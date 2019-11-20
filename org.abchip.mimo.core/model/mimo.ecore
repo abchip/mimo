@@ -991,14 +991,6 @@
     <eClassifiers xsi:type="ecore:EDataType" name="JavaURL" instanceClassName="java.net.URL"/>
     <eClassifiers xsi:type="ecore:EDataType" name="JavaWriter" instanceClassName="java.io.Writer"/>
   </eSubpackages>
-  <eSubpackages name="net" nsURI="http://www.abchip.org/mimo/net" nsPrefix="mimo-net">
-    <eClassifiers xsi:type="ecore:EClass" name="SocketConfig" eSuperTypes="#//entity/Entity">
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="address" lowerBound="1"
-          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="port" lowerBound="1"
-          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
-    </eClassifiers>
-  </eSubpackages>
   <eSubpackages name="resource" nsURI="http://www.abchip.org/mimo/resource" nsPrefix="mimo-resource">
     <eClassifiers xsi:type="ecore:EClass" name="Resource" abstract="true" eSuperTypes="#//entity/Entity">
       <eTypeParameters name="E">
@@ -1793,6 +1785,12 @@
       <eTypeParameters name="S">
         <eBounds eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
       </eTypeParameters>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="SocketConfig" eSuperTypes="#//entity/Entity">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="address" lowerBound="1"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="port" lowerBound="1"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="Streams" abstract="true" interface="true">
       <eOperations name="copy">

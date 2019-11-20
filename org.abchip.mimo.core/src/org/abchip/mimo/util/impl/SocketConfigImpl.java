@@ -5,12 +5,11 @@
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
  */
-package org.abchip.mimo.net.impl;
+package org.abchip.mimo.util.impl;
 
 import org.abchip.mimo.entity.impl.EntityImpl;
-
-import org.abchip.mimo.net.NetPackage;
-import org.abchip.mimo.net.SocketConfig;
+import org.abchip.mimo.util.SocketConfig;
+import org.abchip.mimo.util.UtilPackage;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
@@ -23,8 +22,8 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.net.impl.SocketConfigImpl#getAddress <em>Address</em>}</li>
- *   <li>{@link org.abchip.mimo.net.impl.SocketConfigImpl#getPort <em>Port</em>}</li>
+ *   <li>{@link org.abchip.mimo.util.impl.SocketConfigImpl#getAddress <em>Address</em>}</li>
+ *   <li>{@link org.abchip.mimo.util.impl.SocketConfigImpl#getPort <em>Port</em>}</li>
  * </ul>
  *
  * @generated
@@ -87,7 +86,7 @@ public class SocketConfigImpl extends EntityImpl implements SocketConfig {
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return NetPackage.Literals.SOCKET_CONFIG;
+		return UtilPackage.Literals.SOCKET_CONFIG;
 	}
 
 	/**
@@ -110,7 +109,7 @@ public class SocketConfigImpl extends EntityImpl implements SocketConfig {
 		String oldAddress = address;
 		address = newAddress;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, NetPackage.SOCKET_CONFIG__ADDRESS, oldAddress, address));
+			eNotify(new ENotificationImpl(this, Notification.SET, UtilPackage.SOCKET_CONFIG__ADDRESS, oldAddress, address));
 	}
 
 	/**
@@ -133,7 +132,7 @@ public class SocketConfigImpl extends EntityImpl implements SocketConfig {
 		int oldPort = port;
 		port = newPort;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, NetPackage.SOCKET_CONFIG__PORT, oldPort, port));
+			eNotify(new ENotificationImpl(this, Notification.SET, UtilPackage.SOCKET_CONFIG__PORT, oldPort, port));
 	}
 
 	/**
@@ -144,9 +143,9 @@ public class SocketConfigImpl extends EntityImpl implements SocketConfig {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case NetPackage.SOCKET_CONFIG__ADDRESS:
+			case UtilPackage.SOCKET_CONFIG__ADDRESS:
 				return getAddress();
-			case NetPackage.SOCKET_CONFIG__PORT:
+			case UtilPackage.SOCKET_CONFIG__PORT:
 				return getPort();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -160,10 +159,10 @@ public class SocketConfigImpl extends EntityImpl implements SocketConfig {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case NetPackage.SOCKET_CONFIG__ADDRESS:
+			case UtilPackage.SOCKET_CONFIG__ADDRESS:
 				setAddress((String)newValue);
 				return;
-			case NetPackage.SOCKET_CONFIG__PORT:
+			case UtilPackage.SOCKET_CONFIG__PORT:
 				setPort((Integer)newValue);
 				return;
 		}
@@ -178,10 +177,10 @@ public class SocketConfigImpl extends EntityImpl implements SocketConfig {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case NetPackage.SOCKET_CONFIG__ADDRESS:
+			case UtilPackage.SOCKET_CONFIG__ADDRESS:
 				setAddress(ADDRESS_EDEFAULT);
 				return;
-			case NetPackage.SOCKET_CONFIG__PORT:
+			case UtilPackage.SOCKET_CONFIG__PORT:
 				setPort(PORT_EDEFAULT);
 				return;
 		}
@@ -196,9 +195,9 @@ public class SocketConfigImpl extends EntityImpl implements SocketConfig {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case NetPackage.SOCKET_CONFIG__ADDRESS:
+			case UtilPackage.SOCKET_CONFIG__ADDRESS:
 				return ADDRESS_EDEFAULT == null ? address != null : !ADDRESS_EDEFAULT.equals(address);
-			case NetPackage.SOCKET_CONFIG__PORT:
+			case UtilPackage.SOCKET_CONFIG__PORT:
 				return port != PORT_EDEFAULT;
 		}
 		return super.eIsSet(featureID);

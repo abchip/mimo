@@ -30,11 +30,6 @@ import org.abchip.mimo.impl.MimoPackageImpl;
 import org.abchip.mimo.java.JavaPackage;
 
 import org.abchip.mimo.java.impl.JavaPackageImpl;
-
-import org.abchip.mimo.net.NetPackage;
-
-import org.abchip.mimo.net.impl.NetPackageImpl;
-
 import org.abchip.mimo.resource.ResourcePackage;
 
 import org.abchip.mimo.resource.impl.ResourcePackageImpl;
@@ -43,6 +38,7 @@ import org.abchip.mimo.util.Classes;
 import org.abchip.mimo.util.Files;
 import org.abchip.mimo.util.Lists;
 import org.abchip.mimo.util.Singleton;
+import org.abchip.mimo.util.SocketConfig;
 import org.abchip.mimo.util.Streams;
 import org.abchip.mimo.util.Strings;
 import org.abchip.mimo.util.ThreadInfo;
@@ -97,6 +93,13 @@ public class UtilPackageImpl extends EPackageImpl implements UtilPackage {
 	 * @generated
 	 */
 	private EClass singletonEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass socketConfigEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -214,8 +217,6 @@ public class UtilPackageImpl extends EPackageImpl implements UtilPackage {
 		EntityPackageImpl theEntityPackage = (EntityPackageImpl)(registeredPackage instanceof EntityPackageImpl ? registeredPackage : EntityPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(JavaPackage.eNS_URI);
 		JavaPackageImpl theJavaPackage = (JavaPackageImpl)(registeredPackage instanceof JavaPackageImpl ? registeredPackage : JavaPackage.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(NetPackage.eNS_URI);
-		NetPackageImpl theNetPackage = (NetPackageImpl)(registeredPackage instanceof NetPackageImpl ? registeredPackage : NetPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(ResourcePackage.eNS_URI);
 		ResourcePackageImpl theResourcePackage = (ResourcePackageImpl)(registeredPackage instanceof ResourcePackageImpl ? registeredPackage : ResourcePackage.eINSTANCE);
 
@@ -227,7 +228,6 @@ public class UtilPackageImpl extends EPackageImpl implements UtilPackage {
 		theDataPackage.createPackageContents();
 		theEntityPackage.createPackageContents();
 		theJavaPackage.createPackageContents();
-		theNetPackage.createPackageContents();
 		theResourcePackage.createPackageContents();
 
 		// Initialize created meta-data
@@ -238,7 +238,6 @@ public class UtilPackageImpl extends EPackageImpl implements UtilPackage {
 		theDataPackage.initializePackageContents();
 		theEntityPackage.initializePackageContents();
 		theJavaPackage.initializePackageContents();
-		theNetPackage.initializePackageContents();
 		theResourcePackage.initializePackageContents();
 
 		// Mark meta-data to indicate it can't be changed
@@ -287,6 +286,36 @@ public class UtilPackageImpl extends EPackageImpl implements UtilPackage {
 	@Override
 	public EClass getSingleton() {
 		return singletonEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getSocketConfig() {
+		return socketConfigEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getSocketConfig_Address() {
+		return (EAttribute)socketConfigEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getSocketConfig_Port() {
+		return (EAttribute)socketConfigEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -506,6 +535,10 @@ public class UtilPackageImpl extends EPackageImpl implements UtilPackage {
 
 		singletonEClass = createEClass(SINGLETON);
 
+		socketConfigEClass = createEClass(SOCKET_CONFIG);
+		createEAttribute(socketConfigEClass, SOCKET_CONFIG__ADDRESS);
+		createEAttribute(socketConfigEClass, SOCKET_CONFIG__PORT);
+
 		streamsEClass = createEClass(STREAMS);
 
 		stringsEClass = createEClass(STRINGS);
@@ -573,6 +606,7 @@ public class UtilPackageImpl extends EPackageImpl implements UtilPackage {
 		EGenericType g2 = createEGenericType(this.getLists());
 		g1.getETypeArguments().add(g2);
 		listsEClass.getEGenericSuperTypes().add(g1);
+		socketConfigEClass.getESuperTypes().add(theEntityPackage.getEntity());
 		g1 = createEGenericType(this.getSingleton());
 		g2 = createEGenericType(this.getStrings());
 		g1.getETypeArguments().add(g2);
@@ -676,6 +710,10 @@ public class UtilPackageImpl extends EPackageImpl implements UtilPackage {
 		initEOperation(op, g1);
 
 		initEClass(singletonEClass, Singleton.class, "Singleton", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(socketConfigEClass, SocketConfig.class, "SocketConfig", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getSocketConfig_Address(), ecorePackage.getEString(), "address", null, 1, 1, SocketConfig.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getSocketConfig_Port(), ecorePackage.getEInt(), "port", null, 1, 1, SocketConfig.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(streamsEClass, Streams.class, "Streams", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 

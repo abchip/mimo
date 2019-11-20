@@ -8,6 +8,7 @@
  */
 package org.abchip.mimo.util.impl;
 
+import org.abchip.mimo.util.SocketConfig;
 import org.abchip.mimo.util.UtilFactory;
 import org.abchip.mimo.util.UtilPackage;
 import org.abchip.mimo.util.ThreadInfo;
@@ -65,6 +66,7 @@ public class UtilFactoryImpl extends EFactoryImpl implements UtilFactory {
 	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
+			case UtilPackage.SOCKET_CONFIG: return (EObject)createSocketConfig();
 			case UtilPackage.THREAD_INFO: return (EObject)createThreadInfo();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
@@ -99,6 +101,17 @@ public class UtilFactoryImpl extends EFactoryImpl implements UtilFactory {
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public SocketConfig createSocketConfig() {
+		SocketConfigImpl socketConfig = new SocketConfigImpl();
+		return socketConfig;
 	}
 
 	/**

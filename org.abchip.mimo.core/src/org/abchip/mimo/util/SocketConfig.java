@@ -5,7 +5,7 @@
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
  */
-package org.abchip.mimo.net;
+package org.abchip.mimo.util;
 
 import org.abchip.mimo.entity.Entity;
 
@@ -18,11 +18,11 @@ import org.abchip.mimo.entity.Entity;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.net.SocketConfig#getAddress <em>Address</em>}</li>
- *   <li>{@link org.abchip.mimo.net.SocketConfig#getPort <em>Port</em>}</li>
+ *   <li>{@link org.abchip.mimo.util.SocketConfig#getAddress <em>Address</em>}</li>
+ *   <li>{@link org.abchip.mimo.util.SocketConfig#getPort <em>Port</em>}</li>
  * </ul>
  *
- * @see org.abchip.mimo.net.NetPackage#getSocketConfig()
+ * @see org.abchip.mimo.util.UtilPackage#getSocketConfig()
  * @model
  * @generated
  */
@@ -37,14 +37,14 @@ public interface SocketConfig extends Entity {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Address</em>' attribute.
 	 * @see #setAddress(String)
-	 * @see org.abchip.mimo.net.NetPackage#getSocketConfig_Address()
+	 * @see org.abchip.mimo.util.UtilPackage#getSocketConfig_Address()
 	 * @model required="true"
 	 * @generated
 	 */
 	String getAddress();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.net.SocketConfig#getAddress <em>Address</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.util.SocketConfig#getAddress <em>Address</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Address</em>' attribute.
@@ -63,14 +63,14 @@ public interface SocketConfig extends Entity {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Port</em>' attribute.
 	 * @see #setPort(int)
-	 * @see org.abchip.mimo.net.NetPackage#getSocketConfig_Port()
+	 * @see org.abchip.mimo.util.UtilPackage#getSocketConfig_Port()
 	 * @model required="true"
 	 * @generated
 	 */
 	int getPort();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.net.SocketConfig#getPort <em>Port</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.util.SocketConfig#getPort <em>Port</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Port</em>' attribute.

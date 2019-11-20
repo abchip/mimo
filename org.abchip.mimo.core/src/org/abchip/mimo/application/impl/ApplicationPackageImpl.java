@@ -44,11 +44,6 @@ import org.abchip.mimo.impl.MimoPackageImpl;
 import org.abchip.mimo.java.JavaPackage;
 
 import org.abchip.mimo.java.impl.JavaPackageImpl;
-
-import org.abchip.mimo.net.NetPackage;
-
-import org.abchip.mimo.net.impl.NetPackageImpl;
-
 import org.abchip.mimo.resource.ResourcePackage;
 
 import org.abchip.mimo.resource.impl.ResourcePackageImpl;
@@ -237,8 +232,6 @@ public class ApplicationPackageImpl extends EPackageImpl implements ApplicationP
 		EntityPackageImpl theEntityPackage = (EntityPackageImpl)(registeredPackage instanceof EntityPackageImpl ? registeredPackage : EntityPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(JavaPackage.eNS_URI);
 		JavaPackageImpl theJavaPackage = (JavaPackageImpl)(registeredPackage instanceof JavaPackageImpl ? registeredPackage : JavaPackage.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(NetPackage.eNS_URI);
-		NetPackageImpl theNetPackage = (NetPackageImpl)(registeredPackage instanceof NetPackageImpl ? registeredPackage : NetPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(ResourcePackage.eNS_URI);
 		ResourcePackageImpl theResourcePackage = (ResourcePackageImpl)(registeredPackage instanceof ResourcePackageImpl ? registeredPackage : ResourcePackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(UtilPackage.eNS_URI);
@@ -251,7 +244,6 @@ public class ApplicationPackageImpl extends EPackageImpl implements ApplicationP
 		theDataPackage.createPackageContents();
 		theEntityPackage.createPackageContents();
 		theJavaPackage.createPackageContents();
-		theNetPackage.createPackageContents();
 		theResourcePackage.createPackageContents();
 		theUtilPackage.createPackageContents();
 
@@ -262,7 +254,6 @@ public class ApplicationPackageImpl extends EPackageImpl implements ApplicationP
 		theDataPackage.initializePackageContents();
 		theEntityPackage.initializePackageContents();
 		theJavaPackage.initializePackageContents();
-		theNetPackage.initializePackageContents();
 		theResourcePackage.initializePackageContents();
 		theUtilPackage.initializePackageContents();
 

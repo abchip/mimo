@@ -129,7 +129,7 @@ public interface UtilPackage extends EPackage {
 	 * @see org.abchip.mimo.util.impl.UtilPackageImpl#getStreams()
 	 * @generated
 	 */
-	int STREAMS = 4;
+	int STREAMS = 5;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.util.Strings <em>Strings</em>}' class.
@@ -139,7 +139,7 @@ public interface UtilPackage extends EPackage {
 	 * @see org.abchip.mimo.util.impl.UtilPackageImpl#getStrings()
 	 * @generated
 	 */
-	int STRINGS = 5;
+	int STRINGS = 6;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.util.Thread <em>Thread</em>}' class.
@@ -149,7 +149,7 @@ public interface UtilPackage extends EPackage {
 	 * @see org.abchip.mimo.util.impl.UtilPackageImpl#getThread()
 	 * @generated
 	 */
-	int THREAD = 6;
+	int THREAD = 7;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.util.Threads <em>Threads</em>}' class.
@@ -159,7 +159,7 @@ public interface UtilPackage extends EPackage {
 	 * @see org.abchip.mimo.util.impl.UtilPackageImpl#getThreads()
 	 * @generated
 	 */
-	int THREADS = 7;
+	int THREADS = 8;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.util.impl.ThreadInfoImpl <em>Thread Info</em>}' class.
@@ -169,7 +169,7 @@ public interface UtilPackage extends EPackage {
 	 * @see org.abchip.mimo.util.impl.UtilPackageImpl#getThreadInfo()
 	 * @generated
 	 */
-	int THREAD_INFO = 8;
+	int THREAD_INFO = 9;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.util.ThreadManager <em>Thread Manager</em>}' class.
@@ -179,7 +179,7 @@ public interface UtilPackage extends EPackage {
 	 * @see org.abchip.mimo.util.impl.UtilPackageImpl#getThreadManager()
 	 * @generated
 	 */
-	int THREAD_MANAGER = 9;
+	int THREAD_MANAGER = 10;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.util.URIs <em>UR Is</em>}' class.
@@ -189,7 +189,7 @@ public interface UtilPackage extends EPackage {
 	 * @see org.abchip.mimo.util.impl.UtilPackageImpl#getURIs()
 	 * @generated
 	 */
-	int UR_IS = 10;
+	int UR_IS = 11;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.util.ThreadStatus <em>Thread Status</em>}' enum.
@@ -199,7 +199,7 @@ public interface UtilPackage extends EPackage {
 	 * @see org.abchip.mimo.util.impl.UtilPackageImpl#getThreadStatus()
 	 * @generated
 	 */
-	int THREAD_STATUS = 11;
+	int THREAD_STATUS = 12;
 
 	/**
 	 * The number of structural features of the '<em>Singleton</em>' class.
@@ -218,6 +218,43 @@ public interface UtilPackage extends EPackage {
 	 * @ordered
 	 */
 	int LISTS_FEATURE_COUNT = SINGLETON_FEATURE_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link org.abchip.mimo.util.impl.SocketConfigImpl <em>Socket Config</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.abchip.mimo.util.impl.SocketConfigImpl
+	 * @see org.abchip.mimo.util.impl.UtilPackageImpl#getSocketConfig()
+	 * @generated
+	 */
+	int SOCKET_CONFIG = 4;
+
+	/**
+	 * The feature id for the '<em><b>Address</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SOCKET_CONFIG__ADDRESS = EntityPackage.ENTITY_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Port</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SOCKET_CONFIG__PORT = EntityPackage.ENTITY_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of structural features of the '<em>Socket Config</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SOCKET_CONFIG_FEATURE_COUNT = EntityPackage.ENTITY_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of structural features of the '<em>Streams</em>' class.
@@ -412,6 +449,38 @@ public interface UtilPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getSingleton();
+
+	/**
+	 * Returns the meta object for class '{@link org.abchip.mimo.util.SocketConfig <em>Socket Config</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Socket Config</em>'.
+	 * @see org.abchip.mimo.util.SocketConfig
+	 * @generated
+	 */
+	EClass getSocketConfig();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.abchip.mimo.util.SocketConfig#getAddress <em>Address</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Address</em>'.
+	 * @see org.abchip.mimo.util.SocketConfig#getAddress()
+	 * @see #getSocketConfig()
+	 * @generated
+	 */
+	EAttribute getSocketConfig_Address();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.abchip.mimo.util.SocketConfig#getPort <em>Port</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Port</em>'.
+	 * @see org.abchip.mimo.util.SocketConfig#getPort()
+	 * @see #getSocketConfig()
+	 * @generated
+	 */
+	EAttribute getSocketConfig_Port();
 
 	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.util.Streams <em>Streams</em>}'.
@@ -664,6 +733,32 @@ public interface UtilPackage extends EPackage {
 		 * @generated
 		 */
 		EClass SINGLETON = eINSTANCE.getSingleton();
+
+		/**
+		 * The meta object literal for the '{@link org.abchip.mimo.util.impl.SocketConfigImpl <em>Socket Config</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.abchip.mimo.util.impl.SocketConfigImpl
+		 * @see org.abchip.mimo.util.impl.UtilPackageImpl#getSocketConfig()
+		 * @generated
+		 */
+		EClass SOCKET_CONFIG = eINSTANCE.getSocketConfig();
+
+		/**
+		 * The meta object literal for the '<em><b>Address</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute SOCKET_CONFIG__ADDRESS = eINSTANCE.getSocketConfig_Address();
+
+		/**
+		 * The meta object literal for the '<em><b>Port</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute SOCKET_CONFIG__PORT = eINSTANCE.getSocketConfig_Port();
 
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.util.Streams <em>Streams</em>}' class.

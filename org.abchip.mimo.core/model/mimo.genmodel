@@ -672,13 +672,6 @@
       <genClasses image="false" ecoreClass="mimo.ecore#//java/JavaThreadGroup"/>
       <genClasses image="false" ecoreClass="mimo.ecore#//java/JavaThreadInfo"/>
     </nestedGenPackages>
-    <nestedGenPackages prefix="Net" basePackage="org.abchip.mimo" disposableProviderFactory="true"
-        adapterFactory="false" ecorePackage="mimo.ecore#//net">
-      <genClasses ecoreClass="mimo.ecore#//net/SocketConfig">
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//net/SocketConfig/address"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//net/SocketConfig/port"/>
-      </genClasses>
-    </nestedGenPackages>
     <nestedGenPackages prefix="Resource" disposableProviderFactory="true" adapterFactory="false"
         ecorePackage="mimo.ecore#//resource">
       <genEnums typeSafeEnumCompatible="false" ecoreEnum="mimo.ecore#//resource/ResourceEventType">
@@ -1091,6 +1084,10 @@
       </genClasses>
       <genClasses image="false" ecoreClass="mimo.ecore#//util/Singleton">
         <genTypeParameters ecoreTypeParameter="mimo.ecore#//util/Singleton/S"/>
+      </genClasses>
+      <genClasses ecoreClass="mimo.ecore#//util/SocketConfig">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//util/SocketConfig/address"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//util/SocketConfig/port"/>
       </genClasses>
       <genClasses image="false" ecoreClass="mimo.ecore#//util/Streams">
         <genOperations ecoreOperation="mimo.ecore#//util/Streams/copy">

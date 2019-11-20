@@ -30,11 +30,6 @@ import org.abchip.mimo.entity.impl.EntityPackageImpl;
 import org.abchip.mimo.java.JavaPackage;
 
 import org.abchip.mimo.java.impl.JavaPackageImpl;
-
-import org.abchip.mimo.net.NetPackage;
-
-import org.abchip.mimo.net.impl.NetPackageImpl;
-
 import org.abchip.mimo.resource.ResourcePackage;
 
 import org.abchip.mimo.resource.impl.ResourcePackageImpl;
@@ -120,8 +115,6 @@ public class MimoPackageImpl extends EPackageImpl implements MimoPackage {
 		EntityPackageImpl theEntityPackage = (EntityPackageImpl)(registeredPackage instanceof EntityPackageImpl ? registeredPackage : EntityPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(JavaPackage.eNS_URI);
 		JavaPackageImpl theJavaPackage = (JavaPackageImpl)(registeredPackage instanceof JavaPackageImpl ? registeredPackage : JavaPackage.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(NetPackage.eNS_URI);
-		NetPackageImpl theNetPackage = (NetPackageImpl)(registeredPackage instanceof NetPackageImpl ? registeredPackage : NetPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(ResourcePackage.eNS_URI);
 		ResourcePackageImpl theResourcePackage = (ResourcePackageImpl)(registeredPackage instanceof ResourcePackageImpl ? registeredPackage : ResourcePackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(UtilPackage.eNS_URI);
@@ -134,7 +127,6 @@ public class MimoPackageImpl extends EPackageImpl implements MimoPackage {
 		theDataPackage.createPackageContents();
 		theEntityPackage.createPackageContents();
 		theJavaPackage.createPackageContents();
-		theNetPackage.createPackageContents();
 		theResourcePackage.createPackageContents();
 		theUtilPackage.createPackageContents();
 
@@ -145,7 +137,6 @@ public class MimoPackageImpl extends EPackageImpl implements MimoPackage {
 		theDataPackage.initializePackageContents();
 		theEntityPackage.initializePackageContents();
 		theJavaPackage.initializePackageContents();
-		theNetPackage.initializePackageContents();
 		theResourcePackage.initializePackageContents();
 		theUtilPackage.initializePackageContents();
 
@@ -228,7 +219,6 @@ public class MimoPackageImpl extends EPackageImpl implements MimoPackage {
 		DataPackage theDataPackage = (DataPackage)EPackage.Registry.INSTANCE.getEPackage(DataPackage.eNS_URI);
 		EntityPackage theEntityPackage = (EntityPackage)EPackage.Registry.INSTANCE.getEPackage(EntityPackage.eNS_URI);
 		JavaPackage theJavaPackage = (JavaPackage)EPackage.Registry.INSTANCE.getEPackage(JavaPackage.eNS_URI);
-		NetPackage theNetPackage = (NetPackage)EPackage.Registry.INSTANCE.getEPackage(NetPackage.eNS_URI);
 		ResourcePackage theResourcePackage = (ResourcePackage)EPackage.Registry.INSTANCE.getEPackage(ResourcePackage.eNS_URI);
 		UtilPackage theUtilPackage = (UtilPackage)EPackage.Registry.INSTANCE.getEPackage(UtilPackage.eNS_URI);
 
@@ -238,7 +228,6 @@ public class MimoPackageImpl extends EPackageImpl implements MimoPackage {
 		getESubpackages().add(theDataPackage);
 		getESubpackages().add(theEntityPackage);
 		getESubpackages().add(theJavaPackage);
-		getESubpackages().add(theNetPackage);
 		getESubpackages().add(theResourcePackage);
 		getESubpackages().add(theUtilPackage);
 

@@ -28,6 +28,15 @@ public interface UtilFactory extends EFactory {
 	UtilFactory eINSTANCE = org.abchip.mimo.util.impl.UtilFactoryImpl.init();
 
 	/**
+	 * Returns a new object of class '<em>Socket Config</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Socket Config</em>'.
+	 * @generated
+	 */
+	SocketConfig createSocketConfig();
+
+	/**
 	 * Returns a new object of class '<em>Thread Info</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

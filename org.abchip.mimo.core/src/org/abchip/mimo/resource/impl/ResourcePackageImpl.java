@@ -30,11 +30,6 @@ import org.abchip.mimo.impl.MimoPackageImpl;
 import org.abchip.mimo.java.JavaPackage;
 
 import org.abchip.mimo.java.impl.JavaPackageImpl;
-
-import org.abchip.mimo.net.NetPackage;
-
-import org.abchip.mimo.net.impl.NetPackageImpl;
-
 import org.abchip.mimo.resource.Resource;
 import org.abchip.mimo.resource.ResourceConfig;
 import org.abchip.mimo.resource.ResourceEvent;
@@ -216,8 +211,6 @@ public class ResourcePackageImpl extends EPackageImpl implements ResourcePackage
 		EntityPackageImpl theEntityPackage = (EntityPackageImpl)(registeredPackage instanceof EntityPackageImpl ? registeredPackage : EntityPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(JavaPackage.eNS_URI);
 		JavaPackageImpl theJavaPackage = (JavaPackageImpl)(registeredPackage instanceof JavaPackageImpl ? registeredPackage : JavaPackage.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(NetPackage.eNS_URI);
-		NetPackageImpl theNetPackage = (NetPackageImpl)(registeredPackage instanceof NetPackageImpl ? registeredPackage : NetPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(UtilPackage.eNS_URI);
 		UtilPackageImpl theUtilPackage = (UtilPackageImpl)(registeredPackage instanceof UtilPackageImpl ? registeredPackage : UtilPackage.eINSTANCE);
 
@@ -229,7 +222,6 @@ public class ResourcePackageImpl extends EPackageImpl implements ResourcePackage
 		theDataPackage.createPackageContents();
 		theEntityPackage.createPackageContents();
 		theJavaPackage.createPackageContents();
-		theNetPackage.createPackageContents();
 		theUtilPackage.createPackageContents();
 
 		// Initialize created meta-data
@@ -240,7 +232,6 @@ public class ResourcePackageImpl extends EPackageImpl implements ResourcePackage
 		theDataPackage.initializePackageContents();
 		theEntityPackage.initializePackageContents();
 		theJavaPackage.initializePackageContents();
-		theNetPackage.initializePackageContents();
 		theUtilPackage.initializePackageContents();
 
 		// Mark meta-data to indicate it can't be changed
