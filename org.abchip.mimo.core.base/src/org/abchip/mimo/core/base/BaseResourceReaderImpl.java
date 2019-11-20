@@ -190,5 +190,11 @@ public class BaseResourceReaderImpl<E extends EntityIdentifiable> extends Resour
 		public Iterator<E> iterator() {
 			return this;
 		}
+
+		@Override
+		public void close() {			
+			this.iterator = null;
+			this.nextObject = null;
+		}
 	}
 }

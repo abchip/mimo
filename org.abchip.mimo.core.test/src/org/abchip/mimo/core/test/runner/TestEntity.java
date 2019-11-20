@@ -38,10 +38,11 @@ public class TestEntity {
 
 		ResourceReader<ObjectA> entityReader = resourceManager.getResourceReader(testRunner.getContext(), ObjectA.class);
 
-		EntityIterator<ObjectA> entityIterator = entityReader.find();
-		while (entityIterator.hasNext()) {
-			ObjectA objectA = entityIterator.next();
-			asserter.assertNotNull("Read object", objectA);
+		try (EntityIterator<ObjectA> entityIterator = entityReader.find()) {
+			while (entityIterator.hasNext()) {
+				ObjectA objectA = entityIterator.next();
+				asserter.assertNotNull("Read object", objectA);
+			}
 		}
 	}
 
@@ -79,11 +80,12 @@ public class TestEntity {
 
 		ResourceWriter<ObjectA> entityWriter = resourceManager.getResourceWriter(testRunner.getContext(), ObjectA.class);
 
-		EntityIterator<ObjectA> objectIterator = entityWriter.find();
-		while (objectIterator.hasNext()) {
-			ObjectA objectA = objectIterator.next();
-			entityWriter.delete(objectA);
-			asserter.assertNull("Delete object", entityWriter.lookup(objectA.getName()));
+		try (EntityIterator<ObjectA> objectIterator = entityWriter.find()) {
+			while (objectIterator.hasNext()) {
+				ObjectA objectA = objectIterator.next();
+				entityWriter.delete(objectA);
+				asserter.assertNull("Delete object", entityWriter.lookup(objectA.getName()));
+			}
 		}
 	}
 }

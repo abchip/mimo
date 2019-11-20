@@ -16,7 +16,6 @@ import javax.inject.Inject;
 
 import org.abchip.mimo.audio.AudioManager;
 import org.abchip.mimo.audio.AudioStyle;
-import org.abchip.mimo.entity.EntityIterator;
 import org.abchip.mimo.entity.Frame;
 import org.abchip.mimo.entity.Slot;
 import org.abchip.mimo.language.Language;
@@ -76,7 +75,8 @@ public class TestTwitter {
 			for (Slot slot : frame.getSlots()) {
 				sb.append(slot.getName() + ". ");
 			}
-			// audioManager.play(testRunner.getContext(), AudioStyle.B, sb.toString(), true, true);
+			// audioManager.play(testRunner.getContext(), AudioStyle.B, sb.toString(), true,
+			// true);
 		}
 
 		Set<String> users = new HashSet<String>();
@@ -93,7 +93,8 @@ public class TestTwitter {
 			Language language = languageReader.lookup(languageName.toUpperCase());
 			if (language == null)
 				"".toCharArray();
-			// audioManager.play(testRunner.getContext(), AudioStyle.A, "Unknown language: " +
+			// audioManager.play(testRunner.getContext(), AudioStyle.A, "Unknown language: "
+			// +
 			// languageName, true, true);
 			else
 				audioManager.play(testRunner.getContext(), AudioStyle.A, language.getText(), true, true);
@@ -160,11 +161,8 @@ public class TestTwitter {
 
 	private void loadTweets() {
 
-		EntityIterator<Tweet> tweetIterator = twitterManager.search(testRunner.getContext(), null, "#ai", 1000);
-		asserter.assertTrue("Count tweets", tweetIterator.hasNext());
-
 		ResourceWriter<Tweet> tweetWriter = resourceManager.getResourceWriter(testRunner.getContext(), Tweet.class);
-		for (Tweet tweet : tweetIterator) {
+		for (Tweet tweet : twitterManager.search(testRunner.getContext(), null, "#ai", 1000)) {
 			try {
 				tweetWriter.create(tweet, true);
 			} catch (Exception e) {

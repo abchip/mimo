@@ -551,6 +551,7 @@
       </genClasses>
       <genClasses image="false" ecoreClass="mimo.ecore#//entity/EntityIterator">
         <genTypeParameters ecoreTypeParameter="mimo.ecore#//entity/EntityIterator/E"/>
+        <genOperations ecoreOperation="mimo.ecore#//entity/EntityIterator/close"/>
         <genOperations ecoreOperation="mimo.ecore#//entity/EntityIterator/hasNext"/>
         <genOperations ecoreOperation="mimo.ecore#//entity/EntityIterator/next"/>
         <genOperations ecoreOperation="mimo.ecore#//entity/EntityIterator/remove"/>

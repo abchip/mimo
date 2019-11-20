@@ -796,6 +796,7 @@
       <eTypeParameters name="E">
         <eBounds eClassifier="#//entity/Entity"/>
       </eTypeParameters>
+      <eOperations name="close"/>
       <eOperations name="hasNext" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
       <eOperations name="next" lowerBound="1">
         <eGenericType eTypeParameter="#//entity/EntityIterator/E"/>
@@ -807,6 +808,7 @@
       <eGenericSuperTypes eClassifier="#//java/JavaIterable">
         <eTypeArguments eTypeParameter="#//entity/EntityIterator/E"/>
       </eGenericSuperTypes>
+      <eGenericSuperTypes eClassifier="#//java/JavaCloseable"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="EntityTyped" eSuperTypes="#//entity/EntityIdentifiable">
       <eTypeParameters name="T">

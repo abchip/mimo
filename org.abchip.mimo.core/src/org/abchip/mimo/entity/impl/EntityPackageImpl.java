@@ -932,6 +932,8 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 		g2 = createEGenericType(entityIteratorEClass_E);
 		g1.getETypeArguments().add(g2);
 		entityIteratorEClass.getEGenericSuperTypes().add(g1);
+		g1 = createEGenericType(theJavaPackage.getJavaCloseable());
+		entityIteratorEClass.getEGenericSuperTypes().add(g1);
 		entityTypedEClass.getESuperTypes().add(this.getEntityIdentifiable());
 		entityTypeEClass.getESuperTypes().add(this.getEntityIdentifiable());
 		facetEClass.getESuperTypes().add(this.getEntity());
@@ -993,6 +995,8 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 		addEOperation(entityIdentifiableEClass, ecorePackage.getEBoolean(), "isProxy", 1, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(entityIteratorEClass, EntityIterator.class, "EntityIterator", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		addEOperation(entityIteratorEClass, null, "close", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		addEOperation(entityIteratorEClass, ecorePackage.getEBoolean(), "hasNext", 1, 1, IS_UNIQUE, IS_ORDERED);
 

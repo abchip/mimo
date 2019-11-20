@@ -17,8 +17,8 @@ import java.util.List;
 import java.util.Map;
 
 import org.abchip.mimo.context.Context;
-import org.abchip.mimo.entity.EntityIterator;
 import org.abchip.mimo.entity.EntityIdentifiable;
+import org.abchip.mimo.entity.EntityIterator;
 import org.abchip.mimo.entity.Frame;
 import org.abchip.mimo.resource.impl.ResourceReaderImpl;
 import org.abchip.mimo.util.Lists;
@@ -187,13 +187,11 @@ public class ResourceHelper {
 
 		@Override
 		public boolean hasNext() {
-
 			return iterator.hasNext();
 		}
 
 		@Override
 		public E next() {
-
 			return iterator.next();
 		}
 
@@ -205,6 +203,11 @@ public class ResourceHelper {
 		@Override
 		public Iterator<E> iterator() {
 			return this;
+		}
+
+		@Override
+		public void close() {
+			this.iterator = null;
 		}
 	}
 

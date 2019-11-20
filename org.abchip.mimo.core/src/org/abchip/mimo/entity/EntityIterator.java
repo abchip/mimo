@@ -7,6 +7,7 @@
  */
 package org.abchip.mimo.entity;
 
+import java.io.Closeable;
 import java.util.Iterator;
 
 /**
@@ -16,10 +17,18 @@ import java.util.Iterator;
  *
  *
  * @see org.abchip.mimo.entity.EntityPackage#getEntityIterator()
- * @model interface="true" abstract="true" superTypes="org.abchip.mimo.java.JavaIterator&lt;E&gt; org.abchip.mimo.java.JavaIterable&lt;E&gt;"
+ * @model interface="true" abstract="true" superTypes="org.abchip.mimo.java.JavaIterator&lt;E&gt; org.abchip.mimo.java.JavaIterable&lt;E&gt; org.abchip.mimo.java.JavaCloseable"
  * @generated
  */
-public interface EntityIterator<E extends Entity> extends Iterator<E>, Iterable<E> {
+public interface EntityIterator<E extends Entity> extends Iterator<E>, Iterable<E>, Closeable {
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model
+	 * @generated
+	 */
+	void close();
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
