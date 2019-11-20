@@ -24,7 +24,7 @@ import java.util.List;
 
 import org.abchip.mimo.context.Context;
 import org.abchip.mimo.context.Logger;
-import org.abchip.mimo.entity.EntityNameable;
+import org.abchip.mimo.entity.EntityIdentifiable;
 import org.abchip.mimo.entity.Frame;
 import org.abchip.mimo.entity.SerializationType;
 import org.abchip.mimo.resource.Resource;
@@ -32,7 +32,7 @@ import org.abchip.mimo.resource.ResourceManager;
 import org.abchip.mimo.resource.ResourceSerializer;
 import org.abchip.mimo.resource.impl.ResourceImpl;
 
-public class NIOResourcempl<E extends EntityNameable> extends ResourceImpl<E> {
+public class NIOResourcempl<E extends EntityIdentifiable> extends ResourceImpl<E> {
 
 	/**
 	 * 
@@ -70,7 +70,7 @@ public class NIOResourcempl<E extends EntityNameable> extends ResourceImpl<E> {
 	public void create(E entity, boolean update) {
 
 		synchronized (this.resourceSerializer) {
-			Path file = getClassFolder(getFrame(), true).resolve(entity.getName());
+			Path file = getClassFolder(getFrame(), true).resolve(entity.getID());
 
 			try {
 				this.resourceSerializer.add(entity);
@@ -100,7 +100,7 @@ public class NIOResourcempl<E extends EntityNameable> extends ResourceImpl<E> {
 	public void delete(E entity) {
 
 		synchronized (this.resourceSerializer) {
-			Path file = getClassFolder(getFrame(), false).resolve(entity.getName());
+			Path file = getClassFolder(getFrame(), false).resolve(entity.getID());
 			if (!Files.exists(file))
 				return;
 
@@ -207,7 +207,7 @@ public class NIOResourcempl<E extends EntityNameable> extends ResourceImpl<E> {
 
 				@Override
 				public int compare(E o1, E o2) {
-					return o1.getName().compareTo(o2.getName());
+					return o1.getID().compareTo(o2.getID());
 				}
 			});
 
@@ -225,9 +225,9 @@ public class NIOResourcempl<E extends EntityNameable> extends ResourceImpl<E> {
 				this.resourceSerializer.save(output);
 				ByteArrayInputStream input = new ByteArrayInputStream(output.toByteArray());
 
-				Path file = getClassFolder(getFrame(), true).resolve(entity.getName());
+				Path file = getClassFolder(getFrame(), true).resolve(entity.getID());
 				if (!Files.exists(file))
-					throw new IOException("Resource not exists: " + entity.getName());
+					throw new IOException("Resource not exists: " + entity.getID());
 
 				Files.copy(input, file, StandardCopyOption.REPLACE_EXISTING);
 

@@ -211,7 +211,7 @@ public class EDIPackageImpl extends EPackageImpl implements EDIPackage {
 
 		EOperation op = addEOperation(ediManagerEClass, null, "writeMessage", 0, 1, IS_UNIQUE, IS_ORDERED);
 		ETypeParameter t1 = addETypeParameter(op, "E");
-		EGenericType g1 = createEGenericType(theEntityPackage_1.getEntityNameable());
+		EGenericType g1 = createEGenericType(theEntityPackage_1.getEntityIdentifiable());
 		t1.getEBounds().add(g1);
 		addEParameter(op, theContextPackage.getContext(), "context", 1, 1, IS_UNIQUE, IS_ORDERED);
 		g1 = createEGenericType(t1);

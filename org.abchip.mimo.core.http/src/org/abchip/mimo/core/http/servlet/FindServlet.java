@@ -15,7 +15,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.abchip.mimo.context.Context;
-import org.abchip.mimo.entity.EntityNameable;
+import org.abchip.mimo.entity.EntityIdentifiable;
 import org.abchip.mimo.entity.Frame;
 import org.abchip.mimo.entity.SerializationType;
 import org.abchip.mimo.entity.Slot;
@@ -35,7 +35,7 @@ public class FindServlet extends BaseServlet {
 		_execute(context, request, response);
 	}
 
-	private <E extends EntityNameable> void _execute(Context context, HttpServletRequest request, HttpServletResponse response) throws IOException {
+	private <E extends EntityIdentifiable> void _execute(Context context, HttpServletRequest request, HttpServletResponse response) throws IOException {
 
 		String frameName = Strings.qINSTANCE.firstToUpper(request.getParameter("frame"));
 		String filter = request.getParameter("filter");

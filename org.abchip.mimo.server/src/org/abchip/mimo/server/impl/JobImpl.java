@@ -14,7 +14,7 @@ import java.util.List;
 
 import org.abchip.mimo.context.Context;
 import org.abchip.mimo.data.DateFormat;
-import org.abchip.mimo.entity.impl.EntityNameableImpl;
+import org.abchip.mimo.entity.impl.EntityIdentifiableImpl;
 import org.abchip.mimo.server.Job;
 import org.abchip.mimo.server.JobMessage;
 import org.abchip.mimo.server.JobReference;
@@ -59,7 +59,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *
  * @generated
  */
-public class JobImpl extends EntityNameableImpl implements Job {
+public class JobImpl extends EntityIdentifiableImpl implements Job {
 
 	/**
 	 *
@@ -1122,10 +1122,4 @@ public class JobImpl extends EntityNameableImpl implements Job {
 		result.append(')');
 		return result.toString();
 	}
-
-	@Override
-	public String getName() {
-		return getJobID();
-	}
-
 } // JobImpl

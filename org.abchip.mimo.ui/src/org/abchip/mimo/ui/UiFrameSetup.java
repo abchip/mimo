@@ -3,7 +3,7 @@
  */
 package org.abchip.mimo.ui;
 
-import org.abchip.mimo.entity.EntityNameable;
+import org.abchip.mimo.entity.EntityIdentifiable;
 
 /**
  * <!-- begin-user-doc -->
@@ -23,7 +23,7 @@ import org.abchip.mimo.entity.EntityNameable;
  * @model
  * @generated
  */
-public interface UiFrameSetup extends EntityNameable {
+public interface UiFrameSetup extends EntityIdentifiable {
 	/**
 	 * Returns the value of the '<em><b>Context Menu</b></em>' attribute.
 	 * <!-- begin-user-doc -->
@@ -64,7 +64,6 @@ public interface UiFrameSetup extends EntityNameable {
 	 * @model id="true" required="true"
 	 * @generated
 	 */
-	@Override
 	String getName();
 
 	/**

@@ -22,7 +22,7 @@ import org.abchip.mimo.context.AuthenticationAnonymous;
 import org.abchip.mimo.context.AuthenticationManager;
 import org.abchip.mimo.context.ContextFactory;
 import org.abchip.mimo.context.Context;
-import org.abchip.mimo.entity.EntityNameable;
+import org.abchip.mimo.entity.EntityIdentifiable;
 import org.abchip.mimo.resource.ResourceManager;
 import org.abchip.mimo.resource.ResourceReader;
 
@@ -55,8 +55,8 @@ public class GitHubRedirectServlet extends HttpServlet {
 		AuthenticationAnonymous authentication = ContextFactory.eINSTANCE.createAuthenticationAnonymous();
 		Context context = authenticationManager.login(null, authentication);
 
-		ResourceReader<EntityNameable> oauth2Reader = resourceManager.getResourceReader(context, "OAuth2GitHub");
-		EntityNameable oauth2GitHub = oauth2Reader.first();
+		ResourceReader<EntityIdentifiable> oauth2Reader = resourceManager.getResourceReader(context, "OAuth2GitHub");
+		EntityIdentifiable oauth2GitHub = oauth2Reader.first();
 
 		authenticationManager.logout(context);
 		context.close();

@@ -25,7 +25,7 @@ import org.abchip.mimo.context.AuthenticationUserToken;
 import org.abchip.mimo.context.ContextFactory;
 import org.abchip.mimo.context.Context;
 import org.abchip.mimo.core.http.ContextUtils;
-import org.abchip.mimo.entity.EntityNameable;
+import org.abchip.mimo.entity.EntityIdentifiable;
 import org.abchip.mimo.resource.ResourceManager;
 import org.abchip.mimo.resource.ResourceReader;
 import org.apache.http.HttpStatus;
@@ -89,7 +89,7 @@ public class GitHubResponseServlet extends HttpServlet {
 		// dovremmo accedere con ProductStore e data
 		String entityName = "OAuth2GitHub";
 		ResourceReader<?> oauth2Reader = resourceManager.getResourceReader(context, entityName);
-		EntityNameable oauth2GitHub = oauth2Reader.first();
+		EntityIdentifiable oauth2GitHub = oauth2Reader.first();
 
 		authenticationManager.logout(context);
 		context.close();

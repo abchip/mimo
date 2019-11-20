@@ -3,7 +3,7 @@
  */
 package org.abchip.mimo.ui.impl;
 
-import org.abchip.mimo.entity.impl.EntityNameableImpl;
+import org.abchip.mimo.entity.impl.EntityIdentifiableImpl;
 
 import org.abchip.mimo.ui.UIPackage;
 import org.abchip.mimo.ui.UiFrameSetup;
@@ -26,7 +26,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *
  * @generated
  */
-public class UiFrameSetupImpl extends EntityNameableImpl implements UiFrameSetup {
+public class UiFrameSetupImpl extends EntityIdentifiableImpl implements UiFrameSetup {
 	/**
 	 * 
 	 */

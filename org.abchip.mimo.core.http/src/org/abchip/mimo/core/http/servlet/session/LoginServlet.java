@@ -26,7 +26,7 @@ import org.abchip.mimo.context.ContextFactory;
 import org.abchip.mimo.context.Context;
 import org.abchip.mimo.core.http.ContextUtils;
 import org.abchip.mimo.core.http.HttpUtils;
-import org.abchip.mimo.entity.EntityNameable;
+import org.abchip.mimo.entity.EntityIdentifiable;
 import org.abchip.mimo.entity.SerializationType;
 import org.abchip.mimo.resource.ResourceManager;
 import org.abchip.mimo.resource.ResourceReader;
@@ -74,7 +74,7 @@ public class LoginServlet extends HttpServlet {
 			String entityName = "OAuth2" + provider;
 
 			ResourceReader<?> oauth2Reader = resourceManager.getResourceReader(context, entityName);
-			EntityNameable oauth2Entity = oauth2Reader.first();
+			EntityIdentifiable oauth2Entity = oauth2Reader.first();
 
 			if (oauth2Entity == null) {
 				response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);

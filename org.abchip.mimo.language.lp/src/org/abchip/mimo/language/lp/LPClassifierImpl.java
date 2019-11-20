@@ -14,7 +14,7 @@ import javax.inject.Inject;
 import org.abchip.mimo.context.Context;
 import org.abchip.mimo.context.ContextRoot;
 import org.abchip.mimo.entity.Entity;
-import org.abchip.mimo.entity.EntityNameable;
+import org.abchip.mimo.entity.EntityIdentifiable;
 import org.abchip.mimo.language.Language;
 import org.abchip.mimo.mining.classification.Classification;
 import org.abchip.mimo.mining.classification.ClassificationFactory;
@@ -70,7 +70,7 @@ public class LPClassifierImpl implements Classifier {
 	}
 
 	@Override
-	public <E extends EntityNameable> Evaluator buildEvaluator(Class<E> klass, Class<?> object) {
+	public <E extends EntityIdentifiable> Evaluator buildEvaluator(Class<E> klass, Class<?> object) {
 
 		String[] categories = new String[languages.size()];
 		int i = 0;

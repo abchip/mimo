@@ -79,7 +79,7 @@ public interface GrammarPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WORD__NAME = EntityPackage.ENTITY_NAMEABLE_FEATURE_COUNT + 0;
+	int WORD__NAME = EntityPackage.ENTITY_IDENTIFIABLE_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of structural features of the '<em>Word</em>' class.
@@ -88,7 +88,7 @@ public interface GrammarPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WORD_FEATURE_COUNT = EntityPackage.ENTITY_NAMEABLE_FEATURE_COUNT + 1;
+	int WORD_FEATURE_COUNT = EntityPackage.ENTITY_IDENTIFIABLE_FEATURE_COUNT + 1;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.language.grammar.impl.AdjectiveImpl <em>Adjective</em>}' class.
@@ -154,7 +154,7 @@ public interface GrammarPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GRAMMAR__NAME = EntityPackage.ENTITY_NAMEABLE_FEATURE_COUNT + 0;
+	int GRAMMAR__NAME = EntityPackage.ENTITY_IDENTIFIABLE_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Text</b></em>' attribute.
@@ -163,7 +163,7 @@ public interface GrammarPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GRAMMAR__TEXT = EntityPackage.ENTITY_NAMEABLE_FEATURE_COUNT + 1;
+	int GRAMMAR__TEXT = EntityPackage.ENTITY_IDENTIFIABLE_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Grammar</em>' class.
@@ -172,7 +172,7 @@ public interface GrammarPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GRAMMAR_FEATURE_COUNT = EntityPackage.ENTITY_NAMEABLE_FEATURE_COUNT + 2;
+	int GRAMMAR_FEATURE_COUNT = EntityPackage.ENTITY_IDENTIFIABLE_FEATURE_COUNT + 2;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.language.grammar.impl.NounImpl <em>Noun</em>}' class.

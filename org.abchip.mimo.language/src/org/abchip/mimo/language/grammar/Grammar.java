@@ -7,7 +7,7 @@
  */
 package org.abchip.mimo.language.grammar;
 
-import org.abchip.mimo.entity.EntityNameable;
+import org.abchip.mimo.entity.EntityIdentifiable;
 import org.abchip.mimo.entity.Textable;
 
 /**
@@ -27,7 +27,7 @@ import org.abchip.mimo.entity.Textable;
  * @model
  * @generated
  */
-public interface Grammar extends EntityNameable, Textable {
+public interface Grammar extends EntityIdentifiable, Textable {
 	/**
 	 * Returns the value of the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->

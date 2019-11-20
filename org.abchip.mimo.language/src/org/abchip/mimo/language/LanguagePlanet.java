@@ -7,7 +7,7 @@
  */
 package org.abchip.mimo.language;
 
-import org.abchip.mimo.entity.EntityNameable;
+import org.abchip.mimo.entity.EntityIdentifiable;
 
 /**
  * <!-- begin-user-doc -->
@@ -25,7 +25,7 @@ import org.abchip.mimo.entity.EntityNameable;
  * @model
  * @generated
  */
-public interface LanguagePlanet extends EntityNameable {
+public interface LanguagePlanet extends EntityIdentifiable {
 	/**
 	 * Returns the value of the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->

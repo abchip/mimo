@@ -79,7 +79,7 @@ public interface AudioPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int AUDIO__CONTENT = EntityPackage.ENTITY_NAMEABLE_FEATURE_COUNT + 0;
+	int AUDIO__CONTENT = EntityPackage.ENTITY_IDENTIFIABLE_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -88,7 +88,7 @@ public interface AudioPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int AUDIO__NAME = EntityPackage.ENTITY_NAMEABLE_FEATURE_COUNT + 1;
+	int AUDIO__NAME = EntityPackage.ENTITY_IDENTIFIABLE_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Text</b></em>' attribute.
@@ -97,7 +97,7 @@ public interface AudioPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int AUDIO__TEXT = EntityPackage.ENTITY_NAMEABLE_FEATURE_COUNT + 2;
+	int AUDIO__TEXT = EntityPackage.ENTITY_IDENTIFIABLE_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of structural features of the '<em>Audio</em>' class.
@@ -106,7 +106,7 @@ public interface AudioPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int AUDIO_FEATURE_COUNT = EntityPackage.ENTITY_NAMEABLE_FEATURE_COUNT + 3;
+	int AUDIO_FEATURE_COUNT = EntityPackage.ENTITY_IDENTIFIABLE_FEATURE_COUNT + 3;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.audio.AudioManager <em>Manager</em>}' class.

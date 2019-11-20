@@ -470,7 +470,7 @@ public class LanguagePackageImpl extends EPackageImpl implements LanguagePackage
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
-		languageEClass.getESuperTypes().add(theEntityPackage.getEntityNameable());
+		languageEClass.getESuperTypes().add(theEntityPackage.getEntityIdentifiable());
 		languageEClass.getESuperTypes().add(theEntityPackage.getTextable());
 		EGenericType g1 = createEGenericType(theContextPackage.getRegistry());
 		EGenericType g2 = createEGenericType(this.getLanguageParser());
@@ -480,7 +480,7 @@ public class LanguagePackageImpl extends EPackageImpl implements LanguagePackage
 		g2 = createEGenericType(this.getLanguageLinearizer());
 		g1.getETypeArguments().add(g2);
 		languageLinearizerRegistryEClass.getEGenericSuperTypes().add(g1);
-		languagePlanetEClass.getESuperTypes().add(theEntityPackage.getEntityNameable());
+		languagePlanetEClass.getESuperTypes().add(theEntityPackage.getEntityIdentifiable());
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(languageEClass, Language.class, "Language", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);

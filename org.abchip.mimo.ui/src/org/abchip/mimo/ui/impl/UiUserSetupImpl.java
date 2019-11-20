@@ -3,7 +3,7 @@
  */
 package org.abchip.mimo.ui.impl;
 
-import org.abchip.mimo.entity.impl.EntityNameableImpl;
+import org.abchip.mimo.entity.impl.EntityIdentifiableImpl;
 
 import org.abchip.mimo.ui.UIPackage;
 import org.abchip.mimo.ui.UiUserSetup;
@@ -24,7 +24,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *
  * @generated
  */
-public class UiUserSetupImpl extends EntityNameableImpl implements UiUserSetup {
+public class UiUserSetupImpl extends EntityIdentifiableImpl implements UiUserSetup {
 	/**
 	 * 
 	 */

@@ -41,7 +41,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *
  * @generated
  */
-public abstract class SlotImpl extends EntityNameableImpl implements Slot {
+public abstract class SlotImpl extends EntityIdentifiableImpl implements Slot {
 	/**
 	 * The cached value of the '{@link #getCardinality() <em>Cardinality</em>}' containment reference.
 	 * <!-- begin-user-doc -->

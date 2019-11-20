@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="language" nsURI="http://www.abchip.org/mimo/language" nsPrefix="mimo-lang">
-  <eClassifiers xsi:type="ecore:EClass" name="Language" eSuperTypes="../../org.abchip.mimo.core/model/mimo.ecore#//entity/EntityNameable ../../org.abchip.mimo.core/model/mimo.ecore#//entity/Textable">
+  <eClassifiers xsi:type="ecore:EClass" name="Language" eSuperTypes="../../org.abchip.mimo.core/model/mimo.ecore#//entity/EntityIdentifiable ../../org.abchip.mimo.core/model/mimo.ecore#//entity/Textable">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="iso_639_1" lowerBound="1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
@@ -75,7 +75,7 @@
       <eTypeArguments eClassifier="#//LanguageLinearizer"/>
     </eGenericSuperTypes>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="LanguagePlanet" eSuperTypes="../../org.abchip.mimo.core/model/mimo.ecore#//entity/EntityNameable">
+  <eClassifiers xsi:type="ecore:EClass" name="LanguagePlanet" eSuperTypes="../../org.abchip.mimo.core/model/mimo.ecore#//entity/EntityIdentifiable">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
         iD="true"/>
   </eClassifiers>
@@ -87,7 +87,7 @@
       <eLiterals name="Masculine" value="10" literal="M"/>
       <eLiterals name="Feminine" value="20" literal="F"/>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="Grammar" eSuperTypes="../../org.abchip.mimo.core/model/mimo.ecore#//entity/EntityNameable ../../org.abchip.mimo.core/model/mimo.ecore#//entity/Textable">
+    <eClassifiers xsi:type="ecore:EClass" name="Grammar" eSuperTypes="../../org.abchip.mimo.core/model/mimo.ecore#//entity/EntityIdentifiable ../../org.abchip.mimo.core/model/mimo.ecore#//entity/Textable">
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1"
           eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="text" lowerBound="1"
@@ -102,7 +102,7 @@
     <eClassifiers xsi:type="ecore:EClass" name="Pronoun" eSuperTypes="#//grammar/Word"/>
     <eClassifiers xsi:type="ecore:EClass" name="Sentence" eSuperTypes="../../org.abchip.mimo.core/model/mimo.ecore#//entity/Entity"/>
     <eClassifiers xsi:type="ecore:EClass" name="Verb" eSuperTypes="#//grammar/Word"/>
-    <eClassifiers xsi:type="ecore:EClass" name="Word" eSuperTypes="../../org.abchip.mimo.core/model/mimo.ecore#//entity/EntityNameable">
+    <eClassifiers xsi:type="ecore:EClass" name="Word" eSuperTypes="../../org.abchip.mimo.core/model/mimo.ecore#//entity/EntityIdentifiable">
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1"
           eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     </eClassifiers>

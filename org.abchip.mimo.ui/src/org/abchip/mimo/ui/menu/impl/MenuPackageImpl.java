@@ -363,8 +363,8 @@ public class MenuPackageImpl extends EPackageImpl implements MenuPackage {
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
-		contextMenuEClass.getESuperTypes().add(theEntityPackage.getEntityNameable());
-		menuEClass.getESuperTypes().add(theEntityPackage.getEntityNameable());
+		contextMenuEClass.getESuperTypes().add(theEntityPackage.getEntityIdentifiable());
+		menuEClass.getESuperTypes().add(theEntityPackage.getEntityIdentifiable());
 		menuActionEClass.getESuperTypes().add(theUIPackage.getDataNode());
 		menuGroupEClass.getESuperTypes().add(theUIPackage.getDataNode());
 

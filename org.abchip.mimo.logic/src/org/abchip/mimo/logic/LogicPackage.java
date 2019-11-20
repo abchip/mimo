@@ -182,7 +182,7 @@ public interface LogicPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TERM__NAME = EntityPackage.ENTITY_NAMEABLE_FEATURE_COUNT + 0;
+	int TERM__NAME = EntityPackage.ENTITY_IDENTIFIABLE_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of structural features of the '<em>Term</em>' class.
@@ -191,7 +191,7 @@ public interface LogicPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TERM_FEATURE_COUNT = EntityPackage.ENTITY_NAMEABLE_FEATURE_COUNT + 1;
+	int TERM_FEATURE_COUNT = EntityPackage.ENTITY_IDENTIFIABLE_FEATURE_COUNT + 1;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.logic.impl.TheoryImpl <em>Theory</em>}' class.

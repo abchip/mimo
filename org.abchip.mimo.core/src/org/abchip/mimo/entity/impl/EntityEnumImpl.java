@@ -27,7 +27,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *
  * @generated
  */
-public abstract class EntityEnumImpl extends EntityNameableImpl implements EntityEnum {
+public abstract class EntityEnumImpl extends EntityIdentifiableImpl implements EntityEnum {
 	/**
 	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->

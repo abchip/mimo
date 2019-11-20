@@ -9,7 +9,7 @@ package org.abchip.mimo.resource.impl;
 
 import java.util.List;
 
-import org.abchip.mimo.entity.EntityNameable;
+import org.abchip.mimo.entity.EntityIdentifiable;
 import org.abchip.mimo.entity.Frame;
 import org.abchip.mimo.entity.impl.EntityImpl;
 import org.abchip.mimo.resource.Resource;
@@ -33,7 +33,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *
  * @generated
  */
-public abstract class ResourceImpl<E extends EntityNameable> extends EntityImpl implements Resource<E> {
+public abstract class ResourceImpl<E extends EntityIdentifiable> extends EntityImpl implements Resource<E> {
 	/**
 	 * The cached value of the '{@link #getResourceConfig() <em>Resource Config</em>}' reference.
 	 * <!-- begin-user-doc -->

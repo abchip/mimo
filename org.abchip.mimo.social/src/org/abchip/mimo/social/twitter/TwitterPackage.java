@@ -78,7 +78,7 @@ public interface TwitterPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TWEET__DATE = EntityPackage.ENTITY_NAMEABLE_FEATURE_COUNT + 0;
+	int TWEET__DATE = EntityPackage.ENTITY_IDENTIFIABLE_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Entities</b></em>' attribute list.
@@ -87,7 +87,7 @@ public interface TwitterPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TWEET__ENTITIES = EntityPackage.ENTITY_NAMEABLE_FEATURE_COUNT + 1;
+	int TWEET__ENTITIES = EntityPackage.ENTITY_IDENTIFIABLE_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Geolocation</b></em>' attribute.
@@ -96,7 +96,7 @@ public interface TwitterPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TWEET__GEOLOCATION = EntityPackage.ENTITY_NAMEABLE_FEATURE_COUNT + 2;
+	int TWEET__GEOLOCATION = EntityPackage.ENTITY_IDENTIFIABLE_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Hashtags</b></em>' attribute list.
@@ -105,7 +105,7 @@ public interface TwitterPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TWEET__HASHTAGS = EntityPackage.ENTITY_NAMEABLE_FEATURE_COUNT + 3;
+	int TWEET__HASHTAGS = EntityPackage.ENTITY_IDENTIFIABLE_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' attribute.
@@ -114,7 +114,7 @@ public interface TwitterPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TWEET__ID = EntityPackage.ENTITY_NAMEABLE_FEATURE_COUNT + 4;
+	int TWEET__ID = EntityPackage.ENTITY_IDENTIFIABLE_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Language</b></em>' attribute.
@@ -123,7 +123,7 @@ public interface TwitterPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TWEET__LANGUAGE = EntityPackage.ENTITY_NAMEABLE_FEATURE_COUNT + 5;
+	int TWEET__LANGUAGE = EntityPackage.ENTITY_IDENTIFIABLE_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Medias</b></em>' attribute list.
@@ -132,7 +132,7 @@ public interface TwitterPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TWEET__MEDIAS = EntityPackage.ENTITY_NAMEABLE_FEATURE_COUNT + 6;
+	int TWEET__MEDIAS = EntityPackage.ENTITY_IDENTIFIABLE_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Place</b></em>' attribute.
@@ -141,7 +141,7 @@ public interface TwitterPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TWEET__PLACE = EntityPackage.ENTITY_NAMEABLE_FEATURE_COUNT + 7;
+	int TWEET__PLACE = EntityPackage.ENTITY_IDENTIFIABLE_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>Symbols</b></em>' attribute list.
@@ -150,7 +150,7 @@ public interface TwitterPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TWEET__SYMBOLS = EntityPackage.ENTITY_NAMEABLE_FEATURE_COUNT + 8;
+	int TWEET__SYMBOLS = EntityPackage.ENTITY_IDENTIFIABLE_FEATURE_COUNT + 8;
 
 	/**
 	 * The feature id for the '<em><b>Text</b></em>' attribute.
@@ -159,7 +159,7 @@ public interface TwitterPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TWEET__TEXT = EntityPackage.ENTITY_NAMEABLE_FEATURE_COUNT + 9;
+	int TWEET__TEXT = EntityPackage.ENTITY_IDENTIFIABLE_FEATURE_COUNT + 9;
 
 	/**
 	 * The feature id for the '<em><b>User</b></em>' attribute.
@@ -168,7 +168,7 @@ public interface TwitterPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TWEET__USER = EntityPackage.ENTITY_NAMEABLE_FEATURE_COUNT + 10;
+	int TWEET__USER = EntityPackage.ENTITY_IDENTIFIABLE_FEATURE_COUNT + 10;
 
 	/**
 	 * The feature id for the '<em><b>User Mentions</b></em>' attribute list.
@@ -177,7 +177,7 @@ public interface TwitterPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TWEET__USER_MENTIONS = EntityPackage.ENTITY_NAMEABLE_FEATURE_COUNT + 11;
+	int TWEET__USER_MENTIONS = EntityPackage.ENTITY_IDENTIFIABLE_FEATURE_COUNT + 11;
 
 	/**
 	 * The number of structural features of the '<em>Tweet</em>' class.
@@ -186,7 +186,7 @@ public interface TwitterPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TWEET_FEATURE_COUNT = EntityPackage.ENTITY_NAMEABLE_FEATURE_COUNT + 12;
+	int TWEET_FEATURE_COUNT = EntityPackage.ENTITY_IDENTIFIABLE_FEATURE_COUNT + 12;
 
 
 	/**

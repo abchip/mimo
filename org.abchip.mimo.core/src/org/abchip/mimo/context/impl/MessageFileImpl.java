@@ -14,7 +14,7 @@ import org.abchip.mimo.context.ContextPackage;
 import org.abchip.mimo.context.MessageDescription;
 import org.abchip.mimo.context.MessageFile;
 
-import org.abchip.mimo.entity.impl.EntityNameableImpl;
+import org.abchip.mimo.entity.impl.EntityIdentifiableImpl;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
@@ -44,7 +44,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *
  * @generated
  */
-public class MessageFileImpl extends EntityNameableImpl implements MessageFile {
+public class MessageFileImpl extends EntityIdentifiableImpl implements MessageFile {
 	/**
 	 * 
 	 */

@@ -23,7 +23,7 @@ import org.abchip.mimo.context.AuthenticationAnonymous;
 import org.abchip.mimo.context.AuthenticationManager;
 import org.abchip.mimo.context.ContextFactory;
 import org.abchip.mimo.context.Context;
-import org.abchip.mimo.entity.EntityNameable;
+import org.abchip.mimo.entity.EntityIdentifiable;
 import org.abchip.mimo.resource.ResourceManager;
 import org.abchip.mimo.resource.ResourceReader;
 
@@ -57,7 +57,7 @@ public class GoogleRedirectServlet extends HttpServlet {
 		Context context = authenticationManager.login(null, authentication);
 
 		ResourceReader<?> oauth2Reader = resourceManager.getResourceReader(context, "OAuth2Google");
-		EntityNameable oauth2Google = oauth2Reader.first();
+		EntityIdentifiable oauth2Google = oauth2Reader.first();
 
 		authenticationManager.logout(context);
 		context.close();

@@ -6,7 +6,7 @@ package org.abchip.mimo.ui.query.impl;
 import java.util.Collection;
 import java.util.List;
 
-import org.abchip.mimo.entity.impl.EntityNameableImpl;
+import org.abchip.mimo.entity.impl.EntityIdentifiableImpl;
 
 import org.abchip.mimo.ui.query.Query;
 import org.abchip.mimo.ui.query.QueryField;
@@ -36,7 +36,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *
  * @generated
  */
-public class QueryImpl extends EntityNameableImpl implements Query {
+public class QueryImpl extends EntityIdentifiableImpl implements Query {
 	/**
 	 * 
 	 */

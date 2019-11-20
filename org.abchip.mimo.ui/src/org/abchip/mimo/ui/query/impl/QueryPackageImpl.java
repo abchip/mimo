@@ -286,7 +286,7 @@ public class QueryPackageImpl extends EPackageImpl implements QueryPackage {
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
-		queryEClass.getESuperTypes().add(theEntityPackage.getEntityNameable());
+		queryEClass.getESuperTypes().add(theEntityPackage.getEntityIdentifiable());
 		queryFieldEClass.getESuperTypes().add(theEntityPackage.getEntity());
 
 		// Initialize classes and features; add operations and parameters

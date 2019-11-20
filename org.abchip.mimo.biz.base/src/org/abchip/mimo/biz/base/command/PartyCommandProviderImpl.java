@@ -18,7 +18,7 @@ import org.abchip.mimo.biz.party.party.PartyGroup;
 import org.abchip.mimo.biz.party.party.PartyType;
 import org.abchip.mimo.biz.party.party.Person;
 import org.abchip.mimo.context.ContextRoot;
-import org.abchip.mimo.entity.EntityNameable;
+import org.abchip.mimo.entity.EntityIdentifiable;
 import org.abchip.mimo.resource.ResourceManager;
 import org.abchip.mimo.resource.ResourceReader;
 import org.abchip.mimo.resource.ResourceWriter;
@@ -32,16 +32,16 @@ public class PartyCommandProviderImpl implements CommandProvider {
 	@Inject
 	private ResourceManager resourceManager;
 
-	public <E extends EntityNameable> void _testParty(CommandInterpreter interpreter) throws Exception {
+	public <E extends EntityIdentifiable> void _testParty(CommandInterpreter interpreter) throws Exception {
 
 		ResourceReader<Party> partyReader = resourceManager.getResourceReader(contextRoot, Party.class);
 		Party party = partyReader.lookup("10000");
 		System.out.println(party.getURI());
-		System.out.println(party.getPartyTypeId().getName());
-		System.out.println(party.getCreatedByUserLogin().getPartyId().getName());
+		System.out.println(party.getPartyTypeId().getID());
+		System.out.println(party.getCreatedByUserLogin().getPartyId().getID());
 	}
 
-	public <E extends EntityNameable> void _hackerParty(CommandInterpreter interpreter) throws Exception {
+	public <E extends EntityIdentifiable> void _hackerParty(CommandInterpreter interpreter) throws Exception {
 
 		String id = interpreter.nextArgument();
 

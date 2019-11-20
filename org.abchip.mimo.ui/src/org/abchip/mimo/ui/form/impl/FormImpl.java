@@ -6,7 +6,7 @@ package org.abchip.mimo.ui.form.impl;
 import java.util.Collection;
 import java.util.List;
 
-import org.abchip.mimo.entity.impl.EntityNameableImpl;
+import org.abchip.mimo.entity.impl.EntityIdentifiableImpl;
 
 import org.abchip.mimo.ui.form.Form;
 import org.abchip.mimo.ui.form.FormField;
@@ -36,7 +36,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *
  * @generated
  */
-public class FormImpl extends EntityNameableImpl implements Form {
+public class FormImpl extends EntityIdentifiableImpl implements Form {
 	/**
 	 * 
 	 */

@@ -80,7 +80,7 @@ public interface BizPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BIZ_ENTITY__CREATED_STAMP = EntityPackage.ENTITY_NAMEABLE_FEATURE_COUNT + 0;
+	int BIZ_ENTITY__CREATED_STAMP = EntityPackage.ENTITY_IDENTIFIABLE_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Created Tx Stamp</b></em>' attribute.
@@ -89,7 +89,7 @@ public interface BizPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BIZ_ENTITY__CREATED_TX_STAMP = EntityPackage.ENTITY_NAMEABLE_FEATURE_COUNT + 1;
+	int BIZ_ENTITY__CREATED_TX_STAMP = EntityPackage.ENTITY_IDENTIFIABLE_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Last Updated Stamp</b></em>' attribute.
@@ -98,7 +98,7 @@ public interface BizPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BIZ_ENTITY__LAST_UPDATED_STAMP = EntityPackage.ENTITY_NAMEABLE_FEATURE_COUNT + 2;
+	int BIZ_ENTITY__LAST_UPDATED_STAMP = EntityPackage.ENTITY_IDENTIFIABLE_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Last Updated Tx Stamp</b></em>' attribute.
@@ -107,7 +107,7 @@ public interface BizPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BIZ_ENTITY__LAST_UPDATED_TX_STAMP = EntityPackage.ENTITY_NAMEABLE_FEATURE_COUNT + 3;
+	int BIZ_ENTITY__LAST_UPDATED_TX_STAMP = EntityPackage.ENTITY_IDENTIFIABLE_FEATURE_COUNT + 3;
 
 	/**
 	 * The number of structural features of the '<em>Entity</em>' class.
@@ -116,7 +116,7 @@ public interface BizPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BIZ_ENTITY_FEATURE_COUNT = EntityPackage.ENTITY_NAMEABLE_FEATURE_COUNT + 4;
+	int BIZ_ENTITY_FEATURE_COUNT = EntityPackage.ENTITY_IDENTIFIABLE_FEATURE_COUNT + 4;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.impl.BizEntityNoteImpl <em>Entity Note</em>}' class.

@@ -76,7 +76,7 @@ public interface MenuPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONTEXT_MENU__ELEMENTS = EntityPackage.ENTITY_NAMEABLE_FEATURE_COUNT + 0;
+	int CONTEXT_MENU__ELEMENTS = EntityPackage.ENTITY_IDENTIFIABLE_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Icon</b></em>' attribute.
@@ -85,7 +85,7 @@ public interface MenuPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONTEXT_MENU__ICON = EntityPackage.ENTITY_NAMEABLE_FEATURE_COUNT + 1;
+	int CONTEXT_MENU__ICON = EntityPackage.ENTITY_IDENTIFIABLE_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -94,7 +94,7 @@ public interface MenuPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONTEXT_MENU__NAME = EntityPackage.ENTITY_NAMEABLE_FEATURE_COUNT + 2;
+	int CONTEXT_MENU__NAME = EntityPackage.ENTITY_IDENTIFIABLE_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of structural features of the '<em>Context Menu</em>' class.
@@ -103,7 +103,7 @@ public interface MenuPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONTEXT_MENU_FEATURE_COUNT = EntityPackage.ENTITY_NAMEABLE_FEATURE_COUNT + 3;
+	int CONTEXT_MENU_FEATURE_COUNT = EntityPackage.ENTITY_IDENTIFIABLE_FEATURE_COUNT + 3;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.ui.menu.impl.MenuImpl <em>Menu</em>}' class.
@@ -122,7 +122,7 @@ public interface MenuPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MENU__ELEMENTS = EntityPackage.ENTITY_NAMEABLE_FEATURE_COUNT + 0;
+	int MENU__ELEMENTS = EntityPackage.ENTITY_IDENTIFIABLE_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Icon</b></em>' attribute.
@@ -131,7 +131,7 @@ public interface MenuPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MENU__ICON = EntityPackage.ENTITY_NAMEABLE_FEATURE_COUNT + 1;
+	int MENU__ICON = EntityPackage.ENTITY_IDENTIFIABLE_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -140,7 +140,7 @@ public interface MenuPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MENU__NAME = EntityPackage.ENTITY_NAMEABLE_FEATURE_COUNT + 2;
+	int MENU__NAME = EntityPackage.ENTITY_IDENTIFIABLE_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of structural features of the '<em>Menu</em>' class.
@@ -149,7 +149,7 @@ public interface MenuPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MENU_FEATURE_COUNT = EntityPackage.ENTITY_NAMEABLE_FEATURE_COUNT + 3;
+	int MENU_FEATURE_COUNT = EntityPackage.ENTITY_IDENTIFIABLE_FEATURE_COUNT + 3;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.ui.menu.impl.MenuActionImpl <em>Action</em>}' class.

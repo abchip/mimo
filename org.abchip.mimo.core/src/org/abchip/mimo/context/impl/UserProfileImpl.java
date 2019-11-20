@@ -11,7 +11,7 @@ package org.abchip.mimo.context.impl;
 import org.abchip.mimo.context.ContextPackage;
 import org.abchip.mimo.context.UserClass;
 import org.abchip.mimo.context.UserProfile;
-import org.abchip.mimo.entity.impl.EntityNameableImpl;
+import org.abchip.mimo.entity.impl.EntityIdentifiableImpl;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
@@ -31,7 +31,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *
  * @generated
  */
-public class UserProfileImpl extends EntityNameableImpl implements UserProfile {
+public class UserProfileImpl extends EntityIdentifiableImpl implements UserProfile {
 	/**
 	 * The default value of the '{@link #getJobDescription() <em>Job Description</em>}' attribute.
 	 * <!-- begin-user-doc -->

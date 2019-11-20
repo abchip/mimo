@@ -14,9 +14,9 @@ import java.util.concurrent.locks.ReentrantReadWriteLock;
 
 import org.abchip.mimo.context.EntityLocker;
 import org.abchip.mimo.context.LockType;
-import org.abchip.mimo.entity.EntityNameable;
+import org.abchip.mimo.entity.EntityIdentifiable;
 
-public class BaseLockerImpl<N extends EntityNameable> implements EntityLocker<N> {
+public class BaseLockerImpl<N extends EntityIdentifiable> implements EntityLocker<N> {
 
 	private ReentrantReadWriteLock lock;
 

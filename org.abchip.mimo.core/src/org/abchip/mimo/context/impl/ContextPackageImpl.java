@@ -1054,7 +1054,7 @@ public class ContextPackageImpl extends EPackageImpl implements ContextPackage {
 		ETypeParameter registryEClass_S = addETypeParameter(registryEClass, "S");
 
 		// Set bounds for type parameters
-		EGenericType g1 = createEGenericType(theEntityPackage.getEntityNameable());
+		EGenericType g1 = createEGenericType(theEntityPackage.getEntityIdentifiable());
 		entityLockerEClass_N.getEBounds().add(g1);
 		g1 = createEGenericType(theEntityPackage.getEntity());
 		identityEClass_T.getEBounds().add(g1);
@@ -1075,9 +1075,9 @@ public class ContextPackageImpl extends EPackageImpl implements ContextPackage {
 		messageDescriptionEClass.getESuperTypes().add(theEntityPackage.getEntity());
 		messageDescriptionEClass.getESuperTypes().add(theEntityPackage.getTextable());
 		messageDataFieldEClass.getESuperTypes().add(theEntityPackage.getEntity());
-		messageFileEClass.getESuperTypes().add(theEntityPackage.getEntityNameable());
+		messageFileEClass.getESuperTypes().add(theEntityPackage.getEntityIdentifiable());
 		messageFileEClass.getESuperTypes().add(theEntityPackage.getTextable());
-		userProfileEClass.getESuperTypes().add(theEntityPackage.getEntityNameable());
+		userProfileEClass.getESuperTypes().add(theEntityPackage.getEntityIdentifiable());
 		userProfileEClass.getESuperTypes().add(theEntityPackage.getTextable());
 
 		// Initialize classes and features; add operations and parameters
@@ -1361,7 +1361,7 @@ public class ContextPackageImpl extends EPackageImpl implements ContextPackage {
 
 		op = addEOperation(lockManagerEClass, null, "getLocker", 0, 1, IS_UNIQUE, IS_ORDERED);
 		t1 = addETypeParameter(op, "N");
-		g1 = createEGenericType(theEntityPackage.getEntityNameable());
+		g1 = createEGenericType(theEntityPackage.getEntityIdentifiable());
 		t1.getEBounds().add(g1);
 		addEParameter(op, this.getContext(), "context", 1, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, theJavaPackage.getJavaURI(), "address", 0, 1, IS_UNIQUE, IS_ORDERED);
@@ -1372,7 +1372,7 @@ public class ContextPackageImpl extends EPackageImpl implements ContextPackage {
 
 		op = addEOperation(lockManagerEClass, null, "getLocker", 0, 1, IS_UNIQUE, IS_ORDERED);
 		t1 = addETypeParameter(op, "N");
-		g1 = createEGenericType(theEntityPackage.getEntityNameable());
+		g1 = createEGenericType(theEntityPackage.getEntityIdentifiable());
 		t1.getEBounds().add(g1);
 		addEParameter(op, this.getContext(), "context", 1, 1, IS_UNIQUE, IS_ORDERED);
 		g1 = createEGenericType(t1);
@@ -1454,7 +1454,7 @@ public class ContextPackageImpl extends EPackageImpl implements ContextPackage {
 
 		initEClass(messageFileEClass, MessageFile.class, "MessageFile", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getMessageFile_Messages(), this.getMessageDescription(), null, "messages", null, 0, -1, MessageFile.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getMessageFile_Name(), ecorePackage.getEString(), "name", null, 1, 1, MessageFile.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getMessageFile_Name(), ecorePackage.getEString(), "name", null, 1, 1, MessageFile.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMessageFile_Text(), ecorePackage.getEString(), "text", null, 1, 1, MessageFile.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		op = addEOperation(messageFileEClass, this.getMessageDescription(), "lookup", 1, 1, IS_UNIQUE, IS_ORDERED);
@@ -1500,7 +1500,7 @@ public class ContextPackageImpl extends EPackageImpl implements ContextPackage {
 
 		initEClass(userProfileEClass, UserProfile.class, "UserProfile", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getUserProfile_JobDescription(), ecorePackage.getEString(), "jobDescription", null, 0, 1, UserProfile.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getUserProfile_Name(), ecorePackage.getEString(), "name", null, 1, 1, UserProfile.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getUserProfile_Name(), ecorePackage.getEString(), "name", null, 1, 1, UserProfile.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getUserProfile_Text(), ecorePackage.getEString(), "text", null, 1, 1, UserProfile.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getUserProfile_UserClass(), this.getUserClass(), "userClass", null, 1, 1, UserProfile.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 

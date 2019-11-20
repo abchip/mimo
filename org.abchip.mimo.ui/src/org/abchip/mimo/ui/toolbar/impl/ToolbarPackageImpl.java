@@ -291,7 +291,7 @@ public class ToolbarPackageImpl extends EPackageImpl implements ToolbarPackage {
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
-		toolbarEClass.getESuperTypes().add(theEntityPackage.getEntityNameable());
+		toolbarEClass.getESuperTypes().add(theEntityPackage.getEntityIdentifiable());
 		toolbarViewEClass.getESuperTypes().add(theEntityPackage.getEntity());
 
 		// Initialize classes and features; add operations and parameters

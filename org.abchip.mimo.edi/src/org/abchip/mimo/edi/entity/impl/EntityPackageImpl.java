@@ -290,7 +290,7 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
-		ediFrameSetupEClass.getESuperTypes().add(theEntityPackage_1.getEntityNameable());
+		ediFrameSetupEClass.getESuperTypes().add(theEntityPackage_1.getEntityIdentifiable());
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(ediFrameSetupEClass, EdiFrameSetup.class, "EdiFrameSetup", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);

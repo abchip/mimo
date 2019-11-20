@@ -47,7 +47,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *
  * @generated
  */
-public abstract class FrameImpl<E extends Entity> extends EntityNameableImpl implements Frame<E> {
+public abstract class FrameImpl<E extends Entity> extends EntityIdentifiableImpl implements Frame<E> {
 	/**
 	 * The default value of the '{@link #isAbstract() <em>Abstract</em>}' attribute.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->

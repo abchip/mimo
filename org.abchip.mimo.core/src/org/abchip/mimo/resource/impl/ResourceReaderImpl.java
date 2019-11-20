@@ -10,7 +10,7 @@ package org.abchip.mimo.resource.impl;
 
 import org.abchip.mimo.context.Context;
 import org.abchip.mimo.entity.EntityIterator;
-import org.abchip.mimo.entity.EntityNameable;
+import org.abchip.mimo.entity.EntityIdentifiable;
 import org.abchip.mimo.entity.Frame;
 import org.abchip.mimo.resource.ResourceNotifier;
 import org.abchip.mimo.resource.ResourcePackage;
@@ -34,7 +34,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  *
  * @generated
  */
-public abstract class ResourceReaderImpl<E extends EntityNameable> extends MinimalEObjectImpl.Container implements ResourceReader<E> {
+public abstract class ResourceReaderImpl<E extends EntityIdentifiable> extends MinimalEObjectImpl.Container implements ResourceReader<E> {
 	/**
 	 * The cached value of the '{@link #getNotifier() <em>Notifier</em>}' reference.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->

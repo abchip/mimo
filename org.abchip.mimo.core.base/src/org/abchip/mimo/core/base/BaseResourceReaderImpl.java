@@ -16,12 +16,12 @@ import java.util.List;
 import org.abchip.mimo.MimoResourceImpl;
 import org.abchip.mimo.context.Context;
 import org.abchip.mimo.entity.EntityIterator;
-import org.abchip.mimo.entity.EntityNameable;
+import org.abchip.mimo.entity.EntityIdentifiable;
 import org.abchip.mimo.entity.Frame;
 import org.abchip.mimo.resource.impl.ResourceReaderImpl;
 import org.eclipse.emf.ecore.InternalEObject;
 
-public class BaseResourceReaderImpl<E extends EntityNameable> extends ResourceReaderImpl<E> {
+public class BaseResourceReaderImpl<E extends EntityIdentifiable> extends ResourceReaderImpl<E> {
 
 	protected MimoResourceImpl<E> internal = null;
 

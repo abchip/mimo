@@ -99,7 +99,7 @@ public interface TesterPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ASSERTION_RESULT__MESSAGE = EntityPackage.ENTITY_NAMEABLE_FEATURE_COUNT + 0;
+	int ASSERTION_RESULT__MESSAGE = EntityPackage.ENTITY_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -108,7 +108,7 @@ public interface TesterPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ASSERTION_RESULT__NAME = EntityPackage.ENTITY_NAMEABLE_FEATURE_COUNT + 1;
+	int ASSERTION_RESULT__NAME = EntityPackage.ENTITY_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Time</b></em>' attribute.
@@ -117,7 +117,7 @@ public interface TesterPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ASSERTION_RESULT__TIME = EntityPackage.ENTITY_NAMEABLE_FEATURE_COUNT + 2;
+	int ASSERTION_RESULT__TIME = EntityPackage.ENTITY_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of structural features of the '<em>Assertion Result</em>' class.
@@ -126,7 +126,7 @@ public interface TesterPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ASSERTION_RESULT_FEATURE_COUNT = EntityPackage.ENTITY_NAMEABLE_FEATURE_COUNT + 3;
+	int ASSERTION_RESULT_FEATURE_COUNT = EntityPackage.ENTITY_FEATURE_COUNT + 3;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.tester.impl.AssertionFailedImpl <em>Assertion Failed</em>}' class.
@@ -471,7 +471,7 @@ public interface TesterPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TEST_OBJECT__NAME = EntityPackage.ENTITY_NAMEABLE_FEATURE_COUNT + 0;
+	int TEST_OBJECT__NAME = EntityPackage.ENTITY_IDENTIFIABLE_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>String Property</b></em>' attribute.
@@ -480,7 +480,7 @@ public interface TesterPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TEST_OBJECT__STRING_PROPERTY = EntityPackage.ENTITY_NAMEABLE_FEATURE_COUNT + 1;
+	int TEST_OBJECT__STRING_PROPERTY = EntityPackage.ENTITY_IDENTIFIABLE_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Integer Property</b></em>' attribute.
@@ -489,7 +489,7 @@ public interface TesterPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TEST_OBJECT__INTEGER_PROPERTY = EntityPackage.ENTITY_NAMEABLE_FEATURE_COUNT + 2;
+	int TEST_OBJECT__INTEGER_PROPERTY = EntityPackage.ENTITY_IDENTIFIABLE_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Object Reference</b></em>' reference.
@@ -498,7 +498,7 @@ public interface TesterPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TEST_OBJECT__OBJECT_REFERENCE = EntityPackage.ENTITY_NAMEABLE_FEATURE_COUNT + 3;
+	int TEST_OBJECT__OBJECT_REFERENCE = EntityPackage.ENTITY_IDENTIFIABLE_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Object References</b></em>' reference list.
@@ -507,7 +507,7 @@ public interface TesterPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TEST_OBJECT__OBJECT_REFERENCES = EntityPackage.ENTITY_NAMEABLE_FEATURE_COUNT + 4;
+	int TEST_OBJECT__OBJECT_REFERENCES = EntityPackage.ENTITY_IDENTIFIABLE_FEATURE_COUNT + 4;
 
 	/**
 	 * The number of structural features of the '<em>Test Object</em>' class.
@@ -516,7 +516,7 @@ public interface TesterPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TEST_OBJECT_FEATURE_COUNT = EntityPackage.ENTITY_NAMEABLE_FEATURE_COUNT + 5;
+	int TEST_OBJECT_FEATURE_COUNT = EntityPackage.ENTITY_IDENTIFIABLE_FEATURE_COUNT + 5;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.tester.AssertionState <em>Assertion State</em>}' enum.

@@ -10,7 +10,7 @@ package org.abchip.mimo.resource.impl;
 import javax.inject.Inject;
 
 import org.abchip.mimo.context.Context;
-import org.abchip.mimo.entity.EntityNameable;
+import org.abchip.mimo.entity.EntityIdentifiable;
 import org.abchip.mimo.entity.Frame;
 import org.abchip.mimo.resource.Resource;
 import org.abchip.mimo.resource.ResourceManager;
@@ -53,7 +53,7 @@ public abstract class ResourceProviderImpl extends MinimalEObjectImpl.Container 
 	 * @generated NOT
 	 */
 	@Override
-	public final <E extends EntityNameable> Resource<E> getResource(Context context, Class<E> klass) {
+	public final <E extends EntityIdentifiable> Resource<E> getResource(Context context, Class<E> klass) {
 		return getResource(context, klass.getSimpleName());
 	}
 
@@ -63,7 +63,7 @@ public abstract class ResourceProviderImpl extends MinimalEObjectImpl.Container 
 	 * @generated NOT
 	 */
 	@Override
-	public <E extends EntityNameable> Resource<E> getResource(Context context, Frame<E> frame) {
+	public <E extends EntityIdentifiable> Resource<E> getResource(Context context, Frame<E> frame) {
 		return getResource(context, frame, null);
 	}
 
@@ -73,7 +73,7 @@ public abstract class ResourceProviderImpl extends MinimalEObjectImpl.Container 
 	 * @generated NOT
 	 */
 	@Override
-	public final <E extends EntityNameable> Resource<E> getResource(Context context, String frame) {
+	public final <E extends EntityIdentifiable> Resource<E> getResource(Context context, String frame) {
 		return getResource(context, frame, null);
 	}
 
@@ -83,7 +83,7 @@ public abstract class ResourceProviderImpl extends MinimalEObjectImpl.Container 
 	 * @generated NOT
 	 */
 	@Override
-	public <E extends EntityNameable> Resource<E> getResource(Context context, Class<E> klass, String tenant) {
+	public <E extends EntityIdentifiable> Resource<E> getResource(Context context, Class<E> klass, String tenant) {
 		return getResource(context, klass.getSimpleName(), tenant);
 	}
 
@@ -94,7 +94,7 @@ public abstract class ResourceProviderImpl extends MinimalEObjectImpl.Container 
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
-	public <E extends EntityNameable> Resource<E> getResource(Context context, String frame, String tenant) {
+	public <E extends EntityIdentifiable> Resource<E> getResource(Context context, String frame, String tenant) {
 		return getResource(context, (Frame<E>) resourceManager.getFrame(context, frame, tenant), tenant);
 	}
 
@@ -104,7 +104,7 @@ public abstract class ResourceProviderImpl extends MinimalEObjectImpl.Container 
 	 * @generated NOT
 	 */
 	@Override
-	public <E extends EntityNameable> Resource<E> getResource(Context context, Frame<E> frame, String tenant) {
+	public <E extends EntityIdentifiable> Resource<E> getResource(Context context, Frame<E> frame, String tenant) {
 
 		if (tenant == null || tenant.trim().isEmpty()) {
 			if (context.getContextDescription().isTenant())
@@ -115,5 +115,5 @@ public abstract class ResourceProviderImpl extends MinimalEObjectImpl.Container 
 		return doGetResource(context, frame, tenant);
 	}
 
-	public abstract <E extends EntityNameable> Resource<E> doGetResource(Context context, Frame<E> frame, String tenant);
+	public abstract <E extends EntityIdentifiable> Resource<E> doGetResource(Context context, Frame<E> frame, String tenant);
 } // ResourceProviderImpl

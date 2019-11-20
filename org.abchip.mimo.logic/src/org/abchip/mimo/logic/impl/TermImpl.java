@@ -7,7 +7,7 @@
  */
 package org.abchip.mimo.logic.impl;
 
-import org.abchip.mimo.entity.impl.EntityNameableImpl;
+import org.abchip.mimo.entity.impl.EntityIdentifiableImpl;
 import org.abchip.mimo.logic.LogicPackage;
 import org.abchip.mimo.logic.Term;
 import org.eclipse.emf.common.notify.Notification;
@@ -27,7 +27,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *
  * @generated
  */
-public class TermImpl extends EntityNameableImpl implements Term {
+public class TermImpl extends EntityIdentifiableImpl implements Term {
 	/**
 	 * 
 	 */

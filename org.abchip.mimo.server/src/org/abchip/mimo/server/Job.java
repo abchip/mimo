@@ -12,7 +12,7 @@ import java.util.List;
 
 import org.abchip.mimo.context.Context;
 import org.abchip.mimo.data.DateFormat;
-import org.abchip.mimo.entity.EntityNameable;
+import org.abchip.mimo.entity.EntityIdentifiable;
 
 /**
  * <!-- begin-user-doc -->
@@ -43,7 +43,7 @@ import org.abchip.mimo.entity.EntityNameable;
  * @model
  * @generated
  */
-public interface Job extends EntityNameable {
+public interface Job extends EntityIdentifiable {
 	/**
 	 * Returns the value of the '<em><b>Context</b></em>' containment reference.
 	 * <!-- begin-user-doc -->

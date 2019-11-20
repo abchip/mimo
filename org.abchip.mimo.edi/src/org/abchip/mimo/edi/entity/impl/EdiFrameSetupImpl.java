@@ -11,7 +11,7 @@ import org.abchip.mimo.edi.entity.EdiFrameSetup;
 import org.abchip.mimo.edi.entity.EntityCondition;
 import org.abchip.mimo.edi.entity.EntityEvent;
 import org.abchip.mimo.edi.entity.EntityPackage;
-import org.abchip.mimo.entity.impl.EntityNameableImpl;
+import org.abchip.mimo.entity.impl.EntityIdentifiableImpl;
 
 import org.eclipse.emf.common.notify.Notification;
 
@@ -36,7 +36,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *
  * @generated
  */
-public class EdiFrameSetupImpl extends EntityNameableImpl implements EdiFrameSetup {
+public class EdiFrameSetupImpl extends EntityIdentifiableImpl implements EdiFrameSetup {
 	/**
 	 * The default value of the '{@link #getMessageType() <em>Message Type</em>}' attribute.
 	 * <!-- begin-user-doc -->

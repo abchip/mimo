@@ -37,7 +37,7 @@ public interface BizProviderUser extends BizEntity {
 	 * @return the value of the '<em>User</em>' attribute.
 	 * @see #setUser(String)
 	 * @see org.abchip.mimo.biz.BizPackage#getBizProviderUser_User()
-	 * @model required="true"
+	 * @model id="true" required="true"
 	 * @generated
 	 */
 	String getUser();

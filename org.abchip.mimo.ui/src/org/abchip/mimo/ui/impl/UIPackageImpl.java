@@ -472,8 +472,8 @@ public class UIPackageImpl extends EPackageImpl implements UIPackage {
 		// Add supertypes to classes
 		actionEClass.getESuperTypes().add(theEntityPackage.getEntity());
 		dataNodeEClass.getESuperTypes().add(theEntityPackage.getEntity());
-		uiFrameSetupEClass.getESuperTypes().add(theEntityPackage.getEntityNameable());
-		uiUserSetupEClass.getESuperTypes().add(theEntityPackage.getEntityNameable());
+		uiFrameSetupEClass.getESuperTypes().add(theEntityPackage.getEntityIdentifiable());
+		uiUserSetupEClass.getESuperTypes().add(theEntityPackage.getEntityIdentifiable());
 		viewEClass.getESuperTypes().add(theEntityPackage.getEntity());
 
 		// Initialize classes and features; add operations and parameters

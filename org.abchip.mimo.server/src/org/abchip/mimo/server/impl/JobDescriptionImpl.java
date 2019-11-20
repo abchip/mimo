@@ -8,7 +8,7 @@
  */
 package org.abchip.mimo.server.impl;
 
-import org.abchip.mimo.entity.impl.EntityNameableImpl;
+import org.abchip.mimo.entity.impl.EntityIdentifiableImpl;
 import org.abchip.mimo.server.JobDescription;
 import org.abchip.mimo.server.ServerPackage;
 import org.eclipse.emf.common.notify.Notification;
@@ -29,7 +29,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *
  * @generated
  */
-public class JobDescriptionImpl extends EntityNameableImpl implements JobDescription {
+public class JobDescriptionImpl extends EntityIdentifiableImpl implements JobDescription {
 	/**
 	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->

@@ -36,7 +36,7 @@ public class TestFrame {
 	private void testFrame() {
 
 		for (Frame<?> frame : resourceManager.getResourceReader(testRunner.getContext(), Frame.class).find()) {
-			if (!frame.isAbstract() && frame.getSuperNames().contains(EntityPackage.eINSTANCE.getEntityNameable().getName()))
+			if (!frame.isAbstract() && frame.getSuperNames().contains(EntityPackage.eINSTANCE.getEntityIdentifiable().getName()))
 				testAsserter.assertNotNull("Entity creation " + frame.getName(), frame.createEntity());
 		}
 	}

@@ -9,7 +9,7 @@ package org.abchip.mimo.tester.impl;
 
 import java.util.Collection;
 import java.util.List;
-import org.abchip.mimo.entity.impl.EntityNameableImpl;
+import org.abchip.mimo.entity.impl.EntityIdentifiableImpl;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.common.util.EList;
@@ -41,7 +41,7 @@ import org.abchip.mimo.tester.TesterPackage;
  *
  * @generated
  */
-public class TestObjectImpl extends EntityNameableImpl implements TestObject {
+public class TestObjectImpl extends EntityIdentifiableImpl implements TestObject {
 	/**
 	 * 
 	 */

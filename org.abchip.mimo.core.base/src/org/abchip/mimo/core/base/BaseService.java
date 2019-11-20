@@ -18,7 +18,7 @@ import org.abchip.mimo.context.ContextDescription;
 import org.abchip.mimo.context.Context;
 import org.abchip.mimo.context.ContextRoot;
 import org.abchip.mimo.context.LockManager;
-import org.abchip.mimo.entity.EntityNameable;
+import org.abchip.mimo.entity.EntityIdentifiable;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 
@@ -59,7 +59,7 @@ public class BaseService {
 		// check frame authorization
 	}
 
-	protected <E extends EntityNameable> MimoResourceImpl<E> getInternalResource(Context context, String frame, String tenant) {
+	protected <E extends EntityIdentifiable> MimoResourceImpl<E> getInternalResource(Context context, String frame, String tenant) {
 
 		URI uri = URI.createHierarchicalURI("mimo", null, null, new String[] { frame }, null, null);
 		@SuppressWarnings("unchecked")

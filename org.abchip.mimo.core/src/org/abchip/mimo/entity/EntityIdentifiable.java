@@ -15,11 +15,11 @@ import java.net.URI;
  * <em><b>Entity Nameable</b></em>'. <!-- end-user-doc -->
  *
  *
- * @see org.abchip.mimo.entity.EntityPackage#getEntityNameable()
+ * @see org.abchip.mimo.entity.EntityPackage#getEntityIdentifiable()
  * @model abstract="true"
  * @generated
  */
-public interface EntityNameable extends Entity {
+public interface EntityIdentifiable extends Entity {
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -27,7 +27,7 @@ public interface EntityNameable extends Entity {
 	 * @model kind="operation" required="true"
 	 * @generated
 	 */
-	String getName();
+	String getID();
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -45,4 +45,4 @@ public interface EntityNameable extends Entity {
 	 */
 	boolean isProxy();
 
-} // EntityNameable
+} // EntityIdentifiable

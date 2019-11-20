@@ -9,7 +9,7 @@
 package org.abchip.mimo.resource;
 
 import org.abchip.mimo.context.Context;
-import org.abchip.mimo.entity.EntityNameable;
+import org.abchip.mimo.entity.EntityIdentifiable;
 
 /**
  * <!-- begin-user-doc --> A representation of the model object '
@@ -20,7 +20,7 @@ import org.abchip.mimo.entity.EntityNameable;
  * @model interface="true" abstract="true"
  * @generated
  */
-public interface ResourceEvent<E extends EntityNameable> {
+public interface ResourceEvent<E extends EntityIdentifiable> {
 
 	/**
 	 * <!-- begin-user-doc -->

@@ -16,7 +16,7 @@ import javax.inject.Inject;
 import org.abchip.mimo.context.Context;
 import org.abchip.mimo.context.ContextRoot;
 import org.abchip.mimo.entity.EntityEnum;
-import org.abchip.mimo.entity.EntityNameable;
+import org.abchip.mimo.entity.EntityIdentifiable;
 import org.abchip.mimo.entity.Frame;
 import org.abchip.mimo.resource.Resource;
 import org.abchip.mimo.resource.ResourceConfig;
@@ -53,12 +53,12 @@ public class EMFResourceProviderImpl extends ResourceProviderImpl {
 	}
 
 	@Override
-	public <E extends EntityNameable> Resource<E> doGetResource(Context context, Frame<E> frame, String tenant) {
+	public <E extends EntityIdentifiable> Resource<E> doGetResource(Context context, Frame<E> frame, String tenant) {
 		return internalGetResource(context, frame, tenant);
 	}
 
 	@SuppressWarnings("unchecked")
-	public static <E extends EntityNameable> Resource<E> internalGetResource(Context context, Frame<E> frame, String tenant) {
+	public static <E extends EntityIdentifiable> Resource<E> internalGetResource(Context context, Frame<E> frame, String tenant) {
 		EMFResourceImpl<E> resource = null;
 
 		if (frame == null || isFrame(frame)) {

@@ -9,7 +9,7 @@
 package org.abchip.mimo.context;
 
 import java.util.List;
-import org.abchip.mimo.entity.EntityNameable;
+import org.abchip.mimo.entity.EntityIdentifiable;
 import org.abchip.mimo.entity.Textable;
 
 /**
@@ -29,7 +29,7 @@ import org.abchip.mimo.entity.Textable;
  * @model
  * @generated
  */
-public interface MessageFile extends EntityNameable, Textable {
+public interface MessageFile extends EntityIdentifiable, Textable {
 	/**
 	 * Returns the value of the '<em><b>Messages</b></em>' containment reference list.
 	 * The list contents are of type {@link org.abchip.mimo.context.MessageDescription}.
@@ -58,10 +58,9 @@ public interface MessageFile extends EntityNameable, Textable {
 	 * @return the value of the '<em>Name</em>' attribute.
 	 * @see #setName(String)
 	 * @see org.abchip.mimo.context.ContextPackage#getMessageFile_Name()
-	 * @model required="true"
+	 * @model id="true" required="true"
 	 * @generated
 	 */
-	@Override
 	String getName();
 
 	/**

@@ -8,7 +8,7 @@
 package org.abchip.mimo.tester;
 
 import java.util.List;
-import org.abchip.mimo.entity.EntityNameable;
+import org.abchip.mimo.entity.EntityIdentifiable;
 
 /**
  * <!-- begin-user-doc -->
@@ -30,7 +30,7 @@ import org.abchip.mimo.entity.EntityNameable;
  * @model
  * @generated
  */
-public interface TestObject extends EntityNameable {
+public interface TestObject extends EntityIdentifiable {
 	/**
 	 * Returns the value of the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
@@ -42,7 +42,7 @@ public interface TestObject extends EntityNameable {
 	 * @return the value of the '<em>Name</em>' attribute.
 	 * @see #setName(String)
 	 * @see org.abchip.mimo.tester.TesterPackage#getTestObject_Name()
-	 * @model required="true"
+	 * @model id="true" required="true"
 	 * @generated
 	 */
 	String getName();

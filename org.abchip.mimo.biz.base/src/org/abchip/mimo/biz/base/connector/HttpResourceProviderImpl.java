@@ -22,7 +22,7 @@ import org.abchip.mimo.edi.message.Message;
 import org.abchip.mimo.edi.message.MessageType;
 import org.abchip.mimo.edi.transmission.Transmission;
 import org.abchip.mimo.edi.transmission.TransmissionType;
-import org.abchip.mimo.entity.EntityNameable;
+import org.abchip.mimo.entity.EntityIdentifiable;
 import org.abchip.mimo.entity.Frame;
 import org.abchip.mimo.resource.Resource;
 import org.abchip.mimo.resource.ResourceConfig;
@@ -59,7 +59,7 @@ public class HttpResourceProviderImpl extends ResourceProviderImpl {
 	}
 
 	@Override
-	public <E extends EntityNameable> Resource<E> doGetResource(Context context, Frame<E> frame, String tenant) {
+	public <E extends EntityIdentifiable> Resource<E> doGetResource(Context context, Frame<E> frame, String tenant) {
 
 		HttpConnector connector = context.get(HttpConnector.class);
 		if (connector == null)

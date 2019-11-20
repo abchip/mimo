@@ -81,7 +81,7 @@ public interface ApplicationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int APPLICATION__COMMANDS = EntityPackage.ENTITY_NAMEABLE_FEATURE_COUNT + 0;
+	int APPLICATION__COMMANDS = EntityPackage.ENTITY_IDENTIFIABLE_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Components</b></em>' containment reference list.
@@ -90,7 +90,7 @@ public interface ApplicationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int APPLICATION__COMPONENTS = EntityPackage.ENTITY_NAMEABLE_FEATURE_COUNT + 1;
+	int APPLICATION__COMPONENTS = EntityPackage.ENTITY_IDENTIFIABLE_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Config</b></em>' containment reference.
@@ -99,7 +99,7 @@ public interface ApplicationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int APPLICATION__CONFIG = EntityPackage.ENTITY_NAMEABLE_FEATURE_COUNT + 2;
+	int APPLICATION__CONFIG = EntityPackage.ENTITY_IDENTIFIABLE_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Context</b></em>' containment reference.
@@ -108,7 +108,7 @@ public interface ApplicationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int APPLICATION__CONTEXT = EntityPackage.ENTITY_NAMEABLE_FEATURE_COUNT + 3;
+	int APPLICATION__CONTEXT = EntityPackage.ENTITY_IDENTIFIABLE_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Context Description</b></em>' containment reference.
@@ -117,7 +117,7 @@ public interface ApplicationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int APPLICATION__CONTEXT_DESCRIPTION = EntityPackage.ENTITY_NAMEABLE_FEATURE_COUNT + 4;
+	int APPLICATION__CONTEXT_DESCRIPTION = EntityPackage.ENTITY_IDENTIFIABLE_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Hooks</b></em>' containment reference list.
@@ -126,7 +126,7 @@ public interface ApplicationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int APPLICATION__HOOKS = EntityPackage.ENTITY_NAMEABLE_FEATURE_COUNT + 5;
+	int APPLICATION__HOOKS = EntityPackage.ENTITY_IDENTIFIABLE_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -135,7 +135,7 @@ public interface ApplicationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int APPLICATION__NAME = EntityPackage.ENTITY_NAMEABLE_FEATURE_COUNT + 6;
+	int APPLICATION__NAME = EntityPackage.ENTITY_IDENTIFIABLE_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Port</b></em>' attribute.
@@ -144,7 +144,7 @@ public interface ApplicationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int APPLICATION__PORT = EntityPackage.ENTITY_NAMEABLE_FEATURE_COUNT + 7;
+	int APPLICATION__PORT = EntityPackage.ENTITY_IDENTIFIABLE_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>Text</b></em>' attribute.
@@ -153,7 +153,7 @@ public interface ApplicationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int APPLICATION__TEXT = EntityPackage.ENTITY_NAMEABLE_FEATURE_COUNT + 8;
+	int APPLICATION__TEXT = EntityPackage.ENTITY_IDENTIFIABLE_FEATURE_COUNT + 8;
 
 	/**
 	 * The number of structural features of the '<em>Application</em>' class.
@@ -162,7 +162,7 @@ public interface ApplicationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int APPLICATION_FEATURE_COUNT = EntityPackage.ENTITY_NAMEABLE_FEATURE_COUNT + 9;
+	int APPLICATION_FEATURE_COUNT = EntityPackage.ENTITY_IDENTIFIABLE_FEATURE_COUNT + 9;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.application.impl.ApplicationComponentImpl <em>Component</em>}' class.
@@ -181,7 +181,7 @@ public interface ApplicationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int APPLICATION_COMPONENT__CONFIG = EntityPackage.ENTITY_NAMEABLE_FEATURE_COUNT + 0;
+	int APPLICATION_COMPONENT__CONFIG = EntityPackage.ENTITY_IDENTIFIABLE_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Context</b></em>' containment reference.
@@ -190,7 +190,7 @@ public interface ApplicationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int APPLICATION_COMPONENT__CONTEXT = EntityPackage.ENTITY_NAMEABLE_FEATURE_COUNT + 1;
+	int APPLICATION_COMPONENT__CONTEXT = EntityPackage.ENTITY_IDENTIFIABLE_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Hooks</b></em>' containment reference list.
@@ -199,7 +199,7 @@ public interface ApplicationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int APPLICATION_COMPONENT__HOOKS = EntityPackage.ENTITY_NAMEABLE_FEATURE_COUNT + 2;
+	int APPLICATION_COMPONENT__HOOKS = EntityPackage.ENTITY_IDENTIFIABLE_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Commands</b></em>' containment reference list.
@@ -208,7 +208,7 @@ public interface ApplicationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int APPLICATION_COMPONENT__COMMANDS = EntityPackage.ENTITY_NAMEABLE_FEATURE_COUNT + 3;
+	int APPLICATION_COMPONENT__COMMANDS = EntityPackage.ENTITY_IDENTIFIABLE_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Modules</b></em>' containment reference list.
@@ -217,7 +217,7 @@ public interface ApplicationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int APPLICATION_COMPONENT__MODULES = EntityPackage.ENTITY_NAMEABLE_FEATURE_COUNT + 4;
+	int APPLICATION_COMPONENT__MODULES = EntityPackage.ENTITY_IDENTIFIABLE_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -226,7 +226,7 @@ public interface ApplicationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int APPLICATION_COMPONENT__NAME = EntityPackage.ENTITY_NAMEABLE_FEATURE_COUNT + 5;
+	int APPLICATION_COMPONENT__NAME = EntityPackage.ENTITY_IDENTIFIABLE_FEATURE_COUNT + 5;
 
 	/**
 	 * The number of structural features of the '<em>Component</em>' class.
@@ -235,7 +235,7 @@ public interface ApplicationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int APPLICATION_COMPONENT_FEATURE_COUNT = EntityPackage.ENTITY_NAMEABLE_FEATURE_COUNT + 6;
+	int APPLICATION_COMPONENT_FEATURE_COUNT = EntityPackage.ENTITY_IDENTIFIABLE_FEATURE_COUNT + 6;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.application.ApplicationManager <em>Manager</em>}' class.

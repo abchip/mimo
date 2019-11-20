@@ -10,7 +10,7 @@ package org.abchip.mimo.social.twitter;
 import java.util.Date;
 import java.util.List;
 
-import org.abchip.mimo.entity.EntityNameable;
+import org.abchip.mimo.entity.EntityIdentifiable;
 import org.abchip.mimo.entity.Textable;
 
 /**
@@ -40,7 +40,7 @@ import org.abchip.mimo.entity.Textable;
  * @model
  * @generated
  */
-public interface Tweet extends EntityNameable, Textable {
+public interface Tweet extends EntityIdentifiable, Textable {
 	
 	/**
 	 * Returns the value of the '<em><b>Date</b></em>' attribute.

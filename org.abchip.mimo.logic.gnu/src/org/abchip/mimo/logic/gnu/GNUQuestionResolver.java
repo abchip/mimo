@@ -11,7 +11,7 @@ package org.abchip.mimo.logic.gnu;
 import java.util.LinkedList;
 import java.util.List;
 
-import org.abchip.mimo.entity.EntityNameable;
+import org.abchip.mimo.entity.EntityIdentifiable;
 import org.abchip.mimo.entity.Frame;
 import org.abchip.mimo.logic.Goal;
 import org.abchip.mimo.logic.LogicFactory;
@@ -124,8 +124,8 @@ public class GNUQuestionResolver {
 			JavaObjectTerm jo = (JavaObjectTerm) term;
 			if (jo.value instanceof Frame) {
 				mindTerm.setName(((Frame<?>) jo.value).getName());
-			} else if (jo.value instanceof EntityNameable) {
-				mindTerm.setName(((EntityNameable) jo.value).getName());
+			} else if (jo.value instanceof EntityIdentifiable) {
+				mindTerm.setName(((EntityIdentifiable) jo.value).getID());
 			}
 		} else {
 			mindTerm.setName(TermWriter.toString(term));

@@ -12,7 +12,7 @@ import java.util.List;
 import org.abchip.mimo.context.Context;
 import org.abchip.mimo.context.ContextDescription;
 import org.abchip.mimo.context.ContextRoot;
-import org.abchip.mimo.entity.EntityNameable;
+import org.abchip.mimo.entity.EntityIdentifiable;
 import org.abchip.mimo.entity.Textable;
 
 
@@ -40,7 +40,7 @@ import org.abchip.mimo.entity.Textable;
  * @model
  * @generated
  */
-public interface Application extends EntityNameable, Textable, Context {
+public interface Application extends EntityIdentifiable, Textable, Context {
 
 	/**
 	 * Returns the value of the '<em><b>Commands</b></em>' containment reference list.
@@ -183,7 +183,6 @@ public interface Application extends EntityNameable, Textable, Context {
 	 * @model id="true"
 	 * @generated
 	 */
-	@Override
 	String getName();
 
 	/**

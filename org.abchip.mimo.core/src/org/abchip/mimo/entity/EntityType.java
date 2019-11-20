@@ -25,7 +25,7 @@ import java.util.List;
  * @model abstract="true"
  * @generated
  */
-public interface EntityType<E extends EntityTyped<?>> extends EntityNameable, Textable {
+public interface EntityType<E extends EntityTyped<?>> extends EntityIdentifiable, Textable {
 	/**
 	 * Returns the value of the '<em><b>Slots</b></em>' containment reference list.
 	 * The list contents are of type {@link org.abchip.mimo.entity.Slot}.

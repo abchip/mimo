@@ -23,7 +23,7 @@ import org.abchip.mimo.application.ServiceHook;
 import org.abchip.mimo.context.AdapterFactory;
 import org.abchip.mimo.context.Context;
 import org.abchip.mimo.context.ContextDescription;
-import org.abchip.mimo.entity.impl.EntityNameableImpl;
+import org.abchip.mimo.entity.impl.EntityIdentifiableImpl;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
@@ -52,7 +52,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *
  * @generated
  */
-public class ApplicationComponentImpl extends EntityNameableImpl implements ApplicationComponent {
+public class ApplicationComponentImpl extends EntityIdentifiableImpl implements ApplicationComponent {
 	/**
 	 * The cached value of the '{@link #getConfig() <em>Config</em>}' containment reference.
 	 * <!-- begin-user-doc -->

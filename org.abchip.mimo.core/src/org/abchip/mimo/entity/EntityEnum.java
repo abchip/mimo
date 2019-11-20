@@ -25,7 +25,7 @@ package org.abchip.mimo.entity;
  * @model abstract="true"
  * @generated
  */
-public interface EntityEnum extends EntityNameable, Textable {
+public interface EntityEnum extends EntityIdentifiable, Textable {
 	/**
 	 * Returns the value of the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
@@ -37,10 +37,9 @@ public interface EntityEnum extends EntityNameable, Textable {
 	 * @return the value of the '<em>Name</em>' attribute.
 	 * @see #setName(String)
 	 * @see org.abchip.mimo.entity.EntityPackage#getEntityEnum_Name()
-	 * @model required="true"
+	 * @model id="true" required="true"
 	 * @generated
 	 */
-	@Override
 	String getName();
 
 	/**

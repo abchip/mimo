@@ -19,7 +19,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.abchip.mimo.context.Context;
 import org.abchip.mimo.context.Logger;
-import org.abchip.mimo.entity.EntityNameable;
+import org.abchip.mimo.entity.EntityIdentifiable;
 import org.abchip.mimo.entity.Frame;
 import org.abchip.mimo.entity.SerializationType;
 import org.abchip.mimo.resource.ResourceManager;
@@ -29,7 +29,7 @@ import org.apache.http.HttpEntity;
 import org.apache.http.client.methods.CloseableHttpResponse;
 import org.apache.http.entity.InputStreamEntity;
 
-public class HttpResourceImpl<E extends EntityNameable> extends ResourceImpl<E> {
+public class HttpResourceImpl<E extends EntityIdentifiable> extends ResourceImpl<E> {
 
 	/**
 	 * 

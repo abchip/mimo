@@ -7,7 +7,7 @@
  */
 package org.abchip.mimo.resource;
 
-import org.abchip.mimo.entity.EntityNameable;
+import org.abchip.mimo.entity.EntityIdentifiable;
 
 import org.eclipse.emf.ecore.EFactory;
 
@@ -44,7 +44,7 @@ public interface ResourceFactory extends EFactory {
 	 * @return a new object of class '<em>Notifier</em>'.
 	 * @generated
 	 */
-	<E extends EntityNameable> ResourceNotifier<E> createResourceNotifier();
+	<E extends EntityIdentifiable> ResourceNotifier<E> createResourceNotifier();
 
 	/**
 	 * Returns the package supported by this factory.

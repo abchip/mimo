@@ -167,7 +167,7 @@ public interface UIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int UI_FRAME_SETUP__CONTEXT_MENU = EntityPackage.ENTITY_NAMEABLE_FEATURE_COUNT + 0;
+	int UI_FRAME_SETUP__CONTEXT_MENU = EntityPackage.ENTITY_IDENTIFIABLE_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -176,7 +176,7 @@ public interface UIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int UI_FRAME_SETUP__NAME = EntityPackage.ENTITY_NAMEABLE_FEATURE_COUNT + 1;
+	int UI_FRAME_SETUP__NAME = EntityPackage.ENTITY_IDENTIFIABLE_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Icon</b></em>' attribute.
@@ -185,7 +185,7 @@ public interface UIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int UI_FRAME_SETUP__ICON = EntityPackage.ENTITY_NAMEABLE_FEATURE_COUNT + 2;
+	int UI_FRAME_SETUP__ICON = EntityPackage.ENTITY_IDENTIFIABLE_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of structural features of the '<em>Ui Frame Setup</em>' class.
@@ -194,7 +194,7 @@ public interface UIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int UI_FRAME_SETUP_FEATURE_COUNT = EntityPackage.ENTITY_NAMEABLE_FEATURE_COUNT + 3;
+	int UI_FRAME_SETUP_FEATURE_COUNT = EntityPackage.ENTITY_IDENTIFIABLE_FEATURE_COUNT + 3;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.ui.impl.UiUserSetupImpl <em>Ui User Setup</em>}' class.
@@ -213,7 +213,7 @@ public interface UIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int UI_USER_SETUP__NAME = EntityPackage.ENTITY_NAMEABLE_FEATURE_COUNT + 0;
+	int UI_USER_SETUP__NAME = EntityPackage.ENTITY_IDENTIFIABLE_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of structural features of the '<em>Ui User Setup</em>' class.
@@ -222,7 +222,7 @@ public interface UIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int UI_USER_SETUP_FEATURE_COUNT = EntityPackage.ENTITY_NAMEABLE_FEATURE_COUNT + 1;
+	int UI_USER_SETUP_FEATURE_COUNT = EntityPackage.ENTITY_IDENTIFIABLE_FEATURE_COUNT + 1;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.ui.impl.ViewImpl <em>View</em>}' class.

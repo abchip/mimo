@@ -10,7 +10,7 @@ package org.abchip.mimo.resource;
 
 import org.abchip.mimo.context.Context;
 import org.abchip.mimo.entity.EntityIterator;
-import org.abchip.mimo.entity.EntityNameable;
+import org.abchip.mimo.entity.EntityIdentifiable;
 import org.abchip.mimo.entity.Frame;
 
 /**
@@ -28,7 +28,7 @@ import org.abchip.mimo.entity.Frame;
  * @model abstract="true"
  * @generated
  */
-public interface ResourceReader<E extends EntityNameable> {
+public interface ResourceReader<E extends EntityIdentifiable> {
 	/**
 	 * Returns the value of the '<em><b>Notifier</b></em>' reference.
 	 * <!-- begin-user-doc -->

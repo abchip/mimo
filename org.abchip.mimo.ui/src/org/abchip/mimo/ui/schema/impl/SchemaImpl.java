@@ -6,7 +6,7 @@ package org.abchip.mimo.ui.schema.impl;
 import java.util.Collection;
 import java.util.List;
 
-import org.abchip.mimo.entity.impl.EntityNameableImpl;
+import org.abchip.mimo.entity.impl.EntityIdentifiableImpl;
 
 import org.abchip.mimo.ui.schema.Schema;
 import org.abchip.mimo.ui.schema.SchemaColumn;
@@ -36,7 +36,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *
  * @generated
  */
-public class SchemaImpl extends EntityNameableImpl implements Schema {
+public class SchemaImpl extends EntityIdentifiableImpl implements Schema {
 	/**
 	 * 
 	 */

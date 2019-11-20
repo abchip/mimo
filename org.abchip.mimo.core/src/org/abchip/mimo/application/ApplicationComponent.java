@@ -11,7 +11,7 @@ package org.abchip.mimo.application;
 import java.util.List;
 
 import org.abchip.mimo.context.Context;
-import org.abchip.mimo.entity.EntityNameable;
+import org.abchip.mimo.entity.EntityIdentifiable;
 
 /**
  * <!-- begin-user-doc -->
@@ -34,7 +34,7 @@ import org.abchip.mimo.entity.EntityNameable;
  * @model
  * @generated
  */
-public interface ApplicationComponent extends EntityNameable, Context {
+public interface ApplicationComponent extends EntityIdentifiable, Context {
 	/**
 	 * Returns the value of the '<em><b>Config</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
@@ -146,10 +146,9 @@ public interface ApplicationComponent extends EntityNameable, Context {
 	 * @return the value of the '<em>Name</em>' attribute.
 	 * @see #setName(String)
 	 * @see org.abchip.mimo.application.ApplicationPackage#getApplicationComponent_Name()
-	 * @model required="true"
+	 * @model id="true" required="true"
 	 * @generated
 	 */
-	@Override
 	String getName();
 
 	/**

@@ -8,7 +8,7 @@
  */
 package org.abchip.mimo.resource;
 
-import org.abchip.mimo.entity.EntityNameable;
+import org.abchip.mimo.entity.EntityIdentifiable;
 
 /**
  * <!-- begin-user-doc --> A representation of the model object '
@@ -19,7 +19,7 @@ import org.abchip.mimo.entity.EntityNameable;
  * @model interface="true" abstract="true"
  * @generated
  */
-public interface ResourceWriter<E extends EntityNameable> extends ResourceReader<E> {
+public interface ResourceWriter<E extends EntityIdentifiable> extends ResourceReader<E> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

@@ -15,7 +15,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.abchip.mimo.context.Context;
-import org.abchip.mimo.entity.EntityNameable;
+import org.abchip.mimo.entity.EntityIdentifiable;
 import org.abchip.mimo.resource.ResourceManager;
 import org.abchip.mimo.resource.ResourceReader;
 import org.abchip.mimo.util.Strings;
@@ -31,7 +31,7 @@ public class FindNamesServlet extends BaseServlet {
 		_execute(context, request, response);
 	}
 
-	private <E extends EntityNameable> void _execute(Context context, HttpServletRequest request, HttpServletResponse response) throws IOException {
+	private <E extends EntityIdentifiable> void _execute(Context context, HttpServletRequest request, HttpServletResponse response) throws IOException {
 
 		String frameName = Strings.qINSTANCE.firstToUpper(request.getParameter("frame"));
 		String filter = request.getParameter("filter");
@@ -52,7 +52,7 @@ public class FindNamesServlet extends BaseServlet {
 			if (!first)
 				response.getWriter().write(", ");
 
-			response.getWriter().write("\"" + Strings.qINSTANCE.escape(entity.getName()) + "\"");
+			response.getWriter().write("\"" + Strings.qINSTANCE.escape(entity.getID()) + "\"");
 			first = false;
 		}
 		response.getWriter().write("]");

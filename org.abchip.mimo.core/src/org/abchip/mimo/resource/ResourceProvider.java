@@ -10,7 +10,7 @@
 package org.abchip.mimo.resource;
 
 import org.abchip.mimo.context.Context;
-import org.abchip.mimo.entity.EntityNameable;
+import org.abchip.mimo.entity.EntityIdentifiable;
 import org.abchip.mimo.entity.Frame;
 
 /**
@@ -29,7 +29,7 @@ public interface ResourceProvider {
 	 * @model required="true" contextRequired="true" klassRequired="true"
 	 * @generated
 	 */
-	<E extends EntityNameable> Resource<E> getResource(Context context, Class<E> klass);
+	<E extends EntityIdentifiable> Resource<E> getResource(Context context, Class<E> klass);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -37,7 +37,7 @@ public interface ResourceProvider {
 	 * @model required="true" contextRequired="true" frameRequired="true"
 	 * @generated
 	 */
-	<E extends EntityNameable> Resource<E> getResource(Context context, Frame<E> frame);
+	<E extends EntityIdentifiable> Resource<E> getResource(Context context, Frame<E> frame);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -45,7 +45,7 @@ public interface ResourceProvider {
 	 * @model required="true" contextRequired="true" frameRequired="true"
 	 * @generated
 	 */
-	<E extends EntityNameable> Resource<E> getResource(Context context, String frame);
+	<E extends EntityIdentifiable> Resource<E> getResource(Context context, String frame);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -53,7 +53,7 @@ public interface ResourceProvider {
 	 * @model required="true" contextRequired="true" klassRequired="true" tenantRequired="true"
 	 * @generated
 	 */
-	<E extends EntityNameable> Resource<E> getResource(Context context, Class<E> klass, String tenant);
+	<E extends EntityIdentifiable> Resource<E> getResource(Context context, Class<E> klass, String tenant);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -61,7 +61,7 @@ public interface ResourceProvider {
 	 * @model required="true" contextRequired="true" frameRequired="true" tenantRequired="true"
 	 * @generated
 	 */
-	<E extends EntityNameable> Resource<E> getResource(Context context, Frame<E> frame, String tenant);
+	<E extends EntityIdentifiable> Resource<E> getResource(Context context, Frame<E> frame, String tenant);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -69,6 +69,6 @@ public interface ResourceProvider {
 	 * @model required="true" contextRequired="true" frameRequired="true" tenantRequired="true"
 	 * @generated
 	 */
-	<E extends EntityNameable> Resource<E> getResource(Context context, String frame, String tenant);
+	<E extends EntityIdentifiable> Resource<E> getResource(Context context, String frame, String tenant);
 
 } // ResourceProvider

@@ -72,7 +72,7 @@
       </eOperations>
       <eOperations name="buildEvaluator" lowerBound="1" eType="#//classification/Evaluator">
         <eTypeParameters name="E">
-          <eBounds eClassifier="ecore:EClass ../../org.abchip.mimo.core/model/mimo.ecore#//entity/EntityNameable"/>
+          <eBounds eClassifier="ecore:EClass ../../org.abchip.mimo.core/model/mimo.ecore#//entity/EntityIdentifiable"/>
         </eTypeParameters>
         <eParameters name="klass" lowerBound="1">
           <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaClass">

@@ -8,7 +8,7 @@
  */
 package org.abchip.mimo.database.definition;
 
-import org.abchip.mimo.entity.EntityNameable;
+import org.abchip.mimo.entity.EntityIdentifiable;
 
 /**
  * <!-- begin-user-doc -->
@@ -27,7 +27,7 @@ import org.abchip.mimo.entity.EntityNameable;
  * @model
  * @generated
  */
-public interface TableTerm extends EntityNameable {
+public interface TableTerm extends EntityIdentifiable {
 	/**
 	 * Returns the value of the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
@@ -39,7 +39,7 @@ public interface TableTerm extends EntityNameable {
 	 * @return the value of the '<em>Name</em>' attribute.
 	 * @see #setName(String)
 	 * @see org.abchip.mimo.database.definition.DatabaseDefinitionPackage#getTableTerm_Name()
-	 * @model required="true"
+	 * @model id="true" required="true"
 	 * @generated
 	 */
 	String getName();

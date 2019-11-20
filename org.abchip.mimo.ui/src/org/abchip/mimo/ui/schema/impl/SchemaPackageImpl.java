@@ -355,7 +355,7 @@ public class SchemaPackageImpl extends EPackageImpl implements SchemaPackage {
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
-		schemaEClass.getESuperTypes().add(theEntityPackage.getEntityNameable());
+		schemaEClass.getESuperTypes().add(theEntityPackage.getEntityIdentifiable());
 		schemaColumnEClass.getESuperTypes().add(theEntityPackage.getEntity());
 
 		// Initialize classes and features; add operations and parameters

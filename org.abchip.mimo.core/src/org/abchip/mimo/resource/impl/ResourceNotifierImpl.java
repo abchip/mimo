@@ -11,7 +11,7 @@ package org.abchip.mimo.resource.impl;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.abchip.mimo.entity.EntityNameable;
+import org.abchip.mimo.entity.EntityIdentifiable;
 import org.abchip.mimo.resource.ResourceEvent;
 import org.abchip.mimo.resource.ResourceListener;
 import org.abchip.mimo.resource.ResourceNotifier;
@@ -25,7 +25,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  *
  * @generated
  */
-public class ResourceNotifierImpl<E extends EntityNameable> extends MinimalEObjectImpl.Container implements ResourceNotifier<E> {
+public class ResourceNotifierImpl<E extends EntityIdentifiable> extends MinimalEObjectImpl.Container implements ResourceNotifier<E> {
 
 	/**
 	 * @generated NOT

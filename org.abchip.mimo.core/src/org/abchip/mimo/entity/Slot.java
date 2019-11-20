@@ -32,7 +32,7 @@ package org.abchip.mimo.entity;
  * @model abstract="true"
  * @generated
  */
-public interface Slot extends EntityNameable, Textable {
+public interface Slot extends EntityIdentifiable, Textable {
 
 	public final static String NS_PREFIX_SLOT = EntityPackage.eNS_PREFIX + "-slot";
 	public final static String NS_PREFIX_DOMAIN = EntityPackage.eNS_PREFIX + "-domain";
@@ -53,7 +53,6 @@ public interface Slot extends EntityNameable, Textable {
 	 * @model required="true"
 	 * @generated
 	 */
-	@Override
 	String getName();
 
 	/**

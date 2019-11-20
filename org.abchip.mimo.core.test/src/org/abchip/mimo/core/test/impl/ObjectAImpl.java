@@ -11,7 +11,7 @@ import org.abchip.mimo.core.test.ObjectA;
 import org.abchip.mimo.core.test.ObjectB;
 import org.abchip.mimo.core.test.TestPackage;
 
-import org.abchip.mimo.entity.impl.EntityNameableImpl;
+import org.abchip.mimo.entity.impl.EntityIdentifiableImpl;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
@@ -36,7 +36,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *
  * @generated
  */
-public class ObjectAImpl extends EntityNameableImpl implements ObjectA {
+public class ObjectAImpl extends EntityIdentifiableImpl implements ObjectA {
 	/**
 	 * 
 	 */
