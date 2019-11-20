@@ -17,7 +17,7 @@ import org.eclipse.emf.ecore.util.EcoreUtil;
 
 /**
  * <!-- begin-user-doc --> An implementation of the model object ' <em><b>Object
- * Nameable</b></em>'. <!-- end-user-doc -->
+ * Identifiable</b></em>'. <!-- end-user-doc -->
  *
  * @generated
  */
@@ -73,12 +73,12 @@ public abstract class EntityIdentifiableImpl extends EntityImpl implements Entit
 	public String getID() {
 
 		String id = EcoreUtil.getID(this);
-		if(id != null)
-				return id;
-			
+		if (id != null)
+			return id;
+
 		String uriFragment = this.getURI().getFragment();
-		if (uriFragment != null) 
-				return uriFragment;
+		if (uriFragment != null)
+			return uriFragment;
 
 		return null;
 	}

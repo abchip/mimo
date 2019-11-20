@@ -19,6 +19,7 @@ import org.abchip.mimo.MimoConstants;
 import org.abchip.mimo.context.Context;
 import org.abchip.mimo.context.ContextDescription;
 import org.abchip.mimo.context.ContextRoot;
+import org.abchip.mimo.context.Factory;
 import org.eclipse.e4.core.contexts.EclipseContextFactory;
 import org.eclipse.e4.core.contexts.IEclipseContext;
 import org.eclipse.emf.ecore.EObject;
@@ -165,6 +166,7 @@ public class E4ContextRootImpl extends E4ContextImpl implements ContextRoot {
 		return createChildContext(childDescription);
 	}
 
+	@SuppressWarnings("unchecked")
 	@Override
 	public Context createChildContext(ContextDescription contextDescription) {
 
@@ -176,6 +178,11 @@ public class E4ContextRootImpl extends E4ContextImpl implements ContextRoot {
 
 		Context contextChild = new E4ContextChildImpl(this, eclipseChildContext, contextDescription);
 
+		for(Factory<Object> factory: this.getAll(Factory.class)) {
+			Object object = factory.create(contextChild);
+			contextChild.set(factory.getInterfaceClass(), object);
+		}
+		
 		return contextChild;
 	}
 }

@@ -68,8 +68,8 @@
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//application/ServiceRef/status"/>
         <genOperations ecoreOperation="mimo.ecore#//application/ServiceRef/getInterfaceName"/>
       </genClasses>
-      <genClasses ecoreClass="mimo.ecore#//application/ServiceResourceListener">
-        <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//application/ServiceResourceListener/interfaceName"/>
+      <genClasses ecoreClass="mimo.ecore#//application/ServiceFactory">
+        <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//application/ServiceFactory/interfaceName"/>
       </genClasses>
       <genClasses image="false" ecoreClass="mimo.ecore#//application/ServiceRegistry">
         <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mimo.ecore#//application/ServiceRegistry/entries"/>
@@ -289,6 +289,13 @@
           <genParameters ecoreParameter="mimo.ecore#//context/ExceptionManager/prepareException.3/messageFileLib"/>
           <genParameters ecoreParameter="mimo.ecore#//context/ExceptionManager/prepareException.3/variables"/>
         </genOperations>
+      </genClasses>
+      <genClasses image="false" ecoreClass="mimo.ecore#//context/Factory">
+        <genTypeParameters ecoreTypeParameter="mimo.ecore#//context/Factory/S"/>
+        <genOperations ecoreOperation="mimo.ecore#//context/Factory/create">
+          <genParameters ecoreParameter="mimo.ecore#//context/Factory/create/context"/>
+        </genOperations>
+        <genOperations ecoreOperation="mimo.ecore#//context/Factory/getInterfaceClass"/>
       </genClasses>
       <genClasses ecoreClass="mimo.ecore#//context/Identity">
         <genTypeParameters ecoreTypeParameter="mimo.ecore#//context/Identity/T"/>

@@ -69,7 +69,7 @@ public class ApplicationFactoryImpl extends EFactoryImpl implements ApplicationF
 			case ApplicationPackage.SERVICE_CONFIG: return (EObject)createServiceConfig();
 			case ApplicationPackage.SERVICE_HOOK: return (EObject)createServiceHook();
 			case ApplicationPackage.SERVICE_EXECUTOR: return (EObject)createServiceExecutor();
-			case ApplicationPackage.SERVICE_RESOURCE_LISTENER: return (EObject)createServiceResourceListener();
+			case ApplicationPackage.SERVICE_FACTORY: return (EObject)createServiceFactory();
 			case ApplicationPackage.SERVICE_REGISTRY: return (EObject)createServiceRegistry();
 			case ApplicationPackage.SERVICE_REGISTRY_ENTRY: return (EObject)createServiceRegistryEntry();
 			case ApplicationPackage.SERVICE_SERVLET: return (EObject)createServiceServlet();
@@ -192,9 +192,9 @@ public class ApplicationFactoryImpl extends EFactoryImpl implements ApplicationF
 	 * @generated
 	 */
 	@Override
-	public ServiceResourceListener createServiceResourceListener() {
-		ServiceResourceListenerImpl serviceResourceListener = new ServiceResourceListenerImpl();
-		return serviceResourceListener;
+	public ServiceFactory createServiceFactory() {
+		ServiceFactoryImpl serviceFactory = new ServiceFactoryImpl();
+		return serviceFactory;
 	}
 
 	/**

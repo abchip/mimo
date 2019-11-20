@@ -28,6 +28,7 @@ import org.abchip.mimo.context.ContextPackage;
 import org.abchip.mimo.context.ContextRoot;
 import org.abchip.mimo.context.EntityLocker;
 import org.abchip.mimo.context.ExceptionManager;
+import org.abchip.mimo.context.Factory;
 import org.abchip.mimo.context.Identity;
 import org.abchip.mimo.context.LockManager;
 import org.abchip.mimo.context.LockType;
@@ -168,6 +169,13 @@ public class ContextPackageImpl extends EPackageImpl implements ContextPackage {
 	 * @generated
 	 */
 	private EClass exceptionManagerEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass factoryEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -648,6 +656,16 @@ public class ContextPackageImpl extends EPackageImpl implements ContextPackage {
 	 * @generated
 	 */
 	@Override
+	public EClass getFactory() {
+		return factoryEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EClass getIdentity() {
 		return identityEClass;
 	}
@@ -991,6 +1009,8 @@ public class ContextPackageImpl extends EPackageImpl implements ContextPackage {
 
 		exceptionManagerEClass = createEClass(EXCEPTION_MANAGER);
 
+		factoryEClass = createEClass(FACTORY);
+
 		identityEClass = createEClass(IDENTITY);
 
 		lockManagerEClass = createEClass(LOCK_MANAGER);
@@ -1063,6 +1083,7 @@ public class ContextPackageImpl extends EPackageImpl implements ContextPackage {
 
 		// Create type parameters
 		ETypeParameter entityLockerEClass_N = addETypeParameter(entityLockerEClass, "N");
+		ETypeParameter factoryEClass_S = addETypeParameter(factoryEClass, "S");
 		ETypeParameter identityEClass_T = addETypeParameter(identityEClass, "T");
 		ETypeParameter messageDataFieldEClass_DD = addETypeParameter(messageDataFieldEClass, "DD");
 		ETypeParameter registryEClass_S = addETypeParameter(registryEClass, "S");
@@ -1363,6 +1384,19 @@ public class ContextPackageImpl extends EPackageImpl implements ContextPackage {
 		addEParameter(op, ecorePackage.getEString(), "messageFileName", 1, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEString(), "messageFileLib", 1, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, this.getMessageVariableList(), "variables", 1, 1, IS_UNIQUE, IS_ORDERED);
+
+		initEClass(factoryEClass, Factory.class, "Factory", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		op = addEOperation(factoryEClass, null, "create", 1, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, this.getContext(), "context", 1, 1, IS_UNIQUE, IS_ORDERED);
+		g1 = createEGenericType(factoryEClass_S);
+		initEOperation(op, g1);
+
+		op = addEOperation(factoryEClass, null, "getInterfaceClass", 1, 1, IS_UNIQUE, IS_ORDERED);
+		g1 = createEGenericType(ecorePackage.getEJavaClass());
+		g2 = createEGenericType(factoryEClass_S);
+		g1.getETypeArguments().add(g2);
+		initEOperation(op, g1);
 
 		initEClass(identityEClass, Identity.class, "Identity", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 

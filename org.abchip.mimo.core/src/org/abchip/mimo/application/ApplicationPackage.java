@@ -371,16 +371,6 @@ public interface ApplicationPackage extends EPackage {
 	int SERVICE_EXECUTOR = 7;
 
 	/**
-	 * The meta object id for the '{@link org.abchip.mimo.application.impl.ServiceResourceListenerImpl <em>Service Resource Listener</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.abchip.mimo.application.impl.ServiceResourceListenerImpl
-	 * @see org.abchip.mimo.application.impl.ApplicationPackageImpl#getServiceResourceListener()
-	 * @generated
-	 */
-	int SERVICE_RESOURCE_LISTENER = 9;
-
-	/**
 	 * The meta object id for the '{@link org.abchip.mimo.application.impl.ServiceRegistryImpl <em>Service Registry</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -527,13 +517,23 @@ public interface ApplicationPackage extends EPackage {
 	int SERVICE_EXECUTOR_FEATURE_COUNT = SERVICE_REF_FEATURE_COUNT + 2;
 
 	/**
+	 * The meta object id for the '{@link org.abchip.mimo.application.impl.ServiceFactoryImpl <em>Service Factory</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.abchip.mimo.application.impl.ServiceFactoryImpl
+	 * @see org.abchip.mimo.application.impl.ApplicationPackageImpl#getServiceFactory()
+	 * @generated
+	 */
+	int SERVICE_FACTORY = 9;
+
+	/**
 	 * The feature id for the '<em><b>Class Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SERVICE_RESOURCE_LISTENER__CLASS_NAME = SERVICE_REF__CLASS_NAME;
+	int SERVICE_FACTORY__CLASS_NAME = SERVICE_REF__CLASS_NAME;
 
 	/**
 	 * The feature id for the '<em><b>Status</b></em>' attribute.
@@ -542,7 +542,7 @@ public interface ApplicationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SERVICE_RESOURCE_LISTENER__STATUS = SERVICE_REF__STATUS;
+	int SERVICE_FACTORY__STATUS = SERVICE_REF__STATUS;
 
 	/**
 	 * The feature id for the '<em><b>Interface Name</b></em>' attribute.
@@ -551,16 +551,16 @@ public interface ApplicationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SERVICE_RESOURCE_LISTENER__INTERFACE_NAME = SERVICE_REF_FEATURE_COUNT + 0;
+	int SERVICE_FACTORY__INTERFACE_NAME = SERVICE_REF_FEATURE_COUNT + 0;
 
 	/**
-	 * The number of structural features of the '<em>Service Resource Listener</em>' class.
+	 * The number of structural features of the '<em>Service Factory</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SERVICE_RESOURCE_LISTENER_FEATURE_COUNT = SERVICE_REF_FEATURE_COUNT + 1;
+	int SERVICE_FACTORY_FEATURE_COUNT = SERVICE_REF_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Class Name</b></em>' attribute.
@@ -1126,25 +1126,25 @@ public interface ApplicationPackage extends EPackage {
 	EAttribute getServiceRef_Status();
 
 	/**
-	 * Returns the meta object for class '{@link org.abchip.mimo.application.ServiceResourceListener <em>Service Resource Listener</em>}'.
+	 * Returns the meta object for class '{@link org.abchip.mimo.application.ServiceFactory <em>Service Factory</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Service Resource Listener</em>'.
-	 * @see org.abchip.mimo.application.ServiceResourceListener
+	 * @return the meta object for class '<em>Service Factory</em>'.
+	 * @see org.abchip.mimo.application.ServiceFactory
 	 * @generated
 	 */
-	EClass getServiceResourceListener();
+	EClass getServiceFactory();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.application.ServiceResourceListener#getInterfaceName <em>Interface Name</em>}'.
+	 * Returns the meta object for the attribute '{@link org.abchip.mimo.application.ServiceFactory#getInterfaceName <em>Interface Name</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Interface Name</em>'.
-	 * @see org.abchip.mimo.application.ServiceResourceListener#getInterfaceName()
-	 * @see #getServiceResourceListener()
+	 * @see org.abchip.mimo.application.ServiceFactory#getInterfaceName()
+	 * @see #getServiceFactory()
 	 * @generated
 	 */
-	EAttribute getServiceResourceListener_InterfaceName();
+	EAttribute getServiceFactory_InterfaceName();
 
 	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.application.ServiceRegistry <em>Service Registry</em>}'.
@@ -1592,14 +1592,14 @@ public interface ApplicationPackage extends EPackage {
 		EAttribute SERVICE_REF__STATUS = eINSTANCE.getServiceRef_Status();
 
 		/**
-		 * The meta object literal for the '{@link org.abchip.mimo.application.impl.ServiceResourceListenerImpl <em>Service Resource Listener</em>}' class.
+		 * The meta object literal for the '{@link org.abchip.mimo.application.impl.ServiceFactoryImpl <em>Service Factory</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see org.abchip.mimo.application.impl.ServiceResourceListenerImpl
-		 * @see org.abchip.mimo.application.impl.ApplicationPackageImpl#getServiceResourceListener()
+		 * @see org.abchip.mimo.application.impl.ServiceFactoryImpl
+		 * @see org.abchip.mimo.application.impl.ApplicationPackageImpl#getServiceFactory()
 		 * @generated
 		 */
-		EClass SERVICE_RESOURCE_LISTENER = eINSTANCE.getServiceResourceListener();
+		EClass SERVICE_FACTORY = eINSTANCE.getServiceFactory();
 
 		/**
 		 * The meta object literal for the '<em><b>Interface Name</b></em>' attribute feature.
@@ -1607,7 +1607,7 @@ public interface ApplicationPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute SERVICE_RESOURCE_LISTENER__INTERFACE_NAME = eINSTANCE.getServiceResourceListener_InterfaceName();
+		EAttribute SERVICE_FACTORY__INTERFACE_NAME = eINSTANCE.getServiceFactory_InterfaceName();
 
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.application.impl.ServiceRegistryImpl <em>Service Registry</em>}' class.

@@ -18,11 +18,11 @@ import org.abchip.mimo.application.ApplicationPackage;
 import org.abchip.mimo.application.ServiceCommandProvider;
 import org.abchip.mimo.application.ServiceConfig;
 import org.abchip.mimo.application.ServiceExecutor;
+import org.abchip.mimo.application.ServiceFactory;
 import org.abchip.mimo.application.ServiceHook;
 import org.abchip.mimo.application.ServiceRef;
 import org.abchip.mimo.application.ServiceRegistry;
 import org.abchip.mimo.application.ServiceRegistryEntry;
-import org.abchip.mimo.application.ServiceResourceListener;
 import org.abchip.mimo.application.ServiceServlet;
 import org.abchip.mimo.application.ServiceStatus;
 import org.abchip.mimo.application.ServiceTester;
@@ -142,7 +142,7 @@ public class ApplicationPackageImpl extends EPackageImpl implements ApplicationP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass serviceResourceListenerEClass = null;
+	private EClass serviceFactoryEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -600,8 +600,8 @@ public class ApplicationPackageImpl extends EPackageImpl implements ApplicationP
 	 * @generated
 	 */
 	@Override
-	public EClass getServiceResourceListener() {
-		return serviceResourceListenerEClass;
+	public EClass getServiceFactory() {
+		return serviceFactoryEClass;
 	}
 
 	/**
@@ -610,8 +610,8 @@ public class ApplicationPackageImpl extends EPackageImpl implements ApplicationP
 	 * @generated
 	 */
 	@Override
-	public EAttribute getServiceResourceListener_InterfaceName() {
-		return (EAttribute)serviceResourceListenerEClass.getEStructuralFeatures().get(0);
+	public EAttribute getServiceFactory_InterfaceName() {
+		return (EAttribute)serviceFactoryEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -824,8 +824,8 @@ public class ApplicationPackageImpl extends EPackageImpl implements ApplicationP
 		createEAttribute(serviceRefEClass, SERVICE_REF__CLASS_NAME);
 		createEAttribute(serviceRefEClass, SERVICE_REF__STATUS);
 
-		serviceResourceListenerEClass = createEClass(SERVICE_RESOURCE_LISTENER);
-		createEAttribute(serviceResourceListenerEClass, SERVICE_RESOURCE_LISTENER__INTERFACE_NAME);
+		serviceFactoryEClass = createEClass(SERVICE_FACTORY);
+		createEAttribute(serviceFactoryEClass, SERVICE_FACTORY__INTERFACE_NAME);
 
 		serviceRegistryEClass = createEClass(SERVICE_REGISTRY);
 		createEReference(serviceRegistryEClass, SERVICE_REGISTRY__ENTRIES);
@@ -890,7 +890,7 @@ public class ApplicationPackageImpl extends EPackageImpl implements ApplicationP
 		serviceHookEClass.getESuperTypes().add(this.getServiceRef());
 		serviceExecutorEClass.getESuperTypes().add(this.getServiceRef());
 		serviceRefEClass.getESuperTypes().add(theEntityPackage.getEntity());
-		serviceResourceListenerEClass.getESuperTypes().add(this.getServiceRef());
+		serviceFactoryEClass.getESuperTypes().add(this.getServiceRef());
 		serviceRegistryEClass.getESuperTypes().add(this.getServiceRef());
 		serviceRegistryEntryEClass.getESuperTypes().add(this.getServiceRef());
 		serviceServletEClass.getESuperTypes().add(this.getServiceRef());
@@ -954,8 +954,8 @@ public class ApplicationPackageImpl extends EPackageImpl implements ApplicationP
 
 		addEOperation(serviceRefEClass, ecorePackage.getEString(), "getInterfaceName", 1, 1, IS_UNIQUE, IS_ORDERED);
 
-		initEClass(serviceResourceListenerEClass, ServiceResourceListener.class, "ServiceResourceListener", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getServiceResourceListener_InterfaceName(), ecorePackage.getEString(), "interfaceName", "org.abchip.mimo.resource.ResourceListener", 1, 1, ServiceResourceListener.class, !IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(serviceFactoryEClass, ServiceFactory.class, "ServiceFactory", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getServiceFactory_InterfaceName(), ecorePackage.getEString(), "interfaceName", "org.abchip.mimo.context.Factory", 1, 1, ServiceFactory.class, !IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(serviceRegistryEClass, ServiceRegistry.class, "ServiceRegistry", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getServiceRegistry_Entries(), this.getServiceRegistryEntry(), null, "entries", null, 0, -1, ServiceRegistry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

@@ -437,6 +437,25 @@ public interface ContextPackage extends EPackage {
 	int EXCEPTION_MANAGER_FEATURE_COUNT = 0;
 
 	/**
+	 * The meta object id for the '{@link org.abchip.mimo.context.Factory <em>Factory</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.abchip.mimo.context.Factory
+	 * @see org.abchip.mimo.context.impl.ContextPackageImpl#getFactory()
+	 * @generated
+	 */
+	int FACTORY = 12;
+
+	/**
+	 * The number of structural features of the '<em>Factory</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FACTORY_FEATURE_COUNT = 0;
+
+	/**
 	 * The meta object id for the '{@link org.abchip.mimo.context.impl.IdentityImpl <em>Identity</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -444,7 +463,7 @@ public interface ContextPackage extends EPackage {
 	 * @see org.abchip.mimo.context.impl.ContextPackageImpl#getIdentity()
 	 * @generated
 	 */
-	int IDENTITY = 12;
+	int IDENTITY = 13;
 
 	/**
 	 * The number of structural features of the '<em>Identity</em>' class.
@@ -463,7 +482,7 @@ public interface ContextPackage extends EPackage {
 	 * @see org.abchip.mimo.context.impl.ContextPackageImpl#getLockManager()
 	 * @generated
 	 */
-	int LOCK_MANAGER = 13;
+	int LOCK_MANAGER = 14;
 
 	/**
 	 * The number of structural features of the '<em>Lock Manager</em>' class.
@@ -482,7 +501,7 @@ public interface ContextPackage extends EPackage {
 	 * @see org.abchip.mimo.context.impl.ContextPackageImpl#getLogger()
 	 * @generated
 	 */
-	int LOGGER = 14;
+	int LOGGER = 15;
 
 	/**
 	 * The number of structural features of the '<em>Logger</em>' class.
@@ -501,7 +520,7 @@ public interface ContextPackage extends EPackage {
 	 * @see org.abchip.mimo.context.impl.ContextPackageImpl#getMessageDescription()
 	 * @generated
 	 */
-	int MESSAGE_DESCRIPTION = 15;
+	int MESSAGE_DESCRIPTION = 16;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -565,7 +584,7 @@ public interface ContextPackage extends EPackage {
 	 * @see org.abchip.mimo.context.impl.ContextPackageImpl#getMessageDataField()
 	 * @generated
 	 */
-	int MESSAGE_DATA_FIELD = 16;
+	int MESSAGE_DATA_FIELD = 17;
 
 	/**
 	 * The feature id for the '<em><b>Output Mask</b></em>' attribute.
@@ -602,7 +621,7 @@ public interface ContextPackage extends EPackage {
 	 * @see org.abchip.mimo.context.impl.ContextPackageImpl#getMessageFile()
 	 * @generated
 	 */
-	int MESSAGE_FILE = 17;
+	int MESSAGE_FILE = 18;
 
 	/**
 	 * The feature id for the '<em><b>Messages</b></em>' containment reference list.
@@ -648,7 +667,7 @@ public interface ContextPackage extends EPackage {
 	 * @see org.abchip.mimo.context.impl.ContextPackageImpl#getRegistry()
 	 * @generated
 	 */
-	int REGISTRY = 18;
+	int REGISTRY = 19;
 
 	/**
 	 * The number of structural features of the '<em>Registry</em>' class.
@@ -667,7 +686,7 @@ public interface ContextPackage extends EPackage {
 	 * @see org.abchip.mimo.context.impl.ContextPackageImpl#getRegistryFactory()
 	 * @generated
 	 */
-	int REGISTRY_FACTORY = 19;
+	int REGISTRY_FACTORY = 20;
 
 	/**
 	 * The number of structural features of the '<em>Registry Factory</em>' class.
@@ -686,7 +705,7 @@ public interface ContextPackage extends EPackage {
 	 * @see org.abchip.mimo.context.impl.ContextPackageImpl#getUserProfile()
 	 * @generated
 	 */
-	int USER_PROFILE = 20;
+	int USER_PROFILE = 21;
 
 	/**
 	 * The feature id for the '<em><b>Job Description</b></em>' attribute.
@@ -741,7 +760,7 @@ public interface ContextPackage extends EPackage {
 	 * @see org.abchip.mimo.context.impl.ContextPackageImpl#getCapabilityRight()
 	 * @generated
 	 */
-	int CAPABILITY_RIGHT = 21;
+	int CAPABILITY_RIGHT = 22;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.context.LockType <em>Lock Type</em>}' enum.
@@ -751,7 +770,7 @@ public interface ContextPackage extends EPackage {
 	 * @see org.abchip.mimo.context.impl.ContextPackageImpl#getLockType()
 	 * @generated
 	 */
-	int LOCK_TYPE = 22;
+	int LOCK_TYPE = 23;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.context.UserClass <em>User Class</em>}' enum.
@@ -761,7 +780,7 @@ public interface ContextPackage extends EPackage {
 	 * @see org.abchip.mimo.context.impl.ContextPackageImpl#getUserClass()
 	 * @generated
 	 */
-	int USER_CLASS = 23;
+	int USER_CLASS = 24;
 
 	/**
 	 * The meta object id for the '<em>Message Variable List</em>' data type.
@@ -770,7 +789,7 @@ public interface ContextPackage extends EPackage {
 	 * @see org.abchip.mimo.context.impl.ContextPackageImpl#getMessageVariableList()
 	 * @generated
 	 */
-	int MESSAGE_VARIABLE_LIST = 24;
+	int MESSAGE_VARIABLE_LIST = 25;
 
 	/**
 	 * The meta object id for the '<em>Message Exception</em>' data type.
@@ -780,7 +799,7 @@ public interface ContextPackage extends EPackage {
 	 * @see org.abchip.mimo.context.impl.ContextPackageImpl#getMessageException()
 	 * @generated
 	 */
-	int MESSAGE_EXCEPTION = 25;
+	int MESSAGE_EXCEPTION = 26;
 
 
 	/**
@@ -1078,6 +1097,16 @@ public interface ContextPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getExceptionManager();
+
+	/**
+	 * Returns the meta object for class '{@link org.abchip.mimo.context.Factory <em>Factory</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Factory</em>'.
+	 * @see org.abchip.mimo.context.Factory
+	 * @generated
+	 */
+	EClass getFactory();
 
 	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.context.Identity <em>Identity</em>}'.
@@ -1643,6 +1672,16 @@ public interface ContextPackage extends EPackage {
 		 * @generated
 		 */
 		EClass EXCEPTION_MANAGER = eINSTANCE.getExceptionManager();
+
+		/**
+		 * The meta object literal for the '{@link org.abchip.mimo.context.Factory <em>Factory</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.abchip.mimo.context.Factory
+		 * @see org.abchip.mimo.context.impl.ContextPackageImpl#getFactory()
+		 * @generated
+		 */
+		EClass FACTORY = eINSTANCE.getFactory();
 
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.context.impl.IdentityImpl <em>Identity</em>}' class.

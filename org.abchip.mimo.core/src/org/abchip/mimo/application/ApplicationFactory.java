@@ -91,13 +91,13 @@ public interface ApplicationFactory extends EFactory {
 	ServiceExecutor createServiceExecutor();
 
 	/**
-	 * Returns a new object of class '<em>Service Resource Listener</em>'.
+	 * Returns a new object of class '<em>Service Factory</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Service Resource Listener</em>'.
+	 * @return a new object of class '<em>Service Factory</em>'.
 	 * @generated
 	 */
-	ServiceResourceListener createServiceResourceListener();
+	ServiceFactory createServiceFactory();
 
 	/**
 	 * Returns a new object of class '<em>Service Registry</em>'.

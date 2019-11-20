@@ -83,10 +83,10 @@
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="status" lowerBound="1"
           eType="#//application/ServiceStatus"/>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="ServiceResourceListener" eSuperTypes="#//application/ServiceRef">
+    <eClassifiers xsi:type="ecore:EClass" name="ServiceFactory" eSuperTypes="#//application/ServiceRef">
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="interfaceName" lowerBound="1"
           eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
-          changeable="false" defaultValueLiteral="org.abchip.mimo.resource.ResourceListener"/>
+          changeable="false" defaultValueLiteral="org.abchip.mimo.context.Factory"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="ServiceRegistry" eSuperTypes="#//application/ServiceRef">
       <eStructuralFeatures xsi:type="ecore:EReference" name="entries" upperBound="-1"
@@ -405,6 +405,18 @@
         <eParameters name="messageFileName" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
         <eParameters name="messageFileLib" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
         <eParameters name="variables" lowerBound="1" eType="#//context/MessageVariableList"/>
+      </eOperations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Factory" abstract="true" interface="true">
+      <eTypeParameters name="S"/>
+      <eOperations name="create" lowerBound="1">
+        <eGenericType eTypeParameter="#//context/Factory/S"/>
+        <eParameters name="context" lowerBound="1" eType="#//context/Context"/>
+      </eOperations>
+      <eOperations name="getInterfaceClass" lowerBound="1">
+        <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaClass">
+          <eTypeArguments eTypeParameter="#//context/Factory/S"/>
+        </eGenericType>
       </eOperations>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="Identity" eSuperTypes="#//entity/Entity">
