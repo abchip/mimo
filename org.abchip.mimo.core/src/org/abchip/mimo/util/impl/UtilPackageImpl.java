@@ -1,37 +1,47 @@
 /**
- *  Copyright (c) 2017, 2019 ABChip and others.
- *  All rights reserved. This program and the accompanying materials
- *  are made available under the terms of the Eclipse Public License v1.0
- *  which accompanies this distribution, and is available at
- *  http://www.eclipse.org/legal/epl-v10.html
- *
+ * Copyright (c) 2017, 2019 ABChip and others.
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  */
 package org.abchip.mimo.util.impl;
 
 import org.abchip.mimo.MimoPackage;
+
 import org.abchip.mimo.application.ApplicationPackage;
+
 import org.abchip.mimo.application.impl.ApplicationPackageImpl;
+
 import org.abchip.mimo.context.ContextPackage;
 
 import org.abchip.mimo.context.impl.ContextPackageImpl;
 
 import org.abchip.mimo.data.DataPackage;
+
 import org.abchip.mimo.data.impl.DataPackageImpl;
+
 import org.abchip.mimo.entity.EntityPackage;
 
 import org.abchip.mimo.entity.impl.EntityPackageImpl;
+
 import org.abchip.mimo.impl.MimoPackageImpl;
+
 import org.abchip.mimo.java.JavaPackage;
+
 import org.abchip.mimo.java.impl.JavaPackageImpl;
+
 import org.abchip.mimo.net.NetPackage;
+
 import org.abchip.mimo.net.impl.NetPackageImpl;
+
 import org.abchip.mimo.resource.ResourcePackage;
+
 import org.abchip.mimo.resource.impl.ResourcePackageImpl;
+
 import org.abchip.mimo.util.Classes;
 import org.abchip.mimo.util.Files;
 import org.abchip.mimo.util.Lists;
-import org.abchip.mimo.util.UtilFactory;
-import org.abchip.mimo.util.UtilPackage;
 import org.abchip.mimo.util.Singleton;
 import org.abchip.mimo.util.Streams;
 import org.abchip.mimo.util.Strings;
@@ -40,6 +50,9 @@ import org.abchip.mimo.util.ThreadManager;
 import org.abchip.mimo.util.ThreadStatus;
 import org.abchip.mimo.util.Threads;
 import org.abchip.mimo.util.URIs;
+import org.abchip.mimo.util.UtilFactory;
+import org.abchip.mimo.util.UtilPackage;
+
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EEnum;

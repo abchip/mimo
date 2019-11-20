@@ -1,25 +1,29 @@
 /**
- *  Copyright (c) 2017, 2019 ABChip and others.
- *  All rights reserved. This program and the accompanying materials
- *  are made available under the terms of the Eclipse Public License v1.0
- *  which accompanies this distribution, and is available at
- *  http://www.eclipse.org/legal/epl-v10.html
- *
+ * Copyright (c) 2017, 2019 ABChip and others.
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  */
 package org.abchip.mimo.server.impl;
 
 import java.util.Date;
 
 import org.abchip.mimo.entity.impl.EntityImpl;
+
 import org.abchip.mimo.server.JobLogEntry;
 import org.abchip.mimo.server.ServerPackage;
+
 import org.eclipse.emf.common.notify.Notification;
+
 import org.eclipse.emf.ecore.EClass;
+
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
- * <!-- begin-user-doc --> An implementation of the model object '
- * <em><b>Job Log Entry</b></em>'. <!-- end-user-doc -->
+ * <!-- begin-user-doc -->
+ * An implementation of the model object '<em><b>Job Log Entry</b></em>'.
+ * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
@@ -33,13 +37,14 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  */
 public class JobLogEntryImpl extends EntityImpl implements JobLogEntry {
 	/**
-	 *
+	 * 
 	 */
 	private static final long serialVersionUID = 1L;
 
 	/**
 	 * The default value of the '{@link #getGravity() <em>Gravity</em>}' attribute.
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @see #getGravity()
 	 * @generated
 	 * @ordered
@@ -48,7 +53,8 @@ public class JobLogEntryImpl extends EntityImpl implements JobLogEntry {
 
 	/**
 	 * The cached value of the '{@link #getGravity() <em>Gravity</em>}' attribute.
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @see #getGravity()
 	 * @generated
 	 * @ordered
@@ -57,7 +63,8 @@ public class JobLogEntryImpl extends EntityImpl implements JobLogEntry {
 
 	/**
 	 * The default value of the '{@link #getMessage() <em>Message</em>}' attribute.
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @see #getMessage()
 	 * @generated
 	 * @ordered
@@ -66,7 +73,8 @@ public class JobLogEntryImpl extends EntityImpl implements JobLogEntry {
 
 	/**
 	 * The cached value of the '{@link #getMessage() <em>Message</em>}' attribute.
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @see #getMessage()
 	 * @generated
 	 * @ordered
@@ -75,8 +83,8 @@ public class JobLogEntryImpl extends EntityImpl implements JobLogEntry {
 
 	/**
 	 * The default value of the '{@link #getCreationDate() <em>Creation Date</em>}' attribute.
-	 * <!-- begin-user-doc --> <!--
-	 * end-user-doc -->
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @see #getCreationDate()
 	 * @generated
 	 * @ordered
@@ -85,8 +93,8 @@ public class JobLogEntryImpl extends EntityImpl implements JobLogEntry {
 
 	/**
 	 * The cached value of the '{@link #getCreationDate() <em>Creation Date</em>}' attribute.
-	 * <!-- begin-user-doc --> <!--
-	 * end-user-doc -->
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @see #getCreationDate()
 	 * @generated
 	 * @ordered
@@ -94,7 +102,8 @@ public class JobLogEntryImpl extends EntityImpl implements JobLogEntry {
 	protected Date creationDate = CREATION_DATE_EDEFAULT;
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	protected JobLogEntryImpl() {
@@ -102,7 +111,8 @@ public class JobLogEntryImpl extends EntityImpl implements JobLogEntry {
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -111,7 +121,8 @@ public class JobLogEntryImpl extends EntityImpl implements JobLogEntry {
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -120,7 +131,8 @@ public class JobLogEntryImpl extends EntityImpl implements JobLogEntry {
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -132,7 +144,8 @@ public class JobLogEntryImpl extends EntityImpl implements JobLogEntry {
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -141,7 +154,8 @@ public class JobLogEntryImpl extends EntityImpl implements JobLogEntry {
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -153,7 +167,8 @@ public class JobLogEntryImpl extends EntityImpl implements JobLogEntry {
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -162,7 +177,8 @@ public class JobLogEntryImpl extends EntityImpl implements JobLogEntry {
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -174,7 +190,8 @@ public class JobLogEntryImpl extends EntityImpl implements JobLogEntry {
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -191,7 +208,8 @@ public class JobLogEntryImpl extends EntityImpl implements JobLogEntry {
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -211,7 +229,8 @@ public class JobLogEntryImpl extends EntityImpl implements JobLogEntry {
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -231,7 +250,8 @@ public class JobLogEntryImpl extends EntityImpl implements JobLogEntry {
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -248,7 +268,8 @@ public class JobLogEntryImpl extends EntityImpl implements JobLogEntry {
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -266,4 +287,4 @@ public class JobLogEntryImpl extends EntityImpl implements JobLogEntry {
 		return result.toString();
 	}
 
-} // JobLogEntryImpl
+} //JobLogEntryImpl

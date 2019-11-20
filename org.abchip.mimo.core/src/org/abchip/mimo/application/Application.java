@@ -1,23 +1,19 @@
 /**
- *  Copyright (c) 2017, 2019 ABChip and others.
- *  All rights reserved. This program and the accompanying materials
- *  are made available under the terms of the Eclipse Public License v1.0
- *  which accompanies this distribution, and is available at
- *  http://www.eclipse.org/legal/epl-v10.html
- *
+ * Copyright (c) 2017, 2019 ABChip and others.
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  */
 package org.abchip.mimo.application;
 
 import java.util.List;
+
 import org.abchip.mimo.context.Context;
 import org.abchip.mimo.context.ContextDescription;
 import org.abchip.mimo.context.ContextRoot;
-import org.abchip.mimo.entity.EntityIdentifiable;
-<<<<<<< HEAD
-=======
-import org.abchip.mimo.entity.Textable;
->>>>>>> branch 'master' of https://github.com/abchip/mimo.git
 
+import org.abchip.mimo.entity.EntityIdentifiable;
 
 /**
  * <!-- begin-user-doc -->
@@ -43,12 +39,7 @@ import org.abchip.mimo.entity.Textable;
  * @model
  * @generated
  */
-<<<<<<< HEAD
 public interface Application extends EntityIdentifiable, Context {
-=======
-public interface Application extends EntityIdentifiable, Textable, Context {
->>>>>>> branch 'master' of https://github.com/abchip/mimo.git
-
 	/**
 	 * Returns the value of the '<em><b>Commands</b></em>' containment reference list.
 	 * The list contents are of type {@link org.abchip.mimo.application.ServiceCommandProvider}.
@@ -111,7 +102,7 @@ public interface Application extends EntityIdentifiable, Textable, Context {
 	 * Returns the value of the '<em><b>Context</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Context</em>' reference isn't clear,
+	 * If the meaning of the '<em>Context</em>' containment reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
@@ -147,7 +138,6 @@ public interface Application extends EntityIdentifiable, Textable, Context {
 	 * @model containment="true" resolveProxies="true" required="true"
 	 * @generated
 	 */
-	@Override
 	ContextDescription getContextDescription();
 
 	/**
@@ -253,4 +243,5 @@ public interface Application extends EntityIdentifiable, Textable, Context {
 	 * @generated
 	 */
 	void setText(String value);
+
 } // Application

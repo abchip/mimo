@@ -110,11 +110,7 @@ public class MimoResourceImpl<E extends EntityIdentifiable> extends ResourceImpl
 			return id;
 
 		if (eObject instanceof EntityIdentifiable) {
-<<<<<<< HEAD
 			EntityIdentifiable entityIdentifiable = (EntityIdentifiable) eObject;
-=======
-			EntityIdentifiable entityNameable = (EntityIdentifiable) eObject;
->>>>>>> branch 'master' of https://github.com/abchip/mimo.git
 
 			StringBuffer name = new StringBuffer();
 

@@ -1,16 +1,18 @@
 /**
- *  Copyright (c) 2017, 2019 ABChip and others.
- *  All rights reserved. This program and the accompanying materials
- *  are made available under the terms of the Eclipse Public License v1.0
- *  which accompanies this distribution, and is available at
- *  http://www.eclipse.org/legal/epl-v10.html
- *
+ * Copyright (c) 2017, 2019 ABChip and others.
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  */
 package org.abchip.mimo.context.impl;
 
 import org.abchip.mimo.MimoPackage;
+
 import org.abchip.mimo.application.ApplicationPackage;
+
 import org.abchip.mimo.application.impl.ApplicationPackageImpl;
+
 import org.abchip.mimo.context.AdapterFactory;
 import org.abchip.mimo.context.Authentication;
 import org.abchip.mimo.context.AuthenticationAnonymous;
@@ -21,6 +23,8 @@ import org.abchip.mimo.context.Capability;
 import org.abchip.mimo.context.CapabilityRight;
 import org.abchip.mimo.context.Context;
 import org.abchip.mimo.context.ContextDescription;
+import org.abchip.mimo.context.ContextFactory;
+import org.abchip.mimo.context.ContextPackage;
 import org.abchip.mimo.context.ContextRoot;
 import org.abchip.mimo.context.EntityLocker;
 import org.abchip.mimo.context.ExceptionManager;
@@ -33,25 +37,35 @@ import org.abchip.mimo.context.MessageDescription;
 import org.abchip.mimo.context.MessageException;
 import org.abchip.mimo.context.MessageFile;
 import org.abchip.mimo.context.RegistryFactory;
-import org.abchip.mimo.context.ContextFactory;
-import org.abchip.mimo.context.ContextPackage;
 import org.abchip.mimo.context.UserClass;
 import org.abchip.mimo.context.UserProfile;
 
 import org.abchip.mimo.data.DataPackage;
+
 import org.abchip.mimo.data.impl.DataPackageImpl;
+
 import org.abchip.mimo.entity.EntityPackage;
 
 import org.abchip.mimo.entity.impl.EntityPackageImpl;
+
 import org.abchip.mimo.impl.MimoPackageImpl;
+
 import org.abchip.mimo.java.JavaPackage;
+
 import org.abchip.mimo.java.impl.JavaPackageImpl;
+
 import org.abchip.mimo.net.NetPackage;
+
 import org.abchip.mimo.net.impl.NetPackageImpl;
+
 import org.abchip.mimo.resource.ResourcePackage;
+
 import org.abchip.mimo.resource.impl.ResourcePackageImpl;
+
 import org.abchip.mimo.util.UtilPackage;
+
 import org.abchip.mimo.util.impl.UtilPackageImpl;
+
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EDataType;
@@ -132,14 +146,14 @@ public class ContextPackageImpl extends EPackageImpl implements ContextPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass contextRootEClass = null;
+	private EClass contextDescriptionEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass contextDescriptionEClass = null;
+	private EClass contextRootEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -534,16 +548,6 @@ public class ContextPackageImpl extends EPackageImpl implements ContextPackage {
 	 * @generated
 	 */
 	@Override
-	public EClass getContextRoot() {
-		return contextRootEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public EClass getContextDescription() {
 		return contextDescriptionEClass;
 	}
@@ -606,6 +610,16 @@ public class ContextPackageImpl extends EPackageImpl implements ContextPackage {
 	@Override
 	public EAttribute getContextDescription_User() {
 		return (EAttribute)contextDescriptionEClass.getEStructuralFeatures().get(5);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getContextRoot() {
+		return contextRootEClass;
 	}
 
 	/**
@@ -1075,13 +1089,7 @@ public class ContextPackageImpl extends EPackageImpl implements ContextPackage {
 		messageDescriptionEClass.getESuperTypes().add(theEntityPackage.getEntity());
 		messageDataFieldEClass.getESuperTypes().add(theEntityPackage.getEntity());
 		messageFileEClass.getESuperTypes().add(theEntityPackage.getEntityIdentifiable());
-<<<<<<< HEAD
 		userProfileEClass.getESuperTypes().add(theEntityPackage.getEntityIdentifiable());
-=======
-		messageFileEClass.getESuperTypes().add(theEntityPackage.getTextable());
-		userProfileEClass.getESuperTypes().add(theEntityPackage.getEntityIdentifiable());
-		userProfileEClass.getESuperTypes().add(theEntityPackage.getTextable());
->>>>>>> branch 'master' of https://github.com/abchip/mimo.git
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(adapterFactoryEClass, AdapterFactory.class, "AdapterFactory", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);

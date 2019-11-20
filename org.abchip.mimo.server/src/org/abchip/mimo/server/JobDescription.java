@@ -8,10 +8,6 @@
 package org.abchip.mimo.server;
 
 import org.abchip.mimo.entity.EntityIdentifiable;
-<<<<<<< HEAD
-=======
-import org.abchip.mimo.entity.Textable;
->>>>>>> branch 'master' of https://github.com/abchip/mimo.git
 
 /**
  * <!-- begin-user-doc -->
@@ -31,11 +27,7 @@ import org.abchip.mimo.entity.Textable;
  * @model
  * @generated
  */
-<<<<<<< HEAD
 public interface JobDescription extends EntityIdentifiable {
-=======
-public interface JobDescription extends EntityIdentifiable, Textable {
->>>>>>> branch 'master' of https://github.com/abchip/mimo.git
 	/**
 	 * Returns the value of the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
@@ -63,32 +55,6 @@ public interface JobDescription extends EntityIdentifiable, Textable {
 	void setName(String value);
 
 	/**
-	 * Returns the value of the '<em><b>User</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>User</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>User</em>' attribute.
-	 * @see #setUser(String)
-	 * @see org.abchip.mimo.server.ServerPackage#getJobDescription_User()
-	 * @model
-	 * @generated
-	 */
-	String getUser();
-
-	/**
-	 * Sets the value of the '{@link org.abchip.mimo.server.JobDescription#getUser <em>User</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>User</em>' attribute.
-	 * @see #getUser()
-	 * @generated
-	 */
-	void setUser(String value);
-
-	/**
 	 * Returns the value of the '<em><b>Text</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -113,5 +79,31 @@ public interface JobDescription extends EntityIdentifiable, Textable {
 	 * @generated
 	 */
 	void setText(String value);
+
+	/**
+	 * Returns the value of the '<em><b>User</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>User</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>User</em>' attribute.
+	 * @see #setUser(String)
+	 * @see org.abchip.mimo.server.ServerPackage#getJobDescription_User()
+	 * @model
+	 * @generated
+	 */
+	String getUser();
+
+	/**
+	 * Sets the value of the '{@link org.abchip.mimo.server.JobDescription#getUser <em>User</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>User</em>' attribute.
+	 * @see #getUser()
+	 * @generated
+	 */
+	void setUser(String value);
 
 } // JobDescription

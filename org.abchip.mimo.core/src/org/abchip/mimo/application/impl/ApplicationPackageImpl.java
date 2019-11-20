@@ -1,14 +1,14 @@
 /**
- *  Copyright (c) 2017, 2019 ABChip and others.
- *  All rights reserved. This program and the accompanying materials
- *  are made available under the terms of the Eclipse Public License v1.0
- *  which accompanies this distribution, and is available at
- *  http://www.eclipse.org/legal/epl-v10.html
- *
+ * Copyright (c) 2017, 2019 ABChip and others.
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  */
 package org.abchip.mimo.application.impl;
 
 import org.abchip.mimo.MimoPackage;
+
 import org.abchip.mimo.application.Application;
 import org.abchip.mimo.application.ApplicationComponent;
 import org.abchip.mimo.application.ApplicationFactory;
@@ -30,19 +30,33 @@ import org.abchip.mimo.application.ServiceTester;
 import org.abchip.mimo.context.ContextPackage;
 
 import org.abchip.mimo.context.impl.ContextPackageImpl;
+
 import org.abchip.mimo.data.DataPackage;
+
 import org.abchip.mimo.data.impl.DataPackageImpl;
+
 import org.abchip.mimo.entity.EntityPackage;
+
 import org.abchip.mimo.entity.impl.EntityPackageImpl;
+
 import org.abchip.mimo.impl.MimoPackageImpl;
+
 import org.abchip.mimo.java.JavaPackage;
+
 import org.abchip.mimo.java.impl.JavaPackageImpl;
+
 import org.abchip.mimo.net.NetPackage;
+
 import org.abchip.mimo.net.impl.NetPackageImpl;
+
 import org.abchip.mimo.resource.ResourcePackage;
+
 import org.abchip.mimo.resource.impl.ResourcePackageImpl;
+
 import org.abchip.mimo.util.UtilPackage;
+
 import org.abchip.mimo.util.impl.UtilPackageImpl;
+
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EEnum;
@@ -868,10 +882,6 @@ public class ApplicationPackageImpl extends EPackageImpl implements ApplicationP
 
 		// Add supertypes to classes
 		applicationEClass.getESuperTypes().add(theEntityPackage.getEntityIdentifiable());
-<<<<<<< HEAD
-=======
-		applicationEClass.getESuperTypes().add(theEntityPackage.getTextable());
->>>>>>> branch 'master' of https://github.com/abchip/mimo.git
 		applicationEClass.getESuperTypes().add(theContextPackage.getContext());
 		applicationComponentEClass.getESuperTypes().add(theEntityPackage.getEntityIdentifiable());
 		applicationComponentEClass.getESuperTypes().add(theContextPackage.getContext());

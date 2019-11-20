@@ -25,11 +25,7 @@ package org.abchip.mimo.entity;
  * @model abstract="true"
  * @generated
  */
-<<<<<<< HEAD
 public interface EntityEnum extends EntityIdentifiable {
-=======
-public interface EntityEnum extends EntityIdentifiable, Textable {
->>>>>>> branch 'master' of https://github.com/abchip/mimo.git
 	/**
 	 * Returns the value of the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->

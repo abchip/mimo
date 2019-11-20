@@ -8,10 +8,6 @@
 package org.abchip.mimo.audio;
 
 import org.abchip.mimo.entity.EntityIdentifiable;
-<<<<<<< HEAD
-=======
-import org.abchip.mimo.entity.Textable;
->>>>>>> branch 'master' of https://github.com/abchip/mimo.git
 
 /**
  * <!-- begin-user-doc -->
@@ -31,11 +27,7 @@ import org.abchip.mimo.entity.Textable;
  * @model
  * @generated
  */
-<<<<<<< HEAD
 public interface Audio extends EntityIdentifiable {
-=======
-public interface Audio extends EntityIdentifiable, Textable {
->>>>>>> branch 'master' of https://github.com/abchip/mimo.git
 	/**
 	 * Returns the value of the '<em><b>Content</b></em>' attribute.
 	 * <!-- begin-user-doc -->

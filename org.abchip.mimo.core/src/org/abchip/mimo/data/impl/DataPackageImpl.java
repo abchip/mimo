@@ -43,7 +43,9 @@ import org.abchip.mimo.entity.impl.EntityPackageImpl;
 import org.abchip.mimo.impl.MimoPackageImpl;
 
 import org.abchip.mimo.java.JavaPackage;
+
 import org.abchip.mimo.java.impl.JavaPackageImpl;
+
 import org.abchip.mimo.net.NetPackage;
 
 import org.abchip.mimo.net.impl.NetPackageImpl;

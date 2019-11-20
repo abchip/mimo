@@ -15,13 +15,14 @@ import org.abchip.mimo.audio.AudioManager;
 import org.abchip.mimo.audio.AudioPackage;
 import org.abchip.mimo.audio.AudioPlayer;
 import org.abchip.mimo.audio.AudioRecorder;
-
 import org.abchip.mimo.audio.AudioStyle;
+
 import org.abchip.mimo.context.ContextPackage;
 
 import org.abchip.mimo.entity.EntityPackage;
 
 import org.abchip.mimo.java.JavaPackage;
+
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EEnum;
@@ -294,10 +295,6 @@ public class AudioPackageImpl extends EPackageImpl implements AudioPackage {
 
 		// Add supertypes to classes
 		audioEClass.getESuperTypes().add(theEntityPackage.getEntityIdentifiable());
-<<<<<<< HEAD
-=======
-		audioEClass.getESuperTypes().add(theEntityPackage.getTextable());
->>>>>>> branch 'master' of https://github.com/abchip/mimo.git
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(audioEClass, Audio.class, "Audio", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);

@@ -18,20 +18,27 @@ import org.abchip.mimo.context.ContextPackage;
 import org.abchip.mimo.context.impl.ContextPackageImpl;
 
 import org.abchip.mimo.data.DataPackage;
+
 import org.abchip.mimo.data.impl.DataPackageImpl;
+
 import org.abchip.mimo.entity.EntityPackage;
 
 import org.abchip.mimo.entity.impl.EntityPackageImpl;
+
 import org.abchip.mimo.impl.MimoPackageImpl;
 
 import org.abchip.mimo.java.JavaPackage;
+
 import org.abchip.mimo.java.impl.JavaPackageImpl;
+
 import org.abchip.mimo.net.NetFactory;
 import org.abchip.mimo.net.NetPackage;
 import org.abchip.mimo.net.SocketConfig;
 
 import org.abchip.mimo.resource.ResourcePackage;
+
 import org.abchip.mimo.resource.impl.ResourcePackageImpl;
+
 import org.abchip.mimo.util.UtilPackage;
 
 import org.abchip.mimo.util.impl.UtilPackageImpl;
@@ -55,6 +62,7 @@ public class NetPackageImpl extends EPackageImpl implements NetPackage {
 	 * @generated
 	 */
 	private EClass socketConfigEClass = null;
+
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
 	 * {@link org.eclipse.emf.ecore.EPackage.Registry EPackage.Registry} by the package

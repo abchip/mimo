@@ -8,10 +8,13 @@
 package org.abchip.mimo.server.impl;
 
 import org.abchip.mimo.MimoPackage;
+
 import org.abchip.mimo.context.ContextPackage;
 
 import org.abchip.mimo.data.DataPackage;
+
 import org.abchip.mimo.entity.EntityPackage;
+
 import org.abchip.mimo.server.Job;
 import org.abchip.mimo.server.JobCapability;
 import org.abchip.mimo.server.JobDescription;
@@ -34,7 +37,9 @@ import org.abchip.mimo.server.SystemEventType;
 import org.abchip.mimo.server.SystemListener;
 import org.abchip.mimo.server.SystemManager;
 import org.abchip.mimo.server.SystemStatus;
+
 import org.abchip.mimo.util.UtilPackage;
+
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EEnum;
@@ -489,8 +494,8 @@ public class ServerPackageImpl extends EPackageImpl implements ServerPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getJobDescription_User() {
-		return (EAttribute)jobDescriptionEClass.getEStructuralFeatures().get(2);
+	public EAttribute getJobDescription_Text() {
+		return (EAttribute)jobDescriptionEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -499,8 +504,8 @@ public class ServerPackageImpl extends EPackageImpl implements ServerPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getJobDescription_Text() {
-		return (EAttribute)jobDescriptionEClass.getEStructuralFeatures().get(1);
+	public EAttribute getJobDescription_User() {
+		return (EAttribute)jobDescriptionEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -1041,10 +1046,6 @@ public class ServerPackageImpl extends EPackageImpl implements ServerPackage {
 		jobEClass.getESuperTypes().add(theEntityPackage.getEntityIdentifiable());
 		jobCapabilityEClass.getESuperTypes().add(theContextPackage.getCapability());
 		jobDescriptionEClass.getESuperTypes().add(theEntityPackage.getEntityIdentifiable());
-<<<<<<< HEAD
-=======
-		jobDescriptionEClass.getESuperTypes().add(theEntityPackage.getTextable());
->>>>>>> branch 'master' of https://github.com/abchip/mimo.git
 		jobLogEClass.getESuperTypes().add(theEntityPackage.getEntity());
 		jobLogEntryEClass.getESuperTypes().add(theEntityPackage.getEntity());
 		jobMessageEClass.getESuperTypes().add(theEntityPackage.getEntity());

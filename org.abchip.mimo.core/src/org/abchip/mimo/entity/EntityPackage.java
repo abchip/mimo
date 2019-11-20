@@ -1,14 +1,14 @@
 /**
- *  Copyright (c) 2017, 2019 ABChip and others.
- *  All rights reserved. This program and the accompanying materials
- *  are made available under the terms of the Eclipse Public License v1.0
- *  which accompanies this distribution, and is available at
- *  http://www.eclipse.org/legal/epl-v10.html
- *
+ * Copyright (c) 2017, 2019 ABChip and others.
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  */
 package org.abchip.mimo.entity;
 
 import org.abchip.mimo.java.JavaPackage;
+
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EEnum;
@@ -250,26 +250,6 @@ public interface EntityPackage extends EPackage {
 	int ENTITY_IDENTIFIABLE_FEATURE_COUNT = ENTITY_FEATURE_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link org.abchip.mimo.entity.impl.EntityInfoImpl <em>Info</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.abchip.mimo.entity.impl.EntityInfoImpl
-	 * @see org.abchip.mimo.entity.impl.EntityPackageImpl#getEntityInfo()
-	 * @generated
-	 */
-	int ENTITY_INFO = 6;
-
-	/**
-	 * The meta object id for the '{@link org.abchip.mimo.entity.EntityIterator <em>Iterator</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.abchip.mimo.entity.EntityIterator
-	 * @see org.abchip.mimo.entity.impl.EntityPackageImpl#getEntityIterator()
-	 * @generated
-	 */
-	int ENTITY_ITERATOR = 8;
-
-	/**
 	 * The meta object id for the '{@link org.abchip.mimo.entity.impl.EntityEnumImpl <em>Enum</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -305,6 +285,16 @@ public interface EntityPackage extends EPackage {
 	 * @ordered
 	 */
 	int ENTITY_ENUM_FEATURE_COUNT = ENTITY_IDENTIFIABLE_FEATURE_COUNT + 2;
+
+	/**
+	 * The meta object id for the '{@link org.abchip.mimo.entity.impl.EntityInfoImpl <em>Info</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.abchip.mimo.entity.impl.EntityInfoImpl
+	 * @see org.abchip.mimo.entity.impl.EntityPackageImpl#getEntityInfo()
+	 * @generated
+	 */
+	int ENTITY_INFO = 6;
 
 	/**
 	 * The feature id for the '<em><b>Created Stamp</b></em>' attribute.
@@ -352,6 +342,16 @@ public interface EntityPackage extends EPackage {
 	int ENTITY_INFO_FEATURE_COUNT = 4;
 
 	/**
+	 * The meta object id for the '{@link org.abchip.mimo.entity.EntityIterator <em>Iterator</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.abchip.mimo.entity.EntityIterator
+	 * @see org.abchip.mimo.entity.impl.EntityPackageImpl#getEntityIterator()
+	 * @generated
+	 */
+	int ENTITY_ITERATOR = 8;
+
+	/**
 	 * The number of structural features of the '<em>Iterator</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -359,26 +359,6 @@ public interface EntityPackage extends EPackage {
 	 * @ordered
 	 */
 	int ENTITY_ITERATOR_FEATURE_COUNT = JavaPackage.JAVA_ITERATOR_FEATURE_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link org.abchip.mimo.entity.impl.FacetImpl <em>Facet</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.abchip.mimo.entity.impl.FacetImpl
-	 * @see org.abchip.mimo.entity.impl.EntityPackageImpl#getFacet()
-	 * @generated
-	 */
-	int FACET = 11;
-
-	/**
-	 * The meta object id for the '{@link org.abchip.mimo.entity.impl.FrameImpl <em>Frame</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.abchip.mimo.entity.impl.FrameImpl
-	 * @see org.abchip.mimo.entity.impl.EntityPackageImpl#getFrame()
-	 * @generated
-	 */
-	int FRAME = 12;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.entity.impl.EntityTypedImpl <em>Typed</em>}' class.
@@ -428,6 +408,16 @@ public interface EntityPackage extends EPackage {
 	int ENTITY_TYPE_FEATURE_COUNT = ENTITY_IDENTIFIABLE_FEATURE_COUNT + 1;
 
 	/**
+	 * The meta object id for the '{@link org.abchip.mimo.entity.impl.FacetImpl <em>Facet</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.abchip.mimo.entity.impl.FacetImpl
+	 * @see org.abchip.mimo.entity.impl.EntityPackageImpl#getFacet()
+	 * @generated
+	 */
+	int FACET = 11;
+
+	/**
 	 * The number of structural features of the '<em>Facet</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -435,6 +425,16 @@ public interface EntityPackage extends EPackage {
 	 * @ordered
 	 */
 	int FACET_FEATURE_COUNT = ENTITY_FEATURE_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link org.abchip.mimo.entity.impl.FrameImpl <em>Frame</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.abchip.mimo.entity.impl.FrameImpl
+	 * @see org.abchip.mimo.entity.impl.EntityPackageImpl#getFrame()
+	 * @generated
+	 */
+	int FRAME = 12;
 
 	/**
 	 * The feature id for the '<em><b>Abstract</b></em>' attribute.
@@ -643,28 +643,6 @@ public interface EntityPackage extends EPackage {
 	 * @ordered
 	 */
 	int SLOT_FEATURE_COUNT = ENTITY_IDENTIFIABLE_FEATURE_COUNT + 10;
-<<<<<<< HEAD
-=======
-
-	/**
-	 * The meta object id for the '{@link org.abchip.mimo.entity.Textable <em>Textable</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.abchip.mimo.entity.Textable
-	 * @see org.abchip.mimo.entity.impl.EntityPackageImpl#getTextable()
-	 * @generated
-	 */
-	int TEXTABLE = 14;
-
-	/**
-	 * The number of structural features of the '<em>Textable</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TEXTABLE_FEATURE_COUNT = 0;
->>>>>>> branch 'master' of https://github.com/abchip/mimo.git
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.entity.SerializationType <em>Serialization Type</em>}' enum.
@@ -816,6 +794,38 @@ public interface EntityPackage extends EPackage {
 	EAttribute getEntityContainer_Name();
 
 	/**
+	 * Returns the meta object for class '{@link org.abchip.mimo.entity.EntityEnum <em>Enum</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Enum</em>'.
+	 * @see org.abchip.mimo.entity.EntityEnum
+	 * @generated
+	 */
+	EClass getEntityEnum();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.abchip.mimo.entity.EntityEnum#getName <em>Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Name</em>'.
+	 * @see org.abchip.mimo.entity.EntityEnum#getName()
+	 * @see #getEntityEnum()
+	 * @generated
+	 */
+	EAttribute getEntityEnum_Name();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.abchip.mimo.entity.EntityEnum#getText <em>Text</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Text</em>'.
+	 * @see org.abchip.mimo.entity.EntityEnum#getText()
+	 * @see #getEntityEnum()
+	 * @generated
+	 */
+	EAttribute getEntityEnum_Text();
+
+	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.entity.EntityInfo <em>Info</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -878,38 +888,6 @@ public interface EntityPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getEntityIdentifiable();
-
-	/**
-	 * Returns the meta object for class '{@link org.abchip.mimo.entity.EntityEnum <em>Enum</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Enum</em>'.
-	 * @see org.abchip.mimo.entity.EntityEnum
-	 * @generated
-	 */
-	EClass getEntityEnum();
-
-	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.entity.EntityEnum#getName <em>Name</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Name</em>'.
-	 * @see org.abchip.mimo.entity.EntityEnum#getName()
-	 * @see #getEntityEnum()
-	 * @generated
-	 */
-	EAttribute getEntityEnum_Name();
-
-	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.entity.EntityEnum#getText <em>Text</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Text</em>'.
-	 * @see org.abchip.mimo.entity.EntityEnum#getText()
-	 * @see #getEntityEnum()
-	 * @generated
-	 */
-	EAttribute getEntityEnum_Text();
 
 	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.entity.EntityIterator <em>Iterator</em>}'.
@@ -1115,39 +1093,6 @@ public interface EntityPackage extends EPackage {
 	EAttribute getSlot_Containment();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.entity.Slot#getName <em>Name</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Name</em>'.
-	 * @see org.abchip.mimo.entity.Slot#getName()
-	 * @see #getSlot()
-	 * @generated
-	 */
-	EAttribute getSlot_Name();
-
-	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.entity.Slot#isRoute <em>Route</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Route</em>'.
-	 * @see org.abchip.mimo.entity.Slot#isRoute()
-	 * @see #getSlot()
-	 * @generated
-	 */
-	EAttribute getSlot_Route();
-
-	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.entity.Slot#getText <em>Text</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Text</em>'.
-	 * @see org.abchip.mimo.entity.Slot#getText()
-	 * @see #getSlot()
-	 * @generated
-	 */
-	EAttribute getSlot_Text();
-
-	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.entity.Slot#getDefaultValue <em>Default Value</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1201,6 +1146,39 @@ public interface EntityPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getSlot_Key();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.abchip.mimo.entity.Slot#getName <em>Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Name</em>'.
+	 * @see org.abchip.mimo.entity.Slot#getName()
+	 * @see #getSlot()
+	 * @generated
+	 */
+	EAttribute getSlot_Name();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.abchip.mimo.entity.Slot#isRoute <em>Route</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Route</em>'.
+	 * @see org.abchip.mimo.entity.Slot#isRoute()
+	 * @see #getSlot()
+	 * @generated
+	 */
+	EAttribute getSlot_Route();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.abchip.mimo.entity.Slot#getText <em>Text</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Text</em>'.
+	 * @see org.abchip.mimo.entity.Slot#getText()
+	 * @see #getSlot()
+	 * @generated
+	 */
+	EAttribute getSlot_Text();
 
 	/**
 	 * Returns the meta object for enum '{@link org.abchip.mimo.entity.SerializationType <em>Serialization Type</em>}'.
@@ -1349,6 +1327,32 @@ public interface EntityPackage extends EPackage {
 		EAttribute ENTITY_CONTAINER__NAME = eINSTANCE.getEntityContainer_Name();
 
 		/**
+		 * The meta object literal for the '{@link org.abchip.mimo.entity.impl.EntityEnumImpl <em>Enum</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.abchip.mimo.entity.impl.EntityEnumImpl
+		 * @see org.abchip.mimo.entity.impl.EntityPackageImpl#getEntityEnum()
+		 * @generated
+		 */
+		EClass ENTITY_ENUM = eINSTANCE.getEntityEnum();
+
+		/**
+		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ENTITY_ENUM__NAME = eINSTANCE.getEntityEnum_Name();
+
+		/**
+		 * The meta object literal for the '<em><b>Text</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ENTITY_ENUM__TEXT = eINSTANCE.getEntityEnum_Text();
+
+		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.entity.impl.EntityInfoImpl <em>Info</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1399,32 +1403,6 @@ public interface EntityPackage extends EPackage {
 		 * @generated
 		 */
 		EClass ENTITY_IDENTIFIABLE = eINSTANCE.getEntityIdentifiable();
-
-		/**
-		 * The meta object literal for the '{@link org.abchip.mimo.entity.impl.EntityEnumImpl <em>Enum</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see org.abchip.mimo.entity.impl.EntityEnumImpl
-		 * @see org.abchip.mimo.entity.impl.EntityPackageImpl#getEntityEnum()
-		 * @generated
-		 */
-		EClass ENTITY_ENUM = eINSTANCE.getEntityEnum();
-
-		/**
-		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute ENTITY_ENUM__NAME = eINSTANCE.getEntityEnum_Name();
-
-		/**
-		 * The meta object literal for the '<em><b>Text</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute ENTITY_ENUM__TEXT = eINSTANCE.getEntityEnum_Text();
 
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.entity.EntityIterator <em>Iterator</em>}' class.
@@ -1591,30 +1569,6 @@ public interface EntityPackage extends EPackage {
 		EAttribute SLOT__CONTAINMENT = eINSTANCE.getSlot_Containment();
 
 		/**
-		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute SLOT__NAME = eINSTANCE.getSlot_Name();
-
-		/**
-		 * The meta object literal for the '<em><b>Route</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute SLOT__ROUTE = eINSTANCE.getSlot_Route();
-
-		/**
-		 * The meta object literal for the '<em><b>Text</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute SLOT__TEXT = eINSTANCE.getSlot_Text();
-
-		/**
 		 * The meta object literal for the '<em><b>Default Value</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1653,6 +1607,30 @@ public interface EntityPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute SLOT__KEY = eINSTANCE.getSlot_Key();
+
+		/**
+		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute SLOT__NAME = eINSTANCE.getSlot_Name();
+
+		/**
+		 * The meta object literal for the '<em><b>Route</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute SLOT__ROUTE = eINSTANCE.getSlot_Route();
+
+		/**
+		 * The meta object literal for the '<em><b>Text</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute SLOT__TEXT = eINSTANCE.getSlot_Text();
 
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.entity.SerializationType <em>Serialization Type</em>}' enum.

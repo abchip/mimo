@@ -40,11 +40,11 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * @generated
  */
 public class SystemImpl extends EntityIdentifiableImpl implements org.abchip.mimo.server.System {
+
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-
 	/**
 	 * The cached value of the '{@link #getContext() <em>Context</em>}' containment reference.
 	 * <!-- begin-user-doc -->
@@ -54,7 +54,6 @@ public class SystemImpl extends EntityIdentifiableImpl implements org.abchip.mim
 	 * @ordered
 	 */
 	protected Context context;
-
 	/**
 	 * The default value of the '{@link #getLastJobNumber() <em>Last Job Number</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -64,7 +63,6 @@ public class SystemImpl extends EntityIdentifiableImpl implements org.abchip.mim
 	 * @ordered
 	 */
 	protected static final int LAST_JOB_NUMBER_EDEFAULT = 0;
-
 	/**
 	 * The cached value of the '{@link #getLastJobNumber() <em>Last Job Number</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -74,7 +72,6 @@ public class SystemImpl extends EntityIdentifiableImpl implements org.abchip.mim
 	 * @ordered
 	 */
 	protected int lastJobNumber = LAST_JOB_NUMBER_EDEFAULT;
-
 	/**
 	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -84,7 +81,6 @@ public class SystemImpl extends EntityIdentifiableImpl implements org.abchip.mim
 	 * @ordered
 	 */
 	protected static final String NAME_EDEFAULT = null;
-
 	/**
 	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -94,7 +90,6 @@ public class SystemImpl extends EntityIdentifiableImpl implements org.abchip.mim
 	 * @ordered
 	 */
 	protected String name = NAME_EDEFAULT;
-
 	/**
 	 * The default value of the '{@link #getPort() <em>Port</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -104,7 +99,6 @@ public class SystemImpl extends EntityIdentifiableImpl implements org.abchip.mim
 	 * @ordered
 	 */
 	protected static final int PORT_EDEFAULT = 0;
-
 	/**
 	 * The cached value of the '{@link #getPort() <em>Port</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -114,7 +108,6 @@ public class SystemImpl extends EntityIdentifiableImpl implements org.abchip.mim
 	 * @ordered
 	 */
 	protected int port = PORT_EDEFAULT;
-
 	/**
 	 * The default value of the '{@link #getStatus() <em>Status</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -124,7 +117,6 @@ public class SystemImpl extends EntityIdentifiableImpl implements org.abchip.mim
 	 * @ordered
 	 */
 	protected static final SystemStatus STATUS_EDEFAULT = SystemStatus.STOPPED;
-
 	/**
 	 * The cached value of the '{@link #getStatus() <em>Status</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -134,7 +126,6 @@ public class SystemImpl extends EntityIdentifiableImpl implements org.abchip.mim
 	 * @ordered
 	 */
 	protected SystemStatus status = STATUS_EDEFAULT;
-
 	/**
 	 * The default value of the '{@link #getSystemUser() <em>System User</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -144,7 +135,6 @@ public class SystemImpl extends EntityIdentifiableImpl implements org.abchip.mim
 	 * @ordered
 	 */
 	protected static final String SYSTEM_USER_EDEFAULT = null;
-
 	/**
 	 * The cached value of the '{@link #getSystemUser() <em>System User</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -521,5 +511,4 @@ public class SystemImpl extends EntityIdentifiableImpl implements org.abchip.mim
 		result.append(')');
 		return result.toString();
 	}
-
 } //SystemImpl

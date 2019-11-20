@@ -11,10 +11,6 @@ import java.util.Date;
 import java.util.List;
 
 import org.abchip.mimo.entity.EntityIdentifiable;
-<<<<<<< HEAD
-=======
-import org.abchip.mimo.entity.Textable;
->>>>>>> branch 'master' of https://github.com/abchip/mimo.git
 
 /**
  * <!-- begin-user-doc -->
@@ -43,12 +39,7 @@ import org.abchip.mimo.entity.Textable;
  * @model
  * @generated
  */
-<<<<<<< HEAD
 public interface Tweet extends EntityIdentifiable {
-=======
-public interface Tweet extends EntityIdentifiable, Textable {
->>>>>>> branch 'master' of https://github.com/abchip/mimo.git
-	
 	/**
 	 * Returns the value of the '<em><b>Date</b></em>' attribute.
 	 * <!-- begin-user-doc -->

@@ -8,10 +8,6 @@
 package org.abchip.mimo.context;
 
 import org.abchip.mimo.entity.EntityIdentifiable;
-<<<<<<< HEAD
-=======
-import org.abchip.mimo.entity.Textable;
->>>>>>> branch 'master' of https://github.com/abchip/mimo.git
 
 /**
  * <!-- begin-user-doc -->
@@ -32,11 +28,7 @@ import org.abchip.mimo.entity.Textable;
  * @model
  * @generated
  */
-<<<<<<< HEAD
 public interface UserProfile extends EntityIdentifiable {
-=======
-public interface UserProfile extends EntityIdentifiable, Textable {
->>>>>>> branch 'master' of https://github.com/abchip/mimo.git
 	/**
 	 * Returns the value of the '<em><b>Job Description</b></em>' attribute.
 	 * <!-- begin-user-doc -->

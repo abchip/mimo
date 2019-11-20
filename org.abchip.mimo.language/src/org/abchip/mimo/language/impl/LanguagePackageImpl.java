@@ -8,25 +8,32 @@
 package org.abchip.mimo.language.impl;
 
 import org.abchip.mimo.MimoPackage;
+
 import org.abchip.mimo.context.ContextPackage;
+
 import org.abchip.mimo.entity.EntityPackage;
+
 import org.abchip.mimo.language.Language;
 import org.abchip.mimo.language.LanguageExpression;
 import org.abchip.mimo.language.LanguageFactory;
+import org.abchip.mimo.language.LanguageLinearizer;
+import org.abchip.mimo.language.LanguageLinearizerRegistry;
 import org.abchip.mimo.language.LanguageManager;
 import org.abchip.mimo.language.LanguagePackage;
-
 import org.abchip.mimo.language.LanguageParser;
 import org.abchip.mimo.language.LanguageParserRegistry;
 import org.abchip.mimo.language.LanguagePlanet;
 import org.abchip.mimo.language.LanguageScope;
 import org.abchip.mimo.language.LanguageType;
-import org.abchip.mimo.language.LanguageLinearizer;
-import org.abchip.mimo.language.LanguageLinearizerRegistry;
+
 import org.abchip.mimo.language.grammar.GrammarPackage;
+
 import org.abchip.mimo.language.grammar.impl.GrammarPackageImpl;
+
 import org.abchip.mimo.mining.MiningPackage;
+
 import org.abchip.mimo.mining.classification.ClassificationPackage;
+
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EEnum;
@@ -34,6 +41,7 @@ import org.eclipse.emf.ecore.EGenericType;
 import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
+
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 /**
@@ -471,10 +479,6 @@ public class LanguagePackageImpl extends EPackageImpl implements LanguagePackage
 
 		// Add supertypes to classes
 		languageEClass.getESuperTypes().add(theEntityPackage.getEntityIdentifiable());
-<<<<<<< HEAD
-=======
-		languageEClass.getESuperTypes().add(theEntityPackage.getTextable());
->>>>>>> branch 'master' of https://github.com/abchip/mimo.git
 		EGenericType g1 = createEGenericType(theContextPackage.getRegistry());
 		EGenericType g2 = createEGenericType(this.getLanguageParser());
 		g1.getETypeArguments().add(g2);

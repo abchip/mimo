@@ -2,11 +2,7 @@
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="social" nsURI="http://www.abchip.org/mimo/social" nsPrefix="mimo-soc">
   <eSubpackages name="twitter" nsURI="http://www.abchip.org/mimo/social/twitter" nsPrefix="mimo-soc-twitter">
-<<<<<<< HEAD
     <eClassifiers xsi:type="ecore:EClass" name="Tweet" eSuperTypes="../../org.abchip.mimo.core/model/mimo.ecore#//entity/EntityIdentifiable">
-=======
-    <eClassifiers xsi:type="ecore:EClass" name="Tweet" eSuperTypes="../../org.abchip.mimo.core/model/mimo.ecore#//entity/EntityIdentifiable ../../org.abchip.mimo.core/model/mimo.ecore#//entity/Textable">
->>>>>>> branch 'master' of https://github.com/abchip/mimo.git
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="date" lowerBound="1"
           eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate"/>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="entities" upperBound="-1"

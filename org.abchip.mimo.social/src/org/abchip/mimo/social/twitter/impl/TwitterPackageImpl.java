@@ -10,6 +10,7 @@ package org.abchip.mimo.social.twitter.impl;
 import org.abchip.mimo.MimoPackage;
 
 import org.abchip.mimo.context.ContextPackage;
+
 import org.abchip.mimo.entity.EntityPackage;
 
 import org.abchip.mimo.social.twitter.Tweet;
@@ -329,10 +330,6 @@ public class TwitterPackageImpl extends EPackageImpl implements TwitterPackage {
 
 		// Add supertypes to classes
 		tweetEClass.getESuperTypes().add(theEntityPackage.getEntityIdentifiable());
-<<<<<<< HEAD
-=======
-		tweetEClass.getESuperTypes().add(theEntityPackage.getTextable());
->>>>>>> branch 'master' of https://github.com/abchip/mimo.git
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(tweetEClass, Tweet.class, "Tweet", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);

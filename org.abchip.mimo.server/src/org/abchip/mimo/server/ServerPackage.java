@@ -1056,17 +1056,6 @@ public interface ServerPackage extends EPackage {
 	EAttribute getJobDescription_Name();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.server.JobDescription#getUser <em>User</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>User</em>'.
-	 * @see org.abchip.mimo.server.JobDescription#getUser()
-	 * @see #getJobDescription()
-	 * @generated
-	 */
-	EAttribute getJobDescription_User();
-
-	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.server.JobDescription#getText <em>Text</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1076,6 +1065,17 @@ public interface ServerPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getJobDescription_Text();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.abchip.mimo.server.JobDescription#getUser <em>User</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>User</em>'.
+	 * @see org.abchip.mimo.server.JobDescription#getUser()
+	 * @see #getJobDescription()
+	 * @generated
+	 */
+	EAttribute getJobDescription_User();
 
 	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.server.JobEvent <em>Job Event</em>}'.
@@ -1693,20 +1693,20 @@ public interface ServerPackage extends EPackage {
 		EAttribute JOB_DESCRIPTION__NAME = eINSTANCE.getJobDescription_Name();
 
 		/**
-		 * The meta object literal for the '<em><b>User</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute JOB_DESCRIPTION__USER = eINSTANCE.getJobDescription_User();
-
-		/**
 		 * The meta object literal for the '<em><b>Text</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
 		EAttribute JOB_DESCRIPTION__TEXT = eINSTANCE.getJobDescription_Text();
+
+		/**
+		 * The meta object literal for the '<em><b>User</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute JOB_DESCRIPTION__USER = eINSTANCE.getJobDescription_User();
 
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.server.impl.JobEventImpl <em>Job Event</em>}' class.

@@ -31,7 +31,9 @@ public enum SerializationType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	XML_METADATA_INTERCHANGE(10, "XML_Metadata_Interchange", "XMI"), /**
+	XML_METADATA_INTERCHANGE(10, "XML_Metadata_Interchange", "XMI"),
+
+	/**
 	 * The '<em><b>Java Script Object Notation</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

@@ -8,8 +8,10 @@
 package org.abchip.mimo.server.impl;
 
 import org.abchip.mimo.entity.impl.EntityImpl;
+
 import org.abchip.mimo.server.JobMessage;
 import org.abchip.mimo.server.ServerPackage;
+
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
@@ -31,7 +33,9 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * @generated
  */
 public class JobMessageImpl extends EntityImpl implements JobMessage {
-
+	/**
+	 * 
+	 */
 	private static final long serialVersionUID = 1L;
 
 	/**

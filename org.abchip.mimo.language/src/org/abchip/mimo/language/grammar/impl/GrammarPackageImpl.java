@@ -29,6 +29,7 @@ import org.abchip.mimo.language.grammar.Word;
 import org.abchip.mimo.language.impl.LanguagePackageImpl;
 
 import org.abchip.mimo.mining.MiningPackage;
+
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EEnum;
@@ -111,14 +112,14 @@ public class GrammarPackageImpl extends EPackageImpl implements GrammarPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EEnum numberEEnum = null;
+	private EEnum genderEEnum = null;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EEnum genderEEnum = null;
+	private EEnum numberEEnum = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -317,8 +318,8 @@ public class GrammarPackageImpl extends EPackageImpl implements GrammarPackage {
 	 * @generated
 	 */
 	@Override
-	public EEnum getNumber() {
-		return numberEEnum;
+	public EEnum getGender() {
+		return genderEEnum;
 	}
 
 	/**
@@ -327,8 +328,8 @@ public class GrammarPackageImpl extends EPackageImpl implements GrammarPackage {
 	 * @generated
 	 */
 	@Override
-	public EEnum getGender() {
-		return genderEEnum;
+	public EEnum getNumber() {
+		return numberEEnum;
 	}
 
 	/**
@@ -420,10 +421,6 @@ public class GrammarPackageImpl extends EPackageImpl implements GrammarPackage {
 		adjectiveEClass.getESuperTypes().add(this.getWord());
 		dialogEClass.getESuperTypes().add(theEntityPackage.getEntity());
 		grammarEClass.getESuperTypes().add(theEntityPackage.getEntityIdentifiable());
-<<<<<<< HEAD
-=======
-		grammarEClass.getESuperTypes().add(theEntityPackage.getTextable());
->>>>>>> branch 'master' of https://github.com/abchip/mimo.git
 		nounEClass.getESuperTypes().add(this.getWord());
 		predicateEClass.getESuperTypes().add(theEntityPackage.getEntity());
 		pronounEClass.getESuperTypes().add(this.getWord());
