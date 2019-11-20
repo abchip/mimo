@@ -7,6 +7,7 @@
  */
 package org.abchip.mimo.audio;
 
+import java.io.Closeable;
 import java.io.OutputStream;
 
 /**
@@ -16,10 +17,18 @@ import java.io.OutputStream;
  *
  *
  * @see org.abchip.mimo.audio.AudioPackage#getAudioRecorder()
- * @model interface="true" abstract="true"
+ * @model interface="true" abstract="true" superTypes="org.abchip.mimo.java.JavaCloseable"
  * @generated
  */
-public interface AudioRecorder {
+public interface AudioRecorder extends Closeable {
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model
+	 * @generated
+	 */
+	void close();
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

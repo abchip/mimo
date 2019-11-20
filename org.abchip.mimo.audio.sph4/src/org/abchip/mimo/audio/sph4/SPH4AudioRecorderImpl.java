@@ -53,9 +53,9 @@ public class SPH4AudioRecorderImpl implements AudioRecorder {
 				outputStream = new ByteArrayOutputStream();
 
 				try {
-					
+
 					line = (TargetDataLine) AudioSystem.getLine(audioInfo);
-					
+
 					line.open(audioFormat);
 					line.start();
 
@@ -63,7 +63,7 @@ public class SPH4AudioRecorderImpl implements AudioRecorder {
 					AudioInputStream ais = new AudioInputStream(line);
 
 					System.out.println("Start recording...");
-					
+
 					AudioSystem.write(ais, AudioFileFormat.Type.AU, outputStream);
 				} catch (LineUnavailableException ex) {
 					ex.printStackTrace();
@@ -104,5 +104,10 @@ public class SPH4AudioRecorderImpl implements AudioRecorder {
 		boolean bigEndian = true;
 		AudioFormat format = new AudioFormat(sampleRate, sampleSizeInBits, channels, signed, bigEndian);
 		return format;
+	}
+
+	@Override
+	public void close() {
+		this.stop();
 	}
 }

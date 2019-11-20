@@ -21,8 +21,8 @@ import javax.servlet.http.HttpSession;
 
 import org.abchip.mimo.context.AuthenticationAnonymous;
 import org.abchip.mimo.context.AuthenticationManager;
-import org.abchip.mimo.context.ContextFactory;
 import org.abchip.mimo.context.Context;
+import org.abchip.mimo.context.ContextFactory;
 import org.abchip.mimo.entity.EntityIdentifiable;
 import org.abchip.mimo.resource.ResourceManager;
 import org.abchip.mimo.resource.ResourceReader;
@@ -54,29 +54,29 @@ public class GoogleRedirectServlet extends HttpServlet {
 
 		// anonymous access
 		AuthenticationAnonymous authentication = ContextFactory.eINSTANCE.createAuthenticationAnonymous();
-		Context context = authenticationManager.login(null, authentication);
+		try (Context context = authenticationManager.login(null, authentication)) {
 
-		ResourceReader<?> oauth2Reader = resourceManager.getResourceReader(context, "OAuth2Google");
-		EntityIdentifiable oauth2Google = oauth2Reader.first();
+			ResourceReader<?> oauth2Reader = resourceManager.getResourceReader(context, "OAuth2Google");
+			EntityIdentifiable oauth2Google = oauth2Reader.first();
 
-		authenticationManager.logout(context);
-		context.close();
+			authenticationManager.logout(context);
 
-		if (oauth2Google == null) {
-			response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
-			return;
-		}
+			if (oauth2Google == null) {
+				response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
+				return;
+			}
 
-		String clientId = oauth2Google.isa().getValue(oauth2Google, "clientId", false).toString();
-		String returnURI = oauth2Google.isa().getValue(oauth2Google, "returnUrl", false).toString();
-		// Get user authorization code
-		try {
-			String location = AUTHORIZE_URI + "?client_id=" + clientId + "&response_type=code" + "&scope=" + DEFAULT_SCOPE + "&nonce=" + UUID.randomUUID() + "&redirect_uri="
-					+ URLEncoder.encode(returnURI, "UTF8") + "&state=" + session.getId();
+			String clientId = oauth2Google.isa().getValue(oauth2Google, "clientId", false).toString();
+			String returnURI = oauth2Google.isa().getValue(oauth2Google, "returnUrl", false).toString();
+			// Get user authorization code
+			try {
+				String location = AUTHORIZE_URI + "?client_id=" + clientId + "&response_type=code" + "&scope=" + DEFAULT_SCOPE + "&nonce=" + UUID.randomUUID() + "&redirect_uri="
+						+ URLEncoder.encode(returnURI, "UTF8") + "&state=" + session.getId();
 
-			response.sendRedirect(location);
-		} catch (Exception e) {
-			e.printStackTrace();
+				response.sendRedirect(location);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
 		}
 	}
 }

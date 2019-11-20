@@ -30,8 +30,7 @@ public class BaseResourceWriterImpl<E extends EntityIdentifiable> extends BaseRe
 	@Override
 	public String nextSequence() {
 
-		Context context = internal.getContext();
-		EntityLocker<?> entityLocker = lock(context, this.getFrame());
+		EntityLocker<?> entityLocker = lock(internal.getContext(), this.getFrame());
 
 		try {
 			return this.internal.getResource().nextSequence();
@@ -43,8 +42,7 @@ public class BaseResourceWriterImpl<E extends EntityIdentifiable> extends BaseRe
 	@Override
 	public void delete(E entity) {
 
-		Context context = internal.getContext();
-		EntityLocker<?> entityLocker = lock(context, entity);
+		EntityLocker<?> entityLocker = lock(internal.getContext(), entity);
 
 		try {
 			ResourceHelper.firePreDeleteEvent(this, entity);
@@ -66,8 +64,7 @@ public class BaseResourceWriterImpl<E extends EntityIdentifiable> extends BaseRe
 	@Override
 	public void create(E entity, boolean update) {
 
-		Context context = internal.getContext();
-		EntityLocker<?> entityLocker = lock(context, entity);
+		EntityLocker<?> entityLocker = lock(internal.getContext(), entity);
 
 		try {
 			ResourceHelper.firePreSaveEvent(this, entity);
@@ -84,8 +81,7 @@ public class BaseResourceWriterImpl<E extends EntityIdentifiable> extends BaseRe
 	@Override
 	public void update(E entity) {
 
-		Context context = internal.getContext();
-		EntityLocker<?> entityLocker = lock(context, entity);
+		EntityLocker<?> entityLocker = lock(internal.getContext(), entity);
 
 		try {
 			ResourceHelper.firePreSaveEvent(this, entity);

@@ -46,6 +46,7 @@ public abstract class BaseServlet extends HttpServlet {
 		HttpSession session = request.getSession();
 		System.out.println(session.getId() + ": " + getServletName() + " " + HttpUtils.getParametersAsString(request));
 
+		@SuppressWarnings("resource")
 		Context context = ContextUtils.getContext(session.getId());
 
 		// invalid session

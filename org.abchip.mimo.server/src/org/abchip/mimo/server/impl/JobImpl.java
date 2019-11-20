@@ -41,20 +41,33 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.server.impl.JobImpl#getContext <em>Context</em>}</li>
- *   <li>{@link org.abchip.mimo.server.impl.JobImpl#getCreationDate <em>Creation Date</em>}</li>
- *   <li>{@link org.abchip.mimo.server.impl.JobImpl#getCurrentResource <em>Current Resource</em>}</li>
- *   <li>{@link org.abchip.mimo.server.impl.JobImpl#getDateFormat <em>Date Format</em>}</li>
- *   <li>{@link org.abchip.mimo.server.impl.JobImpl#getDateSeparator <em>Date Separator</em>}</li>
- *   <li>{@link org.abchip.mimo.server.impl.JobImpl#getDestroyDate <em>Destroy Date</em>}</li>
- *   <li>{@link org.abchip.mimo.server.impl.JobImpl#getJobID <em>Job ID</em>}</li>
- *   <li>{@link org.abchip.mimo.server.impl.JobImpl#getJobReference <em>Job Reference</em>}</li>
- *   <li>{@link org.abchip.mimo.server.impl.JobImpl#getJobRunInfo <em>Job Run Info</em>}</li>
- *   <li>{@link org.abchip.mimo.server.impl.JobImpl#getJobThread <em>Job Thread</em>}</li>
- *   <li>{@link org.abchip.mimo.server.impl.JobImpl#getJobType <em>Job Type</em>}</li>
- *   <li>{@link org.abchip.mimo.server.impl.JobImpl#getMessages <em>Messages</em>}</li>
- *   <li>{@link org.abchip.mimo.server.impl.JobImpl#getSystem <em>System</em>}</li>
- *   <li>{@link org.abchip.mimo.server.impl.JobImpl#getTimeSeparator <em>Time Separator</em>}</li>
+ * <li>{@link org.abchip.mimo.server.impl.JobImpl#getContext
+ * <em>Context</em>}</li>
+ * <li>{@link org.abchip.mimo.server.impl.JobImpl#getCreationDate <em>Creation
+ * Date</em>}</li>
+ * <li>{@link org.abchip.mimo.server.impl.JobImpl#getCurrentResource <em>Current
+ * Resource</em>}</li>
+ * <li>{@link org.abchip.mimo.server.impl.JobImpl#getDateFormat <em>Date
+ * Format</em>}</li>
+ * <li>{@link org.abchip.mimo.server.impl.JobImpl#getDateSeparator <em>Date
+ * Separator</em>}</li>
+ * <li>{@link org.abchip.mimo.server.impl.JobImpl#getDestroyDate <em>Destroy
+ * Date</em>}</li>
+ * <li>{@link org.abchip.mimo.server.impl.JobImpl#getJobID <em>Job ID</em>}</li>
+ * <li>{@link org.abchip.mimo.server.impl.JobImpl#getJobReference <em>Job
+ * Reference</em>}</li>
+ * <li>{@link org.abchip.mimo.server.impl.JobImpl#getJobRunInfo <em>Job Run
+ * Info</em>}</li>
+ * <li>{@link org.abchip.mimo.server.impl.JobImpl#getJobThread <em>Job
+ * Thread</em>}</li>
+ * <li>{@link org.abchip.mimo.server.impl.JobImpl#getJobType <em>Job
+ * Type</em>}</li>
+ * <li>{@link org.abchip.mimo.server.impl.JobImpl#getMessages
+ * <em>Messages</em>}</li>
+ * <li>{@link org.abchip.mimo.server.impl.JobImpl#getSystem
+ * <em>System</em>}</li>
+ * <li>{@link org.abchip.mimo.server.impl.JobImpl#getTimeSeparator <em>Time
+ * Separator</em>}</li>
  * </ul>
  *
  * @generated
@@ -67,8 +80,9 @@ public class JobImpl extends EntityIdentifiableImpl implements Job {
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * The cached value of the '{@link #getContext() <em>Context</em>}' containment reference.
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * The cached value of the '{@link #getContext() <em>Context</em>}' containment
+	 * reference. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @see #getContext()
 	 * @generated
 	 * @ordered
@@ -76,9 +90,9 @@ public class JobImpl extends EntityIdentifiableImpl implements Job {
 	protected Context context;
 
 	/**
-	 * The default value of the '{@link #getCreationDate() <em>Creation Date</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * The default value of the '{@link #getCreationDate() <em>Creation Date</em>}'
+	 * attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @see #getCreationDate()
 	 * @generated
 	 * @ordered
@@ -86,9 +100,9 @@ public class JobImpl extends EntityIdentifiableImpl implements Job {
 	protected static final Date CREATION_DATE_EDEFAULT = null;
 
 	/**
-	 * The cached value of the '{@link #getCreationDate() <em>Creation Date</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * The cached value of the '{@link #getCreationDate() <em>Creation Date</em>}'
+	 * attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @see #getCreationDate()
 	 * @generated
 	 * @ordered
@@ -96,9 +110,9 @@ public class JobImpl extends EntityIdentifiableImpl implements Job {
 	protected Date creationDate = CREATION_DATE_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getCurrentResource() <em>Current Resource</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * The default value of the '{@link #getCurrentResource() <em>Current
+	 * Resource</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @see #getCurrentResource()
 	 * @generated
 	 * @ordered
@@ -106,9 +120,9 @@ public class JobImpl extends EntityIdentifiableImpl implements Job {
 	protected static final String CURRENT_RESOURCE_EDEFAULT = "QGPL";
 
 	/**
-	 * The cached value of the '{@link #getCurrentResource() <em>Current Resource</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * The cached value of the '{@link #getCurrentResource() <em>Current
+	 * Resource</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @see #getCurrentResource()
 	 * @generated
 	 * @ordered
@@ -116,8 +130,9 @@ public class JobImpl extends EntityIdentifiableImpl implements Job {
 	protected String currentResource = CURRENT_RESOURCE_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getDateFormat() <em>Date Format</em>}' attribute.
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * The default value of the '{@link #getDateFormat() <em>Date Format</em>}'
+	 * attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @see #getDateFormat()
 	 * @generated
 	 * @ordered
@@ -125,8 +140,9 @@ public class JobImpl extends EntityIdentifiableImpl implements Job {
 	protected static final DateFormat DATE_FORMAT_EDEFAULT = DateFormat.DMY;
 
 	/**
-	 * The cached value of the '{@link #getDateFormat() <em>Date Format</em>}' attribute.
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * The cached value of the '{@link #getDateFormat() <em>Date Format</em>}'
+	 * attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @see #getDateFormat()
 	 * @generated
 	 * @ordered
@@ -134,9 +150,9 @@ public class JobImpl extends EntityIdentifiableImpl implements Job {
 	protected DateFormat dateFormat = DATE_FORMAT_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getDateSeparator() <em>Date Separator</em>}' attribute.
-	 * <!-- begin-user-doc --> <!--
-	 * end-user-doc -->
+	 * The default value of the '{@link #getDateSeparator() <em>Date
+	 * Separator</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @see #getDateSeparator()
 	 * @generated
 	 * @ordered
@@ -144,9 +160,9 @@ public class JobImpl extends EntityIdentifiableImpl implements Job {
 	protected static final String DATE_SEPARATOR_EDEFAULT = "/";
 
 	/**
-	 * The cached value of the '{@link #getDateSeparator() <em>Date Separator</em>}' attribute.
-	 * <!-- begin-user-doc --> <!--
-	 * end-user-doc -->
+	 * The cached value of the '{@link #getDateSeparator() <em>Date Separator</em>}'
+	 * attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @see #getDateSeparator()
 	 * @generated
 	 * @ordered
@@ -154,9 +170,9 @@ public class JobImpl extends EntityIdentifiableImpl implements Job {
 	protected String dateSeparator = DATE_SEPARATOR_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getDestroyDate() <em>Destroy Date</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * The default value of the '{@link #getDestroyDate() <em>Destroy Date</em>}'
+	 * attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @see #getDestroyDate()
 	 * @generated
 	 * @ordered
@@ -164,9 +180,9 @@ public class JobImpl extends EntityIdentifiableImpl implements Job {
 	protected static final Date DESTROY_DATE_EDEFAULT = null;
 
 	/**
-	 * The cached value of the '{@link #getDestroyDate() <em>Destroy Date</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * The cached value of the '{@link #getDestroyDate() <em>Destroy Date</em>}'
+	 * attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @see #getDestroyDate()
 	 * @generated
 	 * @ordered
@@ -176,6 +192,7 @@ public class JobImpl extends EntityIdentifiableImpl implements Job {
 	/**
 	 * The default value of the '{@link #getJobID() <em>Job ID</em>}' attribute.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @see #getJobID()
 	 * @generated
 	 * @ordered
@@ -183,8 +200,9 @@ public class JobImpl extends EntityIdentifiableImpl implements Job {
 	protected static final String JOB_ID_EDEFAULT = null;
 
 	/**
-	 * The cached value of the '{@link #getJobID() <em>Job ID</em>}' attribute.
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * The cached value of the '{@link #getJobID() <em>Job ID</em>}' attribute. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @see #getJobID()
 	 * @generated
 	 * @ordered
@@ -192,9 +210,9 @@ public class JobImpl extends EntityIdentifiableImpl implements Job {
 	protected String jobID = JOB_ID_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getJobReference() <em>Job Reference</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * The cached value of the '{@link #getJobReference() <em>Job Reference</em>}'
+	 * containment reference. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @see #getJobReference()
 	 * @generated
 	 * @ordered
@@ -202,9 +220,9 @@ public class JobImpl extends EntityIdentifiableImpl implements Job {
 	protected JobReference jobReference;
 
 	/**
-	 * The cached value of the '{@link #getJobRunInfo() <em>Job Run Info</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * The cached value of the '{@link #getJobRunInfo() <em>Job Run Info</em>}'
+	 * containment reference. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @see #getJobRunInfo()
 	 * @generated
 	 * @ordered
@@ -212,9 +230,9 @@ public class JobImpl extends EntityIdentifiableImpl implements Job {
 	protected JobRunInfo jobRunInfo;
 
 	/**
-	 * The cached value of the '{@link #getJobThread() <em>Job Thread</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * The cached value of the '{@link #getJobThread() <em>Job Thread</em>}'
+	 * reference. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @see #getJobThread()
 	 * @generated
 	 * @ordered
@@ -224,6 +242,7 @@ public class JobImpl extends EntityIdentifiableImpl implements Job {
 	/**
 	 * The default value of the '{@link #getJobType() <em>Job Type</em>}' attribute.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @see #getJobType()
 	 * @generated
 	 * @ordered
@@ -233,6 +252,7 @@ public class JobImpl extends EntityIdentifiableImpl implements Job {
 	/**
 	 * The cached value of the '{@link #getJobType() <em>Job Type</em>}' attribute.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @see #getJobType()
 	 * @generated
 	 * @ordered
@@ -240,8 +260,9 @@ public class JobImpl extends EntityIdentifiableImpl implements Job {
 	protected JobType jobType = JOB_TYPE_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getMessages() <em>Messages</em>}' containment reference list.
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * The cached value of the '{@link #getMessages() <em>Messages</em>}'
+	 * containment reference list. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @see #getMessages()
 	 * @generated
 	 * @ordered
@@ -251,6 +272,7 @@ public class JobImpl extends EntityIdentifiableImpl implements Job {
 	/**
 	 * The cached value of the '{@link #getSystem() <em>System</em>}' reference.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @see #getSystem()
 	 * @generated
 	 * @ordered
@@ -258,9 +280,9 @@ public class JobImpl extends EntityIdentifiableImpl implements Job {
 	protected org.abchip.mimo.server.System system;
 
 	/**
-	 * The default value of the '{@link #getTimeSeparator() <em>Time Separator</em>}' attribute.
-	 * <!-- begin-user-doc --> <!--
-	 * end-user-doc -->
+	 * The default value of the '{@link #getTimeSeparator() <em>Time
+	 * Separator</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @see #getTimeSeparator()
 	 * @generated
 	 * @ordered
@@ -268,9 +290,9 @@ public class JobImpl extends EntityIdentifiableImpl implements Job {
 	protected static final String TIME_SEPARATOR_EDEFAULT = ":";
 
 	/**
-	 * The cached value of the '{@link #getTimeSeparator() <em>Time Separator</em>}' attribute.
-	 * <!-- begin-user-doc --> <!--
-	 * end-user-doc -->
+	 * The cached value of the '{@link #getTimeSeparator() <em>Time Separator</em>}'
+	 * attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @see #getTimeSeparator()
 	 * @generated
 	 * @ordered
@@ -279,6 +301,7 @@ public class JobImpl extends EntityIdentifiableImpl implements Job {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected JobImpl() {
@@ -287,6 +310,7 @@ public class JobImpl extends EntityIdentifiableImpl implements Job {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -296,13 +320,14 @@ public class JobImpl extends EntityIdentifiableImpl implements Job {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public org.abchip.mimo.server.System getSystem() {
-		if (system != null && ((EObject)system).eIsProxy()) {
-			InternalEObject oldSystem = (InternalEObject)system;
-			system = (org.abchip.mimo.server.System)eResolveProxy(oldSystem);
+		if (system != null && ((EObject) system).eIsProxy()) {
+			InternalEObject oldSystem = (InternalEObject) system;
+			system = (org.abchip.mimo.server.System) eResolveProxy(oldSystem);
 			if (system != oldSystem) {
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ServerPackage.JOB__SYSTEM, oldSystem, system));
@@ -313,6 +338,7 @@ public class JobImpl extends EntityIdentifiableImpl implements Job {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public org.abchip.mimo.server.System basicGetSystem() {
@@ -320,8 +346,8 @@ public class JobImpl extends EntityIdentifiableImpl implements Job {
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -334,6 +360,7 @@ public class JobImpl extends EntityIdentifiableImpl implements Job {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -343,6 +370,7 @@ public class JobImpl extends EntityIdentifiableImpl implements Job {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -354,22 +382,23 @@ public class JobImpl extends EntityIdentifiableImpl implements Job {
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public JobReference getJobReference() {
-		if (jobReference != null && ((EObject)jobReference).eIsProxy()) {
-			InternalEObject oldJobReference = (InternalEObject)jobReference;
-			jobReference = (JobReference)eResolveProxy(oldJobReference);
+		if (jobReference != null && ((EObject) jobReference).eIsProxy()) {
+			InternalEObject oldJobReference = (InternalEObject) jobReference;
+			jobReference = (JobReference) eResolveProxy(oldJobReference);
 			if (jobReference != oldJobReference) {
-				InternalEObject newJobReference = (InternalEObject)jobReference;
+				InternalEObject newJobReference = (InternalEObject) jobReference;
 				NotificationChain msgs = oldJobReference.eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ServerPackage.JOB__JOB_REFERENCE, null, null);
 				if (newJobReference.eInternalContainer() == null) {
 					msgs = newJobReference.eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ServerPackage.JOB__JOB_REFERENCE, null, msgs);
 				}
-				if (msgs != null) msgs.dispatch();
+				if (msgs != null)
+					msgs.dispatch();
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ServerPackage.JOB__JOB_REFERENCE, oldJobReference, jobReference));
 			}
@@ -378,8 +407,8 @@ public class JobImpl extends EntityIdentifiableImpl implements Job {
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public JobReference basicGetJobReference() {
@@ -387,8 +416,8 @@ public class JobImpl extends EntityIdentifiableImpl implements Job {
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public NotificationChain basicSetJobReference(JobReference newJobReference, NotificationChain msgs) {
@@ -396,14 +425,17 @@ public class JobImpl extends EntityIdentifiableImpl implements Job {
 		jobReference = newJobReference;
 		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ServerPackage.JOB__JOB_REFERENCE, oldJobReference, newJobReference);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			if (msgs == null)
+				msgs = notification;
+			else
+				msgs.add(notification);
 		}
 		return msgs;
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -411,33 +443,34 @@ public class JobImpl extends EntityIdentifiableImpl implements Job {
 		if (newJobReference != jobReference) {
 			NotificationChain msgs = null;
 			if (jobReference != null)
-				msgs = ((InternalEObject)jobReference).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ServerPackage.JOB__JOB_REFERENCE, null, msgs);
+				msgs = ((InternalEObject) jobReference).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ServerPackage.JOB__JOB_REFERENCE, null, msgs);
 			if (newJobReference != null)
-				msgs = ((InternalEObject)newJobReference).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ServerPackage.JOB__JOB_REFERENCE, null, msgs);
+				msgs = ((InternalEObject) newJobReference).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ServerPackage.JOB__JOB_REFERENCE, null, msgs);
 			msgs = basicSetJobReference(newJobReference, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
+			if (msgs != null)
+				msgs.dispatch();
+		} else if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ServerPackage.JOB__JOB_REFERENCE, newJobReference, newJobReference));
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public JobRunInfo getJobRunInfo() {
-		if (jobRunInfo != null && ((EObject)jobRunInfo).eIsProxy()) {
-			InternalEObject oldJobRunInfo = (InternalEObject)jobRunInfo;
-			jobRunInfo = (JobRunInfo)eResolveProxy(oldJobRunInfo);
+		if (jobRunInfo != null && ((EObject) jobRunInfo).eIsProxy()) {
+			InternalEObject oldJobRunInfo = (InternalEObject) jobRunInfo;
+			jobRunInfo = (JobRunInfo) eResolveProxy(oldJobRunInfo);
 			if (jobRunInfo != oldJobRunInfo) {
-				InternalEObject newJobRunInfo = (InternalEObject)jobRunInfo;
+				InternalEObject newJobRunInfo = (InternalEObject) jobRunInfo;
 				NotificationChain msgs = oldJobRunInfo.eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ServerPackage.JOB__JOB_RUN_INFO, null, null);
 				if (newJobRunInfo.eInternalContainer() == null) {
 					msgs = newJobRunInfo.eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ServerPackage.JOB__JOB_RUN_INFO, null, msgs);
 				}
-				if (msgs != null) msgs.dispatch();
+				if (msgs != null)
+					msgs.dispatch();
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ServerPackage.JOB__JOB_RUN_INFO, oldJobRunInfo, jobRunInfo));
 			}
@@ -446,8 +479,8 @@ public class JobImpl extends EntityIdentifiableImpl implements Job {
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public JobRunInfo basicGetJobRunInfo() {
@@ -455,8 +488,8 @@ public class JobImpl extends EntityIdentifiableImpl implements Job {
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public NotificationChain basicSetJobRunInfo(JobRunInfo newJobRunInfo, NotificationChain msgs) {
@@ -464,14 +497,17 @@ public class JobImpl extends EntityIdentifiableImpl implements Job {
 		jobRunInfo = newJobRunInfo;
 		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ServerPackage.JOB__JOB_RUN_INFO, oldJobRunInfo, newJobRunInfo);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			if (msgs == null)
+				msgs = notification;
+			else
+				msgs.add(notification);
 		}
 		return msgs;
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -479,19 +515,19 @@ public class JobImpl extends EntityIdentifiableImpl implements Job {
 		if (newJobRunInfo != jobRunInfo) {
 			NotificationChain msgs = null;
 			if (jobRunInfo != null)
-				msgs = ((InternalEObject)jobRunInfo).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ServerPackage.JOB__JOB_RUN_INFO, null, msgs);
+				msgs = ((InternalEObject) jobRunInfo).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ServerPackage.JOB__JOB_RUN_INFO, null, msgs);
 			if (newJobRunInfo != null)
-				msgs = ((InternalEObject)newJobRunInfo).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ServerPackage.JOB__JOB_RUN_INFO, null, msgs);
+				msgs = ((InternalEObject) newJobRunInfo).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ServerPackage.JOB__JOB_RUN_INFO, null, msgs);
 			msgs = basicSetJobRunInfo(newJobRunInfo, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
+			if (msgs != null)
+				msgs.dispatch();
+		} else if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ServerPackage.JOB__JOB_RUN_INFO, newJobRunInfo, newJobRunInfo));
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -500,8 +536,8 @@ public class JobImpl extends EntityIdentifiableImpl implements Job {
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -514,6 +550,7 @@ public class JobImpl extends EntityIdentifiableImpl implements Job {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -523,6 +560,7 @@ public class JobImpl extends EntityIdentifiableImpl implements Job {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -542,8 +580,8 @@ public class JobImpl extends EntityIdentifiableImpl implements Job {
 	public JobStatus getJobStatus() {
 
 		Thread thread = getJobThread();
-		if(thread == null) {
-			if(isActive())
+		if (thread == null) {
+			if (isActive())
 				return JobStatus.ACTIVE;
 			else
 				return JobStatus.END;
@@ -551,74 +589,75 @@ public class JobImpl extends EntityIdentifiableImpl implements Job {
 
 		switch (thread.getThreadStatus()) {
 		case NEW:
-			return JobStatus.ACTIVE;		
+			return JobStatus.ACTIVE;
 		case TERMINATED:
-			if(isError())
+			if (isError())
 				return JobStatus.MESSAGE_WAITING;
 
-			if(isActive())
+			if (isActive())
 				return JobStatus.ACTIVE;
 			else
 				return JobStatus.END;
-		case RUNNABLE:			
+		case RUNNABLE:
 			return JobStatus.RUN;
 		case WAITING:
-			if(thread.isSuspended())
+			if (thread.isSuspended())
 				return JobStatus.HOLD;
-			
+
 			return JobStatus.RUN;
-			
-			// TODO JobStatus.MESSAGE_WAITING
+
+		// TODO JobStatus.MESSAGE_WAITING
 		case TIMED_WAITING:
-			if(thread.isSuspended())
+			if (thread.isSuspended())
 				return JobStatus.HOLD;
 			return JobStatus.TIME_WAITING;
 		case BLOCKED:
 			return JobStatus.LOCK_WAITING;
 		}
-		
+
 		return null;
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated NOT
 	 */
-	public long getMemorySize() {		
-		if(getJobRunInfo() == null)
+	public long getMemorySize() {
+		if (getJobRunInfo() == null)
 			return 0;
-		
-		long memorySize = getJobRunInfo().getMemorySize()/1024/1024;
+
+		long memorySize = getJobRunInfo().getMemorySize() / 1024 / 1024;
 		return memorySize;
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated NOT
 	 */
 	public int getPriority() {
-		if(getJobThread() == null)
+		if (getJobThread() == null)
 			return 0;
 
 		return getJobThread().getThreadPriority();
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated NOT
 	 */
 	public double getCPUUsage() {
-		if(getJobThread() == null)
+		if (getJobThread() == null)
 			return 0;
-		
+
 		return getJobThread().getThreadCPUUsage();
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -647,6 +686,7 @@ public class JobImpl extends EntityIdentifiableImpl implements Job {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -655,8 +695,8 @@ public class JobImpl extends EntityIdentifiableImpl implements Job {
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -669,6 +709,7 @@ public class JobImpl extends EntityIdentifiableImpl implements Job {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -678,6 +719,7 @@ public class JobImpl extends EntityIdentifiableImpl implements Job {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -689,8 +731,8 @@ public class JobImpl extends EntityIdentifiableImpl implements Job {
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -699,8 +741,8 @@ public class JobImpl extends EntityIdentifiableImpl implements Job {
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -713,6 +755,7 @@ public class JobImpl extends EntityIdentifiableImpl implements Job {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -722,6 +765,7 @@ public class JobImpl extends EntityIdentifiableImpl implements Job {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -737,6 +781,7 @@ public class JobImpl extends EntityIdentifiableImpl implements Job {
 	 * 
 	 * @generated NOT
 	 */
+	@SuppressWarnings("resource")
 	public boolean isActive() {
 		Context context = getContext();
 		if (context == null)
@@ -749,12 +794,12 @@ public class JobImpl extends EntityIdentifiableImpl implements Job {
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated NOT
 	 */
 	public boolean isError() {
-		if(getMessages().isEmpty())
+		if (getMessages().isEmpty())
 			return false;
 		else
 			return getLastMessage().getMessageId().equals("ERRORJOB");
@@ -770,39 +815,41 @@ public class JobImpl extends EntityIdentifiableImpl implements Job {
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated NOT
 	 */
 	public JobMessage getLastMessage() {
 
 		JobMessage jobMessage = null;
-		
-		if(getMessages().size()-1 < 0){
+
+		if (getMessages().size() - 1 < 0) {
 			jobMessage = ServerFactory.eINSTANCE.createJobMessage();
 		} else {
-			jobMessage = getMessages().get(getMessages().size()-1);
+			jobMessage = getMessages().get(getMessages().size() - 1);
 		}
-		
+
 		return jobMessage;
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public Context getContext() {
-		if (context != null && ((EObject)context).eIsProxy()) {
-			InternalEObject oldContext = (InternalEObject)context;
-			context = (Context)eResolveProxy(oldContext);
+		if (context != null && ((EObject) context).eIsProxy()) {
+			InternalEObject oldContext = (InternalEObject) context;
+			context = (Context) eResolveProxy(oldContext);
 			if (context != oldContext) {
-				InternalEObject newContext = (InternalEObject)context;
+				InternalEObject newContext = (InternalEObject) context;
 				NotificationChain msgs = oldContext.eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ServerPackage.JOB__CONTEXT, null, null);
 				if (newContext.eInternalContainer() == null) {
 					msgs = newContext.eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ServerPackage.JOB__CONTEXT, null, msgs);
 				}
-				if (msgs != null) msgs.dispatch();
+				if (msgs != null)
+					msgs.dispatch();
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ServerPackage.JOB__CONTEXT, oldContext, context));
 			}
@@ -811,8 +858,8 @@ public class JobImpl extends EntityIdentifiableImpl implements Job {
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public Context basicGetContext() {
@@ -821,6 +868,7 @@ public class JobImpl extends EntityIdentifiableImpl implements Job {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public NotificationChain basicSetContext(Context newContext, NotificationChain msgs) {
@@ -828,13 +876,17 @@ public class JobImpl extends EntityIdentifiableImpl implements Job {
 		context = newContext;
 		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ServerPackage.JOB__CONTEXT, oldContext, newContext);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			if (msgs == null)
+				msgs = notification;
+			else
+				msgs.add(notification);
 		}
 		return msgs;
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -842,19 +894,19 @@ public class JobImpl extends EntityIdentifiableImpl implements Job {
 		if (newContext != context) {
 			NotificationChain msgs = null;
 			if (context != null)
-				msgs = ((InternalEObject)context).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ServerPackage.JOB__CONTEXT, null, msgs);
+				msgs = ((InternalEObject) context).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ServerPackage.JOB__CONTEXT, null, msgs);
 			if (newContext != null)
-				msgs = ((InternalEObject)newContext).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ServerPackage.JOB__CONTEXT, null, msgs);
+				msgs = ((InternalEObject) newContext).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ServerPackage.JOB__CONTEXT, null, msgs);
 			msgs = basicSetContext(newContext, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
+			if (msgs != null)
+				msgs.dispatch();
+		} else if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ServerPackage.JOB__CONTEXT, newContext, newContext));
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -863,8 +915,8 @@ public class JobImpl extends EntityIdentifiableImpl implements Job {
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -876,8 +928,8 @@ public class JobImpl extends EntityIdentifiableImpl implements Job {
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -887,220 +939,231 @@ public class JobImpl extends EntityIdentifiableImpl implements Job {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case ServerPackage.JOB__CONTEXT:
-				return basicSetContext(null, msgs);
-			case ServerPackage.JOB__JOB_REFERENCE:
-				return basicSetJobReference(null, msgs);
-			case ServerPackage.JOB__JOB_RUN_INFO:
-				return basicSetJobRunInfo(null, msgs);
-			case ServerPackage.JOB__MESSAGES:
-				return ((InternalEList<?>)getMessages()).basicRemove(otherEnd, msgs);
+		case ServerPackage.JOB__CONTEXT:
+			return basicSetContext(null, msgs);
+		case ServerPackage.JOB__JOB_REFERENCE:
+			return basicSetJobReference(null, msgs);
+		case ServerPackage.JOB__JOB_RUN_INFO:
+			return basicSetJobRunInfo(null, msgs);
+		case ServerPackage.JOB__MESSAGES:
+			return ((InternalEList<?>) getMessages()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case ServerPackage.JOB__CONTEXT:
-				if (resolve) return getContext();
-				return basicGetContext();
-			case ServerPackage.JOB__CREATION_DATE:
-				return getCreationDate();
-			case ServerPackage.JOB__CURRENT_RESOURCE:
-				return getCurrentResource();
-			case ServerPackage.JOB__DATE_FORMAT:
-				return getDateFormat();
-			case ServerPackage.JOB__DATE_SEPARATOR:
-				return getDateSeparator();
-			case ServerPackage.JOB__DESTROY_DATE:
-				return getDestroyDate();
-			case ServerPackage.JOB__JOB_ID:
-				return getJobID();
-			case ServerPackage.JOB__JOB_REFERENCE:
-				if (resolve) return getJobReference();
-				return basicGetJobReference();
-			case ServerPackage.JOB__JOB_RUN_INFO:
-				if (resolve) return getJobRunInfo();
-				return basicGetJobRunInfo();
-			case ServerPackage.JOB__JOB_THREAD:
-				return getJobThread();
-			case ServerPackage.JOB__JOB_TYPE:
-				return getJobType();
-			case ServerPackage.JOB__MESSAGES:
-				return getMessages();
-			case ServerPackage.JOB__SYSTEM:
-				if (resolve) return getSystem();
-				return basicGetSystem();
-			case ServerPackage.JOB__TIME_SEPARATOR:
-				return getTimeSeparator();
+		case ServerPackage.JOB__CONTEXT:
+			if (resolve)
+				return getContext();
+			return basicGetContext();
+		case ServerPackage.JOB__CREATION_DATE:
+			return getCreationDate();
+		case ServerPackage.JOB__CURRENT_RESOURCE:
+			return getCurrentResource();
+		case ServerPackage.JOB__DATE_FORMAT:
+			return getDateFormat();
+		case ServerPackage.JOB__DATE_SEPARATOR:
+			return getDateSeparator();
+		case ServerPackage.JOB__DESTROY_DATE:
+			return getDestroyDate();
+		case ServerPackage.JOB__JOB_ID:
+			return getJobID();
+		case ServerPackage.JOB__JOB_REFERENCE:
+			if (resolve)
+				return getJobReference();
+			return basicGetJobReference();
+		case ServerPackage.JOB__JOB_RUN_INFO:
+			if (resolve)
+				return getJobRunInfo();
+			return basicGetJobRunInfo();
+		case ServerPackage.JOB__JOB_THREAD:
+			return getJobThread();
+		case ServerPackage.JOB__JOB_TYPE:
+			return getJobType();
+		case ServerPackage.JOB__MESSAGES:
+			return getMessages();
+		case ServerPackage.JOB__SYSTEM:
+			if (resolve)
+				return getSystem();
+			return basicGetSystem();
+		case ServerPackage.JOB__TIME_SEPARATOR:
+			return getTimeSeparator();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case ServerPackage.JOB__CONTEXT:
-				setContext((Context)newValue);
-				return;
-			case ServerPackage.JOB__CREATION_DATE:
-				setCreationDate((Date)newValue);
-				return;
-			case ServerPackage.JOB__CURRENT_RESOURCE:
-				setCurrentResource((String)newValue);
-				return;
-			case ServerPackage.JOB__DATE_FORMAT:
-				setDateFormat((DateFormat)newValue);
-				return;
-			case ServerPackage.JOB__DATE_SEPARATOR:
-				setDateSeparator((String)newValue);
-				return;
-			case ServerPackage.JOB__DESTROY_DATE:
-				setDestroyDate((Date)newValue);
-				return;
-			case ServerPackage.JOB__JOB_ID:
-				setJobID((String)newValue);
-				return;
-			case ServerPackage.JOB__JOB_REFERENCE:
-				setJobReference((JobReference)newValue);
-				return;
-			case ServerPackage.JOB__JOB_RUN_INFO:
-				setJobRunInfo((JobRunInfo)newValue);
-				return;
-			case ServerPackage.JOB__JOB_THREAD:
-				setJobThread((org.abchip.mimo.util.Thread)newValue);
-				return;
-			case ServerPackage.JOB__JOB_TYPE:
-				setJobType((JobType)newValue);
-				return;
-			case ServerPackage.JOB__MESSAGES:
-				getMessages().clear();
-				getMessages().addAll((Collection<? extends JobMessage>)newValue);
-				return;
-			case ServerPackage.JOB__SYSTEM:
-				setSystem((org.abchip.mimo.server.System)newValue);
-				return;
-			case ServerPackage.JOB__TIME_SEPARATOR:
-				setTimeSeparator((String)newValue);
-				return;
+		case ServerPackage.JOB__CONTEXT:
+			setContext((Context) newValue);
+			return;
+		case ServerPackage.JOB__CREATION_DATE:
+			setCreationDate((Date) newValue);
+			return;
+		case ServerPackage.JOB__CURRENT_RESOURCE:
+			setCurrentResource((String) newValue);
+			return;
+		case ServerPackage.JOB__DATE_FORMAT:
+			setDateFormat((DateFormat) newValue);
+			return;
+		case ServerPackage.JOB__DATE_SEPARATOR:
+			setDateSeparator((String) newValue);
+			return;
+		case ServerPackage.JOB__DESTROY_DATE:
+			setDestroyDate((Date) newValue);
+			return;
+		case ServerPackage.JOB__JOB_ID:
+			setJobID((String) newValue);
+			return;
+		case ServerPackage.JOB__JOB_REFERENCE:
+			setJobReference((JobReference) newValue);
+			return;
+		case ServerPackage.JOB__JOB_RUN_INFO:
+			setJobRunInfo((JobRunInfo) newValue);
+			return;
+		case ServerPackage.JOB__JOB_THREAD:
+			setJobThread((org.abchip.mimo.util.Thread) newValue);
+			return;
+		case ServerPackage.JOB__JOB_TYPE:
+			setJobType((JobType) newValue);
+			return;
+		case ServerPackage.JOB__MESSAGES:
+			getMessages().clear();
+			getMessages().addAll((Collection<? extends JobMessage>) newValue);
+			return;
+		case ServerPackage.JOB__SYSTEM:
+			setSystem((org.abchip.mimo.server.System) newValue);
+			return;
+		case ServerPackage.JOB__TIME_SEPARATOR:
+			setTimeSeparator((String) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case ServerPackage.JOB__CONTEXT:
-				setContext((Context)null);
-				return;
-			case ServerPackage.JOB__CREATION_DATE:
-				setCreationDate(CREATION_DATE_EDEFAULT);
-				return;
-			case ServerPackage.JOB__CURRENT_RESOURCE:
-				setCurrentResource(CURRENT_RESOURCE_EDEFAULT);
-				return;
-			case ServerPackage.JOB__DATE_FORMAT:
-				setDateFormat(DATE_FORMAT_EDEFAULT);
-				return;
-			case ServerPackage.JOB__DATE_SEPARATOR:
-				setDateSeparator(DATE_SEPARATOR_EDEFAULT);
-				return;
-			case ServerPackage.JOB__DESTROY_DATE:
-				setDestroyDate(DESTROY_DATE_EDEFAULT);
-				return;
-			case ServerPackage.JOB__JOB_ID:
-				setJobID(JOB_ID_EDEFAULT);
-				return;
-			case ServerPackage.JOB__JOB_REFERENCE:
-				setJobReference((JobReference)null);
-				return;
-			case ServerPackage.JOB__JOB_RUN_INFO:
-				setJobRunInfo((JobRunInfo)null);
-				return;
-			case ServerPackage.JOB__JOB_THREAD:
-				setJobThread((org.abchip.mimo.util.Thread)null);
-				return;
-			case ServerPackage.JOB__JOB_TYPE:
-				setJobType(JOB_TYPE_EDEFAULT);
-				return;
-			case ServerPackage.JOB__MESSAGES:
-				getMessages().clear();
-				return;
-			case ServerPackage.JOB__SYSTEM:
-				setSystem((org.abchip.mimo.server.System)null);
-				return;
-			case ServerPackage.JOB__TIME_SEPARATOR:
-				setTimeSeparator(TIME_SEPARATOR_EDEFAULT);
-				return;
+		case ServerPackage.JOB__CONTEXT:
+			setContext((Context) null);
+			return;
+		case ServerPackage.JOB__CREATION_DATE:
+			setCreationDate(CREATION_DATE_EDEFAULT);
+			return;
+		case ServerPackage.JOB__CURRENT_RESOURCE:
+			setCurrentResource(CURRENT_RESOURCE_EDEFAULT);
+			return;
+		case ServerPackage.JOB__DATE_FORMAT:
+			setDateFormat(DATE_FORMAT_EDEFAULT);
+			return;
+		case ServerPackage.JOB__DATE_SEPARATOR:
+			setDateSeparator(DATE_SEPARATOR_EDEFAULT);
+			return;
+		case ServerPackage.JOB__DESTROY_DATE:
+			setDestroyDate(DESTROY_DATE_EDEFAULT);
+			return;
+		case ServerPackage.JOB__JOB_ID:
+			setJobID(JOB_ID_EDEFAULT);
+			return;
+		case ServerPackage.JOB__JOB_REFERENCE:
+			setJobReference((JobReference) null);
+			return;
+		case ServerPackage.JOB__JOB_RUN_INFO:
+			setJobRunInfo((JobRunInfo) null);
+			return;
+		case ServerPackage.JOB__JOB_THREAD:
+			setJobThread((org.abchip.mimo.util.Thread) null);
+			return;
+		case ServerPackage.JOB__JOB_TYPE:
+			setJobType(JOB_TYPE_EDEFAULT);
+			return;
+		case ServerPackage.JOB__MESSAGES:
+			getMessages().clear();
+			return;
+		case ServerPackage.JOB__SYSTEM:
+			setSystem((org.abchip.mimo.server.System) null);
+			return;
+		case ServerPackage.JOB__TIME_SEPARATOR:
+			setTimeSeparator(TIME_SEPARATOR_EDEFAULT);
+			return;
 		}
 		super.eUnset(featureID);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case ServerPackage.JOB__CONTEXT:
-				return context != null;
-			case ServerPackage.JOB__CREATION_DATE:
-				return CREATION_DATE_EDEFAULT == null ? creationDate != null : !CREATION_DATE_EDEFAULT.equals(creationDate);
-			case ServerPackage.JOB__CURRENT_RESOURCE:
-				return CURRENT_RESOURCE_EDEFAULT == null ? currentResource != null : !CURRENT_RESOURCE_EDEFAULT.equals(currentResource);
-			case ServerPackage.JOB__DATE_FORMAT:
-				return dateFormat != DATE_FORMAT_EDEFAULT;
-			case ServerPackage.JOB__DATE_SEPARATOR:
-				return DATE_SEPARATOR_EDEFAULT == null ? dateSeparator != null : !DATE_SEPARATOR_EDEFAULT.equals(dateSeparator);
-			case ServerPackage.JOB__DESTROY_DATE:
-				return DESTROY_DATE_EDEFAULT == null ? destroyDate != null : !DESTROY_DATE_EDEFAULT.equals(destroyDate);
-			case ServerPackage.JOB__JOB_ID:
-				return JOB_ID_EDEFAULT == null ? jobID != null : !JOB_ID_EDEFAULT.equals(jobID);
-			case ServerPackage.JOB__JOB_REFERENCE:
-				return jobReference != null;
-			case ServerPackage.JOB__JOB_RUN_INFO:
-				return jobRunInfo != null;
-			case ServerPackage.JOB__JOB_THREAD:
-				return jobThread != null;
-			case ServerPackage.JOB__JOB_TYPE:
-				return jobType != JOB_TYPE_EDEFAULT;
-			case ServerPackage.JOB__MESSAGES:
-				return messages != null && !messages.isEmpty();
-			case ServerPackage.JOB__SYSTEM:
-				return system != null;
-			case ServerPackage.JOB__TIME_SEPARATOR:
-				return TIME_SEPARATOR_EDEFAULT == null ? timeSeparator != null : !TIME_SEPARATOR_EDEFAULT.equals(timeSeparator);
+		case ServerPackage.JOB__CONTEXT:
+			return context != null;
+		case ServerPackage.JOB__CREATION_DATE:
+			return CREATION_DATE_EDEFAULT == null ? creationDate != null : !CREATION_DATE_EDEFAULT.equals(creationDate);
+		case ServerPackage.JOB__CURRENT_RESOURCE:
+			return CURRENT_RESOURCE_EDEFAULT == null ? currentResource != null : !CURRENT_RESOURCE_EDEFAULT.equals(currentResource);
+		case ServerPackage.JOB__DATE_FORMAT:
+			return dateFormat != DATE_FORMAT_EDEFAULT;
+		case ServerPackage.JOB__DATE_SEPARATOR:
+			return DATE_SEPARATOR_EDEFAULT == null ? dateSeparator != null : !DATE_SEPARATOR_EDEFAULT.equals(dateSeparator);
+		case ServerPackage.JOB__DESTROY_DATE:
+			return DESTROY_DATE_EDEFAULT == null ? destroyDate != null : !DESTROY_DATE_EDEFAULT.equals(destroyDate);
+		case ServerPackage.JOB__JOB_ID:
+			return JOB_ID_EDEFAULT == null ? jobID != null : !JOB_ID_EDEFAULT.equals(jobID);
+		case ServerPackage.JOB__JOB_REFERENCE:
+			return jobReference != null;
+		case ServerPackage.JOB__JOB_RUN_INFO:
+			return jobRunInfo != null;
+		case ServerPackage.JOB__JOB_THREAD:
+			return jobThread != null;
+		case ServerPackage.JOB__JOB_TYPE:
+			return jobType != JOB_TYPE_EDEFAULT;
+		case ServerPackage.JOB__MESSAGES:
+			return messages != null && !messages.isEmpty();
+		case ServerPackage.JOB__SYSTEM:
+			return system != null;
+		case ServerPackage.JOB__TIME_SEPARATOR:
+			return TIME_SEPARATOR_EDEFAULT == null ? timeSeparator != null : !TIME_SEPARATOR_EDEFAULT.equals(timeSeparator);
 		}
 		return super.eIsSet(featureID);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy())
+			return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (creationDate: ");
@@ -1121,5 +1184,11 @@ public class JobImpl extends EntityIdentifiableImpl implements Job {
 		result.append(timeSeparator);
 		result.append(')');
 		return result.toString();
+	}
+
+	@Override
+	public void close() {
+		if (this.isActive())
+			this.getContext().close();
 	}
 } // JobImpl

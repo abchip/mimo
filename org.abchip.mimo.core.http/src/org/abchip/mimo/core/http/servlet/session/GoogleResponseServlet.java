@@ -22,8 +22,8 @@ import javax.servlet.http.HttpSession;
 import org.abchip.mimo.context.AuthenticationAnonymous;
 import org.abchip.mimo.context.AuthenticationManager;
 import org.abchip.mimo.context.AuthenticationUserToken;
-import org.abchip.mimo.context.ContextFactory;
 import org.abchip.mimo.context.Context;
+import org.abchip.mimo.context.ContextFactory;
 import org.abchip.mimo.core.http.ContextUtils;
 import org.abchip.mimo.entity.EntityIdentifiable;
 import org.abchip.mimo.resource.ResourceManager;
@@ -84,51 +84,52 @@ public class GoogleResponseServlet extends HttpServlet {
 			return;
 		}
 
-		AuthenticationAnonymous authentication = ContextFactory.eINSTANCE.createAuthenticationAnonymous();
-		Context context = authenticationManager.login(null, authentication);
-
-		// dovremmo accedere con ProductStore e data
-		String entityName = "OAuth2Google";
-		ResourceReader<?> oauth2Reader = resourceManager.getResourceReader(context, entityName);
-		EntityIdentifiable oauth2Google = oauth2Reader.first();
-
-		authenticationManager.logout(context);
-		context.close();
-
-		if (oauth2Google == null) {
-			response.sendError(HttpServletResponse.SC_BAD_REQUEST, "Error! Google get OAuth2 configuration error");
-			return;
-		}
-
 		String accessToken = null;
 		String idToken = null;
 
-		HttpPost postMethod = null;
-		try (CloseableHttpClient client = HttpClients.custom().build()) {
-			String clientId = oauth2Google.isa().getValue(oauth2Google, "clientId", false).toString();
-			String returnURI = oauth2Google.isa().getValue(oauth2Google, "returnUrl", false).toString();
-			String secret = oauth2Google.isa().getValue(oauth2Google, "clientSecret", false).toString();
+		AuthenticationAnonymous authentication = ContextFactory.eINSTANCE.createAuthenticationAnonymous();
 
-			URI uri = new URIBuilder().setPath(TokenServiceUri).setParameter("client_id", clientId).setParameter("client_secret", secret).setParameter("grant_type", "authorization_code")
-					.setParameter("code", authorizationCode).setParameter("redirect_uri", returnURI).build();
+		try (Context context = authenticationManager.login(null, authentication)) {
 
-			postMethod = new HttpPost(uri);
-			postMethod.setConfig(StandardRequestConfig);
-			try (CloseableHttpResponse postResponse = client.execute(postMethod)) {
-				String responseString = new BasicResponseHandler().handleResponse(postResponse);
-				if (postResponse.getStatusLine().getStatusCode() == HttpStatus.SC_OK) {
-					HashMap<?, ?> userMap = new ObjectMapper().readValue(responseString, HashMap.class);
-					accessToken = (String) userMap.get("access_token");
-					idToken = (String) userMap.get("id_token");
-					// Debug.logInfo("Generated Access Token : " + accessToken, module);
-				} else {
-					response.sendError(HttpServletResponse.SC_BAD_REQUEST, "Error! Google get OAuth2 access token error");
-					return;
-				}
+			// dovremmo accedere con ProductStore e data
+			String entityName = "OAuth2Google";
+			ResourceReader<?> oauth2Reader = resourceManager.getResourceReader(context, entityName);
+			EntityIdentifiable oauth2Google = oauth2Reader.first();
+
+			authenticationManager.logout(context);
+
+			if (oauth2Google == null) {
+				response.sendError(HttpServletResponse.SC_BAD_REQUEST, "Error! Google get OAuth2 configuration error");
+				return;
 			}
-		} catch (Exception e) {
-			response.sendError(HttpServletResponse.SC_BAD_REQUEST, e.getMessage());
-			return;
+
+			HttpPost postMethod = null;
+			try (CloseableHttpClient client = HttpClients.custom().build()) {
+				String clientId = oauth2Google.isa().getValue(oauth2Google, "clientId", false).toString();
+				String returnURI = oauth2Google.isa().getValue(oauth2Google, "returnUrl", false).toString();
+				String secret = oauth2Google.isa().getValue(oauth2Google, "clientSecret", false).toString();
+
+				URI uri = new URIBuilder().setPath(TokenServiceUri).setParameter("client_id", clientId).setParameter("client_secret", secret).setParameter("grant_type", "authorization_code")
+						.setParameter("code", authorizationCode).setParameter("redirect_uri", returnURI).build();
+
+				postMethod = new HttpPost(uri);
+				postMethod.setConfig(StandardRequestConfig);
+				try (CloseableHttpResponse postResponse = client.execute(postMethod)) {
+					String responseString = new BasicResponseHandler().handleResponse(postResponse);
+					if (postResponse.getStatusLine().getStatusCode() == HttpStatus.SC_OK) {
+						HashMap<?, ?> userMap = new ObjectMapper().readValue(responseString, HashMap.class);
+						accessToken = (String) userMap.get("access_token");
+						idToken = (String) userMap.get("id_token");
+						// Debug.logInfo("Generated Access Token : " + accessToken, module);
+					} else {
+						response.sendError(HttpServletResponse.SC_BAD_REQUEST, "Error! Google get OAuth2 access token error");
+						return;
+					}
+				}
+			} catch (Exception e) {
+				response.sendError(HttpServletResponse.SC_BAD_REQUEST, e.getMessage());
+				return;
+			}
 		}
 
 		// checkLogin
@@ -139,7 +140,8 @@ public class GoogleResponseServlet extends HttpServlet {
 
 		if (authenticationManager.checkLogin(authenticationUserToken, true)) {
 			ContextUtils.removeContext(state);
-			context = authenticationManager.login(state, authenticationUserToken);
+			@SuppressWarnings("resource")
+			Context context = authenticationManager.login(state, authenticationUserToken);
 			ContextUtils.addContext(context);
 
 			String location = response.encodeURL("http://localhost:8081");

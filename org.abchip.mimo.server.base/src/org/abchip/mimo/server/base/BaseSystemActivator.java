@@ -11,7 +11,6 @@ package org.abchip.mimo.server.base;
 import javax.inject.Inject;
 
 import org.abchip.mimo.application.ComponentStarted;
-import org.abchip.mimo.context.Context;
 import org.abchip.mimo.context.ContextRoot;
 import org.abchip.mimo.resource.ResourceManager;
 import org.abchip.mimo.server.Job;
@@ -30,9 +29,9 @@ public class BaseSystemActivator {
 
 		system.setName(resolveVariables(contextRoot, system.getName()));
 
-		Context systemContext = contextRoot.createChildContext(system.getName());
-		system.setContext(systemContext);
+		system.setContext(contextRoot);
 
+		@SuppressWarnings("resource")
 		Job jobKernel = systemManager.start(system);
 
 		contextRoot.set(org.abchip.mimo.server.System.class, system);

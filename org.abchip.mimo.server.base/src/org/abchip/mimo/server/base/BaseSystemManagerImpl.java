@@ -21,12 +21,11 @@ import javax.inject.Inject;
 import org.abchip.mimo.context.Context;
 import org.abchip.mimo.context.ContextDescription;
 import org.abchip.mimo.context.ContextFactory;
-import org.abchip.mimo.context.ContextRoot;
 import org.abchip.mimo.context.EntityLocker;
 import org.abchip.mimo.context.LockManager;
 import org.abchip.mimo.context.LockType;
-import org.abchip.mimo.resource.ResourceWriter;
 import org.abchip.mimo.resource.ResourceManager;
+import org.abchip.mimo.resource.ResourceWriter;
 import org.abchip.mimo.server.Job;
 import org.abchip.mimo.server.JobReference;
 import org.abchip.mimo.server.JobType;
@@ -168,6 +167,7 @@ public class BaseSystemManagerImpl implements SystemManager {
 		return createJob(jobKernel.getSystem(), jobType, principal, jobName);
 	}
 
+	@SuppressWarnings("resource")
 	protected Job createJob(org.abchip.mimo.server.System system, JobType jobType, Principal principal, String jobName) {
 
 		// job
@@ -193,7 +193,7 @@ public class BaseSystemManagerImpl implements SystemManager {
 		ContextDescription contextDescription = ContextFactory.eINSTANCE.createContextDescription();
 		contextDescription.setId(job.getJobReference().getJobName());
 
-		Context jobContext = ((ContextRoot) system.getContext()).createChildContext(contextDescription);
+		Context jobContext = system.getContext().createChildContext(contextDescription);
 		// job.setJobID(jobContext.get);
 		job.setContext(jobContext);
 

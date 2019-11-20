@@ -84,17 +84,18 @@ public class TestAudio {
 	@SuppressWarnings("unused")
 	private void recordAudio() throws InterruptedException {
 
-		AudioRecorder audioRecorder = audioManager.record(testRunner.getContext());
-		audioRecorder.start();
-		Thread.sleep(5000);
-		audioRecorder.stop();
+		try (AudioRecorder audioRecorder = audioManager.record(testRunner.getContext())) {
+			audioRecorder.start();
+			Thread.sleep(5000);
+			audioRecorder.stop();
 
-		Audio audio = AudioFactory.eINSTANCE.createAudio();
-		audio.setName("mimo-test");
-		audio.setText("Mimo audio test");
-		audio.setContent(((ByteArrayOutputStream) audioRecorder.getOutputStream()).toByteArray());
+			Audio audio = AudioFactory.eINSTANCE.createAudio();
+			audio.setName("mimo-test");
+			audio.setText("Mimo audio test");
+			audio.setContent(((ByteArrayOutputStream) audioRecorder.getOutputStream()).toByteArray());
 
-		ResourceWriter<Audio> audioWriter = resourceManager.getResourceWriter(testRunner.getContext(), Audio.class);
-		audioWriter.create(audio);
+			ResourceWriter<Audio> audioWriter = resourceManager.getResourceWriter(testRunner.getContext(), Audio.class);
+			audioWriter.create(audio);
+		}
 	}
 }

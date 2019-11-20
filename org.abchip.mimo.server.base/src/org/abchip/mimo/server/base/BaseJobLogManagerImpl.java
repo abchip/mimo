@@ -103,6 +103,7 @@ public class BaseJobLogManagerImpl implements JobLogManager {
 		return lookup(contextID, jobReference.getJobName(), jobReference.getJobUser(), jobReference.getJobNumber());
 	}
 
+	@SuppressWarnings("resource")
 	@Override
 	public JobLog lookup(String contextID, String name, String user, int number) {
 //		Job jobCaller = jobManager.lookup(contextID);

@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="server" nsURI="http://www.abchip.org/mimo/server" nsPrefix="mimo-srv">
-  <eClassifiers xsi:type="ecore:EClass" name="Job" eSuperTypes="../../org.abchip.mimo.core/model/mimo.ecore#//entity/EntityIdentifiable">
+  <eClassifiers xsi:type="ecore:EClass" name="Job" eSuperTypes="../../org.abchip.mimo.core/model/mimo.ecore#//entity/EntityIdentifiable ../../org.abchip.mimo.core/model/mimo.ecore#//java/JavaCloseable">
+    <eOperations name="close"/>
     <eOperations name="getJobStatus" lowerBound="1" eType="#//JobStatus"/>
     <eOperations name="getCPUUsage" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
     <eOperations name="getLastMessage" lowerBound="1" eType="#//JobMessage"/>
@@ -230,7 +231,7 @@
   <eClassifiers xsi:type="ecore:EClass" name="System" eSuperTypes="../../org.abchip.mimo.core/model/mimo.ecore#//entity/EntityIdentifiable">
     <eOperations name="getAvailableProcessors" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     <eOperations name="getLoadAverage" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="context" eType="ecore:EClass ../../org.abchip.mimo.core/model/mimo.ecore#//context/Context"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="context" eType="ecore:EClass ../../org.abchip.mimo.core/model/mimo.ecore#//context/ContextRoot"
         transient="true" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="lastJobNumber" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"

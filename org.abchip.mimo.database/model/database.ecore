@@ -191,8 +191,9 @@
   </eClassifiers>
   <eSubpackages name="connection" nsURI="http://www.abchip.org/mimo/database/connection"
       nsPrefix="dbc">
-    <eClassifiers xsi:type="ecore:EClass" name="Connection" abstract="true" interface="true">
-      <eOperations name="close" eExceptions="#//DatabaseException"/>
+    <eClassifiers xsi:type="ecore:EClass" name="Connection" abstract="true" interface="true"
+        eSuperTypes="../../org.abchip.mimo.core/model/mimo.ecore#//java/JavaCloseable">
+      <eOperations name="close"/>
       <eOperations name="close">
         <eParameters name="stmt" eType="#//connection/Statement"/>
       </eOperations>

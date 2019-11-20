@@ -9,6 +9,7 @@ package org.abchip.mimo.audio;
 
 import org.abchip.mimo.entity.EntityPackage;
 
+import org.abchip.mimo.java.JavaPackage;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EEnum;
@@ -144,7 +145,7 @@ public interface AudioPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int AUDIO_RECORDER_FEATURE_COUNT = 0;
+	int AUDIO_RECORDER_FEATURE_COUNT = JavaPackage.JAVA_CLOSEABLE_FEATURE_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.audio.AudioPlayer <em>Player</em>}' class.
@@ -163,7 +164,7 @@ public interface AudioPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int AUDIO_PLAYER_FEATURE_COUNT = 0;
+	int AUDIO_PLAYER_FEATURE_COUNT = JavaPackage.JAVA_CLOSEABLE_FEATURE_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.audio.AudioStyle <em>Style</em>}' enum.

@@ -33,6 +33,7 @@ public class E4EquinoxApplicationImpl implements IApplication {
 	private Application application = null;
 	private ApplicationManager applicationManager;
 
+	@SuppressWarnings("resource")
 	@Override
 	public Object start(IApplicationContext context) throws Exception {
 
@@ -113,14 +114,17 @@ public class E4EquinoxApplicationImpl implements IApplication {
 	private Object waitForStopOrRestart() {
 		while (true) {
 			try {
+				TimeUnit.MILLISECONDS.sleep(1000);
 				if (applicationManager == null)
 					continue;
-				TimeUnit.MILLISECONDS.sleep(1000);
-				if (applicationManager.restart(application))
-					return EXIT_RESTART;
-				if (applicationManager.stop(application))
-					return EXIT_OK;
+				
+//				if (applicationManager.restart(application))
+//					return EXIT_RESTART;
+//				if ()
+//					
 			} catch (InterruptedException e) {
+				applicationManager.stop(application);				
+				return EXIT_OK;
 			}
 		}
 	}

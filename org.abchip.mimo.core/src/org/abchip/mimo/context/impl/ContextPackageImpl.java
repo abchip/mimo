@@ -1104,6 +1104,7 @@ public class ContextPackageImpl extends EPackageImpl implements ContextPackage {
 		authenticationUserTokenEClass.getESuperTypes().add(this.getAuthentication());
 		authenticationAnonymousEClass.getESuperTypes().add(this.getAuthentication());
 		capabilityEClass.getESuperTypes().add(theEntityPackage.getEntity());
+		contextEClass.getESuperTypes().add(theJavaPackage.getJavaCloseable());
 		contextDescriptionEClass.getESuperTypes().add(theEntityPackage.getEntity());
 		contextRootEClass.getESuperTypes().add(this.getContext());
 		identityEClass.getESuperTypes().add(theEntityPackage.getEntity());
@@ -1183,7 +1184,7 @@ public class ContextPackageImpl extends EPackageImpl implements ContextPackage {
 
 		initEClass(contextEClass, Context.class, "Context", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-		addEOperation(contextEClass, null, "close", 1, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(contextEClass, null, "close", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		op = addEOperation(contextEClass, null, "get", 1, 1, IS_UNIQUE, IS_ORDERED);
 		t1 = addETypeParameter(op, "T");

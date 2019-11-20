@@ -17,6 +17,8 @@ import org.abchip.mimo.application.ApplicationComponent;
 import org.abchip.mimo.application.ApplicationModule;
 import org.abchip.mimo.application.ServiceRef;
 import org.abchip.mimo.application.ServiceStatus;
+import org.abchip.mimo.context.Context;
+import org.abchip.mimo.core.base.BaseCommandProviderImpl;
 import org.abchip.mimo.tester.AssertionFailed;
 import org.abchip.mimo.tester.AssertionResult;
 import org.abchip.mimo.tester.AssertionSuccess;
@@ -25,9 +27,8 @@ import org.abchip.mimo.tester.TestResult;
 import org.abchip.mimo.tester.TestSuiteLauncher;
 import org.abchip.mimo.tester.TestSuiteRunner;
 import org.eclipse.osgi.framework.console.CommandInterpreter;
-import org.eclipse.osgi.framework.console.CommandProvider;
 
-public class BaseTesterCommandProviderImpl implements CommandProvider {
+public class BaseTesterCommandProviderImpl extends BaseCommandProviderImpl {
 
 	@Inject
 	private Application application;
@@ -36,35 +37,38 @@ public class BaseTesterCommandProviderImpl implements CommandProvider {
 
 	public void _test(CommandInterpreter interpreter) throws Exception {
 
-		String componentName = interpreter.nextArgument();
+		try (Context context = this.createContext(null)) {
 
-		for (ApplicationComponent component : application.getComponents()) {
-			if (!component.getName().equalsIgnoreCase(componentName))
-				continue;
+			String componentName = interpreter.nextArgument();
 
-			for (ApplicationModule module : component.getModules()) {
-				for (ServiceRef serviceRef : module.getServices()) {
-					if (!serviceRef.getInterfaceName().equals(TestSuiteLauncher.class.getName()))
-						continue;
+			for (ApplicationComponent component : application.getComponents()) {
+				if (!component.getName().equalsIgnoreCase(componentName))
+					continue;
 
-					if (serviceRef.getStatus() != ServiceStatus.ACTIVE)
-						continue;
+				for (ApplicationModule module : component.getModules()) {
+					for (ServiceRef serviceRef : module.getServices()) {
+						if (!serviceRef.getInterfaceName().equals(TestSuiteLauncher.class.getName()))
+							continue;
 
-					List<TestSuiteRunner> runners = testManager.prepareSuiteRunner(application, component.getName());
-					for (TestSuiteRunner runner : runners) {
-						List<TestResult> results = runner.call();
-						for (TestResult result : results) {
-							for (AssertionResult assertionResult : result.getAssertResults()) {
-								switch (assertionResult.getAssertionState()) {
-								case FAILED:
-									AssertionFailed assertionFailed = (AssertionFailed) assertionResult;
-									System.err.println(assertionFailed);
-									break;
-								case SUCCESS:
-									AssertionSuccess assertionSuccess = (AssertionSuccess) assertionResult;
-									System.out.println(assertionSuccess);
+						if (serviceRef.getStatus() != ServiceStatus.ACTIVE)
+							continue;
 
-									break;
+						List<TestSuiteRunner> runners = testManager.prepareSuiteRunner(context, component.getName());
+						for (TestSuiteRunner runner : runners) {
+							List<TestResult> results = runner.call();
+							for (TestResult result : results) {
+								for (AssertionResult assertionResult : result.getAssertResults()) {
+									switch (assertionResult.getAssertionState()) {
+									case FAILED:
+										AssertionFailed assertionFailed = (AssertionFailed) assertionResult;
+										System.err.println(assertionFailed);
+										break;
+									case SUCCESS:
+										AssertionSuccess assertionSuccess = (AssertionSuccess) assertionResult;
+										System.out.println(assertionSuccess);
+
+										break;
+									}
 								}
 							}
 						}

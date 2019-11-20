@@ -8,7 +8,7 @@
  */
 package org.abchip.mimo.server;
 
-import org.abchip.mimo.context.Context;
+import org.abchip.mimo.context.ContextRoot;
 import org.abchip.mimo.entity.EntityIdentifiable;
 
 /**
@@ -34,8 +34,6 @@ import org.abchip.mimo.entity.EntityIdentifiable;
  */
 public interface System extends EntityIdentifiable {
 
-	public static final long LOCK_TIMEOUT = 1000;
-	
 	/**
 	 * Returns the value of the '<em><b>Context</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
@@ -45,12 +43,12 @@ public interface System extends EntityIdentifiable {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Context</em>' containment reference.
-	 * @see #setContext(Context)
+	 * @see #setContext(ContextRoot)
 	 * @see org.abchip.mimo.server.ServerPackage#getSystem_Context()
 	 * @model containment="true" resolveProxies="true" transient="true"
 	 * @generated
 	 */
-	Context getContext();
+	ContextRoot getContext();
 
 	/**
 	 * Sets the value of the '{@link org.abchip.mimo.server.System#getContext <em>Context</em>}' containment reference.
@@ -60,8 +58,10 @@ public interface System extends EntityIdentifiable {
 	 * @see #getContext()
 	 * @generated
 	 */
-	void setContext(Context value);
+	void setContext(ContextRoot value);
 
+	public static final long LOCK_TIMEOUT = 1000;
+	
 	/**
 	 * Returns the value of the '<em><b>Last Job Number</b></em>' attribute.
 	 * <!-- begin-user-doc -->

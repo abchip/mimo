@@ -469,16 +469,17 @@ public class DatabaseConnectionPackageImpl extends EPackageImpl implements Datab
 		setNsURI(eNS_URI);
 
 		// Obtain other dependent packages
+		JavaPackage theJavaPackage = (JavaPackage)EPackage.Registry.INSTANCE.getEPackage(JavaPackage.eNS_URI);
 		DatabasePackage theDatabasePackage = (DatabasePackage)EPackage.Registry.INSTANCE.getEPackage(DatabasePackage.eNS_URI);
 		ContextPackage theContextPackage = (ContextPackage)EPackage.Registry.INSTANCE.getEPackage(ContextPackage.eNS_URI);
 		EcorePackage theEcorePackage = (EcorePackage)EPackage.Registry.INSTANCE.getEPackage(EcorePackage.eNS_URI);
-		JavaPackage theJavaPackage = (JavaPackage)EPackage.Registry.INSTANCE.getEPackage(JavaPackage.eNS_URI);
 
 		// Create type parameters
 
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
+		connectionEClass.getESuperTypes().add(theJavaPackage.getJavaCloseable());
 		connectionCredentialsEClass.getESuperTypes().add(theContextPackage.getAuthenticationUserPassword());
 		preparedStatementEClass.getESuperTypes().add(this.getStatement());
 		statementEClass.getESuperTypes().add(theJavaPackage.getJavaCloseable());
@@ -486,10 +487,9 @@ public class DatabaseConnectionPackageImpl extends EPackageImpl implements Datab
 		// Initialize classes and features; add operations and parameters
 		initEClass(connectionEClass, Connection.class, "Connection", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-		EOperation op = addEOperation(connectionEClass, null, "close", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEException(op, theDatabasePackage.getDatabaseException());
+		addEOperation(connectionEClass, null, "close", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		op = addEOperation(connectionEClass, null, "close", 0, 1, IS_UNIQUE, IS_ORDERED);
+		EOperation op = addEOperation(connectionEClass, null, "close", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, this.getStatement(), "stmt", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		op = addEOperation(connectionEClass, null, "close", 0, 1, IS_UNIQUE, IS_ORDERED);

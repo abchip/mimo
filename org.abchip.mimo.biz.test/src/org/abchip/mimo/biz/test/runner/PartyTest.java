@@ -17,15 +17,12 @@ import org.abchip.mimo.biz.party.party.PartyFactory;
 import org.abchip.mimo.biz.party.party.PartyGroup;
 import org.abchip.mimo.biz.party.party.PartyType;
 import org.abchip.mimo.biz.party.party.Person;
-import org.abchip.mimo.context.AuthenticationManager;
-import org.abchip.mimo.context.AuthenticationUserPassword;
-import org.abchip.mimo.context.ContextFactory;
-import org.abchip.mimo.context.Context;
 import org.abchip.mimo.resource.ResourceManager;
 import org.abchip.mimo.resource.ResourceReader;
 import org.abchip.mimo.resource.ResourceWriter;
 import org.abchip.mimo.tester.Test;
 import org.abchip.mimo.tester.TestAsserter;
+import org.abchip.mimo.tester.TestRunner;
 import org.abchip.mimo.tester.TestStarted;
 
 @Test(entity = "Party")
@@ -36,26 +33,16 @@ public class PartyTest {
 	@Inject
 	private ResourceManager resourceManager;
 	@Inject
-	private AuthenticationManager authenticationManager;
+	private TestRunner testRunner;
 
 	@TestStarted
 	public void doTest() {
-
-		AuthenticationUserPassword authentication = ContextFactory.eINSTANCE.createAuthenticationUserPassword();
-		authentication.setUser("user-test");
-		authentication.setPassword("ofbiz");
-
-		Context context = authenticationManager.login(null, authentication);
-		testAsserter.assertNotNull("Connection to Ofbiz", context);
-
-		if (context == null)
-			return;
 
 		// Party
 		Party party = PartyFactory.eINSTANCE.createParty();
 		testAsserter.assertNotNull("Frame Party creation", party);
 
-		ResourceReader<Party> partyReader = resourceManager.getResourceReader(context, Party.class);
+		ResourceReader<Party> partyReader = resourceManager.getResourceReader(testRunner.getContext(), Party.class);
 		testAsserter.assertNotNull("Party Reader", partyReader);
 		if (partyReader != null) {
 			Party partyTest = partyReader.lookup("party-test");
@@ -66,7 +53,7 @@ public class PartyTest {
 		}
 
 		// Person
-		ResourceReader<Person> personReader = resourceManager.getResourceReader(context, Person.class);
+		ResourceReader<Person> personReader = resourceManager.getResourceReader(testRunner.getContext(), Person.class);
 		testAsserter.assertNotNull("Person Reader", personReader);
 		if (personReader != null) {
 			Person personTest = personReader.lookup("party-test");
@@ -77,13 +64,13 @@ public class PartyTest {
 		// Write Person
 		String partyId = "party-test-01";
 
-		ResourceWriter<Person> personWriter = resourceManager.getResourceWriter(context, Person.class);
+		ResourceWriter<Person> personWriter = resourceManager.getResourceWriter(testRunner.getContext(), Person.class);
 		testAsserter.assertNotNull("Person Writer", personWriter);
 		if (personWriter != null) {
 			Person person = PartyFactory.eINSTANCE.createPerson();
-			person.setPreferredCurrencyUomId(resourceManager.getFrame(context, Uom.class).createProxy("EUR"));
-			person.setStatusId(resourceManager.getFrame(context, StatusItem.class).createProxy("PARTY_ENABLED"));
-			person.setPartyTypeId(resourceManager.getFrame(context, PartyType.class).createProxy("PERSON"));
+			person.setPreferredCurrencyUomId(resourceManager.getFrame(testRunner.getContext(), Uom.class).createProxy("EUR"));
+			person.setStatusId(resourceManager.getFrame(testRunner.getContext(), StatusItem.class).createProxy("PARTY_ENABLED"));
+			person.setPartyTypeId(resourceManager.getFrame(testRunner.getContext(), PartyType.class).createProxy("PERSON"));
 			person.setPartyId(partyId);
 			person.setFirstName("Test hacker party person");
 			personWriter.create(person);
@@ -95,17 +82,17 @@ public class PartyTest {
 		}
 
 		// Write PartyGroup
-		ResourceReader<PartyGroup> groupReader = resourceManager.getResourceReader(context, PartyGroup.class);
+		ResourceReader<PartyGroup> groupReader = resourceManager.getResourceReader(testRunner.getContext(), PartyGroup.class);
 		testAsserter.assertNotNull("Party Group Reader", groupReader);
 
-		ResourceWriter<PartyGroup> groupWriter = resourceManager.getResourceWriter(context, PartyGroup.class);
+		ResourceWriter<PartyGroup> groupWriter = resourceManager.getResourceWriter(testRunner.getContext(), PartyGroup.class);
 		testAsserter.assertNotNull("Party Group Writer", groupWriter);
 
 		if (groupWriter != null) {
 			PartyGroup partyGroup = PartyFactory.eINSTANCE.createPartyGroup();
-			partyGroup.setPreferredCurrencyUomId(resourceManager.getFrame(context, Uom.class).createProxy("EUR"));
-			partyGroup.setStatusId(resourceManager.getFrame(context, StatusItem.class).createProxy("PARTY_ENABLED"));
-			partyGroup.setPartyTypeId(resourceManager.getFrame(context, PartyType.class).createProxy("PARTY_GROUP"));
+			partyGroup.setPreferredCurrencyUomId(resourceManager.getFrame(testRunner.getContext(), Uom.class).createProxy("EUR"));
+			partyGroup.setStatusId(resourceManager.getFrame(testRunner.getContext(), StatusItem.class).createProxy("PARTY_ENABLED"));
+			partyGroup.setPartyTypeId(resourceManager.getFrame(testRunner.getContext(), PartyType.class).createProxy("PARTY_GROUP"));
 			partyGroup.setPartyId(partyId);
 			partyGroup.setGroupName("Test hacker party group");
 			groupWriter.create(partyGroup);
@@ -119,6 +106,6 @@ public class PartyTest {
 		// Eseguire letture
 
 		// close
-		context.close();
+		testRunner.getContext().close();
 	}
 }

@@ -10,48 +10,51 @@ package org.abchip.mimo.core.base;
 
 import javax.inject.Inject;
 
-import org.abchip.mimo.context.ContextRoot;
+import org.abchip.mimo.context.Context;
 import org.abchip.mimo.entity.EntityIdentifiable;
 import org.abchip.mimo.entity.Frame;
 import org.abchip.mimo.resource.ResourceManager;
 import org.abchip.mimo.util.Strings;
 import org.eclipse.osgi.framework.console.CommandInterpreter;
-import org.eclipse.osgi.framework.console.CommandProvider;
 
-public class BaseEntityCommandProviderImpl implements CommandProvider {
+public class BaseEntityCommandProviderImpl extends BaseCommandProviderImpl {
 
-	@Inject
-	private ContextRoot contextRoot;
 	@Inject
 	private ResourceManager resourceManager;
 
 	public <E extends EntityIdentifiable> void _find(CommandInterpreter interpreter) throws Exception {
 
-		String frameName = Strings.qINSTANCE.firstToUpper(interpreter.nextArgument());
-		String order = interpreter.nextArgument();
+		try (Context context = this.createContext(null)) {
 
-		@SuppressWarnings("unchecked")
-		Frame<E> frame = (Frame<E>) resourceManager.getFrame(contextRoot, frameName);
-		if (frame == null)
-			interpreter.print("Frame not found: " + frameName);
+			String frameName = Strings.qINSTANCE.firstToUpper(interpreter.nextArgument());
+			String order = interpreter.nextArgument();
 
-		for (E entity : resourceManager.getResourceReader(contextRoot, frame).find(null, null, order)) {
-			System.out.println(entity.getID());
+			@SuppressWarnings("unchecked")
+			Frame<E> frame = (Frame<E>) resourceManager.getFrame(context, frameName);
+			if (frame == null)
+				interpreter.print("Frame not found: " + frameName);
+
+			for (E entity : resourceManager.getResourceReader(context, frame).find(null, null, order)) {
+				System.out.println(entity.getID());
+			}
 		}
 	}
 
 	public <E extends EntityIdentifiable> void _lookup(CommandInterpreter interpreter) throws Exception {
 
-		String frameName = Strings.qINSTANCE.firstToUpper(interpreter.nextArgument());
-		@SuppressWarnings("unchecked")
-		Frame<E> frame = (Frame<E>) resourceManager.getFrame(contextRoot, frameName);
-		if (frame == null)
-			interpreter.print("Frame not found: " + frameName);
+		try (Context context = this.createContext(null)) {
 
-		String entityName = interpreter.nextArgument();
+			String frameName = Strings.qINSTANCE.firstToUpper(interpreter.nextArgument());
+			@SuppressWarnings("unchecked")
+			Frame<E> frame = (Frame<E>) resourceManager.getFrame(context, frameName);
+			if (frame == null)
+				interpreter.print("Frame not found: " + frameName);
 
-		E entity = resourceManager.getResourceReader(contextRoot, frame).lookup(entityName);
-		System.out.println(entity);
+			String entityName = interpreter.nextArgument();
+
+			E entity = resourceManager.getResourceReader(context, frame).lookup(entityName);
+			System.out.println(entity);
+		}
 	}
 
 	@Override

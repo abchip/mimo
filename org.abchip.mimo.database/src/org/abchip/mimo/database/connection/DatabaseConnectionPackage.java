@@ -82,7 +82,7 @@ public interface DatabaseConnectionPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONNECTION_FEATURE_COUNT = 0;
+	int CONNECTION_FEATURE_COUNT = JavaPackage.JAVA_CLOSEABLE_FEATURE_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.database.connection.impl.ConnectionConfigImpl <em>Connection Config</em>}' class.

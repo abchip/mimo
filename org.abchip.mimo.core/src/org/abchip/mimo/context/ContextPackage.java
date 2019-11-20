@@ -9,6 +9,7 @@
 package org.abchip.mimo.context;
 
 import org.abchip.mimo.entity.EntityPackage;
+import org.abchip.mimo.java.JavaPackage;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EDataType;
@@ -324,7 +325,7 @@ public interface ContextPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONTEXT_FEATURE_COUNT = 0;
+	int CONTEXT_FEATURE_COUNT = JavaPackage.JAVA_CLOSEABLE_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Anonymous</b></em>' attribute.

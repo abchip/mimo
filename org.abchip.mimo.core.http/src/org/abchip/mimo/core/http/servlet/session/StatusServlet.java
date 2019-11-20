@@ -42,6 +42,7 @@ public class StatusServlet extends HttpServlet {
 		doPost(request, response);
 	}
 
+	@SuppressWarnings("resource")
 	@Override
 	protected final void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 

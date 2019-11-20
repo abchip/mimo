@@ -60,6 +60,7 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference server.ecore#//Job/messages"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference server.ecore#//Job/system"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute server.ecore#//Job/timeSeparator"/>
+      <genOperations ecoreOperation="server.ecore#//Job/close"/>
       <genOperations ecoreOperation="server.ecore#//Job/getJobStatus"/>
       <genOperations ecoreOperation="server.ecore#//Job/getCPUUsage"/>
       <genOperations ecoreOperation="server.ecore#//Job/getLastMessage"/>

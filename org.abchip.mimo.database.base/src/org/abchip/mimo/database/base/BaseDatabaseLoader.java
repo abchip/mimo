@@ -46,6 +46,7 @@ public class BaseDatabaseLoader {
 				continue;
 
 			// build catalog context
+			@SuppressWarnings("resource")
 			Context catalogContext = contextRoot.createChildContext(catalogContainer.getName());
 
 			ConnectionConfig connectionConfig = catalogContainer.getConnectionConfig();

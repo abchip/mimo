@@ -90,4 +90,9 @@ public class SPH4AudioPlayerImpl implements AudioPlayer {
 	public void stop() {
 		ThreadManager.qINSTANCE.stop(audioPlayer);
 	}
+
+	@Override
+	public void close() {
+		this.stop();
+	}
 }

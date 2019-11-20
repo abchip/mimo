@@ -21,9 +21,9 @@ import javax.servlet.http.HttpSession;
 import org.abchip.mimo.context.AuthenticationAnonymous;
 import org.abchip.mimo.context.AuthenticationManager;
 import org.abchip.mimo.context.AuthenticationUserPassword;
+import org.abchip.mimo.context.Context;
 import org.abchip.mimo.context.ContextDescription;
 import org.abchip.mimo.context.ContextFactory;
-import org.abchip.mimo.context.Context;
 import org.abchip.mimo.core.http.ContextUtils;
 import org.abchip.mimo.core.http.HttpUtils;
 import org.abchip.mimo.entity.EntityIdentifiable;
@@ -48,6 +48,7 @@ public class LoginServlet extends HttpServlet {
 		doPost(request, response);
 	}
 
+	@SuppressWarnings("resource")
 	@Override
 	protected final void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
@@ -69,38 +70,37 @@ public class LoginServlet extends HttpServlet {
 
 			// anonymous access
 			AuthenticationAnonymous authentication = ContextFactory.eINSTANCE.createAuthenticationAnonymous();
-			Context context = authenticationManager.login(null, authentication);
+			try (Context context = authenticationManager.login(null, authentication)) {
 
-			String entityName = "OAuth2" + provider;
+				String entityName = "OAuth2" + provider;
 
-			ResourceReader<?> oauth2Reader = resourceManager.getResourceReader(context, entityName);
-			EntityIdentifiable oauth2Entity = oauth2Reader.first();
+				ResourceReader<?> oauth2Reader = resourceManager.getResourceReader(context, entityName);
+				EntityIdentifiable oauth2Entity = oauth2Reader.first();
 
-			if (oauth2Entity == null) {
-				response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
-				return;
+				if (oauth2Entity == null) {
+					response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
+					return;
+				}
+				String location = request.getScheme() + "://" + request.getServerName() + ":" + request.getServerPort()
+						+ oauth2Entity.isa().getValue(oauth2Entity, "localRedirectUri", false).toString();
+
+				location = response.encodeURL(location);
+				// System.err.println(("Login location: " + location));
+
+				response.setHeader(HttpHeader.LOCATION.name(), location);
+				response.setStatus(HttpServletResponse.SC_OK);
+
+				ContextDescription tempContextDescription = ContextFactory.eINSTANCE.createContextDescription();
+				tempContextDescription.setId(session.getId());
+				tempContextDescription.setAnonymous(true);
+				ResourceSerializer<ContextDescription> serializer = resourceManager.createResourceSerializer(context, ContextDescription.class, SerializationType.JAVA_SCRIPT_OBJECT_NOTATION);
+				serializer.add(tempContextDescription);
+				serializer.save(response.getOutputStream());
+
+				response.flushBuffer();
+
+				authenticationManager.logout(context);
 			}
-			String location = request.getScheme() + "://" + request.getServerName() + ":" + request.getServerPort()
-					+ oauth2Entity.isa().getValue(oauth2Entity, "localRedirectUri", false).toString();
-
-			location = response.encodeURL(location);
-			// System.err.println(("Login location: " + location));
-
-			response.setHeader(HttpHeader.LOCATION.name(), location);
-			response.setStatus(HttpServletResponse.SC_OK);
-
-			ContextDescription tempContextDescription = ContextFactory.eINSTANCE.createContextDescription();
-			tempContextDescription.setId(session.getId());
-			tempContextDescription.setAnonymous(true);
-			ResourceSerializer<ContextDescription> serializer = resourceManager.createResourceSerializer(context, ContextDescription.class,
-					SerializationType.JAVA_SCRIPT_OBJECT_NOTATION);
-			serializer.add(tempContextDescription);
-			serializer.save(response.getOutputStream());
-
-			response.flushBuffer();
-
-			authenticationManager.logout(context);
-			context.close();
 
 			return;
 		}

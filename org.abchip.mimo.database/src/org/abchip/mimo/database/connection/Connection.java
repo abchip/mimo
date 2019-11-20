@@ -8,6 +8,7 @@
  */
 package org.abchip.mimo.database.connection;
 
+import java.io.Closeable;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
@@ -22,17 +23,17 @@ import org.abchip.mimo.database.CatalogMetaData;
  *
  *
  * @see org.abchip.mimo.database.connection.DatabaseConnectionPackage#getConnection()
- * @model interface="true" abstract="true"
+ * @model interface="true" abstract="true" superTypes="org.abchip.mimo.java.JavaCloseable"
  * @generated
  */
-public interface Connection {
+public interface Connection extends Closeable {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model exceptions="org.abchip.mimo.database.DatabaseException"
+	 * @model
 	 * @generated
 	 */
-	void close() throws SQLException;
+	void close();
 
 	/**
 	 * <!-- begin-user-doc -->

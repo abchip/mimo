@@ -7,6 +7,8 @@
  */
 package org.abchip.mimo.audio;
 
+import java.io.Closeable;
+
 
 /**
  * <!-- begin-user-doc -->
@@ -15,10 +17,18 @@ package org.abchip.mimo.audio;
  *
  *
  * @see org.abchip.mimo.audio.AudioPackage#getAudioPlayer()
- * @model interface="true" abstract="true"
+ * @model interface="true" abstract="true" superTypes="org.abchip.mimo.java.JavaCloseable"
  * @generated
  */
-public interface AudioPlayer {
+public interface AudioPlayer extends Closeable {
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model
+	 * @generated
+	 */
+	void close();
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

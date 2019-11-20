@@ -8,8 +8,6 @@
 package org.abchip.mimo.application;
 
 import java.util.List;
-
-import org.abchip.mimo.context.Context;
 import org.abchip.mimo.context.ContextDescription;
 import org.abchip.mimo.context.ContextRoot;
 
@@ -39,7 +37,7 @@ import org.abchip.mimo.entity.EntityIdentifiable;
  * @model
  * @generated
  */
-public interface Application extends EntityIdentifiable, Context {
+public interface Application extends EntityIdentifiable {
 	/**
 	 * Returns the value of the '<em><b>Commands</b></em>' containment reference list.
 	 * The list contents are of type {@link org.abchip.mimo.application.ServiceCommandProvider}.

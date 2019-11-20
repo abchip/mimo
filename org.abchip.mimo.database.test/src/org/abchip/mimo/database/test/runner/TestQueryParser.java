@@ -21,7 +21,7 @@ import org.abchip.mimo.tester.base.BaseTestHelper;
 import org.eclipse.datatools.sqltools.parsers.sql.query.SQLQueryParseResult;
 
 @Test(entity = "DML")
-public class TestQueryParseer {
+public class TestQueryParser {
 
 	@Inject
 	public transient TestAsserter testAsserter;

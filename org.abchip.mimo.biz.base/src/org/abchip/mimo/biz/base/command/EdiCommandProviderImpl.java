@@ -10,7 +10,8 @@ package org.abchip.mimo.biz.base.command;
 
 import javax.inject.Inject;
 
-import org.abchip.mimo.context.ContextRoot;
+import org.abchip.mimo.context.Context;
+import org.abchip.mimo.core.base.BaseCommandProviderImpl;
 import org.abchip.mimo.edi.entity.EntityEvent;
 import org.abchip.mimo.edi.message.MessageFactory;
 import org.abchip.mimo.edi.message.MessageSent;
@@ -18,37 +19,37 @@ import org.abchip.mimo.edi.message.MessageStatus;
 import org.abchip.mimo.resource.ResourceManager;
 import org.abchip.mimo.resource.ResourceWriter;
 import org.eclipse.osgi.framework.console.CommandInterpreter;
-import org.eclipse.osgi.framework.console.CommandProvider;
 
-public class EdiCommandProviderImpl implements CommandProvider {
+public class EdiCommandProviderImpl extends BaseCommandProviderImpl {
 
-	@Inject
-	private ContextRoot contextRoot;
 	@Inject
 	private ResourceManager resourceManager;
 
 	public void _testEdi(CommandInterpreter interpreter) throws Exception {
 
-		ResourceWriter<MessageSent> messageSentWriter = resourceManager.getResourceWriter(contextRoot, MessageSent.class);
-		MessageSent messageSent = MessageFactory.eINSTANCE.createMessageSent();
-		messageSent.setMessageId("test-010");
-		messageSent.setEvent(EntityEvent.CREATE);
-		messageSent.setFrame("Party");
-		messageSent.setMessageType("T10");
-		messageSent.setSender("10000");
-		messageSent.setStatus(MessageStatus.TRASMITTED);
-		messageSentWriter.create(messageSent);
+		try (Context context = this.createContext(null)) {
 
-		if (messageSentWriter.lookup(messageSent.getMessageId(), true) != null) {
-			System.out.println(messageSent);
-			messageSentWriter.delete(messageSent);
-			if (messageSentWriter.lookup(messageSent.getMessageId(), true) != null)
-				System.err.println("MessageSent not deleted");
-		} else
-			System.err.println("MessageSent not found");
+			ResourceWriter<MessageSent> messageSentWriter = resourceManager.getResourceWriter(context, MessageSent.class);
+			MessageSent messageSent = MessageFactory.eINSTANCE.createMessageSent();
+			messageSent.setMessageId("test-010");
+			messageSent.setEvent(EntityEvent.CREATE);
+			messageSent.setFrame("Party");
+			messageSent.setMessageType("T10");
+			messageSent.setSender("10000");
+			messageSent.setStatus(MessageStatus.TRASMITTED);
+			messageSentWriter.create(messageSent);
 
-		for (MessageSent messageSent2 : messageSentWriter.find(null, null, null, 0, true)) {
-			System.out.println(messageSent2);
+			if (messageSentWriter.lookup(messageSent.getMessageId(), true) != null) {
+				System.out.println(messageSent);
+				messageSentWriter.delete(messageSent);
+				if (messageSentWriter.lookup(messageSent.getMessageId(), true) != null)
+					System.err.println("MessageSent not deleted");
+			} else
+				System.err.println("MessageSent not found");
+
+			for (MessageSent messageSent2 : messageSentWriter.find(null, null, null, 0, true)) {
+				System.out.println(messageSent2);
+			}
 		}
 	}
 

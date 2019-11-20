@@ -57,74 +57,74 @@ public class TestDatabaseDefinition {
 		String schemaName = "MIMO_TEST";
 
 		// connect to default catalog
-		Connection connection = connectionManager.createConnection(catalog);
+		try (Connection connection = connectionManager.createConnection(catalog)) {
 
-		Schema schema = connection.getCatalogMetaData().getSchema(schemaName);
-		if (schema != null)
-			databaseManager.dropSchema(connection, schema, true);
+			Schema schema = connection.getCatalogMetaData().getSchema(schemaName);
+			if (schema != null)
+				databaseManager.dropSchema(connection, schema, true);
 
-		SchemaDef schemaDef = DatabaseDefinitionFactory.eINSTANCE.createSchemaDef();
-		schema = databaseManager.createSchema(connection, schemaName, schemaDef);
+			SchemaDef schemaDef = DatabaseDefinitionFactory.eINSTANCE.createSchemaDef();
+			schema = databaseManager.createSchema(connection, schemaName, schemaDef);
 
-		// tables
-		for (URL tableURL : connection.getContext().getResources(this.getClass(), "/resources/schemas/" + schemaName + "/tables")) {
-			String fileName = files.getBaseName(tableURL.getFile());
+			// tables
+			for (URL tableURL : connection.getContext().getResources(this.getClass(), "/resources/schemas/" + schemaName + "/tables")) {
+				String fileName = files.getBaseName(tableURL.getFile());
 
-			DatabaseObjectDef file = (DatabaseObjectDef) BaseTestHelper.load(tableURL);
+				DatabaseObjectDef file = (DatabaseObjectDef) BaseTestHelper.load(tableURL);
 
-			SQLObject sqlObject = null;
-			try {
-				TableDef tableDef = (TableDef) file;
-				sqlObject = databaseManager.createTable(connection, schema, fileName, tableDef);
-				System.out.println(sqlObject);
-			} catch (Exception e) {
-				System.err.println(e.toString());
-			}
-		}
-
-		// views
-		for (URL viewURL : connection.getContext().getResources(this.getClass(), "/resources/schemas/" + schemaName + "/views")) {
-			String fileName = files.getBaseName(viewURL.getFile());
-
-			DatabaseObjectDef file = (DatabaseObjectDef) BaseTestHelper.load(viewURL);
-
-			SQLObject sqlObject = null;
-			try {
-				ViewDef viewDef = (ViewDef) file;
-				sqlObject = databaseManager.createView(connection, schema, fileName, viewDef);
-				System.out.println(sqlObject);
-			} catch (Exception e) {
-				System.err.println(e.toString());
-			}
-		}
-
-		// indices
-		for (URL indexURL : connection.getContext().getResources(this.getClass(), "/resources/schemas/" + schemaName + "/indices")) {
-			String fileName = files.getBaseName(indexURL.getFile());
-
-			DatabaseObjectDef file = (DatabaseObjectDef) BaseTestHelper.load(indexURL);
-
-			SQLObject sqlObject = null;
-			try {
-				IndexDef indexDef = (IndexDef) file;
-
-				Table table = null;
-				if (connection.getCatalogGenerationStrategy().isCreateIndexOnView()) {
-					table = connection.getCatalogMetaData().getView(schemaName, fileName);
-
-					if (table != null) {
-						sqlObject = databaseManager.createIndex(connection, table, fileName, indexDef);
-						System.out.println(sqlObject);
-					}
-				} else {
-					// TODO
+				SQLObject sqlObject = null;
+				try {
+					TableDef tableDef = (TableDef) file;
+					sqlObject = databaseManager.createTable(connection, schema, fileName, tableDef);
+					System.out.println(sqlObject);
+				} catch (Exception e) {
+					System.err.println(e.toString());
 				}
-			} catch (Exception e) {
-				System.err.println(e.toString());
+			}
+
+			// views
+			for (URL viewURL : connection.getContext().getResources(this.getClass(), "/resources/schemas/" + schemaName + "/views")) {
+				String fileName = files.getBaseName(viewURL.getFile());
+
+				DatabaseObjectDef file = (DatabaseObjectDef) BaseTestHelper.load(viewURL);
+
+				SQLObject sqlObject = null;
+				try {
+					ViewDef viewDef = (ViewDef) file;
+					sqlObject = databaseManager.createView(connection, schema, fileName, viewDef);
+					System.out.println(sqlObject);
+				} catch (Exception e) {
+					System.err.println(e.toString());
+				}
+			}
+
+			// indices
+			for (URL indexURL : connection.getContext().getResources(this.getClass(), "/resources/schemas/" + schemaName + "/indices")) {
+				String fileName = files.getBaseName(indexURL.getFile());
+
+				DatabaseObjectDef file = (DatabaseObjectDef) BaseTestHelper.load(indexURL);
+
+				SQLObject sqlObject = null;
+				try {
+					IndexDef indexDef = (IndexDef) file;
+
+					Table table = null;
+					if (connection.getCatalogGenerationStrategy().isCreateIndexOnView()) {
+						table = connection.getCatalogMetaData().getView(schemaName, fileName);
+
+						if (table != null) {
+							sqlObject = databaseManager.createIndex(connection, table, fileName, indexDef);
+							System.out.println(sqlObject);
+						}
+					} else {
+						// TODO
+					}
+				} catch (Exception e) {
+					System.err.println(e.toString());
+				}
 			}
 		}
 
-		connection.close();
 		System.out.println("Creazione schema completata");
 	}
 
@@ -136,40 +136,39 @@ public class TestDatabaseDefinition {
 		String tableName = "MIMO_TABLE";
 		String indexName = "MIMO_INDEX";
 
-		Connection connection = connectionManager.createConnection(catalog);
+		try (Connection connection = connectionManager.createConnection(catalog)) {
 
-		Schema schema = connection.getCatalogMetaData().getSchema(schemaName);
-		if (schema != null)
-			databaseManager.dropSchema(connection, schema, true);
+			Schema schema = connection.getCatalogMetaData().getSchema(schemaName);
+			if (schema != null)
+				databaseManager.dropSchema(connection, schema, true);
 
-		SchemaDef schemaDef = DatabaseDefinitionFactory.eINSTANCE.createSchemaDef();
-		schema = databaseManager.createSchema(connection, schemaName, schemaDef);
+			SchemaDef schemaDef = DatabaseDefinitionFactory.eINSTANCE.createSchemaDef();
+			schema = databaseManager.createSchema(connection, schemaName, schemaDef);
 
-		TableDef tableDef = DatabaseDefinitionFactory.eINSTANCE.createTableDef();
+			TableDef tableDef = DatabaseDefinitionFactory.eINSTANCE.createTableDef();
 
-		for (int i = 1; i <= 3; i++) {
-			TableColumnDef column = DatabaseDefinitionFactory.eINSTANCE.createTableColumnDef();
-			CharacterDef characterDef = DataFactory.eINSTANCE.createCharacterDef();
-			characterDef.setLength(10);
-			column.setDefinition(characterDef);
-			column.setName("COL" + i);
-			tableDef.getColumns().add(column);
+			for (int i = 1; i <= 3; i++) {
+				TableColumnDef column = DatabaseDefinitionFactory.eINSTANCE.createTableColumnDef();
+				CharacterDef characterDef = DataFactory.eINSTANCE.createCharacterDef();
+				characterDef.setLength(10);
+				column.setDefinition(characterDef);
+				column.setName("COL" + i);
+				tableDef.getColumns().add(column);
+			}
+
+			Table table = databaseManager.createTable(connection, schema, tableName, tableDef);
+
+			IndexDef indexDef = DatabaseDefinitionFactory.eINSTANCE.createIndexDef();
+
+			IndexColumnDef indexColumn = DatabaseDefinitionFactory.eINSTANCE.createIndexColumnDef();
+			indexColumn.setName("COL2");
+			indexColumn.setSequence(1);
+			indexColumn.setOrdering(OrderingType.ASCEND);
+
+			indexDef.getColumns().add(indexColumn);
+
+			databaseManager.createIndex(connection, table, indexName, indexDef);
 		}
-
-		Table table = databaseManager.createTable(connection, schema, tableName, tableDef);
-
-		IndexDef indexDef = DatabaseDefinitionFactory.eINSTANCE.createIndexDef();
-
-		IndexColumnDef indexColumn = DatabaseDefinitionFactory.eINSTANCE.createIndexColumnDef();
-		indexColumn.setName("COL2");
-		indexColumn.setSequence(1);
-		indexColumn.setOrdering(OrderingType.ASCEND);
-
-		indexDef.getColumns().add(indexColumn);
-
-		databaseManager.createIndex(connection, table, indexName, indexDef);
-
-		connection.close();
 
 		return null;
 	}
@@ -181,35 +180,31 @@ public class TestDatabaseDefinition {
 		String cataloTo = interpreter.nextArgument();
 		String schemaName = interpreter.nextArgument();
 
-		Connection connectionTo = connectionManager.createConnection(cataloTo);
+		try (Connection connectionTo = connectionManager.createConnection(cataloTo); Connection connectionFrom = connectionManager.createConnection(catalogFrom)) {
 
-		Schema schemaTo = connectionTo.getCatalogMetaData().getSchema(schemaName);
-		if (schemaTo != null)
-			databaseManager.dropSchema(connectionTo, schemaTo, true);
+			Schema schemaTo = connectionTo.getCatalogMetaData().getSchema(schemaName);
+			Schema schemaFrom = connectionFrom.getCatalogMetaData().getSchema(schemaName);
 
-		Connection connectionFrom = connectionManager.createConnection(catalogFrom);
-		Schema schemaFrom = connectionFrom.getCatalogMetaData().getSchema(schemaName);
+			SchemaDef schemaDef = null; // connectionTo.getContext().getAdapter(schemaFrom, SchemaDef.class);
+			databaseManager.createSchema(connectionTo, schemaFrom.getName(), schemaDef);
+			// TODO
+			schemaTo = connectionTo.getCatalogMetaData().getSchema(schemaFrom.getName());
 
-		SchemaDef schemaDef = null; // connectionTo.getContext().getAdapter(schemaFrom, SchemaDef.class);
-		databaseManager.createSchema(connectionTo, schemaFrom.getName(), schemaDef);
-		// TODO
-		schemaTo = connectionTo.getCatalogMetaData().getSchema(schemaFrom.getName());
+			for (Table table : (List<Table>) schemaFrom.getTables())
+				if (table instanceof ViewTable) {
+					ViewDef viewDef = null; // connectionTo.getContext().getAdapter(table, ViewDef.class);
+					databaseManager.createView(connectionTo, schemaTo, table.getName(), viewDef);
+				} else {
+					TableDef tableDef = null; // connectionTo.getContext().getAdapter(table, TableDef.class);
+					databaseManager.createTable(connectionTo, schemaTo, table.getName(), tableDef);
+				}
 
-		for (Table table : (List<Table>) schemaFrom.getTables())
-			if (table instanceof ViewTable) {
-				ViewDef viewDef = null; // connectionTo.getContext().getAdapter(table, ViewDef.class);
-				databaseManager.createView(connectionTo, schemaTo, table.getName(), viewDef);
-			} else {
-				TableDef tableDef = null; // connectionTo.getContext().getAdapter(table, TableDef.class);
-				databaseManager.createTable(connectionTo, schemaTo, table.getName(), tableDef);
+			for (Index index : (List<Index>) schemaFrom.getIndices()) {
+				IndexDef indexDef = null; // connectionTo.getContext().getAdapter(index, IndexDef.class);
+				Table tableTo = connectionTo.getCatalogMetaData().getTable(schemaTo.getName(), index.getName());
+				databaseManager.createIndex(connectionTo, tableTo, index.getName(), indexDef);
 			}
-
-		for (Index index : (List<Index>) schemaFrom.getIndices()) {
-			IndexDef indexDef = null; // connectionTo.getContext().getAdapter(index, IndexDef.class);
-			Table tableTo = connectionTo.getCatalogMetaData().getTable(schemaTo.getName(), index.getName());
-			databaseManager.createIndex(connectionTo, tableTo, index.getName(), indexDef);
 		}
-
 		return null;
 	}
 }

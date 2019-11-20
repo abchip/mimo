@@ -66,6 +66,7 @@ public class BaseJobManagerImpl implements JobManager {
 		return create(identity, null);
 	}
 
+	@SuppressWarnings("resource")
 	@Override
 	public JobCapability create(Identity<?> identity, String jobName) {
 
@@ -149,6 +150,7 @@ public class BaseJobManagerImpl implements JobManager {
 		return job;
 	}
 
+	@SuppressWarnings("resource")
 	@Override
 	public Job lookup(String contextID, String name, String user, int number) {
 
@@ -188,9 +190,10 @@ public class BaseJobManagerImpl implements JobManager {
 	@Override
 	public void close(JobCapability jobCapability) {
 
-		Job job = lookup(jobCapability);
-		if (job != null)
-			close(job);
+		try (Job job = lookup(jobCapability)) {
+			if (job != null)
+				close(job);
+		}
 	}
 
 	@Override
@@ -207,8 +210,6 @@ public class BaseJobManagerImpl implements JobManager {
 		ResourceWriter<Job> jobWriter = resourceManager.getResourceWriter(job.getContext(), Job.class);
 		job.setDestroyDate(new Date());
 		jobWriter.update(job);
-
-		job.getContext().close();
 
 		jobEvent.setType(JobEventType.STOPPED);
 

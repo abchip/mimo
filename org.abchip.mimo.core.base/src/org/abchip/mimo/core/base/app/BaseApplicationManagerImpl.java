@@ -36,7 +36,7 @@ public class BaseApplicationManagerImpl implements ApplicationManager {
 
 	@Override
 	public boolean stop(Application application) {
-		// TODO Auto-generated method stub
-		return false;
+		application.getContext().close();
+		return true;
 	}
 }

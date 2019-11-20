@@ -37,7 +37,6 @@ public class BaseCatalogConnection {
 		return this.catalogContainer;
 	}
 
-	
 	public QueryWriter getQueryWriter() {
 		return queryWriter;
 	}
@@ -68,9 +67,14 @@ public class BaseCatalogConnection {
 		return rawConnection;
 	}
 
-	public void close() throws SQLException {
+	public void close() {
 
 		if (this.rawConnection != null)
-			this.rawConnection.close();
+			try {
+				this.rawConnection.close();
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 	}
 }

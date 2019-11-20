@@ -108,6 +108,7 @@ public class BaseApplicationStarter {
 
 	public void activateComponent(ApplicationComponent component) {
 
+		@SuppressWarnings("resource")
 		Context componentContext = application.getContext().createChildContext(component.getName());
 		componentContext.set(ApplicationComponent.class, component);
 		component.setContext(componentContext);

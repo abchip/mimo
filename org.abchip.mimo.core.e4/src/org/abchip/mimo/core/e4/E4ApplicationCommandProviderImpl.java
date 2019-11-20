@@ -8,15 +8,15 @@
  */
 package org.abchip.mimo.core.e4;
 
+import org.abchip.mimo.core.base.BaseCommandProviderImpl;
 import org.eclipse.osgi.framework.console.CommandInterpreter;
-import org.eclipse.osgi.framework.console.CommandProvider;
 
-public class E4ApplicationCommandProviderImpl implements CommandProvider {
+public class E4ApplicationCommandProviderImpl extends BaseCommandProviderImpl {
 
 	public void _mimo(CommandInterpreter interpreter) throws Exception {
 		interpreter.println("Hello, world!");
 	}
-	
+
 	@Override
 	public String getHelp() {
 		// TODO Auto-generated method stub

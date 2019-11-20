@@ -13,17 +13,12 @@ import java.sql.SQLException;
 import javax.inject.Inject;
 
 import org.abchip.mimo.context.Context;
-import org.abchip.mimo.context.ContextRoot;
 import org.abchip.mimo.database.DatabaseManager;
 import org.abchip.mimo.database.connection.Connection;
 import org.abchip.mimo.database.connection.ConnectionManager;
 
 public class BaseConnectionManagerImpl implements ConnectionManager {
 
-	private static int connectionID = 0;
-
-	@Inject
-	private ContextRoot contextRoot;
 	@Inject
 	private DatabaseManager databaseManager;
 
@@ -55,28 +50,22 @@ public class BaseConnectionManagerImpl implements ConnectionManager {
 
 		BaseDatabaseManagerImpl baseDatabaseManagerImpl = (BaseDatabaseManagerImpl) databaseManager;
 
-/*		String connectionID = nextConnectionID(baseDatabaseManagerImpl);
-
-		CatalogContainer catalogContainer = baseDatabaseManagerImpl.getCatalogContainer(catalog);
-
-		Context contextChild = null;
-
-		if (context != null)
-			contextChild = context.createChildContext(connectionID);
-		else
-			contextChild = catalogContainer.getCatalogContext().createChildContext(connectionID);*/
+		/*
+		 * String connectionID = nextConnectionID(baseDatabaseManagerImpl);
+		 * 
+		 * CatalogContainer catalogContainer =
+		 * baseDatabaseManagerImpl.getCatalogContainer(catalog);
+		 * 
+		 * Context contextChild = null;
+		 * 
+		 * if (context != null) contextChild = context.createChildContext(connectionID);
+		 * else contextChild =
+		 * catalogContainer.getCatalogContext().createChildContext(connectionID);
+		 */
 
 		Connection connection = new BaseConnectionImpl(baseDatabaseManagerImpl.getDatabaseContainer(), context);
 		connection.setCatalog(catalog);
 
 		return connection;
-	}
-
-	protected synchronized String nextConnectionID(BaseDatabaseManagerImpl baseDatabaseManagerImpl) {
-
-		connectionID++;
-		String stringID = contextRoot.getContextDescription().getId() + "/" + connectionID;
-
-		return stringID;
 	}
 }

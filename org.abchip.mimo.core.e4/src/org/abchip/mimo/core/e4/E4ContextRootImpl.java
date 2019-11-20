@@ -176,7 +176,7 @@ public class E4ContextRootImpl extends E4ContextImpl implements ContextRoot {
 		if (contextDescription.getId() == null)
 			contextDescription.setId(UUID.randomUUID().toString());
 
-		Context contextChild = new E4ContextChildImpl(this, eclipseChildContext, contextDescription);
+		Context contextChild = new E4ContextChildImpl(eclipseChildContext, contextDescription);
 
 		for(Factory<Object> factory: this.getAll(Factory.class)) {
 			Object object = factory.create(contextChild);

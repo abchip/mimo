@@ -4,7 +4,7 @@
   <eClassifiers xsi:type="ecore:EClass" name="Mimo"/>
   <eSubpackages name="application" nsURI="http://www.abchip.org/mimo/application"
       nsPrefix="mimo-app">
-    <eClassifiers xsi:type="ecore:EClass" name="Application" eSuperTypes="#//entity/EntityIdentifiable #//context/Context">
+    <eClassifiers xsi:type="ecore:EClass" name="Application" eSuperTypes="#//entity/EntityIdentifiable">
       <eStructuralFeatures xsi:type="ecore:EReference" name="commands" upperBound="-1"
           eType="#//application/ServiceCommandProvider" containment="true"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="components" upperBound="-1"
@@ -22,7 +22,7 @@
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="port" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="text" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="ApplicationComponent" eSuperTypes="#//entity/EntityIdentifiable #//context/Context">
+    <eClassifiers xsi:type="ecore:EClass" name="ApplicationComponent" eSuperTypes="#//entity/EntityIdentifiable">
       <eStructuralFeatures xsi:type="ecore:EReference" name="config" eType="#//application/ServiceConfig"
           containment="true"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="context" eType="#//context/Context"
@@ -200,8 +200,8 @@
       <eLiterals name="Write" value="20" literal="WRT"/>
       <eLiterals name="Execute" value="30" literal="EXC"/>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="Context" abstract="true">
-      <eOperations name="close" lowerBound="1"/>
+    <eClassifiers xsi:type="ecore:EClass" name="Context" abstract="true" eSuperTypes="#//java/JavaCloseable">
+      <eOperations name="close"/>
       <eOperations name="get" lowerBound="1">
         <eGenericType eTypeParameter="#//context/Context/get/T"/>
         <eTypeParameters name="T"/>

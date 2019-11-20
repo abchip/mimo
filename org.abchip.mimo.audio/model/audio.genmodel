@@ -37,12 +37,14 @@
       </genOperations>
     </genClasses>
     <genClasses image="false" ecoreClass="audio.ecore#//AudioRecorder">
+      <genOperations ecoreOperation="audio.ecore#//AudioRecorder/close"/>
       <genOperations ecoreOperation="audio.ecore#//AudioRecorder/getOutputStream"/>
       <genOperations ecoreOperation="audio.ecore#//AudioRecorder/isStopped"/>
       <genOperations ecoreOperation="audio.ecore#//AudioRecorder/start"/>
       <genOperations ecoreOperation="audio.ecore#//AudioRecorder/stop"/>
     </genClasses>
     <genClasses image="false" ecoreClass="audio.ecore#//AudioPlayer">
+      <genOperations ecoreOperation="audio.ecore#//AudioPlayer/close"/>
       <genOperations ecoreOperation="audio.ecore#//AudioPlayer/getAudio"/>
       <genOperations ecoreOperation="audio.ecore#//AudioPlayer/isStopped"/>
       <genOperations ecoreOperation="audio.ecore#//AudioPlayer/start"/>

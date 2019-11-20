@@ -9,8 +9,7 @@
 package org.abchip.mimo.server.impl;
 
 import java.lang.management.ManagementFactory;
-
-import org.abchip.mimo.context.Context;
+import org.abchip.mimo.context.ContextRoot;
 import org.abchip.mimo.entity.impl.EntityIdentifiableImpl;
 import org.abchip.mimo.server.ServerPackage;
 import org.abchip.mimo.server.SystemStatus;
@@ -42,10 +41,6 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 public class SystemImpl extends EntityIdentifiableImpl implements org.abchip.mimo.server.System {
 
 	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
-	/**
 	 * The cached value of the '{@link #getContext() <em>Context</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -53,7 +48,11 @@ public class SystemImpl extends EntityIdentifiableImpl implements org.abchip.mim
 	 * @generated
 	 * @ordered
 	 */
-	protected Context context;
+	protected ContextRoot context;
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	/**
 	 * The default value of the '{@link #getLastJobNumber() <em>Last Job Number</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -170,10 +169,10 @@ public class SystemImpl extends EntityIdentifiableImpl implements org.abchip.mim
 	 * @generated
 	 */
 	@Override
-	public Context getContext() {
+	public ContextRoot getContext() {
 		if (context != null && ((EObject)context).eIsProxy()) {
 			InternalEObject oldContext = (InternalEObject)context;
-			context = (Context)eResolveProxy(oldContext);
+			context = (ContextRoot)eResolveProxy(oldContext);
 			if (context != oldContext) {
 				InternalEObject newContext = (InternalEObject)context;
 				NotificationChain msgs = oldContext.eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ServerPackage.SYSTEM__CONTEXT, null, null);
@@ -193,7 +192,7 @@ public class SystemImpl extends EntityIdentifiableImpl implements org.abchip.mim
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Context basicGetContext() {
+	public ContextRoot basicGetContext() {
 		return context;
 	}
 
@@ -202,8 +201,8 @@ public class SystemImpl extends EntityIdentifiableImpl implements org.abchip.mim
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetContext(Context newContext, NotificationChain msgs) {
-		Context oldContext = context;
+	public NotificationChain basicSetContext(ContextRoot newContext, NotificationChain msgs) {
+		ContextRoot oldContext = context;
 		context = newContext;
 		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ServerPackage.SYSTEM__CONTEXT, oldContext, newContext);
@@ -218,7 +217,7 @@ public class SystemImpl extends EntityIdentifiableImpl implements org.abchip.mim
 	 * @generated
 	 */
 	@Override
-	public void setContext(Context newContext) {
+	public void setContext(ContextRoot newContext) {
 		if (newContext != context) {
 			NotificationChain msgs = null;
 			if (context != null)
@@ -413,7 +412,7 @@ public class SystemImpl extends EntityIdentifiableImpl implements org.abchip.mim
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case ServerPackage.SYSTEM__CONTEXT:
-				setContext((Context)newValue);
+				setContext((ContextRoot)newValue);
 				return;
 			case ServerPackage.SYSTEM__LAST_JOB_NUMBER:
 				setLastJobNumber((Integer)newValue);
@@ -443,7 +442,7 @@ public class SystemImpl extends EntityIdentifiableImpl implements org.abchip.mim
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case ServerPackage.SYSTEM__CONTEXT:
-				setContext((Context)null);
+				setContext((ContextRoot)null);
 				return;
 			case ServerPackage.SYSTEM__LAST_JOB_NUMBER:
 				setLastJobNumber(LAST_JOB_NUMBER_EDEFAULT);

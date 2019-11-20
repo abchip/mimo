@@ -15,6 +15,7 @@ import org.abchip.mimo.data.DataPackage;
 
 import org.abchip.mimo.entity.EntityPackage;
 
+import org.abchip.mimo.java.JavaPackage;
 import org.abchip.mimo.server.Job;
 import org.abchip.mimo.server.JobCapability;
 import org.abchip.mimo.server.JobDescription;
@@ -1034,6 +1035,7 @@ public class ServerPackageImpl extends EPackageImpl implements ServerPackage {
 
 		// Obtain other dependent packages
 		EntityPackage theEntityPackage = (EntityPackage)EPackage.Registry.INSTANCE.getEPackage(EntityPackage.eNS_URI);
+		JavaPackage theJavaPackage = (JavaPackage)EPackage.Registry.INSTANCE.getEPackage(JavaPackage.eNS_URI);
 		ContextPackage theContextPackage = (ContextPackage)EPackage.Registry.INSTANCE.getEPackage(ContextPackage.eNS_URI);
 		DataPackage theDataPackage = (DataPackage)EPackage.Registry.INSTANCE.getEPackage(DataPackage.eNS_URI);
 		UtilPackage theUtilPackage = (UtilPackage)EPackage.Registry.INSTANCE.getEPackage(UtilPackage.eNS_URI);
@@ -1044,6 +1046,7 @@ public class ServerPackageImpl extends EPackageImpl implements ServerPackage {
 
 		// Add supertypes to classes
 		jobEClass.getESuperTypes().add(theEntityPackage.getEntityIdentifiable());
+		jobEClass.getESuperTypes().add(theJavaPackage.getJavaCloseable());
 		jobCapabilityEClass.getESuperTypes().add(theContextPackage.getCapability());
 		jobDescriptionEClass.getESuperTypes().add(theEntityPackage.getEntityIdentifiable());
 		jobLogEClass.getESuperTypes().add(theEntityPackage.getEntity());
@@ -1069,6 +1072,8 @@ public class ServerPackageImpl extends EPackageImpl implements ServerPackage {
 		initEReference(getJob_Messages(), this.getJobMessage(), null, "messages", null, 0, -1, Job.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getJob_System(), this.getSystem(), null, "system", null, 1, 1, Job.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getJob_TimeSeparator(), ecorePackage.getEString(), "timeSeparator", ":", 0, 1, Job.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		addEOperation(jobEClass, null, "close", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		addEOperation(jobEClass, this.getJobStatus(), "getJobStatus", 1, 1, IS_UNIQUE, IS_ORDERED);
 
@@ -1244,7 +1249,7 @@ public class ServerPackageImpl extends EPackageImpl implements ServerPackage {
 		initEAttribute(getJobRunInfo_MemorySize(), ecorePackage.getELong(), "memorySize", null, 0, 1, JobRunInfo.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(systemEClass, org.abchip.mimo.server.System.class, "System", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getSystem_Context(), theContextPackage.getContext(), null, "context", null, 0, 1, org.abchip.mimo.server.System.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getSystem_Context(), theContextPackage.getContextRoot(), null, "context", null, 0, 1, org.abchip.mimo.server.System.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getSystem_LastJobNumber(), ecorePackage.getEInt(), "lastJobNumber", null, 0, 1, org.abchip.mimo.server.System.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getSystem_Name(), ecorePackage.getEString(), "name", null, 1, 1, org.abchip.mimo.server.System.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getSystem_Port(), ecorePackage.getEInt(), "port", null, 1, 1, org.abchip.mimo.server.System.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

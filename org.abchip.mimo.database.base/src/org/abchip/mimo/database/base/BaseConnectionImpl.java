@@ -48,7 +48,7 @@ public class BaseConnectionImpl implements Connection {
 	}
 
 	@Override
-	public void close() throws SQLException {
+	public void close() {
 
 		for (BaseCatalogConnection catalogConnection : catalogConnections)
 			catalogConnection.close();
@@ -96,7 +96,7 @@ public class BaseConnectionImpl implements Connection {
 		BaseStatementImpl statement = new BaseStatementImpl(this, sqlStatement, native_);
 		return statement;
 	}
-	
+
 	@Override
 	public String getCatalog() throws SQLException {
 		return virtualCatalog;
@@ -172,7 +172,7 @@ public class BaseConnectionImpl implements Connection {
 	public Context getContext() {
 		return context;
 	}
-	
+
 	private java.sql.Connection getRawConnection() throws SQLException {
 		return getCatalogConnection().getRawConnection();
 	}

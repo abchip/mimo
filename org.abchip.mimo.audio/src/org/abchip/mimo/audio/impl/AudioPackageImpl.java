@@ -295,6 +295,8 @@ public class AudioPackageImpl extends EPackageImpl implements AudioPackage {
 
 		// Add supertypes to classes
 		audioEClass.getESuperTypes().add(theEntityPackage.getEntityIdentifiable());
+		audioRecorderEClass.getESuperTypes().add(theJavaPackage.getJavaCloseable());
+		audioPlayerEClass.getESuperTypes().add(theJavaPackage.getJavaCloseable());
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(audioEClass, Audio.class, "Audio", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -322,6 +324,8 @@ public class AudioPackageImpl extends EPackageImpl implements AudioPackage {
 
 		initEClass(audioRecorderEClass, AudioRecorder.class, "AudioRecorder", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
+		addEOperation(audioRecorderEClass, null, "close", 0, 1, IS_UNIQUE, IS_ORDERED);
+
 		addEOperation(audioRecorderEClass, theJavaPackage.getJavaOutputStream(), "getOutputStream", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		addEOperation(audioRecorderEClass, ecorePackage.getEBoolean(), "isStopped", 1, 1, IS_UNIQUE, IS_ORDERED);
@@ -331,6 +335,8 @@ public class AudioPackageImpl extends EPackageImpl implements AudioPackage {
 		addEOperation(audioRecorderEClass, null, "stop", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(audioPlayerEClass, AudioPlayer.class, "AudioPlayer", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		addEOperation(audioPlayerEClass, null, "close", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		addEOperation(audioPlayerEClass, this.getAudio(), "getAudio", 1, 1, IS_UNIQUE, IS_ORDERED);
 

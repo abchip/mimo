@@ -17,55 +17,59 @@ import org.abchip.mimo.biz.party.party.PartyFactory;
 import org.abchip.mimo.biz.party.party.PartyGroup;
 import org.abchip.mimo.biz.party.party.PartyType;
 import org.abchip.mimo.biz.party.party.Person;
-import org.abchip.mimo.context.ContextRoot;
+import org.abchip.mimo.context.Context;
+import org.abchip.mimo.core.base.BaseCommandProviderImpl;
 import org.abchip.mimo.entity.EntityIdentifiable;
 import org.abchip.mimo.resource.ResourceManager;
 import org.abchip.mimo.resource.ResourceReader;
 import org.abchip.mimo.resource.ResourceWriter;
 import org.eclipse.osgi.framework.console.CommandInterpreter;
-import org.eclipse.osgi.framework.console.CommandProvider;
 
-public class PartyCommandProviderImpl implements CommandProvider {
+public class PartyCommandProviderImpl extends BaseCommandProviderImpl {
 
-	@Inject
-	private ContextRoot contextRoot;
 	@Inject
 	private ResourceManager resourceManager;
 
 	public <E extends EntityIdentifiable> void _testParty(CommandInterpreter interpreter) throws Exception {
 
-		ResourceReader<Party> partyReader = resourceManager.getResourceReader(contextRoot, Party.class);
-		Party party = partyReader.lookup("10000");
-		System.out.println(party.getURI());
-		System.out.println(party.getPartyTypeId().getID());
-		System.out.println(party.getCreatedByUserLogin().getPartyId().getID());
+		try (Context context = this.createContext(null)) {
+
+			ResourceReader<Party> partyReader = resourceManager.getResourceReader(context, Party.class);
+			Party party = partyReader.lookup("10000");
+			System.out.println(party.getURI());
+			System.out.println(party.getPartyTypeId().getID());
+			System.out.println(party.getCreatedByUserLogin().getPartyId().getID());
+		}
 	}
 
 	public <E extends EntityIdentifiable> void _hackerParty(CommandInterpreter interpreter) throws Exception {
 
-		String id = interpreter.nextArgument();
+		try (Context context = this.createContext(null)) {
 
-		// Write Person
-		ResourceWriter<Person> personWriter = resourceManager.getResourceWriter(contextRoot, Person.class);
+			String id = interpreter.nextArgument();
 
-		Person person = PartyFactory.eINSTANCE.createPerson();
-		person.setPreferredCurrencyUomId(resourceManager.getFrame(contextRoot, Uom.class).createProxy("EUR"));
-		person.setStatusId(resourceManager.getFrame(contextRoot, StatusItem.class).createProxy("PARTY_ENABLED"));
-		person.setPartyTypeId(resourceManager.getFrame(contextRoot, PartyType.class).createProxy("PERSON"));
-		person.setPartyId(id);
-		person.setFirstName("Test hacker party person");
-		personWriter.create(person);
+			// Write Person
+			ResourceWriter<Person> personWriter = resourceManager.getResourceWriter(context, Person.class);
 
-		// Write PartyGroup
-		ResourceWriter<PartyGroup> groupWriter = resourceManager.getResourceWriter(contextRoot, PartyGroup.class);
+			Person person = PartyFactory.eINSTANCE.createPerson();
+			person.setPreferredCurrencyUomId(resourceManager.getFrame(context, Uom.class).createProxy("EUR"));
+			person.setStatusId(resourceManager.getFrame(context, StatusItem.class).createProxy("PARTY_ENABLED"));
+			person.setPartyTypeId(resourceManager.getFrame(context, PartyType.class).createProxy("PERSON"));
+			person.setPartyId(id);
+			person.setFirstName("Test hacker party person");
+			personWriter.create(person);
 
-		PartyGroup partyGroup = PartyFactory.eINSTANCE.createPartyGroup();
-		partyGroup.setPreferredCurrencyUomId(resourceManager.getFrame(contextRoot, Uom.class).createProxy("EUR"));
-		partyGroup.setStatusId(resourceManager.getFrame(contextRoot, StatusItem.class).createProxy("PARTY_ENABLED"));
-		partyGroup.setPartyTypeId(resourceManager.getFrame(contextRoot, PartyType.class).createProxy("PARTY_GROUP"));
-		partyGroup.setPartyId(id);
-		partyGroup.setGroupName("Test hacker party group");
-		groupWriter.create(partyGroup);
+			// Write PartyGroup
+			ResourceWriter<PartyGroup> groupWriter = resourceManager.getResourceWriter(context, PartyGroup.class);
+
+			PartyGroup partyGroup = PartyFactory.eINSTANCE.createPartyGroup();
+			partyGroup.setPreferredCurrencyUomId(resourceManager.getFrame(context, Uom.class).createProxy("EUR"));
+			partyGroup.setStatusId(resourceManager.getFrame(context, StatusItem.class).createProxy("PARTY_ENABLED"));
+			partyGroup.setPartyTypeId(resourceManager.getFrame(context, PartyType.class).createProxy("PARTY_GROUP"));
+			partyGroup.setPartyId(id);
+			partyGroup.setGroupName("Test hacker party group");
+			groupWriter.create(partyGroup);
+		}
 	}
 
 	@Override

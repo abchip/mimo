@@ -8,6 +8,7 @@
  */
 package org.abchip.mimo.database.test;
 
+import java.io.IOException;
 import java.sql.SQLException;
 
 import org.abchip.mimo.context.Context;
@@ -33,13 +34,14 @@ public class TestDatabaseSuiteRunnerImpl extends BaseTestSuiteDirectoryRunnerImp
 	private void init() throws SQLException {
 
 		ConnectionManager connectionManager = getContext().get(ConnectionManager.class);
+		@SuppressWarnings("resource")
 		Connection connection = connectionManager.createConnection(getContext());
 
 		getContext().set(Connection.class, connection);
 	}
 
 	@TestStopped
-	private void close() throws SQLException {
+	private void close() throws IOException {
 		
 		if (connection == null)
 			return;

@@ -34,7 +34,7 @@ import org.abchip.mimo.entity.EntityIdentifiable;
  * @model
  * @generated
  */
-public interface ApplicationComponent extends EntityIdentifiable, Context {
+public interface ApplicationComponent extends EntityIdentifiable {
 	/**
 	 * Returns the value of the '<em><b>Config</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
