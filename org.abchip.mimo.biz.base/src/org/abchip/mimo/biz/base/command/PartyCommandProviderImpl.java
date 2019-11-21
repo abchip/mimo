@@ -35,11 +35,14 @@ public class PartyCommandProviderImpl extends BaseCommandProviderImpl {
 		try (Context context = this.createContext(null)) {
 
 			ResourceReader<Party> partyReader = resourceManager.getResourceReader(context, Party.class);
-			Party party = partyReader.lookup("10000");
+			Party party = partyReader.lookup("10000", true);
+			System.out.println(party.getID());
 			System.out.println(party.getURI());
-			System.out.println(party.getPartyTypeId().getID());
-			System.out.println(party.getCreatedByUserLogin().getPartyId().getID());
+			System.out.println(party.getPartyId());
 			System.out.println(party.getPartyRoles());
+			System.out.println(party.getCreatedByUserLogin().getPartyId().getID());
+			System.out.println(party.getPartyTypeId().getID());
+
 		}
 	}
 

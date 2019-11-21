@@ -15,6 +15,7 @@ import java.util.List;
 import java.util.Map;
 
 import org.abchip.mimo.entity.Entity;
+import org.abchip.mimo.entity.EntityIdentifiable;
 import org.abchip.mimo.entity.EntityPackage;
 import org.abchip.mimo.entity.Frame;
 import org.abchip.mimo.entity.Slot;
@@ -222,15 +223,25 @@ public class EMFFrameClassAdapter<E extends Entity> extends FrameImpl<E> {
 		}
 
 		if (eFeature instanceof EReference) {
-			EReference eReference = (EReference) eFeature;
-			EClassifier eClassifier = eReference.getEType();
-			Frame<?> frameRef = (Frame<?>) this.entities.get(eClassifier.getName());
-			if (frameRef != null) {
-				Entity entity = frameRef.createProxy(value.toString());
-				if (entity != null)
-					eObject.eSet(eFeature, entity);
-			} else
-				System.err.println("Unexpected condition: bvtw4a87ny4r9tycsa9et6");
+			if (value instanceof EntityIdentifiable) {
+				EntityIdentifiable entityIdentifiable = (EntityIdentifiable) value;
+				if (entityIdentifiable.isProxy()) {
+					eObject.eSet(eFeature, value);
+				} else {
+					eObject.eSet(eFeature, entityIdentifiable);
+				}
+			} else {
+				EReference eReference = (EReference) eFeature;
+				EClassifier eClassifier = eReference.getEType();
+				Frame<?> frameRef = (Frame<?>) this.entities.get(eClassifier.getName());
+				if (frameRef != null) {
+					Entity entity = frameRef.createProxy(value.toString());
+					if (entity != null)
+						eObject.eSet(eFeature, entity);
+				} else
+					System.err.println("Unexpected condition: bvtw4a87ny4r9tycsa9et6");
+			}
+
 		} else {
 			try {
 				eObject.eSet(eFeature, value);

@@ -66,12 +66,12 @@ public abstract class EntityIdentifiableImpl extends EntityImpl implements Entit
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 
+		EAttribute eIDAttribute = eClass().getEIDAttribute();
 		EStructuralFeature eFeature = eClass().getEStructuralFeature(featureID);
+
 		if (eFeature.isMany() && eFeature instanceof EAttribute) {
 			if (!eIsSet(featureID)) {
-				if (eIsProxy()) {
-					"".toString();
-				} else if (eResource() instanceof MimoResourceImpl) {
+				if (eResource() instanceof MimoResourceImpl) {
 
 					Slot slot = isa().getSlot(eFeature.getName());
 					if (slot.getDomain() == null)
@@ -83,7 +83,6 @@ public abstract class EntityIdentifiableImpl extends EntityImpl implements Entit
 					ResourceReader<?> resourceReader = resourceManager.getResourceReader(context, slot.getDomain().getFrame());
 					String filter = slot.getDomain().getRoute();
 					if (filter == null || filter.trim().isEmpty()) {
-						EAttribute eIDAttribute = eClass().getEIDAttribute();
 						if (eIDAttribute != null) {
 							if (slot.isString())
 								filter = eIDAttribute.getName() + "= '" + this.getID() + "'";
@@ -95,14 +94,27 @@ public abstract class EntityIdentifiableImpl extends EntityImpl implements Entit
 
 					List<String> values = new EDataTypeUniqueEList<String>(String.class, this, featureID);
 					for (EntityIdentifiable entityIdentifiable : resourceReader.find(filter)) {
+						String domainKey = entityIdentifiable.isa().getKeys().get(0);
+						entityIdentifiable.isa().setValue(entityIdentifiable, domainKey, this);
 						values.add(entityIdentifiable.getID());
 					}
 					super.eSet(eFeature, values);
+
+					return values;
 				} else
 					return super.eGet(featureID, resolve, coreType);
 			}
 		}
 
+		if (eIsProxy()) {
+			if(eFeature == eIDAttribute) 
+				return this.getURI().getFragment();
+			
+			EntityIdentifiableImpl eObject = (EntityIdentifiableImpl) EcoreUtil.resolve(this, this);
+			this.eBasicSetSettings(eObject.eBasicSettings());
+			this.eSetProxyURI(null);
+		}
+		
 		return super.eGet(featureID, resolve, coreType);
 	}
 

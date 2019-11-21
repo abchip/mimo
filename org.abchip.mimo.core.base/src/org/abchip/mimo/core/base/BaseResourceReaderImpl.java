@@ -15,8 +15,8 @@ import java.util.List;
 
 import org.abchip.mimo.MimoResourceImpl;
 import org.abchip.mimo.context.Context;
-import org.abchip.mimo.entity.EntityIterator;
 import org.abchip.mimo.entity.EntityIdentifiable;
+import org.abchip.mimo.entity.EntityIterator;
 import org.abchip.mimo.entity.Frame;
 import org.abchip.mimo.resource.impl.ResourceReaderImpl;
 import org.eclipse.emf.ecore.InternalEObject;
@@ -125,10 +125,11 @@ public class BaseResourceReaderImpl<E extends EntityIdentifiable> extends Resour
 
 	@Override
 	public E lookup(String name, boolean proxy) {
-		
+
 		E entity = this.internal.getResource().read(name, null, proxy);
 
-		if (entity != null && !proxy)
+		// if (entity != null && !proxy)
+		if (entity != null)
 			this.setInternalResource(entity);
 
 		return entity;
@@ -192,7 +193,7 @@ public class BaseResourceReaderImpl<E extends EntityIdentifiable> extends Resour
 		}
 
 		@Override
-		public void close() {			
+		public void close() {
 			this.iterator = null;
 			this.nextObject = null;
 		}
