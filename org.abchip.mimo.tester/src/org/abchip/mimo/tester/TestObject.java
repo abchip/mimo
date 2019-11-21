@@ -24,6 +24,7 @@ import org.abchip.mimo.entity.EntityIdentifiable;
  *   <li>{@link org.abchip.mimo.tester.TestObject#getIntegerProperty <em>Integer Property</em>}</li>
  *   <li>{@link org.abchip.mimo.tester.TestObject#getObjectReference <em>Object Reference</em>}</li>
  *   <li>{@link org.abchip.mimo.tester.TestObject#getObjectReferences <em>Object References</em>}</li>
+ *   <li>{@link org.abchip.mimo.tester.TestObject#getValues <em>Values</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.tester.TesterPackage#getTestObject()
@@ -150,5 +151,21 @@ public interface TestObject extends EntityIdentifiable {
 	 * @generated
 	 */
 	List<TestObject> getObjectReferences();
+
+	/**
+	 * Returns the value of the '<em><b>Values</b></em>' attribute list.
+	 * The list contents are of type {@link java.lang.String}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Values</em>' attribute list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Values</em>' attribute list.
+	 * @see org.abchip.mimo.tester.TesterPackage#getTestObject_Values()
+	 * @model
+	 * @generated
+	 */
+	List<String> getValues();
 
 } // QTestObject

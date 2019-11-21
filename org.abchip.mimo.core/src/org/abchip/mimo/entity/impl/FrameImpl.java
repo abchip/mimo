@@ -37,6 +37,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link org.abchip.mimo.entity.impl.FrameImpl#isAutoIncrement <em>Auto Increment</em>}</li>
  *   <li>{@link org.abchip.mimo.entity.impl.FrameImpl#isEnum <em>Enum</em>}</li>
  *   <li>{@link org.abchip.mimo.entity.impl.FrameImpl#getKeys <em>Keys</em>}</li>
+ *   <li>{@link org.abchip.mimo.entity.impl.FrameImpl#isHasToString <em>Has To String</em>}</li>
  *   <li>{@link org.abchip.mimo.entity.impl.FrameImpl#getName <em>Name</em>}</li>
  *   <li>{@link org.abchip.mimo.entity.impl.FrameImpl#getSlots <em>Slots</em>}</li>
  *   <li>{@link org.abchip.mimo.entity.impl.FrameImpl#getSlotsNumber <em>Slots Number</em>}</li>
@@ -106,6 +107,24 @@ public abstract class FrameImpl<E extends Entity> extends EntityIdentifiableImpl
 	 * @ordered
 	 */
 	protected EList<String> keys;
+	/**
+	 * The default value of the '{@link #isHasToString() <em>Has To String</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isHasToString()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final boolean HAS_TO_STRING_EDEFAULT = false;
+	/**
+	 * The cached value of the '{@link #isHasToString() <em>Has To String</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isHasToString()
+	 * @generated
+	 * @ordered
+	 */
+	protected boolean hasToString = HAS_TO_STRING_EDEFAULT;
 	/**
 	 * The default value of the '{@link #getName() <em>Name</em>}' attribute. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
@@ -284,6 +303,29 @@ public abstract class FrameImpl<E extends Entity> extends EntityIdentifiableImpl
 	}
 
 	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public boolean isHasToString() {
+		return hasToString;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setHasToString(boolean newHasToString) {
+		boolean oldHasToString = hasToString;
+		hasToString = newHasToString;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, EntityPackage.FRAME__HAS_TO_STRING, oldHasToString, hasToString));
+	}
+
+	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @generated NOT
@@ -420,6 +462,8 @@ public abstract class FrameImpl<E extends Entity> extends EntityIdentifiableImpl
 				return isEnum();
 			case EntityPackage.FRAME__KEYS:
 				return getKeys();
+			case EntityPackage.FRAME__HAS_TO_STRING:
+				return isHasToString();
 			case EntityPackage.FRAME__NAME:
 				return getName();
 			case EntityPackage.FRAME__SLOTS:
@@ -457,6 +501,9 @@ public abstract class FrameImpl<E extends Entity> extends EntityIdentifiableImpl
 				getKeys().clear();
 				getKeys().addAll((Collection<? extends String>)newValue);
 				return;
+			case EntityPackage.FRAME__HAS_TO_STRING:
+				setHasToString((Boolean)newValue);
+				return;
 			case EntityPackage.FRAME__NAME:
 				setName((String)newValue);
 				return;
@@ -490,6 +537,9 @@ public abstract class FrameImpl<E extends Entity> extends EntityIdentifiableImpl
 			case EntityPackage.FRAME__KEYS:
 				getKeys().clear();
 				return;
+			case EntityPackage.FRAME__HAS_TO_STRING:
+				setHasToString(HAS_TO_STRING_EDEFAULT);
+				return;
 			case EntityPackage.FRAME__NAME:
 				setName(NAME_EDEFAULT);
 				return;
@@ -518,6 +568,8 @@ public abstract class FrameImpl<E extends Entity> extends EntityIdentifiableImpl
 				return enum_ != ENUM_EDEFAULT;
 			case EntityPackage.FRAME__KEYS:
 				return keys != null && !keys.isEmpty();
+			case EntityPackage.FRAME__HAS_TO_STRING:
+				return hasToString != HAS_TO_STRING_EDEFAULT;
 			case EntityPackage.FRAME__NAME:
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 			case EntityPackage.FRAME__SLOTS:
@@ -551,6 +603,8 @@ public abstract class FrameImpl<E extends Entity> extends EntityIdentifiableImpl
 		result.append(enum_);
 		result.append(", keys: ");
 		result.append(keys);
+		result.append(", hasToString: ");
+		result.append(hasToString);
 		result.append(", name: ");
 		result.append(name);
 		result.append(", slotsNumber: ");

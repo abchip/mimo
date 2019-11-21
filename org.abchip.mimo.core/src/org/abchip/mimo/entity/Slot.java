@@ -26,6 +26,7 @@ package org.abchip.mimo.entity;
  *   <li>{@link org.abchip.mimo.entity.Slot#getName <em>Name</em>}</li>
  *   <li>{@link org.abchip.mimo.entity.Slot#isRoute <em>Route</em>}</li>
  *   <li>{@link org.abchip.mimo.entity.Slot#getText <em>Text</em>}</li>
+ *   <li>{@link org.abchip.mimo.entity.Slot#isToString <em>To String</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.entity.EntityPackage#getSlot()
@@ -115,6 +116,32 @@ public interface Slot extends EntityIdentifiable {
 	 * @generated
 	 */
 	void setText(String value);
+
+	/**
+	 * Returns the value of the '<em><b>To String</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>To String</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>To String</em>' attribute.
+	 * @see #setToString(boolean)
+	 * @see org.abchip.mimo.entity.EntityPackage#getSlot_ToString()
+	 * @model
+	 * @generated
+	 */
+	boolean isToString();
+
+	/**
+	 * Sets the value of the '{@link org.abchip.mimo.entity.Slot#isToString <em>To String</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>To String</em>' attribute.
+	 * @see #isToString()
+	 * @generated
+	 */
+	void setToString(boolean value);
 
 	/**
 	 * Returns the value of the '<em><b>Cardinality</b></em>' containment reference.

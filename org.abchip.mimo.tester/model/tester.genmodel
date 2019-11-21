@@ -165,6 +165,7 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute tester.ecore#//TestObject/integerProperty"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference tester.ecore#//TestObject/objectReference"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference tester.ecore#//TestObject/objectReferences"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute tester.ecore#//TestObject/values"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

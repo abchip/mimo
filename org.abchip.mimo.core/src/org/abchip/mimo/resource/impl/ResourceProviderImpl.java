@@ -8,7 +8,6 @@
 package org.abchip.mimo.resource.impl;
 
 import javax.inject.Inject;
-
 import org.abchip.mimo.context.Context;
 import org.abchip.mimo.entity.EntityIdentifiable;
 import org.abchip.mimo.entity.Frame;

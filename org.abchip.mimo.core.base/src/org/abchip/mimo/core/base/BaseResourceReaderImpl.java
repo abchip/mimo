@@ -125,7 +125,7 @@ public class BaseResourceReaderImpl<E extends EntityIdentifiable> extends Resour
 
 	@Override
 	public E lookup(String name, boolean proxy) {
-
+		
 		E entity = this.internal.getResource().read(name, null, proxy);
 
 		if (entity != null && !proxy)

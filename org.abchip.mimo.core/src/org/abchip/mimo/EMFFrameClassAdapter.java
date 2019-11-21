@@ -19,8 +19,6 @@ import org.abchip.mimo.entity.EntityPackage;
 import org.abchip.mimo.entity.Frame;
 import org.abchip.mimo.entity.Slot;
 import org.abchip.mimo.entity.impl.FrameImpl;
-import org.abchip.mimo.util.Lists;
-import org.abchip.mimo.util.Strings;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EAnnotation;
 import org.eclipse.emf.ecore.EClass;
@@ -71,6 +69,7 @@ public class EMFFrameClassAdapter<E extends Entity> extends FrameImpl<E> {
 		List<String> keys = new ArrayList<String>();
 
 		// load features
+		boolean hasToString = false;
 		for (EStructuralFeature structuralFeature : eClass.getEAllStructuralFeatures()) {
 
 			Slot slot = new EMFSlotAdapter(this, structuralFeature);
@@ -85,15 +84,21 @@ public class EMFFrameClassAdapter<E extends Entity> extends FrameImpl<E> {
 				}
 
 				if (relativeKey == null) {
-					Lists.qINSTANCE.addFirst(keys, slot.getName());
-					Lists.qINSTANCE.addFirst(this.getSlots(), slot);
+					MimoUtils.addFirst(keys, slot.getName());
+					MimoUtils.addFirst(this.getSlots(), slot);
 				} else {
-					Lists.qINSTANCE.addAfter(keys, relativeKey.getName(), slot.getName());
-					Lists.qINSTANCE.addAfter(this.getSlots(), relativeKey, slot);
+					MimoUtils.addAfter(keys, relativeKey.getName(), slot.getName());
+					MimoUtils.addAfter(this.getSlots(), relativeKey, slot);
 				}
 			} else
 				this.getSlots().add(slot);
+
+			if (slot.isToString())
+				hasToString = true;
 		}
+
+		if (hasToString)
+			eSet(EntityPackage.FRAME__HAS_TO_STRING, true);
 
 		this.getKeys().addAll(keys);
 
@@ -123,14 +128,19 @@ public class EMFFrameClassAdapter<E extends Entity> extends FrameImpl<E> {
 			return null;
 
 		EClass eAko = classes.get(0);
-		Frame<? super E> akoFrame = (Frame<? super E>) this.entities.get(eAko.getName());
-		if (akoFrame != null)
-			return akoFrame;
-		else {
-			akoFrame = new EMFFrameClassAdapter(this.entities, eAko);
-			this.entities.put(eAko.getName(), (E) akoFrame);
-			return akoFrame;
+		Frame<? super E> akoFrame = null;
+
+		if (this.entities != null) {
+			akoFrame = (Frame<? super E>) this.entities.get(eAko.getName());
+			if (akoFrame != null)
+				return akoFrame;
 		}
+
+		akoFrame = new EMFFrameClassAdapter(this.entities, eAko);
+		if (this.entities != null)
+			this.entities.put(eAko.getName(), (E) akoFrame);
+
+		return akoFrame;
 	}
 
 	@Override
@@ -187,7 +197,7 @@ public class EMFFrameClassAdapter<E extends Entity> extends FrameImpl<E> {
 			if (slotName.startsWith("is"))
 				methodName = slotName;
 			else
-				methodName = "get" + Strings.qINSTANCE.firstToUpper(slotName);
+				methodName = "get" + MimoUtils.firstToUpper(slotName);
 			Method method = object.getClass().getMethod(methodName, new Class[] {});
 			if (method != null)
 				value = method.invoke(object, new Object[] {});

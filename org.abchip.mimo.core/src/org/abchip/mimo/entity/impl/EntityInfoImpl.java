@@ -8,7 +8,6 @@
 package org.abchip.mimo.entity.impl;
 
 import java.util.Date;
-
 import org.abchip.mimo.entity.EntityInfo;
 import org.abchip.mimo.entity.EntityPackage;
 import org.eclipse.emf.common.notify.Notification;

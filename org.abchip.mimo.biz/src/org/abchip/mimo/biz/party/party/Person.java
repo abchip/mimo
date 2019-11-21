@@ -69,6 +69,7 @@ public interface Person extends Party {
 	 * @see #setBirthDate(Date)
 	 * @see org.abchip.mimo.biz.party.party.PartyPackage#getPerson_BirthDate()
 	 * @model annotation="mimo-ent-format type='date'"
+	 *        annotation="mimo-ent-slot toString='true'"
 	 * @generated
 	 */
 	Date getBirthDate();
@@ -225,6 +226,7 @@ public interface Person extends Party {
 	 * @see #setFirstName(String)
 	 * @see org.abchip.mimo.biz.party.party.PartyPackage#getPerson_FirstName()
 	 * @model annotation="mimo-ent-format type='name' length='100'"
+	 *        annotation="mimo-ent-slot toString='true'"
 	 * @generated
 	 */
 	String getFirstName();
@@ -303,6 +305,7 @@ public interface Person extends Party {
 	 * @see #setHeight(double)
 	 * @see org.abchip.mimo.biz.party.party.PartyPackage#getPerson_Height()
 	 * @model annotation="mimo-ent-format type='floating-point'"
+	 *        annotation="mimo-ent-slot toString='true'"
 	 * @generated
 	 */
 	double getHeight();
@@ -329,6 +332,7 @@ public interface Person extends Party {
 	 * @see #setLastName(String)
 	 * @see org.abchip.mimo.biz.party.party.PartyPackage#getPerson_LastName()
 	 * @model annotation="mimo-ent-format type='name' length='100'"
+	 *        annotation="mimo-ent-slot toString='true'"
 	 * @generated
 	 */
 	String getLastName();
@@ -433,6 +437,7 @@ public interface Person extends Party {
 	 * @see #setMiddleName(String)
 	 * @see org.abchip.mimo.biz.party.party.PartyPackage#getPerson_MiddleName()
 	 * @model annotation="mimo-ent-format type='name' length='100'"
+	 *        annotation="mimo-ent-slot toString='true'"
 	 * @generated
 	 */
 	String getMiddleName();

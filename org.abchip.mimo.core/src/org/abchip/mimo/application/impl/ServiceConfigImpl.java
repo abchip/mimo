@@ -10,7 +10,6 @@ package org.abchip.mimo.application.impl;
 
 import java.util.Collection;
 import java.util.List;
-
 import org.abchip.mimo.application.ApplicationPackage;
 import org.abchip.mimo.application.ServiceConfig;
 import org.abchip.mimo.entity.Entity;

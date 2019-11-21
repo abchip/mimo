@@ -19,6 +19,7 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
+import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.abchip.mimo.tester.TestObject;
 
@@ -37,6 +38,7 @@ import org.abchip.mimo.tester.TesterPackage;
  *   <li>{@link org.abchip.mimo.tester.impl.TestObjectImpl#getIntegerProperty <em>Integer Property</em>}</li>
  *   <li>{@link org.abchip.mimo.tester.impl.TestObjectImpl#getObjectReference <em>Object Reference</em>}</li>
  *   <li>{@link org.abchip.mimo.tester.impl.TestObjectImpl#getObjectReferences <em>Object References</em>}</li>
+ *   <li>{@link org.abchip.mimo.tester.impl.TestObjectImpl#getValues <em>Values</em>}</li>
  * </ul>
  *
  * @generated
@@ -126,6 +128,16 @@ public class TestObjectImpl extends EntityIdentifiableImpl implements TestObject
 	 * @ordered
 	 */
 	protected EList<TestObject> objectReferences;
+
+	/**
+	 * The cached value of the '{@link #getValues() <em>Values</em>}' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getValues()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<String> values;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -274,6 +286,19 @@ public class TestObjectImpl extends EntityIdentifiableImpl implements TestObject
 	 * @generated
 	 */
 	@Override
+	public List<String> getValues() {
+		if (values == null) {
+			values = new EDataTypeUniqueEList<String>(String.class, this, TesterPackage.TEST_OBJECT__VALUES);
+		}
+		return values;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case TesterPackage.TEST_OBJECT__NAME:
@@ -287,6 +312,8 @@ public class TestObjectImpl extends EntityIdentifiableImpl implements TestObject
 				return basicGetObjectReference();
 			case TesterPackage.TEST_OBJECT__OBJECT_REFERENCES:
 				return getObjectReferences();
+			case TesterPackage.TEST_OBJECT__VALUES:
+				return getValues();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -316,6 +343,10 @@ public class TestObjectImpl extends EntityIdentifiableImpl implements TestObject
 				getObjectReferences().clear();
 				getObjectReferences().addAll((Collection<? extends TestObject>)newValue);
 				return;
+			case TesterPackage.TEST_OBJECT__VALUES:
+				getValues().clear();
+				getValues().addAll((Collection<? extends String>)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -343,6 +374,9 @@ public class TestObjectImpl extends EntityIdentifiableImpl implements TestObject
 			case TesterPackage.TEST_OBJECT__OBJECT_REFERENCES:
 				getObjectReferences().clear();
 				return;
+			case TesterPackage.TEST_OBJECT__VALUES:
+				getValues().clear();
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -365,6 +399,8 @@ public class TestObjectImpl extends EntityIdentifiableImpl implements TestObject
 				return objectReference != null;
 			case TesterPackage.TEST_OBJECT__OBJECT_REFERENCES:
 				return objectReferences != null && !objectReferences.isEmpty();
+			case TesterPackage.TEST_OBJECT__VALUES:
+				return values != null && !values.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
@@ -385,6 +421,8 @@ public class TestObjectImpl extends EntityIdentifiableImpl implements TestObject
 		result.append(stringProperty);
 		result.append(", integerProperty: ");
 		result.append(integerProperty);
+		result.append(", values: ");
+		result.append(values);
 		result.append(')');
 		return result.toString();
 	}

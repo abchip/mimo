@@ -17,14 +17,11 @@ import org.abchip.mimo.language.LanguagePackage;
 import org.abchip.mimo.language.LanguagePlanet;
 import org.abchip.mimo.language.LanguageScope;
 import org.abchip.mimo.language.LanguageType;
-import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.util.EObjectContainmentEList;
-import org.eclipse.emf.ecore.util.EObjectResolvingEList;
+import org.eclipse.emf.ecore.util.BasicInternalEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
@@ -196,10 +193,7 @@ public class LanguageImpl extends EntityIdentifiableImpl implements Language {
 	 */
 	@Override
 	public void setIso_639_1(String newIso_639_1) {
-		String oldIso_639_1 = iso_639_1;
 		iso_639_1 = newIso_639_1;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, LanguagePackage.LANGUAGE__ISO_639_1, oldIso_639_1, iso_639_1));
 	}
 
 	/**
@@ -219,10 +213,7 @@ public class LanguageImpl extends EntityIdentifiableImpl implements Language {
 	 */
 	@Override
 	public void setName(String newName) {
-		String oldName = name;
 		name = newName;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, LanguagePackage.LANGUAGE__NAME, oldName, name));
 	}
 
 	/**
@@ -242,10 +233,7 @@ public class LanguageImpl extends EntityIdentifiableImpl implements Language {
 	 */
 	@Override
 	public void setScope(LanguageScope newScope) {
-		LanguageScope oldScope = scope;
 		scope = newScope == null ? SCOPE_EDEFAULT : newScope;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, LanguagePackage.LANGUAGE__SCOPE, oldScope, scope));
 	}
 
 	/**
@@ -265,10 +253,7 @@ public class LanguageImpl extends EntityIdentifiableImpl implements Language {
 	 */
 	@Override
 	public void setText(String newText) {
-		String oldText = text;
 		text = newText;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, LanguagePackage.LANGUAGE__TEXT, oldText, text));
 	}
 
 	/**
@@ -288,10 +273,7 @@ public class LanguageImpl extends EntityIdentifiableImpl implements Language {
 	 */
 	@Override
 	public void setType(LanguageType newType) {
-		LanguageType oldType = type;
 		type = newType == null ? TYPE_EDEFAULT : newType;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, LanguagePackage.LANGUAGE__TYPE, oldType, type));
 	}
 
 	/**
@@ -302,7 +284,7 @@ public class LanguageImpl extends EntityIdentifiableImpl implements Language {
 	@Override
 	public List<LanguagePlanet> getPlanets() {
 		if (planets == null) {
-			planets = new EObjectResolvingEList<LanguagePlanet>(LanguagePlanet.class, this, LanguagePackage.LANGUAGE__PLANETS);
+			planets = new BasicInternalEList<LanguagePlanet>(LanguagePlanet.class);
 		}
 		return planets;
 	}
@@ -315,7 +297,7 @@ public class LanguageImpl extends EntityIdentifiableImpl implements Language {
 	@Override
 	public List<LanguagePlanet> getPlanetsCont() {
 		if (planetsCont == null) {
-			planetsCont = new EObjectContainmentEList.Resolving<LanguagePlanet>(LanguagePlanet.class, this, LanguagePackage.LANGUAGE__PLANETS_CONT);
+			planetsCont = new BasicInternalEList<LanguagePlanet>(LanguagePlanet.class);
 		}
 		return planetsCont;
 	}

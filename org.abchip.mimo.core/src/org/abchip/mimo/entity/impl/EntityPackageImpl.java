@@ -592,7 +592,7 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getFrame_Name() {
+	public EAttribute getFrame_HasToString() {
 		return (EAttribute)frameEClass.getEStructuralFeatures().get(4);
 	}
 
@@ -602,8 +602,18 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 	 * @generated
 	 */
 	@Override
+	public EAttribute getFrame_Name() {
+		return (EAttribute)frameEClass.getEStructuralFeatures().get(5);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EReference getFrame_Slots() {
-		return (EReference)frameEClass.getEStructuralFeatures().get(5);
+		return (EReference)frameEClass.getEStructuralFeatures().get(6);
 	}
 
 	/**
@@ -613,16 +623,6 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 	 */
 	@Override
 	public EAttribute getFrame_SlotsNumber() {
-		return (EAttribute)frameEClass.getEStructuralFeatures().get(6);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EAttribute getFrame_RoutesNumber() {
 		return (EAttribute)frameEClass.getEStructuralFeatures().get(7);
 	}
 
@@ -632,7 +632,7 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getFrame_SuperNames() {
+	public EAttribute getFrame_RoutesNumber() {
 		return (EAttribute)frameEClass.getEStructuralFeatures().get(8);
 	}
 
@@ -642,8 +642,18 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getFrame_TextFormula() {
+	public EAttribute getFrame_SuperNames() {
 		return (EAttribute)frameEClass.getEStructuralFeatures().get(9);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getFrame_TextFormula() {
+		return (EAttribute)frameEClass.getEStructuralFeatures().get(10);
 	}
 
 	/**
@@ -762,6 +772,16 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 	 * @generated
 	 */
 	@Override
+	public EAttribute getSlot_ToString() {
+		return (EAttribute)slotEClass.getEStructuralFeatures().get(10);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EEnum getSerializationType() {
 		return serializationTypeEEnum;
 	}
@@ -839,6 +859,7 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 		createEAttribute(frameEClass, FRAME__AUTO_INCREMENT);
 		createEAttribute(frameEClass, FRAME__ENUM);
 		createEAttribute(frameEClass, FRAME__KEYS);
+		createEAttribute(frameEClass, FRAME__HAS_TO_STRING);
 		createEAttribute(frameEClass, FRAME__NAME);
 		createEReference(frameEClass, FRAME__SLOTS);
 		createEAttribute(frameEClass, FRAME__SLOTS_NUMBER);
@@ -857,6 +878,7 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 		createEAttribute(slotEClass, SLOT__NAME);
 		createEAttribute(slotEClass, SLOT__ROUTE);
 		createEAttribute(slotEClass, SLOT__TEXT);
+		createEAttribute(slotEClass, SLOT__TO_STRING);
 
 		// Create enums
 		serializationTypeEEnum = createEEnum(SERIALIZATION_TYPE);
@@ -1025,6 +1047,7 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 		initEAttribute(getFrame_AutoIncrement(), ecorePackage.getEBoolean(), "autoIncrement", null, 0, 1, Frame.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getFrame_Enum(), ecorePackage.getEBoolean(), "enum", null, 0, 1, Frame.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getFrame_Keys(), ecorePackage.getEString(), "keys", null, 0, -1, Frame.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getFrame_HasToString(), ecorePackage.getEBoolean(), "hasToString", null, 0, 1, Frame.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getFrame_Name(), ecorePackage.getEString(), "name", null, 1, 1, Frame.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getFrame_Slots(), this.getSlot(), null, "slots", null, 0, -1, Frame.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getFrame_SlotsNumber(), ecorePackage.getEInt(), "slotsNumber", null, 0, 1, Frame.class, !IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1081,6 +1104,7 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 		initEAttribute(getSlot_Name(), ecorePackage.getEString(), "name", null, 1, 1, Slot.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getSlot_Route(), ecorePackage.getEBoolean(), "route", null, 0, 1, Slot.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getSlot_Text(), ecorePackage.getEString(), "text", null, 1, 1, Slot.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getSlot_ToString(), ecorePackage.getEBoolean(), "toString", null, 0, 1, Slot.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		op = addEOperation(slotEClass, this.getEntity(), "getValue", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEString(), "nsPrefix", 1, 1, IS_UNIQUE, IS_ORDERED);

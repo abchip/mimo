@@ -16,12 +16,12 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
+import org.abchip.mimo.MimoUtils;
 import org.abchip.mimo.context.Context;
 import org.abchip.mimo.entity.EntityIdentifiable;
 import org.abchip.mimo.entity.EntityIterator;
 import org.abchip.mimo.entity.Frame;
 import org.abchip.mimo.resource.impl.ResourceReaderImpl;
-import org.abchip.mimo.util.Lists;
 
 public class ResourceHelper {
 
@@ -228,7 +228,7 @@ public class ResourceHelper {
 
 			List<E> values = new ArrayList<E>(entities.values());
 			if (limit > 0)
-				values = Lists.qINSTANCE.slice(new ArrayList<E>(values), 0, limit);
+				values = MimoUtils.slice(new ArrayList<E>(values), 0, limit);
 
 			Collections.sort(values, new Comparator<E>() {
 

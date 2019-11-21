@@ -30,9 +30,12 @@ public class EMFFrameHelper {
 
 	private static Map<String, Frame<?>> publicFrames = null;
 
+	@SuppressWarnings("unchecked")
 	public static Map<String, Frame<?>> getFrames(Resource<Frame<?>> frameReader) {
 
 		if (publicFrames == null) {
+			if(frameReader == null)
+				return Collections.EMPTY_MAP;
 			synchronized (EMFFrameHelper.class) {
 				if (publicFrames == null) {
 					loadFrames(frameReader);

@@ -183,5 +183,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="objectReference" eType="#//TestObject"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="objectReferences" upperBound="-1"
         eType="#//TestObject"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="values" upperBound="-1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
 </ecore:EPackage>

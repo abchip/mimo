@@ -17,7 +17,6 @@ import org.abchip.mimo.entity.EntityPackage;
 import org.abchip.mimo.entity.Frame;
 import org.abchip.mimo.entity.Slot;
 import org.abchip.mimo.entity.impl.SlotImpl;
-import org.abchip.mimo.util.Strings;
 import org.eclipse.emf.ecore.EAnnotation;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
@@ -61,6 +60,8 @@ public class EMFSlotAdapter extends SlotImpl {
 					eSet(EntityPackage.SLOT__DERIVED, true);
 				else if (key.equals("key"))
 					eSet(EntityPackage.SLOT__KEY, true);
+				else if (key.equals("toString"))
+					eSet(EntityPackage.SLOT__TO_STRING, true);				
 				else if (key.equals("group"))
 					eSet(EntityPackage.SLOT__GROUP, eAnnotation.getDetails().get(key));
 			}
@@ -123,7 +124,7 @@ public class EMFSlotAdapter extends SlotImpl {
 		}
 
 		if (text == null)
-			text = Strings.qINSTANCE.firstToUpper(this.getName());
+			text = MimoUtils.firstToUpper(this.getName());
 
 		if (text != null)
 			eSet(EntityPackage.SLOT__TEXT, text);

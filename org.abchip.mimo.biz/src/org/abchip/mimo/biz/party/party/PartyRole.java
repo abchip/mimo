@@ -39,6 +39,7 @@ public interface PartyRole extends BizEntity {
 	 * @see #setRoleTypeId(RoleType)
 	 * @see org.abchip.mimo.biz.party.party.PartyPackage#getPartyRole_RoleTypeId()
 	 * @model keys="roleTypeId"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	RoleType getRoleTypeId();
@@ -65,6 +66,7 @@ public interface PartyRole extends BizEntity {
 	 * @see #setPartyId(Party)
 	 * @see org.abchip.mimo.biz.party.party.PartyPackage#getPartyRole_PartyId()
 	 * @model keys="partyId"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	Party getPartyId();

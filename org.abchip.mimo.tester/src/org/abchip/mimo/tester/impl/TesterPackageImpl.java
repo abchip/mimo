@@ -518,6 +518,16 @@ public class TesterPackageImpl extends EPackageImpl implements TesterPackage {
 	 * @generated
 	 */
 	@Override
+	public EAttribute getTestObject_Values() {
+		return (EAttribute)testObjectEClass.getEStructuralFeatures().get(5);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EEnum getAssertionState() {
 		return assertionStateEEnum;
 	}
@@ -603,6 +613,7 @@ public class TesterPackageImpl extends EPackageImpl implements TesterPackage {
 		createEAttribute(testObjectEClass, TEST_OBJECT__INTEGER_PROPERTY);
 		createEReference(testObjectEClass, TEST_OBJECT__OBJECT_REFERENCE);
 		createEReference(testObjectEClass, TEST_OBJECT__OBJECT_REFERENCES);
+		createEAttribute(testObjectEClass, TEST_OBJECT__VALUES);
 
 		// Create enums
 		assertionStateEEnum = createEEnum(ASSERTION_STATE);
@@ -821,6 +832,7 @@ public class TesterPackageImpl extends EPackageImpl implements TesterPackage {
 		initEAttribute(getTestObject_IntegerProperty(), ecorePackage.getEInt(), "integerProperty", null, 0, 1, TestObject.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getTestObject_ObjectReference(), this.getTestObject(), null, "objectReference", null, 0, 1, TestObject.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getTestObject_ObjectReferences(), this.getTestObject(), null, "objectReferences", null, 0, -1, TestObject.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getTestObject_Values(), ecorePackage.getEString(), "values", null, 0, -1, TestObject.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Initialize enums and add enum literals
 		initEEnum(assertionStateEEnum, AssertionState.class, "AssertionState");

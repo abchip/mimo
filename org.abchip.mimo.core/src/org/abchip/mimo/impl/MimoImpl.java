@@ -11,7 +11,6 @@ import org.abchip.mimo.Mimo;
 import org.abchip.mimo.MimoPackage;
 
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 /**

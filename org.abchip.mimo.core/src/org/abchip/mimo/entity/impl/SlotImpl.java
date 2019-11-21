@@ -37,6 +37,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *   <li>{@link org.abchip.mimo.entity.impl.SlotImpl#getName <em>Name</em>}</li>
  *   <li>{@link org.abchip.mimo.entity.impl.SlotImpl#isRoute <em>Route</em>}</li>
  *   <li>{@link org.abchip.mimo.entity.impl.SlotImpl#getText <em>Text</em>}</li>
+ *   <li>{@link org.abchip.mimo.entity.impl.SlotImpl#isToString <em>To String</em>}</li>
  * </ul>
  *
  * @generated
@@ -205,6 +206,24 @@ public abstract class SlotImpl extends EntityIdentifiableImpl implements Slot {
 	 */
 	protected String text = TEXT_EDEFAULT;
 	/**
+	 * The default value of the '{@link #isToString() <em>To String</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isToString()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final boolean TO_STRING_EDEFAULT = false;
+	/**
+	 * The cached value of the '{@link #isToString() <em>To String</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isToString()
+	 * @generated
+	 * @ordered
+	 */
+	protected boolean toString = TO_STRING_EDEFAULT;
+	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
@@ -294,6 +313,29 @@ public abstract class SlotImpl extends EntityIdentifiableImpl implements Slot {
 		text = newText;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, EntityPackage.SLOT__TEXT, oldText, text));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public boolean isToString() {
+		return toString;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setToString(boolean newToString) {
+		boolean oldToString = toString;
+		toString = newToString;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, EntityPackage.SLOT__TO_STRING, oldToString, toString));
 	}
 
 	/**
@@ -665,6 +707,8 @@ public abstract class SlotImpl extends EntityIdentifiableImpl implements Slot {
 				return isRoute();
 			case EntityPackage.SLOT__TEXT:
 				return getText();
+			case EntityPackage.SLOT__TO_STRING:
+				return isToString();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -706,6 +750,9 @@ public abstract class SlotImpl extends EntityIdentifiableImpl implements Slot {
 				return;
 			case EntityPackage.SLOT__TEXT:
 				setText((String)newValue);
+				return;
+			case EntityPackage.SLOT__TO_STRING:
+				setToString((Boolean)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -749,6 +796,9 @@ public abstract class SlotImpl extends EntityIdentifiableImpl implements Slot {
 			case EntityPackage.SLOT__TEXT:
 				setText(TEXT_EDEFAULT);
 				return;
+			case EntityPackage.SLOT__TO_STRING:
+				setToString(TO_STRING_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -781,6 +831,8 @@ public abstract class SlotImpl extends EntityIdentifiableImpl implements Slot {
 				return route != ROUTE_EDEFAULT;
 			case EntityPackage.SLOT__TEXT:
 				return TEXT_EDEFAULT == null ? text != null : !TEXT_EDEFAULT.equals(text);
+			case EntityPackage.SLOT__TO_STRING:
+				return toString != TO_STRING_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -811,6 +863,8 @@ public abstract class SlotImpl extends EntityIdentifiableImpl implements Slot {
 		result.append(route);
 		result.append(", text: ");
 		result.append(text);
+		result.append(", toString: ");
+		result.append(toString);
 		result.append(')');
 		return result.toString();
 	}

@@ -22,6 +22,7 @@ import java.util.List;
  *   <li>{@link org.abchip.mimo.entity.Frame#isAutoIncrement <em>Auto Increment</em>}</li>
  *   <li>{@link org.abchip.mimo.entity.Frame#isEnum <em>Enum</em>}</li>
  *   <li>{@link org.abchip.mimo.entity.Frame#getKeys <em>Keys</em>}</li>
+ *   <li>{@link org.abchip.mimo.entity.Frame#isHasToString <em>Has To String</em>}</li>
  *   <li>{@link org.abchip.mimo.entity.Frame#getName <em>Name</em>}</li>
  *   <li>{@link org.abchip.mimo.entity.Frame#getSlots <em>Slots</em>}</li>
  *   <li>{@link org.abchip.mimo.entity.Frame#getSlotsNumber <em>Slots Number</em>}</li>
@@ -98,6 +99,32 @@ public interface Frame<E extends Entity> extends EntityIdentifiable {
 	 * @generated
 	 */
 	List<String> getKeys();
+
+	/**
+	 * Returns the value of the '<em><b>Has To String</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Has To String</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Has To String</em>' attribute.
+	 * @see #setHasToString(boolean)
+	 * @see org.abchip.mimo.entity.EntityPackage#getFrame_HasToString()
+	 * @model
+	 * @generated
+	 */
+	boolean isHasToString();
+
+	/**
+	 * Sets the value of the '{@link org.abchip.mimo.entity.Frame#isHasToString <em>Has To String</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Has To String</em>' attribute.
+	 * @see #isHasToString()
+	 * @generated
+	 */
+	void setHasToString(boolean value);
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->

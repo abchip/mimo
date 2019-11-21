@@ -10,7 +10,6 @@ package org.abchip.mimo.resource.impl;
 
 import java.util.ArrayList;
 import java.util.List;
-
 import org.abchip.mimo.entity.EntityIdentifiable;
 import org.abchip.mimo.resource.ResourceEvent;
 import org.abchip.mimo.resource.ResourceListener;

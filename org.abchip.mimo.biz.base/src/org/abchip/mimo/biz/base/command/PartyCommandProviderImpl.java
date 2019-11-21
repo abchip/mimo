@@ -39,6 +39,7 @@ public class PartyCommandProviderImpl extends BaseCommandProviderImpl {
 			System.out.println(party.getURI());
 			System.out.println(party.getPartyTypeId().getID());
 			System.out.println(party.getCreatedByUserLogin().getPartyId().getID());
+			System.out.println(party.getPartyRoles());
 		}
 	}
 

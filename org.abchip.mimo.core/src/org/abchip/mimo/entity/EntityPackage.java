@@ -473,13 +473,22 @@ public interface EntityPackage extends EPackage {
 	int FRAME__KEYS = ENTITY_IDENTIFIABLE_FEATURE_COUNT + 3;
 
 	/**
+	 * The feature id for the '<em><b>Has To String</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FRAME__HAS_TO_STRING = ENTITY_IDENTIFIABLE_FEATURE_COUNT + 4;
+
+	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int FRAME__NAME = ENTITY_IDENTIFIABLE_FEATURE_COUNT + 4;
+	int FRAME__NAME = ENTITY_IDENTIFIABLE_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Slots</b></em>' containment reference list.
@@ -488,7 +497,7 @@ public interface EntityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FRAME__SLOTS = ENTITY_IDENTIFIABLE_FEATURE_COUNT + 5;
+	int FRAME__SLOTS = ENTITY_IDENTIFIABLE_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Slots Number</b></em>' attribute.
@@ -497,7 +506,7 @@ public interface EntityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FRAME__SLOTS_NUMBER = ENTITY_IDENTIFIABLE_FEATURE_COUNT + 6;
+	int FRAME__SLOTS_NUMBER = ENTITY_IDENTIFIABLE_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>Routes Number</b></em>' attribute.
@@ -506,7 +515,7 @@ public interface EntityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FRAME__ROUTES_NUMBER = ENTITY_IDENTIFIABLE_FEATURE_COUNT + 7;
+	int FRAME__ROUTES_NUMBER = ENTITY_IDENTIFIABLE_FEATURE_COUNT + 8;
 
 	/**
 	 * The feature id for the '<em><b>Super Names</b></em>' attribute list.
@@ -515,7 +524,7 @@ public interface EntityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FRAME__SUPER_NAMES = ENTITY_IDENTIFIABLE_FEATURE_COUNT + 8;
+	int FRAME__SUPER_NAMES = ENTITY_IDENTIFIABLE_FEATURE_COUNT + 9;
 
 	/**
 	 * The feature id for the '<em><b>Text Formula</b></em>' attribute.
@@ -524,7 +533,7 @@ public interface EntityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FRAME__TEXT_FORMULA = ENTITY_IDENTIFIABLE_FEATURE_COUNT + 9;
+	int FRAME__TEXT_FORMULA = ENTITY_IDENTIFIABLE_FEATURE_COUNT + 10;
 
 	/**
 	 * The number of structural features of the '<em>Frame</em>' class.
@@ -533,7 +542,7 @@ public interface EntityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FRAME_FEATURE_COUNT = ENTITY_IDENTIFIABLE_FEATURE_COUNT + 10;
+	int FRAME_FEATURE_COUNT = ENTITY_IDENTIFIABLE_FEATURE_COUNT + 11;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.entity.impl.SlotImpl <em>Slot</em>}' class.
@@ -636,13 +645,22 @@ public interface EntityPackage extends EPackage {
 	int SLOT__TEXT = ENTITY_IDENTIFIABLE_FEATURE_COUNT + 9;
 
 	/**
+	 * The feature id for the '<em><b>To String</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SLOT__TO_STRING = ENTITY_IDENTIFIABLE_FEATURE_COUNT + 10;
+
+	/**
 	 * The number of structural features of the '<em>Slot</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SLOT_FEATURE_COUNT = ENTITY_IDENTIFIABLE_FEATURE_COUNT + 10;
+	int SLOT_FEATURE_COUNT = ENTITY_IDENTIFIABLE_FEATURE_COUNT + 11;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.entity.SerializationType <em>Serialization Type</em>}' enum.
@@ -995,6 +1013,17 @@ public interface EntityPackage extends EPackage {
 	EAttribute getFrame_Keys();
 
 	/**
+	 * Returns the meta object for the attribute '{@link org.abchip.mimo.entity.Frame#isHasToString <em>Has To String</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Has To String</em>'.
+	 * @see org.abchip.mimo.entity.Frame#isHasToString()
+	 * @see #getFrame()
+	 * @generated
+	 */
+	EAttribute getFrame_HasToString();
+
+	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.entity.Frame#getName <em>Name</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1179,6 +1208,17 @@ public interface EntityPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getSlot_Text();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.abchip.mimo.entity.Slot#isToString <em>To String</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>To String</em>'.
+	 * @see org.abchip.mimo.entity.Slot#isToString()
+	 * @see #getSlot()
+	 * @generated
+	 */
+	EAttribute getSlot_ToString();
 
 	/**
 	 * Returns the meta object for enum '{@link org.abchip.mimo.entity.SerializationType <em>Serialization Type</em>}'.
@@ -1495,6 +1535,14 @@ public interface EntityPackage extends EPackage {
 		EAttribute FRAME__KEYS = eINSTANCE.getFrame_Keys();
 
 		/**
+		 * The meta object literal for the '<em><b>Has To String</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute FRAME__HAS_TO_STRING = eINSTANCE.getFrame_HasToString();
+
+		/**
 		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1631,6 +1679,14 @@ public interface EntityPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute SLOT__TEXT = eINSTANCE.getSlot_Text();
+
+		/**
+		 * The meta object literal for the '<em><b>To String</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute SLOT__TO_STRING = eINSTANCE.getSlot_ToString();
 
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.entity.SerializationType <em>Serialization Type</em>}' enum.

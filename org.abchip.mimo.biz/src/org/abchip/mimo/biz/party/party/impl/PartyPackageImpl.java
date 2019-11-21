@@ -6734,6 +6734,18 @@ public class PartyPackageImpl extends EPackageImpl implements PartyPackage {
 			   "key", "true"
 		   });
 		addAnnotation
+		  (getPartyRole_PartyId(),
+		   source,
+		   new String[] {
+			   "key", "true"
+		   });
+		addAnnotation
+		  (getPartyRole_RoleTypeId(),
+		   source,
+		   new String[] {
+			   "key", "true"
+		   });
+		addAnnotation
 		  (getPartyStatus_StatusDate(),
 		   source,
 		   new String[] {
@@ -6768,6 +6780,36 @@ public class PartyPackageImpl extends EPackageImpl implements PartyPackage {
 		   source,
 		   new String[] {
 			   "key", "true"
+		   });
+		addAnnotation
+		  (getPerson_BirthDate(),
+		   source,
+		   new String[] {
+			   "toString", "true"
+		   });
+		addAnnotation
+		  (getPerson_FirstName(),
+		   source,
+		   new String[] {
+			   "toString", "true"
+		   });
+		addAnnotation
+		  (getPerson_Height(),
+		   source,
+		   new String[] {
+			   "toString", "true"
+		   });
+		addAnnotation
+		  (getPerson_LastName(),
+		   source,
+		   new String[] {
+			   "toString", "true"
+		   });
+		addAnnotation
+		  (getPerson_MiddleName(),
+		   source,
+		   new String[] {
+			   "toString", "true"
 		   });
 		addAnnotation
 		  (getPriorityType_PriorityTypeId(),

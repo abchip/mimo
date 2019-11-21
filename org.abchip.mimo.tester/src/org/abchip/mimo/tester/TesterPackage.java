@@ -510,13 +510,22 @@ public interface TesterPackage extends EPackage {
 	int TEST_OBJECT__OBJECT_REFERENCES = EntityPackage.ENTITY_IDENTIFIABLE_FEATURE_COUNT + 4;
 
 	/**
+	 * The feature id for the '<em><b>Values</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TEST_OBJECT__VALUES = EntityPackage.ENTITY_IDENTIFIABLE_FEATURE_COUNT + 5;
+
+	/**
 	 * The number of structural features of the '<em>Test Object</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TEST_OBJECT_FEATURE_COUNT = EntityPackage.ENTITY_IDENTIFIABLE_FEATURE_COUNT + 5;
+	int TEST_OBJECT_FEATURE_COUNT = EntityPackage.ENTITY_IDENTIFIABLE_FEATURE_COUNT + 6;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.tester.AssertionState <em>Assertion State</em>}' enum.
@@ -845,6 +854,17 @@ public interface TesterPackage extends EPackage {
 	EReference getTestObject_ObjectReferences();
 
 	/**
+	 * Returns the meta object for the attribute list '{@link org.abchip.mimo.tester.TestObject#getValues <em>Values</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute list '<em>Values</em>'.
+	 * @see org.abchip.mimo.tester.TestObject#getValues()
+	 * @see #getTestObject()
+	 * @generated
+	 */
+	EAttribute getTestObject_Values();
+
+	/**
 	 * Returns the meta object for enum '{@link org.abchip.mimo.tester.AssertionState <em>Assertion State</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1145,6 +1165,14 @@ public interface TesterPackage extends EPackage {
 		 * @generated
 		 */
 		EReference TEST_OBJECT__OBJECT_REFERENCES = eINSTANCE.getTestObject_ObjectReferences();
+
+		/**
+		 * The meta object literal for the '<em><b>Values</b></em>' attribute list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute TEST_OBJECT__VALUES = eINSTANCE.getTestObject_Values();
 
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.tester.AssertionState <em>Assertion State</em>}' enum.

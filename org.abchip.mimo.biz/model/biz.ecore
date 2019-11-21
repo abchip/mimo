@@ -31406,9 +31406,17 @@
       </eClassifiers>
       <eClassifiers xsi:type="ecore:EClass" name="PartyRole" eSuperTypes="#//BizEntity">
         <eStructuralFeatures xsi:type="ecore:EReference" name="partyId" eType="#//party/party/Party"
-            eKeys="#//party/party/Party/partyId"/>
+            eKeys="#//party/party/Party/partyId">
+          <eAnnotations source="mimo-ent-slot">
+            <details key="key" value="true"/>
+          </eAnnotations>
+        </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="roleTypeId" eType="#//party/party/RoleType"
-            eKeys="#//party/party/RoleType/roleTypeId"/>
+            eKeys="#//party/party/RoleType/roleTypeId">
+          <eAnnotations source="mimo-ent-slot">
+            <details key="key" value="true"/>
+          </eAnnotations>
+        </eStructuralFeatures>
       </eClassifiers>
       <eClassifiers xsi:type="ecore:EClass" name="PartyStatus" eSuperTypes="#//BizEntity">
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="statusDate" lowerBound="1"
@@ -31530,6 +31538,9 @@
           <eAnnotations source="mimo-ent-format">
             <details key="type" value="date"/>
           </eAnnotations>
+          <eAnnotations source="mimo-ent-slot">
+            <details key="toString" value="true"/>
+          </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="cardId" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
           <eAnnotations source="mimo-ent-format">
@@ -31559,6 +31570,9 @@
             <details key="type" value="name"/>
             <details key="length" value="100"/>
           </eAnnotations>
+          <eAnnotations source="mimo-ent-slot">
+            <details key="toString" value="true"/>
+          </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="firstNameLocal" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
           <eAnnotations source="mimo-ent-format">
@@ -31576,11 +31590,17 @@
           <eAnnotations source="mimo-ent-format">
             <details key="type" value="floating-point"/>
           </eAnnotations>
+          <eAnnotations source="mimo-ent-slot">
+            <details key="toString" value="true"/>
+          </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="lastName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
           <eAnnotations source="mimo-ent-format">
             <details key="type" value="name"/>
             <details key="length" value="100"/>
+          </eAnnotations>
+          <eAnnotations source="mimo-ent-slot">
+            <details key="toString" value="true"/>
           </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="lastNameLocal" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
@@ -31605,6 +31625,9 @@
           <eAnnotations source="mimo-ent-format">
             <details key="type" value="name"/>
             <details key="length" value="100"/>
+          </eAnnotations>
+          <eAnnotations source="mimo-ent-slot">
+            <details key="toString" value="true"/>
           </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="middleNameLocal" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
