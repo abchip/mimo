@@ -663,6 +663,16 @@ public interface EntityPackage extends EPackage {
 	int SLOT_FEATURE_COUNT = ENTITY_IDENTIFIABLE_FEATURE_COUNT + 11;
 
 	/**
+	 * The meta object id for the '{@link org.abchip.mimo.entity.EntityState <em>State</em>}' enum.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.abchip.mimo.entity.EntityState
+	 * @see org.abchip.mimo.entity.impl.EntityPackageImpl#getEntityState()
+	 * @generated
+	 */
+	int ENTITY_STATE = 14;
+
+	/**
 	 * The meta object id for the '{@link org.abchip.mimo.entity.SerializationType <em>Serialization Type</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -670,7 +680,7 @@ public interface EntityPackage extends EPackage {
 	 * @see org.abchip.mimo.entity.impl.EntityPackageImpl#getSerializationType()
 	 * @generated
 	 */
-	int SERIALIZATION_TYPE = 14;
+	int SERIALIZATION_TYPE = 15;
 
 
 	/**
@@ -1221,6 +1231,16 @@ public interface EntityPackage extends EPackage {
 	EAttribute getSlot_ToString();
 
 	/**
+	 * Returns the meta object for enum '{@link org.abchip.mimo.entity.EntityState <em>State</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for enum '<em>State</em>'.
+	 * @see org.abchip.mimo.entity.EntityState
+	 * @generated
+	 */
+	EEnum getEntityState();
+
+	/**
 	 * Returns the meta object for enum '{@link org.abchip.mimo.entity.SerializationType <em>Serialization Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1687,6 +1707,16 @@ public interface EntityPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute SLOT__TO_STRING = eINSTANCE.getSlot_ToString();
+
+		/**
+		 * The meta object literal for the '{@link org.abchip.mimo.entity.EntityState <em>State</em>}' enum.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.abchip.mimo.entity.EntityState
+		 * @see org.abchip.mimo.entity.impl.EntityPackageImpl#getEntityState()
+		 * @generated
+		 */
+		EEnum ENTITY_STATE = eINSTANCE.getEntityState();
 
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.entity.SerializationType <em>Serialization Type</em>}' enum.

@@ -79,6 +79,8 @@ public class EntityFactoryImpl extends EFactoryImpl implements EntityFactory {
 	@Override
 	public Object createFromString(EDataType eDataType, String initialValue) {
 		switch (eDataType.getClassifierID()) {
+			case EntityPackage.ENTITY_STATE:
+				return createEntityStateFromString(eDataType, initialValue);
 			case EntityPackage.SERIALIZATION_TYPE:
 				return createSerializationTypeFromString(eDataType, initialValue);
 			default:
@@ -94,6 +96,8 @@ public class EntityFactoryImpl extends EFactoryImpl implements EntityFactory {
 	@Override
 	public String convertToString(EDataType eDataType, Object instanceValue) {
 		switch (eDataType.getClassifierID()) {
+			case EntityPackage.ENTITY_STATE:
+				return convertEntityStateToString(eDataType, instanceValue);
 			case EntityPackage.SERIALIZATION_TYPE:
 				return convertSerializationTypeToString(eDataType, instanceValue);
 			default:
@@ -143,6 +147,26 @@ public class EntityFactoryImpl extends EFactoryImpl implements EntityFactory {
 	public <T extends EntityType<?>> EntityTyped<T> createEntityTyped() {
 		EntityTypedImpl<T> entityTyped = new EntityTypedImpl<T>();
 		return entityTyped;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EntityState createEntityStateFromString(EDataType eDataType, String initialValue) {
+		EntityState result = EntityState.get(initialValue);
+		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertEntityStateToString(EDataType eDataType, Object instanceValue) {
+		return instanceValue == null ? null : instanceValue.toString();
 	}
 
 	/**

@@ -40,8 +40,9 @@ public interface EntityIdentifiable extends Entity {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @model kind="operation" required="true"
+	 *        annotation="mimo-ent-slot"
 	 * @generated
 	 */
-	boolean isProxy();
+	EntityState getState();
 
 } // EntityIdentifiable

@@ -197,6 +197,8 @@ public class EMFFrameClassAdapter<E extends Entity> extends FrameImpl<E> {
 			String methodName = null;
 			if (slotName.startsWith("is"))
 				methodName = slotName;
+			else if (slotName.startsWith("get"))
+				methodName = slotName;
 			else
 				methodName = "get" + MimoUtils.firstToUpper(slotName);
 			Method method = object.getClass().getMethod(methodName, new Class[] {});
@@ -225,11 +227,7 @@ public class EMFFrameClassAdapter<E extends Entity> extends FrameImpl<E> {
 		if (eFeature instanceof EReference) {
 			if (value instanceof EntityIdentifiable) {
 				EntityIdentifiable entityIdentifiable = (EntityIdentifiable) value;
-				if (entityIdentifiable.isProxy()) {
-					eObject.eSet(eFeature, value);
-				} else {
-					eObject.eSet(eFeature, entityIdentifiable);
-				}
+				eObject.eSet(eFeature, entityIdentifiable);
 			} else {
 				EReference eReference = (EReference) eFeature;
 				EClassifier eClassifier = eReference.getEType();

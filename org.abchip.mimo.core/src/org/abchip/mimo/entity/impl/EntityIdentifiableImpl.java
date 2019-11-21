@@ -16,6 +16,7 @@ import org.abchip.mimo.context.Context;
 import org.abchip.mimo.entity.Entity;
 import org.abchip.mimo.entity.EntityIdentifiable;
 import org.abchip.mimo.entity.EntityPackage;
+import org.abchip.mimo.entity.EntityState;
 import org.abchip.mimo.entity.Frame;
 import org.abchip.mimo.entity.Slot;
 import org.abchip.mimo.resource.ResourceManager;
@@ -40,7 +41,6 @@ public abstract class EntityIdentifiableImpl extends EntityImpl implements Entit
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	protected EntityIdentifiableImpl() {
@@ -49,7 +49,6 @@ public abstract class EntityIdentifiableImpl extends EntityImpl implements Entit
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
@@ -106,15 +105,20 @@ public abstract class EntityIdentifiableImpl extends EntityImpl implements Entit
 			}
 		}
 
-		if (eIsProxy()) {
-			if(eFeature == eIDAttribute) 
+		switch (this.getState()) {
+		case PROXY:
+			if (eFeature == eIDAttribute)
 				return this.getURI().getFragment();
-			
+
 			EntityIdentifiableImpl eObject = (EntityIdentifiableImpl) EcoreUtil.resolve(this, this);
 			this.eBasicSetSettings(eObject.eBasicSettings());
 			this.eSetProxyURI(null);
+			break;
+		case DIRTY:
+		case RESOLVED:
+		case TRANSIENT:
 		}
-		
+
 		return super.eGet(featureID, resolve, coreType);
 	}
 
@@ -154,8 +158,16 @@ public abstract class EntityIdentifiableImpl extends EntityImpl implements Entit
 	 * @generated NOT
 	 */
 	@Override
-	public boolean isProxy() {
-		return eIsProxy();
+	public EntityState getState() {
+
+		if (eIsProxy())
+			return EntityState.PROXY;
+		else if (eResource() instanceof MimoResourceImpl)
+			return EntityState.RESOLVED;
+		else if (eResource() != null)
+			return EntityState.TRANSIENT;
+		else
+			return EntityState.DIRTY;
 	}
 
 	/**

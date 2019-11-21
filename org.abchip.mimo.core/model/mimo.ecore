@@ -790,7 +790,9 @@
         eSuperTypes="#//entity/Entity">
       <eOperations name="getID" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       <eOperations name="getURI" lowerBound="1" eType="#//java/JavaURI"/>
-      <eOperations name="isProxy" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+      <eOperations name="getState" lowerBound="1" eType="#//entity/EntityState">
+        <eAnnotations source="mimo-ent-slot"/>
+      </eOperations>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="EntityIterator" abstract="true" interface="true">
       <eTypeParameters name="E">
@@ -809,6 +811,12 @@
         <eTypeArguments eTypeParameter="#//entity/EntityIterator/E"/>
       </eGenericSuperTypes>
       <eGenericSuperTypes eClassifier="#//java/JavaCloseable"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EEnum" name="EntityState">
+      <eLiterals name="Transient" value="10" literal="TRN"/>
+      <eLiterals name="Proxy" value="20" literal="PRX"/>
+      <eLiterals name="Resolved" value="30" literal="RSL"/>
+      <eLiterals name="Dirty" value="40" literal="DRT"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="EntityTyped" eSuperTypes="#//entity/EntityIdentifiable">
       <eTypeParameters name="T">

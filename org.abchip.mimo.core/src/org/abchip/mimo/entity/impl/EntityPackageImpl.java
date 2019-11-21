@@ -32,6 +32,7 @@ import org.abchip.mimo.entity.EntityIdentifiable;
 import org.abchip.mimo.entity.EntityInfo;
 import org.abchip.mimo.entity.EntityIterator;
 import org.abchip.mimo.entity.EntityPackage;
+import org.abchip.mimo.entity.EntityState;
 import org.abchip.mimo.entity.EntityType;
 import org.abchip.mimo.entity.EntityTyped;
 import org.abchip.mimo.entity.Facet;
@@ -167,6 +168,13 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 	 * @generated
 	 */
 	private EClass slotEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EEnum entityStateEEnum = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -782,6 +790,16 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 	 * @generated
 	 */
 	@Override
+	public EEnum getEntityState() {
+		return entityStateEEnum;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EEnum getSerializationType() {
 		return serializationTypeEEnum;
 	}
@@ -881,6 +899,7 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 		createEAttribute(slotEClass, SLOT__TO_STRING);
 
 		// Create enums
+		entityStateEEnum = createEEnum(ENTITY_STATE);
 		serializationTypeEEnum = createEEnum(SERIALIZATION_TYPE);
 	}
 
@@ -1005,7 +1024,7 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 
 		addEOperation(entityIdentifiableEClass, theJavaPackage.getJavaURI(), "getURI", 1, 1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(entityIdentifiableEClass, ecorePackage.getEBoolean(), "isProxy", 1, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(entityIdentifiableEClass, this.getEntityState(), "getState", 1, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(entityIteratorEClass, EntityIterator.class, "EntityIterator", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -1120,6 +1139,12 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 		addEOperation(slotEClass, ecorePackage.getEBoolean(), "isString", 1, 1, IS_UNIQUE, IS_ORDERED);
 
 		// Initialize enums and add enum literals
+		initEEnum(entityStateEEnum, EntityState.class, "EntityState");
+		addEEnumLiteral(entityStateEEnum, EntityState.TRANSIENT);
+		addEEnumLiteral(entityStateEEnum, EntityState.PROXY);
+		addEEnumLiteral(entityStateEEnum, EntityState.RESOLVED);
+		addEEnumLiteral(entityStateEEnum, EntityState.DIRTY);
+
 		initEEnum(serializationTypeEEnum, SerializationType.class, "SerializationType");
 		addEEnumLiteral(serializationTypeEEnum, SerializationType.XML_METADATA_INTERCHANGE);
 		addEEnumLiteral(serializationTypeEEnum, SerializationType.JAVA_SCRIPT_OBJECT_NOTATION);
@@ -1160,6 +1185,11 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 		   source,
 		   new String[] {
 			   "group", "info"
+		   });
+		addAnnotation
+		  (entityIdentifiableEClass.getEOperations().get(2),
+		   source,
+		   new String[] {
 		   });
 	}
 

@@ -505,6 +505,12 @@
     </nestedGenPackages>
     <nestedGenPackages prefix="Entity" basePackage="org.abchip.mimo" disposableProviderFactory="true"
         adapterFactory="false" contentTypeIdentifier="" ecorePackage="mimo.ecore#//entity">
+      <genEnums typeSafeEnumCompatible="false" ecoreEnum="mimo.ecore#//entity/EntityState">
+        <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//entity/EntityState/Transient"/>
+        <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//entity/EntityState/Proxy"/>
+        <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//entity/EntityState/Resolved"/>
+        <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//entity/EntityState/Dirty"/>
+      </genEnums>
       <genEnums typeSafeEnumCompatible="false" ecoreEnum="mimo.ecore#//entity/SerializationType">
         <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//entity/SerializationType/XML_Metadata_Interchange"/>
         <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//entity/SerializationType/JavaScript_Object_Notation"/>
@@ -547,7 +553,7 @@
       <genClasses image="false" ecoreClass="mimo.ecore#//entity/EntityIdentifiable">
         <genOperations ecoreOperation="mimo.ecore#//entity/EntityIdentifiable/getID"/>
         <genOperations ecoreOperation="mimo.ecore#//entity/EntityIdentifiable/getURI"/>
-        <genOperations ecoreOperation="mimo.ecore#//entity/EntityIdentifiable/isProxy"/>
+        <genOperations ecoreOperation="mimo.ecore#//entity/EntityIdentifiable/getState"/>
       </genClasses>
       <genClasses image="false" ecoreClass="mimo.ecore#//entity/EntityIterator">
         <genTypeParameters ecoreTypeParameter="mimo.ecore#//entity/EntityIterator/E"/>
