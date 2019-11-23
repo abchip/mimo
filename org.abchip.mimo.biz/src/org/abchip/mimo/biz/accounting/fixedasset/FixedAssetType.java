@@ -22,13 +22,13 @@ import org.abchip.mimo.biz.BizEntityType;
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.accounting.fixedasset.FixedAssetType#getFixedAssetTypeId <em>Fixed Asset Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.fixedasset.FixedAssetType#getDescription <em>Description</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.fixedasset.FixedAssetType#getFixedAssetTypeAttrs <em>Fixed Asset Type Attrs</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.fixedasset.FixedAssetType#isHasTable <em>Has Table</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.fixedasset.FixedAssetType#getParentTypeId <em>Parent Type Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.fixedasset.FixedAssetType#getFixedAssetTypeAttrs <em>Fixed Asset Type Attrs</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.accounting.fixedasset.FixedassetPackage#getFixedAssetType()
- * @model annotation="mimo-ent-frame formula='description'"
+ * @model annotation="mimo-ent-frame dictionary='AccountingEntityLabels' formula='description'"
  * @generated
  */
 public interface FixedAssetType extends BizEntityType<FixedAsset> {
@@ -96,6 +96,7 @@ public interface FixedAssetType extends BizEntityType<FixedAsset> {
 	 * @see #setParentTypeId(FixedAssetType)
 	 * @see org.abchip.mimo.biz.accounting.fixedasset.FixedassetPackage#getFixedAssetType_ParentTypeId()
 	 * @model keys="fixedAssetTypeId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	FixedAssetType getParentTypeId();
@@ -121,8 +122,7 @@ public interface FixedAssetType extends BizEntityType<FixedAsset> {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Fixed Asset Type Attrs</em>' attribute list.
 	 * @see org.abchip.mimo.biz.accounting.fixedasset.FixedassetPackage#getFixedAssetType_FixedAssetTypeAttrs()
-	 * @model required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='FixedAssetTypeAttr'"
 	 * @generated
@@ -152,8 +152,7 @@ public interface FixedAssetType extends BizEntityType<FixedAsset> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='WorkEffortFixedAssetStd' route='fixedAssetTypeId'"
 	 * @generated
@@ -173,7 +172,6 @@ public interface FixedAssetType extends BizEntityType<FixedAsset> {
 	 * @see org.abchip.mimo.biz.accounting.fixedasset.FixedassetPackage#getFixedAssetType_FixedAssetTypeId()
 	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getFixedAssetTypeId();

@@ -21,8 +21,8 @@ import org.eclipse.emf.ecore.EClass;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderBlacklistImpl#getBlacklistString <em>Blacklist String</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderBlacklistImpl#getOrderBlacklistTypeId <em>Order Blacklist Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderBlacklistImpl#getBlacklistString <em>Blacklist String</em>}</li>
  * </ul>
  *
  * @generated

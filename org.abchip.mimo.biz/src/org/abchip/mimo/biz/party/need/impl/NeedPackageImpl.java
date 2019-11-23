@@ -191,10 +191,6 @@ import org.abchip.mimo.biz.workeffort.timesheet.TimesheetPackage;
 import org.abchip.mimo.biz.workeffort.timesheet.impl.TimesheetPackageImpl;
 import org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage;
 import org.abchip.mimo.biz.workeffort.workeffort.impl.WorkeffortPackageImpl;
-import org.abchip.mimo.entity.EntityPackage;
-
-import org.eclipse.emf.common.util.URI;
-
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
@@ -704,56 +700,6 @@ public class NeedPackageImpl extends EPackageImpl implements NeedPackage {
 	 */
 	@Override
 	public EAttribute getPartyNeed_PartyNeedId() {
-		return (EAttribute)partyNeedEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getPartyNeed_PartyId() {
-		return (EReference)partyNeedEClass.getEStructuralFeatures().get(5);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getPartyNeed_RoleTypeId() {
-		return (EReference)partyNeedEClass.getEStructuralFeatures().get(6);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getPartyNeed_CommunicationEventId() {
-		return (EReference)partyNeedEClass.getEStructuralFeatures().get(8);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EAttribute getPartyNeed_DatetimeRecorded() {
-		return (EAttribute)partyNeedEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EAttribute getPartyNeed_Description() {
 		return (EAttribute)partyNeedEClass.getEStructuralFeatures().get(2);
 	}
 
@@ -763,8 +709,58 @@ public class NeedPackageImpl extends EPackageImpl implements NeedPackage {
 	 * @generated
 	 */
 	@Override
+	public EReference getPartyNeed_PartyId() {
+		return (EReference)partyNeedEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getPartyNeed_RoleTypeId() {
+		return (EReference)partyNeedEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getPartyNeed_CommunicationEventId() {
+		return (EReference)partyNeedEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getPartyNeed_DatetimeRecorded() {
+		return (EAttribute)partyNeedEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getPartyNeed_Description() {
+		return (EAttribute)partyNeedEClass.getEStructuralFeatures().get(5);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EReference getPartyNeed_NeedTypeId() {
-		return (EReference)partyNeedEClass.getEStructuralFeatures().get(4);
+		return (EReference)partyNeedEClass.getEStructuralFeatures().get(6);
 	}
 
 	/**
@@ -784,7 +780,7 @@ public class NeedPackageImpl extends EPackageImpl implements NeedPackage {
 	 */
 	@Override
 	public EReference getPartyNeed_ProductCategoryId() {
-		return (EReference)partyNeedEClass.getEStructuralFeatures().get(10);
+		return (EReference)partyNeedEClass.getEStructuralFeatures().get(8);
 	}
 
 	/**
@@ -804,7 +800,7 @@ public class NeedPackageImpl extends EPackageImpl implements NeedPackage {
 	 */
 	@Override
 	public EAttribute getPartyNeed_VisitId() {
-		return (EAttribute)partyNeedEClass.getEStructuralFeatures().get(3);
+		return (EAttribute)partyNeedEClass.getEStructuralFeatures().get(10);
 	}
 
 	/**
@@ -841,17 +837,17 @@ public class NeedPackageImpl extends EPackageImpl implements NeedPackage {
 		createEAttribute(needTypeEClass, NEED_TYPE__DESCRIPTION);
 
 		partyNeedEClass = createEClass(PARTY_NEED);
-		createEAttribute(partyNeedEClass, PARTY_NEED__PARTY_NEED_ID);
-		createEAttribute(partyNeedEClass, PARTY_NEED__DATETIME_RECORDED);
-		createEAttribute(partyNeedEClass, PARTY_NEED__DESCRIPTION);
-		createEAttribute(partyNeedEClass, PARTY_NEED__VISIT_ID);
-		createEReference(partyNeedEClass, PARTY_NEED__NEED_TYPE_ID);
 		createEReference(partyNeedEClass, PARTY_NEED__PARTY_ID);
 		createEReference(partyNeedEClass, PARTY_NEED__ROLE_TYPE_ID);
-		createEReference(partyNeedEClass, PARTY_NEED__PARTY_TYPE_ID);
+		createEAttribute(partyNeedEClass, PARTY_NEED__PARTY_NEED_ID);
 		createEReference(partyNeedEClass, PARTY_NEED__COMMUNICATION_EVENT_ID);
-		createEReference(partyNeedEClass, PARTY_NEED__PRODUCT_ID);
+		createEAttribute(partyNeedEClass, PARTY_NEED__DATETIME_RECORDED);
+		createEAttribute(partyNeedEClass, PARTY_NEED__DESCRIPTION);
+		createEReference(partyNeedEClass, PARTY_NEED__NEED_TYPE_ID);
+		createEReference(partyNeedEClass, PARTY_NEED__PARTY_TYPE_ID);
 		createEReference(partyNeedEClass, PARTY_NEED__PRODUCT_CATEGORY_ID);
+		createEReference(partyNeedEClass, PARTY_NEED__PRODUCT_ID);
+		createEAttribute(partyNeedEClass, PARTY_NEED__VISIT_ID);
 	}
 
 	/**
@@ -881,8 +877,8 @@ public class NeedPackageImpl extends EPackageImpl implements NeedPackage {
 		BizPackage theBizPackage = (BizPackage)EPackage.Registry.INSTANCE.getEPackage(BizPackage.eNS_URI);
 		PartyPackage thePartyPackage = (PartyPackage)EPackage.Registry.INSTANCE.getEPackage(PartyPackage.eNS_URI);
 		CommunicationPackage theCommunicationPackage = (CommunicationPackage)EPackage.Registry.INSTANCE.getEPackage(CommunicationPackage.eNS_URI);
-		ProductPackage theProductPackage = (ProductPackage)EPackage.Registry.INSTANCE.getEPackage(ProductPackage.eNS_URI);
 		CategoryPackage theCategoryPackage = (CategoryPackage)EPackage.Registry.INSTANCE.getEPackage(CategoryPackage.eNS_URI);
+		ProductPackage theProductPackage = (ProductPackage)EPackage.Registry.INSTANCE.getEPackage(ProductPackage.eNS_URI);
 
 		// Create type parameters
 
@@ -900,24 +896,24 @@ public class NeedPackageImpl extends EPackageImpl implements NeedPackage {
 		addEOperation(needTypeEClass, ecorePackage.getEString(), "subscriptions", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(partyNeedEClass, PartyNeed.class, "PartyNeed", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getPartyNeed_PartyNeedId(), ecorePackage.getEString(), "partyNeedId", null, 1, 1, PartyNeed.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getPartyNeed_DatetimeRecorded(), ecorePackage.getEDate(), "datetimeRecorded", null, 0, 1, PartyNeed.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getPartyNeed_Description(), ecorePackage.getEString(), "description", null, 0, 1, PartyNeed.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getPartyNeed_VisitId(), ecorePackage.getEString(), "visitId", null, 0, 1, PartyNeed.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getPartyNeed_NeedTypeId(), this.getNeedType(), null, "needTypeId", null, 0, 1, PartyNeed.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		getPartyNeed_NeedTypeId().getEKeys().add(this.getNeedType_NeedTypeId());
-		initEReference(getPartyNeed_PartyId(), thePartyPackage.getParty(), null, "partyId", null, 0, 1, PartyNeed.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getPartyNeed_PartyId(), thePartyPackage.getParty(), null, "partyId", null, 1, 1, PartyNeed.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getPartyNeed_PartyId().getEKeys().add(thePartyPackage.getParty_PartyId());
-		initEReference(getPartyNeed_RoleTypeId(), thePartyPackage.getRoleType(), null, "roleTypeId", null, 0, 1, PartyNeed.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getPartyNeed_RoleTypeId(), thePartyPackage.getRoleType(), null, "roleTypeId", null, 1, 1, PartyNeed.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getPartyNeed_RoleTypeId().getEKeys().add(thePartyPackage.getRoleType_RoleTypeId());
-		initEReference(getPartyNeed_PartyTypeId(), thePartyPackage.getPartyType(), null, "partyTypeId", null, 0, 1, PartyNeed.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		getPartyNeed_PartyTypeId().getEKeys().add(thePartyPackage.getPartyType_PartyTypeId());
+		initEAttribute(getPartyNeed_PartyNeedId(), ecorePackage.getEString(), "partyNeedId", null, 1, 1, PartyNeed.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getPartyNeed_CommunicationEventId(), theCommunicationPackage.getCommunicationEvent(), null, "communicationEventId", null, 0, 1, PartyNeed.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getPartyNeed_CommunicationEventId().getEKeys().add(theCommunicationPackage.getCommunicationEvent_CommunicationEventId());
-		initEReference(getPartyNeed_ProductId(), theProductPackage.getProduct(), null, "productId", null, 0, 1, PartyNeed.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		getPartyNeed_ProductId().getEKeys().add(theProductPackage.getProduct_ProductId());
+		initEAttribute(getPartyNeed_DatetimeRecorded(), ecorePackage.getEDate(), "datetimeRecorded", null, 0, 1, PartyNeed.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getPartyNeed_Description(), ecorePackage.getEString(), "description", null, 0, 1, PartyNeed.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getPartyNeed_NeedTypeId(), this.getNeedType(), null, "needTypeId", null, 0, 1, PartyNeed.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getPartyNeed_NeedTypeId().getEKeys().add(this.getNeedType_NeedTypeId());
+		initEReference(getPartyNeed_PartyTypeId(), thePartyPackage.getPartyType(), null, "partyTypeId", null, 0, 1, PartyNeed.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getPartyNeed_PartyTypeId().getEKeys().add(thePartyPackage.getPartyType_PartyTypeId());
 		initEReference(getPartyNeed_ProductCategoryId(), theCategoryPackage.getProductCategory(), null, "productCategoryId", null, 0, 1, PartyNeed.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getPartyNeed_ProductCategoryId().getEKeys().add(theCategoryPackage.getProductCategory_ProductCategoryId());
+		initEReference(getPartyNeed_ProductId(), theProductPackage.getProduct(), null, "productId", null, 0, 1, PartyNeed.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getPartyNeed_ProductId().getEKeys().add(theProductPackage.getProduct_ProductId());
+		initEAttribute(getPartyNeed_VisitId(), ecorePackage.getEString(), "visitId", null, 0, 1, PartyNeed.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Create annotations
 		// mimo-ent-frame
@@ -982,7 +978,28 @@ public class NeedPackageImpl extends EPackageImpl implements NeedPackage {
 			   "length", "255"
 		   });
 		addAnnotation
+		  (getPartyNeed_PartyId(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (getPartyNeed_RoleTypeId(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
 		  (getPartyNeed_PartyNeedId(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (getPartyNeed_CommunicationEventId(),
 		   source,
 		   new String[] {
 			   "type", "id",
@@ -1000,6 +1017,34 @@ public class NeedPackageImpl extends EPackageImpl implements NeedPackage {
 		   new String[] {
 			   "type", "description",
 			   "length", "255"
+		   });
+		addAnnotation
+		  (getPartyNeed_NeedTypeId(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (getPartyNeed_PartyTypeId(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (getPartyNeed_ProductCategoryId(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (getPartyNeed_ProductId(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
 		   });
 		addAnnotation
 		  (getPartyNeed_VisitId(),
@@ -1025,7 +1070,13 @@ public class NeedPackageImpl extends EPackageImpl implements NeedPackage {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (getNeedType_NeedTypeId(),
+		  (getPartyNeed_PartyId(),
+		   source,
+		   new String[] {
+			   "key", "true"
+		   });
+		addAnnotation
+		  (getPartyNeed_RoleTypeId(),
 		   source,
 		   new String[] {
 			   "key", "true"
@@ -1052,9 +1103,6 @@ public class NeedPackageImpl extends EPackageImpl implements NeedPackage {
 		   new String[] {
 			   "frame", "Subscription",
 			   "route", "needTypeId"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 	}
 

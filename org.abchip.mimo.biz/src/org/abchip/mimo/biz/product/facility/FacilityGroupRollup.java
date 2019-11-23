@@ -20,15 +20,15 @@ import org.abchip.mimo.biz.BizEntity;
  * The following features are supported:
  * </p>
  * <ul>
+ *   <li>{@link org.abchip.mimo.biz.product.facility.FacilityGroupRollup#getFacilityGroupId <em>Facility Group Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.facility.FacilityGroupRollup#getParentFacilityGroupId <em>Parent Facility Group Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.facility.FacilityGroupRollup#getFromDate <em>From Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.facility.FacilityGroupRollup#getSequenceNum <em>Sequence Num</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.facility.FacilityGroupRollup#getThruDate <em>Thru Date</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.facility.FacilityGroupRollup#getFacilityGroupId <em>Facility Group Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.facility.FacilityGroupRollup#getParentFacilityGroupId <em>Parent Facility Group Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.product.facility.FacilityPackage#getFacilityGroupRollup()
- * @model
+ * @model annotation="mimo-ent-frame dictionary='ProductEntityLabels'"
  * @generated
  */
 public interface FacilityGroupRollup extends BizEntity {
@@ -44,8 +44,8 @@ public interface FacilityGroupRollup extends BizEntity {
 	 * @see #setFromDate(Date)
 	 * @see org.abchip.mimo.biz.product.facility.FacilityPackage#getFacilityGroupRollup_FromDate()
 	 * @model required="true"
-	 *        annotation="mimo-ent-format type='date-time'"
 	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getFromDate();
@@ -123,7 +123,9 @@ public interface FacilityGroupRollup extends BizEntity {
 	 * @return the value of the '<em>Facility Group Id</em>' reference.
 	 * @see #setFacilityGroupId(FacilityGroup)
 	 * @see org.abchip.mimo.biz.product.facility.FacilityPackage#getFacilityGroupRollup_FacilityGroupId()
-	 * @model keys="facilityGroupId"
+	 * @model keys="facilityGroupId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	FacilityGroup getFacilityGroupId();
@@ -149,7 +151,9 @@ public interface FacilityGroupRollup extends BizEntity {
 	 * @return the value of the '<em>Parent Facility Group Id</em>' reference.
 	 * @see #setParentFacilityGroupId(FacilityGroup)
 	 * @see org.abchip.mimo.biz.product.facility.FacilityPackage#getFacilityGroupRollup_ParentFacilityGroupId()
-	 * @model keys="facilityGroupId"
+	 * @model keys="facilityGroupId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	FacilityGroup getParentFacilityGroupId();

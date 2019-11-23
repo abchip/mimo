@@ -22,20 +22,20 @@ import org.abchip.mimo.biz.security.securitygroup.SecurityGroup;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.party.party.PartyRelationship#getFromDate <em>From Date</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.party.party.PartyRelationship#getComments <em>Comments</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.party.party.PartyRelationship#getPermissionsEnumId <em>Permissions Enum Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.party.party.PartyRelationship#getPositionTitle <em>Position Title</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.party.party.PartyRelationship#getRelationshipName <em>Relationship Name</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.party.party.PartyRelationship#getThruDate <em>Thru Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.party.PartyRelationship#getPartyIdFrom <em>Party Id From</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.party.PartyRelationship#getPartyIdTo <em>Party Id To</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.party.PartyRelationship#getRoleTypeIdFrom <em>Role Type Id From</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.party.PartyRelationship#getRoleTypeIdTo <em>Role Type Id To</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.party.party.PartyRelationship#getStatusId <em>Status Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.party.party.PartyRelationship#getPriorityTypeId <em>Priority Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.party.party.PartyRelationship#getFromDate <em>From Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.party.party.PartyRelationship#getComments <em>Comments</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.party.PartyRelationship#getPartyRelationshipTypeId <em>Party Relationship Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.party.party.PartyRelationship#getPermissionsEnumId <em>Permissions Enum Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.party.party.PartyRelationship#getPositionTitle <em>Position Title</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.party.party.PartyRelationship#getPriorityTypeId <em>Priority Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.party.party.PartyRelationship#getRelationshipName <em>Relationship Name</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.party.PartyRelationship#getSecurityGroupId <em>Security Group Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.party.party.PartyRelationship#getStatusId <em>Status Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.party.party.PartyRelationship#getThruDate <em>Thru Date</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.party.party.PartyPackage#getPartyRelationship()
@@ -81,8 +81,8 @@ public interface PartyRelationship extends BizEntityTyped<PartyRelationshipType>
 	 * @see #setFromDate(Date)
 	 * @see org.abchip.mimo.biz.party.party.PartyPackage#getPartyRelationship_FromDate()
 	 * @model required="true"
-	 *        annotation="mimo-ent-format type='date-time'"
 	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getFromDate();
@@ -134,7 +134,8 @@ public interface PartyRelationship extends BizEntityTyped<PartyRelationshipType>
 	 * @return the value of the '<em>Position Title</em>' attribute.
 	 * @see #setPositionTitle(String)
 	 * @see org.abchip.mimo.biz.party.party.PartyPackage#getPartyRelationship_PositionTitle()
-	 * @model annotation="mimo-ent-format type='name' length='100'"
+	 * @model annotation="mimo-ent-slot help='The exact word used within the company'"
+	 *        annotation="mimo-ent-format type='name' length='100'"
 	 * @generated
 	 */
 	String getPositionTitle();
@@ -160,7 +161,8 @@ public interface PartyRelationship extends BizEntityTyped<PartyRelationshipType>
 	 * @return the value of the '<em>Relationship Name</em>' attribute.
 	 * @see #setRelationshipName(String)
 	 * @see org.abchip.mimo.biz.party.party.PartyPackage#getPartyRelationship_RelationshipName()
-	 * @model annotation="mimo-ent-format type='name' length='100'"
+	 * @model annotation="mimo-ent-slot help='Official name of relationship, such as title in a company'"
+	 *        annotation="mimo-ent-format type='name' length='100'"
 	 * @generated
 	 */
 	String getRelationshipName();
@@ -187,6 +189,7 @@ public interface PartyRelationship extends BizEntityTyped<PartyRelationshipType>
 	 * @see #setSecurityGroupId(SecurityGroup)
 	 * @see org.abchip.mimo.biz.party.party.PartyPackage#getPartyRelationship_SecurityGroupId()
 	 * @model keys="groupId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	SecurityGroup getSecurityGroupId();
@@ -213,6 +216,7 @@ public interface PartyRelationship extends BizEntityTyped<PartyRelationshipType>
 	 * @see #setStatusId(StatusItem)
 	 * @see org.abchip.mimo.biz.party.party.PartyPackage#getPartyRelationship_StatusId()
 	 * @model keys="statusId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	StatusItem getStatusId();
@@ -264,7 +268,9 @@ public interface PartyRelationship extends BizEntityTyped<PartyRelationshipType>
 	 * @return the value of the '<em>Party Id From</em>' reference.
 	 * @see #setPartyIdFrom(Party)
 	 * @see org.abchip.mimo.biz.party.party.PartyPackage#getPartyRelationship_PartyIdFrom()
-	 * @model keys="partyId"
+	 * @model keys="partyId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Party getPartyIdFrom();
@@ -290,7 +296,9 @@ public interface PartyRelationship extends BizEntityTyped<PartyRelationshipType>
 	 * @return the value of the '<em>Party Id To</em>' reference.
 	 * @see #setPartyIdTo(Party)
 	 * @see org.abchip.mimo.biz.party.party.PartyPackage#getPartyRelationship_PartyIdTo()
-	 * @model keys="partyId"
+	 * @model keys="partyId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Party getPartyIdTo();
@@ -316,7 +324,9 @@ public interface PartyRelationship extends BizEntityTyped<PartyRelationshipType>
 	 * @return the value of the '<em>Role Type Id From</em>' reference.
 	 * @see #setRoleTypeIdFrom(RoleType)
 	 * @see org.abchip.mimo.biz.party.party.PartyPackage#getPartyRelationship_RoleTypeIdFrom()
-	 * @model keys="roleTypeId"
+	 * @model keys="roleTypeId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	RoleType getRoleTypeIdFrom();
@@ -342,7 +352,9 @@ public interface PartyRelationship extends BizEntityTyped<PartyRelationshipType>
 	 * @return the value of the '<em>Role Type Id To</em>' reference.
 	 * @see #setRoleTypeIdTo(RoleType)
 	 * @see org.abchip.mimo.biz.party.party.PartyPackage#getPartyRelationship_RoleTypeIdTo()
-	 * @model keys="roleTypeId"
+	 * @model keys="roleTypeId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	RoleType getRoleTypeIdTo();
@@ -369,6 +381,7 @@ public interface PartyRelationship extends BizEntityTyped<PartyRelationshipType>
 	 * @see #setPriorityTypeId(PriorityType)
 	 * @see org.abchip.mimo.biz.party.party.PartyPackage#getPartyRelationship_PriorityTypeId()
 	 * @model keys="priorityTypeId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	PriorityType getPriorityTypeId();
@@ -395,6 +408,7 @@ public interface PartyRelationship extends BizEntityTyped<PartyRelationshipType>
 	 * @see #setPartyRelationshipTypeId(PartyRelationshipType)
 	 * @see org.abchip.mimo.biz.party.party.PartyPackage#getPartyRelationship_PartyRelationshipTypeId()
 	 * @model keys="partyRelationshipTypeId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	PartyRelationshipType getPartyRelationshipTypeId();

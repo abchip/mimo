@@ -28,7 +28,7 @@ import org.abchip.mimo.biz.BizEntityType;
  * </ul>
  *
  * @see org.abchip.mimo.biz.order.quote.QuotePackage#getQuoteType()
- * @model annotation="mimo-ent-frame formula='description'"
+ * @model annotation="mimo-ent-frame dictionary='OrderEntityLabels' formula='description'"
  * @generated
  */
 public interface QuoteType extends BizEntityType<Quote> {
@@ -96,6 +96,7 @@ public interface QuoteType extends BizEntityType<Quote> {
 	 * @see #setParentTypeId(QuoteType)
 	 * @see org.abchip.mimo.biz.order.quote.QuotePackage#getQuoteType_ParentTypeId()
 	 * @model keys="quoteTypeId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	QuoteType getParentTypeId();
@@ -123,7 +124,6 @@ public interface QuoteType extends BizEntityType<Quote> {
 	 * @see org.abchip.mimo.biz.order.quote.QuotePackage#getQuoteType_QuoteTypeId()
 	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getQuoteTypeId();
@@ -149,8 +149,7 @@ public interface QuoteType extends BizEntityType<Quote> {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Quote Type Attrs</em>' attribute list.
 	 * @see org.abchip.mimo.biz.order.quote.QuotePackage#getQuoteType_QuoteTypeAttrs()
-	 * @model required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='QuoteTypeAttr'"
 	 * @generated

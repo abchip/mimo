@@ -18,10 +18,10 @@ import org.abchip.mimo.biz.BizEntity;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.order.order.OrderTermAttribute#getTermTypeId <em>Term Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.order.OrderTermAttribute#getAttrName <em>Attr Name</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.OrderTermAttribute#getOrderId <em>Order Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.OrderTermAttribute#getOrderItemSeqId <em>Order Item Seq Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.order.OrderTermAttribute#getAttrName <em>Attr Name</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.order.OrderTermAttribute#getTermTypeId <em>Term Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.OrderTermAttribute#getAttrDescription <em>Attr Description</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.OrderTermAttribute#getAttrValue <em>Attr Value</em>}</li>
  * </ul>
@@ -69,8 +69,8 @@ public interface OrderTermAttribute extends BizEntity {
 	 * @see #setAttrName(String)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderTermAttribute_AttrName()
 	 * @model required="true"
-	 *        annotation="mimo-ent-format type='id-long' length='60'"
 	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id-long' length='60'"
 	 * @generated
 	 */
 	String getAttrName();
@@ -123,8 +123,8 @@ public interface OrderTermAttribute extends BizEntity {
 	 * @see #setOrderId(String)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderTermAttribute_OrderId()
 	 * @model required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	String getOrderId();
@@ -151,8 +151,8 @@ public interface OrderTermAttribute extends BizEntity {
 	 * @see #setOrderItemSeqId(String)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderTermAttribute_OrderItemSeqId()
 	 * @model required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	String getOrderItemSeqId();
@@ -179,8 +179,8 @@ public interface OrderTermAttribute extends BizEntity {
 	 * @see #setTermTypeId(String)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderTermAttribute_TermTypeId()
 	 * @model required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	String getTermTypeId();

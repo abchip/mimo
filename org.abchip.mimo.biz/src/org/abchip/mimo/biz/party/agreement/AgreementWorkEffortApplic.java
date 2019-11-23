@@ -19,13 +19,13 @@ import org.abchip.mimo.biz.workeffort.workeffort.WorkEffort;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.party.agreement.AgreementWorkEffortApplic#getAgreementItemSeqId <em>Agreement Item Seq Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.agreement.AgreementWorkEffortApplic#getAgreementId <em>Agreement Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.agreement.AgreementWorkEffortApplic#getWorkEffortId <em>Work Effort Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.party.agreement.AgreementWorkEffortApplic#getAgreementItemSeqId <em>Agreement Item Seq Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.party.agreement.AgreementPackage#getAgreementWorkEffortApplic()
- * @model
+ * @model annotation="mimo-ent-frame title='Agreement WorkEffort Application'"
  * @generated
  */
 public interface AgreementWorkEffortApplic extends BizEntity {
@@ -41,8 +41,8 @@ public interface AgreementWorkEffortApplic extends BizEntity {
 	 * @see #setAgreementItemSeqId(String)
 	 * @see org.abchip.mimo.biz.party.agreement.AgreementPackage#getAgreementWorkEffortApplic_AgreementItemSeqId()
 	 * @model required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	String getAgreementItemSeqId();
@@ -68,7 +68,9 @@ public interface AgreementWorkEffortApplic extends BizEntity {
 	 * @return the value of the '<em>Work Effort Id</em>' reference.
 	 * @see #setWorkEffortId(WorkEffort)
 	 * @see org.abchip.mimo.biz.party.agreement.AgreementPackage#getAgreementWorkEffortApplic_WorkEffortId()
-	 * @model keys="workEffortId"
+	 * @model keys="workEffortId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	WorkEffort getWorkEffortId();
@@ -94,7 +96,9 @@ public interface AgreementWorkEffortApplic extends BizEntity {
 	 * @return the value of the '<em>Agreement Id</em>' reference.
 	 * @see #setAgreementId(Agreement)
 	 * @see org.abchip.mimo.biz.party.agreement.AgreementPackage#getAgreementWorkEffortApplic_AgreementId()
-	 * @model keys="agreementId"
+	 * @model keys="agreementId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Agreement getAgreementId();

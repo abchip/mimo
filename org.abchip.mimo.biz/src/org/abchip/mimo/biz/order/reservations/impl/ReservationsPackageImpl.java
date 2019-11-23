@@ -190,10 +190,6 @@ import org.abchip.mimo.biz.workeffort.timesheet.TimesheetPackage;
 import org.abchip.mimo.biz.workeffort.timesheet.impl.TimesheetPackageImpl;
 import org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage;
 import org.abchip.mimo.biz.workeffort.workeffort.impl.WorkeffortPackageImpl;
-import org.abchip.mimo.entity.EntityPackage;
-
-import org.eclipse.emf.common.util.URI;
-
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
@@ -676,7 +672,7 @@ public class ReservationsPackageImpl extends EPackageImpl implements Reservation
 	 */
 	@Override
 	public EReference getAccommodationSpot_AccommodationClassId() {
-		return (EReference)accommodationSpotEClass.getEStructuralFeatures().get(3);
+		return (EReference)accommodationSpotEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -686,7 +682,7 @@ public class ReservationsPackageImpl extends EPackageImpl implements Reservation
 	 */
 	@Override
 	public EAttribute getAccommodationSpot_Description() {
-		return (EAttribute)accommodationSpotEClass.getEStructuralFeatures().get(1);
+		return (EAttribute)accommodationSpotEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -696,7 +692,7 @@ public class ReservationsPackageImpl extends EPackageImpl implements Reservation
 	 */
 	@Override
 	public EReference getAccommodationSpot_FixedAssetId() {
-		return (EReference)accommodationSpotEClass.getEStructuralFeatures().get(4);
+		return (EReference)accommodationSpotEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -706,7 +702,7 @@ public class ReservationsPackageImpl extends EPackageImpl implements Reservation
 	 */
 	@Override
 	public EAttribute getAccommodationSpot_NumberOfSpaces() {
-		return (EAttribute)accommodationSpotEClass.getEStructuralFeatures().get(2);
+		return (EAttribute)accommodationSpotEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -740,10 +736,10 @@ public class ReservationsPackageImpl extends EPackageImpl implements Reservation
 		// Create classes and their features
 		accommodationSpotEClass = createEClass(ACCOMMODATION_SPOT);
 		createEAttribute(accommodationSpotEClass, ACCOMMODATION_SPOT__ACCOMMODATION_SPOT_ID);
-		createEAttribute(accommodationSpotEClass, ACCOMMODATION_SPOT__DESCRIPTION);
-		createEAttribute(accommodationSpotEClass, ACCOMMODATION_SPOT__NUMBER_OF_SPACES);
 		createEReference(accommodationSpotEClass, ACCOMMODATION_SPOT__ACCOMMODATION_CLASS_ID);
+		createEAttribute(accommodationSpotEClass, ACCOMMODATION_SPOT__DESCRIPTION);
 		createEReference(accommodationSpotEClass, ACCOMMODATION_SPOT__FIXED_ASSET_ID);
+		createEAttribute(accommodationSpotEClass, ACCOMMODATION_SPOT__NUMBER_OF_SPACES);
 	}
 
 	/**
@@ -783,12 +779,12 @@ public class ReservationsPackageImpl extends EPackageImpl implements Reservation
 		// Initialize classes and features; add operations and parameters
 		initEClass(accommodationSpotEClass, AccommodationSpot.class, "AccommodationSpot", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getAccommodationSpot_AccommodationSpotId(), ecorePackage.getEString(), "accommodationSpotId", null, 1, 1, AccommodationSpot.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getAccommodationSpot_Description(), ecorePackage.getEString(), "description", null, 0, 1, AccommodationSpot.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getAccommodationSpot_NumberOfSpaces(), ecorePackage.getELong(), "numberOfSpaces", null, 0, 1, AccommodationSpot.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getAccommodationSpot_AccommodationClassId(), theFixedassetPackage.getAccommodationClass(), null, "accommodationClassId", null, 0, 1, AccommodationSpot.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getAccommodationSpot_AccommodationClassId().getEKeys().add(theFixedassetPackage.getAccommodationClass_AccommodationClassId());
+		initEAttribute(getAccommodationSpot_Description(), ecorePackage.getEString(), "description", null, 0, 1, AccommodationSpot.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getAccommodationSpot_FixedAssetId(), theFixedassetPackage.getFixedAsset(), null, "fixedAssetId", null, 0, 1, AccommodationSpot.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getAccommodationSpot_FixedAssetId().getEKeys().add(theFixedassetPackage.getFixedAsset_FixedAssetId());
+		initEAttribute(getAccommodationSpot_NumberOfSpaces(), ecorePackage.getELong(), "numberOfSpaces", null, 0, 1, AccommodationSpot.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		addEOperation(accommodationSpotEClass, ecorePackage.getEString(), "workEfforts", 0, -1, IS_UNIQUE, IS_ORDERED);
 
@@ -842,11 +838,25 @@ public class ReservationsPackageImpl extends EPackageImpl implements Reservation
 			   "length", "20"
 		   });
 		addAnnotation
+		  (getAccommodationSpot_AccommodationClassId(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
 		  (getAccommodationSpot_Description(),
 		   source,
 		   new String[] {
 			   "type", "description",
 			   "length", "255"
+		   });
+		addAnnotation
+		  (getAccommodationSpot_FixedAssetId(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
 		   });
 		addAnnotation
 		  (getAccommodationSpot_NumberOfSpaces(),
@@ -872,12 +882,6 @@ public class ReservationsPackageImpl extends EPackageImpl implements Reservation
 		   new String[] {
 			   "derived", "true"
 		   });
-		addAnnotation
-		  (getAccommodationSpot_AccommodationSpotId(),
-		   source,
-		   new String[] {
-			   "key", "true"
-		   });
 	}
 
 	/**
@@ -894,9 +898,6 @@ public class ReservationsPackageImpl extends EPackageImpl implements Reservation
 		   new String[] {
 			   "frame", "WorkEffort",
 			   "route", "accommodationSpotId"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 	}
 

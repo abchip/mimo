@@ -24,11 +24,11 @@ import org.eclipse.emf.ecore.EClass;
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.party.agreement.impl.AgreementEmploymentApplImpl#getAgreementId <em>Agreement Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.agreement.impl.AgreementEmploymentApplImpl#getAgreementItemSeqId <em>Agreement Item Seq Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.party.agreement.impl.AgreementEmploymentApplImpl#getPartyIdTo <em>Party Id To</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.party.agreement.impl.AgreementEmploymentApplImpl#getPartyIdFrom <em>Party Id From</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.party.agreement.impl.AgreementEmploymentApplImpl#getRoleTypeIdTo <em>Role Type Id To</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.party.agreement.impl.AgreementEmploymentApplImpl#getRoleTypeIdFrom <em>Role Type Id From</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.agreement.impl.AgreementEmploymentApplImpl#getFromDate <em>From Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.party.agreement.impl.AgreementEmploymentApplImpl#getPartyIdFrom <em>Party Id From</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.party.agreement.impl.AgreementEmploymentApplImpl#getPartyIdTo <em>Party Id To</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.party.agreement.impl.AgreementEmploymentApplImpl#getRoleTypeIdFrom <em>Role Type Id From</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.party.agreement.impl.AgreementEmploymentApplImpl#getRoleTypeIdTo <em>Role Type Id To</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.agreement.impl.AgreementEmploymentApplImpl#getAgreementDate <em>Agreement Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.agreement.impl.AgreementEmploymentApplImpl#getThruDate <em>Thru Date</em>}</li>
  * </ul>

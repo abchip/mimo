@@ -26,7 +26,7 @@ import org.abchip.mimo.biz.BizEntityType;
  * </ul>
  *
  * @see org.abchip.mimo.biz.product.product.ProductPackage#getProductMaintType()
- * @model annotation="mimo-ent-frame formula='description'"
+ * @model annotation="mimo-ent-frame help='This is for both scheduled and unscheduled maintenance; use ProductMaint to track details for scheduled maintenance' title='Product Maintenance Type' dictionary='ProductEntityLabels' formula='description'"
  * @generated
  */
 public interface ProductMaintType extends BizEntityType<ProductMaint> {
@@ -68,6 +68,7 @@ public interface ProductMaintType extends BizEntityType<ProductMaint> {
 	 * @see #setParentTypeId(ProductMaintType)
 	 * @see org.abchip.mimo.biz.product.product.ProductPackage#getProductMaintType_ParentTypeId()
 	 * @model keys="productMaintTypeId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ProductMaintType getParentTypeId();
@@ -125,7 +126,6 @@ public interface ProductMaintType extends BizEntityType<ProductMaint> {
 	 * @see org.abchip.mimo.biz.product.product.ProductPackage#getProductMaintType_ProductMaintTypeId()
 	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getProductMaintTypeId();

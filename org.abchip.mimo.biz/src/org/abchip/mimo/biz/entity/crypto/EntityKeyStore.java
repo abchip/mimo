@@ -40,7 +40,6 @@ public interface EntityKeyStore extends BizEntity {
 	 * @see org.abchip.mimo.biz.entity.crypto.CryptoPackage#getEntityKeyStore_KeyName()
 	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-format type='id-vlong' length='255'"
-	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getKeyName();

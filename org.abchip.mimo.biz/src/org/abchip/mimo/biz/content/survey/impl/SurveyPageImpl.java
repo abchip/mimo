@@ -21,10 +21,10 @@ import org.eclipse.emf.ecore.EClass;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link org.abchip.mimo.biz.content.survey.impl.SurveyPageImpl#getSurveyId <em>Survey Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.survey.impl.SurveyPageImpl#getSurveyPageSeqId <em>Survey Page Seq Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.survey.impl.SurveyPageImpl#getPageName <em>Page Name</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.survey.impl.SurveyPageImpl#getSequenceNum <em>Sequence Num</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.content.survey.impl.SurveyPageImpl#getSurveyId <em>Survey Id</em>}</li>
  * </ul>
  *
  * @generated

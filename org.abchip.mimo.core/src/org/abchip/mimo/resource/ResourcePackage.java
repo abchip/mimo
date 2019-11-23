@@ -348,6 +348,17 @@ public interface ResourcePackage extends EPackage {
 
 
 	/**
+	 * The meta object id for the '{@link org.abchip.mimo.resource.SerializationType <em>Serialization Type</em>}' enum.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.abchip.mimo.resource.SerializationType
+	 * @see org.abchip.mimo.resource.impl.ResourcePackageImpl#getSerializationType()
+	 * @generated
+	 */
+	int SERIALIZATION_TYPE = 12;
+
+
+	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.resource.Resource <em>Resource</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -532,6 +543,16 @@ public interface ResourcePackage extends EPackage {
 	 * @generated
 	 */
 	EEnum getResourceEventType();
+
+	/**
+	 * Returns the meta object for enum '{@link org.abchip.mimo.resource.SerializationType <em>Serialization Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for enum '<em>Serialization Type</em>'.
+	 * @see org.abchip.mimo.resource.SerializationType
+	 * @generated
+	 */
+	EEnum getSerializationType();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -722,6 +743,16 @@ public interface ResourcePackage extends EPackage {
 		 * @generated
 		 */
 		EEnum RESOURCE_EVENT_TYPE = eINSTANCE.getResourceEventType();
+
+		/**
+		 * The meta object literal for the '{@link org.abchip.mimo.resource.SerializationType <em>Serialization Type</em>}' enum.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.abchip.mimo.resource.SerializationType
+		 * @see org.abchip.mimo.resource.impl.ResourcePackageImpl#getSerializationType()
+		 * @generated
+		 */
+		EEnum SERIALIZATION_TYPE = eINSTANCE.getSerializationType();
 
 	}
 

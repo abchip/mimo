@@ -820,10 +820,26 @@ public class CertPackageImpl extends EPackageImpl implements CertPackage {
 		initEAttribute(getX509IssuerProvision_StateProvince(), ecorePackage.getEString(), "stateProvince", null, 0, 1, X509IssuerProvision.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Create annotations
+		// mimo-ent-frame
+		createMimoentframeAnnotations();
 		// mimo-ent-format
 		createMimoentformatAnnotations();
-		// mimo-ent-slot
-		createMimoentslotAnnotations();
+	}
+
+	/**
+	 * Initializes the annotations for <b>mimo-ent-frame</b>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void createMimoentframeAnnotations() {
+		String source = "mimo-ent-frame";
+		addAnnotation
+		  (x509IssuerProvisionEClass,
+		   source,
+		   new String[] {
+			   "title", "Valid issuer data for authentication of x.509 certificates"
+		   });
 	}
 
 	/**
@@ -889,22 +905,6 @@ public class CertPackageImpl extends EPackageImpl implements CertPackage {
 		   new String[] {
 			   "type", "value",
 			   "length", "255"
-		   });
-	}
-
-	/**
-	 * Initializes the annotations for <b>mimo-ent-slot</b>.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void createMimoentslotAnnotations() {
-		String source = "mimo-ent-slot";
-		addAnnotation
-		  (getX509IssuerProvision_CertProvisionId(),
-		   source,
-		   new String[] {
-			   "key", "true"
 		   });
 	}
 

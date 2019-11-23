@@ -673,17 +673,6 @@ public interface EntityPackage extends EPackage {
 	int ENTITY_STATE = 14;
 
 	/**
-	 * The meta object id for the '{@link org.abchip.mimo.entity.SerializationType <em>Serialization Type</em>}' enum.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.abchip.mimo.entity.SerializationType
-	 * @see org.abchip.mimo.entity.impl.EntityPackageImpl#getSerializationType()
-	 * @generated
-	 */
-	int SERIALIZATION_TYPE = 15;
-
-
-	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.entity.Cardinality <em>Cardinality</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1241,16 +1230,6 @@ public interface EntityPackage extends EPackage {
 	EEnum getEntityState();
 
 	/**
-	 * Returns the meta object for enum '{@link org.abchip.mimo.entity.SerializationType <em>Serialization Type</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for enum '<em>Serialization Type</em>'.
-	 * @see org.abchip.mimo.entity.SerializationType
-	 * @generated
-	 */
-	EEnum getSerializationType();
-
-	/**
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1717,16 +1696,6 @@ public interface EntityPackage extends EPackage {
 		 * @generated
 		 */
 		EEnum ENTITY_STATE = eINSTANCE.getEntityState();
-
-		/**
-		 * The meta object literal for the '{@link org.abchip.mimo.entity.SerializationType <em>Serialization Type</em>}' enum.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see org.abchip.mimo.entity.SerializationType
-		 * @see org.abchip.mimo.entity.impl.EntityPackageImpl#getSerializationType()
-		 * @generated
-		 */
-		EEnum SERIALIZATION_TYPE = eINSTANCE.getSerializationType();
 
 	}
 

@@ -23,9 +23,9 @@ import org.eclipse.emf.ecore.EClass;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link org.abchip.mimo.biz.accounting.budget.impl.BudgetRevisionImpl#getBudgetId <em>Budget Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.budget.impl.BudgetRevisionImpl#getRevisionSeqId <em>Revision Seq Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.budget.impl.BudgetRevisionImpl#getDateRevised <em>Date Revised</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.budget.impl.BudgetRevisionImpl#getBudgetId <em>Budget Id</em>}</li>
  * </ul>
  *
  * @generated

@@ -26,7 +26,7 @@ import org.abchip.mimo.biz.party.party.RoleType;
  * </ul>
  *
  * @see org.abchip.mimo.biz.marketing.opportunity.OpportunityPackage#getSalesOpportunityRole()
- * @model
+ * @model annotation="mimo-ent-frame title='Describes roles of different parties involved in a sales opportunity'"
  * @generated
  */
 public interface SalesOpportunityRole extends BizEntity {
@@ -41,7 +41,9 @@ public interface SalesOpportunityRole extends BizEntity {
 	 * @return the value of the '<em>Party Id</em>' reference.
 	 * @see #setPartyId(Party)
 	 * @see org.abchip.mimo.biz.marketing.opportunity.OpportunityPackage#getSalesOpportunityRole_PartyId()
-	 * @model keys="partyId"
+	 * @model keys="partyId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Party getPartyId();
@@ -67,7 +69,9 @@ public interface SalesOpportunityRole extends BizEntity {
 	 * @return the value of the '<em>Role Type Id</em>' reference.
 	 * @see #setRoleTypeId(RoleType)
 	 * @see org.abchip.mimo.biz.marketing.opportunity.OpportunityPackage#getSalesOpportunityRole_RoleTypeId()
-	 * @model keys="roleTypeId"
+	 * @model keys="roleTypeId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	RoleType getRoleTypeId();
@@ -93,7 +97,9 @@ public interface SalesOpportunityRole extends BizEntity {
 	 * @return the value of the '<em>Sales Opportunity Id</em>' reference.
 	 * @see #setSalesOpportunityId(SalesOpportunity)
 	 * @see org.abchip.mimo.biz.marketing.opportunity.OpportunityPackage#getSalesOpportunityRole_SalesOpportunityId()
-	 * @model keys="salesOpportunityId"
+	 * @model keys="salesOpportunityId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	SalesOpportunity getSalesOpportunityId();

@@ -26,7 +26,7 @@ import org.abchip.mimo.biz.product.inventory.VarianceReason;
  * </ul>
  *
  * @see org.abchip.mimo.biz.accounting.ledger.LedgerPackage#getVarianceReasonGlAccount()
- * @model
+ * @model annotation="mimo-ent-frame title='Defines GL Accounts for Inventory Variance Reasons'"
  * @generated
  */
 public interface VarianceReasonGlAccount extends BizEntity {
@@ -41,7 +41,9 @@ public interface VarianceReasonGlAccount extends BizEntity {
 	 * @return the value of the '<em>Organization Party Id</em>' reference.
 	 * @see #setOrganizationPartyId(Party)
 	 * @see org.abchip.mimo.biz.accounting.ledger.LedgerPackage#getVarianceReasonGlAccount_OrganizationPartyId()
-	 * @model keys="partyId"
+	 * @model keys="partyId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Party getOrganizationPartyId();
@@ -67,7 +69,9 @@ public interface VarianceReasonGlAccount extends BizEntity {
 	 * @return the value of the '<em>Variance Reason Id</em>' reference.
 	 * @see #setVarianceReasonId(VarianceReason)
 	 * @see org.abchip.mimo.biz.accounting.ledger.LedgerPackage#getVarianceReasonGlAccount_VarianceReasonId()
-	 * @model keys="varianceReasonId"
+	 * @model keys="varianceReasonId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	VarianceReason getVarianceReasonId();
@@ -94,6 +98,7 @@ public interface VarianceReasonGlAccount extends BizEntity {
 	 * @see #setGlAccountId(GlAccount)
 	 * @see org.abchip.mimo.biz.accounting.ledger.LedgerPackage#getVarianceReasonGlAccount_GlAccountId()
 	 * @model keys="glAccountId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	GlAccount getGlAccountId();

@@ -22,13 +22,13 @@ import org.abchip.mimo.biz.BizEntityType;
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.accounting.finaccount.FinAccountTransType#getFinAccountTransTypeId <em>Fin Account Trans Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.finaccount.FinAccountTransType#getDescription <em>Description</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.finaccount.FinAccountTransType#getFinAccountTransTypeAttrs <em>Fin Account Trans Type Attrs</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.finaccount.FinAccountTransType#isHasTable <em>Has Table</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.finaccount.FinAccountTransType#getParentTypeId <em>Parent Type Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.finaccount.FinAccountTransType#getFinAccountTransTypeAttrs <em>Fin Account Trans Type Attrs</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.accounting.finaccount.FinaccountPackage#getFinAccountTransType()
- * @model annotation="mimo-ent-frame formula='description'"
+ * @model annotation="mimo-ent-frame title='Financial Account Transaction Type' dictionary='AccountingEntityLabels' formula='description'"
  * @generated
  */
 public interface FinAccountTransType extends BizEntityType<FinAccountTrans> {
@@ -96,6 +96,7 @@ public interface FinAccountTransType extends BizEntityType<FinAccountTrans> {
 	 * @see #setParentTypeId(FinAccountTransType)
 	 * @see org.abchip.mimo.biz.accounting.finaccount.FinaccountPackage#getFinAccountTransType_ParentTypeId()
 	 * @model keys="finAccountTransTypeId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	FinAccountTransType getParentTypeId();
@@ -121,8 +122,7 @@ public interface FinAccountTransType extends BizEntityType<FinAccountTrans> {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Fin Account Trans Type Attrs</em>' attribute list.
 	 * @see org.abchip.mimo.biz.accounting.finaccount.FinaccountPackage#getFinAccountTransType_FinAccountTransTypeAttrs()
-	 * @model required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='FinAccountTransTypeAttr'"
 	 * @generated
@@ -162,7 +162,6 @@ public interface FinAccountTransType extends BizEntityType<FinAccountTrans> {
 	 * @see org.abchip.mimo.biz.accounting.finaccount.FinaccountPackage#getFinAccountTransType_FinAccountTransTypeId()
 	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getFinAccountTransTypeId();

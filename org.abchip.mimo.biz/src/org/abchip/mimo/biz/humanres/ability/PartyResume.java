@@ -23,14 +23,14 @@ import org.abchip.mimo.biz.party.party.Party;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.humanres.ability.PartyResume#getResumeId <em>Resume Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.humanres.ability.PartyResume#getContentId <em>Content Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.humanres.ability.PartyResume#getPartyId <em>Party Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.ability.PartyResume#getResumeDate <em>Resume Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.ability.PartyResume#getResumeText <em>Resume Text</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.humanres.ability.PartyResume#getPartyId <em>Party Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.humanres.ability.PartyResume#getContentId <em>Content Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.humanres.ability.AbilityPackage#getPartyResume()
- * @model
+ * @model annotation="mimo-ent-frame title='Resume'"
  * @generated
  */
 public interface PartyResume extends BizEntity {
@@ -46,6 +46,7 @@ public interface PartyResume extends BizEntity {
 	 * @see #setContentId(Content)
 	 * @see org.abchip.mimo.biz.humanres.ability.AbilityPackage#getPartyResume_ContentId()
 	 * @model keys="contentId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Content getContentId();
@@ -72,6 +73,7 @@ public interface PartyResume extends BizEntity {
 	 * @see #setPartyId(Party)
 	 * @see org.abchip.mimo.biz.humanres.ability.AbilityPackage#getPartyResume_PartyId()
 	 * @model keys="partyId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Party getPartyId();
@@ -125,7 +127,6 @@ public interface PartyResume extends BizEntity {
 	 * @see org.abchip.mimo.biz.humanres.ability.AbilityPackage#getPartyResume_ResumeId()
 	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getResumeId();

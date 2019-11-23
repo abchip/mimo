@@ -21,12 +21,12 @@ import org.abchip.mimo.biz.party.party.Party;
  * The following features are supported:
  * </p>
  * <ul>
+ *   <li>{@link org.abchip.mimo.biz.accounting.rate.PartyRate#getPartyId <em>Party Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.rate.PartyRate#getRateTypeId <em>Rate Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.rate.PartyRate#getFromDate <em>From Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.rate.PartyRate#getDefaultRate <em>Default Rate</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.rate.PartyRate#getPercentageUsed <em>Percentage Used</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.rate.PartyRate#getThruDate <em>Thru Date</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.rate.PartyRate#getPartyId <em>Party Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.rate.PartyRate#getRateTypeId <em>Rate Type Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.accounting.rate.RatePackage#getPartyRate()
@@ -46,8 +46,8 @@ public interface PartyRate extends BizEntity {
 	 * @see #setFromDate(Date)
 	 * @see org.abchip.mimo.biz.accounting.rate.RatePackage#getPartyRate_FromDate()
 	 * @model required="true"
-	 *        annotation="mimo-ent-format type='date-time'"
 	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getFromDate();
@@ -99,7 +99,9 @@ public interface PartyRate extends BizEntity {
 	 * @return the value of the '<em>Party Id</em>' reference.
 	 * @see #setPartyId(Party)
 	 * @see org.abchip.mimo.biz.accounting.rate.RatePackage#getPartyRate_PartyId()
-	 * @model keys="partyId"
+	 * @model keys="partyId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Party getPartyId();
@@ -125,7 +127,8 @@ public interface PartyRate extends BizEntity {
 	 * @return the value of the '<em>Percentage Used</em>' attribute.
 	 * @see #setPercentageUsed(double)
 	 * @see org.abchip.mimo.biz.accounting.rate.RatePackage#getPartyRate_PercentageUsed()
-	 * @model annotation="mimo-ent-format type='floating-point'"
+	 * @model annotation="mimo-ent-slot help='The percentage of the actual hours registered in timeEntries, used for the task and invoice actuals, if the field is null 100% will be used'"
+	 *        annotation="mimo-ent-format type='floating-point'"
 	 * @generated
 	 */
 	double getPercentageUsed();
@@ -177,7 +180,9 @@ public interface PartyRate extends BizEntity {
 	 * @return the value of the '<em>Rate Type Id</em>' reference.
 	 * @see #setRateTypeId(RateType)
 	 * @see org.abchip.mimo.biz.accounting.rate.RatePackage#getPartyRate_RateTypeId()
-	 * @model keys="rateTypeId"
+	 * @model keys="rateTypeId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	RateType getRateTypeId();

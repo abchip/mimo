@@ -45,11 +45,11 @@ import org.eclipse.emf.ecore.EClass;
  *   <li>{@link org.abchip.mimo.biz.webapp.visit.impl.VisitImpl#getServerIpAddress <em>Server Ip Address</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.webapp.visit.impl.VisitImpl#getSessionId <em>Session Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.webapp.visit.impl.VisitImpl#getThruDate <em>Thru Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.webapp.visit.impl.VisitImpl#getUserAgentId <em>User Agent Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.webapp.visit.impl.VisitImpl#isUserCreated <em>User Created</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.webapp.visit.impl.VisitImpl#getUserLoginId <em>User Login Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.webapp.visit.impl.VisitImpl#getWebappName <em>Webapp Name</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.webapp.visit.impl.VisitImpl#getVisitorId <em>Visitor Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.webapp.visit.impl.VisitImpl#getUserAgentId <em>User Agent Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.webapp.visit.impl.VisitImpl#getWebappName <em>Webapp Name</em>}</li>
  * </ul>
  *
  * @generated

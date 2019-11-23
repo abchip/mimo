@@ -20,9 +20,9 @@ import org.abchip.mimo.biz.party.party.Party;
  * The following features are supported:
  * </p>
  * <ul>
+ *   <li>{@link org.abchip.mimo.biz.accounting.tax.TaxAuthorityGlAccount#getOrganizationPartyId <em>Organization Party Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.tax.TaxAuthorityGlAccount#getTaxAuthGeoId <em>Tax Auth Geo Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.tax.TaxAuthorityGlAccount#getTaxAuthPartyId <em>Tax Auth Party Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.tax.TaxAuthorityGlAccount#getOrganizationPartyId <em>Organization Party Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.tax.TaxAuthorityGlAccount#getGlAccountId <em>Gl Account Id</em>}</li>
  * </ul>
  *
@@ -42,7 +42,9 @@ public interface TaxAuthorityGlAccount extends BizEntity {
 	 * @return the value of the '<em>Organization Party Id</em>' reference.
 	 * @see #setOrganizationPartyId(Party)
 	 * @see org.abchip.mimo.biz.accounting.tax.TaxPackage#getTaxAuthorityGlAccount_OrganizationPartyId()
-	 * @model keys="partyId"
+	 * @model keys="partyId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Party getOrganizationPartyId();
@@ -69,8 +71,8 @@ public interface TaxAuthorityGlAccount extends BizEntity {
 	 * @see #setTaxAuthGeoId(String)
 	 * @see org.abchip.mimo.biz.accounting.tax.TaxPackage#getTaxAuthorityGlAccount_TaxAuthGeoId()
 	 * @model required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	String getTaxAuthGeoId();
@@ -97,8 +99,8 @@ public interface TaxAuthorityGlAccount extends BizEntity {
 	 * @see #setTaxAuthPartyId(String)
 	 * @see org.abchip.mimo.biz.accounting.tax.TaxPackage#getTaxAuthorityGlAccount_TaxAuthPartyId()
 	 * @model required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	String getTaxAuthPartyId();
@@ -125,6 +127,7 @@ public interface TaxAuthorityGlAccount extends BizEntity {
 	 * @see #setGlAccountId(GlAccount)
 	 * @see org.abchip.mimo.biz.accounting.tax.TaxPackage#getTaxAuthorityGlAccount_GlAccountId()
 	 * @model keys="glAccountId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	GlAccount getGlAccountId();

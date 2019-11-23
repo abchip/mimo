@@ -21,12 +21,12 @@ import org.abchip.mimo.biz.BizEntity;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.entity.group.EntityGroup#getEntityGroupId <em>Entity Group Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.entity.group.EntityGroup#getEntityGroupName <em>Entity Group Name</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.entity.group.EntityGroup#getEntityGroupEntries <em>Entity Group Entries</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.entity.group.EntityGroup#getEntityGroupName <em>Entity Group Name</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.entity.group.GroupPackage#getEntityGroup()
- * @model
+ * @model annotation="mimo-ent-frame title='Entity Grouping'"
  * @generated
  */
 public interface EntityGroup extends BizEntity {
@@ -43,7 +43,6 @@ public interface EntityGroup extends BizEntity {
 	 * @see org.abchip.mimo.biz.entity.group.GroupPackage#getEntityGroup_EntityGroupId()
 	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getEntityGroupId();
@@ -95,8 +94,7 @@ public interface EntityGroup extends BizEntity {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Entity Group Entries</em>' attribute list.
 	 * @see org.abchip.mimo.biz.entity.group.GroupPackage#getEntityGroup_EntityGroupEntries()
-	 * @model required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='EntityGroupEntry'"
 	 * @generated
@@ -106,8 +104,7 @@ public interface EntityGroup extends BizEntity {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='EntitySyncIncludeGroup' route='entityGroupId'"
 	 * @generated

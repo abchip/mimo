@@ -22,10 +22,10 @@ import org.eclipse.emf.ecore.EClass;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.accounting.tax.impl.ZipSalesRuleLookupImpl#getStateCode <em>State Code</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.tax.impl.ZipSalesRuleLookupImpl#getCity <em>City</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.tax.impl.ZipSalesRuleLookupImpl#getCounty <em>County</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.tax.impl.ZipSalesRuleLookupImpl#getFromDate <em>From Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.tax.impl.ZipSalesRuleLookupImpl#getStateCode <em>State Code</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.tax.impl.ZipSalesRuleLookupImpl#getIdCode <em>Id Code</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.tax.impl.ZipSalesRuleLookupImpl#getShipCond <em>Ship Cond</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.tax.impl.ZipSalesRuleLookupImpl#getTaxable <em>Taxable</em>}</li>

@@ -20,15 +20,15 @@ import org.abchip.mimo.biz.common.status.StatusItem;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.product.product.ProductKeyword#getKeyword <em>Keyword</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.product.ProductKeyword#getRelevancyWeight <em>Relevancy Weight</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.ProductKeyword#getProductId <em>Product Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.ProductKeyword#getKeywordTypeId <em>Keyword Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.product.ProductKeyword#getKeyword <em>Keyword</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.product.ProductKeyword#getRelevancyWeight <em>Relevancy Weight</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.ProductKeyword#getStatusId <em>Status Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.product.product.ProductPackage#getProductKeyword()
- * @model
+ * @model annotation="mimo-ent-frame dictionary='ProductEntityLabels'"
  * @generated
  */
 public interface ProductKeyword extends BizEntity {
@@ -44,8 +44,8 @@ public interface ProductKeyword extends BizEntity {
 	 * @see #setKeyword(String)
 	 * @see org.abchip.mimo.biz.product.product.ProductPackage#getProductKeyword_Keyword()
 	 * @model required="true"
-	 *        annotation="mimo-ent-format type='short-varchar' length='60'"
 	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='short-varchar' length='60'"
 	 * @generated
 	 */
 	String getKeyword();
@@ -71,7 +71,9 @@ public interface ProductKeyword extends BizEntity {
 	 * @return the value of the '<em>Keyword Type Id</em>' reference.
 	 * @see #setKeywordTypeId(Enumeration)
 	 * @see org.abchip.mimo.biz.product.product.ProductPackage#getProductKeyword_KeywordTypeId()
-	 * @model keys="enumId"
+	 * @model keys="enumId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Enumeration getKeywordTypeId();
@@ -124,6 +126,7 @@ public interface ProductKeyword extends BizEntity {
 	 * @see #setStatusId(StatusItem)
 	 * @see org.abchip.mimo.biz.product.product.ProductPackage#getProductKeyword_StatusId()
 	 * @model keys="statusId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	StatusItem getStatusId();
@@ -149,7 +152,9 @@ public interface ProductKeyword extends BizEntity {
 	 * @return the value of the '<em>Product Id</em>' reference.
 	 * @see #setProductId(Product)
 	 * @see org.abchip.mimo.biz.product.product.ProductPackage#getProductKeyword_ProductId()
-	 * @model keys="productId"
+	 * @model keys="productId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Product getProductId();

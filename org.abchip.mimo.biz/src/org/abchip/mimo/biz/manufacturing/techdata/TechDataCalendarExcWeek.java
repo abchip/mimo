@@ -20,14 +20,14 @@ import org.abchip.mimo.biz.BizEntity;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.manufacturing.techdata.TechDataCalendarExcWeek#getExceptionDateStart <em>Exception Date Start</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.manufacturing.techdata.TechDataCalendarExcWeek#getDescription <em>Description</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.manufacturing.techdata.TechDataCalendarExcWeek#getCalendarId <em>Calendar Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.manufacturing.techdata.TechDataCalendarExcWeek#getExceptionDateStart <em>Exception Date Start</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.manufacturing.techdata.TechDataCalendarExcWeek#getCalendarWeekId <em>Calendar Week Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.manufacturing.techdata.TechDataCalendarExcWeek#getDescription <em>Description</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.manufacturing.techdata.TechdataPackage#getTechDataCalendarExcWeek()
- * @model annotation="mimo-ent-frame formula='description'"
+ * @model annotation="mimo-ent-frame help='Used to defined some weeks which differ from the normal week defined in the calendar.' title='Calendar Exception Week' formula='description'"
  * @generated
  */
 public interface TechDataCalendarExcWeek extends BizEntity {
@@ -42,7 +42,9 @@ public interface TechDataCalendarExcWeek extends BizEntity {
 	 * @return the value of the '<em>Calendar Id</em>' reference.
 	 * @see #setCalendarId(TechDataCalendar)
 	 * @see org.abchip.mimo.biz.manufacturing.techdata.TechdataPackage#getTechDataCalendarExcWeek_CalendarId()
-	 * @model keys="calendarId"
+	 * @model keys="calendarId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	TechDataCalendar getCalendarId();
@@ -69,8 +71,8 @@ public interface TechDataCalendarExcWeek extends BizEntity {
 	 * @see #setExceptionDateStart(Date)
 	 * @see org.abchip.mimo.biz.manufacturing.techdata.TechdataPackage#getTechDataCalendarExcWeek_ExceptionDateStart()
 	 * @model required="true"
-	 *        annotation="mimo-ent-format type='date'"
 	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='date'"
 	 * @generated
 	 */
 	Date getExceptionDateStart();
@@ -97,6 +99,7 @@ public interface TechDataCalendarExcWeek extends BizEntity {
 	 * @see #setCalendarWeekId(TechDataCalendarWeek)
 	 * @see org.abchip.mimo.biz.manufacturing.techdata.TechdataPackage#getTechDataCalendarExcWeek_CalendarWeekId()
 	 * @model keys="calendarWeekId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	TechDataCalendarWeek getCalendarWeekId();

@@ -20,15 +20,15 @@ import org.abchip.mimo.biz.BizEntity;
  * The following features are supported:
  * </p>
  * <ul>
+ *   <li>{@link org.abchip.mimo.biz.product.store.ProductStoreGroupRollup#getProductStoreGroupId <em>Product Store Group Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.store.ProductStoreGroupRollup#getParentGroupId <em>Parent Group Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.store.ProductStoreGroupRollup#getFromDate <em>From Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.store.ProductStoreGroupRollup#getSequenceNum <em>Sequence Num</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.store.ProductStoreGroupRollup#getThruDate <em>Thru Date</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.store.ProductStoreGroupRollup#getProductStoreGroupId <em>Product Store Group Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.store.ProductStoreGroupRollup#getParentGroupId <em>Parent Group Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.product.store.StorePackage#getProductStoreGroupRollup()
- * @model
+ * @model annotation="mimo-ent-frame dictionary='ProductEntityLabels'"
  * @generated
  */
 public interface ProductStoreGroupRollup extends BizEntity {
@@ -44,8 +44,8 @@ public interface ProductStoreGroupRollup extends BizEntity {
 	 * @see #setFromDate(Date)
 	 * @see org.abchip.mimo.biz.product.store.StorePackage#getProductStoreGroupRollup_FromDate()
 	 * @model required="true"
-	 *        annotation="mimo-ent-format type='date-time'"
 	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getFromDate();
@@ -123,7 +123,9 @@ public interface ProductStoreGroupRollup extends BizEntity {
 	 * @return the value of the '<em>Product Store Group Id</em>' reference.
 	 * @see #setProductStoreGroupId(ProductStoreGroup)
 	 * @see org.abchip.mimo.biz.product.store.StorePackage#getProductStoreGroupRollup_ProductStoreGroupId()
-	 * @model keys="productStoreGroupId"
+	 * @model keys="productStoreGroupId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ProductStoreGroup getProductStoreGroupId();
@@ -149,7 +151,9 @@ public interface ProductStoreGroupRollup extends BizEntity {
 	 * @return the value of the '<em>Parent Group Id</em>' reference.
 	 * @see #setParentGroupId(ProductStoreGroup)
 	 * @see org.abchip.mimo.biz.product.store.StorePackage#getProductStoreGroupRollup_ParentGroupId()
-	 * @model keys="productStoreGroupId"
+	 * @model keys="productStoreGroupId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ProductStoreGroup getParentGroupId();

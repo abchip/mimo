@@ -38,7 +38,9 @@ public interface PartyInvitationGroupAssoc extends BizEntity {
 	 * @return the value of the '<em>Party Id To</em>' reference.
 	 * @see #setPartyIdTo(PartyGroup)
 	 * @see org.abchip.mimo.biz.party.party.PartyPackage#getPartyInvitationGroupAssoc_PartyIdTo()
-	 * @model keys="partyId"
+	 * @model keys="partyId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	PartyGroup getPartyIdTo();
@@ -64,7 +66,9 @@ public interface PartyInvitationGroupAssoc extends BizEntity {
 	 * @return the value of the '<em>Party Invitation Id</em>' reference.
 	 * @see #setPartyInvitationId(PartyInvitation)
 	 * @see org.abchip.mimo.biz.party.party.PartyPackage#getPartyInvitationGroupAssoc_PartyInvitationId()
-	 * @model keys="partyInvitationId"
+	 * @model keys="partyInvitationId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	PartyInvitation getPartyInvitationId();

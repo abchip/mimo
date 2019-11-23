@@ -21,10 +21,10 @@ import org.abchip.mimo.biz.BizEntityTyped;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.accounting.fixedasset.AccommodationMap#getAccommodationMapId <em>Accommodation Map Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.fixedasset.AccommodationMap#getNumberOfSpaces <em>Number Of Spaces</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.fixedasset.AccommodationMap#getAccommodationClassId <em>Accommodation Class Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.fixedasset.AccommodationMap#getFixedAssetId <em>Fixed Asset Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.fixedasset.AccommodationMap#getAccommodationMapTypeId <em>Accommodation Map Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.fixedasset.AccommodationMap#getFixedAssetId <em>Fixed Asset Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.fixedasset.AccommodationMap#getNumberOfSpaces <em>Number Of Spaces</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.accounting.fixedasset.FixedassetPackage#getAccommodationMap()
@@ -45,7 +45,6 @@ public interface AccommodationMap extends BizEntityTyped<AccommodationMapType> {
 	 * @see org.abchip.mimo.biz.accounting.fixedasset.FixedassetPackage#getAccommodationMap_AccommodationMapId()
 	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getAccommodationMapId();
@@ -108,6 +107,7 @@ public interface AccommodationMap extends BizEntityTyped<AccommodationMapType> {
 	 * @see #setAccommodationClassId(AccommodationClass)
 	 * @see org.abchip.mimo.biz.accounting.fixedasset.FixedassetPackage#getAccommodationMap_AccommodationClassId()
 	 * @model keys="accommodationClassId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	AccommodationClass getAccommodationClassId();
@@ -134,6 +134,7 @@ public interface AccommodationMap extends BizEntityTyped<AccommodationMapType> {
 	 * @see #setFixedAssetId(FixedAsset)
 	 * @see org.abchip.mimo.biz.accounting.fixedasset.FixedassetPackage#getAccommodationMap_FixedAssetId()
 	 * @model keys="fixedAssetId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	FixedAsset getFixedAssetId();
@@ -160,6 +161,7 @@ public interface AccommodationMap extends BizEntityTyped<AccommodationMapType> {
 	 * @see #setAccommodationMapTypeId(AccommodationMapType)
 	 * @see org.abchip.mimo.biz.accounting.fixedasset.FixedassetPackage#getAccommodationMap_AccommodationMapTypeId()
 	 * @model keys="accommodationMapTypeId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	AccommodationMapType getAccommodationMapTypeId();

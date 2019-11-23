@@ -195,9 +195,6 @@ import org.abchip.mimo.biz.workeffort.timesheet.TimesheetPackage;
 import org.abchip.mimo.biz.workeffort.timesheet.impl.TimesheetPackageImpl;
 import org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage;
 import org.abchip.mimo.biz.workeffort.workeffort.impl.WorkeffortPackageImpl;
-import org.abchip.mimo.entity.EntityPackage;
-import org.eclipse.emf.common.util.URI;
-
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
@@ -705,7 +702,7 @@ public class SecuritygroupPackageImpl extends EPackageImpl implements Securitygr
 	 */
 	@Override
 	public EReference getProtectedView_GroupId() {
-		return (EReference)protectedViewEClass.getEStructuralFeatures().get(4);
+		return (EReference)protectedViewEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -715,16 +712,6 @@ public class SecuritygroupPackageImpl extends EPackageImpl implements Securitygr
 	 */
 	@Override
 	public EAttribute getProtectedView_ViewNameId() {
-		return (EAttribute)protectedViewEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EAttribute getProtectedView_MaxHits() {
 		return (EAttribute)protectedViewEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -734,7 +721,7 @@ public class SecuritygroupPackageImpl extends EPackageImpl implements Securitygr
 	 * @generated
 	 */
 	@Override
-	public EAttribute getProtectedView_MaxHitsDuration() {
+	public EAttribute getProtectedView_MaxHits() {
 		return (EAttribute)protectedViewEClass.getEStructuralFeatures().get(2);
 	}
 
@@ -744,8 +731,18 @@ public class SecuritygroupPackageImpl extends EPackageImpl implements Securitygr
 	 * @generated
 	 */
 	@Override
-	public EAttribute getProtectedView_TarpitDuration() {
+	public EAttribute getProtectedView_MaxHitsDuration() {
 		return (EAttribute)protectedViewEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getProtectedView_TarpitDuration() {
+		return (EAttribute)protectedViewEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -815,7 +812,7 @@ public class SecuritygroupPackageImpl extends EPackageImpl implements Securitygr
 	 */
 	@Override
 	public EReference getSecurityGroupPermission_GroupId() {
-		return (EReference)securityGroupPermissionEClass.getEStructuralFeatures().get(2);
+		return (EReference)securityGroupPermissionEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -825,7 +822,7 @@ public class SecuritygroupPackageImpl extends EPackageImpl implements Securitygr
 	 */
 	@Override
 	public EReference getSecurityGroupPermission_PermissionId() {
-		return (EReference)securityGroupPermissionEClass.getEStructuralFeatures().get(3);
+		return (EReference)securityGroupPermissionEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -835,7 +832,7 @@ public class SecuritygroupPackageImpl extends EPackageImpl implements Securitygr
 	 */
 	@Override
 	public EAttribute getSecurityGroupPermission_FromDate() {
-		return (EAttribute)securityGroupPermissionEClass.getEStructuralFeatures().get(0);
+		return (EAttribute)securityGroupPermissionEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -845,7 +842,7 @@ public class SecuritygroupPackageImpl extends EPackageImpl implements Securitygr
 	 */
 	@Override
 	public EAttribute getSecurityGroupPermission_ThruDate() {
-		return (EAttribute)securityGroupPermissionEClass.getEStructuralFeatures().get(1);
+		return (EAttribute)securityGroupPermissionEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -895,7 +892,7 @@ public class SecuritygroupPackageImpl extends EPackageImpl implements Securitygr
 	 */
 	@Override
 	public EAttribute getTarpittedLoginView_ViewNameId() {
-		return (EAttribute)tarpittedLoginViewEClass.getEStructuralFeatures().get(0);
+		return (EAttribute)tarpittedLoginViewEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -905,7 +902,7 @@ public class SecuritygroupPackageImpl extends EPackageImpl implements Securitygr
 	 */
 	@Override
 	public EAttribute getTarpittedLoginView_UserLoginId() {
-		return (EAttribute)tarpittedLoginViewEClass.getEStructuralFeatures().get(1);
+		return (EAttribute)tarpittedLoginViewEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -935,7 +932,7 @@ public class SecuritygroupPackageImpl extends EPackageImpl implements Securitygr
 	 */
 	@Override
 	public EReference getUserLoginSecurityGroup_UserLoginId() {
-		return (EReference)userLoginSecurityGroupEClass.getEStructuralFeatures().get(2);
+		return (EReference)userLoginSecurityGroupEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -945,7 +942,7 @@ public class SecuritygroupPackageImpl extends EPackageImpl implements Securitygr
 	 */
 	@Override
 	public EReference getUserLoginSecurityGroup_GroupId() {
-		return (EReference)userLoginSecurityGroupEClass.getEStructuralFeatures().get(3);
+		return (EReference)userLoginSecurityGroupEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -955,7 +952,7 @@ public class SecuritygroupPackageImpl extends EPackageImpl implements Securitygr
 	 */
 	@Override
 	public EAttribute getUserLoginSecurityGroup_FromDate() {
-		return (EAttribute)userLoginSecurityGroupEClass.getEStructuralFeatures().get(0);
+		return (EAttribute)userLoginSecurityGroupEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -965,7 +962,7 @@ public class SecuritygroupPackageImpl extends EPackageImpl implements Securitygr
 	 */
 	@Override
 	public EAttribute getUserLoginSecurityGroup_ThruDate() {
-		return (EAttribute)userLoginSecurityGroupEClass.getEStructuralFeatures().get(1);
+		return (EAttribute)userLoginSecurityGroupEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -998,11 +995,11 @@ public class SecuritygroupPackageImpl extends EPackageImpl implements Securitygr
 
 		// Create classes and their features
 		protectedViewEClass = createEClass(PROTECTED_VIEW);
+		createEReference(protectedViewEClass, PROTECTED_VIEW__GROUP_ID);
 		createEAttribute(protectedViewEClass, PROTECTED_VIEW__VIEW_NAME_ID);
 		createEAttribute(protectedViewEClass, PROTECTED_VIEW__MAX_HITS);
 		createEAttribute(protectedViewEClass, PROTECTED_VIEW__MAX_HITS_DURATION);
 		createEAttribute(protectedViewEClass, PROTECTED_VIEW__TARPIT_DURATION);
-		createEReference(protectedViewEClass, PROTECTED_VIEW__GROUP_ID);
 
 		securityGroupEClass = createEClass(SECURITY_GROUP);
 		createEAttribute(securityGroupEClass, SECURITY_GROUP__GROUP_ID);
@@ -1011,25 +1008,25 @@ public class SecuritygroupPackageImpl extends EPackageImpl implements Securitygr
 		createEAttribute(securityGroupEClass, SECURITY_GROUP__PROTECTED_VIEWS);
 
 		securityGroupPermissionEClass = createEClass(SECURITY_GROUP_PERMISSION);
-		createEAttribute(securityGroupPermissionEClass, SECURITY_GROUP_PERMISSION__FROM_DATE);
-		createEAttribute(securityGroupPermissionEClass, SECURITY_GROUP_PERMISSION__THRU_DATE);
 		createEReference(securityGroupPermissionEClass, SECURITY_GROUP_PERMISSION__GROUP_ID);
 		createEReference(securityGroupPermissionEClass, SECURITY_GROUP_PERMISSION__PERMISSION_ID);
+		createEAttribute(securityGroupPermissionEClass, SECURITY_GROUP_PERMISSION__FROM_DATE);
+		createEAttribute(securityGroupPermissionEClass, SECURITY_GROUP_PERMISSION__THRU_DATE);
 
 		securityPermissionEClass = createEClass(SECURITY_PERMISSION);
 		createEAttribute(securityPermissionEClass, SECURITY_PERMISSION__PERMISSION_ID);
 		createEAttribute(securityPermissionEClass, SECURITY_PERMISSION__DESCRIPTION);
 
 		tarpittedLoginViewEClass = createEClass(TARPITTED_LOGIN_VIEW);
-		createEAttribute(tarpittedLoginViewEClass, TARPITTED_LOGIN_VIEW__VIEW_NAME_ID);
 		createEAttribute(tarpittedLoginViewEClass, TARPITTED_LOGIN_VIEW__USER_LOGIN_ID);
+		createEAttribute(tarpittedLoginViewEClass, TARPITTED_LOGIN_VIEW__VIEW_NAME_ID);
 		createEAttribute(tarpittedLoginViewEClass, TARPITTED_LOGIN_VIEW__TARPIT_RELEASE_DATE_TIME);
 
 		userLoginSecurityGroupEClass = createEClass(USER_LOGIN_SECURITY_GROUP);
-		createEAttribute(userLoginSecurityGroupEClass, USER_LOGIN_SECURITY_GROUP__FROM_DATE);
-		createEAttribute(userLoginSecurityGroupEClass, USER_LOGIN_SECURITY_GROUP__THRU_DATE);
 		createEReference(userLoginSecurityGroupEClass, USER_LOGIN_SECURITY_GROUP__USER_LOGIN_ID);
 		createEReference(userLoginSecurityGroupEClass, USER_LOGIN_SECURITY_GROUP__GROUP_ID);
+		createEAttribute(userLoginSecurityGroupEClass, USER_LOGIN_SECURITY_GROUP__FROM_DATE);
+		createEAttribute(userLoginSecurityGroupEClass, USER_LOGIN_SECURITY_GROUP__THRU_DATE);
 	}
 
 	/**
@@ -1073,53 +1070,53 @@ public class SecuritygroupPackageImpl extends EPackageImpl implements Securitygr
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(protectedViewEClass, ProtectedView.class, "ProtectedView", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getProtectedView_GroupId(), this.getSecurityGroup(), null, "groupId", null, 1, 1, ProtectedView.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getProtectedView_GroupId().getEKeys().add(this.getSecurityGroup_GroupId());
 		initEAttribute(getProtectedView_ViewNameId(), ecorePackage.getEString(), "viewNameId", null, 1, 1, ProtectedView.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getProtectedView_MaxHits(), ecorePackage.getELong(), "maxHits", null, 0, 1, ProtectedView.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getProtectedView_MaxHitsDuration(), ecorePackage.getELong(), "maxHitsDuration", null, 0, 1, ProtectedView.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getProtectedView_TarpitDuration(), ecorePackage.getELong(), "tarpitDuration", null, 0, 1, ProtectedView.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getProtectedView_GroupId(), this.getSecurityGroup(), null, "groupId", null, 0, 1, ProtectedView.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		getProtectedView_GroupId().getEKeys().add(this.getSecurityGroup_GroupId());
 
 		initEClass(securityGroupEClass, SecurityGroup.class, "SecurityGroup", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getSecurityGroup_GroupId(), ecorePackage.getEString(), "groupId", null, 1, 1, SecurityGroup.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getSecurityGroup_Description(), ecorePackage.getEString(), "description", null, 0, 1, SecurityGroup.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getSecurityGroup_GroupName(), ecorePackage.getEString(), "groupName", null, 0, 1, SecurityGroup.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getSecurityGroup_ProtectedViews(), ecorePackage.getEString(), "protectedViews", null, 1, -1, SecurityGroup.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getSecurityGroup_ProtectedViews(), ecorePackage.getEString(), "protectedViews", null, 0, -1, SecurityGroup.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		addEOperation(securityGroupEClass, ecorePackage.getEString(), "portalPages", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(securityGroupPermissionEClass, SecurityGroupPermission.class, "SecurityGroupPermission", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getSecurityGroupPermission_GroupId(), this.getSecurityGroup(), null, "groupId", null, 1, 1, SecurityGroupPermission.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getSecurityGroupPermission_GroupId().getEKeys().add(this.getSecurityGroup_GroupId());
+		initEReference(getSecurityGroupPermission_PermissionId(), this.getSecurityPermission(), null, "permissionId", null, 1, 1, SecurityGroupPermission.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getSecurityGroupPermission_PermissionId().getEKeys().add(this.getSecurityPermission_PermissionId());
 		initEAttribute(getSecurityGroupPermission_FromDate(), ecorePackage.getEDate(), "fromDate", null, 1, 1, SecurityGroupPermission.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getSecurityGroupPermission_ThruDate(), ecorePackage.getEDate(), "thruDate", null, 0, 1, SecurityGroupPermission.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getSecurityGroupPermission_GroupId(), this.getSecurityGroup(), null, "groupId", null, 0, 1, SecurityGroupPermission.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		getSecurityGroupPermission_GroupId().getEKeys().add(this.getSecurityGroup_GroupId());
-		initEReference(getSecurityGroupPermission_PermissionId(), this.getSecurityPermission(), null, "permissionId", null, 0, 1, SecurityGroupPermission.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		getSecurityGroupPermission_PermissionId().getEKeys().add(this.getSecurityPermission_PermissionId());
 
 		initEClass(securityPermissionEClass, SecurityPermission.class, "SecurityPermission", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getSecurityPermission_PermissionId(), ecorePackage.getEString(), "permissionId", null, 1, 1, SecurityPermission.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getSecurityPermission_Description(), ecorePackage.getEString(), "description", null, 0, 1, SecurityPermission.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(tarpittedLoginViewEClass, TarpittedLoginView.class, "TarpittedLoginView", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getTarpittedLoginView_ViewNameId(), ecorePackage.getEString(), "viewNameId", null, 1, 1, TarpittedLoginView.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getTarpittedLoginView_UserLoginId(), ecorePackage.getEString(), "userLoginId", null, 1, 1, TarpittedLoginView.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getTarpittedLoginView_ViewNameId(), ecorePackage.getEString(), "viewNameId", null, 1, 1, TarpittedLoginView.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getTarpittedLoginView_TarpitReleaseDateTime(), ecorePackage.getELong(), "tarpitReleaseDateTime", null, 0, 1, TarpittedLoginView.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(userLoginSecurityGroupEClass, UserLoginSecurityGroup.class, "UserLoginSecurityGroup", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getUserLoginSecurityGroup_UserLoginId(), theLoginPackage.getUserLogin(), null, "userLoginId", null, 1, 1, UserLoginSecurityGroup.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getUserLoginSecurityGroup_UserLoginId().getEKeys().add(theLoginPackage.getUserLogin_UserLoginId());
+		initEReference(getUserLoginSecurityGroup_GroupId(), this.getSecurityGroup(), null, "groupId", null, 1, 1, UserLoginSecurityGroup.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getUserLoginSecurityGroup_GroupId().getEKeys().add(this.getSecurityGroup_GroupId());
 		initEAttribute(getUserLoginSecurityGroup_FromDate(), ecorePackage.getEDate(), "fromDate", null, 1, 1, UserLoginSecurityGroup.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getUserLoginSecurityGroup_ThruDate(), ecorePackage.getEDate(), "thruDate", null, 0, 1, UserLoginSecurityGroup.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getUserLoginSecurityGroup_UserLoginId(), theLoginPackage.getUserLogin(), null, "userLoginId", null, 0, 1, UserLoginSecurityGroup.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		getUserLoginSecurityGroup_UserLoginId().getEKeys().add(theLoginPackage.getUserLogin_UserLoginId());
-		initEReference(getUserLoginSecurityGroup_GroupId(), this.getSecurityGroup(), null, "groupId", null, 0, 1, UserLoginSecurityGroup.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		getUserLoginSecurityGroup_GroupId().getEKeys().add(this.getSecurityGroup_GroupId());
 
 		// Create annotations
-		// mimo-ent-format
-		createMimoentformatAnnotations();
-		// mimo-ent-slot
-		createMimoentslotAnnotations();
 		// mimo-ent-frame
 		createMimoentframeAnnotations();
+		// mimo-ent-slot
+		createMimoentslotAnnotations();
+		// mimo-ent-format
+		createMimoentformatAnnotations();
 		// mimo-ent-domain
 		createMimoentdomainAnnotations();
 	}
@@ -1132,6 +1129,13 @@ public class SecuritygroupPackageImpl extends EPackageImpl implements Securitygr
 	 */
 	protected void createMimoentformatAnnotations() {
 		String source = "mimo-ent-format";
+		addAnnotation
+		  (getProtectedView_GroupId(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
 		addAnnotation
 		  (getProtectedView_ViewNameId(),
 		   source,
@@ -1199,6 +1203,20 @@ public class SecuritygroupPackageImpl extends EPackageImpl implements Securitygr
 			   "length", "20"
 		   });
 		addAnnotation
+		  (getSecurityGroupPermission_GroupId(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (getSecurityGroupPermission_PermissionId(),
+		   source,
+		   new String[] {
+			   "type", "id-long",
+			   "length", "60"
+		   });
+		addAnnotation
 		  (getSecurityGroupPermission_FromDate(),
 		   source,
 		   new String[] {
@@ -1225,18 +1243,18 @@ public class SecuritygroupPackageImpl extends EPackageImpl implements Securitygr
 			   "length", "255"
 		   });
 		addAnnotation
-		  (getTarpittedLoginView_ViewNameId(),
-		   source,
-		   new String[] {
-			   "type", "id-long",
-			   "length", "60"
-		   });
-		addAnnotation
 		  (getTarpittedLoginView_UserLoginId(),
 		   source,
 		   new String[] {
 			   "type", "id-vlong",
 			   "length", "255"
+		   });
+		addAnnotation
+		  (getTarpittedLoginView_ViewNameId(),
+		   source,
+		   new String[] {
+			   "type", "id-long",
+			   "length", "60"
 		   });
 		addAnnotation
 		  (getTarpittedLoginView_TarpitReleaseDateTime(),
@@ -1245,6 +1263,20 @@ public class SecuritygroupPackageImpl extends EPackageImpl implements Securitygr
 			   "type", "numeric",
 			   "precision", "20",
 			   "scale", "0"
+		   });
+		addAnnotation
+		  (getUserLoginSecurityGroup_UserLoginId(),
+		   source,
+		   new String[] {
+			   "type", "id-vlong",
+			   "length", "255"
+		   });
+		addAnnotation
+		  (getUserLoginSecurityGroup_GroupId(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
 		   });
 		addAnnotation
 		  (getUserLoginSecurityGroup_FromDate(),
@@ -1269,10 +1301,35 @@ public class SecuritygroupPackageImpl extends EPackageImpl implements Securitygr
 	protected void createMimoentslotAnnotations() {
 		String source = "mimo-ent-slot";
 		addAnnotation
-		  (getProtectedView_ViewNameId(),
+		  (getProtectedView_GroupId(),
 		   source,
 		   new String[] {
 			   "key", "true"
+		   });
+		addAnnotation
+		  (getProtectedView_ViewNameId(),
+		   source,
+		   new String[] {
+			   "key", "true",
+			   "help", "name of view to protect from data theft"
+		   });
+		addAnnotation
+		  (getProtectedView_MaxHits(),
+		   source,
+		   new String[] {
+			   "help", "number of hits before tarpitting a login for a view"
+		   });
+		addAnnotation
+		  (getProtectedView_MaxHitsDuration(),
+		   source,
+		   new String[] {
+			   "help", "period of time associated with maxHits (in seconds)"
+		   });
+		addAnnotation
+		  (getProtectedView_TarpitDuration(),
+		   source,
+		   new String[] {
+			   "help", "period of time a login will not be able to acces  this view again (in seconds)"
 		   });
 		addAnnotation
 		  (securityGroupEClass.getEOperations().get(0),
@@ -1281,16 +1338,22 @@ public class SecuritygroupPackageImpl extends EPackageImpl implements Securitygr
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (getSecurityGroup_GroupId(),
+		  (getSecurityGroup_ProtectedViews(),
+		   source,
+		   new String[] {
+			   "derived", "true"
+		   });
+		addAnnotation
+		  (getSecurityGroupPermission_GroupId(),
 		   source,
 		   new String[] {
 			   "key", "true"
 		   });
 		addAnnotation
-		  (getSecurityGroup_ProtectedViews(),
+		  (getSecurityGroupPermission_PermissionId(),
 		   source,
 		   new String[] {
-			   "derived", "true"
+			   "key", "true"
 		   });
 		addAnnotation
 		  (getSecurityGroupPermission_FromDate(),
@@ -1299,7 +1362,7 @@ public class SecuritygroupPackageImpl extends EPackageImpl implements Securitygr
 			   "key", "true"
 		   });
 		addAnnotation
-		  (getSecurityPermission_PermissionId(),
+		  (getTarpittedLoginView_UserLoginId(),
 		   source,
 		   new String[] {
 			   "key", "true"
@@ -1308,10 +1371,23 @@ public class SecuritygroupPackageImpl extends EPackageImpl implements Securitygr
 		  (getTarpittedLoginView_ViewNameId(),
 		   source,
 		   new String[] {
+			   "key", "true",
+			   "help", "name of view protected from data theft"
+		   });
+		addAnnotation
+		  (getTarpittedLoginView_TarpitReleaseDateTime(),
+		   source,
+		   new String[] {
+			   "help", "Date/Time at which the login will gain anew access to the view (in milliseconds from midnight, January 1, 1970 UTC , 0 meaning no tarpit to allow the admin to free a view and to keep history"
+		   });
+		addAnnotation
+		  (getUserLoginSecurityGroup_UserLoginId(),
+		   source,
+		   new String[] {
 			   "key", "true"
 		   });
 		addAnnotation
-		  (getTarpittedLoginView_UserLoginId(),
+		  (getUserLoginSecurityGroup_GroupId(),
 		   source,
 		   new String[] {
 			   "key", "true"
@@ -1338,18 +1414,12 @@ public class SecuritygroupPackageImpl extends EPackageImpl implements Securitygr
 		   new String[] {
 			   "frame", "PortalPage",
 			   "route", "securityGroupId"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
 		  (getSecurityGroup_ProtectedViews(),
 		   source,
 		   new String[] {
 			   "frame", "ProtectedView"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 	}
 
@@ -1362,16 +1432,48 @@ public class SecuritygroupPackageImpl extends EPackageImpl implements Securitygr
 	protected void createMimoentframeAnnotations() {
 		String source = "mimo-ent-frame";
 		addAnnotation
+		  (protectedViewEClass,
+		   source,
+		   new String[] {
+			   "help", "Defines views protected from data leakage",
+			   "title", "Security Component - Protected View"
+		   });
+		addAnnotation
 		  (securityGroupEClass,
 		   source,
 		   new String[] {
+			   "title", "Security Component - Security Group",
+			   "dictionary", "SecurityEntityLabels",
 			   "formula", "description"
+		   });
+		addAnnotation
+		  (securityGroupPermissionEClass,
+		   source,
+		   new String[] {
+			   "help", "Defines a permission available to a security group; there is no FK to SecurityPermission because we want to leave open the possibility of ad-hoc permissions, especially for the Entity Data Maintenance pages which have TONS of permissions",
+			   "title", "Security Component - Security Group Permission"
 		   });
 		addAnnotation
 		  (securityPermissionEClass,
 		   source,
 		   new String[] {
+			   "title", "Security Component - Security Permission",
+			   "dictionary", "SecurityEntityLabels",
 			   "formula", "description"
+		   });
+		addAnnotation
+		  (tarpittedLoginViewEClass,
+		   source,
+		   new String[] {
+			   "help", "Login View couple currently tarpitted : any access to the view for the login is denied",
+			   "title", "Security Component - Protected View"
+		   });
+		addAnnotation
+		  (userLoginSecurityGroupEClass,
+		   source,
+		   new String[] {
+			   "help", "Maps a UserLogin to a security group",
+			   "title", "Security Component - User Login Security Group"
 		   });
 	}
 

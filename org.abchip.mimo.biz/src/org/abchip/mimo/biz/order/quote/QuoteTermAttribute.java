@@ -18,10 +18,10 @@ import org.abchip.mimo.biz.BizEntity;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.order.quote.QuoteTermAttribute#getTermTypeId <em>Term Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.quote.QuoteTermAttribute#getAttrName <em>Attr Name</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.quote.QuoteTermAttribute#getQuoteId <em>Quote Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.quote.QuoteTermAttribute#getQuoteItemSeqId <em>Quote Item Seq Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.quote.QuoteTermAttribute#getAttrName <em>Attr Name</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.quote.QuoteTermAttribute#getTermTypeId <em>Term Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.quote.QuoteTermAttribute#getAttrDescription <em>Attr Description</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.quote.QuoteTermAttribute#getAttrValue <em>Attr Value</em>}</li>
  * </ul>
@@ -69,8 +69,8 @@ public interface QuoteTermAttribute extends BizEntity {
 	 * @see #setAttrName(String)
 	 * @see org.abchip.mimo.biz.order.quote.QuotePackage#getQuoteTermAttribute_AttrName()
 	 * @model required="true"
-	 *        annotation="mimo-ent-format type='id-long' length='60'"
 	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id-long' length='60'"
 	 * @generated
 	 */
 	String getAttrName();
@@ -123,8 +123,8 @@ public interface QuoteTermAttribute extends BizEntity {
 	 * @see #setQuoteId(String)
 	 * @see org.abchip.mimo.biz.order.quote.QuotePackage#getQuoteTermAttribute_QuoteId()
 	 * @model required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	String getQuoteId();
@@ -151,8 +151,8 @@ public interface QuoteTermAttribute extends BizEntity {
 	 * @see #setQuoteItemSeqId(String)
 	 * @see org.abchip.mimo.biz.order.quote.QuotePackage#getQuoteTermAttribute_QuoteItemSeqId()
 	 * @model required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	String getQuoteItemSeqId();
@@ -179,8 +179,8 @@ public interface QuoteTermAttribute extends BizEntity {
 	 * @see #setTermTypeId(String)
 	 * @see org.abchip.mimo.biz.order.quote.QuotePackage#getQuoteTermAttribute_TermTypeId()
 	 * @model required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	String getTermTypeId();

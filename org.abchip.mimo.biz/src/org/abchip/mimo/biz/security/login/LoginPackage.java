@@ -207,13 +207,22 @@ public interface LoginPackage extends EPackage {
 	int USER_LOGIN__LAST_TIME_ZONE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 10;
 
 	/**
+	 * The feature id for the '<em><b>Party Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int USER_LOGIN__PARTY_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 11;
+
+	/**
 	 * The feature id for the '<em><b>Password Hint</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int USER_LOGIN__PASSWORD_HINT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 11;
+	int USER_LOGIN__PASSWORD_HINT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 12;
 
 	/**
 	 * The feature id for the '<em><b>Require Password Change</b></em>' attribute.
@@ -222,7 +231,7 @@ public interface LoginPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int USER_LOGIN__REQUIRE_PASSWORD_CHANGE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 12;
+	int USER_LOGIN__REQUIRE_PASSWORD_CHANGE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 13;
 
 	/**
 	 * The feature id for the '<em><b>Successive Failed Logins</b></em>' attribute.
@@ -231,7 +240,7 @@ public interface LoginPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int USER_LOGIN__SUCCESSIVE_FAILED_LOGINS = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 13;
+	int USER_LOGIN__SUCCESSIVE_FAILED_LOGINS = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 14;
 
 	/**
 	 * The feature id for the '<em><b>User Ldap Dn</b></em>' attribute.
@@ -240,16 +249,7 @@ public interface LoginPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int USER_LOGIN__USER_LDAP_DN = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 14;
-
-	/**
-	 * The feature id for the '<em><b>Party Id</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int USER_LOGIN__PARTY_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 15;
+	int USER_LOGIN__USER_LDAP_DN = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 15;
 
 	/**
 	 * The feature id for the '<em><b>User Login Histories</b></em>' attribute list.
@@ -334,58 +334,22 @@ public interface LoginPackage extends EPackage {
 	int USER_LOGIN_HISTORY__LAST_UPDATED_TX_STAMP = BizPackage.BIZ_ENTITY__LAST_UPDATED_TX_STAMP;
 
 	/**
-	 * The feature id for the '<em><b>From Date</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int USER_LOGIN_HISTORY__FROM_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Password Used</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int USER_LOGIN_HISTORY__PASSWORD_USED = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
-
-	/**
-	 * The feature id for the '<em><b>Successful Login</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int USER_LOGIN_HISTORY__SUCCESSFUL_LOGIN = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
-
-	/**
-	 * The feature id for the '<em><b>Thru Date</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int USER_LOGIN_HISTORY__THRU_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
-
-	/**
-	 * The feature id for the '<em><b>Visit Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int USER_LOGIN_HISTORY__VISIT_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
-
-	/**
 	 * The feature id for the '<em><b>User Login Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int USER_LOGIN_HISTORY__USER_LOGIN_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 5;
+	int USER_LOGIN_HISTORY__USER_LOGIN_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>From Date</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int USER_LOGIN_HISTORY__FROM_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Origin User Login Id</b></em>' reference.
@@ -394,7 +358,7 @@ public interface LoginPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int USER_LOGIN_HISTORY__ORIGIN_USER_LOGIN_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 6;
+	int USER_LOGIN_HISTORY__ORIGIN_USER_LOGIN_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Party Id</b></em>' reference.
@@ -403,7 +367,43 @@ public interface LoginPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int USER_LOGIN_HISTORY__PARTY_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 7;
+	int USER_LOGIN_HISTORY__PARTY_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
+
+	/**
+	 * The feature id for the '<em><b>Password Used</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int USER_LOGIN_HISTORY__PASSWORD_USED = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
+
+	/**
+	 * The feature id for the '<em><b>Successful Login</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int USER_LOGIN_HISTORY__SUCCESSFUL_LOGIN = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 5;
+
+	/**
+	 * The feature id for the '<em><b>Thru Date</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int USER_LOGIN_HISTORY__THRU_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 6;
+
+	/**
+	 * The feature id for the '<em><b>Visit Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int USER_LOGIN_HISTORY__VISIT_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 7;
 
 	/**
 	 * The number of structural features of the '<em>User Login History</em>' class.
@@ -461,13 +461,22 @@ public interface LoginPackage extends EPackage {
 	int USER_LOGIN_PASSWORD_HISTORY__LAST_UPDATED_TX_STAMP = BizPackage.BIZ_ENTITY__LAST_UPDATED_TX_STAMP;
 
 	/**
+	 * The feature id for the '<em><b>User Login Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int USER_LOGIN_PASSWORD_HISTORY__USER_LOGIN_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
+
+	/**
 	 * The feature id for the '<em><b>From Date</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int USER_LOGIN_PASSWORD_HISTORY__FROM_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
+	int USER_LOGIN_PASSWORD_HISTORY__FROM_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Current Password</b></em>' attribute.
@@ -476,7 +485,7 @@ public interface LoginPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int USER_LOGIN_PASSWORD_HISTORY__CURRENT_PASSWORD = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
+	int USER_LOGIN_PASSWORD_HISTORY__CURRENT_PASSWORD = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Thru Date</b></em>' attribute.
@@ -485,16 +494,7 @@ public interface LoginPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int USER_LOGIN_PASSWORD_HISTORY__THRU_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
-
-	/**
-	 * The feature id for the '<em><b>User Login Id</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int USER_LOGIN_PASSWORD_HISTORY__USER_LOGIN_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
+	int USER_LOGIN_PASSWORD_HISTORY__THRU_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
 
 	/**
 	 * The number of structural features of the '<em>User Login Password History</em>' class.
@@ -552,22 +552,13 @@ public interface LoginPackage extends EPackage {
 	int USER_LOGIN_SECURITY_QUESTION__LAST_UPDATED_TX_STAMP = BizPackage.BIZ_ENTITY__LAST_UPDATED_TX_STAMP;
 
 	/**
-	 * The feature id for the '<em><b>Security Answer</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int USER_LOGIN_SECURITY_QUESTION__SECURITY_ANSWER = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
-
-	/**
 	 * The feature id for the '<em><b>Question Enum Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int USER_LOGIN_SECURITY_QUESTION__QUESTION_ENUM_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
+	int USER_LOGIN_SECURITY_QUESTION__QUESTION_ENUM_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>User Login Id</b></em>' reference.
@@ -576,7 +567,16 @@ public interface LoginPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int USER_LOGIN_SECURITY_QUESTION__USER_LOGIN_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
+	int USER_LOGIN_SECURITY_QUESTION__USER_LOGIN_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Security Answer</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int USER_LOGIN_SECURITY_QUESTION__SECURITY_ANSWER = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of structural features of the '<em>User Login Security Question</em>' class.

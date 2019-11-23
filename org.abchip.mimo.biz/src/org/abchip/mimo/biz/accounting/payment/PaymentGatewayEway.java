@@ -21,13 +21,13 @@ import org.abchip.mimo.biz.BizEntity;
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.PaymentGatewayEway#getCustomerId <em>Customer Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.PaymentGatewayEway#getEnableBeagle <em>Enable Beagle</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.PaymentGatewayEway#getEnableCvn <em>Enable Cvn</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.payment.PaymentGatewayEway#getPaymentGatewayConfigId <em>Payment Gateway Config Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.PaymentGatewayEway#getRefundPwd <em>Refund Pwd</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.PaymentGatewayEway#getTestMode <em>Test Mode</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.payment.PaymentGatewayEway#getPaymentGatewayConfigId <em>Payment Gateway Config Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPaymentGatewayEway()
- * @model
+ * @model annotation="mimo-ent-frame title='eWay Payment Gateway Configuration'"
  * @generated
  */
 public interface PaymentGatewayEway extends BizEntity {
@@ -120,7 +120,8 @@ public interface PaymentGatewayEway extends BizEntity {
 	 * @return the value of the '<em>Payment Gateway Config Id</em>' reference.
 	 * @see #setPaymentGatewayConfigId(PaymentGatewayConfig)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPaymentGatewayEway_PaymentGatewayConfigId()
-	 * @model keys="paymentGatewayConfigId"
+	 * @model keys="paymentGatewayConfigId" required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	PaymentGatewayConfig getPaymentGatewayConfigId();
@@ -146,7 +147,8 @@ public interface PaymentGatewayEway extends BizEntity {
 	 * @return the value of the '<em>Refund Pwd</em>' attribute.
 	 * @see #setRefundPwd(String)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPaymentGatewayEway_RefundPwd()
-	 * @model annotation="mimo-ent-format type='value' length='255'"
+	 * @model annotation="mimo-ent-slot encrypt='TRUE'"
+	 *        annotation="mimo-ent-format type='value' length='255'"
 	 * @generated
 	 */
 	String getRefundPwd();

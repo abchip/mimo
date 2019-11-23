@@ -27,20 +27,20 @@ import org.eclipse.emf.ecore.EClass;
  *   <li>{@link org.abchip.mimo.biz.party.contact.impl.PostalAddressImpl#getAddress2 <em>Address2</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.contact.impl.PostalAddressImpl#getAttnName <em>Attn Name</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.contact.impl.PostalAddressImpl#getCity <em>City</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.party.contact.impl.PostalAddressImpl#getCityGeoId <em>City Geo Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.party.contact.impl.PostalAddressImpl#getCountryGeoId <em>Country Geo Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.party.contact.impl.PostalAddressImpl#getCountyGeoId <em>County Geo Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.contact.impl.PostalAddressImpl#getDirections <em>Directions</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.party.contact.impl.PostalAddressImpl#getGeoPointId <em>Geo Point Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.contact.impl.PostalAddressImpl#getHouseNumber <em>House Number</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.contact.impl.PostalAddressImpl#getHouseNumberExt <em>House Number Ext</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.party.contact.impl.PostalAddressImpl#getMunicipalityGeoId <em>Municipality Geo Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.party.contact.impl.PostalAddressImpl#getPostalAddressBoundaries <em>Postal Address Boundaries</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.contact.impl.PostalAddressImpl#getPostalCode <em>Postal Code</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.contact.impl.PostalAddressImpl#getPostalCodeExt <em>Postal Code Ext</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.party.contact.impl.PostalAddressImpl#getToName <em>To Name</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.party.contact.impl.PostalAddressImpl#getCountryGeoId <em>Country Geo Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.party.contact.impl.PostalAddressImpl#getStateProvinceGeoId <em>State Province Geo Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.party.contact.impl.PostalAddressImpl#getCountyGeoId <em>County Geo Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.party.contact.impl.PostalAddressImpl#getMunicipalityGeoId <em>Municipality Geo Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.party.contact.impl.PostalAddressImpl#getCityGeoId <em>City Geo Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.contact.impl.PostalAddressImpl#getPostalCodeGeoId <em>Postal Code Geo Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.party.contact.impl.PostalAddressImpl#getGeoPointId <em>Geo Point Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.party.contact.impl.PostalAddressImpl#getPostalAddressBoundaries <em>Postal Address Boundaries</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.party.contact.impl.PostalAddressImpl#getStateProvinceGeoId <em>State Province Geo Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.party.contact.impl.PostalAddressImpl#getToName <em>To Name</em>}</li>
  * </ul>
  *
  * @generated

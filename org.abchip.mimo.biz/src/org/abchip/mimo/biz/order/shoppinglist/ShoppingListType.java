@@ -25,7 +25,7 @@ import org.abchip.mimo.biz.BizEntityType;
  * </ul>
  *
  * @see org.abchip.mimo.biz.order.shoppinglist.ShoppinglistPackage#getShoppingListType()
- * @model annotation="mimo-ent-frame formula='description'"
+ * @model annotation="mimo-ent-frame dictionary='OrderEntityLabels' formula='description'"
  * @generated
  */
 public interface ShoppingListType extends BizEntityType<ShoppingList> {
@@ -78,7 +78,6 @@ public interface ShoppingListType extends BizEntityType<ShoppingList> {
 	 * @see org.abchip.mimo.biz.order.shoppinglist.ShoppinglistPackage#getShoppingListType_ShoppingListTypeId()
 	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getShoppingListTypeId();

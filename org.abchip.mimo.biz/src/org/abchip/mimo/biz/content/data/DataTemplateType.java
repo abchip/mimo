@@ -26,7 +26,7 @@ import org.abchip.mimo.biz.BizEntity;
  * </ul>
  *
  * @see org.abchip.mimo.biz.content.data.DataPackage#getDataTemplateType()
- * @model annotation="mimo-ent-frame formula='description'"
+ * @model annotation="mimo-ent-frame dictionary='ContentEntityLabels' formula='description'"
  * @generated
  */
 public interface DataTemplateType extends BizEntity {
@@ -43,7 +43,6 @@ public interface DataTemplateType extends BizEntity {
 	 * @see org.abchip.mimo.biz.content.data.DataPackage#getDataTemplateType_DataTemplateTypeId()
 	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getDataTemplateTypeId();

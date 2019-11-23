@@ -45,6 +45,7 @@ import org.abchip.mimo.resource.ResourceReader;
 import org.abchip.mimo.resource.ResourceSerializer;
 import org.abchip.mimo.resource.ResourceWriter;
 
+import org.abchip.mimo.resource.SerializationType;
 import org.abchip.mimo.util.UtilPackage;
 
 import org.abchip.mimo.util.impl.UtilPackageImpl;
@@ -150,6 +151,13 @@ public class ResourcePackageImpl extends EPackageImpl implements ResourcePackage
 	 * @generated
 	 */
 	private EEnum resourceEventTypeEEnum = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EEnum serializationTypeEEnum = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -428,6 +436,16 @@ public class ResourcePackageImpl extends EPackageImpl implements ResourcePackage
 	 * @generated
 	 */
 	@Override
+	public EEnum getSerializationType() {
+		return serializationTypeEEnum;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public ResourceFactory getResourceFactory() {
 		return (ResourceFactory)getEFactoryInstance();
 	}
@@ -481,6 +499,7 @@ public class ResourcePackageImpl extends EPackageImpl implements ResourcePackage
 
 		// Create enums
 		resourceEventTypeEEnum = createEEnum(RESOURCE_EVENT_TYPE);
+		serializationTypeEEnum = createEEnum(SERIALIZATION_TYPE);
 	}
 
 	/**
@@ -629,7 +648,7 @@ public class ResourcePackageImpl extends EPackageImpl implements ResourcePackage
 		g2 = createEGenericType(t1);
 		g1.getETypeArguments().add(g2);
 		addEParameter(op, g1, "klass", 1, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, theEntityPackage.getSerializationType(), "serializationType", 1, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, this.getSerializationType(), "serializationType", 1, 1, IS_UNIQUE, IS_ORDERED);
 		g1 = createEGenericType(this.getResourceSerializer());
 		g2 = createEGenericType(t1);
 		g1.getETypeArguments().add(g2);
@@ -644,7 +663,7 @@ public class ResourcePackageImpl extends EPackageImpl implements ResourcePackage
 		g2 = createEGenericType(t1);
 		g1.getETypeArguments().add(g2);
 		addEParameter(op, g1, "frame", 1, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, theEntityPackage.getSerializationType(), "serializationType", 1, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, this.getSerializationType(), "serializationType", 1, 1, IS_UNIQUE, IS_ORDERED);
 		g1 = createEGenericType(this.getResourceSerializer());
 		g2 = createEGenericType(t1);
 		g1.getETypeArguments().add(g2);
@@ -656,7 +675,7 @@ public class ResourcePackageImpl extends EPackageImpl implements ResourcePackage
 		t1.getEBounds().add(g1);
 		addEParameter(op, theContextPackage.getContext(), "context", 1, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEString(), "frame", 1, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, theEntityPackage.getSerializationType(), "serializationType", 1, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, this.getSerializationType(), "serializationType", 1, 1, IS_UNIQUE, IS_ORDERED);
 		g1 = createEGenericType(this.getResourceSerializer());
 		g2 = createEGenericType(t1);
 		g1.getETypeArguments().add(g2);
@@ -1225,6 +1244,10 @@ public class ResourcePackageImpl extends EPackageImpl implements ResourcePackage
 		addEEnumLiteral(resourceEventTypeEEnum, ResourceEventType.AFTER_SAVE);
 		addEEnumLiteral(resourceEventTypeEEnum, ResourceEventType.BEFORE_DELETE);
 		addEEnumLiteral(resourceEventTypeEEnum, ResourceEventType.AFTER_DELETE);
+
+		initEEnum(serializationTypeEEnum, SerializationType.class, "SerializationType");
+		addEEnumLiteral(serializationTypeEEnum, SerializationType.XML_METADATA_INTERCHANGE);
+		addEEnumLiteral(serializationTypeEEnum, SerializationType.JAVA_SCRIPT_OBJECT_NOTATION);
 	}
 
 } //ResourcePackageImpl

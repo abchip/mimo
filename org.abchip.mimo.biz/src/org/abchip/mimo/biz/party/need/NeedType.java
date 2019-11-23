@@ -78,7 +78,6 @@ public interface NeedType extends BizEntity {
 	 * @see org.abchip.mimo.biz.party.need.NeedPackage#getNeedType_NeedTypeId()
 	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getNeedTypeId();

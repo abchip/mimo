@@ -24,15 +24,15 @@ import org.abchip.mimo.biz.BizEntity;
  *   <li>{@link org.abchip.mimo.biz.party.party.Affiliate#getAffiliateName <em>Affiliate Name</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.party.Affiliate#getDateTimeApproved <em>Date Time Approved</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.party.Affiliate#getDateTimeCreated <em>Date Time Created</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.party.party.Affiliate#getPartyId <em>Party Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.party.Affiliate#getSitePageViews <em>Site Page Views</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.party.Affiliate#getSiteType <em>Site Type</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.party.Affiliate#getSiteVisitors <em>Site Visitors</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.party.Affiliate#getYearEstablished <em>Year Established</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.party.party.Affiliate#getPartyId <em>Party Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.party.party.PartyPackage#getAffiliate()
- * @model
+ * @model annotation="mimo-ent-frame title='Affiliate Party'"
  * @generated
  */
 public interface Affiliate extends BizEntity {
@@ -151,7 +151,8 @@ public interface Affiliate extends BizEntity {
 	 * @return the value of the '<em>Party Id</em>' reference.
 	 * @see #setPartyId(Party)
 	 * @see org.abchip.mimo.biz.party.party.PartyPackage#getAffiliate_PartyId()
-	 * @model keys="partyId"
+	 * @model keys="partyId" required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Party getPartyId();

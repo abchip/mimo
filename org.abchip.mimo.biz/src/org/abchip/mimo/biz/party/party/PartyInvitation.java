@@ -27,11 +27,11 @@ import org.abchip.mimo.biz.common.status.StatusItem;
  *   <li>{@link org.abchip.mimo.biz.party.party.PartyInvitation#getEmailAddress <em>Email Address</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.party.PartyInvitation#getLastInviteDate <em>Last Invite Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.party.PartyInvitation#getPartyId <em>Party Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.party.party.PartyInvitation#getToName <em>To Name</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.party.PartyInvitation#getPartyIdFrom <em>Party Id From</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.party.party.PartyInvitation#getStatusId <em>Status Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.party.PartyInvitation#getPartyInvitationGroupAssocs <em>Party Invitation Group Assocs</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.party.PartyInvitation#getPartyInvitationRoleAssocs <em>Party Invitation Role Assocs</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.party.party.PartyInvitation#getStatusId <em>Status Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.party.party.PartyInvitation#getToName <em>To Name</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.party.party.PartyPackage#getPartyInvitation()
@@ -129,6 +129,7 @@ public interface PartyInvitation extends BizEntity {
 	 * @see #setStatusId(StatusItem)
 	 * @see org.abchip.mimo.biz.party.party.PartyPackage#getPartyInvitation_StatusId()
 	 * @model keys="statusId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	StatusItem getStatusId();
@@ -180,8 +181,7 @@ public interface PartyInvitation extends BizEntity {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Party Invitation Group Assocs</em>' attribute list.
 	 * @see org.abchip.mimo.biz.party.party.PartyPackage#getPartyInvitation_PartyInvitationGroupAssocs()
-	 * @model required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='PartyInvitationGroupAssoc'"
 	 * @generated
@@ -199,8 +199,7 @@ public interface PartyInvitation extends BizEntity {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Party Invitation Role Assocs</em>' attribute list.
 	 * @see org.abchip.mimo.biz.party.party.PartyPackage#getPartyInvitation_PartyInvitationRoleAssocs()
-	 * @model required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='PartyInvitationRoleAssoc'"
 	 * @generated
@@ -219,6 +218,7 @@ public interface PartyInvitation extends BizEntity {
 	 * @see #setPartyIdFrom(Party)
 	 * @see org.abchip.mimo.biz.party.party.PartyPackage#getPartyInvitation_PartyIdFrom()
 	 * @model keys="partyId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Party getPartyIdFrom();
@@ -246,7 +246,6 @@ public interface PartyInvitation extends BizEntity {
 	 * @see org.abchip.mimo.biz.party.party.PartyPackage#getPartyInvitation_PartyInvitationId()
 	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getPartyInvitationId();

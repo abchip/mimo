@@ -25,13 +25,13 @@ import org.abchip.mimo.biz.party.party.RoleType;
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.content.content.ContentApproval#getContentApprovalId <em>Content Approval Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.content.ContentApproval#getApprovalDate <em>Approval Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.content.content.ContentApproval#getApprovalStatusId <em>Approval Status Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.content.ContentApproval#getComments <em>Comments</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.content.content.ContentApproval#getContentRevisionSeqId <em>Content Revision Seq Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.content.content.ContentApproval#getSequenceNum <em>Sequence Num</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.content.ContentApproval#getContentId <em>Content Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.content.content.ContentApproval#getContentRevisionSeqId <em>Content Revision Seq Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.content.ContentApproval#getPartyId <em>Party Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.content.ContentApproval#getRoleTypeId <em>Role Type Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.content.content.ContentApproval#getApprovalStatusId <em>Approval Status Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.content.content.ContentApproval#getSequenceNum <em>Sequence Num</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.content.content.ContentPackage#getContentApproval()
@@ -77,6 +77,7 @@ public interface ContentApproval extends BizEntity {
 	 * @see #setApprovalStatusId(StatusItem)
 	 * @see org.abchip.mimo.biz.content.content.ContentPackage#getContentApproval_ApprovalStatusId()
 	 * @model keys="statusId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	StatusItem getApprovalStatusId();
@@ -130,7 +131,6 @@ public interface ContentApproval extends BizEntity {
 	 * @see org.abchip.mimo.biz.content.content.ContentPackage#getContentApproval_ContentApprovalId()
 	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getContentApprovalId();
@@ -157,6 +157,7 @@ public interface ContentApproval extends BizEntity {
 	 * @see #setContentId(Content)
 	 * @see org.abchip.mimo.biz.content.content.ContentPackage#getContentApproval_ContentId()
 	 * @model keys="contentId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Content getContentId();
@@ -209,6 +210,7 @@ public interface ContentApproval extends BizEntity {
 	 * @see #setPartyId(Party)
 	 * @see org.abchip.mimo.biz.content.content.ContentPackage#getContentApproval_PartyId()
 	 * @model keys="partyId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Party getPartyId();
@@ -235,6 +237,7 @@ public interface ContentApproval extends BizEntity {
 	 * @see #setRoleTypeId(RoleType)
 	 * @see org.abchip.mimo.biz.content.content.ContentPackage#getContentApproval_RoleTypeId()
 	 * @model keys="roleTypeId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	RoleType getRoleTypeId();

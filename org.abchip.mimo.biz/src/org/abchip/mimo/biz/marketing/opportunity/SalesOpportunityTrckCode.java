@@ -20,13 +20,13 @@ import org.abchip.mimo.biz.BizEntity;
  * The following features are supported:
  * </p>
  * <ul>
+ *   <li>{@link org.abchip.mimo.biz.marketing.opportunity.SalesOpportunityTrckCode#getSalesOpportunityId <em>Sales Opportunity Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.marketing.opportunity.SalesOpportunityTrckCode#getTrackingCodeId <em>Tracking Code Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.marketing.opportunity.SalesOpportunityTrckCode#getReceivedDate <em>Received Date</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.marketing.opportunity.SalesOpportunityTrckCode#getSalesOpportunityId <em>Sales Opportunity Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.marketing.opportunity.OpportunityPackage#getSalesOpportunityTrckCode()
- * @model
+ * @model annotation="mimo-ent-frame title='Sales opportunity traking code'"
  * @generated
  */
 public interface SalesOpportunityTrckCode extends BizEntity {
@@ -67,7 +67,9 @@ public interface SalesOpportunityTrckCode extends BizEntity {
 	 * @return the value of the '<em>Sales Opportunity Id</em>' reference.
 	 * @see #setSalesOpportunityId(SalesOpportunity)
 	 * @see org.abchip.mimo.biz.marketing.opportunity.OpportunityPackage#getSalesOpportunityTrckCode_SalesOpportunityId()
-	 * @model keys="salesOpportunityId"
+	 * @model keys="salesOpportunityId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	SalesOpportunity getSalesOpportunityId();
@@ -94,8 +96,8 @@ public interface SalesOpportunityTrckCode extends BizEntity {
 	 * @see #setTrackingCodeId(String)
 	 * @see org.abchip.mimo.biz.marketing.opportunity.OpportunityPackage#getSalesOpportunityTrckCode_TrackingCodeId()
 	 * @model required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	String getTrackingCodeId();

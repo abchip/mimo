@@ -18,10 +18,10 @@ import org.abchip.mimo.biz.BizEntity;
  * The following features are supported:
  * </p>
  * <ul>
+ *   <li>{@link org.abchip.mimo.biz.order.order.OrderAdjustmentAttribute#getOrderAdjustmentId <em>Order Adjustment Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.OrderAdjustmentAttribute#getAttrName <em>Attr Name</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.OrderAdjustmentAttribute#getAttrDescription <em>Attr Description</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.OrderAdjustmentAttribute#getAttrValue <em>Attr Value</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.order.OrderAdjustmentAttribute#getOrderAdjustmentId <em>Order Adjustment Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderAdjustmentAttribute()
@@ -67,8 +67,8 @@ public interface OrderAdjustmentAttribute extends BizEntity {
 	 * @see #setAttrName(String)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderAdjustmentAttribute_AttrName()
 	 * @model required="true"
-	 *        annotation="mimo-ent-format type='id-long' length='60'"
 	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id-long' length='60'"
 	 * @generated
 	 */
 	String getAttrName();
@@ -120,7 +120,9 @@ public interface OrderAdjustmentAttribute extends BizEntity {
 	 * @return the value of the '<em>Order Adjustment Id</em>' reference.
 	 * @see #setOrderAdjustmentId(OrderAdjustment)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderAdjustmentAttribute_OrderAdjustmentId()
-	 * @model keys="orderAdjustmentId"
+	 * @model keys="orderAdjustmentId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	OrderAdjustment getOrderAdjustmentId();

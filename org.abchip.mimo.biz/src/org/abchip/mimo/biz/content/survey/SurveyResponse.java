@@ -28,13 +28,13 @@ import org.abchip.mimo.biz.party.party.Party;
  *   <li>{@link org.abchip.mimo.biz.content.survey.SurveyResponse#getSurveyResponseId <em>Survey Response Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.survey.SurveyResponse#getGeneralFeedback <em>General Feedback</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.survey.SurveyResponse#getLastModifiedDate <em>Last Modified Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.content.survey.SurveyResponse#getOrderId <em>Order Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.survey.SurveyResponse#getOrderItemSeqId <em>Order Item Seq Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.content.survey.SurveyResponse#getPartyId <em>Party Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.survey.SurveyResponse#getReferenceId <em>Reference Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.survey.SurveyResponse#getResponseDate <em>Response Date</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.content.survey.SurveyResponse#getPartyId <em>Party Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.content.survey.SurveyResponse#getOrderId <em>Order Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.content.survey.SurveyResponse#getSurveyId <em>Survey Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.survey.SurveyResponse#getStatusId <em>Status Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.content.survey.SurveyResponse#getSurveyId <em>Survey Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.content.survey.SurveyPackage#getSurveyResponse()
@@ -106,6 +106,7 @@ public interface SurveyResponse extends BizEntity {
 	 * @see #setOrderId(OrderHeader)
 	 * @see org.abchip.mimo.biz.content.survey.SurveyPackage#getSurveyResponse_OrderId()
 	 * @model keys="orderId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	OrderHeader getOrderId();
@@ -158,6 +159,7 @@ public interface SurveyResponse extends BizEntity {
 	 * @see #setPartyId(Party)
 	 * @see org.abchip.mimo.biz.content.survey.SurveyPackage#getSurveyResponse_PartyId()
 	 * @model keys="partyId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Party getPartyId();
@@ -236,6 +238,7 @@ public interface SurveyResponse extends BizEntity {
 	 * @see #setStatusId(StatusItem)
 	 * @see org.abchip.mimo.biz.content.survey.SurveyPackage#getSurveyResponse_StatusId()
 	 * @model keys="statusId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	StatusItem getStatusId();
@@ -262,6 +265,7 @@ public interface SurveyResponse extends BizEntity {
 	 * @see #setSurveyId(Survey)
 	 * @see org.abchip.mimo.biz.content.survey.SurveyPackage#getSurveyResponse_SurveyId()
 	 * @model keys="surveyId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Survey getSurveyId();
@@ -309,7 +313,6 @@ public interface SurveyResponse extends BizEntity {
 	 * @see org.abchip.mimo.biz.content.survey.SurveyPackage#getSurveyResponse_SurveyResponseId()
 	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getSurveyResponseId();

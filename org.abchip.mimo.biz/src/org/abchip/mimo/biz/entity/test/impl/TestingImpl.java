@@ -28,10 +28,10 @@ import org.eclipse.emf.ecore.EClass;
  *   <li>{@link org.abchip.mimo.biz.entity.test.impl.TestingImpl#getComments <em>Comments</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.entity.test.impl.TestingImpl#getDescription <em>Description</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.entity.test.impl.TestingImpl#getTestingDate <em>Testing Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.entity.test.impl.TestingImpl#getTestingItems <em>Testing Items</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.entity.test.impl.TestingImpl#getTestingName <em>Testing Name</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.entity.test.impl.TestingImpl#getTestingSize <em>Testing Size</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.entity.test.impl.TestingImpl#getTestingTypeId <em>Testing Type Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.entity.test.impl.TestingImpl#getTestingItems <em>Testing Items</em>}</li>
  * </ul>
  *
  * @generated

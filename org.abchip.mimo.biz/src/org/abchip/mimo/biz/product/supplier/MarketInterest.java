@@ -22,14 +22,14 @@ import org.abchip.mimo.biz.product.category.ProductCategory;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.product.supplier.MarketInterest#getFromDate <em>From Date</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.supplier.MarketInterest#getThruDate <em>Thru Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.supplier.MarketInterest#getProductCategoryId <em>Product Category Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.supplier.MarketInterest#getPartyClassificationGroupId <em>Party Classification Group Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.supplier.MarketInterest#getFromDate <em>From Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.supplier.MarketInterest#getThruDate <em>Thru Date</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.product.supplier.SupplierPackage#getMarketInterest()
- * @model
+ * @model annotation="mimo-ent-frame dictionary='ProductEntityLabels'"
  * @generated
  */
 public interface MarketInterest extends BizEntity {
@@ -45,8 +45,8 @@ public interface MarketInterest extends BizEntity {
 	 * @see #setFromDate(Date)
 	 * @see org.abchip.mimo.biz.product.supplier.SupplierPackage#getMarketInterest_FromDate()
 	 * @model required="true"
-	 *        annotation="mimo-ent-format type='date-time'"
 	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getFromDate();
@@ -72,7 +72,9 @@ public interface MarketInterest extends BizEntity {
 	 * @return the value of the '<em>Party Classification Group Id</em>' reference.
 	 * @see #setPartyClassificationGroupId(PartyClassificationGroup)
 	 * @see org.abchip.mimo.biz.product.supplier.SupplierPackage#getMarketInterest_PartyClassificationGroupId()
-	 * @model keys="partyClassificationGroupId"
+	 * @model keys="partyClassificationGroupId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	PartyClassificationGroup getPartyClassificationGroupId();
@@ -124,7 +126,9 @@ public interface MarketInterest extends BizEntity {
 	 * @return the value of the '<em>Product Category Id</em>' reference.
 	 * @see #setProductCategoryId(ProductCategory)
 	 * @see org.abchip.mimo.biz.product.supplier.SupplierPackage#getMarketInterest_ProductCategoryId()
-	 * @model keys="productCategoryId"
+	 * @model keys="productCategoryId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ProductCategory getProductCategoryId();

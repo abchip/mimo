@@ -25,11 +25,11 @@ import org.eclipse.emf.ecore.EClass;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.party.party.impl.PartyContentImpl#getFromDate <em>From Date</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.party.party.impl.PartyContentImpl#getThruDate <em>Thru Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.party.impl.PartyContentImpl#getPartyId <em>Party Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.party.impl.PartyContentImpl#getContentId <em>Content Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.party.impl.PartyContentImpl#getPartyContentTypeId <em>Party Content Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.party.party.impl.PartyContentImpl#getFromDate <em>From Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.party.party.impl.PartyContentImpl#getThruDate <em>Thru Date</em>}</li>
  * </ul>
  *
  * @generated

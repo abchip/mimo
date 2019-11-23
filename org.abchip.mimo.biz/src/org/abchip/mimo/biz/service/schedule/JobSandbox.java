@@ -24,6 +24,7 @@ import org.abchip.mimo.biz.security.login.UserLogin;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.service.schedule.JobSandbox#getJobId <em>Job Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.service.schedule.JobSandbox#getAuthUserLoginId <em>Auth User Login Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.service.schedule.JobSandbox#getCancelDateTime <em>Cancel Date Time</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.service.schedule.JobSandbox#getCurrentRecurrenceCount <em>Current Recurrence Count</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.service.schedule.JobSandbox#getCurrentRetryCount <em>Current Retry Count</em>}</li>
@@ -36,20 +37,19 @@ import org.abchip.mimo.biz.security.login.UserLogin;
  *   <li>{@link org.abchip.mimo.biz.service.schedule.JobSandbox#getParentJobId <em>Parent Job Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.service.schedule.JobSandbox#getPoolId <em>Pool Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.service.schedule.JobSandbox#getPreviousJobId <em>Previous Job Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.service.schedule.JobSandbox#getRecurrenceInfoId <em>Recurrence Info Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.service.schedule.JobSandbox#getRunAsUser <em>Run As User</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.service.schedule.JobSandbox#getRunByInstanceId <em>Run By Instance Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.service.schedule.JobSandbox#getRunTime <em>Run Time</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.service.schedule.JobSandbox#getRuntimeDataId <em>Runtime Data Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.service.schedule.JobSandbox#getServiceName <em>Service Name</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.service.schedule.JobSandbox#getStartDateTime <em>Start Date Time</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.service.schedule.JobSandbox#getRecurrenceInfoId <em>Recurrence Info Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.service.schedule.JobSandbox#getTempExprId <em>Temp Expr Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.service.schedule.JobSandbox#getRuntimeDataId <em>Runtime Data Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.service.schedule.JobSandbox#getAuthUserLoginId <em>Auth User Login Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.service.schedule.JobSandbox#getRunAsUser <em>Run As User</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.service.schedule.JobSandbox#getStatusId <em>Status Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.service.schedule.JobSandbox#getTempExprId <em>Temp Expr Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.service.schedule.SchedulePackage#getJobSandbox()
- * @model
+ * @model annotation="mimo-ent-frame title='Job Scheduler Sandbox'"
  * @generated
  */
 public interface JobSandbox extends BizEntity {
@@ -66,7 +66,6 @@ public interface JobSandbox extends BizEntity {
 	 * @see org.abchip.mimo.biz.service.schedule.SchedulePackage#getJobSandbox_JobId()
 	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getJobId();
@@ -93,6 +92,7 @@ public interface JobSandbox extends BizEntity {
 	 * @see #setAuthUserLoginId(UserLogin)
 	 * @see org.abchip.mimo.biz.service.schedule.SchedulePackage#getJobSandbox_AuthUserLoginId()
 	 * @model keys="userLoginId"
+	 *        annotation="mimo-ent-format type='id-vlong' length='255'"
 	 * @generated
 	 */
 	UserLogin getAuthUserLoginId();
@@ -431,6 +431,8 @@ public interface JobSandbox extends BizEntity {
 	 * @see #setRecurrenceInfoId(RecurrenceInfo)
 	 * @see org.abchip.mimo.biz.service.schedule.SchedulePackage#getJobSandbox_RecurrenceInfoId()
 	 * @model keys="recurrenceInfoId"
+	 *        annotation="mimo-ent-slot help='Deprecated - use tempExprId instead'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	RecurrenceInfo getRecurrenceInfoId();
@@ -457,6 +459,7 @@ public interface JobSandbox extends BizEntity {
 	 * @see #setRunAsUser(UserLogin)
 	 * @see org.abchip.mimo.biz.service.schedule.SchedulePackage#getJobSandbox_RunAsUser()
 	 * @model keys="userLoginId"
+	 *        annotation="mimo-ent-format type='id-vlong' length='255'"
 	 * @generated
 	 */
 	UserLogin getRunAsUser();
@@ -535,6 +538,7 @@ public interface JobSandbox extends BizEntity {
 	 * @see #setRuntimeDataId(RuntimeData)
 	 * @see org.abchip.mimo.biz.service.schedule.SchedulePackage#getJobSandbox_RuntimeDataId()
 	 * @model keys="runtimeDataId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	RuntimeData getRuntimeDataId();
@@ -613,6 +617,7 @@ public interface JobSandbox extends BizEntity {
 	 * @see #setStatusId(StatusItem)
 	 * @see org.abchip.mimo.biz.service.schedule.SchedulePackage#getJobSandbox_StatusId()
 	 * @model keys="statusId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	StatusItem getStatusId();
@@ -639,6 +644,8 @@ public interface JobSandbox extends BizEntity {
 	 * @see #setTempExprId(TemporalExpression)
 	 * @see org.abchip.mimo.biz.service.schedule.SchedulePackage#getJobSandbox_TempExprId()
 	 * @model keys="tempExprId"
+	 *        annotation="mimo-ent-slot help='Temporal expression id'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	TemporalExpression getTempExprId();

@@ -20,12 +20,12 @@ import org.abchip.mimo.biz.BizEntity;
  * The following features are supported:
  * </p>
  * <ul>
+ *   <li>{@link org.abchip.mimo.biz.accounting.budget.BudgetRevisionImpact#getBudgetId <em>Budget Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.budget.BudgetRevisionImpact#getBudgetItemSeqId <em>Budget Item Seq Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.budget.BudgetRevisionImpact#getRevisionSeqId <em>Revision Seq Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.budget.BudgetRevisionImpact#isAddDeleteFlag <em>Add Delete Flag</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.budget.BudgetRevisionImpact#getRevisedAmount <em>Revised Amount</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.budget.BudgetRevisionImpact#getRevisionReason <em>Revision Reason</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.budget.BudgetRevisionImpact#getBudgetId <em>Budget Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.accounting.budget.BudgetPackage#getBudgetRevisionImpact()
@@ -45,8 +45,8 @@ public interface BudgetRevisionImpact extends BizEntity {
 	 * @see #setBudgetItemSeqId(String)
 	 * @see org.abchip.mimo.biz.accounting.budget.BudgetPackage#getBudgetRevisionImpact_BudgetItemSeqId()
 	 * @model required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	String getBudgetItemSeqId();
@@ -125,8 +125,8 @@ public interface BudgetRevisionImpact extends BizEntity {
 	 * @see #setRevisionSeqId(String)
 	 * @see org.abchip.mimo.biz.accounting.budget.BudgetPackage#getBudgetRevisionImpact_RevisionSeqId()
 	 * @model required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	String getRevisionSeqId();
@@ -178,7 +178,9 @@ public interface BudgetRevisionImpact extends BizEntity {
 	 * @return the value of the '<em>Budget Id</em>' reference.
 	 * @see #setBudgetId(Budget)
 	 * @see org.abchip.mimo.biz.accounting.budget.BudgetPackage#getBudgetRevisionImpact_BudgetId()
-	 * @model keys="budgetId"
+	 * @model keys="budgetId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Budget getBudgetId();

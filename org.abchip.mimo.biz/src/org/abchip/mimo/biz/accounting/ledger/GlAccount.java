@@ -25,18 +25,18 @@ import org.abchip.mimo.biz.BizEntityTyped;
  *   <li>{@link org.abchip.mimo.biz.accounting.ledger.GlAccount#getAccountName <em>Account Name</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.ledger.GlAccount#getDescription <em>Description</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.ledger.GlAccount#getExternalId <em>External Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.ledger.GlAccount#getProductId <em>Product Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.ledger.GlAccount#getGlAccountTypeId <em>Gl Account Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.ledger.GlAccount#getGlAccountClassId <em>Gl Account Class Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.ledger.GlAccount#getGlAccountGroupMembers <em>Gl Account Group Members</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.ledger.GlAccount#getGlAccountOrganizations <em>Gl Account Organizations</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.ledger.GlAccount#getGlAccountTypeId <em>Gl Account Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.ledger.GlAccount#getGlResourceTypeId <em>Gl Resource Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.ledger.GlAccount#getGlXbrlClassId <em>Gl Xbrl Class Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.ledger.GlAccount#getParentGlAccountId <em>Parent Gl Account Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.ledger.GlAccount#getGlAccountGroupMembers <em>Gl Account Group Members</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.ledger.GlAccount#getGlAccountOrganizations <em>Gl Account Organizations</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.ledger.GlAccount#getProductId <em>Product Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.accounting.ledger.LedgerPackage#getGlAccount()
- * @model annotation="mimo-ent-frame formula='description'"
+ * @model annotation="mimo-ent-frame title='General Ledger Account' formula='description'"
  * @generated
  */
 public interface GlAccount extends BizEntityTyped<GlAccountType> {
@@ -129,7 +129,8 @@ public interface GlAccount extends BizEntityTyped<GlAccountType> {
 	 * @return the value of the '<em>External Id</em>' attribute.
 	 * @see #setExternalId(String)
 	 * @see org.abchip.mimo.biz.accounting.ledger.LedgerPackage#getGlAccount_ExternalId()
-	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 * @model annotation="mimo-ent-slot help='id of the account in an external system where the accounts are imported/exported'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	String getExternalId();
@@ -181,8 +182,7 @@ public interface GlAccount extends BizEntityTyped<GlAccountType> {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Gl Account Group Members</em>' attribute list.
 	 * @see org.abchip.mimo.biz.accounting.ledger.LedgerPackage#getGlAccount_GlAccountGroupMembers()
-	 * @model required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='GlAccountGroupMember'"
 	 * @generated
@@ -200,8 +200,7 @@ public interface GlAccount extends BizEntityTyped<GlAccountType> {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Gl Account Organizations</em>' attribute list.
 	 * @see org.abchip.mimo.biz.accounting.ledger.LedgerPackage#getGlAccount_GlAccountOrganizations()
-	 * @model required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='GlAccountOrganization'"
 	 * @generated
@@ -410,6 +409,7 @@ public interface GlAccount extends BizEntityTyped<GlAccountType> {
 	 * @see #setGlAccountTypeId(GlAccountType)
 	 * @see org.abchip.mimo.biz.accounting.ledger.LedgerPackage#getGlAccount_GlAccountTypeId()
 	 * @model keys="glAccountTypeId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	GlAccountType getGlAccountTypeId();
@@ -436,6 +436,7 @@ public interface GlAccount extends BizEntityTyped<GlAccountType> {
 	 * @see #setGlAccountClassId(GlAccountClass)
 	 * @see org.abchip.mimo.biz.accounting.ledger.LedgerPackage#getGlAccount_GlAccountClassId()
 	 * @model keys="glAccountClassId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	GlAccountClass getGlAccountClassId();
@@ -462,6 +463,7 @@ public interface GlAccount extends BizEntityTyped<GlAccountType> {
 	 * @see #setGlResourceTypeId(GlResourceType)
 	 * @see org.abchip.mimo.biz.accounting.ledger.LedgerPackage#getGlAccount_GlResourceTypeId()
 	 * @model keys="glResourceTypeId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	GlResourceType getGlResourceTypeId();
@@ -488,6 +490,7 @@ public interface GlAccount extends BizEntityTyped<GlAccountType> {
 	 * @see #setGlXbrlClassId(GlXbrlClass)
 	 * @see org.abchip.mimo.biz.accounting.ledger.LedgerPackage#getGlAccount_GlXbrlClassId()
 	 * @model keys="glXbrlClassId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	GlXbrlClass getGlXbrlClassId();
@@ -514,6 +517,7 @@ public interface GlAccount extends BizEntityTyped<GlAccountType> {
 	 * @see #setParentGlAccountId(GlAccount)
 	 * @see org.abchip.mimo.biz.accounting.ledger.LedgerPackage#getGlAccount_ParentGlAccountId()
 	 * @model keys="glAccountId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	GlAccount getParentGlAccountId();
@@ -541,7 +545,6 @@ public interface GlAccount extends BizEntityTyped<GlAccountType> {
 	 * @see org.abchip.mimo.biz.accounting.ledger.LedgerPackage#getGlAccount_GlAccountId()
 	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getGlAccountId();

@@ -29,15 +29,15 @@ import org.abchip.mimo.biz.party.party.Party;
  *   <li>{@link org.abchip.mimo.biz.humanres.position.EmplPosition#getActualThruDate <em>Actual Thru Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.position.EmplPosition#getBudgetId <em>Budget Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.position.EmplPosition#getBudgetItemSeqId <em>Budget Item Seq Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.humanres.position.EmplPosition#getEmplPositionTypeId <em>Empl Position Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.position.EmplPosition#getEstimatedFromDate <em>Estimated From Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.position.EmplPosition#getEstimatedThruDate <em>Estimated Thru Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.position.EmplPosition#isExemptFlag <em>Exempt Flag</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.position.EmplPosition#getFulltimeFlag <em>Fulltime Flag</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.humanres.position.EmplPosition#getSalaryFlag <em>Salary Flag</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.humanres.position.EmplPosition#getTemporaryFlag <em>Temporary Flag</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.humanres.position.EmplPosition#getStatusId <em>Status Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.position.EmplPosition#getPartyId <em>Party Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.humanres.position.EmplPosition#getEmplPositionTypeId <em>Empl Position Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.humanres.position.EmplPosition#getSalaryFlag <em>Salary Flag</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.humanres.position.EmplPosition#getStatusId <em>Status Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.humanres.position.EmplPosition#getTemporaryFlag <em>Temporary Flag</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.humanres.position.PositionPackage#getEmplPosition()
@@ -162,7 +162,6 @@ public interface EmplPosition extends BizEntityTyped<EmplPositionType> {
 	 * @see org.abchip.mimo.biz.humanres.position.PositionPackage#getEmplPosition_EmplPositionId()
 	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getEmplPositionId();
@@ -189,6 +188,7 @@ public interface EmplPosition extends BizEntityTyped<EmplPositionType> {
 	 * @see #setEmplPositionTypeId(EmplPositionType)
 	 * @see org.abchip.mimo.biz.humanres.position.PositionPackage#getEmplPosition_EmplPositionTypeId()
 	 * @model keys="emplPositionTypeId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	EmplPositionType getEmplPositionTypeId();
@@ -371,6 +371,7 @@ public interface EmplPosition extends BizEntityTyped<EmplPositionType> {
 	 * @see #setPartyId(Party)
 	 * @see org.abchip.mimo.biz.humanres.position.PositionPackage#getEmplPosition_PartyId()
 	 * @model keys="partyId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Party getPartyId();
@@ -397,6 +398,7 @@ public interface EmplPosition extends BizEntityTyped<EmplPositionType> {
 	 * @see #setStatusId(StatusItem)
 	 * @see org.abchip.mimo.biz.humanres.position.PositionPackage#getEmplPosition_StatusId()
 	 * @model keys="statusId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	StatusItem getStatusId();

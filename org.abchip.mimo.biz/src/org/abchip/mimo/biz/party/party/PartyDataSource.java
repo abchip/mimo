@@ -21,12 +21,12 @@ import org.abchip.mimo.biz.common.datasource.DataSource;
  * The following features are supported:
  * </p>
  * <ul>
+ *   <li>{@link org.abchip.mimo.biz.party.party.PartyDataSource#getPartyId <em>Party Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.party.party.PartyDataSource#getDataSourceId <em>Data Source Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.party.PartyDataSource#getFromDate <em>From Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.party.PartyDataSource#getComments <em>Comments</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.party.PartyDataSource#isIsCreate <em>Is Create</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.party.PartyDataSource#getVisitId <em>Visit Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.party.party.PartyDataSource#getPartyId <em>Party Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.party.party.PartyDataSource#getDataSourceId <em>Data Source Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.party.party.PartyPackage#getPartyDataSource()
@@ -97,7 +97,9 @@ public interface PartyDataSource extends BizEntity {
 	 * @return the value of the '<em>Data Source Id</em>' reference.
 	 * @see #setDataSourceId(DataSource)
 	 * @see org.abchip.mimo.biz.party.party.PartyPackage#getPartyDataSource_DataSourceId()
-	 * @model keys="dataSourceId"
+	 * @model keys="dataSourceId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	DataSource getDataSourceId();
@@ -124,8 +126,8 @@ public interface PartyDataSource extends BizEntity {
 	 * @see #setFromDate(Date)
 	 * @see org.abchip.mimo.biz.party.party.PartyPackage#getPartyDataSource_FromDate()
 	 * @model required="true"
-	 *        annotation="mimo-ent-format type='date-time'"
 	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getFromDate();
@@ -177,7 +179,9 @@ public interface PartyDataSource extends BizEntity {
 	 * @return the value of the '<em>Party Id</em>' reference.
 	 * @see #setPartyId(Party)
 	 * @see org.abchip.mimo.biz.party.party.PartyPackage#getPartyDataSource_PartyId()
-	 * @model keys="partyId"
+	 * @model keys="partyId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Party getPartyId();

@@ -22,15 +22,15 @@ import org.abchip.mimo.biz.party.contact.ContactMechPurposeType;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.product.facility.FacilityContactMechPurpose#getFromDate <em>From Date</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.facility.FacilityContactMechPurpose#getThruDate <em>Thru Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.facility.FacilityContactMechPurpose#getContactMechPurposeTypeId <em>Contact Mech Purpose Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.facility.FacilityContactMechPurpose#getFacilityId <em>Facility Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.facility.FacilityContactMechPurpose#getContactMechId <em>Contact Mech Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.facility.FacilityContactMechPurpose#getFromDate <em>From Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.facility.FacilityContactMechPurpose#getThruDate <em>Thru Date</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.product.facility.FacilityPackage#getFacilityContactMechPurpose()
- * @model
+ * @model annotation="mimo-ent-frame title='Facility Contact Mechanism Purpose' dictionary='ProductEntityLabels'"
  * @generated
  */
 public interface FacilityContactMechPurpose extends BizEntity {
@@ -45,7 +45,9 @@ public interface FacilityContactMechPurpose extends BizEntity {
 	 * @return the value of the '<em>Contact Mech Id</em>' reference.
 	 * @see #setContactMechId(ContactMech)
 	 * @see org.abchip.mimo.biz.product.facility.FacilityPackage#getFacilityContactMechPurpose_ContactMechId()
-	 * @model keys="contactMechId"
+	 * @model keys="contactMechId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ContactMech getContactMechId();
@@ -71,7 +73,9 @@ public interface FacilityContactMechPurpose extends BizEntity {
 	 * @return the value of the '<em>Contact Mech Purpose Type Id</em>' reference.
 	 * @see #setContactMechPurposeTypeId(ContactMechPurposeType)
 	 * @see org.abchip.mimo.biz.product.facility.FacilityPackage#getFacilityContactMechPurpose_ContactMechPurposeTypeId()
-	 * @model keys="contactMechPurposeTypeId"
+	 * @model keys="contactMechPurposeTypeId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ContactMechPurposeType getContactMechPurposeTypeId();
@@ -98,8 +102,8 @@ public interface FacilityContactMechPurpose extends BizEntity {
 	 * @see #setFromDate(Date)
 	 * @see org.abchip.mimo.biz.product.facility.FacilityPackage#getFacilityContactMechPurpose_FromDate()
 	 * @model required="true"
-	 *        annotation="mimo-ent-format type='date-time'"
 	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getFromDate();
@@ -151,7 +155,9 @@ public interface FacilityContactMechPurpose extends BizEntity {
 	 * @return the value of the '<em>Facility Id</em>' reference.
 	 * @see #setFacilityId(Facility)
 	 * @see org.abchip.mimo.biz.product.facility.FacilityPackage#getFacilityContactMechPurpose_FacilityId()
-	 * @model keys="facilityId"
+	 * @model keys="facilityId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Facility getFacilityId();

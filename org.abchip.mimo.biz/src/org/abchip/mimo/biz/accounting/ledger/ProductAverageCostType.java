@@ -27,7 +27,7 @@ import org.abchip.mimo.biz.BizEntityType;
  * </ul>
  *
  * @see org.abchip.mimo.biz.accounting.ledger.LedgerPackage#getProductAverageCostType()
- * @model annotation="mimo-ent-frame formula='description'"
+ * @model annotation="mimo-ent-frame dictionary='AccountingEntityLabels' formula='description'"
  * @generated
  */
 public interface ProductAverageCostType extends BizEntityType<ProductAverageCost> {
@@ -95,6 +95,7 @@ public interface ProductAverageCostType extends BizEntityType<ProductAverageCost
 	 * @see #setParentTypeId(ProductAverageCostType)
 	 * @see org.abchip.mimo.biz.accounting.ledger.LedgerPackage#getProductAverageCostType_ParentTypeId()
 	 * @model keys="productAverageCostTypeId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ProductAverageCostType getParentTypeId();
@@ -132,7 +133,6 @@ public interface ProductAverageCostType extends BizEntityType<ProductAverageCost
 	 * @see org.abchip.mimo.biz.accounting.ledger.LedgerPackage#getProductAverageCostType_ProductAverageCostTypeId()
 	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getProductAverageCostTypeId();

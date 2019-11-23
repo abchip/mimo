@@ -18,13 +18,13 @@ import org.abchip.mimo.biz.BizEntity;
  * The following features are supported:
  * </p>
  * <ul>
+ *   <li>{@link org.abchip.mimo.biz.product.inventory.InventoryItemTypeAttr#getInventoryItemTypeId <em>Inventory Item Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.inventory.InventoryItemTypeAttr#getAttrName <em>Attr Name</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.inventory.InventoryItemTypeAttr#getDescription <em>Description</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.inventory.InventoryItemTypeAttr#getInventoryItemTypeId <em>Inventory Item Type Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.product.inventory.InventoryPackage#getInventoryItemTypeAttr()
- * @model annotation="mimo-ent-frame formula='description'"
+ * @model annotation="mimo-ent-frame title='Inventory Item Type Attribute' dictionary='ProductEntityLabels' formula='description'"
  * @generated
  */
 public interface InventoryItemTypeAttr extends BizEntity {
@@ -66,8 +66,8 @@ public interface InventoryItemTypeAttr extends BizEntity {
 	 * @see #setAttrName(String)
 	 * @see org.abchip.mimo.biz.product.inventory.InventoryPackage#getInventoryItemTypeAttr_AttrName()
 	 * @model required="true"
-	 *        annotation="mimo-ent-format type='id-long' length='60'"
 	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id-long' length='60'"
 	 * @generated
 	 */
 	String getAttrName();
@@ -93,7 +93,9 @@ public interface InventoryItemTypeAttr extends BizEntity {
 	 * @return the value of the '<em>Inventory Item Type Id</em>' reference.
 	 * @see #setInventoryItemTypeId(InventoryItemType)
 	 * @see org.abchip.mimo.biz.product.inventory.InventoryPackage#getInventoryItemTypeAttr_InventoryItemTypeId()
-	 * @model keys="inventoryItemTypeId"
+	 * @model keys="inventoryItemTypeId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	InventoryItemType getInventoryItemTypeId();

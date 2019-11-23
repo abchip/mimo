@@ -18,14 +18,14 @@ import org.abchip.mimo.biz.BizEntity;
  * The following features are supported:
  * </p>
  * <ul>
+ *   <li>{@link org.abchip.mimo.biz.content.survey.SurveyPage#getSurveyId <em>Survey Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.survey.SurveyPage#getSurveyPageSeqId <em>Survey Page Seq Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.survey.SurveyPage#getPageName <em>Page Name</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.survey.SurveyPage#getSequenceNum <em>Sequence Num</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.content.survey.SurveyPage#getSurveyId <em>Survey Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.content.survey.SurveyPackage#getSurveyPage()
- * @model
+ * @model annotation="mimo-ent-frame title='Survey Page Type'"
  * @generated
  */
 public interface SurveyPage extends BizEntity {
@@ -92,7 +92,9 @@ public interface SurveyPage extends BizEntity {
 	 * @return the value of the '<em>Survey Id</em>' reference.
 	 * @see #setSurveyId(Survey)
 	 * @see org.abchip.mimo.biz.content.survey.SurveyPackage#getSurveyPage_SurveyId()
-	 * @model keys="surveyId"
+	 * @model keys="surveyId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Survey getSurveyId();
@@ -119,8 +121,8 @@ public interface SurveyPage extends BizEntity {
 	 * @see #setSurveyPageSeqId(String)
 	 * @see org.abchip.mimo.biz.content.survey.SurveyPackage#getSurveyPage_SurveyPageSeqId()
 	 * @model required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	String getSurveyPageSeqId();

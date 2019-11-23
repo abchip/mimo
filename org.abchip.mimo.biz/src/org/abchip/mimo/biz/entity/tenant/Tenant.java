@@ -23,8 +23,8 @@ import org.abchip.mimo.biz.BizEntity;
  *   <li>{@link org.abchip.mimo.biz.entity.tenant.Tenant#getTenantId <em>Tenant Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.entity.tenant.Tenant#isDisabled <em>Disabled</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.entity.tenant.Tenant#getInitialPath <em>Initial Path</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.entity.tenant.Tenant#getTenantName <em>Tenant Name</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.entity.tenant.Tenant#getTenantDataSources <em>Tenant Data Sources</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.entity.tenant.Tenant#getTenantName <em>Tenant Name</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.entity.tenant.TenantPackage#getTenant()
@@ -71,7 +71,6 @@ public interface Tenant extends BizEntity {
 	 * @see org.abchip.mimo.biz.entity.tenant.TenantPackage#getTenant_TenantId()
 	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getTenantId();
@@ -97,7 +96,8 @@ public interface Tenant extends BizEntity {
 	 * @return the value of the '<em>Disabled</em>' attribute.
 	 * @see #setDisabled(boolean)
 	 * @see org.abchip.mimo.biz.entity.tenant.TenantPackage#getTenant_Disabled()
-	 * @model annotation="mimo-ent-format type='indicator' length='1'"
+	 * @model annotation="mimo-ent-slot help='Disabled if \'Y\', defaults to \'N\' (not disabled).'"
+	 *        annotation="mimo-ent-format type='indicator' length='1'"
 	 * @generated
 	 */
 	boolean isDisabled();
@@ -149,8 +149,7 @@ public interface Tenant extends BizEntity {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Tenant Data Sources</em>' attribute list.
 	 * @see org.abchip.mimo.biz.entity.tenant.TenantPackage#getTenant_TenantDataSources()
-	 * @model required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='TenantDataSource'"
 	 * @generated
@@ -160,8 +159,7 @@ public interface Tenant extends BizEntity {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='TenantComponent' route='tenantId'"
 	 * @generated

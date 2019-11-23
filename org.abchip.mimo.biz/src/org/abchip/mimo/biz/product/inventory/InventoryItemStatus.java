@@ -22,17 +22,17 @@ import org.abchip.mimo.biz.security.login.UserLogin;
  * The following features are supported:
  * </p>
  * <ul>
+ *   <li>{@link org.abchip.mimo.biz.product.inventory.InventoryItemStatus#getInventoryItemId <em>Inventory Item Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.inventory.InventoryItemStatus#getStatusId <em>Status Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.inventory.InventoryItemStatus#getStatusDatetime <em>Status Datetime</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.inventory.InventoryItemStatus#getChangeByUserLoginId <em>Change By User Login Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.inventory.InventoryItemStatus#getOwnerPartyId <em>Owner Party Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.inventory.InventoryItemStatus#getProductId <em>Product Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.inventory.InventoryItemStatus#getStatusEndDatetime <em>Status End Datetime</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.inventory.InventoryItemStatus#getInventoryItemId <em>Inventory Item Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.inventory.InventoryItemStatus#getStatusId <em>Status Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.inventory.InventoryItemStatus#getChangeByUserLoginId <em>Change By User Login Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.product.inventory.InventoryPackage#getInventoryItemStatus()
- * @model
+ * @model annotation="mimo-ent-frame title='Inventory Item Status History' dictionary='ProductEntityLabels'"
  * @generated
  */
 public interface InventoryItemStatus extends BizEntity {
@@ -48,6 +48,7 @@ public interface InventoryItemStatus extends BizEntity {
 	 * @see #setChangeByUserLoginId(UserLogin)
 	 * @see org.abchip.mimo.biz.product.inventory.InventoryPackage#getInventoryItemStatus_ChangeByUserLoginId()
 	 * @model keys="userLoginId"
+	 *        annotation="mimo-ent-format type='id-vlong' length='255'"
 	 * @generated
 	 */
 	UserLogin getChangeByUserLoginId();
@@ -73,7 +74,8 @@ public interface InventoryItemStatus extends BizEntity {
 	 * @return the value of the '<em>Owner Party Id</em>' attribute.
 	 * @see #setOwnerPartyId(String)
 	 * @see org.abchip.mimo.biz.product.inventory.InventoryPackage#getInventoryItemStatus_OwnerPartyId()
-	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 * @model annotation="mimo-ent-slot help='Used to track a changed (new) ownerPartyId as a status changes.'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	String getOwnerPartyId();
@@ -99,7 +101,8 @@ public interface InventoryItemStatus extends BizEntity {
 	 * @return the value of the '<em>Product Id</em>' attribute.
 	 * @see #setProductId(String)
 	 * @see org.abchip.mimo.biz.product.inventory.InventoryPackage#getInventoryItemStatus_ProductId()
-	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 * @model annotation="mimo-ent-slot help='Used to track a changed (new) productId as a status changes. In other words over time the item may be represented by a different Product (like new versus refurbished).'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	String getProductId();
@@ -126,8 +129,8 @@ public interface InventoryItemStatus extends BizEntity {
 	 * @see #setStatusDatetime(Date)
 	 * @see org.abchip.mimo.biz.product.inventory.InventoryPackage#getInventoryItemStatus_StatusDatetime()
 	 * @model required="true"
-	 *        annotation="mimo-ent-format type='date-time'"
 	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getStatusDatetime();
@@ -179,7 +182,9 @@ public interface InventoryItemStatus extends BizEntity {
 	 * @return the value of the '<em>Status Id</em>' reference.
 	 * @see #setStatusId(StatusItem)
 	 * @see org.abchip.mimo.biz.product.inventory.InventoryPackage#getInventoryItemStatus_StatusId()
-	 * @model keys="statusId"
+	 * @model keys="statusId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	StatusItem getStatusId();
@@ -205,7 +210,9 @@ public interface InventoryItemStatus extends BizEntity {
 	 * @return the value of the '<em>Inventory Item Id</em>' reference.
 	 * @see #setInventoryItemId(InventoryItem)
 	 * @see org.abchip.mimo.biz.product.inventory.InventoryPackage#getInventoryItemStatus_InventoryItemId()
-	 * @model keys="inventoryItemId"
+	 * @model keys="inventoryItemId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	InventoryItem getInventoryItemId();

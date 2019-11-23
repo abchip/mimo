@@ -18,13 +18,13 @@ import org.abchip.mimo.biz.BizEntity;
  * The following features are supported:
  * </p>
  * <ul>
+ *   <li>{@link org.abchip.mimo.biz.party.contact.ContactMechTypeAttr#getContactMechTypeId <em>Contact Mech Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.contact.ContactMechTypeAttr#getAttrName <em>Attr Name</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.contact.ContactMechTypeAttr#getDescription <em>Description</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.party.contact.ContactMechTypeAttr#getContactMechTypeId <em>Contact Mech Type Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.party.contact.ContactPackage#getContactMechTypeAttr()
- * @model annotation="mimo-ent-frame formula='description'"
+ * @model annotation="mimo-ent-frame title='Contact Mechanism Type Attribute' formula='description'"
  * @generated
  */
 public interface ContactMechTypeAttr extends BizEntity {
@@ -66,8 +66,8 @@ public interface ContactMechTypeAttr extends BizEntity {
 	 * @see #setAttrName(String)
 	 * @see org.abchip.mimo.biz.party.contact.ContactPackage#getContactMechTypeAttr_AttrName()
 	 * @model required="true"
-	 *        annotation="mimo-ent-format type='id-long' length='60'"
 	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id-long' length='60'"
 	 * @generated
 	 */
 	String getAttrName();
@@ -93,7 +93,9 @@ public interface ContactMechTypeAttr extends BizEntity {
 	 * @return the value of the '<em>Contact Mech Type Id</em>' reference.
 	 * @see #setContactMechTypeId(ContactMechType)
 	 * @see org.abchip.mimo.biz.party.contact.ContactPackage#getContactMechTypeAttr_ContactMechTypeId()
-	 * @model keys="contactMechTypeId"
+	 * @model keys="contactMechTypeId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ContactMechType getContactMechTypeId();

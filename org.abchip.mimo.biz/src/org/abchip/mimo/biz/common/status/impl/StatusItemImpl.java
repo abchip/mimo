@@ -25,11 +25,11 @@ import org.eclipse.emf.ecore.EClass;
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.common.status.impl.StatusItemImpl#getStatusId <em>Status Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.common.status.impl.StatusItemImpl#getDescription <em>Description</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.common.status.impl.StatusItemImpl#getMainStatusValidChanges <em>Main Status Valid Changes</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.common.status.impl.StatusItemImpl#getSequenceId <em>Sequence Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.common.status.impl.StatusItemImpl#getShipmentStatuss <em>Shipment Statuss</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.common.status.impl.StatusItemImpl#getStatusCode <em>Status Code</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.common.status.impl.StatusItemImpl#getStatusTypeId <em>Status Type Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.common.status.impl.StatusItemImpl#getShipmentStatuss <em>Shipment Statuss</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.common.status.impl.StatusItemImpl#getMainStatusValidChanges <em>Main Status Valid Changes</em>}</li>
  * </ul>
  *
  * @generated

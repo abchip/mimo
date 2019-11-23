@@ -23,10 +23,10 @@ import org.abchip.mimo.biz.product.store.ProductStore;
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.marketing.segment.SegmentGroup#getSegmentGroupId <em>Segment Group Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.marketing.segment.SegmentGroup#getDescription <em>Description</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.marketing.segment.SegmentGroup#getSegmentGroupTypeId <em>Segment Group Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.marketing.segment.SegmentGroup#getProductStoreId <em>Product Store Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.marketing.segment.SegmentGroup#getSegmentGroupClassifications <em>Segment Group Classifications</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.marketing.segment.SegmentGroup#getSegmentGroupGeos <em>Segment Group Geos</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.marketing.segment.SegmentGroup#getSegmentGroupTypeId <em>Segment Group Type Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.marketing.segment.SegmentPackage#getSegmentGroup()
@@ -72,6 +72,7 @@ public interface SegmentGroup extends BizEntityTyped<SegmentGroupType> {
 	 * @see #setProductStoreId(ProductStore)
 	 * @see org.abchip.mimo.biz.marketing.segment.SegmentPackage#getSegmentGroup_ProductStoreId()
 	 * @model keys="productStoreId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ProductStore getProductStoreId();
@@ -99,7 +100,6 @@ public interface SegmentGroup extends BizEntityTyped<SegmentGroupType> {
 	 * @see org.abchip.mimo.biz.marketing.segment.SegmentPackage#getSegmentGroup_SegmentGroupId()
 	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getSegmentGroupId();
@@ -126,6 +126,7 @@ public interface SegmentGroup extends BizEntityTyped<SegmentGroupType> {
 	 * @see #setSegmentGroupTypeId(SegmentGroupType)
 	 * @see org.abchip.mimo.biz.marketing.segment.SegmentPackage#getSegmentGroup_SegmentGroupTypeId()
 	 * @model keys="segmentGroupTypeId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	SegmentGroupType getSegmentGroupTypeId();
@@ -151,8 +152,7 @@ public interface SegmentGroup extends BizEntityTyped<SegmentGroupType> {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Segment Group Classifications</em>' attribute list.
 	 * @see org.abchip.mimo.biz.marketing.segment.SegmentPackage#getSegmentGroup_SegmentGroupClassifications()
-	 * @model required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='SegmentGroupClassification'"
 	 * @generated
@@ -170,8 +170,7 @@ public interface SegmentGroup extends BizEntityTyped<SegmentGroupType> {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Segment Group Geos</em>' attribute list.
 	 * @see org.abchip.mimo.biz.marketing.segment.SegmentPackage#getSegmentGroup_SegmentGroupGeos()
-	 * @model required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='SegmentGroupGeo'"
 	 * @generated

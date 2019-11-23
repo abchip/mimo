@@ -21,10 +21,10 @@ import org.eclipse.emf.ecore.EClass;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link org.abchip.mimo.biz.content.content.impl.ContentAttributeImpl#getContentId <em>Content Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.content.impl.ContentAttributeImpl#getAttrName <em>Attr Name</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.content.impl.ContentAttributeImpl#getAttrDescription <em>Attr Description</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.content.impl.ContentAttributeImpl#getAttrValue <em>Attr Value</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.content.content.impl.ContentAttributeImpl#getContentId <em>Content Id</em>}</li>
  * </ul>
  *
  * @generated

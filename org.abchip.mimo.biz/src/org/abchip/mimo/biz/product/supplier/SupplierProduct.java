@@ -25,8 +25,11 @@ import org.abchip.mimo.biz.product.product.Product;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.product.supplier.SupplierProduct#getMinimumOrderQuantity <em>Minimum Order Quantity</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.supplier.SupplierProduct#getProductId <em>Product Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.supplier.SupplierProduct#getPartyId <em>Party Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.supplier.SupplierProduct#getCurrencyUomId <em>Currency Uom Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.supplier.SupplierProduct#getAvailableFromDate <em>Available From Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.supplier.SupplierProduct#getMinimumOrderQuantity <em>Minimum Order Quantity</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.supplier.SupplierProduct#getAgreementId <em>Agreement Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.supplier.SupplierProduct#getAgreementItemSeqId <em>Agreement Item Seq Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.supplier.SupplierProduct#getAvailableThruDate <em>Available Thru Date</em>}</li>
@@ -34,21 +37,18 @@ import org.abchip.mimo.biz.product.product.Product;
  *   <li>{@link org.abchip.mimo.biz.product.supplier.SupplierProduct#getComments <em>Comments</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.supplier.SupplierProduct#getLastPrice <em>Last Price</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.supplier.SupplierProduct#getOrderQtyIncrements <em>Order Qty Increments</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.supplier.SupplierProduct#getQuantityUomId <em>Quantity Uom Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.supplier.SupplierProduct#getShippingPrice <em>Shipping Price</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.supplier.SupplierProduct#getStandardLeadTimeDays <em>Standard Lead Time Days</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.supplier.SupplierProduct#getSupplierPrefOrderId <em>Supplier Pref Order Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.supplier.SupplierProduct#getSupplierProductId <em>Supplier Product Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.supplier.SupplierProduct#getSupplierProductName <em>Supplier Product Name</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.supplier.SupplierProduct#getUnitsIncluded <em>Units Included</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.supplier.SupplierProduct#getProductId <em>Product Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.supplier.SupplierProduct#getPartyId <em>Party Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.supplier.SupplierProduct#getSupplierPrefOrderId <em>Supplier Pref Order Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.supplier.SupplierProduct#getSupplierRatingTypeId <em>Supplier Rating Type Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.supplier.SupplierProduct#getCurrencyUomId <em>Currency Uom Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.supplier.SupplierProduct#getQuantityUomId <em>Quantity Uom Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.supplier.SupplierProduct#getUnitsIncluded <em>Units Included</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.product.supplier.SupplierPackage#getSupplierProduct()
- * @model
+ * @model annotation="mimo-ent-frame dictionary='ProductEntityLabels'"
  * @generated
  */
 public interface SupplierProduct extends BizEntity {
@@ -116,8 +116,8 @@ public interface SupplierProduct extends BizEntity {
 	 * @see #setAvailableFromDate(Date)
 	 * @see org.abchip.mimo.biz.product.supplier.SupplierPackage#getSupplierProduct_AvailableFromDate()
 	 * @model required="true"
-	 *        annotation="mimo-ent-format type='date-time'"
 	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getAvailableFromDate();
@@ -221,7 +221,9 @@ public interface SupplierProduct extends BizEntity {
 	 * @return the value of the '<em>Currency Uom Id</em>' reference.
 	 * @see #setCurrencyUomId(Uom)
 	 * @see org.abchip.mimo.biz.product.supplier.SupplierPackage#getSupplierProduct_CurrencyUomId()
-	 * @model keys="uomId"
+	 * @model keys="uomId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Uom getCurrencyUomId();
@@ -274,8 +276,8 @@ public interface SupplierProduct extends BizEntity {
 	 * @see #setMinimumOrderQuantity(BigDecimal)
 	 * @see org.abchip.mimo.biz.product.supplier.SupplierPackage#getSupplierProduct_MinimumOrderQuantity()
 	 * @model required="true"
-	 *        annotation="mimo-ent-format type='fixed-point' precision='18' scale='6'"
 	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='fixed-point' precision='18' scale='6'"
 	 * @generated
 	 */
 	BigDecimal getMinimumOrderQuantity();
@@ -327,7 +329,9 @@ public interface SupplierProduct extends BizEntity {
 	 * @return the value of the '<em>Party Id</em>' reference.
 	 * @see #setPartyId(Party)
 	 * @see org.abchip.mimo.biz.product.supplier.SupplierPackage#getSupplierProduct_PartyId()
-	 * @model keys="partyId"
+	 * @model keys="partyId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Party getPartyId();
@@ -354,6 +358,7 @@ public interface SupplierProduct extends BizEntity {
 	 * @see #setQuantityUomId(Uom)
 	 * @see org.abchip.mimo.biz.product.supplier.SupplierPackage#getSupplierProduct_QuantityUomId()
 	 * @model keys="uomId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Uom getQuantityUomId();
@@ -509,7 +514,9 @@ public interface SupplierProduct extends BizEntity {
 	 * @return the value of the '<em>Product Id</em>' reference.
 	 * @see #setProductId(Product)
 	 * @see org.abchip.mimo.biz.product.supplier.SupplierPackage#getSupplierProduct_ProductId()
-	 * @model keys="productId"
+	 * @model keys="productId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Product getProductId();
@@ -536,6 +543,7 @@ public interface SupplierProduct extends BizEntity {
 	 * @see #setSupplierPrefOrderId(SupplierPrefOrder)
 	 * @see org.abchip.mimo.biz.product.supplier.SupplierPackage#getSupplierProduct_SupplierPrefOrderId()
 	 * @model keys="supplierPrefOrderId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	SupplierPrefOrder getSupplierPrefOrderId();
@@ -562,6 +570,7 @@ public interface SupplierProduct extends BizEntity {
 	 * @see #setSupplierRatingTypeId(SupplierRatingType)
 	 * @see org.abchip.mimo.biz.product.supplier.SupplierPackage#getSupplierProduct_SupplierRatingTypeId()
 	 * @model keys="supplierRatingTypeId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	SupplierRatingType getSupplierRatingTypeId();

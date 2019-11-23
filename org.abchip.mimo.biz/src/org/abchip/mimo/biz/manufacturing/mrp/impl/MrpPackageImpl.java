@@ -672,66 +672,6 @@ public class MrpPackageImpl extends EPackageImpl implements MrpPackage {
 	 */
 	@Override
 	public EAttribute getMrpEvent_MrpId() {
-		return (EAttribute)mrpEventEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getMrpEvent_ProductId() {
-		return (EReference)mrpEventEClass.getEStructuralFeatures().get(5);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EAttribute getMrpEvent_EventDate() {
-		return (EAttribute)mrpEventEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getMrpEvent_MrpEventTypeId() {
-		return (EReference)mrpEventEClass.getEStructuralFeatures().get(6);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EAttribute getMrpEvent_EventName() {
-		return (EAttribute)mrpEventEClass.getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getMrpEvent_FacilityId() {
-		return (EReference)mrpEventEClass.getEStructuralFeatures().get(7);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EAttribute getMrpEvent_IsLate() {
 		return (EAttribute)mrpEventEClass.getEStructuralFeatures().get(3);
 	}
 
@@ -741,8 +681,68 @@ public class MrpPackageImpl extends EPackageImpl implements MrpPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getMrpEvent_Quantity() {
+	public EReference getMrpEvent_ProductId() {
+		return (EReference)mrpEventEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getMrpEvent_EventDate() {
+		return (EAttribute)mrpEventEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getMrpEvent_MrpEventTypeId() {
+		return (EReference)mrpEventEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getMrpEvent_EventName() {
 		return (EAttribute)mrpEventEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getMrpEvent_FacilityId() {
+		return (EReference)mrpEventEClass.getEStructuralFeatures().get(5);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getMrpEvent_IsLate() {
+		return (EAttribute)mrpEventEClass.getEStructuralFeatures().get(6);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getMrpEvent_Quantity() {
+		return (EAttribute)mrpEventEClass.getEStructuralFeatures().get(7);
 	}
 
 	/**
@@ -805,14 +805,14 @@ public class MrpPackageImpl extends EPackageImpl implements MrpPackage {
 
 		// Create classes and their features
 		mrpEventEClass = createEClass(MRP_EVENT);
-		createEAttribute(mrpEventEClass, MRP_EVENT__MRP_ID);
-		createEAttribute(mrpEventEClass, MRP_EVENT__EVENT_DATE);
-		createEAttribute(mrpEventEClass, MRP_EVENT__EVENT_NAME);
-		createEAttribute(mrpEventEClass, MRP_EVENT__IS_LATE);
-		createEAttribute(mrpEventEClass, MRP_EVENT__QUANTITY);
 		createEReference(mrpEventEClass, MRP_EVENT__PRODUCT_ID);
 		createEReference(mrpEventEClass, MRP_EVENT__MRP_EVENT_TYPE_ID);
+		createEAttribute(mrpEventEClass, MRP_EVENT__EVENT_DATE);
+		createEAttribute(mrpEventEClass, MRP_EVENT__MRP_ID);
+		createEAttribute(mrpEventEClass, MRP_EVENT__EVENT_NAME);
 		createEReference(mrpEventEClass, MRP_EVENT__FACILITY_ID);
+		createEAttribute(mrpEventEClass, MRP_EVENT__IS_LATE);
+		createEAttribute(mrpEventEClass, MRP_EVENT__QUANTITY);
 
 		mrpEventTypeEClass = createEClass(MRP_EVENT_TYPE);
 		createEAttribute(mrpEventTypeEClass, MRP_EVENT_TYPE__MRP_EVENT_TYPE_ID);
@@ -863,27 +863,27 @@ public class MrpPackageImpl extends EPackageImpl implements MrpPackage {
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(mrpEventEClass, MrpEvent.class, "MrpEvent", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getMrpEvent_MrpId(), ecorePackage.getEString(), "mrpId", null, 1, 1, MrpEvent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getMrpEvent_EventDate(), ecorePackage.getEDate(), "eventDate", null, 1, 1, MrpEvent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getMrpEvent_EventName(), ecorePackage.getEString(), "eventName", null, 0, 1, MrpEvent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getMrpEvent_IsLate(), ecorePackage.getEBoolean(), "isLate", null, 0, 1, MrpEvent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getMrpEvent_Quantity(), ecorePackage.getEDouble(), "quantity", null, 0, 1, MrpEvent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getMrpEvent_ProductId(), theProductPackage.getProduct(), null, "productId", null, 0, 1, MrpEvent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getMrpEvent_ProductId(), theProductPackage.getProduct(), null, "productId", null, 1, 1, MrpEvent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getMrpEvent_ProductId().getEKeys().add(theProductPackage.getProduct_ProductId());
-		initEReference(getMrpEvent_MrpEventTypeId(), this.getMrpEventType(), null, "mrpEventTypeId", null, 0, 1, MrpEvent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getMrpEvent_MrpEventTypeId(), this.getMrpEventType(), null, "mrpEventTypeId", null, 1, 1, MrpEvent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getMrpEvent_MrpEventTypeId().getEKeys().add(this.getMrpEventType_MrpEventTypeId());
+		initEAttribute(getMrpEvent_EventDate(), ecorePackage.getEDate(), "eventDate", null, 1, 1, MrpEvent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getMrpEvent_MrpId(), ecorePackage.getEString(), "mrpId", null, 1, 1, MrpEvent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getMrpEvent_EventName(), ecorePackage.getEString(), "eventName", null, 0, 1, MrpEvent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getMrpEvent_FacilityId(), theFacilityPackage.getFacility(), null, "facilityId", null, 0, 1, MrpEvent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getMrpEvent_FacilityId().getEKeys().add(theFacilityPackage.getFacility_FacilityId());
+		initEAttribute(getMrpEvent_IsLate(), ecorePackage.getEBoolean(), "isLate", null, 0, 1, MrpEvent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getMrpEvent_Quantity(), ecorePackage.getEDouble(), "quantity", null, 0, 1, MrpEvent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(mrpEventTypeEClass, MrpEventType.class, "MrpEventType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getMrpEventType_MrpEventTypeId(), ecorePackage.getEString(), "mrpEventTypeId", null, 1, 1, MrpEventType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMrpEventType_Description(), ecorePackage.getEString(), "description", null, 0, 1, MrpEventType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Create annotations
-		// mimo-ent-format
-		createMimoentformatAnnotations();
 		// mimo-ent-slot
 		createMimoentslotAnnotations();
+		// mimo-ent-format
+		createMimoentformatAnnotations();
 		// mimo-ent-frame
 		createMimoentframeAnnotations();
 	}
@@ -897,7 +897,14 @@ public class MrpPackageImpl extends EPackageImpl implements MrpPackage {
 	protected void createMimoentformatAnnotations() {
 		String source = "mimo-ent-format";
 		addAnnotation
-		  (getMrpEvent_MrpId(),
+		  (getMrpEvent_ProductId(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (getMrpEvent_MrpEventTypeId(),
 		   source,
 		   new String[] {
 			   "type", "id",
@@ -910,10 +917,24 @@ public class MrpPackageImpl extends EPackageImpl implements MrpPackage {
 			   "type", "date-time"
 		   });
 		addAnnotation
+		  (getMrpEvent_MrpId(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
 		  (getMrpEvent_EventName(),
 		   source,
 		   new String[] {
 			   "type", "very-long"
+		   });
+		addAnnotation
+		  (getMrpEvent_FacilityId(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
 		   });
 		addAnnotation
 		  (getMrpEvent_IsLate(),
@@ -953,7 +974,13 @@ public class MrpPackageImpl extends EPackageImpl implements MrpPackage {
 	protected void createMimoentslotAnnotations() {
 		String source = "mimo-ent-slot";
 		addAnnotation
-		  (getMrpEvent_MrpId(),
+		  (getMrpEvent_ProductId(),
+		   source,
+		   new String[] {
+			   "key", "true"
+		   });
+		addAnnotation
+		  (getMrpEvent_MrpEventTypeId(),
 		   source,
 		   new String[] {
 			   "key", "true"
@@ -965,7 +992,7 @@ public class MrpPackageImpl extends EPackageImpl implements MrpPackage {
 			   "key", "true"
 		   });
 		addAnnotation
-		  (getMrpEventType_MrpEventTypeId(),
+		  (getMrpEvent_MrpId(),
 		   source,
 		   new String[] {
 			   "key", "true"
@@ -984,6 +1011,7 @@ public class MrpPackageImpl extends EPackageImpl implements MrpPackage {
 		  (mrpEventTypeEClass,
 		   source,
 		   new String[] {
+			   "dictionary", "ManufacturingEntityLabels",
 			   "formula", "description"
 		   });
 	}

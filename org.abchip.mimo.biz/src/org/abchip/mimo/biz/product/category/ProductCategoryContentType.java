@@ -27,7 +27,7 @@ import org.abchip.mimo.biz.BizEntityType;
  * </ul>
  *
  * @see org.abchip.mimo.biz.product.category.CategoryPackage#getProductCategoryContentType()
- * @model annotation="mimo-ent-frame formula='description'"
+ * @model annotation="mimo-ent-frame dictionary='ProductEntityLabels' formula='description'"
  * @generated
  */
 public interface ProductCategoryContentType extends BizEntityType<ProductCategoryContent> {
@@ -95,6 +95,7 @@ public interface ProductCategoryContentType extends BizEntityType<ProductCategor
 	 * @see #setParentTypeId(ProductCategoryContentType)
 	 * @see org.abchip.mimo.biz.product.category.CategoryPackage#getProductCategoryContentType_ParentTypeId()
 	 * @model keys="prodCatContentTypeId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ProductCategoryContentType getParentTypeId();
@@ -132,7 +133,6 @@ public interface ProductCategoryContentType extends BizEntityType<ProductCategor
 	 * @see org.abchip.mimo.biz.product.category.CategoryPackage#getProductCategoryContentType_ProdCatContentTypeId()
 	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getProdCatContentTypeId();

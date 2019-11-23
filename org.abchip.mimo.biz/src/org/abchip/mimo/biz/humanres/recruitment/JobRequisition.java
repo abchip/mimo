@@ -27,21 +27,21 @@ import org.abchip.mimo.biz.humanres.ability.SkillType;
  *   <li>{@link org.abchip.mimo.biz.humanres.recruitment.JobRequisition#getJobRequisitionId <em>Job Requisition Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.recruitment.JobRequisition#getAge <em>Age</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.recruitment.JobRequisition#getDurationMonths <em>Duration Months</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.humanres.recruitment.JobRequisition#getExamTypeEnumId <em>Exam Type Enum Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.recruitment.JobRequisition#getExperienceMonths <em>Experience Months</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.recruitment.JobRequisition#getExperienceYears <em>Experience Years</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.recruitment.JobRequisition#getGender <em>Gender</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.recruitment.JobRequisition#getJobLocation <em>Job Location</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.humanres.recruitment.JobRequisition#getJobPostingTypeEnumId <em>Job Posting Type Enum Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.recruitment.JobRequisition#getJobRequisitionDate <em>Job Requisition Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.recruitment.JobRequisition#getNoOfResources <em>No Of Resources</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.recruitment.JobRequisition#getQualification <em>Qualification</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.recruitment.JobRequisition#getRequiredOnDate <em>Required On Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.recruitment.JobRequisition#getSkillTypeId <em>Skill Type Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.humanres.recruitment.JobRequisition#getExamTypeEnumId <em>Exam Type Enum Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.humanres.recruitment.JobRequisition#getJobPostingTypeEnumId <em>Job Posting Type Enum Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.humanres.recruitment.RecruitmentPackage#getJobRequisition()
- * @model
+ * @model annotation="mimo-ent-frame title='Entity for storing data about recruitment'"
  * @generated
  */
 public interface JobRequisition extends BizEntity {
@@ -109,6 +109,7 @@ public interface JobRequisition extends BizEntity {
 	 * @see #setExamTypeEnumId(Enumeration)
 	 * @see org.abchip.mimo.biz.humanres.recruitment.RecruitmentPackage#getJobRequisition_ExamTypeEnumId()
 	 * @model keys="enumId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Enumeration getExamTypeEnumId();
@@ -239,6 +240,7 @@ public interface JobRequisition extends BizEntity {
 	 * @see #setJobPostingTypeEnumId(Enumeration)
 	 * @see org.abchip.mimo.biz.humanres.recruitment.RecruitmentPackage#getJobRequisition_JobPostingTypeEnumId()
 	 * @model keys="enumId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Enumeration getJobPostingTypeEnumId();
@@ -292,7 +294,6 @@ public interface JobRequisition extends BizEntity {
 	 * @see org.abchip.mimo.biz.humanres.recruitment.RecruitmentPackage#getJobRequisition_JobRequisitionId()
 	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getJobRequisitionId();
@@ -397,6 +398,7 @@ public interface JobRequisition extends BizEntity {
 	 * @see #setSkillTypeId(SkillType)
 	 * @see org.abchip.mimo.biz.humanres.recruitment.RecruitmentPackage#getJobRequisition_SkillTypeId()
 	 * @model keys="skillTypeId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	SkillType getSkillTypeId();

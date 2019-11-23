@@ -24,11 +24,11 @@ import org.abchip.mimo.biz.product.price.ProductPriceRule;
  *   <li>{@link org.abchip.mimo.biz.order.order.OrderItemPriceInfo#getOrderItemPriceInfoId <em>Order Item Price Info Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.OrderItemPriceInfo#getDescription <em>Description</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.OrderItemPriceInfo#getModifyAmount <em>Modify Amount</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.order.OrderItemPriceInfo#getOrderId <em>Order Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.OrderItemPriceInfo#getOrderItemSeqId <em>Order Item Seq Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.OrderItemPriceInfo#getProductPriceActionSeqId <em>Product Price Action Seq Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.order.OrderItemPriceInfo#getRateCode <em>Rate Code</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.order.OrderItemPriceInfo#getOrderId <em>Order Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.OrderItemPriceInfo#getProductPriceRuleId <em>Product Price Rule Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.order.OrderItemPriceInfo#getRateCode <em>Rate Code</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderItemPriceInfo()
@@ -100,6 +100,7 @@ public interface OrderItemPriceInfo extends BizEntity {
 	 * @see #setOrderId(OrderHeader)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderItemPriceInfo_OrderId()
 	 * @model keys="orderId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	OrderHeader getOrderId();
@@ -127,7 +128,6 @@ public interface OrderItemPriceInfo extends BizEntity {
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderItemPriceInfo_OrderItemPriceInfoId()
 	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getOrderItemPriceInfoId();
@@ -206,6 +206,7 @@ public interface OrderItemPriceInfo extends BizEntity {
 	 * @see #setProductPriceRuleId(ProductPriceRule)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderItemPriceInfo_ProductPriceRuleId()
 	 * @model keys="productPriceRuleId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ProductPriceRule getProductPriceRuleId();

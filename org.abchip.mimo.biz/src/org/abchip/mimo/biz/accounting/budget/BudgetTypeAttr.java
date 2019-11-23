@@ -18,13 +18,13 @@ import org.abchip.mimo.biz.BizEntity;
  * The following features are supported:
  * </p>
  * <ul>
+ *   <li>{@link org.abchip.mimo.biz.accounting.budget.BudgetTypeAttr#getBudgetTypeId <em>Budget Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.budget.BudgetTypeAttr#getAttrName <em>Attr Name</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.budget.BudgetTypeAttr#getDescription <em>Description</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.budget.BudgetTypeAttr#getBudgetTypeId <em>Budget Type Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.accounting.budget.BudgetPackage#getBudgetTypeAttr()
- * @model annotation="mimo-ent-frame formula='description'"
+ * @model annotation="mimo-ent-frame title='Budget Type Attribute' formula='description'"
  * @generated
  */
 public interface BudgetTypeAttr extends BizEntity {
@@ -66,8 +66,8 @@ public interface BudgetTypeAttr extends BizEntity {
 	 * @see #setAttrName(String)
 	 * @see org.abchip.mimo.biz.accounting.budget.BudgetPackage#getBudgetTypeAttr_AttrName()
 	 * @model required="true"
-	 *        annotation="mimo-ent-format type='id-long' length='60'"
 	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id-long' length='60'"
 	 * @generated
 	 */
 	String getAttrName();
@@ -93,7 +93,9 @@ public interface BudgetTypeAttr extends BizEntity {
 	 * @return the value of the '<em>Budget Type Id</em>' reference.
 	 * @see #setBudgetTypeId(BudgetType)
 	 * @see org.abchip.mimo.biz.accounting.budget.BudgetPackage#getBudgetTypeAttr_BudgetTypeId()
-	 * @model keys="budgetTypeId"
+	 * @model keys="budgetTypeId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	BudgetType getBudgetTypeId();

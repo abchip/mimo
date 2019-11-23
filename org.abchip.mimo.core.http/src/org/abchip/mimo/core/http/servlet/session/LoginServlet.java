@@ -27,10 +27,10 @@ import org.abchip.mimo.context.ContextFactory;
 import org.abchip.mimo.core.http.ContextUtils;
 import org.abchip.mimo.core.http.HttpUtils;
 import org.abchip.mimo.entity.EntityIdentifiable;
-import org.abchip.mimo.entity.SerializationType;
 import org.abchip.mimo.resource.ResourceManager;
 import org.abchip.mimo.resource.ResourceReader;
 import org.abchip.mimo.resource.ResourceSerializer;
+import org.abchip.mimo.resource.SerializationType;
 import org.eclipse.jetty.http.HttpHeader;
 
 public class LoginServlet extends HttpServlet {

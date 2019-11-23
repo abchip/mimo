@@ -28,7 +28,7 @@ import org.abchip.mimo.biz.BizEntity;
  * </ul>
  *
  * @see org.abchip.mimo.biz.product.inventory.InventoryPackage#getPhysicalInventory()
- * @model
+ * @model annotation="mimo-ent-frame dictionary='ProductEntityLabels'"
  * @generated
  */
 public interface PhysicalInventory extends BizEntity {
@@ -133,8 +133,7 @@ public interface PhysicalInventory extends BizEntity {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='InventoryItemVariance' route='physicalInventoryId'"
 	 * @generated
@@ -154,7 +153,6 @@ public interface PhysicalInventory extends BizEntity {
 	 * @see org.abchip.mimo.biz.product.inventory.InventoryPackage#getPhysicalInventory_PhysicalInventoryId()
 	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getPhysicalInventoryId();

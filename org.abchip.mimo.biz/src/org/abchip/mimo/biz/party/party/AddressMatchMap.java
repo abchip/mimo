@@ -24,7 +24,7 @@ import org.abchip.mimo.biz.BizEntity;
  * </ul>
  *
  * @see org.abchip.mimo.biz.party.party.PartyPackage#getAddressMatchMap()
- * @model
+ * @model annotation="mimo-ent-frame title='Address Matching Map'"
  * @generated
  */
 public interface AddressMatchMap extends BizEntity {
@@ -40,8 +40,8 @@ public interface AddressMatchMap extends BizEntity {
 	 * @see #setMapKey(String)
 	 * @see org.abchip.mimo.biz.party.party.PartyPackage#getAddressMatchMap_MapKey()
 	 * @model required="true"
-	 *        annotation="mimo-ent-format type='id-vlong' length='255'"
 	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id-vlong' length='255'"
 	 * @generated
 	 */
 	String getMapKey();
@@ -68,8 +68,8 @@ public interface AddressMatchMap extends BizEntity {
 	 * @see #setMapValue(String)
 	 * @see org.abchip.mimo.biz.party.party.PartyPackage#getAddressMatchMap_MapValue()
 	 * @model required="true"
-	 *        annotation="mimo-ent-format type='id-vlong' length='255'"
 	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id-vlong' length='255'"
 	 * @generated
 	 */
 	String getMapValue();

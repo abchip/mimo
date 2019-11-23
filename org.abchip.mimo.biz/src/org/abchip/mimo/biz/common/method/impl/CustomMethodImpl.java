@@ -25,8 +25,8 @@ import org.eclipse.emf.ecore.EClass;
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.common.method.impl.CustomMethodImpl#getCustomMethodId <em>Custom Method Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.common.method.impl.CustomMethodImpl#getCustomMethodName <em>Custom Method Name</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.common.method.impl.CustomMethodImpl#getDescription <em>Description</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.common.method.impl.CustomMethodImpl#getCustomMethodTypeId <em>Custom Method Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.common.method.impl.CustomMethodImpl#getDescription <em>Description</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.common.method.impl.CustomMethodImpl#getFixedAssetDepMethods <em>Fixed Asset Dep Methods</em>}</li>
  * </ul>
  *

@@ -20,15 +20,15 @@ import org.abchip.mimo.biz.BizEntityTyped;
  * The following features are supported:
  * </p>
  * <ul>
+ *   <li>{@link org.abchip.mimo.biz.product.facility.FacilityCalendar#getFacilityId <em>Facility Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.facility.FacilityCalendar#getFacilityCalendarTypeId <em>Facility Calendar Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.facility.FacilityCalendar#getCalendarId <em>Calendar Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.facility.FacilityCalendar#getFromDate <em>From Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.facility.FacilityCalendar#getThruDate <em>Thru Date</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.facility.FacilityCalendar#getFacilityId <em>Facility Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.facility.FacilityCalendar#getFacilityCalendarTypeId <em>Facility Calendar Type Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.product.facility.FacilityPackage#getFacilityCalendar()
- * @model
+ * @model annotation="mimo-ent-frame dictionary='ProductEntityLabels'"
  * @generated
  */
 public interface FacilityCalendar extends BizEntityTyped<FacilityCalendarType> {
@@ -44,8 +44,8 @@ public interface FacilityCalendar extends BizEntityTyped<FacilityCalendarType> {
 	 * @see #setCalendarId(String)
 	 * @see org.abchip.mimo.biz.product.facility.FacilityPackage#getFacilityCalendar_CalendarId()
 	 * @model required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	String getCalendarId();
@@ -72,8 +72,8 @@ public interface FacilityCalendar extends BizEntityTyped<FacilityCalendarType> {
 	 * @see #setFromDate(Date)
 	 * @see org.abchip.mimo.biz.product.facility.FacilityPackage#getFacilityCalendar_FromDate()
 	 * @model required="true"
-	 *        annotation="mimo-ent-format type='date-time'"
 	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getFromDate();
@@ -125,7 +125,9 @@ public interface FacilityCalendar extends BizEntityTyped<FacilityCalendarType> {
 	 * @return the value of the '<em>Facility Id</em>' reference.
 	 * @see #setFacilityId(Facility)
 	 * @see org.abchip.mimo.biz.product.facility.FacilityPackage#getFacilityCalendar_FacilityId()
-	 * @model keys="facilityId"
+	 * @model keys="facilityId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Facility getFacilityId();
@@ -151,7 +153,9 @@ public interface FacilityCalendar extends BizEntityTyped<FacilityCalendarType> {
 	 * @return the value of the '<em>Facility Calendar Type Id</em>' reference.
 	 * @see #setFacilityCalendarTypeId(FacilityCalendarType)
 	 * @see org.abchip.mimo.biz.product.facility.FacilityPackage#getFacilityCalendar_FacilityCalendarTypeId()
-	 * @model keys="facilityCalendarTypeId"
+	 * @model keys="facilityCalendarTypeId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	FacilityCalendarType getFacilityCalendarTypeId();

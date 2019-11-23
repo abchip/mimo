@@ -18,9 +18,9 @@ import org.abchip.mimo.biz.BizEntity;
  * The following features are supported:
  * </p>
  * <ul>
+ *   <li>{@link org.abchip.mimo.biz.content.content.ContentKeyword#getContentId <em>Content Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.content.ContentKeyword#getKeyword <em>Keyword</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.content.ContentKeyword#getRelevancyWeight <em>Relevancy Weight</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.content.content.ContentKeyword#getContentId <em>Content Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.content.content.ContentPackage#getContentKeyword()
@@ -39,7 +39,9 @@ public interface ContentKeyword extends BizEntity {
 	 * @return the value of the '<em>Content Id</em>' reference.
 	 * @see #setContentId(Content)
 	 * @see org.abchip.mimo.biz.content.content.ContentPackage#getContentKeyword_ContentId()
-	 * @model keys="contentId"
+	 * @model keys="contentId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Content getContentId();
@@ -66,8 +68,8 @@ public interface ContentKeyword extends BizEntity {
 	 * @see #setKeyword(String)
 	 * @see org.abchip.mimo.biz.content.content.ContentPackage#getContentKeyword_Keyword()
 	 * @model required="true"
-	 *        annotation="mimo-ent-format type='short-varchar' length='60'"
 	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='short-varchar' length='60'"
 	 * @generated
 	 */
 	String getKeyword();

@@ -21,15 +21,15 @@ import org.abchip.mimo.biz.product.facility.Facility;
  * The following features are supported:
  * </p>
  * <ul>
+ *   <li>{@link org.abchip.mimo.biz.product.store.ProductStoreFacility#getProductStoreId <em>Product Store Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.store.ProductStoreFacility#getFacilityId <em>Facility Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.store.ProductStoreFacility#getFromDate <em>From Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.store.ProductStoreFacility#getSequenceNum <em>Sequence Num</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.store.ProductStoreFacility#getThruDate <em>Thru Date</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.store.ProductStoreFacility#getProductStoreId <em>Product Store Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.store.ProductStoreFacility#getFacilityId <em>Facility Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.product.store.StorePackage#getProductStoreFacility()
- * @model
+ * @model annotation="mimo-ent-frame title='Product Store Inventory Facility Applicability' dictionary='ProductEntityLabels'"
  * @generated
  */
 public interface ProductStoreFacility extends BizEntity {
@@ -45,8 +45,8 @@ public interface ProductStoreFacility extends BizEntity {
 	 * @see #setFromDate(Date)
 	 * @see org.abchip.mimo.biz.product.store.StorePackage#getProductStoreFacility_FromDate()
 	 * @model required="true"
-	 *        annotation="mimo-ent-format type='date-time'"
 	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getFromDate();
@@ -124,7 +124,9 @@ public interface ProductStoreFacility extends BizEntity {
 	 * @return the value of the '<em>Product Store Id</em>' reference.
 	 * @see #setProductStoreId(ProductStore)
 	 * @see org.abchip.mimo.biz.product.store.StorePackage#getProductStoreFacility_ProductStoreId()
-	 * @model keys="productStoreId"
+	 * @model keys="productStoreId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ProductStore getProductStoreId();
@@ -150,7 +152,9 @@ public interface ProductStoreFacility extends BizEntity {
 	 * @return the value of the '<em>Facility Id</em>' reference.
 	 * @see #setFacilityId(Facility)
 	 * @see org.abchip.mimo.biz.product.store.StorePackage#getProductStoreFacility_FacilityId()
-	 * @model keys="facilityId"
+	 * @model keys="facilityId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Facility getFacilityId();

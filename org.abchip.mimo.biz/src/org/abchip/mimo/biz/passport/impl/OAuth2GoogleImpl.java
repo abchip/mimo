@@ -23,6 +23,7 @@ import org.eclipse.emf.ecore.EClass;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link org.abchip.mimo.biz.passport.impl.OAuth2GoogleImpl#getProductStoreId <em>Product Store Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.passport.impl.OAuth2GoogleImpl#getFromDate <em>From Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.passport.impl.OAuth2GoogleImpl#getClientId <em>Client Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.passport.impl.OAuth2GoogleImpl#getClientSecret <em>Client Secret</em>}</li>
@@ -30,7 +31,6 @@ import org.eclipse.emf.ecore.EClass;
  *   <li>{@link org.abchip.mimo.biz.passport.impl.OAuth2GoogleImpl#getLocalRedirectUri <em>Local Redirect Uri</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.passport.impl.OAuth2GoogleImpl#getReturnUrl <em>Return Url</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.passport.impl.OAuth2GoogleImpl#getThruDate <em>Thru Date</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.passport.impl.OAuth2GoogleImpl#getProductStoreId <em>Product Store Id</em>}</li>
  * </ul>
  *
  * @generated

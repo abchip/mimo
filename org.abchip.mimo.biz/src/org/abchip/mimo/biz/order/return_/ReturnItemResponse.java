@@ -30,17 +30,17 @@ import org.abchip.mimo.biz.order.order.OrderPaymentPreference;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.order.return_.ReturnItemResponse#getReturnItemResponseId <em>Return Item Response Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.return_.ReturnItemResponse#getResponseAmount <em>Response Amount</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.return_.ReturnItemResponse#getResponseDate <em>Response Date</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.return_.ReturnItemResponse#getOrderPaymentPreferenceId <em>Order Payment Preference Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.return_.ReturnItemResponse#getReplacementOrderId <em>Replacement Order Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.return_.ReturnItemResponse#getPaymentId <em>Payment Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.return_.ReturnItemResponse#getBillingAccountId <em>Billing Account Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.return_.ReturnItemResponse#getFinAccountTransId <em>Fin Account Trans Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.return_.ReturnItemResponse#getOrderPaymentPreferenceId <em>Order Payment Preference Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.return_.ReturnItemResponse#getPaymentId <em>Payment Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.return_.ReturnItemResponse#getReplacementOrderId <em>Replacement Order Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.return_.ReturnItemResponse#getResponseAmount <em>Response Amount</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.return_.ReturnItemResponse#getResponseDate <em>Response Date</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.order.return_.ReturnPackage#getReturnItemResponse()
- * @model
+ * @model annotation="mimo-ent-frame help='Records what was done with a return: whether a replacement order, a payment, or a billing account credit was issued' title='The Return Item Response'"
  * @generated
  */
 public interface ReturnItemResponse extends BizEntity {
@@ -56,6 +56,7 @@ public interface ReturnItemResponse extends BizEntity {
 	 * @see #setBillingAccountId(BillingAccount)
 	 * @see org.abchip.mimo.biz.order.return_.ReturnPackage#getReturnItemResponse_BillingAccountId()
 	 * @model keys="billingAccountId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	BillingAccount getBillingAccountId();
@@ -82,6 +83,7 @@ public interface ReturnItemResponse extends BizEntity {
 	 * @see #setFinAccountTransId(FinAccountTrans)
 	 * @see org.abchip.mimo.biz.order.return_.ReturnPackage#getReturnItemResponse_FinAccountTransId()
 	 * @model keys="finAccountTransId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	FinAccountTrans getFinAccountTransId();
@@ -108,6 +110,7 @@ public interface ReturnItemResponse extends BizEntity {
 	 * @see #setOrderPaymentPreferenceId(OrderPaymentPreference)
 	 * @see org.abchip.mimo.biz.order.return_.ReturnPackage#getReturnItemResponse_OrderPaymentPreferenceId()
 	 * @model keys="orderPaymentPreferenceId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	OrderPaymentPreference getOrderPaymentPreferenceId();
@@ -134,6 +137,7 @@ public interface ReturnItemResponse extends BizEntity {
 	 * @see #setPaymentId(Payment)
 	 * @see org.abchip.mimo.biz.order.return_.ReturnPackage#getReturnItemResponse_PaymentId()
 	 * @model keys="paymentId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Payment getPaymentId();
@@ -160,6 +164,7 @@ public interface ReturnItemResponse extends BizEntity {
 	 * @see #setReplacementOrderId(OrderHeader)
 	 * @see org.abchip.mimo.biz.order.return_.ReturnPackage#getReturnItemResponse_ReplacementOrderId()
 	 * @model keys="orderId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	OrderHeader getReplacementOrderId();
@@ -249,7 +254,6 @@ public interface ReturnItemResponse extends BizEntity {
 	 * @see org.abchip.mimo.biz.order.return_.ReturnPackage#getReturnItemResponse_ReturnItemResponseId()
 	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getReturnItemResponseId();

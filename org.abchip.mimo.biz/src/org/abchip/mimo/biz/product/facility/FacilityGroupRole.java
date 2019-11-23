@@ -26,7 +26,7 @@ import org.abchip.mimo.biz.party.party.RoleType;
  * </ul>
  *
  * @see org.abchip.mimo.biz.product.facility.FacilityPackage#getFacilityGroupRole()
- * @model
+ * @model annotation="mimo-ent-frame dictionary='ProductEntityLabels'"
  * @generated
  */
 public interface FacilityGroupRole extends BizEntity {
@@ -41,7 +41,9 @@ public interface FacilityGroupRole extends BizEntity {
 	 * @return the value of the '<em>Party Id</em>' reference.
 	 * @see #setPartyId(Party)
 	 * @see org.abchip.mimo.biz.product.facility.FacilityPackage#getFacilityGroupRole_PartyId()
-	 * @model keys="partyId"
+	 * @model keys="partyId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Party getPartyId();
@@ -67,7 +69,9 @@ public interface FacilityGroupRole extends BizEntity {
 	 * @return the value of the '<em>Role Type Id</em>' reference.
 	 * @see #setRoleTypeId(RoleType)
 	 * @see org.abchip.mimo.biz.product.facility.FacilityPackage#getFacilityGroupRole_RoleTypeId()
-	 * @model keys="roleTypeId"
+	 * @model keys="roleTypeId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	RoleType getRoleTypeId();
@@ -93,7 +97,9 @@ public interface FacilityGroupRole extends BizEntity {
 	 * @return the value of the '<em>Facility Group Id</em>' reference.
 	 * @see #setFacilityGroupId(FacilityGroup)
 	 * @see org.abchip.mimo.biz.product.facility.FacilityPackage#getFacilityGroupRole_FacilityGroupId()
-	 * @model keys="facilityGroupId"
+	 * @model keys="facilityGroupId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	FacilityGroup getFacilityGroupId();

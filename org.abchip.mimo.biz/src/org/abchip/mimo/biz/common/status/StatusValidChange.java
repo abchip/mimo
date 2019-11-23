@@ -18,14 +18,14 @@ import org.abchip.mimo.biz.BizEntity;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.common.status.StatusValidChange#getConditionExpression <em>Condition Expression</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.common.status.StatusValidChange#getTransitionName <em>Transition Name</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.common.status.StatusValidChange#getStatusId <em>Status Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.common.status.StatusValidChange#getStatusIdTo <em>Status Id To</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.common.status.StatusValidChange#getConditionExpression <em>Condition Expression</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.common.status.StatusValidChange#getTransitionName <em>Transition Name</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.common.status.StatusPackage#getStatusValidChange()
- * @model
+ * @model annotation="mimo-ent-frame dictionary='CommonEntityLabels'"
  * @generated
  */
 public interface StatusValidChange extends BizEntity {
@@ -92,7 +92,9 @@ public interface StatusValidChange extends BizEntity {
 	 * @return the value of the '<em>Status Id</em>' reference.
 	 * @see #setStatusId(StatusItem)
 	 * @see org.abchip.mimo.biz.common.status.StatusPackage#getStatusValidChange_StatusId()
-	 * @model keys="statusId"
+	 * @model keys="statusId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	StatusItem getStatusId();
@@ -118,7 +120,9 @@ public interface StatusValidChange extends BizEntity {
 	 * @return the value of the '<em>Status Id To</em>' reference.
 	 * @see #setStatusIdTo(StatusItem)
 	 * @see org.abchip.mimo.biz.common.status.StatusPackage#getStatusValidChange_StatusIdTo()
-	 * @model keys="statusId"
+	 * @model keys="statusId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	StatusItem getStatusIdTo();

@@ -27,7 +27,7 @@ import org.abchip.mimo.biz.BizEntity;
  * </ul>
  *
  * @see org.abchip.mimo.biz.humanres.ability.AbilityPackage#getPerfRatingType()
- * @model annotation="mimo-ent-frame formula='description'"
+ * @model annotation="mimo-ent-frame title='Performance Rating Type' formula='description'"
  * @generated
  */
 public interface PerfRatingType extends BizEntity {
@@ -95,6 +95,7 @@ public interface PerfRatingType extends BizEntity {
 	 * @see #setParentTypeId(PerfRatingType)
 	 * @see org.abchip.mimo.biz.humanres.ability.AbilityPackage#getPerfRatingType_ParentTypeId()
 	 * @model keys="perfRatingTypeId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	PerfRatingType getParentTypeId();
@@ -132,7 +133,6 @@ public interface PerfRatingType extends BizEntity {
 	 * @see org.abchip.mimo.biz.humanres.ability.AbilityPackage#getPerfRatingType_PerfRatingTypeId()
 	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getPerfRatingTypeId();

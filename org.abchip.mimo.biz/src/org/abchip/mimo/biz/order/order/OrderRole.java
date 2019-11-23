@@ -41,7 +41,9 @@ public interface OrderRole extends BizEntity {
 	 * @return the value of the '<em>Order Id</em>' reference.
 	 * @see #setOrderId(OrderHeader)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderRole_OrderId()
-	 * @model keys="orderId"
+	 * @model keys="orderId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	OrderHeader getOrderId();
@@ -67,7 +69,9 @@ public interface OrderRole extends BizEntity {
 	 * @return the value of the '<em>Party Id</em>' reference.
 	 * @see #setPartyId(Party)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderRole_PartyId()
-	 * @model keys="partyId"
+	 * @model keys="partyId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Party getPartyId();
@@ -93,7 +97,9 @@ public interface OrderRole extends BizEntity {
 	 * @return the value of the '<em>Role Type Id</em>' reference.
 	 * @see #setRoleTypeId(RoleType)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderRole_RoleTypeId()
-	 * @model keys="roleTypeId"
+	 * @model keys="roleTypeId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	RoleType getRoleTypeId();

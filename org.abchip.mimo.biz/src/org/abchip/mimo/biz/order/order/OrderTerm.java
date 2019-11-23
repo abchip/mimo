@@ -22,14 +22,14 @@ import org.abchip.mimo.biz.party.agreement.TermType;
  * The following features are supported:
  * </p>
  * <ul>
+ *   <li>{@link org.abchip.mimo.biz.order.order.OrderTerm#getOrderId <em>Order Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.order.OrderTerm#getTermTypeId <em>Term Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.OrderTerm#getOrderItemSeqId <em>Order Item Seq Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.OrderTerm#getDescription <em>Description</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.OrderTerm#getTermDays <em>Term Days</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.OrderTerm#getTermValue <em>Term Value</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.OrderTerm#getTextValue <em>Text Value</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.OrderTerm#getUomId <em>Uom Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.order.OrderTerm#getOrderId <em>Order Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.order.OrderTerm#getTermTypeId <em>Term Type Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderTerm()
@@ -74,7 +74,9 @@ public interface OrderTerm extends BizEntity {
 	 * @return the value of the '<em>Order Id</em>' reference.
 	 * @see #setOrderId(OrderHeader)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderTerm_OrderId()
-	 * @model keys="orderId"
+	 * @model keys="orderId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	OrderHeader getOrderId();
@@ -101,8 +103,8 @@ public interface OrderTerm extends BizEntity {
 	 * @see #setOrderItemSeqId(String)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderTerm_OrderItemSeqId()
 	 * @model required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	String getOrderItemSeqId();
@@ -154,7 +156,9 @@ public interface OrderTerm extends BizEntity {
 	 * @return the value of the '<em>Term Type Id</em>' reference.
 	 * @see #setTermTypeId(TermType)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderTerm_TermTypeId()
-	 * @model keys="termTypeId"
+	 * @model keys="termTypeId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	TermType getTermTypeId();
@@ -233,6 +237,7 @@ public interface OrderTerm extends BizEntity {
 	 * @see #setUomId(Uom)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderTerm_UomId()
 	 * @model keys="uomId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Uom getUomId();

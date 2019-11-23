@@ -22,14 +22,14 @@ import org.abchip.mimo.biz.party.contact.ContactMechType;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.party.communication.CommunicationEventType#getCommunicationEventTypeId <em>Communication Event Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.party.communication.CommunicationEventType#getContactMechTypeId <em>Contact Mech Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.communication.CommunicationEventType#getDescription <em>Description</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.communication.CommunicationEventType#isHasTable <em>Has Table</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.communication.CommunicationEventType#getParentTypeId <em>Parent Type Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.party.communication.CommunicationEventType#getContactMechTypeId <em>Contact Mech Type Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.party.communication.CommunicationPackage#getCommunicationEventType()
- * @model annotation="mimo-ent-frame formula='description'"
+ * @model annotation="mimo-ent-frame dictionary='PartyEntityLabels' formula='description'"
  * @generated
  */
 public interface CommunicationEventType extends BizEntityType<CommunicationEvent> {
@@ -45,6 +45,7 @@ public interface CommunicationEventType extends BizEntityType<CommunicationEvent
 	 * @see #setContactMechTypeId(ContactMechType)
 	 * @see org.abchip.mimo.biz.party.communication.CommunicationPackage#getCommunicationEventType_ContactMechTypeId()
 	 * @model keys="contactMechTypeId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ContactMechType getContactMechTypeId();
@@ -123,6 +124,7 @@ public interface CommunicationEventType extends BizEntityType<CommunicationEvent
 	 * @see #setParentTypeId(CommunicationEventType)
 	 * @see org.abchip.mimo.biz.party.communication.CommunicationPackage#getCommunicationEventType_ParentTypeId()
 	 * @model keys="communicationEventTypeId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	CommunicationEventType getParentTypeId();
@@ -170,7 +172,6 @@ public interface CommunicationEventType extends BizEntityType<CommunicationEvent
 	 * @see org.abchip.mimo.biz.party.communication.CommunicationPackage#getCommunicationEventType_CommunicationEventTypeId()
 	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getCommunicationEventTypeId();

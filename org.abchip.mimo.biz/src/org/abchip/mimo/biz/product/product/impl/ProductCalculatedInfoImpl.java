@@ -24,9 +24,9 @@ import org.eclipse.emf.ecore.EClass;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductCalculatedInfoImpl#getAverageCustomerRating <em>Average Customer Rating</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductCalculatedInfoImpl#getProductId <em>Product Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductCalculatedInfoImpl#getTotalQuantityOrdered <em>Total Quantity Ordered</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductCalculatedInfoImpl#getTotalTimesViewed <em>Total Times Viewed</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductCalculatedInfoImpl#getProductId <em>Product Id</em>}</li>
  * </ul>
  *
  * @generated

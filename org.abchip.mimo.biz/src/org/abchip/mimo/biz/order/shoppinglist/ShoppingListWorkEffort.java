@@ -39,7 +39,9 @@ public interface ShoppingListWorkEffort extends BizEntity {
 	 * @return the value of the '<em>Shopping List Id</em>' reference.
 	 * @see #setShoppingListId(ShoppingList)
 	 * @see org.abchip.mimo.biz.order.shoppinglist.ShoppinglistPackage#getShoppingListWorkEffort_ShoppingListId()
-	 * @model keys="shoppingListId"
+	 * @model keys="shoppingListId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ShoppingList getShoppingListId();
@@ -65,7 +67,9 @@ public interface ShoppingListWorkEffort extends BizEntity {
 	 * @return the value of the '<em>Work Effort Id</em>' reference.
 	 * @see #setWorkEffortId(WorkEffort)
 	 * @see org.abchip.mimo.biz.order.shoppinglist.ShoppinglistPackage#getShoppingListWorkEffort_WorkEffortId()
-	 * @model keys="workEffortId"
+	 * @model keys="workEffortId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	WorkEffort getWorkEffortId();

@@ -16,10 +16,10 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.abchip.mimo.context.Context;
 import org.abchip.mimo.entity.EntityIdentifiable;
-import org.abchip.mimo.entity.SerializationType;
 import org.abchip.mimo.resource.ResourceManager;
 import org.abchip.mimo.resource.ResourceReader;
 import org.abchip.mimo.resource.ResourceSerializer;
+import org.abchip.mimo.resource.SerializationType;
 import org.abchip.mimo.util.Strings;
 
 public class LookupServlet extends BaseServlet {

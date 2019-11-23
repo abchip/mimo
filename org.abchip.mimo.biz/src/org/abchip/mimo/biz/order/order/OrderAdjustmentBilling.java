@@ -21,10 +21,10 @@ import org.abchip.mimo.biz.accounting.invoice.Invoice;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.order.order.OrderAdjustmentBilling#getInvoiceItemSeqId <em>Invoice Item Seq Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.order.OrderAdjustmentBilling#getAmount <em>Amount</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.OrderAdjustmentBilling#getOrderAdjustmentId <em>Order Adjustment Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.OrderAdjustmentBilling#getInvoiceId <em>Invoice Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.order.OrderAdjustmentBilling#getInvoiceItemSeqId <em>Invoice Item Seq Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.order.OrderAdjustmentBilling#getAmount <em>Amount</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderAdjustmentBilling()
@@ -69,7 +69,9 @@ public interface OrderAdjustmentBilling extends BizEntity {
 	 * @return the value of the '<em>Invoice Id</em>' reference.
 	 * @see #setInvoiceId(Invoice)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderAdjustmentBilling_InvoiceId()
-	 * @model keys="invoiceId"
+	 * @model keys="invoiceId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Invoice getInvoiceId();
@@ -96,8 +98,8 @@ public interface OrderAdjustmentBilling extends BizEntity {
 	 * @see #setInvoiceItemSeqId(String)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderAdjustmentBilling_InvoiceItemSeqId()
 	 * @model required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	String getInvoiceItemSeqId();
@@ -123,7 +125,9 @@ public interface OrderAdjustmentBilling extends BizEntity {
 	 * @return the value of the '<em>Order Adjustment Id</em>' reference.
 	 * @see #setOrderAdjustmentId(OrderAdjustment)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderAdjustmentBilling_OrderAdjustmentId()
-	 * @model keys="orderAdjustmentId"
+	 * @model keys="orderAdjustmentId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	OrderAdjustment getOrderAdjustmentId();

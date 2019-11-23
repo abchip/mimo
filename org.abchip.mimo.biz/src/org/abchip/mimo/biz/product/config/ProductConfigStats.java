@@ -19,14 +19,14 @@ import org.abchip.mimo.biz.product.product.Product;
  * The following features are supported:
  * </p>
  * <ul>
+ *   <li>{@link org.abchip.mimo.biz.product.config.ProductConfigStats#getProductId <em>Product Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.config.ProductConfigStats#getConfigId <em>Config Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.config.ProductConfigStats#getConfigTypeId <em>Config Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.config.ProductConfigStats#getNumOfConfs <em>Num Of Confs</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.config.ProductConfigStats#getProductId <em>Product Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.product.config.ConfigPackage#getProductConfigStats()
- * @model
+ * @model annotation="mimo-ent-frame title='Product Configurations Stats' dictionary='ProductEntityLabels'"
  * @generated
  */
 public interface ProductConfigStats extends BizEntity {
@@ -42,8 +42,8 @@ public interface ProductConfigStats extends BizEntity {
 	 * @see #setConfigId(String)
 	 * @see org.abchip.mimo.biz.product.config.ConfigPackage#getProductConfigStats_ConfigId()
 	 * @model required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	String getConfigId();
@@ -69,7 +69,8 @@ public interface ProductConfigStats extends BizEntity {
 	 * @return the value of the '<em>Config Type Id</em>' attribute.
 	 * @see #setConfigTypeId(String)
 	 * @see org.abchip.mimo.biz.product.config.ConfigPackage#getProductConfigStats_ConfigTypeId()
-	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 * @model annotation="mimo-ent-slot help='HIDDEN, TEMPLATE, etc...'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	String getConfigTypeId();
@@ -121,7 +122,9 @@ public interface ProductConfigStats extends BizEntity {
 	 * @return the value of the '<em>Product Id</em>' reference.
 	 * @see #setProductId(Product)
 	 * @see org.abchip.mimo.biz.product.config.ConfigPackage#getProductConfigStats_ProductId()
-	 * @model keys="productId"
+	 * @model keys="productId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Product getProductId();

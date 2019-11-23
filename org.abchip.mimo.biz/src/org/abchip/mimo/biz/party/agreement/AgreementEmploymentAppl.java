@@ -22,17 +22,17 @@ import org.abchip.mimo.biz.BizEntity;
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.party.agreement.AgreementEmploymentAppl#getAgreementId <em>Agreement Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.agreement.AgreementEmploymentAppl#getAgreementItemSeqId <em>Agreement Item Seq Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.party.agreement.AgreementEmploymentAppl#getPartyIdTo <em>Party Id To</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.party.agreement.AgreementEmploymentAppl#getPartyIdFrom <em>Party Id From</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.party.agreement.AgreementEmploymentAppl#getRoleTypeIdTo <em>Role Type Id To</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.party.agreement.AgreementEmploymentAppl#getRoleTypeIdFrom <em>Role Type Id From</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.agreement.AgreementEmploymentAppl#getFromDate <em>From Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.party.agreement.AgreementEmploymentAppl#getPartyIdFrom <em>Party Id From</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.party.agreement.AgreementEmploymentAppl#getPartyIdTo <em>Party Id To</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.party.agreement.AgreementEmploymentAppl#getRoleTypeIdFrom <em>Role Type Id From</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.party.agreement.AgreementEmploymentAppl#getRoleTypeIdTo <em>Role Type Id To</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.agreement.AgreementEmploymentAppl#getAgreementDate <em>Agreement Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.agreement.AgreementEmploymentAppl#getThruDate <em>Thru Date</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.party.agreement.AgreementPackage#getAgreementEmploymentAppl()
- * @model
+ * @model annotation="mimo-ent-frame title='Agreement Employment Application'"
  * @generated
  */
 public interface AgreementEmploymentAppl extends BizEntity {
@@ -74,8 +74,8 @@ public interface AgreementEmploymentAppl extends BizEntity {
 	 * @see #setAgreementId(String)
 	 * @see org.abchip.mimo.biz.party.agreement.AgreementPackage#getAgreementEmploymentAppl_AgreementId()
 	 * @model required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	String getAgreementId();
@@ -102,8 +102,8 @@ public interface AgreementEmploymentAppl extends BizEntity {
 	 * @see #setAgreementItemSeqId(String)
 	 * @see org.abchip.mimo.biz.party.agreement.AgreementPackage#getAgreementEmploymentAppl_AgreementItemSeqId()
 	 * @model required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	String getAgreementItemSeqId();
@@ -130,8 +130,8 @@ public interface AgreementEmploymentAppl extends BizEntity {
 	 * @see #setFromDate(Date)
 	 * @see org.abchip.mimo.biz.party.agreement.AgreementPackage#getAgreementEmploymentAppl_FromDate()
 	 * @model required="true"
-	 *        annotation="mimo-ent-format type='date-time'"
 	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getFromDate();
@@ -158,8 +158,8 @@ public interface AgreementEmploymentAppl extends BizEntity {
 	 * @see #setPartyIdFrom(String)
 	 * @see org.abchip.mimo.biz.party.agreement.AgreementPackage#getAgreementEmploymentAppl_PartyIdFrom()
 	 * @model required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	String getPartyIdFrom();
@@ -186,8 +186,8 @@ public interface AgreementEmploymentAppl extends BizEntity {
 	 * @see #setPartyIdTo(String)
 	 * @see org.abchip.mimo.biz.party.agreement.AgreementPackage#getAgreementEmploymentAppl_PartyIdTo()
 	 * @model required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	String getPartyIdTo();
@@ -214,8 +214,8 @@ public interface AgreementEmploymentAppl extends BizEntity {
 	 * @see #setRoleTypeIdFrom(String)
 	 * @see org.abchip.mimo.biz.party.agreement.AgreementPackage#getAgreementEmploymentAppl_RoleTypeIdFrom()
 	 * @model required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	String getRoleTypeIdFrom();
@@ -242,8 +242,8 @@ public interface AgreementEmploymentAppl extends BizEntity {
 	 * @see #setRoleTypeIdTo(String)
 	 * @see org.abchip.mimo.biz.party.agreement.AgreementPackage#getAgreementEmploymentAppl_RoleTypeIdTo()
 	 * @model required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	String getRoleTypeIdTo();

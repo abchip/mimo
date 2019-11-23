@@ -25,8 +25,8 @@ import org.eclipse.emf.ecore.EClass;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductMeterTypeImpl#getProductMeterTypeId <em>Product Meter Type Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductMeterTypeImpl#getDescription <em>Description</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductMeterTypeImpl#getDefaultUomId <em>Default Uom Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductMeterTypeImpl#getDescription <em>Description</em>}</li>
  * </ul>
  *
  * @generated

@@ -26,10 +26,10 @@ import org.abchip.mimo.context.Context;
 import org.abchip.mimo.context.Logger;
 import org.abchip.mimo.entity.EntityIdentifiable;
 import org.abchip.mimo.entity.Frame;
-import org.abchip.mimo.entity.SerializationType;
 import org.abchip.mimo.resource.Resource;
 import org.abchip.mimo.resource.ResourceManager;
 import org.abchip.mimo.resource.ResourceSerializer;
+import org.abchip.mimo.resource.SerializationType;
 import org.abchip.mimo.resource.impl.ResourceImpl;
 
 public class NIOResourcempl<E extends EntityIdentifiable> extends ResourceImpl<E> {

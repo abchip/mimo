@@ -20,11 +20,11 @@ import org.abchip.mimo.biz.security.login.UserLogin;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.content.preference.WebUserPreference#getVisitId <em>Visit Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.content.preference.WebUserPreference#getWebPreferenceValue <em>Web Preference Value</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.preference.WebUserPreference#getWebPreferenceTypeId <em>Web Preference Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.preference.WebUserPreference#getUserLoginId <em>User Login Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.preference.WebUserPreference#getPartyId <em>Party Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.content.preference.WebUserPreference#getVisitId <em>Visit Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.content.preference.WebUserPreference#getWebPreferenceValue <em>Web Preference Value</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.content.preference.PreferencePackage#getWebUserPreference()
@@ -43,7 +43,9 @@ public interface WebUserPreference extends BizEntity {
 	 * @return the value of the '<em>Party Id</em>' reference.
 	 * @see #setPartyId(Party)
 	 * @see org.abchip.mimo.biz.content.preference.PreferencePackage#getWebUserPreference_PartyId()
-	 * @model keys="partyId"
+	 * @model keys="partyId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Party getPartyId();
@@ -69,7 +71,9 @@ public interface WebUserPreference extends BizEntity {
 	 * @return the value of the '<em>User Login Id</em>' reference.
 	 * @see #setUserLoginId(UserLogin)
 	 * @see org.abchip.mimo.biz.content.preference.PreferencePackage#getWebUserPreference_UserLoginId()
-	 * @model keys="userLoginId"
+	 * @model keys="userLoginId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id-vlong' length='255'"
 	 * @generated
 	 */
 	UserLogin getUserLoginId();
@@ -96,8 +100,8 @@ public interface WebUserPreference extends BizEntity {
 	 * @see #setVisitId(String)
 	 * @see org.abchip.mimo.biz.content.preference.PreferencePackage#getWebUserPreference_VisitId()
 	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true' help='To be able to keep preferences for a non loggin in user for the current session'"
 	 *        annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getVisitId();
@@ -123,7 +127,9 @@ public interface WebUserPreference extends BizEntity {
 	 * @return the value of the '<em>Web Preference Type Id</em>' reference.
 	 * @see #setWebPreferenceTypeId(WebPreferenceType)
 	 * @see org.abchip.mimo.biz.content.preference.PreferencePackage#getWebUserPreference_WebPreferenceTypeId()
-	 * @model keys="webPreferenceTypeId"
+	 * @model keys="webPreferenceTypeId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	WebPreferenceType getWebPreferenceTypeId();

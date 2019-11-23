@@ -24,10 +24,10 @@ import org.eclipse.emf.ecore.EClass;
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.EftAccountImpl#getAccountType <em>Account Type</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.EftAccountImpl#getBankName <em>Bank Name</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.EftAccountImpl#getCompanyNameOnAccount <em>Company Name On Account</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.EftAccountImpl#getContactMechId <em>Contact Mech Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.EftAccountImpl#getNameOnAccount <em>Name On Account</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.EftAccountImpl#getRoutingNumber <em>Routing Number</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.EftAccountImpl#getYearsAtBank <em>Years At Bank</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.EftAccountImpl#getContactMechId <em>Contact Mech Id</em>}</li>
  * </ul>
  *
  * @generated

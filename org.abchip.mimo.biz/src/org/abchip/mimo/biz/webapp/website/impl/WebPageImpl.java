@@ -23,9 +23,9 @@ import org.eclipse.emf.ecore.EClass;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.webapp.website.impl.WebPageImpl#getWebPageId <em>Web Page Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.webapp.website.impl.WebPageImpl#getContentId <em>Content Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.webapp.website.impl.WebPageImpl#getPageName <em>Page Name</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.webapp.website.impl.WebPageImpl#getWebSiteId <em>Web Site Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.webapp.website.impl.WebPageImpl#getContentId <em>Content Id</em>}</li>
  * </ul>
  *
  * @generated

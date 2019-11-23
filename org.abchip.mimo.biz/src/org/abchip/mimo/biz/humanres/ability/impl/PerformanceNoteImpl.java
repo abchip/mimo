@@ -23,12 +23,12 @@ import org.eclipse.emf.ecore.EClass;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.humanres.ability.impl.PerformanceNoteImpl#getRoleTypeId <em>Role Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.humanres.ability.impl.PerformanceNoteImpl#getPartyId <em>Party Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.ability.impl.PerformanceNoteImpl#getFromDate <em>From Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.humanres.ability.impl.PerformanceNoteImpl#getRoleTypeId <em>Role Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.ability.impl.PerformanceNoteImpl#getComments <em>Comments</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.ability.impl.PerformanceNoteImpl#getCommunicationDate <em>Communication Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.ability.impl.PerformanceNoteImpl#getThruDate <em>Thru Date</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.humanres.ability.impl.PerformanceNoteImpl#getPartyId <em>Party Id</em>}</li>
  * </ul>
  *
  * @generated

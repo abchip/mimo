@@ -21,16 +21,16 @@ import org.abchip.mimo.biz.content.content.Content;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.party.communication.CommEventContentAssoc#getFromDate <em>From Date</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.party.communication.CommEventContentAssoc#getSequenceNum <em>Sequence Num</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.party.communication.CommEventContentAssoc#getThruDate <em>Thru Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.communication.CommEventContentAssoc#getContentId <em>Content Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.communication.CommEventContentAssoc#getCommunicationEventId <em>Communication Event Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.party.communication.CommEventContentAssoc#getFromDate <em>From Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.communication.CommEventContentAssoc#getCommContentAssocTypeId <em>Comm Content Assoc Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.party.communication.CommEventContentAssoc#getSequenceNum <em>Sequence Num</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.party.communication.CommEventContentAssoc#getThruDate <em>Thru Date</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.party.communication.CommunicationPackage#getCommEventContentAssoc()
- * @model
+ * @model annotation="mimo-ent-frame title='CommunicationEvent Content Association'"
  * @generated
  */
 public interface CommEventContentAssoc extends BizEntity {
@@ -45,7 +45,9 @@ public interface CommEventContentAssoc extends BizEntity {
 	 * @return the value of the '<em>Content Id</em>' reference.
 	 * @see #setContentId(Content)
 	 * @see org.abchip.mimo.biz.party.communication.CommunicationPackage#getCommEventContentAssoc_ContentId()
-	 * @model keys="contentId"
+	 * @model keys="contentId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Content getContentId();
@@ -72,8 +74,8 @@ public interface CommEventContentAssoc extends BizEntity {
 	 * @see #setFromDate(Date)
 	 * @see org.abchip.mimo.biz.party.communication.CommunicationPackage#getCommEventContentAssoc_FromDate()
 	 * @model required="true"
-	 *        annotation="mimo-ent-format type='date-time'"
 	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getFromDate();
@@ -151,7 +153,9 @@ public interface CommEventContentAssoc extends BizEntity {
 	 * @return the value of the '<em>Communication Event Id</em>' reference.
 	 * @see #setCommunicationEventId(CommunicationEvent)
 	 * @see org.abchip.mimo.biz.party.communication.CommunicationPackage#getCommEventContentAssoc_CommunicationEventId()
-	 * @model keys="communicationEventId"
+	 * @model keys="communicationEventId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	CommunicationEvent getCommunicationEventId();
@@ -178,6 +182,7 @@ public interface CommEventContentAssoc extends BizEntity {
 	 * @see #setCommContentAssocTypeId(CommContentAssocType)
 	 * @see org.abchip.mimo.biz.party.communication.CommunicationPackage#getCommEventContentAssoc_CommContentAssocTypeId()
 	 * @model keys="commContentAssocTypeId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	CommContentAssocType getCommContentAssocTypeId();

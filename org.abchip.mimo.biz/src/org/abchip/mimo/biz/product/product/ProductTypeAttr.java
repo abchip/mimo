@@ -18,13 +18,13 @@ import org.abchip.mimo.biz.BizEntity;
  * The following features are supported:
  * </p>
  * <ul>
+ *   <li>{@link org.abchip.mimo.biz.product.product.ProductTypeAttr#getProductTypeId <em>Product Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.ProductTypeAttr#getAttrName <em>Attr Name</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.ProductTypeAttr#getDescription <em>Description</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.product.ProductTypeAttr#getProductTypeId <em>Product Type Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.product.product.ProductPackage#getProductTypeAttr()
- * @model annotation="mimo-ent-frame formula='description'"
+ * @model annotation="mimo-ent-frame title='Product Type Attribute' dictionary='ProductEntityLabels' formula='description'"
  * @generated
  */
 public interface ProductTypeAttr extends BizEntity {
@@ -66,8 +66,8 @@ public interface ProductTypeAttr extends BizEntity {
 	 * @see #setAttrName(String)
 	 * @see org.abchip.mimo.biz.product.product.ProductPackage#getProductTypeAttr_AttrName()
 	 * @model required="true"
-	 *        annotation="mimo-ent-format type='id-long' length='60'"
 	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id-long' length='60'"
 	 * @generated
 	 */
 	String getAttrName();
@@ -93,7 +93,9 @@ public interface ProductTypeAttr extends BizEntity {
 	 * @return the value of the '<em>Product Type Id</em>' reference.
 	 * @see #setProductTypeId(ProductType)
 	 * @see org.abchip.mimo.biz.product.product.ProductPackage#getProductTypeAttr_ProductTypeId()
-	 * @model keys="productTypeId"
+	 * @model keys="productTypeId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ProductType getProductTypeId();

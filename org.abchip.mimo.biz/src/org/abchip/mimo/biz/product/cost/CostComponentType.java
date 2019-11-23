@@ -21,14 +21,14 @@ import org.abchip.mimo.biz.BizEntityType;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.product.cost.CostComponentType#getCostComponentTypeId <em>Cost Component Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.cost.CostComponentType#getCostComponentTypeAttrs <em>Cost Component Type Attrs</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.cost.CostComponentType#getDescription <em>Description</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.cost.CostComponentType#isHasTable <em>Has Table</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.cost.CostComponentType#getParentTypeId <em>Parent Type Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.cost.CostComponentType#getCostComponentTypeAttrs <em>Cost Component Type Attrs</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.product.cost.CostPackage#getCostComponentType()
- * @model annotation="mimo-ent-frame formula='description'"
+ * @model annotation="mimo-ent-frame dictionary='ProductEntityLabels' formula='description'"
  * @generated
  */
 public interface CostComponentType extends BizEntityType<CostComponent> {
@@ -96,6 +96,7 @@ public interface CostComponentType extends BizEntityType<CostComponent> {
 	 * @see #setParentTypeId(CostComponentType)
 	 * @see org.abchip.mimo.biz.product.cost.CostPackage#getCostComponentType_ParentTypeId()
 	 * @model keys="costComponentTypeId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	CostComponentType getParentTypeId();
@@ -121,8 +122,7 @@ public interface CostComponentType extends BizEntityType<CostComponent> {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Cost Component Type Attrs</em>' attribute list.
 	 * @see org.abchip.mimo.biz.product.cost.CostPackage#getCostComponentType_CostComponentTypeAttrs()
-	 * @model required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='CostComponentTypeAttr'"
 	 * @generated
@@ -162,7 +162,6 @@ public interface CostComponentType extends BizEntityType<CostComponent> {
 	 * @see org.abchip.mimo.biz.product.cost.CostPackage#getCostComponentType_CostComponentTypeId()
 	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getCostComponentTypeId();

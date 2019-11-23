@@ -32,6 +32,7 @@ import org.abchip.mimo.biz.security.login.UserLogin;
  *   <li>{@link org.abchip.mimo.biz.order.return_.ReturnAdjustment#getAmount <em>Amount</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.return_.ReturnAdjustment#getComments <em>Comments</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.return_.ReturnAdjustment#getCorrespondingProductId <em>Corresponding Product Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.return_.ReturnAdjustment#getCreatedByUserLogin <em>Created By User Login</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.return_.ReturnAdjustment#getCreatedDate <em>Created Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.return_.ReturnAdjustment#getCustomerReferenceId <em>Customer Reference Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.return_.ReturnAdjustment#getDescription <em>Description</em>}</li>
@@ -40,29 +41,28 @@ import org.abchip.mimo.biz.security.login.UserLogin;
  *   <li>{@link org.abchip.mimo.biz.order.return_.ReturnAdjustment#isIncludeInTax <em>Include In Tax</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.return_.ReturnAdjustment#getLastModifiedByUserLogin <em>Last Modified By User Login</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.return_.ReturnAdjustment#getLastModifiedDate <em>Last Modified Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.return_.ReturnAdjustment#getOrderAdjustmentId <em>Order Adjustment Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.return_.ReturnAdjustment#getOverrideGlAccountId <em>Override Gl Account Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.return_.ReturnAdjustment#getPrimaryGeoId <em>Primary Geo Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.return_.ReturnAdjustment#getProductFeatureId <em>Product Feature Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.return_.ReturnAdjustment#getProductPromoActionSeqId <em>Product Promo Action Seq Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.return_.ReturnAdjustment#getProductPromoId <em>Product Promo Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.return_.ReturnAdjustment#getProductPromoRuleId <em>Product Promo Rule Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.return_.ReturnAdjustment#getReturnAdjustmentTypeId <em>Return Adjustment Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.return_.ReturnAdjustment#getReturnId <em>Return Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.return_.ReturnAdjustment#getReturnItemSeqId <em>Return Item Seq Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.return_.ReturnAdjustment#getReturnTypeId <em>Return Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.return_.ReturnAdjustment#getSecondaryGeoId <em>Secondary Geo Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.return_.ReturnAdjustment#getShipGroupSeqId <em>Ship Group Seq Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.return_.ReturnAdjustment#getSourcePercentage <em>Source Percentage</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.return_.ReturnAdjustment#getSourceReferenceId <em>Source Reference Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.return_.ReturnAdjustment#getTaxAuthGeoId <em>Tax Auth Geo Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.return_.ReturnAdjustment#getTaxAuthPartyId <em>Tax Auth Party Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.return_.ReturnAdjustment#getReturnAdjustmentTypeId <em>Return Adjustment Type Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.return_.ReturnAdjustment#getReturnId <em>Return Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.return_.ReturnAdjustment#getCreatedByUserLogin <em>Created By User Login</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.return_.ReturnAdjustment#getProductPromoId <em>Product Promo Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.return_.ReturnAdjustment#getPrimaryGeoId <em>Primary Geo Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.return_.ReturnAdjustment#getSecondaryGeoId <em>Secondary Geo Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.return_.ReturnAdjustment#getOverrideGlAccountId <em>Override Gl Account Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.return_.ReturnAdjustment#getReturnTypeId <em>Return Type Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.return_.ReturnAdjustment#getOrderAdjustmentId <em>Order Adjustment Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.return_.ReturnAdjustment#getTaxAuthorityRateSeqId <em>Tax Authority Rate Seq Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.order.return_.ReturnPackage#getReturnAdjustment()
- * @model annotation="mimo-ent-frame formula='description'"
+ * @model annotation="mimo-ent-frame help='Tax, shipping, and promotional adjustments which are carried over from the order to the return.\n        Note that both includeInTax and includeInShipping should default to true, except in the case where this adjustment is a tax or shipping adjustment\n        then should be ignored.' formula='description'"
  * @generated
  */
 public interface ReturnAdjustment extends BizEntityTyped<ReturnAdjustmentType> {
@@ -156,6 +156,7 @@ public interface ReturnAdjustment extends BizEntityTyped<ReturnAdjustmentType> {
 	 * @see #setCreatedByUserLogin(UserLogin)
 	 * @see org.abchip.mimo.biz.order.return_.ReturnPackage#getReturnAdjustment_CreatedByUserLogin()
 	 * @model keys="userLoginId"
+	 *        annotation="mimo-ent-format type='id-vlong' length='255'"
 	 * @generated
 	 */
 	UserLogin getCreatedByUserLogin();
@@ -207,7 +208,8 @@ public interface ReturnAdjustment extends BizEntityTyped<ReturnAdjustmentType> {
 	 * @return the value of the '<em>Customer Reference Id</em>' attribute.
 	 * @see #setCustomerReferenceId(String)
 	 * @see org.abchip.mimo.biz.order.return_.ReturnPackage#getReturnAdjustment_CustomerReferenceId()
-	 * @model annotation="mimo-ent-format type='id-long' length='60'"
+	 * @model annotation="mimo-ent-slot help='for tax entries this is partyTaxId'"
+	 *        annotation="mimo-ent-format type='id-long' length='60'"
 	 * @generated
 	 */
 	String getCustomerReferenceId();
@@ -259,7 +261,8 @@ public interface ReturnAdjustment extends BizEntityTyped<ReturnAdjustmentType> {
 	 * @return the value of the '<em>Exempt Amount</em>' attribute.
 	 * @see #setExemptAmount(BigDecimal)
 	 * @see org.abchip.mimo.biz.order.return_.ReturnPackage#getReturnAdjustment_ExemptAmount()
-	 * @model annotation="mimo-ent-format type='currency-amount' precision='18' scale='2'"
+	 * @model annotation="mimo-ent-slot help='an amount that would normally apply, but not to this order; for tax exemption represents the what the tax would have been'"
+	 *        annotation="mimo-ent-format type='currency-amount' precision='18' scale='2'"
 	 * @generated
 	 */
 	BigDecimal getExemptAmount();
@@ -390,6 +393,7 @@ public interface ReturnAdjustment extends BizEntityTyped<ReturnAdjustmentType> {
 	 * @see #setOrderAdjustmentId(OrderAdjustment)
 	 * @see org.abchip.mimo.biz.order.return_.ReturnPackage#getReturnAdjustment_OrderAdjustmentId()
 	 * @model keys="orderAdjustmentId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	OrderAdjustment getOrderAdjustmentId();
@@ -416,6 +420,8 @@ public interface ReturnAdjustment extends BizEntityTyped<ReturnAdjustmentType> {
 	 * @see #setOverrideGlAccountId(GlAccount)
 	 * @see org.abchip.mimo.biz.order.return_.ReturnPackage#getReturnAdjustment_OverrideGlAccountId()
 	 * @model keys="glAccountId"
+	 *        annotation="mimo-ent-slot help='used to specify the override or actual glAccountId used for the adjustment, avoids problems if configuration changes after initial posting, etc'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	GlAccount getOverrideGlAccountId();
@@ -442,6 +448,8 @@ public interface ReturnAdjustment extends BizEntityTyped<ReturnAdjustmentType> {
 	 * @see #setPrimaryGeoId(Geo)
 	 * @see org.abchip.mimo.biz.order.return_.ReturnPackage#getReturnAdjustment_PrimaryGeoId()
 	 * @model keys="geoId"
+	 *        annotation="mimo-ent-slot help='for tax entries this is the primary jurisdiction Geo (the smallest or most local Geo that this tax is for, usually a state/province, perhaps a county or a city)'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Geo getPrimaryGeoId();
@@ -520,6 +528,7 @@ public interface ReturnAdjustment extends BizEntityTyped<ReturnAdjustmentType> {
 	 * @see #setProductPromoId(ProductPromo)
 	 * @see org.abchip.mimo.biz.order.return_.ReturnPackage#getReturnAdjustment_ProductPromoId()
 	 * @model keys="productPromoId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ProductPromo getProductPromoId();
@@ -573,7 +582,6 @@ public interface ReturnAdjustment extends BizEntityTyped<ReturnAdjustmentType> {
 	 * @see org.abchip.mimo.biz.order.return_.ReturnPackage#getReturnAdjustment_ReturnAdjustmentId()
 	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getReturnAdjustmentId();
@@ -600,6 +608,7 @@ public interface ReturnAdjustment extends BizEntityTyped<ReturnAdjustmentType> {
 	 * @see #setReturnAdjustmentTypeId(ReturnAdjustmentType)
 	 * @see org.abchip.mimo.biz.order.return_.ReturnPackage#getReturnAdjustment_ReturnAdjustmentTypeId()
 	 * @model keys="returnAdjustmentTypeId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ReturnAdjustmentType getReturnAdjustmentTypeId();
@@ -626,6 +635,7 @@ public interface ReturnAdjustment extends BizEntityTyped<ReturnAdjustmentType> {
 	 * @see #setReturnId(ReturnHeader)
 	 * @see org.abchip.mimo.biz.order.return_.ReturnPackage#getReturnAdjustment_ReturnId()
 	 * @model keys="returnId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ReturnHeader getReturnId();
@@ -678,6 +688,8 @@ public interface ReturnAdjustment extends BizEntityTyped<ReturnAdjustmentType> {
 	 * @see #setReturnTypeId(ReturnType)
 	 * @see org.abchip.mimo.biz.order.return_.ReturnPackage#getReturnAdjustment_ReturnTypeId()
 	 * @model keys="returnTypeId"
+	 *        annotation="mimo-ent-slot help='actually used for disbursement type: store credit, cash refund, exchange'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ReturnType getReturnTypeId();
@@ -704,6 +716,8 @@ public interface ReturnAdjustment extends BizEntityTyped<ReturnAdjustmentType> {
 	 * @see #setSecondaryGeoId(Geo)
 	 * @see org.abchip.mimo.biz.order.return_.ReturnPackage#getReturnAdjustment_SecondaryGeoId()
 	 * @model keys="geoId"
+	 *        annotation="mimo-ent-slot help='for tax entries this is the secondary jurisdiction Geo (usually a country, or other Geo that the primary is within)'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Geo getSecondaryGeoId();
@@ -755,7 +769,8 @@ public interface ReturnAdjustment extends BizEntityTyped<ReturnAdjustmentType> {
 	 * @return the value of the '<em>Source Percentage</em>' attribute.
 	 * @see #setSourcePercentage(BigDecimal)
 	 * @see org.abchip.mimo.biz.order.return_.ReturnPackage#getReturnAdjustment_SourcePercentage()
-	 * @model annotation="mimo-ent-format type='fixed-point' precision='18' scale='6'"
+	 * @model annotation="mimo-ent-slot help='for tax entries this is the tax percentage'"
+	 *        annotation="mimo-ent-format type='fixed-point' precision='18' scale='6'"
 	 * @generated
 	 */
 	BigDecimal getSourcePercentage();
@@ -807,7 +822,8 @@ public interface ReturnAdjustment extends BizEntityTyped<ReturnAdjustmentType> {
 	 * @return the value of the '<em>Tax Auth Geo Id</em>' attribute.
 	 * @see #setTaxAuthGeoId(String)
 	 * @see org.abchip.mimo.biz.order.return_.ReturnPackage#getReturnAdjustment_TaxAuthGeoId()
-	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 * @model annotation="mimo-ent-slot help='these taxAuth fields deprecate the primaryGeoId and secondaryGeoId fields and will be used with the newer tax calc stuff'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	String getTaxAuthGeoId();
@@ -860,6 +876,7 @@ public interface ReturnAdjustment extends BizEntityTyped<ReturnAdjustmentType> {
 	 * @see #setTaxAuthorityRateSeqId(TaxAuthorityRateProduct)
 	 * @see org.abchip.mimo.biz.order.return_.ReturnPackage#getReturnAdjustment_TaxAuthorityRateSeqId()
 	 * @model keys="taxAuthorityRateSeqId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	TaxAuthorityRateProduct getTaxAuthorityRateSeqId();

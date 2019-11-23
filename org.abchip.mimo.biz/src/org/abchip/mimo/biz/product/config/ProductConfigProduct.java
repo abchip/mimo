@@ -21,15 +21,15 @@ import org.abchip.mimo.biz.product.product.Product;
  * The following features are supported:
  * </p>
  * <ul>
+ *   <li>{@link org.abchip.mimo.biz.product.config.ProductConfigProduct#getConfigItemId <em>Config Item Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.config.ProductConfigProduct#getProductId <em>Product Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.config.ProductConfigProduct#getConfigOptionId <em>Config Option Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.config.ProductConfigProduct#getQuantity <em>Quantity</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.config.ProductConfigProduct#getSequenceNum <em>Sequence Num</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.config.ProductConfigProduct#getConfigItemId <em>Config Item Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.config.ProductConfigProduct#getProductId <em>Product Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.product.config.ConfigPackage#getProductConfigProduct()
- * @model
+ * @model annotation="mimo-ent-frame title='Product Configuration Option to Products' dictionary='ProductEntityLabels'"
  * @generated
  */
 public interface ProductConfigProduct extends BizEntity {
@@ -45,8 +45,8 @@ public interface ProductConfigProduct extends BizEntity {
 	 * @see #setConfigOptionId(String)
 	 * @see org.abchip.mimo.biz.product.config.ConfigPackage#getProductConfigProduct_ConfigOptionId()
 	 * @model required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	String getConfigOptionId();
@@ -72,7 +72,9 @@ public interface ProductConfigProduct extends BizEntity {
 	 * @return the value of the '<em>Product Id</em>' reference.
 	 * @see #setProductId(Product)
 	 * @see org.abchip.mimo.biz.product.config.ConfigPackage#getProductConfigProduct_ProductId()
-	 * @model keys="productId"
+	 * @model keys="productId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Product getProductId();
@@ -150,7 +152,9 @@ public interface ProductConfigProduct extends BizEntity {
 	 * @return the value of the '<em>Config Item Id</em>' reference.
 	 * @see #setConfigItemId(ProductConfigItem)
 	 * @see org.abchip.mimo.biz.product.config.ConfigPackage#getProductConfigProduct_ConfigItemId()
-	 * @model keys="configItemId"
+	 * @model keys="configItemId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ProductConfigItem getConfigItemId();

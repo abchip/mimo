@@ -194,10 +194,6 @@ import org.abchip.mimo.biz.workeffort.timesheet.TimesheetPackage;
 import org.abchip.mimo.biz.workeffort.timesheet.impl.TimesheetPackageImpl;
 import org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage;
 import org.abchip.mimo.biz.workeffort.workeffort.impl.WorkeffortPackageImpl;
-import org.abchip.mimo.entity.EntityPackage;
-
-import org.eclipse.emf.common.util.URI;
-
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EGenericType;
@@ -719,16 +715,6 @@ public class SegmentPackageImpl extends EPackageImpl implements SegmentPackage {
 	 */
 	@Override
 	public EReference getSegmentGroup_ProductStoreId() {
-		return (EReference)segmentGroupEClass.getEStructuralFeatures().get(3);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getSegmentGroup_SegmentGroupTypeId() {
 		return (EReference)segmentGroupEClass.getEStructuralFeatures().get(2);
 	}
 
@@ -738,8 +724,18 @@ public class SegmentPackageImpl extends EPackageImpl implements SegmentPackage {
 	 * @generated
 	 */
 	@Override
+	public EReference getSegmentGroup_SegmentGroupTypeId() {
+		return (EReference)segmentGroupEClass.getEStructuralFeatures().get(5);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EAttribute getSegmentGroup_SegmentGroupClassifications() {
-		return (EAttribute)segmentGroupEClass.getEStructuralFeatures().get(4);
+		return (EAttribute)segmentGroupEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -749,7 +745,7 @@ public class SegmentPackageImpl extends EPackageImpl implements SegmentPackage {
 	 */
 	@Override
 	public EAttribute getSegmentGroup_SegmentGroupGeos() {
-		return (EAttribute)segmentGroupEClass.getEStructuralFeatures().get(5);
+		return (EAttribute)segmentGroupEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -914,10 +910,10 @@ public class SegmentPackageImpl extends EPackageImpl implements SegmentPackage {
 		segmentGroupEClass = createEClass(SEGMENT_GROUP);
 		createEAttribute(segmentGroupEClass, SEGMENT_GROUP__SEGMENT_GROUP_ID);
 		createEAttribute(segmentGroupEClass, SEGMENT_GROUP__DESCRIPTION);
-		createEReference(segmentGroupEClass, SEGMENT_GROUP__SEGMENT_GROUP_TYPE_ID);
 		createEReference(segmentGroupEClass, SEGMENT_GROUP__PRODUCT_STORE_ID);
 		createEAttribute(segmentGroupEClass, SEGMENT_GROUP__SEGMENT_GROUP_CLASSIFICATIONS);
 		createEAttribute(segmentGroupEClass, SEGMENT_GROUP__SEGMENT_GROUP_GEOS);
+		createEReference(segmentGroupEClass, SEGMENT_GROUP__SEGMENT_GROUP_TYPE_ID);
 
 		segmentGroupClassificationEClass = createEClass(SEGMENT_GROUP_CLASSIFICATION);
 		createEReference(segmentGroupClassificationEClass, SEGMENT_GROUP_CLASSIFICATION__SEGMENT_GROUP_ID);
@@ -987,31 +983,31 @@ public class SegmentPackageImpl extends EPackageImpl implements SegmentPackage {
 		initEClass(segmentGroupEClass, SegmentGroup.class, "SegmentGroup", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getSegmentGroup_SegmentGroupId(), ecorePackage.getEString(), "segmentGroupId", null, 1, 1, SegmentGroup.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getSegmentGroup_Description(), ecorePackage.getEString(), "description", null, 0, 1, SegmentGroup.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getSegmentGroup_SegmentGroupTypeId(), this.getSegmentGroupType(), null, "segmentGroupTypeId", null, 0, 1, SegmentGroup.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		getSegmentGroup_SegmentGroupTypeId().getEKeys().add(this.getSegmentGroupType_SegmentGroupTypeId());
 		initEReference(getSegmentGroup_ProductStoreId(), theStorePackage.getProductStore(), null, "productStoreId", null, 0, 1, SegmentGroup.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getSegmentGroup_ProductStoreId().getEKeys().add(theStorePackage.getProductStore_ProductStoreId());
-		initEAttribute(getSegmentGroup_SegmentGroupClassifications(), ecorePackage.getEString(), "segmentGroupClassifications", null, 1, -1, SegmentGroup.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getSegmentGroup_SegmentGroupGeos(), ecorePackage.getEString(), "segmentGroupGeos", null, 1, -1, SegmentGroup.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getSegmentGroup_SegmentGroupClassifications(), ecorePackage.getEString(), "segmentGroupClassifications", null, 0, -1, SegmentGroup.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getSegmentGroup_SegmentGroupGeos(), ecorePackage.getEString(), "segmentGroupGeos", null, 0, -1, SegmentGroup.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getSegmentGroup_SegmentGroupTypeId(), this.getSegmentGroupType(), null, "segmentGroupTypeId", null, 0, 1, SegmentGroup.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getSegmentGroup_SegmentGroupTypeId().getEKeys().add(this.getSegmentGroupType_SegmentGroupTypeId());
 
 		initEClass(segmentGroupClassificationEClass, SegmentGroupClassification.class, "SegmentGroupClassification", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getSegmentGroupClassification_SegmentGroupId(), this.getSegmentGroup(), null, "segmentGroupId", null, 0, 1, SegmentGroupClassification.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getSegmentGroupClassification_SegmentGroupId(), this.getSegmentGroup(), null, "segmentGroupId", null, 1, 1, SegmentGroupClassification.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getSegmentGroupClassification_SegmentGroupId().getEKeys().add(this.getSegmentGroup_SegmentGroupId());
-		initEReference(getSegmentGroupClassification_PartyClassificationGroupId(), thePartyPackage.getPartyClassificationGroup(), null, "partyClassificationGroupId", null, 0, 1, SegmentGroupClassification.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getSegmentGroupClassification_PartyClassificationGroupId(), thePartyPackage.getPartyClassificationGroup(), null, "partyClassificationGroupId", null, 1, 1, SegmentGroupClassification.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getSegmentGroupClassification_PartyClassificationGroupId().getEKeys().add(thePartyPackage.getPartyClassificationGroup_PartyClassificationGroupId());
 
 		initEClass(segmentGroupGeoEClass, SegmentGroupGeo.class, "SegmentGroupGeo", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getSegmentGroupGeo_SegmentGroupId(), this.getSegmentGroup(), null, "segmentGroupId", null, 0, 1, SegmentGroupGeo.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getSegmentGroupGeo_SegmentGroupId(), this.getSegmentGroup(), null, "segmentGroupId", null, 1, 1, SegmentGroupGeo.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getSegmentGroupGeo_SegmentGroupId().getEKeys().add(this.getSegmentGroup_SegmentGroupId());
-		initEReference(getSegmentGroupGeo_GeoId(), theGeoPackage.getGeo(), null, "geoId", null, 0, 1, SegmentGroupGeo.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getSegmentGroupGeo_GeoId(), theGeoPackage.getGeo(), null, "geoId", null, 1, 1, SegmentGroupGeo.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getSegmentGroupGeo_GeoId().getEKeys().add(theGeoPackage.getGeo_GeoId());
 
 		initEClass(segmentGroupRoleEClass, SegmentGroupRole.class, "SegmentGroupRole", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getSegmentGroupRole_SegmentGroupId(), this.getSegmentGroup(), null, "segmentGroupId", null, 0, 1, SegmentGroupRole.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getSegmentGroupRole_SegmentGroupId(), this.getSegmentGroup(), null, "segmentGroupId", null, 1, 1, SegmentGroupRole.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getSegmentGroupRole_SegmentGroupId().getEKeys().add(this.getSegmentGroup_SegmentGroupId());
-		initEReference(getSegmentGroupRole_PartyId(), thePartyPackage.getParty(), null, "partyId", null, 0, 1, SegmentGroupRole.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getSegmentGroupRole_PartyId(), thePartyPackage.getParty(), null, "partyId", null, 1, 1, SegmentGroupRole.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getSegmentGroupRole_PartyId().getEKeys().add(thePartyPackage.getParty_PartyId());
-		initEReference(getSegmentGroupRole_RoleTypeId(), thePartyPackage.getRoleType(), null, "roleTypeId", null, 0, 1, SegmentGroupRole.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getSegmentGroupRole_RoleTypeId(), thePartyPackage.getRoleType(), null, "roleTypeId", null, 1, 1, SegmentGroupRole.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getSegmentGroupRole_RoleTypeId().getEKeys().add(thePartyPackage.getRoleType_RoleTypeId());
 
 		initEClass(segmentGroupTypeEClass, SegmentGroupType.class, "SegmentGroupType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -1049,6 +1045,7 @@ public class SegmentPackageImpl extends EPackageImpl implements SegmentPackage {
 		  (segmentGroupTypeEClass,
 		   source,
 		   new String[] {
+			   "dictionary", "MarketingEntityLabels",
 			   "formula", "description"
 		   });
 	}
@@ -1076,6 +1073,13 @@ public class SegmentPackageImpl extends EPackageImpl implements SegmentPackage {
 			   "length", "255"
 		   });
 		addAnnotation
+		  (getSegmentGroup_ProductStoreId(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
 		  (getSegmentGroup_SegmentGroupClassifications(),
 		   source,
 		   new String[] {
@@ -1084,6 +1088,62 @@ public class SegmentPackageImpl extends EPackageImpl implements SegmentPackage {
 		   });
 		addAnnotation
 		  (getSegmentGroup_SegmentGroupGeos(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (getSegmentGroup_SegmentGroupTypeId(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (getSegmentGroupClassification_SegmentGroupId(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (getSegmentGroupClassification_PartyClassificationGroupId(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (getSegmentGroupGeo_SegmentGroupId(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (getSegmentGroupGeo_GeoId(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (getSegmentGroupRole_SegmentGroupId(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (getSegmentGroupRole_PartyId(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (getSegmentGroupRole_RoleTypeId(),
 		   source,
 		   new String[] {
 			   "type", "id",
@@ -1121,12 +1181,6 @@ public class SegmentPackageImpl extends EPackageImpl implements SegmentPackage {
 	protected void createMimoentslotAnnotations() {
 		String source = "mimo-ent-slot";
 		addAnnotation
-		  (getSegmentGroup_SegmentGroupId(),
-		   source,
-		   new String[] {
-			   "key", "true"
-		   });
-		addAnnotation
 		  (getSegmentGroup_SegmentGroupClassifications(),
 		   source,
 		   new String[] {
@@ -1139,16 +1193,52 @@ public class SegmentPackageImpl extends EPackageImpl implements SegmentPackage {
 			   "derived", "true"
 		   });
 		addAnnotation
+		  (getSegmentGroupClassification_SegmentGroupId(),
+		   source,
+		   new String[] {
+			   "key", "true"
+		   });
+		addAnnotation
+		  (getSegmentGroupClassification_PartyClassificationGroupId(),
+		   source,
+		   new String[] {
+			   "key", "true"
+		   });
+		addAnnotation
+		  (getSegmentGroupGeo_SegmentGroupId(),
+		   source,
+		   new String[] {
+			   "key", "true"
+		   });
+		addAnnotation
+		  (getSegmentGroupGeo_GeoId(),
+		   source,
+		   new String[] {
+			   "key", "true"
+		   });
+		addAnnotation
+		  (getSegmentGroupRole_SegmentGroupId(),
+		   source,
+		   new String[] {
+			   "key", "true"
+		   });
+		addAnnotation
+		  (getSegmentGroupRole_PartyId(),
+		   source,
+		   new String[] {
+			   "key", "true"
+		   });
+		addAnnotation
+		  (getSegmentGroupRole_RoleTypeId(),
+		   source,
+		   new String[] {
+			   "key", "true"
+		   });
+		addAnnotation
 		  (segmentGroupTypeEClass.getEOperations().get(0),
 		   source,
 		   new String[] {
 			   "derived", "true"
-		   });
-		addAnnotation
-		  (getSegmentGroupType_SegmentGroupTypeId(),
-		   source,
-		   new String[] {
-			   "key", "true"
 		   });
 	}
 
@@ -1165,18 +1255,12 @@ public class SegmentPackageImpl extends EPackageImpl implements SegmentPackage {
 		   source,
 		   new String[] {
 			   "frame", "SegmentGroupClassification"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
 		  (getSegmentGroup_SegmentGroupGeos(),
 		   source,
 		   new String[] {
 			   "frame", "SegmentGroupGeo"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
 		  (segmentGroupTypeEClass.getEOperations().get(0),
@@ -1184,9 +1268,6 @@ public class SegmentPackageImpl extends EPackageImpl implements SegmentPackage {
 		   new String[] {
 			   "frame", "SegmentGroup",
 			   "route", "segmentGroupTypeId"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 	}
 

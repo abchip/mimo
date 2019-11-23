@@ -26,7 +26,7 @@ import org.abchip.mimo.biz.BizEntityTyped;
  * </ul>
  *
  * @see org.abchip.mimo.biz.product.inventory.InventoryPackage#getInventoryItemLabel()
- * @model annotation="mimo-ent-frame formula='description'"
+ * @model annotation="mimo-ent-frame dictionary='ProductEntityLabels' formula='description'"
  * @generated
  */
 public interface InventoryItemLabel extends BizEntityTyped<InventoryItemLabelType> {
@@ -68,6 +68,7 @@ public interface InventoryItemLabel extends BizEntityTyped<InventoryItemLabelTyp
 	 * @see #setInventoryItemLabelTypeId(InventoryItemLabelType)
 	 * @see org.abchip.mimo.biz.product.inventory.InventoryPackage#getInventoryItemLabel_InventoryItemLabelTypeId()
 	 * @model keys="inventoryItemLabelTypeId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	InventoryItemLabelType getInventoryItemLabelTypeId();
@@ -105,7 +106,6 @@ public interface InventoryItemLabel extends BizEntityTyped<InventoryItemLabelTyp
 	 * @see org.abchip.mimo.biz.product.inventory.InventoryPackage#getInventoryItemLabel_InventoryItemLabelId()
 	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getInventoryItemLabelId();

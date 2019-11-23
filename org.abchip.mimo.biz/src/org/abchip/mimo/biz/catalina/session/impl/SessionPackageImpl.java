@@ -796,10 +796,26 @@ public class SessionPackageImpl extends EPackageImpl implements SessionPackage {
 		initEAttribute(getCatalinaSession_SessionSize(), ecorePackage.getELong(), "sessionSize", null, 0, 1, CatalinaSession.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Create annotations
+		// mimo-ent-frame
+		createMimoentframeAnnotations();
 		// mimo-ent-format
 		createMimoentformatAnnotations();
-		// mimo-ent-slot
-		createMimoentslotAnnotations();
+	}
+
+	/**
+	 * Initializes the annotations for <b>mimo-ent-frame</b>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void createMimoentframeAnnotations() {
+		String source = "mimo-ent-frame";
+		addAnnotation
+		  (catalinaSessionEClass,
+		   source,
+		   new String[] {
+			   "title", "Catalina Session Store"
+		   });
 	}
 
 	/**
@@ -853,22 +869,6 @@ public class SessionPackageImpl extends EPackageImpl implements SessionPackage {
 			   "type", "numeric",
 			   "precision", "20",
 			   "scale", "0"
-		   });
-	}
-
-	/**
-	 * Initializes the annotations for <b>mimo-ent-slot</b>.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void createMimoentslotAnnotations() {
-		String source = "mimo-ent-slot";
-		addAnnotation
-		  (getCatalinaSession_SessionId(),
-		   source,
-		   new String[] {
-			   "key", "true"
 		   });
 	}
 

@@ -18,13 +18,13 @@ import org.abchip.mimo.biz.BizEntity;
  * The following features are supported:
  * </p>
  * <ul>
+ *   <li>{@link org.abchip.mimo.biz.accounting.finaccount.FinAccountTransTypeAttr#getFinAccountTransTypeId <em>Fin Account Trans Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.finaccount.FinAccountTransTypeAttr#getAttrName <em>Attr Name</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.finaccount.FinAccountTransTypeAttr#getDescription <em>Description</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.finaccount.FinAccountTransTypeAttr#getFinAccountTransTypeId <em>Fin Account Trans Type Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.accounting.finaccount.FinaccountPackage#getFinAccountTransTypeAttr()
- * @model annotation="mimo-ent-frame formula='description'"
+ * @model annotation="mimo-ent-frame title='Financial Account Transaction Type Attribute' formula='description'"
  * @generated
  */
 public interface FinAccountTransTypeAttr extends BizEntity {
@@ -66,8 +66,8 @@ public interface FinAccountTransTypeAttr extends BizEntity {
 	 * @see #setAttrName(String)
 	 * @see org.abchip.mimo.biz.accounting.finaccount.FinaccountPackage#getFinAccountTransTypeAttr_AttrName()
 	 * @model required="true"
-	 *        annotation="mimo-ent-format type='id-long' length='60'"
 	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id-long' length='60'"
 	 * @generated
 	 */
 	String getAttrName();
@@ -93,7 +93,9 @@ public interface FinAccountTransTypeAttr extends BizEntity {
 	 * @return the value of the '<em>Fin Account Trans Type Id</em>' reference.
 	 * @see #setFinAccountTransTypeId(FinAccountTransType)
 	 * @see org.abchip.mimo.biz.accounting.finaccount.FinaccountPackage#getFinAccountTransTypeAttr_FinAccountTransTypeId()
-	 * @model keys="finAccountTransTypeId"
+	 * @model keys="finAccountTransTypeId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	FinAccountTransType getFinAccountTransTypeId();

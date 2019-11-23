@@ -135,22 +135,22 @@ public interface PassportPackage extends EPackage {
 	int GIT_HUB_USER__ENV_PREFIX = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
 
 	/**
-	 * The feature id for the '<em><b>Token Type</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int GIT_HUB_USER__TOKEN_TYPE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
-
-	/**
 	 * The feature id for the '<em><b>Product Store Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int GIT_HUB_USER__PRODUCT_STORE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
+	int GIT_HUB_USER__PRODUCT_STORE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
+
+	/**
+	 * The feature id for the '<em><b>Token Type</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GIT_HUB_USER__TOKEN_TYPE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
 
 	/**
 	 * The number of structural features of the '<em>Git Hub User</em>' class.
@@ -235,22 +235,22 @@ public interface PassportPackage extends EPackage {
 	int GOOGLE_USER__ENV_PREFIX = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
 
 	/**
-	 * The feature id for the '<em><b>Token Type</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int GOOGLE_USER__TOKEN_TYPE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
-
-	/**
 	 * The feature id for the '<em><b>Product Store Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int GOOGLE_USER__PRODUCT_STORE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
+	int GOOGLE_USER__PRODUCT_STORE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
+
+	/**
+	 * The feature id for the '<em><b>Token Type</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GOOGLE_USER__TOKEN_TYPE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
 
 	/**
 	 * The number of structural features of the '<em>Google User</em>' class.
@@ -399,13 +399,22 @@ public interface PassportPackage extends EPackage {
 	int OAUTH2_GIT_HUB__LAST_UPDATED_TX_STAMP = BizPackage.BIZ_ENTITY__LAST_UPDATED_TX_STAMP;
 
 	/**
+	 * The feature id for the '<em><b>Product Store Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OAUTH2_GIT_HUB__PRODUCT_STORE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
+
+	/**
 	 * The feature id for the '<em><b>From Date</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int OAUTH2_GIT_HUB__FROM_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
+	int OAUTH2_GIT_HUB__FROM_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Client Id</b></em>' attribute.
@@ -414,7 +423,7 @@ public interface PassportPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OAUTH2_GIT_HUB__CLIENT_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
+	int OAUTH2_GIT_HUB__CLIENT_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Client Secret</b></em>' attribute.
@@ -423,7 +432,7 @@ public interface PassportPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OAUTH2_GIT_HUB__CLIENT_SECRET = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
+	int OAUTH2_GIT_HUB__CLIENT_SECRET = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Icon Url</b></em>' attribute.
@@ -432,7 +441,7 @@ public interface PassportPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OAUTH2_GIT_HUB__ICON_URL = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
+	int OAUTH2_GIT_HUB__ICON_URL = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Local Redirect Uri</b></em>' attribute.
@@ -441,7 +450,7 @@ public interface PassportPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OAUTH2_GIT_HUB__LOCAL_REDIRECT_URI = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
+	int OAUTH2_GIT_HUB__LOCAL_REDIRECT_URI = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Return Url</b></em>' attribute.
@@ -450,7 +459,7 @@ public interface PassportPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OAUTH2_GIT_HUB__RETURN_URL = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 5;
+	int OAUTH2_GIT_HUB__RETURN_URL = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Thru Date</b></em>' attribute.
@@ -459,16 +468,7 @@ public interface PassportPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OAUTH2_GIT_HUB__THRU_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 6;
-
-	/**
-	 * The feature id for the '<em><b>Product Store Id</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int OAUTH2_GIT_HUB__PRODUCT_STORE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 7;
+	int OAUTH2_GIT_HUB__THRU_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 7;
 
 	/**
 	 * The number of structural features of the '<em>OAuth2 Git Hub</em>' class.
@@ -526,13 +526,22 @@ public interface PassportPackage extends EPackage {
 	int OAUTH2_GOOGLE__LAST_UPDATED_TX_STAMP = BizPackage.BIZ_ENTITY__LAST_UPDATED_TX_STAMP;
 
 	/**
+	 * The feature id for the '<em><b>Product Store Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OAUTH2_GOOGLE__PRODUCT_STORE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
+
+	/**
 	 * The feature id for the '<em><b>From Date</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int OAUTH2_GOOGLE__FROM_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
+	int OAUTH2_GOOGLE__FROM_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Client Id</b></em>' attribute.
@@ -541,7 +550,7 @@ public interface PassportPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OAUTH2_GOOGLE__CLIENT_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
+	int OAUTH2_GOOGLE__CLIENT_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Client Secret</b></em>' attribute.
@@ -550,7 +559,7 @@ public interface PassportPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OAUTH2_GOOGLE__CLIENT_SECRET = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
+	int OAUTH2_GOOGLE__CLIENT_SECRET = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Icon Url</b></em>' attribute.
@@ -559,7 +568,7 @@ public interface PassportPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OAUTH2_GOOGLE__ICON_URL = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
+	int OAUTH2_GOOGLE__ICON_URL = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Local Redirect Uri</b></em>' attribute.
@@ -568,7 +577,7 @@ public interface PassportPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OAUTH2_GOOGLE__LOCAL_REDIRECT_URI = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
+	int OAUTH2_GOOGLE__LOCAL_REDIRECT_URI = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Return Url</b></em>' attribute.
@@ -577,7 +586,7 @@ public interface PassportPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OAUTH2_GOOGLE__RETURN_URL = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 5;
+	int OAUTH2_GOOGLE__RETURN_URL = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Thru Date</b></em>' attribute.
@@ -586,16 +595,7 @@ public interface PassportPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OAUTH2_GOOGLE__THRU_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 6;
-
-	/**
-	 * The feature id for the '<em><b>Product Store Id</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int OAUTH2_GOOGLE__PRODUCT_STORE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 7;
+	int OAUTH2_GOOGLE__THRU_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 7;
 
 	/**
 	 * The number of structural features of the '<em>OAuth2 Google</em>' class.
@@ -653,13 +653,22 @@ public interface PassportPackage extends EPackage {
 	int OAUTH2_LINKED_IN__LAST_UPDATED_TX_STAMP = BizPackage.BIZ_ENTITY__LAST_UPDATED_TX_STAMP;
 
 	/**
+	 * The feature id for the '<em><b>Product Store Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OAUTH2_LINKED_IN__PRODUCT_STORE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
+
+	/**
 	 * The feature id for the '<em><b>From Date</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int OAUTH2_LINKED_IN__FROM_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
+	int OAUTH2_LINKED_IN__FROM_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Api Key</b></em>' attribute.
@@ -668,7 +677,7 @@ public interface PassportPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OAUTH2_LINKED_IN__API_KEY = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
+	int OAUTH2_LINKED_IN__API_KEY = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Icon Url</b></em>' attribute.
@@ -677,7 +686,7 @@ public interface PassportPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OAUTH2_LINKED_IN__ICON_URL = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
+	int OAUTH2_LINKED_IN__ICON_URL = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Live Return Url</b></em>' attribute.
@@ -686,7 +695,7 @@ public interface PassportPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OAUTH2_LINKED_IN__LIVE_RETURN_URL = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
+	int OAUTH2_LINKED_IN__LIVE_RETURN_URL = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Local Redirect Uri</b></em>' attribute.
@@ -695,7 +704,7 @@ public interface PassportPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OAUTH2_LINKED_IN__LOCAL_REDIRECT_URI = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
+	int OAUTH2_LINKED_IN__LOCAL_REDIRECT_URI = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Secret Key</b></em>' attribute.
@@ -704,7 +713,7 @@ public interface PassportPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OAUTH2_LINKED_IN__SECRET_KEY = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 5;
+	int OAUTH2_LINKED_IN__SECRET_KEY = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Test Return Url</b></em>' attribute.
@@ -713,7 +722,7 @@ public interface PassportPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OAUTH2_LINKED_IN__TEST_RETURN_URL = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 6;
+	int OAUTH2_LINKED_IN__TEST_RETURN_URL = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>Thru Date</b></em>' attribute.
@@ -722,16 +731,7 @@ public interface PassportPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OAUTH2_LINKED_IN__THRU_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 7;
-
-	/**
-	 * The feature id for the '<em><b>Product Store Id</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int OAUTH2_LINKED_IN__PRODUCT_STORE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 8;
+	int OAUTH2_LINKED_IN__THRU_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 8;
 
 	/**
 	 * The number of structural features of the '<em>OAuth2 Linked In</em>' class.
@@ -789,22 +789,13 @@ public interface PassportPackage extends EPackage {
 	int THIRD_PARTY_LOGIN__LAST_UPDATED_TX_STAMP = BizPackage.BIZ_ENTITY__LAST_UPDATED_TX_STAMP;
 
 	/**
-	 * The feature id for the '<em><b>Login Meth Type Id</b></em>' attribute.
+	 * The feature id for the '<em><b>Product Store Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int THIRD_PARTY_LOGIN__LOGIN_METH_TYPE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Login Provider Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int THIRD_PARTY_LOGIN__LOGIN_PROVIDER_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
+	int THIRD_PARTY_LOGIN__PRODUCT_STORE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>From Date</b></em>' attribute.
@@ -813,7 +804,25 @@ public interface PassportPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int THIRD_PARTY_LOGIN__FROM_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
+	int THIRD_PARTY_LOGIN__FROM_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Login Meth Type Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int THIRD_PARTY_LOGIN__LOGIN_METH_TYPE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
+
+	/**
+	 * The feature id for the '<em><b>Login Provider Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int THIRD_PARTY_LOGIN__LOGIN_PROVIDER_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Sequence Num</b></em>' attribute.
@@ -822,7 +831,7 @@ public interface PassportPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int THIRD_PARTY_LOGIN__SEQUENCE_NUM = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
+	int THIRD_PARTY_LOGIN__SEQUENCE_NUM = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Thru Date</b></em>' attribute.
@@ -831,16 +840,7 @@ public interface PassportPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int THIRD_PARTY_LOGIN__THRU_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
-
-	/**
-	 * The feature id for the '<em><b>Product Store Id</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int THIRD_PARTY_LOGIN__PRODUCT_STORE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 5;
+	int THIRD_PARTY_LOGIN__THRU_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 5;
 
 	/**
 	 * The number of structural features of the '<em>Third Party Login</em>' class.

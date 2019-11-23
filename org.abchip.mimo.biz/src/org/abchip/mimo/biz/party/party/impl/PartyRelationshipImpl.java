@@ -28,20 +28,20 @@ import org.eclipse.emf.ecore.EClass;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.party.party.impl.PartyRelationshipImpl#getFromDate <em>From Date</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.party.party.impl.PartyRelationshipImpl#getComments <em>Comments</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.party.party.impl.PartyRelationshipImpl#getPermissionsEnumId <em>Permissions Enum Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.party.party.impl.PartyRelationshipImpl#getPositionTitle <em>Position Title</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.party.party.impl.PartyRelationshipImpl#getRelationshipName <em>Relationship Name</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.party.party.impl.PartyRelationshipImpl#getThruDate <em>Thru Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.party.impl.PartyRelationshipImpl#getPartyIdFrom <em>Party Id From</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.party.impl.PartyRelationshipImpl#getPartyIdTo <em>Party Id To</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.party.impl.PartyRelationshipImpl#getRoleTypeIdFrom <em>Role Type Id From</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.party.impl.PartyRelationshipImpl#getRoleTypeIdTo <em>Role Type Id To</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.party.party.impl.PartyRelationshipImpl#getStatusId <em>Status Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.party.party.impl.PartyRelationshipImpl#getPriorityTypeId <em>Priority Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.party.party.impl.PartyRelationshipImpl#getFromDate <em>From Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.party.party.impl.PartyRelationshipImpl#getComments <em>Comments</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.party.impl.PartyRelationshipImpl#getPartyRelationshipTypeId <em>Party Relationship Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.party.party.impl.PartyRelationshipImpl#getPermissionsEnumId <em>Permissions Enum Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.party.party.impl.PartyRelationshipImpl#getPositionTitle <em>Position Title</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.party.party.impl.PartyRelationshipImpl#getPriorityTypeId <em>Priority Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.party.party.impl.PartyRelationshipImpl#getRelationshipName <em>Relationship Name</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.party.impl.PartyRelationshipImpl#getSecurityGroupId <em>Security Group Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.party.party.impl.PartyRelationshipImpl#getStatusId <em>Status Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.party.party.impl.PartyRelationshipImpl#getThruDate <em>Thru Date</em>}</li>
  * </ul>
  *
  * @generated

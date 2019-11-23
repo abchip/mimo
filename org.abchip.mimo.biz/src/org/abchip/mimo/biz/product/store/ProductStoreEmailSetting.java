@@ -19,6 +19,8 @@ import org.abchip.mimo.biz.common.enum_.Enumeration;
  * The following features are supported:
  * </p>
  * <ul>
+ *   <li>{@link org.abchip.mimo.biz.product.store.ProductStoreEmailSetting#getProductStoreId <em>Product Store Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.store.ProductStoreEmailSetting#getEmailType <em>Email Type</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.store.ProductStoreEmailSetting#getBccAddress <em>Bcc Address</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.store.ProductStoreEmailSetting#getBodyScreenLocation <em>Body Screen Location</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.store.ProductStoreEmailSetting#getCcAddress <em>Cc Address</em>}</li>
@@ -26,12 +28,10 @@ import org.abchip.mimo.biz.common.enum_.Enumeration;
  *   <li>{@link org.abchip.mimo.biz.product.store.ProductStoreEmailSetting#getFromAddress <em>From Address</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.store.ProductStoreEmailSetting#getSubject <em>Subject</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.store.ProductStoreEmailSetting#getXslfoAttachScreenLocation <em>Xslfo Attach Screen Location</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.store.ProductStoreEmailSetting#getProductStoreId <em>Product Store Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.store.ProductStoreEmailSetting#getEmailType <em>Email Type</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.product.store.StorePackage#getProductStoreEmailSetting()
- * @model
+ * @model annotation="mimo-ent-frame title='Product Store Email Settings' dictionary='ProductEntityLabels'"
  * @generated
  */
 public interface ProductStoreEmailSetting extends BizEntity {
@@ -72,7 +72,8 @@ public interface ProductStoreEmailSetting extends BizEntity {
 	 * @return the value of the '<em>Body Screen Location</em>' attribute.
 	 * @see #setBodyScreenLocation(String)
 	 * @see org.abchip.mimo.biz.product.store.StorePackage#getProductStoreEmailSetting_BodyScreenLocation()
-	 * @model annotation="mimo-ent-format type='long-varchar' length='255'"
+	 * @model annotation="mimo-ent-slot help='if empty defaults to a screen based on the emailType'"
+	 *        annotation="mimo-ent-format type='long-varchar' length='255'"
 	 * @generated
 	 */
 	String getBodyScreenLocation();
@@ -150,7 +151,9 @@ public interface ProductStoreEmailSetting extends BizEntity {
 	 * @return the value of the '<em>Email Type</em>' reference.
 	 * @see #setEmailType(Enumeration)
 	 * @see org.abchip.mimo.biz.product.store.StorePackage#getProductStoreEmailSetting_EmailType()
-	 * @model keys="enumId"
+	 * @model keys="enumId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Enumeration getEmailType();
@@ -228,7 +231,8 @@ public interface ProductStoreEmailSetting extends BizEntity {
 	 * @return the value of the '<em>Xslfo Attach Screen Location</em>' attribute.
 	 * @see #setXslfoAttachScreenLocation(String)
 	 * @see org.abchip.mimo.biz.product.store.StorePackage#getProductStoreEmailSetting_XslfoAttachScreenLocation()
-	 * @model annotation="mimo-ent-format type='long-varchar' length='255'"
+	 * @model annotation="mimo-ent-slot help='if specified is used to generate XSL:FO that is transformed to a PDF via Apache FOP and attached to the email'"
+	 *        annotation="mimo-ent-format type='long-varchar' length='255'"
 	 * @generated
 	 */
 	String getXslfoAttachScreenLocation();
@@ -254,7 +258,9 @@ public interface ProductStoreEmailSetting extends BizEntity {
 	 * @return the value of the '<em>Product Store Id</em>' reference.
 	 * @see #setProductStoreId(ProductStore)
 	 * @see org.abchip.mimo.biz.product.store.StorePackage#getProductStoreEmailSetting_ProductStoreId()
-	 * @model keys="productStoreId"
+	 * @model keys="productStoreId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ProductStore getProductStoreId();

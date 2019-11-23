@@ -27,8 +27,8 @@ import org.eclipse.emf.ecore.EClass;
  *   <li>{@link org.abchip.mimo.biz.accounting.ledger.impl.GlJournalImpl#getGlJournalId <em>Gl Journal Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.ledger.impl.GlJournalImpl#getGlJournalName <em>Gl Journal Name</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.ledger.impl.GlJournalImpl#isIsPosted <em>Is Posted</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.ledger.impl.GlJournalImpl#getPostedDate <em>Posted Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.ledger.impl.GlJournalImpl#getOrganizationPartyId <em>Organization Party Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.ledger.impl.GlJournalImpl#getPostedDate <em>Posted Date</em>}</li>
  * </ul>
  *
  * @generated

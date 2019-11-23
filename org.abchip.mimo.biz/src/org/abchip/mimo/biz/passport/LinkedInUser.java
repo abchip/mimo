@@ -26,7 +26,7 @@ import org.abchip.mimo.biz.product.store.ProductStore;
  * </ul>
  *
  * @see org.abchip.mimo.biz.passport.PassportPackage#getLinkedInUser()
- * @model
+ * @model annotation="mimo-ent-frame help='Data Model Enhancements For Passport' title='Store LinkedIn access token for user'"
  * @generated
  */
 public interface LinkedInUser extends BizEntity {
@@ -43,7 +43,6 @@ public interface LinkedInUser extends BizEntity {
 	 * @see org.abchip.mimo.biz.passport.PassportPackage#getLinkedInUser_LinkedInUserId()
 	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-format type='id-vlong' length='255'"
-	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getLinkedInUserId();
@@ -122,6 +121,7 @@ public interface LinkedInUser extends BizEntity {
 	 * @see #setProductStoreId(ProductStore)
 	 * @see org.abchip.mimo.biz.passport.PassportPackage#getLinkedInUser_ProductStoreId()
 	 * @model keys="productStoreId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ProductStore getProductStoreId();

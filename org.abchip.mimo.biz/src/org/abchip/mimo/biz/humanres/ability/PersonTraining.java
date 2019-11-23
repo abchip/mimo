@@ -24,15 +24,15 @@ import org.abchip.mimo.biz.workeffort.workeffort.WorkEffort;
  * The following features are supported:
  * </p>
  * <ul>
+ *   <li>{@link org.abchip.mimo.biz.humanres.ability.PersonTraining#getPartyId <em>Party Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.humanres.ability.PersonTraining#getTrainingClassTypeId <em>Training Class Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.ability.PersonTraining#getFromDate <em>From Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.ability.PersonTraining#getApprovalStatus <em>Approval Status</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.humanres.ability.PersonTraining#getApproverId <em>Approver Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.ability.PersonTraining#getReason <em>Reason</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.ability.PersonTraining#getThruDate <em>Thru Date</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.humanres.ability.PersonTraining#getPartyId <em>Party Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.humanres.ability.PersonTraining#getApproverId <em>Approver Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.humanres.ability.PersonTraining#getTrainingClassTypeId <em>Training Class Type Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.humanres.ability.PersonTraining#getWorkEffortId <em>Work Effort Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.ability.PersonTraining#getTrainingRequestId <em>Training Request Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.humanres.ability.PersonTraining#getWorkEffortId <em>Work Effort Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.humanres.ability.AbilityPackage#getPersonTraining()
@@ -78,6 +78,7 @@ public interface PersonTraining extends BizEntity {
 	 * @see #setApproverId(Person)
 	 * @see org.abchip.mimo.biz.humanres.ability.AbilityPackage#getPersonTraining_ApproverId()
 	 * @model keys="partyId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Person getApproverId();
@@ -104,8 +105,8 @@ public interface PersonTraining extends BizEntity {
 	 * @see #setFromDate(Date)
 	 * @see org.abchip.mimo.biz.humanres.ability.AbilityPackage#getPersonTraining_FromDate()
 	 * @model required="true"
-	 *        annotation="mimo-ent-format type='date-time'"
 	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getFromDate();
@@ -131,7 +132,9 @@ public interface PersonTraining extends BizEntity {
 	 * @return the value of the '<em>Party Id</em>' reference.
 	 * @see #setPartyId(Party)
 	 * @see org.abchip.mimo.biz.humanres.ability.AbilityPackage#getPersonTraining_PartyId()
-	 * @model keys="partyId"
+	 * @model keys="partyId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Party getPartyId();
@@ -209,7 +212,9 @@ public interface PersonTraining extends BizEntity {
 	 * @return the value of the '<em>Training Class Type Id</em>' reference.
 	 * @see #setTrainingClassTypeId(TrainingClassType)
 	 * @see org.abchip.mimo.biz.humanres.ability.AbilityPackage#getPersonTraining_TrainingClassTypeId()
-	 * @model keys="trainingClassTypeId"
+	 * @model keys="trainingClassTypeId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	TrainingClassType getTrainingClassTypeId();
@@ -236,6 +241,7 @@ public interface PersonTraining extends BizEntity {
 	 * @see #setTrainingRequestId(TrainingRequest)
 	 * @see org.abchip.mimo.biz.humanres.ability.AbilityPackage#getPersonTraining_TrainingRequestId()
 	 * @model keys="trainingRequestId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	TrainingRequest getTrainingRequestId();
@@ -262,6 +268,7 @@ public interface PersonTraining extends BizEntity {
 	 * @see #setWorkEffortId(WorkEffort)
 	 * @see org.abchip.mimo.biz.humanres.ability.AbilityPackage#getPersonTraining_WorkEffortId()
 	 * @model keys="workEffortId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	WorkEffort getWorkEffortId();

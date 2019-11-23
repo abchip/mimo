@@ -810,8 +810,6 @@ public class LanguagePackageImpl extends EPackageImpl implements LanguagePackage
 		// Create annotations
 		// mimo-ent-format
 		createMimoentformatAnnotations();
-		// mimo-ent-slot
-		createMimoentslotAnnotations();
 	}
 
 	/**
@@ -870,22 +868,6 @@ public class LanguagePackageImpl extends EPackageImpl implements LanguagePackage
 		   new String[] {
 			   "type", "short-varchar",
 			   "length", "60"
-		   });
-	}
-
-	/**
-	 * Initializes the annotations for <b>mimo-ent-slot</b>.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void createMimoentslotAnnotations() {
-		String source = "mimo-ent-slot";
-		addAnnotation
-		  (getStandardLanguage_StandardLanguageId(),
-		   source,
-		   new String[] {
-			   "key", "true"
 		   });
 	}
 

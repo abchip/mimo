@@ -31,13 +31,13 @@ import org.eclipse.emf.ecore.EClass;
  *   <li>{@link org.abchip.mimo.biz.content.survey.impl.SurveyResponseImpl#getSurveyResponseId <em>Survey Response Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.survey.impl.SurveyResponseImpl#getGeneralFeedback <em>General Feedback</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.survey.impl.SurveyResponseImpl#getLastModifiedDate <em>Last Modified Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.content.survey.impl.SurveyResponseImpl#getOrderId <em>Order Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.survey.impl.SurveyResponseImpl#getOrderItemSeqId <em>Order Item Seq Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.content.survey.impl.SurveyResponseImpl#getPartyId <em>Party Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.survey.impl.SurveyResponseImpl#getReferenceId <em>Reference Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.survey.impl.SurveyResponseImpl#getResponseDate <em>Response Date</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.content.survey.impl.SurveyResponseImpl#getPartyId <em>Party Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.content.survey.impl.SurveyResponseImpl#getOrderId <em>Order Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.content.survey.impl.SurveyResponseImpl#getSurveyId <em>Survey Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.survey.impl.SurveyResponseImpl#getStatusId <em>Status Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.content.survey.impl.SurveyResponseImpl#getSurveyId <em>Survey Id</em>}</li>
  * </ul>
  *
  * @generated

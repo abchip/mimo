@@ -24,14 +24,14 @@ import org.abchip.mimo.biz.party.contact.ContactMech;
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.CheckAccount#getBankName <em>Bank Name</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.CheckAccount#getBranchCode <em>Branch Code</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.CheckAccount#getCompanyNameOnAccount <em>Company Name On Account</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.payment.CheckAccount#getNameOnAccount <em>Name On Account</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.payment.CheckAccount#getRoutingNumber <em>Routing Number</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.payment.CheckAccount#getPaymentMethodId <em>Payment Method Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.CheckAccount#getContactMechId <em>Contact Mech Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.payment.CheckAccount#getNameOnAccount <em>Name On Account</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.payment.CheckAccount#getPaymentMethodId <em>Payment Method Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.payment.CheckAccount#getRoutingNumber <em>Routing Number</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getCheckAccount()
- * @model
+ * @model annotation="mimo-ent-frame title='Check Information'"
  * @generated
  */
 public interface CheckAccount extends BizEntity {
@@ -177,6 +177,7 @@ public interface CheckAccount extends BizEntity {
 	 * @see #setContactMechId(ContactMech)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getCheckAccount_ContactMechId()
 	 * @model keys="contactMechId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ContactMech getContactMechId();
@@ -228,7 +229,8 @@ public interface CheckAccount extends BizEntity {
 	 * @return the value of the '<em>Payment Method Id</em>' reference.
 	 * @see #setPaymentMethodId(PaymentMethod)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getCheckAccount_PaymentMethodId()
-	 * @model keys="paymentMethodId"
+	 * @model keys="paymentMethodId" required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	PaymentMethod getPaymentMethodId();
@@ -254,7 +256,8 @@ public interface CheckAccount extends BizEntity {
 	 * @return the value of the '<em>Routing Number</em>' attribute.
 	 * @see #setRoutingNumber(String)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getCheckAccount_RoutingNumber()
-	 * @model annotation="mimo-ent-format type='short-varchar' length='60'"
+	 * @model annotation="mimo-ent-slot help='See https://en.wikipedia.org/wiki/Bank_code'"
+	 *        annotation="mimo-ent-format type='short-varchar' length='60'"
 	 * @generated
 	 */
 	String getRoutingNumber();

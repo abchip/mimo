@@ -17,10 +17,10 @@ import javax.servlet.http.HttpServletResponse;
 import org.abchip.mimo.context.Context;
 import org.abchip.mimo.core.http.servlet.BaseServlet;
 import org.abchip.mimo.entity.Frame;
-import org.abchip.mimo.entity.SerializationType;
 import org.abchip.mimo.resource.Resource;
 import org.abchip.mimo.resource.ResourceManager;
 import org.abchip.mimo.resource.ResourceSerializer;
+import org.abchip.mimo.resource.SerializationType;
 import org.abchip.mimo.ui.toolbar.Toolbar;
 
 public class LookupToolbarServlet extends BaseServlet {

@@ -21,8 +21,8 @@ import org.eclipse.emf.ecore.EClass;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.common.uom.impl.UomGroupImpl#getUomGroupId <em>Uom Group Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.common.uom.impl.UomGroupImpl#getUomId <em>Uom Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.common.uom.impl.UomGroupImpl#getUomGroupId <em>Uom Group Id</em>}</li>
  * </ul>
  *
  * @generated

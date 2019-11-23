@@ -23,7 +23,7 @@ import org.abchip.mimo.biz.BizEntityType;
  * </ul>
  *
  * @see org.abchip.mimo.biz.content.content.ContentPackage#getContentAssocType()
- * @model annotation="mimo-ent-frame formula='description'"
+ * @model annotation="mimo-ent-frame title='Content Association Type' dictionary='ContentEntityLabels' formula='description'"
  * @generated
  */
 public interface ContentAssocType extends BizEntityType<ContentAssoc> {
@@ -40,7 +40,6 @@ public interface ContentAssocType extends BizEntityType<ContentAssoc> {
 	 * @see org.abchip.mimo.biz.content.content.ContentPackage#getContentAssocType_ContentAssocTypeId()
 	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getContentAssocTypeId();

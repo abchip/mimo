@@ -20,11 +20,11 @@ import org.abchip.mimo.biz.party.party.Party;
  * The following features are supported:
  * </p>
  * <ul>
+ *   <li>{@link org.abchip.mimo.biz.accounting.tax.TaxAuthority#getTaxAuthGeoId <em>Tax Auth Geo Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.tax.TaxAuthority#getTaxAuthPartyId <em>Tax Auth Party Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.tax.TaxAuthority#isIncludeTaxInPrice <em>Include Tax In Price</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.tax.TaxAuthority#isRequireTaxIdForExemption <em>Require Tax Id For Exemption</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.tax.TaxAuthority#getTaxIdFormatPattern <em>Tax Id Format Pattern</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.tax.TaxAuthority#getTaxAuthGeoId <em>Tax Auth Geo Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.tax.TaxAuthority#getTaxAuthPartyId <em>Tax Auth Party Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.accounting.tax.TaxPackage#getTaxAuthority()
@@ -95,7 +95,9 @@ public interface TaxAuthority extends BizEntity {
 	 * @return the value of the '<em>Tax Auth Geo Id</em>' reference.
 	 * @see #setTaxAuthGeoId(Geo)
 	 * @see org.abchip.mimo.biz.accounting.tax.TaxPackage#getTaxAuthority_TaxAuthGeoId()
-	 * @model keys="geoId"
+	 * @model keys="geoId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Geo getTaxAuthGeoId();
@@ -121,7 +123,9 @@ public interface TaxAuthority extends BizEntity {
 	 * @return the value of the '<em>Tax Auth Party Id</em>' reference.
 	 * @see #setTaxAuthPartyId(Party)
 	 * @see org.abchip.mimo.biz.accounting.tax.TaxPackage#getTaxAuthority_TaxAuthPartyId()
-	 * @model keys="partyId"
+	 * @model keys="partyId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Party getTaxAuthPartyId();

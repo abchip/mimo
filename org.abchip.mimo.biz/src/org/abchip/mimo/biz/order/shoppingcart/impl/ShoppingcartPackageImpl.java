@@ -663,7 +663,7 @@ public class ShoppingcartPackageImpl extends EPackageImpl implements Shoppingcar
 	 */
 	@Override
 	public EAttribute getCartAbandonedLine_VisitId() {
-		return (EAttribute)cartAbandonedLineEClass.getEStructuralFeatures().get(0);
+		return (EAttribute)cartAbandonedLineEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -673,7 +673,7 @@ public class ShoppingcartPackageImpl extends EPackageImpl implements Shoppingcar
 	 */
 	@Override
 	public EAttribute getCartAbandonedLine_CartAbandonedLineSeqId() {
-		return (EAttribute)cartAbandonedLineEClass.getEStructuralFeatures().get(1);
+		return (EAttribute)cartAbandonedLineEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -693,7 +693,7 @@ public class ShoppingcartPackageImpl extends EPackageImpl implements Shoppingcar
 	 */
 	@Override
 	public EReference getCartAbandonedLine_ProdCatalogId() {
-		return (EReference)cartAbandonedLineEClass.getEStructuralFeatures().get(13);
+		return (EReference)cartAbandonedLineEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -703,7 +703,7 @@ public class ShoppingcartPackageImpl extends EPackageImpl implements Shoppingcar
 	 */
 	@Override
 	public EReference getCartAbandonedLine_ProductId() {
-		return (EReference)cartAbandonedLineEClass.getEStructuralFeatures().get(12);
+		return (EReference)cartAbandonedLineEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -713,26 +713,6 @@ public class ShoppingcartPackageImpl extends EPackageImpl implements Shoppingcar
 	 */
 	@Override
 	public EAttribute getCartAbandonedLine_Quantity() {
-		return (EAttribute)cartAbandonedLineEClass.getEStructuralFeatures().get(3);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EAttribute getCartAbandonedLine_Reserv2ndPPPerc() {
-		return (EAttribute)cartAbandonedLineEClass.getEStructuralFeatures().get(4);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EAttribute getCartAbandonedLine_ReservLength() {
 		return (EAttribute)cartAbandonedLineEClass.getEStructuralFeatures().get(5);
 	}
 
@@ -742,7 +722,7 @@ public class ShoppingcartPackageImpl extends EPackageImpl implements Shoppingcar
 	 * @generated
 	 */
 	@Override
-	public EAttribute getCartAbandonedLine_ReservNthPPPerc() {
+	public EAttribute getCartAbandonedLine_Reserv2ndPPPerc() {
 		return (EAttribute)cartAbandonedLineEClass.getEStructuralFeatures().get(6);
 	}
 
@@ -752,7 +732,7 @@ public class ShoppingcartPackageImpl extends EPackageImpl implements Shoppingcar
 	 * @generated
 	 */
 	@Override
-	public EAttribute getCartAbandonedLine_ReservPersons() {
+	public EAttribute getCartAbandonedLine_ReservLength() {
 		return (EAttribute)cartAbandonedLineEClass.getEStructuralFeatures().get(7);
 	}
 
@@ -762,7 +742,7 @@ public class ShoppingcartPackageImpl extends EPackageImpl implements Shoppingcar
 	 * @generated
 	 */
 	@Override
-	public EAttribute getCartAbandonedLine_ReservStart() {
+	public EAttribute getCartAbandonedLine_ReservNthPPPerc() {
 		return (EAttribute)cartAbandonedLineEClass.getEStructuralFeatures().get(8);
 	}
 
@@ -772,7 +752,7 @@ public class ShoppingcartPackageImpl extends EPackageImpl implements Shoppingcar
 	 * @generated
 	 */
 	@Override
-	public EAttribute getCartAbandonedLine_TotalWithAdjustments() {
+	public EAttribute getCartAbandonedLine_ReservPersons() {
 		return (EAttribute)cartAbandonedLineEClass.getEStructuralFeatures().get(9);
 	}
 
@@ -782,7 +762,7 @@ public class ShoppingcartPackageImpl extends EPackageImpl implements Shoppingcar
 	 * @generated
 	 */
 	@Override
-	public EAttribute getCartAbandonedLine_UnitPrice() {
+	public EAttribute getCartAbandonedLine_ReservStart() {
 		return (EAttribute)cartAbandonedLineEClass.getEStructuralFeatures().get(10);
 	}
 
@@ -792,8 +772,28 @@ public class ShoppingcartPackageImpl extends EPackageImpl implements Shoppingcar
 	 * @generated
 	 */
 	@Override
-	public EAttribute getCartAbandonedLine_WasReserved() {
+	public EAttribute getCartAbandonedLine_TotalWithAdjustments() {
 		return (EAttribute)cartAbandonedLineEClass.getEStructuralFeatures().get(11);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getCartAbandonedLine_UnitPrice() {
+		return (EAttribute)cartAbandonedLineEClass.getEStructuralFeatures().get(12);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getCartAbandonedLine_WasReserved() {
+		return (EAttribute)cartAbandonedLineEClass.getEStructuralFeatures().get(13);
 	}
 
 	/**
@@ -826,9 +826,11 @@ public class ShoppingcartPackageImpl extends EPackageImpl implements Shoppingcar
 
 		// Create classes and their features
 		cartAbandonedLineEClass = createEClass(CART_ABANDONED_LINE);
-		createEAttribute(cartAbandonedLineEClass, CART_ABANDONED_LINE__VISIT_ID);
 		createEAttribute(cartAbandonedLineEClass, CART_ABANDONED_LINE__CART_ABANDONED_LINE_SEQ_ID);
+		createEAttribute(cartAbandonedLineEClass, CART_ABANDONED_LINE__VISIT_ID);
 		createEAttribute(cartAbandonedLineEClass, CART_ABANDONED_LINE__CONFIG_ID);
+		createEReference(cartAbandonedLineEClass, CART_ABANDONED_LINE__PROD_CATALOG_ID);
+		createEReference(cartAbandonedLineEClass, CART_ABANDONED_LINE__PRODUCT_ID);
 		createEAttribute(cartAbandonedLineEClass, CART_ABANDONED_LINE__QUANTITY);
 		createEAttribute(cartAbandonedLineEClass, CART_ABANDONED_LINE__RESERV2ND_PP_PERC);
 		createEAttribute(cartAbandonedLineEClass, CART_ABANDONED_LINE__RESERV_LENGTH);
@@ -838,8 +840,6 @@ public class ShoppingcartPackageImpl extends EPackageImpl implements Shoppingcar
 		createEAttribute(cartAbandonedLineEClass, CART_ABANDONED_LINE__TOTAL_WITH_ADJUSTMENTS);
 		createEAttribute(cartAbandonedLineEClass, CART_ABANDONED_LINE__UNIT_PRICE);
 		createEAttribute(cartAbandonedLineEClass, CART_ABANDONED_LINE__WAS_RESERVED);
-		createEReference(cartAbandonedLineEClass, CART_ABANDONED_LINE__PRODUCT_ID);
-		createEReference(cartAbandonedLineEClass, CART_ABANDONED_LINE__PROD_CATALOG_ID);
 	}
 
 	/**
@@ -867,8 +867,8 @@ public class ShoppingcartPackageImpl extends EPackageImpl implements Shoppingcar
 
 		// Obtain other dependent packages
 		BizPackage theBizPackage = (BizPackage)EPackage.Registry.INSTANCE.getEPackage(BizPackage.eNS_URI);
-		ProductPackage theProductPackage = (ProductPackage)EPackage.Registry.INSTANCE.getEPackage(ProductPackage.eNS_URI);
 		CatalogPackage theCatalogPackage = (CatalogPackage)EPackage.Registry.INSTANCE.getEPackage(CatalogPackage.eNS_URI);
+		ProductPackage theProductPackage = (ProductPackage)EPackage.Registry.INSTANCE.getEPackage(ProductPackage.eNS_URI);
 
 		// Create type parameters
 
@@ -879,9 +879,13 @@ public class ShoppingcartPackageImpl extends EPackageImpl implements Shoppingcar
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(cartAbandonedLineEClass, CartAbandonedLine.class, "CartAbandonedLine", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getCartAbandonedLine_VisitId(), ecorePackage.getEString(), "visitId", null, 1, 1, CartAbandonedLine.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getCartAbandonedLine_CartAbandonedLineSeqId(), ecorePackage.getEString(), "cartAbandonedLineSeqId", null, 1, 1, CartAbandonedLine.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getCartAbandonedLine_VisitId(), ecorePackage.getEString(), "visitId", null, 1, 1, CartAbandonedLine.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getCartAbandonedLine_ConfigId(), ecorePackage.getEString(), "configId", null, 0, 1, CartAbandonedLine.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getCartAbandonedLine_ProdCatalogId(), theCatalogPackage.getProdCatalog(), null, "prodCatalogId", null, 0, 1, CartAbandonedLine.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getCartAbandonedLine_ProdCatalogId().getEKeys().add(theCatalogPackage.getProdCatalog_ProdCatalogId());
+		initEReference(getCartAbandonedLine_ProductId(), theProductPackage.getProduct(), null, "productId", null, 0, 1, CartAbandonedLine.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getCartAbandonedLine_ProductId().getEKeys().add(theProductPackage.getProduct_ProductId());
 		initEAttribute(getCartAbandonedLine_Quantity(), ecorePackage.getEBigDecimal(), "quantity", null, 0, 1, CartAbandonedLine.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getCartAbandonedLine_Reserv2ndPPPerc(), ecorePackage.getEBigDecimal(), "reserv2ndPPPerc", null, 0, 1, CartAbandonedLine.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getCartAbandonedLine_ReservLength(), ecorePackage.getEBigDecimal(), "reservLength", null, 0, 1, CartAbandonedLine.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -891,16 +895,30 @@ public class ShoppingcartPackageImpl extends EPackageImpl implements Shoppingcar
 		initEAttribute(getCartAbandonedLine_TotalWithAdjustments(), ecorePackage.getEBigDecimal(), "totalWithAdjustments", null, 0, 1, CartAbandonedLine.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getCartAbandonedLine_UnitPrice(), ecorePackage.getEBigDecimal(), "unitPrice", null, 0, 1, CartAbandonedLine.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getCartAbandonedLine_WasReserved(), ecorePackage.getEBoolean(), "wasReserved", null, 0, 1, CartAbandonedLine.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getCartAbandonedLine_ProductId(), theProductPackage.getProduct(), null, "productId", null, 0, 1, CartAbandonedLine.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		getCartAbandonedLine_ProductId().getEKeys().add(theProductPackage.getProduct_ProductId());
-		initEReference(getCartAbandonedLine_ProdCatalogId(), theCatalogPackage.getProdCatalog(), null, "prodCatalogId", null, 0, 1, CartAbandonedLine.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		getCartAbandonedLine_ProdCatalogId().getEKeys().add(theCatalogPackage.getProdCatalog_ProdCatalogId());
 
 		// Create annotations
-		// mimo-ent-format
-		createMimoentformatAnnotations();
+		// mimo-ent-frame
+		createMimoentframeAnnotations();
 		// mimo-ent-slot
 		createMimoentslotAnnotations();
+		// mimo-ent-format
+		createMimoentformatAnnotations();
+	}
+
+	/**
+	 * Initializes the annotations for <b>mimo-ent-frame</b>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void createMimoentframeAnnotations() {
+		String source = "mimo-ent-frame";
+		addAnnotation
+		  (cartAbandonedLineEClass,
+		   source,
+		   new String[] {
+			   "title", "Order Abandoned Line"
+		   });
 	}
 
 	/**
@@ -912,13 +930,6 @@ public class ShoppingcartPackageImpl extends EPackageImpl implements Shoppingcar
 	protected void createMimoentformatAnnotations() {
 		String source = "mimo-ent-format";
 		addAnnotation
-		  (getCartAbandonedLine_VisitId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getCartAbandonedLine_CartAbandonedLineSeqId(),
 		   source,
 		   new String[] {
@@ -926,7 +937,28 @@ public class ShoppingcartPackageImpl extends EPackageImpl implements Shoppingcar
 			   "length", "20"
 		   });
 		addAnnotation
+		  (getCartAbandonedLine_VisitId(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
 		  (getCartAbandonedLine_ConfigId(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (getCartAbandonedLine_ProdCatalogId(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (getCartAbandonedLine_ProductId(),
 		   source,
 		   new String[] {
 			   "type", "id",
@@ -1012,13 +1044,13 @@ public class ShoppingcartPackageImpl extends EPackageImpl implements Shoppingcar
 	protected void createMimoentslotAnnotations() {
 		String source = "mimo-ent-slot";
 		addAnnotation
-		  (getCartAbandonedLine_VisitId(),
+		  (getCartAbandonedLine_CartAbandonedLineSeqId(),
 		   source,
 		   new String[] {
 			   "key", "true"
 		   });
 		addAnnotation
-		  (getCartAbandonedLine_CartAbandonedLineSeqId(),
+		  (getCartAbandonedLine_VisitId(),
 		   source,
 		   new String[] {
 			   "key", "true"

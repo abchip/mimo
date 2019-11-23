@@ -21,9 +21,9 @@ import org.eclipse.emf.ecore.EClass;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link org.abchip.mimo.biz.order.requirement.impl.RequirementTypeAttrImpl#getRequirementTypeId <em>Requirement Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.requirement.impl.RequirementTypeAttrImpl#getAttrName <em>Attr Name</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.requirement.impl.RequirementTypeAttrImpl#getDescription <em>Description</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.requirement.impl.RequirementTypeAttrImpl#getRequirementTypeId <em>Requirement Type Id</em>}</li>
  * </ul>
  *
  * @generated

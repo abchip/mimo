@@ -23,13 +23,13 @@ import org.abchip.mimo.biz.BizEntity;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.content.content.ContentSearchResult#getContentSearchResultId <em>Content Search Result Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.content.content.ContentSearchResult#getContentSearchConstraints <em>Content Search Constraints</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.content.ContentSearchResult#isIsAscending <em>Is Ascending</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.content.ContentSearchResult#getNumResults <em>Num Results</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.content.ContentSearchResult#getOrderByName <em>Order By Name</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.content.ContentSearchResult#getSearchDate <em>Search Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.content.ContentSearchResult#getSecondsTotal <em>Seconds Total</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.content.ContentSearchResult#getVisitId <em>Visit Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.content.content.ContentSearchResult#getContentSearchConstraints <em>Content Search Constraints</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.content.content.ContentPackage#getContentSearchResult()
@@ -50,7 +50,6 @@ public interface ContentSearchResult extends BizEntity {
 	 * @see org.abchip.mimo.biz.content.content.ContentPackage#getContentSearchResult_ContentSearchResultId()
 	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getContentSearchResultId();
@@ -232,8 +231,7 @@ public interface ContentSearchResult extends BizEntity {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Content Search Constraints</em>' attribute list.
 	 * @see org.abchip.mimo.biz.content.content.ContentPackage#getContentSearchResult_ContentSearchConstraints()
-	 * @model required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ContentSearchConstraint'"
 	 * @generated

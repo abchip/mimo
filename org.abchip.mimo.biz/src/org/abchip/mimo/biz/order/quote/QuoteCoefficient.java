@@ -20,9 +20,9 @@ import org.abchip.mimo.biz.BizEntity;
  * The following features are supported:
  * </p>
  * <ul>
+ *   <li>{@link org.abchip.mimo.biz.order.quote.QuoteCoefficient#getQuoteId <em>Quote Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.quote.QuoteCoefficient#getCoeffName <em>Coeff Name</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.quote.QuoteCoefficient#getCoeffValue <em>Coeff Value</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.quote.QuoteCoefficient#getQuoteId <em>Quote Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.order.quote.QuotePackage#getQuoteCoefficient()
@@ -42,8 +42,8 @@ public interface QuoteCoefficient extends BizEntity {
 	 * @see #setCoeffName(String)
 	 * @see org.abchip.mimo.biz.order.quote.QuotePackage#getQuoteCoefficient_CoeffName()
 	 * @model required="true"
-	 *        annotation="mimo-ent-format type='id-long' length='60'"
 	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id-long' length='60'"
 	 * @generated
 	 */
 	String getCoeffName();
@@ -95,7 +95,9 @@ public interface QuoteCoefficient extends BizEntity {
 	 * @return the value of the '<em>Quote Id</em>' reference.
 	 * @see #setQuoteId(Quote)
 	 * @see org.abchip.mimo.biz.order.quote.QuotePackage#getQuoteCoefficient_QuoteId()
-	 * @model keys="quoteId"
+	 * @model keys="quoteId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Quote getQuoteId();

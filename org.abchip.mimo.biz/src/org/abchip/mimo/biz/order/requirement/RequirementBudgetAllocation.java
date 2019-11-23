@@ -21,10 +21,10 @@ import org.abchip.mimo.biz.accounting.budget.Budget;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.order.requirement.RequirementBudgetAllocation#getBudgetItemSeqId <em>Budget Item Seq Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.requirement.RequirementBudgetAllocation#getAmount <em>Amount</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.requirement.RequirementBudgetAllocation#getBudgetId <em>Budget Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.requirement.RequirementBudgetAllocation#getRequirementId <em>Requirement Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.requirement.RequirementBudgetAllocation#getBudgetItemSeqId <em>Budget Item Seq Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.requirement.RequirementBudgetAllocation#getAmount <em>Amount</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.order.requirement.RequirementPackage#getRequirementBudgetAllocation()
@@ -69,7 +69,9 @@ public interface RequirementBudgetAllocation extends BizEntity {
 	 * @return the value of the '<em>Budget Id</em>' reference.
 	 * @see #setBudgetId(Budget)
 	 * @see org.abchip.mimo.biz.order.requirement.RequirementPackage#getRequirementBudgetAllocation_BudgetId()
-	 * @model keys="budgetId"
+	 * @model keys="budgetId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Budget getBudgetId();
@@ -96,8 +98,8 @@ public interface RequirementBudgetAllocation extends BizEntity {
 	 * @see #setBudgetItemSeqId(String)
 	 * @see org.abchip.mimo.biz.order.requirement.RequirementPackage#getRequirementBudgetAllocation_BudgetItemSeqId()
 	 * @model required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	String getBudgetItemSeqId();
@@ -123,7 +125,9 @@ public interface RequirementBudgetAllocation extends BizEntity {
 	 * @return the value of the '<em>Requirement Id</em>' reference.
 	 * @see #setRequirementId(Requirement)
 	 * @see org.abchip.mimo.biz.order.requirement.RequirementPackage#getRequirementBudgetAllocation_RequirementId()
-	 * @model keys="requirementId"
+	 * @model keys="requirementId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Requirement getRequirementId();

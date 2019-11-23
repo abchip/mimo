@@ -27,7 +27,7 @@ import org.abchip.mimo.biz.BizEntityType;
  * </ul>
  *
  * @see org.abchip.mimo.biz.product.feature.FeaturePackage#getProductFeatureType()
- * @model annotation="mimo-ent-frame formula='description'"
+ * @model annotation="mimo-ent-frame dictionary='ProductEntityLabels' formula='description'"
  * @generated
  */
 public interface ProductFeatureType extends BizEntityType<ProductFeature> {
@@ -95,6 +95,7 @@ public interface ProductFeatureType extends BizEntityType<ProductFeature> {
 	 * @see #setParentTypeId(ProductFeatureType)
 	 * @see org.abchip.mimo.biz.product.feature.FeaturePackage#getProductFeatureType_ParentTypeId()
 	 * @model keys="productFeatureTypeId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ProductFeatureType getParentTypeId();
@@ -142,7 +143,6 @@ public interface ProductFeatureType extends BizEntityType<ProductFeature> {
 	 * @see org.abchip.mimo.biz.product.feature.FeaturePackage#getProductFeatureType_ProductFeatureTypeId()
 	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getProductFeatureTypeId();

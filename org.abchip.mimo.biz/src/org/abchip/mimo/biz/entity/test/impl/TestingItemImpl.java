@@ -21,9 +21,9 @@ import org.eclipse.emf.ecore.EClass;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link org.abchip.mimo.biz.entity.test.impl.TestingItemImpl#getTestingId <em>Testing Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.entity.test.impl.TestingItemImpl#getTestingSeqId <em>Testing Seq Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.entity.test.impl.TestingItemImpl#getTestingHistory <em>Testing History</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.entity.test.impl.TestingItemImpl#getTestingId <em>Testing Id</em>}</li>
  * </ul>
  *
  * @generated

@@ -27,7 +27,7 @@ import org.abchip.mimo.biz.BizEntityType;
  * </ul>
  *
  * @see org.abchip.mimo.biz.product.product.ProductPackage#getProductAssocType()
- * @model annotation="mimo-ent-frame formula='description'"
+ * @model annotation="mimo-ent-frame title='Product Association Type' dictionary='ProductEntityLabels' formula='description'"
  * @generated
  */
 public interface ProductAssocType extends BizEntityType<ProductAssoc> {
@@ -95,6 +95,7 @@ public interface ProductAssocType extends BizEntityType<ProductAssoc> {
 	 * @see #setParentTypeId(ProductAssocType)
 	 * @see org.abchip.mimo.biz.product.product.ProductPackage#getProductAssocType_ParentTypeId()
 	 * @model keys="productAssocTypeId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ProductAssocType getParentTypeId();
@@ -132,7 +133,6 @@ public interface ProductAssocType extends BizEntityType<ProductAssoc> {
 	 * @see org.abchip.mimo.biz.product.product.ProductPackage#getProductAssocType_ProductAssocTypeId()
 	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getProductAssocTypeId();

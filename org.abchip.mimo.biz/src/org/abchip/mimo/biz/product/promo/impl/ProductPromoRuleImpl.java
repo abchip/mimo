@@ -21,9 +21,9 @@ import org.eclipse.emf.ecore.EClass;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link org.abchip.mimo.biz.product.promo.impl.ProductPromoRuleImpl#getProductPromoId <em>Product Promo Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.promo.impl.ProductPromoRuleImpl#getProductPromoRuleId <em>Product Promo Rule Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.promo.impl.ProductPromoRuleImpl#getRuleName <em>Rule Name</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.promo.impl.ProductPromoRuleImpl#getProductPromoId <em>Product Promo Id</em>}</li>
  * </ul>
  *
  * @generated

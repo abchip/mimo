@@ -26,13 +26,13 @@ import org.abchip.mimo.biz.security.login.UserLogin;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.workeffort.timesheet.Timesheet#getTimesheetId <em>Timesheet Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.workeffort.timesheet.Timesheet#getApprovedByUserLoginId <em>Approved By User Login Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.workeffort.timesheet.Timesheet#getClientPartyId <em>Client Party Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.workeffort.timesheet.Timesheet#getComments <em>Comments</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.workeffort.timesheet.Timesheet#getFromDate <em>From Date</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.workeffort.timesheet.Timesheet#getThruDate <em>Thru Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.workeffort.timesheet.Timesheet#getPartyId <em>Party Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.workeffort.timesheet.Timesheet#getClientPartyId <em>Client Party Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.workeffort.timesheet.Timesheet#getStatusId <em>Status Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.workeffort.timesheet.Timesheet#getApprovedByUserLoginId <em>Approved By User Login Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.workeffort.timesheet.Timesheet#getThruDate <em>Thru Date</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.workeffort.timesheet.TimesheetPackage#getTimesheet()
@@ -52,6 +52,7 @@ public interface Timesheet extends BizEntity {
 	 * @see #setApprovedByUserLoginId(UserLogin)
 	 * @see org.abchip.mimo.biz.workeffort.timesheet.TimesheetPackage#getTimesheet_ApprovedByUserLoginId()
 	 * @model keys="userLoginId"
+	 *        annotation="mimo-ent-format type='id-vlong' length='255'"
 	 * @generated
 	 */
 	UserLogin getApprovedByUserLoginId();
@@ -78,6 +79,7 @@ public interface Timesheet extends BizEntity {
 	 * @see #setClientPartyId(Party)
 	 * @see org.abchip.mimo.biz.workeffort.timesheet.TimesheetPackage#getTimesheet_ClientPartyId()
 	 * @model keys="partyId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Party getClientPartyId();
@@ -156,6 +158,7 @@ public interface Timesheet extends BizEntity {
 	 * @see #setPartyId(Party)
 	 * @see org.abchip.mimo.biz.workeffort.timesheet.TimesheetPackage#getTimesheet_PartyId()
 	 * @model keys="partyId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Party getPartyId();
@@ -182,6 +185,7 @@ public interface Timesheet extends BizEntity {
 	 * @see #setStatusId(StatusItem)
 	 * @see org.abchip.mimo.biz.workeffort.timesheet.TimesheetPackage#getTimesheet_StatusId()
 	 * @model keys="statusId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	StatusItem getStatusId();
@@ -245,7 +249,6 @@ public interface Timesheet extends BizEntity {
 	 * @see org.abchip.mimo.biz.workeffort.timesheet.TimesheetPackage#getTimesheet_TimesheetId()
 	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getTimesheetId();

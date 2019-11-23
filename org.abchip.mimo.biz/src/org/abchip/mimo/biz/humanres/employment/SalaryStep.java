@@ -22,14 +22,14 @@ import org.abchip.mimo.biz.BizEntity;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.humanres.employment.SalaryStep#getSalaryStepSeqId <em>Salary Step Seq Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.humanres.employment.SalaryStep#getPayGradeId <em>Pay Grade Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.employment.SalaryStep#getFromDate <em>From Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.humanres.employment.SalaryStep#getSalaryStepSeqId <em>Salary Step Seq Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.employment.SalaryStep#getAmount <em>Amount</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.employment.SalaryStep#getCreatedByUserLogin <em>Created By User Login</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.employment.SalaryStep#getDateModified <em>Date Modified</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.employment.SalaryStep#getLastModifiedByUserLogin <em>Last Modified By User Login</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.employment.SalaryStep#getThruDate <em>Thru Date</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.humanres.employment.SalaryStep#getPayGradeId <em>Pay Grade Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.humanres.employment.EmploymentPackage#getSalaryStep()
@@ -127,8 +127,8 @@ public interface SalaryStep extends BizEntity {
 	 * @see #setFromDate(Date)
 	 * @see org.abchip.mimo.biz.humanres.employment.EmploymentPackage#getSalaryStep_FromDate()
 	 * @model required="true"
-	 *        annotation="mimo-ent-format type='date-time'"
 	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getFromDate();
@@ -180,7 +180,9 @@ public interface SalaryStep extends BizEntity {
 	 * @return the value of the '<em>Pay Grade Id</em>' reference.
 	 * @see #setPayGradeId(PayGrade)
 	 * @see org.abchip.mimo.biz.humanres.employment.EmploymentPackage#getSalaryStep_PayGradeId()
-	 * @model keys="payGradeId"
+	 * @model keys="payGradeId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	PayGrade getPayGradeId();
@@ -207,8 +209,8 @@ public interface SalaryStep extends BizEntity {
 	 * @see #setSalaryStepSeqId(String)
 	 * @see org.abchip.mimo.biz.humanres.employment.EmploymentPackage#getSalaryStep_SalaryStepSeqId()
 	 * @model required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	String getSalaryStepSeqId();

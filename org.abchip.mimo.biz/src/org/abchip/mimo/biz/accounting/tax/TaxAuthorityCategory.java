@@ -19,13 +19,13 @@ import org.abchip.mimo.biz.product.category.ProductCategory;
  * The following features are supported:
  * </p>
  * <ul>
+ *   <li>{@link org.abchip.mimo.biz.accounting.tax.TaxAuthorityCategory#getProductCategoryId <em>Product Category Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.tax.TaxAuthorityCategory#getTaxAuthGeoId <em>Tax Auth Geo Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.tax.TaxAuthorityCategory#getTaxAuthPartyId <em>Tax Auth Party Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.tax.TaxAuthorityCategory#getProductCategoryId <em>Product Category Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.accounting.tax.TaxPackage#getTaxAuthorityCategory()
- * @model
+ * @model annotation="mimo-ent-frame title='Tax Authority Product Category'"
  * @generated
  */
 public interface TaxAuthorityCategory extends BizEntity {
@@ -40,7 +40,9 @@ public interface TaxAuthorityCategory extends BizEntity {
 	 * @return the value of the '<em>Product Category Id</em>' reference.
 	 * @see #setProductCategoryId(ProductCategory)
 	 * @see org.abchip.mimo.biz.accounting.tax.TaxPackage#getTaxAuthorityCategory_ProductCategoryId()
-	 * @model keys="productCategoryId"
+	 * @model keys="productCategoryId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ProductCategory getProductCategoryId();
@@ -67,8 +69,8 @@ public interface TaxAuthorityCategory extends BizEntity {
 	 * @see #setTaxAuthGeoId(String)
 	 * @see org.abchip.mimo.biz.accounting.tax.TaxPackage#getTaxAuthorityCategory_TaxAuthGeoId()
 	 * @model required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	String getTaxAuthGeoId();
@@ -95,8 +97,8 @@ public interface TaxAuthorityCategory extends BizEntity {
 	 * @see #setTaxAuthPartyId(String)
 	 * @see org.abchip.mimo.biz.accounting.tax.TaxPackage#getTaxAuthorityCategory_TaxAuthPartyId()
 	 * @model required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	String getTaxAuthPartyId();

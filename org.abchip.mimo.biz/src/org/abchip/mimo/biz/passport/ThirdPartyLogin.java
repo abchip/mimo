@@ -21,16 +21,16 @@ import org.abchip.mimo.biz.product.store.ProductStore;
  * The following features are supported:
  * </p>
  * <ul>
+ *   <li>{@link org.abchip.mimo.biz.passport.ThirdPartyLogin#getProductStoreId <em>Product Store Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.passport.ThirdPartyLogin#getFromDate <em>From Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.passport.ThirdPartyLogin#getLoginMethTypeId <em>Login Meth Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.passport.ThirdPartyLogin#getLoginProviderId <em>Login Provider Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.passport.ThirdPartyLogin#getFromDate <em>From Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.passport.ThirdPartyLogin#getSequenceNum <em>Sequence Num</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.passport.ThirdPartyLogin#getThruDate <em>Thru Date</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.passport.ThirdPartyLogin#getProductStoreId <em>Product Store Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.passport.PassportPackage#getThirdPartyLogin()
- * @model
+ * @model annotation="mimo-ent-frame help='Data Model Enhancements For Passport' title='Third party logins for a specific product store'"
  * @generated
  */
 public interface ThirdPartyLogin extends BizEntity {
@@ -45,7 +45,9 @@ public interface ThirdPartyLogin extends BizEntity {
 	 * @return the value of the '<em>Product Store Id</em>' reference.
 	 * @see #setProductStoreId(ProductStore)
 	 * @see org.abchip.mimo.biz.passport.PassportPackage#getThirdPartyLogin_ProductStoreId()
-	 * @model keys="productStoreId"
+	 * @model keys="productStoreId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ProductStore getProductStoreId();
@@ -72,8 +74,8 @@ public interface ThirdPartyLogin extends BizEntity {
 	 * @see #setLoginMethTypeId(String)
 	 * @see org.abchip.mimo.biz.passport.PassportPackage#getThirdPartyLogin_LoginMethTypeId()
 	 * @model required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	String getLoginMethTypeId();
@@ -100,8 +102,8 @@ public interface ThirdPartyLogin extends BizEntity {
 	 * @see #setLoginProviderId(String)
 	 * @see org.abchip.mimo.biz.passport.PassportPackage#getThirdPartyLogin_LoginProviderId()
 	 * @model required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	String getLoginProviderId();
@@ -128,8 +130,8 @@ public interface ThirdPartyLogin extends BizEntity {
 	 * @see #setFromDate(Date)
 	 * @see org.abchip.mimo.biz.passport.PassportPackage#getThirdPartyLogin_FromDate()
 	 * @model required="true"
-	 *        annotation="mimo-ent-format type='date-time'"
 	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getFromDate();

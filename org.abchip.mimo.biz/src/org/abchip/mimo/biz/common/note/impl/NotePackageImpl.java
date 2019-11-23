@@ -190,9 +190,6 @@ import org.abchip.mimo.biz.workeffort.timesheet.TimesheetPackage;
 import org.abchip.mimo.biz.workeffort.timesheet.impl.TimesheetPackageImpl;
 import org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage;
 import org.abchip.mimo.biz.workeffort.workeffort.impl.WorkeffortPackageImpl;
-import org.abchip.mimo.entity.EntityPackage;
-import org.eclipse.emf.common.util.URI;
-
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
@@ -824,19 +821,19 @@ public class NotePackageImpl extends EPackageImpl implements NotePackage {
 		initEReference(getNoteData_NoteParty(), thePartyPackage.getParty(), null, "noteParty", null, 0, 1, NoteData.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getNoteData_NoteParty().getEKeys().add(thePartyPackage.getParty_PartyId());
 
-		addEOperation(noteDataEClass, ecorePackage.getEString(), "custRequestNotes", 1, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(noteDataEClass, ecorePackage.getEString(), "custRequestNotes", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(noteDataEClass, ecorePackage.getEString(), "invoiceNotes", 1, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(noteDataEClass, ecorePackage.getEString(), "invoiceNotes", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(noteDataEClass, ecorePackage.getEString(), "marketingCampaignNotes", 1, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(noteDataEClass, ecorePackage.getEString(), "marketingCampaignNotes", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(noteDataEClass, ecorePackage.getEString(), "orderHeaderNotes", 1, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(noteDataEClass, ecorePackage.getEString(), "orderHeaderNotes", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(noteDataEClass, ecorePackage.getEString(), "partyNotes", 1, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(noteDataEClass, ecorePackage.getEString(), "partyNotes", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(noteDataEClass, ecorePackage.getEString(), "quoteNotes", 1, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(noteDataEClass, ecorePackage.getEString(), "quoteNotes", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(noteDataEClass, ecorePackage.getEString(), "workEffortNotes", 1, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(noteDataEClass, ecorePackage.getEString(), "workEffortNotes", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		addEOperation(noteDataEClass, ecorePackage.getEString(), "workEfforts", 0, -1, IS_UNIQUE, IS_ORDERED);
 
@@ -960,6 +957,13 @@ public class NotePackageImpl extends EPackageImpl implements NotePackage {
 			   "type", "name",
 			   "length", "100"
 		   });
+		addAnnotation
+		  (getNoteData_NoteParty(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
 	}
 
 	/**
@@ -1019,10 +1023,22 @@ public class NotePackageImpl extends EPackageImpl implements NotePackage {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (getNoteData_NoteId(),
+		  (getNoteData_MoreInfoItemId(),
 		   source,
 		   new String[] {
-			   "key", "true"
+			   "help", "The id of the item to be displayed i.e. custRequestId, commEventId etc"
+		   });
+		addAnnotation
+		  (getNoteData_MoreInfoItemName(),
+		   source,
+		   new String[] {
+			   "help", "The name of the item to be displayed i.e. custRequestId, commEventId etc"
+		   });
+		addAnnotation
+		  (getNoteData_MoreInfoUrl(),
+		   source,
+		   new String[] {
+			   "help", "url to go to the related screen in the system"
 		   });
 	}
 
@@ -1040,9 +1056,6 @@ public class NotePackageImpl extends EPackageImpl implements NotePackage {
 		   new String[] {
 			   "frame", "CustRequestNote",
 			   "route", "noteId"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
 		  (noteDataEClass.getEOperations().get(1),
@@ -1050,9 +1063,6 @@ public class NotePackageImpl extends EPackageImpl implements NotePackage {
 		   new String[] {
 			   "frame", "InvoiceNote",
 			   "route", "noteId"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
 		  (noteDataEClass.getEOperations().get(2),
@@ -1060,9 +1070,6 @@ public class NotePackageImpl extends EPackageImpl implements NotePackage {
 		   new String[] {
 			   "frame", "MarketingCampaignNote",
 			   "route", "noteId"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
 		  (noteDataEClass.getEOperations().get(3),
@@ -1070,9 +1077,6 @@ public class NotePackageImpl extends EPackageImpl implements NotePackage {
 		   new String[] {
 			   "frame", "OrderHeaderNote",
 			   "route", "noteId"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
 		  (noteDataEClass.getEOperations().get(4),
@@ -1080,9 +1084,6 @@ public class NotePackageImpl extends EPackageImpl implements NotePackage {
 		   new String[] {
 			   "frame", "PartyNote",
 			   "route", "noteId"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
 		  (noteDataEClass.getEOperations().get(5),
@@ -1090,9 +1091,6 @@ public class NotePackageImpl extends EPackageImpl implements NotePackage {
 		   new String[] {
 			   "frame", "QuoteNote",
 			   "route", "noteId"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
 		  (noteDataEClass.getEOperations().get(6),
@@ -1100,9 +1098,6 @@ public class NotePackageImpl extends EPackageImpl implements NotePackage {
 		   new String[] {
 			   "frame", "WorkEffortNote",
 			   "route", "noteId"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
 		  (noteDataEClass.getEOperations().get(7),
@@ -1110,9 +1105,6 @@ public class NotePackageImpl extends EPackageImpl implements NotePackage {
 		   new String[] {
 			   "frame", "WorkEffort",
 			   "route", "noteId"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 	}
 

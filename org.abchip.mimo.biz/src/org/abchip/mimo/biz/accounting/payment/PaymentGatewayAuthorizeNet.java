@@ -29,6 +29,7 @@ import org.abchip.mimo.biz.BizEntity;
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.PaymentGatewayAuthorizeNet#getEmailCustomer <em>Email Customer</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.PaymentGatewayAuthorizeNet#getEmailMerchant <em>Email Merchant</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.PaymentGatewayAuthorizeNet#getMethod <em>Method</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.payment.PaymentGatewayAuthorizeNet#getPaymentGatewayConfigId <em>Payment Gateway Config Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.PaymentGatewayAuthorizeNet#getPwd <em>Pwd</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.PaymentGatewayAuthorizeNet#getRelayResponse <em>Relay Response</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.PaymentGatewayAuthorizeNet#getTestMode <em>Test Mode</em>}</li>
@@ -36,11 +37,10 @@ import org.abchip.mimo.biz.BizEntity;
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.PaymentGatewayAuthorizeNet#getTransDescription <em>Trans Description</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.PaymentGatewayAuthorizeNet#getTransactionUrl <em>Transaction Url</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.PaymentGatewayAuthorizeNet#getUserId <em>User Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.payment.PaymentGatewayAuthorizeNet#getPaymentGatewayConfigId <em>Payment Gateway Config Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPaymentGatewayAuthorizeNet()
- * @model
+ * @model annotation="mimo-ent-frame title='Authorize Dot Net Payment Gateway Configuration'"
  * @generated
  */
 public interface PaymentGatewayAuthorizeNet extends BizEntity {
@@ -55,7 +55,8 @@ public interface PaymentGatewayAuthorizeNet extends BizEntity {
 	 * @return the value of the '<em>Api Version</em>' attribute.
 	 * @see #setApiVersion(String)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPaymentGatewayAuthorizeNet_ApiVersion()
-	 * @model annotation="mimo-ent-format type='short-varchar' length='60'"
+	 * @model annotation="mimo-ent-slot help='Target Authorize Dot Net API version'"
+	 *        annotation="mimo-ent-format type='short-varchar' length='60'"
 	 * @generated
 	 */
 	String getApiVersion();
@@ -81,7 +82,8 @@ public interface PaymentGatewayAuthorizeNet extends BizEntity {
 	 * @return the value of the '<em>Certificate Alias</em>' attribute.
 	 * @see #setCertificateAlias(String)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPaymentGatewayAuthorizeNet_CertificateAlias()
-	 * @model annotation="mimo-ent-format type='value' length='255'"
+	 * @model annotation="mimo-ent-slot help='Certificate Alias'"
+	 *        annotation="mimo-ent-format type='value' length='255'"
 	 * @generated
 	 */
 	String getCertificateAlias();
@@ -107,7 +109,8 @@ public interface PaymentGatewayAuthorizeNet extends BizEntity {
 	 * @return the value of the '<em>Cp Device Type</em>' attribute.
 	 * @see #setCpDeviceType(String)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPaymentGatewayAuthorizeNet_CpDeviceType()
-	 * @model annotation="mimo-ent-format type='short-varchar' length='60'"
+	 * @model annotation="mimo-ent-slot help='Card Present Device Type'"
+	 *        annotation="mimo-ent-format type='short-varchar' length='60'"
 	 * @generated
 	 */
 	String getCpDeviceType();
@@ -133,7 +136,8 @@ public interface PaymentGatewayAuthorizeNet extends BizEntity {
 	 * @return the value of the '<em>Cp Market Type</em>' attribute.
 	 * @see #setCpMarketType(String)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPaymentGatewayAuthorizeNet_CpMarketType()
-	 * @model annotation="mimo-ent-format type='short-varchar' length='60'"
+	 * @model annotation="mimo-ent-slot help='Card Present Market Type'"
+	 *        annotation="mimo-ent-format type='short-varchar' length='60'"
 	 * @generated
 	 */
 	String getCpMarketType();
@@ -159,7 +163,8 @@ public interface PaymentGatewayAuthorizeNet extends BizEntity {
 	 * @return the value of the '<em>Cp Version</em>' attribute.
 	 * @see #setCpVersion(String)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPaymentGatewayAuthorizeNet_CpVersion()
-	 * @model annotation="mimo-ent-format type='short-varchar' length='60'"
+	 * @model annotation="mimo-ent-slot help='Card Present Version'"
+	 *        annotation="mimo-ent-format type='short-varchar' length='60'"
 	 * @generated
 	 */
 	String getCpVersion();
@@ -185,7 +190,8 @@ public interface PaymentGatewayAuthorizeNet extends BizEntity {
 	 * @return the value of the '<em>Delimited Data</em>' attribute.
 	 * @see #setDelimitedData(String)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPaymentGatewayAuthorizeNet_DelimitedData()
-	 * @model annotation="mimo-ent-format type='short-varchar' length='60'"
+	 * @model annotation="mimo-ent-slot help='Delimited data (TRUE|FALSE)'"
+	 *        annotation="mimo-ent-format type='short-varchar' length='60'"
 	 * @generated
 	 */
 	String getDelimitedData();
@@ -211,7 +217,8 @@ public interface PaymentGatewayAuthorizeNet extends BizEntity {
 	 * @return the value of the '<em>Delimiter Char</em>' attribute.
 	 * @see #setDelimiterChar(String)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPaymentGatewayAuthorizeNet_DelimiterChar()
-	 * @model annotation="mimo-ent-format type='short-varchar' length='60'"
+	 * @model annotation="mimo-ent-slot help='Delimited Character - the delimiter to use in the response'"
+	 *        annotation="mimo-ent-format type='short-varchar' length='60'"
 	 * @generated
 	 */
 	String getDelimiterChar();
@@ -237,7 +244,8 @@ public interface PaymentGatewayAuthorizeNet extends BizEntity {
 	 * @return the value of the '<em>Duplicate Window</em>' attribute.
 	 * @see #setDuplicateWindow(long)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPaymentGatewayAuthorizeNet_DuplicateWindow()
-	 * @model annotation="mimo-ent-format type='numeric' precision='20' scale='0'"
+	 * @model annotation="mimo-ent-slot help='Check the duplicate transaction in the specified time duration which is specified in seconds. If duplicate transaction occurs in the defined time limit then return error.'"
+	 *        annotation="mimo-ent-format type='numeric' precision='20' scale='0'"
 	 * @generated
 	 */
 	long getDuplicateWindow();
@@ -263,7 +271,8 @@ public interface PaymentGatewayAuthorizeNet extends BizEntity {
 	 * @return the value of the '<em>Email Customer</em>' attribute.
 	 * @see #setEmailCustomer(String)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPaymentGatewayAuthorizeNet_EmailCustomer()
-	 * @model annotation="mimo-ent-format type='short-varchar' length='60'"
+	 * @model annotation="mimo-ent-slot help='Email Customer? - if should send an email to the customer for each transaction (TRUE|FALSE)'"
+	 *        annotation="mimo-ent-format type='short-varchar' length='60'"
 	 * @generated
 	 */
 	String getEmailCustomer();
@@ -289,7 +298,8 @@ public interface PaymentGatewayAuthorizeNet extends BizEntity {
 	 * @return the value of the '<em>Email Merchant</em>' attribute.
 	 * @see #setEmailMerchant(String)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPaymentGatewayAuthorizeNet_EmailMerchant()
-	 * @model annotation="mimo-ent-format type='short-varchar' length='60'"
+	 * @model annotation="mimo-ent-slot help='Email Merchant? - if should send email to the merchant for each transaction (TRUE|FALSE)'"
+	 *        annotation="mimo-ent-format type='short-varchar' length='60'"
 	 * @generated
 	 */
 	String getEmailMerchant();
@@ -315,7 +325,8 @@ public interface PaymentGatewayAuthorizeNet extends BizEntity {
 	 * @return the value of the '<em>Method</em>' attribute.
 	 * @see #setMethod(String)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPaymentGatewayAuthorizeNet_Method()
-	 * @model annotation="mimo-ent-format type='short-varchar' length='60'"
+	 * @model annotation="mimo-ent-slot help='Method - CC for credit card processing'"
+	 *        annotation="mimo-ent-format type='short-varchar' length='60'"
 	 * @generated
 	 */
 	String getMethod();
@@ -341,7 +352,8 @@ public interface PaymentGatewayAuthorizeNet extends BizEntity {
 	 * @return the value of the '<em>Payment Gateway Config Id</em>' reference.
 	 * @see #setPaymentGatewayConfigId(PaymentGatewayConfig)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPaymentGatewayAuthorizeNet_PaymentGatewayConfigId()
-	 * @model keys="paymentGatewayConfigId"
+	 * @model keys="paymentGatewayConfigId" required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	PaymentGatewayConfig getPaymentGatewayConfigId();
@@ -367,7 +379,8 @@ public interface PaymentGatewayAuthorizeNet extends BizEntity {
 	 * @return the value of the '<em>Pwd</em>' attribute.
 	 * @see #setPwd(String)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPaymentGatewayAuthorizeNet_Pwd()
-	 * @model annotation="mimo-ent-format type='value' length='255'"
+	 * @model annotation="mimo-ent-slot encrypt='TRUE' help='Password - your authorize.net password'"
+	 *        annotation="mimo-ent-format type='value' length='255'"
 	 * @generated
 	 */
 	String getPwd();
@@ -393,7 +406,8 @@ public interface PaymentGatewayAuthorizeNet extends BizEntity {
 	 * @return the value of the '<em>Relay Response</em>' attribute.
 	 * @see #setRelayResponse(String)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPaymentGatewayAuthorizeNet_RelayResponse()
-	 * @model annotation="mimo-ent-format type='short-varchar' length='60'"
+	 * @model annotation="mimo-ent-slot help='Relay Response? - if should relay the reposnse to a different server (TRUE|FALSE)'"
+	 *        annotation="mimo-ent-format type='short-varchar' length='60'"
 	 * @generated
 	 */
 	String getRelayResponse();
@@ -419,7 +433,8 @@ public interface PaymentGatewayAuthorizeNet extends BizEntity {
 	 * @return the value of the '<em>Test Mode</em>' attribute.
 	 * @see #setTestMode(String)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPaymentGatewayAuthorizeNet_TestMode()
-	 * @model annotation="mimo-ent-format type='short-varchar' length='60'"
+	 * @model annotation="mimo-ent-slot help='Test Mode - forces the url property to the test url and adds more logging info to the logs (TRUE|FALSE)'"
+	 *        annotation="mimo-ent-format type='short-varchar' length='60'"
 	 * @generated
 	 */
 	String getTestMode();
@@ -445,7 +460,8 @@ public interface PaymentGatewayAuthorizeNet extends BizEntity {
 	 * @return the value of the '<em>Tran Key</em>' attribute.
 	 * @see #setTranKey(String)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPaymentGatewayAuthorizeNet_TranKey()
-	 * @model annotation="mimo-ent-format type='value' length='255'"
+	 * @model annotation="mimo-ent-slot encrypt='TRUE' help='Transaction Key'"
+	 *        annotation="mimo-ent-format type='value' length='255'"
 	 * @generated
 	 */
 	String getTranKey();
@@ -471,7 +487,8 @@ public interface PaymentGatewayAuthorizeNet extends BizEntity {
 	 * @return the value of the '<em>Trans Description</em>' attribute.
 	 * @see #setTransDescription(String)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPaymentGatewayAuthorizeNet_TransDescription()
-	 * @model annotation="mimo-ent-format type='value' length='255'"
+	 * @model annotation="mimo-ent-slot help='Default Transaction Description'"
+	 *        annotation="mimo-ent-format type='value' length='255'"
 	 * @generated
 	 */
 	String getTransDescription();
@@ -497,7 +514,8 @@ public interface PaymentGatewayAuthorizeNet extends BizEntity {
 	 * @return the value of the '<em>Transaction Url</em>' attribute.
 	 * @see #setTransactionUrl(String)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPaymentGatewayAuthorizeNet_TransactionUrl()
-	 * @model annotation="mimo-ent-format type='value' length='255'"
+	 * @model annotation="mimo-ent-slot help='Transaction URL'"
+	 *        annotation="mimo-ent-format type='value' length='255'"
 	 * @generated
 	 */
 	String getTransactionUrl();
@@ -523,7 +541,8 @@ public interface PaymentGatewayAuthorizeNet extends BizEntity {
 	 * @return the value of the '<em>User Id</em>' attribute.
 	 * @see #setUserId(String)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPaymentGatewayAuthorizeNet_UserId()
-	 * @model annotation="mimo-ent-format type='value' length='255'"
+	 * @model annotation="mimo-ent-slot help='Username - your authorize.net userid'"
+	 *        annotation="mimo-ent-format type='value' length='255'"
 	 * @generated
 	 */
 	String getUserId();

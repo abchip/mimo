@@ -19,9 +19,9 @@ import org.abchip.mimo.biz.party.party.Party;
  * The following features are supported:
  * </p>
  * <ul>
+ *   <li>{@link org.abchip.mimo.biz.content.content.ContentRevision#getContentId <em>Content Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.content.ContentRevision#getContentRevisionSeqId <em>Content Revision Seq Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.content.ContentRevision#getComments <em>Comments</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.content.content.ContentRevision#getContentId <em>Content Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.content.ContentRevision#getCommittedByPartyId <em>Committed By Party Id</em>}</li>
  * </ul>
  *
@@ -68,6 +68,7 @@ public interface ContentRevision extends BizEntity {
 	 * @see #setCommittedByPartyId(Party)
 	 * @see org.abchip.mimo.biz.content.content.ContentPackage#getContentRevision_CommittedByPartyId()
 	 * @model keys="partyId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Party getCommittedByPartyId();
@@ -93,7 +94,9 @@ public interface ContentRevision extends BizEntity {
 	 * @return the value of the '<em>Content Id</em>' reference.
 	 * @see #setContentId(Content)
 	 * @see org.abchip.mimo.biz.content.content.ContentPackage#getContentRevision_ContentId()
-	 * @model keys="contentId"
+	 * @model keys="contentId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Content getContentId();
@@ -120,8 +123,8 @@ public interface ContentRevision extends BizEntity {
 	 * @see #setContentRevisionSeqId(String)
 	 * @see org.abchip.mimo.biz.content.content.ContentPackage#getContentRevision_ContentRevisionSeqId()
 	 * @model required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	String getContentRevisionSeqId();

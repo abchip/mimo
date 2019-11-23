@@ -24,12 +24,12 @@ import org.eclipse.emf.ecore.EClass;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link org.abchip.mimo.biz.party.party.impl.PartyDataSourceImpl#getPartyId <em>Party Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.party.party.impl.PartyDataSourceImpl#getDataSourceId <em>Data Source Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.party.impl.PartyDataSourceImpl#getFromDate <em>From Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.party.impl.PartyDataSourceImpl#getComments <em>Comments</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.party.impl.PartyDataSourceImpl#isIsCreate <em>Is Create</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.party.impl.PartyDataSourceImpl#getVisitId <em>Visit Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.party.party.impl.PartyDataSourceImpl#getPartyId <em>Party Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.party.party.impl.PartyDataSourceImpl#getDataSourceId <em>Data Source Id</em>}</li>
  * </ul>
  *
  * @generated

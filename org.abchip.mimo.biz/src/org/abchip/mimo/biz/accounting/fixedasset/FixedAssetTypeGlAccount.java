@@ -23,15 +23,15 @@ import org.abchip.mimo.biz.party.party.Party;
  *   <li>{@link org.abchip.mimo.biz.accounting.fixedasset.FixedAssetTypeGlAccount#getFixedAssetTypeId <em>Fixed Asset Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.fixedasset.FixedAssetTypeGlAccount#getFixedAssetId <em>Fixed Asset Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.fixedasset.FixedAssetTypeGlAccount#getOrganizationPartyId <em>Organization Party Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.fixedasset.FixedAssetTypeGlAccount#getAssetGlAccountId <em>Asset Gl Account Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.fixedasset.FixedAssetTypeGlAccount#getAccDepGlAccountId <em>Acc Dep Gl Account Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.fixedasset.FixedAssetTypeGlAccount#getAssetGlAccountId <em>Asset Gl Account Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.fixedasset.FixedAssetTypeGlAccount#getDepGlAccountId <em>Dep Gl Account Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.fixedasset.FixedAssetTypeGlAccount#getProfitGlAccountId <em>Profit Gl Account Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.fixedasset.FixedAssetTypeGlAccount#getLossGlAccountId <em>Loss Gl Account Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.fixedasset.FixedAssetTypeGlAccount#getProfitGlAccountId <em>Profit Gl Account Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.accounting.fixedasset.FixedassetPackage#getFixedAssetTypeGlAccount()
- * @model
+ * @model annotation="mimo-ent-frame title='Gl Account Mapping For Fixed Asset Or Fixed Asset Types'"
  * @generated
  */
 public interface FixedAssetTypeGlAccount extends BizEntity {
@@ -47,6 +47,8 @@ public interface FixedAssetTypeGlAccount extends BizEntity {
 	 * @see #setAccDepGlAccountId(GlAccount)
 	 * @see org.abchip.mimo.biz.accounting.fixedasset.FixedassetPackage#getFixedAssetTypeGlAccount_AccDepGlAccountId()
 	 * @model keys="glAccountId"
+	 *        annotation="mimo-ent-slot help='The (credit) account for the accumulated depreciation'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	GlAccount getAccDepGlAccountId();
@@ -73,6 +75,8 @@ public interface FixedAssetTypeGlAccount extends BizEntity {
 	 * @see #setAssetGlAccountId(GlAccount)
 	 * @see org.abchip.mimo.biz.accounting.fixedasset.FixedassetPackage#getFixedAssetTypeGlAccount_AssetGlAccountId()
 	 * @model keys="glAccountId"
+	 *        annotation="mimo-ent-slot help='The (debit) account for the initial asset value (purchase cost)'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	GlAccount getAssetGlAccountId();
@@ -99,6 +103,8 @@ public interface FixedAssetTypeGlAccount extends BizEntity {
 	 * @see #setDepGlAccountId(GlAccount)
 	 * @see org.abchip.mimo.biz.accounting.fixedasset.FixedassetPackage#getFixedAssetTypeGlAccount_DepGlAccountId()
 	 * @model keys="glAccountId"
+	 *        annotation="mimo-ent-slot help='The (debit) account for the depreciation expense (matches the accDepGlAccountId)'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	GlAccount getDepGlAccountId();
@@ -125,6 +131,8 @@ public interface FixedAssetTypeGlAccount extends BizEntity {
 	 * @see #setLossGlAccountId(GlAccount)
 	 * @see org.abchip.mimo.biz.accounting.fixedasset.FixedassetPackage#getFixedAssetTypeGlAccount_LossGlAccountId()
 	 * @model keys="glAccountId"
+	 *        annotation="mimo-ent-slot help='The (debit) account for the eventual loss derived from the sale of the asset'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	GlAccount getLossGlAccountId();
@@ -150,7 +158,9 @@ public interface FixedAssetTypeGlAccount extends BizEntity {
 	 * @return the value of the '<em>Organization Party Id</em>' reference.
 	 * @see #setOrganizationPartyId(Party)
 	 * @see org.abchip.mimo.biz.accounting.fixedasset.FixedassetPackage#getFixedAssetTypeGlAccount_OrganizationPartyId()
-	 * @model keys="partyId"
+	 * @model keys="partyId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Party getOrganizationPartyId();
@@ -177,6 +187,8 @@ public interface FixedAssetTypeGlAccount extends BizEntity {
 	 * @see #setProfitGlAccountId(GlAccount)
 	 * @see org.abchip.mimo.biz.accounting.fixedasset.FixedassetPackage#getFixedAssetTypeGlAccount_ProfitGlAccountId()
 	 * @model keys="glAccountId"
+	 *        annotation="mimo-ent-slot help='The (credit) account for the eventual profit derived from the sale of the asset'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	GlAccount getProfitGlAccountId();
@@ -202,7 +214,9 @@ public interface FixedAssetTypeGlAccount extends BizEntity {
 	 * @return the value of the '<em>Fixed Asset Type Id</em>' reference.
 	 * @see #setFixedAssetTypeId(FixedAssetType)
 	 * @see org.abchip.mimo.biz.accounting.fixedasset.FixedassetPackage#getFixedAssetTypeGlAccount_FixedAssetTypeId()
-	 * @model keys="fixedAssetTypeId"
+	 * @model keys="fixedAssetTypeId" required="true"
+	 *        annotation="mimo-ent-slot key='true' help='The fixed asset type for the mappings. This field can be set to _NA_ in order to define a mapping for all types or for a specific asset (specified by the id in the fixedAssetId field).'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	FixedAssetType getFixedAssetTypeId();
@@ -228,7 +242,9 @@ public interface FixedAssetTypeGlAccount extends BizEntity {
 	 * @return the value of the '<em>Fixed Asset Id</em>' reference.
 	 * @see #setFixedAssetId(FixedAsset)
 	 * @see org.abchip.mimo.biz.accounting.fixedasset.FixedassetPackage#getFixedAssetTypeGlAccount_FixedAssetId()
-	 * @model keys="fixedAssetId"
+	 * @model keys="fixedAssetId" required="true"
+	 *        annotation="mimo-ent-slot key='true' help='The fixed asset id for the mappings. This field can be set to _NA_ in order to define a mapping for all assets of a given type (specified by the id in the fixedAssetTypeId field).'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	FixedAsset getFixedAssetId();

@@ -25,7 +25,7 @@ import org.abchip.mimo.biz.BizEntityType;
  * </ul>
  *
  * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderBlacklistType()
- * @model annotation="mimo-ent-frame formula='description'"
+ * @model annotation="mimo-ent-frame dictionary='OrderEntityLabels' formula='description'"
  * @generated
  */
 public interface OrderBlacklistType extends BizEntityType<OrderBlacklist> {
@@ -58,8 +58,7 @@ public interface OrderBlacklistType extends BizEntityType<OrderBlacklist> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='OrderBlacklist' route='orderBlacklistTypeId'"
 	 * @generated
@@ -79,7 +78,6 @@ public interface OrderBlacklistType extends BizEntityType<OrderBlacklist> {
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderBlacklistType_OrderBlacklistTypeId()
 	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getOrderBlacklistTypeId();

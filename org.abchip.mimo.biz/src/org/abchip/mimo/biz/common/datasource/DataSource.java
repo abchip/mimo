@@ -21,12 +21,12 @@ import org.abchip.mimo.biz.BizEntityTyped;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.common.datasource.DataSource#getDataSourceId <em>Data Source Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.common.datasource.DataSource#getDescription <em>Description</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.common.datasource.DataSource#getDataSourceTypeId <em>Data Source Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.common.datasource.DataSource#getDescription <em>Description</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.common.datasource.DatasourcePackage#getDataSource()
- * @model annotation="mimo-ent-frame formula='description'"
+ * @model annotation="mimo-ent-frame dictionary='CommonEntityLabels' formula='description'"
  * @generated
  */
 public interface DataSource extends BizEntityTyped<DataSourceType> {
@@ -43,7 +43,6 @@ public interface DataSource extends BizEntityTyped<DataSourceType> {
 	 * @see org.abchip.mimo.biz.common.datasource.DatasourcePackage#getDataSource_DataSourceId()
 	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getDataSourceId();
@@ -156,6 +155,7 @@ public interface DataSource extends BizEntityTyped<DataSourceType> {
 	 * @see #setDataSourceTypeId(DataSourceType)
 	 * @see org.abchip.mimo.biz.common.datasource.DatasourcePackage#getDataSource_DataSourceTypeId()
 	 * @model keys="dataSourceTypeId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	DataSourceType getDataSourceTypeId();

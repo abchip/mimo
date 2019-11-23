@@ -18,13 +18,13 @@ import org.abchip.mimo.biz.BizEntity;
  * The following features are supported:
  * </p>
  * <ul>
+ *   <li>{@link org.abchip.mimo.biz.order.requirement.RequirementTypeAttr#getRequirementTypeId <em>Requirement Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.requirement.RequirementTypeAttr#getAttrName <em>Attr Name</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.requirement.RequirementTypeAttr#getDescription <em>Description</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.requirement.RequirementTypeAttr#getRequirementTypeId <em>Requirement Type Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.order.requirement.RequirementPackage#getRequirementTypeAttr()
- * @model annotation="mimo-ent-frame formula='description'"
+ * @model annotation="mimo-ent-frame title='Requirement Type Attribute' formula='description'"
  * @generated
  */
 public interface RequirementTypeAttr extends BizEntity {
@@ -40,8 +40,8 @@ public interface RequirementTypeAttr extends BizEntity {
 	 * @see #setAttrName(String)
 	 * @see org.abchip.mimo.biz.order.requirement.RequirementPackage#getRequirementTypeAttr_AttrName()
 	 * @model required="true"
-	 *        annotation="mimo-ent-format type='id-long' length='60'"
 	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id-long' length='60'"
 	 * @generated
 	 */
 	String getAttrName();
@@ -93,7 +93,9 @@ public interface RequirementTypeAttr extends BizEntity {
 	 * @return the value of the '<em>Requirement Type Id</em>' reference.
 	 * @see #setRequirementTypeId(RequirementType)
 	 * @see org.abchip.mimo.biz.order.requirement.RequirementPackage#getRequirementTypeAttr_RequirementTypeId()
-	 * @model keys="requirementTypeId"
+	 * @model keys="requirementTypeId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	RequirementType getRequirementTypeId();

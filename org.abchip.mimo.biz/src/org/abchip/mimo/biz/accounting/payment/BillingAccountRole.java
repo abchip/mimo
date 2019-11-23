@@ -22,11 +22,11 @@ import org.abchip.mimo.biz.party.party.RoleType;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.accounting.payment.BillingAccountRole#getFromDate <em>From Date</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.payment.BillingAccountRole#getThruDate <em>Thru Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.BillingAccountRole#getBillingAccountId <em>Billing Account Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.BillingAccountRole#getPartyId <em>Party Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.BillingAccountRole#getRoleTypeId <em>Role Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.payment.BillingAccountRole#getFromDate <em>From Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.payment.BillingAccountRole#getThruDate <em>Thru Date</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getBillingAccountRole()
@@ -46,8 +46,8 @@ public interface BillingAccountRole extends BizEntity {
 	 * @see #setFromDate(Date)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getBillingAccountRole_FromDate()
 	 * @model required="true"
-	 *        annotation="mimo-ent-format type='date-time'"
 	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getFromDate();
@@ -73,7 +73,9 @@ public interface BillingAccountRole extends BizEntity {
 	 * @return the value of the '<em>Party Id</em>' reference.
 	 * @see #setPartyId(Party)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getBillingAccountRole_PartyId()
-	 * @model keys="partyId"
+	 * @model keys="partyId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Party getPartyId();
@@ -99,7 +101,9 @@ public interface BillingAccountRole extends BizEntity {
 	 * @return the value of the '<em>Role Type Id</em>' reference.
 	 * @see #setRoleTypeId(RoleType)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getBillingAccountRole_RoleTypeId()
-	 * @model keys="roleTypeId"
+	 * @model keys="roleTypeId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	RoleType getRoleTypeId();
@@ -151,7 +155,9 @@ public interface BillingAccountRole extends BizEntity {
 	 * @return the value of the '<em>Billing Account Id</em>' reference.
 	 * @see #setBillingAccountId(BillingAccount)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getBillingAccountRole_BillingAccountId()
-	 * @model keys="billingAccountId"
+	 * @model keys="billingAccountId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	BillingAccount getBillingAccountId();

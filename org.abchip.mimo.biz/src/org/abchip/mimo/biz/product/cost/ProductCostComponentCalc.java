@@ -21,16 +21,16 @@ import org.abchip.mimo.biz.product.product.Product;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.product.cost.ProductCostComponentCalc#getFromDate <em>From Date</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.cost.ProductCostComponentCalc#getSequenceNum <em>Sequence Num</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.cost.ProductCostComponentCalc#getThruDate <em>Thru Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.cost.ProductCostComponentCalc#getProductId <em>Product Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.cost.ProductCostComponentCalc#getCostComponentTypeId <em>Cost Component Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.cost.ProductCostComponentCalc#getFromDate <em>From Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.cost.ProductCostComponentCalc#getCostComponentCalcId <em>Cost Component Calc Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.cost.ProductCostComponentCalc#getSequenceNum <em>Sequence Num</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.cost.ProductCostComponentCalc#getThruDate <em>Thru Date</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.product.cost.CostPackage#getProductCostComponentCalc()
- * @model
+ * @model annotation="mimo-ent-frame title='Product Cost Calculation' dictionary='ProductEntityLabels'"
  * @generated
  */
 public interface ProductCostComponentCalc extends BizEntity {
@@ -46,8 +46,8 @@ public interface ProductCostComponentCalc extends BizEntity {
 	 * @see #setFromDate(Date)
 	 * @see org.abchip.mimo.biz.product.cost.CostPackage#getProductCostComponentCalc_FromDate()
 	 * @model required="true"
-	 *        annotation="mimo-ent-format type='date-time'"
 	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getFromDate();
@@ -73,7 +73,9 @@ public interface ProductCostComponentCalc extends BizEntity {
 	 * @return the value of the '<em>Product Id</em>' reference.
 	 * @see #setProductId(Product)
 	 * @see org.abchip.mimo.biz.product.cost.CostPackage#getProductCostComponentCalc_ProductId()
-	 * @model keys="productId"
+	 * @model keys="productId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Product getProductId();
@@ -151,7 +153,9 @@ public interface ProductCostComponentCalc extends BizEntity {
 	 * @return the value of the '<em>Cost Component Type Id</em>' reference.
 	 * @see #setCostComponentTypeId(CostComponentType)
 	 * @see org.abchip.mimo.biz.product.cost.CostPackage#getProductCostComponentCalc_CostComponentTypeId()
-	 * @model keys="costComponentTypeId"
+	 * @model keys="costComponentTypeId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	CostComponentType getCostComponentTypeId();
@@ -178,6 +182,7 @@ public interface ProductCostComponentCalc extends BizEntity {
 	 * @see #setCostComponentCalcId(CostComponentCalc)
 	 * @see org.abchip.mimo.biz.product.cost.CostPackage#getProductCostComponentCalc_CostComponentCalcId()
 	 * @model keys="costComponentCalcId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	CostComponentCalc getCostComponentCalcId();

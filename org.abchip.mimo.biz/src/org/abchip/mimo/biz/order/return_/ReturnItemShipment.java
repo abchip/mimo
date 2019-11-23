@@ -21,15 +21,15 @@ import org.abchip.mimo.biz.shipment.shipment.Shipment;
  * The following features are supported:
  * </p>
  * <ul>
+ *   <li>{@link org.abchip.mimo.biz.order.return_.ReturnItemShipment#getReturnId <em>Return Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.return_.ReturnItemShipment#getShipmentId <em>Shipment Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.return_.ReturnItemShipment#getReturnItemSeqId <em>Return Item Seq Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.return_.ReturnItemShipment#getShipmentItemSeqId <em>Shipment Item Seq Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.return_.ReturnItemShipment#getQuantity <em>Quantity</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.return_.ReturnItemShipment#getReturnId <em>Return Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.return_.ReturnItemShipment#getShipmentId <em>Shipment Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.order.return_.ReturnPackage#getReturnItemShipment()
- * @model
+ * @model annotation="mimo-ent-frame title='Return Item And Shipment Association'"
  * @generated
  */
 public interface ReturnItemShipment extends BizEntity {
@@ -70,7 +70,9 @@ public interface ReturnItemShipment extends BizEntity {
 	 * @return the value of the '<em>Return Id</em>' reference.
 	 * @see #setReturnId(ReturnHeader)
 	 * @see org.abchip.mimo.biz.order.return_.ReturnPackage#getReturnItemShipment_ReturnId()
-	 * @model keys="returnId"
+	 * @model keys="returnId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ReturnHeader getReturnId();
@@ -97,8 +99,8 @@ public interface ReturnItemShipment extends BizEntity {
 	 * @see #setReturnItemSeqId(String)
 	 * @see org.abchip.mimo.biz.order.return_.ReturnPackage#getReturnItemShipment_ReturnItemSeqId()
 	 * @model required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	String getReturnItemSeqId();
@@ -124,7 +126,9 @@ public interface ReturnItemShipment extends BizEntity {
 	 * @return the value of the '<em>Shipment Id</em>' reference.
 	 * @see #setShipmentId(Shipment)
 	 * @see org.abchip.mimo.biz.order.return_.ReturnPackage#getReturnItemShipment_ShipmentId()
-	 * @model keys="shipmentId"
+	 * @model keys="shipmentId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Shipment getShipmentId();
@@ -151,8 +155,8 @@ public interface ReturnItemShipment extends BizEntity {
 	 * @see #setShipmentItemSeqId(String)
 	 * @see org.abchip.mimo.biz.order.return_.ReturnPackage#getReturnItemShipment_ShipmentItemSeqId()
 	 * @model required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	String getShipmentItemSeqId();

@@ -35,44 +35,65 @@ import org.eclipse.emf.ecore.EClass;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductImpl#getProductId <em>Product Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductImpl#getAmountUomTypeId <em>Amount Uom Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductImpl#isAutoCreateKeywords <em>Auto Create Keywords</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductImpl#getBillOfMaterialLevel <em>Bill Of Material Level</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductImpl#getBrandName <em>Brand Name</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductImpl#getChargeShipping <em>Charge Shipping</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductImpl#getComments <em>Comments</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductImpl#getCommunicationEventProducts <em>Communication Event Products</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductImpl#getConfigId <em>Config Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductImpl#getCreatedByUserLogin <em>Created By User Login</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductImpl#getCreatedDate <em>Created Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductImpl#getDefaultShipmentBoxTypeId <em>Default Shipment Box Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductImpl#getDepthUomId <em>Depth Uom Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductImpl#getDescription <em>Description</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductImpl#getDetailImageUrl <em>Detail Image Url</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductImpl#getDetailScreen <em>Detail Screen</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductImpl#getDiameterUomId <em>Diameter Uom Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductImpl#getFacilityId <em>Facility Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductImpl#getFixedAmount <em>Fixed Amount</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductImpl#getHeightUomId <em>Height Uom Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductImpl#isInShippingBox <em>In Shipping Box</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductImpl#isIncludeInPromotions <em>Include In Promotions</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductImpl#getInternalName <em>Internal Name</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductImpl#getIntroductionDate <em>Introduction Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductImpl#getInventoryItemTypeId <em>Inventory Item Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductImpl#getInventoryMessage <em>Inventory Message</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductImpl#isIsVariant <em>Is Variant</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductImpl#isIsVirtual <em>Is Virtual</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductImpl#getLargeImageUrl <em>Large Image Url</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductImpl#getLastModifiedByUserLogin <em>Last Modified By User Login</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductImpl#getLastModifiedDate <em>Last Modified Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductImpl#getLongDescription <em>Long Description</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductImpl#getLotIdFilledIn <em>Lot Id Filled In</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductImpl#getMediumImageUrl <em>Medium Image Url</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductImpl#getOrderDecimalQuantity <em>Order Decimal Quantity</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductImpl#getOriginGeoId <em>Origin Geo Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductImpl#getOriginalImageUrl <em>Original Image Url</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductImpl#getPiecesIncluded <em>Pieces Included</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductImpl#getPriceDetailText <em>Price Detail Text</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductImpl#getPrimaryProductCategoryId <em>Primary Product Category Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductImpl#getProductAttributes <em>Product Attributes</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductImpl#getProductDepth <em>Product Depth</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductImpl#getProductDiameter <em>Product Diameter</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductImpl#getProductFacilities <em>Product Facilities</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductImpl#getProductGeos <em>Product Geos</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductImpl#getProductHeight <em>Product Height</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductImpl#getProductMaints <em>Product Maints</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductImpl#getProductMeters <em>Product Meters</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductImpl#getProductName <em>Product Name</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductImpl#getProductRating <em>Product Rating</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductImpl#getProductTypeId <em>Product Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductImpl#getProductWeight <em>Product Weight</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductImpl#getProductWidth <em>Product Width</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductImpl#getQuantityIncluded <em>Quantity Included</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductImpl#getQuantityUomId <em>Quantity Uom Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductImpl#getRatingTypeEnum <em>Rating Type Enum</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductImpl#getReleaseDate <em>Release Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductImpl#isRequireAmount <em>Require Amount</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductImpl#isRequireInventory <em>Require Inventory</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductImpl#getRequirementMethodEnumId <em>Requirement Method Enum Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductImpl#getReserv2ndPPPerc <em>Reserv2nd PP Perc</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductImpl#getReservMaxPersons <em>Reserv Max Persons</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductImpl#getReservNthPPPerc <em>Reserv Nth PP Perc</em>}</li>
@@ -86,30 +107,9 @@ import org.eclipse.emf.ecore.EClass;
  *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductImpl#getSmallImageUrl <em>Small Image Url</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductImpl#getSupportDiscontinuationDate <em>Support Discontinuation Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductImpl#isTaxable <em>Taxable</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductImpl#getProductTypeId <em>Product Type Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductImpl#getPrimaryProductCategoryId <em>Primary Product Category Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductImpl#getFacilityId <em>Facility Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductImpl#getQuantityUomId <em>Quantity Uom Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductImpl#getAmountUomTypeId <em>Amount Uom Type Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductImpl#getWeightUomId <em>Weight Uom Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductImpl#getHeightUomId <em>Height Uom Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductImpl#getWidthUomId <em>Width Uom Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductImpl#getDepthUomId <em>Depth Uom Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductImpl#getDiameterUomId <em>Diameter Uom Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductImpl#getVirtualVariantMethodEnum <em>Virtual Variant Method Enum</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductImpl#getRatingTypeEnum <em>Rating Type Enum</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductImpl#getRequirementMethodEnumId <em>Requirement Method Enum Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductImpl#getOriginGeoId <em>Origin Geo Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductImpl#getCreatedByUserLogin <em>Created By User Login</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductImpl#getLastModifiedByUserLogin <em>Last Modified By User Login</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductImpl#getDefaultShipmentBoxTypeId <em>Default Shipment Box Type Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductImpl#getInventoryItemTypeId <em>Inventory Item Type Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductImpl#getCommunicationEventProducts <em>Communication Event Products</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductImpl#getProductAttributes <em>Product Attributes</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductImpl#getProductFacilities <em>Product Facilities</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductImpl#getProductGeos <em>Product Geos</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductImpl#getProductMaints <em>Product Maints</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductImpl#getProductMeters <em>Product Meters</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductImpl#getWeightUomId <em>Weight Uom Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductImpl#getWidthUomId <em>Width Uom Id</em>}</li>
  * </ul>
  *
  * @generated

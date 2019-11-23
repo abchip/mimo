@@ -19,13 +19,13 @@ import org.abchip.mimo.biz.webapp.website.WebSite;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.content.website.WebAnalyticsConfig#getWebAnalyticsCode <em>Web Analytics Code</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.website.WebAnalyticsConfig#getWebAnalyticsTypeId <em>Web Analytics Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.website.WebAnalyticsConfig#getWebSiteId <em>Web Site Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.content.website.WebAnalyticsConfig#getWebAnalyticsCode <em>Web Analytics Code</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.content.website.WebsitePackage#getWebAnalyticsConfig()
- * @model
+ * @model annotation="mimo-ent-frame title='Web Analytics Configuration'"
  * @generated
  */
 public interface WebAnalyticsConfig extends BizEntity {
@@ -40,7 +40,8 @@ public interface WebAnalyticsConfig extends BizEntity {
 	 * @return the value of the '<em>Web Analytics Code</em>' attribute.
 	 * @see #setWebAnalyticsCode(String)
 	 * @see org.abchip.mimo.biz.content.website.WebsitePackage#getWebAnalyticsConfig_WebAnalyticsCode()
-	 * @model annotation="mimo-ent-format type='very-long'"
+	 * @model annotation="mimo-ent-slot help='copy in here the analitics javascript code without the beginning- and end&lt;script&gt; tags'"
+	 *        annotation="mimo-ent-format type='very-long'"
 	 * @generated
 	 */
 	String getWebAnalyticsCode();
@@ -66,7 +67,9 @@ public interface WebAnalyticsConfig extends BizEntity {
 	 * @return the value of the '<em>Web Analytics Type Id</em>' reference.
 	 * @see #setWebAnalyticsTypeId(WebAnalyticsType)
 	 * @see org.abchip.mimo.biz.content.website.WebsitePackage#getWebAnalyticsConfig_WebAnalyticsTypeId()
-	 * @model keys="webAnalyticsTypeId"
+	 * @model keys="webAnalyticsTypeId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	WebAnalyticsType getWebAnalyticsTypeId();
@@ -92,7 +95,9 @@ public interface WebAnalyticsConfig extends BizEntity {
 	 * @return the value of the '<em>Web Site Id</em>' reference.
 	 * @see #setWebSiteId(WebSite)
 	 * @see org.abchip.mimo.biz.content.website.WebsitePackage#getWebAnalyticsConfig_WebSiteId()
-	 * @model keys="webSiteId"
+	 * @model keys="webSiteId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	WebSite getWebSiteId();

@@ -26,7 +26,7 @@ import org.abchip.mimo.biz.BizEntity;
  * </ul>
  *
  * @see org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage#getWorkEffortPurposeType()
- * @model annotation="mimo-ent-frame formula='description'"
+ * @model annotation="mimo-ent-frame dictionary='WorkEffortEntityLabels' formula='description'"
  * @generated
  */
 public interface WorkEffortPurposeType extends BizEntity {
@@ -68,6 +68,7 @@ public interface WorkEffortPurposeType extends BizEntity {
 	 * @see #setParentTypeId(WorkEffortPurposeType)
 	 * @see org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage#getWorkEffortPurposeType_ParentTypeId()
 	 * @model keys="workEffortPurposeTypeId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	WorkEffortPurposeType getParentTypeId();
@@ -115,7 +116,6 @@ public interface WorkEffortPurposeType extends BizEntity {
 	 * @see org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage#getWorkEffortPurposeType_WorkEffortPurposeTypeId()
 	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getWorkEffortPurposeTypeId();

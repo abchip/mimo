@@ -20,15 +20,15 @@ import org.abchip.mimo.biz.BizEntity;
  * The following features are supported:
  * </p>
  * <ul>
+ *   <li>{@link org.abchip.mimo.biz.product.feature.ProductFeatureGroupAppl#getProductFeatureGroupId <em>Product Feature Group Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.feature.ProductFeatureGroupAppl#getProductFeatureId <em>Product Feature Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.feature.ProductFeatureGroupAppl#getFromDate <em>From Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.feature.ProductFeatureGroupAppl#getSequenceNum <em>Sequence Num</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.feature.ProductFeatureGroupAppl#getThruDate <em>Thru Date</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.feature.ProductFeatureGroupAppl#getProductFeatureGroupId <em>Product Feature Group Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.feature.ProductFeatureGroupAppl#getProductFeatureId <em>Product Feature Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.product.feature.FeaturePackage#getProductFeatureGroupAppl()
- * @model
+ * @model annotation="mimo-ent-frame title='Product Feature Group Applicability' dictionary='ProductEntityLabels'"
  * @generated
  */
 public interface ProductFeatureGroupAppl extends BizEntity {
@@ -44,8 +44,8 @@ public interface ProductFeatureGroupAppl extends BizEntity {
 	 * @see #setFromDate(Date)
 	 * @see org.abchip.mimo.biz.product.feature.FeaturePackage#getProductFeatureGroupAppl_FromDate()
 	 * @model required="true"
-	 *        annotation="mimo-ent-format type='date-time'"
 	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getFromDate();
@@ -123,7 +123,9 @@ public interface ProductFeatureGroupAppl extends BizEntity {
 	 * @return the value of the '<em>Product Feature Group Id</em>' reference.
 	 * @see #setProductFeatureGroupId(ProductFeatureGroup)
 	 * @see org.abchip.mimo.biz.product.feature.FeaturePackage#getProductFeatureGroupAppl_ProductFeatureGroupId()
-	 * @model keys="productFeatureGroupId"
+	 * @model keys="productFeatureGroupId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ProductFeatureGroup getProductFeatureGroupId();
@@ -149,7 +151,9 @@ public interface ProductFeatureGroupAppl extends BizEntity {
 	 * @return the value of the '<em>Product Feature Id</em>' reference.
 	 * @see #setProductFeatureId(ProductFeature)
 	 * @see org.abchip.mimo.biz.product.feature.FeaturePackage#getProductFeatureGroupAppl_ProductFeatureId()
-	 * @model keys="productFeatureId"
+	 * @model keys="productFeatureId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ProductFeature getProductFeatureId();

@@ -23,15 +23,15 @@ import org.abchip.mimo.biz.webapp.website.WebSite;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.product.subscription.SubscriptionResource#getSubscriptionResourceId <em>Subscription Resource Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.subscription.SubscriptionResource#getDescription <em>Description</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.subscription.SubscriptionResource#getServiceNameOnExpiry <em>Service Name On Expiry</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.subscription.SubscriptionResource#getParentResourceId <em>Parent Resource Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.subscription.SubscriptionResource#getContentId <em>Content Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.subscription.SubscriptionResource#getDescription <em>Description</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.subscription.SubscriptionResource#getParentResourceId <em>Parent Resource Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.subscription.SubscriptionResource#getServiceNameOnExpiry <em>Service Name On Expiry</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.subscription.SubscriptionResource#getWebSiteId <em>Web Site Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.product.subscription.SubscriptionPackage#getSubscriptionResource()
- * @model annotation="mimo-ent-frame formula='description'"
+ * @model annotation="mimo-ent-frame dictionary='ProductEntityLabels' formula='description'"
  * @generated
  */
 public interface SubscriptionResource extends BizEntity {
@@ -47,6 +47,8 @@ public interface SubscriptionResource extends BizEntity {
 	 * @see #setContentId(Content)
 	 * @see org.abchip.mimo.biz.product.subscription.SubscriptionPackage#getSubscriptionResource_ContentId()
 	 * @model keys="contentId"
+	 *        annotation="mimo-ent-slot help='Optional (use if applicable) ID of a Content record that this would represent a subscription to.'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Content getContentId();
@@ -98,7 +100,8 @@ public interface SubscriptionResource extends BizEntity {
 	 * @return the value of the '<em>Service Name On Expiry</em>' attribute.
 	 * @see #setServiceNameOnExpiry(String)
 	 * @see org.abchip.mimo.biz.product.subscription.SubscriptionPackage#getSubscriptionResource_ServiceNameOnExpiry()
-	 * @model annotation="mimo-ent-format type='long-varchar' length='255'"
+	 * @model annotation="mimo-ent-slot help='Name of service which will run on subscription expiration.'"
+	 *        annotation="mimo-ent-format type='long-varchar' length='255'"
 	 * @generated
 	 */
 	String getServiceNameOnExpiry();
@@ -125,6 +128,8 @@ public interface SubscriptionResource extends BizEntity {
 	 * @see #setWebSiteId(WebSite)
 	 * @see org.abchip.mimo.biz.product.subscription.SubscriptionPackage#getSubscriptionResource_WebSiteId()
 	 * @model keys="webSiteId"
+	 *        annotation="mimo-ent-slot help='Optional (use if applicable) ID of a WebSite record that this would represent a subscription to.'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	WebSite getWebSiteId();
@@ -171,6 +176,7 @@ public interface SubscriptionResource extends BizEntity {
 	 * @see #setParentResourceId(SubscriptionResource)
 	 * @see org.abchip.mimo.biz.product.subscription.SubscriptionPackage#getSubscriptionResource_ParentResourceId()
 	 * @model keys="subscriptionResourceId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	SubscriptionResource getParentResourceId();
@@ -198,7 +204,6 @@ public interface SubscriptionResource extends BizEntity {
 	 * @see org.abchip.mimo.biz.product.subscription.SubscriptionPackage#getSubscriptionResource_SubscriptionResourceId()
 	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getSubscriptionResourceId();

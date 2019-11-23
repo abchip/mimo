@@ -26,9 +26,9 @@ import org.eclipse.emf.ecore.EClass;
  *   <li>{@link org.abchip.mimo.biz.common.uom.impl.UomImpl#getUomId <em>Uom Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.common.uom.impl.UomImpl#getAbbreviation <em>Abbreviation</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.common.uom.impl.UomImpl#getDescription <em>Description</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.common.uom.impl.UomImpl#getMainUomConversions <em>Main Uom Conversions</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.common.uom.impl.UomImpl#getNumericCode <em>Numeric Code</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.common.uom.impl.UomImpl#getUomTypeId <em>Uom Type Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.common.uom.impl.UomImpl#getMainUomConversions <em>Main Uom Conversions</em>}</li>
  * </ul>
  *
  * @generated

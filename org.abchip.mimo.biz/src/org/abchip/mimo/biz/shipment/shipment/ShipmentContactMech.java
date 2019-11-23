@@ -20,12 +20,12 @@ import org.abchip.mimo.biz.party.contact.ContactMech;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.shipment.shipment.ShipmentContactMech#getShipmentId <em>Shipment Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.shipment.shipment.ShipmentContactMech#getContactMechId <em>Contact Mech Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.shipment.shipment.ShipmentContactMech#getShipmentContactMechTypeId <em>Shipment Contact Mech Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.shipment.shipment.ShipmentContactMech#getContactMechId <em>Contact Mech Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipmentContactMech()
- * @model
+ * @model annotation="mimo-ent-frame title='Shipment Contact Mechanism'"
  * @generated
  */
 public interface ShipmentContactMech extends BizEntityTyped<ShipmentContactMechType> {
@@ -41,6 +41,7 @@ public interface ShipmentContactMech extends BizEntityTyped<ShipmentContactMechT
 	 * @see #setContactMechId(ContactMech)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipmentContactMech_ContactMechId()
 	 * @model keys="contactMechId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ContactMech getContactMechId();
@@ -66,7 +67,9 @@ public interface ShipmentContactMech extends BizEntityTyped<ShipmentContactMechT
 	 * @return the value of the '<em>Shipment Contact Mech Type Id</em>' reference.
 	 * @see #setShipmentContactMechTypeId(ShipmentContactMechType)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipmentContactMech_ShipmentContactMechTypeId()
-	 * @model keys="shipmentContactMechTypeId"
+	 * @model keys="shipmentContactMechTypeId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ShipmentContactMechType getShipmentContactMechTypeId();
@@ -92,7 +95,9 @@ public interface ShipmentContactMech extends BizEntityTyped<ShipmentContactMechT
 	 * @return the value of the '<em>Shipment Id</em>' reference.
 	 * @see #setShipmentId(Shipment)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipmentContactMech_ShipmentId()
-	 * @model keys="shipmentId"
+	 * @model keys="shipmentId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Shipment getShipmentId();

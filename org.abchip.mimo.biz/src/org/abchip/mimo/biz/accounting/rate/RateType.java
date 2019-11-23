@@ -25,7 +25,7 @@ import org.abchip.mimo.biz.BizEntity;
  * </ul>
  *
  * @see org.abchip.mimo.biz.accounting.rate.RatePackage#getRateType()
- * @model annotation="mimo-ent-frame formula='description'"
+ * @model annotation="mimo-ent-frame dictionary='AccountingEntityLabels' formula='description'"
  * @generated
  */
 public interface RateType extends BizEntity {
@@ -78,7 +78,6 @@ public interface RateType extends BizEntity {
 	 * @see org.abchip.mimo.biz.accounting.rate.RatePackage#getRateType_RateTypeId()
 	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getRateTypeId();

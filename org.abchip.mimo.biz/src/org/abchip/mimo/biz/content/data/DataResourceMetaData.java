@@ -19,14 +19,14 @@ import org.abchip.mimo.biz.common.datasource.DataSource;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.content.data.DataResourceMetaData#getMetaDataValue <em>Meta Data Value</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.data.DataResourceMetaData#getDataResourceId <em>Data Resource Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.data.DataResourceMetaData#getMetaDataPredicateId <em>Meta Data Predicate Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.data.DataResourceMetaData#getDataSourceId <em>Data Source Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.content.data.DataResourceMetaData#getMetaDataValue <em>Meta Data Value</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.content.data.DataPackage#getDataResourceMetaData()
- * @model
+ * @model annotation="mimo-ent-frame title='Data Resource Meta-Data Predicate'"
  * @generated
  */
 public interface DataResourceMetaData extends BizEntity {
@@ -41,7 +41,9 @@ public interface DataResourceMetaData extends BizEntity {
 	 * @return the value of the '<em>Data Resource Id</em>' reference.
 	 * @see #setDataResourceId(DataResource)
 	 * @see org.abchip.mimo.biz.content.data.DataPackage#getDataResourceMetaData_DataResourceId()
-	 * @model keys="dataResourceId"
+	 * @model keys="dataResourceId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	DataResource getDataResourceId();
@@ -68,6 +70,7 @@ public interface DataResourceMetaData extends BizEntity {
 	 * @see #setDataSourceId(DataSource)
 	 * @see org.abchip.mimo.biz.content.data.DataPackage#getDataResourceMetaData_DataSourceId()
 	 * @model keys="dataSourceId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	DataSource getDataSourceId();
@@ -93,7 +96,9 @@ public interface DataResourceMetaData extends BizEntity {
 	 * @return the value of the '<em>Meta Data Predicate Id</em>' reference.
 	 * @see #setMetaDataPredicateId(MetaDataPredicate)
 	 * @see org.abchip.mimo.biz.content.data.DataPackage#getDataResourceMetaData_MetaDataPredicateId()
-	 * @model keys="metaDataPredicateId"
+	 * @model keys="metaDataPredicateId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	MetaDataPredicate getMetaDataPredicateId();

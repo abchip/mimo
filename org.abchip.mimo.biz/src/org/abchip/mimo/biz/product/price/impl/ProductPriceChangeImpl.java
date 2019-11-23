@@ -26,6 +26,7 @@ import org.eclipse.emf.ecore.EClass;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.product.price.impl.ProductPriceChangeImpl#getProductPriceChangeId <em>Product Price Change Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.price.impl.ProductPriceChangeImpl#getChangedByUserLogin <em>Changed By User Login</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.price.impl.ProductPriceChangeImpl#getChangedDate <em>Changed Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.price.impl.ProductPriceChangeImpl#getCurrencyUomId <em>Currency Uom Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.price.impl.ProductPriceChangeImpl#getFromDate <em>From Date</em>}</li>
@@ -36,7 +37,6 @@ import org.eclipse.emf.ecore.EClass;
  *   <li>{@link org.abchip.mimo.biz.product.price.impl.ProductPriceChangeImpl#getProductPriceTypeId <em>Product Price Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.price.impl.ProductPriceChangeImpl#getProductStoreGroupId <em>Product Store Group Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.price.impl.ProductPriceChangeImpl#getThruDate <em>Thru Date</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.price.impl.ProductPriceChangeImpl#getChangedByUserLogin <em>Changed By User Login</em>}</li>
  * </ul>
  *
  * @generated

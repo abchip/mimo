@@ -27,22 +27,22 @@ import org.abchip.mimo.biz.product.store.ProductStore;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.order.quote.Quote#getQuoteId <em>Quote Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.quote.Quote#getCurrencyUomId <em>Currency Uom Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.quote.Quote#getDescription <em>Description</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.quote.Quote#getIssueDate <em>Issue Date</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.quote.Quote#getQuoteName <em>Quote Name</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.quote.Quote#getValidFromDate <em>Valid From Date</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.quote.Quote#getValidThruDate <em>Valid Thru Date</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.quote.Quote#getQuoteTypeId <em>Quote Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.quote.Quote#getPartyId <em>Party Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.quote.Quote#getStatusId <em>Status Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.quote.Quote#getCurrencyUomId <em>Currency Uom Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.quote.Quote#getProductStoreId <em>Product Store Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.quote.Quote#getSalesChannelEnumId <em>Sales Channel Enum Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.quote.Quote#getQuoteAttributes <em>Quote Attributes</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.quote.Quote#getQuoteCoefficients <em>Quote Coefficients</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.quote.Quote#getQuoteItems <em>Quote Items</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.quote.Quote#getQuoteName <em>Quote Name</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.quote.Quote#getQuoteNotes <em>Quote Notes</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.quote.Quote#getQuoteTypeId <em>Quote Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.quote.Quote#getQuoteWorkEfforts <em>Quote Work Efforts</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.quote.Quote#getSalesChannelEnumId <em>Sales Channel Enum Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.quote.Quote#getStatusId <em>Status Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.quote.Quote#getValidFromDate <em>Valid From Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.quote.Quote#getValidThruDate <em>Valid Thru Date</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.order.quote.QuotePackage#getQuote()
@@ -62,6 +62,7 @@ public interface Quote extends BizEntityTyped<QuoteType> {
 	 * @see #setCurrencyUomId(Uom)
 	 * @see org.abchip.mimo.biz.order.quote.QuotePackage#getQuote_CurrencyUomId()
 	 * @model keys="uomId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Uom getCurrencyUomId();
@@ -140,6 +141,7 @@ public interface Quote extends BizEntityTyped<QuoteType> {
 	 * @see #setPartyId(Party)
 	 * @see org.abchip.mimo.biz.order.quote.QuotePackage#getQuote_PartyId()
 	 * @model keys="partyId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Party getPartyId();
@@ -166,6 +168,7 @@ public interface Quote extends BizEntityTyped<QuoteType> {
 	 * @see #setProductStoreId(ProductStore)
 	 * @see org.abchip.mimo.biz.order.quote.QuotePackage#getQuote_ProductStoreId()
 	 * @model keys="productStoreId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ProductStore getProductStoreId();
@@ -193,7 +196,6 @@ public interface Quote extends BizEntityTyped<QuoteType> {
 	 * @see org.abchip.mimo.biz.order.quote.QuotePackage#getQuote_QuoteId()
 	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getQuoteId();
@@ -246,6 +248,7 @@ public interface Quote extends BizEntityTyped<QuoteType> {
 	 * @see #setQuoteTypeId(QuoteType)
 	 * @see org.abchip.mimo.biz.order.quote.QuotePackage#getQuote_QuoteTypeId()
 	 * @model keys="quoteTypeId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	QuoteType getQuoteTypeId();
@@ -272,6 +275,7 @@ public interface Quote extends BizEntityTyped<QuoteType> {
 	 * @see #setSalesChannelEnumId(Enumeration)
 	 * @see org.abchip.mimo.biz.order.quote.QuotePackage#getQuote_SalesChannelEnumId()
 	 * @model keys="enumId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Enumeration getSalesChannelEnumId();
@@ -298,6 +302,7 @@ public interface Quote extends BizEntityTyped<QuoteType> {
 	 * @see #setStatusId(StatusItem)
 	 * @see org.abchip.mimo.biz.order.quote.QuotePackage#getQuote_StatusId()
 	 * @model keys="statusId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	StatusItem getStatusId();
@@ -375,8 +380,7 @@ public interface Quote extends BizEntityTyped<QuoteType> {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Quote Attributes</em>' attribute list.
 	 * @see org.abchip.mimo.biz.order.quote.QuotePackage#getQuote_QuoteAttributes()
-	 * @model required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='QuoteAttribute'"
 	 * @generated
@@ -394,8 +398,7 @@ public interface Quote extends BizEntityTyped<QuoteType> {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Quote Coefficients</em>' attribute list.
 	 * @see org.abchip.mimo.biz.order.quote.QuotePackage#getQuote_QuoteCoefficients()
-	 * @model required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='QuoteCoefficient'"
 	 * @generated
@@ -413,8 +416,7 @@ public interface Quote extends BizEntityTyped<QuoteType> {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Quote Items</em>' attribute list.
 	 * @see org.abchip.mimo.biz.order.quote.QuotePackage#getQuote_QuoteItems()
-	 * @model required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='QuoteItem'"
 	 * @generated
@@ -432,8 +434,7 @@ public interface Quote extends BizEntityTyped<QuoteType> {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Quote Notes</em>' attribute list.
 	 * @see org.abchip.mimo.biz.order.quote.QuotePackage#getQuote_QuoteNotes()
-	 * @model required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='QuoteNote'"
 	 * @generated
@@ -451,8 +452,7 @@ public interface Quote extends BizEntityTyped<QuoteType> {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Quote Work Efforts</em>' attribute list.
 	 * @see org.abchip.mimo.biz.order.quote.QuotePackage#getQuote_QuoteWorkEfforts()
-	 * @model required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='QuoteWorkEffort'"
 	 * @generated
@@ -472,8 +472,7 @@ public interface Quote extends BizEntityTyped<QuoteType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='SalesOpportunityQuote' route='quoteId'"
 	 * @generated

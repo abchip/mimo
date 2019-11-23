@@ -19,12 +19,12 @@ import org.abchip.mimo.biz.BizEntity;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.accounting.ledger.GlAccountGroupMember#getGlAccountId <em>Gl Account Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.ledger.GlAccountGroupMember#getGlAccountGroupId <em>Gl Account Group Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.ledger.GlAccountGroupMember#getGlAccountGroupTypeId <em>Gl Account Group Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.ledger.GlAccountGroupMember#getGlAccountGroupId <em>Gl Account Group Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.accounting.ledger.LedgerPackage#getGlAccountGroupMember()
- * @model
+ * @model annotation="mimo-ent-frame title='General Ledger Account Group Member'"
  * @generated
  */
 public interface GlAccountGroupMember extends BizEntity {
@@ -39,7 +39,9 @@ public interface GlAccountGroupMember extends BizEntity {
 	 * @return the value of the '<em>Gl Account Id</em>' reference.
 	 * @see #setGlAccountId(GlAccount)
 	 * @see org.abchip.mimo.biz.accounting.ledger.LedgerPackage#getGlAccountGroupMember_GlAccountId()
-	 * @model keys="glAccountId"
+	 * @model keys="glAccountId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	GlAccount getGlAccountId();
@@ -66,6 +68,7 @@ public interface GlAccountGroupMember extends BizEntity {
 	 * @see #setGlAccountGroupId(GlAccountGroup)
 	 * @see org.abchip.mimo.biz.accounting.ledger.LedgerPackage#getGlAccountGroupMember_GlAccountGroupId()
 	 * @model keys="glAccountGroupId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	GlAccountGroup getGlAccountGroupId();
@@ -91,7 +94,9 @@ public interface GlAccountGroupMember extends BizEntity {
 	 * @return the value of the '<em>Gl Account Group Type Id</em>' reference.
 	 * @see #setGlAccountGroupTypeId(GlAccountGroupType)
 	 * @see org.abchip.mimo.biz.accounting.ledger.LedgerPackage#getGlAccountGroupMember_GlAccountGroupTypeId()
-	 * @model keys="glAccountGroupTypeId"
+	 * @model keys="glAccountGroupTypeId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	GlAccountGroupType getGlAccountGroupTypeId();

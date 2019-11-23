@@ -23,16 +23,16 @@ import org.abchip.mimo.biz.common.uom.Uom;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.accounting.fixedasset.FixedAssetStdCost#getFromDate <em>From Date</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.fixedasset.FixedAssetStdCost#getAmount <em>Amount</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.fixedasset.FixedAssetStdCost#getThruDate <em>Thru Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.fixedasset.FixedAssetStdCost#getFixedAssetId <em>Fixed Asset Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.fixedasset.FixedAssetStdCost#getFixedAssetStdCostTypeId <em>Fixed Asset Std Cost Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.fixedasset.FixedAssetStdCost#getFromDate <em>From Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.fixedasset.FixedAssetStdCost#getAmount <em>Amount</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.fixedasset.FixedAssetStdCost#getAmountUomId <em>Amount Uom Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.fixedasset.FixedAssetStdCost#getThruDate <em>Thru Date</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.accounting.fixedasset.FixedassetPackage#getFixedAssetStdCost()
- * @model
+ * @model annotation="mimo-ent-frame title='Fixed Asset Standard Cost'"
  * @generated
  */
 public interface FixedAssetStdCost extends BizEntityTyped<FixedAssetStdCostType> {
@@ -74,6 +74,7 @@ public interface FixedAssetStdCost extends BizEntityTyped<FixedAssetStdCostType>
 	 * @see #setAmountUomId(Uom)
 	 * @see org.abchip.mimo.biz.accounting.fixedasset.FixedassetPackage#getFixedAssetStdCost_AmountUomId()
 	 * @model keys="uomId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Uom getAmountUomId();
@@ -100,8 +101,8 @@ public interface FixedAssetStdCost extends BizEntityTyped<FixedAssetStdCostType>
 	 * @see #setFromDate(Date)
 	 * @see org.abchip.mimo.biz.accounting.fixedasset.FixedassetPackage#getFixedAssetStdCost_FromDate()
 	 * @model required="true"
-	 *        annotation="mimo-ent-format type='date-time'"
 	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getFromDate();
@@ -153,7 +154,9 @@ public interface FixedAssetStdCost extends BizEntityTyped<FixedAssetStdCostType>
 	 * @return the value of the '<em>Fixed Asset Id</em>' reference.
 	 * @see #setFixedAssetId(FixedAsset)
 	 * @see org.abchip.mimo.biz.accounting.fixedasset.FixedassetPackage#getFixedAssetStdCost_FixedAssetId()
-	 * @model keys="fixedAssetId"
+	 * @model keys="fixedAssetId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	FixedAsset getFixedAssetId();
@@ -179,7 +182,9 @@ public interface FixedAssetStdCost extends BizEntityTyped<FixedAssetStdCostType>
 	 * @return the value of the '<em>Fixed Asset Std Cost Type Id</em>' reference.
 	 * @see #setFixedAssetStdCostTypeId(FixedAssetStdCostType)
 	 * @see org.abchip.mimo.biz.accounting.fixedasset.FixedassetPackage#getFixedAssetStdCost_FixedAssetStdCostTypeId()
-	 * @model keys="fixedAssetStdCostTypeId"
+	 * @model keys="fixedAssetStdCostTypeId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	FixedAssetStdCostType getFixedAssetStdCostTypeId();

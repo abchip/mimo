@@ -27,20 +27,20 @@ import org.abchip.mimo.biz.security.login.UserLogin;
  *   <li>{@link org.abchip.mimo.biz.marketing.contact.ContactList#getContactListId <em>Contact List Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.marketing.contact.ContactList#getComments <em>Comments</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.marketing.contact.ContactList#getContactListName <em>Contact List Name</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.marketing.contact.ContactList#getContactListTypeId <em>Contact List Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.marketing.contact.ContactList#getContactMechTypeId <em>Contact Mech Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.marketing.contact.ContactList#getCreatedByUserLogin <em>Created By User Login</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.marketing.contact.ContactList#getDescription <em>Description</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.marketing.contact.ContactList#isIsPublic <em>Is Public</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.marketing.contact.ContactList#getLastModifiedByUserLogin <em>Last Modified By User Login</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.marketing.contact.ContactList#getMarketingCampaignId <em>Marketing Campaign Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.marketing.contact.ContactList#getOptOutScreen <em>Opt Out Screen</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.marketing.contact.ContactList#getOwnerPartyId <em>Owner Party Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.marketing.contact.ContactList#isSingleUse <em>Single Use</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.marketing.contact.ContactList#getVerifyEmailFrom <em>Verify Email From</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.marketing.contact.ContactList#getVerifyEmailScreen <em>Verify Email Screen</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.marketing.contact.ContactList#getVerifyEmailSubject <em>Verify Email Subject</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.marketing.contact.ContactList#getVerifyEmailWebSiteId <em>Verify Email Web Site Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.marketing.contact.ContactList#getMarketingCampaignId <em>Marketing Campaign Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.marketing.contact.ContactList#getContactListTypeId <em>Contact List Type Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.marketing.contact.ContactList#getContactMechTypeId <em>Contact Mech Type Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.marketing.contact.ContactList#getCreatedByUserLogin <em>Created By User Login</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.marketing.contact.ContactList#getLastModifiedByUserLogin <em>Last Modified By User Login</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.marketing.contact.ContactList#getOwnerPartyId <em>Owner Party Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.marketing.contact.ContactPackage#getContactList()
@@ -87,7 +87,6 @@ public interface ContactList extends BizEntityTyped<ContactListType> {
 	 * @see org.abchip.mimo.biz.marketing.contact.ContactPackage#getContactList_ContactListId()
 	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getContactListId();
@@ -140,6 +139,7 @@ public interface ContactList extends BizEntityTyped<ContactListType> {
 	 * @see #setContactListTypeId(ContactListType)
 	 * @see org.abchip.mimo.biz.marketing.contact.ContactPackage#getContactList_ContactListTypeId()
 	 * @model keys="contactListTypeId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ContactListType getContactListTypeId();
@@ -166,6 +166,7 @@ public interface ContactList extends BizEntityTyped<ContactListType> {
 	 * @see #setContactMechTypeId(ContactMechType)
 	 * @see org.abchip.mimo.biz.marketing.contact.ContactPackage#getContactList_ContactMechTypeId()
 	 * @model keys="contactMechTypeId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ContactMechType getContactMechTypeId();
@@ -192,6 +193,7 @@ public interface ContactList extends BizEntityTyped<ContactListType> {
 	 * @see #setCreatedByUserLogin(UserLogin)
 	 * @see org.abchip.mimo.biz.marketing.contact.ContactPackage#getContactList_CreatedByUserLogin()
 	 * @model keys="userLoginId"
+	 *        annotation="mimo-ent-format type='id-vlong' length='255'"
 	 * @generated
 	 */
 	UserLogin getCreatedByUserLogin();
@@ -270,6 +272,7 @@ public interface ContactList extends BizEntityTyped<ContactListType> {
 	 * @see #setLastModifiedByUserLogin(UserLogin)
 	 * @see org.abchip.mimo.biz.marketing.contact.ContactPackage#getContactList_LastModifiedByUserLogin()
 	 * @model keys="userLoginId"
+	 *        annotation="mimo-ent-format type='id-vlong' length='255'"
 	 * @generated
 	 */
 	UserLogin getLastModifiedByUserLogin();
@@ -296,6 +299,7 @@ public interface ContactList extends BizEntityTyped<ContactListType> {
 	 * @see #setMarketingCampaignId(MarketingCampaign)
 	 * @see org.abchip.mimo.biz.marketing.contact.ContactPackage#getContactList_MarketingCampaignId()
 	 * @model keys="marketingCampaignId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	MarketingCampaign getMarketingCampaignId();
@@ -347,7 +351,8 @@ public interface ContactList extends BizEntityTyped<ContactListType> {
 	 * @return the value of the '<em>Single Use</em>' attribute.
 	 * @see #setSingleUse(boolean)
 	 * @see org.abchip.mimo.biz.marketing.contact.ContactPackage#getContactList_SingleUse()
-	 * @model annotation="mimo-ent-format type='indicator' length='1'"
+	 * @model annotation="mimo-ent-slot help='Whether members of the list should be contacted only once.'"
+	 *        annotation="mimo-ent-format type='indicator' length='1'"
 	 * @generated
 	 */
 	boolean isSingleUse();
@@ -374,6 +379,7 @@ public interface ContactList extends BizEntityTyped<ContactListType> {
 	 * @see #setOwnerPartyId(Party)
 	 * @see org.abchip.mimo.biz.marketing.contact.ContactPackage#getContactList_OwnerPartyId()
 	 * @model keys="partyId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Party getOwnerPartyId();

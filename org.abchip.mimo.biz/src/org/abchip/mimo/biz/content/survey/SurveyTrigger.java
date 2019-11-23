@@ -20,10 +20,10 @@ import org.abchip.mimo.biz.BizEntity;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.content.survey.SurveyTrigger#getFromDate <em>From Date</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.content.survey.SurveyTrigger#getThruDate <em>Thru Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.survey.SurveyTrigger#getSurveyId <em>Survey Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.survey.SurveyTrigger#getSurveyApplTypeId <em>Survey Appl Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.content.survey.SurveyTrigger#getFromDate <em>From Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.content.survey.SurveyTrigger#getThruDate <em>Thru Date</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.content.survey.SurveyPackage#getSurveyTrigger()
@@ -43,8 +43,8 @@ public interface SurveyTrigger extends BizEntity {
 	 * @see #setFromDate(Date)
 	 * @see org.abchip.mimo.biz.content.survey.SurveyPackage#getSurveyTrigger_FromDate()
 	 * @model required="true"
-	 *        annotation="mimo-ent-format type='date-time'"
 	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getFromDate();
@@ -70,7 +70,9 @@ public interface SurveyTrigger extends BizEntity {
 	 * @return the value of the '<em>Survey Appl Type Id</em>' reference.
 	 * @see #setSurveyApplTypeId(SurveyApplType)
 	 * @see org.abchip.mimo.biz.content.survey.SurveyPackage#getSurveyTrigger_SurveyApplTypeId()
-	 * @model keys="surveyApplTypeId"
+	 * @model keys="surveyApplTypeId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	SurveyApplType getSurveyApplTypeId();
@@ -96,7 +98,9 @@ public interface SurveyTrigger extends BizEntity {
 	 * @return the value of the '<em>Survey Id</em>' reference.
 	 * @see #setSurveyId(Survey)
 	 * @see org.abchip.mimo.biz.content.survey.SurveyPackage#getSurveyTrigger_SurveyId()
-	 * @model keys="surveyId"
+	 * @model keys="surveyId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Survey getSurveyId();

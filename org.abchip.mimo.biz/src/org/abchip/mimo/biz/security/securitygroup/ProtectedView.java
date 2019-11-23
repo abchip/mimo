@@ -18,15 +18,15 @@ import org.abchip.mimo.biz.BizEntity;
  * The following features are supported:
  * </p>
  * <ul>
+ *   <li>{@link org.abchip.mimo.biz.security.securitygroup.ProtectedView#getGroupId <em>Group Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.security.securitygroup.ProtectedView#getViewNameId <em>View Name Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.security.securitygroup.ProtectedView#getMaxHits <em>Max Hits</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.security.securitygroup.ProtectedView#getMaxHitsDuration <em>Max Hits Duration</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.security.securitygroup.ProtectedView#getTarpitDuration <em>Tarpit Duration</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.security.securitygroup.ProtectedView#getGroupId <em>Group Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.security.securitygroup.SecuritygroupPackage#getProtectedView()
- * @model
+ * @model annotation="mimo-ent-frame help='Defines views protected from data leakage' title='Security Component - Protected View'"
  * @generated
  */
 public interface ProtectedView extends BizEntity {
@@ -41,7 +41,9 @@ public interface ProtectedView extends BizEntity {
 	 * @return the value of the '<em>Group Id</em>' reference.
 	 * @see #setGroupId(SecurityGroup)
 	 * @see org.abchip.mimo.biz.security.securitygroup.SecuritygroupPackage#getProtectedView_GroupId()
-	 * @model keys="groupId"
+	 * @model keys="groupId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	SecurityGroup getGroupId();
@@ -67,7 +69,8 @@ public interface ProtectedView extends BizEntity {
 	 * @return the value of the '<em>Max Hits</em>' attribute.
 	 * @see #setMaxHits(long)
 	 * @see org.abchip.mimo.biz.security.securitygroup.SecuritygroupPackage#getProtectedView_MaxHits()
-	 * @model annotation="mimo-ent-format type='numeric' precision='20' scale='0'"
+	 * @model annotation="mimo-ent-slot help='number of hits before tarpitting a login for a view'"
+	 *        annotation="mimo-ent-format type='numeric' precision='20' scale='0'"
 	 * @generated
 	 */
 	long getMaxHits();
@@ -93,7 +96,8 @@ public interface ProtectedView extends BizEntity {
 	 * @return the value of the '<em>Max Hits Duration</em>' attribute.
 	 * @see #setMaxHitsDuration(long)
 	 * @see org.abchip.mimo.biz.security.securitygroup.SecuritygroupPackage#getProtectedView_MaxHitsDuration()
-	 * @model annotation="mimo-ent-format type='numeric' precision='20' scale='0'"
+	 * @model annotation="mimo-ent-slot help='period of time associated with maxHits (in seconds)'"
+	 *        annotation="mimo-ent-format type='numeric' precision='20' scale='0'"
 	 * @generated
 	 */
 	long getMaxHitsDuration();
@@ -119,7 +123,8 @@ public interface ProtectedView extends BizEntity {
 	 * @return the value of the '<em>Tarpit Duration</em>' attribute.
 	 * @see #setTarpitDuration(long)
 	 * @see org.abchip.mimo.biz.security.securitygroup.SecuritygroupPackage#getProtectedView_TarpitDuration()
-	 * @model annotation="mimo-ent-format type='numeric' precision='20' scale='0'"
+	 * @model annotation="mimo-ent-slot help='period of time a login will not be able to acces  this view again (in seconds)'"
+	 *        annotation="mimo-ent-format type='numeric' precision='20' scale='0'"
 	 * @generated
 	 */
 	long getTarpitDuration();
@@ -146,8 +151,8 @@ public interface ProtectedView extends BizEntity {
 	 * @see #setViewNameId(String)
 	 * @see org.abchip.mimo.biz.security.securitygroup.SecuritygroupPackage#getProtectedView_ViewNameId()
 	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true' help='name of view to protect from data theft'"
 	 *        annotation="mimo-ent-format type='id-long' length='60'"
-	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getViewNameId();

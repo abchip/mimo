@@ -23,7 +23,7 @@ import org.abchip.mimo.biz.BizEntity;
  * </ul>
  *
  * @see org.abchip.mimo.biz.common.portal.PortalPackage#getPortletPortletCategory()
- * @model
+ * @model annotation="mimo-ent-frame title='Defines Portlets included into Categories'"
  * @generated
  */
 public interface PortletPortletCategory extends BizEntity {
@@ -38,7 +38,9 @@ public interface PortletPortletCategory extends BizEntity {
 	 * @return the value of the '<em>Portal Portlet Id</em>' reference.
 	 * @see #setPortalPortletId(PortalPortlet)
 	 * @see org.abchip.mimo.biz.common.portal.PortalPackage#getPortletPortletCategory_PortalPortletId()
-	 * @model keys="portalPortletId"
+	 * @model keys="portalPortletId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	PortalPortlet getPortalPortletId();
@@ -64,7 +66,9 @@ public interface PortletPortletCategory extends BizEntity {
 	 * @return the value of the '<em>Portlet Category Id</em>' reference.
 	 * @see #setPortletCategoryId(PortletCategory)
 	 * @see org.abchip.mimo.biz.common.portal.PortalPackage#getPortletPortletCategory_PortletCategoryId()
-	 * @model keys="portletCategoryId"
+	 * @model keys="portletCategoryId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	PortletCategory getPortletCategoryId();

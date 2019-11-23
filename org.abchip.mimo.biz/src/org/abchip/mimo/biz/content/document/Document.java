@@ -24,11 +24,11 @@ import org.abchip.mimo.biz.BizEntityTyped;
  *   <li>{@link org.abchip.mimo.biz.content.document.Document#getDocumentId <em>Document Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.document.Document#getComments <em>Comments</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.document.Document#getDateCreated <em>Date Created</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.content.document.Document#getDocumentAttributes <em>Document Attributes</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.document.Document#getDocumentLocation <em>Document Location</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.document.Document#getDocumentText <em>Document Text</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.content.document.Document#getImageData <em>Image Data</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.document.Document#getDocumentTypeId <em>Document Type Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.content.document.Document#getDocumentAttributes <em>Document Attributes</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.content.document.Document#getImageData <em>Image Data</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.content.document.DocumentPackage#getDocument()
@@ -101,7 +101,6 @@ public interface Document extends BizEntityTyped<DocumentType> {
 	 * @see org.abchip.mimo.biz.content.document.DocumentPackage#getDocument_DocumentId()
 	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getDocumentId();
@@ -180,6 +179,7 @@ public interface Document extends BizEntityTyped<DocumentType> {
 	 * @see #setDocumentTypeId(DocumentType)
 	 * @see org.abchip.mimo.biz.content.document.DocumentPackage#getDocument_DocumentTypeId()
 	 * @model keys="documentTypeId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	DocumentType getDocumentTypeId();
@@ -231,8 +231,7 @@ public interface Document extends BizEntityTyped<DocumentType> {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Document Attributes</em>' attribute list.
 	 * @see org.abchip.mimo.biz.content.document.DocumentPackage#getDocument_DocumentAttributes()
-	 * @model required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='DocumentAttribute'"
 	 * @generated

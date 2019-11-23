@@ -27,15 +27,15 @@ import org.eclipse.emf.ecore.EClass;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link org.abchip.mimo.biz.humanres.ability.impl.PersonTrainingImpl#getPartyId <em>Party Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.humanres.ability.impl.PersonTrainingImpl#getTrainingClassTypeId <em>Training Class Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.ability.impl.PersonTrainingImpl#getFromDate <em>From Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.ability.impl.PersonTrainingImpl#getApprovalStatus <em>Approval Status</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.humanres.ability.impl.PersonTrainingImpl#getApproverId <em>Approver Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.ability.impl.PersonTrainingImpl#getReason <em>Reason</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.ability.impl.PersonTrainingImpl#getThruDate <em>Thru Date</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.humanres.ability.impl.PersonTrainingImpl#getPartyId <em>Party Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.humanres.ability.impl.PersonTrainingImpl#getApproverId <em>Approver Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.humanres.ability.impl.PersonTrainingImpl#getTrainingClassTypeId <em>Training Class Type Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.humanres.ability.impl.PersonTrainingImpl#getWorkEffortId <em>Work Effort Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.ability.impl.PersonTrainingImpl#getTrainingRequestId <em>Training Request Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.humanres.ability.impl.PersonTrainingImpl#getWorkEffortId <em>Work Effort Id</em>}</li>
  * </ul>
  *
  * @generated

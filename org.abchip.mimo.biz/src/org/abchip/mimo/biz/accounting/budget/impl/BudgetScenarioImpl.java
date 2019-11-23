@@ -23,8 +23,8 @@ import org.eclipse.emf.ecore.EClass;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.accounting.budget.impl.BudgetScenarioImpl#getBudgetScenarioId <em>Budget Scenario Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.budget.impl.BudgetScenarioImpl#getDescription <em>Description</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.budget.impl.BudgetScenarioImpl#getBudgetScenarioRules <em>Budget Scenario Rules</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.budget.impl.BudgetScenarioImpl#getDescription <em>Description</em>}</li>
  * </ul>
  *
  * @generated

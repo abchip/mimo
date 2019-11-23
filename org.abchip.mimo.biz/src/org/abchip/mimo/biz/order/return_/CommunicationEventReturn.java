@@ -39,7 +39,9 @@ public interface CommunicationEventReturn extends BizEntity {
 	 * @return the value of the '<em>Communication Event Id</em>' reference.
 	 * @see #setCommunicationEventId(CommunicationEvent)
 	 * @see org.abchip.mimo.biz.order.return_.ReturnPackage#getCommunicationEventReturn_CommunicationEventId()
-	 * @model keys="communicationEventId"
+	 * @model keys="communicationEventId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	CommunicationEvent getCommunicationEventId();
@@ -65,7 +67,9 @@ public interface CommunicationEventReturn extends BizEntity {
 	 * @return the value of the '<em>Return Id</em>' reference.
 	 * @see #setReturnId(ReturnHeader)
 	 * @see org.abchip.mimo.biz.order.return_.ReturnPackage#getCommunicationEventReturn_ReturnId()
-	 * @model keys="returnId"
+	 * @model keys="returnId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ReturnHeader getReturnId();

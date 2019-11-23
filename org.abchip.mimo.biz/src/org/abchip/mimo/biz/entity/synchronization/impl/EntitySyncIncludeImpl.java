@@ -21,9 +21,9 @@ import org.eclipse.emf.ecore.EClass;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link org.abchip.mimo.biz.entity.synchronization.impl.EntitySyncIncludeImpl#getEntitySyncId <em>Entity Sync Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.entity.synchronization.impl.EntitySyncIncludeImpl#getEntityOrPackage <em>Entity Or Package</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.entity.synchronization.impl.EntitySyncIncludeImpl#getApplEnumId <em>Appl Enum Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.entity.synchronization.impl.EntitySyncIncludeImpl#getEntitySyncId <em>Entity Sync Id</em>}</li>
  * </ul>
  *
  * @generated

@@ -204,10 +204,6 @@ import org.abchip.mimo.biz.workeffort.timesheet.TimesheetPackage;
 import org.abchip.mimo.biz.workeffort.timesheet.impl.TimesheetPackageImpl;
 import org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage;
 import org.abchip.mimo.biz.workeffort.workeffort.impl.WorkeffortPackageImpl;
-import org.abchip.mimo.entity.EntityPackage;
-
-import org.eclipse.emf.common.util.URI;
-
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EGenericType;
@@ -849,7 +845,7 @@ public class EmploymentPackageImpl extends EPackageImpl implements EmploymentPac
 	 */
 	@Override
 	public EReference getEmplLeave_PartyId() {
-		return (EReference)emplLeaveEClass.getEStructuralFeatures().get(3);
+		return (EReference)emplLeaveEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -859,7 +855,7 @@ public class EmploymentPackageImpl extends EPackageImpl implements EmploymentPac
 	 */
 	@Override
 	public EReference getEmplLeave_LeaveTypeId() {
-		return (EReference)emplLeaveEClass.getEStructuralFeatures().get(4);
+		return (EReference)emplLeaveEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -869,7 +865,7 @@ public class EmploymentPackageImpl extends EPackageImpl implements EmploymentPac
 	 */
 	@Override
 	public EAttribute getEmplLeave_FromDate() {
-		return (EAttribute)emplLeaveEClass.getEStructuralFeatures().get(0);
+		return (EAttribute)emplLeaveEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -879,7 +875,7 @@ public class EmploymentPackageImpl extends EPackageImpl implements EmploymentPac
 	 */
 	@Override
 	public EReference getEmplLeave_ApproverPartyId() {
-		return (EReference)emplLeaveEClass.getEStructuralFeatures().get(6);
+		return (EReference)emplLeaveEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -889,7 +885,7 @@ public class EmploymentPackageImpl extends EPackageImpl implements EmploymentPac
 	 */
 	@Override
 	public EAttribute getEmplLeave_Description() {
-		return (EAttribute)emplLeaveEClass.getEStructuralFeatures().get(1);
+		return (EAttribute)emplLeaveEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -909,7 +905,7 @@ public class EmploymentPackageImpl extends EPackageImpl implements EmploymentPac
 	 */
 	@Override
 	public EReference getEmplLeave_LeaveStatus() {
-		return (EReference)emplLeaveEClass.getEStructuralFeatures().get(7);
+		return (EReference)emplLeaveEClass.getEStructuralFeatures().get(6);
 	}
 
 	/**
@@ -919,7 +915,7 @@ public class EmploymentPackageImpl extends EPackageImpl implements EmploymentPac
 	 */
 	@Override
 	public EAttribute getEmplLeave_ThruDate() {
-		return (EAttribute)emplLeaveEClass.getEStructuralFeatures().get(2);
+		return (EAttribute)emplLeaveEClass.getEStructuralFeatures().get(7);
 	}
 
 	/**
@@ -1039,7 +1035,7 @@ public class EmploymentPackageImpl extends EPackageImpl implements EmploymentPac
 	 */
 	@Override
 	public EAttribute getEmployment_RoleTypeIdFrom() {
-		return (EAttribute)employmentEClass.getEStructuralFeatures().get(0);
+		return (EAttribute)employmentEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -1049,7 +1045,7 @@ public class EmploymentPackageImpl extends EPackageImpl implements EmploymentPac
 	 */
 	@Override
 	public EAttribute getEmployment_RoleTypeIdTo() {
-		return (EAttribute)employmentEClass.getEStructuralFeatures().get(1);
+		return (EAttribute)employmentEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -1059,7 +1055,7 @@ public class EmploymentPackageImpl extends EPackageImpl implements EmploymentPac
 	 */
 	@Override
 	public EReference getEmployment_PartyIdFrom() {
-		return (EReference)employmentEClass.getEStructuralFeatures().get(5);
+		return (EReference)employmentEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -1069,7 +1065,7 @@ public class EmploymentPackageImpl extends EPackageImpl implements EmploymentPac
 	 */
 	@Override
 	public EReference getEmployment_PartyIdTo() {
-		return (EReference)employmentEClass.getEStructuralFeatures().get(4);
+		return (EReference)employmentEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -1089,7 +1085,7 @@ public class EmploymentPackageImpl extends EPackageImpl implements EmploymentPac
 	 */
 	@Override
 	public EReference getEmployment_TerminationReasonId() {
-		return (EReference)employmentEClass.getEStructuralFeatures().get(6);
+		return (EReference)employmentEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
@@ -1099,7 +1095,7 @@ public class EmploymentPackageImpl extends EPackageImpl implements EmploymentPac
 	 */
 	@Override
 	public EReference getEmployment_TerminationTypeId() {
-		return (EReference)employmentEClass.getEStructuralFeatures().get(7);
+		return (EReference)employmentEClass.getEStructuralFeatures().get(6);
 	}
 
 	/**
@@ -1109,7 +1105,7 @@ public class EmploymentPackageImpl extends EPackageImpl implements EmploymentPac
 	 */
 	@Override
 	public EAttribute getEmployment_ThruDate() {
-		return (EAttribute)employmentEClass.getEStructuralFeatures().get(3);
+		return (EAttribute)employmentEClass.getEStructuralFeatures().get(7);
 	}
 
 	/**
@@ -1149,26 +1145,6 @@ public class EmploymentPackageImpl extends EPackageImpl implements EmploymentPac
 	 */
 	@Override
 	public EReference getEmploymentApp_ApplyingPartyId() {
-		return (EReference)employmentAppEClass.getEStructuralFeatures().get(5);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getEmploymentApp_ApproverPartyId() {
-		return (EReference)employmentAppEClass.getEStructuralFeatures().get(7);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getEmploymentApp_EmplPositionId() {
 		return (EReference)employmentAppEClass.getEStructuralFeatures().get(2);
 	}
 
@@ -1178,7 +1154,17 @@ public class EmploymentPackageImpl extends EPackageImpl implements EmploymentPac
 	 * @generated
 	 */
 	@Override
-	public EReference getEmploymentApp_EmploymentAppSourceTypeId() {
+	public EReference getEmploymentApp_ApproverPartyId() {
+		return (EReference)employmentAppEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getEmploymentApp_EmplPositionId() {
 		return (EReference)employmentAppEClass.getEStructuralFeatures().get(4);
 	}
 
@@ -1188,8 +1174,8 @@ public class EmploymentPackageImpl extends EPackageImpl implements EmploymentPac
 	 * @generated
 	 */
 	@Override
-	public EReference getEmploymentApp_JobRequisitionId() {
-		return (EReference)employmentAppEClass.getEStructuralFeatures().get(8);
+	public EReference getEmploymentApp_EmploymentAppSourceTypeId() {
+		return (EReference)employmentAppEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
@@ -1198,7 +1184,7 @@ public class EmploymentPackageImpl extends EPackageImpl implements EmploymentPac
 	 * @generated
 	 */
 	@Override
-	public EReference getEmploymentApp_ReferredByPartyId() {
+	public EReference getEmploymentApp_JobRequisitionId() {
 		return (EReference)employmentAppEClass.getEStructuralFeatures().get(6);
 	}
 
@@ -1208,8 +1194,18 @@ public class EmploymentPackageImpl extends EPackageImpl implements EmploymentPac
 	 * @generated
 	 */
 	@Override
+	public EReference getEmploymentApp_ReferredByPartyId() {
+		return (EReference)employmentAppEClass.getEStructuralFeatures().get(7);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EReference getEmploymentApp_StatusId() {
-		return (EReference)employmentAppEClass.getEStructuralFeatures().get(3);
+		return (EReference)employmentAppEClass.getEStructuralFeatures().get(8);
 	}
 
 	/**
@@ -1279,76 +1275,6 @@ public class EmploymentPackageImpl extends EPackageImpl implements EmploymentPac
 	 */
 	@Override
 	public EAttribute getPartyBenefit_RoleTypeIdFrom() {
-		return (EAttribute)partyBenefitEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EAttribute getPartyBenefit_RoleTypeIdTo() {
-		return (EAttribute)partyBenefitEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getPartyBenefit_PartyIdFrom() {
-		return (EReference)partyBenefitEClass.getEStructuralFeatures().get(8);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getPartyBenefit_PartyIdTo() {
-		return (EReference)partyBenefitEClass.getEStructuralFeatures().get(7);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getPartyBenefit_BenefitTypeId() {
-		return (EReference)partyBenefitEClass.getEStructuralFeatures().get(9);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EAttribute getPartyBenefit_FromDate() {
-		return (EAttribute)partyBenefitEClass.getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EAttribute getPartyBenefit_ActualEmployerPaidPercent() {
-		return (EAttribute)partyBenefitEClass.getEStructuralFeatures().get(3);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EAttribute getPartyBenefit_AvailableTime() {
 		return (EAttribute)partyBenefitEClass.getEStructuralFeatures().get(4);
 	}
 
@@ -1358,7 +1284,7 @@ public class EmploymentPackageImpl extends EPackageImpl implements EmploymentPac
 	 * @generated
 	 */
 	@Override
-	public EAttribute getPartyBenefit_Cost() {
+	public EAttribute getPartyBenefit_RoleTypeIdTo() {
 		return (EAttribute)partyBenefitEClass.getEStructuralFeatures().get(5);
 	}
 
@@ -1368,8 +1294,78 @@ public class EmploymentPackageImpl extends EPackageImpl implements EmploymentPac
 	 * @generated
 	 */
 	@Override
+	public EReference getPartyBenefit_PartyIdFrom() {
+		return (EReference)partyBenefitEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getPartyBenefit_PartyIdTo() {
+		return (EReference)partyBenefitEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getPartyBenefit_BenefitTypeId() {
+		return (EReference)partyBenefitEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getPartyBenefit_FromDate() {
+		return (EAttribute)partyBenefitEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getPartyBenefit_ActualEmployerPaidPercent() {
+		return (EAttribute)partyBenefitEClass.getEStructuralFeatures().get(6);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getPartyBenefit_AvailableTime() {
+		return (EAttribute)partyBenefitEClass.getEStructuralFeatures().get(7);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getPartyBenefit_Cost() {
+		return (EAttribute)partyBenefitEClass.getEStructuralFeatures().get(8);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EReference getPartyBenefit_PeriodTypeId() {
-		return (EReference)partyBenefitEClass.getEStructuralFeatures().get(10);
+		return (EReference)partyBenefitEClass.getEStructuralFeatures().get(9);
 	}
 
 	/**
@@ -1379,7 +1375,7 @@ public class EmploymentPackageImpl extends EPackageImpl implements EmploymentPac
 	 */
 	@Override
 	public EAttribute getPartyBenefit_ThruDate() {
-		return (EAttribute)partyBenefitEClass.getEStructuralFeatures().get(6);
+		return (EAttribute)partyBenefitEClass.getEStructuralFeatures().get(10);
 	}
 
 	/**
@@ -1439,36 +1435,6 @@ public class EmploymentPackageImpl extends EPackageImpl implements EmploymentPac
 	 */
 	@Override
 	public EAttribute getPayHistory_RoleTypeIdFrom() {
-		return (EAttribute)payHistoryEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EAttribute getPayHistory_RoleTypeIdTo() {
-		return (EAttribute)payHistoryEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EAttribute getPayHistory_PartyIdFrom() {
-		return (EAttribute)payHistoryEClass.getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EAttribute getPayHistory_PartyIdTo() {
 		return (EAttribute)payHistoryEClass.getEStructuralFeatures().get(3);
 	}
 
@@ -1478,8 +1444,38 @@ public class EmploymentPackageImpl extends EPackageImpl implements EmploymentPac
 	 * @generated
 	 */
 	@Override
-	public EAttribute getPayHistory_FromDate() {
+	public EAttribute getPayHistory_RoleTypeIdTo() {
 		return (EAttribute)payHistoryEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getPayHistory_PartyIdFrom() {
+		return (EAttribute)payHistoryEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getPayHistory_PartyIdTo() {
+		return (EAttribute)payHistoryEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getPayHistory_FromDate() {
+		return (EAttribute)payHistoryEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -1509,7 +1505,7 @@ public class EmploymentPackageImpl extends EPackageImpl implements EmploymentPac
 	 */
 	@Override
 	public EReference getPayHistory_PayGradeId() {
-		return (EReference)payHistoryEClass.getEStructuralFeatures().get(9);
+		return (EReference)payHistoryEClass.getEStructuralFeatures().get(7);
 	}
 
 	/**
@@ -1519,7 +1515,7 @@ public class EmploymentPackageImpl extends EPackageImpl implements EmploymentPac
 	 */
 	@Override
 	public EReference getPayHistory_PeriodTypeId() {
-		return (EReference)payHistoryEClass.getEStructuralFeatures().get(10);
+		return (EReference)payHistoryEClass.getEStructuralFeatures().get(8);
 	}
 
 	/**
@@ -1529,7 +1525,7 @@ public class EmploymentPackageImpl extends EPackageImpl implements EmploymentPac
 	 */
 	@Override
 	public EAttribute getPayHistory_SalaryStepSeqId() {
-		return (EAttribute)payHistoryEClass.getEStructuralFeatures().get(7);
+		return (EAttribute)payHistoryEClass.getEStructuralFeatures().get(9);
 	}
 
 	/**
@@ -1539,7 +1535,7 @@ public class EmploymentPackageImpl extends EPackageImpl implements EmploymentPac
 	 */
 	@Override
 	public EAttribute getPayHistory_ThruDate() {
-		return (EAttribute)payHistoryEClass.getEStructuralFeatures().get(8);
+		return (EAttribute)payHistoryEClass.getEStructuralFeatures().get(10);
 	}
 
 	/**
@@ -1559,7 +1555,7 @@ public class EmploymentPackageImpl extends EPackageImpl implements EmploymentPac
 	 */
 	@Override
 	public EReference getPayrollPreference_PartyId() {
-		return (EReference)payrollPreferenceEClass.getEStructuralFeatures().get(9);
+		return (EReference)payrollPreferenceEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -1569,7 +1565,7 @@ public class EmploymentPackageImpl extends EPackageImpl implements EmploymentPac
 	 */
 	@Override
 	public EAttribute getPayrollPreference_RoleTypeId() {
-		return (EAttribute)payrollPreferenceEClass.getEStructuralFeatures().get(0);
+		return (EAttribute)payrollPreferenceEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -1589,16 +1585,6 @@ public class EmploymentPackageImpl extends EPackageImpl implements EmploymentPac
 	 */
 	@Override
 	public EAttribute getPayrollPreference_AccountNumber() {
-		return (EAttribute)payrollPreferenceEClass.getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EAttribute getPayrollPreference_BankName() {
 		return (EAttribute)payrollPreferenceEClass.getEStructuralFeatures().get(3);
 	}
 
@@ -1608,17 +1594,7 @@ public class EmploymentPackageImpl extends EPackageImpl implements EmploymentPac
 	 * @generated
 	 */
 	@Override
-	public EReference getPayrollPreference_DeductionTypeId() {
-		return (EReference)payrollPreferenceEClass.getEStructuralFeatures().get(10);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EAttribute getPayrollPreference_FlatAmount() {
+	public EAttribute getPayrollPreference_BankName() {
 		return (EAttribute)payrollPreferenceEClass.getEStructuralFeatures().get(4);
 	}
 
@@ -1628,8 +1604,8 @@ public class EmploymentPackageImpl extends EPackageImpl implements EmploymentPac
 	 * @generated
 	 */
 	@Override
-	public EAttribute getPayrollPreference_FromDate() {
-		return (EAttribute)payrollPreferenceEClass.getEStructuralFeatures().get(5);
+	public EReference getPayrollPreference_DeductionTypeId() {
+		return (EReference)payrollPreferenceEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
@@ -1638,17 +1614,7 @@ public class EmploymentPackageImpl extends EPackageImpl implements EmploymentPac
 	 * @generated
 	 */
 	@Override
-	public EReference getPayrollPreference_PaymentMethodTypeId() {
-		return (EReference)payrollPreferenceEClass.getEStructuralFeatures().get(11);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EAttribute getPayrollPreference_Percentage() {
+	public EAttribute getPayrollPreference_FlatAmount() {
 		return (EAttribute)payrollPreferenceEClass.getEStructuralFeatures().get(6);
 	}
 
@@ -1658,17 +1624,7 @@ public class EmploymentPackageImpl extends EPackageImpl implements EmploymentPac
 	 * @generated
 	 */
 	@Override
-	public EReference getPayrollPreference_PeriodTypeId() {
-		return (EReference)payrollPreferenceEClass.getEStructuralFeatures().get(12);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EAttribute getPayrollPreference_RoutingNumber() {
+	public EAttribute getPayrollPreference_FromDate() {
 		return (EAttribute)payrollPreferenceEClass.getEStructuralFeatures().get(7);
 	}
 
@@ -1678,8 +1634,48 @@ public class EmploymentPackageImpl extends EPackageImpl implements EmploymentPac
 	 * @generated
 	 */
 	@Override
+	public EReference getPayrollPreference_PaymentMethodTypeId() {
+		return (EReference)payrollPreferenceEClass.getEStructuralFeatures().get(8);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getPayrollPreference_Percentage() {
+		return (EAttribute)payrollPreferenceEClass.getEStructuralFeatures().get(9);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getPayrollPreference_PeriodTypeId() {
+		return (EReference)payrollPreferenceEClass.getEStructuralFeatures().get(10);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getPayrollPreference_RoutingNumber() {
+		return (EAttribute)payrollPreferenceEClass.getEStructuralFeatures().get(11);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EAttribute getPayrollPreference_ThruDate() {
-		return (EAttribute)payrollPreferenceEClass.getEStructuralFeatures().get(8);
+		return (EAttribute)payrollPreferenceEClass.getEStructuralFeatures().get(12);
 	}
 
 	/**
@@ -1699,7 +1695,7 @@ public class EmploymentPackageImpl extends EPackageImpl implements EmploymentPac
 	 */
 	@Override
 	public EAttribute getSalaryStep_SalaryStepSeqId() {
-		return (EAttribute)salaryStepEClass.getEStructuralFeatures().get(0);
+		return (EAttribute)salaryStepEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -1709,7 +1705,7 @@ public class EmploymentPackageImpl extends EPackageImpl implements EmploymentPac
 	 */
 	@Override
 	public EReference getSalaryStep_PayGradeId() {
-		return (EReference)salaryStepEClass.getEStructuralFeatures().get(7);
+		return (EReference)salaryStepEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -1729,16 +1725,6 @@ public class EmploymentPackageImpl extends EPackageImpl implements EmploymentPac
 	 */
 	@Override
 	public EAttribute getSalaryStep_Amount() {
-		return (EAttribute)salaryStepEClass.getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EAttribute getSalaryStep_CreatedByUserLogin() {
 		return (EAttribute)salaryStepEClass.getEStructuralFeatures().get(3);
 	}
 
@@ -1748,7 +1734,7 @@ public class EmploymentPackageImpl extends EPackageImpl implements EmploymentPac
 	 * @generated
 	 */
 	@Override
-	public EAttribute getSalaryStep_DateModified() {
+	public EAttribute getSalaryStep_CreatedByUserLogin() {
 		return (EAttribute)salaryStepEClass.getEStructuralFeatures().get(4);
 	}
 
@@ -1758,7 +1744,7 @@ public class EmploymentPackageImpl extends EPackageImpl implements EmploymentPac
 	 * @generated
 	 */
 	@Override
-	public EAttribute getSalaryStep_LastModifiedByUserLogin() {
+	public EAttribute getSalaryStep_DateModified() {
 		return (EAttribute)salaryStepEClass.getEStructuralFeatures().get(5);
 	}
 
@@ -1768,8 +1754,18 @@ public class EmploymentPackageImpl extends EPackageImpl implements EmploymentPac
 	 * @generated
 	 */
 	@Override
-	public EAttribute getSalaryStep_ThruDate() {
+	public EAttribute getSalaryStep_LastModifiedByUserLogin() {
 		return (EAttribute)salaryStepEClass.getEStructuralFeatures().get(6);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getSalaryStep_ThruDate() {
+		return (EAttribute)salaryStepEClass.getEStructuralFeatures().get(7);
 	}
 
 	/**
@@ -1939,7 +1935,7 @@ public class EmploymentPackageImpl extends EPackageImpl implements EmploymentPac
 	 */
 	@Override
 	public EReference getUnemploymentClaim_StatusId() {
-		return (EReference)unemploymentClaimEClass.getEStructuralFeatures().get(9);
+		return (EReference)unemploymentClaimEClass.getEStructuralFeatures().get(7);
 	}
 
 	/**
@@ -1949,7 +1945,7 @@ public class EmploymentPackageImpl extends EPackageImpl implements EmploymentPac
 	 */
 	@Override
 	public EAttribute getUnemploymentClaim_ThruDate() {
-		return (EAttribute)unemploymentClaimEClass.getEStructuralFeatures().get(7);
+		return (EAttribute)unemploymentClaimEClass.getEStructuralFeatures().get(8);
 	}
 
 	/**
@@ -1959,7 +1955,7 @@ public class EmploymentPackageImpl extends EPackageImpl implements EmploymentPac
 	 */
 	@Override
 	public EAttribute getUnemploymentClaim_UnemploymentClaimDate() {
-		return (EAttribute)unemploymentClaimEClass.getEStructuralFeatures().get(8);
+		return (EAttribute)unemploymentClaimEClass.getEStructuralFeatures().get(9);
 	}
 
 	/**
@@ -2000,14 +1996,14 @@ public class EmploymentPackageImpl extends EPackageImpl implements EmploymentPac
 		createEReference(benefitTypeEClass, BENEFIT_TYPE__PARENT_TYPE_ID);
 
 		emplLeaveEClass = createEClass(EMPL_LEAVE);
-		createEAttribute(emplLeaveEClass, EMPL_LEAVE__FROM_DATE);
-		createEAttribute(emplLeaveEClass, EMPL_LEAVE__DESCRIPTION);
-		createEAttribute(emplLeaveEClass, EMPL_LEAVE__THRU_DATE);
 		createEReference(emplLeaveEClass, EMPL_LEAVE__PARTY_ID);
 		createEReference(emplLeaveEClass, EMPL_LEAVE__LEAVE_TYPE_ID);
-		createEReference(emplLeaveEClass, EMPL_LEAVE__EMPL_LEAVE_REASON_TYPE_ID);
+		createEAttribute(emplLeaveEClass, EMPL_LEAVE__FROM_DATE);
 		createEReference(emplLeaveEClass, EMPL_LEAVE__APPROVER_PARTY_ID);
+		createEAttribute(emplLeaveEClass, EMPL_LEAVE__DESCRIPTION);
+		createEReference(emplLeaveEClass, EMPL_LEAVE__EMPL_LEAVE_REASON_TYPE_ID);
 		createEReference(emplLeaveEClass, EMPL_LEAVE__LEAVE_STATUS);
+		createEAttribute(emplLeaveEClass, EMPL_LEAVE__THRU_DATE);
 
 		emplLeaveReasonTypeEClass = createEClass(EMPL_LEAVE_REASON_TYPE);
 		createEAttribute(emplLeaveReasonTypeEClass, EMPL_LEAVE_REASON_TYPE__EMPL_LEAVE_REASON_TYPE_ID);
@@ -2022,25 +2018,25 @@ public class EmploymentPackageImpl extends EPackageImpl implements EmploymentPac
 		createEReference(emplLeaveTypeEClass, EMPL_LEAVE_TYPE__PARENT_TYPE_ID);
 
 		employmentEClass = createEClass(EMPLOYMENT);
-		createEAttribute(employmentEClass, EMPLOYMENT__ROLE_TYPE_ID_FROM);
-		createEAttribute(employmentEClass, EMPLOYMENT__ROLE_TYPE_ID_TO);
-		createEAttribute(employmentEClass, EMPLOYMENT__FROM_DATE);
-		createEAttribute(employmentEClass, EMPLOYMENT__THRU_DATE);
 		createEReference(employmentEClass, EMPLOYMENT__PARTY_ID_TO);
 		createEReference(employmentEClass, EMPLOYMENT__PARTY_ID_FROM);
+		createEAttribute(employmentEClass, EMPLOYMENT__FROM_DATE);
+		createEAttribute(employmentEClass, EMPLOYMENT__ROLE_TYPE_ID_FROM);
+		createEAttribute(employmentEClass, EMPLOYMENT__ROLE_TYPE_ID_TO);
 		createEReference(employmentEClass, EMPLOYMENT__TERMINATION_REASON_ID);
 		createEReference(employmentEClass, EMPLOYMENT__TERMINATION_TYPE_ID);
+		createEAttribute(employmentEClass, EMPLOYMENT__THRU_DATE);
 
 		employmentAppEClass = createEClass(EMPLOYMENT_APP);
 		createEAttribute(employmentAppEClass, EMPLOYMENT_APP__APPLICATION_ID);
 		createEAttribute(employmentAppEClass, EMPLOYMENT_APP__APPLICATION_DATE);
-		createEReference(employmentAppEClass, EMPLOYMENT_APP__EMPL_POSITION_ID);
-		createEReference(employmentAppEClass, EMPLOYMENT_APP__STATUS_ID);
-		createEReference(employmentAppEClass, EMPLOYMENT_APP__EMPLOYMENT_APP_SOURCE_TYPE_ID);
 		createEReference(employmentAppEClass, EMPLOYMENT_APP__APPLYING_PARTY_ID);
-		createEReference(employmentAppEClass, EMPLOYMENT_APP__REFERRED_BY_PARTY_ID);
 		createEReference(employmentAppEClass, EMPLOYMENT_APP__APPROVER_PARTY_ID);
+		createEReference(employmentAppEClass, EMPLOYMENT_APP__EMPL_POSITION_ID);
+		createEReference(employmentAppEClass, EMPLOYMENT_APP__EMPLOYMENT_APP_SOURCE_TYPE_ID);
 		createEReference(employmentAppEClass, EMPLOYMENT_APP__JOB_REQUISITION_ID);
+		createEReference(employmentAppEClass, EMPLOYMENT_APP__REFERRED_BY_PARTY_ID);
+		createEReference(employmentAppEClass, EMPLOYMENT_APP__STATUS_ID);
 
 		employmentAppSourceTypeEClass = createEClass(EMPLOYMENT_APP_SOURCE_TYPE);
 		createEAttribute(employmentAppSourceTypeEClass, EMPLOYMENT_APP_SOURCE_TYPE__EMPLOYMENT_APP_SOURCE_TYPE_ID);
@@ -2049,17 +2045,17 @@ public class EmploymentPackageImpl extends EPackageImpl implements EmploymentPac
 		createEReference(employmentAppSourceTypeEClass, EMPLOYMENT_APP_SOURCE_TYPE__PARENT_TYPE_ID);
 
 		partyBenefitEClass = createEClass(PARTY_BENEFIT);
-		createEAttribute(partyBenefitEClass, PARTY_BENEFIT__ROLE_TYPE_ID_FROM);
-		createEAttribute(partyBenefitEClass, PARTY_BENEFIT__ROLE_TYPE_ID_TO);
-		createEAttribute(partyBenefitEClass, PARTY_BENEFIT__FROM_DATE);
-		createEAttribute(partyBenefitEClass, PARTY_BENEFIT__ACTUAL_EMPLOYER_PAID_PERCENT);
-		createEAttribute(partyBenefitEClass, PARTY_BENEFIT__AVAILABLE_TIME);
-		createEAttribute(partyBenefitEClass, PARTY_BENEFIT__COST);
-		createEAttribute(partyBenefitEClass, PARTY_BENEFIT__THRU_DATE);
 		createEReference(partyBenefitEClass, PARTY_BENEFIT__PARTY_ID_TO);
 		createEReference(partyBenefitEClass, PARTY_BENEFIT__PARTY_ID_FROM);
 		createEReference(partyBenefitEClass, PARTY_BENEFIT__BENEFIT_TYPE_ID);
+		createEAttribute(partyBenefitEClass, PARTY_BENEFIT__FROM_DATE);
+		createEAttribute(partyBenefitEClass, PARTY_BENEFIT__ROLE_TYPE_ID_FROM);
+		createEAttribute(partyBenefitEClass, PARTY_BENEFIT__ROLE_TYPE_ID_TO);
+		createEAttribute(partyBenefitEClass, PARTY_BENEFIT__ACTUAL_EMPLOYER_PAID_PERCENT);
+		createEAttribute(partyBenefitEClass, PARTY_BENEFIT__AVAILABLE_TIME);
+		createEAttribute(partyBenefitEClass, PARTY_BENEFIT__COST);
 		createEReference(partyBenefitEClass, PARTY_BENEFIT__PERIOD_TYPE_ID);
+		createEAttribute(partyBenefitEClass, PARTY_BENEFIT__THRU_DATE);
 
 		payGradeEClass = createEClass(PAY_GRADE);
 		createEAttribute(payGradeEClass, PAY_GRADE__PAY_GRADE_ID);
@@ -2067,42 +2063,42 @@ public class EmploymentPackageImpl extends EPackageImpl implements EmploymentPac
 		createEAttribute(payGradeEClass, PAY_GRADE__PAY_GRADE_NAME);
 
 		payHistoryEClass = createEClass(PAY_HISTORY);
-		createEAttribute(payHistoryEClass, PAY_HISTORY__ROLE_TYPE_ID_FROM);
-		createEAttribute(payHistoryEClass, PAY_HISTORY__ROLE_TYPE_ID_TO);
+		createEAttribute(payHistoryEClass, PAY_HISTORY__FROM_DATE);
 		createEAttribute(payHistoryEClass, PAY_HISTORY__PARTY_ID_FROM);
 		createEAttribute(payHistoryEClass, PAY_HISTORY__PARTY_ID_TO);
-		createEAttribute(payHistoryEClass, PAY_HISTORY__FROM_DATE);
+		createEAttribute(payHistoryEClass, PAY_HISTORY__ROLE_TYPE_ID_FROM);
+		createEAttribute(payHistoryEClass, PAY_HISTORY__ROLE_TYPE_ID_TO);
 		createEAttribute(payHistoryEClass, PAY_HISTORY__AMOUNT);
 		createEAttribute(payHistoryEClass, PAY_HISTORY__COMMENTS);
-		createEAttribute(payHistoryEClass, PAY_HISTORY__SALARY_STEP_SEQ_ID);
-		createEAttribute(payHistoryEClass, PAY_HISTORY__THRU_DATE);
 		createEReference(payHistoryEClass, PAY_HISTORY__PAY_GRADE_ID);
 		createEReference(payHistoryEClass, PAY_HISTORY__PERIOD_TYPE_ID);
+		createEAttribute(payHistoryEClass, PAY_HISTORY__SALARY_STEP_SEQ_ID);
+		createEAttribute(payHistoryEClass, PAY_HISTORY__THRU_DATE);
 
 		payrollPreferenceEClass = createEClass(PAYROLL_PREFERENCE);
-		createEAttribute(payrollPreferenceEClass, PAYROLL_PREFERENCE__ROLE_TYPE_ID);
+		createEReference(payrollPreferenceEClass, PAYROLL_PREFERENCE__PARTY_ID);
 		createEAttribute(payrollPreferenceEClass, PAYROLL_PREFERENCE__PAYROLL_PREFERENCE_SEQ_ID);
+		createEAttribute(payrollPreferenceEClass, PAYROLL_PREFERENCE__ROLE_TYPE_ID);
 		createEAttribute(payrollPreferenceEClass, PAYROLL_PREFERENCE__ACCOUNT_NUMBER);
 		createEAttribute(payrollPreferenceEClass, PAYROLL_PREFERENCE__BANK_NAME);
+		createEReference(payrollPreferenceEClass, PAYROLL_PREFERENCE__DEDUCTION_TYPE_ID);
 		createEAttribute(payrollPreferenceEClass, PAYROLL_PREFERENCE__FLAT_AMOUNT);
 		createEAttribute(payrollPreferenceEClass, PAYROLL_PREFERENCE__FROM_DATE);
+		createEReference(payrollPreferenceEClass, PAYROLL_PREFERENCE__PAYMENT_METHOD_TYPE_ID);
 		createEAttribute(payrollPreferenceEClass, PAYROLL_PREFERENCE__PERCENTAGE);
+		createEReference(payrollPreferenceEClass, PAYROLL_PREFERENCE__PERIOD_TYPE_ID);
 		createEAttribute(payrollPreferenceEClass, PAYROLL_PREFERENCE__ROUTING_NUMBER);
 		createEAttribute(payrollPreferenceEClass, PAYROLL_PREFERENCE__THRU_DATE);
-		createEReference(payrollPreferenceEClass, PAYROLL_PREFERENCE__PARTY_ID);
-		createEReference(payrollPreferenceEClass, PAYROLL_PREFERENCE__DEDUCTION_TYPE_ID);
-		createEReference(payrollPreferenceEClass, PAYROLL_PREFERENCE__PAYMENT_METHOD_TYPE_ID);
-		createEReference(payrollPreferenceEClass, PAYROLL_PREFERENCE__PERIOD_TYPE_ID);
 
 		salaryStepEClass = createEClass(SALARY_STEP);
-		createEAttribute(salaryStepEClass, SALARY_STEP__SALARY_STEP_SEQ_ID);
+		createEReference(salaryStepEClass, SALARY_STEP__PAY_GRADE_ID);
 		createEAttribute(salaryStepEClass, SALARY_STEP__FROM_DATE);
+		createEAttribute(salaryStepEClass, SALARY_STEP__SALARY_STEP_SEQ_ID);
 		createEAttribute(salaryStepEClass, SALARY_STEP__AMOUNT);
 		createEAttribute(salaryStepEClass, SALARY_STEP__CREATED_BY_USER_LOGIN);
 		createEAttribute(salaryStepEClass, SALARY_STEP__DATE_MODIFIED);
 		createEAttribute(salaryStepEClass, SALARY_STEP__LAST_MODIFIED_BY_USER_LOGIN);
 		createEAttribute(salaryStepEClass, SALARY_STEP__THRU_DATE);
-		createEReference(salaryStepEClass, SALARY_STEP__PAY_GRADE_ID);
 
 		terminationReasonEClass = createEClass(TERMINATION_REASON);
 		createEAttribute(terminationReasonEClass, TERMINATION_REASON__TERMINATION_REASON_ID);
@@ -2122,9 +2118,9 @@ public class EmploymentPackageImpl extends EPackageImpl implements EmploymentPac
 		createEAttribute(unemploymentClaimEClass, UNEMPLOYMENT_CLAIM__PARTY_ID_TO);
 		createEAttribute(unemploymentClaimEClass, UNEMPLOYMENT_CLAIM__ROLE_TYPE_ID_FROM);
 		createEAttribute(unemploymentClaimEClass, UNEMPLOYMENT_CLAIM__ROLE_TYPE_ID_TO);
+		createEReference(unemploymentClaimEClass, UNEMPLOYMENT_CLAIM__STATUS_ID);
 		createEAttribute(unemploymentClaimEClass, UNEMPLOYMENT_CLAIM__THRU_DATE);
 		createEAttribute(unemploymentClaimEClass, UNEMPLOYMENT_CLAIM__UNEMPLOYMENT_CLAIM_DATE);
-		createEReference(unemploymentClaimEClass, UNEMPLOYMENT_CLAIM__STATUS_ID);
 	}
 
 	/**
@@ -2199,19 +2195,19 @@ public class EmploymentPackageImpl extends EPackageImpl implements EmploymentPac
 		addEOperation(benefitTypeEClass, ecorePackage.getEString(), "childBenefitTypes", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(emplLeaveEClass, EmplLeave.class, "EmplLeave", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getEmplLeave_FromDate(), ecorePackage.getEDate(), "fromDate", null, 1, 1, EmplLeave.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getEmplLeave_Description(), ecorePackage.getEString(), "description", null, 0, 1, EmplLeave.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getEmplLeave_ThruDate(), ecorePackage.getEDate(), "thruDate", null, 0, 1, EmplLeave.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getEmplLeave_PartyId(), thePartyPackage.getParty(), null, "partyId", null, 0, 1, EmplLeave.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getEmplLeave_PartyId(), thePartyPackage.getParty(), null, "partyId", null, 1, 1, EmplLeave.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getEmplLeave_PartyId().getEKeys().add(thePartyPackage.getParty_PartyId());
-		initEReference(getEmplLeave_LeaveTypeId(), this.getEmplLeaveType(), null, "leaveTypeId", null, 0, 1, EmplLeave.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getEmplLeave_LeaveTypeId(), this.getEmplLeaveType(), null, "leaveTypeId", null, 1, 1, EmplLeave.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getEmplLeave_LeaveTypeId().getEKeys().add(this.getEmplLeaveType_LeaveTypeId());
-		initEReference(getEmplLeave_EmplLeaveReasonTypeId(), this.getEmplLeaveReasonType(), null, "emplLeaveReasonTypeId", null, 0, 1, EmplLeave.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		getEmplLeave_EmplLeaveReasonTypeId().getEKeys().add(this.getEmplLeaveReasonType_EmplLeaveReasonTypeId());
+		initEAttribute(getEmplLeave_FromDate(), ecorePackage.getEDate(), "fromDate", null, 1, 1, EmplLeave.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getEmplLeave_ApproverPartyId(), thePartyPackage.getParty(), null, "approverPartyId", null, 0, 1, EmplLeave.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getEmplLeave_ApproverPartyId().getEKeys().add(thePartyPackage.getParty_PartyId());
+		initEAttribute(getEmplLeave_Description(), ecorePackage.getEString(), "description", null, 0, 1, EmplLeave.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getEmplLeave_EmplLeaveReasonTypeId(), this.getEmplLeaveReasonType(), null, "emplLeaveReasonTypeId", null, 0, 1, EmplLeave.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getEmplLeave_EmplLeaveReasonTypeId().getEKeys().add(this.getEmplLeaveReasonType_EmplLeaveReasonTypeId());
 		initEReference(getEmplLeave_LeaveStatus(), theStatusPackage.getStatusItem(), null, "leaveStatus", null, 0, 1, EmplLeave.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getEmplLeave_LeaveStatus().getEKeys().add(theStatusPackage.getStatusItem_StatusId());
+		initEAttribute(getEmplLeave_ThruDate(), ecorePackage.getEDate(), "thruDate", null, 0, 1, EmplLeave.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(emplLeaveReasonTypeEClass, EmplLeaveReasonType.class, "EmplLeaveReasonType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getEmplLeaveReasonType_EmplLeaveReasonTypeId(), ecorePackage.getEString(), "emplLeaveReasonTypeId", null, 1, 1, EmplLeaveReasonType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -2232,36 +2228,36 @@ public class EmploymentPackageImpl extends EPackageImpl implements EmploymentPac
 		addEOperation(emplLeaveTypeEClass, ecorePackage.getEString(), "childEmplLeaveTypes", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(employmentEClass, Employment.class, "Employment", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getEmployment_PartyIdTo(), thePartyPackage.getParty(), null, "partyIdTo", null, 1, 1, Employment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getEmployment_PartyIdTo().getEKeys().add(thePartyPackage.getParty_PartyId());
+		initEReference(getEmployment_PartyIdFrom(), thePartyPackage.getParty(), null, "partyIdFrom", null, 1, 1, Employment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getEmployment_PartyIdFrom().getEKeys().add(thePartyPackage.getParty_PartyId());
+		initEAttribute(getEmployment_FromDate(), ecorePackage.getEDate(), "fromDate", null, 1, 1, Employment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getEmployment_RoleTypeIdFrom(), ecorePackage.getEString(), "roleTypeIdFrom", null, 1, 1, Employment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getEmployment_RoleTypeIdTo(), ecorePackage.getEString(), "roleTypeIdTo", null, 1, 1, Employment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getEmployment_FromDate(), ecorePackage.getEDate(), "fromDate", null, 1, 1, Employment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getEmployment_ThruDate(), ecorePackage.getEDate(), "thruDate", null, 0, 1, Employment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getEmployment_PartyIdTo(), thePartyPackage.getParty(), null, "partyIdTo", null, 0, 1, Employment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		getEmployment_PartyIdTo().getEKeys().add(thePartyPackage.getParty_PartyId());
-		initEReference(getEmployment_PartyIdFrom(), thePartyPackage.getParty(), null, "partyIdFrom", null, 0, 1, Employment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		getEmployment_PartyIdFrom().getEKeys().add(thePartyPackage.getParty_PartyId());
 		initEReference(getEmployment_TerminationReasonId(), this.getTerminationReason(), null, "terminationReasonId", null, 0, 1, Employment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getEmployment_TerminationReasonId().getEKeys().add(this.getTerminationReason_TerminationReasonId());
 		initEReference(getEmployment_TerminationTypeId(), this.getTerminationType(), null, "terminationTypeId", null, 0, 1, Employment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getEmployment_TerminationTypeId().getEKeys().add(this.getTerminationType_TerminationTypeId());
+		initEAttribute(getEmployment_ThruDate(), ecorePackage.getEDate(), "thruDate", null, 0, 1, Employment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(employmentAppEClass, EmploymentApp.class, "EmploymentApp", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getEmploymentApp_ApplicationId(), ecorePackage.getEString(), "applicationId", null, 1, 1, EmploymentApp.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getEmploymentApp_ApplicationDate(), ecorePackage.getEDate(), "applicationDate", null, 0, 1, EmploymentApp.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getEmploymentApp_EmplPositionId(), thePositionPackage.getEmplPosition(), null, "emplPositionId", null, 0, 1, EmploymentApp.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		getEmploymentApp_EmplPositionId().getEKeys().add(thePositionPackage.getEmplPosition_EmplPositionId());
-		initEReference(getEmploymentApp_StatusId(), theStatusPackage.getStatusItem(), null, "statusId", null, 0, 1, EmploymentApp.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		getEmploymentApp_StatusId().getEKeys().add(theStatusPackage.getStatusItem_StatusId());
-		initEReference(getEmploymentApp_EmploymentAppSourceTypeId(), this.getEmploymentAppSourceType(), null, "employmentAppSourceTypeId", null, 0, 1, EmploymentApp.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		getEmploymentApp_EmploymentAppSourceTypeId().getEKeys().add(this.getEmploymentAppSourceType_EmploymentAppSourceTypeId());
 		initEReference(getEmploymentApp_ApplyingPartyId(), thePartyPackage.getParty(), null, "applyingPartyId", null, 0, 1, EmploymentApp.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getEmploymentApp_ApplyingPartyId().getEKeys().add(thePartyPackage.getParty_PartyId());
-		initEReference(getEmploymentApp_ReferredByPartyId(), thePartyPackage.getParty(), null, "referredByPartyId", null, 0, 1, EmploymentApp.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		getEmploymentApp_ReferredByPartyId().getEKeys().add(thePartyPackage.getParty_PartyId());
 		initEReference(getEmploymentApp_ApproverPartyId(), thePartyPackage.getParty(), null, "approverPartyId", null, 0, 1, EmploymentApp.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getEmploymentApp_ApproverPartyId().getEKeys().add(thePartyPackage.getParty_PartyId());
+		initEReference(getEmploymentApp_EmplPositionId(), thePositionPackage.getEmplPosition(), null, "emplPositionId", null, 0, 1, EmploymentApp.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getEmploymentApp_EmplPositionId().getEKeys().add(thePositionPackage.getEmplPosition_EmplPositionId());
+		initEReference(getEmploymentApp_EmploymentAppSourceTypeId(), this.getEmploymentAppSourceType(), null, "employmentAppSourceTypeId", null, 0, 1, EmploymentApp.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getEmploymentApp_EmploymentAppSourceTypeId().getEKeys().add(this.getEmploymentAppSourceType_EmploymentAppSourceTypeId());
 		initEReference(getEmploymentApp_JobRequisitionId(), theRecruitmentPackage.getJobRequisition(), null, "jobRequisitionId", null, 0, 1, EmploymentApp.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getEmploymentApp_JobRequisitionId().getEKeys().add(theRecruitmentPackage.getJobRequisition_JobRequisitionId());
+		initEReference(getEmploymentApp_ReferredByPartyId(), thePartyPackage.getParty(), null, "referredByPartyId", null, 0, 1, EmploymentApp.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getEmploymentApp_ReferredByPartyId().getEKeys().add(thePartyPackage.getParty_PartyId());
+		initEReference(getEmploymentApp_StatusId(), theStatusPackage.getStatusItem(), null, "statusId", null, 0, 1, EmploymentApp.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getEmploymentApp_StatusId().getEKeys().add(theStatusPackage.getStatusItem_StatusId());
 
 		initEClass(employmentAppSourceTypeEClass, EmploymentAppSourceType.class, "EmploymentAppSourceType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getEmploymentAppSourceType_EmploymentAppSourceTypeId(), ecorePackage.getEString(), "employmentAppSourceTypeId", null, 1, 1, EmploymentAppSourceType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -2275,21 +2271,21 @@ public class EmploymentPackageImpl extends EPackageImpl implements EmploymentPac
 		addEOperation(employmentAppSourceTypeEClass, ecorePackage.getEString(), "employmentApps", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(partyBenefitEClass, PartyBenefit.class, "PartyBenefit", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getPartyBenefit_PartyIdTo(), thePartyPackage.getParty(), null, "partyIdTo", null, 1, 1, PartyBenefit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getPartyBenefit_PartyIdTo().getEKeys().add(thePartyPackage.getParty_PartyId());
+		initEReference(getPartyBenefit_PartyIdFrom(), thePartyPackage.getParty(), null, "partyIdFrom", null, 1, 1, PartyBenefit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getPartyBenefit_PartyIdFrom().getEKeys().add(thePartyPackage.getParty_PartyId());
+		initEReference(getPartyBenefit_BenefitTypeId(), this.getBenefitType(), null, "benefitTypeId", null, 1, 1, PartyBenefit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getPartyBenefit_BenefitTypeId().getEKeys().add(this.getBenefitType_BenefitTypeId());
+		initEAttribute(getPartyBenefit_FromDate(), ecorePackage.getEDate(), "fromDate", null, 1, 1, PartyBenefit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getPartyBenefit_RoleTypeIdFrom(), ecorePackage.getEString(), "roleTypeIdFrom", null, 1, 1, PartyBenefit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getPartyBenefit_RoleTypeIdTo(), ecorePackage.getEString(), "roleTypeIdTo", null, 1, 1, PartyBenefit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getPartyBenefit_FromDate(), ecorePackage.getEDate(), "fromDate", null, 1, 1, PartyBenefit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getPartyBenefit_ActualEmployerPaidPercent(), ecorePackage.getEDouble(), "actualEmployerPaidPercent", null, 0, 1, PartyBenefit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getPartyBenefit_AvailableTime(), ecorePackage.getELong(), "availableTime", null, 0, 1, PartyBenefit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getPartyBenefit_Cost(), ecorePackage.getEBigDecimal(), "cost", null, 0, 1, PartyBenefit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getPartyBenefit_ThruDate(), ecorePackage.getEDate(), "thruDate", null, 0, 1, PartyBenefit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getPartyBenefit_PartyIdTo(), thePartyPackage.getParty(), null, "partyIdTo", null, 0, 1, PartyBenefit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		getPartyBenefit_PartyIdTo().getEKeys().add(thePartyPackage.getParty_PartyId());
-		initEReference(getPartyBenefit_PartyIdFrom(), thePartyPackage.getParty(), null, "partyIdFrom", null, 0, 1, PartyBenefit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		getPartyBenefit_PartyIdFrom().getEKeys().add(thePartyPackage.getParty_PartyId());
-		initEReference(getPartyBenefit_BenefitTypeId(), this.getBenefitType(), null, "benefitTypeId", null, 0, 1, PartyBenefit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		getPartyBenefit_BenefitTypeId().getEKeys().add(this.getBenefitType_BenefitTypeId());
 		initEReference(getPartyBenefit_PeriodTypeId(), thePeriodPackage.getPeriodType(), null, "periodTypeId", null, 0, 1, PartyBenefit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getPartyBenefit_PeriodTypeId().getEKeys().add(thePeriodPackage.getPeriodType_PeriodTypeId());
+		initEAttribute(getPartyBenefit_ThruDate(), ecorePackage.getEDate(), "thruDate", null, 0, 1, PartyBenefit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(payGradeEClass, PayGrade.class, "PayGrade", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getPayGrade_PayGradeId(), ecorePackage.getEString(), "payGradeId", null, 1, 1, PayGrade.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -2297,49 +2293,49 @@ public class EmploymentPackageImpl extends EPackageImpl implements EmploymentPac
 		initEAttribute(getPayGrade_PayGradeName(), ecorePackage.getEString(), "payGradeName", null, 0, 1, PayGrade.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(payHistoryEClass, PayHistory.class, "PayHistory", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getPayHistory_RoleTypeIdFrom(), ecorePackage.getEString(), "roleTypeIdFrom", null, 1, 1, PayHistory.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getPayHistory_RoleTypeIdTo(), ecorePackage.getEString(), "roleTypeIdTo", null, 1, 1, PayHistory.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getPayHistory_FromDate(), ecorePackage.getEDate(), "fromDate", null, 1, 1, PayHistory.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getPayHistory_PartyIdFrom(), ecorePackage.getEString(), "partyIdFrom", null, 1, 1, PayHistory.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getPayHistory_PartyIdTo(), ecorePackage.getEString(), "partyIdTo", null, 1, 1, PayHistory.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getPayHistory_FromDate(), ecorePackage.getEDate(), "fromDate", null, 1, 1, PayHistory.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getPayHistory_RoleTypeIdFrom(), ecorePackage.getEString(), "roleTypeIdFrom", null, 1, 1, PayHistory.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getPayHistory_RoleTypeIdTo(), ecorePackage.getEString(), "roleTypeIdTo", null, 1, 1, PayHistory.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getPayHistory_Amount(), ecorePackage.getEBigDecimal(), "amount", null, 0, 1, PayHistory.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getPayHistory_Comments(), ecorePackage.getEString(), "comments", null, 0, 1, PayHistory.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getPayHistory_SalaryStepSeqId(), ecorePackage.getEString(), "salaryStepSeqId", null, 0, 1, PayHistory.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getPayHistory_ThruDate(), ecorePackage.getEDate(), "thruDate", null, 0, 1, PayHistory.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getPayHistory_PayGradeId(), this.getPayGrade(), null, "payGradeId", null, 0, 1, PayHistory.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getPayHistory_PayGradeId().getEKeys().add(this.getPayGrade_PayGradeId());
 		initEReference(getPayHistory_PeriodTypeId(), thePeriodPackage.getPeriodType(), null, "periodTypeId", null, 0, 1, PayHistory.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getPayHistory_PeriodTypeId().getEKeys().add(thePeriodPackage.getPeriodType_PeriodTypeId());
+		initEAttribute(getPayHistory_SalaryStepSeqId(), ecorePackage.getEString(), "salaryStepSeqId", null, 0, 1, PayHistory.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getPayHistory_ThruDate(), ecorePackage.getEDate(), "thruDate", null, 0, 1, PayHistory.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(payrollPreferenceEClass, PayrollPreference.class, "PayrollPreference", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getPayrollPreference_RoleTypeId(), ecorePackage.getEString(), "roleTypeId", null, 1, 1, PayrollPreference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getPayrollPreference_PartyId(), thePartyPackage.getParty(), null, "partyId", null, 1, 1, PayrollPreference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getPayrollPreference_PartyId().getEKeys().add(thePartyPackage.getParty_PartyId());
 		initEAttribute(getPayrollPreference_PayrollPreferenceSeqId(), ecorePackage.getEString(), "payrollPreferenceSeqId", null, 1, 1, PayrollPreference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getPayrollPreference_RoleTypeId(), ecorePackage.getEString(), "roleTypeId", null, 1, 1, PayrollPreference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getPayrollPreference_AccountNumber(), ecorePackage.getEString(), "accountNumber", null, 0, 1, PayrollPreference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getPayrollPreference_BankName(), ecorePackage.getEString(), "bankName", null, 0, 1, PayrollPreference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getPayrollPreference_FlatAmount(), ecorePackage.getEBigDecimal(), "flatAmount", null, 0, 1, PayrollPreference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getPayrollPreference_FromDate(), ecorePackage.getEDate(), "fromDate", null, 0, 1, PayrollPreference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getPayrollPreference_Percentage(), ecorePackage.getEDouble(), "percentage", null, 0, 1, PayrollPreference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getPayrollPreference_RoutingNumber(), ecorePackage.getEString(), "routingNumber", null, 0, 1, PayrollPreference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getPayrollPreference_ThruDate(), ecorePackage.getEDate(), "thruDate", null, 0, 1, PayrollPreference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getPayrollPreference_PartyId(), thePartyPackage.getParty(), null, "partyId", null, 0, 1, PayrollPreference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		getPayrollPreference_PartyId().getEKeys().add(thePartyPackage.getParty_PartyId());
 		initEReference(getPayrollPreference_DeductionTypeId(), thePaymentPackage.getDeductionType(), null, "deductionTypeId", null, 0, 1, PayrollPreference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getPayrollPreference_DeductionTypeId().getEKeys().add(thePaymentPackage.getDeductionType_DeductionTypeId());
+		initEAttribute(getPayrollPreference_FlatAmount(), ecorePackage.getEBigDecimal(), "flatAmount", null, 0, 1, PayrollPreference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getPayrollPreference_FromDate(), ecorePackage.getEDate(), "fromDate", null, 0, 1, PayrollPreference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getPayrollPreference_PaymentMethodTypeId(), thePaymentPackage.getPaymentMethodType(), null, "paymentMethodTypeId", null, 0, 1, PayrollPreference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getPayrollPreference_PaymentMethodTypeId().getEKeys().add(thePaymentPackage.getPaymentMethodType_PaymentMethodTypeId());
+		initEAttribute(getPayrollPreference_Percentage(), ecorePackage.getEDouble(), "percentage", null, 0, 1, PayrollPreference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getPayrollPreference_PeriodTypeId(), thePeriodPackage.getPeriodType(), null, "periodTypeId", null, 0, 1, PayrollPreference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getPayrollPreference_PeriodTypeId().getEKeys().add(thePeriodPackage.getPeriodType_PeriodTypeId());
+		initEAttribute(getPayrollPreference_RoutingNumber(), ecorePackage.getEString(), "routingNumber", null, 0, 1, PayrollPreference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getPayrollPreference_ThruDate(), ecorePackage.getEDate(), "thruDate", null, 0, 1, PayrollPreference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(salaryStepEClass, SalaryStep.class, "SalaryStep", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getSalaryStep_SalaryStepSeqId(), ecorePackage.getEString(), "salaryStepSeqId", null, 1, 1, SalaryStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getSalaryStep_PayGradeId(), this.getPayGrade(), null, "payGradeId", null, 1, 1, SalaryStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getSalaryStep_PayGradeId().getEKeys().add(this.getPayGrade_PayGradeId());
 		initEAttribute(getSalaryStep_FromDate(), ecorePackage.getEDate(), "fromDate", null, 1, 1, SalaryStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getSalaryStep_SalaryStepSeqId(), ecorePackage.getEString(), "salaryStepSeqId", null, 1, 1, SalaryStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getSalaryStep_Amount(), ecorePackage.getEBigDecimal(), "amount", null, 0, 1, SalaryStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getSalaryStep_CreatedByUserLogin(), ecorePackage.getEString(), "createdByUserLogin", null, 0, 1, SalaryStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getSalaryStep_DateModified(), ecorePackage.getEDate(), "dateModified", null, 0, 1, SalaryStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getSalaryStep_LastModifiedByUserLogin(), ecorePackage.getEString(), "lastModifiedByUserLogin", null, 0, 1, SalaryStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getSalaryStep_ThruDate(), ecorePackage.getEDate(), "thruDate", null, 0, 1, SalaryStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getSalaryStep_PayGradeId(), this.getPayGrade(), null, "payGradeId", null, 0, 1, SalaryStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		getSalaryStep_PayGradeId().getEKeys().add(this.getPayGrade_PayGradeId());
 
 		initEClass(terminationReasonEClass, TerminationReason.class, "TerminationReason", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getTerminationReason_TerminationReasonId(), ecorePackage.getEString(), "terminationReasonId", null, 1, 1, TerminationReason.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -2362,10 +2358,10 @@ public class EmploymentPackageImpl extends EPackageImpl implements EmploymentPac
 		initEAttribute(getUnemploymentClaim_PartyIdTo(), ecorePackage.getEString(), "partyIdTo", null, 0, 1, UnemploymentClaim.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getUnemploymentClaim_RoleTypeIdFrom(), ecorePackage.getEString(), "roleTypeIdFrom", null, 0, 1, UnemploymentClaim.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getUnemploymentClaim_RoleTypeIdTo(), ecorePackage.getEString(), "roleTypeIdTo", null, 0, 1, UnemploymentClaim.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getUnemploymentClaim_ThruDate(), ecorePackage.getEDate(), "thruDate", null, 0, 1, UnemploymentClaim.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getUnemploymentClaim_UnemploymentClaimDate(), ecorePackage.getEDate(), "unemploymentClaimDate", null, 0, 1, UnemploymentClaim.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getUnemploymentClaim_StatusId(), theStatusPackage.getStatusItem(), null, "statusId", null, 0, 1, UnemploymentClaim.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getUnemploymentClaim_StatusId().getEKeys().add(theStatusPackage.getStatusItem_StatusId());
+		initEAttribute(getUnemploymentClaim_ThruDate(), ecorePackage.getEDate(), "thruDate", null, 0, 1, UnemploymentClaim.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getUnemploymentClaim_UnemploymentClaimDate(), ecorePackage.getEDate(), "unemploymentClaimDate", null, 0, 1, UnemploymentClaim.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Create annotations
 		// mimo-ent-frame
@@ -2396,24 +2392,36 @@ public class EmploymentPackageImpl extends EPackageImpl implements EmploymentPac
 		  (emplLeaveEClass,
 		   source,
 		   new String[] {
+			   "title", "Employee Leave",
 			   "formula", "description"
 		   });
 		addAnnotation
 		  (emplLeaveReasonTypeEClass,
 		   source,
 		   new String[] {
+			   "title", "Leave Reason Type",
+			   "dictionary", "HumanResEntityLabels",
 			   "formula", "description"
 		   });
 		addAnnotation
 		  (emplLeaveTypeEClass,
 		   source,
 		   new String[] {
+			   "title", "Employee Leave Type",
+			   "dictionary", "HumanResEntityLabels",
 			   "formula", "description"
+		   });
+		addAnnotation
+		  (employmentAppEClass,
+		   source,
+		   new String[] {
+			   "title", "Employment Application"
 		   });
 		addAnnotation
 		  (employmentAppSourceTypeEClass,
 		   source,
 		   new String[] {
+			   "title", "Employment Application Source Type",
 			   "formula", "description"
 		   });
 		addAnnotation
@@ -2486,10 +2494,38 @@ public class EmploymentPackageImpl extends EPackageImpl implements EmploymentPac
 			   "length", "1"
 		   });
 		addAnnotation
+		  (getBenefitType_ParentTypeId(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (getEmplLeave_PartyId(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (getEmplLeave_LeaveTypeId(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
 		  (getEmplLeave_FromDate(),
 		   source,
 		   new String[] {
 			   "type", "date-time"
+		   });
+		addAnnotation
+		  (getEmplLeave_ApproverPartyId(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
 		   });
 		addAnnotation
 		  (getEmplLeave_Description(),
@@ -2497,6 +2533,20 @@ public class EmploymentPackageImpl extends EPackageImpl implements EmploymentPac
 		   new String[] {
 			   "type", "description",
 			   "length", "255"
+		   });
+		addAnnotation
+		  (getEmplLeave_EmplLeaveReasonTypeId(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (getEmplLeave_LeaveStatus(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
 		   });
 		addAnnotation
 		  (getEmplLeave_ThruDate(),
@@ -2533,6 +2583,13 @@ public class EmploymentPackageImpl extends EPackageImpl implements EmploymentPac
 			   "length", "1"
 		   });
 		addAnnotation
+		  (getEmplLeaveReasonType_ParentTypeId(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
 		  (emplLeaveTypeEClass.getEOperations().get(0),
 		   source,
 		   new String[] {
@@ -2561,6 +2618,33 @@ public class EmploymentPackageImpl extends EPackageImpl implements EmploymentPac
 			   "length", "1"
 		   });
 		addAnnotation
+		  (getEmplLeaveType_ParentTypeId(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (getEmployment_PartyIdTo(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (getEmployment_PartyIdFrom(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (getEmployment_FromDate(),
+		   source,
+		   new String[] {
+			   "type", "date-time"
+		   });
+		addAnnotation
 		  (getEmployment_RoleTypeIdFrom(),
 		   source,
 		   new String[] {
@@ -2575,10 +2659,18 @@ public class EmploymentPackageImpl extends EPackageImpl implements EmploymentPac
 			   "length", "20"
 		   });
 		addAnnotation
-		  (getEmployment_FromDate(),
+		  (getEmployment_TerminationReasonId(),
 		   source,
 		   new String[] {
-			   "type", "date-time"
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (getEmployment_TerminationTypeId(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
 		   });
 		addAnnotation
 		  (getEmployment_ThruDate(),
@@ -2598,6 +2690,55 @@ public class EmploymentPackageImpl extends EPackageImpl implements EmploymentPac
 		   source,
 		   new String[] {
 			   "type", "date-time"
+		   });
+		addAnnotation
+		  (getEmploymentApp_ApplyingPartyId(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (getEmploymentApp_ApproverPartyId(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (getEmploymentApp_EmplPositionId(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (getEmploymentApp_EmploymentAppSourceTypeId(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (getEmploymentApp_JobRequisitionId(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (getEmploymentApp_ReferredByPartyId(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (getEmploymentApp_StatusId(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
 		   });
 		addAnnotation
 		  (employmentAppSourceTypeEClass.getEOperations().get(0),
@@ -2635,6 +2776,40 @@ public class EmploymentPackageImpl extends EPackageImpl implements EmploymentPac
 			   "length", "1"
 		   });
 		addAnnotation
+		  (getEmploymentAppSourceType_ParentTypeId(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (getPartyBenefit_PartyIdTo(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (getPartyBenefit_PartyIdFrom(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (getPartyBenefit_BenefitTypeId(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (getPartyBenefit_FromDate(),
+		   source,
+		   new String[] {
+			   "type", "date-time"
+		   });
+		addAnnotation
 		  (getPartyBenefit_RoleTypeIdFrom(),
 		   source,
 		   new String[] {
@@ -2647,12 +2822,6 @@ public class EmploymentPackageImpl extends EPackageImpl implements EmploymentPac
 		   new String[] {
 			   "type", "id",
 			   "length", "20"
-		   });
-		addAnnotation
-		  (getPartyBenefit_FromDate(),
-		   source,
-		   new String[] {
-			   "type", "date-time"
 		   });
 		addAnnotation
 		  (getPartyBenefit_ActualEmployerPaidPercent(),
@@ -2675,6 +2844,13 @@ public class EmploymentPackageImpl extends EPackageImpl implements EmploymentPac
 			   "type", "currency-amount",
 			   "precision", "18",
 			   "scale", "2"
+		   });
+		addAnnotation
+		  (getPartyBenefit_PeriodTypeId(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
 		   });
 		addAnnotation
 		  (getPartyBenefit_ThruDate(),
@@ -2704,18 +2880,10 @@ public class EmploymentPackageImpl extends EPackageImpl implements EmploymentPac
 			   "length", "100"
 		   });
 		addAnnotation
-		  (getPayHistory_RoleTypeIdFrom(),
+		  (getPayHistory_FromDate(),
 		   source,
 		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getPayHistory_RoleTypeIdTo(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
+			   "type", "date-time"
 		   });
 		addAnnotation
 		  (getPayHistory_PartyIdFrom(),
@@ -2732,10 +2900,18 @@ public class EmploymentPackageImpl extends EPackageImpl implements EmploymentPac
 			   "length", "20"
 		   });
 		addAnnotation
-		  (getPayHistory_FromDate(),
+		  (getPayHistory_RoleTypeIdFrom(),
 		   source,
 		   new String[] {
-			   "type", "date-time"
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (getPayHistory_RoleTypeIdTo(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
 		   });
 		addAnnotation
 		  (getPayHistory_Amount(),
@@ -2753,6 +2929,20 @@ public class EmploymentPackageImpl extends EPackageImpl implements EmploymentPac
 			   "length", "255"
 		   });
 		addAnnotation
+		  (getPayHistory_PayGradeId(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (getPayHistory_PeriodTypeId(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
 		  (getPayHistory_SalaryStepSeqId(),
 		   source,
 		   new String[] {
@@ -2766,7 +2956,7 @@ public class EmploymentPackageImpl extends EPackageImpl implements EmploymentPac
 			   "type", "date-time"
 		   });
 		addAnnotation
-		  (getPayrollPreference_RoleTypeId(),
+		  (getPayrollPreference_PartyId(),
 		   source,
 		   new String[] {
 			   "type", "id",
@@ -2774,6 +2964,13 @@ public class EmploymentPackageImpl extends EPackageImpl implements EmploymentPac
 		   });
 		addAnnotation
 		  (getPayrollPreference_PayrollPreferenceSeqId(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (getPayrollPreference_RoleTypeId(),
 		   source,
 		   new String[] {
 			   "type", "id",
@@ -2794,6 +2991,13 @@ public class EmploymentPackageImpl extends EPackageImpl implements EmploymentPac
 			   "length", "100"
 		   });
 		addAnnotation
+		  (getPayrollPreference_DeductionTypeId(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
 		  (getPayrollPreference_FlatAmount(),
 		   source,
 		   new String[] {
@@ -2808,10 +3012,24 @@ public class EmploymentPackageImpl extends EPackageImpl implements EmploymentPac
 			   "type", "date-time"
 		   });
 		addAnnotation
+		  (getPayrollPreference_PaymentMethodTypeId(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
 		  (getPayrollPreference_Percentage(),
 		   source,
 		   new String[] {
 			   "type", "floating-point"
+		   });
+		addAnnotation
+		  (getPayrollPreference_PeriodTypeId(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
 		   });
 		addAnnotation
 		  (getPayrollPreference_RoutingNumber(),
@@ -2827,7 +3045,7 @@ public class EmploymentPackageImpl extends EPackageImpl implements EmploymentPac
 			   "type", "date-time"
 		   });
 		addAnnotation
-		  (getSalaryStep_SalaryStepSeqId(),
+		  (getSalaryStep_PayGradeId(),
 		   source,
 		   new String[] {
 			   "type", "id",
@@ -2838,6 +3056,13 @@ public class EmploymentPackageImpl extends EPackageImpl implements EmploymentPac
 		   source,
 		   new String[] {
 			   "type", "date-time"
+		   });
+		addAnnotation
+		  (getSalaryStep_SalaryStepSeqId(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
 		   });
 		addAnnotation
 		  (getSalaryStep_Amount(),
@@ -2916,6 +3141,13 @@ public class EmploymentPackageImpl extends EPackageImpl implements EmploymentPac
 			   "length", "1"
 		   });
 		addAnnotation
+		  (getTerminationType_ParentTypeId(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
 		  (getUnemploymentClaim_UnemploymentClaimId(),
 		   source,
 		   new String[] {
@@ -2964,6 +3196,13 @@ public class EmploymentPackageImpl extends EPackageImpl implements EmploymentPac
 			   "length", "20"
 		   });
 		addAnnotation
+		  (getUnemploymentClaim_StatusId(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
 		  (getUnemploymentClaim_ThruDate(),
 		   source,
 		   new String[] {
@@ -2992,7 +3231,13 @@ public class EmploymentPackageImpl extends EPackageImpl implements EmploymentPac
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (getBenefitType_BenefitTypeId(),
+		  (getEmplLeave_PartyId(),
+		   source,
+		   new String[] {
+			   "key", "true"
+		   });
+		addAnnotation
+		  (getEmplLeave_LeaveTypeId(),
 		   source,
 		   new String[] {
 			   "key", "true"
@@ -3010,19 +3255,25 @@ public class EmploymentPackageImpl extends EPackageImpl implements EmploymentPac
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (getEmplLeaveReasonType_EmplLeaveReasonTypeId(),
-		   source,
-		   new String[] {
-			   "key", "true"
-		   });
-		addAnnotation
 		  (emplLeaveTypeEClass.getEOperations().get(0),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (getEmplLeaveType_LeaveTypeId(),
+		  (getEmployment_PartyIdTo(),
+		   source,
+		   new String[] {
+			   "key", "true"
+		   });
+		addAnnotation
+		  (getEmployment_PartyIdFrom(),
+		   source,
+		   new String[] {
+			   "key", "true"
+		   });
+		addAnnotation
+		  (getEmployment_FromDate(),
 		   source,
 		   new String[] {
 			   "key", "true"
@@ -3040,18 +3291,6 @@ public class EmploymentPackageImpl extends EPackageImpl implements EmploymentPac
 			   "key", "true"
 		   });
 		addAnnotation
-		  (getEmployment_FromDate(),
-		   source,
-		   new String[] {
-			   "key", "true"
-		   });
-		addAnnotation
-		  (getEmploymentApp_ApplicationId(),
-		   source,
-		   new String[] {
-			   "key", "true"
-		   });
-		addAnnotation
 		  (employmentAppSourceTypeEClass.getEOperations().get(0),
 		   source,
 		   new String[] {
@@ -3064,7 +3303,25 @@ public class EmploymentPackageImpl extends EPackageImpl implements EmploymentPac
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (getEmploymentAppSourceType_EmploymentAppSourceTypeId(),
+		  (getPartyBenefit_PartyIdTo(),
+		   source,
+		   new String[] {
+			   "key", "true"
+		   });
+		addAnnotation
+		  (getPartyBenefit_PartyIdFrom(),
+		   source,
+		   new String[] {
+			   "key", "true"
+		   });
+		addAnnotation
+		  (getPartyBenefit_BenefitTypeId(),
+		   source,
+		   new String[] {
+			   "key", "true"
+		   });
+		addAnnotation
+		  (getPartyBenefit_FromDate(),
 		   source,
 		   new String[] {
 			   "key", "true"
@@ -3082,25 +3339,7 @@ public class EmploymentPackageImpl extends EPackageImpl implements EmploymentPac
 			   "key", "true"
 		   });
 		addAnnotation
-		  (getPartyBenefit_FromDate(),
-		   source,
-		   new String[] {
-			   "key", "true"
-		   });
-		addAnnotation
-		  (getPayGrade_PayGradeId(),
-		   source,
-		   new String[] {
-			   "key", "true"
-		   });
-		addAnnotation
-		  (getPayHistory_RoleTypeIdFrom(),
-		   source,
-		   new String[] {
-			   "key", "true"
-		   });
-		addAnnotation
-		  (getPayHistory_RoleTypeIdTo(),
+		  (getPayHistory_FromDate(),
 		   source,
 		   new String[] {
 			   "key", "true"
@@ -3118,13 +3357,19 @@ public class EmploymentPackageImpl extends EPackageImpl implements EmploymentPac
 			   "key", "true"
 		   });
 		addAnnotation
-		  (getPayHistory_FromDate(),
+		  (getPayHistory_RoleTypeIdFrom(),
 		   source,
 		   new String[] {
 			   "key", "true"
 		   });
 		addAnnotation
-		  (getPayrollPreference_RoleTypeId(),
+		  (getPayHistory_RoleTypeIdTo(),
+		   source,
+		   new String[] {
+			   "key", "true"
+		   });
+		addAnnotation
+		  (getPayrollPreference_PartyId(),
 		   source,
 		   new String[] {
 			   "key", "true"
@@ -3136,7 +3381,19 @@ public class EmploymentPackageImpl extends EPackageImpl implements EmploymentPac
 			   "key", "true"
 		   });
 		addAnnotation
-		  (getSalaryStep_SalaryStepSeqId(),
+		  (getPayrollPreference_RoleTypeId(),
+		   source,
+		   new String[] {
+			   "key", "true"
+		   });
+		addAnnotation
+		  (getPayrollPreference_RoutingNumber(),
+		   source,
+		   new String[] {
+			   "help", "See https://en.wikipedia.org/wiki/Bank_code"
+		   });
+		addAnnotation
+		  (getSalaryStep_PayGradeId(),
 		   source,
 		   new String[] {
 			   "key", "true"
@@ -3148,7 +3405,7 @@ public class EmploymentPackageImpl extends EPackageImpl implements EmploymentPac
 			   "key", "true"
 		   });
 		addAnnotation
-		  (getTerminationReason_TerminationReasonId(),
+		  (getSalaryStep_SalaryStepSeqId(),
 		   source,
 		   new String[] {
 			   "key", "true"
@@ -3158,18 +3415,6 @@ public class EmploymentPackageImpl extends EPackageImpl implements EmploymentPac
 		   source,
 		   new String[] {
 			   "derived", "true"
-		   });
-		addAnnotation
-		  (getTerminationType_TerminationTypeId(),
-		   source,
-		   new String[] {
-			   "key", "true"
-		   });
-		addAnnotation
-		  (getUnemploymentClaim_UnemploymentClaimId(),
-		   source,
-		   new String[] {
-			   "key", "true"
 		   });
 	}
 
@@ -3187,9 +3432,6 @@ public class EmploymentPackageImpl extends EPackageImpl implements EmploymentPac
 		   new String[] {
 			   "frame", "BenefitType",
 			   "route", "parentTypeId"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
 		  (emplLeaveReasonTypeEClass.getEOperations().get(0),
@@ -3197,9 +3439,6 @@ public class EmploymentPackageImpl extends EPackageImpl implements EmploymentPac
 		   new String[] {
 			   "frame", "EmplLeaveReasonType",
 			   "route", "parentTypeId"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
 		  (emplLeaveTypeEClass.getEOperations().get(0),
@@ -3207,9 +3446,6 @@ public class EmploymentPackageImpl extends EPackageImpl implements EmploymentPac
 		   new String[] {
 			   "frame", "EmplLeaveType",
 			   "route", "parentTypeId"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
 		  (employmentAppSourceTypeEClass.getEOperations().get(0),
@@ -3217,9 +3453,6 @@ public class EmploymentPackageImpl extends EPackageImpl implements EmploymentPac
 		   new String[] {
 			   "frame", "EmploymentAppSourceType",
 			   "route", "parentTypeId"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
 		  (employmentAppSourceTypeEClass.getEOperations().get(1),
@@ -3227,9 +3460,6 @@ public class EmploymentPackageImpl extends EPackageImpl implements EmploymentPac
 		   new String[] {
 			   "frame", "EmploymentApp",
 			   "route", "employmentAppSourceTypeId"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
 		  (terminationTypeEClass.getEOperations().get(0),
@@ -3237,9 +3467,6 @@ public class EmploymentPackageImpl extends EPackageImpl implements EmploymentPac
 		   new String[] {
 			   "frame", "TerminationType",
 			   "route", "parentTypeId"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 	}
 

@@ -18,13 +18,13 @@ import org.abchip.mimo.biz.BizEntity;
  * The following features are supported:
  * </p>
  * <ul>
+ *   <li>{@link org.abchip.mimo.biz.order.request.CustRequestTypeAttr#getCustRequestTypeId <em>Cust Request Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.request.CustRequestTypeAttr#getAttrName <em>Attr Name</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.request.CustRequestTypeAttr#getDescription <em>Description</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.request.CustRequestTypeAttr#getCustRequestTypeId <em>Cust Request Type Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.order.request.RequestPackage#getCustRequestTypeAttr()
- * @model annotation="mimo-ent-frame formula='description'"
+ * @model annotation="mimo-ent-frame title='Customer Request Type Attribute' formula='description'"
  * @generated
  */
 public interface CustRequestTypeAttr extends BizEntity {
@@ -40,8 +40,8 @@ public interface CustRequestTypeAttr extends BizEntity {
 	 * @see #setAttrName(String)
 	 * @see org.abchip.mimo.biz.order.request.RequestPackage#getCustRequestTypeAttr_AttrName()
 	 * @model required="true"
-	 *        annotation="mimo-ent-format type='id-long' length='60'"
 	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id-long' length='60'"
 	 * @generated
 	 */
 	String getAttrName();
@@ -67,7 +67,9 @@ public interface CustRequestTypeAttr extends BizEntity {
 	 * @return the value of the '<em>Cust Request Type Id</em>' reference.
 	 * @see #setCustRequestTypeId(CustRequestType)
 	 * @see org.abchip.mimo.biz.order.request.RequestPackage#getCustRequestTypeAttr_CustRequestTypeId()
-	 * @model keys="custRequestTypeId"
+	 * @model keys="custRequestTypeId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	CustRequestType getCustRequestTypeId();

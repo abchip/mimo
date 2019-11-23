@@ -24,17 +24,17 @@ import org.abchip.mimo.biz.party.party.Party;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.humanres.employment.PartyBenefit#getRoleTypeIdFrom <em>Role Type Id From</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.humanres.employment.PartyBenefit#getRoleTypeIdTo <em>Role Type Id To</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.humanres.employment.PartyBenefit#getFromDate <em>From Date</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.humanres.employment.PartyBenefit#getActualEmployerPaidPercent <em>Actual Employer Paid Percent</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.humanres.employment.PartyBenefit#getAvailableTime <em>Available Time</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.humanres.employment.PartyBenefit#getCost <em>Cost</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.humanres.employment.PartyBenefit#getThruDate <em>Thru Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.employment.PartyBenefit#getPartyIdTo <em>Party Id To</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.employment.PartyBenefit#getPartyIdFrom <em>Party Id From</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.employment.PartyBenefit#getBenefitTypeId <em>Benefit Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.humanres.employment.PartyBenefit#getFromDate <em>From Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.humanres.employment.PartyBenefit#getRoleTypeIdFrom <em>Role Type Id From</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.humanres.employment.PartyBenefit#getRoleTypeIdTo <em>Role Type Id To</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.humanres.employment.PartyBenefit#getActualEmployerPaidPercent <em>Actual Employer Paid Percent</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.humanres.employment.PartyBenefit#getAvailableTime <em>Available Time</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.humanres.employment.PartyBenefit#getCost <em>Cost</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.employment.PartyBenefit#getPeriodTypeId <em>Period Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.humanres.employment.PartyBenefit#getThruDate <em>Thru Date</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.humanres.employment.EmploymentPackage#getPartyBenefit()
@@ -105,7 +105,9 @@ public interface PartyBenefit extends BizEntity {
 	 * @return the value of the '<em>Benefit Type Id</em>' reference.
 	 * @see #setBenefitTypeId(BenefitType)
 	 * @see org.abchip.mimo.biz.humanres.employment.EmploymentPackage#getPartyBenefit_BenefitTypeId()
-	 * @model keys="benefitTypeId"
+	 * @model keys="benefitTypeId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	BenefitType getBenefitTypeId();
@@ -158,8 +160,8 @@ public interface PartyBenefit extends BizEntity {
 	 * @see #setFromDate(Date)
 	 * @see org.abchip.mimo.biz.humanres.employment.EmploymentPackage#getPartyBenefit_FromDate()
 	 * @model required="true"
-	 *        annotation="mimo-ent-format type='date-time'"
 	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getFromDate();
@@ -185,7 +187,9 @@ public interface PartyBenefit extends BizEntity {
 	 * @return the value of the '<em>Party Id From</em>' reference.
 	 * @see #setPartyIdFrom(Party)
 	 * @see org.abchip.mimo.biz.humanres.employment.EmploymentPackage#getPartyBenefit_PartyIdFrom()
-	 * @model keys="partyId"
+	 * @model keys="partyId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Party getPartyIdFrom();
@@ -211,7 +215,9 @@ public interface PartyBenefit extends BizEntity {
 	 * @return the value of the '<em>Party Id To</em>' reference.
 	 * @see #setPartyIdTo(Party)
 	 * @see org.abchip.mimo.biz.humanres.employment.EmploymentPackage#getPartyBenefit_PartyIdTo()
-	 * @model keys="partyId"
+	 * @model keys="partyId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Party getPartyIdTo();
@@ -238,6 +244,7 @@ public interface PartyBenefit extends BizEntity {
 	 * @see #setPeriodTypeId(PeriodType)
 	 * @see org.abchip.mimo.biz.humanres.employment.EmploymentPackage#getPartyBenefit_PeriodTypeId()
 	 * @model keys="periodTypeId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	PeriodType getPeriodTypeId();
@@ -264,8 +271,8 @@ public interface PartyBenefit extends BizEntity {
 	 * @see #setRoleTypeIdFrom(String)
 	 * @see org.abchip.mimo.biz.humanres.employment.EmploymentPackage#getPartyBenefit_RoleTypeIdFrom()
 	 * @model required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	String getRoleTypeIdFrom();
@@ -292,8 +299,8 @@ public interface PartyBenefit extends BizEntity {
 	 * @see #setRoleTypeIdTo(String)
 	 * @see org.abchip.mimo.biz.humanres.employment.EmploymentPackage#getPartyBenefit_RoleTypeIdTo()
 	 * @model required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	String getRoleTypeIdTo();

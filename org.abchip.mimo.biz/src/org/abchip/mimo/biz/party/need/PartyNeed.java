@@ -26,17 +26,17 @@ import org.abchip.mimo.biz.product.product.Product;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.party.need.PartyNeed#getPartyNeedId <em>Party Need Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.party.need.PartyNeed#getDatetimeRecorded <em>Datetime Recorded</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.party.need.PartyNeed#getDescription <em>Description</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.party.need.PartyNeed#getVisitId <em>Visit Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.party.need.PartyNeed#getNeedTypeId <em>Need Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.need.PartyNeed#getPartyId <em>Party Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.need.PartyNeed#getRoleTypeId <em>Role Type Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.party.need.PartyNeed#getPartyTypeId <em>Party Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.party.need.PartyNeed#getPartyNeedId <em>Party Need Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.need.PartyNeed#getCommunicationEventId <em>Communication Event Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.party.need.PartyNeed#getProductId <em>Product Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.party.need.PartyNeed#getDatetimeRecorded <em>Datetime Recorded</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.party.need.PartyNeed#getDescription <em>Description</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.party.need.PartyNeed#getNeedTypeId <em>Need Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.party.need.PartyNeed#getPartyTypeId <em>Party Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.need.PartyNeed#getProductCategoryId <em>Product Category Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.party.need.PartyNeed#getProductId <em>Product Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.party.need.PartyNeed#getVisitId <em>Visit Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.party.need.NeedPackage#getPartyNeed()
@@ -107,7 +107,9 @@ public interface PartyNeed extends BizEntity {
 	 * @return the value of the '<em>Party Id</em>' reference.
 	 * @see #setPartyId(Party)
 	 * @see org.abchip.mimo.biz.party.need.NeedPackage#getPartyNeed_PartyId()
-	 * @model keys="partyId"
+	 * @model keys="partyId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Party getPartyId();
@@ -134,8 +136,8 @@ public interface PartyNeed extends BizEntity {
 	 * @see #setPartyNeedId(String)
 	 * @see org.abchip.mimo.biz.party.need.NeedPackage#getPartyNeed_PartyNeedId()
 	 * @model required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	String getPartyNeedId();
@@ -162,6 +164,7 @@ public interface PartyNeed extends BizEntity {
 	 * @see #setPartyTypeId(PartyType)
 	 * @see org.abchip.mimo.biz.party.need.NeedPackage#getPartyNeed_PartyTypeId()
 	 * @model keys="partyTypeId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	PartyType getPartyTypeId();
@@ -188,6 +191,7 @@ public interface PartyNeed extends BizEntity {
 	 * @see #setProductCategoryId(ProductCategory)
 	 * @see org.abchip.mimo.biz.party.need.NeedPackage#getPartyNeed_ProductCategoryId()
 	 * @model keys="productCategoryId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ProductCategory getProductCategoryId();
@@ -214,6 +218,7 @@ public interface PartyNeed extends BizEntity {
 	 * @see #setProductId(Product)
 	 * @see org.abchip.mimo.biz.party.need.NeedPackage#getPartyNeed_ProductId()
 	 * @model keys="productId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Product getProductId();
@@ -239,7 +244,9 @@ public interface PartyNeed extends BizEntity {
 	 * @return the value of the '<em>Role Type Id</em>' reference.
 	 * @see #setRoleTypeId(RoleType)
 	 * @see org.abchip.mimo.biz.party.need.NeedPackage#getPartyNeed_RoleTypeId()
-	 * @model keys="roleTypeId"
+	 * @model keys="roleTypeId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	RoleType getRoleTypeId();
@@ -292,6 +299,7 @@ public interface PartyNeed extends BizEntity {
 	 * @see #setNeedTypeId(NeedType)
 	 * @see org.abchip.mimo.biz.party.need.NeedPackage#getPartyNeed_NeedTypeId()
 	 * @model keys="needTypeId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	NeedType getNeedTypeId();
@@ -318,6 +326,7 @@ public interface PartyNeed extends BizEntity {
 	 * @see #setCommunicationEventId(CommunicationEvent)
 	 * @see org.abchip.mimo.biz.party.need.NeedPackage#getPartyNeed_CommunicationEventId()
 	 * @model keys="communicationEventId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	CommunicationEvent getCommunicationEventId();

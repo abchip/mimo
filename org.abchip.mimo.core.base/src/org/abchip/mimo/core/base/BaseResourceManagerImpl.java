@@ -19,7 +19,6 @@ import org.abchip.mimo.context.LockManager;
 import org.abchip.mimo.entity.Entity;
 import org.abchip.mimo.entity.EntityIdentifiable;
 import org.abchip.mimo.entity.Frame;
-import org.abchip.mimo.entity.SerializationType;
 import org.abchip.mimo.resource.ResourceConfig;
 import org.abchip.mimo.resource.ResourceFactory;
 import org.abchip.mimo.resource.ResourceListener;
@@ -28,6 +27,7 @@ import org.abchip.mimo.resource.ResourceNotifier;
 import org.abchip.mimo.resource.ResourceReader;
 import org.abchip.mimo.resource.ResourceSerializer;
 import org.abchip.mimo.resource.ResourceWriter;
+import org.abchip.mimo.resource.SerializationType;
 
 public class BaseResourceManagerImpl extends BaseResource implements ResourceManager {
 

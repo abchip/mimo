@@ -19,9 +19,9 @@ import org.abchip.mimo.biz.common.enum_.Enumeration;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.security.login.UserLoginSecurityQuestion#getSecurityAnswer <em>Security Answer</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.security.login.UserLoginSecurityQuestion#getQuestionEnumId <em>Question Enum Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.security.login.UserLoginSecurityQuestion#getUserLoginId <em>User Login Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.security.login.UserLoginSecurityQuestion#getSecurityAnswer <em>Security Answer</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.security.login.LoginPackage#getUserLoginSecurityQuestion()
@@ -40,7 +40,9 @@ public interface UserLoginSecurityQuestion extends BizEntity {
 	 * @return the value of the '<em>Question Enum Id</em>' reference.
 	 * @see #setQuestionEnumId(Enumeration)
 	 * @see org.abchip.mimo.biz.security.login.LoginPackage#getUserLoginSecurityQuestion_QuestionEnumId()
-	 * @model keys="enumId"
+	 * @model keys="enumId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Enumeration getQuestionEnumId();
@@ -92,7 +94,9 @@ public interface UserLoginSecurityQuestion extends BizEntity {
 	 * @return the value of the '<em>User Login Id</em>' reference.
 	 * @see #setUserLoginId(UserLogin)
 	 * @see org.abchip.mimo.biz.security.login.LoginPackage#getUserLoginSecurityQuestion_UserLoginId()
-	 * @model keys="userLoginId"
+	 * @model keys="userLoginId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id-vlong' length='255'"
 	 * @generated
 	 */
 	UserLogin getUserLoginId();

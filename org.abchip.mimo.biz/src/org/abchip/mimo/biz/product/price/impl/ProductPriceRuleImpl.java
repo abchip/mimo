@@ -28,10 +28,10 @@ import org.eclipse.emf.ecore.EClass;
  *   <li>{@link org.abchip.mimo.biz.product.price.impl.ProductPriceRuleImpl#getDescription <em>Description</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.price.impl.ProductPriceRuleImpl#getFromDate <em>From Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.price.impl.ProductPriceRuleImpl#isIsSale <em>Is Sale</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.price.impl.ProductPriceRuleImpl#getRuleName <em>Rule Name</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.price.impl.ProductPriceRuleImpl#getThruDate <em>Thru Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.price.impl.ProductPriceRuleImpl#getProductPriceActions <em>Product Price Actions</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.price.impl.ProductPriceRuleImpl#getProductPriceConds <em>Product Price Conds</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.price.impl.ProductPriceRuleImpl#getRuleName <em>Rule Name</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.price.impl.ProductPriceRuleImpl#getThruDate <em>Thru Date</em>}</li>
  * </ul>
  *
  * @generated

@@ -22,9 +22,9 @@ import org.abchip.mimo.biz.security.login.UserLogin;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.accounting.invoice.InvoiceStatus#getStatusDate <em>Status Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.invoice.InvoiceStatus#getStatusId <em>Status Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.invoice.InvoiceStatus#getInvoiceId <em>Invoice Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.invoice.InvoiceStatus#getStatusDate <em>Status Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.invoice.InvoiceStatus#getChangeByUserLoginId <em>Change By User Login Id</em>}</li>
  * </ul>
  *
@@ -45,6 +45,7 @@ public interface InvoiceStatus extends BizEntity {
 	 * @see #setChangeByUserLoginId(UserLogin)
 	 * @see org.abchip.mimo.biz.accounting.invoice.InvoicePackage#getInvoiceStatus_ChangeByUserLoginId()
 	 * @model keys="userLoginId"
+	 *        annotation="mimo-ent-format type='id-vlong' length='255'"
 	 * @generated
 	 */
 	UserLogin getChangeByUserLoginId();
@@ -71,8 +72,8 @@ public interface InvoiceStatus extends BizEntity {
 	 * @see #setStatusDate(Date)
 	 * @see org.abchip.mimo.biz.accounting.invoice.InvoicePackage#getInvoiceStatus_StatusDate()
 	 * @model required="true"
-	 *        annotation="mimo-ent-format type='date-time'"
 	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getStatusDate();
@@ -98,7 +99,9 @@ public interface InvoiceStatus extends BizEntity {
 	 * @return the value of the '<em>Status Id</em>' reference.
 	 * @see #setStatusId(StatusItem)
 	 * @see org.abchip.mimo.biz.accounting.invoice.InvoicePackage#getInvoiceStatus_StatusId()
-	 * @model keys="statusId"
+	 * @model keys="statusId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	StatusItem getStatusId();
@@ -124,7 +127,9 @@ public interface InvoiceStatus extends BizEntity {
 	 * @return the value of the '<em>Invoice Id</em>' reference.
 	 * @see #setInvoiceId(Invoice)
 	 * @see org.abchip.mimo.biz.accounting.invoice.InvoicePackage#getInvoiceStatus_InvoiceId()
-	 * @model keys="invoiceId"
+	 * @model keys="invoiceId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Invoice getInvoiceId();

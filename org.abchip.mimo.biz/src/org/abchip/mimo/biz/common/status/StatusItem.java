@@ -22,15 +22,15 @@ import org.abchip.mimo.biz.BizEntityTyped;
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.common.status.StatusItem#getStatusId <em>Status Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.common.status.StatusItem#getDescription <em>Description</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.common.status.StatusItem#getMainStatusValidChanges <em>Main Status Valid Changes</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.common.status.StatusItem#getSequenceId <em>Sequence Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.common.status.StatusItem#getShipmentStatuss <em>Shipment Statuss</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.common.status.StatusItem#getStatusCode <em>Status Code</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.common.status.StatusItem#getStatusTypeId <em>Status Type Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.common.status.StatusItem#getShipmentStatuss <em>Shipment Statuss</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.common.status.StatusItem#getMainStatusValidChanges <em>Main Status Valid Changes</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.common.status.StatusPackage#getStatusItem()
- * @model annotation="mimo-ent-frame formula='description'"
+ * @model annotation="mimo-ent-frame title='Status' dictionary='CommonEntityLabels' formula='description'"
  * @generated
  */
 public interface StatusItem extends BizEntityTyped<StatusType> {
@@ -124,6 +124,7 @@ public interface StatusItem extends BizEntityTyped<StatusType> {
 	 * @see #setStatusTypeId(StatusType)
 	 * @see org.abchip.mimo.biz.common.status.StatusPackage#getStatusItem_StatusTypeId()
 	 * @model keys="statusTypeId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	StatusType getStatusTypeId();
@@ -149,8 +150,7 @@ public interface StatusItem extends BizEntityTyped<StatusType> {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Shipment Statuss</em>' attribute list.
 	 * @see org.abchip.mimo.biz.common.status.StatusPackage#getStatusItem_ShipmentStatuss()
-	 * @model required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ShipmentStatus'"
 	 * @generated
@@ -168,8 +168,7 @@ public interface StatusItem extends BizEntityTyped<StatusType> {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Main Status Valid Changes</em>' attribute list.
 	 * @see org.abchip.mimo.biz.common.status.StatusPackage#getStatusItem_MainStatusValidChanges()
-	 * @model required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='StatusValidChange'"
 	 * @generated
@@ -209,8 +208,7 @@ public interface StatusItem extends BizEntityTyped<StatusType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='BudgetStatus' route='statusId'"
 	 * @generated
@@ -610,8 +608,7 @@ public interface StatusItem extends BizEntityTyped<StatusType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='RequirementStatus' route='statusId'"
 	 * @generated
@@ -731,8 +728,7 @@ public interface StatusItem extends BizEntityTyped<StatusType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='StatusValidChange' route='statusIdTo'"
 	 * @generated
@@ -772,7 +768,6 @@ public interface StatusItem extends BizEntityTyped<StatusType> {
 	 * @see org.abchip.mimo.biz.common.status.StatusPackage#getStatusItem_StatusId()
 	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getStatusId();

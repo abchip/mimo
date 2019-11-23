@@ -19,15 +19,15 @@ import org.abchip.mimo.biz.common.enum_.Enumeration;
  * The following features are supported:
  * </p>
  * <ul>
+ *   <li>{@link org.abchip.mimo.biz.product.price.ProductPriceCond#getProductPriceRuleId <em>Product Price Rule Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.price.ProductPriceCond#getProductPriceCondSeqId <em>Product Price Cond Seq Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.price.ProductPriceCond#getCondValue <em>Cond Value</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.price.ProductPriceCond#getProductPriceRuleId <em>Product Price Rule Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.price.ProductPriceCond#getInputParamEnumId <em>Input Param Enum Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.price.ProductPriceCond#getOperatorEnumId <em>Operator Enum Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.product.price.PricePackage#getProductPriceCond()
- * @model
+ * @model annotation="mimo-ent-frame title='Product Price Condition' dictionary='ProductEntityLabels'"
  * @generated
  */
 public interface ProductPriceCond extends BizEntity {
@@ -69,6 +69,7 @@ public interface ProductPriceCond extends BizEntity {
 	 * @see #setInputParamEnumId(Enumeration)
 	 * @see org.abchip.mimo.biz.product.price.PricePackage#getProductPriceCond_InputParamEnumId()
 	 * @model keys="enumId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Enumeration getInputParamEnumId();
@@ -95,6 +96,7 @@ public interface ProductPriceCond extends BizEntity {
 	 * @see #setOperatorEnumId(Enumeration)
 	 * @see org.abchip.mimo.biz.product.price.PricePackage#getProductPriceCond_OperatorEnumId()
 	 * @model keys="enumId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Enumeration getOperatorEnumId();
@@ -121,8 +123,8 @@ public interface ProductPriceCond extends BizEntity {
 	 * @see #setProductPriceCondSeqId(String)
 	 * @see org.abchip.mimo.biz.product.price.PricePackage#getProductPriceCond_ProductPriceCondSeqId()
 	 * @model required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	String getProductPriceCondSeqId();
@@ -148,7 +150,9 @@ public interface ProductPriceCond extends BizEntity {
 	 * @return the value of the '<em>Product Price Rule Id</em>' reference.
 	 * @see #setProductPriceRuleId(ProductPriceRule)
 	 * @see org.abchip.mimo.biz.product.price.PricePackage#getProductPriceCond_ProductPriceRuleId()
-	 * @model keys="productPriceRuleId"
+	 * @model keys="productPriceRuleId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ProductPriceRule getProductPriceRuleId();

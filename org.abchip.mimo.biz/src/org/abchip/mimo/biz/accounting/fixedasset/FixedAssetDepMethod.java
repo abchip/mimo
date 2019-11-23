@@ -21,14 +21,14 @@ import org.abchip.mimo.biz.common.method.CustomMethod;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.accounting.fixedasset.FixedAssetDepMethod#getFromDate <em>From Date</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.fixedasset.FixedAssetDepMethod#getThruDate <em>Thru Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.fixedasset.FixedAssetDepMethod#getDepreciationCustomMethodId <em>Depreciation Custom Method Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.fixedasset.FixedAssetDepMethod#getFixedAssetId <em>Fixed Asset Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.fixedasset.FixedAssetDepMethod#getFromDate <em>From Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.fixedasset.FixedAssetDepMethod#getThruDate <em>Thru Date</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.accounting.fixedasset.FixedassetPackage#getFixedAssetDepMethod()
- * @model
+ * @model annotation="mimo-ent-frame title='Fixed Asset Depreciation Method'"
  * @generated
  */
 public interface FixedAssetDepMethod extends BizEntity {
@@ -43,7 +43,9 @@ public interface FixedAssetDepMethod extends BizEntity {
 	 * @return the value of the '<em>Depreciation Custom Method Id</em>' reference.
 	 * @see #setDepreciationCustomMethodId(CustomMethod)
 	 * @see org.abchip.mimo.biz.accounting.fixedasset.FixedassetPackage#getFixedAssetDepMethod_DepreciationCustomMethodId()
-	 * @model keys="customMethodId"
+	 * @model keys="customMethodId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	CustomMethod getDepreciationCustomMethodId();
@@ -121,7 +123,9 @@ public interface FixedAssetDepMethod extends BizEntity {
 	 * @return the value of the '<em>Fixed Asset Id</em>' reference.
 	 * @see #setFixedAssetId(FixedAsset)
 	 * @see org.abchip.mimo.biz.accounting.fixedasset.FixedassetPackage#getFixedAssetDepMethod_FixedAssetId()
-	 * @model keys="fixedAssetId"
+	 * @model keys="fixedAssetId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	FixedAsset getFixedAssetId();

@@ -28,7 +28,7 @@ import org.abchip.mimo.biz.BizEntityType;
  * </ul>
  *
  * @see org.abchip.mimo.biz.product.category.CategoryPackage#getProductCategoryType()
- * @model annotation="mimo-ent-frame formula='description'"
+ * @model annotation="mimo-ent-frame dictionary='ProductEntityLabels' formula='description'"
  * @generated
  */
 public interface ProductCategoryType extends BizEntityType<ProductCategory> {
@@ -96,6 +96,7 @@ public interface ProductCategoryType extends BizEntityType<ProductCategory> {
 	 * @see #setParentTypeId(ProductCategoryType)
 	 * @see org.abchip.mimo.biz.product.category.CategoryPackage#getProductCategoryType_ParentTypeId()
 	 * @model keys="productCategoryTypeId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ProductCategoryType getParentTypeId();
@@ -123,7 +124,6 @@ public interface ProductCategoryType extends BizEntityType<ProductCategory> {
 	 * @see org.abchip.mimo.biz.product.category.CategoryPackage#getProductCategoryType_ProductCategoryTypeId()
 	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getProductCategoryTypeId();
@@ -149,8 +149,7 @@ public interface ProductCategoryType extends BizEntityType<ProductCategory> {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Product Category Type Attrs</em>' attribute list.
 	 * @see org.abchip.mimo.biz.product.category.CategoryPackage#getProductCategoryType_ProductCategoryTypeAttrs()
-	 * @model required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ProductCategoryTypeAttr'"
 	 * @generated

@@ -96,7 +96,6 @@ public interface OrderItemAssocType extends BizEntityType<OrderItemAssoc> {
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderItemAssocType_OrderItemAssocTypeId()
 	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getOrderItemAssocTypeId();
@@ -123,6 +122,7 @@ public interface OrderItemAssocType extends BizEntityType<OrderItemAssoc> {
 	 * @see #setParentTypeId(OrderItemAssocType)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderItemAssocType_ParentTypeId()
 	 * @model keys="orderItemAssocTypeId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	OrderItemAssocType getParentTypeId();

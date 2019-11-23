@@ -20,14 +20,14 @@ import org.abchip.mimo.biz.product.inventory.InventoryItem;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffortInventoryAssign#getQuantity <em>Quantity</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffortInventoryAssign#getWorkEffortId <em>Work Effort Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffortInventoryAssign#getInventoryItemId <em>Inventory Item Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffortInventoryAssign#getQuantity <em>Quantity</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffortInventoryAssign#getStatusId <em>Status Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage#getWorkEffortInventoryAssign()
- * @model
+ * @model annotation="mimo-ent-frame title='Work Effort Inventory Assignment'"
  * @generated
  */
 public interface WorkEffortInventoryAssign extends BizEntity {
@@ -42,7 +42,9 @@ public interface WorkEffortInventoryAssign extends BizEntity {
 	 * @return the value of the '<em>Inventory Item Id</em>' reference.
 	 * @see #setInventoryItemId(InventoryItem)
 	 * @see org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage#getWorkEffortInventoryAssign_InventoryItemId()
-	 * @model keys="inventoryItemId"
+	 * @model keys="inventoryItemId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	InventoryItem getInventoryItemId();
@@ -95,6 +97,7 @@ public interface WorkEffortInventoryAssign extends BizEntity {
 	 * @see #setStatusId(StatusItem)
 	 * @see org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage#getWorkEffortInventoryAssign_StatusId()
 	 * @model keys="statusId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	StatusItem getStatusId();
@@ -120,7 +123,9 @@ public interface WorkEffortInventoryAssign extends BizEntity {
 	 * @return the value of the '<em>Work Effort Id</em>' reference.
 	 * @see #setWorkEffortId(WorkEffort)
 	 * @see org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage#getWorkEffortInventoryAssign_WorkEffortId()
-	 * @model keys="workEffortId"
+	 * @model keys="workEffortId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	WorkEffort getWorkEffortId();

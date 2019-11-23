@@ -22,7 +22,7 @@ import java.util.TimeZone;
 
 import org.abchip.mimo.entity.Entity;
 import org.abchip.mimo.entity.Frame;
-import org.abchip.mimo.entity.SerializationType;
+import org.abchip.mimo.resource.SerializationType;
 import org.abchip.mimo.resource.impl.ResourceSerializerImpl;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;

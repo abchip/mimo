@@ -39,7 +39,9 @@ public interface CustRequestWorkEffort extends BizEntity {
 	 * @return the value of the '<em>Cust Request Id</em>' reference.
 	 * @see #setCustRequestId(CustRequest)
 	 * @see org.abchip.mimo.biz.order.request.RequestPackage#getCustRequestWorkEffort_CustRequestId()
-	 * @model keys="custRequestId"
+	 * @model keys="custRequestId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	CustRequest getCustRequestId();
@@ -65,7 +67,9 @@ public interface CustRequestWorkEffort extends BizEntity {
 	 * @return the value of the '<em>Work Effort Id</em>' reference.
 	 * @see #setWorkEffortId(WorkEffort)
 	 * @see org.abchip.mimo.biz.order.request.RequestPackage#getCustRequestWorkEffort_WorkEffortId()
-	 * @model keys="workEffortId"
+	 * @model keys="workEffortId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	WorkEffort getWorkEffortId();

@@ -27,6 +27,7 @@ import org.eclipse.emf.ecore.EClass;
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.CreditCardImpl#getCompanyNameOnCard <em>Company Name On Card</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.CreditCardImpl#getConsecutiveFailedAuths <em>Consecutive Failed Auths</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.CreditCardImpl#getConsecutiveFailedNsf <em>Consecutive Failed Nsf</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.CreditCardImpl#getContactMechId <em>Contact Mech Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.CreditCardImpl#getExpireDate <em>Expire Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.CreditCardImpl#getFirstNameOnCard <em>First Name On Card</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.CreditCardImpl#getIssueNumber <em>Issue Number</em>}</li>
@@ -37,7 +38,6 @@ import org.eclipse.emf.ecore.EClass;
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.CreditCardImpl#getSuffixOnCard <em>Suffix On Card</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.CreditCardImpl#getTitleOnCard <em>Title On Card</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.CreditCardImpl#getValidFromDate <em>Valid From Date</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.CreditCardImpl#getContactMechId <em>Contact Mech Id</em>}</li>
  * </ul>
  *
  * @generated

@@ -24,11 +24,14 @@ import org.abchip.mimo.biz.product.product.Product;
  * The following features are supported:
  * </p>
  * <ul>
+ *   <li>{@link org.abchip.mimo.biz.order.request.CustRequestItem#getCustRequestId <em>Cust Request Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.request.CustRequestItem#getCustRequestItemSeqId <em>Cust Request Item Seq Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.request.CustRequestItem#getConfigId <em>Config Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.request.CustRequestItem#getCustRequestResolutionId <em>Cust Request Resolution Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.request.CustRequestItem#getDescription <em>Description</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.request.CustRequestItem#getMaximumAmount <em>Maximum Amount</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.request.CustRequestItem#getPriority <em>Priority</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.request.CustRequestItem#getProductId <em>Product Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.request.CustRequestItem#getQuantity <em>Quantity</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.request.CustRequestItem#getRequiredByDate <em>Required By Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.request.CustRequestItem#getReservLength <em>Reserv Length</em>}</li>
@@ -36,15 +39,12 @@ import org.abchip.mimo.biz.product.product.Product;
  *   <li>{@link org.abchip.mimo.biz.order.request.CustRequestItem#getReservStart <em>Reserv Start</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.request.CustRequestItem#getSelectedAmount <em>Selected Amount</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.request.CustRequestItem#getSequenceNum <em>Sequence Num</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.request.CustRequestItem#getStory <em>Story</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.request.CustRequestItem#getCustRequestId <em>Cust Request Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.request.CustRequestItem#getStatusId <em>Status Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.request.CustRequestItem#getCustRequestResolutionId <em>Cust Request Resolution Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.request.CustRequestItem#getProductId <em>Product Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.request.CustRequestItem#getStory <em>Story</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.order.request.RequestPackage#getCustRequestItem()
- * @model annotation="mimo-ent-frame formula='description'"
+ * @model annotation="mimo-ent-frame title='Customer Request Item' formula='description'"
  * @generated
  */
 public interface CustRequestItem extends BizEntity {
@@ -85,7 +85,9 @@ public interface CustRequestItem extends BizEntity {
 	 * @return the value of the '<em>Cust Request Id</em>' reference.
 	 * @see #setCustRequestId(CustRequest)
 	 * @see org.abchip.mimo.biz.order.request.RequestPackage#getCustRequestItem_CustRequestId()
-	 * @model keys="custRequestId"
+	 * @model keys="custRequestId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	CustRequest getCustRequestId();
@@ -112,8 +114,8 @@ public interface CustRequestItem extends BizEntity {
 	 * @see #setCustRequestItemSeqId(String)
 	 * @see org.abchip.mimo.biz.order.request.RequestPackage#getCustRequestItem_CustRequestItemSeqId()
 	 * @model required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	String getCustRequestItemSeqId();
@@ -140,6 +142,7 @@ public interface CustRequestItem extends BizEntity {
 	 * @see #setCustRequestResolutionId(CustRequestResolution)
 	 * @see org.abchip.mimo.biz.order.request.RequestPackage#getCustRequestItem_CustRequestResolutionId()
 	 * @model keys="custRequestResolutionId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	CustRequestResolution getCustRequestResolutionId();
@@ -244,6 +247,7 @@ public interface CustRequestItem extends BizEntity {
 	 * @see #setProductId(Product)
 	 * @see org.abchip.mimo.biz.order.request.RequestPackage#getCustRequestItem_ProductId()
 	 * @model keys="productId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Product getProductId();
@@ -452,6 +456,7 @@ public interface CustRequestItem extends BizEntity {
 	 * @see #setStatusId(StatusItem)
 	 * @see org.abchip.mimo.biz.order.request.RequestPackage#getCustRequestItem_StatusId()
 	 * @model keys="statusId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	StatusItem getStatusId();

@@ -20,14 +20,14 @@ import org.abchip.mimo.biz.common.geo.Geo;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.product.product.ProductGeo#getDescription <em>Description</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.ProductGeo#getProductId <em>Product Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.ProductGeo#getGeoId <em>Geo Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.product.ProductGeo#getDescription <em>Description</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.ProductGeo#getProductGeoEnumId <em>Product Geo Enum Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.product.product.ProductPackage#getProductGeo()
- * @model annotation="mimo-ent-frame formula='description'"
+ * @model annotation="mimo-ent-frame dictionary='ProductEntityLabels' formula='description'"
  * @generated
  */
 public interface ProductGeo extends BizEntity {
@@ -68,7 +68,9 @@ public interface ProductGeo extends BizEntity {
 	 * @return the value of the '<em>Geo Id</em>' reference.
 	 * @see #setGeoId(Geo)
 	 * @see org.abchip.mimo.biz.product.product.ProductPackage#getProductGeo_GeoId()
-	 * @model keys="geoId"
+	 * @model keys="geoId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Geo getGeoId();
@@ -95,6 +97,7 @@ public interface ProductGeo extends BizEntity {
 	 * @see #setProductGeoEnumId(Enumeration)
 	 * @see org.abchip.mimo.biz.product.product.ProductPackage#getProductGeo_ProductGeoEnumId()
 	 * @model keys="enumId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Enumeration getProductGeoEnumId();
@@ -120,7 +123,9 @@ public interface ProductGeo extends BizEntity {
 	 * @return the value of the '<em>Product Id</em>' reference.
 	 * @see #setProductId(Product)
 	 * @see org.abchip.mimo.biz.product.product.ProductPackage#getProductGeo_ProductId()
-	 * @model keys="productId"
+	 * @model keys="productId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Product getProductId();

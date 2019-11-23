@@ -24,8 +24,8 @@ import org.eclipse.emf.ecore.EClass;
  *   <li>{@link org.abchip.mimo.biz.passport.impl.GoogleUserImpl#getGoogleUserId <em>Google User Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.passport.impl.GoogleUserImpl#getAccessToken <em>Access Token</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.passport.impl.GoogleUserImpl#getEnvPrefix <em>Env Prefix</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.passport.impl.GoogleUserImpl#getTokenType <em>Token Type</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.passport.impl.GoogleUserImpl#getProductStoreId <em>Product Store Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.passport.impl.GoogleUserImpl#getTokenType <em>Token Type</em>}</li>
  * </ul>
  *
  * @generated

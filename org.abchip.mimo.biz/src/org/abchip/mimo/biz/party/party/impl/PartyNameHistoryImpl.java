@@ -23,6 +23,7 @@ import org.eclipse.emf.ecore.EClass;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link org.abchip.mimo.biz.party.party.impl.PartyNameHistoryImpl#getPartyId <em>Party Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.party.impl.PartyNameHistoryImpl#getChangeDate <em>Change Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.party.impl.PartyNameHistoryImpl#getFirstName <em>First Name</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.party.impl.PartyNameHistoryImpl#getGroupName <em>Group Name</em>}</li>
@@ -30,7 +31,6 @@ import org.eclipse.emf.ecore.EClass;
  *   <li>{@link org.abchip.mimo.biz.party.party.impl.PartyNameHistoryImpl#getMiddleName <em>Middle Name</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.party.impl.PartyNameHistoryImpl#getPersonalTitle <em>Personal Title</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.party.impl.PartyNameHistoryImpl#getSuffix <em>Suffix</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.party.party.impl.PartyNameHistoryImpl#getPartyId <em>Party Id</em>}</li>
  * </ul>
  *
  * @generated

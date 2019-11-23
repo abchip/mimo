@@ -18,12 +18,12 @@ import org.abchip.mimo.biz.BizEntity;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.content.data.VideoDataResource#getVideoData <em>Video Data</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.data.VideoDataResource#getDataResourceId <em>Data Resource Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.content.data.VideoDataResource#getVideoData <em>Video Data</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.content.data.DataPackage#getVideoDataResource()
- * @model
+ * @model annotation="mimo-ent-frame title='Video Data Object'"
  * @generated
  */
 public interface VideoDataResource extends BizEntity {
@@ -38,7 +38,8 @@ public interface VideoDataResource extends BizEntity {
 	 * @return the value of the '<em>Data Resource Id</em>' reference.
 	 * @see #setDataResourceId(DataResource)
 	 * @see org.abchip.mimo.biz.content.data.DataPackage#getVideoDataResource_DataResourceId()
-	 * @model keys="dataResourceId"
+	 * @model keys="dataResourceId" required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	DataResource getDataResourceId();

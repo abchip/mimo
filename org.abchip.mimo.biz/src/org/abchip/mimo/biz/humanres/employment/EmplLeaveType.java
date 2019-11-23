@@ -27,7 +27,7 @@ import org.abchip.mimo.biz.BizEntityType;
  * </ul>
  *
  * @see org.abchip.mimo.biz.humanres.employment.EmploymentPackage#getEmplLeaveType()
- * @model annotation="mimo-ent-frame formula='description'"
+ * @model annotation="mimo-ent-frame title='Employee Leave Type' dictionary='HumanResEntityLabels' formula='description'"
  * @generated
  */
 public interface EmplLeaveType extends BizEntityType<EmplLeave> {
@@ -96,7 +96,6 @@ public interface EmplLeaveType extends BizEntityType<EmplLeave> {
 	 * @see org.abchip.mimo.biz.humanres.employment.EmploymentPackage#getEmplLeaveType_LeaveTypeId()
 	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getLeaveTypeId();
@@ -123,6 +122,7 @@ public interface EmplLeaveType extends BizEntityType<EmplLeave> {
 	 * @see #setParentTypeId(EmplLeaveType)
 	 * @see org.abchip.mimo.biz.humanres.employment.EmploymentPackage#getEmplLeaveType_ParentTypeId()
 	 * @model keys="leaveTypeId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	EmplLeaveType getParentTypeId();

@@ -20,14 +20,14 @@ import org.abchip.mimo.biz.BizEntity;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.security.securitygroup.SecurityGroupPermission#getFromDate <em>From Date</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.security.securitygroup.SecurityGroupPermission#getThruDate <em>Thru Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.security.securitygroup.SecurityGroupPermission#getGroupId <em>Group Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.security.securitygroup.SecurityGroupPermission#getPermissionId <em>Permission Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.security.securitygroup.SecurityGroupPermission#getFromDate <em>From Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.security.securitygroup.SecurityGroupPermission#getThruDate <em>Thru Date</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.security.securitygroup.SecuritygroupPackage#getSecurityGroupPermission()
- * @model
+ * @model annotation="mimo-ent-frame help='Defines a permission available to a security group; there is no FK to SecurityPermission because we want to leave open the possibility of ad-hoc permissions, especially for the Entity Data Maintenance pages which have TONS of permissions' title='Security Component - Security Group Permission'"
  * @generated
  */
 public interface SecurityGroupPermission extends BizEntity {
@@ -43,8 +43,8 @@ public interface SecurityGroupPermission extends BizEntity {
 	 * @see #setFromDate(Date)
 	 * @see org.abchip.mimo.biz.security.securitygroup.SecuritygroupPackage#getSecurityGroupPermission_FromDate()
 	 * @model required="true"
-	 *        annotation="mimo-ent-format type='date-time'"
 	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getFromDate();
@@ -70,7 +70,9 @@ public interface SecurityGroupPermission extends BizEntity {
 	 * @return the value of the '<em>Group Id</em>' reference.
 	 * @see #setGroupId(SecurityGroup)
 	 * @see org.abchip.mimo.biz.security.securitygroup.SecuritygroupPackage#getSecurityGroupPermission_GroupId()
-	 * @model keys="groupId"
+	 * @model keys="groupId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	SecurityGroup getGroupId();
@@ -96,7 +98,9 @@ public interface SecurityGroupPermission extends BizEntity {
 	 * @return the value of the '<em>Permission Id</em>' reference.
 	 * @see #setPermissionId(SecurityPermission)
 	 * @see org.abchip.mimo.biz.security.securitygroup.SecuritygroupPackage#getSecurityGroupPermission_PermissionId()
-	 * @model keys="permissionId"
+	 * @model keys="permissionId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id-long' length='60'"
 	 * @generated
 	 */
 	SecurityPermission getPermissionId();

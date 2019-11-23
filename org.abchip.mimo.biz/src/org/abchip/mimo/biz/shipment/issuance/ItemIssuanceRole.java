@@ -19,9 +19,9 @@ import org.abchip.mimo.biz.party.party.Party;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.shipment.issuance.ItemIssuanceRole#getRoleTypeId <em>Role Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.shipment.issuance.ItemIssuanceRole#getItemIssuanceId <em>Item Issuance Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.shipment.issuance.ItemIssuanceRole#getPartyId <em>Party Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.shipment.issuance.ItemIssuanceRole#getRoleTypeId <em>Role Type Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.shipment.issuance.IssuancePackage#getItemIssuanceRole()
@@ -40,7 +40,9 @@ public interface ItemIssuanceRole extends BizEntity {
 	 * @return the value of the '<em>Item Issuance Id</em>' reference.
 	 * @see #setItemIssuanceId(ItemIssuance)
 	 * @see org.abchip.mimo.biz.shipment.issuance.IssuancePackage#getItemIssuanceRole_ItemIssuanceId()
-	 * @model keys="itemIssuanceId"
+	 * @model keys="itemIssuanceId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ItemIssuance getItemIssuanceId();
@@ -66,7 +68,9 @@ public interface ItemIssuanceRole extends BizEntity {
 	 * @return the value of the '<em>Party Id</em>' reference.
 	 * @see #setPartyId(Party)
 	 * @see org.abchip.mimo.biz.shipment.issuance.IssuancePackage#getItemIssuanceRole_PartyId()
-	 * @model keys="partyId"
+	 * @model keys="partyId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Party getPartyId();
@@ -93,8 +97,8 @@ public interface ItemIssuanceRole extends BizEntity {
 	 * @see #setRoleTypeId(String)
 	 * @see org.abchip.mimo.biz.shipment.issuance.IssuancePackage#getItemIssuanceRole_RoleTypeId()
 	 * @model required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	String getRoleTypeId();

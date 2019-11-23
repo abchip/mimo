@@ -23,12 +23,12 @@ import org.abchip.mimo.biz.BizEntityType;
  *   <li>{@link org.abchip.mimo.biz.order.order.OrderType#getOrderTypeId <em>Order Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.OrderType#getDescription <em>Description</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.OrderType#isHasTable <em>Has Table</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.order.OrderType#getParentTypeId <em>Parent Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.OrderType#getOrderTypeAttrs <em>Order Type Attrs</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.order.OrderType#getParentTypeId <em>Parent Type Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderType()
- * @model annotation="mimo-ent-frame formula='description'"
+ * @model annotation="mimo-ent-frame dictionary='OrderEntityLabels' formula='description'"
  * @generated
  */
 public interface OrderType extends BizEntityType<OrderHeader> {
@@ -97,7 +97,6 @@ public interface OrderType extends BizEntityType<OrderHeader> {
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderType_OrderTypeId()
 	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getOrderTypeId();
@@ -124,6 +123,7 @@ public interface OrderType extends BizEntityType<OrderHeader> {
 	 * @see #setParentTypeId(OrderType)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderType_ParentTypeId()
 	 * @model keys="orderTypeId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	OrderType getParentTypeId();
@@ -149,8 +149,7 @@ public interface OrderType extends BizEntityType<OrderHeader> {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Order Type Attrs</em>' attribute list.
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderType_OrderTypeAttrs()
-	 * @model required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='OrderTypeAttr'"
 	 * @generated

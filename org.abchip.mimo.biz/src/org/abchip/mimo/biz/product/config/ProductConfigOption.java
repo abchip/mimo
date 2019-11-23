@@ -18,15 +18,15 @@ import org.abchip.mimo.biz.BizEntity;
  * The following features are supported:
  * </p>
  * <ul>
+ *   <li>{@link org.abchip.mimo.biz.product.config.ProductConfigOption#getConfigItemId <em>Config Item Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.config.ProductConfigOption#getConfigOptionId <em>Config Option Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.config.ProductConfigOption#getConfigOptionName <em>Config Option Name</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.config.ProductConfigOption#getDescription <em>Description</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.config.ProductConfigOption#getSequenceNum <em>Sequence Num</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.config.ProductConfigOption#getConfigItemId <em>Config Item Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.product.config.ConfigPackage#getProductConfigOption()
- * @model annotation="mimo-ent-frame formula='description'"
+ * @model annotation="mimo-ent-frame title='Product Configuration Options' dictionary='ProductEntityLabels' formula='description'"
  * @generated
  */
 public interface ProductConfigOption extends BizEntity {
@@ -42,8 +42,8 @@ public interface ProductConfigOption extends BizEntity {
 	 * @see #setConfigOptionId(String)
 	 * @see org.abchip.mimo.biz.product.config.ConfigPackage#getProductConfigOption_ConfigOptionId()
 	 * @model required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	String getConfigOptionId();
@@ -147,7 +147,9 @@ public interface ProductConfigOption extends BizEntity {
 	 * @return the value of the '<em>Config Item Id</em>' reference.
 	 * @see #setConfigItemId(ProductConfigItem)
 	 * @see org.abchip.mimo.biz.product.config.ConfigPackage#getProductConfigOption_ConfigItemId()
-	 * @model keys="configItemId"
+	 * @model keys="configItemId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ProductConfigItem getConfigItemId();

@@ -20,18 +20,18 @@ import org.abchip.mimo.biz.common.method.CustomMethod;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.product.promo.ProductPromoCond#getProductPromoRuleId <em>Product Promo Rule Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.promo.ProductPromoCond#getProductPromoCondSeqId <em>Product Promo Cond Seq Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.promo.ProductPromoCond#getCondValue <em>Cond Value</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.promo.ProductPromoCond#getOtherValue <em>Other Value</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.promo.ProductPromoCond#getProductPromoId <em>Product Promo Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.promo.ProductPromoCond#getProductPromoCondSeqId <em>Product Promo Cond Seq Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.promo.ProductPromoCond#getProductPromoRuleId <em>Product Promo Rule Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.promo.ProductPromoCond#getCondValue <em>Cond Value</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.promo.ProductPromoCond#getCustomMethodId <em>Custom Method Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.promo.ProductPromoCond#getInputParamEnumId <em>Input Param Enum Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.promo.ProductPromoCond#getOperatorEnumId <em>Operator Enum Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.promo.ProductPromoCond#getOtherValue <em>Other Value</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.product.promo.PromoPackage#getProductPromoCond()
- * @model
+ * @model annotation="mimo-ent-frame title='Product Promotion Condition' dictionary='ProductEntityLabels'"
  * @generated
  */
 public interface ProductPromoCond extends BizEntity {
@@ -73,6 +73,7 @@ public interface ProductPromoCond extends BizEntity {
 	 * @see #setCustomMethodId(CustomMethod)
 	 * @see org.abchip.mimo.biz.product.promo.PromoPackage#getProductPromoCond_CustomMethodId()
 	 * @model keys="customMethodId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	CustomMethod getCustomMethodId();
@@ -99,6 +100,7 @@ public interface ProductPromoCond extends BizEntity {
 	 * @see #setInputParamEnumId(Enumeration)
 	 * @see org.abchip.mimo.biz.product.promo.PromoPackage#getProductPromoCond_InputParamEnumId()
 	 * @model keys="enumId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Enumeration getInputParamEnumId();
@@ -125,6 +127,7 @@ public interface ProductPromoCond extends BizEntity {
 	 * @see #setOperatorEnumId(Enumeration)
 	 * @see org.abchip.mimo.biz.product.promo.PromoPackage#getProductPromoCond_OperatorEnumId()
 	 * @model keys="enumId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Enumeration getOperatorEnumId();
@@ -177,8 +180,8 @@ public interface ProductPromoCond extends BizEntity {
 	 * @see #setProductPromoCondSeqId(String)
 	 * @see org.abchip.mimo.biz.product.promo.PromoPackage#getProductPromoCond_ProductPromoCondSeqId()
 	 * @model required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	String getProductPromoCondSeqId();
@@ -205,8 +208,8 @@ public interface ProductPromoCond extends BizEntity {
 	 * @see #setProductPromoRuleId(String)
 	 * @see org.abchip.mimo.biz.product.promo.PromoPackage#getProductPromoCond_ProductPromoRuleId()
 	 * @model required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	String getProductPromoRuleId();
@@ -232,7 +235,9 @@ public interface ProductPromoCond extends BizEntity {
 	 * @return the value of the '<em>Product Promo Id</em>' reference.
 	 * @see #setProductPromoId(ProductPromo)
 	 * @see org.abchip.mimo.biz.product.promo.PromoPackage#getProductPromoCond_ProductPromoId()
-	 * @model keys="productPromoId"
+	 * @model keys="productPromoId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ProductPromo getProductPromoId();

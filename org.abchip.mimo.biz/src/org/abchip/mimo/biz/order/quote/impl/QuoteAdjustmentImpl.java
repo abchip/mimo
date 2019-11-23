@@ -34,6 +34,7 @@ import org.eclipse.emf.ecore.EClass;
  *   <li>{@link org.abchip.mimo.biz.order.quote.impl.QuoteAdjustmentImpl#getAmount <em>Amount</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.quote.impl.QuoteAdjustmentImpl#getComments <em>Comments</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.quote.impl.QuoteAdjustmentImpl#getCorrespondingProductId <em>Corresponding Product Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.quote.impl.QuoteAdjustmentImpl#getCreatedByUserLogin <em>Created By User Login</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.quote.impl.QuoteAdjustmentImpl#getCreatedDate <em>Created Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.quote.impl.QuoteAdjustmentImpl#getCustomerReferenceId <em>Customer Reference Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.quote.impl.QuoteAdjustmentImpl#getDescription <em>Description</em>}</li>
@@ -42,21 +43,20 @@ import org.eclipse.emf.ecore.EClass;
  *   <li>{@link org.abchip.mimo.biz.order.quote.impl.QuoteAdjustmentImpl#isIncludeInTax <em>Include In Tax</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.quote.impl.QuoteAdjustmentImpl#getLastModifiedByUserLogin <em>Last Modified By User Login</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.quote.impl.QuoteAdjustmentImpl#getLastModifiedDate <em>Last Modified Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.quote.impl.QuoteAdjustmentImpl#getOverrideGlAccountId <em>Override Gl Account Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.quote.impl.QuoteAdjustmentImpl#getPrimaryGeoId <em>Primary Geo Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.quote.impl.QuoteAdjustmentImpl#getProductFeatureId <em>Product Feature Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.quote.impl.QuoteAdjustmentImpl#getProductPromoActionSeqId <em>Product Promo Action Seq Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.quote.impl.QuoteAdjustmentImpl#getProductPromoId <em>Product Promo Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.quote.impl.QuoteAdjustmentImpl#getProductPromoRuleId <em>Product Promo Rule Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.quote.impl.QuoteAdjustmentImpl#getQuoteAdjustmentTypeId <em>Quote Adjustment Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.quote.impl.QuoteAdjustmentImpl#getQuoteId <em>Quote Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.quote.impl.QuoteAdjustmentImpl#getQuoteItemSeqId <em>Quote Item Seq Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.quote.impl.QuoteAdjustmentImpl#getSecondaryGeoId <em>Secondary Geo Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.quote.impl.QuoteAdjustmentImpl#getSourcePercentage <em>Source Percentage</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.quote.impl.QuoteAdjustmentImpl#getSourceReferenceId <em>Source Reference Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.quote.impl.QuoteAdjustmentImpl#getTaxAuthGeoId <em>Tax Auth Geo Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.quote.impl.QuoteAdjustmentImpl#getTaxAuthPartyId <em>Tax Auth Party Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.quote.impl.QuoteAdjustmentImpl#getQuoteAdjustmentTypeId <em>Quote Adjustment Type Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.quote.impl.QuoteAdjustmentImpl#getQuoteId <em>Quote Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.quote.impl.QuoteAdjustmentImpl#getCreatedByUserLogin <em>Created By User Login</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.quote.impl.QuoteAdjustmentImpl#getProductPromoId <em>Product Promo Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.quote.impl.QuoteAdjustmentImpl#getPrimaryGeoId <em>Primary Geo Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.quote.impl.QuoteAdjustmentImpl#getSecondaryGeoId <em>Secondary Geo Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.quote.impl.QuoteAdjustmentImpl#getOverrideGlAccountId <em>Override Gl Account Id</em>}</li>
  * </ul>
  *
  * @generated

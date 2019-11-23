@@ -21,12 +21,12 @@ import org.abchip.mimo.biz.accounting.rate.RateType;
  * The following features are supported:
  * </p>
  * <ul>
+ *   <li>{@link org.abchip.mimo.biz.humanres.position.EmplPositionTypeRate#getEmplPositionTypeId <em>Empl Position Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.humanres.position.EmplPositionTypeRate#getRateTypeId <em>Rate Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.position.EmplPositionTypeRate#getFromDate <em>From Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.position.EmplPositionTypeRate#getPayGradeId <em>Pay Grade Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.position.EmplPositionTypeRate#getSalaryStepSeqId <em>Salary Step Seq Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.position.EmplPositionTypeRate#getThruDate <em>Thru Date</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.humanres.position.EmplPositionTypeRate#getEmplPositionTypeId <em>Empl Position Type Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.humanres.position.EmplPositionTypeRate#getRateTypeId <em>Rate Type Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.humanres.position.PositionPackage#getEmplPositionTypeRate()
@@ -45,7 +45,9 @@ public interface EmplPositionTypeRate extends BizEntity {
 	 * @return the value of the '<em>Empl Position Type Id</em>' reference.
 	 * @see #setEmplPositionTypeId(EmplPositionType)
 	 * @see org.abchip.mimo.biz.humanres.position.PositionPackage#getEmplPositionTypeRate_EmplPositionTypeId()
-	 * @model keys="emplPositionTypeId"
+	 * @model keys="emplPositionTypeId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	EmplPositionType getEmplPositionTypeId();
@@ -72,8 +74,8 @@ public interface EmplPositionTypeRate extends BizEntity {
 	 * @see #setFromDate(Date)
 	 * @see org.abchip.mimo.biz.humanres.position.PositionPackage#getEmplPositionTypeRate_FromDate()
 	 * @model required="true"
-	 *        annotation="mimo-ent-format type='date-time'"
 	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getFromDate();
@@ -125,7 +127,9 @@ public interface EmplPositionTypeRate extends BizEntity {
 	 * @return the value of the '<em>Rate Type Id</em>' reference.
 	 * @see #setRateTypeId(RateType)
 	 * @see org.abchip.mimo.biz.humanres.position.PositionPackage#getEmplPositionTypeRate_RateTypeId()
-	 * @model keys="rateTypeId"
+	 * @model keys="rateTypeId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	RateType getRateTypeId();

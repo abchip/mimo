@@ -181,13 +181,22 @@ public interface UserPackage extends EPackage {
 	int USER_PREFERENCE__LAST_UPDATED_TX_STAMP = BizPackage.BIZ_ENTITY__LAST_UPDATED_TX_STAMP;
 
 	/**
+	 * The feature id for the '<em><b>User Login Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int USER_PREFERENCE__USER_LOGIN_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
+
+	/**
 	 * The feature id for the '<em><b>User Pref Type Id</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int USER_PREFERENCE__USER_PREF_TYPE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
+	int USER_PREFERENCE__USER_PREF_TYPE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>User Pref Data Type</b></em>' attribute.
@@ -196,25 +205,7 @@ public interface UserPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int USER_PREFERENCE__USER_PREF_DATA_TYPE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
-
-	/**
-	 * The feature id for the '<em><b>User Pref Value</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int USER_PREFERENCE__USER_PREF_VALUE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
-
-	/**
-	 * The feature id for the '<em><b>User Login Id</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int USER_PREFERENCE__USER_LOGIN_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
+	int USER_PREFERENCE__USER_PREF_DATA_TYPE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>User Pref Group Type Id</b></em>' reference.
@@ -223,7 +214,16 @@ public interface UserPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int USER_PREFERENCE__USER_PREF_GROUP_TYPE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
+	int USER_PREFERENCE__USER_PREF_GROUP_TYPE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
+
+	/**
+	 * The feature id for the '<em><b>User Pref Value</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int USER_PREFERENCE__USER_PREF_VALUE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
 
 	/**
 	 * The number of structural features of the '<em>Preference</em>' class.

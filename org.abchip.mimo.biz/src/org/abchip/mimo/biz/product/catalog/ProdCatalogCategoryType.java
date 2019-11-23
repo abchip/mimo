@@ -26,7 +26,7 @@ import org.abchip.mimo.biz.BizEntityType;
  * </ul>
  *
  * @see org.abchip.mimo.biz.product.catalog.CatalogPackage#getProdCatalogCategoryType()
- * @model annotation="mimo-ent-frame formula='description'"
+ * @model annotation="mimo-ent-frame title='Catalog Category Association Type' dictionary='ProductEntityLabels' formula='description'"
  * @generated
  */
 public interface ProdCatalogCategoryType extends BizEntityType<ProdCatalogCategory> {
@@ -68,6 +68,7 @@ public interface ProdCatalogCategoryType extends BizEntityType<ProdCatalogCatego
 	 * @see #setParentTypeId(ProdCatalogCategoryType)
 	 * @see org.abchip.mimo.biz.product.catalog.CatalogPackage#getProdCatalogCategoryType_ParentTypeId()
 	 * @model keys="prodCatalogCategoryTypeId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ProdCatalogCategoryType getParentTypeId();
@@ -105,7 +106,6 @@ public interface ProdCatalogCategoryType extends BizEntityType<ProdCatalogCatego
 	 * @see org.abchip.mimo.biz.product.catalog.CatalogPackage#getProdCatalogCategoryType_ProdCatalogCategoryTypeId()
 	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getProdCatalogCategoryTypeId();

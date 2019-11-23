@@ -21,9 +21,9 @@ import org.abchip.mimo.biz.common.enum_.Enumeration;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.marketing.tracking.TrackingCodeVisit#getVisitId <em>Visit Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.marketing.tracking.TrackingCodeVisit#getFromDate <em>From Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.marketing.tracking.TrackingCodeVisit#getTrackingCodeId <em>Tracking Code Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.marketing.tracking.TrackingCodeVisit#getFromDate <em>From Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.marketing.tracking.TrackingCodeVisit#getVisitId <em>Visit Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.marketing.tracking.TrackingCodeVisit#getSourceEnumId <em>Source Enum Id</em>}</li>
  * </ul>
  *
@@ -44,8 +44,8 @@ public interface TrackingCodeVisit extends BizEntity {
 	 * @see #setFromDate(Date)
 	 * @see org.abchip.mimo.biz.marketing.tracking.TrackingPackage#getTrackingCodeVisit_FromDate()
 	 * @model required="true"
-	 *        annotation="mimo-ent-format type='date-time'"
 	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getFromDate();
@@ -72,6 +72,7 @@ public interface TrackingCodeVisit extends BizEntity {
 	 * @see #setSourceEnumId(Enumeration)
 	 * @see org.abchip.mimo.biz.marketing.tracking.TrackingPackage#getTrackingCodeVisit_SourceEnumId()
 	 * @model keys="enumId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Enumeration getSourceEnumId();
@@ -97,7 +98,9 @@ public interface TrackingCodeVisit extends BizEntity {
 	 * @return the value of the '<em>Tracking Code Id</em>' reference.
 	 * @see #setTrackingCodeId(TrackingCode)
 	 * @see org.abchip.mimo.biz.marketing.tracking.TrackingPackage#getTrackingCodeVisit_TrackingCodeId()
-	 * @model keys="trackingCodeId"
+	 * @model keys="trackingCodeId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	TrackingCode getTrackingCodeId();
@@ -124,8 +127,8 @@ public interface TrackingCodeVisit extends BizEntity {
 	 * @see #setVisitId(String)
 	 * @see org.abchip.mimo.biz.marketing.tracking.TrackingPackage#getTrackingCodeVisit_VisitId()
 	 * @model required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	String getVisitId();

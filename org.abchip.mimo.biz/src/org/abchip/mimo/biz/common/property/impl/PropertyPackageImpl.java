@@ -662,7 +662,7 @@ public class PropertyPackageImpl extends EPackageImpl implements PropertyPackage
 	 */
 	@Override
 	public EAttribute getSystemProperty_SystemResourceId() {
-		return (EAttribute)systemPropertyEClass.getEStructuralFeatures().get(0);
+		return (EAttribute)systemPropertyEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -672,7 +672,7 @@ public class PropertyPackageImpl extends EPackageImpl implements PropertyPackage
 	 */
 	@Override
 	public EAttribute getSystemProperty_SystemPropertyId() {
-		return (EAttribute)systemPropertyEClass.getEStructuralFeatures().get(1);
+		return (EAttribute)systemPropertyEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -725,8 +725,8 @@ public class PropertyPackageImpl extends EPackageImpl implements PropertyPackage
 
 		// Create classes and their features
 		systemPropertyEClass = createEClass(SYSTEM_PROPERTY);
-		createEAttribute(systemPropertyEClass, SYSTEM_PROPERTY__SYSTEM_RESOURCE_ID);
 		createEAttribute(systemPropertyEClass, SYSTEM_PROPERTY__SYSTEM_PROPERTY_ID);
+		createEAttribute(systemPropertyEClass, SYSTEM_PROPERTY__SYSTEM_RESOURCE_ID);
 		createEAttribute(systemPropertyEClass, SYSTEM_PROPERTY__DESCRIPTION);
 		createEAttribute(systemPropertyEClass, SYSTEM_PROPERTY__SYSTEM_PROPERTY_VALUE);
 	}
@@ -766,18 +766,18 @@ public class PropertyPackageImpl extends EPackageImpl implements PropertyPackage
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(systemPropertyEClass, SystemProperty.class, "SystemProperty", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getSystemProperty_SystemResourceId(), ecorePackage.getEString(), "systemResourceId", null, 1, 1, SystemProperty.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getSystemProperty_SystemPropertyId(), ecorePackage.getEString(), "systemPropertyId", null, 1, 1, SystemProperty.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getSystemProperty_SystemResourceId(), ecorePackage.getEString(), "systemResourceId", null, 1, 1, SystemProperty.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getSystemProperty_Description(), ecorePackage.getEString(), "description", null, 0, 1, SystemProperty.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getSystemProperty_SystemPropertyValue(), ecorePackage.getEString(), "systemPropertyValue", null, 0, 1, SystemProperty.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Create annotations
 		// mimo-ent-frame
 		createMimoentframeAnnotations();
-		// mimo-ent-format
-		createMimoentformatAnnotations();
 		// mimo-ent-slot
 		createMimoentslotAnnotations();
+		// mimo-ent-format
+		createMimoentformatAnnotations();
 	}
 
 	/**
@@ -792,6 +792,7 @@ public class PropertyPackageImpl extends EPackageImpl implements PropertyPackage
 		  (systemPropertyEClass,
 		   source,
 		   new String[] {
+			   "title", "Defines a System Property",
 			   "formula", "description"
 		   });
 	}
@@ -805,14 +806,14 @@ public class PropertyPackageImpl extends EPackageImpl implements PropertyPackage
 	protected void createMimoentformatAnnotations() {
 		String source = "mimo-ent-format";
 		addAnnotation
-		  (getSystemProperty_SystemResourceId(),
+		  (getSystemProperty_SystemPropertyId(),
 		   source,
 		   new String[] {
 			   "type", "id-long",
 			   "length", "60"
 		   });
 		addAnnotation
-		  (getSystemProperty_SystemPropertyId(),
+		  (getSystemProperty_SystemResourceId(),
 		   source,
 		   new String[] {
 			   "type", "id-long",
@@ -843,13 +844,13 @@ public class PropertyPackageImpl extends EPackageImpl implements PropertyPackage
 	protected void createMimoentslotAnnotations() {
 		String source = "mimo-ent-slot";
 		addAnnotation
-		  (getSystemProperty_SystemResourceId(),
+		  (getSystemProperty_SystemPropertyId(),
 		   source,
 		   new String[] {
 			   "key", "true"
 		   });
 		addAnnotation
-		  (getSystemProperty_SystemPropertyId(),
+		  (getSystemProperty_SystemResourceId(),
 		   source,
 		   new String[] {
 			   "key", "true"

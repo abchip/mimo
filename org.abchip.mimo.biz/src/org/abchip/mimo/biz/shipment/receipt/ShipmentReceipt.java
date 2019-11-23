@@ -31,20 +31,20 @@ import org.abchip.mimo.biz.shipment.shipment.Shipment;
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.shipment.receipt.ShipmentReceipt#getReceiptId <em>Receipt Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.shipment.receipt.ShipmentReceipt#getDatetimeReceived <em>Datetime Received</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.shipment.receipt.ShipmentReceipt#getInventoryItemId <em>Inventory Item Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.shipment.receipt.ShipmentReceipt#getItemDescription <em>Item Description</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.shipment.receipt.ShipmentReceipt#getOrderId <em>Order Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.shipment.receipt.ShipmentReceipt#getOrderItemSeqId <em>Order Item Seq Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.shipment.receipt.ShipmentReceipt#getProductId <em>Product Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.shipment.receipt.ShipmentReceipt#getQuantityAccepted <em>Quantity Accepted</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.shipment.receipt.ShipmentReceipt#getQuantityRejected <em>Quantity Rejected</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.shipment.receipt.ShipmentReceipt#getReceivedByUserLoginId <em>Received By User Login Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.shipment.receipt.ShipmentReceipt#getRejectionId <em>Rejection Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.shipment.receipt.ShipmentReceipt#getReturnId <em>Return Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.shipment.receipt.ShipmentReceipt#getReturnItemSeqId <em>Return Item Seq Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.shipment.receipt.ShipmentReceipt#getShipmentId <em>Shipment Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.shipment.receipt.ShipmentReceipt#getShipmentItemSeqId <em>Shipment Item Seq Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.shipment.receipt.ShipmentReceipt#getShipmentPackageSeqId <em>Shipment Package Seq Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.shipment.receipt.ShipmentReceipt#getInventoryItemId <em>Inventory Item Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.shipment.receipt.ShipmentReceipt#getProductId <em>Product Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.shipment.receipt.ShipmentReceipt#getOrderId <em>Order Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.shipment.receipt.ShipmentReceipt#getRejectionId <em>Rejection Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.shipment.receipt.ShipmentReceipt#getReceivedByUserLoginId <em>Received By User Login Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.shipment.receipt.ShipmentReceipt#getShipmentId <em>Shipment Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.shipment.receipt.ReceiptPackage#getShipmentReceipt()
@@ -90,6 +90,7 @@ public interface ShipmentReceipt extends BizEntity {
 	 * @see #setInventoryItemId(InventoryItem)
 	 * @see org.abchip.mimo.biz.shipment.receipt.ReceiptPackage#getShipmentReceipt_InventoryItemId()
 	 * @model keys="inventoryItemId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	InventoryItem getInventoryItemId();
@@ -142,6 +143,7 @@ public interface ShipmentReceipt extends BizEntity {
 	 * @see #setOrderId(OrderHeader)
 	 * @see org.abchip.mimo.biz.shipment.receipt.ReceiptPackage#getShipmentReceipt_OrderId()
 	 * @model keys="orderId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	OrderHeader getOrderId();
@@ -194,6 +196,7 @@ public interface ShipmentReceipt extends BizEntity {
 	 * @see #setProductId(Product)
 	 * @see org.abchip.mimo.biz.shipment.receipt.ReceiptPackage#getShipmentReceipt_ProductId()
 	 * @model keys="productId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Product getProductId();
@@ -273,7 +276,6 @@ public interface ShipmentReceipt extends BizEntity {
 	 * @see org.abchip.mimo.biz.shipment.receipt.ReceiptPackage#getShipmentReceipt_ReceiptId()
 	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getReceiptId();
@@ -300,6 +302,7 @@ public interface ShipmentReceipt extends BizEntity {
 	 * @see #setReceivedByUserLoginId(UserLogin)
 	 * @see org.abchip.mimo.biz.shipment.receipt.ReceiptPackage#getShipmentReceipt_ReceivedByUserLoginId()
 	 * @model keys="userLoginId"
+	 *        annotation="mimo-ent-format type='id-vlong' length='255'"
 	 * @generated
 	 */
 	UserLogin getReceivedByUserLoginId();
@@ -326,6 +329,7 @@ public interface ShipmentReceipt extends BizEntity {
 	 * @see #setRejectionId(RejectionReason)
 	 * @see org.abchip.mimo.biz.shipment.receipt.ReceiptPackage#getShipmentReceipt_RejectionId()
 	 * @model keys="rejectionId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	RejectionReason getRejectionId();
@@ -404,6 +408,7 @@ public interface ShipmentReceipt extends BizEntity {
 	 * @see #setShipmentId(Shipment)
 	 * @see org.abchip.mimo.biz.shipment.receipt.ReceiptPackage#getShipmentReceipt_ShipmentId()
 	 * @model keys="shipmentId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Shipment getShipmentId();

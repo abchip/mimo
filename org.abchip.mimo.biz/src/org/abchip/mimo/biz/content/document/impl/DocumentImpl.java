@@ -28,11 +28,11 @@ import org.eclipse.emf.ecore.EClass;
  *   <li>{@link org.abchip.mimo.biz.content.document.impl.DocumentImpl#getDocumentId <em>Document Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.document.impl.DocumentImpl#getComments <em>Comments</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.document.impl.DocumentImpl#getDateCreated <em>Date Created</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.content.document.impl.DocumentImpl#getDocumentAttributes <em>Document Attributes</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.document.impl.DocumentImpl#getDocumentLocation <em>Document Location</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.document.impl.DocumentImpl#getDocumentText <em>Document Text</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.content.document.impl.DocumentImpl#getImageData <em>Image Data</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.document.impl.DocumentImpl#getDocumentTypeId <em>Document Type Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.content.document.impl.DocumentImpl#getDocumentAttributes <em>Document Attributes</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.content.document.impl.DocumentImpl#getImageData <em>Image Data</em>}</li>
  * </ul>
  *
  * @generated

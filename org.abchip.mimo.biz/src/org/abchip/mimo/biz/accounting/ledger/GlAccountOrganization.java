@@ -22,11 +22,11 @@ import org.abchip.mimo.biz.party.party.RoleType;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.accounting.ledger.GlAccountOrganization#getFromDate <em>From Date</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.ledger.GlAccountOrganization#getThruDate <em>Thru Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.ledger.GlAccountOrganization#getGlAccountId <em>Gl Account Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.ledger.GlAccountOrganization#getOrganizationPartyId <em>Organization Party Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.ledger.GlAccountOrganization#getFromDate <em>From Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.ledger.GlAccountOrganization#getRoleTypeId <em>Role Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.ledger.GlAccountOrganization#getThruDate <em>Thru Date</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.accounting.ledger.LedgerPackage#getGlAccountOrganization()
@@ -71,7 +71,9 @@ public interface GlAccountOrganization extends BizEntity {
 	 * @return the value of the '<em>Organization Party Id</em>' reference.
 	 * @see #setOrganizationPartyId(Party)
 	 * @see org.abchip.mimo.biz.accounting.ledger.LedgerPackage#getGlAccountOrganization_OrganizationPartyId()
-	 * @model keys="partyId"
+	 * @model keys="partyId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Party getOrganizationPartyId();
@@ -98,6 +100,7 @@ public interface GlAccountOrganization extends BizEntity {
 	 * @see #setRoleTypeId(RoleType)
 	 * @see org.abchip.mimo.biz.accounting.ledger.LedgerPackage#getGlAccountOrganization_RoleTypeId()
 	 * @model keys="roleTypeId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	RoleType getRoleTypeId();
@@ -149,7 +152,9 @@ public interface GlAccountOrganization extends BizEntity {
 	 * @return the value of the '<em>Gl Account Id</em>' reference.
 	 * @see #setGlAccountId(GlAccount)
 	 * @see org.abchip.mimo.biz.accounting.ledger.LedgerPackage#getGlAccountOrganization_GlAccountId()
-	 * @model keys="glAccountId"
+	 * @model keys="glAccountId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	GlAccount getGlAccountId();

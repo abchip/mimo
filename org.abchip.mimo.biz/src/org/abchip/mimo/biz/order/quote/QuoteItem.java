@@ -29,27 +29,27 @@ import org.abchip.mimo.biz.workeffort.workeffort.WorkEffort;
  * The following features are supported:
  * </p>
  * <ul>
+ *   <li>{@link org.abchip.mimo.biz.order.quote.QuoteItem#getQuoteId <em>Quote Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.quote.QuoteItem#getQuoteItemSeqId <em>Quote Item Seq Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.quote.QuoteItem#getComments <em>Comments</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.quote.QuoteItem#getConfigId <em>Config Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.quote.QuoteItem#getCustRequestId <em>Cust Request Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.quote.QuoteItem#getCustRequestItemSeqId <em>Cust Request Item Seq Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.quote.QuoteItem#getDeliverableTypeId <em>Deliverable Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.quote.QuoteItem#getEstimatedDeliveryDate <em>Estimated Delivery Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.quote.QuoteItem#isIsPromo <em>Is Promo</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.quote.QuoteItem#getLeadTimeDays <em>Lead Time Days</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.quote.QuoteItem#getProductFeatureId <em>Product Feature Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.quote.QuoteItem#getProductId <em>Product Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.quote.QuoteItem#getQuantity <em>Quantity</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.quote.QuoteItem#getQuoteUnitPrice <em>Quote Unit Price</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.quote.QuoteItem#getReservLength <em>Reserv Length</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.quote.QuoteItem#getReservPersons <em>Reserv Persons</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.quote.QuoteItem#getReservStart <em>Reserv Start</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.quote.QuoteItem#getSelectedAmount <em>Selected Amount</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.quote.QuoteItem#getQuoteId <em>Quote Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.quote.QuoteItem#getProductId <em>Product Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.quote.QuoteItem#getProductFeatureId <em>Product Feature Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.quote.QuoteItem#getDeliverableTypeId <em>Deliverable Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.quote.QuoteItem#getSkillTypeId <em>Skill Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.quote.QuoteItem#getUomId <em>Uom Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.quote.QuoteItem#getWorkEffortId <em>Work Effort Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.quote.QuoteItem#getCustRequestId <em>Cust Request Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.order.quote.QuotePackage#getQuoteItem()
@@ -121,6 +121,7 @@ public interface QuoteItem extends BizEntity {
 	 * @see #setCustRequestId(CustRequest)
 	 * @see org.abchip.mimo.biz.order.quote.QuotePackage#getQuoteItem_CustRequestId()
 	 * @model keys="custRequestId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	CustRequest getCustRequestId();
@@ -173,6 +174,7 @@ public interface QuoteItem extends BizEntity {
 	 * @see #setDeliverableTypeId(DeliverableType)
 	 * @see org.abchip.mimo.biz.order.quote.QuotePackage#getQuoteItem_DeliverableTypeId()
 	 * @model keys="deliverableTypeId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	DeliverableType getDeliverableTypeId();
@@ -277,6 +279,7 @@ public interface QuoteItem extends BizEntity {
 	 * @see #setProductFeatureId(ProductFeature)
 	 * @see org.abchip.mimo.biz.order.quote.QuotePackage#getQuoteItem_ProductFeatureId()
 	 * @model keys="productFeatureId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ProductFeature getProductFeatureId();
@@ -303,6 +306,7 @@ public interface QuoteItem extends BizEntity {
 	 * @see #setProductId(Product)
 	 * @see org.abchip.mimo.biz.order.quote.QuotePackage#getQuoteItem_ProductId()
 	 * @model keys="productId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Product getProductId();
@@ -354,7 +358,9 @@ public interface QuoteItem extends BizEntity {
 	 * @return the value of the '<em>Quote Id</em>' reference.
 	 * @see #setQuoteId(Quote)
 	 * @see org.abchip.mimo.biz.order.quote.QuotePackage#getQuoteItem_QuoteId()
-	 * @model keys="quoteId"
+	 * @model keys="quoteId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Quote getQuoteId();
@@ -381,8 +387,8 @@ public interface QuoteItem extends BizEntity {
 	 * @see #setQuoteItemSeqId(String)
 	 * @see org.abchip.mimo.biz.order.quote.QuotePackage#getQuoteItem_QuoteItemSeqId()
 	 * @model required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	String getQuoteItemSeqId();
@@ -539,6 +545,7 @@ public interface QuoteItem extends BizEntity {
 	 * @see #setSkillTypeId(SkillType)
 	 * @see org.abchip.mimo.biz.order.quote.QuotePackage#getQuoteItem_SkillTypeId()
 	 * @model keys="skillTypeId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	SkillType getSkillTypeId();
@@ -565,6 +572,7 @@ public interface QuoteItem extends BizEntity {
 	 * @see #setUomId(Uom)
 	 * @see org.abchip.mimo.biz.order.quote.QuotePackage#getQuoteItem_UomId()
 	 * @model keys="uomId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Uom getUomId();
@@ -591,6 +599,7 @@ public interface QuoteItem extends BizEntity {
 	 * @see #setWorkEffortId(WorkEffort)
 	 * @see org.abchip.mimo.biz.order.quote.QuotePackage#getQuoteItem_WorkEffortId()
 	 * @model keys="workEffortId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	WorkEffort getWorkEffortId();

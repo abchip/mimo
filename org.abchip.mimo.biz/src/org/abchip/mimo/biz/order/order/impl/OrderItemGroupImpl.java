@@ -21,10 +21,10 @@ import org.eclipse.emf.ecore.EClass;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderItemGroupImpl#getOrderId <em>Order Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderItemGroupImpl#getOrderItemGroupSeqId <em>Order Item Group Seq Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderItemGroupImpl#getGroupName <em>Group Name</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderItemGroupImpl#getParentGroupSeqId <em>Parent Group Seq Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderItemGroupImpl#getOrderId <em>Order Id</em>}</li>
  * </ul>
  *
  * @generated

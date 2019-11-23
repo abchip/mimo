@@ -20,16 +20,16 @@ import org.abchip.mimo.biz.BizEntity;
  * The following features are supported:
  * </p>
  * <ul>
+ *   <li>{@link org.abchip.mimo.biz.product.inventory.InventoryItemVariance#getPhysicalInventoryId <em>Physical Inventory Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.inventory.InventoryItemVariance#getInventoryItemId <em>Inventory Item Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.inventory.InventoryItemVariance#getAvailableToPromiseVar <em>Available To Promise Var</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.inventory.InventoryItemVariance#getComments <em>Comments</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.inventory.InventoryItemVariance#getQuantityOnHandVar <em>Quantity On Hand Var</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.inventory.InventoryItemVariance#getPhysicalInventoryId <em>Physical Inventory Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.inventory.InventoryItemVariance#getVarianceReasonId <em>Variance Reason Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.inventory.InventoryItemVariance#getInventoryItemId <em>Inventory Item Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.product.inventory.InventoryPackage#getInventoryItemVariance()
- * @model
+ * @model annotation="mimo-ent-frame dictionary='ProductEntityLabels'"
  * @generated
  */
 public interface InventoryItemVariance extends BizEntity {
@@ -122,7 +122,9 @@ public interface InventoryItemVariance extends BizEntity {
 	 * @return the value of the '<em>Physical Inventory Id</em>' reference.
 	 * @see #setPhysicalInventoryId(PhysicalInventory)
 	 * @see org.abchip.mimo.biz.product.inventory.InventoryPackage#getInventoryItemVariance_PhysicalInventoryId()
-	 * @model keys="physicalInventoryId"
+	 * @model keys="physicalInventoryId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	PhysicalInventory getPhysicalInventoryId();
@@ -149,6 +151,7 @@ public interface InventoryItemVariance extends BizEntity {
 	 * @see #setVarianceReasonId(VarianceReason)
 	 * @see org.abchip.mimo.biz.product.inventory.InventoryPackage#getInventoryItemVariance_VarianceReasonId()
 	 * @model keys="varianceReasonId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	VarianceReason getVarianceReasonId();
@@ -174,7 +177,9 @@ public interface InventoryItemVariance extends BizEntity {
 	 * @return the value of the '<em>Inventory Item Id</em>' reference.
 	 * @see #setInventoryItemId(InventoryItem)
 	 * @see org.abchip.mimo.biz.product.inventory.InventoryPackage#getInventoryItemVariance_InventoryItemId()
-	 * @model keys="inventoryItemId"
+	 * @model keys="inventoryItemId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	InventoryItem getInventoryItemId();

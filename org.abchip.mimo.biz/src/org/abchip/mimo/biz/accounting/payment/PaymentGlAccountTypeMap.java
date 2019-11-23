@@ -26,7 +26,7 @@ import org.abchip.mimo.biz.party.party.Party;
  * </ul>
  *
  * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPaymentGlAccountTypeMap()
- * @model
+ * @model annotation="mimo-ent-frame title='Maps PaymentTypes to GlAccountTypes, allowing user to configure payments and gl accounts'"
  * @generated
  */
 public interface PaymentGlAccountTypeMap extends BizEntity {
@@ -41,7 +41,9 @@ public interface PaymentGlAccountTypeMap extends BizEntity {
 	 * @return the value of the '<em>Organization Party Id</em>' reference.
 	 * @see #setOrganizationPartyId(Party)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPaymentGlAccountTypeMap_OrganizationPartyId()
-	 * @model keys="partyId"
+	 * @model keys="partyId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Party getOrganizationPartyId();
@@ -67,7 +69,9 @@ public interface PaymentGlAccountTypeMap extends BizEntity {
 	 * @return the value of the '<em>Payment Type Id</em>' reference.
 	 * @see #setPaymentTypeId(PaymentType)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPaymentGlAccountTypeMap_PaymentTypeId()
-	 * @model keys="paymentTypeId"
+	 * @model keys="paymentTypeId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	PaymentType getPaymentTypeId();
@@ -94,6 +98,7 @@ public interface PaymentGlAccountTypeMap extends BizEntity {
 	 * @see #setGlAccountTypeId(GlAccountType)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPaymentGlAccountTypeMap_GlAccountTypeId()
 	 * @model keys="glAccountTypeId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	GlAccountType getGlAccountTypeId();

@@ -21,11 +21,11 @@ import org.abchip.mimo.biz.content.content.Content;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.accounting.payment.PaymentContent#getFromDate <em>From Date</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.payment.PaymentContent#getThruDate <em>Thru Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.PaymentContent#getPaymentId <em>Payment Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.PaymentContent#getContentId <em>Content Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.PaymentContent#getPaymentContentTypeId <em>Payment Content Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.payment.PaymentContent#getFromDate <em>From Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.payment.PaymentContent#getThruDate <em>Thru Date</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPaymentContent()
@@ -44,7 +44,9 @@ public interface PaymentContent extends BizEntityTyped<PaymentContentType> {
 	 * @return the value of the '<em>Content Id</em>' reference.
 	 * @see #setContentId(Content)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPaymentContent_ContentId()
-	 * @model keys="contentId"
+	 * @model keys="contentId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Content getContentId();
@@ -71,8 +73,8 @@ public interface PaymentContent extends BizEntityTyped<PaymentContentType> {
 	 * @see #setFromDate(Date)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPaymentContent_FromDate()
 	 * @model required="true"
-	 *        annotation="mimo-ent-format type='date-time'"
 	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getFromDate();
@@ -124,7 +126,9 @@ public interface PaymentContent extends BizEntityTyped<PaymentContentType> {
 	 * @return the value of the '<em>Payment Id</em>' reference.
 	 * @see #setPaymentId(Payment)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPaymentContent_PaymentId()
-	 * @model keys="paymentId"
+	 * @model keys="paymentId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Payment getPaymentId();
@@ -150,7 +154,9 @@ public interface PaymentContent extends BizEntityTyped<PaymentContentType> {
 	 * @return the value of the '<em>Payment Content Type Id</em>' reference.
 	 * @see #setPaymentContentTypeId(PaymentContentType)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPaymentContent_PaymentContentTypeId()
-	 * @model keys="paymentContentTypeId"
+	 * @model keys="paymentContentTypeId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	PaymentContentType getPaymentContentTypeId();

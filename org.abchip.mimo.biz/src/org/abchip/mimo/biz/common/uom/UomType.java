@@ -27,7 +27,7 @@ import org.abchip.mimo.biz.BizEntityType;
  * </ul>
  *
  * @see org.abchip.mimo.biz.common.uom.UomPackage#getUomType()
- * @model annotation="mimo-ent-frame formula='description'"
+ * @model annotation="mimo-ent-frame title='Unit Of Measure Type' dictionary='CommonEntityLabels' formula='description'"
  * @generated
  */
 public interface UomType extends BizEntityType<Uom> {
@@ -95,6 +95,7 @@ public interface UomType extends BizEntityType<Uom> {
 	 * @see #setParentTypeId(UomType)
 	 * @see org.abchip.mimo.biz.common.uom.UomPackage#getUomType_ParentTypeId()
 	 * @model keys="uomTypeId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	UomType getParentTypeId();
@@ -152,7 +153,6 @@ public interface UomType extends BizEntityType<Uom> {
 	 * @see org.abchip.mimo.biz.common.uom.UomPackage#getUomType_UomTypeId()
 	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getUomTypeId();

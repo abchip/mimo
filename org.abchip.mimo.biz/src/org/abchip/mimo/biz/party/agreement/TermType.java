@@ -28,7 +28,7 @@ import org.abchip.mimo.biz.BizEntity;
  * </ul>
  *
  * @see org.abchip.mimo.biz.party.agreement.AgreementPackage#getTermType()
- * @model annotation="mimo-ent-frame formula='description'"
+ * @model annotation="mimo-ent-frame dictionary='PartyEntityLabels' formula='description'"
  * @generated
  */
 public interface TermType extends BizEntity {
@@ -96,6 +96,7 @@ public interface TermType extends BizEntity {
 	 * @see #setParentTypeId(TermType)
 	 * @see org.abchip.mimo.biz.party.agreement.AgreementPackage#getTermType_ParentTypeId()
 	 * @model keys="termTypeId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	TermType getParentTypeId();
@@ -123,7 +124,6 @@ public interface TermType extends BizEntity {
 	 * @see org.abchip.mimo.biz.party.agreement.AgreementPackage#getTermType_TermTypeId()
 	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getTermTypeId();
@@ -149,8 +149,7 @@ public interface TermType extends BizEntity {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Term Type Attrs</em>' attribute list.
 	 * @see org.abchip.mimo.biz.party.agreement.AgreementPackage#getTermType_TermTypeAttrs()
-	 * @model required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='TermTypeAttr'"
 	 * @generated

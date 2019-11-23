@@ -32,7 +32,13 @@ import org.abchip.mimo.biz.party.party.RoleType;
  *   <li>{@link org.abchip.mimo.biz.party.communication.CommunicationEvent#getCommunicationEventId <em>Communication Event Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.communication.CommunicationEvent#getBccString <em>Bcc String</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.communication.CommunicationEvent#getCcString <em>Cc String</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.party.communication.CommunicationEvent#getCommunicationEventTypeId <em>Communication Event Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.party.communication.CommunicationEvent#getContactListId <em>Contact List Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.party.communication.CommunicationEvent#getContactMechIdFrom <em>Contact Mech Id From</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.party.communication.CommunicationEvent#getContactMechIdTo <em>Contact Mech Id To</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.party.communication.CommunicationEvent#getContactMechTypeId <em>Contact Mech Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.communication.CommunicationEvent#getContent <em>Content</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.party.communication.CommunicationEvent#getContentMimeTypeId <em>Content Mime Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.communication.CommunicationEvent#getDatetimeEnded <em>Datetime Ended</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.communication.CommunicationEvent#getDatetimeStarted <em>Datetime Started</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.communication.CommunicationEvent#getEntryDate <em>Entry Date</em>}</li>
@@ -42,20 +48,14 @@ import org.abchip.mimo.biz.party.party.RoleType;
  *   <li>{@link org.abchip.mimo.biz.party.communication.CommunicationEvent#getNote <em>Note</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.communication.CommunicationEvent#getOrigCommEventId <em>Orig Comm Event Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.communication.CommunicationEvent#getParentCommEventId <em>Parent Comm Event Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.party.communication.CommunicationEvent#getPartyIdFrom <em>Party Id From</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.party.communication.CommunicationEvent#getPartyIdTo <em>Party Id To</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.party.communication.CommunicationEvent#getReasonEnumId <em>Reason Enum Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.party.communication.CommunicationEvent#getRoleTypeIdFrom <em>Role Type Id From</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.party.communication.CommunicationEvent#getRoleTypeIdTo <em>Role Type Id To</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.party.communication.CommunicationEvent#getStatusId <em>Status Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.communication.CommunicationEvent#getSubject <em>Subject</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.communication.CommunicationEvent#getToString <em>To String</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.party.communication.CommunicationEvent#getCommunicationEventTypeId <em>Communication Event Type Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.party.communication.CommunicationEvent#getPartyIdTo <em>Party Id To</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.party.communication.CommunicationEvent#getRoleTypeIdTo <em>Role Type Id To</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.party.communication.CommunicationEvent#getPartyIdFrom <em>Party Id From</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.party.communication.CommunicationEvent#getRoleTypeIdFrom <em>Role Type Id From</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.party.communication.CommunicationEvent#getStatusId <em>Status Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.party.communication.CommunicationEvent#getContactMechTypeId <em>Contact Mech Type Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.party.communication.CommunicationEvent#getContactMechIdFrom <em>Contact Mech Id From</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.party.communication.CommunicationEvent#getContactMechIdTo <em>Contact Mech Id To</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.party.communication.CommunicationEvent#getContactListId <em>Contact List Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.party.communication.CommunicationEvent#getContentMimeTypeId <em>Content Mime Type Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.party.communication.CommunicationEvent#getReasonEnumId <em>Reason Enum Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.party.communication.CommunicationPackage#getCommunicationEvent()
@@ -127,6 +127,7 @@ public interface CommunicationEvent extends BizEntityTyped<CommunicationEventTyp
 	 * @see #setContactListId(ContactList)
 	 * @see org.abchip.mimo.biz.party.communication.CommunicationPackage#getCommunicationEvent_ContactListId()
 	 * @model keys="contactListId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ContactList getContactListId();
@@ -153,6 +154,7 @@ public interface CommunicationEvent extends BizEntityTyped<CommunicationEventTyp
 	 * @see #setContactMechIdFrom(ContactMech)
 	 * @see org.abchip.mimo.biz.party.communication.CommunicationPackage#getCommunicationEvent_ContactMechIdFrom()
 	 * @model keys="contactMechId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ContactMech getContactMechIdFrom();
@@ -179,6 +181,7 @@ public interface CommunicationEvent extends BizEntityTyped<CommunicationEventTyp
 	 * @see #setContactMechIdTo(ContactMech)
 	 * @see org.abchip.mimo.biz.party.communication.CommunicationPackage#getCommunicationEvent_ContactMechIdTo()
 	 * @model keys="contactMechId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ContactMech getContactMechIdTo();
@@ -205,6 +208,7 @@ public interface CommunicationEvent extends BizEntityTyped<CommunicationEventTyp
 	 * @see #setContactMechTypeId(ContactMechType)
 	 * @see org.abchip.mimo.biz.party.communication.CommunicationPackage#getCommunicationEvent_ContactMechTypeId()
 	 * @model keys="contactMechTypeId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ContactMechType getContactMechTypeId();
@@ -257,6 +261,7 @@ public interface CommunicationEvent extends BizEntityTyped<CommunicationEventTyp
 	 * @see #setContentMimeTypeId(MimeType)
 	 * @see org.abchip.mimo.biz.party.communication.CommunicationPackage#getCommunicationEvent_ContentMimeTypeId()
 	 * @model keys="mimeTypeId"
+	 *        annotation="mimo-ent-format type='id-vlong' length='255'"
 	 * @generated
 	 */
 	MimeType getContentMimeTypeId();
@@ -517,6 +522,7 @@ public interface CommunicationEvent extends BizEntityTyped<CommunicationEventTyp
 	 * @see #setPartyIdFrom(Party)
 	 * @see org.abchip.mimo.biz.party.communication.CommunicationPackage#getCommunicationEvent_PartyIdFrom()
 	 * @model keys="partyId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Party getPartyIdFrom();
@@ -543,6 +549,7 @@ public interface CommunicationEvent extends BizEntityTyped<CommunicationEventTyp
 	 * @see #setPartyIdTo(Party)
 	 * @see org.abchip.mimo.biz.party.communication.CommunicationPackage#getCommunicationEvent_PartyIdTo()
 	 * @model keys="partyId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Party getPartyIdTo();
@@ -569,6 +576,7 @@ public interface CommunicationEvent extends BizEntityTyped<CommunicationEventTyp
 	 * @see #setReasonEnumId(Enumeration)
 	 * @see org.abchip.mimo.biz.party.communication.CommunicationPackage#getCommunicationEvent_ReasonEnumId()
 	 * @model keys="enumId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Enumeration getReasonEnumId();
@@ -595,6 +603,7 @@ public interface CommunicationEvent extends BizEntityTyped<CommunicationEventTyp
 	 * @see #setRoleTypeIdFrom(RoleType)
 	 * @see org.abchip.mimo.biz.party.communication.CommunicationPackage#getCommunicationEvent_RoleTypeIdFrom()
 	 * @model keys="roleTypeId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	RoleType getRoleTypeIdFrom();
@@ -621,6 +630,7 @@ public interface CommunicationEvent extends BizEntityTyped<CommunicationEventTyp
 	 * @see #setRoleTypeIdTo(RoleType)
 	 * @see org.abchip.mimo.biz.party.communication.CommunicationPackage#getCommunicationEvent_RoleTypeIdTo()
 	 * @model keys="roleTypeId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	RoleType getRoleTypeIdTo();
@@ -647,6 +657,7 @@ public interface CommunicationEvent extends BizEntityTyped<CommunicationEventTyp
 	 * @see #setStatusId(StatusItem)
 	 * @see org.abchip.mimo.biz.party.communication.CommunicationPackage#getCommunicationEvent_StatusId()
 	 * @model keys="statusId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	StatusItem getStatusId();
@@ -716,8 +727,7 @@ public interface CommunicationEvent extends BizEntityTyped<CommunicationEventTyp
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='CommunicationEventOrder' route='communicationEventId'"
 	 * @generated
@@ -727,8 +737,7 @@ public interface CommunicationEvent extends BizEntityTyped<CommunicationEventTyp
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='CommunicationEventProduct' route='communicationEventId'"
 	 * @generated
@@ -738,8 +747,7 @@ public interface CommunicationEvent extends BizEntityTyped<CommunicationEventTyp
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='CommunicationEventPurpose' route='communicationEventId'"
 	 * @generated
@@ -749,8 +757,7 @@ public interface CommunicationEvent extends BizEntityTyped<CommunicationEventTyp
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='CommunicationEventReturn' route='communicationEventId'"
 	 * @generated
@@ -760,8 +767,7 @@ public interface CommunicationEvent extends BizEntityTyped<CommunicationEventTyp
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='CommunicationEventWorkEff' route='communicationEventId'"
 	 * @generated
@@ -771,8 +777,7 @@ public interface CommunicationEvent extends BizEntityTyped<CommunicationEventTyp
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='CustRequestCommEvent' route='communicationEventId'"
 	 * @generated
@@ -782,8 +787,7 @@ public interface CommunicationEvent extends BizEntityTyped<CommunicationEventTyp
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='SubscriptionCommEvent' route='communicationEventId'"
 	 * @generated
@@ -802,6 +806,7 @@ public interface CommunicationEvent extends BizEntityTyped<CommunicationEventTyp
 	 * @see #setCommunicationEventTypeId(CommunicationEventType)
 	 * @see org.abchip.mimo.biz.party.communication.CommunicationPackage#getCommunicationEvent_CommunicationEventTypeId()
 	 * @model keys="communicationEventTypeId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	CommunicationEventType getCommunicationEventTypeId();
@@ -829,7 +834,6 @@ public interface CommunicationEvent extends BizEntityTyped<CommunicationEventTyp
 	 * @see org.abchip.mimo.biz.party.communication.CommunicationPackage#getCommunicationEvent_CommunicationEventId()
 	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getCommunicationEventId();

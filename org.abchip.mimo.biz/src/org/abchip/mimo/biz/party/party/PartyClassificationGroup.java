@@ -69,6 +69,7 @@ public interface PartyClassificationGroup extends BizEntity {
 	 * @see #setParentGroupId(PartyClassificationGroup)
 	 * @see org.abchip.mimo.biz.party.party.PartyPackage#getPartyClassificationGroup_ParentGroupId()
 	 * @model keys="partyClassificationGroupId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	PartyClassificationGroup getParentGroupId();
@@ -95,6 +96,7 @@ public interface PartyClassificationGroup extends BizEntity {
 	 * @see #setPartyClassificationTypeId(PartyClassificationType)
 	 * @see org.abchip.mimo.biz.party.party.PartyPackage#getPartyClassificationGroup_PartyClassificationTypeId()
 	 * @model keys="partyClassificationTypeId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	PartyClassificationType getPartyClassificationTypeId();
@@ -122,8 +124,7 @@ public interface PartyClassificationGroup extends BizEntity {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='SegmentGroupClassification' route='partyClassificationGroupId'"
 	 * @generated
@@ -143,7 +144,6 @@ public interface PartyClassificationGroup extends BizEntity {
 	 * @see org.abchip.mimo.biz.party.party.PartyPackage#getPartyClassificationGroup_PartyClassificationGroupId()
 	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getPartyClassificationGroupId();

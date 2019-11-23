@@ -20,10 +20,10 @@ import org.abchip.mimo.biz.BizEntityTyped;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.party.party.PartyClassification#getFromDate <em>From Date</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.party.party.PartyClassification#getThruDate <em>Thru Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.party.PartyClassification#getPartyId <em>Party Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.party.PartyClassification#getPartyClassificationGroupId <em>Party Classification Group Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.party.party.PartyClassification#getFromDate <em>From Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.party.party.PartyClassification#getThruDate <em>Thru Date</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.party.party.PartyPackage#getPartyClassification()
@@ -43,8 +43,8 @@ public interface PartyClassification extends BizEntityTyped<PartyClassificationT
 	 * @see #setFromDate(Date)
 	 * @see org.abchip.mimo.biz.party.party.PartyPackage#getPartyClassification_FromDate()
 	 * @model required="true"
-	 *        annotation="mimo-ent-format type='date-time'"
 	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getFromDate();
@@ -96,7 +96,9 @@ public interface PartyClassification extends BizEntityTyped<PartyClassificationT
 	 * @return the value of the '<em>Party Id</em>' reference.
 	 * @see #setPartyId(Party)
 	 * @see org.abchip.mimo.biz.party.party.PartyPackage#getPartyClassification_PartyId()
-	 * @model keys="partyId"
+	 * @model keys="partyId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Party getPartyId();
@@ -122,7 +124,9 @@ public interface PartyClassification extends BizEntityTyped<PartyClassificationT
 	 * @return the value of the '<em>Party Classification Group Id</em>' reference.
 	 * @see #setPartyClassificationGroupId(PartyClassificationGroup)
 	 * @see org.abchip.mimo.biz.party.party.PartyPackage#getPartyClassification_PartyClassificationGroupId()
-	 * @model keys="partyClassificationGroupId"
+	 * @model keys="partyClassificationGroupId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	PartyClassificationGroup getPartyClassificationGroupId();

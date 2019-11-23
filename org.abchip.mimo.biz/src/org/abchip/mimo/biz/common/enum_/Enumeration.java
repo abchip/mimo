@@ -23,13 +23,13 @@ import org.abchip.mimo.biz.BizEntityTyped;
  *   <li>{@link org.abchip.mimo.biz.common.enum_.Enumeration#getEnumId <em>Enum Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.common.enum_.Enumeration#getDescription <em>Description</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.common.enum_.Enumeration#getEnumCode <em>Enum Code</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.common.enum_.Enumeration#getSequenceId <em>Sequence Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.common.enum_.Enumeration#getEnumTypeId <em>Enum Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.common.enum_.Enumeration#getSequenceId <em>Sequence Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.common.enum_.Enumeration#getUserLoginSecurityQuestions <em>User Login Security Questions</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.common.enum_.EnumPackage#getEnumeration()
- * @model annotation="mimo-ent-frame formula='description'"
+ * @model annotation="mimo-ent-frame dictionary='CommonEntityLabels' formula='description'"
  * @generated
  */
 public interface Enumeration extends BizEntityTyped<EnumerationType> {
@@ -122,8 +122,7 @@ public interface Enumeration extends BizEntityTyped<EnumerationType> {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>User Login Security Questions</em>' attribute list.
 	 * @see org.abchip.mimo.biz.common.enum_.EnumPackage#getEnumeration_UserLoginSecurityQuestions()
-	 * @model required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='UserLoginSecurityQuestion'"
 	 * @generated
@@ -323,8 +322,7 @@ public interface Enumeration extends BizEntityTyped<EnumerationType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ProductStoreEmailSetting' route='emailType'"
 	 * @generated
@@ -593,6 +591,7 @@ public interface Enumeration extends BizEntityTyped<EnumerationType> {
 	 * @see #setEnumTypeId(EnumerationType)
 	 * @see org.abchip.mimo.biz.common.enum_.EnumPackage#getEnumeration_EnumTypeId()
 	 * @model keys="enumTypeId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	EnumerationType getEnumTypeId();
@@ -620,7 +619,6 @@ public interface Enumeration extends BizEntityTyped<EnumerationType> {
 	 * @see org.abchip.mimo.biz.common.enum_.EnumPackage#getEnumeration_EnumId()
 	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getEnumId();

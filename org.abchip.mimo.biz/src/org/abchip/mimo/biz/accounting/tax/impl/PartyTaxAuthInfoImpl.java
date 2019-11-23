@@ -23,14 +23,14 @@ import org.eclipse.emf.ecore.EClass;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link org.abchip.mimo.biz.accounting.tax.impl.PartyTaxAuthInfoImpl#getPartyId <em>Party Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.tax.impl.PartyTaxAuthInfoImpl#getFromDate <em>From Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.tax.impl.PartyTaxAuthInfoImpl#getTaxAuthGeoId <em>Tax Auth Geo Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.tax.impl.PartyTaxAuthInfoImpl#getTaxAuthPartyId <em>Tax Auth Party Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.tax.impl.PartyTaxAuthInfoImpl#getFromDate <em>From Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.tax.impl.PartyTaxAuthInfoImpl#isIsExempt <em>Is Exempt</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.tax.impl.PartyTaxAuthInfoImpl#isIsNexus <em>Is Nexus</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.tax.impl.PartyTaxAuthInfoImpl#getPartyTaxId <em>Party Tax Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.tax.impl.PartyTaxAuthInfoImpl#getThruDate <em>Thru Date</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.tax.impl.PartyTaxAuthInfoImpl#getPartyId <em>Party Id</em>}</li>
  * </ul>
  *
  * @generated

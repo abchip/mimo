@@ -23,6 +23,7 @@ import org.abchip.mimo.biz.common.enum_.Enumeration;
  *   <li>{@link org.abchip.mimo.biz.party.party.Person#getCardId <em>Card Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.party.Person#getComments <em>Comments</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.party.Person#getDeceasedDate <em>Deceased Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.party.party.Person#getEmploymentStatusEnumId <em>Employment Status Enum Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.party.Person#isExistingCustomer <em>Existing Customer</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.party.Person#getFirstName <em>First Name</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.party.Person#getFirstNameLocal <em>First Name Local</em>}</li>
@@ -42,14 +43,13 @@ import org.abchip.mimo.biz.common.enum_.Enumeration;
  *   <li>{@link org.abchip.mimo.biz.party.party.Person#getPassportExpireDate <em>Passport Expire Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.party.Person#getPassportNumber <em>Passport Number</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.party.Person#getPersonalTitle <em>Personal Title</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.party.party.Person#getResidenceStatusEnumId <em>Residence Status Enum Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.party.Person#getSalutation <em>Salutation</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.party.Person#getSocialSecurityNumber <em>Social Security Number</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.party.Person#getSuffix <em>Suffix</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.party.Person#getTotalYearsWorkExperience <em>Total Years Work Experience</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.party.Person#getWeight <em>Weight</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.party.Person#getYearsWithEmployer <em>Years With Employer</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.party.party.Person#getEmploymentStatusEnumId <em>Employment Status Enum Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.party.party.Person#getResidenceStatusEnumId <em>Residence Status Enum Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.party.party.PartyPackage#getPerson()
@@ -69,7 +69,6 @@ public interface Person extends Party {
 	 * @see #setBirthDate(Date)
 	 * @see org.abchip.mimo.biz.party.party.PartyPackage#getPerson_BirthDate()
 	 * @model annotation="mimo-ent-format type='date'"
-	 *        annotation="mimo-ent-slot toString='true'"
 	 * @generated
 	 */
 	Date getBirthDate();
@@ -200,6 +199,7 @@ public interface Person extends Party {
 	 * @see #setEmploymentStatusEnumId(Enumeration)
 	 * @see org.abchip.mimo.biz.party.party.PartyPackage#getPerson_EmploymentStatusEnumId()
 	 * @model keys="enumId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Enumeration getEmploymentStatusEnumId();
@@ -226,7 +226,6 @@ public interface Person extends Party {
 	 * @see #setFirstName(String)
 	 * @see org.abchip.mimo.biz.party.party.PartyPackage#getPerson_FirstName()
 	 * @model annotation="mimo-ent-format type='name' length='100'"
-	 *        annotation="mimo-ent-slot toString='true'"
 	 * @generated
 	 */
 	String getFirstName();
@@ -305,7 +304,6 @@ public interface Person extends Party {
 	 * @see #setHeight(double)
 	 * @see org.abchip.mimo.biz.party.party.PartyPackage#getPerson_Height()
 	 * @model annotation="mimo-ent-format type='floating-point'"
-	 *        annotation="mimo-ent-slot toString='true'"
 	 * @generated
 	 */
 	double getHeight();
@@ -332,7 +330,6 @@ public interface Person extends Party {
 	 * @see #setLastName(String)
 	 * @see org.abchip.mimo.biz.party.party.PartyPackage#getPerson_LastName()
 	 * @model annotation="mimo-ent-format type='name' length='100'"
-	 *        annotation="mimo-ent-slot toString='true'"
 	 * @generated
 	 */
 	String getLastName();
@@ -437,7 +434,6 @@ public interface Person extends Party {
 	 * @see #setMiddleName(String)
 	 * @see org.abchip.mimo.biz.party.party.PartyPackage#getPerson_MiddleName()
 	 * @model annotation="mimo-ent-format type='name' length='100'"
-	 *        annotation="mimo-ent-slot toString='true'"
 	 * @generated
 	 */
 	String getMiddleName();
@@ -515,7 +511,8 @@ public interface Person extends Party {
 	 * @return the value of the '<em>Mothers Maiden Name</em>' attribute.
 	 * @see #setMothersMaidenName(String)
 	 * @see org.abchip.mimo.biz.party.party.PartyPackage#getPerson_MothersMaidenName()
-	 * @model annotation="mimo-ent-format type='long-varchar' length='255'"
+	 * @model annotation="mimo-ent-slot encrypt='TRUE'"
+	 *        annotation="mimo-ent-format type='long-varchar' length='255'"
 	 * @generated
 	 */
 	String getMothersMaidenName();
@@ -645,7 +642,8 @@ public interface Person extends Party {
 	 * @return the value of the '<em>Passport Number</em>' attribute.
 	 * @see #setPassportNumber(String)
 	 * @see org.abchip.mimo.biz.party.party.PartyPackage#getPerson_PassportNumber()
-	 * @model annotation="mimo-ent-format type='long-varchar' length='255'"
+	 * @model annotation="mimo-ent-slot encrypt='TRUE'"
+	 *        annotation="mimo-ent-format type='long-varchar' length='255'"
 	 * @generated
 	 */
 	String getPassportNumber();
@@ -698,6 +696,7 @@ public interface Person extends Party {
 	 * @see #setResidenceStatusEnumId(Enumeration)
 	 * @see org.abchip.mimo.biz.party.party.PartyPackage#getPerson_ResidenceStatusEnumId()
 	 * @model keys="enumId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Enumeration getResidenceStatusEnumId();
@@ -749,7 +748,8 @@ public interface Person extends Party {
 	 * @return the value of the '<em>Social Security Number</em>' attribute.
 	 * @see #setSocialSecurityNumber(String)
 	 * @see org.abchip.mimo.biz.party.party.PartyPackage#getPerson_SocialSecurityNumber()
-	 * @model annotation="mimo-ent-format type='long-varchar' length='255'"
+	 * @model annotation="mimo-ent-slot encrypt='TRUE'"
+	 *        annotation="mimo-ent-format type='long-varchar' length='255'"
 	 * @generated
 	 */
 	String getSocialSecurityNumber();

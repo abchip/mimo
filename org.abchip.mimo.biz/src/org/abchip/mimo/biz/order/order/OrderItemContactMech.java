@@ -20,14 +20,14 @@ import org.abchip.mimo.biz.party.contact.ContactMechPurposeType;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.order.order.OrderItemContactMech#getOrderItemSeqId <em>Order Item Seq Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.OrderItemContactMech#getOrderId <em>Order Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.order.OrderItemContactMech#getContactMechId <em>Contact Mech Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.OrderItemContactMech#getContactMechPurposeTypeId <em>Contact Mech Purpose Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.order.OrderItemContactMech#getOrderItemSeqId <em>Order Item Seq Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.order.OrderItemContactMech#getContactMechId <em>Contact Mech Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderItemContactMech()
- * @model
+ * @model annotation="mimo-ent-frame title='Order Item Contact Mechanism'"
  * @generated
  */
 public interface OrderItemContactMech extends BizEntity {
@@ -43,6 +43,7 @@ public interface OrderItemContactMech extends BizEntity {
 	 * @see #setContactMechId(ContactMech)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderItemContactMech_ContactMechId()
 	 * @model keys="contactMechId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ContactMech getContactMechId();
@@ -68,7 +69,9 @@ public interface OrderItemContactMech extends BizEntity {
 	 * @return the value of the '<em>Contact Mech Purpose Type Id</em>' reference.
 	 * @see #setContactMechPurposeTypeId(ContactMechPurposeType)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderItemContactMech_ContactMechPurposeTypeId()
-	 * @model keys="contactMechPurposeTypeId"
+	 * @model keys="contactMechPurposeTypeId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ContactMechPurposeType getContactMechPurposeTypeId();
@@ -94,7 +97,9 @@ public interface OrderItemContactMech extends BizEntity {
 	 * @return the value of the '<em>Order Id</em>' reference.
 	 * @see #setOrderId(OrderHeader)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderItemContactMech_OrderId()
-	 * @model keys="orderId"
+	 * @model keys="orderId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	OrderHeader getOrderId();
@@ -121,8 +126,8 @@ public interface OrderItemContactMech extends BizEntity {
 	 * @see #setOrderItemSeqId(String)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderItemContactMech_OrderItemSeqId()
 	 * @model required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	String getOrderItemSeqId();

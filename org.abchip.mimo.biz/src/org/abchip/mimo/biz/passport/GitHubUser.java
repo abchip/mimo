@@ -22,12 +22,12 @@ import org.abchip.mimo.biz.product.store.ProductStore;
  *   <li>{@link org.abchip.mimo.biz.passport.GitHubUser#getGitHubUserId <em>Git Hub User Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.passport.GitHubUser#getAccessToken <em>Access Token</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.passport.GitHubUser#getEnvPrefix <em>Env Prefix</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.passport.GitHubUser#getTokenType <em>Token Type</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.passport.GitHubUser#getProductStoreId <em>Product Store Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.passport.GitHubUser#getTokenType <em>Token Type</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.passport.PassportPackage#getGitHubUser()
- * @model
+ * @model annotation="mimo-ent-frame help='Data Model Enhancements For Passport' title='Store GitHub access token for user'"
  * @generated
  */
 public interface GitHubUser extends BizEntity {
@@ -44,7 +44,6 @@ public interface GitHubUser extends BizEntity {
 	 * @see org.abchip.mimo.biz.passport.PassportPackage#getGitHubUser_GitHubUserId()
 	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-format type='id-vlong' length='255'"
-	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getGitHubUserId();
@@ -123,6 +122,7 @@ public interface GitHubUser extends BizEntity {
 	 * @see #setProductStoreId(ProductStore)
 	 * @see org.abchip.mimo.biz.passport.PassportPackage#getGitHubUser_ProductStoreId()
 	 * @model keys="productStoreId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ProductStore getProductStoreId();

@@ -24,11 +24,11 @@ import org.eclipse.emf.ecore.EClass;
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.product.config.impl.ProductConfigItemImpl#getConfigItemId <em>Config Item Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.config.impl.ProductConfigItemImpl#getConfigItemName <em>Config Item Name</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.config.impl.ProductConfigItemImpl#getConfigItemProductConfigOptions <em>Config Item Product Config Options</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.config.impl.ProductConfigItemImpl#getConfigItemTypeId <em>Config Item Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.config.impl.ProductConfigItemImpl#getDescription <em>Description</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.config.impl.ProductConfigItemImpl#getImageUrl <em>Image Url</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.config.impl.ProductConfigItemImpl#getLongDescription <em>Long Description</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.config.impl.ProductConfigItemImpl#getConfigItemProductConfigOptions <em>Config Item Product Config Options</em>}</li>
  * </ul>
  *
  * @generated

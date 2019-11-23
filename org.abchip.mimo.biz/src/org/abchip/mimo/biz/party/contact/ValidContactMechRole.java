@@ -24,7 +24,7 @@ import org.abchip.mimo.biz.party.party.RoleType;
  * </ul>
  *
  * @see org.abchip.mimo.biz.party.contact.ContactPackage#getValidContactMechRole()
- * @model
+ * @model annotation="mimo-ent-frame title='Valid Contact Mechanism Role'"
  * @generated
  */
 public interface ValidContactMechRole extends BizEntity {
@@ -39,7 +39,9 @@ public interface ValidContactMechRole extends BizEntity {
 	 * @return the value of the '<em>Role Type Id</em>' reference.
 	 * @see #setRoleTypeId(RoleType)
 	 * @see org.abchip.mimo.biz.party.contact.ContactPackage#getValidContactMechRole_RoleTypeId()
-	 * @model keys="roleTypeId"
+	 * @model keys="roleTypeId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	RoleType getRoleTypeId();
@@ -65,7 +67,9 @@ public interface ValidContactMechRole extends BizEntity {
 	 * @return the value of the '<em>Contact Mech Type Id</em>' reference.
 	 * @see #setContactMechTypeId(ContactMechType)
 	 * @see org.abchip.mimo.biz.party.contact.ContactPackage#getValidContactMechRole_ContactMechTypeId()
-	 * @model keys="contactMechTypeId"
+	 * @model keys="contactMechTypeId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ContactMechType getContactMechTypeId();

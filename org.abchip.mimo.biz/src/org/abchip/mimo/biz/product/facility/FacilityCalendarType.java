@@ -24,7 +24,7 @@ import org.abchip.mimo.biz.BizEntityType;
  * </ul>
  *
  * @see org.abchip.mimo.biz.product.facility.FacilityPackage#getFacilityCalendarType()
- * @model annotation="mimo-ent-frame formula='description'"
+ * @model annotation="mimo-ent-frame dictionary='ProductEntityLabels' formula='description'"
  * @generated
  */
 public interface FacilityCalendarType extends BizEntityType<FacilityCalendar> {
@@ -93,7 +93,6 @@ public interface FacilityCalendarType extends BizEntityType<FacilityCalendar> {
 	 * @see org.abchip.mimo.biz.product.facility.FacilityPackage#getFacilityCalendarType_FacilityCalendarTypeId()
 	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getFacilityCalendarTypeId();

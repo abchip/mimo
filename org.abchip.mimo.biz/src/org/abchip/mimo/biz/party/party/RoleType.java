@@ -29,7 +29,7 @@ import org.abchip.mimo.biz.BizEntity;
  * </ul>
  *
  * @see org.abchip.mimo.biz.party.party.PartyPackage#getRoleType()
- * @model annotation="mimo-ent-frame formula='description'"
+ * @model annotation="mimo-ent-frame dictionary='PartyEntityLabels' formula='description'"
  * @generated
  */
 public interface RoleType extends BizEntity {
@@ -97,6 +97,7 @@ public interface RoleType extends BizEntity {
 	 * @see #setParentTypeId(RoleType)
 	 * @see org.abchip.mimo.biz.party.party.PartyPackage#getRoleType_ParentTypeId()
 	 * @model keys="roleTypeId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	RoleType getParentTypeId();
@@ -124,7 +125,6 @@ public interface RoleType extends BizEntity {
 	 * @see org.abchip.mimo.biz.party.party.PartyPackage#getRoleType_RoleTypeId()
 	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getRoleTypeId();
@@ -150,8 +150,7 @@ public interface RoleType extends BizEntity {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Role Type Attrs</em>' attribute list.
 	 * @see org.abchip.mimo.biz.party.party.PartyPackage#getRoleType_RoleTypeAttrs()
-	 * @model required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='RoleTypeAttr'"
 	 * @generated
@@ -169,8 +168,7 @@ public interface RoleType extends BizEntity {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Valid Contact Mech Roles</em>' attribute list.
 	 * @see org.abchip.mimo.biz.party.party.PartyPackage#getRoleType_ValidContactMechRoles()
-	 * @model required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ValidContactMechRole'"
 	 * @generated
@@ -280,8 +278,7 @@ public interface RoleType extends BizEntity {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='PartyInvitationRoleAssoc' route='roleTypeId'"
 	 * @generated
@@ -291,8 +288,7 @@ public interface RoleType extends BizEntity {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='PartyRole' route='roleTypeId'"
 	 * @generated

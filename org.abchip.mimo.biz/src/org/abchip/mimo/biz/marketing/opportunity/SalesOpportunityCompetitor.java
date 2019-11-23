@@ -18,15 +18,15 @@ import org.abchip.mimo.biz.BizEntity;
  * The following features are supported:
  * </p>
  * <ul>
+ *   <li>{@link org.abchip.mimo.biz.marketing.opportunity.SalesOpportunityCompetitor#getSalesOpportunityId <em>Sales Opportunity Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.marketing.opportunity.SalesOpportunityCompetitor#getCompetitorPartyId <em>Competitor Party Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.marketing.opportunity.SalesOpportunityCompetitor#getPositionEnumId <em>Position Enum Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.marketing.opportunity.SalesOpportunityCompetitor#getStrengths <em>Strengths</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.marketing.opportunity.SalesOpportunityCompetitor#getWeaknesses <em>Weaknesses</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.marketing.opportunity.SalesOpportunityCompetitor#getSalesOpportunityId <em>Sales Opportunity Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.marketing.opportunity.OpportunityPackage#getSalesOpportunityCompetitor()
- * @model
+ * @model annotation="mimo-ent-frame title='Sales opportunity competitors record'"
  * @generated
  */
 public interface SalesOpportunityCompetitor extends BizEntity {
@@ -42,8 +42,8 @@ public interface SalesOpportunityCompetitor extends BizEntity {
 	 * @see #setCompetitorPartyId(String)
 	 * @see org.abchip.mimo.biz.marketing.opportunity.OpportunityPackage#getSalesOpportunityCompetitor_CompetitorPartyId()
 	 * @model required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	String getCompetitorPartyId();
@@ -95,7 +95,9 @@ public interface SalesOpportunityCompetitor extends BizEntity {
 	 * @return the value of the '<em>Sales Opportunity Id</em>' reference.
 	 * @see #setSalesOpportunityId(SalesOpportunity)
 	 * @see org.abchip.mimo.biz.marketing.opportunity.OpportunityPackage#getSalesOpportunityCompetitor_SalesOpportunityId()
-	 * @model keys="salesOpportunityId"
+	 * @model keys="salesOpportunityId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	SalesOpportunity getSalesOpportunityId();

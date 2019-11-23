@@ -191,9 +191,6 @@ import org.abchip.mimo.biz.workeffort.timesheet.TimesheetPackage;
 import org.abchip.mimo.biz.workeffort.timesheet.impl.TimesheetPackageImpl;
 import org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage;
 import org.abchip.mimo.biz.workeffort.workeffort.impl.WorkeffortPackageImpl;
-import org.abchip.mimo.entity.EntityPackage;
-import org.eclipse.emf.common.util.URI;
-
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
@@ -683,7 +680,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 */
 	@Override
 	public EReference getWebPage_ContentId() {
-		return (EReference)webPageEClass.getEStructuralFeatures().get(3);
+		return (EReference)webPageEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -693,7 +690,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 */
 	@Override
 	public EAttribute getWebPage_PageName() {
-		return (EAttribute)webPageEClass.getEStructuralFeatures().get(1);
+		return (EAttribute)webPageEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -703,7 +700,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 */
 	@Override
 	public EReference getWebPage_WebSiteId() {
-		return (EReference)webPageEClass.getEStructuralFeatures().get(2);
+		return (EReference)webPageEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -833,7 +830,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 */
 	@Override
 	public EReference getWebSite_ProductStoreId() {
-		return (EReference)webSiteEClass.getEStructuralFeatures().get(16);
+		return (EReference)webSiteEClass.getEStructuralFeatures().get(11);
 	}
 
 	/**
@@ -843,16 +840,6 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 */
 	@Override
 	public EAttribute getWebSite_SecureContentPrefix() {
-		return (EAttribute)webSiteEClass.getEStructuralFeatures().get(11);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EAttribute getWebSite_SiteName() {
 		return (EAttribute)webSiteEClass.getEStructuralFeatures().get(12);
 	}
 
@@ -862,8 +849,18 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getWebSite_StandardContentPrefix() {
+	public EAttribute getWebSite_SiteName() {
 		return (EAttribute)webSiteEClass.getEStructuralFeatures().get(13);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getWebSite_StandardContentPrefix() {
+		return (EAttribute)webSiteEClass.getEStructuralFeatures().get(14);
 	}
 
 	/**
@@ -883,7 +880,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 */
 	@Override
 	public EAttribute getWebSite_WebappPath() {
-		return (EAttribute)webSiteEClass.getEStructuralFeatures().get(14);
+		return (EAttribute)webSiteEClass.getEStructuralFeatures().get(17);
 	}
 
 	/**
@@ -893,7 +890,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 */
 	@Override
 	public EAttribute getWebSite_WebAnalyticsConfigs() {
-		return (EAttribute)webSiteEClass.getEStructuralFeatures().get(17);
+		return (EAttribute)webSiteEClass.getEStructuralFeatures().get(16);
 	}
 
 	/**
@@ -927,9 +924,9 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		// Create classes and their features
 		webPageEClass = createEClass(WEB_PAGE);
 		createEAttribute(webPageEClass, WEB_PAGE__WEB_PAGE_ID);
+		createEReference(webPageEClass, WEB_PAGE__CONTENT_ID);
 		createEAttribute(webPageEClass, WEB_PAGE__PAGE_NAME);
 		createEReference(webPageEClass, WEB_PAGE__WEB_SITE_ID);
-		createEReference(webPageEClass, WEB_PAGE__CONTENT_ID);
 
 		webSiteEClass = createEClass(WEB_SITE);
 		createEAttribute(webSiteEClass, WEB_SITE__WEB_SITE_ID);
@@ -943,13 +940,13 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		createEAttribute(webSiteEClass, WEB_SITE__HTTPS_HOST);
 		createEAttribute(webSiteEClass, WEB_SITE__HTTPS_PORT);
 		createEAttribute(webSiteEClass, WEB_SITE__IS_DEFAULT);
+		createEReference(webSiteEClass, WEB_SITE__PRODUCT_STORE_ID);
 		createEAttribute(webSiteEClass, WEB_SITE__SECURE_CONTENT_PREFIX);
 		createEAttribute(webSiteEClass, WEB_SITE__SITE_NAME);
 		createEAttribute(webSiteEClass, WEB_SITE__STANDARD_CONTENT_PREFIX);
-		createEAttribute(webSiteEClass, WEB_SITE__WEBAPP_PATH);
 		createEReference(webSiteEClass, WEB_SITE__VISUAL_THEME_SET_ID);
-		createEReference(webSiteEClass, WEB_SITE__PRODUCT_STORE_ID);
 		createEAttribute(webSiteEClass, WEB_SITE__WEB_ANALYTICS_CONFIGS);
+		createEAttribute(webSiteEClass, WEB_SITE__WEBAPP_PATH);
 	}
 
 	/**
@@ -978,8 +975,8 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		// Obtain other dependent packages
 		BizPackage theBizPackage = (BizPackage)EPackage.Registry.INSTANCE.getEPackage(BizPackage.eNS_URI);
 		ContentPackage theContentPackage = (ContentPackage)EPackage.Registry.INSTANCE.getEPackage(ContentPackage.eNS_URI);
-		ThemePackage theThemePackage = (ThemePackage)EPackage.Registry.INSTANCE.getEPackage(ThemePackage.eNS_URI);
 		StorePackage theStorePackage = (StorePackage)EPackage.Registry.INSTANCE.getEPackage(StorePackage.eNS_URI);
+		ThemePackage theThemePackage = (ThemePackage)EPackage.Registry.INSTANCE.getEPackage(ThemePackage.eNS_URI);
 
 		// Create type parameters
 
@@ -992,11 +989,11 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		// Initialize classes and features; add operations and parameters
 		initEClass(webPageEClass, WebPage.class, "WebPage", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getWebPage_WebPageId(), ecorePackage.getEString(), "webPageId", null, 1, 1, WebPage.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getWebPage_ContentId(), theContentPackage.getContent(), null, "contentId", null, 0, 1, WebPage.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getWebPage_ContentId().getEKeys().add(theContentPackage.getContent_ContentId());
 		initEAttribute(getWebPage_PageName(), ecorePackage.getEString(), "pageName", null, 0, 1, WebPage.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getWebPage_WebSiteId(), this.getWebSite(), null, "webSiteId", null, 0, 1, WebPage.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getWebPage_WebSiteId().getEKeys().add(this.getWebSite_WebSiteId());
-		initEReference(getWebPage_ContentId(), theContentPackage.getContent(), null, "contentId", null, 0, 1, WebPage.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		getWebPage_ContentId().getEKeys().add(theContentPackage.getContent_ContentId());
 
 		initEClass(webSiteEClass, WebSite.class, "WebSite", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getWebSite_WebSiteId(), ecorePackage.getEString(), "webSiteId", null, 1, 1, WebSite.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1010,15 +1007,15 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		initEAttribute(getWebSite_HttpsHost(), ecorePackage.getEString(), "httpsHost", null, 0, 1, WebSite.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getWebSite_HttpsPort(), ecorePackage.getEString(), "httpsPort", null, 0, 1, WebSite.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getWebSite_IsDefault(), ecorePackage.getEBoolean(), "isDefault", null, 0, 1, WebSite.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getWebSite_ProductStoreId(), theStorePackage.getProductStore(), null, "productStoreId", null, 0, 1, WebSite.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getWebSite_ProductStoreId().getEKeys().add(theStorePackage.getProductStore_ProductStoreId());
 		initEAttribute(getWebSite_SecureContentPrefix(), ecorePackage.getEString(), "secureContentPrefix", null, 0, 1, WebSite.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getWebSite_SiteName(), ecorePackage.getEString(), "siteName", null, 0, 1, WebSite.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getWebSite_StandardContentPrefix(), ecorePackage.getEString(), "standardContentPrefix", null, 0, 1, WebSite.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getWebSite_WebappPath(), ecorePackage.getEString(), "webappPath", null, 0, 1, WebSite.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getWebSite_VisualThemeSetId(), theThemePackage.getVisualThemeSet(), null, "visualThemeSetId", null, 0, 1, WebSite.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getWebSite_VisualThemeSetId().getEKeys().add(theThemePackage.getVisualThemeSet_VisualThemeSetId());
-		initEReference(getWebSite_ProductStoreId(), theStorePackage.getProductStore(), null, "productStoreId", null, 0, 1, WebSite.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		getWebSite_ProductStoreId().getEKeys().add(theStorePackage.getProductStore_ProductStoreId());
-		initEAttribute(getWebSite_WebAnalyticsConfigs(), ecorePackage.getEString(), "webAnalyticsConfigs", null, 1, -1, WebSite.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getWebSite_WebAnalyticsConfigs(), ecorePackage.getEString(), "webAnalyticsConfigs", null, 0, -1, WebSite.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getWebSite_WebappPath(), ecorePackage.getEString(), "webappPath", null, 0, 1, WebSite.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		addEOperation(webSiteEClass, ecorePackage.getEString(), "orderHeaders", 0, -1, IS_UNIQUE, IS_ORDERED);
 
@@ -1051,11 +1048,25 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 			   "length", "20"
 		   });
 		addAnnotation
+		  (getWebPage_ContentId(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
 		  (getWebPage_PageName(),
 		   source,
 		   new String[] {
 			   "type", "name",
 			   "length", "100"
+		   });
+		addAnnotation
+		  (getWebPage_WebSiteId(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
 		   });
 		addAnnotation
 		  (webSiteEClass.getEOperations().get(0),
@@ -1156,6 +1167,13 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 			   "length", "1"
 		   });
 		addAnnotation
+		  (getWebSite_ProductStoreId(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
 		  (getWebSite_SecureContentPrefix(),
 		   source,
 		   new String[] {
@@ -1177,11 +1195,11 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 			   "length", "2000"
 		   });
 		addAnnotation
-		  (getWebSite_WebappPath(),
+		  (getWebSite_VisualThemeSetId(),
 		   source,
 		   new String[] {
-			   "type", "long-varchar",
-			   "length", "255"
+			   "type", "id",
+			   "length", "20"
 		   });
 		addAnnotation
 		  (getWebSite_WebAnalyticsConfigs(),
@@ -1189,6 +1207,13 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		   new String[] {
 			   "type", "id",
 			   "length", "20"
+		   });
+		addAnnotation
+		  (getWebSite_WebappPath(),
+		   source,
+		   new String[] {
+			   "type", "long-varchar",
+			   "length", "255"
 		   });
 	}
 
@@ -1200,12 +1225,6 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 */
 	protected void createMimoentslotAnnotations() {
 		String source = "mimo-ent-slot";
-		addAnnotation
-		  (getWebPage_WebPageId(),
-		   source,
-		   new String[] {
-			   "key", "true"
-		   });
 		addAnnotation
 		  (webSiteEClass.getEOperations().get(0),
 		   source,
@@ -1225,16 +1244,40 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (getWebSite_WebSiteId(),
+		  (getWebSite_AllowProductStoreChange(),
 		   source,
 		   new String[] {
-			   "key", "true"
+			   "help", "Allow change of ProductStore for this WebSite (webapp). Defaults to N (no)."
+		   });
+		addAnnotation
+		  (getWebSite_DisplayMaintenancePage(),
+		   source,
+		   new String[] {
+			   "help", "If set to Y, redirect user to site maintenance page"
+		   });
+		addAnnotation
+		  (getWebSite_HostedPathAlias(),
+		   source,
+		   new String[] {
+			   "help", "For WebSites hosted on webapp using the WebSiteFilter, indicates the path this WebSite will be hosted on"
+		   });
+		addAnnotation
+		  (getWebSite_IsDefault(),
+		   source,
+		   new String[] {
+			   "help", "If Y then it is default WebSite"
 		   });
 		addAnnotation
 		  (getWebSite_WebAnalyticsConfigs(),
 		   source,
 		   new String[] {
 			   "derived", "true"
+		   });
+		addAnnotation
+		  (getWebSite_WebappPath(),
+		   source,
+		   new String[] {
+			   "help", "Set to your webapp for this website if it\'s hidden by a httpd frontend; set to / if you have a reverse proxy which hides your website webapp"
 		   });
 	}
 
@@ -1252,9 +1295,6 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		   new String[] {
 			   "frame", "OrderHeader",
 			   "route", "webSiteId"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
 		  (webSiteEClass.getEOperations().get(1),
@@ -1262,9 +1302,6 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		   new String[] {
 			   "frame", "SubscriptionResource",
 			   "route", "webSiteId"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
 		  (webSiteEClass.getEOperations().get(2),
@@ -1272,18 +1309,12 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		   new String[] {
 			   "frame", "WebPage",
 			   "route", "webSiteId"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
 		  (getWebSite_WebAnalyticsConfigs(),
 		   source,
 		   new String[] {
 			   "frame", "WebAnalyticsConfig"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 	}
 

@@ -18,9 +18,9 @@ import org.abchip.mimo.biz.BizEntity;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.party.communication.CommunicationEventPurpose#getDescription <em>Description</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.communication.CommunicationEventPurpose#getCommunicationEventId <em>Communication Event Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.communication.CommunicationEventPurpose#getCommunicationEventPrpTypId <em>Communication Event Prp Typ Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.party.communication.CommunicationEventPurpose#getDescription <em>Description</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.party.communication.CommunicationPackage#getCommunicationEventPurpose()
@@ -65,7 +65,9 @@ public interface CommunicationEventPurpose extends BizEntity {
 	 * @return the value of the '<em>Communication Event Id</em>' reference.
 	 * @see #setCommunicationEventId(CommunicationEvent)
 	 * @see org.abchip.mimo.biz.party.communication.CommunicationPackage#getCommunicationEventPurpose_CommunicationEventId()
-	 * @model keys="communicationEventId"
+	 * @model keys="communicationEventId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	CommunicationEvent getCommunicationEventId();
@@ -91,7 +93,9 @@ public interface CommunicationEventPurpose extends BizEntity {
 	 * @return the value of the '<em>Communication Event Prp Typ Id</em>' reference.
 	 * @see #setCommunicationEventPrpTypId(CommunicationEventPrpTyp)
 	 * @see org.abchip.mimo.biz.party.communication.CommunicationPackage#getCommunicationEventPurpose_CommunicationEventPrpTypId()
-	 * @model keys="communicationEventPrpTypId"
+	 * @model keys="communicationEventPrpTypId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	CommunicationEventPrpTyp getCommunicationEventPrpTypId();

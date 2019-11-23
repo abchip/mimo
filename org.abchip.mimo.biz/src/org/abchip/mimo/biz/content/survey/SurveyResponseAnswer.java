@@ -23,11 +23,14 @@ import org.abchip.mimo.biz.content.content.Content;
  * The following features are supported:
  * </p>
  * <ul>
+ *   <li>{@link org.abchip.mimo.biz.content.survey.SurveyResponseAnswer#getSurveyResponseId <em>Survey Response Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.content.survey.SurveyResponseAnswer#getSurveyQuestionId <em>Survey Question Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.survey.SurveyResponseAnswer#getSurveyMultiRespColId <em>Survey Multi Resp Col Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.survey.SurveyResponseAnswer#getAmountBase <em>Amount Base</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.survey.SurveyResponseAnswer#getAmountBaseUomId <em>Amount Base Uom Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.survey.SurveyResponseAnswer#getAnsweredDate <em>Answered Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.survey.SurveyResponseAnswer#isBooleanResponse <em>Boolean Response</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.content.survey.SurveyResponseAnswer#getContentId <em>Content Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.survey.SurveyResponseAnswer#getCurrencyResponse <em>Currency Response</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.survey.SurveyResponseAnswer#getDuration <em>Duration</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.survey.SurveyResponseAnswer#getDurationUomId <em>Duration Uom Id</em>}</li>
@@ -38,9 +41,6 @@ import org.abchip.mimo.biz.content.content.Content;
  *   <li>{@link org.abchip.mimo.biz.content.survey.SurveyResponseAnswer#getSurveyOptionSeqId <em>Survey Option Seq Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.survey.SurveyResponseAnswer#getTextResponse <em>Text Response</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.survey.SurveyResponseAnswer#getWeightFactor <em>Weight Factor</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.content.survey.SurveyResponseAnswer#getSurveyResponseId <em>Survey Response Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.content.survey.SurveyResponseAnswer#getSurveyQuestionId <em>Survey Question Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.content.survey.SurveyResponseAnswer#getContentId <em>Content Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.content.survey.SurveyPackage#getSurveyResponseAnswer()
@@ -164,6 +164,7 @@ public interface SurveyResponseAnswer extends BizEntity {
 	 * @see #setContentId(Content)
 	 * @see org.abchip.mimo.biz.content.survey.SurveyPackage#getSurveyResponseAnswer_ContentId()
 	 * @model keys="contentId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Content getContentId();
@@ -346,8 +347,8 @@ public interface SurveyResponseAnswer extends BizEntity {
 	 * @see #setSurveyMultiRespColId(String)
 	 * @see org.abchip.mimo.biz.content.survey.SurveyPackage#getSurveyResponseAnswer_SurveyMultiRespColId()
 	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true' help='This is needed to support multiple responses for different MultiResp Columns; if not part of a MultiResp will be _NA_'"
 	 *        annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getSurveyMultiRespColId();
@@ -373,7 +374,8 @@ public interface SurveyResponseAnswer extends BizEntity {
 	 * @return the value of the '<em>Survey Multi Resp Id</em>' attribute.
 	 * @see #setSurveyMultiRespId(String)
 	 * @see org.abchip.mimo.biz.content.survey.SurveyPackage#getSurveyResponseAnswer_SurveyMultiRespId()
-	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 * @model annotation="mimo-ent-slot help='This is not part of the primary key, but should be populated so that the SurveyMultiRespColumn can be more easily looked up.'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	String getSurveyMultiRespId();
@@ -425,7 +427,9 @@ public interface SurveyResponseAnswer extends BizEntity {
 	 * @return the value of the '<em>Survey Question Id</em>' reference.
 	 * @see #setSurveyQuestionId(SurveyQuestion)
 	 * @see org.abchip.mimo.biz.content.survey.SurveyPackage#getSurveyResponseAnswer_SurveyQuestionId()
-	 * @model keys="surveyQuestionId"
+	 * @model keys="surveyQuestionId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	SurveyQuestion getSurveyQuestionId();
@@ -451,7 +455,9 @@ public interface SurveyResponseAnswer extends BizEntity {
 	 * @return the value of the '<em>Survey Response Id</em>' reference.
 	 * @see #setSurveyResponseId(SurveyResponse)
 	 * @see org.abchip.mimo.biz.content.survey.SurveyPackage#getSurveyResponseAnswer_SurveyResponseId()
-	 * @model keys="surveyResponseId"
+	 * @model keys="surveyResponseId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	SurveyResponse getSurveyResponseId();

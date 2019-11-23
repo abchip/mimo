@@ -27,7 +27,7 @@ import org.abchip.mimo.biz.BizEntityType;
  * </ul>
  *
  * @see org.abchip.mimo.biz.accounting.fixedasset.FixedassetPackage#getFixedAssetStdCostType()
- * @model annotation="mimo-ent-frame formula='description'"
+ * @model annotation="mimo-ent-frame title='Fixed Asset Standard Cost Type' dictionary='AccountingEntityLabels' formula='description'"
  * @generated
  */
 public interface FixedAssetStdCostType extends BizEntityType<FixedAssetStdCost> {
@@ -95,6 +95,7 @@ public interface FixedAssetStdCostType extends BizEntityType<FixedAssetStdCost> 
 	 * @see #setParentTypeId(FixedAssetStdCostType)
 	 * @see org.abchip.mimo.biz.accounting.fixedasset.FixedassetPackage#getFixedAssetStdCostType_ParentTypeId()
 	 * @model keys="fixedAssetStdCostTypeId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	FixedAssetStdCostType getParentTypeId();
@@ -132,7 +133,6 @@ public interface FixedAssetStdCostType extends BizEntityType<FixedAssetStdCost> 
 	 * @see org.abchip.mimo.biz.accounting.fixedasset.FixedassetPackage#getFixedAssetStdCostType_FixedAssetStdCostTypeId()
 	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getFixedAssetStdCostTypeId();

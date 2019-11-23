@@ -25,11 +25,11 @@ import org.eclipse.emf.ecore.EClass;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.order.request.impl.RespondingPartyImpl#getRespondingPartySeqId <em>Responding Party Seq Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.request.impl.RespondingPartyImpl#getDateSent <em>Date Sent</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.request.impl.RespondingPartyImpl#getCustRequestId <em>Cust Request Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.request.impl.RespondingPartyImpl#getPartyId <em>Party Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.request.impl.RespondingPartyImpl#getRespondingPartySeqId <em>Responding Party Seq Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.request.impl.RespondingPartyImpl#getContactMechId <em>Contact Mech Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.request.impl.RespondingPartyImpl#getDateSent <em>Date Sent</em>}</li>
  * </ul>
  *
  * @generated

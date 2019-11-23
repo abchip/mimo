@@ -28,7 +28,7 @@ import org.abchip.mimo.biz.party.party.Party;
  * </ul>
  *
  * @see org.abchip.mimo.biz.product.product.ProductPackage#getProductGlAccount()
- * @model
+ * @model annotation="mimo-ent-frame dictionary='ProductEntityLabels'"
  * @generated
  */
 public interface ProductGlAccount extends BizEntity {
@@ -44,6 +44,7 @@ public interface ProductGlAccount extends BizEntity {
 	 * @see #setGlAccountId(GlAccount)
 	 * @see org.abchip.mimo.biz.product.product.ProductPackage#getProductGlAccount_GlAccountId()
 	 * @model keys="glAccountId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	GlAccount getGlAccountId();
@@ -69,7 +70,9 @@ public interface ProductGlAccount extends BizEntity {
 	 * @return the value of the '<em>Gl Account Type Id</em>' reference.
 	 * @see #setGlAccountTypeId(GlAccountType)
 	 * @see org.abchip.mimo.biz.product.product.ProductPackage#getProductGlAccount_GlAccountTypeId()
-	 * @model keys="glAccountTypeId"
+	 * @model keys="glAccountTypeId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	GlAccountType getGlAccountTypeId();
@@ -95,7 +98,9 @@ public interface ProductGlAccount extends BizEntity {
 	 * @return the value of the '<em>Organization Party Id</em>' reference.
 	 * @see #setOrganizationPartyId(Party)
 	 * @see org.abchip.mimo.biz.product.product.ProductPackage#getProductGlAccount_OrganizationPartyId()
-	 * @model keys="partyId"
+	 * @model keys="partyId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Party getOrganizationPartyId();
@@ -121,7 +126,9 @@ public interface ProductGlAccount extends BizEntity {
 	 * @return the value of the '<em>Product Id</em>' reference.
 	 * @see #setProductId(Product)
 	 * @see org.abchip.mimo.biz.product.product.ProductPackage#getProductGlAccount_ProductId()
-	 * @model keys="productId"
+	 * @model keys="productId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Product getProductId();

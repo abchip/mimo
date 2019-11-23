@@ -21,11 +21,11 @@ import org.abchip.mimo.biz.humanres.ability.ResponsibilityType;
  * The following features are supported:
  * </p>
  * <ul>
+ *   <li>{@link org.abchip.mimo.biz.humanres.position.ValidResponsibility#getEmplPositionTypeId <em>Empl Position Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.humanres.position.ValidResponsibility#getResponsibilityTypeId <em>Responsibility Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.position.ValidResponsibility#getFromDate <em>From Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.position.ValidResponsibility#getComments <em>Comments</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.position.ValidResponsibility#getThruDate <em>Thru Date</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.humanres.position.ValidResponsibility#getEmplPositionTypeId <em>Empl Position Type Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.humanres.position.ValidResponsibility#getResponsibilityTypeId <em>Responsibility Type Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.humanres.position.PositionPackage#getValidResponsibility()
@@ -70,7 +70,9 @@ public interface ValidResponsibility extends BizEntity {
 	 * @return the value of the '<em>Empl Position Type Id</em>' reference.
 	 * @see #setEmplPositionTypeId(EmplPositionType)
 	 * @see org.abchip.mimo.biz.humanres.position.PositionPackage#getValidResponsibility_EmplPositionTypeId()
-	 * @model keys="emplPositionTypeId"
+	 * @model keys="emplPositionTypeId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	EmplPositionType getEmplPositionTypeId();
@@ -97,8 +99,8 @@ public interface ValidResponsibility extends BizEntity {
 	 * @see #setFromDate(Date)
 	 * @see org.abchip.mimo.biz.humanres.position.PositionPackage#getValidResponsibility_FromDate()
 	 * @model required="true"
-	 *        annotation="mimo-ent-format type='date-time'"
 	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getFromDate();
@@ -124,7 +126,9 @@ public interface ValidResponsibility extends BizEntity {
 	 * @return the value of the '<em>Responsibility Type Id</em>' reference.
 	 * @see #setResponsibilityTypeId(ResponsibilityType)
 	 * @see org.abchip.mimo.biz.humanres.position.PositionPackage#getValidResponsibility_ResponsibilityTypeId()
-	 * @model keys="responsibilityTypeId"
+	 * @model keys="responsibilityTypeId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ResponsibilityType getResponsibilityTypeId();

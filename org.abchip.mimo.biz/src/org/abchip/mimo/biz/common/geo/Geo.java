@@ -25,14 +25,14 @@ import org.abchip.mimo.biz.BizEntityTyped;
  *   <li>{@link org.abchip.mimo.biz.common.geo.Geo#getGeoCode <em>Geo Code</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.common.geo.Geo#getGeoName <em>Geo Name</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.common.geo.Geo#getGeoSecCode <em>Geo Sec Code</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.common.geo.Geo#getWellKnownText <em>Well Known Text</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.common.geo.Geo#getGeoTypeId <em>Geo Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.common.geo.Geo#getMainGeoAssocs <em>Main Geo Assocs</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.common.geo.Geo#getTaxAuthTaxAuthorities <em>Tax Auth Tax Authorities</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.common.geo.Geo#getWellKnownText <em>Well Known Text</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.common.geo.GeoPackage#getGeo()
- * @model
+ * @model annotation="mimo-ent-frame title='Geographic Boundary' dictionary='CommonEntityLabels'"
  * @generated
  */
 public interface Geo extends BizEntityTyped<GeoType> {
@@ -177,8 +177,7 @@ public interface Geo extends BizEntityTyped<GeoType> {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Main Geo Assocs</em>' attribute list.
 	 * @see org.abchip.mimo.biz.common.geo.GeoPackage#getGeo_MainGeoAssocs()
-	 * @model required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='GeoAssoc'"
 	 * @generated
@@ -196,8 +195,7 @@ public interface Geo extends BizEntityTyped<GeoType> {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Tax Auth Tax Authorities</em>' attribute list.
 	 * @see org.abchip.mimo.biz.common.geo.GeoPackage#getGeo_TaxAuthTaxAuthorities()
-	 * @model required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='TaxAuthority'"
 	 * @generated
@@ -207,8 +205,7 @@ public interface Geo extends BizEntityTyped<GeoType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='GeoAssoc' route='geoIdTo'"
 	 * @generated
@@ -318,8 +315,7 @@ public interface Geo extends BizEntityTyped<GeoType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='PostalAddressBoundary' route='geoId'"
 	 * @generated
@@ -369,8 +365,7 @@ public interface Geo extends BizEntityTyped<GeoType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ProductGeo' route='geoId'"
 	 * @generated
@@ -420,8 +415,7 @@ public interface Geo extends BizEntityTyped<GeoType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='SegmentGroupGeo' route='geoId'"
 	 * @generated
@@ -480,6 +474,7 @@ public interface Geo extends BizEntityTyped<GeoType> {
 	 * @see #setGeoTypeId(GeoType)
 	 * @see org.abchip.mimo.biz.common.geo.GeoPackage#getGeo_GeoTypeId()
 	 * @model keys="geoTypeId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	GeoType getGeoTypeId();
@@ -507,7 +502,6 @@ public interface Geo extends BizEntityTyped<GeoType> {
 	 * @see org.abchip.mimo.biz.common.geo.GeoPackage#getGeo_GeoId()
 	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getGeoId();

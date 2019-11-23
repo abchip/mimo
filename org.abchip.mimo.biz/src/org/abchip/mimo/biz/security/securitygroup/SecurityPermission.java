@@ -23,7 +23,7 @@ import org.abchip.mimo.biz.BizEntity;
  * </ul>
  *
  * @see org.abchip.mimo.biz.security.securitygroup.SecuritygroupPackage#getSecurityPermission()
- * @model annotation="mimo-ent-frame formula='description'"
+ * @model annotation="mimo-ent-frame title='Security Component - Security Permission' dictionary='SecurityEntityLabels' formula='description'"
  * @generated
  */
 public interface SecurityPermission extends BizEntity {
@@ -66,7 +66,6 @@ public interface SecurityPermission extends BizEntity {
 	 * @see org.abchip.mimo.biz.security.securitygroup.SecuritygroupPackage#getSecurityPermission_PermissionId()
 	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-format type='id-long' length='60'"
-	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getPermissionId();

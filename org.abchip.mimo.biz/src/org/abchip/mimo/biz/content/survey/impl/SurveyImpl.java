@@ -31,8 +31,8 @@ import org.eclipse.emf.ecore.EClass;
  *   <li>{@link org.abchip.mimo.biz.content.survey.impl.SurveyImpl#isIsAnonymous <em>Is Anonymous</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.survey.impl.SurveyImpl#getResponseService <em>Response Service</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.survey.impl.SurveyImpl#getSubmitCaption <em>Submit Caption</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.content.survey.impl.SurveyImpl#getSurveyName <em>Survey Name</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.survey.impl.SurveyImpl#getSurveyMultiResps <em>Survey Multi Resps</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.content.survey.impl.SurveyImpl#getSurveyName <em>Survey Name</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.survey.impl.SurveyImpl#getSurveyPages <em>Survey Pages</em>}</li>
  * </ul>
  *

@@ -29,12 +29,12 @@ import org.eclipse.emf.ecore.EClass;
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductGroupOrderImpl#getGroupOrderId <em>Group Order Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductGroupOrderImpl#getFromDate <em>From Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductGroupOrderImpl#getJobId <em>Job Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductGroupOrderImpl#getProductId <em>Product Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductGroupOrderImpl#getReqOrderQty <em>Req Order Qty</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductGroupOrderImpl#getSoldOrderQty <em>Sold Order Qty</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductGroupOrderImpl#getThruDate <em>Thru Date</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductGroupOrderImpl#getProductId <em>Product Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductGroupOrderImpl#getStatusId <em>Status Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductGroupOrderImpl#getJobId <em>Job Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductGroupOrderImpl#getThruDate <em>Thru Date</em>}</li>
  * </ul>
  *
  * @generated

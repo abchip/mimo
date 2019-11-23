@@ -20,6 +20,7 @@ import org.abchip.mimo.biz.BizEntity;
  * The following features are supported:
  * </p>
  * <ul>
+ *   <li>{@link org.abchip.mimo.biz.party.party.PartyNameHistory#getPartyId <em>Party Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.party.PartyNameHistory#getChangeDate <em>Change Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.party.PartyNameHistory#getFirstName <em>First Name</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.party.PartyNameHistory#getGroupName <em>Group Name</em>}</li>
@@ -27,7 +28,6 @@ import org.abchip.mimo.biz.BizEntity;
  *   <li>{@link org.abchip.mimo.biz.party.party.PartyNameHistory#getMiddleName <em>Middle Name</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.party.PartyNameHistory#getPersonalTitle <em>Personal Title</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.party.PartyNameHistory#getSuffix <em>Suffix</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.party.party.PartyNameHistory#getPartyId <em>Party Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.party.party.PartyPackage#getPartyNameHistory()
@@ -47,8 +47,8 @@ public interface PartyNameHistory extends BizEntity {
 	 * @see #setChangeDate(Date)
 	 * @see org.abchip.mimo.biz.party.party.PartyPackage#getPartyNameHistory_ChangeDate()
 	 * @model required="true"
-	 *        annotation="mimo-ent-format type='date-time'"
 	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getChangeDate();
@@ -100,7 +100,8 @@ public interface PartyNameHistory extends BizEntity {
 	 * @return the value of the '<em>Group Name</em>' attribute.
 	 * @see #setGroupName(String)
 	 * @see org.abchip.mimo.biz.party.party.PartyPackage#getPartyNameHistory_GroupName()
-	 * @model annotation="mimo-ent-format type='name' length='100'"
+	 * @model annotation="mimo-ent-slot help='For Party Groups only'"
+	 *        annotation="mimo-ent-format type='name' length='100'"
 	 * @generated
 	 */
 	String getGroupName();
@@ -230,7 +231,9 @@ public interface PartyNameHistory extends BizEntity {
 	 * @return the value of the '<em>Party Id</em>' reference.
 	 * @see #setPartyId(Party)
 	 * @see org.abchip.mimo.biz.party.party.PartyPackage#getPartyNameHistory_PartyId()
-	 * @model keys="partyId"
+	 * @model keys="partyId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Party getPartyId();

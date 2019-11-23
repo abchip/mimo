@@ -20,16 +20,16 @@ import org.abchip.mimo.biz.product.product.Product;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.product.promo.ProductPromoProduct#getProductPromoRuleId <em>Product Promo Rule Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.promo.ProductPromoProduct#getProductPromoActionSeqId <em>Product Promo Action Seq Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.promo.ProductPromoProduct#getProductPromoCondSeqId <em>Product Promo Cond Seq Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.promo.ProductPromoProduct#getProductPromoId <em>Product Promo Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.promo.ProductPromoProduct#getProductId <em>Product Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.promo.ProductPromoProduct#getProductPromoActionSeqId <em>Product Promo Action Seq Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.promo.ProductPromoProduct#getProductPromoCondSeqId <em>Product Promo Cond Seq Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.promo.ProductPromoProduct#getProductPromoRuleId <em>Product Promo Rule Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.promo.ProductPromoProduct#getProductPromoApplEnumId <em>Product Promo Appl Enum Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.product.promo.PromoPackage#getProductPromoProduct()
- * @model
+ * @model annotation="mimo-ent-frame title='Product Promotion Category' dictionary='ProductEntityLabels'"
  * @generated
  */
 public interface ProductPromoProduct extends BizEntity {
@@ -45,8 +45,8 @@ public interface ProductPromoProduct extends BizEntity {
 	 * @see #setProductPromoActionSeqId(String)
 	 * @see org.abchip.mimo.biz.product.promo.PromoPackage#getProductPromoProduct_ProductPromoActionSeqId()
 	 * @model required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	String getProductPromoActionSeqId();
@@ -73,6 +73,7 @@ public interface ProductPromoProduct extends BizEntity {
 	 * @see #setProductPromoApplEnumId(Enumeration)
 	 * @see org.abchip.mimo.biz.product.promo.PromoPackage#getProductPromoProduct_ProductPromoApplEnumId()
 	 * @model keys="enumId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Enumeration getProductPromoApplEnumId();
@@ -99,8 +100,8 @@ public interface ProductPromoProduct extends BizEntity {
 	 * @see #setProductPromoCondSeqId(String)
 	 * @see org.abchip.mimo.biz.product.promo.PromoPackage#getProductPromoProduct_ProductPromoCondSeqId()
 	 * @model required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	String getProductPromoCondSeqId();
@@ -127,8 +128,8 @@ public interface ProductPromoProduct extends BizEntity {
 	 * @see #setProductPromoRuleId(String)
 	 * @see org.abchip.mimo.biz.product.promo.PromoPackage#getProductPromoProduct_ProductPromoRuleId()
 	 * @model required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	String getProductPromoRuleId();
@@ -154,7 +155,9 @@ public interface ProductPromoProduct extends BizEntity {
 	 * @return the value of the '<em>Product Promo Id</em>' reference.
 	 * @see #setProductPromoId(ProductPromo)
 	 * @see org.abchip.mimo.biz.product.promo.PromoPackage#getProductPromoProduct_ProductPromoId()
-	 * @model keys="productPromoId"
+	 * @model keys="productPromoId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ProductPromo getProductPromoId();
@@ -180,7 +183,9 @@ public interface ProductPromoProduct extends BizEntity {
 	 * @return the value of the '<em>Product Id</em>' reference.
 	 * @see #setProductId(Product)
 	 * @see org.abchip.mimo.biz.product.promo.PromoPackage#getProductPromoProduct_ProductId()
-	 * @model keys="productId"
+	 * @model keys="productId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Product getProductId();

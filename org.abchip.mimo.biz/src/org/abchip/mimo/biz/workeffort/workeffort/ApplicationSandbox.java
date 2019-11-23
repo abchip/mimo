@@ -25,12 +25,12 @@ import org.abchip.mimo.biz.service.schedule.RuntimeData;
  *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.ApplicationSandbox#getFromDate <em>From Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.ApplicationSandbox#getPartyId <em>Party Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.ApplicationSandbox#getRoleTypeId <em>Role Type Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.ApplicationSandbox#getWorkEffortId <em>Work Effort Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.ApplicationSandbox#getRuntimeDataId <em>Runtime Data Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.ApplicationSandbox#getWorkEffortId <em>Work Effort Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage#getApplicationSandbox()
- * @model
+ * @model annotation="mimo-ent-frame title='WorkEffort Application Sandbox'"
  * @generated
  */
 public interface ApplicationSandbox extends BizEntity {
@@ -47,7 +47,6 @@ public interface ApplicationSandbox extends BizEntity {
 	 * @see org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage#getApplicationSandbox_ApplicationId()
 	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getApplicationId();
@@ -152,6 +151,7 @@ public interface ApplicationSandbox extends BizEntity {
 	 * @see #setRuntimeDataId(RuntimeData)
 	 * @see org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage#getApplicationSandbox_RuntimeDataId()
 	 * @model keys="runtimeDataId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	RuntimeData getRuntimeDataId();

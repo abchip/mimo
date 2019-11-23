@@ -25,7 +25,7 @@ import org.abchip.mimo.biz.BizEntityType;
  * </ul>
  *
  * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipmentContactMechType()
- * @model annotation="mimo-ent-frame formula='description'"
+ * @model annotation="mimo-ent-frame title='Shipment Contact Mechanism Type' formula='description'"
  * @generated
  */
 public interface ShipmentContactMechType extends BizEntityType<ShipmentContactMech> {
@@ -58,8 +58,7 @@ public interface ShipmentContactMechType extends BizEntityType<ShipmentContactMe
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ShipmentContactMech' route='shipmentContactMechTypeId'"
 	 * @generated
@@ -79,7 +78,6 @@ public interface ShipmentContactMechType extends BizEntityType<ShipmentContactMe
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipmentContactMechType_ShipmentContactMechTypeId()
 	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getShipmentContactMechTypeId();

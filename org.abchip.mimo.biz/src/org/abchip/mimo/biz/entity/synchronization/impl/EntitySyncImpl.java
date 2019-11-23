@@ -25,6 +25,9 @@ import org.eclipse.emf.ecore.EClass;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.entity.synchronization.impl.EntitySyncImpl#getEntitySyncId <em>Entity Sync Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.entity.synchronization.impl.EntitySyncImpl#getEntitySyncHistories <em>Entity Sync Histories</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.entity.synchronization.impl.EntitySyncImpl#getEntitySyncIncludeGroups <em>Entity Sync Include Groups</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.entity.synchronization.impl.EntitySyncImpl#getEntitySyncIncludes <em>Entity Sync Includes</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.entity.synchronization.impl.EntitySyncImpl#isForPullOnly <em>For Pull Only</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.entity.synchronization.impl.EntitySyncImpl#isForPushOnly <em>For Push Only</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.entity.synchronization.impl.EntitySyncImpl#getKeepRemoveInfoHours <em>Keep Remove Info Hours</em>}</li>
@@ -38,9 +41,6 @@ import org.eclipse.emf.ecore.EClass;
  *   <li>{@link org.abchip.mimo.biz.entity.synchronization.impl.EntitySyncImpl#getSyncSplitMillis <em>Sync Split Millis</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.entity.synchronization.impl.EntitySyncImpl#getTargetDelegatorName <em>Target Delegator Name</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.entity.synchronization.impl.EntitySyncImpl#getTargetServiceName <em>Target Service Name</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.entity.synchronization.impl.EntitySyncImpl#getEntitySyncHistories <em>Entity Sync Histories</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.entity.synchronization.impl.EntitySyncImpl#getEntitySyncIncludes <em>Entity Sync Includes</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.entity.synchronization.impl.EntitySyncImpl#getEntitySyncIncludeGroups <em>Entity Sync Include Groups</em>}</li>
  * </ul>
  *
  * @generated

@@ -24,11 +24,11 @@ import org.eclipse.emf.ecore.EClass;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.accounting.tax.impl.ZipSalesTaxLookupImpl#getZipCode <em>Zip Code</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.tax.impl.ZipSalesTaxLookupImpl#getStateCode <em>State Code</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.tax.impl.ZipSalesTaxLookupImpl#getCity <em>City</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.tax.impl.ZipSalesTaxLookupImpl#getCounty <em>County</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.tax.impl.ZipSalesTaxLookupImpl#getFromDate <em>From Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.tax.impl.ZipSalesTaxLookupImpl#getStateCode <em>State Code</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.tax.impl.ZipSalesTaxLookupImpl#getZipCode <em>Zip Code</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.tax.impl.ZipSalesTaxLookupImpl#getCityLocalSalesTax <em>City Local Sales Tax</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.tax.impl.ZipSalesTaxLookupImpl#getCityLocalUseTax <em>City Local Use Tax</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.tax.impl.ZipSalesTaxLookupImpl#getCitySalesTax <em>City Sales Tax</em>}</li>

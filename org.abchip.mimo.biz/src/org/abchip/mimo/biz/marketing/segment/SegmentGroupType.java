@@ -25,7 +25,7 @@ import org.abchip.mimo.biz.BizEntityType;
  * </ul>
  *
  * @see org.abchip.mimo.biz.marketing.segment.SegmentPackage#getSegmentGroupType()
- * @model annotation="mimo-ent-frame formula='description'"
+ * @model annotation="mimo-ent-frame dictionary='MarketingEntityLabels' formula='description'"
  * @generated
  */
 public interface SegmentGroupType extends BizEntityType<SegmentGroup> {
@@ -78,7 +78,6 @@ public interface SegmentGroupType extends BizEntityType<SegmentGroup> {
 	 * @see org.abchip.mimo.biz.marketing.segment.SegmentPackage#getSegmentGroupType_SegmentGroupTypeId()
 	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getSegmentGroupTypeId();

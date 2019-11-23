@@ -26,12 +26,12 @@ import org.eclipse.emf.ecore.EClass;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderSummaryEntryImpl#getProductId <em>Product Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderSummaryEntryImpl#getFacilityId <em>Facility Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderSummaryEntryImpl#getEntryDate <em>Entry Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderSummaryEntryImpl#getGrossSales <em>Gross Sales</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderSummaryEntryImpl#getProductCost <em>Product Cost</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderSummaryEntryImpl#getTotalQuantity <em>Total Quantity</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderSummaryEntryImpl#getProductId <em>Product Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderSummaryEntryImpl#getFacilityId <em>Facility Id</em>}</li>
  * </ul>
  *
  * @generated

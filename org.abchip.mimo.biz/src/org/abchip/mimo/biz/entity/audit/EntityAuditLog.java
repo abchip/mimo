@@ -48,8 +48,8 @@ public interface EntityAuditLog extends BizEntity {
 	 * @see #setAuditHistorySeqId(String)
 	 * @see org.abchip.mimo.biz.entity.audit.AuditPackage#getEntityAuditLog_AuditHistorySeqId()
 	 * @model id="true" required="true"
+	 *        annotation="mimo-ent-slot help='Sequenced primary key'"
 	 *        annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getAuditHistorySeqId();
@@ -75,7 +75,8 @@ public interface EntityAuditLog extends BizEntity {
 	 * @return the value of the '<em>Changed By Info</em>' attribute.
 	 * @see #setChangedByInfo(String)
 	 * @see org.abchip.mimo.biz.entity.audit.AuditPackage#getEntityAuditLog_ChangedByInfo()
-	 * @model annotation="mimo-ent-format type='long-varchar' length='255'"
+	 * @model annotation="mimo-ent-slot help='This should contain whatever information is available about the user or system that changed the value. This could be a userLoginId, but could be something else too, so there is no foreign key.'"
+	 *        annotation="mimo-ent-format type='long-varchar' length='255'"
 	 * @generated
 	 */
 	String getChangedByInfo();
@@ -179,7 +180,8 @@ public interface EntityAuditLog extends BizEntity {
 	 * @return the value of the '<em>Changed Session Info</em>' attribute.
 	 * @see #setChangedSessionInfo(String)
 	 * @see org.abchip.mimo.biz.entity.audit.AuditPackage#getEntityAuditLog_ChangedSessionInfo()
-	 * @model annotation="mimo-ent-format type='long-varchar' length='255'"
+	 * @model annotation="mimo-ent-slot help='This should contain whatever information is available about the session during which the value was changed. This could be a visitId, but could be something else too, so there is no foreign key.'"
+	 *        annotation="mimo-ent-format type='long-varchar' length='255'"
 	 * @generated
 	 */
 	String getChangedSessionInfo();

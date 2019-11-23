@@ -21,6 +21,7 @@ import org.abchip.mimo.biz.content.content.Content;
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.content.website.WebSitePublishPoint#getAboutContentId <em>About Content Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.website.WebSitePublishPoint#getContentDept <em>Content Dept</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.content.website.WebSitePublishPoint#getContentId <em>Content Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.website.WebSitePublishPoint#getLeftBarId <em>Left Bar Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.website.WebSitePublishPoint#getLineLogo <em>Line Logo</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.website.WebSitePublishPoint#getLogo <em>Logo</em>}</li>
@@ -28,7 +29,6 @@ import org.abchip.mimo.biz.content.content.Content;
  *   <li>{@link org.abchip.mimo.biz.content.website.WebSitePublishPoint#getRightBarId <em>Right Bar Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.website.WebSitePublishPoint#getStyleSheetFile <em>Style Sheet File</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.website.WebSitePublishPoint#getTemplateTitle <em>Template Title</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.content.website.WebSitePublishPoint#getContentId <em>Content Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.content.website.WebsitePackage#getWebSitePublishPoint()
@@ -99,7 +99,8 @@ public interface WebSitePublishPoint extends BizEntity {
 	 * @return the value of the '<em>Content Id</em>' reference.
 	 * @see #setContentId(Content)
 	 * @see org.abchip.mimo.biz.content.website.WebsitePackage#getWebSitePublishPoint_ContentId()
-	 * @model keys="contentId"
+	 * @model keys="contentId" required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Content getContentId();

@@ -21,16 +21,16 @@ import org.abchip.mimo.biz.content.content.Content;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.order.order.OrderContent#getOrderItemSeqId <em>Order Item Seq Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.order.OrderContent#getFromDate <em>From Date</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.order.OrderContent#getThruDate <em>Thru Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.OrderContent#getOrderId <em>Order Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.OrderContent#getContentId <em>Content Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.OrderContent#getOrderContentTypeId <em>Order Content Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.order.OrderContent#getFromDate <em>From Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.order.OrderContent#getOrderItemSeqId <em>Order Item Seq Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.order.OrderContent#getThruDate <em>Thru Date</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderContent()
- * @model
+ * @model annotation="mimo-ent-frame title='Order Data Object'"
  * @generated
  */
 public interface OrderContent extends BizEntityTyped<OrderContentType> {
@@ -45,7 +45,9 @@ public interface OrderContent extends BizEntityTyped<OrderContentType> {
 	 * @return the value of the '<em>Content Id</em>' reference.
 	 * @see #setContentId(Content)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderContent_ContentId()
-	 * @model keys="contentId"
+	 * @model keys="contentId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Content getContentId();
@@ -72,8 +74,8 @@ public interface OrderContent extends BizEntityTyped<OrderContentType> {
 	 * @see #setFromDate(Date)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderContent_FromDate()
 	 * @model required="true"
-	 *        annotation="mimo-ent-format type='date-time'"
 	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getFromDate();
@@ -99,7 +101,9 @@ public interface OrderContent extends BizEntityTyped<OrderContentType> {
 	 * @return the value of the '<em>Order Content Type Id</em>' reference.
 	 * @see #setOrderContentTypeId(OrderContentType)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderContent_OrderContentTypeId()
-	 * @model keys="orderContentTypeId"
+	 * @model keys="orderContentTypeId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	OrderContentType getOrderContentTypeId();
@@ -125,7 +129,9 @@ public interface OrderContent extends BizEntityTyped<OrderContentType> {
 	 * @return the value of the '<em>Order Id</em>' reference.
 	 * @see #setOrderId(OrderHeader)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderContent_OrderId()
-	 * @model keys="orderId"
+	 * @model keys="orderId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	OrderHeader getOrderId();
@@ -152,8 +158,8 @@ public interface OrderContent extends BizEntityTyped<OrderContentType> {
 	 * @see #setOrderItemSeqId(String)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderContent_OrderItemSeqId()
 	 * @model required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	String getOrderItemSeqId();

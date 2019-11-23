@@ -25,7 +25,7 @@ import org.abchip.mimo.biz.BizEntity;
  * </ul>
  *
  * @see org.abchip.mimo.biz.content.data.DataPackage#getCharacterSet()
- * @model annotation="mimo-ent-frame formula='description'"
+ * @model annotation="mimo-ent-frame dictionary='ContentEntityLabels' formula='description'"
  * @generated
  */
 public interface CharacterSet extends BizEntity {
@@ -42,7 +42,6 @@ public interface CharacterSet extends BizEntity {
 	 * @see org.abchip.mimo.biz.content.data.DataPackage#getCharacterSet_CharacterSetId()
 	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-format type='id-long' length='60'"
-	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getCharacterSetId();

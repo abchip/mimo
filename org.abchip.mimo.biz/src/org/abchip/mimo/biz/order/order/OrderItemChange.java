@@ -28,14 +28,14 @@ import org.abchip.mimo.biz.security.login.UserLogin;
  *   <li>{@link org.abchip.mimo.biz.order.order.OrderItemChange#getCancelQuantity <em>Cancel Quantity</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.OrderItemChange#getChangeComments <em>Change Comments</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.OrderItemChange#getChangeDatetime <em>Change Datetime</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.order.OrderItemChange#getChangeTypeEnumId <em>Change Type Enum Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.order.OrderItemChange#getChangeUserLogin <em>Change User Login</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.OrderItemChange#getItemDescription <em>Item Description</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.order.OrderItemChange#getOrderId <em>Order Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.OrderItemChange#getOrderItemSeqId <em>Order Item Seq Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.OrderItemChange#getQuantity <em>Quantity</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.order.OrderItemChange#getUnitPrice <em>Unit Price</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.order.OrderItemChange#getOrderId <em>Order Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.order.OrderItemChange#getChangeTypeEnumId <em>Change Type Enum Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.OrderItemChange#getReasonEnumId <em>Reason Enum Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.order.OrderItemChange#getChangeUserLogin <em>Change User Login</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.order.OrderItemChange#getUnitPrice <em>Unit Price</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderItemChange()
@@ -133,6 +133,7 @@ public interface OrderItemChange extends BizEntity {
 	 * @see #setChangeTypeEnumId(Enumeration)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderItemChange_ChangeTypeEnumId()
 	 * @model keys="enumId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Enumeration getChangeTypeEnumId();
@@ -159,6 +160,7 @@ public interface OrderItemChange extends BizEntity {
 	 * @see #setChangeUserLogin(UserLogin)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderItemChange_ChangeUserLogin()
 	 * @model keys="userLoginId"
+	 *        annotation="mimo-ent-format type='id-vlong' length='255'"
 	 * @generated
 	 */
 	UserLogin getChangeUserLogin();
@@ -211,6 +213,7 @@ public interface OrderItemChange extends BizEntity {
 	 * @see #setOrderId(OrderHeader)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderItemChange_OrderId()
 	 * @model keys="orderId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	OrderHeader getOrderId();
@@ -238,7 +241,6 @@ public interface OrderItemChange extends BizEntity {
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderItemChange_OrderItemChangeId()
 	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getOrderItemChangeId();
@@ -317,6 +319,7 @@ public interface OrderItemChange extends BizEntity {
 	 * @see #setReasonEnumId(Enumeration)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderItemChange_ReasonEnumId()
 	 * @model keys="enumId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Enumeration getReasonEnumId();

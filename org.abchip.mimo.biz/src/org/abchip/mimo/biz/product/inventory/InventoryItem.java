@@ -37,35 +37,35 @@ import org.abchip.mimo.biz.product.product.Product;
  *   <li>{@link org.abchip.mimo.biz.product.inventory.InventoryItem#getAvailableToPromiseTotal <em>Available To Promise Total</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.inventory.InventoryItem#getBinNumber <em>Bin Number</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.inventory.InventoryItem#getComments <em>Comments</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.inventory.InventoryItem#getContainerId <em>Container Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.inventory.InventoryItem#getCurrencyUomId <em>Currency Uom Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.inventory.InventoryItem#getDatetimeManufactured <em>Datetime Manufactured</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.inventory.InventoryItem#getDatetimeReceived <em>Datetime Received</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.inventory.InventoryItem#getExpireDate <em>Expire Date</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.inventory.InventoryItem#getLocationSeqId <em>Location Seq Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.inventory.InventoryItem#getOldAvailableToPromise <em>Old Available To Promise</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.inventory.InventoryItem#getOldQuantityOnHand <em>Old Quantity On Hand</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.inventory.InventoryItem#getQuantityOnHandTotal <em>Quantity On Hand Total</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.inventory.InventoryItem#getSerialNumber <em>Serial Number</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.inventory.InventoryItem#getSoftIdentifier <em>Soft Identifier</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.inventory.InventoryItem#getUnitCost <em>Unit Cost</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.inventory.InventoryItem#getInventoryItemTypeId <em>Inventory Item Type Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.inventory.InventoryItem#getProductId <em>Product Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.inventory.InventoryItem#getPartyId <em>Party Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.inventory.InventoryItem#getOwnerPartyId <em>Owner Party Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.inventory.InventoryItem#getStatusId <em>Status Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.inventory.InventoryItem#getFacilityId <em>Facility Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.inventory.InventoryItem#getContainerId <em>Container Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.inventory.InventoryItem#getLotId <em>Lot Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.inventory.InventoryItem#getUomId <em>Uom Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.inventory.InventoryItem#getCurrencyUomId <em>Currency Uom Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.inventory.InventoryItem#getFixedAssetId <em>Fixed Asset Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.inventory.InventoryItem#getInventoryItemAttributes <em>Inventory Item Attributes</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.inventory.InventoryItem#getInventoryItemDetails <em>Inventory Item Details</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.inventory.InventoryItem#getInventoryItemLabelAppls <em>Inventory Item Label Appls</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.inventory.InventoryItem#getInventoryItemTypeId <em>Inventory Item Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.inventory.InventoryItem#getInventoryItemVariances <em>Inventory Item Variances</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.inventory.InventoryItem#getLocationSeqId <em>Location Seq Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.inventory.InventoryItem#getLotId <em>Lot Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.inventory.InventoryItem#getOldAvailableToPromise <em>Old Available To Promise</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.inventory.InventoryItem#getOldQuantityOnHand <em>Old Quantity On Hand</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.inventory.InventoryItem#getOwnerPartyId <em>Owner Party Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.inventory.InventoryItem#getPartyId <em>Party Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.inventory.InventoryItem#getProductId <em>Product Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.inventory.InventoryItem#getQuantityOnHandTotal <em>Quantity On Hand Total</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.inventory.InventoryItem#getSerialNumber <em>Serial Number</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.inventory.InventoryItem#getSoftIdentifier <em>Soft Identifier</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.inventory.InventoryItem#getStatusId <em>Status Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.inventory.InventoryItem#getUnitCost <em>Unit Cost</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.inventory.InventoryItem#getUomId <em>Uom Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.product.inventory.InventoryPackage#getInventoryItem()
- * @model
+ * @model annotation="mimo-ent-frame dictionary='ProductEntityLabels'"
  * @generated
  */
 public interface InventoryItem extends BizEntityTyped<InventoryItemType> {
@@ -237,6 +237,8 @@ public interface InventoryItem extends BizEntityTyped<InventoryItemType> {
 	 * @see #setCurrencyUomId(Uom)
 	 * @see org.abchip.mimo.biz.product.inventory.InventoryPackage#getInventoryItem_CurrencyUomId()
 	 * @model keys="uomId"
+	 *        annotation="mimo-ent-slot help='The currency Uom of the unit cost.'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Uom getCurrencyUomId();
@@ -341,6 +343,7 @@ public interface InventoryItem extends BizEntityTyped<InventoryItemType> {
 	 * @see #setFixedAssetId(FixedAsset)
 	 * @see org.abchip.mimo.biz.product.inventory.InventoryPackage#getInventoryItem_FixedAssetId()
 	 * @model keys="fixedAssetId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	FixedAsset getFixedAssetId();
@@ -445,6 +448,8 @@ public interface InventoryItem extends BizEntityTyped<InventoryItemType> {
 	 * @see #setOwnerPartyId(Party)
 	 * @see org.abchip.mimo.biz.product.inventory.InventoryPackage#getInventoryItem_OwnerPartyId()
 	 * @model keys="partyId"
+	 *        annotation="mimo-ent-slot help='The owner of the inventory item.'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Party getOwnerPartyId();
@@ -471,6 +476,7 @@ public interface InventoryItem extends BizEntityTyped<InventoryItemType> {
 	 * @see #setPartyId(Party)
 	 * @see org.abchip.mimo.biz.product.inventory.InventoryPackage#getInventoryItem_PartyId()
 	 * @model keys="partyId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Party getPartyId();
@@ -497,6 +503,7 @@ public interface InventoryItem extends BizEntityTyped<InventoryItemType> {
 	 * @see #setProductId(Product)
 	 * @see org.abchip.mimo.biz.product.inventory.InventoryPackage#getInventoryItem_ProductId()
 	 * @model keys="productId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Product getProductId();
@@ -601,6 +608,7 @@ public interface InventoryItem extends BizEntityTyped<InventoryItemType> {
 	 * @see #setStatusId(StatusItem)
 	 * @see org.abchip.mimo.biz.product.inventory.InventoryPackage#getInventoryItem_StatusId()
 	 * @model keys="statusId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	StatusItem getStatusId();
@@ -626,7 +634,8 @@ public interface InventoryItem extends BizEntityTyped<InventoryItemType> {
 	 * @return the value of the '<em>Unit Cost</em>' attribute.
 	 * @see #setUnitCost(BigDecimal)
 	 * @see org.abchip.mimo.biz.product.inventory.InventoryPackage#getInventoryItem_UnitCost()
-	 * @model annotation="mimo-ent-format type='fixed-point' precision='18' scale='6'"
+	 * @model annotation="mimo-ent-slot help='Higher precision in case it is a calculated number'"
+	 *        annotation="mimo-ent-format type='fixed-point' precision='18' scale='6'"
 	 * @generated
 	 */
 	BigDecimal getUnitCost();
@@ -653,6 +662,7 @@ public interface InventoryItem extends BizEntityTyped<InventoryItemType> {
 	 * @see #setUomId(Uom)
 	 * @see org.abchip.mimo.biz.product.inventory.InventoryPackage#getInventoryItem_UomId()
 	 * @model keys="uomId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Uom getUomId();
@@ -678,8 +688,7 @@ public interface InventoryItem extends BizEntityTyped<InventoryItemType> {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Inventory Item Attributes</em>' attribute list.
 	 * @see org.abchip.mimo.biz.product.inventory.InventoryPackage#getInventoryItem_InventoryItemAttributes()
-	 * @model required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='InventoryItemAttribute'"
 	 * @generated
@@ -697,8 +706,7 @@ public interface InventoryItem extends BizEntityTyped<InventoryItemType> {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Inventory Item Details</em>' attribute list.
 	 * @see org.abchip.mimo.biz.product.inventory.InventoryPackage#getInventoryItem_InventoryItemDetails()
-	 * @model required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='InventoryItemDetail'"
 	 * @generated
@@ -716,8 +724,7 @@ public interface InventoryItem extends BizEntityTyped<InventoryItemType> {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Inventory Item Label Appls</em>' attribute list.
 	 * @see org.abchip.mimo.biz.product.inventory.InventoryPackage#getInventoryItem_InventoryItemLabelAppls()
-	 * @model required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='InventoryItemLabelAppl'"
 	 * @generated
@@ -735,8 +742,7 @@ public interface InventoryItem extends BizEntityTyped<InventoryItemType> {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Inventory Item Variances</em>' attribute list.
 	 * @see org.abchip.mimo.biz.product.inventory.InventoryPackage#getInventoryItem_InventoryItemVariances()
-	 * @model required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='InventoryItemVariance'"
 	 * @generated
@@ -826,8 +832,7 @@ public interface InventoryItem extends BizEntityTyped<InventoryItemType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='WorkEffortInventoryAssign' route='inventoryItemId'"
 	 * @generated
@@ -837,8 +842,7 @@ public interface InventoryItem extends BizEntityTyped<InventoryItemType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='WorkEffortInventoryProduced' route='inventoryItemId'"
 	 * @generated
@@ -857,6 +861,7 @@ public interface InventoryItem extends BizEntityTyped<InventoryItemType> {
 	 * @see #setInventoryItemTypeId(InventoryItemType)
 	 * @see org.abchip.mimo.biz.product.inventory.InventoryPackage#getInventoryItem_InventoryItemTypeId()
 	 * @model keys="inventoryItemTypeId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	InventoryItemType getInventoryItemTypeId();
@@ -883,6 +888,7 @@ public interface InventoryItem extends BizEntityTyped<InventoryItemType> {
 	 * @see #setFacilityId(Facility)
 	 * @see org.abchip.mimo.biz.product.inventory.InventoryPackage#getInventoryItem_FacilityId()
 	 * @model keys="facilityId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Facility getFacilityId();
@@ -909,6 +915,7 @@ public interface InventoryItem extends BizEntityTyped<InventoryItemType> {
 	 * @see #setContainerId(Container)
 	 * @see org.abchip.mimo.biz.product.inventory.InventoryPackage#getInventoryItem_ContainerId()
 	 * @model keys="containerId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Container getContainerId();
@@ -935,6 +942,7 @@ public interface InventoryItem extends BizEntityTyped<InventoryItemType> {
 	 * @see #setLotId(Lot)
 	 * @see org.abchip.mimo.biz.product.inventory.InventoryPackage#getInventoryItem_LotId()
 	 * @model keys="lotId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Lot getLotId();
@@ -962,7 +970,6 @@ public interface InventoryItem extends BizEntityTyped<InventoryItemType> {
 	 * @see org.abchip.mimo.biz.product.inventory.InventoryPackage#getInventoryItem_InventoryItemId()
 	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getInventoryItemId();

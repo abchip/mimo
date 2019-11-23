@@ -21,14 +21,14 @@ import org.abchip.mimo.biz.BizEntityType;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.accounting.ledger.AcctgTransType#getAcctgTransTypeId <em>Acctg Trans Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.ledger.AcctgTransType#getAcctgTransTypeAttrs <em>Acctg Trans Type Attrs</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.ledger.AcctgTransType#getDescription <em>Description</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.ledger.AcctgTransType#isHasTable <em>Has Table</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.ledger.AcctgTransType#getParentTypeId <em>Parent Type Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.ledger.AcctgTransType#getAcctgTransTypeAttrs <em>Acctg Trans Type Attrs</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.accounting.ledger.LedgerPackage#getAcctgTransType()
- * @model annotation="mimo-ent-frame formula='description'"
+ * @model annotation="mimo-ent-frame title='Accounting Transaction Type' dictionary='AccountingEntityLabels' formula='description'"
  * @generated
  */
 public interface AcctgTransType extends BizEntityType<AcctgTrans> {
@@ -96,6 +96,7 @@ public interface AcctgTransType extends BizEntityType<AcctgTrans> {
 	 * @see #setParentTypeId(AcctgTransType)
 	 * @see org.abchip.mimo.biz.accounting.ledger.LedgerPackage#getAcctgTransType_ParentTypeId()
 	 * @model keys="acctgTransTypeId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	AcctgTransType getParentTypeId();
@@ -121,8 +122,7 @@ public interface AcctgTransType extends BizEntityType<AcctgTrans> {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Acctg Trans Type Attrs</em>' attribute list.
 	 * @see org.abchip.mimo.biz.accounting.ledger.LedgerPackage#getAcctgTransType_AcctgTransTypeAttrs()
-	 * @model required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='AcctgTransTypeAttr'"
 	 * @generated
@@ -162,7 +162,6 @@ public interface AcctgTransType extends BizEntityType<AcctgTrans> {
 	 * @see org.abchip.mimo.biz.accounting.ledger.LedgerPackage#getAcctgTransType_AcctgTransTypeId()
 	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getAcctgTransTypeId();

@@ -22,11 +22,11 @@ import org.abchip.mimo.biz.BizEntity;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.accounting.tax.ZipSalesTaxLookup#getZipCode <em>Zip Code</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.tax.ZipSalesTaxLookup#getStateCode <em>State Code</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.tax.ZipSalesTaxLookup#getCity <em>City</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.tax.ZipSalesTaxLookup#getCounty <em>County</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.tax.ZipSalesTaxLookup#getFromDate <em>From Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.tax.ZipSalesTaxLookup#getStateCode <em>State Code</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.tax.ZipSalesTaxLookup#getZipCode <em>Zip Code</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.tax.ZipSalesTaxLookup#getCityLocalSalesTax <em>City Local Sales Tax</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.tax.ZipSalesTaxLookup#getCityLocalUseTax <em>City Local Use Tax</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.tax.ZipSalesTaxLookup#getCitySalesTax <em>City Sales Tax</em>}</li>
@@ -63,8 +63,8 @@ public interface ZipSalesTaxLookup extends BizEntity {
 	 * @see #setCity(String)
 	 * @see org.abchip.mimo.biz.accounting.tax.TaxPackage#getZipSalesTaxLookup_City()
 	 * @model required="true"
-	 *        annotation="mimo-ent-format type='short-varchar' length='60'"
 	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='short-varchar' length='60'"
 	 * @generated
 	 */
 	String getCity();
@@ -273,8 +273,8 @@ public interface ZipSalesTaxLookup extends BizEntity {
 	 * @see #setCounty(String)
 	 * @see org.abchip.mimo.biz.accounting.tax.TaxPackage#getZipSalesTaxLookup_County()
 	 * @model required="true"
-	 *        annotation="mimo-ent-format type='short-varchar' length='60'"
 	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='short-varchar' length='60'"
 	 * @generated
 	 */
 	String getCounty();
@@ -457,8 +457,8 @@ public interface ZipSalesTaxLookup extends BizEntity {
 	 * @see #setFromDate(Date)
 	 * @see org.abchip.mimo.biz.accounting.tax.TaxPackage#getZipSalesTaxLookup_FromDate()
 	 * @model required="true"
-	 *        annotation="mimo-ent-format type='date-time'"
 	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getFromDate();
@@ -537,8 +537,8 @@ public interface ZipSalesTaxLookup extends BizEntity {
 	 * @see #setStateCode(String)
 	 * @see org.abchip.mimo.biz.accounting.tax.TaxPackage#getZipSalesTaxLookup_StateCode()
 	 * @model required="true"
-	 *        annotation="mimo-ent-format type='short-varchar' length='60'"
 	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='short-varchar' length='60'"
 	 * @generated
 	 */
 	String getStateCode();
@@ -617,8 +617,8 @@ public interface ZipSalesTaxLookup extends BizEntity {
 	 * @see #setZipCode(String)
 	 * @see org.abchip.mimo.biz.accounting.tax.TaxPackage#getZipSalesTaxLookup_ZipCode()
 	 * @model required="true"
-	 *        annotation="mimo-ent-format type='short-varchar' length='60'"
 	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='short-varchar' length='60'"
 	 * @generated
 	 */
 	String getZipCode();

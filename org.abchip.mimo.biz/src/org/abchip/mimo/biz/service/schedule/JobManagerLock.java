@@ -21,19 +21,19 @@ import org.abchip.mimo.biz.common.enum_.Enumeration;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.service.schedule.JobManagerLock#getInstanceId <em>Instance Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.service.schedule.JobManagerLock#getFromDate <em>From Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.service.schedule.JobManagerLock#getInstanceId <em>Instance Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.service.schedule.JobManagerLock#getComments <em>Comments</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.service.schedule.JobManagerLock#getCreatedByUserLogin <em>Created By User Login</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.service.schedule.JobManagerLock#getCreatedDate <em>Created Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.service.schedule.JobManagerLock#getLastModifiedByUserLogin <em>Last Modified By User Login</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.service.schedule.JobManagerLock#getLastModifiedDate <em>Last Modified Date</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.service.schedule.JobManagerLock#getThruDate <em>Thru Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.service.schedule.JobManagerLock#getReasonEnumId <em>Reason Enum Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.service.schedule.JobManagerLock#getThruDate <em>Thru Date</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.service.schedule.SchedulePackage#getJobManagerLock()
- * @model
+ * @model annotation="mimo-ent-frame title='Lock Job Manager Scheduler'"
  * @generated
  */
 public interface JobManagerLock extends BizEntity {
@@ -49,8 +49,8 @@ public interface JobManagerLock extends BizEntity {
 	 * @see #setInstanceId(String)
 	 * @see org.abchip.mimo.biz.service.schedule.SchedulePackage#getJobManagerLock_InstanceId()
 	 * @model required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	String getInstanceId();
@@ -77,8 +77,8 @@ public interface JobManagerLock extends BizEntity {
 	 * @see #setFromDate(Date)
 	 * @see org.abchip.mimo.biz.service.schedule.SchedulePackage#getJobManagerLock_FromDate()
 	 * @model required="true"
-	 *        annotation="mimo-ent-format type='date-time'"
 	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getFromDate();
@@ -235,6 +235,7 @@ public interface JobManagerLock extends BizEntity {
 	 * @see #setReasonEnumId(Enumeration)
 	 * @see org.abchip.mimo.biz.service.schedule.SchedulePackage#getJobManagerLock_ReasonEnumId()
 	 * @model keys="enumId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Enumeration getReasonEnumId();

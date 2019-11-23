@@ -26,7 +26,7 @@ import org.abchip.mimo.biz.party.contact.ContactMechPurposeType;
  * </ul>
  *
  * @see org.abchip.mimo.biz.order.return_.ReturnPackage#getReturnContactMech()
- * @model
+ * @model annotation="mimo-ent-frame title='Retrun Contact Mechanism'"
  * @generated
  */
 public interface ReturnContactMech extends BizEntity {
@@ -41,7 +41,9 @@ public interface ReturnContactMech extends BizEntity {
 	 * @return the value of the '<em>Contact Mech Id</em>' reference.
 	 * @see #setContactMechId(ContactMech)
 	 * @see org.abchip.mimo.biz.order.return_.ReturnPackage#getReturnContactMech_ContactMechId()
-	 * @model keys="contactMechId"
+	 * @model keys="contactMechId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ContactMech getContactMechId();
@@ -67,7 +69,9 @@ public interface ReturnContactMech extends BizEntity {
 	 * @return the value of the '<em>Contact Mech Purpose Type Id</em>' reference.
 	 * @see #setContactMechPurposeTypeId(ContactMechPurposeType)
 	 * @see org.abchip.mimo.biz.order.return_.ReturnPackage#getReturnContactMech_ContactMechPurposeTypeId()
-	 * @model keys="contactMechPurposeTypeId"
+	 * @model keys="contactMechPurposeTypeId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ContactMechPurposeType getContactMechPurposeTypeId();
@@ -93,7 +97,9 @@ public interface ReturnContactMech extends BizEntity {
 	 * @return the value of the '<em>Return Id</em>' reference.
 	 * @see #setReturnId(ReturnHeader)
 	 * @see org.abchip.mimo.biz.order.return_.ReturnPackage#getReturnContactMech_ReturnId()
-	 * @model keys="returnId"
+	 * @model keys="returnId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ReturnHeader getReturnId();

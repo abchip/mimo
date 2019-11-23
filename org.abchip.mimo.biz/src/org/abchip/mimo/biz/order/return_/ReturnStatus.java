@@ -23,15 +23,15 @@ import org.abchip.mimo.biz.security.login.UserLogin;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.order.return_.ReturnStatus#getReturnStatusId <em>Return Status Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.return_.ReturnStatus#getChangeByUserLoginId <em>Change By User Login Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.return_.ReturnStatus#getReturnId <em>Return Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.return_.ReturnStatus#getReturnItemSeqId <em>Return Item Seq Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.return_.ReturnStatus#getStatusDatetime <em>Status Datetime</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.return_.ReturnStatus#getStatusId <em>Status Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.return_.ReturnStatus#getReturnId <em>Return Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.return_.ReturnStatus#getChangeByUserLoginId <em>Change By User Login Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.order.return_.ReturnPackage#getReturnStatus()
- * @model
+ * @model annotation="mimo-ent-frame title='Return Status History'"
  * @generated
  */
 public interface ReturnStatus extends BizEntity {
@@ -47,6 +47,7 @@ public interface ReturnStatus extends BizEntity {
 	 * @see #setChangeByUserLoginId(UserLogin)
 	 * @see org.abchip.mimo.biz.order.return_.ReturnPackage#getReturnStatus_ChangeByUserLoginId()
 	 * @model keys="userLoginId"
+	 *        annotation="mimo-ent-format type='id-vlong' length='255'"
 	 * @generated
 	 */
 	UserLogin getChangeByUserLoginId();
@@ -73,6 +74,7 @@ public interface ReturnStatus extends BizEntity {
 	 * @see #setReturnId(ReturnHeader)
 	 * @see org.abchip.mimo.biz.order.return_.ReturnPackage#getReturnStatus_ReturnId()
 	 * @model keys="returnId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ReturnHeader getReturnId();
@@ -126,7 +128,6 @@ public interface ReturnStatus extends BizEntity {
 	 * @see org.abchip.mimo.biz.order.return_.ReturnPackage#getReturnStatus_ReturnStatusId()
 	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getReturnStatusId();
@@ -179,6 +180,7 @@ public interface ReturnStatus extends BizEntity {
 	 * @see #setStatusId(StatusItem)
 	 * @see org.abchip.mimo.biz.order.return_.ReturnPackage#getReturnStatus_StatusId()
 	 * @model keys="statusId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	StatusItem getStatusId();

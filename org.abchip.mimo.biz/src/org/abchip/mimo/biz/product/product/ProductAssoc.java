@@ -25,23 +25,23 @@ import org.abchip.mimo.biz.workeffort.workeffort.WorkEffort;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.product.product.ProductAssoc#getFromDate <em>From Date</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.product.ProductAssoc#getInstruction <em>Instruction</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.product.ProductAssoc#getQuantity <em>Quantity</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.product.ProductAssoc#getReason <em>Reason</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.product.ProductAssoc#getScrapFactor <em>Scrap Factor</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.product.ProductAssoc#getSequenceNum <em>Sequence Num</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.product.ProductAssoc#getThruDate <em>Thru Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.ProductAssoc#getProductAssocTypeId <em>Product Assoc Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.ProductAssoc#getProductId <em>Product Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.ProductAssoc#getProductIdTo <em>Product Id To</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.product.ProductAssoc#getRoutingWorkEffortId <em>Routing Work Effort Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.product.ProductAssoc#getFromDate <em>From Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.ProductAssoc#getEstimateCalcMethod <em>Estimate Calc Method</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.product.ProductAssoc#getInstruction <em>Instruction</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.product.ProductAssoc#getQuantity <em>Quantity</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.product.ProductAssoc#getReason <em>Reason</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.ProductAssoc#getRecurrenceInfoId <em>Recurrence Info Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.product.ProductAssoc#getRoutingWorkEffortId <em>Routing Work Effort Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.product.ProductAssoc#getScrapFactor <em>Scrap Factor</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.product.ProductAssoc#getSequenceNum <em>Sequence Num</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.product.ProductAssoc#getThruDate <em>Thru Date</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.product.product.ProductPackage#getProductAssoc()
- * @model
+ * @model annotation="mimo-ent-frame title='Product Association' dictionary='ProductEntityLabels'"
  * @generated
  */
 public interface ProductAssoc extends BizEntityTyped<ProductAssocType> {
@@ -57,6 +57,7 @@ public interface ProductAssoc extends BizEntityTyped<ProductAssocType> {
 	 * @see #setEstimateCalcMethod(CustomMethod)
 	 * @see org.abchip.mimo.biz.product.product.ProductPackage#getProductAssoc_EstimateCalcMethod()
 	 * @model keys="customMethodId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	CustomMethod getEstimateCalcMethod();
@@ -83,8 +84,8 @@ public interface ProductAssoc extends BizEntityTyped<ProductAssocType> {
 	 * @see #setFromDate(Date)
 	 * @see org.abchip.mimo.biz.product.product.ProductPackage#getProductAssoc_FromDate()
 	 * @model required="true"
-	 *        annotation="mimo-ent-format type='date-time'"
 	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getFromDate();
@@ -189,6 +190,7 @@ public interface ProductAssoc extends BizEntityTyped<ProductAssocType> {
 	 * @see #setRecurrenceInfoId(RecurrenceInfo)
 	 * @see org.abchip.mimo.biz.product.product.ProductPackage#getProductAssoc_RecurrenceInfoId()
 	 * @model keys="recurrenceInfoId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	RecurrenceInfo getRecurrenceInfoId();
@@ -215,6 +217,7 @@ public interface ProductAssoc extends BizEntityTyped<ProductAssocType> {
 	 * @see #setRoutingWorkEffortId(WorkEffort)
 	 * @see org.abchip.mimo.biz.product.product.ProductPackage#getProductAssoc_RoutingWorkEffortId()
 	 * @model keys="workEffortId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	WorkEffort getRoutingWorkEffortId();
@@ -318,7 +321,9 @@ public interface ProductAssoc extends BizEntityTyped<ProductAssocType> {
 	 * @return the value of the '<em>Product Assoc Type Id</em>' reference.
 	 * @see #setProductAssocTypeId(ProductAssocType)
 	 * @see org.abchip.mimo.biz.product.product.ProductPackage#getProductAssoc_ProductAssocTypeId()
-	 * @model keys="productAssocTypeId"
+	 * @model keys="productAssocTypeId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ProductAssocType getProductAssocTypeId();
@@ -344,7 +349,9 @@ public interface ProductAssoc extends BizEntityTyped<ProductAssocType> {
 	 * @return the value of the '<em>Product Id</em>' reference.
 	 * @see #setProductId(Product)
 	 * @see org.abchip.mimo.biz.product.product.ProductPackage#getProductAssoc_ProductId()
-	 * @model keys="productId"
+	 * @model keys="productId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Product getProductId();
@@ -370,7 +377,9 @@ public interface ProductAssoc extends BizEntityTyped<ProductAssocType> {
 	 * @return the value of the '<em>Product Id To</em>' reference.
 	 * @see #setProductIdTo(Product)
 	 * @see org.abchip.mimo.biz.product.product.ProductPackage#getProductAssoc_ProductIdTo()
-	 * @model keys="productId"
+	 * @model keys="productId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Product getProductIdTo();

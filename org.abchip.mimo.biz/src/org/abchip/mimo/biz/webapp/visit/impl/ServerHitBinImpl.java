@@ -28,14 +28,14 @@ import org.eclipse.emf.ecore.EClass;
  *   <li>{@link org.abchip.mimo.biz.webapp.visit.impl.ServerHitBinImpl#getBinEndDateTime <em>Bin End Date Time</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.webapp.visit.impl.ServerHitBinImpl#getBinStartDateTime <em>Bin Start Date Time</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.webapp.visit.impl.ServerHitBinImpl#getContentId <em>Content Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.webapp.visit.impl.ServerHitBinImpl#getHitTypeId <em>Hit Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.webapp.visit.impl.ServerHitBinImpl#getInternalContentId <em>Internal Content Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.webapp.visit.impl.ServerHitBinImpl#getMaxTimeMillis <em>Max Time Millis</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.webapp.visit.impl.ServerHitBinImpl#getMinTimeMillis <em>Min Time Millis</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.webapp.visit.impl.ServerHitBinImpl#getNumberHits <em>Number Hits</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.webapp.visit.impl.ServerHitBinImpl#getServerHostName <em>Server Host Name</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.webapp.visit.impl.ServerHitBinImpl#getServerIpAddress <em>Server Ip Address</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.webapp.visit.impl.ServerHitBinImpl#getTotalTimeMillis <em>Total Time Millis</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.webapp.visit.impl.ServerHitBinImpl#getHitTypeId <em>Hit Type Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.webapp.visit.impl.ServerHitBinImpl#getInternalContentId <em>Internal Content Id</em>}</li>
  * </ul>
  *
  * @generated

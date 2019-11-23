@@ -21,9 +21,9 @@ import org.eclipse.emf.ecore.EClass;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link org.abchip.mimo.biz.content.survey.impl.SurveyMultiRespImpl#getSurveyId <em>Survey Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.survey.impl.SurveyMultiRespImpl#getSurveyMultiRespId <em>Survey Multi Resp Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.survey.impl.SurveyMultiRespImpl#getMultiRespTitle <em>Multi Resp Title</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.content.survey.impl.SurveyMultiRespImpl#getSurveyId <em>Survey Id</em>}</li>
  * </ul>
  *
  * @generated

@@ -21,15 +21,15 @@ import org.abchip.mimo.biz.product.facility.Facility;
  * The following features are supported:
  * </p>
  * <ul>
+ *   <li>{@link org.abchip.mimo.biz.product.catalog.ProdCatalogInvFacility#getProdCatalogId <em>Prod Catalog Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.catalog.ProdCatalogInvFacility#getFacilityId <em>Facility Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.catalog.ProdCatalogInvFacility#getFromDate <em>From Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.catalog.ProdCatalogInvFacility#getSequenceNum <em>Sequence Num</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.catalog.ProdCatalogInvFacility#getThruDate <em>Thru Date</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.catalog.ProdCatalogInvFacility#getProdCatalogId <em>Prod Catalog Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.catalog.ProdCatalogInvFacility#getFacilityId <em>Facility Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.product.catalog.CatalogPackage#getProdCatalogInvFacility()
- * @model
+ * @model annotation="mimo-ent-frame title='Product Catalog Inventory Facility Applicability' dictionary='ProductEntityLabels'"
  * @generated
  */
 public interface ProdCatalogInvFacility extends BizEntity {
@@ -44,7 +44,9 @@ public interface ProdCatalogInvFacility extends BizEntity {
 	 * @return the value of the '<em>Facility Id</em>' reference.
 	 * @see #setFacilityId(Facility)
 	 * @see org.abchip.mimo.biz.product.catalog.CatalogPackage#getProdCatalogInvFacility_FacilityId()
-	 * @model keys="facilityId"
+	 * @model keys="facilityId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Facility getFacilityId();
@@ -71,8 +73,8 @@ public interface ProdCatalogInvFacility extends BizEntity {
 	 * @see #setFromDate(Date)
 	 * @see org.abchip.mimo.biz.product.catalog.CatalogPackage#getProdCatalogInvFacility_FromDate()
 	 * @model required="true"
-	 *        annotation="mimo-ent-format type='date-time'"
 	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getFromDate();
@@ -150,7 +152,9 @@ public interface ProdCatalogInvFacility extends BizEntity {
 	 * @return the value of the '<em>Prod Catalog Id</em>' reference.
 	 * @see #setProdCatalogId(ProdCatalog)
 	 * @see org.abchip.mimo.biz.product.catalog.CatalogPackage#getProdCatalogInvFacility_ProdCatalogId()
-	 * @model keys="prodCatalogId"
+	 * @model keys="prodCatalogId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ProdCatalog getProdCatalogId();

@@ -26,8 +26,8 @@ import org.eclipse.emf.ecore.EClass;
  *   <li>{@link org.abchip.mimo.biz.common.enum_.impl.EnumerationImpl#getEnumId <em>Enum Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.common.enum_.impl.EnumerationImpl#getDescription <em>Description</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.common.enum_.impl.EnumerationImpl#getEnumCode <em>Enum Code</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.common.enum_.impl.EnumerationImpl#getSequenceId <em>Sequence Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.common.enum_.impl.EnumerationImpl#getEnumTypeId <em>Enum Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.common.enum_.impl.EnumerationImpl#getSequenceId <em>Sequence Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.common.enum_.impl.EnumerationImpl#getUserLoginSecurityQuestions <em>User Login Security Questions</em>}</li>
  * </ul>
  *

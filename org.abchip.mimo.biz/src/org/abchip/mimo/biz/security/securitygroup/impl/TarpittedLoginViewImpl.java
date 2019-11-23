@@ -20,8 +20,8 @@ import org.eclipse.emf.ecore.EClass;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.security.securitygroup.impl.TarpittedLoginViewImpl#getViewNameId <em>View Name Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.security.securitygroup.impl.TarpittedLoginViewImpl#getUserLoginId <em>User Login Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.security.securitygroup.impl.TarpittedLoginViewImpl#getViewNameId <em>View Name Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.security.securitygroup.impl.TarpittedLoginViewImpl#getTarpitReleaseDateTime <em>Tarpit Release Date Time</em>}</li>
  * </ul>
  *

@@ -21,13 +21,13 @@ import org.abchip.mimo.biz.BizEntityTyped;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.product.facility.Container#getContainerId <em>Container Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.facility.Container#getDescription <em>Description</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.facility.Container#getContainerTypeId <em>Container Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.facility.Container#getDescription <em>Description</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.facility.Container#getFacilityId <em>Facility Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.product.facility.FacilityPackage#getContainer()
- * @model annotation="mimo-ent-frame formula='description'"
+ * @model annotation="mimo-ent-frame dictionary='ProductEntityLabels' formula='description'"
  * @generated
  */
 public interface Container extends BizEntityTyped<ContainerType> {
@@ -69,6 +69,7 @@ public interface Container extends BizEntityTyped<ContainerType> {
 	 * @see #setContainerTypeId(ContainerType)
 	 * @see org.abchip.mimo.biz.product.facility.FacilityPackage#getContainer_ContainerTypeId()
 	 * @model keys="containerTypeId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ContainerType getContainerTypeId();
@@ -95,6 +96,7 @@ public interface Container extends BizEntityTyped<ContainerType> {
 	 * @see #setFacilityId(Facility)
 	 * @see org.abchip.mimo.biz.product.facility.FacilityPackage#getContainer_FacilityId()
 	 * @model keys="facilityId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Facility getFacilityId();
@@ -152,7 +154,6 @@ public interface Container extends BizEntityTyped<ContainerType> {
 	 * @see org.abchip.mimo.biz.product.facility.FacilityPackage#getContainer_ContainerId()
 	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getContainerId();

@@ -26,18 +26,18 @@ import org.abchip.mimo.biz.common.uom.Uom;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.common.geo.GeoPoint#getGeoPointId <em>Geo Point Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.common.geo.GeoPoint#getDataSourceId <em>Data Source Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.common.geo.GeoPoint#getDescription <em>Description</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.common.geo.GeoPoint#getElevation <em>Elevation</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.common.geo.GeoPoint#getElevationUomId <em>Elevation Uom Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.common.geo.GeoPoint#getGeoPointTypeEnumId <em>Geo Point Type Enum Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.common.geo.GeoPoint#getInformation <em>Information</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.common.geo.GeoPoint#getLatitude <em>Latitude</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.common.geo.GeoPoint#getLongitude <em>Longitude</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.common.geo.GeoPoint#getDataSourceId <em>Data Source Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.common.geo.GeoPoint#getGeoPointTypeEnumId <em>Geo Point Type Enum Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.common.geo.GeoPoint#getElevationUomId <em>Elevation Uom Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.common.geo.GeoPackage#getGeoPoint()
- * @model annotation="mimo-ent-frame formula='description'"
+ * @model annotation="mimo-ent-frame title='Geographic Location' dictionary='CommonEntityLabels' formula='description'"
  * @generated
  */
 public interface GeoPoint extends BizEntity {
@@ -105,6 +105,8 @@ public interface GeoPoint extends BizEntity {
 	 * @see #setElevationUomId(Uom)
 	 * @see org.abchip.mimo.biz.common.geo.GeoPackage#getGeoPoint_ElevationUomId()
 	 * @model keys="uomId"
+	 *        annotation="mimo-ent-slot help='UOM for elevation (feet, meters, etc.)'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Uom getElevationUomId();
@@ -132,7 +134,6 @@ public interface GeoPoint extends BizEntity {
 	 * @see org.abchip.mimo.biz.common.geo.GeoPackage#getGeoPoint_GeoPointId()
 	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getGeoPointId();
@@ -158,7 +159,8 @@ public interface GeoPoint extends BizEntity {
 	 * @return the value of the '<em>Information</em>' attribute.
 	 * @see #setInformation(String)
 	 * @see org.abchip.mimo.biz.common.geo.GeoPackage#getGeoPoint_Information()
-	 * @model annotation="mimo-ent-format type='comment' length='255'"
+	 * @model annotation="mimo-ent-slot help='To enter any related information'"
+	 *        annotation="mimo-ent-format type='comment' length='255'"
 	 * @generated
 	 */
 	String getInformation();
@@ -269,6 +271,7 @@ public interface GeoPoint extends BizEntity {
 	 * @see #setDataSourceId(DataSource)
 	 * @see org.abchip.mimo.biz.common.geo.GeoPackage#getGeoPoint_DataSourceId()
 	 * @model keys="dataSourceId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	DataSource getDataSourceId();
@@ -295,6 +298,7 @@ public interface GeoPoint extends BizEntity {
 	 * @see #setGeoPointTypeEnumId(Enumeration)
 	 * @see org.abchip.mimo.biz.common.geo.GeoPackage#getGeoPoint_GeoPointTypeEnumId()
 	 * @model keys="enumId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Enumeration getGeoPointTypeEnumId();

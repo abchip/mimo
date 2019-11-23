@@ -22,14 +22,14 @@ import org.abchip.mimo.biz.security.login.UserLogin;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.party.party.PartyStatus#getStatusDate <em>Status Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.party.PartyStatus#getStatusId <em>Status Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.party.PartyStatus#getPartyId <em>Party Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.party.party.PartyStatus#getStatusDate <em>Status Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.party.PartyStatus#getChangeByUserLoginId <em>Change By User Login Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.party.party.PartyPackage#getPartyStatus()
- * @model
+ * @model annotation="mimo-ent-frame title='Tracks a history of the status of a Party'"
  * @generated
  */
 public interface PartyStatus extends BizEntity {
@@ -45,6 +45,7 @@ public interface PartyStatus extends BizEntity {
 	 * @see #setChangeByUserLoginId(UserLogin)
 	 * @see org.abchip.mimo.biz.party.party.PartyPackage#getPartyStatus_ChangeByUserLoginId()
 	 * @model keys="userLoginId"
+	 *        annotation="mimo-ent-format type='id-vlong' length='255'"
 	 * @generated
 	 */
 	UserLogin getChangeByUserLoginId();
@@ -71,8 +72,8 @@ public interface PartyStatus extends BizEntity {
 	 * @see #setStatusDate(Date)
 	 * @see org.abchip.mimo.biz.party.party.PartyPackage#getPartyStatus_StatusDate()
 	 * @model required="true"
-	 *        annotation="mimo-ent-format type='date-time'"
 	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getStatusDate();
@@ -98,7 +99,9 @@ public interface PartyStatus extends BizEntity {
 	 * @return the value of the '<em>Status Id</em>' reference.
 	 * @see #setStatusId(StatusItem)
 	 * @see org.abchip.mimo.biz.party.party.PartyPackage#getPartyStatus_StatusId()
-	 * @model keys="statusId"
+	 * @model keys="statusId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	StatusItem getStatusId();
@@ -124,7 +127,9 @@ public interface PartyStatus extends BizEntity {
 	 * @return the value of the '<em>Party Id</em>' reference.
 	 * @see #setPartyId(Party)
 	 * @see org.abchip.mimo.biz.party.party.PartyPackage#getPartyStatus_PartyId()
-	 * @model keys="partyId"
+	 * @model keys="partyId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Party getPartyId();

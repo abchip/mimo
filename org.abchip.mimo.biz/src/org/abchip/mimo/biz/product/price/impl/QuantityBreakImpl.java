@@ -26,8 +26,8 @@ import org.eclipse.emf.ecore.EClass;
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.product.price.impl.QuantityBreakImpl#getQuantityBreakId <em>Quantity Break Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.price.impl.QuantityBreakImpl#getFromQuantity <em>From Quantity</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.price.impl.QuantityBreakImpl#getThruQuantity <em>Thru Quantity</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.price.impl.QuantityBreakImpl#getQuantityBreakTypeId <em>Quantity Break Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.price.impl.QuantityBreakImpl#getThruQuantity <em>Thru Quantity</em>}</li>
  * </ul>
  *
  * @generated

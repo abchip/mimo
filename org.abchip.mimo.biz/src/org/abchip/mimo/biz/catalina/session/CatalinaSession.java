@@ -27,7 +27,7 @@ import org.abchip.mimo.biz.BizEntity;
  * </ul>
  *
  * @see org.abchip.mimo.biz.catalina.session.SessionPackage#getCatalinaSession()
- * @model
+ * @model annotation="mimo-ent-frame title='Catalina Session Store'"
  * @generated
  */
 public interface CatalinaSession extends BizEntity {
@@ -44,7 +44,6 @@ public interface CatalinaSession extends BizEntity {
 	 * @see org.abchip.mimo.biz.catalina.session.SessionPackage#getCatalinaSession_SessionId()
 	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-format type='id-long' length='60'"
-	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getSessionId();

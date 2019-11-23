@@ -23,12 +23,12 @@ import org.abchip.mimo.biz.BizEntityTyped;
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.product.price.QuantityBreak#getQuantityBreakId <em>Quantity Break Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.price.QuantityBreak#getFromQuantity <em>From Quantity</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.price.QuantityBreak#getThruQuantity <em>Thru Quantity</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.price.QuantityBreak#getQuantityBreakTypeId <em>Quantity Break Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.price.QuantityBreak#getThruQuantity <em>Thru Quantity</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.product.price.PricePackage#getQuantityBreak()
- * @model
+ * @model annotation="mimo-ent-frame dictionary='ProductEntityLabels'"
  * @generated
  */
 public interface QuantityBreak extends BizEntityTyped<QuantityBreakType> {
@@ -71,7 +71,6 @@ public interface QuantityBreak extends BizEntityTyped<QuantityBreakType> {
 	 * @see org.abchip.mimo.biz.product.price.PricePackage#getQuantityBreak_QuantityBreakId()
 	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getQuantityBreakId();
@@ -154,6 +153,7 @@ public interface QuantityBreak extends BizEntityTyped<QuantityBreakType> {
 	 * @see #setQuantityBreakTypeId(QuantityBreakType)
 	 * @see org.abchip.mimo.biz.product.price.PricePackage#getQuantityBreak_QuantityBreakTypeId()
 	 * @model keys="quantityBreakTypeId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	QuantityBreakType getQuantityBreakTypeId();

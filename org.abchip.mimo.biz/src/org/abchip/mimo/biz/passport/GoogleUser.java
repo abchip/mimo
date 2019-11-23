@@ -22,12 +22,12 @@ import org.abchip.mimo.biz.product.store.ProductStore;
  *   <li>{@link org.abchip.mimo.biz.passport.GoogleUser#getGoogleUserId <em>Google User Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.passport.GoogleUser#getAccessToken <em>Access Token</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.passport.GoogleUser#getEnvPrefix <em>Env Prefix</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.passport.GoogleUser#getTokenType <em>Token Type</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.passport.GoogleUser#getProductStoreId <em>Product Store Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.passport.GoogleUser#getTokenType <em>Token Type</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.passport.PassportPackage#getGoogleUser()
- * @model
+ * @model annotation="mimo-ent-frame help='Data Model Enhancements For Passport' title='Store GitHub access token for user'"
  * @generated
  */
 public interface GoogleUser extends BizEntity {
@@ -44,7 +44,6 @@ public interface GoogleUser extends BizEntity {
 	 * @see org.abchip.mimo.biz.passport.PassportPackage#getGoogleUser_GoogleUserId()
 	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-format type='id-vlong' length='255'"
-	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getGoogleUserId();
@@ -123,6 +122,7 @@ public interface GoogleUser extends BizEntity {
 	 * @see #setProductStoreId(ProductStore)
 	 * @see org.abchip.mimo.biz.passport.PassportPackage#getGoogleUser_ProductStoreId()
 	 * @model keys="productStoreId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ProductStore getProductStoreId();

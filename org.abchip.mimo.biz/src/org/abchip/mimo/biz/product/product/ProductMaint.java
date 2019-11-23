@@ -22,19 +22,19 @@ import org.abchip.mimo.biz.workeffort.workeffort.WorkEffort;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.product.product.ProductMaint#getProductMaintSeqId <em>Product Maint Seq Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.product.ProductMaint#getIntervalQuantity <em>Interval Quantity</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.product.ProductMaint#getMaintName <em>Maint Name</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.product.ProductMaint#getRepeatCount <em>Repeat Count</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.ProductMaint#getProductId <em>Product Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.product.ProductMaint#getProductMaintTypeId <em>Product Maint Type Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.product.ProductMaint#getMaintTemplateWorkEffortId <em>Maint Template Work Effort Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.product.ProductMaint#getIntervalUomId <em>Interval Uom Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.product.ProductMaint#getProductMaintSeqId <em>Product Maint Seq Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.ProductMaint#getIntervalMeterTypeId <em>Interval Meter Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.product.ProductMaint#getIntervalQuantity <em>Interval Quantity</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.product.ProductMaint#getIntervalUomId <em>Interval Uom Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.product.ProductMaint#getMaintName <em>Maint Name</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.product.ProductMaint#getMaintTemplateWorkEffortId <em>Maint Template Work Effort Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.product.ProductMaint#getProductMaintTypeId <em>Product Maint Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.product.ProductMaint#getRepeatCount <em>Repeat Count</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.product.product.ProductPackage#getProductMaint()
- * @model
+ * @model annotation="mimo-ent-frame help='This is used to specify the details for scheduled maintenance.' title='Product Maintenance' dictionary='ProductEntityLabels'"
  * @generated
  */
 public interface ProductMaint extends BizEntityTyped<ProductMaintType> {
@@ -76,6 +76,8 @@ public interface ProductMaint extends BizEntityTyped<ProductMaintType> {
 	 * @see #setIntervalUomId(Uom)
 	 * @see org.abchip.mimo.biz.product.product.ProductPackage#getProductMaint_IntervalUomId()
 	 * @model keys="uomId"
+	 *        annotation="mimo-ent-slot help='UOM for intervalQuantity; if used intervalMeterTypeId is generally not used (ie one or the other)'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Uom getIntervalUomId();
@@ -128,6 +130,8 @@ public interface ProductMaint extends BizEntityTyped<ProductMaintType> {
 	 * @see #setMaintTemplateWorkEffortId(WorkEffort)
 	 * @see org.abchip.mimo.biz.product.product.ProductPackage#getProductMaint_MaintTemplateWorkEffortId()
 	 * @model keys="workEffortId"
+	 *        annotation="mimo-ent-slot help='Template of Maintenance Plan. WorkEffort may have WorkEffortAssocs for tasks/breakdown detailes'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	WorkEffort getMaintTemplateWorkEffortId();
@@ -154,8 +158,8 @@ public interface ProductMaint extends BizEntityTyped<ProductMaintType> {
 	 * @see #setProductMaintSeqId(String)
 	 * @see org.abchip.mimo.biz.product.product.ProductPackage#getProductMaint_ProductMaintSeqId()
 	 * @model required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	String getProductMaintSeqId();
@@ -181,7 +185,8 @@ public interface ProductMaint extends BizEntityTyped<ProductMaintType> {
 	 * @return the value of the '<em>Repeat Count</em>' attribute.
 	 * @see #setRepeatCount(long)
 	 * @see org.abchip.mimo.biz.product.product.ProductPackage#getProductMaint_RepeatCount()
-	 * @model annotation="mimo-ent-format type='numeric' precision='20' scale='0'"
+	 * @model annotation="mimo-ent-slot help='If 0 or null means no limit to repeat count; can be used with multiple ProductMaint records for a single ProductMaintType in cases where maintenance intervals are not evenly distributed, or only need to be done once like a break-in period'"
+	 *        annotation="mimo-ent-format type='numeric' precision='20' scale='0'"
 	 * @generated
 	 */
 	long getRepeatCount();
@@ -207,7 +212,9 @@ public interface ProductMaint extends BizEntityTyped<ProductMaintType> {
 	 * @return the value of the '<em>Product Id</em>' reference.
 	 * @see #setProductId(Product)
 	 * @see org.abchip.mimo.biz.product.product.ProductPackage#getProductMaint_ProductId()
-	 * @model keys="productId"
+	 * @model keys="productId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Product getProductId();
@@ -234,6 +241,7 @@ public interface ProductMaint extends BizEntityTyped<ProductMaintType> {
 	 * @see #setProductMaintTypeId(ProductMaintType)
 	 * @see org.abchip.mimo.biz.product.product.ProductPackage#getProductMaint_ProductMaintTypeId()
 	 * @model keys="productMaintTypeId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ProductMaintType getProductMaintTypeId();
@@ -260,6 +268,8 @@ public interface ProductMaint extends BizEntityTyped<ProductMaintType> {
 	 * @see #setIntervalMeterTypeId(ProductMeterType)
 	 * @see org.abchip.mimo.biz.product.product.ProductPackage#getProductMaint_IntervalMeterTypeId()
 	 * @model keys="productMeterTypeId"
+	 *        annotation="mimo-ent-slot help='Meter Type for intervalQuantity; if used intervalUomId is generally not used (ie one or the other)'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ProductMeterType getIntervalMeterTypeId();

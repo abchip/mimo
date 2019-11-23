@@ -20,14 +20,14 @@ import org.abchip.mimo.biz.content.data.MetaDataPredicate;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.content.content.ContentMetaData#getMetaDataValue <em>Meta Data Value</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.content.ContentMetaData#getContentId <em>Content Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.content.ContentMetaData#getMetaDataPredicateId <em>Meta Data Predicate Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.content.ContentMetaData#getDataSourceId <em>Data Source Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.content.content.ContentMetaData#getMetaDataValue <em>Meta Data Value</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.content.content.ContentPackage#getContentMetaData()
- * @model
+ * @model annotation="mimo-ent-frame title='Content Meta-Data Predicate'"
  * @generated
  */
 public interface ContentMetaData extends BizEntity {
@@ -42,7 +42,9 @@ public interface ContentMetaData extends BizEntity {
 	 * @return the value of the '<em>Content Id</em>' reference.
 	 * @see #setContentId(Content)
 	 * @see org.abchip.mimo.biz.content.content.ContentPackage#getContentMetaData_ContentId()
-	 * @model keys="contentId"
+	 * @model keys="contentId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Content getContentId();
@@ -69,6 +71,7 @@ public interface ContentMetaData extends BizEntity {
 	 * @see #setDataSourceId(DataSource)
 	 * @see org.abchip.mimo.biz.content.content.ContentPackage#getContentMetaData_DataSourceId()
 	 * @model keys="dataSourceId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	DataSource getDataSourceId();
@@ -94,7 +97,9 @@ public interface ContentMetaData extends BizEntity {
 	 * @return the value of the '<em>Meta Data Predicate Id</em>' reference.
 	 * @see #setMetaDataPredicateId(MetaDataPredicate)
 	 * @see org.abchip.mimo.biz.content.content.ContentPackage#getContentMetaData_MetaDataPredicateId()
-	 * @model keys="metaDataPredicateId"
+	 * @model keys="metaDataPredicateId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	MetaDataPredicate getMetaDataPredicateId();

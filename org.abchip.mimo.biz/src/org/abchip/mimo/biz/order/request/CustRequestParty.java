@@ -22,15 +22,15 @@ import org.abchip.mimo.biz.party.party.RoleType;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.order.request.CustRequestParty#getFromDate <em>From Date</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.request.CustRequestParty#getThruDate <em>Thru Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.request.CustRequestParty#getCustRequestId <em>Cust Request Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.request.CustRequestParty#getPartyId <em>Party Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.request.CustRequestParty#getRoleTypeId <em>Role Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.request.CustRequestParty#getFromDate <em>From Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.request.CustRequestParty#getThruDate <em>Thru Date</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.order.request.RequestPackage#getCustRequestParty()
- * @model
+ * @model annotation="mimo-ent-frame title='Customer Request Role'"
  * @generated
  */
 public interface CustRequestParty extends BizEntity {
@@ -45,7 +45,9 @@ public interface CustRequestParty extends BizEntity {
 	 * @return the value of the '<em>Cust Request Id</em>' reference.
 	 * @see #setCustRequestId(CustRequest)
 	 * @see org.abchip.mimo.biz.order.request.RequestPackage#getCustRequestParty_CustRequestId()
-	 * @model keys="custRequestId"
+	 * @model keys="custRequestId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	CustRequest getCustRequestId();
@@ -72,8 +74,8 @@ public interface CustRequestParty extends BizEntity {
 	 * @see #setFromDate(Date)
 	 * @see org.abchip.mimo.biz.order.request.RequestPackage#getCustRequestParty_FromDate()
 	 * @model required="true"
-	 *        annotation="mimo-ent-format type='date-time'"
 	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getFromDate();
@@ -99,7 +101,9 @@ public interface CustRequestParty extends BizEntity {
 	 * @return the value of the '<em>Party Id</em>' reference.
 	 * @see #setPartyId(Party)
 	 * @see org.abchip.mimo.biz.order.request.RequestPackage#getCustRequestParty_PartyId()
-	 * @model keys="partyId"
+	 * @model keys="partyId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Party getPartyId();
@@ -125,7 +129,9 @@ public interface CustRequestParty extends BizEntity {
 	 * @return the value of the '<em>Role Type Id</em>' reference.
 	 * @see #setRoleTypeId(RoleType)
 	 * @see org.abchip.mimo.biz.order.request.RequestPackage#getCustRequestParty_RoleTypeId()
-	 * @model keys="roleTypeId"
+	 * @model keys="roleTypeId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	RoleType getRoleTypeId();

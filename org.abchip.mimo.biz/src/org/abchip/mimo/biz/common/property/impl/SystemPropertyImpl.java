@@ -20,8 +20,8 @@ import org.eclipse.emf.ecore.EClass;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.common.property.impl.SystemPropertyImpl#getSystemResourceId <em>System Resource Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.common.property.impl.SystemPropertyImpl#getSystemPropertyId <em>System Property Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.common.property.impl.SystemPropertyImpl#getSystemResourceId <em>System Resource Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.common.property.impl.SystemPropertyImpl#getDescription <em>Description</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.common.property.impl.SystemPropertyImpl#getSystemPropertyValue <em>System Property Value</em>}</li>
  * </ul>

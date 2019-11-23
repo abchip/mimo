@@ -21,11 +21,11 @@ import org.abchip.mimo.biz.party.party.Party;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.order.requirement.RequirementRole#getRoleTypeId <em>Role Type Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.requirement.RequirementRole#getFromDate <em>From Date</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.requirement.RequirementRole#getThruDate <em>Thru Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.requirement.RequirementRole#getRequirementId <em>Requirement Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.requirement.RequirementRole#getPartyId <em>Party Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.requirement.RequirementRole#getFromDate <em>From Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.requirement.RequirementRole#getRoleTypeId <em>Role Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.requirement.RequirementRole#getThruDate <em>Thru Date</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.order.requirement.RequirementPackage#getRequirementRole()
@@ -45,8 +45,8 @@ public interface RequirementRole extends BizEntity {
 	 * @see #setFromDate(Date)
 	 * @see org.abchip.mimo.biz.order.requirement.RequirementPackage#getRequirementRole_FromDate()
 	 * @model required="true"
-	 *        annotation="mimo-ent-format type='date-time'"
 	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getFromDate();
@@ -72,7 +72,9 @@ public interface RequirementRole extends BizEntity {
 	 * @return the value of the '<em>Party Id</em>' reference.
 	 * @see #setPartyId(Party)
 	 * @see org.abchip.mimo.biz.order.requirement.RequirementPackage#getRequirementRole_PartyId()
-	 * @model keys="partyId"
+	 * @model keys="partyId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Party getPartyId();
@@ -98,7 +100,9 @@ public interface RequirementRole extends BizEntity {
 	 * @return the value of the '<em>Requirement Id</em>' reference.
 	 * @see #setRequirementId(Requirement)
 	 * @see org.abchip.mimo.biz.order.requirement.RequirementPackage#getRequirementRole_RequirementId()
-	 * @model keys="requirementId"
+	 * @model keys="requirementId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Requirement getRequirementId();
@@ -125,8 +129,8 @@ public interface RequirementRole extends BizEntity {
 	 * @see #setRoleTypeId(String)
 	 * @see org.abchip.mimo.biz.order.requirement.RequirementPackage#getRequirementRole_RoleTypeId()
 	 * @model required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	String getRoleTypeId();

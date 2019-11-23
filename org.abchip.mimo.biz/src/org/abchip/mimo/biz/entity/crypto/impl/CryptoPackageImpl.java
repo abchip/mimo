@@ -750,8 +750,6 @@ public class CryptoPackageImpl extends EPackageImpl implements CryptoPackage {
 		// Create annotations
 		// mimo-ent-format
 		createMimoentformatAnnotations();
-		// mimo-ent-slot
-		createMimoentslotAnnotations();
 	}
 
 	/**
@@ -775,22 +773,6 @@ public class CryptoPackageImpl extends EPackageImpl implements CryptoPackage {
 		   new String[] {
 			   "type", "long-varchar",
 			   "length", "255"
-		   });
-	}
-
-	/**
-	 * Initializes the annotations for <b>mimo-ent-slot</b>.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void createMimoentslotAnnotations() {
-		String source = "mimo-ent-slot";
-		addAnnotation
-		  (getEntityKeyStore_KeyName(),
-		   source,
-		   new String[] {
-			   "key", "true"
 		   });
 	}
 

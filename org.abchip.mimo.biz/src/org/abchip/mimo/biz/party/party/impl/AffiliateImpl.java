@@ -27,11 +27,11 @@ import org.eclipse.emf.ecore.EClass;
  *   <li>{@link org.abchip.mimo.biz.party.party.impl.AffiliateImpl#getAffiliateName <em>Affiliate Name</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.party.impl.AffiliateImpl#getDateTimeApproved <em>Date Time Approved</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.party.impl.AffiliateImpl#getDateTimeCreated <em>Date Time Created</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.party.party.impl.AffiliateImpl#getPartyId <em>Party Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.party.impl.AffiliateImpl#getSitePageViews <em>Site Page Views</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.party.impl.AffiliateImpl#getSiteType <em>Site Type</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.party.impl.AffiliateImpl#getSiteVisitors <em>Site Visitors</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.party.impl.AffiliateImpl#getYearEstablished <em>Year Established</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.party.party.impl.AffiliateImpl#getPartyId <em>Party Id</em>}</li>
  * </ul>
  *
  * @generated

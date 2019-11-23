@@ -19,9 +19,9 @@ import org.abchip.mimo.biz.product.product.ProductGroupOrder;
  * The following features are supported:
  * </p>
  * <ul>
+ *   <li>{@link org.abchip.mimo.biz.order.order.OrderItemGroupOrder#getGroupOrderId <em>Group Order Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.OrderItemGroupOrder#getOrderId <em>Order Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.OrderItemGroupOrder#getOrderItemSeqId <em>Order Item Seq Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.order.OrderItemGroupOrder#getGroupOrderId <em>Group Order Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderItemGroupOrder()
@@ -40,7 +40,9 @@ public interface OrderItemGroupOrder extends BizEntity {
 	 * @return the value of the '<em>Group Order Id</em>' reference.
 	 * @see #setGroupOrderId(ProductGroupOrder)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderItemGroupOrder_GroupOrderId()
-	 * @model keys="groupOrderId"
+	 * @model keys="groupOrderId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ProductGroupOrder getGroupOrderId();
@@ -67,8 +69,8 @@ public interface OrderItemGroupOrder extends BizEntity {
 	 * @see #setOrderId(String)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderItemGroupOrder_OrderId()
 	 * @model required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	String getOrderId();
@@ -95,8 +97,8 @@ public interface OrderItemGroupOrder extends BizEntity {
 	 * @see #setOrderItemSeqId(String)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderItemGroupOrder_OrderItemSeqId()
 	 * @model required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	String getOrderItemSeqId();

@@ -23,8 +23,8 @@ import org.eclipse.emf.ecore.EClass;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.marketing.contact.impl.ContactListPartyStatusImpl#getContactListId <em>Contact List Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.marketing.contact.impl.ContactListPartyStatusImpl#getPartyId <em>Party Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.marketing.contact.impl.ContactListPartyStatusImpl#getFromDate <em>From Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.marketing.contact.impl.ContactListPartyStatusImpl#getPartyId <em>Party Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.marketing.contact.impl.ContactListPartyStatusImpl#getStatusDate <em>Status Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.marketing.contact.impl.ContactListPartyStatusImpl#getOptInVerifyCode <em>Opt In Verify Code</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.marketing.contact.impl.ContactListPartyStatusImpl#getSetByUserLoginId <em>Set By User Login Id</em>}</li>

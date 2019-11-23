@@ -23,18 +23,18 @@ import org.abchip.mimo.biz.product.product.Product;
  * The following features are supported:
  * </p>
  * <ul>
+ *   <li>{@link org.abchip.mimo.biz.product.feature.ProductFeatureAppl#getProductId <em>Product Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.feature.ProductFeatureAppl#getProductFeatureId <em>Product Feature Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.feature.ProductFeatureAppl#getFromDate <em>From Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.feature.ProductFeatureAppl#getAmount <em>Amount</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.feature.ProductFeatureAppl#getProductFeatureApplTypeId <em>Product Feature Appl Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.feature.ProductFeatureAppl#getRecurringAmount <em>Recurring Amount</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.feature.ProductFeatureAppl#getSequenceNum <em>Sequence Num</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.feature.ProductFeatureAppl#getThruDate <em>Thru Date</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.feature.ProductFeatureAppl#getProductFeatureApplTypeId <em>Product Feature Appl Type Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.feature.ProductFeatureAppl#getProductId <em>Product Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.feature.ProductFeatureAppl#getProductFeatureId <em>Product Feature Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.product.feature.FeaturePackage#getProductFeatureAppl()
- * @model
+ * @model annotation="mimo-ent-frame title='Product Feature Applicability' dictionary='ProductEntityLabels'"
  * @generated
  */
 public interface ProductFeatureAppl extends BizEntityTyped<ProductFeatureApplType> {
@@ -76,8 +76,8 @@ public interface ProductFeatureAppl extends BizEntityTyped<ProductFeatureApplTyp
 	 * @see #setFromDate(Date)
 	 * @see org.abchip.mimo.biz.product.feature.FeaturePackage#getProductFeatureAppl_FromDate()
 	 * @model required="true"
-	 *        annotation="mimo-ent-format type='date-time'"
 	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getFromDate();
@@ -103,7 +103,9 @@ public interface ProductFeatureAppl extends BizEntityTyped<ProductFeatureApplTyp
 	 * @return the value of the '<em>Product Id</em>' reference.
 	 * @see #setProductId(Product)
 	 * @see org.abchip.mimo.biz.product.feature.FeaturePackage#getProductFeatureAppl_ProductId()
-	 * @model keys="productId"
+	 * @model keys="productId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Product getProductId();
@@ -208,6 +210,7 @@ public interface ProductFeatureAppl extends BizEntityTyped<ProductFeatureApplTyp
 	 * @see #setProductFeatureApplTypeId(ProductFeatureApplType)
 	 * @see org.abchip.mimo.biz.product.feature.FeaturePackage#getProductFeatureAppl_ProductFeatureApplTypeId()
 	 * @model keys="productFeatureApplTypeId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ProductFeatureApplType getProductFeatureApplTypeId();
@@ -233,7 +236,9 @@ public interface ProductFeatureAppl extends BizEntityTyped<ProductFeatureApplTyp
 	 * @return the value of the '<em>Product Feature Id</em>' reference.
 	 * @see #setProductFeatureId(ProductFeature)
 	 * @see org.abchip.mimo.biz.product.feature.FeaturePackage#getProductFeatureAppl_ProductFeatureId()
-	 * @model keys="productFeatureId"
+	 * @model keys="productFeatureId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ProductFeature getProductFeatureId();

@@ -21,6 +21,7 @@ import org.abchip.mimo.biz.product.store.ProductStore;
  * The following features are supported:
  * </p>
  * <ul>
+ *   <li>{@link org.abchip.mimo.biz.passport.OAuth2GitHub#getProductStoreId <em>Product Store Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.passport.OAuth2GitHub#getFromDate <em>From Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.passport.OAuth2GitHub#getClientId <em>Client Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.passport.OAuth2GitHub#getClientSecret <em>Client Secret</em>}</li>
@@ -28,11 +29,10 @@ import org.abchip.mimo.biz.product.store.ProductStore;
  *   <li>{@link org.abchip.mimo.biz.passport.OAuth2GitHub#getLocalRedirectUri <em>Local Redirect Uri</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.passport.OAuth2GitHub#getReturnUrl <em>Return Url</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.passport.OAuth2GitHub#getThruDate <em>Thru Date</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.passport.OAuth2GitHub#getProductStoreId <em>Product Store Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.passport.PassportPackage#getOAuth2GitHub()
- * @model
+ * @model annotation="mimo-ent-frame help='Data Model Enhancements For Passport' title='GitHub OAuth Login Config'"
  * @generated
  */
 public interface OAuth2GitHub extends BizEntity {
@@ -47,7 +47,9 @@ public interface OAuth2GitHub extends BizEntity {
 	 * @return the value of the '<em>Product Store Id</em>' reference.
 	 * @see #setProductStoreId(ProductStore)
 	 * @see org.abchip.mimo.biz.passport.PassportPackage#getOAuth2GitHub_ProductStoreId()
-	 * @model keys="productStoreId"
+	 * @model keys="productStoreId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ProductStore getProductStoreId();
@@ -74,8 +76,8 @@ public interface OAuth2GitHub extends BizEntity {
 	 * @see #setFromDate(Date)
 	 * @see org.abchip.mimo.biz.passport.PassportPackage#getOAuth2GitHub_FromDate()
 	 * @model required="true"
-	 *        annotation="mimo-ent-format type='date-time'"
 	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getFromDate();

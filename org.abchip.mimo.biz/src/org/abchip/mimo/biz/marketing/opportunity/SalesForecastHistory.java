@@ -30,22 +30,22 @@ import org.abchip.mimo.biz.security.login.UserLogin;
  *   <li>{@link org.abchip.mimo.biz.marketing.opportunity.SalesForecastHistory#getBestCaseAmount <em>Best Case Amount</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.marketing.opportunity.SalesForecastHistory#getChangeNote <em>Change Note</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.marketing.opportunity.SalesForecastHistory#getClosedAmount <em>Closed Amount</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.marketing.opportunity.SalesForecastHistory#getCurrencyUomId <em>Currency Uom Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.marketing.opportunity.SalesForecastHistory#getCustomTimePeriodId <em>Custom Time Period Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.marketing.opportunity.SalesForecastHistory#getForecastAmount <em>Forecast Amount</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.marketing.opportunity.SalesForecastHistory#getInternalPartyId <em>Internal Party Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.marketing.opportunity.SalesForecastHistory#getModifiedByUserLoginId <em>Modified By User Login Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.marketing.opportunity.SalesForecastHistory#getModifiedTimestamp <em>Modified Timestamp</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.marketing.opportunity.SalesForecastHistory#getOrganizationPartyId <em>Organization Party Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.marketing.opportunity.SalesForecastHistory#getParentSalesForecastId <em>Parent Sales Forecast Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.marketing.opportunity.SalesForecastHistory#getPercentOfQuotaClosed <em>Percent Of Quota Closed</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.marketing.opportunity.SalesForecastHistory#getPercentOfQuotaForecast <em>Percent Of Quota Forecast</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.marketing.opportunity.SalesForecastHistory#getQuotaAmount <em>Quota Amount</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.marketing.opportunity.SalesForecastHistory#getSalesForecastId <em>Sales Forecast Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.marketing.opportunity.SalesForecastHistory#getOrganizationPartyId <em>Organization Party Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.marketing.opportunity.SalesForecastHistory#getInternalPartyId <em>Internal Party Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.marketing.opportunity.SalesForecastHistory#getCustomTimePeriodId <em>Custom Time Period Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.marketing.opportunity.SalesForecastHistory#getCurrencyUomId <em>Currency Uom Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.marketing.opportunity.SalesForecastHistory#getModifiedByUserLoginId <em>Modified By User Login Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.marketing.opportunity.OpportunityPackage#getSalesForecastHistory()
- * @model
+ * @model annotation="mimo-ent-frame title='Keeps a record of changes to a sales forecast.'"
  * @generated
  */
 public interface SalesForecastHistory extends BizEntity {
@@ -86,7 +86,8 @@ public interface SalesForecastHistory extends BizEntity {
 	 * @return the value of the '<em>Change Note</em>' attribute.
 	 * @see #setChangeNote(String)
 	 * @see org.abchip.mimo.biz.marketing.opportunity.OpportunityPackage#getSalesForecastHistory_ChangeNote()
-	 * @model annotation="mimo-ent-format type='very-long'"
+	 * @model annotation="mimo-ent-slot help='Used to track a reason for this change'"
+	 *        annotation="mimo-ent-format type='very-long'"
 	 * @generated
 	 */
 	String getChangeNote();
@@ -139,6 +140,7 @@ public interface SalesForecastHistory extends BizEntity {
 	 * @see #setCurrencyUomId(Uom)
 	 * @see org.abchip.mimo.biz.marketing.opportunity.OpportunityPackage#getSalesForecastHistory_CurrencyUomId()
 	 * @model keys="uomId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Uom getCurrencyUomId();
@@ -165,6 +167,7 @@ public interface SalesForecastHistory extends BizEntity {
 	 * @see #setCustomTimePeriodId(CustomTimePeriod)
 	 * @see org.abchip.mimo.biz.marketing.opportunity.OpportunityPackage#getSalesForecastHistory_CustomTimePeriodId()
 	 * @model keys="customTimePeriodId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	CustomTimePeriod getCustomTimePeriodId();
@@ -217,6 +220,7 @@ public interface SalesForecastHistory extends BizEntity {
 	 * @see #setInternalPartyId(Party)
 	 * @see org.abchip.mimo.biz.marketing.opportunity.OpportunityPackage#getSalesForecastHistory_InternalPartyId()
 	 * @model keys="partyId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Party getInternalPartyId();
@@ -243,6 +247,7 @@ public interface SalesForecastHistory extends BizEntity {
 	 * @see #setModifiedByUserLoginId(UserLogin)
 	 * @see org.abchip.mimo.biz.marketing.opportunity.OpportunityPackage#getSalesForecastHistory_ModifiedByUserLoginId()
 	 * @model keys="userLoginId"
+	 *        annotation="mimo-ent-format type='id-vlong' length='255'"
 	 * @generated
 	 */
 	UserLogin getModifiedByUserLoginId();
@@ -295,6 +300,7 @@ public interface SalesForecastHistory extends BizEntity {
 	 * @see #setOrganizationPartyId(Party)
 	 * @see org.abchip.mimo.biz.marketing.opportunity.OpportunityPackage#getSalesForecastHistory_OrganizationPartyId()
 	 * @model keys="partyId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Party getOrganizationPartyId();
@@ -426,7 +432,6 @@ public interface SalesForecastHistory extends BizEntity {
 	 * @see org.abchip.mimo.biz.marketing.opportunity.OpportunityPackage#getSalesForecastHistory_SalesForecastHistoryId()
 	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getSalesForecastHistoryId();
@@ -453,6 +458,7 @@ public interface SalesForecastHistory extends BizEntity {
 	 * @see #setSalesForecastId(SalesForecast)
 	 * @see org.abchip.mimo.biz.marketing.opportunity.OpportunityPackage#getSalesForecastHistory_SalesForecastId()
 	 * @model keys="salesForecastId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	SalesForecast getSalesForecastId();

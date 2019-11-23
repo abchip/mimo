@@ -30,9 +30,12 @@ import org.abchip.mimo.biz.shipment.shipment.ShipmentMethodType;
  *   <li>{@link org.abchip.mimo.biz.product.store.ProductStoreShipmentMeth#isAllowCompanyAddr <em>Allow Company Addr</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.store.ProductStoreShipmentMeth#isAllowUspsAddr <em>Allow Usps Addr</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.store.ProductStoreShipmentMeth#getAllowancePercent <em>Allowance Percent</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.store.ProductStoreShipmentMeth#getCompanyPartyId <em>Company Party Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.store.ProductStoreShipmentMeth#getConfigProps <em>Config Props</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.store.ProductStoreShipmentMeth#getExcludeFeatureGroup <em>Exclude Feature Group</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.store.ProductStoreShipmentMeth#getExcludeGeoId <em>Exclude Geo Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.store.ProductStoreShipmentMeth#getIncludeFeatureGroup <em>Include Feature Group</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.store.ProductStoreShipmentMeth#getIncludeGeoId <em>Include Geo Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.store.ProductStoreShipmentMeth#isIncludeNoChargeItems <em>Include No Charge Items</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.store.ProductStoreShipmentMeth#getMaxSize <em>Max Size</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.store.ProductStoreShipmentMeth#getMaxTotal <em>Max Total</em>}</li>
@@ -48,16 +51,13 @@ import org.abchip.mimo.biz.shipment.shipment.ShipmentMethodType;
  *   <li>{@link org.abchip.mimo.biz.product.store.ProductStoreShipmentMeth#getRoleTypeId <em>Role Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.store.ProductStoreShipmentMeth#getSequenceNumber <em>Sequence Number</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.store.ProductStoreShipmentMeth#getServiceName <em>Service Name</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.store.ProductStoreShipmentMeth#getCompanyPartyId <em>Company Party Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.store.ProductStoreShipmentMeth#getShipmentMethodTypeId <em>Shipment Method Type Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.store.ProductStoreShipmentMeth#getIncludeGeoId <em>Include Geo Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.store.ProductStoreShipmentMeth#getExcludeGeoId <em>Exclude Geo Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.store.ProductStoreShipmentMeth#getShipmentGatewayConfigId <em>Shipment Gateway Config Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.store.ProductStoreShipmentMeth#getShipmentCustomMethodId <em>Shipment Custom Method Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.store.ProductStoreShipmentMeth#getShipmentGatewayConfigId <em>Shipment Gateway Config Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.store.ProductStoreShipmentMeth#getShipmentMethodTypeId <em>Shipment Method Type Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.product.store.StorePackage#getProductStoreShipmentMeth()
- * @model
+ * @model annotation="mimo-ent-frame title='Product Store Carrier Shipment Method' dictionary='ProductEntityLabels'"
  * @generated
  */
 public interface ProductStoreShipmentMeth extends BizEntity {
@@ -99,6 +99,7 @@ public interface ProductStoreShipmentMeth extends BizEntity {
 	 * @see #setCompanyPartyId(Party)
 	 * @see org.abchip.mimo.biz.product.store.StorePackage#getProductStoreShipmentMeth_CompanyPartyId()
 	 * @model keys="partyId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Party getCompanyPartyId();
@@ -177,6 +178,7 @@ public interface ProductStoreShipmentMeth extends BizEntity {
 	 * @see #setExcludeGeoId(Geo)
 	 * @see org.abchip.mimo.biz.product.store.StorePackage#getProductStoreShipmentMeth_ExcludeGeoId()
 	 * @model keys="geoId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Geo getExcludeGeoId();
@@ -255,6 +257,7 @@ public interface ProductStoreShipmentMeth extends BizEntity {
 	 * @see #setIncludeGeoId(Geo)
 	 * @see org.abchip.mimo.biz.product.store.StorePackage#getProductStoreShipmentMeth_IncludeGeoId()
 	 * @model keys="geoId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Geo getIncludeGeoId();
@@ -568,7 +571,6 @@ public interface ProductStoreShipmentMeth extends BizEntity {
 	 * @see org.abchip.mimo.biz.product.store.StorePackage#getProductStoreShipmentMeth_ProductStoreShipMethId()
 	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getProductStoreShipMethId();
@@ -725,6 +727,7 @@ public interface ProductStoreShipmentMeth extends BizEntity {
 	 * @see #setShipmentCustomMethodId(CustomMethod)
 	 * @see org.abchip.mimo.biz.product.store.StorePackage#getProductStoreShipmentMeth_ShipmentCustomMethodId()
 	 * @model keys="customMethodId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	CustomMethod getShipmentCustomMethodId();
@@ -751,6 +754,7 @@ public interface ProductStoreShipmentMeth extends BizEntity {
 	 * @see #setShipmentGatewayConfigId(ShipmentGatewayConfig)
 	 * @see org.abchip.mimo.biz.product.store.StorePackage#getProductStoreShipmentMeth_ShipmentGatewayConfigId()
 	 * @model keys="shipmentGatewayConfigId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ShipmentGatewayConfig getShipmentGatewayConfigId();
@@ -777,6 +781,7 @@ public interface ProductStoreShipmentMeth extends BizEntity {
 	 * @see #setShipmentMethodTypeId(ShipmentMethodType)
 	 * @see org.abchip.mimo.biz.product.store.StorePackage#getProductStoreShipmentMeth_ShipmentMethodTypeId()
 	 * @model keys="shipmentMethodTypeId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ShipmentMethodType getShipmentMethodTypeId();

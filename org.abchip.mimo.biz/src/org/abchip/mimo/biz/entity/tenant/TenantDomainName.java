@@ -23,7 +23,7 @@ import org.abchip.mimo.biz.BizEntity;
  * </ul>
  *
  * @see org.abchip.mimo.biz.entity.tenant.TenantPackage#getTenantDomainName()
- * @model
+ * @model annotation="mimo-ent-frame title='Tenant and its Domain Name'"
  * @generated
  */
 public interface TenantDomainName extends BizEntity {
@@ -40,7 +40,6 @@ public interface TenantDomainName extends BizEntity {
 	 * @see org.abchip.mimo.biz.entity.tenant.TenantPackage#getTenantDomainName_DomainName()
 	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-format type='long-varchar' length='255'"
-	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getDomainName();
@@ -67,6 +66,7 @@ public interface TenantDomainName extends BizEntity {
 	 * @see #setTenantId(Tenant)
 	 * @see org.abchip.mimo.biz.entity.tenant.TenantPackage#getTenantDomainName_TenantId()
 	 * @model keys="tenantId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Tenant getTenantId();

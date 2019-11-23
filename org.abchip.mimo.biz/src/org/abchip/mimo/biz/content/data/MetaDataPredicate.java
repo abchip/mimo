@@ -25,7 +25,7 @@ import org.abchip.mimo.biz.BizEntity;
  * </ul>
  *
  * @see org.abchip.mimo.biz.content.data.DataPackage#getMetaDataPredicate()
- * @model annotation="mimo-ent-frame formula='description'"
+ * @model annotation="mimo-ent-frame title='Data Meta-Data Predicate' dictionary='ContentEntityLabels' formula='description'"
  * @generated
  */
 public interface MetaDataPredicate extends BizEntity {
@@ -58,8 +58,7 @@ public interface MetaDataPredicate extends BizEntity {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ContentMetaData' route='metaDataPredicateId'"
 	 * @generated
@@ -69,8 +68,7 @@ public interface MetaDataPredicate extends BizEntity {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='DataResourceMetaData' route='metaDataPredicateId'"
 	 * @generated
@@ -90,7 +88,6 @@ public interface MetaDataPredicate extends BizEntity {
 	 * @see org.abchip.mimo.biz.content.data.DataPackage#getMetaDataPredicate_MetaDataPredicateId()
 	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getMetaDataPredicateId();

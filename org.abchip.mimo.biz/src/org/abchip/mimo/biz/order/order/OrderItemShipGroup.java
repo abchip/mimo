@@ -25,26 +25,26 @@ import org.abchip.mimo.biz.shipment.shipment.ShipmentMethodType;
  * The following features are supported:
  * </p>
  * <ul>
+ *   <li>{@link org.abchip.mimo.biz.order.order.OrderItemShipGroup#getOrderId <em>Order Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.OrderItemShipGroup#getShipGroupSeqId <em>Ship Group Seq Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.order.OrderItemShipGroup#getCarrierPartyId <em>Carrier Party Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.OrderItemShipGroup#getCarrierRoleTypeId <em>Carrier Role Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.order.OrderItemShipGroup#getContactMechId <em>Contact Mech Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.OrderItemShipGroup#getEstimatedDeliveryDate <em>Estimated Delivery Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.OrderItemShipGroup#getEstimatedShipDate <em>Estimated Ship Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.order.OrderItemShipGroup#getFacilityId <em>Facility Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.OrderItemShipGroup#getGiftMessage <em>Gift Message</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.OrderItemShipGroup#isIsGift <em>Is Gift</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.OrderItemShipGroup#isMaySplit <em>May Split</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.OrderItemShipGroup#getShipAfterDate <em>Ship After Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.OrderItemShipGroup#getShipByDate <em>Ship By Date</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.order.OrderItemShipGroup#getShippingInstructions <em>Shipping Instructions</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.order.OrderItemShipGroup#getTrackingNumber <em>Tracking Number</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.order.OrderItemShipGroup#getOrderId <em>Order Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.order.OrderItemShipGroup#getSupplierPartyId <em>Supplier Party Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.order.OrderItemShipGroup#getSupplierAgreementId <em>Supplier Agreement Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.order.OrderItemShipGroup#getVendorPartyId <em>Vendor Party Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.order.OrderItemShipGroup#getCarrierPartyId <em>Carrier Party Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.order.OrderItemShipGroup#getFacilityId <em>Facility Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.OrderItemShipGroup#getShipmentMethodTypeId <em>Shipment Method Type Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.order.OrderItemShipGroup#getContactMechId <em>Contact Mech Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.order.OrderItemShipGroup#getShippingInstructions <em>Shipping Instructions</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.order.OrderItemShipGroup#getSupplierAgreementId <em>Supplier Agreement Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.order.OrderItemShipGroup#getSupplierPartyId <em>Supplier Party Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.OrderItemShipGroup#getTelecomContactMechId <em>Telecom Contact Mech Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.order.OrderItemShipGroup#getTrackingNumber <em>Tracking Number</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.order.OrderItemShipGroup#getVendorPartyId <em>Vendor Party Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderItemShipGroup()
@@ -64,6 +64,8 @@ public interface OrderItemShipGroup extends BizEntity {
 	 * @see #setCarrierPartyId(Party)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderItemShipGroup_CarrierPartyId()
 	 * @model keys="partyId"
+	 *        annotation="mimo-ent-slot audit='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Party getCarrierPartyId();
@@ -116,6 +118,7 @@ public interface OrderItemShipGroup extends BizEntity {
 	 * @see #setContactMechId(ContactMech)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderItemShipGroup_ContactMechId()
 	 * @model keys="contactMechId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ContactMech getContactMechId();
@@ -194,6 +197,7 @@ public interface OrderItemShipGroup extends BizEntity {
 	 * @see #setFacilityId(Facility)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderItemShipGroup_FacilityId()
 	 * @model keys="facilityId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Facility getFacilityId();
@@ -297,7 +301,9 @@ public interface OrderItemShipGroup extends BizEntity {
 	 * @return the value of the '<em>Order Id</em>' reference.
 	 * @see #setOrderId(OrderHeader)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderItemShipGroup_OrderId()
-	 * @model keys="orderId"
+	 * @model keys="orderId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	OrderHeader getOrderId();
@@ -376,8 +382,8 @@ public interface OrderItemShipGroup extends BizEntity {
 	 * @see #setShipGroupSeqId(String)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderItemShipGroup_ShipGroupSeqId()
 	 * @model required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	String getShipGroupSeqId();
@@ -404,6 +410,8 @@ public interface OrderItemShipGroup extends BizEntity {
 	 * @see #setShipmentMethodTypeId(ShipmentMethodType)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderItemShipGroup_ShipmentMethodTypeId()
 	 * @model keys="shipmentMethodTypeId"
+	 *        annotation="mimo-ent-slot audit='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ShipmentMethodType getShipmentMethodTypeId();
@@ -456,6 +464,7 @@ public interface OrderItemShipGroup extends BizEntity {
 	 * @see #setSupplierAgreementId(Agreement)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderItemShipGroup_SupplierAgreementId()
 	 * @model keys="agreementId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Agreement getSupplierAgreementId();
@@ -482,6 +491,7 @@ public interface OrderItemShipGroup extends BizEntity {
 	 * @see #setSupplierPartyId(Party)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderItemShipGroup_SupplierPartyId()
 	 * @model keys="partyId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Party getSupplierPartyId();
@@ -508,6 +518,7 @@ public interface OrderItemShipGroup extends BizEntity {
 	 * @see #setTelecomContactMechId(ContactMech)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderItemShipGroup_TelecomContactMechId()
 	 * @model keys="contactMechId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ContactMech getTelecomContactMechId();
@@ -560,6 +571,8 @@ public interface OrderItemShipGroup extends BizEntity {
 	 * @see #setVendorPartyId(Party)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderItemShipGroup_VendorPartyId()
 	 * @model keys="partyId"
+	 *        annotation="mimo-ent-slot help='For use with multi-vendor stores, order will be split so that each ship group is associated with only one vendor (only if applicable)'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Party getVendorPartyId();

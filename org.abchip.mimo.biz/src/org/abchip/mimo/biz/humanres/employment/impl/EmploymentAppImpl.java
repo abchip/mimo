@@ -29,13 +29,13 @@ import org.eclipse.emf.ecore.EClass;
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.humanres.employment.impl.EmploymentAppImpl#getApplicationId <em>Application Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.employment.impl.EmploymentAppImpl#getApplicationDate <em>Application Date</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.humanres.employment.impl.EmploymentAppImpl#getEmplPositionId <em>Empl Position Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.humanres.employment.impl.EmploymentAppImpl#getStatusId <em>Status Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.humanres.employment.impl.EmploymentAppImpl#getEmploymentAppSourceTypeId <em>Employment App Source Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.employment.impl.EmploymentAppImpl#getApplyingPartyId <em>Applying Party Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.humanres.employment.impl.EmploymentAppImpl#getReferredByPartyId <em>Referred By Party Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.employment.impl.EmploymentAppImpl#getApproverPartyId <em>Approver Party Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.humanres.employment.impl.EmploymentAppImpl#getEmplPositionId <em>Empl Position Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.humanres.employment.impl.EmploymentAppImpl#getEmploymentAppSourceTypeId <em>Employment App Source Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.employment.impl.EmploymentAppImpl#getJobRequisitionId <em>Job Requisition Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.humanres.employment.impl.EmploymentAppImpl#getReferredByPartyId <em>Referred By Party Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.humanres.employment.impl.EmploymentAppImpl#getStatusId <em>Status Id</em>}</li>
  * </ul>
  *
  * @generated

@@ -21,17 +21,17 @@ import org.abchip.mimo.biz.order.order.OrderHeader;
  * The following features are supported:
  * </p>
  * <ul>
+ *   <li>{@link org.abchip.mimo.biz.marketing.tracking.TrackingCodeOrder#getOrderId <em>Order Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.marketing.tracking.TrackingCodeOrder#getTrackingCodeTypeId <em>Tracking Code Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.marketing.tracking.TrackingCodeOrder#getAffiliateReferredTimeStamp <em>Affiliate Referred Time Stamp</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.marketing.tracking.TrackingCodeOrder#isHasExported <em>Has Exported</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.marketing.tracking.TrackingCodeOrder#isIsBillable <em>Is Billable</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.marketing.tracking.TrackingCodeOrder#getSiteId <em>Site Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.marketing.tracking.TrackingCodeOrder#getOrderId <em>Order Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.marketing.tracking.TrackingCodeOrder#getTrackingCodeId <em>Tracking Code Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.marketing.tracking.TrackingCodeOrder#getTrackingCodeTypeId <em>Tracking Code Type Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.marketing.tracking.TrackingPackage#getTrackingCodeOrder()
- * @model
+ * @model annotation="mimo-ent-frame title='Tracking Code Visit'"
  * @generated
  */
 public interface TrackingCodeOrder extends BizEntity {
@@ -124,7 +124,9 @@ public interface TrackingCodeOrder extends BizEntity {
 	 * @return the value of the '<em>Order Id</em>' reference.
 	 * @see #setOrderId(OrderHeader)
 	 * @see org.abchip.mimo.biz.marketing.tracking.TrackingPackage#getTrackingCodeOrder_OrderId()
-	 * @model keys="orderId"
+	 * @model keys="orderId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	OrderHeader getOrderId();
@@ -177,6 +179,7 @@ public interface TrackingCodeOrder extends BizEntity {
 	 * @see #setTrackingCodeId(TrackingCode)
 	 * @see org.abchip.mimo.biz.marketing.tracking.TrackingPackage#getTrackingCodeOrder_TrackingCodeId()
 	 * @model keys="trackingCodeId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	TrackingCode getTrackingCodeId();
@@ -202,7 +205,9 @@ public interface TrackingCodeOrder extends BizEntity {
 	 * @return the value of the '<em>Tracking Code Type Id</em>' reference.
 	 * @see #setTrackingCodeTypeId(TrackingCodeType)
 	 * @see org.abchip.mimo.biz.marketing.tracking.TrackingPackage#getTrackingCodeOrder_TrackingCodeTypeId()
-	 * @model keys="trackingCodeTypeId"
+	 * @model keys="trackingCodeTypeId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	TrackingCodeType getTrackingCodeTypeId();

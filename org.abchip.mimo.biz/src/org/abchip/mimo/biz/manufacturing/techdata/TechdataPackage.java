@@ -117,22 +117,22 @@ public interface TechdataPackage extends EPackage {
 	int TECH_DATA_CALENDAR__CALENDAR_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Description</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TECH_DATA_CALENDAR__DESCRIPTION = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
-
-	/**
 	 * The feature id for the '<em><b>Calendar Week Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TECH_DATA_CALENDAR__CALENDAR_WEEK_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
+	int TECH_DATA_CALENDAR__CALENDAR_WEEK_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Description</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TECH_DATA_CALENDAR__DESCRIPTION = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Tech Data Calendar Exc Daies</b></em>' attribute list.
@@ -208,13 +208,22 @@ public interface TechdataPackage extends EPackage {
 	int TECH_DATA_CALENDAR_EXC_DAY__LAST_UPDATED_TX_STAMP = BizPackage.BIZ_ENTITY__LAST_UPDATED_TX_STAMP;
 
 	/**
+	 * The feature id for the '<em><b>Calendar Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TECH_DATA_CALENDAR_EXC_DAY__CALENDAR_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
+
+	/**
 	 * The feature id for the '<em><b>Exception Date Start Time</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TECH_DATA_CALENDAR_EXC_DAY__EXCEPTION_DATE_START_TIME = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
+	int TECH_DATA_CALENDAR_EXC_DAY__EXCEPTION_DATE_START_TIME = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
@@ -223,7 +232,7 @@ public interface TechdataPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TECH_DATA_CALENDAR_EXC_DAY__DESCRIPTION = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
+	int TECH_DATA_CALENDAR_EXC_DAY__DESCRIPTION = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Exception Capacity</b></em>' attribute.
@@ -232,7 +241,7 @@ public interface TechdataPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TECH_DATA_CALENDAR_EXC_DAY__EXCEPTION_CAPACITY = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
+	int TECH_DATA_CALENDAR_EXC_DAY__EXCEPTION_CAPACITY = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Used Capacity</b></em>' attribute.
@@ -241,16 +250,7 @@ public interface TechdataPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TECH_DATA_CALENDAR_EXC_DAY__USED_CAPACITY = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
-
-	/**
-	 * The feature id for the '<em><b>Calendar Id</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TECH_DATA_CALENDAR_EXC_DAY__CALENDAR_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
+	int TECH_DATA_CALENDAR_EXC_DAY__USED_CAPACITY = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
 
 	/**
 	 * The number of structural features of the '<em>Tech Data Calendar Exc Day</em>' class.
@@ -308,31 +308,22 @@ public interface TechdataPackage extends EPackage {
 	int TECH_DATA_CALENDAR_EXC_WEEK__LAST_UPDATED_TX_STAMP = BizPackage.BIZ_ENTITY__LAST_UPDATED_TX_STAMP;
 
 	/**
-	 * The feature id for the '<em><b>Exception Date Start</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TECH_DATA_CALENDAR_EXC_WEEK__EXCEPTION_DATE_START = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Description</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TECH_DATA_CALENDAR_EXC_WEEK__DESCRIPTION = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
-
-	/**
 	 * The feature id for the '<em><b>Calendar Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TECH_DATA_CALENDAR_EXC_WEEK__CALENDAR_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
+	int TECH_DATA_CALENDAR_EXC_WEEK__CALENDAR_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Exception Date Start</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TECH_DATA_CALENDAR_EXC_WEEK__EXCEPTION_DATE_START = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Calendar Week Id</b></em>' reference.
@@ -341,7 +332,16 @@ public interface TechdataPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TECH_DATA_CALENDAR_EXC_WEEK__CALENDAR_WEEK_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
+	int TECH_DATA_CALENDAR_EXC_WEEK__CALENDAR_WEEK_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
+
+	/**
+	 * The feature id for the '<em><b>Description</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TECH_DATA_CALENDAR_EXC_WEEK__DESCRIPTION = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
 
 	/**
 	 * The number of structural features of the '<em>Tech Data Calendar Exc Week</em>' class.

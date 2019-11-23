@@ -24,7 +24,7 @@ import org.abchip.mimo.biz.BizEntity;
  * </ul>
  *
  * @see org.abchip.mimo.biz.common.theme.ThemePackage#getVisualTheme()
- * @model annotation="mimo-ent-frame formula='description'"
+ * @model annotation="mimo-ent-frame help='The VisualTheme entity contains one entry per visual theme.' title='Defines a Visual Theme' dictionary='CommonEntityLabels' formula='description'"
  * @generated
  */
 public interface VisualTheme extends BizEntity {
@@ -66,6 +66,7 @@ public interface VisualTheme extends BizEntity {
 	 * @see #setVisualThemeSetId(VisualThemeSet)
 	 * @see org.abchip.mimo.biz.common.theme.ThemePackage#getVisualTheme_VisualThemeSetId()
 	 * @model keys="visualThemeSetId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	VisualThemeSet getVisualThemeSetId();
@@ -93,7 +94,6 @@ public interface VisualTheme extends BizEntity {
 	 * @see org.abchip.mimo.biz.common.theme.ThemePackage#getVisualTheme_VisualThemeId()
 	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getVisualThemeId();

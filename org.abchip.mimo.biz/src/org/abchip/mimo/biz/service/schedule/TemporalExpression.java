@@ -25,12 +25,12 @@ import org.abchip.mimo.biz.BizEntity;
  *   <li>{@link org.abchip.mimo.biz.service.schedule.TemporalExpression#getDate1 <em>Date1</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.service.schedule.TemporalExpression#getDate2 <em>Date2</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.service.schedule.TemporalExpression#getDescription <em>Description</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.service.schedule.TemporalExpression#getFromTemporalExpressionAssocs <em>From Temporal Expression Assocs</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.service.schedule.TemporalExpression#getInteger1 <em>Integer1</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.service.schedule.TemporalExpression#getInteger2 <em>Integer2</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.service.schedule.TemporalExpression#getString1 <em>String1</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.service.schedule.TemporalExpression#getString2 <em>String2</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.service.schedule.TemporalExpression#getTempExprTypeId <em>Temp Expr Type Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.service.schedule.TemporalExpression#getFromTemporalExpressionAssocs <em>From Temporal Expression Assocs</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.service.schedule.SchedulePackage#getTemporalExpression()
@@ -51,7 +51,6 @@ public interface TemporalExpression extends BizEntity {
 	 * @see org.abchip.mimo.biz.service.schedule.SchedulePackage#getTemporalExpression_TempExprId()
 	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getTempExprId();
@@ -285,8 +284,7 @@ public interface TemporalExpression extends BizEntity {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>From Temporal Expression Assocs</em>' attribute list.
 	 * @see org.abchip.mimo.biz.service.schedule.SchedulePackage#getTemporalExpression_FromTemporalExpressionAssocs()
-	 * @model required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='TemporalExpressionAssoc'"
 	 * @generated
@@ -306,8 +304,7 @@ public interface TemporalExpression extends BizEntity {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='TemporalExpressionAssoc' route='toTempExprId'"
 	 * @generated

@@ -23,12 +23,12 @@ import org.abchip.mimo.biz.BizEntityType;
  *   <li>{@link org.abchip.mimo.biz.order.order.OrderItemType#getOrderItemTypeId <em>Order Item Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.OrderItemType#getDescription <em>Description</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.OrderItemType#isHasTable <em>Has Table</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.order.OrderItemType#getParentTypeId <em>Parent Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.OrderItemType#getOrderItemTypeAttrs <em>Order Item Type Attrs</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.order.OrderItemType#getParentTypeId <em>Parent Type Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderItemType()
- * @model annotation="mimo-ent-frame formula='description'"
+ * @model annotation="mimo-ent-frame dictionary='OrderEntityLabels' formula='description'"
  * @generated
  */
 public interface OrderItemType extends BizEntityType<OrderItem> {
@@ -97,7 +97,6 @@ public interface OrderItemType extends BizEntityType<OrderItem> {
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderItemType_OrderItemTypeId()
 	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getOrderItemTypeId();
@@ -124,6 +123,7 @@ public interface OrderItemType extends BizEntityType<OrderItem> {
 	 * @see #setParentTypeId(OrderItemType)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderItemType_ParentTypeId()
 	 * @model keys="orderItemTypeId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	OrderItemType getParentTypeId();
@@ -149,8 +149,7 @@ public interface OrderItemType extends BizEntityType<OrderItem> {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Order Item Type Attrs</em>' attribute list.
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderItemType_OrderItemTypeAttrs()
-	 * @model required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='OrderItemTypeAttr'"
 	 * @generated

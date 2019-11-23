@@ -23,6 +23,7 @@ import org.eclipse.emf.ecore.EClass;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link org.abchip.mimo.biz.passport.impl.OAuth2LinkedInImpl#getProductStoreId <em>Product Store Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.passport.impl.OAuth2LinkedInImpl#getFromDate <em>From Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.passport.impl.OAuth2LinkedInImpl#getApiKey <em>Api Key</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.passport.impl.OAuth2LinkedInImpl#getIconUrl <em>Icon Url</em>}</li>
@@ -31,7 +32,6 @@ import org.eclipse.emf.ecore.EClass;
  *   <li>{@link org.abchip.mimo.biz.passport.impl.OAuth2LinkedInImpl#getSecretKey <em>Secret Key</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.passport.impl.OAuth2LinkedInImpl#getTestReturnUrl <em>Test Return Url</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.passport.impl.OAuth2LinkedInImpl#getThruDate <em>Thru Date</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.passport.impl.OAuth2LinkedInImpl#getProductStoreId <em>Product Store Id</em>}</li>
  * </ul>
  *
  * @generated

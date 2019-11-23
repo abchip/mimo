@@ -21,14 +21,14 @@ import org.abchip.mimo.biz.BizEntityType;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.party.agreement.AgreementType#getAgreementTypeId <em>Agreement Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.party.agreement.AgreementType#getAgreementTypeAttrs <em>Agreement Type Attrs</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.agreement.AgreementType#getDescription <em>Description</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.agreement.AgreementType#isHasTable <em>Has Table</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.agreement.AgreementType#getParentTypeId <em>Parent Type Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.party.agreement.AgreementType#getAgreementTypeAttrs <em>Agreement Type Attrs</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.party.agreement.AgreementPackage#getAgreementType()
- * @model annotation="mimo-ent-frame formula='description'"
+ * @model annotation="mimo-ent-frame dictionary='PartyEntityLabels' formula='description'"
  * @generated
  */
 public interface AgreementType extends BizEntityType<Agreement> {
@@ -96,6 +96,7 @@ public interface AgreementType extends BizEntityType<Agreement> {
 	 * @see #setParentTypeId(AgreementType)
 	 * @see org.abchip.mimo.biz.party.agreement.AgreementPackage#getAgreementType_ParentTypeId()
 	 * @model keys="agreementTypeId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	AgreementType getParentTypeId();
@@ -121,8 +122,7 @@ public interface AgreementType extends BizEntityType<Agreement> {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Agreement Type Attrs</em>' attribute list.
 	 * @see org.abchip.mimo.biz.party.agreement.AgreementPackage#getAgreementType_AgreementTypeAttrs()
-	 * @model required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='AgreementTypeAttr'"
 	 * @generated
@@ -162,7 +162,6 @@ public interface AgreementType extends BizEntityType<Agreement> {
 	 * @see org.abchip.mimo.biz.party.agreement.AgreementPackage#getAgreementType_AgreementTypeId()
 	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getAgreementTypeId();

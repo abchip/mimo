@@ -20,11 +20,11 @@ import org.abchip.mimo.biz.BizEntity;
  * The following features are supported:
  * </p>
  * <ul>
+ *   <li>{@link org.abchip.mimo.biz.humanres.position.EmplPositionTypeClass#getEmplPositionTypeId <em>Empl Position Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.humanres.position.EmplPositionTypeClass#getEmplPositionClassTypeId <em>Empl Position Class Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.position.EmplPositionTypeClass#getFromDate <em>From Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.position.EmplPositionTypeClass#getStandardHoursPerWeek <em>Standard Hours Per Week</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.position.EmplPositionTypeClass#getThruDate <em>Thru Date</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.humanres.position.EmplPositionTypeClass#getEmplPositionTypeId <em>Empl Position Type Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.humanres.position.EmplPositionTypeClass#getEmplPositionClassTypeId <em>Empl Position Class Type Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.humanres.position.PositionPackage#getEmplPositionTypeClass()
@@ -43,7 +43,9 @@ public interface EmplPositionTypeClass extends BizEntity {
 	 * @return the value of the '<em>Empl Position Class Type Id</em>' reference.
 	 * @see #setEmplPositionClassTypeId(EmplPositionClassType)
 	 * @see org.abchip.mimo.biz.humanres.position.PositionPackage#getEmplPositionTypeClass_EmplPositionClassTypeId()
-	 * @model keys="emplPositionClassTypeId"
+	 * @model keys="emplPositionClassTypeId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	EmplPositionClassType getEmplPositionClassTypeId();
@@ -69,7 +71,9 @@ public interface EmplPositionTypeClass extends BizEntity {
 	 * @return the value of the '<em>Empl Position Type Id</em>' reference.
 	 * @see #setEmplPositionTypeId(EmplPositionType)
 	 * @see org.abchip.mimo.biz.humanres.position.PositionPackage#getEmplPositionTypeClass_EmplPositionTypeId()
-	 * @model keys="emplPositionTypeId"
+	 * @model keys="emplPositionTypeId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	EmplPositionType getEmplPositionTypeId();
@@ -96,8 +100,8 @@ public interface EmplPositionTypeClass extends BizEntity {
 	 * @see #setFromDate(Date)
 	 * @see org.abchip.mimo.biz.humanres.position.PositionPackage#getEmplPositionTypeClass_FromDate()
 	 * @model required="true"
-	 *        annotation="mimo-ent-format type='date-time'"
 	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getFromDate();

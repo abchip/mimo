@@ -24,8 +24,8 @@ import org.eclipse.emf.ecore.EClass;
  *   <li>{@link org.abchip.mimo.biz.passport.impl.GitHubUserImpl#getGitHubUserId <em>Git Hub User Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.passport.impl.GitHubUserImpl#getAccessToken <em>Access Token</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.passport.impl.GitHubUserImpl#getEnvPrefix <em>Env Prefix</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.passport.impl.GitHubUserImpl#getTokenType <em>Token Type</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.passport.impl.GitHubUserImpl#getProductStoreId <em>Product Store Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.passport.impl.GitHubUserImpl#getTokenType <em>Token Type</em>}</li>
  * </ul>
  *
  * @generated

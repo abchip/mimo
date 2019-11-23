@@ -18,14 +18,14 @@ import org.abchip.mimo.biz.BizEntity;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.common.property.SystemProperty#getSystemResourceId <em>System Resource Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.common.property.SystemProperty#getSystemPropertyId <em>System Property Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.common.property.SystemProperty#getSystemResourceId <em>System Resource Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.common.property.SystemProperty#getDescription <em>Description</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.common.property.SystemProperty#getSystemPropertyValue <em>System Property Value</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.common.property.PropertyPackage#getSystemProperty()
- * @model annotation="mimo-ent-frame formula='description'"
+ * @model annotation="mimo-ent-frame title='Defines a System Property' formula='description'"
  * @generated
  */
 public interface SystemProperty extends BizEntity {
@@ -67,8 +67,8 @@ public interface SystemProperty extends BizEntity {
 	 * @see #setSystemPropertyId(String)
 	 * @see org.abchip.mimo.biz.common.property.PropertyPackage#getSystemProperty_SystemPropertyId()
 	 * @model required="true"
-	 *        annotation="mimo-ent-format type='id-long' length='60'"
 	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id-long' length='60'"
 	 * @generated
 	 */
 	String getSystemPropertyId();
@@ -121,8 +121,8 @@ public interface SystemProperty extends BizEntity {
 	 * @see #setSystemResourceId(String)
 	 * @see org.abchip.mimo.biz.common.property.PropertyPackage#getSystemProperty_SystemResourceId()
 	 * @model required="true"
-	 *        annotation="mimo-ent-format type='id-long' length='60'"
 	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id-long' length='60'"
 	 * @generated
 	 */
 	String getSystemResourceId();

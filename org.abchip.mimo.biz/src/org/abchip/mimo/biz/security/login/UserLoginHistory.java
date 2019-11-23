@@ -21,14 +21,14 @@ import org.abchip.mimo.biz.party.party.Party;
  * The following features are supported:
  * </p>
  * <ul>
+ *   <li>{@link org.abchip.mimo.biz.security.login.UserLoginHistory#getUserLoginId <em>User Login Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.security.login.UserLoginHistory#getFromDate <em>From Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.security.login.UserLoginHistory#getOriginUserLoginId <em>Origin User Login Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.security.login.UserLoginHistory#getPartyId <em>Party Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.security.login.UserLoginHistory#getPasswordUsed <em>Password Used</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.security.login.UserLoginHistory#getSuccessfulLogin <em>Successful Login</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.security.login.UserLoginHistory#getThruDate <em>Thru Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.security.login.UserLoginHistory#getVisitId <em>Visit Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.security.login.UserLoginHistory#getUserLoginId <em>User Login Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.security.login.UserLoginHistory#getOriginUserLoginId <em>Origin User Login Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.security.login.UserLoginHistory#getPartyId <em>Party Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.security.login.LoginPackage#getUserLoginHistory()
@@ -48,8 +48,8 @@ public interface UserLoginHistory extends BizEntity {
 	 * @see #setFromDate(Date)
 	 * @see org.abchip.mimo.biz.security.login.LoginPackage#getUserLoginHistory_FromDate()
 	 * @model required="true"
-	 *        annotation="mimo-ent-format type='date-time'"
 	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getFromDate();
@@ -76,6 +76,7 @@ public interface UserLoginHistory extends BizEntity {
 	 * @see #setOriginUserLoginId(UserLogin)
 	 * @see org.abchip.mimo.biz.security.login.LoginPackage#getUserLoginHistory_OriginUserLoginId()
 	 * @model keys="userLoginId"
+	 *        annotation="mimo-ent-format type='id-vlong' length='255'"
 	 * @generated
 	 */
 	UserLogin getOriginUserLoginId();
@@ -102,6 +103,7 @@ public interface UserLoginHistory extends BizEntity {
 	 * @see #setPartyId(Party)
 	 * @see org.abchip.mimo.biz.security.login.LoginPackage#getUserLoginHistory_PartyId()
 	 * @model keys="partyId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Party getPartyId();
@@ -127,7 +129,8 @@ public interface UserLoginHistory extends BizEntity {
 	 * @return the value of the '<em>Password Used</em>' attribute.
 	 * @see #setPasswordUsed(String)
 	 * @see org.abchip.mimo.biz.security.login.LoginPackage#getUserLoginHistory_PasswordUsed()
-	 * @model annotation="mimo-ent-format type='long-varchar' length='255'"
+	 * @model annotation="mimo-ent-slot encrypt='TRUE'"
+	 *        annotation="mimo-ent-format type='long-varchar' length='255'"
 	 * @generated
 	 */
 	String getPasswordUsed();
@@ -205,7 +208,9 @@ public interface UserLoginHistory extends BizEntity {
 	 * @return the value of the '<em>User Login Id</em>' reference.
 	 * @see #setUserLoginId(UserLogin)
 	 * @see org.abchip.mimo.biz.security.login.LoginPackage#getUserLoginHistory_UserLoginId()
-	 * @model keys="userLoginId"
+	 * @model keys="userLoginId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id-vlong' length='255'"
 	 * @generated
 	 */
 	UserLogin getUserLoginId();

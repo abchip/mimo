@@ -21,8 +21,8 @@ import org.eclipse.emf.ecore.EClass;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.content.data.impl.MimeTypeHtmlTemplateImpl#getTemplateLocation <em>Template Location</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.data.impl.MimeTypeHtmlTemplateImpl#getMimeTypeId <em>Mime Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.content.data.impl.MimeTypeHtmlTemplateImpl#getTemplateLocation <em>Template Location</em>}</li>
  * </ul>
  *
  * @generated

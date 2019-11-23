@@ -24,8 +24,8 @@ import org.eclipse.emf.ecore.EClass;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.product.facility.impl.ContainerImpl#getContainerId <em>Container Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.facility.impl.ContainerImpl#getDescription <em>Description</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.facility.impl.ContainerImpl#getContainerTypeId <em>Container Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.facility.impl.ContainerImpl#getDescription <em>Description</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.facility.impl.ContainerImpl#getFacilityId <em>Facility Id</em>}</li>
  * </ul>
  *

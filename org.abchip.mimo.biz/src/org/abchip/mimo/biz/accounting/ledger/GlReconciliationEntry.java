@@ -20,14 +20,14 @@ import org.abchip.mimo.biz.BizEntity;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.accounting.ledger.GlReconciliationEntry#getAcctgTransEntrySeqId <em>Acctg Trans Entry Seq Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.ledger.GlReconciliationEntry#getReconciledAmount <em>Reconciled Amount</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.ledger.GlReconciliationEntry#getGlReconciliationId <em>Gl Reconciliation Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.ledger.GlReconciliationEntry#getAcctgTransId <em>Acctg Trans Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.ledger.GlReconciliationEntry#getAcctgTransEntrySeqId <em>Acctg Trans Entry Seq Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.ledger.GlReconciliationEntry#getReconciledAmount <em>Reconciled Amount</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.accounting.ledger.LedgerPackage#getGlReconciliationEntry()
- * @model
+ * @model annotation="mimo-ent-frame title='General Ledger Reconciliation Entry'"
  * @generated
  */
 public interface GlReconciliationEntry extends BizEntity {
@@ -43,8 +43,8 @@ public interface GlReconciliationEntry extends BizEntity {
 	 * @see #setAcctgTransEntrySeqId(String)
 	 * @see org.abchip.mimo.biz.accounting.ledger.LedgerPackage#getGlReconciliationEntry_AcctgTransEntrySeqId()
 	 * @model required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	String getAcctgTransEntrySeqId();
@@ -96,7 +96,9 @@ public interface GlReconciliationEntry extends BizEntity {
 	 * @return the value of the '<em>Gl Reconciliation Id</em>' reference.
 	 * @see #setGlReconciliationId(GlReconciliation)
 	 * @see org.abchip.mimo.biz.accounting.ledger.LedgerPackage#getGlReconciliationEntry_GlReconciliationId()
-	 * @model keys="glReconciliationId"
+	 * @model keys="glReconciliationId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	GlReconciliation getGlReconciliationId();
@@ -122,7 +124,9 @@ public interface GlReconciliationEntry extends BizEntity {
 	 * @return the value of the '<em>Acctg Trans Id</em>' reference.
 	 * @see #setAcctgTransId(AcctgTrans)
 	 * @see org.abchip.mimo.biz.accounting.ledger.LedgerPackage#getGlReconciliationEntry_AcctgTransId()
-	 * @model keys="acctgTransId"
+	 * @model keys="acctgTransId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	AcctgTrans getAcctgTransId();

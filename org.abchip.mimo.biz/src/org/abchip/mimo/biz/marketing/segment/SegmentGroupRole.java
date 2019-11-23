@@ -41,7 +41,9 @@ public interface SegmentGroupRole extends BizEntity {
 	 * @return the value of the '<em>Party Id</em>' reference.
 	 * @see #setPartyId(Party)
 	 * @see org.abchip.mimo.biz.marketing.segment.SegmentPackage#getSegmentGroupRole_PartyId()
-	 * @model keys="partyId"
+	 * @model keys="partyId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Party getPartyId();
@@ -67,7 +69,9 @@ public interface SegmentGroupRole extends BizEntity {
 	 * @return the value of the '<em>Role Type Id</em>' reference.
 	 * @see #setRoleTypeId(RoleType)
 	 * @see org.abchip.mimo.biz.marketing.segment.SegmentPackage#getSegmentGroupRole_RoleTypeId()
-	 * @model keys="roleTypeId"
+	 * @model keys="roleTypeId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	RoleType getRoleTypeId();
@@ -93,7 +97,9 @@ public interface SegmentGroupRole extends BizEntity {
 	 * @return the value of the '<em>Segment Group Id</em>' reference.
 	 * @see #setSegmentGroupId(SegmentGroup)
 	 * @see org.abchip.mimo.biz.marketing.segment.SegmentPackage#getSegmentGroupRole_SegmentGroupId()
-	 * @model keys="segmentGroupId"
+	 * @model keys="segmentGroupId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	SegmentGroup getSegmentGroupId();

@@ -26,7 +26,7 @@ import org.abchip.mimo.biz.BizEntity;
  * </ul>
  *
  * @see org.abchip.mimo.biz.content.data.DataPackage#getDataCategory()
- * @model
+ * @model annotation="mimo-ent-frame dictionary='ContentEntityLabels'"
  * @generated
  */
 public interface DataCategory extends BizEntity {
@@ -69,7 +69,6 @@ public interface DataCategory extends BizEntity {
 	 * @see org.abchip.mimo.biz.content.data.DataPackage#getDataCategory_DataCategoryId()
 	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getDataCategoryId();
@@ -96,6 +95,7 @@ public interface DataCategory extends BizEntity {
 	 * @see #setParentCategoryId(DataCategory)
 	 * @see org.abchip.mimo.biz.content.data.DataPackage#getDataCategory_ParentCategoryId()
 	 * @model keys="dataCategoryId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	DataCategory getParentCategoryId();

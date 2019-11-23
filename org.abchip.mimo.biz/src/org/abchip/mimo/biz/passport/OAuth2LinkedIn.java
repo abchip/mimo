@@ -21,6 +21,7 @@ import org.abchip.mimo.biz.product.store.ProductStore;
  * The following features are supported:
  * </p>
  * <ul>
+ *   <li>{@link org.abchip.mimo.biz.passport.OAuth2LinkedIn#getProductStoreId <em>Product Store Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.passport.OAuth2LinkedIn#getFromDate <em>From Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.passport.OAuth2LinkedIn#getApiKey <em>Api Key</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.passport.OAuth2LinkedIn#getIconUrl <em>Icon Url</em>}</li>
@@ -29,11 +30,10 @@ import org.abchip.mimo.biz.product.store.ProductStore;
  *   <li>{@link org.abchip.mimo.biz.passport.OAuth2LinkedIn#getSecretKey <em>Secret Key</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.passport.OAuth2LinkedIn#getTestReturnUrl <em>Test Return Url</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.passport.OAuth2LinkedIn#getThruDate <em>Thru Date</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.passport.OAuth2LinkedIn#getProductStoreId <em>Product Store Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.passport.PassportPackage#getOAuth2LinkedIn()
- * @model
+ * @model annotation="mimo-ent-frame help='Data Model Enhancements For Passport' title='LinkedIn OAuth Login Config'"
  * @generated
  */
 public interface OAuth2LinkedIn extends BizEntity {
@@ -48,7 +48,9 @@ public interface OAuth2LinkedIn extends BizEntity {
 	 * @return the value of the '<em>Product Store Id</em>' reference.
 	 * @see #setProductStoreId(ProductStore)
 	 * @see org.abchip.mimo.biz.passport.PassportPackage#getOAuth2LinkedIn_ProductStoreId()
-	 * @model keys="productStoreId"
+	 * @model keys="productStoreId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ProductStore getProductStoreId();
@@ -75,8 +77,8 @@ public interface OAuth2LinkedIn extends BizEntity {
 	 * @see #setFromDate(Date)
 	 * @see org.abchip.mimo.biz.passport.PassportPackage#getOAuth2LinkedIn_FromDate()
 	 * @model required="true"
-	 *        annotation="mimo-ent-format type='date-time'"
 	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getFromDate();

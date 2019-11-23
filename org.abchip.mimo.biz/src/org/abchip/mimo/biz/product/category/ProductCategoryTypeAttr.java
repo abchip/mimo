@@ -18,13 +18,13 @@ import org.abchip.mimo.biz.BizEntity;
  * The following features are supported:
  * </p>
  * <ul>
+ *   <li>{@link org.abchip.mimo.biz.product.category.ProductCategoryTypeAttr#getProductCategoryTypeId <em>Product Category Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.category.ProductCategoryTypeAttr#getAttrName <em>Attr Name</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.category.ProductCategoryTypeAttr#getDescription <em>Description</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.category.ProductCategoryTypeAttr#getProductCategoryTypeId <em>Product Category Type Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.product.category.CategoryPackage#getProductCategoryTypeAttr()
- * @model annotation="mimo-ent-frame formula='description'"
+ * @model annotation="mimo-ent-frame title='Product Category Type Attribute' dictionary='ProductEntityLabels' formula='description'"
  * @generated
  */
 public interface ProductCategoryTypeAttr extends BizEntity {
@@ -66,8 +66,8 @@ public interface ProductCategoryTypeAttr extends BizEntity {
 	 * @see #setAttrName(String)
 	 * @see org.abchip.mimo.biz.product.category.CategoryPackage#getProductCategoryTypeAttr_AttrName()
 	 * @model required="true"
-	 *        annotation="mimo-ent-format type='id-long' length='60'"
 	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id-long' length='60'"
 	 * @generated
 	 */
 	String getAttrName();
@@ -93,7 +93,9 @@ public interface ProductCategoryTypeAttr extends BizEntity {
 	 * @return the value of the '<em>Product Category Type Id</em>' reference.
 	 * @see #setProductCategoryTypeId(ProductCategoryType)
 	 * @see org.abchip.mimo.biz.product.category.CategoryPackage#getProductCategoryTypeAttr_ProductCategoryTypeId()
-	 * @model keys="productCategoryTypeId"
+	 * @model keys="productCategoryTypeId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ProductCategoryType getProductCategoryTypeId();

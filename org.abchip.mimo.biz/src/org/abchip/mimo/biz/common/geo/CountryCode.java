@@ -25,7 +25,7 @@ import org.abchip.mimo.biz.BizEntity;
  * </ul>
  *
  * @see org.abchip.mimo.biz.common.geo.GeoPackage#getCountryCode()
- * @model
+ * @model annotation="mimo-ent-frame title='ISO Country Code'"
  * @generated
  */
 public interface CountryCode extends BizEntity {
@@ -120,7 +120,6 @@ public interface CountryCode extends BizEntity {
 	 * @see org.abchip.mimo.biz.common.geo.GeoPackage#getCountryCode_CountryCode()
 	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getCountryCode();

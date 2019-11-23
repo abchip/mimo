@@ -27,7 +27,7 @@ import org.abchip.mimo.biz.BizEntityType;
  * </ul>
  *
  * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderContentType()
- * @model annotation="mimo-ent-frame formula='description'"
+ * @model annotation="mimo-ent-frame dictionary='OrderEntityLabels' formula='description'"
  * @generated
  */
 public interface OrderContentType extends BizEntityType<OrderContent> {
@@ -96,7 +96,6 @@ public interface OrderContentType extends BizEntityType<OrderContent> {
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderContentType_OrderContentTypeId()
 	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getOrderContentTypeId();
@@ -123,6 +122,7 @@ public interface OrderContentType extends BizEntityType<OrderContent> {
 	 * @see #setParentTypeId(OrderContentType)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderContentType_ParentTypeId()
 	 * @model keys="orderContentTypeId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	OrderContentType getParentTypeId();

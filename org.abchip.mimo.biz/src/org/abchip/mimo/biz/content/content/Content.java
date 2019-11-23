@@ -30,37 +30,37 @@ import org.abchip.mimo.biz.security.login.UserLogin;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.content.content.Content#getContentId <em>Content Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.content.content.Content#getCharacterSetId <em>Character Set Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.content.Content#getChildBranchCount <em>Child Branch Count</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.content.Content#getChildLeafCount <em>Child Leaf Count</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.content.content.Content#getContentName <em>Content Name</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.content.content.Content#getCreatedDate <em>Created Date</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.content.content.Content#getDescription <em>Description</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.content.content.Content#getLastModifiedDate <em>Last Modified Date</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.content.content.Content#getLocaleString <em>Locale String</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.content.content.Content#getServiceName <em>Service Name</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.content.content.Content#getContentTypeId <em>Content Type Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.content.content.Content#getDataResourceId <em>Data Resource Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.content.content.Content#getTemplateDataResourceId <em>Template Data Resource Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.content.content.Content#getStatusId <em>Status Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.content.content.Content#getPrivilegeEnumId <em>Privilege Enum Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.content.content.Content#getCustomMethodId <em>Custom Method Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.content.content.Content#getMimeTypeId <em>Mime Type Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.content.content.Content#getCharacterSetId <em>Character Set Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.content.content.Content#getCreatedByUserLogin <em>Created By User Login</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.content.content.Content#getLastModifiedByUserLogin <em>Last Modified By User Login</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.content.content.Content#getDataSourceId <em>Data Source Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.content.content.Content#getDecoratorContentId <em>Decorator Content Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.content.content.Content#getOwnerContentId <em>Owner Content Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.content.content.Content#getInstanceOfContentId <em>Instance Of Content Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.content.Content#getContentAttributes <em>Content Attributes</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.content.Content#getContentKeywords <em>Content Keywords</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.content.Content#getContentMetaDatas <em>Content Meta Datas</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.content.content.Content#getContentName <em>Content Name</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.content.Content#getContentPurposes <em>Content Purposes</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.content.Content#getContentRevisions <em>Content Revisions</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.content.content.Content#getContentTypeId <em>Content Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.content.content.Content#getCreatedByUserLogin <em>Created By User Login</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.content.content.Content#getCreatedDate <em>Created Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.content.content.Content#getCustomMethodId <em>Custom Method Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.content.content.Content#getDataResourceId <em>Data Resource Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.content.content.Content#getDataSourceId <em>Data Source Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.content.content.Content#getDecoratorContentId <em>Decorator Content Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.content.content.Content#getDescription <em>Description</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.content.content.Content#getInstanceOfContentId <em>Instance Of Content Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.content.content.Content#getLastModifiedByUserLogin <em>Last Modified By User Login</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.content.content.Content#getLastModifiedDate <em>Last Modified Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.content.content.Content#getLocaleString <em>Locale String</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.content.content.Content#getMimeTypeId <em>Mime Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.content.content.Content#getOwnerContentId <em>Owner Content Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.content.content.Content#getPrivilegeEnumId <em>Privilege Enum Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.content.content.Content#getServiceName <em>Service Name</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.content.content.Content#getStatusId <em>Status Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.content.content.Content#getTemplateDataResourceId <em>Template Data Resource Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.content.content.ContentPackage#getContent()
- * @model annotation="mimo-ent-frame formula='description'"
+ * @model annotation="mimo-ent-frame dictionary='ContentEntityLabels' formula='description'"
  * @generated
  */
 public interface Content extends BizEntityTyped<ContentType> {
@@ -76,6 +76,7 @@ public interface Content extends BizEntityTyped<ContentType> {
 	 * @see #setCharacterSetId(CharacterSet)
 	 * @see org.abchip.mimo.biz.content.content.ContentPackage#getContent_CharacterSetId()
 	 * @model keys="characterSetId"
+	 *        annotation="mimo-ent-format type='id-long' length='60'"
 	 * @generated
 	 */
 	CharacterSet getCharacterSetId();
@@ -155,7 +156,6 @@ public interface Content extends BizEntityTyped<ContentType> {
 	 * @see org.abchip.mimo.biz.content.content.ContentPackage#getContent_ContentId()
 	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getContentId();
@@ -208,6 +208,7 @@ public interface Content extends BizEntityTyped<ContentType> {
 	 * @see #setContentTypeId(ContentType)
 	 * @see org.abchip.mimo.biz.content.content.ContentPackage#getContent_ContentTypeId()
 	 * @model keys="contentTypeId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ContentType getContentTypeId();
@@ -234,6 +235,7 @@ public interface Content extends BizEntityTyped<ContentType> {
 	 * @see #setCreatedByUserLogin(UserLogin)
 	 * @see org.abchip.mimo.biz.content.content.ContentPackage#getContent_CreatedByUserLogin()
 	 * @model keys="userLoginId"
+	 *        annotation="mimo-ent-format type='id-vlong' length='255'"
 	 * @generated
 	 */
 	UserLogin getCreatedByUserLogin();
@@ -286,6 +288,7 @@ public interface Content extends BizEntityTyped<ContentType> {
 	 * @see #setCustomMethodId(CustomMethod)
 	 * @see org.abchip.mimo.biz.content.content.ContentPackage#getContent_CustomMethodId()
 	 * @model keys="customMethodId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	CustomMethod getCustomMethodId();
@@ -312,6 +315,7 @@ public interface Content extends BizEntityTyped<ContentType> {
 	 * @see #setDataResourceId(DataResource)
 	 * @see org.abchip.mimo.biz.content.content.ContentPackage#getContent_DataResourceId()
 	 * @model keys="dataResourceId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	DataResource getDataResourceId();
@@ -338,6 +342,7 @@ public interface Content extends BizEntityTyped<ContentType> {
 	 * @see #setDataSourceId(DataSource)
 	 * @see org.abchip.mimo.biz.content.content.ContentPackage#getContent_DataSourceId()
 	 * @model keys="dataSourceId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	DataSource getDataSourceId();
@@ -364,6 +369,7 @@ public interface Content extends BizEntityTyped<ContentType> {
 	 * @see #setDecoratorContentId(Content)
 	 * @see org.abchip.mimo.biz.content.content.ContentPackage#getContent_DecoratorContentId()
 	 * @model keys="contentId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Content getDecoratorContentId();
@@ -416,6 +422,7 @@ public interface Content extends BizEntityTyped<ContentType> {
 	 * @see #setInstanceOfContentId(Content)
 	 * @see org.abchip.mimo.biz.content.content.ContentPackage#getContent_InstanceOfContentId()
 	 * @model keys="contentId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Content getInstanceOfContentId();
@@ -442,6 +449,7 @@ public interface Content extends BizEntityTyped<ContentType> {
 	 * @see #setLastModifiedByUserLogin(UserLogin)
 	 * @see org.abchip.mimo.biz.content.content.ContentPackage#getContent_LastModifiedByUserLogin()
 	 * @model keys="userLoginId"
+	 *        annotation="mimo-ent-format type='id-vlong' length='255'"
 	 * @generated
 	 */
 	UserLogin getLastModifiedByUserLogin();
@@ -520,6 +528,7 @@ public interface Content extends BizEntityTyped<ContentType> {
 	 * @see #setMimeTypeId(MimeType)
 	 * @see org.abchip.mimo.biz.content.content.ContentPackage#getContent_MimeTypeId()
 	 * @model keys="mimeTypeId"
+	 *        annotation="mimo-ent-format type='id-vlong' length='255'"
 	 * @generated
 	 */
 	MimeType getMimeTypeId();
@@ -546,6 +555,8 @@ public interface Content extends BizEntityTyped<ContentType> {
 	 * @see #setOwnerContentId(Content)
 	 * @see org.abchip.mimo.biz.content.content.ContentPackage#getContent_OwnerContentId()
 	 * @model keys="contentId"
+	 *        annotation="mimo-ent-slot help='Used for permissions checking'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Content getOwnerContentId();
@@ -572,6 +583,7 @@ public interface Content extends BizEntityTyped<ContentType> {
 	 * @see #setPrivilegeEnumId(Enumeration)
 	 * @see org.abchip.mimo.biz.content.content.ContentPackage#getContent_PrivilegeEnumId()
 	 * @model keys="enumId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Enumeration getPrivilegeEnumId();
@@ -597,7 +609,8 @@ public interface Content extends BizEntityTyped<ContentType> {
 	 * @return the value of the '<em>Service Name</em>' attribute.
 	 * @see #setServiceName(String)
 	 * @see org.abchip.mimo.biz.content.content.ContentPackage#getContent_ServiceName()
-	 * @model annotation="mimo-ent-format type='long-varchar' length='255'"
+	 * @model annotation="mimo-ent-slot help='Deprecated : use customMethod pattern instead. Kept for backward compatibility'"
+	 *        annotation="mimo-ent-format type='long-varchar' length='255'"
 	 * @generated
 	 */
 	String getServiceName();
@@ -624,6 +637,7 @@ public interface Content extends BizEntityTyped<ContentType> {
 	 * @see #setStatusId(StatusItem)
 	 * @see org.abchip.mimo.biz.content.content.ContentPackage#getContent_StatusId()
 	 * @model keys="statusId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	StatusItem getStatusId();
@@ -650,6 +664,7 @@ public interface Content extends BizEntityTyped<ContentType> {
 	 * @see #setTemplateDataResourceId(DataResource)
 	 * @see org.abchip.mimo.biz.content.content.ContentPackage#getContent_TemplateDataResourceId()
 	 * @model keys="dataResourceId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	DataResource getTemplateDataResourceId();
@@ -675,8 +690,7 @@ public interface Content extends BizEntityTyped<ContentType> {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Content Attributes</em>' attribute list.
 	 * @see org.abchip.mimo.biz.content.content.ContentPackage#getContent_ContentAttributes()
-	 * @model required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ContentAttribute'"
 	 * @generated
@@ -694,8 +708,7 @@ public interface Content extends BizEntityTyped<ContentType> {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Content Keywords</em>' attribute list.
 	 * @see org.abchip.mimo.biz.content.content.ContentPackage#getContent_ContentKeywords()
-	 * @model required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ContentKeyword'"
 	 * @generated
@@ -713,8 +726,7 @@ public interface Content extends BizEntityTyped<ContentType> {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Content Meta Datas</em>' attribute list.
 	 * @see org.abchip.mimo.biz.content.content.ContentPackage#getContent_ContentMetaDatas()
-	 * @model required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ContentMetaData'"
 	 * @generated
@@ -732,8 +744,7 @@ public interface Content extends BizEntityTyped<ContentType> {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Content Purposes</em>' attribute list.
 	 * @see org.abchip.mimo.biz.content.content.ContentPackage#getContent_ContentPurposes()
-	 * @model required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ContentPurpose'"
 	 * @generated
@@ -751,8 +762,7 @@ public interface Content extends BizEntityTyped<ContentType> {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Content Revisions</em>' attribute list.
 	 * @see org.abchip.mimo.biz.content.content.ContentPackage#getContent_ContentRevisions()
-	 * @model required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ContentRevision'"
 	 * @generated

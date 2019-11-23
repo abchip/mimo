@@ -26,17 +26,17 @@ import org.abchip.mimo.biz.party.contact.ContactMech;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.BillingAccount#getBillingAccountId <em>Billing Account Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.payment.BillingAccount#getAccountCurrencyUomId <em>Account Currency Uom Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.BillingAccount#getAccountLimit <em>Account Limit</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.payment.BillingAccount#getContactMechId <em>Contact Mech Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.BillingAccount#getDescription <em>Description</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.BillingAccount#getExternalAccountId <em>External Account Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.BillingAccount#getFromDate <em>From Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.BillingAccount#getThruDate <em>Thru Date</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.payment.BillingAccount#getContactMechId <em>Contact Mech Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.payment.BillingAccount#getAccountCurrencyUomId <em>Account Currency Uom Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getBillingAccount()
- * @model annotation="mimo-ent-frame formula='description'"
+ * @model annotation="mimo-ent-frame help='A BillingAccount Payment Method' formula='description'"
  * @generated
  */
 public interface BillingAccount extends BizEntity {
@@ -52,6 +52,7 @@ public interface BillingAccount extends BizEntity {
 	 * @see #setAccountCurrencyUomId(Uom)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getBillingAccount_AccountCurrencyUomId()
 	 * @model keys="uomId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Uom getAccountCurrencyUomId();
@@ -104,6 +105,7 @@ public interface BillingAccount extends BizEntity {
 	 * @see #setContactMechId(ContactMech)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getBillingAccount_ContactMechId()
 	 * @model keys="contactMechId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ContactMech getContactMechId();
@@ -295,7 +297,6 @@ public interface BillingAccount extends BizEntity {
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getBillingAccount_BillingAccountId()
 	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getBillingAccountId();

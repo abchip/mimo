@@ -18,13 +18,13 @@ import org.abchip.mimo.biz.BizEntity;
  * The following features are supported:
  * </p>
  * <ul>
+ *   <li>{@link org.abchip.mimo.biz.content.document.DocumentTypeAttr#getDocumentTypeId <em>Document Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.document.DocumentTypeAttr#getAttrName <em>Attr Name</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.document.DocumentTypeAttr#getDescription <em>Description</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.content.document.DocumentTypeAttr#getDocumentTypeId <em>Document Type Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.content.document.DocumentPackage#getDocumentTypeAttr()
- * @model annotation="mimo-ent-frame formula='description'"
+ * @model annotation="mimo-ent-frame title='Document Type Attribute' formula='description'"
  * @generated
  */
 public interface DocumentTypeAttr extends BizEntity {
@@ -40,8 +40,8 @@ public interface DocumentTypeAttr extends BizEntity {
 	 * @see #setAttrName(String)
 	 * @see org.abchip.mimo.biz.content.document.DocumentPackage#getDocumentTypeAttr_AttrName()
 	 * @model required="true"
-	 *        annotation="mimo-ent-format type='id-long' length='60'"
 	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id-long' length='60'"
 	 * @generated
 	 */
 	String getAttrName();
@@ -93,7 +93,9 @@ public interface DocumentTypeAttr extends BizEntity {
 	 * @return the value of the '<em>Document Type Id</em>' reference.
 	 * @see #setDocumentTypeId(DocumentType)
 	 * @see org.abchip.mimo.biz.content.document.DocumentPackage#getDocumentTypeAttr_DocumentTypeId()
-	 * @model keys="documentTypeId"
+	 * @model keys="documentTypeId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	DocumentType getDocumentTypeId();

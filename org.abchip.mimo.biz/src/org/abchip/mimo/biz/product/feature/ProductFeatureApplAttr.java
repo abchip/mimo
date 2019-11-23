@@ -21,15 +21,15 @@ import org.abchip.mimo.biz.product.product.Product;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.product.feature.ProductFeatureApplAttr#getFromDate <em>From Date</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.feature.ProductFeatureApplAttr#getAttrName <em>Attr Name</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.feature.ProductFeatureApplAttr#getAttrValue <em>Attr Value</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.feature.ProductFeatureApplAttr#getProductId <em>Product Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.feature.ProductFeatureApplAttr#getProductFeatureId <em>Product Feature Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.feature.ProductFeatureApplAttr#getAttrName <em>Attr Name</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.feature.ProductFeatureApplAttr#getFromDate <em>From Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.feature.ProductFeatureApplAttr#getAttrValue <em>Attr Value</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.product.feature.FeaturePackage#getProductFeatureApplAttr()
- * @model
+ * @model annotation="mimo-ent-frame title='Product Feature Applicability Attribute' dictionary='ProductEntityLabels'"
  * @generated
  */
 public interface ProductFeatureApplAttr extends BizEntity {
@@ -45,8 +45,8 @@ public interface ProductFeatureApplAttr extends BizEntity {
 	 * @see #setAttrName(String)
 	 * @see org.abchip.mimo.biz.product.feature.FeaturePackage#getProductFeatureApplAttr_AttrName()
 	 * @model required="true"
-	 *        annotation="mimo-ent-format type='id-long' length='60'"
 	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id-long' length='60'"
 	 * @generated
 	 */
 	String getAttrName();
@@ -99,8 +99,8 @@ public interface ProductFeatureApplAttr extends BizEntity {
 	 * @see #setFromDate(Date)
 	 * @see org.abchip.mimo.biz.product.feature.FeaturePackage#getProductFeatureApplAttr_FromDate()
 	 * @model required="true"
-	 *        annotation="mimo-ent-format type='date-time'"
 	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getFromDate();
@@ -126,7 +126,9 @@ public interface ProductFeatureApplAttr extends BizEntity {
 	 * @return the value of the '<em>Product Id</em>' reference.
 	 * @see #setProductId(Product)
 	 * @see org.abchip.mimo.biz.product.feature.FeaturePackage#getProductFeatureApplAttr_ProductId()
-	 * @model keys="productId"
+	 * @model keys="productId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Product getProductId();
@@ -152,7 +154,9 @@ public interface ProductFeatureApplAttr extends BizEntity {
 	 * @return the value of the '<em>Product Feature Id</em>' reference.
 	 * @see #setProductFeatureId(ProductFeature)
 	 * @see org.abchip.mimo.biz.product.feature.FeaturePackage#getProductFeatureApplAttr_ProductFeatureId()
-	 * @model keys="productFeatureId"
+	 * @model keys="productFeatureId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ProductFeature getProductFeatureId();

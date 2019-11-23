@@ -22,19 +22,19 @@ import org.abchip.mimo.biz.common.method.CustomMethod;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.common.uom.UomConversionDated#getFromDate <em>From Date</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.common.uom.UomConversionDated#getConversionFactor <em>Conversion Factor</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.common.uom.UomConversionDated#getDecimalScale <em>Decimal Scale</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.common.uom.UomConversionDated#getRoundingMode <em>Rounding Mode</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.common.uom.UomConversionDated#getThruDate <em>Thru Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.common.uom.UomConversionDated#getUomId <em>Uom Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.common.uom.UomConversionDated#getUomIdTo <em>Uom Id To</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.common.uom.UomConversionDated#getFromDate <em>From Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.common.uom.UomConversionDated#getConversionFactor <em>Conversion Factor</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.common.uom.UomConversionDated#getCustomMethodId <em>Custom Method Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.common.uom.UomConversionDated#getDecimalScale <em>Decimal Scale</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.common.uom.UomConversionDated#getPurposeEnumId <em>Purpose Enum Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.common.uom.UomConversionDated#getRoundingMode <em>Rounding Mode</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.common.uom.UomConversionDated#getThruDate <em>Thru Date</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.common.uom.UomPackage#getUomConversionDated()
- * @model
+ * @model annotation="mimo-ent-frame title='Unit Of Measure Conversion Entity for those Units of Measure whose conversion values change over time (ie, currencies)'"
  * @generated
  */
 public interface UomConversionDated extends BizEntity {
@@ -102,8 +102,8 @@ public interface UomConversionDated extends BizEntity {
 	 * @see #setFromDate(Date)
 	 * @see org.abchip.mimo.biz.common.uom.UomPackage#getUomConversionDated_FromDate()
 	 * @model required="true"
-	 *        annotation="mimo-ent-format type='date-time'"
 	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getFromDate();
@@ -181,7 +181,9 @@ public interface UomConversionDated extends BizEntity {
 	 * @return the value of the '<em>Uom Id</em>' reference.
 	 * @see #setUomId(Uom)
 	 * @see org.abchip.mimo.biz.common.uom.UomPackage#getUomConversionDated_UomId()
-	 * @model keys="uomId"
+	 * @model keys="uomId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Uom getUomId();
@@ -207,7 +209,9 @@ public interface UomConversionDated extends BizEntity {
 	 * @return the value of the '<em>Uom Id To</em>' reference.
 	 * @see #setUomIdTo(Uom)
 	 * @see org.abchip.mimo.biz.common.uom.UomPackage#getUomConversionDated_UomIdTo()
-	 * @model keys="uomId"
+	 * @model keys="uomId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Uom getUomIdTo();
@@ -234,6 +238,7 @@ public interface UomConversionDated extends BizEntity {
 	 * @see #setCustomMethodId(CustomMethod)
 	 * @see org.abchip.mimo.biz.common.uom.UomPackage#getUomConversionDated_CustomMethodId()
 	 * @model keys="customMethodId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	CustomMethod getCustomMethodId();
@@ -260,6 +265,7 @@ public interface UomConversionDated extends BizEntity {
 	 * @see #setPurposeEnumId(Enumeration)
 	 * @see org.abchip.mimo.biz.common.uom.UomPackage#getUomConversionDated_PurposeEnumId()
 	 * @model keys="enumId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Enumeration getPurposeEnumId();

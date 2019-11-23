@@ -21,11 +21,11 @@ import org.abchip.mimo.biz.party.party.Party;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.accounting.budget.BudgetReview#getBudgetReviewId <em>Budget Review Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.budget.BudgetReview#getReviewDate <em>Review Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.budget.BudgetReview#getBudgetId <em>Budget Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.budget.BudgetReview#getPartyId <em>Party Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.budget.BudgetReview#getBudgetReviewResultTypeId <em>Budget Review Result Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.budget.BudgetReview#getBudgetReviewId <em>Budget Review Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.budget.BudgetReview#getReviewDate <em>Review Date</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.accounting.budget.BudgetPackage#getBudgetReview()
@@ -45,8 +45,8 @@ public interface BudgetReview extends BizEntity {
 	 * @see #setBudgetReviewId(String)
 	 * @see org.abchip.mimo.biz.accounting.budget.BudgetPackage#getBudgetReview_BudgetReviewId()
 	 * @model required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	String getBudgetReviewId();
@@ -72,7 +72,9 @@ public interface BudgetReview extends BizEntity {
 	 * @return the value of the '<em>Party Id</em>' reference.
 	 * @see #setPartyId(Party)
 	 * @see org.abchip.mimo.biz.accounting.budget.BudgetPackage#getBudgetReview_PartyId()
-	 * @model keys="partyId"
+	 * @model keys="partyId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Party getPartyId();
@@ -124,7 +126,9 @@ public interface BudgetReview extends BizEntity {
 	 * @return the value of the '<em>Budget Id</em>' reference.
 	 * @see #setBudgetId(Budget)
 	 * @see org.abchip.mimo.biz.accounting.budget.BudgetPackage#getBudgetReview_BudgetId()
-	 * @model keys="budgetId"
+	 * @model keys="budgetId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Budget getBudgetId();
@@ -150,7 +154,9 @@ public interface BudgetReview extends BizEntity {
 	 * @return the value of the '<em>Budget Review Result Type Id</em>' reference.
 	 * @see #setBudgetReviewResultTypeId(BudgetReviewResultType)
 	 * @see org.abchip.mimo.biz.accounting.budget.BudgetPackage#getBudgetReview_BudgetReviewResultTypeId()
-	 * @model keys="budgetReviewResultTypeId"
+	 * @model keys="budgetReviewResultTypeId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	BudgetReviewResultType getBudgetReviewResultTypeId();

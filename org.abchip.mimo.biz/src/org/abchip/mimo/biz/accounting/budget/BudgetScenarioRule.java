@@ -20,10 +20,10 @@ import org.abchip.mimo.biz.BizEntity;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.accounting.budget.BudgetScenarioRule#getAmountChange <em>Amount Change</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.budget.BudgetScenarioRule#getPercentageChange <em>Percentage Change</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.budget.BudgetScenarioRule#getBudgetScenarioId <em>Budget Scenario Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.budget.BudgetScenarioRule#getBudgetItemTypeId <em>Budget Item Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.budget.BudgetScenarioRule#getAmountChange <em>Amount Change</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.budget.BudgetScenarioRule#getPercentageChange <em>Percentage Change</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.accounting.budget.BudgetPackage#getBudgetScenarioRule()
@@ -94,7 +94,9 @@ public interface BudgetScenarioRule extends BizEntity {
 	 * @return the value of the '<em>Budget Scenario Id</em>' reference.
 	 * @see #setBudgetScenarioId(BudgetScenario)
 	 * @see org.abchip.mimo.biz.accounting.budget.BudgetPackage#getBudgetScenarioRule_BudgetScenarioId()
-	 * @model keys="budgetScenarioId"
+	 * @model keys="budgetScenarioId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	BudgetScenario getBudgetScenarioId();
@@ -120,7 +122,9 @@ public interface BudgetScenarioRule extends BizEntity {
 	 * @return the value of the '<em>Budget Item Type Id</em>' reference.
 	 * @see #setBudgetItemTypeId(BudgetItemType)
 	 * @see org.abchip.mimo.biz.accounting.budget.BudgetPackage#getBudgetScenarioRule_BudgetItemTypeId()
-	 * @model keys="budgetItemTypeId"
+	 * @model keys="budgetItemTypeId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	BudgetItemType getBudgetItemTypeId();

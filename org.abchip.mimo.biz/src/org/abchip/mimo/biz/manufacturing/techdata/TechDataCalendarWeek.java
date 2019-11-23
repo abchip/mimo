@@ -40,7 +40,7 @@ import org.abchip.mimo.biz.BizEntity;
  * </ul>
  *
  * @see org.abchip.mimo.biz.manufacturing.techdata.TechdataPackage#getTechDataCalendarWeek()
- * @model annotation="mimo-ent-frame formula='description'"
+ * @model annotation="mimo-ent-frame help='Used to defined the week definition disponibility for machine' title='Week definition' dictionary='ManufacturingEntityLabels' formula='description'"
  * @generated
  */
 public interface TechDataCalendarWeek extends BizEntity {
@@ -57,7 +57,6 @@ public interface TechDataCalendarWeek extends BizEntity {
 	 * @see org.abchip.mimo.biz.manufacturing.techdata.TechdataPackage#getTechDataCalendarWeek_CalendarWeekId()
 	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getCalendarWeekId();

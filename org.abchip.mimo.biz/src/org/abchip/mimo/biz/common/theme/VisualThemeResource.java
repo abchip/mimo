@@ -19,14 +19,14 @@ import org.abchip.mimo.biz.common.enum_.Enumeration;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.common.theme.VisualThemeResource#getSequenceId <em>Sequence Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.common.theme.VisualThemeResource#getResourceValue <em>Resource Value</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.common.theme.VisualThemeResource#getVisualThemeId <em>Visual Theme Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.common.theme.VisualThemeResource#getResourceTypeEnumId <em>Resource Type Enum Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.common.theme.VisualThemeResource#getSequenceId <em>Sequence Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.common.theme.VisualThemeResource#getResourceValue <em>Resource Value</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.common.theme.ThemePackage#getVisualThemeResource()
- * @model
+ * @model annotation="mimo-ent-frame help='The VisualThemeResource entity contains visual theme\n          resources. Each visual theme can have any number of resources.' title='Contains All Visual Theme Resources'"
  * @generated
  */
 public interface VisualThemeResource extends BizEntity {
@@ -41,7 +41,8 @@ public interface VisualThemeResource extends BizEntity {
 	 * @return the value of the '<em>Resource Value</em>' attribute.
 	 * @see #setResourceValue(String)
 	 * @see org.abchip.mimo.biz.common.theme.ThemePackage#getVisualThemeResource_ResourceValue()
-	 * @model annotation="mimo-ent-format type='value' length='255'"
+	 * @model annotation="mimo-ent-slot help='Contains the resource value'"
+	 *        annotation="mimo-ent-format type='value' length='255'"
 	 * @generated
 	 */
 	String getResourceValue();
@@ -68,8 +69,8 @@ public interface VisualThemeResource extends BizEntity {
 	 * @see #setSequenceId(String)
 	 * @see org.abchip.mimo.biz.common.theme.ThemePackage#getVisualThemeResource_SequenceId()
 	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true' help='Controls the loading order of duplicate resource types'"
 	 *        annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getSequenceId();
@@ -95,7 +96,9 @@ public interface VisualThemeResource extends BizEntity {
 	 * @return the value of the '<em>Visual Theme Id</em>' reference.
 	 * @see #setVisualThemeId(VisualTheme)
 	 * @see org.abchip.mimo.biz.common.theme.ThemePackage#getVisualThemeResource_VisualThemeId()
-	 * @model keys="visualThemeId"
+	 * @model keys="visualThemeId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	VisualTheme getVisualThemeId();
@@ -121,7 +124,9 @@ public interface VisualThemeResource extends BizEntity {
 	 * @return the value of the '<em>Resource Type Enum Id</em>' reference.
 	 * @see #setResourceTypeEnumId(Enumeration)
 	 * @see org.abchip.mimo.biz.common.theme.ThemePackage#getVisualThemeResource_ResourceTypeEnumId()
-	 * @model keys="enumId"
+	 * @model keys="enumId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Enumeration getResourceTypeEnumId();

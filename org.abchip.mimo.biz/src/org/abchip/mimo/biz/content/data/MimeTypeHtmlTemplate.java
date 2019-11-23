@@ -18,12 +18,12 @@ import org.abchip.mimo.biz.BizEntity;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.content.data.MimeTypeHtmlTemplate#getTemplateLocation <em>Template Location</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.data.MimeTypeHtmlTemplate#getMimeTypeId <em>Mime Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.content.data.MimeTypeHtmlTemplate#getTemplateLocation <em>Template Location</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.content.data.DataPackage#getMimeTypeHtmlTemplate()
- * @model
+ * @model annotation="mimo-ent-frame title='Mime Text Template' dictionary='ContentEntityLabels'"
  * @generated
  */
 public interface MimeTypeHtmlTemplate extends BizEntity {
@@ -38,7 +38,8 @@ public interface MimeTypeHtmlTemplate extends BizEntity {
 	 * @return the value of the '<em>Mime Type Id</em>' reference.
 	 * @see #setMimeTypeId(MimeType)
 	 * @see org.abchip.mimo.biz.content.data.DataPackage#getMimeTypeHtmlTemplate_MimeTypeId()
-	 * @model keys="mimeTypeId"
+	 * @model keys="mimeTypeId" required="true"
+	 *        annotation="mimo-ent-format type='id-vlong' length='255'"
 	 * @generated
 	 */
 	MimeType getMimeTypeId();

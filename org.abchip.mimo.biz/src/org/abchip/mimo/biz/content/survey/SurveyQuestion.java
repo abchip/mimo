@@ -25,12 +25,12 @@ import org.abchip.mimo.biz.common.geo.Geo;
  *   <li>{@link org.abchip.mimo.biz.content.survey.SurveyQuestion#getDescription <em>Description</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.survey.SurveyQuestion#getEnumTypeId <em>Enum Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.survey.SurveyQuestion#getFormatString <em>Format String</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.content.survey.SurveyQuestion#getGeoId <em>Geo Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.survey.SurveyQuestion#getHint <em>Hint</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.survey.SurveyQuestion#getQuestion <em>Question</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.content.survey.SurveyQuestion#getSurveyQuestionTypeId <em>Survey Question Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.survey.SurveyQuestion#getSurveyQuestionCategoryId <em>Survey Question Category Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.content.survey.SurveyQuestion#getGeoId <em>Geo Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.survey.SurveyQuestion#getSurveyQuestionOptions <em>Survey Question Options</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.content.survey.SurveyQuestion#getSurveyQuestionTypeId <em>Survey Question Type Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.content.survey.SurveyPackage#getSurveyQuestion()
@@ -128,6 +128,7 @@ public interface SurveyQuestion extends BizEntityTyped<SurveyQuestionType> {
 	 * @see #setGeoId(Geo)
 	 * @see org.abchip.mimo.biz.content.survey.SurveyPackage#getSurveyQuestion_GeoId()
 	 * @model keys="geoId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Geo getGeoId();
@@ -206,6 +207,7 @@ public interface SurveyQuestion extends BizEntityTyped<SurveyQuestionType> {
 	 * @see #setSurveyQuestionCategoryId(SurveyQuestionCategory)
 	 * @see org.abchip.mimo.biz.content.survey.SurveyPackage#getSurveyQuestion_SurveyQuestionCategoryId()
 	 * @model keys="surveyQuestionCategoryId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	SurveyQuestionCategory getSurveyQuestionCategoryId();
@@ -233,7 +235,6 @@ public interface SurveyQuestion extends BizEntityTyped<SurveyQuestionType> {
 	 * @see org.abchip.mimo.biz.content.survey.SurveyPackage#getSurveyQuestion_SurveyQuestionId()
 	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getSurveyQuestionId();
@@ -260,6 +261,7 @@ public interface SurveyQuestion extends BizEntityTyped<SurveyQuestionType> {
 	 * @see #setSurveyQuestionTypeId(SurveyQuestionType)
 	 * @see org.abchip.mimo.biz.content.survey.SurveyPackage#getSurveyQuestion_SurveyQuestionTypeId()
 	 * @model keys="surveyQuestionTypeId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	SurveyQuestionType getSurveyQuestionTypeId();
@@ -285,8 +287,7 @@ public interface SurveyQuestion extends BizEntityTyped<SurveyQuestionType> {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Survey Question Options</em>' attribute list.
 	 * @see org.abchip.mimo.biz.content.survey.SurveyPackage#getSurveyQuestion_SurveyQuestionOptions()
-	 * @model required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='SurveyQuestionOption'"
 	 * @generated

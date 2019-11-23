@@ -18,10 +18,10 @@ import org.abchip.mimo.biz.BizEntity;
  * The following features are supported:
  * </p>
  * <ul>
+ *   <li>{@link org.abchip.mimo.biz.party.agreement.AgreementTermAttribute#getAgreementTermId <em>Agreement Term Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.agreement.AgreementTermAttribute#getAttrName <em>Attr Name</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.agreement.AgreementTermAttribute#getAttrDescription <em>Attr Description</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.agreement.AgreementTermAttribute#getAttrValue <em>Attr Value</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.party.agreement.AgreementTermAttribute#getAgreementTermId <em>Agreement Term Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.party.agreement.AgreementPackage#getAgreementTermAttribute()
@@ -67,8 +67,8 @@ public interface AgreementTermAttribute extends BizEntity {
 	 * @see #setAttrName(String)
 	 * @see org.abchip.mimo.biz.party.agreement.AgreementPackage#getAgreementTermAttribute_AttrName()
 	 * @model required="true"
-	 *        annotation="mimo-ent-format type='id-long' length='60'"
 	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id-long' length='60'"
 	 * @generated
 	 */
 	String getAttrName();
@@ -120,7 +120,9 @@ public interface AgreementTermAttribute extends BizEntity {
 	 * @return the value of the '<em>Agreement Term Id</em>' reference.
 	 * @see #setAgreementTermId(AgreementTerm)
 	 * @see org.abchip.mimo.biz.party.agreement.AgreementPackage#getAgreementTermAttribute_AgreementTermId()
-	 * @model keys="agreementTermId"
+	 * @model keys="agreementTermId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	AgreementTerm getAgreementTermId();

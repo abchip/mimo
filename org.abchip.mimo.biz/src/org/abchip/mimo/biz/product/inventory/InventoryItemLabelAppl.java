@@ -18,14 +18,14 @@ import org.abchip.mimo.biz.BizEntity;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.product.inventory.InventoryItemLabelAppl#getSequenceNum <em>Sequence Num</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.inventory.InventoryItemLabelAppl#getInventoryItemId <em>Inventory Item Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.inventory.InventoryItemLabelAppl#getInventoryItemLabelTypeId <em>Inventory Item Label Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.inventory.InventoryItemLabelAppl#getInventoryItemLabelId <em>Inventory Item Label Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.inventory.InventoryItemLabelAppl#getSequenceNum <em>Sequence Num</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.product.inventory.InventoryPackage#getInventoryItemLabelAppl()
- * @model
+ * @model annotation="mimo-ent-frame title='Inventory Item Label Applicability' dictionary='ProductEntityLabels'"
  * @generated
  */
 public interface InventoryItemLabelAppl extends BizEntity {
@@ -66,7 +66,9 @@ public interface InventoryItemLabelAppl extends BizEntity {
 	 * @return the value of the '<em>Inventory Item Id</em>' reference.
 	 * @see #setInventoryItemId(InventoryItem)
 	 * @see org.abchip.mimo.biz.product.inventory.InventoryPackage#getInventoryItemLabelAppl_InventoryItemId()
-	 * @model keys="inventoryItemId"
+	 * @model keys="inventoryItemId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	InventoryItem getInventoryItemId();
@@ -92,7 +94,9 @@ public interface InventoryItemLabelAppl extends BizEntity {
 	 * @return the value of the '<em>Inventory Item Label Type Id</em>' reference.
 	 * @see #setInventoryItemLabelTypeId(InventoryItemLabelType)
 	 * @see org.abchip.mimo.biz.product.inventory.InventoryPackage#getInventoryItemLabelAppl_InventoryItemLabelTypeId()
-	 * @model keys="inventoryItemLabelTypeId"
+	 * @model keys="inventoryItemLabelTypeId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	InventoryItemLabelType getInventoryItemLabelTypeId();
@@ -119,6 +123,7 @@ public interface InventoryItemLabelAppl extends BizEntity {
 	 * @see #setInventoryItemLabelId(InventoryItemLabel)
 	 * @see org.abchip.mimo.biz.product.inventory.InventoryPackage#getInventoryItemLabelAppl_InventoryItemLabelId()
 	 * @model keys="inventoryItemLabelId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	InventoryItemLabel getInventoryItemLabelId();

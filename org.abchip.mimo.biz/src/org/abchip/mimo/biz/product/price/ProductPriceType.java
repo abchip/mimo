@@ -23,7 +23,7 @@ import org.abchip.mimo.biz.BizEntityType;
  * </ul>
  *
  * @see org.abchip.mimo.biz.product.price.PricePackage#getProductPriceType()
- * @model annotation="mimo-ent-frame formula='description'"
+ * @model annotation="mimo-ent-frame dictionary='ProductEntityLabels' formula='description'"
  * @generated
  */
 public interface ProductPriceType extends BizEntityType<ProductPrice> {
@@ -66,7 +66,6 @@ public interface ProductPriceType extends BizEntityType<ProductPrice> {
 	 * @see org.abchip.mimo.biz.product.price.PricePackage#getProductPriceType_ProductPriceTypeId()
 	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getProductPriceTypeId();

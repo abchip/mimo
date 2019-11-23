@@ -21,16 +21,16 @@ import org.abchip.mimo.biz.common.uom.Uom;
  * The following features are supported:
  * </p>
  * <ul>
+ *   <li>{@link org.abchip.mimo.biz.shipment.shipment.ShipmentPackage#getShipmentId <em>Shipment Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.shipment.shipment.ShipmentPackage#getShipmentPackageSeqId <em>Shipment Package Seq Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.shipment.shipment.ShipmentPackage#getBoxHeight <em>Box Height</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.shipment.shipment.ShipmentPackage#getBoxLength <em>Box Length</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.shipment.shipment.ShipmentPackage#getBoxWidth <em>Box Width</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.shipment.shipment.ShipmentPackage#getDateCreated <em>Date Created</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.shipment.shipment.ShipmentPackage#getInsuredValue <em>Insured Value</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.shipment.shipment.ShipmentPackage#getWeight <em>Weight</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.shipment.shipment.ShipmentPackage#getShipmentId <em>Shipment Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.shipment.shipment.ShipmentPackage#getShipmentBoxTypeId <em>Shipment Box Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.shipment.shipment.ShipmentPackage#getDimensionUomId <em>Dimension Uom Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.shipment.shipment.ShipmentPackage#getInsuredValue <em>Insured Value</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.shipment.shipment.ShipmentPackage#getShipmentBoxTypeId <em>Shipment Box Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.shipment.shipment.ShipmentPackage#getWeight <em>Weight</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.shipment.shipment.ShipmentPackage#getWeightUomId <em>Weight Uom Id</em>}</li>
  * </ul>
  *
@@ -50,7 +50,9 @@ public interface ShipmentPackage extends BizEntity {
 	 * @return the value of the '<em>Shipment Id</em>' reference.
 	 * @see #setShipmentId(Shipment)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipmentPackage_ShipmentId()
-	 * @model keys="shipmentId"
+	 * @model keys="shipmentId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Shipment getShipmentId();
@@ -77,8 +79,8 @@ public interface ShipmentPackage extends BizEntity {
 	 * @see #setShipmentPackageSeqId(String)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipmentPackage_ShipmentPackageSeqId()
 	 * @model required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	String getShipmentPackageSeqId();
@@ -104,7 +106,8 @@ public interface ShipmentPackage extends BizEntity {
 	 * @return the value of the '<em>Box Height</em>' attribute.
 	 * @see #setBoxHeight(BigDecimal)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipmentPackage_BoxHeight()
-	 * @model annotation="mimo-ent-format type='fixed-point' precision='18' scale='6'"
+	 * @model annotation="mimo-ent-slot help='This field store the height of package; if a shipmentBoxTypeId is specified then this overrides the dimension specified there; this field is meant to be used when there is no applicable ShipmentBoxType'"
+	 *        annotation="mimo-ent-format type='fixed-point' precision='18' scale='6'"
 	 * @generated
 	 */
 	BigDecimal getBoxHeight();
@@ -130,7 +133,8 @@ public interface ShipmentPackage extends BizEntity {
 	 * @return the value of the '<em>Box Length</em>' attribute.
 	 * @see #setBoxLength(BigDecimal)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipmentPackage_BoxLength()
-	 * @model annotation="mimo-ent-format type='fixed-point' precision='18' scale='6'"
+	 * @model annotation="mimo-ent-slot help='This field store the length of package; if a shipmentBoxTypeId is specified then this overrides the dimension specified there; this field is meant to be used when there is no applicable ShipmentBoxType'"
+	 *        annotation="mimo-ent-format type='fixed-point' precision='18' scale='6'"
 	 * @generated
 	 */
 	BigDecimal getBoxLength();
@@ -156,7 +160,8 @@ public interface ShipmentPackage extends BizEntity {
 	 * @return the value of the '<em>Box Width</em>' attribute.
 	 * @see #setBoxWidth(BigDecimal)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipmentPackage_BoxWidth()
-	 * @model annotation="mimo-ent-format type='fixed-point' precision='18' scale='6'"
+	 * @model annotation="mimo-ent-slot help='This field store the width of package; if a shipmentBoxTypeId is specified then this overrides the dimension specified there; this field is meant to be used when there is no applicable ShipmentBoxType'"
+	 *        annotation="mimo-ent-format type='fixed-point' precision='18' scale='6'"
 	 * @generated
 	 */
 	BigDecimal getBoxWidth();
@@ -209,6 +214,8 @@ public interface ShipmentPackage extends BizEntity {
 	 * @see #setDimensionUomId(Uom)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipmentPackage_DimensionUomId()
 	 * @model keys="uomId"
+	 *        annotation="mimo-ent-slot help='This field store the unit of measurement of dimension (length, width and height)'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Uom getDimensionUomId();
@@ -261,6 +268,7 @@ public interface ShipmentPackage extends BizEntity {
 	 * @see #setShipmentBoxTypeId(ShipmentBoxType)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipmentPackage_ShipmentBoxTypeId()
 	 * @model keys="shipmentBoxTypeId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ShipmentBoxType getShipmentBoxTypeId();
@@ -313,6 +321,7 @@ public interface ShipmentPackage extends BizEntity {
 	 * @see #setWeightUomId(Uom)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipmentPackage_WeightUomId()
 	 * @model keys="uomId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Uom getWeightUomId();

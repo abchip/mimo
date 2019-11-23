@@ -34,11 +34,11 @@ import org.abchip.mimo.biz.party.party.Party;
  *   <li>{@link org.abchip.mimo.biz.security.login.UserLogin#getLastCurrencyUom <em>Last Currency Uom</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.security.login.UserLogin#getLastLocale <em>Last Locale</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.security.login.UserLogin#getLastTimeZone <em>Last Time Zone</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.security.login.UserLogin#getPartyId <em>Party Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.security.login.UserLogin#getPasswordHint <em>Password Hint</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.security.login.UserLogin#isRequirePasswordChange <em>Require Password Change</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.security.login.UserLogin#getSuccessiveFailedLogins <em>Successive Failed Logins</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.security.login.UserLogin#getUserLdapDn <em>User Ldap Dn</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.security.login.UserLogin#getPartyId <em>Party Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.security.login.UserLogin#getUserLoginHistories <em>User Login Histories</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.security.login.UserLogin#getUserLoginPasswordHistories <em>User Login Password Histories</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.security.login.UserLogin#getUserPreferences <em>User Preferences</em>}</li>
@@ -164,7 +164,8 @@ public interface UserLogin extends BizEntity {
 	 * @return the value of the '<em>External Auth Id</em>' attribute.
 	 * @see #setExternalAuthId(String)
 	 * @see org.abchip.mimo.biz.security.login.LoginPackage#getUserLogin_ExternalAuthId()
-	 * @model annotation="mimo-ent-format type='id-vlong' length='255'"
+	 * @model annotation="mimo-ent-slot help='For use with external authentication; the userLdapDn should be replaced with this'"
+	 *        annotation="mimo-ent-format type='id-vlong' length='255'"
 	 * @generated
 	 */
 	String getExternalAuthId();
@@ -321,6 +322,7 @@ public interface UserLogin extends BizEntity {
 	 * @see #setPartyId(Party)
 	 * @see org.abchip.mimo.biz.security.login.LoginPackage#getUserLogin_PartyId()
 	 * @model keys="partyId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Party getPartyId();
@@ -424,7 +426,8 @@ public interface UserLogin extends BizEntity {
 	 * @return the value of the '<em>User Ldap Dn</em>' attribute.
 	 * @see #setUserLdapDn(String)
 	 * @see org.abchip.mimo.biz.security.login.LoginPackage#getUserLogin_UserLdapDn()
-	 * @model annotation="mimo-ent-format type='id-vlong' length='255'"
+	 * @model annotation="mimo-ent-slot help='The user\'s LDAP Distinguished Name - used for LDAP authentication'"
+	 *        annotation="mimo-ent-format type='id-vlong' length='255'"
 	 * @generated
 	 */
 	String getUserLdapDn();
@@ -452,7 +455,6 @@ public interface UserLogin extends BizEntity {
 	 * @see org.abchip.mimo.biz.security.login.LoginPackage#getUserLogin_UserLoginId()
 	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-format type='id-vlong' length='255'"
-	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getUserLoginId();
@@ -478,8 +480,7 @@ public interface UserLogin extends BizEntity {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>User Login Histories</em>' attribute list.
 	 * @see org.abchip.mimo.biz.security.login.LoginPackage#getUserLogin_UserLoginHistories()
-	 * @model required="true"
-	 *        annotation="mimo-ent-format type='id-vlong' length='255'"
+	 * @model annotation="mimo-ent-format type='id-vlong' length='255'"
 	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='UserLoginHistory'"
 	 * @generated
@@ -497,8 +498,7 @@ public interface UserLogin extends BizEntity {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>User Login Password Histories</em>' attribute list.
 	 * @see org.abchip.mimo.biz.security.login.LoginPackage#getUserLogin_UserLoginPasswordHistories()
-	 * @model required="true"
-	 *        annotation="mimo-ent-format type='id-vlong' length='255'"
+	 * @model annotation="mimo-ent-format type='id-vlong' length='255'"
 	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='UserLoginPasswordHistory'"
 	 * @generated
@@ -516,8 +516,7 @@ public interface UserLogin extends BizEntity {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>User Preferences</em>' attribute list.
 	 * @see org.abchip.mimo.biz.security.login.LoginPackage#getUserLogin_UserPreferences()
-	 * @model required="true"
-	 *        annotation="mimo-ent-format type='id-vlong' length='255'"
+	 * @model annotation="mimo-ent-format type='id-vlong' length='255'"
 	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='UserPreference'"
 	 * @generated
@@ -957,8 +956,7 @@ public interface UserLogin extends BizEntity {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model required="true"
-	 *        annotation="mimo-ent-format type='id-vlong' length='255'"
+	 * @model annotation="mimo-ent-format type='id-vlong' length='255'"
 	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='UserLoginSecurityQuestion' route='userLoginId'"
 	 * @generated

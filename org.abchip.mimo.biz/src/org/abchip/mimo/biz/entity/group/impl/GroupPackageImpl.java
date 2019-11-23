@@ -191,9 +191,6 @@ import org.abchip.mimo.biz.workeffort.timesheet.TimesheetPackage;
 import org.abchip.mimo.biz.workeffort.timesheet.impl.TimesheetPackageImpl;
 import org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage;
 import org.abchip.mimo.biz.workeffort.workeffort.impl.WorkeffortPackageImpl;
-import org.abchip.mimo.entity.EntityPackage;
-import org.eclipse.emf.common.util.URI;
-
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
@@ -683,7 +680,7 @@ public class GroupPackageImpl extends EPackageImpl implements GroupPackage {
 	 */
 	@Override
 	public EAttribute getEntityGroup_EntityGroupName() {
-		return (EAttribute)entityGroupEClass.getEStructuralFeatures().get(1);
+		return (EAttribute)entityGroupEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -693,7 +690,7 @@ public class GroupPackageImpl extends EPackageImpl implements GroupPackage {
 	 */
 	@Override
 	public EAttribute getEntityGroup_EntityGroupEntries() {
-		return (EAttribute)entityGroupEClass.getEStructuralFeatures().get(2);
+		return (EAttribute)entityGroupEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -713,7 +710,7 @@ public class GroupPackageImpl extends EPackageImpl implements GroupPackage {
 	 */
 	@Override
 	public EReference getEntityGroupEntry_EntityGroupId() {
-		return (EReference)entityGroupEntryEClass.getEStructuralFeatures().get(2);
+		return (EReference)entityGroupEntryEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -723,7 +720,7 @@ public class GroupPackageImpl extends EPackageImpl implements GroupPackage {
 	 */
 	@Override
 	public EAttribute getEntityGroupEntry_EntityOrPackage() {
-		return (EAttribute)entityGroupEntryEClass.getEStructuralFeatures().get(0);
+		return (EAttribute)entityGroupEntryEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -733,7 +730,7 @@ public class GroupPackageImpl extends EPackageImpl implements GroupPackage {
 	 */
 	@Override
 	public EAttribute getEntityGroupEntry_ApplEnumId() {
-		return (EAttribute)entityGroupEntryEClass.getEStructuralFeatures().get(1);
+		return (EAttribute)entityGroupEntryEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -767,13 +764,13 @@ public class GroupPackageImpl extends EPackageImpl implements GroupPackage {
 		// Create classes and their features
 		entityGroupEClass = createEClass(ENTITY_GROUP);
 		createEAttribute(entityGroupEClass, ENTITY_GROUP__ENTITY_GROUP_ID);
-		createEAttribute(entityGroupEClass, ENTITY_GROUP__ENTITY_GROUP_NAME);
 		createEAttribute(entityGroupEClass, ENTITY_GROUP__ENTITY_GROUP_ENTRIES);
+		createEAttribute(entityGroupEClass, ENTITY_GROUP__ENTITY_GROUP_NAME);
 
 		entityGroupEntryEClass = createEClass(ENTITY_GROUP_ENTRY);
+		createEReference(entityGroupEntryEClass, ENTITY_GROUP_ENTRY__ENTITY_GROUP_ID);
 		createEAttribute(entityGroupEntryEClass, ENTITY_GROUP_ENTRY__ENTITY_OR_PACKAGE);
 		createEAttribute(entityGroupEntryEClass, ENTITY_GROUP_ENTRY__APPL_ENUM_ID);
-		createEReference(entityGroupEntryEClass, ENTITY_GROUP_ENTRY__ENTITY_GROUP_ID);
 	}
 
 	/**
@@ -813,24 +810,48 @@ public class GroupPackageImpl extends EPackageImpl implements GroupPackage {
 		// Initialize classes and features; add operations and parameters
 		initEClass(entityGroupEClass, EntityGroup.class, "EntityGroup", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getEntityGroup_EntityGroupId(), ecorePackage.getEString(), "entityGroupId", null, 1, 1, EntityGroup.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getEntityGroup_EntityGroupEntries(), ecorePackage.getEString(), "entityGroupEntries", null, 0, -1, EntityGroup.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getEntityGroup_EntityGroupName(), ecorePackage.getEString(), "entityGroupName", null, 0, 1, EntityGroup.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getEntityGroup_EntityGroupEntries(), ecorePackage.getEString(), "entityGroupEntries", null, 1, -1, EntityGroup.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		addEOperation(entityGroupEClass, ecorePackage.getEString(), "entitySyncIncludeGroups", 1, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(entityGroupEClass, ecorePackage.getEString(), "entitySyncIncludeGroups", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(entityGroupEntryEClass, EntityGroupEntry.class, "EntityGroupEntry", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getEntityGroupEntry_EntityGroupId(), this.getEntityGroup(), null, "entityGroupId", null, 1, 1, EntityGroupEntry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getEntityGroupEntry_EntityGroupId().getEKeys().add(this.getEntityGroup_EntityGroupId());
 		initEAttribute(getEntityGroupEntry_EntityOrPackage(), ecorePackage.getEString(), "entityOrPackage", null, 1, 1, EntityGroupEntry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getEntityGroupEntry_ApplEnumId(), ecorePackage.getEString(), "applEnumId", null, 0, 1, EntityGroupEntry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getEntityGroupEntry_EntityGroupId(), this.getEntityGroup(), null, "entityGroupId", null, 0, 1, EntityGroupEntry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		getEntityGroupEntry_EntityGroupId().getEKeys().add(this.getEntityGroup_EntityGroupId());
 
 		// Create annotations
+		// mimo-ent-frame
+		createMimoentframeAnnotations();
 		// mimo-ent-format
 		createMimoentformatAnnotations();
 		// mimo-ent-slot
 		createMimoentslotAnnotations();
 		// mimo-ent-domain
 		createMimoentdomainAnnotations();
+	}
+
+	/**
+	 * Initializes the annotations for <b>mimo-ent-frame</b>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void createMimoentframeAnnotations() {
+		String source = "mimo-ent-frame";
+		addAnnotation
+		  (entityGroupEClass,
+		   source,
+		   new String[] {
+			   "title", "Entity Grouping"
+		   });
+		addAnnotation
+		  (entityGroupEntryEClass,
+		   source,
+		   new String[] {
+			   "title", "Entity Grouping"
+		   });
 	}
 
 	/**
@@ -856,6 +877,13 @@ public class GroupPackageImpl extends EPackageImpl implements GroupPackage {
 			   "length", "20"
 		   });
 		addAnnotation
+		  (getEntityGroup_EntityGroupEntries(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
 		  (getEntityGroup_EntityGroupName(),
 		   source,
 		   new String[] {
@@ -863,7 +891,7 @@ public class GroupPackageImpl extends EPackageImpl implements GroupPackage {
 			   "length", "100"
 		   });
 		addAnnotation
-		  (getEntityGroup_EntityGroupEntries(),
+		  (getEntityGroupEntry_EntityGroupId(),
 		   source,
 		   new String[] {
 			   "type", "id",
@@ -900,16 +928,16 @@ public class GroupPackageImpl extends EPackageImpl implements GroupPackage {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (getEntityGroup_EntityGroupId(),
-		   source,
-		   new String[] {
-			   "key", "true"
-		   });
-		addAnnotation
 		  (getEntityGroup_EntityGroupEntries(),
 		   source,
 		   new String[] {
 			   "derived", "true"
+		   });
+		addAnnotation
+		  (getEntityGroupEntry_EntityGroupId(),
+		   source,
+		   new String[] {
+			   "key", "true"
 		   });
 		addAnnotation
 		  (getEntityGroupEntry_EntityOrPackage(),
@@ -933,18 +961,12 @@ public class GroupPackageImpl extends EPackageImpl implements GroupPackage {
 		   new String[] {
 			   "frame", "EntitySyncIncludeGroup",
 			   "route", "entityGroupId"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
 		  (getEntityGroup_EntityGroupEntries(),
 		   source,
 		   new String[] {
 			   "frame", "EntityGroupEntry"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 	}
 

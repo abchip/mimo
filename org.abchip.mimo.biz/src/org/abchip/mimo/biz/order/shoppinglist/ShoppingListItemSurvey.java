@@ -19,13 +19,13 @@ import org.abchip.mimo.biz.content.survey.SurveyResponse;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.order.shoppinglist.ShoppingListItemSurvey#getShoppingListItemSeqId <em>Shopping List Item Seq Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.shoppinglist.ShoppingListItemSurvey#getShoppingListId <em>Shopping List Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.shoppinglist.ShoppingListItemSurvey#getSurveyResponseId <em>Survey Response Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.shoppinglist.ShoppingListItemSurvey#getShoppingListItemSeqId <em>Shopping List Item Seq Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.order.shoppinglist.ShoppinglistPackage#getShoppingListItemSurvey()
- * @model
+ * @model annotation="mimo-ent-frame title='Shopping List Item'"
  * @generated
  */
 public interface ShoppingListItemSurvey extends BizEntity {
@@ -40,7 +40,9 @@ public interface ShoppingListItemSurvey extends BizEntity {
 	 * @return the value of the '<em>Shopping List Id</em>' reference.
 	 * @see #setShoppingListId(ShoppingList)
 	 * @see org.abchip.mimo.biz.order.shoppinglist.ShoppinglistPackage#getShoppingListItemSurvey_ShoppingListId()
-	 * @model keys="shoppingListId"
+	 * @model keys="shoppingListId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ShoppingList getShoppingListId();
@@ -67,8 +69,8 @@ public interface ShoppingListItemSurvey extends BizEntity {
 	 * @see #setShoppingListItemSeqId(String)
 	 * @see org.abchip.mimo.biz.order.shoppinglist.ShoppinglistPackage#getShoppingListItemSurvey_ShoppingListItemSeqId()
 	 * @model required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	String getShoppingListItemSeqId();
@@ -94,7 +96,9 @@ public interface ShoppingListItemSurvey extends BizEntity {
 	 * @return the value of the '<em>Survey Response Id</em>' reference.
 	 * @see #setSurveyResponseId(SurveyResponse)
 	 * @see org.abchip.mimo.biz.order.shoppinglist.ShoppinglistPackage#getShoppingListItemSurvey_SurveyResponseId()
-	 * @model keys="surveyResponseId"
+	 * @model keys="surveyResponseId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	SurveyResponse getSurveyResponseId();

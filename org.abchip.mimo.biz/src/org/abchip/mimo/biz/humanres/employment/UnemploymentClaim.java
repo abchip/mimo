@@ -28,9 +28,9 @@ import org.abchip.mimo.biz.common.status.StatusItem;
  *   <li>{@link org.abchip.mimo.biz.humanres.employment.UnemploymentClaim#getPartyIdTo <em>Party Id To</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.employment.UnemploymentClaim#getRoleTypeIdFrom <em>Role Type Id From</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.employment.UnemploymentClaim#getRoleTypeIdTo <em>Role Type Id To</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.humanres.employment.UnemploymentClaim#getStatusId <em>Status Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.employment.UnemploymentClaim#getThruDate <em>Thru Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.employment.UnemploymentClaim#getUnemploymentClaimDate <em>Unemployment Claim Date</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.humanres.employment.UnemploymentClaim#getStatusId <em>Status Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.humanres.employment.EmploymentPackage#getUnemploymentClaim()
@@ -206,6 +206,7 @@ public interface UnemploymentClaim extends BizEntity {
 	 * @see #setStatusId(StatusItem)
 	 * @see org.abchip.mimo.biz.humanres.employment.EmploymentPackage#getUnemploymentClaim_StatusId()
 	 * @model keys="statusId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	StatusItem getStatusId();
@@ -285,7 +286,6 @@ public interface UnemploymentClaim extends BizEntity {
 	 * @see org.abchip.mimo.biz.humanres.employment.EmploymentPackage#getUnemploymentClaim_UnemploymentClaimId()
 	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getUnemploymentClaimId();

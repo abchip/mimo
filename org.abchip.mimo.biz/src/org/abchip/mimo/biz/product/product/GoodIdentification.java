@@ -18,13 +18,13 @@ import org.abchip.mimo.biz.BizEntityTyped;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.product.product.GoodIdentification#getIdValue <em>Id Value</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.GoodIdentification#getGoodIdentificationTypeId <em>Good Identification Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.GoodIdentification#getProductId <em>Product Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.product.GoodIdentification#getIdValue <em>Id Value</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.product.product.ProductPackage#getGoodIdentification()
- * @model
+ * @model annotation="mimo-ent-frame dictionary='ProductEntityLabels'"
  * @generated
  */
 public interface GoodIdentification extends BizEntityTyped<GoodIdentificationType> {
@@ -65,7 +65,9 @@ public interface GoodIdentification extends BizEntityTyped<GoodIdentificationTyp
 	 * @return the value of the '<em>Good Identification Type Id</em>' reference.
 	 * @see #setGoodIdentificationTypeId(GoodIdentificationType)
 	 * @see org.abchip.mimo.biz.product.product.ProductPackage#getGoodIdentification_GoodIdentificationTypeId()
-	 * @model keys="goodIdentificationTypeId"
+	 * @model keys="goodIdentificationTypeId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	GoodIdentificationType getGoodIdentificationTypeId();
@@ -91,7 +93,9 @@ public interface GoodIdentification extends BizEntityTyped<GoodIdentificationTyp
 	 * @return the value of the '<em>Product Id</em>' reference.
 	 * @see #setProductId(Product)
 	 * @see org.abchip.mimo.biz.product.product.ProductPackage#getGoodIdentification_ProductId()
-	 * @model keys="productId"
+	 * @model keys="productId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Product getProductId();

@@ -23,8 +23,8 @@ import org.eclipse.emf.ecore.EClass;
  *   <li>{@link org.abchip.mimo.biz.product.config.impl.ConfigOptionProductOptionImpl#getConfigId <em>Config Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.config.impl.ConfigOptionProductOptionImpl#getConfigItemId <em>Config Item Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.config.impl.ConfigOptionProductOptionImpl#getConfigOptionId <em>Config Option Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.config.impl.ConfigOptionProductOptionImpl#getSequenceNum <em>Sequence Num</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.config.impl.ConfigOptionProductOptionImpl#getProductId <em>Product Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.config.impl.ConfigOptionProductOptionImpl#getSequenceNum <em>Sequence Num</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.config.impl.ConfigOptionProductOptionImpl#getDescription <em>Description</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.config.impl.ConfigOptionProductOptionImpl#getProductOptionId <em>Product Option Id</em>}</li>
  * </ul>

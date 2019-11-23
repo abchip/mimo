@@ -22,15 +22,15 @@ import org.abchip.mimo.biz.product.product.ProductContentType;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.product.promo.ProductPromoContent#getFromDate <em>From Date</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.promo.ProductPromoContent#getThruDate <em>Thru Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.promo.ProductPromoContent#getProductPromoId <em>Product Promo Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.promo.ProductPromoContent#getContentId <em>Content Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.promo.ProductPromoContent#getProductPromoContentTypeId <em>Product Promo Content Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.promo.ProductPromoContent#getFromDate <em>From Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.promo.ProductPromoContent#getThruDate <em>Thru Date</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.product.promo.PromoPackage#getProductPromoContent()
- * @model
+ * @model annotation="mimo-ent-frame dictionary='ProductEntityLabels'"
  * @generated
  */
 public interface ProductPromoContent extends BizEntity {
@@ -45,7 +45,9 @@ public interface ProductPromoContent extends BizEntity {
 	 * @return the value of the '<em>Content Id</em>' reference.
 	 * @see #setContentId(Content)
 	 * @see org.abchip.mimo.biz.product.promo.PromoPackage#getProductPromoContent_ContentId()
-	 * @model keys="contentId"
+	 * @model keys="contentId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Content getContentId();
@@ -72,8 +74,8 @@ public interface ProductPromoContent extends BizEntity {
 	 * @see #setFromDate(Date)
 	 * @see org.abchip.mimo.biz.product.promo.PromoPackage#getProductPromoContent_FromDate()
 	 * @model required="true"
-	 *        annotation="mimo-ent-format type='date-time'"
 	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getFromDate();
@@ -125,7 +127,9 @@ public interface ProductPromoContent extends BizEntity {
 	 * @return the value of the '<em>Product Promo Id</em>' reference.
 	 * @see #setProductPromoId(ProductPromo)
 	 * @see org.abchip.mimo.biz.product.promo.PromoPackage#getProductPromoContent_ProductPromoId()
-	 * @model keys="productPromoId"
+	 * @model keys="productPromoId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ProductPromo getProductPromoId();
@@ -151,7 +155,9 @@ public interface ProductPromoContent extends BizEntity {
 	 * @return the value of the '<em>Product Promo Content Type Id</em>' reference.
 	 * @see #setProductPromoContentTypeId(ProductContentType)
 	 * @see org.abchip.mimo.biz.product.promo.PromoPackage#getProductPromoContent_ProductPromoContentTypeId()
-	 * @model keys="productContentTypeId"
+	 * @model keys="productContentTypeId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ProductContentType getProductPromoContentTypeId();

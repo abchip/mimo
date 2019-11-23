@@ -95,6 +95,7 @@ public interface WebAnalyticsType extends BizEntity {
 	 * @see #setParentTypeId(WebAnalyticsType)
 	 * @see org.abchip.mimo.biz.content.website.WebsitePackage#getWebAnalyticsType_ParentTypeId()
 	 * @model keys="webAnalyticsTypeId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	WebAnalyticsType getParentTypeId();
@@ -122,8 +123,7 @@ public interface WebAnalyticsType extends BizEntity {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='WebAnalyticsConfig' route='webAnalyticsTypeId'"
 	 * @generated
@@ -143,7 +143,6 @@ public interface WebAnalyticsType extends BizEntity {
 	 * @see org.abchip.mimo.biz.content.website.WebsitePackage#getWebAnalyticsType_WebAnalyticsTypeId()
 	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getWebAnalyticsTypeId();

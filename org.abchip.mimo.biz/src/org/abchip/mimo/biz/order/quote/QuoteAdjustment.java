@@ -31,6 +31,7 @@ import org.abchip.mimo.biz.security.login.UserLogin;
  *   <li>{@link org.abchip.mimo.biz.order.quote.QuoteAdjustment#getAmount <em>Amount</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.quote.QuoteAdjustment#getComments <em>Comments</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.quote.QuoteAdjustment#getCorrespondingProductId <em>Corresponding Product Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.quote.QuoteAdjustment#getCreatedByUserLogin <em>Created By User Login</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.quote.QuoteAdjustment#getCreatedDate <em>Created Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.quote.QuoteAdjustment#getCustomerReferenceId <em>Customer Reference Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.quote.QuoteAdjustment#getDescription <em>Description</em>}</li>
@@ -39,25 +40,24 @@ import org.abchip.mimo.biz.security.login.UserLogin;
  *   <li>{@link org.abchip.mimo.biz.order.quote.QuoteAdjustment#isIncludeInTax <em>Include In Tax</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.quote.QuoteAdjustment#getLastModifiedByUserLogin <em>Last Modified By User Login</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.quote.QuoteAdjustment#getLastModifiedDate <em>Last Modified Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.quote.QuoteAdjustment#getOverrideGlAccountId <em>Override Gl Account Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.quote.QuoteAdjustment#getPrimaryGeoId <em>Primary Geo Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.quote.QuoteAdjustment#getProductFeatureId <em>Product Feature Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.quote.QuoteAdjustment#getProductPromoActionSeqId <em>Product Promo Action Seq Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.quote.QuoteAdjustment#getProductPromoId <em>Product Promo Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.quote.QuoteAdjustment#getProductPromoRuleId <em>Product Promo Rule Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.quote.QuoteAdjustment#getQuoteAdjustmentTypeId <em>Quote Adjustment Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.quote.QuoteAdjustment#getQuoteId <em>Quote Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.quote.QuoteAdjustment#getQuoteItemSeqId <em>Quote Item Seq Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.quote.QuoteAdjustment#getSecondaryGeoId <em>Secondary Geo Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.quote.QuoteAdjustment#getSourcePercentage <em>Source Percentage</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.quote.QuoteAdjustment#getSourceReferenceId <em>Source Reference Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.quote.QuoteAdjustment#getTaxAuthGeoId <em>Tax Auth Geo Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.quote.QuoteAdjustment#getTaxAuthPartyId <em>Tax Auth Party Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.quote.QuoteAdjustment#getQuoteAdjustmentTypeId <em>Quote Adjustment Type Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.quote.QuoteAdjustment#getQuoteId <em>Quote Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.quote.QuoteAdjustment#getCreatedByUserLogin <em>Created By User Login</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.quote.QuoteAdjustment#getProductPromoId <em>Product Promo Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.quote.QuoteAdjustment#getPrimaryGeoId <em>Primary Geo Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.quote.QuoteAdjustment#getSecondaryGeoId <em>Secondary Geo Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.quote.QuoteAdjustment#getOverrideGlAccountId <em>Override Gl Account Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.order.quote.QuotePackage#getQuoteAdjustment()
- * @model annotation="mimo-ent-frame formula='description'"
+ * @model annotation="mimo-ent-frame help='Note that both includeInTax and includeInShipping should default to true, except in the case where this adjustment is a tax or shipping adjustment then should be ignored.' formula='description'"
  * @generated
  */
 public interface QuoteAdjustment extends BizEntity {
@@ -151,6 +151,7 @@ public interface QuoteAdjustment extends BizEntity {
 	 * @see #setCreatedByUserLogin(UserLogin)
 	 * @see org.abchip.mimo.biz.order.quote.QuotePackage#getQuoteAdjustment_CreatedByUserLogin()
 	 * @model keys="userLoginId"
+	 *        annotation="mimo-ent-format type='id-vlong' length='255'"
 	 * @generated
 	 */
 	UserLogin getCreatedByUserLogin();
@@ -385,6 +386,7 @@ public interface QuoteAdjustment extends BizEntity {
 	 * @see #setOverrideGlAccountId(GlAccount)
 	 * @see org.abchip.mimo.biz.order.quote.QuotePackage#getQuoteAdjustment_OverrideGlAccountId()
 	 * @model keys="glAccountId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	GlAccount getOverrideGlAccountId();
@@ -411,6 +413,7 @@ public interface QuoteAdjustment extends BizEntity {
 	 * @see #setPrimaryGeoId(Geo)
 	 * @see org.abchip.mimo.biz.order.quote.QuotePackage#getQuoteAdjustment_PrimaryGeoId()
 	 * @model keys="geoId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Geo getPrimaryGeoId();
@@ -489,6 +492,7 @@ public interface QuoteAdjustment extends BizEntity {
 	 * @see #setProductPromoId(ProductPromo)
 	 * @see org.abchip.mimo.biz.order.quote.QuotePackage#getQuoteAdjustment_ProductPromoId()
 	 * @model keys="productPromoId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ProductPromo getProductPromoId();
@@ -542,7 +546,6 @@ public interface QuoteAdjustment extends BizEntity {
 	 * @see org.abchip.mimo.biz.order.quote.QuotePackage#getQuoteAdjustment_QuoteAdjustmentId()
 	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getQuoteAdjustmentId();
@@ -569,6 +572,7 @@ public interface QuoteAdjustment extends BizEntity {
 	 * @see #setQuoteAdjustmentTypeId(OrderAdjustmentType)
 	 * @see org.abchip.mimo.biz.order.quote.QuotePackage#getQuoteAdjustment_QuoteAdjustmentTypeId()
 	 * @model keys="orderAdjustmentTypeId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	OrderAdjustmentType getQuoteAdjustmentTypeId();
@@ -595,6 +599,7 @@ public interface QuoteAdjustment extends BizEntity {
 	 * @see #setQuoteId(Quote)
 	 * @see org.abchip.mimo.biz.order.quote.QuotePackage#getQuoteAdjustment_QuoteId()
 	 * @model keys="quoteId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Quote getQuoteId();
@@ -647,6 +652,7 @@ public interface QuoteAdjustment extends BizEntity {
 	 * @see #setSecondaryGeoId(Geo)
 	 * @see org.abchip.mimo.biz.order.quote.QuotePackage#getQuoteAdjustment_SecondaryGeoId()
 	 * @model keys="geoId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Geo getSecondaryGeoId();

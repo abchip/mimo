@@ -21,10 +21,10 @@ import org.abchip.mimo.biz.product.price.ProductPriceRule;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.marketing.campaign.MarketingCampaignPrice#getFromDate <em>From Date</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.marketing.campaign.MarketingCampaignPrice#getThruDate <em>Thru Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.marketing.campaign.MarketingCampaignPrice#getMarketingCampaignId <em>Marketing Campaign Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.marketing.campaign.MarketingCampaignPrice#getProductPriceRuleId <em>Product Price Rule Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.marketing.campaign.MarketingCampaignPrice#getFromDate <em>From Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.marketing.campaign.MarketingCampaignPrice#getThruDate <em>Thru Date</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.marketing.campaign.CampaignPackage#getMarketingCampaignPrice()
@@ -44,8 +44,8 @@ public interface MarketingCampaignPrice extends BizEntity {
 	 * @see #setFromDate(Date)
 	 * @see org.abchip.mimo.biz.marketing.campaign.CampaignPackage#getMarketingCampaignPrice_FromDate()
 	 * @model required="true"
-	 *        annotation="mimo-ent-format type='date-time'"
 	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getFromDate();
@@ -71,7 +71,9 @@ public interface MarketingCampaignPrice extends BizEntity {
 	 * @return the value of the '<em>Marketing Campaign Id</em>' reference.
 	 * @see #setMarketingCampaignId(MarketingCampaign)
 	 * @see org.abchip.mimo.biz.marketing.campaign.CampaignPackage#getMarketingCampaignPrice_MarketingCampaignId()
-	 * @model keys="marketingCampaignId"
+	 * @model keys="marketingCampaignId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	MarketingCampaign getMarketingCampaignId();
@@ -97,7 +99,9 @@ public interface MarketingCampaignPrice extends BizEntity {
 	 * @return the value of the '<em>Product Price Rule Id</em>' reference.
 	 * @see #setProductPriceRuleId(ProductPriceRule)
 	 * @see org.abchip.mimo.biz.marketing.campaign.CampaignPackage#getMarketingCampaignPrice_ProductPriceRuleId()
-	 * @model keys="productPriceRuleId"
+	 * @model keys="productPriceRuleId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ProductPriceRule getProductPriceRuleId();

@@ -27,10 +27,10 @@ import org.eclipse.emf.ecore.EClass;
  *   <li>{@link org.abchip.mimo.biz.common.email.impl.EmailTemplateSettingImpl#getCcAddress <em>Cc Address</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.common.email.impl.EmailTemplateSettingImpl#getContentType <em>Content Type</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.common.email.impl.EmailTemplateSettingImpl#getDescription <em>Description</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.common.email.impl.EmailTemplateSettingImpl#getEmailType <em>Email Type</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.common.email.impl.EmailTemplateSettingImpl#getFromAddress <em>From Address</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.common.email.impl.EmailTemplateSettingImpl#getSubject <em>Subject</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.common.email.impl.EmailTemplateSettingImpl#getXslfoAttachScreenLocation <em>Xslfo Attach Screen Location</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.common.email.impl.EmailTemplateSettingImpl#getEmailType <em>Email Type</em>}</li>
  * </ul>
  *
  * @generated

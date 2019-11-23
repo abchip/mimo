@@ -26,7 +26,7 @@ import org.abchip.mimo.biz.party.party.Party;
  * </ul>
  *
  * @see org.abchip.mimo.biz.accounting.finaccount.FinaccountPackage#getFinAccountTypeGlAccount()
- * @model
+ * @model annotation="mimo-ent-frame title='Financial Account Type GL Account'"
  * @generated
  */
 public interface FinAccountTypeGlAccount extends BizEntity {
@@ -42,6 +42,7 @@ public interface FinAccountTypeGlAccount extends BizEntity {
 	 * @see #setGlAccountId(GlAccount)
 	 * @see org.abchip.mimo.biz.accounting.finaccount.FinaccountPackage#getFinAccountTypeGlAccount_GlAccountId()
 	 * @model keys="glAccountId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	GlAccount getGlAccountId();
@@ -67,7 +68,9 @@ public interface FinAccountTypeGlAccount extends BizEntity {
 	 * @return the value of the '<em>Organization Party Id</em>' reference.
 	 * @see #setOrganizationPartyId(Party)
 	 * @see org.abchip.mimo.biz.accounting.finaccount.FinaccountPackage#getFinAccountTypeGlAccount_OrganizationPartyId()
-	 * @model keys="partyId"
+	 * @model keys="partyId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Party getOrganizationPartyId();
@@ -93,7 +96,9 @@ public interface FinAccountTypeGlAccount extends BizEntity {
 	 * @return the value of the '<em>Fin Account Type Id</em>' reference.
 	 * @see #setFinAccountTypeId(FinAccountType)
 	 * @see org.abchip.mimo.biz.accounting.finaccount.FinaccountPackage#getFinAccountTypeGlAccount_FinAccountTypeId()
-	 * @model keys="finAccountTypeId"
+	 * @model keys="finAccountTypeId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	FinAccountType getFinAccountTypeId();

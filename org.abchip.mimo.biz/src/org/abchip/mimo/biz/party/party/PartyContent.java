@@ -21,15 +21,15 @@ import org.abchip.mimo.biz.content.content.Content;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.party.party.PartyContent#getFromDate <em>From Date</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.party.party.PartyContent#getThruDate <em>Thru Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.party.PartyContent#getPartyId <em>Party Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.party.PartyContent#getContentId <em>Content Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.party.PartyContent#getPartyContentTypeId <em>Party Content Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.party.party.PartyContent#getFromDate <em>From Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.party.party.PartyContent#getThruDate <em>Thru Date</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.party.party.PartyPackage#getPartyContent()
- * @model
+ * @model annotation="mimo-ent-frame title='Party Data Object'"
  * @generated
  */
 public interface PartyContent extends BizEntityTyped<PartyContentType> {
@@ -44,7 +44,9 @@ public interface PartyContent extends BizEntityTyped<PartyContentType> {
 	 * @return the value of the '<em>Content Id</em>' reference.
 	 * @see #setContentId(Content)
 	 * @see org.abchip.mimo.biz.party.party.PartyPackage#getPartyContent_ContentId()
-	 * @model keys="contentId"
+	 * @model keys="contentId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Content getContentId();
@@ -71,8 +73,8 @@ public interface PartyContent extends BizEntityTyped<PartyContentType> {
 	 * @see #setFromDate(Date)
 	 * @see org.abchip.mimo.biz.party.party.PartyPackage#getPartyContent_FromDate()
 	 * @model required="true"
-	 *        annotation="mimo-ent-format type='date-time'"
 	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getFromDate();
@@ -124,7 +126,9 @@ public interface PartyContent extends BizEntityTyped<PartyContentType> {
 	 * @return the value of the '<em>Party Id</em>' reference.
 	 * @see #setPartyId(Party)
 	 * @see org.abchip.mimo.biz.party.party.PartyPackage#getPartyContent_PartyId()
-	 * @model keys="partyId"
+	 * @model keys="partyId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Party getPartyId();
@@ -150,7 +154,9 @@ public interface PartyContent extends BizEntityTyped<PartyContentType> {
 	 * @return the value of the '<em>Party Content Type Id</em>' reference.
 	 * @see #setPartyContentTypeId(PartyContentType)
 	 * @see org.abchip.mimo.biz.party.party.PartyPackage#getPartyContent_PartyContentTypeId()
-	 * @model keys="partyContentTypeId"
+	 * @model keys="partyContentTypeId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	PartyContentType getPartyContentTypeId();

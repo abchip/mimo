@@ -21,9 +21,9 @@ import org.eclipse.emf.ecore.EClass;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.GiftCardImpl#getCardNumber <em>Card Number</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.GiftCardImpl#getContactMechId <em>Contact Mech Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.GiftCardImpl#getExpireDate <em>Expire Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.GiftCardImpl#getPinNumber <em>Pin Number</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.GiftCardImpl#getContactMechId <em>Contact Mech Id</em>}</li>
  * </ul>
  *
  * @generated

@@ -191,9 +191,6 @@ import org.abchip.mimo.biz.workeffort.timesheet.TimesheetPackage;
 import org.abchip.mimo.biz.workeffort.timesheet.impl.TimesheetPackageImpl;
 import org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage;
 import org.abchip.mimo.biz.workeffort.workeffort.impl.WorkeffortPackageImpl;
-import org.abchip.mimo.entity.EntityPackage;
-import org.eclipse.emf.common.util.URI;
-
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EGenericType;
@@ -694,7 +691,7 @@ public class MethodPackageImpl extends EPackageImpl implements MethodPackage {
 	 */
 	@Override
 	public EReference getCustomMethod_CustomMethodTypeId() {
-		return (EReference)customMethodEClass.getEStructuralFeatures().get(3);
+		return (EReference)customMethodEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -704,7 +701,7 @@ public class MethodPackageImpl extends EPackageImpl implements MethodPackage {
 	 */
 	@Override
 	public EAttribute getCustomMethod_Description() {
-		return (EAttribute)customMethodEClass.getEStructuralFeatures().get(2);
+		return (EAttribute)customMethodEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -799,8 +796,8 @@ public class MethodPackageImpl extends EPackageImpl implements MethodPackage {
 		customMethodEClass = createEClass(CUSTOM_METHOD);
 		createEAttribute(customMethodEClass, CUSTOM_METHOD__CUSTOM_METHOD_ID);
 		createEAttribute(customMethodEClass, CUSTOM_METHOD__CUSTOM_METHOD_NAME);
-		createEAttribute(customMethodEClass, CUSTOM_METHOD__DESCRIPTION);
 		createEReference(customMethodEClass, CUSTOM_METHOD__CUSTOM_METHOD_TYPE_ID);
+		createEAttribute(customMethodEClass, CUSTOM_METHOD__DESCRIPTION);
 		createEAttribute(customMethodEClass, CUSTOM_METHOD__FIXED_ASSET_DEP_METHODS);
 
 		customMethodTypeEClass = createEClass(CUSTOM_METHOD_TYPE);
@@ -854,10 +851,10 @@ public class MethodPackageImpl extends EPackageImpl implements MethodPackage {
 		initEClass(customMethodEClass, CustomMethod.class, "CustomMethod", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getCustomMethod_CustomMethodId(), ecorePackage.getEString(), "customMethodId", null, 1, 1, CustomMethod.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getCustomMethod_CustomMethodName(), ecorePackage.getEString(), "customMethodName", null, 0, 1, CustomMethod.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getCustomMethod_Description(), ecorePackage.getEString(), "description", null, 0, 1, CustomMethod.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getCustomMethod_CustomMethodTypeId(), this.getCustomMethodType(), null, "customMethodTypeId", null, 0, 1, CustomMethod.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getCustomMethod_CustomMethodTypeId().getEKeys().add(this.getCustomMethodType_CustomMethodTypeId());
-		initEAttribute(getCustomMethod_FixedAssetDepMethods(), ecorePackage.getEString(), "fixedAssetDepMethods", null, 1, -1, CustomMethod.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getCustomMethod_Description(), ecorePackage.getEString(), "description", null, 0, 1, CustomMethod.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getCustomMethod_FixedAssetDepMethods(), ecorePackage.getEString(), "fixedAssetDepMethods", null, 0, -1, CustomMethod.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		addEOperation(customMethodEClass, ecorePackage.getEString(), "contents", 0, -1, IS_UNIQUE, IS_ORDERED);
 
@@ -909,6 +906,7 @@ public class MethodPackageImpl extends EPackageImpl implements MethodPackage {
 		  (customMethodEClass,
 		   source,
 		   new String[] {
+			   "dictionary", "CommonEntityLabels",
 			   "formula", "description"
 		   });
 		addAnnotation
@@ -998,6 +996,13 @@ public class MethodPackageImpl extends EPackageImpl implements MethodPackage {
 			   "length", "255"
 		   });
 		addAnnotation
+		  (getCustomMethod_CustomMethodTypeId(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
 		  (getCustomMethod_Description(),
 		   source,
 		   new String[] {
@@ -1045,6 +1050,13 @@ public class MethodPackageImpl extends EPackageImpl implements MethodPackage {
 		   new String[] {
 			   "type", "indicator",
 			   "length", "1"
+		   });
+		addAnnotation
+		  (getCustomMethodType_ParentTypeId(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
 		   });
 	}
 
@@ -1105,12 +1117,6 @@ public class MethodPackageImpl extends EPackageImpl implements MethodPackage {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (getCustomMethod_CustomMethodId(),
-		   source,
-		   new String[] {
-			   "key", "true"
-		   });
-		addAnnotation
 		  (getCustomMethod_FixedAssetDepMethods(),
 		   source,
 		   new String[] {
@@ -1127,12 +1133,6 @@ public class MethodPackageImpl extends EPackageImpl implements MethodPackage {
 		   source,
 		   new String[] {
 			   "derived", "true"
-		   });
-		addAnnotation
-		  (getCustomMethodType_CustomMethodTypeId(),
-		   source,
-		   new String[] {
-			   "key", "true"
 		   });
 	}
 
@@ -1150,9 +1150,6 @@ public class MethodPackageImpl extends EPackageImpl implements MethodPackage {
 		   new String[] {
 			   "frame", "Content",
 			   "route", "customMethodId"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
 		  (customMethodEClass.getEOperations().get(1),
@@ -1160,9 +1157,6 @@ public class MethodPackageImpl extends EPackageImpl implements MethodPackage {
 		   new String[] {
 			   "frame", "CostComponentCalc",
 			   "route", "costCustomMethodId"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
 		  (customMethodEClass.getEOperations().get(2),
@@ -1170,9 +1164,6 @@ public class MethodPackageImpl extends EPackageImpl implements MethodPackage {
 		   new String[] {
 			   "frame", "PartyAcctgPreference",
 			   "route", "invoiceSeqCustMethId"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
 		  (customMethodEClass.getEOperations().get(3),
@@ -1180,9 +1171,6 @@ public class MethodPackageImpl extends EPackageImpl implements MethodPackage {
 		   new String[] {
 			   "frame", "PartyAcctgPreference",
 			   "route", "orderSeqCustMethId"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
 		  (customMethodEClass.getEOperations().get(4),
@@ -1190,9 +1178,6 @@ public class MethodPackageImpl extends EPackageImpl implements MethodPackage {
 		   new String[] {
 			   "frame", "ProductStoreShipmentMeth",
 			   "route", "shipmentCustomMethodId"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
 		  (customMethodEClass.getEOperations().get(5),
@@ -1200,9 +1185,6 @@ public class MethodPackageImpl extends EPackageImpl implements MethodPackage {
 		   new String[] {
 			   "frame", "PartyAcctgPreference",
 			   "route", "quoteSeqCustMethId"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
 		  (customMethodEClass.getEOperations().get(6),
@@ -1210,9 +1192,6 @@ public class MethodPackageImpl extends EPackageImpl implements MethodPackage {
 		   new String[] {
 			   "frame", "UomConversion",
 			   "route", "customMethodId"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
 		  (customMethodEClass.getEOperations().get(7),
@@ -1220,18 +1199,12 @@ public class MethodPackageImpl extends EPackageImpl implements MethodPackage {
 		   new String[] {
 			   "frame", "WorkEffort",
 			   "route", "estimateCalcMethod"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
 		  (getCustomMethod_FixedAssetDepMethods(),
 		   source,
 		   new String[] {
 			   "frame", "FixedAssetDepMethod"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
 		  (customMethodTypeEClass.getEOperations().get(0),
@@ -1239,9 +1212,6 @@ public class MethodPackageImpl extends EPackageImpl implements MethodPackage {
 		   new String[] {
 			   "frame", "CustomMethodType",
 			   "route", "parentTypeId"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
 		  (customMethodTypeEClass.getEOperations().get(1),
@@ -1249,9 +1219,6 @@ public class MethodPackageImpl extends EPackageImpl implements MethodPackage {
 		   new String[] {
 			   "frame", "CustomMethod",
 			   "route", "customMethodTypeId"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 	}
 

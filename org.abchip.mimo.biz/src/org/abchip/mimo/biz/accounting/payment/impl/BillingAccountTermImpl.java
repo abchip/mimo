@@ -27,12 +27,12 @@ import org.eclipse.emf.ecore.EClass;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.BillingAccountTermImpl#getBillingAccountTermId <em>Billing Account Term Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.BillingAccountTermImpl#getTermDays <em>Term Days</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.BillingAccountTermImpl#getTermValue <em>Term Value</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.BillingAccountTermImpl#getUomId <em>Uom Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.BillingAccountTermImpl#getTermTypeId <em>Term Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.BillingAccountTermImpl#getBillingAccountId <em>Billing Account Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.BillingAccountTermImpl#getBillingAccountTermAttrs <em>Billing Account Term Attrs</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.BillingAccountTermImpl#getTermDays <em>Term Days</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.BillingAccountTermImpl#getTermTypeId <em>Term Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.BillingAccountTermImpl#getTermValue <em>Term Value</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.BillingAccountTermImpl#getUomId <em>Uom Id</em>}</li>
  * </ul>
  *
  * @generated

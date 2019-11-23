@@ -24,10 +24,10 @@ import org.eclipse.emf.ecore.EClass;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.party.contact.impl.ContactMechImpl#getContactMechId <em>Contact Mech Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.party.contact.impl.ContactMechImpl#getInfoString <em>Info String</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.party.contact.impl.ContactMechImpl#getContactMechTypeId <em>Contact Mech Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.contact.impl.ContactMechImpl#getContactMechAttributes <em>Contact Mech Attributes</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.party.contact.impl.ContactMechImpl#getContactMechTypeId <em>Contact Mech Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.contact.impl.ContactMechImpl#getFromContactMechLinks <em>From Contact Mech Links</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.party.contact.impl.ContactMechImpl#getInfoString <em>Info String</em>}</li>
  * </ul>
  *
  * @generated

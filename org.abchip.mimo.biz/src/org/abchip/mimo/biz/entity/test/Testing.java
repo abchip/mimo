@@ -25,10 +25,10 @@ import org.abchip.mimo.biz.BizEntityTyped;
  *   <li>{@link org.abchip.mimo.biz.entity.test.Testing#getComments <em>Comments</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.entity.test.Testing#getDescription <em>Description</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.entity.test.Testing#getTestingDate <em>Testing Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.entity.test.Testing#getTestingItems <em>Testing Items</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.entity.test.Testing#getTestingName <em>Testing Name</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.entity.test.Testing#getTestingSize <em>Testing Size</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.entity.test.Testing#getTestingTypeId <em>Testing Type Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.entity.test.Testing#getTestingItems <em>Testing Items</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.entity.test.TestPackage#getTesting()
@@ -127,7 +127,6 @@ public interface Testing extends BizEntityTyped<TestingType> {
 	 * @see org.abchip.mimo.biz.entity.test.TestPackage#getTesting_TestingId()
 	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getTestingId();
@@ -153,7 +152,8 @@ public interface Testing extends BizEntityTyped<TestingType> {
 	 * @return the value of the '<em>Testing Name</em>' attribute.
 	 * @see #setTestingName(String)
 	 * @see org.abchip.mimo.biz.entity.test.TestPackage#getTesting_TestingName()
-	 * @model annotation="mimo-ent-format type='name' length='100'"
+	 * @model annotation="mimo-ent-slot audit='true'"
+	 *        annotation="mimo-ent-format type='name' length='100'"
 	 * @generated
 	 */
 	String getTestingName();
@@ -206,6 +206,7 @@ public interface Testing extends BizEntityTyped<TestingType> {
 	 * @see #setTestingTypeId(TestingType)
 	 * @see org.abchip.mimo.biz.entity.test.TestPackage#getTesting_TestingTypeId()
 	 * @model keys="testingTypeId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	TestingType getTestingTypeId();
@@ -231,8 +232,7 @@ public interface Testing extends BizEntityTyped<TestingType> {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Testing Items</em>' attribute list.
 	 * @see org.abchip.mimo.biz.entity.test.TestPackage#getTesting_TestingItems()
-	 * @model required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='TestingItem'"
 	 * @generated

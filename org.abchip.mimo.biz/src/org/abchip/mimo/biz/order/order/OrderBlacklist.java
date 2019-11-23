@@ -18,8 +18,8 @@ import org.abchip.mimo.biz.BizEntityTyped;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.order.order.OrderBlacklist#getBlacklistString <em>Blacklist String</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.OrderBlacklist#getOrderBlacklistTypeId <em>Order Blacklist Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.order.OrderBlacklist#getBlacklistString <em>Blacklist String</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderBlacklist()
@@ -39,8 +39,8 @@ public interface OrderBlacklist extends BizEntityTyped<OrderBlacklistType> {
 	 * @see #setBlacklistString(String)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderBlacklist_BlacklistString()
 	 * @model required="true"
-	 *        annotation="mimo-ent-format type='long-varchar' length='255'"
 	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='long-varchar' length='255'"
 	 * @generated
 	 */
 	String getBlacklistString();
@@ -66,7 +66,9 @@ public interface OrderBlacklist extends BizEntityTyped<OrderBlacklistType> {
 	 * @return the value of the '<em>Order Blacklist Type Id</em>' reference.
 	 * @see #setOrderBlacklistTypeId(OrderBlacklistType)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderBlacklist_OrderBlacklistTypeId()
-	 * @model keys="orderBlacklistTypeId"
+	 * @model keys="orderBlacklistTypeId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	OrderBlacklistType getOrderBlacklistTypeId();

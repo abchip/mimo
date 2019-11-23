@@ -19,17 +19,17 @@ import org.abchip.mimo.biz.BizEntity;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.common.geo.CountryAddressFormat#getAddressFormat <em>Address Format</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.common.geo.CountryAddressFormat#getGeoAssocTypeId <em>Geo Assoc Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.common.geo.CountryAddressFormat#getGeoId <em>Geo Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.common.geo.CountryAddressFormat#isHasPostalCodeExt <em>Has Postal Code Ext</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.common.geo.CountryAddressFormat#getPostalCodeRegex <em>Postal Code Regex</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.common.geo.CountryAddressFormat#isRequirePostalCode <em>Require Postal Code</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.common.geo.CountryAddressFormat#isRequirePostalCodeExt <em>Require Postal Code Ext</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.common.geo.CountryAddressFormat#getRequireStateProvinceId <em>Require State Province Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.common.geo.CountryAddressFormat#getGeoId <em>Geo Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.common.geo.CountryAddressFormat#getGeoAssocTypeId <em>Geo Assoc Type Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.common.geo.GeoPackage#getCountryAddressFormat()
- * @model
+ * @model annotation="mimo-ent-frame dictionary='CommonEntityLabels'"
  * @generated
  */
 public interface CountryAddressFormat extends BizEntity {
@@ -201,6 +201,7 @@ public interface CountryAddressFormat extends BizEntity {
 	 * @see #setGeoAssocTypeId(GeoAssocType)
 	 * @see org.abchip.mimo.biz.common.geo.GeoPackage#getCountryAddressFormat_GeoAssocTypeId()
 	 * @model keys="geoAssocTypeId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	GeoAssocType getGeoAssocTypeId();
@@ -226,7 +227,8 @@ public interface CountryAddressFormat extends BizEntity {
 	 * @return the value of the '<em>Geo Id</em>' reference.
 	 * @see #setGeoId(Geo)
 	 * @see org.abchip.mimo.biz.common.geo.GeoPackage#getCountryAddressFormat_GeoId()
-	 * @model keys="geoId"
+	 * @model keys="geoId" required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Geo getGeoId();

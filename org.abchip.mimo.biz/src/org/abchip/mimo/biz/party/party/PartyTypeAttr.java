@@ -18,13 +18,13 @@ import org.abchip.mimo.biz.BizEntity;
  * The following features are supported:
  * </p>
  * <ul>
+ *   <li>{@link org.abchip.mimo.biz.party.party.PartyTypeAttr#getPartyTypeId <em>Party Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.party.PartyTypeAttr#getAttrName <em>Attr Name</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.party.PartyTypeAttr#getDescription <em>Description</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.party.party.PartyTypeAttr#getPartyTypeId <em>Party Type Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.party.party.PartyPackage#getPartyTypeAttr()
- * @model annotation="mimo-ent-frame formula='description'"
+ * @model annotation="mimo-ent-frame title='Party Type Attribute' formula='description'"
  * @generated
  */
 public interface PartyTypeAttr extends BizEntity {
@@ -66,8 +66,8 @@ public interface PartyTypeAttr extends BizEntity {
 	 * @see #setAttrName(String)
 	 * @see org.abchip.mimo.biz.party.party.PartyPackage#getPartyTypeAttr_AttrName()
 	 * @model required="true"
-	 *        annotation="mimo-ent-format type='id-long' length='60'"
 	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id-long' length='60'"
 	 * @generated
 	 */
 	String getAttrName();
@@ -93,7 +93,9 @@ public interface PartyTypeAttr extends BizEntity {
 	 * @return the value of the '<em>Party Type Id</em>' reference.
 	 * @see #setPartyTypeId(PartyType)
 	 * @see org.abchip.mimo.biz.party.party.PartyPackage#getPartyTypeAttr_PartyTypeId()
-	 * @model keys="partyTypeId"
+	 * @model keys="partyTypeId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	PartyType getPartyTypeId();

@@ -738,8 +738,6 @@ public class TrainingsPackageImpl extends EPackageImpl implements TrainingsPacka
 		// Create annotations
 		// mimo-ent-format
 		createMimoentformatAnnotations();
-		// mimo-ent-slot
-		createMimoentslotAnnotations();
 	}
 
 	/**
@@ -756,22 +754,6 @@ public class TrainingsPackageImpl extends EPackageImpl implements TrainingsPacka
 		   new String[] {
 			   "type", "id",
 			   "length", "20"
-		   });
-	}
-
-	/**
-	 * Initializes the annotations for <b>mimo-ent-slot</b>.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void createMimoentslotAnnotations() {
-		String source = "mimo-ent-slot";
-		addAnnotation
-		  (getTrainingRequest_TrainingRequestId(),
-		   source,
-		   new String[] {
-			   "key", "true"
 		   });
 	}
 

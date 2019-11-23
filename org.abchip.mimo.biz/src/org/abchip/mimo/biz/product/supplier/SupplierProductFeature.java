@@ -21,15 +21,15 @@ import org.abchip.mimo.biz.product.feature.ProductFeature;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.product.supplier.SupplierProductFeature#getDescription <em>Description</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.supplier.SupplierProductFeature#getIdCode <em>Id Code</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.supplier.SupplierProductFeature#getPartyId <em>Party Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.supplier.SupplierProductFeature#getProductFeatureId <em>Product Feature Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.supplier.SupplierProductFeature#getDescription <em>Description</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.supplier.SupplierProductFeature#getIdCode <em>Id Code</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.supplier.SupplierProductFeature#getUomId <em>Uom Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.product.supplier.SupplierPackage#getSupplierProductFeature()
- * @model annotation="mimo-ent-frame formula='description'"
+ * @model annotation="mimo-ent-frame title='Supplier-specific product feature information' dictionary='ProductEntityLabels' formula='description'"
  * @generated
  */
 public interface SupplierProductFeature extends BizEntity {
@@ -96,7 +96,9 @@ public interface SupplierProductFeature extends BizEntity {
 	 * @return the value of the '<em>Party Id</em>' reference.
 	 * @see #setPartyId(Party)
 	 * @see org.abchip.mimo.biz.product.supplier.SupplierPackage#getSupplierProductFeature_PartyId()
-	 * @model keys="partyId"
+	 * @model keys="partyId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Party getPartyId();
@@ -123,6 +125,7 @@ public interface SupplierProductFeature extends BizEntity {
 	 * @see #setUomId(Uom)
 	 * @see org.abchip.mimo.biz.product.supplier.SupplierPackage#getSupplierProductFeature_UomId()
 	 * @model keys="uomId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Uom getUomId();
@@ -148,7 +151,9 @@ public interface SupplierProductFeature extends BizEntity {
 	 * @return the value of the '<em>Product Feature Id</em>' reference.
 	 * @see #setProductFeatureId(ProductFeature)
 	 * @see org.abchip.mimo.biz.product.supplier.SupplierPackage#getSupplierProductFeature_ProductFeatureId()
-	 * @model keys="productFeatureId"
+	 * @model keys="productFeatureId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ProductFeature getProductFeatureId();

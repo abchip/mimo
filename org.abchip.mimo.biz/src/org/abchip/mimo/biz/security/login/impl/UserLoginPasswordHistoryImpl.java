@@ -23,10 +23,10 @@ import org.eclipse.emf.ecore.EClass;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link org.abchip.mimo.biz.security.login.impl.UserLoginPasswordHistoryImpl#getUserLoginId <em>User Login Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.security.login.impl.UserLoginPasswordHistoryImpl#getFromDate <em>From Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.security.login.impl.UserLoginPasswordHistoryImpl#getCurrentPassword <em>Current Password</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.security.login.impl.UserLoginPasswordHistoryImpl#getThruDate <em>Thru Date</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.security.login.impl.UserLoginPasswordHistoryImpl#getUserLoginId <em>User Login Id</em>}</li>
  * </ul>
  *
  * @generated

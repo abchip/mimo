@@ -23,11 +23,11 @@ import org.abchip.mimo.biz.BizEntity;
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.service.schedule.RecurrenceInfo#getRecurrenceInfoId <em>Recurrence Info Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.service.schedule.RecurrenceInfo#getExceptionDateTimes <em>Exception Date Times</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.service.schedule.RecurrenceInfo#getExceptionRuleId <em>Exception Rule Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.service.schedule.RecurrenceInfo#getRecurrenceCount <em>Recurrence Count</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.service.schedule.RecurrenceInfo#getRecurrenceDateTimes <em>Recurrence Date Times</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.service.schedule.RecurrenceInfo#getStartDateTime <em>Start Date Time</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.service.schedule.RecurrenceInfo#getRecurrenceRuleId <em>Recurrence Rule Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.service.schedule.RecurrenceInfo#getExceptionRuleId <em>Exception Rule Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.service.schedule.RecurrenceInfo#getStartDateTime <em>Start Date Time</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.service.schedule.SchedulePackage#getRecurrenceInfo()
@@ -48,7 +48,6 @@ public interface RecurrenceInfo extends BizEntity {
 	 * @see org.abchip.mimo.biz.service.schedule.SchedulePackage#getRecurrenceInfo_RecurrenceInfoId()
 	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getRecurrenceInfoId();
@@ -101,6 +100,7 @@ public interface RecurrenceInfo extends BizEntity {
 	 * @see #setExceptionRuleId(RecurrenceRule)
 	 * @see org.abchip.mimo.biz.service.schedule.SchedulePackage#getRecurrenceInfo_ExceptionRuleId()
 	 * @model keys="recurrenceRuleId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	RecurrenceRule getExceptionRuleId();
@@ -126,7 +126,8 @@ public interface RecurrenceInfo extends BizEntity {
 	 * @return the value of the '<em>Recurrence Count</em>' attribute.
 	 * @see #setRecurrenceCount(long)
 	 * @see org.abchip.mimo.biz.service.schedule.SchedulePackage#getRecurrenceInfo_RecurrenceCount()
-	 * @model annotation="mimo-ent-format type='numeric' precision='20' scale='0'"
+	 * @model annotation="mimo-ent-slot help='Not recommended - more than one process could be using this RecurrenceInfo'"
+	 *        annotation="mimo-ent-format type='numeric' precision='20' scale='0'"
 	 * @generated
 	 */
 	long getRecurrenceCount();
@@ -179,6 +180,7 @@ public interface RecurrenceInfo extends BizEntity {
 	 * @see #setRecurrenceRuleId(RecurrenceRule)
 	 * @see org.abchip.mimo.biz.service.schedule.SchedulePackage#getRecurrenceInfo_RecurrenceRuleId()
 	 * @model keys="recurrenceRuleId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	RecurrenceRule getRecurrenceRuleId();

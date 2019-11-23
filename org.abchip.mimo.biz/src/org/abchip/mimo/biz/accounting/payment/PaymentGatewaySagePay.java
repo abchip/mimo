@@ -22,6 +22,7 @@ import org.abchip.mimo.biz.BizEntity;
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.PaymentGatewaySagePay#getAuthenticationUrl <em>Authentication Url</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.PaymentGatewaySagePay#getAuthoriseTransType <em>Authorise Trans Type</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.PaymentGatewaySagePay#getAuthoriseUrl <em>Authorise Url</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.payment.PaymentGatewaySagePay#getPaymentGatewayConfigId <em>Payment Gateway Config Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.PaymentGatewaySagePay#getProductionHost <em>Production Host</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.PaymentGatewaySagePay#getProtocolVersion <em>Protocol Version</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.PaymentGatewaySagePay#getRefundUrl <em>Refund Url</em>}</li>
@@ -31,11 +32,10 @@ import org.abchip.mimo.biz.BizEntity;
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.PaymentGatewaySagePay#getTestingHost <em>Testing Host</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.PaymentGatewaySagePay#getVendor <em>Vendor</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.PaymentGatewaySagePay#getVoidUrl <em>Void Url</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.payment.PaymentGatewaySagePay#getPaymentGatewayConfigId <em>Payment Gateway Config Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPaymentGatewaySagePay()
- * @model
+ * @model annotation="mimo-ent-frame title='SagePay Payment Gateway Configuration'"
  * @generated
  */
 public interface PaymentGatewaySagePay extends BizEntity {
@@ -50,7 +50,8 @@ public interface PaymentGatewaySagePay extends BizEntity {
 	 * @return the value of the '<em>Authentication Trans Type</em>' attribute.
 	 * @see #setAuthenticationTransType(String)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPaymentGatewaySagePay_AuthenticationTransType()
-	 * @model annotation="mimo-ent-format type='short-varchar' length='60'"
+	 * @model annotation="mimo-ent-slot help='Authentication type (PAYMENT/AUTHENTICATE/DEFERRED)'"
+	 *        annotation="mimo-ent-format type='short-varchar' length='60'"
 	 * @generated
 	 */
 	String getAuthenticationTransType();
@@ -76,7 +77,8 @@ public interface PaymentGatewaySagePay extends BizEntity {
 	 * @return the value of the '<em>Authentication Url</em>' attribute.
 	 * @see #setAuthenticationUrl(String)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPaymentGatewaySagePay_AuthenticationUrl()
-	 * @model annotation="mimo-ent-format type='long-varchar' length='255'"
+	 * @model annotation="mimo-ent-slot help='Authentication Url'"
+	 *        annotation="mimo-ent-format type='long-varchar' length='255'"
 	 * @generated
 	 */
 	String getAuthenticationUrl();
@@ -102,7 +104,8 @@ public interface PaymentGatewaySagePay extends BizEntity {
 	 * @return the value of the '<em>Authorise Trans Type</em>' attribute.
 	 * @see #setAuthoriseTransType(String)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPaymentGatewaySagePay_AuthoriseTransType()
-	 * @model annotation="mimo-ent-format type='short-varchar' length='60'"
+	 * @model annotation="mimo-ent-slot help='Authorise type (AUTHORISE/RELEASE)'"
+	 *        annotation="mimo-ent-format type='short-varchar' length='60'"
 	 * @generated
 	 */
 	String getAuthoriseTransType();
@@ -128,7 +131,8 @@ public interface PaymentGatewaySagePay extends BizEntity {
 	 * @return the value of the '<em>Authorise Url</em>' attribute.
 	 * @see #setAuthoriseUrl(String)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPaymentGatewaySagePay_AuthoriseUrl()
-	 * @model annotation="mimo-ent-format type='long-varchar' length='255'"
+	 * @model annotation="mimo-ent-slot help='Authorise url'"
+	 *        annotation="mimo-ent-format type='long-varchar' length='255'"
 	 * @generated
 	 */
 	String getAuthoriseUrl();
@@ -154,7 +158,8 @@ public interface PaymentGatewaySagePay extends BizEntity {
 	 * @return the value of the '<em>Payment Gateway Config Id</em>' reference.
 	 * @see #setPaymentGatewayConfigId(PaymentGatewayConfig)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPaymentGatewaySagePay_PaymentGatewayConfigId()
-	 * @model keys="paymentGatewayConfigId"
+	 * @model keys="paymentGatewayConfigId" required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	PaymentGatewayConfig getPaymentGatewayConfigId();
@@ -180,7 +185,8 @@ public interface PaymentGatewaySagePay extends BizEntity {
 	 * @return the value of the '<em>Production Host</em>' attribute.
 	 * @see #setProductionHost(String)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPaymentGatewaySagePay_ProductionHost()
-	 * @model annotation="mimo-ent-format type='short-varchar' length='60'"
+	 * @model annotation="mimo-ent-slot help='Production Host'"
+	 *        annotation="mimo-ent-format type='short-varchar' length='60'"
 	 * @generated
 	 */
 	String getProductionHost();
@@ -206,7 +212,8 @@ public interface PaymentGatewaySagePay extends BizEntity {
 	 * @return the value of the '<em>Protocol Version</em>' attribute.
 	 * @see #setProtocolVersion(String)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPaymentGatewaySagePay_ProtocolVersion()
-	 * @model annotation="mimo-ent-format type='very-short' length='10'"
+	 * @model annotation="mimo-ent-slot help='Protocol Version'"
+	 *        annotation="mimo-ent-format type='very-short' length='10'"
 	 * @generated
 	 */
 	String getProtocolVersion();
@@ -232,7 +239,8 @@ public interface PaymentGatewaySagePay extends BizEntity {
 	 * @return the value of the '<em>Refund Url</em>' attribute.
 	 * @see #setRefundUrl(String)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPaymentGatewaySagePay_RefundUrl()
-	 * @model annotation="mimo-ent-format type='long-varchar' length='255'"
+	 * @model annotation="mimo-ent-slot help='Refund Url'"
+	 *        annotation="mimo-ent-format type='long-varchar' length='255'"
 	 * @generated
 	 */
 	String getRefundUrl();
@@ -258,7 +266,8 @@ public interface PaymentGatewaySagePay extends BizEntity {
 	 * @return the value of the '<em>Release Trans Type</em>' attribute.
 	 * @see #setReleaseTransType(String)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPaymentGatewaySagePay_ReleaseTransType()
-	 * @model annotation="mimo-ent-format type='short-varchar' length='60'"
+	 * @model annotation="mimo-ent-slot help='Release type (CANCEL/ABORT)'"
+	 *        annotation="mimo-ent-format type='short-varchar' length='60'"
 	 * @generated
 	 */
 	String getReleaseTransType();
@@ -284,7 +293,8 @@ public interface PaymentGatewaySagePay extends BizEntity {
 	 * @return the value of the '<em>Release Url</em>' attribute.
 	 * @see #setReleaseUrl(String)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPaymentGatewaySagePay_ReleaseUrl()
-	 * @model annotation="mimo-ent-format type='long-varchar' length='255'"
+	 * @model annotation="mimo-ent-slot help='Release Url'"
+	 *        annotation="mimo-ent-format type='long-varchar' length='255'"
 	 * @generated
 	 */
 	String getReleaseUrl();
@@ -310,7 +320,8 @@ public interface PaymentGatewaySagePay extends BizEntity {
 	 * @return the value of the '<em>Sage Pay Mode</em>' attribute.
 	 * @see #setSagePayMode(String)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPaymentGatewaySagePay_SagePayMode()
-	 * @model annotation="mimo-ent-format type='short-varchar' length='60'"
+	 * @model annotation="mimo-ent-slot help='Mode (PRODUCTION/TEST)'"
+	 *        annotation="mimo-ent-format type='short-varchar' length='60'"
 	 * @generated
 	 */
 	String getSagePayMode();
@@ -336,7 +347,8 @@ public interface PaymentGatewaySagePay extends BizEntity {
 	 * @return the value of the '<em>Testing Host</em>' attribute.
 	 * @see #setTestingHost(String)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPaymentGatewaySagePay_TestingHost()
-	 * @model annotation="mimo-ent-format type='short-varchar' length='60'"
+	 * @model annotation="mimo-ent-slot help='Testing Host'"
+	 *        annotation="mimo-ent-format type='short-varchar' length='60'"
 	 * @generated
 	 */
 	String getTestingHost();
@@ -362,7 +374,8 @@ public interface PaymentGatewaySagePay extends BizEntity {
 	 * @return the value of the '<em>Vendor</em>' attribute.
 	 * @see #setVendor(String)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPaymentGatewaySagePay_Vendor()
-	 * @model annotation="mimo-ent-format type='short-varchar' length='60'"
+	 * @model annotation="mimo-ent-slot help='Vendor name'"
+	 *        annotation="mimo-ent-format type='short-varchar' length='60'"
 	 * @generated
 	 */
 	String getVendor();
@@ -388,7 +401,8 @@ public interface PaymentGatewaySagePay extends BizEntity {
 	 * @return the value of the '<em>Void Url</em>' attribute.
 	 * @see #setVoidUrl(String)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPaymentGatewaySagePay_VoidUrl()
-	 * @model annotation="mimo-ent-format type='long-varchar' length='255'"
+	 * @model annotation="mimo-ent-slot help='Void Url'"
+	 *        annotation="mimo-ent-format type='long-varchar' length='255'"
 	 * @generated
 	 */
 	String getVoidUrl();

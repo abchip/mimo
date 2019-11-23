@@ -23,6 +23,9 @@ import org.abchip.mimo.biz.BizEntity;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.entity.synchronization.EntitySync#getEntitySyncId <em>Entity Sync Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.entity.synchronization.EntitySync#getEntitySyncHistories <em>Entity Sync Histories</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.entity.synchronization.EntitySync#getEntitySyncIncludeGroups <em>Entity Sync Include Groups</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.entity.synchronization.EntitySync#getEntitySyncIncludes <em>Entity Sync Includes</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.entity.synchronization.EntitySync#isForPullOnly <em>For Pull Only</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.entity.synchronization.EntitySync#isForPushOnly <em>For Push Only</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.entity.synchronization.EntitySync#getKeepRemoveInfoHours <em>Keep Remove Info Hours</em>}</li>
@@ -36,13 +39,10 @@ import org.abchip.mimo.biz.BizEntity;
  *   <li>{@link org.abchip.mimo.biz.entity.synchronization.EntitySync#getSyncSplitMillis <em>Sync Split Millis</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.entity.synchronization.EntitySync#getTargetDelegatorName <em>Target Delegator Name</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.entity.synchronization.EntitySync#getTargetServiceName <em>Target Service Name</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.entity.synchronization.EntitySync#getEntitySyncHistories <em>Entity Sync Histories</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.entity.synchronization.EntitySync#getEntitySyncIncludes <em>Entity Sync Includes</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.entity.synchronization.EntitySync#getEntitySyncIncludeGroups <em>Entity Sync Include Groups</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.entity.synchronization.SynchronizationPackage#getEntitySync()
- * @model
+ * @model annotation="mimo-ent-frame title='Entity Synchronization'"
  * @generated
  */
 public interface EntitySync extends BizEntity {
@@ -59,7 +59,6 @@ public interface EntitySync extends BizEntity {
 	 * @see org.abchip.mimo.biz.entity.synchronization.SynchronizationPackage#getEntitySync_EntitySyncId()
 	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getEntitySyncId();
@@ -423,8 +422,7 @@ public interface EntitySync extends BizEntity {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Entity Sync Histories</em>' attribute list.
 	 * @see org.abchip.mimo.biz.entity.synchronization.SynchronizationPackage#getEntitySync_EntitySyncHistories()
-	 * @model required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='EntitySyncHistory'"
 	 * @generated
@@ -442,8 +440,7 @@ public interface EntitySync extends BizEntity {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Entity Sync Includes</em>' attribute list.
 	 * @see org.abchip.mimo.biz.entity.synchronization.SynchronizationPackage#getEntitySync_EntitySyncIncludes()
-	 * @model required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='EntitySyncInclude'"
 	 * @generated
@@ -461,8 +458,7 @@ public interface EntitySync extends BizEntity {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Entity Sync Include Groups</em>' attribute list.
 	 * @see org.abchip.mimo.biz.entity.synchronization.SynchronizationPackage#getEntitySync_EntitySyncIncludeGroups()
-	 * @model required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='EntitySyncIncludeGroup'"
 	 * @generated

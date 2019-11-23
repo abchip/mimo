@@ -23,14 +23,14 @@ import org.abchip.mimo.biz.BizEntityType;
  *   <li>{@link org.abchip.mimo.biz.party.party.PartyRelationshipType#getPartyRelationshipTypeId <em>Party Relationship Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.party.PartyRelationshipType#getDescription <em>Description</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.party.PartyRelationshipType#isHasTable <em>Has Table</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.party.party.PartyRelationshipType#getPartyRelationshipName <em>Party Relationship Name</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.party.PartyRelationshipType#getParentTypeId <em>Parent Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.party.party.PartyRelationshipType#getPartyRelationshipName <em>Party Relationship Name</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.party.PartyRelationshipType#getRoleTypeIdValidFrom <em>Role Type Id Valid From</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.party.PartyRelationshipType#getRoleTypeIdValidTo <em>Role Type Id Valid To</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.party.party.PartyPackage#getPartyRelationshipType()
- * @model annotation="mimo-ent-frame formula='description'"
+ * @model annotation="mimo-ent-frame dictionary='PartyEntityLabels' formula='description'"
  * @generated
  */
 public interface PartyRelationshipType extends BizEntityType<PartyRelationship> {
@@ -124,6 +124,7 @@ public interface PartyRelationshipType extends BizEntityType<PartyRelationship> 
 	 * @see #setParentTypeId(PartyRelationshipType)
 	 * @see org.abchip.mimo.biz.party.party.PartyPackage#getPartyRelationshipType_ParentTypeId()
 	 * @model keys="partyRelationshipTypeId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	PartyRelationshipType getParentTypeId();
@@ -150,6 +151,7 @@ public interface PartyRelationshipType extends BizEntityType<PartyRelationship> 
 	 * @see #setRoleTypeIdValidFrom(RoleType)
 	 * @see org.abchip.mimo.biz.party.party.PartyPackage#getPartyRelationshipType_RoleTypeIdValidFrom()
 	 * @model keys="roleTypeId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	RoleType getRoleTypeIdValidFrom();
@@ -176,6 +178,7 @@ public interface PartyRelationshipType extends BizEntityType<PartyRelationship> 
 	 * @see #setRoleTypeIdValidTo(RoleType)
 	 * @see org.abchip.mimo.biz.party.party.PartyPackage#getPartyRelationshipType_RoleTypeIdValidTo()
 	 * @model keys="roleTypeId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	RoleType getRoleTypeIdValidTo();
@@ -213,7 +216,6 @@ public interface PartyRelationshipType extends BizEntityType<PartyRelationship> 
 	 * @see org.abchip.mimo.biz.party.party.PartyPackage#getPartyRelationshipType_PartyRelationshipTypeId()
 	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getPartyRelationshipTypeId();

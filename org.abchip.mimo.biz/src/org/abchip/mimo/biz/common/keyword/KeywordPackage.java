@@ -108,22 +108,22 @@ public interface KeywordPackage extends EPackage {
 	int KEYWORD_THESAURUS__LAST_UPDATED_TX_STAMP = BizPackage.BIZ_ENTITY__LAST_UPDATED_TX_STAMP;
 
 	/**
-	 * The feature id for the '<em><b>Entered Keyword</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int KEYWORD_THESAURUS__ENTERED_KEYWORD = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
-
-	/**
 	 * The feature id for the '<em><b>Alternate Keyword</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int KEYWORD_THESAURUS__ALTERNATE_KEYWORD = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
+	int KEYWORD_THESAURUS__ALTERNATE_KEYWORD = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Entered Keyword</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int KEYWORD_THESAURUS__ENTERED_KEYWORD = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Relationship Enum Id</b></em>' reference.

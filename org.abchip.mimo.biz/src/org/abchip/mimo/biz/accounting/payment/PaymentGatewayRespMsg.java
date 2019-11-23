@@ -19,12 +19,12 @@ import org.abchip.mimo.biz.BizEntity;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.PaymentGatewayRespMsg#getPaymentGatewayRespMsgId <em>Payment Gateway Resp Msg Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.payment.PaymentGatewayRespMsg#getPgrMessage <em>Pgr Message</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.PaymentGatewayRespMsg#getPaymentGatewayResponseId <em>Payment Gateway Response Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.payment.PaymentGatewayRespMsg#getPgrMessage <em>Pgr Message</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPaymentGatewayRespMsg()
- * @model
+ * @model annotation="mimo-ent-frame title='Payment Gateway Response Message'"
  * @generated
  */
 public interface PaymentGatewayRespMsg extends BizEntity {
@@ -41,7 +41,6 @@ public interface PaymentGatewayRespMsg extends BizEntity {
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPaymentGatewayRespMsg_PaymentGatewayRespMsgId()
 	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getPaymentGatewayRespMsgId();
@@ -94,6 +93,7 @@ public interface PaymentGatewayRespMsg extends BizEntity {
 	 * @see #setPaymentGatewayResponseId(PaymentGatewayResponse)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPaymentGatewayRespMsg_PaymentGatewayResponseId()
 	 * @model keys="paymentGatewayResponseId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	PaymentGatewayResponse getPaymentGatewayResponseId();

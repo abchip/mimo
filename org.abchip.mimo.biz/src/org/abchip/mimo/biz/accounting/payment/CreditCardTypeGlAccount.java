@@ -40,8 +40,8 @@ public interface CreditCardTypeGlAccount extends BizEntity {
 	 * @see #setCardType(String)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getCreditCardTypeGlAccount_CardType()
 	 * @model required="true"
-	 *        annotation="mimo-ent-format type='short-varchar' length='60'"
 	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='short-varchar' length='60'"
 	 * @generated
 	 */
 	String getCardType();
@@ -94,8 +94,8 @@ public interface CreditCardTypeGlAccount extends BizEntity {
 	 * @see #setOrganizationPartyId(String)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getCreditCardTypeGlAccount_OrganizationPartyId()
 	 * @model required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	String getOrganizationPartyId();

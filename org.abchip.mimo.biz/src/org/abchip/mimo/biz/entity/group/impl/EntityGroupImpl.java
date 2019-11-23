@@ -23,8 +23,8 @@ import org.eclipse.emf.ecore.EClass;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.entity.group.impl.EntityGroupImpl#getEntityGroupId <em>Entity Group Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.entity.group.impl.EntityGroupImpl#getEntityGroupName <em>Entity Group Name</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.entity.group.impl.EntityGroupImpl#getEntityGroupEntries <em>Entity Group Entries</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.entity.group.impl.EntityGroupImpl#getEntityGroupName <em>Entity Group Name</em>}</li>
  * </ul>
  *
  * @generated

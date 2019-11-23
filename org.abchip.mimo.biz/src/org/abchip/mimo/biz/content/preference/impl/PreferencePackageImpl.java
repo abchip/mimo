@@ -701,7 +701,7 @@ public class PreferencePackageImpl extends EPackageImpl implements PreferencePac
 	 */
 	@Override
 	public EReference getWebUserPreference_UserLoginId() {
-		return (EReference)webUserPreferenceEClass.getEStructuralFeatures().get(3);
+		return (EReference)webUserPreferenceEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -711,26 +711,6 @@ public class PreferencePackageImpl extends EPackageImpl implements PreferencePac
 	 */
 	@Override
 	public EReference getWebUserPreference_PartyId() {
-		return (EReference)webUserPreferenceEClass.getEStructuralFeatures().get(4);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EAttribute getWebUserPreference_VisitId() {
-		return (EAttribute)webUserPreferenceEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getWebUserPreference_WebPreferenceTypeId() {
 		return (EReference)webUserPreferenceEClass.getEStructuralFeatures().get(2);
 	}
 
@@ -740,8 +720,28 @@ public class PreferencePackageImpl extends EPackageImpl implements PreferencePac
 	 * @generated
 	 */
 	@Override
+	public EAttribute getWebUserPreference_VisitId() {
+		return (EAttribute)webUserPreferenceEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getWebUserPreference_WebPreferenceTypeId() {
+		return (EReference)webUserPreferenceEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EAttribute getWebUserPreference_WebPreferenceValue() {
-		return (EAttribute)webUserPreferenceEClass.getEStructuralFeatures().get(1);
+		return (EAttribute)webUserPreferenceEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -778,11 +778,11 @@ public class PreferencePackageImpl extends EPackageImpl implements PreferencePac
 		createEAttribute(webPreferenceTypeEClass, WEB_PREFERENCE_TYPE__DESCRIPTION);
 
 		webUserPreferenceEClass = createEClass(WEB_USER_PREFERENCE);
-		createEAttribute(webUserPreferenceEClass, WEB_USER_PREFERENCE__VISIT_ID);
-		createEAttribute(webUserPreferenceEClass, WEB_USER_PREFERENCE__WEB_PREFERENCE_VALUE);
 		createEReference(webUserPreferenceEClass, WEB_USER_PREFERENCE__WEB_PREFERENCE_TYPE_ID);
 		createEReference(webUserPreferenceEClass, WEB_USER_PREFERENCE__USER_LOGIN_ID);
 		createEReference(webUserPreferenceEClass, WEB_USER_PREFERENCE__PARTY_ID);
+		createEAttribute(webUserPreferenceEClass, WEB_USER_PREFERENCE__VISIT_ID);
+		createEAttribute(webUserPreferenceEClass, WEB_USER_PREFERENCE__WEB_PREFERENCE_VALUE);
 	}
 
 	/**
@@ -827,14 +827,14 @@ public class PreferencePackageImpl extends EPackageImpl implements PreferencePac
 		initEAttribute(getWebPreferenceType_Description(), ecorePackage.getEString(), "description", null, 0, 1, WebPreferenceType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(webUserPreferenceEClass, WebUserPreference.class, "WebUserPreference", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getWebUserPreference_WebPreferenceTypeId(), this.getWebPreferenceType(), null, "webPreferenceTypeId", null, 1, 1, WebUserPreference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getWebUserPreference_WebPreferenceTypeId().getEKeys().add(this.getWebPreferenceType_WebPreferenceTypeId());
+		initEReference(getWebUserPreference_UserLoginId(), theLoginPackage.getUserLogin(), null, "userLoginId", null, 1, 1, WebUserPreference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getWebUserPreference_UserLoginId().getEKeys().add(theLoginPackage.getUserLogin_UserLoginId());
+		initEReference(getWebUserPreference_PartyId(), thePartyPackage.getParty(), null, "partyId", null, 1, 1, WebUserPreference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getWebUserPreference_PartyId().getEKeys().add(thePartyPackage.getParty_PartyId());
 		initEAttribute(getWebUserPreference_VisitId(), ecorePackage.getEString(), "visitId", null, 1, 1, WebUserPreference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getWebUserPreference_WebPreferenceValue(), ecorePackage.getEString(), "webPreferenceValue", null, 0, 1, WebUserPreference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getWebUserPreference_WebPreferenceTypeId(), this.getWebPreferenceType(), null, "webPreferenceTypeId", null, 0, 1, WebUserPreference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		getWebUserPreference_WebPreferenceTypeId().getEKeys().add(this.getWebPreferenceType_WebPreferenceTypeId());
-		initEReference(getWebUserPreference_UserLoginId(), theLoginPackage.getUserLogin(), null, "userLoginId", null, 0, 1, WebUserPreference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		getWebUserPreference_UserLoginId().getEKeys().add(theLoginPackage.getUserLogin_UserLoginId());
-		initEReference(getWebUserPreference_PartyId(), thePartyPackage.getParty(), null, "partyId", null, 0, 1, WebUserPreference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		getWebUserPreference_PartyId().getEKeys().add(thePartyPackage.getParty_PartyId());
 
 		// Create annotations
 		// mimo-ent-frame
@@ -884,6 +884,27 @@ public class PreferencePackageImpl extends EPackageImpl implements PreferencePac
 			   "length", "255"
 		   });
 		addAnnotation
+		  (getWebUserPreference_WebPreferenceTypeId(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (getWebUserPreference_UserLoginId(),
+		   source,
+		   new String[] {
+			   "type", "id-vlong",
+			   "length", "255"
+		   });
+		addAnnotation
+		  (getWebUserPreference_PartyId(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
 		  (getWebUserPreference_VisitId(),
 		   source,
 		   new String[] {
@@ -908,7 +929,19 @@ public class PreferencePackageImpl extends EPackageImpl implements PreferencePac
 	protected void createMimoentslotAnnotations() {
 		String source = "mimo-ent-slot";
 		addAnnotation
-		  (getWebPreferenceType_WebPreferenceTypeId(),
+		  (getWebUserPreference_WebPreferenceTypeId(),
+		   source,
+		   new String[] {
+			   "key", "true"
+		   });
+		addAnnotation
+		  (getWebUserPreference_UserLoginId(),
+		   source,
+		   new String[] {
+			   "key", "true"
+		   });
+		addAnnotation
+		  (getWebUserPreference_PartyId(),
 		   source,
 		   new String[] {
 			   "key", "true"
@@ -917,7 +950,8 @@ public class PreferencePackageImpl extends EPackageImpl implements PreferencePac
 		  (getWebUserPreference_VisitId(),
 		   source,
 		   new String[] {
-			   "key", "true"
+			   "key", "true",
+			   "help", "To be able to keep preferences for a non loggin in user for the current session"
 		   });
 	}
 

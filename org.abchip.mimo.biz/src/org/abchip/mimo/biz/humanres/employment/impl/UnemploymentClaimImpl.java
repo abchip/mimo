@@ -30,9 +30,9 @@ import org.eclipse.emf.ecore.EClass;
  *   <li>{@link org.abchip.mimo.biz.humanres.employment.impl.UnemploymentClaimImpl#getPartyIdTo <em>Party Id To</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.employment.impl.UnemploymentClaimImpl#getRoleTypeIdFrom <em>Role Type Id From</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.employment.impl.UnemploymentClaimImpl#getRoleTypeIdTo <em>Role Type Id To</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.humanres.employment.impl.UnemploymentClaimImpl#getStatusId <em>Status Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.employment.impl.UnemploymentClaimImpl#getThruDate <em>Thru Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.employment.impl.UnemploymentClaimImpl#getUnemploymentClaimDate <em>Unemployment Claim Date</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.humanres.employment.impl.UnemploymentClaimImpl#getStatusId <em>Status Id</em>}</li>
  * </ul>
  *
  * @generated

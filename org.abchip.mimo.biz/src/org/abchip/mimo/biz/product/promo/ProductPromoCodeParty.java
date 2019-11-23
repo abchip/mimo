@@ -24,7 +24,7 @@ import org.abchip.mimo.biz.party.party.Party;
  * </ul>
  *
  * @see org.abchip.mimo.biz.product.promo.PromoPackage#getProductPromoCodeParty()
- * @model
+ * @model annotation="mimo-ent-frame title='Product Promotion Party' dictionary='ProductEntityLabels'"
  * @generated
  */
 public interface ProductPromoCodeParty extends BizEntity {
@@ -39,7 +39,9 @@ public interface ProductPromoCodeParty extends BizEntity {
 	 * @return the value of the '<em>Party Id</em>' reference.
 	 * @see #setPartyId(Party)
 	 * @see org.abchip.mimo.biz.product.promo.PromoPackage#getProductPromoCodeParty_PartyId()
-	 * @model keys="partyId"
+	 * @model keys="partyId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Party getPartyId();
@@ -65,7 +67,9 @@ public interface ProductPromoCodeParty extends BizEntity {
 	 * @return the value of the '<em>Product Promo Code Id</em>' reference.
 	 * @see #setProductPromoCodeId(ProductPromoCode)
 	 * @see org.abchip.mimo.biz.product.promo.PromoPackage#getProductPromoCodeParty_ProductPromoCodeId()
-	 * @model keys="productPromoCodeId"
+	 * @model keys="productPromoCodeId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ProductPromoCode getProductPromoCodeId();

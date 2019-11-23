@@ -27,12 +27,12 @@ import org.eclipse.emf.ecore.EClass;
  *   <li>{@link org.abchip.mimo.biz.service.schedule.impl.TemporalExpressionImpl#getDate1 <em>Date1</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.service.schedule.impl.TemporalExpressionImpl#getDate2 <em>Date2</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.service.schedule.impl.TemporalExpressionImpl#getDescription <em>Description</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.service.schedule.impl.TemporalExpressionImpl#getFromTemporalExpressionAssocs <em>From Temporal Expression Assocs</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.service.schedule.impl.TemporalExpressionImpl#getInteger1 <em>Integer1</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.service.schedule.impl.TemporalExpressionImpl#getInteger2 <em>Integer2</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.service.schedule.impl.TemporalExpressionImpl#getString1 <em>String1</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.service.schedule.impl.TemporalExpressionImpl#getString2 <em>String2</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.service.schedule.impl.TemporalExpressionImpl#getTempExprTypeId <em>Temp Expr Type Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.service.schedule.impl.TemporalExpressionImpl#getFromTemporalExpressionAssocs <em>From Temporal Expression Assocs</em>}</li>
  * </ul>
  *
  * @generated

@@ -18,13 +18,13 @@ import org.abchip.mimo.biz.BizEntity;
  * The following features are supported:
  * </p>
  * <ul>
+ *   <li>{@link org.abchip.mimo.biz.entity.group.EntityGroupEntry#getEntityGroupId <em>Entity Group Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.entity.group.EntityGroupEntry#getEntityOrPackage <em>Entity Or Package</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.entity.group.EntityGroupEntry#getApplEnumId <em>Appl Enum Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.entity.group.EntityGroupEntry#getEntityGroupId <em>Entity Group Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.entity.group.GroupPackage#getEntityGroupEntry()
- * @model
+ * @model annotation="mimo-ent-frame title='Entity Grouping'"
  * @generated
  */
 public interface EntityGroupEntry extends BizEntity {
@@ -65,7 +65,9 @@ public interface EntityGroupEntry extends BizEntity {
 	 * @return the value of the '<em>Entity Group Id</em>' reference.
 	 * @see #setEntityGroupId(EntityGroup)
 	 * @see org.abchip.mimo.biz.entity.group.GroupPackage#getEntityGroupEntry_EntityGroupId()
-	 * @model keys="entityGroupId"
+	 * @model keys="entityGroupId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	EntityGroup getEntityGroupId();
@@ -92,8 +94,8 @@ public interface EntityGroupEntry extends BizEntity {
 	 * @see #setEntityOrPackage(String)
 	 * @see org.abchip.mimo.biz.entity.group.GroupPackage#getEntityGroupEntry_EntityOrPackage()
 	 * @model required="true"
-	 *        annotation="mimo-ent-format type='long-varchar' length='255'"
 	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='long-varchar' length='255'"
 	 * @generated
 	 */
 	String getEntityOrPackage();

@@ -30,7 +30,7 @@ import org.abchip.mimo.biz.BizEntity;
  * </ul>
  *
  * @see org.abchip.mimo.biz.product.inventory.InventoryPackage#getLot()
- * @model
+ * @model annotation="mimo-ent-frame dictionary='ProductEntityLabels'"
  * @generated
  */
 public interface Lot extends BizEntity {
@@ -135,7 +135,6 @@ public interface Lot extends BizEntity {
 	 * @see org.abchip.mimo.biz.product.inventory.InventoryPackage#getLot_LotId()
 	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getLotId();

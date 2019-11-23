@@ -24,7 +24,7 @@ import org.abchip.mimo.biz.order.quote.Quote;
  * </ul>
  *
  * @see org.abchip.mimo.biz.marketing.opportunity.OpportunityPackage#getSalesOpportunityQuote()
- * @model
+ * @model annotation="mimo-ent-frame title='Relates sales opportunities to their quotes.'"
  * @generated
  */
 public interface SalesOpportunityQuote extends BizEntity {
@@ -39,7 +39,9 @@ public interface SalesOpportunityQuote extends BizEntity {
 	 * @return the value of the '<em>Quote Id</em>' reference.
 	 * @see #setQuoteId(Quote)
 	 * @see org.abchip.mimo.biz.marketing.opportunity.OpportunityPackage#getSalesOpportunityQuote_QuoteId()
-	 * @model keys="quoteId"
+	 * @model keys="quoteId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Quote getQuoteId();
@@ -65,7 +67,9 @@ public interface SalesOpportunityQuote extends BizEntity {
 	 * @return the value of the '<em>Sales Opportunity Id</em>' reference.
 	 * @see #setSalesOpportunityId(SalesOpportunity)
 	 * @see org.abchip.mimo.biz.marketing.opportunity.OpportunityPackage#getSalesOpportunityQuote_SalesOpportunityId()
-	 * @model keys="salesOpportunityId"
+	 * @model keys="salesOpportunityId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	SalesOpportunity getSalesOpportunityId();

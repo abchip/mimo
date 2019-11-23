@@ -27,7 +27,7 @@ import org.abchip.mimo.biz.BizEntityType;
  * </ul>
  *
  * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPaymentGroupType()
- * @model annotation="mimo-ent-frame formula='description'"
+ * @model annotation="mimo-ent-frame help='Payment Group Type' formula='description'"
  * @generated
  */
 public interface PaymentGroupType extends BizEntityType<PaymentGroup> {
@@ -95,6 +95,7 @@ public interface PaymentGroupType extends BizEntityType<PaymentGroup> {
 	 * @see #setParentTypeId(PaymentGroupType)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPaymentGroupType_ParentTypeId()
 	 * @model keys="paymentGroupTypeId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	PaymentGroupType getParentTypeId();
@@ -142,7 +143,6 @@ public interface PaymentGroupType extends BizEntityType<PaymentGroup> {
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPaymentGroupType_PaymentGroupTypeId()
 	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getPaymentGroupTypeId();

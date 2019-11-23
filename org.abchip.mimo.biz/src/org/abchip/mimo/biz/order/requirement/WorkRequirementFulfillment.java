@@ -40,7 +40,9 @@ public interface WorkRequirementFulfillment extends BizEntityTyped<WorkReqFulfTy
 	 * @return the value of the '<em>Requirement Id</em>' reference.
 	 * @see #setRequirementId(Requirement)
 	 * @see org.abchip.mimo.biz.order.requirement.RequirementPackage#getWorkRequirementFulfillment_RequirementId()
-	 * @model keys="requirementId"
+	 * @model keys="requirementId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Requirement getRequirementId();
@@ -66,7 +68,9 @@ public interface WorkRequirementFulfillment extends BizEntityTyped<WorkReqFulfTy
 	 * @return the value of the '<em>Work Effort Id</em>' reference.
 	 * @see #setWorkEffortId(WorkEffort)
 	 * @see org.abchip.mimo.biz.order.requirement.RequirementPackage#getWorkRequirementFulfillment_WorkEffortId()
-	 * @model keys="workEffortId"
+	 * @model keys="workEffortId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	WorkEffort getWorkEffortId();
@@ -93,6 +97,7 @@ public interface WorkRequirementFulfillment extends BizEntityTyped<WorkReqFulfTy
 	 * @see #setWorkReqFulfTypeId(WorkReqFulfType)
 	 * @see org.abchip.mimo.biz.order.requirement.RequirementPackage#getWorkRequirementFulfillment_WorkReqFulfTypeId()
 	 * @model keys="workReqFulfTypeId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	WorkReqFulfType getWorkReqFulfTypeId();

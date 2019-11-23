@@ -22,18 +22,18 @@ import org.abchip.mimo.biz.party.party.Party;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.humanres.employment.EmplLeave#getFromDate <em>From Date</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.humanres.employment.EmplLeave#getDescription <em>Description</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.humanres.employment.EmplLeave#getThruDate <em>Thru Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.employment.EmplLeave#getPartyId <em>Party Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.employment.EmplLeave#getLeaveTypeId <em>Leave Type Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.humanres.employment.EmplLeave#getEmplLeaveReasonTypeId <em>Empl Leave Reason Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.humanres.employment.EmplLeave#getFromDate <em>From Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.employment.EmplLeave#getApproverPartyId <em>Approver Party Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.humanres.employment.EmplLeave#getDescription <em>Description</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.humanres.employment.EmplLeave#getEmplLeaveReasonTypeId <em>Empl Leave Reason Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.employment.EmplLeave#getLeaveStatus <em>Leave Status</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.humanres.employment.EmplLeave#getThruDate <em>Thru Date</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.humanres.employment.EmploymentPackage#getEmplLeave()
- * @model annotation="mimo-ent-frame formula='description'"
+ * @model annotation="mimo-ent-frame title='Employee Leave' formula='description'"
  * @generated
  */
 public interface EmplLeave extends BizEntityTyped<EmplLeaveType> {
@@ -49,6 +49,7 @@ public interface EmplLeave extends BizEntityTyped<EmplLeaveType> {
 	 * @see #setApproverPartyId(Party)
 	 * @see org.abchip.mimo.biz.humanres.employment.EmploymentPackage#getEmplLeave_ApproverPartyId()
 	 * @model keys="partyId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Party getApproverPartyId();
@@ -101,6 +102,7 @@ public interface EmplLeave extends BizEntityTyped<EmplLeaveType> {
 	 * @see #setEmplLeaveReasonTypeId(EmplLeaveReasonType)
 	 * @see org.abchip.mimo.biz.humanres.employment.EmploymentPackage#getEmplLeave_EmplLeaveReasonTypeId()
 	 * @model keys="emplLeaveReasonTypeId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	EmplLeaveReasonType getEmplLeaveReasonTypeId();
@@ -127,8 +129,8 @@ public interface EmplLeave extends BizEntityTyped<EmplLeaveType> {
 	 * @see #setFromDate(Date)
 	 * @see org.abchip.mimo.biz.humanres.employment.EmploymentPackage#getEmplLeave_FromDate()
 	 * @model required="true"
-	 *        annotation="mimo-ent-format type='date-time'"
 	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getFromDate();
@@ -155,6 +157,7 @@ public interface EmplLeave extends BizEntityTyped<EmplLeaveType> {
 	 * @see #setLeaveStatus(StatusItem)
 	 * @see org.abchip.mimo.biz.humanres.employment.EmploymentPackage#getEmplLeave_LeaveStatus()
 	 * @model keys="statusId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	StatusItem getLeaveStatus();
@@ -180,7 +183,9 @@ public interface EmplLeave extends BizEntityTyped<EmplLeaveType> {
 	 * @return the value of the '<em>Leave Type Id</em>' reference.
 	 * @see #setLeaveTypeId(EmplLeaveType)
 	 * @see org.abchip.mimo.biz.humanres.employment.EmploymentPackage#getEmplLeave_LeaveTypeId()
-	 * @model keys="leaveTypeId"
+	 * @model keys="leaveTypeId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	EmplLeaveType getLeaveTypeId();
@@ -206,7 +211,9 @@ public interface EmplLeave extends BizEntityTyped<EmplLeaveType> {
 	 * @return the value of the '<em>Party Id</em>' reference.
 	 * @see #setPartyId(Party)
 	 * @see org.abchip.mimo.biz.humanres.employment.EmploymentPackage#getEmplLeave_PartyId()
-	 * @model keys="partyId"
+	 * @model keys="partyId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Party getPartyId();

@@ -24,12 +24,12 @@ import org.abchip.mimo.biz.product.product.Product;
  * The following features are supported:
  * </p>
  * <ul>
+ *   <li>{@link org.abchip.mimo.biz.order.order.OrderSummaryEntry#getProductId <em>Product Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.order.OrderSummaryEntry#getFacilityId <em>Facility Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.OrderSummaryEntry#getEntryDate <em>Entry Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.OrderSummaryEntry#getGrossSales <em>Gross Sales</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.OrderSummaryEntry#getProductCost <em>Product Cost</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.OrderSummaryEntry#getTotalQuantity <em>Total Quantity</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.order.OrderSummaryEntry#getProductId <em>Product Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.order.OrderSummaryEntry#getFacilityId <em>Facility Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderSummaryEntry()
@@ -49,8 +49,8 @@ public interface OrderSummaryEntry extends BizEntity {
 	 * @see #setEntryDate(Date)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderSummaryEntry_EntryDate()
 	 * @model required="true"
-	 *        annotation="mimo-ent-format type='date'"
 	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='date'"
 	 * @generated
 	 */
 	Date getEntryDate();
@@ -76,7 +76,9 @@ public interface OrderSummaryEntry extends BizEntity {
 	 * @return the value of the '<em>Facility Id</em>' reference.
 	 * @see #setFacilityId(Facility)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderSummaryEntry_FacilityId()
-	 * @model keys="facilityId"
+	 * @model keys="facilityId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Facility getFacilityId();
@@ -154,7 +156,9 @@ public interface OrderSummaryEntry extends BizEntity {
 	 * @return the value of the '<em>Product Id</em>' reference.
 	 * @see #setProductId(Product)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderSummaryEntry_ProductId()
-	 * @model keys="productId"
+	 * @model keys="productId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Product getProductId();

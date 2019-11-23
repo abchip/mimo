@@ -23,7 +23,7 @@ import org.abchip.mimo.biz.BizEntityType;
  * </ul>
  *
  * @see org.abchip.mimo.biz.manufacturing.mrp.MrpPackage#getMrpEventType()
- * @model annotation="mimo-ent-frame formula='description'"
+ * @model annotation="mimo-ent-frame dictionary='ManufacturingEntityLabels' formula='description'"
  * @generated
  */
 public interface MrpEventType extends BizEntityType<MrpEvent> {
@@ -40,7 +40,6 @@ public interface MrpEventType extends BizEntityType<MrpEvent> {
 	 * @see org.abchip.mimo.biz.manufacturing.mrp.MrpPackage#getMrpEventType_MrpEventTypeId()
 	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getMrpEventTypeId();

@@ -18,12 +18,12 @@ import org.abchip.mimo.biz.BizEntity;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.content.data.ImageDataResource#getImageData <em>Image Data</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.data.ImageDataResource#getDataResourceId <em>Data Resource Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.content.data.ImageDataResource#getImageData <em>Image Data</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.content.data.DataPackage#getImageDataResource()
- * @model
+ * @model annotation="mimo-ent-frame title='Image Data Object'"
  * @generated
  */
 public interface ImageDataResource extends BizEntity {
@@ -38,7 +38,8 @@ public interface ImageDataResource extends BizEntity {
 	 * @return the value of the '<em>Data Resource Id</em>' reference.
 	 * @see #setDataResourceId(DataResource)
 	 * @see org.abchip.mimo.biz.content.data.DataPackage#getImageDataResource_DataResourceId()
-	 * @model keys="dataResourceId"
+	 * @model keys="dataResourceId" required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	DataResource getDataResourceId();

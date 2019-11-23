@@ -39,7 +39,9 @@ public interface SegmentGroupClassification extends BizEntity {
 	 * @return the value of the '<em>Party Classification Group Id</em>' reference.
 	 * @see #setPartyClassificationGroupId(PartyClassificationGroup)
 	 * @see org.abchip.mimo.biz.marketing.segment.SegmentPackage#getSegmentGroupClassification_PartyClassificationGroupId()
-	 * @model keys="partyClassificationGroupId"
+	 * @model keys="partyClassificationGroupId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	PartyClassificationGroup getPartyClassificationGroupId();
@@ -65,7 +67,9 @@ public interface SegmentGroupClassification extends BizEntity {
 	 * @return the value of the '<em>Segment Group Id</em>' reference.
 	 * @see #setSegmentGroupId(SegmentGroup)
 	 * @see org.abchip.mimo.biz.marketing.segment.SegmentPackage#getSegmentGroupClassification_SegmentGroupId()
-	 * @model keys="segmentGroupId"
+	 * @model keys="segmentGroupId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	SegmentGroup getSegmentGroupId();

@@ -18,14 +18,14 @@ import org.abchip.mimo.biz.BizEntityTyped;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.product.feature.ProductFeatureIactn#getProductId <em>Product Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.feature.ProductFeatureIactn#getProductFeatureIactnTypeId <em>Product Feature Iactn Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.feature.ProductFeatureIactn#getProductFeatureId <em>Product Feature Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.feature.ProductFeatureIactn#getProductFeatureIdTo <em>Product Feature Id To</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.feature.ProductFeatureIactn#getProductFeatureIactnTypeId <em>Product Feature Iactn Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.feature.ProductFeatureIactn#getProductId <em>Product Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.product.feature.FeaturePackage#getProductFeatureIactn()
- * @model
+ * @model annotation="mimo-ent-frame title='Product Feature Interaction' dictionary='ProductEntityLabels'"
  * @generated
  */
 public interface ProductFeatureIactn extends BizEntityTyped<ProductFeatureIactnType> {
@@ -67,6 +67,7 @@ public interface ProductFeatureIactn extends BizEntityTyped<ProductFeatureIactnT
 	 * @see #setProductFeatureIactnTypeId(ProductFeatureIactnType)
 	 * @see org.abchip.mimo.biz.product.feature.FeaturePackage#getProductFeatureIactn_ProductFeatureIactnTypeId()
 	 * @model keys="productFeatureIactnTypeId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ProductFeatureIactnType getProductFeatureIactnTypeId();
@@ -92,7 +93,9 @@ public interface ProductFeatureIactn extends BizEntityTyped<ProductFeatureIactnT
 	 * @return the value of the '<em>Product Feature Id</em>' reference.
 	 * @see #setProductFeatureId(ProductFeature)
 	 * @see org.abchip.mimo.biz.product.feature.FeaturePackage#getProductFeatureIactn_ProductFeatureId()
-	 * @model keys="productFeatureId"
+	 * @model keys="productFeatureId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ProductFeature getProductFeatureId();
@@ -118,7 +121,9 @@ public interface ProductFeatureIactn extends BizEntityTyped<ProductFeatureIactnT
 	 * @return the value of the '<em>Product Feature Id To</em>' reference.
 	 * @see #setProductFeatureIdTo(ProductFeature)
 	 * @see org.abchip.mimo.biz.product.feature.FeaturePackage#getProductFeatureIactn_ProductFeatureIdTo()
-	 * @model keys="productFeatureId"
+	 * @model keys="productFeatureId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ProductFeature getProductFeatureIdTo();

@@ -24,11 +24,11 @@ import org.abchip.mimo.biz.security.login.UserLogin;
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.order.order.OrderStatus#getOrderStatusId <em>Order Status Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.OrderStatus#getChangeReason <em>Change Reason</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.order.OrderStatus#getOrderId <em>Order Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.OrderStatus#getOrderItemSeqId <em>Order Item Seq Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.order.OrderStatus#getOrderPaymentPreferenceId <em>Order Payment Preference Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.OrderStatus#getStatusDatetime <em>Status Datetime</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.OrderStatus#getStatusId <em>Status Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.order.OrderStatus#getOrderId <em>Order Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.order.OrderStatus#getOrderPaymentPreferenceId <em>Order Payment Preference Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.OrderStatus#getStatusUserLogin <em>Status User Login</em>}</li>
  * </ul>
  *
@@ -75,6 +75,7 @@ public interface OrderStatus extends BizEntity {
 	 * @see #setOrderId(OrderHeader)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderStatus_OrderId()
 	 * @model keys="orderId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	OrderHeader getOrderId();
@@ -127,6 +128,7 @@ public interface OrderStatus extends BizEntity {
 	 * @see #setOrderPaymentPreferenceId(OrderPaymentPreference)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderStatus_OrderPaymentPreferenceId()
 	 * @model keys="orderPaymentPreferenceId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	OrderPaymentPreference getOrderPaymentPreferenceId();
@@ -154,7 +156,6 @@ public interface OrderStatus extends BizEntity {
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderStatus_OrderStatusId()
 	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getOrderStatusId();
@@ -207,6 +208,7 @@ public interface OrderStatus extends BizEntity {
 	 * @see #setStatusId(StatusItem)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderStatus_StatusId()
 	 * @model keys="statusId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	StatusItem getStatusId();
@@ -233,6 +235,7 @@ public interface OrderStatus extends BizEntity {
 	 * @see #setStatusUserLogin(UserLogin)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderStatus_StatusUserLogin()
 	 * @model keys="userLoginId"
+	 *        annotation="mimo-ent-format type='id-vlong' length='255'"
 	 * @generated
 	 */
 	UserLogin getStatusUserLogin();

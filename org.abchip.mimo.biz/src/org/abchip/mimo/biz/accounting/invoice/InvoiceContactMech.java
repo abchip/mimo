@@ -26,7 +26,7 @@ import org.abchip.mimo.biz.party.contact.ContactMechPurposeType;
  * </ul>
  *
  * @see org.abchip.mimo.biz.accounting.invoice.InvoicePackage#getInvoiceContactMech()
- * @model
+ * @model annotation="mimo-ent-frame title='Invoice Contact Mechanism'"
  * @generated
  */
 public interface InvoiceContactMech extends BizEntity {
@@ -41,7 +41,9 @@ public interface InvoiceContactMech extends BizEntity {
 	 * @return the value of the '<em>Contact Mech Id</em>' reference.
 	 * @see #setContactMechId(ContactMech)
 	 * @see org.abchip.mimo.biz.accounting.invoice.InvoicePackage#getInvoiceContactMech_ContactMechId()
-	 * @model keys="contactMechId"
+	 * @model keys="contactMechId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ContactMech getContactMechId();
@@ -67,7 +69,9 @@ public interface InvoiceContactMech extends BizEntity {
 	 * @return the value of the '<em>Contact Mech Purpose Type Id</em>' reference.
 	 * @see #setContactMechPurposeTypeId(ContactMechPurposeType)
 	 * @see org.abchip.mimo.biz.accounting.invoice.InvoicePackage#getInvoiceContactMech_ContactMechPurposeTypeId()
-	 * @model keys="contactMechPurposeTypeId"
+	 * @model keys="contactMechPurposeTypeId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ContactMechPurposeType getContactMechPurposeTypeId();
@@ -93,7 +97,9 @@ public interface InvoiceContactMech extends BizEntity {
 	 * @return the value of the '<em>Invoice Id</em>' reference.
 	 * @see #setInvoiceId(Invoice)
 	 * @see org.abchip.mimo.biz.accounting.invoice.InvoicePackage#getInvoiceContactMech_InvoiceId()
-	 * @model keys="invoiceId"
+	 * @model keys="invoiceId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Invoice getInvoiceId();

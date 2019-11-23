@@ -18,13 +18,13 @@ import org.abchip.mimo.biz.BizEntity;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.service.schedule.TemporalExpressionAssoc#getExprAssocType <em>Expr Assoc Type</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.service.schedule.TemporalExpressionAssoc#getFromTempExprId <em>From Temp Expr Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.service.schedule.TemporalExpressionAssoc#getToTempExprId <em>To Temp Expr Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.service.schedule.TemporalExpressionAssoc#getExprAssocType <em>Expr Assoc Type</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.service.schedule.SchedulePackage#getTemporalExpressionAssoc()
- * @model
+ * @model annotation="mimo-ent-frame title='Temporal Expression Association'"
  * @generated
  */
 public interface TemporalExpressionAssoc extends BizEntity {
@@ -39,7 +39,9 @@ public interface TemporalExpressionAssoc extends BizEntity {
 	 * @return the value of the '<em>From Temp Expr Id</em>' reference.
 	 * @see #setFromTempExprId(TemporalExpression)
 	 * @see org.abchip.mimo.biz.service.schedule.SchedulePackage#getTemporalExpressionAssoc_FromTempExprId()
-	 * @model keys="tempExprId"
+	 * @model keys="tempExprId" required="true"
+	 *        annotation="mimo-ent-slot key='true' help='The \"parent\" expression'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	TemporalExpression getFromTempExprId();
@@ -65,7 +67,9 @@ public interface TemporalExpressionAssoc extends BizEntity {
 	 * @return the value of the '<em>To Temp Expr Id</em>' reference.
 	 * @see #setToTempExprId(TemporalExpression)
 	 * @see org.abchip.mimo.biz.service.schedule.SchedulePackage#getTemporalExpressionAssoc_ToTempExprId()
-	 * @model keys="tempExprId"
+	 * @model keys="tempExprId" required="true"
+	 *        annotation="mimo-ent-slot key='true' help='The \"child\" expression'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	TemporalExpression getToTempExprId();
@@ -91,7 +95,8 @@ public interface TemporalExpressionAssoc extends BizEntity {
 	 * @return the value of the '<em>Expr Assoc Type</em>' attribute.
 	 * @see #setExprAssocType(String)
 	 * @see org.abchip.mimo.biz.service.schedule.SchedulePackage#getTemporalExpressionAssoc_ExprAssocType()
-	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 * @model annotation="mimo-ent-slot help='Expression association type.\n         When applied to DIFFERENCE expression types, valid values are INCLUDE or EXCLUDE.\n         When applied to SUBSTITUTION expression types, valid values are INCLUDE, EXCLUDE, or SUBSTITUTE.'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	String getExprAssocType();

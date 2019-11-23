@@ -23,7 +23,7 @@ import org.abchip.mimo.biz.BizEntity;
  * </ul>
  *
  * @see org.abchip.mimo.biz.party.contact.ContactPackage#getContactMechLink()
- * @model
+ * @model annotation="mimo-ent-frame title='Contact Mechanism Link'"
  * @generated
  */
 public interface ContactMechLink extends BizEntity {
@@ -38,7 +38,9 @@ public interface ContactMechLink extends BizEntity {
 	 * @return the value of the '<em>Contact Mech Id From</em>' reference.
 	 * @see #setContactMechIdFrom(ContactMech)
 	 * @see org.abchip.mimo.biz.party.contact.ContactPackage#getContactMechLink_ContactMechIdFrom()
-	 * @model keys="contactMechId"
+	 * @model keys="contactMechId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ContactMech getContactMechIdFrom();
@@ -64,7 +66,9 @@ public interface ContactMechLink extends BizEntity {
 	 * @return the value of the '<em>Contact Mech Id To</em>' reference.
 	 * @see #setContactMechIdTo(ContactMech)
 	 * @see org.abchip.mimo.biz.party.contact.ContactPackage#getContactMechLink_ContactMechIdTo()
-	 * @model keys="contactMechId"
+	 * @model keys="contactMechId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ContactMech getContactMechIdTo();

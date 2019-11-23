@@ -723,7 +723,7 @@ public class EmailPackageImpl extends EPackageImpl implements EmailPackage {
 	 */
 	@Override
 	public EReference getEmailTemplateSetting_EmailType() {
-		return (EReference)emailTemplateSettingEClass.getEStructuralFeatures().get(9);
+		return (EReference)emailTemplateSettingEClass.getEStructuralFeatures().get(6);
 	}
 
 	/**
@@ -733,16 +733,6 @@ public class EmailPackageImpl extends EPackageImpl implements EmailPackage {
 	 */
 	@Override
 	public EAttribute getEmailTemplateSetting_FromAddress() {
-		return (EAttribute)emailTemplateSettingEClass.getEStructuralFeatures().get(6);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EAttribute getEmailTemplateSetting_Subject() {
 		return (EAttribute)emailTemplateSettingEClass.getEStructuralFeatures().get(7);
 	}
 
@@ -752,8 +742,18 @@ public class EmailPackageImpl extends EPackageImpl implements EmailPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getEmailTemplateSetting_XslfoAttachScreenLocation() {
+	public EAttribute getEmailTemplateSetting_Subject() {
 		return (EAttribute)emailTemplateSettingEClass.getEStructuralFeatures().get(8);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getEmailTemplateSetting_XslfoAttachScreenLocation() {
+		return (EAttribute)emailTemplateSettingEClass.getEStructuralFeatures().get(9);
 	}
 
 	/**
@@ -792,10 +792,10 @@ public class EmailPackageImpl extends EPackageImpl implements EmailPackage {
 		createEAttribute(emailTemplateSettingEClass, EMAIL_TEMPLATE_SETTING__CC_ADDRESS);
 		createEAttribute(emailTemplateSettingEClass, EMAIL_TEMPLATE_SETTING__CONTENT_TYPE);
 		createEAttribute(emailTemplateSettingEClass, EMAIL_TEMPLATE_SETTING__DESCRIPTION);
+		createEReference(emailTemplateSettingEClass, EMAIL_TEMPLATE_SETTING__EMAIL_TYPE);
 		createEAttribute(emailTemplateSettingEClass, EMAIL_TEMPLATE_SETTING__FROM_ADDRESS);
 		createEAttribute(emailTemplateSettingEClass, EMAIL_TEMPLATE_SETTING__SUBJECT);
 		createEAttribute(emailTemplateSettingEClass, EMAIL_TEMPLATE_SETTING__XSLFO_ATTACH_SCREEN_LOCATION);
-		createEReference(emailTemplateSettingEClass, EMAIL_TEMPLATE_SETTING__EMAIL_TYPE);
 	}
 
 	/**
@@ -840,11 +840,11 @@ public class EmailPackageImpl extends EPackageImpl implements EmailPackage {
 		initEAttribute(getEmailTemplateSetting_CcAddress(), ecorePackage.getEString(), "ccAddress", null, 0, 1, EmailTemplateSetting.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getEmailTemplateSetting_ContentType(), ecorePackage.getEString(), "contentType", null, 0, 1, EmailTemplateSetting.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getEmailTemplateSetting_Description(), ecorePackage.getEString(), "description", null, 0, 1, EmailTemplateSetting.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getEmailTemplateSetting_EmailType(), theEnumPackage.getEnumeration(), null, "emailType", null, 0, 1, EmailTemplateSetting.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getEmailTemplateSetting_EmailType().getEKeys().add(theEnumPackage.getEnumeration_EnumId());
 		initEAttribute(getEmailTemplateSetting_FromAddress(), ecorePackage.getEString(), "fromAddress", null, 0, 1, EmailTemplateSetting.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getEmailTemplateSetting_Subject(), ecorePackage.getEString(), "subject", null, 0, 1, EmailTemplateSetting.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getEmailTemplateSetting_XslfoAttachScreenLocation(), ecorePackage.getEString(), "xslfoAttachScreenLocation", null, 0, 1, EmailTemplateSetting.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getEmailTemplateSetting_EmailType(), theEnumPackage.getEnumeration(), null, "emailType", null, 0, 1, EmailTemplateSetting.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		getEmailTemplateSetting_EmailType().getEKeys().add(theEnumPackage.getEnumeration_EnumId());
 
 		// Create annotations
 		// mimo-ent-frame
@@ -922,6 +922,13 @@ public class EmailPackageImpl extends EPackageImpl implements EmailPackage {
 			   "length", "255"
 		   });
 		addAnnotation
+		  (getEmailTemplateSetting_EmailType(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
 		  (getEmailTemplateSetting_FromAddress(),
 		   source,
 		   new String[] {
@@ -953,10 +960,16 @@ public class EmailPackageImpl extends EPackageImpl implements EmailPackage {
 	protected void createMimoentslotAnnotations() {
 		String source = "mimo-ent-slot";
 		addAnnotation
-		  (getEmailTemplateSetting_EmailTemplateSettingId(),
+		  (getEmailTemplateSetting_BodyScreenLocation(),
 		   source,
 		   new String[] {
-			   "key", "true"
+			   "help", "if empty defaults to a screen based on the emailType"
+		   });
+		addAnnotation
+		  (getEmailTemplateSetting_XslfoAttachScreenLocation(),
+		   source,
+		   new String[] {
+			   "help", "if specified is used to generate XSL:FO that is transformed to a PDF via Apache FOP and attached to the email"
 		   });
 	}
 

@@ -23,12 +23,12 @@ import org.abchip.mimo.biz.BizEntityType;
  *   <li>{@link org.abchip.mimo.biz.order.order.OrderAdjustmentType#getOrderAdjustmentTypeId <em>Order Adjustment Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.OrderAdjustmentType#getDescription <em>Description</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.OrderAdjustmentType#isHasTable <em>Has Table</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.order.OrderAdjustmentType#getParentTypeId <em>Parent Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.OrderAdjustmentType#getOrderAdjustmentTypeAttrs <em>Order Adjustment Type Attrs</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.order.OrderAdjustmentType#getParentTypeId <em>Parent Type Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderAdjustmentType()
- * @model annotation="mimo-ent-frame formula='description'"
+ * @model annotation="mimo-ent-frame dictionary='OrderEntityLabels' formula='description'"
  * @generated
  */
 public interface OrderAdjustmentType extends BizEntityType<OrderAdjustment> {
@@ -97,7 +97,6 @@ public interface OrderAdjustmentType extends BizEntityType<OrderAdjustment> {
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderAdjustmentType_OrderAdjustmentTypeId()
 	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getOrderAdjustmentTypeId();
@@ -124,6 +123,7 @@ public interface OrderAdjustmentType extends BizEntityType<OrderAdjustment> {
 	 * @see #setParentTypeId(OrderAdjustmentType)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderAdjustmentType_ParentTypeId()
 	 * @model keys="orderAdjustmentTypeId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	OrderAdjustmentType getParentTypeId();
@@ -149,8 +149,7 @@ public interface OrderAdjustmentType extends BizEntityType<OrderAdjustment> {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Order Adjustment Type Attrs</em>' attribute list.
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderAdjustmentType_OrderAdjustmentTypeAttrs()
-	 * @model required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='OrderAdjustmentTypeAttr'"
 	 * @generated

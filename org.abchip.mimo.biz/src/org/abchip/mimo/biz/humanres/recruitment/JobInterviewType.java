@@ -25,7 +25,7 @@ import org.abchip.mimo.biz.BizEntityType;
  * </ul>
  *
  * @see org.abchip.mimo.biz.humanres.recruitment.RecruitmentPackage#getJobInterviewType()
- * @model annotation="mimo-ent-frame formula='description'"
+ * @model annotation="mimo-ent-frame title='Entity for storing data about Interview Types' formula='description'"
  * @generated
  */
 public interface JobInterviewType extends BizEntityType<JobInterview> {
@@ -78,7 +78,6 @@ public interface JobInterviewType extends BizEntityType<JobInterview> {
 	 * @see org.abchip.mimo.biz.humanres.recruitment.RecruitmentPackage#getJobInterviewType_JobInterviewTypeId()
 	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getJobInterviewTypeId();

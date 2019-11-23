@@ -31,12 +31,12 @@ import org.eclipse.emf.ecore.EClass;
  *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductReviewImpl#getProductReviewId <em>Product Review Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductReviewImpl#isPostedAnonymous <em>Posted Anonymous</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductReviewImpl#getPostedDateTime <em>Posted Date Time</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductReviewImpl#getProductId <em>Product Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductReviewImpl#getProductRating <em>Product Rating</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductReviewImpl#getProductReview <em>Product Review</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductReviewImpl#getProductStoreId <em>Product Store Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductReviewImpl#getProductId <em>Product Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductReviewImpl#getUserLoginId <em>User Login Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductReviewImpl#getStatusId <em>Status Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductReviewImpl#getUserLoginId <em>User Login Id</em>}</li>
  * </ul>
  *
  * @generated

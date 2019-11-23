@@ -37,8 +37,8 @@ import org.eclipse.emf.ecore.EClass;
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.PaymentGatewayCyberSourceImpl#getMerchantContact <em>Merchant Contact</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.PaymentGatewayCyberSourceImpl#getMerchantDescr <em>Merchant Descr</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.PaymentGatewayCyberSourceImpl#getMerchantId <em>Merchant Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.PaymentGatewayCyberSourceImpl#getProduction <em>Production</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.PaymentGatewayCyberSourceImpl#getPaymentGatewayConfigId <em>Payment Gateway Config Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.PaymentGatewayCyberSourceImpl#getProduction <em>Production</em>}</li>
  * </ul>
  *
  * @generated

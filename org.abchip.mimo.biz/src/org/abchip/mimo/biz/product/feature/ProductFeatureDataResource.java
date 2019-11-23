@@ -24,7 +24,7 @@ import org.abchip.mimo.biz.content.data.DataResource;
  * </ul>
  *
  * @see org.abchip.mimo.biz.product.feature.FeaturePackage#getProductFeatureDataResource()
- * @model
+ * @model annotation="mimo-ent-frame dictionary='ProductEntityLabels'"
  * @generated
  */
 public interface ProductFeatureDataResource extends BizEntity {
@@ -39,7 +39,9 @@ public interface ProductFeatureDataResource extends BizEntity {
 	 * @return the value of the '<em>Data Resource Id</em>' reference.
 	 * @see #setDataResourceId(DataResource)
 	 * @see org.abchip.mimo.biz.product.feature.FeaturePackage#getProductFeatureDataResource_DataResourceId()
-	 * @model keys="dataResourceId"
+	 * @model keys="dataResourceId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	DataResource getDataResourceId();
@@ -65,7 +67,9 @@ public interface ProductFeatureDataResource extends BizEntity {
 	 * @return the value of the '<em>Product Feature Id</em>' reference.
 	 * @see #setProductFeatureId(ProductFeature)
 	 * @see org.abchip.mimo.biz.product.feature.FeaturePackage#getProductFeatureDataResource_ProductFeatureId()
-	 * @model keys="productFeatureId"
+	 * @model keys="productFeatureId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ProductFeature getProductFeatureId();

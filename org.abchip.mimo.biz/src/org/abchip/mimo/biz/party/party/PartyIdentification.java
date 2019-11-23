@@ -18,9 +18,9 @@ import org.abchip.mimo.biz.BizEntityTyped;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.party.party.PartyIdentification#getIdValue <em>Id Value</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.party.PartyIdentification#getPartyIdentificationTypeId <em>Party Identification Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.party.PartyIdentification#getPartyId <em>Party Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.party.party.PartyIdentification#getIdValue <em>Id Value</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.party.party.PartyPackage#getPartyIdentification()
@@ -65,7 +65,9 @@ public interface PartyIdentification extends BizEntityTyped<PartyIdentificationT
 	 * @return the value of the '<em>Party Identification Type Id</em>' reference.
 	 * @see #setPartyIdentificationTypeId(PartyIdentificationType)
 	 * @see org.abchip.mimo.biz.party.party.PartyPackage#getPartyIdentification_PartyIdentificationTypeId()
-	 * @model keys="partyIdentificationTypeId"
+	 * @model keys="partyIdentificationTypeId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	PartyIdentificationType getPartyIdentificationTypeId();
@@ -91,7 +93,9 @@ public interface PartyIdentification extends BizEntityTyped<PartyIdentificationT
 	 * @return the value of the '<em>Party Id</em>' reference.
 	 * @see #setPartyId(Party)
 	 * @see org.abchip.mimo.biz.party.party.PartyPackage#getPartyIdentification_PartyId()
-	 * @model keys="partyId"
+	 * @model keys="partyId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Party getPartyId();

@@ -25,7 +25,7 @@ import org.abchip.mimo.biz.BizEntity;
  * </ul>
  *
  * @see org.abchip.mimo.biz.shipment.receipt.ReceiptPackage#getRejectionReason()
- * @model annotation="mimo-ent-frame formula='description'"
+ * @model annotation="mimo-ent-frame dictionary='ProductEntityLabels' formula='description'"
  * @generated
  */
 public interface RejectionReason extends BizEntity {
@@ -78,7 +78,6 @@ public interface RejectionReason extends BizEntity {
 	 * @see org.abchip.mimo.biz.shipment.receipt.ReceiptPackage#getRejectionReason_RejectionId()
 	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getRejectionId();

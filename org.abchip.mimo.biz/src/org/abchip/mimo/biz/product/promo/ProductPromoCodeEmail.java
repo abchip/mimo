@@ -18,12 +18,12 @@ import org.abchip.mimo.biz.BizEntity;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.product.promo.ProductPromoCodeEmail#getEmailAddress <em>Email Address</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.promo.ProductPromoCodeEmail#getProductPromoCodeId <em>Product Promo Code Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.promo.ProductPromoCodeEmail#getEmailAddress <em>Email Address</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.product.promo.PromoPackage#getProductPromoCodeEmail()
- * @model
+ * @model annotation="mimo-ent-frame title='Product Promotion Email' dictionary='ProductEntityLabels'"
  * @generated
  */
 public interface ProductPromoCodeEmail extends BizEntity {
@@ -39,8 +39,8 @@ public interface ProductPromoCodeEmail extends BizEntity {
 	 * @see #setEmailAddress(String)
 	 * @see org.abchip.mimo.biz.product.promo.PromoPackage#getProductPromoCodeEmail_EmailAddress()
 	 * @model required="true"
-	 *        annotation="mimo-ent-format type='email' length='320'"
 	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='email' length='320'"
 	 * @generated
 	 */
 	String getEmailAddress();
@@ -66,7 +66,9 @@ public interface ProductPromoCodeEmail extends BizEntity {
 	 * @return the value of the '<em>Product Promo Code Id</em>' reference.
 	 * @see #setProductPromoCodeId(ProductPromoCode)
 	 * @see org.abchip.mimo.biz.product.promo.PromoPackage#getProductPromoCodeEmail_ProductPromoCodeId()
-	 * @model keys="productPromoCodeId"
+	 * @model keys="productPromoCodeId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ProductPromoCode getProductPromoCodeId();

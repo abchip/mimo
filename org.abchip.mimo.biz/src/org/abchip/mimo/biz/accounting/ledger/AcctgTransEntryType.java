@@ -27,7 +27,7 @@ import org.abchip.mimo.biz.BizEntityType;
  * </ul>
  *
  * @see org.abchip.mimo.biz.accounting.ledger.LedgerPackage#getAcctgTransEntryType()
- * @model annotation="mimo-ent-frame formula='description'"
+ * @model annotation="mimo-ent-frame title='Accounting Transaction Entry Type' formula='description'"
  * @generated
  */
 public interface AcctgTransEntryType extends BizEntityType<AcctgTransEntry> {
@@ -95,6 +95,7 @@ public interface AcctgTransEntryType extends BizEntityType<AcctgTransEntry> {
 	 * @see #setParentTypeId(AcctgTransEntryType)
 	 * @see org.abchip.mimo.biz.accounting.ledger.LedgerPackage#getAcctgTransEntryType_ParentTypeId()
 	 * @model keys="acctgTransEntryTypeId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	AcctgTransEntryType getParentTypeId();
@@ -142,7 +143,6 @@ public interface AcctgTransEntryType extends BizEntityType<AcctgTransEntry> {
 	 * @see org.abchip.mimo.biz.accounting.ledger.LedgerPackage#getAcctgTransEntryType_AcctgTransEntryTypeId()
 	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getAcctgTransEntryTypeId();

@@ -23,7 +23,7 @@ import org.abchip.mimo.biz.BizEntity;
  * </ul>
  *
  * @see org.abchip.mimo.biz.product.supplier.SupplierPackage#getSupplierRatingType()
- * @model annotation="mimo-ent-frame formula='description'"
+ * @model annotation="mimo-ent-frame dictionary='ProductEntityLabels' formula='description'"
  * @generated
  */
 public interface SupplierRatingType extends BizEntity {
@@ -66,7 +66,6 @@ public interface SupplierRatingType extends BizEntity {
 	 * @see org.abchip.mimo.biz.product.supplier.SupplierPackage#getSupplierRatingType_SupplierRatingTypeId()
 	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getSupplierRatingTypeId();

@@ -108,22 +108,22 @@ public interface SchedulePackage extends EPackage {
 	int JOB_MANAGER_LOCK__LAST_UPDATED_TX_STAMP = BizPackage.BIZ_ENTITY__LAST_UPDATED_TX_STAMP;
 
 	/**
-	 * The feature id for the '<em><b>Instance Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int JOB_MANAGER_LOCK__INSTANCE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
-
-	/**
 	 * The feature id for the '<em><b>From Date</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int JOB_MANAGER_LOCK__FROM_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
+	int JOB_MANAGER_LOCK__FROM_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Instance Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int JOB_MANAGER_LOCK__INSTANCE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Comments</b></em>' attribute.
@@ -171,22 +171,22 @@ public interface SchedulePackage extends EPackage {
 	int JOB_MANAGER_LOCK__LAST_MODIFIED_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 6;
 
 	/**
-	 * The feature id for the '<em><b>Thru Date</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int JOB_MANAGER_LOCK__THRU_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 7;
-
-	/**
 	 * The feature id for the '<em><b>Reason Enum Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int JOB_MANAGER_LOCK__REASON_ENUM_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 8;
+	int JOB_MANAGER_LOCK__REASON_ENUM_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 7;
+
+	/**
+	 * The feature id for the '<em><b>Thru Date</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int JOB_MANAGER_LOCK__THRU_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 8;
 
 	/**
 	 * The number of structural features of the '<em>Job Manager Lock</em>' class.
@@ -253,13 +253,22 @@ public interface SchedulePackage extends EPackage {
 	int JOB_SANDBOX__JOB_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
 
 	/**
+	 * The feature id for the '<em><b>Auth User Login Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int JOB_SANDBOX__AUTH_USER_LOGIN_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
+
+	/**
 	 * The feature id for the '<em><b>Cancel Date Time</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int JOB_SANDBOX__CANCEL_DATE_TIME = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
+	int JOB_SANDBOX__CANCEL_DATE_TIME = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Current Recurrence Count</b></em>' attribute.
@@ -268,7 +277,7 @@ public interface SchedulePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int JOB_SANDBOX__CURRENT_RECURRENCE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
+	int JOB_SANDBOX__CURRENT_RECURRENCE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Current Retry Count</b></em>' attribute.
@@ -277,7 +286,7 @@ public interface SchedulePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int JOB_SANDBOX__CURRENT_RETRY_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
+	int JOB_SANDBOX__CURRENT_RETRY_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Finish Date Time</b></em>' attribute.
@@ -286,7 +295,7 @@ public interface SchedulePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int JOB_SANDBOX__FINISH_DATE_TIME = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
+	int JOB_SANDBOX__FINISH_DATE_TIME = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Job Name</b></em>' attribute.
@@ -295,7 +304,7 @@ public interface SchedulePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int JOB_SANDBOX__JOB_NAME = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 5;
+	int JOB_SANDBOX__JOB_NAME = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Job Result</b></em>' attribute.
@@ -304,7 +313,7 @@ public interface SchedulePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int JOB_SANDBOX__JOB_RESULT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 6;
+	int JOB_SANDBOX__JOB_RESULT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>Loader Name</b></em>' attribute.
@@ -313,7 +322,7 @@ public interface SchedulePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int JOB_SANDBOX__LOADER_NAME = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 7;
+	int JOB_SANDBOX__LOADER_NAME = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 8;
 
 	/**
 	 * The feature id for the '<em><b>Max Recurrence Count</b></em>' attribute.
@@ -322,7 +331,7 @@ public interface SchedulePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int JOB_SANDBOX__MAX_RECURRENCE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 8;
+	int JOB_SANDBOX__MAX_RECURRENCE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 9;
 
 	/**
 	 * The feature id for the '<em><b>Max Retry</b></em>' attribute.
@@ -331,7 +340,7 @@ public interface SchedulePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int JOB_SANDBOX__MAX_RETRY = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 9;
+	int JOB_SANDBOX__MAX_RETRY = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 10;
 
 	/**
 	 * The feature id for the '<em><b>Parent Job Id</b></em>' attribute.
@@ -340,7 +349,7 @@ public interface SchedulePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int JOB_SANDBOX__PARENT_JOB_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 10;
+	int JOB_SANDBOX__PARENT_JOB_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 11;
 
 	/**
 	 * The feature id for the '<em><b>Pool Id</b></em>' attribute.
@@ -349,7 +358,7 @@ public interface SchedulePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int JOB_SANDBOX__POOL_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 11;
+	int JOB_SANDBOX__POOL_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 12;
 
 	/**
 	 * The feature id for the '<em><b>Previous Job Id</b></em>' attribute.
@@ -358,43 +367,7 @@ public interface SchedulePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int JOB_SANDBOX__PREVIOUS_JOB_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 12;
-
-	/**
-	 * The feature id for the '<em><b>Run By Instance Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int JOB_SANDBOX__RUN_BY_INSTANCE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 13;
-
-	/**
-	 * The feature id for the '<em><b>Run Time</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int JOB_SANDBOX__RUN_TIME = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 14;
-
-	/**
-	 * The feature id for the '<em><b>Service Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int JOB_SANDBOX__SERVICE_NAME = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 15;
-
-	/**
-	 * The feature id for the '<em><b>Start Date Time</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int JOB_SANDBOX__START_DATE_TIME = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 16;
+	int JOB_SANDBOX__PREVIOUS_JOB_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 13;
 
 	/**
 	 * The feature id for the '<em><b>Recurrence Info Id</b></em>' reference.
@@ -403,34 +376,7 @@ public interface SchedulePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int JOB_SANDBOX__RECURRENCE_INFO_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 17;
-
-	/**
-	 * The feature id for the '<em><b>Temp Expr Id</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int JOB_SANDBOX__TEMP_EXPR_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 18;
-
-	/**
-	 * The feature id for the '<em><b>Runtime Data Id</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int JOB_SANDBOX__RUNTIME_DATA_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 19;
-
-	/**
-	 * The feature id for the '<em><b>Auth User Login Id</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int JOB_SANDBOX__AUTH_USER_LOGIN_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 20;
+	int JOB_SANDBOX__RECURRENCE_INFO_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 14;
 
 	/**
 	 * The feature id for the '<em><b>Run As User</b></em>' reference.
@@ -439,7 +385,52 @@ public interface SchedulePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int JOB_SANDBOX__RUN_AS_USER = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 21;
+	int JOB_SANDBOX__RUN_AS_USER = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 15;
+
+	/**
+	 * The feature id for the '<em><b>Run By Instance Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int JOB_SANDBOX__RUN_BY_INSTANCE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 16;
+
+	/**
+	 * The feature id for the '<em><b>Run Time</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int JOB_SANDBOX__RUN_TIME = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 17;
+
+	/**
+	 * The feature id for the '<em><b>Runtime Data Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int JOB_SANDBOX__RUNTIME_DATA_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 18;
+
+	/**
+	 * The feature id for the '<em><b>Service Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int JOB_SANDBOX__SERVICE_NAME = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 19;
+
+	/**
+	 * The feature id for the '<em><b>Start Date Time</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int JOB_SANDBOX__START_DATE_TIME = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 20;
 
 	/**
 	 * The feature id for the '<em><b>Status Id</b></em>' reference.
@@ -448,7 +439,16 @@ public interface SchedulePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int JOB_SANDBOX__STATUS_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 22;
+	int JOB_SANDBOX__STATUS_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 21;
+
+	/**
+	 * The feature id for the '<em><b>Temp Expr Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int JOB_SANDBOX__TEMP_EXPR_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 22;
 
 	/**
 	 * The number of structural features of the '<em>Job Sandbox</em>' class.
@@ -524,13 +524,22 @@ public interface SchedulePackage extends EPackage {
 	int RECURRENCE_INFO__EXCEPTION_DATE_TIMES = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
 
 	/**
+	 * The feature id for the '<em><b>Exception Rule Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RECURRENCE_INFO__EXCEPTION_RULE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
+
+	/**
 	 * The feature id for the '<em><b>Recurrence Count</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RECURRENCE_INFO__RECURRENCE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
+	int RECURRENCE_INFO__RECURRENCE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Recurrence Date Times</b></em>' attribute.
@@ -539,16 +548,7 @@ public interface SchedulePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RECURRENCE_INFO__RECURRENCE_DATE_TIMES = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
-
-	/**
-	 * The feature id for the '<em><b>Start Date Time</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RECURRENCE_INFO__START_DATE_TIME = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
+	int RECURRENCE_INFO__RECURRENCE_DATE_TIMES = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Recurrence Rule Id</b></em>' reference.
@@ -560,13 +560,13 @@ public interface SchedulePackage extends EPackage {
 	int RECURRENCE_INFO__RECURRENCE_RULE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 5;
 
 	/**
-	 * The feature id for the '<em><b>Exception Rule Id</b></em>' reference.
+	 * The feature id for the '<em><b>Start Date Time</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RECURRENCE_INFO__EXCEPTION_RULE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 6;
+	int RECURRENCE_INFO__START_DATE_TIME = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 6;
 
 	/**
 	 * The number of structural features of the '<em>Recurrence Info</em>' class.
@@ -932,13 +932,22 @@ public interface SchedulePackage extends EPackage {
 	int TEMPORAL_EXPRESSION__DESCRIPTION = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
 
 	/**
+	 * The feature id for the '<em><b>From Temporal Expression Assocs</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TEMPORAL_EXPRESSION__FROM_TEMPORAL_EXPRESSION_ASSOCS = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
+
+	/**
 	 * The feature id for the '<em><b>Integer1</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TEMPORAL_EXPRESSION__INTEGER1 = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
+	int TEMPORAL_EXPRESSION__INTEGER1 = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Integer2</b></em>' attribute.
@@ -947,7 +956,7 @@ public interface SchedulePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TEMPORAL_EXPRESSION__INTEGER2 = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 5;
+	int TEMPORAL_EXPRESSION__INTEGER2 = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>String1</b></em>' attribute.
@@ -956,7 +965,7 @@ public interface SchedulePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TEMPORAL_EXPRESSION__STRING1 = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 6;
+	int TEMPORAL_EXPRESSION__STRING1 = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>String2</b></em>' attribute.
@@ -965,7 +974,7 @@ public interface SchedulePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TEMPORAL_EXPRESSION__STRING2 = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 7;
+	int TEMPORAL_EXPRESSION__STRING2 = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 8;
 
 	/**
 	 * The feature id for the '<em><b>Temp Expr Type Id</b></em>' attribute.
@@ -974,16 +983,7 @@ public interface SchedulePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TEMPORAL_EXPRESSION__TEMP_EXPR_TYPE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 8;
-
-	/**
-	 * The feature id for the '<em><b>From Temporal Expression Assocs</b></em>' attribute list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TEMPORAL_EXPRESSION__FROM_TEMPORAL_EXPRESSION_ASSOCS = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 9;
+	int TEMPORAL_EXPRESSION__TEMP_EXPR_TYPE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 9;
 
 	/**
 	 * The number of structural features of the '<em>Temporal Expression</em>' class.
@@ -1041,22 +1041,13 @@ public interface SchedulePackage extends EPackage {
 	int TEMPORAL_EXPRESSION_ASSOC__LAST_UPDATED_TX_STAMP = BizPackage.BIZ_ENTITY__LAST_UPDATED_TX_STAMP;
 
 	/**
-	 * The feature id for the '<em><b>Expr Assoc Type</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TEMPORAL_EXPRESSION_ASSOC__EXPR_ASSOC_TYPE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
-
-	/**
 	 * The feature id for the '<em><b>From Temp Expr Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TEMPORAL_EXPRESSION_ASSOC__FROM_TEMP_EXPR_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
+	int TEMPORAL_EXPRESSION_ASSOC__FROM_TEMP_EXPR_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>To Temp Expr Id</b></em>' reference.
@@ -1065,7 +1056,16 @@ public interface SchedulePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TEMPORAL_EXPRESSION_ASSOC__TO_TEMP_EXPR_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
+	int TEMPORAL_EXPRESSION_ASSOC__TO_TEMP_EXPR_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Expr Assoc Type</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TEMPORAL_EXPRESSION_ASSOC__EXPR_ASSOC_TYPE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of structural features of the '<em>Temporal Expression Assoc</em>' class.

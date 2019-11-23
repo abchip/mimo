@@ -36,7 +36,7 @@ import org.abchip.mimo.biz.BizEntity;
  * </ul>
  *
  * @see org.abchip.mimo.biz.entity.test.TestPackage#getTestFieldType()
- * @model
+ * @model annotation="mimo-ent-frame help='An entity for testing the field data types' title='Entity for testing the field data types'"
  * @generated
  */
 public interface TestFieldType extends BizEntity {
@@ -287,7 +287,6 @@ public interface TestFieldType extends BizEntity {
 	 * @see org.abchip.mimo.biz.entity.test.TestPackage#getTestFieldType_TestFieldTypeId()
 	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getTestFieldTypeId();

@@ -511,10 +511,6 @@
         <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//entity/EntityState/Resolved"/>
         <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//entity/EntityState/Dirty"/>
       </genEnums>
-      <genEnums typeSafeEnumCompatible="false" ecoreEnum="mimo.ecore#//entity/SerializationType">
-        <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//entity/SerializationType/XML_Metadata_Interchange"/>
-        <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//entity/SerializationType/JavaScript_Object_Notation"/>
-      </genEnums>
       <genClasses ecoreClass="mimo.ecore#//entity/Cardinality">
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//entity/Cardinality/max"/>
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//entity/Cardinality/min"/>
@@ -687,6 +683,10 @@
         <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//resource/ResourceEventType/After_Save"/>
         <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//resource/ResourceEventType/Before_Delete"/>
         <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//resource/ResourceEventType/After_Delete"/>
+      </genEnums>
+      <genEnums typeSafeEnumCompatible="false" ecoreEnum="mimo.ecore#//resource/SerializationType">
+        <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//resource/SerializationType/XML_Metadata_Interchange"/>
+        <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//resource/SerializationType/JavaScript_Object_Notation"/>
       </genEnums>
       <genClasses image="false" ecoreClass="mimo.ecore#//resource/Resource">
         <genTypeParameters ecoreTypeParameter="mimo.ecore#//resource/Resource/E"/>

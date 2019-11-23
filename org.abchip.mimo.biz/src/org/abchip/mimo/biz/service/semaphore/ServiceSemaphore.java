@@ -27,7 +27,7 @@ import org.abchip.mimo.biz.BizEntity;
  * </ul>
  *
  * @see org.abchip.mimo.biz.service.semaphore.SemaphorePackage#getServiceSemaphore()
- * @model
+ * @model annotation="mimo-ent-frame title='Semaphore Lock'"
  * @generated
  */
 public interface ServiceSemaphore extends BizEntity {
@@ -44,7 +44,6 @@ public interface ServiceSemaphore extends BizEntity {
 	 * @see org.abchip.mimo.biz.service.semaphore.SemaphorePackage#getServiceSemaphore_ServiceName()
 	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-format type='name' length='100'"
-	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getServiceName();

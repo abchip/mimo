@@ -21,8 +21,8 @@ import org.eclipse.emf.ecore.EClass;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderHeaderNoteImpl#getInternalNote <em>Internal Note</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderHeaderNoteImpl#getOrderId <em>Order Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderHeaderNoteImpl#getInternalNote <em>Internal Note</em>}</li>
  * </ul>
  *
  * @generated

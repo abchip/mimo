@@ -27,7 +27,7 @@ import org.abchip.mimo.biz.BizEntityType;
  * </ul>
  *
  * @see org.abchip.mimo.biz.party.party.PartyPackage#getPartyIdentificationType()
- * @model annotation="mimo-ent-frame formula='description'"
+ * @model annotation="mimo-ent-frame dictionary='PartyEntityLabels' formula='description'"
  * @generated
  */
 public interface PartyIdentificationType extends BizEntityType<PartyIdentification> {
@@ -95,6 +95,7 @@ public interface PartyIdentificationType extends BizEntityType<PartyIdentificati
 	 * @see #setParentTypeId(PartyIdentificationType)
 	 * @see org.abchip.mimo.biz.party.party.PartyPackage#getPartyIdentificationType_ParentTypeId()
 	 * @model keys="partyIdentificationTypeId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	PartyIdentificationType getParentTypeId();
@@ -122,8 +123,7 @@ public interface PartyIdentificationType extends BizEntityType<PartyIdentificati
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='PartyIdentification' route='partyIdentificationTypeId'"
 	 * @generated
@@ -143,7 +143,6 @@ public interface PartyIdentificationType extends BizEntityType<PartyIdentificati
 	 * @see org.abchip.mimo.biz.party.party.PartyPackage#getPartyIdentificationType_PartyIdentificationTypeId()
 	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getPartyIdentificationTypeId();

@@ -40,7 +40,6 @@ public interface FileExtension extends BizEntity {
 	 * @see org.abchip.mimo.biz.content.data.DataPackage#getFileExtension_FileExtensionId()
 	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-format type='id-long' length='60'"
-	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getFileExtensionId();
@@ -67,6 +66,7 @@ public interface FileExtension extends BizEntity {
 	 * @see #setMimeTypeId(MimeType)
 	 * @see org.abchip.mimo.biz.content.data.DataPackage#getFileExtension_MimeTypeId()
 	 * @model keys="mimeTypeId"
+	 *        annotation="mimo-ent-format type='id-vlong' length='255'"
 	 * @generated
 	 */
 	MimeType getMimeTypeId();

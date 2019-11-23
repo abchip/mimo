@@ -26,17 +26,17 @@ import org.abchip.mimo.biz.party.party.Party;
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.humanres.employment.EmploymentApp#getApplicationId <em>Application Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.employment.EmploymentApp#getApplicationDate <em>Application Date</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.humanres.employment.EmploymentApp#getEmplPositionId <em>Empl Position Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.humanres.employment.EmploymentApp#getStatusId <em>Status Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.humanres.employment.EmploymentApp#getEmploymentAppSourceTypeId <em>Employment App Source Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.employment.EmploymentApp#getApplyingPartyId <em>Applying Party Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.humanres.employment.EmploymentApp#getReferredByPartyId <em>Referred By Party Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.employment.EmploymentApp#getApproverPartyId <em>Approver Party Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.humanres.employment.EmploymentApp#getEmplPositionId <em>Empl Position Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.humanres.employment.EmploymentApp#getEmploymentAppSourceTypeId <em>Employment App Source Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.employment.EmploymentApp#getJobRequisitionId <em>Job Requisition Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.humanres.employment.EmploymentApp#getReferredByPartyId <em>Referred By Party Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.humanres.employment.EmploymentApp#getStatusId <em>Status Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.humanres.employment.EmploymentPackage#getEmploymentApp()
- * @model
+ * @model annotation="mimo-ent-frame title='Employment Application'"
  * @generated
  */
 public interface EmploymentApp extends BizEntity {
@@ -79,7 +79,6 @@ public interface EmploymentApp extends BizEntity {
 	 * @see org.abchip.mimo.biz.humanres.employment.EmploymentPackage#getEmploymentApp_ApplicationId()
 	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getApplicationId();
@@ -106,6 +105,7 @@ public interface EmploymentApp extends BizEntity {
 	 * @see #setApplyingPartyId(Party)
 	 * @see org.abchip.mimo.biz.humanres.employment.EmploymentPackage#getEmploymentApp_ApplyingPartyId()
 	 * @model keys="partyId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Party getApplyingPartyId();
@@ -132,6 +132,7 @@ public interface EmploymentApp extends BizEntity {
 	 * @see #setApproverPartyId(Party)
 	 * @see org.abchip.mimo.biz.humanres.employment.EmploymentPackage#getEmploymentApp_ApproverPartyId()
 	 * @model keys="partyId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Party getApproverPartyId();
@@ -158,6 +159,7 @@ public interface EmploymentApp extends BizEntity {
 	 * @see #setEmplPositionId(EmplPosition)
 	 * @see org.abchip.mimo.biz.humanres.employment.EmploymentPackage#getEmploymentApp_EmplPositionId()
 	 * @model keys="emplPositionId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	EmplPosition getEmplPositionId();
@@ -184,6 +186,7 @@ public interface EmploymentApp extends BizEntity {
 	 * @see #setEmploymentAppSourceTypeId(EmploymentAppSourceType)
 	 * @see org.abchip.mimo.biz.humanres.employment.EmploymentPackage#getEmploymentApp_EmploymentAppSourceTypeId()
 	 * @model keys="employmentAppSourceTypeId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	EmploymentAppSourceType getEmploymentAppSourceTypeId();
@@ -210,6 +213,7 @@ public interface EmploymentApp extends BizEntity {
 	 * @see #setJobRequisitionId(JobRequisition)
 	 * @see org.abchip.mimo.biz.humanres.employment.EmploymentPackage#getEmploymentApp_JobRequisitionId()
 	 * @model keys="jobRequisitionId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	JobRequisition getJobRequisitionId();
@@ -236,6 +240,7 @@ public interface EmploymentApp extends BizEntity {
 	 * @see #setReferredByPartyId(Party)
 	 * @see org.abchip.mimo.biz.humanres.employment.EmploymentPackage#getEmploymentApp_ReferredByPartyId()
 	 * @model keys="partyId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Party getReferredByPartyId();
@@ -262,6 +267,7 @@ public interface EmploymentApp extends BizEntity {
 	 * @see #setStatusId(StatusItem)
 	 * @see org.abchip.mimo.biz.humanres.employment.EmploymentPackage#getEmploymentApp_StatusId()
 	 * @model keys="statusId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	StatusItem getStatusId();

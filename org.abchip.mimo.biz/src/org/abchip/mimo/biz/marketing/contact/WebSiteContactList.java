@@ -21,10 +21,10 @@ import org.abchip.mimo.biz.webapp.website.WebSite;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.marketing.contact.WebSiteContactList#getFromDate <em>From Date</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.marketing.contact.WebSiteContactList#getThruDate <em>Thru Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.marketing.contact.WebSiteContactList#getWebSiteId <em>Web Site Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.marketing.contact.WebSiteContactList#getContactListId <em>Contact List Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.marketing.contact.WebSiteContactList#getFromDate <em>From Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.marketing.contact.WebSiteContactList#getThruDate <em>Thru Date</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.marketing.contact.ContactPackage#getWebSiteContactList()
@@ -43,7 +43,9 @@ public interface WebSiteContactList extends BizEntity {
 	 * @return the value of the '<em>Contact List Id</em>' reference.
 	 * @see #setContactListId(ContactList)
 	 * @see org.abchip.mimo.biz.marketing.contact.ContactPackage#getWebSiteContactList_ContactListId()
-	 * @model keys="contactListId"
+	 * @model keys="contactListId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ContactList getContactListId();
@@ -70,8 +72,8 @@ public interface WebSiteContactList extends BizEntity {
 	 * @see #setFromDate(Date)
 	 * @see org.abchip.mimo.biz.marketing.contact.ContactPackage#getWebSiteContactList_FromDate()
 	 * @model required="true"
-	 *        annotation="mimo-ent-format type='date-time'"
 	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getFromDate();
@@ -123,7 +125,9 @@ public interface WebSiteContactList extends BizEntity {
 	 * @return the value of the '<em>Web Site Id</em>' reference.
 	 * @see #setWebSiteId(WebSite)
 	 * @see org.abchip.mimo.biz.marketing.contact.ContactPackage#getWebSiteContactList_WebSiteId()
-	 * @model keys="webSiteId"
+	 * @model keys="webSiteId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	WebSite getWebSiteId();

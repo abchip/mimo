@@ -26,7 +26,7 @@ import org.abchip.mimo.biz.BizEntity;
  * </ul>
  *
  * @see org.abchip.mimo.biz.security.login.LoginPackage#getUserLoginSession()
- * @model
+ * @model annotation="mimo-ent-frame title='User Login History'"
  * @generated
  */
 public interface UserLoginSession extends BizEntity {
@@ -93,7 +93,8 @@ public interface UserLoginSession extends BizEntity {
 	 * @return the value of the '<em>User Login Id</em>' reference.
 	 * @see #setUserLoginId(UserLogin)
 	 * @see org.abchip.mimo.biz.security.login.LoginPackage#getUserLoginSession_UserLoginId()
-	 * @model keys="userLoginId"
+	 * @model keys="userLoginId" required="true"
+	 *        annotation="mimo-ent-format type='id-vlong' length='255'"
 	 * @generated
 	 */
 	UserLogin getUserLoginId();

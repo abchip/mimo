@@ -904,10 +904,6 @@
           changeable="false"/>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="textFormula" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EEnum" name="SerializationType">
-      <eLiterals name="XML_Metadata_Interchange" value="10" literal="XMI"/>
-      <eLiterals name="JavaScript_Object_Notation" value="20" literal="JSON"/>
-    </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="Slot" abstract="true" eSuperTypes="#//entity/EntityIdentifiable">
       <eOperations name="getValue" eType="#//entity/Entity">
         <eParameters name="nsPrefix" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -1099,7 +1095,7 @@
             <eTypeArguments eTypeParameter="#//resource/ResourceManager/createResourceSerializer/E"/>
           </eGenericType>
         </eParameters>
-        <eParameters name="serializationType" lowerBound="1" eType="#//entity/SerializationType"/>
+        <eParameters name="serializationType" lowerBound="1" eType="#//resource/SerializationType"/>
       </eOperations>
       <eOperations name="createResourceSerializer">
         <eGenericType eClassifier="#//resource/ResourceSerializer">
@@ -1114,7 +1110,7 @@
             <eTypeArguments eTypeParameter="#//resource/ResourceManager/createResourceSerializer.1/E"/>
           </eGenericType>
         </eParameters>
-        <eParameters name="serializationType" lowerBound="1" eType="#//entity/SerializationType"/>
+        <eParameters name="serializationType" lowerBound="1" eType="#//resource/SerializationType"/>
       </eOperations>
       <eOperations name="createResourceSerializer">
         <eGenericType eClassifier="#//resource/ResourceSerializer">
@@ -1125,7 +1121,7 @@
         </eTypeParameters>
         <eParameters name="context" lowerBound="1" eType="#//context/Context"/>
         <eParameters name="frame" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-        <eParameters name="serializationType" lowerBound="1" eType="#//entity/SerializationType"/>
+        <eParameters name="serializationType" lowerBound="1" eType="#//resource/SerializationType"/>
       </eOperations>
       <eOperations name="getFrame">
         <eGenericType eClassifier="#//entity/Frame">
@@ -1693,6 +1689,10 @@
       <eGenericSuperTypes eClassifier="#//resource/ResourceReader">
         <eTypeArguments eTypeParameter="#//resource/ResourceWriter/E"/>
       </eGenericSuperTypes>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EEnum" name="SerializationType">
+      <eLiterals name="XML_Metadata_Interchange" value="10" literal="XMI"/>
+      <eLiterals name="JavaScript_Object_Notation" value="20" literal="JSON"/>
     </eClassifiers>
   </eSubpackages>
   <eSubpackages name="util" nsURI="http://www.abchip.org/mimo/util" nsPrefix="mimo-util">

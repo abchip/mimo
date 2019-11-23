@@ -20,16 +20,16 @@ import org.abchip.mimo.biz.BizEntity;
  * The following features are supported:
  * </p>
  * <ul>
+ *   <li>{@link org.abchip.mimo.biz.humanres.position.EmplPositionReportingStruct#getEmplPositionIdReportingTo <em>Empl Position Id Reporting To</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.humanres.position.EmplPositionReportingStruct#getEmplPositionIdManagedBy <em>Empl Position Id Managed By</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.position.EmplPositionReportingStruct#getFromDate <em>From Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.position.EmplPositionReportingStruct#getComments <em>Comments</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.position.EmplPositionReportingStruct#getPrimaryFlag <em>Primary Flag</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.position.EmplPositionReportingStruct#getThruDate <em>Thru Date</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.humanres.position.EmplPositionReportingStruct#getEmplPositionIdReportingTo <em>Empl Position Id Reporting To</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.humanres.position.EmplPositionReportingStruct#getEmplPositionIdManagedBy <em>Empl Position Id Managed By</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.humanres.position.PositionPackage#getEmplPositionReportingStruct()
- * @model
+ * @model annotation="mimo-ent-frame title='EmplPosition Reporting Structure'"
  * @generated
  */
 public interface EmplPositionReportingStruct extends BizEntity {
@@ -96,7 +96,9 @@ public interface EmplPositionReportingStruct extends BizEntity {
 	 * @return the value of the '<em>Empl Position Id Managed By</em>' reference.
 	 * @see #setEmplPositionIdManagedBy(EmplPosition)
 	 * @see org.abchip.mimo.biz.humanres.position.PositionPackage#getEmplPositionReportingStruct_EmplPositionIdManagedBy()
-	 * @model keys="emplPositionId"
+	 * @model keys="emplPositionId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	EmplPosition getEmplPositionIdManagedBy();
@@ -122,7 +124,9 @@ public interface EmplPositionReportingStruct extends BizEntity {
 	 * @return the value of the '<em>Empl Position Id Reporting To</em>' reference.
 	 * @see #setEmplPositionIdReportingTo(EmplPosition)
 	 * @see org.abchip.mimo.biz.humanres.position.PositionPackage#getEmplPositionReportingStruct_EmplPositionIdReportingTo()
-	 * @model keys="emplPositionId"
+	 * @model keys="emplPositionId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	EmplPosition getEmplPositionIdReportingTo();
@@ -149,8 +153,8 @@ public interface EmplPositionReportingStruct extends BizEntity {
 	 * @see #setFromDate(Date)
 	 * @see org.abchip.mimo.biz.humanres.position.PositionPackage#getEmplPositionReportingStruct_FromDate()
 	 * @model required="true"
-	 *        annotation="mimo-ent-format type='date-time'"
 	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getFromDate();

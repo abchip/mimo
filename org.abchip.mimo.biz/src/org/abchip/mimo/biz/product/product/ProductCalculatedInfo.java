@@ -21,13 +21,13 @@ import org.abchip.mimo.biz.BizEntity;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.product.product.ProductCalculatedInfo#getAverageCustomerRating <em>Average Customer Rating</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.product.ProductCalculatedInfo#getProductId <em>Product Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.ProductCalculatedInfo#getTotalQuantityOrdered <em>Total Quantity Ordered</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.ProductCalculatedInfo#getTotalTimesViewed <em>Total Times Viewed</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.product.ProductCalculatedInfo#getProductId <em>Product Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.product.product.ProductPackage#getProductCalculatedInfo()
- * @model
+ * @model annotation="mimo-ent-frame dictionary='ProductEntityLabels'"
  * @generated
  */
 public interface ProductCalculatedInfo extends BizEntity {
@@ -68,7 +68,8 @@ public interface ProductCalculatedInfo extends BizEntity {
 	 * @return the value of the '<em>Product Id</em>' reference.
 	 * @see #setProductId(Product)
 	 * @see org.abchip.mimo.biz.product.product.ProductPackage#getProductCalculatedInfo_ProductId()
-	 * @model keys="productId"
+	 * @model keys="productId" required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Product getProductId();

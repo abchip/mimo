@@ -19,17 +19,17 @@ import org.abchip.mimo.biz.party.party.Party;
  * The following features are supported:
  * </p>
  * <ul>
+ *   <li>{@link org.abchip.mimo.biz.humanres.ability.PerfReviewItem#getEmployeePartyId <em>Employee Party Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.ability.PerfReviewItem#getEmployeeRoleTypeId <em>Employee Role Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.ability.PerfReviewItem#getPerfReviewId <em>Perf Review Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.ability.PerfReviewItem#getPerfReviewItemSeqId <em>Perf Review Item Seq Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.ability.PerfReviewItem#getComments <em>Comments</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.humanres.ability.PerfReviewItem#getEmployeePartyId <em>Employee Party Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.ability.PerfReviewItem#getPerfRatingTypeId <em>Perf Rating Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.ability.PerfReviewItem#getPerfReviewItemTypeId <em>Perf Review Item Type Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.humanres.ability.AbilityPackage#getPerfReviewItem()
- * @model
+ * @model annotation="mimo-ent-frame title='Performance Review Item'"
  * @generated
  */
 public interface PerfReviewItem extends BizEntityTyped<PerfReviewItemType> {
@@ -70,7 +70,9 @@ public interface PerfReviewItem extends BizEntityTyped<PerfReviewItemType> {
 	 * @return the value of the '<em>Employee Party Id</em>' reference.
 	 * @see #setEmployeePartyId(Party)
 	 * @see org.abchip.mimo.biz.humanres.ability.AbilityPackage#getPerfReviewItem_EmployeePartyId()
-	 * @model keys="partyId"
+	 * @model keys="partyId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Party getEmployeePartyId();
@@ -97,8 +99,8 @@ public interface PerfReviewItem extends BizEntityTyped<PerfReviewItemType> {
 	 * @see #setEmployeeRoleTypeId(String)
 	 * @see org.abchip.mimo.biz.humanres.ability.AbilityPackage#getPerfReviewItem_EmployeeRoleTypeId()
 	 * @model required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	String getEmployeeRoleTypeId();
@@ -125,6 +127,7 @@ public interface PerfReviewItem extends BizEntityTyped<PerfReviewItemType> {
 	 * @see #setPerfRatingTypeId(PerfRatingType)
 	 * @see org.abchip.mimo.biz.humanres.ability.AbilityPackage#getPerfReviewItem_PerfRatingTypeId()
 	 * @model keys="perfRatingTypeId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	PerfRatingType getPerfRatingTypeId();
@@ -151,8 +154,8 @@ public interface PerfReviewItem extends BizEntityTyped<PerfReviewItemType> {
 	 * @see #setPerfReviewId(String)
 	 * @see org.abchip.mimo.biz.humanres.ability.AbilityPackage#getPerfReviewItem_PerfReviewId()
 	 * @model required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	String getPerfReviewId();
@@ -179,8 +182,8 @@ public interface PerfReviewItem extends BizEntityTyped<PerfReviewItemType> {
 	 * @see #setPerfReviewItemSeqId(String)
 	 * @see org.abchip.mimo.biz.humanres.ability.AbilityPackage#getPerfReviewItem_PerfReviewItemSeqId()
 	 * @model required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	String getPerfReviewItemSeqId();
@@ -207,6 +210,7 @@ public interface PerfReviewItem extends BizEntityTyped<PerfReviewItemType> {
 	 * @see #setPerfReviewItemTypeId(PerfReviewItemType)
 	 * @see org.abchip.mimo.biz.humanres.ability.AbilityPackage#getPerfReviewItem_PerfReviewItemTypeId()
 	 * @model keys="perfReviewItemTypeId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	PerfReviewItemType getPerfReviewItemTypeId();

@@ -28,7 +28,7 @@ import org.abchip.mimo.biz.BizEntityType;
  * </ul>
  *
  * @see org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage#getWorkEffortAssocType()
- * @model annotation="mimo-ent-frame formula='description'"
+ * @model annotation="mimo-ent-frame title='Work Effort Association Type' dictionary='WorkEffortEntityLabels' formula='description'"
  * @generated
  */
 public interface WorkEffortAssocType extends BizEntityType<WorkEffortAssoc> {
@@ -96,6 +96,7 @@ public interface WorkEffortAssocType extends BizEntityType<WorkEffortAssoc> {
 	 * @see #setParentTypeId(WorkEffortAssocType)
 	 * @see org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage#getWorkEffortAssocType_ParentTypeId()
 	 * @model keys="workEffortAssocTypeId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	WorkEffortAssocType getParentTypeId();
@@ -123,7 +124,6 @@ public interface WorkEffortAssocType extends BizEntityType<WorkEffortAssoc> {
 	 * @see org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage#getWorkEffortAssocType_WorkEffortAssocTypeId()
 	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getWorkEffortAssocTypeId();
@@ -149,8 +149,7 @@ public interface WorkEffortAssocType extends BizEntityType<WorkEffortAssoc> {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Work Effort Assoc Type Attrs</em>' attribute list.
 	 * @see org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage#getWorkEffortAssocType_WorkEffortAssocTypeAttrs()
-	 * @model required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='WorkEffortAssocTypeAttr'"
 	 * @generated

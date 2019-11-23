@@ -22,15 +22,15 @@ import org.abchip.mimo.biz.BizEntity;
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.product.config.ProductConfigItem#getConfigItemId <em>Config Item Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.config.ProductConfigItem#getConfigItemName <em>Config Item Name</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.config.ProductConfigItem#getConfigItemProductConfigOptions <em>Config Item Product Config Options</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.config.ProductConfigItem#getConfigItemTypeId <em>Config Item Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.config.ProductConfigItem#getDescription <em>Description</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.config.ProductConfigItem#getImageUrl <em>Image Url</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.config.ProductConfigItem#getLongDescription <em>Long Description</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.config.ProductConfigItem#getConfigItemProductConfigOptions <em>Config Item Product Config Options</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.product.config.ConfigPackage#getProductConfigItem()
- * @model annotation="mimo-ent-frame formula='description'"
+ * @model annotation="mimo-ent-frame title='Product Configuration Question' dictionary='ProductEntityLabels' formula='description'"
  * @generated
  */
 public interface ProductConfigItem extends BizEntity {
@@ -175,8 +175,7 @@ public interface ProductConfigItem extends BizEntity {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Config Item Product Config Options</em>' attribute list.
 	 * @see org.abchip.mimo.biz.product.config.ConfigPackage#getProductConfigItem_ConfigItemProductConfigOptions()
-	 * @model required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ProductConfigOption'"
 	 * @generated
@@ -196,7 +195,6 @@ public interface ProductConfigItem extends BizEntity {
 	 * @see org.abchip.mimo.biz.product.config.ConfigPackage#getProductConfigItem_ConfigItemId()
 	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getConfigItemId();

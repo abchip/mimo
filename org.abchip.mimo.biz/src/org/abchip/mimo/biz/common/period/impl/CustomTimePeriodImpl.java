@@ -29,12 +29,12 @@ import org.eclipse.emf.ecore.EClass;
  *   <li>{@link org.abchip.mimo.biz.common.period.impl.CustomTimePeriodImpl#getCustomTimePeriodId <em>Custom Time Period Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.common.period.impl.CustomTimePeriodImpl#getFromDate <em>From Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.common.period.impl.CustomTimePeriodImpl#isIsClosed <em>Is Closed</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.common.period.impl.CustomTimePeriodImpl#getOrganizationPartyId <em>Organization Party Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.common.period.impl.CustomTimePeriodImpl#getParentPeriodId <em>Parent Period Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.common.period.impl.CustomTimePeriodImpl#getPeriodName <em>Period Name</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.common.period.impl.CustomTimePeriodImpl#getPeriodNum <em>Period Num</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.common.period.impl.CustomTimePeriodImpl#getThruDate <em>Thru Date</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.common.period.impl.CustomTimePeriodImpl#getParentPeriodId <em>Parent Period Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.common.period.impl.CustomTimePeriodImpl#getPeriodTypeId <em>Period Type Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.common.period.impl.CustomTimePeriodImpl#getOrganizationPartyId <em>Organization Party Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.common.period.impl.CustomTimePeriodImpl#getThruDate <em>Thru Date</em>}</li>
  * </ul>
  *
  * @generated

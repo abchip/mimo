@@ -832,10 +832,10 @@ public class AuditPackageImpl extends EPackageImpl implements AuditPackage {
 		initEAttribute(getEntityAuditLog_PkCombinedValueText(), ecorePackage.getEString(), "pkCombinedValueText", null, 0, 1, EntityAuditLog.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Create annotations
-		// mimo-ent-format
-		createMimoentformatAnnotations();
 		// mimo-ent-slot
 		createMimoentslotAnnotations();
+		// mimo-ent-format
+		createMimoentformatAnnotations();
 	}
 
 	/**
@@ -922,7 +922,19 @@ public class AuditPackageImpl extends EPackageImpl implements AuditPackage {
 		  (getEntityAuditLog_AuditHistorySeqId(),
 		   source,
 		   new String[] {
-			   "key", "true"
+			   "help", "Sequenced primary key"
+		   });
+		addAnnotation
+		  (getEntityAuditLog_ChangedByInfo(),
+		   source,
+		   new String[] {
+			   "help", "This should contain whatever information is available about the user or system that changed the value. This could be a userLoginId, but could be something else too, so there is no foreign key."
+		   });
+		addAnnotation
+		  (getEntityAuditLog_ChangedSessionInfo(),
+		   source,
+		   new String[] {
+			   "help", "This should contain whatever information is available about the session during which the value was changed. This could be a visitId, but could be something else too, so there is no foreign key."
 		   });
 	}
 

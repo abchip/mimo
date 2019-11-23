@@ -31,26 +31,26 @@ import org.abchip.mimo.biz.security.login.UserLogin;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.order.return_.ReturnHeader#getReturnId <em>Return Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.return_.ReturnHeader#getEntryDate <em>Entry Date</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.return_.ReturnHeader#isNeedsInventoryReceive <em>Needs Inventory Receive</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.return_.ReturnHeader#getSupplierRmaId <em>Supplier Rma Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.return_.ReturnHeader#getReturnHeaderTypeId <em>Return Header Type Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.return_.ReturnHeader#getFromPartyId <em>From Party Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.return_.ReturnHeader#getToPartyId <em>To Party Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.return_.ReturnHeader#getBillingAccountId <em>Billing Account Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.return_.ReturnHeader#getFinAccountId <em>Fin Account Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.return_.ReturnHeader#getPaymentMethodId <em>Payment Method Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.return_.ReturnHeader#getDestinationFacilityId <em>Destination Facility Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.return_.ReturnHeader#getOriginContactMechId <em>Origin Contact Mech Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.return_.ReturnHeader#getStatusId <em>Status Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.return_.ReturnHeader#getCurrencyUomId <em>Currency Uom Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.return_.ReturnHeader#getCreatedBy <em>Created By</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.return_.ReturnHeader#getCommunicationEventReturns <em>Communication Event Returns</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.return_.ReturnHeader#getCreatedBy <em>Created By</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.return_.ReturnHeader#getCurrencyUomId <em>Currency Uom Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.return_.ReturnHeader#getDestinationFacilityId <em>Destination Facility Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.return_.ReturnHeader#getEntryDate <em>Entry Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.return_.ReturnHeader#getFinAccountId <em>Fin Account Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.return_.ReturnHeader#getFromPartyId <em>From Party Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.return_.ReturnHeader#isNeedsInventoryReceive <em>Needs Inventory Receive</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.return_.ReturnHeader#getOriginContactMechId <em>Origin Contact Mech Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.return_.ReturnHeader#getPaymentMethodId <em>Payment Method Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.return_.ReturnHeader#getReturnHeaderTypeId <em>Return Header Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.return_.ReturnHeader#getReturnItems <em>Return Items</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.return_.ReturnHeader#getStatusId <em>Status Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.return_.ReturnHeader#getSupplierRmaId <em>Supplier Rma Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.return_.ReturnHeader#getToPartyId <em>To Party Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.order.return_.ReturnPackage#getReturnHeader()
- * @model
+ * @model annotation="mimo-ent-frame title='Return'"
  * @generated
  */
 public interface ReturnHeader extends BizEntityTyped<ReturnHeaderType> {
@@ -66,6 +66,7 @@ public interface ReturnHeader extends BizEntityTyped<ReturnHeaderType> {
 	 * @see #setBillingAccountId(BillingAccount)
 	 * @see org.abchip.mimo.biz.order.return_.ReturnPackage#getReturnHeader_BillingAccountId()
 	 * @model keys="billingAccountId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	BillingAccount getBillingAccountId();
@@ -92,6 +93,7 @@ public interface ReturnHeader extends BizEntityTyped<ReturnHeaderType> {
 	 * @see #setCreatedBy(UserLogin)
 	 * @see org.abchip.mimo.biz.order.return_.ReturnPackage#getReturnHeader_CreatedBy()
 	 * @model keys="userLoginId"
+	 *        annotation="mimo-ent-format type='id-vlong' length='255'"
 	 * @generated
 	 */
 	UserLogin getCreatedBy();
@@ -118,6 +120,7 @@ public interface ReturnHeader extends BizEntityTyped<ReturnHeaderType> {
 	 * @see #setCurrencyUomId(Uom)
 	 * @see org.abchip.mimo.biz.order.return_.ReturnPackage#getReturnHeader_CurrencyUomId()
 	 * @model keys="uomId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Uom getCurrencyUomId();
@@ -144,6 +147,7 @@ public interface ReturnHeader extends BizEntityTyped<ReturnHeaderType> {
 	 * @see #setDestinationFacilityId(Facility)
 	 * @see org.abchip.mimo.biz.order.return_.ReturnPackage#getReturnHeader_DestinationFacilityId()
 	 * @model keys="facilityId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Facility getDestinationFacilityId();
@@ -222,6 +226,7 @@ public interface ReturnHeader extends BizEntityTyped<ReturnHeaderType> {
 	 * @see #setFinAccountId(FinAccount)
 	 * @see org.abchip.mimo.biz.order.return_.ReturnPackage#getReturnHeader_FinAccountId()
 	 * @model keys="finAccountId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	FinAccount getFinAccountId();
@@ -248,6 +253,7 @@ public interface ReturnHeader extends BizEntityTyped<ReturnHeaderType> {
 	 * @see #setFromPartyId(Party)
 	 * @see org.abchip.mimo.biz.order.return_.ReturnPackage#getReturnHeader_FromPartyId()
 	 * @model keys="partyId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Party getFromPartyId();
@@ -274,6 +280,7 @@ public interface ReturnHeader extends BizEntityTyped<ReturnHeaderType> {
 	 * @see #setOriginContactMechId(ContactMech)
 	 * @see org.abchip.mimo.biz.order.return_.ReturnPackage#getReturnHeader_OriginContactMechId()
 	 * @model keys="contactMechId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ContactMech getOriginContactMechId();
@@ -300,6 +307,7 @@ public interface ReturnHeader extends BizEntityTyped<ReturnHeaderType> {
 	 * @see #setPaymentMethodId(PaymentMethod)
 	 * @see org.abchip.mimo.biz.order.return_.ReturnPackage#getReturnHeader_PaymentMethodId()
 	 * @model keys="paymentMethodId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	PaymentMethod getPaymentMethodId();
@@ -326,6 +334,7 @@ public interface ReturnHeader extends BizEntityTyped<ReturnHeaderType> {
 	 * @see #setReturnHeaderTypeId(ReturnHeaderType)
 	 * @see org.abchip.mimo.biz.order.return_.ReturnPackage#getReturnHeader_ReturnHeaderTypeId()
 	 * @model keys="returnHeaderTypeId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ReturnHeaderType getReturnHeaderTypeId();
@@ -353,7 +362,6 @@ public interface ReturnHeader extends BizEntityTyped<ReturnHeaderType> {
 	 * @see org.abchip.mimo.biz.order.return_.ReturnPackage#getReturnHeader_ReturnId()
 	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getReturnId();
@@ -380,6 +388,7 @@ public interface ReturnHeader extends BizEntityTyped<ReturnHeaderType> {
 	 * @see #setStatusId(StatusItem)
 	 * @see org.abchip.mimo.biz.order.return_.ReturnPackage#getReturnHeader_StatusId()
 	 * @model keys="statusId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	StatusItem getStatusId();
@@ -432,6 +441,7 @@ public interface ReturnHeader extends BizEntityTyped<ReturnHeaderType> {
 	 * @see #setToPartyId(Party)
 	 * @see org.abchip.mimo.biz.order.return_.ReturnPackage#getReturnHeader_ToPartyId()
 	 * @model keys="partyId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Party getToPartyId();
@@ -457,8 +467,7 @@ public interface ReturnHeader extends BizEntityTyped<ReturnHeaderType> {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Communication Event Returns</em>' attribute list.
 	 * @see org.abchip.mimo.biz.order.return_.ReturnPackage#getReturnHeader_CommunicationEventReturns()
-	 * @model required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='CommunicationEventReturn'"
 	 * @generated
@@ -476,8 +485,7 @@ public interface ReturnHeader extends BizEntityTyped<ReturnHeaderType> {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Return Items</em>' attribute list.
 	 * @see org.abchip.mimo.biz.order.return_.ReturnPackage#getReturnHeader_ReturnItems()
-	 * @model required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ReturnItem'"
 	 * @generated

@@ -21,14 +21,14 @@ import org.abchip.mimo.biz.BizEntityType;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.content.content.ContentType#getContentTypeId <em>Content Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.content.content.ContentType#getContentTypeAttrs <em>Content Type Attrs</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.content.ContentType#getDescription <em>Description</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.content.ContentType#isHasTable <em>Has Table</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.content.ContentType#getParentTypeId <em>Parent Type Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.content.content.ContentType#getContentTypeAttrs <em>Content Type Attrs</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.content.content.ContentPackage#getContentType()
- * @model annotation="mimo-ent-frame formula='description'"
+ * @model annotation="mimo-ent-frame dictionary='ContentEntityLabels' formula='description'"
  * @generated
  */
 public interface ContentType extends BizEntityType<Content> {
@@ -45,7 +45,6 @@ public interface ContentType extends BizEntityType<Content> {
 	 * @see org.abchip.mimo.biz.content.content.ContentPackage#getContentType_ContentTypeId()
 	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getContentTypeId();
@@ -124,6 +123,7 @@ public interface ContentType extends BizEntityType<Content> {
 	 * @see #setParentTypeId(ContentType)
 	 * @see org.abchip.mimo.biz.content.content.ContentPackage#getContentType_ParentTypeId()
 	 * @model keys="contentTypeId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ContentType getParentTypeId();
@@ -149,8 +149,7 @@ public interface ContentType extends BizEntityType<Content> {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Content Type Attrs</em>' attribute list.
 	 * @see org.abchip.mimo.biz.content.content.ContentPackage#getContentType_ContentTypeAttrs()
-	 * @model required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ContentTypeAttr'"
 	 * @generated

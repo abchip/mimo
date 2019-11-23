@@ -20,15 +20,15 @@ import org.abchip.mimo.biz.BizEntity;
  * The following features are supported:
  * </p>
  * <ul>
+ *   <li>{@link org.abchip.mimo.biz.product.category.ProductCategoryRollup#getProductCategoryId <em>Product Category Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.category.ProductCategoryRollup#getParentProductCategoryId <em>Parent Product Category Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.category.ProductCategoryRollup#getFromDate <em>From Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.category.ProductCategoryRollup#getSequenceNum <em>Sequence Num</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.category.ProductCategoryRollup#getThruDate <em>Thru Date</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.category.ProductCategoryRollup#getProductCategoryId <em>Product Category Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.category.ProductCategoryRollup#getParentProductCategoryId <em>Parent Product Category Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.product.category.CategoryPackage#getProductCategoryRollup()
- * @model
+ * @model annotation="mimo-ent-frame dictionary='ProductEntityLabels'"
  * @generated
  */
 public interface ProductCategoryRollup extends BizEntity {
@@ -44,8 +44,8 @@ public interface ProductCategoryRollup extends BizEntity {
 	 * @see #setFromDate(Date)
 	 * @see org.abchip.mimo.biz.product.category.CategoryPackage#getProductCategoryRollup_FromDate()
 	 * @model required="true"
-	 *        annotation="mimo-ent-format type='date-time'"
 	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getFromDate();
@@ -123,7 +123,9 @@ public interface ProductCategoryRollup extends BizEntity {
 	 * @return the value of the '<em>Product Category Id</em>' reference.
 	 * @see #setProductCategoryId(ProductCategory)
 	 * @see org.abchip.mimo.biz.product.category.CategoryPackage#getProductCategoryRollup_ProductCategoryId()
-	 * @model keys="productCategoryId"
+	 * @model keys="productCategoryId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ProductCategory getProductCategoryId();
@@ -149,7 +151,9 @@ public interface ProductCategoryRollup extends BizEntity {
 	 * @return the value of the '<em>Parent Product Category Id</em>' reference.
 	 * @see #setParentProductCategoryId(ProductCategory)
 	 * @see org.abchip.mimo.biz.product.category.CategoryPackage#getProductCategoryRollup_ParentProductCategoryId()
-	 * @model keys="productCategoryId"
+	 * @model keys="productCategoryId" required="true"
+	 *        annotation="mimo-ent-slot key='true' help='The parent category; it should be one of productCategoryId already setup in ProductCategory or ProductCategoryRollup'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ProductCategory getParentProductCategoryId();

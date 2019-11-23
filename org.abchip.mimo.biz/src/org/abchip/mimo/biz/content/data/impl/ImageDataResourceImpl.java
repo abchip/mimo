@@ -21,8 +21,8 @@ import org.eclipse.emf.ecore.EClass;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.content.data.impl.ImageDataResourceImpl#getImageData <em>Image Data</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.data.impl.ImageDataResourceImpl#getDataResourceId <em>Data Resource Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.content.data.impl.ImageDataResourceImpl#getImageData <em>Image Data</em>}</li>
  * </ul>
  *
  * @generated

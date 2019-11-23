@@ -19,16 +19,16 @@ import org.abchip.mimo.biz.common.method.CustomMethod;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.common.uom.UomConversion#getConversionFactor <em>Conversion Factor</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.common.uom.UomConversion#getDecimalScale <em>Decimal Scale</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.common.uom.UomConversion#getRoundingMode <em>Rounding Mode</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.common.uom.UomConversion#getUomId <em>Uom Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.common.uom.UomConversion#getUomIdTo <em>Uom Id To</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.common.uom.UomConversion#getConversionFactor <em>Conversion Factor</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.common.uom.UomConversion#getCustomMethodId <em>Custom Method Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.common.uom.UomConversion#getDecimalScale <em>Decimal Scale</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.common.uom.UomConversion#getRoundingMode <em>Rounding Mode</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.common.uom.UomPackage#getUomConversion()
- * @model
+ * @model annotation="mimo-ent-frame title='Unit Of Measure Conversion Type'"
  * @generated
  */
 public interface UomConversion extends BizEntity {
@@ -121,7 +121,9 @@ public interface UomConversion extends BizEntity {
 	 * @return the value of the '<em>Uom Id</em>' reference.
 	 * @see #setUomId(Uom)
 	 * @see org.abchip.mimo.biz.common.uom.UomPackage#getUomConversion_UomId()
-	 * @model keys="uomId"
+	 * @model keys="uomId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Uom getUomId();
@@ -147,7 +149,9 @@ public interface UomConversion extends BizEntity {
 	 * @return the value of the '<em>Uom Id To</em>' reference.
 	 * @see #setUomIdTo(Uom)
 	 * @see org.abchip.mimo.biz.common.uom.UomPackage#getUomConversion_UomIdTo()
-	 * @model keys="uomId"
+	 * @model keys="uomId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Uom getUomIdTo();
@@ -174,6 +178,7 @@ public interface UomConversion extends BizEntity {
 	 * @see #setCustomMethodId(CustomMethod)
 	 * @see org.abchip.mimo.biz.common.uom.UomPackage#getUomConversion_CustomMethodId()
 	 * @model keys="customMethodId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	CustomMethod getCustomMethodId();

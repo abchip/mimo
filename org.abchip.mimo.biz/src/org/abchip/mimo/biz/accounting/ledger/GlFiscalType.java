@@ -25,7 +25,7 @@ import org.abchip.mimo.biz.BizEntity;
  * </ul>
  *
  * @see org.abchip.mimo.biz.accounting.ledger.LedgerPackage#getGlFiscalType()
- * @model annotation="mimo-ent-frame formula='description'"
+ * @model annotation="mimo-ent-frame title='General Ledger Fiscal' dictionary='AccountingEntityLabels' formula='description'"
  * @generated
  */
 public interface GlFiscalType extends BizEntity {
@@ -78,7 +78,6 @@ public interface GlFiscalType extends BizEntity {
 	 * @see org.abchip.mimo.biz.accounting.ledger.LedgerPackage#getGlFiscalType_GlFiscalTypeId()
 	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getGlFiscalTypeId();

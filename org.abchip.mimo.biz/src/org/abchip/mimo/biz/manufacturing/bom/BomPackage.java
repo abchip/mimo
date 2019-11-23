@@ -135,40 +135,13 @@ public interface BomPackage extends EPackage {
 	int PRODUCT_MANUFACTURING_RULE__FROM_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
 
 	/**
-	 * The feature id for the '<em><b>Quantity</b></em>' attribute.
+	 * The feature id for the '<em><b>Product Feature</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PRODUCT_MANUFACTURING_RULE__QUANTITY = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
-
-	/**
-	 * The feature id for the '<em><b>Rule Operator</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PRODUCT_MANUFACTURING_RULE__RULE_OPERATOR = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
-
-	/**
-	 * The feature id for the '<em><b>Rule Seq Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PRODUCT_MANUFACTURING_RULE__RULE_SEQ_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 5;
-
-	/**
-	 * The feature id for the '<em><b>Thru Date</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PRODUCT_MANUFACTURING_RULE__THRU_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 6;
+	int PRODUCT_MANUFACTURING_RULE__PRODUCT_FEATURE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Product Id</b></em>' reference.
@@ -177,7 +150,7 @@ public interface BomPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PRODUCT_MANUFACTURING_RULE__PRODUCT_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 7;
+	int PRODUCT_MANUFACTURING_RULE__PRODUCT_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Product Id For</b></em>' reference.
@@ -186,7 +159,7 @@ public interface BomPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PRODUCT_MANUFACTURING_RULE__PRODUCT_ID_FOR = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 8;
+	int PRODUCT_MANUFACTURING_RULE__PRODUCT_ID_FOR = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Product Id In</b></em>' reference.
@@ -195,7 +168,7 @@ public interface BomPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PRODUCT_MANUFACTURING_RULE__PRODUCT_ID_IN = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 9;
+	int PRODUCT_MANUFACTURING_RULE__PRODUCT_ID_IN = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Product Id In Subst</b></em>' reference.
@@ -204,16 +177,43 @@ public interface BomPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PRODUCT_MANUFACTURING_RULE__PRODUCT_ID_IN_SUBST = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 10;
+	int PRODUCT_MANUFACTURING_RULE__PRODUCT_ID_IN_SUBST = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 7;
 
 	/**
-	 * The feature id for the '<em><b>Product Feature</b></em>' reference.
+	 * The feature id for the '<em><b>Quantity</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PRODUCT_MANUFACTURING_RULE__PRODUCT_FEATURE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 11;
+	int PRODUCT_MANUFACTURING_RULE__QUANTITY = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 8;
+
+	/**
+	 * The feature id for the '<em><b>Rule Operator</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRODUCT_MANUFACTURING_RULE__RULE_OPERATOR = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 9;
+
+	/**
+	 * The feature id for the '<em><b>Rule Seq Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRODUCT_MANUFACTURING_RULE__RULE_SEQ_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 10;
+
+	/**
+	 * The feature id for the '<em><b>Thru Date</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRODUCT_MANUFACTURING_RULE__THRU_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 11;
 
 	/**
 	 * The number of structural features of the '<em>Product Manufacturing Rule</em>' class.

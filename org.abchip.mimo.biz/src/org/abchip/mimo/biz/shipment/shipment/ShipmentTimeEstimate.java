@@ -24,20 +24,20 @@ import org.abchip.mimo.biz.common.uom.Uom;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.shipment.shipment.ShipmentTimeEstimate#getShipmentMethodTypeId <em>Shipment Method Type Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.shipment.shipment.ShipmentTimeEstimate#getPartyId <em>Party Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.shipment.shipment.ShipmentTimeEstimate#getRoleTypeId <em>Role Type Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.shipment.shipment.ShipmentTimeEstimate#getFromDate <em>From Date</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.shipment.shipment.ShipmentTimeEstimate#getLeadTime <em>Lead Time</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.shipment.shipment.ShipmentTimeEstimate#getSequenceNumber <em>Sequence Number</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.shipment.shipment.ShipmentTimeEstimate#getThruDate <em>Thru Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.shipment.shipment.ShipmentTimeEstimate#getGeoIdTo <em>Geo Id To</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.shipment.shipment.ShipmentTimeEstimate#getGeoIdFrom <em>Geo Id From</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.shipment.shipment.ShipmentTimeEstimate#getFromDate <em>From Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.shipment.shipment.ShipmentTimeEstimate#getPartyId <em>Party Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.shipment.shipment.ShipmentTimeEstimate#getRoleTypeId <em>Role Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.shipment.shipment.ShipmentTimeEstimate#getShipmentMethodTypeId <em>Shipment Method Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.shipment.shipment.ShipmentTimeEstimate#getLeadTime <em>Lead Time</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.shipment.shipment.ShipmentTimeEstimate#getLeadTimeUomId <em>Lead Time Uom Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.shipment.shipment.ShipmentTimeEstimate#getSequenceNumber <em>Sequence Number</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.shipment.shipment.ShipmentTimeEstimate#getThruDate <em>Thru Date</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipmentTimeEstimate()
- * @model
+ * @model annotation="mimo-ent-frame title='Shipment Time Estimation Entity'"
  * @generated
  */
 public interface ShipmentTimeEstimate extends BizEntity {
@@ -53,8 +53,8 @@ public interface ShipmentTimeEstimate extends BizEntity {
 	 * @see #setFromDate(Date)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipmentTimeEstimate_FromDate()
 	 * @model required="true"
-	 *        annotation="mimo-ent-format type='date-time'"
 	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getFromDate();
@@ -80,7 +80,9 @@ public interface ShipmentTimeEstimate extends BizEntity {
 	 * @return the value of the '<em>Geo Id From</em>' reference.
 	 * @see #setGeoIdFrom(Geo)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipmentTimeEstimate_GeoIdFrom()
-	 * @model keys="geoId"
+	 * @model keys="geoId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Geo getGeoIdFrom();
@@ -106,7 +108,9 @@ public interface ShipmentTimeEstimate extends BizEntity {
 	 * @return the value of the '<em>Geo Id To</em>' reference.
 	 * @see #setGeoIdTo(Geo)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipmentTimeEstimate_GeoIdTo()
-	 * @model keys="geoId"
+	 * @model keys="geoId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Geo getGeoIdTo();
@@ -159,6 +163,7 @@ public interface ShipmentTimeEstimate extends BizEntity {
 	 * @see #setLeadTimeUomId(Uom)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipmentTimeEstimate_LeadTimeUomId()
 	 * @model keys="uomId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Uom getLeadTimeUomId();
@@ -185,8 +190,8 @@ public interface ShipmentTimeEstimate extends BizEntity {
 	 * @see #setPartyId(String)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipmentTimeEstimate_PartyId()
 	 * @model required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	String getPartyId();
@@ -213,8 +218,8 @@ public interface ShipmentTimeEstimate extends BizEntity {
 	 * @see #setRoleTypeId(String)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipmentTimeEstimate_RoleTypeId()
 	 * @model required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	String getRoleTypeId();
@@ -267,8 +272,8 @@ public interface ShipmentTimeEstimate extends BizEntity {
 	 * @see #setShipmentMethodTypeId(String)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipmentTimeEstimate_ShipmentMethodTypeId()
 	 * @model required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	String getShipmentMethodTypeId();

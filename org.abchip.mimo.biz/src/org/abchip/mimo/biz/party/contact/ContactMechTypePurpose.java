@@ -23,7 +23,7 @@ import org.abchip.mimo.biz.BizEntity;
  * </ul>
  *
  * @see org.abchip.mimo.biz.party.contact.ContactPackage#getContactMechTypePurpose()
- * @model
+ * @model annotation="mimo-ent-frame help='Defines which ContactMechPurposeType entites apply to which ContactMechType' title='Contact Mechanism Type Purpose'"
  * @generated
  */
 public interface ContactMechTypePurpose extends BizEntity {
@@ -38,7 +38,9 @@ public interface ContactMechTypePurpose extends BizEntity {
 	 * @return the value of the '<em>Contact Mech Type Id</em>' reference.
 	 * @see #setContactMechTypeId(ContactMechType)
 	 * @see org.abchip.mimo.biz.party.contact.ContactPackage#getContactMechTypePurpose_ContactMechTypeId()
-	 * @model keys="contactMechTypeId"
+	 * @model keys="contactMechTypeId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ContactMechType getContactMechTypeId();
@@ -64,7 +66,9 @@ public interface ContactMechTypePurpose extends BizEntity {
 	 * @return the value of the '<em>Contact Mech Purpose Type Id</em>' reference.
 	 * @see #setContactMechPurposeTypeId(ContactMechPurposeType)
 	 * @see org.abchip.mimo.biz.party.contact.ContactPackage#getContactMechTypePurpose_ContactMechPurposeTypeId()
-	 * @model keys="contactMechPurposeTypeId"
+	 * @model keys="contactMechPurposeTypeId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ContactMechPurposeType getContactMechPurposeTypeId();

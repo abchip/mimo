@@ -26,7 +26,7 @@ import org.abchip.mimo.biz.BizEntityType;
  * </ul>
  *
  * @see org.abchip.mimo.biz.party.party.PartyPackage#getPartyContentType()
- * @model annotation="mimo-ent-frame formula='description'"
+ * @model annotation="mimo-ent-frame dictionary='PartyEntityLabels' formula='description'"
  * @generated
  */
 public interface PartyContentType extends BizEntityType<PartyContent> {
@@ -68,6 +68,7 @@ public interface PartyContentType extends BizEntityType<PartyContent> {
 	 * @see #setParentTypeId(PartyContentType)
 	 * @see org.abchip.mimo.biz.party.party.PartyPackage#getPartyContentType_ParentTypeId()
 	 * @model keys="partyContentTypeId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	PartyContentType getParentTypeId();
@@ -105,7 +106,6 @@ public interface PartyContentType extends BizEntityType<PartyContent> {
 	 * @see org.abchip.mimo.biz.party.party.PartyPackage#getPartyContentType_PartyContentTypeId()
 	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getPartyContentTypeId();

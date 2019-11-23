@@ -21,16 +21,16 @@ import org.abchip.mimo.biz.common.enum_.Enumeration;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.product.store.ProductStoreKeywordOvrd#getKeyword <em>Keyword</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.store.ProductStoreKeywordOvrd#getFromDate <em>From Date</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.store.ProductStoreKeywordOvrd#getTarget <em>Target</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.store.ProductStoreKeywordOvrd#getThruDate <em>Thru Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.store.ProductStoreKeywordOvrd#getProductStoreId <em>Product Store Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.store.ProductStoreKeywordOvrd#getFromDate <em>From Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.store.ProductStoreKeywordOvrd#getKeyword <em>Keyword</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.store.ProductStoreKeywordOvrd#getTarget <em>Target</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.store.ProductStoreKeywordOvrd#getTargetTypeEnumId <em>Target Type Enum Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.store.ProductStoreKeywordOvrd#getThruDate <em>Thru Date</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.product.store.StorePackage#getProductStoreKeywordOvrd()
- * @model
+ * @model annotation="mimo-ent-frame title='Product Store Inventory Facility Applicability' dictionary='ProductEntityLabels'"
  * @generated
  */
 public interface ProductStoreKeywordOvrd extends BizEntity {
@@ -46,8 +46,8 @@ public interface ProductStoreKeywordOvrd extends BizEntity {
 	 * @see #setFromDate(Date)
 	 * @see org.abchip.mimo.biz.product.store.StorePackage#getProductStoreKeywordOvrd_FromDate()
 	 * @model required="true"
-	 *        annotation="mimo-ent-format type='date-time'"
 	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getFromDate();
@@ -74,8 +74,8 @@ public interface ProductStoreKeywordOvrd extends BizEntity {
 	 * @see #setKeyword(String)
 	 * @see org.abchip.mimo.biz.product.store.StorePackage#getProductStoreKeywordOvrd_Keyword()
 	 * @model required="true"
-	 *        annotation="mimo-ent-format type='short-varchar' length='60'"
 	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='short-varchar' length='60'"
 	 * @generated
 	 */
 	String getKeyword();
@@ -128,6 +128,7 @@ public interface ProductStoreKeywordOvrd extends BizEntity {
 	 * @see #setTargetTypeEnumId(Enumeration)
 	 * @see org.abchip.mimo.biz.product.store.StorePackage#getProductStoreKeywordOvrd_TargetTypeEnumId()
 	 * @model keys="enumId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Enumeration getTargetTypeEnumId();
@@ -179,7 +180,9 @@ public interface ProductStoreKeywordOvrd extends BizEntity {
 	 * @return the value of the '<em>Product Store Id</em>' reference.
 	 * @see #setProductStoreId(ProductStore)
 	 * @see org.abchip.mimo.biz.product.store.StorePackage#getProductStoreKeywordOvrd_ProductStoreId()
-	 * @model keys="productStoreId"
+	 * @model keys="productStoreId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ProductStore getProductStoreId();

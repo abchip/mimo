@@ -28,7 +28,7 @@ import org.abchip.mimo.biz.BizEntityType;
  * </ul>
  *
  * @see org.abchip.mimo.biz.product.subscription.SubscriptionPackage#getSubscriptionType()
- * @model annotation="mimo-ent-frame formula='description'"
+ * @model annotation="mimo-ent-frame dictionary='ProductEntityLabels' formula='description'"
  * @generated
  */
 public interface SubscriptionType extends BizEntityType<Subscription> {
@@ -96,6 +96,7 @@ public interface SubscriptionType extends BizEntityType<Subscription> {
 	 * @see #setParentTypeId(SubscriptionType)
 	 * @see org.abchip.mimo.biz.product.subscription.SubscriptionPackage#getSubscriptionType_ParentTypeId()
 	 * @model keys="subscriptionTypeId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	SubscriptionType getParentTypeId();
@@ -123,7 +124,6 @@ public interface SubscriptionType extends BizEntityType<Subscription> {
 	 * @see org.abchip.mimo.biz.product.subscription.SubscriptionPackage#getSubscriptionType_SubscriptionTypeId()
 	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getSubscriptionTypeId();
@@ -149,8 +149,7 @@ public interface SubscriptionType extends BizEntityType<Subscription> {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Subscription Type Attrs</em>' attribute list.
 	 * @see org.abchip.mimo.biz.product.subscription.SubscriptionPackage#getSubscriptionType_SubscriptionTypeAttrs()
-	 * @model required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='SubscriptionTypeAttr'"
 	 * @generated

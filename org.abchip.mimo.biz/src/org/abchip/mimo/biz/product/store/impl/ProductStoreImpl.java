@@ -50,17 +50,30 @@ import org.eclipse.emf.ecore.EClass;
  *   <li>{@link org.abchip.mimo.biz.product.store.impl.ProductStoreImpl#isCheckInventory <em>Check Inventory</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.store.impl.ProductStoreImpl#getCompanyName <em>Company Name</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.store.impl.ProductStoreImpl#getDaysToCancelNonPay <em>Days To Cancel Non Pay</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.store.impl.ProductStoreImpl#getDefaultCurrencyUomId <em>Default Currency Uom Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.store.impl.ProductStoreImpl#getDefaultLocaleString <em>Default Locale String</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.store.impl.ProductStoreImpl#getDefaultPassword <em>Default Password</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.store.impl.ProductStoreImpl#getDefaultSalesChannelEnumId <em>Default Sales Channel Enum Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.store.impl.ProductStoreImpl#getDefaultTimeZoneString <em>Default Time Zone String</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.store.impl.ProductStoreImpl#getDigProdUploadCategoryId <em>Dig Prod Upload Category Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.store.impl.ProductStoreImpl#getDigitalItemApprovedStatus <em>Digital Item Approved Status</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.store.impl.ProductStoreImpl#isEnableAutoSuggestionList <em>Enable Auto Suggestion List</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.store.impl.ProductStoreImpl#isEnableDigProdUpload <em>Enable Dig Prod Upload</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.store.impl.ProductStoreImpl#isExplodeOrderItems <em>Explode Order Items</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.store.impl.ProductStoreImpl#getHeaderApprovedStatus <em>Header Approved Status</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.store.impl.ProductStoreImpl#getHeaderCancelStatus <em>Header Cancel Status</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.store.impl.ProductStoreImpl#getHeaderDeclinedStatus <em>Header Declined Status</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.store.impl.ProductStoreImpl#getInventoryFacilityId <em>Inventory Facility Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.store.impl.ProductStoreImpl#isIsDemoStore <em>Is Demo Store</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.store.impl.ProductStoreImpl#isIsImmediatelyFulfilled <em>Is Immediately Fulfilled</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.store.impl.ProductStoreImpl#getItemApprovedStatus <em>Item Approved Status</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.store.impl.ProductStoreImpl#getItemCancelStatus <em>Item Cancel Status</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.store.impl.ProductStoreImpl#getItemDeclinedStatus <em>Item Declined Status</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.store.impl.ProductStoreImpl#isManagedByLot <em>Managed By Lot</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.store.impl.ProductStoreImpl#isManualAuthIsCapture <em>Manual Auth Is Capture</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.store.impl.ProductStoreImpl#getOAuth2GitHubs <em>OAuth2 Git Hubs</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.store.impl.ProductStoreImpl#getOAuth2Googles <em>OAuth2 Googles</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.store.impl.ProductStoreImpl#getOAuth2LinkedIns <em>OAuth2 Linked Ins</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.store.impl.ProductStoreImpl#getOldHeaderLogo <em>Old Header Logo</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.store.impl.ProductStoreImpl#getOldHeaderMiddleBackground <em>Old Header Middle Background</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.store.impl.ProductStoreImpl#getOldHeaderRightBackground <em>Old Header Right Background</em>}</li>
@@ -68,14 +81,20 @@ import org.eclipse.emf.ecore.EClass;
  *   <li>{@link org.abchip.mimo.biz.product.store.impl.ProductStoreImpl#getOneInventoryFacility <em>One Inventory Facility</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.store.impl.ProductStoreImpl#getOrderDecimalQuantity <em>Order Decimal Quantity</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.store.impl.ProductStoreImpl#getOrderNumberPrefix <em>Order Number Prefix</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.store.impl.ProductStoreImpl#getPayToPartyId <em>Pay To Party Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.store.impl.ProductStoreImpl#getPrimaryStoreGroupId <em>Primary Store Group Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.store.impl.ProductStoreImpl#getProdSearchExcludeVariants <em>Prod Search Exclude Variants</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.store.impl.ProductStoreImpl#getProductStoreEmailSettings <em>Product Store Email Settings</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.store.impl.ProductStoreImpl#getProductStoreFinActSettings <em>Product Store Fin Act Settings</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.store.impl.ProductStoreImpl#getProrateShipping <em>Prorate Shipping</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.store.impl.ProductStoreImpl#getProrateTaxes <em>Prorate Taxes</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.store.impl.ProductStoreImpl#isReqReturnInventoryReceive <em>Req Return Inventory Receive</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.store.impl.ProductStoreImpl#isReqShipAddrForDigItems <em>Req Ship Addr For Dig Items</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.store.impl.ProductStoreImpl#isRequireCustomerRole <em>Require Customer Role</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.store.impl.ProductStoreImpl#isRequireInventory <em>Require Inventory</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.store.impl.ProductStoreImpl#getRequirementMethodEnumId <em>Requirement Method Enum Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.store.impl.ProductStoreImpl#isReserveInventory <em>Reserve Inventory</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.store.impl.ProductStoreImpl#getReserveOrderEnumId <em>Reserve Order Enum Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.store.impl.ProductStoreImpl#isRetryFailedAuths <em>Retry Failed Auths</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.store.impl.ProductStoreImpl#isSelectPaymentTypePerItem <em>Select Payment Type Per Item</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.store.impl.ProductStoreImpl#isSetOwnerUponIssuance <em>Set Owner Upon Issuance</em>}</li>
@@ -85,6 +104,7 @@ import org.eclipse.emf.ecore.EClass;
  *   <li>{@link org.abchip.mimo.biz.product.store.impl.ProductStoreImpl#isShowPricesWithVatTax <em>Show Prices With Vat Tax</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.store.impl.ProductStoreImpl#isShowTaxIsExempt <em>Show Tax Is Exempt</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.store.impl.ProductStoreImpl#isSplitPayPrefPerShpGrp <em>Split Pay Pref Per Shp Grp</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.store.impl.ProductStoreImpl#getStoreCreditAccountEnumId <em>Store Credit Account Enum Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.store.impl.ProductStoreImpl#getStoreCreditValidDays <em>Store Credit Valid Days</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.store.impl.ProductStoreImpl#getStoreName <em>Store Name</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.store.impl.ProductStoreImpl#getSubtitle <em>Subtitle</em>}</li>
@@ -94,26 +114,6 @@ import org.eclipse.emf.ecore.EClass;
  *   <li>{@link org.abchip.mimo.biz.product.store.impl.ProductStoreImpl#getVatTaxAuthPartyId <em>Vat Tax Auth Party Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.store.impl.ProductStoreImpl#isViewCartOnAdd <em>View Cart On Add</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.store.impl.ProductStoreImpl#getVisualThemeId <em>Visual Theme Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.store.impl.ProductStoreImpl#getPrimaryStoreGroupId <em>Primary Store Group Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.store.impl.ProductStoreImpl#getInventoryFacilityId <em>Inventory Facility Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.store.impl.ProductStoreImpl#getReserveOrderEnumId <em>Reserve Order Enum Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.store.impl.ProductStoreImpl#getRequirementMethodEnumId <em>Requirement Method Enum Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.store.impl.ProductStoreImpl#getPayToPartyId <em>Pay To Party Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.store.impl.ProductStoreImpl#getDefaultCurrencyUomId <em>Default Currency Uom Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.store.impl.ProductStoreImpl#getDefaultSalesChannelEnumId <em>Default Sales Channel Enum Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.store.impl.ProductStoreImpl#getHeaderApprovedStatus <em>Header Approved Status</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.store.impl.ProductStoreImpl#getItemApprovedStatus <em>Item Approved Status</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.store.impl.ProductStoreImpl#getDigitalItemApprovedStatus <em>Digital Item Approved Status</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.store.impl.ProductStoreImpl#getHeaderDeclinedStatus <em>Header Declined Status</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.store.impl.ProductStoreImpl#getItemDeclinedStatus <em>Item Declined Status</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.store.impl.ProductStoreImpl#getHeaderCancelStatus <em>Header Cancel Status</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.store.impl.ProductStoreImpl#getItemCancelStatus <em>Item Cancel Status</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.store.impl.ProductStoreImpl#getStoreCreditAccountEnumId <em>Store Credit Account Enum Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.store.impl.ProductStoreImpl#getOAuth2GitHubs <em>OAuth2 Git Hubs</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.store.impl.ProductStoreImpl#getOAuth2Googles <em>OAuth2 Googles</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.store.impl.ProductStoreImpl#getOAuth2LinkedIns <em>OAuth2 Linked Ins</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.store.impl.ProductStoreImpl#getProductStoreEmailSettings <em>Product Store Email Settings</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.store.impl.ProductStoreImpl#getProductStoreFinActSettings <em>Product Store Fin Act Settings</em>}</li>
  * </ul>
  *
  * @generated

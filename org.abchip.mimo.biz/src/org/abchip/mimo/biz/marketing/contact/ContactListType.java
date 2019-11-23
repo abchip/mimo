@@ -25,7 +25,7 @@ import org.abchip.mimo.biz.BizEntityType;
  * </ul>
  *
  * @see org.abchip.mimo.biz.marketing.contact.ContactPackage#getContactListType()
- * @model annotation="mimo-ent-frame formula='description'"
+ * @model annotation="mimo-ent-frame dictionary='MarketingEntityLabels' formula='description'"
  * @generated
  */
 public interface ContactListType extends BizEntityType<ContactList> {
@@ -42,7 +42,6 @@ public interface ContactListType extends BizEntityType<ContactList> {
 	 * @see org.abchip.mimo.biz.marketing.contact.ContactPackage#getContactListType_ContactListTypeId()
 	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getContactListTypeId();

@@ -772,10 +772,26 @@ public class SemaphorePackageImpl extends EPackageImpl implements SemaphorePacka
 		initEAttribute(getServiceSemaphore_LockedByInstanceId(), ecorePackage.getEString(), "lockedByInstanceId", null, 0, 1, ServiceSemaphore.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Create annotations
+		// mimo-ent-frame
+		createMimoentframeAnnotations();
 		// mimo-ent-format
 		createMimoentformatAnnotations();
-		// mimo-ent-slot
-		createMimoentslotAnnotations();
+	}
+
+	/**
+	 * Initializes the annotations for <b>mimo-ent-frame</b>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void createMimoentframeAnnotations() {
+		String source = "mimo-ent-frame";
+		addAnnotation
+		  (serviceSemaphoreEClass,
+		   source,
+		   new String[] {
+			   "title", "Semaphore Lock"
+		   });
 	}
 
 	/**
@@ -812,22 +828,6 @@ public class SemaphorePackageImpl extends EPackageImpl implements SemaphorePacka
 		   new String[] {
 			   "type", "id",
 			   "length", "20"
-		   });
-	}
-
-	/**
-	 * Initializes the annotations for <b>mimo-ent-slot</b>.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void createMimoentslotAnnotations() {
-		String source = "mimo-ent-slot";
-		addAnnotation
-		  (getServiceSemaphore_ServiceName(),
-		   source,
-		   new String[] {
-			   "key", "true"
 		   });
 	}
 

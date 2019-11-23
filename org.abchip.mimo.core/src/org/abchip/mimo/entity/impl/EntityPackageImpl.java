@@ -37,7 +37,6 @@ import org.abchip.mimo.entity.EntityType;
 import org.abchip.mimo.entity.EntityTyped;
 import org.abchip.mimo.entity.Facet;
 import org.abchip.mimo.entity.Frame;
-import org.abchip.mimo.entity.SerializationType;
 import org.abchip.mimo.entity.Slot;
 
 import org.abchip.mimo.impl.MimoPackageImpl;
@@ -175,13 +174,6 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 	 * @generated
 	 */
 	private EEnum entityStateEEnum = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EEnum serializationTypeEEnum = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -800,16 +792,6 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 	 * @generated
 	 */
 	@Override
-	public EEnum getSerializationType() {
-		return serializationTypeEEnum;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public EntityFactory getEntityFactory() {
 		return (EntityFactory)getEFactoryInstance();
 	}
@@ -900,7 +882,6 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 
 		// Create enums
 		entityStateEEnum = createEEnum(ENTITY_STATE);
-		serializationTypeEEnum = createEEnum(SERIALIZATION_TYPE);
 	}
 
 	/**
@@ -1144,10 +1125,6 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 		addEEnumLiteral(entityStateEEnum, EntityState.PROXY);
 		addEEnumLiteral(entityStateEEnum, EntityState.RESOLVED);
 		addEEnumLiteral(entityStateEEnum, EntityState.DIRTY);
-
-		initEEnum(serializationTypeEEnum, SerializationType.class, "SerializationType");
-		addEEnumLiteral(serializationTypeEEnum, SerializationType.XML_METADATA_INTERCHANGE);
-		addEEnumLiteral(serializationTypeEEnum, SerializationType.JAVA_SCRIPT_OBJECT_NOTATION);
 
 		// Create annotations
 		// mimo-ent-slot

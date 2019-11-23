@@ -18,13 +18,13 @@ import org.abchip.mimo.biz.BizEntity;
  * The following features are supported:
  * </p>
  * <ul>
+ *   <li>{@link org.abchip.mimo.biz.content.content.ContentTypeAttr#getContentTypeId <em>Content Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.content.ContentTypeAttr#getAttrName <em>Attr Name</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.content.ContentTypeAttr#getDescription <em>Description</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.content.content.ContentTypeAttr#getContentTypeId <em>Content Type Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.content.content.ContentPackage#getContentTypeAttr()
- * @model annotation="mimo-ent-frame formula='description'"
+ * @model annotation="mimo-ent-frame title='Content Type Attribute' formula='description'"
  * @generated
  */
 public interface ContentTypeAttr extends BizEntity {
@@ -40,8 +40,8 @@ public interface ContentTypeAttr extends BizEntity {
 	 * @see #setAttrName(String)
 	 * @see org.abchip.mimo.biz.content.content.ContentPackage#getContentTypeAttr_AttrName()
 	 * @model required="true"
-	 *        annotation="mimo-ent-format type='id-long' length='60'"
 	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id-long' length='60'"
 	 * @generated
 	 */
 	String getAttrName();
@@ -67,7 +67,9 @@ public interface ContentTypeAttr extends BizEntity {
 	 * @return the value of the '<em>Content Type Id</em>' reference.
 	 * @see #setContentTypeId(ContentType)
 	 * @see org.abchip.mimo.biz.content.content.ContentPackage#getContentTypeAttr_ContentTypeId()
-	 * @model keys="contentTypeId"
+	 * @model keys="contentTypeId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ContentType getContentTypeId();

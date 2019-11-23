@@ -27,7 +27,7 @@ import org.abchip.mimo.biz.shipment.shipment.ShipmentMethodType;
  * </ul>
  *
  * @see org.abchip.mimo.biz.product.store.StorePackage#getProductStoreVendorShipment()
- * @model
+ * @model annotation="mimo-ent-frame help='Used to define Carrier-ShipmentMethod combinations that a vendor related to the store will accept (for multi-vendor stores)' dictionary='ProductEntityLabels'"
  * @generated
  */
 public interface ProductStoreVendorShipment extends BizEntity {
@@ -42,7 +42,9 @@ public interface ProductStoreVendorShipment extends BizEntity {
 	 * @return the value of the '<em>Carrier Party Id</em>' reference.
 	 * @see #setCarrierPartyId(Party)
 	 * @see org.abchip.mimo.biz.product.store.StorePackage#getProductStoreVendorShipment_CarrierPartyId()
-	 * @model keys="partyId"
+	 * @model keys="partyId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Party getCarrierPartyId();
@@ -68,7 +70,9 @@ public interface ProductStoreVendorShipment extends BizEntity {
 	 * @return the value of the '<em>Shipment Method Type Id</em>' reference.
 	 * @see #setShipmentMethodTypeId(ShipmentMethodType)
 	 * @see org.abchip.mimo.biz.product.store.StorePackage#getProductStoreVendorShipment_ShipmentMethodTypeId()
-	 * @model keys="shipmentMethodTypeId"
+	 * @model keys="shipmentMethodTypeId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ShipmentMethodType getShipmentMethodTypeId();
@@ -94,7 +98,9 @@ public interface ProductStoreVendorShipment extends BizEntity {
 	 * @return the value of the '<em>Vendor Party Id</em>' reference.
 	 * @see #setVendorPartyId(Party)
 	 * @see org.abchip.mimo.biz.product.store.StorePackage#getProductStoreVendorShipment_VendorPartyId()
-	 * @model keys="partyId"
+	 * @model keys="partyId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Party getVendorPartyId();
@@ -120,7 +126,9 @@ public interface ProductStoreVendorShipment extends BizEntity {
 	 * @return the value of the '<em>Product Store Id</em>' reference.
 	 * @see #setProductStoreId(ProductStore)
 	 * @see org.abchip.mimo.biz.product.store.StorePackage#getProductStoreVendorShipment_ProductStoreId()
-	 * @model keys="productStoreId"
+	 * @model keys="productStoreId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ProductStore getProductStoreId();

@@ -26,19 +26,19 @@ import org.abchip.mimo.biz.party.party.Party;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.humanres.employment.PayrollPreference#getRoleTypeId <em>Role Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.humanres.employment.PayrollPreference#getPartyId <em>Party Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.employment.PayrollPreference#getPayrollPreferenceSeqId <em>Payroll Preference Seq Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.humanres.employment.PayrollPreference#getRoleTypeId <em>Role Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.employment.PayrollPreference#getAccountNumber <em>Account Number</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.employment.PayrollPreference#getBankName <em>Bank Name</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.humanres.employment.PayrollPreference#getDeductionTypeId <em>Deduction Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.employment.PayrollPreference#getFlatAmount <em>Flat Amount</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.employment.PayrollPreference#getFromDate <em>From Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.humanres.employment.PayrollPreference#getPaymentMethodTypeId <em>Payment Method Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.employment.PayrollPreference#getPercentage <em>Percentage</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.humanres.employment.PayrollPreference#getPeriodTypeId <em>Period Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.employment.PayrollPreference#getRoutingNumber <em>Routing Number</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.employment.PayrollPreference#getThruDate <em>Thru Date</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.humanres.employment.PayrollPreference#getPartyId <em>Party Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.humanres.employment.PayrollPreference#getDeductionTypeId <em>Deduction Type Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.humanres.employment.PayrollPreference#getPaymentMethodTypeId <em>Payment Method Type Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.humanres.employment.PayrollPreference#getPeriodTypeId <em>Period Type Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.humanres.employment.EmploymentPackage#getPayrollPreference()
@@ -110,6 +110,7 @@ public interface PayrollPreference extends BizEntity {
 	 * @see #setDeductionTypeId(DeductionType)
 	 * @see org.abchip.mimo.biz.humanres.employment.EmploymentPackage#getPayrollPreference_DeductionTypeId()
 	 * @model keys="deductionTypeId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	DeductionType getDeductionTypeId();
@@ -187,7 +188,9 @@ public interface PayrollPreference extends BizEntity {
 	 * @return the value of the '<em>Party Id</em>' reference.
 	 * @see #setPartyId(Party)
 	 * @see org.abchip.mimo.biz.humanres.employment.EmploymentPackage#getPayrollPreference_PartyId()
-	 * @model keys="partyId"
+	 * @model keys="partyId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Party getPartyId();
@@ -214,6 +217,7 @@ public interface PayrollPreference extends BizEntity {
 	 * @see #setPaymentMethodTypeId(PaymentMethodType)
 	 * @see org.abchip.mimo.biz.humanres.employment.EmploymentPackage#getPayrollPreference_PaymentMethodTypeId()
 	 * @model keys="paymentMethodTypeId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	PaymentMethodType getPaymentMethodTypeId();
@@ -240,8 +244,8 @@ public interface PayrollPreference extends BizEntity {
 	 * @see #setPayrollPreferenceSeqId(String)
 	 * @see org.abchip.mimo.biz.humanres.employment.EmploymentPackage#getPayrollPreference_PayrollPreferenceSeqId()
 	 * @model required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	String getPayrollPreferenceSeqId();
@@ -294,6 +298,7 @@ public interface PayrollPreference extends BizEntity {
 	 * @see #setPeriodTypeId(PeriodType)
 	 * @see org.abchip.mimo.biz.humanres.employment.EmploymentPackage#getPayrollPreference_PeriodTypeId()
 	 * @model keys="periodTypeId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	PeriodType getPeriodTypeId();
@@ -320,8 +325,8 @@ public interface PayrollPreference extends BizEntity {
 	 * @see #setRoleTypeId(String)
 	 * @see org.abchip.mimo.biz.humanres.employment.EmploymentPackage#getPayrollPreference_RoleTypeId()
 	 * @model required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	String getRoleTypeId();
@@ -347,7 +352,8 @@ public interface PayrollPreference extends BizEntity {
 	 * @return the value of the '<em>Routing Number</em>' attribute.
 	 * @see #setRoutingNumber(String)
 	 * @see org.abchip.mimo.biz.humanres.employment.EmploymentPackage#getPayrollPreference_RoutingNumber()
-	 * @model annotation="mimo-ent-format type='short-varchar' length='60'"
+	 * @model annotation="mimo-ent-slot help='See https://en.wikipedia.org/wiki/Bank_code'"
+	 *        annotation="mimo-ent-format type='short-varchar' length='60'"
 	 * @generated
 	 */
 	String getRoutingNumber();

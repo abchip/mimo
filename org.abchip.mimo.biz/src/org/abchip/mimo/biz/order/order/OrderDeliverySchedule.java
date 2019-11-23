@@ -24,21 +24,21 @@ import org.abchip.mimo.biz.common.uom.Uom;
  * The following features are supported:
  * </p>
  * <ul>
+ *   <li>{@link org.abchip.mimo.biz.order.order.OrderDeliverySchedule#getOrderId <em>Order Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.OrderDeliverySchedule#getOrderItemSeqId <em>Order Item Seq Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.OrderDeliverySchedule#getCartons <em>Cartons</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.OrderDeliverySchedule#getEstimatedReadyDate <em>Estimated Ready Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.OrderDeliverySchedule#getSkidsPallets <em>Skids Pallets</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.order.OrderDeliverySchedule#getTotalCubicSize <em>Total Cubic Size</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.order.OrderDeliverySchedule#getTotalWeight <em>Total Weight</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.order.OrderDeliverySchedule#getUnitsPieces <em>Units Pieces</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.order.OrderDeliverySchedule#getOrderId <em>Order Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.order.OrderDeliverySchedule#getTotalCubicUomId <em>Total Cubic Uom Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.order.OrderDeliverySchedule#getTotalWeightUomId <em>Total Weight Uom Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.OrderDeliverySchedule#getStatusId <em>Status Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.order.OrderDeliverySchedule#getTotalCubicSize <em>Total Cubic Size</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.order.OrderDeliverySchedule#getTotalCubicUomId <em>Total Cubic Uom Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.order.OrderDeliverySchedule#getTotalWeight <em>Total Weight</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.order.OrderDeliverySchedule#getTotalWeightUomId <em>Total Weight Uom Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.order.OrderDeliverySchedule#getUnitsPieces <em>Units Pieces</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderDeliverySchedule()
- * @model
+ * @model annotation="mimo-ent-frame title='The Order Delivery Schedule'"
  * @generated
  */
 public interface OrderDeliverySchedule extends BizEntity {
@@ -105,7 +105,9 @@ public interface OrderDeliverySchedule extends BizEntity {
 	 * @return the value of the '<em>Order Id</em>' reference.
 	 * @see #setOrderId(OrderHeader)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderDeliverySchedule_OrderId()
-	 * @model keys="orderId"
+	 * @model keys="orderId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	OrderHeader getOrderId();
@@ -132,8 +134,8 @@ public interface OrderDeliverySchedule extends BizEntity {
 	 * @see #setOrderItemSeqId(String)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderDeliverySchedule_OrderItemSeqId()
 	 * @model required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	String getOrderItemSeqId();
@@ -186,6 +188,7 @@ public interface OrderDeliverySchedule extends BizEntity {
 	 * @see #setStatusId(StatusItem)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderDeliverySchedule_StatusId()
 	 * @model keys="statusId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	StatusItem getStatusId();
@@ -238,6 +241,7 @@ public interface OrderDeliverySchedule extends BizEntity {
 	 * @see #setTotalCubicUomId(Uom)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderDeliverySchedule_TotalCubicUomId()
 	 * @model keys="uomId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Uom getTotalCubicUomId();
@@ -290,6 +294,7 @@ public interface OrderDeliverySchedule extends BizEntity {
 	 * @see #setTotalWeightUomId(Uom)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderDeliverySchedule_TotalWeightUomId()
 	 * @model keys="uomId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Uom getTotalWeightUomId();

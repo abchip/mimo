@@ -23,7 +23,7 @@ import org.abchip.mimo.biz.BizEntity;
  * </ul>
  *
  * @see org.abchip.mimo.biz.product.subscription.SubscriptionPackage#getSubscriptionFulfillmentPiece()
- * @model
+ * @model annotation="mimo-ent-frame dictionary='ProductEntityLabels'"
  * @generated
  */
 public interface SubscriptionFulfillmentPiece extends BizEntity {
@@ -38,7 +38,9 @@ public interface SubscriptionFulfillmentPiece extends BizEntity {
 	 * @return the value of the '<em>Subscription Id</em>' reference.
 	 * @see #setSubscriptionId(Subscription)
 	 * @see org.abchip.mimo.biz.product.subscription.SubscriptionPackage#getSubscriptionFulfillmentPiece_SubscriptionId()
-	 * @model keys="subscriptionId"
+	 * @model keys="subscriptionId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Subscription getSubscriptionId();
@@ -64,7 +66,9 @@ public interface SubscriptionFulfillmentPiece extends BizEntity {
 	 * @return the value of the '<em>Subscription Activity Id</em>' reference.
 	 * @see #setSubscriptionActivityId(SubscriptionActivity)
 	 * @see org.abchip.mimo.biz.product.subscription.SubscriptionPackage#getSubscriptionFulfillmentPiece_SubscriptionActivityId()
-	 * @model keys="subscriptionActivityId"
+	 * @model keys="subscriptionActivityId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	SubscriptionActivity getSubscriptionActivityId();

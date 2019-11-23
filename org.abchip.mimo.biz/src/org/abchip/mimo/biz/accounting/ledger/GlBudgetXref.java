@@ -23,15 +23,15 @@ import org.abchip.mimo.biz.accounting.budget.BudgetItemType;
  * The following features are supported:
  * </p>
  * <ul>
+ *   <li>{@link org.abchip.mimo.biz.accounting.ledger.GlBudgetXref#getGlAccountId <em>Gl Account Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.ledger.GlBudgetXref#getBudgetItemTypeId <em>Budget Item Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.ledger.GlBudgetXref#getFromDate <em>From Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.ledger.GlBudgetXref#getAllocationPercentage <em>Allocation Percentage</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.ledger.GlBudgetXref#getThruDate <em>Thru Date</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.ledger.GlBudgetXref#getGlAccountId <em>Gl Account Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.ledger.GlBudgetXref#getBudgetItemTypeId <em>Budget Item Type Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.accounting.ledger.LedgerPackage#getGlBudgetXref()
- * @model
+ * @model annotation="mimo-ent-frame title='General Ledger Budget Cross Reference'"
  * @generated
  */
 public interface GlBudgetXref extends BizEntity {
@@ -73,8 +73,8 @@ public interface GlBudgetXref extends BizEntity {
 	 * @see #setFromDate(Date)
 	 * @see org.abchip.mimo.biz.accounting.ledger.LedgerPackage#getGlBudgetXref_FromDate()
 	 * @model required="true"
-	 *        annotation="mimo-ent-format type='date-time'"
 	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getFromDate();
@@ -126,7 +126,9 @@ public interface GlBudgetXref extends BizEntity {
 	 * @return the value of the '<em>Gl Account Id</em>' reference.
 	 * @see #setGlAccountId(GlAccount)
 	 * @see org.abchip.mimo.biz.accounting.ledger.LedgerPackage#getGlBudgetXref_GlAccountId()
-	 * @model keys="glAccountId"
+	 * @model keys="glAccountId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	GlAccount getGlAccountId();
@@ -152,7 +154,9 @@ public interface GlBudgetXref extends BizEntity {
 	 * @return the value of the '<em>Budget Item Type Id</em>' reference.
 	 * @see #setBudgetItemTypeId(BudgetItemType)
 	 * @see org.abchip.mimo.biz.accounting.ledger.LedgerPackage#getGlBudgetXref_BudgetItemTypeId()
-	 * @model keys="budgetItemTypeId"
+	 * @model keys="budgetItemTypeId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	BudgetItemType getBudgetItemTypeId();

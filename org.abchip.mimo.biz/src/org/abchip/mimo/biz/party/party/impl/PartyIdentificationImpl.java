@@ -22,9 +22,9 @@ import org.eclipse.emf.ecore.EClass;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.party.party.impl.PartyIdentificationImpl#getIdValue <em>Id Value</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.party.impl.PartyIdentificationImpl#getPartyIdentificationTypeId <em>Party Identification Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.party.impl.PartyIdentificationImpl#getPartyId <em>Party Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.party.party.impl.PartyIdentificationImpl#getIdValue <em>Id Value</em>}</li>
  * </ul>
  *
  * @generated

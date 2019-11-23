@@ -23,15 +23,15 @@ import org.abchip.mimo.biz.security.login.UserLogin;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.order.request.CustRequestStatus#getCustRequestStatusId <em>Cust Request Status Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.request.CustRequestStatus#getChangeByUserLoginId <em>Change By User Login Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.request.CustRequestStatus#getCustRequestId <em>Cust Request Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.request.CustRequestStatus#getCustRequestItemSeqId <em>Cust Request Item Seq Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.request.CustRequestStatus#getStatusDate <em>Status Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.request.CustRequestStatus#getStatusId <em>Status Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.request.CustRequestStatus#getCustRequestId <em>Cust Request Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.request.CustRequestStatus#getChangeByUserLoginId <em>Change By User Login Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.order.request.RequestPackage#getCustRequestStatus()
- * @model
+ * @model annotation="mimo-ent-frame title='Customer Request Status'"
  * @generated
  */
 public interface CustRequestStatus extends BizEntity {
@@ -47,6 +47,7 @@ public interface CustRequestStatus extends BizEntity {
 	 * @see #setChangeByUserLoginId(UserLogin)
 	 * @see org.abchip.mimo.biz.order.request.RequestPackage#getCustRequestStatus_ChangeByUserLoginId()
 	 * @model keys="userLoginId"
+	 *        annotation="mimo-ent-format type='id-vlong' length='255'"
 	 * @generated
 	 */
 	UserLogin getChangeByUserLoginId();
@@ -73,6 +74,7 @@ public interface CustRequestStatus extends BizEntity {
 	 * @see #setCustRequestId(CustRequest)
 	 * @see org.abchip.mimo.biz.order.request.RequestPackage#getCustRequestStatus_CustRequestId()
 	 * @model keys="custRequestId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	CustRequest getCustRequestId();
@@ -126,7 +128,6 @@ public interface CustRequestStatus extends BizEntity {
 	 * @see org.abchip.mimo.biz.order.request.RequestPackage#getCustRequestStatus_CustRequestStatusId()
 	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getCustRequestStatusId();
@@ -179,6 +180,7 @@ public interface CustRequestStatus extends BizEntity {
 	 * @see #setStatusId(StatusItem)
 	 * @see org.abchip.mimo.biz.order.request.RequestPackage#getCustRequestStatus_StatusId()
 	 * @model keys="statusId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	StatusItem getStatusId();

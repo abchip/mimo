@@ -23,7 +23,7 @@ import org.abchip.mimo.biz.BizEntityNote;
  * </ul>
  *
  * @see org.abchip.mimo.biz.order.request.RequestPackage#getCustRequestItemNote()
- * @model
+ * @model annotation="mimo-ent-frame title='Customer Request Item Note'"
  * @generated
  */
 public interface CustRequestItemNote extends BizEntityNote {
@@ -39,8 +39,8 @@ public interface CustRequestItemNote extends BizEntityNote {
 	 * @see #setCustRequestId(String)
 	 * @see org.abchip.mimo.biz.order.request.RequestPackage#getCustRequestItemNote_CustRequestId()
 	 * @model required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	String getCustRequestId();
@@ -67,8 +67,8 @@ public interface CustRequestItemNote extends BizEntityNote {
 	 * @see #setCustRequestItemSeqId(String)
 	 * @see org.abchip.mimo.biz.order.request.RequestPackage#getCustRequestItemNote_CustRequestItemSeqId()
 	 * @model required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	String getCustRequestItemSeqId();

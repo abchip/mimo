@@ -25,16 +25,16 @@ import org.eclipse.emf.ecore.EClass;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link org.abchip.mimo.biz.humanres.ability.impl.PerfReviewImpl#getEmployeePartyId <em>Employee Party Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.ability.impl.PerfReviewImpl#getEmployeeRoleTypeId <em>Employee Role Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.ability.impl.PerfReviewImpl#getPerfReviewId <em>Perf Review Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.ability.impl.PerfReviewImpl#getComments <em>Comments</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.humanres.ability.impl.PerfReviewImpl#getFromDate <em>From Date</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.humanres.ability.impl.PerfReviewImpl#getManagerRoleTypeId <em>Manager Role Type Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.humanres.ability.impl.PerfReviewImpl#getThruDate <em>Thru Date</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.humanres.ability.impl.PerfReviewImpl#getEmployeePartyId <em>Employee Party Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.humanres.ability.impl.PerfReviewImpl#getManagerPartyId <em>Manager Party Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.humanres.ability.impl.PerfReviewImpl#getPaymentId <em>Payment Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.ability.impl.PerfReviewImpl#getEmplPositionId <em>Empl Position Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.humanres.ability.impl.PerfReviewImpl#getFromDate <em>From Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.humanres.ability.impl.PerfReviewImpl#getManagerPartyId <em>Manager Party Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.humanres.ability.impl.PerfReviewImpl#getManagerRoleTypeId <em>Manager Role Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.humanres.ability.impl.PerfReviewImpl#getPaymentId <em>Payment Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.humanres.ability.impl.PerfReviewImpl#getThruDate <em>Thru Date</em>}</li>
  * </ul>
  *
  * @generated

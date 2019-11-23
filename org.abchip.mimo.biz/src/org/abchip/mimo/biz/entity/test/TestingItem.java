@@ -18,9 +18,9 @@ import org.abchip.mimo.biz.BizEntity;
  * The following features are supported:
  * </p>
  * <ul>
+ *   <li>{@link org.abchip.mimo.biz.entity.test.TestingItem#getTestingId <em>Testing Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.entity.test.TestingItem#getTestingSeqId <em>Testing Seq Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.entity.test.TestingItem#getTestingHistory <em>Testing History</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.entity.test.TestingItem#getTestingId <em>Testing Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.entity.test.TestPackage#getTestingItem()
@@ -65,7 +65,9 @@ public interface TestingItem extends BizEntity {
 	 * @return the value of the '<em>Testing Id</em>' reference.
 	 * @see #setTestingId(Testing)
 	 * @see org.abchip.mimo.biz.entity.test.TestPackage#getTestingItem_TestingId()
-	 * @model keys="testingId"
+	 * @model keys="testingId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Testing getTestingId();
@@ -92,8 +94,8 @@ public interface TestingItem extends BizEntity {
 	 * @see #setTestingSeqId(String)
 	 * @see org.abchip.mimo.biz.entity.test.TestPackage#getTestingItem_TestingSeqId()
 	 * @model required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	String getTestingSeqId();

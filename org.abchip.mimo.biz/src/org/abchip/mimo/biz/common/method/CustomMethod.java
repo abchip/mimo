@@ -22,13 +22,13 @@ import org.abchip.mimo.biz.BizEntityTyped;
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.common.method.CustomMethod#getCustomMethodId <em>Custom Method Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.common.method.CustomMethod#getCustomMethodName <em>Custom Method Name</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.common.method.CustomMethod#getDescription <em>Description</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.common.method.CustomMethod#getCustomMethodTypeId <em>Custom Method Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.common.method.CustomMethod#getDescription <em>Description</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.common.method.CustomMethod#getFixedAssetDepMethods <em>Fixed Asset Dep Methods</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.common.method.MethodPackage#getCustomMethod()
- * @model annotation="mimo-ent-frame formula='description'"
+ * @model annotation="mimo-ent-frame dictionary='CommonEntityLabels' formula='description'"
  * @generated
  */
 public interface CustomMethod extends BizEntityTyped<CustomMethodType> {
@@ -45,7 +45,6 @@ public interface CustomMethod extends BizEntityTyped<CustomMethodType> {
 	 * @see org.abchip.mimo.biz.common.method.MethodPackage#getCustomMethod_CustomMethodId()
 	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getCustomMethodId();
@@ -123,8 +122,7 @@ public interface CustomMethod extends BizEntityTyped<CustomMethodType> {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Fixed Asset Dep Methods</em>' attribute list.
 	 * @see org.abchip.mimo.biz.common.method.MethodPackage#getCustomMethod_FixedAssetDepMethods()
-	 * @model required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='FixedAssetDepMethod'"
 	 * @generated
@@ -223,6 +221,7 @@ public interface CustomMethod extends BizEntityTyped<CustomMethodType> {
 	 * @see #setCustomMethodTypeId(CustomMethodType)
 	 * @see org.abchip.mimo.biz.common.method.MethodPackage#getCustomMethod_CustomMethodTypeId()
 	 * @model keys="customMethodTypeId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	CustomMethodType getCustomMethodTypeId();

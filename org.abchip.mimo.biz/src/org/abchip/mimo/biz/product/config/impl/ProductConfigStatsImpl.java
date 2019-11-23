@@ -21,10 +21,10 @@ import org.eclipse.emf.ecore.EClass;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link org.abchip.mimo.biz.product.config.impl.ProductConfigStatsImpl#getProductId <em>Product Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.config.impl.ProductConfigStatsImpl#getConfigId <em>Config Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.config.impl.ProductConfigStatsImpl#getConfigTypeId <em>Config Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.config.impl.ProductConfigStatsImpl#getNumOfConfs <em>Num Of Confs</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.config.impl.ProductConfigStatsImpl#getProductId <em>Product Id</em>}</li>
  * </ul>
  *
  * @generated

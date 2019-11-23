@@ -1250,7 +1250,7 @@ public class BizPackageImpl extends EPackageImpl implements BizPackage {
 		initEReference(getBizEntityNote_Note(), this.getBizEntityNoteData(), null, "note", null, 1, 1, BizEntityNote.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(bizEntityNoteDataEClass, BizEntityNoteData.class, "BizEntityNoteData", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getBizEntityNoteData_NoteId(), ecorePackage.getEString(), "noteId", null, 0, 1, BizEntityNoteData.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getBizEntityNoteData_NoteId(), ecorePackage.getEString(), "noteId", null, 1, 1, BizEntityNoteData.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getBizEntityNoteData_MoreInfoItemId(), ecorePackage.getEString(), "moreInfoItemId", null, 0, 1, BizEntityNoteData.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getBizEntityNoteData_MoreInfoItemName(), ecorePackage.getEString(), "moreInfoItemName", null, 0, 1, BizEntityNoteData.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getBizEntityNoteData_MoreInfoUrl(), ecorePackage.getEString(), "moreInfoUrl", null, 0, 1, BizEntityNoteData.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1282,32 +1282,8 @@ public class BizPackageImpl extends EPackageImpl implements BizPackage {
 		createResource(eNS_URI);
 
 		// Create annotations
-		// mimo-ent-slot
-		createMimoentslotAnnotations();
 		// mimo-ent-domain
 		createMimoentdomainAnnotations();
-	}
-
-	/**
-	 * Initializes the annotations for <b>mimo-ent-slot</b>.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void createMimoentslotAnnotations() {
-		String source = "mimo-ent-slot";
-		addAnnotation
-		  (getBizEntityNote_NoteId(),
-		   source,
-		   new String[] {
-			   "key", "true"
-		   });
-		addAnnotation
-		  (getBizEntityNoteData_NoteId(),
-		   source,
-		   new String[] {
-			   "key", "true"
-		   });
 	}
 
 	/**

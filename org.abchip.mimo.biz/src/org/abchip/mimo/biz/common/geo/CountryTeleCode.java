@@ -20,7 +20,7 @@ package org.abchip.mimo.biz.common.geo;
  * </ul>
  *
  * @see org.abchip.mimo.biz.common.geo.GeoPackage#getCountryTeleCode()
- * @model
+ * @model annotation="mimo-ent-frame title='Telephone Country Code'"
  * @generated
  */
 public interface CountryTeleCode extends CountryCode {

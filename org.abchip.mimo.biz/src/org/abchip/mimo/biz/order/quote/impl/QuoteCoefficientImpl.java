@@ -23,9 +23,9 @@ import org.eclipse.emf.ecore.EClass;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link org.abchip.mimo.biz.order.quote.impl.QuoteCoefficientImpl#getQuoteId <em>Quote Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.quote.impl.QuoteCoefficientImpl#getCoeffName <em>Coeff Name</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.quote.impl.QuoteCoefficientImpl#getCoeffValue <em>Coeff Value</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.quote.impl.QuoteCoefficientImpl#getQuoteId <em>Quote Id</em>}</li>
  * </ul>
  *
  * @generated

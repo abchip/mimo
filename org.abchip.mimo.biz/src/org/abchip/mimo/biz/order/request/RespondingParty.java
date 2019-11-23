@@ -22,11 +22,11 @@ import org.abchip.mimo.biz.party.party.Party;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.order.request.RespondingParty#getRespondingPartySeqId <em>Responding Party Seq Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.request.RespondingParty#getDateSent <em>Date Sent</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.request.RespondingParty#getCustRequestId <em>Cust Request Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.request.RespondingParty#getPartyId <em>Party Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.request.RespondingParty#getRespondingPartySeqId <em>Responding Party Seq Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.request.RespondingParty#getContactMechId <em>Contact Mech Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.request.RespondingParty#getDateSent <em>Date Sent</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.order.request.RequestPackage#getRespondingParty()
@@ -46,6 +46,7 @@ public interface RespondingParty extends BizEntity {
 	 * @see #setContactMechId(ContactMech)
 	 * @see org.abchip.mimo.biz.order.request.RequestPackage#getRespondingParty_ContactMechId()
 	 * @model keys="contactMechId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ContactMech getContactMechId();
@@ -71,7 +72,9 @@ public interface RespondingParty extends BizEntity {
 	 * @return the value of the '<em>Cust Request Id</em>' reference.
 	 * @see #setCustRequestId(CustRequest)
 	 * @see org.abchip.mimo.biz.order.request.RequestPackage#getRespondingParty_CustRequestId()
-	 * @model keys="custRequestId"
+	 * @model keys="custRequestId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	CustRequest getCustRequestId();
@@ -123,7 +126,9 @@ public interface RespondingParty extends BizEntity {
 	 * @return the value of the '<em>Party Id</em>' reference.
 	 * @see #setPartyId(Party)
 	 * @see org.abchip.mimo.biz.order.request.RequestPackage#getRespondingParty_PartyId()
-	 * @model keys="partyId"
+	 * @model keys="partyId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Party getPartyId();
@@ -150,8 +155,8 @@ public interface RespondingParty extends BizEntity {
 	 * @see #setRespondingPartySeqId(String)
 	 * @see org.abchip.mimo.biz.order.request.RequestPackage#getRespondingParty_RespondingPartySeqId()
 	 * @model required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	String getRespondingPartySeqId();

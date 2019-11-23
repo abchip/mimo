@@ -35,13 +35,13 @@ import org.eclipse.emf.ecore.EClass;
  *   <li>{@link org.abchip.mimo.biz.webapp.website.impl.WebSiteImpl#getHttpsHost <em>Https Host</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.webapp.website.impl.WebSiteImpl#getHttpsPort <em>Https Port</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.webapp.website.impl.WebSiteImpl#isIsDefault <em>Is Default</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.webapp.website.impl.WebSiteImpl#getProductStoreId <em>Product Store Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.webapp.website.impl.WebSiteImpl#getSecureContentPrefix <em>Secure Content Prefix</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.webapp.website.impl.WebSiteImpl#getSiteName <em>Site Name</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.webapp.website.impl.WebSiteImpl#getStandardContentPrefix <em>Standard Content Prefix</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.webapp.website.impl.WebSiteImpl#getWebappPath <em>Webapp Path</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.webapp.website.impl.WebSiteImpl#getVisualThemeSetId <em>Visual Theme Set Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.webapp.website.impl.WebSiteImpl#getProductStoreId <em>Product Store Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.webapp.website.impl.WebSiteImpl#getWebAnalyticsConfigs <em>Web Analytics Configs</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.webapp.website.impl.WebSiteImpl#getWebappPath <em>Webapp Path</em>}</li>
  * </ul>
  *
  * @generated

@@ -194,9 +194,6 @@ import org.abchip.mimo.biz.workeffort.timesheet.TimesheetPackage;
 import org.abchip.mimo.biz.workeffort.timesheet.impl.TimesheetPackageImpl;
 import org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage;
 import org.abchip.mimo.biz.workeffort.workeffort.impl.WorkeffortPackageImpl;
-import org.abchip.mimo.entity.EntityPackage;
-import org.eclipse.emf.common.util.URI;
-
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EGenericType;
@@ -798,7 +795,7 @@ public class CatalogPackageImpl extends EPackageImpl implements CatalogPackage {
 	 */
 	@Override
 	public EReference getProdCatalogCategory_ProdCatalogId() {
-		return (EReference)prodCatalogCategoryEClass.getEStructuralFeatures().get(3);
+		return (EReference)prodCatalogCategoryEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -808,7 +805,7 @@ public class CatalogPackageImpl extends EPackageImpl implements CatalogPackage {
 	 */
 	@Override
 	public EReference getProdCatalogCategory_ProductCategoryId() {
-		return (EReference)prodCatalogCategoryEClass.getEStructuralFeatures().get(4);
+		return (EReference)prodCatalogCategoryEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -818,7 +815,7 @@ public class CatalogPackageImpl extends EPackageImpl implements CatalogPackage {
 	 */
 	@Override
 	public EReference getProdCatalogCategory_ProdCatalogCategoryTypeId() {
-		return (EReference)prodCatalogCategoryEClass.getEStructuralFeatures().get(5);
+		return (EReference)prodCatalogCategoryEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -828,7 +825,7 @@ public class CatalogPackageImpl extends EPackageImpl implements CatalogPackage {
 	 */
 	@Override
 	public EAttribute getProdCatalogCategory_FromDate() {
-		return (EAttribute)prodCatalogCategoryEClass.getEStructuralFeatures().get(0);
+		return (EAttribute)prodCatalogCategoryEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -838,7 +835,7 @@ public class CatalogPackageImpl extends EPackageImpl implements CatalogPackage {
 	 */
 	@Override
 	public EAttribute getProdCatalogCategory_SequenceNum() {
-		return (EAttribute)prodCatalogCategoryEClass.getEStructuralFeatures().get(1);
+		return (EAttribute)prodCatalogCategoryEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -848,7 +845,7 @@ public class CatalogPackageImpl extends EPackageImpl implements CatalogPackage {
 	 */
 	@Override
 	public EAttribute getProdCatalogCategory_ThruDate() {
-		return (EAttribute)prodCatalogCategoryEClass.getEStructuralFeatures().get(2);
+		return (EAttribute)prodCatalogCategoryEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
@@ -908,7 +905,7 @@ public class CatalogPackageImpl extends EPackageImpl implements CatalogPackage {
 	 */
 	@Override
 	public EReference getProdCatalogInvFacility_ProdCatalogId() {
-		return (EReference)prodCatalogInvFacilityEClass.getEStructuralFeatures().get(3);
+		return (EReference)prodCatalogInvFacilityEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -918,7 +915,7 @@ public class CatalogPackageImpl extends EPackageImpl implements CatalogPackage {
 	 */
 	@Override
 	public EReference getProdCatalogInvFacility_FacilityId() {
-		return (EReference)prodCatalogInvFacilityEClass.getEStructuralFeatures().get(4);
+		return (EReference)prodCatalogInvFacilityEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -928,7 +925,7 @@ public class CatalogPackageImpl extends EPackageImpl implements CatalogPackage {
 	 */
 	@Override
 	public EAttribute getProdCatalogInvFacility_FromDate() {
-		return (EAttribute)prodCatalogInvFacilityEClass.getEStructuralFeatures().get(0);
+		return (EAttribute)prodCatalogInvFacilityEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -938,7 +935,7 @@ public class CatalogPackageImpl extends EPackageImpl implements CatalogPackage {
 	 */
 	@Override
 	public EAttribute getProdCatalogInvFacility_SequenceNum() {
-		return (EAttribute)prodCatalogInvFacilityEClass.getEStructuralFeatures().get(1);
+		return (EAttribute)prodCatalogInvFacilityEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -948,7 +945,7 @@ public class CatalogPackageImpl extends EPackageImpl implements CatalogPackage {
 	 */
 	@Override
 	public EAttribute getProdCatalogInvFacility_ThruDate() {
-		return (EAttribute)prodCatalogInvFacilityEClass.getEStructuralFeatures().get(2);
+		return (EAttribute)prodCatalogInvFacilityEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -968,7 +965,7 @@ public class CatalogPackageImpl extends EPackageImpl implements CatalogPackage {
 	 */
 	@Override
 	public EReference getProdCatalogRole_PartyId() {
-		return (EReference)prodCatalogRoleEClass.getEStructuralFeatures().get(3);
+		return (EReference)prodCatalogRoleEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -978,7 +975,7 @@ public class CatalogPackageImpl extends EPackageImpl implements CatalogPackage {
 	 */
 	@Override
 	public EReference getProdCatalogRole_RoleTypeId() {
-		return (EReference)prodCatalogRoleEClass.getEStructuralFeatures().get(4);
+		return (EReference)prodCatalogRoleEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -988,7 +985,7 @@ public class CatalogPackageImpl extends EPackageImpl implements CatalogPackage {
 	 */
 	@Override
 	public EReference getProdCatalogRole_ProdCatalogId() {
-		return (EReference)prodCatalogRoleEClass.getEStructuralFeatures().get(5);
+		return (EReference)prodCatalogRoleEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -998,7 +995,7 @@ public class CatalogPackageImpl extends EPackageImpl implements CatalogPackage {
 	 */
 	@Override
 	public EAttribute getProdCatalogRole_FromDate() {
-		return (EAttribute)prodCatalogRoleEClass.getEStructuralFeatures().get(0);
+		return (EAttribute)prodCatalogRoleEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -1008,7 +1005,7 @@ public class CatalogPackageImpl extends EPackageImpl implements CatalogPackage {
 	 */
 	@Override
 	public EAttribute getProdCatalogRole_SequenceNum() {
-		return (EAttribute)prodCatalogRoleEClass.getEStructuralFeatures().get(1);
+		return (EAttribute)prodCatalogRoleEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -1018,7 +1015,7 @@ public class CatalogPackageImpl extends EPackageImpl implements CatalogPackage {
 	 */
 	@Override
 	public EAttribute getProdCatalogRole_ThruDate() {
-		return (EAttribute)prodCatalogRoleEClass.getEStructuralFeatures().get(2);
+		return (EAttribute)prodCatalogRoleEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
@@ -1062,12 +1059,12 @@ public class CatalogPackageImpl extends EPackageImpl implements CatalogPackage {
 		createEAttribute(prodCatalogEClass, PROD_CATALOG__VIEW_ALLOW_PERM_REQD);
 
 		prodCatalogCategoryEClass = createEClass(PROD_CATALOG_CATEGORY);
-		createEAttribute(prodCatalogCategoryEClass, PROD_CATALOG_CATEGORY__FROM_DATE);
-		createEAttribute(prodCatalogCategoryEClass, PROD_CATALOG_CATEGORY__SEQUENCE_NUM);
-		createEAttribute(prodCatalogCategoryEClass, PROD_CATALOG_CATEGORY__THRU_DATE);
 		createEReference(prodCatalogCategoryEClass, PROD_CATALOG_CATEGORY__PROD_CATALOG_ID);
 		createEReference(prodCatalogCategoryEClass, PROD_CATALOG_CATEGORY__PRODUCT_CATEGORY_ID);
 		createEReference(prodCatalogCategoryEClass, PROD_CATALOG_CATEGORY__PROD_CATALOG_CATEGORY_TYPE_ID);
+		createEAttribute(prodCatalogCategoryEClass, PROD_CATALOG_CATEGORY__FROM_DATE);
+		createEAttribute(prodCatalogCategoryEClass, PROD_CATALOG_CATEGORY__SEQUENCE_NUM);
+		createEAttribute(prodCatalogCategoryEClass, PROD_CATALOG_CATEGORY__THRU_DATE);
 
 		prodCatalogCategoryTypeEClass = createEClass(PROD_CATALOG_CATEGORY_TYPE);
 		createEAttribute(prodCatalogCategoryTypeEClass, PROD_CATALOG_CATEGORY_TYPE__PROD_CATALOG_CATEGORY_TYPE_ID);
@@ -1075,19 +1072,19 @@ public class CatalogPackageImpl extends EPackageImpl implements CatalogPackage {
 		createEReference(prodCatalogCategoryTypeEClass, PROD_CATALOG_CATEGORY_TYPE__PARENT_TYPE_ID);
 
 		prodCatalogInvFacilityEClass = createEClass(PROD_CATALOG_INV_FACILITY);
+		createEReference(prodCatalogInvFacilityEClass, PROD_CATALOG_INV_FACILITY__PROD_CATALOG_ID);
+		createEReference(prodCatalogInvFacilityEClass, PROD_CATALOG_INV_FACILITY__FACILITY_ID);
 		createEAttribute(prodCatalogInvFacilityEClass, PROD_CATALOG_INV_FACILITY__FROM_DATE);
 		createEAttribute(prodCatalogInvFacilityEClass, PROD_CATALOG_INV_FACILITY__SEQUENCE_NUM);
 		createEAttribute(prodCatalogInvFacilityEClass, PROD_CATALOG_INV_FACILITY__THRU_DATE);
-		createEReference(prodCatalogInvFacilityEClass, PROD_CATALOG_INV_FACILITY__PROD_CATALOG_ID);
-		createEReference(prodCatalogInvFacilityEClass, PROD_CATALOG_INV_FACILITY__FACILITY_ID);
 
 		prodCatalogRoleEClass = createEClass(PROD_CATALOG_ROLE);
-		createEAttribute(prodCatalogRoleEClass, PROD_CATALOG_ROLE__FROM_DATE);
-		createEAttribute(prodCatalogRoleEClass, PROD_CATALOG_ROLE__SEQUENCE_NUM);
-		createEAttribute(prodCatalogRoleEClass, PROD_CATALOG_ROLE__THRU_DATE);
 		createEReference(prodCatalogRoleEClass, PROD_CATALOG_ROLE__PARTY_ID);
 		createEReference(prodCatalogRoleEClass, PROD_CATALOG_ROLE__ROLE_TYPE_ID);
 		createEReference(prodCatalogRoleEClass, PROD_CATALOG_ROLE__PROD_CATALOG_ID);
+		createEAttribute(prodCatalogRoleEClass, PROD_CATALOG_ROLE__FROM_DATE);
+		createEAttribute(prodCatalogRoleEClass, PROD_CATALOG_ROLE__SEQUENCE_NUM);
+		createEAttribute(prodCatalogRoleEClass, PROD_CATALOG_ROLE__THRU_DATE);
 	}
 
 	/**
@@ -1151,15 +1148,15 @@ public class CatalogPackageImpl extends EPackageImpl implements CatalogPackage {
 		addEOperation(prodCatalogEClass, ecorePackage.getEString(), "cartAbandonedLines", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(prodCatalogCategoryEClass, ProdCatalogCategory.class, "ProdCatalogCategory", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getProdCatalogCategory_ProdCatalogId(), this.getProdCatalog(), null, "prodCatalogId", null, 1, 1, ProdCatalogCategory.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getProdCatalogCategory_ProdCatalogId().getEKeys().add(this.getProdCatalog_ProdCatalogId());
+		initEReference(getProdCatalogCategory_ProductCategoryId(), theCategoryPackage.getProductCategory(), null, "productCategoryId", null, 1, 1, ProdCatalogCategory.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getProdCatalogCategory_ProductCategoryId().getEKeys().add(theCategoryPackage.getProductCategory_ProductCategoryId());
+		initEReference(getProdCatalogCategory_ProdCatalogCategoryTypeId(), this.getProdCatalogCategoryType(), null, "prodCatalogCategoryTypeId", null, 1, 1, ProdCatalogCategory.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getProdCatalogCategory_ProdCatalogCategoryTypeId().getEKeys().add(this.getProdCatalogCategoryType_ProdCatalogCategoryTypeId());
 		initEAttribute(getProdCatalogCategory_FromDate(), ecorePackage.getEDate(), "fromDate", null, 1, 1, ProdCatalogCategory.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getProdCatalogCategory_SequenceNum(), ecorePackage.getELong(), "sequenceNum", null, 0, 1, ProdCatalogCategory.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getProdCatalogCategory_ThruDate(), ecorePackage.getEDate(), "thruDate", null, 0, 1, ProdCatalogCategory.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getProdCatalogCategory_ProdCatalogId(), this.getProdCatalog(), null, "prodCatalogId", null, 0, 1, ProdCatalogCategory.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		getProdCatalogCategory_ProdCatalogId().getEKeys().add(this.getProdCatalog_ProdCatalogId());
-		initEReference(getProdCatalogCategory_ProductCategoryId(), theCategoryPackage.getProductCategory(), null, "productCategoryId", null, 0, 1, ProdCatalogCategory.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		getProdCatalogCategory_ProductCategoryId().getEKeys().add(theCategoryPackage.getProductCategory_ProductCategoryId());
-		initEReference(getProdCatalogCategory_ProdCatalogCategoryTypeId(), this.getProdCatalogCategoryType(), null, "prodCatalogCategoryTypeId", null, 0, 1, ProdCatalogCategory.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		getProdCatalogCategory_ProdCatalogCategoryTypeId().getEKeys().add(this.getProdCatalogCategoryType_ProdCatalogCategoryTypeId());
 
 		initEClass(prodCatalogCategoryTypeEClass, ProdCatalogCategoryType.class, "ProdCatalogCategoryType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getProdCatalogCategoryType_ProdCatalogCategoryTypeId(), ecorePackage.getEString(), "prodCatalogCategoryTypeId", null, 1, 1, ProdCatalogCategoryType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1170,34 +1167,34 @@ public class CatalogPackageImpl extends EPackageImpl implements CatalogPackage {
 		addEOperation(prodCatalogCategoryTypeEClass, ecorePackage.getEString(), "childProdCatalogCategoryTypes", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(prodCatalogInvFacilityEClass, ProdCatalogInvFacility.class, "ProdCatalogInvFacility", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getProdCatalogInvFacility_ProdCatalogId(), this.getProdCatalog(), null, "prodCatalogId", null, 1, 1, ProdCatalogInvFacility.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getProdCatalogInvFacility_ProdCatalogId().getEKeys().add(this.getProdCatalog_ProdCatalogId());
+		initEReference(getProdCatalogInvFacility_FacilityId(), theFacilityPackage.getFacility(), null, "facilityId", null, 1, 1, ProdCatalogInvFacility.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getProdCatalogInvFacility_FacilityId().getEKeys().add(theFacilityPackage.getFacility_FacilityId());
 		initEAttribute(getProdCatalogInvFacility_FromDate(), ecorePackage.getEDate(), "fromDate", null, 1, 1, ProdCatalogInvFacility.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getProdCatalogInvFacility_SequenceNum(), ecorePackage.getELong(), "sequenceNum", null, 0, 1, ProdCatalogInvFacility.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getProdCatalogInvFacility_ThruDate(), ecorePackage.getEDate(), "thruDate", null, 0, 1, ProdCatalogInvFacility.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getProdCatalogInvFacility_ProdCatalogId(), this.getProdCatalog(), null, "prodCatalogId", null, 0, 1, ProdCatalogInvFacility.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		getProdCatalogInvFacility_ProdCatalogId().getEKeys().add(this.getProdCatalog_ProdCatalogId());
-		initEReference(getProdCatalogInvFacility_FacilityId(), theFacilityPackage.getFacility(), null, "facilityId", null, 0, 1, ProdCatalogInvFacility.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		getProdCatalogInvFacility_FacilityId().getEKeys().add(theFacilityPackage.getFacility_FacilityId());
 
 		initEClass(prodCatalogRoleEClass, ProdCatalogRole.class, "ProdCatalogRole", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getProdCatalogRole_PartyId(), thePartyPackage.getParty(), null, "partyId", null, 1, 1, ProdCatalogRole.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getProdCatalogRole_PartyId().getEKeys().add(thePartyPackage.getParty_PartyId());
+		initEReference(getProdCatalogRole_RoleTypeId(), thePartyPackage.getRoleType(), null, "roleTypeId", null, 1, 1, ProdCatalogRole.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getProdCatalogRole_RoleTypeId().getEKeys().add(thePartyPackage.getRoleType_RoleTypeId());
+		initEReference(getProdCatalogRole_ProdCatalogId(), this.getProdCatalog(), null, "prodCatalogId", null, 1, 1, ProdCatalogRole.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getProdCatalogRole_ProdCatalogId().getEKeys().add(this.getProdCatalog_ProdCatalogId());
 		initEAttribute(getProdCatalogRole_FromDate(), ecorePackage.getEDate(), "fromDate", null, 1, 1, ProdCatalogRole.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getProdCatalogRole_SequenceNum(), ecorePackage.getELong(), "sequenceNum", null, 0, 1, ProdCatalogRole.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getProdCatalogRole_ThruDate(), ecorePackage.getEDate(), "thruDate", null, 0, 1, ProdCatalogRole.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getProdCatalogRole_PartyId(), thePartyPackage.getParty(), null, "partyId", null, 0, 1, ProdCatalogRole.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		getProdCatalogRole_PartyId().getEKeys().add(thePartyPackage.getParty_PartyId());
-		initEReference(getProdCatalogRole_RoleTypeId(), thePartyPackage.getRoleType(), null, "roleTypeId", null, 0, 1, ProdCatalogRole.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		getProdCatalogRole_RoleTypeId().getEKeys().add(thePartyPackage.getRoleType_RoleTypeId());
-		initEReference(getProdCatalogRole_ProdCatalogId(), this.getProdCatalog(), null, "prodCatalogId", null, 0, 1, ProdCatalogRole.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		getProdCatalogRole_ProdCatalogId().getEKeys().add(this.getProdCatalog_ProdCatalogId());
 
 		// Create annotations
+		// mimo-ent-frame
+		createMimoentframeAnnotations();
 		// mimo-ent-format
 		createMimoentformatAnnotations();
 		// mimo-ent-slot
 		createMimoentslotAnnotations();
 		// mimo-ent-domain
 		createMimoentdomainAnnotations();
-		// mimo-ent-frame
-		createMimoentframeAnnotations();
 	}
 
 	/**
@@ -1279,6 +1276,27 @@ public class CatalogPackageImpl extends EPackageImpl implements CatalogPackage {
 			   "length", "1"
 		   });
 		addAnnotation
+		  (getProdCatalogCategory_ProdCatalogId(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (getProdCatalogCategory_ProductCategoryId(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (getProdCatalogCategory_ProdCatalogCategoryTypeId(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
 		  (getProdCatalogCategory_FromDate(),
 		   source,
 		   new String[] {
@@ -1320,6 +1338,27 @@ public class CatalogPackageImpl extends EPackageImpl implements CatalogPackage {
 			   "length", "255"
 		   });
 		addAnnotation
+		  (getProdCatalogCategoryType_ParentTypeId(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (getProdCatalogInvFacility_ProdCatalogId(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (getProdCatalogInvFacility_FacilityId(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
 		  (getProdCatalogInvFacility_FromDate(),
 		   source,
 		   new String[] {
@@ -1338,6 +1377,27 @@ public class CatalogPackageImpl extends EPackageImpl implements CatalogPackage {
 		   source,
 		   new String[] {
 			   "type", "date-time"
+		   });
+		addAnnotation
+		  (getProdCatalogRole_PartyId(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (getProdCatalogRole_RoleTypeId(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (getProdCatalogRole_ProdCatalogId(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
 		   });
 		addAnnotation
 		  (getProdCatalogRole_FromDate(),
@@ -1376,7 +1436,19 @@ public class CatalogPackageImpl extends EPackageImpl implements CatalogPackage {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (getProdCatalog_ProdCatalogId(),
+		  (getProdCatalogCategory_ProdCatalogId(),
+		   source,
+		   new String[] {
+			   "key", "true"
+		   });
+		addAnnotation
+		  (getProdCatalogCategory_ProductCategoryId(),
+		   source,
+		   new String[] {
+			   "key", "true"
+		   });
+		addAnnotation
+		  (getProdCatalogCategory_ProdCatalogCategoryTypeId(),
 		   source,
 		   new String[] {
 			   "key", "true"
@@ -1394,13 +1466,37 @@ public class CatalogPackageImpl extends EPackageImpl implements CatalogPackage {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (getProdCatalogCategoryType_ProdCatalogCategoryTypeId(),
+		  (getProdCatalogInvFacility_ProdCatalogId(),
+		   source,
+		   new String[] {
+			   "key", "true"
+		   });
+		addAnnotation
+		  (getProdCatalogInvFacility_FacilityId(),
 		   source,
 		   new String[] {
 			   "key", "true"
 		   });
 		addAnnotation
 		  (getProdCatalogInvFacility_FromDate(),
+		   source,
+		   new String[] {
+			   "key", "true"
+		   });
+		addAnnotation
+		  (getProdCatalogRole_PartyId(),
+		   source,
+		   new String[] {
+			   "key", "true"
+		   });
+		addAnnotation
+		  (getProdCatalogRole_RoleTypeId(),
+		   source,
+		   new String[] {
+			   "key", "true"
+		   });
+		addAnnotation
+		  (getProdCatalogRole_ProdCatalogId(),
 		   source,
 		   new String[] {
 			   "key", "true"
@@ -1427,9 +1523,6 @@ public class CatalogPackageImpl extends EPackageImpl implements CatalogPackage {
 		   new String[] {
 			   "frame", "CartAbandonedLine",
 			   "route", "prodCatalogId"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
 		  (prodCatalogCategoryTypeEClass.getEOperations().get(0),
@@ -1437,9 +1530,6 @@ public class CatalogPackageImpl extends EPackageImpl implements CatalogPackage {
 		   new String[] {
 			   "frame", "ProdCatalogCategoryType",
 			   "route", "parentTypeId"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 	}
 
@@ -1452,10 +1542,40 @@ public class CatalogPackageImpl extends EPackageImpl implements CatalogPackage {
 	protected void createMimoentframeAnnotations() {
 		String source = "mimo-ent-frame";
 		addAnnotation
+		  (prodCatalogEClass,
+		   source,
+		   new String[] {
+			   "title", "Catalog",
+			   "dictionary", "ProductEntityLabels"
+		   });
+		addAnnotation
+		  (prodCatalogCategoryEClass,
+		   source,
+		   new String[] {
+			   "title", "Catalog Category Association",
+			   "dictionary", "ProductEntityLabels"
+		   });
+		addAnnotation
 		  (prodCatalogCategoryTypeEClass,
 		   source,
 		   new String[] {
+			   "title", "Catalog Category Association Type",
+			   "dictionary", "ProductEntityLabels",
 			   "formula", "description"
+		   });
+		addAnnotation
+		  (prodCatalogInvFacilityEClass,
+		   source,
+		   new String[] {
+			   "title", "Product Catalog Inventory Facility Applicability",
+			   "dictionary", "ProductEntityLabels"
+		   });
+		addAnnotation
+		  (prodCatalogRoleEClass,
+		   source,
+		   new String[] {
+			   "title", "ProdCatalog Role Association",
+			   "dictionary", "ProductEntityLabels"
 		   });
 	}
 

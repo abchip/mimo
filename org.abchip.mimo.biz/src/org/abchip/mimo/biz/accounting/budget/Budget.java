@@ -22,13 +22,13 @@ import org.abchip.mimo.biz.common.period.CustomTimePeriod;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.accounting.budget.Budget#getBudgetId <em>Budget Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.budget.Budget#getComments <em>Comments</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.budget.Budget#getBudgetTypeId <em>Budget Type Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.budget.Budget#getCustomTimePeriodId <em>Custom Time Period Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.budget.Budget#getBudgetAttributes <em>Budget Attributes</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.budget.Budget#getBudgetItems <em>Budget Items</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.budget.Budget#getBudgetRevisions <em>Budget Revisions</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.budget.Budget#getBudgetStatuss <em>Budget Statuss</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.budget.Budget#getBudgetTypeId <em>Budget Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.budget.Budget#getComments <em>Comments</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.budget.Budget#getCustomTimePeriodId <em>Custom Time Period Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.accounting.budget.BudgetPackage#getBudget()
@@ -74,6 +74,7 @@ public interface Budget extends BizEntityTyped<BudgetType> {
 	 * @see #setCustomTimePeriodId(CustomTimePeriod)
 	 * @see org.abchip.mimo.biz.accounting.budget.BudgetPackage#getBudget_CustomTimePeriodId()
 	 * @model keys="customTimePeriodId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	CustomTimePeriod getCustomTimePeriodId();
@@ -99,8 +100,7 @@ public interface Budget extends BizEntityTyped<BudgetType> {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Budget Attributes</em>' attribute list.
 	 * @see org.abchip.mimo.biz.accounting.budget.BudgetPackage#getBudget_BudgetAttributes()
-	 * @model required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='BudgetAttribute'"
 	 * @generated
@@ -118,8 +118,7 @@ public interface Budget extends BizEntityTyped<BudgetType> {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Budget Items</em>' attribute list.
 	 * @see org.abchip.mimo.biz.accounting.budget.BudgetPackage#getBudget_BudgetItems()
-	 * @model required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='BudgetItem'"
 	 * @generated
@@ -137,8 +136,7 @@ public interface Budget extends BizEntityTyped<BudgetType> {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Budget Revisions</em>' attribute list.
 	 * @see org.abchip.mimo.biz.accounting.budget.BudgetPackage#getBudget_BudgetRevisions()
-	 * @model required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='BudgetRevision'"
 	 * @generated
@@ -156,8 +154,7 @@ public interface Budget extends BizEntityTyped<BudgetType> {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Budget Statuss</em>' attribute list.
 	 * @see org.abchip.mimo.biz.accounting.budget.BudgetPackage#getBudget_BudgetStatuss()
-	 * @model required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='BudgetStatus'"
 	 * @generated
@@ -186,6 +183,7 @@ public interface Budget extends BizEntityTyped<BudgetType> {
 	 * @see #setBudgetTypeId(BudgetType)
 	 * @see org.abchip.mimo.biz.accounting.budget.BudgetPackage#getBudget_BudgetTypeId()
 	 * @model keys="budgetTypeId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	BudgetType getBudgetTypeId();
@@ -213,7 +211,6 @@ public interface Budget extends BizEntityTyped<BudgetType> {
 	 * @see org.abchip.mimo.biz.accounting.budget.BudgetPackage#getBudget_BudgetId()
 	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getBudgetId();

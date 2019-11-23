@@ -21,8 +21,8 @@ import org.eclipse.emf.ecore.EClass;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.content.survey.impl.SurveyMultiRespColumnImpl#getSurveyId <em>Survey Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.content.survey.impl.SurveyMultiRespColumnImpl#getSurveyMultiRespId <em>Survey Multi Resp Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.survey.impl.SurveyMultiRespColumnImpl#getSurveyMultiRespColId <em>Survey Multi Resp Col Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.content.survey.impl.SurveyMultiRespColumnImpl#getSurveyMultiRespId <em>Survey Multi Resp Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.survey.impl.SurveyMultiRespColumnImpl#getColumnTitle <em>Column Title</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.survey.impl.SurveyMultiRespColumnImpl#getSequenceNum <em>Sequence Num</em>}</li>
  * </ul>

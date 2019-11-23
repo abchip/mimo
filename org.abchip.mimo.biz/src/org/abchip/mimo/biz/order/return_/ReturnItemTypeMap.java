@@ -18,13 +18,13 @@ import org.abchip.mimo.biz.BizEntity;
  * The following features are supported:
  * </p>
  * <ul>
+ *   <li>{@link org.abchip.mimo.biz.order.return_.ReturnItemTypeMap#getReturnHeaderTypeId <em>Return Header Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.return_.ReturnItemTypeMap#getReturnItemMapKey <em>Return Item Map Key</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.return_.ReturnItemTypeMap#getReturnItemTypeId <em>Return Item Type Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.return_.ReturnItemTypeMap#getReturnHeaderTypeId <em>Return Header Type Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.order.return_.ReturnPackage#getReturnItemTypeMap()
- * @model
+ * @model annotation="mimo-ent-frame help='Mapping between productTypeId and returnItemTypeId for product order items, orderItemTypeId and returnItemTypeId for other\n          order items, or orderAdjustmentTypeId and returnAdjustmentTypeId.  Separate mappings for different types of returns (customer vs. vendor)'"
  * @generated
  */
 public interface ReturnItemTypeMap extends BizEntity {
@@ -39,7 +39,9 @@ public interface ReturnItemTypeMap extends BizEntity {
 	 * @return the value of the '<em>Return Header Type Id</em>' reference.
 	 * @see #setReturnHeaderTypeId(ReturnHeaderType)
 	 * @see org.abchip.mimo.biz.order.return_.ReturnPackage#getReturnItemTypeMap_ReturnHeaderTypeId()
-	 * @model keys="returnHeaderTypeId"
+	 * @model keys="returnHeaderTypeId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ReturnHeaderType getReturnHeaderTypeId();
@@ -66,8 +68,8 @@ public interface ReturnItemTypeMap extends BizEntity {
 	 * @see #setReturnItemMapKey(String)
 	 * @see org.abchip.mimo.biz.order.return_.ReturnPackage#getReturnItemTypeMap_ReturnItemMapKey()
 	 * @model required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	String getReturnItemMapKey();
@@ -94,6 +96,7 @@ public interface ReturnItemTypeMap extends BizEntity {
 	 * @see #setReturnItemTypeId(ReturnItemType)
 	 * @see org.abchip.mimo.biz.order.return_.ReturnPackage#getReturnItemTypeMap_ReturnItemTypeId()
 	 * @model keys="returnItemTypeId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ReturnItemType getReturnItemTypeId();

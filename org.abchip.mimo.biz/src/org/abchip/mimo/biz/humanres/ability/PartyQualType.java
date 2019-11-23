@@ -27,7 +27,7 @@ import org.abchip.mimo.biz.BizEntityType;
  * </ul>
  *
  * @see org.abchip.mimo.biz.humanres.ability.AbilityPackage#getPartyQualType()
- * @model annotation="mimo-ent-frame formula='description'"
+ * @model annotation="mimo-ent-frame title='Party Qualification Type' formula='description'"
  * @generated
  */
 public interface PartyQualType extends BizEntityType<PartyQual> {
@@ -95,6 +95,7 @@ public interface PartyQualType extends BizEntityType<PartyQual> {
 	 * @see #setParentTypeId(PartyQualType)
 	 * @see org.abchip.mimo.biz.humanres.ability.AbilityPackage#getPartyQualType_ParentTypeId()
 	 * @model keys="partyQualTypeId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	PartyQualType getParentTypeId();
@@ -132,7 +133,6 @@ public interface PartyQualType extends BizEntityType<PartyQual> {
 	 * @see org.abchip.mimo.biz.humanres.ability.AbilityPackage#getPartyQualType_PartyQualTypeId()
 	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getPartyQualTypeId();

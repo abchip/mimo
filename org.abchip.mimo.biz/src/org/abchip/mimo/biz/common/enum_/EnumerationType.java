@@ -27,7 +27,7 @@ import org.abchip.mimo.biz.BizEntityType;
  * </ul>
  *
  * @see org.abchip.mimo.biz.common.enum_.EnumPackage#getEnumerationType()
- * @model annotation="mimo-ent-frame formula='description'"
+ * @model annotation="mimo-ent-frame dictionary='CommonEntityLabels' formula='description'"
  * @generated
  */
 public interface EnumerationType extends BizEntityType<Enumeration> {
@@ -95,6 +95,7 @@ public interface EnumerationType extends BizEntityType<Enumeration> {
 	 * @see #setParentTypeId(EnumerationType)
 	 * @see org.abchip.mimo.biz.common.enum_.EnumPackage#getEnumerationType_ParentTypeId()
 	 * @model keys="enumTypeId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	EnumerationType getParentTypeId();
@@ -142,7 +143,6 @@ public interface EnumerationType extends BizEntityType<Enumeration> {
 	 * @see org.abchip.mimo.biz.common.enum_.EnumPackage#getEnumerationType_EnumTypeId()
 	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getEnumTypeId();

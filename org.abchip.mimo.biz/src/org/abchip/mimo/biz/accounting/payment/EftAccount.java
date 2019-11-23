@@ -22,14 +22,14 @@ import org.abchip.mimo.biz.party.contact.ContactMech;
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.EftAccount#getAccountType <em>Account Type</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.EftAccount#getBankName <em>Bank Name</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.EftAccount#getCompanyNameOnAccount <em>Company Name On Account</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.payment.EftAccount#getContactMechId <em>Contact Mech Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.EftAccount#getNameOnAccount <em>Name On Account</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.EftAccount#getRoutingNumber <em>Routing Number</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.EftAccount#getYearsAtBank <em>Years At Bank</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.payment.EftAccount#getContactMechId <em>Contact Mech Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getEftAccount()
- * @model annotation="mimo-ent-frame formula='description'"
+ * @model annotation="mimo-ent-frame title='EFT Account Information' formula='description'"
  * @generated
  */
 public interface EftAccount extends PaymentMethod {
@@ -149,6 +149,7 @@ public interface EftAccount extends PaymentMethod {
 	 * @see #setContactMechId(ContactMech)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getEftAccount_ContactMechId()
 	 * @model keys="contactMechId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ContactMech getContactMechId();
@@ -200,7 +201,8 @@ public interface EftAccount extends PaymentMethod {
 	 * @return the value of the '<em>Routing Number</em>' attribute.
 	 * @see #setRoutingNumber(String)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getEftAccount_RoutingNumber()
-	 * @model annotation="mimo-ent-format type='short-varchar' length='60'"
+	 * @model annotation="mimo-ent-slot help='See https://en.wikipedia.org/wiki/Bank_code'"
+	 *        annotation="mimo-ent-format type='short-varchar' length='60'"
 	 * @generated
 	 */
 	String getRoutingNumber();

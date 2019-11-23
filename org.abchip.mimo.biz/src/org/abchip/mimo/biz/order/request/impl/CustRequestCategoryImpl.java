@@ -24,8 +24,8 @@ import org.eclipse.emf.ecore.EClass;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.order.request.impl.CustRequestCategoryImpl#getCustRequestCategoryId <em>Cust Request Category Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.request.impl.CustRequestCategoryImpl#getDescription <em>Description</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.request.impl.CustRequestCategoryImpl#getCustRequestTypeId <em>Cust Request Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.request.impl.CustRequestCategoryImpl#getDescription <em>Description</em>}</li>
  * </ul>
  *
  * @generated

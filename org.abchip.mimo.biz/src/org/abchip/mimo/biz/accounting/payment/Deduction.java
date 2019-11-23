@@ -70,7 +70,6 @@ public interface Deduction extends BizEntityTyped<DeductionType> {
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getDeduction_DeductionId()
 	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getDeductionId();
@@ -97,6 +96,7 @@ public interface Deduction extends BizEntityTyped<DeductionType> {
 	 * @see #setDeductionTypeId(DeductionType)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getDeduction_DeductionTypeId()
 	 * @model keys="deductionTypeId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	DeductionType getDeductionTypeId();
@@ -123,6 +123,7 @@ public interface Deduction extends BizEntityTyped<DeductionType> {
 	 * @see #setPaymentId(Payment)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getDeduction_PaymentId()
 	 * @model keys="paymentId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Payment getPaymentId();

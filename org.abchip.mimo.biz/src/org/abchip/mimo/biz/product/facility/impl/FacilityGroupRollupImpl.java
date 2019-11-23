@@ -23,11 +23,11 @@ import org.eclipse.emf.ecore.EClass;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link org.abchip.mimo.biz.product.facility.impl.FacilityGroupRollupImpl#getFacilityGroupId <em>Facility Group Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.facility.impl.FacilityGroupRollupImpl#getParentFacilityGroupId <em>Parent Facility Group Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.facility.impl.FacilityGroupRollupImpl#getFromDate <em>From Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.facility.impl.FacilityGroupRollupImpl#getSequenceNum <em>Sequence Num</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.facility.impl.FacilityGroupRollupImpl#getThruDate <em>Thru Date</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.facility.impl.FacilityGroupRollupImpl#getFacilityGroupId <em>Facility Group Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.facility.impl.FacilityGroupRollupImpl#getParentFacilityGroupId <em>Parent Facility Group Id</em>}</li>
  * </ul>
  *
  * @generated

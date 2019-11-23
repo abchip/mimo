@@ -21,11 +21,11 @@ import org.eclipse.emf.ecore.EClass;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link org.abchip.mimo.biz.security.securitygroup.impl.ProtectedViewImpl#getGroupId <em>Group Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.security.securitygroup.impl.ProtectedViewImpl#getViewNameId <em>View Name Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.security.securitygroup.impl.ProtectedViewImpl#getMaxHits <em>Max Hits</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.security.securitygroup.impl.ProtectedViewImpl#getMaxHitsDuration <em>Max Hits Duration</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.security.securitygroup.impl.ProtectedViewImpl#getTarpitDuration <em>Tarpit Duration</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.security.securitygroup.impl.ProtectedViewImpl#getGroupId <em>Group Id</em>}</li>
  * </ul>
  *
  * @generated

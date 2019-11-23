@@ -95,6 +95,7 @@ public interface TerminationType extends BizEntity {
 	 * @see #setParentTypeId(TerminationType)
 	 * @see org.abchip.mimo.biz.humanres.employment.EmploymentPackage#getTerminationType_ParentTypeId()
 	 * @model keys="terminationTypeId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	TerminationType getParentTypeId();
@@ -132,7 +133,6 @@ public interface TerminationType extends BizEntity {
 	 * @see org.abchip.mimo.biz.humanres.employment.EmploymentPackage#getTerminationType_TerminationTypeId()
 	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getTerminationTypeId();

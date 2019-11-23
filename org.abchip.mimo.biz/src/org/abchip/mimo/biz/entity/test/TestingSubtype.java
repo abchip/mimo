@@ -66,7 +66,6 @@ public interface TestingSubtype extends BizEntity {
 	 * @see org.abchip.mimo.biz.entity.test.TestPackage#getTestingSubtype_TestingTypeId()
 	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getTestingTypeId();

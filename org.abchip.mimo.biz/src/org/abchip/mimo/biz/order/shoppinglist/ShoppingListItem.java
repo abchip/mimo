@@ -23,16 +23,16 @@ import org.abchip.mimo.biz.product.product.Product;
  * The following features are supported:
  * </p>
  * <ul>
+ *   <li>{@link org.abchip.mimo.biz.order.shoppinglist.ShoppingListItem#getShoppingListId <em>Shopping List Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.shoppinglist.ShoppingListItem#getShoppingListItemSeqId <em>Shopping List Item Seq Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.shoppinglist.ShoppingListItem#getConfigId <em>Config Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.shoppinglist.ShoppingListItem#getModifiedPrice <em>Modified Price</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.shoppinglist.ShoppingListItem#getProductId <em>Product Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.shoppinglist.ShoppingListItem#getQuantity <em>Quantity</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.shoppinglist.ShoppingListItem#getQuantityPurchased <em>Quantity Purchased</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.shoppinglist.ShoppingListItem#getReservLength <em>Reserv Length</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.shoppinglist.ShoppingListItem#getReservPersons <em>Reserv Persons</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.shoppinglist.ShoppingListItem#getReservStart <em>Reserv Start</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.shoppinglist.ShoppingListItem#getShoppingListId <em>Shopping List Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.shoppinglist.ShoppingListItem#getProductId <em>Product Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.order.shoppinglist.ShoppinglistPackage#getShoppingListItem()
@@ -104,6 +104,7 @@ public interface ShoppingListItem extends BizEntity {
 	 * @see #setProductId(Product)
 	 * @see org.abchip.mimo.biz.order.shoppinglist.ShoppinglistPackage#getShoppingListItem_ProductId()
 	 * @model keys="productId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Product getProductId();
@@ -259,7 +260,9 @@ public interface ShoppingListItem extends BizEntity {
 	 * @return the value of the '<em>Shopping List Id</em>' reference.
 	 * @see #setShoppingListId(ShoppingList)
 	 * @see org.abchip.mimo.biz.order.shoppinglist.ShoppinglistPackage#getShoppingListItem_ShoppingListId()
-	 * @model keys="shoppingListId"
+	 * @model keys="shoppingListId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ShoppingList getShoppingListId();
@@ -286,8 +289,8 @@ public interface ShoppingListItem extends BizEntity {
 	 * @see #setShoppingListItemSeqId(String)
 	 * @see org.abchip.mimo.biz.order.shoppinglist.ShoppinglistPackage#getShoppingListItem_ShoppingListItemSeqId()
 	 * @model required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	String getShoppingListItemSeqId();

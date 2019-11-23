@@ -93,7 +93,6 @@ public interface SequenceValueItem extends BizEntity {
 	 * @see org.abchip.mimo.biz.entity.sequence.SequencePackage#getSequenceValueItem_SeqName()
 	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-format type='id-long' length='60'"
-	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getSeqName();

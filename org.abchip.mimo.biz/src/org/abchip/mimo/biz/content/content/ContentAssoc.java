@@ -22,25 +22,25 @@ import org.abchip.mimo.biz.security.login.UserLogin;
  * The following features are supported:
  * </p>
  * <ul>
+ *   <li>{@link org.abchip.mimo.biz.content.content.ContentAssoc#getContentId <em>Content Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.content.content.ContentAssoc#getContentIdTo <em>Content Id To</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.content.content.ContentAssoc#getContentAssocTypeId <em>Content Assoc Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.content.ContentAssoc#getFromDate <em>From Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.content.content.ContentAssoc#getContentAssocPredicateId <em>Content Assoc Predicate Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.content.content.ContentAssoc#getCreatedByUserLogin <em>Created By User Login</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.content.ContentAssoc#getCreatedDate <em>Created Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.content.content.ContentAssoc#getDataSourceId <em>Data Source Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.content.content.ContentAssoc#getLastModifiedByUserLogin <em>Last Modified By User Login</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.content.ContentAssoc#getLastModifiedDate <em>Last Modified Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.content.ContentAssoc#getLeftCoordinate <em>Left Coordinate</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.content.ContentAssoc#getMapKey <em>Map Key</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.content.ContentAssoc#getSequenceNum <em>Sequence Num</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.content.ContentAssoc#getThruDate <em>Thru Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.content.ContentAssoc#getUpperCoordinate <em>Upper Coordinate</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.content.content.ContentAssoc#getContentId <em>Content Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.content.content.ContentAssoc#getContentIdTo <em>Content Id To</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.content.content.ContentAssoc#getContentAssocTypeId <em>Content Assoc Type Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.content.content.ContentAssoc#getCreatedByUserLogin <em>Created By User Login</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.content.content.ContentAssoc#getLastModifiedByUserLogin <em>Last Modified By User Login</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.content.content.ContentAssoc#getContentAssocPredicateId <em>Content Assoc Predicate Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.content.content.ContentAssoc#getDataSourceId <em>Data Source Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.content.content.ContentPackage#getContentAssoc()
- * @model
+ * @model annotation="mimo-ent-frame title='Content Association'"
  * @generated
  */
 public interface ContentAssoc extends BizEntityTyped<ContentAssocType> {
@@ -56,6 +56,7 @@ public interface ContentAssoc extends BizEntityTyped<ContentAssocType> {
 	 * @see #setContentAssocPredicateId(ContentAssocPredicate)
 	 * @see org.abchip.mimo.biz.content.content.ContentPackage#getContentAssoc_ContentAssocPredicateId()
 	 * @model keys="contentAssocPredicateId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ContentAssocPredicate getContentAssocPredicateId();
@@ -81,7 +82,9 @@ public interface ContentAssoc extends BizEntityTyped<ContentAssocType> {
 	 * @return the value of the '<em>Content Assoc Type Id</em>' reference.
 	 * @see #setContentAssocTypeId(ContentAssocType)
 	 * @see org.abchip.mimo.biz.content.content.ContentPackage#getContentAssoc_ContentAssocTypeId()
-	 * @model keys="contentAssocTypeId"
+	 * @model keys="contentAssocTypeId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ContentAssocType getContentAssocTypeId();
@@ -107,7 +110,9 @@ public interface ContentAssoc extends BizEntityTyped<ContentAssocType> {
 	 * @return the value of the '<em>Content Id</em>' reference.
 	 * @see #setContentId(Content)
 	 * @see org.abchip.mimo.biz.content.content.ContentPackage#getContentAssoc_ContentId()
-	 * @model keys="contentId"
+	 * @model keys="contentId" required="true"
+	 *        annotation="mimo-ent-slot key='true' help='\"parent\" content'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Content getContentId();
@@ -133,7 +138,9 @@ public interface ContentAssoc extends BizEntityTyped<ContentAssocType> {
 	 * @return the value of the '<em>Content Id To</em>' reference.
 	 * @see #setContentIdTo(Content)
 	 * @see org.abchip.mimo.biz.content.content.ContentPackage#getContentAssoc_ContentIdTo()
-	 * @model keys="contentId"
+	 * @model keys="contentId" required="true"
+	 *        annotation="mimo-ent-slot key='true' help='\"child\" or \"sub\" content'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Content getContentIdTo();
@@ -160,6 +167,7 @@ public interface ContentAssoc extends BizEntityTyped<ContentAssocType> {
 	 * @see #setCreatedByUserLogin(UserLogin)
 	 * @see org.abchip.mimo.biz.content.content.ContentPackage#getContentAssoc_CreatedByUserLogin()
 	 * @model keys="userLoginId"
+	 *        annotation="mimo-ent-format type='id-vlong' length='255'"
 	 * @generated
 	 */
 	UserLogin getCreatedByUserLogin();
@@ -212,6 +220,7 @@ public interface ContentAssoc extends BizEntityTyped<ContentAssocType> {
 	 * @see #setDataSourceId(DataSource)
 	 * @see org.abchip.mimo.biz.content.content.ContentPackage#getContentAssoc_DataSourceId()
 	 * @model keys="dataSourceId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	DataSource getDataSourceId();
@@ -238,8 +247,8 @@ public interface ContentAssoc extends BizEntityTyped<ContentAssocType> {
 	 * @see #setFromDate(Date)
 	 * @see org.abchip.mimo.biz.content.content.ContentPackage#getContentAssoc_FromDate()
 	 * @model required="true"
-	 *        annotation="mimo-ent-format type='date-time'"
 	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getFromDate();
@@ -266,6 +275,7 @@ public interface ContentAssoc extends BizEntityTyped<ContentAssocType> {
 	 * @see #setLastModifiedByUserLogin(UserLogin)
 	 * @see org.abchip.mimo.biz.content.content.ContentPackage#getContentAssoc_LastModifiedByUserLogin()
 	 * @model keys="userLoginId"
+	 *        annotation="mimo-ent-format type='id-vlong' length='255'"
 	 * @generated
 	 */
 	UserLogin getLastModifiedByUserLogin();

@@ -33,6 +33,7 @@ import org.abchip.mimo.biz.security.login.UserLogin;
  *   <li>{@link org.abchip.mimo.biz.order.order.OrderAdjustment#getAmountAlreadyIncluded <em>Amount Already Included</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.OrderAdjustment#getComments <em>Comments</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.OrderAdjustment#getCorrespondingProductId <em>Corresponding Product Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.order.OrderAdjustment#getCreatedByUserLogin <em>Created By User Login</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.OrderAdjustment#getCreatedDate <em>Created Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.OrderAdjustment#getCustomerReferenceId <em>Customer Reference Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.OrderAdjustment#getDescription <em>Description</em>}</li>
@@ -44,30 +45,29 @@ import org.abchip.mimo.biz.security.login.UserLogin;
  *   <li>{@link org.abchip.mimo.biz.order.order.OrderAdjustment#getLastModifiedDate <em>Last Modified Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.OrderAdjustment#getOldAmountPerQuantity <em>Old Amount Per Quantity</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.OrderAdjustment#getOldPercentage <em>Old Percentage</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.order.OrderAdjustment#getOrderAdjustmentAttributes <em>Order Adjustment Attributes</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.order.OrderAdjustment#getOrderAdjustmentTypeId <em>Order Adjustment Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.order.OrderAdjustment#getOrderId <em>Order Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.OrderAdjustment#getOrderItemSeqId <em>Order Item Seq Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.order.OrderAdjustment#getOriginalAdjustmentId <em>Original Adjustment Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.order.OrderAdjustment#getOverrideGlAccountId <em>Override Gl Account Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.order.OrderAdjustment#getPrimaryGeoId <em>Primary Geo Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.OrderAdjustment#getProductFeatureId <em>Product Feature Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.OrderAdjustment#getProductPromoActionSeqId <em>Product Promo Action Seq Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.order.OrderAdjustment#getProductPromoId <em>Product Promo Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.OrderAdjustment#getProductPromoRuleId <em>Product Promo Rule Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.OrderAdjustment#getRecurringAmount <em>Recurring Amount</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.order.OrderAdjustment#getSecondaryGeoId <em>Secondary Geo Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.OrderAdjustment#getShipGroupSeqId <em>Ship Group Seq Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.OrderAdjustment#getSourcePercentage <em>Source Percentage</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.OrderAdjustment#getSourceReferenceId <em>Source Reference Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.OrderAdjustment#getTaxAuthGeoId <em>Tax Auth Geo Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.OrderAdjustment#getTaxAuthPartyId <em>Tax Auth Party Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.order.OrderAdjustment#getOrderAdjustmentTypeId <em>Order Adjustment Type Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.order.OrderAdjustment#getOrderId <em>Order Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.order.OrderAdjustment#getCreatedByUserLogin <em>Created By User Login</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.order.OrderAdjustment#getProductPromoId <em>Product Promo Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.order.OrderAdjustment#getPrimaryGeoId <em>Primary Geo Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.order.OrderAdjustment#getSecondaryGeoId <em>Secondary Geo Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.order.OrderAdjustment#getOverrideGlAccountId <em>Override Gl Account Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.OrderAdjustment#getTaxAuthorityRateSeqId <em>Tax Authority Rate Seq Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.order.OrderAdjustment#getOriginalAdjustmentId <em>Original Adjustment Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.order.OrderAdjustment#getOrderAdjustmentAttributes <em>Order Adjustment Attributes</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderAdjustment()
- * @model annotation="mimo-ent-frame formula='description'"
+ * @model annotation="mimo-ent-frame help='Note that both includeInTax and includeInShipping should default to true, except in the case where this adjustment is a tax or shipping adjustment then should be ignored.' formula='description'"
  * @generated
  */
 public interface OrderAdjustment extends BizEntityTyped<OrderAdjustmentType> {
@@ -108,7 +108,8 @@ public interface OrderAdjustment extends BizEntityTyped<OrderAdjustmentType> {
 	 * @return the value of the '<em>Amount Already Included</em>' attribute.
 	 * @see #setAmountAlreadyIncluded(BigDecimal)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderAdjustment_AmountAlreadyIncluded()
-	 * @model annotation="mimo-ent-format type='currency-precise' precision='18' scale='3'"
+	 * @model annotation="mimo-ent-slot help='The amount here is already represented in the price, such as VAT taxes.'"
+	 *        annotation="mimo-ent-format type='currency-precise' precision='18' scale='3'"
 	 * @generated
 	 */
 	BigDecimal getAmountAlreadyIncluded();
@@ -187,6 +188,7 @@ public interface OrderAdjustment extends BizEntityTyped<OrderAdjustmentType> {
 	 * @see #setCreatedByUserLogin(UserLogin)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderAdjustment_CreatedByUserLogin()
 	 * @model keys="userLoginId"
+	 *        annotation="mimo-ent-format type='id-vlong' length='255'"
 	 * @generated
 	 */
 	UserLogin getCreatedByUserLogin();
@@ -238,7 +240,8 @@ public interface OrderAdjustment extends BizEntityTyped<OrderAdjustmentType> {
 	 * @return the value of the '<em>Customer Reference Id</em>' attribute.
 	 * @see #setCustomerReferenceId(String)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderAdjustment_CustomerReferenceId()
-	 * @model annotation="mimo-ent-format type='id-long' length='60'"
+	 * @model annotation="mimo-ent-slot help='for tax entries this is partyTaxId'"
+	 *        annotation="mimo-ent-format type='id-long' length='60'"
 	 * @generated
 	 */
 	String getCustomerReferenceId();
@@ -290,7 +293,8 @@ public interface OrderAdjustment extends BizEntityTyped<OrderAdjustmentType> {
 	 * @return the value of the '<em>Exempt Amount</em>' attribute.
 	 * @see #setExemptAmount(BigDecimal)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderAdjustment_ExemptAmount()
-	 * @model annotation="mimo-ent-format type='currency-amount' precision='18' scale='2'"
+	 * @model annotation="mimo-ent-slot help='an amount that would normally apply, but not to this order; for tax exemption represents the what the tax would have been'"
+	 *        annotation="mimo-ent-format type='currency-amount' precision='18' scale='2'"
 	 * @generated
 	 */
 	BigDecimal getExemptAmount();
@@ -500,7 +504,6 @@ public interface OrderAdjustment extends BizEntityTyped<OrderAdjustmentType> {
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderAdjustment_OrderAdjustmentId()
 	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getOrderAdjustmentId();
@@ -527,6 +530,7 @@ public interface OrderAdjustment extends BizEntityTyped<OrderAdjustmentType> {
 	 * @see #setOrderAdjustmentTypeId(OrderAdjustmentType)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderAdjustment_OrderAdjustmentTypeId()
 	 * @model keys="orderAdjustmentTypeId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	OrderAdjustmentType getOrderAdjustmentTypeId();
@@ -553,6 +557,7 @@ public interface OrderAdjustment extends BizEntityTyped<OrderAdjustmentType> {
 	 * @see #setOrderId(OrderHeader)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderAdjustment_OrderId()
 	 * @model keys="orderId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	OrderHeader getOrderId();
@@ -605,6 +610,8 @@ public interface OrderAdjustment extends BizEntityTyped<OrderAdjustmentType> {
 	 * @see #setOriginalAdjustmentId(OrderAdjustment)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderAdjustment_OriginalAdjustmentId()
 	 * @model keys="orderAdjustmentId"
+	 *        annotation="mimo-ent-slot help='specifies relation to source OrderAdjustment - eg. for tax on shipping charges'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	OrderAdjustment getOriginalAdjustmentId();
@@ -631,6 +638,8 @@ public interface OrderAdjustment extends BizEntityTyped<OrderAdjustmentType> {
 	 * @see #setOverrideGlAccountId(GlAccount)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderAdjustment_OverrideGlAccountId()
 	 * @model keys="glAccountId"
+	 *        annotation="mimo-ent-slot help='used to specify the override or actual glAccountId used for the adjustment, avoids problems if configuration changes after initial posting, etc'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	GlAccount getOverrideGlAccountId();
@@ -657,6 +666,8 @@ public interface OrderAdjustment extends BizEntityTyped<OrderAdjustmentType> {
 	 * @see #setPrimaryGeoId(Geo)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderAdjustment_PrimaryGeoId()
 	 * @model keys="geoId"
+	 *        annotation="mimo-ent-slot help='for tax entries this is the primary jurisdiction Geo (the smallest or most local Geo that this tax is for, usually a state/province, perhaps a county or a city)'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Geo getPrimaryGeoId();
@@ -735,6 +746,7 @@ public interface OrderAdjustment extends BizEntityTyped<OrderAdjustmentType> {
 	 * @see #setProductPromoId(ProductPromo)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderAdjustment_ProductPromoId()
 	 * @model keys="productPromoId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ProductPromo getProductPromoId();
@@ -813,6 +825,8 @@ public interface OrderAdjustment extends BizEntityTyped<OrderAdjustmentType> {
 	 * @see #setSecondaryGeoId(Geo)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderAdjustment_SecondaryGeoId()
 	 * @model keys="geoId"
+	 *        annotation="mimo-ent-slot help='for tax entries this is the secondary jurisdiction Geo (usually a country, or other Geo that the primary is within)'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Geo getSecondaryGeoId();
@@ -864,7 +878,8 @@ public interface OrderAdjustment extends BizEntityTyped<OrderAdjustmentType> {
 	 * @return the value of the '<em>Source Percentage</em>' attribute.
 	 * @see #setSourcePercentage(BigDecimal)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderAdjustment_SourcePercentage()
-	 * @model annotation="mimo-ent-format type='fixed-point' precision='18' scale='6'"
+	 * @model annotation="mimo-ent-slot help='for tax entries this is the tax percentage'"
+	 *        annotation="mimo-ent-format type='fixed-point' precision='18' scale='6'"
 	 * @generated
 	 */
 	BigDecimal getSourcePercentage();
@@ -916,7 +931,8 @@ public interface OrderAdjustment extends BizEntityTyped<OrderAdjustmentType> {
 	 * @return the value of the '<em>Tax Auth Geo Id</em>' attribute.
 	 * @see #setTaxAuthGeoId(String)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderAdjustment_TaxAuthGeoId()
-	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 * @model annotation="mimo-ent-slot help='these taxAuth fields deprecate the primaryGeoId and secondaryGeoId fields and will be used with the newer tax calc stuff'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	String getTaxAuthGeoId();
@@ -969,6 +985,7 @@ public interface OrderAdjustment extends BizEntityTyped<OrderAdjustmentType> {
 	 * @see #setTaxAuthorityRateSeqId(TaxAuthorityRateProduct)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderAdjustment_TaxAuthorityRateSeqId()
 	 * @model keys="taxAuthorityRateSeqId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	TaxAuthorityRateProduct getTaxAuthorityRateSeqId();
@@ -994,8 +1011,7 @@ public interface OrderAdjustment extends BizEntityTyped<OrderAdjustmentType> {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Order Adjustment Attributes</em>' attribute list.
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderAdjustment_OrderAdjustmentAttributes()
-	 * @model required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='OrderAdjustmentAttribute'"
 	 * @generated

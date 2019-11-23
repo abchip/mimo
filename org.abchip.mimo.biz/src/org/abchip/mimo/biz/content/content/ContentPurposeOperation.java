@@ -29,7 +29,7 @@ import org.abchip.mimo.biz.party.party.RoleType;
  * </ul>
  *
  * @see org.abchip.mimo.biz.content.content.ContentPackage#getContentPurposeOperation()
- * @model
+ * @model annotation="mimo-ent-frame title='Content Purpose'"
  * @generated
  */
 public interface ContentPurposeOperation extends BizEntity {
@@ -44,7 +44,9 @@ public interface ContentPurposeOperation extends BizEntity {
 	 * @return the value of the '<em>Content Operation Id</em>' reference.
 	 * @see #setContentOperationId(ContentOperation)
 	 * @see org.abchip.mimo.biz.content.content.ContentPackage#getContentPurposeOperation_ContentOperationId()
-	 * @model keys="contentOperationId"
+	 * @model keys="contentOperationId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ContentOperation getContentOperationId();
@@ -70,7 +72,9 @@ public interface ContentPurposeOperation extends BizEntity {
 	 * @return the value of the '<em>Content Purpose Type Id</em>' reference.
 	 * @see #setContentPurposeTypeId(ContentPurposeType)
 	 * @see org.abchip.mimo.biz.content.content.ContentPackage#getContentPurposeOperation_ContentPurposeTypeId()
-	 * @model keys="contentPurposeTypeId"
+	 * @model keys="contentPurposeTypeId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ContentPurposeType getContentPurposeTypeId();
@@ -96,7 +100,9 @@ public interface ContentPurposeOperation extends BizEntity {
 	 * @return the value of the '<em>Privilege Enum Id</em>' reference.
 	 * @see #setPrivilegeEnumId(Enumeration)
 	 * @see org.abchip.mimo.biz.content.content.ContentPackage#getContentPurposeOperation_PrivilegeEnumId()
-	 * @model keys="enumId"
+	 * @model keys="enumId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Enumeration getPrivilegeEnumId();
@@ -122,7 +128,9 @@ public interface ContentPurposeOperation extends BizEntity {
 	 * @return the value of the '<em>Role Type Id</em>' reference.
 	 * @see #setRoleTypeId(RoleType)
 	 * @see org.abchip.mimo.biz.content.content.ContentPackage#getContentPurposeOperation_RoleTypeId()
-	 * @model keys="roleTypeId"
+	 * @model keys="roleTypeId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	RoleType getRoleTypeId();
@@ -148,7 +156,9 @@ public interface ContentPurposeOperation extends BizEntity {
 	 * @return the value of the '<em>Status Id</em>' reference.
 	 * @see #setStatusId(StatusItem)
 	 * @see org.abchip.mimo.biz.content.content.ContentPackage#getContentPurposeOperation_StatusId()
-	 * @model keys="statusId"
+	 * @model keys="statusId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	StatusItem getStatusId();

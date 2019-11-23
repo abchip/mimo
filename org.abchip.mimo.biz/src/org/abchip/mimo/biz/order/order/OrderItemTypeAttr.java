@@ -18,13 +18,13 @@ import org.abchip.mimo.biz.BizEntity;
  * The following features are supported:
  * </p>
  * <ul>
+ *   <li>{@link org.abchip.mimo.biz.order.order.OrderItemTypeAttr#getOrderItemTypeId <em>Order Item Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.OrderItemTypeAttr#getAttrName <em>Attr Name</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.OrderItemTypeAttr#getDescription <em>Description</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.order.OrderItemTypeAttr#getOrderItemTypeId <em>Order Item Type Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderItemTypeAttr()
- * @model annotation="mimo-ent-frame formula='description'"
+ * @model annotation="mimo-ent-frame title='Order Item Type Attribute' formula='description'"
  * @generated
  */
 public interface OrderItemTypeAttr extends BizEntity {
@@ -40,8 +40,8 @@ public interface OrderItemTypeAttr extends BizEntity {
 	 * @see #setAttrName(String)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderItemTypeAttr_AttrName()
 	 * @model required="true"
-	 *        annotation="mimo-ent-format type='id-long' length='60'"
 	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id-long' length='60'"
 	 * @generated
 	 */
 	String getAttrName();
@@ -93,7 +93,9 @@ public interface OrderItemTypeAttr extends BizEntity {
 	 * @return the value of the '<em>Order Item Type Id</em>' reference.
 	 * @see #setOrderItemTypeId(OrderItemType)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderItemTypeAttr_OrderItemTypeId()
-	 * @model keys="orderItemTypeId"
+	 * @model keys="orderItemTypeId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	OrderItemType getOrderItemTypeId();

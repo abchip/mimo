@@ -23,13 +23,13 @@ import org.abchip.mimo.biz.order.order.OrderHeader;
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.shipment.picklist.PicklistBin#getPicklistBinId <em>Picklist Bin Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.shipment.picklist.PicklistBin#getBinLocationNumber <em>Bin Location Number</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.shipment.picklist.PicklistBin#getPrimaryShipGroupSeqId <em>Primary Ship Group Seq Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.shipment.picklist.PicklistBin#getPicklistId <em>Picklist Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.shipment.picklist.PicklistBin#getPrimaryOrderId <em>Primary Order Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.shipment.picklist.PicklistBin#getPrimaryShipGroupSeqId <em>Primary Ship Group Seq Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.shipment.picklist.PicklistPackage#getPicklistBin()
- * @model
+ * @model annotation="mimo-ent-frame title='Picklist'"
  * @generated
  */
 public interface PicklistBin extends BizEntity {
@@ -72,7 +72,6 @@ public interface PicklistBin extends BizEntity {
 	 * @see org.abchip.mimo.biz.shipment.picklist.PicklistPackage#getPicklistBin_PicklistBinId()
 	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getPicklistBinId();
@@ -99,6 +98,7 @@ public interface PicklistBin extends BizEntity {
 	 * @see #setPicklistId(Picklist)
 	 * @see org.abchip.mimo.biz.shipment.picklist.PicklistPackage#getPicklistBin_PicklistId()
 	 * @model keys="picklistId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Picklist getPicklistId();
@@ -125,6 +125,7 @@ public interface PicklistBin extends BizEntity {
 	 * @see #setPrimaryOrderId(OrderHeader)
 	 * @see org.abchip.mimo.biz.shipment.picklist.PicklistPackage#getPicklistBin_PrimaryOrderId()
 	 * @model keys="orderId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	OrderHeader getPrimaryOrderId();

@@ -18,9 +18,9 @@ import org.abchip.mimo.biz.BizEntity;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.entity.tenant.TenantComponent#getSequenceNum <em>Sequence Num</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.entity.tenant.TenantComponent#getTenantId <em>Tenant Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.entity.tenant.TenantComponent#getComponentName <em>Component Name</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.entity.tenant.TenantComponent#getSequenceNum <em>Sequence Num</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.entity.tenant.TenantPackage#getTenantComponent()
@@ -39,7 +39,9 @@ public interface TenantComponent extends BizEntity {
 	 * @return the value of the '<em>Component Name</em>' reference.
 	 * @see #setComponentName(Component)
 	 * @see org.abchip.mimo.biz.entity.tenant.TenantPackage#getTenantComponent_ComponentName()
-	 * @model keys="componentName"
+	 * @model keys="componentName" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='name' length='100'"
 	 * @generated
 	 */
 	Component getComponentName();
@@ -91,7 +93,9 @@ public interface TenantComponent extends BizEntity {
 	 * @return the value of the '<em>Tenant Id</em>' reference.
 	 * @see #setTenantId(Tenant)
 	 * @see org.abchip.mimo.biz.entity.tenant.TenantPackage#getTenantComponent_TenantId()
-	 * @model keys="tenantId"
+	 * @model keys="tenantId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Tenant getTenantId();

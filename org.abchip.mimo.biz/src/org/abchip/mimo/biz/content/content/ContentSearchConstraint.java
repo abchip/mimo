@@ -18,6 +18,7 @@ import org.abchip.mimo.biz.BizEntity;
  * The following features are supported:
  * </p>
  * <ul>
+ *   <li>{@link org.abchip.mimo.biz.content.content.ContentSearchConstraint#getContentSearchResultId <em>Content Search Result Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.content.ContentSearchConstraint#getConstraintSeqId <em>Constraint Seq Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.content.ContentSearchConstraint#getAnyPrefix <em>Any Prefix</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.content.ContentSearchConstraint#getAnySuffix <em>Any Suffix</em>}</li>
@@ -28,11 +29,10 @@ import org.abchip.mimo.biz.BizEntity;
  *   <li>{@link org.abchip.mimo.biz.content.content.ContentSearchConstraint#isIsAnd <em>Is And</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.content.ContentSearchConstraint#getLowValue <em>Low Value</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.content.ContentSearchConstraint#isRemoveStems <em>Remove Stems</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.content.content.ContentSearchConstraint#getContentSearchResultId <em>Content Search Result Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.content.content.ContentPackage#getContentSearchConstraint()
- * @model
+ * @model annotation="mimo-ent-frame title='Content Search Result Constraint'"
  * @generated
  */
 public interface ContentSearchConstraint extends BizEntity {
@@ -74,8 +74,8 @@ public interface ContentSearchConstraint extends BizEntity {
 	 * @see #setConstraintSeqId(String)
 	 * @see org.abchip.mimo.biz.content.content.ContentPackage#getContentSearchConstraint_ConstraintSeqId()
 	 * @model required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	String getConstraintSeqId();
@@ -153,7 +153,9 @@ public interface ContentSearchConstraint extends BizEntity {
 	 * @return the value of the '<em>Content Search Result Id</em>' reference.
 	 * @see #setContentSearchResultId(ContentSearchResult)
 	 * @see org.abchip.mimo.biz.content.content.ContentPackage#getContentSearchConstraint_ContentSearchResultId()
-	 * @model keys="contentSearchResultId"
+	 * @model keys="contentSearchResultId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ContentSearchResult getContentSearchResultId();

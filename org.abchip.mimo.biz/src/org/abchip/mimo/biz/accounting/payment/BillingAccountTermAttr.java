@@ -18,13 +18,13 @@ import org.abchip.mimo.biz.BizEntity;
  * The following features are supported:
  * </p>
  * <ul>
+ *   <li>{@link org.abchip.mimo.biz.accounting.payment.BillingAccountTermAttr#getBillingAccountTermId <em>Billing Account Term Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.BillingAccountTermAttr#getAttrName <em>Attr Name</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.BillingAccountTermAttr#getAttrValue <em>Attr Value</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.payment.BillingAccountTermAttr#getBillingAccountTermId <em>Billing Account Term Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getBillingAccountTermAttr()
- * @model
+ * @model annotation="mimo-ent-frame title='Billing Account Term Attribute'"
  * @generated
  */
 public interface BillingAccountTermAttr extends BizEntity {
@@ -40,8 +40,8 @@ public interface BillingAccountTermAttr extends BizEntity {
 	 * @see #setAttrName(String)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getBillingAccountTermAttr_AttrName()
 	 * @model required="true"
-	 *        annotation="mimo-ent-format type='id-long' length='60'"
 	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id-long' length='60'"
 	 * @generated
 	 */
 	String getAttrName();
@@ -93,7 +93,9 @@ public interface BillingAccountTermAttr extends BizEntity {
 	 * @return the value of the '<em>Billing Account Term Id</em>' reference.
 	 * @see #setBillingAccountTermId(BillingAccountTerm)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getBillingAccountTermAttr_BillingAccountTermId()
-	 * @model keys="billingAccountTermId"
+	 * @model keys="billingAccountTermId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	BillingAccountTerm getBillingAccountTermId();

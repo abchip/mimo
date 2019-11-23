@@ -24,7 +24,7 @@ import org.abchip.mimo.biz.party.communication.CommunicationEvent;
  * </ul>
  *
  * @see org.abchip.mimo.biz.order.request.RequestPackage#getCustRequestCommEvent()
- * @model
+ * @model annotation="mimo-ent-frame title='Customer Request Communication Event'"
  * @generated
  */
 public interface CustRequestCommEvent extends BizEntity {
@@ -39,7 +39,9 @@ public interface CustRequestCommEvent extends BizEntity {
 	 * @return the value of the '<em>Communication Event Id</em>' reference.
 	 * @see #setCommunicationEventId(CommunicationEvent)
 	 * @see org.abchip.mimo.biz.order.request.RequestPackage#getCustRequestCommEvent_CommunicationEventId()
-	 * @model keys="communicationEventId"
+	 * @model keys="communicationEventId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	CommunicationEvent getCommunicationEventId();
@@ -65,7 +67,9 @@ public interface CustRequestCommEvent extends BizEntity {
 	 * @return the value of the '<em>Cust Request Id</em>' reference.
 	 * @see #setCustRequestId(CustRequest)
 	 * @see org.abchip.mimo.biz.order.request.RequestPackage#getCustRequestCommEvent_CustRequestId()
-	 * @model keys="custRequestId"
+	 * @model keys="custRequestId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	CustRequest getCustRequestId();

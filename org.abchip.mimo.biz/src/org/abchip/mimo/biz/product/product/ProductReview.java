@@ -28,16 +28,16 @@ import org.abchip.mimo.biz.security.login.UserLogin;
  *   <li>{@link org.abchip.mimo.biz.product.product.ProductReview#getProductReviewId <em>Product Review Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.ProductReview#isPostedAnonymous <em>Posted Anonymous</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.ProductReview#getPostedDateTime <em>Posted Date Time</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.product.ProductReview#getProductId <em>Product Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.ProductReview#getProductRating <em>Product Rating</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.ProductReview#getProductReview <em>Product Review</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.ProductReview#getProductStoreId <em>Product Store Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.product.ProductReview#getProductId <em>Product Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.product.ProductReview#getUserLoginId <em>User Login Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.ProductReview#getStatusId <em>Status Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.product.ProductReview#getUserLoginId <em>User Login Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.product.product.ProductPackage#getProductReview()
- * @model
+ * @model annotation="mimo-ent-frame dictionary='ProductEntityLabels'"
  * @generated
  */
 public interface ProductReview extends BizEntity {
@@ -132,7 +132,6 @@ public interface ProductReview extends BizEntity {
 	 * @see org.abchip.mimo.biz.product.product.ProductPackage#getProductReview_ProductReviewId()
 	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getProductReviewId();
@@ -185,6 +184,7 @@ public interface ProductReview extends BizEntity {
 	 * @see #setProductStoreId(ProductStore)
 	 * @see org.abchip.mimo.biz.product.product.ProductPackage#getProductReview_ProductStoreId()
 	 * @model keys="productStoreId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ProductStore getProductStoreId();
@@ -211,6 +211,7 @@ public interface ProductReview extends BizEntity {
 	 * @see #setStatusId(StatusItem)
 	 * @see org.abchip.mimo.biz.product.product.ProductPackage#getProductReview_StatusId()
 	 * @model keys="statusId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	StatusItem getStatusId();
@@ -237,6 +238,7 @@ public interface ProductReview extends BizEntity {
 	 * @see #setUserLoginId(UserLogin)
 	 * @see org.abchip.mimo.biz.product.product.ProductPackage#getProductReview_UserLoginId()
 	 * @model keys="userLoginId"
+	 *        annotation="mimo-ent-format type='id-vlong' length='255'"
 	 * @generated
 	 */
 	UserLogin getUserLoginId();
@@ -263,6 +265,7 @@ public interface ProductReview extends BizEntity {
 	 * @see #setProductId(Product)
 	 * @see org.abchip.mimo.biz.product.product.ProductPackage#getProductReview_ProductId()
 	 * @model keys="productId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Product getProductId();

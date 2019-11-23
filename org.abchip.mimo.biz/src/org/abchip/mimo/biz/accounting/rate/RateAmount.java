@@ -27,15 +27,15 @@ import org.abchip.mimo.biz.workeffort.workeffort.WorkEffort;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.accounting.rate.RateAmount#getFromDate <em>From Date</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.rate.RateAmount#getRateAmount <em>Rate Amount</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.rate.RateAmount#getThruDate <em>Thru Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.rate.RateAmount#getRateTypeId <em>Rate Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.rate.RateAmount#getRateCurrencyUomId <em>Rate Currency Uom Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.rate.RateAmount#getWorkEffortId <em>Work Effort Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.rate.RateAmount#getPartyId <em>Party Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.rate.RateAmount#getEmplPositionTypeId <em>Empl Position Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.rate.RateAmount#getPeriodTypeId <em>Period Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.rate.RateAmount#getFromDate <em>From Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.rate.RateAmount#getRateAmount <em>Rate Amount</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.rate.RateAmount#getThruDate <em>Thru Date</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.accounting.rate.RatePackage#getRateAmount()
@@ -54,7 +54,9 @@ public interface RateAmount extends BizEntity {
 	 * @return the value of the '<em>Empl Position Type Id</em>' reference.
 	 * @see #setEmplPositionTypeId(EmplPositionType)
 	 * @see org.abchip.mimo.biz.accounting.rate.RatePackage#getRateAmount_EmplPositionTypeId()
-	 * @model keys="emplPositionTypeId"
+	 * @model keys="emplPositionTypeId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	EmplPositionType getEmplPositionTypeId();
@@ -81,8 +83,8 @@ public interface RateAmount extends BizEntity {
 	 * @see #setFromDate(Date)
 	 * @see org.abchip.mimo.biz.accounting.rate.RatePackage#getRateAmount_FromDate()
 	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true' help='Describes when a rate amount will be valid. If null, valid immediately.'"
 	 *        annotation="mimo-ent-format type='date-time'"
-	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	Date getFromDate();
@@ -108,7 +110,9 @@ public interface RateAmount extends BizEntity {
 	 * @return the value of the '<em>Party Id</em>' reference.
 	 * @see #setPartyId(Party)
 	 * @see org.abchip.mimo.biz.accounting.rate.RatePackage#getRateAmount_PartyId()
-	 * @model keys="partyId"
+	 * @model keys="partyId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Party getPartyId();
@@ -134,7 +138,9 @@ public interface RateAmount extends BizEntity {
 	 * @return the value of the '<em>Period Type Id</em>' reference.
 	 * @see #setPeriodTypeId(PeriodType)
 	 * @see org.abchip.mimo.biz.accounting.rate.RatePackage#getRateAmount_PeriodTypeId()
-	 * @model keys="periodTypeId"
+	 * @model keys="periodTypeId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	PeriodType getPeriodTypeId();
@@ -186,7 +192,9 @@ public interface RateAmount extends BizEntity {
 	 * @return the value of the '<em>Rate Currency Uom Id</em>' reference.
 	 * @see #setRateCurrencyUomId(Uom)
 	 * @see org.abchip.mimo.biz.accounting.rate.RatePackage#getRateAmount_RateCurrencyUomId()
-	 * @model keys="uomId"
+	 * @model keys="uomId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Uom getRateCurrencyUomId();
@@ -212,7 +220,8 @@ public interface RateAmount extends BizEntity {
 	 * @return the value of the '<em>Thru Date</em>' attribute.
 	 * @see #setThruDate(Date)
 	 * @see org.abchip.mimo.biz.accounting.rate.RatePackage#getRateAmount_ThruDate()
-	 * @model annotation="mimo-ent-format type='date-time'"
+	 * @model annotation="mimo-ent-slot help='Describes when a rate amount will be valid untl. If null, valid indefinitly.'"
+	 *        annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getThruDate();
@@ -238,7 +247,9 @@ public interface RateAmount extends BizEntity {
 	 * @return the value of the '<em>Work Effort Id</em>' reference.
 	 * @see #setWorkEffortId(WorkEffort)
 	 * @see org.abchip.mimo.biz.accounting.rate.RatePackage#getRateAmount_WorkEffortId()
-	 * @model keys="workEffortId"
+	 * @model keys="workEffortId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	WorkEffort getWorkEffortId();
@@ -264,7 +275,9 @@ public interface RateAmount extends BizEntity {
 	 * @return the value of the '<em>Rate Type Id</em>' reference.
 	 * @see #setRateTypeId(RateType)
 	 * @see org.abchip.mimo.biz.accounting.rate.RatePackage#getRateAmount_RateTypeId()
-	 * @model keys="rateTypeId"
+	 * @model keys="rateTypeId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	RateType getRateTypeId();

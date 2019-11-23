@@ -25,19 +25,19 @@ import org.abchip.mimo.biz.product.product.Product;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.party.agreement.Agreement#getAgreementId <em>Agreement Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.party.agreement.Agreement#getAgreementAttributes <em>Agreement Attributes</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.agreement.Agreement#getAgreementDate <em>Agreement Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.party.agreement.Agreement#getAgreementItems <em>Agreement Items</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.party.agreement.Agreement#getAgreementTypeId <em>Agreement Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.agreement.Agreement#getDescription <em>Description</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.agreement.Agreement#getFromDate <em>From Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.party.agreement.Agreement#getPartyIdFrom <em>Party Id From</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.party.agreement.Agreement#getPartyIdTo <em>Party Id To</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.party.agreement.Agreement#getProductId <em>Product Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.party.agreement.Agreement#getRoleTypeIdFrom <em>Role Type Id From</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.party.agreement.Agreement#getRoleTypeIdTo <em>Role Type Id To</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.agreement.Agreement#getTextData <em>Text Data</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.agreement.Agreement#getThruDate <em>Thru Date</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.party.agreement.Agreement#getProductId <em>Product Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.party.agreement.Agreement#getPartyIdFrom <em>Party Id From</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.party.agreement.Agreement#getRoleTypeIdFrom <em>Role Type Id From</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.party.agreement.Agreement#getPartyIdTo <em>Party Id To</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.party.agreement.Agreement#getRoleTypeIdTo <em>Role Type Id To</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.party.agreement.Agreement#getAgreementTypeId <em>Agreement Type Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.party.agreement.Agreement#getAgreementAttributes <em>Agreement Attributes</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.party.agreement.Agreement#getAgreementItems <em>Agreement Items</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.party.agreement.AgreementPackage#getAgreement()
@@ -135,6 +135,7 @@ public interface Agreement extends BizEntityTyped<AgreementType> {
 	 * @see #setPartyIdFrom(Party)
 	 * @see org.abchip.mimo.biz.party.agreement.AgreementPackage#getAgreement_PartyIdFrom()
 	 * @model keys="partyId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Party getPartyIdFrom();
@@ -161,6 +162,7 @@ public interface Agreement extends BizEntityTyped<AgreementType> {
 	 * @see #setPartyIdTo(Party)
 	 * @see org.abchip.mimo.biz.party.agreement.AgreementPackage#getAgreement_PartyIdTo()
 	 * @model keys="partyId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Party getPartyIdTo();
@@ -187,6 +189,7 @@ public interface Agreement extends BizEntityTyped<AgreementType> {
 	 * @see #setProductId(Product)
 	 * @see org.abchip.mimo.biz.party.agreement.AgreementPackage#getAgreement_ProductId()
 	 * @model keys="productId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Product getProductId();
@@ -213,6 +216,7 @@ public interface Agreement extends BizEntityTyped<AgreementType> {
 	 * @see #setRoleTypeIdFrom(RoleType)
 	 * @see org.abchip.mimo.biz.party.agreement.AgreementPackage#getAgreement_RoleTypeIdFrom()
 	 * @model keys="roleTypeId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	RoleType getRoleTypeIdFrom();
@@ -239,6 +243,7 @@ public interface Agreement extends BizEntityTyped<AgreementType> {
 	 * @see #setRoleTypeIdTo(RoleType)
 	 * @see org.abchip.mimo.biz.party.agreement.AgreementPackage#getAgreement_RoleTypeIdTo()
 	 * @model keys="roleTypeId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	RoleType getRoleTypeIdTo();
@@ -316,8 +321,7 @@ public interface Agreement extends BizEntityTyped<AgreementType> {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Agreement Attributes</em>' attribute list.
 	 * @see org.abchip.mimo.biz.party.agreement.AgreementPackage#getAgreement_AgreementAttributes()
-	 * @model required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='AgreementAttribute'"
 	 * @generated
@@ -335,8 +339,7 @@ public interface Agreement extends BizEntityTyped<AgreementType> {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Agreement Items</em>' attribute list.
 	 * @see org.abchip.mimo.biz.party.agreement.AgreementPackage#getAgreement_AgreementItems()
-	 * @model required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='AgreementItem'"
 	 * @generated
@@ -385,6 +388,7 @@ public interface Agreement extends BizEntityTyped<AgreementType> {
 	 * @see #setAgreementTypeId(AgreementType)
 	 * @see org.abchip.mimo.biz.party.agreement.AgreementPackage#getAgreement_AgreementTypeId()
 	 * @model keys="agreementTypeId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	AgreementType getAgreementTypeId();
@@ -412,7 +416,6 @@ public interface Agreement extends BizEntityTyped<AgreementType> {
 	 * @see org.abchip.mimo.biz.party.agreement.AgreementPackage#getAgreement_AgreementId()
 	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getAgreementId();

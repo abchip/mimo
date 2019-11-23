@@ -18,14 +18,14 @@ import org.abchip.mimo.biz.BizEntity;
  * The following features are supported:
  * </p>
  * <ul>
+ *   <li>{@link org.abchip.mimo.biz.product.subscription.SubscriptionAttribute#getSubscriptionId <em>Subscription Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.subscription.SubscriptionAttribute#getAttrName <em>Attr Name</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.subscription.SubscriptionAttribute#getAttrDescription <em>Attr Description</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.subscription.SubscriptionAttribute#getAttrValue <em>Attr Value</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.subscription.SubscriptionAttribute#getSubscriptionId <em>Subscription Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.product.subscription.SubscriptionPackage#getSubscriptionAttribute()
- * @model
+ * @model annotation="mimo-ent-frame dictionary='ProductEntityLabels'"
  * @generated
  */
 public interface SubscriptionAttribute extends BizEntity {
@@ -92,7 +92,9 @@ public interface SubscriptionAttribute extends BizEntity {
 	 * @return the value of the '<em>Subscription Id</em>' reference.
 	 * @see #setSubscriptionId(Subscription)
 	 * @see org.abchip.mimo.biz.product.subscription.SubscriptionPackage#getSubscriptionAttribute_SubscriptionId()
-	 * @model keys="subscriptionId"
+	 * @model keys="subscriptionId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Subscription getSubscriptionId();
@@ -119,8 +121,8 @@ public interface SubscriptionAttribute extends BizEntity {
 	 * @see #setAttrName(String)
 	 * @see org.abchip.mimo.biz.product.subscription.SubscriptionPackage#getSubscriptionAttribute_AttrName()
 	 * @model required="true"
-	 *        annotation="mimo-ent-format type='id-long' length='60'"
 	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id-long' length='60'"
 	 * @generated
 	 */
 	String getAttrName();

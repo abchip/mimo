@@ -19,13 +19,13 @@ import org.abchip.mimo.biz.party.contact.ContactMech;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.GiftCard#getCardNumber <em>Card Number</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.payment.GiftCard#getContactMechId <em>Contact Mech Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.GiftCard#getExpireDate <em>Expire Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.GiftCard#getPinNumber <em>Pin Number</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.payment.GiftCard#getContactMechId <em>Contact Mech Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getGiftCard()
- * @model annotation="mimo-ent-frame formula='description'"
+ * @model annotation="mimo-ent-frame title='Gift Card Information' formula='description'"
  * @generated
  */
 public interface GiftCard extends PaymentMethod {
@@ -40,7 +40,8 @@ public interface GiftCard extends PaymentMethod {
 	 * @return the value of the '<em>Card Number</em>' attribute.
 	 * @see #setCardNumber(String)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getGiftCard_CardNumber()
-	 * @model annotation="mimo-ent-format type='long-varchar' length='255'"
+	 * @model annotation="mimo-ent-slot encrypt='TRUE'"
+	 *        annotation="mimo-ent-format type='long-varchar' length='255'"
 	 * @generated
 	 */
 	String getCardNumber();
@@ -67,6 +68,7 @@ public interface GiftCard extends PaymentMethod {
 	 * @see #setContactMechId(ContactMech)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getGiftCard_ContactMechId()
 	 * @model keys="contactMechId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ContactMech getContactMechId();
@@ -118,7 +120,8 @@ public interface GiftCard extends PaymentMethod {
 	 * @return the value of the '<em>Pin Number</em>' attribute.
 	 * @see #setPinNumber(String)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getGiftCard_PinNumber()
-	 * @model annotation="mimo-ent-format type='long-varchar' length='255'"
+	 * @model annotation="mimo-ent-slot encrypt='TRUE'"
+	 *        annotation="mimo-ent-format type='long-varchar' length='255'"
 	 * @generated
 	 */
 	String getPinNumber();

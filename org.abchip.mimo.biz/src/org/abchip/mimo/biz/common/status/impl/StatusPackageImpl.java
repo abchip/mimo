@@ -192,9 +192,6 @@ import org.abchip.mimo.biz.workeffort.timesheet.TimesheetPackage;
 import org.abchip.mimo.biz.workeffort.timesheet.impl.TimesheetPackageImpl;
 import org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage;
 import org.abchip.mimo.biz.workeffort.workeffort.impl.WorkeffortPackageImpl;
-import org.abchip.mimo.entity.EntityPackage;
-import org.eclipse.emf.common.util.URI;
-
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EGenericType;
@@ -702,16 +699,6 @@ public class StatusPackageImpl extends EPackageImpl implements StatusPackage {
 	 */
 	@Override
 	public EAttribute getStatusItem_SequenceId() {
-		return (EAttribute)statusItemEClass.getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EAttribute getStatusItem_StatusCode() {
 		return (EAttribute)statusItemEClass.getEStructuralFeatures().get(3);
 	}
 
@@ -721,17 +708,7 @@ public class StatusPackageImpl extends EPackageImpl implements StatusPackage {
 	 * @generated
 	 */
 	@Override
-	public EReference getStatusItem_StatusTypeId() {
-		return (EReference)statusItemEClass.getEStructuralFeatures().get(4);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EAttribute getStatusItem_ShipmentStatuss() {
+	public EAttribute getStatusItem_StatusCode() {
 		return (EAttribute)statusItemEClass.getEStructuralFeatures().get(5);
 	}
 
@@ -741,8 +718,28 @@ public class StatusPackageImpl extends EPackageImpl implements StatusPackage {
 	 * @generated
 	 */
 	@Override
+	public EReference getStatusItem_StatusTypeId() {
+		return (EReference)statusItemEClass.getEStructuralFeatures().get(6);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getStatusItem_ShipmentStatuss() {
+		return (EAttribute)statusItemEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EAttribute getStatusItem_MainStatusValidChanges() {
-		return (EAttribute)statusItemEClass.getEStructuralFeatures().get(6);
+		return (EAttribute)statusItemEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -812,7 +809,7 @@ public class StatusPackageImpl extends EPackageImpl implements StatusPackage {
 	 */
 	@Override
 	public EReference getStatusValidChange_StatusId() {
-		return (EReference)statusValidChangeEClass.getEStructuralFeatures().get(2);
+		return (EReference)statusValidChangeEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -822,7 +819,7 @@ public class StatusPackageImpl extends EPackageImpl implements StatusPackage {
 	 */
 	@Override
 	public EReference getStatusValidChange_StatusIdTo() {
-		return (EReference)statusValidChangeEClass.getEStructuralFeatures().get(3);
+		return (EReference)statusValidChangeEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -832,7 +829,7 @@ public class StatusPackageImpl extends EPackageImpl implements StatusPackage {
 	 */
 	@Override
 	public EAttribute getStatusValidChange_ConditionExpression() {
-		return (EAttribute)statusValidChangeEClass.getEStructuralFeatures().get(0);
+		return (EAttribute)statusValidChangeEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -842,7 +839,7 @@ public class StatusPackageImpl extends EPackageImpl implements StatusPackage {
 	 */
 	@Override
 	public EAttribute getStatusValidChange_TransitionName() {
-		return (EAttribute)statusValidChangeEClass.getEStructuralFeatures().get(1);
+		return (EAttribute)statusValidChangeEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -877,11 +874,11 @@ public class StatusPackageImpl extends EPackageImpl implements StatusPackage {
 		statusItemEClass = createEClass(STATUS_ITEM);
 		createEAttribute(statusItemEClass, STATUS_ITEM__STATUS_ID);
 		createEAttribute(statusItemEClass, STATUS_ITEM__DESCRIPTION);
+		createEAttribute(statusItemEClass, STATUS_ITEM__MAIN_STATUS_VALID_CHANGES);
 		createEAttribute(statusItemEClass, STATUS_ITEM__SEQUENCE_ID);
+		createEAttribute(statusItemEClass, STATUS_ITEM__SHIPMENT_STATUSS);
 		createEAttribute(statusItemEClass, STATUS_ITEM__STATUS_CODE);
 		createEReference(statusItemEClass, STATUS_ITEM__STATUS_TYPE_ID);
-		createEAttribute(statusItemEClass, STATUS_ITEM__SHIPMENT_STATUSS);
-		createEAttribute(statusItemEClass, STATUS_ITEM__MAIN_STATUS_VALID_CHANGES);
 
 		statusTypeEClass = createEClass(STATUS_TYPE);
 		createEAttribute(statusTypeEClass, STATUS_TYPE__STATUS_TYPE_ID);
@@ -890,10 +887,10 @@ public class StatusPackageImpl extends EPackageImpl implements StatusPackage {
 		createEReference(statusTypeEClass, STATUS_TYPE__PARENT_TYPE_ID);
 
 		statusValidChangeEClass = createEClass(STATUS_VALID_CHANGE);
-		createEAttribute(statusValidChangeEClass, STATUS_VALID_CHANGE__CONDITION_EXPRESSION);
-		createEAttribute(statusValidChangeEClass, STATUS_VALID_CHANGE__TRANSITION_NAME);
 		createEReference(statusValidChangeEClass, STATUS_VALID_CHANGE__STATUS_ID);
 		createEReference(statusValidChangeEClass, STATUS_VALID_CHANGE__STATUS_ID_TO);
+		createEAttribute(statusValidChangeEClass, STATUS_VALID_CHANGE__CONDITION_EXPRESSION);
+		createEAttribute(statusValidChangeEClass, STATUS_VALID_CHANGE__TRANSITION_NAME);
 	}
 
 	/**
@@ -941,12 +938,12 @@ public class StatusPackageImpl extends EPackageImpl implements StatusPackage {
 		initEClass(statusItemEClass, StatusItem.class, "StatusItem", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getStatusItem_StatusId(), ecorePackage.getEString(), "statusId", null, 1, 1, StatusItem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getStatusItem_Description(), ecorePackage.getEString(), "description", null, 0, 1, StatusItem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getStatusItem_MainStatusValidChanges(), ecorePackage.getEString(), "mainStatusValidChanges", null, 0, -1, StatusItem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getStatusItem_SequenceId(), ecorePackage.getEString(), "sequenceId", null, 0, 1, StatusItem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getStatusItem_ShipmentStatuss(), ecorePackage.getEString(), "shipmentStatuss", null, 0, -1, StatusItem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getStatusItem_StatusCode(), ecorePackage.getEString(), "statusCode", null, 0, 1, StatusItem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getStatusItem_StatusTypeId(), this.getStatusType(), null, "statusTypeId", null, 0, 1, StatusItem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getStatusItem_StatusTypeId().getEKeys().add(this.getStatusType_StatusTypeId());
-		initEAttribute(getStatusItem_ShipmentStatuss(), ecorePackage.getEString(), "shipmentStatuss", null, 1, -1, StatusItem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getStatusItem_MainStatusValidChanges(), ecorePackage.getEString(), "mainStatusValidChanges", null, 1, -1, StatusItem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		addEOperation(statusItemEClass, ecorePackage.getEString(), "acctgTransEntries", 0, -1, IS_UNIQUE, IS_ORDERED);
 
@@ -954,7 +951,7 @@ public class StatusPackageImpl extends EPackageImpl implements StatusPackage {
 
 		addEOperation(statusItemEClass, ecorePackage.getEString(), "approvalContentApprovals", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(statusItemEClass, ecorePackage.getEString(), "budgetStatuss", 1, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(statusItemEClass, ecorePackage.getEString(), "budgetStatuss", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		addEOperation(statusItemEClass, ecorePackage.getEString(), "carrierServiceShipmentRouteSegments", 0, -1, IS_UNIQUE, IS_ORDERED);
 
@@ -1034,7 +1031,7 @@ public class StatusPackageImpl extends EPackageImpl implements StatusPackage {
 
 		addEOperation(statusItemEClass, ecorePackage.getEString(), "quotes", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(statusItemEClass, ecorePackage.getEString(), "requirementStatuss", 1, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(statusItemEClass, ecorePackage.getEString(), "requirementStatuss", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		addEOperation(statusItemEClass, ecorePackage.getEString(), "requirements", 0, -1, IS_UNIQUE, IS_ORDERED);
 
@@ -1058,7 +1055,7 @@ public class StatusPackageImpl extends EPackageImpl implements StatusPackage {
 
 		addEOperation(statusItemEClass, ecorePackage.getEString(), "toPicklistStatusHistories", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(statusItemEClass, ecorePackage.getEString(), "toStatusValidChanges", 1, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(statusItemEClass, ecorePackage.getEString(), "toStatusValidChanges", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		addEOperation(statusItemEClass, ecorePackage.getEString(), "unemploymentClaims", 0, -1, IS_UNIQUE, IS_ORDERED);
 
@@ -1076,12 +1073,12 @@ public class StatusPackageImpl extends EPackageImpl implements StatusPackage {
 		addEOperation(statusTypeEClass, ecorePackage.getEString(), "statusItems", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(statusValidChangeEClass, StatusValidChange.class, "StatusValidChange", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getStatusValidChange_StatusId(), this.getStatusItem(), null, "statusId", null, 1, 1, StatusValidChange.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getStatusValidChange_StatusId().getEKeys().add(this.getStatusItem_StatusId());
+		initEReference(getStatusValidChange_StatusIdTo(), this.getStatusItem(), null, "statusIdTo", null, 1, 1, StatusValidChange.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getStatusValidChange_StatusIdTo().getEKeys().add(this.getStatusItem_StatusId());
 		initEAttribute(getStatusValidChange_ConditionExpression(), ecorePackage.getEString(), "conditionExpression", null, 0, 1, StatusValidChange.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getStatusValidChange_TransitionName(), ecorePackage.getEString(), "transitionName", null, 0, 1, StatusValidChange.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getStatusValidChange_StatusId(), this.getStatusItem(), null, "statusId", null, 0, 1, StatusValidChange.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		getStatusValidChange_StatusId().getEKeys().add(this.getStatusItem_StatusId());
-		initEReference(getStatusValidChange_StatusIdTo(), this.getStatusItem(), null, "statusIdTo", null, 0, 1, StatusValidChange.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		getStatusValidChange_StatusIdTo().getEKeys().add(this.getStatusItem_StatusId());
 
 		// Create annotations
 		// mimo-ent-frame
@@ -1106,13 +1103,22 @@ public class StatusPackageImpl extends EPackageImpl implements StatusPackage {
 		  (statusItemEClass,
 		   source,
 		   new String[] {
+			   "title", "Status",
+			   "dictionary", "CommonEntityLabels",
 			   "formula", "description"
 		   });
 		addAnnotation
 		  (statusTypeEClass,
 		   source,
 		   new String[] {
+			   "dictionary", "CommonEntityLabels",
 			   "formula", "description"
+		   });
+		addAnnotation
+		  (statusValidChangeEClass,
+		   source,
+		   new String[] {
+			   "dictionary", "CommonEntityLabels"
 		   });
 	}
 
@@ -1545,7 +1551,21 @@ public class StatusPackageImpl extends EPackageImpl implements StatusPackage {
 			   "length", "255"
 		   });
 		addAnnotation
+		  (getStatusItem_MainStatusValidChanges(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
 		  (getStatusItem_SequenceId(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (getStatusItem_ShipmentStatuss(),
 		   source,
 		   new String[] {
 			   "type", "id",
@@ -1559,14 +1579,7 @@ public class StatusPackageImpl extends EPackageImpl implements StatusPackage {
 			   "length", "60"
 		   });
 		addAnnotation
-		  (getStatusItem_ShipmentStatuss(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getStatusItem_MainStatusValidChanges(),
+		  (getStatusItem_StatusTypeId(),
 		   source,
 		   new String[] {
 			   "type", "id",
@@ -1606,6 +1619,27 @@ public class StatusPackageImpl extends EPackageImpl implements StatusPackage {
 		   new String[] {
 			   "type", "indicator",
 			   "length", "1"
+		   });
+		addAnnotation
+		  (getStatusType_ParentTypeId(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (getStatusValidChange_StatusId(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (getStatusValidChange_StatusIdTo(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
 		   });
 		addAnnotation
 		  (getStatusValidChange_ConditionExpression(),
@@ -1980,19 +2014,13 @@ public class StatusPackageImpl extends EPackageImpl implements StatusPackage {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (getStatusItem_StatusId(),
-		   source,
-		   new String[] {
-			   "key", "true"
-		   });
-		addAnnotation
-		  (getStatusItem_ShipmentStatuss(),
+		  (getStatusItem_MainStatusValidChanges(),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (getStatusItem_MainStatusValidChanges(),
+		  (getStatusItem_ShipmentStatuss(),
 		   source,
 		   new String[] {
 			   "derived", "true"
@@ -2010,7 +2038,13 @@ public class StatusPackageImpl extends EPackageImpl implements StatusPackage {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (getStatusType_StatusTypeId(),
+		  (getStatusValidChange_StatusId(),
+		   source,
+		   new String[] {
+			   "key", "true"
+		   });
+		addAnnotation
+		  (getStatusValidChange_StatusIdTo(),
 		   source,
 		   new String[] {
 			   "key", "true"
@@ -2031,9 +2065,6 @@ public class StatusPackageImpl extends EPackageImpl implements StatusPackage {
 		   new String[] {
 			   "frame", "AcctgTransEntry",
 			   "route", "reconcileStatusId"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
 		  (statusItemEClass.getEOperations().get(1),
@@ -2041,9 +2072,6 @@ public class StatusPackageImpl extends EPackageImpl implements StatusPackage {
 		   new String[] {
 			   "frame", "AcctgTrans",
 			   "route", "groupStatusId"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
 		  (statusItemEClass.getEOperations().get(2),
@@ -2051,9 +2079,6 @@ public class StatusPackageImpl extends EPackageImpl implements StatusPackage {
 		   new String[] {
 			   "frame", "ContentApproval",
 			   "route", "approvalStatusId"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
 		  (statusItemEClass.getEOperations().get(3),
@@ -2061,9 +2086,6 @@ public class StatusPackageImpl extends EPackageImpl implements StatusPackage {
 		   new String[] {
 			   "frame", "BudgetStatus",
 			   "route", "statusId"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
 		  (statusItemEClass.getEOperations().get(4),
@@ -2071,9 +2093,6 @@ public class StatusPackageImpl extends EPackageImpl implements StatusPackage {
 		   new String[] {
 			   "frame", "ShipmentRouteSegment",
 			   "route", "carrierServiceStatusId"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
 		  (statusItemEClass.getEOperations().get(5),
@@ -2081,9 +2100,6 @@ public class StatusPackageImpl extends EPackageImpl implements StatusPackage {
 		   new String[] {
 			   "frame", "CommunicationEvent",
 			   "route", "statusId"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
 		  (statusItemEClass.getEOperations().get(6),
@@ -2091,9 +2107,6 @@ public class StatusPackageImpl extends EPackageImpl implements StatusPackage {
 		   new String[] {
 			   "frame", "Content",
 			   "route", "statusId"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
 		  (statusItemEClass.getEOperations().get(7),
@@ -2101,9 +2114,6 @@ public class StatusPackageImpl extends EPackageImpl implements StatusPackage {
 		   new String[] {
 			   "frame", "WorkEffort",
 			   "route", "currentStatusId"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
 		  (statusItemEClass.getEOperations().get(8),
@@ -2111,9 +2121,6 @@ public class StatusPackageImpl extends EPackageImpl implements StatusPackage {
 		   new String[] {
 			   "frame", "CustRequestItem",
 			   "route", "statusId"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
 		  (statusItemEClass.getEOperations().get(9),
@@ -2121,9 +2128,6 @@ public class StatusPackageImpl extends EPackageImpl implements StatusPackage {
 		   new String[] {
 			   "frame", "CustRequestStatus",
 			   "route", "statusId"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
 		  (statusItemEClass.getEOperations().get(10),
@@ -2131,9 +2135,6 @@ public class StatusPackageImpl extends EPackageImpl implements StatusPackage {
 		   new String[] {
 			   "frame", "CustRequest",
 			   "route", "statusId"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
 		  (statusItemEClass.getEOperations().get(11),
@@ -2141,9 +2142,6 @@ public class StatusPackageImpl extends EPackageImpl implements StatusPackage {
 		   new String[] {
 			   "frame", "DataResource",
 			   "route", "statusId"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
 		  (statusItemEClass.getEOperations().get(12),
@@ -2151,9 +2149,6 @@ public class StatusPackageImpl extends EPackageImpl implements StatusPackage {
 		   new String[] {
 			   "frame", "ProductStore",
 			   "route", "digitalItemApprovedStatus"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
 		  (statusItemEClass.getEOperations().get(13),
@@ -2161,9 +2156,6 @@ public class StatusPackageImpl extends EPackageImpl implements StatusPackage {
 		   new String[] {
 			   "frame", "EmplPosition",
 			   "route", "statusId"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
 		  (statusItemEClass.getEOperations().get(14),
@@ -2171,9 +2163,6 @@ public class StatusPackageImpl extends EPackageImpl implements StatusPackage {
 		   new String[] {
 			   "frame", "EmploymentApp",
 			   "route", "statusId"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
 		  (statusItemEClass.getEOperations().get(15),
@@ -2181,9 +2170,6 @@ public class StatusPackageImpl extends EPackageImpl implements StatusPackage {
 		   new String[] {
 			   "frame", "FinAccountTrans",
 			   "route", "statusId"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
 		  (statusItemEClass.getEOperations().get(16),
@@ -2191,9 +2177,6 @@ public class StatusPackageImpl extends EPackageImpl implements StatusPackage {
 		   new String[] {
 			   "frame", "FixedAssetMaint",
 			   "route", "statusId"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
 		  (statusItemEClass.getEOperations().get(17),
@@ -2201,9 +2184,6 @@ public class StatusPackageImpl extends EPackageImpl implements StatusPackage {
 		   new String[] {
 			   "frame", "GlReconciliation",
 			   "route", "statusId"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
 		  (statusItemEClass.getEOperations().get(18),
@@ -2211,9 +2191,6 @@ public class StatusPackageImpl extends EPackageImpl implements StatusPackage {
 		   new String[] {
 			   "frame", "ProductStore",
 			   "route", "headerApprovedStatus"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
 		  (statusItemEClass.getEOperations().get(19),
@@ -2221,9 +2198,6 @@ public class StatusPackageImpl extends EPackageImpl implements StatusPackage {
 		   new String[] {
 			   "frame", "ProductStore",
 			   "route", "headerCancelStatus"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
 		  (statusItemEClass.getEOperations().get(20),
@@ -2231,9 +2205,6 @@ public class StatusPackageImpl extends EPackageImpl implements StatusPackage {
 		   new String[] {
 			   "frame", "ProductStore",
 			   "route", "headerDeclinedStatus"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
 		  (statusItemEClass.getEOperations().get(21),
@@ -2241,9 +2212,6 @@ public class StatusPackageImpl extends EPackageImpl implements StatusPackage {
 		   new String[] {
 			   "frame", "InventoryItem",
 			   "route", "statusId"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
 		  (statusItemEClass.getEOperations().get(22),
@@ -2251,9 +2219,6 @@ public class StatusPackageImpl extends EPackageImpl implements StatusPackage {
 		   new String[] {
 			   "frame", "ReturnItem",
 			   "route", "expectedItemStatus"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
 		  (statusItemEClass.getEOperations().get(23),
@@ -2261,9 +2226,6 @@ public class StatusPackageImpl extends EPackageImpl implements StatusPackage {
 		   new String[] {
 			   "frame", "InventoryTransfer",
 			   "route", "statusId"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
 		  (statusItemEClass.getEOperations().get(24),
@@ -2271,9 +2233,6 @@ public class StatusPackageImpl extends EPackageImpl implements StatusPackage {
 		   new String[] {
 			   "frame", "Invoice",
 			   "route", "statusId"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
 		  (statusItemEClass.getEOperations().get(25),
@@ -2281,9 +2240,6 @@ public class StatusPackageImpl extends EPackageImpl implements StatusPackage {
 		   new String[] {
 			   "frame", "ProductStore",
 			   "route", "itemApprovedStatus"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
 		  (statusItemEClass.getEOperations().get(26),
@@ -2291,9 +2247,6 @@ public class StatusPackageImpl extends EPackageImpl implements StatusPackage {
 		   new String[] {
 			   "frame", "ProductStore",
 			   "route", "itemCancelStatus"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
 		  (statusItemEClass.getEOperations().get(27),
@@ -2301,9 +2254,6 @@ public class StatusPackageImpl extends EPackageImpl implements StatusPackage {
 		   new String[] {
 			   "frame", "ProductStore",
 			   "route", "itemDeclinedStatus"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
 		  (statusItemEClass.getEOperations().get(28),
@@ -2311,9 +2261,6 @@ public class StatusPackageImpl extends EPackageImpl implements StatusPackage {
 		   new String[] {
 			   "frame", "JobSandbox",
 			   "route", "statusId"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
 		  (statusItemEClass.getEOperations().get(29),
@@ -2321,9 +2268,6 @@ public class StatusPackageImpl extends EPackageImpl implements StatusPackage {
 		   new String[] {
 			   "frame", "MarketingCampaign",
 			   "route", "statusId"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
 		  (statusItemEClass.getEOperations().get(30),
@@ -2331,9 +2275,6 @@ public class StatusPackageImpl extends EPackageImpl implements StatusPackage {
 		   new String[] {
 			   "frame", "OrderDeliverySchedule",
 			   "route", "statusId"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
 		  (statusItemEClass.getEOperations().get(31),
@@ -2341,9 +2282,6 @@ public class StatusPackageImpl extends EPackageImpl implements StatusPackage {
 		   new String[] {
 			   "frame", "OrderHeader",
 			   "route", "statusId"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
 		  (statusItemEClass.getEOperations().get(32),
@@ -2351,9 +2289,6 @@ public class StatusPackageImpl extends EPackageImpl implements StatusPackage {
 		   new String[] {
 			   "frame", "OrderItem",
 			   "route", "statusId"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
 		  (statusItemEClass.getEOperations().get(33),
@@ -2361,9 +2296,6 @@ public class StatusPackageImpl extends EPackageImpl implements StatusPackage {
 		   new String[] {
 			   "frame", "OrderPaymentPreference",
 			   "route", "statusId"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
 		  (statusItemEClass.getEOperations().get(34),
@@ -2371,9 +2303,6 @@ public class StatusPackageImpl extends EPackageImpl implements StatusPackage {
 		   new String[] {
 			   "frame", "OrderStatus",
 			   "route", "statusId"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
 		  (statusItemEClass.getEOperations().get(35),
@@ -2381,9 +2310,6 @@ public class StatusPackageImpl extends EPackageImpl implements StatusPackage {
 		   new String[] {
 			   "frame", "Party",
 			   "route", "statusId"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
 		  (statusItemEClass.getEOperations().get(36),
@@ -2391,9 +2317,6 @@ public class StatusPackageImpl extends EPackageImpl implements StatusPackage {
 		   new String[] {
 			   "frame", "PartyInvitation",
 			   "route", "statusId"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
 		  (statusItemEClass.getEOperations().get(37),
@@ -2401,9 +2324,6 @@ public class StatusPackageImpl extends EPackageImpl implements StatusPackage {
 		   new String[] {
 			   "frame", "Payment",
 			   "route", "statusId"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
 		  (statusItemEClass.getEOperations().get(38),
@@ -2411,9 +2331,6 @@ public class StatusPackageImpl extends EPackageImpl implements StatusPackage {
 		   new String[] {
 			   "frame", "PicklistStatusHistory",
 			   "route", "statusId"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
 		  (statusItemEClass.getEOperations().get(39),
@@ -2421,9 +2338,6 @@ public class StatusPackageImpl extends EPackageImpl implements StatusPackage {
 		   new String[] {
 			   "frame", "Picklist",
 			   "route", "statusId"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
 		  (statusItemEClass.getEOperations().get(40),
@@ -2431,9 +2345,6 @@ public class StatusPackageImpl extends EPackageImpl implements StatusPackage {
 		   new String[] {
 			   "frame", "ProductGroupOrder",
 			   "route", "statusId"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
 		  (statusItemEClass.getEOperations().get(41),
@@ -2441,9 +2352,6 @@ public class StatusPackageImpl extends EPackageImpl implements StatusPackage {
 		   new String[] {
 			   "frame", "ProductReview",
 			   "route", "statusId"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
 		  (statusItemEClass.getEOperations().get(42),
@@ -2451,9 +2359,6 @@ public class StatusPackageImpl extends EPackageImpl implements StatusPackage {
 		   new String[] {
 			   "frame", "Quote",
 			   "route", "statusId"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
 		  (statusItemEClass.getEOperations().get(43),
@@ -2461,9 +2366,6 @@ public class StatusPackageImpl extends EPackageImpl implements StatusPackage {
 		   new String[] {
 			   "frame", "RequirementStatus",
 			   "route", "statusId"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
 		  (statusItemEClass.getEOperations().get(44),
@@ -2471,9 +2373,6 @@ public class StatusPackageImpl extends EPackageImpl implements StatusPackage {
 		   new String[] {
 			   "frame", "Requirement",
 			   "route", "statusId"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
 		  (statusItemEClass.getEOperations().get(45),
@@ -2481,9 +2380,6 @@ public class StatusPackageImpl extends EPackageImpl implements StatusPackage {
 		   new String[] {
 			   "frame", "ReturnHeader",
 			   "route", "statusId"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
 		  (statusItemEClass.getEOperations().get(46),
@@ -2491,9 +2387,6 @@ public class StatusPackageImpl extends EPackageImpl implements StatusPackage {
 		   new String[] {
 			   "frame", "ReturnItem",
 			   "route", "statusId"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
 		  (statusItemEClass.getEOperations().get(47),
@@ -2501,9 +2394,6 @@ public class StatusPackageImpl extends EPackageImpl implements StatusPackage {
 		   new String[] {
 			   "frame", "ReturnStatus",
 			   "route", "statusId"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
 		  (statusItemEClass.getEOperations().get(48),
@@ -2511,9 +2401,6 @@ public class StatusPackageImpl extends EPackageImpl implements StatusPackage {
 		   new String[] {
 			   "frame", "Shipment",
 			   "route", "statusId"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
 		  (statusItemEClass.getEOperations().get(49),
@@ -2521,9 +2408,6 @@ public class StatusPackageImpl extends EPackageImpl implements StatusPackage {
 		   new String[] {
 			   "frame", "SurveyResponse",
 			   "route", "statusId"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
 		  (statusItemEClass.getEOperations().get(50),
@@ -2531,9 +2415,6 @@ public class StatusPackageImpl extends EPackageImpl implements StatusPackage {
 		   new String[] {
 			   "frame", "OrderHeader",
 			   "route", "syncStatusId"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
 		  (statusItemEClass.getEOperations().get(51),
@@ -2541,9 +2422,6 @@ public class StatusPackageImpl extends EPackageImpl implements StatusPackage {
 		   new String[] {
 			   "frame", "OrderItem",
 			   "route", "syncStatusId"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
 		  (statusItemEClass.getEOperations().get(52),
@@ -2551,9 +2429,6 @@ public class StatusPackageImpl extends EPackageImpl implements StatusPackage {
 		   new String[] {
 			   "frame", "TestingStatus",
 			   "route", "statusId"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
 		  (statusItemEClass.getEOperations().get(53),
@@ -2561,9 +2436,6 @@ public class StatusPackageImpl extends EPackageImpl implements StatusPackage {
 		   new String[] {
 			   "frame", "Timesheet",
 			   "route", "statusId"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
 		  (statusItemEClass.getEOperations().get(54),
@@ -2571,9 +2443,6 @@ public class StatusPackageImpl extends EPackageImpl implements StatusPackage {
 		   new String[] {
 			   "frame", "PicklistStatusHistory",
 			   "route", "statusIdTo"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
 		  (statusItemEClass.getEOperations().get(55),
@@ -2581,9 +2450,6 @@ public class StatusPackageImpl extends EPackageImpl implements StatusPackage {
 		   new String[] {
 			   "frame", "StatusValidChange",
 			   "route", "statusIdTo"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
 		  (statusItemEClass.getEOperations().get(56),
@@ -2591,9 +2457,6 @@ public class StatusPackageImpl extends EPackageImpl implements StatusPackage {
 		   new String[] {
 			   "frame", "UnemploymentClaim",
 			   "route", "statusId"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
 		  (statusItemEClass.getEOperations().get(57),
@@ -2601,27 +2464,18 @@ public class StatusPackageImpl extends EPackageImpl implements StatusPackage {
 		   new String[] {
 			   "frame", "WorkEffortInventoryAssign",
 			   "route", "statusId"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
-		   });
-		addAnnotation
-		  (getStatusItem_ShipmentStatuss(),
-		   source,
-		   new String[] {
-			   "frame", "ShipmentStatus"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
 		  (getStatusItem_MainStatusValidChanges(),
 		   source,
 		   new String[] {
 			   "frame", "StatusValidChange"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
+		   });
+		addAnnotation
+		  (getStatusItem_ShipmentStatuss(),
+		   source,
+		   new String[] {
+			   "frame", "ShipmentStatus"
 		   });
 		addAnnotation
 		  (statusTypeEClass.getEOperations().get(0),
@@ -2629,9 +2483,6 @@ public class StatusPackageImpl extends EPackageImpl implements StatusPackage {
 		   new String[] {
 			   "frame", "StatusType",
 			   "route", "parentTypeId"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
 		  (statusTypeEClass.getEOperations().get(1),
@@ -2639,9 +2490,6 @@ public class StatusPackageImpl extends EPackageImpl implements StatusPackage {
 		   new String[] {
 			   "frame", "StatusItem",
 			   "route", "statusTypeId"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 	}
 

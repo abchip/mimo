@@ -27,7 +27,7 @@ import org.abchip.mimo.biz.BizEntityType;
  * </ul>
  *
  * @see org.abchip.mimo.biz.party.party.PartyPackage#getPartyClassificationType()
- * @model annotation="mimo-ent-frame formula='description'"
+ * @model annotation="mimo-ent-frame dictionary='PartyEntityLabels' formula='description'"
  * @generated
  */
 public interface PartyClassificationType extends BizEntityType<PartyClassification> {
@@ -95,6 +95,7 @@ public interface PartyClassificationType extends BizEntityType<PartyClassificati
 	 * @see #setParentTypeId(PartyClassificationType)
 	 * @see org.abchip.mimo.biz.party.party.PartyPackage#getPartyClassificationType_ParentTypeId()
 	 * @model keys="partyClassificationTypeId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	PartyClassificationType getParentTypeId();
@@ -142,7 +143,6 @@ public interface PartyClassificationType extends BizEntityType<PartyClassificati
 	 * @see org.abchip.mimo.biz.party.party.PartyPackage#getPartyClassificationType_PartyClassificationTypeId()
 	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getPartyClassificationTypeId();

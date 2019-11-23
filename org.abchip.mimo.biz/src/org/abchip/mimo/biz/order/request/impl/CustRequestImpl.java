@@ -35,30 +35,30 @@ import org.eclipse.emf.ecore.EClass;
  *   <li>{@link org.abchip.mimo.biz.order.request.impl.CustRequestImpl#getClosedDateTime <em>Closed Date Time</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.request.impl.CustRequestImpl#getCreatedByUserLogin <em>Created By User Login</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.request.impl.CustRequestImpl#getCreatedDate <em>Created Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.request.impl.CustRequestImpl#getCurrencyUomId <em>Currency Uom Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.request.impl.CustRequestImpl#getCustRequestAttributes <em>Cust Request Attributes</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.request.impl.CustRequestImpl#getCustRequestCategoryId <em>Cust Request Category Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.request.impl.CustRequestImpl#getCustRequestCommEvents <em>Cust Request Comm Events</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.request.impl.CustRequestImpl#getCustRequestDate <em>Cust Request Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.request.impl.CustRequestImpl#getCustRequestItems <em>Cust Request Items</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.request.impl.CustRequestImpl#getCustRequestName <em>Cust Request Name</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.request.impl.CustRequestImpl#getCustRequestNotes <em>Cust Request Notes</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.request.impl.CustRequestImpl#getCustRequestTypeId <em>Cust Request Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.request.impl.CustRequestImpl#getCustRequestWorkEfforts <em>Cust Request Work Efforts</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.request.impl.CustRequestImpl#getDescription <em>Description</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.request.impl.CustRequestImpl#getFromPartyId <em>From Party Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.request.impl.CustRequestImpl#getFulfillContactMechId <em>Fulfill Contact Mech Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.request.impl.CustRequestImpl#getInternalComment <em>Internal Comment</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.request.impl.CustRequestImpl#getLastModifiedByUserLogin <em>Last Modified By User Login</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.request.impl.CustRequestImpl#getLastModifiedDate <em>Last Modified Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.request.impl.CustRequestImpl#getMaximumAmountUomId <em>Maximum Amount Uom Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.request.impl.CustRequestImpl#getOpenDateTime <em>Open Date Time</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.request.impl.CustRequestImpl#getPriority <em>Priority</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.request.impl.CustRequestImpl#getProductStoreId <em>Product Store Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.request.impl.CustRequestImpl#getReason <em>Reason</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.request.impl.CustRequestImpl#getResponseRequiredDate <em>Response Required Date</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.request.impl.CustRequestImpl#getCustRequestTypeId <em>Cust Request Type Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.request.impl.CustRequestImpl#getCustRequestCategoryId <em>Cust Request Category Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.request.impl.CustRequestImpl#getStatusId <em>Status Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.request.impl.CustRequestImpl#getFromPartyId <em>From Party Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.request.impl.CustRequestImpl#getMaximumAmountUomId <em>Maximum Amount Uom Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.request.impl.CustRequestImpl#getProductStoreId <em>Product Store Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.request.impl.CustRequestImpl#getSalesChannelEnumId <em>Sales Channel Enum Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.request.impl.CustRequestImpl#getFulfillContactMechId <em>Fulfill Contact Mech Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.request.impl.CustRequestImpl#getCurrencyUomId <em>Currency Uom Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.request.impl.CustRequestImpl#getCustRequestAttributes <em>Cust Request Attributes</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.request.impl.CustRequestImpl#getCustRequestCommEvents <em>Cust Request Comm Events</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.request.impl.CustRequestImpl#getCustRequestItems <em>Cust Request Items</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.request.impl.CustRequestImpl#getCustRequestNotes <em>Cust Request Notes</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.request.impl.CustRequestImpl#getCustRequestWorkEfforts <em>Cust Request Work Efforts</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.request.impl.CustRequestImpl#getStatusId <em>Status Id</em>}</li>
  * </ul>
  *
  * @generated

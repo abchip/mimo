@@ -21,9 +21,9 @@ import org.eclipse.emf.ecore.EClass;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortTransBoxImpl#getProcessWorkEffortId <em>Process Work Effort Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortTransBoxImpl#getToActivityId <em>To Activity Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortTransBoxImpl#getTransitionId <em>Transition Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortTransBoxImpl#getProcessWorkEffortId <em>Process Work Effort Id</em>}</li>
  * </ul>
  *
  * @generated

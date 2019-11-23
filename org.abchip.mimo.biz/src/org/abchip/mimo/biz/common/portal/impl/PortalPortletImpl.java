@@ -27,12 +27,12 @@ import org.eclipse.emf.ecore.EClass;
  *   <li>{@link org.abchip.mimo.biz.common.portal.impl.PortalPortletImpl#getEditFormLocation <em>Edit Form Location</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.common.portal.impl.PortalPortletImpl#getEditFormName <em>Edit Form Name</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.common.portal.impl.PortalPortletImpl#getPortletName <em>Portlet Name</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.common.portal.impl.PortalPortletImpl#getPortletPortletCategories <em>Portlet Portlet Categories</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.common.portal.impl.PortalPortletImpl#getScreenLocation <em>Screen Location</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.common.portal.impl.PortalPortletImpl#getScreenName <em>Screen Name</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.common.portal.impl.PortalPortletImpl#getScreenshot <em>Screenshot</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.common.portal.impl.PortalPortletImpl#getSecurityMainAction <em>Security Main Action</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.common.portal.impl.PortalPortletImpl#getSecurityServiceName <em>Security Service Name</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.common.portal.impl.PortalPortletImpl#getPortletPortletCategories <em>Portlet Portlet Categories</em>}</li>
  * </ul>
  *
  * @generated

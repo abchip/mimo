@@ -21,20 +21,20 @@ import org.abchip.mimo.biz.product.product.Product;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.product.config.ProductConfig#getSequenceNum <em>Sequence Num</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.config.ProductConfig#getProductId <em>Product Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.config.ProductConfig#getConfigItemId <em>Config Item Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.config.ProductConfig#getFromDate <em>From Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.config.ProductConfig#getSequenceNum <em>Sequence Num</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.config.ProductConfig#getConfigTypeId <em>Config Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.config.ProductConfig#getDefaultConfigOptionId <em>Default Config Option Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.config.ProductConfig#getDescription <em>Description</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.config.ProductConfig#isIsMandatory <em>Is Mandatory</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.config.ProductConfig#getLongDescription <em>Long Description</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.config.ProductConfig#getThruDate <em>Thru Date</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.config.ProductConfig#getProductId <em>Product Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.config.ProductConfig#getConfigItemId <em>Config Item Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.product.config.ConfigPackage#getProductConfig()
- * @model annotation="mimo-ent-frame formula='description'"
+ * @model annotation="mimo-ent-frame title='Product Configuration Templates' dictionary='ProductEntityLabels' formula='description'"
  * @generated
  */
 public interface ProductConfig extends BizEntity {
@@ -154,8 +154,8 @@ public interface ProductConfig extends BizEntity {
 	 * @see #setFromDate(Date)
 	 * @see org.abchip.mimo.biz.product.config.ConfigPackage#getProductConfig_FromDate()
 	 * @model required="true"
-	 *        annotation="mimo-ent-format type='date-time'"
 	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getFromDate();
@@ -207,7 +207,9 @@ public interface ProductConfig extends BizEntity {
 	 * @return the value of the '<em>Product Id</em>' reference.
 	 * @see #setProductId(Product)
 	 * @see org.abchip.mimo.biz.product.config.ConfigPackage#getProductConfig_ProductId()
-	 * @model keys="productId"
+	 * @model keys="productId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Product getProductId();
@@ -234,8 +236,8 @@ public interface ProductConfig extends BizEntity {
 	 * @see #setSequenceNum(long)
 	 * @see org.abchip.mimo.biz.product.config.ConfigPackage#getProductConfig_SequenceNum()
 	 * @model required="true"
-	 *        annotation="mimo-ent-format type='numeric' precision='20' scale='0'"
 	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='numeric' precision='20' scale='0'"
 	 * @generated
 	 */
 	long getSequenceNum();
@@ -287,7 +289,9 @@ public interface ProductConfig extends BizEntity {
 	 * @return the value of the '<em>Config Item Id</em>' reference.
 	 * @see #setConfigItemId(ProductConfigItem)
 	 * @see org.abchip.mimo.biz.product.config.ConfigPackage#getProductConfig_ConfigItemId()
-	 * @model keys="configItemId"
+	 * @model keys="configItemId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ProductConfigItem getConfigItemId();

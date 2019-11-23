@@ -95,6 +95,7 @@ public interface InvoiceContentType extends BizEntityType<InvoiceContent> {
 	 * @see #setParentTypeId(InvoiceContentType)
 	 * @see org.abchip.mimo.biz.accounting.invoice.InvoicePackage#getInvoiceContentType_ParentTypeId()
 	 * @model keys="invoiceContentTypeId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	InvoiceContentType getParentTypeId();
@@ -132,7 +133,6 @@ public interface InvoiceContentType extends BizEntityType<InvoiceContent> {
 	 * @see org.abchip.mimo.biz.accounting.invoice.InvoicePackage#getInvoiceContentType_InvoiceContentTypeId()
 	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getInvoiceContentTypeId();

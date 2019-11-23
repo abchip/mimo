@@ -23,13 +23,13 @@ import org.abchip.mimo.biz.BizEntityTyped;
  *   <li>{@link org.abchip.mimo.biz.common.uom.Uom#getUomId <em>Uom Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.common.uom.Uom#getAbbreviation <em>Abbreviation</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.common.uom.Uom#getDescription <em>Description</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.common.uom.Uom#getMainUomConversions <em>Main Uom Conversions</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.common.uom.Uom#getNumericCode <em>Numeric Code</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.common.uom.Uom#getUomTypeId <em>Uom Type Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.common.uom.Uom#getMainUomConversions <em>Main Uom Conversions</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.common.uom.UomPackage#getUom()
- * @model annotation="mimo-ent-frame formula='description'"
+ * @model annotation="mimo-ent-frame title='Unit Of Measure' dictionary='CommonEntityLabels' formula='description'"
  * @generated
  */
 public interface Uom extends BizEntityTyped<UomType> {
@@ -123,6 +123,7 @@ public interface Uom extends BizEntityTyped<UomType> {
 	 * @see #setUomTypeId(UomType)
 	 * @see org.abchip.mimo.biz.common.uom.UomPackage#getUom_UomTypeId()
 	 * @model keys="uomTypeId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	UomType getUomTypeId();
@@ -148,8 +149,7 @@ public interface Uom extends BizEntityTyped<UomType> {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Main Uom Conversions</em>' attribute list.
 	 * @see org.abchip.mimo.biz.common.uom.UomPackage#getUom_MainUomConversions()
-	 * @model required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='UomConversion'"
 	 * @generated
@@ -219,8 +219,7 @@ public interface Uom extends BizEntityTyped<UomType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='UomConversion' route='uomIdTo'"
 	 * @generated
@@ -760,8 +759,7 @@ public interface Uom extends BizEntityTyped<UomType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='UomGroup' route='uomId'"
 	 * @generated
@@ -851,7 +849,6 @@ public interface Uom extends BizEntityTyped<UomType> {
 	 * @see org.abchip.mimo.biz.common.uom.UomPackage#getUom_UomId()
 	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getUomId();

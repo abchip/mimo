@@ -27,7 +27,7 @@ import org.abchip.mimo.biz.BizEntity;
  * </ul>
  *
  * @see org.abchip.mimo.biz.security.securitygroup.SecuritygroupPackage#getSecurityGroup()
- * @model annotation="mimo-ent-frame formula='description'"
+ * @model annotation="mimo-ent-frame title='Security Component - Security Group' dictionary='SecurityEntityLabels' formula='description'"
  * @generated
  */
 public interface SecurityGroup extends BizEntity {
@@ -70,7 +70,6 @@ public interface SecurityGroup extends BizEntity {
 	 * @see org.abchip.mimo.biz.security.securitygroup.SecuritygroupPackage#getSecurityGroup_GroupId()
 	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getGroupId();
@@ -122,8 +121,7 @@ public interface SecurityGroup extends BizEntity {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Protected Views</em>' attribute list.
 	 * @see org.abchip.mimo.biz.security.securitygroup.SecuritygroupPackage#getSecurityGroup_ProtectedViews()
-	 * @model required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ProtectedView'"
 	 * @generated

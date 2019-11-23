@@ -27,7 +27,7 @@ import org.abchip.mimo.biz.BizEntityType;
  * </ul>
  *
  * @see org.abchip.mimo.biz.common.geo.GeoPackage#getGeoType()
- * @model annotation="mimo-ent-frame formula='description'"
+ * @model annotation="mimo-ent-frame title='Geographic Boundary Type' dictionary='CommonEntityLabels' formula='description'"
  * @generated
  */
 public interface GeoType extends BizEntityType<Geo> {
@@ -95,6 +95,7 @@ public interface GeoType extends BizEntityType<Geo> {
 	 * @see #setParentTypeId(GeoType)
 	 * @see org.abchip.mimo.biz.common.geo.GeoPackage#getGeoType_ParentTypeId()
 	 * @model keys="geoTypeId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	GeoType getParentTypeId();
@@ -142,7 +143,6 @@ public interface GeoType extends BizEntityType<Geo> {
 	 * @see org.abchip.mimo.biz.common.geo.GeoPackage#getGeoType_GeoTypeId()
 	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getGeoTypeId();

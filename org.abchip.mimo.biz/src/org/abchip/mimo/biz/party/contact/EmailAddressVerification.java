@@ -26,7 +26,7 @@ import org.abchip.mimo.biz.BizEntity;
  * </ul>
  *
  * @see org.abchip.mimo.biz.party.contact.ContactPackage#getEmailAddressVerification()
- * @model
+ * @model annotation="mimo-ent-frame help='Holds hashes for email address verification'"
  * @generated
  */
 public interface EmailAddressVerification extends BizEntity {
@@ -43,7 +43,6 @@ public interface EmailAddressVerification extends BizEntity {
 	 * @see org.abchip.mimo.biz.party.contact.ContactPackage#getEmailAddressVerification_EmailAddress()
 	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-format type='id-vlong' length='255'"
-	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getEmailAddress();

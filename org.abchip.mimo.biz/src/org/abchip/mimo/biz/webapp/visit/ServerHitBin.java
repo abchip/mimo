@@ -25,14 +25,14 @@ import org.abchip.mimo.biz.content.content.Content;
  *   <li>{@link org.abchip.mimo.biz.webapp.visit.ServerHitBin#getBinEndDateTime <em>Bin End Date Time</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.webapp.visit.ServerHitBin#getBinStartDateTime <em>Bin Start Date Time</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.webapp.visit.ServerHitBin#getContentId <em>Content Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.webapp.visit.ServerHitBin#getHitTypeId <em>Hit Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.webapp.visit.ServerHitBin#getInternalContentId <em>Internal Content Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.webapp.visit.ServerHitBin#getMaxTimeMillis <em>Max Time Millis</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.webapp.visit.ServerHitBin#getMinTimeMillis <em>Min Time Millis</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.webapp.visit.ServerHitBin#getNumberHits <em>Number Hits</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.webapp.visit.ServerHitBin#getServerHostName <em>Server Host Name</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.webapp.visit.ServerHitBin#getServerIpAddress <em>Server Ip Address</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.webapp.visit.ServerHitBin#getTotalTimeMillis <em>Total Time Millis</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.webapp.visit.ServerHitBin#getHitTypeId <em>Hit Type Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.webapp.visit.ServerHitBin#getInternalContentId <em>Internal Content Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.webapp.visit.VisitPackage#getServerHitBin()
@@ -53,7 +53,6 @@ public interface ServerHitBin extends BizEntity {
 	 * @see org.abchip.mimo.biz.webapp.visit.VisitPackage#getServerHitBin_ServerHitBinId()
 	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getServerHitBinId();
@@ -158,6 +157,7 @@ public interface ServerHitBin extends BizEntity {
 	 * @see #setHitTypeId(ServerHitType)
 	 * @see org.abchip.mimo.biz.webapp.visit.VisitPackage#getServerHitBin_HitTypeId()
 	 * @model keys="hitTypeId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ServerHitType getHitTypeId();
@@ -184,6 +184,7 @@ public interface ServerHitBin extends BizEntity {
 	 * @see #setInternalContentId(Content)
 	 * @see org.abchip.mimo.biz.webapp.visit.VisitPackage#getServerHitBin_InternalContentId()
 	 * @model keys="contentId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Content getInternalContentId();

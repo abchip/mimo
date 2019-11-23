@@ -25,7 +25,7 @@ import org.abchip.mimo.biz.BizEntityType;
  * </ul>
  *
  * @see org.abchip.mimo.biz.content.survey.SurveyPackage#getSurveyQuestionType()
- * @model annotation="mimo-ent-frame formula='description'"
+ * @model annotation="mimo-ent-frame dictionary='ContentEntityLabels' formula='description'"
  * @generated
  */
 public interface SurveyQuestionType extends BizEntityType<SurveyQuestion> {
@@ -78,7 +78,6 @@ public interface SurveyQuestionType extends BizEntityType<SurveyQuestion> {
 	 * @see org.abchip.mimo.biz.content.survey.SurveyPackage#getSurveyQuestionType_SurveyQuestionTypeId()
 	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getSurveyQuestionTypeId();

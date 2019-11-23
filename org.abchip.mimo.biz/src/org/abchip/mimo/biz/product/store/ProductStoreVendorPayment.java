@@ -28,7 +28,7 @@ import org.abchip.mimo.biz.party.party.Party;
  * </ul>
  *
  * @see org.abchip.mimo.biz.product.store.StorePackage#getProductStoreVendorPayment()
- * @model
+ * @model annotation="mimo-ent-frame help='Used to define payments that a vendor related to the store will accept (for multi-vendor stores)' dictionary='ProductEntityLabels'"
  * @generated
  */
 public interface ProductStoreVendorPayment extends BizEntity {
@@ -43,7 +43,9 @@ public interface ProductStoreVendorPayment extends BizEntity {
 	 * @return the value of the '<em>Credit Card Enum Id</em>' reference.
 	 * @see #setCreditCardEnumId(Enumeration)
 	 * @see org.abchip.mimo.biz.product.store.StorePackage#getProductStoreVendorPayment_CreditCardEnumId()
-	 * @model keys="enumId"
+	 * @model keys="enumId" required="true"
+	 *        annotation="mimo-ent-slot key='true' help='If not applicable for the paymentMethodTypeId, use \"_NA_\"'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Enumeration getCreditCardEnumId();
@@ -69,7 +71,9 @@ public interface ProductStoreVendorPayment extends BizEntity {
 	 * @return the value of the '<em>Payment Method Type Id</em>' reference.
 	 * @see #setPaymentMethodTypeId(PaymentMethodType)
 	 * @see org.abchip.mimo.biz.product.store.StorePackage#getProductStoreVendorPayment_PaymentMethodTypeId()
-	 * @model keys="paymentMethodTypeId"
+	 * @model keys="paymentMethodTypeId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	PaymentMethodType getPaymentMethodTypeId();
@@ -95,7 +99,9 @@ public interface ProductStoreVendorPayment extends BizEntity {
 	 * @return the value of the '<em>Vendor Party Id</em>' reference.
 	 * @see #setVendorPartyId(Party)
 	 * @see org.abchip.mimo.biz.product.store.StorePackage#getProductStoreVendorPayment_VendorPartyId()
-	 * @model keys="partyId"
+	 * @model keys="partyId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Party getVendorPartyId();
@@ -121,7 +127,9 @@ public interface ProductStoreVendorPayment extends BizEntity {
 	 * @return the value of the '<em>Product Store Id</em>' reference.
 	 * @see #setProductStoreId(ProductStore)
 	 * @see org.abchip.mimo.biz.product.store.StorePackage#getProductStoreVendorPayment_ProductStoreId()
-	 * @model keys="productStoreId"
+	 * @model keys="productStoreId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ProductStore getProductStoreId();

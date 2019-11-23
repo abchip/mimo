@@ -217,22 +217,22 @@ public interface TenantPackage extends EPackage {
 	int TENANT__INITIAL_PATH = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
 
 	/**
-	 * The feature id for the '<em><b>Tenant Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TENANT__TENANT_NAME = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
-
-	/**
 	 * The feature id for the '<em><b>Tenant Data Sources</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TENANT__TENANT_DATA_SOURCES = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
+	int TENANT__TENANT_DATA_SOURCES = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
+
+	/**
+	 * The feature id for the '<em><b>Tenant Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TENANT__TENANT_NAME = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
 
 	/**
 	 * The number of structural features of the '<em>Tenant</em>' class.
@@ -290,22 +290,13 @@ public interface TenantPackage extends EPackage {
 	int TENANT_COMPONENT__LAST_UPDATED_TX_STAMP = BizPackage.BIZ_ENTITY__LAST_UPDATED_TX_STAMP;
 
 	/**
-	 * The feature id for the '<em><b>Sequence Num</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TENANT_COMPONENT__SEQUENCE_NUM = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
-
-	/**
 	 * The feature id for the '<em><b>Tenant Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TENANT_COMPONENT__TENANT_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
+	int TENANT_COMPONENT__TENANT_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Component Name</b></em>' reference.
@@ -314,7 +305,16 @@ public interface TenantPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TENANT_COMPONENT__COMPONENT_NAME = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
+	int TENANT_COMPONENT__COMPONENT_NAME = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Sequence Num</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TENANT_COMPONENT__SEQUENCE_NUM = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of structural features of the '<em>Component</em>' class.
@@ -372,13 +372,22 @@ public interface TenantPackage extends EPackage {
 	int TENANT_DATA_SOURCE__LAST_UPDATED_TX_STAMP = BizPackage.BIZ_ENTITY__LAST_UPDATED_TX_STAMP;
 
 	/**
+	 * The feature id for the '<em><b>Tenant Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TENANT_DATA_SOURCE__TENANT_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
+
+	/**
 	 * The feature id for the '<em><b>Entity Group Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TENANT_DATA_SOURCE__ENTITY_GROUP_NAME = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
+	int TENANT_DATA_SOURCE__ENTITY_GROUP_NAME = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Jdbc Password</b></em>' attribute.
@@ -387,7 +396,7 @@ public interface TenantPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TENANT_DATA_SOURCE__JDBC_PASSWORD = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
+	int TENANT_DATA_SOURCE__JDBC_PASSWORD = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Jdbc Uri</b></em>' attribute.
@@ -396,7 +405,7 @@ public interface TenantPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TENANT_DATA_SOURCE__JDBC_URI = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
+	int TENANT_DATA_SOURCE__JDBC_URI = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Jdbc Username</b></em>' attribute.
@@ -405,16 +414,7 @@ public interface TenantPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TENANT_DATA_SOURCE__JDBC_USERNAME = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
-
-	/**
-	 * The feature id for the '<em><b>Tenant Id</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TENANT_DATA_SOURCE__TENANT_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
+	int TENANT_DATA_SOURCE__JDBC_USERNAME = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
 
 	/**
 	 * The number of structural features of the '<em>Data Source</em>' class.

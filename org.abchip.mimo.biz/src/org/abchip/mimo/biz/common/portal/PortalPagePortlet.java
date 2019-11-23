@@ -18,15 +18,15 @@ import org.abchip.mimo.biz.BizEntity;
  * The following features are supported:
  * </p>
  * <ul>
+ *   <li>{@link org.abchip.mimo.biz.common.portal.PortalPagePortlet#getPortalPageId <em>Portal Page Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.common.portal.PortalPagePortlet#getPortalPortletId <em>Portal Portlet Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.common.portal.PortalPagePortlet#getPortletSeqId <em>Portlet Seq Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.common.portal.PortalPagePortlet#getColumnSeqId <em>Column Seq Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.common.portal.PortalPagePortlet#getSequenceNum <em>Sequence Num</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.common.portal.PortalPagePortlet#getPortalPageId <em>Portal Page Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.common.portal.PortalPagePortlet#getPortalPortletId <em>Portal Portlet Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.common.portal.PortalPackage#getPortalPagePortlet()
- * @model
+ * @model annotation="mimo-ent-frame title='Defines Portlets included into Portal Pages'"
  * @generated
  */
 public interface PortalPagePortlet extends BizEntity {
@@ -68,8 +68,8 @@ public interface PortalPagePortlet extends BizEntity {
 	 * @see #setPortletSeqId(String)
 	 * @see org.abchip.mimo.biz.common.portal.PortalPackage#getPortalPagePortlet_PortletSeqId()
 	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true' help='Identify the portalPortlet instance in case more copy of the same portalPortlet are present in the same portalPage'"
 	 *        annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getPortletSeqId();
@@ -121,7 +121,9 @@ public interface PortalPagePortlet extends BizEntity {
 	 * @return the value of the '<em>Portal Page Id</em>' reference.
 	 * @see #setPortalPageId(PortalPage)
 	 * @see org.abchip.mimo.biz.common.portal.PortalPackage#getPortalPagePortlet_PortalPageId()
-	 * @model keys="portalPageId"
+	 * @model keys="portalPageId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	PortalPage getPortalPageId();
@@ -147,7 +149,9 @@ public interface PortalPagePortlet extends BizEntity {
 	 * @return the value of the '<em>Portal Portlet Id</em>' reference.
 	 * @see #setPortalPortletId(PortalPortlet)
 	 * @see org.abchip.mimo.biz.common.portal.PortalPackage#getPortalPagePortlet_PortalPortletId()
-	 * @model keys="portalPortletId"
+	 * @model keys="portalPortletId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	PortalPortlet getPortalPortletId();

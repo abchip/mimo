@@ -22,9 +22,9 @@ import org.eclipse.emf.ecore.EClass;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link org.abchip.mimo.biz.content.content.impl.ContentRevisionImpl#getContentId <em>Content Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.content.impl.ContentRevisionImpl#getContentRevisionSeqId <em>Content Revision Seq Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.content.impl.ContentRevisionImpl#getComments <em>Comments</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.content.content.impl.ContentRevisionImpl#getContentId <em>Content Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.content.impl.ContentRevisionImpl#getCommittedByPartyId <em>Committed By Party Id</em>}</li>
  * </ul>
  *

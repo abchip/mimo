@@ -26,6 +26,7 @@ import org.eclipse.emf.ecore.EClass;
  *   <li>{@link org.abchip.mimo.biz.party.party.impl.PersonImpl#getCardId <em>Card Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.party.impl.PersonImpl#getComments <em>Comments</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.party.impl.PersonImpl#getDeceasedDate <em>Deceased Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.party.party.impl.PersonImpl#getEmploymentStatusEnumId <em>Employment Status Enum Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.party.impl.PersonImpl#isExistingCustomer <em>Existing Customer</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.party.impl.PersonImpl#getFirstName <em>First Name</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.party.impl.PersonImpl#getFirstNameLocal <em>First Name Local</em>}</li>
@@ -45,14 +46,13 @@ import org.eclipse.emf.ecore.EClass;
  *   <li>{@link org.abchip.mimo.biz.party.party.impl.PersonImpl#getPassportExpireDate <em>Passport Expire Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.party.impl.PersonImpl#getPassportNumber <em>Passport Number</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.party.impl.PersonImpl#getPersonalTitle <em>Personal Title</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.party.party.impl.PersonImpl#getResidenceStatusEnumId <em>Residence Status Enum Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.party.impl.PersonImpl#getSalutation <em>Salutation</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.party.impl.PersonImpl#getSocialSecurityNumber <em>Social Security Number</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.party.impl.PersonImpl#getSuffix <em>Suffix</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.party.impl.PersonImpl#getTotalYearsWorkExperience <em>Total Years Work Experience</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.party.impl.PersonImpl#getWeight <em>Weight</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.party.impl.PersonImpl#getYearsWithEmployer <em>Years With Employer</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.party.party.impl.PersonImpl#getEmploymentStatusEnumId <em>Employment Status Enum Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.party.party.impl.PersonImpl#getResidenceStatusEnumId <em>Residence Status Enum Id</em>}</li>
  * </ul>
  *
  * @generated

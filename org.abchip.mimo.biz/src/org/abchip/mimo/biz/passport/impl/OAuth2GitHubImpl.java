@@ -23,6 +23,7 @@ import org.eclipse.emf.ecore.EClass;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link org.abchip.mimo.biz.passport.impl.OAuth2GitHubImpl#getProductStoreId <em>Product Store Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.passport.impl.OAuth2GitHubImpl#getFromDate <em>From Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.passport.impl.OAuth2GitHubImpl#getClientId <em>Client Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.passport.impl.OAuth2GitHubImpl#getClientSecret <em>Client Secret</em>}</li>
@@ -30,7 +31,6 @@ import org.eclipse.emf.ecore.EClass;
  *   <li>{@link org.abchip.mimo.biz.passport.impl.OAuth2GitHubImpl#getLocalRedirectUri <em>Local Redirect Uri</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.passport.impl.OAuth2GitHubImpl#getReturnUrl <em>Return Url</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.passport.impl.OAuth2GitHubImpl#getThruDate <em>Thru Date</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.passport.impl.OAuth2GitHubImpl#getProductStoreId <em>Product Store Id</em>}</li>
  * </ul>
  *
  * @generated

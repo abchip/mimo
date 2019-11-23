@@ -41,11 +41,11 @@ import org.abchip.mimo.biz.BizEntity;
  *   <li>{@link org.abchip.mimo.biz.webapp.visit.Visit#getServerIpAddress <em>Server Ip Address</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.webapp.visit.Visit#getSessionId <em>Session Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.webapp.visit.Visit#getThruDate <em>Thru Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.webapp.visit.Visit#getUserAgentId <em>User Agent Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.webapp.visit.Visit#isUserCreated <em>User Created</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.webapp.visit.Visit#getUserLoginId <em>User Login Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.webapp.visit.Visit#getWebappName <em>Webapp Name</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.webapp.visit.Visit#getVisitorId <em>Visitor Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.webapp.visit.Visit#getUserAgentId <em>User Agent Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.webapp.visit.Visit#getWebappName <em>Webapp Name</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.webapp.visit.VisitPackage#getVisit()
@@ -66,7 +66,6 @@ public interface Visit extends BizEntity {
 	 * @see org.abchip.mimo.biz.webapp.visit.VisitPackage#getVisit_VisitId()
 	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getVisitId();
@@ -639,6 +638,7 @@ public interface Visit extends BizEntity {
 	 * @see #setUserAgentId(UserAgent)
 	 * @see org.abchip.mimo.biz.webapp.visit.VisitPackage#getVisit_UserAgentId()
 	 * @model keys="userAgentId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	UserAgent getUserAgentId();
@@ -691,6 +691,7 @@ public interface Visit extends BizEntity {
 	 * @see #setVisitorId(Visitor)
 	 * @see org.abchip.mimo.biz.webapp.visit.VisitPackage#getVisit_VisitorId()
 	 * @model keys="visitorId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Visitor getVisitorId();

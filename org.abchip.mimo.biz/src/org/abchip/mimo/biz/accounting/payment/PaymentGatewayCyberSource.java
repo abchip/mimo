@@ -34,12 +34,12 @@ import org.abchip.mimo.biz.BizEntity;
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.PaymentGatewayCyberSource#getMerchantContact <em>Merchant Contact</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.PaymentGatewayCyberSource#getMerchantDescr <em>Merchant Descr</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.PaymentGatewayCyberSource#getMerchantId <em>Merchant Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.payment.PaymentGatewayCyberSource#getProduction <em>Production</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.PaymentGatewayCyberSource#getPaymentGatewayConfigId <em>Payment Gateway Config Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.payment.PaymentGatewayCyberSource#getProduction <em>Production</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPaymentGatewayCyberSource()
- * @model
+ * @model annotation="mimo-ent-frame title='CyberSource Payment Gateway Configuration'"
  * @generated
  */
 public interface PaymentGatewayCyberSource extends BizEntity {
@@ -54,7 +54,8 @@ public interface PaymentGatewayCyberSource extends BizEntity {
 	 * @return the value of the '<em>Api Version</em>' attribute.
 	 * @see #setApiVersion(String)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPaymentGatewayCyberSource_ApiVersion()
-	 * @model annotation="mimo-ent-format type='short-varchar' length='60'"
+	 * @model annotation="mimo-ent-slot help='Target CyberSource API version'"
+	 *        annotation="mimo-ent-format type='short-varchar' length='60'"
 	 * @generated
 	 */
 	String getApiVersion();
@@ -80,7 +81,8 @@ public interface PaymentGatewayCyberSource extends BizEntity {
 	 * @return the value of the '<em>Auto Bill</em>' attribute.
 	 * @see #setAutoBill(String)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPaymentGatewayCyberSource_AutoBill()
-	 * @model annotation="mimo-ent-format type='short-varchar' length='60'"
+	 * @model annotation="mimo-ent-slot help='Auto-Bill In Authorization (true|false)'"
+	 *        annotation="mimo-ent-format type='short-varchar' length='60'"
 	 * @generated
 	 */
 	String getAutoBill();
@@ -106,7 +108,8 @@ public interface PaymentGatewayCyberSource extends BizEntity {
 	 * @return the value of the '<em>Avs Decline Codes</em>' attribute.
 	 * @see #setAvsDeclineCodes(String)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPaymentGatewayCyberSource_AvsDeclineCodes()
-	 * @model annotation="mimo-ent-format type='value' length='255'"
+	 * @model annotation="mimo-ent-slot help='AVS Decline Codes -- May not be supported any longer'"
+	 *        annotation="mimo-ent-format type='value' length='255'"
 	 * @generated
 	 */
 	String getAvsDeclineCodes();
@@ -132,7 +135,8 @@ public interface PaymentGatewayCyberSource extends BizEntity {
 	 * @return the value of the '<em>Disable Bill Avs</em>' attribute.
 	 * @see #setDisableBillAvs(boolean)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPaymentGatewayCyberSource_DisableBillAvs()
-	 * @model annotation="mimo-ent-format type='indicator' length='1'"
+	 * @model annotation="mimo-ent-slot help='Disable AVS for Capture -- May not be supported any longer'"
+	 *        annotation="mimo-ent-format type='indicator' length='1'"
 	 * @generated
 	 */
 	boolean isDisableBillAvs();
@@ -158,7 +162,8 @@ public interface PaymentGatewayCyberSource extends BizEntity {
 	 * @return the value of the '<em>Enable Dav</em>' attribute.
 	 * @see #setEnableDav(boolean)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPaymentGatewayCyberSource_EnableDav()
-	 * @model annotation="mimo-ent-format type='indicator' length='1'"
+	 * @model annotation="mimo-ent-slot help='Use DAV In Authorization -- May not be supported any longer'"
+	 *        annotation="mimo-ent-format type='indicator' length='1'"
 	 * @generated
 	 */
 	boolean isEnableDav();
@@ -184,7 +189,8 @@ public interface PaymentGatewayCyberSource extends BizEntity {
 	 * @return the value of the '<em>Fraud Score</em>' attribute.
 	 * @see #setFraudScore(char)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPaymentGatewayCyberSource_FraudScore()
-	 * @model annotation="mimo-ent-format type='indicator' length='1'"
+	 * @model annotation="mimo-ent-slot help='Use Fraud Scoring In Authorization -- May not be supported any longer'"
+	 *        annotation="mimo-ent-format type='indicator' length='1'"
 	 * @generated
 	 */
 	char getFraudScore();
@@ -210,7 +216,8 @@ public interface PaymentGatewayCyberSource extends BizEntity {
 	 * @return the value of the '<em>Ignore Avs</em>' attribute.
 	 * @see #setIgnoreAvs(String)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPaymentGatewayCyberSource_IgnoreAvs()
-	 * @model annotation="mimo-ent-format type='short-varchar' length='60'"
+	 * @model annotation="mimo-ent-slot help='Ignore AVS results (true|false)'"
+	 *        annotation="mimo-ent-format type='short-varchar' length='60'"
 	 * @generated
 	 */
 	String getIgnoreAvs();
@@ -236,7 +243,8 @@ public interface PaymentGatewayCyberSource extends BizEntity {
 	 * @return the value of the '<em>Keys Dir</em>' attribute.
 	 * @see #setKeysDir(String)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPaymentGatewayCyberSource_KeysDir()
-	 * @model annotation="mimo-ent-format type='value' length='255'"
+	 * @model annotation="mimo-ent-slot help='Directory of the keys from CyberSource (Generate using online tools)'"
+	 *        annotation="mimo-ent-format type='value' length='255'"
 	 * @generated
 	 */
 	String getKeysDir();
@@ -262,7 +270,8 @@ public interface PaymentGatewayCyberSource extends BizEntity {
 	 * @return the value of the '<em>Keys File</em>' attribute.
 	 * @see #setKeysFile(String)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPaymentGatewayCyberSource_KeysFile()
-	 * @model annotation="mimo-ent-format type='value' length='255'"
+	 * @model annotation="mimo-ent-slot help='Name of the keystore (if different then \"merchantID\".p12)'"
+	 *        annotation="mimo-ent-format type='value' length='255'"
 	 * @generated
 	 */
 	String getKeysFile();
@@ -288,7 +297,8 @@ public interface PaymentGatewayCyberSource extends BizEntity {
 	 * @return the value of the '<em>Log Dir</em>' attribute.
 	 * @see #setLogDir(String)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPaymentGatewayCyberSource_LogDir()
-	 * @model annotation="mimo-ent-format type='value' length='255'"
+	 * @model annotation="mimo-ent-slot help='Log directory'"
+	 *        annotation="mimo-ent-format type='value' length='255'"
 	 * @generated
 	 */
 	String getLogDir();
@@ -314,7 +324,8 @@ public interface PaymentGatewayCyberSource extends BizEntity {
 	 * @return the value of the '<em>Log Enabled</em>' attribute.
 	 * @see #setLogEnabled(String)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPaymentGatewayCyberSource_LogEnabled()
-	 * @model annotation="mimo-ent-format type='short-varchar' length='60'"
+	 * @model annotation="mimo-ent-slot help='Log transaction information (true|false)'"
+	 *        annotation="mimo-ent-format type='short-varchar' length='60'"
 	 * @generated
 	 */
 	String getLogEnabled();
@@ -340,7 +351,8 @@ public interface PaymentGatewayCyberSource extends BizEntity {
 	 * @return the value of the '<em>Log File</em>' attribute.
 	 * @see #setLogFile(String)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPaymentGatewayCyberSource_LogFile()
-	 * @model annotation="mimo-ent-format type='value' length='255'"
+	 * @model annotation="mimo-ent-slot help='Log file name'"
+	 *        annotation="mimo-ent-format type='value' length='255'"
 	 * @generated
 	 */
 	String getLogFile();
@@ -366,7 +378,8 @@ public interface PaymentGatewayCyberSource extends BizEntity {
 	 * @return the value of the '<em>Log Size</em>' attribute.
 	 * @see #setLogSize(long)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPaymentGatewayCyberSource_LogSize()
-	 * @model annotation="mimo-ent-format type='numeric' precision='20' scale='0'"
+	 * @model annotation="mimo-ent-slot help='Max log size (megabytes)'"
+	 *        annotation="mimo-ent-format type='numeric' precision='20' scale='0'"
 	 * @generated
 	 */
 	long getLogSize();
@@ -392,7 +405,8 @@ public interface PaymentGatewayCyberSource extends BizEntity {
 	 * @return the value of the '<em>Merchant Contact</em>' attribute.
 	 * @see #setMerchantContact(String)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPaymentGatewayCyberSource_MerchantContact()
-	 * @model annotation="mimo-ent-format type='value' length='255'"
+	 * @model annotation="mimo-ent-slot help='Merchant Description Contact Information - Shown on credit card statement'"
+	 *        annotation="mimo-ent-format type='value' length='255'"
 	 * @generated
 	 */
 	String getMerchantContact();
@@ -418,7 +432,8 @@ public interface PaymentGatewayCyberSource extends BizEntity {
 	 * @return the value of the '<em>Merchant Descr</em>' attribute.
 	 * @see #setMerchantDescr(String)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPaymentGatewayCyberSource_MerchantDescr()
-	 * @model annotation="mimo-ent-format type='value' length='255'"
+	 * @model annotation="mimo-ent-slot help='Merchant Description - Shown on credit card statement'"
+	 *        annotation="mimo-ent-format type='value' length='255'"
 	 * @generated
 	 */
 	String getMerchantDescr();
@@ -444,7 +459,8 @@ public interface PaymentGatewayCyberSource extends BizEntity {
 	 * @return the value of the '<em>Merchant Id</em>' attribute.
 	 * @see #setMerchantId(String)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPaymentGatewayCyberSource_MerchantId()
-	 * @model annotation="mimo-ent-format type='value' length='255'"
+	 * @model annotation="mimo-ent-slot help='You merchant ID'"
+	 *        annotation="mimo-ent-format type='value' length='255'"
 	 * @generated
 	 */
 	String getMerchantId();
@@ -470,7 +486,8 @@ public interface PaymentGatewayCyberSource extends BizEntity {
 	 * @return the value of the '<em>Payment Gateway Config Id</em>' reference.
 	 * @see #setPaymentGatewayConfigId(PaymentGatewayConfig)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPaymentGatewayCyberSource_PaymentGatewayConfigId()
-	 * @model keys="paymentGatewayConfigId"
+	 * @model keys="paymentGatewayConfigId" required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	PaymentGatewayConfig getPaymentGatewayConfigId();
@@ -496,7 +513,8 @@ public interface PaymentGatewayCyberSource extends BizEntity {
 	 * @return the value of the '<em>Production</em>' attribute.
 	 * @see #setProduction(String)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPaymentGatewayCyberSource_Production()
-	 * @model annotation="mimo-ent-format type='short-varchar' length='60'"
+	 * @model annotation="mimo-ent-slot help='Enable production \"mode\" (true|false)'"
+	 *        annotation="mimo-ent-format type='short-varchar' length='60'"
 	 * @generated
 	 */
 	String getProduction();

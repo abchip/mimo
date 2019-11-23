@@ -24,8 +24,8 @@ import org.eclipse.emf.ecore.EClass;
  *   <li>{@link org.abchip.mimo.biz.common.screen.impl.CustomScreenImpl#getCustomScreenId <em>Custom Screen Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.common.screen.impl.CustomScreenImpl#getCustomScreenLocation <em>Custom Screen Location</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.common.screen.impl.CustomScreenImpl#getCustomScreenName <em>Custom Screen Name</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.common.screen.impl.CustomScreenImpl#getDescription <em>Description</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.common.screen.impl.CustomScreenImpl#getCustomScreenTypeId <em>Custom Screen Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.common.screen.impl.CustomScreenImpl#getDescription <em>Description</em>}</li>
  * </ul>
  *
  * @generated

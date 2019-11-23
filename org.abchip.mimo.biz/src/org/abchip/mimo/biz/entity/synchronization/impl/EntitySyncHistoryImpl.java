@@ -23,6 +23,7 @@ import org.eclipse.emf.ecore.EClass;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link org.abchip.mimo.biz.entity.synchronization.impl.EntitySyncHistoryImpl#getEntitySyncId <em>Entity Sync Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.entity.synchronization.impl.EntitySyncHistoryImpl#getStartDate <em>Start Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.entity.synchronization.impl.EntitySyncHistoryImpl#getBeginningSynchTime <em>Beginning Synch Time</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.entity.synchronization.impl.EntitySyncHistoryImpl#getLastCandidateEndTime <em>Last Candidate End Time</em>}</li>
@@ -48,7 +49,6 @@ import org.eclipse.emf.ecore.EClass;
  *   <li>{@link org.abchip.mimo.biz.entity.synchronization.impl.EntitySyncHistoryImpl#getTotalRowsToStore <em>Total Rows To Store</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.entity.synchronization.impl.EntitySyncHistoryImpl#getTotalSplits <em>Total Splits</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.entity.synchronization.impl.EntitySyncHistoryImpl#getTotalStoreCalls <em>Total Store Calls</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.entity.synchronization.impl.EntitySyncHistoryImpl#getEntitySyncId <em>Entity Sync Id</em>}</li>
  * </ul>
  *
  * @generated

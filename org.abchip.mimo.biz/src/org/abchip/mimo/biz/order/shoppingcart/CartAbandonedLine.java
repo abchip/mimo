@@ -24,9 +24,11 @@ import org.abchip.mimo.biz.product.product.Product;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.order.shoppingcart.CartAbandonedLine#getVisitId <em>Visit Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.shoppingcart.CartAbandonedLine#getCartAbandonedLineSeqId <em>Cart Abandoned Line Seq Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.shoppingcart.CartAbandonedLine#getVisitId <em>Visit Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.shoppingcart.CartAbandonedLine#getConfigId <em>Config Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.shoppingcart.CartAbandonedLine#getProdCatalogId <em>Prod Catalog Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.shoppingcart.CartAbandonedLine#getProductId <em>Product Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.shoppingcart.CartAbandonedLine#getQuantity <em>Quantity</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.shoppingcart.CartAbandonedLine#getReserv2ndPPPerc <em>Reserv2nd PP Perc</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.shoppingcart.CartAbandonedLine#getReservLength <em>Reserv Length</em>}</li>
@@ -36,12 +38,10 @@ import org.abchip.mimo.biz.product.product.Product;
  *   <li>{@link org.abchip.mimo.biz.order.shoppingcart.CartAbandonedLine#getTotalWithAdjustments <em>Total With Adjustments</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.shoppingcart.CartAbandonedLine#getUnitPrice <em>Unit Price</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.shoppingcart.CartAbandonedLine#isWasReserved <em>Was Reserved</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.shoppingcart.CartAbandonedLine#getProductId <em>Product Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.shoppingcart.CartAbandonedLine#getProdCatalogId <em>Prod Catalog Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.order.shoppingcart.ShoppingcartPackage#getCartAbandonedLine()
- * @model
+ * @model annotation="mimo-ent-frame title='Order Abandoned Line'"
  * @generated
  */
 public interface CartAbandonedLine extends BizEntity {
@@ -57,8 +57,8 @@ public interface CartAbandonedLine extends BizEntity {
 	 * @see #setCartAbandonedLineSeqId(String)
 	 * @see org.abchip.mimo.biz.order.shoppingcart.ShoppingcartPackage#getCartAbandonedLine_CartAbandonedLineSeqId()
 	 * @model required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	String getCartAbandonedLineSeqId();
@@ -111,6 +111,7 @@ public interface CartAbandonedLine extends BizEntity {
 	 * @see #setProdCatalogId(ProdCatalog)
 	 * @see org.abchip.mimo.biz.order.shoppingcart.ShoppingcartPackage#getCartAbandonedLine_ProdCatalogId()
 	 * @model keys="prodCatalogId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ProdCatalog getProdCatalogId();
@@ -137,6 +138,7 @@ public interface CartAbandonedLine extends BizEntity {
 	 * @see #setProductId(Product)
 	 * @see org.abchip.mimo.biz.order.shoppingcart.ShoppingcartPackage#getCartAbandonedLine_ProductId()
 	 * @model keys="productId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Product getProductId();
@@ -397,8 +399,8 @@ public interface CartAbandonedLine extends BizEntity {
 	 * @see #setVisitId(String)
 	 * @see org.abchip.mimo.biz.order.shoppingcart.ShoppingcartPackage#getCartAbandonedLine_VisitId()
 	 * @model required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	String getVisitId();

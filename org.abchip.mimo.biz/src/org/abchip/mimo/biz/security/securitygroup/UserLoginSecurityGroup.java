@@ -21,14 +21,14 @@ import org.abchip.mimo.biz.security.login.UserLogin;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.security.securitygroup.UserLoginSecurityGroup#getFromDate <em>From Date</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.security.securitygroup.UserLoginSecurityGroup#getThruDate <em>Thru Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.security.securitygroup.UserLoginSecurityGroup#getUserLoginId <em>User Login Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.security.securitygroup.UserLoginSecurityGroup#getGroupId <em>Group Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.security.securitygroup.UserLoginSecurityGroup#getFromDate <em>From Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.security.securitygroup.UserLoginSecurityGroup#getThruDate <em>Thru Date</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.security.securitygroup.SecuritygroupPackage#getUserLoginSecurityGroup()
- * @model
+ * @model annotation="mimo-ent-frame help='Maps a UserLogin to a security group' title='Security Component - User Login Security Group'"
  * @generated
  */
 public interface UserLoginSecurityGroup extends BizEntity {
@@ -44,8 +44,8 @@ public interface UserLoginSecurityGroup extends BizEntity {
 	 * @see #setFromDate(Date)
 	 * @see org.abchip.mimo.biz.security.securitygroup.SecuritygroupPackage#getUserLoginSecurityGroup_FromDate()
 	 * @model required="true"
-	 *        annotation="mimo-ent-format type='date-time'"
 	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getFromDate();
@@ -71,7 +71,9 @@ public interface UserLoginSecurityGroup extends BizEntity {
 	 * @return the value of the '<em>Group Id</em>' reference.
 	 * @see #setGroupId(SecurityGroup)
 	 * @see org.abchip.mimo.biz.security.securitygroup.SecuritygroupPackage#getUserLoginSecurityGroup_GroupId()
-	 * @model keys="groupId"
+	 * @model keys="groupId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	SecurityGroup getGroupId();
@@ -123,7 +125,9 @@ public interface UserLoginSecurityGroup extends BizEntity {
 	 * @return the value of the '<em>User Login Id</em>' reference.
 	 * @see #setUserLoginId(UserLogin)
 	 * @see org.abchip.mimo.biz.security.securitygroup.SecuritygroupPackage#getUserLoginSecurityGroup_UserLoginId()
-	 * @model keys="userLoginId"
+	 * @model keys="userLoginId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id-vlong' length='255'"
 	 * @generated
 	 */
 	UserLogin getUserLoginId();

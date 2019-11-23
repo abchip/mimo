@@ -21,12 +21,12 @@ import org.abchip.mimo.biz.BizEntity;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.order.request.CustRequestCategory#getCustRequestCategoryId <em>Cust Request Category Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.request.CustRequestCategory#getDescription <em>Description</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.request.CustRequestCategory#getCustRequestTypeId <em>Cust Request Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.request.CustRequestCategory#getDescription <em>Description</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.order.request.RequestPackage#getCustRequestCategory()
- * @model annotation="mimo-ent-frame formula='description'"
+ * @model annotation="mimo-ent-frame title='Customer Category Type' formula='description'"
  * @generated
  */
 public interface CustRequestCategory extends BizEntity {
@@ -43,7 +43,6 @@ public interface CustRequestCategory extends BizEntity {
 	 * @see org.abchip.mimo.biz.order.request.RequestPackage#getCustRequestCategory_CustRequestCategoryId()
 	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getCustRequestCategoryId();
@@ -70,6 +69,7 @@ public interface CustRequestCategory extends BizEntity {
 	 * @see #setCustRequestTypeId(CustRequestType)
 	 * @see org.abchip.mimo.biz.order.request.RequestPackage#getCustRequestCategory_CustRequestTypeId()
 	 * @model keys="custRequestTypeId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	CustRequestType getCustRequestTypeId();

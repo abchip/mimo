@@ -28,7 +28,7 @@ import org.abchip.mimo.biz.BizEntityType;
  * </ul>
  *
  * @see org.abchip.mimo.biz.order.requirement.RequirementPackage#getRequirementType()
- * @model annotation="mimo-ent-frame formula='description'"
+ * @model annotation="mimo-ent-frame dictionary='OrderEntityLabels' formula='description'"
  * @generated
  */
 public interface RequirementType extends BizEntityType<Requirement> {
@@ -96,6 +96,7 @@ public interface RequirementType extends BizEntityType<Requirement> {
 	 * @see #setParentTypeId(RequirementType)
 	 * @see org.abchip.mimo.biz.order.requirement.RequirementPackage#getRequirementType_ParentTypeId()
 	 * @model keys="requirementTypeId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	RequirementType getParentTypeId();
@@ -123,7 +124,6 @@ public interface RequirementType extends BizEntityType<Requirement> {
 	 * @see org.abchip.mimo.biz.order.requirement.RequirementPackage#getRequirementType_RequirementTypeId()
 	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getRequirementTypeId();
@@ -149,8 +149,7 @@ public interface RequirementType extends BizEntityType<Requirement> {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Requirement Type Attrs</em>' attribute list.
 	 * @see org.abchip.mimo.biz.order.requirement.RequirementPackage#getRequirementType_RequirementTypeAttrs()
-	 * @model required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='RequirementTypeAttr'"
 	 * @generated

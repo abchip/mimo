@@ -18,14 +18,14 @@ import org.abchip.mimo.biz.BizEntity;
  * The following features are supported:
  * </p>
  * <ul>
+ *   <li>{@link org.abchip.mimo.biz.common.portal.PortalPageColumn#getPortalPageId <em>Portal Page Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.common.portal.PortalPageColumn#getColumnSeqId <em>Column Seq Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.common.portal.PortalPageColumn#getColumnWidthPercentage <em>Column Width Percentage</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.common.portal.PortalPageColumn#getColumnWidthPixels <em>Column Width Pixels</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.common.portal.PortalPageColumn#getPortalPageId <em>Portal Page Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.common.portal.PortalPackage#getPortalPageColumn()
- * @model
+ * @model annotation="mimo-ent-frame title='Defines a Portal Page'"
  * @generated
  */
 public interface PortalPageColumn extends BizEntity {
@@ -41,8 +41,8 @@ public interface PortalPageColumn extends BizEntity {
 	 * @see #setColumnSeqId(String)
 	 * @see org.abchip.mimo.biz.common.portal.PortalPackage#getPortalPageColumn_ColumnSeqId()
 	 * @model required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	String getColumnSeqId();
@@ -120,7 +120,9 @@ public interface PortalPageColumn extends BizEntity {
 	 * @return the value of the '<em>Portal Page Id</em>' reference.
 	 * @see #setPortalPageId(PortalPage)
 	 * @see org.abchip.mimo.biz.common.portal.PortalPackage#getPortalPageColumn_PortalPageId()
-	 * @model keys="portalPageId"
+	 * @model keys="portalPageId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	PortalPage getPortalPageId();

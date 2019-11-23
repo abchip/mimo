@@ -23,9 +23,9 @@ import org.abchip.mimo.biz.common.enum_.Enumeration;
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.order.order.OrderNotification#getOrderNotificationId <em>Order Notification Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.OrderNotification#getComments <em>Comments</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.order.OrderNotification#getEmailType <em>Email Type</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.OrderNotification#getNotificationDate <em>Notification Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.OrderNotification#getOrderId <em>Order Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.order.OrderNotification#getEmailType <em>Email Type</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderNotification()
@@ -71,6 +71,7 @@ public interface OrderNotification extends BizEntity {
 	 * @see #setEmailType(Enumeration)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderNotification_EmailType()
 	 * @model keys="enumId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Enumeration getEmailType();
@@ -123,6 +124,7 @@ public interface OrderNotification extends BizEntity {
 	 * @see #setOrderId(OrderHeader)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderNotification_OrderId()
 	 * @model keys="orderId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	OrderHeader getOrderId();
@@ -150,7 +152,6 @@ public interface OrderNotification extends BizEntity {
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderNotification_OrderNotificationId()
 	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getOrderNotificationId();

@@ -196,9 +196,6 @@ import org.abchip.mimo.biz.workeffort.timesheet.TimesheetPackage;
 import org.abchip.mimo.biz.workeffort.timesheet.impl.TimesheetPackageImpl;
 import org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage;
 import org.abchip.mimo.biz.workeffort.workeffort.impl.WorkeffortPackageImpl;
-import org.abchip.mimo.entity.EntityPackage;
-import org.eclipse.emf.common.util.URI;
-
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
@@ -733,7 +730,7 @@ public class PortalPackageImpl extends EPackageImpl implements PortalPackage {
 	 */
 	@Override
 	public EReference getPortalPage_HelpContentId() {
-		return (EReference)portalPageEClass.getEStructuralFeatures().get(8);
+		return (EReference)portalPageEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -743,16 +740,6 @@ public class PortalPackageImpl extends EPackageImpl implements PortalPackage {
 	 */
 	@Override
 	public EAttribute getPortalPage_OriginalPortalPageId() {
-		return (EAttribute)portalPageEClass.getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EAttribute getPortalPage_OwnerUserLoginId() {
 		return (EAttribute)portalPageEClass.getEStructuralFeatures().get(3);
 	}
 
@@ -762,17 +749,7 @@ public class PortalPackageImpl extends EPackageImpl implements PortalPackage {
 	 * @generated
 	 */
 	@Override
-	public EReference getPortalPage_ParentPortalPageId() {
-		return (EReference)portalPageEClass.getEStructuralFeatures().get(6);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EAttribute getPortalPage_PortalPageName() {
+	public EAttribute getPortalPage_OwnerUserLoginId() {
 		return (EAttribute)portalPageEClass.getEStructuralFeatures().get(4);
 	}
 
@@ -782,8 +759,28 @@ public class PortalPackageImpl extends EPackageImpl implements PortalPackage {
 	 * @generated
 	 */
 	@Override
+	public EReference getPortalPage_ParentPortalPageId() {
+		return (EReference)portalPageEClass.getEStructuralFeatures().get(5);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getPortalPage_PortalPageName() {
+		return (EAttribute)portalPageEClass.getEStructuralFeatures().get(7);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EReference getPortalPage_SecurityGroupId() {
-		return (EReference)portalPageEClass.getEStructuralFeatures().get(7);
+		return (EReference)portalPageEClass.getEStructuralFeatures().get(8);
 	}
 
 	/**
@@ -793,7 +790,7 @@ public class PortalPackageImpl extends EPackageImpl implements PortalPackage {
 	 */
 	@Override
 	public EAttribute getPortalPage_SequenceNum() {
-		return (EAttribute)portalPageEClass.getEStructuralFeatures().get(5);
+		return (EAttribute)portalPageEClass.getEStructuralFeatures().get(9);
 	}
 
 	/**
@@ -803,7 +800,7 @@ public class PortalPackageImpl extends EPackageImpl implements PortalPackage {
 	 */
 	@Override
 	public EAttribute getPortalPage_PortalPageColumns() {
-		return (EAttribute)portalPageEClass.getEStructuralFeatures().get(9);
+		return (EAttribute)portalPageEClass.getEStructuralFeatures().get(6);
 	}
 
 	/**
@@ -823,7 +820,7 @@ public class PortalPackageImpl extends EPackageImpl implements PortalPackage {
 	 */
 	@Override
 	public EReference getPortalPageColumn_PortalPageId() {
-		return (EReference)portalPageColumnEClass.getEStructuralFeatures().get(3);
+		return (EReference)portalPageColumnEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -833,16 +830,6 @@ public class PortalPackageImpl extends EPackageImpl implements PortalPackage {
 	 */
 	@Override
 	public EAttribute getPortalPageColumn_ColumnSeqId() {
-		return (EAttribute)portalPageColumnEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EAttribute getPortalPageColumn_ColumnWidthPercentage() {
 		return (EAttribute)portalPageColumnEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -852,8 +839,18 @@ public class PortalPackageImpl extends EPackageImpl implements PortalPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getPortalPageColumn_ColumnWidthPixels() {
+	public EAttribute getPortalPageColumn_ColumnWidthPercentage() {
 		return (EAttribute)portalPageColumnEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getPortalPageColumn_ColumnWidthPixels() {
+		return (EAttribute)portalPageColumnEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -873,7 +870,7 @@ public class PortalPackageImpl extends EPackageImpl implements PortalPackage {
 	 */
 	@Override
 	public EReference getPortalPagePortlet_PortalPageId() {
-		return (EReference)portalPagePortletEClass.getEStructuralFeatures().get(3);
+		return (EReference)portalPagePortletEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -883,7 +880,7 @@ public class PortalPackageImpl extends EPackageImpl implements PortalPackage {
 	 */
 	@Override
 	public EReference getPortalPagePortlet_PortalPortletId() {
-		return (EReference)portalPagePortletEClass.getEStructuralFeatures().get(4);
+		return (EReference)portalPagePortletEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -893,7 +890,7 @@ public class PortalPackageImpl extends EPackageImpl implements PortalPackage {
 	 */
 	@Override
 	public EAttribute getPortalPagePortlet_PortletSeqId() {
-		return (EAttribute)portalPagePortletEClass.getEStructuralFeatures().get(0);
+		return (EAttribute)portalPagePortletEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -903,7 +900,7 @@ public class PortalPackageImpl extends EPackageImpl implements PortalPackage {
 	 */
 	@Override
 	public EAttribute getPortalPagePortlet_ColumnSeqId() {
-		return (EAttribute)portalPagePortletEClass.getEStructuralFeatures().get(1);
+		return (EAttribute)portalPagePortletEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -913,7 +910,7 @@ public class PortalPackageImpl extends EPackageImpl implements PortalPackage {
 	 */
 	@Override
 	public EAttribute getPortalPagePortlet_SequenceNum() {
-		return (EAttribute)portalPagePortletEClass.getEStructuralFeatures().get(2);
+		return (EAttribute)portalPagePortletEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -983,16 +980,6 @@ public class PortalPackageImpl extends EPackageImpl implements PortalPackage {
 	 */
 	@Override
 	public EAttribute getPortalPortlet_ScreenLocation() {
-		return (EAttribute)portalPortletEClass.getEStructuralFeatures().get(5);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EAttribute getPortalPortlet_ScreenName() {
 		return (EAttribute)portalPortletEClass.getEStructuralFeatures().get(6);
 	}
 
@@ -1002,7 +989,7 @@ public class PortalPackageImpl extends EPackageImpl implements PortalPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getPortalPortlet_Screenshot() {
+	public EAttribute getPortalPortlet_ScreenName() {
 		return (EAttribute)portalPortletEClass.getEStructuralFeatures().get(7);
 	}
 
@@ -1012,7 +999,7 @@ public class PortalPackageImpl extends EPackageImpl implements PortalPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getPortalPortlet_SecurityMainAction() {
+	public EAttribute getPortalPortlet_Screenshot() {
 		return (EAttribute)portalPortletEClass.getEStructuralFeatures().get(8);
 	}
 
@@ -1022,7 +1009,7 @@ public class PortalPackageImpl extends EPackageImpl implements PortalPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getPortalPortlet_SecurityServiceName() {
+	public EAttribute getPortalPortlet_SecurityMainAction() {
 		return (EAttribute)portalPortletEClass.getEStructuralFeatures().get(9);
 	}
 
@@ -1032,8 +1019,18 @@ public class PortalPackageImpl extends EPackageImpl implements PortalPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getPortalPortlet_PortletPortletCategories() {
+	public EAttribute getPortalPortlet_SecurityServiceName() {
 		return (EAttribute)portalPortletEClass.getEStructuralFeatures().get(10);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getPortalPortlet_PortletPortletCategories() {
+		return (EAttribute)portalPortletEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
@@ -1053,36 +1050,6 @@ public class PortalPackageImpl extends EPackageImpl implements PortalPackage {
 	 */
 	@Override
 	public EAttribute getPortletAttribute_PortalPageId() {
-		return (EAttribute)portletAttributeEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getPortletAttribute_PortalPortletId() {
-		return (EReference)portletAttributeEClass.getEStructuralFeatures().get(6);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EAttribute getPortletAttribute_PortletSeqId() {
-		return (EAttribute)portletAttributeEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EAttribute getPortletAttribute_AttrName() {
 		return (EAttribute)portletAttributeEClass.getEStructuralFeatures().get(2);
 	}
 
@@ -1092,7 +1059,17 @@ public class PortalPackageImpl extends EPackageImpl implements PortalPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getPortletAttribute_AttrDescription() {
+	public EReference getPortletAttribute_PortalPortletId() {
+		return (EReference)portletAttributeEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getPortletAttribute_PortletSeqId() {
 		return (EAttribute)portletAttributeEClass.getEStructuralFeatures().get(3);
 	}
 
@@ -1102,7 +1079,17 @@ public class PortalPackageImpl extends EPackageImpl implements PortalPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getPortletAttribute_AttrType() {
+	public EAttribute getPortletAttribute_AttrName() {
+		return (EAttribute)portletAttributeEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getPortletAttribute_AttrDescription() {
 		return (EAttribute)portletAttributeEClass.getEStructuralFeatures().get(4);
 	}
 
@@ -1112,8 +1099,18 @@ public class PortalPackageImpl extends EPackageImpl implements PortalPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getPortletAttribute_AttrValue() {
+	public EAttribute getPortletAttribute_AttrType() {
 		return (EAttribute)portletAttributeEClass.getEStructuralFeatures().get(5);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getPortletAttribute_AttrValue() {
+		return (EAttribute)portletAttributeEClass.getEStructuralFeatures().get(6);
 	}
 
 	/**
@@ -1208,27 +1205,27 @@ public class PortalPackageImpl extends EPackageImpl implements PortalPackage {
 		portalPageEClass = createEClass(PORTAL_PAGE);
 		createEAttribute(portalPageEClass, PORTAL_PAGE__PORTAL_PAGE_ID);
 		createEAttribute(portalPageEClass, PORTAL_PAGE__DESCRIPTION);
+		createEReference(portalPageEClass, PORTAL_PAGE__HELP_CONTENT_ID);
 		createEAttribute(portalPageEClass, PORTAL_PAGE__ORIGINAL_PORTAL_PAGE_ID);
 		createEAttribute(portalPageEClass, PORTAL_PAGE__OWNER_USER_LOGIN_ID);
-		createEAttribute(portalPageEClass, PORTAL_PAGE__PORTAL_PAGE_NAME);
-		createEAttribute(portalPageEClass, PORTAL_PAGE__SEQUENCE_NUM);
 		createEReference(portalPageEClass, PORTAL_PAGE__PARENT_PORTAL_PAGE_ID);
-		createEReference(portalPageEClass, PORTAL_PAGE__SECURITY_GROUP_ID);
-		createEReference(portalPageEClass, PORTAL_PAGE__HELP_CONTENT_ID);
 		createEAttribute(portalPageEClass, PORTAL_PAGE__PORTAL_PAGE_COLUMNS);
+		createEAttribute(portalPageEClass, PORTAL_PAGE__PORTAL_PAGE_NAME);
+		createEReference(portalPageEClass, PORTAL_PAGE__SECURITY_GROUP_ID);
+		createEAttribute(portalPageEClass, PORTAL_PAGE__SEQUENCE_NUM);
 
 		portalPageColumnEClass = createEClass(PORTAL_PAGE_COLUMN);
+		createEReference(portalPageColumnEClass, PORTAL_PAGE_COLUMN__PORTAL_PAGE_ID);
 		createEAttribute(portalPageColumnEClass, PORTAL_PAGE_COLUMN__COLUMN_SEQ_ID);
 		createEAttribute(portalPageColumnEClass, PORTAL_PAGE_COLUMN__COLUMN_WIDTH_PERCENTAGE);
 		createEAttribute(portalPageColumnEClass, PORTAL_PAGE_COLUMN__COLUMN_WIDTH_PIXELS);
-		createEReference(portalPageColumnEClass, PORTAL_PAGE_COLUMN__PORTAL_PAGE_ID);
 
 		portalPagePortletEClass = createEClass(PORTAL_PAGE_PORTLET);
+		createEReference(portalPagePortletEClass, PORTAL_PAGE_PORTLET__PORTAL_PAGE_ID);
+		createEReference(portalPagePortletEClass, PORTAL_PAGE_PORTLET__PORTAL_PORTLET_ID);
 		createEAttribute(portalPagePortletEClass, PORTAL_PAGE_PORTLET__PORTLET_SEQ_ID);
 		createEAttribute(portalPagePortletEClass, PORTAL_PAGE_PORTLET__COLUMN_SEQ_ID);
 		createEAttribute(portalPagePortletEClass, PORTAL_PAGE_PORTLET__SEQUENCE_NUM);
-		createEReference(portalPagePortletEClass, PORTAL_PAGE_PORTLET__PORTAL_PAGE_ID);
-		createEReference(portalPagePortletEClass, PORTAL_PAGE_PORTLET__PORTAL_PORTLET_ID);
 
 		portalPortletEClass = createEClass(PORTAL_PORTLET);
 		createEAttribute(portalPortletEClass, PORTAL_PORTLET__PORTAL_PORTLET_ID);
@@ -1236,21 +1233,21 @@ public class PortalPackageImpl extends EPackageImpl implements PortalPackage {
 		createEAttribute(portalPortletEClass, PORTAL_PORTLET__EDIT_FORM_LOCATION);
 		createEAttribute(portalPortletEClass, PORTAL_PORTLET__EDIT_FORM_NAME);
 		createEAttribute(portalPortletEClass, PORTAL_PORTLET__PORTLET_NAME);
+		createEAttribute(portalPortletEClass, PORTAL_PORTLET__PORTLET_PORTLET_CATEGORIES);
 		createEAttribute(portalPortletEClass, PORTAL_PORTLET__SCREEN_LOCATION);
 		createEAttribute(portalPortletEClass, PORTAL_PORTLET__SCREEN_NAME);
 		createEAttribute(portalPortletEClass, PORTAL_PORTLET__SCREENSHOT);
 		createEAttribute(portalPortletEClass, PORTAL_PORTLET__SECURITY_MAIN_ACTION);
 		createEAttribute(portalPortletEClass, PORTAL_PORTLET__SECURITY_SERVICE_NAME);
-		createEAttribute(portalPortletEClass, PORTAL_PORTLET__PORTLET_PORTLET_CATEGORIES);
 
 		portletAttributeEClass = createEClass(PORTLET_ATTRIBUTE);
+		createEReference(portletAttributeEClass, PORTLET_ATTRIBUTE__PORTAL_PORTLET_ID);
+		createEAttribute(portletAttributeEClass, PORTLET_ATTRIBUTE__ATTR_NAME);
 		createEAttribute(portletAttributeEClass, PORTLET_ATTRIBUTE__PORTAL_PAGE_ID);
 		createEAttribute(portletAttributeEClass, PORTLET_ATTRIBUTE__PORTLET_SEQ_ID);
-		createEAttribute(portletAttributeEClass, PORTLET_ATTRIBUTE__ATTR_NAME);
 		createEAttribute(portletAttributeEClass, PORTLET_ATTRIBUTE__ATTR_DESCRIPTION);
 		createEAttribute(portletAttributeEClass, PORTLET_ATTRIBUTE__ATTR_TYPE);
 		createEAttribute(portletAttributeEClass, PORTLET_ATTRIBUTE__ATTR_VALUE);
-		createEReference(portletAttributeEClass, PORTLET_ATTRIBUTE__PORTAL_PORTLET_ID);
 
 		portletCategoryEClass = createEClass(PORTLET_CATEGORY);
 		createEAttribute(portletCategoryEClass, PORTLET_CATEGORY__PORTLET_CATEGORY_ID);
@@ -1286,8 +1283,8 @@ public class PortalPackageImpl extends EPackageImpl implements PortalPackage {
 
 		// Obtain other dependent packages
 		BizPackage theBizPackage = (BizPackage)EPackage.Registry.INSTANCE.getEPackage(BizPackage.eNS_URI);
-		SecuritygroupPackage theSecuritygroupPackage = (SecuritygroupPackage)EPackage.Registry.INSTANCE.getEPackage(SecuritygroupPackage.eNS_URI);
 		ContentPackage theContentPackage = (ContentPackage)EPackage.Registry.INSTANCE.getEPackage(ContentPackage.eNS_URI);
+		SecuritygroupPackage theSecuritygroupPackage = (SecuritygroupPackage)EPackage.Registry.INSTANCE.getEPackage(SecuritygroupPackage.eNS_URI);
 
 		// Create type parameters
 
@@ -1306,35 +1303,35 @@ public class PortalPackageImpl extends EPackageImpl implements PortalPackage {
 		initEClass(portalPageEClass, PortalPage.class, "PortalPage", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getPortalPage_PortalPageId(), ecorePackage.getEString(), "portalPageId", null, 1, 1, PortalPage.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getPortalPage_Description(), ecorePackage.getEString(), "description", null, 0, 1, PortalPage.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getPortalPage_OriginalPortalPageId(), ecorePackage.getEString(), "originalPortalPageId", null, 0, 1, PortalPage.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getPortalPage_OwnerUserLoginId(), ecorePackage.getEString(), "ownerUserLoginId", null, 0, 1, PortalPage.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getPortalPage_PortalPageName(), ecorePackage.getEString(), "portalPageName", null, 0, 1, PortalPage.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getPortalPage_SequenceNum(), ecorePackage.getELong(), "sequenceNum", null, 0, 1, PortalPage.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getPortalPage_ParentPortalPageId(), this.getPortalPage(), null, "parentPortalPageId", null, 0, 1, PortalPage.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		getPortalPage_ParentPortalPageId().getEKeys().add(this.getPortalPage_PortalPageId());
-		initEReference(getPortalPage_SecurityGroupId(), theSecuritygroupPackage.getSecurityGroup(), null, "securityGroupId", null, 0, 1, PortalPage.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		getPortalPage_SecurityGroupId().getEKeys().add(theSecuritygroupPackage.getSecurityGroup_GroupId());
 		initEReference(getPortalPage_HelpContentId(), theContentPackage.getContent(), null, "helpContentId", null, 0, 1, PortalPage.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getPortalPage_HelpContentId().getEKeys().add(theContentPackage.getContent_ContentId());
-		initEAttribute(getPortalPage_PortalPageColumns(), ecorePackage.getEString(), "portalPageColumns", null, 1, -1, PortalPage.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getPortalPage_OriginalPortalPageId(), ecorePackage.getEString(), "originalPortalPageId", null, 0, 1, PortalPage.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getPortalPage_OwnerUserLoginId(), ecorePackage.getEString(), "ownerUserLoginId", null, 0, 1, PortalPage.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getPortalPage_ParentPortalPageId(), this.getPortalPage(), null, "parentPortalPageId", null, 0, 1, PortalPage.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getPortalPage_ParentPortalPageId().getEKeys().add(this.getPortalPage_PortalPageId());
+		initEAttribute(getPortalPage_PortalPageColumns(), ecorePackage.getEString(), "portalPageColumns", null, 0, -1, PortalPage.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getPortalPage_PortalPageName(), ecorePackage.getEString(), "portalPageName", null, 0, 1, PortalPage.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getPortalPage_SecurityGroupId(), theSecuritygroupPackage.getSecurityGroup(), null, "securityGroupId", null, 0, 1, PortalPage.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getPortalPage_SecurityGroupId().getEKeys().add(theSecuritygroupPackage.getSecurityGroup_GroupId());
+		initEAttribute(getPortalPage_SequenceNum(), ecorePackage.getELong(), "sequenceNum", null, 0, 1, PortalPage.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		addEOperation(portalPageEClass, ecorePackage.getEString(), "childPortalPages", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(portalPageColumnEClass, PortalPageColumn.class, "PortalPageColumn", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getPortalPageColumn_PortalPageId(), this.getPortalPage(), null, "portalPageId", null, 1, 1, PortalPageColumn.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getPortalPageColumn_PortalPageId().getEKeys().add(this.getPortalPage_PortalPageId());
 		initEAttribute(getPortalPageColumn_ColumnSeqId(), ecorePackage.getEString(), "columnSeqId", null, 1, 1, PortalPageColumn.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getPortalPageColumn_ColumnWidthPercentage(), ecorePackage.getELong(), "columnWidthPercentage", null, 0, 1, PortalPageColumn.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getPortalPageColumn_ColumnWidthPixels(), ecorePackage.getELong(), "columnWidthPixels", null, 0, 1, PortalPageColumn.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getPortalPageColumn_PortalPageId(), this.getPortalPage(), null, "portalPageId", null, 0, 1, PortalPageColumn.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		getPortalPageColumn_PortalPageId().getEKeys().add(this.getPortalPage_PortalPageId());
 
 		initEClass(portalPagePortletEClass, PortalPagePortlet.class, "PortalPagePortlet", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getPortalPagePortlet_PortalPageId(), this.getPortalPage(), null, "portalPageId", null, 1, 1, PortalPagePortlet.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getPortalPagePortlet_PortalPageId().getEKeys().add(this.getPortalPage_PortalPageId());
+		initEReference(getPortalPagePortlet_PortalPortletId(), this.getPortalPortlet(), null, "portalPortletId", null, 1, 1, PortalPagePortlet.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getPortalPagePortlet_PortalPortletId().getEKeys().add(this.getPortalPortlet_PortalPortletId());
 		initEAttribute(getPortalPagePortlet_PortletSeqId(), ecorePackage.getEString(), "portletSeqId", null, 1, 1, PortalPagePortlet.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getPortalPagePortlet_ColumnSeqId(), ecorePackage.getEString(), "columnSeqId", null, 0, 1, PortalPagePortlet.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getPortalPagePortlet_SequenceNum(), ecorePackage.getELong(), "sequenceNum", null, 0, 1, PortalPagePortlet.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getPortalPagePortlet_PortalPageId(), this.getPortalPage(), null, "portalPageId", null, 0, 1, PortalPagePortlet.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		getPortalPagePortlet_PortalPageId().getEKeys().add(this.getPortalPage_PortalPageId());
-		initEReference(getPortalPagePortlet_PortalPortletId(), this.getPortalPortlet(), null, "portalPortletId", null, 0, 1, PortalPagePortlet.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		getPortalPagePortlet_PortalPortletId().getEKeys().add(this.getPortalPortlet_PortalPortletId());
 
 		initEClass(portalPortletEClass, PortalPortlet.class, "PortalPortlet", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getPortalPortlet_PortalPortletId(), ecorePackage.getEString(), "portalPortletId", null, 1, 1, PortalPortlet.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1342,33 +1339,33 @@ public class PortalPackageImpl extends EPackageImpl implements PortalPackage {
 		initEAttribute(getPortalPortlet_EditFormLocation(), ecorePackage.getEString(), "editFormLocation", null, 0, 1, PortalPortlet.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getPortalPortlet_EditFormName(), ecorePackage.getEString(), "editFormName", null, 0, 1, PortalPortlet.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getPortalPortlet_PortletName(), ecorePackage.getEString(), "portletName", null, 0, 1, PortalPortlet.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getPortalPortlet_PortletPortletCategories(), ecorePackage.getEString(), "portletPortletCategories", null, 0, -1, PortalPortlet.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getPortalPortlet_ScreenLocation(), ecorePackage.getEString(), "screenLocation", null, 0, 1, PortalPortlet.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getPortalPortlet_ScreenName(), ecorePackage.getEString(), "screenName", null, 0, 1, PortalPortlet.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getPortalPortlet_Screenshot(), ecorePackage.getEString(), "screenshot", null, 0, 1, PortalPortlet.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getPortalPortlet_SecurityMainAction(), ecorePackage.getEString(), "securityMainAction", null, 0, 1, PortalPortlet.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getPortalPortlet_SecurityServiceName(), ecorePackage.getEString(), "securityServiceName", null, 0, 1, PortalPortlet.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getPortalPortlet_PortletPortletCategories(), ecorePackage.getEString(), "portletPortletCategories", null, 1, -1, PortalPortlet.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(portletAttributeEClass, PortletAttribute.class, "PortletAttribute", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getPortletAttribute_PortalPortletId(), this.getPortalPortlet(), null, "portalPortletId", null, 1, 1, PortletAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getPortletAttribute_PortalPortletId().getEKeys().add(this.getPortalPortlet_PortalPortletId());
+		initEAttribute(getPortletAttribute_AttrName(), ecorePackage.getEString(), "attrName", null, 1, 1, PortletAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getPortletAttribute_PortalPageId(), ecorePackage.getEString(), "portalPageId", null, 1, 1, PortletAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getPortletAttribute_PortletSeqId(), ecorePackage.getEString(), "portletSeqId", null, 1, 1, PortletAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getPortletAttribute_AttrName(), ecorePackage.getEString(), "attrName", null, 1, 1, PortletAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getPortletAttribute_AttrDescription(), ecorePackage.getEString(), "attrDescription", null, 0, 1, PortletAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getPortletAttribute_AttrType(), ecorePackage.getEString(), "attrType", null, 0, 1, PortletAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getPortletAttribute_AttrValue(), ecorePackage.getEString(), "attrValue", null, 0, 1, PortletAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getPortletAttribute_PortalPortletId(), this.getPortalPortlet(), null, "portalPortletId", null, 0, 1, PortletAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		getPortletAttribute_PortalPortletId().getEKeys().add(this.getPortalPortlet_PortalPortletId());
 
 		initEClass(portletCategoryEClass, PortletCategory.class, "PortletCategory", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getPortletCategory_PortletCategoryId(), ecorePackage.getEString(), "portletCategoryId", null, 1, 1, PortletCategory.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getPortletCategory_Description(), ecorePackage.getEString(), "description", null, 0, 1, PortletCategory.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		addEOperation(portletCategoryEClass, ecorePackage.getEString(), "portletPortletCategories", 1, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(portletCategoryEClass, ecorePackage.getEString(), "portletPortletCategories", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(portletPortletCategoryEClass, PortletPortletCategory.class, "PortletPortletCategory", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getPortletPortletCategory_PortalPortletId(), this.getPortalPortlet(), null, "portalPortletId", null, 0, 1, PortletPortletCategory.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getPortletPortletCategory_PortalPortletId(), this.getPortalPortlet(), null, "portalPortletId", null, 1, 1, PortletPortletCategory.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getPortletPortletCategory_PortalPortletId().getEKeys().add(this.getPortalPortlet_PortalPortletId());
-		initEReference(getPortletPortletCategory_PortletCategoryId(), this.getPortletCategory(), null, "portletCategoryId", null, 0, 1, PortletPortletCategory.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getPortletPortletCategory_PortletCategoryId(), this.getPortletCategory(), null, "portletCategoryId", null, 1, 1, PortletPortletCategory.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getPortletPortletCategory_PortletCategoryId().getEKeys().add(this.getPortletCategory_PortletCategoryId());
 
 		// Create annotations
@@ -1394,19 +1391,45 @@ public class PortalPackageImpl extends EPackageImpl implements PortalPackage {
 		  (portalPageEClass,
 		   source,
 		   new String[] {
+			   "dictionary", "CommonPortalEntityLabels",
 			   "formula", "description"
+		   });
+		addAnnotation
+		  (portalPageColumnEClass,
+		   source,
+		   new String[] {
+			   "title", "Defines a Portal Page"
+		   });
+		addAnnotation
+		  (portalPagePortletEClass,
+		   source,
+		   new String[] {
+			   "title", "Defines Portlets included into Portal Pages"
 		   });
 		addAnnotation
 		  (portalPortletEClass,
 		   source,
 		   new String[] {
+			   "title", "Defines a Portlet to be used in Portals",
 			   "formula", "description"
+		   });
+		addAnnotation
+		  (portletAttributeEClass,
+		   source,
+		   new String[] {
+			   "title", "Allows to set different attribute values for each instance of the same portlet"
 		   });
 		addAnnotation
 		  (portletCategoryEClass,
 		   source,
 		   new String[] {
 			   "formula", "description"
+		   });
+		addAnnotation
+		  (portletPortletCategoryEClass,
+		   source,
+		   new String[] {
+			   "title", "Defines Portlets included into Categories"
 		   });
 	}
 
@@ -1440,6 +1463,13 @@ public class PortalPackageImpl extends EPackageImpl implements PortalPackage {
 			   "length", "255"
 		   });
 		addAnnotation
+		  (getPortalPage_HelpContentId(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
 		  (getPortalPage_OriginalPortalPageId(),
 		   source,
 		   new String[] {
@@ -1454,11 +1484,32 @@ public class PortalPackageImpl extends EPackageImpl implements PortalPackage {
 			   "length", "255"
 		   });
 		addAnnotation
+		  (getPortalPage_ParentPortalPageId(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (getPortalPage_PortalPageColumns(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
 		  (getPortalPage_PortalPageName(),
 		   source,
 		   new String[] {
 			   "type", "name",
 			   "length", "100"
+		   });
+		addAnnotation
+		  (getPortalPage_SecurityGroupId(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
 		   });
 		addAnnotation
 		  (getPortalPage_SequenceNum(),
@@ -1469,7 +1520,7 @@ public class PortalPackageImpl extends EPackageImpl implements PortalPackage {
 			   "scale", "0"
 		   });
 		addAnnotation
-		  (getPortalPage_PortalPageColumns(),
+		  (getPortalPageColumn_PortalPageId(),
 		   source,
 		   new String[] {
 			   "type", "id",
@@ -1497,6 +1548,20 @@ public class PortalPackageImpl extends EPackageImpl implements PortalPackage {
 			   "type", "numeric",
 			   "precision", "20",
 			   "scale", "0"
+		   });
+		addAnnotation
+		  (getPortalPagePortlet_PortalPageId(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (getPortalPagePortlet_PortalPortletId(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
 		   });
 		addAnnotation
 		  (getPortalPagePortlet_PortletSeqId(),
@@ -1556,6 +1621,13 @@ public class PortalPackageImpl extends EPackageImpl implements PortalPackage {
 			   "length", "100"
 		   });
 		addAnnotation
+		  (getPortalPortlet_PortletPortletCategories(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
 		  (getPortalPortlet_ScreenLocation(),
 		   source,
 		   new String[] {
@@ -1591,11 +1663,18 @@ public class PortalPackageImpl extends EPackageImpl implements PortalPackage {
 			   "length", "255"
 		   });
 		addAnnotation
-		  (getPortalPortlet_PortletPortletCategories(),
+		  (getPortletAttribute_PortalPortletId(),
 		   source,
 		   new String[] {
 			   "type", "id",
 			   "length", "20"
+		   });
+		addAnnotation
+		  (getPortletAttribute_AttrName(),
+		   source,
+		   new String[] {
+			   "type", "id-long",
+			   "length", "60"
 		   });
 		addAnnotation
 		  (getPortletAttribute_PortalPageId(),
@@ -1610,13 +1689,6 @@ public class PortalPackageImpl extends EPackageImpl implements PortalPackage {
 		   new String[] {
 			   "type", "id",
 			   "length", "20"
-		   });
-		addAnnotation
-		  (getPortletAttribute_AttrName(),
-		   source,
-		   new String[] {
-			   "type", "id-long",
-			   "length", "60"
 		   });
 		addAnnotation
 		  (getPortletAttribute_AttrDescription(),
@@ -1660,6 +1732,20 @@ public class PortalPackageImpl extends EPackageImpl implements PortalPackage {
 			   "type", "description",
 			   "length", "255"
 		   });
+		addAnnotation
+		  (getPortletPortletCategory_PortalPortletId(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (getPortletPortletCategory_PortletCategoryId(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
 	}
 
 	/**
@@ -1677,10 +1763,22 @@ public class PortalPackageImpl extends EPackageImpl implements PortalPackage {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (getPortalPage_PortalPageId(),
+		  (getPortalPage_HelpContentId(),
 		   source,
 		   new String[] {
-			   "key", "true"
+			   "help", "Used to give contentId which will be shown when help on this page will be called"
+		   });
+		addAnnotation
+		  (getPortalPage_OriginalPortalPageId(),
+		   source,
+		   new String[] {
+			   "help", "The system portal page this page is derived from"
+		   });
+		addAnnotation
+		  (getPortalPage_ParentPortalPageId(),
+		   source,
+		   new String[] {
+			   "help", "the parent this page is belonging to, normally the startpage of the portal page group"
 		   });
 		addAnnotation
 		  (getPortalPage_PortalPageColumns(),
@@ -1689,7 +1787,25 @@ public class PortalPackageImpl extends EPackageImpl implements PortalPackage {
 			   "derived", "true"
 		   });
 		addAnnotation
+		  (getPortalPageColumn_PortalPageId(),
+		   source,
+		   new String[] {
+			   "key", "true"
+		   });
+		addAnnotation
 		  (getPortalPageColumn_ColumnSeqId(),
+		   source,
+		   new String[] {
+			   "key", "true"
+		   });
+		addAnnotation
+		  (getPortalPagePortlet_PortalPageId(),
+		   source,
+		   new String[] {
+			   "key", "true"
+		   });
+		addAnnotation
+		  (getPortalPagePortlet_PortalPortletId(),
 		   source,
 		   new String[] {
 			   "key", "true"
@@ -1698,19 +1814,38 @@ public class PortalPackageImpl extends EPackageImpl implements PortalPackage {
 		  (getPortalPagePortlet_PortletSeqId(),
 		   source,
 		   new String[] {
-			   "key", "true"
-		   });
-		addAnnotation
-		  (getPortalPortlet_PortalPortletId(),
-		   source,
-		   new String[] {
-			   "key", "true"
+			   "key", "true",
+			   "help", "Identify the portalPortlet instance in case more copy of the same portalPortlet are present in the same portalPage"
 		   });
 		addAnnotation
 		  (getPortalPortlet_PortletPortletCategories(),
 		   source,
 		   new String[] {
 			   "derived", "true"
+		   });
+		addAnnotation
+		  (getPortalPortlet_SecurityMainAction(),
+		   source,
+		   new String[] {
+			   "help", "The main action which can be done with this portlet, possible values: CREATE UPDATE VIEW DELETE"
+		   });
+		addAnnotation
+		  (getPortalPortlet_SecurityServiceName(),
+		   source,
+		   new String[] {
+			   "help", "The service named here is used to see if current user can see the portlet on the list of available portlets; the screen that the portlet calls should also call this service to check permission and not render; the service named here must implement the \"permissionInterface\" service just like services used for service permissions"
+		   });
+		addAnnotation
+		  (getPortletAttribute_PortalPortletId(),
+		   source,
+		   new String[] {
+			   "key", "true"
+		   });
+		addAnnotation
+		  (getPortletAttribute_AttrName(),
+		   source,
+		   new String[] {
+			   "key", "true"
 		   });
 		addAnnotation
 		  (getPortletAttribute_PortalPageId(),
@@ -1725,19 +1860,19 @@ public class PortalPackageImpl extends EPackageImpl implements PortalPackage {
 			   "key", "true"
 		   });
 		addAnnotation
-		  (getPortletAttribute_AttrName(),
-		   source,
-		   new String[] {
-			   "key", "true"
-		   });
-		addAnnotation
 		  (portletCategoryEClass.getEOperations().get(0),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (getPortletCategory_PortletCategoryId(),
+		  (getPortletPortletCategory_PortalPortletId(),
+		   source,
+		   new String[] {
+			   "key", "true"
+		   });
+		addAnnotation
+		  (getPortletPortletCategory_PortletCategoryId(),
 		   source,
 		   new String[] {
 			   "key", "true"
@@ -1758,27 +1893,18 @@ public class PortalPackageImpl extends EPackageImpl implements PortalPackage {
 		   new String[] {
 			   "frame", "PortalPage",
 			   "route", "parentPortalPageId"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
 		  (getPortalPage_PortalPageColumns(),
 		   source,
 		   new String[] {
 			   "frame", "PortalPageColumn"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
 		  (getPortalPortlet_PortletPortletCategories(),
 		   source,
 		   new String[] {
 			   "frame", "PortletPortletCategory"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
 		  (portletCategoryEClass.getEOperations().get(0),
@@ -1786,9 +1912,6 @@ public class PortalPackageImpl extends EPackageImpl implements PortalPackage {
 		   new String[] {
 			   "frame", "PortletPortletCategory",
 			   "route", "portletCategoryId"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 	}
 

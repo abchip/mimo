@@ -72,7 +72,6 @@ public interface BenefitType extends BizEntity {
 	 * @see org.abchip.mimo.biz.humanres.employment.EmploymentPackage#getBenefitType_BenefitTypeId()
 	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getBenefitTypeId();
@@ -177,6 +176,7 @@ public interface BenefitType extends BizEntity {
 	 * @see #setParentTypeId(BenefitType)
 	 * @see org.abchip.mimo.biz.humanres.employment.EmploymentPackage#getBenefitType_ParentTypeId()
 	 * @model keys="benefitTypeId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	BenefitType getParentTypeId();

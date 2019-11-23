@@ -201,7 +201,6 @@ public interface StandardLanguage extends BizEntity {
 	 * @see org.abchip.mimo.biz.common.language.LanguagePackage#getStandardLanguage_StandardLanguageId()
 	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getStandardLanguageId();

@@ -19,14 +19,14 @@ import org.abchip.mimo.biz.common.uom.Uom;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.product.product.ProductMeter#getMeterName <em>Meter Name</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.ProductMeter#getProductId <em>Product Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.ProductMeter#getProductMeterTypeId <em>Product Meter Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.product.ProductMeter#getMeterName <em>Meter Name</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.ProductMeter#getMeterUomId <em>Meter Uom Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.product.product.ProductPackage#getProductMeter()
- * @model
+ * @model annotation="mimo-ent-frame dictionary='ProductEntityLabels'"
  * @generated
  */
 public interface ProductMeter extends BizEntityTyped<ProductMeterType> {
@@ -68,6 +68,8 @@ public interface ProductMeter extends BizEntityTyped<ProductMeterType> {
 	 * @see #setMeterUomId(Uom)
 	 * @see org.abchip.mimo.biz.product.product.ProductPackage#getProductMeter_MeterUomId()
 	 * @model keys="uomId"
+	 *        annotation="mimo-ent-slot help='Is on this entity instead of the ProductMeterType entity for more flexibility; for example being able to find all speedometers regardless of their primary unit'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Uom getMeterUomId();
@@ -93,7 +95,9 @@ public interface ProductMeter extends BizEntityTyped<ProductMeterType> {
 	 * @return the value of the '<em>Product Id</em>' reference.
 	 * @see #setProductId(Product)
 	 * @see org.abchip.mimo.biz.product.product.ProductPackage#getProductMeter_ProductId()
-	 * @model keys="productId"
+	 * @model keys="productId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Product getProductId();
@@ -119,7 +123,9 @@ public interface ProductMeter extends BizEntityTyped<ProductMeterType> {
 	 * @return the value of the '<em>Product Meter Type Id</em>' reference.
 	 * @see #setProductMeterTypeId(ProductMeterType)
 	 * @see org.abchip.mimo.biz.product.product.ProductPackage#getProductMeter_ProductMeterTypeId()
-	 * @model keys="productMeterTypeId"
+	 * @model keys="productMeterTypeId" required="true"
+	 *        annotation="mimo-ent-slot key='true' help='Part of the primary key as different meters on a machine should have distinct types'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ProductMeterType getProductMeterTypeId();

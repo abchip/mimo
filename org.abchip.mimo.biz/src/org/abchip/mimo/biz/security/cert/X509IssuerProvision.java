@@ -29,7 +29,7 @@ import org.abchip.mimo.biz.BizEntity;
  * </ul>
  *
  * @see org.abchip.mimo.biz.security.cert.CertPackage#getX509IssuerProvision()
- * @model
+ * @model annotation="mimo-ent-frame title='Valid issuer data for authentication of x.509 certificates'"
  * @generated
  */
 public interface X509IssuerProvision extends BizEntity {
@@ -46,7 +46,6 @@ public interface X509IssuerProvision extends BizEntity {
 	 * @see org.abchip.mimo.biz.security.cert.CertPackage#getX509IssuerProvision_CertProvisionId()
 	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getCertProvisionId();

@@ -766,8 +766,6 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 		// Create annotations
 		// mimo-ent-format
 		createMimoentformatAnnotations();
-		// mimo-ent-slot
-		createMimoentslotAnnotations();
 	}
 
 	/**
@@ -790,22 +788,6 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 		   source,
 		   new String[] {
 			   "type", "byte-array"
-		   });
-	}
-
-	/**
-	 * Initializes the annotations for <b>mimo-ent-slot</b>.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void createMimoentslotAnnotations() {
-		String source = "mimo-ent-slot";
-		addAnnotation
-		  (getJavaResource_ResourceName(),
-		   source,
-		   new String[] {
-			   "key", "true"
 		   });
 	}
 

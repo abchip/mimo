@@ -21,6 +21,7 @@ import org.eclipse.emf.ecore.EClass;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link org.abchip.mimo.biz.content.content.impl.ContentSearchConstraintImpl#getContentSearchResultId <em>Content Search Result Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.content.impl.ContentSearchConstraintImpl#getConstraintSeqId <em>Constraint Seq Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.content.impl.ContentSearchConstraintImpl#getAnyPrefix <em>Any Prefix</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.content.impl.ContentSearchConstraintImpl#getAnySuffix <em>Any Suffix</em>}</li>
@@ -31,7 +32,6 @@ import org.eclipse.emf.ecore.EClass;
  *   <li>{@link org.abchip.mimo.biz.content.content.impl.ContentSearchConstraintImpl#isIsAnd <em>Is And</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.content.impl.ContentSearchConstraintImpl#getLowValue <em>Low Value</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.content.impl.ContentSearchConstraintImpl#isRemoveStems <em>Remove Stems</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.content.content.impl.ContentSearchConstraintImpl#getContentSearchResultId <em>Content Search Result Id</em>}</li>
  * </ul>
  *
  * @generated

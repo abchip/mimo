@@ -26,7 +26,7 @@ import org.abchip.mimo.biz.BizEntityType;
  * </ul>
  *
  * @see org.abchip.mimo.biz.order.return_.ReturnPackage#getReturnItemType()
- * @model annotation="mimo-ent-frame formula='description'"
+ * @model annotation="mimo-ent-frame help='ReturnItemType records the type of a ReturnItem' formula='description'"
  * @generated
  */
 public interface ReturnItemType extends BizEntityType<ReturnItem> {
@@ -68,6 +68,7 @@ public interface ReturnItemType extends BizEntityType<ReturnItem> {
 	 * @see #setParentTypeId(ReturnItemType)
 	 * @see org.abchip.mimo.biz.order.return_.ReturnPackage#getReturnItemType_ParentTypeId()
 	 * @model keys="returnItemTypeId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ReturnItemType getParentTypeId();
@@ -125,7 +126,6 @@ public interface ReturnItemType extends BizEntityType<ReturnItem> {
 	 * @see org.abchip.mimo.biz.order.return_.ReturnPackage#getReturnItemType_ReturnItemTypeId()
 	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getReturnItemTypeId();

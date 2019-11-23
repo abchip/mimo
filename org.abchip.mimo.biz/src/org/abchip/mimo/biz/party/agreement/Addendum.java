@@ -24,8 +24,8 @@ import org.abchip.mimo.biz.BizEntity;
  *   <li>{@link org.abchip.mimo.biz.party.agreement.Addendum#getAddendumCreationDate <em>Addendum Creation Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.agreement.Addendum#getAddendumEffectiveDate <em>Addendum Effective Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.agreement.Addendum#getAddendumText <em>Addendum Text</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.party.agreement.Addendum#getAgreementItemSeqId <em>Agreement Item Seq Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.agreement.Addendum#getAgreementId <em>Agreement Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.party.agreement.Addendum#getAgreementItemSeqId <em>Agreement Item Seq Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.party.agreement.AgreementPackage#getAddendum()
@@ -98,7 +98,6 @@ public interface Addendum extends BizEntity {
 	 * @see org.abchip.mimo.biz.party.agreement.AgreementPackage#getAddendum_AddendumId()
 	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getAddendumId();
@@ -177,6 +176,7 @@ public interface Addendum extends BizEntity {
 	 * @see #setAgreementId(Agreement)
 	 * @see org.abchip.mimo.biz.party.agreement.AgreementPackage#getAddendum_AgreementId()
 	 * @model keys="agreementId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Agreement getAgreementId();

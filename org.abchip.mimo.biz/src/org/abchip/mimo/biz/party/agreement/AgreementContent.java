@@ -21,12 +21,12 @@ import org.abchip.mimo.biz.content.content.Content;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.party.agreement.AgreementContent#getAgreementItemSeqId <em>Agreement Item Seq Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.party.agreement.AgreementContent#getFromDate <em>From Date</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.party.agreement.AgreementContent#getThruDate <em>Thru Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.agreement.AgreementContent#getAgreementId <em>Agreement Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.agreement.AgreementContent#getContentId <em>Content Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.agreement.AgreementContent#getAgreementContentTypeId <em>Agreement Content Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.party.agreement.AgreementContent#getAgreementItemSeqId <em>Agreement Item Seq Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.party.agreement.AgreementContent#getFromDate <em>From Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.party.agreement.AgreementContent#getThruDate <em>Thru Date</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.party.agreement.AgreementPackage#getAgreementContent()
@@ -46,8 +46,8 @@ public interface AgreementContent extends BizEntityTyped<AgreementContentType> {
 	 * @see #setAgreementItemSeqId(String)
 	 * @see org.abchip.mimo.biz.party.agreement.AgreementPackage#getAgreementContent_AgreementItemSeqId()
 	 * @model required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	String getAgreementItemSeqId();
@@ -73,7 +73,9 @@ public interface AgreementContent extends BizEntityTyped<AgreementContentType> {
 	 * @return the value of the '<em>Content Id</em>' reference.
 	 * @see #setContentId(Content)
 	 * @see org.abchip.mimo.biz.party.agreement.AgreementPackage#getAgreementContent_ContentId()
-	 * @model keys="contentId"
+	 * @model keys="contentId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Content getContentId();
@@ -100,8 +102,8 @@ public interface AgreementContent extends BizEntityTyped<AgreementContentType> {
 	 * @see #setFromDate(Date)
 	 * @see org.abchip.mimo.biz.party.agreement.AgreementPackage#getAgreementContent_FromDate()
 	 * @model required="true"
-	 *        annotation="mimo-ent-format type='date-time'"
 	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getFromDate();
@@ -153,7 +155,9 @@ public interface AgreementContent extends BizEntityTyped<AgreementContentType> {
 	 * @return the value of the '<em>Agreement Id</em>' reference.
 	 * @see #setAgreementId(Agreement)
 	 * @see org.abchip.mimo.biz.party.agreement.AgreementPackage#getAgreementContent_AgreementId()
-	 * @model keys="agreementId"
+	 * @model keys="agreementId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Agreement getAgreementId();
@@ -179,7 +183,9 @@ public interface AgreementContent extends BizEntityTyped<AgreementContentType> {
 	 * @return the value of the '<em>Agreement Content Type Id</em>' reference.
 	 * @see #setAgreementContentTypeId(AgreementContentType)
 	 * @see org.abchip.mimo.biz.party.agreement.AgreementPackage#getAgreementContent_AgreementContentTypeId()
-	 * @model keys="agreementContentTypeId"
+	 * @model keys="agreementContentTypeId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	AgreementContentType getAgreementContentTypeId();

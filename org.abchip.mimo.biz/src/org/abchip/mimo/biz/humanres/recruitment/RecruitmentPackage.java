@@ -117,13 +117,22 @@ public interface RecruitmentPackage extends EPackage {
 	int JOB_INTERVIEW__JOB_INTERVIEW_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 0;
 
 	/**
+	 * The feature id for the '<em><b>Grade Secured Enum Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int JOB_INTERVIEW__GRADE_SECURED_ENUM_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 1;
+
+	/**
 	 * The feature id for the '<em><b>Job Interview Date</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int JOB_INTERVIEW__JOB_INTERVIEW_DATE = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 1;
+	int JOB_INTERVIEW__JOB_INTERVIEW_DATE = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Job Interview Result</b></em>' attribute.
@@ -132,25 +141,7 @@ public interface RecruitmentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int JOB_INTERVIEW__JOB_INTERVIEW_RESULT = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 2;
-
-	/**
-	 * The feature id for the '<em><b>Job Interviewee Party Id</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int JOB_INTERVIEW__JOB_INTERVIEWEE_PARTY_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 3;
-
-	/**
-	 * The feature id for the '<em><b>Job Interviewer Party Id</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int JOB_INTERVIEW__JOB_INTERVIEWER_PARTY_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 4;
+	int JOB_INTERVIEW__JOB_INTERVIEW_RESULT = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Job Interview Type Id</b></em>' reference.
@@ -159,7 +150,25 @@ public interface RecruitmentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int JOB_INTERVIEW__JOB_INTERVIEW_TYPE_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 5;
+	int JOB_INTERVIEW__JOB_INTERVIEW_TYPE_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 4;
+
+	/**
+	 * The feature id for the '<em><b>Job Interviewee Party Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int JOB_INTERVIEW__JOB_INTERVIEWEE_PARTY_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 5;
+
+	/**
+	 * The feature id for the '<em><b>Job Interviewer Party Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int JOB_INTERVIEW__JOB_INTERVIEWER_PARTY_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Job Requisition Id</b></em>' reference.
@@ -168,16 +177,7 @@ public interface RecruitmentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int JOB_INTERVIEW__JOB_REQUISITION_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 6;
-
-	/**
-	 * The feature id for the '<em><b>Grade Secured Enum Id</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int JOB_INTERVIEW__GRADE_SECURED_ENUM_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 7;
+	int JOB_INTERVIEW__JOB_REQUISITION_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 7;
 
 	/**
 	 * The number of structural features of the '<em>Job Interview</em>' class.
@@ -344,13 +344,22 @@ public interface RecruitmentPackage extends EPackage {
 	int JOB_REQUISITION__DURATION_MONTHS = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
 
 	/**
+	 * The feature id for the '<em><b>Exam Type Enum Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int JOB_REQUISITION__EXAM_TYPE_ENUM_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
+
+	/**
 	 * The feature id for the '<em><b>Experience Months</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int JOB_REQUISITION__EXPERIENCE_MONTHS = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
+	int JOB_REQUISITION__EXPERIENCE_MONTHS = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Experience Years</b></em>' attribute.
@@ -359,7 +368,7 @@ public interface RecruitmentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int JOB_REQUISITION__EXPERIENCE_YEARS = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
+	int JOB_REQUISITION__EXPERIENCE_YEARS = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Gender</b></em>' attribute.
@@ -368,7 +377,7 @@ public interface RecruitmentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int JOB_REQUISITION__GENDER = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 5;
+	int JOB_REQUISITION__GENDER = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Job Location</b></em>' attribute.
@@ -377,61 +386,7 @@ public interface RecruitmentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int JOB_REQUISITION__JOB_LOCATION = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 6;
-
-	/**
-	 * The feature id for the '<em><b>Job Requisition Date</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int JOB_REQUISITION__JOB_REQUISITION_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 7;
-
-	/**
-	 * The feature id for the '<em><b>No Of Resources</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int JOB_REQUISITION__NO_OF_RESOURCES = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 8;
-
-	/**
-	 * The feature id for the '<em><b>Qualification</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int JOB_REQUISITION__QUALIFICATION = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 9;
-
-	/**
-	 * The feature id for the '<em><b>Required On Date</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int JOB_REQUISITION__REQUIRED_ON_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 10;
-
-	/**
-	 * The feature id for the '<em><b>Skill Type Id</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int JOB_REQUISITION__SKILL_TYPE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 11;
-
-	/**
-	 * The feature id for the '<em><b>Exam Type Enum Id</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int JOB_REQUISITION__EXAM_TYPE_ENUM_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 12;
+	int JOB_REQUISITION__JOB_LOCATION = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>Job Posting Type Enum Id</b></em>' reference.
@@ -440,7 +395,52 @@ public interface RecruitmentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int JOB_REQUISITION__JOB_POSTING_TYPE_ENUM_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 13;
+	int JOB_REQUISITION__JOB_POSTING_TYPE_ENUM_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 8;
+
+	/**
+	 * The feature id for the '<em><b>Job Requisition Date</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int JOB_REQUISITION__JOB_REQUISITION_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 9;
+
+	/**
+	 * The feature id for the '<em><b>No Of Resources</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int JOB_REQUISITION__NO_OF_RESOURCES = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 10;
+
+	/**
+	 * The feature id for the '<em><b>Qualification</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int JOB_REQUISITION__QUALIFICATION = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 11;
+
+	/**
+	 * The feature id for the '<em><b>Required On Date</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int JOB_REQUISITION__REQUIRED_ON_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 12;
+
+	/**
+	 * The feature id for the '<em><b>Skill Type Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int JOB_REQUISITION__SKILL_TYPE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 13;
 
 	/**
 	 * The number of structural features of the '<em>Job Requisition</em>' class.

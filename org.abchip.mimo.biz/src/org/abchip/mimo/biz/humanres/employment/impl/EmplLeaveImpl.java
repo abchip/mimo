@@ -26,14 +26,14 @@ import org.eclipse.emf.ecore.EClass;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.humanres.employment.impl.EmplLeaveImpl#getFromDate <em>From Date</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.humanres.employment.impl.EmplLeaveImpl#getDescription <em>Description</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.humanres.employment.impl.EmplLeaveImpl#getThruDate <em>Thru Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.employment.impl.EmplLeaveImpl#getPartyId <em>Party Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.employment.impl.EmplLeaveImpl#getLeaveTypeId <em>Leave Type Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.humanres.employment.impl.EmplLeaveImpl#getEmplLeaveReasonTypeId <em>Empl Leave Reason Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.humanres.employment.impl.EmplLeaveImpl#getFromDate <em>From Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.employment.impl.EmplLeaveImpl#getApproverPartyId <em>Approver Party Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.humanres.employment.impl.EmplLeaveImpl#getDescription <em>Description</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.humanres.employment.impl.EmplLeaveImpl#getEmplLeaveReasonTypeId <em>Empl Leave Reason Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.employment.impl.EmplLeaveImpl#getLeaveStatus <em>Leave Status</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.humanres.employment.impl.EmplLeaveImpl#getThruDate <em>Thru Date</em>}</li>
  * </ul>
  *
  * @generated

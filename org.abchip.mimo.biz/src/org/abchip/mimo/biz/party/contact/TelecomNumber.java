@@ -25,7 +25,7 @@ import java.util.List;
  * </ul>
  *
  * @see org.abchip.mimo.biz.party.contact.ContactPackage#getTelecomNumber()
- * @model
+ * @model annotation="mimo-ent-frame title='Telecommunications Number'"
  * @generated
  */
 public interface TelecomNumber extends ContactMech {

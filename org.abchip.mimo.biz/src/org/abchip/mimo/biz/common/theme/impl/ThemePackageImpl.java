@@ -192,9 +192,6 @@ import org.abchip.mimo.biz.workeffort.timesheet.TimesheetPackage;
 import org.abchip.mimo.biz.workeffort.timesheet.impl.TimesheetPackageImpl;
 import org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage;
 import org.abchip.mimo.biz.workeffort.workeffort.impl.WorkeffortPackageImpl;
-import org.abchip.mimo.entity.EntityPackage;
-import org.eclipse.emf.common.util.URI;
-
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
@@ -721,7 +718,7 @@ public class ThemePackageImpl extends EPackageImpl implements ThemePackage {
 	 */
 	@Override
 	public EReference getVisualThemeResource_VisualThemeId() {
-		return (EReference)visualThemeResourceEClass.getEStructuralFeatures().get(2);
+		return (EReference)visualThemeResourceEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -731,7 +728,7 @@ public class ThemePackageImpl extends EPackageImpl implements ThemePackage {
 	 */
 	@Override
 	public EReference getVisualThemeResource_ResourceTypeEnumId() {
-		return (EReference)visualThemeResourceEClass.getEStructuralFeatures().get(3);
+		return (EReference)visualThemeResourceEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -741,7 +738,7 @@ public class ThemePackageImpl extends EPackageImpl implements ThemePackage {
 	 */
 	@Override
 	public EAttribute getVisualThemeResource_SequenceId() {
-		return (EAttribute)visualThemeResourceEClass.getEStructuralFeatures().get(0);
+		return (EAttribute)visualThemeResourceEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -751,7 +748,7 @@ public class ThemePackageImpl extends EPackageImpl implements ThemePackage {
 	 */
 	@Override
 	public EAttribute getVisualThemeResource_ResourceValue() {
-		return (EAttribute)visualThemeResourceEClass.getEStructuralFeatures().get(1);
+		return (EAttribute)visualThemeResourceEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -819,10 +816,10 @@ public class ThemePackageImpl extends EPackageImpl implements ThemePackage {
 		createEReference(visualThemeEClass, VISUAL_THEME__VISUAL_THEME_SET_ID);
 
 		visualThemeResourceEClass = createEClass(VISUAL_THEME_RESOURCE);
-		createEAttribute(visualThemeResourceEClass, VISUAL_THEME_RESOURCE__SEQUENCE_ID);
-		createEAttribute(visualThemeResourceEClass, VISUAL_THEME_RESOURCE__RESOURCE_VALUE);
 		createEReference(visualThemeResourceEClass, VISUAL_THEME_RESOURCE__VISUAL_THEME_ID);
 		createEReference(visualThemeResourceEClass, VISUAL_THEME_RESOURCE__RESOURCE_TYPE_ENUM_ID);
+		createEAttribute(visualThemeResourceEClass, VISUAL_THEME_RESOURCE__SEQUENCE_ID);
+		createEAttribute(visualThemeResourceEClass, VISUAL_THEME_RESOURCE__RESOURCE_VALUE);
 
 		visualThemeSetEClass = createEClass(VISUAL_THEME_SET);
 		createEAttribute(visualThemeSetEClass, VISUAL_THEME_SET__VISUAL_THEME_SET_ID);
@@ -873,12 +870,12 @@ public class ThemePackageImpl extends EPackageImpl implements ThemePackage {
 		getVisualTheme_VisualThemeSetId().getEKeys().add(this.getVisualThemeSet_VisualThemeSetId());
 
 		initEClass(visualThemeResourceEClass, VisualThemeResource.class, "VisualThemeResource", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getVisualThemeResource_VisualThemeId(), this.getVisualTheme(), null, "visualThemeId", null, 1, 1, VisualThemeResource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getVisualThemeResource_VisualThemeId().getEKeys().add(this.getVisualTheme_VisualThemeId());
+		initEReference(getVisualThemeResource_ResourceTypeEnumId(), theEnumPackage.getEnumeration(), null, "resourceTypeEnumId", null, 1, 1, VisualThemeResource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getVisualThemeResource_ResourceTypeEnumId().getEKeys().add(theEnumPackage.getEnumeration_EnumId());
 		initEAttribute(getVisualThemeResource_SequenceId(), ecorePackage.getEString(), "sequenceId", null, 1, 1, VisualThemeResource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getVisualThemeResource_ResourceValue(), ecorePackage.getEString(), "resourceValue", null, 0, 1, VisualThemeResource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getVisualThemeResource_VisualThemeId(), this.getVisualTheme(), null, "visualThemeId", null, 0, 1, VisualThemeResource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		getVisualThemeResource_VisualThemeId().getEKeys().add(this.getVisualTheme_VisualThemeId());
-		initEReference(getVisualThemeResource_ResourceTypeEnumId(), theEnumPackage.getEnumeration(), null, "resourceTypeEnumId", null, 0, 1, VisualThemeResource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		getVisualThemeResource_ResourceTypeEnumId().getEKeys().add(theEnumPackage.getEnumeration_EnumId());
 
 		initEClass(visualThemeSetEClass, VisualThemeSet.class, "VisualThemeSet", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getVisualThemeSet_VisualThemeSetId(), ecorePackage.getEString(), "visualThemeSetId", null, 1, 1, VisualThemeSet.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -911,12 +908,24 @@ public class ThemePackageImpl extends EPackageImpl implements ThemePackage {
 		  (visualThemeEClass,
 		   source,
 		   new String[] {
+			   "help", "The VisualTheme entity contains one entry per visual theme.",
+			   "title", "Defines a Visual Theme",
+			   "dictionary", "CommonEntityLabels",
 			   "formula", "description"
+		   });
+		addAnnotation
+		  (visualThemeResourceEClass,
+		   source,
+		   new String[] {
+			   "help", "The VisualThemeResource entity contains visual theme\n          resources. Each visual theme can have any number of resources.",
+			   "title", "Contains All Visual Theme Resources"
 		   });
 		addAnnotation
 		  (visualThemeSetEClass,
 		   source,
 		   new String[] {
+			   "help", "Groups toghether Visual Themes that can be used for one (or a set of) application.",
+			   "title", "Defines a set of Visual Themes",
 			   "formula", "description"
 		   });
 	}
@@ -942,6 +951,27 @@ public class ThemePackageImpl extends EPackageImpl implements ThemePackage {
 		   new String[] {
 			   "type", "description",
 			   "length", "255"
+		   });
+		addAnnotation
+		  (getVisualTheme_VisualThemeSetId(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (getVisualThemeResource_VisualThemeId(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (getVisualThemeResource_ResourceTypeEnumId(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
 		   });
 		addAnnotation
 		  (getVisualThemeResource_SequenceId(),
@@ -996,7 +1026,13 @@ public class ThemePackageImpl extends EPackageImpl implements ThemePackage {
 	protected void createMimoentslotAnnotations() {
 		String source = "mimo-ent-slot";
 		addAnnotation
-		  (getVisualTheme_VisualThemeId(),
+		  (getVisualThemeResource_VisualThemeId(),
+		   source,
+		   new String[] {
+			   "key", "true"
+		   });
+		addAnnotation
+		  (getVisualThemeResource_ResourceTypeEnumId(),
 		   source,
 		   new String[] {
 			   "key", "true"
@@ -1005,7 +1041,14 @@ public class ThemePackageImpl extends EPackageImpl implements ThemePackage {
 		  (getVisualThemeResource_SequenceId(),
 		   source,
 		   new String[] {
-			   "key", "true"
+			   "key", "true",
+			   "help", "Controls the loading order of duplicate resource types"
+		   });
+		addAnnotation
+		  (getVisualThemeResource_ResourceValue(),
+		   source,
+		   new String[] {
+			   "help", "Contains the resource value"
 		   });
 		addAnnotation
 		  (visualThemeSetEClass.getEOperations().get(0),
@@ -1018,12 +1061,6 @@ public class ThemePackageImpl extends EPackageImpl implements ThemePackage {
 		   source,
 		   new String[] {
 			   "derived", "true"
-		   });
-		addAnnotation
-		  (getVisualThemeSet_VisualThemeSetId(),
-		   source,
-		   new String[] {
-			   "key", "true"
 		   });
 	}
 
@@ -1041,9 +1078,6 @@ public class ThemePackageImpl extends EPackageImpl implements ThemePackage {
 		   new String[] {
 			   "frame", "VisualTheme",
 			   "route", "visualThemeSetId"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
 		  (visualThemeSetEClass.getEOperations().get(1),
@@ -1051,9 +1085,6 @@ public class ThemePackageImpl extends EPackageImpl implements ThemePackage {
 		   new String[] {
 			   "frame", "WebSite",
 			   "route", "visualThemeSetId"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 	}
 

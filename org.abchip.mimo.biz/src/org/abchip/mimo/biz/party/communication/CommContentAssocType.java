@@ -23,7 +23,7 @@ import org.abchip.mimo.biz.BizEntity;
  * </ul>
  *
  * @see org.abchip.mimo.biz.party.communication.CommunicationPackage#getCommContentAssocType()
- * @model annotation="mimo-ent-frame formula='description'"
+ * @model annotation="mimo-ent-frame title='CommunicationEvent Content Association Type' formula='description'"
  * @generated
  */
 public interface CommContentAssocType extends BizEntity {
@@ -66,7 +66,6 @@ public interface CommContentAssocType extends BizEntity {
 	 * @see org.abchip.mimo.biz.party.communication.CommunicationPackage#getCommContentAssocType_CommContentAssocTypeId()
 	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getCommContentAssocTypeId();

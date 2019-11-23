@@ -23,21 +23,21 @@ import org.abchip.mimo.biz.product.product.Product;
  * The following features are supported:
  * </p>
  * <ul>
+ *   <li>{@link org.abchip.mimo.biz.order.return_.ReturnItem#getReturnId <em>Return Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.return_.ReturnItem#getReturnItemSeqId <em>Return Item Seq Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.return_.ReturnItem#getDescription <em>Description</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.return_.ReturnItem#getExpectedItemStatus <em>Expected Item Status</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.return_.ReturnItem#getOrderId <em>Order Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.return_.ReturnItem#getOrderItemSeqId <em>Order Item Seq Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.return_.ReturnItem#getProductId <em>Product Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.return_.ReturnItem#getReceivedQuantity <em>Received Quantity</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.return_.ReturnItem#getReturnItemResponseId <em>Return Item Response Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.return_.ReturnItem#getReturnItemTypeId <em>Return Item Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.return_.ReturnItem#getReturnPrice <em>Return Price</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.return_.ReturnItem#getReturnQuantity <em>Return Quantity</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.return_.ReturnItem#getReturnId <em>Return Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.return_.ReturnItem#getReturnReasonId <em>Return Reason Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.return_.ReturnItem#getReturnTypeId <em>Return Type Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.return_.ReturnItem#getReturnItemTypeId <em>Return Item Type Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.return_.ReturnItem#getReturnItemResponseId <em>Return Item Response Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.return_.ReturnItem#getOrderId <em>Order Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.return_.ReturnItem#getStatusId <em>Status Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.return_.ReturnItem#getExpectedItemStatus <em>Expected Item Status</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.return_.ReturnItem#getProductId <em>Product Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.order.return_.ReturnPackage#getReturnItem()
@@ -83,6 +83,7 @@ public interface ReturnItem extends BizEntityTyped<ReturnItemType> {
 	 * @see #setExpectedItemStatus(StatusItem)
 	 * @see org.abchip.mimo.biz.order.return_.ReturnPackage#getReturnItem_ExpectedItemStatus()
 	 * @model keys="statusId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	StatusItem getExpectedItemStatus();
@@ -109,6 +110,7 @@ public interface ReturnItem extends BizEntityTyped<ReturnItemType> {
 	 * @see #setOrderId(OrderHeader)
 	 * @see org.abchip.mimo.biz.order.return_.ReturnPackage#getReturnItem_OrderId()
 	 * @model keys="orderId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	OrderHeader getOrderId();
@@ -161,6 +163,8 @@ public interface ReturnItem extends BizEntityTyped<ReturnItemType> {
 	 * @see #setProductId(Product)
 	 * @see org.abchip.mimo.biz.order.return_.ReturnPackage#getReturnItem_ProductId()
 	 * @model keys="productId"
+	 *        annotation="mimo-ent-slot help='we need this field to be able to figure out net sales of a product'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Product getProductId();
@@ -186,7 +190,8 @@ public interface ReturnItem extends BizEntityTyped<ReturnItemType> {
 	 * @return the value of the '<em>Received Quantity</em>' attribute.
 	 * @see #setReceivedQuantity(BigDecimal)
 	 * @see org.abchip.mimo.biz.order.return_.ReturnPackage#getReturnItem_ReceivedQuantity()
-	 * @model annotation="mimo-ent-format type='fixed-point' precision='18' scale='6'"
+	 * @model annotation="mimo-ent-slot audit='true' help='actually received from the customer'"
+	 *        annotation="mimo-ent-format type='fixed-point' precision='18' scale='6'"
 	 * @generated
 	 */
 	BigDecimal getReceivedQuantity();
@@ -212,7 +217,9 @@ public interface ReturnItem extends BizEntityTyped<ReturnItemType> {
 	 * @return the value of the '<em>Return Id</em>' reference.
 	 * @see #setReturnId(ReturnHeader)
 	 * @see org.abchip.mimo.biz.order.return_.ReturnPackage#getReturnItem_ReturnId()
-	 * @model keys="returnId"
+	 * @model keys="returnId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ReturnHeader getReturnId();
@@ -239,6 +246,7 @@ public interface ReturnItem extends BizEntityTyped<ReturnItemType> {
 	 * @see #setReturnItemResponseId(ReturnItemResponse)
 	 * @see org.abchip.mimo.biz.order.return_.ReturnPackage#getReturnItem_ReturnItemResponseId()
 	 * @model keys="returnItemResponseId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ReturnItemResponse getReturnItemResponseId();
@@ -265,8 +273,8 @@ public interface ReturnItem extends BizEntityTyped<ReturnItemType> {
 	 * @see #setReturnItemSeqId(String)
 	 * @see org.abchip.mimo.biz.order.return_.ReturnPackage#getReturnItem_ReturnItemSeqId()
 	 * @model required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	String getReturnItemSeqId();
@@ -293,6 +301,8 @@ public interface ReturnItem extends BizEntityTyped<ReturnItemType> {
 	 * @see #setReturnItemTypeId(ReturnItemType)
 	 * @see org.abchip.mimo.biz.order.return_.ReturnPackage#getReturnItem_ReturnItemTypeId()
 	 * @model keys="returnItemTypeId"
+	 *        annotation="mimo-ent-slot help='what is returned: a product, a service, etc'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ReturnItemType getReturnItemTypeId();
@@ -318,7 +328,8 @@ public interface ReturnItem extends BizEntityTyped<ReturnItemType> {
 	 * @return the value of the '<em>Return Price</em>' attribute.
 	 * @see #setReturnPrice(BigDecimal)
 	 * @see org.abchip.mimo.biz.order.return_.ReturnPackage#getReturnItem_ReturnPrice()
-	 * @model annotation="mimo-ent-format type='currency-amount' precision='18' scale='2'"
+	 * @model annotation="mimo-ent-slot audit='true'"
+	 *        annotation="mimo-ent-format type='currency-amount' precision='18' scale='2'"
 	 * @generated
 	 */
 	BigDecimal getReturnPrice();
@@ -344,7 +355,8 @@ public interface ReturnItem extends BizEntityTyped<ReturnItemType> {
 	 * @return the value of the '<em>Return Quantity</em>' attribute.
 	 * @see #setReturnQuantity(BigDecimal)
 	 * @see org.abchip.mimo.biz.order.return_.ReturnPackage#getReturnItem_ReturnQuantity()
-	 * @model annotation="mimo-ent-format type='fixed-point' precision='18' scale='6'"
+	 * @model annotation="mimo-ent-slot audit='true' help='promised by the customer'"
+	 *        annotation="mimo-ent-format type='fixed-point' precision='18' scale='6'"
 	 * @generated
 	 */
 	BigDecimal getReturnQuantity();
@@ -371,6 +383,8 @@ public interface ReturnItem extends BizEntityTyped<ReturnItemType> {
 	 * @see #setReturnReasonId(ReturnReason)
 	 * @see org.abchip.mimo.biz.order.return_.ReturnPackage#getReturnItem_ReturnReasonId()
 	 * @model keys="returnReasonId"
+	 *        annotation="mimo-ent-slot audit='true' help='why item is returned: did not like, wrong item, damaged, etc. etc.'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ReturnReason getReturnReasonId();
@@ -397,6 +411,8 @@ public interface ReturnItem extends BizEntityTyped<ReturnItemType> {
 	 * @see #setReturnTypeId(ReturnType)
 	 * @see org.abchip.mimo.biz.order.return_.ReturnPackage#getReturnItem_ReturnTypeId()
 	 * @model keys="returnTypeId"
+	 *        annotation="mimo-ent-slot audit='true' help='actually used for disbursement type: store credit, cash refund, exchange'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ReturnType getReturnTypeId();
@@ -423,6 +439,7 @@ public interface ReturnItem extends BizEntityTyped<ReturnItemType> {
 	 * @see #setStatusId(StatusItem)
 	 * @see org.abchip.mimo.biz.order.return_.ReturnPackage#getReturnItem_StatusId()
 	 * @model keys="statusId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	StatusItem getStatusId();

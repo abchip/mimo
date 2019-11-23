@@ -22,18 +22,18 @@ import org.abchip.mimo.biz.party.party.Party;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.humanres.ability.PartyQual#getFromDate <em>From Date</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.humanres.ability.PartyQual#getQualificationDesc <em>Qualification Desc</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.humanres.ability.PartyQual#getThruDate <em>Thru Date</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.humanres.ability.PartyQual#getTitle <em>Title</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.ability.PartyQual#getPartyId <em>Party Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.ability.PartyQual#getPartyQualTypeId <em>Party Qual Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.humanres.ability.PartyQual#getFromDate <em>From Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.humanres.ability.PartyQual#getQualificationDesc <em>Qualification Desc</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.ability.PartyQual#getStatusId <em>Status Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.humanres.ability.PartyQual#getThruDate <em>Thru Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.humanres.ability.PartyQual#getTitle <em>Title</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.ability.PartyQual#getVerifStatusId <em>Verif Status Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.humanres.ability.AbilityPackage#getPartyQual()
- * @model
+ * @model annotation="mimo-ent-frame title='Party Qualification'"
  * @generated
  */
 public interface PartyQual extends BizEntityTyped<PartyQualType> {
@@ -49,8 +49,8 @@ public interface PartyQual extends BizEntityTyped<PartyQualType> {
 	 * @see #setFromDate(Date)
 	 * @see org.abchip.mimo.biz.humanres.ability.AbilityPackage#getPartyQual_FromDate()
 	 * @model required="true"
-	 *        annotation="mimo-ent-format type='date-time'"
 	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getFromDate();
@@ -76,7 +76,9 @@ public interface PartyQual extends BizEntityTyped<PartyQualType> {
 	 * @return the value of the '<em>Party Id</em>' reference.
 	 * @see #setPartyId(Party)
 	 * @see org.abchip.mimo.biz.humanres.ability.AbilityPackage#getPartyQual_PartyId()
-	 * @model keys="partyId"
+	 * @model keys="partyId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Party getPartyId();
@@ -102,7 +104,9 @@ public interface PartyQual extends BizEntityTyped<PartyQualType> {
 	 * @return the value of the '<em>Party Qual Type Id</em>' reference.
 	 * @see #setPartyQualTypeId(PartyQualType)
 	 * @see org.abchip.mimo.biz.humanres.ability.AbilityPackage#getPartyQual_PartyQualTypeId()
-	 * @model keys="partyQualTypeId"
+	 * @model keys="partyQualTypeId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	PartyQualType getPartyQualTypeId();
@@ -155,6 +159,8 @@ public interface PartyQual extends BizEntityTyped<PartyQualType> {
 	 * @see #setStatusId(StatusItem)
 	 * @see org.abchip.mimo.biz.humanres.ability.AbilityPackage#getPartyQual_StatusId()
 	 * @model keys="statusId"
+	 *        annotation="mimo-ent-slot help='Status e.g. completed, part-time etc.'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	StatusItem getStatusId();
@@ -206,7 +212,8 @@ public interface PartyQual extends BizEntityTyped<PartyQualType> {
 	 * @return the value of the '<em>Title</em>' attribute.
 	 * @see #setTitle(String)
 	 * @see org.abchip.mimo.biz.humanres.ability.AbilityPackage#getPartyQual_Title()
-	 * @model annotation="mimo-ent-format type='id-long' length='60'"
+	 * @model annotation="mimo-ent-slot help='Title of degree or job'"
+	 *        annotation="mimo-ent-format type='id-long' length='60'"
 	 * @generated
 	 */
 	String getTitle();
@@ -233,6 +240,8 @@ public interface PartyQual extends BizEntityTyped<PartyQualType> {
 	 * @see #setVerifStatusId(StatusItem)
 	 * @see org.abchip.mimo.biz.humanres.ability.AbilityPackage#getPartyQual_VerifStatusId()
 	 * @model keys="statusId"
+	 *        annotation="mimo-ent-slot help='Verification done for this entry if any'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	StatusItem getVerifStatusId();

@@ -22,13 +22,13 @@ import org.abchip.mimo.biz.webapp.website.WebSite;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.content.website.WebSitePathAlias#getPathAlias <em>Path Alias</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.content.website.WebSitePathAlias#getWebSiteId <em>Web Site Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.website.WebSitePathAlias#getFromDate <em>From Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.content.website.WebSitePathAlias#getPathAlias <em>Path Alias</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.website.WebSitePathAlias#getAliasTo <em>Alias To</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.content.website.WebSitePathAlias#getContentId <em>Content Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.website.WebSitePathAlias#getMapKey <em>Map Key</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.website.WebSitePathAlias#getThruDate <em>Thru Date</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.content.website.WebSitePathAlias#getWebSiteId <em>Web Site Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.content.website.WebSitePathAlias#getContentId <em>Content Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.content.website.WebsitePackage#getWebSitePathAlias()
@@ -74,6 +74,7 @@ public interface WebSitePathAlias extends BizEntity {
 	 * @see #setContentId(Content)
 	 * @see org.abchip.mimo.biz.content.website.WebsitePackage#getWebSitePathAlias_ContentId()
 	 * @model keys="contentId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Content getContentId();
@@ -100,8 +101,8 @@ public interface WebSitePathAlias extends BizEntity {
 	 * @see #setFromDate(Date)
 	 * @see org.abchip.mimo.biz.content.website.WebsitePackage#getWebSitePathAlias_FromDate()
 	 * @model required="true"
-	 *        annotation="mimo-ent-format type='date-time'"
 	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getFromDate();
@@ -154,8 +155,8 @@ public interface WebSitePathAlias extends BizEntity {
 	 * @see #setPathAlias(String)
 	 * @see org.abchip.mimo.biz.content.website.WebsitePackage#getWebSitePathAlias_PathAlias()
 	 * @model required="true"
-	 *        annotation="mimo-ent-format type='id-vlong' length='255'"
 	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id-vlong' length='255'"
 	 * @generated
 	 */
 	String getPathAlias();
@@ -207,7 +208,9 @@ public interface WebSitePathAlias extends BizEntity {
 	 * @return the value of the '<em>Web Site Id</em>' reference.
 	 * @see #setWebSiteId(WebSite)
 	 * @see org.abchip.mimo.biz.content.website.WebsitePackage#getWebSitePathAlias_WebSiteId()
-	 * @model keys="webSiteId"
+	 * @model keys="webSiteId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	WebSite getWebSiteId();

@@ -25,10 +25,10 @@ import org.eclipse.emf.ecore.EClass;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.humanres.ability.impl.PartyResumeImpl#getResumeId <em>Resume Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.humanres.ability.impl.PartyResumeImpl#getContentId <em>Content Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.humanres.ability.impl.PartyResumeImpl#getPartyId <em>Party Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.ability.impl.PartyResumeImpl#getResumeDate <em>Resume Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.ability.impl.PartyResumeImpl#getResumeText <em>Resume Text</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.humanres.ability.impl.PartyResumeImpl#getPartyId <em>Party Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.humanres.ability.impl.PartyResumeImpl#getContentId <em>Content Id</em>}</li>
  * </ul>
  *
  * @generated

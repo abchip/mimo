@@ -25,7 +25,7 @@ import org.abchip.mimo.biz.BizEntity;
  * </ul>
  *
  * @see org.abchip.mimo.biz.common.user.UserPackage#getUserPrefGroupType()
- * @model annotation="mimo-ent-frame formula='description'"
+ * @model annotation="mimo-ent-frame help='The UserPrefGroupType entity contains one entry per preference\n          group type.' title='Defines a group of User Preferences' formula='description'"
  * @generated
  */
 public interface UserPrefGroupType extends BizEntity {
@@ -78,7 +78,6 @@ public interface UserPrefGroupType extends BizEntity {
 	 * @see org.abchip.mimo.biz.common.user.UserPackage#getUserPrefGroupType_UserPrefGroupTypeId()
 	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-format type='id-long' length='60'"
-	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getUserPrefGroupTypeId();

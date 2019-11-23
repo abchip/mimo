@@ -18,13 +18,13 @@ import org.abchip.mimo.biz.BizEntity;
  * The following features are supported:
  * </p>
  * <ul>
+ *   <li>{@link org.abchip.mimo.biz.content.survey.SurveyMultiResp#getSurveyId <em>Survey Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.survey.SurveyMultiResp#getSurveyMultiRespId <em>Survey Multi Resp Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.survey.SurveyMultiResp#getMultiRespTitle <em>Multi Resp Title</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.content.survey.SurveyMultiResp#getSurveyId <em>Survey Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.content.survey.SurveyPackage#getSurveyMultiResp()
- * @model
+ * @model annotation="mimo-ent-frame title='Survey Multi-Response Group'"
  * @generated
  */
 public interface SurveyMultiResp extends BizEntity {
@@ -65,7 +65,9 @@ public interface SurveyMultiResp extends BizEntity {
 	 * @return the value of the '<em>Survey Id</em>' reference.
 	 * @see #setSurveyId(Survey)
 	 * @see org.abchip.mimo.biz.content.survey.SurveyPackage#getSurveyMultiResp_SurveyId()
-	 * @model keys="surveyId"
+	 * @model keys="surveyId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Survey getSurveyId();
@@ -92,8 +94,8 @@ public interface SurveyMultiResp extends BizEntity {
 	 * @see #setSurveyMultiRespId(String)
 	 * @see org.abchip.mimo.biz.content.survey.SurveyPackage#getSurveyMultiResp_SurveyMultiRespId()
 	 * @model required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	String getSurveyMultiRespId();

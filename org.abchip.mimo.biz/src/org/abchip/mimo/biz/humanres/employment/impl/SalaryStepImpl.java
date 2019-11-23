@@ -25,14 +25,14 @@ import org.eclipse.emf.ecore.EClass;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.humanres.employment.impl.SalaryStepImpl#getSalaryStepSeqId <em>Salary Step Seq Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.humanres.employment.impl.SalaryStepImpl#getPayGradeId <em>Pay Grade Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.employment.impl.SalaryStepImpl#getFromDate <em>From Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.humanres.employment.impl.SalaryStepImpl#getSalaryStepSeqId <em>Salary Step Seq Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.employment.impl.SalaryStepImpl#getAmount <em>Amount</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.employment.impl.SalaryStepImpl#getCreatedByUserLogin <em>Created By User Login</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.employment.impl.SalaryStepImpl#getDateModified <em>Date Modified</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.employment.impl.SalaryStepImpl#getLastModifiedByUserLogin <em>Last Modified By User Login</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.employment.impl.SalaryStepImpl#getThruDate <em>Thru Date</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.humanres.employment.impl.SalaryStepImpl#getPayGradeId <em>Pay Grade Id</em>}</li>
  * </ul>
  *
  * @generated

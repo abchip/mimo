@@ -703,7 +703,7 @@ public class SupplierPackageImpl extends EPackageImpl implements SupplierPackage
 	 */
 	@Override
 	public EReference getMarketInterest_ProductCategoryId() {
-		return (EReference)marketInterestEClass.getEStructuralFeatures().get(2);
+		return (EReference)marketInterestEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -713,7 +713,7 @@ public class SupplierPackageImpl extends EPackageImpl implements SupplierPackage
 	 */
 	@Override
 	public EReference getMarketInterest_PartyClassificationGroupId() {
-		return (EReference)marketInterestEClass.getEStructuralFeatures().get(3);
+		return (EReference)marketInterestEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -723,7 +723,7 @@ public class SupplierPackageImpl extends EPackageImpl implements SupplierPackage
 	 */
 	@Override
 	public EAttribute getMarketInterest_FromDate() {
-		return (EAttribute)marketInterestEClass.getEStructuralFeatures().get(0);
+		return (EAttribute)marketInterestEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -733,7 +733,7 @@ public class SupplierPackageImpl extends EPackageImpl implements SupplierPackage
 	 */
 	@Override
 	public EAttribute getMarketInterest_ThruDate() {
-		return (EAttribute)marketInterestEClass.getEStructuralFeatures().get(1);
+		return (EAttribute)marketInterestEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -763,7 +763,7 @@ public class SupplierPackageImpl extends EPackageImpl implements SupplierPackage
 	 */
 	@Override
 	public EReference getReorderGuideline_FacilityId() {
-		return (EReference)reorderGuidelineEClass.getEStructuralFeatures().get(8);
+		return (EReference)reorderGuidelineEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -773,46 +773,6 @@ public class SupplierPackageImpl extends EPackageImpl implements SupplierPackage
 	 */
 	@Override
 	public EAttribute getReorderGuideline_FromDate() {
-		return (EAttribute)reorderGuidelineEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getReorderGuideline_GeoId() {
-		return (EReference)reorderGuidelineEClass.getEStructuralFeatures().get(9);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getReorderGuideline_PartyId() {
-		return (EReference)reorderGuidelineEClass.getEStructuralFeatures().get(7);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getReorderGuideline_ProductId() {
-		return (EReference)reorderGuidelineEClass.getEStructuralFeatures().get(6);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EAttribute getReorderGuideline_ReorderLevel() {
 		return (EAttribute)reorderGuidelineEClass.getEStructuralFeatures().get(2);
 	}
 
@@ -822,8 +782,48 @@ public class SupplierPackageImpl extends EPackageImpl implements SupplierPackage
 	 * @generated
 	 */
 	@Override
+	public EReference getReorderGuideline_GeoId() {
+		return (EReference)reorderGuidelineEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getReorderGuideline_PartyId() {
+		return (EReference)reorderGuidelineEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getReorderGuideline_ProductId() {
+		return (EReference)reorderGuidelineEClass.getEStructuralFeatures().get(5);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getReorderGuideline_ReorderLevel() {
+		return (EAttribute)reorderGuidelineEClass.getEStructuralFeatures().get(6);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EAttribute getReorderGuideline_ReorderQuantity() {
-		return (EAttribute)reorderGuidelineEClass.getEStructuralFeatures().get(3);
+		return (EAttribute)reorderGuidelineEClass.getEStructuralFeatures().get(7);
 	}
 
 	/**
@@ -833,7 +833,7 @@ public class SupplierPackageImpl extends EPackageImpl implements SupplierPackage
 	 */
 	@Override
 	public EAttribute getReorderGuideline_RoleTypeId() {
-		return (EAttribute)reorderGuidelineEClass.getEStructuralFeatures().get(4);
+		return (EAttribute)reorderGuidelineEClass.getEStructuralFeatures().get(8);
 	}
 
 	/**
@@ -843,7 +843,7 @@ public class SupplierPackageImpl extends EPackageImpl implements SupplierPackage
 	 */
 	@Override
 	public EAttribute getReorderGuideline_ThruDate() {
-		return (EAttribute)reorderGuidelineEClass.getEStructuralFeatures().get(5);
+		return (EAttribute)reorderGuidelineEClass.getEStructuralFeatures().get(9);
 	}
 
 	/**
@@ -893,7 +893,7 @@ public class SupplierPackageImpl extends EPackageImpl implements SupplierPackage
 	 */
 	@Override
 	public EReference getSupplierProduct_ProductId() {
-		return (EReference)supplierProductEClass.getEStructuralFeatures().get(14);
+		return (EReference)supplierProductEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -903,7 +903,7 @@ public class SupplierPackageImpl extends EPackageImpl implements SupplierPackage
 	 */
 	@Override
 	public EReference getSupplierProduct_PartyId() {
-		return (EReference)supplierProductEClass.getEStructuralFeatures().get(15);
+		return (EReference)supplierProductEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -913,7 +913,7 @@ public class SupplierPackageImpl extends EPackageImpl implements SupplierPackage
 	 */
 	@Override
 	public EReference getSupplierProduct_CurrencyUomId() {
-		return (EReference)supplierProductEClass.getEStructuralFeatures().get(18);
+		return (EReference)supplierProductEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -923,46 +923,6 @@ public class SupplierPackageImpl extends EPackageImpl implements SupplierPackage
 	 */
 	@Override
 	public EAttribute getSupplierProduct_MinimumOrderQuantity() {
-		return (EAttribute)supplierProductEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EAttribute getSupplierProduct_AvailableFromDate() {
-		return (EAttribute)supplierProductEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EAttribute getSupplierProduct_AgreementId() {
-		return (EAttribute)supplierProductEClass.getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EAttribute getSupplierProduct_AgreementItemSeqId() {
-		return (EAttribute)supplierProductEClass.getEStructuralFeatures().get(3);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EAttribute getSupplierProduct_AvailableThruDate() {
 		return (EAttribute)supplierProductEClass.getEStructuralFeatures().get(4);
 	}
 
@@ -972,7 +932,17 @@ public class SupplierPackageImpl extends EPackageImpl implements SupplierPackage
 	 * @generated
 	 */
 	@Override
-	public EAttribute getSupplierProduct_CanDropShip() {
+	public EAttribute getSupplierProduct_AvailableFromDate() {
+		return (EAttribute)supplierProductEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getSupplierProduct_AgreementId() {
 		return (EAttribute)supplierProductEClass.getEStructuralFeatures().get(5);
 	}
 
@@ -982,7 +952,7 @@ public class SupplierPackageImpl extends EPackageImpl implements SupplierPackage
 	 * @generated
 	 */
 	@Override
-	public EAttribute getSupplierProduct_Comments() {
+	public EAttribute getSupplierProduct_AgreementItemSeqId() {
 		return (EAttribute)supplierProductEClass.getEStructuralFeatures().get(6);
 	}
 
@@ -992,7 +962,7 @@ public class SupplierPackageImpl extends EPackageImpl implements SupplierPackage
 	 * @generated
 	 */
 	@Override
-	public EAttribute getSupplierProduct_LastPrice() {
+	public EAttribute getSupplierProduct_AvailableThruDate() {
 		return (EAttribute)supplierProductEClass.getEStructuralFeatures().get(7);
 	}
 
@@ -1002,7 +972,7 @@ public class SupplierPackageImpl extends EPackageImpl implements SupplierPackage
 	 * @generated
 	 */
 	@Override
-	public EAttribute getSupplierProduct_OrderQtyIncrements() {
+	public EAttribute getSupplierProduct_CanDropShip() {
 		return (EAttribute)supplierProductEClass.getEStructuralFeatures().get(8);
 	}
 
@@ -1012,17 +982,7 @@ public class SupplierPackageImpl extends EPackageImpl implements SupplierPackage
 	 * @generated
 	 */
 	@Override
-	public EReference getSupplierProduct_QuantityUomId() {
-		return (EReference)supplierProductEClass.getEStructuralFeatures().get(19);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EAttribute getSupplierProduct_ShippingPrice() {
+	public EAttribute getSupplierProduct_Comments() {
 		return (EAttribute)supplierProductEClass.getEStructuralFeatures().get(9);
 	}
 
@@ -1032,7 +992,7 @@ public class SupplierPackageImpl extends EPackageImpl implements SupplierPackage
 	 * @generated
 	 */
 	@Override
-	public EAttribute getSupplierProduct_StandardLeadTimeDays() {
+	public EAttribute getSupplierProduct_LastPrice() {
 		return (EAttribute)supplierProductEClass.getEStructuralFeatures().get(10);
 	}
 
@@ -1042,17 +1002,7 @@ public class SupplierPackageImpl extends EPackageImpl implements SupplierPackage
 	 * @generated
 	 */
 	@Override
-	public EReference getSupplierProduct_SupplierPrefOrderId() {
-		return (EReference)supplierProductEClass.getEStructuralFeatures().get(16);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EAttribute getSupplierProduct_SupplierProductId() {
+	public EAttribute getSupplierProduct_OrderQtyIncrements() {
 		return (EAttribute)supplierProductEClass.getEStructuralFeatures().get(11);
 	}
 
@@ -1062,8 +1012,58 @@ public class SupplierPackageImpl extends EPackageImpl implements SupplierPackage
 	 * @generated
 	 */
 	@Override
+	public EReference getSupplierProduct_QuantityUomId() {
+		return (EReference)supplierProductEClass.getEStructuralFeatures().get(12);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getSupplierProduct_ShippingPrice() {
+		return (EAttribute)supplierProductEClass.getEStructuralFeatures().get(13);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getSupplierProduct_StandardLeadTimeDays() {
+		return (EAttribute)supplierProductEClass.getEStructuralFeatures().get(14);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getSupplierProduct_SupplierPrefOrderId() {
+		return (EReference)supplierProductEClass.getEStructuralFeatures().get(15);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getSupplierProduct_SupplierProductId() {
+		return (EAttribute)supplierProductEClass.getEStructuralFeatures().get(16);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EAttribute getSupplierProduct_SupplierProductName() {
-		return (EAttribute)supplierProductEClass.getEStructuralFeatures().get(12);
+		return (EAttribute)supplierProductEClass.getEStructuralFeatures().get(17);
 	}
 
 	/**
@@ -1073,7 +1073,7 @@ public class SupplierPackageImpl extends EPackageImpl implements SupplierPackage
 	 */
 	@Override
 	public EReference getSupplierProduct_SupplierRatingTypeId() {
-		return (EReference)supplierProductEClass.getEStructuralFeatures().get(17);
+		return (EReference)supplierProductEClass.getEStructuralFeatures().get(18);
 	}
 
 	/**
@@ -1083,7 +1083,7 @@ public class SupplierPackageImpl extends EPackageImpl implements SupplierPackage
 	 */
 	@Override
 	public EAttribute getSupplierProduct_UnitsIncluded() {
-		return (EAttribute)supplierProductEClass.getEStructuralFeatures().get(13);
+		return (EAttribute)supplierProductEClass.getEStructuralFeatures().get(19);
 	}
 
 	/**
@@ -1103,7 +1103,7 @@ public class SupplierPackageImpl extends EPackageImpl implements SupplierPackage
 	 */
 	@Override
 	public EReference getSupplierProductFeature_PartyId() {
-		return (EReference)supplierProductFeatureEClass.getEStructuralFeatures().get(2);
+		return (EReference)supplierProductFeatureEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -1113,7 +1113,7 @@ public class SupplierPackageImpl extends EPackageImpl implements SupplierPackage
 	 */
 	@Override
 	public EReference getSupplierProductFeature_ProductFeatureId() {
-		return (EReference)supplierProductFeatureEClass.getEStructuralFeatures().get(3);
+		return (EReference)supplierProductFeatureEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -1123,7 +1123,7 @@ public class SupplierPackageImpl extends EPackageImpl implements SupplierPackage
 	 */
 	@Override
 	public EAttribute getSupplierProductFeature_Description() {
-		return (EAttribute)supplierProductFeatureEClass.getEStructuralFeatures().get(0);
+		return (EAttribute)supplierProductFeatureEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -1133,7 +1133,7 @@ public class SupplierPackageImpl extends EPackageImpl implements SupplierPackage
 	 */
 	@Override
 	public EAttribute getSupplierProductFeature_IdCode() {
-		return (EAttribute)supplierProductFeatureEClass.getEStructuralFeatures().get(1);
+		return (EAttribute)supplierProductFeatureEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -1206,30 +1206,33 @@ public class SupplierPackageImpl extends EPackageImpl implements SupplierPackage
 
 		// Create classes and their features
 		marketInterestEClass = createEClass(MARKET_INTEREST);
-		createEAttribute(marketInterestEClass, MARKET_INTEREST__FROM_DATE);
-		createEAttribute(marketInterestEClass, MARKET_INTEREST__THRU_DATE);
 		createEReference(marketInterestEClass, MARKET_INTEREST__PRODUCT_CATEGORY_ID);
 		createEReference(marketInterestEClass, MARKET_INTEREST__PARTY_CLASSIFICATION_GROUP_ID);
+		createEAttribute(marketInterestEClass, MARKET_INTEREST__FROM_DATE);
+		createEAttribute(marketInterestEClass, MARKET_INTEREST__THRU_DATE);
 
 		reorderGuidelineEClass = createEClass(REORDER_GUIDELINE);
 		createEAttribute(reorderGuidelineEClass, REORDER_GUIDELINE__REORDER_GUIDELINE_ID);
+		createEReference(reorderGuidelineEClass, REORDER_GUIDELINE__FACILITY_ID);
 		createEAttribute(reorderGuidelineEClass, REORDER_GUIDELINE__FROM_DATE);
+		createEReference(reorderGuidelineEClass, REORDER_GUIDELINE__GEO_ID);
+		createEReference(reorderGuidelineEClass, REORDER_GUIDELINE__PARTY_ID);
+		createEReference(reorderGuidelineEClass, REORDER_GUIDELINE__PRODUCT_ID);
 		createEAttribute(reorderGuidelineEClass, REORDER_GUIDELINE__REORDER_LEVEL);
 		createEAttribute(reorderGuidelineEClass, REORDER_GUIDELINE__REORDER_QUANTITY);
 		createEAttribute(reorderGuidelineEClass, REORDER_GUIDELINE__ROLE_TYPE_ID);
 		createEAttribute(reorderGuidelineEClass, REORDER_GUIDELINE__THRU_DATE);
-		createEReference(reorderGuidelineEClass, REORDER_GUIDELINE__PRODUCT_ID);
-		createEReference(reorderGuidelineEClass, REORDER_GUIDELINE__PARTY_ID);
-		createEReference(reorderGuidelineEClass, REORDER_GUIDELINE__FACILITY_ID);
-		createEReference(reorderGuidelineEClass, REORDER_GUIDELINE__GEO_ID);
 
 		supplierPrefOrderEClass = createEClass(SUPPLIER_PREF_ORDER);
 		createEAttribute(supplierPrefOrderEClass, SUPPLIER_PREF_ORDER__SUPPLIER_PREF_ORDER_ID);
 		createEAttribute(supplierPrefOrderEClass, SUPPLIER_PREF_ORDER__DESCRIPTION);
 
 		supplierProductEClass = createEClass(SUPPLIER_PRODUCT);
-		createEAttribute(supplierProductEClass, SUPPLIER_PRODUCT__MINIMUM_ORDER_QUANTITY);
+		createEReference(supplierProductEClass, SUPPLIER_PRODUCT__PRODUCT_ID);
+		createEReference(supplierProductEClass, SUPPLIER_PRODUCT__PARTY_ID);
+		createEReference(supplierProductEClass, SUPPLIER_PRODUCT__CURRENCY_UOM_ID);
 		createEAttribute(supplierProductEClass, SUPPLIER_PRODUCT__AVAILABLE_FROM_DATE);
+		createEAttribute(supplierProductEClass, SUPPLIER_PRODUCT__MINIMUM_ORDER_QUANTITY);
 		createEAttribute(supplierProductEClass, SUPPLIER_PRODUCT__AGREEMENT_ID);
 		createEAttribute(supplierProductEClass, SUPPLIER_PRODUCT__AGREEMENT_ITEM_SEQ_ID);
 		createEAttribute(supplierProductEClass, SUPPLIER_PRODUCT__AVAILABLE_THRU_DATE);
@@ -1237,23 +1240,20 @@ public class SupplierPackageImpl extends EPackageImpl implements SupplierPackage
 		createEAttribute(supplierProductEClass, SUPPLIER_PRODUCT__COMMENTS);
 		createEAttribute(supplierProductEClass, SUPPLIER_PRODUCT__LAST_PRICE);
 		createEAttribute(supplierProductEClass, SUPPLIER_PRODUCT__ORDER_QTY_INCREMENTS);
+		createEReference(supplierProductEClass, SUPPLIER_PRODUCT__QUANTITY_UOM_ID);
 		createEAttribute(supplierProductEClass, SUPPLIER_PRODUCT__SHIPPING_PRICE);
 		createEAttribute(supplierProductEClass, SUPPLIER_PRODUCT__STANDARD_LEAD_TIME_DAYS);
+		createEReference(supplierProductEClass, SUPPLIER_PRODUCT__SUPPLIER_PREF_ORDER_ID);
 		createEAttribute(supplierProductEClass, SUPPLIER_PRODUCT__SUPPLIER_PRODUCT_ID);
 		createEAttribute(supplierProductEClass, SUPPLIER_PRODUCT__SUPPLIER_PRODUCT_NAME);
-		createEAttribute(supplierProductEClass, SUPPLIER_PRODUCT__UNITS_INCLUDED);
-		createEReference(supplierProductEClass, SUPPLIER_PRODUCT__PRODUCT_ID);
-		createEReference(supplierProductEClass, SUPPLIER_PRODUCT__PARTY_ID);
-		createEReference(supplierProductEClass, SUPPLIER_PRODUCT__SUPPLIER_PREF_ORDER_ID);
 		createEReference(supplierProductEClass, SUPPLIER_PRODUCT__SUPPLIER_RATING_TYPE_ID);
-		createEReference(supplierProductEClass, SUPPLIER_PRODUCT__CURRENCY_UOM_ID);
-		createEReference(supplierProductEClass, SUPPLIER_PRODUCT__QUANTITY_UOM_ID);
+		createEAttribute(supplierProductEClass, SUPPLIER_PRODUCT__UNITS_INCLUDED);
 
 		supplierProductFeatureEClass = createEClass(SUPPLIER_PRODUCT_FEATURE);
-		createEAttribute(supplierProductFeatureEClass, SUPPLIER_PRODUCT_FEATURE__DESCRIPTION);
-		createEAttribute(supplierProductFeatureEClass, SUPPLIER_PRODUCT_FEATURE__ID_CODE);
 		createEReference(supplierProductFeatureEClass, SUPPLIER_PRODUCT_FEATURE__PARTY_ID);
 		createEReference(supplierProductFeatureEClass, SUPPLIER_PRODUCT_FEATURE__PRODUCT_FEATURE_ID);
+		createEAttribute(supplierProductFeatureEClass, SUPPLIER_PRODUCT_FEATURE__DESCRIPTION);
+		createEAttribute(supplierProductFeatureEClass, SUPPLIER_PRODUCT_FEATURE__ID_CODE);
 		createEReference(supplierProductFeatureEClass, SUPPLIER_PRODUCT_FEATURE__UOM_ID);
 
 		supplierRatingTypeEClass = createEClass(SUPPLIER_RATING_TYPE);
@@ -1288,9 +1288,9 @@ public class SupplierPackageImpl extends EPackageImpl implements SupplierPackage
 		BizPackage theBizPackage = (BizPackage)EPackage.Registry.INSTANCE.getEPackage(BizPackage.eNS_URI);
 		CategoryPackage theCategoryPackage = (CategoryPackage)EPackage.Registry.INSTANCE.getEPackage(CategoryPackage.eNS_URI);
 		PartyPackage thePartyPackage = (PartyPackage)EPackage.Registry.INSTANCE.getEPackage(PartyPackage.eNS_URI);
-		ProductPackage theProductPackage = (ProductPackage)EPackage.Registry.INSTANCE.getEPackage(ProductPackage.eNS_URI);
 		FacilityPackage theFacilityPackage = (FacilityPackage)EPackage.Registry.INSTANCE.getEPackage(FacilityPackage.eNS_URI);
 		GeoPackage theGeoPackage = (GeoPackage)EPackage.Registry.INSTANCE.getEPackage(GeoPackage.eNS_URI);
+		ProductPackage theProductPackage = (ProductPackage)EPackage.Registry.INSTANCE.getEPackage(ProductPackage.eNS_URI);
 		UomPackage theUomPackage = (UomPackage)EPackage.Registry.INSTANCE.getEPackage(UomPackage.eNS_URI);
 		FeaturePackage theFeaturePackage = (FeaturePackage)EPackage.Registry.INSTANCE.getEPackage(FeaturePackage.eNS_URI);
 
@@ -1308,36 +1308,42 @@ public class SupplierPackageImpl extends EPackageImpl implements SupplierPackage
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(marketInterestEClass, MarketInterest.class, "MarketInterest", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getMarketInterest_ProductCategoryId(), theCategoryPackage.getProductCategory(), null, "productCategoryId", null, 1, 1, MarketInterest.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getMarketInterest_ProductCategoryId().getEKeys().add(theCategoryPackage.getProductCategory_ProductCategoryId());
+		initEReference(getMarketInterest_PartyClassificationGroupId(), thePartyPackage.getPartyClassificationGroup(), null, "partyClassificationGroupId", null, 1, 1, MarketInterest.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getMarketInterest_PartyClassificationGroupId().getEKeys().add(thePartyPackage.getPartyClassificationGroup_PartyClassificationGroupId());
 		initEAttribute(getMarketInterest_FromDate(), ecorePackage.getEDate(), "fromDate", null, 1, 1, MarketInterest.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMarketInterest_ThruDate(), ecorePackage.getEDate(), "thruDate", null, 0, 1, MarketInterest.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getMarketInterest_ProductCategoryId(), theCategoryPackage.getProductCategory(), null, "productCategoryId", null, 0, 1, MarketInterest.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		getMarketInterest_ProductCategoryId().getEKeys().add(theCategoryPackage.getProductCategory_ProductCategoryId());
-		initEReference(getMarketInterest_PartyClassificationGroupId(), thePartyPackage.getPartyClassificationGroup(), null, "partyClassificationGroupId", null, 0, 1, MarketInterest.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		getMarketInterest_PartyClassificationGroupId().getEKeys().add(thePartyPackage.getPartyClassificationGroup_PartyClassificationGroupId());
 
 		initEClass(reorderGuidelineEClass, ReorderGuideline.class, "ReorderGuideline", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getReorderGuideline_ReorderGuidelineId(), ecorePackage.getEString(), "reorderGuidelineId", null, 1, 1, ReorderGuideline.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getReorderGuideline_FacilityId(), theFacilityPackage.getFacility(), null, "facilityId", null, 0, 1, ReorderGuideline.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getReorderGuideline_FacilityId().getEKeys().add(theFacilityPackage.getFacility_FacilityId());
 		initEAttribute(getReorderGuideline_FromDate(), ecorePackage.getEDate(), "fromDate", null, 0, 1, ReorderGuideline.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getReorderGuideline_GeoId(), theGeoPackage.getGeo(), null, "geoId", null, 0, 1, ReorderGuideline.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getReorderGuideline_GeoId().getEKeys().add(theGeoPackage.getGeo_GeoId());
+		initEReference(getReorderGuideline_PartyId(), thePartyPackage.getParty(), null, "partyId", null, 0, 1, ReorderGuideline.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getReorderGuideline_PartyId().getEKeys().add(thePartyPackage.getParty_PartyId());
+		initEReference(getReorderGuideline_ProductId(), theProductPackage.getProduct(), null, "productId", null, 0, 1, ReorderGuideline.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getReorderGuideline_ProductId().getEKeys().add(theProductPackage.getProduct_ProductId());
 		initEAttribute(getReorderGuideline_ReorderLevel(), ecorePackage.getEBigDecimal(), "reorderLevel", null, 0, 1, ReorderGuideline.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getReorderGuideline_ReorderQuantity(), ecorePackage.getEBigDecimal(), "reorderQuantity", null, 0, 1, ReorderGuideline.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getReorderGuideline_RoleTypeId(), ecorePackage.getEString(), "roleTypeId", null, 0, 1, ReorderGuideline.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getReorderGuideline_ThruDate(), ecorePackage.getEDate(), "thruDate", null, 0, 1, ReorderGuideline.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getReorderGuideline_ProductId(), theProductPackage.getProduct(), null, "productId", null, 0, 1, ReorderGuideline.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		getReorderGuideline_ProductId().getEKeys().add(theProductPackage.getProduct_ProductId());
-		initEReference(getReorderGuideline_PartyId(), thePartyPackage.getParty(), null, "partyId", null, 0, 1, ReorderGuideline.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		getReorderGuideline_PartyId().getEKeys().add(thePartyPackage.getParty_PartyId());
-		initEReference(getReorderGuideline_FacilityId(), theFacilityPackage.getFacility(), null, "facilityId", null, 0, 1, ReorderGuideline.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		getReorderGuideline_FacilityId().getEKeys().add(theFacilityPackage.getFacility_FacilityId());
-		initEReference(getReorderGuideline_GeoId(), theGeoPackage.getGeo(), null, "geoId", null, 0, 1, ReorderGuideline.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		getReorderGuideline_GeoId().getEKeys().add(theGeoPackage.getGeo_GeoId());
 
 		initEClass(supplierPrefOrderEClass, SupplierPrefOrder.class, "SupplierPrefOrder", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getSupplierPrefOrder_SupplierPrefOrderId(), ecorePackage.getEString(), "supplierPrefOrderId", null, 1, 1, SupplierPrefOrder.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getSupplierPrefOrder_Description(), ecorePackage.getEString(), "description", null, 0, 1, SupplierPrefOrder.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(supplierProductEClass, SupplierProduct.class, "SupplierProduct", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getSupplierProduct_MinimumOrderQuantity(), ecorePackage.getEBigDecimal(), "minimumOrderQuantity", null, 1, 1, SupplierProduct.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getSupplierProduct_ProductId(), theProductPackage.getProduct(), null, "productId", null, 1, 1, SupplierProduct.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getSupplierProduct_ProductId().getEKeys().add(theProductPackage.getProduct_ProductId());
+		initEReference(getSupplierProduct_PartyId(), thePartyPackage.getParty(), null, "partyId", null, 1, 1, SupplierProduct.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getSupplierProduct_PartyId().getEKeys().add(thePartyPackage.getParty_PartyId());
+		initEReference(getSupplierProduct_CurrencyUomId(), theUomPackage.getUom(), null, "currencyUomId", null, 1, 1, SupplierProduct.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getSupplierProduct_CurrencyUomId().getEKeys().add(theUomPackage.getUom_UomId());
 		initEAttribute(getSupplierProduct_AvailableFromDate(), ecorePackage.getEDate(), "availableFromDate", null, 1, 1, SupplierProduct.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getSupplierProduct_MinimumOrderQuantity(), ecorePackage.getEBigDecimal(), "minimumOrderQuantity", null, 1, 1, SupplierProduct.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getSupplierProduct_AgreementId(), ecorePackage.getEString(), "agreementId", null, 0, 1, SupplierProduct.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getSupplierProduct_AgreementItemSeqId(), ecorePackage.getEString(), "agreementItemSeqId", null, 0, 1, SupplierProduct.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getSupplierProduct_AvailableThruDate(), ecorePackage.getEDate(), "availableThruDate", null, 0, 1, SupplierProduct.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1345,31 +1351,25 @@ public class SupplierPackageImpl extends EPackageImpl implements SupplierPackage
 		initEAttribute(getSupplierProduct_Comments(), ecorePackage.getEString(), "comments", null, 0, 1, SupplierProduct.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getSupplierProduct_LastPrice(), ecorePackage.getEBigDecimal(), "lastPrice", null, 0, 1, SupplierProduct.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getSupplierProduct_OrderQtyIncrements(), ecorePackage.getEBigDecimal(), "orderQtyIncrements", null, 0, 1, SupplierProduct.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getSupplierProduct_ShippingPrice(), ecorePackage.getEBigDecimal(), "shippingPrice", null, 0, 1, SupplierProduct.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getSupplierProduct_StandardLeadTimeDays(), ecorePackage.getEBigDecimal(), "standardLeadTimeDays", null, 0, 1, SupplierProduct.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getSupplierProduct_SupplierProductId(), ecorePackage.getEString(), "supplierProductId", null, 0, 1, SupplierProduct.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getSupplierProduct_SupplierProductName(), ecorePackage.getEString(), "supplierProductName", null, 0, 1, SupplierProduct.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getSupplierProduct_UnitsIncluded(), ecorePackage.getEBigDecimal(), "unitsIncluded", null, 0, 1, SupplierProduct.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getSupplierProduct_ProductId(), theProductPackage.getProduct(), null, "productId", null, 0, 1, SupplierProduct.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		getSupplierProduct_ProductId().getEKeys().add(theProductPackage.getProduct_ProductId());
-		initEReference(getSupplierProduct_PartyId(), thePartyPackage.getParty(), null, "partyId", null, 0, 1, SupplierProduct.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		getSupplierProduct_PartyId().getEKeys().add(thePartyPackage.getParty_PartyId());
-		initEReference(getSupplierProduct_SupplierPrefOrderId(), this.getSupplierPrefOrder(), null, "supplierPrefOrderId", null, 0, 1, SupplierProduct.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		getSupplierProduct_SupplierPrefOrderId().getEKeys().add(this.getSupplierPrefOrder_SupplierPrefOrderId());
-		initEReference(getSupplierProduct_SupplierRatingTypeId(), this.getSupplierRatingType(), null, "supplierRatingTypeId", null, 0, 1, SupplierProduct.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		getSupplierProduct_SupplierRatingTypeId().getEKeys().add(this.getSupplierRatingType_SupplierRatingTypeId());
-		initEReference(getSupplierProduct_CurrencyUomId(), theUomPackage.getUom(), null, "currencyUomId", null, 0, 1, SupplierProduct.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		getSupplierProduct_CurrencyUomId().getEKeys().add(theUomPackage.getUom_UomId());
 		initEReference(getSupplierProduct_QuantityUomId(), theUomPackage.getUom(), null, "quantityUomId", null, 0, 1, SupplierProduct.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getSupplierProduct_QuantityUomId().getEKeys().add(theUomPackage.getUom_UomId());
+		initEAttribute(getSupplierProduct_ShippingPrice(), ecorePackage.getEBigDecimal(), "shippingPrice", null, 0, 1, SupplierProduct.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getSupplierProduct_StandardLeadTimeDays(), ecorePackage.getEBigDecimal(), "standardLeadTimeDays", null, 0, 1, SupplierProduct.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getSupplierProduct_SupplierPrefOrderId(), this.getSupplierPrefOrder(), null, "supplierPrefOrderId", null, 0, 1, SupplierProduct.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getSupplierProduct_SupplierPrefOrderId().getEKeys().add(this.getSupplierPrefOrder_SupplierPrefOrderId());
+		initEAttribute(getSupplierProduct_SupplierProductId(), ecorePackage.getEString(), "supplierProductId", null, 0, 1, SupplierProduct.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getSupplierProduct_SupplierProductName(), ecorePackage.getEString(), "supplierProductName", null, 0, 1, SupplierProduct.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getSupplierProduct_SupplierRatingTypeId(), this.getSupplierRatingType(), null, "supplierRatingTypeId", null, 0, 1, SupplierProduct.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getSupplierProduct_SupplierRatingTypeId().getEKeys().add(this.getSupplierRatingType_SupplierRatingTypeId());
+		initEAttribute(getSupplierProduct_UnitsIncluded(), ecorePackage.getEBigDecimal(), "unitsIncluded", null, 0, 1, SupplierProduct.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(supplierProductFeatureEClass, SupplierProductFeature.class, "SupplierProductFeature", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getSupplierProductFeature_PartyId(), thePartyPackage.getParty(), null, "partyId", null, 1, 1, SupplierProductFeature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getSupplierProductFeature_PartyId().getEKeys().add(thePartyPackage.getParty_PartyId());
+		initEReference(getSupplierProductFeature_ProductFeatureId(), theFeaturePackage.getProductFeature(), null, "productFeatureId", null, 1, 1, SupplierProductFeature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getSupplierProductFeature_ProductFeatureId().getEKeys().add(theFeaturePackage.getProductFeature_ProductFeatureId());
 		initEAttribute(getSupplierProductFeature_Description(), ecorePackage.getEString(), "description", null, 0, 1, SupplierProductFeature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getSupplierProductFeature_IdCode(), ecorePackage.getEString(), "idCode", null, 0, 1, SupplierProductFeature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getSupplierProductFeature_PartyId(), thePartyPackage.getParty(), null, "partyId", null, 0, 1, SupplierProductFeature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		getSupplierProductFeature_PartyId().getEKeys().add(thePartyPackage.getParty_PartyId());
-		initEReference(getSupplierProductFeature_ProductFeatureId(), theFeaturePackage.getProductFeature(), null, "productFeatureId", null, 0, 1, SupplierProductFeature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		getSupplierProductFeature_ProductFeatureId().getEKeys().add(theFeaturePackage.getProductFeature_ProductFeatureId());
 		initEReference(getSupplierProductFeature_UomId(), theUomPackage.getUom(), null, "uomId", null, 0, 1, SupplierProductFeature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getSupplierProductFeature_UomId().getEKeys().add(theUomPackage.getUom_UomId());
 
@@ -1378,12 +1378,12 @@ public class SupplierPackageImpl extends EPackageImpl implements SupplierPackage
 		initEAttribute(getSupplierRatingType_Description(), ecorePackage.getEString(), "description", null, 0, 1, SupplierRatingType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Create annotations
-		// mimo-ent-format
-		createMimoentformatAnnotations();
-		// mimo-ent-slot
-		createMimoentslotAnnotations();
 		// mimo-ent-frame
 		createMimoentframeAnnotations();
+		// mimo-ent-slot
+		createMimoentslotAnnotations();
+		// mimo-ent-format
+		createMimoentformatAnnotations();
 	}
 
 	/**
@@ -1394,6 +1394,20 @@ public class SupplierPackageImpl extends EPackageImpl implements SupplierPackage
 	 */
 	protected void createMimoentformatAnnotations() {
 		String source = "mimo-ent-format";
+		addAnnotation
+		  (getMarketInterest_ProductCategoryId(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (getMarketInterest_PartyClassificationGroupId(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
 		addAnnotation
 		  (getMarketInterest_FromDate(),
 		   source,
@@ -1414,10 +1428,38 @@ public class SupplierPackageImpl extends EPackageImpl implements SupplierPackage
 			   "length", "20"
 		   });
 		addAnnotation
+		  (getReorderGuideline_FacilityId(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
 		  (getReorderGuideline_FromDate(),
 		   source,
 		   new String[] {
 			   "type", "date-time"
+		   });
+		addAnnotation
+		  (getReorderGuideline_GeoId(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (getReorderGuideline_PartyId(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (getReorderGuideline_ProductId(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
 		   });
 		addAnnotation
 		  (getReorderGuideline_ReorderLevel(),
@@ -1463,18 +1505,39 @@ public class SupplierPackageImpl extends EPackageImpl implements SupplierPackage
 			   "length", "255"
 		   });
 		addAnnotation
-		  (getSupplierProduct_MinimumOrderQuantity(),
+		  (getSupplierProduct_ProductId(),
 		   source,
 		   new String[] {
-			   "type", "fixed-point",
-			   "precision", "18",
-			   "scale", "6"
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (getSupplierProduct_PartyId(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (getSupplierProduct_CurrencyUomId(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
 		   });
 		addAnnotation
 		  (getSupplierProduct_AvailableFromDate(),
 		   source,
 		   new String[] {
 			   "type", "date-time"
+		   });
+		addAnnotation
+		  (getSupplierProduct_MinimumOrderQuantity(),
+		   source,
+		   new String[] {
+			   "type", "fixed-point",
+			   "precision", "18",
+			   "scale", "6"
 		   });
 		addAnnotation
 		  (getSupplierProduct_AgreementId(),
@@ -1527,6 +1590,13 @@ public class SupplierPackageImpl extends EPackageImpl implements SupplierPackage
 			   "scale", "6"
 		   });
 		addAnnotation
+		  (getSupplierProduct_QuantityUomId(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
 		  (getSupplierProduct_ShippingPrice(),
 		   source,
 		   new String[] {
@@ -1543,6 +1613,13 @@ public class SupplierPackageImpl extends EPackageImpl implements SupplierPackage
 			   "scale", "6"
 		   });
 		addAnnotation
+		  (getSupplierProduct_SupplierPrefOrderId(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
 		  (getSupplierProduct_SupplierProductId(),
 		   source,
 		   new String[] {
@@ -1557,12 +1634,33 @@ public class SupplierPackageImpl extends EPackageImpl implements SupplierPackage
 			   "length", "100"
 		   });
 		addAnnotation
+		  (getSupplierProduct_SupplierRatingTypeId(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
 		  (getSupplierProduct_UnitsIncluded(),
 		   source,
 		   new String[] {
 			   "type", "fixed-point",
 			   "precision", "18",
 			   "scale", "6"
+		   });
+		addAnnotation
+		  (getSupplierProductFeature_PartyId(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (getSupplierProductFeature_ProductFeatureId(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
 		   });
 		addAnnotation
 		  (getSupplierProductFeature_Description(),
@@ -1573,6 +1671,13 @@ public class SupplierPackageImpl extends EPackageImpl implements SupplierPackage
 		   });
 		addAnnotation
 		  (getSupplierProductFeature_IdCode(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (getSupplierProductFeature_UomId(),
 		   source,
 		   new String[] {
 			   "type", "id",
@@ -1603,25 +1708,37 @@ public class SupplierPackageImpl extends EPackageImpl implements SupplierPackage
 	protected void createMimoentslotAnnotations() {
 		String source = "mimo-ent-slot";
 		addAnnotation
+		  (getMarketInterest_ProductCategoryId(),
+		   source,
+		   new String[] {
+			   "key", "true"
+		   });
+		addAnnotation
+		  (getMarketInterest_PartyClassificationGroupId(),
+		   source,
+		   new String[] {
+			   "key", "true"
+		   });
+		addAnnotation
 		  (getMarketInterest_FromDate(),
 		   source,
 		   new String[] {
 			   "key", "true"
 		   });
 		addAnnotation
-		  (getReorderGuideline_ReorderGuidelineId(),
+		  (getSupplierProduct_ProductId(),
 		   source,
 		   new String[] {
 			   "key", "true"
 		   });
 		addAnnotation
-		  (getSupplierPrefOrder_SupplierPrefOrderId(),
+		  (getSupplierProduct_PartyId(),
 		   source,
 		   new String[] {
 			   "key", "true"
 		   });
 		addAnnotation
-		  (getSupplierProduct_MinimumOrderQuantity(),
+		  (getSupplierProduct_CurrencyUomId(),
 		   source,
 		   new String[] {
 			   "key", "true"
@@ -1633,7 +1750,19 @@ public class SupplierPackageImpl extends EPackageImpl implements SupplierPackage
 			   "key", "true"
 		   });
 		addAnnotation
-		  (getSupplierRatingType_SupplierRatingTypeId(),
+		  (getSupplierProduct_MinimumOrderQuantity(),
+		   source,
+		   new String[] {
+			   "key", "true"
+		   });
+		addAnnotation
+		  (getSupplierProductFeature_PartyId(),
+		   source,
+		   new String[] {
+			   "key", "true"
+		   });
+		addAnnotation
+		  (getSupplierProductFeature_ProductFeatureId(),
 		   source,
 		   new String[] {
 			   "key", "true"
@@ -1649,21 +1778,44 @@ public class SupplierPackageImpl extends EPackageImpl implements SupplierPackage
 	protected void createMimoentframeAnnotations() {
 		String source = "mimo-ent-frame";
 		addAnnotation
+		  (marketInterestEClass,
+		   source,
+		   new String[] {
+			   "dictionary", "ProductEntityLabels"
+		   });
+		addAnnotation
+		  (reorderGuidelineEClass,
+		   source,
+		   new String[] {
+			   "dictionary", "ProductEntityLabels"
+		   });
+		addAnnotation
 		  (supplierPrefOrderEClass,
 		   source,
 		   new String[] {
+			   "title", "Preference Type",
+			   "dictionary", "ProductEntityLabels",
 			   "formula", "description"
+		   });
+		addAnnotation
+		  (supplierProductEClass,
+		   source,
+		   new String[] {
+			   "dictionary", "ProductEntityLabels"
 		   });
 		addAnnotation
 		  (supplierProductFeatureEClass,
 		   source,
 		   new String[] {
+			   "title", "Supplier-specific product feature information",
+			   "dictionary", "ProductEntityLabels",
 			   "formula", "description"
 		   });
 		addAnnotation
 		  (supplierRatingTypeEClass,
 		   source,
 		   new String[] {
+			   "dictionary", "ProductEntityLabels",
 			   "formula", "description"
 		   });
 	}

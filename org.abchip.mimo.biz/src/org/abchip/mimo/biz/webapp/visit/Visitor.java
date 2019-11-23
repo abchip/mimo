@@ -44,7 +44,6 @@ public interface Visitor extends BizEntity {
 	 * @see org.abchip.mimo.biz.webapp.visit.VisitPackage#getVisitor_VisitorId()
 	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getVisitorId();
@@ -97,6 +96,7 @@ public interface Visitor extends BizEntity {
 	 * @see #setUserLoginId(UserLogin)
 	 * @see org.abchip.mimo.biz.webapp.visit.VisitPackage#getVisitor_UserLoginId()
 	 * @model keys="userLoginId"
+	 *        annotation="mimo-ent-format type='id-vlong' length='255'"
 	 * @generated
 	 */
 	UserLogin getUserLoginId();

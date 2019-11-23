@@ -26,9 +26,9 @@ import org.eclipse.emf.ecore.EClass;
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderNotificationImpl#getOrderNotificationId <em>Order Notification Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderNotificationImpl#getComments <em>Comments</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderNotificationImpl#getEmailType <em>Email Type</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderNotificationImpl#getNotificationDate <em>Notification Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderNotificationImpl#getOrderId <em>Order Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderNotificationImpl#getEmailType <em>Email Type</em>}</li>
  * </ul>
  *
  * @generated

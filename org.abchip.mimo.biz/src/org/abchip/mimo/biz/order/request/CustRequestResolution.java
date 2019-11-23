@@ -21,12 +21,12 @@ import org.abchip.mimo.biz.BizEntity;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.order.request.CustRequestResolution#getCustRequestResolutionId <em>Cust Request Resolution Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.request.CustRequestResolution#getDescription <em>Description</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.request.CustRequestResolution#getCustRequestTypeId <em>Cust Request Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.request.CustRequestResolution#getDescription <em>Description</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.order.request.RequestPackage#getCustRequestResolution()
- * @model annotation="mimo-ent-frame formula='description'"
+ * @model annotation="mimo-ent-frame title='Customer Request Resolution' dictionary='OrderEntityLabels' formula='description'"
  * @generated
  */
 public interface CustRequestResolution extends BizEntity {
@@ -43,7 +43,6 @@ public interface CustRequestResolution extends BizEntity {
 	 * @see org.abchip.mimo.biz.order.request.RequestPackage#getCustRequestResolution_CustRequestResolutionId()
 	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getCustRequestResolutionId();
@@ -70,6 +69,7 @@ public interface CustRequestResolution extends BizEntity {
 	 * @see #setCustRequestTypeId(CustRequestType)
 	 * @see org.abchip.mimo.biz.order.request.RequestPackage#getCustRequestResolution_CustRequestTypeId()
 	 * @model keys="custRequestTypeId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	CustRequestType getCustRequestTypeId();

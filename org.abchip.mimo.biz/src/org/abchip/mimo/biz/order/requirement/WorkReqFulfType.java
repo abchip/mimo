@@ -25,7 +25,7 @@ import org.abchip.mimo.biz.BizEntityType;
  * </ul>
  *
  * @see org.abchip.mimo.biz.order.requirement.RequirementPackage#getWorkReqFulfType()
- * @model annotation="mimo-ent-frame formula='description'"
+ * @model annotation="mimo-ent-frame title='Work Requirement Fulfillment Type' dictionary='OrderEntityLabels' formula='description'"
  * @generated
  */
 public interface WorkReqFulfType extends BizEntityType<WorkRequirementFulfillment> {
@@ -78,7 +78,6 @@ public interface WorkReqFulfType extends BizEntityType<WorkRequirementFulfillmen
 	 * @see org.abchip.mimo.biz.order.requirement.RequirementPackage#getWorkReqFulfType_WorkReqFulfTypeId()
 	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getWorkReqFulfTypeId();

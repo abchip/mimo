@@ -25,7 +25,7 @@ import org.abchip.mimo.biz.BizEntityType;
  * </ul>
  *
  * @see org.abchip.mimo.biz.product.facility.FacilityPackage#getContainerType()
- * @model annotation="mimo-ent-frame formula='description'"
+ * @model annotation="mimo-ent-frame dictionary='ProductEntityLabels' formula='description'"
  * @generated
  */
 public interface ContainerType extends BizEntityType<Container> {
@@ -78,7 +78,6 @@ public interface ContainerType extends BizEntityType<Container> {
 	 * @see org.abchip.mimo.biz.product.facility.FacilityPackage#getContainerType_ContainerTypeId()
 	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getContainerTypeId();

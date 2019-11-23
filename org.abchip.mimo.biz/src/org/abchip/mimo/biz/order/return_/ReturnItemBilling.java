@@ -22,17 +22,17 @@ import org.abchip.mimo.biz.shipment.receipt.ShipmentReceipt;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.order.return_.ReturnItemBilling#getReturnItemSeqId <em>Return Item Seq Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.return_.ReturnItemBilling#getInvoiceItemSeqId <em>Invoice Item Seq Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.return_.ReturnItemBilling#getAmount <em>Amount</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.return_.ReturnItemBilling#getQuantity <em>Quantity</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.return_.ReturnItemBilling#getReturnId <em>Return Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.return_.ReturnItemBilling#getInvoiceId <em>Invoice Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.return_.ReturnItemBilling#getInvoiceItemSeqId <em>Invoice Item Seq Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.return_.ReturnItemBilling#getReturnItemSeqId <em>Return Item Seq Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.return_.ReturnItemBilling#getAmount <em>Amount</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.return_.ReturnItemBilling#getQuantity <em>Quantity</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.return_.ReturnItemBilling#getShipmentReceiptId <em>Shipment Receipt Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.order.return_.ReturnPackage#getReturnItemBilling()
- * @model
+ * @model annotation="mimo-ent-frame title='Records the quantity and amount returned to an inventory item from a return item.'"
  * @generated
  */
 public interface ReturnItemBilling extends BizEntity {
@@ -73,7 +73,9 @@ public interface ReturnItemBilling extends BizEntity {
 	 * @return the value of the '<em>Invoice Id</em>' reference.
 	 * @see #setInvoiceId(Invoice)
 	 * @see org.abchip.mimo.biz.order.return_.ReturnPackage#getReturnItemBilling_InvoiceId()
-	 * @model keys="invoiceId"
+	 * @model keys="invoiceId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Invoice getInvoiceId();
@@ -100,8 +102,8 @@ public interface ReturnItemBilling extends BizEntity {
 	 * @see #setInvoiceItemSeqId(String)
 	 * @see org.abchip.mimo.biz.order.return_.ReturnPackage#getReturnItemBilling_InvoiceItemSeqId()
 	 * @model required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	String getInvoiceItemSeqId();
@@ -153,7 +155,9 @@ public interface ReturnItemBilling extends BizEntity {
 	 * @return the value of the '<em>Return Id</em>' reference.
 	 * @see #setReturnId(ReturnHeader)
 	 * @see org.abchip.mimo.biz.order.return_.ReturnPackage#getReturnItemBilling_ReturnId()
-	 * @model keys="returnId"
+	 * @model keys="returnId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ReturnHeader getReturnId();
@@ -180,8 +184,8 @@ public interface ReturnItemBilling extends BizEntity {
 	 * @see #setReturnItemSeqId(String)
 	 * @see org.abchip.mimo.biz.order.return_.ReturnPackage#getReturnItemBilling_ReturnItemSeqId()
 	 * @model required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	String getReturnItemSeqId();
@@ -208,6 +212,7 @@ public interface ReturnItemBilling extends BizEntity {
 	 * @see #setShipmentReceiptId(ShipmentReceipt)
 	 * @see org.abchip.mimo.biz.order.return_.ReturnPackage#getReturnItemBilling_ShipmentReceiptId()
 	 * @model keys="receiptId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ShipmentReceipt getShipmentReceiptId();

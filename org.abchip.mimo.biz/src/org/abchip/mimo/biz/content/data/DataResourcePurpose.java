@@ -24,7 +24,7 @@ import org.abchip.mimo.biz.content.content.ContentPurposeType;
  * </ul>
  *
  * @see org.abchip.mimo.biz.content.data.DataPackage#getDataResourcePurpose()
- * @model
+ * @model annotation="mimo-ent-frame title='Data Object Purpose'"
  * @generated
  */
 public interface DataResourcePurpose extends BizEntity {
@@ -39,7 +39,9 @@ public interface DataResourcePurpose extends BizEntity {
 	 * @return the value of the '<em>Content Purpose Type Id</em>' reference.
 	 * @see #setContentPurposeTypeId(ContentPurposeType)
 	 * @see org.abchip.mimo.biz.content.data.DataPackage#getDataResourcePurpose_ContentPurposeTypeId()
-	 * @model keys="contentPurposeTypeId"
+	 * @model keys="contentPurposeTypeId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ContentPurposeType getContentPurposeTypeId();
@@ -65,7 +67,9 @@ public interface DataResourcePurpose extends BizEntity {
 	 * @return the value of the '<em>Data Resource Id</em>' reference.
 	 * @see #setDataResourceId(DataResource)
 	 * @see org.abchip.mimo.biz.content.data.DataPackage#getDataResourcePurpose_DataResourceId()
-	 * @model keys="dataResourceId"
+	 * @model keys="dataResourceId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	DataResource getDataResourceId();

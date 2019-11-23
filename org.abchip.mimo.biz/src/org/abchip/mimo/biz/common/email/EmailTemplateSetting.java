@@ -25,10 +25,10 @@ import org.abchip.mimo.biz.common.enum_.Enumeration;
  *   <li>{@link org.abchip.mimo.biz.common.email.EmailTemplateSetting#getCcAddress <em>Cc Address</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.common.email.EmailTemplateSetting#getContentType <em>Content Type</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.common.email.EmailTemplateSetting#getDescription <em>Description</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.common.email.EmailTemplateSetting#getEmailType <em>Email Type</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.common.email.EmailTemplateSetting#getFromAddress <em>From Address</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.common.email.EmailTemplateSetting#getSubject <em>Subject</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.common.email.EmailTemplateSetting#getXslfoAttachScreenLocation <em>Xslfo Attach Screen Location</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.common.email.EmailTemplateSetting#getEmailType <em>Email Type</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.common.email.EmailPackage#getEmailTemplateSetting()
@@ -73,7 +73,8 @@ public interface EmailTemplateSetting extends BizEntity {
 	 * @return the value of the '<em>Body Screen Location</em>' attribute.
 	 * @see #setBodyScreenLocation(String)
 	 * @see org.abchip.mimo.biz.common.email.EmailPackage#getEmailTemplateSetting_BodyScreenLocation()
-	 * @model annotation="mimo-ent-format type='long-varchar' length='255'"
+	 * @model annotation="mimo-ent-slot help='if empty defaults to a screen based on the emailType'"
+	 *        annotation="mimo-ent-format type='long-varchar' length='255'"
 	 * @generated
 	 */
 	String getBodyScreenLocation();
@@ -179,7 +180,6 @@ public interface EmailTemplateSetting extends BizEntity {
 	 * @see org.abchip.mimo.biz.common.email.EmailPackage#getEmailTemplateSetting_EmailTemplateSettingId()
 	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getEmailTemplateSettingId();
@@ -206,6 +206,7 @@ public interface EmailTemplateSetting extends BizEntity {
 	 * @see #setEmailType(Enumeration)
 	 * @see org.abchip.mimo.biz.common.email.EmailPackage#getEmailTemplateSetting_EmailType()
 	 * @model keys="enumId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Enumeration getEmailType();
@@ -283,7 +284,8 @@ public interface EmailTemplateSetting extends BizEntity {
 	 * @return the value of the '<em>Xslfo Attach Screen Location</em>' attribute.
 	 * @see #setXslfoAttachScreenLocation(String)
 	 * @see org.abchip.mimo.biz.common.email.EmailPackage#getEmailTemplateSetting_XslfoAttachScreenLocation()
-	 * @model annotation="mimo-ent-format type='long-varchar' length='255'"
+	 * @model annotation="mimo-ent-slot help='if specified is used to generate XSL:FO that is transformed to a PDF via Apache FOP and attached to the email'"
+	 *        annotation="mimo-ent-format type='long-varchar' length='255'"
 	 * @generated
 	 */
 	String getXslfoAttachScreenLocation();

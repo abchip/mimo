@@ -18,15 +18,15 @@ import org.abchip.mimo.biz.BizEntity;
  * The following features are supported:
  * </p>
  * <ul>
+ *   <li>{@link org.abchip.mimo.biz.entity.tenant.TenantDataSource#getTenantId <em>Tenant Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.entity.tenant.TenantDataSource#getEntityGroupName <em>Entity Group Name</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.entity.tenant.TenantDataSource#getJdbcPassword <em>Jdbc Password</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.entity.tenant.TenantDataSource#getJdbcUri <em>Jdbc Uri</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.entity.tenant.TenantDataSource#getJdbcUsername <em>Jdbc Username</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.entity.tenant.TenantDataSource#getTenantId <em>Tenant Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.entity.tenant.TenantPackage#getTenantDataSource()
- * @model
+ * @model annotation="mimo-ent-frame help='There should be one record for each tenant and each group-map for the active delegator.\n            The jdbc fields will override the datasource -&gt; inline-jdbc values for the per-tenant delegator.'"
  * @generated
  */
 public interface TenantDataSource extends BizEntity {
@@ -42,8 +42,8 @@ public interface TenantDataSource extends BizEntity {
 	 * @see #setEntityGroupName(String)
 	 * @see org.abchip.mimo.biz.entity.tenant.TenantPackage#getTenantDataSource_EntityGroupName()
 	 * @model required="true"
-	 *        annotation="mimo-ent-format type='name' length='100'"
 	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='name' length='100'"
 	 * @generated
 	 */
 	String getEntityGroupName();
@@ -147,7 +147,9 @@ public interface TenantDataSource extends BizEntity {
 	 * @return the value of the '<em>Tenant Id</em>' reference.
 	 * @see #setTenantId(Tenant)
 	 * @see org.abchip.mimo.biz.entity.tenant.TenantPackage#getTenantDataSource_TenantId()
-	 * @model keys="tenantId"
+	 * @model keys="tenantId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Tenant getTenantId();

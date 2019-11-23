@@ -24,12 +24,12 @@ import org.eclipse.emf.ecore.EClass;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.product.store.impl.ProductStoreKeywordOvrdImpl#getKeyword <em>Keyword</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.store.impl.ProductStoreKeywordOvrdImpl#getFromDate <em>From Date</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.store.impl.ProductStoreKeywordOvrdImpl#getTarget <em>Target</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.store.impl.ProductStoreKeywordOvrdImpl#getThruDate <em>Thru Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.store.impl.ProductStoreKeywordOvrdImpl#getProductStoreId <em>Product Store Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.store.impl.ProductStoreKeywordOvrdImpl#getFromDate <em>From Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.store.impl.ProductStoreKeywordOvrdImpl#getKeyword <em>Keyword</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.store.impl.ProductStoreKeywordOvrdImpl#getTarget <em>Target</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.store.impl.ProductStoreKeywordOvrdImpl#getTargetTypeEnumId <em>Target Type Enum Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.store.impl.ProductStoreKeywordOvrdImpl#getThruDate <em>Thru Date</em>}</li>
  * </ul>
  *
  * @generated

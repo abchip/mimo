@@ -28,14 +28,14 @@ import org.eclipse.emf.ecore.EClass;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.common.geo.impl.GeoPointImpl#getGeoPointId <em>Geo Point Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.common.geo.impl.GeoPointImpl#getDataSourceId <em>Data Source Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.common.geo.impl.GeoPointImpl#getDescription <em>Description</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.common.geo.impl.GeoPointImpl#getElevation <em>Elevation</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.common.geo.impl.GeoPointImpl#getElevationUomId <em>Elevation Uom Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.common.geo.impl.GeoPointImpl#getGeoPointTypeEnumId <em>Geo Point Type Enum Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.common.geo.impl.GeoPointImpl#getInformation <em>Information</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.common.geo.impl.GeoPointImpl#getLatitude <em>Latitude</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.common.geo.impl.GeoPointImpl#getLongitude <em>Longitude</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.common.geo.impl.GeoPointImpl#getDataSourceId <em>Data Source Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.common.geo.impl.GeoPointImpl#getGeoPointTypeEnumId <em>Geo Point Type Enum Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.common.geo.impl.GeoPointImpl#getElevationUomId <em>Elevation Uom Id</em>}</li>
  * </ul>
  *
  * @generated

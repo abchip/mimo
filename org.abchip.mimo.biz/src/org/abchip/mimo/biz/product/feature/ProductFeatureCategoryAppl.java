@@ -21,14 +21,14 @@ import org.abchip.mimo.biz.product.category.ProductCategory;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.product.feature.ProductFeatureCategoryAppl#getFromDate <em>From Date</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.feature.ProductFeatureCategoryAppl#getThruDate <em>Thru Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.feature.ProductFeatureCategoryAppl#getProductCategoryId <em>Product Category Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.feature.ProductFeatureCategoryAppl#getProductFeatureCategoryId <em>Product Feature Category Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.feature.ProductFeatureCategoryAppl#getFromDate <em>From Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.feature.ProductFeatureCategoryAppl#getThruDate <em>Thru Date</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.product.feature.FeaturePackage#getProductFeatureCategoryAppl()
- * @model
+ * @model annotation="mimo-ent-frame title='Product Feature Category Application' dictionary='ProductEntityLabels'"
  * @generated
  */
 public interface ProductFeatureCategoryAppl extends BizEntity {
@@ -44,8 +44,8 @@ public interface ProductFeatureCategoryAppl extends BizEntity {
 	 * @see #setFromDate(Date)
 	 * @see org.abchip.mimo.biz.product.feature.FeaturePackage#getProductFeatureCategoryAppl_FromDate()
 	 * @model required="true"
-	 *        annotation="mimo-ent-format type='date-time'"
 	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getFromDate();
@@ -97,7 +97,9 @@ public interface ProductFeatureCategoryAppl extends BizEntity {
 	 * @return the value of the '<em>Product Category Id</em>' reference.
 	 * @see #setProductCategoryId(ProductCategory)
 	 * @see org.abchip.mimo.biz.product.feature.FeaturePackage#getProductFeatureCategoryAppl_ProductCategoryId()
-	 * @model keys="productCategoryId"
+	 * @model keys="productCategoryId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ProductCategory getProductCategoryId();
@@ -123,7 +125,9 @@ public interface ProductFeatureCategoryAppl extends BizEntity {
 	 * @return the value of the '<em>Product Feature Category Id</em>' reference.
 	 * @see #setProductFeatureCategoryId(ProductFeatureCategory)
 	 * @see org.abchip.mimo.biz.product.feature.FeaturePackage#getProductFeatureCategoryAppl_ProductFeatureCategoryId()
-	 * @model keys="productFeatureCategoryId"
+	 * @model keys="productFeatureCategoryId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ProductFeatureCategory getProductFeatureCategoryId();

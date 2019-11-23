@@ -25,12 +25,12 @@ import org.eclipse.emf.ecore.EClass;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.product.catalog.impl.ProdCatalogCategoryImpl#getFromDate <em>From Date</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.catalog.impl.ProdCatalogCategoryImpl#getSequenceNum <em>Sequence Num</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.catalog.impl.ProdCatalogCategoryImpl#getThruDate <em>Thru Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.catalog.impl.ProdCatalogCategoryImpl#getProdCatalogId <em>Prod Catalog Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.catalog.impl.ProdCatalogCategoryImpl#getProductCategoryId <em>Product Category Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.catalog.impl.ProdCatalogCategoryImpl#getProdCatalogCategoryTypeId <em>Prod Catalog Category Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.catalog.impl.ProdCatalogCategoryImpl#getFromDate <em>From Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.catalog.impl.ProdCatalogCategoryImpl#getSequenceNum <em>Sequence Num</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.catalog.impl.ProdCatalogCategoryImpl#getThruDate <em>Thru Date</em>}</li>
  * </ul>
  *
  * @generated

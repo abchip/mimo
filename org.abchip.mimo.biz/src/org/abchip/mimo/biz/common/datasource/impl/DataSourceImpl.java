@@ -24,8 +24,8 @@ import org.eclipse.emf.ecore.EClass;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.common.datasource.impl.DataSourceImpl#getDataSourceId <em>Data Source Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.common.datasource.impl.DataSourceImpl#getDescription <em>Description</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.common.datasource.impl.DataSourceImpl#getDataSourceTypeId <em>Data Source Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.common.datasource.impl.DataSourceImpl#getDescription <em>Description</em>}</li>
  * </ul>
  *
  * @generated

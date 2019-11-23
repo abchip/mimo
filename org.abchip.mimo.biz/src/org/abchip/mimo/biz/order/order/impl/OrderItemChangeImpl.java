@@ -31,14 +31,14 @@ import org.eclipse.emf.ecore.EClass;
  *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderItemChangeImpl#getCancelQuantity <em>Cancel Quantity</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderItemChangeImpl#getChangeComments <em>Change Comments</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderItemChangeImpl#getChangeDatetime <em>Change Datetime</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderItemChangeImpl#getChangeTypeEnumId <em>Change Type Enum Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderItemChangeImpl#getChangeUserLogin <em>Change User Login</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderItemChangeImpl#getItemDescription <em>Item Description</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderItemChangeImpl#getOrderId <em>Order Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderItemChangeImpl#getOrderItemSeqId <em>Order Item Seq Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderItemChangeImpl#getQuantity <em>Quantity</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderItemChangeImpl#getUnitPrice <em>Unit Price</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderItemChangeImpl#getOrderId <em>Order Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderItemChangeImpl#getChangeTypeEnumId <em>Change Type Enum Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderItemChangeImpl#getReasonEnumId <em>Reason Enum Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderItemChangeImpl#getChangeUserLogin <em>Change User Login</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderItemChangeImpl#getUnitPrice <em>Unit Price</em>}</li>
  * </ul>
  *
  * @generated

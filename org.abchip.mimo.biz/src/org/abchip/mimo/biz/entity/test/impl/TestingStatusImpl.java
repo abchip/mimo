@@ -25,10 +25,10 @@ import org.eclipse.emf.ecore.EClass;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.entity.test.impl.TestingStatusImpl#getTestingStatusId <em>Testing Status Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.entity.test.impl.TestingStatusImpl#getStatusDate <em>Status Date</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.entity.test.impl.TestingStatusImpl#getTestingId <em>Testing Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.entity.test.impl.TestingStatusImpl#getStatusId <em>Status Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.entity.test.impl.TestingStatusImpl#getChangeByUserLoginId <em>Change By User Login Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.entity.test.impl.TestingStatusImpl#getStatusDate <em>Status Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.entity.test.impl.TestingStatusImpl#getStatusId <em>Status Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.entity.test.impl.TestingStatusImpl#getTestingId <em>Testing Id</em>}</li>
  * </ul>
  *
  * @generated

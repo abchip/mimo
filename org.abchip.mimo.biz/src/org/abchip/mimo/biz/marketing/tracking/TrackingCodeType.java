@@ -25,7 +25,7 @@ import org.abchip.mimo.biz.BizEntityType;
  * </ul>
  *
  * @see org.abchip.mimo.biz.marketing.tracking.TrackingPackage#getTrackingCodeType()
- * @model annotation="mimo-ent-frame formula='description'"
+ * @model annotation="mimo-ent-frame dictionary='MarketingEntityLabels' formula='description'"
  * @generated
  */
 public interface TrackingCodeType extends BizEntityType<TrackingCode> {
@@ -58,8 +58,7 @@ public interface TrackingCodeType extends BizEntityType<TrackingCode> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='TrackingCodeOrder' route='trackingCodeTypeId'"
 	 * @generated
@@ -89,7 +88,6 @@ public interface TrackingCodeType extends BizEntityType<TrackingCode> {
 	 * @see org.abchip.mimo.biz.marketing.tracking.TrackingPackage#getTrackingCodeType_TrackingCodeTypeId()
 	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getTrackingCodeTypeId();

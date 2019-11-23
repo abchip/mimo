@@ -26,16 +26,16 @@ import org.abchip.mimo.biz.service.schedule.JobSandbox;
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.product.product.ProductGroupOrder#getGroupOrderId <em>Group Order Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.ProductGroupOrder#getFromDate <em>From Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.product.ProductGroupOrder#getJobId <em>Job Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.product.ProductGroupOrder#getProductId <em>Product Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.ProductGroupOrder#getReqOrderQty <em>Req Order Qty</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.ProductGroupOrder#getSoldOrderQty <em>Sold Order Qty</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.product.ProductGroupOrder#getThruDate <em>Thru Date</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.product.ProductGroupOrder#getProductId <em>Product Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.ProductGroupOrder#getStatusId <em>Status Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.product.ProductGroupOrder#getJobId <em>Job Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.product.ProductGroupOrder#getThruDate <em>Thru Date</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.product.product.ProductPackage#getProductGroupOrder()
- * @model
+ * @model annotation="mimo-ent-frame dictionary='ProductEntityLabels'"
  * @generated
  */
 public interface ProductGroupOrder extends BizEntity {
@@ -78,7 +78,6 @@ public interface ProductGroupOrder extends BizEntity {
 	 * @see org.abchip.mimo.biz.product.product.ProductPackage#getProductGroupOrder_GroupOrderId()
 	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getGroupOrderId();
@@ -105,6 +104,7 @@ public interface ProductGroupOrder extends BizEntity {
 	 * @see #setJobId(JobSandbox)
 	 * @see org.abchip.mimo.biz.product.product.ProductPackage#getProductGroupOrder_JobId()
 	 * @model keys="jobId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	JobSandbox getJobId();
@@ -183,6 +183,7 @@ public interface ProductGroupOrder extends BizEntity {
 	 * @see #setStatusId(StatusItem)
 	 * @see org.abchip.mimo.biz.product.product.ProductPackage#getProductGroupOrder_StatusId()
 	 * @model keys="statusId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	StatusItem getStatusId();
@@ -235,6 +236,7 @@ public interface ProductGroupOrder extends BizEntity {
 	 * @see #setProductId(Product)
 	 * @see org.abchip.mimo.biz.product.product.ProductPackage#getProductGroupOrder_ProductId()
 	 * @model keys="productId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Product getProductId();

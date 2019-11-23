@@ -18,13 +18,13 @@ import org.abchip.mimo.biz.BizEntity;
  * The following features are supported:
  * </p>
  * <ul>
+ *   <li>{@link org.abchip.mimo.biz.order.quote.QuoteTypeAttr#getQuoteTypeId <em>Quote Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.quote.QuoteTypeAttr#getAttrName <em>Attr Name</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.quote.QuoteTypeAttr#getDescription <em>Description</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.quote.QuoteTypeAttr#getQuoteTypeId <em>Quote Type Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.order.quote.QuotePackage#getQuoteTypeAttr()
- * @model annotation="mimo-ent-frame formula='description'"
+ * @model annotation="mimo-ent-frame title='Quote Type Attribute' formula='description'"
  * @generated
  */
 public interface QuoteTypeAttr extends BizEntity {
@@ -40,8 +40,8 @@ public interface QuoteTypeAttr extends BizEntity {
 	 * @see #setAttrName(String)
 	 * @see org.abchip.mimo.biz.order.quote.QuotePackage#getQuoteTypeAttr_AttrName()
 	 * @model required="true"
-	 *        annotation="mimo-ent-format type='id-long' length='60'"
 	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id-long' length='60'"
 	 * @generated
 	 */
 	String getAttrName();
@@ -93,7 +93,9 @@ public interface QuoteTypeAttr extends BizEntity {
 	 * @return the value of the '<em>Quote Type Id</em>' reference.
 	 * @see #setQuoteTypeId(QuoteType)
 	 * @see org.abchip.mimo.biz.order.quote.QuotePackage#getQuoteTypeAttr_QuoteTypeId()
-	 * @model keys="quoteTypeId"
+	 * @model keys="quoteTypeId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	QuoteType getQuoteTypeId();

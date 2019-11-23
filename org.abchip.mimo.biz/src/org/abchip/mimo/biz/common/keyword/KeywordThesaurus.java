@@ -19,8 +19,8 @@ import org.abchip.mimo.biz.common.enum_.Enumeration;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.common.keyword.KeywordThesaurus#getEnteredKeyword <em>Entered Keyword</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.common.keyword.KeywordThesaurus#getAlternateKeyword <em>Alternate Keyword</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.common.keyword.KeywordThesaurus#getEnteredKeyword <em>Entered Keyword</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.common.keyword.KeywordThesaurus#getRelationshipEnumId <em>Relationship Enum Id</em>}</li>
  * </ul>
  *
@@ -41,8 +41,8 @@ public interface KeywordThesaurus extends BizEntity {
 	 * @see #setAlternateKeyword(String)
 	 * @see org.abchip.mimo.biz.common.keyword.KeywordPackage#getKeywordThesaurus_AlternateKeyword()
 	 * @model required="true"
-	 *        annotation="mimo-ent-format type='long-varchar' length='255'"
 	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='long-varchar' length='255'"
 	 * @generated
 	 */
 	String getAlternateKeyword();
@@ -69,8 +69,8 @@ public interface KeywordThesaurus extends BizEntity {
 	 * @see #setEnteredKeyword(String)
 	 * @see org.abchip.mimo.biz.common.keyword.KeywordPackage#getKeywordThesaurus_EnteredKeyword()
 	 * @model required="true"
-	 *        annotation="mimo-ent-format type='long-varchar' length='255'"
 	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='long-varchar' length='255'"
 	 * @generated
 	 */
 	String getEnteredKeyword();
@@ -97,6 +97,7 @@ public interface KeywordThesaurus extends BizEntity {
 	 * @see #setRelationshipEnumId(Enumeration)
 	 * @see org.abchip.mimo.biz.common.keyword.KeywordPackage#getKeywordThesaurus_RelationshipEnumId()
 	 * @model keys="enumId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Enumeration getRelationshipEnumId();

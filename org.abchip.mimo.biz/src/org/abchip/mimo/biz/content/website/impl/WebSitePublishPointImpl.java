@@ -23,6 +23,7 @@ import org.eclipse.emf.ecore.EClass;
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.content.website.impl.WebSitePublishPointImpl#getAboutContentId <em>About Content Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.website.impl.WebSitePublishPointImpl#getContentDept <em>Content Dept</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.content.website.impl.WebSitePublishPointImpl#getContentId <em>Content Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.website.impl.WebSitePublishPointImpl#getLeftBarId <em>Left Bar Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.website.impl.WebSitePublishPointImpl#getLineLogo <em>Line Logo</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.website.impl.WebSitePublishPointImpl#getLogo <em>Logo</em>}</li>
@@ -30,7 +31,6 @@ import org.eclipse.emf.ecore.EClass;
  *   <li>{@link org.abchip.mimo.biz.content.website.impl.WebSitePublishPointImpl#getRightBarId <em>Right Bar Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.website.impl.WebSitePublishPointImpl#getStyleSheetFile <em>Style Sheet File</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.website.impl.WebSitePublishPointImpl#getTemplateTitle <em>Template Title</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.content.website.impl.WebSitePublishPointImpl#getContentId <em>Content Id</em>}</li>
  * </ul>
  *
  * @generated

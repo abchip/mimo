@@ -18,12 +18,12 @@ import org.abchip.mimo.biz.BizEntity;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.common.uom.UomGroup#getUomGroupId <em>Uom Group Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.common.uom.UomGroup#getUomId <em>Uom Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.common.uom.UomGroup#getUomGroupId <em>Uom Group Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.common.uom.UomPackage#getUomGroup()
- * @model
+ * @model annotation="mimo-ent-frame title='Unit Of Measure Group' dictionary='CommonEntityLabels'"
  * @generated
  */
 public interface UomGroup extends BizEntity {
@@ -39,8 +39,8 @@ public interface UomGroup extends BizEntity {
 	 * @see #setUomGroupId(String)
 	 * @see org.abchip.mimo.biz.common.uom.UomPackage#getUomGroup_UomGroupId()
 	 * @model required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	String getUomGroupId();
@@ -66,7 +66,9 @@ public interface UomGroup extends BizEntity {
 	 * @return the value of the '<em>Uom Id</em>' reference.
 	 * @see #setUomId(Uom)
 	 * @see org.abchip.mimo.biz.common.uom.UomPackage#getUomGroup_UomId()
-	 * @model keys="uomId"
+	 * @model keys="uomId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Uom getUomId();

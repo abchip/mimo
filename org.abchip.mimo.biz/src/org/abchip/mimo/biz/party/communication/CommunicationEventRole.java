@@ -30,7 +30,7 @@ import org.abchip.mimo.biz.party.party.RoleType;
  * </ul>
  *
  * @see org.abchip.mimo.biz.party.communication.CommunicationPackage#getCommunicationEventRole()
- * @model
+ * @model annotation="mimo-ent-frame title='Communication Event Role Entity showing all participants of the communication event.'"
  * @generated
  */
 public interface CommunicationEventRole extends BizEntity {
@@ -46,6 +46,8 @@ public interface CommunicationEventRole extends BizEntity {
 	 * @see #setContactMechId(ContactMech)
 	 * @see org.abchip.mimo.biz.party.communication.CommunicationPackage#getCommunicationEventRole_ContactMechId()
 	 * @model keys="contactMechId"
+	 *        annotation="mimo-ent-slot help='For communication event participants this represents the contactMechId of the ContactMech used.'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ContactMech getContactMechId();
@@ -71,7 +73,9 @@ public interface CommunicationEventRole extends BizEntity {
 	 * @return the value of the '<em>Party Id</em>' reference.
 	 * @see #setPartyId(Party)
 	 * @see org.abchip.mimo.biz.party.communication.CommunicationPackage#getCommunicationEventRole_PartyId()
-	 * @model keys="partyId"
+	 * @model keys="partyId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Party getPartyId();
@@ -97,7 +101,9 @@ public interface CommunicationEventRole extends BizEntity {
 	 * @return the value of the '<em>Role Type Id</em>' reference.
 	 * @see #setRoleTypeId(RoleType)
 	 * @see org.abchip.mimo.biz.party.communication.CommunicationPackage#getCommunicationEventRole_RoleTypeId()
-	 * @model keys="roleTypeId"
+	 * @model keys="roleTypeId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	RoleType getRoleTypeId();
@@ -124,6 +130,7 @@ public interface CommunicationEventRole extends BizEntity {
 	 * @see #setStatusId(StatusItem)
 	 * @see org.abchip.mimo.biz.party.communication.CommunicationPackage#getCommunicationEventRole_StatusId()
 	 * @model keys="statusId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	StatusItem getStatusId();
@@ -149,7 +156,9 @@ public interface CommunicationEventRole extends BizEntity {
 	 * @return the value of the '<em>Communication Event Id</em>' reference.
 	 * @see #setCommunicationEventId(CommunicationEvent)
 	 * @see org.abchip.mimo.biz.party.communication.CommunicationPackage#getCommunicationEventRole_CommunicationEventId()
-	 * @model keys="communicationEventId"
+	 * @model keys="communicationEventId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	CommunicationEvent getCommunicationEventId();

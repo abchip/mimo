@@ -27,7 +27,7 @@ import org.abchip.mimo.biz.BizEntityType;
  * </ul>
  *
  * @see org.abchip.mimo.biz.order.return_.ReturnPackage#getReturnAdjustmentType()
- * @model annotation="mimo-ent-frame formula='description'"
+ * @model annotation="mimo-ent-frame dictionary='OrderEntityLabels' formula='description'"
  * @generated
  */
 public interface ReturnAdjustmentType extends BizEntityType<ReturnAdjustment> {
@@ -95,6 +95,7 @@ public interface ReturnAdjustmentType extends BizEntityType<ReturnAdjustment> {
 	 * @see #setParentTypeId(ReturnAdjustmentType)
 	 * @see org.abchip.mimo.biz.order.return_.ReturnPackage#getReturnAdjustmentType_ParentTypeId()
 	 * @model keys="returnAdjustmentTypeId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ReturnAdjustmentType getParentTypeId();
@@ -152,7 +153,6 @@ public interface ReturnAdjustmentType extends BizEntityType<ReturnAdjustment> {
 	 * @see org.abchip.mimo.biz.order.return_.ReturnPackage#getReturnAdjustmentType_ReturnAdjustmentTypeId()
 	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getReturnAdjustmentTypeId();

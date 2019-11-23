@@ -24,6 +24,7 @@ import org.abchip.mimo.biz.security.login.UserLogin;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.product.price.ProductPriceChange#getProductPriceChangeId <em>Product Price Change Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.price.ProductPriceChange#getChangedByUserLogin <em>Changed By User Login</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.price.ProductPriceChange#getChangedDate <em>Changed Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.price.ProductPriceChange#getCurrencyUomId <em>Currency Uom Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.price.ProductPriceChange#getFromDate <em>From Date</em>}</li>
@@ -34,11 +35,10 @@ import org.abchip.mimo.biz.security.login.UserLogin;
  *   <li>{@link org.abchip.mimo.biz.product.price.ProductPriceChange#getProductPriceTypeId <em>Product Price Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.price.ProductPriceChange#getProductStoreGroupId <em>Product Store Group Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.price.ProductPriceChange#getThruDate <em>Thru Date</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.price.ProductPriceChange#getChangedByUserLogin <em>Changed By User Login</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.product.price.PricePackage#getProductPriceChange()
- * @model
+ * @model annotation="mimo-ent-frame title='Product Price Change History' dictionary='ProductEntityLabels'"
  * @generated
  */
 public interface ProductPriceChange extends BizEntity {
@@ -54,6 +54,7 @@ public interface ProductPriceChange extends BizEntity {
 	 * @see #setChangedByUserLogin(UserLogin)
 	 * @see org.abchip.mimo.biz.product.price.PricePackage#getProductPriceChange_ChangedByUserLogin()
 	 * @model keys="userLoginId"
+	 *        annotation="mimo-ent-format type='id-vlong' length='255'"
 	 * @generated
 	 */
 	UserLogin getChangedByUserLogin();
@@ -237,7 +238,6 @@ public interface ProductPriceChange extends BizEntity {
 	 * @see org.abchip.mimo.biz.product.price.PricePackage#getProductPriceChange_ProductPriceChangeId()
 	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getProductPriceChangeId();

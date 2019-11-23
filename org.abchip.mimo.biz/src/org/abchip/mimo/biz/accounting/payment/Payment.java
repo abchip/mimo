@@ -32,24 +32,24 @@ import org.abchip.mimo.biz.party.party.RoleType;
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.Payment#getPaymentId <em>Payment Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.Payment#getActualCurrencyAmount <em>Actual Currency Amount</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.payment.Payment#getActualCurrencyUomId <em>Actual Currency Uom Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.Payment#getAmount <em>Amount</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.Payment#getComments <em>Comments</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.payment.Payment#getEffectiveDate <em>Effective Date</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.payment.Payment#getPaymentRefNum <em>Payment Ref Num</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.payment.Payment#getPaymentTypeId <em>Payment Type Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.payment.Payment#getPaymentMethodTypeId <em>Payment Method Type Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.payment.Payment#getPaymentMethodId <em>Payment Method Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.Payment#getCurrencyUomId <em>Currency Uom Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.payment.Payment#getActualCurrencyUomId <em>Actual Currency Uom Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.payment.Payment#getPaymentPreferenceId <em>Payment Preference Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.payment.Payment#getPaymentGatewayResponseId <em>Payment Gateway Response Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.payment.Payment#getPartyIdFrom <em>Party Id From</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.payment.Payment#getPartyIdTo <em>Party Id To</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.payment.Payment#getRoleTypeIdTo <em>Role Type Id To</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.payment.Payment#getStatusId <em>Status Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.payment.Payment#getEffectiveDate <em>Effective Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.Payment#getFinAccountTransId <em>Fin Account Trans Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.Payment#getOverrideGlAccountId <em>Override Gl Account Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.payment.Payment#getPartyIdFrom <em>Party Id From</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.payment.Payment#getPartyIdTo <em>Party Id To</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.Payment#getPaymentAttributes <em>Payment Attributes</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.payment.Payment#getPaymentGatewayResponseId <em>Payment Gateway Response Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.payment.Payment#getPaymentMethodId <em>Payment Method Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.payment.Payment#getPaymentMethodTypeId <em>Payment Method Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.payment.Payment#getPaymentPreferenceId <em>Payment Preference Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.payment.Payment#getPaymentRefNum <em>Payment Ref Num</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.payment.Payment#getPaymentTypeId <em>Payment Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.payment.Payment#getRoleTypeIdTo <em>Role Type Id To</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.payment.Payment#getStatusId <em>Status Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPayment()
@@ -95,6 +95,7 @@ public interface Payment extends BizEntityTyped<PaymentType> {
 	 * @see #setActualCurrencyUomId(Uom)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPayment_ActualCurrencyUomId()
 	 * @model keys="uomId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Uom getActualCurrencyUomId();
@@ -173,6 +174,7 @@ public interface Payment extends BizEntityTyped<PaymentType> {
 	 * @see #setCurrencyUomId(Uom)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPayment_CurrencyUomId()
 	 * @model keys="uomId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Uom getCurrencyUomId();
@@ -225,6 +227,7 @@ public interface Payment extends BizEntityTyped<PaymentType> {
 	 * @see #setPartyIdFrom(Party)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPayment_PartyIdFrom()
 	 * @model keys="partyId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Party getPartyIdFrom();
@@ -251,6 +254,7 @@ public interface Payment extends BizEntityTyped<PaymentType> {
 	 * @see #setPartyIdTo(Party)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPayment_PartyIdTo()
 	 * @model keys="partyId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Party getPartyIdTo();
@@ -277,6 +281,7 @@ public interface Payment extends BizEntityTyped<PaymentType> {
 	 * @see #setPaymentPreferenceId(OrderPaymentPreference)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPayment_PaymentPreferenceId()
 	 * @model keys="orderPaymentPreferenceId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	OrderPaymentPreference getPaymentPreferenceId();
@@ -329,6 +334,7 @@ public interface Payment extends BizEntityTyped<PaymentType> {
 	 * @see #setRoleTypeIdTo(RoleType)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPayment_RoleTypeIdTo()
 	 * @model keys="roleTypeId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	RoleType getRoleTypeIdTo();
@@ -355,6 +361,7 @@ public interface Payment extends BizEntityTyped<PaymentType> {
 	 * @see #setStatusId(StatusItem)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPayment_StatusId()
 	 * @model keys="statusId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	StatusItem getStatusId();
@@ -380,8 +387,7 @@ public interface Payment extends BizEntityTyped<PaymentType> {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Payment Attributes</em>' attribute list.
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPayment_PaymentAttributes()
-	 * @model required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='PaymentAttribute'"
 	 * @generated
@@ -450,6 +456,7 @@ public interface Payment extends BizEntityTyped<PaymentType> {
 	 * @see #setPaymentTypeId(PaymentType)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPayment_PaymentTypeId()
 	 * @model keys="paymentTypeId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	PaymentType getPaymentTypeId();
@@ -476,6 +483,7 @@ public interface Payment extends BizEntityTyped<PaymentType> {
 	 * @see #setPaymentMethodTypeId(PaymentMethodType)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPayment_PaymentMethodTypeId()
 	 * @model keys="paymentMethodTypeId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	PaymentMethodType getPaymentMethodTypeId();
@@ -502,6 +510,7 @@ public interface Payment extends BizEntityTyped<PaymentType> {
 	 * @see #setPaymentMethodId(PaymentMethod)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPayment_PaymentMethodId()
 	 * @model keys="paymentMethodId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	PaymentMethod getPaymentMethodId();
@@ -528,6 +537,7 @@ public interface Payment extends BizEntityTyped<PaymentType> {
 	 * @see #setPaymentGatewayResponseId(PaymentGatewayResponse)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPayment_PaymentGatewayResponseId()
 	 * @model keys="paymentGatewayResponseId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	PaymentGatewayResponse getPaymentGatewayResponseId();
@@ -554,6 +564,7 @@ public interface Payment extends BizEntityTyped<PaymentType> {
 	 * @see #setFinAccountTransId(FinAccountTrans)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPayment_FinAccountTransId()
 	 * @model keys="finAccountTransId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	FinAccountTrans getFinAccountTransId();
@@ -580,6 +591,7 @@ public interface Payment extends BizEntityTyped<PaymentType> {
 	 * @see #setOverrideGlAccountId(GlAccount)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPayment_OverrideGlAccountId()
 	 * @model keys="glAccountId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	GlAccount getOverrideGlAccountId();
@@ -607,7 +619,6 @@ public interface Payment extends BizEntityTyped<PaymentType> {
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPayment_PaymentId()
 	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getPaymentId();

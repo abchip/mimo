@@ -29,7 +29,7 @@ import org.abchip.mimo.biz.BizEntityType;
  * </ul>
  *
  * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPaymentType()
- * @model annotation="mimo-ent-frame formula='description'"
+ * @model annotation="mimo-ent-frame dictionary='AccountingEntityLabels' formula='description'"
  * @generated
  */
 public interface PaymentType extends BizEntityType<Payment> {
@@ -97,6 +97,7 @@ public interface PaymentType extends BizEntityType<Payment> {
 	 * @see #setParentTypeId(PaymentType)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPaymentType_ParentTypeId()
 	 * @model keys="paymentTypeId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	PaymentType getParentTypeId();
@@ -124,7 +125,6 @@ public interface PaymentType extends BizEntityType<Payment> {
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPaymentType_PaymentTypeId()
 	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getPaymentTypeId();
@@ -150,8 +150,7 @@ public interface PaymentType extends BizEntityType<Payment> {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Payment Gl Account Type Maps</em>' attribute list.
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPaymentType_PaymentGlAccountTypeMaps()
-	 * @model required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='PaymentGlAccountTypeMap'"
 	 * @generated
@@ -169,8 +168,7 @@ public interface PaymentType extends BizEntityType<Payment> {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Payment Type Attrs</em>' attribute list.
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPaymentType_PaymentTypeAttrs()
-	 * @model required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='PaymentTypeAttr'"
 	 * @generated

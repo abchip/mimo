@@ -25,7 +25,7 @@ import org.abchip.mimo.biz.BizEntity;
  * </ul>
  *
  * @see org.abchip.mimo.biz.party.contact.ContactPackage#getContactMechPurposeType()
- * @model annotation="mimo-ent-frame formula='description'"
+ * @model annotation="mimo-ent-frame title='Contact Mechanism Purpose Type' dictionary='PartyEntityLabels' formula='description'"
  * @generated
  */
 public interface ContactMechPurposeType extends BizEntity {
@@ -58,8 +58,7 @@ public interface ContactMechPurposeType extends BizEntity {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ContactMechTypePurpose' route='contactMechPurposeTypeId'"
 	 * @generated
@@ -79,7 +78,6 @@ public interface ContactMechPurposeType extends BizEntity {
 	 * @see org.abchip.mimo.biz.party.contact.ContactPackage#getContactMechPurposeType_ContactMechPurposeTypeId()
 	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getContactMechPurposeTypeId();

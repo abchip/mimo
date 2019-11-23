@@ -18,14 +18,14 @@ import org.abchip.mimo.biz.BizEntity;
  * The following features are supported:
  * </p>
  * <ul>
+ *   <li>{@link org.abchip.mimo.biz.product.cost.CostComponentAttribute#getCostComponentId <em>Cost Component Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.cost.CostComponentAttribute#getAttrName <em>Attr Name</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.cost.CostComponentAttribute#getAttrDescription <em>Attr Description</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.cost.CostComponentAttribute#getAttrValue <em>Attr Value</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.cost.CostComponentAttribute#getCostComponentId <em>Cost Component Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.product.cost.CostPackage#getCostComponentAttribute()
- * @model
+ * @model annotation="mimo-ent-frame dictionary='ProductEntityLabels'"
  * @generated
  */
 public interface CostComponentAttribute extends BizEntity {
@@ -92,7 +92,9 @@ public interface CostComponentAttribute extends BizEntity {
 	 * @return the value of the '<em>Cost Component Id</em>' reference.
 	 * @see #setCostComponentId(CostComponent)
 	 * @see org.abchip.mimo.biz.product.cost.CostPackage#getCostComponentAttribute_CostComponentId()
-	 * @model keys="costComponentId"
+	 * @model keys="costComponentId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	CostComponent getCostComponentId();
@@ -119,8 +121,8 @@ public interface CostComponentAttribute extends BizEntity {
 	 * @see #setAttrName(String)
 	 * @see org.abchip.mimo.biz.product.cost.CostPackage#getCostComponentAttribute_AttrName()
 	 * @model required="true"
-	 *        annotation="mimo-ent-format type='id-long' length='60'"
 	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id-long' length='60'"
 	 * @generated
 	 */
 	String getAttrName();

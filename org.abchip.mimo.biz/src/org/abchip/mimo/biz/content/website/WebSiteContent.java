@@ -22,15 +22,15 @@ import org.abchip.mimo.biz.webapp.website.WebSite;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.content.website.WebSiteContent#getFromDate <em>From Date</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.content.website.WebSiteContent#getThruDate <em>Thru Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.website.WebSiteContent#getWebSiteId <em>Web Site Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.website.WebSiteContent#getContentId <em>Content Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.website.WebSiteContent#getWebSiteContentTypeId <em>Web Site Content Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.content.website.WebSiteContent#getFromDate <em>From Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.content.website.WebSiteContent#getThruDate <em>Thru Date</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.content.website.WebsitePackage#getWebSiteContent()
- * @model
+ * @model annotation="mimo-ent-frame title='Web Site Content Associations'"
  * @generated
  */
 public interface WebSiteContent extends BizEntityTyped<WebSiteContentType> {
@@ -45,7 +45,9 @@ public interface WebSiteContent extends BizEntityTyped<WebSiteContentType> {
 	 * @return the value of the '<em>Content Id</em>' reference.
 	 * @see #setContentId(Content)
 	 * @see org.abchip.mimo.biz.content.website.WebsitePackage#getWebSiteContent_ContentId()
-	 * @model keys="contentId"
+	 * @model keys="contentId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Content getContentId();
@@ -72,8 +74,8 @@ public interface WebSiteContent extends BizEntityTyped<WebSiteContentType> {
 	 * @see #setFromDate(Date)
 	 * @see org.abchip.mimo.biz.content.website.WebsitePackage#getWebSiteContent_FromDate()
 	 * @model required="true"
-	 *        annotation="mimo-ent-format type='date-time'"
 	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getFromDate();
@@ -125,7 +127,9 @@ public interface WebSiteContent extends BizEntityTyped<WebSiteContentType> {
 	 * @return the value of the '<em>Web Site Content Type Id</em>' reference.
 	 * @see #setWebSiteContentTypeId(WebSiteContentType)
 	 * @see org.abchip.mimo.biz.content.website.WebsitePackage#getWebSiteContent_WebSiteContentTypeId()
-	 * @model keys="webSiteContentTypeId"
+	 * @model keys="webSiteContentTypeId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	WebSiteContentType getWebSiteContentTypeId();
@@ -151,7 +155,9 @@ public interface WebSiteContent extends BizEntityTyped<WebSiteContentType> {
 	 * @return the value of the '<em>Web Site Id</em>' reference.
 	 * @see #setWebSiteId(WebSite)
 	 * @see org.abchip.mimo.biz.content.website.WebsitePackage#getWebSiteContent_WebSiteId()
-	 * @model keys="webSiteId"
+	 * @model keys="webSiteId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	WebSite getWebSiteId();

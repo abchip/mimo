@@ -28,8 +28,12 @@ import org.abchip.mimo.biz.security.login.UserLogin;
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.product.promo.ProductPromo#getProductPromoId <em>Product Promo Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.promo.ProductPromo#getBillbackFactor <em>Billback Factor</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.promo.ProductPromo#getCreatedByUserLogin <em>Created By User Login</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.promo.ProductPromo#getCreatedDate <em>Created Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.promo.ProductPromo#getLastModifiedByUserLogin <em>Last Modified By User Login</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.promo.ProductPromo#getLastModifiedDate <em>Last Modified Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.promo.ProductPromo#getOverrideOrgPartyId <em>Override Org Party Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.promo.ProductPromo#getProductPromoRules <em>Product Promo Rules</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.promo.ProductPromo#getPromoName <em>Promo Name</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.promo.ProductPromo#getPromoText <em>Promo Text</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.promo.ProductPromo#isRequireCode <em>Require Code</em>}</li>
@@ -38,14 +42,10 @@ import org.abchip.mimo.biz.security.login.UserLogin;
  *   <li>{@link org.abchip.mimo.biz.product.promo.ProductPromo#getUseLimitPerOrder <em>Use Limit Per Order</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.promo.ProductPromo#getUseLimitPerPromotion <em>Use Limit Per Promotion</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.promo.ProductPromo#isUserEntered <em>User Entered</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.promo.ProductPromo#getOverrideOrgPartyId <em>Override Org Party Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.promo.ProductPromo#getCreatedByUserLogin <em>Created By User Login</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.promo.ProductPromo#getLastModifiedByUserLogin <em>Last Modified By User Login</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.promo.ProductPromo#getProductPromoRules <em>Product Promo Rules</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.product.promo.PromoPackage#getProductPromo()
- * @model
+ * @model annotation="mimo-ent-frame title='Product Promotion' dictionary='ProductEntityLabels'"
  * @generated
  */
 public interface ProductPromo extends BizEntity {
@@ -87,6 +87,7 @@ public interface ProductPromo extends BizEntity {
 	 * @see #setCreatedByUserLogin(UserLogin)
 	 * @see org.abchip.mimo.biz.product.promo.PromoPackage#getProductPromo_CreatedByUserLogin()
 	 * @model keys="userLoginId"
+	 *        annotation="mimo-ent-format type='id-vlong' length='255'"
 	 * @generated
 	 */
 	UserLogin getCreatedByUserLogin();
@@ -139,6 +140,7 @@ public interface ProductPromo extends BizEntity {
 	 * @see #setLastModifiedByUserLogin(UserLogin)
 	 * @see org.abchip.mimo.biz.product.promo.PromoPackage#getProductPromo_LastModifiedByUserLogin()
 	 * @model keys="userLoginId"
+	 *        annotation="mimo-ent-format type='id-vlong' length='255'"
 	 * @generated
 	 */
 	UserLogin getLastModifiedByUserLogin();
@@ -191,6 +193,7 @@ public interface ProductPromo extends BizEntity {
 	 * @see #setOverrideOrgPartyId(Party)
 	 * @see org.abchip.mimo.biz.product.promo.PromoPackage#getProductPromo_OverrideOrgPartyId()
 	 * @model keys="partyId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Party getOverrideOrgPartyId();
@@ -424,8 +427,7 @@ public interface ProductPromo extends BizEntity {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Product Promo Rules</em>' attribute list.
 	 * @see org.abchip.mimo.biz.product.promo.PromoPackage#getProductPromo_ProductPromoRules()
-	 * @model required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ProductPromoRule'"
 	 * @generated
@@ -495,7 +497,6 @@ public interface ProductPromo extends BizEntity {
 	 * @see org.abchip.mimo.biz.product.promo.PromoPackage#getProductPromo_ProductPromoId()
 	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getProductPromoId();

@@ -28,13 +28,13 @@ import org.abchip.mimo.biz.workeffort.workeffort.WorkEffort;
  *   <li>{@link org.abchip.mimo.biz.workeffort.timesheet.TimeEntry#getComments <em>Comments</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.workeffort.timesheet.TimeEntry#getFromDate <em>From Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.workeffort.timesheet.TimeEntry#getHours <em>Hours</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.workeffort.timesheet.TimeEntry#getInvoiceId <em>Invoice Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.workeffort.timesheet.TimeEntry#getInvoiceItemSeqId <em>Invoice Item Seq Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.workeffort.timesheet.TimeEntry#getThruDate <em>Thru Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.workeffort.timesheet.TimeEntry#getPartyId <em>Party Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.workeffort.timesheet.TimeEntry#getRateTypeId <em>Rate Type Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.workeffort.timesheet.TimeEntry#getWorkEffortId <em>Work Effort Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.workeffort.timesheet.TimeEntry#getThruDate <em>Thru Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.workeffort.timesheet.TimeEntry#getTimesheetId <em>Timesheet Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.workeffort.timesheet.TimeEntry#getInvoiceId <em>Invoice Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.workeffort.timesheet.TimeEntry#getWorkEffortId <em>Work Effort Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.workeffort.timesheet.TimesheetPackage#getTimeEntry()
@@ -132,6 +132,7 @@ public interface TimeEntry extends BizEntity {
 	 * @see #setInvoiceId(Invoice)
 	 * @see org.abchip.mimo.biz.workeffort.timesheet.TimesheetPackage#getTimeEntry_InvoiceId()
 	 * @model keys="invoiceId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Invoice getInvoiceId();
@@ -184,6 +185,7 @@ public interface TimeEntry extends BizEntity {
 	 * @see #setPartyId(Party)
 	 * @see org.abchip.mimo.biz.workeffort.timesheet.TimesheetPackage#getTimeEntry_PartyId()
 	 * @model keys="partyId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Party getPartyId();
@@ -210,6 +212,7 @@ public interface TimeEntry extends BizEntity {
 	 * @see #setRateTypeId(RateType)
 	 * @see org.abchip.mimo.biz.workeffort.timesheet.TimesheetPackage#getTimeEntry_RateTypeId()
 	 * @model keys="rateTypeId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	RateType getRateTypeId();
@@ -263,7 +266,6 @@ public interface TimeEntry extends BizEntity {
 	 * @see org.abchip.mimo.biz.workeffort.timesheet.TimesheetPackage#getTimeEntry_TimeEntryId()
 	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getTimeEntryId();
@@ -290,6 +292,7 @@ public interface TimeEntry extends BizEntity {
 	 * @see #setTimesheetId(Timesheet)
 	 * @see org.abchip.mimo.biz.workeffort.timesheet.TimesheetPackage#getTimeEntry_TimesheetId()
 	 * @model keys="timesheetId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Timesheet getTimesheetId();
@@ -316,6 +319,7 @@ public interface TimeEntry extends BizEntity {
 	 * @see #setWorkEffortId(WorkEffort)
 	 * @see org.abchip.mimo.biz.workeffort.timesheet.TimesheetPackage#getTimeEntry_WorkEffortId()
 	 * @model keys="workEffortId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	WorkEffort getWorkEffortId();

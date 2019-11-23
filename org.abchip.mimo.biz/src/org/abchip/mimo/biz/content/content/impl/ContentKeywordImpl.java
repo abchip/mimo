@@ -21,9 +21,9 @@ import org.eclipse.emf.ecore.EClass;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link org.abchip.mimo.biz.content.content.impl.ContentKeywordImpl#getContentId <em>Content Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.content.impl.ContentKeywordImpl#getKeyword <em>Keyword</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.content.impl.ContentKeywordImpl#getRelevancyWeight <em>Relevancy Weight</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.content.content.impl.ContentKeywordImpl#getContentId <em>Content Id</em>}</li>
  * </ul>
  *
  * @generated

@@ -25,7 +25,7 @@ import org.abchip.mimo.biz.BizEntity;
  * </ul>
  *
  * @see org.abchip.mimo.biz.content.data.DataPackage#getMimeType()
- * @model annotation="mimo-ent-frame formula='description'"
+ * @model annotation="mimo-ent-frame dictionary='ContentEntityLabels' formula='description'"
  * @generated
  */
 public interface MimeType extends BizEntity {
@@ -108,7 +108,6 @@ public interface MimeType extends BizEntity {
 	 * @see org.abchip.mimo.biz.content.data.DataPackage#getMimeType_MimeTypeId()
 	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-format type='id-vlong' length='255'"
-	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getMimeTypeId();

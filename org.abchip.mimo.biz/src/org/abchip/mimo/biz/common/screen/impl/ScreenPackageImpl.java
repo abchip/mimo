@@ -191,8 +191,6 @@ import org.abchip.mimo.biz.workeffort.timesheet.TimesheetPackage;
 import org.abchip.mimo.biz.workeffort.timesheet.impl.TimesheetPackageImpl;
 import org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage;
 import org.abchip.mimo.biz.workeffort.workeffort.impl.WorkeffortPackageImpl;
-import org.abchip.mimo.entity.EntityPackage;
-import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EGenericType;
@@ -703,7 +701,7 @@ public class ScreenPackageImpl extends EPackageImpl implements ScreenPackage {
 	 */
 	@Override
 	public EReference getCustomScreen_CustomScreenTypeId() {
-		return (EReference)customScreenEClass.getEStructuralFeatures().get(4);
+		return (EReference)customScreenEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -713,7 +711,7 @@ public class ScreenPackageImpl extends EPackageImpl implements ScreenPackage {
 	 */
 	@Override
 	public EAttribute getCustomScreen_Description() {
-		return (EAttribute)customScreenEClass.getEStructuralFeatures().get(3);
+		return (EAttribute)customScreenEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -799,8 +797,8 @@ public class ScreenPackageImpl extends EPackageImpl implements ScreenPackage {
 		createEAttribute(customScreenEClass, CUSTOM_SCREEN__CUSTOM_SCREEN_ID);
 		createEAttribute(customScreenEClass, CUSTOM_SCREEN__CUSTOM_SCREEN_LOCATION);
 		createEAttribute(customScreenEClass, CUSTOM_SCREEN__CUSTOM_SCREEN_NAME);
-		createEAttribute(customScreenEClass, CUSTOM_SCREEN__DESCRIPTION);
 		createEReference(customScreenEClass, CUSTOM_SCREEN__CUSTOM_SCREEN_TYPE_ID);
+		createEAttribute(customScreenEClass, CUSTOM_SCREEN__DESCRIPTION);
 
 		customScreenTypeEClass = createEClass(CUSTOM_SCREEN_TYPE);
 		createEAttribute(customScreenTypeEClass, CUSTOM_SCREEN_TYPE__CUSTOM_SCREEN_TYPE_ID);
@@ -854,9 +852,9 @@ public class ScreenPackageImpl extends EPackageImpl implements ScreenPackage {
 		initEAttribute(getCustomScreen_CustomScreenId(), ecorePackage.getEString(), "customScreenId", null, 1, 1, CustomScreen.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getCustomScreen_CustomScreenLocation(), ecorePackage.getEString(), "customScreenLocation", null, 0, 1, CustomScreen.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getCustomScreen_CustomScreenName(), ecorePackage.getEString(), "customScreenName", null, 0, 1, CustomScreen.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getCustomScreen_Description(), ecorePackage.getEString(), "description", null, 0, 1, CustomScreen.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getCustomScreen_CustomScreenTypeId(), this.getCustomScreenType(), null, "customScreenTypeId", null, 0, 1, CustomScreen.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getCustomScreen_CustomScreenTypeId().getEKeys().add(this.getCustomScreenType_CustomScreenTypeId());
+		initEAttribute(getCustomScreen_Description(), ecorePackage.getEString(), "description", null, 0, 1, CustomScreen.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(customScreenTypeEClass, CustomScreenType.class, "CustomScreenType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getCustomScreenType_CustomScreenTypeId(), ecorePackage.getEString(), "customScreenTypeId", null, 1, 1, CustomScreenType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -891,6 +889,7 @@ public class ScreenPackageImpl extends EPackageImpl implements ScreenPackage {
 		  (customScreenEClass,
 		   source,
 		   new String[] {
+			   "dictionary", "CommonEntityLabels",
 			   "formula", "description"
 		   });
 		addAnnotation
@@ -929,6 +928,13 @@ public class ScreenPackageImpl extends EPackageImpl implements ScreenPackage {
 		   new String[] {
 			   "type", "long-varchar",
 			   "length", "255"
+		   });
+		addAnnotation
+		  (getCustomScreen_CustomScreenTypeId(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
 		   });
 		addAnnotation
 		  (getCustomScreen_Description(),
@@ -990,12 +996,6 @@ public class ScreenPackageImpl extends EPackageImpl implements ScreenPackage {
 	protected void createMimoentslotAnnotations() {
 		String source = "mimo-ent-slot";
 		addAnnotation
-		  (getCustomScreen_CustomScreenId(),
-		   source,
-		   new String[] {
-			   "key", "true"
-		   });
-		addAnnotation
 		  (customScreenTypeEClass.getEOperations().get(0),
 		   source,
 		   new String[] {
@@ -1006,12 +1006,6 @@ public class ScreenPackageImpl extends EPackageImpl implements ScreenPackage {
 		   source,
 		   new String[] {
 			   "derived", "true"
-		   });
-		addAnnotation
-		  (getCustomScreenType_CustomScreenTypeId(),
-		   source,
-		   new String[] {
-			   "key", "true"
 		   });
 	}
 
@@ -1029,9 +1023,6 @@ public class ScreenPackageImpl extends EPackageImpl implements ScreenPackage {
 		   new String[] {
 			   "frame", "CustomScreenType",
 			   "route", "parentTypeId"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
 		  (customScreenTypeEClass.getEOperations().get(1),
@@ -1039,9 +1030,6 @@ public class ScreenPackageImpl extends EPackageImpl implements ScreenPackage {
 		   new String[] {
 			   "frame", "CustomScreen",
 			   "route", "customScreenTypeId"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 	}
 

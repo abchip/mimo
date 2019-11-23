@@ -23,10 +23,10 @@ import org.abchip.mimo.biz.accounting.fixedasset.FixedAsset;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.order.reservations.AccommodationSpot#getAccommodationSpotId <em>Accommodation Spot Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.reservations.AccommodationSpot#getDescription <em>Description</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.reservations.AccommodationSpot#getNumberOfSpaces <em>Number Of Spaces</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.reservations.AccommodationSpot#getAccommodationClassId <em>Accommodation Class Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.reservations.AccommodationSpot#getDescription <em>Description</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.reservations.AccommodationSpot#getFixedAssetId <em>Fixed Asset Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.reservations.AccommodationSpot#getNumberOfSpaces <em>Number Of Spaces</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.order.reservations.ReservationsPackage#getAccommodationSpot()
@@ -46,6 +46,7 @@ public interface AccommodationSpot extends BizEntity {
 	 * @see #setAccommodationClassId(AccommodationClass)
 	 * @see org.abchip.mimo.biz.order.reservations.ReservationsPackage#getAccommodationSpot_AccommodationClassId()
 	 * @model keys="accommodationClassId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	AccommodationClass getAccommodationClassId();
@@ -73,7 +74,6 @@ public interface AccommodationSpot extends BizEntity {
 	 * @see org.abchip.mimo.biz.order.reservations.ReservationsPackage#getAccommodationSpot_AccommodationSpotId()
 	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getAccommodationSpotId();
@@ -126,6 +126,7 @@ public interface AccommodationSpot extends BizEntity {
 	 * @see #setFixedAssetId(FixedAsset)
 	 * @see org.abchip.mimo.biz.order.reservations.ReservationsPackage#getAccommodationSpot_FixedAssetId()
 	 * @model keys="fixedAssetId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	FixedAsset getFixedAssetId();

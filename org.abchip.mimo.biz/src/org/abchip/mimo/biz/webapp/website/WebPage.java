@@ -20,9 +20,9 @@ import org.abchip.mimo.biz.content.content.Content;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.webapp.website.WebPage#getWebPageId <em>Web Page Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.webapp.website.WebPage#getContentId <em>Content Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.webapp.website.WebPage#getPageName <em>Page Name</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.webapp.website.WebPage#getWebSiteId <em>Web Site Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.webapp.website.WebPage#getContentId <em>Content Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.webapp.website.WebsitePackage#getWebPage()
@@ -43,7 +43,6 @@ public interface WebPage extends BizEntity {
 	 * @see org.abchip.mimo.biz.webapp.website.WebsitePackage#getWebPage_WebPageId()
 	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getWebPageId();
@@ -70,6 +69,7 @@ public interface WebPage extends BizEntity {
 	 * @see #setContentId(Content)
 	 * @see org.abchip.mimo.biz.webapp.website.WebsitePackage#getWebPage_ContentId()
 	 * @model keys="contentId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Content getContentId();
@@ -122,6 +122,7 @@ public interface WebPage extends BizEntity {
 	 * @see #setWebSiteId(WebSite)
 	 * @see org.abchip.mimo.biz.webapp.website.WebsitePackage#getWebPage_WebSiteId()
 	 * @model keys="webSiteId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	WebSite getWebSiteId();

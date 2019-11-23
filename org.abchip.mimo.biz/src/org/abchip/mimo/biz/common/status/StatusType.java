@@ -27,7 +27,7 @@ import org.abchip.mimo.biz.BizEntityType;
  * </ul>
  *
  * @see org.abchip.mimo.biz.common.status.StatusPackage#getStatusType()
- * @model annotation="mimo-ent-frame formula='description'"
+ * @model annotation="mimo-ent-frame dictionary='CommonEntityLabels' formula='description'"
  * @generated
  */
 public interface StatusType extends BizEntityType<StatusItem> {
@@ -95,6 +95,7 @@ public interface StatusType extends BizEntityType<StatusItem> {
 	 * @see #setParentTypeId(StatusType)
 	 * @see org.abchip.mimo.biz.common.status.StatusPackage#getStatusType_ParentTypeId()
 	 * @model keys="statusTypeId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	StatusType getParentTypeId();
@@ -142,7 +143,6 @@ public interface StatusType extends BizEntityType<StatusItem> {
 	 * @see org.abchip.mimo.biz.common.status.StatusPackage#getStatusType_StatusTypeId()
 	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getStatusTypeId();

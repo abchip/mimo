@@ -18,13 +18,13 @@ import org.abchip.mimo.biz.BizEntityTyped;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.accounting.fixedasset.FixedAssetIdent#getIdValue <em>Id Value</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.fixedasset.FixedAssetIdent#getFixedAssetId <em>Fixed Asset Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.fixedasset.FixedAssetIdent#getFixedAssetIdentTypeId <em>Fixed Asset Ident Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.fixedasset.FixedAssetIdent#getIdValue <em>Id Value</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.accounting.fixedasset.FixedassetPackage#getFixedAssetIdent()
- * @model
+ * @model annotation="mimo-ent-frame title='Fixed Asset Identification'"
  * @generated
  */
 public interface FixedAssetIdent extends BizEntityTyped<FixedAssetIdentType> {
@@ -65,7 +65,9 @@ public interface FixedAssetIdent extends BizEntityTyped<FixedAssetIdentType> {
 	 * @return the value of the '<em>Fixed Asset Id</em>' reference.
 	 * @see #setFixedAssetId(FixedAsset)
 	 * @see org.abchip.mimo.biz.accounting.fixedasset.FixedassetPackage#getFixedAssetIdent_FixedAssetId()
-	 * @model keys="fixedAssetId"
+	 * @model keys="fixedAssetId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	FixedAsset getFixedAssetId();
@@ -91,7 +93,9 @@ public interface FixedAssetIdent extends BizEntityTyped<FixedAssetIdentType> {
 	 * @return the value of the '<em>Fixed Asset Ident Type Id</em>' reference.
 	 * @see #setFixedAssetIdentTypeId(FixedAssetIdentType)
 	 * @see org.abchip.mimo.biz.accounting.fixedasset.FixedassetPackage#getFixedAssetIdent_FixedAssetIdentTypeId()
-	 * @model keys="fixedAssetIdentTypeId"
+	 * @model keys="fixedAssetIdentTypeId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	FixedAssetIdentType getFixedAssetIdentTypeId();

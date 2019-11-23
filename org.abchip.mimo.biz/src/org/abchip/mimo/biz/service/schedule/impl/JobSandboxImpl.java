@@ -29,6 +29,7 @@ import org.eclipse.emf.ecore.EClass;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.service.schedule.impl.JobSandboxImpl#getJobId <em>Job Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.service.schedule.impl.JobSandboxImpl#getAuthUserLoginId <em>Auth User Login Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.service.schedule.impl.JobSandboxImpl#getCancelDateTime <em>Cancel Date Time</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.service.schedule.impl.JobSandboxImpl#getCurrentRecurrenceCount <em>Current Recurrence Count</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.service.schedule.impl.JobSandboxImpl#getCurrentRetryCount <em>Current Retry Count</em>}</li>
@@ -41,16 +42,15 @@ import org.eclipse.emf.ecore.EClass;
  *   <li>{@link org.abchip.mimo.biz.service.schedule.impl.JobSandboxImpl#getParentJobId <em>Parent Job Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.service.schedule.impl.JobSandboxImpl#getPoolId <em>Pool Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.service.schedule.impl.JobSandboxImpl#getPreviousJobId <em>Previous Job Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.service.schedule.impl.JobSandboxImpl#getRecurrenceInfoId <em>Recurrence Info Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.service.schedule.impl.JobSandboxImpl#getRunAsUser <em>Run As User</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.service.schedule.impl.JobSandboxImpl#getRunByInstanceId <em>Run By Instance Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.service.schedule.impl.JobSandboxImpl#getRunTime <em>Run Time</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.service.schedule.impl.JobSandboxImpl#getRuntimeDataId <em>Runtime Data Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.service.schedule.impl.JobSandboxImpl#getServiceName <em>Service Name</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.service.schedule.impl.JobSandboxImpl#getStartDateTime <em>Start Date Time</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.service.schedule.impl.JobSandboxImpl#getRecurrenceInfoId <em>Recurrence Info Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.service.schedule.impl.JobSandboxImpl#getTempExprId <em>Temp Expr Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.service.schedule.impl.JobSandboxImpl#getRuntimeDataId <em>Runtime Data Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.service.schedule.impl.JobSandboxImpl#getAuthUserLoginId <em>Auth User Login Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.service.schedule.impl.JobSandboxImpl#getRunAsUser <em>Run As User</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.service.schedule.impl.JobSandboxImpl#getStatusId <em>Status Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.service.schedule.impl.JobSandboxImpl#getTempExprId <em>Temp Expr Id</em>}</li>
  * </ul>
  *
  * @generated

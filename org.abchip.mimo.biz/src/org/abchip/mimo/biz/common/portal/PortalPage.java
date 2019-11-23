@@ -24,18 +24,18 @@ import org.abchip.mimo.biz.security.securitygroup.SecurityGroup;
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.common.portal.PortalPage#getPortalPageId <em>Portal Page Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.common.portal.PortalPage#getDescription <em>Description</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.common.portal.PortalPage#getHelpContentId <em>Help Content Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.common.portal.PortalPage#getOriginalPortalPageId <em>Original Portal Page Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.common.portal.PortalPage#getOwnerUserLoginId <em>Owner User Login Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.common.portal.PortalPage#getPortalPageName <em>Portal Page Name</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.common.portal.PortalPage#getSequenceNum <em>Sequence Num</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.common.portal.PortalPage#getParentPortalPageId <em>Parent Portal Page Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.common.portal.PortalPage#getSecurityGroupId <em>Security Group Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.common.portal.PortalPage#getHelpContentId <em>Help Content Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.common.portal.PortalPage#getPortalPageColumns <em>Portal Page Columns</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.common.portal.PortalPage#getPortalPageName <em>Portal Page Name</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.common.portal.PortalPage#getSecurityGroupId <em>Security Group Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.common.portal.PortalPage#getSequenceNum <em>Sequence Num</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.common.portal.PortalPackage#getPortalPage()
- * @model annotation="mimo-ent-frame formula='description'"
+ * @model annotation="mimo-ent-frame dictionary='CommonPortalEntityLabels' formula='description'"
  * @generated
  */
 public interface PortalPage extends BizEntity {
@@ -77,6 +77,8 @@ public interface PortalPage extends BizEntity {
 	 * @see #setHelpContentId(Content)
 	 * @see org.abchip.mimo.biz.common.portal.PortalPackage#getPortalPage_HelpContentId()
 	 * @model keys="contentId"
+	 *        annotation="mimo-ent-slot help='Used to give contentId which will be shown when help on this page will be called'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Content getHelpContentId();
@@ -102,7 +104,8 @@ public interface PortalPage extends BizEntity {
 	 * @return the value of the '<em>Original Portal Page Id</em>' attribute.
 	 * @see #setOriginalPortalPageId(String)
 	 * @see org.abchip.mimo.biz.common.portal.PortalPackage#getPortalPage_OriginalPortalPageId()
-	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 * @model annotation="mimo-ent-slot help='The system portal page this page is derived from'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	String getOriginalPortalPageId();
@@ -181,6 +184,7 @@ public interface PortalPage extends BizEntity {
 	 * @see #setSecurityGroupId(SecurityGroup)
 	 * @see org.abchip.mimo.biz.common.portal.PortalPackage#getPortalPage_SecurityGroupId()
 	 * @model keys="groupId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	SecurityGroup getSecurityGroupId();
@@ -232,8 +236,7 @@ public interface PortalPage extends BizEntity {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Portal Page Columns</em>' attribute list.
 	 * @see org.abchip.mimo.biz.common.portal.PortalPackage#getPortalPage_PortalPageColumns()
-	 * @model required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='PortalPageColumn'"
 	 * @generated
@@ -262,6 +265,8 @@ public interface PortalPage extends BizEntity {
 	 * @see #setParentPortalPageId(PortalPage)
 	 * @see org.abchip.mimo.biz.common.portal.PortalPackage#getPortalPage_ParentPortalPageId()
 	 * @model keys="portalPageId"
+	 *        annotation="mimo-ent-slot help='the parent this page is belonging to, normally the startpage of the portal page group'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	PortalPage getParentPortalPageId();
@@ -289,7 +294,6 @@ public interface PortalPage extends BizEntity {
 	 * @see org.abchip.mimo.biz.common.portal.PortalPackage#getPortalPage_PortalPageId()
 	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getPortalPageId();

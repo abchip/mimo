@@ -29,53 +29,53 @@ import org.abchip.mimo.biz.security.login.UserLogin;
  * The following features are supported:
  * </p>
  * <ul>
+ *   <li>{@link org.abchip.mimo.biz.order.order.OrderItem#getOrderId <em>Order Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.OrderItem#getOrderItemSeqId <em>Order Item Seq Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.OrderItem#getAutoCancelDate <em>Auto Cancel Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.OrderItem#getBudgetId <em>Budget Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.OrderItem#getBudgetItemSeqId <em>Budget Item Seq Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.OrderItem#getCancelBackOrderDate <em>Cancel Back Order Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.OrderItem#getCancelQuantity <em>Cancel Quantity</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.order.OrderItem#getChangeByUserLoginId <em>Change By User Login Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.OrderItem#getComments <em>Comments</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.OrderItem#getCorrespondingPoId <em>Corresponding Po Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.OrderItem#getDeploymentId <em>Deployment Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.OrderItem#getDontCancelSetDate <em>Dont Cancel Set Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.order.OrderItem#getDontCancelSetUserLogin <em>Dont Cancel Set User Login</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.OrderItem#getEstimatedDeliveryDate <em>Estimated Delivery Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.OrderItem#getEstimatedShipDate <em>Estimated Ship Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.OrderItem#getExternalId <em>External Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.order.OrderItem#getFromInventoryItemId <em>From Inventory Item Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.OrderItem#isIsItemGroupPrimary <em>Is Item Group Primary</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.OrderItem#isIsModifiedPrice <em>Is Modified Price</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.OrderItem#isIsPromo <em>Is Promo</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.OrderItem#getItemDescription <em>Item Description</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.OrderItem#getOrderItemGroupSeqId <em>Order Item Group Seq Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.order.OrderItem#getOrderItemTypeId <em>Order Item Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.order.OrderItem#getOverrideGlAccountId <em>Override Gl Account Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.OrderItem#getProdCatalogId <em>Prod Catalog Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.OrderItem#getProductCategoryId <em>Product Category Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.OrderItem#getProductFeatureId <em>Product Feature Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.order.OrderItem#getProductId <em>Product Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.OrderItem#getQuantity <em>Quantity</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.OrderItem#getQuoteId <em>Quote Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.OrderItem#getQuoteItemSeqId <em>Quote Item Seq Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.order.OrderItem#getRecurringFreqUomId <em>Recurring Freq Uom Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.OrderItem#getReserveAfterDate <em>Reserve After Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.order.OrderItem#getSalesOpportunityId <em>Sales Opportunity Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.OrderItem#getSelectedAmount <em>Selected Amount</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.OrderItem#getShipAfterDate <em>Ship After Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.OrderItem#getShipBeforeDate <em>Ship Before Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.OrderItem#getShoppingListId <em>Shopping List Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.OrderItem#getShoppingListItemSeqId <em>Shopping List Item Seq Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.order.OrderItem#getStatusId <em>Status Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.OrderItem#getSubscriptionId <em>Subscription Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.OrderItem#getSupplierProductId <em>Supplier Product Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.order.OrderItem#getSyncStatusId <em>Sync Status Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.OrderItem#getUnitAverageCost <em>Unit Average Cost</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.OrderItem#getUnitListPrice <em>Unit List Price</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.OrderItem#getUnitPrice <em>Unit Price</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.OrderItem#getUnitRecurringPrice <em>Unit Recurring Price</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.order.OrderItem#getOrderId <em>Order Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.order.OrderItem#getOrderItemTypeId <em>Order Item Type Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.order.OrderItem#getProductId <em>Product Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.order.OrderItem#getFromInventoryItemId <em>From Inventory Item Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.order.OrderItem#getRecurringFreqUomId <em>Recurring Freq Uom Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.order.OrderItem#getStatusId <em>Status Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.order.OrderItem#getSyncStatusId <em>Sync Status Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.order.OrderItem#getDontCancelSetUserLogin <em>Dont Cancel Set User Login</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.order.OrderItem#getOverrideGlAccountId <em>Override Gl Account Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.order.OrderItem#getSalesOpportunityId <em>Sales Opportunity Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.order.OrderItem#getChangeByUserLoginId <em>Change By User Login Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderItem()
@@ -172,7 +172,8 @@ public interface OrderItem extends BizEntityTyped<OrderItemType> {
 	 * @return the value of the '<em>Cancel Back Order Date</em>' attribute.
 	 * @see #setCancelBackOrderDate(Date)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderItem_CancelBackOrderDate()
-	 * @model annotation="mimo-ent-format type='date-time'"
+	 * @model annotation="mimo-ent-slot help='Used to cancel all orders from suppliers when its in past'"
+	 *        annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getCancelBackOrderDate();
@@ -225,6 +226,8 @@ public interface OrderItem extends BizEntityTyped<OrderItemType> {
 	 * @see #setChangeByUserLoginId(UserLogin)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderItem_ChangeByUserLoginId()
 	 * @model keys="userLoginId"
+	 *        annotation="mimo-ent-slot audit='true'"
+	 *        annotation="mimo-ent-format type='id-vlong' length='255'"
 	 * @generated
 	 */
 	UserLogin getChangeByUserLoginId();
@@ -355,6 +358,7 @@ public interface OrderItem extends BizEntityTyped<OrderItemType> {
 	 * @see #setDontCancelSetUserLogin(UserLogin)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderItem_DontCancelSetUserLogin()
 	 * @model keys="userLoginId"
+	 *        annotation="mimo-ent-format type='id-vlong' length='255'"
 	 * @generated
 	 */
 	UserLogin getDontCancelSetUserLogin();
@@ -537,6 +541,7 @@ public interface OrderItem extends BizEntityTyped<OrderItemType> {
 	 * @see #setFromInventoryItemId(InventoryItem)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderItem_FromInventoryItemId()
 	 * @model keys="inventoryItemId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	InventoryItem getFromInventoryItemId();
@@ -588,7 +593,9 @@ public interface OrderItem extends BizEntityTyped<OrderItemType> {
 	 * @return the value of the '<em>Order Id</em>' reference.
 	 * @see #setOrderId(OrderHeader)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderItem_OrderId()
-	 * @model keys="orderId"
+	 * @model keys="orderId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	OrderHeader getOrderId();
@@ -641,8 +648,8 @@ public interface OrderItem extends BizEntityTyped<OrderItemType> {
 	 * @see #setOrderItemSeqId(String)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderItem_OrderItemSeqId()
 	 * @model required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	String getOrderItemSeqId();
@@ -669,6 +676,7 @@ public interface OrderItem extends BizEntityTyped<OrderItemType> {
 	 * @see #setOrderItemTypeId(OrderItemType)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderItem_OrderItemTypeId()
 	 * @model keys="orderItemTypeId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	OrderItemType getOrderItemTypeId();
@@ -695,6 +703,8 @@ public interface OrderItem extends BizEntityTyped<OrderItemType> {
 	 * @see #setOverrideGlAccountId(GlAccount)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderItem_OverrideGlAccountId()
 	 * @model keys="glAccountId"
+	 *        annotation="mimo-ent-slot help='Used to specify the override or actual glAccountId used for the adjustment, avoids problems if configuration changes after initial posting, etc.'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	GlAccount getOverrideGlAccountId();
@@ -799,6 +809,7 @@ public interface OrderItem extends BizEntityTyped<OrderItemType> {
 	 * @see #setProductId(Product)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderItem_ProductId()
 	 * @model keys="productId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Product getProductId();
@@ -824,7 +835,8 @@ public interface OrderItem extends BizEntityTyped<OrderItemType> {
 	 * @return the value of the '<em>Quantity</em>' attribute.
 	 * @see #setQuantity(BigDecimal)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderItem_Quantity()
-	 * @model annotation="mimo-ent-format type='fixed-point' precision='18' scale='6'"
+	 * @model annotation="mimo-ent-slot audit='true'"
+	 *        annotation="mimo-ent-format type='fixed-point' precision='18' scale='6'"
 	 * @generated
 	 */
 	BigDecimal getQuantity();
@@ -903,6 +915,7 @@ public interface OrderItem extends BizEntityTyped<OrderItemType> {
 	 * @see #setRecurringFreqUomId(Uom)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderItem_RecurringFreqUomId()
 	 * @model keys="uomId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Uom getRecurringFreqUomId();
@@ -955,6 +968,7 @@ public interface OrderItem extends BizEntityTyped<OrderItemType> {
 	 * @see #setSalesOpportunityId(SalesOpportunity)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderItem_SalesOpportunityId()
 	 * @model keys="salesOpportunityId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	SalesOpportunity getSalesOpportunityId();
@@ -1111,6 +1125,7 @@ public interface OrderItem extends BizEntityTyped<OrderItemType> {
 	 * @see #setStatusId(StatusItem)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderItem_StatusId()
 	 * @model keys="statusId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	StatusItem getStatusId();
@@ -1189,6 +1204,7 @@ public interface OrderItem extends BizEntityTyped<OrderItemType> {
 	 * @see #setSyncStatusId(StatusItem)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderItem_SyncStatusId()
 	 * @model keys="statusId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	StatusItem getSyncStatusId();
@@ -1266,7 +1282,8 @@ public interface OrderItem extends BizEntityTyped<OrderItemType> {
 	 * @return the value of the '<em>Unit Price</em>' attribute.
 	 * @see #setUnitPrice(BigDecimal)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderItem_UnitPrice()
-	 * @model annotation="mimo-ent-format type='currency-precise' precision='18' scale='3'"
+	 * @model annotation="mimo-ent-slot audit='true'"
+	 *        annotation="mimo-ent-format type='currency-precise' precision='18' scale='3'"
 	 * @generated
 	 */
 	BigDecimal getUnitPrice();

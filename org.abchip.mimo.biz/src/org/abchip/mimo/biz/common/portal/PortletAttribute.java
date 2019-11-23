@@ -18,17 +18,17 @@ import org.abchip.mimo.biz.BizEntity;
  * The following features are supported:
  * </p>
  * <ul>
+ *   <li>{@link org.abchip.mimo.biz.common.portal.PortletAttribute#getPortalPortletId <em>Portal Portlet Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.common.portal.PortletAttribute#getAttrName <em>Attr Name</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.common.portal.PortletAttribute#getPortalPageId <em>Portal Page Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.common.portal.PortletAttribute#getPortletSeqId <em>Portlet Seq Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.common.portal.PortletAttribute#getAttrName <em>Attr Name</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.common.portal.PortletAttribute#getAttrDescription <em>Attr Description</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.common.portal.PortletAttribute#getAttrType <em>Attr Type</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.common.portal.PortletAttribute#getAttrValue <em>Attr Value</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.common.portal.PortletAttribute#getPortalPortletId <em>Portal Portlet Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.common.portal.PortalPackage#getPortletAttribute()
- * @model
+ * @model annotation="mimo-ent-frame title='Allows to set different attribute values for each instance of the same portlet'"
  * @generated
  */
 public interface PortletAttribute extends BizEntity {
@@ -70,8 +70,8 @@ public interface PortletAttribute extends BizEntity {
 	 * @see #setAttrName(String)
 	 * @see org.abchip.mimo.biz.common.portal.PortalPackage#getPortletAttribute_AttrName()
 	 * @model required="true"
-	 *        annotation="mimo-ent-format type='id-long' length='60'"
 	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id-long' length='60'"
 	 * @generated
 	 */
 	String getAttrName();
@@ -150,8 +150,8 @@ public interface PortletAttribute extends BizEntity {
 	 * @see #setPortalPageId(String)
 	 * @see org.abchip.mimo.biz.common.portal.PortalPackage#getPortletAttribute_PortalPageId()
 	 * @model required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	String getPortalPageId();
@@ -178,8 +178,8 @@ public interface PortletAttribute extends BizEntity {
 	 * @see #setPortletSeqId(String)
 	 * @see org.abchip.mimo.biz.common.portal.PortalPackage#getPortletAttribute_PortletSeqId()
 	 * @model required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	String getPortletSeqId();
@@ -205,7 +205,9 @@ public interface PortletAttribute extends BizEntity {
 	 * @return the value of the '<em>Portal Portlet Id</em>' reference.
 	 * @see #setPortalPortletId(PortalPortlet)
 	 * @see org.abchip.mimo.biz.common.portal.PortalPackage#getPortletAttribute_PortalPortletId()
-	 * @model keys="portalPortletId"
+	 * @model keys="portalPortletId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	PortalPortlet getPortalPortletId();

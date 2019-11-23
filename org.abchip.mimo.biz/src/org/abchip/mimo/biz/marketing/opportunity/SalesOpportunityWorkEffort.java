@@ -24,7 +24,7 @@ import org.abchip.mimo.biz.workeffort.workeffort.WorkEffort;
  * </ul>
  *
  * @see org.abchip.mimo.biz.marketing.opportunity.OpportunityPackage#getSalesOpportunityWorkEffort()
- * @model
+ * @model annotation="mimo-ent-frame title='Relates sales opportunities to their work efforts.'"
  * @generated
  */
 public interface SalesOpportunityWorkEffort extends BizEntity {
@@ -39,7 +39,9 @@ public interface SalesOpportunityWorkEffort extends BizEntity {
 	 * @return the value of the '<em>Sales Opportunity Id</em>' reference.
 	 * @see #setSalesOpportunityId(SalesOpportunity)
 	 * @see org.abchip.mimo.biz.marketing.opportunity.OpportunityPackage#getSalesOpportunityWorkEffort_SalesOpportunityId()
-	 * @model keys="salesOpportunityId"
+	 * @model keys="salesOpportunityId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	SalesOpportunity getSalesOpportunityId();
@@ -65,7 +67,9 @@ public interface SalesOpportunityWorkEffort extends BizEntity {
 	 * @return the value of the '<em>Work Effort Id</em>' reference.
 	 * @see #setWorkEffortId(WorkEffort)
 	 * @see org.abchip.mimo.biz.marketing.opportunity.OpportunityPackage#getSalesOpportunityWorkEffort_WorkEffortId()
-	 * @model keys="workEffortId"
+	 * @model keys="workEffortId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	WorkEffort getWorkEffortId();

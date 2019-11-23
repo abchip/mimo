@@ -95,6 +95,7 @@ public interface InvoiceItemAssocType extends BizEntityType<InvoiceItemAssoc> {
 	 * @see #setParentTypeId(InvoiceItemAssocType)
 	 * @see org.abchip.mimo.biz.accounting.invoice.InvoicePackage#getInvoiceItemAssocType_ParentTypeId()
 	 * @model keys="invoiceItemAssocTypeId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	InvoiceItemAssocType getParentTypeId();
@@ -132,7 +133,6 @@ public interface InvoiceItemAssocType extends BizEntityType<InvoiceItemAssoc> {
 	 * @see org.abchip.mimo.biz.accounting.invoice.InvoicePackage#getInvoiceItemAssocType_InvoiceItemAssocTypeId()
 	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getInvoiceItemAssocTypeId();

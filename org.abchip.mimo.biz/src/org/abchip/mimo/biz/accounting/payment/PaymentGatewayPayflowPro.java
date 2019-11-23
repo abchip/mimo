@@ -29,6 +29,7 @@ import org.abchip.mimo.biz.BizEntity;
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.PaymentGatewayPayflowPro#getLoggingLevel <em>Logging Level</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.PaymentGatewayPayflowPro#getMaxLogFileSize <em>Max Log File Size</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.PaymentGatewayPayflowPro#getPartner <em>Partner</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.payment.PaymentGatewayPayflowPro#getPaymentGatewayConfigId <em>Payment Gateway Config Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.PaymentGatewayPayflowPro#getPreAuth <em>Pre Auth</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.PaymentGatewayPayflowPro#getProxyAddress <em>Proxy Address</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.PaymentGatewayPayflowPro#getProxyLogon <em>Proxy Logon</em>}</li>
@@ -41,11 +42,10 @@ import org.abchip.mimo.biz.BizEntity;
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.PaymentGatewayPayflowPro#getTimeout <em>Timeout</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.PaymentGatewayPayflowPro#getUserId <em>User Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.PaymentGatewayPayflowPro#getVendor <em>Vendor</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.payment.PaymentGatewayPayflowPro#getPaymentGatewayConfigId <em>Payment Gateway Config Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPaymentGatewayPayflowPro()
- * @model
+ * @model annotation="mimo-ent-frame title='Payflow Pro Payment Gateway Config'"
  * @generated
  */
 public interface PaymentGatewayPayflowPro extends BizEntity {
@@ -60,7 +60,8 @@ public interface PaymentGatewayPayflowPro extends BizEntity {
 	 * @return the value of the '<em>Cancel Return Url</em>' attribute.
 	 * @see #setCancelReturnUrl(String)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPaymentGatewayPayflowPro_CancelReturnUrl()
-	 * @model annotation="mimo-ent-format type='value' length='255'"
+	 * @model annotation="mimo-ent-slot help='Express Checkout Return On Cancel URL'"
+	 *        annotation="mimo-ent-format type='value' length='255'"
 	 * @generated
 	 */
 	String getCancelReturnUrl();
@@ -86,7 +87,8 @@ public interface PaymentGatewayPayflowPro extends BizEntity {
 	 * @return the value of the '<em>Certs Path</em>' attribute.
 	 * @see #setCertsPath(String)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPaymentGatewayPayflowPro_CertsPath()
-	 * @model annotation="mimo-ent-format type='value' length='255'"
+	 * @model annotation="mimo-ent-slot help='Path the the VeriSign Certificate'"
+	 *        annotation="mimo-ent-format type='value' length='255'"
 	 * @generated
 	 */
 	String getCertsPath();
@@ -112,7 +114,8 @@ public interface PaymentGatewayPayflowPro extends BizEntity {
 	 * @return the value of the '<em>Check Avs</em>' attribute.
 	 * @see #setCheckAvs(boolean)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPaymentGatewayPayflowPro_CheckAvs()
-	 * @model annotation="mimo-ent-format type='indicator' length='1'"
+	 * @model annotation="mimo-ent-slot help='Use Address Verification'"
+	 *        annotation="mimo-ent-format type='indicator' length='1'"
 	 * @generated
 	 */
 	boolean isCheckAvs();
@@ -138,7 +141,8 @@ public interface PaymentGatewayPayflowPro extends BizEntity {
 	 * @return the value of the '<em>Check Cvv2</em>' attribute.
 	 * @see #setCheckCvv2(boolean)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPaymentGatewayPayflowPro_CheckCvv2()
-	 * @model annotation="mimo-ent-format type='indicator' length='1'"
+	 * @model annotation="mimo-ent-slot help='Require CVV2 Verification'"
+	 *        annotation="mimo-ent-format type='indicator' length='1'"
 	 * @generated
 	 */
 	boolean isCheckCvv2();
@@ -164,7 +168,8 @@ public interface PaymentGatewayPayflowPro extends BizEntity {
 	 * @return the value of the '<em>Enable Transmit</em>' attribute.
 	 * @see #setEnableTransmit(String)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPaymentGatewayPayflowPro_EnableTransmit()
-	 * @model annotation="mimo-ent-format type='value' length='255'"
+	 * @model annotation="mimo-ent-slot help='Set to false to not transmit anything'"
+	 *        annotation="mimo-ent-format type='value' length='255'"
 	 * @generated
 	 */
 	String getEnableTransmit();
@@ -190,7 +195,8 @@ public interface PaymentGatewayPayflowPro extends BizEntity {
 	 * @return the value of the '<em>Host Address</em>' attribute.
 	 * @see #setHostAddress(String)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPaymentGatewayPayflowPro_HostAddress()
-	 * @model annotation="mimo-ent-format type='value' length='255'"
+	 * @model annotation="mimo-ent-slot help='Address of the payment processor'"
+	 *        annotation="mimo-ent-format type='value' length='255'"
 	 * @generated
 	 */
 	String getHostAddress();
@@ -216,7 +222,8 @@ public interface PaymentGatewayPayflowPro extends BizEntity {
 	 * @return the value of the '<em>Host Port</em>' attribute.
 	 * @see #setHostPort(long)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPaymentGatewayPayflowPro_HostPort()
-	 * @model annotation="mimo-ent-format type='numeric' precision='20' scale='0'"
+	 * @model annotation="mimo-ent-slot help='Port of the payment processor'"
+	 *        annotation="mimo-ent-format type='numeric' precision='20' scale='0'"
 	 * @generated
 	 */
 	long getHostPort();
@@ -242,7 +249,8 @@ public interface PaymentGatewayPayflowPro extends BizEntity {
 	 * @return the value of the '<em>Log File Name</em>' attribute.
 	 * @see #setLogFileName(String)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPaymentGatewayPayflowPro_LogFileName()
-	 * @model annotation="mimo-ent-format type='value' length='255'"
+	 * @model annotation="mimo-ent-slot help='Log file name'"
+	 *        annotation="mimo-ent-format type='value' length='255'"
 	 * @generated
 	 */
 	String getLogFileName();
@@ -268,7 +276,8 @@ public interface PaymentGatewayPayflowPro extends BizEntity {
 	 * @return the value of the '<em>Logging Level</em>' attribute.
 	 * @see #setLoggingLevel(long)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPaymentGatewayPayflowPro_LoggingLevel()
-	 * @model annotation="mimo-ent-format type='numeric' precision='20' scale='0'"
+	 * @model annotation="mimo-ent-slot help='Logging level'"
+	 *        annotation="mimo-ent-format type='numeric' precision='20' scale='0'"
 	 * @generated
 	 */
 	long getLoggingLevel();
@@ -294,7 +303,8 @@ public interface PaymentGatewayPayflowPro extends BizEntity {
 	 * @return the value of the '<em>Max Log File Size</em>' attribute.
 	 * @see #setMaxLogFileSize(long)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPaymentGatewayPayflowPro_MaxLogFileSize()
-	 * @model annotation="mimo-ent-format type='numeric' precision='20' scale='0'"
+	 * @model annotation="mimo-ent-slot help='Max log file size'"
+	 *        annotation="mimo-ent-format type='numeric' precision='20' scale='0'"
 	 * @generated
 	 */
 	long getMaxLogFileSize();
@@ -320,7 +330,8 @@ public interface PaymentGatewayPayflowPro extends BizEntity {
 	 * @return the value of the '<em>Partner</em>' attribute.
 	 * @see #setPartner(String)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPaymentGatewayPayflowPro_Partner()
-	 * @model annotation="mimo-ent-format type='short-varchar' length='60'"
+	 * @model annotation="mimo-ent-slot help='PayFlow Partner of account information'"
+	 *        annotation="mimo-ent-format type='short-varchar' length='60'"
 	 * @generated
 	 */
 	String getPartner();
@@ -346,7 +357,8 @@ public interface PaymentGatewayPayflowPro extends BizEntity {
 	 * @return the value of the '<em>Pre Auth</em>' attribute.
 	 * @see #setPreAuth(char)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPaymentGatewayPayflowPro_PreAuth()
-	 * @model annotation="mimo-ent-format type='indicator' length='1'"
+	 * @model annotation="mimo-ent-slot help='Pre-Authorize Payments (if set to N will auto-capture)'"
+	 *        annotation="mimo-ent-format type='indicator' length='1'"
 	 * @generated
 	 */
 	char getPreAuth();
@@ -372,7 +384,8 @@ public interface PaymentGatewayPayflowPro extends BizEntity {
 	 * @return the value of the '<em>Payment Gateway Config Id</em>' reference.
 	 * @see #setPaymentGatewayConfigId(PaymentGatewayConfig)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPaymentGatewayPayflowPro_PaymentGatewayConfigId()
-	 * @model keys="paymentGatewayConfigId"
+	 * @model keys="paymentGatewayConfigId" required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	PaymentGatewayConfig getPaymentGatewayConfigId();
@@ -398,7 +411,8 @@ public interface PaymentGatewayPayflowPro extends BizEntity {
 	 * @return the value of the '<em>Proxy Address</em>' attribute.
 	 * @see #setProxyAddress(String)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPaymentGatewayPayflowPro_ProxyAddress()
-	 * @model annotation="mimo-ent-format type='value' length='255'"
+	 * @model annotation="mimo-ent-slot help='Proxy Address'"
+	 *        annotation="mimo-ent-format type='value' length='255'"
 	 * @generated
 	 */
 	String getProxyAddress();
@@ -424,7 +438,8 @@ public interface PaymentGatewayPayflowPro extends BizEntity {
 	 * @return the value of the '<em>Proxy Logon</em>' attribute.
 	 * @see #setProxyLogon(String)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPaymentGatewayPayflowPro_ProxyLogon()
-	 * @model annotation="mimo-ent-format type='value' length='255'"
+	 * @model annotation="mimo-ent-slot help='Proxy Logon'"
+	 *        annotation="mimo-ent-format type='value' length='255'"
 	 * @generated
 	 */
 	String getProxyLogon();
@@ -450,7 +465,8 @@ public interface PaymentGatewayPayflowPro extends BizEntity {
 	 * @return the value of the '<em>Proxy Password</em>' attribute.
 	 * @see #setProxyPassword(String)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPaymentGatewayPayflowPro_ProxyPassword()
-	 * @model annotation="mimo-ent-format type='value' length='255'"
+	 * @model annotation="mimo-ent-slot encrypt='TRUE' help='Proxy Password'"
+	 *        annotation="mimo-ent-format type='value' length='255'"
 	 * @generated
 	 */
 	String getProxyPassword();
@@ -476,7 +492,8 @@ public interface PaymentGatewayPayflowPro extends BizEntity {
 	 * @return the value of the '<em>Proxy Port</em>' attribute.
 	 * @see #setProxyPort(long)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPaymentGatewayPayflowPro_ProxyPort()
-	 * @model annotation="mimo-ent-format type='numeric' precision='20' scale='0'"
+	 * @model annotation="mimo-ent-slot help='Proxy Port'"
+	 *        annotation="mimo-ent-format type='numeric' precision='20' scale='0'"
 	 * @generated
 	 */
 	long getProxyPort();
@@ -502,7 +519,8 @@ public interface PaymentGatewayPayflowPro extends BizEntity {
 	 * @return the value of the '<em>Pwd</em>' attribute.
 	 * @see #setPwd(String)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPaymentGatewayPayflowPro_Pwd()
-	 * @model annotation="mimo-ent-format type='value' length='255'"
+	 * @model annotation="mimo-ent-slot encrypt='TRUE' help='PayFlow Password of account information'"
+	 *        annotation="mimo-ent-format type='value' length='255'"
 	 * @generated
 	 */
 	String getPwd();
@@ -528,7 +546,8 @@ public interface PaymentGatewayPayflowPro extends BizEntity {
 	 * @return the value of the '<em>Redirect Url</em>' attribute.
 	 * @see #setRedirectUrl(String)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPaymentGatewayPayflowPro_RedirectUrl()
-	 * @model annotation="mimo-ent-format type='value' length='255'"
+	 * @model annotation="mimo-ent-slot help='Express Checkout Redirect URL'"
+	 *        annotation="mimo-ent-format type='value' length='255'"
 	 * @generated
 	 */
 	String getRedirectUrl();
@@ -554,7 +573,8 @@ public interface PaymentGatewayPayflowPro extends BizEntity {
 	 * @return the value of the '<em>Return Url</em>' attribute.
 	 * @see #setReturnUrl(String)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPaymentGatewayPayflowPro_ReturnUrl()
-	 * @model annotation="mimo-ent-format type='value' length='255'"
+	 * @model annotation="mimo-ent-slot help='Express Checkout Return URL'"
+	 *        annotation="mimo-ent-format type='value' length='255'"
 	 * @generated
 	 */
 	String getReturnUrl();
@@ -580,7 +600,8 @@ public interface PaymentGatewayPayflowPro extends BizEntity {
 	 * @return the value of the '<em>Stack Trace On</em>' attribute.
 	 * @see #setStackTraceOn(boolean)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPaymentGatewayPayflowPro_StackTraceOn()
-	 * @model annotation="mimo-ent-format type='indicator' length='1'"
+	 * @model annotation="mimo-ent-slot help='Stack trace on/off'"
+	 *        annotation="mimo-ent-format type='indicator' length='1'"
 	 * @generated
 	 */
 	boolean isStackTraceOn();
@@ -606,7 +627,8 @@ public interface PaymentGatewayPayflowPro extends BizEntity {
 	 * @return the value of the '<em>Timeout</em>' attribute.
 	 * @see #setTimeout(long)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPaymentGatewayPayflowPro_Timeout()
-	 * @model annotation="mimo-ent-format type='numeric' precision='20' scale='0'"
+	 * @model annotation="mimo-ent-slot help='Timeout'"
+	 *        annotation="mimo-ent-format type='numeric' precision='20' scale='0'"
 	 * @generated
 	 */
 	long getTimeout();
@@ -632,7 +654,8 @@ public interface PaymentGatewayPayflowPro extends BizEntity {
 	 * @return the value of the '<em>User Id</em>' attribute.
 	 * @see #setUserId(String)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPaymentGatewayPayflowPro_UserId()
-	 * @model annotation="mimo-ent-format type='short-varchar' length='60'"
+	 * @model annotation="mimo-ent-slot help='PayFlow UserID of account information'"
+	 *        annotation="mimo-ent-format type='short-varchar' length='60'"
 	 * @generated
 	 */
 	String getUserId();
@@ -658,7 +681,8 @@ public interface PaymentGatewayPayflowPro extends BizEntity {
 	 * @return the value of the '<em>Vendor</em>' attribute.
 	 * @see #setVendor(String)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPaymentGatewayPayflowPro_Vendor()
-	 * @model annotation="mimo-ent-format type='short-varchar' length='60'"
+	 * @model annotation="mimo-ent-slot help='Vendor of account information'"
+	 *        annotation="mimo-ent-format type='short-varchar' length='60'"
 	 * @generated
 	 */
 	String getVendor();

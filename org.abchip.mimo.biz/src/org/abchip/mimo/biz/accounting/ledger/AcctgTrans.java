@@ -34,39 +34,39 @@ import org.abchip.mimo.biz.workeffort.workeffort.WorkEffort;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.accounting.ledger.AcctgTrans#getAcctgTransId <em>Acctg Trans Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.ledger.AcctgTrans#getAcctgTransAttributes <em>Acctg Trans Attributes</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.ledger.AcctgTrans#getAcctgTransEntries <em>Acctg Trans Entries</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.ledger.AcctgTrans#getAcctgTransTypeId <em>Acctg Trans Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.ledger.AcctgTrans#getCreatedByUserLogin <em>Created By User Login</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.ledger.AcctgTrans#getCreatedDate <em>Created Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.ledger.AcctgTrans#getDescription <em>Description</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.ledger.AcctgTrans#getFinAccountTransId <em>Fin Account Trans Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.ledger.AcctgTrans#getFixedAssetId <em>Fixed Asset Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.ledger.AcctgTrans#getGlFiscalTypeId <em>Gl Fiscal Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.ledger.AcctgTrans#getGlJournalId <em>Gl Journal Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.ledger.AcctgTrans#getGroupStatusId <em>Group Status Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.ledger.AcctgTrans#getInventoryItemId <em>Inventory Item Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.ledger.AcctgTrans#getInvoiceId <em>Invoice Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.ledger.AcctgTrans#isIsPosted <em>Is Posted</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.ledger.AcctgTrans#getLastModifiedByUserLogin <em>Last Modified By User Login</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.ledger.AcctgTrans#getLastModifiedDate <em>Last Modified Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.ledger.AcctgTrans#getPartyId <em>Party Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.ledger.AcctgTrans#getPaymentId <em>Payment Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.ledger.AcctgTrans#getPhysicalInventoryId <em>Physical Inventory Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.ledger.AcctgTrans#getPostedDate <em>Posted Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.ledger.AcctgTrans#getReceiptId <em>Receipt Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.ledger.AcctgTrans#getRoleTypeId <em>Role Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.ledger.AcctgTrans#getScheduledPostingDate <em>Scheduled Posting Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.ledger.AcctgTrans#getShipmentId <em>Shipment Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.ledger.AcctgTrans#getTheirAcctgTransId <em>Their Acctg Trans Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.ledger.AcctgTrans#getTransactionDate <em>Transaction Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.ledger.AcctgTrans#getVoucherDate <em>Voucher Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.ledger.AcctgTrans#getVoucherRef <em>Voucher Ref</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.ledger.AcctgTrans#getAcctgTransTypeId <em>Acctg Trans Type Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.ledger.AcctgTrans#getGlJournalId <em>Gl Journal Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.ledger.AcctgTrans#getGlFiscalTypeId <em>Gl Fiscal Type Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.ledger.AcctgTrans#getGroupStatusId <em>Group Status Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.ledger.AcctgTrans#getFixedAssetId <em>Fixed Asset Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.ledger.AcctgTrans#getPhysicalInventoryId <em>Physical Inventory Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.ledger.AcctgTrans#getInventoryItemId <em>Inventory Item Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.ledger.AcctgTrans#getPartyId <em>Party Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.ledger.AcctgTrans#getRoleTypeId <em>Role Type Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.ledger.AcctgTrans#getInvoiceId <em>Invoice Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.ledger.AcctgTrans#getPaymentId <em>Payment Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.ledger.AcctgTrans#getFinAccountTransId <em>Fin Account Trans Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.ledger.AcctgTrans#getShipmentId <em>Shipment Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.ledger.AcctgTrans#getReceiptId <em>Receipt Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.ledger.AcctgTrans#getWorkEffortId <em>Work Effort Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.ledger.AcctgTrans#getAcctgTransAttributes <em>Acctg Trans Attributes</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.ledger.AcctgTrans#getAcctgTransEntries <em>Acctg Trans Entries</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.accounting.ledger.LedgerPackage#getAcctgTrans()
- * @model annotation="mimo-ent-frame formula='description'"
+ * @model annotation="mimo-ent-frame title='Accounting Transaction' formula='description'"
  * @generated
  */
 public interface AcctgTrans extends BizEntityTyped<AcctgTransType> {
@@ -186,6 +186,7 @@ public interface AcctgTrans extends BizEntityTyped<AcctgTransType> {
 	 * @see #setGroupStatusId(StatusItem)
 	 * @see org.abchip.mimo.biz.accounting.ledger.LedgerPackage#getAcctgTrans_GroupStatusId()
 	 * @model keys="statusId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	StatusItem getGroupStatusId();
@@ -212,6 +213,7 @@ public interface AcctgTrans extends BizEntityTyped<AcctgTransType> {
 	 * @see #setInventoryItemId(InventoryItem)
 	 * @see org.abchip.mimo.biz.accounting.ledger.LedgerPackage#getAcctgTrans_InventoryItemId()
 	 * @model keys="inventoryItemId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	InventoryItem getInventoryItemId();
@@ -290,6 +292,7 @@ public interface AcctgTrans extends BizEntityTyped<AcctgTransType> {
 	 * @see #setPartyId(Party)
 	 * @see org.abchip.mimo.biz.accounting.ledger.LedgerPackage#getAcctgTrans_PartyId()
 	 * @model keys="partyId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Party getPartyId();
@@ -316,6 +319,7 @@ public interface AcctgTrans extends BizEntityTyped<AcctgTransType> {
 	 * @see #setPaymentId(Payment)
 	 * @see org.abchip.mimo.biz.accounting.ledger.LedgerPackage#getAcctgTrans_PaymentId()
 	 * @model keys="paymentId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Payment getPaymentId();
@@ -342,6 +346,7 @@ public interface AcctgTrans extends BizEntityTyped<AcctgTransType> {
 	 * @see #setPhysicalInventoryId(PhysicalInventory)
 	 * @see org.abchip.mimo.biz.accounting.ledger.LedgerPackage#getAcctgTrans_PhysicalInventoryId()
 	 * @model keys="physicalInventoryId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	PhysicalInventory getPhysicalInventoryId();
@@ -394,6 +399,7 @@ public interface AcctgTrans extends BizEntityTyped<AcctgTransType> {
 	 * @see #setReceiptId(ShipmentReceipt)
 	 * @see org.abchip.mimo.biz.accounting.ledger.LedgerPackage#getAcctgTrans_ReceiptId()
 	 * @model keys="receiptId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ShipmentReceipt getReceiptId();
@@ -420,6 +426,7 @@ public interface AcctgTrans extends BizEntityTyped<AcctgTransType> {
 	 * @see #setRoleTypeId(RoleType)
 	 * @see org.abchip.mimo.biz.accounting.ledger.LedgerPackage#getAcctgTrans_RoleTypeId()
 	 * @model keys="roleTypeId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	RoleType getRoleTypeId();
@@ -472,6 +479,7 @@ public interface AcctgTrans extends BizEntityTyped<AcctgTransType> {
 	 * @see #setShipmentId(Shipment)
 	 * @see org.abchip.mimo.biz.accounting.ledger.LedgerPackage#getAcctgTrans_ShipmentId()
 	 * @model keys="shipmentId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Shipment getShipmentId();
@@ -602,6 +610,7 @@ public interface AcctgTrans extends BizEntityTyped<AcctgTransType> {
 	 * @see #setWorkEffortId(WorkEffort)
 	 * @see org.abchip.mimo.biz.accounting.ledger.LedgerPackage#getAcctgTrans_WorkEffortId()
 	 * @model keys="workEffortId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	WorkEffort getWorkEffortId();
@@ -627,8 +636,7 @@ public interface AcctgTrans extends BizEntityTyped<AcctgTransType> {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Acctg Trans Attributes</em>' attribute list.
 	 * @see org.abchip.mimo.biz.accounting.ledger.LedgerPackage#getAcctgTrans_AcctgTransAttributes()
-	 * @model required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='AcctgTransAttribute'"
 	 * @generated
@@ -646,8 +654,7 @@ public interface AcctgTrans extends BizEntityTyped<AcctgTransType> {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Acctg Trans Entries</em>' attribute list.
 	 * @see org.abchip.mimo.biz.accounting.ledger.LedgerPackage#getAcctgTrans_AcctgTransEntries()
-	 * @model required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='AcctgTransEntry'"
 	 * @generated
@@ -666,6 +673,7 @@ public interface AcctgTrans extends BizEntityTyped<AcctgTransType> {
 	 * @see #setGlJournalId(GlJournal)
 	 * @see org.abchip.mimo.biz.accounting.ledger.LedgerPackage#getAcctgTrans_GlJournalId()
 	 * @model keys="glJournalId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	GlJournal getGlJournalId();
@@ -692,6 +700,7 @@ public interface AcctgTrans extends BizEntityTyped<AcctgTransType> {
 	 * @see #setGlFiscalTypeId(GlFiscalType)
 	 * @see org.abchip.mimo.biz.accounting.ledger.LedgerPackage#getAcctgTrans_GlFiscalTypeId()
 	 * @model keys="glFiscalTypeId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	GlFiscalType getGlFiscalTypeId();
@@ -718,6 +727,7 @@ public interface AcctgTrans extends BizEntityTyped<AcctgTransType> {
 	 * @see #setFixedAssetId(FixedAsset)
 	 * @see org.abchip.mimo.biz.accounting.ledger.LedgerPackage#getAcctgTrans_FixedAssetId()
 	 * @model keys="fixedAssetId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	FixedAsset getFixedAssetId();
@@ -744,6 +754,7 @@ public interface AcctgTrans extends BizEntityTyped<AcctgTransType> {
 	 * @see #setInvoiceId(Invoice)
 	 * @see org.abchip.mimo.biz.accounting.ledger.LedgerPackage#getAcctgTrans_InvoiceId()
 	 * @model keys="invoiceId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Invoice getInvoiceId();
@@ -770,6 +781,7 @@ public interface AcctgTrans extends BizEntityTyped<AcctgTransType> {
 	 * @see #setFinAccountTransId(FinAccountTrans)
 	 * @see org.abchip.mimo.biz.accounting.ledger.LedgerPackage#getAcctgTrans_FinAccountTransId()
 	 * @model keys="finAccountTransId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	FinAccountTrans getFinAccountTransId();
@@ -796,6 +808,7 @@ public interface AcctgTrans extends BizEntityTyped<AcctgTransType> {
 	 * @see #setAcctgTransTypeId(AcctgTransType)
 	 * @see org.abchip.mimo.biz.accounting.ledger.LedgerPackage#getAcctgTrans_AcctgTransTypeId()
 	 * @model keys="acctgTransTypeId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	AcctgTransType getAcctgTransTypeId();
@@ -823,7 +836,6 @@ public interface AcctgTrans extends BizEntityTyped<AcctgTransType> {
 	 * @see org.abchip.mimo.biz.accounting.ledger.LedgerPackage#getAcctgTrans_AcctgTransId()
 	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getAcctgTransId();

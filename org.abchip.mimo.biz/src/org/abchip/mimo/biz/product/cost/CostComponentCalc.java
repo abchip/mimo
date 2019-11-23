@@ -25,18 +25,18 @@ import org.abchip.mimo.biz.common.uom.Uom;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.product.cost.CostComponentCalc#getCostComponentCalcId <em>Cost Component Calc Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.cost.CostComponentCalc#getCostCustomMethodId <em>Cost Custom Method Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.cost.CostComponentCalc#getCostGlAccountTypeId <em>Cost Gl Account Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.cost.CostComponentCalc#getCurrencyUomId <em>Currency Uom Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.cost.CostComponentCalc#getDescription <em>Description</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.cost.CostComponentCalc#getFixedCost <em>Fixed Cost</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.cost.CostComponentCalc#getOffsettingGlAccountTypeId <em>Offsetting Gl Account Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.cost.CostComponentCalc#getPerMilliSecond <em>Per Milli Second</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.cost.CostComponentCalc#getVariableCost <em>Variable Cost</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.cost.CostComponentCalc#getCostGlAccountTypeId <em>Cost Gl Account Type Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.cost.CostComponentCalc#getOffsettingGlAccountTypeId <em>Offsetting Gl Account Type Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.cost.CostComponentCalc#getCurrencyUomId <em>Currency Uom Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.cost.CostComponentCalc#getCostCustomMethodId <em>Cost Custom Method Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.product.cost.CostPackage#getCostComponentCalc()
- * @model annotation="mimo-ent-frame formula='description'"
+ * @model annotation="mimo-ent-frame title='Cost Component Calculation' dictionary='ProductEntityLabels' formula='description'"
  * @generated
  */
 public interface CostComponentCalc extends BizEntity {
@@ -52,6 +52,7 @@ public interface CostComponentCalc extends BizEntity {
 	 * @see #setCostCustomMethodId(CustomMethod)
 	 * @see org.abchip.mimo.biz.product.cost.CostPackage#getCostComponentCalc_CostCustomMethodId()
 	 * @model keys="customMethodId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	CustomMethod getCostCustomMethodId();
@@ -78,6 +79,7 @@ public interface CostComponentCalc extends BizEntity {
 	 * @see #setCostGlAccountTypeId(GlAccountType)
 	 * @see org.abchip.mimo.biz.product.cost.CostPackage#getCostComponentCalc_CostGlAccountTypeId()
 	 * @model keys="glAccountTypeId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	GlAccountType getCostGlAccountTypeId();
@@ -104,6 +106,7 @@ public interface CostComponentCalc extends BizEntity {
 	 * @see #setCurrencyUomId(Uom)
 	 * @see org.abchip.mimo.biz.product.cost.CostPackage#getCostComponentCalc_CurrencyUomId()
 	 * @model keys="uomId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Uom getCurrencyUomId();
@@ -182,6 +185,7 @@ public interface CostComponentCalc extends BizEntity {
 	 * @see #setOffsettingGlAccountTypeId(GlAccountType)
 	 * @see org.abchip.mimo.biz.product.cost.CostPackage#getCostComponentCalc_OffsettingGlAccountTypeId()
 	 * @model keys="glAccountTypeId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	GlAccountType getOffsettingGlAccountTypeId();
@@ -271,7 +275,6 @@ public interface CostComponentCalc extends BizEntity {
 	 * @see org.abchip.mimo.biz.product.cost.CostPackage#getCostComponentCalc_CostComponentCalcId()
 	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getCostComponentCalcId();

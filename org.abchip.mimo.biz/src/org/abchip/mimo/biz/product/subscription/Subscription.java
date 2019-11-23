@@ -33,44 +33,44 @@ import org.abchip.mimo.biz.product.product.Product;
  *   <li>{@link org.abchip.mimo.biz.product.subscription.Subscription#getSubscriptionId <em>Subscription Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.subscription.Subscription#isAutomaticExtend <em>Automatic Extend</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.subscription.Subscription#getAvailableTime <em>Available Time</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.subscription.Subscription#getAvailableTimeUomId <em>Available Time Uom Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.subscription.Subscription#getCanclAutmExtTime <em>Cancl Autm Ext Time</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.subscription.Subscription#getCanclAutmExtTimeUomId <em>Cancl Autm Ext Time Uom Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.subscription.Subscription#getCommunicationEventId <em>Communication Event Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.subscription.Subscription#getContactMechId <em>Contact Mech Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.subscription.Subscription#getDescription <em>Description</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.subscription.Subscription#getExpirationCompletedDate <em>Expiration Completed Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.subscription.Subscription#getExternalSubscriptionId <em>External Subscription Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.subscription.Subscription#getFromDate <em>From Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.subscription.Subscription#getGracePeriodOnExpiry <em>Grace Period On Expiry</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.subscription.Subscription#getGracePeriodOnExpiryUomId <em>Grace Period On Expiry Uom Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.subscription.Subscription#getInventoryItemId <em>Inventory Item Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.subscription.Subscription#getMaxLifeTime <em>Max Life Time</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.subscription.Subscription#getMaxLifeTimeUomId <em>Max Life Time Uom Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.subscription.Subscription#getNeedTypeId <em>Need Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.subscription.Subscription#getOrderId <em>Order Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.subscription.Subscription#getOrderItemSeqId <em>Order Item Seq Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.subscription.Subscription#getOriginatedFromPartyId <em>Originated From Party Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.subscription.Subscription#getOriginatedFromRoleTypeId <em>Originated From Role Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.subscription.Subscription#getPartyId <em>Party Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.subscription.Subscription#getPartyNeedId <em>Party Need Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.subscription.Subscription#getProductCategoryId <em>Product Category Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.subscription.Subscription#getProductId <em>Product Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.subscription.Subscription#getPurchaseFromDate <em>Purchase From Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.subscription.Subscription#getPurchaseThruDate <em>Purchase Thru Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.subscription.Subscription#getRoleTypeId <em>Role Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.subscription.Subscription#getSubscriptionAttributes <em>Subscription Attributes</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.subscription.Subscription#getSubscriptionCommEvents <em>Subscription Comm Events</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.subscription.Subscription#getSubscriptionResourceId <em>Subscription Resource Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.subscription.Subscription#getSubscriptionTypeId <em>Subscription Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.subscription.Subscription#getThruDate <em>Thru Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.subscription.Subscription#getUseCountLimit <em>Use Count Limit</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.subscription.Subscription#getUseTime <em>Use Time</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.subscription.Subscription#getSubscriptionResourceId <em>Subscription Resource Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.subscription.Subscription#getContactMechId <em>Contact Mech Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.subscription.Subscription#getPartyId <em>Party Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.subscription.Subscription#getUseTimeUomId <em>Use Time Uom Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.subscription.Subscription#getCanclAutmExtTimeUomId <em>Cancl Autm Ext Time Uom Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.subscription.Subscription#getAvailableTimeUomId <em>Available Time Uom Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.subscription.Subscription#getMaxLifeTimeUomId <em>Max Life Time Uom Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.subscription.Subscription#getRoleTypeId <em>Role Type Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.subscription.Subscription#getOriginatedFromPartyId <em>Originated From Party Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.subscription.Subscription#getOriginatedFromRoleTypeId <em>Originated From Role Type Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.subscription.Subscription#getNeedTypeId <em>Need Type Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.subscription.Subscription#getOrderId <em>Order Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.subscription.Subscription#getProductId <em>Product Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.subscription.Subscription#getProductCategoryId <em>Product Category Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.subscription.Subscription#getInventoryItemId <em>Inventory Item Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.subscription.Subscription#getSubscriptionTypeId <em>Subscription Type Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.subscription.Subscription#getGracePeriodOnExpiryUomId <em>Grace Period On Expiry Uom Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.subscription.Subscription#getSubscriptionAttributes <em>Subscription Attributes</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.subscription.Subscription#getSubscriptionCommEvents <em>Subscription Comm Events</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.product.subscription.SubscriptionPackage#getSubscription()
- * @model annotation="mimo-ent-frame formula='description'"
+ * @model annotation="mimo-ent-frame dictionary='ProductEntityLabels' formula='description'"
  * @generated
  */
 public interface Subscription extends BizEntityTyped<SubscriptionType> {
@@ -112,6 +112,7 @@ public interface Subscription extends BizEntityTyped<SubscriptionType> {
 	 * @see #setAvailableTimeUomId(Uom)
 	 * @see org.abchip.mimo.biz.product.subscription.SubscriptionPackage#getSubscription_AvailableTimeUomId()
 	 * @model keys="uomId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Uom getAvailableTimeUomId();
@@ -137,7 +138,8 @@ public interface Subscription extends BizEntityTyped<SubscriptionType> {
 	 * @return the value of the '<em>Cancl Autm Ext Time</em>' attribute.
 	 * @see #setCanclAutmExtTime(long)
 	 * @see org.abchip.mimo.biz.product.subscription.SubscriptionPackage#getSubscription_CanclAutmExtTime()
-	 * @model annotation="mimo-ent-format type='numeric' precision='20' scale='0'"
+	 * @model annotation="mimo-ent-slot help='The time period (before the end of the thruDate) after which the automatic extension of the subscription will be executed.'"
+	 *        annotation="mimo-ent-format type='numeric' precision='20' scale='0'"
 	 * @generated
 	 */
 	long getCanclAutmExtTime();
@@ -164,6 +166,8 @@ public interface Subscription extends BizEntityTyped<SubscriptionType> {
 	 * @see #setCanclAutmExtTimeUomId(Uom)
 	 * @see org.abchip.mimo.biz.product.subscription.SubscriptionPackage#getSubscription_CanclAutmExtTimeUomId()
 	 * @model keys="uomId"
+	 *        annotation="mimo-ent-slot help='Unit Of Measure used for the automatic extension of the subscription.'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Uom getCanclAutmExtTimeUomId();
@@ -189,7 +193,8 @@ public interface Subscription extends BizEntityTyped<SubscriptionType> {
 	 * @return the value of the '<em>Communication Event Id</em>' attribute.
 	 * @see #setCommunicationEventId(String)
 	 * @see org.abchip.mimo.biz.product.subscription.SubscriptionPackage#getSubscription_CommunicationEventId()
-	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 * @model annotation="mimo-ent-slot help='now replaced by entity: SubscriptionCommEvent'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	String getCommunicationEventId();
@@ -216,6 +221,7 @@ public interface Subscription extends BizEntityTyped<SubscriptionType> {
 	 * @see #setContactMechId(ContactMech)
 	 * @see org.abchip.mimo.biz.product.subscription.SubscriptionPackage#getSubscription_ContactMechId()
 	 * @model keys="contactMechId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ContactMech getContactMechId();
@@ -267,7 +273,8 @@ public interface Subscription extends BizEntityTyped<SubscriptionType> {
 	 * @return the value of the '<em>Expiration Completed Date</em>' attribute.
 	 * @see #setExpirationCompletedDate(Date)
 	 * @see org.abchip.mimo.biz.product.subscription.SubscriptionPackage#getSubscription_ExpirationCompletedDate()
-	 * @model annotation="mimo-ent-format type='date-time'"
+	 * @model annotation="mimo-ent-slot help='The date when expiration completed.'"
+	 *        annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getExpirationCompletedDate();
@@ -345,7 +352,8 @@ public interface Subscription extends BizEntityTyped<SubscriptionType> {
 	 * @return the value of the '<em>Grace Period On Expiry</em>' attribute.
 	 * @see #setGracePeriodOnExpiry(long)
 	 * @see org.abchip.mimo.biz.product.subscription.SubscriptionPackage#getSubscription_GracePeriodOnExpiry()
-	 * @model annotation="mimo-ent-format type='numeric' precision='20' scale='0'"
+	 * @model annotation="mimo-ent-slot help='The time period (before the end of the thruDate) after which the automatic extension of the subscription will be executed.'"
+	 *        annotation="mimo-ent-format type='numeric' precision='20' scale='0'"
 	 * @generated
 	 */
 	long getGracePeriodOnExpiry();
@@ -372,6 +380,8 @@ public interface Subscription extends BizEntityTyped<SubscriptionType> {
 	 * @see #setGracePeriodOnExpiryUomId(Uom)
 	 * @see org.abchip.mimo.biz.product.subscription.SubscriptionPackage#getSubscription_GracePeriodOnExpiryUomId()
 	 * @model keys="uomId"
+	 *        annotation="mimo-ent-slot help='Unit Of Measure used for the automatic extension of the subscription.'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Uom getGracePeriodOnExpiryUomId();
@@ -397,7 +407,8 @@ public interface Subscription extends BizEntityTyped<SubscriptionType> {
 	 * @return the value of the '<em>Max Life Time</em>' attribute.
 	 * @see #setMaxLifeTime(long)
 	 * @see org.abchip.mimo.biz.product.subscription.SubscriptionPackage#getSubscription_MaxLifeTime()
-	 * @model annotation="mimo-ent-format type='numeric' precision='20' scale='0'"
+	 * @model annotation="mimo-ent-slot help='The length in time of the (extended) subscription'"
+	 *        annotation="mimo-ent-format type='numeric' precision='20' scale='0'"
 	 * @generated
 	 */
 	long getMaxLifeTime();
@@ -424,6 +435,7 @@ public interface Subscription extends BizEntityTyped<SubscriptionType> {
 	 * @see #setMaxLifeTimeUomId(Uom)
 	 * @see org.abchip.mimo.biz.product.subscription.SubscriptionPackage#getSubscription_MaxLifeTimeUomId()
 	 * @model keys="uomId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Uom getMaxLifeTimeUomId();
@@ -450,6 +462,7 @@ public interface Subscription extends BizEntityTyped<SubscriptionType> {
 	 * @see #setNeedTypeId(NeedType)
 	 * @see org.abchip.mimo.biz.product.subscription.SubscriptionPackage#getSubscription_NeedTypeId()
 	 * @model keys="needTypeId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	NeedType getNeedTypeId();
@@ -476,6 +489,7 @@ public interface Subscription extends BizEntityTyped<SubscriptionType> {
 	 * @see #setOrderId(OrderHeader)
 	 * @see org.abchip.mimo.biz.product.subscription.SubscriptionPackage#getSubscription_OrderId()
 	 * @model keys="orderId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	OrderHeader getOrderId();
@@ -528,6 +542,7 @@ public interface Subscription extends BizEntityTyped<SubscriptionType> {
 	 * @see #setOriginatedFromPartyId(Party)
 	 * @see org.abchip.mimo.biz.product.subscription.SubscriptionPackage#getSubscription_OriginatedFromPartyId()
 	 * @model keys="partyId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Party getOriginatedFromPartyId();
@@ -554,6 +569,7 @@ public interface Subscription extends BizEntityTyped<SubscriptionType> {
 	 * @see #setOriginatedFromRoleTypeId(RoleType)
 	 * @see org.abchip.mimo.biz.product.subscription.SubscriptionPackage#getSubscription_OriginatedFromRoleTypeId()
 	 * @model keys="roleTypeId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	RoleType getOriginatedFromRoleTypeId();
@@ -580,6 +596,7 @@ public interface Subscription extends BizEntityTyped<SubscriptionType> {
 	 * @see #setPartyId(Party)
 	 * @see org.abchip.mimo.biz.product.subscription.SubscriptionPackage#getSubscription_PartyId()
 	 * @model keys="partyId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Party getPartyId();
@@ -684,6 +701,7 @@ public interface Subscription extends BizEntityTyped<SubscriptionType> {
 	 * @see #setRoleTypeId(RoleType)
 	 * @see org.abchip.mimo.biz.product.subscription.SubscriptionPackage#getSubscription_RoleTypeId()
 	 * @model keys="roleTypeId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	RoleType getRoleTypeId();
@@ -788,6 +806,7 @@ public interface Subscription extends BizEntityTyped<SubscriptionType> {
 	 * @see #setUseTimeUomId(Uom)
 	 * @see org.abchip.mimo.biz.product.subscription.SubscriptionPackage#getSubscription_UseTimeUomId()
 	 * @model keys="uomId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Uom getUseTimeUomId();
@@ -813,8 +832,7 @@ public interface Subscription extends BizEntityTyped<SubscriptionType> {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Subscription Attributes</em>' attribute list.
 	 * @see org.abchip.mimo.biz.product.subscription.SubscriptionPackage#getSubscription_SubscriptionAttributes()
-	 * @model required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='SubscriptionAttribute'"
 	 * @generated
@@ -832,8 +850,7 @@ public interface Subscription extends BizEntityTyped<SubscriptionType> {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Subscription Comm Events</em>' attribute list.
 	 * @see org.abchip.mimo.biz.product.subscription.SubscriptionPackage#getSubscription_SubscriptionCommEvents()
-	 * @model required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='SubscriptionCommEvent'"
 	 * @generated
@@ -843,8 +860,7 @@ public interface Subscription extends BizEntityTyped<SubscriptionType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='SubscriptionFulfillmentPiece' route='subscriptionId'"
 	 * @generated
@@ -863,6 +879,7 @@ public interface Subscription extends BizEntityTyped<SubscriptionType> {
 	 * @see #setSubscriptionResourceId(SubscriptionResource)
 	 * @see org.abchip.mimo.biz.product.subscription.SubscriptionPackage#getSubscription_SubscriptionResourceId()
 	 * @model keys="subscriptionResourceId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	SubscriptionResource getSubscriptionResourceId();
@@ -889,6 +906,7 @@ public interface Subscription extends BizEntityTyped<SubscriptionType> {
 	 * @see #setProductId(Product)
 	 * @see org.abchip.mimo.biz.product.subscription.SubscriptionPackage#getSubscription_ProductId()
 	 * @model keys="productId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Product getProductId();
@@ -915,6 +933,7 @@ public interface Subscription extends BizEntityTyped<SubscriptionType> {
 	 * @see #setProductCategoryId(ProductCategory)
 	 * @see org.abchip.mimo.biz.product.subscription.SubscriptionPackage#getSubscription_ProductCategoryId()
 	 * @model keys="productCategoryId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ProductCategory getProductCategoryId();
@@ -941,6 +960,7 @@ public interface Subscription extends BizEntityTyped<SubscriptionType> {
 	 * @see #setInventoryItemId(InventoryItem)
 	 * @see org.abchip.mimo.biz.product.subscription.SubscriptionPackage#getSubscription_InventoryItemId()
 	 * @model keys="inventoryItemId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	InventoryItem getInventoryItemId();
@@ -967,6 +987,7 @@ public interface Subscription extends BizEntityTyped<SubscriptionType> {
 	 * @see #setSubscriptionTypeId(SubscriptionType)
 	 * @see org.abchip.mimo.biz.product.subscription.SubscriptionPackage#getSubscription_SubscriptionTypeId()
 	 * @model keys="subscriptionTypeId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	SubscriptionType getSubscriptionTypeId();
@@ -994,7 +1015,6 @@ public interface Subscription extends BizEntityTyped<SubscriptionType> {
 	 * @see org.abchip.mimo.biz.product.subscription.SubscriptionPackage#getSubscription_SubscriptionId()
 	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getSubscriptionId();
@@ -1020,7 +1040,8 @@ public interface Subscription extends BizEntityTyped<SubscriptionType> {
 	 * @return the value of the '<em>Automatic Extend</em>' attribute.
 	 * @see #setAutomaticExtend(boolean)
 	 * @see org.abchip.mimo.biz.product.subscription.SubscriptionPackage#getSubscription_AutomaticExtend()
-	 * @model annotation="mimo-ent-format type='indicator' length='1'"
+	 * @model annotation="mimo-ent-slot help='If this subscription is automatically extended with the same period as the initial period.'"
+	 *        annotation="mimo-ent-format type='indicator' length='1'"
 	 * @generated
 	 */
 	boolean isAutomaticExtend();

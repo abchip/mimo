@@ -25,7 +25,7 @@ import org.abchip.mimo.biz.party.party.Party;
  * </ul>
  *
  * @see org.abchip.mimo.biz.accounting.ledger.LedgerPackage#getGlAccountTypeDefault()
- * @model
+ * @model annotation="mimo-ent-frame title='GL Account Organization'"
  * @generated
  */
 public interface GlAccountTypeDefault extends BizEntity {
@@ -40,7 +40,9 @@ public interface GlAccountTypeDefault extends BizEntity {
 	 * @return the value of the '<em>Organization Party Id</em>' reference.
 	 * @see #setOrganizationPartyId(Party)
 	 * @see org.abchip.mimo.biz.accounting.ledger.LedgerPackage#getGlAccountTypeDefault_OrganizationPartyId()
-	 * @model keys="partyId"
+	 * @model keys="partyId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Party getOrganizationPartyId();
@@ -66,7 +68,9 @@ public interface GlAccountTypeDefault extends BizEntity {
 	 * @return the value of the '<em>Gl Account Type Id</em>' reference.
 	 * @see #setGlAccountTypeId(GlAccountType)
 	 * @see org.abchip.mimo.biz.accounting.ledger.LedgerPackage#getGlAccountTypeDefault_GlAccountTypeId()
-	 * @model keys="glAccountTypeId"
+	 * @model keys="glAccountTypeId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	GlAccountType getGlAccountTypeId();
@@ -93,6 +97,7 @@ public interface GlAccountTypeDefault extends BizEntity {
 	 * @see #setGlAccountId(GlAccount)
 	 * @see org.abchip.mimo.biz.accounting.ledger.LedgerPackage#getGlAccountTypeDefault_GlAccountId()
 	 * @model keys="glAccountId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	GlAccount getGlAccountId();

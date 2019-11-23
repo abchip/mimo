@@ -180,7 +180,6 @@ public interface WorkEffortSearchResult extends BizEntity {
 	 * @see org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage#getWorkEffortSearchResult_WorkEffortSearchResultId()
 	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getWorkEffortSearchResultId();
@@ -232,8 +231,7 @@ public interface WorkEffortSearchResult extends BizEntity {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Work Effort Search Constraints</em>' attribute list.
 	 * @see org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage#getWorkEffortSearchResult_WorkEffortSearchConstraints()
-	 * @model required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='WorkEffortSearchConstraint'"
 	 * @generated

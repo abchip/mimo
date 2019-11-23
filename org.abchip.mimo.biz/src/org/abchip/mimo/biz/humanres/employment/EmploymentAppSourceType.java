@@ -27,7 +27,7 @@ import org.abchip.mimo.biz.BizEntity;
  * </ul>
  *
  * @see org.abchip.mimo.biz.humanres.employment.EmploymentPackage#getEmploymentAppSourceType()
- * @model annotation="mimo-ent-frame formula='description'"
+ * @model annotation="mimo-ent-frame title='Employment Application Source Type' formula='description'"
  * @generated
  */
 public interface EmploymentAppSourceType extends BizEntity {
@@ -96,7 +96,6 @@ public interface EmploymentAppSourceType extends BizEntity {
 	 * @see org.abchip.mimo.biz.humanres.employment.EmploymentPackage#getEmploymentAppSourceType_EmploymentAppSourceTypeId()
 	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getEmploymentAppSourceTypeId();
@@ -123,6 +122,7 @@ public interface EmploymentAppSourceType extends BizEntity {
 	 * @see #setParentTypeId(EmploymentAppSourceType)
 	 * @see org.abchip.mimo.biz.humanres.employment.EmploymentPackage#getEmploymentAppSourceType_ParentTypeId()
 	 * @model keys="employmentAppSourceTypeId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	EmploymentAppSourceType getParentTypeId();

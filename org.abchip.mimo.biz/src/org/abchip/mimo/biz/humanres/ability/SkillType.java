@@ -95,6 +95,7 @@ public interface SkillType extends BizEntity {
 	 * @see #setParentTypeId(SkillType)
 	 * @see org.abchip.mimo.biz.humanres.ability.AbilityPackage#getSkillType_ParentTypeId()
 	 * @model keys="skillTypeId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	SkillType getParentTypeId();
@@ -132,8 +133,7 @@ public interface SkillType extends BizEntity {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='PartySkill' route='skillTypeId'"
 	 * @generated
@@ -153,8 +153,7 @@ public interface SkillType extends BizEntity {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='WorkEffortSkillStandard' route='skillTypeId'"
 	 * @generated
@@ -174,7 +173,6 @@ public interface SkillType extends BizEntity {
 	 * @see org.abchip.mimo.biz.humanres.ability.AbilityPackage#getSkillType_SkillTypeId()
 	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getSkillTypeId();

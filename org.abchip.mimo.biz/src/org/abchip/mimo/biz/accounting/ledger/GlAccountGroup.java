@@ -26,7 +26,7 @@ import org.abchip.mimo.biz.BizEntityTyped;
  * </ul>
  *
  * @see org.abchip.mimo.biz.accounting.ledger.LedgerPackage#getGlAccountGroup()
- * @model annotation="mimo-ent-frame formula='description'"
+ * @model annotation="mimo-ent-frame title='General Ledger Account Group' formula='description'"
  * @generated
  */
 public interface GlAccountGroup extends BizEntityTyped<GlAccountGroupType> {
@@ -68,6 +68,7 @@ public interface GlAccountGroup extends BizEntityTyped<GlAccountGroupType> {
 	 * @see #setGlAccountGroupTypeId(GlAccountGroupType)
 	 * @see org.abchip.mimo.biz.accounting.ledger.LedgerPackage#getGlAccountGroup_GlAccountGroupTypeId()
 	 * @model keys="glAccountGroupTypeId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	GlAccountGroupType getGlAccountGroupTypeId();
@@ -105,7 +106,6 @@ public interface GlAccountGroup extends BizEntityTyped<GlAccountGroupType> {
 	 * @see org.abchip.mimo.biz.accounting.ledger.LedgerPackage#getGlAccountGroup_GlAccountGroupId()
 	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getGlAccountGroupId();

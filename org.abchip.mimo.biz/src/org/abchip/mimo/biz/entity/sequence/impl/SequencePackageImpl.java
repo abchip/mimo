@@ -762,8 +762,6 @@ public class SequencePackageImpl extends EPackageImpl implements SequencePackage
 		// Create annotations
 		// mimo-ent-format
 		createMimoentformatAnnotations();
-		// mimo-ent-slot
-		createMimoentslotAnnotations();
 	}
 
 	/**
@@ -795,22 +793,6 @@ public class SequencePackageImpl extends EPackageImpl implements SequencePackage
 		   new String[] {
 			   "type", "value",
 			   "length", "255"
-		   });
-	}
-
-	/**
-	 * Initializes the annotations for <b>mimo-ent-slot</b>.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void createMimoentslotAnnotations() {
-		String source = "mimo-ent-slot";
-		addAnnotation
-		  (getSequenceValueItem_SeqName(),
-		   source,
-		   new String[] {
-			   "key", "true"
 		   });
 	}
 

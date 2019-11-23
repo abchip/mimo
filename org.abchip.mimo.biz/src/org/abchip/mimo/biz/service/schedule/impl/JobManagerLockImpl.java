@@ -23,15 +23,15 @@ import org.eclipse.emf.ecore.EClass;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.service.schedule.impl.JobManagerLockImpl#getInstanceId <em>Instance Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.service.schedule.impl.JobManagerLockImpl#getFromDate <em>From Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.service.schedule.impl.JobManagerLockImpl#getInstanceId <em>Instance Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.service.schedule.impl.JobManagerLockImpl#getComments <em>Comments</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.service.schedule.impl.JobManagerLockImpl#getCreatedByUserLogin <em>Created By User Login</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.service.schedule.impl.JobManagerLockImpl#getCreatedDate <em>Created Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.service.schedule.impl.JobManagerLockImpl#getLastModifiedByUserLogin <em>Last Modified By User Login</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.service.schedule.impl.JobManagerLockImpl#getLastModifiedDate <em>Last Modified Date</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.service.schedule.impl.JobManagerLockImpl#getThruDate <em>Thru Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.service.schedule.impl.JobManagerLockImpl#getReasonEnumId <em>Reason Enum Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.service.schedule.impl.JobManagerLockImpl#getThruDate <em>Thru Date</em>}</li>
  * </ul>
  *
  * @generated

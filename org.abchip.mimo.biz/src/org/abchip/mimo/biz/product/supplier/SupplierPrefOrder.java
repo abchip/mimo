@@ -23,7 +23,7 @@ import org.abchip.mimo.biz.BizEntity;
  * </ul>
  *
  * @see org.abchip.mimo.biz.product.supplier.SupplierPackage#getSupplierPrefOrder()
- * @model annotation="mimo-ent-frame formula='description'"
+ * @model annotation="mimo-ent-frame title='Preference Type' dictionary='ProductEntityLabels' formula='description'"
  * @generated
  */
 public interface SupplierPrefOrder extends BizEntity {
@@ -66,7 +66,6 @@ public interface SupplierPrefOrder extends BizEntity {
 	 * @see org.abchip.mimo.biz.product.supplier.SupplierPackage#getSupplierPrefOrder_SupplierPrefOrderId()
 	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getSupplierPrefOrderId();

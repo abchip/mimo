@@ -25,7 +25,7 @@ import org.abchip.mimo.biz.BizEntityType;
  * </ul>
  *
  * @see org.abchip.mimo.biz.accounting.ledger.LedgerPackage#getGlAccountCategoryType()
- * @model annotation="mimo-ent-frame formula='description'"
+ * @model annotation="mimo-ent-frame title='General Ledger Account Category Type' formula='description'"
  * @generated
  */
 public interface GlAccountCategoryType extends BizEntityType<GlAccountCategory> {
@@ -78,7 +78,6 @@ public interface GlAccountCategoryType extends BizEntityType<GlAccountCategory> 
 	 * @see org.abchip.mimo.biz.accounting.ledger.LedgerPackage#getGlAccountCategoryType_GlAccountCategoryTypeId()
 	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getGlAccountCategoryTypeId();

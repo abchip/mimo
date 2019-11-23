@@ -33,13 +33,13 @@ import org.abchip.mimo.biz.product.store.ProductStore;
  *   <li>{@link org.abchip.mimo.biz.webapp.website.WebSite#getHttpsHost <em>Https Host</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.webapp.website.WebSite#getHttpsPort <em>Https Port</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.webapp.website.WebSite#isIsDefault <em>Is Default</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.webapp.website.WebSite#getProductStoreId <em>Product Store Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.webapp.website.WebSite#getSecureContentPrefix <em>Secure Content Prefix</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.webapp.website.WebSite#getSiteName <em>Site Name</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.webapp.website.WebSite#getStandardContentPrefix <em>Standard Content Prefix</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.webapp.website.WebSite#getWebappPath <em>Webapp Path</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.webapp.website.WebSite#getVisualThemeSetId <em>Visual Theme Set Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.webapp.website.WebSite#getProductStoreId <em>Product Store Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.webapp.website.WebSite#getWebAnalyticsConfigs <em>Web Analytics Configs</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.webapp.website.WebSite#getWebappPath <em>Webapp Path</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.webapp.website.WebsitePackage#getWebSite()
@@ -60,7 +60,6 @@ public interface WebSite extends BizEntity {
 	 * @see org.abchip.mimo.biz.webapp.website.WebsitePackage#getWebSite_WebSiteId()
 	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getWebSiteId();
@@ -86,7 +85,8 @@ public interface WebSite extends BizEntity {
 	 * @return the value of the '<em>Allow Product Store Change</em>' attribute.
 	 * @see #setAllowProductStoreChange(boolean)
 	 * @see org.abchip.mimo.biz.webapp.website.WebsitePackage#getWebSite_AllowProductStoreChange()
-	 * @model annotation="mimo-ent-format type='indicator' length='1'"
+	 * @model annotation="mimo-ent-slot help='Allow change of ProductStore for this WebSite (webapp). Defaults to N (no).'"
+	 *        annotation="mimo-ent-format type='indicator' length='1'"
 	 * @generated
 	 */
 	boolean isAllowProductStoreChange();
@@ -138,7 +138,8 @@ public interface WebSite extends BizEntity {
 	 * @return the value of the '<em>Display Maintenance Page</em>' attribute.
 	 * @see #setDisplayMaintenancePage(boolean)
 	 * @see org.abchip.mimo.biz.webapp.website.WebsitePackage#getWebSite_DisplayMaintenancePage()
-	 * @model annotation="mimo-ent-format type='indicator' length='1'"
+	 * @model annotation="mimo-ent-slot help='If set to Y, redirect user to site maintenance page'"
+	 *        annotation="mimo-ent-format type='indicator' length='1'"
 	 * @generated
 	 */
 	boolean isDisplayMaintenancePage();
@@ -190,7 +191,8 @@ public interface WebSite extends BizEntity {
 	 * @return the value of the '<em>Hosted Path Alias</em>' attribute.
 	 * @see #setHostedPathAlias(String)
 	 * @see org.abchip.mimo.biz.webapp.website.WebsitePackage#getWebSite_HostedPathAlias()
-	 * @model annotation="mimo-ent-format type='short-varchar' length='60'"
+	 * @model annotation="mimo-ent-slot help='For WebSites hosted on webapp using the WebSiteFilter, indicates the path this WebSite will be hosted on'"
+	 *        annotation="mimo-ent-format type='short-varchar' length='60'"
 	 * @generated
 	 */
 	String getHostedPathAlias();
@@ -320,7 +322,8 @@ public interface WebSite extends BizEntity {
 	 * @return the value of the '<em>Is Default</em>' attribute.
 	 * @see #setIsDefault(boolean)
 	 * @see org.abchip.mimo.biz.webapp.website.WebsitePackage#getWebSite_IsDefault()
-	 * @model annotation="mimo-ent-format type='indicator' length='1'"
+	 * @model annotation="mimo-ent-slot help='If Y then it is default WebSite'"
+	 *        annotation="mimo-ent-format type='indicator' length='1'"
 	 * @generated
 	 */
 	boolean isIsDefault();
@@ -347,6 +350,7 @@ public interface WebSite extends BizEntity {
 	 * @see #setProductStoreId(ProductStore)
 	 * @see org.abchip.mimo.biz.webapp.website.WebsitePackage#getWebSite_ProductStoreId()
 	 * @model keys="productStoreId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ProductStore getProductStoreId();
@@ -451,6 +455,7 @@ public interface WebSite extends BizEntity {
 	 * @see #setVisualThemeSetId(VisualThemeSet)
 	 * @see org.abchip.mimo.biz.webapp.website.WebsitePackage#getWebSite_VisualThemeSetId()
 	 * @model keys="visualThemeSetId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	VisualThemeSet getVisualThemeSetId();
@@ -476,7 +481,8 @@ public interface WebSite extends BizEntity {
 	 * @return the value of the '<em>Webapp Path</em>' attribute.
 	 * @see #setWebappPath(String)
 	 * @see org.abchip.mimo.biz.webapp.website.WebsitePackage#getWebSite_WebappPath()
-	 * @model annotation="mimo-ent-format type='long-varchar' length='255'"
+	 * @model annotation="mimo-ent-slot help='Set to your webapp for this website if it\'s hidden by a httpd frontend; set to / if you have a reverse proxy which hides your website webapp'"
+	 *        annotation="mimo-ent-format type='long-varchar' length='255'"
 	 * @generated
 	 */
 	String getWebappPath();
@@ -502,8 +508,7 @@ public interface WebSite extends BizEntity {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Web Analytics Configs</em>' attribute list.
 	 * @see org.abchip.mimo.biz.webapp.website.WebsitePackage#getWebSite_WebAnalyticsConfigs()
-	 * @model required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='WebAnalyticsConfig'"
 	 * @generated

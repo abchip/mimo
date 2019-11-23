@@ -24,6 +24,7 @@ import org.abchip.mimo.biz.party.contact.ContactMech;
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.CreditCard#getCompanyNameOnCard <em>Company Name On Card</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.CreditCard#getConsecutiveFailedAuths <em>Consecutive Failed Auths</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.CreditCard#getConsecutiveFailedNsf <em>Consecutive Failed Nsf</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.payment.CreditCard#getContactMechId <em>Contact Mech Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.CreditCard#getExpireDate <em>Expire Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.CreditCard#getFirstNameOnCard <em>First Name On Card</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.CreditCard#getIssueNumber <em>Issue Number</em>}</li>
@@ -34,11 +35,10 @@ import org.abchip.mimo.biz.party.contact.ContactMech;
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.CreditCard#getSuffixOnCard <em>Suffix On Card</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.CreditCard#getTitleOnCard <em>Title On Card</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.CreditCard#getValidFromDate <em>Valid From Date</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.payment.CreditCard#getContactMechId <em>Contact Mech Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getCreditCard()
- * @model annotation="mimo-ent-frame formula='description'"
+ * @model annotation="mimo-ent-frame title='Credit Card Information' formula='description'"
  * @generated
  */
 public interface CreditCard extends PaymentMethod {
@@ -53,7 +53,8 @@ public interface CreditCard extends PaymentMethod {
 	 * @return the value of the '<em>Card Number</em>' attribute.
 	 * @see #setCardNumber(String)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getCreditCard_CardNumber()
-	 * @model annotation="mimo-ent-format type='credit-card-number' length='255'"
+	 * @model annotation="mimo-ent-slot encrypt='TRUE'"
+	 *        annotation="mimo-ent-format type='credit-card-number' length='255'"
 	 * @generated
 	 */
 	String getCardNumber();
@@ -184,6 +185,8 @@ public interface CreditCard extends PaymentMethod {
 	 * @see #setContactMechId(ContactMech)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getCreditCard_ContactMechId()
 	 * @model keys="contactMechId"
+	 *        annotation="mimo-ent-slot help='The Billing PostalAddress'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ContactMech getContactMechId();
@@ -261,7 +264,8 @@ public interface CreditCard extends PaymentMethod {
 	 * @return the value of the '<em>Issue Number</em>' attribute.
 	 * @see #setIssueNumber(String)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getCreditCard_IssueNumber()
-	 * @model annotation="mimo-ent-format type='credit-card-date' length='7'"
+	 * @model annotation="mimo-ent-slot help='Single digit number on some Switch and Maestro cards'"
+	 *        annotation="mimo-ent-format type='credit-card-date' length='7'"
 	 * @generated
 	 */
 	String getIssueNumber();
@@ -443,7 +447,8 @@ public interface CreditCard extends PaymentMethod {
 	 * @return the value of the '<em>Valid From Date</em>' attribute.
 	 * @see #setValidFromDate(String)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getCreditCard_ValidFromDate()
-	 * @model annotation="mimo-ent-format type='credit-card-date' length='7'"
+	 * @model annotation="mimo-ent-slot help='Not common in some parts of the world.'"
+	 *        annotation="mimo-ent-format type='credit-card-date' length='7'"
 	 * @generated
 	 */
 	String getValidFromDate();

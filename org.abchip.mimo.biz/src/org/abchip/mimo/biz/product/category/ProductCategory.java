@@ -28,14 +28,14 @@ import org.abchip.mimo.biz.BizEntityTyped;
  *   <li>{@link org.abchip.mimo.biz.product.category.ProductCategory#getLinkOneImageUrl <em>Link One Image Url</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.category.ProductCategory#getLinkTwoImageUrl <em>Link Two Image Url</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.category.ProductCategory#getLongDescription <em>Long Description</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.category.ProductCategory#isShowInSelect <em>Show In Select</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.category.ProductCategory#getProductCategoryTypeId <em>Product Category Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.category.ProductCategory#getPrimaryParentCategoryId <em>Primary Parent Category Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.category.ProductCategory#getProductCategoryAttributes <em>Product Category Attributes</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.category.ProductCategory#getProductCategoryTypeId <em>Product Category Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.category.ProductCategory#isShowInSelect <em>Show In Select</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.product.category.CategoryPackage#getProductCategory()
- * @model annotation="mimo-ent-frame formula='description'"
+ * @model annotation="mimo-ent-frame dictionary='ProductEntityLabels' formula='description'"
  * @generated
  */
 public interface ProductCategory extends BizEntityTyped<ProductCategoryType> {
@@ -258,8 +258,7 @@ public interface ProductCategory extends BizEntityTyped<ProductCategoryType> {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Product Category Attributes</em>' attribute list.
 	 * @see org.abchip.mimo.biz.product.category.CategoryPackage#getProductCategory_ProductCategoryAttributes()
-	 * @model required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ProductCategoryAttribute'"
 	 * @generated
@@ -338,6 +337,7 @@ public interface ProductCategory extends BizEntityTyped<ProductCategoryType> {
 	 * @see #setProductCategoryTypeId(ProductCategoryType)
 	 * @see org.abchip.mimo.biz.product.category.CategoryPackage#getProductCategory_ProductCategoryTypeId()
 	 * @model keys="productCategoryTypeId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ProductCategoryType getProductCategoryTypeId();
@@ -364,6 +364,7 @@ public interface ProductCategory extends BizEntityTyped<ProductCategoryType> {
 	 * @see #setPrimaryParentCategoryId(ProductCategory)
 	 * @see org.abchip.mimo.biz.product.category.CategoryPackage#getProductCategory_PrimaryParentCategoryId()
 	 * @model keys="productCategoryId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ProductCategory getPrimaryParentCategoryId();
@@ -391,7 +392,6 @@ public interface ProductCategory extends BizEntityTyped<ProductCategoryType> {
 	 * @see org.abchip.mimo.biz.product.category.CategoryPackage#getProductCategory_ProductCategoryId()
 	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getProductCategoryId();

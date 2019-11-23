@@ -32,22 +32,22 @@ import org.abchip.mimo.biz.workeffort.workeffort.WorkEffort;
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.product.cost.CostComponent#getCostComponentId <em>Cost Component Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.cost.CostComponent#getCost <em>Cost</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.cost.CostComponent#getFromDate <em>From Date</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.cost.CostComponent#getThruDate <em>Thru Date</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.cost.CostComponent#getCostComponentTypeId <em>Cost Component Type Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.cost.CostComponent#getProductId <em>Product Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.cost.CostComponent#getProductFeatureId <em>Product Feature Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.cost.CostComponent#getPartyId <em>Party Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.cost.CostComponent#getGeoId <em>Geo Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.cost.CostComponent#getWorkEffortId <em>Work Effort Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.cost.CostComponent#getFixedAssetId <em>Fixed Asset Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.cost.CostComponent#getCostComponentCalcId <em>Cost Component Calc Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.cost.CostComponent#getCostUomId <em>Cost Uom Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.cost.CostComponent#getCostComponentAttributes <em>Cost Component Attributes</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.cost.CostComponent#getCostComponentCalcId <em>Cost Component Calc Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.cost.CostComponent#getCostComponentTypeId <em>Cost Component Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.cost.CostComponent#getCostUomId <em>Cost Uom Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.cost.CostComponent#getFixedAssetId <em>Fixed Asset Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.cost.CostComponent#getFromDate <em>From Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.cost.CostComponent#getGeoId <em>Geo Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.cost.CostComponent#getPartyId <em>Party Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.cost.CostComponent#getProductFeatureId <em>Product Feature Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.cost.CostComponent#getProductId <em>Product Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.cost.CostComponent#getThruDate <em>Thru Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.cost.CostComponent#getWorkEffortId <em>Work Effort Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.product.cost.CostPackage#getCostComponent()
- * @model
+ * @model annotation="mimo-ent-frame dictionary='ProductEntityLabels'"
  * @generated
  */
 public interface CostComponent extends BizEntityTyped<CostComponentType> {
@@ -62,7 +62,8 @@ public interface CostComponent extends BizEntityTyped<CostComponentType> {
 	 * @return the value of the '<em>Cost</em>' attribute.
 	 * @see #setCost(BigDecimal)
 	 * @see org.abchip.mimo.biz.product.cost.CostPackage#getCostComponent_Cost()
-	 * @model annotation="mimo-ent-format type='fixed-point' precision='18' scale='6'"
+	 * @model annotation="mimo-ent-slot help='Higher precision in case it is a calculated number'"
+	 *        annotation="mimo-ent-format type='fixed-point' precision='18' scale='6'"
 	 * @generated
 	 */
 	BigDecimal getCost();
@@ -89,6 +90,7 @@ public interface CostComponent extends BizEntityTyped<CostComponentType> {
 	 * @see #setCostUomId(Uom)
 	 * @see org.abchip.mimo.biz.product.cost.CostPackage#getCostComponent_CostUomId()
 	 * @model keys="uomId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Uom getCostUomId();
@@ -115,6 +117,7 @@ public interface CostComponent extends BizEntityTyped<CostComponentType> {
 	 * @see #setFixedAssetId(FixedAsset)
 	 * @see org.abchip.mimo.biz.product.cost.CostPackage#getCostComponent_FixedAssetId()
 	 * @model keys="fixedAssetId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	FixedAsset getFixedAssetId();
@@ -167,6 +170,7 @@ public interface CostComponent extends BizEntityTyped<CostComponentType> {
 	 * @see #setGeoId(Geo)
 	 * @see org.abchip.mimo.biz.product.cost.CostPackage#getCostComponent_GeoId()
 	 * @model keys="geoId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Geo getGeoId();
@@ -193,6 +197,7 @@ public interface CostComponent extends BizEntityTyped<CostComponentType> {
 	 * @see #setPartyId(Party)
 	 * @see org.abchip.mimo.biz.product.cost.CostPackage#getCostComponent_PartyId()
 	 * @model keys="partyId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Party getPartyId();
@@ -219,6 +224,7 @@ public interface CostComponent extends BizEntityTyped<CostComponentType> {
 	 * @see #setProductFeatureId(ProductFeature)
 	 * @see org.abchip.mimo.biz.product.cost.CostPackage#getCostComponent_ProductFeatureId()
 	 * @model keys="productFeatureId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ProductFeature getProductFeatureId();
@@ -245,6 +251,7 @@ public interface CostComponent extends BizEntityTyped<CostComponentType> {
 	 * @see #setProductId(Product)
 	 * @see org.abchip.mimo.biz.product.cost.CostPackage#getCostComponent_ProductId()
 	 * @model keys="productId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Product getProductId();
@@ -297,6 +304,7 @@ public interface CostComponent extends BizEntityTyped<CostComponentType> {
 	 * @see #setWorkEffortId(WorkEffort)
 	 * @see org.abchip.mimo.biz.product.cost.CostPackage#getCostComponent_WorkEffortId()
 	 * @model keys="workEffortId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	WorkEffort getWorkEffortId();
@@ -322,8 +330,7 @@ public interface CostComponent extends BizEntityTyped<CostComponentType> {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Cost Component Attributes</em>' attribute list.
 	 * @see org.abchip.mimo.biz.product.cost.CostPackage#getCostComponent_CostComponentAttributes()
-	 * @model required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='CostComponentAttribute'"
 	 * @generated
@@ -342,6 +349,7 @@ public interface CostComponent extends BizEntityTyped<CostComponentType> {
 	 * @see #setCostComponentTypeId(CostComponentType)
 	 * @see org.abchip.mimo.biz.product.cost.CostPackage#getCostComponent_CostComponentTypeId()
 	 * @model keys="costComponentTypeId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	CostComponentType getCostComponentTypeId();
@@ -368,6 +376,7 @@ public interface CostComponent extends BizEntityTyped<CostComponentType> {
 	 * @see #setCostComponentCalcId(CostComponentCalc)
 	 * @see org.abchip.mimo.biz.product.cost.CostPackage#getCostComponent_CostComponentCalcId()
 	 * @model keys="costComponentCalcId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	CostComponentCalc getCostComponentCalcId();
@@ -395,7 +404,6 @@ public interface CostComponent extends BizEntityTyped<CostComponentType> {
 	 * @see org.abchip.mimo.biz.product.cost.CostPackage#getCostComponent_CostComponentId()
 	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getCostComponentId();

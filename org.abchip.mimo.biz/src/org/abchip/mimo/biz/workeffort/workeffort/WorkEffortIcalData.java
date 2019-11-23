@@ -23,7 +23,7 @@ import org.abchip.mimo.biz.BizEntity;
  * </ul>
  *
  * @see org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage#getWorkEffortIcalData()
- * @model
+ * @model annotation="mimo-ent-frame title='Work Effort iCalendar Data'"
  * @generated
  */
 public interface WorkEffortIcalData extends BizEntity {
@@ -38,7 +38,8 @@ public interface WorkEffortIcalData extends BizEntity {
 	 * @return the value of the '<em>Ical Data</em>' attribute.
 	 * @see #setIcalData(String)
 	 * @see org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage#getWorkEffortIcalData_IcalData()
-	 * @model annotation="mimo-ent-format type='very-long'"
+	 * @model annotation="mimo-ent-slot help='iCalender Data'"
+	 *        annotation="mimo-ent-format type='very-long'"
 	 * @generated
 	 */
 	String getIcalData();
@@ -64,7 +65,8 @@ public interface WorkEffortIcalData extends BizEntity {
 	 * @return the value of the '<em>Work Effort Id</em>' reference.
 	 * @see #setWorkEffortId(WorkEffort)
 	 * @see org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage#getWorkEffortIcalData_WorkEffortId()
-	 * @model keys="workEffortId"
+	 * @model keys="workEffortId" required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	WorkEffort getWorkEffortId();

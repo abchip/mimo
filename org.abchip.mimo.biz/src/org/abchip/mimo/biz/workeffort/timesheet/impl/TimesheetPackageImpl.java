@@ -192,10 +192,6 @@ import org.abchip.mimo.biz.workeffort.timesheet.TimesheetPackage;
 import org.abchip.mimo.biz.workeffort.timesheet.TimesheetRole;
 import org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage;
 import org.abchip.mimo.biz.workeffort.workeffort.impl.WorkeffortPackageImpl;
-import org.abchip.mimo.entity.EntityPackage;
-
-import org.eclipse.emf.common.util.URI;
-
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
@@ -722,7 +718,7 @@ public class TimesheetPackageImpl extends EPackageImpl implements TimesheetPacka
 	 */
 	@Override
 	public EReference getTimeEntry_InvoiceId() {
-		return (EReference)timeEntryEClass.getEStructuralFeatures().get(10);
+		return (EReference)timeEntryEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -732,7 +728,7 @@ public class TimesheetPackageImpl extends EPackageImpl implements TimesheetPacka
 	 */
 	@Override
 	public EAttribute getTimeEntry_InvoiceItemSeqId() {
-		return (EAttribute)timeEntryEClass.getEStructuralFeatures().get(4);
+		return (EAttribute)timeEntryEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
@@ -762,7 +758,7 @@ public class TimesheetPackageImpl extends EPackageImpl implements TimesheetPacka
 	 */
 	@Override
 	public EAttribute getTimeEntry_ThruDate() {
-		return (EAttribute)timeEntryEClass.getEStructuralFeatures().get(5);
+		return (EAttribute)timeEntryEClass.getEStructuralFeatures().get(8);
 	}
 
 	/**
@@ -782,7 +778,7 @@ public class TimesheetPackageImpl extends EPackageImpl implements TimesheetPacka
 	 */
 	@Override
 	public EReference getTimeEntry_WorkEffortId() {
-		return (EReference)timeEntryEClass.getEStructuralFeatures().get(8);
+		return (EReference)timeEntryEClass.getEStructuralFeatures().get(10);
 	}
 
 	/**
@@ -812,7 +808,7 @@ public class TimesheetPackageImpl extends EPackageImpl implements TimesheetPacka
 	 */
 	@Override
 	public EReference getTimesheet_ApprovedByUserLoginId() {
-		return (EReference)timesheetEClass.getEStructuralFeatures().get(7);
+		return (EReference)timesheetEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -822,7 +818,7 @@ public class TimesheetPackageImpl extends EPackageImpl implements TimesheetPacka
 	 */
 	@Override
 	public EReference getTimesheet_ClientPartyId() {
-		return (EReference)timesheetEClass.getEStructuralFeatures().get(5);
+		return (EReference)timesheetEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -832,7 +828,7 @@ public class TimesheetPackageImpl extends EPackageImpl implements TimesheetPacka
 	 */
 	@Override
 	public EAttribute getTimesheet_Comments() {
-		return (EAttribute)timesheetEClass.getEStructuralFeatures().get(1);
+		return (EAttribute)timesheetEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -842,7 +838,7 @@ public class TimesheetPackageImpl extends EPackageImpl implements TimesheetPacka
 	 */
 	@Override
 	public EAttribute getTimesheet_FromDate() {
-		return (EAttribute)timesheetEClass.getEStructuralFeatures().get(2);
+		return (EAttribute)timesheetEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -852,7 +848,7 @@ public class TimesheetPackageImpl extends EPackageImpl implements TimesheetPacka
 	 */
 	@Override
 	public EReference getTimesheet_PartyId() {
-		return (EReference)timesheetEClass.getEStructuralFeatures().get(4);
+		return (EReference)timesheetEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
@@ -872,7 +868,7 @@ public class TimesheetPackageImpl extends EPackageImpl implements TimesheetPacka
 	 */
 	@Override
 	public EAttribute getTimesheet_ThruDate() {
-		return (EAttribute)timesheetEClass.getEStructuralFeatures().get(3);
+		return (EAttribute)timesheetEClass.getEStructuralFeatures().get(7);
 	}
 
 	/**
@@ -949,23 +945,23 @@ public class TimesheetPackageImpl extends EPackageImpl implements TimesheetPacka
 		createEAttribute(timeEntryEClass, TIME_ENTRY__COMMENTS);
 		createEAttribute(timeEntryEClass, TIME_ENTRY__FROM_DATE);
 		createEAttribute(timeEntryEClass, TIME_ENTRY__HOURS);
+		createEReference(timeEntryEClass, TIME_ENTRY__INVOICE_ID);
 		createEAttribute(timeEntryEClass, TIME_ENTRY__INVOICE_ITEM_SEQ_ID);
-		createEAttribute(timeEntryEClass, TIME_ENTRY__THRU_DATE);
 		createEReference(timeEntryEClass, TIME_ENTRY__PARTY_ID);
 		createEReference(timeEntryEClass, TIME_ENTRY__RATE_TYPE_ID);
-		createEReference(timeEntryEClass, TIME_ENTRY__WORK_EFFORT_ID);
+		createEAttribute(timeEntryEClass, TIME_ENTRY__THRU_DATE);
 		createEReference(timeEntryEClass, TIME_ENTRY__TIMESHEET_ID);
-		createEReference(timeEntryEClass, TIME_ENTRY__INVOICE_ID);
+		createEReference(timeEntryEClass, TIME_ENTRY__WORK_EFFORT_ID);
 
 		timesheetEClass = createEClass(TIMESHEET);
 		createEAttribute(timesheetEClass, TIMESHEET__TIMESHEET_ID);
+		createEReference(timesheetEClass, TIMESHEET__APPROVED_BY_USER_LOGIN_ID);
+		createEReference(timesheetEClass, TIMESHEET__CLIENT_PARTY_ID);
 		createEAttribute(timesheetEClass, TIMESHEET__COMMENTS);
 		createEAttribute(timesheetEClass, TIMESHEET__FROM_DATE);
-		createEAttribute(timesheetEClass, TIMESHEET__THRU_DATE);
 		createEReference(timesheetEClass, TIMESHEET__PARTY_ID);
-		createEReference(timesheetEClass, TIMESHEET__CLIENT_PARTY_ID);
 		createEReference(timesheetEClass, TIMESHEET__STATUS_ID);
-		createEReference(timesheetEClass, TIMESHEET__APPROVED_BY_USER_LOGIN_ID);
+		createEAttribute(timesheetEClass, TIMESHEET__THRU_DATE);
 
 		timesheetRoleEClass = createEClass(TIMESHEET_ROLE);
 		createEReference(timesheetRoleEClass, TIMESHEET_ROLE__TIMESHEET_ID);
@@ -998,12 +994,12 @@ public class TimesheetPackageImpl extends EPackageImpl implements TimesheetPacka
 
 		// Obtain other dependent packages
 		BizPackage theBizPackage = (BizPackage)EPackage.Registry.INSTANCE.getEPackage(BizPackage.eNS_URI);
+		InvoicePackage theInvoicePackage = (InvoicePackage)EPackage.Registry.INSTANCE.getEPackage(InvoicePackage.eNS_URI);
 		PartyPackage thePartyPackage = (PartyPackage)EPackage.Registry.INSTANCE.getEPackage(PartyPackage.eNS_URI);
 		RatePackage theRatePackage = (RatePackage)EPackage.Registry.INSTANCE.getEPackage(RatePackage.eNS_URI);
 		WorkeffortPackage theWorkeffortPackage = (WorkeffortPackage)EPackage.Registry.INSTANCE.getEPackage(WorkeffortPackage.eNS_URI);
-		InvoicePackage theInvoicePackage = (InvoicePackage)EPackage.Registry.INSTANCE.getEPackage(InvoicePackage.eNS_URI);
-		StatusPackage theStatusPackage = (StatusPackage)EPackage.Registry.INSTANCE.getEPackage(StatusPackage.eNS_URI);
 		LoginPackage theLoginPackage = (LoginPackage)EPackage.Registry.INSTANCE.getEPackage(LoginPackage.eNS_URI);
+		StatusPackage theStatusPackage = (StatusPackage)EPackage.Registry.INSTANCE.getEPackage(StatusPackage.eNS_URI);
 
 		// Create type parameters
 
@@ -1020,41 +1016,41 @@ public class TimesheetPackageImpl extends EPackageImpl implements TimesheetPacka
 		initEAttribute(getTimeEntry_Comments(), ecorePackage.getEString(), "comments", null, 0, 1, TimeEntry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getTimeEntry_FromDate(), ecorePackage.getEDate(), "fromDate", null, 0, 1, TimeEntry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getTimeEntry_Hours(), ecorePackage.getEDouble(), "hours", null, 0, 1, TimeEntry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getTimeEntry_InvoiceId(), theInvoicePackage.getInvoice(), null, "invoiceId", null, 0, 1, TimeEntry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getTimeEntry_InvoiceId().getEKeys().add(theInvoicePackage.getInvoice_InvoiceId());
 		initEAttribute(getTimeEntry_InvoiceItemSeqId(), ecorePackage.getEString(), "invoiceItemSeqId", null, 0, 1, TimeEntry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getTimeEntry_ThruDate(), ecorePackage.getEDate(), "thruDate", null, 0, 1, TimeEntry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getTimeEntry_PartyId(), thePartyPackage.getParty(), null, "partyId", null, 0, 1, TimeEntry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getTimeEntry_PartyId().getEKeys().add(thePartyPackage.getParty_PartyId());
 		initEReference(getTimeEntry_RateTypeId(), theRatePackage.getRateType(), null, "rateTypeId", null, 0, 1, TimeEntry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getTimeEntry_RateTypeId().getEKeys().add(theRatePackage.getRateType_RateTypeId());
-		initEReference(getTimeEntry_WorkEffortId(), theWorkeffortPackage.getWorkEffort(), null, "workEffortId", null, 0, 1, TimeEntry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		getTimeEntry_WorkEffortId().getEKeys().add(theWorkeffortPackage.getWorkEffort_WorkEffortId());
+		initEAttribute(getTimeEntry_ThruDate(), ecorePackage.getEDate(), "thruDate", null, 0, 1, TimeEntry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getTimeEntry_TimesheetId(), this.getTimesheet(), null, "timesheetId", null, 0, 1, TimeEntry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getTimeEntry_TimesheetId().getEKeys().add(this.getTimesheet_TimesheetId());
-		initEReference(getTimeEntry_InvoiceId(), theInvoicePackage.getInvoice(), null, "invoiceId", null, 0, 1, TimeEntry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		getTimeEntry_InvoiceId().getEKeys().add(theInvoicePackage.getInvoice_InvoiceId());
+		initEReference(getTimeEntry_WorkEffortId(), theWorkeffortPackage.getWorkEffort(), null, "workEffortId", null, 0, 1, TimeEntry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getTimeEntry_WorkEffortId().getEKeys().add(theWorkeffortPackage.getWorkEffort_WorkEffortId());
 
 		initEClass(timesheetEClass, Timesheet.class, "Timesheet", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getTimesheet_TimesheetId(), ecorePackage.getEString(), "timesheetId", null, 1, 1, Timesheet.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getTimesheet_Comments(), ecorePackage.getEString(), "comments", null, 0, 1, Timesheet.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getTimesheet_FromDate(), ecorePackage.getEDate(), "fromDate", null, 0, 1, Timesheet.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getTimesheet_ThruDate(), ecorePackage.getEDate(), "thruDate", null, 0, 1, Timesheet.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getTimesheet_PartyId(), thePartyPackage.getParty(), null, "partyId", null, 0, 1, Timesheet.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		getTimesheet_PartyId().getEKeys().add(thePartyPackage.getParty_PartyId());
-		initEReference(getTimesheet_ClientPartyId(), thePartyPackage.getParty(), null, "clientPartyId", null, 0, 1, Timesheet.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		getTimesheet_ClientPartyId().getEKeys().add(thePartyPackage.getParty_PartyId());
-		initEReference(getTimesheet_StatusId(), theStatusPackage.getStatusItem(), null, "statusId", null, 0, 1, Timesheet.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		getTimesheet_StatusId().getEKeys().add(theStatusPackage.getStatusItem_StatusId());
 		initEReference(getTimesheet_ApprovedByUserLoginId(), theLoginPackage.getUserLogin(), null, "approvedByUserLoginId", null, 0, 1, Timesheet.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getTimesheet_ApprovedByUserLoginId().getEKeys().add(theLoginPackage.getUserLogin_UserLoginId());
+		initEReference(getTimesheet_ClientPartyId(), thePartyPackage.getParty(), null, "clientPartyId", null, 0, 1, Timesheet.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getTimesheet_ClientPartyId().getEKeys().add(thePartyPackage.getParty_PartyId());
+		initEAttribute(getTimesheet_Comments(), ecorePackage.getEString(), "comments", null, 0, 1, Timesheet.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getTimesheet_FromDate(), ecorePackage.getEDate(), "fromDate", null, 0, 1, Timesheet.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getTimesheet_PartyId(), thePartyPackage.getParty(), null, "partyId", null, 0, 1, Timesheet.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getTimesheet_PartyId().getEKeys().add(thePartyPackage.getParty_PartyId());
+		initEReference(getTimesheet_StatusId(), theStatusPackage.getStatusItem(), null, "statusId", null, 0, 1, Timesheet.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getTimesheet_StatusId().getEKeys().add(theStatusPackage.getStatusItem_StatusId());
+		initEAttribute(getTimesheet_ThruDate(), ecorePackage.getEDate(), "thruDate", null, 0, 1, Timesheet.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		addEOperation(timesheetEClass, ecorePackage.getEString(), "timeEntries", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(timesheetRoleEClass, TimesheetRole.class, "TimesheetRole", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getTimesheetRole_TimesheetId(), this.getTimesheet(), null, "timesheetId", null, 0, 1, TimesheetRole.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getTimesheetRole_TimesheetId(), this.getTimesheet(), null, "timesheetId", null, 1, 1, TimesheetRole.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getTimesheetRole_TimesheetId().getEKeys().add(this.getTimesheet_TimesheetId());
-		initEReference(getTimesheetRole_PartyId(), thePartyPackage.getParty(), null, "partyId", null, 0, 1, TimesheetRole.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getTimesheetRole_PartyId(), thePartyPackage.getParty(), null, "partyId", null, 1, 1, TimesheetRole.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getTimesheetRole_PartyId().getEKeys().add(thePartyPackage.getParty_PartyId());
-		initEReference(getTimesheetRole_RoleTypeId(), thePartyPackage.getRoleType(), null, "roleTypeId", null, 0, 1, TimesheetRole.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getTimesheetRole_RoleTypeId(), thePartyPackage.getRoleType(), null, "roleTypeId", null, 1, 1, TimesheetRole.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getTimesheetRole_RoleTypeId().getEKeys().add(thePartyPackage.getRoleType_RoleTypeId());
 
 		// Create annotations
@@ -1101,7 +1097,28 @@ public class TimesheetPackageImpl extends EPackageImpl implements TimesheetPacka
 			   "type", "floating-point"
 		   });
 		addAnnotation
+		  (getTimeEntry_InvoiceId(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
 		  (getTimeEntry_InvoiceItemSeqId(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (getTimeEntry_PartyId(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (getTimeEntry_RateTypeId(),
 		   source,
 		   new String[] {
 			   "type", "id",
@@ -1114,6 +1131,20 @@ public class TimesheetPackageImpl extends EPackageImpl implements TimesheetPacka
 			   "type", "date-time"
 		   });
 		addAnnotation
+		  (getTimeEntry_TimesheetId(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (getTimeEntry_WorkEffortId(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
 		  (timesheetEClass.getEOperations().get(0),
 		   source,
 		   new String[] {
@@ -1122,6 +1153,20 @@ public class TimesheetPackageImpl extends EPackageImpl implements TimesheetPacka
 		   });
 		addAnnotation
 		  (getTimesheet_TimesheetId(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (getTimesheet_ApprovedByUserLoginId(),
+		   source,
+		   new String[] {
+			   "type", "id-vlong",
+			   "length", "255"
+		   });
+		addAnnotation
+		  (getTimesheet_ClientPartyId(),
 		   source,
 		   new String[] {
 			   "type", "id",
@@ -1141,10 +1186,45 @@ public class TimesheetPackageImpl extends EPackageImpl implements TimesheetPacka
 			   "type", "date-time"
 		   });
 		addAnnotation
+		  (getTimesheet_PartyId(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (getTimesheet_StatusId(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
 		  (getTimesheet_ThruDate(),
 		   source,
 		   new String[] {
 			   "type", "date-time"
+		   });
+		addAnnotation
+		  (getTimesheetRole_TimesheetId(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (getTimesheetRole_PartyId(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (getTimesheetRole_RoleTypeId(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
 		   });
 	}
 
@@ -1157,19 +1237,25 @@ public class TimesheetPackageImpl extends EPackageImpl implements TimesheetPacka
 	protected void createMimoentslotAnnotations() {
 		String source = "mimo-ent-slot";
 		addAnnotation
-		  (getTimeEntry_TimeEntryId(),
-		   source,
-		   new String[] {
-			   "key", "true"
-		   });
-		addAnnotation
 		  (timesheetEClass.getEOperations().get(0),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (getTimesheet_TimesheetId(),
+		  (getTimesheetRole_TimesheetId(),
+		   source,
+		   new String[] {
+			   "key", "true"
+		   });
+		addAnnotation
+		  (getTimesheetRole_PartyId(),
+		   source,
+		   new String[] {
+			   "key", "true"
+		   });
+		addAnnotation
+		  (getTimesheetRole_RoleTypeId(),
 		   source,
 		   new String[] {
 			   "key", "true"
@@ -1190,9 +1276,6 @@ public class TimesheetPackageImpl extends EPackageImpl implements TimesheetPacka
 		   new String[] {
 			   "frame", "TimeEntry",
 			   "route", "timesheetId"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 	}
 

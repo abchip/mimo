@@ -663,7 +663,7 @@ public class KeywordPackageImpl extends EPackageImpl implements KeywordPackage {
 	 */
 	@Override
 	public EAttribute getKeywordThesaurus_EnteredKeyword() {
-		return (EAttribute)keywordThesaurusEClass.getEStructuralFeatures().get(0);
+		return (EAttribute)keywordThesaurusEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -673,7 +673,7 @@ public class KeywordPackageImpl extends EPackageImpl implements KeywordPackage {
 	 */
 	@Override
 	public EAttribute getKeywordThesaurus_AlternateKeyword() {
-		return (EAttribute)keywordThesaurusEClass.getEStructuralFeatures().get(1);
+		return (EAttribute)keywordThesaurusEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -716,8 +716,8 @@ public class KeywordPackageImpl extends EPackageImpl implements KeywordPackage {
 
 		// Create classes and their features
 		keywordThesaurusEClass = createEClass(KEYWORD_THESAURUS);
-		createEAttribute(keywordThesaurusEClass, KEYWORD_THESAURUS__ENTERED_KEYWORD);
 		createEAttribute(keywordThesaurusEClass, KEYWORD_THESAURUS__ALTERNATE_KEYWORD);
+		createEAttribute(keywordThesaurusEClass, KEYWORD_THESAURUS__ENTERED_KEYWORD);
 		createEReference(keywordThesaurusEClass, KEYWORD_THESAURUS__RELATIONSHIP_ENUM_ID);
 	}
 
@@ -757,16 +757,16 @@ public class KeywordPackageImpl extends EPackageImpl implements KeywordPackage {
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(keywordThesaurusEClass, KeywordThesaurus.class, "KeywordThesaurus", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getKeywordThesaurus_EnteredKeyword(), ecorePackage.getEString(), "enteredKeyword", null, 1, 1, KeywordThesaurus.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getKeywordThesaurus_AlternateKeyword(), ecorePackage.getEString(), "alternateKeyword", null, 1, 1, KeywordThesaurus.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getKeywordThesaurus_EnteredKeyword(), ecorePackage.getEString(), "enteredKeyword", null, 1, 1, KeywordThesaurus.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getKeywordThesaurus_RelationshipEnumId(), theEnumPackage.getEnumeration(), null, "relationshipEnumId", null, 0, 1, KeywordThesaurus.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getKeywordThesaurus_RelationshipEnumId().getEKeys().add(theEnumPackage.getEnumeration_EnumId());
 
 		// Create annotations
-		// mimo-ent-format
-		createMimoentformatAnnotations();
 		// mimo-ent-slot
 		createMimoentslotAnnotations();
+		// mimo-ent-format
+		createMimoentformatAnnotations();
 	}
 
 	/**
@@ -778,6 +778,13 @@ public class KeywordPackageImpl extends EPackageImpl implements KeywordPackage {
 	protected void createMimoentformatAnnotations() {
 		String source = "mimo-ent-format";
 		addAnnotation
+		  (getKeywordThesaurus_AlternateKeyword(),
+		   source,
+		   new String[] {
+			   "type", "long-varchar",
+			   "length", "255"
+		   });
+		addAnnotation
 		  (getKeywordThesaurus_EnteredKeyword(),
 		   source,
 		   new String[] {
@@ -785,11 +792,11 @@ public class KeywordPackageImpl extends EPackageImpl implements KeywordPackage {
 			   "length", "255"
 		   });
 		addAnnotation
-		  (getKeywordThesaurus_AlternateKeyword(),
+		  (getKeywordThesaurus_RelationshipEnumId(),
 		   source,
 		   new String[] {
-			   "type", "long-varchar",
-			   "length", "255"
+			   "type", "id",
+			   "length", "20"
 		   });
 	}
 
@@ -802,13 +809,13 @@ public class KeywordPackageImpl extends EPackageImpl implements KeywordPackage {
 	protected void createMimoentslotAnnotations() {
 		String source = "mimo-ent-slot";
 		addAnnotation
-		  (getKeywordThesaurus_EnteredKeyword(),
+		  (getKeywordThesaurus_AlternateKeyword(),
 		   source,
 		   new String[] {
 			   "key", "true"
 		   });
 		addAnnotation
-		  (getKeywordThesaurus_AlternateKeyword(),
+		  (getKeywordThesaurus_EnteredKeyword(),
 		   source,
 		   new String[] {
 			   "key", "true"

@@ -22,12 +22,12 @@ import org.abchip.mimo.biz.common.uom.Uom;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.product.product.ProductMeterType#getProductMeterTypeId <em>Product Meter Type Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.product.ProductMeterType#getDescription <em>Description</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.ProductMeterType#getDefaultUomId <em>Default Uom Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.product.ProductMeterType#getDescription <em>Description</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.product.product.ProductPackage#getProductMeterType()
- * @model annotation="mimo-ent-frame formula='description'"
+ * @model annotation="mimo-ent-frame dictionary='ProductEntityLabels' formula='description'"
  * @generated
  */
 public interface ProductMeterType extends BizEntityType<ProductMeter> {
@@ -43,6 +43,8 @@ public interface ProductMeterType extends BizEntityType<ProductMeter> {
 	 * @see #setDefaultUomId(Uom)
 	 * @see org.abchip.mimo.biz.product.product.ProductPackage#getProductMeterType_DefaultUomId()
 	 * @model keys="uomId"
+	 *        annotation="mimo-ent-slot help='This is optional and if applicable can describe the meter better'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Uom getDefaultUomId();
@@ -106,8 +108,7 @@ public interface ProductMeterType extends BizEntityType<ProductMeter> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ProductMeter' route='productMeterTypeId'"
 	 * @generated
@@ -127,7 +128,6 @@ public interface ProductMeterType extends BizEntityType<ProductMeter> {
 	 * @see org.abchip.mimo.biz.product.product.ProductPackage#getProductMeterType_ProductMeterTypeId()
 	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getProductMeterTypeId();

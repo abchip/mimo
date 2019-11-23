@@ -40,7 +40,6 @@ public interface JavaResource extends BizEntity {
 	 * @see org.abchip.mimo.biz.entity.EntityPackage#getJavaResource_ResourceName()
 	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-format type='id-vlong' length='255'"
-	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getResourceName();

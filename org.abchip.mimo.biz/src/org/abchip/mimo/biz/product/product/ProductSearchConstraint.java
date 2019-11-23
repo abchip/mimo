@@ -18,6 +18,7 @@ import org.abchip.mimo.biz.BizEntity;
  * The following features are supported:
  * </p>
  * <ul>
+ *   <li>{@link org.abchip.mimo.biz.product.product.ProductSearchConstraint#getProductSearchResultId <em>Product Search Result Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.ProductSearchConstraint#getConstraintSeqId <em>Constraint Seq Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.ProductSearchConstraint#getAnyPrefix <em>Any Prefix</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.ProductSearchConstraint#getAnySuffix <em>Any Suffix</em>}</li>
@@ -28,11 +29,10 @@ import org.abchip.mimo.biz.BizEntity;
  *   <li>{@link org.abchip.mimo.biz.product.product.ProductSearchConstraint#isIsAnd <em>Is And</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.ProductSearchConstraint#getLowValue <em>Low Value</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.ProductSearchConstraint#isRemoveStems <em>Remove Stems</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.product.ProductSearchConstraint#getProductSearchResultId <em>Product Search Result Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.product.product.ProductPackage#getProductSearchConstraint()
- * @model
+ * @model annotation="mimo-ent-frame title='Product Search Result Constraint' dictionary='ProductEntityLabels'"
  * @generated
  */
 public interface ProductSearchConstraint extends BizEntity {
@@ -74,8 +74,8 @@ public interface ProductSearchConstraint extends BizEntity {
 	 * @see #setConstraintSeqId(String)
 	 * @see org.abchip.mimo.biz.product.product.ProductPackage#getProductSearchConstraint_ConstraintSeqId()
 	 * @model required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	String getConstraintSeqId();
@@ -309,7 +309,9 @@ public interface ProductSearchConstraint extends BizEntity {
 	 * @return the value of the '<em>Product Search Result Id</em>' reference.
 	 * @see #setProductSearchResultId(ProductSearchResult)
 	 * @see org.abchip.mimo.biz.product.product.ProductPackage#getProductSearchConstraint_ProductSearchResultId()
-	 * @model keys="productSearchResultId"
+	 * @model keys="productSearchResultId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ProductSearchResult getProductSearchResultId();

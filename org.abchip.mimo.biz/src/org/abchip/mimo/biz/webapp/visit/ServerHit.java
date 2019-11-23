@@ -23,9 +23,15 @@ import org.abchip.mimo.biz.party.party.Party;
  * The following features are supported:
  * </p>
  * <ul>
+ *   <li>{@link org.abchip.mimo.biz.webapp.visit.ServerHit#getHitTypeId <em>Hit Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.webapp.visit.ServerHit#getVisitId <em>Visit Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.webapp.visit.ServerHit#getContentId <em>Content Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.webapp.visit.ServerHit#getHitStartDateTime <em>Hit Start Date Time</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.webapp.visit.ServerHit#getIdByIpContactMechId <em>Id By Ip Contact Mech Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.webapp.visit.ServerHit#getInternalContentId <em>Internal Content Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.webapp.visit.ServerHit#getNumOfBytes <em>Num Of Bytes</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.webapp.visit.ServerHit#getPartyId <em>Party Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.webapp.visit.ServerHit#getRefByWebContactMechId <em>Ref By Web Contact Mech Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.webapp.visit.ServerHit#getReferrerUrl <em>Referrer Url</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.webapp.visit.ServerHit#getRequestUrl <em>Request Url</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.webapp.visit.ServerHit#getRunningTimeMillis <em>Running Time Millis</em>}</li>
@@ -33,12 +39,6 @@ import org.abchip.mimo.biz.party.party.Party;
  *   <li>{@link org.abchip.mimo.biz.webapp.visit.ServerHit#getServerIpAddress <em>Server Ip Address</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.webapp.visit.ServerHit#getStatusId <em>Status Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.webapp.visit.ServerHit#getUserLoginId <em>User Login Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.webapp.visit.ServerHit#getHitTypeId <em>Hit Type Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.webapp.visit.ServerHit#getVisitId <em>Visit Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.webapp.visit.ServerHit#getPartyId <em>Party Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.webapp.visit.ServerHit#getIdByIpContactMechId <em>Id By Ip Contact Mech Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.webapp.visit.ServerHit#getRefByWebContactMechId <em>Ref By Web Contact Mech Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.webapp.visit.ServerHit#getInternalContentId <em>Internal Content Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.webapp.visit.VisitPackage#getServerHit()
@@ -57,7 +57,9 @@ public interface ServerHit extends BizEntityTyped<ServerHitType> {
 	 * @return the value of the '<em>Visit Id</em>' reference.
 	 * @see #setVisitId(Visit)
 	 * @see org.abchip.mimo.biz.webapp.visit.VisitPackage#getServerHit_VisitId()
-	 * @model keys="visitId"
+	 * @model keys="visitId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Visit getVisitId();
@@ -84,8 +86,8 @@ public interface ServerHit extends BizEntityTyped<ServerHitType> {
 	 * @see #setContentId(String)
 	 * @see org.abchip.mimo.biz.webapp.visit.VisitPackage#getServerHit_ContentId()
 	 * @model required="true"
-	 *        annotation="mimo-ent-format type='id-vlong' length='255'"
 	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id-vlong' length='255'"
 	 * @generated
 	 */
 	String getContentId();
@@ -112,8 +114,8 @@ public interface ServerHit extends BizEntityTyped<ServerHitType> {
 	 * @see #setHitStartDateTime(Date)
 	 * @see org.abchip.mimo.biz.webapp.visit.VisitPackage#getServerHit_HitStartDateTime()
 	 * @model required="true"
-	 *        annotation="mimo-ent-format type='date-time'"
 	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getHitStartDateTime();
@@ -139,7 +141,9 @@ public interface ServerHit extends BizEntityTyped<ServerHitType> {
 	 * @return the value of the '<em>Hit Type Id</em>' reference.
 	 * @see #setHitTypeId(ServerHitType)
 	 * @see org.abchip.mimo.biz.webapp.visit.VisitPackage#getServerHit_HitTypeId()
-	 * @model keys="hitTypeId"
+	 * @model keys="hitTypeId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ServerHitType getHitTypeId();
@@ -166,6 +170,7 @@ public interface ServerHit extends BizEntityTyped<ServerHitType> {
 	 * @see #setIdByIpContactMechId(ContactMech)
 	 * @see org.abchip.mimo.biz.webapp.visit.VisitPackage#getServerHit_IdByIpContactMechId()
 	 * @model keys="contactMechId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ContactMech getIdByIpContactMechId();
@@ -192,6 +197,7 @@ public interface ServerHit extends BizEntityTyped<ServerHitType> {
 	 * @see #setInternalContentId(Content)
 	 * @see org.abchip.mimo.biz.webapp.visit.VisitPackage#getServerHit_InternalContentId()
 	 * @model keys="contentId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Content getInternalContentId();
@@ -244,6 +250,7 @@ public interface ServerHit extends BizEntityTyped<ServerHitType> {
 	 * @see #setPartyId(Party)
 	 * @see org.abchip.mimo.biz.webapp.visit.VisitPackage#getServerHit_PartyId()
 	 * @model keys="partyId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Party getPartyId();
@@ -270,6 +277,7 @@ public interface ServerHit extends BizEntityTyped<ServerHitType> {
 	 * @see #setRefByWebContactMechId(ContactMech)
 	 * @see org.abchip.mimo.biz.webapp.visit.VisitPackage#getServerHit_RefByWebContactMechId()
 	 * @model keys="contactMechId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ContactMech getRefByWebContactMechId();

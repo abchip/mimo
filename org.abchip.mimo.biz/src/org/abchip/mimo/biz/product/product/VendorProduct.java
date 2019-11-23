@@ -26,7 +26,7 @@ import org.abchip.mimo.biz.product.store.ProductStoreGroup;
  * </ul>
  *
  * @see org.abchip.mimo.biz.product.product.ProductPackage#getVendorProduct()
- * @model
+ * @model annotation="mimo-ent-frame help='For information related to a specific vendor and product, especially for multi-vendor stores. The ProductStoreGroup is to be used much like in ProductPrice.' dictionary='ProductEntityLabels'"
  * @generated
  */
 public interface VendorProduct extends BizEntity {
@@ -41,7 +41,9 @@ public interface VendorProduct extends BizEntity {
 	 * @return the value of the '<em>Product Store Group Id</em>' reference.
 	 * @see #setProductStoreGroupId(ProductStoreGroup)
 	 * @see org.abchip.mimo.biz.product.product.ProductPackage#getVendorProduct_ProductStoreGroupId()
-	 * @model keys="productStoreGroupId"
+	 * @model keys="productStoreGroupId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ProductStoreGroup getProductStoreGroupId();
@@ -67,7 +69,9 @@ public interface VendorProduct extends BizEntity {
 	 * @return the value of the '<em>Vendor Party Id</em>' reference.
 	 * @see #setVendorPartyId(Party)
 	 * @see org.abchip.mimo.biz.product.product.ProductPackage#getVendorProduct_VendorPartyId()
-	 * @model keys="partyId"
+	 * @model keys="partyId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Party getVendorPartyId();
@@ -93,7 +97,9 @@ public interface VendorProduct extends BizEntity {
 	 * @return the value of the '<em>Product Id</em>' reference.
 	 * @see #setProductId(Product)
 	 * @see org.abchip.mimo.biz.product.product.ProductPackage#getVendorProduct_ProductId()
-	 * @model keys="productId"
+	 * @model keys="productId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Product getProductId();

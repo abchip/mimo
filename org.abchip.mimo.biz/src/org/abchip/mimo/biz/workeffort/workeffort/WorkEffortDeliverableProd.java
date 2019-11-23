@@ -23,7 +23,7 @@ import org.abchip.mimo.biz.BizEntity;
  * </ul>
  *
  * @see org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage#getWorkEffortDeliverableProd()
- * @model
+ * @model annotation="mimo-ent-frame title='Work Effort Deliverable Produced'"
  * @generated
  */
 public interface WorkEffortDeliverableProd extends BizEntity {
@@ -38,7 +38,9 @@ public interface WorkEffortDeliverableProd extends BizEntity {
 	 * @return the value of the '<em>Deliverable Id</em>' reference.
 	 * @see #setDeliverableId(Deliverable)
 	 * @see org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage#getWorkEffortDeliverableProd_DeliverableId()
-	 * @model keys="deliverableId"
+	 * @model keys="deliverableId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Deliverable getDeliverableId();
@@ -64,7 +66,9 @@ public interface WorkEffortDeliverableProd extends BizEntity {
 	 * @return the value of the '<em>Work Effort Id</em>' reference.
 	 * @see #setWorkEffortId(WorkEffort)
 	 * @see org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage#getWorkEffortDeliverableProd_WorkEffortId()
-	 * @model keys="workEffortId"
+	 * @model keys="workEffortId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	WorkEffort getWorkEffortId();

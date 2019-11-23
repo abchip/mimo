@@ -18,9 +18,9 @@ import org.abchip.mimo.biz.BizEntityTyped;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.content.content.ContentPurpose#getSequenceNum <em>Sequence Num</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.content.ContentPurpose#getContentId <em>Content Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.content.ContentPurpose#getContentPurposeTypeId <em>Content Purpose Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.content.content.ContentPurpose#getSequenceNum <em>Sequence Num</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.content.content.ContentPackage#getContentPurpose()
@@ -39,7 +39,9 @@ public interface ContentPurpose extends BizEntityTyped<ContentPurposeType> {
 	 * @return the value of the '<em>Content Id</em>' reference.
 	 * @see #setContentId(Content)
 	 * @see org.abchip.mimo.biz.content.content.ContentPackage#getContentPurpose_ContentId()
-	 * @model keys="contentId"
+	 * @model keys="contentId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Content getContentId();
@@ -65,7 +67,9 @@ public interface ContentPurpose extends BizEntityTyped<ContentPurposeType> {
 	 * @return the value of the '<em>Content Purpose Type Id</em>' reference.
 	 * @see #setContentPurposeTypeId(ContentPurposeType)
 	 * @see org.abchip.mimo.biz.content.content.ContentPackage#getContentPurpose_ContentPurposeTypeId()
-	 * @model keys="contentPurposeTypeId"
+	 * @model keys="contentPurposeTypeId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ContentPurposeType getContentPurposeTypeId();

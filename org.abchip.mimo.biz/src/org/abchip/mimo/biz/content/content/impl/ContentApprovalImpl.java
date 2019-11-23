@@ -28,13 +28,13 @@ import org.eclipse.emf.ecore.EClass;
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.content.content.impl.ContentApprovalImpl#getContentApprovalId <em>Content Approval Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.content.impl.ContentApprovalImpl#getApprovalDate <em>Approval Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.content.content.impl.ContentApprovalImpl#getApprovalStatusId <em>Approval Status Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.content.impl.ContentApprovalImpl#getComments <em>Comments</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.content.content.impl.ContentApprovalImpl#getContentRevisionSeqId <em>Content Revision Seq Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.content.content.impl.ContentApprovalImpl#getSequenceNum <em>Sequence Num</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.content.impl.ContentApprovalImpl#getContentId <em>Content Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.content.content.impl.ContentApprovalImpl#getContentRevisionSeqId <em>Content Revision Seq Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.content.impl.ContentApprovalImpl#getPartyId <em>Party Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.content.impl.ContentApprovalImpl#getRoleTypeId <em>Role Type Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.content.content.impl.ContentApprovalImpl#getApprovalStatusId <em>Approval Status Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.content.content.impl.ContentApprovalImpl#getSequenceNum <em>Sequence Num</em>}</li>
  * </ul>
  *
  * @generated

@@ -23,7 +23,7 @@ import org.abchip.mimo.biz.BizEntity;
  * </ul>
  *
  * @see org.abchip.mimo.biz.entity.tenant.TenantPackage#getTenantKeyEncryptingKey()
- * @model
+ * @model annotation="mimo-ent-frame help='There should be one record for each tenant and each group-map for the active delegator.\n            The jdbc fields will override the datasource -&gt; inline-jdbc values for the per-tenant delegator.'"
  * @generated
  */
 public interface TenantKeyEncryptingKey extends BizEntity {
@@ -64,7 +64,8 @@ public interface TenantKeyEncryptingKey extends BizEntity {
 	 * @return the value of the '<em>Tenant Id</em>' reference.
 	 * @see #setTenantId(Tenant)
 	 * @see org.abchip.mimo.biz.entity.tenant.TenantPackage#getTenantKeyEncryptingKey_TenantId()
-	 * @model keys="tenantId"
+	 * @model keys="tenantId" required="true"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Tenant getTenantId();

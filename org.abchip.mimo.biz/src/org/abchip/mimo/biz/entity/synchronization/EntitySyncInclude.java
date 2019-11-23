@@ -18,13 +18,13 @@ import org.abchip.mimo.biz.BizEntity;
  * The following features are supported:
  * </p>
  * <ul>
+ *   <li>{@link org.abchip.mimo.biz.entity.synchronization.EntitySyncInclude#getEntitySyncId <em>Entity Sync Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.entity.synchronization.EntitySyncInclude#getEntityOrPackage <em>Entity Or Package</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.entity.synchronization.EntitySyncInclude#getApplEnumId <em>Appl Enum Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.entity.synchronization.EntitySyncInclude#getEntitySyncId <em>Entity Sync Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.entity.synchronization.SynchronizationPackage#getEntitySyncInclude()
- * @model
+ * @model annotation="mimo-ent-frame title='Entity Synchronization Include'"
  * @generated
  */
 public interface EntitySyncInclude extends BizEntity {
@@ -66,8 +66,8 @@ public interface EntitySyncInclude extends BizEntity {
 	 * @see #setEntityOrPackage(String)
 	 * @see org.abchip.mimo.biz.entity.synchronization.SynchronizationPackage#getEntitySyncInclude_EntityOrPackage()
 	 * @model required="true"
-	 *        annotation="mimo-ent-format type='long-varchar' length='255'"
 	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='long-varchar' length='255'"
 	 * @generated
 	 */
 	String getEntityOrPackage();
@@ -93,7 +93,9 @@ public interface EntitySyncInclude extends BizEntity {
 	 * @return the value of the '<em>Entity Sync Id</em>' reference.
 	 * @see #setEntitySyncId(EntitySync)
 	 * @see org.abchip.mimo.biz.entity.synchronization.SynchronizationPackage#getEntitySyncInclude_EntitySyncId()
-	 * @model keys="entitySyncId"
+	 * @model keys="entitySyncId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	EntitySync getEntitySyncId();

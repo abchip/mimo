@@ -27,7 +27,7 @@ import org.abchip.mimo.biz.BizEntity;
  * </ul>
  *
  * @see org.abchip.mimo.biz.humanres.position.PositionPackage#getEmplPositionClassType()
- * @model annotation="mimo-ent-frame formula='description'"
+ * @model annotation="mimo-ent-frame title='EmplPosition Classification Type' formula='description'"
  * @generated
  */
 public interface EmplPositionClassType extends BizEntity {
@@ -96,7 +96,6 @@ public interface EmplPositionClassType extends BizEntity {
 	 * @see org.abchip.mimo.biz.humanres.position.PositionPackage#getEmplPositionClassType_EmplPositionClassTypeId()
 	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getEmplPositionClassTypeId();
@@ -123,6 +122,7 @@ public interface EmplPositionClassType extends BizEntity {
 	 * @see #setParentTypeId(EmplPositionClassType)
 	 * @see org.abchip.mimo.biz.humanres.position.PositionPackage#getEmplPositionClassType_ParentTypeId()
 	 * @model keys="emplPositionClassTypeId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	EmplPositionClassType getParentTypeId();

@@ -24,20 +24,20 @@ import org.abchip.mimo.biz.common.geo.GeoPoint;
  *   <li>{@link org.abchip.mimo.biz.party.contact.PostalAddress#getAddress2 <em>Address2</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.contact.PostalAddress#getAttnName <em>Attn Name</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.contact.PostalAddress#getCity <em>City</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.party.contact.PostalAddress#getCityGeoId <em>City Geo Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.party.contact.PostalAddress#getCountryGeoId <em>Country Geo Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.party.contact.PostalAddress#getCountyGeoId <em>County Geo Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.contact.PostalAddress#getDirections <em>Directions</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.party.contact.PostalAddress#getGeoPointId <em>Geo Point Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.contact.PostalAddress#getHouseNumber <em>House Number</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.contact.PostalAddress#getHouseNumberExt <em>House Number Ext</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.party.contact.PostalAddress#getMunicipalityGeoId <em>Municipality Geo Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.party.contact.PostalAddress#getPostalAddressBoundaries <em>Postal Address Boundaries</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.contact.PostalAddress#getPostalCode <em>Postal Code</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.contact.PostalAddress#getPostalCodeExt <em>Postal Code Ext</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.party.contact.PostalAddress#getToName <em>To Name</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.party.contact.PostalAddress#getCountryGeoId <em>Country Geo Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.party.contact.PostalAddress#getStateProvinceGeoId <em>State Province Geo Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.party.contact.PostalAddress#getCountyGeoId <em>County Geo Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.party.contact.PostalAddress#getMunicipalityGeoId <em>Municipality Geo Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.party.contact.PostalAddress#getCityGeoId <em>City Geo Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.contact.PostalAddress#getPostalCodeGeoId <em>Postal Code Geo Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.party.contact.PostalAddress#getGeoPointId <em>Geo Point Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.party.contact.PostalAddress#getPostalAddressBoundaries <em>Postal Address Boundaries</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.party.contact.PostalAddress#getStateProvinceGeoId <em>State Province Geo Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.party.contact.PostalAddress#getToName <em>To Name</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.party.contact.ContactPackage#getPostalAddress()
@@ -161,6 +161,7 @@ public interface PostalAddress extends ContactMech {
 	 * @see #setCityGeoId(Geo)
 	 * @see org.abchip.mimo.biz.party.contact.ContactPackage#getPostalAddress_CityGeoId()
 	 * @model keys="geoId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Geo getCityGeoId();
@@ -187,6 +188,7 @@ public interface PostalAddress extends ContactMech {
 	 * @see #setCountryGeoId(Geo)
 	 * @see org.abchip.mimo.biz.party.contact.ContactPackage#getPostalAddress_CountryGeoId()
 	 * @model keys="geoId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Geo getCountryGeoId();
@@ -213,6 +215,7 @@ public interface PostalAddress extends ContactMech {
 	 * @see #setCountyGeoId(Geo)
 	 * @see org.abchip.mimo.biz.party.contact.ContactPackage#getPostalAddress_CountyGeoId()
 	 * @model keys="geoId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Geo getCountyGeoId();
@@ -265,6 +268,7 @@ public interface PostalAddress extends ContactMech {
 	 * @see #setGeoPointId(GeoPoint)
 	 * @see org.abchip.mimo.biz.party.contact.ContactPackage#getPostalAddress_GeoPointId()
 	 * @model keys="geoPointId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	GeoPoint getGeoPointId();
@@ -343,6 +347,7 @@ public interface PostalAddress extends ContactMech {
 	 * @see #setMunicipalityGeoId(Geo)
 	 * @see org.abchip.mimo.biz.party.contact.ContactPackage#getPostalAddress_MunicipalityGeoId()
 	 * @model keys="geoId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Geo getMunicipalityGeoId();
@@ -421,6 +426,7 @@ public interface PostalAddress extends ContactMech {
 	 * @see #setPostalCodeGeoId(Geo)
 	 * @see org.abchip.mimo.biz.party.contact.ContactPackage#getPostalAddress_PostalCodeGeoId()
 	 * @model keys="geoId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Geo getPostalCodeGeoId();
@@ -447,6 +453,7 @@ public interface PostalAddress extends ContactMech {
 	 * @see #setStateProvinceGeoId(Geo)
 	 * @see org.abchip.mimo.biz.party.contact.ContactPackage#getPostalAddress_StateProvinceGeoId()
 	 * @model keys="geoId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Geo getStateProvinceGeoId();
@@ -498,8 +505,7 @@ public interface PostalAddress extends ContactMech {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Postal Address Boundaries</em>' attribute list.
 	 * @see org.abchip.mimo.biz.party.contact.ContactPackage#getPostalAddress_PostalAddressBoundaries()
-	 * @model required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='PostalAddressBoundary'"
 	 * @generated

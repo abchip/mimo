@@ -27,19 +27,19 @@ import org.abchip.mimo.biz.product.product.Product;
  *   <li>{@link org.abchip.mimo.biz.product.store.ProductStoreSurveyAppl#getProductStoreSurveyId <em>Product Store Survey Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.store.ProductStoreSurveyAppl#getFromDate <em>From Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.store.ProductStoreSurveyAppl#getGroupName <em>Group Name</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.store.ProductStoreSurveyAppl#getProductCategoryId <em>Product Category Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.store.ProductStoreSurveyAppl#getProductId <em>Product Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.store.ProductStoreSurveyAppl#getProductStoreId <em>Product Store Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.store.ProductStoreSurveyAppl#getResultTemplate <em>Result Template</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.store.ProductStoreSurveyAppl#getSequenceNum <em>Sequence Num</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.store.ProductStoreSurveyAppl#getSurveyApplTypeId <em>Survey Appl Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.store.ProductStoreSurveyAppl#getSurveyId <em>Survey Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.store.ProductStoreSurveyAppl#getSurveyTemplate <em>Survey Template</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.store.ProductStoreSurveyAppl#getThruDate <em>Thru Date</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.store.ProductStoreSurveyAppl#getProductStoreId <em>Product Store Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.store.ProductStoreSurveyAppl#getSurveyId <em>Survey Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.store.ProductStoreSurveyAppl#getSurveyApplTypeId <em>Survey Appl Type Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.store.ProductStoreSurveyAppl#getProductId <em>Product Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.store.ProductStoreSurveyAppl#getProductCategoryId <em>Product Category Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.product.store.StorePackage#getProductStoreSurveyAppl()
- * @model
+ * @model annotation="mimo-ent-frame title='Product Store Survey Application' dictionary='ProductEntityLabels'"
  * @generated
  */
 public interface ProductStoreSurveyAppl extends BizEntity {
@@ -108,7 +108,6 @@ public interface ProductStoreSurveyAppl extends BizEntity {
 	 * @see org.abchip.mimo.biz.product.store.StorePackage#getProductStoreSurveyAppl_ProductStoreSurveyId()
 	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getProductStoreSurveyId();
@@ -187,6 +186,7 @@ public interface ProductStoreSurveyAppl extends BizEntity {
 	 * @see #setSurveyApplTypeId(SurveyApplType)
 	 * @see org.abchip.mimo.biz.product.store.StorePackage#getProductStoreSurveyAppl_SurveyApplTypeId()
 	 * @model keys="surveyApplTypeId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	SurveyApplType getSurveyApplTypeId();
@@ -213,6 +213,7 @@ public interface ProductStoreSurveyAppl extends BizEntity {
 	 * @see #setSurveyId(Survey)
 	 * @see org.abchip.mimo.biz.product.store.StorePackage#getProductStoreSurveyAppl_SurveyId()
 	 * @model keys="surveyId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Survey getSurveyId();
@@ -291,6 +292,7 @@ public interface ProductStoreSurveyAppl extends BizEntity {
 	 * @see #setProductStoreId(ProductStore)
 	 * @see org.abchip.mimo.biz.product.store.StorePackage#getProductStoreSurveyAppl_ProductStoreId()
 	 * @model keys="productStoreId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ProductStore getProductStoreId();
@@ -317,6 +319,7 @@ public interface ProductStoreSurveyAppl extends BizEntity {
 	 * @see #setProductId(Product)
 	 * @see org.abchip.mimo.biz.product.store.StorePackage#getProductStoreSurveyAppl_ProductId()
 	 * @model keys="productId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Product getProductId();
@@ -343,6 +346,7 @@ public interface ProductStoreSurveyAppl extends BizEntity {
 	 * @see #setProductCategoryId(ProductCategory)
 	 * @see org.abchip.mimo.biz.product.store.StorePackage#getProductStoreSurveyAppl_ProductCategoryId()
 	 * @model keys="productCategoryId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ProductCategory getProductCategoryId();

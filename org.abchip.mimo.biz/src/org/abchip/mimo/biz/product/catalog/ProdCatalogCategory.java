@@ -21,16 +21,16 @@ import org.abchip.mimo.biz.product.category.ProductCategory;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.product.catalog.ProdCatalogCategory#getFromDate <em>From Date</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.catalog.ProdCatalogCategory#getSequenceNum <em>Sequence Num</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.catalog.ProdCatalogCategory#getThruDate <em>Thru Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.catalog.ProdCatalogCategory#getProdCatalogId <em>Prod Catalog Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.catalog.ProdCatalogCategory#getProductCategoryId <em>Product Category Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.catalog.ProdCatalogCategory#getProdCatalogCategoryTypeId <em>Prod Catalog Category Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.catalog.ProdCatalogCategory#getFromDate <em>From Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.catalog.ProdCatalogCategory#getSequenceNum <em>Sequence Num</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.catalog.ProdCatalogCategory#getThruDate <em>Thru Date</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.product.catalog.CatalogPackage#getProdCatalogCategory()
- * @model
+ * @model annotation="mimo-ent-frame title='Catalog Category Association' dictionary='ProductEntityLabels'"
  * @generated
  */
 public interface ProdCatalogCategory extends BizEntityTyped<ProdCatalogCategoryType> {
@@ -46,8 +46,8 @@ public interface ProdCatalogCategory extends BizEntityTyped<ProdCatalogCategoryT
 	 * @see #setFromDate(Date)
 	 * @see org.abchip.mimo.biz.product.catalog.CatalogPackage#getProdCatalogCategory_FromDate()
 	 * @model required="true"
-	 *        annotation="mimo-ent-format type='date-time'"
 	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getFromDate();
@@ -73,7 +73,9 @@ public interface ProdCatalogCategory extends BizEntityTyped<ProdCatalogCategoryT
 	 * @return the value of the '<em>Product Category Id</em>' reference.
 	 * @see #setProductCategoryId(ProductCategory)
 	 * @see org.abchip.mimo.biz.product.catalog.CatalogPackage#getProdCatalogCategory_ProductCategoryId()
-	 * @model keys="productCategoryId"
+	 * @model keys="productCategoryId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ProductCategory getProductCategoryId();
@@ -151,7 +153,9 @@ public interface ProdCatalogCategory extends BizEntityTyped<ProdCatalogCategoryT
 	 * @return the value of the '<em>Prod Catalog Id</em>' reference.
 	 * @see #setProdCatalogId(ProdCatalog)
 	 * @see org.abchip.mimo.biz.product.catalog.CatalogPackage#getProdCatalogCategory_ProdCatalogId()
-	 * @model keys="prodCatalogId"
+	 * @model keys="prodCatalogId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ProdCatalog getProdCatalogId();
@@ -177,7 +181,9 @@ public interface ProdCatalogCategory extends BizEntityTyped<ProdCatalogCategoryT
 	 * @return the value of the '<em>Prod Catalog Category Type Id</em>' reference.
 	 * @see #setProdCatalogCategoryTypeId(ProdCatalogCategoryType)
 	 * @see org.abchip.mimo.biz.product.catalog.CatalogPackage#getProdCatalogCategory_ProdCatalogCategoryTypeId()
-	 * @model keys="prodCatalogCategoryTypeId"
+	 * @model keys="prodCatalogCategoryTypeId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ProdCatalogCategoryType getProdCatalogCategoryTypeId();

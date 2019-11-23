@@ -28,7 +28,7 @@ package org.abchip.mimo.biz.party.contact;
  * </ul>
  *
  * @see org.abchip.mimo.biz.party.contact.ContactPackage#getFtpAddress()
- * @model
+ * @model annotation="mimo-ent-frame title='Ftp server'"
  * @generated
  */
 public interface FtpAddress extends ContactMech {
@@ -121,7 +121,8 @@ public interface FtpAddress extends ContactMech {
 	 * @return the value of the '<em>Ftp Password</em>' attribute.
 	 * @see #setFtpPassword(String)
 	 * @see org.abchip.mimo.biz.party.contact.ContactPackage#getFtpAddress_FtpPassword()
-	 * @model annotation="mimo-ent-format type='long-varchar' length='255'"
+	 * @model annotation="mimo-ent-slot encrypt='TRUE'"
+	 *        annotation="mimo-ent-format type='long-varchar' length='255'"
 	 * @generated
 	 */
 	String getFtpPassword();

@@ -25,8 +25,8 @@ import org.eclipse.emf.ecore.EClass;
  *   <li>{@link org.abchip.mimo.biz.entity.tenant.impl.TenantImpl#getTenantId <em>Tenant Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.entity.tenant.impl.TenantImpl#isDisabled <em>Disabled</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.entity.tenant.impl.TenantImpl#getInitialPath <em>Initial Path</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.entity.tenant.impl.TenantImpl#getTenantName <em>Tenant Name</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.entity.tenant.impl.TenantImpl#getTenantDataSources <em>Tenant Data Sources</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.entity.tenant.impl.TenantImpl#getTenantName <em>Tenant Name</em>}</li>
  * </ul>
  *
  * @generated

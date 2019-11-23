@@ -21,9 +21,9 @@ import org.eclipse.emf.ecore.EClass;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link org.abchip.mimo.biz.entity.group.impl.EntityGroupEntryImpl#getEntityGroupId <em>Entity Group Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.entity.group.impl.EntityGroupEntryImpl#getEntityOrPackage <em>Entity Or Package</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.entity.group.impl.EntityGroupEntryImpl#getApplEnumId <em>Appl Enum Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.entity.group.impl.EntityGroupEntryImpl#getEntityGroupId <em>Entity Group Id</em>}</li>
  * </ul>
  *
  * @generated

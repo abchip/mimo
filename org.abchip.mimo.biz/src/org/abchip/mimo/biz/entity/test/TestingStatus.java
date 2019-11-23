@@ -23,14 +23,14 @@ import org.abchip.mimo.biz.security.login.UserLogin;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.entity.test.TestingStatus#getTestingStatusId <em>Testing Status Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.entity.test.TestingStatus#getStatusDate <em>Status Date</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.entity.test.TestingStatus#getTestingId <em>Testing Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.entity.test.TestingStatus#getStatusId <em>Status Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.entity.test.TestingStatus#getChangeByUserLoginId <em>Change By User Login Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.entity.test.TestingStatus#getStatusDate <em>Status Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.entity.test.TestingStatus#getStatusId <em>Status Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.entity.test.TestingStatus#getTestingId <em>Testing Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.entity.test.TestPackage#getTestingStatus()
- * @model
+ * @model annotation="mimo-ent-frame help='An entity for testing EntityStatus concept' title='Entity for testing EntityStatus concept'"
  * @generated
  */
 public interface TestingStatus extends BizEntity {
@@ -46,6 +46,7 @@ public interface TestingStatus extends BizEntity {
 	 * @see #setChangeByUserLoginId(UserLogin)
 	 * @see org.abchip.mimo.biz.entity.test.TestPackage#getTestingStatus_ChangeByUserLoginId()
 	 * @model keys="userLoginId"
+	 *        annotation="mimo-ent-format type='id-vlong' length='255'"
 	 * @generated
 	 */
 	UserLogin getChangeByUserLoginId();
@@ -98,6 +99,7 @@ public interface TestingStatus extends BizEntity {
 	 * @see #setStatusId(StatusItem)
 	 * @see org.abchip.mimo.biz.entity.test.TestPackage#getTestingStatus_StatusId()
 	 * @model keys="statusId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	StatusItem getStatusId();
@@ -151,7 +153,6 @@ public interface TestingStatus extends BizEntity {
 	 * @see org.abchip.mimo.biz.entity.test.TestPackage#getTestingStatus_TestingStatusId()
 	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getTestingStatusId();

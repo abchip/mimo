@@ -18,17 +18,17 @@ import org.abchip.mimo.biz.BizEntity;
  * The following features are supported:
  * </p>
  * <ul>
+ *   <li>{@link org.abchip.mimo.biz.product.config.ProductConfigOptionIactn#getConfigItemId <em>Config Item Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.config.ProductConfigOptionIactn#getConfigItemIdTo <em>Config Item Id To</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.config.ProductConfigOptionIactn#getConfigOptionId <em>Config Option Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.config.ProductConfigOptionIactn#getConfigOptionIdTo <em>Config Option Id To</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.config.ProductConfigOptionIactn#getSequenceNum <em>Sequence Num</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.config.ProductConfigOptionIactn#getConfigIactnTypeId <em>Config Iactn Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.config.ProductConfigOptionIactn#getDescription <em>Description</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.config.ProductConfigOptionIactn#getConfigItemId <em>Config Item Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.config.ProductConfigOptionIactn#getConfigItemIdTo <em>Config Item Id To</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.product.config.ConfigPackage#getProductConfigOptionIactn()
- * @model annotation="mimo-ent-frame formula='description'"
+ * @model annotation="mimo-ent-frame title='Product Configuration Options' dictionary='ProductEntityLabels' formula='description'"
  * @generated
  */
 public interface ProductConfigOptionIactn extends BizEntity {
@@ -43,7 +43,8 @@ public interface ProductConfigOptionIactn extends BizEntity {
 	 * @return the value of the '<em>Config Iactn Type Id</em>' attribute.
 	 * @see #setConfigIactnTypeId(String)
 	 * @see org.abchip.mimo.biz.product.config.ConfigPackage#getProductConfigOptionIactn_ConfigIactnTypeId()
-	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 * @model annotation="mimo-ent-slot help='INCOMPATIBLE, etc...'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	String getConfigIactnTypeId();
@@ -70,8 +71,8 @@ public interface ProductConfigOptionIactn extends BizEntity {
 	 * @see #setConfigOptionId(String)
 	 * @see org.abchip.mimo.biz.product.config.ConfigPackage#getProductConfigOptionIactn_ConfigOptionId()
 	 * @model required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	String getConfigOptionId();
@@ -98,8 +99,8 @@ public interface ProductConfigOptionIactn extends BizEntity {
 	 * @see #setConfigOptionIdTo(String)
 	 * @see org.abchip.mimo.biz.product.config.ConfigPackage#getProductConfigOptionIactn_ConfigOptionIdTo()
 	 * @model required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	String getConfigOptionIdTo();
@@ -152,8 +153,8 @@ public interface ProductConfigOptionIactn extends BizEntity {
 	 * @see #setSequenceNum(long)
 	 * @see org.abchip.mimo.biz.product.config.ConfigPackage#getProductConfigOptionIactn_SequenceNum()
 	 * @model required="true"
-	 *        annotation="mimo-ent-format type='numeric' precision='20' scale='0'"
 	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='numeric' precision='20' scale='0'"
 	 * @generated
 	 */
 	long getSequenceNum();
@@ -179,7 +180,9 @@ public interface ProductConfigOptionIactn extends BizEntity {
 	 * @return the value of the '<em>Config Item Id</em>' reference.
 	 * @see #setConfigItemId(ProductConfigItem)
 	 * @see org.abchip.mimo.biz.product.config.ConfigPackage#getProductConfigOptionIactn_ConfigItemId()
-	 * @model keys="configItemId"
+	 * @model keys="configItemId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ProductConfigItem getConfigItemId();
@@ -205,7 +208,9 @@ public interface ProductConfigOptionIactn extends BizEntity {
 	 * @return the value of the '<em>Config Item Id To</em>' reference.
 	 * @see #setConfigItemIdTo(ProductConfigItem)
 	 * @see org.abchip.mimo.biz.product.config.ConfigPackage#getProductConfigOptionIactn_ConfigItemIdTo()
-	 * @model keys="configItemId"
+	 * @model keys="configItemId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ProductConfigItem getConfigItemIdTo();

@@ -20,6 +20,7 @@ import org.abchip.mimo.biz.BizEntity;
  * The following features are supported:
  * </p>
  * <ul>
+ *   <li>{@link org.abchip.mimo.biz.entity.synchronization.EntitySyncHistory#getEntitySyncId <em>Entity Sync Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.entity.synchronization.EntitySyncHistory#getStartDate <em>Start Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.entity.synchronization.EntitySyncHistory#getBeginningSynchTime <em>Beginning Synch Time</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.entity.synchronization.EntitySyncHistory#getLastCandidateEndTime <em>Last Candidate End Time</em>}</li>
@@ -45,11 +46,10 @@ import org.abchip.mimo.biz.BizEntity;
  *   <li>{@link org.abchip.mimo.biz.entity.synchronization.EntitySyncHistory#getTotalRowsToStore <em>Total Rows To Store</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.entity.synchronization.EntitySyncHistory#getTotalSplits <em>Total Splits</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.entity.synchronization.EntitySyncHistory#getTotalStoreCalls <em>Total Store Calls</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.entity.synchronization.EntitySyncHistory#getEntitySyncId <em>Entity Sync Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.entity.synchronization.SynchronizationPackage#getEntitySyncHistory()
- * @model
+ * @model annotation="mimo-ent-frame title='Entity Synchronization History'"
  * @generated
  */
 public interface EntitySyncHistory extends BizEntity {
@@ -90,7 +90,9 @@ public interface EntitySyncHistory extends BizEntity {
 	 * @return the value of the '<em>Entity Sync Id</em>' reference.
 	 * @see #setEntitySyncId(EntitySync)
 	 * @see org.abchip.mimo.biz.entity.synchronization.SynchronizationPackage#getEntitySyncHistory_EntitySyncId()
-	 * @model keys="entitySyncId"
+	 * @model keys="entitySyncId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	EntitySync getEntitySyncId();
@@ -351,8 +353,8 @@ public interface EntitySyncHistory extends BizEntity {
 	 * @see #setStartDate(Date)
 	 * @see org.abchip.mimo.biz.entity.synchronization.SynchronizationPackage#getEntitySyncHistory_StartDate()
 	 * @model required="true"
-	 *        annotation="mimo-ent-format type='date-time'"
 	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getStartDate();

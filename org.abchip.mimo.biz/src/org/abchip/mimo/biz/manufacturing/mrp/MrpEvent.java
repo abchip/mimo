@@ -22,14 +22,14 @@ import org.abchip.mimo.biz.product.product.Product;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.manufacturing.mrp.MrpEvent#getMrpId <em>Mrp Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.manufacturing.mrp.MrpEvent#getEventDate <em>Event Date</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.manufacturing.mrp.MrpEvent#getEventName <em>Event Name</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.manufacturing.mrp.MrpEvent#isIsLate <em>Is Late</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.manufacturing.mrp.MrpEvent#getQuantity <em>Quantity</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.manufacturing.mrp.MrpEvent#getProductId <em>Product Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.manufacturing.mrp.MrpEvent#getMrpEventTypeId <em>Mrp Event Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.manufacturing.mrp.MrpEvent#getEventDate <em>Event Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.manufacturing.mrp.MrpEvent#getMrpId <em>Mrp Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.manufacturing.mrp.MrpEvent#getEventName <em>Event Name</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.manufacturing.mrp.MrpEvent#getFacilityId <em>Facility Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.manufacturing.mrp.MrpEvent#isIsLate <em>Is Late</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.manufacturing.mrp.MrpEvent#getQuantity <em>Quantity</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.manufacturing.mrp.MrpPackage#getMrpEvent()
@@ -49,8 +49,8 @@ public interface MrpEvent extends BizEntityTyped<MrpEventType> {
 	 * @see #setMrpId(String)
 	 * @see org.abchip.mimo.biz.manufacturing.mrp.MrpPackage#getMrpEvent_MrpId()
 	 * @model required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	String getMrpId();
@@ -76,7 +76,9 @@ public interface MrpEvent extends BizEntityTyped<MrpEventType> {
 	 * @return the value of the '<em>Product Id</em>' reference.
 	 * @see #setProductId(Product)
 	 * @see org.abchip.mimo.biz.manufacturing.mrp.MrpPackage#getMrpEvent_ProductId()
-	 * @model keys="productId"
+	 * @model keys="productId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Product getProductId();
@@ -103,8 +105,8 @@ public interface MrpEvent extends BizEntityTyped<MrpEventType> {
 	 * @see #setEventDate(Date)
 	 * @see org.abchip.mimo.biz.manufacturing.mrp.MrpPackage#getMrpEvent_EventDate()
 	 * @model required="true"
-	 *        annotation="mimo-ent-format type='date-time'"
 	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getEventDate();
@@ -130,7 +132,9 @@ public interface MrpEvent extends BizEntityTyped<MrpEventType> {
 	 * @return the value of the '<em>Mrp Event Type Id</em>' reference.
 	 * @see #setMrpEventTypeId(MrpEventType)
 	 * @see org.abchip.mimo.biz.manufacturing.mrp.MrpPackage#getMrpEvent_MrpEventTypeId()
-	 * @model keys="mrpEventTypeId"
+	 * @model keys="mrpEventTypeId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	MrpEventType getMrpEventTypeId();
@@ -209,6 +213,7 @@ public interface MrpEvent extends BizEntityTyped<MrpEventType> {
 	 * @see #setFacilityId(Facility)
 	 * @see org.abchip.mimo.biz.manufacturing.mrp.MrpPackage#getMrpEvent_FacilityId()
 	 * @model keys="facilityId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Facility getFacilityId();

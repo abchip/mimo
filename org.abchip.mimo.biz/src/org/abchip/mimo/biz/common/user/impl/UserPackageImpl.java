@@ -191,9 +191,6 @@ import org.abchip.mimo.biz.workeffort.timesheet.TimesheetPackage;
 import org.abchip.mimo.biz.workeffort.timesheet.impl.TimesheetPackageImpl;
 import org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage;
 import org.abchip.mimo.biz.workeffort.workeffort.impl.WorkeffortPackageImpl;
-import org.abchip.mimo.entity.EntityPackage;
-import org.eclipse.emf.common.util.URI;
-
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
@@ -703,7 +700,7 @@ public class UserPackageImpl extends EPackageImpl implements UserPackage {
 	 */
 	@Override
 	public EReference getUserPreference_UserLoginId() {
-		return (EReference)userPreferenceEClass.getEStructuralFeatures().get(3);
+		return (EReference)userPreferenceEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -713,16 +710,6 @@ public class UserPackageImpl extends EPackageImpl implements UserPackage {
 	 */
 	@Override
 	public EAttribute getUserPreference_UserPrefTypeId() {
-		return (EAttribute)userPreferenceEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EAttribute getUserPreference_UserPrefDataType() {
 		return (EAttribute)userPreferenceEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -732,8 +719,18 @@ public class UserPackageImpl extends EPackageImpl implements UserPackage {
 	 * @generated
 	 */
 	@Override
+	public EAttribute getUserPreference_UserPrefDataType() {
+		return (EAttribute)userPreferenceEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EReference getUserPreference_UserPrefGroupTypeId() {
-		return (EReference)userPreferenceEClass.getEStructuralFeatures().get(4);
+		return (EReference)userPreferenceEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -743,7 +740,7 @@ public class UserPackageImpl extends EPackageImpl implements UserPackage {
 	 */
 	@Override
 	public EAttribute getUserPreference_UserPrefValue() {
-		return (EAttribute)userPreferenceEClass.getEStructuralFeatures().get(2);
+		return (EAttribute)userPreferenceEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -780,11 +777,11 @@ public class UserPackageImpl extends EPackageImpl implements UserPackage {
 		createEAttribute(userPrefGroupTypeEClass, USER_PREF_GROUP_TYPE__DESCRIPTION);
 
 		userPreferenceEClass = createEClass(USER_PREFERENCE);
+		createEReference(userPreferenceEClass, USER_PREFERENCE__USER_LOGIN_ID);
 		createEAttribute(userPreferenceEClass, USER_PREFERENCE__USER_PREF_TYPE_ID);
 		createEAttribute(userPreferenceEClass, USER_PREFERENCE__USER_PREF_DATA_TYPE);
-		createEAttribute(userPreferenceEClass, USER_PREFERENCE__USER_PREF_VALUE);
-		createEReference(userPreferenceEClass, USER_PREFERENCE__USER_LOGIN_ID);
 		createEReference(userPreferenceEClass, USER_PREFERENCE__USER_PREF_GROUP_TYPE_ID);
+		createEAttribute(userPreferenceEClass, USER_PREFERENCE__USER_PREF_VALUE);
 	}
 
 	/**
@@ -830,13 +827,13 @@ public class UserPackageImpl extends EPackageImpl implements UserPackage {
 		addEOperation(userPrefGroupTypeEClass, ecorePackage.getEString(), "userPreferences", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(userPreferenceEClass, UserPreference.class, "UserPreference", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getUserPreference_UserLoginId(), theLoginPackage.getUserLogin(), null, "userLoginId", null, 1, 1, UserPreference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getUserPreference_UserLoginId().getEKeys().add(theLoginPackage.getUserLogin_UserLoginId());
 		initEAttribute(getUserPreference_UserPrefTypeId(), ecorePackage.getEString(), "userPrefTypeId", null, 1, 1, UserPreference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getUserPreference_UserPrefDataType(), ecorePackage.getEString(), "userPrefDataType", null, 0, 1, UserPreference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getUserPreference_UserPrefValue(), ecorePackage.getEString(), "userPrefValue", null, 0, 1, UserPreference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getUserPreference_UserLoginId(), theLoginPackage.getUserLogin(), null, "userLoginId", null, 0, 1, UserPreference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		getUserPreference_UserLoginId().getEKeys().add(theLoginPackage.getUserLogin_UserLoginId());
 		initEReference(getUserPreference_UserPrefGroupTypeId(), this.getUserPrefGroupType(), null, "userPrefGroupTypeId", null, 0, 1, UserPreference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getUserPreference_UserPrefGroupTypeId().getEKeys().add(this.getUserPrefGroupType_UserPrefGroupTypeId());
+		initEAttribute(getUserPreference_UserPrefValue(), ecorePackage.getEString(), "userPrefValue", null, 0, 1, UserPreference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Create annotations
 		// mimo-ent-frame
@@ -861,7 +858,16 @@ public class UserPackageImpl extends EPackageImpl implements UserPackage {
 		  (userPrefGroupTypeEClass,
 		   source,
 		   new String[] {
+			   "help", "The UserPrefGroupType entity contains one entry per preference\n          group type.",
+			   "title", "Defines a group of User Preferences",
 			   "formula", "description"
+		   });
+		addAnnotation
+		  (userPreferenceEClass,
+		   source,
+		   new String[] {
+			   "help", "The UserPreference entity contains one entry per preference per\n          userLogin. User preferences are stored as key/value pairs (userPrefTypeId/userPrefValue).\n          All values are stored as strings. Value strings can be converted to\n          other data types by specifying a java data type in the userPrefDataType field.",
+			   "title", "Application preferences for a given userLogin."
 		   });
 	}
 
@@ -895,6 +901,13 @@ public class UserPackageImpl extends EPackageImpl implements UserPackage {
 			   "length", "255"
 		   });
 		addAnnotation
+		  (getUserPreference_UserLoginId(),
+		   source,
+		   new String[] {
+			   "type", "id-vlong",
+			   "length", "255"
+		   });
+		addAnnotation
 		  (getUserPreference_UserPrefTypeId(),
 		   source,
 		   new String[] {
@@ -903,6 +916,13 @@ public class UserPackageImpl extends EPackageImpl implements UserPackage {
 		   });
 		addAnnotation
 		  (getUserPreference_UserPrefDataType(),
+		   source,
+		   new String[] {
+			   "type", "id-long",
+			   "length", "60"
+		   });
+		addAnnotation
+		  (getUserPreference_UserPrefGroupTypeId(),
 		   source,
 		   new String[] {
 			   "type", "id-long",
@@ -932,7 +952,7 @@ public class UserPackageImpl extends EPackageImpl implements UserPackage {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (getUserPrefGroupType_UserPrefGroupTypeId(),
+		  (getUserPreference_UserLoginId(),
 		   source,
 		   new String[] {
 			   "key", "true"
@@ -941,7 +961,26 @@ public class UserPackageImpl extends EPackageImpl implements UserPackage {
 		  (getUserPreference_UserPrefTypeId(),
 		   source,
 		   new String[] {
-			   "key", "true"
+			   "key", "true",
+			   "help", "A unique identifier for this preference"
+		   });
+		addAnnotation
+		  (getUserPreference_UserPrefDataType(),
+		   source,
+		   new String[] {
+			   "help", "The java data type of this preference (empty = java.lang.String)"
+		   });
+		addAnnotation
+		  (getUserPreference_UserPrefGroupTypeId(),
+		   source,
+		   new String[] {
+			   "help", "Used to assemble groups of preferences"
+		   });
+		addAnnotation
+		  (getUserPreference_UserPrefValue(),
+		   source,
+		   new String[] {
+			   "help", "Contains the value of this preference"
 		   });
 	}
 
@@ -959,9 +998,6 @@ public class UserPackageImpl extends EPackageImpl implements UserPackage {
 		   new String[] {
 			   "frame", "UserPreference",
 			   "route", "userPrefGroupTypeId"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 	}
 

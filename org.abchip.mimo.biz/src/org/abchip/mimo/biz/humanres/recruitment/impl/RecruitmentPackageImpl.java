@@ -192,10 +192,6 @@ import org.abchip.mimo.biz.workeffort.timesheet.TimesheetPackage;
 import org.abchip.mimo.biz.workeffort.timesheet.impl.TimesheetPackageImpl;
 import org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage;
 import org.abchip.mimo.biz.workeffort.workeffort.impl.WorkeffortPackageImpl;
-import org.abchip.mimo.entity.EntityPackage;
-
-import org.eclipse.emf.common.util.URI;
-
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EGenericType;
@@ -693,7 +689,7 @@ public class RecruitmentPackageImpl extends EPackageImpl implements RecruitmentP
 	 */
 	@Override
 	public EReference getJobInterview_GradeSecuredEnumId() {
-		return (EReference)jobInterviewEClass.getEStructuralFeatures().get(7);
+		return (EReference)jobInterviewEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -703,16 +699,6 @@ public class RecruitmentPackageImpl extends EPackageImpl implements RecruitmentP
 	 */
 	@Override
 	public EAttribute getJobInterview_JobInterviewDate() {
-		return (EAttribute)jobInterviewEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EAttribute getJobInterview_JobInterviewResult() {
 		return (EAttribute)jobInterviewEClass.getEStructuralFeatures().get(2);
 	}
 
@@ -722,27 +708,17 @@ public class RecruitmentPackageImpl extends EPackageImpl implements RecruitmentP
 	 * @generated
 	 */
 	@Override
+	public EAttribute getJobInterview_JobInterviewResult() {
+		return (EAttribute)jobInterviewEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EReference getJobInterview_JobInterviewTypeId() {
-		return (EReference)jobInterviewEClass.getEStructuralFeatures().get(5);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getJobInterview_JobIntervieweePartyId() {
-		return (EReference)jobInterviewEClass.getEStructuralFeatures().get(3);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getJobInterview_JobInterviewerPartyId() {
 		return (EReference)jobInterviewEClass.getEStructuralFeatures().get(4);
 	}
 
@@ -752,8 +728,28 @@ public class RecruitmentPackageImpl extends EPackageImpl implements RecruitmentP
 	 * @generated
 	 */
 	@Override
-	public EReference getJobInterview_JobRequisitionId() {
+	public EReference getJobInterview_JobIntervieweePartyId() {
+		return (EReference)jobInterviewEClass.getEStructuralFeatures().get(5);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getJobInterview_JobInterviewerPartyId() {
 		return (EReference)jobInterviewEClass.getEStructuralFeatures().get(6);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getJobInterview_JobRequisitionId() {
+		return (EReference)jobInterviewEClass.getEStructuralFeatures().get(7);
 	}
 
 	/**
@@ -833,7 +829,7 @@ public class RecruitmentPackageImpl extends EPackageImpl implements RecruitmentP
 	 */
 	@Override
 	public EReference getJobRequisition_ExamTypeEnumId() {
-		return (EReference)jobRequisitionEClass.getEStructuralFeatures().get(12);
+		return (EReference)jobRequisitionEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -843,16 +839,6 @@ public class RecruitmentPackageImpl extends EPackageImpl implements RecruitmentP
 	 */
 	@Override
 	public EAttribute getJobRequisition_ExperienceMonths() {
-		return (EAttribute)jobRequisitionEClass.getEStructuralFeatures().get(3);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EAttribute getJobRequisition_ExperienceYears() {
 		return (EAttribute)jobRequisitionEClass.getEStructuralFeatures().get(4);
 	}
 
@@ -862,7 +848,7 @@ public class RecruitmentPackageImpl extends EPackageImpl implements RecruitmentP
 	 * @generated
 	 */
 	@Override
-	public EAttribute getJobRequisition_Gender() {
+	public EAttribute getJobRequisition_ExperienceYears() {
 		return (EAttribute)jobRequisitionEClass.getEStructuralFeatures().get(5);
 	}
 
@@ -872,7 +858,7 @@ public class RecruitmentPackageImpl extends EPackageImpl implements RecruitmentP
 	 * @generated
 	 */
 	@Override
-	public EAttribute getJobRequisition_JobLocation() {
+	public EAttribute getJobRequisition_Gender() {
 		return (EAttribute)jobRequisitionEClass.getEStructuralFeatures().get(6);
 	}
 
@@ -882,17 +868,7 @@ public class RecruitmentPackageImpl extends EPackageImpl implements RecruitmentP
 	 * @generated
 	 */
 	@Override
-	public EReference getJobRequisition_JobPostingTypeEnumId() {
-		return (EReference)jobRequisitionEClass.getEStructuralFeatures().get(13);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EAttribute getJobRequisition_JobRequisitionDate() {
+	public EAttribute getJobRequisition_JobLocation() {
 		return (EAttribute)jobRequisitionEClass.getEStructuralFeatures().get(7);
 	}
 
@@ -902,8 +878,8 @@ public class RecruitmentPackageImpl extends EPackageImpl implements RecruitmentP
 	 * @generated
 	 */
 	@Override
-	public EAttribute getJobRequisition_NoOfResources() {
-		return (EAttribute)jobRequisitionEClass.getEStructuralFeatures().get(8);
+	public EReference getJobRequisition_JobPostingTypeEnumId() {
+		return (EReference)jobRequisitionEClass.getEStructuralFeatures().get(8);
 	}
 
 	/**
@@ -912,7 +888,7 @@ public class RecruitmentPackageImpl extends EPackageImpl implements RecruitmentP
 	 * @generated
 	 */
 	@Override
-	public EAttribute getJobRequisition_Qualification() {
+	public EAttribute getJobRequisition_JobRequisitionDate() {
 		return (EAttribute)jobRequisitionEClass.getEStructuralFeatures().get(9);
 	}
 
@@ -922,7 +898,7 @@ public class RecruitmentPackageImpl extends EPackageImpl implements RecruitmentP
 	 * @generated
 	 */
 	@Override
-	public EAttribute getJobRequisition_RequiredOnDate() {
+	public EAttribute getJobRequisition_NoOfResources() {
 		return (EAttribute)jobRequisitionEClass.getEStructuralFeatures().get(10);
 	}
 
@@ -932,8 +908,28 @@ public class RecruitmentPackageImpl extends EPackageImpl implements RecruitmentP
 	 * @generated
 	 */
 	@Override
+	public EAttribute getJobRequisition_Qualification() {
+		return (EAttribute)jobRequisitionEClass.getEStructuralFeatures().get(11);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getJobRequisition_RequiredOnDate() {
+		return (EAttribute)jobRequisitionEClass.getEStructuralFeatures().get(12);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EReference getJobRequisition_SkillTypeId() {
-		return (EReference)jobRequisitionEClass.getEStructuralFeatures().get(11);
+		return (EReference)jobRequisitionEClass.getEStructuralFeatures().get(13);
 	}
 
 	/**
@@ -967,13 +963,13 @@ public class RecruitmentPackageImpl extends EPackageImpl implements RecruitmentP
 		// Create classes and their features
 		jobInterviewEClass = createEClass(JOB_INTERVIEW);
 		createEAttribute(jobInterviewEClass, JOB_INTERVIEW__JOB_INTERVIEW_ID);
+		createEReference(jobInterviewEClass, JOB_INTERVIEW__GRADE_SECURED_ENUM_ID);
 		createEAttribute(jobInterviewEClass, JOB_INTERVIEW__JOB_INTERVIEW_DATE);
 		createEAttribute(jobInterviewEClass, JOB_INTERVIEW__JOB_INTERVIEW_RESULT);
+		createEReference(jobInterviewEClass, JOB_INTERVIEW__JOB_INTERVIEW_TYPE_ID);
 		createEReference(jobInterviewEClass, JOB_INTERVIEW__JOB_INTERVIEWEE_PARTY_ID);
 		createEReference(jobInterviewEClass, JOB_INTERVIEW__JOB_INTERVIEWER_PARTY_ID);
-		createEReference(jobInterviewEClass, JOB_INTERVIEW__JOB_INTERVIEW_TYPE_ID);
 		createEReference(jobInterviewEClass, JOB_INTERVIEW__JOB_REQUISITION_ID);
-		createEReference(jobInterviewEClass, JOB_INTERVIEW__GRADE_SECURED_ENUM_ID);
 
 		jobInterviewTypeEClass = createEClass(JOB_INTERVIEW_TYPE);
 		createEAttribute(jobInterviewTypeEClass, JOB_INTERVIEW_TYPE__JOB_INTERVIEW_TYPE_ID);
@@ -983,17 +979,17 @@ public class RecruitmentPackageImpl extends EPackageImpl implements RecruitmentP
 		createEAttribute(jobRequisitionEClass, JOB_REQUISITION__JOB_REQUISITION_ID);
 		createEAttribute(jobRequisitionEClass, JOB_REQUISITION__AGE);
 		createEAttribute(jobRequisitionEClass, JOB_REQUISITION__DURATION_MONTHS);
+		createEReference(jobRequisitionEClass, JOB_REQUISITION__EXAM_TYPE_ENUM_ID);
 		createEAttribute(jobRequisitionEClass, JOB_REQUISITION__EXPERIENCE_MONTHS);
 		createEAttribute(jobRequisitionEClass, JOB_REQUISITION__EXPERIENCE_YEARS);
 		createEAttribute(jobRequisitionEClass, JOB_REQUISITION__GENDER);
 		createEAttribute(jobRequisitionEClass, JOB_REQUISITION__JOB_LOCATION);
+		createEReference(jobRequisitionEClass, JOB_REQUISITION__JOB_POSTING_TYPE_ENUM_ID);
 		createEAttribute(jobRequisitionEClass, JOB_REQUISITION__JOB_REQUISITION_DATE);
 		createEAttribute(jobRequisitionEClass, JOB_REQUISITION__NO_OF_RESOURCES);
 		createEAttribute(jobRequisitionEClass, JOB_REQUISITION__QUALIFICATION);
 		createEAttribute(jobRequisitionEClass, JOB_REQUISITION__REQUIRED_ON_DATE);
 		createEReference(jobRequisitionEClass, JOB_REQUISITION__SKILL_TYPE_ID);
-		createEReference(jobRequisitionEClass, JOB_REQUISITION__EXAM_TYPE_ENUM_ID);
-		createEReference(jobRequisitionEClass, JOB_REQUISITION__JOB_POSTING_TYPE_ENUM_ID);
 	}
 
 	/**
@@ -1021,8 +1017,8 @@ public class RecruitmentPackageImpl extends EPackageImpl implements RecruitmentP
 
 		// Obtain other dependent packages
 		BizPackage theBizPackage = (BizPackage)EPackage.Registry.INSTANCE.getEPackage(BizPackage.eNS_URI);
-		PartyPackage thePartyPackage = (PartyPackage)EPackage.Registry.INSTANCE.getEPackage(PartyPackage.eNS_URI);
 		EnumPackage theEnumPackage = (EnumPackage)EPackage.Registry.INSTANCE.getEPackage(EnumPackage.eNS_URI);
+		PartyPackage thePartyPackage = (PartyPackage)EPackage.Registry.INSTANCE.getEPackage(PartyPackage.eNS_URI);
 		AbilityPackage theAbilityPackage = (AbilityPackage)EPackage.Registry.INSTANCE.getEPackage(AbilityPackage.eNS_URI);
 
 		// Create type parameters
@@ -1043,18 +1039,18 @@ public class RecruitmentPackageImpl extends EPackageImpl implements RecruitmentP
 		// Initialize classes and features; add operations and parameters
 		initEClass(jobInterviewEClass, JobInterview.class, "JobInterview", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getJobInterview_JobInterviewId(), ecorePackage.getEString(), "jobInterviewId", null, 1, 1, JobInterview.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getJobInterview_GradeSecuredEnumId(), theEnumPackage.getEnumeration(), null, "gradeSecuredEnumId", null, 0, 1, JobInterview.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getJobInterview_GradeSecuredEnumId().getEKeys().add(theEnumPackage.getEnumeration_EnumId());
 		initEAttribute(getJobInterview_JobInterviewDate(), ecorePackage.getEDate(), "jobInterviewDate", null, 0, 1, JobInterview.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getJobInterview_JobInterviewResult(), ecorePackage.getEString(), "jobInterviewResult", null, 0, 1, JobInterview.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getJobInterview_JobInterviewTypeId(), this.getJobInterviewType(), null, "jobInterviewTypeId", null, 0, 1, JobInterview.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getJobInterview_JobInterviewTypeId().getEKeys().add(this.getJobInterviewType_JobInterviewTypeId());
 		initEReference(getJobInterview_JobIntervieweePartyId(), thePartyPackage.getParty(), null, "jobIntervieweePartyId", null, 0, 1, JobInterview.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getJobInterview_JobIntervieweePartyId().getEKeys().add(thePartyPackage.getParty_PartyId());
 		initEReference(getJobInterview_JobInterviewerPartyId(), thePartyPackage.getParty(), null, "jobInterviewerPartyId", null, 0, 1, JobInterview.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getJobInterview_JobInterviewerPartyId().getEKeys().add(thePartyPackage.getParty_PartyId());
-		initEReference(getJobInterview_JobInterviewTypeId(), this.getJobInterviewType(), null, "jobInterviewTypeId", null, 0, 1, JobInterview.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		getJobInterview_JobInterviewTypeId().getEKeys().add(this.getJobInterviewType_JobInterviewTypeId());
 		initEReference(getJobInterview_JobRequisitionId(), this.getJobRequisition(), null, "jobRequisitionId", null, 0, 1, JobInterview.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getJobInterview_JobRequisitionId().getEKeys().add(this.getJobRequisition_JobRequisitionId());
-		initEReference(getJobInterview_GradeSecuredEnumId(), theEnumPackage.getEnumeration(), null, "gradeSecuredEnumId", null, 0, 1, JobInterview.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		getJobInterview_GradeSecuredEnumId().getEKeys().add(theEnumPackage.getEnumeration_EnumId());
 
 		initEClass(jobInterviewTypeEClass, JobInterviewType.class, "JobInterviewType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getJobInterviewType_JobInterviewTypeId(), ecorePackage.getEString(), "jobInterviewTypeId", null, 1, 1, JobInterviewType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1066,32 +1062,32 @@ public class RecruitmentPackageImpl extends EPackageImpl implements RecruitmentP
 		initEAttribute(getJobRequisition_JobRequisitionId(), ecorePackage.getEString(), "jobRequisitionId", null, 1, 1, JobRequisition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getJobRequisition_Age(), ecorePackage.getELong(), "age", null, 0, 1, JobRequisition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getJobRequisition_DurationMonths(), ecorePackage.getELong(), "durationMonths", null, 0, 1, JobRequisition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getJobRequisition_ExamTypeEnumId(), theEnumPackage.getEnumeration(), null, "examTypeEnumId", null, 0, 1, JobRequisition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getJobRequisition_ExamTypeEnumId().getEKeys().add(theEnumPackage.getEnumeration_EnumId());
 		initEAttribute(getJobRequisition_ExperienceMonths(), ecorePackage.getELong(), "experienceMonths", null, 0, 1, JobRequisition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getJobRequisition_ExperienceYears(), ecorePackage.getELong(), "experienceYears", null, 0, 1, JobRequisition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getJobRequisition_Gender(), ecorePackage.getEChar(), "gender", null, 0, 1, JobRequisition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getJobRequisition_JobLocation(), ecorePackage.getEString(), "jobLocation", null, 0, 1, JobRequisition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getJobRequisition_JobPostingTypeEnumId(), theEnumPackage.getEnumeration(), null, "jobPostingTypeEnumId", null, 0, 1, JobRequisition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getJobRequisition_JobPostingTypeEnumId().getEKeys().add(theEnumPackage.getEnumeration_EnumId());
 		initEAttribute(getJobRequisition_JobRequisitionDate(), ecorePackage.getEDate(), "jobRequisitionDate", null, 0, 1, JobRequisition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getJobRequisition_NoOfResources(), ecorePackage.getELong(), "noOfResources", null, 0, 1, JobRequisition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getJobRequisition_Qualification(), ecorePackage.getEString(), "qualification", null, 0, 1, JobRequisition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getJobRequisition_RequiredOnDate(), ecorePackage.getEDate(), "requiredOnDate", null, 0, 1, JobRequisition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getJobRequisition_SkillTypeId(), theAbilityPackage.getSkillType(), null, "skillTypeId", null, 0, 1, JobRequisition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getJobRequisition_SkillTypeId().getEKeys().add(theAbilityPackage.getSkillType_SkillTypeId());
-		initEReference(getJobRequisition_ExamTypeEnumId(), theEnumPackage.getEnumeration(), null, "examTypeEnumId", null, 0, 1, JobRequisition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		getJobRequisition_ExamTypeEnumId().getEKeys().add(theEnumPackage.getEnumeration_EnumId());
-		initEReference(getJobRequisition_JobPostingTypeEnumId(), theEnumPackage.getEnumeration(), null, "jobPostingTypeEnumId", null, 0, 1, JobRequisition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		getJobRequisition_JobPostingTypeEnumId().getEKeys().add(theEnumPackage.getEnumeration_EnumId());
 
 		addEOperation(jobRequisitionEClass, ecorePackage.getEString(), "employmentApps", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		addEOperation(jobRequisitionEClass, ecorePackage.getEString(), "jobInterviews", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		// Create annotations
+		// mimo-ent-frame
+		createMimoentframeAnnotations();
 		// mimo-ent-format
 		createMimoentformatAnnotations();
 		// mimo-ent-slot
 		createMimoentslotAnnotations();
-		// mimo-ent-frame
-		createMimoentframeAnnotations();
 		// mimo-ent-domain
 		createMimoentdomainAnnotations();
 	}
@@ -1112,6 +1108,13 @@ public class RecruitmentPackageImpl extends EPackageImpl implements RecruitmentP
 			   "length", "20"
 		   });
 		addAnnotation
+		  (getJobInterview_GradeSecuredEnumId(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
 		  (getJobInterview_JobInterviewDate(),
 		   source,
 		   new String[] {
@@ -1119,6 +1122,34 @@ public class RecruitmentPackageImpl extends EPackageImpl implements RecruitmentP
 		   });
 		addAnnotation
 		  (getJobInterview_JobInterviewResult(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (getJobInterview_JobInterviewTypeId(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (getJobInterview_JobIntervieweePartyId(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (getJobInterview_JobInterviewerPartyId(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (getJobInterview_JobRequisitionId(),
 		   source,
 		   new String[] {
 			   "type", "id",
@@ -1183,6 +1214,13 @@ public class RecruitmentPackageImpl extends EPackageImpl implements RecruitmentP
 			   "scale", "0"
 		   });
 		addAnnotation
+		  (getJobRequisition_ExamTypeEnumId(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
 		  (getJobRequisition_ExperienceMonths(),
 		   source,
 		   new String[] {
@@ -1207,6 +1245,13 @@ public class RecruitmentPackageImpl extends EPackageImpl implements RecruitmentP
 		   });
 		addAnnotation
 		  (getJobRequisition_JobLocation(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (getJobRequisition_JobPostingTypeEnumId(),
 		   source,
 		   new String[] {
 			   "type", "id",
@@ -1239,6 +1284,13 @@ public class RecruitmentPackageImpl extends EPackageImpl implements RecruitmentP
 		   new String[] {
 			   "type", "date"
 		   });
+		addAnnotation
+		  (getJobRequisition_SkillTypeId(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
 	}
 
 	/**
@@ -1250,22 +1302,10 @@ public class RecruitmentPackageImpl extends EPackageImpl implements RecruitmentP
 	protected void createMimoentslotAnnotations() {
 		String source = "mimo-ent-slot";
 		addAnnotation
-		  (getJobInterview_JobInterviewId(),
-		   source,
-		   new String[] {
-			   "key", "true"
-		   });
-		addAnnotation
 		  (jobInterviewTypeEClass.getEOperations().get(0),
 		   source,
 		   new String[] {
 			   "derived", "true"
-		   });
-		addAnnotation
-		  (getJobInterviewType_JobInterviewTypeId(),
-		   source,
-		   new String[] {
-			   "key", "true"
 		   });
 		addAnnotation
 		  (jobRequisitionEClass.getEOperations().get(0),
@@ -1278,12 +1318,6 @@ public class RecruitmentPackageImpl extends EPackageImpl implements RecruitmentP
 		   source,
 		   new String[] {
 			   "derived", "true"
-		   });
-		addAnnotation
-		  (getJobRequisition_JobRequisitionId(),
-		   source,
-		   new String[] {
-			   "key", "true"
 		   });
 	}
 
@@ -1301,9 +1335,6 @@ public class RecruitmentPackageImpl extends EPackageImpl implements RecruitmentP
 		   new String[] {
 			   "frame", "JobInterview",
 			   "route", "jobInterviewTypeId"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
 		  (jobRequisitionEClass.getEOperations().get(0),
@@ -1311,9 +1342,6 @@ public class RecruitmentPackageImpl extends EPackageImpl implements RecruitmentP
 		   new String[] {
 			   "frame", "EmploymentApp",
 			   "route", "jobRequisitionId"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
 		  (jobRequisitionEClass.getEOperations().get(1),
@@ -1321,9 +1349,6 @@ public class RecruitmentPackageImpl extends EPackageImpl implements RecruitmentP
 		   new String[] {
 			   "frame", "JobInterview",
 			   "route", "jobRequisitionId"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 	}
 
@@ -1336,10 +1361,23 @@ public class RecruitmentPackageImpl extends EPackageImpl implements RecruitmentP
 	protected void createMimoentframeAnnotations() {
 		String source = "mimo-ent-frame";
 		addAnnotation
+		  (jobInterviewEClass,
+		   source,
+		   new String[] {
+			   "title", "Entity for storing data about Interviews conducted"
+		   });
+		addAnnotation
 		  (jobInterviewTypeEClass,
 		   source,
 		   new String[] {
+			   "title", "Entity for storing data about Interview Types",
 			   "formula", "description"
+		   });
+		addAnnotation
+		  (jobRequisitionEClass,
+		   source,
+		   new String[] {
+			   "title", "Entity for storing data about recruitment"
 		   });
 	}
 

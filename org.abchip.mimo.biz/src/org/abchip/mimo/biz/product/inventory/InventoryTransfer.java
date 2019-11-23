@@ -26,21 +26,21 @@ import org.abchip.mimo.biz.shipment.issuance.ItemIssuance;
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.product.inventory.InventoryTransfer#getInventoryTransferId <em>Inventory Transfer Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.inventory.InventoryTransfer#getComments <em>Comments</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.inventory.InventoryTransfer#getContainerId <em>Container Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.inventory.InventoryTransfer#getContainerIdTo <em>Container Id To</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.inventory.InventoryTransfer#getFacilityId <em>Facility Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.inventory.InventoryTransfer#getFacilityIdTo <em>Facility Id To</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.inventory.InventoryTransfer#getInventoryItemId <em>Inventory Item Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.inventory.InventoryTransfer#getItemIssuanceId <em>Item Issuance Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.inventory.InventoryTransfer#getLocationSeqId <em>Location Seq Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.inventory.InventoryTransfer#getLocationSeqIdTo <em>Location Seq Id To</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.inventory.InventoryTransfer#getReceiveDate <em>Receive Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.inventory.InventoryTransfer#getSendDate <em>Send Date</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.inventory.InventoryTransfer#getInventoryItemId <em>Inventory Item Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.inventory.InventoryTransfer#getStatusId <em>Status Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.inventory.InventoryTransfer#getFacilityId <em>Facility Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.inventory.InventoryTransfer#getContainerId <em>Container Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.inventory.InventoryTransfer#getFacilityIdTo <em>Facility Id To</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.inventory.InventoryTransfer#getContainerIdTo <em>Container Id To</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.inventory.InventoryTransfer#getItemIssuanceId <em>Item Issuance Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.product.inventory.InventoryPackage#getInventoryTransfer()
- * @model
+ * @model annotation="mimo-ent-frame dictionary='ProductEntityLabels'"
  * @generated
  */
 public interface InventoryTransfer extends BizEntity {
@@ -83,7 +83,6 @@ public interface InventoryTransfer extends BizEntity {
 	 * @see org.abchip.mimo.biz.product.inventory.InventoryPackage#getInventoryTransfer_InventoryTransferId()
 	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getInventoryTransferId();
@@ -110,6 +109,7 @@ public interface InventoryTransfer extends BizEntity {
 	 * @see #setItemIssuanceId(ItemIssuance)
 	 * @see org.abchip.mimo.biz.product.inventory.InventoryPackage#getInventoryTransfer_ItemIssuanceId()
 	 * @model keys="itemIssuanceId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ItemIssuance getItemIssuanceId();
@@ -240,6 +240,7 @@ public interface InventoryTransfer extends BizEntity {
 	 * @see #setStatusId(StatusItem)
 	 * @see org.abchip.mimo.biz.product.inventory.InventoryPackage#getInventoryTransfer_StatusId()
 	 * @model keys="statusId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	StatusItem getStatusId();
@@ -266,6 +267,7 @@ public interface InventoryTransfer extends BizEntity {
 	 * @see #setInventoryItemId(InventoryItem)
 	 * @see org.abchip.mimo.biz.product.inventory.InventoryPackage#getInventoryTransfer_InventoryItemId()
 	 * @model keys="inventoryItemId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	InventoryItem getInventoryItemId();
@@ -292,6 +294,7 @@ public interface InventoryTransfer extends BizEntity {
 	 * @see #setFacilityId(Facility)
 	 * @see org.abchip.mimo.biz.product.inventory.InventoryPackage#getInventoryTransfer_FacilityId()
 	 * @model keys="facilityId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Facility getFacilityId();
@@ -318,6 +321,7 @@ public interface InventoryTransfer extends BizEntity {
 	 * @see #setContainerId(Container)
 	 * @see org.abchip.mimo.biz.product.inventory.InventoryPackage#getInventoryTransfer_ContainerId()
 	 * @model keys="containerId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Container getContainerId();
@@ -344,6 +348,7 @@ public interface InventoryTransfer extends BizEntity {
 	 * @see #setFacilityIdTo(Facility)
 	 * @see org.abchip.mimo.biz.product.inventory.InventoryPackage#getInventoryTransfer_FacilityIdTo()
 	 * @model keys="facilityId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Facility getFacilityIdTo();
@@ -370,6 +375,7 @@ public interface InventoryTransfer extends BizEntity {
 	 * @see #setContainerIdTo(Container)
 	 * @see org.abchip.mimo.biz.product.inventory.InventoryPackage#getInventoryTransfer_ContainerIdTo()
 	 * @model keys="containerId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Container getContainerIdTo();

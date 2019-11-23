@@ -26,14 +26,14 @@ import org.abchip.mimo.biz.BizEntity;
  *   <li>{@link org.abchip.mimo.biz.product.product.ProductSearchResult#isIsAscending <em>Is Ascending</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.ProductSearchResult#getNumResults <em>Num Results</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.ProductSearchResult#getOrderByName <em>Order By Name</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.product.ProductSearchResult#getProductSearchConstraints <em>Product Search Constraints</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.ProductSearchResult#getSearchDate <em>Search Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.ProductSearchResult#getSecondsTotal <em>Seconds Total</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.ProductSearchResult#getVisitId <em>Visit Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.product.ProductSearchResult#getProductSearchConstraints <em>Product Search Constraints</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.product.product.ProductPackage#getProductSearchResult()
- * @model
+ * @model annotation="mimo-ent-frame dictionary='ProductEntityLabels'"
  * @generated
  */
 public interface ProductSearchResult extends BizEntity {
@@ -178,8 +178,7 @@ public interface ProductSearchResult extends BizEntity {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Product Search Constraints</em>' attribute list.
 	 * @see org.abchip.mimo.biz.product.product.ProductPackage#getProductSearchResult_ProductSearchConstraints()
-	 * @model required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ProductSearchConstraint'"
 	 * @generated
@@ -199,7 +198,6 @@ public interface ProductSearchResult extends BizEntity {
 	 * @see org.abchip.mimo.biz.product.product.ProductPackage#getProductSearchResult_ProductSearchResultId()
 	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getProductSearchResultId();

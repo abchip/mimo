@@ -25,7 +25,7 @@ import org.abchip.mimo.biz.BizEntityType;
  * </ul>
  *
  * @see org.abchip.mimo.biz.entity.test.TestPackage#getTestingType()
- * @model annotation="mimo-ent-frame formula='description'"
+ * @model annotation="mimo-ent-frame title='Testing Entity Type' formula='description'"
  * @generated
  */
 public interface TestingType extends BizEntityType<Testing> {
@@ -78,7 +78,6 @@ public interface TestingType extends BizEntityType<Testing> {
 	 * @see org.abchip.mimo.biz.entity.test.TestPackage#getTestingType_TestingTypeId()
 	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getTestingTypeId();

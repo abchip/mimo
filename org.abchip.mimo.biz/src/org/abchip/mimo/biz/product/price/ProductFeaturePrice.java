@@ -24,20 +24,20 @@ import org.abchip.mimo.biz.security.login.UserLogin;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.product.price.ProductFeaturePrice#getProductFeatureId <em>Product Feature Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.price.ProductFeaturePrice#getProductPriceTypeId <em>Product Price Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.price.ProductFeaturePrice#getCurrencyUomId <em>Currency Uom Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.price.ProductFeaturePrice#getFromDate <em>From Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.price.ProductFeaturePrice#getProductFeatureId <em>Product Feature Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.price.ProductFeaturePrice#getCreatedByUserLogin <em>Created By User Login</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.price.ProductFeaturePrice#getCreatedDate <em>Created Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.price.ProductFeaturePrice#getLastModifiedByUserLogin <em>Last Modified By User Login</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.price.ProductFeaturePrice#getLastModifiedDate <em>Last Modified Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.price.ProductFeaturePrice#getPrice <em>Price</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.price.ProductFeaturePrice#getThruDate <em>Thru Date</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.price.ProductFeaturePrice#getProductPriceTypeId <em>Product Price Type Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.price.ProductFeaturePrice#getCurrencyUomId <em>Currency Uom Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.price.ProductFeaturePrice#getCreatedByUserLogin <em>Created By User Login</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.price.ProductFeaturePrice#getLastModifiedByUserLogin <em>Last Modified By User Login</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.product.price.PricePackage#getProductFeaturePrice()
- * @model
+ * @model annotation="mimo-ent-frame dictionary='ProductEntityLabels'"
  * @generated
  */
 public interface ProductFeaturePrice extends BizEntity {
@@ -53,6 +53,7 @@ public interface ProductFeaturePrice extends BizEntity {
 	 * @see #setCreatedByUserLogin(UserLogin)
 	 * @see org.abchip.mimo.biz.product.price.PricePackage#getProductFeaturePrice_CreatedByUserLogin()
 	 * @model keys="userLoginId"
+	 *        annotation="mimo-ent-format type='id-vlong' length='255'"
 	 * @generated
 	 */
 	UserLogin getCreatedByUserLogin();
@@ -104,7 +105,9 @@ public interface ProductFeaturePrice extends BizEntity {
 	 * @return the value of the '<em>Currency Uom Id</em>' reference.
 	 * @see #setCurrencyUomId(Uom)
 	 * @see org.abchip.mimo.biz.product.price.PricePackage#getProductFeaturePrice_CurrencyUomId()
-	 * @model keys="uomId"
+	 * @model keys="uomId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Uom getCurrencyUomId();
@@ -131,8 +134,8 @@ public interface ProductFeaturePrice extends BizEntity {
 	 * @see #setFromDate(Date)
 	 * @see org.abchip.mimo.biz.product.price.PricePackage#getProductFeaturePrice_FromDate()
 	 * @model required="true"
-	 *        annotation="mimo-ent-format type='date-time'"
 	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getFromDate();
@@ -159,6 +162,7 @@ public interface ProductFeaturePrice extends BizEntity {
 	 * @see #setLastModifiedByUserLogin(UserLogin)
 	 * @see org.abchip.mimo.biz.product.price.PricePackage#getProductFeaturePrice_LastModifiedByUserLogin()
 	 * @model keys="userLoginId"
+	 *        annotation="mimo-ent-format type='id-vlong' length='255'"
 	 * @generated
 	 */
 	UserLogin getLastModifiedByUserLogin();
@@ -237,8 +241,8 @@ public interface ProductFeaturePrice extends BizEntity {
 	 * @see #setProductFeatureId(String)
 	 * @see org.abchip.mimo.biz.product.price.PricePackage#getProductFeaturePrice_ProductFeatureId()
 	 * @model required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	String getProductFeatureId();
@@ -290,7 +294,9 @@ public interface ProductFeaturePrice extends BizEntity {
 	 * @return the value of the '<em>Product Price Type Id</em>' reference.
 	 * @see #setProductPriceTypeId(ProductPriceType)
 	 * @see org.abchip.mimo.biz.product.price.PricePackage#getProductFeaturePrice_ProductPriceTypeId()
-	 * @model keys="productPriceTypeId"
+	 * @model keys="productPriceTypeId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ProductPriceType getProductPriceTypeId();

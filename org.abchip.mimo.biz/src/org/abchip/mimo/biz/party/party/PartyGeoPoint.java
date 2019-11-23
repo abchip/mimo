@@ -21,14 +21,14 @@ import org.abchip.mimo.biz.common.geo.GeoPoint;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.party.party.PartyGeoPoint#getFromDate <em>From Date</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.party.party.PartyGeoPoint#getThruDate <em>Thru Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.party.PartyGeoPoint#getPartyId <em>Party Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.party.PartyGeoPoint#getGeoPointId <em>Geo Point Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.party.party.PartyGeoPoint#getFromDate <em>From Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.party.party.PartyGeoPoint#getThruDate <em>Thru Date</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.party.party.PartyPackage#getPartyGeoPoint()
- * @model
+ * @model annotation="mimo-ent-frame title='Party Geo Location with history'"
  * @generated
  */
 public interface PartyGeoPoint extends BizEntity {
@@ -44,8 +44,8 @@ public interface PartyGeoPoint extends BizEntity {
 	 * @see #setFromDate(Date)
 	 * @see org.abchip.mimo.biz.party.party.PartyPackage#getPartyGeoPoint_FromDate()
 	 * @model required="true"
-	 *        annotation="mimo-ent-format type='date-time'"
 	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getFromDate();
@@ -71,7 +71,9 @@ public interface PartyGeoPoint extends BizEntity {
 	 * @return the value of the '<em>Geo Point Id</em>' reference.
 	 * @see #setGeoPointId(GeoPoint)
 	 * @see org.abchip.mimo.biz.party.party.PartyPackage#getPartyGeoPoint_GeoPointId()
-	 * @model keys="geoPointId"
+	 * @model keys="geoPointId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	GeoPoint getGeoPointId();
@@ -123,7 +125,9 @@ public interface PartyGeoPoint extends BizEntity {
 	 * @return the value of the '<em>Party Id</em>' reference.
 	 * @see #setPartyId(Party)
 	 * @see org.abchip.mimo.biz.party.party.PartyPackage#getPartyGeoPoint_PartyId()
-	 * @model keys="partyId"
+	 * @model keys="partyId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Party getPartyId();

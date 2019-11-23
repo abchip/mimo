@@ -39,7 +39,6 @@ public interface BizEntityNote extends BizEntity {
 	 * @see #setNoteId(String)
 	 * @see org.abchip.mimo.biz.BizPackage#getBizEntityNote_NoteId()
 	 * @model required="true"
-	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getNoteId();

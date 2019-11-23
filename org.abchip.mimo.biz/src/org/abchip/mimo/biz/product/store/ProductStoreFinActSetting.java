@@ -23,6 +23,8 @@ import org.abchip.mimo.biz.content.survey.Survey;
  * The following features are supported:
  * </p>
  * <ul>
+ *   <li>{@link org.abchip.mimo.biz.product.store.ProductStoreFinActSetting#getProductStoreId <em>Product Store Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.store.ProductStoreFinActSetting#getFinAccountTypeId <em>Fin Account Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.store.ProductStoreFinActSetting#getAccountCodeLength <em>Account Code Length</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.store.ProductStoreFinActSetting#getAccountValidDays <em>Account Valid Days</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.store.ProductStoreFinActSetting#isAllowAuthToNegative <em>Allow Auth To Negative</em>}</li>
@@ -31,17 +33,15 @@ import org.abchip.mimo.biz.content.survey.Survey;
  *   <li>{@link org.abchip.mimo.biz.product.store.ProductStoreFinActSetting#getPinCodeLength <em>Pin Code Length</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.store.ProductStoreFinActSetting#getPurchSurveyCopyMe <em>Purch Survey Copy Me</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.store.ProductStoreFinActSetting#getPurchSurveySendTo <em>Purch Survey Send To</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.store.ProductStoreFinActSetting#getPurchaseSurveyId <em>Purchase Survey Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.store.ProductStoreFinActSetting#getReplenishMethodEnumId <em>Replenish Method Enum Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.store.ProductStoreFinActSetting#getReplenishThreshold <em>Replenish Threshold</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.store.ProductStoreFinActSetting#isRequirePinCode <em>Require Pin Code</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.store.ProductStoreFinActSetting#isValidateGCFinAcct <em>Validate GC Fin Acct</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.store.ProductStoreFinActSetting#getProductStoreId <em>Product Store Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.store.ProductStoreFinActSetting#getFinAccountTypeId <em>Fin Account Type Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.store.ProductStoreFinActSetting#getPurchaseSurveyId <em>Purchase Survey Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.store.ProductStoreFinActSetting#getReplenishMethodEnumId <em>Replenish Method Enum Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.product.store.StorePackage#getProductStoreFinActSetting()
- * @model
+ * @model annotation="mimo-ent-frame title='Allows financial account, such as gift certificate or calling cards, to be configured at store level' dictionary='ProductEntityLabels'"
  * @generated
  */
 public interface ProductStoreFinActSetting extends BizEntity {
@@ -56,7 +56,8 @@ public interface ProductStoreFinActSetting extends BizEntity {
 	 * @return the value of the '<em>Account Code Length</em>' attribute.
 	 * @see #setAccountCodeLength(long)
 	 * @see org.abchip.mimo.biz.product.store.StorePackage#getProductStoreFinActSetting_AccountCodeLength()
-	 * @model annotation="mimo-ent-format type='numeric' precision='20' scale='0'"
+	 * @model annotation="mimo-ent-slot help='length of auto-generated account code'"
+	 *        annotation="mimo-ent-format type='numeric' precision='20' scale='0'"
 	 * @generated
 	 */
 	long getAccountCodeLength();
@@ -82,7 +83,8 @@ public interface ProductStoreFinActSetting extends BizEntity {
 	 * @return the value of the '<em>Account Valid Days</em>' attribute.
 	 * @see #setAccountValidDays(long)
 	 * @see org.abchip.mimo.biz.product.store.StorePackage#getProductStoreFinActSetting_AccountValidDays()
-	 * @model annotation="mimo-ent-format type='numeric' precision='20' scale='0'"
+	 * @model annotation="mimo-ent-slot help='number of days an account of this type would be valid for'"
+	 *        annotation="mimo-ent-format type='numeric' precision='20' scale='0'"
 	 * @generated
 	 */
 	long getAccountValidDays();
@@ -134,7 +136,8 @@ public interface ProductStoreFinActSetting extends BizEntity {
 	 * @return the value of the '<em>Auth Valid Days</em>' attribute.
 	 * @see #setAuthValidDays(long)
 	 * @see org.abchip.mimo.biz.product.store.StorePackage#getProductStoreFinActSetting_AuthValidDays()
-	 * @model annotation="mimo-ent-format type='numeric' precision='20' scale='0'"
+	 * @model annotation="mimo-ent-slot help='number of days an authorization of this type would be valid for'"
+	 *        annotation="mimo-ent-format type='numeric' precision='20' scale='0'"
 	 * @generated
 	 */
 	long getAuthValidDays();
@@ -160,7 +163,9 @@ public interface ProductStoreFinActSetting extends BizEntity {
 	 * @return the value of the '<em>Fin Account Type Id</em>' reference.
 	 * @see #setFinAccountTypeId(FinAccountType)
 	 * @see org.abchip.mimo.biz.product.store.StorePackage#getProductStoreFinActSetting_FinAccountTypeId()
-	 * @model keys="finAccountTypeId"
+	 * @model keys="finAccountTypeId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	FinAccountType getFinAccountTypeId();
@@ -212,7 +217,8 @@ public interface ProductStoreFinActSetting extends BizEntity {
 	 * @return the value of the '<em>Pin Code Length</em>' attribute.
 	 * @see #setPinCodeLength(long)
 	 * @see org.abchip.mimo.biz.product.store.StorePackage#getProductStoreFinActSetting_PinCodeLength()
-	 * @model annotation="mimo-ent-format type='numeric' precision='20' scale='0'"
+	 * @model annotation="mimo-ent-slot help='length of auto-generated pin code, if it is required'"
+	 *        annotation="mimo-ent-format type='numeric' precision='20' scale='0'"
 	 * @generated
 	 */
 	long getPinCodeLength();
@@ -238,7 +244,8 @@ public interface ProductStoreFinActSetting extends BizEntity {
 	 * @return the value of the '<em>Purch Survey Copy Me</em>' attribute.
 	 * @see #setPurchSurveyCopyMe(String)
 	 * @see org.abchip.mimo.biz.product.store.StorePackage#getProductStoreFinActSetting_PurchSurveyCopyMe()
-	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 * @model annotation="mimo-ent-slot help='Whether the BCC on ProductStoreEmailSetting should be copied for email notifications'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	String getPurchSurveyCopyMe();
@@ -264,7 +271,8 @@ public interface ProductStoreFinActSetting extends BizEntity {
 	 * @return the value of the '<em>Purch Survey Send To</em>' attribute.
 	 * @see #setPurchSurveySendTo(String)
 	 * @see org.abchip.mimo.biz.product.store.StorePackage#getProductStoreFinActSetting_PurchSurveySendTo()
-	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 * @model annotation="mimo-ent-slot help='Field name on the purchase survey with the send to email address'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	String getPurchSurveySendTo();
@@ -291,6 +299,8 @@ public interface ProductStoreFinActSetting extends BizEntity {
 	 * @see #setPurchaseSurveyId(Survey)
 	 * @see org.abchip.mimo.biz.product.store.StorePackage#getProductStoreFinActSetting_PurchaseSurveyId()
 	 * @model keys="surveyId"
+	 *        annotation="mimo-ent-slot help='This survey is typically used to collect information such as name of buyer, recipient, email, message, etc. and is quite flexible'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Survey getPurchaseSurveyId();
@@ -317,6 +327,8 @@ public interface ProductStoreFinActSetting extends BizEntity {
 	 * @see #setReplenishMethodEnumId(Enumeration)
 	 * @see org.abchip.mimo.biz.product.store.StorePackage#getProductStoreFinActSetting_ReplenishMethodEnumId()
 	 * @model keys="enumId"
+	 *        annotation="mimo-ent-slot help='Replenish Method for Replenish Account. Can be FARP_TOP_OFF or FARP_REPLENISH_LEVEL. Default FARP_TOP_OFF.'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Enumeration getReplenishMethodEnumId();
@@ -394,7 +406,8 @@ public interface ProductStoreFinActSetting extends BizEntity {
 	 * @return the value of the '<em>Validate GC Fin Acct</em>' attribute.
 	 * @see #setValidateGCFinAcct(boolean)
 	 * @see org.abchip.mimo.biz.product.store.StorePackage#getProductStoreFinActSetting_ValidateGCFinAcct()
-	 * @model annotation="mimo-ent-format type='indicator' length='1'"
+	 * @model annotation="mimo-ent-slot help='determines whether the store should validate gift card numbers against the gift certificate codes stored in FinAccount.\n              Set to N if using external gift card provider.'"
+	 *        annotation="mimo-ent-format type='indicator' length='1'"
 	 * @generated
 	 */
 	boolean isValidateGCFinAcct();
@@ -420,7 +433,9 @@ public interface ProductStoreFinActSetting extends BizEntity {
 	 * @return the value of the '<em>Product Store Id</em>' reference.
 	 * @see #setProductStoreId(ProductStore)
 	 * @see org.abchip.mimo.biz.product.store.StorePackage#getProductStoreFinActSetting_ProductStoreId()
-	 * @model keys="productStoreId"
+	 * @model keys="productStoreId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ProductStore getProductStoreId();

@@ -199,9 +199,6 @@ import org.abchip.mimo.biz.workeffort.timesheet.TimesheetPackage;
 import org.abchip.mimo.biz.workeffort.timesheet.impl.TimesheetPackageImpl;
 import org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage;
 import org.abchip.mimo.biz.workeffort.workeffort.impl.WorkeffortPackageImpl;
-import org.abchip.mimo.entity.EntityPackage;
-import org.eclipse.emf.common.util.URI;
-
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EGenericType;
@@ -898,16 +895,6 @@ public class TestPackageImpl extends EPackageImpl implements TestPackage {
 	 */
 	@Override
 	public EAttribute getTesting_TestingName() {
-		return (EAttribute)testingEClass.getEStructuralFeatures().get(4);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EAttribute getTesting_TestingSize() {
 		return (EAttribute)testingEClass.getEStructuralFeatures().get(5);
 	}
 
@@ -917,8 +904,18 @@ public class TestPackageImpl extends EPackageImpl implements TestPackage {
 	 * @generated
 	 */
 	@Override
+	public EAttribute getTesting_TestingSize() {
+		return (EAttribute)testingEClass.getEStructuralFeatures().get(6);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EReference getTesting_TestingTypeId() {
-		return (EReference)testingEClass.getEStructuralFeatures().get(6);
+		return (EReference)testingEClass.getEStructuralFeatures().get(7);
 	}
 
 	/**
@@ -928,7 +925,7 @@ public class TestPackageImpl extends EPackageImpl implements TestPackage {
 	 */
 	@Override
 	public EAttribute getTesting_TestingItems() {
-		return (EAttribute)testingEClass.getEStructuralFeatures().get(7);
+		return (EAttribute)testingEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -1008,7 +1005,7 @@ public class TestPackageImpl extends EPackageImpl implements TestPackage {
 	 */
 	@Override
 	public EReference getTestingItem_TestingId() {
-		return (EReference)testingItemEClass.getEStructuralFeatures().get(2);
+		return (EReference)testingItemEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -1018,7 +1015,7 @@ public class TestPackageImpl extends EPackageImpl implements TestPackage {
 	 */
 	@Override
 	public EAttribute getTestingItem_TestingSeqId() {
-		return (EAttribute)testingItemEClass.getEStructuralFeatures().get(0);
+		return (EAttribute)testingItemEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -1028,7 +1025,7 @@ public class TestPackageImpl extends EPackageImpl implements TestPackage {
 	 */
 	@Override
 	public EAttribute getTestingItem_TestingHistory() {
-		return (EAttribute)testingItemEClass.getEStructuralFeatures().get(1);
+		return (EAttribute)testingItemEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -1088,7 +1085,7 @@ public class TestPackageImpl extends EPackageImpl implements TestPackage {
 	 */
 	@Override
 	public EReference getTestingNodeMember_TestingNodeId() {
-		return (EReference)testingNodeMemberEClass.getEStructuralFeatures().get(5);
+		return (EReference)testingNodeMemberEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -1098,7 +1095,7 @@ public class TestPackageImpl extends EPackageImpl implements TestPackage {
 	 */
 	@Override
 	public EReference getTestingNodeMember_TestingId() {
-		return (EReference)testingNodeMemberEClass.getEStructuralFeatures().get(4);
+		return (EReference)testingNodeMemberEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -1108,26 +1105,6 @@ public class TestPackageImpl extends EPackageImpl implements TestPackage {
 	 */
 	@Override
 	public EAttribute getTestingNodeMember_FromDate() {
-		return (EAttribute)testingNodeMemberEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EAttribute getTestingNodeMember_ExtendFromDate() {
-		return (EAttribute)testingNodeMemberEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EAttribute getTestingNodeMember_ExtendThruDate() {
 		return (EAttribute)testingNodeMemberEClass.getEStructuralFeatures().get(2);
 	}
 
@@ -1137,8 +1114,28 @@ public class TestPackageImpl extends EPackageImpl implements TestPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getTestingNodeMember_ThruDate() {
+	public EAttribute getTestingNodeMember_ExtendFromDate() {
 		return (EAttribute)testingNodeMemberEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getTestingNodeMember_ExtendThruDate() {
+		return (EAttribute)testingNodeMemberEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getTestingNodeMember_ThruDate() {
+		return (EAttribute)testingNodeMemberEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
@@ -1198,7 +1195,7 @@ public class TestPackageImpl extends EPackageImpl implements TestPackage {
 	 */
 	@Override
 	public EReference getTestingStatus_ChangeByUserLoginId() {
-		return (EReference)testingStatusEClass.getEStructuralFeatures().get(4);
+		return (EReference)testingStatusEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -1208,7 +1205,7 @@ public class TestPackageImpl extends EPackageImpl implements TestPackage {
 	 */
 	@Override
 	public EAttribute getTestingStatus_StatusDate() {
-		return (EAttribute)testingStatusEClass.getEStructuralFeatures().get(1);
+		return (EAttribute)testingStatusEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -1228,7 +1225,7 @@ public class TestPackageImpl extends EPackageImpl implements TestPackage {
 	 */
 	@Override
 	public EAttribute getTestingStatus_TestingId() {
-		return (EAttribute)testingStatusEClass.getEStructuralFeatures().get(2);
+		return (EAttribute)testingStatusEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -1338,10 +1335,10 @@ public class TestPackageImpl extends EPackageImpl implements TestPackage {
 		createEAttribute(testingEClass, TESTING__COMMENTS);
 		createEAttribute(testingEClass, TESTING__DESCRIPTION);
 		createEAttribute(testingEClass, TESTING__TESTING_DATE);
+		createEAttribute(testingEClass, TESTING__TESTING_ITEMS);
 		createEAttribute(testingEClass, TESTING__TESTING_NAME);
 		createEAttribute(testingEClass, TESTING__TESTING_SIZE);
 		createEReference(testingEClass, TESTING__TESTING_TYPE_ID);
-		createEAttribute(testingEClass, TESTING__TESTING_ITEMS);
 
 		testingCryptoEClass = createEClass(TESTING_CRYPTO);
 		createEAttribute(testingCryptoEClass, TESTING_CRYPTO__TESTING_CRYPTO_ID);
@@ -1351,9 +1348,9 @@ public class TestPackageImpl extends EPackageImpl implements TestPackage {
 		createEAttribute(testingCryptoEClass, TESTING_CRYPTO__UNENCRYPTED_VALUE);
 
 		testingItemEClass = createEClass(TESTING_ITEM);
+		createEReference(testingItemEClass, TESTING_ITEM__TESTING_ID);
 		createEAttribute(testingItemEClass, TESTING_ITEM__TESTING_SEQ_ID);
 		createEAttribute(testingItemEClass, TESTING_ITEM__TESTING_HISTORY);
-		createEReference(testingItemEClass, TESTING_ITEM__TESTING_ID);
 
 		testingNodeEClass = createEClass(TESTING_NODE);
 		createEAttribute(testingNodeEClass, TESTING_NODE__TESTING_NODE_ID);
@@ -1361,12 +1358,12 @@ public class TestPackageImpl extends EPackageImpl implements TestPackage {
 		createEReference(testingNodeEClass, TESTING_NODE__PRIMARY_PARENT_NODE_ID);
 
 		testingNodeMemberEClass = createEClass(TESTING_NODE_MEMBER);
+		createEReference(testingNodeMemberEClass, TESTING_NODE_MEMBER__TESTING_ID);
+		createEReference(testingNodeMemberEClass, TESTING_NODE_MEMBER__TESTING_NODE_ID);
 		createEAttribute(testingNodeMemberEClass, TESTING_NODE_MEMBER__FROM_DATE);
 		createEAttribute(testingNodeMemberEClass, TESTING_NODE_MEMBER__EXTEND_FROM_DATE);
 		createEAttribute(testingNodeMemberEClass, TESTING_NODE_MEMBER__EXTEND_THRU_DATE);
 		createEAttribute(testingNodeMemberEClass, TESTING_NODE_MEMBER__THRU_DATE);
-		createEReference(testingNodeMemberEClass, TESTING_NODE_MEMBER__TESTING_ID);
-		createEReference(testingNodeMemberEClass, TESTING_NODE_MEMBER__TESTING_NODE_ID);
 
 		testingRemoveAllEClass = createEClass(TESTING_REMOVE_ALL);
 		createEAttribute(testingRemoveAllEClass, TESTING_REMOVE_ALL__TESTING_REMOVE_ALL_ID);
@@ -1374,10 +1371,10 @@ public class TestPackageImpl extends EPackageImpl implements TestPackage {
 
 		testingStatusEClass = createEClass(TESTING_STATUS);
 		createEAttribute(testingStatusEClass, TESTING_STATUS__TESTING_STATUS_ID);
-		createEAttribute(testingStatusEClass, TESTING_STATUS__STATUS_DATE);
-		createEAttribute(testingStatusEClass, TESTING_STATUS__TESTING_ID);
-		createEReference(testingStatusEClass, TESTING_STATUS__STATUS_ID);
 		createEReference(testingStatusEClass, TESTING_STATUS__CHANGE_BY_USER_LOGIN_ID);
+		createEAttribute(testingStatusEClass, TESTING_STATUS__STATUS_DATE);
+		createEReference(testingStatusEClass, TESTING_STATUS__STATUS_ID);
+		createEAttribute(testingStatusEClass, TESTING_STATUS__TESTING_ID);
 
 		testingSubtypeEClass = createEClass(TESTING_SUBTYPE);
 		createEAttribute(testingSubtypeEClass, TESTING_SUBTYPE__TESTING_TYPE_ID);
@@ -1413,8 +1410,8 @@ public class TestPackageImpl extends EPackageImpl implements TestPackage {
 
 		// Obtain other dependent packages
 		BizPackage theBizPackage = (BizPackage)EPackage.Registry.INSTANCE.getEPackage(BizPackage.eNS_URI);
-		StatusPackage theStatusPackage = (StatusPackage)EPackage.Registry.INSTANCE.getEPackage(StatusPackage.eNS_URI);
 		LoginPackage theLoginPackage = (LoginPackage)EPackage.Registry.INSTANCE.getEPackage(LoginPackage.eNS_URI);
+		StatusPackage theStatusPackage = (StatusPackage)EPackage.Registry.INSTANCE.getEPackage(StatusPackage.eNS_URI);
 
 		// Create type parameters
 
@@ -1457,11 +1454,11 @@ public class TestPackageImpl extends EPackageImpl implements TestPackage {
 		initEAttribute(getTesting_Comments(), ecorePackage.getEString(), "comments", null, 0, 1, Testing.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getTesting_Description(), ecorePackage.getEString(), "description", null, 0, 1, Testing.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getTesting_TestingDate(), ecorePackage.getEDate(), "testingDate", null, 0, 1, Testing.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getTesting_TestingItems(), ecorePackage.getEString(), "testingItems", null, 0, -1, Testing.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getTesting_TestingName(), ecorePackage.getEString(), "testingName", null, 0, 1, Testing.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getTesting_TestingSize(), ecorePackage.getELong(), "testingSize", null, 0, 1, Testing.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getTesting_TestingTypeId(), this.getTestingType(), null, "testingTypeId", null, 0, 1, Testing.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getTesting_TestingTypeId().getEKeys().add(this.getTestingType_TestingTypeId());
-		initEAttribute(getTesting_TestingItems(), ecorePackage.getEString(), "testingItems", null, 1, -1, Testing.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(testingCryptoEClass, TestingCrypto.class, "TestingCrypto", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getTestingCrypto_TestingCryptoId(), ecorePackage.getEString(), "testingCryptoId", null, 1, 1, TestingCrypto.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1471,10 +1468,10 @@ public class TestPackageImpl extends EPackageImpl implements TestPackage {
 		initEAttribute(getTestingCrypto_UnencryptedValue(), ecorePackage.getEString(), "unencryptedValue", null, 0, 1, TestingCrypto.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(testingItemEClass, TestingItem.class, "TestingItem", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getTestingItem_TestingId(), this.getTesting(), null, "testingId", null, 1, 1, TestingItem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getTestingItem_TestingId().getEKeys().add(this.getTesting_TestingId());
 		initEAttribute(getTestingItem_TestingSeqId(), ecorePackage.getEString(), "testingSeqId", null, 1, 1, TestingItem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getTestingItem_TestingHistory(), ecorePackage.getEString(), "testingHistory", null, 0, 1, TestingItem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getTestingItem_TestingId(), this.getTesting(), null, "testingId", null, 0, 1, TestingItem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		getTestingItem_TestingId().getEKeys().add(this.getTesting_TestingId());
 
 		initEClass(testingNodeEClass, TestingNode.class, "TestingNode", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getTestingNode_TestingNodeId(), ecorePackage.getEString(), "testingNodeId", null, 1, 1, TestingNode.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1485,14 +1482,14 @@ public class TestPackageImpl extends EPackageImpl implements TestPackage {
 		addEOperation(testingNodeEClass, ecorePackage.getEString(), "primaryChildTestingNodes", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(testingNodeMemberEClass, TestingNodeMember.class, "TestingNodeMember", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getTestingNodeMember_TestingId(), this.getTesting(), null, "testingId", null, 1, 1, TestingNodeMember.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getTestingNodeMember_TestingId().getEKeys().add(this.getTesting_TestingId());
+		initEReference(getTestingNodeMember_TestingNodeId(), this.getTestingNode(), null, "testingNodeId", null, 1, 1, TestingNodeMember.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getTestingNodeMember_TestingNodeId().getEKeys().add(this.getTestingNode_TestingNodeId());
 		initEAttribute(getTestingNodeMember_FromDate(), ecorePackage.getEDate(), "fromDate", null, 1, 1, TestingNodeMember.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getTestingNodeMember_ExtendFromDate(), ecorePackage.getEDate(), "extendFromDate", null, 0, 1, TestingNodeMember.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getTestingNodeMember_ExtendThruDate(), ecorePackage.getEDate(), "extendThruDate", null, 0, 1, TestingNodeMember.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getTestingNodeMember_ThruDate(), ecorePackage.getEDate(), "thruDate", null, 0, 1, TestingNodeMember.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getTestingNodeMember_TestingId(), this.getTesting(), null, "testingId", null, 0, 1, TestingNodeMember.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		getTestingNodeMember_TestingId().getEKeys().add(this.getTesting_TestingId());
-		initEReference(getTestingNodeMember_TestingNodeId(), this.getTestingNode(), null, "testingNodeId", null, 0, 1, TestingNodeMember.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		getTestingNodeMember_TestingNodeId().getEKeys().add(this.getTestingNode_TestingNodeId());
 
 		initEClass(testingRemoveAllEClass, TestingRemoveAll.class, "TestingRemoveAll", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getTestingRemoveAll_TestingRemoveAllId(), ecorePackage.getEString(), "testingRemoveAllId", null, 1, 1, TestingRemoveAll.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1500,12 +1497,12 @@ public class TestPackageImpl extends EPackageImpl implements TestPackage {
 
 		initEClass(testingStatusEClass, TestingStatus.class, "TestingStatus", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getTestingStatus_TestingStatusId(), ecorePackage.getEString(), "testingStatusId", null, 1, 1, TestingStatus.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getTestingStatus_StatusDate(), ecorePackage.getEDate(), "statusDate", null, 0, 1, TestingStatus.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getTestingStatus_TestingId(), ecorePackage.getEString(), "testingId", null, 0, 1, TestingStatus.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getTestingStatus_StatusId(), theStatusPackage.getStatusItem(), null, "statusId", null, 0, 1, TestingStatus.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		getTestingStatus_StatusId().getEKeys().add(theStatusPackage.getStatusItem_StatusId());
 		initEReference(getTestingStatus_ChangeByUserLoginId(), theLoginPackage.getUserLogin(), null, "changeByUserLoginId", null, 0, 1, TestingStatus.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getTestingStatus_ChangeByUserLoginId().getEKeys().add(theLoginPackage.getUserLogin_UserLoginId());
+		initEAttribute(getTestingStatus_StatusDate(), ecorePackage.getEDate(), "statusDate", null, 0, 1, TestingStatus.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getTestingStatus_StatusId(), theStatusPackage.getStatusItem(), null, "statusId", null, 0, 1, TestingStatus.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getTestingStatus_StatusId().getEKeys().add(theStatusPackage.getStatusItem_StatusId());
+		initEAttribute(getTestingStatus_TestingId(), ecorePackage.getEString(), "testingId", null, 0, 1, TestingStatus.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(testingSubtypeEClass, TestingSubtype.class, "TestingSubtype", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getTestingSubtype_TestingTypeId(), ecorePackage.getEString(), "testingTypeId", null, 1, 1, TestingSubtype.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1518,12 +1515,12 @@ public class TestPackageImpl extends EPackageImpl implements TestPackage {
 		addEOperation(testingTypeEClass, ecorePackage.getEString(), "testings", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		// Create annotations
+		// mimo-ent-frame
+		createMimoentframeAnnotations();
 		// mimo-ent-format
 		createMimoentformatAnnotations();
 		// mimo-ent-slot
 		createMimoentslotAnnotations();
-		// mimo-ent-frame
-		createMimoentframeAnnotations();
 		// mimo-ent-domain
 		createMimoentdomainAnnotations();
 	}
@@ -1635,6 +1632,13 @@ public class TestPackageImpl extends EPackageImpl implements TestPackage {
 			   "type", "date-time"
 		   });
 		addAnnotation
+		  (getTesting_TestingItems(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
 		  (getTesting_TestingName(),
 		   source,
 		   new String[] {
@@ -1650,7 +1654,7 @@ public class TestPackageImpl extends EPackageImpl implements TestPackage {
 			   "scale", "0"
 		   });
 		addAnnotation
-		  (getTesting_TestingItems(),
+		  (getTesting_TestingTypeId(),
 		   source,
 		   new String[] {
 			   "type", "id",
@@ -1692,6 +1696,13 @@ public class TestPackageImpl extends EPackageImpl implements TestPackage {
 			   "length", "255"
 		   });
 		addAnnotation
+		  (getTestingItem_TestingId(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
 		  (getTestingItem_TestingSeqId(),
 		   source,
 		   new String[] {
@@ -1724,6 +1735,27 @@ public class TestPackageImpl extends EPackageImpl implements TestPackage {
 		   new String[] {
 			   "type", "description",
 			   "length", "255"
+		   });
+		addAnnotation
+		  (getTestingNode_PrimaryParentNodeId(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (getTestingNodeMember_TestingId(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
+		  (getTestingNodeMember_TestingNodeId(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
 		   });
 		addAnnotation
 		  (getTestingNodeMember_FromDate(),
@@ -1771,10 +1803,24 @@ public class TestPackageImpl extends EPackageImpl implements TestPackage {
 			   "length", "20"
 		   });
 		addAnnotation
+		  (getTestingStatus_ChangeByUserLoginId(),
+		   source,
+		   new String[] {
+			   "type", "id-vlong",
+			   "length", "255"
+		   });
+		addAnnotation
 		  (getTestingStatus_StatusDate(),
 		   source,
 		   new String[] {
 			   "type", "date-time"
+		   });
+		addAnnotation
+		  (getTestingStatus_StatusId(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
 		   });
 		addAnnotation
 		  (getTestingStatus_TestingId(),
@@ -1829,25 +1875,31 @@ public class TestPackageImpl extends EPackageImpl implements TestPackage {
 	protected void createMimoentslotAnnotations() {
 		String source = "mimo-ent-slot";
 		addAnnotation
-		  (getTestFieldType_TestFieldTypeId(),
-		   source,
-		   new String[] {
-			   "key", "true"
-		   });
-		addAnnotation
-		  (getTesting_TestingId(),
-		   source,
-		   new String[] {
-			   "key", "true"
-		   });
-		addAnnotation
 		  (getTesting_TestingItems(),
 		   source,
 		   new String[] {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (getTestingCrypto_TestingCryptoId(),
+		  (getTesting_TestingName(),
+		   source,
+		   new String[] {
+			   "audit", "true"
+		   });
+		addAnnotation
+		  (getTestingCrypto_EncryptedValue(),
+		   source,
+		   new String[] {
+			   "encrypt", "TRUE"
+		   });
+		addAnnotation
+		  (getTestingCrypto_SaltedEncryptedValue(),
+		   source,
+		   new String[] {
+			   "encrypt", "SALT"
+		   });
+		addAnnotation
+		  (getTestingItem_TestingId(),
 		   source,
 		   new String[] {
 			   "key", "true"
@@ -1865,7 +1917,13 @@ public class TestPackageImpl extends EPackageImpl implements TestPackage {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (getTestingNode_TestingNodeId(),
+		  (getTestingNodeMember_TestingId(),
+		   source,
+		   new String[] {
+			   "key", "true"
+		   });
+		addAnnotation
+		  (getTestingNodeMember_TestingNodeId(),
 		   source,
 		   new String[] {
 			   "key", "true"
@@ -1877,34 +1935,10 @@ public class TestPackageImpl extends EPackageImpl implements TestPackage {
 			   "key", "true"
 		   });
 		addAnnotation
-		  (getTestingRemoveAll_TestingRemoveAllId(),
-		   source,
-		   new String[] {
-			   "key", "true"
-		   });
-		addAnnotation
-		  (getTestingStatus_TestingStatusId(),
-		   source,
-		   new String[] {
-			   "key", "true"
-		   });
-		addAnnotation
-		  (getTestingSubtype_TestingTypeId(),
-		   source,
-		   new String[] {
-			   "key", "true"
-		   });
-		addAnnotation
 		  (testingTypeEClass.getEOperations().get(0),
 		   source,
 		   new String[] {
 			   "derived", "true"
-		   });
-		addAnnotation
-		  (getTestingType_TestingTypeId(),
-		   source,
-		   new String[] {
-			   "key", "true"
 		   });
 	}
 
@@ -1916,6 +1950,13 @@ public class TestPackageImpl extends EPackageImpl implements TestPackage {
 	 */
 	protected void createMimoentframeAnnotations() {
 		String source = "mimo-ent-frame";
+		addAnnotation
+		  (testFieldTypeEClass,
+		   source,
+		   new String[] {
+			   "help", "An entity for testing the field data types",
+			   "title", "Entity for testing the field data types"
+		   });
 		addAnnotation
 		  (testingEClass,
 		   source,
@@ -1932,12 +1973,21 @@ public class TestPackageImpl extends EPackageImpl implements TestPackage {
 		  (testingRemoveAllEClass,
 		   source,
 		   new String[] {
+			   "title", "Testing",
 			   "formula", "description"
+		   });
+		addAnnotation
+		  (testingStatusEClass,
+		   source,
+		   new String[] {
+			   "help", "An entity for testing EntityStatus concept",
+			   "title", "Entity for testing EntityStatus concept"
 		   });
 		addAnnotation
 		  (testingTypeEClass,
 		   source,
 		   new String[] {
+			   "title", "Testing Entity Type",
 			   "formula", "description"
 		   });
 	}
@@ -1955,9 +2005,6 @@ public class TestPackageImpl extends EPackageImpl implements TestPackage {
 		   source,
 		   new String[] {
 			   "frame", "TestingItem"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
 		  (testingNodeEClass.getEOperations().get(0),
@@ -1965,9 +2012,6 @@ public class TestPackageImpl extends EPackageImpl implements TestPackage {
 		   new String[] {
 			   "frame", "TestingNode",
 			   "route", "primaryParentNodeId"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
 		  (testingTypeEClass.getEOperations().get(0),
@@ -1975,9 +2019,6 @@ public class TestPackageImpl extends EPackageImpl implements TestPackage {
 		   new String[] {
 			   "frame", "Testing",
 			   "route", "testingTypeId"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 	}
 

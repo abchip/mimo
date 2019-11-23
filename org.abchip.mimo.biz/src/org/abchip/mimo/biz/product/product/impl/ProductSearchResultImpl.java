@@ -28,10 +28,10 @@ import org.eclipse.emf.ecore.EClass;
  *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductSearchResultImpl#isIsAscending <em>Is Ascending</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductSearchResultImpl#getNumResults <em>Num Results</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductSearchResultImpl#getOrderByName <em>Order By Name</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductSearchResultImpl#getProductSearchConstraints <em>Product Search Constraints</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductSearchResultImpl#getSearchDate <em>Search Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductSearchResultImpl#getSecondsTotal <em>Seconds Total</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductSearchResultImpl#getVisitId <em>Visit Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductSearchResultImpl#getProductSearchConstraints <em>Product Search Constraints</em>}</li>
  * </ul>
  *
  * @generated

@@ -32,18 +32,18 @@ import org.abchip.mimo.biz.party.party.Party;
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.GiftCardFulfillment#getCardNumber <em>Card Number</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.GiftCardFulfillment#getFulfillmentDate <em>Fulfillment Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.GiftCardFulfillment#getMerchantId <em>Merchant Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.payment.GiftCardFulfillment#getOrderId <em>Order Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.GiftCardFulfillment#getOrderItemSeqId <em>Order Item Seq Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.payment.GiftCardFulfillment#getPartyId <em>Party Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.GiftCardFulfillment#getPinNumber <em>Pin Number</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.GiftCardFulfillment#getReferenceNum <em>Reference Num</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.GiftCardFulfillment#getResponseCode <em>Response Code</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.payment.GiftCardFulfillment#getTypeEnumId <em>Type Enum Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.payment.GiftCardFulfillment#getPartyId <em>Party Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.payment.GiftCardFulfillment#getOrderId <em>Order Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.GiftCardFulfillment#getSurveyResponseId <em>Survey Response Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.payment.GiftCardFulfillment#getTypeEnumId <em>Type Enum Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getGiftCardFulfillment()
- * @model
+ * @model annotation="mimo-ent-frame title='Gift Card Fulfillment History'"
  * @generated
  */
 public interface GiftCardFulfillment extends BizEntity {
@@ -110,7 +110,8 @@ public interface GiftCardFulfillment extends BizEntity {
 	 * @return the value of the '<em>Card Number</em>' attribute.
 	 * @see #setCardNumber(String)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getGiftCardFulfillment_CardNumber()
-	 * @model annotation="mimo-ent-format type='long-varchar' length='255'"
+	 * @model annotation="mimo-ent-slot encrypt='TRUE'"
+	 *        annotation="mimo-ent-format type='long-varchar' length='255'"
 	 * @generated
 	 */
 	String getCardNumber();
@@ -164,7 +165,6 @@ public interface GiftCardFulfillment extends BizEntity {
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getGiftCardFulfillment_FulfillmentId()
 	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getFulfillmentId();
@@ -217,6 +217,7 @@ public interface GiftCardFulfillment extends BizEntity {
 	 * @see #setOrderId(OrderHeader)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getGiftCardFulfillment_OrderId()
 	 * @model keys="orderId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	OrderHeader getOrderId();
@@ -269,6 +270,7 @@ public interface GiftCardFulfillment extends BizEntity {
 	 * @see #setPartyId(Party)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getGiftCardFulfillment_PartyId()
 	 * @model keys="partyId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Party getPartyId();
@@ -294,7 +296,8 @@ public interface GiftCardFulfillment extends BizEntity {
 	 * @return the value of the '<em>Pin Number</em>' attribute.
 	 * @see #setPinNumber(String)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getGiftCardFulfillment_PinNumber()
-	 * @model annotation="mimo-ent-format type='long-varchar' length='255'"
+	 * @model annotation="mimo-ent-slot encrypt='TRUE'"
+	 *        annotation="mimo-ent-format type='long-varchar' length='255'"
 	 * @generated
 	 */
 	String getPinNumber();
@@ -373,6 +376,7 @@ public interface GiftCardFulfillment extends BizEntity {
 	 * @see #setSurveyResponseId(SurveyResponse)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getGiftCardFulfillment_SurveyResponseId()
 	 * @model keys="surveyResponseId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	SurveyResponse getSurveyResponseId();
@@ -399,6 +403,7 @@ public interface GiftCardFulfillment extends BizEntity {
 	 * @see #setTypeEnumId(Enumeration)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getGiftCardFulfillment_TypeEnumId()
 	 * @model keys="enumId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Enumeration getTypeEnumId();

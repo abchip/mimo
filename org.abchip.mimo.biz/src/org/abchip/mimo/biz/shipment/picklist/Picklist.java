@@ -28,12 +28,12 @@ import org.abchip.mimo.biz.shipment.shipment.ShipmentMethodType;
  *   <li>{@link org.abchip.mimo.biz.shipment.picklist.Picklist#getPicklistId <em>Picklist Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.shipment.picklist.Picklist#getCreatedByUserLogin <em>Created By User Login</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.shipment.picklist.Picklist#getDescription <em>Description</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.shipment.picklist.Picklist#getFacilityId <em>Facility Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.shipment.picklist.Picklist#getLastModifiedByUserLogin <em>Last Modified By User Login</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.shipment.picklist.Picklist#getPicklistDate <em>Picklist Date</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.shipment.picklist.Picklist#getFacilityId <em>Facility Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.shipment.picklist.Picklist#getPicklistStatusHistories <em>Picklist Status Histories</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.shipment.picklist.Picklist#getShipmentMethodTypeId <em>Shipment Method Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.shipment.picklist.Picklist#getStatusId <em>Status Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.shipment.picklist.Picklist#getPicklistStatusHistories <em>Picklist Status Histories</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.shipment.picklist.PicklistPackage#getPicklist()
@@ -105,6 +105,7 @@ public interface Picklist extends BizEntity {
 	 * @see #setFacilityId(Facility)
 	 * @see org.abchip.mimo.biz.shipment.picklist.PicklistPackage#getPicklist_FacilityId()
 	 * @model keys="facilityId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Facility getFacilityId();
@@ -184,7 +185,6 @@ public interface Picklist extends BizEntity {
 	 * @see org.abchip.mimo.biz.shipment.picklist.PicklistPackage#getPicklist_PicklistId()
 	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getPicklistId();
@@ -211,6 +211,7 @@ public interface Picklist extends BizEntity {
 	 * @see #setShipmentMethodTypeId(ShipmentMethodType)
 	 * @see org.abchip.mimo.biz.shipment.picklist.PicklistPackage#getPicklist_ShipmentMethodTypeId()
 	 * @model keys="shipmentMethodTypeId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ShipmentMethodType getShipmentMethodTypeId();
@@ -237,6 +238,7 @@ public interface Picklist extends BizEntity {
 	 * @see #setStatusId(StatusItem)
 	 * @see org.abchip.mimo.biz.shipment.picklist.PicklistPackage#getPicklist_StatusId()
 	 * @model keys="statusId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	StatusItem getStatusId();
@@ -262,8 +264,7 @@ public interface Picklist extends BizEntity {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Picklist Status Histories</em>' attribute list.
 	 * @see org.abchip.mimo.biz.shipment.picklist.PicklistPackage#getPicklist_PicklistStatusHistories()
-	 * @model required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='PicklistStatusHistory'"
 	 * @generated

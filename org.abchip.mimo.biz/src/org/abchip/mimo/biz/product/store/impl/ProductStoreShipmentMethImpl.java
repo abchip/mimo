@@ -32,9 +32,12 @@ import org.eclipse.emf.ecore.EClass;
  *   <li>{@link org.abchip.mimo.biz.product.store.impl.ProductStoreShipmentMethImpl#isAllowCompanyAddr <em>Allow Company Addr</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.store.impl.ProductStoreShipmentMethImpl#isAllowUspsAddr <em>Allow Usps Addr</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.store.impl.ProductStoreShipmentMethImpl#getAllowancePercent <em>Allowance Percent</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.store.impl.ProductStoreShipmentMethImpl#getCompanyPartyId <em>Company Party Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.store.impl.ProductStoreShipmentMethImpl#getConfigProps <em>Config Props</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.store.impl.ProductStoreShipmentMethImpl#getExcludeFeatureGroup <em>Exclude Feature Group</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.store.impl.ProductStoreShipmentMethImpl#getExcludeGeoId <em>Exclude Geo Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.store.impl.ProductStoreShipmentMethImpl#getIncludeFeatureGroup <em>Include Feature Group</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.store.impl.ProductStoreShipmentMethImpl#getIncludeGeoId <em>Include Geo Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.store.impl.ProductStoreShipmentMethImpl#isIncludeNoChargeItems <em>Include No Charge Items</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.store.impl.ProductStoreShipmentMethImpl#getMaxSize <em>Max Size</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.store.impl.ProductStoreShipmentMethImpl#getMaxTotal <em>Max Total</em>}</li>
@@ -50,12 +53,9 @@ import org.eclipse.emf.ecore.EClass;
  *   <li>{@link org.abchip.mimo.biz.product.store.impl.ProductStoreShipmentMethImpl#getRoleTypeId <em>Role Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.store.impl.ProductStoreShipmentMethImpl#getSequenceNumber <em>Sequence Number</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.store.impl.ProductStoreShipmentMethImpl#getServiceName <em>Service Name</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.store.impl.ProductStoreShipmentMethImpl#getCompanyPartyId <em>Company Party Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.store.impl.ProductStoreShipmentMethImpl#getShipmentMethodTypeId <em>Shipment Method Type Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.store.impl.ProductStoreShipmentMethImpl#getIncludeGeoId <em>Include Geo Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.store.impl.ProductStoreShipmentMethImpl#getExcludeGeoId <em>Exclude Geo Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.store.impl.ProductStoreShipmentMethImpl#getShipmentGatewayConfigId <em>Shipment Gateway Config Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.store.impl.ProductStoreShipmentMethImpl#getShipmentCustomMethodId <em>Shipment Custom Method Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.store.impl.ProductStoreShipmentMethImpl#getShipmentGatewayConfigId <em>Shipment Gateway Config Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.store.impl.ProductStoreShipmentMethImpl#getShipmentMethodTypeId <em>Shipment Method Type Id</em>}</li>
  * </ul>
  *
  * @generated

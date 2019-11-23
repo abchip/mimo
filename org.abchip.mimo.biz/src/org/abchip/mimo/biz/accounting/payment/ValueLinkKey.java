@@ -36,7 +36,7 @@ import org.abchip.mimo.biz.BizEntity;
  * </ul>
  *
  * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getValueLinkKey()
- * @model
+ * @model annotation="mimo-ent-frame title='Value Link Key Store'"
  * @generated
  */
 public interface ValueLinkKey extends BizEntity {
@@ -261,7 +261,6 @@ public interface ValueLinkKey extends BizEntity {
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getValueLinkKey_MerchantId()
 	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-format type='id-vlong' length='255'"
-	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getMerchantId();

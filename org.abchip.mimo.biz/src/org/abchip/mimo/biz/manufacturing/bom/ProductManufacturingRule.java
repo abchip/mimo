@@ -25,19 +25,19 @@ import org.abchip.mimo.biz.product.product.Product;
  *   <li>{@link org.abchip.mimo.biz.manufacturing.bom.ProductManufacturingRule#getRuleId <em>Rule Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.manufacturing.bom.ProductManufacturingRule#getDescription <em>Description</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.manufacturing.bom.ProductManufacturingRule#getFromDate <em>From Date</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.manufacturing.bom.ProductManufacturingRule#getQuantity <em>Quantity</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.manufacturing.bom.ProductManufacturingRule#getRuleOperator <em>Rule Operator</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.manufacturing.bom.ProductManufacturingRule#getRuleSeqId <em>Rule Seq Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.manufacturing.bom.ProductManufacturingRule#getThruDate <em>Thru Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.manufacturing.bom.ProductManufacturingRule#getProductFeature <em>Product Feature</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.manufacturing.bom.ProductManufacturingRule#getProductId <em>Product Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.manufacturing.bom.ProductManufacturingRule#getProductIdFor <em>Product Id For</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.manufacturing.bom.ProductManufacturingRule#getProductIdIn <em>Product Id In</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.manufacturing.bom.ProductManufacturingRule#getProductIdInSubst <em>Product Id In Subst</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.manufacturing.bom.ProductManufacturingRule#getProductFeature <em>Product Feature</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.manufacturing.bom.ProductManufacturingRule#getQuantity <em>Quantity</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.manufacturing.bom.ProductManufacturingRule#getRuleOperator <em>Rule Operator</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.manufacturing.bom.ProductManufacturingRule#getRuleSeqId <em>Rule Seq Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.manufacturing.bom.ProductManufacturingRule#getThruDate <em>Thru Date</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.manufacturing.bom.BomPackage#getProductManufacturingRule()
- * @model annotation="mimo-ent-frame formula='description'"
+ * @model annotation="mimo-ent-frame title='Product To Part Rule' formula='description'"
  * @generated
  */
 public interface ProductManufacturingRule extends BizEntity {
@@ -54,7 +54,6 @@ public interface ProductManufacturingRule extends BizEntity {
 	 * @see org.abchip.mimo.biz.manufacturing.bom.BomPackage#getProductManufacturingRule_RuleId()
 	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getRuleId();
@@ -133,6 +132,7 @@ public interface ProductManufacturingRule extends BizEntity {
 	 * @see #setProductFeature(ProductFeature)
 	 * @see org.abchip.mimo.biz.manufacturing.bom.BomPackage#getProductManufacturingRule_ProductFeature()
 	 * @model keys="productFeatureId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ProductFeature getProductFeature();
@@ -159,6 +159,7 @@ public interface ProductManufacturingRule extends BizEntity {
 	 * @see #setProductId(Product)
 	 * @see org.abchip.mimo.biz.manufacturing.bom.BomPackage#getProductManufacturingRule_ProductId()
 	 * @model keys="productId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Product getProductId();
@@ -185,6 +186,7 @@ public interface ProductManufacturingRule extends BizEntity {
 	 * @see #setProductIdFor(Product)
 	 * @see org.abchip.mimo.biz.manufacturing.bom.BomPackage#getProductManufacturingRule_ProductIdFor()
 	 * @model keys="productId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Product getProductIdFor();
@@ -211,6 +213,7 @@ public interface ProductManufacturingRule extends BizEntity {
 	 * @see #setProductIdIn(Product)
 	 * @see org.abchip.mimo.biz.manufacturing.bom.BomPackage#getProductManufacturingRule_ProductIdIn()
 	 * @model keys="productId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Product getProductIdIn();
@@ -237,6 +240,7 @@ public interface ProductManufacturingRule extends BizEntity {
 	 * @see #setProductIdInSubst(Product)
 	 * @see org.abchip.mimo.biz.manufacturing.bom.BomPackage#getProductManufacturingRule_ProductIdInSubst()
 	 * @model keys="productId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Product getProductIdInSubst();

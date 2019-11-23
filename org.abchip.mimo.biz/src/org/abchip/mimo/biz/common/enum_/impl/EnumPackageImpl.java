@@ -191,9 +191,6 @@ import org.abchip.mimo.biz.workeffort.timesheet.TimesheetPackage;
 import org.abchip.mimo.biz.workeffort.timesheet.impl.TimesheetPackageImpl;
 import org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage;
 import org.abchip.mimo.biz.workeffort.workeffort.impl.WorkeffortPackageImpl;
-import org.abchip.mimo.entity.EntityPackage;
-import org.eclipse.emf.common.util.URI;
-
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EGenericType;
@@ -704,7 +701,7 @@ public class EnumPackageImpl extends EPackageImpl implements EnumPackage {
 	 */
 	@Override
 	public EReference getEnumeration_EnumTypeId() {
-		return (EReference)enumerationEClass.getEStructuralFeatures().get(4);
+		return (EReference)enumerationEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -714,7 +711,7 @@ public class EnumPackageImpl extends EPackageImpl implements EnumPackage {
 	 */
 	@Override
 	public EAttribute getEnumeration_SequenceId() {
-		return (EAttribute)enumerationEClass.getEStructuralFeatures().get(3);
+		return (EAttribute)enumerationEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -810,8 +807,8 @@ public class EnumPackageImpl extends EPackageImpl implements EnumPackage {
 		createEAttribute(enumerationEClass, ENUMERATION__ENUM_ID);
 		createEAttribute(enumerationEClass, ENUMERATION__DESCRIPTION);
 		createEAttribute(enumerationEClass, ENUMERATION__ENUM_CODE);
-		createEAttribute(enumerationEClass, ENUMERATION__SEQUENCE_ID);
 		createEReference(enumerationEClass, ENUMERATION__ENUM_TYPE_ID);
+		createEAttribute(enumerationEClass, ENUMERATION__SEQUENCE_ID);
 		createEAttribute(enumerationEClass, ENUMERATION__USER_LOGIN_SECURITY_QUESTIONS);
 
 		enumerationTypeEClass = createEClass(ENUMERATION_TYPE);
@@ -866,10 +863,10 @@ public class EnumPackageImpl extends EPackageImpl implements EnumPackage {
 		initEAttribute(getEnumeration_EnumId(), ecorePackage.getEString(), "enumId", null, 1, 1, Enumeration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getEnumeration_Description(), ecorePackage.getEString(), "description", null, 0, 1, Enumeration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getEnumeration_EnumCode(), ecorePackage.getEString(), "enumCode", null, 0, 1, Enumeration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getEnumeration_SequenceId(), ecorePackage.getEString(), "sequenceId", null, 0, 1, Enumeration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getEnumeration_EnumTypeId(), this.getEnumerationType(), null, "enumTypeId", null, 0, 1, Enumeration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getEnumeration_EnumTypeId().getEKeys().add(this.getEnumerationType_EnumTypeId());
-		initEAttribute(getEnumeration_UserLoginSecurityQuestions(), ecorePackage.getEString(), "userLoginSecurityQuestions", null, 1, -1, Enumeration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getEnumeration_SequenceId(), ecorePackage.getEString(), "sequenceId", null, 0, 1, Enumeration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getEnumeration_UserLoginSecurityQuestions(), ecorePackage.getEString(), "userLoginSecurityQuestions", null, 0, -1, Enumeration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		addEOperation(enumerationEClass, ecorePackage.getEString(), "classFixedAssets", 0, -1, IS_UNIQUE, IS_ORDERED);
 
@@ -909,7 +906,7 @@ public class EnumPackageImpl extends EPackageImpl implements EnumPackage {
 
 		addEOperation(enumerationEClass, ecorePackage.getEString(), "productGeos", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(enumerationEClass, ecorePackage.getEString(), "productStoreEmailSettings", 1, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(enumerationEClass, ecorePackage.getEString(), "productStoreEmailSettings", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		addEOperation(enumerationEClass, ecorePackage.getEString(), "quoteSequencePartyAcctgPreferences", 0, -1, IS_UNIQUE, IS_ORDERED);
 
@@ -995,12 +992,14 @@ public class EnumPackageImpl extends EPackageImpl implements EnumPackage {
 		  (enumerationEClass,
 		   source,
 		   new String[] {
+			   "dictionary", "CommonEntityLabels",
 			   "formula", "description"
 		   });
 		addAnnotation
 		  (enumerationTypeEClass,
 		   source,
 		   new String[] {
+			   "dictionary", "CommonEntityLabels",
 			   "formula", "description"
 		   });
 	}
@@ -1350,6 +1349,13 @@ public class EnumPackageImpl extends EPackageImpl implements EnumPackage {
 			   "length", "60"
 		   });
 		addAnnotation
+		  (getEnumeration_EnumTypeId(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
 		  (getEnumeration_SequenceId(),
 		   source,
 		   new String[] {
@@ -1397,6 +1403,13 @@ public class EnumPackageImpl extends EPackageImpl implements EnumPackage {
 		   new String[] {
 			   "type", "indicator",
 			   "length", "1"
+		   });
+		addAnnotation
+		  (getEnumerationType_ParentTypeId(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
 		   });
 	}
 
@@ -1679,12 +1692,6 @@ public class EnumPackageImpl extends EPackageImpl implements EnumPackage {
 			   "derived", "true"
 		   });
 		addAnnotation
-		  (getEnumeration_EnumId(),
-		   source,
-		   new String[] {
-			   "key", "true"
-		   });
-		addAnnotation
 		  (getEnumeration_UserLoginSecurityQuestions(),
 		   source,
 		   new String[] {
@@ -1701,12 +1708,6 @@ public class EnumPackageImpl extends EPackageImpl implements EnumPackage {
 		   source,
 		   new String[] {
 			   "derived", "true"
-		   });
-		addAnnotation
-		  (getEnumerationType_EnumTypeId(),
-		   source,
-		   new String[] {
-			   "key", "true"
 		   });
 	}
 
@@ -1724,9 +1725,6 @@ public class EnumPackageImpl extends EPackageImpl implements EnumPackage {
 		   new String[] {
 			   "frame", "FixedAsset",
 			   "route", "classEnumId"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
 		  (enumerationEClass.getEOperations().get(1),
@@ -1734,9 +1732,6 @@ public class EnumPackageImpl extends EPackageImpl implements EnumPackage {
 		   new String[] {
 			   "frame", "PartyAcctgPreference",
 			   "route", "cogsMethodId"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
 		  (enumerationEClass.getEOperations().get(2),
@@ -1744,9 +1739,6 @@ public class EnumPackageImpl extends EPackageImpl implements EnumPackage {
 		   new String[] {
 			   "frame", "CommunicationEvent",
 			   "route", "reasonEnumId"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
 		  (enumerationEClass.getEOperations().get(3),
@@ -1754,9 +1746,6 @@ public class EnumPackageImpl extends EPackageImpl implements EnumPackage {
 		   new String[] {
 			   "frame", "ProductStore",
 			   "route", "defaultSalesChannelEnumId"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
 		  (enumerationEClass.getEOperations().get(4),
@@ -1764,9 +1753,6 @@ public class EnumPackageImpl extends EPackageImpl implements EnumPackage {
 		   new String[] {
 			   "frame", "EmailTemplateSetting",
 			   "route", "emailType"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
 		  (enumerationEClass.getEOperations().get(5),
@@ -1774,9 +1760,6 @@ public class EnumPackageImpl extends EPackageImpl implements EnumPackage {
 		   new String[] {
 			   "frame", "Person",
 			   "route", "employmentStatusEnumId"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
 		  (enumerationEClass.getEOperations().get(6),
@@ -1784,9 +1767,6 @@ public class EnumPackageImpl extends EPackageImpl implements EnumPackage {
 		   new String[] {
 			   "frame", "JobRequisition",
 			   "route", "examTypeEnumId"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
 		  (enumerationEClass.getEOperations().get(7),
@@ -1794,9 +1774,6 @@ public class EnumPackageImpl extends EPackageImpl implements EnumPackage {
 		   new String[] {
 			   "frame", "GeoPoint",
 			   "route", "geoPointTypeEnumId"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
 		  (enumerationEClass.getEOperations().get(8),
@@ -1804,9 +1781,6 @@ public class EnumPackageImpl extends EPackageImpl implements EnumPackage {
 		   new String[] {
 			   "frame", "GiftCardFulfillment",
 			   "route", "typeEnumId"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
 		  (enumerationEClass.getEOperations().get(9),
@@ -1814,9 +1788,6 @@ public class EnumPackageImpl extends EPackageImpl implements EnumPackage {
 		   new String[] {
 			   "frame", "ProductPriceCond",
 			   "route", "inputParamEnumId"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
 		  (enumerationEClass.getEOperations().get(10),
@@ -1824,9 +1795,6 @@ public class EnumPackageImpl extends EPackageImpl implements EnumPackage {
 		   new String[] {
 			   "frame", "PartyAcctgPreference",
 			   "route", "oldInvoiceSequenceEnumId"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
 		  (enumerationEClass.getEOperations().get(11),
@@ -1834,9 +1802,6 @@ public class EnumPackageImpl extends EPackageImpl implements EnumPackage {
 		   new String[] {
 			   "frame", "JobInterview",
 			   "route", "gradeSecuredEnumId"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
 		  (enumerationEClass.getEOperations().get(12),
@@ -1844,9 +1809,6 @@ public class EnumPackageImpl extends EPackageImpl implements EnumPackage {
 		   new String[] {
 			   "frame", "JobRequisition",
 			   "route", "jobPostingTypeEnumId"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
 		  (enumerationEClass.getEOperations().get(13),
@@ -1854,9 +1816,6 @@ public class EnumPackageImpl extends EPackageImpl implements EnumPackage {
 		   new String[] {
 			   "frame", "ProductPriceCond",
 			   "route", "operatorEnumId"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
 		  (enumerationEClass.getEOperations().get(14),
@@ -1864,9 +1823,6 @@ public class EnumPackageImpl extends EPackageImpl implements EnumPackage {
 		   new String[] {
 			   "frame", "OrderItemChange",
 			   "route", "changeTypeEnumId"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
 		  (enumerationEClass.getEOperations().get(15),
@@ -1874,9 +1830,6 @@ public class EnumPackageImpl extends EPackageImpl implements EnumPackage {
 		   new String[] {
 			   "frame", "OrderNotification",
 			   "route", "emailType"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
 		  (enumerationEClass.getEOperations().get(16),
@@ -1884,9 +1837,6 @@ public class EnumPackageImpl extends EPackageImpl implements EnumPackage {
 		   new String[] {
 			   "frame", "PartyAcctgPreference",
 			   "route", "oldOrderSequenceEnumId"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
 		  (enumerationEClass.getEOperations().get(17),
@@ -1894,9 +1844,6 @@ public class EnumPackageImpl extends EPackageImpl implements EnumPackage {
 		   new String[] {
 			   "frame", "Content",
 			   "route", "privilegeEnumId"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
 		  (enumerationEClass.getEOperations().get(18),
@@ -1904,9 +1851,6 @@ public class EnumPackageImpl extends EPackageImpl implements EnumPackage {
 		   new String[] {
 			   "frame", "ProductGeo",
 			   "route", "productGeoEnumId"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
 		  (enumerationEClass.getEOperations().get(19),
@@ -1914,9 +1858,6 @@ public class EnumPackageImpl extends EPackageImpl implements EnumPackage {
 		   new String[] {
 			   "frame", "ProductStoreEmailSetting",
 			   "route", "emailType"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
 		  (enumerationEClass.getEOperations().get(20),
@@ -1924,9 +1865,6 @@ public class EnumPackageImpl extends EPackageImpl implements EnumPackage {
 		   new String[] {
 			   "frame", "PartyAcctgPreference",
 			   "route", "oldQuoteSequenceEnumId"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
 		  (enumerationEClass.getEOperations().get(21),
@@ -1934,9 +1872,6 @@ public class EnumPackageImpl extends EPackageImpl implements EnumPackage {
 		   new String[] {
 			   "frame", "Product",
 			   "route", "ratingTypeEnum"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
 		  (enumerationEClass.getEOperations().get(22),
@@ -1944,9 +1879,6 @@ public class EnumPackageImpl extends EPackageImpl implements EnumPackage {
 		   new String[] {
 			   "frame", "FinAccountTrans",
 			   "route", "reasonEnumId"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
 		  (enumerationEClass.getEOperations().get(23),
@@ -1954,9 +1886,6 @@ public class EnumPackageImpl extends EPackageImpl implements EnumPackage {
 		   new String[] {
 			   "frame", "InventoryItemDetail",
 			   "route", "reasonEnumId"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
 		  (enumerationEClass.getEOperations().get(24),
@@ -1964,9 +1893,6 @@ public class EnumPackageImpl extends EPackageImpl implements EnumPackage {
 		   new String[] {
 			   "frame", "JobManagerLock",
 			   "route", "reasonEnumId"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
 		  (enumerationEClass.getEOperations().get(25),
@@ -1974,9 +1900,6 @@ public class EnumPackageImpl extends EPackageImpl implements EnumPackage {
 		   new String[] {
 			   "frame", "OrderItemChange",
 			   "route", "reasonEnumId"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
 		  (enumerationEClass.getEOperations().get(26),
@@ -1984,9 +1907,6 @@ public class EnumPackageImpl extends EPackageImpl implements EnumPackage {
 		   new String[] {
 			   "frame", "KeywordThesaurus",
 			   "route", "relationshipEnumId"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
 		  (enumerationEClass.getEOperations().get(27),
@@ -1994,9 +1914,6 @@ public class EnumPackageImpl extends EPackageImpl implements EnumPackage {
 		   new String[] {
 			   "frame", "FinAccountType",
 			   "route", "replenishEnumId"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
 		  (enumerationEClass.getEOperations().get(28),
@@ -2004,9 +1921,6 @@ public class EnumPackageImpl extends EPackageImpl implements EnumPackage {
 		   new String[] {
 			   "frame", "ProductStoreFinActSetting",
 			   "route", "replenishMethodEnumId"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
 		  (enumerationEClass.getEOperations().get(29),
@@ -2014,9 +1928,6 @@ public class EnumPackageImpl extends EPackageImpl implements EnumPackage {
 		   new String[] {
 			   "frame", "ProductFacility",
 			   "route", "requirementMethodEnumId"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
 		  (enumerationEClass.getEOperations().get(30),
@@ -2024,9 +1935,6 @@ public class EnumPackageImpl extends EPackageImpl implements EnumPackage {
 		   new String[] {
 			   "frame", "ProductStore",
 			   "route", "requirementMethodEnumId"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
 		  (enumerationEClass.getEOperations().get(31),
@@ -2034,9 +1942,6 @@ public class EnumPackageImpl extends EPackageImpl implements EnumPackage {
 		   new String[] {
 			   "frame", "Product",
 			   "route", "requirementMethodEnumId"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
 		  (enumerationEClass.getEOperations().get(32),
@@ -2044,9 +1949,6 @@ public class EnumPackageImpl extends EPackageImpl implements EnumPackage {
 		   new String[] {
 			   "frame", "ProductStore",
 			   "route", "reserveOrderEnumId"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
 		  (enumerationEClass.getEOperations().get(33),
@@ -2054,9 +1956,6 @@ public class EnumPackageImpl extends EPackageImpl implements EnumPackage {
 		   new String[] {
 			   "frame", "Person",
 			   "route", "residenceStatusEnumId"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
 		  (enumerationEClass.getEOperations().get(34),
@@ -2064,9 +1963,6 @@ public class EnumPackageImpl extends EPackageImpl implements EnumPackage {
 		   new String[] {
 			   "frame", "CustRequest",
 			   "route", "salesChannelEnumId"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
 		  (enumerationEClass.getEOperations().get(35),
@@ -2074,9 +1970,6 @@ public class EnumPackageImpl extends EPackageImpl implements EnumPackage {
 		   new String[] {
 			   "frame", "OrderHeader",
 			   "route", "salesChannelEnumId"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
 		  (enumerationEClass.getEOperations().get(36),
@@ -2084,9 +1977,6 @@ public class EnumPackageImpl extends EPackageImpl implements EnumPackage {
 		   new String[] {
 			   "frame", "Quote",
 			   "route", "salesChannelEnumId"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
 		  (enumerationEClass.getEOperations().get(37),
@@ -2094,9 +1984,6 @@ public class EnumPackageImpl extends EPackageImpl implements EnumPackage {
 		   new String[] {
 			   "frame", "WorkEffort",
 			   "route", "scopeEnumId"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
 		  (enumerationEClass.getEOperations().get(38),
@@ -2104,9 +1991,6 @@ public class EnumPackageImpl extends EPackageImpl implements EnumPackage {
 		   new String[] {
 			   "frame", "PaymentGatewayResponse",
 			   "route", "paymentServiceTypeEnumId"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
 		  (enumerationEClass.getEOperations().get(39),
@@ -2114,9 +1998,6 @@ public class EnumPackageImpl extends EPackageImpl implements EnumPackage {
 		   new String[] {
 			   "frame", "ProductStore",
 			   "route", "storeCreditAccountEnumId"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
 		  (enumerationEClass.getEOperations().get(40),
@@ -2124,9 +2005,6 @@ public class EnumPackageImpl extends EPackageImpl implements EnumPackage {
 		   new String[] {
 			   "frame", "PartyAcctgPreference",
 			   "route", "taxFormId"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
 		  (enumerationEClass.getEOperations().get(41),
@@ -2134,9 +2012,6 @@ public class EnumPackageImpl extends EPackageImpl implements EnumPackage {
 		   new String[] {
 			   "frame", "PaymentGatewayResponse",
 			   "route", "transCodeEnumId"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
 		  (enumerationEClass.getEOperations().get(42),
@@ -2144,9 +2019,6 @@ public class EnumPackageImpl extends EPackageImpl implements EnumPackage {
 		   new String[] {
 			   "frame", "FacilityLocation",
 			   "route", "locationTypeEnumId"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
 		  (enumerationEClass.getEOperations().get(43),
@@ -2154,9 +2026,6 @@ public class EnumPackageImpl extends EPackageImpl implements EnumPackage {
 		   new String[] {
 			   "frame", "SalesOpportunity",
 			   "route", "typeEnumId"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
 		  (enumerationEClass.getEOperations().get(44),
@@ -2164,18 +2033,12 @@ public class EnumPackageImpl extends EPackageImpl implements EnumPackage {
 		   new String[] {
 			   "frame", "Product",
 			   "route", "virtualVariantMethodEnum"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
 		  (getEnumeration_UserLoginSecurityQuestions(),
 		   source,
 		   new String[] {
 			   "frame", "UserLoginSecurityQuestion"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
 		  (enumerationTypeEClass.getEOperations().get(0),
@@ -2183,9 +2046,6 @@ public class EnumPackageImpl extends EPackageImpl implements EnumPackage {
 		   new String[] {
 			   "frame", "EnumerationType",
 			   "route", "parentTypeId"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
 		  (enumerationTypeEClass.getEOperations().get(1),
@@ -2193,9 +2053,6 @@ public class EnumPackageImpl extends EPackageImpl implements EnumPackage {
 		   new String[] {
 			   "frame", "Enumeration",
 			   "route", "enumTypeId"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 	}
 

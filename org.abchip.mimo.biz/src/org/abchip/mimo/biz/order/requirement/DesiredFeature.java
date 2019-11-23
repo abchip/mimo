@@ -19,9 +19,9 @@ import org.abchip.mimo.biz.product.feature.ProductFeature;
  * The following features are supported:
  * </p>
  * <ul>
+ *   <li>{@link org.abchip.mimo.biz.order.requirement.DesiredFeature#getRequirementId <em>Requirement Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.requirement.DesiredFeature#getDesiredFeatureId <em>Desired Feature Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.requirement.DesiredFeature#getOptionalInd <em>Optional Ind</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.requirement.DesiredFeature#getRequirementId <em>Requirement Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.requirement.DesiredFeature#getProductFeatureId <em>Product Feature Id</em>}</li>
  * </ul>
  *
@@ -42,8 +42,8 @@ public interface DesiredFeature extends BizEntity {
 	 * @see #setDesiredFeatureId(String)
 	 * @see org.abchip.mimo.biz.order.requirement.RequirementPackage#getDesiredFeature_DesiredFeatureId()
 	 * @model required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	String getDesiredFeatureId();
@@ -96,6 +96,7 @@ public interface DesiredFeature extends BizEntity {
 	 * @see #setProductFeatureId(ProductFeature)
 	 * @see org.abchip.mimo.biz.order.requirement.RequirementPackage#getDesiredFeature_ProductFeatureId()
 	 * @model keys="productFeatureId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ProductFeature getProductFeatureId();
@@ -121,7 +122,9 @@ public interface DesiredFeature extends BizEntity {
 	 * @return the value of the '<em>Requirement Id</em>' reference.
 	 * @see #setRequirementId(Requirement)
 	 * @see org.abchip.mimo.biz.order.requirement.RequirementPackage#getDesiredFeature_RequirementId()
-	 * @model keys="requirementId"
+	 * @model keys="requirementId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Requirement getRequirementId();

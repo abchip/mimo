@@ -21,11 +21,11 @@ import org.eclipse.emf.ecore.EClass;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link org.abchip.mimo.biz.entity.tenant.impl.TenantDataSourceImpl#getTenantId <em>Tenant Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.entity.tenant.impl.TenantDataSourceImpl#getEntityGroupName <em>Entity Group Name</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.entity.tenant.impl.TenantDataSourceImpl#getJdbcPassword <em>Jdbc Password</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.entity.tenant.impl.TenantDataSourceImpl#getJdbcUri <em>Jdbc Uri</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.entity.tenant.impl.TenantDataSourceImpl#getJdbcUsername <em>Jdbc Username</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.entity.tenant.impl.TenantDataSourceImpl#getTenantId <em>Tenant Id</em>}</li>
  * </ul>
  *
  * @generated

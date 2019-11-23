@@ -20,6 +20,7 @@ import org.abchip.mimo.biz.BizEntity;
  * The following features are supported:
  * </p>
  * <ul>
+ *   <li>{@link org.abchip.mimo.biz.content.survey.SurveyQuestionOption#getSurveyQuestionId <em>Survey Question Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.survey.SurveyQuestionOption#getSurveyOptionSeqId <em>Survey Option Seq Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.survey.SurveyQuestionOption#getAmountBase <em>Amount Base</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.survey.SurveyQuestionOption#getAmountBaseUomId <em>Amount Base Uom Id</em>}</li>
@@ -28,7 +29,6 @@ import org.abchip.mimo.biz.BizEntity;
  *   <li>{@link org.abchip.mimo.biz.content.survey.SurveyQuestionOption#getDurationUomId <em>Duration Uom Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.survey.SurveyQuestionOption#getSequenceNum <em>Sequence Num</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.survey.SurveyQuestionOption#getWeightFactor <em>Weight Factor</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.content.survey.SurveyQuestionOption#getSurveyQuestionId <em>Survey Question Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.content.survey.SurveyPackage#getSurveyQuestionOption()
@@ -204,8 +204,8 @@ public interface SurveyQuestionOption extends BizEntity {
 	 * @see #setSurveyOptionSeqId(String)
 	 * @see org.abchip.mimo.biz.content.survey.SurveyPackage#getSurveyQuestionOption_SurveyOptionSeqId()
 	 * @model required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	String getSurveyOptionSeqId();
@@ -231,7 +231,9 @@ public interface SurveyQuestionOption extends BizEntity {
 	 * @return the value of the '<em>Survey Question Id</em>' reference.
 	 * @see #setSurveyQuestionId(SurveyQuestion)
 	 * @see org.abchip.mimo.biz.content.survey.SurveyPackage#getSurveyQuestionOption_SurveyQuestionId()
-	 * @model keys="surveyQuestionId"
+	 * @model keys="surveyQuestionId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	SurveyQuestion getSurveyQuestionId();

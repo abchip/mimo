@@ -21,15 +21,15 @@ import org.abchip.mimo.biz.content.content.Content;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.product.config.ProdConfItemContent#getFromDate <em>From Date</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.config.ProdConfItemContent#getThruDate <em>Thru Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.config.ProdConfItemContent#getConfigItemId <em>Config Item Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.config.ProdConfItemContent#getContentId <em>Content Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.config.ProdConfItemContent#getConfItemContentTypeId <em>Conf Item Content Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.config.ProdConfItemContent#getFromDate <em>From Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.config.ProdConfItemContent#getThruDate <em>Thru Date</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.product.config.ConfigPackage#getProdConfItemContent()
- * @model
+ * @model annotation="mimo-ent-frame title='Product Configuration Question Data Object' dictionary='ProductEntityLabels'"
  * @generated
  */
 public interface ProdConfItemContent extends BizEntityTyped<ProdConfItemContentType> {
@@ -44,7 +44,9 @@ public interface ProdConfItemContent extends BizEntityTyped<ProdConfItemContentT
 	 * @return the value of the '<em>Content Id</em>' reference.
 	 * @see #setContentId(Content)
 	 * @see org.abchip.mimo.biz.product.config.ConfigPackage#getProdConfItemContent_ContentId()
-	 * @model keys="contentId"
+	 * @model keys="contentId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Content getContentId();
@@ -71,8 +73,8 @@ public interface ProdConfItemContent extends BizEntityTyped<ProdConfItemContentT
 	 * @see #setFromDate(Date)
 	 * @see org.abchip.mimo.biz.product.config.ConfigPackage#getProdConfItemContent_FromDate()
 	 * @model required="true"
-	 *        annotation="mimo-ent-format type='date-time'"
 	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getFromDate();
@@ -124,7 +126,9 @@ public interface ProdConfItemContent extends BizEntityTyped<ProdConfItemContentT
 	 * @return the value of the '<em>Config Item Id</em>' reference.
 	 * @see #setConfigItemId(ProductConfigItem)
 	 * @see org.abchip.mimo.biz.product.config.ConfigPackage#getProdConfItemContent_ConfigItemId()
-	 * @model keys="configItemId"
+	 * @model keys="configItemId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ProductConfigItem getConfigItemId();
@@ -150,7 +154,9 @@ public interface ProdConfItemContent extends BizEntityTyped<ProdConfItemContentT
 	 * @return the value of the '<em>Conf Item Content Type Id</em>' reference.
 	 * @see #setConfItemContentTypeId(ProdConfItemContentType)
 	 * @see org.abchip.mimo.biz.product.config.ConfigPackage#getProdConfItemContent_ConfItemContentTypeId()
-	 * @model keys="confItemContentTypeId"
+	 * @model keys="confItemContentTypeId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ProdConfItemContentType getConfItemContentTypeId();

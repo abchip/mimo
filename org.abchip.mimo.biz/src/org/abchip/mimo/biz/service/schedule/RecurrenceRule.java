@@ -57,7 +57,6 @@ public interface RecurrenceRule extends BizEntity {
 	 * @see org.abchip.mimo.biz.service.schedule.SchedulePackage#getRecurrenceRule_RecurrenceRuleId()
 	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getRecurrenceRuleId();

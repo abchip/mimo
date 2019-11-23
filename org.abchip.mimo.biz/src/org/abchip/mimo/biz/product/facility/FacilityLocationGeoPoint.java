@@ -21,15 +21,15 @@ import org.abchip.mimo.biz.common.geo.GeoPoint;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.product.facility.FacilityLocationGeoPoint#getFacilityId <em>Facility Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.facility.FacilityLocationGeoPoint#getLocationSeqId <em>Location Seq Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.facility.FacilityLocationGeoPoint#getFromDate <em>From Date</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.facility.FacilityLocationGeoPoint#getThruDate <em>Thru Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.facility.FacilityLocationGeoPoint#getGeoPointId <em>Geo Point Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.facility.FacilityLocationGeoPoint#getFacilityId <em>Facility Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.facility.FacilityLocationGeoPoint#getFromDate <em>From Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.facility.FacilityLocationGeoPoint#getLocationSeqId <em>Location Seq Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.facility.FacilityLocationGeoPoint#getThruDate <em>Thru Date</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.product.facility.FacilityPackage#getFacilityLocationGeoPoint()
- * @model
+ * @model annotation="mimo-ent-frame title='Facility Location Geo Location with history' dictionary='ProductEntityLabels'"
  * @generated
  */
 public interface FacilityLocationGeoPoint extends BizEntity {
@@ -45,8 +45,8 @@ public interface FacilityLocationGeoPoint extends BizEntity {
 	 * @see #setFacilityId(String)
 	 * @see org.abchip.mimo.biz.product.facility.FacilityPackage#getFacilityLocationGeoPoint_FacilityId()
 	 * @model required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	String getFacilityId();
@@ -73,8 +73,8 @@ public interface FacilityLocationGeoPoint extends BizEntity {
 	 * @see #setFromDate(Date)
 	 * @see org.abchip.mimo.biz.product.facility.FacilityPackage#getFacilityLocationGeoPoint_FromDate()
 	 * @model required="true"
-	 *        annotation="mimo-ent-format type='date-time'"
 	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getFromDate();
@@ -100,7 +100,9 @@ public interface FacilityLocationGeoPoint extends BizEntity {
 	 * @return the value of the '<em>Geo Point Id</em>' reference.
 	 * @see #setGeoPointId(GeoPoint)
 	 * @see org.abchip.mimo.biz.product.facility.FacilityPackage#getFacilityLocationGeoPoint_GeoPointId()
-	 * @model keys="geoPointId"
+	 * @model keys="geoPointId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	GeoPoint getGeoPointId();
@@ -127,8 +129,8 @@ public interface FacilityLocationGeoPoint extends BizEntity {
 	 * @see #setLocationSeqId(String)
 	 * @see org.abchip.mimo.biz.product.facility.FacilityPackage#getFacilityLocationGeoPoint_LocationSeqId()
 	 * @model required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	String getLocationSeqId();

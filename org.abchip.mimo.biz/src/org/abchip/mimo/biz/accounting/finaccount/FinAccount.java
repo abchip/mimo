@@ -30,25 +30,25 @@ import org.abchip.mimo.biz.party.party.Party;
  *   <li>{@link org.abchip.mimo.biz.accounting.finaccount.FinAccount#getFinAccountId <em>Fin Account Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.finaccount.FinAccount#getActualBalance <em>Actual Balance</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.finaccount.FinAccount#getAvailableBalance <em>Available Balance</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.finaccount.FinAccount#getCurrencyUomId <em>Currency Uom Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.finaccount.FinAccount#getFinAccountAttributes <em>Fin Account Attributes</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.finaccount.FinAccount#getFinAccountCode <em>Fin Account Code</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.finaccount.FinAccount#getFinAccountName <em>Fin Account Name</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.finaccount.FinAccount#getFinAccountPin <em>Fin Account Pin</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.finaccount.FinAccount#getFinAccountTypeId <em>Fin Account Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.finaccount.FinAccount#getFromDate <em>From Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.finaccount.FinAccount#isIsRefundable <em>Is Refundable</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.finaccount.FinAccount#getReplenishLevel <em>Replenish Level</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.finaccount.FinAccount#getStatusId <em>Status Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.finaccount.FinAccount#getThruDate <em>Thru Date</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.finaccount.FinAccount#getFinAccountTypeId <em>Fin Account Type Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.finaccount.FinAccount#getCurrencyUomId <em>Currency Uom Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.finaccount.FinAccount#getOrganizationPartyId <em>Organization Party Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.finaccount.FinAccount#getOwnerPartyId <em>Owner Party Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.finaccount.FinAccount#getPostToGlAccountId <em>Post To Gl Account Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.finaccount.FinAccount#getReplenishLevel <em>Replenish Level</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.finaccount.FinAccount#getReplenishPaymentId <em>Replenish Payment Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.finaccount.FinAccount#getFinAccountAttributes <em>Fin Account Attributes</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.finaccount.FinAccount#getStatusId <em>Status Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.finaccount.FinAccount#getThruDate <em>Thru Date</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.accounting.finaccount.FinaccountPackage#getFinAccount()
- * @model
+ * @model annotation="mimo-ent-frame title='Financial Account'"
  * @generated
  */
 public interface FinAccount extends BizEntityTyped<FinAccountType> {
@@ -63,7 +63,8 @@ public interface FinAccount extends BizEntityTyped<FinAccountType> {
 	 * @return the value of the '<em>Actual Balance</em>' attribute.
 	 * @see #setActualBalance(BigDecimal)
 	 * @see org.abchip.mimo.biz.accounting.finaccount.FinaccountPackage#getFinAccount_ActualBalance()
-	 * @model annotation="mimo-ent-format type='currency-amount' precision='18' scale='2'"
+	 * @model annotation="mimo-ent-slot help='Calculated as the sum of FinAccountTrans.amount'"
+	 *        annotation="mimo-ent-format type='currency-amount' precision='18' scale='2'"
 	 * @generated
 	 */
 	BigDecimal getActualBalance();
@@ -89,7 +90,8 @@ public interface FinAccount extends BizEntityTyped<FinAccountType> {
 	 * @return the value of the '<em>Available Balance</em>' attribute.
 	 * @see #setAvailableBalance(BigDecimal)
 	 * @see org.abchip.mimo.biz.accounting.finaccount.FinaccountPackage#getFinAccount_AvailableBalance()
-	 * @model annotation="mimo-ent-format type='currency-amount' precision='18' scale='2'"
+	 * @model annotation="mimo-ent-slot help='Calculated as actualBalance minus sum of outstanding FinAccountAuth.amount'"
+	 *        annotation="mimo-ent-format type='currency-amount' precision='18' scale='2'"
 	 * @generated
 	 */
 	BigDecimal getAvailableBalance();
@@ -116,6 +118,7 @@ public interface FinAccount extends BizEntityTyped<FinAccountType> {
 	 * @see #setCurrencyUomId(Uom)
 	 * @see org.abchip.mimo.biz.accounting.finaccount.FinaccountPackage#getFinAccount_CurrencyUomId()
 	 * @model keys="uomId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Uom getCurrencyUomId();
@@ -141,7 +144,8 @@ public interface FinAccount extends BizEntityTyped<FinAccountType> {
 	 * @return the value of the '<em>Fin Account Code</em>' attribute.
 	 * @see #setFinAccountCode(String)
 	 * @see org.abchip.mimo.biz.accounting.finaccount.FinaccountPackage#getFinAccount_FinAccountCode()
-	 * @model annotation="mimo-ent-format type='long-varchar' length='255'"
+	 * @model annotation="mimo-ent-slot encrypt='TRUE'"
+	 *        annotation="mimo-ent-format type='long-varchar' length='255'"
 	 * @generated
 	 */
 	String getFinAccountCode();
@@ -193,7 +197,8 @@ public interface FinAccount extends BizEntityTyped<FinAccountType> {
 	 * @return the value of the '<em>Fin Account Pin</em>' attribute.
 	 * @see #setFinAccountPin(String)
 	 * @see org.abchip.mimo.biz.accounting.finaccount.FinaccountPackage#getFinAccount_FinAccountPin()
-	 * @model annotation="mimo-ent-format type='long-varchar' length='255'"
+	 * @model annotation="mimo-ent-slot encrypt='TRUE'"
+	 *        annotation="mimo-ent-format type='long-varchar' length='255'"
 	 * @generated
 	 */
 	String getFinAccountPin();
@@ -219,7 +224,8 @@ public interface FinAccount extends BizEntityTyped<FinAccountType> {
 	 * @return the value of the '<em>From Date</em>' attribute.
 	 * @see #setFromDate(Date)
 	 * @see org.abchip.mimo.biz.accounting.finaccount.FinaccountPackage#getFinAccount_FromDate()
-	 * @model annotation="mimo-ent-format type='date-time'"
+	 * @model annotation="mimo-ent-slot help='Describes when account will be valid. If null, valid immediately.'"
+	 *        annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getFromDate();
@@ -272,6 +278,8 @@ public interface FinAccount extends BizEntityTyped<FinAccountType> {
 	 * @see #setOrganizationPartyId(Party)
 	 * @see org.abchip.mimo.biz.accounting.finaccount.FinaccountPackage#getFinAccount_OrganizationPartyId()
 	 * @model keys="partyId"
+	 *        annotation="mimo-ent-slot help='The internal organization Party that owns (or rather, is liable for) the account.'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Party getOrganizationPartyId();
@@ -298,6 +306,8 @@ public interface FinAccount extends BizEntityTyped<FinAccountType> {
 	 * @see #setOwnerPartyId(Party)
 	 * @see org.abchip.mimo.biz.accounting.finaccount.FinaccountPackage#getFinAccount_OwnerPartyId()
 	 * @model keys="partyId"
+	 *        annotation="mimo-ent-slot help='The customer or third party that owns the account.'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Party getOwnerPartyId();
@@ -324,6 +334,7 @@ public interface FinAccount extends BizEntityTyped<FinAccountType> {
 	 * @see #setPostToGlAccountId(GlAccount)
 	 * @see org.abchip.mimo.biz.accounting.finaccount.FinaccountPackage#getFinAccount_PostToGlAccountId()
 	 * @model keys="glAccountId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	GlAccount getPostToGlAccountId();
@@ -376,6 +387,7 @@ public interface FinAccount extends BizEntityTyped<FinAccountType> {
 	 * @see #setReplenishPaymentId(PaymentMethod)
 	 * @see org.abchip.mimo.biz.accounting.finaccount.FinaccountPackage#getFinAccount_ReplenishPaymentId()
 	 * @model keys="paymentMethodId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	PaymentMethod getReplenishPaymentId();
@@ -427,7 +439,8 @@ public interface FinAccount extends BizEntityTyped<FinAccountType> {
 	 * @return the value of the '<em>Thru Date</em>' attribute.
 	 * @see #setThruDate(Date)
 	 * @see org.abchip.mimo.biz.accounting.finaccount.FinaccountPackage#getFinAccount_ThruDate()
-	 * @model annotation="mimo-ent-format type='date-time'"
+	 * @model annotation="mimo-ent-slot help='Expiration date of the account. If null, will never expire.'"
+	 *        annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getThruDate();
@@ -453,8 +466,7 @@ public interface FinAccount extends BizEntityTyped<FinAccountType> {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Fin Account Attributes</em>' attribute list.
 	 * @see org.abchip.mimo.biz.accounting.finaccount.FinaccountPackage#getFinAccount_FinAccountAttributes()
-	 * @model required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='FinAccountAttribute'"
 	 * @generated
@@ -523,6 +535,7 @@ public interface FinAccount extends BizEntityTyped<FinAccountType> {
 	 * @see #setFinAccountTypeId(FinAccountType)
 	 * @see org.abchip.mimo.biz.accounting.finaccount.FinaccountPackage#getFinAccount_FinAccountTypeId()
 	 * @model keys="finAccountTypeId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	FinAccountType getFinAccountTypeId();
@@ -550,7 +563,6 @@ public interface FinAccount extends BizEntityTyped<FinAccountType> {
 	 * @see org.abchip.mimo.biz.accounting.finaccount.FinaccountPackage#getFinAccount_FinAccountId()
 	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getFinAccountId();

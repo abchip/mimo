@@ -25,7 +25,7 @@ import org.abchip.mimo.biz.BizEntityType;
  * </ul>
  *
  * @see org.abchip.mimo.biz.webapp.visit.VisitPackage#getServerHitType()
- * @model annotation="mimo-ent-frame formula='description'"
+ * @model annotation="mimo-ent-frame title='Server Hit Bin' dictionary='WebappEntityLabels' formula='description'"
  * @generated
  */
 public interface ServerHitType extends BizEntityType<ServerHit> {
@@ -42,7 +42,6 @@ public interface ServerHitType extends BizEntityType<ServerHit> {
 	 * @see org.abchip.mimo.biz.webapp.visit.VisitPackage#getServerHitType_HitTypeId()
 	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getHitTypeId();

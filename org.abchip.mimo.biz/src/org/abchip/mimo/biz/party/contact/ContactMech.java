@@ -21,14 +21,14 @@ import org.abchip.mimo.biz.BizEntityTyped;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.party.contact.ContactMech#getContactMechId <em>Contact Mech Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.party.contact.ContactMech#getInfoString <em>Info String</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.party.contact.ContactMech#getContactMechTypeId <em>Contact Mech Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.contact.ContactMech#getContactMechAttributes <em>Contact Mech Attributes</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.party.contact.ContactMech#getContactMechTypeId <em>Contact Mech Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.contact.ContactMech#getFromContactMechLinks <em>From Contact Mech Links</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.party.contact.ContactMech#getInfoString <em>Info String</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.party.contact.ContactPackage#getContactMech()
- * @model
+ * @model annotation="mimo-ent-frame title='Contact Mechanism'"
  * @generated
  */
 public interface ContactMech extends BizEntityTyped<ContactMechType> {
@@ -69,8 +69,7 @@ public interface ContactMech extends BizEntityTyped<ContactMechType> {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Contact Mech Attributes</em>' attribute list.
 	 * @see org.abchip.mimo.biz.party.contact.ContactPackage#getContactMech_ContactMechAttributes()
-	 * @model required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ContactMechAttribute'"
 	 * @generated
@@ -88,8 +87,7 @@ public interface ContactMech extends BizEntityTyped<ContactMechType> {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>From Contact Mech Links</em>' attribute list.
 	 * @see org.abchip.mimo.biz.party.contact.ContactPackage#getContactMech_FromContactMechLinks()
-	 * @model required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ContactMechLink'"
 	 * @generated
@@ -299,8 +297,7 @@ public interface ContactMech extends BizEntityTyped<ContactMechType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ContactMechLink' route='contactMechIdTo'"
 	 * @generated
@@ -329,6 +326,7 @@ public interface ContactMech extends BizEntityTyped<ContactMechType> {
 	 * @see #setContactMechTypeId(ContactMechType)
 	 * @see org.abchip.mimo.biz.party.contact.ContactPackage#getContactMech_ContactMechTypeId()
 	 * @model keys="contactMechTypeId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ContactMechType getContactMechTypeId();
@@ -356,7 +354,6 @@ public interface ContactMech extends BizEntityTyped<ContactMechType> {
 	 * @see org.abchip.mimo.biz.party.contact.ContactPackage#getContactMech_ContactMechId()
 	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getContactMechId();

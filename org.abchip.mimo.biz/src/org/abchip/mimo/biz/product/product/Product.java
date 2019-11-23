@@ -33,44 +33,65 @@ import org.abchip.mimo.biz.shipment.shipment.ShipmentBoxType;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.product.product.Product#getProductId <em>Product Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.product.Product#getAmountUomTypeId <em>Amount Uom Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.Product#isAutoCreateKeywords <em>Auto Create Keywords</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.Product#getBillOfMaterialLevel <em>Bill Of Material Level</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.Product#getBrandName <em>Brand Name</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.Product#getChargeShipping <em>Charge Shipping</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.Product#getComments <em>Comments</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.product.Product#getCommunicationEventProducts <em>Communication Event Products</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.Product#getConfigId <em>Config Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.product.Product#getCreatedByUserLogin <em>Created By User Login</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.Product#getCreatedDate <em>Created Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.product.Product#getDefaultShipmentBoxTypeId <em>Default Shipment Box Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.product.Product#getDepthUomId <em>Depth Uom Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.Product#getDescription <em>Description</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.Product#getDetailImageUrl <em>Detail Image Url</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.Product#getDetailScreen <em>Detail Screen</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.product.Product#getDiameterUomId <em>Diameter Uom Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.product.Product#getFacilityId <em>Facility Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.Product#getFixedAmount <em>Fixed Amount</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.product.Product#getHeightUomId <em>Height Uom Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.Product#isInShippingBox <em>In Shipping Box</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.Product#isIncludeInPromotions <em>Include In Promotions</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.Product#getInternalName <em>Internal Name</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.Product#getIntroductionDate <em>Introduction Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.product.Product#getInventoryItemTypeId <em>Inventory Item Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.Product#getInventoryMessage <em>Inventory Message</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.Product#isIsVariant <em>Is Variant</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.Product#isIsVirtual <em>Is Virtual</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.Product#getLargeImageUrl <em>Large Image Url</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.product.Product#getLastModifiedByUserLogin <em>Last Modified By User Login</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.Product#getLastModifiedDate <em>Last Modified Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.Product#getLongDescription <em>Long Description</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.Product#getLotIdFilledIn <em>Lot Id Filled In</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.Product#getMediumImageUrl <em>Medium Image Url</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.Product#getOrderDecimalQuantity <em>Order Decimal Quantity</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.product.Product#getOriginGeoId <em>Origin Geo Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.Product#getOriginalImageUrl <em>Original Image Url</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.Product#getPiecesIncluded <em>Pieces Included</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.Product#getPriceDetailText <em>Price Detail Text</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.product.Product#getPrimaryProductCategoryId <em>Primary Product Category Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.product.Product#getProductAttributes <em>Product Attributes</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.Product#getProductDepth <em>Product Depth</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.Product#getProductDiameter <em>Product Diameter</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.product.Product#getProductFacilities <em>Product Facilities</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.product.Product#getProductGeos <em>Product Geos</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.Product#getProductHeight <em>Product Height</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.product.Product#getProductMaints <em>Product Maints</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.product.Product#getProductMeters <em>Product Meters</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.Product#getProductName <em>Product Name</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.Product#getProductRating <em>Product Rating</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.product.Product#getProductTypeId <em>Product Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.Product#getProductWeight <em>Product Weight</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.Product#getProductWidth <em>Product Width</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.Product#getQuantityIncluded <em>Quantity Included</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.product.Product#getQuantityUomId <em>Quantity Uom Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.product.Product#getRatingTypeEnum <em>Rating Type Enum</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.Product#getReleaseDate <em>Release Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.Product#isRequireAmount <em>Require Amount</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.Product#isRequireInventory <em>Require Inventory</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.product.Product#getRequirementMethodEnumId <em>Requirement Method Enum Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.Product#getReserv2ndPPPerc <em>Reserv2nd PP Perc</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.Product#getReservMaxPersons <em>Reserv Max Persons</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.Product#getReservNthPPPerc <em>Reserv Nth PP Perc</em>}</li>
@@ -84,34 +105,13 @@ import org.abchip.mimo.biz.shipment.shipment.ShipmentBoxType;
  *   <li>{@link org.abchip.mimo.biz.product.product.Product#getSmallImageUrl <em>Small Image Url</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.Product#getSupportDiscontinuationDate <em>Support Discontinuation Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.Product#isTaxable <em>Taxable</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.product.Product#getProductTypeId <em>Product Type Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.product.Product#getPrimaryProductCategoryId <em>Primary Product Category Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.product.Product#getFacilityId <em>Facility Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.product.Product#getQuantityUomId <em>Quantity Uom Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.product.Product#getAmountUomTypeId <em>Amount Uom Type Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.product.Product#getWeightUomId <em>Weight Uom Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.product.Product#getHeightUomId <em>Height Uom Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.product.Product#getWidthUomId <em>Width Uom Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.product.Product#getDepthUomId <em>Depth Uom Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.product.Product#getDiameterUomId <em>Diameter Uom Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.Product#getVirtualVariantMethodEnum <em>Virtual Variant Method Enum</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.product.Product#getRatingTypeEnum <em>Rating Type Enum</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.product.Product#getRequirementMethodEnumId <em>Requirement Method Enum Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.product.Product#getOriginGeoId <em>Origin Geo Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.product.Product#getCreatedByUserLogin <em>Created By User Login</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.product.Product#getLastModifiedByUserLogin <em>Last Modified By User Login</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.product.Product#getDefaultShipmentBoxTypeId <em>Default Shipment Box Type Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.product.Product#getInventoryItemTypeId <em>Inventory Item Type Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.product.Product#getCommunicationEventProducts <em>Communication Event Products</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.product.Product#getProductAttributes <em>Product Attributes</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.product.Product#getProductFacilities <em>Product Facilities</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.product.Product#getProductGeos <em>Product Geos</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.product.Product#getProductMaints <em>Product Maints</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.product.Product#getProductMeters <em>Product Meters</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.product.Product#getWeightUomId <em>Weight Uom Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.product.Product#getWidthUomId <em>Width Uom Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.product.product.ProductPackage#getProduct()
- * @model annotation="mimo-ent-frame formula='description'"
+ * @model annotation="mimo-ent-frame dictionary='ProductEntityLabels' formula='description'"
  * @generated
  */
 public interface Product extends BizEntityTyped<ProductType> {
@@ -127,6 +127,7 @@ public interface Product extends BizEntityTyped<ProductType> {
 	 * @see #setAmountUomTypeId(UomType)
 	 * @see org.abchip.mimo.biz.product.product.ProductPackage#getProduct_AmountUomTypeId()
 	 * @model keys="uomTypeId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	UomType getAmountUomTypeId();
@@ -256,7 +257,8 @@ public interface Product extends BizEntityTyped<ProductType> {
 	 * @return the value of the '<em>Config Id</em>' attribute.
 	 * @see #setConfigId(String)
 	 * @see org.abchip.mimo.biz.product.product.ProductPackage#getProduct_ConfigId()
-	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 * @model annotation="mimo-ent-slot help='Used to safe the persisted configuration Id for AGGREGATED products.'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	String getConfigId();
@@ -283,6 +285,7 @@ public interface Product extends BizEntityTyped<ProductType> {
 	 * @see #setCreatedByUserLogin(UserLogin)
 	 * @see org.abchip.mimo.biz.product.product.ProductPackage#getProduct_CreatedByUserLogin()
 	 * @model keys="userLoginId"
+	 *        annotation="mimo-ent-format type='id-vlong' length='255'"
 	 * @generated
 	 */
 	UserLogin getCreatedByUserLogin();
@@ -335,6 +338,7 @@ public interface Product extends BizEntityTyped<ProductType> {
 	 * @see #setDefaultShipmentBoxTypeId(ShipmentBoxType)
 	 * @see org.abchip.mimo.biz.product.product.ProductPackage#getProduct_DefaultShipmentBoxTypeId()
 	 * @model keys="shipmentBoxTypeId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ShipmentBoxType getDefaultShipmentBoxTypeId();
@@ -361,6 +365,7 @@ public interface Product extends BizEntityTyped<ProductType> {
 	 * @see #setDepthUomId(Uom)
 	 * @see org.abchip.mimo.biz.product.product.ProductPackage#getProduct_DepthUomId()
 	 * @model keys="uomId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Uom getDepthUomId();
@@ -465,6 +470,7 @@ public interface Product extends BizEntityTyped<ProductType> {
 	 * @see #setDiameterUomId(Uom)
 	 * @see org.abchip.mimo.biz.product.product.ProductPackage#getProduct_DiameterUomId()
 	 * @model keys="uomId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Uom getDiameterUomId();
@@ -490,7 +496,8 @@ public interface Product extends BizEntityTyped<ProductType> {
 	 * @return the value of the '<em>Fixed Amount</em>' attribute.
 	 * @see #setFixedAmount(BigDecimal)
 	 * @see org.abchip.mimo.biz.product.product.ProductPackage#getProduct_FixedAmount()
-	 * @model annotation="mimo-ent-format type='currency-amount' precision='18' scale='2'"
+	 * @model annotation="mimo-ent-slot help='Use this for products which are sold in fixed denominations, such as gift certificates or calling cards.'"
+	 *        annotation="mimo-ent-format type='currency-amount' precision='18' scale='2'"
 	 * @generated
 	 */
 	BigDecimal getFixedAmount();
@@ -569,6 +576,7 @@ public interface Product extends BizEntityTyped<ProductType> {
 	 * @see #setHeightUomId(Uom)
 	 * @see org.abchip.mimo.biz.product.product.ProductPackage#getProduct_HeightUomId()
 	 * @model keys="uomId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Uom getHeightUomId();
@@ -751,6 +759,7 @@ public interface Product extends BizEntityTyped<ProductType> {
 	 * @see #setLastModifiedByUserLogin(UserLogin)
 	 * @see org.abchip.mimo.biz.product.product.ProductPackage#getProduct_LastModifiedByUserLogin()
 	 * @model keys="userLoginId"
+	 *        annotation="mimo-ent-format type='id-vlong' length='255'"
 	 * @generated
 	 */
 	UserLogin getLastModifiedByUserLogin();
@@ -828,7 +837,8 @@ public interface Product extends BizEntityTyped<ProductType> {
 	 * @return the value of the '<em>Lot Id Filled In</em>' attribute.
 	 * @see #setLotIdFilledIn(String)
 	 * @see org.abchip.mimo.biz.product.product.ProductPackage#getProduct_LotIdFilledIn()
-	 * @model annotation="mimo-ent-format type='long-varchar' length='255'"
+	 * @model annotation="mimo-ent-slot help='Indicate if the lotId must be informed'"
+	 *        annotation="mimo-ent-format type='long-varchar' length='255'"
 	 * @generated
 	 */
 	String getLotIdFilledIn();
@@ -880,7 +890,8 @@ public interface Product extends BizEntityTyped<ProductType> {
 	 * @return the value of the '<em>Order Decimal Quantity</em>' attribute.
 	 * @see #setOrderDecimalQuantity(char)
 	 * @see org.abchip.mimo.biz.product.product.ProductPackage#getProduct_OrderDecimalQuantity()
-	 * @model annotation="mimo-ent-format type='indicator' length='1'"
+	 * @model annotation="mimo-ent-slot help='use to indicate if decimal quantity can be ordered for this product. Default value is Y'"
+	 *        annotation="mimo-ent-format type='indicator' length='1'"
 	 * @generated
 	 */
 	char getOrderDecimalQuantity();
@@ -907,6 +918,7 @@ public interface Product extends BizEntityTyped<ProductType> {
 	 * @see #setOriginGeoId(Geo)
 	 * @see org.abchip.mimo.biz.product.product.ProductPackage#getProduct_OriginGeoId()
 	 * @model keys="geoId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Geo getOriginGeoId();
@@ -1192,7 +1204,8 @@ public interface Product extends BizEntityTyped<ProductType> {
 	 * @return the value of the '<em>Quantity Included</em>' attribute.
 	 * @see #setQuantityIncluded(BigDecimal)
 	 * @see org.abchip.mimo.biz.product.product.ProductPackage#getProduct_QuantityIncluded()
-	 * @model annotation="mimo-ent-format type='fixed-point' precision='18' scale='6'"
+	 * @model annotation="mimo-ent-slot help='If you have a six-pack of 12oz soda cans you would have quantityIncluded=12, quantityUomId=oz, piecesIncluded=6.'"
+	 *        annotation="mimo-ent-format type='fixed-point' precision='18' scale='6'"
 	 * @generated
 	 */
 	BigDecimal getQuantityIncluded();
@@ -1219,6 +1232,7 @@ public interface Product extends BizEntityTyped<ProductType> {
 	 * @see #setQuantityUomId(Uom)
 	 * @see org.abchip.mimo.biz.product.product.ProductPackage#getProduct_QuantityUomId()
 	 * @model keys="uomId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Uom getQuantityUomId();
@@ -1245,6 +1259,7 @@ public interface Product extends BizEntityTyped<ProductType> {
 	 * @see #setRatingTypeEnum(Enumeration)
 	 * @see org.abchip.mimo.biz.product.product.ProductPackage#getProduct_RatingTypeEnum()
 	 * @model keys="enumId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Enumeration getRatingTypeEnum();
@@ -1349,6 +1364,7 @@ public interface Product extends BizEntityTyped<ProductType> {
 	 * @see #setRequirementMethodEnumId(Enumeration)
 	 * @see org.abchip.mimo.biz.product.product.ProductPackage#getProduct_RequirementMethodEnumId()
 	 * @model keys="enumId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Enumeration getRequirementMethodEnumId();
@@ -1374,7 +1390,8 @@ public interface Product extends BizEntityTyped<ProductType> {
 	 * @return the value of the '<em>Reserv2nd PP Perc</em>' attribute.
 	 * @see #setReserv2ndPPPerc(BigDecimal)
 	 * @see org.abchip.mimo.biz.product.product.ProductPackage#getProduct_Reserv2ndPPPerc()
-	 * @model annotation="mimo-ent-format type='fixed-point' precision='18' scale='6'"
+	 * @model annotation="mimo-ent-slot help='percentage of the end price for the 2nd person renting this asset connected to this product'"
+	 *        annotation="mimo-ent-format type='fixed-point' precision='18' scale='6'"
 	 * @generated
 	 */
 	BigDecimal getReserv2ndPPPerc();
@@ -1400,7 +1417,8 @@ public interface Product extends BizEntityTyped<ProductType> {
 	 * @return the value of the '<em>Reserv Max Persons</em>' attribute.
 	 * @see #setReservMaxPersons(BigDecimal)
 	 * @see org.abchip.mimo.biz.product.product.ProductPackage#getProduct_ReservMaxPersons()
-	 * @model annotation="mimo-ent-format type='fixed-point' precision='18' scale='6'"
+	 * @model annotation="mimo-ent-slot help='maximum number of persons who can rent this asset at the same time'"
+	 *        annotation="mimo-ent-format type='fixed-point' precision='18' scale='6'"
 	 * @generated
 	 */
 	BigDecimal getReservMaxPersons();
@@ -1426,7 +1444,8 @@ public interface Product extends BizEntityTyped<ProductType> {
 	 * @return the value of the '<em>Reserv Nth PP Perc</em>' attribute.
 	 * @see #setReservNthPPPerc(BigDecimal)
 	 * @see org.abchip.mimo.biz.product.product.ProductPackage#getProduct_ReservNthPPPerc()
-	 * @model annotation="mimo-ent-format type='fixed-point' precision='18' scale='6'"
+	 * @model annotation="mimo-ent-slot help='percentage of the end price for the Nth person renting this asset connected to this product'"
+	 *        annotation="mimo-ent-format type='fixed-point' precision='18' scale='6'"
 	 * @generated
 	 */
 	BigDecimal getReservNthPPPerc();
@@ -1582,7 +1601,8 @@ public interface Product extends BizEntityTyped<ProductType> {
 	 * @return the value of the '<em>Shipping Weight</em>' attribute.
 	 * @see #setShippingWeight(BigDecimal)
 	 * @see org.abchip.mimo.biz.product.product.ProductPackage#getProduct_ShippingWeight()
-	 * @model annotation="mimo-ent-format type='fixed-point' precision='18' scale='6'"
+	 * @model annotation="mimo-ent-slot help='The shipping weight of the product.'"
+	 *        annotation="mimo-ent-format type='fixed-point' precision='18' scale='6'"
 	 * @generated
 	 */
 	BigDecimal getShippingWeight();
@@ -1713,6 +1733,8 @@ public interface Product extends BizEntityTyped<ProductType> {
 	 * @see #setVirtualVariantMethodEnum(Enumeration)
 	 * @see org.abchip.mimo.biz.product.product.ProductPackage#getProduct_VirtualVariantMethodEnum()
 	 * @model keys="enumId"
+	 *        annotation="mimo-ent-slot help='This field defines the method of selecting a variant from the selectable features on the virtual product. Either as a variant explosion which will work to about 200 variants or as feature explosion which almost has no limits'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Enumeration getVirtualVariantMethodEnum();
@@ -1739,6 +1761,7 @@ public interface Product extends BizEntityTyped<ProductType> {
 	 * @see #setWeightUomId(Uom)
 	 * @see org.abchip.mimo.biz.product.product.ProductPackage#getProduct_WeightUomId()
 	 * @model keys="uomId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Uom getWeightUomId();
@@ -1765,6 +1788,7 @@ public interface Product extends BizEntityTyped<ProductType> {
 	 * @see #setWidthUomId(Uom)
 	 * @see org.abchip.mimo.biz.product.product.ProductPackage#getProduct_WidthUomId()
 	 * @model keys="uomId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Uom getWidthUomId();
@@ -1790,8 +1814,7 @@ public interface Product extends BizEntityTyped<ProductType> {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Communication Event Products</em>' attribute list.
 	 * @see org.abchip.mimo.biz.product.product.ProductPackage#getProduct_CommunicationEventProducts()
-	 * @model required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='CommunicationEventProduct'"
 	 * @generated
@@ -1809,8 +1832,7 @@ public interface Product extends BizEntityTyped<ProductType> {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Product Attributes</em>' attribute list.
 	 * @see org.abchip.mimo.biz.product.product.ProductPackage#getProduct_ProductAttributes()
-	 * @model required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ProductAttribute'"
 	 * @generated
@@ -1828,8 +1850,7 @@ public interface Product extends BizEntityTyped<ProductType> {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Product Facilities</em>' attribute list.
 	 * @see org.abchip.mimo.biz.product.product.ProductPackage#getProduct_ProductFacilities()
-	 * @model required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ProductFacility'"
 	 * @generated
@@ -1847,8 +1868,7 @@ public interface Product extends BizEntityTyped<ProductType> {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Product Geos</em>' attribute list.
 	 * @see org.abchip.mimo.biz.product.product.ProductPackage#getProduct_ProductGeos()
-	 * @model required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ProductGeo'"
 	 * @generated
@@ -1866,8 +1886,7 @@ public interface Product extends BizEntityTyped<ProductType> {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Product Maints</em>' attribute list.
 	 * @see org.abchip.mimo.biz.product.product.ProductPackage#getProduct_ProductMaints()
-	 * @model required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ProductMaint'"
 	 * @generated
@@ -1885,8 +1904,7 @@ public interface Product extends BizEntityTyped<ProductType> {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Product Meters</em>' attribute list.
 	 * @see org.abchip.mimo.biz.product.product.ProductPackage#getProduct_ProductMeters()
-	 * @model required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ProductMeter'"
 	 * @generated
@@ -1936,8 +1954,7 @@ public interface Product extends BizEntityTyped<ProductType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='GoodIdentification' route='productId'"
 	 * @generated
@@ -2027,8 +2044,7 @@ public interface Product extends BizEntityTyped<ProductType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ProductConfigStats' route='productId'"
 	 * @generated
@@ -2167,6 +2183,7 @@ public interface Product extends BizEntityTyped<ProductType> {
 	 * @see #setProductTypeId(ProductType)
 	 * @see org.abchip.mimo.biz.product.product.ProductPackage#getProduct_ProductTypeId()
 	 * @model keys="productTypeId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ProductType getProductTypeId();
@@ -2193,6 +2210,8 @@ public interface Product extends BizEntityTyped<ProductType> {
 	 * @see #setPrimaryProductCategoryId(ProductCategory)
 	 * @see org.abchip.mimo.biz.product.product.ProductPackage#getProduct_PrimaryProductCategoryId()
 	 * @model keys="productCategoryId"
+	 *        annotation="mimo-ent-slot help='The primary category ; it should be one of the productCategoryId already setup in ProductCategoryMember'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ProductCategory getPrimaryProductCategoryId();
@@ -2219,6 +2238,7 @@ public interface Product extends BizEntityTyped<ProductType> {
 	 * @see #setFacilityId(Facility)
 	 * @see org.abchip.mimo.biz.product.product.ProductPackage#getProduct_FacilityId()
 	 * @model keys="facilityId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Facility getFacilityId();
@@ -2245,6 +2265,7 @@ public interface Product extends BizEntityTyped<ProductType> {
 	 * @see #setInventoryItemTypeId(InventoryItemType)
 	 * @see org.abchip.mimo.biz.product.product.ProductPackage#getProduct_InventoryItemTypeId()
 	 * @model keys="inventoryItemTypeId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	InventoryItemType getInventoryItemTypeId();
@@ -2272,7 +2293,6 @@ public interface Product extends BizEntityTyped<ProductType> {
 	 * @see org.abchip.mimo.biz.product.product.ProductPackage#getProduct_ProductId()
 	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getProductId();

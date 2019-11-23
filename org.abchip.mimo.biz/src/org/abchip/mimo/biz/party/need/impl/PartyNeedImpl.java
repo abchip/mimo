@@ -29,17 +29,17 @@ import org.eclipse.emf.ecore.EClass;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.party.need.impl.PartyNeedImpl#getPartyNeedId <em>Party Need Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.party.need.impl.PartyNeedImpl#getDatetimeRecorded <em>Datetime Recorded</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.party.need.impl.PartyNeedImpl#getDescription <em>Description</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.party.need.impl.PartyNeedImpl#getVisitId <em>Visit Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.party.need.impl.PartyNeedImpl#getNeedTypeId <em>Need Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.need.impl.PartyNeedImpl#getPartyId <em>Party Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.need.impl.PartyNeedImpl#getRoleTypeId <em>Role Type Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.party.need.impl.PartyNeedImpl#getPartyTypeId <em>Party Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.party.need.impl.PartyNeedImpl#getPartyNeedId <em>Party Need Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.need.impl.PartyNeedImpl#getCommunicationEventId <em>Communication Event Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.party.need.impl.PartyNeedImpl#getProductId <em>Product Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.party.need.impl.PartyNeedImpl#getDatetimeRecorded <em>Datetime Recorded</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.party.need.impl.PartyNeedImpl#getDescription <em>Description</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.party.need.impl.PartyNeedImpl#getNeedTypeId <em>Need Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.party.need.impl.PartyNeedImpl#getPartyTypeId <em>Party Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.need.impl.PartyNeedImpl#getProductCategoryId <em>Product Category Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.party.need.impl.PartyNeedImpl#getProductId <em>Product Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.party.need.impl.PartyNeedImpl#getVisitId <em>Visit Id</em>}</li>
  * </ul>
  *
  * @generated

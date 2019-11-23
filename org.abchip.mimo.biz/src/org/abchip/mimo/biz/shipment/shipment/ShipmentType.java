@@ -28,7 +28,7 @@ import org.abchip.mimo.biz.BizEntityType;
  * </ul>
  *
  * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipmentType()
- * @model annotation="mimo-ent-frame formula='description'"
+ * @model annotation="mimo-ent-frame dictionary='ProductEntityLabels' formula='description'"
  * @generated
  */
 public interface ShipmentType extends BizEntityType<Shipment> {
@@ -96,6 +96,7 @@ public interface ShipmentType extends BizEntityType<Shipment> {
 	 * @see #setParentTypeId(ShipmentType)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipmentType_ParentTypeId()
 	 * @model keys="shipmentTypeId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ShipmentType getParentTypeId();
@@ -123,7 +124,6 @@ public interface ShipmentType extends BizEntityType<Shipment> {
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipmentType_ShipmentTypeId()
 	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getShipmentTypeId();
@@ -149,8 +149,7 @@ public interface ShipmentType extends BizEntityType<Shipment> {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Shipment Type Attrs</em>' attribute list.
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipmentType_ShipmentTypeAttrs()
-	 * @model required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 * @model annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ShipmentTypeAttr'"
 	 * @generated

@@ -24,7 +24,7 @@ import org.abchip.mimo.biz.entity.group.EntityGroup;
  * </ul>
  *
  * @see org.abchip.mimo.biz.entity.synchronization.SynchronizationPackage#getEntitySyncIncludeGroup()
- * @model
+ * @model annotation="mimo-ent-frame title='Entity Synchronization Include Entity Group'"
  * @generated
  */
 public interface EntitySyncIncludeGroup extends BizEntity {
@@ -39,7 +39,9 @@ public interface EntitySyncIncludeGroup extends BizEntity {
 	 * @return the value of the '<em>Entity Group Id</em>' reference.
 	 * @see #setEntityGroupId(EntityGroup)
 	 * @see org.abchip.mimo.biz.entity.synchronization.SynchronizationPackage#getEntitySyncIncludeGroup_EntityGroupId()
-	 * @model keys="entityGroupId"
+	 * @model keys="entityGroupId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	EntityGroup getEntityGroupId();
@@ -65,7 +67,9 @@ public interface EntitySyncIncludeGroup extends BizEntity {
 	 * @return the value of the '<em>Entity Sync Id</em>' reference.
 	 * @see #setEntitySyncId(EntitySync)
 	 * @see org.abchip.mimo.biz.entity.synchronization.SynchronizationPackage#getEntitySyncIncludeGroup_EntitySyncId()
-	 * @model keys="entitySyncId"
+	 * @model keys="entitySyncId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	EntitySync getEntitySyncId();

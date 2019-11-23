@@ -33,53 +33,53 @@ import org.eclipse.emf.ecore.EClass;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderItemImpl#getOrderId <em>Order Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderItemImpl#getOrderItemSeqId <em>Order Item Seq Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderItemImpl#getAutoCancelDate <em>Auto Cancel Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderItemImpl#getBudgetId <em>Budget Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderItemImpl#getBudgetItemSeqId <em>Budget Item Seq Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderItemImpl#getCancelBackOrderDate <em>Cancel Back Order Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderItemImpl#getCancelQuantity <em>Cancel Quantity</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderItemImpl#getChangeByUserLoginId <em>Change By User Login Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderItemImpl#getComments <em>Comments</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderItemImpl#getCorrespondingPoId <em>Corresponding Po Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderItemImpl#getDeploymentId <em>Deployment Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderItemImpl#getDontCancelSetDate <em>Dont Cancel Set Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderItemImpl#getDontCancelSetUserLogin <em>Dont Cancel Set User Login</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderItemImpl#getEstimatedDeliveryDate <em>Estimated Delivery Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderItemImpl#getEstimatedShipDate <em>Estimated Ship Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderItemImpl#getExternalId <em>External Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderItemImpl#getFromInventoryItemId <em>From Inventory Item Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderItemImpl#isIsItemGroupPrimary <em>Is Item Group Primary</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderItemImpl#isIsModifiedPrice <em>Is Modified Price</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderItemImpl#isIsPromo <em>Is Promo</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderItemImpl#getItemDescription <em>Item Description</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderItemImpl#getOrderItemGroupSeqId <em>Order Item Group Seq Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderItemImpl#getOrderItemTypeId <em>Order Item Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderItemImpl#getOverrideGlAccountId <em>Override Gl Account Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderItemImpl#getProdCatalogId <em>Prod Catalog Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderItemImpl#getProductCategoryId <em>Product Category Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderItemImpl#getProductFeatureId <em>Product Feature Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderItemImpl#getProductId <em>Product Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderItemImpl#getQuantity <em>Quantity</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderItemImpl#getQuoteId <em>Quote Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderItemImpl#getQuoteItemSeqId <em>Quote Item Seq Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderItemImpl#getRecurringFreqUomId <em>Recurring Freq Uom Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderItemImpl#getReserveAfterDate <em>Reserve After Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderItemImpl#getSalesOpportunityId <em>Sales Opportunity Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderItemImpl#getSelectedAmount <em>Selected Amount</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderItemImpl#getShipAfterDate <em>Ship After Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderItemImpl#getShipBeforeDate <em>Ship Before Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderItemImpl#getShoppingListId <em>Shopping List Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderItemImpl#getShoppingListItemSeqId <em>Shopping List Item Seq Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderItemImpl#getStatusId <em>Status Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderItemImpl#getSubscriptionId <em>Subscription Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderItemImpl#getSupplierProductId <em>Supplier Product Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderItemImpl#getSyncStatusId <em>Sync Status Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderItemImpl#getUnitAverageCost <em>Unit Average Cost</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderItemImpl#getUnitListPrice <em>Unit List Price</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderItemImpl#getUnitPrice <em>Unit Price</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderItemImpl#getUnitRecurringPrice <em>Unit Recurring Price</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderItemImpl#getOrderId <em>Order Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderItemImpl#getOrderItemTypeId <em>Order Item Type Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderItemImpl#getProductId <em>Product Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderItemImpl#getFromInventoryItemId <em>From Inventory Item Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderItemImpl#getRecurringFreqUomId <em>Recurring Freq Uom Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderItemImpl#getStatusId <em>Status Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderItemImpl#getSyncStatusId <em>Sync Status Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderItemImpl#getDontCancelSetUserLogin <em>Dont Cancel Set User Login</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderItemImpl#getOverrideGlAccountId <em>Override Gl Account Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderItemImpl#getSalesOpportunityId <em>Sales Opportunity Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderItemImpl#getChangeByUserLoginId <em>Change By User Login Id</em>}</li>
  * </ul>
  *
  * @generated

@@ -24,7 +24,7 @@ import org.abchip.mimo.biz.party.communication.CommunicationEvent;
  * </ul>
  *
  * @see org.abchip.mimo.biz.product.subscription.SubscriptionPackage#getSubscriptionCommEvent()
- * @model
+ * @model annotation="mimo-ent-frame title='Subscription Communication Event' dictionary='ProductEntityLabels'"
  * @generated
  */
 public interface SubscriptionCommEvent extends BizEntity {
@@ -39,7 +39,9 @@ public interface SubscriptionCommEvent extends BizEntity {
 	 * @return the value of the '<em>Communication Event Id</em>' reference.
 	 * @see #setCommunicationEventId(CommunicationEvent)
 	 * @see org.abchip.mimo.biz.product.subscription.SubscriptionPackage#getSubscriptionCommEvent_CommunicationEventId()
-	 * @model keys="communicationEventId"
+	 * @model keys="communicationEventId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	CommunicationEvent getCommunicationEventId();
@@ -65,7 +67,9 @@ public interface SubscriptionCommEvent extends BizEntity {
 	 * @return the value of the '<em>Subscription Id</em>' reference.
 	 * @see #setSubscriptionId(Subscription)
 	 * @see org.abchip.mimo.biz.product.subscription.SubscriptionPackage#getSubscriptionCommEvent_SubscriptionId()
-	 * @model keys="subscriptionId"
+	 * @model keys="subscriptionId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Subscription getSubscriptionId();

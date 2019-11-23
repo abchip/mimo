@@ -20,12 +20,12 @@ import org.abchip.mimo.biz.BizEntity;
  * The following features are supported:
  * </p>
  * <ul>
+ *   <li>{@link org.abchip.mimo.biz.entity.test.TestingNodeMember#getTestingId <em>Testing Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.entity.test.TestingNodeMember#getTestingNodeId <em>Testing Node Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.entity.test.TestingNodeMember#getFromDate <em>From Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.entity.test.TestingNodeMember#getExtendFromDate <em>Extend From Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.entity.test.TestingNodeMember#getExtendThruDate <em>Extend Thru Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.entity.test.TestingNodeMember#getThruDate <em>Thru Date</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.entity.test.TestingNodeMember#getTestingId <em>Testing Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.entity.test.TestingNodeMember#getTestingNodeId <em>Testing Node Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.entity.test.TestPackage#getTestingNodeMember()
@@ -97,8 +97,8 @@ public interface TestingNodeMember extends BizEntity {
 	 * @see #setFromDate(Date)
 	 * @see org.abchip.mimo.biz.entity.test.TestPackage#getTestingNodeMember_FromDate()
 	 * @model required="true"
-	 *        annotation="mimo-ent-format type='date-time'"
 	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getFromDate();
@@ -124,7 +124,9 @@ public interface TestingNodeMember extends BizEntity {
 	 * @return the value of the '<em>Testing Id</em>' reference.
 	 * @see #setTestingId(Testing)
 	 * @see org.abchip.mimo.biz.entity.test.TestPackage#getTestingNodeMember_TestingId()
-	 * @model keys="testingId"
+	 * @model keys="testingId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Testing getTestingId();
@@ -150,7 +152,9 @@ public interface TestingNodeMember extends BizEntity {
 	 * @return the value of the '<em>Testing Node Id</em>' reference.
 	 * @see #setTestingNodeId(TestingNode)
 	 * @see org.abchip.mimo.biz.entity.test.TestPackage#getTestingNodeMember_TestingNodeId()
-	 * @model keys="testingNodeId"
+	 * @model keys="testingNodeId" required="true"
+	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	TestingNode getTestingNodeId();

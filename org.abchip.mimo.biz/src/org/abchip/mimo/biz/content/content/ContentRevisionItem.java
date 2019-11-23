@@ -22,12 +22,12 @@ import org.abchip.mimo.biz.content.data.DataResource;
  *   <li>{@link org.abchip.mimo.biz.content.content.ContentRevisionItem#getContentId <em>Content Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.content.ContentRevisionItem#getContentRevisionSeqId <em>Content Revision Seq Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.content.ContentRevisionItem#getItemContentId <em>Item Content Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.content.content.ContentRevisionItem#getOldDataResourceId <em>Old Data Resource Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.content.ContentRevisionItem#getNewDataResourceId <em>New Data Resource Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.content.content.ContentRevisionItem#getOldDataResourceId <em>Old Data Resource Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.content.content.ContentPackage#getContentRevisionItem()
- * @model
+ * @model annotation="mimo-ent-frame title='Content Revision'"
  * @generated
  */
 public interface ContentRevisionItem extends BizEntity {
@@ -43,8 +43,8 @@ public interface ContentRevisionItem extends BizEntity {
 	 * @see #setContentId(String)
 	 * @see org.abchip.mimo.biz.content.content.ContentPackage#getContentRevisionItem_ContentId()
 	 * @model required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	String getContentId();
@@ -71,8 +71,8 @@ public interface ContentRevisionItem extends BizEntity {
 	 * @see #setContentRevisionSeqId(String)
 	 * @see org.abchip.mimo.biz.content.content.ContentPackage#getContentRevisionItem_ContentRevisionSeqId()
 	 * @model required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	String getContentRevisionSeqId();
@@ -99,8 +99,8 @@ public interface ContentRevisionItem extends BizEntity {
 	 * @see #setItemContentId(String)
 	 * @see org.abchip.mimo.biz.content.content.ContentPackage#getContentRevisionItem_ItemContentId()
 	 * @model required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 *        annotation="mimo-ent-slot key='true'"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	String getItemContentId();
@@ -127,6 +127,7 @@ public interface ContentRevisionItem extends BizEntity {
 	 * @see #setNewDataResourceId(DataResource)
 	 * @see org.abchip.mimo.biz.content.content.ContentPackage#getContentRevisionItem_NewDataResourceId()
 	 * @model keys="dataResourceId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	DataResource getNewDataResourceId();
@@ -153,6 +154,7 @@ public interface ContentRevisionItem extends BizEntity {
 	 * @see #setOldDataResourceId(DataResource)
 	 * @see org.abchip.mimo.biz.content.content.ContentPackage#getContentRevisionItem_OldDataResourceId()
 	 * @model keys="dataResourceId"
+	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	DataResource getOldDataResourceId();
