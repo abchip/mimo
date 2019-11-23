@@ -41,6 +41,7 @@ public abstract class EntityIdentifiableImpl extends EntityImpl implements Entit
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected EntityIdentifiableImpl() {
@@ -49,6 +50,7 @@ public abstract class EntityIdentifiableImpl extends EntityImpl implements Entit
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -70,38 +72,39 @@ public abstract class EntityIdentifiableImpl extends EntityImpl implements Entit
 
 		if (eFeature.isMany() && eFeature instanceof EAttribute) {
 			if (!eIsSet(featureID)) {
-				if (eResource() instanceof MimoResourceImpl) {
-
-					Slot slot = isa().getSlot(eFeature.getName());
-					if (slot.getDomain() == null)
-						return super.eGet(featureID, resolve, coreType);
-
-					MimoResourceImpl<EntityIdentifiable> resource = (MimoResourceImpl<EntityIdentifiable>) eResource();
-					Context context = resource.getContext();
-					ResourceManager resourceManager = context.get(ResourceManager.class);
-					ResourceReader<?> resourceReader = resourceManager.getResourceReader(context, slot.getDomain().getFrame());
-					String filter = slot.getDomain().getRoute();
-					if (filter == null || filter.trim().isEmpty()) {
-						if (eIDAttribute != null) {
-							if (slot.isString())
-								filter = eIDAttribute.getName() + "= '" + this.getID() + "'";
-							else
-								filter = eIDAttribute.getName() + "=" + this.getID();
-						} else
-							return super.eGet(featureID, resolve, coreType);
-					}
-
-					List<String> values = new EDataTypeUniqueEList<String>(String.class, this, featureID);
-					for (EntityIdentifiable entityIdentifiable : resourceReader.find(filter)) {
-						String domainKey = entityIdentifiable.isa().getKeys().get(0);
-						entityIdentifiable.isa().setValue(entityIdentifiable, domainKey, this);
-						values.add(entityIdentifiable.getID());
-					}
-					super.eSet(eFeature, values);
-
-					return values;
-				} else
+				
+				if (!(eResource() instanceof MimoResourceImpl))
 					return super.eGet(featureID, resolve, coreType);
+				
+				Slot slot = isa().getSlot(eFeature.getName());
+				if (slot.getDomain() == null)
+					return super.eGet(featureID, resolve, coreType);
+
+				MimoResourceImpl<EntityIdentifiable> resource = (MimoResourceImpl<EntityIdentifiable>) eResource();
+				Context context = resource.getContext();
+				ResourceManager resourceManager = context.get(ResourceManager.class);
+				ResourceReader<?> resourceReader = resourceManager.getResourceReader(context, slot.getDomain().getFrame());
+				String filter = slot.getDomain().getRoute();
+				if (filter == null || filter.trim().isEmpty()) {
+					if (eIDAttribute != null) {
+						if (slot.isString())
+							filter = eIDAttribute.getName() + " = '" + this.getID() + "'";
+						else
+							filter = eIDAttribute.getName() + " = " + this.getID();
+					} else
+						return super.eGet(featureID, resolve, coreType);
+				}
+
+				List<String> values = new EDataTypeUniqueEList<String>(String.class, this, featureID);
+				for (EntityIdentifiable entityIdentifiable : resourceReader.find(filter)) {
+					String domainKey = entityIdentifiable.isa().getKeys().get(0);
+					entityIdentifiable.isa().setValue(entityIdentifiable, domainKey, this);
+					values.add(entityIdentifiable.getID());
+				}
+				super.eSet(eFeature, values);
+
+				return values;
+
 			}
 		}
 
@@ -167,7 +170,7 @@ public abstract class EntityIdentifiableImpl extends EntityImpl implements Entit
 		else if (eResource() != null)
 			return EntityState.TRANSIENT;
 		else
-			return EntityState.DIRTY;
+			return EntityState.TRANSIENT;
 	}
 
 	/**
