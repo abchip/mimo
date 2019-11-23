@@ -71,6 +71,7 @@ import org.abchip.mimo.biz.content.survey.SurveyPackage;
 import org.abchip.mimo.biz.content.survey.impl.SurveyPackageImpl;
 import org.abchip.mimo.biz.content.website.WebsitePackage;
 import org.abchip.mimo.biz.content.website.impl.WebsitePackageImpl;
+import org.abchip.mimo.biz.entity.EntityPackage;
 import org.abchip.mimo.biz.entity.audit.AuditPackage;
 import org.abchip.mimo.biz.entity.audit.impl.AuditPackageImpl;
 import org.abchip.mimo.biz.entity.crypto.CryptoPackage;
@@ -359,8 +360,8 @@ public class ShoppinglistPackageImpl extends EPackageImpl implements Shoppinglis
 		SurveyPackageImpl theSurveyPackage = (SurveyPackageImpl)(registeredPackage instanceof SurveyPackageImpl ? registeredPackage : SurveyPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(WebsitePackage.eNS_URI);
 		WebsitePackageImpl theWebsitePackage = (WebsitePackageImpl)(registeredPackage instanceof WebsitePackageImpl ? registeredPackage : WebsitePackage.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(org.abchip.mimo.biz.entity.EntityPackage.eNS_URI);
-		EntityPackageImpl theEntityPackage = (EntityPackageImpl)(registeredPackage instanceof EntityPackageImpl ? registeredPackage : org.abchip.mimo.biz.entity.EntityPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(EntityPackage.eNS_URI);
+		EntityPackageImpl theEntityPackage = (EntityPackageImpl)(registeredPackage instanceof EntityPackageImpl ? registeredPackage : EntityPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(AuditPackage.eNS_URI);
 		AuditPackageImpl theAuditPackage = (AuditPackageImpl)(registeredPackage instanceof AuditPackageImpl ? registeredPackage : AuditPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(CryptoPackage.eNS_URI);
@@ -1403,13 +1404,6 @@ public class ShoppinglistPackageImpl extends EPackageImpl implements Shoppinglis
 			   "length", "20"
 		   });
 		addAnnotation
-		  (getShoppingList_ContactMechId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getShoppingList_CurrencyUom(),
 		   source,
 		   new String[] {
@@ -1457,48 +1451,6 @@ public class ShoppinglistPackageImpl extends EPackageImpl implements Shoppinglis
 			   "length", "100"
 		   });
 		addAnnotation
-		  (getShoppingList_ParentShoppingListId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getShoppingList_PartyId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getShoppingList_PaymentMethodId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getShoppingList_ProductPromoCodeId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getShoppingList_ProductStoreId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getShoppingList_RecurrenceInfoId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getShoppingList_ShipmentMethodTypeId(),
 		   source,
 		   new String[] {
@@ -1513,13 +1465,6 @@ public class ShoppinglistPackageImpl extends EPackageImpl implements Shoppinglis
 			   "length", "20"
 		   });
 		addAnnotation
-		  (getShoppingList_ShoppingListTypeId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getShoppingList_ShoppingListWorkEfforts(),
 		   source,
 		   new String[] {
@@ -1528,13 +1473,6 @@ public class ShoppinglistPackageImpl extends EPackageImpl implements Shoppinglis
 		   });
 		addAnnotation
 		  (getShoppingList_VisitorId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getShoppingListItem_ShoppingListId(),
 		   source,
 		   new String[] {
 			   "type", "id",
@@ -1561,13 +1499,6 @@ public class ShoppinglistPackageImpl extends EPackageImpl implements Shoppinglis
 			   "type", "currency-precise",
 			   "precision", "18",
 			   "scale", "3"
-		   });
-		addAnnotation
-		  (getShoppingListItem_ProductId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
 		   });
 		addAnnotation
 		  (getShoppingListItem_Quantity(),
@@ -1608,20 +1539,6 @@ public class ShoppinglistPackageImpl extends EPackageImpl implements Shoppinglis
 			   "type", "date-time"
 		   });
 		addAnnotation
-		  (getShoppingListItemSurvey_ShoppingListId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getShoppingListItemSurvey_SurveyResponseId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getShoppingListItemSurvey_ShoppingListItemSeqId(),
 		   source,
 		   new String[] {
@@ -1648,20 +1565,6 @@ public class ShoppinglistPackageImpl extends EPackageImpl implements Shoppinglis
 		   new String[] {
 			   "type", "description",
 			   "length", "255"
-		   });
-		addAnnotation
-		  (getShoppingListWorkEffort_ShoppingListId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getShoppingListWorkEffort_WorkEffortId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
 		   });
 	}
 

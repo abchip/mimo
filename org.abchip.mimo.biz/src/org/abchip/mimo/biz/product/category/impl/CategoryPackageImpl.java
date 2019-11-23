@@ -71,6 +71,7 @@ import org.abchip.mimo.biz.content.survey.SurveyPackage;
 import org.abchip.mimo.biz.content.survey.impl.SurveyPackageImpl;
 import org.abchip.mimo.biz.content.website.WebsitePackage;
 import org.abchip.mimo.biz.content.website.impl.WebsitePackageImpl;
+import org.abchip.mimo.biz.entity.EntityPackage;
 import org.abchip.mimo.biz.entity.audit.AuditPackage;
 import org.abchip.mimo.biz.entity.audit.impl.AuditPackageImpl;
 import org.abchip.mimo.biz.entity.crypto.CryptoPackage;
@@ -407,8 +408,8 @@ public class CategoryPackageImpl extends EPackageImpl implements CategoryPackage
 		SurveyPackageImpl theSurveyPackage = (SurveyPackageImpl)(registeredPackage instanceof SurveyPackageImpl ? registeredPackage : SurveyPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(WebsitePackage.eNS_URI);
 		WebsitePackageImpl theWebsitePackage = (WebsitePackageImpl)(registeredPackage instanceof WebsitePackageImpl ? registeredPackage : WebsitePackage.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(org.abchip.mimo.biz.entity.EntityPackage.eNS_URI);
-		EntityPackageImpl theEntityPackage = (EntityPackageImpl)(registeredPackage instanceof EntityPackageImpl ? registeredPackage : org.abchip.mimo.biz.entity.EntityPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(EntityPackage.eNS_URI);
+		EntityPackageImpl theEntityPackage = (EntityPackageImpl)(registeredPackage instanceof EntityPackageImpl ? registeredPackage : EntityPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(AuditPackage.eNS_URI);
 		AuditPackageImpl theAuditPackage = (AuditPackageImpl)(registeredPackage instanceof AuditPackageImpl ? registeredPackage : AuditPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(CryptoPackage.eNS_URI);
@@ -2074,21 +2075,7 @@ public class CategoryPackageImpl extends EPackageImpl implements CategoryPackage
 			   "type", "very-long"
 		   });
 		addAnnotation
-		  (getProductCategory_PrimaryParentCategoryId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getProductCategory_ProductCategoryAttributes(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getProductCategory_ProductCategoryTypeId(),
 		   source,
 		   new String[] {
 			   "type", "id",
@@ -2100,13 +2087,6 @@ public class CategoryPackageImpl extends EPackageImpl implements CategoryPackage
 		   new String[] {
 			   "type", "indicator",
 			   "length", "1"
-		   });
-		addAnnotation
-		  (getProductCategoryAttribute_ProductCategoryId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
 		   });
 		addAnnotation
 		  (getProductCategoryAttribute_AttrName(),
@@ -2128,27 +2108,6 @@ public class CategoryPackageImpl extends EPackageImpl implements CategoryPackage
 		   new String[] {
 			   "type", "value",
 			   "length", "255"
-		   });
-		addAnnotation
-		  (getProductCategoryContent_ProductCategoryId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getProductCategoryContent_ContentId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getProductCategoryContent_ProdCatContentTypeId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
 		   });
 		addAnnotation
 		  (getProductCategoryContent_FromDate(),
@@ -2219,48 +2178,6 @@ public class CategoryPackageImpl extends EPackageImpl implements CategoryPackage
 			   "length", "1"
 		   });
 		addAnnotation
-		  (getProductCategoryContentType_ParentTypeId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getProductCategoryGlAccount_ProductCategoryId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getProductCategoryGlAccount_OrganizationPartyId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getProductCategoryGlAccount_GlAccountTypeId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getProductCategoryGlAccount_GlAccountId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getProductCategoryLink_ProductCategoryId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getProductCategoryLink_FromDate(),
 		   source,
 		   new String[] {
@@ -2315,13 +2232,6 @@ public class CategoryPackageImpl extends EPackageImpl implements CategoryPackage
 			   "length", "255"
 		   });
 		addAnnotation
-		  (getProductCategoryLink_LinkTypeEnumId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getProductCategoryLink_SequenceNum(),
 		   source,
 		   new String[] {
@@ -2341,20 +2251,6 @@ public class CategoryPackageImpl extends EPackageImpl implements CategoryPackage
 		   new String[] {
 			   "type", "description",
 			   "length", "255"
-		   });
-		addAnnotation
-		  (getProductCategoryMember_ProductId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getProductCategoryMember_ProductCategoryId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
 		   });
 		addAnnotation
 		  (getProductCategoryMember_FromDate(),
@@ -2392,27 +2288,6 @@ public class CategoryPackageImpl extends EPackageImpl implements CategoryPackage
 			   "type", "date-time"
 		   });
 		addAnnotation
-		  (getProductCategoryRole_PartyId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getProductCategoryRole_RoleTypeId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getProductCategoryRole_ProductCategoryId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getProductCategoryRole_FromDate(),
 		   source,
 		   new String[] {
@@ -2430,20 +2305,6 @@ public class CategoryPackageImpl extends EPackageImpl implements CategoryPackage
 		   source,
 		   new String[] {
 			   "type", "date-time"
-		   });
-		addAnnotation
-		  (getProductCategoryRollup_ProductCategoryId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getProductCategoryRollup_ParentProductCategoryId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
 		   });
 		addAnnotation
 		  (getProductCategoryRollup_FromDate(),
@@ -2501,21 +2362,7 @@ public class CategoryPackageImpl extends EPackageImpl implements CategoryPackage
 			   "length", "1"
 		   });
 		addAnnotation
-		  (getProductCategoryType_ParentTypeId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getProductCategoryType_ProductCategoryTypeAttrs(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getProductCategoryTypeAttr_ProductCategoryTypeId(),
 		   source,
 		   new String[] {
 			   "type", "id",

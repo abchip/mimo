@@ -123,7 +123,6 @@ public interface OrderAdjustmentType extends BizEntityType<OrderAdjustment> {
 	 * @see #setParentTypeId(OrderAdjustmentType)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderAdjustmentType_ParentTypeId()
 	 * @model keys="orderAdjustmentTypeId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	OrderAdjustmentType getParentTypeId();

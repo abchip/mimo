@@ -67,7 +67,6 @@ public interface TestingItem extends BizEntity {
 	 * @see org.abchip.mimo.biz.entity.test.TestPackage#getTestingItem_TestingId()
 	 * @model keys="testingId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Testing getTestingId();

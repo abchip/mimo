@@ -96,7 +96,6 @@ public interface ProductStoreGroup extends BizEntityTyped<ProductStoreGroupType>
 	 * @see #setProductStoreGroupTypeId(ProductStoreGroupType)
 	 * @see org.abchip.mimo.biz.product.store.StorePackage#getProductStoreGroup_ProductStoreGroupTypeId()
 	 * @model keys="productStoreGroupTypeId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ProductStoreGroupType getProductStoreGroupTypeId();
@@ -133,7 +132,6 @@ public interface ProductStoreGroup extends BizEntityTyped<ProductStoreGroupType>
 	 * @see #setPrimaryParentGroupId(ProductStoreGroup)
 	 * @see org.abchip.mimo.biz.product.store.StorePackage#getProductStoreGroup_PrimaryParentGroupId()
 	 * @model keys="productStoreGroupId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ProductStoreGroup getPrimaryParentGroupId();

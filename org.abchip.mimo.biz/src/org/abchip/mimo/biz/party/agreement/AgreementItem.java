@@ -150,7 +150,6 @@ public interface AgreementItem extends BizEntityTyped<AgreementItemType> {
 	 * @see org.abchip.mimo.biz.party.agreement.AgreementPackage#getAgreementItem_AgreementId()
 	 * @model keys="agreementId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Agreement getAgreementId();
@@ -177,7 +176,6 @@ public interface AgreementItem extends BizEntityTyped<AgreementItemType> {
 	 * @see #setAgreementItemTypeId(AgreementItemType)
 	 * @see org.abchip.mimo.biz.party.agreement.AgreementPackage#getAgreementItem_AgreementItemTypeId()
 	 * @model keys="agreementItemTypeId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	AgreementItemType getAgreementItemTypeId();

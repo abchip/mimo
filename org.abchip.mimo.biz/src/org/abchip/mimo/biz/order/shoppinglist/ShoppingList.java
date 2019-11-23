@@ -120,7 +120,6 @@ public interface ShoppingList extends BizEntityTyped<ShoppingListType> {
 	 * @see #setContactMechId(ContactMech)
 	 * @see org.abchip.mimo.biz.order.shoppinglist.ShoppinglistPackage#getShoppingList_ContactMechId()
 	 * @model keys="contactMechId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ContactMech getContactMechId();
@@ -329,7 +328,6 @@ public interface ShoppingList extends BizEntityTyped<ShoppingListType> {
 	 * @see #setParentShoppingListId(ShoppingList)
 	 * @see org.abchip.mimo.biz.order.shoppinglist.ShoppinglistPackage#getShoppingList_ParentShoppingListId()
 	 * @model keys="shoppingListId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ShoppingList getParentShoppingListId();
@@ -356,7 +354,6 @@ public interface ShoppingList extends BizEntityTyped<ShoppingListType> {
 	 * @see #setPartyId(Party)
 	 * @see org.abchip.mimo.biz.order.shoppinglist.ShoppinglistPackage#getShoppingList_PartyId()
 	 * @model keys="partyId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Party getPartyId();
@@ -383,7 +380,6 @@ public interface ShoppingList extends BizEntityTyped<ShoppingListType> {
 	 * @see #setPaymentMethodId(PaymentMethod)
 	 * @see org.abchip.mimo.biz.order.shoppinglist.ShoppinglistPackage#getShoppingList_PaymentMethodId()
 	 * @model keys="paymentMethodId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	PaymentMethod getPaymentMethodId();
@@ -410,7 +406,6 @@ public interface ShoppingList extends BizEntityTyped<ShoppingListType> {
 	 * @see #setProductPromoCodeId(ProductPromoCode)
 	 * @see org.abchip.mimo.biz.order.shoppinglist.ShoppinglistPackage#getShoppingList_ProductPromoCodeId()
 	 * @model keys="productPromoCodeId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ProductPromoCode getProductPromoCodeId();
@@ -437,7 +432,6 @@ public interface ShoppingList extends BizEntityTyped<ShoppingListType> {
 	 * @see #setProductStoreId(ProductStore)
 	 * @see org.abchip.mimo.biz.order.shoppinglist.ShoppinglistPackage#getShoppingList_ProductStoreId()
 	 * @model keys="productStoreId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ProductStore getProductStoreId();
@@ -464,7 +458,6 @@ public interface ShoppingList extends BizEntityTyped<ShoppingListType> {
 	 * @see #setRecurrenceInfoId(RecurrenceInfo)
 	 * @see org.abchip.mimo.biz.order.shoppinglist.ShoppinglistPackage#getShoppingList_RecurrenceInfoId()
 	 * @model keys="recurrenceInfoId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	RecurrenceInfo getRecurrenceInfoId();
@@ -544,7 +537,6 @@ public interface ShoppingList extends BizEntityTyped<ShoppingListType> {
 	 * @see #setShoppingListTypeId(ShoppingListType)
 	 * @see org.abchip.mimo.biz.order.shoppinglist.ShoppinglistPackage#getShoppingList_ShoppingListTypeId()
 	 * @model keys="shoppingListTypeId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ShoppingListType getShoppingListTypeId();

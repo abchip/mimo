@@ -68,7 +68,6 @@ public interface ProductMaintType extends BizEntityType<ProductMaint> {
 	 * @see #setParentTypeId(ProductMaintType)
 	 * @see org.abchip.mimo.biz.product.product.ProductPackage#getProductMaintType_ParentTypeId()
 	 * @model keys="productMaintTypeId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ProductMaintType getParentTypeId();

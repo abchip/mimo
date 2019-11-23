@@ -153,7 +153,6 @@ public interface QuantityBreak extends BizEntityTyped<QuantityBreakType> {
 	 * @see #setQuantityBreakTypeId(QuantityBreakType)
 	 * @see org.abchip.mimo.biz.product.price.PricePackage#getQuantityBreak_QuantityBreakTypeId()
 	 * @model keys="quantityBreakTypeId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	QuantityBreakType getQuantityBreakTypeId();

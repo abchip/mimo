@@ -107,7 +107,6 @@ public interface PartyBenefit extends BizEntity {
 	 * @see org.abchip.mimo.biz.humanres.employment.EmploymentPackage#getPartyBenefit_BenefitTypeId()
 	 * @model keys="benefitTypeId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	BenefitType getBenefitTypeId();
@@ -189,7 +188,6 @@ public interface PartyBenefit extends BizEntity {
 	 * @see org.abchip.mimo.biz.humanres.employment.EmploymentPackage#getPartyBenefit_PartyIdFrom()
 	 * @model keys="partyId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Party getPartyIdFrom();
@@ -217,7 +215,6 @@ public interface PartyBenefit extends BizEntity {
 	 * @see org.abchip.mimo.biz.humanres.employment.EmploymentPackage#getPartyBenefit_PartyIdTo()
 	 * @model keys="partyId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Party getPartyIdTo();
@@ -244,7 +241,6 @@ public interface PartyBenefit extends BizEntity {
 	 * @see #setPeriodTypeId(PeriodType)
 	 * @see org.abchip.mimo.biz.humanres.employment.EmploymentPackage#getPartyBenefit_PeriodTypeId()
 	 * @model keys="periodTypeId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	PeriodType getPeriodTypeId();

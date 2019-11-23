@@ -113,7 +113,6 @@ public interface SalesForecast extends BizEntity {
 	 * @see #setCreatedByUserLoginId(UserLogin)
 	 * @see org.abchip.mimo.biz.marketing.opportunity.OpportunityPackage#getSalesForecast_CreatedByUserLoginId()
 	 * @model keys="userLoginId"
-	 *        annotation="mimo-ent-format type='id-vlong' length='255'"
 	 * @generated
 	 */
 	UserLogin getCreatedByUserLoginId();
@@ -140,7 +139,6 @@ public interface SalesForecast extends BizEntity {
 	 * @see #setCurrencyUomId(Uom)
 	 * @see org.abchip.mimo.biz.marketing.opportunity.OpportunityPackage#getSalesForecast_CurrencyUomId()
 	 * @model keys="uomId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Uom getCurrencyUomId();
@@ -167,7 +165,6 @@ public interface SalesForecast extends BizEntity {
 	 * @see #setCustomTimePeriodId(CustomTimePeriod)
 	 * @see org.abchip.mimo.biz.marketing.opportunity.OpportunityPackage#getSalesForecast_CustomTimePeriodId()
 	 * @model keys="customTimePeriodId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	CustomTimePeriod getCustomTimePeriodId();
@@ -220,7 +217,6 @@ public interface SalesForecast extends BizEntity {
 	 * @see #setInternalPartyId(Party)
 	 * @see org.abchip.mimo.biz.marketing.opportunity.OpportunityPackage#getSalesForecast_InternalPartyId()
 	 * @model keys="partyId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Party getInternalPartyId();
@@ -247,7 +243,6 @@ public interface SalesForecast extends BizEntity {
 	 * @see #setModifiedByUserLoginId(UserLogin)
 	 * @see org.abchip.mimo.biz.marketing.opportunity.OpportunityPackage#getSalesForecast_ModifiedByUserLoginId()
 	 * @model keys="userLoginId"
-	 *        annotation="mimo-ent-format type='id-vlong' length='255'"
 	 * @generated
 	 */
 	UserLogin getModifiedByUserLoginId();
@@ -274,7 +269,6 @@ public interface SalesForecast extends BizEntity {
 	 * @see #setOrganizationPartyId(Party)
 	 * @see org.abchip.mimo.biz.marketing.opportunity.OpportunityPackage#getSalesForecast_OrganizationPartyId()
 	 * @model keys="partyId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Party getOrganizationPartyId();
@@ -301,7 +295,6 @@ public interface SalesForecast extends BizEntity {
 	 * @see #setParentSalesForecastId(SalesForecast)
 	 * @see org.abchip.mimo.biz.marketing.opportunity.OpportunityPackage#getSalesForecast_ParentSalesForecastId()
 	 * @model keys="salesForecastId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	SalesForecast getParentSalesForecastId();

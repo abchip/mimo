@@ -151,7 +151,6 @@ public interface ApplicationSandbox extends BizEntity {
 	 * @see #setRuntimeDataId(RuntimeData)
 	 * @see org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage#getApplicationSandbox_RuntimeDataId()
 	 * @model keys="runtimeDataId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	RuntimeData getRuntimeDataId();

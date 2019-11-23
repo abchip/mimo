@@ -638,7 +638,6 @@ public interface Visit extends BizEntity {
 	 * @see #setUserAgentId(UserAgent)
 	 * @see org.abchip.mimo.biz.webapp.visit.VisitPackage#getVisit_UserAgentId()
 	 * @model keys="userAgentId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	UserAgent getUserAgentId();
@@ -691,7 +690,6 @@ public interface Visit extends BizEntity {
 	 * @see #setVisitorId(Visitor)
 	 * @see org.abchip.mimo.biz.webapp.visit.VisitPackage#getVisit_VisitorId()
 	 * @model keys="visitorId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Visitor getVisitorId();

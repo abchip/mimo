@@ -47,7 +47,6 @@ public interface ProductPromoContent extends BizEntity {
 	 * @see org.abchip.mimo.biz.product.promo.PromoPackage#getProductPromoContent_ContentId()
 	 * @model keys="contentId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Content getContentId();
@@ -129,7 +128,6 @@ public interface ProductPromoContent extends BizEntity {
 	 * @see org.abchip.mimo.biz.product.promo.PromoPackage#getProductPromoContent_ProductPromoId()
 	 * @model keys="productPromoId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ProductPromo getProductPromoId();
@@ -157,7 +155,6 @@ public interface ProductPromoContent extends BizEntity {
 	 * @see org.abchip.mimo.biz.product.promo.PromoPackage#getProductPromoContent_ProductPromoContentTypeId()
 	 * @model keys="productContentTypeId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ProductContentType getProductPromoContentTypeId();

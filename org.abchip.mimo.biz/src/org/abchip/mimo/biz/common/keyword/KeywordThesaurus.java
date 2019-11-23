@@ -97,7 +97,6 @@ public interface KeywordThesaurus extends BizEntity {
 	 * @see #setRelationshipEnumId(Enumeration)
 	 * @see org.abchip.mimo.biz.common.keyword.KeywordPackage#getKeywordThesaurus_RelationshipEnumId()
 	 * @model keys="enumId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Enumeration getRelationshipEnumId();

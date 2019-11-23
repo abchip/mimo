@@ -133,7 +133,6 @@ public interface OrderItemChange extends BizEntity {
 	 * @see #setChangeTypeEnumId(Enumeration)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderItemChange_ChangeTypeEnumId()
 	 * @model keys="enumId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Enumeration getChangeTypeEnumId();
@@ -160,7 +159,6 @@ public interface OrderItemChange extends BizEntity {
 	 * @see #setChangeUserLogin(UserLogin)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderItemChange_ChangeUserLogin()
 	 * @model keys="userLoginId"
-	 *        annotation="mimo-ent-format type='id-vlong' length='255'"
 	 * @generated
 	 */
 	UserLogin getChangeUserLogin();
@@ -213,7 +211,6 @@ public interface OrderItemChange extends BizEntity {
 	 * @see #setOrderId(OrderHeader)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderItemChange_OrderId()
 	 * @model keys="orderId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	OrderHeader getOrderId();
@@ -319,7 +316,6 @@ public interface OrderItemChange extends BizEntity {
 	 * @see #setReasonEnumId(Enumeration)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderItemChange_ReasonEnumId()
 	 * @model keys="enumId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Enumeration getReasonEnumId();

@@ -104,7 +104,6 @@ public interface ProductGroupOrder extends BizEntity {
 	 * @see #setJobId(JobSandbox)
 	 * @see org.abchip.mimo.biz.product.product.ProductPackage#getProductGroupOrder_JobId()
 	 * @model keys="jobId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	JobSandbox getJobId();
@@ -183,7 +182,6 @@ public interface ProductGroupOrder extends BizEntity {
 	 * @see #setStatusId(StatusItem)
 	 * @see org.abchip.mimo.biz.product.product.ProductPackage#getProductGroupOrder_StatusId()
 	 * @model keys="statusId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	StatusItem getStatusId();
@@ -236,7 +234,6 @@ public interface ProductGroupOrder extends BizEntity {
 	 * @see #setProductId(Product)
 	 * @see org.abchip.mimo.biz.product.product.ProductPackage#getProductGroupOrder_ProductId()
 	 * @model keys="productId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Product getProductId();

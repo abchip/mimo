@@ -71,6 +71,7 @@ import org.abchip.mimo.biz.content.survey.SurveyPackage;
 import org.abchip.mimo.biz.content.survey.impl.SurveyPackageImpl;
 import org.abchip.mimo.biz.content.website.WebsitePackage;
 import org.abchip.mimo.biz.content.website.impl.WebsitePackageImpl;
+import org.abchip.mimo.biz.entity.EntityPackage;
 import org.abchip.mimo.biz.entity.audit.AuditPackage;
 import org.abchip.mimo.biz.entity.audit.impl.AuditPackageImpl;
 import org.abchip.mimo.biz.entity.crypto.CryptoPackage;
@@ -679,8 +680,8 @@ public class OrderPackageImpl extends EPackageImpl implements OrderPackage {
 		SurveyPackageImpl theSurveyPackage = (SurveyPackageImpl)(registeredPackage instanceof SurveyPackageImpl ? registeredPackage : SurveyPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(WebsitePackage.eNS_URI);
 		WebsitePackageImpl theWebsitePackage = (WebsitePackageImpl)(registeredPackage instanceof WebsitePackageImpl ? registeredPackage : WebsitePackage.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(org.abchip.mimo.biz.entity.EntityPackage.eNS_URI);
-		EntityPackageImpl theEntityPackage = (EntityPackageImpl)(registeredPackage instanceof EntityPackageImpl ? registeredPackage : org.abchip.mimo.biz.entity.EntityPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(EntityPackage.eNS_URI);
+		EntityPackageImpl theEntityPackage = (EntityPackageImpl)(registeredPackage instanceof EntityPackageImpl ? registeredPackage : EntityPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(AuditPackage.eNS_URI);
 		AuditPackageImpl theAuditPackage = (AuditPackageImpl)(registeredPackage instanceof AuditPackageImpl ? registeredPackage : AuditPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(CryptoPackage.eNS_URI);
@@ -6431,10 +6432,10 @@ public class OrderPackageImpl extends EPackageImpl implements OrderPackage {
 		// Create annotations
 		// mimo-ent-slot
 		createMimoentslotAnnotations();
-		// mimo-ent-format
-		createMimoentformatAnnotations();
 		// mimo-ent-frame
 		createMimoentframeAnnotations();
+		// mimo-ent-format
+		createMimoentformatAnnotations();
 		// mimo-ent-domain
 		createMimoentdomainAnnotations();
 	}
@@ -7914,20 +7915,6 @@ public class OrderPackageImpl extends EPackageImpl implements OrderPackage {
 	protected void createMimoentformatAnnotations() {
 		String source = "mimo-ent-format";
 		addAnnotation
-		  (getCommunicationEventOrder_OrderId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getCommunicationEventOrder_CommunicationEventId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (orderAdjustmentEClass.getEOperations().get(0),
 		   source,
 		   new String[] {
@@ -7970,13 +7957,6 @@ public class OrderPackageImpl extends EPackageImpl implements OrderPackage {
 		   new String[] {
 			   "type", "id",
 			   "length", "20"
-		   });
-		addAnnotation
-		  (getOrderAdjustment_CreatedByUserLogin(),
-		   source,
-		   new String[] {
-			   "type", "id-vlong",
-			   "length", "255"
 		   });
 		addAnnotation
 		  (getOrderAdjustment_CreatedDate(),
@@ -8062,42 +8042,7 @@ public class OrderPackageImpl extends EPackageImpl implements OrderPackage {
 			   "length", "20"
 		   });
 		addAnnotation
-		  (getOrderAdjustment_OrderAdjustmentTypeId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getOrderAdjustment_OrderId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getOrderAdjustment_OrderItemSeqId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getOrderAdjustment_OriginalAdjustmentId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getOrderAdjustment_OverrideGlAccountId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getOrderAdjustment_PrimaryGeoId(),
 		   source,
 		   new String[] {
 			   "type", "id",
@@ -8118,13 +8063,6 @@ public class OrderPackageImpl extends EPackageImpl implements OrderPackage {
 			   "length", "20"
 		   });
 		addAnnotation
-		  (getOrderAdjustment_ProductPromoId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getOrderAdjustment_ProductPromoRuleId(),
 		   source,
 		   new String[] {
@@ -8138,13 +8076,6 @@ public class OrderPackageImpl extends EPackageImpl implements OrderPackage {
 			   "type", "currency-precise",
 			   "precision", "18",
 			   "scale", "3"
-		   });
-		addAnnotation
-		  (getOrderAdjustment_SecondaryGeoId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
 		   });
 		addAnnotation
 		  (getOrderAdjustment_ShipGroupSeqId(),
@@ -8183,20 +8114,6 @@ public class OrderPackageImpl extends EPackageImpl implements OrderPackage {
 			   "length", "20"
 		   });
 		addAnnotation
-		  (getOrderAdjustment_TaxAuthorityRateSeqId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getOrderAdjustmentAttribute_OrderAdjustmentId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getOrderAdjustmentAttribute_AttrName(),
 		   source,
 		   new String[] {
@@ -8216,20 +8133,6 @@ public class OrderPackageImpl extends EPackageImpl implements OrderPackage {
 		   new String[] {
 			   "type", "value",
 			   "length", "255"
-		   });
-		addAnnotation
-		  (getOrderAdjustmentBilling_OrderAdjustmentId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getOrderAdjustmentBilling_InvoiceId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
 		   });
 		addAnnotation
 		  (getOrderAdjustmentBilling_InvoiceItemSeqId(),
@@ -8296,20 +8199,6 @@ public class OrderPackageImpl extends EPackageImpl implements OrderPackage {
 			   "length", "20"
 		   });
 		addAnnotation
-		  (getOrderAdjustmentType_ParentTypeId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getOrderAdjustmentTypeAttr_OrderAdjustmentTypeId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getOrderAdjustmentTypeAttr_AttrName(),
 		   source,
 		   new String[] {
@@ -8322,13 +8211,6 @@ public class OrderPackageImpl extends EPackageImpl implements OrderPackage {
 		   new String[] {
 			   "type", "description",
 			   "length", "255"
-		   });
-		addAnnotation
-		  (getOrderAttribute_OrderId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
 		   });
 		addAnnotation
 		  (getOrderAttribute_AttrName(),
@@ -8350,13 +8232,6 @@ public class OrderPackageImpl extends EPackageImpl implements OrderPackage {
 		   new String[] {
 			   "type", "value",
 			   "length", "255"
-		   });
-		addAnnotation
-		  (getOrderBlacklist_OrderBlacklistTypeId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
 		   });
 		addAnnotation
 		  (getOrderBlacklist_BlacklistString(),
@@ -8385,48 +8260,6 @@ public class OrderPackageImpl extends EPackageImpl implements OrderPackage {
 		   new String[] {
 			   "type", "description",
 			   "length", "255"
-		   });
-		addAnnotation
-		  (getOrderContactMech_OrderId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getOrderContactMech_ContactMechId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getOrderContactMech_ContactMechPurposeTypeId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getOrderContent_OrderId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getOrderContent_ContentId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getOrderContent_OrderContentTypeId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
 		   });
 		addAnnotation
 		  (getOrderContent_FromDate(),
@@ -8476,20 +8309,6 @@ public class OrderPackageImpl extends EPackageImpl implements OrderPackage {
 			   "length", "1"
 		   });
 		addAnnotation
-		  (getOrderContentType_ParentTypeId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getOrderDeliverySchedule_OrderId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getOrderDeliverySchedule_OrderItemSeqId(),
 		   source,
 		   new String[] {
@@ -8519,13 +8338,6 @@ public class OrderPackageImpl extends EPackageImpl implements OrderPackage {
 			   "scale", "0"
 		   });
 		addAnnotation
-		  (getOrderDeliverySchedule_StatusId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getOrderDeliverySchedule_TotalCubicSize(),
 		   source,
 		   new String[] {
@@ -8534,26 +8346,12 @@ public class OrderPackageImpl extends EPackageImpl implements OrderPackage {
 			   "scale", "6"
 		   });
 		addAnnotation
-		  (getOrderDeliverySchedule_TotalCubicUomId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getOrderDeliverySchedule_TotalWeight(),
 		   source,
 		   new String[] {
 			   "type", "fixed-point",
 			   "precision", "18",
 			   "scale", "6"
-		   });
-		addAnnotation
-		  (getOrderDeliverySchedule_TotalWeightUomId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
 		   });
 		addAnnotation
 		  (getOrderDeliverySchedule_UnitsPieces(),
@@ -8697,35 +8495,7 @@ public class OrderPackageImpl extends EPackageImpl implements OrderPackage {
 			   "length", "20"
 		   });
 		addAnnotation
-		  (getOrderHeader_AutoOrderShoppingListId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getOrderHeader_BillingAccountId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getOrderHeader_CommunicationEventOrders(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getOrderHeader_CreatedBy(),
-		   source,
-		   new String[] {
-			   "type", "id-vlong",
-			   "length", "255"
-		   });
-		addAnnotation
-		  (getOrderHeader_CurrencyUom(),
 		   source,
 		   new String[] {
 			   "type", "id",
@@ -8864,20 +8634,6 @@ public class OrderPackageImpl extends EPackageImpl implements OrderPackage {
 			   "length", "20"
 		   });
 		addAnnotation
-		  (getOrderHeader_OrderTypeId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getOrderHeader_OriginFacilityId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getOrderHeader_PickSheetPrintedDate(),
 		   source,
 		   new String[] {
@@ -8898,40 +8654,12 @@ public class OrderPackageImpl extends EPackageImpl implements OrderPackage {
 			   "length", "20"
 		   });
 		addAnnotation
-		  (getOrderHeader_ProductStoreId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getOrderHeader_RemainingSubTotal(),
 		   source,
 		   new String[] {
 			   "type", "currency-amount",
 			   "precision", "18",
 			   "scale", "2"
-		   });
-		addAnnotation
-		  (getOrderHeader_SalesChannelEnumId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getOrderHeader_StatusId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getOrderHeader_SyncStatusId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
 		   });
 		addAnnotation
 		  (getOrderHeader_TerminalId(),
@@ -8962,46 +8690,11 @@ public class OrderPackageImpl extends EPackageImpl implements OrderPackage {
 			   "length", "20"
 		   });
 		addAnnotation
-		  (getOrderHeader_WebSiteId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getOrderHeaderNote_OrderId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getOrderHeaderNote_InternalNote(),
 		   source,
 		   new String[] {
 			   "type", "indicator",
 			   "length", "1"
-		   });
-		addAnnotation
-		  (getOrderHeaderWorkEffort_OrderId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getOrderHeaderWorkEffort_WorkEffortId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getOrderItem_OrderId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
 		   });
 		addAnnotation
 		  (getOrderItem_OrderItemSeqId(),
@@ -9045,13 +8738,6 @@ public class OrderPackageImpl extends EPackageImpl implements OrderPackage {
 			   "scale", "6"
 		   });
 		addAnnotation
-		  (getOrderItem_ChangeByUserLoginId(),
-		   source,
-		   new String[] {
-			   "type", "id-vlong",
-			   "length", "255"
-		   });
-		addAnnotation
 		  (getOrderItem_Comments(),
 		   source,
 		   new String[] {
@@ -9079,13 +8765,6 @@ public class OrderPackageImpl extends EPackageImpl implements OrderPackage {
 			   "type", "date-time"
 		   });
 		addAnnotation
-		  (getOrderItem_DontCancelSetUserLogin(),
-		   source,
-		   new String[] {
-			   "type", "id-vlong",
-			   "length", "255"
-		   });
-		addAnnotation
 		  (getOrderItem_EstimatedDeliveryDate(),
 		   source,
 		   new String[] {
@@ -9099,13 +8778,6 @@ public class OrderPackageImpl extends EPackageImpl implements OrderPackage {
 		   });
 		addAnnotation
 		  (getOrderItem_ExternalId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getOrderItem_FromInventoryItemId(),
 		   source,
 		   new String[] {
 			   "type", "id",
@@ -9147,20 +8819,6 @@ public class OrderPackageImpl extends EPackageImpl implements OrderPackage {
 			   "length", "20"
 		   });
 		addAnnotation
-		  (getOrderItem_OrderItemTypeId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getOrderItem_OverrideGlAccountId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getOrderItem_ProdCatalogId(),
 		   source,
 		   new String[] {
@@ -9176,13 +8834,6 @@ public class OrderPackageImpl extends EPackageImpl implements OrderPackage {
 		   });
 		addAnnotation
 		  (getOrderItem_ProductFeatureId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getOrderItem_ProductId(),
 		   source,
 		   new String[] {
 			   "type", "id",
@@ -9211,24 +8862,10 @@ public class OrderPackageImpl extends EPackageImpl implements OrderPackage {
 			   "length", "20"
 		   });
 		addAnnotation
-		  (getOrderItem_RecurringFreqUomId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getOrderItem_ReserveAfterDate(),
 		   source,
 		   new String[] {
 			   "type", "date-time"
-		   });
-		addAnnotation
-		  (getOrderItem_SalesOpportunityId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
 		   });
 		addAnnotation
 		  (getOrderItem_SelectedAmount(),
@@ -9265,13 +8902,6 @@ public class OrderPackageImpl extends EPackageImpl implements OrderPackage {
 			   "length", "20"
 		   });
 		addAnnotation
-		  (getOrderItem_StatusId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getOrderItem_SubscriptionId(),
 		   source,
 		   new String[] {
@@ -9284,13 +8914,6 @@ public class OrderPackageImpl extends EPackageImpl implements OrderPackage {
 		   new String[] {
 			   "type", "id-long",
 			   "length", "60"
-		   });
-		addAnnotation
-		  (getOrderItem_SyncStatusId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
 		   });
 		addAnnotation
 		  (getOrderItem_UnitAverageCost(),
@@ -9323,27 +8946,6 @@ public class OrderPackageImpl extends EPackageImpl implements OrderPackage {
 			   "type", "currency-amount",
 			   "precision", "18",
 			   "scale", "2"
-		   });
-		addAnnotation
-		  (getOrderItemAssoc_OrderItemAssocTypeId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getOrderItemAssoc_OrderId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getOrderItemAssoc_ToOrderId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
 		   });
 		addAnnotation
 		  (getOrderItemAssoc_OrderItemSeqId(),
@@ -9410,13 +9012,6 @@ public class OrderPackageImpl extends EPackageImpl implements OrderPackage {
 			   "length", "1"
 		   });
 		addAnnotation
-		  (getOrderItemAssocType_ParentTypeId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getOrderItemAttribute_AttrName(),
 		   source,
 		   new String[] {
@@ -9452,20 +9047,6 @@ public class OrderPackageImpl extends EPackageImpl implements OrderPackage {
 			   "length", "255"
 		   });
 		addAnnotation
-		  (getOrderItemBilling_OrderId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getOrderItemBilling_InvoiceId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getOrderItemBilling_InvoiceItemSeqId(),
 		   source,
 		   new String[] {
@@ -9488,26 +9069,12 @@ public class OrderPackageImpl extends EPackageImpl implements OrderPackage {
 			   "scale", "2"
 		   });
 		addAnnotation
-		  (getOrderItemBilling_ItemIssuanceId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getOrderItemBilling_Quantity(),
 		   source,
 		   new String[] {
 			   "type", "fixed-point",
 			   "precision", "18",
 			   "scale", "6"
-		   });
-		addAnnotation
-		  (getOrderItemBilling_ShipmentReceiptId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
 		   });
 		addAnnotation
 		  (getOrderItemChange_OrderItemChangeId(),
@@ -9538,32 +9105,11 @@ public class OrderPackageImpl extends EPackageImpl implements OrderPackage {
 			   "type", "date-time"
 		   });
 		addAnnotation
-		  (getOrderItemChange_ChangeTypeEnumId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getOrderItemChange_ChangeUserLogin(),
-		   source,
-		   new String[] {
-			   "type", "id-vlong",
-			   "length", "255"
-		   });
-		addAnnotation
 		  (getOrderItemChange_ItemDescription(),
 		   source,
 		   new String[] {
 			   "type", "description",
 			   "length", "255"
-		   });
-		addAnnotation
-		  (getOrderItemChange_OrderId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
 		   });
 		addAnnotation
 		  (getOrderItemChange_OrderItemSeqId(),
@@ -9581,13 +9127,6 @@ public class OrderPackageImpl extends EPackageImpl implements OrderPackage {
 			   "scale", "6"
 		   });
 		addAnnotation
-		  (getOrderItemChange_ReasonEnumId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getOrderItemChange_UnitPrice(),
 		   source,
 		   new String[] {
@@ -9596,35 +9135,7 @@ public class OrderPackageImpl extends EPackageImpl implements OrderPackage {
 			   "scale", "2"
 		   });
 		addAnnotation
-		  (getOrderItemContactMech_OrderId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getOrderItemContactMech_ContactMechPurposeTypeId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getOrderItemContactMech_OrderItemSeqId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getOrderItemContactMech_ContactMechId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getOrderItemGroup_OrderId(),
 		   source,
 		   new String[] {
 			   "type", "id",
@@ -9646,13 +9157,6 @@ public class OrderPackageImpl extends EPackageImpl implements OrderPackage {
 		   });
 		addAnnotation
 		  (getOrderItemGroup_ParentGroupSeqId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getOrderItemGroupOrder_GroupOrderId(),
 		   source,
 		   new String[] {
 			   "type", "id",
@@ -9695,13 +9199,6 @@ public class OrderPackageImpl extends EPackageImpl implements OrderPackage {
 			   "scale", "3"
 		   });
 		addAnnotation
-		  (getOrderItemPriceInfo_OrderId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getOrderItemPriceInfo_OrderItemSeqId(),
 		   source,
 		   new String[] {
@@ -9716,13 +9213,6 @@ public class OrderPackageImpl extends EPackageImpl implements OrderPackage {
 			   "length", "20"
 		   });
 		addAnnotation
-		  (getOrderItemPriceInfo_ProductPriceRuleId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getOrderItemPriceInfo_RateCode(),
 		   source,
 		   new String[] {
@@ -9730,35 +9220,7 @@ public class OrderPackageImpl extends EPackageImpl implements OrderPackage {
 			   "length", "60"
 		   });
 		addAnnotation
-		  (getOrderItemRole_OrderId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getOrderItemRole_PartyId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getOrderItemRole_RoleTypeId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getOrderItemRole_OrderItemSeqId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getOrderItemShipGroup_OrderId(),
 		   source,
 		   new String[] {
 			   "type", "id",
@@ -9772,21 +9234,7 @@ public class OrderPackageImpl extends EPackageImpl implements OrderPackage {
 			   "length", "20"
 		   });
 		addAnnotation
-		  (getOrderItemShipGroup_CarrierPartyId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getOrderItemShipGroup_CarrierRoleTypeId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getOrderItemShipGroup_ContactMechId(),
 		   source,
 		   new String[] {
 			   "type", "id",
@@ -9803,13 +9251,6 @@ public class OrderPackageImpl extends EPackageImpl implements OrderPackage {
 		   source,
 		   new String[] {
 			   "type", "date-time"
-		   });
-		addAnnotation
-		  (getOrderItemShipGroup_FacilityId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
 		   });
 		addAnnotation
 		  (getOrderItemShipGroup_GiftMessage(),
@@ -9845,13 +9286,6 @@ public class OrderPackageImpl extends EPackageImpl implements OrderPackage {
 			   "type", "date-time"
 		   });
 		addAnnotation
-		  (getOrderItemShipGroup_ShipmentMethodTypeId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getOrderItemShipGroup_ShippingInstructions(),
 		   source,
 		   new String[] {
@@ -9859,46 +9293,11 @@ public class OrderPackageImpl extends EPackageImpl implements OrderPackage {
 			   "length", "255"
 		   });
 		addAnnotation
-		  (getOrderItemShipGroup_SupplierAgreementId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getOrderItemShipGroup_SupplierPartyId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getOrderItemShipGroup_TelecomContactMechId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getOrderItemShipGroup_TrackingNumber(),
 		   source,
 		   new String[] {
 			   "type", "short-varchar",
 			   "length", "60"
-		   });
-		addAnnotation
-		  (getOrderItemShipGroup_VendorPartyId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getOrderItemShipGroupAssoc_OrderId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
 		   });
 		addAnnotation
 		  (getOrderItemShipGroupAssoc_OrderItemSeqId(),
@@ -9929,20 +9328,6 @@ public class OrderPackageImpl extends EPackageImpl implements OrderPackage {
 			   "type", "fixed-point",
 			   "precision", "18",
 			   "scale", "6"
-		   });
-		addAnnotation
-		  (getOrderItemShipGrpInvRes_OrderId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getOrderItemShipGrpInvRes_InventoryItemId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
 		   });
 		addAnnotation
 		  (getOrderItemShipGrpInvRes_OrderItemSeqId(),
@@ -10069,20 +9454,6 @@ public class OrderPackageImpl extends EPackageImpl implements OrderPackage {
 			   "length", "20"
 		   });
 		addAnnotation
-		  (getOrderItemType_ParentTypeId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getOrderItemTypeAttr_OrderItemTypeId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getOrderItemTypeAttr_AttrName(),
 		   source,
 		   new String[] {
@@ -10111,24 +9482,10 @@ public class OrderPackageImpl extends EPackageImpl implements OrderPackage {
 			   "length", "255"
 		   });
 		addAnnotation
-		  (getOrderNotification_EmailType(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getOrderNotification_NotificationDate(),
 		   source,
 		   new String[] {
 			   "type", "date-time"
-		   });
-		addAnnotation
-		  (getOrderNotification_OrderId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
 		   });
 		addAnnotation
 		  (orderPaymentPreferenceEClass.getEOperations().get(0),
@@ -10173,24 +9530,10 @@ public class OrderPackageImpl extends EPackageImpl implements OrderPackage {
 			   "length", "60"
 		   });
 		addAnnotation
-		  (getOrderPaymentPreference_CreatedByUserLogin(),
-		   source,
-		   new String[] {
-			   "type", "id-vlong",
-			   "length", "255"
-		   });
-		addAnnotation
 		  (getOrderPaymentPreference_CreatedDate(),
 		   source,
 		   new String[] {
 			   "type", "date-time"
-		   });
-		addAnnotation
-		  (getOrderPaymentPreference_FinAccountId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
 		   });
 		addAnnotation
 		  (getOrderPaymentPreference_LastModifiedByUserLogin(),
@@ -10235,13 +9578,6 @@ public class OrderPackageImpl extends EPackageImpl implements OrderPackage {
 			   "length", "1"
 		   });
 		addAnnotation
-		  (getOrderPaymentPreference_OrderId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getOrderPaymentPreference_OrderItemSeqId(),
 		   source,
 		   new String[] {
@@ -10254,20 +9590,6 @@ public class OrderPackageImpl extends EPackageImpl implements OrderPackage {
 		   new String[] {
 			   "type", "indicator",
 			   "length", "1"
-		   });
-		addAnnotation
-		  (getOrderPaymentPreference_PaymentMethodId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getOrderPaymentPreference_PaymentMethodTypeId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
 		   });
 		addAnnotation
 		  (getOrderPaymentPreference_PresentFlag(),
@@ -10285,13 +9607,6 @@ public class OrderPackageImpl extends EPackageImpl implements OrderPackage {
 			   "scale", "0"
 		   });
 		addAnnotation
-		  (getOrderPaymentPreference_ProductPricePurposeId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getOrderPaymentPreference_SecurityCode(),
 		   source,
 		   new String[] {
@@ -10300,13 +9615,6 @@ public class OrderPackageImpl extends EPackageImpl implements OrderPackage {
 		   });
 		addAnnotation
 		  (getOrderPaymentPreference_ShipGroupSeqId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getOrderPaymentPreference_StatusId(),
 		   source,
 		   new String[] {
 			   "type", "id",
@@ -10325,55 +9633,6 @@ public class OrderPackageImpl extends EPackageImpl implements OrderPackage {
 		   new String[] {
 			   "type", "long-varchar",
 			   "length", "255"
-		   });
-		addAnnotation
-		  (getOrderProductPromoCode_OrderId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getOrderProductPromoCode_ProductPromoCodeId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getOrderRole_OrderId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getOrderRole_PartyId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getOrderRole_RoleTypeId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getOrderShipment_OrderId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getOrderShipment_ShipmentId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
 		   });
 		addAnnotation
 		  (getOrderShipment_OrderItemSeqId(),
@@ -10419,21 +9678,7 @@ public class OrderPackageImpl extends EPackageImpl implements OrderPackage {
 			   "length", "255"
 		   });
 		addAnnotation
-		  (getOrderStatus_OrderId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getOrderStatus_OrderItemSeqId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getOrderStatus_OrderPaymentPreferenceId(),
 		   source,
 		   new String[] {
 			   "type", "id",
@@ -10444,34 +9689,6 @@ public class OrderPackageImpl extends EPackageImpl implements OrderPackage {
 		   source,
 		   new String[] {
 			   "type", "date-time"
-		   });
-		addAnnotation
-		  (getOrderStatus_StatusId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getOrderStatus_StatusUserLogin(),
-		   source,
-		   new String[] {
-			   "type", "id-vlong",
-			   "length", "255"
-		   });
-		addAnnotation
-		  (getOrderSummaryEntry_ProductId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getOrderSummaryEntry_FacilityId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
 		   });
 		addAnnotation
 		  (getOrderSummaryEntry_EntryDate(),
@@ -10502,20 +9719,6 @@ public class OrderPackageImpl extends EPackageImpl implements OrderPackage {
 			   "type", "fixed-point",
 			   "precision", "18",
 			   "scale", "6"
-		   });
-		addAnnotation
-		  (getOrderTerm_OrderId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getOrderTerm_TermTypeId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
 		   });
 		addAnnotation
 		  (getOrderTerm_OrderItemSeqId(),
@@ -10553,13 +9756,6 @@ public class OrderPackageImpl extends EPackageImpl implements OrderPackage {
 		   new String[] {
 			   "type", "description",
 			   "length", "255"
-		   });
-		addAnnotation
-		  (getOrderTerm_UomId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
 		   });
 		addAnnotation
 		  (getOrderTermAttribute_AttrName(),
@@ -10653,20 +9849,6 @@ public class OrderPackageImpl extends EPackageImpl implements OrderPackage {
 			   "length", "20"
 		   });
 		addAnnotation
-		  (getOrderType_ParentTypeId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getOrderTypeAttr_OrderTypeId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getOrderTypeAttr_AttrName(),
 		   source,
 		   new String[] {
@@ -10681,20 +9863,6 @@ public class OrderPackageImpl extends EPackageImpl implements OrderPackage {
 			   "length", "255"
 		   });
 		addAnnotation
-		  (getProductOrderItem_OrderId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getProductOrderItem_EngagementId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getProductOrderItem_EngagementItemSeqId(),
 		   source,
 		   new String[] {
@@ -10703,27 +9871,6 @@ public class OrderPackageImpl extends EPackageImpl implements OrderPackage {
 		   });
 		addAnnotation
 		  (getProductOrderItem_OrderItemSeqId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getProductOrderItem_ProductId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getWorkOrderItemFulfillment_OrderId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getWorkOrderItemFulfillment_WorkEffortId(),
 		   source,
 		   new String[] {
 			   "type", "id",

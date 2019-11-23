@@ -44,7 +44,6 @@ public interface ProductStoreVendorShipment extends BizEntity {
 	 * @see org.abchip.mimo.biz.product.store.StorePackage#getProductStoreVendorShipment_CarrierPartyId()
 	 * @model keys="partyId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Party getCarrierPartyId();
@@ -72,7 +71,6 @@ public interface ProductStoreVendorShipment extends BizEntity {
 	 * @see org.abchip.mimo.biz.product.store.StorePackage#getProductStoreVendorShipment_ShipmentMethodTypeId()
 	 * @model keys="shipmentMethodTypeId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ShipmentMethodType getShipmentMethodTypeId();
@@ -100,7 +98,6 @@ public interface ProductStoreVendorShipment extends BizEntity {
 	 * @see org.abchip.mimo.biz.product.store.StorePackage#getProductStoreVendorShipment_VendorPartyId()
 	 * @model keys="partyId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Party getVendorPartyId();
@@ -128,7 +125,6 @@ public interface ProductStoreVendorShipment extends BizEntity {
 	 * @see org.abchip.mimo.biz.product.store.StorePackage#getProductStoreVendorShipment_ProductStoreId()
 	 * @model keys="productStoreId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ProductStore getProductStoreId();

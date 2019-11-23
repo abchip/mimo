@@ -73,7 +73,6 @@ public interface ContainerGeoPoint extends BizEntity {
 	 * @see org.abchip.mimo.biz.product.facility.FacilityPackage#getContainerGeoPoint_GeoPointId()
 	 * @model keys="geoPointId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	GeoPoint getGeoPointId();
@@ -127,7 +126,6 @@ public interface ContainerGeoPoint extends BizEntity {
 	 * @see org.abchip.mimo.biz.product.facility.FacilityPackage#getContainerGeoPoint_ContainerId()
 	 * @model keys="containerId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Container getContainerId();

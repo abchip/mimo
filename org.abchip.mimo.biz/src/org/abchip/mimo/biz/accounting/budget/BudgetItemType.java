@@ -96,7 +96,6 @@ public interface BudgetItemType extends BizEntityType<BudgetItem> {
 	 * @see #setParentTypeId(BudgetItemType)
 	 * @see org.abchip.mimo.biz.accounting.budget.BudgetPackage#getBudgetItemType_ParentTypeId()
 	 * @model keys="budgetItemTypeId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	BudgetItemType getParentTypeId();

@@ -48,7 +48,6 @@ public interface OrderItemAssoc extends BizEntityTyped<OrderItemAssocType> {
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderItemAssoc_OrderId()
 	 * @model keys="orderId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	OrderHeader getOrderId();
@@ -76,7 +75,6 @@ public interface OrderItemAssoc extends BizEntityTyped<OrderItemAssocType> {
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderItemAssoc_OrderItemAssocTypeId()
 	 * @model keys="orderItemAssocTypeId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	OrderItemAssocType getOrderItemAssocTypeId();
@@ -186,7 +184,6 @@ public interface OrderItemAssoc extends BizEntityTyped<OrderItemAssocType> {
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderItemAssoc_ToOrderId()
 	 * @model keys="orderId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	OrderHeader getToOrderId();

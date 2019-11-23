@@ -78,7 +78,6 @@ public interface PerfReview extends BizEntity {
 	 * @see #setEmplPositionId(EmplPosition)
 	 * @see org.abchip.mimo.biz.humanres.ability.AbilityPackage#getPerfReview_EmplPositionId()
 	 * @model keys="emplPositionId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	EmplPosition getEmplPositionId();
@@ -106,7 +105,6 @@ public interface PerfReview extends BizEntity {
 	 * @see org.abchip.mimo.biz.humanres.ability.AbilityPackage#getPerfReview_EmployeePartyId()
 	 * @model keys="partyId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Party getEmployeePartyId();
@@ -187,7 +185,6 @@ public interface PerfReview extends BizEntity {
 	 * @see #setManagerPartyId(Party)
 	 * @see org.abchip.mimo.biz.humanres.ability.AbilityPackage#getPerfReview_ManagerPartyId()
 	 * @model keys="partyId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Party getManagerPartyId();
@@ -240,7 +237,6 @@ public interface PerfReview extends BizEntity {
 	 * @see #setPaymentId(Payment)
 	 * @see org.abchip.mimo.biz.humanres.ability.AbilityPackage#getPerfReview_PaymentId()
 	 * @model keys="paymentId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Payment getPaymentId();

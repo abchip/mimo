@@ -122,7 +122,6 @@ public interface EmplLeaveType extends BizEntityType<EmplLeave> {
 	 * @see #setParentTypeId(EmplLeaveType)
 	 * @see org.abchip.mimo.biz.humanres.employment.EmploymentPackage#getEmplLeaveType_ParentTypeId()
 	 * @model keys="leaveTypeId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	EmplLeaveType getParentTypeId();

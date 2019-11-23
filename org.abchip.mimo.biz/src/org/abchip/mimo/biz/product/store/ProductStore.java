@@ -580,7 +580,6 @@ public interface ProductStore extends BizEntity {
 	 * @see #setDefaultCurrencyUomId(Uom)
 	 * @see org.abchip.mimo.biz.product.store.StorePackage#getProductStore_DefaultCurrencyUomId()
 	 * @model keys="uomId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Uom getDefaultCurrencyUomId();
@@ -659,7 +658,6 @@ public interface ProductStore extends BizEntity {
 	 * @see #setDefaultSalesChannelEnumId(Enumeration)
 	 * @see org.abchip.mimo.biz.product.store.StorePackage#getProductStore_DefaultSalesChannelEnumId()
 	 * @model keys="enumId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Enumeration getDefaultSalesChannelEnumId();
@@ -923,7 +921,6 @@ public interface ProductStore extends BizEntity {
 	 * @see #setDigitalItemApprovedStatus(StatusItem)
 	 * @see org.abchip.mimo.biz.product.store.StorePackage#getProductStore_DigitalItemApprovedStatus()
 	 * @model keys="statusId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	StatusItem getDigitalItemApprovedStatus();
@@ -950,7 +947,6 @@ public interface ProductStore extends BizEntity {
 	 * @see #setHeaderApprovedStatus(StatusItem)
 	 * @see org.abchip.mimo.biz.product.store.StorePackage#getProductStore_HeaderApprovedStatus()
 	 * @model keys="statusId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	StatusItem getHeaderApprovedStatus();
@@ -977,7 +973,6 @@ public interface ProductStore extends BizEntity {
 	 * @see #setHeaderCancelStatus(StatusItem)
 	 * @see org.abchip.mimo.biz.product.store.StorePackage#getProductStore_HeaderCancelStatus()
 	 * @model keys="statusId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	StatusItem getHeaderCancelStatus();
@@ -1004,7 +999,6 @@ public interface ProductStore extends BizEntity {
 	 * @see #setHeaderDeclinedStatus(StatusItem)
 	 * @see org.abchip.mimo.biz.product.store.StorePackage#getProductStore_HeaderDeclinedStatus()
 	 * @model keys="statusId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	StatusItem getHeaderDeclinedStatus();
@@ -1031,7 +1025,6 @@ public interface ProductStore extends BizEntity {
 	 * @see #setItemApprovedStatus(StatusItem)
 	 * @see org.abchip.mimo.biz.product.store.StorePackage#getProductStore_ItemApprovedStatus()
 	 * @model keys="statusId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	StatusItem getItemApprovedStatus();
@@ -1058,7 +1051,6 @@ public interface ProductStore extends BizEntity {
 	 * @see #setItemCancelStatus(StatusItem)
 	 * @see org.abchip.mimo.biz.product.store.StorePackage#getProductStore_ItemCancelStatus()
 	 * @model keys="statusId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	StatusItem getItemCancelStatus();
@@ -1085,7 +1077,6 @@ public interface ProductStore extends BizEntity {
 	 * @see #setItemDeclinedStatus(StatusItem)
 	 * @see org.abchip.mimo.biz.product.store.StorePackage#getProductStore_ItemDeclinedStatus()
 	 * @model keys="statusId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	StatusItem getItemDeclinedStatus();
@@ -1746,7 +1737,6 @@ public interface ProductStore extends BizEntity {
 	 * @see org.abchip.mimo.biz.product.store.StorePackage#getProductStore_PayToPartyId()
 	 * @model keys="partyId"
 	 *        annotation="mimo-ent-slot help='Note that this corresponds with the organizationPartyId that GL transactions will be posted to.'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Party getPayToPartyId();
@@ -1773,7 +1763,6 @@ public interface ProductStore extends BizEntity {
 	 * @see #setRequirementMethodEnumId(Enumeration)
 	 * @see org.abchip.mimo.biz.product.store.StorePackage#getProductStore_RequirementMethodEnumId()
 	 * @model keys="enumId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Enumeration getRequirementMethodEnumId();
@@ -1800,7 +1789,6 @@ public interface ProductStore extends BizEntity {
 	 * @see #setReserveOrderEnumId(Enumeration)
 	 * @see org.abchip.mimo.biz.product.store.StorePackage#getProductStore_ReserveOrderEnumId()
 	 * @model keys="enumId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Enumeration getReserveOrderEnumId();
@@ -1828,7 +1816,6 @@ public interface ProductStore extends BizEntity {
 	 * @see org.abchip.mimo.biz.product.store.StorePackage#getProductStore_StoreCreditAccountEnumId()
 	 * @model keys="enumId"
 	 *        annotation="mimo-ent-slot help='Specify the type (Billing Account or Financial Account) of Store Credit Account used for refund return. Default to Financial Account. \n              This field is override by ReturnHeader.billingAccountId or ReturnHeader.finAccountId, whichever is specified but if only finAccountId is specified explicitly then system will first\n              try to locate any billing account with -ve amount. If found, then amount is credit to this billing account else the amount will be credit to the financial account of the user.'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Enumeration getStoreCreditAccountEnumId();
@@ -2310,7 +2297,6 @@ public interface ProductStore extends BizEntity {
 	 * @see #setPrimaryStoreGroupId(ProductStoreGroup)
 	 * @see org.abchip.mimo.biz.product.store.StorePackage#getProductStore_PrimaryStoreGroupId()
 	 * @model keys="productStoreGroupId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ProductStoreGroup getPrimaryStoreGroupId();
@@ -2337,7 +2323,6 @@ public interface ProductStore extends BizEntity {
 	 * @see #setInventoryFacilityId(Facility)
 	 * @see org.abchip.mimo.biz.product.store.StorePackage#getProductStore_InventoryFacilityId()
 	 * @model keys="facilityId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Facility getInventoryFacilityId();

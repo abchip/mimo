@@ -95,7 +95,6 @@ public interface AgreementTypeAttr extends BizEntity {
 	 * @see org.abchip.mimo.biz.party.agreement.AgreementPackage#getAgreementTypeAttr_AgreementTypeId()
 	 * @model keys="agreementTypeId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	AgreementType getAgreementTypeId();

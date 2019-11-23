@@ -96,7 +96,6 @@ public interface DesiredFeature extends BizEntity {
 	 * @see #setProductFeatureId(ProductFeature)
 	 * @see org.abchip.mimo.biz.order.requirement.RequirementPackage#getDesiredFeature_ProductFeatureId()
 	 * @model keys="productFeatureId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ProductFeature getProductFeatureId();
@@ -124,7 +123,6 @@ public interface DesiredFeature extends BizEntity {
 	 * @see org.abchip.mimo.biz.order.requirement.RequirementPackage#getDesiredFeature_RequirementId()
 	 * @model keys="requirementId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Requirement getRequirementId();

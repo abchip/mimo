@@ -77,7 +77,6 @@ public interface ContentApproval extends BizEntity {
 	 * @see #setApprovalStatusId(StatusItem)
 	 * @see org.abchip.mimo.biz.content.content.ContentPackage#getContentApproval_ApprovalStatusId()
 	 * @model keys="statusId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	StatusItem getApprovalStatusId();
@@ -157,7 +156,6 @@ public interface ContentApproval extends BizEntity {
 	 * @see #setContentId(Content)
 	 * @see org.abchip.mimo.biz.content.content.ContentPackage#getContentApproval_ContentId()
 	 * @model keys="contentId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Content getContentId();
@@ -210,7 +208,6 @@ public interface ContentApproval extends BizEntity {
 	 * @see #setPartyId(Party)
 	 * @see org.abchip.mimo.biz.content.content.ContentPackage#getContentApproval_PartyId()
 	 * @model keys="partyId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Party getPartyId();
@@ -237,7 +234,6 @@ public interface ContentApproval extends BizEntity {
 	 * @see #setRoleTypeId(RoleType)
 	 * @see org.abchip.mimo.biz.content.content.ContentPackage#getContentApproval_RoleTypeId()
 	 * @model keys="roleTypeId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	RoleType getRoleTypeId();

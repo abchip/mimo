@@ -71,6 +71,7 @@ import org.abchip.mimo.biz.content.survey.SurveyPackage;
 import org.abchip.mimo.biz.content.survey.impl.SurveyPackageImpl;
 import org.abchip.mimo.biz.content.website.WebsitePackage;
 import org.abchip.mimo.biz.content.website.impl.WebsitePackageImpl;
+import org.abchip.mimo.biz.entity.EntityPackage;
 import org.abchip.mimo.biz.entity.audit.AuditPackage;
 import org.abchip.mimo.biz.entity.audit.impl.AuditPackageImpl;
 import org.abchip.mimo.biz.entity.crypto.CryptoPackage;
@@ -439,8 +440,8 @@ public class EmploymentPackageImpl extends EPackageImpl implements EmploymentPac
 		SurveyPackageImpl theSurveyPackage = (SurveyPackageImpl)(registeredPackage instanceof SurveyPackageImpl ? registeredPackage : SurveyPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(WebsitePackage.eNS_URI);
 		WebsitePackageImpl theWebsitePackage = (WebsitePackageImpl)(registeredPackage instanceof WebsitePackageImpl ? registeredPackage : WebsitePackage.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(org.abchip.mimo.biz.entity.EntityPackage.eNS_URI);
-		EntityPackageImpl theEntityPackage = (EntityPackageImpl)(registeredPackage instanceof EntityPackageImpl ? registeredPackage : org.abchip.mimo.biz.entity.EntityPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(EntityPackage.eNS_URI);
+		EntityPackageImpl theEntityPackage = (EntityPackageImpl)(registeredPackage instanceof EntityPackageImpl ? registeredPackage : EntityPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(AuditPackage.eNS_URI);
 		AuditPackageImpl theAuditPackage = (AuditPackageImpl)(registeredPackage instanceof AuditPackageImpl ? registeredPackage : AuditPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(CryptoPackage.eNS_URI);
@@ -2494,38 +2495,10 @@ public class EmploymentPackageImpl extends EPackageImpl implements EmploymentPac
 			   "length", "1"
 		   });
 		addAnnotation
-		  (getBenefitType_ParentTypeId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getEmplLeave_PartyId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getEmplLeave_LeaveTypeId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getEmplLeave_FromDate(),
 		   source,
 		   new String[] {
 			   "type", "date-time"
-		   });
-		addAnnotation
-		  (getEmplLeave_ApproverPartyId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
 		   });
 		addAnnotation
 		  (getEmplLeave_Description(),
@@ -2533,20 +2506,6 @@ public class EmploymentPackageImpl extends EPackageImpl implements EmploymentPac
 		   new String[] {
 			   "type", "description",
 			   "length", "255"
-		   });
-		addAnnotation
-		  (getEmplLeave_EmplLeaveReasonTypeId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getEmplLeave_LeaveStatus(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
 		   });
 		addAnnotation
 		  (getEmplLeave_ThruDate(),
@@ -2583,13 +2542,6 @@ public class EmploymentPackageImpl extends EPackageImpl implements EmploymentPac
 			   "length", "1"
 		   });
 		addAnnotation
-		  (getEmplLeaveReasonType_ParentTypeId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (emplLeaveTypeEClass.getEOperations().get(0),
 		   source,
 		   new String[] {
@@ -2618,27 +2570,6 @@ public class EmploymentPackageImpl extends EPackageImpl implements EmploymentPac
 			   "length", "1"
 		   });
 		addAnnotation
-		  (getEmplLeaveType_ParentTypeId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getEmployment_PartyIdTo(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getEmployment_PartyIdFrom(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getEmployment_FromDate(),
 		   source,
 		   new String[] {
@@ -2653,20 +2584,6 @@ public class EmploymentPackageImpl extends EPackageImpl implements EmploymentPac
 		   });
 		addAnnotation
 		  (getEmployment_RoleTypeIdTo(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getEmployment_TerminationReasonId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getEmployment_TerminationTypeId(),
 		   source,
 		   new String[] {
 			   "type", "id",
@@ -2690,55 +2607,6 @@ public class EmploymentPackageImpl extends EPackageImpl implements EmploymentPac
 		   source,
 		   new String[] {
 			   "type", "date-time"
-		   });
-		addAnnotation
-		  (getEmploymentApp_ApplyingPartyId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getEmploymentApp_ApproverPartyId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getEmploymentApp_EmplPositionId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getEmploymentApp_EmploymentAppSourceTypeId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getEmploymentApp_JobRequisitionId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getEmploymentApp_ReferredByPartyId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getEmploymentApp_StatusId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
 		   });
 		addAnnotation
 		  (employmentAppSourceTypeEClass.getEOperations().get(0),
@@ -2774,34 +2642,6 @@ public class EmploymentPackageImpl extends EPackageImpl implements EmploymentPac
 		   new String[] {
 			   "type", "indicator",
 			   "length", "1"
-		   });
-		addAnnotation
-		  (getEmploymentAppSourceType_ParentTypeId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getPartyBenefit_PartyIdTo(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getPartyBenefit_PartyIdFrom(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getPartyBenefit_BenefitTypeId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
 		   });
 		addAnnotation
 		  (getPartyBenefit_FromDate(),
@@ -2844,13 +2684,6 @@ public class EmploymentPackageImpl extends EPackageImpl implements EmploymentPac
 			   "type", "currency-amount",
 			   "precision", "18",
 			   "scale", "2"
-		   });
-		addAnnotation
-		  (getPartyBenefit_PeriodTypeId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
 		   });
 		addAnnotation
 		  (getPartyBenefit_ThruDate(),
@@ -2929,20 +2762,6 @@ public class EmploymentPackageImpl extends EPackageImpl implements EmploymentPac
 			   "length", "255"
 		   });
 		addAnnotation
-		  (getPayHistory_PayGradeId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getPayHistory_PeriodTypeId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getPayHistory_SalaryStepSeqId(),
 		   source,
 		   new String[] {
@@ -2954,13 +2773,6 @@ public class EmploymentPackageImpl extends EPackageImpl implements EmploymentPac
 		   source,
 		   new String[] {
 			   "type", "date-time"
-		   });
-		addAnnotation
-		  (getPayrollPreference_PartyId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
 		   });
 		addAnnotation
 		  (getPayrollPreference_PayrollPreferenceSeqId(),
@@ -2991,13 +2803,6 @@ public class EmploymentPackageImpl extends EPackageImpl implements EmploymentPac
 			   "length", "100"
 		   });
 		addAnnotation
-		  (getPayrollPreference_DeductionTypeId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getPayrollPreference_FlatAmount(),
 		   source,
 		   new String[] {
@@ -3012,24 +2817,10 @@ public class EmploymentPackageImpl extends EPackageImpl implements EmploymentPac
 			   "type", "date-time"
 		   });
 		addAnnotation
-		  (getPayrollPreference_PaymentMethodTypeId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getPayrollPreference_Percentage(),
 		   source,
 		   new String[] {
 			   "type", "floating-point"
-		   });
-		addAnnotation
-		  (getPayrollPreference_PeriodTypeId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
 		   });
 		addAnnotation
 		  (getPayrollPreference_RoutingNumber(),
@@ -3043,13 +2834,6 @@ public class EmploymentPackageImpl extends EPackageImpl implements EmploymentPac
 		   source,
 		   new String[] {
 			   "type", "date-time"
-		   });
-		addAnnotation
-		  (getSalaryStep_PayGradeId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
 		   });
 		addAnnotation
 		  (getSalaryStep_FromDate(),
@@ -3141,13 +2925,6 @@ public class EmploymentPackageImpl extends EPackageImpl implements EmploymentPac
 			   "length", "1"
 		   });
 		addAnnotation
-		  (getTerminationType_ParentTypeId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getUnemploymentClaim_UnemploymentClaimId(),
 		   source,
 		   new String[] {
@@ -3190,13 +2967,6 @@ public class EmploymentPackageImpl extends EPackageImpl implements EmploymentPac
 		   });
 		addAnnotation
 		  (getUnemploymentClaim_RoleTypeIdTo(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getUnemploymentClaim_StatusId(),
 		   source,
 		   new String[] {
 			   "type", "id",

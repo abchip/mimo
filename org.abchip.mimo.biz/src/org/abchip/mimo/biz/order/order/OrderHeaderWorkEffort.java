@@ -41,7 +41,6 @@ public interface OrderHeaderWorkEffort extends BizEntity {
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderHeaderWorkEffort_OrderId()
 	 * @model keys="orderId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	OrderHeader getOrderId();
@@ -69,7 +68,6 @@ public interface OrderHeaderWorkEffort extends BizEntity {
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderHeaderWorkEffort_WorkEffortId()
 	 * @model keys="workEffortId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	WorkEffort getWorkEffortId();

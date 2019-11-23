@@ -67,7 +67,6 @@ public interface CommunicationEventPurpose extends BizEntity {
 	 * @see org.abchip.mimo.biz.party.communication.CommunicationPackage#getCommunicationEventPurpose_CommunicationEventId()
 	 * @model keys="communicationEventId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	CommunicationEvent getCommunicationEventId();
@@ -95,7 +94,6 @@ public interface CommunicationEventPurpose extends BizEntity {
 	 * @see org.abchip.mimo.biz.party.communication.CommunicationPackage#getCommunicationEventPurpose_CommunicationEventPrpTypId()
 	 * @model keys="communicationEventPrpTypId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	CommunicationEventPrpTyp getCommunicationEventPrpTypId();

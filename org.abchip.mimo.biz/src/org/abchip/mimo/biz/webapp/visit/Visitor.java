@@ -96,7 +96,6 @@ public interface Visitor extends BizEntity {
 	 * @see #setUserLoginId(UserLogin)
 	 * @see org.abchip.mimo.biz.webapp.visit.VisitPackage#getVisitor_UserLoginId()
 	 * @model keys="userLoginId"
-	 *        annotation="mimo-ent-format type='id-vlong' length='255'"
 	 * @generated
 	 */
 	UserLogin getUserLoginId();

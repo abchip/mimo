@@ -44,7 +44,6 @@ public interface ProductOrderItem extends BizEntity {
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getProductOrderItem_EngagementId()
 	 * @model keys="orderId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	OrderHeader getEngagementId();
@@ -100,7 +99,6 @@ public interface ProductOrderItem extends BizEntity {
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getProductOrderItem_OrderId()
 	 * @model keys="orderId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	OrderHeader getOrderId();
@@ -155,7 +153,6 @@ public interface ProductOrderItem extends BizEntity {
 	 * @see #setProductId(Product)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getProductOrderItem_ProductId()
 	 * @model keys="productId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Product getProductId();

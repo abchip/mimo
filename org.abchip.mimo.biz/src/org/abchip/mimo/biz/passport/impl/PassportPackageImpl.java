@@ -1508,13 +1508,6 @@ public class PassportPackageImpl extends EPackageImpl implements PassportPackage
 			   "length", "60"
 		   });
 		addAnnotation
-		  (getGitHubUser_ProductStoreId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getGitHubUser_TokenType(),
 		   source,
 		   new String[] {
@@ -1543,13 +1536,6 @@ public class PassportPackageImpl extends EPackageImpl implements PassportPackage
 			   "length", "60"
 		   });
 		addAnnotation
-		  (getGoogleUser_ProductStoreId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getGoogleUser_TokenType(),
 		   source,
 		   new String[] {
@@ -1576,20 +1562,6 @@ public class PassportPackageImpl extends EPackageImpl implements PassportPackage
 		   new String[] {
 			   "type", "short-varchar",
 			   "length", "60"
-		   });
-		addAnnotation
-		  (getLinkedInUser_ProductStoreId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getOAuth2GitHub_ProductStoreId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
 		   });
 		addAnnotation
 		  (getOAuth2GitHub_FromDate(),
@@ -1639,13 +1611,6 @@ public class PassportPackageImpl extends EPackageImpl implements PassportPackage
 			   "type", "date-time"
 		   });
 		addAnnotation
-		  (getOAuth2Google_ProductStoreId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getOAuth2Google_FromDate(),
 		   source,
 		   new String[] {
@@ -1691,13 +1656,6 @@ public class PassportPackageImpl extends EPackageImpl implements PassportPackage
 		   source,
 		   new String[] {
 			   "type", "date-time"
-		   });
-		addAnnotation
-		  (getOAuth2LinkedIn_ProductStoreId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
 		   });
 		addAnnotation
 		  (getOAuth2LinkedIn_FromDate(),
@@ -1752,13 +1710,6 @@ public class PassportPackageImpl extends EPackageImpl implements PassportPackage
 		   source,
 		   new String[] {
 			   "type", "date-time"
-		   });
-		addAnnotation
-		  (getThirdPartyLogin_ProductStoreId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
 		   });
 		addAnnotation
 		  (getThirdPartyLogin_FromDate(),

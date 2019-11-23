@@ -150,7 +150,6 @@ public interface ProductType extends BizEntityType<Product> {
 	 * @see #setParentTypeId(ProductType)
 	 * @see org.abchip.mimo.biz.product.product.ProductPackage#getProductType_ParentTypeId()
 	 * @model keys="productTypeId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ProductType getParentTypeId();

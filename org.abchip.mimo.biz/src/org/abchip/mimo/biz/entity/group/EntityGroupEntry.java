@@ -67,7 +67,6 @@ public interface EntityGroupEntry extends BizEntity {
 	 * @see org.abchip.mimo.biz.entity.group.GroupPackage#getEntityGroupEntry_EntityGroupId()
 	 * @model keys="entityGroupId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	EntityGroup getEntityGroupId();

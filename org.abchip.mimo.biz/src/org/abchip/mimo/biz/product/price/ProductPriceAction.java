@@ -124,7 +124,6 @@ public interface ProductPriceAction extends BizEntityTyped<ProductPriceActionTyp
 	 * @see #setProductPriceActionTypeId(ProductPriceActionType)
 	 * @see org.abchip.mimo.biz.product.price.PricePackage#getProductPriceAction_ProductPriceActionTypeId()
 	 * @model keys="productPriceActionTypeId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ProductPriceActionType getProductPriceActionTypeId();
@@ -152,7 +151,6 @@ public interface ProductPriceAction extends BizEntityTyped<ProductPriceActionTyp
 	 * @see org.abchip.mimo.biz.product.price.PricePackage#getProductPriceAction_ProductPriceRuleId()
 	 * @model keys="productPriceRuleId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ProductPriceRule getProductPriceRuleId();

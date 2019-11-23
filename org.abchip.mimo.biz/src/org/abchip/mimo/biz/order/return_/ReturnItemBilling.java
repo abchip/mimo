@@ -75,7 +75,6 @@ public interface ReturnItemBilling extends BizEntity {
 	 * @see org.abchip.mimo.biz.order.return_.ReturnPackage#getReturnItemBilling_InvoiceId()
 	 * @model keys="invoiceId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Invoice getInvoiceId();
@@ -157,7 +156,6 @@ public interface ReturnItemBilling extends BizEntity {
 	 * @see org.abchip.mimo.biz.order.return_.ReturnPackage#getReturnItemBilling_ReturnId()
 	 * @model keys="returnId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ReturnHeader getReturnId();
@@ -212,7 +210,6 @@ public interface ReturnItemBilling extends BizEntity {
 	 * @see #setShipmentReceiptId(ShipmentReceipt)
 	 * @see org.abchip.mimo.biz.order.return_.ReturnPackage#getReturnItemBilling_ShipmentReceiptId()
 	 * @model keys="receiptId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ShipmentReceipt getShipmentReceiptId();

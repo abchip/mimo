@@ -126,7 +126,6 @@ public interface ProductStoreCatalog extends BizEntity {
 	 * @see org.abchip.mimo.biz.product.store.StorePackage#getProductStoreCatalog_ProductStoreId()
 	 * @model keys="productStoreId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ProductStore getProductStoreId();
@@ -154,7 +153,6 @@ public interface ProductStoreCatalog extends BizEntity {
 	 * @see org.abchip.mimo.biz.product.store.StorePackage#getProductStoreCatalog_ProdCatalogId()
 	 * @model keys="prodCatalogId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ProdCatalog getProdCatalogId();

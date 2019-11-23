@@ -20,8 +20,8 @@ import org.abchip.mimo.biz.BizEntity;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.product.product.ProductCalculatedInfo#getAverageCustomerRating <em>Average Customer Rating</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.ProductCalculatedInfo#getProductId <em>Product Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.product.ProductCalculatedInfo#getAverageCustomerRating <em>Average Customer Rating</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.ProductCalculatedInfo#getTotalQuantityOrdered <em>Total Quantity Ordered</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.ProductCalculatedInfo#getTotalTimesViewed <em>Total Times Viewed</em>}</li>
  * </ul>
@@ -58,31 +58,31 @@ public interface ProductCalculatedInfo extends BizEntity {
 	void setAverageCustomerRating(BigDecimal value);
 
 	/**
-	 * Returns the value of the '<em><b>Product Id</b></em>' reference.
+	 * Returns the value of the '<em><b>Product Id</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Product Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Product Id</em>' reference.
-	 * @see #setProductId(Product)
+	 * @return the value of the '<em>Product Id</em>' attribute.
+	 * @see #setProductId(String)
 	 * @see org.abchip.mimo.biz.product.product.ProductPackage#getProductCalculatedInfo_ProductId()
-	 * @model keys="productId" required="true"
+	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
-	Product getProductId();
+	String getProductId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.product.product.ProductCalculatedInfo#getProductId <em>Product Id</em>}' reference.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.product.product.ProductCalculatedInfo#getProductId <em>Product Id</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Product Id</em>' reference.
+	 * @param value the new value of the '<em>Product Id</em>' attribute.
 	 * @see #getProductId()
 	 * @generated
 	 */
-	void setProductId(Product value);
+	void setProductId(String value);
 
 	/**
 	 * Returns the value of the '<em><b>Total Quantity Ordered</b></em>' attribute.

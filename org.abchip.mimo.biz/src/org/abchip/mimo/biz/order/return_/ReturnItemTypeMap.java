@@ -41,7 +41,6 @@ public interface ReturnItemTypeMap extends BizEntity {
 	 * @see org.abchip.mimo.biz.order.return_.ReturnPackage#getReturnItemTypeMap_ReturnHeaderTypeId()
 	 * @model keys="returnHeaderTypeId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ReturnHeaderType getReturnHeaderTypeId();
@@ -96,7 +95,6 @@ public interface ReturnItemTypeMap extends BizEntity {
 	 * @see #setReturnItemTypeId(ReturnItemType)
 	 * @see org.abchip.mimo.biz.order.return_.ReturnPackage#getReturnItemTypeMap_ReturnItemTypeId()
 	 * @model keys="returnItemTypeId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ReturnItemType getReturnItemTypeId();

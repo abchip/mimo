@@ -922,13 +922,6 @@ public class EmailPackageImpl extends EPackageImpl implements EmailPackage {
 			   "length", "255"
 		   });
 		addAnnotation
-		  (getEmailTemplateSetting_EmailType(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getEmailTemplateSetting_FromAddress(),
 		   source,
 		   new String[] {

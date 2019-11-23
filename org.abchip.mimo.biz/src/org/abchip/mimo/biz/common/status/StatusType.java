@@ -95,7 +95,6 @@ public interface StatusType extends BizEntityType<StatusItem> {
 	 * @see #setParentTypeId(StatusType)
 	 * @see org.abchip.mimo.biz.common.status.StatusPackage#getStatusType_ParentTypeId()
 	 * @model keys="statusTypeId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	StatusType getParentTypeId();

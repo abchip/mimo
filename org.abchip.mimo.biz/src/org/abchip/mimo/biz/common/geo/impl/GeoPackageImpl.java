@@ -80,6 +80,7 @@ import org.abchip.mimo.biz.content.survey.SurveyPackage;
 import org.abchip.mimo.biz.content.survey.impl.SurveyPackageImpl;
 import org.abchip.mimo.biz.content.website.WebsitePackage;
 import org.abchip.mimo.biz.content.website.impl.WebsitePackageImpl;
+import org.abchip.mimo.biz.entity.EntityPackage;
 import org.abchip.mimo.biz.entity.audit.AuditPackage;
 import org.abchip.mimo.biz.entity.audit.impl.AuditPackageImpl;
 import org.abchip.mimo.biz.entity.crypto.CryptoPackage;
@@ -389,8 +390,8 @@ public class GeoPackageImpl extends EPackageImpl implements GeoPackage {
 		SurveyPackageImpl theSurveyPackage = (SurveyPackageImpl)(registeredPackage instanceof SurveyPackageImpl ? registeredPackage : SurveyPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(WebsitePackage.eNS_URI);
 		WebsitePackageImpl theWebsitePackage = (WebsitePackageImpl)(registeredPackage instanceof WebsitePackageImpl ? registeredPackage : WebsitePackage.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(org.abchip.mimo.biz.entity.EntityPackage.eNS_URI);
-		EntityPackageImpl theEntityPackage = (EntityPackageImpl)(registeredPackage instanceof EntityPackageImpl ? registeredPackage : org.abchip.mimo.biz.entity.EntityPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(EntityPackage.eNS_URI);
+		EntityPackageImpl theEntityPackage = (EntityPackageImpl)(registeredPackage instanceof EntityPackageImpl ? registeredPackage : EntityPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(AuditPackage.eNS_URI);
 		AuditPackageImpl theAuditPackage = (AuditPackageImpl)(registeredPackage instanceof AuditPackageImpl ? registeredPackage : AuditPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(CryptoPackage.eNS_URI);
@@ -726,17 +727,7 @@ public class GeoPackageImpl extends EPackageImpl implements GeoPackage {
 	 * @generated
 	 */
 	@Override
-	public EReference getCountryAddressFormat_GeoId() {
-		return (EReference)countryAddressFormatEClass.getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EAttribute getCountryAddressFormat_AddressFormat() {
+	public EAttribute getCountryAddressFormat_GeoId() {
 		return (EAttribute)countryAddressFormatEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -746,8 +737,18 @@ public class GeoPackageImpl extends EPackageImpl implements GeoPackage {
 	 * @generated
 	 */
 	@Override
+	public EAttribute getCountryAddressFormat_AddressFormat() {
+		return (EAttribute)countryAddressFormatEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EReference getCountryAddressFormat_GeoAssocTypeId() {
-		return (EReference)countryAddressFormatEClass.getEStructuralFeatures().get(1);
+		return (EReference)countryAddressFormatEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -1240,9 +1241,9 @@ public class GeoPackageImpl extends EPackageImpl implements GeoPackage {
 
 		// Create classes and their features
 		countryAddressFormatEClass = createEClass(COUNTRY_ADDRESS_FORMAT);
+		createEAttribute(countryAddressFormatEClass, COUNTRY_ADDRESS_FORMAT__GEO_ID);
 		createEAttribute(countryAddressFormatEClass, COUNTRY_ADDRESS_FORMAT__ADDRESS_FORMAT);
 		createEReference(countryAddressFormatEClass, COUNTRY_ADDRESS_FORMAT__GEO_ASSOC_TYPE_ID);
-		createEReference(countryAddressFormatEClass, COUNTRY_ADDRESS_FORMAT__GEO_ID);
 		createEAttribute(countryAddressFormatEClass, COUNTRY_ADDRESS_FORMAT__HAS_POSTAL_CODE_EXT);
 		createEAttribute(countryAddressFormatEClass, COUNTRY_ADDRESS_FORMAT__POSTAL_CODE_REGEX);
 		createEAttribute(countryAddressFormatEClass, COUNTRY_ADDRESS_FORMAT__REQUIRE_POSTAL_CODE);
@@ -1357,11 +1358,10 @@ public class GeoPackageImpl extends EPackageImpl implements GeoPackage {
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(countryAddressFormatEClass, CountryAddressFormat.class, "CountryAddressFormat", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getCountryAddressFormat_GeoId(), ecorePackage.getEString(), "geoId", null, 1, 1, CountryAddressFormat.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getCountryAddressFormat_AddressFormat(), ecorePackage.getEString(), "addressFormat", null, 0, 1, CountryAddressFormat.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getCountryAddressFormat_GeoAssocTypeId(), this.getGeoAssocType(), null, "geoAssocTypeId", null, 0, 1, CountryAddressFormat.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getCountryAddressFormat_GeoAssocTypeId().getEKeys().add(this.getGeoAssocType_GeoAssocTypeId());
-		initEReference(getCountryAddressFormat_GeoId(), this.getGeo(), null, "geoId", null, 1, 1, CountryAddressFormat.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		getCountryAddressFormat_GeoId().getEKeys().add(this.getGeo_GeoId());
 		initEAttribute(getCountryAddressFormat_HasPostalCodeExt(), ecorePackage.getEBoolean(), "hasPostalCodeExt", null, 0, 1, CountryAddressFormat.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getCountryAddressFormat_PostalCodeRegex(), ecorePackage.getEString(), "postalCodeRegex", null, 0, 1, CountryAddressFormat.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getCountryAddressFormat_RequirePostalCode(), ecorePackage.getEBoolean(), "requirePostalCode", null, 0, 1, CountryAddressFormat.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1511,25 +1511,18 @@ public class GeoPackageImpl extends EPackageImpl implements GeoPackage {
 	protected void createMimoentformatAnnotations() {
 		String source = "mimo-ent-format";
 		addAnnotation
-		  (getCountryAddressFormat_AddressFormat(),
-		   source,
-		   new String[] {
-			   "type", "long-varchar",
-			   "length", "255"
-		   });
-		addAnnotation
-		  (getCountryAddressFormat_GeoAssocTypeId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getCountryAddressFormat_GeoId(),
 		   source,
 		   new String[] {
 			   "type", "id",
 			   "length", "20"
+		   });
+		addAnnotation
+		  (getCountryAddressFormat_AddressFormat(),
+		   source,
+		   new String[] {
+			   "type", "long-varchar",
+			   "length", "255"
 		   });
 		addAnnotation
 		  (getCountryAddressFormat_HasPostalCodeExt(),
@@ -1826,13 +1819,6 @@ public class GeoPackageImpl extends EPackageImpl implements GeoPackage {
 			   "length", "60"
 		   });
 		addAnnotation
-		  (getGeo_GeoTypeId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getGeo_MainGeoAssocs(),
 		   source,
 		   new String[] {
@@ -1851,27 +1837,6 @@ public class GeoPackageImpl extends EPackageImpl implements GeoPackage {
 		   source,
 		   new String[] {
 			   "type", "very-long"
-		   });
-		addAnnotation
-		  (getGeoAssoc_GeoId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getGeoAssoc_GeoIdTo(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getGeoAssoc_GeoAssocTypeId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
 		   });
 		addAnnotation
 		  (geoAssocTypeEClass.getEOperations().get(0),
@@ -1930,13 +1895,6 @@ public class GeoPackageImpl extends EPackageImpl implements GeoPackage {
 			   "length", "20"
 		   });
 		addAnnotation
-		  (getGeoPoint_DataSourceId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getGeoPoint_Description(),
 		   source,
 		   new String[] {
@@ -1950,20 +1908,6 @@ public class GeoPackageImpl extends EPackageImpl implements GeoPackage {
 			   "type", "fixed-point",
 			   "precision", "18",
 			   "scale", "6"
-		   });
-		addAnnotation
-		  (getGeoPoint_ElevationUomId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getGeoPoint_GeoPointTypeEnumId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
 		   });
 		addAnnotation
 		  (getGeoPoint_Information(),
@@ -2020,13 +1964,6 @@ public class GeoPackageImpl extends EPackageImpl implements GeoPackage {
 		   new String[] {
 			   "type", "indicator",
 			   "length", "1"
-		   });
-		addAnnotation
-		  (getGeoType_ParentTypeId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
 		   });
 	}
 

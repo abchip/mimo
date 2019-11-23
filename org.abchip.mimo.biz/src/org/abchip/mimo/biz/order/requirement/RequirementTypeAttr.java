@@ -95,7 +95,6 @@ public interface RequirementTypeAttr extends BizEntity {
 	 * @see org.abchip.mimo.biz.order.requirement.RequirementPackage#getRequirementTypeAttr_RequirementTypeId()
 	 * @model keys="requirementTypeId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	RequirementType getRequirementTypeId();

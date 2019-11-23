@@ -98,7 +98,6 @@ public interface PartyClassification extends BizEntityTyped<PartyClassificationT
 	 * @see org.abchip.mimo.biz.party.party.PartyPackage#getPartyClassification_PartyId()
 	 * @model keys="partyId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Party getPartyId();
@@ -126,7 +125,6 @@ public interface PartyClassification extends BizEntityTyped<PartyClassificationT
 	 * @see org.abchip.mimo.biz.party.party.PartyPackage#getPartyClassification_PartyClassificationGroupId()
 	 * @model keys="partyClassificationGroupId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	PartyClassificationGroup getPartyClassificationGroupId();

@@ -225,7 +225,6 @@ public interface InventoryItemDetail extends BizEntity {
 	 * @see #setItemIssuanceId(ItemIssuance)
 	 * @see org.abchip.mimo.biz.product.inventory.InventoryPackage#getInventoryItemDetail_ItemIssuanceId()
 	 * @model keys="itemIssuanceId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ItemIssuance getItemIssuanceId();
@@ -356,7 +355,6 @@ public interface InventoryItemDetail extends BizEntity {
 	 * @see #setReasonEnumId(Enumeration)
 	 * @see org.abchip.mimo.biz.product.inventory.InventoryPackage#getInventoryItemDetail_ReasonEnumId()
 	 * @model keys="enumId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Enumeration getReasonEnumId();
@@ -383,7 +381,6 @@ public interface InventoryItemDetail extends BizEntity {
 	 * @see #setReceiptId(ShipmentReceipt)
 	 * @see org.abchip.mimo.biz.product.inventory.InventoryPackage#getInventoryItemDetail_ReceiptId()
 	 * @model keys="receiptId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ShipmentReceipt getReceiptId();
@@ -566,7 +563,6 @@ public interface InventoryItemDetail extends BizEntity {
 	 * @see #setWorkEffortId(WorkEffort)
 	 * @see org.abchip.mimo.biz.product.inventory.InventoryPackage#getInventoryItemDetail_WorkEffortId()
 	 * @model keys="workEffortId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	WorkEffort getWorkEffortId();
@@ -594,7 +590,6 @@ public interface InventoryItemDetail extends BizEntity {
 	 * @see org.abchip.mimo.biz.product.inventory.InventoryPackage#getInventoryItemDetail_InventoryItemId()
 	 * @model keys="inventoryItemId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	InventoryItem getInventoryItemId();
@@ -621,7 +616,6 @@ public interface InventoryItemDetail extends BizEntity {
 	 * @see #setPhysicalInventoryId(PhysicalInventory)
 	 * @see org.abchip.mimo.biz.product.inventory.InventoryPackage#getInventoryItemDetail_PhysicalInventoryId()
 	 * @model keys="physicalInventoryId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	PhysicalInventory getPhysicalInventoryId();

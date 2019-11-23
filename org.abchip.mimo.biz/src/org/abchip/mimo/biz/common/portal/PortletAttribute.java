@@ -207,7 +207,6 @@ public interface PortletAttribute extends BizEntity {
 	 * @see org.abchip.mimo.biz.common.portal.PortalPackage#getPortletAttribute_PortalPortletId()
 	 * @model keys="portalPortletId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	PortalPortlet getPortalPortletId();

@@ -41,7 +41,6 @@ public interface EntitySyncIncludeGroup extends BizEntity {
 	 * @see org.abchip.mimo.biz.entity.synchronization.SynchronizationPackage#getEntitySyncIncludeGroup_EntityGroupId()
 	 * @model keys="entityGroupId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	EntityGroup getEntityGroupId();
@@ -69,7 +68,6 @@ public interface EntitySyncIncludeGroup extends BizEntity {
 	 * @see org.abchip.mimo.biz.entity.synchronization.SynchronizationPackage#getEntitySyncIncludeGroup_EntitySyncId()
 	 * @model keys="entitySyncId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	EntitySync getEntitySyncId();

@@ -56,7 +56,6 @@ public interface FixedAssetMaint extends BizEntity {
 	 * @see org.abchip.mimo.biz.accounting.fixedasset.FixedassetPackage#getFixedAssetMaint_IntervalMeterTypeId()
 	 * @model keys="productMeterTypeId"
 	 *        annotation="mimo-ent-slot help='Meter Type for intervalQuantity; if used intervalUomId is generally not used (ie one or the other)'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ProductMeterType getIntervalMeterTypeId();
@@ -110,7 +109,6 @@ public interface FixedAssetMaint extends BizEntity {
 	 * @see org.abchip.mimo.biz.accounting.fixedasset.FixedassetPackage#getFixedAssetMaint_IntervalUomId()
 	 * @model keys="uomId"
 	 *        annotation="mimo-ent-slot help='UOM for intervalQuantity; if used intervalMeterTypeId is generally not used (ie one or the other); if a meter reading is done as well that is not tied to the interval it should be tracked in a FixedAssetMeter record'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Uom getIntervalUomId();
@@ -193,7 +191,6 @@ public interface FixedAssetMaint extends BizEntity {
 	 * @see org.abchip.mimo.biz.accounting.fixedasset.FixedassetPackage#getFixedAssetMaint_ProductMaintTypeId()
 	 * @model keys="productMaintTypeId"
 	 *        annotation="mimo-ent-slot help='If productMaintSeqId is known can lookup using that and the FixedAsset.productId; for un-scheduled maintenance is filled in directly'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ProductMaintType getProductMaintTypeId();
@@ -220,7 +217,6 @@ public interface FixedAssetMaint extends BizEntity {
 	 * @see #setPurchaseOrderId(OrderHeader)
 	 * @see org.abchip.mimo.biz.accounting.fixedasset.FixedassetPackage#getFixedAssetMaint_PurchaseOrderId()
 	 * @model keys="orderId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	OrderHeader getPurchaseOrderId();
@@ -248,7 +244,6 @@ public interface FixedAssetMaint extends BizEntity {
 	 * @see org.abchip.mimo.biz.accounting.fixedasset.FixedassetPackage#getFixedAssetMaint_ScheduleWorkEffortId()
 	 * @model keys="workEffortId"
 	 *        annotation="mimo-ent-slot help='Has field for estimated/actual start and finish dates, etc'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	WorkEffort getScheduleWorkEffortId();
@@ -275,7 +270,6 @@ public interface FixedAssetMaint extends BizEntity {
 	 * @see #setStatusId(StatusItem)
 	 * @see org.abchip.mimo.biz.accounting.fixedasset.FixedassetPackage#getFixedAssetMaint_StatusId()
 	 * @model keys="statusId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	StatusItem getStatusId();
@@ -303,7 +297,6 @@ public interface FixedAssetMaint extends BizEntity {
 	 * @see org.abchip.mimo.biz.accounting.fixedasset.FixedassetPackage#getFixedAssetMaint_FixedAssetId()
 	 * @model keys="fixedAssetId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	FixedAsset getFixedAssetId();

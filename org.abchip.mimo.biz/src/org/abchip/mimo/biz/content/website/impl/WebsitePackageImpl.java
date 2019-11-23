@@ -77,6 +77,7 @@ import org.abchip.mimo.biz.content.website.WebSitePathAlias;
 import org.abchip.mimo.biz.content.website.WebSitePublishPoint;
 import org.abchip.mimo.biz.content.website.WebsiteFactory;
 import org.abchip.mimo.biz.content.website.WebsitePackage;
+import org.abchip.mimo.biz.entity.EntityPackage;
 import org.abchip.mimo.biz.entity.audit.AuditPackage;
 import org.abchip.mimo.biz.entity.audit.impl.AuditPackageImpl;
 import org.abchip.mimo.biz.entity.crypto.CryptoPackage;
@@ -365,8 +366,8 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		PreferencePackageImpl thePreferencePackage = (PreferencePackageImpl)(registeredPackage instanceof PreferencePackageImpl ? registeredPackage : PreferencePackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(SurveyPackage.eNS_URI);
 		SurveyPackageImpl theSurveyPackage = (SurveyPackageImpl)(registeredPackage instanceof SurveyPackageImpl ? registeredPackage : SurveyPackage.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(org.abchip.mimo.biz.entity.EntityPackage.eNS_URI);
-		EntityPackageImpl theEntityPackage = (EntityPackageImpl)(registeredPackage instanceof EntityPackageImpl ? registeredPackage : org.abchip.mimo.biz.entity.EntityPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(EntityPackage.eNS_URI);
+		EntityPackageImpl theEntityPackage = (EntityPackageImpl)(registeredPackage instanceof EntityPackageImpl ? registeredPackage : EntityPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(AuditPackage.eNS_URI);
 		AuditPackageImpl theAuditPackage = (AuditPackageImpl)(registeredPackage instanceof AuditPackageImpl ? registeredPackage : AuditPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(CryptoPackage.eNS_URI);
@@ -982,17 +983,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * @generated
 	 */
 	@Override
-	public EReference getWebSitePublishPoint_ContentId() {
-		return (EReference)webSitePublishPointEClass.getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EAttribute getWebSitePublishPoint_AboutContentId() {
+	public EAttribute getWebSitePublishPoint_ContentId() {
 		return (EAttribute)webSitePublishPointEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -1002,8 +993,18 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getWebSitePublishPoint_ContentDept() {
+	public EAttribute getWebSitePublishPoint_AboutContentId() {
 		return (EAttribute)webSitePublishPointEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getWebSitePublishPoint_ContentDept() {
+		return (EAttribute)webSitePublishPointEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -1139,9 +1140,9 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		createEAttribute(webSitePathAliasEClass, WEB_SITE_PATH_ALIAS__THRU_DATE);
 
 		webSitePublishPointEClass = createEClass(WEB_SITE_PUBLISH_POINT);
+		createEAttribute(webSitePublishPointEClass, WEB_SITE_PUBLISH_POINT__CONTENT_ID);
 		createEAttribute(webSitePublishPointEClass, WEB_SITE_PUBLISH_POINT__ABOUT_CONTENT_ID);
 		createEAttribute(webSitePublishPointEClass, WEB_SITE_PUBLISH_POINT__CONTENT_DEPT);
-		createEReference(webSitePublishPointEClass, WEB_SITE_PUBLISH_POINT__CONTENT_ID);
 		createEAttribute(webSitePublishPointEClass, WEB_SITE_PUBLISH_POINT__LEFT_BAR_ID);
 		createEAttribute(webSitePublishPointEClass, WEB_SITE_PUBLISH_POINT__LINE_LOGO);
 		createEAttribute(webSitePublishPointEClass, WEB_SITE_PUBLISH_POINT__LOGO);
@@ -1247,10 +1248,9 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		initEAttribute(getWebSitePathAlias_ThruDate(), ecorePackage.getEDate(), "thruDate", null, 0, 1, WebSitePathAlias.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(webSitePublishPointEClass, WebSitePublishPoint.class, "WebSitePublishPoint", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getWebSitePublishPoint_ContentId(), ecorePackage.getEString(), "contentId", null, 1, 1, WebSitePublishPoint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getWebSitePublishPoint_AboutContentId(), ecorePackage.getEString(), "aboutContentId", null, 0, 1, WebSitePublishPoint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getWebSitePublishPoint_ContentDept(), ecorePackage.getEString(), "contentDept", null, 0, 1, WebSitePublishPoint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getWebSitePublishPoint_ContentId(), theContentPackage.getContent(), null, "contentId", null, 1, 1, WebSitePublishPoint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		getWebSitePublishPoint_ContentId().getEKeys().add(theContentPackage.getContent_ContentId());
 		initEAttribute(getWebSitePublishPoint_LeftBarId(), ecorePackage.getEString(), "leftBarId", null, 0, 1, WebSitePublishPoint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getWebSitePublishPoint_LineLogo(), ecorePackage.getEString(), "lineLogo", null, 0, 1, WebSitePublishPoint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getWebSitePublishPoint_Logo(), ecorePackage.getEString(), "logo", null, 0, 1, WebSitePublishPoint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1278,20 +1278,6 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 */
 	protected void createMimoentformatAnnotations() {
 		String source = "mimo-ent-format";
-		addAnnotation
-		  (getWebAnalyticsConfig_WebAnalyticsTypeId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getWebAnalyticsConfig_WebSiteId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
 		addAnnotation
 		  (getWebAnalyticsConfig_WebAnalyticsCode(),
 		   source,
@@ -1334,34 +1320,6 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 			   "length", "1"
 		   });
 		addAnnotation
-		  (getWebAnalyticsType_ParentTypeId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getWebSiteContent_WebSiteId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getWebSiteContent_ContentId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getWebSiteContent_WebSiteContentTypeId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getWebSiteContent_FromDate(),
 		   source,
 		   new String[] {
@@ -1402,20 +1360,6 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 			   "length", "1"
 		   });
 		addAnnotation
-		  (getWebSiteContentType_ParentTypeId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getWebSitePathAlias_WebSiteId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getWebSitePathAlias_FromDate(),
 		   source,
 		   new String[] {
@@ -1436,13 +1380,6 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 			   "length", "255"
 		   });
 		addAnnotation
-		  (getWebSitePathAlias_ContentId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getWebSitePathAlias_MapKey(),
 		   source,
 		   new String[] {
@@ -1456,6 +1393,13 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 			   "type", "date-time"
 		   });
 		addAnnotation
+		  (getWebSitePublishPoint_ContentId(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
 		  (getWebSitePublishPoint_AboutContentId(),
 		   source,
 		   new String[] {
@@ -1464,13 +1408,6 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		   });
 		addAnnotation
 		  (getWebSitePublishPoint_ContentDept(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getWebSitePublishPoint_ContentId(),
 		   source,
 		   new String[] {
 			   "type", "id",

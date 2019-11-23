@@ -95,7 +95,6 @@ public interface FacilityTypeAttr extends BizEntity {
 	 * @see org.abchip.mimo.biz.product.facility.FacilityPackage#getFacilityTypeAttr_FacilityTypeId()
 	 * @model keys="facilityTypeId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	FacilityType getFacilityTypeId();

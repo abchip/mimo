@@ -45,7 +45,6 @@ public interface ShipmentStatus extends BizEntity {
 	 * @see #setChangeByUserLoginId(UserLogin)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipmentStatus_ChangeByUserLoginId()
 	 * @model keys="userLoginId"
-	 *        annotation="mimo-ent-format type='id-vlong' length='255'"
 	 * @generated
 	 */
 	UserLogin getChangeByUserLoginId();
@@ -73,7 +72,6 @@ public interface ShipmentStatus extends BizEntity {
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipmentStatus_ShipmentId()
 	 * @model keys="shipmentId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Shipment getShipmentId();
@@ -127,7 +125,6 @@ public interface ShipmentStatus extends BizEntity {
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipmentStatus_StatusId()
 	 * @model keys="statusId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	StatusItem getStatusId();

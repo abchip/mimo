@@ -95,7 +95,6 @@ public interface PaymentTypeAttr extends BizEntity {
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPaymentTypeAttr_PaymentTypeId()
 	 * @model keys="paymentTypeId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	PaymentType getPaymentTypeId();

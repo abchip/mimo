@@ -56,7 +56,6 @@ public interface ContentAssoc extends BizEntityTyped<ContentAssocType> {
 	 * @see #setContentAssocPredicateId(ContentAssocPredicate)
 	 * @see org.abchip.mimo.biz.content.content.ContentPackage#getContentAssoc_ContentAssocPredicateId()
 	 * @model keys="contentAssocPredicateId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ContentAssocPredicate getContentAssocPredicateId();
@@ -84,7 +83,6 @@ public interface ContentAssoc extends BizEntityTyped<ContentAssocType> {
 	 * @see org.abchip.mimo.biz.content.content.ContentPackage#getContentAssoc_ContentAssocTypeId()
 	 * @model keys="contentAssocTypeId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ContentAssocType getContentAssocTypeId();
@@ -112,7 +110,6 @@ public interface ContentAssoc extends BizEntityTyped<ContentAssocType> {
 	 * @see org.abchip.mimo.biz.content.content.ContentPackage#getContentAssoc_ContentId()
 	 * @model keys="contentId" required="true"
 	 *        annotation="mimo-ent-slot key='true' help='\"parent\" content'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Content getContentId();
@@ -140,7 +137,6 @@ public interface ContentAssoc extends BizEntityTyped<ContentAssocType> {
 	 * @see org.abchip.mimo.biz.content.content.ContentPackage#getContentAssoc_ContentIdTo()
 	 * @model keys="contentId" required="true"
 	 *        annotation="mimo-ent-slot key='true' help='\"child\" or \"sub\" content'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Content getContentIdTo();
@@ -167,7 +163,6 @@ public interface ContentAssoc extends BizEntityTyped<ContentAssocType> {
 	 * @see #setCreatedByUserLogin(UserLogin)
 	 * @see org.abchip.mimo.biz.content.content.ContentPackage#getContentAssoc_CreatedByUserLogin()
 	 * @model keys="userLoginId"
-	 *        annotation="mimo-ent-format type='id-vlong' length='255'"
 	 * @generated
 	 */
 	UserLogin getCreatedByUserLogin();
@@ -220,7 +215,6 @@ public interface ContentAssoc extends BizEntityTyped<ContentAssocType> {
 	 * @see #setDataSourceId(DataSource)
 	 * @see org.abchip.mimo.biz.content.content.ContentPackage#getContentAssoc_DataSourceId()
 	 * @model keys="dataSourceId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	DataSource getDataSourceId();
@@ -275,7 +269,6 @@ public interface ContentAssoc extends BizEntityTyped<ContentAssocType> {
 	 * @see #setLastModifiedByUserLogin(UserLogin)
 	 * @see org.abchip.mimo.biz.content.content.ContentPackage#getContentAssoc_LastModifiedByUserLogin()
 	 * @model keys="userLoginId"
-	 *        annotation="mimo-ent-format type='id-vlong' length='255'"
 	 * @generated
 	 */
 	UserLogin getLastModifiedByUserLogin();

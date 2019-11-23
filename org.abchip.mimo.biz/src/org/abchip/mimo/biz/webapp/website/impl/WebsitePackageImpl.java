@@ -69,6 +69,7 @@ import org.abchip.mimo.biz.content.preference.PreferencePackage;
 import org.abchip.mimo.biz.content.preference.impl.PreferencePackageImpl;
 import org.abchip.mimo.biz.content.survey.SurveyPackage;
 import org.abchip.mimo.biz.content.survey.impl.SurveyPackageImpl;
+import org.abchip.mimo.biz.entity.EntityPackage;
 import org.abchip.mimo.biz.entity.audit.AuditPackage;
 import org.abchip.mimo.biz.entity.audit.impl.AuditPackageImpl;
 import org.abchip.mimo.biz.entity.crypto.CryptoPackage;
@@ -334,8 +335,8 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		SurveyPackageImpl theSurveyPackage = (SurveyPackageImpl)(registeredPackage instanceof SurveyPackageImpl ? registeredPackage : SurveyPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(org.abchip.mimo.biz.content.website.WebsitePackage.eNS_URI);
 		org.abchip.mimo.biz.content.website.impl.WebsitePackageImpl theWebsitePackage_1 = (org.abchip.mimo.biz.content.website.impl.WebsitePackageImpl)(registeredPackage instanceof org.abchip.mimo.biz.content.website.impl.WebsitePackageImpl ? registeredPackage : org.abchip.mimo.biz.content.website.WebsitePackage.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(org.abchip.mimo.biz.entity.EntityPackage.eNS_URI);
-		EntityPackageImpl theEntityPackage = (EntityPackageImpl)(registeredPackage instanceof EntityPackageImpl ? registeredPackage : org.abchip.mimo.biz.entity.EntityPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(EntityPackage.eNS_URI);
+		EntityPackageImpl theEntityPackage = (EntityPackageImpl)(registeredPackage instanceof EntityPackageImpl ? registeredPackage : EntityPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(AuditPackage.eNS_URI);
 		AuditPackageImpl theAuditPackage = (AuditPackageImpl)(registeredPackage instanceof AuditPackageImpl ? registeredPackage : AuditPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(CryptoPackage.eNS_URI);
@@ -1048,25 +1049,11 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 			   "length", "20"
 		   });
 		addAnnotation
-		  (getWebPage_ContentId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getWebPage_PageName(),
 		   source,
 		   new String[] {
 			   "type", "name",
 			   "length", "100"
-		   });
-		addAnnotation
-		  (getWebPage_WebSiteId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
 		   });
 		addAnnotation
 		  (webSiteEClass.getEOperations().get(0),
@@ -1167,13 +1154,6 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 			   "length", "1"
 		   });
 		addAnnotation
-		  (getWebSite_ProductStoreId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getWebSite_SecureContentPrefix(),
 		   source,
 		   new String[] {
@@ -1193,13 +1173,6 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		   new String[] {
 			   "type", "url",
 			   "length", "2000"
-		   });
-		addAnnotation
-		  (getWebSite_VisualThemeSetId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
 		   });
 		addAnnotation
 		  (getWebSite_WebAnalyticsConfigs(),

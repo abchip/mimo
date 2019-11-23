@@ -95,7 +95,6 @@ public interface ProductCategoryTypeAttr extends BizEntity {
 	 * @see org.abchip.mimo.biz.product.category.CategoryPackage#getProductCategoryTypeAttr_ProductCategoryTypeId()
 	 * @model keys="productCategoryTypeId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ProductCategoryType getProductCategoryTypeId();

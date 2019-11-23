@@ -46,7 +46,6 @@ public interface RespondingParty extends BizEntity {
 	 * @see #setContactMechId(ContactMech)
 	 * @see org.abchip.mimo.biz.order.request.RequestPackage#getRespondingParty_ContactMechId()
 	 * @model keys="contactMechId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ContactMech getContactMechId();
@@ -74,7 +73,6 @@ public interface RespondingParty extends BizEntity {
 	 * @see org.abchip.mimo.biz.order.request.RequestPackage#getRespondingParty_CustRequestId()
 	 * @model keys="custRequestId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	CustRequest getCustRequestId();
@@ -128,7 +126,6 @@ public interface RespondingParty extends BizEntity {
 	 * @see org.abchip.mimo.biz.order.request.RequestPackage#getRespondingParty_PartyId()
 	 * @model keys="partyId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Party getPartyId();

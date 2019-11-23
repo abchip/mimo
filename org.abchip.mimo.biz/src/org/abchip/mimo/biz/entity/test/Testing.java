@@ -206,7 +206,6 @@ public interface Testing extends BizEntityTyped<TestingType> {
 	 * @see #setTestingTypeId(TestingType)
 	 * @see org.abchip.mimo.biz.entity.test.TestPackage#getTesting_TestingTypeId()
 	 * @model keys="testingTypeId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	TestingType getTestingTypeId();

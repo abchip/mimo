@@ -188,7 +188,6 @@ public interface EmplPosition extends BizEntityTyped<EmplPositionType> {
 	 * @see #setEmplPositionTypeId(EmplPositionType)
 	 * @see org.abchip.mimo.biz.humanres.position.PositionPackage#getEmplPosition_EmplPositionTypeId()
 	 * @model keys="emplPositionTypeId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	EmplPositionType getEmplPositionTypeId();
@@ -371,7 +370,6 @@ public interface EmplPosition extends BizEntityTyped<EmplPositionType> {
 	 * @see #setPartyId(Party)
 	 * @see org.abchip.mimo.biz.humanres.position.PositionPackage#getEmplPosition_PartyId()
 	 * @model keys="partyId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Party getPartyId();
@@ -398,7 +396,6 @@ public interface EmplPosition extends BizEntityTyped<EmplPositionType> {
 	 * @see #setStatusId(StatusItem)
 	 * @see org.abchip.mimo.biz.humanres.position.PositionPackage#getEmplPosition_StatusId()
 	 * @model keys="statusId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	StatusItem getStatusId();

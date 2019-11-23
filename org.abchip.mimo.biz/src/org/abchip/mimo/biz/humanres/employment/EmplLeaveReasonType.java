@@ -122,7 +122,6 @@ public interface EmplLeaveReasonType extends BizEntity {
 	 * @see #setParentTypeId(EmplLeaveReasonType)
 	 * @see org.abchip.mimo.biz.humanres.employment.EmploymentPackage#getEmplLeaveReasonType_ParentTypeId()
 	 * @model keys="emplLeaveReasonTypeId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	EmplLeaveReasonType getParentTypeId();

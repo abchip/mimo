@@ -95,7 +95,6 @@ public interface CostComponentTypeAttr extends BizEntity {
 	 * @see org.abchip.mimo.biz.product.cost.CostPackage#getCostComponentTypeAttr_CostComponentTypeId()
 	 * @model keys="costComponentTypeId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	CostComponentType getCostComponentTypeId();

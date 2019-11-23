@@ -176,7 +176,6 @@ public interface Addendum extends BizEntity {
 	 * @see #setAgreementId(Agreement)
 	 * @see org.abchip.mimo.biz.party.agreement.AgreementPackage#getAddendum_AgreementId()
 	 * @model keys="agreementId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Agreement getAgreementId();

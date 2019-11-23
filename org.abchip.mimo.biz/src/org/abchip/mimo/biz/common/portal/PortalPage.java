@@ -78,7 +78,6 @@ public interface PortalPage extends BizEntity {
 	 * @see org.abchip.mimo.biz.common.portal.PortalPackage#getPortalPage_HelpContentId()
 	 * @model keys="contentId"
 	 *        annotation="mimo-ent-slot help='Used to give contentId which will be shown when help on this page will be called'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Content getHelpContentId();
@@ -184,7 +183,6 @@ public interface PortalPage extends BizEntity {
 	 * @see #setSecurityGroupId(SecurityGroup)
 	 * @see org.abchip.mimo.biz.common.portal.PortalPackage#getPortalPage_SecurityGroupId()
 	 * @model keys="groupId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	SecurityGroup getSecurityGroupId();
@@ -266,7 +264,6 @@ public interface PortalPage extends BizEntity {
 	 * @see org.abchip.mimo.biz.common.portal.PortalPackage#getPortalPage_ParentPortalPageId()
 	 * @model keys="portalPageId"
 	 *        annotation="mimo-ent-slot help='the parent this page is belonging to, normally the startpage of the portal page group'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	PortalPage getParentPortalPageId();

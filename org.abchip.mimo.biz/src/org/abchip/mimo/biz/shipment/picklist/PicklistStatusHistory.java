@@ -74,7 +74,6 @@ public interface PicklistStatusHistory extends BizEntity {
 	 * @see #setChangeUserLoginId(UserLogin)
 	 * @see org.abchip.mimo.biz.shipment.picklist.PicklistPackage#getPicklistStatusHistory_ChangeUserLoginId()
 	 * @model keys="userLoginId"
-	 *        annotation="mimo-ent-format type='id-vlong' length='255'"
 	 * @generated
 	 */
 	UserLogin getChangeUserLoginId();
@@ -102,7 +101,6 @@ public interface PicklistStatusHistory extends BizEntity {
 	 * @see org.abchip.mimo.biz.shipment.picklist.PicklistPackage#getPicklistStatusHistory_PicklistId()
 	 * @model keys="picklistId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Picklist getPicklistId();
@@ -129,7 +127,6 @@ public interface PicklistStatusHistory extends BizEntity {
 	 * @see #setStatusId(StatusItem)
 	 * @see org.abchip.mimo.biz.shipment.picklist.PicklistPackage#getPicklistStatusHistory_StatusId()
 	 * @model keys="statusId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	StatusItem getStatusId();
@@ -156,7 +153,6 @@ public interface PicklistStatusHistory extends BizEntity {
 	 * @see #setStatusIdTo(StatusItem)
 	 * @see org.abchip.mimo.biz.shipment.picklist.PicklistPackage#getPicklistStatusHistory_StatusIdTo()
 	 * @model keys="statusId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	StatusItem getStatusIdTo();

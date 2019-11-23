@@ -71,7 +71,6 @@ public interface OrderAdjustmentBilling extends BizEntity {
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderAdjustmentBilling_InvoiceId()
 	 * @model keys="invoiceId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Invoice getInvoiceId();
@@ -127,7 +126,6 @@ public interface OrderAdjustmentBilling extends BizEntity {
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderAdjustmentBilling_OrderAdjustmentId()
 	 * @model keys="orderAdjustmentId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	OrderAdjustment getOrderAdjustmentId();

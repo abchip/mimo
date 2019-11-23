@@ -46,7 +46,6 @@ public interface InvoiceContent extends BizEntityTyped<InvoiceContentType> {
 	 * @see org.abchip.mimo.biz.accounting.invoice.InvoicePackage#getInvoiceContent_ContentId()
 	 * @model keys="contentId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Content getContentId();
@@ -128,7 +127,6 @@ public interface InvoiceContent extends BizEntityTyped<InvoiceContentType> {
 	 * @see org.abchip.mimo.biz.accounting.invoice.InvoicePackage#getInvoiceContent_InvoiceId()
 	 * @model keys="invoiceId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Invoice getInvoiceId();
@@ -156,7 +154,6 @@ public interface InvoiceContent extends BizEntityTyped<InvoiceContentType> {
 	 * @see org.abchip.mimo.biz.accounting.invoice.InvoicePackage#getInvoiceContent_InvoiceContentTypeId()
 	 * @model keys="invoiceContentTypeId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	InvoiceContentType getInvoiceContentTypeId();

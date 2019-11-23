@@ -90,6 +90,7 @@ import org.abchip.mimo.biz.content.survey.SurveyPackage;
 import org.abchip.mimo.biz.content.survey.impl.SurveyPackageImpl;
 import org.abchip.mimo.biz.content.website.WebsitePackage;
 import org.abchip.mimo.biz.content.website.impl.WebsitePackageImpl;
+import org.abchip.mimo.biz.entity.EntityPackage;
 import org.abchip.mimo.biz.entity.audit.AuditPackage;
 import org.abchip.mimo.biz.entity.audit.impl.AuditPackageImpl;
 import org.abchip.mimo.biz.entity.crypto.CryptoPackage;
@@ -469,8 +470,8 @@ public class ContentPackageImpl extends EPackageImpl implements ContentPackage {
 		SurveyPackageImpl theSurveyPackage = (SurveyPackageImpl)(registeredPackage instanceof SurveyPackageImpl ? registeredPackage : SurveyPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(WebsitePackage.eNS_URI);
 		WebsitePackageImpl theWebsitePackage = (WebsitePackageImpl)(registeredPackage instanceof WebsitePackageImpl ? registeredPackage : WebsitePackage.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(org.abchip.mimo.biz.entity.EntityPackage.eNS_URI);
-		EntityPackageImpl theEntityPackage = (EntityPackageImpl)(registeredPackage instanceof EntityPackageImpl ? registeredPackage : org.abchip.mimo.biz.entity.EntityPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(EntityPackage.eNS_URI);
+		EntityPackageImpl theEntityPackage = (EntityPackageImpl)(registeredPackage instanceof EntityPackageImpl ? registeredPackage : EntityPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(AuditPackage.eNS_URI);
 		AuditPackageImpl theAuditPackage = (AuditPackageImpl)(registeredPackage instanceof AuditPackageImpl ? registeredPackage : AuditPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(CryptoPackage.eNS_URI);
@@ -2829,13 +2830,6 @@ public class ContentPackageImpl extends EPackageImpl implements ContentPackage {
 			   "length", "20"
 		   });
 		addAnnotation
-		  (getContent_CharacterSetId(),
-		   source,
-		   new String[] {
-			   "type", "id-long",
-			   "length", "60"
-		   });
-		addAnnotation
 		  (getContent_ChildBranchCount(),
 		   source,
 		   new String[] {
@@ -2894,72 +2888,16 @@ public class ContentPackageImpl extends EPackageImpl implements ContentPackage {
 			   "length", "20"
 		   });
 		addAnnotation
-		  (getContent_ContentTypeId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getContent_CreatedByUserLogin(),
-		   source,
-		   new String[] {
-			   "type", "id-vlong",
-			   "length", "255"
-		   });
-		addAnnotation
 		  (getContent_CreatedDate(),
 		   source,
 		   new String[] {
 			   "type", "date-time"
 		   });
 		addAnnotation
-		  (getContent_CustomMethodId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getContent_DataResourceId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getContent_DataSourceId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getContent_DecoratorContentId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getContent_Description(),
 		   source,
 		   new String[] {
 			   "type", "description",
-			   "length", "255"
-		   });
-		addAnnotation
-		  (getContent_InstanceOfContentId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getContent_LastModifiedByUserLogin(),
-		   source,
-		   new String[] {
-			   "type", "id-vlong",
 			   "length", "255"
 		   });
 		addAnnotation
@@ -2976,46 +2914,11 @@ public class ContentPackageImpl extends EPackageImpl implements ContentPackage {
 			   "length", "10"
 		   });
 		addAnnotation
-		  (getContent_MimeTypeId(),
-		   source,
-		   new String[] {
-			   "type", "id-vlong",
-			   "length", "255"
-		   });
-		addAnnotation
-		  (getContent_OwnerContentId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getContent_PrivilegeEnumId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getContent_ServiceName(),
 		   source,
 		   new String[] {
 			   "type", "long-varchar",
 			   "length", "255"
-		   });
-		addAnnotation
-		  (getContent_StatusId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getContent_TemplateDataResourceId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
 		   });
 		addAnnotation
 		  (getContentApproval_ContentApprovalId(),
@@ -3031,13 +2934,6 @@ public class ContentPackageImpl extends EPackageImpl implements ContentPackage {
 			   "type", "date-time"
 		   });
 		addAnnotation
-		  (getContentApproval_ApprovalStatusId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getContentApproval_Comments(),
 		   source,
 		   new String[] {
@@ -3045,28 +2941,7 @@ public class ContentPackageImpl extends EPackageImpl implements ContentPackage {
 			   "length", "255"
 		   });
 		addAnnotation
-		  (getContentApproval_ContentId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getContentApproval_ContentRevisionSeqId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getContentApproval_PartyId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getContentApproval_RoleTypeId(),
 		   source,
 		   new String[] {
 			   "type", "id",
@@ -3081,65 +2956,16 @@ public class ContentPackageImpl extends EPackageImpl implements ContentPackage {
 			   "scale", "0"
 		   });
 		addAnnotation
-		  (getContentAssoc_ContentId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getContentAssoc_ContentIdTo(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getContentAssoc_ContentAssocTypeId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getContentAssoc_FromDate(),
 		   source,
 		   new String[] {
 			   "type", "date-time"
 		   });
 		addAnnotation
-		  (getContentAssoc_ContentAssocPredicateId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getContentAssoc_CreatedByUserLogin(),
-		   source,
-		   new String[] {
-			   "type", "id-vlong",
-			   "length", "255"
-		   });
-		addAnnotation
 		  (getContentAssoc_CreatedDate(),
 		   source,
 		   new String[] {
 			   "type", "date-time"
-		   });
-		addAnnotation
-		  (getContentAssoc_DataSourceId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getContentAssoc_LastModifiedByUserLogin(),
-		   source,
-		   new String[] {
-			   "type", "id-vlong",
-			   "length", "255"
 		   });
 		addAnnotation
 		  (getContentAssoc_LastModifiedDate(),
@@ -3213,13 +3039,6 @@ public class ContentPackageImpl extends EPackageImpl implements ContentPackage {
 			   "length", "255"
 		   });
 		addAnnotation
-		  (getContentAttribute_ContentId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getContentAttribute_AttrName(),
 		   source,
 		   new String[] {
@@ -3241,13 +3060,6 @@ public class ContentPackageImpl extends EPackageImpl implements ContentPackage {
 			   "length", "255"
 		   });
 		addAnnotation
-		  (getContentKeyword_ContentId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getContentKeyword_Keyword(),
 		   source,
 		   new String[] {
@@ -3261,27 +3073,6 @@ public class ContentPackageImpl extends EPackageImpl implements ContentPackage {
 			   "type", "numeric",
 			   "precision", "20",
 			   "scale", "0"
-		   });
-		addAnnotation
-		  (getContentMetaData_ContentId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getContentMetaData_MetaDataPredicateId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getContentMetaData_DataSourceId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
 		   });
 		addAnnotation
 		  (getContentMetaData_MetaDataValue(),
@@ -3305,61 +3096,12 @@ public class ContentPackageImpl extends EPackageImpl implements ContentPackage {
 			   "length", "255"
 		   });
 		addAnnotation
-		  (getContentPurpose_ContentId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getContentPurpose_ContentPurposeTypeId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getContentPurpose_SequenceNum(),
 		   source,
 		   new String[] {
 			   "type", "numeric",
 			   "precision", "20",
 			   "scale", "0"
-		   });
-		addAnnotation
-		  (getContentPurposeOperation_ContentPurposeTypeId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getContentPurposeOperation_ContentOperationId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getContentPurposeOperation_RoleTypeId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getContentPurposeOperation_StatusId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getContentPurposeOperation_PrivilegeEnumId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
 		   });
 		addAnnotation
 		  (contentPurposeTypeEClass.getEOperations().get(0),
@@ -3390,13 +3132,6 @@ public class ContentPackageImpl extends EPackageImpl implements ContentPackage {
 			   "length", "255"
 		   });
 		addAnnotation
-		  (getContentRevision_ContentId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getContentRevision_ContentRevisionSeqId(),
 		   source,
 		   new String[] {
@@ -3409,13 +3144,6 @@ public class ContentPackageImpl extends EPackageImpl implements ContentPackage {
 		   new String[] {
 			   "type", "comment",
 			   "length", "255"
-		   });
-		addAnnotation
-		  (getContentRevision_CommittedByPartyId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
 		   });
 		addAnnotation
 		  (getContentRevisionItem_ContentId(),
@@ -3439,34 +3167,6 @@ public class ContentPackageImpl extends EPackageImpl implements ContentPackage {
 			   "length", "20"
 		   });
 		addAnnotation
-		  (getContentRevisionItem_NewDataResourceId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getContentRevisionItem_OldDataResourceId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getContentRole_ContentId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getContentRole_PartyId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getContentRole_FromDate(),
 		   source,
 		   new String[] {
@@ -3484,13 +3184,6 @@ public class ContentPackageImpl extends EPackageImpl implements ContentPackage {
 		   source,
 		   new String[] {
 			   "type", "date-time"
-		   });
-		addAnnotation
-		  (getContentSearchConstraint_ContentSearchResultId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
 		   });
 		addAnnotation
 		  (getContentSearchConstraint_ConstraintSeqId(),
@@ -3658,20 +3351,6 @@ public class ContentPackageImpl extends EPackageImpl implements ContentPackage {
 		   new String[] {
 			   "type", "indicator",
 			   "length", "1"
-		   });
-		addAnnotation
-		  (getContentType_ParentTypeId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getContentTypeAttr_ContentTypeId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
 		   });
 		addAnnotation
 		  (getContentTypeAttr_AttrName(),

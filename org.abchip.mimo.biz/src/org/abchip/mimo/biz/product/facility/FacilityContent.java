@@ -45,7 +45,6 @@ public interface FacilityContent extends BizEntity {
 	 * @see org.abchip.mimo.biz.product.facility.FacilityPackage#getFacilityContent_ContentId()
 	 * @model keys="contentId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Content getContentId();
@@ -127,7 +126,6 @@ public interface FacilityContent extends BizEntity {
 	 * @see org.abchip.mimo.biz.product.facility.FacilityPackage#getFacilityContent_FacilityId()
 	 * @model keys="facilityId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Facility getFacilityId();

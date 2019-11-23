@@ -135,7 +135,6 @@ public interface Delivery extends BizEntity {
 	 * @see #setDestFacilityId(Facility)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getDelivery_DestFacilityId()
 	 * @model keys="facilityId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Facility getDestFacilityId();
@@ -240,7 +239,6 @@ public interface Delivery extends BizEntity {
 	 * @see #setFixedAssetId(FixedAsset)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getDelivery_FixedAssetId()
 	 * @model keys="fixedAssetId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	FixedAsset getFixedAssetId();
@@ -293,7 +291,6 @@ public interface Delivery extends BizEntity {
 	 * @see #setOriginFacilityId(Facility)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getDelivery_OriginFacilityId()
 	 * @model keys="facilityId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Facility getOriginFacilityId();

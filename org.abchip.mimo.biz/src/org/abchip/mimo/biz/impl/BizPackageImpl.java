@@ -743,16 +743,6 @@ public class BizPackageImpl extends EPackageImpl implements BizPackage {
 	 * @generated
 	 */
 	@Override
-	public EReference getBizEntityNote_Note() {
-		return (EReference)bizEntityNoteEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public EClass getBizEntityTyped() {
 		return bizEntityTypedEClass;
 	}
@@ -980,7 +970,6 @@ public class BizPackageImpl extends EPackageImpl implements BizPackage {
 
 		bizEntityNoteEClass = createEClass(BIZ_ENTITY_NOTE);
 		createEAttribute(bizEntityNoteEClass, BIZ_ENTITY_NOTE__NOTE_ID);
-		createEReference(bizEntityNoteEClass, BIZ_ENTITY_NOTE__NOTE);
 
 		bizEntityNoteDataEClass = createEClass(BIZ_ENTITY_NOTE_DATA);
 		createEAttribute(bizEntityNoteDataEClass, BIZ_ENTITY_NOTE_DATA__NOTE_ID);
@@ -1247,7 +1236,6 @@ public class BizPackageImpl extends EPackageImpl implements BizPackage {
 
 		initEClass(bizEntityNoteEClass, BizEntityNote.class, "BizEntityNote", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getBizEntityNote_NoteId(), ecorePackage.getEString(), "noteId", null, 1, 1, BizEntityNote.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getBizEntityNote_Note(), this.getBizEntityNoteData(), null, "note", null, 1, 1, BizEntityNote.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(bizEntityNoteDataEClass, BizEntityNoteData.class, "BizEntityNoteData", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getBizEntityNoteData_NoteId(), ecorePackage.getEString(), "noteId", null, 1, 1, BizEntityNoteData.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1282,8 +1270,26 @@ public class BizPackageImpl extends EPackageImpl implements BizPackage {
 		createResource(eNS_URI);
 
 		// Create annotations
+		// mimo-ent-slot
+		createMimoentslotAnnotations();
 		// mimo-ent-domain
 		createMimoentdomainAnnotations();
+	}
+
+	/**
+	 * Initializes the annotations for <b>mimo-ent-slot</b>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void createMimoentslotAnnotations() {
+		String source = "mimo-ent-slot";
+		addAnnotation
+		  (getBizEntityNote_NoteId(),
+		   source,
+		   new String[] {
+			   "key", "true"
+		   });
 	}
 
 	/**

@@ -78,7 +78,6 @@ public interface OrderSummaryEntry extends BizEntity {
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderSummaryEntry_FacilityId()
 	 * @model keys="facilityId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Facility getFacilityId();
@@ -158,7 +157,6 @@ public interface OrderSummaryEntry extends BizEntity {
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderSummaryEntry_ProductId()
 	 * @model keys="productId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Product getProductId();

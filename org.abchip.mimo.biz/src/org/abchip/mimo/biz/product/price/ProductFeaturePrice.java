@@ -53,7 +53,6 @@ public interface ProductFeaturePrice extends BizEntity {
 	 * @see #setCreatedByUserLogin(UserLogin)
 	 * @see org.abchip.mimo.biz.product.price.PricePackage#getProductFeaturePrice_CreatedByUserLogin()
 	 * @model keys="userLoginId"
-	 *        annotation="mimo-ent-format type='id-vlong' length='255'"
 	 * @generated
 	 */
 	UserLogin getCreatedByUserLogin();
@@ -107,7 +106,6 @@ public interface ProductFeaturePrice extends BizEntity {
 	 * @see org.abchip.mimo.biz.product.price.PricePackage#getProductFeaturePrice_CurrencyUomId()
 	 * @model keys="uomId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Uom getCurrencyUomId();
@@ -162,7 +160,6 @@ public interface ProductFeaturePrice extends BizEntity {
 	 * @see #setLastModifiedByUserLogin(UserLogin)
 	 * @see org.abchip.mimo.biz.product.price.PricePackage#getProductFeaturePrice_LastModifiedByUserLogin()
 	 * @model keys="userLoginId"
-	 *        annotation="mimo-ent-format type='id-vlong' length='255'"
 	 * @generated
 	 */
 	UserLogin getLastModifiedByUserLogin();
@@ -296,7 +293,6 @@ public interface ProductFeaturePrice extends BizEntity {
 	 * @see org.abchip.mimo.biz.product.price.PricePackage#getProductFeaturePrice_ProductPriceTypeId()
 	 * @model keys="productPriceTypeId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ProductPriceType getProductPriceTypeId();

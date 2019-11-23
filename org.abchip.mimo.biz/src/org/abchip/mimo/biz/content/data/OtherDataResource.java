@@ -18,8 +18,8 @@ import org.abchip.mimo.biz.BizEntity;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.content.data.OtherDataResource#getDataResourceContent <em>Data Resource Content</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.data.OtherDataResource#getDataResourceId <em>Data Resource Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.content.data.OtherDataResource#getDataResourceContent <em>Data Resource Content</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.content.data.DataPackage#getOtherDataResource()
@@ -54,30 +54,30 @@ public interface OtherDataResource extends BizEntity {
 	void setDataResourceContent(byte[] value);
 
 	/**
-	 * Returns the value of the '<em><b>Data Resource Id</b></em>' reference.
+	 * Returns the value of the '<em><b>Data Resource Id</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Data Resource Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Data Resource Id</em>' reference.
-	 * @see #setDataResourceId(DataResource)
+	 * @return the value of the '<em>Data Resource Id</em>' attribute.
+	 * @see #setDataResourceId(String)
 	 * @see org.abchip.mimo.biz.content.data.DataPackage#getOtherDataResource_DataResourceId()
-	 * @model keys="dataResourceId" required="true"
+	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
-	DataResource getDataResourceId();
+	String getDataResourceId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.content.data.OtherDataResource#getDataResourceId <em>Data Resource Id</em>}' reference.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.content.data.OtherDataResource#getDataResourceId <em>Data Resource Id</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Data Resource Id</em>' reference.
+	 * @param value the new value of the '<em>Data Resource Id</em>' attribute.
 	 * @see #getDataResourceId()
 	 * @generated
 	 */
-	void setDataResourceId(DataResource value);
+	void setDataResourceId(String value);
 
 } // OtherDataResource

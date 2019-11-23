@@ -90,7 +90,6 @@ public interface ShipmentReceipt extends BizEntity {
 	 * @see #setInventoryItemId(InventoryItem)
 	 * @see org.abchip.mimo.biz.shipment.receipt.ReceiptPackage#getShipmentReceipt_InventoryItemId()
 	 * @model keys="inventoryItemId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	InventoryItem getInventoryItemId();
@@ -143,7 +142,6 @@ public interface ShipmentReceipt extends BizEntity {
 	 * @see #setOrderId(OrderHeader)
 	 * @see org.abchip.mimo.biz.shipment.receipt.ReceiptPackage#getShipmentReceipt_OrderId()
 	 * @model keys="orderId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	OrderHeader getOrderId();
@@ -196,7 +194,6 @@ public interface ShipmentReceipt extends BizEntity {
 	 * @see #setProductId(Product)
 	 * @see org.abchip.mimo.biz.shipment.receipt.ReceiptPackage#getShipmentReceipt_ProductId()
 	 * @model keys="productId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Product getProductId();
@@ -302,7 +299,6 @@ public interface ShipmentReceipt extends BizEntity {
 	 * @see #setReceivedByUserLoginId(UserLogin)
 	 * @see org.abchip.mimo.biz.shipment.receipt.ReceiptPackage#getShipmentReceipt_ReceivedByUserLoginId()
 	 * @model keys="userLoginId"
-	 *        annotation="mimo-ent-format type='id-vlong' length='255'"
 	 * @generated
 	 */
 	UserLogin getReceivedByUserLoginId();
@@ -329,7 +325,6 @@ public interface ShipmentReceipt extends BizEntity {
 	 * @see #setRejectionId(RejectionReason)
 	 * @see org.abchip.mimo.biz.shipment.receipt.ReceiptPackage#getShipmentReceipt_RejectionId()
 	 * @model keys="rejectionId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	RejectionReason getRejectionId();
@@ -408,7 +403,6 @@ public interface ShipmentReceipt extends BizEntity {
 	 * @see #setShipmentId(Shipment)
 	 * @see org.abchip.mimo.biz.shipment.receipt.ReceiptPackage#getShipmentReceipt_ShipmentId()
 	 * @model keys="shipmentId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Shipment getShipmentId();

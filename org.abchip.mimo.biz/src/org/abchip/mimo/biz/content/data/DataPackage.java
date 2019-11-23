@@ -108,22 +108,22 @@ public interface DataPackage extends EPackage {
 	int AUDIO_DATA_RESOURCE__LAST_UPDATED_TX_STAMP = BizPackage.BIZ_ENTITY__LAST_UPDATED_TX_STAMP;
 
 	/**
+	 * The feature id for the '<em><b>Data Resource Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int AUDIO_DATA_RESOURCE__DATA_RESOURCE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
+
+	/**
 	 * The feature id for the '<em><b>Audio Data</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int AUDIO_DATA_RESOURCE__AUDIO_DATA = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Data Resource Id</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int AUDIO_DATA_RESOURCE__DATA_RESOURCE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
+	int AUDIO_DATA_RESOURCE__AUDIO_DATA = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Audio Data Resource</em>' class.
@@ -1570,7 +1570,7 @@ public interface DataPackage extends EPackage {
 	int IMAGE_DATA_RESOURCE__LAST_UPDATED_TX_STAMP = BizPackage.BIZ_ENTITY__LAST_UPDATED_TX_STAMP;
 
 	/**
-	 * The feature id for the '<em><b>Data Resource Id</b></em>' reference.
+	 * The feature id for the '<em><b>Data Resource Id</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1789,7 +1789,7 @@ public interface DataPackage extends EPackage {
 	int MIME_TYPE_HTML_TEMPLATE__LAST_UPDATED_TX_STAMP = BizPackage.BIZ_ENTITY__LAST_UPDATED_TX_STAMP;
 
 	/**
-	 * The feature id for the '<em><b>Mime Type Id</b></em>' reference.
+	 * The feature id for the '<em><b>Mime Type Id</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1862,22 +1862,22 @@ public interface DataPackage extends EPackage {
 	int OTHER_DATA_RESOURCE__LAST_UPDATED_TX_STAMP = BizPackage.BIZ_ENTITY__LAST_UPDATED_TX_STAMP;
 
 	/**
+	 * The feature id for the '<em><b>Data Resource Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OTHER_DATA_RESOURCE__DATA_RESOURCE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
+
+	/**
 	 * The feature id for the '<em><b>Data Resource Content</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int OTHER_DATA_RESOURCE__DATA_RESOURCE_CONTENT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Data Resource Id</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int OTHER_DATA_RESOURCE__DATA_RESOURCE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
+	int OTHER_DATA_RESOURCE__DATA_RESOURCE_CONTENT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Other Data Resource</em>' class.
@@ -1935,7 +1935,7 @@ public interface DataPackage extends EPackage {
 	int VIDEO_DATA_RESOURCE__LAST_UPDATED_TX_STAMP = BizPackage.BIZ_ENTITY__LAST_UPDATED_TX_STAMP;
 
 	/**
-	 * The feature id for the '<em><b>Data Resource Id</b></em>' reference.
+	 * The feature id for the '<em><b>Data Resource Id</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1973,15 +1973,15 @@ public interface DataPackage extends EPackage {
 	EClass getAudioDataResource();
 
 	/**
-	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.content.data.AudioDataResource#getDataResourceId <em>Data Resource Id</em>}'.
+	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.content.data.AudioDataResource#getDataResourceId <em>Data Resource Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Data Resource Id</em>'.
+	 * @return the meta object for the attribute '<em>Data Resource Id</em>'.
 	 * @see org.abchip.mimo.biz.content.data.AudioDataResource#getDataResourceId()
 	 * @see #getAudioDataResource()
 	 * @generated
 	 */
-	EReference getAudioDataResource_DataResourceId();
+	EAttribute getAudioDataResource_DataResourceId();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.content.data.AudioDataResource#getAudioData <em>Audio Data</em>}'.
@@ -2752,15 +2752,15 @@ public interface DataPackage extends EPackage {
 	EClass getImageDataResource();
 
 	/**
-	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.content.data.ImageDataResource#getDataResourceId <em>Data Resource Id</em>}'.
+	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.content.data.ImageDataResource#getDataResourceId <em>Data Resource Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Data Resource Id</em>'.
+	 * @return the meta object for the attribute '<em>Data Resource Id</em>'.
 	 * @see org.abchip.mimo.biz.content.data.ImageDataResource#getDataResourceId()
 	 * @see #getImageDataResource()
 	 * @generated
 	 */
-	EReference getImageDataResource_DataResourceId();
+	EAttribute getImageDataResource_DataResourceId();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.content.data.ImageDataResource#getImageData <em>Image Data</em>}'.
@@ -2848,15 +2848,15 @@ public interface DataPackage extends EPackage {
 	EClass getMimeTypeHtmlTemplate();
 
 	/**
-	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.content.data.MimeTypeHtmlTemplate#getMimeTypeId <em>Mime Type Id</em>}'.
+	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.content.data.MimeTypeHtmlTemplate#getMimeTypeId <em>Mime Type Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Mime Type Id</em>'.
+	 * @return the meta object for the attribute '<em>Mime Type Id</em>'.
 	 * @see org.abchip.mimo.biz.content.data.MimeTypeHtmlTemplate#getMimeTypeId()
 	 * @see #getMimeTypeHtmlTemplate()
 	 * @generated
 	 */
-	EReference getMimeTypeHtmlTemplate_MimeTypeId();
+	EAttribute getMimeTypeHtmlTemplate_MimeTypeId();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.content.data.MimeTypeHtmlTemplate#getTemplateLocation <em>Template Location</em>}'.
@@ -2880,15 +2880,15 @@ public interface DataPackage extends EPackage {
 	EClass getOtherDataResource();
 
 	/**
-	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.content.data.OtherDataResource#getDataResourceId <em>Data Resource Id</em>}'.
+	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.content.data.OtherDataResource#getDataResourceId <em>Data Resource Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Data Resource Id</em>'.
+	 * @return the meta object for the attribute '<em>Data Resource Id</em>'.
 	 * @see org.abchip.mimo.biz.content.data.OtherDataResource#getDataResourceId()
 	 * @see #getOtherDataResource()
 	 * @generated
 	 */
-	EReference getOtherDataResource_DataResourceId();
+	EAttribute getOtherDataResource_DataResourceId();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.content.data.OtherDataResource#getDataResourceContent <em>Data Resource Content</em>}'.
@@ -2912,15 +2912,15 @@ public interface DataPackage extends EPackage {
 	EClass getVideoDataResource();
 
 	/**
-	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.content.data.VideoDataResource#getDataResourceId <em>Data Resource Id</em>}'.
+	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.content.data.VideoDataResource#getDataResourceId <em>Data Resource Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Data Resource Id</em>'.
+	 * @return the meta object for the attribute '<em>Data Resource Id</em>'.
 	 * @see org.abchip.mimo.biz.content.data.VideoDataResource#getDataResourceId()
 	 * @see #getVideoDataResource()
 	 * @generated
 	 */
-	EReference getVideoDataResource_DataResourceId();
+	EAttribute getVideoDataResource_DataResourceId();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.content.data.VideoDataResource#getVideoData <em>Video Data</em>}'.
@@ -2966,12 +2966,12 @@ public interface DataPackage extends EPackage {
 		EClass AUDIO_DATA_RESOURCE = eINSTANCE.getAudioDataResource();
 
 		/**
-		 * The meta object literal for the '<em><b>Data Resource Id</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Data Resource Id</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference AUDIO_DATA_RESOURCE__DATA_RESOURCE_ID = eINSTANCE.getAudioDataResource_DataResourceId();
+		EAttribute AUDIO_DATA_RESOURCE__DATA_RESOURCE_ID = eINSTANCE.getAudioDataResource_DataResourceId();
 
 		/**
 		 * The meta object literal for the '<em><b>Audio Data</b></em>' attribute feature.
@@ -3568,12 +3568,12 @@ public interface DataPackage extends EPackage {
 		EClass IMAGE_DATA_RESOURCE = eINSTANCE.getImageDataResource();
 
 		/**
-		 * The meta object literal for the '<em><b>Data Resource Id</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Data Resource Id</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference IMAGE_DATA_RESOURCE__DATA_RESOURCE_ID = eINSTANCE.getImageDataResource_DataResourceId();
+		EAttribute IMAGE_DATA_RESOURCE__DATA_RESOURCE_ID = eINSTANCE.getImageDataResource_DataResourceId();
 
 		/**
 		 * The meta object literal for the '<em><b>Image Data</b></em>' attribute feature.
@@ -3646,12 +3646,12 @@ public interface DataPackage extends EPackage {
 		EClass MIME_TYPE_HTML_TEMPLATE = eINSTANCE.getMimeTypeHtmlTemplate();
 
 		/**
-		 * The meta object literal for the '<em><b>Mime Type Id</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Mime Type Id</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference MIME_TYPE_HTML_TEMPLATE__MIME_TYPE_ID = eINSTANCE.getMimeTypeHtmlTemplate_MimeTypeId();
+		EAttribute MIME_TYPE_HTML_TEMPLATE__MIME_TYPE_ID = eINSTANCE.getMimeTypeHtmlTemplate_MimeTypeId();
 
 		/**
 		 * The meta object literal for the '<em><b>Template Location</b></em>' attribute feature.
@@ -3672,12 +3672,12 @@ public interface DataPackage extends EPackage {
 		EClass OTHER_DATA_RESOURCE = eINSTANCE.getOtherDataResource();
 
 		/**
-		 * The meta object literal for the '<em><b>Data Resource Id</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Data Resource Id</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference OTHER_DATA_RESOURCE__DATA_RESOURCE_ID = eINSTANCE.getOtherDataResource_DataResourceId();
+		EAttribute OTHER_DATA_RESOURCE__DATA_RESOURCE_ID = eINSTANCE.getOtherDataResource_DataResourceId();
 
 		/**
 		 * The meta object literal for the '<em><b>Data Resource Content</b></em>' attribute feature.
@@ -3698,12 +3698,12 @@ public interface DataPackage extends EPackage {
 		EClass VIDEO_DATA_RESOURCE = eINSTANCE.getVideoDataResource();
 
 		/**
-		 * The meta object literal for the '<em><b>Data Resource Id</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Data Resource Id</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference VIDEO_DATA_RESOURCE__DATA_RESOURCE_ID = eINSTANCE.getVideoDataResource_DataResourceId();
+		EAttribute VIDEO_DATA_RESOURCE__DATA_RESOURCE_ID = eINSTANCE.getVideoDataResource_DataResourceId();
 
 		/**
 		 * The meta object literal for the '<em><b>Video Data</b></em>' attribute feature.

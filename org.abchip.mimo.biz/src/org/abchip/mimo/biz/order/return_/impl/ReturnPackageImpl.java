@@ -71,6 +71,7 @@ import org.abchip.mimo.biz.content.survey.SurveyPackage;
 import org.abchip.mimo.biz.content.survey.impl.SurveyPackageImpl;
 import org.abchip.mimo.biz.content.website.WebsitePackage;
 import org.abchip.mimo.biz.content.website.impl.WebsitePackageImpl;
+import org.abchip.mimo.biz.entity.EntityPackage;
 import org.abchip.mimo.biz.entity.audit.AuditPackage;
 import org.abchip.mimo.biz.entity.audit.impl.AuditPackageImpl;
 import org.abchip.mimo.biz.entity.crypto.CryptoPackage;
@@ -439,8 +440,8 @@ public class ReturnPackageImpl extends EPackageImpl implements ReturnPackage {
 		SurveyPackageImpl theSurveyPackage = (SurveyPackageImpl)(registeredPackage instanceof SurveyPackageImpl ? registeredPackage : SurveyPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(WebsitePackage.eNS_URI);
 		WebsitePackageImpl theWebsitePackage = (WebsitePackageImpl)(registeredPackage instanceof WebsitePackageImpl ? registeredPackage : WebsitePackage.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(org.abchip.mimo.biz.entity.EntityPackage.eNS_URI);
-		EntityPackageImpl theEntityPackage = (EntityPackageImpl)(registeredPackage instanceof EntityPackageImpl ? registeredPackage : org.abchip.mimo.biz.entity.EntityPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(EntityPackage.eNS_URI);
+		EntityPackageImpl theEntityPackage = (EntityPackageImpl)(registeredPackage instanceof EntityPackageImpl ? registeredPackage : EntityPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(AuditPackage.eNS_URI);
 		AuditPackageImpl theAuditPackage = (AuditPackageImpl)(registeredPackage instanceof AuditPackageImpl ? registeredPackage : AuditPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(CryptoPackage.eNS_URI);
@@ -2526,10 +2527,10 @@ public class ReturnPackageImpl extends EPackageImpl implements ReturnPackage {
 		// Create annotations
 		// mimo-ent-slot
 		createMimoentslotAnnotations();
-		// mimo-ent-format
-		createMimoentformatAnnotations();
 		// mimo-ent-frame
 		createMimoentframeAnnotations();
+		// mimo-ent-format
+		createMimoentformatAnnotations();
 		// mimo-ent-domain
 		createMimoentdomainAnnotations();
 	}
@@ -3091,20 +3092,6 @@ public class ReturnPackageImpl extends EPackageImpl implements ReturnPackage {
 	protected void createMimoentformatAnnotations() {
 		String source = "mimo-ent-format";
 		addAnnotation
-		  (getCommunicationEventReturn_ReturnId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getCommunicationEventReturn_CommunicationEventId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getReturnAdjustment_ReturnAdjustmentId(),
 		   source,
 		   new String[] {
@@ -3132,13 +3119,6 @@ public class ReturnPackageImpl extends EPackageImpl implements ReturnPackage {
 		   new String[] {
 			   "type", "id",
 			   "length", "20"
-		   });
-		addAnnotation
-		  (getReturnAdjustment_CreatedByUserLogin(),
-		   source,
-		   new String[] {
-			   "type", "id-vlong",
-			   "length", "255"
 		   });
 		addAnnotation
 		  (getReturnAdjustment_CreatedDate(),
@@ -3196,27 +3176,6 @@ public class ReturnPackageImpl extends EPackageImpl implements ReturnPackage {
 			   "type", "date-time"
 		   });
 		addAnnotation
-		  (getReturnAdjustment_OrderAdjustmentId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getReturnAdjustment_OverrideGlAccountId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getReturnAdjustment_PrimaryGeoId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getReturnAdjustment_ProductFeatureId(),
 		   source,
 		   new String[] {
@@ -3231,13 +3190,6 @@ public class ReturnPackageImpl extends EPackageImpl implements ReturnPackage {
 			   "length", "20"
 		   });
 		addAnnotation
-		  (getReturnAdjustment_ProductPromoId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getReturnAdjustment_ProductPromoRuleId(),
 		   source,
 		   new String[] {
@@ -3245,35 +3197,7 @@ public class ReturnPackageImpl extends EPackageImpl implements ReturnPackage {
 			   "length", "20"
 		   });
 		addAnnotation
-		  (getReturnAdjustment_ReturnAdjustmentTypeId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getReturnAdjustment_ReturnId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getReturnAdjustment_ReturnItemSeqId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getReturnAdjustment_ReturnTypeId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getReturnAdjustment_SecondaryGeoId(),
 		   source,
 		   new String[] {
 			   "type", "id",
@@ -3310,13 +3234,6 @@ public class ReturnPackageImpl extends EPackageImpl implements ReturnPackage {
 		   });
 		addAnnotation
 		  (getReturnAdjustment_TaxAuthPartyId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getReturnAdjustment_TaxAuthorityRateSeqId(),
 		   source,
 		   new String[] {
 			   "type", "id",
@@ -3365,34 +3282,6 @@ public class ReturnPackageImpl extends EPackageImpl implements ReturnPackage {
 			   "length", "1"
 		   });
 		addAnnotation
-		  (getReturnAdjustmentType_ParentTypeId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getReturnContactMech_ReturnId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getReturnContactMech_ContactMechId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getReturnContactMech_ContactMechPurposeTypeId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (returnHeaderEClass.getEOperations().get(0),
 		   source,
 		   new String[] {
@@ -3421,35 +3310,7 @@ public class ReturnPackageImpl extends EPackageImpl implements ReturnPackage {
 			   "length", "20"
 		   });
 		addAnnotation
-		  (getReturnHeader_BillingAccountId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getReturnHeader_CommunicationEventReturns(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getReturnHeader_CreatedBy(),
-		   source,
-		   new String[] {
-			   "type", "id-vlong",
-			   "length", "255"
-		   });
-		addAnnotation
-		  (getReturnHeader_CurrencyUomId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getReturnHeader_DestinationFacilityId(),
 		   source,
 		   new String[] {
 			   "type", "id",
@@ -3462,46 +3323,11 @@ public class ReturnPackageImpl extends EPackageImpl implements ReturnPackage {
 			   "type", "date-time"
 		   });
 		addAnnotation
-		  (getReturnHeader_FinAccountId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getReturnHeader_FromPartyId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getReturnHeader_NeedsInventoryReceive(),
 		   source,
 		   new String[] {
 			   "type", "indicator",
 			   "length", "1"
-		   });
-		addAnnotation
-		  (getReturnHeader_OriginContactMechId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getReturnHeader_PaymentMethodId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getReturnHeader_ReturnHeaderTypeId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
 		   });
 		addAnnotation
 		  (getReturnHeader_ReturnItems(),
@@ -3511,21 +3337,7 @@ public class ReturnPackageImpl extends EPackageImpl implements ReturnPackage {
 			   "length", "20"
 		   });
 		addAnnotation
-		  (getReturnHeader_StatusId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getReturnHeader_SupplierRmaId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getReturnHeader_ToPartyId(),
 		   source,
 		   new String[] {
 			   "type", "id",
@@ -3567,20 +3379,6 @@ public class ReturnPackageImpl extends EPackageImpl implements ReturnPackage {
 			   "length", "255"
 		   });
 		addAnnotation
-		  (getReturnHeaderType_ParentTypeId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getReturnItem_ReturnId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getReturnItem_ReturnItemSeqId(),
 		   source,
 		   new String[] {
@@ -3595,28 +3393,7 @@ public class ReturnPackageImpl extends EPackageImpl implements ReturnPackage {
 			   "length", "255"
 		   });
 		addAnnotation
-		  (getReturnItem_ExpectedItemStatus(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getReturnItem_OrderId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getReturnItem_OrderItemSeqId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getReturnItem_ProductId(),
 		   source,
 		   new String[] {
 			   "type", "id",
@@ -3629,20 +3406,6 @@ public class ReturnPackageImpl extends EPackageImpl implements ReturnPackage {
 			   "type", "fixed-point",
 			   "precision", "18",
 			   "scale", "6"
-		   });
-		addAnnotation
-		  (getReturnItem_ReturnItemResponseId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getReturnItem_ReturnItemTypeId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
 		   });
 		addAnnotation
 		  (getReturnItem_ReturnPrice(),
@@ -3659,41 +3422,6 @@ public class ReturnPackageImpl extends EPackageImpl implements ReturnPackage {
 			   "type", "fixed-point",
 			   "precision", "18",
 			   "scale", "6"
-		   });
-		addAnnotation
-		  (getReturnItem_ReturnReasonId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getReturnItem_ReturnTypeId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getReturnItem_StatusId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getReturnItemBilling_ReturnId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getReturnItemBilling_InvoiceId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
 		   });
 		addAnnotation
 		  (getReturnItemBilling_InvoiceItemSeqId(),
@@ -3726,13 +3454,6 @@ public class ReturnPackageImpl extends EPackageImpl implements ReturnPackage {
 			   "scale", "6"
 		   });
 		addAnnotation
-		  (getReturnItemBilling_ShipmentReceiptId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (returnItemResponseEClass.getEOperations().get(0),
 		   source,
 		   new String[] {
@@ -3741,41 +3462,6 @@ public class ReturnPackageImpl extends EPackageImpl implements ReturnPackage {
 		   });
 		addAnnotation
 		  (getReturnItemResponse_ReturnItemResponseId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getReturnItemResponse_BillingAccountId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getReturnItemResponse_FinAccountTransId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getReturnItemResponse_OrderPaymentPreferenceId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getReturnItemResponse_PaymentId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getReturnItemResponse_ReplacementOrderId(),
 		   source,
 		   new String[] {
 			   "type", "id",
@@ -3794,20 +3480,6 @@ public class ReturnPackageImpl extends EPackageImpl implements ReturnPackage {
 		   source,
 		   new String[] {
 			   "type", "date-time"
-		   });
-		addAnnotation
-		  (getReturnItemShipment_ReturnId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getReturnItemShipment_ShipmentId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
 		   });
 		addAnnotation
 		  (getReturnItemShipment_ReturnItemSeqId(),
@@ -3867,28 +3539,7 @@ public class ReturnPackageImpl extends EPackageImpl implements ReturnPackage {
 			   "length", "255"
 		   });
 		addAnnotation
-		  (getReturnItemType_ParentTypeId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getReturnItemTypeMap_ReturnHeaderTypeId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getReturnItemTypeMap_ReturnItemMapKey(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getReturnItemTypeMap_ReturnItemTypeId(),
 		   source,
 		   new String[] {
 			   "type", "id",
@@ -3930,20 +3581,6 @@ public class ReturnPackageImpl extends EPackageImpl implements ReturnPackage {
 			   "length", "20"
 		   });
 		addAnnotation
-		  (getReturnStatus_ChangeByUserLoginId(),
-		   source,
-		   new String[] {
-			   "type", "id-vlong",
-			   "length", "255"
-		   });
-		addAnnotation
-		  (getReturnStatus_ReturnId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getReturnStatus_ReturnItemSeqId(),
 		   source,
 		   new String[] {
@@ -3955,13 +3592,6 @@ public class ReturnPackageImpl extends EPackageImpl implements ReturnPackage {
 		   source,
 		   new String[] {
 			   "type", "date-time"
-		   });
-		addAnnotation
-		  (getReturnStatus_StatusId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
 		   });
 		addAnnotation
 		  (returnTypeEClass.getEOperations().get(0),

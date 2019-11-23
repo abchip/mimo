@@ -15,7 +15,6 @@ import org.abchip.mimo.biz.accounting.payment.PaymentMethod;
 import org.abchip.mimo.biz.common.enum_.Enumeration;
 import org.abchip.mimo.biz.common.method.CustomMethod;
 import org.abchip.mimo.biz.common.uom.Uom;
-import org.abchip.mimo.biz.party.party.Party;
 
 /**
  * <!-- begin-user-doc -->
@@ -26,6 +25,7 @@ import org.abchip.mimo.biz.party.party.Party;
  * The following features are supported:
  * </p>
  * <ul>
+ *   <li>{@link org.abchip.mimo.biz.accounting.ledger.PartyAcctgPreference#getPartyId <em>Party Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.ledger.PartyAcctgPreference#getBaseCurrencyUomId <em>Base Currency Uom Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.ledger.PartyAcctgPreference#getCogsMethodId <em>Cogs Method Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.ledger.PartyAcctgPreference#isEnableAccounting <em>Enable Accounting</em>}</li>
@@ -43,7 +43,6 @@ import org.abchip.mimo.biz.party.party.Party;
  *   <li>{@link org.abchip.mimo.biz.accounting.ledger.PartyAcctgPreference#getOldQuoteSequenceEnumId <em>Old Quote Sequence Enum Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.ledger.PartyAcctgPreference#getOrderIdPrefix <em>Order Id Prefix</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.ledger.PartyAcctgPreference#getOrderSeqCustMethId <em>Order Seq Cust Meth Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.ledger.PartyAcctgPreference#getPartyId <em>Party Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.ledger.PartyAcctgPreference#getQuoteIdPrefix <em>Quote Id Prefix</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.ledger.PartyAcctgPreference#getQuoteSeqCustMethId <em>Quote Seq Cust Meth Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.ledger.PartyAcctgPreference#getRefundPaymentMethodId <em>Refund Payment Method Id</em>}</li>
@@ -94,7 +93,6 @@ public interface PartyAcctgPreference extends BizEntity {
 	 * @see #setBaseCurrencyUomId(Uom)
 	 * @see org.abchip.mimo.biz.accounting.ledger.LedgerPackage#getPartyAcctgPreference_BaseCurrencyUomId()
 	 * @model keys="uomId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Uom getBaseCurrencyUomId();
@@ -121,7 +119,6 @@ public interface PartyAcctgPreference extends BizEntity {
 	 * @see #setCogsMethodId(Enumeration)
 	 * @see org.abchip.mimo.biz.accounting.ledger.LedgerPackage#getPartyAcctgPreference_CogsMethodId()
 	 * @model keys="enumId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Enumeration getCogsMethodId();
@@ -226,7 +223,6 @@ public interface PartyAcctgPreference extends BizEntity {
 	 * @see #setInvoiceSeqCustMethId(CustomMethod)
 	 * @see org.abchip.mimo.biz.accounting.ledger.LedgerPackage#getPartyAcctgPreference_InvoiceSeqCustMethId()
 	 * @model keys="customMethodId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	CustomMethod getInvoiceSeqCustMethId();
@@ -357,7 +353,6 @@ public interface PartyAcctgPreference extends BizEntity {
 	 * @see #setOldInvoiceSequenceEnumId(Enumeration)
 	 * @see org.abchip.mimo.biz.accounting.ledger.LedgerPackage#getPartyAcctgPreference_OldInvoiceSequenceEnumId()
 	 * @model keys="enumId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Enumeration getOldInvoiceSequenceEnumId();
@@ -384,7 +379,6 @@ public interface PartyAcctgPreference extends BizEntity {
 	 * @see #setOldOrderSequenceEnumId(Enumeration)
 	 * @see org.abchip.mimo.biz.accounting.ledger.LedgerPackage#getPartyAcctgPreference_OldOrderSequenceEnumId()
 	 * @model keys="enumId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Enumeration getOldOrderSequenceEnumId();
@@ -411,7 +405,6 @@ public interface PartyAcctgPreference extends BizEntity {
 	 * @see #setOldQuoteSequenceEnumId(Enumeration)
 	 * @see org.abchip.mimo.biz.accounting.ledger.LedgerPackage#getPartyAcctgPreference_OldQuoteSequenceEnumId()
 	 * @model keys="enumId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Enumeration getOldQuoteSequenceEnumId();
@@ -464,7 +457,6 @@ public interface PartyAcctgPreference extends BizEntity {
 	 * @see #setOrderSeqCustMethId(CustomMethod)
 	 * @see org.abchip.mimo.biz.accounting.ledger.LedgerPackage#getPartyAcctgPreference_OrderSeqCustMethId()
 	 * @model keys="customMethodId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	CustomMethod getOrderSeqCustMethId();
@@ -480,31 +472,31 @@ public interface PartyAcctgPreference extends BizEntity {
 	void setOrderSeqCustMethId(CustomMethod value);
 
 	/**
-	 * Returns the value of the '<em><b>Party Id</b></em>' reference.
+	 * Returns the value of the '<em><b>Party Id</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Party Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Party Id</em>' reference.
-	 * @see #setPartyId(Party)
+	 * @return the value of the '<em>Party Id</em>' attribute.
+	 * @see #setPartyId(String)
 	 * @see org.abchip.mimo.biz.accounting.ledger.LedgerPackage#getPartyAcctgPreference_PartyId()
-	 * @model keys="partyId" required="true"
+	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
-	Party getPartyId();
+	String getPartyId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.ledger.PartyAcctgPreference#getPartyId <em>Party Id</em>}' reference.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.ledger.PartyAcctgPreference#getPartyId <em>Party Id</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Party Id</em>' reference.
+	 * @param value the new value of the '<em>Party Id</em>' attribute.
 	 * @see #getPartyId()
 	 * @generated
 	 */
-	void setPartyId(Party value);
+	void setPartyId(String value);
 
 	/**
 	 * Returns the value of the '<em><b>Quote Id Prefix</b></em>' attribute.
@@ -570,7 +562,6 @@ public interface PartyAcctgPreference extends BizEntity {
 	 * @see #setQuoteSeqCustMethId(CustomMethod)
 	 * @see org.abchip.mimo.biz.accounting.ledger.LedgerPackage#getPartyAcctgPreference_QuoteSeqCustMethId()
 	 * @model keys="customMethodId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	CustomMethod getQuoteSeqCustMethId();
@@ -597,7 +588,6 @@ public interface PartyAcctgPreference extends BizEntity {
 	 * @see #setRefundPaymentMethodId(PaymentMethod)
 	 * @see org.abchip.mimo.biz.accounting.ledger.LedgerPackage#getPartyAcctgPreference_RefundPaymentMethodId()
 	 * @model keys="paymentMethodId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	PaymentMethod getRefundPaymentMethodId();
@@ -624,7 +614,6 @@ public interface PartyAcctgPreference extends BizEntity {
 	 * @see #setTaxFormId(Enumeration)
 	 * @see org.abchip.mimo.biz.accounting.ledger.LedgerPackage#getPartyAcctgPreference_TaxFormId()
 	 * @model keys="enumId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Enumeration getTaxFormId();
@@ -662,7 +651,6 @@ public interface PartyAcctgPreference extends BizEntity {
 	 * @see org.abchip.mimo.biz.accounting.ledger.LedgerPackage#getPartyAcctgPreference_ErrorGlJournalId()
 	 * @model keys="glJournalId"
 	 *        annotation="mimo-ent-slot help='Journal to which all the failed automatic transaction are assigned.\n                If the error journal is set, if the GL posting fails for some reason the triggering operation (finalizing an invoice or payment or whatever) would NOT roll back, instead the partial GL post would be placed into the error journal.'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	GlJournal getErrorGlJournalId();

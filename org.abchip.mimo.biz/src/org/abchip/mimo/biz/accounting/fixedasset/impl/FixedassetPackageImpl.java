@@ -92,6 +92,7 @@ import org.abchip.mimo.biz.content.survey.SurveyPackage;
 import org.abchip.mimo.biz.content.survey.impl.SurveyPackageImpl;
 import org.abchip.mimo.biz.content.website.WebsitePackage;
 import org.abchip.mimo.biz.content.website.impl.WebsitePackageImpl;
+import org.abchip.mimo.biz.entity.EntityPackage;
 import org.abchip.mimo.biz.entity.audit.AuditPackage;
 import org.abchip.mimo.biz.entity.audit.impl.AuditPackageImpl;
 import org.abchip.mimo.biz.entity.crypto.CryptoPackage;
@@ -485,8 +486,8 @@ public class FixedassetPackageImpl extends EPackageImpl implements FixedassetPac
 		SurveyPackageImpl theSurveyPackage = (SurveyPackageImpl)(registeredPackage instanceof SurveyPackageImpl ? registeredPackage : SurveyPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(WebsitePackage.eNS_URI);
 		WebsitePackageImpl theWebsitePackage = (WebsitePackageImpl)(registeredPackage instanceof WebsitePackageImpl ? registeredPackage : WebsitePackage.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(org.abchip.mimo.biz.entity.EntityPackage.eNS_URI);
-		EntityPackageImpl theEntityPackage = (EntityPackageImpl)(registeredPackage instanceof EntityPackageImpl ? registeredPackage : org.abchip.mimo.biz.entity.EntityPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(EntityPackage.eNS_URI);
+		EntityPackageImpl theEntityPackage = (EntityPackageImpl)(registeredPackage instanceof EntityPackageImpl ? registeredPackage : EntityPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(AuditPackage.eNS_URI);
 		AuditPackageImpl theAuditPackage = (AuditPackageImpl)(registeredPackage instanceof AuditPackageImpl ? registeredPackage : AuditPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(CryptoPackage.eNS_URI);
@@ -3031,13 +3032,6 @@ public class FixedassetPackageImpl extends EPackageImpl implements FixedassetPac
 			   "length", "255"
 		   });
 		addAnnotation
-		  (getAccommodationClass_ParentClassId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (accommodationMapEClass.getEOperations().get(0),
 		   source,
 		   new String[] {
@@ -3046,27 +3040,6 @@ public class FixedassetPackageImpl extends EPackageImpl implements FixedassetPac
 		   });
 		addAnnotation
 		  (getAccommodationMap_AccommodationMapId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getAccommodationMap_AccommodationClassId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getAccommodationMap_AccommodationMapTypeId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getAccommodationMap_FixedAssetId(),
 		   source,
 		   new String[] {
 			   "type", "id",
@@ -3179,13 +3152,6 @@ public class FixedassetPackageImpl extends EPackageImpl implements FixedassetPac
 			   "length", "20"
 		   });
 		addAnnotation
-		  (getFixedAsset_AcquireOrderId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getFixedAsset_AcquireOrderItemSeqId(),
 		   source,
 		   new String[] {
@@ -3197,20 +3163,6 @@ public class FixedassetPackageImpl extends EPackageImpl implements FixedassetPac
 		   source,
 		   new String[] {
 			   "type", "date"
-		   });
-		addAnnotation
-		  (getFixedAsset_CalendarId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getFixedAsset_ClassEnumId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
 		   });
 		addAnnotation
 		  (getFixedAsset_DateAcquired(),
@@ -3280,42 +3232,7 @@ public class FixedassetPackageImpl extends EPackageImpl implements FixedassetPac
 			   "length", "20"
 		   });
 		addAnnotation
-		  (getFixedAsset_FixedAssetTypeId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getFixedAsset_InstanceOfProductId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getFixedAsset_LocatedAtFacilityId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getFixedAsset_LocatedAtLocationSeqId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getFixedAsset_ParentFixedAssetId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getFixedAsset_PartyId(),
 		   source,
 		   new String[] {
 			   "type", "id",
@@ -3345,13 +3262,6 @@ public class FixedassetPackageImpl extends EPackageImpl implements FixedassetPac
 			   "length", "20"
 		   });
 		addAnnotation
-		  (getFixedAsset_RoleTypeId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getFixedAsset_SalvageValue(),
 		   source,
 		   new String[] {
@@ -3365,20 +3275,6 @@ public class FixedassetPackageImpl extends EPackageImpl implements FixedassetPac
 		   new String[] {
 			   "type", "long-varchar",
 			   "length", "255"
-		   });
-		addAnnotation
-		  (getFixedAsset_UomId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getFixedAssetAttribute_FixedAssetId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
 		   });
 		addAnnotation
 		  (getFixedAssetAttribute_AttrName(),
@@ -3402,20 +3298,6 @@ public class FixedassetPackageImpl extends EPackageImpl implements FixedassetPac
 			   "length", "255"
 		   });
 		addAnnotation
-		  (getFixedAssetDepMethod_DepreciationCustomMethodId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getFixedAssetDepMethod_FixedAssetId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getFixedAssetDepMethod_FromDate(),
 		   source,
 		   new String[] {
@@ -3428,20 +3310,6 @@ public class FixedassetPackageImpl extends EPackageImpl implements FixedassetPac
 			   "type", "date-time"
 		   });
 		addAnnotation
-		  (getFixedAssetGeoPoint_FixedAssetId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getFixedAssetGeoPoint_GeoPointId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getFixedAssetGeoPoint_FromDate(),
 		   source,
 		   new String[] {
@@ -3452,20 +3320,6 @@ public class FixedassetPackageImpl extends EPackageImpl implements FixedassetPac
 		   source,
 		   new String[] {
 			   "type", "date-time"
-		   });
-		addAnnotation
-		  (getFixedAssetIdent_FixedAssetId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getFixedAssetIdent_FixedAssetIdentTypeId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
 		   });
 		addAnnotation
 		  (getFixedAssetIdent_IdValue(),
@@ -3496,21 +3350,7 @@ public class FixedassetPackageImpl extends EPackageImpl implements FixedassetPac
 			   "length", "255"
 		   });
 		addAnnotation
-		  (getFixedAssetMaint_FixedAssetId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getFixedAssetMaint_MaintHistSeqId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getFixedAssetMaint_IntervalMeterTypeId(),
 		   source,
 		   new String[] {
 			   "type", "id",
@@ -3525,56 +3365,7 @@ public class FixedassetPackageImpl extends EPackageImpl implements FixedassetPac
 			   "scale", "6"
 		   });
 		addAnnotation
-		  (getFixedAssetMaint_IntervalUomId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getFixedAssetMaint_ProductMaintSeqId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getFixedAssetMaint_ProductMaintTypeId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getFixedAssetMaint_PurchaseOrderId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getFixedAssetMaint_ScheduleWorkEffortId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getFixedAssetMaint_StatusId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getFixedAssetMaintOrder_FixedAssetId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getFixedAssetMaintOrder_OrderId(),
 		   source,
 		   new String[] {
 			   "type", "id",
@@ -3589,13 +3380,6 @@ public class FixedassetPackageImpl extends EPackageImpl implements FixedassetPac
 		   });
 		addAnnotation
 		  (getFixedAssetMaintOrder_OrderItemSeqId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getFixedAssetMeter_ProductMeterTypeId(),
 		   source,
 		   new String[] {
 			   "type", "id",
@@ -3644,27 +3428,6 @@ public class FixedassetPackageImpl extends EPackageImpl implements FixedassetPac
 			   "length", "20"
 		   });
 		addAnnotation
-		  (getFixedAssetProduct_ProductId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getFixedAssetProduct_FixedAssetId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getFixedAssetProduct_FixedAssetProductTypeId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getFixedAssetProduct_FromDate(),
 		   source,
 		   new String[] {
@@ -3684,13 +3447,6 @@ public class FixedassetPackageImpl extends EPackageImpl implements FixedassetPac
 			   "type", "fixed-point",
 			   "precision", "18",
 			   "scale", "6"
-		   });
-		addAnnotation
-		  (getFixedAssetProduct_QuantityUomId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
 		   });
 		addAnnotation
 		  (getFixedAssetProduct_SequenceNum(),
@@ -3721,24 +3477,10 @@ public class FixedassetPackageImpl extends EPackageImpl implements FixedassetPac
 			   "length", "255"
 		   });
 		addAnnotation
-		  (getFixedAssetRegistration_FixedAssetId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getFixedAssetRegistration_FromDate(),
 		   source,
 		   new String[] {
 			   "type", "date-time"
-		   });
-		addAnnotation
-		  (getFixedAssetRegistration_GovAgencyPartyId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
 		   });
 		addAnnotation
 		  (getFixedAssetRegistration_LicenseNumber(),
@@ -3767,20 +3509,6 @@ public class FixedassetPackageImpl extends EPackageImpl implements FixedassetPac
 			   "type", "date-time"
 		   });
 		addAnnotation
-		  (getFixedAssetStdCost_FixedAssetId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getFixedAssetStdCost_FixedAssetStdCostTypeId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getFixedAssetStdCost_FromDate(),
 		   source,
 		   new String[] {
@@ -3793,13 +3521,6 @@ public class FixedassetPackageImpl extends EPackageImpl implements FixedassetPac
 			   "type", "currency-amount",
 			   "precision", "18",
 			   "scale", "2"
-		   });
-		addAnnotation
-		  (getFixedAssetStdCost_AmountUomId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
 		   });
 		addAnnotation
 		  (getFixedAssetStdCost_ThruDate(),
@@ -3834,13 +3555,6 @@ public class FixedassetPackageImpl extends EPackageImpl implements FixedassetPac
 		   new String[] {
 			   "type", "indicator",
 			   "length", "1"
-		   });
-		addAnnotation
-		  (getFixedAssetStdCostType_ParentTypeId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
 		   });
 		addAnnotation
 		  (fixedAssetTypeEClass.getEOperations().get(0),
@@ -3892,20 +3606,6 @@ public class FixedassetPackageImpl extends EPackageImpl implements FixedassetPac
 			   "length", "1"
 		   });
 		addAnnotation
-		  (getFixedAssetType_ParentTypeId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getFixedAssetTypeAttr_FixedAssetTypeId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getFixedAssetTypeAttr_AttrName(),
 		   source,
 		   new String[] {
@@ -3918,83 +3618,6 @@ public class FixedassetPackageImpl extends EPackageImpl implements FixedassetPac
 		   new String[] {
 			   "type", "description",
 			   "length", "255"
-		   });
-		addAnnotation
-		  (getFixedAssetTypeGlAccount_FixedAssetTypeId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getFixedAssetTypeGlAccount_FixedAssetId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getFixedAssetTypeGlAccount_OrganizationPartyId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getFixedAssetTypeGlAccount_AccDepGlAccountId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getFixedAssetTypeGlAccount_AssetGlAccountId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getFixedAssetTypeGlAccount_DepGlAccountId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getFixedAssetTypeGlAccount_LossGlAccountId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getFixedAssetTypeGlAccount_ProfitGlAccountId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getPartyFixedAssetAssignment_PartyId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getPartyFixedAssetAssignment_RoleTypeId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getPartyFixedAssetAssignment_FixedAssetId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
 		   });
 		addAnnotation
 		  (getPartyFixedAssetAssignment_FromDate(),
@@ -4014,13 +3637,6 @@ public class FixedassetPackageImpl extends EPackageImpl implements FixedassetPac
 		   new String[] {
 			   "type", "comment",
 			   "length", "255"
-		   });
-		addAnnotation
-		  (getPartyFixedAssetAssignment_StatusId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
 		   });
 		addAnnotation
 		  (getPartyFixedAssetAssignment_ThruDate(),

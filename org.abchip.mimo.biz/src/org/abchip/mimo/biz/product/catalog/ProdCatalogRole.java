@@ -76,7 +76,6 @@ public interface ProdCatalogRole extends BizEntity {
 	 * @see org.abchip.mimo.biz.product.catalog.CatalogPackage#getProdCatalogRole_PartyId()
 	 * @model keys="partyId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Party getPartyId();
@@ -104,7 +103,6 @@ public interface ProdCatalogRole extends BizEntity {
 	 * @see org.abchip.mimo.biz.product.catalog.CatalogPackage#getProdCatalogRole_RoleTypeId()
 	 * @model keys="roleTypeId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	RoleType getRoleTypeId();
@@ -184,7 +182,6 @@ public interface ProdCatalogRole extends BizEntity {
 	 * @see org.abchip.mimo.biz.product.catalog.CatalogPackage#getProdCatalogRole_ProdCatalogId()
 	 * @model keys="prodCatalogId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ProdCatalog getProdCatalogId();

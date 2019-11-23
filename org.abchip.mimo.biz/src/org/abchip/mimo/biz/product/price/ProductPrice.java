@@ -69,7 +69,6 @@ public interface ProductPrice extends BizEntityTyped<ProductPriceType> {
 	 * @see #setCreatedByUserLogin(UserLogin)
 	 * @see org.abchip.mimo.biz.product.price.PricePackage#getProductPrice_CreatedByUserLogin()
 	 * @model keys="userLoginId"
-	 *        annotation="mimo-ent-format type='id-vlong' length='255'"
 	 * @generated
 	 */
 	UserLogin getCreatedByUserLogin();
@@ -123,7 +122,6 @@ public interface ProductPrice extends BizEntityTyped<ProductPriceType> {
 	 * @see org.abchip.mimo.biz.product.price.PricePackage#getProductPrice_CurrencyUomId()
 	 * @model keys="uomId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Uom getCurrencyUomId();
@@ -151,7 +149,6 @@ public interface ProductPrice extends BizEntityTyped<ProductPriceType> {
 	 * @see org.abchip.mimo.biz.product.price.PricePackage#getProductPrice_CustomPriceCalcService()
 	 * @model keys="customMethodId"
 	 *        annotation="mimo-ent-slot help='Points to a CustomMethod used to specify a service for the calculation of the unit price of the product (NOTE: a better name for this field might be priceCalcCustomMethodId)'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	CustomMethod getCustomPriceCalcService();
@@ -206,7 +203,6 @@ public interface ProductPrice extends BizEntityTyped<ProductPriceType> {
 	 * @see #setLastModifiedByUserLogin(UserLogin)
 	 * @see org.abchip.mimo.biz.product.price.PricePackage#getProductPrice_LastModifiedByUserLogin()
 	 * @model keys="userLoginId"
-	 *        annotation="mimo-ent-format type='id-vlong' length='255'"
 	 * @generated
 	 */
 	UserLogin getLastModifiedByUserLogin();
@@ -340,7 +336,6 @@ public interface ProductPrice extends BizEntityTyped<ProductPriceType> {
 	 * @see org.abchip.mimo.biz.product.price.PricePackage#getProductPrice_ProductId()
 	 * @model keys="productId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Product getProductId();
@@ -368,7 +363,6 @@ public interface ProductPrice extends BizEntityTyped<ProductPriceType> {
 	 * @see org.abchip.mimo.biz.product.price.PricePackage#getProductPrice_ProductStoreGroupId()
 	 * @model keys="productStoreGroupId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ProductStoreGroup getProductStoreGroupId();
@@ -448,7 +442,6 @@ public interface ProductPrice extends BizEntityTyped<ProductPriceType> {
 	 * @see #setTaxAuthGeoId(Geo)
 	 * @see org.abchip.mimo.biz.product.price.PricePackage#getProductPrice_TaxAuthGeoId()
 	 * @model keys="geoId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Geo getTaxAuthGeoId();
@@ -475,7 +468,6 @@ public interface ProductPrice extends BizEntityTyped<ProductPriceType> {
 	 * @see #setTaxAuthPartyId(Party)
 	 * @see org.abchip.mimo.biz.product.price.PricePackage#getProductPrice_TaxAuthPartyId()
 	 * @model keys="partyId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Party getTaxAuthPartyId();
@@ -529,7 +521,6 @@ public interface ProductPrice extends BizEntityTyped<ProductPriceType> {
 	 * @see org.abchip.mimo.biz.product.price.PricePackage#getProductPrice_TermUomId()
 	 * @model keys="uomId"
 	 *        annotation="mimo-ent-slot help='Mainly used for recurring and usage prices to specify a time/freq measure, or a usage unit measure (bits, minutes, etc)'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Uom getTermUomId();
@@ -583,7 +574,6 @@ public interface ProductPrice extends BizEntityTyped<ProductPriceType> {
 	 * @see org.abchip.mimo.biz.product.price.PricePackage#getProductPrice_ProductPriceTypeId()
 	 * @model keys="productPriceTypeId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ProductPriceType getProductPriceTypeId();
@@ -611,7 +601,6 @@ public interface ProductPrice extends BizEntityTyped<ProductPriceType> {
 	 * @see org.abchip.mimo.biz.product.price.PricePackage#getProductPrice_ProductPricePurposeId()
 	 * @model keys="productPricePurposeId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ProductPricePurpose getProductPricePurposeId();

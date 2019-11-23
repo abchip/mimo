@@ -123,7 +123,6 @@ public interface DocumentType extends BizEntityType<Document> {
 	 * @see #setParentTypeId(DocumentType)
 	 * @see org.abchip.mimo.biz.content.document.DocumentPackage#getDocumentType_ParentTypeId()
 	 * @model keys="documentTypeId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	DocumentType getParentTypeId();

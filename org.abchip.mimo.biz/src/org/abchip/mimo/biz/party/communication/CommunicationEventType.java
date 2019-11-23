@@ -45,7 +45,6 @@ public interface CommunicationEventType extends BizEntityType<CommunicationEvent
 	 * @see #setContactMechTypeId(ContactMechType)
 	 * @see org.abchip.mimo.biz.party.communication.CommunicationPackage#getCommunicationEventType_ContactMechTypeId()
 	 * @model keys="contactMechTypeId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ContactMechType getContactMechTypeId();
@@ -124,7 +123,6 @@ public interface CommunicationEventType extends BizEntityType<CommunicationEvent
 	 * @see #setParentTypeId(CommunicationEventType)
 	 * @see org.abchip.mimo.biz.party.communication.CommunicationPackage#getCommunicationEventType_ParentTypeId()
 	 * @model keys="communicationEventTypeId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	CommunicationEventType getParentTypeId();

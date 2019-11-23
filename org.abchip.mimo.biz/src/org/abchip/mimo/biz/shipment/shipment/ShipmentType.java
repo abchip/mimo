@@ -96,7 +96,6 @@ public interface ShipmentType extends BizEntityType<Shipment> {
 	 * @see #setParentTypeId(ShipmentType)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipmentType_ParentTypeId()
 	 * @model keys="shipmentTypeId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ShipmentType getParentTypeId();

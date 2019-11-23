@@ -95,7 +95,6 @@ public interface ProductFeatureType extends BizEntityType<ProductFeature> {
 	 * @see #setParentTypeId(ProductFeatureType)
 	 * @see org.abchip.mimo.biz.product.feature.FeaturePackage#getProductFeatureType_ParentTypeId()
 	 * @model keys="productFeatureTypeId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ProductFeatureType getParentTypeId();

@@ -125,7 +125,6 @@ public interface ProductFeatureGroupAppl extends BizEntity {
 	 * @see org.abchip.mimo.biz.product.feature.FeaturePackage#getProductFeatureGroupAppl_ProductFeatureGroupId()
 	 * @model keys="productFeatureGroupId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ProductFeatureGroup getProductFeatureGroupId();
@@ -153,7 +152,6 @@ public interface ProductFeatureGroupAppl extends BizEntity {
 	 * @see org.abchip.mimo.biz.product.feature.FeaturePackage#getProductFeatureGroupAppl_ProductFeatureId()
 	 * @model keys="productFeatureId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ProductFeature getProductFeatureId();

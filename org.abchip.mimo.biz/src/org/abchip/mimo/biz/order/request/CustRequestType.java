@@ -125,7 +125,6 @@ public interface CustRequestType extends BizEntityType<CustRequest> {
 	 * @see #setParentTypeId(CustRequestType)
 	 * @see org.abchip.mimo.biz.order.request.RequestPackage#getCustRequestType_ParentTypeId()
 	 * @model keys="custRequestTypeId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	CustRequestType getParentTypeId();
@@ -153,7 +152,6 @@ public interface CustRequestType extends BizEntityType<CustRequest> {
 	 * @see org.abchip.mimo.biz.order.request.RequestPackage#getCustRequestType_PartyId()
 	 * @model keys="partyId"
 	 *        annotation="mimo-ent-slot help='party or party group(via partyRelationShip entity) responsible for responding to the communication request of this particular type'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Party getPartyId();

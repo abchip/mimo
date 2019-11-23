@@ -43,7 +43,6 @@ public interface VendorProduct extends BizEntity {
 	 * @see org.abchip.mimo.biz.product.product.ProductPackage#getVendorProduct_ProductStoreGroupId()
 	 * @model keys="productStoreGroupId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ProductStoreGroup getProductStoreGroupId();
@@ -71,7 +70,6 @@ public interface VendorProduct extends BizEntity {
 	 * @see org.abchip.mimo.biz.product.product.ProductPackage#getVendorProduct_VendorPartyId()
 	 * @model keys="partyId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Party getVendorPartyId();
@@ -99,7 +97,6 @@ public interface VendorProduct extends BizEntity {
 	 * @see org.abchip.mimo.biz.product.product.ProductPackage#getVendorProduct_ProductId()
 	 * @model keys="productId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Product getProductId();

@@ -68,7 +68,6 @@ public interface InventoryItemLabel extends BizEntityTyped<InventoryItemLabelTyp
 	 * @see #setInventoryItemLabelTypeId(InventoryItemLabelType)
 	 * @see org.abchip.mimo.biz.product.inventory.InventoryPackage#getInventoryItemLabel_InventoryItemLabelTypeId()
 	 * @model keys="inventoryItemLabelTypeId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	InventoryItemLabelType getInventoryItemLabelTypeId();

@@ -47,7 +47,6 @@ public interface WebSiteContent extends BizEntityTyped<WebSiteContentType> {
 	 * @see org.abchip.mimo.biz.content.website.WebsitePackage#getWebSiteContent_ContentId()
 	 * @model keys="contentId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Content getContentId();
@@ -129,7 +128,6 @@ public interface WebSiteContent extends BizEntityTyped<WebSiteContentType> {
 	 * @see org.abchip.mimo.biz.content.website.WebsitePackage#getWebSiteContent_WebSiteContentTypeId()
 	 * @model keys="webSiteContentTypeId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	WebSiteContentType getWebSiteContentTypeId();
@@ -157,7 +155,6 @@ public interface WebSiteContent extends BizEntityTyped<WebSiteContentType> {
 	 * @see org.abchip.mimo.biz.content.website.WebsitePackage#getWebSiteContent_WebSiteId()
 	 * @model keys="webSiteId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	WebSite getWebSiteId();

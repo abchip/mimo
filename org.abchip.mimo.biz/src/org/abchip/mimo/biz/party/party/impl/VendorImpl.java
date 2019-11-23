@@ -8,7 +8,6 @@
 package org.abchip.mimo.biz.party.party.impl;
 
 import org.abchip.mimo.biz.impl.BizEntityImpl;
-import org.abchip.mimo.biz.party.party.Party;
 import org.abchip.mimo.biz.party.party.PartyPackage;
 import org.abchip.mimo.biz.party.party.Vendor;
 import org.eclipse.emf.ecore.EClass;
@@ -21,11 +20,11 @@ import org.eclipse.emf.ecore.EClass;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link org.abchip.mimo.biz.party.party.impl.VendorImpl#getPartyId <em>Party Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.party.impl.VendorImpl#getManifestCompanyName <em>Manifest Company Name</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.party.impl.VendorImpl#getManifestCompanyTitle <em>Manifest Company Title</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.party.impl.VendorImpl#getManifestLogoUrl <em>Manifest Logo Url</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.party.impl.VendorImpl#getManifestPolicies <em>Manifest Policies</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.party.party.impl.VendorImpl#getPartyId <em>Party Id</em>}</li>
  * </ul>
  *
  * @generated
@@ -140,8 +139,8 @@ public class VendorImpl extends BizEntityImpl implements Vendor {
 	 * @generated
 	 */
 	@Override
-	public Party getPartyId() {
-		return (Party)eGet(PartyPackage.Literals.VENDOR__PARTY_ID, true);
+	public String getPartyId() {
+		return (String)eGet(PartyPackage.Literals.VENDOR__PARTY_ID, true);
 	}
 
 	/**
@@ -150,7 +149,7 @@ public class VendorImpl extends BizEntityImpl implements Vendor {
 	 * @generated
 	 */
 	@Override
-	public void setPartyId(Party newPartyId) {
+	public void setPartyId(String newPartyId) {
 		eSet(PartyPackage.Literals.VENDOR__PARTY_ID, newPartyId);
 	}
 

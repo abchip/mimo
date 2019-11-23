@@ -791,13 +791,6 @@ public class KeywordPackageImpl extends EPackageImpl implements KeywordPackage {
 			   "type", "long-varchar",
 			   "length", "255"
 		   });
-		addAnnotation
-		  (getKeywordThesaurus_RelationshipEnumId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
 	}
 
 	/**

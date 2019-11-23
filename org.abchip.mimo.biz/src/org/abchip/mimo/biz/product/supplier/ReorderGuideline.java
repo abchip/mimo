@@ -81,7 +81,6 @@ public interface ReorderGuideline extends BizEntity {
 	 * @see #setGeoId(Geo)
 	 * @see org.abchip.mimo.biz.product.supplier.SupplierPackage#getReorderGuideline_GeoId()
 	 * @model keys="geoId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Geo getGeoId();
@@ -108,7 +107,6 @@ public interface ReorderGuideline extends BizEntity {
 	 * @see #setPartyId(Party)
 	 * @see org.abchip.mimo.biz.product.supplier.SupplierPackage#getReorderGuideline_PartyId()
 	 * @model keys="partyId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Party getPartyId();
@@ -266,7 +264,6 @@ public interface ReorderGuideline extends BizEntity {
 	 * @see #setProductId(Product)
 	 * @see org.abchip.mimo.biz.product.supplier.SupplierPackage#getReorderGuideline_ProductId()
 	 * @model keys="productId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Product getProductId();
@@ -293,7 +290,6 @@ public interface ReorderGuideline extends BizEntity {
 	 * @see #setFacilityId(Facility)
 	 * @see org.abchip.mimo.biz.product.supplier.SupplierPackage#getReorderGuideline_FacilityId()
 	 * @model keys="facilityId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Facility getFacilityId();

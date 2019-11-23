@@ -128,7 +128,6 @@ public interface SurveyQuestion extends BizEntityTyped<SurveyQuestionType> {
 	 * @see #setGeoId(Geo)
 	 * @see org.abchip.mimo.biz.content.survey.SurveyPackage#getSurveyQuestion_GeoId()
 	 * @model keys="geoId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Geo getGeoId();
@@ -207,7 +206,6 @@ public interface SurveyQuestion extends BizEntityTyped<SurveyQuestionType> {
 	 * @see #setSurveyQuestionCategoryId(SurveyQuestionCategory)
 	 * @see org.abchip.mimo.biz.content.survey.SurveyPackage#getSurveyQuestion_SurveyQuestionCategoryId()
 	 * @model keys="surveyQuestionCategoryId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	SurveyQuestionCategory getSurveyQuestionCategoryId();
@@ -261,7 +259,6 @@ public interface SurveyQuestion extends BizEntityTyped<SurveyQuestionType> {
 	 * @see #setSurveyQuestionTypeId(SurveyQuestionType)
 	 * @see org.abchip.mimo.biz.content.survey.SurveyPackage#getSurveyQuestion_SurveyQuestionTypeId()
 	 * @model keys="surveyQuestionTypeId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	SurveyQuestionType getSurveyQuestionTypeId();

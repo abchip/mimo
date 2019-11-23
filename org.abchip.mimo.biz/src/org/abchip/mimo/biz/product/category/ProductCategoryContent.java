@@ -52,7 +52,6 @@ public interface ProductCategoryContent extends BizEntityTyped<ProductCategoryCo
 	 * @see org.abchip.mimo.biz.product.category.CategoryPackage#getProductCategoryContent_ContentId()
 	 * @model keys="contentId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Content getContentId();
@@ -238,7 +237,6 @@ public interface ProductCategoryContent extends BizEntityTyped<ProductCategoryCo
 	 * @see org.abchip.mimo.biz.product.category.CategoryPackage#getProductCategoryContent_ProductCategoryId()
 	 * @model keys="productCategoryId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ProductCategory getProductCategoryId();
@@ -266,7 +264,6 @@ public interface ProductCategoryContent extends BizEntityTyped<ProductCategoryCo
 	 * @see org.abchip.mimo.biz.product.category.CategoryPackage#getProductCategoryContent_ProdCatContentTypeId()
 	 * @model keys="prodCatContentTypeId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ProductCategoryContentType getProdCatContentTypeId();

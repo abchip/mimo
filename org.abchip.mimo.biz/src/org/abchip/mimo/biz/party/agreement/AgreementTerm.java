@@ -136,7 +136,6 @@ public interface AgreementTerm extends BizEntity {
 	 * @see #setInvoiceItemTypeId(InvoiceItemType)
 	 * @see org.abchip.mimo.biz.party.agreement.AgreementPackage#getAgreementTerm_InvoiceItemTypeId()
 	 * @model keys="invoiceItemTypeId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	InvoiceItemType getInvoiceItemTypeId();
@@ -337,7 +336,6 @@ public interface AgreementTerm extends BizEntity {
 	 * @see #setTermTypeId(TermType)
 	 * @see org.abchip.mimo.biz.party.agreement.AgreementPackage#getAgreementTerm_TermTypeId()
 	 * @model keys="termTypeId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	TermType getTermTypeId();
@@ -364,7 +362,6 @@ public interface AgreementTerm extends BizEntity {
 	 * @see #setAgreementId(Agreement)
 	 * @see org.abchip.mimo.biz.party.agreement.AgreementPackage#getAgreementTerm_AgreementId()
 	 * @model keys="agreementId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Agreement getAgreementId();

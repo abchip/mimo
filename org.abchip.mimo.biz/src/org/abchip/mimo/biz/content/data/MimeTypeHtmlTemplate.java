@@ -28,31 +28,31 @@ import org.abchip.mimo.biz.BizEntity;
  */
 public interface MimeTypeHtmlTemplate extends BizEntity {
 	/**
-	 * Returns the value of the '<em><b>Mime Type Id</b></em>' reference.
+	 * Returns the value of the '<em><b>Mime Type Id</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Mime Type Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Mime Type Id</em>' reference.
-	 * @see #setMimeTypeId(MimeType)
+	 * @return the value of the '<em>Mime Type Id</em>' attribute.
+	 * @see #setMimeTypeId(String)
 	 * @see org.abchip.mimo.biz.content.data.DataPackage#getMimeTypeHtmlTemplate_MimeTypeId()
-	 * @model keys="mimeTypeId" required="true"
+	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-format type='id-vlong' length='255'"
 	 * @generated
 	 */
-	MimeType getMimeTypeId();
+	String getMimeTypeId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.content.data.MimeTypeHtmlTemplate#getMimeTypeId <em>Mime Type Id</em>}' reference.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.content.data.MimeTypeHtmlTemplate#getMimeTypeId <em>Mime Type Id</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Mime Type Id</em>' reference.
+	 * @param value the new value of the '<em>Mime Type Id</em>' attribute.
 	 * @see #getMimeTypeId()
 	 * @generated
 	 */
-	void setMimeTypeId(MimeType value);
+	void setMimeTypeId(String value);
 
 	/**
 	 * Returns the value of the '<em><b>Template Location</b></em>' attribute.

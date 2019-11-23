@@ -205,7 +205,6 @@ public interface FinAccountAuth extends BizEntity {
 	 * @see #setFinAccountId(FinAccount)
 	 * @see org.abchip.mimo.biz.accounting.finaccount.FinaccountPackage#getFinAccountAuth_FinAccountId()
 	 * @model keys="finAccountId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	FinAccount getFinAccountId();

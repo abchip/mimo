@@ -71,6 +71,7 @@ import org.abchip.mimo.biz.content.survey.SurveyPackage;
 import org.abchip.mimo.biz.content.survey.impl.SurveyPackageImpl;
 import org.abchip.mimo.biz.content.website.WebsitePackage;
 import org.abchip.mimo.biz.content.website.impl.WebsitePackageImpl;
+import org.abchip.mimo.biz.entity.EntityPackage;
 import org.abchip.mimo.biz.entity.audit.AuditPackage;
 import org.abchip.mimo.biz.entity.audit.impl.AuditPackageImpl;
 import org.abchip.mimo.biz.entity.crypto.CryptoPackage;
@@ -415,8 +416,8 @@ public class QuotePackageImpl extends EPackageImpl implements QuotePackage {
 		SurveyPackageImpl theSurveyPackage = (SurveyPackageImpl)(registeredPackage instanceof SurveyPackageImpl ? registeredPackage : SurveyPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(WebsitePackage.eNS_URI);
 		WebsitePackageImpl theWebsitePackage = (WebsitePackageImpl)(registeredPackage instanceof WebsitePackageImpl ? registeredPackage : WebsitePackage.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(org.abchip.mimo.biz.entity.EntityPackage.eNS_URI);
-		EntityPackageImpl theEntityPackage = (EntityPackageImpl)(registeredPackage instanceof EntityPackageImpl ? registeredPackage : org.abchip.mimo.biz.entity.EntityPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(EntityPackage.eNS_URI);
+		EntityPackageImpl theEntityPackage = (EntityPackageImpl)(registeredPackage instanceof EntityPackageImpl ? registeredPackage : EntityPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(AuditPackage.eNS_URI);
 		AuditPackageImpl theAuditPackage = (AuditPackageImpl)(registeredPackage instanceof AuditPackageImpl ? registeredPackage : AuditPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(CryptoPackage.eNS_URI);
@@ -2350,13 +2351,6 @@ public class QuotePackageImpl extends EPackageImpl implements QuotePackage {
 			   "length", "20"
 		   });
 		addAnnotation
-		  (getQuote_CurrencyUomId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getQuote_Description(),
 		   source,
 		   new String[] {
@@ -2368,20 +2362,6 @@ public class QuotePackageImpl extends EPackageImpl implements QuotePackage {
 		   source,
 		   new String[] {
 			   "type", "date-time"
-		   });
-		addAnnotation
-		  (getQuote_PartyId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getQuote_ProductStoreId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
 		   });
 		addAnnotation
 		  (getQuote_QuoteAttributes(),
@@ -2419,28 +2399,7 @@ public class QuotePackageImpl extends EPackageImpl implements QuotePackage {
 			   "length", "20"
 		   });
 		addAnnotation
-		  (getQuote_QuoteTypeId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getQuote_QuoteWorkEfforts(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getQuote_SalesChannelEnumId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getQuote_StatusId(),
 		   source,
 		   new String[] {
 			   "type", "id",
@@ -2486,13 +2445,6 @@ public class QuotePackageImpl extends EPackageImpl implements QuotePackage {
 		   new String[] {
 			   "type", "id",
 			   "length", "20"
-		   });
-		addAnnotation
-		  (getQuoteAdjustment_CreatedByUserLogin(),
-		   source,
-		   new String[] {
-			   "type", "id-vlong",
-			   "length", "255"
 		   });
 		addAnnotation
 		  (getQuoteAdjustment_CreatedDate(),
@@ -2550,20 +2502,6 @@ public class QuotePackageImpl extends EPackageImpl implements QuotePackage {
 			   "type", "date-time"
 		   });
 		addAnnotation
-		  (getQuoteAdjustment_OverrideGlAccountId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getQuoteAdjustment_PrimaryGeoId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getQuoteAdjustment_ProductFeatureId(),
 		   source,
 		   new String[] {
@@ -2578,13 +2516,6 @@ public class QuotePackageImpl extends EPackageImpl implements QuotePackage {
 			   "length", "20"
 		   });
 		addAnnotation
-		  (getQuoteAdjustment_ProductPromoId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getQuoteAdjustment_ProductPromoRuleId(),
 		   source,
 		   new String[] {
@@ -2592,28 +2523,7 @@ public class QuotePackageImpl extends EPackageImpl implements QuotePackage {
 			   "length", "20"
 		   });
 		addAnnotation
-		  (getQuoteAdjustment_QuoteAdjustmentTypeId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getQuoteAdjustment_QuoteId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getQuoteAdjustment_QuoteItemSeqId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getQuoteAdjustment_SecondaryGeoId(),
 		   source,
 		   new String[] {
 			   "type", "id",
@@ -2649,13 +2559,6 @@ public class QuotePackageImpl extends EPackageImpl implements QuotePackage {
 			   "length", "20"
 		   });
 		addAnnotation
-		  (getQuoteAttribute_QuoteId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getQuoteAttribute_AttrName(),
 		   source,
 		   new String[] {
@@ -2677,13 +2580,6 @@ public class QuotePackageImpl extends EPackageImpl implements QuotePackage {
 			   "length", "255"
 		   });
 		addAnnotation
-		  (getQuoteCoefficient_QuoteId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getQuoteCoefficient_CoeffName(),
 		   source,
 		   new String[] {
@@ -2697,13 +2593,6 @@ public class QuotePackageImpl extends EPackageImpl implements QuotePackage {
 			   "type", "fixed-point",
 			   "precision", "18",
 			   "scale", "6"
-		   });
-		addAnnotation
-		  (getQuoteItem_QuoteId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
 		   });
 		addAnnotation
 		  (getQuoteItem_QuoteItemSeqId(),
@@ -2727,21 +2616,7 @@ public class QuotePackageImpl extends EPackageImpl implements QuotePackage {
 			   "length", "20"
 		   });
 		addAnnotation
-		  (getQuoteItem_CustRequestId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getQuoteItem_CustRequestItemSeqId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getQuoteItem_DeliverableTypeId(),
 		   source,
 		   new String[] {
 			   "type", "id",
@@ -2767,20 +2642,6 @@ public class QuotePackageImpl extends EPackageImpl implements QuotePackage {
 			   "type", "numeric",
 			   "precision", "20",
 			   "scale", "0"
-		   });
-		addAnnotation
-		  (getQuoteItem_ProductFeatureId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getQuoteItem_ProductId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
 		   });
 		addAnnotation
 		  (getQuoteItem_Quantity(),
@@ -2829,55 +2690,6 @@ public class QuotePackageImpl extends EPackageImpl implements QuotePackage {
 			   "scale", "6"
 		   });
 		addAnnotation
-		  (getQuoteItem_SkillTypeId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getQuoteItem_UomId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getQuoteItem_WorkEffortId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getQuoteNote_QuoteId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getQuoteRole_QuoteId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getQuoteRole_PartyId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getQuoteRole_RoleTypeId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getQuoteRole_FromDate(),
 		   source,
 		   new String[] {
@@ -2888,20 +2700,6 @@ public class QuotePackageImpl extends EPackageImpl implements QuotePackage {
 		   source,
 		   new String[] {
 			   "type", "date-time"
-		   });
-		addAnnotation
-		  (getQuoteTerm_QuoteId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getQuoteTerm_TermTypeId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
 		   });
 		addAnnotation
 		  (getQuoteTerm_QuoteItemSeqId(),
@@ -3032,21 +2830,7 @@ public class QuotePackageImpl extends EPackageImpl implements QuotePackage {
 			   "length", "1"
 		   });
 		addAnnotation
-		  (getQuoteType_ParentTypeId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getQuoteType_QuoteTypeAttrs(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getQuoteTypeAttr_QuoteTypeId(),
 		   source,
 		   new String[] {
 			   "type", "id",
@@ -3065,20 +2849,6 @@ public class QuotePackageImpl extends EPackageImpl implements QuotePackage {
 		   new String[] {
 			   "type", "description",
 			   "length", "255"
-		   });
-		addAnnotation
-		  (getQuoteWorkEffort_QuoteId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getQuoteWorkEffort_WorkEffortId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
 		   });
 	}
 

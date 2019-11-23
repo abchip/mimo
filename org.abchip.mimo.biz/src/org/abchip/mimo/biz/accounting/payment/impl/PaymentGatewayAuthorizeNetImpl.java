@@ -8,7 +8,6 @@
 package org.abchip.mimo.biz.accounting.payment.impl;
 
 import org.abchip.mimo.biz.accounting.payment.PaymentGatewayAuthorizeNet;
-import org.abchip.mimo.biz.accounting.payment.PaymentGatewayConfig;
 import org.abchip.mimo.biz.accounting.payment.PaymentPackage;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.eclipse.emf.ecore.EClass;
@@ -21,6 +20,7 @@ import org.eclipse.emf.ecore.EClass;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.PaymentGatewayAuthorizeNetImpl#getPaymentGatewayConfigId <em>Payment Gateway Config Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.PaymentGatewayAuthorizeNetImpl#getApiVersion <em>Api Version</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.PaymentGatewayAuthorizeNetImpl#getCertificateAlias <em>Certificate Alias</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.PaymentGatewayAuthorizeNetImpl#getCpDeviceType <em>Cp Device Type</em>}</li>
@@ -32,7 +32,6 @@ import org.eclipse.emf.ecore.EClass;
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.PaymentGatewayAuthorizeNetImpl#getEmailCustomer <em>Email Customer</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.PaymentGatewayAuthorizeNetImpl#getEmailMerchant <em>Email Merchant</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.PaymentGatewayAuthorizeNetImpl#getMethod <em>Method</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.PaymentGatewayAuthorizeNetImpl#getPaymentGatewayConfigId <em>Payment Gateway Config Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.PaymentGatewayAuthorizeNetImpl#getPwd <em>Pwd</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.PaymentGatewayAuthorizeNetImpl#getRelayResponse <em>Relay Response</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.PaymentGatewayAuthorizeNetImpl#getTestMode <em>Test Mode</em>}</li>
@@ -294,8 +293,8 @@ public class PaymentGatewayAuthorizeNetImpl extends BizEntityImpl implements Pay
 	 * @generated
 	 */
 	@Override
-	public PaymentGatewayConfig getPaymentGatewayConfigId() {
-		return (PaymentGatewayConfig)eGet(PaymentPackage.Literals.PAYMENT_GATEWAY_AUTHORIZE_NET__PAYMENT_GATEWAY_CONFIG_ID, true);
+	public String getPaymentGatewayConfigId() {
+		return (String)eGet(PaymentPackage.Literals.PAYMENT_GATEWAY_AUTHORIZE_NET__PAYMENT_GATEWAY_CONFIG_ID, true);
 	}
 
 	/**
@@ -304,7 +303,7 @@ public class PaymentGatewayAuthorizeNetImpl extends BizEntityImpl implements Pay
 	 * @generated
 	 */
 	@Override
-	public void setPaymentGatewayConfigId(PaymentGatewayConfig newPaymentGatewayConfigId) {
+	public void setPaymentGatewayConfigId(String newPaymentGatewayConfigId) {
 		eSet(PaymentPackage.Literals.PAYMENT_GATEWAY_AUTHORIZE_NET__PAYMENT_GATEWAY_CONFIG_ID, newPaymentGatewayConfigId);
 	}
 

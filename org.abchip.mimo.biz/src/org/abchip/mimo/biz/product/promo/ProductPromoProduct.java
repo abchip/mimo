@@ -73,7 +73,6 @@ public interface ProductPromoProduct extends BizEntity {
 	 * @see #setProductPromoApplEnumId(Enumeration)
 	 * @see org.abchip.mimo.biz.product.promo.PromoPackage#getProductPromoProduct_ProductPromoApplEnumId()
 	 * @model keys="enumId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Enumeration getProductPromoApplEnumId();
@@ -157,7 +156,6 @@ public interface ProductPromoProduct extends BizEntity {
 	 * @see org.abchip.mimo.biz.product.promo.PromoPackage#getProductPromoProduct_ProductPromoId()
 	 * @model keys="productPromoId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ProductPromo getProductPromoId();
@@ -185,7 +183,6 @@ public interface ProductPromoProduct extends BizEntity {
 	 * @see org.abchip.mimo.biz.product.promo.PromoPackage#getProductPromoProduct_ProductId()
 	 * @model keys="productId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Product getProductId();

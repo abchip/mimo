@@ -2748,22 +2748,22 @@ public interface WorkeffortPackage extends EPackage {
 	int WORK_EFFORT_ICAL_DATA__LAST_UPDATED_TX_STAMP = BizPackage.BIZ_ENTITY__LAST_UPDATED_TX_STAMP;
 
 	/**
+	 * The feature id for the '<em><b>Work Effort Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WORK_EFFORT_ICAL_DATA__WORK_EFFORT_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
+
+	/**
 	 * The feature id for the '<em><b>Ical Data</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int WORK_EFFORT_ICAL_DATA__ICAL_DATA = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Work Effort Id</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int WORK_EFFORT_ICAL_DATA__WORK_EFFORT_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
+	int WORK_EFFORT_ICAL_DATA__ICAL_DATA = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Work Effort Ical Data</em>' class.
@@ -3074,15 +3074,6 @@ public interface WorkeffortPackage extends EPackage {
 	 * @ordered
 	 */
 	int WORK_EFFORT_NOTE__NOTE_ID = BizPackage.BIZ_ENTITY_NOTE__NOTE_ID;
-
-	/**
-	 * The feature id for the '<em><b>Note</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int WORK_EFFORT_NOTE__NOTE = BizPackage.BIZ_ENTITY_NOTE__NOTE;
 
 	/**
 	 * The feature id for the '<em><b>Work Effort Id</b></em>' reference.
@@ -6330,15 +6321,15 @@ public interface WorkeffortPackage extends EPackage {
 	EClass getWorkEffortIcalData();
 
 	/**
-	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffortIcalData#getWorkEffortId <em>Work Effort Id</em>}'.
+	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffortIcalData#getWorkEffortId <em>Work Effort Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Work Effort Id</em>'.
+	 * @return the meta object for the attribute '<em>Work Effort Id</em>'.
 	 * @see org.abchip.mimo.biz.workeffort.workeffort.WorkEffortIcalData#getWorkEffortId()
 	 * @see #getWorkEffortIcalData()
 	 * @generated
 	 */
-	EReference getWorkEffortIcalData_WorkEffortId();
+	EAttribute getWorkEffortIcalData_WorkEffortId();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffortIcalData#getIcalData <em>Ical Data</em>}'.
@@ -8901,12 +8892,12 @@ public interface WorkeffortPackage extends EPackage {
 		EClass WORK_EFFORT_ICAL_DATA = eINSTANCE.getWorkEffortIcalData();
 
 		/**
-		 * The meta object literal for the '<em><b>Work Effort Id</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Work Effort Id</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference WORK_EFFORT_ICAL_DATA__WORK_EFFORT_ID = eINSTANCE.getWorkEffortIcalData_WorkEffortId();
+		EAttribute WORK_EFFORT_ICAL_DATA__WORK_EFFORT_ID = eINSTANCE.getWorkEffortIcalData_WorkEffortId();
 
 		/**
 		 * The meta object literal for the '<em><b>Ical Data</b></em>' attribute feature.

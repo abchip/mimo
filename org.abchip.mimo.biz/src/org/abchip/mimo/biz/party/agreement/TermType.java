@@ -96,7 +96,6 @@ public interface TermType extends BizEntity {
 	 * @see #setParentTypeId(TermType)
 	 * @see org.abchip.mimo.biz.party.agreement.AgreementPackage#getTermType_ParentTypeId()
 	 * @model keys="termTypeId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	TermType getParentTypeId();

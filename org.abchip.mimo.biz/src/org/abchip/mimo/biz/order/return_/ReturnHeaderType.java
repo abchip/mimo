@@ -68,7 +68,6 @@ public interface ReturnHeaderType extends BizEntityType<ReturnHeader> {
 	 * @see #setParentTypeId(ReturnHeaderType)
 	 * @see org.abchip.mimo.biz.order.return_.ReturnPackage#getReturnHeaderType_ParentTypeId()
 	 * @model keys="returnHeaderTypeId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ReturnHeaderType getParentTypeId();

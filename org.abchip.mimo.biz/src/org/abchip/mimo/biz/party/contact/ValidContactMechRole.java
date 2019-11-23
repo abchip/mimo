@@ -41,7 +41,6 @@ public interface ValidContactMechRole extends BizEntity {
 	 * @see org.abchip.mimo.biz.party.contact.ContactPackage#getValidContactMechRole_RoleTypeId()
 	 * @model keys="roleTypeId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	RoleType getRoleTypeId();
@@ -69,7 +68,6 @@ public interface ValidContactMechRole extends BizEntity {
 	 * @see org.abchip.mimo.biz.party.contact.ContactPackage#getValidContactMechRole_ContactMechTypeId()
 	 * @model keys="contactMechTypeId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ContactMechType getContactMechTypeId();

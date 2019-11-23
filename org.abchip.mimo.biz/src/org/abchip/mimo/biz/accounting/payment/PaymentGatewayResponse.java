@@ -119,7 +119,6 @@ public interface PaymentGatewayResponse extends BizEntity {
 	 * @see #setCurrencyUomId(Uom)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPaymentGatewayResponse_CurrencyUomId()
 	 * @model keys="uomId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Uom getCurrencyUomId();
@@ -302,7 +301,6 @@ public interface PaymentGatewayResponse extends BizEntity {
 	 * @see #setOrderPaymentPreferenceId(OrderPaymentPreference)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPaymentGatewayResponse_OrderPaymentPreferenceId()
 	 * @model keys="orderPaymentPreferenceId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	OrderPaymentPreference getOrderPaymentPreferenceId();
@@ -329,7 +327,6 @@ public interface PaymentGatewayResponse extends BizEntity {
 	 * @see #setPaymentServiceTypeEnumId(Enumeration)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPaymentGatewayResponse_PaymentServiceTypeEnumId()
 	 * @model keys="enumId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Enumeration getPaymentServiceTypeEnumId();
@@ -512,7 +509,6 @@ public interface PaymentGatewayResponse extends BizEntity {
 	 * @see #setTransCodeEnumId(Enumeration)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPaymentGatewayResponse_TransCodeEnumId()
 	 * @model keys="enumId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Enumeration getTransCodeEnumId();
@@ -585,7 +581,6 @@ public interface PaymentGatewayResponse extends BizEntity {
 	 * @see #setPaymentMethodTypeId(PaymentMethodType)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPaymentGatewayResponse_PaymentMethodTypeId()
 	 * @model keys="paymentMethodTypeId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	PaymentMethodType getPaymentMethodTypeId();
@@ -612,7 +607,6 @@ public interface PaymentGatewayResponse extends BizEntity {
 	 * @see #setPaymentMethodId(PaymentMethod)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPaymentGatewayResponse_PaymentMethodId()
 	 * @model keys="paymentMethodId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	PaymentMethod getPaymentMethodId();

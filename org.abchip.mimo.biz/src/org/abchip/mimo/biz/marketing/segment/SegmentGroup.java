@@ -72,7 +72,6 @@ public interface SegmentGroup extends BizEntityTyped<SegmentGroupType> {
 	 * @see #setProductStoreId(ProductStore)
 	 * @see org.abchip.mimo.biz.marketing.segment.SegmentPackage#getSegmentGroup_ProductStoreId()
 	 * @model keys="productStoreId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ProductStore getProductStoreId();
@@ -126,7 +125,6 @@ public interface SegmentGroup extends BizEntityTyped<SegmentGroupType> {
 	 * @see #setSegmentGroupTypeId(SegmentGroupType)
 	 * @see org.abchip.mimo.biz.marketing.segment.SegmentPackage#getSegmentGroup_SegmentGroupTypeId()
 	 * @model keys="segmentGroupTypeId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	SegmentGroupType getSegmentGroupTypeId();

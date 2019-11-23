@@ -68,7 +68,6 @@ public interface DataResource extends BizEntityTyped<DataResourceType> {
 	 * @see #setCharacterSetId(CharacterSet)
 	 * @see org.abchip.mimo.biz.content.data.DataPackage#getDataResource_CharacterSetId()
 	 * @model keys="characterSetId"
-	 *        annotation="mimo-ent-format type='id-long' length='60'"
 	 * @generated
 	 */
 	CharacterSet getCharacterSetId();
@@ -95,7 +94,6 @@ public interface DataResource extends BizEntityTyped<DataResourceType> {
 	 * @see #setCreatedByUserLogin(UserLogin)
 	 * @see org.abchip.mimo.biz.content.data.DataPackage#getDataResource_CreatedByUserLogin()
 	 * @model keys="userLoginId"
-	 *        annotation="mimo-ent-format type='id-vlong' length='255'"
 	 * @generated
 	 */
 	UserLogin getCreatedByUserLogin();
@@ -148,7 +146,6 @@ public interface DataResource extends BizEntityTyped<DataResourceType> {
 	 * @see #setDataCategoryId(DataCategory)
 	 * @see org.abchip.mimo.biz.content.data.DataPackage#getDataResource_DataCategoryId()
 	 * @model keys="dataCategoryId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	DataCategory getDataCategoryId();
@@ -255,7 +252,6 @@ public interface DataResource extends BizEntityTyped<DataResourceType> {
 	 * @see #setDataResourceTypeId(DataResourceType)
 	 * @see org.abchip.mimo.biz.content.data.DataPackage#getDataResource_DataResourceTypeId()
 	 * @model keys="dataResourceTypeId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	DataResourceType getDataResourceTypeId();
@@ -282,7 +278,6 @@ public interface DataResource extends BizEntityTyped<DataResourceType> {
 	 * @see #setDataSourceId(DataSource)
 	 * @see org.abchip.mimo.biz.content.data.DataPackage#getDataResource_DataSourceId()
 	 * @model keys="dataSourceId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	DataSource getDataSourceId();
@@ -309,7 +304,6 @@ public interface DataResource extends BizEntityTyped<DataResourceType> {
 	 * @see #setDataTemplateTypeId(DataTemplateType)
 	 * @see org.abchip.mimo.biz.content.data.DataPackage#getDataResource_DataTemplateTypeId()
 	 * @model keys="dataTemplateTypeId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	DataTemplateType getDataTemplateTypeId();
@@ -336,7 +330,6 @@ public interface DataResource extends BizEntityTyped<DataResourceType> {
 	 * @see #setLastModifiedByUserLogin(UserLogin)
 	 * @see org.abchip.mimo.biz.content.data.DataPackage#getDataResource_LastModifiedByUserLogin()
 	 * @model keys="userLoginId"
-	 *        annotation="mimo-ent-format type='id-vlong' length='255'"
 	 * @generated
 	 */
 	UserLogin getLastModifiedByUserLogin();
@@ -415,7 +408,6 @@ public interface DataResource extends BizEntityTyped<DataResourceType> {
 	 * @see #setMimeTypeId(MimeType)
 	 * @see org.abchip.mimo.biz.content.data.DataPackage#getDataResource_MimeTypeId()
 	 * @model keys="mimeTypeId"
-	 *        annotation="mimo-ent-format type='id-vlong' length='255'"
 	 * @generated
 	 */
 	MimeType getMimeTypeId();
@@ -496,7 +488,6 @@ public interface DataResource extends BizEntityTyped<DataResourceType> {
 	 * @see #setStatusId(StatusItem)
 	 * @see org.abchip.mimo.biz.content.data.DataPackage#getDataResource_StatusId()
 	 * @model keys="statusId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	StatusItem getStatusId();
@@ -523,7 +514,6 @@ public interface DataResource extends BizEntityTyped<DataResourceType> {
 	 * @see #setSurveyId(Survey)
 	 * @see org.abchip.mimo.biz.content.data.DataPackage#getDataResource_SurveyId()
 	 * @model keys="surveyId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Survey getSurveyId();
@@ -550,7 +540,6 @@ public interface DataResource extends BizEntityTyped<DataResourceType> {
 	 * @see #setSurveyResponseId(SurveyResponse)
 	 * @see org.abchip.mimo.biz.content.data.DataPackage#getDataResource_SurveyResponseId()
 	 * @model keys="surveyResponseId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	SurveyResponse getSurveyResponseId();

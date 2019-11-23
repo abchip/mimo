@@ -91,6 +91,7 @@ import org.abchip.mimo.biz.content.survey.SurveyPackage;
 import org.abchip.mimo.biz.content.survey.impl.SurveyPackageImpl;
 import org.abchip.mimo.biz.content.website.WebsitePackage;
 import org.abchip.mimo.biz.content.website.impl.WebsitePackageImpl;
+import org.abchip.mimo.biz.entity.EntityPackage;
 import org.abchip.mimo.biz.entity.audit.AuditPackage;
 import org.abchip.mimo.biz.entity.audit.impl.AuditPackageImpl;
 import org.abchip.mimo.biz.entity.crypto.CryptoPackage;
@@ -477,8 +478,8 @@ public class InvoicePackageImpl extends EPackageImpl implements InvoicePackage {
 		SurveyPackageImpl theSurveyPackage = (SurveyPackageImpl)(registeredPackage instanceof SurveyPackageImpl ? registeredPackage : SurveyPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(WebsitePackage.eNS_URI);
 		WebsitePackageImpl theWebsitePackage = (WebsitePackageImpl)(registeredPackage instanceof WebsitePackageImpl ? registeredPackage : WebsitePackage.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(org.abchip.mimo.biz.entity.EntityPackage.eNS_URI);
-		EntityPackageImpl theEntityPackage = (EntityPackageImpl)(registeredPackage instanceof EntityPackageImpl ? registeredPackage : org.abchip.mimo.biz.entity.EntityPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(EntityPackage.eNS_URI);
+		EntityPackageImpl theEntityPackage = (EntityPackageImpl)(registeredPackage instanceof EntityPackageImpl ? registeredPackage : EntityPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(AuditPackage.eNS_URI);
 		AuditPackageImpl theAuditPackage = (AuditPackageImpl)(registeredPackage instanceof AuditPackageImpl ? registeredPackage : AuditPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(CryptoPackage.eNS_URI);
@@ -2881,27 +2882,6 @@ public class InvoicePackageImpl extends EPackageImpl implements InvoicePackage {
 			   "length", "20"
 		   });
 		addAnnotation
-		  (getInvoice_BillingAccountId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getInvoice_ContactMechId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getInvoice_CurrencyUomId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getInvoice_Description(),
 		   source,
 		   new String[] {
@@ -2949,38 +2929,10 @@ public class InvoicePackageImpl extends EPackageImpl implements InvoicePackage {
 			   "length", "20"
 		   });
 		addAnnotation
-		  (getInvoice_InvoiceTypeId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getInvoice_PaidDate(),
 		   source,
 		   new String[] {
 			   "type", "date-time"
-		   });
-		addAnnotation
-		  (getInvoice_PartyId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getInvoice_PartyIdFrom(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getInvoice_RecurrenceInfoId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
 		   });
 		addAnnotation
 		  (getInvoice_ReferenceNumber(),
@@ -2988,27 +2940,6 @@ public class InvoicePackageImpl extends EPackageImpl implements InvoicePackage {
 		   new String[] {
 			   "type", "short-varchar",
 			   "length", "60"
-		   });
-		addAnnotation
-		  (getInvoice_RoleTypeId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getInvoice_StatusId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getInvoiceAttribute_InvoiceId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
 		   });
 		addAnnotation
 		  (getInvoiceAttribute_AttrName(),
@@ -3030,48 +2961,6 @@ public class InvoicePackageImpl extends EPackageImpl implements InvoicePackage {
 		   new String[] {
 			   "type", "value",
 			   "length", "255"
-		   });
-		addAnnotation
-		  (getInvoiceContactMech_InvoiceId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getInvoiceContactMech_ContactMechId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getInvoiceContactMech_ContactMechPurposeTypeId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getInvoiceContent_InvoiceId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getInvoiceContent_ContentId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getInvoiceContent_InvoiceContentTypeId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
 		   });
 		addAnnotation
 		  (getInvoiceContent_FromDate(),
@@ -3114,20 +3003,6 @@ public class InvoicePackageImpl extends EPackageImpl implements InvoicePackage {
 			   "length", "1"
 		   });
 		addAnnotation
-		  (getInvoiceContentType_ParentTypeId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getInvoiceItem_InvoiceId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getInvoiceItem_InvoiceItemSeqId(),
 		   source,
 		   new String[] {
@@ -3150,34 +3025,6 @@ public class InvoicePackageImpl extends EPackageImpl implements InvoicePackage {
 			   "length", "255"
 		   });
 		addAnnotation
-		  (getInvoiceItem_InventoryItemId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getInvoiceItem_InvoiceItemTypeId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getInvoiceItem_OverrideGlAccountId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getInvoiceItem_OverrideOrgPartyId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getInvoiceItem_ParentInvoiceId(),
 		   source,
 		   new String[] {
@@ -3192,20 +3039,6 @@ public class InvoicePackageImpl extends EPackageImpl implements InvoicePackage {
 			   "length", "20"
 		   });
 		addAnnotation
-		  (getInvoiceItem_ProductFeatureId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getInvoiceItem_ProductId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getInvoiceItem_Quantity(),
 		   source,
 		   new String[] {
@@ -3214,53 +3047,11 @@ public class InvoicePackageImpl extends EPackageImpl implements InvoicePackage {
 			   "scale", "6"
 		   });
 		addAnnotation
-		  (getInvoiceItem_SalesOpportunityId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getInvoiceItem_TaxAuthGeoId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getInvoiceItem_TaxAuthPartyId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getInvoiceItem_TaxAuthorityRateSeqId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getInvoiceItem_TaxableFlag(),
 		   source,
 		   new String[] {
 			   "type", "indicator",
 			   "length", "1"
-		   });
-		addAnnotation
-		  (getInvoiceItem_UomId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getInvoiceItemAssoc_InvoiceItemAssocTypeId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
 		   });
 		addAnnotation
 		  (getInvoiceItemAssoc_FromDate(),
@@ -3305,20 +3096,6 @@ public class InvoicePackageImpl extends EPackageImpl implements InvoicePackage {
 			   "scale", "2"
 		   });
 		addAnnotation
-		  (getInvoiceItemAssoc_PartyIdFrom(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getInvoiceItemAssoc_PartyIdTo(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getInvoiceItemAssoc_Quantity(),
 		   source,
 		   new String[] {
@@ -3359,13 +3136,6 @@ public class InvoicePackageImpl extends EPackageImpl implements InvoicePackage {
 		   new String[] {
 			   "type", "indicator",
 			   "length", "1"
-		   });
-		addAnnotation
-		  (getInvoiceItemAssocType_ParentTypeId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
 		   });
 		addAnnotation
 		  (getInvoiceItemAttribute_AttrName(),
@@ -3438,13 +3208,6 @@ public class InvoicePackageImpl extends EPackageImpl implements InvoicePackage {
 			   "length", "20"
 		   });
 		addAnnotation
-		  (getInvoiceItemType_DefaultGlAccountId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getInvoiceItemType_Description(),
 		   source,
 		   new String[] {
@@ -3473,20 +3236,6 @@ public class InvoicePackageImpl extends EPackageImpl implements InvoicePackage {
 			   "length", "20"
 		   });
 		addAnnotation
-		  (getInvoiceItemType_ParentTypeId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getInvoiceItemTypeAttr_InvoiceItemTypeId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getInvoiceItemTypeAttr_AttrName(),
 		   source,
 		   new String[] {
@@ -3501,70 +3250,7 @@ public class InvoicePackageImpl extends EPackageImpl implements InvoicePackage {
 			   "length", "255"
 		   });
 		addAnnotation
-		  (getInvoiceItemTypeGlAccount_InvoiceItemTypeId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getInvoiceItemTypeGlAccount_OrganizationPartyId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getInvoiceItemTypeGlAccount_GlAccountId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getInvoiceItemTypeMap_InvoiceTypeId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getInvoiceItemTypeMap_InvoiceItemMapKey(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getInvoiceItemTypeMap_InvoiceItemTypeId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getInvoiceNote_InvoiceId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getInvoiceRole_InvoiceId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getInvoiceRole_PartyId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getInvoiceRole_RoleTypeId(),
 		   source,
 		   new String[] {
 			   "type", "id",
@@ -3585,31 +3271,10 @@ public class InvoicePackageImpl extends EPackageImpl implements InvoicePackage {
 			   "scale", "6"
 		   });
 		addAnnotation
-		  (getInvoiceStatus_StatusId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getInvoiceStatus_InvoiceId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getInvoiceStatus_StatusDate(),
 		   source,
 		   new String[] {
 			   "type", "date-time"
-		   });
-		addAnnotation
-		  (getInvoiceStatus_ChangeByUserLoginId(),
-		   source,
-		   new String[] {
-			   "type", "id-vlong",
-			   "length", "255"
 		   });
 		addAnnotation
 		  (getInvoiceTerm_InvoiceTermId(),
@@ -3624,13 +3289,6 @@ public class InvoicePackageImpl extends EPackageImpl implements InvoicePackage {
 		   new String[] {
 			   "type", "description",
 			   "length", "255"
-		   });
-		addAnnotation
-		  (getInvoiceTerm_InvoiceId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
 		   });
 		addAnnotation
 		  (getInvoiceTerm_InvoiceItemSeqId(),
@@ -3655,13 +3313,6 @@ public class InvoicePackageImpl extends EPackageImpl implements InvoicePackage {
 			   "scale", "0"
 		   });
 		addAnnotation
-		  (getInvoiceTerm_TermTypeId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getInvoiceTerm_TermValue(),
 		   source,
 		   new String[] {
@@ -3678,13 +3329,6 @@ public class InvoicePackageImpl extends EPackageImpl implements InvoicePackage {
 		   });
 		addAnnotation
 		  (getInvoiceTerm_UomId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getInvoiceTermAttribute_InvoiceTermId(),
 		   source,
 		   new String[] {
 			   "type", "id",
@@ -3762,20 +3406,6 @@ public class InvoicePackageImpl extends EPackageImpl implements InvoicePackage {
 		   });
 		addAnnotation
 		  (getInvoiceType_InvoiceTypeAttrs(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getInvoiceType_ParentTypeId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getInvoiceTypeAttr_InvoiceTypeId(),
 		   source,
 		   new String[] {
 			   "type", "id",

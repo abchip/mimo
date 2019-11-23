@@ -96,7 +96,6 @@ public interface GlAccountType extends BizEntityType<GlAccount> {
 	 * @see #setParentTypeId(GlAccountType)
 	 * @see org.abchip.mimo.biz.accounting.ledger.LedgerPackage#getGlAccountType_ParentTypeId()
 	 * @model keys="glAccountTypeId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	GlAccountType getParentTypeId();

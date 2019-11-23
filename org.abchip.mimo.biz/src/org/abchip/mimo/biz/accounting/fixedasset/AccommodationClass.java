@@ -68,7 +68,6 @@ public interface AccommodationClass extends BizEntity {
 	 * @see #setParentClassId(AccommodationClass)
 	 * @see org.abchip.mimo.biz.accounting.fixedasset.FixedassetPackage#getAccommodationClass_ParentClassId()
 	 * @model keys="accommodationClassId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	AccommodationClass getParentClassId();

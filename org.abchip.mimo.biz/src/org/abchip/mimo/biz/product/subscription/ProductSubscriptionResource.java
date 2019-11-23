@@ -87,7 +87,6 @@ public interface ProductSubscriptionResource extends BizEntity {
 	 * @see #setAvailableTimeUomId(Uom)
 	 * @see org.abchip.mimo.biz.product.subscription.SubscriptionPackage#getProductSubscriptionResource_AvailableTimeUomId()
 	 * @model keys="uomId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Uom getAvailableTimeUomId();
@@ -142,7 +141,6 @@ public interface ProductSubscriptionResource extends BizEntity {
 	 * @see org.abchip.mimo.biz.product.subscription.SubscriptionPackage#getProductSubscriptionResource_CanclAutmExtTimeUomId()
 	 * @model keys="uomId"
 	 *        annotation="mimo-ent-slot help='Unit Of Measure used for the automatic extension of the subscription.'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Uom getCanclAutmExtTimeUomId();
@@ -252,7 +250,6 @@ public interface ProductSubscriptionResource extends BizEntity {
 	 * @see org.abchip.mimo.biz.product.subscription.SubscriptionPackage#getProductSubscriptionResource_GracePeriodOnExpiryUomId()
 	 * @model keys="uomId"
 	 *        annotation="mimo-ent-slot help='Unit Of Measure used for the grace period of the subscription.'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Uom getGracePeriodOnExpiryUomId();
@@ -306,7 +303,6 @@ public interface ProductSubscriptionResource extends BizEntity {
 	 * @see #setMaxLifeTimeUomId(Uom)
 	 * @see org.abchip.mimo.biz.product.subscription.SubscriptionPackage#getProductSubscriptionResource_MaxLifeTimeUomId()
 	 * @model keys="uomId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Uom getMaxLifeTimeUomId();
@@ -437,7 +433,6 @@ public interface ProductSubscriptionResource extends BizEntity {
 	 * @see #setUseRoleTypeId(RoleType)
 	 * @see org.abchip.mimo.biz.product.subscription.SubscriptionPackage#getProductSubscriptionResource_UseRoleTypeId()
 	 * @model keys="roleTypeId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	RoleType getUseRoleTypeId();
@@ -491,7 +486,6 @@ public interface ProductSubscriptionResource extends BizEntity {
 	 * @see #setUseTimeUomId(Uom)
 	 * @see org.abchip.mimo.biz.product.subscription.SubscriptionPackage#getProductSubscriptionResource_UseTimeUomId()
 	 * @model keys="uomId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Uom getUseTimeUomId();
@@ -519,7 +513,6 @@ public interface ProductSubscriptionResource extends BizEntity {
 	 * @see org.abchip.mimo.biz.product.subscription.SubscriptionPackage#getProductSubscriptionResource_ProductId()
 	 * @model keys="productId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Product getProductId();
@@ -547,7 +540,6 @@ public interface ProductSubscriptionResource extends BizEntity {
 	 * @see org.abchip.mimo.biz.product.subscription.SubscriptionPackage#getProductSubscriptionResource_SubscriptionResourceId()
 	 * @model keys="subscriptionResourceId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	SubscriptionResource getSubscriptionResourceId();

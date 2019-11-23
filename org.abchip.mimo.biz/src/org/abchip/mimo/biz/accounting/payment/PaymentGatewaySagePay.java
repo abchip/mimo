@@ -18,11 +18,11 @@ import org.abchip.mimo.biz.BizEntity;
  * The following features are supported:
  * </p>
  * <ul>
+ *   <li>{@link org.abchip.mimo.biz.accounting.payment.PaymentGatewaySagePay#getPaymentGatewayConfigId <em>Payment Gateway Config Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.PaymentGatewaySagePay#getAuthenticationTransType <em>Authentication Trans Type</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.PaymentGatewaySagePay#getAuthenticationUrl <em>Authentication Url</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.PaymentGatewaySagePay#getAuthoriseTransType <em>Authorise Trans Type</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.PaymentGatewaySagePay#getAuthoriseUrl <em>Authorise Url</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.payment.PaymentGatewaySagePay#getPaymentGatewayConfigId <em>Payment Gateway Config Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.PaymentGatewaySagePay#getProductionHost <em>Production Host</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.PaymentGatewaySagePay#getProtocolVersion <em>Protocol Version</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.PaymentGatewaySagePay#getRefundUrl <em>Refund Url</em>}</li>
@@ -148,31 +148,31 @@ public interface PaymentGatewaySagePay extends BizEntity {
 	void setAuthoriseUrl(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Payment Gateway Config Id</b></em>' reference.
+	 * Returns the value of the '<em><b>Payment Gateway Config Id</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Payment Gateway Config Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Payment Gateway Config Id</em>' reference.
-	 * @see #setPaymentGatewayConfigId(PaymentGatewayConfig)
+	 * @return the value of the '<em>Payment Gateway Config Id</em>' attribute.
+	 * @see #setPaymentGatewayConfigId(String)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPaymentGatewaySagePay_PaymentGatewayConfigId()
-	 * @model keys="paymentGatewayConfigId" required="true"
+	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
-	PaymentGatewayConfig getPaymentGatewayConfigId();
+	String getPaymentGatewayConfigId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.payment.PaymentGatewaySagePay#getPaymentGatewayConfigId <em>Payment Gateway Config Id</em>}' reference.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.payment.PaymentGatewaySagePay#getPaymentGatewayConfigId <em>Payment Gateway Config Id</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Payment Gateway Config Id</em>' reference.
+	 * @param value the new value of the '<em>Payment Gateway Config Id</em>' attribute.
 	 * @see #getPaymentGatewayConfigId()
 	 * @generated
 	 */
-	void setPaymentGatewayConfigId(PaymentGatewayConfig value);
+	void setPaymentGatewayConfigId(String value);
 
 	/**
 	 * Returns the value of the '<em><b>Production Host</b></em>' attribute.

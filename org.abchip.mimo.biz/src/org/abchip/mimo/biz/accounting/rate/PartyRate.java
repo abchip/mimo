@@ -101,7 +101,6 @@ public interface PartyRate extends BizEntity {
 	 * @see org.abchip.mimo.biz.accounting.rate.RatePackage#getPartyRate_PartyId()
 	 * @model keys="partyId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Party getPartyId();
@@ -182,7 +181,6 @@ public interface PartyRate extends BizEntity {
 	 * @see org.abchip.mimo.biz.accounting.rate.RatePackage#getPartyRate_RateTypeId()
 	 * @model keys="rateTypeId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	RateType getRateTypeId();

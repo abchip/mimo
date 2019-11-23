@@ -71,6 +71,7 @@ import org.abchip.mimo.biz.content.survey.SurveyPackage;
 import org.abchip.mimo.biz.content.survey.impl.SurveyPackageImpl;
 import org.abchip.mimo.biz.content.website.WebsitePackage;
 import org.abchip.mimo.biz.content.website.impl.WebsitePackageImpl;
+import org.abchip.mimo.biz.entity.EntityPackage;
 import org.abchip.mimo.biz.entity.audit.AuditPackage;
 import org.abchip.mimo.biz.entity.audit.impl.AuditPackageImpl;
 import org.abchip.mimo.biz.entity.crypto.CryptoPackage;
@@ -366,8 +367,8 @@ public class TenantPackageImpl extends EPackageImpl implements TenantPackage {
 		SurveyPackageImpl theSurveyPackage = (SurveyPackageImpl)(registeredPackage instanceof SurveyPackageImpl ? registeredPackage : SurveyPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(WebsitePackage.eNS_URI);
 		WebsitePackageImpl theWebsitePackage = (WebsitePackageImpl)(registeredPackage instanceof WebsitePackageImpl ? registeredPackage : WebsitePackage.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(org.abchip.mimo.biz.entity.EntityPackage.eNS_URI);
-		EntityPackageImpl theEntityPackage = (EntityPackageImpl)(registeredPackage instanceof EntityPackageImpl ? registeredPackage : org.abchip.mimo.biz.entity.EntityPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(EntityPackage.eNS_URI);
+		EntityPackageImpl theEntityPackage = (EntityPackageImpl)(registeredPackage instanceof EntityPackageImpl ? registeredPackage : EntityPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(AuditPackage.eNS_URI);
 		AuditPackageImpl theAuditPackage = (AuditPackageImpl)(registeredPackage instanceof AuditPackageImpl ? registeredPackage : AuditPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(CryptoPackage.eNS_URI);
@@ -931,8 +932,8 @@ public class TenantPackageImpl extends EPackageImpl implements TenantPackage {
 	 * @generated
 	 */
 	@Override
-	public EReference getTenantKeyEncryptingKey_TenantId() {
-		return (EReference)tenantKeyEncryptingKeyEClass.getEStructuralFeatures().get(1);
+	public EAttribute getTenantKeyEncryptingKey_TenantId() {
+		return (EAttribute)tenantKeyEncryptingKeyEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -942,7 +943,7 @@ public class TenantPackageImpl extends EPackageImpl implements TenantPackage {
 	 */
 	@Override
 	public EAttribute getTenantKeyEncryptingKey_KekText() {
-		return (EAttribute)tenantKeyEncryptingKeyEClass.getEStructuralFeatures().get(0);
+		return (EAttribute)tenantKeyEncryptingKeyEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -1003,8 +1004,8 @@ public class TenantPackageImpl extends EPackageImpl implements TenantPackage {
 		createEReference(tenantDomainNameEClass, TENANT_DOMAIN_NAME__TENANT_ID);
 
 		tenantKeyEncryptingKeyEClass = createEClass(TENANT_KEY_ENCRYPTING_KEY);
+		createEAttribute(tenantKeyEncryptingKeyEClass, TENANT_KEY_ENCRYPTING_KEY__TENANT_ID);
 		createEAttribute(tenantKeyEncryptingKeyEClass, TENANT_KEY_ENCRYPTING_KEY__KEK_TEXT);
-		createEReference(tenantKeyEncryptingKeyEClass, TENANT_KEY_ENCRYPTING_KEY__TENANT_ID);
 	}
 
 	/**
@@ -1083,9 +1084,8 @@ public class TenantPackageImpl extends EPackageImpl implements TenantPackage {
 		getTenantDomainName_TenantId().getEKeys().add(this.getTenant_TenantId());
 
 		initEClass(tenantKeyEncryptingKeyEClass, TenantKeyEncryptingKey.class, "TenantKeyEncryptingKey", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getTenantKeyEncryptingKey_TenantId(), ecorePackage.getEString(), "tenantId", null, 1, 1, TenantKeyEncryptingKey.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getTenantKeyEncryptingKey_KekText(), ecorePackage.getEString(), "kekText", null, 0, 1, TenantKeyEncryptingKey.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getTenantKeyEncryptingKey_TenantId(), this.getTenant(), null, "tenantId", null, 1, 1, TenantKeyEncryptingKey.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		getTenantKeyEncryptingKey_TenantId().getEKeys().add(this.getTenant_TenantId());
 
 		// Create annotations
 		// mimo-ent-frame
@@ -1211,33 +1211,12 @@ public class TenantPackageImpl extends EPackageImpl implements TenantPackage {
 			   "length", "100"
 		   });
 		addAnnotation
-		  (getTenantComponent_TenantId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getTenantComponent_ComponentName(),
-		   source,
-		   new String[] {
-			   "type", "name",
-			   "length", "100"
-		   });
-		addAnnotation
 		  (getTenantComponent_SequenceNum(),
 		   source,
 		   new String[] {
 			   "type", "numeric",
 			   "precision", "20",
 			   "scale", "0"
-		   });
-		addAnnotation
-		  (getTenantDataSource_TenantId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
 		   });
 		addAnnotation
 		  (getTenantDataSource_EntityGroupName(),
@@ -1275,7 +1254,7 @@ public class TenantPackageImpl extends EPackageImpl implements TenantPackage {
 			   "length", "255"
 		   });
 		addAnnotation
-		  (getTenantDomainName_TenantId(),
+		  (getTenantKeyEncryptingKey_TenantId(),
 		   source,
 		   new String[] {
 			   "type", "id",
@@ -1287,13 +1266,6 @@ public class TenantPackageImpl extends EPackageImpl implements TenantPackage {
 		   new String[] {
 			   "type", "long-varchar",
 			   "length", "255"
-		   });
-		addAnnotation
-		  (getTenantKeyEncryptingKey_TenantId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
 		   });
 	}
 

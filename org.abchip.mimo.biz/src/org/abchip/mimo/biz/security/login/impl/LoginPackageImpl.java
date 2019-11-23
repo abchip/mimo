@@ -71,6 +71,7 @@ import org.abchip.mimo.biz.content.survey.SurveyPackage;
 import org.abchip.mimo.biz.content.survey.impl.SurveyPackageImpl;
 import org.abchip.mimo.biz.content.website.WebsitePackage;
 import org.abchip.mimo.biz.content.website.impl.WebsitePackageImpl;
+import org.abchip.mimo.biz.entity.EntityPackage;
 import org.abchip.mimo.biz.entity.audit.AuditPackage;
 import org.abchip.mimo.biz.entity.audit.impl.AuditPackageImpl;
 import org.abchip.mimo.biz.entity.crypto.CryptoPackage;
@@ -358,8 +359,8 @@ public class LoginPackageImpl extends EPackageImpl implements LoginPackage {
 		SurveyPackageImpl theSurveyPackage = (SurveyPackageImpl)(registeredPackage instanceof SurveyPackageImpl ? registeredPackage : SurveyPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(WebsitePackage.eNS_URI);
 		WebsitePackageImpl theWebsitePackage = (WebsitePackageImpl)(registeredPackage instanceof WebsitePackageImpl ? registeredPackage : WebsitePackage.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(org.abchip.mimo.biz.entity.EntityPackage.eNS_URI);
-		EntityPackageImpl theEntityPackage = (EntityPackageImpl)(registeredPackage instanceof EntityPackageImpl ? registeredPackage : org.abchip.mimo.biz.entity.EntityPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(EntityPackage.eNS_URI);
+		EntityPackageImpl theEntityPackage = (EntityPackageImpl)(registeredPackage instanceof EntityPackageImpl ? registeredPackage : EntityPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(AuditPackage.eNS_URI);
 		AuditPackageImpl theAuditPackage = (AuditPackageImpl)(registeredPackage instanceof AuditPackageImpl ? registeredPackage : AuditPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(CryptoPackage.eNS_URI);
@@ -1073,17 +1074,7 @@ public class LoginPackageImpl extends EPackageImpl implements LoginPackage {
 	 * @generated
 	 */
 	@Override
-	public EReference getUserLoginSession_UserLoginId() {
-		return (EReference)userLoginSessionEClass.getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EAttribute getUserLoginSession_SavedDate() {
+	public EAttribute getUserLoginSession_UserLoginId() {
 		return (EAttribute)userLoginSessionEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -1093,8 +1084,18 @@ public class LoginPackageImpl extends EPackageImpl implements LoginPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getUserLoginSession_SessionData() {
+	public EAttribute getUserLoginSession_SavedDate() {
 		return (EAttribute)userLoginSessionEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getUserLoginSession_SessionData() {
+		return (EAttribute)userLoginSessionEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -1169,9 +1170,9 @@ public class LoginPackageImpl extends EPackageImpl implements LoginPackage {
 		createEAttribute(userLoginSecurityQuestionEClass, USER_LOGIN_SECURITY_QUESTION__SECURITY_ANSWER);
 
 		userLoginSessionEClass = createEClass(USER_LOGIN_SESSION);
+		createEAttribute(userLoginSessionEClass, USER_LOGIN_SESSION__USER_LOGIN_ID);
 		createEAttribute(userLoginSessionEClass, USER_LOGIN_SESSION__SAVED_DATE);
 		createEAttribute(userLoginSessionEClass, USER_LOGIN_SESSION__SESSION_DATA);
-		createEReference(userLoginSessionEClass, USER_LOGIN_SESSION__USER_LOGIN_ID);
 	}
 
 	/**
@@ -1354,10 +1355,9 @@ public class LoginPackageImpl extends EPackageImpl implements LoginPackage {
 		initEAttribute(getUserLoginSecurityQuestion_SecurityAnswer(), ecorePackage.getEString(), "securityAnswer", null, 0, 1, UserLoginSecurityQuestion.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(userLoginSessionEClass, UserLoginSession.class, "UserLoginSession", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getUserLoginSession_UserLoginId(), ecorePackage.getEString(), "userLoginId", null, 1, 1, UserLoginSession.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getUserLoginSession_SavedDate(), ecorePackage.getEDate(), "savedDate", null, 0, 1, UserLoginSession.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getUserLoginSession_SessionData(), ecorePackage.getEString(), "sessionData", null, 0, 1, UserLoginSession.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getUserLoginSession_UserLoginId(), this.getUserLogin(), null, "userLoginId", null, 1, 1, UserLoginSession.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		getUserLoginSession_UserLoginId().getEKeys().add(this.getUserLogin_UserLoginId());
 
 		// Create annotations
 		// mimo-ent-format
@@ -1770,13 +1770,6 @@ public class LoginPackageImpl extends EPackageImpl implements LoginPackage {
 			   "length", "60"
 		   });
 		addAnnotation
-		  (getUserLogin_PartyId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getUserLogin_PasswordHint(),
 		   source,
 		   new String[] {
@@ -1827,31 +1820,10 @@ public class LoginPackageImpl extends EPackageImpl implements LoginPackage {
 			   "length", "255"
 		   });
 		addAnnotation
-		  (getUserLoginHistory_UserLoginId(),
-		   source,
-		   new String[] {
-			   "type", "id-vlong",
-			   "length", "255"
-		   });
-		addAnnotation
 		  (getUserLoginHistory_FromDate(),
 		   source,
 		   new String[] {
 			   "type", "date-time"
-		   });
-		addAnnotation
-		  (getUserLoginHistory_OriginUserLoginId(),
-		   source,
-		   new String[] {
-			   "type", "id-vlong",
-			   "length", "255"
-		   });
-		addAnnotation
-		  (getUserLoginHistory_PartyId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
 		   });
 		addAnnotation
 		  (getUserLoginHistory_PasswordUsed(),
@@ -1881,13 +1853,6 @@ public class LoginPackageImpl extends EPackageImpl implements LoginPackage {
 			   "length", "20"
 		   });
 		addAnnotation
-		  (getUserLoginPasswordHistory_UserLoginId(),
-		   source,
-		   new String[] {
-			   "type", "id-vlong",
-			   "length", "255"
-		   });
-		addAnnotation
 		  (getUserLoginPasswordHistory_FromDate(),
 		   source,
 		   new String[] {
@@ -1907,24 +1872,17 @@ public class LoginPackageImpl extends EPackageImpl implements LoginPackage {
 			   "type", "date-time"
 		   });
 		addAnnotation
-		  (getUserLoginSecurityQuestion_QuestionEnumId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getUserLoginSecurityQuestion_UserLoginId(),
-		   source,
-		   new String[] {
-			   "type", "id-vlong",
-			   "length", "255"
-		   });
-		addAnnotation
 		  (getUserLoginSecurityQuestion_SecurityAnswer(),
 		   source,
 		   new String[] {
 			   "type", "description",
+			   "length", "255"
+		   });
+		addAnnotation
+		  (getUserLoginSession_UserLoginId(),
+		   source,
+		   new String[] {
+			   "type", "id-vlong",
 			   "length", "255"
 		   });
 		addAnnotation
@@ -1938,13 +1896,6 @@ public class LoginPackageImpl extends EPackageImpl implements LoginPackage {
 		   source,
 		   new String[] {
 			   "type", "very-long"
-		   });
-		addAnnotation
-		  (getUserLoginSession_UserLoginId(),
-		   source,
-		   new String[] {
-			   "type", "id-vlong",
-			   "length", "255"
 		   });
 	}
 

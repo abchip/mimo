@@ -233,7 +233,6 @@ public interface SurveyQuestionOption extends BizEntity {
 	 * @see org.abchip.mimo.biz.content.survey.SurveyPackage#getSurveyQuestionOption_SurveyQuestionId()
 	 * @model keys="surveyQuestionId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	SurveyQuestion getSurveyQuestionId();

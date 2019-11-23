@@ -928,41 +928,6 @@ public class BomPackageImpl extends EPackageImpl implements BomPackage {
 			   "type", "date-time"
 		   });
 		addAnnotation
-		  (getProductManufacturingRule_ProductFeature(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getProductManufacturingRule_ProductId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getProductManufacturingRule_ProductIdFor(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getProductManufacturingRule_ProductIdIn(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getProductManufacturingRule_ProductIdInSubst(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getProductManufacturingRule_Quantity(),
 		   source,
 		   new String[] {

@@ -122,7 +122,6 @@ public interface EmploymentAppSourceType extends BizEntity {
 	 * @see #setParentTypeId(EmploymentAppSourceType)
 	 * @see org.abchip.mimo.biz.humanres.employment.EmploymentPackage#getEmploymentAppSourceType_ParentTypeId()
 	 * @model keys="employmentAppSourceTypeId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	EmploymentAppSourceType getParentTypeId();

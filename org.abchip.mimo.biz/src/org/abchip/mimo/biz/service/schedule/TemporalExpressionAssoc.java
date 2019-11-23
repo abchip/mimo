@@ -41,7 +41,6 @@ public interface TemporalExpressionAssoc extends BizEntity {
 	 * @see org.abchip.mimo.biz.service.schedule.SchedulePackage#getTemporalExpressionAssoc_FromTempExprId()
 	 * @model keys="tempExprId" required="true"
 	 *        annotation="mimo-ent-slot key='true' help='The \"parent\" expression'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	TemporalExpression getFromTempExprId();
@@ -69,7 +68,6 @@ public interface TemporalExpressionAssoc extends BizEntity {
 	 * @see org.abchip.mimo.biz.service.schedule.SchedulePackage#getTemporalExpressionAssoc_ToTempExprId()
 	 * @model keys="tempExprId" required="true"
 	 *        annotation="mimo-ent-slot key='true' help='The \"child\" expression'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	TemporalExpression getToTempExprId();

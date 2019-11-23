@@ -71,6 +71,7 @@ import org.abchip.mimo.biz.content.survey.SurveyPackage;
 import org.abchip.mimo.biz.content.survey.impl.SurveyPackageImpl;
 import org.abchip.mimo.biz.content.website.WebsitePackage;
 import org.abchip.mimo.biz.content.website.impl.WebsitePackageImpl;
+import org.abchip.mimo.biz.entity.EntityPackage;
 import org.abchip.mimo.biz.entity.audit.AuditPackage;
 import org.abchip.mimo.biz.entity.audit.impl.AuditPackageImpl;
 import org.abchip.mimo.biz.entity.crypto.CryptoPackage;
@@ -391,8 +392,8 @@ public class SubscriptionPackageImpl extends EPackageImpl implements Subscriptio
 		SurveyPackageImpl theSurveyPackage = (SurveyPackageImpl)(registeredPackage instanceof SurveyPackageImpl ? registeredPackage : SurveyPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(WebsitePackage.eNS_URI);
 		WebsitePackageImpl theWebsitePackage = (WebsitePackageImpl)(registeredPackage instanceof WebsitePackageImpl ? registeredPackage : WebsitePackage.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(org.abchip.mimo.biz.entity.EntityPackage.eNS_URI);
-		EntityPackageImpl theEntityPackage = (EntityPackageImpl)(registeredPackage instanceof EntityPackageImpl ? registeredPackage : org.abchip.mimo.biz.entity.EntityPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(EntityPackage.eNS_URI);
+		EntityPackageImpl theEntityPackage = (EntityPackageImpl)(registeredPackage instanceof EntityPackageImpl ? registeredPackage : EntityPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(AuditPackage.eNS_URI);
 		AuditPackageImpl theAuditPackage = (AuditPackageImpl)(registeredPackage instanceof AuditPackageImpl ? registeredPackage : AuditPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(CryptoPackage.eNS_URI);
@@ -1974,20 +1975,6 @@ public class SubscriptionPackageImpl extends EPackageImpl implements Subscriptio
 	protected void createMimoentformatAnnotations() {
 		String source = "mimo-ent-format";
 		addAnnotation
-		  (getProductSubscriptionResource_ProductId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getProductSubscriptionResource_SubscriptionResourceId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getProductSubscriptionResource_FromDate(),
 		   source,
 		   new String[] {
@@ -2009,26 +1996,12 @@ public class SubscriptionPackageImpl extends EPackageImpl implements Subscriptio
 			   "scale", "0"
 		   });
 		addAnnotation
-		  (getProductSubscriptionResource_AvailableTimeUomId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getProductSubscriptionResource_CanclAutmExtTime(),
 		   source,
 		   new String[] {
 			   "type", "numeric",
 			   "precision", "20",
 			   "scale", "0"
-		   });
-		addAnnotation
-		  (getProductSubscriptionResource_CanclAutmExtTimeUomId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
 		   });
 		addAnnotation
 		  (getProductSubscriptionResource_GracePeriodOnExpiry(),
@@ -2039,26 +2012,12 @@ public class SubscriptionPackageImpl extends EPackageImpl implements Subscriptio
 			   "scale", "0"
 		   });
 		addAnnotation
-		  (getProductSubscriptionResource_GracePeriodOnExpiryUomId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getProductSubscriptionResource_MaxLifeTime(),
 		   source,
 		   new String[] {
 			   "type", "numeric",
 			   "precision", "20",
 			   "scale", "0"
-		   });
-		addAnnotation
-		  (getProductSubscriptionResource_MaxLifeTimeUomId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
 		   });
 		addAnnotation
 		  (getProductSubscriptionResource_PurchaseFromDate(),
@@ -2087,26 +2046,12 @@ public class SubscriptionPackageImpl extends EPackageImpl implements Subscriptio
 			   "scale", "0"
 		   });
 		addAnnotation
-		  (getProductSubscriptionResource_UseRoleTypeId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getProductSubscriptionResource_UseTime(),
 		   source,
 		   new String[] {
 			   "type", "numeric",
 			   "precision", "20",
 			   "scale", "0"
-		   });
-		addAnnotation
-		  (getProductSubscriptionResource_UseTimeUomId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
 		   });
 		addAnnotation
 		  (subscriptionEClass.getEOperations().get(0),
@@ -2138,13 +2083,6 @@ public class SubscriptionPackageImpl extends EPackageImpl implements Subscriptio
 			   "scale", "0"
 		   });
 		addAnnotation
-		  (getSubscription_AvailableTimeUomId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getSubscription_CanclAutmExtTime(),
 		   source,
 		   new String[] {
@@ -2153,21 +2091,7 @@ public class SubscriptionPackageImpl extends EPackageImpl implements Subscriptio
 			   "scale", "0"
 		   });
 		addAnnotation
-		  (getSubscription_CanclAutmExtTimeUomId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getSubscription_CommunicationEventId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getSubscription_ContactMechId(),
 		   source,
 		   new String[] {
 			   "type", "id",
@@ -2208,47 +2132,12 @@ public class SubscriptionPackageImpl extends EPackageImpl implements Subscriptio
 			   "scale", "0"
 		   });
 		addAnnotation
-		  (getSubscription_GracePeriodOnExpiryUomId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getSubscription_InventoryItemId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getSubscription_MaxLifeTime(),
 		   source,
 		   new String[] {
 			   "type", "numeric",
 			   "precision", "20",
 			   "scale", "0"
-		   });
-		addAnnotation
-		  (getSubscription_MaxLifeTimeUomId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getSubscription_NeedTypeId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getSubscription_OrderId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
 		   });
 		addAnnotation
 		  (getSubscription_OrderItemSeqId(),
@@ -2258,42 +2147,7 @@ public class SubscriptionPackageImpl extends EPackageImpl implements Subscriptio
 			   "length", "20"
 		   });
 		addAnnotation
-		  (getSubscription_OriginatedFromPartyId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getSubscription_OriginatedFromRoleTypeId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getSubscription_PartyId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getSubscription_PartyNeedId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getSubscription_ProductCategoryId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getSubscription_ProductId(),
 		   source,
 		   new String[] {
 			   "type", "id",
@@ -2312,13 +2166,6 @@ public class SubscriptionPackageImpl extends EPackageImpl implements Subscriptio
 			   "type", "date-time"
 		   });
 		addAnnotation
-		  (getSubscription_RoleTypeId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getSubscription_SubscriptionAttributes(),
 		   source,
 		   new String[] {
@@ -2327,20 +2174,6 @@ public class SubscriptionPackageImpl extends EPackageImpl implements Subscriptio
 		   });
 		addAnnotation
 		  (getSubscription_SubscriptionCommEvents(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getSubscription_SubscriptionResourceId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getSubscription_SubscriptionTypeId(),
 		   source,
 		   new String[] {
 			   "type", "id",
@@ -2367,13 +2200,6 @@ public class SubscriptionPackageImpl extends EPackageImpl implements Subscriptio
 			   "type", "numeric",
 			   "precision", "20",
 			   "scale", "0"
-		   });
-		addAnnotation
-		  (getSubscription_UseTimeUomId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
 		   });
 		addAnnotation
 		  (getSubscriptionActivity_SubscriptionActivityId(),
@@ -2403,13 +2229,6 @@ public class SubscriptionPackageImpl extends EPackageImpl implements Subscriptio
 			   "length", "20"
 		   });
 		addAnnotation
-		  (getSubscriptionAttribute_SubscriptionId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getSubscriptionAttribute_AttrName(),
 		   source,
 		   new String[] {
@@ -2429,34 +2248,6 @@ public class SubscriptionPackageImpl extends EPackageImpl implements Subscriptio
 		   new String[] {
 			   "type", "value",
 			   "length", "255"
-		   });
-		addAnnotation
-		  (getSubscriptionCommEvent_CommunicationEventId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getSubscriptionCommEvent_SubscriptionId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getSubscriptionFulfillmentPiece_SubscriptionId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getSubscriptionFulfillmentPiece_SubscriptionActivityId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
 		   });
 		addAnnotation
 		  (subscriptionResourceEClass.getEOperations().get(0),
@@ -2480,13 +2271,6 @@ public class SubscriptionPackageImpl extends EPackageImpl implements Subscriptio
 			   "length", "20"
 		   });
 		addAnnotation
-		  (getSubscriptionResource_ContentId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getSubscriptionResource_Description(),
 		   source,
 		   new String[] {
@@ -2494,25 +2278,11 @@ public class SubscriptionPackageImpl extends EPackageImpl implements Subscriptio
 			   "length", "255"
 		   });
 		addAnnotation
-		  (getSubscriptionResource_ParentResourceId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getSubscriptionResource_ServiceNameOnExpiry(),
 		   source,
 		   new String[] {
 			   "type", "long-varchar",
 			   "length", "255"
-		   });
-		addAnnotation
-		  (getSubscriptionResource_WebSiteId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
 		   });
 		addAnnotation
 		  (subscriptionTypeEClass.getEOperations().get(0),
@@ -2550,21 +2320,7 @@ public class SubscriptionPackageImpl extends EPackageImpl implements Subscriptio
 			   "length", "1"
 		   });
 		addAnnotation
-		  (getSubscriptionType_ParentTypeId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getSubscriptionType_SubscriptionTypeAttrs(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getSubscriptionTypeAttr_SubscriptionTypeId(),
 		   source,
 		   new String[] {
 			   "type", "id",

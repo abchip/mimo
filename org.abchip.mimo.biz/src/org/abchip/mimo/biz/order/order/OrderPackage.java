@@ -2057,15 +2057,6 @@ public interface OrderPackage extends EPackage {
 	int ORDER_HEADER_NOTE__NOTE_ID = BizPackage.BIZ_ENTITY_NOTE__NOTE_ID;
 
 	/**
-	 * The feature id for the '<em><b>Note</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ORDER_HEADER_NOTE__NOTE = BizPackage.BIZ_ENTITY_NOTE__NOTE;
-
-	/**
 	 * The feature id for the '<em><b>Order Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

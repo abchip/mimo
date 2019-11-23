@@ -41,7 +41,6 @@ public interface DataResourcePurpose extends BizEntity {
 	 * @see org.abchip.mimo.biz.content.data.DataPackage#getDataResourcePurpose_ContentPurposeTypeId()
 	 * @model keys="contentPurposeTypeId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ContentPurposeType getContentPurposeTypeId();
@@ -69,7 +68,6 @@ public interface DataResourcePurpose extends BizEntity {
 	 * @see org.abchip.mimo.biz.content.data.DataPackage#getDataResourcePurpose_DataResourceId()
 	 * @model keys="dataResourceId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	DataResource getDataResourceId();

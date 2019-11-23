@@ -10,7 +10,6 @@ package org.abchip.mimo.biz.product.product.impl;
 import java.math.BigDecimal;
 
 import org.abchip.mimo.biz.impl.BizEntityImpl;
-import org.abchip.mimo.biz.product.product.Product;
 import org.abchip.mimo.biz.product.product.ProductCalculatedInfo;
 import org.abchip.mimo.biz.product.product.ProductPackage;
 import org.eclipse.emf.ecore.EClass;
@@ -23,8 +22,8 @@ import org.eclipse.emf.ecore.EClass;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductCalculatedInfoImpl#getAverageCustomerRating <em>Average Customer Rating</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductCalculatedInfoImpl#getProductId <em>Product Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductCalculatedInfoImpl#getAverageCustomerRating <em>Average Customer Rating</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductCalculatedInfoImpl#getTotalQuantityOrdered <em>Total Quantity Ordered</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductCalculatedInfoImpl#getTotalTimesViewed <em>Total Times Viewed</em>}</li>
  * </ul>
@@ -82,8 +81,8 @@ public class ProductCalculatedInfoImpl extends BizEntityImpl implements ProductC
 	 * @generated
 	 */
 	@Override
-	public Product getProductId() {
-		return (Product)eGet(ProductPackage.Literals.PRODUCT_CALCULATED_INFO__PRODUCT_ID, true);
+	public String getProductId() {
+		return (String)eGet(ProductPackage.Literals.PRODUCT_CALCULATED_INFO__PRODUCT_ID, true);
 	}
 
 	/**
@@ -92,7 +91,7 @@ public class ProductCalculatedInfoImpl extends BizEntityImpl implements ProductC
 	 * @generated
 	 */
 	@Override
-	public void setProductId(Product newProductId) {
+	public void setProductId(String newProductId) {
 		eSet(ProductPackage.Literals.PRODUCT_CALCULATED_INFO__PRODUCT_ID, newProductId);
 	}
 

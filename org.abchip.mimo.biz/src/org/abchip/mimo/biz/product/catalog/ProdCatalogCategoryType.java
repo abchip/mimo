@@ -68,7 +68,6 @@ public interface ProdCatalogCategoryType extends BizEntityType<ProdCatalogCatego
 	 * @see #setParentTypeId(ProdCatalogCategoryType)
 	 * @see org.abchip.mimo.biz.product.catalog.CatalogPackage#getProdCatalogCategoryType_ParentTypeId()
 	 * @model keys="prodCatalogCategoryTypeId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ProdCatalogCategoryType getParentTypeId();

@@ -68,7 +68,6 @@ public interface SurveyQuestionCategory extends BizEntity {
 	 * @see #setParentCategoryId(SurveyQuestionCategory)
 	 * @see org.abchip.mimo.biz.content.survey.SurveyPackage#getSurveyQuestionCategory_ParentCategoryId()
 	 * @model keys="surveyQuestionCategoryId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	SurveyQuestionCategory getParentCategoryId();

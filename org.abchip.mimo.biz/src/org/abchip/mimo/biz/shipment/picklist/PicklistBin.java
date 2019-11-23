@@ -98,7 +98,6 @@ public interface PicklistBin extends BizEntity {
 	 * @see #setPicklistId(Picklist)
 	 * @see org.abchip.mimo.biz.shipment.picklist.PicklistPackage#getPicklistBin_PicklistId()
 	 * @model keys="picklistId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Picklist getPicklistId();
@@ -125,7 +124,6 @@ public interface PicklistBin extends BizEntity {
 	 * @see #setPrimaryOrderId(OrderHeader)
 	 * @see org.abchip.mimo.biz.shipment.picklist.PicklistPackage#getPicklistBin_PrimaryOrderId()
 	 * @model keys="orderId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	OrderHeader getPrimaryOrderId();

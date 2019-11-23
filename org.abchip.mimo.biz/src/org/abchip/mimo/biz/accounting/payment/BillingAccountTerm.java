@@ -76,7 +76,6 @@ public interface BillingAccountTerm extends BizEntity {
 	 * @see #setTermTypeId(TermType)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getBillingAccountTerm_TermTypeId()
 	 * @model keys="termTypeId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	TermType getTermTypeId();
@@ -129,7 +128,6 @@ public interface BillingAccountTerm extends BizEntity {
 	 * @see #setUomId(Uom)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getBillingAccountTerm_UomId()
 	 * @model keys="uomId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Uom getUomId();
@@ -174,7 +172,6 @@ public interface BillingAccountTerm extends BizEntity {
 	 * @see #setBillingAccountId(BillingAccount)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getBillingAccountTerm_BillingAccountId()
 	 * @model keys="billingAccountId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	BillingAccount getBillingAccountId();

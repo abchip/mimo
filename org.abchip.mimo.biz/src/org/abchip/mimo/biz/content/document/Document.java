@@ -179,7 +179,6 @@ public interface Document extends BizEntityTyped<DocumentType> {
 	 * @see #setDocumentTypeId(DocumentType)
 	 * @see org.abchip.mimo.biz.content.document.DocumentPackage#getDocument_DocumentTypeId()
 	 * @model keys="documentTypeId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	DocumentType getDocumentTypeId();

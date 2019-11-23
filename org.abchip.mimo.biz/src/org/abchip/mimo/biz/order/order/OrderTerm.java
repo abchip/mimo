@@ -76,7 +76,6 @@ public interface OrderTerm extends BizEntity {
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderTerm_OrderId()
 	 * @model keys="orderId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	OrderHeader getOrderId();
@@ -158,7 +157,6 @@ public interface OrderTerm extends BizEntity {
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderTerm_TermTypeId()
 	 * @model keys="termTypeId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	TermType getTermTypeId();
@@ -237,7 +235,6 @@ public interface OrderTerm extends BizEntity {
 	 * @see #setUomId(Uom)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderTerm_UomId()
 	 * @model keys="uomId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Uom getUomId();

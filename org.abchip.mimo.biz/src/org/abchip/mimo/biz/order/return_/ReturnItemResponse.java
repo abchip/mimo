@@ -56,7 +56,6 @@ public interface ReturnItemResponse extends BizEntity {
 	 * @see #setBillingAccountId(BillingAccount)
 	 * @see org.abchip.mimo.biz.order.return_.ReturnPackage#getReturnItemResponse_BillingAccountId()
 	 * @model keys="billingAccountId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	BillingAccount getBillingAccountId();
@@ -83,7 +82,6 @@ public interface ReturnItemResponse extends BizEntity {
 	 * @see #setFinAccountTransId(FinAccountTrans)
 	 * @see org.abchip.mimo.biz.order.return_.ReturnPackage#getReturnItemResponse_FinAccountTransId()
 	 * @model keys="finAccountTransId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	FinAccountTrans getFinAccountTransId();
@@ -110,7 +108,6 @@ public interface ReturnItemResponse extends BizEntity {
 	 * @see #setOrderPaymentPreferenceId(OrderPaymentPreference)
 	 * @see org.abchip.mimo.biz.order.return_.ReturnPackage#getReturnItemResponse_OrderPaymentPreferenceId()
 	 * @model keys="orderPaymentPreferenceId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	OrderPaymentPreference getOrderPaymentPreferenceId();
@@ -137,7 +134,6 @@ public interface ReturnItemResponse extends BizEntity {
 	 * @see #setPaymentId(Payment)
 	 * @see org.abchip.mimo.biz.order.return_.ReturnPackage#getReturnItemResponse_PaymentId()
 	 * @model keys="paymentId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Payment getPaymentId();
@@ -164,7 +160,6 @@ public interface ReturnItemResponse extends BizEntity {
 	 * @see #setReplacementOrderId(OrderHeader)
 	 * @see org.abchip.mimo.biz.order.return_.ReturnPackage#getReturnItemResponse_ReplacementOrderId()
 	 * @model keys="orderId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	OrderHeader getReplacementOrderId();

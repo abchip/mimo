@@ -311,7 +311,6 @@ public interface ProductSearchConstraint extends BizEntity {
 	 * @see org.abchip.mimo.biz.product.product.ProductPackage#getProductSearchConstraint_ProductSearchResultId()
 	 * @model keys="productSearchResultId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ProductSearchResult getProductSearchResultId();

@@ -350,7 +350,6 @@ public interface WebSite extends BizEntity {
 	 * @see #setProductStoreId(ProductStore)
 	 * @see org.abchip.mimo.biz.webapp.website.WebsitePackage#getWebSite_ProductStoreId()
 	 * @model keys="productStoreId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ProductStore getProductStoreId();
@@ -455,7 +454,6 @@ public interface WebSite extends BizEntity {
 	 * @see #setVisualThemeSetId(VisualThemeSet)
 	 * @see org.abchip.mimo.biz.webapp.website.WebsitePackage#getWebSite_VisualThemeSetId()
 	 * @model keys="visualThemeSetId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	VisualThemeSet getVisualThemeSetId();

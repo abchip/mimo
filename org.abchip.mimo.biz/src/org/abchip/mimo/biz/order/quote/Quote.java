@@ -62,7 +62,6 @@ public interface Quote extends BizEntityTyped<QuoteType> {
 	 * @see #setCurrencyUomId(Uom)
 	 * @see org.abchip.mimo.biz.order.quote.QuotePackage#getQuote_CurrencyUomId()
 	 * @model keys="uomId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Uom getCurrencyUomId();
@@ -141,7 +140,6 @@ public interface Quote extends BizEntityTyped<QuoteType> {
 	 * @see #setPartyId(Party)
 	 * @see org.abchip.mimo.biz.order.quote.QuotePackage#getQuote_PartyId()
 	 * @model keys="partyId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Party getPartyId();
@@ -168,7 +166,6 @@ public interface Quote extends BizEntityTyped<QuoteType> {
 	 * @see #setProductStoreId(ProductStore)
 	 * @see org.abchip.mimo.biz.order.quote.QuotePackage#getQuote_ProductStoreId()
 	 * @model keys="productStoreId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ProductStore getProductStoreId();
@@ -248,7 +245,6 @@ public interface Quote extends BizEntityTyped<QuoteType> {
 	 * @see #setQuoteTypeId(QuoteType)
 	 * @see org.abchip.mimo.biz.order.quote.QuotePackage#getQuote_QuoteTypeId()
 	 * @model keys="quoteTypeId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	QuoteType getQuoteTypeId();
@@ -275,7 +271,6 @@ public interface Quote extends BizEntityTyped<QuoteType> {
 	 * @see #setSalesChannelEnumId(Enumeration)
 	 * @see org.abchip.mimo.biz.order.quote.QuotePackage#getQuote_SalesChannelEnumId()
 	 * @model keys="enumId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Enumeration getSalesChannelEnumId();
@@ -302,7 +297,6 @@ public interface Quote extends BizEntityTyped<QuoteType> {
 	 * @see #setStatusId(StatusItem)
 	 * @see org.abchip.mimo.biz.order.quote.QuotePackage#getQuote_StatusId()
 	 * @model keys="statusId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	StatusItem getStatusId();

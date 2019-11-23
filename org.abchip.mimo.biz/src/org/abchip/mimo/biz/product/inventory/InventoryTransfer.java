@@ -109,7 +109,6 @@ public interface InventoryTransfer extends BizEntity {
 	 * @see #setItemIssuanceId(ItemIssuance)
 	 * @see org.abchip.mimo.biz.product.inventory.InventoryPackage#getInventoryTransfer_ItemIssuanceId()
 	 * @model keys="itemIssuanceId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ItemIssuance getItemIssuanceId();
@@ -240,7 +239,6 @@ public interface InventoryTransfer extends BizEntity {
 	 * @see #setStatusId(StatusItem)
 	 * @see org.abchip.mimo.biz.product.inventory.InventoryPackage#getInventoryTransfer_StatusId()
 	 * @model keys="statusId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	StatusItem getStatusId();
@@ -267,7 +265,6 @@ public interface InventoryTransfer extends BizEntity {
 	 * @see #setInventoryItemId(InventoryItem)
 	 * @see org.abchip.mimo.biz.product.inventory.InventoryPackage#getInventoryTransfer_InventoryItemId()
 	 * @model keys="inventoryItemId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	InventoryItem getInventoryItemId();
@@ -294,7 +291,6 @@ public interface InventoryTransfer extends BizEntity {
 	 * @see #setFacilityId(Facility)
 	 * @see org.abchip.mimo.biz.product.inventory.InventoryPackage#getInventoryTransfer_FacilityId()
 	 * @model keys="facilityId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Facility getFacilityId();
@@ -321,7 +317,6 @@ public interface InventoryTransfer extends BizEntity {
 	 * @see #setContainerId(Container)
 	 * @see org.abchip.mimo.biz.product.inventory.InventoryPackage#getInventoryTransfer_ContainerId()
 	 * @model keys="containerId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Container getContainerId();
@@ -348,7 +343,6 @@ public interface InventoryTransfer extends BizEntity {
 	 * @see #setFacilityIdTo(Facility)
 	 * @see org.abchip.mimo.biz.product.inventory.InventoryPackage#getInventoryTransfer_FacilityIdTo()
 	 * @model keys="facilityId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Facility getFacilityIdTo();
@@ -375,7 +369,6 @@ public interface InventoryTransfer extends BizEntity {
 	 * @see #setContainerIdTo(Container)
 	 * @see org.abchip.mimo.biz.product.inventory.InventoryPackage#getInventoryTransfer_ContainerIdTo()
 	 * @model keys="containerId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Container getContainerIdTo();

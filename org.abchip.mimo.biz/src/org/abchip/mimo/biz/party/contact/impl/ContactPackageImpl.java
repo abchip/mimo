@@ -71,6 +71,7 @@ import org.abchip.mimo.biz.content.survey.SurveyPackage;
 import org.abchip.mimo.biz.content.survey.impl.SurveyPackageImpl;
 import org.abchip.mimo.biz.content.website.WebsitePackage;
 import org.abchip.mimo.biz.content.website.impl.WebsitePackageImpl;
+import org.abchip.mimo.biz.entity.EntityPackage;
 import org.abchip.mimo.biz.entity.audit.AuditPackage;
 import org.abchip.mimo.biz.entity.audit.impl.AuditPackageImpl;
 import org.abchip.mimo.biz.entity.crypto.CryptoPackage;
@@ -439,8 +440,8 @@ public class ContactPackageImpl extends EPackageImpl implements ContactPackage {
 		SurveyPackageImpl theSurveyPackage = (SurveyPackageImpl)(registeredPackage instanceof SurveyPackageImpl ? registeredPackage : SurveyPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(WebsitePackage.eNS_URI);
 		WebsitePackageImpl theWebsitePackage = (WebsitePackageImpl)(registeredPackage instanceof WebsitePackageImpl ? registeredPackage : WebsitePackage.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(org.abchip.mimo.biz.entity.EntityPackage.eNS_URI);
-		EntityPackageImpl theEntityPackage = (EntityPackageImpl)(registeredPackage instanceof EntityPackageImpl ? registeredPackage : org.abchip.mimo.biz.entity.EntityPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(EntityPackage.eNS_URI);
+		EntityPackageImpl theEntityPackage = (EntityPackageImpl)(registeredPackage instanceof EntityPackageImpl ? registeredPackage : EntityPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(AuditPackage.eNS_URI);
 		AuditPackageImpl theAuditPackage = (AuditPackageImpl)(registeredPackage instanceof AuditPackageImpl ? registeredPackage : AuditPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(CryptoPackage.eNS_URI);
@@ -2265,13 +2266,6 @@ public class ContactPackageImpl extends EPackageImpl implements ContactPackage {
 			   "length", "20"
 		   });
 		addAnnotation
-		  (getContactMech_ContactMechTypeId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getContactMech_FromContactMechLinks(),
 		   source,
 		   new String[] {
@@ -2284,13 +2278,6 @@ public class ContactPackageImpl extends EPackageImpl implements ContactPackage {
 		   new String[] {
 			   "type", "long-varchar",
 			   "length", "255"
-		   });
-		addAnnotation
-		  (getContactMechAttribute_ContactMechId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
 		   });
 		addAnnotation
 		  (getContactMechAttribute_AttrName(),
@@ -2312,20 +2299,6 @@ public class ContactPackageImpl extends EPackageImpl implements ContactPackage {
 		   new String[] {
 			   "type", "value",
 			   "length", "255"
-		   });
-		addAnnotation
-		  (getContactMechLink_ContactMechIdFrom(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getContactMechLink_ContactMechIdTo(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
 		   });
 		addAnnotation
 		  (contactMechPurposeTypeEClass.getEOperations().get(0),
@@ -2426,20 +2399,6 @@ public class ContactPackageImpl extends EPackageImpl implements ContactPackage {
 			   "length", "1"
 		   });
 		addAnnotation
-		  (getContactMechType_ParentTypeId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getContactMechTypeAttr_ContactMechTypeId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getContactMechTypeAttr_AttrName(),
 		   source,
 		   new String[] {
@@ -2452,20 +2411,6 @@ public class ContactPackageImpl extends EPackageImpl implements ContactPackage {
 		   new String[] {
 			   "type", "description",
 			   "length", "255"
-		   });
-		addAnnotation
-		  (getContactMechTypePurpose_ContactMechTypeId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getContactMechTypePurpose_ContactMechPurposeTypeId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
 		   });
 		addAnnotation
 		  (getEmailAddressVerification_EmailAddress(),
@@ -2553,20 +2498,6 @@ public class ContactPackageImpl extends EPackageImpl implements ContactPackage {
 			   "length", "1"
 		   });
 		addAnnotation
-		  (getPartyContactMech_PartyId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getPartyContactMech_ContactMechId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getPartyContactMech_FromDate(),
 		   source,
 		   new String[] {
@@ -2602,13 +2533,6 @@ public class ContactPackageImpl extends EPackageImpl implements ContactPackage {
 			   "scale", "0"
 		   });
 		addAnnotation
-		  (getPartyContactMech_RoleTypeId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getPartyContactMech_ThruDate(),
 		   source,
 		   new String[] {
@@ -2628,27 +2552,6 @@ public class ContactPackageImpl extends EPackageImpl implements ContactPackage {
 			   "type", "numeric",
 			   "precision", "20",
 			   "scale", "0"
-		   });
-		addAnnotation
-		  (getPartyContactMechPurpose_ContactMechPurposeTypeId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getPartyContactMechPurpose_PartyId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getPartyContactMechPurpose_ContactMechId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
 		   });
 		addAnnotation
 		  (getPartyContactMechPurpose_FromDate(),
@@ -2698,39 +2601,11 @@ public class ContactPackageImpl extends EPackageImpl implements ContactPackage {
 			   "length", "100"
 		   });
 		addAnnotation
-		  (getPostalAddress_CityGeoId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getPostalAddress_CountryGeoId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getPostalAddress_CountyGeoId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getPostalAddress_Directions(),
 		   source,
 		   new String[] {
 			   "type", "long-varchar",
 			   "length", "255"
-		   });
-		addAnnotation
-		  (getPostalAddress_GeoPointId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
 		   });
 		addAnnotation
 		  (getPostalAddress_HouseNumber(),
@@ -2746,13 +2621,6 @@ public class ContactPackageImpl extends EPackageImpl implements ContactPackage {
 		   new String[] {
 			   "type", "short-varchar",
 			   "length", "60"
-		   });
-		addAnnotation
-		  (getPostalAddress_MunicipalityGeoId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
 		   });
 		addAnnotation
 		  (getPostalAddress_PostalAddressBoundaries(),
@@ -2776,39 +2644,11 @@ public class ContactPackageImpl extends EPackageImpl implements ContactPackage {
 			   "length", "60"
 		   });
 		addAnnotation
-		  (getPostalAddress_PostalCodeGeoId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getPostalAddress_StateProvinceGeoId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getPostalAddress_ToName(),
 		   source,
 		   new String[] {
 			   "type", "name",
 			   "length", "100"
-		   });
-		addAnnotation
-		  (getPostalAddressBoundary_ContactMechId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getPostalAddressBoundary_GeoId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
 		   });
 		addAnnotation
 		  (telecomNumberEClass.getEOperations().get(0),
@@ -2844,20 +2684,6 @@ public class ContactPackageImpl extends EPackageImpl implements ContactPackage {
 		   new String[] {
 			   "type", "very-short",
 			   "length", "10"
-		   });
-		addAnnotation
-		  (getValidContactMechRole_RoleTypeId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getValidContactMechRole_ContactMechTypeId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
 		   });
 	}
 

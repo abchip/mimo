@@ -96,7 +96,6 @@ public interface SubscriptionType extends BizEntityType<Subscription> {
 	 * @see #setParentTypeId(SubscriptionType)
 	 * @see org.abchip.mimo.biz.product.subscription.SubscriptionPackage#getSubscriptionType_ParentTypeId()
 	 * @model keys="subscriptionTypeId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	SubscriptionType getParentTypeId();

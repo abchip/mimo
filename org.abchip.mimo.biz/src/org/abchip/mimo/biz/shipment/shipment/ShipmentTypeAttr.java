@@ -95,7 +95,6 @@ public interface ShipmentTypeAttr extends BizEntity {
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipmentTypeAttr_ShipmentTypeId()
 	 * @model keys="shipmentTypeId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ShipmentType getShipmentTypeId();

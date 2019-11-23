@@ -95,7 +95,6 @@ public interface PartyQualType extends BizEntityType<PartyQual> {
 	 * @see #setParentTypeId(PartyQualType)
 	 * @see org.abchip.mimo.biz.humanres.ability.AbilityPackage#getPartyQualType_ParentTypeId()
 	 * @model keys="partyQualTypeId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	PartyQualType getParentTypeId();

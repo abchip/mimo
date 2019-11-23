@@ -112,7 +112,6 @@ public interface ItemIssuance extends BizEntity {
 	 * @see #setInventoryItemId(InventoryItem)
 	 * @see org.abchip.mimo.biz.shipment.issuance.IssuancePackage#getItemIssuance_InventoryItemId()
 	 * @model keys="inventoryItemId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	InventoryItem getInventoryItemId();
@@ -139,7 +138,6 @@ public interface ItemIssuance extends BizEntity {
 	 * @see #setIssuedByUserLoginId(UserLogin)
 	 * @see org.abchip.mimo.biz.shipment.issuance.IssuancePackage#getItemIssuance_IssuedByUserLoginId()
 	 * @model keys="userLoginId"
-	 *        annotation="mimo-ent-format type='id-vlong' length='255'"
 	 * @generated
 	 */
 	UserLogin getIssuedByUserLoginId();
@@ -245,7 +243,6 @@ public interface ItemIssuance extends BizEntity {
 	 * @see #setOrderId(OrderHeader)
 	 * @see org.abchip.mimo.biz.shipment.issuance.IssuancePackage#getItemIssuance_OrderId()
 	 * @model keys="orderId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	OrderHeader getOrderId();
@@ -350,7 +347,6 @@ public interface ItemIssuance extends BizEntity {
 	 * @see #setShipmentId(Shipment)
 	 * @see org.abchip.mimo.biz.shipment.issuance.IssuancePackage#getItemIssuance_ShipmentId()
 	 * @model keys="shipmentId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Shipment getShipmentId();

@@ -71,6 +71,7 @@ import org.abchip.mimo.biz.content.survey.SurveyPackage;
 import org.abchip.mimo.biz.content.survey.impl.SurveyPackageImpl;
 import org.abchip.mimo.biz.content.website.WebsitePackage;
 import org.abchip.mimo.biz.content.website.impl.WebsitePackageImpl;
+import org.abchip.mimo.biz.entity.EntityPackage;
 import org.abchip.mimo.biz.entity.audit.AuditPackage;
 import org.abchip.mimo.biz.entity.audit.impl.AuditPackageImpl;
 import org.abchip.mimo.biz.entity.crypto.CryptoPackage;
@@ -502,8 +503,8 @@ public class FacilityPackageImpl extends EPackageImpl implements FacilityPackage
 		SurveyPackageImpl theSurveyPackage = (SurveyPackageImpl)(registeredPackage instanceof SurveyPackageImpl ? registeredPackage : SurveyPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(WebsitePackage.eNS_URI);
 		WebsitePackageImpl theWebsitePackage = (WebsitePackageImpl)(registeredPackage instanceof WebsitePackageImpl ? registeredPackage : WebsitePackage.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(org.abchip.mimo.biz.entity.EntityPackage.eNS_URI);
-		EntityPackageImpl theEntityPackage = (EntityPackageImpl)(registeredPackage instanceof EntityPackageImpl ? registeredPackage : org.abchip.mimo.biz.entity.EntityPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(EntityPackage.eNS_URI);
+		EntityPackageImpl theEntityPackage = (EntityPackageImpl)(registeredPackage instanceof EntityPackageImpl ? registeredPackage : EntityPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(AuditPackage.eNS_URI);
 		AuditPackageImpl theAuditPackage = (AuditPackageImpl)(registeredPackage instanceof AuditPackageImpl ? registeredPackage : AuditPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(CryptoPackage.eNS_URI);
@@ -3023,39 +3024,11 @@ public class FacilityPackageImpl extends EPackageImpl implements FacilityPackage
 			   "length", "20"
 		   });
 		addAnnotation
-		  (getContainer_ContainerTypeId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getContainer_Description(),
 		   source,
 		   new String[] {
 			   "type", "description",
 			   "length", "255"
-		   });
-		addAnnotation
-		  (getContainer_FacilityId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getContainerGeoPoint_ContainerId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getContainerGeoPoint_GeoPointId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
 		   });
 		addAnnotation
 		  (getContainerGeoPoint_FromDate(),
@@ -3259,27 +3232,6 @@ public class FacilityPackageImpl extends EPackageImpl implements FacilityPackage
 			   "scale", "0"
 		   });
 		addAnnotation
-		  (getFacility_DefaultDimensionUomId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getFacility_DefaultInventoryItemTypeId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getFacility_DefaultWeightUomId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getFacility_Description(),
 		   source,
 		   new String[] {
@@ -3316,27 +3268,6 @@ public class FacilityPackageImpl extends EPackageImpl implements FacilityPackage
 			   "scale", "6"
 		   });
 		addAnnotation
-		  (getFacility_FacilitySizeUomId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getFacility_FacilityTypeId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getFacility_GeoPointId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getFacility_OldSquareFootage(),
 		   source,
 		   new String[] {
@@ -3349,41 +3280,6 @@ public class FacilityPackageImpl extends EPackageImpl implements FacilityPackage
 		   source,
 		   new String[] {
 			   "type", "date-time"
-		   });
-		addAnnotation
-		  (getFacility_OwnerPartyId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getFacility_ParentFacilityId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getFacility_PrimaryFacilityGroupId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getFacility_ProductStoreId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getFacilityAttribute_FacilityId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
 		   });
 		addAnnotation
 		  (getFacilityAttribute_AttrName(),
@@ -3405,20 +3301,6 @@ public class FacilityPackageImpl extends EPackageImpl implements FacilityPackage
 		   new String[] {
 			   "type", "value",
 			   "length", "255"
-		   });
-		addAnnotation
-		  (getFacilityCalendar_FacilityId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getFacilityCalendar_FacilityCalendarTypeId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
 		   });
 		addAnnotation
 		  (getFacilityCalendar_CalendarId(),
@@ -3461,42 +3343,7 @@ public class FacilityPackageImpl extends EPackageImpl implements FacilityPackage
 			   "length", "20"
 		   });
 		addAnnotation
-		  (getFacilityCarrierShipment_PartyId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getFacilityCarrierShipment_FacilityId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getFacilityCarrierShipment_ShipmentMethodTypeId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getFacilityCarrierShipment_RoleTypeId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getFacilityContactMech_FacilityId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getFacilityContactMech_ContactMechId(),
 		   source,
 		   new String[] {
 			   "type", "id",
@@ -3529,27 +3376,6 @@ public class FacilityPackageImpl extends EPackageImpl implements FacilityPackage
 			   "type", "date-time"
 		   });
 		addAnnotation
-		  (getFacilityContactMechPurpose_ContactMechPurposeTypeId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getFacilityContactMechPurpose_FacilityId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getFacilityContactMechPurpose_ContactMechId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getFacilityContactMechPurpose_FromDate(),
 		   source,
 		   new String[] {
@@ -3560,20 +3386,6 @@ public class FacilityPackageImpl extends EPackageImpl implements FacilityPackage
 		   source,
 		   new String[] {
 			   "type", "date-time"
-		   });
-		addAnnotation
-		  (getFacilityContent_FacilityId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getFacilityContent_ContentId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
 		   });
 		addAnnotation
 		  (getFacilityContent_FromDate(),
@@ -3616,34 +3428,6 @@ public class FacilityPackageImpl extends EPackageImpl implements FacilityPackage
 			   "length", "100"
 		   });
 		addAnnotation
-		  (getFacilityGroup_FacilityGroupTypeId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getFacilityGroup_PrimaryParentGroupId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getFacilityGroupMember_FacilityId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getFacilityGroupMember_FacilityGroupId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getFacilityGroupMember_FromDate(),
 		   source,
 		   new String[] {
@@ -3662,41 +3446,6 @@ public class FacilityPackageImpl extends EPackageImpl implements FacilityPackage
 		   source,
 		   new String[] {
 			   "type", "date-time"
-		   });
-		addAnnotation
-		  (getFacilityGroupRole_FacilityGroupId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getFacilityGroupRole_PartyId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getFacilityGroupRole_RoleTypeId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getFacilityGroupRollup_FacilityGroupId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getFacilityGroupRollup_ParentFacilityGroupId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
 		   });
 		addAnnotation
 		  (getFacilityGroupRollup_FromDate(),
@@ -3740,13 +3489,6 @@ public class FacilityPackageImpl extends EPackageImpl implements FacilityPackage
 			   "length", "255"
 		   });
 		addAnnotation
-		  (getFacilityLocation_FacilityId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getFacilityLocation_LocationSeqId(),
 		   source,
 		   new String[] {
@@ -3768,21 +3510,7 @@ public class FacilityPackageImpl extends EPackageImpl implements FacilityPackage
 			   "length", "20"
 		   });
 		addAnnotation
-		  (getFacilityLocation_GeoPointId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getFacilityLocation_LevelId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getFacilityLocation_LocationTypeEnumId(),
 		   source,
 		   new String[] {
 			   "type", "id",
@@ -3797,13 +3525,6 @@ public class FacilityPackageImpl extends EPackageImpl implements FacilityPackage
 		   });
 		addAnnotation
 		  (getFacilityLocation_SectionId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getFacilityLocationGeoPoint_GeoPointId(),
 		   source,
 		   new String[] {
 			   "type", "id",
@@ -3834,27 +3555,6 @@ public class FacilityPackageImpl extends EPackageImpl implements FacilityPackage
 		   source,
 		   new String[] {
 			   "type", "date-time"
-		   });
-		addAnnotation
-		  (getFacilityParty_FacilityId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getFacilityParty_PartyId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getFacilityParty_RoleTypeId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
 		   });
 		addAnnotation
 		  (getFacilityParty_FromDate(),
@@ -3911,20 +3611,6 @@ public class FacilityPackageImpl extends EPackageImpl implements FacilityPackage
 			   "length", "1"
 		   });
 		addAnnotation
-		  (getFacilityType_ParentTypeId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getFacilityTypeAttr_FacilityTypeId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getFacilityTypeAttr_AttrName(),
 		   source,
 		   new String[] {
@@ -3937,20 +3623,6 @@ public class FacilityPackageImpl extends EPackageImpl implements FacilityPackage
 		   new String[] {
 			   "type", "description",
 			   "length", "255"
-		   });
-		addAnnotation
-		  (getProductFacility_ProductId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getProductFacility_FacilityId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
 		   });
 		addAnnotation
 		  (getProductFacility_DaysToShip(),
@@ -3983,27 +3655,6 @@ public class FacilityPackageImpl extends EPackageImpl implements FacilityPackage
 			   "type", "fixed-point",
 			   "precision", "18",
 			   "scale", "6"
-		   });
-		addAnnotation
-		  (getProductFacility_RequirementMethodEnumId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getProductFacilityLocation_ProductId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getProductFacilityLocation_FacilityId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
 		   });
 		addAnnotation
 		  (getProductFacilityLocation_LocationSeqId(),

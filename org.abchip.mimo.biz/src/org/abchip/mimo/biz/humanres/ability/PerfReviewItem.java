@@ -72,7 +72,6 @@ public interface PerfReviewItem extends BizEntityTyped<PerfReviewItemType> {
 	 * @see org.abchip.mimo.biz.humanres.ability.AbilityPackage#getPerfReviewItem_EmployeePartyId()
 	 * @model keys="partyId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Party getEmployeePartyId();
@@ -127,7 +126,6 @@ public interface PerfReviewItem extends BizEntityTyped<PerfReviewItemType> {
 	 * @see #setPerfRatingTypeId(PerfRatingType)
 	 * @see org.abchip.mimo.biz.humanres.ability.AbilityPackage#getPerfReviewItem_PerfRatingTypeId()
 	 * @model keys="perfRatingTypeId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	PerfRatingType getPerfRatingTypeId();
@@ -210,7 +208,6 @@ public interface PerfReviewItem extends BizEntityTyped<PerfReviewItemType> {
 	 * @see #setPerfReviewItemTypeId(PerfReviewItemType)
 	 * @see org.abchip.mimo.biz.humanres.ability.AbilityPackage#getPerfReviewItem_PerfReviewItemTypeId()
 	 * @model keys="perfReviewItemTypeId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	PerfReviewItemType getPerfReviewItemTypeId();

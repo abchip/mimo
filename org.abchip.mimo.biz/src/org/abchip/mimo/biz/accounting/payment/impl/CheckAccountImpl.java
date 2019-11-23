@@ -8,7 +8,6 @@
 package org.abchip.mimo.biz.accounting.payment.impl;
 
 import org.abchip.mimo.biz.accounting.payment.CheckAccount;
-import org.abchip.mimo.biz.accounting.payment.PaymentMethod;
 import org.abchip.mimo.biz.accounting.payment.PaymentPackage;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.party.contact.ContactMech;
@@ -22,6 +21,7 @@ import org.eclipse.emf.ecore.EClass;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.CheckAccountImpl#getPaymentMethodId <em>Payment Method Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.CheckAccountImpl#getAccountNumber <em>Account Number</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.CheckAccountImpl#getAccountType <em>Account Type</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.CheckAccountImpl#getBankName <em>Bank Name</em>}</li>
@@ -29,7 +29,6 @@ import org.eclipse.emf.ecore.EClass;
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.CheckAccountImpl#getCompanyNameOnAccount <em>Company Name On Account</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.CheckAccountImpl#getContactMechId <em>Contact Mech Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.CheckAccountImpl#getNameOnAccount <em>Name On Account</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.CheckAccountImpl#getPaymentMethodId <em>Payment Method Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.CheckAccountImpl#getRoutingNumber <em>Routing Number</em>}</li>
  * </ul>
  *
@@ -205,8 +204,8 @@ public class CheckAccountImpl extends BizEntityImpl implements CheckAccount {
 	 * @generated
 	 */
 	@Override
-	public PaymentMethod getPaymentMethodId() {
-		return (PaymentMethod)eGet(PaymentPackage.Literals.CHECK_ACCOUNT__PAYMENT_METHOD_ID, true);
+	public String getPaymentMethodId() {
+		return (String)eGet(PaymentPackage.Literals.CHECK_ACCOUNT__PAYMENT_METHOD_ID, true);
 	}
 
 	/**
@@ -215,7 +214,7 @@ public class CheckAccountImpl extends BizEntityImpl implements CheckAccount {
 	 * @generated
 	 */
 	@Override
-	public void setPaymentMethodId(PaymentMethod newPaymentMethodId) {
+	public void setPaymentMethodId(String newPaymentMethodId) {
 		eSet(PaymentPackage.Literals.CHECK_ACCOUNT__PAYMENT_METHOD_ID, newPaymentMethodId);
 	}
 

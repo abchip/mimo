@@ -71,6 +71,7 @@ import org.abchip.mimo.biz.content.survey.SurveyPackage;
 import org.abchip.mimo.biz.content.survey.impl.SurveyPackageImpl;
 import org.abchip.mimo.biz.content.website.WebsitePackage;
 import org.abchip.mimo.biz.content.website.impl.WebsitePackageImpl;
+import org.abchip.mimo.biz.entity.EntityPackage;
 import org.abchip.mimo.biz.entity.audit.AuditPackage;
 import org.abchip.mimo.biz.entity.audit.impl.AuditPackageImpl;
 import org.abchip.mimo.biz.entity.crypto.CryptoPackage;
@@ -447,8 +448,8 @@ public class RequestPackageImpl extends EPackageImpl implements RequestPackage {
 		SurveyPackageImpl theSurveyPackage = (SurveyPackageImpl)(registeredPackage instanceof SurveyPackageImpl ? registeredPackage : SurveyPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(WebsitePackage.eNS_URI);
 		WebsitePackageImpl theWebsitePackage = (WebsitePackageImpl)(registeredPackage instanceof WebsitePackageImpl ? registeredPackage : WebsitePackage.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(org.abchip.mimo.biz.entity.EntityPackage.eNS_URI);
-		EntityPackageImpl theEntityPackage = (EntityPackageImpl)(registeredPackage instanceof EntityPackageImpl ? registeredPackage : org.abchip.mimo.biz.entity.EntityPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(EntityPackage.eNS_URI);
+		EntityPackageImpl theEntityPackage = (EntityPackageImpl)(registeredPackage instanceof EntityPackageImpl ? registeredPackage : EntityPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(AuditPackage.eNS_URI);
 		AuditPackageImpl theAuditPackage = (AuditPackageImpl)(registeredPackage instanceof AuditPackageImpl ? registeredPackage : AuditPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(CryptoPackage.eNS_URI);
@@ -2423,21 +2424,7 @@ public class RequestPackageImpl extends EPackageImpl implements RequestPackage {
 			   "type", "date-time"
 		   });
 		addAnnotation
-		  (getCustRequest_CurrencyUomId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getCustRequest_CustRequestAttributes(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getCustRequest_CustRequestCategoryId(),
 		   source,
 		   new String[] {
 			   "type", "id",
@@ -2478,13 +2465,6 @@ public class RequestPackageImpl extends EPackageImpl implements RequestPackage {
 			   "length", "20"
 		   });
 		addAnnotation
-		  (getCustRequest_CustRequestTypeId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getCustRequest_CustRequestWorkEfforts(),
 		   source,
 		   new String[] {
@@ -2497,20 +2477,6 @@ public class RequestPackageImpl extends EPackageImpl implements RequestPackage {
 		   new String[] {
 			   "type", "description",
 			   "length", "255"
-		   });
-		addAnnotation
-		  (getCustRequest_FromPartyId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getCustRequest_FulfillContactMechId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
 		   });
 		addAnnotation
 		  (getCustRequest_InternalComment(),
@@ -2533,13 +2499,6 @@ public class RequestPackageImpl extends EPackageImpl implements RequestPackage {
 			   "type", "date-time"
 		   });
 		addAnnotation
-		  (getCustRequest_MaximumAmountUomId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getCustRequest_OpenDateTime(),
 		   source,
 		   new String[] {
@@ -2554,13 +2513,6 @@ public class RequestPackageImpl extends EPackageImpl implements RequestPackage {
 			   "scale", "0"
 		   });
 		addAnnotation
-		  (getCustRequest_ProductStoreId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getCustRequest_Reason(),
 		   source,
 		   new String[] {
@@ -2572,27 +2524,6 @@ public class RequestPackageImpl extends EPackageImpl implements RequestPackage {
 		   source,
 		   new String[] {
 			   "type", "date-time"
-		   });
-		addAnnotation
-		  (getCustRequest_SalesChannelEnumId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getCustRequest_StatusId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getCustRequestAttribute_CustRequestId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
 		   });
 		addAnnotation
 		  (getCustRequestAttribute_AttrName(),
@@ -2630,46 +2561,11 @@ public class RequestPackageImpl extends EPackageImpl implements RequestPackage {
 			   "length", "20"
 		   });
 		addAnnotation
-		  (getCustRequestCategory_CustRequestTypeId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getCustRequestCategory_Description(),
 		   source,
 		   new String[] {
 			   "type", "description",
 			   "length", "255"
-		   });
-		addAnnotation
-		  (getCustRequestCommEvent_CustRequestId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getCustRequestCommEvent_CommunicationEventId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getCustRequestContent_CustRequestId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getCustRequestContent_ContentId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
 		   });
 		addAnnotation
 		  (getCustRequestContent_FromDate(),
@@ -2684,13 +2580,6 @@ public class RequestPackageImpl extends EPackageImpl implements RequestPackage {
 			   "type", "date-time"
 		   });
 		addAnnotation
-		  (getCustRequestItem_CustRequestId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getCustRequestItem_CustRequestItemSeqId(),
 		   source,
 		   new String[] {
@@ -2699,13 +2588,6 @@ public class RequestPackageImpl extends EPackageImpl implements RequestPackage {
 		   });
 		addAnnotation
 		  (getCustRequestItem_ConfigId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getCustRequestItem_CustRequestResolutionId(),
 		   source,
 		   new String[] {
 			   "type", "id",
@@ -2733,13 +2615,6 @@ public class RequestPackageImpl extends EPackageImpl implements RequestPackage {
 			   "type", "numeric",
 			   "precision", "20",
 			   "scale", "0"
-		   });
-		addAnnotation
-		  (getCustRequestItem_ProductId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
 		   });
 		addAnnotation
 		  (getCustRequestItem_Quantity(),
@@ -2794,13 +2669,6 @@ public class RequestPackageImpl extends EPackageImpl implements RequestPackage {
 			   "scale", "0"
 		   });
 		addAnnotation
-		  (getCustRequestItem_StatusId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getCustRequestItem_Story(),
 		   source,
 		   new String[] {
@@ -2821,49 +2689,7 @@ public class RequestPackageImpl extends EPackageImpl implements RequestPackage {
 			   "length", "20"
 		   });
 		addAnnotation
-		  (getCustRequestItemWorkEffort_CustRequestId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getCustRequestItemWorkEffort_WorkEffortId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getCustRequestItemWorkEffort_CustRequestItemSeqId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getCustRequestNote_CustRequestId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getCustRequestParty_CustRequestId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getCustRequestParty_PartyId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getCustRequestParty_RoleTypeId(),
 		   source,
 		   new String[] {
 			   "type", "id",
@@ -2896,13 +2722,6 @@ public class RequestPackageImpl extends EPackageImpl implements RequestPackage {
 			   "length", "20"
 		   });
 		addAnnotation
-		  (getCustRequestResolution_CustRequestTypeId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getCustRequestResolution_Description(),
 		   source,
 		   new String[] {
@@ -2911,20 +2730,6 @@ public class RequestPackageImpl extends EPackageImpl implements RequestPackage {
 		   });
 		addAnnotation
 		  (getCustRequestStatus_CustRequestStatusId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getCustRequestStatus_ChangeByUserLoginId(),
-		   source,
-		   new String[] {
-			   "type", "id-vlong",
-			   "length", "255"
-		   });
-		addAnnotation
-		  (getCustRequestStatus_CustRequestId(),
 		   source,
 		   new String[] {
 			   "type", "id",
@@ -2942,13 +2747,6 @@ public class RequestPackageImpl extends EPackageImpl implements RequestPackage {
 		   source,
 		   new String[] {
 			   "type", "date-time"
-		   });
-		addAnnotation
-		  (getCustRequestStatus_StatusId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
 		   });
 		addAnnotation
 		  (custRequestTypeEClass.getEOperations().get(0),
@@ -3007,27 +2805,6 @@ public class RequestPackageImpl extends EPackageImpl implements RequestPackage {
 			   "length", "1"
 		   });
 		addAnnotation
-		  (getCustRequestType_ParentTypeId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getCustRequestType_PartyId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getCustRequestTypeAttr_CustRequestTypeId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getCustRequestTypeAttr_AttrName(),
 		   source,
 		   new String[] {
@@ -3042,42 +2819,7 @@ public class RequestPackageImpl extends EPackageImpl implements RequestPackage {
 			   "length", "255"
 		   });
 		addAnnotation
-		  (getCustRequestWorkEffort_CustRequestId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getCustRequestWorkEffort_WorkEffortId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getRespondingParty_CustRequestId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getRespondingParty_PartyId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getRespondingParty_RespondingPartySeqId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getRespondingParty_ContactMechId(),
 		   source,
 		   new String[] {
 			   "type", "id",

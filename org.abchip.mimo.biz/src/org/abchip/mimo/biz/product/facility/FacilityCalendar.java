@@ -127,7 +127,6 @@ public interface FacilityCalendar extends BizEntityTyped<FacilityCalendarType> {
 	 * @see org.abchip.mimo.biz.product.facility.FacilityPackage#getFacilityCalendar_FacilityId()
 	 * @model keys="facilityId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Facility getFacilityId();
@@ -155,7 +154,6 @@ public interface FacilityCalendar extends BizEntityTyped<FacilityCalendarType> {
 	 * @see org.abchip.mimo.biz.product.facility.FacilityPackage#getFacilityCalendar_FacilityCalendarTypeId()
 	 * @model keys="facilityCalendarTypeId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	FacilityCalendarType getFacilityCalendarTypeId();

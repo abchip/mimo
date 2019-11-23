@@ -102,7 +102,6 @@ public interface ProductCategoryRole extends BizEntity {
 	 * @see org.abchip.mimo.biz.product.category.CategoryPackage#getProductCategoryRole_PartyId()
 	 * @model keys="partyId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Party getPartyId();
@@ -130,7 +129,6 @@ public interface ProductCategoryRole extends BizEntity {
 	 * @see org.abchip.mimo.biz.product.category.CategoryPackage#getProductCategoryRole_RoleTypeId()
 	 * @model keys="roleTypeId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	RoleType getRoleTypeId();
@@ -184,7 +182,6 @@ public interface ProductCategoryRole extends BizEntity {
 	 * @see org.abchip.mimo.biz.product.category.CategoryPackage#getProductCategoryRole_ProductCategoryId()
 	 * @model keys="productCategoryId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ProductCategory getProductCategoryId();

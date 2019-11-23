@@ -20,11 +20,11 @@ import org.abchip.mimo.biz.BizEntity;
  * The following features are supported:
  * </p>
  * <ul>
+ *   <li>{@link org.abchip.mimo.biz.party.party.Affiliate#getPartyId <em>Party Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.party.Affiliate#getAffiliateDescription <em>Affiliate Description</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.party.Affiliate#getAffiliateName <em>Affiliate Name</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.party.Affiliate#getDateTimeApproved <em>Date Time Approved</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.party.Affiliate#getDateTimeCreated <em>Date Time Created</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.party.party.Affiliate#getPartyId <em>Party Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.party.Affiliate#getSitePageViews <em>Site Page Views</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.party.Affiliate#getSiteType <em>Site Type</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.party.Affiliate#getSiteVisitors <em>Site Visitors</em>}</li>
@@ -141,31 +141,31 @@ public interface Affiliate extends BizEntity {
 	void setDateTimeCreated(Date value);
 
 	/**
-	 * Returns the value of the '<em><b>Party Id</b></em>' reference.
+	 * Returns the value of the '<em><b>Party Id</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Party Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Party Id</em>' reference.
-	 * @see #setPartyId(Party)
+	 * @return the value of the '<em>Party Id</em>' attribute.
+	 * @see #setPartyId(String)
 	 * @see org.abchip.mimo.biz.party.party.PartyPackage#getAffiliate_PartyId()
-	 * @model keys="partyId" required="true"
+	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
-	Party getPartyId();
+	String getPartyId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.party.party.Affiliate#getPartyId <em>Party Id</em>}' reference.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.party.party.Affiliate#getPartyId <em>Party Id</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Party Id</em>' reference.
+	 * @param value the new value of the '<em>Party Id</em>' attribute.
 	 * @see #getPartyId()
 	 * @generated
 	 */
-	void setPartyId(Party value);
+	void setPartyId(String value);
 
 	/**
 	 * Returns the value of the '<em><b>Site Page Views</b></em>' attribute.

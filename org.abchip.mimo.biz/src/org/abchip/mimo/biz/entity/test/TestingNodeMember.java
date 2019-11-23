@@ -126,7 +126,6 @@ public interface TestingNodeMember extends BizEntity {
 	 * @see org.abchip.mimo.biz.entity.test.TestPackage#getTestingNodeMember_TestingId()
 	 * @model keys="testingId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Testing getTestingId();
@@ -154,7 +153,6 @@ public interface TestingNodeMember extends BizEntity {
 	 * @see org.abchip.mimo.biz.entity.test.TestPackage#getTestingNodeMember_TestingNodeId()
 	 * @model keys="testingNodeId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	TestingNode getTestingNodeId();

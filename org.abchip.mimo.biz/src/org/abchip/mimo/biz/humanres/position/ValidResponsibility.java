@@ -72,7 +72,6 @@ public interface ValidResponsibility extends BizEntity {
 	 * @see org.abchip.mimo.biz.humanres.position.PositionPackage#getValidResponsibility_EmplPositionTypeId()
 	 * @model keys="emplPositionTypeId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	EmplPositionType getEmplPositionTypeId();
@@ -128,7 +127,6 @@ public interface ValidResponsibility extends BizEntity {
 	 * @see org.abchip.mimo.biz.humanres.position.PositionPackage#getValidResponsibility_ResponsibilityTypeId()
 	 * @model keys="responsibilityTypeId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ResponsibilityType getResponsibilityTypeId();

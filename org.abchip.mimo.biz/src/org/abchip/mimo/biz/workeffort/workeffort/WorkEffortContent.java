@@ -46,7 +46,6 @@ public interface WorkEffortContent extends BizEntityTyped<WorkEffortContentType>
 	 * @see org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage#getWorkEffortContent_ContentId()
 	 * @model keys="contentId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Content getContentId();
@@ -128,7 +127,6 @@ public interface WorkEffortContent extends BizEntityTyped<WorkEffortContentType>
 	 * @see org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage#getWorkEffortContent_WorkEffortContentTypeId()
 	 * @model keys="workEffortContentTypeId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	WorkEffortContentType getWorkEffortContentTypeId();
@@ -156,7 +154,6 @@ public interface WorkEffortContent extends BizEntityTyped<WorkEffortContentType>
 	 * @see org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage#getWorkEffortContent_WorkEffortId()
 	 * @model keys="workEffortId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	WorkEffort getWorkEffortId();

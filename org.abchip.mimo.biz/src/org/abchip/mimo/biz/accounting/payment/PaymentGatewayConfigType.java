@@ -95,7 +95,6 @@ public interface PaymentGatewayConfigType extends BizEntityType<PaymentGatewayCo
 	 * @see #setParentTypeId(PaymentGatewayConfigType)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPaymentGatewayConfigType_ParentTypeId()
 	 * @model keys="paymentGatewayConfigTypeId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	PaymentGatewayConfigType getParentTypeId();

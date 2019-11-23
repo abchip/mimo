@@ -71,6 +71,7 @@ import org.abchip.mimo.biz.content.survey.SurveyPackage;
 import org.abchip.mimo.biz.content.survey.impl.SurveyPackageImpl;
 import org.abchip.mimo.biz.content.website.WebsitePackage;
 import org.abchip.mimo.biz.content.website.impl.WebsitePackageImpl;
+import org.abchip.mimo.biz.entity.EntityPackage;
 import org.abchip.mimo.biz.entity.audit.AuditPackage;
 import org.abchip.mimo.biz.entity.audit.impl.AuditPackageImpl;
 import org.abchip.mimo.biz.entity.crypto.CryptoPackage;
@@ -543,8 +544,8 @@ public class Shipment_PackageImpl extends EPackageImpl implements Shipment_Packa
 		SurveyPackageImpl theSurveyPackage = (SurveyPackageImpl)(registeredPackage instanceof SurveyPackageImpl ? registeredPackage : SurveyPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(WebsitePackage.eNS_URI);
 		WebsitePackageImpl theWebsitePackage = (WebsitePackageImpl)(registeredPackage instanceof WebsitePackageImpl ? registeredPackage : WebsitePackage.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(org.abchip.mimo.biz.entity.EntityPackage.eNS_URI);
-		EntityPackageImpl theEntityPackage = (EntityPackageImpl)(registeredPackage instanceof EntityPackageImpl ? registeredPackage : org.abchip.mimo.biz.entity.EntityPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(EntityPackage.eNS_URI);
+		EntityPackageImpl theEntityPackage = (EntityPackageImpl)(registeredPackage instanceof EntityPackageImpl ? registeredPackage : EntityPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(AuditPackage.eNS_URI);
 		AuditPackageImpl theAuditPackage = (AuditPackageImpl)(registeredPackage instanceof AuditPackageImpl ? registeredPackage : AuditPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(CryptoPackage.eNS_URI);
@@ -4728,20 +4729,6 @@ public class Shipment_PackageImpl extends EPackageImpl implements Shipment_Packa
 	protected void createMimoentformatAnnotations() {
 		String source = "mimo-ent-format";
 		addAnnotation
-		  (getCarrierShipmentBoxType_ShipmentBoxTypeId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getCarrierShipmentBoxType_PartyId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getCarrierShipmentBoxType_OversizeCode(),
 		   source,
 		   new String[] {
@@ -4750,20 +4737,6 @@ public class Shipment_PackageImpl extends EPackageImpl implements Shipment_Packa
 		   });
 		addAnnotation
 		  (getCarrierShipmentBoxType_PackagingTypeCode(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getCarrierShipmentMethod_ShipmentMethodTypeId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getCarrierShipmentMethod_PartyId(),
 		   source,
 		   new String[] {
 			   "type", "id",
@@ -4818,13 +4791,6 @@ public class Shipment_PackageImpl extends EPackageImpl implements Shipment_Packa
 			   "type", "date-time"
 		   });
 		addAnnotation
-		  (getDelivery_DestFacilityId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getDelivery_EndMileage(),
 		   source,
 		   new String[] {
@@ -4845,26 +4811,12 @@ public class Shipment_PackageImpl extends EPackageImpl implements Shipment_Packa
 			   "type", "date-time"
 		   });
 		addAnnotation
-		  (getDelivery_FixedAssetId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getDelivery_FuelUsed(),
 		   source,
 		   new String[] {
 			   "type", "fixed-point",
 			   "precision", "18",
 			   "scale", "6"
-		   });
-		addAnnotation
-		  (getDelivery_OriginFacilityId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
 		   });
 		addAnnotation
 		  (getDelivery_StartMileage(),
@@ -4938,45 +4890,10 @@ public class Shipment_PackageImpl extends EPackageImpl implements Shipment_Packa
 			   "type", "date-time"
 		   });
 		addAnnotation
-		  (getShipment_CurrencyUomId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getShipment_DestinationContactMechId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getShipment_DestinationFacilityId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getShipment_DestinationTelecomNumberId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getShipment_EstimatedArrivalDate(),
 		   source,
 		   new String[] {
 			   "type", "date-time"
-		   });
-		addAnnotation
-		  (getShipment_EstimatedArrivalWorkEffId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
 		   });
 		addAnnotation
 		  (getShipment_EstimatedReadyDate(),
@@ -4997,13 +4914,6 @@ public class Shipment_PackageImpl extends EPackageImpl implements Shipment_Packa
 		   source,
 		   new String[] {
 			   "type", "date-time"
-		   });
-		addAnnotation
-		  (getShipment_EstimatedShipWorkEffId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
 		   });
 		addAnnotation
 		  (getShipment_HandlingInstructions(),
@@ -5030,62 +4940,6 @@ public class Shipment_PackageImpl extends EPackageImpl implements Shipment_Packa
 		   source,
 		   new String[] {
 			   "type", "date-time"
-		   });
-		addAnnotation
-		  (getShipment_OriginContactMechId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getShipment_OriginFacilityId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getShipment_OriginTelecomNumberId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getShipment_PartyIdFrom(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getShipment_PartyIdTo(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getShipment_PicklistBinId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getShipment_PrimaryOrderId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getShipment_PrimaryReturnId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
 		   });
 		addAnnotation
 		  (getShipment_PrimaryShipGroupSeqId(),
@@ -5124,27 +4978,6 @@ public class Shipment_PackageImpl extends EPackageImpl implements Shipment_Packa
 		   });
 		addAnnotation
 		  (getShipment_ShipmentRouteSegments(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getShipment_ShipmentTypeId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getShipment_StatusId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getShipmentAttribute_ShipmentId(),
 		   source,
 		   new String[] {
 			   "type", "id",
@@ -5239,41 +5072,6 @@ public class Shipment_PackageImpl extends EPackageImpl implements Shipment_Packa
 			   "length", "255"
 		   });
 		addAnnotation
-		  (getShipmentBoxType_DimensionUomId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getShipmentBoxType_WeightUomId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getShipmentContactMech_ShipmentId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getShipmentContactMech_ShipmentContactMechTypeId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getShipmentContactMech_ContactMechId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (shipmentContactMechTypeEClass.getEOperations().get(0),
 		   source,
 		   new String[] {
@@ -5332,20 +5130,6 @@ public class Shipment_PackageImpl extends EPackageImpl implements Shipment_Packa
 			   "scale", "2"
 		   });
 		addAnnotation
-		  (getShipmentCostEstimate_GeoIdFrom(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getShipmentCostEstimate_GeoIdTo(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getShipmentCostEstimate_OrderFlatPrice(),
 		   source,
 		   new String[] {
@@ -5386,33 +5170,12 @@ public class Shipment_PackageImpl extends EPackageImpl implements Shipment_Packa
 			   "scale", "6"
 		   });
 		addAnnotation
-		  (getShipmentCostEstimate_PartyId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getShipmentCostEstimate_PriceBreakId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getShipmentCostEstimate_PriceUnitPrice(),
 		   source,
 		   new String[] {
 			   "type", "currency-amount",
 			   "precision", "18",
 			   "scale", "2"
-		   });
-		addAnnotation
-		  (getShipmentCostEstimate_PriceUomId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
 		   });
 		addAnnotation
 		  (getShipmentCostEstimate_ProductFeatureGroupId(),
@@ -5429,40 +5192,12 @@ public class Shipment_PackageImpl extends EPackageImpl implements Shipment_Packa
 			   "length", "20"
 		   });
 		addAnnotation
-		  (getShipmentCostEstimate_ProductStoreShipMethId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getShipmentCostEstimate_QuantityBreakId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getShipmentCostEstimate_QuantityUnitPrice(),
 		   source,
 		   new String[] {
 			   "type", "currency-amount",
 			   "precision", "18",
 			   "scale", "2"
-		   });
-		addAnnotation
-		  (getShipmentCostEstimate_QuantityUomId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getShipmentCostEstimate_RoleTypeId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
 		   });
 		addAnnotation
 		  (getShipmentCostEstimate_ShipmentMethodTypeId(),
@@ -5480,26 +5215,12 @@ public class Shipment_PackageImpl extends EPackageImpl implements Shipment_Packa
 			   "scale", "6"
 		   });
 		addAnnotation
-		  (getShipmentCostEstimate_WeightBreakId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getShipmentCostEstimate_WeightUnitPrice(),
 		   source,
 		   new String[] {
 			   "type", "currency-amount",
 			   "precision", "18",
 			   "scale", "2"
-		   });
-		addAnnotation
-		  (getShipmentCostEstimate_WeightUomId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
 		   });
 		addAnnotation
 		  (shipmentGatewayConfigEClass.getEOperations().get(0),
@@ -5521,13 +5242,6 @@ public class Shipment_PackageImpl extends EPackageImpl implements Shipment_Packa
 		   new String[] {
 			   "type", "description",
 			   "length", "255"
-		   });
-		addAnnotation
-		  (getShipmentGatewayConfig_ShipmentGatewayConfTypeId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
 		   });
 		addAnnotation
 		  (shipmentGatewayConfigTypeEClass.getEOperations().get(0),
@@ -5563,13 +5277,6 @@ public class Shipment_PackageImpl extends EPackageImpl implements Shipment_Packa
 		   new String[] {
 			   "type", "indicator",
 			   "length", "1"
-		   });
-		addAnnotation
-		  (getShipmentGatewayConfigType_ParentTypeId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
 		   });
 		addAnnotation
 		  (getShipmentGatewayDhl_AccessAccountNbr(),
@@ -5930,21 +5637,7 @@ public class Shipment_PackageImpl extends EPackageImpl implements Shipment_Packa
 			   "length", "60"
 		   });
 		addAnnotation
-		  (getShipmentItem_ShipmentId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getShipmentItem_ShipmentItemSeqId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getShipmentItem_ProductId(),
 		   source,
 		   new String[] {
 			   "type", "id",
@@ -5966,20 +5659,6 @@ public class Shipment_PackageImpl extends EPackageImpl implements Shipment_Packa
 			   "length", "255"
 		   });
 		addAnnotation
-		  (getShipmentItemBilling_ShipmentId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getShipmentItemBilling_InvoiceId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getShipmentItemBilling_InvoiceItemSeqId(),
 		   source,
 		   new String[] {
@@ -5988,20 +5667,6 @@ public class Shipment_PackageImpl extends EPackageImpl implements Shipment_Packa
 		   });
 		addAnnotation
 		  (getShipmentItemBilling_ShipmentItemSeqId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getShipmentItemFeature_ShipmentId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getShipmentItemFeature_ProductFeatureId(),
 		   source,
 		   new String[] {
 			   "type", "id",
@@ -6065,13 +5730,6 @@ public class Shipment_PackageImpl extends EPackageImpl implements Shipment_Packa
 			   "scale", "0"
 		   });
 		addAnnotation
-		  (getShipmentPackage_ShipmentId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getShipmentPackage_ShipmentPackageSeqId(),
 		   source,
 		   new String[] {
@@ -6109,13 +5767,6 @@ public class Shipment_PackageImpl extends EPackageImpl implements Shipment_Packa
 			   "type", "date-time"
 		   });
 		addAnnotation
-		  (getShipmentPackage_DimensionUomId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getShipmentPackage_InsuredValue(),
 		   source,
 		   new String[] {
@@ -6124,33 +5775,12 @@ public class Shipment_PackageImpl extends EPackageImpl implements Shipment_Packa
 			   "scale", "2"
 		   });
 		addAnnotation
-		  (getShipmentPackage_ShipmentBoxTypeId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getShipmentPackage_Weight(),
 		   source,
 		   new String[] {
 			   "type", "fixed-point",
 			   "precision", "18",
 			   "scale", "6"
-		   });
-		addAnnotation
-		  (getShipmentPackage_WeightUomId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getShipmentPackageContent_ShipmentId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
 		   });
 		addAnnotation
 		  (getShipmentPackageContent_ShipmentItemSeqId(),
@@ -6175,26 +5805,12 @@ public class Shipment_PackageImpl extends EPackageImpl implements Shipment_Packa
 			   "scale", "6"
 		   });
 		addAnnotation
-		  (getShipmentPackageContent_SubProductId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getShipmentPackageContent_SubProductQuantity(),
 		   source,
 		   new String[] {
 			   "type", "fixed-point",
 			   "precision", "18",
 			   "scale", "6"
-		   });
-		addAnnotation
-		  (getShipmentPackageRouteSeg_ShipmentId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
 		   });
 		addAnnotation
 		  (getShipmentPackageRouteSeg_ShipmentPackageSeqId(),
@@ -6224,13 +5840,6 @@ public class Shipment_PackageImpl extends EPackageImpl implements Shipment_Packa
 			   "type", "currency-amount",
 			   "precision", "18",
 			   "scale", "2"
-		   });
-		addAnnotation
-		  (getShipmentPackageRouteSeg_CurrencyUomId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
 		   });
 		addAnnotation
 		  (getShipmentPackageRouteSeg_InsuredAmount(),
@@ -6303,13 +5912,6 @@ public class Shipment_PackageImpl extends EPackageImpl implements Shipment_Packa
 			   "length", "60"
 		   });
 		addAnnotation
-		  (getShipmentRouteSegment_ShipmentId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getShipmentRouteSegment_ShipmentRouteSegmentId(),
 		   source,
 		   new String[] {
@@ -6369,25 +5971,11 @@ public class Shipment_PackageImpl extends EPackageImpl implements Shipment_Packa
 			   "scale", "6"
 		   });
 		addAnnotation
-		  (getShipmentRouteSegment_BillingWeightUomId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getShipmentRouteSegment_CarrierDeliveryZone(),
 		   source,
 		   new String[] {
 			   "type", "short-varchar",
 			   "length", "60"
-		   });
-		addAnnotation
-		  (getShipmentRouteSegment_CarrierPartyId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
 		   });
 		addAnnotation
 		  (getShipmentRouteSegment_CarrierRestrictionCodes(),
@@ -6401,48 +5989,6 @@ public class Shipment_PackageImpl extends EPackageImpl implements Shipment_Packa
 		   source,
 		   new String[] {
 			   "type", "very-long"
-		   });
-		addAnnotation
-		  (getShipmentRouteSegment_CarrierServiceStatusId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getShipmentRouteSegment_CurrencyUomId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getShipmentRouteSegment_DeliveryId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getShipmentRouteSegment_DestContactMechId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getShipmentRouteSegment_DestFacilityId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getShipmentRouteSegment_DestTelecomNumberId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
 		   });
 		addAnnotation
 		  (getShipmentRouteSegment_EstimatedArrivalDate(),
@@ -6474,34 +6020,6 @@ public class Shipment_PackageImpl extends EPackageImpl implements Shipment_Packa
 		   source,
 		   new String[] {
 			   "type", "date-time"
-		   });
-		addAnnotation
-		  (getShipmentRouteSegment_OriginContactMechId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getShipmentRouteSegment_OriginFacilityId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getShipmentRouteSegment_OriginTelecomNumberId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getShipmentRouteSegment_ShipmentMethodTypeId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
 		   });
 		addAnnotation
 		  (getShipmentRouteSegment_ThirdPartyAccountNumber(),
@@ -6551,45 +6069,10 @@ public class Shipment_PackageImpl extends EPackageImpl implements Shipment_Packa
 			   "type", "byte-array"
 		   });
 		addAnnotation
-		  (getShipmentStatus_StatusId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getShipmentStatus_ShipmentId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getShipmentStatus_ChangeByUserLoginId(),
-		   source,
-		   new String[] {
-			   "type", "id-vlong",
-			   "length", "255"
-		   });
-		addAnnotation
 		  (getShipmentStatus_StatusDate(),
 		   source,
 		   new String[] {
 			   "type", "date-time"
-		   });
-		addAnnotation
-		  (getShipmentTimeEstimate_GeoIdTo(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getShipmentTimeEstimate_GeoIdFrom(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
 		   });
 		addAnnotation
 		  (getShipmentTimeEstimate_FromDate(),
@@ -6625,13 +6108,6 @@ public class Shipment_PackageImpl extends EPackageImpl implements Shipment_Packa
 			   "type", "fixed-point",
 			   "precision", "18",
 			   "scale", "6"
-		   });
-		addAnnotation
-		  (getShipmentTimeEstimate_LeadTimeUomId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
 		   });
 		addAnnotation
 		  (getShipmentTimeEstimate_SequenceNumber(),
@@ -6683,21 +6159,7 @@ public class Shipment_PackageImpl extends EPackageImpl implements Shipment_Packa
 			   "length", "1"
 		   });
 		addAnnotation
-		  (getShipmentType_ParentTypeId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getShipmentType_ShipmentTypeAttrs(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getShipmentTypeAttr_ShipmentTypeId(),
 		   source,
 		   new String[] {
 			   "type", "id",

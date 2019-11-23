@@ -11,7 +11,6 @@ import java.util.Date;
 
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.party.party.Affiliate;
-import org.abchip.mimo.biz.party.party.Party;
 import org.abchip.mimo.biz.party.party.PartyPackage;
 import org.eclipse.emf.ecore.EClass;
 
@@ -23,11 +22,11 @@ import org.eclipse.emf.ecore.EClass;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link org.abchip.mimo.biz.party.party.impl.AffiliateImpl#getPartyId <em>Party Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.party.impl.AffiliateImpl#getAffiliateDescription <em>Affiliate Description</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.party.impl.AffiliateImpl#getAffiliateName <em>Affiliate Name</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.party.impl.AffiliateImpl#getDateTimeApproved <em>Date Time Approved</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.party.impl.AffiliateImpl#getDateTimeCreated <em>Date Time Created</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.party.party.impl.AffiliateImpl#getPartyId <em>Party Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.party.impl.AffiliateImpl#getSitePageViews <em>Site Page Views</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.party.impl.AffiliateImpl#getSiteType <em>Site Type</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.party.impl.AffiliateImpl#getSiteVisitors <em>Site Visitors</em>}</li>
@@ -146,8 +145,8 @@ public class AffiliateImpl extends BizEntityImpl implements Affiliate {
 	 * @generated
 	 */
 	@Override
-	public Party getPartyId() {
-		return (Party)eGet(PartyPackage.Literals.AFFILIATE__PARTY_ID, true);
+	public String getPartyId() {
+		return (String)eGet(PartyPackage.Literals.AFFILIATE__PARTY_ID, true);
 	}
 
 	/**
@@ -156,7 +155,7 @@ public class AffiliateImpl extends BizEntityImpl implements Affiliate {
 	 * @generated
 	 */
 	@Override
-	public void setPartyId(Party newPartyId) {
+	public void setPartyId(String newPartyId) {
 		eSet(PartyPackage.Literals.AFFILIATE__PARTY_ID, newPartyId);
 	}
 

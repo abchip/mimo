@@ -95,7 +95,6 @@ public interface GeoType extends BizEntityType<Geo> {
 	 * @see #setParentTypeId(GeoType)
 	 * @see org.abchip.mimo.biz.common.geo.GeoPackage#getGeoType_ParentTypeId()
 	 * @model keys="geoTypeId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	GeoType getParentTypeId();

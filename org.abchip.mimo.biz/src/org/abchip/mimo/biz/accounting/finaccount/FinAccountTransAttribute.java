@@ -94,7 +94,6 @@ public interface FinAccountTransAttribute extends BizEntity {
 	 * @see org.abchip.mimo.biz.accounting.finaccount.FinaccountPackage#getFinAccountTransAttribute_FinAccountTransId()
 	 * @model keys="finAccountTransId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	FinAccountTrans getFinAccountTransId();

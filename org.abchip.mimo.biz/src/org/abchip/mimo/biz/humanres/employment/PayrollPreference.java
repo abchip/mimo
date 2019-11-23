@@ -110,7 +110,6 @@ public interface PayrollPreference extends BizEntity {
 	 * @see #setDeductionTypeId(DeductionType)
 	 * @see org.abchip.mimo.biz.humanres.employment.EmploymentPackage#getPayrollPreference_DeductionTypeId()
 	 * @model keys="deductionTypeId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	DeductionType getDeductionTypeId();
@@ -190,7 +189,6 @@ public interface PayrollPreference extends BizEntity {
 	 * @see org.abchip.mimo.biz.humanres.employment.EmploymentPackage#getPayrollPreference_PartyId()
 	 * @model keys="partyId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Party getPartyId();
@@ -217,7 +215,6 @@ public interface PayrollPreference extends BizEntity {
 	 * @see #setPaymentMethodTypeId(PaymentMethodType)
 	 * @see org.abchip.mimo.biz.humanres.employment.EmploymentPackage#getPayrollPreference_PaymentMethodTypeId()
 	 * @model keys="paymentMethodTypeId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	PaymentMethodType getPaymentMethodTypeId();
@@ -298,7 +295,6 @@ public interface PayrollPreference extends BizEntity {
 	 * @see #setPeriodTypeId(PeriodType)
 	 * @see org.abchip.mimo.biz.humanres.employment.EmploymentPackage#getPayrollPreference_PeriodTypeId()
 	 * @model keys="periodTypeId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	PeriodType getPeriodTypeId();

@@ -951,20 +951,6 @@ public class ShoppingcartPackageImpl extends EPackageImpl implements Shoppingcar
 			   "length", "20"
 		   });
 		addAnnotation
-		  (getCartAbandonedLine_ProdCatalogId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getCartAbandonedLine_ProductId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getCartAbandonedLine_Quantity(),
 		   source,
 		   new String[] {

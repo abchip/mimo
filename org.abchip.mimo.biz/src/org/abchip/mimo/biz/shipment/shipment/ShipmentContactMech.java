@@ -41,7 +41,6 @@ public interface ShipmentContactMech extends BizEntityTyped<ShipmentContactMechT
 	 * @see #setContactMechId(ContactMech)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipmentContactMech_ContactMechId()
 	 * @model keys="contactMechId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ContactMech getContactMechId();
@@ -69,7 +68,6 @@ public interface ShipmentContactMech extends BizEntityTyped<ShipmentContactMechT
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipmentContactMech_ShipmentContactMechTypeId()
 	 * @model keys="shipmentContactMechTypeId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ShipmentContactMechType getShipmentContactMechTypeId();
@@ -97,7 +95,6 @@ public interface ShipmentContactMech extends BizEntityTyped<ShipmentContactMechT
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipmentContactMech_ShipmentId()
 	 * @model keys="shipmentId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Shipment getShipmentId();

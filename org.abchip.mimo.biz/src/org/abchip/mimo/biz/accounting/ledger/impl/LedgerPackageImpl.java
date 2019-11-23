@@ -104,6 +104,7 @@ import org.abchip.mimo.biz.content.survey.SurveyPackage;
 import org.abchip.mimo.biz.content.survey.impl.SurveyPackageImpl;
 import org.abchip.mimo.biz.content.website.WebsitePackage;
 import org.abchip.mimo.biz.content.website.impl.WebsitePackageImpl;
+import org.abchip.mimo.biz.entity.EntityPackage;
 import org.abchip.mimo.biz.entity.audit.AuditPackage;
 import org.abchip.mimo.biz.entity.audit.impl.AuditPackageImpl;
 import org.abchip.mimo.biz.entity.crypto.CryptoPackage;
@@ -581,8 +582,8 @@ public class LedgerPackageImpl extends EPackageImpl implements LedgerPackage {
 		SurveyPackageImpl theSurveyPackage = (SurveyPackageImpl)(registeredPackage instanceof SurveyPackageImpl ? registeredPackage : SurveyPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(WebsitePackage.eNS_URI);
 		WebsitePackageImpl theWebsitePackage = (WebsitePackageImpl)(registeredPackage instanceof WebsitePackageImpl ? registeredPackage : WebsitePackage.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(org.abchip.mimo.biz.entity.EntityPackage.eNS_URI);
-		EntityPackageImpl theEntityPackage = (EntityPackageImpl)(registeredPackage instanceof EntityPackageImpl ? registeredPackage : org.abchip.mimo.biz.entity.EntityPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(EntityPackage.eNS_URI);
+		EntityPackageImpl theEntityPackage = (EntityPackageImpl)(registeredPackage instanceof EntityPackageImpl ? registeredPackage : EntityPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(AuditPackage.eNS_URI);
 		AuditPackageImpl theAuditPackage = (AuditPackageImpl)(registeredPackage instanceof AuditPackageImpl ? registeredPackage : AuditPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(CryptoPackage.eNS_URI);
@@ -2828,8 +2829,8 @@ public class LedgerPackageImpl extends EPackageImpl implements LedgerPackage {
 	 * @generated
 	 */
 	@Override
-	public EReference getPartyAcctgPreference_PartyId() {
-		return (EReference)partyAcctgPreferenceEClass.getEStructuralFeatures().get(17);
+	public EAttribute getPartyAcctgPreference_PartyId() {
+		return (EAttribute)partyAcctgPreferenceEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -2839,16 +2840,6 @@ public class LedgerPackageImpl extends EPackageImpl implements LedgerPackage {
 	 */
 	@Override
 	public EReference getPartyAcctgPreference_BaseCurrencyUomId() {
-		return (EReference)partyAcctgPreferenceEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getPartyAcctgPreference_CogsMethodId() {
 		return (EReference)partyAcctgPreferenceEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -2858,8 +2849,18 @@ public class LedgerPackageImpl extends EPackageImpl implements LedgerPackage {
 	 * @generated
 	 */
 	@Override
+	public EReference getPartyAcctgPreference_CogsMethodId() {
+		return (EReference)partyAcctgPreferenceEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EAttribute getPartyAcctgPreference_EnableAccounting() {
-		return (EAttribute)partyAcctgPreferenceEClass.getEStructuralFeatures().get(2);
+		return (EAttribute)partyAcctgPreferenceEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -2869,7 +2870,7 @@ public class LedgerPackageImpl extends EPackageImpl implements LedgerPackage {
 	 */
 	@Override
 	public EReference getPartyAcctgPreference_ErrorGlJournalId() {
-		return (EReference)partyAcctgPreferenceEClass.getEStructuralFeatures().get(3);
+		return (EReference)partyAcctgPreferenceEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -2879,16 +2880,6 @@ public class LedgerPackageImpl extends EPackageImpl implements LedgerPackage {
 	 */
 	@Override
 	public EAttribute getPartyAcctgPreference_FiscalYearStartDay() {
-		return (EAttribute)partyAcctgPreferenceEClass.getEStructuralFeatures().get(4);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EAttribute getPartyAcctgPreference_FiscalYearStartMonth() {
 		return (EAttribute)partyAcctgPreferenceEClass.getEStructuralFeatures().get(5);
 	}
 
@@ -2898,7 +2889,7 @@ public class LedgerPackageImpl extends EPackageImpl implements LedgerPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getPartyAcctgPreference_InvoiceIdPrefix() {
+	public EAttribute getPartyAcctgPreference_FiscalYearStartMonth() {
 		return (EAttribute)partyAcctgPreferenceEClass.getEStructuralFeatures().get(6);
 	}
 
@@ -2908,8 +2899,18 @@ public class LedgerPackageImpl extends EPackageImpl implements LedgerPackage {
 	 * @generated
 	 */
 	@Override
+	public EAttribute getPartyAcctgPreference_InvoiceIdPrefix() {
+		return (EAttribute)partyAcctgPreferenceEClass.getEStructuralFeatures().get(7);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EReference getPartyAcctgPreference_InvoiceSeqCustMethId() {
-		return (EReference)partyAcctgPreferenceEClass.getEStructuralFeatures().get(7);
+		return (EReference)partyAcctgPreferenceEClass.getEStructuralFeatures().get(8);
 	}
 
 	/**
@@ -2919,16 +2920,6 @@ public class LedgerPackageImpl extends EPackageImpl implements LedgerPackage {
 	 */
 	@Override
 	public EAttribute getPartyAcctgPreference_LastInvoiceNumber() {
-		return (EAttribute)partyAcctgPreferenceEClass.getEStructuralFeatures().get(8);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EAttribute getPartyAcctgPreference_LastInvoiceRestartDate() {
 		return (EAttribute)partyAcctgPreferenceEClass.getEStructuralFeatures().get(9);
 	}
 
@@ -2938,7 +2929,7 @@ public class LedgerPackageImpl extends EPackageImpl implements LedgerPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getPartyAcctgPreference_LastOrderNumber() {
+	public EAttribute getPartyAcctgPreference_LastInvoiceRestartDate() {
 		return (EAttribute)partyAcctgPreferenceEClass.getEStructuralFeatures().get(10);
 	}
 
@@ -2948,7 +2939,7 @@ public class LedgerPackageImpl extends EPackageImpl implements LedgerPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getPartyAcctgPreference_LastQuoteNumber() {
+	public EAttribute getPartyAcctgPreference_LastOrderNumber() {
 		return (EAttribute)partyAcctgPreferenceEClass.getEStructuralFeatures().get(11);
 	}
 
@@ -2958,8 +2949,8 @@ public class LedgerPackageImpl extends EPackageImpl implements LedgerPackage {
 	 * @generated
 	 */
 	@Override
-	public EReference getPartyAcctgPreference_OldInvoiceSequenceEnumId() {
-		return (EReference)partyAcctgPreferenceEClass.getEStructuralFeatures().get(12);
+	public EAttribute getPartyAcctgPreference_LastQuoteNumber() {
+		return (EAttribute)partyAcctgPreferenceEClass.getEStructuralFeatures().get(12);
 	}
 
 	/**
@@ -2968,7 +2959,7 @@ public class LedgerPackageImpl extends EPackageImpl implements LedgerPackage {
 	 * @generated
 	 */
 	@Override
-	public EReference getPartyAcctgPreference_OldOrderSequenceEnumId() {
+	public EReference getPartyAcctgPreference_OldInvoiceSequenceEnumId() {
 		return (EReference)partyAcctgPreferenceEClass.getEStructuralFeatures().get(13);
 	}
 
@@ -2978,7 +2969,7 @@ public class LedgerPackageImpl extends EPackageImpl implements LedgerPackage {
 	 * @generated
 	 */
 	@Override
-	public EReference getPartyAcctgPreference_OldQuoteSequenceEnumId() {
+	public EReference getPartyAcctgPreference_OldOrderSequenceEnumId() {
 		return (EReference)partyAcctgPreferenceEClass.getEStructuralFeatures().get(14);
 	}
 
@@ -2988,8 +2979,18 @@ public class LedgerPackageImpl extends EPackageImpl implements LedgerPackage {
 	 * @generated
 	 */
 	@Override
+	public EReference getPartyAcctgPreference_OldQuoteSequenceEnumId() {
+		return (EReference)partyAcctgPreferenceEClass.getEStructuralFeatures().get(15);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EAttribute getPartyAcctgPreference_OrderIdPrefix() {
-		return (EAttribute)partyAcctgPreferenceEClass.getEStructuralFeatures().get(15);
+		return (EAttribute)partyAcctgPreferenceEClass.getEStructuralFeatures().get(16);
 	}
 
 	/**
@@ -2999,7 +3000,7 @@ public class LedgerPackageImpl extends EPackageImpl implements LedgerPackage {
 	 */
 	@Override
 	public EReference getPartyAcctgPreference_OrderSeqCustMethId() {
-		return (EReference)partyAcctgPreferenceEClass.getEStructuralFeatures().get(16);
+		return (EReference)partyAcctgPreferenceEClass.getEStructuralFeatures().get(17);
 	}
 
 	/**
@@ -3669,6 +3670,7 @@ public class LedgerPackageImpl extends EPackageImpl implements LedgerPackage {
 		createEAttribute(glXbrlClassEClass, GL_XBRL_CLASS__DESCRIPTION);
 
 		partyAcctgPreferenceEClass = createEClass(PARTY_ACCTG_PREFERENCE);
+		createEAttribute(partyAcctgPreferenceEClass, PARTY_ACCTG_PREFERENCE__PARTY_ID);
 		createEReference(partyAcctgPreferenceEClass, PARTY_ACCTG_PREFERENCE__BASE_CURRENCY_UOM_ID);
 		createEReference(partyAcctgPreferenceEClass, PARTY_ACCTG_PREFERENCE__COGS_METHOD_ID);
 		createEAttribute(partyAcctgPreferenceEClass, PARTY_ACCTG_PREFERENCE__ENABLE_ACCOUNTING);
@@ -3686,7 +3688,6 @@ public class LedgerPackageImpl extends EPackageImpl implements LedgerPackage {
 		createEReference(partyAcctgPreferenceEClass, PARTY_ACCTG_PREFERENCE__OLD_QUOTE_SEQUENCE_ENUM_ID);
 		createEAttribute(partyAcctgPreferenceEClass, PARTY_ACCTG_PREFERENCE__ORDER_ID_PREFIX);
 		createEReference(partyAcctgPreferenceEClass, PARTY_ACCTG_PREFERENCE__ORDER_SEQ_CUST_METH_ID);
-		createEReference(partyAcctgPreferenceEClass, PARTY_ACCTG_PREFERENCE__PARTY_ID);
 		createEAttribute(partyAcctgPreferenceEClass, PARTY_ACCTG_PREFERENCE__QUOTE_ID_PREFIX);
 		createEReference(partyAcctgPreferenceEClass, PARTY_ACCTG_PREFERENCE__QUOTE_SEQ_CUST_METH_ID);
 		createEReference(partyAcctgPreferenceEClass, PARTY_ACCTG_PREFERENCE__REFUND_PAYMENT_METHOD_ID);
@@ -4222,6 +4223,7 @@ public class LedgerPackageImpl extends EPackageImpl implements LedgerPackage {
 		addEOperation(glXbrlClassEClass, ecorePackage.getEString(), "glAccounts", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(partyAcctgPreferenceEClass, PartyAcctgPreference.class, "PartyAcctgPreference", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getPartyAcctgPreference_PartyId(), ecorePackage.getEString(), "partyId", null, 1, 1, PartyAcctgPreference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getPartyAcctgPreference_BaseCurrencyUomId(), theUomPackage.getUom(), null, "baseCurrencyUomId", null, 0, 1, PartyAcctgPreference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getPartyAcctgPreference_BaseCurrencyUomId().getEKeys().add(theUomPackage.getUom_UomId());
 		initEReference(getPartyAcctgPreference_CogsMethodId(), theEnumPackage.getEnumeration(), null, "cogsMethodId", null, 0, 1, PartyAcctgPreference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -4247,8 +4249,6 @@ public class LedgerPackageImpl extends EPackageImpl implements LedgerPackage {
 		initEAttribute(getPartyAcctgPreference_OrderIdPrefix(), ecorePackage.getEString(), "orderIdPrefix", null, 0, 1, PartyAcctgPreference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getPartyAcctgPreference_OrderSeqCustMethId(), theMethodPackage.getCustomMethod(), null, "orderSeqCustMethId", null, 0, 1, PartyAcctgPreference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getPartyAcctgPreference_OrderSeqCustMethId().getEKeys().add(theMethodPackage.getCustomMethod_CustomMethodId());
-		initEReference(getPartyAcctgPreference_PartyId(), thePartyPackage.getParty(), null, "partyId", null, 1, 1, PartyAcctgPreference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		getPartyAcctgPreference_PartyId().getEKeys().add(thePartyPackage.getParty_PartyId());
 		initEAttribute(getPartyAcctgPreference_QuoteIdPrefix(), ecorePackage.getEString(), "quoteIdPrefix", null, 0, 1, PartyAcctgPreference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getPartyAcctgPreference_QuoteSeqCustMethId(), theMethodPackage.getCustomMethod(), null, "quoteSeqCustMethId", null, 0, 1, PartyAcctgPreference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getPartyAcctgPreference_QuoteSeqCustMethId().getEKeys().add(theMethodPackage.getCustomMethod_CustomMethodId());
@@ -4566,13 +4566,6 @@ public class LedgerPackageImpl extends EPackageImpl implements LedgerPackage {
 			   "length", "20"
 		   });
 		addAnnotation
-		  (getAcctgTrans_AcctgTransTypeId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getAcctgTrans_CreatedByUserLogin(),
 		   source,
 		   new String[] {
@@ -4591,55 +4584,6 @@ public class LedgerPackageImpl extends EPackageImpl implements LedgerPackage {
 		   new String[] {
 			   "type", "description",
 			   "length", "255"
-		   });
-		addAnnotation
-		  (getAcctgTrans_FinAccountTransId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getAcctgTrans_FixedAssetId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getAcctgTrans_GlFiscalTypeId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getAcctgTrans_GlJournalId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getAcctgTrans_GroupStatusId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getAcctgTrans_InventoryItemId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getAcctgTrans_InvoiceId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
 		   });
 		addAnnotation
 		  (getAcctgTrans_IsPosted(),
@@ -4662,58 +4606,16 @@ public class LedgerPackageImpl extends EPackageImpl implements LedgerPackage {
 			   "type", "date-time"
 		   });
 		addAnnotation
-		  (getAcctgTrans_PartyId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getAcctgTrans_PaymentId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getAcctgTrans_PhysicalInventoryId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getAcctgTrans_PostedDate(),
 		   source,
 		   new String[] {
 			   "type", "date-time"
 		   });
 		addAnnotation
-		  (getAcctgTrans_ReceiptId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getAcctgTrans_RoleTypeId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getAcctgTrans_ScheduledPostingDate(),
 		   source,
 		   new String[] {
 			   "type", "date-time"
-		   });
-		addAnnotation
-		  (getAcctgTrans_ShipmentId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
 		   });
 		addAnnotation
 		  (getAcctgTrans_TheirAcctgTransId(),
@@ -4742,20 +4644,6 @@ public class LedgerPackageImpl extends EPackageImpl implements LedgerPackage {
 			   "length", "60"
 		   });
 		addAnnotation
-		  (getAcctgTrans_WorkEffortId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getAcctgTransAttribute_AcctgTransId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getAcctgTransAttribute_AttrName(),
 		   source,
 		   new String[] {
@@ -4777,21 +4665,7 @@ public class LedgerPackageImpl extends EPackageImpl implements LedgerPackage {
 			   "length", "255"
 		   });
 		addAnnotation
-		  (getAcctgTransEntry_AcctgTransId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getAcctgTransEntry_AcctgTransEntrySeqId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getAcctgTransEntry_AcctgTransEntryTypeId(),
 		   source,
 		   new String[] {
 			   "type", "id",
@@ -4804,13 +4678,6 @@ public class LedgerPackageImpl extends EPackageImpl implements LedgerPackage {
 			   "type", "currency-amount",
 			   "precision", "18",
 			   "scale", "2"
-		   });
-		addAnnotation
-		  (getAcctgTransEntry_CurrencyUomId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
 		   });
 		addAnnotation
 		  (getAcctgTransEntry_DebitCreditFlag(),
@@ -4833,28 +4700,7 @@ public class LedgerPackageImpl extends EPackageImpl implements LedgerPackage {
 			   "type", "date"
 		   });
 		addAnnotation
-		  (getAcctgTransEntry_GlAccountId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getAcctgTransEntry_GlAccountTypeId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getAcctgTransEntry_GroupId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getAcctgTransEntry_InventoryItemId(),
 		   source,
 		   new String[] {
 			   "type", "id",
@@ -4883,42 +4729,7 @@ public class LedgerPackageImpl extends EPackageImpl implements LedgerPackage {
 			   "scale", "2"
 		   });
 		addAnnotation
-		  (getAcctgTransEntry_OrigCurrencyUomId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getAcctgTransEntry_PartyId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getAcctgTransEntry_ProductId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getAcctgTransEntry_ReconcileStatusId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getAcctgTransEntry_RoleTypeId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getAcctgTransEntry_SettlementTermId(),
 		   source,
 		   new String[] {
 			   "type", "id",
@@ -4988,13 +4799,6 @@ public class LedgerPackageImpl extends EPackageImpl implements LedgerPackage {
 			   "length", "1"
 		   });
 		addAnnotation
-		  (getAcctgTransEntryType_ParentTypeId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (acctgTransTypeEClass.getEOperations().get(0),
 		   source,
 		   new String[] {
@@ -5035,20 +4839,6 @@ public class LedgerPackageImpl extends EPackageImpl implements LedgerPackage {
 		   new String[] {
 			   "type", "indicator",
 			   "length", "1"
-		   });
-		addAnnotation
-		  (getAcctgTransType_ParentTypeId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getAcctgTransTypeAttr_AcctgTransTypeId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
 		   });
 		addAnnotation
 		  (getAcctgTransTypeAttr_AttrName(),
@@ -5233,13 +5023,6 @@ public class LedgerPackageImpl extends EPackageImpl implements LedgerPackage {
 			   "length", "20"
 		   });
 		addAnnotation
-		  (getGlAccount_GlAccountClassId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getGlAccount_GlAccountGroupMembers(),
 		   source,
 		   new String[] {
@@ -5248,34 +5031,6 @@ public class LedgerPackageImpl extends EPackageImpl implements LedgerPackage {
 		   });
 		addAnnotation
 		  (getGlAccount_GlAccountOrganizations(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getGlAccount_GlAccountTypeId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getGlAccount_GlResourceTypeId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getGlAccount_GlXbrlClassId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getGlAccount_ParentGlAccountId(),
 		   source,
 		   new String[] {
 			   "type", "id",
@@ -5301,27 +5056,6 @@ public class LedgerPackageImpl extends EPackageImpl implements LedgerPackage {
 		   new String[] {
 			   "type", "description",
 			   "length", "255"
-		   });
-		addAnnotation
-		  (getGlAccountCategory_GlAccountCategoryTypeId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getGlAccountCategoryMember_GlAccountId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getGlAccountCategoryMember_GlAccountCategoryId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
 		   });
 		addAnnotation
 		  (getGlAccountCategoryMember_FromDate(),
@@ -5400,13 +5134,6 @@ public class LedgerPackageImpl extends EPackageImpl implements LedgerPackage {
 			   "length", "1"
 		   });
 		addAnnotation
-		  (getGlAccountClass_ParentClassId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getGlAccountClass_SequenceNum(),
 		   source,
 		   new String[] {
@@ -5436,34 +5163,6 @@ public class LedgerPackageImpl extends EPackageImpl implements LedgerPackage {
 			   "length", "255"
 		   });
 		addAnnotation
-		  (getGlAccountGroup_GlAccountGroupTypeId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getGlAccountGroupMember_GlAccountId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getGlAccountGroupMember_GlAccountGroupTypeId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getGlAccountGroupMember_GlAccountGroupId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (glAccountGroupTypeEClass.getEOperations().get(0),
 		   source,
 		   new String[] {
@@ -5490,27 +5189,6 @@ public class LedgerPackageImpl extends EPackageImpl implements LedgerPackage {
 		   new String[] {
 			   "type", "description",
 			   "length", "255"
-		   });
-		addAnnotation
-		  (getGlAccountHistory_GlAccountId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getGlAccountHistory_OrganizationPartyId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getGlAccountHistory_CustomTimePeriodId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
 		   });
 		addAnnotation
 		  (getGlAccountHistory_EndingBalance(),
@@ -5545,58 +5223,16 @@ public class LedgerPackageImpl extends EPackageImpl implements LedgerPackage {
 			   "scale", "2"
 		   });
 		addAnnotation
-		  (getGlAccountOrganization_GlAccountId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getGlAccountOrganization_OrganizationPartyId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getGlAccountOrganization_FromDate(),
 		   source,
 		   new String[] {
 			   "type", "date-time"
 		   });
 		addAnnotation
-		  (getGlAccountOrganization_RoleTypeId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getGlAccountOrganization_ThruDate(),
 		   source,
 		   new String[] {
 			   "type", "date-time"
-		   });
-		addAnnotation
-		  (getGlAccountRole_GlAccountId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getGlAccountRole_PartyId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getGlAccountRole_RoleTypeId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
 		   });
 		addAnnotation
 		  (getGlAccountRole_FromDate(),
@@ -5681,48 +5317,6 @@ public class LedgerPackageImpl extends EPackageImpl implements LedgerPackage {
 			   "length", "1"
 		   });
 		addAnnotation
-		  (getGlAccountType_ParentTypeId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getGlAccountTypeDefault_GlAccountTypeId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getGlAccountTypeDefault_OrganizationPartyId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getGlAccountTypeDefault_GlAccountId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getGlBudgetXref_GlAccountId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getGlBudgetXref_BudgetItemTypeId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getGlBudgetXref_FromDate(),
 		   source,
 		   new String[] {
@@ -5799,13 +5393,6 @@ public class LedgerPackageImpl extends EPackageImpl implements LedgerPackage {
 			   "length", "1"
 		   });
 		addAnnotation
-		  (getGlJournal_OrganizationPartyId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getGlJournal_PostedDate(),
 		   source,
 		   new String[] {
@@ -5846,13 +5433,6 @@ public class LedgerPackageImpl extends EPackageImpl implements LedgerPackage {
 			   "length", "255"
 		   });
 		addAnnotation
-		  (getGlReconciliation_GlAccountId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getGlReconciliation_GlReconciliationName(),
 		   source,
 		   new String[] {
@@ -5881,13 +5461,6 @@ public class LedgerPackageImpl extends EPackageImpl implements LedgerPackage {
 			   "scale", "2"
 		   });
 		addAnnotation
-		  (getGlReconciliation_OrganizationPartyId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getGlReconciliation_ReconciledBalance(),
 		   source,
 		   new String[] {
@@ -5900,27 +5473,6 @@ public class LedgerPackageImpl extends EPackageImpl implements LedgerPackage {
 		   source,
 		   new String[] {
 			   "type", "date-time"
-		   });
-		addAnnotation
-		  (getGlReconciliation_StatusId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getGlReconciliationEntry_GlReconciliationId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getGlReconciliationEntry_AcctgTransId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
 		   });
 		addAnnotation
 		  (getGlReconciliationEntry_AcctgTransEntrySeqId(),
@@ -5987,14 +5539,7 @@ public class LedgerPackageImpl extends EPackageImpl implements LedgerPackage {
 			   "length", "20"
 		   });
 		addAnnotation
-		  (getPartyAcctgPreference_BaseCurrencyUomId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getPartyAcctgPreference_CogsMethodId(),
+		  (getPartyAcctgPreference_PartyId(),
 		   source,
 		   new String[] {
 			   "type", "id",
@@ -6006,13 +5551,6 @@ public class LedgerPackageImpl extends EPackageImpl implements LedgerPackage {
 		   new String[] {
 			   "type", "indicator",
 			   "length", "1"
-		   });
-		addAnnotation
-		  (getPartyAcctgPreference_ErrorGlJournalId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
 		   });
 		addAnnotation
 		  (getPartyAcctgPreference_FiscalYearStartDay(),
@@ -6036,13 +5574,6 @@ public class LedgerPackageImpl extends EPackageImpl implements LedgerPackage {
 		   new String[] {
 			   "type", "very-short",
 			   "length", "10"
-		   });
-		addAnnotation
-		  (getPartyAcctgPreference_InvoiceSeqCustMethId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
 		   });
 		addAnnotation
 		  (getPartyAcctgPreference_LastInvoiceNumber(),
@@ -6075,46 +5606,11 @@ public class LedgerPackageImpl extends EPackageImpl implements LedgerPackage {
 			   "scale", "0"
 		   });
 		addAnnotation
-		  (getPartyAcctgPreference_OldInvoiceSequenceEnumId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getPartyAcctgPreference_OldOrderSequenceEnumId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getPartyAcctgPreference_OldQuoteSequenceEnumId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getPartyAcctgPreference_OrderIdPrefix(),
 		   source,
 		   new String[] {
 			   "type", "very-short",
 			   "length", "10"
-		   });
-		addAnnotation
-		  (getPartyAcctgPreference_OrderSeqCustMethId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getPartyAcctgPreference_PartyId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
 		   });
 		addAnnotation
 		  (getPartyAcctgPreference_QuoteIdPrefix(),
@@ -6124,67 +5620,11 @@ public class LedgerPackageImpl extends EPackageImpl implements LedgerPackage {
 			   "length", "10"
 		   });
 		addAnnotation
-		  (getPartyAcctgPreference_QuoteSeqCustMethId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getPartyAcctgPreference_RefundPaymentMethodId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getPartyAcctgPreference_TaxFormId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getPartyAcctgPreference_UseInvoiceIdForReturns(),
 		   source,
 		   new String[] {
 			   "type", "indicator",
 			   "length", "1"
-		   });
-		addAnnotation
-		  (getPartyGlAccount_OrganizationPartyId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getPartyGlAccount_PartyId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getPartyGlAccount_RoleTypeId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getPartyGlAccount_GlAccountTypeId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getPartyGlAccount_GlAccountId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
 		   });
 		addAnnotation
 		  (getPartyPrefDocTypeTpl_PartyPrefDocTypeTplId(),
@@ -6207,66 +5647,10 @@ public class LedgerPackageImpl extends EPackageImpl implements LedgerPackage {
 			   "type", "date-time"
 		   });
 		addAnnotation
-		  (getPartyPrefDocTypeTpl_InvoiceTypeId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getPartyPrefDocTypeTpl_OrderTypeId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getPartyPrefDocTypeTpl_PartyId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getPartyPrefDocTypeTpl_QuoteTypeId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getPartyPrefDocTypeTpl_ThruDate(),
 		   source,
 		   new String[] {
 			   "type", "date-time"
-		   });
-		addAnnotation
-		  (getProductAverageCost_ProductAverageCostTypeId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getProductAverageCost_OrganizationPartyId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getProductAverageCost_ProductId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getProductAverageCost_FacilityId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
 		   });
 		addAnnotation
 		  (getProductAverageCost_FromDate(),
@@ -6317,13 +5701,6 @@ public class LedgerPackageImpl extends EPackageImpl implements LedgerPackage {
 			   "length", "1"
 		   });
 		addAnnotation
-		  (getProductAverageCostType_ParentTypeId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (settlementTermEClass.getEOperations().get(0),
 		   source,
 		   new String[] {
@@ -6354,27 +5731,6 @@ public class LedgerPackageImpl extends EPackageImpl implements LedgerPackage {
 		   });
 		addAnnotation
 		  (getSettlementTerm_UomId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getVarianceReasonGlAccount_VarianceReasonId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getVarianceReasonGlAccount_OrganizationPartyId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getVarianceReasonGlAccount_GlAccountId(),
 		   source,
 		   new String[] {
 			   "type", "id",

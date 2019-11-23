@@ -96,7 +96,6 @@ public interface InventoryItemType extends BizEntityType<InventoryItem> {
 	 * @see #setParentTypeId(InventoryItemType)
 	 * @see org.abchip.mimo.biz.product.inventory.InventoryPackage#getInventoryItemType_ParentTypeId()
 	 * @model keys="inventoryItemTypeId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	InventoryItemType getParentTypeId();

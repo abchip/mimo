@@ -99,7 +99,6 @@ public interface PartyDataSource extends BizEntity {
 	 * @see org.abchip.mimo.biz.party.party.PartyPackage#getPartyDataSource_DataSourceId()
 	 * @model keys="dataSourceId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	DataSource getDataSourceId();
@@ -181,7 +180,6 @@ public interface PartyDataSource extends BizEntity {
 	 * @see org.abchip.mimo.biz.party.party.PartyPackage#getPartyDataSource_PartyId()
 	 * @model keys="partyId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Party getPartyId();

@@ -95,7 +95,6 @@ public interface ResponsibilityType extends BizEntity {
 	 * @see #setParentTypeId(ResponsibilityType)
 	 * @see org.abchip.mimo.biz.humanres.ability.AbilityPackage#getResponsibilityType_ParentTypeId()
 	 * @model keys="responsibilityTypeId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ResponsibilityType getParentTypeId();

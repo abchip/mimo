@@ -44,7 +44,6 @@ public interface ProductCategoryGlAccount extends BizEntity {
 	 * @see #setGlAccountId(GlAccount)
 	 * @see org.abchip.mimo.biz.product.category.CategoryPackage#getProductCategoryGlAccount_GlAccountId()
 	 * @model keys="glAccountId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	GlAccount getGlAccountId();
@@ -72,7 +71,6 @@ public interface ProductCategoryGlAccount extends BizEntity {
 	 * @see org.abchip.mimo.biz.product.category.CategoryPackage#getProductCategoryGlAccount_GlAccountTypeId()
 	 * @model keys="glAccountTypeId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	GlAccountType getGlAccountTypeId();
@@ -100,7 +98,6 @@ public interface ProductCategoryGlAccount extends BizEntity {
 	 * @see org.abchip.mimo.biz.product.category.CategoryPackage#getProductCategoryGlAccount_OrganizationPartyId()
 	 * @model keys="partyId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Party getOrganizationPartyId();
@@ -128,7 +125,6 @@ public interface ProductCategoryGlAccount extends BizEntity {
 	 * @see org.abchip.mimo.biz.product.category.CategoryPackage#getProductCategoryGlAccount_ProductCategoryId()
 	 * @model keys="productCategoryId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ProductCategory getProductCategoryId();

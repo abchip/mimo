@@ -182,7 +182,6 @@ public interface SalaryStep extends BizEntity {
 	 * @see org.abchip.mimo.biz.humanres.employment.EmploymentPackage#getSalaryStep_PayGradeId()
 	 * @model keys="payGradeId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	PayGrade getPayGradeId();

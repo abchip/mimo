@@ -96,7 +96,6 @@ public interface BudgetScenarioRule extends BizEntity {
 	 * @see org.abchip.mimo.biz.accounting.budget.BudgetPackage#getBudgetScenarioRule_BudgetScenarioId()
 	 * @model keys="budgetScenarioId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	BudgetScenario getBudgetScenarioId();
@@ -124,7 +123,6 @@ public interface BudgetScenarioRule extends BizEntity {
 	 * @see org.abchip.mimo.biz.accounting.budget.BudgetPackage#getBudgetScenarioRule_BudgetItemTypeId()
 	 * @model keys="budgetItemTypeId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	BudgetItemType getBudgetItemTypeId();

@@ -236,7 +236,6 @@ public interface NoteData extends BizEntity {
 	 * @see #setNoteParty(Party)
 	 * @see org.abchip.mimo.biz.common.note.NotePackage#getNoteData_NoteParty()
 	 * @model keys="partyId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Party getNoteParty();

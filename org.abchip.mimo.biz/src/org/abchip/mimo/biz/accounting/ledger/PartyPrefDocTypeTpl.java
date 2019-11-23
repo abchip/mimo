@@ -103,7 +103,6 @@ public interface PartyPrefDocTypeTpl extends BizEntity {
 	 * @see #setInvoiceTypeId(InvoiceType)
 	 * @see org.abchip.mimo.biz.accounting.ledger.LedgerPackage#getPartyPrefDocTypeTpl_InvoiceTypeId()
 	 * @model keys="invoiceTypeId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	InvoiceType getInvoiceTypeId();
@@ -130,7 +129,6 @@ public interface PartyPrefDocTypeTpl extends BizEntity {
 	 * @see #setOrderTypeId(OrderType)
 	 * @see org.abchip.mimo.biz.accounting.ledger.LedgerPackage#getPartyPrefDocTypeTpl_OrderTypeId()
 	 * @model keys="orderTypeId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	OrderType getOrderTypeId();
@@ -157,7 +155,6 @@ public interface PartyPrefDocTypeTpl extends BizEntity {
 	 * @see #setPartyId(Party)
 	 * @see org.abchip.mimo.biz.accounting.ledger.LedgerPackage#getPartyPrefDocTypeTpl_PartyId()
 	 * @model keys="partyId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Party getPartyId();
@@ -211,7 +208,6 @@ public interface PartyPrefDocTypeTpl extends BizEntity {
 	 * @see #setQuoteTypeId(QuoteType)
 	 * @see org.abchip.mimo.biz.accounting.ledger.LedgerPackage#getPartyPrefDocTypeTpl_QuoteTypeId()
 	 * @model keys="quoteTypeId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	QuoteType getQuoteTypeId();

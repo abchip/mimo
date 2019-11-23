@@ -122,7 +122,6 @@ public interface RequirementAttribute extends BizEntity {
 	 * @see org.abchip.mimo.biz.order.requirement.RequirementPackage#getRequirementAttribute_RequirementId()
 	 * @model keys="requirementId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Requirement getRequirementId();

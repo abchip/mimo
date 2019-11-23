@@ -64,7 +64,6 @@ public interface Party extends BizEntityTyped<PartyType> {
 	 * @see #setCreatedByUserLogin(UserLogin)
 	 * @see org.abchip.mimo.biz.party.party.PartyPackage#getParty_CreatedByUserLogin()
 	 * @model keys="userLoginId"
-	 *        annotation="mimo-ent-format type='id-vlong' length='255'"
 	 * @generated
 	 */
 	UserLogin getCreatedByUserLogin();
@@ -117,7 +116,6 @@ public interface Party extends BizEntityTyped<PartyType> {
 	 * @see #setDataSourceId(DataSource)
 	 * @see org.abchip.mimo.biz.party.party.PartyPackage#getParty_DataSourceId()
 	 * @model keys="dataSourceId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	DataSource getDataSourceId();
@@ -222,7 +220,6 @@ public interface Party extends BizEntityTyped<PartyType> {
 	 * @see #setLastModifiedByUserLogin(UserLogin)
 	 * @see org.abchip.mimo.biz.party.party.PartyPackage#getParty_LastModifiedByUserLogin()
 	 * @model keys="userLoginId"
-	 *        annotation="mimo-ent-format type='id-vlong' length='255'"
 	 * @generated
 	 */
 	UserLogin getLastModifiedByUserLogin();
@@ -275,7 +272,6 @@ public interface Party extends BizEntityTyped<PartyType> {
 	 * @see #setPreferredCurrencyUomId(Uom)
 	 * @see org.abchip.mimo.biz.party.party.PartyPackage#getParty_PreferredCurrencyUomId()
 	 * @model keys="uomId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Uom getPreferredCurrencyUomId();
@@ -302,7 +298,6 @@ public interface Party extends BizEntityTyped<PartyType> {
 	 * @see #setStatusId(StatusItem)
 	 * @see org.abchip.mimo.biz.party.party.PartyPackage#getParty_StatusId()
 	 * @model keys="statusId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	StatusItem getStatusId();
@@ -1293,7 +1288,6 @@ public interface Party extends BizEntityTyped<PartyType> {
 	 * @see #setPartyTypeId(PartyType)
 	 * @see org.abchip.mimo.biz.party.party.PartyPackage#getParty_PartyTypeId()
 	 * @model keys="partyTypeId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	PartyType getPartyTypeId();

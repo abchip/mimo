@@ -49,7 +49,6 @@ public interface ContactListParty extends BizEntity {
 	 * @see org.abchip.mimo.biz.marketing.contact.ContactPackage#getContactListParty_ContactListId()
 	 * @model keys="contactListId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ContactList getContactListId();
@@ -105,7 +104,6 @@ public interface ContactListParty extends BizEntity {
 	 * @see org.abchip.mimo.biz.marketing.contact.ContactPackage#getContactListParty_PartyId()
 	 * @model keys="partyId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Party getPartyId();
@@ -132,7 +130,6 @@ public interface ContactListParty extends BizEntity {
 	 * @see #setPreferredContactMechId(ContactMech)
 	 * @see org.abchip.mimo.biz.marketing.contact.ContactPackage#getContactListParty_PreferredContactMechId()
 	 * @model keys="contactMechId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ContactMech getPreferredContactMechId();
@@ -159,7 +156,6 @@ public interface ContactListParty extends BizEntity {
 	 * @see #setStatusId(StatusItem)
 	 * @see org.abchip.mimo.biz.marketing.contact.ContactPackage#getContactListParty_StatusId()
 	 * @model keys="statusId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	StatusItem getStatusId();

@@ -74,7 +74,6 @@ public interface RequirementRole extends BizEntity {
 	 * @see org.abchip.mimo.biz.order.requirement.RequirementPackage#getRequirementRole_PartyId()
 	 * @model keys="partyId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Party getPartyId();
@@ -102,7 +101,6 @@ public interface RequirementRole extends BizEntity {
 	 * @see org.abchip.mimo.biz.order.requirement.RequirementPackage#getRequirementRole_RequirementId()
 	 * @model keys="requirementId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Requirement getRequirementId();

@@ -96,7 +96,6 @@ public interface CostComponentType extends BizEntityType<CostComponent> {
 	 * @see #setParentTypeId(CostComponentType)
 	 * @see org.abchip.mimo.biz.product.cost.CostPackage#getCostComponentType_ParentTypeId()
 	 * @model keys="costComponentTypeId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	CostComponentType getParentTypeId();

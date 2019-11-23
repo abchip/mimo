@@ -95,7 +95,6 @@ public interface CustomMethodType extends BizEntityType<CustomMethod> {
 	 * @see #setParentTypeId(CustomMethodType)
 	 * @see org.abchip.mimo.biz.common.method.MethodPackage#getCustomMethodType_ParentTypeId()
 	 * @model keys="customMethodTypeId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	CustomMethodType getParentTypeId();

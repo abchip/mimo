@@ -72,7 +72,6 @@ public interface UserAgent extends BizEntityTyped<UserAgentType> {
 	 * @see #setBrowserTypeId(BrowserType)
 	 * @see org.abchip.mimo.biz.webapp.visit.VisitPackage#getUserAgent_BrowserTypeId()
 	 * @model keys="browserTypeId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	BrowserType getBrowserTypeId();
@@ -99,7 +98,6 @@ public interface UserAgent extends BizEntityTyped<UserAgentType> {
 	 * @see #setPlatformTypeId(PlatformType)
 	 * @see org.abchip.mimo.biz.webapp.visit.VisitPackage#getUserAgent_PlatformTypeId()
 	 * @model keys="platformTypeId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	PlatformType getPlatformTypeId();
@@ -126,7 +124,6 @@ public interface UserAgent extends BizEntityTyped<UserAgentType> {
 	 * @see #setProtocolTypeId(ProtocolType)
 	 * @see org.abchip.mimo.biz.webapp.visit.VisitPackage#getUserAgent_ProtocolTypeId()
 	 * @model keys="protocolTypeId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ProtocolType getProtocolTypeId();
@@ -153,7 +150,6 @@ public interface UserAgent extends BizEntityTyped<UserAgentType> {
 	 * @see #setUserAgentMethodTypeId(UserAgentMethodType)
 	 * @see org.abchip.mimo.biz.webapp.visit.VisitPackage#getUserAgent_UserAgentMethodTypeId()
 	 * @model keys="userAgentMethodTypeId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	UserAgentMethodType getUserAgentMethodTypeId();
@@ -180,7 +176,6 @@ public interface UserAgent extends BizEntityTyped<UserAgentType> {
 	 * @see #setUserAgentTypeId(UserAgentType)
 	 * @see org.abchip.mimo.biz.webapp.visit.VisitPackage#getUserAgent_UserAgentTypeId()
 	 * @model keys="userAgentTypeId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	UserAgentType getUserAgentTypeId();

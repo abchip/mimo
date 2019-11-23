@@ -109,7 +109,6 @@ public interface PartyNeed extends BizEntity {
 	 * @see org.abchip.mimo.biz.party.need.NeedPackage#getPartyNeed_PartyId()
 	 * @model keys="partyId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Party getPartyId();
@@ -164,7 +163,6 @@ public interface PartyNeed extends BizEntity {
 	 * @see #setPartyTypeId(PartyType)
 	 * @see org.abchip.mimo.biz.party.need.NeedPackage#getPartyNeed_PartyTypeId()
 	 * @model keys="partyTypeId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	PartyType getPartyTypeId();
@@ -191,7 +189,6 @@ public interface PartyNeed extends BizEntity {
 	 * @see #setProductCategoryId(ProductCategory)
 	 * @see org.abchip.mimo.biz.party.need.NeedPackage#getPartyNeed_ProductCategoryId()
 	 * @model keys="productCategoryId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ProductCategory getProductCategoryId();
@@ -218,7 +215,6 @@ public interface PartyNeed extends BizEntity {
 	 * @see #setProductId(Product)
 	 * @see org.abchip.mimo.biz.party.need.NeedPackage#getPartyNeed_ProductId()
 	 * @model keys="productId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Product getProductId();
@@ -246,7 +242,6 @@ public interface PartyNeed extends BizEntity {
 	 * @see org.abchip.mimo.biz.party.need.NeedPackage#getPartyNeed_RoleTypeId()
 	 * @model keys="roleTypeId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	RoleType getRoleTypeId();
@@ -299,7 +294,6 @@ public interface PartyNeed extends BizEntity {
 	 * @see #setNeedTypeId(NeedType)
 	 * @see org.abchip.mimo.biz.party.need.NeedPackage#getPartyNeed_NeedTypeId()
 	 * @model keys="needTypeId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	NeedType getNeedTypeId();
@@ -326,7 +320,6 @@ public interface PartyNeed extends BizEntity {
 	 * @see #setCommunicationEventId(CommunicationEvent)
 	 * @see org.abchip.mimo.biz.party.need.NeedPackage#getPartyNeed_CommunicationEventId()
 	 * @model keys="communicationEventId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	CommunicationEvent getCommunicationEventId();

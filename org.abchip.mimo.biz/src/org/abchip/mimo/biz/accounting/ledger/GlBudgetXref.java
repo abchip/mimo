@@ -128,7 +128,6 @@ public interface GlBudgetXref extends BizEntity {
 	 * @see org.abchip.mimo.biz.accounting.ledger.LedgerPackage#getGlBudgetXref_GlAccountId()
 	 * @model keys="glAccountId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	GlAccount getGlAccountId();
@@ -156,7 +155,6 @@ public interface GlBudgetXref extends BizEntity {
 	 * @see org.abchip.mimo.biz.accounting.ledger.LedgerPackage#getGlBudgetXref_BudgetItemTypeId()
 	 * @model keys="budgetItemTypeId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	BudgetItemType getBudgetItemTypeId();

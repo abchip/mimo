@@ -474,7 +474,6 @@ public interface Geo extends BizEntityTyped<GeoType> {
 	 * @see #setGeoTypeId(GeoType)
 	 * @see org.abchip.mimo.biz.common.geo.GeoPackage#getGeo_GeoTypeId()
 	 * @model keys="geoTypeId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	GeoType getGeoTypeId();

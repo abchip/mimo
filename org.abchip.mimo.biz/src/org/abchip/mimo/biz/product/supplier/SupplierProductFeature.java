@@ -98,7 +98,6 @@ public interface SupplierProductFeature extends BizEntity {
 	 * @see org.abchip.mimo.biz.product.supplier.SupplierPackage#getSupplierProductFeature_PartyId()
 	 * @model keys="partyId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Party getPartyId();
@@ -125,7 +124,6 @@ public interface SupplierProductFeature extends BizEntity {
 	 * @see #setUomId(Uom)
 	 * @see org.abchip.mimo.biz.product.supplier.SupplierPackage#getSupplierProductFeature_UomId()
 	 * @model keys="uomId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Uom getUomId();
@@ -153,7 +151,6 @@ public interface SupplierProductFeature extends BizEntity {
 	 * @see org.abchip.mimo.biz.product.supplier.SupplierPackage#getSupplierProductFeature_ProductFeatureId()
 	 * @model keys="productFeatureId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ProductFeature getProductFeatureId();

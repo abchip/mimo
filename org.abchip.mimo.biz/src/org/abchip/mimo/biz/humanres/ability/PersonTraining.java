@@ -78,7 +78,6 @@ public interface PersonTraining extends BizEntity {
 	 * @see #setApproverId(Person)
 	 * @see org.abchip.mimo.biz.humanres.ability.AbilityPackage#getPersonTraining_ApproverId()
 	 * @model keys="partyId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Person getApproverId();
@@ -134,7 +133,6 @@ public interface PersonTraining extends BizEntity {
 	 * @see org.abchip.mimo.biz.humanres.ability.AbilityPackage#getPersonTraining_PartyId()
 	 * @model keys="partyId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Party getPartyId();
@@ -214,7 +212,6 @@ public interface PersonTraining extends BizEntity {
 	 * @see org.abchip.mimo.biz.humanres.ability.AbilityPackage#getPersonTraining_TrainingClassTypeId()
 	 * @model keys="trainingClassTypeId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	TrainingClassType getTrainingClassTypeId();
@@ -241,7 +238,6 @@ public interface PersonTraining extends BizEntity {
 	 * @see #setTrainingRequestId(TrainingRequest)
 	 * @see org.abchip.mimo.biz.humanres.ability.AbilityPackage#getPersonTraining_TrainingRequestId()
 	 * @model keys="trainingRequestId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	TrainingRequest getTrainingRequestId();
@@ -268,7 +264,6 @@ public interface PersonTraining extends BizEntity {
 	 * @see #setWorkEffortId(WorkEffort)
 	 * @see org.abchip.mimo.biz.humanres.ability.AbilityPackage#getPersonTraining_WorkEffortId()
 	 * @model keys="workEffortId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	WorkEffort getWorkEffortId();

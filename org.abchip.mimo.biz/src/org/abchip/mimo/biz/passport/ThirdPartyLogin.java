@@ -47,7 +47,6 @@ public interface ThirdPartyLogin extends BizEntity {
 	 * @see org.abchip.mimo.biz.passport.PassportPackage#getThirdPartyLogin_ProductStoreId()
 	 * @model keys="productStoreId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ProductStore getProductStoreId();

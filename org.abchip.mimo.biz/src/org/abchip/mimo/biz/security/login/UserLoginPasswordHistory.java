@@ -124,7 +124,6 @@ public interface UserLoginPasswordHistory extends BizEntity {
 	 * @see org.abchip.mimo.biz.security.login.LoginPackage#getUserLoginPasswordHistory_UserLoginId()
 	 * @model keys="userLoginId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id-vlong' length='255'"
 	 * @generated
 	 */
 	UserLogin getUserLoginId();

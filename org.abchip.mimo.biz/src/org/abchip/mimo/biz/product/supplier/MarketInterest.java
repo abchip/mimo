@@ -74,7 +74,6 @@ public interface MarketInterest extends BizEntity {
 	 * @see org.abchip.mimo.biz.product.supplier.SupplierPackage#getMarketInterest_PartyClassificationGroupId()
 	 * @model keys="partyClassificationGroupId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	PartyClassificationGroup getPartyClassificationGroupId();
@@ -128,7 +127,6 @@ public interface MarketInterest extends BizEntity {
 	 * @see org.abchip.mimo.biz.product.supplier.SupplierPackage#getMarketInterest_ProductCategoryId()
 	 * @model keys="productCategoryId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ProductCategory getProductCategoryId();

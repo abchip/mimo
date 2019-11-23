@@ -157,7 +157,6 @@ public interface ServerHitBin extends BizEntity {
 	 * @see #setHitTypeId(ServerHitType)
 	 * @see org.abchip.mimo.biz.webapp.visit.VisitPackage#getServerHitBin_HitTypeId()
 	 * @model keys="hitTypeId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ServerHitType getHitTypeId();
@@ -184,7 +183,6 @@ public interface ServerHitBin extends BizEntity {
 	 * @see #setInternalContentId(Content)
 	 * @see org.abchip.mimo.biz.webapp.visit.VisitPackage#getServerHitBin_InternalContentId()
 	 * @model keys="contentId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Content getInternalContentId();

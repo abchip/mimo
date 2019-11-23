@@ -19,7 +19,6 @@
     <genClasses ecoreClass="biz.ecore#//BizEntity"/>
     <genClasses ecoreClass="biz.ecore#//BizEntityNote">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//BizEntityNote/noteId"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference biz.ecore#//BizEntityNote/note"/>
     </genClasses>
     <genClasses image="false" ecoreClass="biz.ecore#//BizEntityNoteData">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//BizEntityNoteData/noteId"/>
@@ -925,6 +924,7 @@
           <genOperations ecoreOperation="biz.ecore#//accounting/ledger/GlXbrlClass/glAccounts"/>
         </genClasses>
         <genClasses ecoreClass="biz.ecore#//accounting/ledger/PartyAcctgPreference">
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//accounting/ledger/PartyAcctgPreference/partyId"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//accounting/ledger/PartyAcctgPreference/baseCurrencyUomId"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//accounting/ledger/PartyAcctgPreference/cogsMethodId"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//accounting/ledger/PartyAcctgPreference/enableAccounting"/>
@@ -942,7 +942,6 @@
           <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//accounting/ledger/PartyAcctgPreference/oldQuoteSequenceEnumId"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//accounting/ledger/PartyAcctgPreference/orderIdPrefix"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//accounting/ledger/PartyAcctgPreference/orderSeqCustMethId"/>
-          <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//accounting/ledger/PartyAcctgPreference/partyId"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//accounting/ledger/PartyAcctgPreference/quoteIdPrefix"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//accounting/ledger/PartyAcctgPreference/quoteSeqCustMethId"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//accounting/ledger/PartyAcctgPreference/refundPaymentMethodId"/>
@@ -1036,6 +1035,7 @@
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//accounting/payment/BillingAccountTermAttr/attrValue"/>
         </genClasses>
         <genClasses ecoreClass="biz.ecore#//accounting/payment/CheckAccount">
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//accounting/payment/CheckAccount/paymentMethodId"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//accounting/payment/CheckAccount/accountNumber"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//accounting/payment/CheckAccount/accountType"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//accounting/payment/CheckAccount/bankName"/>
@@ -1043,7 +1043,6 @@
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//accounting/payment/CheckAccount/companyNameOnAccount"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//accounting/payment/CheckAccount/contactMechId"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//accounting/payment/CheckAccount/nameOnAccount"/>
-          <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//accounting/payment/CheckAccount/paymentMethodId"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//accounting/payment/CheckAccount/routingNumber"/>
         </genClasses>
         <genClasses ecoreClass="biz.ecore#//accounting/payment/CreditCard">
@@ -1116,6 +1115,7 @@
           <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//accounting/payment/GiftCardFulfillment/typeEnumId"/>
         </genClasses>
         <genClasses ecoreClass="biz.ecore#//accounting/payment/PayPalPaymentMethod">
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//accounting/payment/PayPalPaymentMethod/paymentMethodId"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//accounting/payment/PayPalPaymentMethod/avsAddr"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//accounting/payment/PayPalPaymentMethod/avsZip"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//accounting/payment/PayPalPaymentMethod/contactMechId"/>
@@ -1123,7 +1123,6 @@
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//accounting/payment/PayPalPaymentMethod/expressCheckoutToken"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//accounting/payment/PayPalPaymentMethod/payerId"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//accounting/payment/PayPalPaymentMethod/payerStatus"/>
-          <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//accounting/payment/PayPalPaymentMethod/paymentMethodId"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//accounting/payment/PayPalPaymentMethod/transactionId"/>
         </genClasses>
         <genClasses ecoreClass="biz.ecore#//accounting/payment/Payment">
@@ -1191,6 +1190,7 @@
           <genOperations ecoreOperation="biz.ecore#//accounting/payment/PaymentContentType/childPaymentContentTypes"/>
         </genClasses>
         <genClasses ecoreClass="biz.ecore#//accounting/payment/PaymentGatewayAuthorizeNet">
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//accounting/payment/PaymentGatewayAuthorizeNet/paymentGatewayConfigId"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//accounting/payment/PaymentGatewayAuthorizeNet/apiVersion"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//accounting/payment/PaymentGatewayAuthorizeNet/certificateAlias"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//accounting/payment/PaymentGatewayAuthorizeNet/cpDeviceType"/>
@@ -1202,7 +1202,6 @@
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//accounting/payment/PaymentGatewayAuthorizeNet/emailCustomer"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//accounting/payment/PaymentGatewayAuthorizeNet/emailMerchant"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//accounting/payment/PaymentGatewayAuthorizeNet/method"/>
-          <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//accounting/payment/PaymentGatewayAuthorizeNet/paymentGatewayConfigId"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//accounting/payment/PaymentGatewayAuthorizeNet/pwd"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//accounting/payment/PaymentGatewayAuthorizeNet/relayResponse"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//accounting/payment/PaymentGatewayAuthorizeNet/testMode"/>
@@ -1212,11 +1211,11 @@
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//accounting/payment/PaymentGatewayAuthorizeNet/userId"/>
         </genClasses>
         <genClasses ecoreClass="biz.ecore#//accounting/payment/PaymentGatewayClearCommerce">
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//accounting/payment/PaymentGatewayClearCommerce/paymentGatewayConfigId"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//accounting/payment/PaymentGatewayClearCommerce/clientId"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//accounting/payment/PaymentGatewayClearCommerce/effectiveAlias"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//accounting/payment/PaymentGatewayClearCommerce/enableCVM"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//accounting/payment/PaymentGatewayClearCommerce/groupId"/>
-          <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//accounting/payment/PaymentGatewayClearCommerce/paymentGatewayConfigId"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//accounting/payment/PaymentGatewayClearCommerce/processMode"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//accounting/payment/PaymentGatewayClearCommerce/pwd"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//accounting/payment/PaymentGatewayClearCommerce/serverURL"/>
@@ -1238,6 +1237,7 @@
           <genOperations ecoreOperation="biz.ecore#//accounting/payment/PaymentGatewayConfigType/paymentGatewayConfigs"/>
         </genClasses>
         <genClasses ecoreClass="biz.ecore#//accounting/payment/PaymentGatewayCyberSource">
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//accounting/payment/PaymentGatewayCyberSource/paymentGatewayConfigId"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//accounting/payment/PaymentGatewayCyberSource/apiVersion"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//accounting/payment/PaymentGatewayCyberSource/autoBill"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//accounting/payment/PaymentGatewayCyberSource/avsDeclineCodes"/>
@@ -1254,18 +1254,18 @@
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//accounting/payment/PaymentGatewayCyberSource/merchantContact"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//accounting/payment/PaymentGatewayCyberSource/merchantDescr"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//accounting/payment/PaymentGatewayCyberSource/merchantId"/>
-          <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//accounting/payment/PaymentGatewayCyberSource/paymentGatewayConfigId"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//accounting/payment/PaymentGatewayCyberSource/production"/>
         </genClasses>
         <genClasses ecoreClass="biz.ecore#//accounting/payment/PaymentGatewayEway">
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//accounting/payment/PaymentGatewayEway/paymentGatewayConfigId"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//accounting/payment/PaymentGatewayEway/customerId"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//accounting/payment/PaymentGatewayEway/enableBeagle"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//accounting/payment/PaymentGatewayEway/enableCvn"/>
-          <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//accounting/payment/PaymentGatewayEway/paymentGatewayConfigId"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//accounting/payment/PaymentGatewayEway/refundPwd"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//accounting/payment/PaymentGatewayEway/testMode"/>
         </genClasses>
         <genClasses ecoreClass="biz.ecore#//accounting/payment/PaymentGatewayOrbital">
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//accounting/payment/PaymentGatewayOrbital/paymentGatewayConfigId"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//accounting/payment/PaymentGatewayOrbital/authorizationURI"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//accounting/payment/PaymentGatewayOrbital/connectionPassword"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//accounting/payment/PaymentGatewayOrbital/connectionTimeoutSeconds"/>
@@ -1273,7 +1273,6 @@
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//accounting/payment/PaymentGatewayOrbital/hostName"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//accounting/payment/PaymentGatewayOrbital/hostNameFailover"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//accounting/payment/PaymentGatewayOrbital/merchantId"/>
-          <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//accounting/payment/PaymentGatewayOrbital/paymentGatewayConfigId"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//accounting/payment/PaymentGatewayOrbital/port"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//accounting/payment/PaymentGatewayOrbital/portFailover"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//accounting/payment/PaymentGatewayOrbital/readTimeoutSeconds"/>
@@ -1283,6 +1282,7 @@
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//accounting/payment/PaymentGatewayOrbital/username"/>
         </genClasses>
         <genClasses ecoreClass="biz.ecore#//accounting/payment/PaymentGatewayPayPal">
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//accounting/payment/PaymentGatewayPayPal/paymentGatewayConfigId"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//accounting/payment/PaymentGatewayPayPal/apiEnvironment"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//accounting/payment/PaymentGatewayPayPal/apiPassword"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//accounting/payment/PaymentGatewayPayPal/apiSignature"/>
@@ -1293,13 +1293,13 @@
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//accounting/payment/PaymentGatewayPayPal/confirmUrl"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//accounting/payment/PaymentGatewayPayPal/imageUrl"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//accounting/payment/PaymentGatewayPayPal/notifyUrl"/>
-          <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//accounting/payment/PaymentGatewayPayPal/paymentGatewayConfigId"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//accounting/payment/PaymentGatewayPayPal/redirectUrl"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//accounting/payment/PaymentGatewayPayPal/requireConfirmedShipping"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//accounting/payment/PaymentGatewayPayPal/returnUrl"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//accounting/payment/PaymentGatewayPayPal/shippingCallbackUrl"/>
         </genClasses>
         <genClasses ecoreClass="biz.ecore#//accounting/payment/PaymentGatewayPayflowPro">
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//accounting/payment/PaymentGatewayPayflowPro/paymentGatewayConfigId"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//accounting/payment/PaymentGatewayPayflowPro/cancelReturnUrl"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//accounting/payment/PaymentGatewayPayflowPro/certsPath"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//accounting/payment/PaymentGatewayPayflowPro/checkAvs"/>
@@ -1311,7 +1311,6 @@
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//accounting/payment/PaymentGatewayPayflowPro/loggingLevel"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//accounting/payment/PaymentGatewayPayflowPro/maxLogFileSize"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//accounting/payment/PaymentGatewayPayflowPro/partner"/>
-          <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//accounting/payment/PaymentGatewayPayflowPro/paymentGatewayConfigId"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//accounting/payment/PaymentGatewayPayflowPro/preAuth"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//accounting/payment/PaymentGatewayPayflowPro/proxyAddress"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//accounting/payment/PaymentGatewayPayflowPro/proxyLogon"/>
@@ -1357,11 +1356,11 @@
           <genOperations ecoreOperation="biz.ecore#//accounting/payment/PaymentGatewayResponse/payments"/>
         </genClasses>
         <genClasses ecoreClass="biz.ecore#//accounting/payment/PaymentGatewaySagePay">
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//accounting/payment/PaymentGatewaySagePay/paymentGatewayConfigId"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//accounting/payment/PaymentGatewaySagePay/authenticationTransType"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//accounting/payment/PaymentGatewaySagePay/authenticationUrl"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//accounting/payment/PaymentGatewaySagePay/authoriseTransType"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//accounting/payment/PaymentGatewaySagePay/authoriseUrl"/>
-          <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//accounting/payment/PaymentGatewaySagePay/paymentGatewayConfigId"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//accounting/payment/PaymentGatewaySagePay/productionHost"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//accounting/payment/PaymentGatewaySagePay/protocolVersion"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//accounting/payment/PaymentGatewaySagePay/refundUrl"/>
@@ -1373,14 +1372,15 @@
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//accounting/payment/PaymentGatewaySagePay/voidUrl"/>
         </genClasses>
         <genClasses ecoreClass="biz.ecore#//accounting/payment/PaymentGatewaySecurePay">
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//accounting/payment/PaymentGatewaySecurePay/paymentGatewayConfigId"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//accounting/payment/PaymentGatewaySecurePay/enableAmountRound"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//accounting/payment/PaymentGatewaySecurePay/merchantId"/>
-          <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//accounting/payment/PaymentGatewaySecurePay/paymentGatewayConfigId"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//accounting/payment/PaymentGatewaySecurePay/processTimeout"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//accounting/payment/PaymentGatewaySecurePay/pwd"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//accounting/payment/PaymentGatewaySecurePay/serverURL"/>
         </genClasses>
         <genClasses ecoreClass="biz.ecore#//accounting/payment/PaymentGatewayWorldPay">
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//accounting/payment/PaymentGatewayWorldPay/paymentGatewayConfigId"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//accounting/payment/PaymentGatewayWorldPay/authMode"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//accounting/payment/PaymentGatewayWorldPay/fixContact"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//accounting/payment/PaymentGatewayWorldPay/hideContact"/>
@@ -1388,7 +1388,6 @@
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//accounting/payment/PaymentGatewayWorldPay/instId"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//accounting/payment/PaymentGatewayWorldPay/langId"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//accounting/payment/PaymentGatewayWorldPay/noLanguageMenu"/>
-          <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//accounting/payment/PaymentGatewayWorldPay/paymentGatewayConfigId"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//accounting/payment/PaymentGatewayWorldPay/redirectUrl"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//accounting/payment/PaymentGatewayWorldPay/testMode"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//accounting/payment/PaymentGatewayWorldPay/withDelivery"/>
@@ -1729,9 +1728,9 @@
       <nestedGenPackages prefix="Geo" basePackage="org.abchip.mimo.biz.common" disposableProviderFactory="true"
           adapterFactory="false" ecorePackage="biz.ecore#//common/geo">
         <genClasses ecoreClass="biz.ecore#//common/geo/CountryAddressFormat">
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//common/geo/CountryAddressFormat/geoId"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//common/geo/CountryAddressFormat/addressFormat"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//common/geo/CountryAddressFormat/geoAssocTypeId"/>
-          <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//common/geo/CountryAddressFormat/geoId"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//common/geo/CountryAddressFormat/hasPostalCodeExt"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//common/geo/CountryAddressFormat/postalCodeRegex"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//common/geo/CountryAddressFormat/requirePostalCode"/>
@@ -2407,8 +2406,8 @@
       <nestedGenPackages prefix="Data" basePackage="org.abchip.mimo.biz.content" disposableProviderFactory="true"
           adapterFactory="false" ecorePackage="biz.ecore#//content/data">
         <genClasses ecoreClass="biz.ecore#//content/data/AudioDataResource">
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//content/data/AudioDataResource/dataResourceId"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//content/data/AudioDataResource/audioData"/>
-          <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//content/data/AudioDataResource/dataResourceId"/>
         </genClasses>
         <genClasses ecoreClass="biz.ecore#//content/data/CharacterSet">
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//content/data/CharacterSet/characterSetId"/>
@@ -2501,7 +2500,7 @@
           <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//content/data/FileExtension/mimeTypeId"/>
         </genClasses>
         <genClasses ecoreClass="biz.ecore#//content/data/ImageDataResource">
-          <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//content/data/ImageDataResource/dataResourceId"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//content/data/ImageDataResource/dataResourceId"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//content/data/ImageDataResource/imageData"/>
         </genClasses>
         <genClasses ecoreClass="biz.ecore#//content/data/MetaDataPredicate">
@@ -2519,15 +2518,15 @@
           <genOperations ecoreOperation="biz.ecore#//content/data/MimeType/fileExtensions"/>
         </genClasses>
         <genClasses ecoreClass="biz.ecore#//content/data/MimeTypeHtmlTemplate">
-          <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//content/data/MimeTypeHtmlTemplate/mimeTypeId"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//content/data/MimeTypeHtmlTemplate/mimeTypeId"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//content/data/MimeTypeHtmlTemplate/templateLocation"/>
         </genClasses>
         <genClasses ecoreClass="biz.ecore#//content/data/OtherDataResource">
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//content/data/OtherDataResource/dataResourceId"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//content/data/OtherDataResource/dataResourceContent"/>
-          <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//content/data/OtherDataResource/dataResourceId"/>
         </genClasses>
         <genClasses ecoreClass="biz.ecore#//content/data/VideoDataResource">
-          <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//content/data/VideoDataResource/dataResourceId"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//content/data/VideoDataResource/dataResourceId"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//content/data/VideoDataResource/videoData"/>
         </genClasses>
       </nestedGenPackages>
@@ -2750,9 +2749,9 @@
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//content/website/WebSitePathAlias/thruDate"/>
         </genClasses>
         <genClasses ecoreClass="biz.ecore#//content/website/WebSitePublishPoint">
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//content/website/WebSitePublishPoint/contentId"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//content/website/WebSitePublishPoint/aboutContentId"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//content/website/WebSitePublishPoint/contentDept"/>
-          <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//content/website/WebSitePublishPoint/contentId"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//content/website/WebSitePublishPoint/leftBarId"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//content/website/WebSitePublishPoint/lineLogo"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//content/website/WebSitePublishPoint/logo"/>
@@ -2908,8 +2907,8 @@
           <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//entity/tenant/TenantDomainName/tenantId"/>
         </genClasses>
         <genClasses ecoreClass="biz.ecore#//entity/tenant/TenantKeyEncryptingKey">
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//entity/tenant/TenantKeyEncryptingKey/tenantId"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//entity/tenant/TenantKeyEncryptingKey/kekText"/>
-          <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//entity/tenant/TenantKeyEncryptingKey/tenantId"/>
         </genClasses>
       </nestedGenPackages>
       <nestedGenPackages prefix="Test" basePackage="org.abchip.mimo.biz.entity" disposableProviderFactory="true"
@@ -5317,11 +5316,11 @@
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//party/party/AddressMatchMap/sequenceNum"/>
         </genClasses>
         <genClasses ecoreClass="biz.ecore#//party/party/Affiliate">
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//party/party/Affiliate/partyId"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//party/party/Affiliate/affiliateDescription"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//party/party/Affiliate/affiliateName"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//party/party/Affiliate/dateTimeApproved"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//party/party/Affiliate/dateTimeCreated"/>
-          <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//party/party/Affiliate/partyId"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//party/party/Affiliate/sitePageViews"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//party/party/Affiliate/siteType"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//party/party/Affiliate/siteVisitors"/>
@@ -5504,8 +5503,8 @@
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//party/party/PartyGroup/tickerSymbol"/>
         </genClasses>
         <genClasses ecoreClass="biz.ecore#//party/party/PartyIcsAvsOverride">
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//party/party/PartyIcsAvsOverride/partyId"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//party/party/PartyIcsAvsOverride/avsDeclineString"/>
-          <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//party/party/PartyIcsAvsOverride/partyId"/>
         </genClasses>
         <genClasses ecoreClass="biz.ecore#//party/party/PartyIdentification">
           <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//party/party/PartyIdentification/partyIdentificationTypeId"/>
@@ -5680,11 +5679,11 @@
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//party/party/RoleTypeAttr/description"/>
         </genClasses>
         <genClasses ecoreClass="biz.ecore#//party/party/Vendor">
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//party/party/Vendor/partyId"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//party/party/Vendor/manifestCompanyName"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//party/party/Vendor/manifestCompanyTitle"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//party/party/Vendor/manifestLogoUrl"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//party/party/Vendor/manifestPolicies"/>
-          <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//party/party/Vendor/partyId"/>
         </genClasses>
         <genClasses ecoreClass="biz.ecore#//party/party/WebSiteRole">
           <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//party/party/WebSiteRole/partyId"/>
@@ -6802,8 +6801,8 @@
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//product/product/ProductAttribute/attrValue"/>
         </genClasses>
         <genClasses ecoreClass="biz.ecore#//product/product/ProductCalculatedInfo">
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//product/product/ProductCalculatedInfo/productId"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//product/product/ProductCalculatedInfo/averageCustomerRating"/>
-          <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//product/product/ProductCalculatedInfo/productId"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//product/product/ProductCalculatedInfo/totalQuantityOrdered"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//product/product/ProductCalculatedInfo/totalTimesViewed"/>
         </genClasses>
@@ -7612,9 +7611,9 @@
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//security/login/UserLoginSecurityQuestion/securityAnswer"/>
         </genClasses>
         <genClasses ecoreClass="biz.ecore#//security/login/UserLoginSession">
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//security/login/UserLoginSession/userLoginId"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//security/login/UserLoginSession/savedDate"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//security/login/UserLoginSession/sessionData"/>
-          <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//security/login/UserLoginSession/userLoginId"/>
         </genClasses>
       </nestedGenPackages>
       <nestedGenPackages prefix="Securitygroup" basePackage="org.abchip.mimo.biz.security"
@@ -8629,8 +8628,8 @@
           <genOperations ecoreOperation="biz.ecore#//workeffort/workeffort/WorkEffortGoodStandardType/childWorkEffortGoodStandardTypes"/>
         </genClasses>
         <genClasses ecoreClass="biz.ecore#//workeffort/workeffort/WorkEffortIcalData">
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//workeffort/workeffort/WorkEffortIcalData/workEffortId"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//workeffort/workeffort/WorkEffortIcalData/icalData"/>
-          <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//workeffort/workeffort/WorkEffortIcalData/workEffortId"/>
         </genClasses>
         <genClasses ecoreClass="biz.ecore#//workeffort/workeffort/WorkEffortInventoryAssign">
           <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//workeffort/workeffort/WorkEffortInventoryAssign/workEffortId"/>

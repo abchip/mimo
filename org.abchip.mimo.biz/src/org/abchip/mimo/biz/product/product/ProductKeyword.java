@@ -73,7 +73,6 @@ public interface ProductKeyword extends BizEntity {
 	 * @see org.abchip.mimo.biz.product.product.ProductPackage#getProductKeyword_KeywordTypeId()
 	 * @model keys="enumId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Enumeration getKeywordTypeId();
@@ -126,7 +125,6 @@ public interface ProductKeyword extends BizEntity {
 	 * @see #setStatusId(StatusItem)
 	 * @see org.abchip.mimo.biz.product.product.ProductPackage#getProductKeyword_StatusId()
 	 * @model keys="statusId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	StatusItem getStatusId();
@@ -154,7 +152,6 @@ public interface ProductKeyword extends BizEntity {
 	 * @see org.abchip.mimo.biz.product.product.ProductPackage#getProductKeyword_ProductId()
 	 * @model keys="productId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Product getProductId();

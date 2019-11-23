@@ -69,7 +69,6 @@ public interface CustRequestTypeAttr extends BizEntity {
 	 * @see org.abchip.mimo.biz.order.request.RequestPackage#getCustRequestTypeAttr_CustRequestTypeId()
 	 * @model keys="custRequestTypeId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	CustRequestType getCustRequestTypeId();

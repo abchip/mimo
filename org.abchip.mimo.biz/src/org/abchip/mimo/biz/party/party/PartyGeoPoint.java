@@ -73,7 +73,6 @@ public interface PartyGeoPoint extends BizEntity {
 	 * @see org.abchip.mimo.biz.party.party.PartyPackage#getPartyGeoPoint_GeoPointId()
 	 * @model keys="geoPointId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	GeoPoint getGeoPointId();
@@ -127,7 +126,6 @@ public interface PartyGeoPoint extends BizEntity {
 	 * @see org.abchip.mimo.biz.party.party.PartyPackage#getPartyGeoPoint_PartyId()
 	 * @model keys="partyId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Party getPartyId();

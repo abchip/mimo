@@ -42,7 +42,6 @@ public interface UserLoginSecurityQuestion extends BizEntity {
 	 * @see org.abchip.mimo.biz.security.login.LoginPackage#getUserLoginSecurityQuestion_QuestionEnumId()
 	 * @model keys="enumId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Enumeration getQuestionEnumId();
@@ -96,7 +95,6 @@ public interface UserLoginSecurityQuestion extends BizEntity {
 	 * @see org.abchip.mimo.biz.security.login.LoginPackage#getUserLoginSecurityQuestion_UserLoginId()
 	 * @model keys="userLoginId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id-vlong' length='255'"
 	 * @generated
 	 */
 	UserLogin getUserLoginId();

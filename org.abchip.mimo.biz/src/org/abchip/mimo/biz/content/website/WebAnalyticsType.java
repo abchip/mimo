@@ -95,7 +95,6 @@ public interface WebAnalyticsType extends BizEntity {
 	 * @see #setParentTypeId(WebAnalyticsType)
 	 * @see org.abchip.mimo.biz.content.website.WebsitePackage#getWebAnalyticsType_ParentTypeId()
 	 * @model keys="webAnalyticsTypeId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	WebAnalyticsType getParentTypeId();

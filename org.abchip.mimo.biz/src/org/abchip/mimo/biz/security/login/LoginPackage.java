@@ -634,13 +634,22 @@ public interface LoginPackage extends EPackage {
 	int USER_LOGIN_SESSION__LAST_UPDATED_TX_STAMP = BizPackage.BIZ_ENTITY__LAST_UPDATED_TX_STAMP;
 
 	/**
+	 * The feature id for the '<em><b>User Login Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int USER_LOGIN_SESSION__USER_LOGIN_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
+
+	/**
 	 * The feature id for the '<em><b>Saved Date</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int USER_LOGIN_SESSION__SAVED_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
+	int USER_LOGIN_SESSION__SAVED_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Session Data</b></em>' attribute.
@@ -649,16 +658,7 @@ public interface LoginPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int USER_LOGIN_SESSION__SESSION_DATA = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
-
-	/**
-	 * The feature id for the '<em><b>User Login Id</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int USER_LOGIN_SESSION__USER_LOGIN_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
+	int USER_LOGIN_SESSION__SESSION_DATA = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of structural features of the '<em>User Login Session</em>' class.
@@ -1095,15 +1095,15 @@ public interface LoginPackage extends EPackage {
 	EClass getUserLoginSession();
 
 	/**
-	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.security.login.UserLoginSession#getUserLoginId <em>User Login Id</em>}'.
+	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.security.login.UserLoginSession#getUserLoginId <em>User Login Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>User Login Id</em>'.
+	 * @return the meta object for the attribute '<em>User Login Id</em>'.
 	 * @see org.abchip.mimo.biz.security.login.UserLoginSession#getUserLoginId()
 	 * @see #getUserLoginSession()
 	 * @generated
 	 */
-	EReference getUserLoginSession_UserLoginId();
+	EAttribute getUserLoginSession_UserLoginId();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.security.login.UserLoginSession#getSavedDate <em>Saved Date</em>}'.
@@ -1472,12 +1472,12 @@ public interface LoginPackage extends EPackage {
 		EClass USER_LOGIN_SESSION = eINSTANCE.getUserLoginSession();
 
 		/**
-		 * The meta object literal for the '<em><b>User Login Id</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>User Login Id</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference USER_LOGIN_SESSION__USER_LOGIN_ID = eINSTANCE.getUserLoginSession_UserLoginId();
+		EAttribute USER_LOGIN_SESSION__USER_LOGIN_ID = eINSTANCE.getUserLoginSession_UserLoginId();
 
 		/**
 		 * The meta object literal for the '<em><b>Saved Date</b></em>' attribute feature.

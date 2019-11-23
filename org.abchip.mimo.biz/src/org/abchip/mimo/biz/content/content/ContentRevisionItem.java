@@ -127,7 +127,6 @@ public interface ContentRevisionItem extends BizEntity {
 	 * @see #setNewDataResourceId(DataResource)
 	 * @see org.abchip.mimo.biz.content.content.ContentPackage#getContentRevisionItem_NewDataResourceId()
 	 * @model keys="dataResourceId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	DataResource getNewDataResourceId();
@@ -154,7 +153,6 @@ public interface ContentRevisionItem extends BizEntity {
 	 * @see #setOldDataResourceId(DataResource)
 	 * @see org.abchip.mimo.biz.content.content.ContentPackage#getContentRevisionItem_OldDataResourceId()
 	 * @model keys="dataResourceId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	DataResource getOldDataResourceId();

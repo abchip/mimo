@@ -123,7 +123,6 @@ public interface DataResourceType extends BizEntityType<DataResource> {
 	 * @see #setParentTypeId(DataResourceType)
 	 * @see org.abchip.mimo.biz.content.data.DataPackage#getDataResourceType_ParentTypeId()
 	 * @model keys="dataResourceTypeId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	DataResourceType getParentTypeId();

@@ -96,7 +96,6 @@ public interface FacilityType extends BizEntityType<Facility> {
 	 * @see #setParentTypeId(FacilityType)
 	 * @see org.abchip.mimo.biz.product.facility.FacilityPackage#getFacilityType_ParentTypeId()
 	 * @model keys="facilityTypeId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	FacilityType getParentTypeId();

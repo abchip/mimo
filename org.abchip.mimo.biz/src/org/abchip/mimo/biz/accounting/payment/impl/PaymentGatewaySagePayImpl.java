@@ -7,7 +7,6 @@
  */
 package org.abchip.mimo.biz.accounting.payment.impl;
 
-import org.abchip.mimo.biz.accounting.payment.PaymentGatewayConfig;
 import org.abchip.mimo.biz.accounting.payment.PaymentGatewaySagePay;
 import org.abchip.mimo.biz.accounting.payment.PaymentPackage;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
@@ -21,11 +20,11 @@ import org.eclipse.emf.ecore.EClass;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.PaymentGatewaySagePayImpl#getPaymentGatewayConfigId <em>Payment Gateway Config Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.PaymentGatewaySagePayImpl#getAuthenticationTransType <em>Authentication Trans Type</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.PaymentGatewaySagePayImpl#getAuthenticationUrl <em>Authentication Url</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.PaymentGatewaySagePayImpl#getAuthoriseTransType <em>Authorise Trans Type</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.PaymentGatewaySagePayImpl#getAuthoriseUrl <em>Authorise Url</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.PaymentGatewaySagePayImpl#getPaymentGatewayConfigId <em>Payment Gateway Config Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.PaymentGatewaySagePayImpl#getProductionHost <em>Production Host</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.PaymentGatewaySagePayImpl#getProtocolVersion <em>Protocol Version</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.PaymentGatewaySagePayImpl#getRefundUrl <em>Refund Url</em>}</li>
@@ -149,8 +148,8 @@ public class PaymentGatewaySagePayImpl extends BizEntityImpl implements PaymentG
 	 * @generated
 	 */
 	@Override
-	public PaymentGatewayConfig getPaymentGatewayConfigId() {
-		return (PaymentGatewayConfig)eGet(PaymentPackage.Literals.PAYMENT_GATEWAY_SAGE_PAY__PAYMENT_GATEWAY_CONFIG_ID, true);
+	public String getPaymentGatewayConfigId() {
+		return (String)eGet(PaymentPackage.Literals.PAYMENT_GATEWAY_SAGE_PAY__PAYMENT_GATEWAY_CONFIG_ID, true);
 	}
 
 	/**
@@ -159,7 +158,7 @@ public class PaymentGatewaySagePayImpl extends BizEntityImpl implements PaymentG
 	 * @generated
 	 */
 	@Override
-	public void setPaymentGatewayConfigId(PaymentGatewayConfig newPaymentGatewayConfigId) {
+	public void setPaymentGatewayConfigId(String newPaymentGatewayConfigId) {
 		eSet(PaymentPackage.Literals.PAYMENT_GATEWAY_SAGE_PAY__PAYMENT_GATEWAY_CONFIG_ID, newPaymentGatewayConfigId);
 	}
 

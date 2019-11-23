@@ -68,7 +68,6 @@ public interface InventoryItemLabelAppl extends BizEntity {
 	 * @see org.abchip.mimo.biz.product.inventory.InventoryPackage#getInventoryItemLabelAppl_InventoryItemId()
 	 * @model keys="inventoryItemId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	InventoryItem getInventoryItemId();
@@ -96,7 +95,6 @@ public interface InventoryItemLabelAppl extends BizEntity {
 	 * @see org.abchip.mimo.biz.product.inventory.InventoryPackage#getInventoryItemLabelAppl_InventoryItemLabelTypeId()
 	 * @model keys="inventoryItemLabelTypeId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	InventoryItemLabelType getInventoryItemLabelTypeId();
@@ -123,7 +121,6 @@ public interface InventoryItemLabelAppl extends BizEntity {
 	 * @see #setInventoryItemLabelId(InventoryItemLabel)
 	 * @see org.abchip.mimo.biz.product.inventory.InventoryPackage#getInventoryItemLabelAppl_InventoryItemLabelId()
 	 * @model keys="inventoryItemLabelId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	InventoryItemLabel getInventoryItemLabelId();

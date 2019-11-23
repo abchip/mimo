@@ -181,7 +181,6 @@ public interface ShipmentBoxType extends BizEntity {
 	 * @see #setDimensionUomId(Uom)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipmentBoxType_DimensionUomId()
 	 * @model keys="uomId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Uom getDimensionUomId();
@@ -235,7 +234,6 @@ public interface ShipmentBoxType extends BizEntity {
 	 * @see #setWeightUomId(Uom)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipmentBoxType_WeightUomId()
 	 * @model keys="uomId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Uom getWeightUomId();

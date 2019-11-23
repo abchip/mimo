@@ -7,7 +7,6 @@
  */
 package org.abchip.mimo.biz.entity.tenant.impl;
 
-import org.abchip.mimo.biz.entity.tenant.Tenant;
 import org.abchip.mimo.biz.entity.tenant.TenantKeyEncryptingKey;
 import org.abchip.mimo.biz.entity.tenant.TenantPackage;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
@@ -21,8 +20,8 @@ import org.eclipse.emf.ecore.EClass;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.entity.tenant.impl.TenantKeyEncryptingKeyImpl#getKekText <em>Kek Text</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.entity.tenant.impl.TenantKeyEncryptingKeyImpl#getTenantId <em>Tenant Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.entity.tenant.impl.TenantKeyEncryptingKeyImpl#getKekText <em>Kek Text</em>}</li>
  * </ul>
  *
  * @generated
@@ -77,8 +76,8 @@ public class TenantKeyEncryptingKeyImpl extends BizEntityImpl implements TenantK
 	 * @generated
 	 */
 	@Override
-	public Tenant getTenantId() {
-		return (Tenant)eGet(TenantPackage.Literals.TENANT_KEY_ENCRYPTING_KEY__TENANT_ID, true);
+	public String getTenantId() {
+		return (String)eGet(TenantPackage.Literals.TENANT_KEY_ENCRYPTING_KEY__TENANT_ID, true);
 	}
 
 	/**
@@ -87,7 +86,7 @@ public class TenantKeyEncryptingKeyImpl extends BizEntityImpl implements TenantK
 	 * @generated
 	 */
 	@Override
-	public void setTenantId(Tenant newTenantId) {
+	public void setTenantId(String newTenantId) {
 		eSet(TenantPackage.Literals.TENANT_KEY_ENCRYPTING_KEY__TENANT_ID, newTenantId);
 	}
 

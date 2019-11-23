@@ -125,7 +125,6 @@ public interface ProductStoreGroupMember extends BizEntity {
 	 * @see org.abchip.mimo.biz.product.store.StorePackage#getProductStoreGroupMember_ProductStoreId()
 	 * @model keys="productStoreId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ProductStore getProductStoreId();
@@ -153,7 +152,6 @@ public interface ProductStoreGroupMember extends BizEntity {
 	 * @see org.abchip.mimo.biz.product.store.StorePackage#getProductStoreGroupMember_ProductStoreGroupId()
 	 * @model keys="productStoreGroupId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ProductStoreGroup getProductStoreGroupId();

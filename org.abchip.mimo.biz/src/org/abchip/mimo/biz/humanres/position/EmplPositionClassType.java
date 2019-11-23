@@ -122,7 +122,6 @@ public interface EmplPositionClassType extends BizEntity {
 	 * @see #setParentTypeId(EmplPositionClassType)
 	 * @see org.abchip.mimo.biz.humanres.position.PositionPackage#getEmplPositionClassType_ParentTypeId()
 	 * @model keys="emplPositionClassTypeId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	EmplPositionClassType getParentTypeId();

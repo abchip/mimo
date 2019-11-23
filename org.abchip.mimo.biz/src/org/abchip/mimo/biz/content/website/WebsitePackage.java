@@ -599,13 +599,22 @@ public interface WebsitePackage extends EPackage {
 	int WEB_SITE_PUBLISH_POINT__LAST_UPDATED_TX_STAMP = BizPackage.BIZ_ENTITY__LAST_UPDATED_TX_STAMP;
 
 	/**
+	 * The feature id for the '<em><b>Content Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WEB_SITE_PUBLISH_POINT__CONTENT_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
+
+	/**
 	 * The feature id for the '<em><b>About Content Id</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int WEB_SITE_PUBLISH_POINT__ABOUT_CONTENT_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
+	int WEB_SITE_PUBLISH_POINT__ABOUT_CONTENT_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Content Dept</b></em>' attribute.
@@ -614,16 +623,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WEB_SITE_PUBLISH_POINT__CONTENT_DEPT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
-
-	/**
-	 * The feature id for the '<em><b>Content Id</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int WEB_SITE_PUBLISH_POINT__CONTENT_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
+	int WEB_SITE_PUBLISH_POINT__CONTENT_DEPT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Left Bar Id</b></em>' attribute.
@@ -1012,15 +1012,15 @@ public interface WebsitePackage extends EPackage {
 	EClass getWebSitePublishPoint();
 
 	/**
-	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.content.website.WebSitePublishPoint#getContentId <em>Content Id</em>}'.
+	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.content.website.WebSitePublishPoint#getContentId <em>Content Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Content Id</em>'.
+	 * @return the meta object for the attribute '<em>Content Id</em>'.
 	 * @see org.abchip.mimo.biz.content.website.WebSitePublishPoint#getContentId()
 	 * @see #getWebSitePublishPoint()
 	 * @generated
 	 */
-	EReference getWebSitePublishPoint_ContentId();
+	EAttribute getWebSitePublishPoint_ContentId();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.content.website.WebSitePublishPoint#getAboutContentId <em>About Content Id</em>}'.
@@ -1388,12 +1388,12 @@ public interface WebsitePackage extends EPackage {
 		EClass WEB_SITE_PUBLISH_POINT = eINSTANCE.getWebSitePublishPoint();
 
 		/**
-		 * The meta object literal for the '<em><b>Content Id</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Content Id</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference WEB_SITE_PUBLISH_POINT__CONTENT_ID = eINSTANCE.getWebSitePublishPoint_ContentId();
+		EAttribute WEB_SITE_PUBLISH_POINT__CONTENT_ID = eINSTANCE.getWebSitePublishPoint_ContentId();
 
 		/**
 		 * The meta object literal for the '<em><b>About Content Id</b></em>' attribute feature.

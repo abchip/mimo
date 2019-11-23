@@ -43,7 +43,6 @@ public interface ProductStoreGroupRole extends BizEntity {
 	 * @see org.abchip.mimo.biz.product.store.StorePackage#getProductStoreGroupRole_PartyId()
 	 * @model keys="partyId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Party getPartyId();
@@ -71,7 +70,6 @@ public interface ProductStoreGroupRole extends BizEntity {
 	 * @see org.abchip.mimo.biz.product.store.StorePackage#getProductStoreGroupRole_RoleTypeId()
 	 * @model keys="roleTypeId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	RoleType getRoleTypeId();
@@ -99,7 +97,6 @@ public interface ProductStoreGroupRole extends BizEntity {
 	 * @see org.abchip.mimo.biz.product.store.StorePackage#getProductStoreGroupRole_ProductStoreGroupId()
 	 * @model keys="productStoreGroupId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ProductStoreGroup getProductStoreGroupId();

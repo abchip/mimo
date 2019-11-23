@@ -95,7 +95,6 @@ public interface SubscriptionTypeAttr extends BizEntity {
 	 * @see org.abchip.mimo.biz.product.subscription.SubscriptionPackage#getSubscriptionTypeAttr_SubscriptionTypeId()
 	 * @model keys="subscriptionTypeId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	SubscriptionType getSubscriptionTypeId();

@@ -100,7 +100,6 @@ public interface RecurrenceInfo extends BizEntity {
 	 * @see #setExceptionRuleId(RecurrenceRule)
 	 * @see org.abchip.mimo.biz.service.schedule.SchedulePackage#getRecurrenceInfo_ExceptionRuleId()
 	 * @model keys="recurrenceRuleId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	RecurrenceRule getExceptionRuleId();
@@ -180,7 +179,6 @@ public interface RecurrenceInfo extends BizEntity {
 	 * @see #setRecurrenceRuleId(RecurrenceRule)
 	 * @see org.abchip.mimo.biz.service.schedule.SchedulePackage#getRecurrenceInfo_RecurrenceRuleId()
 	 * @model keys="recurrenceRuleId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	RecurrenceRule getRecurrenceRuleId();

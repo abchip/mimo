@@ -77,7 +77,6 @@ public interface OrderItemBilling extends BizEntity {
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderItemBilling_InvoiceId()
 	 * @model keys="invoiceId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Invoice getInvoiceId();
@@ -132,7 +131,6 @@ public interface OrderItemBilling extends BizEntity {
 	 * @see #setItemIssuanceId(ItemIssuance)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderItemBilling_ItemIssuanceId()
 	 * @model keys="itemIssuanceId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ItemIssuance getItemIssuanceId();
@@ -160,7 +158,6 @@ public interface OrderItemBilling extends BizEntity {
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderItemBilling_OrderId()
 	 * @model keys="orderId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	OrderHeader getOrderId();
@@ -241,7 +238,6 @@ public interface OrderItemBilling extends BizEntity {
 	 * @see #setShipmentReceiptId(ShipmentReceipt)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderItemBilling_ShipmentReceiptId()
 	 * @model keys="receiptId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ShipmentReceipt getShipmentReceiptId();

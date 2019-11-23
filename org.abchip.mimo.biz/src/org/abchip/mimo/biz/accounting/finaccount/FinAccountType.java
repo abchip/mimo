@@ -126,7 +126,6 @@ public interface FinAccountType extends BizEntityType<FinAccount> {
 	 * @see #setReplenishEnumId(Enumeration)
 	 * @see org.abchip.mimo.biz.accounting.finaccount.FinaccountPackage#getFinAccountType_ReplenishEnumId()
 	 * @model keys="enumId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Enumeration getReplenishEnumId();
@@ -219,7 +218,6 @@ public interface FinAccountType extends BizEntityType<FinAccount> {
 	 * @see #setParentTypeId(FinAccountType)
 	 * @see org.abchip.mimo.biz.accounting.finaccount.FinaccountPackage#getFinAccountType_ParentTypeId()
 	 * @model keys="finAccountTypeId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	FinAccountType getParentTypeId();

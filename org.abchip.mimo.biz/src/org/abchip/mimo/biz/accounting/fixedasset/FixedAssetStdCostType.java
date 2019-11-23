@@ -95,7 +95,6 @@ public interface FixedAssetStdCostType extends BizEntityType<FixedAssetStdCost> 
 	 * @see #setParentTypeId(FixedAssetStdCostType)
 	 * @see org.abchip.mimo.biz.accounting.fixedasset.FixedassetPackage#getFixedAssetStdCostType_ParentTypeId()
 	 * @model keys="fixedAssetStdCostTypeId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	FixedAssetStdCostType getParentTypeId();

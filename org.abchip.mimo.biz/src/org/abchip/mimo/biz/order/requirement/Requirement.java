@@ -120,7 +120,6 @@ public interface Requirement extends BizEntityTyped<RequirementType> {
 	 * @see #setDeliverableId(Deliverable)
 	 * @see org.abchip.mimo.biz.order.requirement.RequirementPackage#getRequirement_DeliverableId()
 	 * @model keys="deliverableId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Deliverable getDeliverableId();
@@ -199,7 +198,6 @@ public interface Requirement extends BizEntityTyped<RequirementType> {
 	 * @see #setFacilityId(Facility)
 	 * @see org.abchip.mimo.biz.order.requirement.RequirementPackage#getRequirement_FacilityId()
 	 * @model keys="facilityId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Facility getFacilityId();
@@ -226,7 +224,6 @@ public interface Requirement extends BizEntityTyped<RequirementType> {
 	 * @see #setFixedAssetId(FixedAsset)
 	 * @see org.abchip.mimo.biz.order.requirement.RequirementPackage#getRequirement_FixedAssetId()
 	 * @model keys="fixedAssetId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	FixedAsset getFixedAssetId();
@@ -305,7 +302,6 @@ public interface Requirement extends BizEntityTyped<RequirementType> {
 	 * @see #setProductId(Product)
 	 * @see org.abchip.mimo.biz.order.requirement.RequirementPackage#getRequirement_ProductId()
 	 * @model keys="productId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Product getProductId();
@@ -463,7 +459,6 @@ public interface Requirement extends BizEntityTyped<RequirementType> {
 	 * @see #setRequirementTypeId(RequirementType)
 	 * @see org.abchip.mimo.biz.order.requirement.RequirementPackage#getRequirement_RequirementTypeId()
 	 * @model keys="requirementTypeId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	RequirementType getRequirementTypeId();
@@ -490,7 +485,6 @@ public interface Requirement extends BizEntityTyped<RequirementType> {
 	 * @see #setStatusId(StatusItem)
 	 * @see org.abchip.mimo.biz.order.requirement.RequirementPackage#getRequirement_StatusId()
 	 * @model keys="statusId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	StatusItem getStatusId();

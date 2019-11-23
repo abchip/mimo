@@ -88,6 +88,7 @@ import org.abchip.mimo.biz.content.survey.SurveyPackage;
 import org.abchip.mimo.biz.content.survey.impl.SurveyPackageImpl;
 import org.abchip.mimo.biz.content.website.WebsitePackage;
 import org.abchip.mimo.biz.content.website.impl.WebsitePackageImpl;
+import org.abchip.mimo.biz.entity.EntityPackage;
 import org.abchip.mimo.biz.entity.audit.AuditPackage;
 import org.abchip.mimo.biz.entity.audit.impl.AuditPackageImpl;
 import org.abchip.mimo.biz.entity.crypto.CryptoPackage;
@@ -453,8 +454,8 @@ public class BudgetPackageImpl extends EPackageImpl implements BudgetPackage {
 		SurveyPackageImpl theSurveyPackage = (SurveyPackageImpl)(registeredPackage instanceof SurveyPackageImpl ? registeredPackage : SurveyPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(WebsitePackage.eNS_URI);
 		WebsitePackageImpl theWebsitePackage = (WebsitePackageImpl)(registeredPackage instanceof WebsitePackageImpl ? registeredPackage : WebsitePackage.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(org.abchip.mimo.biz.entity.EntityPackage.eNS_URI);
-		EntityPackageImpl theEntityPackage = (EntityPackageImpl)(registeredPackage instanceof EntityPackageImpl ? registeredPackage : org.abchip.mimo.biz.entity.EntityPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(EntityPackage.eNS_URI);
+		EntityPackageImpl theEntityPackage = (EntityPackageImpl)(registeredPackage instanceof EntityPackageImpl ? registeredPackage : EntityPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(AuditPackage.eNS_URI);
 		AuditPackageImpl theAuditPackage = (AuditPackageImpl)(registeredPackage instanceof AuditPackageImpl ? registeredPackage : AuditPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(CryptoPackage.eNS_URI);
@@ -2131,32 +2132,11 @@ public class BudgetPackageImpl extends EPackageImpl implements BudgetPackage {
 			   "length", "20"
 		   });
 		addAnnotation
-		  (getBudget_BudgetTypeId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getBudget_Comments(),
 		   source,
 		   new String[] {
 			   "type", "comment",
 			   "length", "255"
-		   });
-		addAnnotation
-		  (getBudget_CustomTimePeriodId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getBudgetAttribute_BudgetId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
 		   });
 		addAnnotation
 		  (getBudgetAttribute_AttrName(),
@@ -2180,13 +2160,6 @@ public class BudgetPackageImpl extends EPackageImpl implements BudgetPackage {
 			   "length", "255"
 		   });
 		addAnnotation
-		  (getBudgetItem_BudgetId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getBudgetItem_BudgetItemSeqId(),
 		   source,
 		   new String[] {
@@ -2200,13 +2173,6 @@ public class BudgetPackageImpl extends EPackageImpl implements BudgetPackage {
 			   "type", "currency-amount",
 			   "precision", "18",
 			   "scale", "2"
-		   });
-		addAnnotation
-		  (getBudgetItem_BudgetItemTypeId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
 		   });
 		addAnnotation
 		  (getBudgetItem_Justification(),
@@ -2307,20 +2273,6 @@ public class BudgetPackageImpl extends EPackageImpl implements BudgetPackage {
 			   "length", "1"
 		   });
 		addAnnotation
-		  (getBudgetItemType_ParentTypeId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getBudgetItemTypeAttr_BudgetItemTypeId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getBudgetItemTypeAttr_AttrName(),
 		   source,
 		   new String[] {
@@ -2333,27 +2285,6 @@ public class BudgetPackageImpl extends EPackageImpl implements BudgetPackage {
 		   new String[] {
 			   "type", "description",
 			   "length", "255"
-		   });
-		addAnnotation
-		  (getBudgetReview_BudgetId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getBudgetReview_PartyId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getBudgetReview_BudgetReviewResultTypeId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
 		   });
 		addAnnotation
 		  (getBudgetReview_BudgetReviewId(),
@@ -2390,13 +2321,6 @@ public class BudgetPackageImpl extends EPackageImpl implements BudgetPackage {
 			   "length", "255"
 		   });
 		addAnnotation
-		  (getBudgetRevision_BudgetId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getBudgetRevision_RevisionSeqId(),
 		   source,
 		   new String[] {
@@ -2408,13 +2332,6 @@ public class BudgetPackageImpl extends EPackageImpl implements BudgetPackage {
 		   source,
 		   new String[] {
 			   "type", "date-time"
-		   });
-		addAnnotation
-		  (getBudgetRevisionImpact_BudgetId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
 		   });
 		addAnnotation
 		  (getBudgetRevisionImpact_BudgetItemSeqId(),
@@ -2453,20 +2370,6 @@ public class BudgetPackageImpl extends EPackageImpl implements BudgetPackage {
 			   "length", "255"
 		   });
 		addAnnotation
-		  (getBudgetRole_BudgetId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getBudgetRole_PartyId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getBudgetRole_RoleTypeId(),
 		   source,
 		   new String[] {
@@ -2502,13 +2405,6 @@ public class BudgetPackageImpl extends EPackageImpl implements BudgetPackage {
 			   "length", "255"
 		   });
 		addAnnotation
-		  (getBudgetScenarioApplication_BudgetScenarioId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getBudgetScenarioApplication_BudgetScenarioApplicId(),
 		   source,
 		   new String[] {
@@ -2522,13 +2418,6 @@ public class BudgetPackageImpl extends EPackageImpl implements BudgetPackage {
 			   "type", "currency-amount",
 			   "precision", "18",
 			   "scale", "2"
-		   });
-		addAnnotation
-		  (getBudgetScenarioApplication_BudgetId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
 		   });
 		addAnnotation
 		  (getBudgetScenarioApplication_BudgetItemSeqId(),
@@ -2546,20 +2435,6 @@ public class BudgetPackageImpl extends EPackageImpl implements BudgetPackage {
 			   "scale", "6"
 		   });
 		addAnnotation
-		  (getBudgetScenarioRule_BudgetScenarioId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getBudgetScenarioRule_BudgetItemTypeId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getBudgetScenarioRule_AmountChange(),
 		   source,
 		   new String[] {
@@ -2574,27 +2449,6 @@ public class BudgetPackageImpl extends EPackageImpl implements BudgetPackage {
 			   "type", "fixed-point",
 			   "precision", "18",
 			   "scale", "6"
-		   });
-		addAnnotation
-		  (getBudgetStatus_BudgetId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getBudgetStatus_StatusId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getBudgetStatus_ChangeByUserLoginId(),
-		   source,
-		   new String[] {
-			   "type", "id-vlong",
-			   "length", "255"
 		   });
 		addAnnotation
 		  (getBudgetStatus_Comments(),
@@ -2650,20 +2504,6 @@ public class BudgetPackageImpl extends EPackageImpl implements BudgetPackage {
 		   new String[] {
 			   "type", "indicator",
 			   "length", "1"
-		   });
-		addAnnotation
-		  (getBudgetType_ParentTypeId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getBudgetTypeAttr_BudgetTypeId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
 		   });
 		addAnnotation
 		  (getBudgetTypeAttr_AttrName(),

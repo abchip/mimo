@@ -41,7 +41,6 @@ public interface GeoAssoc extends BizEntityTyped<GeoAssocType> {
 	 * @see org.abchip.mimo.biz.common.geo.GeoPackage#getGeoAssoc_GeoId()
 	 * @model keys="geoId" required="true"
 	 *        annotation="mimo-ent-slot key='true' help='The enclosed geo'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Geo getGeoId();
@@ -69,7 +68,6 @@ public interface GeoAssoc extends BizEntityTyped<GeoAssocType> {
 	 * @see org.abchip.mimo.biz.common.geo.GeoPackage#getGeoAssoc_GeoIdTo()
 	 * @model keys="geoId" required="true"
 	 *        annotation="mimo-ent-slot key='true' help='The enclosing geo'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Geo getGeoIdTo();
@@ -96,7 +94,6 @@ public interface GeoAssoc extends BizEntityTyped<GeoAssocType> {
 	 * @see #setGeoAssocTypeId(GeoAssocType)
 	 * @see org.abchip.mimo.biz.common.geo.GeoPackage#getGeoAssoc_GeoAssocTypeId()
 	 * @model keys="geoAssocTypeId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	GeoAssocType getGeoAssocTypeId();

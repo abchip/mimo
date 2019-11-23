@@ -41,7 +41,6 @@ public interface GlAccountGroupMember extends BizEntity {
 	 * @see org.abchip.mimo.biz.accounting.ledger.LedgerPackage#getGlAccountGroupMember_GlAccountId()
 	 * @model keys="glAccountId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	GlAccount getGlAccountId();
@@ -68,7 +67,6 @@ public interface GlAccountGroupMember extends BizEntity {
 	 * @see #setGlAccountGroupId(GlAccountGroup)
 	 * @see org.abchip.mimo.biz.accounting.ledger.LedgerPackage#getGlAccountGroupMember_GlAccountGroupId()
 	 * @model keys="glAccountGroupId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	GlAccountGroup getGlAccountGroupId();
@@ -96,7 +94,6 @@ public interface GlAccountGroupMember extends BizEntity {
 	 * @see org.abchip.mimo.biz.accounting.ledger.LedgerPackage#getGlAccountGroupMember_GlAccountGroupTypeId()
 	 * @model keys="glAccountGroupTypeId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	GlAccountGroupType getGlAccountGroupTypeId();

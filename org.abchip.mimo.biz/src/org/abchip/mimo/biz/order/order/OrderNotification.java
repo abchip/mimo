@@ -71,7 +71,6 @@ public interface OrderNotification extends BizEntity {
 	 * @see #setEmailType(Enumeration)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderNotification_EmailType()
 	 * @model keys="enumId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Enumeration getEmailType();
@@ -124,7 +123,6 @@ public interface OrderNotification extends BizEntity {
 	 * @see #setOrderId(OrderHeader)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderNotification_OrderId()
 	 * @model keys="orderId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	OrderHeader getOrderId();

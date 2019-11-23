@@ -95,7 +95,6 @@ public interface OrderTypeAttr extends BizEntity {
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderTypeAttr_OrderTypeId()
 	 * @model keys="orderTypeId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	OrderType getOrderTypeId();

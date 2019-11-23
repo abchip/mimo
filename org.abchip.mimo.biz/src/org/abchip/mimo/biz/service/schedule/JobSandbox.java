@@ -92,7 +92,6 @@ public interface JobSandbox extends BizEntity {
 	 * @see #setAuthUserLoginId(UserLogin)
 	 * @see org.abchip.mimo.biz.service.schedule.SchedulePackage#getJobSandbox_AuthUserLoginId()
 	 * @model keys="userLoginId"
-	 *        annotation="mimo-ent-format type='id-vlong' length='255'"
 	 * @generated
 	 */
 	UserLogin getAuthUserLoginId();
@@ -432,7 +431,6 @@ public interface JobSandbox extends BizEntity {
 	 * @see org.abchip.mimo.biz.service.schedule.SchedulePackage#getJobSandbox_RecurrenceInfoId()
 	 * @model keys="recurrenceInfoId"
 	 *        annotation="mimo-ent-slot help='Deprecated - use tempExprId instead'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	RecurrenceInfo getRecurrenceInfoId();
@@ -459,7 +457,6 @@ public interface JobSandbox extends BizEntity {
 	 * @see #setRunAsUser(UserLogin)
 	 * @see org.abchip.mimo.biz.service.schedule.SchedulePackage#getJobSandbox_RunAsUser()
 	 * @model keys="userLoginId"
-	 *        annotation="mimo-ent-format type='id-vlong' length='255'"
 	 * @generated
 	 */
 	UserLogin getRunAsUser();
@@ -538,7 +535,6 @@ public interface JobSandbox extends BizEntity {
 	 * @see #setRuntimeDataId(RuntimeData)
 	 * @see org.abchip.mimo.biz.service.schedule.SchedulePackage#getJobSandbox_RuntimeDataId()
 	 * @model keys="runtimeDataId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	RuntimeData getRuntimeDataId();
@@ -617,7 +613,6 @@ public interface JobSandbox extends BizEntity {
 	 * @see #setStatusId(StatusItem)
 	 * @see org.abchip.mimo.biz.service.schedule.SchedulePackage#getJobSandbox_StatusId()
 	 * @model keys="statusId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	StatusItem getStatusId();
@@ -645,7 +640,6 @@ public interface JobSandbox extends BizEntity {
 	 * @see org.abchip.mimo.biz.service.schedule.SchedulePackage#getJobSandbox_TempExprId()
 	 * @model keys="tempExprId"
 	 *        annotation="mimo-ent-slot help='Temporal expression id'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	TemporalExpression getTempExprId();

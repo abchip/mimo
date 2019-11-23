@@ -154,7 +154,6 @@ public interface CustRequest extends BizEntityTyped<CustRequestType> {
 	 * @see #setCurrencyUomId(Uom)
 	 * @see org.abchip.mimo.biz.order.request.RequestPackage#getCustRequest_CurrencyUomId()
 	 * @model keys="uomId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Uom getCurrencyUomId();
@@ -181,7 +180,6 @@ public interface CustRequest extends BizEntityTyped<CustRequestType> {
 	 * @see #setCustRequestCategoryId(CustRequestCategory)
 	 * @see org.abchip.mimo.biz.order.request.RequestPackage#getCustRequest_CustRequestCategoryId()
 	 * @model keys="custRequestCategoryId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	CustRequestCategory getCustRequestCategoryId();
@@ -288,7 +286,6 @@ public interface CustRequest extends BizEntityTyped<CustRequestType> {
 	 * @see #setCustRequestTypeId(CustRequestType)
 	 * @see org.abchip.mimo.biz.order.request.RequestPackage#getCustRequest_CustRequestTypeId()
 	 * @model keys="custRequestTypeId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	CustRequestType getCustRequestTypeId();
@@ -341,7 +338,6 @@ public interface CustRequest extends BizEntityTyped<CustRequestType> {
 	 * @see #setFromPartyId(Party)
 	 * @see org.abchip.mimo.biz.order.request.RequestPackage#getCustRequest_FromPartyId()
 	 * @model keys="partyId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Party getFromPartyId();
@@ -369,7 +365,6 @@ public interface CustRequest extends BizEntityTyped<CustRequestType> {
 	 * @see org.abchip.mimo.biz.order.request.RequestPackage#getCustRequest_FulfillContactMechId()
 	 * @model keys="contactMechId"
 	 *        annotation="mimo-ent-slot help='Field to support a location of a cust request--ie, product literature sent to an address, service call at a localtion, etc.'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ContactMech getFulfillContactMechId();
@@ -475,7 +470,6 @@ public interface CustRequest extends BizEntityTyped<CustRequestType> {
 	 * @see #setMaximumAmountUomId(Uom)
 	 * @see org.abchip.mimo.biz.order.request.RequestPackage#getCustRequest_MaximumAmountUomId()
 	 * @model keys="uomId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Uom getMaximumAmountUomId();
@@ -555,7 +549,6 @@ public interface CustRequest extends BizEntityTyped<CustRequestType> {
 	 * @see #setProductStoreId(ProductStore)
 	 * @see org.abchip.mimo.biz.order.request.RequestPackage#getCustRequest_ProductStoreId()
 	 * @model keys="productStoreId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ProductStore getProductStoreId();
@@ -635,7 +628,6 @@ public interface CustRequest extends BizEntityTyped<CustRequestType> {
 	 * @see #setSalesChannelEnumId(Enumeration)
 	 * @see org.abchip.mimo.biz.order.request.RequestPackage#getCustRequest_SalesChannelEnumId()
 	 * @model keys="enumId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Enumeration getSalesChannelEnumId();
@@ -662,7 +654,6 @@ public interface CustRequest extends BizEntityTyped<CustRequestType> {
 	 * @see #setStatusId(StatusItem)
 	 * @see org.abchip.mimo.biz.order.request.RequestPackage#getCustRequest_StatusId()
 	 * @model keys="statusId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	StatusItem getStatusId();

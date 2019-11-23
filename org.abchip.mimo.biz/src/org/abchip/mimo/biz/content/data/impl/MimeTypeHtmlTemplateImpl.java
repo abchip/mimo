@@ -8,7 +8,6 @@
 package org.abchip.mimo.biz.content.data.impl;
 
 import org.abchip.mimo.biz.content.data.DataPackage;
-import org.abchip.mimo.biz.content.data.MimeType;
 import org.abchip.mimo.biz.content.data.MimeTypeHtmlTemplate;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.eclipse.emf.ecore.EClass;
@@ -58,8 +57,8 @@ public class MimeTypeHtmlTemplateImpl extends BizEntityImpl implements MimeTypeH
 	 * @generated
 	 */
 	@Override
-	public MimeType getMimeTypeId() {
-		return (MimeType)eGet(DataPackage.Literals.MIME_TYPE_HTML_TEMPLATE__MIME_TYPE_ID, true);
+	public String getMimeTypeId() {
+		return (String)eGet(DataPackage.Literals.MIME_TYPE_HTML_TEMPLATE__MIME_TYPE_ID, true);
 	}
 
 	/**
@@ -68,7 +67,7 @@ public class MimeTypeHtmlTemplateImpl extends BizEntityImpl implements MimeTypeH
 	 * @generated
 	 */
 	@Override
-	public void setMimeTypeId(MimeType newMimeTypeId) {
+	public void setMimeTypeId(String newMimeTypeId) {
 		eSet(DataPackage.Literals.MIME_TYPE_HTML_TEMPLATE__MIME_TYPE_ID, newMimeTypeId);
 	}
 

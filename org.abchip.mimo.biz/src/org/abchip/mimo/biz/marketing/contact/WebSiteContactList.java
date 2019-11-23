@@ -45,7 +45,6 @@ public interface WebSiteContactList extends BizEntity {
 	 * @see org.abchip.mimo.biz.marketing.contact.ContactPackage#getWebSiteContactList_ContactListId()
 	 * @model keys="contactListId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ContactList getContactListId();
@@ -127,7 +126,6 @@ public interface WebSiteContactList extends BizEntity {
 	 * @see org.abchip.mimo.biz.marketing.contact.ContactPackage#getWebSiteContactList_WebSiteId()
 	 * @model keys="webSiteId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	WebSite getWebSiteId();

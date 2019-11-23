@@ -125,7 +125,6 @@ public interface PaymentGroupMember extends BizEntity {
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPaymentGroupMember_PaymentGroupId()
 	 * @model keys="paymentGroupId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	PaymentGroup getPaymentGroupId();
@@ -153,7 +152,6 @@ public interface PaymentGroupMember extends BizEntity {
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPaymentGroupMember_PaymentId()
 	 * @model keys="paymentId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Payment getPaymentId();

@@ -39,7 +39,6 @@ public interface MarketingCampaignNote extends BizEntityNote {
 	 * @see org.abchip.mimo.biz.marketing.campaign.CampaignPackage#getMarketingCampaignNote_MarketingCampaignId()
 	 * @model keys="marketingCampaignId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	MarketingCampaign getMarketingCampaignId();

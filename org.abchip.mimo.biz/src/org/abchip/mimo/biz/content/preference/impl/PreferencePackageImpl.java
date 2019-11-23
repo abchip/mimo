@@ -884,27 +884,6 @@ public class PreferencePackageImpl extends EPackageImpl implements PreferencePac
 			   "length", "255"
 		   });
 		addAnnotation
-		  (getWebUserPreference_WebPreferenceTypeId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getWebUserPreference_UserLoginId(),
-		   source,
-		   new String[] {
-			   "type", "id-vlong",
-			   "length", "255"
-		   });
-		addAnnotation
-		  (getWebUserPreference_PartyId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getWebUserPreference_VisitId(),
 		   source,
 		   new String[] {

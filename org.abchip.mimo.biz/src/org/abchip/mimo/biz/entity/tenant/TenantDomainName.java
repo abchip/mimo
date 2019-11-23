@@ -66,7 +66,6 @@ public interface TenantDomainName extends BizEntity {
 	 * @see #setTenantId(Tenant)
 	 * @see org.abchip.mimo.biz.entity.tenant.TenantPackage#getTenantDomainName_TenantId()
 	 * @model keys="tenantId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Tenant getTenantId();

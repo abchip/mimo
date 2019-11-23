@@ -78,7 +78,6 @@ public interface MrpEvent extends BizEntityTyped<MrpEventType> {
 	 * @see org.abchip.mimo.biz.manufacturing.mrp.MrpPackage#getMrpEvent_ProductId()
 	 * @model keys="productId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Product getProductId();
@@ -134,7 +133,6 @@ public interface MrpEvent extends BizEntityTyped<MrpEventType> {
 	 * @see org.abchip.mimo.biz.manufacturing.mrp.MrpPackage#getMrpEvent_MrpEventTypeId()
 	 * @model keys="mrpEventTypeId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	MrpEventType getMrpEventTypeId();
@@ -213,7 +211,6 @@ public interface MrpEvent extends BizEntityTyped<MrpEventType> {
 	 * @see #setFacilityId(Facility)
 	 * @see org.abchip.mimo.biz.manufacturing.mrp.MrpPackage#getMrpEvent_FacilityId()
 	 * @model keys="facilityId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Facility getFacilityId();

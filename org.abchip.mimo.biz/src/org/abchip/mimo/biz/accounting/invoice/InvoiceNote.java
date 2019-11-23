@@ -39,7 +39,6 @@ public interface InvoiceNote extends BizEntityNote {
 	 * @see org.abchip.mimo.biz.accounting.invoice.InvoicePackage#getInvoiceNote_InvoiceId()
 	 * @model keys="invoiceId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Invoice getInvoiceId();

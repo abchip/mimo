@@ -68,7 +68,6 @@ public interface ReturnItemType extends BizEntityType<ReturnItem> {
 	 * @see #setParentTypeId(ReturnItemType)
 	 * @see org.abchip.mimo.biz.order.return_.ReturnPackage#getReturnItemType_ParentTypeId()
 	 * @model keys="returnItemTypeId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ReturnItemType getParentTypeId();

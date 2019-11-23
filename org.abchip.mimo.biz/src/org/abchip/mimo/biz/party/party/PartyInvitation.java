@@ -129,7 +129,6 @@ public interface PartyInvitation extends BizEntity {
 	 * @see #setStatusId(StatusItem)
 	 * @see org.abchip.mimo.biz.party.party.PartyPackage#getPartyInvitation_StatusId()
 	 * @model keys="statusId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	StatusItem getStatusId();
@@ -218,7 +217,6 @@ public interface PartyInvitation extends BizEntity {
 	 * @see #setPartyIdFrom(Party)
 	 * @see org.abchip.mimo.biz.party.party.PartyPackage#getPartyInvitation_PartyIdFrom()
 	 * @model keys="partyId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Party getPartyIdFrom();

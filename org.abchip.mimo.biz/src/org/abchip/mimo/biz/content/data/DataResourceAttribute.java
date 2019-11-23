@@ -122,7 +122,6 @@ public interface DataResourceAttribute extends BizEntity {
 	 * @see org.abchip.mimo.biz.content.data.DataPackage#getDataResourceAttribute_DataResourceId()
 	 * @model keys="dataResourceId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	DataResource getDataResourceId();

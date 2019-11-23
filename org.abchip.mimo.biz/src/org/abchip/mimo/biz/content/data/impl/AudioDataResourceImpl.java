@@ -9,7 +9,6 @@ package org.abchip.mimo.biz.content.data.impl;
 
 import org.abchip.mimo.biz.content.data.AudioDataResource;
 import org.abchip.mimo.biz.content.data.DataPackage;
-import org.abchip.mimo.biz.content.data.DataResource;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.eclipse.emf.ecore.EClass;
 
@@ -21,8 +20,8 @@ import org.eclipse.emf.ecore.EClass;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.content.data.impl.AudioDataResourceImpl#getAudioData <em>Audio Data</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.data.impl.AudioDataResourceImpl#getDataResourceId <em>Data Resource Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.content.data.impl.AudioDataResourceImpl#getAudioData <em>Audio Data</em>}</li>
  * </ul>
  *
  * @generated
@@ -78,8 +77,8 @@ public class AudioDataResourceImpl extends BizEntityImpl implements AudioDataRes
 	 * @generated
 	 */
 	@Override
-	public DataResource getDataResourceId() {
-		return (DataResource)eGet(DataPackage.Literals.AUDIO_DATA_RESOURCE__DATA_RESOURCE_ID, true);
+	public String getDataResourceId() {
+		return (String)eGet(DataPackage.Literals.AUDIO_DATA_RESOURCE__DATA_RESOURCE_ID, true);
 	}
 
 	/**
@@ -88,7 +87,7 @@ public class AudioDataResourceImpl extends BizEntityImpl implements AudioDataRes
 	 * @generated
 	 */
 	@Override
-	public void setDataResourceId(DataResource newDataResourceId) {
+	public void setDataResourceId(String newDataResourceId) {
 		eSet(DataPackage.Literals.AUDIO_DATA_RESOURCE__DATA_RESOURCE_ID, newDataResourceId);
 	}
 

@@ -72,7 +72,6 @@ public interface EmplPositionFulfillment extends BizEntity {
 	 * @see org.abchip.mimo.biz.humanres.position.PositionPackage#getEmplPositionFulfillment_EmplPositionId()
 	 * @model keys="emplPositionId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	EmplPosition getEmplPositionId();
@@ -128,7 +127,6 @@ public interface EmplPositionFulfillment extends BizEntity {
 	 * @see org.abchip.mimo.biz.humanres.position.PositionPackage#getEmplPositionFulfillment_PartyId()
 	 * @model keys="partyId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Party getPartyId();

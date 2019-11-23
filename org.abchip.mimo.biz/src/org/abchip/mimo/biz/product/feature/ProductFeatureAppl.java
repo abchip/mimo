@@ -105,7 +105,6 @@ public interface ProductFeatureAppl extends BizEntityTyped<ProductFeatureApplTyp
 	 * @see org.abchip.mimo.biz.product.feature.FeaturePackage#getProductFeatureAppl_ProductId()
 	 * @model keys="productId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Product getProductId();
@@ -210,7 +209,6 @@ public interface ProductFeatureAppl extends BizEntityTyped<ProductFeatureApplTyp
 	 * @see #setProductFeatureApplTypeId(ProductFeatureApplType)
 	 * @see org.abchip.mimo.biz.product.feature.FeaturePackage#getProductFeatureAppl_ProductFeatureApplTypeId()
 	 * @model keys="productFeatureApplTypeId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ProductFeatureApplType getProductFeatureApplTypeId();
@@ -238,7 +236,6 @@ public interface ProductFeatureAppl extends BizEntityTyped<ProductFeatureApplTyp
 	 * @see org.abchip.mimo.biz.product.feature.FeaturePackage#getProductFeatureAppl_ProductFeatureId()
 	 * @model keys="productFeatureId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ProductFeature getProductFeatureId();

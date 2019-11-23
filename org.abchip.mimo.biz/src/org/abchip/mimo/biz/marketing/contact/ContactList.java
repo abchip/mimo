@@ -139,7 +139,6 @@ public interface ContactList extends BizEntityTyped<ContactListType> {
 	 * @see #setContactListTypeId(ContactListType)
 	 * @see org.abchip.mimo.biz.marketing.contact.ContactPackage#getContactList_ContactListTypeId()
 	 * @model keys="contactListTypeId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ContactListType getContactListTypeId();
@@ -166,7 +165,6 @@ public interface ContactList extends BizEntityTyped<ContactListType> {
 	 * @see #setContactMechTypeId(ContactMechType)
 	 * @see org.abchip.mimo.biz.marketing.contact.ContactPackage#getContactList_ContactMechTypeId()
 	 * @model keys="contactMechTypeId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ContactMechType getContactMechTypeId();
@@ -193,7 +191,6 @@ public interface ContactList extends BizEntityTyped<ContactListType> {
 	 * @see #setCreatedByUserLogin(UserLogin)
 	 * @see org.abchip.mimo.biz.marketing.contact.ContactPackage#getContactList_CreatedByUserLogin()
 	 * @model keys="userLoginId"
-	 *        annotation="mimo-ent-format type='id-vlong' length='255'"
 	 * @generated
 	 */
 	UserLogin getCreatedByUserLogin();
@@ -272,7 +269,6 @@ public interface ContactList extends BizEntityTyped<ContactListType> {
 	 * @see #setLastModifiedByUserLogin(UserLogin)
 	 * @see org.abchip.mimo.biz.marketing.contact.ContactPackage#getContactList_LastModifiedByUserLogin()
 	 * @model keys="userLoginId"
-	 *        annotation="mimo-ent-format type='id-vlong' length='255'"
 	 * @generated
 	 */
 	UserLogin getLastModifiedByUserLogin();
@@ -299,7 +295,6 @@ public interface ContactList extends BizEntityTyped<ContactListType> {
 	 * @see #setMarketingCampaignId(MarketingCampaign)
 	 * @see org.abchip.mimo.biz.marketing.contact.ContactPackage#getContactList_MarketingCampaignId()
 	 * @model keys="marketingCampaignId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	MarketingCampaign getMarketingCampaignId();
@@ -379,7 +374,6 @@ public interface ContactList extends BizEntityTyped<ContactListType> {
 	 * @see #setOwnerPartyId(Party)
 	 * @see org.abchip.mimo.biz.marketing.contact.ContactPackage#getContactList_OwnerPartyId()
 	 * @model keys="partyId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Party getOwnerPartyId();

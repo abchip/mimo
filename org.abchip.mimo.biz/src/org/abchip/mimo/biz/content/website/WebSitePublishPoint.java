@@ -8,7 +8,6 @@
 package org.abchip.mimo.biz.content.website;
 
 import org.abchip.mimo.biz.BizEntity;
-import org.abchip.mimo.biz.content.content.Content;
 
 /**
  * <!-- begin-user-doc -->
@@ -19,9 +18,9 @@ import org.abchip.mimo.biz.content.content.Content;
  * The following features are supported:
  * </p>
  * <ul>
+ *   <li>{@link org.abchip.mimo.biz.content.website.WebSitePublishPoint#getContentId <em>Content Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.website.WebSitePublishPoint#getAboutContentId <em>About Content Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.website.WebSitePublishPoint#getContentDept <em>Content Dept</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.content.website.WebSitePublishPoint#getContentId <em>Content Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.website.WebSitePublishPoint#getLeftBarId <em>Left Bar Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.website.WebSitePublishPoint#getLineLogo <em>Line Logo</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.website.WebSitePublishPoint#getLogo <em>Logo</em>}</li>
@@ -89,31 +88,31 @@ public interface WebSitePublishPoint extends BizEntity {
 	void setContentDept(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Content Id</b></em>' reference.
+	 * Returns the value of the '<em><b>Content Id</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Content Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Content Id</em>' reference.
-	 * @see #setContentId(Content)
+	 * @return the value of the '<em>Content Id</em>' attribute.
+	 * @see #setContentId(String)
 	 * @see org.abchip.mimo.biz.content.website.WebsitePackage#getWebSitePublishPoint_ContentId()
-	 * @model keys="contentId" required="true"
+	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
-	Content getContentId();
+	String getContentId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.content.website.WebSitePublishPoint#getContentId <em>Content Id</em>}' reference.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.content.website.WebSitePublishPoint#getContentId <em>Content Id</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Content Id</em>' reference.
+	 * @param value the new value of the '<em>Content Id</em>' attribute.
 	 * @see #getContentId()
 	 * @generated
 	 */
-	void setContentId(Content value);
+	void setContentId(String value);
 
 	/**
 	 * Returns the value of the '<em><b>Left Bar Id</b></em>' attribute.

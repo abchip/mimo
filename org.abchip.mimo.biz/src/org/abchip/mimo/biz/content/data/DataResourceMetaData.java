@@ -43,7 +43,6 @@ public interface DataResourceMetaData extends BizEntity {
 	 * @see org.abchip.mimo.biz.content.data.DataPackage#getDataResourceMetaData_DataResourceId()
 	 * @model keys="dataResourceId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	DataResource getDataResourceId();
@@ -70,7 +69,6 @@ public interface DataResourceMetaData extends BizEntity {
 	 * @see #setDataSourceId(DataSource)
 	 * @see org.abchip.mimo.biz.content.data.DataPackage#getDataResourceMetaData_DataSourceId()
 	 * @model keys="dataSourceId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	DataSource getDataSourceId();
@@ -98,7 +96,6 @@ public interface DataResourceMetaData extends BizEntity {
 	 * @see org.abchip.mimo.biz.content.data.DataPackage#getDataResourceMetaData_MetaDataPredicateId()
 	 * @model keys="metaDataPredicateId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	MetaDataPredicate getMetaDataPredicateId();

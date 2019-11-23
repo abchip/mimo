@@ -183,7 +183,6 @@ public interface UomConversionDated extends BizEntity {
 	 * @see org.abchip.mimo.biz.common.uom.UomPackage#getUomConversionDated_UomId()
 	 * @model keys="uomId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Uom getUomId();
@@ -211,7 +210,6 @@ public interface UomConversionDated extends BizEntity {
 	 * @see org.abchip.mimo.biz.common.uom.UomPackage#getUomConversionDated_UomIdTo()
 	 * @model keys="uomId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Uom getUomIdTo();
@@ -238,7 +236,6 @@ public interface UomConversionDated extends BizEntity {
 	 * @see #setCustomMethodId(CustomMethod)
 	 * @see org.abchip.mimo.biz.common.uom.UomPackage#getUomConversionDated_CustomMethodId()
 	 * @model keys="customMethodId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	CustomMethod getCustomMethodId();
@@ -265,7 +262,6 @@ public interface UomConversionDated extends BizEntity {
 	 * @see #setPurposeEnumId(Enumeration)
 	 * @see org.abchip.mimo.biz.common.uom.UomPackage#getUomConversionDated_PurposeEnumId()
 	 * @model keys="enumId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Enumeration getPurposeEnumId();

@@ -8,7 +8,6 @@
 package org.abchip.mimo.biz.content.data.impl;
 
 import org.abchip.mimo.biz.content.data.DataPackage;
-import org.abchip.mimo.biz.content.data.DataResource;
 import org.abchip.mimo.biz.content.data.VideoDataResource;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.eclipse.emf.ecore.EClass;
@@ -58,8 +57,8 @@ public class VideoDataResourceImpl extends BizEntityImpl implements VideoDataRes
 	 * @generated
 	 */
 	@Override
-	public DataResource getDataResourceId() {
-		return (DataResource)eGet(DataPackage.Literals.VIDEO_DATA_RESOURCE__DATA_RESOURCE_ID, true);
+	public String getDataResourceId() {
+		return (String)eGet(DataPackage.Literals.VIDEO_DATA_RESOURCE__DATA_RESOURCE_ID, true);
 	}
 
 	/**
@@ -68,7 +67,7 @@ public class VideoDataResourceImpl extends BizEntityImpl implements VideoDataRes
 	 * @generated
 	 */
 	@Override
-	public void setDataResourceId(DataResource newDataResourceId) {
+	public void setDataResourceId(String newDataResourceId) {
 		eSet(DataPackage.Literals.VIDEO_DATA_RESOURCE__DATA_RESOURCE_ID, newDataResourceId);
 	}
 

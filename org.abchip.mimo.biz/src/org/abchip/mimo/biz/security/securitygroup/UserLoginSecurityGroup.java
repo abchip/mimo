@@ -73,7 +73,6 @@ public interface UserLoginSecurityGroup extends BizEntity {
 	 * @see org.abchip.mimo.biz.security.securitygroup.SecuritygroupPackage#getUserLoginSecurityGroup_GroupId()
 	 * @model keys="groupId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	SecurityGroup getGroupId();
@@ -127,7 +126,6 @@ public interface UserLoginSecurityGroup extends BizEntity {
 	 * @see org.abchip.mimo.biz.security.securitygroup.SecuritygroupPackage#getUserLoginSecurityGroup_UserLoginId()
 	 * @model keys="userLoginId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id-vlong' length='255'"
 	 * @generated
 	 */
 	UserLogin getUserLoginId();

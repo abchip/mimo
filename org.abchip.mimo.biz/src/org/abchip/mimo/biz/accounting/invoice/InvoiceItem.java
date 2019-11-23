@@ -119,7 +119,6 @@ public interface InvoiceItem extends BizEntityTyped<InvoiceItemType> {
 	 * @see #setInventoryItemId(InventoryItem)
 	 * @see org.abchip.mimo.biz.accounting.invoice.InvoicePackage#getInvoiceItem_InventoryItemId()
 	 * @model keys="inventoryItemId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	InventoryItem getInventoryItemId();
@@ -175,7 +174,6 @@ public interface InvoiceItem extends BizEntityTyped<InvoiceItemType> {
 	 * @see org.abchip.mimo.biz.accounting.invoice.InvoicePackage#getInvoiceItem_OverrideGlAccountId()
 	 * @model keys="glAccountId"
 	 *        annotation="mimo-ent-slot help='used to specify the override or actual glAccountId used for the invoice, avoids problems if configuration changes after initial posting, etc'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	GlAccount getOverrideGlAccountId();
@@ -203,7 +201,6 @@ public interface InvoiceItem extends BizEntityTyped<InvoiceItemType> {
 	 * @see org.abchip.mimo.biz.accounting.invoice.InvoicePackage#getInvoiceItem_OverrideOrgPartyId()
 	 * @model keys="partyId"
 	 *        annotation="mimo-ent-slot help='Used to specify the organization override rather than using the payToPartyId'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Party getOverrideOrgPartyId();
@@ -282,7 +279,6 @@ public interface InvoiceItem extends BizEntityTyped<InvoiceItemType> {
 	 * @see #setProductFeatureId(ProductFeature)
 	 * @see org.abchip.mimo.biz.accounting.invoice.InvoicePackage#getInvoiceItem_ProductFeatureId()
 	 * @model keys="productFeatureId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ProductFeature getProductFeatureId();
@@ -309,7 +305,6 @@ public interface InvoiceItem extends BizEntityTyped<InvoiceItemType> {
 	 * @see #setProductId(Product)
 	 * @see org.abchip.mimo.biz.accounting.invoice.InvoicePackage#getInvoiceItem_ProductId()
 	 * @model keys="productId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Product getProductId();
@@ -388,7 +383,6 @@ public interface InvoiceItem extends BizEntityTyped<InvoiceItemType> {
 	 * @see #setSalesOpportunityId(SalesOpportunity)
 	 * @see org.abchip.mimo.biz.accounting.invoice.InvoicePackage#getInvoiceItem_SalesOpportunityId()
 	 * @model keys="salesOpportunityId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	SalesOpportunity getSalesOpportunityId();
@@ -415,7 +409,6 @@ public interface InvoiceItem extends BizEntityTyped<InvoiceItemType> {
 	 * @see #setTaxAuthGeoId(Geo)
 	 * @see org.abchip.mimo.biz.accounting.invoice.InvoicePackage#getInvoiceItem_TaxAuthGeoId()
 	 * @model keys="geoId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Geo getTaxAuthGeoId();
@@ -442,7 +435,6 @@ public interface InvoiceItem extends BizEntityTyped<InvoiceItemType> {
 	 * @see #setTaxAuthPartyId(Party)
 	 * @see org.abchip.mimo.biz.accounting.invoice.InvoicePackage#getInvoiceItem_TaxAuthPartyId()
 	 * @model keys="partyId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Party getTaxAuthPartyId();
@@ -469,7 +461,6 @@ public interface InvoiceItem extends BizEntityTyped<InvoiceItemType> {
 	 * @see #setTaxAuthorityRateSeqId(TaxAuthorityRateProduct)
 	 * @see org.abchip.mimo.biz.accounting.invoice.InvoicePackage#getInvoiceItem_TaxAuthorityRateSeqId()
 	 * @model keys="taxAuthorityRateSeqId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	TaxAuthorityRateProduct getTaxAuthorityRateSeqId();
@@ -496,7 +487,6 @@ public interface InvoiceItem extends BizEntityTyped<InvoiceItemType> {
 	 * @see #setUomId(Uom)
 	 * @see org.abchip.mimo.biz.accounting.invoice.InvoicePackage#getInvoiceItem_UomId()
 	 * @model keys="uomId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Uom getUomId();
@@ -523,7 +513,6 @@ public interface InvoiceItem extends BizEntityTyped<InvoiceItemType> {
 	 * @see #setInvoiceItemTypeId(InvoiceItemType)
 	 * @see org.abchip.mimo.biz.accounting.invoice.InvoicePackage#getInvoiceItem_InvoiceItemTypeId()
 	 * @model keys="invoiceItemTypeId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	InvoiceItemType getInvoiceItemTypeId();
@@ -551,7 +540,6 @@ public interface InvoiceItem extends BizEntityTyped<InvoiceItemType> {
 	 * @see org.abchip.mimo.biz.accounting.invoice.InvoicePackage#getInvoiceItem_InvoiceId()
 	 * @model keys="invoiceId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Invoice getInvoiceId();

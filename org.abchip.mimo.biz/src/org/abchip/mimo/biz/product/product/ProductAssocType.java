@@ -95,7 +95,6 @@ public interface ProductAssocType extends BizEntityType<ProductAssoc> {
 	 * @see #setParentTypeId(ProductAssocType)
 	 * @see org.abchip.mimo.biz.product.product.ProductPackage#getProductAssocType_ParentTypeId()
 	 * @model keys="productAssocTypeId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ProductAssocType getParentTypeId();

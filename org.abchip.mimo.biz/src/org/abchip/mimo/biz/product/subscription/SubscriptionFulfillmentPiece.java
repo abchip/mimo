@@ -40,7 +40,6 @@ public interface SubscriptionFulfillmentPiece extends BizEntity {
 	 * @see org.abchip.mimo.biz.product.subscription.SubscriptionPackage#getSubscriptionFulfillmentPiece_SubscriptionId()
 	 * @model keys="subscriptionId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Subscription getSubscriptionId();
@@ -68,7 +67,6 @@ public interface SubscriptionFulfillmentPiece extends BizEntity {
 	 * @see org.abchip.mimo.biz.product.subscription.SubscriptionPackage#getSubscriptionFulfillmentPiece_SubscriptionActivityId()
 	 * @model keys="subscriptionActivityId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	SubscriptionActivity getSubscriptionActivityId();

@@ -545,22 +545,22 @@ public interface TenantPackage extends EPackage {
 	int TENANT_KEY_ENCRYPTING_KEY__LAST_UPDATED_TX_STAMP = BizPackage.BIZ_ENTITY__LAST_UPDATED_TX_STAMP;
 
 	/**
+	 * The feature id for the '<em><b>Tenant Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TENANT_KEY_ENCRYPTING_KEY__TENANT_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
+
+	/**
 	 * The feature id for the '<em><b>Kek Text</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TENANT_KEY_ENCRYPTING_KEY__KEK_TEXT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Tenant Id</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TENANT_KEY_ENCRYPTING_KEY__TENANT_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
+	int TENANT_KEY_ENCRYPTING_KEY__KEK_TEXT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Key Encrypting Key</em>' class.
@@ -831,15 +831,15 @@ public interface TenantPackage extends EPackage {
 	EClass getTenantKeyEncryptingKey();
 
 	/**
-	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.entity.tenant.TenantKeyEncryptingKey#getTenantId <em>Tenant Id</em>}'.
+	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.entity.tenant.TenantKeyEncryptingKey#getTenantId <em>Tenant Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Tenant Id</em>'.
+	 * @return the meta object for the attribute '<em>Tenant Id</em>'.
 	 * @see org.abchip.mimo.biz.entity.tenant.TenantKeyEncryptingKey#getTenantId()
 	 * @see #getTenantKeyEncryptingKey()
 	 * @generated
 	 */
-	EReference getTenantKeyEncryptingKey_TenantId();
+	EAttribute getTenantKeyEncryptingKey_TenantId();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.entity.tenant.TenantKeyEncryptingKey#getKekText <em>Kek Text</em>}'.
@@ -1079,12 +1079,12 @@ public interface TenantPackage extends EPackage {
 		EClass TENANT_KEY_ENCRYPTING_KEY = eINSTANCE.getTenantKeyEncryptingKey();
 
 		/**
-		 * The meta object literal for the '<em><b>Tenant Id</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Tenant Id</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference TENANT_KEY_ENCRYPTING_KEY__TENANT_ID = eINSTANCE.getTenantKeyEncryptingKey_TenantId();
+		EAttribute TENANT_KEY_ENCRYPTING_KEY__TENANT_ID = eINSTANCE.getTenantKeyEncryptingKey_TenantId();
 
 		/**
 		 * The meta object literal for the '<em><b>Kek Text</b></em>' attribute feature.

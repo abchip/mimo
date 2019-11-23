@@ -118,7 +118,6 @@ public interface FinAccount extends BizEntityTyped<FinAccountType> {
 	 * @see #setCurrencyUomId(Uom)
 	 * @see org.abchip.mimo.biz.accounting.finaccount.FinaccountPackage#getFinAccount_CurrencyUomId()
 	 * @model keys="uomId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Uom getCurrencyUomId();
@@ -279,7 +278,6 @@ public interface FinAccount extends BizEntityTyped<FinAccountType> {
 	 * @see org.abchip.mimo.biz.accounting.finaccount.FinaccountPackage#getFinAccount_OrganizationPartyId()
 	 * @model keys="partyId"
 	 *        annotation="mimo-ent-slot help='The internal organization Party that owns (or rather, is liable for) the account.'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Party getOrganizationPartyId();
@@ -307,7 +305,6 @@ public interface FinAccount extends BizEntityTyped<FinAccountType> {
 	 * @see org.abchip.mimo.biz.accounting.finaccount.FinaccountPackage#getFinAccount_OwnerPartyId()
 	 * @model keys="partyId"
 	 *        annotation="mimo-ent-slot help='The customer or third party that owns the account.'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Party getOwnerPartyId();
@@ -334,7 +331,6 @@ public interface FinAccount extends BizEntityTyped<FinAccountType> {
 	 * @see #setPostToGlAccountId(GlAccount)
 	 * @see org.abchip.mimo.biz.accounting.finaccount.FinaccountPackage#getFinAccount_PostToGlAccountId()
 	 * @model keys="glAccountId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	GlAccount getPostToGlAccountId();
@@ -387,7 +383,6 @@ public interface FinAccount extends BizEntityTyped<FinAccountType> {
 	 * @see #setReplenishPaymentId(PaymentMethod)
 	 * @see org.abchip.mimo.biz.accounting.finaccount.FinaccountPackage#getFinAccount_ReplenishPaymentId()
 	 * @model keys="paymentMethodId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	PaymentMethod getReplenishPaymentId();
@@ -535,7 +530,6 @@ public interface FinAccount extends BizEntityTyped<FinAccountType> {
 	 * @see #setFinAccountTypeId(FinAccountType)
 	 * @see org.abchip.mimo.biz.accounting.finaccount.FinaccountPackage#getFinAccount_FinAccountTypeId()
 	 * @model keys="finAccountTypeId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	FinAccountType getFinAccountTypeId();

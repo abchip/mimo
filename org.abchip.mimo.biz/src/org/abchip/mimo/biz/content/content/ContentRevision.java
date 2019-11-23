@@ -68,7 +68,6 @@ public interface ContentRevision extends BizEntity {
 	 * @see #setCommittedByPartyId(Party)
 	 * @see org.abchip.mimo.biz.content.content.ContentPackage#getContentRevision_CommittedByPartyId()
 	 * @model keys="partyId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Party getCommittedByPartyId();
@@ -96,7 +95,6 @@ public interface ContentRevision extends BizEntity {
 	 * @see org.abchip.mimo.biz.content.content.ContentPackage#getContentRevision_ContentId()
 	 * @model keys="contentId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Content getContentId();

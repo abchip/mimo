@@ -95,7 +95,6 @@ public interface UomType extends BizEntityType<Uom> {
 	 * @see #setParentTypeId(UomType)
 	 * @see org.abchip.mimo.biz.common.uom.UomPackage#getUomType_ParentTypeId()
 	 * @model keys="uomTypeId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	UomType getParentTypeId();

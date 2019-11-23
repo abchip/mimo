@@ -95,7 +95,6 @@ public interface PaymentGroupType extends BizEntityType<PaymentGroup> {
 	 * @see #setParentTypeId(PaymentGroupType)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPaymentGroupType_ParentTypeId()
 	 * @model keys="paymentGroupTypeId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	PaymentGroupType getParentTypeId();

@@ -95,7 +95,6 @@ public interface RoleTypeAttr extends BizEntity {
 	 * @see org.abchip.mimo.biz.party.party.PartyPackage#getRoleTypeAttr_RoleTypeId()
 	 * @model keys="roleTypeId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	RoleType getRoleTypeId();

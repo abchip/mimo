@@ -45,7 +45,6 @@ public interface WebUserPreference extends BizEntity {
 	 * @see org.abchip.mimo.biz.content.preference.PreferencePackage#getWebUserPreference_PartyId()
 	 * @model keys="partyId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Party getPartyId();
@@ -73,7 +72,6 @@ public interface WebUserPreference extends BizEntity {
 	 * @see org.abchip.mimo.biz.content.preference.PreferencePackage#getWebUserPreference_UserLoginId()
 	 * @model keys="userLoginId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id-vlong' length='255'"
 	 * @generated
 	 */
 	UserLogin getUserLoginId();
@@ -129,7 +127,6 @@ public interface WebUserPreference extends BizEntity {
 	 * @see org.abchip.mimo.biz.content.preference.PreferencePackage#getWebUserPreference_WebPreferenceTypeId()
 	 * @model keys="webPreferenceTypeId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	WebPreferenceType getWebPreferenceTypeId();

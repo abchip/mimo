@@ -79,7 +79,6 @@ public interface FixedAsset extends BizEntityTyped<FixedAssetType> {
 	 * @see #setAcquireOrderId(OrderHeader)
 	 * @see org.abchip.mimo.biz.accounting.fixedasset.FixedassetPackage#getFixedAsset_AcquireOrderId()
 	 * @model keys="orderId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	OrderHeader getAcquireOrderId();
@@ -158,7 +157,6 @@ public interface FixedAsset extends BizEntityTyped<FixedAssetType> {
 	 * @see #setCalendarId(TechDataCalendar)
 	 * @see org.abchip.mimo.biz.accounting.fixedasset.FixedassetPackage#getFixedAsset_CalendarId()
 	 * @model keys="calendarId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	TechDataCalendar getCalendarId();
@@ -185,7 +183,6 @@ public interface FixedAsset extends BizEntityTyped<FixedAssetType> {
 	 * @see #setClassEnumId(Enumeration)
 	 * @see org.abchip.mimo.biz.accounting.fixedasset.FixedassetPackage#getFixedAsset_ClassEnumId()
 	 * @model keys="enumId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Enumeration getClassEnumId();
@@ -368,7 +365,6 @@ public interface FixedAsset extends BizEntityTyped<FixedAssetType> {
 	 * @see #setInstanceOfProductId(Product)
 	 * @see org.abchip.mimo.biz.accounting.fixedasset.FixedassetPackage#getFixedAsset_InstanceOfProductId()
 	 * @model keys="productId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Product getInstanceOfProductId();
@@ -395,7 +391,6 @@ public interface FixedAsset extends BizEntityTyped<FixedAssetType> {
 	 * @see #setLocatedAtFacilityId(Facility)
 	 * @see org.abchip.mimo.biz.accounting.fixedasset.FixedassetPackage#getFixedAsset_LocatedAtFacilityId()
 	 * @model keys="facilityId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Facility getLocatedAtFacilityId();
@@ -448,7 +443,6 @@ public interface FixedAsset extends BizEntityTyped<FixedAssetType> {
 	 * @see #setPartyId(Party)
 	 * @see org.abchip.mimo.biz.accounting.fixedasset.FixedassetPackage#getFixedAsset_PartyId()
 	 * @model keys="partyId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Party getPartyId();
@@ -553,7 +547,6 @@ public interface FixedAsset extends BizEntityTyped<FixedAssetType> {
 	 * @see #setRoleTypeId(RoleType)
 	 * @see org.abchip.mimo.biz.accounting.fixedasset.FixedassetPackage#getFixedAsset_RoleTypeId()
 	 * @model keys="roleTypeId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	RoleType getRoleTypeId();
@@ -632,7 +625,6 @@ public interface FixedAsset extends BizEntityTyped<FixedAssetType> {
 	 * @see #setUomId(Uom)
 	 * @see org.abchip.mimo.biz.accounting.fixedasset.FixedassetPackage#getFixedAsset_UomId()
 	 * @model keys="uomId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Uom getUomId();
@@ -831,7 +823,6 @@ public interface FixedAsset extends BizEntityTyped<FixedAssetType> {
 	 * @see #setFixedAssetTypeId(FixedAssetType)
 	 * @see org.abchip.mimo.biz.accounting.fixedasset.FixedassetPackage#getFixedAsset_FixedAssetTypeId()
 	 * @model keys="fixedAssetTypeId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	FixedAssetType getFixedAssetTypeId();
@@ -858,7 +849,6 @@ public interface FixedAsset extends BizEntityTyped<FixedAssetType> {
 	 * @see #setParentFixedAssetId(FixedAsset)
 	 * @see org.abchip.mimo.biz.accounting.fixedasset.FixedassetPackage#getFixedAsset_ParentFixedAssetId()
 	 * @model keys="fixedAssetId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	FixedAsset getParentFixedAssetId();

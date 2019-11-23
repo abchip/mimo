@@ -77,7 +77,6 @@ public interface ProductMaint extends BizEntityTyped<ProductMaintType> {
 	 * @see org.abchip.mimo.biz.product.product.ProductPackage#getProductMaint_IntervalUomId()
 	 * @model keys="uomId"
 	 *        annotation="mimo-ent-slot help='UOM for intervalQuantity; if used intervalMeterTypeId is generally not used (ie one or the other)'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Uom getIntervalUomId();
@@ -131,7 +130,6 @@ public interface ProductMaint extends BizEntityTyped<ProductMaintType> {
 	 * @see org.abchip.mimo.biz.product.product.ProductPackage#getProductMaint_MaintTemplateWorkEffortId()
 	 * @model keys="workEffortId"
 	 *        annotation="mimo-ent-slot help='Template of Maintenance Plan. WorkEffort may have WorkEffortAssocs for tasks/breakdown detailes'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	WorkEffort getMaintTemplateWorkEffortId();
@@ -214,7 +212,6 @@ public interface ProductMaint extends BizEntityTyped<ProductMaintType> {
 	 * @see org.abchip.mimo.biz.product.product.ProductPackage#getProductMaint_ProductId()
 	 * @model keys="productId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Product getProductId();
@@ -241,7 +238,6 @@ public interface ProductMaint extends BizEntityTyped<ProductMaintType> {
 	 * @see #setProductMaintTypeId(ProductMaintType)
 	 * @see org.abchip.mimo.biz.product.product.ProductPackage#getProductMaint_ProductMaintTypeId()
 	 * @model keys="productMaintTypeId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ProductMaintType getProductMaintTypeId();
@@ -269,7 +265,6 @@ public interface ProductMaint extends BizEntityTyped<ProductMaintType> {
 	 * @see org.abchip.mimo.biz.product.product.ProductPackage#getProductMaint_IntervalMeterTypeId()
 	 * @model keys="productMeterTypeId"
 	 *        annotation="mimo-ent-slot help='Meter Type for intervalQuantity; if used intervalUomId is generally not used (ie one or the other)'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ProductMeterType getIntervalMeterTypeId();

@@ -123,7 +123,6 @@ public interface ContentType extends BizEntityType<Content> {
 	 * @see #setParentTypeId(ContentType)
 	 * @see org.abchip.mimo.biz.content.content.ContentPackage#getContentType_ParentTypeId()
 	 * @model keys="contentTypeId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ContentType getParentTypeId();

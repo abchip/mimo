@@ -121,7 +121,6 @@ public interface QuoteItem extends BizEntity {
 	 * @see #setCustRequestId(CustRequest)
 	 * @see org.abchip.mimo.biz.order.quote.QuotePackage#getQuoteItem_CustRequestId()
 	 * @model keys="custRequestId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	CustRequest getCustRequestId();
@@ -174,7 +173,6 @@ public interface QuoteItem extends BizEntity {
 	 * @see #setDeliverableTypeId(DeliverableType)
 	 * @see org.abchip.mimo.biz.order.quote.QuotePackage#getQuoteItem_DeliverableTypeId()
 	 * @model keys="deliverableTypeId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	DeliverableType getDeliverableTypeId();
@@ -279,7 +277,6 @@ public interface QuoteItem extends BizEntity {
 	 * @see #setProductFeatureId(ProductFeature)
 	 * @see org.abchip.mimo.biz.order.quote.QuotePackage#getQuoteItem_ProductFeatureId()
 	 * @model keys="productFeatureId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ProductFeature getProductFeatureId();
@@ -306,7 +303,6 @@ public interface QuoteItem extends BizEntity {
 	 * @see #setProductId(Product)
 	 * @see org.abchip.mimo.biz.order.quote.QuotePackage#getQuoteItem_ProductId()
 	 * @model keys="productId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Product getProductId();
@@ -360,7 +356,6 @@ public interface QuoteItem extends BizEntity {
 	 * @see org.abchip.mimo.biz.order.quote.QuotePackage#getQuoteItem_QuoteId()
 	 * @model keys="quoteId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Quote getQuoteId();
@@ -545,7 +540,6 @@ public interface QuoteItem extends BizEntity {
 	 * @see #setSkillTypeId(SkillType)
 	 * @see org.abchip.mimo.biz.order.quote.QuotePackage#getQuoteItem_SkillTypeId()
 	 * @model keys="skillTypeId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	SkillType getSkillTypeId();
@@ -572,7 +566,6 @@ public interface QuoteItem extends BizEntity {
 	 * @see #setUomId(Uom)
 	 * @see org.abchip.mimo.biz.order.quote.QuotePackage#getQuoteItem_UomId()
 	 * @model keys="uomId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Uom getUomId();
@@ -599,7 +592,6 @@ public interface QuoteItem extends BizEntity {
 	 * @see #setWorkEffortId(WorkEffort)
 	 * @see org.abchip.mimo.biz.order.quote.QuotePackage#getQuoteItem_WorkEffortId()
 	 * @model keys="workEffortId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	WorkEffort getWorkEffortId();

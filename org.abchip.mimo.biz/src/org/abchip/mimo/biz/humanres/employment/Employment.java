@@ -77,7 +77,6 @@ public interface Employment extends BizEntity {
 	 * @see org.abchip.mimo.biz.humanres.employment.EmploymentPackage#getEmployment_PartyIdFrom()
 	 * @model keys="partyId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Party getPartyIdFrom();
@@ -105,7 +104,6 @@ public interface Employment extends BizEntity {
 	 * @see org.abchip.mimo.biz.humanres.employment.EmploymentPackage#getEmployment_PartyIdTo()
 	 * @model keys="partyId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Party getPartyIdTo();
@@ -188,7 +186,6 @@ public interface Employment extends BizEntity {
 	 * @see #setTerminationReasonId(TerminationReason)
 	 * @see org.abchip.mimo.biz.humanres.employment.EmploymentPackage#getEmployment_TerminationReasonId()
 	 * @model keys="terminationReasonId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	TerminationReason getTerminationReasonId();
@@ -215,7 +212,6 @@ public interface Employment extends BizEntity {
 	 * @see #setTerminationTypeId(TerminationType)
 	 * @see org.abchip.mimo.biz.humanres.employment.EmploymentPackage#getEmployment_TerminationTypeId()
 	 * @model keys="terminationTypeId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	TerminationType getTerminationTypeId();

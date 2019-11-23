@@ -106,7 +106,6 @@ public interface GeoPoint extends BizEntity {
 	 * @see org.abchip.mimo.biz.common.geo.GeoPackage#getGeoPoint_ElevationUomId()
 	 * @model keys="uomId"
 	 *        annotation="mimo-ent-slot help='UOM for elevation (feet, meters, etc.)'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Uom getElevationUomId();
@@ -271,7 +270,6 @@ public interface GeoPoint extends BizEntity {
 	 * @see #setDataSourceId(DataSource)
 	 * @see org.abchip.mimo.biz.common.geo.GeoPackage#getGeoPoint_DataSourceId()
 	 * @model keys="dataSourceId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	DataSource getDataSourceId();
@@ -298,7 +296,6 @@ public interface GeoPoint extends BizEntity {
 	 * @see #setGeoPointTypeEnumId(Enumeration)
 	 * @see org.abchip.mimo.biz.common.geo.GeoPackage#getGeoPoint_GeoPointTypeEnumId()
 	 * @model keys="enumId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Enumeration getGeoPointTypeEnumId();

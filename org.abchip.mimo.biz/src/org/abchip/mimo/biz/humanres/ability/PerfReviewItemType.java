@@ -95,7 +95,6 @@ public interface PerfReviewItemType extends BizEntityType<PerfReviewItem> {
 	 * @see #setParentTypeId(PerfReviewItemType)
 	 * @see org.abchip.mimo.biz.humanres.ability.AbilityPackage#getPerfReviewItemType_ParentTypeId()
 	 * @model keys="perfReviewItemTypeId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	PerfReviewItemType getParentTypeId();

@@ -99,7 +99,6 @@ public interface ProductStoreShipmentMeth extends BizEntity {
 	 * @see #setCompanyPartyId(Party)
 	 * @see org.abchip.mimo.biz.product.store.StorePackage#getProductStoreShipmentMeth_CompanyPartyId()
 	 * @model keys="partyId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Party getCompanyPartyId();
@@ -178,7 +177,6 @@ public interface ProductStoreShipmentMeth extends BizEntity {
 	 * @see #setExcludeGeoId(Geo)
 	 * @see org.abchip.mimo.biz.product.store.StorePackage#getProductStoreShipmentMeth_ExcludeGeoId()
 	 * @model keys="geoId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Geo getExcludeGeoId();
@@ -257,7 +255,6 @@ public interface ProductStoreShipmentMeth extends BizEntity {
 	 * @see #setIncludeGeoId(Geo)
 	 * @see org.abchip.mimo.biz.product.store.StorePackage#getProductStoreShipmentMeth_IncludeGeoId()
 	 * @model keys="geoId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Geo getIncludeGeoId();
@@ -727,7 +724,6 @@ public interface ProductStoreShipmentMeth extends BizEntity {
 	 * @see #setShipmentCustomMethodId(CustomMethod)
 	 * @see org.abchip.mimo.biz.product.store.StorePackage#getProductStoreShipmentMeth_ShipmentCustomMethodId()
 	 * @model keys="customMethodId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	CustomMethod getShipmentCustomMethodId();
@@ -754,7 +750,6 @@ public interface ProductStoreShipmentMeth extends BizEntity {
 	 * @see #setShipmentGatewayConfigId(ShipmentGatewayConfig)
 	 * @see org.abchip.mimo.biz.product.store.StorePackage#getProductStoreShipmentMeth_ShipmentGatewayConfigId()
 	 * @model keys="shipmentGatewayConfigId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ShipmentGatewayConfig getShipmentGatewayConfigId();
@@ -781,7 +776,6 @@ public interface ProductStoreShipmentMeth extends BizEntity {
 	 * @see #setShipmentMethodTypeId(ShipmentMethodType)
 	 * @see org.abchip.mimo.biz.product.store.StorePackage#getProductStoreShipmentMeth_ShipmentMethodTypeId()
 	 * @model keys="shipmentMethodTypeId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ShipmentMethodType getShipmentMethodTypeId();

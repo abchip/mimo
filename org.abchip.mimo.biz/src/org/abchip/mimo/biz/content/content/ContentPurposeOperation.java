@@ -46,7 +46,6 @@ public interface ContentPurposeOperation extends BizEntity {
 	 * @see org.abchip.mimo.biz.content.content.ContentPackage#getContentPurposeOperation_ContentOperationId()
 	 * @model keys="contentOperationId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ContentOperation getContentOperationId();
@@ -74,7 +73,6 @@ public interface ContentPurposeOperation extends BizEntity {
 	 * @see org.abchip.mimo.biz.content.content.ContentPackage#getContentPurposeOperation_ContentPurposeTypeId()
 	 * @model keys="contentPurposeTypeId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ContentPurposeType getContentPurposeTypeId();
@@ -102,7 +100,6 @@ public interface ContentPurposeOperation extends BizEntity {
 	 * @see org.abchip.mimo.biz.content.content.ContentPackage#getContentPurposeOperation_PrivilegeEnumId()
 	 * @model keys="enumId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Enumeration getPrivilegeEnumId();
@@ -130,7 +127,6 @@ public interface ContentPurposeOperation extends BizEntity {
 	 * @see org.abchip.mimo.biz.content.content.ContentPackage#getContentPurposeOperation_RoleTypeId()
 	 * @model keys="roleTypeId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	RoleType getRoleTypeId();
@@ -158,7 +154,6 @@ public interface ContentPurposeOperation extends BizEntity {
 	 * @see org.abchip.mimo.biz.content.content.ContentPackage#getContentPurposeOperation_StatusId()
 	 * @model keys="statusId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	StatusItem getStatusId();

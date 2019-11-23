@@ -40,7 +40,6 @@ public interface PortletPortletCategory extends BizEntity {
 	 * @see org.abchip.mimo.biz.common.portal.PortalPackage#getPortletPortletCategory_PortalPortletId()
 	 * @model keys="portalPortletId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	PortalPortlet getPortalPortletId();
@@ -68,7 +67,6 @@ public interface PortletPortletCategory extends BizEntity {
 	 * @see org.abchip.mimo.biz.common.portal.PortalPackage#getPortletPortletCategory_PortletCategoryId()
 	 * @model keys="portletCategoryId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	PortletCategory getPortletCategoryId();

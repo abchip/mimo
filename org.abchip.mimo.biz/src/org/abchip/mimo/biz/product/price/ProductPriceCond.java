@@ -69,7 +69,6 @@ public interface ProductPriceCond extends BizEntity {
 	 * @see #setInputParamEnumId(Enumeration)
 	 * @see org.abchip.mimo.biz.product.price.PricePackage#getProductPriceCond_InputParamEnumId()
 	 * @model keys="enumId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Enumeration getInputParamEnumId();
@@ -96,7 +95,6 @@ public interface ProductPriceCond extends BizEntity {
 	 * @see #setOperatorEnumId(Enumeration)
 	 * @see org.abchip.mimo.biz.product.price.PricePackage#getProductPriceCond_OperatorEnumId()
 	 * @model keys="enumId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Enumeration getOperatorEnumId();
@@ -152,7 +150,6 @@ public interface ProductPriceCond extends BizEntity {
 	 * @see org.abchip.mimo.biz.product.price.PricePackage#getProductPriceCond_ProductPriceRuleId()
 	 * @model keys="productPriceRuleId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ProductPriceRule getProductPriceRuleId();

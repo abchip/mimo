@@ -47,7 +47,6 @@ public interface CommEventContentAssoc extends BizEntity {
 	 * @see org.abchip.mimo.biz.party.communication.CommunicationPackage#getCommEventContentAssoc_ContentId()
 	 * @model keys="contentId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Content getContentId();
@@ -155,7 +154,6 @@ public interface CommEventContentAssoc extends BizEntity {
 	 * @see org.abchip.mimo.biz.party.communication.CommunicationPackage#getCommEventContentAssoc_CommunicationEventId()
 	 * @model keys="communicationEventId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	CommunicationEvent getCommunicationEventId();
@@ -182,7 +180,6 @@ public interface CommEventContentAssoc extends BizEntity {
 	 * @see #setCommContentAssocTypeId(CommContentAssocType)
 	 * @see org.abchip.mimo.biz.party.communication.CommunicationPackage#getCommEventContentAssoc_CommContentAssocTypeId()
 	 * @model keys="commContentAssocTypeId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	CommContentAssocType getCommContentAssocTypeId();

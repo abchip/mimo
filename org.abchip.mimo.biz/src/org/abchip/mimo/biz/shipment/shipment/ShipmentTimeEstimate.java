@@ -82,7 +82,6 @@ public interface ShipmentTimeEstimate extends BizEntity {
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipmentTimeEstimate_GeoIdFrom()
 	 * @model keys="geoId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Geo getGeoIdFrom();
@@ -110,7 +109,6 @@ public interface ShipmentTimeEstimate extends BizEntity {
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipmentTimeEstimate_GeoIdTo()
 	 * @model keys="geoId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Geo getGeoIdTo();
@@ -163,7 +161,6 @@ public interface ShipmentTimeEstimate extends BizEntity {
 	 * @see #setLeadTimeUomId(Uom)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipmentTimeEstimate_LeadTimeUomId()
 	 * @model keys="uomId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Uom getLeadTimeUomId();

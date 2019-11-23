@@ -124,7 +124,6 @@ public interface StatusItem extends BizEntityTyped<StatusType> {
 	 * @see #setStatusTypeId(StatusType)
 	 * @see org.abchip.mimo.biz.common.status.StatusPackage#getStatusItem_StatusTypeId()
 	 * @model keys="statusTypeId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	StatusType getStatusTypeId();

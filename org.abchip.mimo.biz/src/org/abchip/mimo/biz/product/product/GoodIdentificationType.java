@@ -96,7 +96,6 @@ public interface GoodIdentificationType extends BizEntityType<GoodIdentification
 	 * @see #setParentTypeId(GoodIdentificationType)
 	 * @see org.abchip.mimo.biz.product.product.ProductPackage#getGoodIdentificationType_ParentTypeId()
 	 * @model keys="goodIdentificationTypeId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	GoodIdentificationType getParentTypeId();

@@ -165,7 +165,6 @@ public interface ProductStoreFinActSetting extends BizEntity {
 	 * @see org.abchip.mimo.biz.product.store.StorePackage#getProductStoreFinActSetting_FinAccountTypeId()
 	 * @model keys="finAccountTypeId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	FinAccountType getFinAccountTypeId();
@@ -300,7 +299,6 @@ public interface ProductStoreFinActSetting extends BizEntity {
 	 * @see org.abchip.mimo.biz.product.store.StorePackage#getProductStoreFinActSetting_PurchaseSurveyId()
 	 * @model keys="surveyId"
 	 *        annotation="mimo-ent-slot help='This survey is typically used to collect information such as name of buyer, recipient, email, message, etc. and is quite flexible'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Survey getPurchaseSurveyId();
@@ -328,7 +326,6 @@ public interface ProductStoreFinActSetting extends BizEntity {
 	 * @see org.abchip.mimo.biz.product.store.StorePackage#getProductStoreFinActSetting_ReplenishMethodEnumId()
 	 * @model keys="enumId"
 	 *        annotation="mimo-ent-slot help='Replenish Method for Replenish Account. Can be FARP_TOP_OFF or FARP_REPLENISH_LEVEL. Default FARP_TOP_OFF.'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Enumeration getReplenishMethodEnumId();
@@ -435,7 +432,6 @@ public interface ProductStoreFinActSetting extends BizEntity {
 	 * @see org.abchip.mimo.biz.product.store.StorePackage#getProductStoreFinActSetting_ProductStoreId()
 	 * @model keys="productStoreId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ProductStore getProductStoreId();

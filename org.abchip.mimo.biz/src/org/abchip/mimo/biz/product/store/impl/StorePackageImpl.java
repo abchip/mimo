@@ -71,6 +71,7 @@ import org.abchip.mimo.biz.content.survey.SurveyPackage;
 import org.abchip.mimo.biz.content.survey.impl.SurveyPackageImpl;
 import org.abchip.mimo.biz.content.website.WebsitePackage;
 import org.abchip.mimo.biz.content.website.impl.WebsitePackageImpl;
+import org.abchip.mimo.biz.entity.EntityPackage;
 import org.abchip.mimo.biz.entity.audit.AuditPackage;
 import org.abchip.mimo.biz.entity.audit.impl.AuditPackageImpl;
 import org.abchip.mimo.biz.entity.crypto.CryptoPackage;
@@ -463,8 +464,8 @@ public class StorePackageImpl extends EPackageImpl implements StorePackage {
 		SurveyPackageImpl theSurveyPackage = (SurveyPackageImpl)(registeredPackage instanceof SurveyPackageImpl ? registeredPackage : SurveyPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(WebsitePackage.eNS_URI);
 		WebsitePackageImpl theWebsitePackage = (WebsitePackageImpl)(registeredPackage instanceof WebsitePackageImpl ? registeredPackage : WebsitePackage.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(org.abchip.mimo.biz.entity.EntityPackage.eNS_URI);
-		EntityPackageImpl theEntityPackage = (EntityPackageImpl)(registeredPackage instanceof EntityPackageImpl ? registeredPackage : org.abchip.mimo.biz.entity.EntityPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(EntityPackage.eNS_URI);
+		EntityPackageImpl theEntityPackage = (EntityPackageImpl)(registeredPackage instanceof EntityPackageImpl ? registeredPackage : EntityPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(AuditPackage.eNS_URI);
 		AuditPackageImpl theAuditPackage = (AuditPackageImpl)(registeredPackage instanceof AuditPackageImpl ? registeredPackage : AuditPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(CryptoPackage.eNS_URI);
@@ -4068,13 +4069,6 @@ public class StorePackageImpl extends EPackageImpl implements StorePackage {
 			   "scale", "0"
 		   });
 		addAnnotation
-		  (getProductStore_DefaultCurrencyUomId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getProductStore_DefaultLocaleString(),
 		   source,
 		   new String[] {
@@ -4089,13 +4083,6 @@ public class StorePackageImpl extends EPackageImpl implements StorePackage {
 			   "length", "255"
 		   });
 		addAnnotation
-		  (getProductStore_DefaultSalesChannelEnumId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getProductStore_DefaultTimeZoneString(),
 		   source,
 		   new String[] {
@@ -4104,13 +4091,6 @@ public class StorePackageImpl extends EPackageImpl implements StorePackage {
 		   });
 		addAnnotation
 		  (getProductStore_DigProdUploadCategoryId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getProductStore_DigitalItemApprovedStatus(),
 		   source,
 		   new String[] {
 			   "type", "id",
@@ -4138,34 +4118,6 @@ public class StorePackageImpl extends EPackageImpl implements StorePackage {
 			   "length", "1"
 		   });
 		addAnnotation
-		  (getProductStore_HeaderApprovedStatus(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getProductStore_HeaderCancelStatus(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getProductStore_HeaderDeclinedStatus(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getProductStore_InventoryFacilityId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getProductStore_IsDemoStore(),
 		   source,
 		   new String[] {
@@ -4178,27 +4130,6 @@ public class StorePackageImpl extends EPackageImpl implements StorePackage {
 		   new String[] {
 			   "type", "indicator",
 			   "length", "1"
-		   });
-		addAnnotation
-		  (getProductStore_ItemApprovedStatus(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getProductStore_ItemCancelStatus(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getProductStore_ItemDeclinedStatus(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
 		   });
 		addAnnotation
 		  (getProductStore_ManagedByLot(),
@@ -4285,20 +4216,6 @@ public class StorePackageImpl extends EPackageImpl implements StorePackage {
 			   "length", "60"
 		   });
 		addAnnotation
-		  (getProductStore_PayToPartyId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getProductStore_PrimaryStoreGroupId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getProductStore_ProdSearchExcludeVariants(),
 		   source,
 		   new String[] {
@@ -4362,25 +4279,11 @@ public class StorePackageImpl extends EPackageImpl implements StorePackage {
 			   "length", "1"
 		   });
 		addAnnotation
-		  (getProductStore_RequirementMethodEnumId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getProductStore_ReserveInventory(),
 		   source,
 		   new String[] {
 			   "type", "indicator",
 			   "length", "1"
-		   });
-		addAnnotation
-		  (getProductStore_ReserveOrderEnumId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
 		   });
 		addAnnotation
 		  (getProductStore_RetryFailedAuths(),
@@ -4444,13 +4347,6 @@ public class StorePackageImpl extends EPackageImpl implements StorePackage {
 		   new String[] {
 			   "type", "indicator",
 			   "length", "1"
-		   });
-		addAnnotation
-		  (getProductStore_StoreCreditAccountEnumId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
 		   });
 		addAnnotation
 		  (getProductStore_StoreCreditValidDays(),
@@ -4517,20 +4413,6 @@ public class StorePackageImpl extends EPackageImpl implements StorePackage {
 			   "length", "20"
 		   });
 		addAnnotation
-		  (getProductStoreCatalog_ProductStoreId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getProductStoreCatalog_ProdCatalogId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getProductStoreCatalog_FromDate(),
 		   source,
 		   new String[] {
@@ -4549,20 +4431,6 @@ public class StorePackageImpl extends EPackageImpl implements StorePackage {
 		   source,
 		   new String[] {
 			   "type", "date-time"
-		   });
-		addAnnotation
-		  (getProductStoreEmailSetting_ProductStoreId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getProductStoreEmailSetting_EmailType(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
 		   });
 		addAnnotation
 		  (getProductStoreEmailSetting_BccAddress(),
@@ -4614,20 +4482,6 @@ public class StorePackageImpl extends EPackageImpl implements StorePackage {
 			   "length", "255"
 		   });
 		addAnnotation
-		  (getProductStoreFacility_ProductStoreId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getProductStoreFacility_FacilityId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getProductStoreFacility_FromDate(),
 		   source,
 		   new String[] {
@@ -4646,20 +4500,6 @@ public class StorePackageImpl extends EPackageImpl implements StorePackage {
 		   source,
 		   new String[] {
 			   "type", "date-time"
-		   });
-		addAnnotation
-		  (getProductStoreFinActSetting_ProductStoreId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getProductStoreFinActSetting_FinAccountTypeId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
 		   });
 		addAnnotation
 		  (getProductStoreFinActSetting_AccountCodeLength(),
@@ -4723,20 +4563,6 @@ public class StorePackageImpl extends EPackageImpl implements StorePackage {
 			   "length", "20"
 		   });
 		addAnnotation
-		  (getProductStoreFinActSetting_PurchaseSurveyId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getProductStoreFinActSetting_ReplenishMethodEnumId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getProductStoreFinActSetting_ReplenishThreshold(),
 		   source,
 		   new String[] {
@@ -4780,39 +4606,11 @@ public class StorePackageImpl extends EPackageImpl implements StorePackage {
 			   "length", "255"
 		   });
 		addAnnotation
-		  (getProductStoreGroup_PrimaryParentGroupId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getProductStoreGroup_ProductStoreGroupName(),
 		   source,
 		   new String[] {
 			   "type", "name",
 			   "length", "100"
-		   });
-		addAnnotation
-		  (getProductStoreGroup_ProductStoreGroupTypeId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getProductStoreGroupMember_ProductStoreId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getProductStoreGroupMember_ProductStoreGroupId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
 		   });
 		addAnnotation
 		  (getProductStoreGroupMember_FromDate(),
@@ -4833,41 +4631,6 @@ public class StorePackageImpl extends EPackageImpl implements StorePackage {
 		   source,
 		   new String[] {
 			   "type", "date-time"
-		   });
-		addAnnotation
-		  (getProductStoreGroupRole_ProductStoreGroupId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getProductStoreGroupRole_PartyId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getProductStoreGroupRole_RoleTypeId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getProductStoreGroupRollup_ProductStoreGroupId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getProductStoreGroupRollup_ParentGroupId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
 		   });
 		addAnnotation
 		  (getProductStoreGroupRollup_FromDate(),
@@ -4911,13 +4674,6 @@ public class StorePackageImpl extends EPackageImpl implements StorePackage {
 			   "length", "255"
 		   });
 		addAnnotation
-		  (getProductStoreKeywordOvrd_ProductStoreId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getProductStoreKeywordOvrd_FromDate(),
 		   source,
 		   new String[] {
@@ -4938,38 +4694,10 @@ public class StorePackageImpl extends EPackageImpl implements StorePackage {
 			   "length", "255"
 		   });
 		addAnnotation
-		  (getProductStoreKeywordOvrd_TargetTypeEnumId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getProductStoreKeywordOvrd_ThruDate(),
 		   source,
 		   new String[] {
 			   "type", "date-time"
-		   });
-		addAnnotation
-		  (getProductStorePaymentSetting_ProductStoreId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getProductStorePaymentSetting_PaymentMethodTypeId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getProductStorePaymentSetting_PaymentServiceTypeEnumId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
 		   });
 		addAnnotation
 		  (getProductStorePaymentSetting_ApplyToAllProducts(),
@@ -4977,20 +4705,6 @@ public class StorePackageImpl extends EPackageImpl implements StorePackage {
 		   new String[] {
 			   "type", "indicator",
 			   "length", "1"
-		   });
-		addAnnotation
-		  (getProductStorePaymentSetting_PaymentCustomMethodId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getProductStorePaymentSetting_PaymentGatewayConfigId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
 		   });
 		addAnnotation
 		  (getProductStorePaymentSetting_PaymentPropertiesPath(),
@@ -5005,20 +4719,6 @@ public class StorePackageImpl extends EPackageImpl implements StorePackage {
 		   new String[] {
 			   "type", "value",
 			   "length", "255"
-		   });
-		addAnnotation
-		  (getProductStorePromoAppl_ProductStoreId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getProductStorePromoAppl_ProductPromoId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
 		   });
 		addAnnotation
 		  (getProductStorePromoAppl_FromDate(),
@@ -5046,27 +4746,6 @@ public class StorePackageImpl extends EPackageImpl implements StorePackage {
 		   source,
 		   new String[] {
 			   "type", "date-time"
-		   });
-		addAnnotation
-		  (getProductStoreRole_PartyId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getProductStoreRole_RoleTypeId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getProductStoreRole_ProductStoreId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
 		   });
 		addAnnotation
 		  (getProductStoreRole_FromDate(),
@@ -5125,13 +4804,6 @@ public class StorePackageImpl extends EPackageImpl implements StorePackage {
 			   "scale", "6"
 		   });
 		addAnnotation
-		  (getProductStoreShipmentMeth_CompanyPartyId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getProductStoreShipmentMeth_ConfigProps(),
 		   source,
 		   new String[] {
@@ -5146,21 +4818,7 @@ public class StorePackageImpl extends EPackageImpl implements StorePackage {
 			   "length", "20"
 		   });
 		addAnnotation
-		  (getProductStoreShipmentMeth_ExcludeGeoId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getProductStoreShipmentMeth_IncludeFeatureGroup(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getProductStoreShipmentMeth_IncludeGeoId(),
 		   source,
 		   new String[] {
 			   "type", "id",
@@ -5280,27 +4938,6 @@ public class StorePackageImpl extends EPackageImpl implements StorePackage {
 			   "length", "255"
 		   });
 		addAnnotation
-		  (getProductStoreShipmentMeth_ShipmentCustomMethodId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getProductStoreShipmentMeth_ShipmentGatewayConfigId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getProductStoreShipmentMeth_ShipmentMethodTypeId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getProductStoreSurveyAppl_ProductStoreSurveyId(),
 		   source,
 		   new String[] {
@@ -5321,27 +4958,6 @@ public class StorePackageImpl extends EPackageImpl implements StorePackage {
 			   "length", "100"
 		   });
 		addAnnotation
-		  (getProductStoreSurveyAppl_ProductCategoryId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getProductStoreSurveyAppl_ProductId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getProductStoreSurveyAppl_ProductStoreId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getProductStoreSurveyAppl_ResultTemplate(),
 		   source,
 		   new String[] {
@@ -5357,20 +4973,6 @@ public class StorePackageImpl extends EPackageImpl implements StorePackage {
 			   "scale", "0"
 		   });
 		addAnnotation
-		  (getProductStoreSurveyAppl_SurveyApplTypeId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getProductStoreSurveyAppl_SurveyId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getProductStoreSurveyAppl_SurveyTemplate(),
 		   source,
 		   new String[] {
@@ -5382,62 +4984,6 @@ public class StorePackageImpl extends EPackageImpl implements StorePackage {
 		   source,
 		   new String[] {
 			   "type", "date-time"
-		   });
-		addAnnotation
-		  (getProductStoreVendorPayment_ProductStoreId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getProductStoreVendorPayment_VendorPartyId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getProductStoreVendorPayment_PaymentMethodTypeId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getProductStoreVendorPayment_CreditCardEnumId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getProductStoreVendorShipment_ProductStoreId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getProductStoreVendorShipment_VendorPartyId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getProductStoreVendorShipment_ShipmentMethodTypeId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getProductStoreVendorShipment_CarrierPartyId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
 		   });
 	}
 

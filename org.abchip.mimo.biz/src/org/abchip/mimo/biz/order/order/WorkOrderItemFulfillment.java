@@ -43,7 +43,6 @@ public interface WorkOrderItemFulfillment extends BizEntity {
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getWorkOrderItemFulfillment_OrderId()
 	 * @model keys="orderId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	OrderHeader getOrderId();
@@ -125,7 +124,6 @@ public interface WorkOrderItemFulfillment extends BizEntity {
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getWorkOrderItemFulfillment_WorkEffortId()
 	 * @model keys="workEffortId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	WorkEffort getWorkEffortId();

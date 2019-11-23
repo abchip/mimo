@@ -591,7 +591,6 @@ public interface Enumeration extends BizEntityTyped<EnumerationType> {
 	 * @see #setEnumTypeId(EnumerationType)
 	 * @see org.abchip.mimo.biz.common.enum_.EnumPackage#getEnumeration_EnumTypeId()
 	 * @model keys="enumTypeId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	EnumerationType getEnumTypeId();

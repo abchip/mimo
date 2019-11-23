@@ -71,6 +71,7 @@ import org.abchip.mimo.biz.content.survey.SurveyPackage;
 import org.abchip.mimo.biz.content.survey.impl.SurveyPackageImpl;
 import org.abchip.mimo.biz.content.website.WebsitePackage;
 import org.abchip.mimo.biz.content.website.impl.WebsitePackageImpl;
+import org.abchip.mimo.biz.entity.EntityPackage;
 import org.abchip.mimo.biz.entity.audit.AuditPackage;
 import org.abchip.mimo.biz.entity.audit.impl.AuditPackageImpl;
 import org.abchip.mimo.biz.entity.crypto.CryptoPackage;
@@ -342,8 +343,8 @@ public class ReceiptPackageImpl extends EPackageImpl implements ReceiptPackage {
 		SurveyPackageImpl theSurveyPackage = (SurveyPackageImpl)(registeredPackage instanceof SurveyPackageImpl ? registeredPackage : SurveyPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(WebsitePackage.eNS_URI);
 		WebsitePackageImpl theWebsitePackage = (WebsitePackageImpl)(registeredPackage instanceof WebsitePackageImpl ? registeredPackage : WebsitePackage.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(org.abchip.mimo.biz.entity.EntityPackage.eNS_URI);
-		EntityPackageImpl theEntityPackage = (EntityPackageImpl)(registeredPackage instanceof EntityPackageImpl ? registeredPackage : org.abchip.mimo.biz.entity.EntityPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(EntityPackage.eNS_URI);
+		EntityPackageImpl theEntityPackage = (EntityPackageImpl)(registeredPackage instanceof EntityPackageImpl ? registeredPackage : EntityPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(AuditPackage.eNS_URI);
 		AuditPackageImpl theAuditPackage = (AuditPackageImpl)(registeredPackage instanceof AuditPackageImpl ? registeredPackage : AuditPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(CryptoPackage.eNS_URI);
@@ -1126,13 +1127,6 @@ public class ReceiptPackageImpl extends EPackageImpl implements ReceiptPackage {
 			   "type", "date-time"
 		   });
 		addAnnotation
-		  (getShipmentReceipt_InventoryItemId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getShipmentReceipt_ItemDescription(),
 		   source,
 		   new String[] {
@@ -1140,21 +1134,7 @@ public class ReceiptPackageImpl extends EPackageImpl implements ReceiptPackage {
 			   "length", "255"
 		   });
 		addAnnotation
-		  (getShipmentReceipt_OrderId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getShipmentReceipt_OrderItemSeqId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getShipmentReceipt_ProductId(),
 		   source,
 		   new String[] {
 			   "type", "id",
@@ -1177,20 +1157,6 @@ public class ReceiptPackageImpl extends EPackageImpl implements ReceiptPackage {
 			   "scale", "6"
 		   });
 		addAnnotation
-		  (getShipmentReceipt_ReceivedByUserLoginId(),
-		   source,
-		   new String[] {
-			   "type", "id-vlong",
-			   "length", "255"
-		   });
-		addAnnotation
-		  (getShipmentReceipt_RejectionId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getShipmentReceipt_ReturnId(),
 		   source,
 		   new String[] {
@@ -1205,13 +1171,6 @@ public class ReceiptPackageImpl extends EPackageImpl implements ReceiptPackage {
 			   "length", "20"
 		   });
 		addAnnotation
-		  (getShipmentReceipt_ShipmentId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getShipmentReceipt_ShipmentItemSeqId(),
 		   source,
 		   new String[] {
@@ -1220,20 +1179,6 @@ public class ReceiptPackageImpl extends EPackageImpl implements ReceiptPackage {
 		   });
 		addAnnotation
 		  (getShipmentReceipt_ShipmentPackageSeqId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getShipmentReceiptRole_ReceiptId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getShipmentReceiptRole_PartyId(),
 		   source,
 		   new String[] {
 			   "type", "id",

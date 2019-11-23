@@ -68,7 +68,6 @@ public interface TestingNode extends BizEntity {
 	 * @see #setPrimaryParentNodeId(TestingNode)
 	 * @see org.abchip.mimo.biz.entity.test.TestPackage#getTestingNode_PrimaryParentNodeId()
 	 * @model keys="testingNodeId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	TestingNode getPrimaryParentNodeId();

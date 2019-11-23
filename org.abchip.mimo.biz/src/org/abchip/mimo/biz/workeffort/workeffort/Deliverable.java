@@ -96,7 +96,6 @@ public interface Deliverable extends BizEntityTyped<DeliverableType> {
 	 * @see #setDeliverableTypeId(DeliverableType)
 	 * @see org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage#getDeliverable_DeliverableTypeId()
 	 * @model keys="deliverableTypeId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	DeliverableType getDeliverableTypeId();

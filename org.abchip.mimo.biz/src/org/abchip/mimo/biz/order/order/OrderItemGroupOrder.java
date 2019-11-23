@@ -42,7 +42,6 @@ public interface OrderItemGroupOrder extends BizEntity {
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderItemGroupOrder_GroupOrderId()
 	 * @model keys="groupOrderId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ProductGroupOrder getGroupOrderId();

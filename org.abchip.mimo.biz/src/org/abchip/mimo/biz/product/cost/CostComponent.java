@@ -90,7 +90,6 @@ public interface CostComponent extends BizEntityTyped<CostComponentType> {
 	 * @see #setCostUomId(Uom)
 	 * @see org.abchip.mimo.biz.product.cost.CostPackage#getCostComponent_CostUomId()
 	 * @model keys="uomId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Uom getCostUomId();
@@ -117,7 +116,6 @@ public interface CostComponent extends BizEntityTyped<CostComponentType> {
 	 * @see #setFixedAssetId(FixedAsset)
 	 * @see org.abchip.mimo.biz.product.cost.CostPackage#getCostComponent_FixedAssetId()
 	 * @model keys="fixedAssetId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	FixedAsset getFixedAssetId();
@@ -170,7 +168,6 @@ public interface CostComponent extends BizEntityTyped<CostComponentType> {
 	 * @see #setGeoId(Geo)
 	 * @see org.abchip.mimo.biz.product.cost.CostPackage#getCostComponent_GeoId()
 	 * @model keys="geoId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Geo getGeoId();
@@ -197,7 +194,6 @@ public interface CostComponent extends BizEntityTyped<CostComponentType> {
 	 * @see #setPartyId(Party)
 	 * @see org.abchip.mimo.biz.product.cost.CostPackage#getCostComponent_PartyId()
 	 * @model keys="partyId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Party getPartyId();
@@ -224,7 +220,6 @@ public interface CostComponent extends BizEntityTyped<CostComponentType> {
 	 * @see #setProductFeatureId(ProductFeature)
 	 * @see org.abchip.mimo.biz.product.cost.CostPackage#getCostComponent_ProductFeatureId()
 	 * @model keys="productFeatureId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ProductFeature getProductFeatureId();
@@ -251,7 +246,6 @@ public interface CostComponent extends BizEntityTyped<CostComponentType> {
 	 * @see #setProductId(Product)
 	 * @see org.abchip.mimo.biz.product.cost.CostPackage#getCostComponent_ProductId()
 	 * @model keys="productId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Product getProductId();
@@ -304,7 +298,6 @@ public interface CostComponent extends BizEntityTyped<CostComponentType> {
 	 * @see #setWorkEffortId(WorkEffort)
 	 * @see org.abchip.mimo.biz.product.cost.CostPackage#getCostComponent_WorkEffortId()
 	 * @model keys="workEffortId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	WorkEffort getWorkEffortId();
@@ -349,7 +342,6 @@ public interface CostComponent extends BizEntityTyped<CostComponentType> {
 	 * @see #setCostComponentTypeId(CostComponentType)
 	 * @see org.abchip.mimo.biz.product.cost.CostPackage#getCostComponent_CostComponentTypeId()
 	 * @model keys="costComponentTypeId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	CostComponentType getCostComponentTypeId();
@@ -376,7 +368,6 @@ public interface CostComponent extends BizEntityTyped<CostComponentType> {
 	 * @see #setCostComponentCalcId(CostComponentCalc)
 	 * @see org.abchip.mimo.biz.product.cost.CostPackage#getCostComponent_CostComponentCalcId()
 	 * @model keys="costComponentCalcId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	CostComponentCalc getCostComponentCalcId();

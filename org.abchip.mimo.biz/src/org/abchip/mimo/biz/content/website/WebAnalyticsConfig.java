@@ -69,7 +69,6 @@ public interface WebAnalyticsConfig extends BizEntity {
 	 * @see org.abchip.mimo.biz.content.website.WebsitePackage#getWebAnalyticsConfig_WebAnalyticsTypeId()
 	 * @model keys="webAnalyticsTypeId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	WebAnalyticsType getWebAnalyticsTypeId();
@@ -97,7 +96,6 @@ public interface WebAnalyticsConfig extends BizEntity {
 	 * @see org.abchip.mimo.biz.content.website.WebsitePackage#getWebAnalyticsConfig_WebSiteId()
 	 * @model keys="webSiteId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	WebSite getWebSiteId();

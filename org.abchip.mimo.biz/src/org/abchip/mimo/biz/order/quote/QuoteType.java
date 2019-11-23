@@ -96,7 +96,6 @@ public interface QuoteType extends BizEntityType<Quote> {
 	 * @see #setParentTypeId(QuoteType)
 	 * @see org.abchip.mimo.biz.order.quote.QuotePackage#getQuoteType_ParentTypeId()
 	 * @model keys="quoteTypeId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	QuoteType getParentTypeId();

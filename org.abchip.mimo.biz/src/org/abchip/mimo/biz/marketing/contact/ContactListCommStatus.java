@@ -49,7 +49,6 @@ public interface ContactListCommStatus extends BizEntity {
 	 * @see #setChangeByUserLoginId(UserLogin)
 	 * @see org.abchip.mimo.biz.marketing.contact.ContactPackage#getContactListCommStatus_ChangeByUserLoginId()
 	 * @model keys="userLoginId"
-	 *        annotation="mimo-ent-format type='id-vlong' length='255'"
 	 * @generated
 	 */
 	UserLogin getChangeByUserLoginId();
@@ -77,7 +76,6 @@ public interface ContactListCommStatus extends BizEntity {
 	 * @see org.abchip.mimo.biz.marketing.contact.ContactPackage#getContactListCommStatus_CommunicationEventId()
 	 * @model keys="communicationEventId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	CommunicationEvent getCommunicationEventId();
@@ -105,7 +103,6 @@ public interface ContactListCommStatus extends BizEntity {
 	 * @see org.abchip.mimo.biz.marketing.contact.ContactPackage#getContactListCommStatus_ContactListId()
 	 * @model keys="contactListId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ContactList getContactListId();
@@ -133,7 +130,6 @@ public interface ContactListCommStatus extends BizEntity {
 	 * @see org.abchip.mimo.biz.marketing.contact.ContactPackage#getContactListCommStatus_ContactMechId()
 	 * @model keys="contactMechId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ContactMech getContactMechId();
@@ -186,7 +182,6 @@ public interface ContactListCommStatus extends BizEntity {
 	 * @see #setPartyId(Party)
 	 * @see org.abchip.mimo.biz.marketing.contact.ContactPackage#getContactListCommStatus_PartyId()
 	 * @model keys="partyId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Party getPartyId();
@@ -213,7 +208,6 @@ public interface ContactListCommStatus extends BizEntity {
 	 * @see #setStatusId(StatusItem)
 	 * @see org.abchip.mimo.biz.marketing.contact.ContactPackage#getContactListCommStatus_StatusId()
 	 * @model keys="statusId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	StatusItem getStatusId();

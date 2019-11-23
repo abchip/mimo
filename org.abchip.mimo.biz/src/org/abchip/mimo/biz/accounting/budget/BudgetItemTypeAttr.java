@@ -95,7 +95,6 @@ public interface BudgetItemTypeAttr extends BizEntity {
 	 * @see org.abchip.mimo.biz.accounting.budget.BudgetPackage#getBudgetItemTypeAttr_BudgetItemTypeId()
 	 * @model keys="budgetItemTypeId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	BudgetItemType getBudgetItemTypeId();

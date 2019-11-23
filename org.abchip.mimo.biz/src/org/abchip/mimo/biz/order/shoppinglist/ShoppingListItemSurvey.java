@@ -42,7 +42,6 @@ public interface ShoppingListItemSurvey extends BizEntity {
 	 * @see org.abchip.mimo.biz.order.shoppinglist.ShoppinglistPackage#getShoppingListItemSurvey_ShoppingListId()
 	 * @model keys="shoppingListId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ShoppingList getShoppingListId();
@@ -98,7 +97,6 @@ public interface ShoppingListItemSurvey extends BizEntity {
 	 * @see org.abchip.mimo.biz.order.shoppinglist.ShoppinglistPackage#getShoppingListItemSurvey_SurveyResponseId()
 	 * @model keys="surveyResponseId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	SurveyResponse getSurveyResponseId();

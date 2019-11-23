@@ -897,20 +897,6 @@ public class MrpPackageImpl extends EPackageImpl implements MrpPackage {
 	protected void createMimoentformatAnnotations() {
 		String source = "mimo-ent-format";
 		addAnnotation
-		  (getMrpEvent_ProductId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getMrpEvent_MrpEventTypeId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getMrpEvent_EventDate(),
 		   source,
 		   new String[] {
@@ -928,13 +914,6 @@ public class MrpPackageImpl extends EPackageImpl implements MrpPackage {
 		   source,
 		   new String[] {
 			   "type", "very-long"
-		   });
-		addAnnotation
-		  (getMrpEvent_FacilityId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
 		   });
 		addAnnotation
 		  (getMrpEvent_IsLate(),

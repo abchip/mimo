@@ -1410,22 +1410,22 @@ public interface ProductPackage extends EPackage {
 	int PRODUCT_CALCULATED_INFO__LAST_UPDATED_TX_STAMP = BizPackage.BIZ_ENTITY__LAST_UPDATED_TX_STAMP;
 
 	/**
+	 * The feature id for the '<em><b>Product Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRODUCT_CALCULATED_INFO__PRODUCT_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
+
+	/**
 	 * The feature id for the '<em><b>Average Customer Rating</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PRODUCT_CALCULATED_INFO__AVERAGE_CUSTOMER_RATING = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Product Id</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PRODUCT_CALCULATED_INFO__PRODUCT_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
+	int PRODUCT_CALCULATED_INFO__AVERAGE_CUSTOMER_RATING = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Total Quantity Ordered</b></em>' attribute.
@@ -4599,15 +4599,15 @@ public interface ProductPackage extends EPackage {
 	EClass getProductCalculatedInfo();
 
 	/**
-	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.product.product.ProductCalculatedInfo#getProductId <em>Product Id</em>}'.
+	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.product.product.ProductCalculatedInfo#getProductId <em>Product Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Product Id</em>'.
+	 * @return the meta object for the attribute '<em>Product Id</em>'.
 	 * @see org.abchip.mimo.biz.product.product.ProductCalculatedInfo#getProductId()
 	 * @see #getProductCalculatedInfo()
 	 * @generated
 	 */
-	EReference getProductCalculatedInfo_ProductId();
+	EAttribute getProductCalculatedInfo_ProductId();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.product.product.ProductCalculatedInfo#getAverageCustomerRating <em>Average Customer Rating</em>}'.
@@ -6897,12 +6897,12 @@ public interface ProductPackage extends EPackage {
 		EClass PRODUCT_CALCULATED_INFO = eINSTANCE.getProductCalculatedInfo();
 
 		/**
-		 * The meta object literal for the '<em><b>Product Id</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Product Id</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference PRODUCT_CALCULATED_INFO__PRODUCT_ID = eINSTANCE.getProductCalculatedInfo_ProductId();
+		EAttribute PRODUCT_CALCULATED_INFO__PRODUCT_ID = eINSTANCE.getProductCalculatedInfo_ProductId();
 
 		/**
 		 * The meta object literal for the '<em><b>Average Customer Rating</b></em>' attribute feature.

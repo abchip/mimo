@@ -118,7 +118,6 @@ public interface OrderHeader extends BizEntityTyped<OrderType> {
 	 * @see #setAutoOrderShoppingListId(ShoppingList)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderHeader_AutoOrderShoppingListId()
 	 * @model keys="shoppingListId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ShoppingList getAutoOrderShoppingListId();
@@ -145,7 +144,6 @@ public interface OrderHeader extends BizEntityTyped<OrderType> {
 	 * @see #setBillingAccountId(BillingAccount)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderHeader_BillingAccountId()
 	 * @model keys="billingAccountId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	BillingAccount getBillingAccountId();
@@ -172,7 +170,6 @@ public interface OrderHeader extends BizEntityTyped<OrderType> {
 	 * @see #setCreatedBy(UserLogin)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderHeader_CreatedBy()
 	 * @model keys="userLoginId"
-	 *        annotation="mimo-ent-format type='id-vlong' length='255'"
 	 * @generated
 	 */
 	UserLogin getCreatedBy();
@@ -199,7 +196,6 @@ public interface OrderHeader extends BizEntityTyped<OrderType> {
 	 * @see #setCurrencyUom(Uom)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderHeader_CurrencyUom()
 	 * @model keys="uomId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Uom getCurrencyUom();
@@ -539,7 +535,6 @@ public interface OrderHeader extends BizEntityTyped<OrderType> {
 	 * @see #setOrderTypeId(OrderType)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderHeader_OrderTypeId()
 	 * @model keys="orderTypeId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	OrderType getOrderTypeId();
@@ -566,7 +561,6 @@ public interface OrderHeader extends BizEntityTyped<OrderType> {
 	 * @see #setOriginFacilityId(Facility)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderHeader_OriginFacilityId()
 	 * @model keys="facilityId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Facility getOriginFacilityId();
@@ -647,7 +641,6 @@ public interface OrderHeader extends BizEntityTyped<OrderType> {
 	 * @see #setProductStoreId(ProductStore)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderHeader_ProductStoreId()
 	 * @model keys="productStoreId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ProductStore getProductStoreId();
@@ -700,7 +693,6 @@ public interface OrderHeader extends BizEntityTyped<OrderType> {
 	 * @see #setSalesChannelEnumId(Enumeration)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderHeader_SalesChannelEnumId()
 	 * @model keys="enumId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Enumeration getSalesChannelEnumId();
@@ -727,7 +719,6 @@ public interface OrderHeader extends BizEntityTyped<OrderType> {
 	 * @see #setStatusId(StatusItem)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderHeader_StatusId()
 	 * @model keys="statusId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	StatusItem getStatusId();
@@ -754,7 +745,6 @@ public interface OrderHeader extends BizEntityTyped<OrderType> {
 	 * @see #setSyncStatusId(StatusItem)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderHeader_SyncStatusId()
 	 * @model keys="statusId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	StatusItem getSyncStatusId();
@@ -859,7 +849,6 @@ public interface OrderHeader extends BizEntityTyped<OrderType> {
 	 * @see #setWebSiteId(WebSite)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderHeader_WebSiteId()
 	 * @model keys="webSiteId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	WebSite getWebSiteId();

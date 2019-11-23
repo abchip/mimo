@@ -78,7 +78,6 @@ public interface ProductAverageCost extends BizEntityTyped<ProductAverageCostTyp
 	 * @see org.abchip.mimo.biz.accounting.ledger.LedgerPackage#getProductAverageCost_FacilityId()
 	 * @model keys="facilityId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Facility getFacilityId();
@@ -134,7 +133,6 @@ public interface ProductAverageCost extends BizEntityTyped<ProductAverageCostTyp
 	 * @see org.abchip.mimo.biz.accounting.ledger.LedgerPackage#getProductAverageCost_OrganizationPartyId()
 	 * @model keys="partyId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Party getOrganizationPartyId();
@@ -162,7 +160,6 @@ public interface ProductAverageCost extends BizEntityTyped<ProductAverageCostTyp
 	 * @see org.abchip.mimo.biz.accounting.ledger.LedgerPackage#getProductAverageCost_ProductId()
 	 * @model keys="productId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Product getProductId();
@@ -216,7 +213,6 @@ public interface ProductAverageCost extends BizEntityTyped<ProductAverageCostTyp
 	 * @see org.abchip.mimo.biz.accounting.ledger.LedgerPackage#getProductAverageCost_ProductAverageCostTypeId()
 	 * @model keys="productAverageCostTypeId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ProductAverageCostType getProductAverageCostTypeId();

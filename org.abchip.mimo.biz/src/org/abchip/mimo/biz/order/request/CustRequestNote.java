@@ -39,7 +39,6 @@ public interface CustRequestNote extends BizEntityNote {
 	 * @see org.abchip.mimo.biz.order.request.RequestPackage#getCustRequestNote_CustRequestId()
 	 * @model keys="custRequestId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	CustRequest getCustRequestId();

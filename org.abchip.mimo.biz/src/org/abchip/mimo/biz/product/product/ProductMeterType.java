@@ -44,7 +44,6 @@ public interface ProductMeterType extends BizEntityType<ProductMeter> {
 	 * @see org.abchip.mimo.biz.product.product.ProductPackage#getProductMeterType_DefaultUomId()
 	 * @model keys="uomId"
 	 *        annotation="mimo-ent-slot help='This is optional and if applicable can describe the meter better'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Uom getDefaultUomId();

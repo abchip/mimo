@@ -95,7 +95,6 @@ public interface ShipmentGatewayConfigType extends BizEntityType<ShipmentGateway
 	 * @see #setParentTypeId(ShipmentGatewayConfigType)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipmentGatewayConfigType_ParentTypeId()
 	 * @model keys="shipmentGatewayConfTypeId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ShipmentGatewayConfigType getParentTypeId();

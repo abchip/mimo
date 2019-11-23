@@ -66,7 +66,6 @@ public interface PaymentGroup extends BizEntityTyped<PaymentGroupType> {
 	 * @see #setPaymentGroupTypeId(PaymentGroupType)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPaymentGroup_PaymentGroupTypeId()
 	 * @model keys="paymentGroupTypeId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	PaymentGroupType getPaymentGroupTypeId();

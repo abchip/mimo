@@ -95,7 +95,6 @@ public interface AcctgTransTypeAttr extends BizEntity {
 	 * @see org.abchip.mimo.biz.accounting.ledger.LedgerPackage#getAcctgTransTypeAttr_AcctgTransTypeId()
 	 * @model keys="acctgTransTypeId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	AcctgTransType getAcctgTransTypeId();

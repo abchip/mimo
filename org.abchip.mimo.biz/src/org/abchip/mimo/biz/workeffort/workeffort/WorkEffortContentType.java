@@ -68,7 +68,6 @@ public interface WorkEffortContentType extends BizEntityType<WorkEffortContent> 
 	 * @see #setParentTypeId(WorkEffortContentType)
 	 * @see org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage#getWorkEffortContentType_ParentTypeId()
 	 * @model keys="workEffortContentTypeId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	WorkEffortContentType getParentTypeId();

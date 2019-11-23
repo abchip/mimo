@@ -70,7 +70,6 @@ public interface ProductGeo extends BizEntity {
 	 * @see org.abchip.mimo.biz.product.product.ProductPackage#getProductGeo_GeoId()
 	 * @model keys="geoId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Geo getGeoId();
@@ -97,7 +96,6 @@ public interface ProductGeo extends BizEntity {
 	 * @see #setProductGeoEnumId(Enumeration)
 	 * @see org.abchip.mimo.biz.product.product.ProductPackage#getProductGeo_ProductGeoEnumId()
 	 * @model keys="enumId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Enumeration getProductGeoEnumId();
@@ -125,7 +123,6 @@ public interface ProductGeo extends BizEntity {
 	 * @see org.abchip.mimo.biz.product.product.ProductPackage#getProductGeo_ProductId()
 	 * @model keys="productId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Product getProductId();

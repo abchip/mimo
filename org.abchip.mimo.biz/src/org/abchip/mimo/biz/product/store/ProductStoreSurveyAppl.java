@@ -186,7 +186,6 @@ public interface ProductStoreSurveyAppl extends BizEntity {
 	 * @see #setSurveyApplTypeId(SurveyApplType)
 	 * @see org.abchip.mimo.biz.product.store.StorePackage#getProductStoreSurveyAppl_SurveyApplTypeId()
 	 * @model keys="surveyApplTypeId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	SurveyApplType getSurveyApplTypeId();
@@ -213,7 +212,6 @@ public interface ProductStoreSurveyAppl extends BizEntity {
 	 * @see #setSurveyId(Survey)
 	 * @see org.abchip.mimo.biz.product.store.StorePackage#getProductStoreSurveyAppl_SurveyId()
 	 * @model keys="surveyId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Survey getSurveyId();
@@ -292,7 +290,6 @@ public interface ProductStoreSurveyAppl extends BizEntity {
 	 * @see #setProductStoreId(ProductStore)
 	 * @see org.abchip.mimo.biz.product.store.StorePackage#getProductStoreSurveyAppl_ProductStoreId()
 	 * @model keys="productStoreId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ProductStore getProductStoreId();
@@ -319,7 +316,6 @@ public interface ProductStoreSurveyAppl extends BizEntity {
 	 * @see #setProductId(Product)
 	 * @see org.abchip.mimo.biz.product.store.StorePackage#getProductStoreSurveyAppl_ProductId()
 	 * @model keys="productId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Product getProductId();
@@ -346,7 +342,6 @@ public interface ProductStoreSurveyAppl extends BizEntity {
 	 * @see #setProductCategoryId(ProductCategory)
 	 * @see org.abchip.mimo.biz.product.store.StorePackage#getProductStoreSurveyAppl_ProductCategoryId()
 	 * @model keys="productCategoryId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ProductCategory getProductCategoryId();

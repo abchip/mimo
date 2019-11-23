@@ -69,7 +69,6 @@ public interface ProductMeter extends BizEntityTyped<ProductMeterType> {
 	 * @see org.abchip.mimo.biz.product.product.ProductPackage#getProductMeter_MeterUomId()
 	 * @model keys="uomId"
 	 *        annotation="mimo-ent-slot help='Is on this entity instead of the ProductMeterType entity for more flexibility; for example being able to find all speedometers regardless of their primary unit'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Uom getMeterUomId();
@@ -97,7 +96,6 @@ public interface ProductMeter extends BizEntityTyped<ProductMeterType> {
 	 * @see org.abchip.mimo.biz.product.product.ProductPackage#getProductMeter_ProductId()
 	 * @model keys="productId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Product getProductId();
@@ -125,7 +123,6 @@ public interface ProductMeter extends BizEntityTyped<ProductMeterType> {
 	 * @see org.abchip.mimo.biz.product.product.ProductPackage#getProductMeter_ProductMeterTypeId()
 	 * @model keys="productMeterTypeId" required="true"
 	 *        annotation="mimo-ent-slot key='true' help='Part of the primary key as different meters on a machine should have distinct types'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ProductMeterType getProductMeterTypeId();

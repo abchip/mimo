@@ -66,7 +66,6 @@ public interface ReturnHeader extends BizEntityTyped<ReturnHeaderType> {
 	 * @see #setBillingAccountId(BillingAccount)
 	 * @see org.abchip.mimo.biz.order.return_.ReturnPackage#getReturnHeader_BillingAccountId()
 	 * @model keys="billingAccountId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	BillingAccount getBillingAccountId();
@@ -93,7 +92,6 @@ public interface ReturnHeader extends BizEntityTyped<ReturnHeaderType> {
 	 * @see #setCreatedBy(UserLogin)
 	 * @see org.abchip.mimo.biz.order.return_.ReturnPackage#getReturnHeader_CreatedBy()
 	 * @model keys="userLoginId"
-	 *        annotation="mimo-ent-format type='id-vlong' length='255'"
 	 * @generated
 	 */
 	UserLogin getCreatedBy();
@@ -120,7 +118,6 @@ public interface ReturnHeader extends BizEntityTyped<ReturnHeaderType> {
 	 * @see #setCurrencyUomId(Uom)
 	 * @see org.abchip.mimo.biz.order.return_.ReturnPackage#getReturnHeader_CurrencyUomId()
 	 * @model keys="uomId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Uom getCurrencyUomId();
@@ -147,7 +144,6 @@ public interface ReturnHeader extends BizEntityTyped<ReturnHeaderType> {
 	 * @see #setDestinationFacilityId(Facility)
 	 * @see org.abchip.mimo.biz.order.return_.ReturnPackage#getReturnHeader_DestinationFacilityId()
 	 * @model keys="facilityId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Facility getDestinationFacilityId();
@@ -226,7 +222,6 @@ public interface ReturnHeader extends BizEntityTyped<ReturnHeaderType> {
 	 * @see #setFinAccountId(FinAccount)
 	 * @see org.abchip.mimo.biz.order.return_.ReturnPackage#getReturnHeader_FinAccountId()
 	 * @model keys="finAccountId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	FinAccount getFinAccountId();
@@ -253,7 +248,6 @@ public interface ReturnHeader extends BizEntityTyped<ReturnHeaderType> {
 	 * @see #setFromPartyId(Party)
 	 * @see org.abchip.mimo.biz.order.return_.ReturnPackage#getReturnHeader_FromPartyId()
 	 * @model keys="partyId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Party getFromPartyId();
@@ -280,7 +274,6 @@ public interface ReturnHeader extends BizEntityTyped<ReturnHeaderType> {
 	 * @see #setOriginContactMechId(ContactMech)
 	 * @see org.abchip.mimo.biz.order.return_.ReturnPackage#getReturnHeader_OriginContactMechId()
 	 * @model keys="contactMechId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ContactMech getOriginContactMechId();
@@ -307,7 +300,6 @@ public interface ReturnHeader extends BizEntityTyped<ReturnHeaderType> {
 	 * @see #setPaymentMethodId(PaymentMethod)
 	 * @see org.abchip.mimo.biz.order.return_.ReturnPackage#getReturnHeader_PaymentMethodId()
 	 * @model keys="paymentMethodId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	PaymentMethod getPaymentMethodId();
@@ -334,7 +326,6 @@ public interface ReturnHeader extends BizEntityTyped<ReturnHeaderType> {
 	 * @see #setReturnHeaderTypeId(ReturnHeaderType)
 	 * @see org.abchip.mimo.biz.order.return_.ReturnPackage#getReturnHeader_ReturnHeaderTypeId()
 	 * @model keys="returnHeaderTypeId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ReturnHeaderType getReturnHeaderTypeId();
@@ -388,7 +379,6 @@ public interface ReturnHeader extends BizEntityTyped<ReturnHeaderType> {
 	 * @see #setStatusId(StatusItem)
 	 * @see org.abchip.mimo.biz.order.return_.ReturnPackage#getReturnHeader_StatusId()
 	 * @model keys="statusId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	StatusItem getStatusId();
@@ -441,7 +431,6 @@ public interface ReturnHeader extends BizEntityTyped<ReturnHeaderType> {
 	 * @see #setToPartyId(Party)
 	 * @see org.abchip.mimo.biz.order.return_.ReturnPackage#getReturnHeader_ToPartyId()
 	 * @model keys="partyId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Party getToPartyId();

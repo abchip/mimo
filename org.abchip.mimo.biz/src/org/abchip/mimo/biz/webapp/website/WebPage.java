@@ -69,7 +69,6 @@ public interface WebPage extends BizEntity {
 	 * @see #setContentId(Content)
 	 * @see org.abchip.mimo.biz.webapp.website.WebsitePackage#getWebPage_ContentId()
 	 * @model keys="contentId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Content getContentId();
@@ -122,7 +121,6 @@ public interface WebPage extends BizEntity {
 	 * @see #setWebSiteId(WebSite)
 	 * @see org.abchip.mimo.biz.webapp.website.WebsitePackage#getWebPage_WebSiteId()
 	 * @model keys="webSiteId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	WebSite getWebSiteId();

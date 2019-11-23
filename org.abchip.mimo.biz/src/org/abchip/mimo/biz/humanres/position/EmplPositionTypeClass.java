@@ -45,7 +45,6 @@ public interface EmplPositionTypeClass extends BizEntity {
 	 * @see org.abchip.mimo.biz.humanres.position.PositionPackage#getEmplPositionTypeClass_EmplPositionClassTypeId()
 	 * @model keys="emplPositionClassTypeId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	EmplPositionClassType getEmplPositionClassTypeId();
@@ -73,7 +72,6 @@ public interface EmplPositionTypeClass extends BizEntity {
 	 * @see org.abchip.mimo.biz.humanres.position.PositionPackage#getEmplPositionTypeClass_EmplPositionTypeId()
 	 * @model keys="emplPositionTypeId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	EmplPositionType getEmplPositionTypeId();

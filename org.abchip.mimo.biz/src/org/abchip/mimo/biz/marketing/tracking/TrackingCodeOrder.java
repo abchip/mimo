@@ -126,7 +126,6 @@ public interface TrackingCodeOrder extends BizEntity {
 	 * @see org.abchip.mimo.biz.marketing.tracking.TrackingPackage#getTrackingCodeOrder_OrderId()
 	 * @model keys="orderId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	OrderHeader getOrderId();
@@ -179,7 +178,6 @@ public interface TrackingCodeOrder extends BizEntity {
 	 * @see #setTrackingCodeId(TrackingCode)
 	 * @see org.abchip.mimo.biz.marketing.tracking.TrackingPackage#getTrackingCodeOrder_TrackingCodeId()
 	 * @model keys="trackingCodeId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	TrackingCode getTrackingCodeId();
@@ -207,7 +205,6 @@ public interface TrackingCodeOrder extends BizEntity {
 	 * @see org.abchip.mimo.biz.marketing.tracking.TrackingPackage#getTrackingCodeOrder_TrackingCodeTypeId()
 	 * @model keys="trackingCodeTypeId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	TrackingCodeType getTrackingCodeTypeId();

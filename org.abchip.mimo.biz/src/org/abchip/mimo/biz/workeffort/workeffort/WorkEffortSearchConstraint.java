@@ -311,7 +311,6 @@ public interface WorkEffortSearchConstraint extends BizEntity {
 	 * @see org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage#getWorkEffortSearchConstraint_WorkEffortSearchResultId()
 	 * @model keys="workEffortSearchResultId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	WorkEffortSearchResult getWorkEffortSearchResultId();

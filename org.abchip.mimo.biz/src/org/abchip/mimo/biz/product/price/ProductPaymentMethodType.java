@@ -76,7 +76,6 @@ public interface ProductPaymentMethodType extends BizEntity {
 	 * @see org.abchip.mimo.biz.product.price.PricePackage#getProductPaymentMethodType_PaymentMethodTypeId()
 	 * @model keys="paymentMethodTypeId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	PaymentMethodType getPaymentMethodTypeId();
@@ -104,7 +103,6 @@ public interface ProductPaymentMethodType extends BizEntity {
 	 * @see org.abchip.mimo.biz.product.price.PricePackage#getProductPaymentMethodType_ProductId()
 	 * @model keys="productId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Product getProductId();
@@ -184,7 +182,6 @@ public interface ProductPaymentMethodType extends BizEntity {
 	 * @see org.abchip.mimo.biz.product.price.PricePackage#getProductPaymentMethodType_ProductPricePurposeId()
 	 * @model keys="productPricePurposeId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ProductPricePurpose getProductPricePurposeId();

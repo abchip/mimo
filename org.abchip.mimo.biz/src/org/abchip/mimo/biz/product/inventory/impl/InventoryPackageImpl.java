@@ -71,6 +71,7 @@ import org.abchip.mimo.biz.content.survey.SurveyPackage;
 import org.abchip.mimo.biz.content.survey.impl.SurveyPackageImpl;
 import org.abchip.mimo.biz.content.website.WebsitePackage;
 import org.abchip.mimo.biz.content.website.impl.WebsitePackageImpl;
+import org.abchip.mimo.biz.entity.EntityPackage;
 import org.abchip.mimo.biz.entity.audit.AuditPackage;
 import org.abchip.mimo.biz.entity.audit.impl.AuditPackageImpl;
 import org.abchip.mimo.biz.entity.crypto.CryptoPackage;
@@ -439,8 +440,8 @@ public class InventoryPackageImpl extends EPackageImpl implements InventoryPacka
 		SurveyPackageImpl theSurveyPackage = (SurveyPackageImpl)(registeredPackage instanceof SurveyPackageImpl ? registeredPackage : SurveyPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(WebsitePackage.eNS_URI);
 		WebsitePackageImpl theWebsitePackage = (WebsitePackageImpl)(registeredPackage instanceof WebsitePackageImpl ? registeredPackage : WebsitePackage.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(org.abchip.mimo.biz.entity.EntityPackage.eNS_URI);
-		EntityPackageImpl theEntityPackage = (EntityPackageImpl)(registeredPackage instanceof EntityPackageImpl ? registeredPackage : org.abchip.mimo.biz.entity.EntityPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(EntityPackage.eNS_URI);
+		EntityPackageImpl theEntityPackage = (EntityPackageImpl)(registeredPackage instanceof EntityPackageImpl ? registeredPackage : EntityPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(AuditPackage.eNS_URI);
 		AuditPackageImpl theAuditPackage = (AuditPackageImpl)(registeredPackage instanceof AuditPackageImpl ? registeredPackage : AuditPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(CryptoPackage.eNS_URI);
@@ -2724,20 +2725,6 @@ public class InventoryPackageImpl extends EPackageImpl implements InventoryPacka
 			   "length", "255"
 		   });
 		addAnnotation
-		  (getInventoryItem_ContainerId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getInventoryItem_CurrencyUomId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getInventoryItem_DatetimeManufactured(),
 		   source,
 		   new String[] {
@@ -2754,20 +2741,6 @@ public class InventoryPackageImpl extends EPackageImpl implements InventoryPacka
 		   source,
 		   new String[] {
 			   "type", "date-time"
-		   });
-		addAnnotation
-		  (getInventoryItem_FacilityId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getInventoryItem_FixedAssetId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
 		   });
 		addAnnotation
 		  (getInventoryItem_InventoryItemAttributes(),
@@ -2791,13 +2764,6 @@ public class InventoryPackageImpl extends EPackageImpl implements InventoryPacka
 			   "length", "20"
 		   });
 		addAnnotation
-		  (getInventoryItem_InventoryItemTypeId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getInventoryItem_InventoryItemVariances(),
 		   source,
 		   new String[] {
@@ -2806,13 +2772,6 @@ public class InventoryPackageImpl extends EPackageImpl implements InventoryPacka
 		   });
 		addAnnotation
 		  (getInventoryItem_LocationSeqId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getInventoryItem_LotId(),
 		   source,
 		   new String[] {
 			   "type", "id",
@@ -2833,27 +2792,6 @@ public class InventoryPackageImpl extends EPackageImpl implements InventoryPacka
 			   "type", "fixed-point",
 			   "precision", "18",
 			   "scale", "6"
-		   });
-		addAnnotation
-		  (getInventoryItem_OwnerPartyId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getInventoryItem_PartyId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getInventoryItem_ProductId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
 		   });
 		addAnnotation
 		  (getInventoryItem_QuantityOnHandTotal(),
@@ -2878,33 +2816,12 @@ public class InventoryPackageImpl extends EPackageImpl implements InventoryPacka
 			   "length", "255"
 		   });
 		addAnnotation
-		  (getInventoryItem_StatusId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getInventoryItem_UnitCost(),
 		   source,
 		   new String[] {
 			   "type", "fixed-point",
 			   "precision", "18",
 			   "scale", "6"
-		   });
-		addAnnotation
-		  (getInventoryItem_UomId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getInventoryItemAttribute_InventoryItemId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
 		   });
 		addAnnotation
 		  (getInventoryItemAttribute_AttrName(),
@@ -2926,13 +2843,6 @@ public class InventoryPackageImpl extends EPackageImpl implements InventoryPacka
 		   new String[] {
 			   "type", "value",
 			   "length", "255"
-		   });
-		addAnnotation
-		  (getInventoryItemDetail_InventoryItemId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
 		   });
 		addAnnotation
 		  (getInventoryItemDetail_InventoryItemDetailSeqId(),
@@ -2978,13 +2888,6 @@ public class InventoryPackageImpl extends EPackageImpl implements InventoryPacka
 			   "length", "20"
 		   });
 		addAnnotation
-		  (getInventoryItemDetail_ItemIssuanceId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getInventoryItemDetail_MaintHistSeqId(),
 		   source,
 		   new String[] {
@@ -3006,33 +2909,12 @@ public class InventoryPackageImpl extends EPackageImpl implements InventoryPacka
 			   "length", "20"
 		   });
 		addAnnotation
-		  (getInventoryItemDetail_PhysicalInventoryId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getInventoryItemDetail_QuantityOnHandDiff(),
 		   source,
 		   new String[] {
 			   "type", "fixed-point",
 			   "precision", "18",
 			   "scale", "6"
-		   });
-		addAnnotation
-		  (getInventoryItemDetail_ReasonEnumId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getInventoryItemDetail_ReceiptId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
 		   });
 		addAnnotation
 		  (getInventoryItemDetail_ReturnId(),
@@ -3078,13 +2960,6 @@ public class InventoryPackageImpl extends EPackageImpl implements InventoryPacka
 			   "scale", "6"
 		   });
 		addAnnotation
-		  (getInventoryItemDetail_WorkEffortId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (inventoryItemLabelEClass.getEOperations().get(0),
 		   source,
 		   new String[] {
@@ -3104,34 +2979,6 @@ public class InventoryPackageImpl extends EPackageImpl implements InventoryPacka
 		   new String[] {
 			   "type", "description",
 			   "length", "255"
-		   });
-		addAnnotation
-		  (getInventoryItemLabel_InventoryItemLabelTypeId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getInventoryItemLabelAppl_InventoryItemId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getInventoryItemLabelAppl_InventoryItemLabelTypeId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getInventoryItemLabelAppl_InventoryItemLabelId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
 		   });
 		addAnnotation
 		  (getInventoryItemLabelAppl_SequenceNum(),
@@ -3184,38 +3031,10 @@ public class InventoryPackageImpl extends EPackageImpl implements InventoryPacka
 			   "length", "1"
 		   });
 		addAnnotation
-		  (getInventoryItemLabelType_ParentTypeId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getInventoryItemStatus_InventoryItemId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getInventoryItemStatus_StatusId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getInventoryItemStatus_StatusDatetime(),
 		   source,
 		   new String[] {
 			   "type", "date-time"
-		   });
-		addAnnotation
-		  (getInventoryItemStatus_ChangeByUserLoginId(),
-		   source,
-		   new String[] {
-			   "type", "id-vlong",
-			   "length", "255"
 		   });
 		addAnnotation
 		  (getInventoryItemStatus_OwnerPartyId(),
@@ -3236,20 +3055,6 @@ public class InventoryPackageImpl extends EPackageImpl implements InventoryPacka
 		   source,
 		   new String[] {
 			   "type", "date-time"
-		   });
-		addAnnotation
-		  (getInventoryItemTempRes_ProductId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getInventoryItemTempRes_ProductStoreId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
 		   });
 		addAnnotation
 		  (getInventoryItemTempRes_VisitId(),
@@ -3329,20 +3134,6 @@ public class InventoryPackageImpl extends EPackageImpl implements InventoryPacka
 			   "length", "20"
 		   });
 		addAnnotation
-		  (getInventoryItemType_ParentTypeId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getInventoryItemTypeAttr_InventoryItemTypeId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getInventoryItemTypeAttr_AttrName(),
 		   source,
 		   new String[] {
@@ -3355,20 +3146,6 @@ public class InventoryPackageImpl extends EPackageImpl implements InventoryPacka
 		   new String[] {
 			   "type", "description",
 			   "length", "255"
-		   });
-		addAnnotation
-		  (getInventoryItemVariance_PhysicalInventoryId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getInventoryItemVariance_InventoryItemId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
 		   });
 		addAnnotation
 		  (getInventoryItemVariance_AvailableToPromiseVar(),
@@ -3394,13 +3171,6 @@ public class InventoryPackageImpl extends EPackageImpl implements InventoryPacka
 			   "scale", "6"
 		   });
 		addAnnotation
-		  (getInventoryItemVariance_VarianceReasonId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getInventoryTransfer_InventoryTransferId(),
 		   source,
 		   new String[] {
@@ -3413,48 +3183,6 @@ public class InventoryPackageImpl extends EPackageImpl implements InventoryPacka
 		   new String[] {
 			   "type", "comment",
 			   "length", "255"
-		   });
-		addAnnotation
-		  (getInventoryTransfer_ContainerId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getInventoryTransfer_ContainerIdTo(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getInventoryTransfer_FacilityId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getInventoryTransfer_FacilityIdTo(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getInventoryTransfer_InventoryItemId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getInventoryTransfer_ItemIssuanceId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
 		   });
 		addAnnotation
 		  (getInventoryTransfer_LocationSeqId(),
@@ -3481,13 +3209,6 @@ public class InventoryPackageImpl extends EPackageImpl implements InventoryPacka
 		   source,
 		   new String[] {
 			   "type", "date-time"
-		   });
-		addAnnotation
-		  (getInventoryTransfer_StatusId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
 		   });
 		addAnnotation
 		  (lotEClass.getEOperations().get(0),

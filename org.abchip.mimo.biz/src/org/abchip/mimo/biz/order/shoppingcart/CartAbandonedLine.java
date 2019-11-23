@@ -111,7 +111,6 @@ public interface CartAbandonedLine extends BizEntity {
 	 * @see #setProdCatalogId(ProdCatalog)
 	 * @see org.abchip.mimo.biz.order.shoppingcart.ShoppingcartPackage#getCartAbandonedLine_ProdCatalogId()
 	 * @model keys="prodCatalogId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ProdCatalog getProdCatalogId();
@@ -138,7 +137,6 @@ public interface CartAbandonedLine extends BizEntity {
 	 * @see #setProductId(Product)
 	 * @see org.abchip.mimo.biz.order.shoppingcart.ShoppingcartPackage#getCartAbandonedLine_ProductId()
 	 * @model keys="productId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Product getProductId();

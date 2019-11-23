@@ -75,7 +75,6 @@ public interface ProductCostComponentCalc extends BizEntity {
 	 * @see org.abchip.mimo.biz.product.cost.CostPackage#getProductCostComponentCalc_ProductId()
 	 * @model keys="productId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Product getProductId();
@@ -155,7 +154,6 @@ public interface ProductCostComponentCalc extends BizEntity {
 	 * @see org.abchip.mimo.biz.product.cost.CostPackage#getProductCostComponentCalc_CostComponentTypeId()
 	 * @model keys="costComponentTypeId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	CostComponentType getCostComponentTypeId();
@@ -182,7 +180,6 @@ public interface ProductCostComponentCalc extends BizEntity {
 	 * @see #setCostComponentCalcId(CostComponentCalc)
 	 * @see org.abchip.mimo.biz.product.cost.CostPackage#getProductCostComponentCalc_CostComponentCalcId()
 	 * @model keys="costComponentCalcId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	CostComponentCalc getCostComponentCalcId();

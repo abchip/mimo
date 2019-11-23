@@ -151,7 +151,6 @@ public interface QuoteAdjustment extends BizEntity {
 	 * @see #setCreatedByUserLogin(UserLogin)
 	 * @see org.abchip.mimo.biz.order.quote.QuotePackage#getQuoteAdjustment_CreatedByUserLogin()
 	 * @model keys="userLoginId"
-	 *        annotation="mimo-ent-format type='id-vlong' length='255'"
 	 * @generated
 	 */
 	UserLogin getCreatedByUserLogin();
@@ -386,7 +385,6 @@ public interface QuoteAdjustment extends BizEntity {
 	 * @see #setOverrideGlAccountId(GlAccount)
 	 * @see org.abchip.mimo.biz.order.quote.QuotePackage#getQuoteAdjustment_OverrideGlAccountId()
 	 * @model keys="glAccountId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	GlAccount getOverrideGlAccountId();
@@ -413,7 +411,6 @@ public interface QuoteAdjustment extends BizEntity {
 	 * @see #setPrimaryGeoId(Geo)
 	 * @see org.abchip.mimo.biz.order.quote.QuotePackage#getQuoteAdjustment_PrimaryGeoId()
 	 * @model keys="geoId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Geo getPrimaryGeoId();
@@ -492,7 +489,6 @@ public interface QuoteAdjustment extends BizEntity {
 	 * @see #setProductPromoId(ProductPromo)
 	 * @see org.abchip.mimo.biz.order.quote.QuotePackage#getQuoteAdjustment_ProductPromoId()
 	 * @model keys="productPromoId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ProductPromo getProductPromoId();
@@ -572,7 +568,6 @@ public interface QuoteAdjustment extends BizEntity {
 	 * @see #setQuoteAdjustmentTypeId(OrderAdjustmentType)
 	 * @see org.abchip.mimo.biz.order.quote.QuotePackage#getQuoteAdjustment_QuoteAdjustmentTypeId()
 	 * @model keys="orderAdjustmentTypeId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	OrderAdjustmentType getQuoteAdjustmentTypeId();
@@ -599,7 +594,6 @@ public interface QuoteAdjustment extends BizEntity {
 	 * @see #setQuoteId(Quote)
 	 * @see org.abchip.mimo.biz.order.quote.QuotePackage#getQuoteAdjustment_QuoteId()
 	 * @model keys="quoteId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Quote getQuoteId();
@@ -652,7 +646,6 @@ public interface QuoteAdjustment extends BizEntity {
 	 * @see #setSecondaryGeoId(Geo)
 	 * @see org.abchip.mimo.biz.order.quote.QuotePackage#getQuoteAdjustment_SecondaryGeoId()
 	 * @model keys="geoId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Geo getSecondaryGeoId();

@@ -41,7 +41,6 @@ public interface TenantComponent extends BizEntity {
 	 * @see org.abchip.mimo.biz.entity.tenant.TenantPackage#getTenantComponent_ComponentName()
 	 * @model keys="componentName" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='name' length='100'"
 	 * @generated
 	 */
 	Component getComponentName();
@@ -95,7 +94,6 @@ public interface TenantComponent extends BizEntity {
 	 * @see org.abchip.mimo.biz.entity.tenant.TenantPackage#getTenantComponent_TenantId()
 	 * @model keys="tenantId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Tenant getTenantId();

@@ -174,22 +174,13 @@ public interface BizPackage extends EPackage {
 	int BIZ_ENTITY_NOTE__NOTE_ID = BIZ_ENTITY_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Note</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BIZ_ENTITY_NOTE__NOTE = BIZ_ENTITY_FEATURE_COUNT + 1;
-
-	/**
 	 * The number of structural features of the '<em>Entity Note</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int BIZ_ENTITY_NOTE_FEATURE_COUNT = BIZ_ENTITY_FEATURE_COUNT + 2;
+	int BIZ_ENTITY_NOTE_FEATURE_COUNT = BIZ_ENTITY_FEATURE_COUNT + 1;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.impl.BizEntityTypedImpl <em>Entity Typed</em>}' class.
@@ -608,17 +599,6 @@ public interface BizPackage extends EPackage {
 	EAttribute getBizEntityNote_NoteId();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link org.abchip.mimo.biz.BizEntityNote#getNote <em>Note</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Note</em>'.
-	 * @see org.abchip.mimo.biz.BizEntityNote#getNote()
-	 * @see #getBizEntityNote()
-	 * @generated
-	 */
-	EReference getBizEntityNote_Note();
-
-	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.biz.BizEntityTyped <em>Entity Typed</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -881,14 +861,6 @@ public interface BizPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute BIZ_ENTITY_NOTE__NOTE_ID = eINSTANCE.getBizEntityNote_NoteId();
-
-		/**
-		 * The meta object literal for the '<em><b>Note</b></em>' containment reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference BIZ_ENTITY_NOTE__NOTE = eINSTANCE.getBizEntityNote_Note();
 
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.biz.impl.BizEntityTypedImpl <em>Entity Typed</em>}' class.

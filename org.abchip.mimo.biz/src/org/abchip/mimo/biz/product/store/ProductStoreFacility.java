@@ -126,7 +126,6 @@ public interface ProductStoreFacility extends BizEntity {
 	 * @see org.abchip.mimo.biz.product.store.StorePackage#getProductStoreFacility_ProductStoreId()
 	 * @model keys="productStoreId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ProductStore getProductStoreId();
@@ -154,7 +153,6 @@ public interface ProductStoreFacility extends BizEntity {
 	 * @see org.abchip.mimo.biz.product.store.StorePackage#getProductStoreFacility_FacilityId()
 	 * @model keys="facilityId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Facility getFacilityId();

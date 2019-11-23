@@ -43,7 +43,6 @@ public interface PaymentGlAccountTypeMap extends BizEntity {
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPaymentGlAccountTypeMap_OrganizationPartyId()
 	 * @model keys="partyId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Party getOrganizationPartyId();
@@ -71,7 +70,6 @@ public interface PaymentGlAccountTypeMap extends BizEntity {
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPaymentGlAccountTypeMap_PaymentTypeId()
 	 * @model keys="paymentTypeId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	PaymentType getPaymentTypeId();
@@ -98,7 +96,6 @@ public interface PaymentGlAccountTypeMap extends BizEntity {
 	 * @see #setGlAccountTypeId(GlAccountType)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPaymentGlAccountTypeMap_GlAccountTypeId()
 	 * @model keys="glAccountTypeId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	GlAccountType getGlAccountTypeId();

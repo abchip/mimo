@@ -97,7 +97,6 @@ public interface RoleType extends BizEntity {
 	 * @see #setParentTypeId(RoleType)
 	 * @see org.abchip.mimo.biz.party.party.PartyPackage#getRoleType_ParentTypeId()
 	 * @model keys="roleTypeId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	RoleType getParentTypeId();

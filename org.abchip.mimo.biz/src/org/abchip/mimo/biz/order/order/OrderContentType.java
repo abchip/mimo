@@ -122,7 +122,6 @@ public interface OrderContentType extends BizEntityType<OrderContent> {
 	 * @see #setParentTypeId(OrderContentType)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderContentType_ParentTypeId()
 	 * @model keys="orderContentTypeId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	OrderContentType getParentTypeId();

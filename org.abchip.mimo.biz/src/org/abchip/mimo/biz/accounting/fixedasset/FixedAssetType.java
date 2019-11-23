@@ -96,7 +96,6 @@ public interface FixedAssetType extends BizEntityType<FixedAsset> {
 	 * @see #setParentTypeId(FixedAssetType)
 	 * @see org.abchip.mimo.biz.accounting.fixedasset.FixedassetPackage#getFixedAssetType_ParentTypeId()
 	 * @model keys="fixedAssetTypeId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	FixedAssetType getParentTypeId();

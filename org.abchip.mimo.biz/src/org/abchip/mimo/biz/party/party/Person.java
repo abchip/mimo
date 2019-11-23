@@ -199,7 +199,6 @@ public interface Person extends Party {
 	 * @see #setEmploymentStatusEnumId(Enumeration)
 	 * @see org.abchip.mimo.biz.party.party.PartyPackage#getPerson_EmploymentStatusEnumId()
 	 * @model keys="enumId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Enumeration getEmploymentStatusEnumId();
@@ -696,7 +695,6 @@ public interface Person extends Party {
 	 * @see #setResidenceStatusEnumId(Enumeration)
 	 * @see org.abchip.mimo.biz.party.party.PartyPackage#getPerson_ResidenceStatusEnumId()
 	 * @model keys="enumId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Enumeration getResidenceStatusEnumId();

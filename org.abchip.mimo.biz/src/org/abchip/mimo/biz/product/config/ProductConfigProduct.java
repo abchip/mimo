@@ -74,7 +74,6 @@ public interface ProductConfigProduct extends BizEntity {
 	 * @see org.abchip.mimo.biz.product.config.ConfigPackage#getProductConfigProduct_ProductId()
 	 * @model keys="productId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Product getProductId();
@@ -154,7 +153,6 @@ public interface ProductConfigProduct extends BizEntity {
 	 * @see org.abchip.mimo.biz.product.config.ConfigPackage#getProductConfigProduct_ConfigItemId()
 	 * @model keys="configItemId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ProductConfigItem getConfigItemId();

@@ -95,7 +95,6 @@ public interface PaymentContentType extends BizEntityType<PaymentContent> {
 	 * @see #setParentTypeId(PaymentContentType)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPaymentContentType_ParentTypeId()
 	 * @model keys="paymentContentTypeId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	PaymentContentType getParentTypeId();

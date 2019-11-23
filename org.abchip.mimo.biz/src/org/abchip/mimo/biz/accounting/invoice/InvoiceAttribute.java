@@ -94,7 +94,6 @@ public interface InvoiceAttribute extends BizEntity {
 	 * @see org.abchip.mimo.biz.accounting.invoice.InvoicePackage#getInvoiceAttribute_InvoiceId()
 	 * @model keys="invoiceId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Invoice getInvoiceId();

@@ -8,7 +8,6 @@
 package org.abchip.mimo.biz.party.party.impl;
 
 import org.abchip.mimo.biz.impl.BizEntityImpl;
-import org.abchip.mimo.biz.party.party.Party;
 import org.abchip.mimo.biz.party.party.PartyIcsAvsOverride;
 import org.abchip.mimo.biz.party.party.PartyPackage;
 import org.eclipse.emf.ecore.EClass;
@@ -21,8 +20,8 @@ import org.eclipse.emf.ecore.EClass;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.party.party.impl.PartyIcsAvsOverrideImpl#getAvsDeclineString <em>Avs Decline String</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.party.impl.PartyIcsAvsOverrideImpl#getPartyId <em>Party Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.party.party.impl.PartyIcsAvsOverrideImpl#getAvsDeclineString <em>Avs Decline String</em>}</li>
  * </ul>
  *
  * @generated
@@ -77,8 +76,8 @@ public class PartyIcsAvsOverrideImpl extends BizEntityImpl implements PartyIcsAv
 	 * @generated
 	 */
 	@Override
-	public Party getPartyId() {
-		return (Party)eGet(PartyPackage.Literals.PARTY_ICS_AVS_OVERRIDE__PARTY_ID, true);
+	public String getPartyId() {
+		return (String)eGet(PartyPackage.Literals.PARTY_ICS_AVS_OVERRIDE__PARTY_ID, true);
 	}
 
 	/**
@@ -87,7 +86,7 @@ public class PartyIcsAvsOverrideImpl extends BizEntityImpl implements PartyIcsAv
 	 * @generated
 	 */
 	@Override
-	public void setPartyId(Party newPartyId) {
+	public void setPartyId(String newPartyId) {
 		eSet(PartyPackage.Literals.PARTY_ICS_AVS_OVERRIDE__PARTY_ID, newPartyId);
 	}
 

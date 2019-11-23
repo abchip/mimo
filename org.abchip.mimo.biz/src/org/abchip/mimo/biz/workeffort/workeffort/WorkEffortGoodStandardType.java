@@ -95,7 +95,6 @@ public interface WorkEffortGoodStandardType extends BizEntityType<WorkEffortGood
 	 * @see #setParentTypeId(WorkEffortGoodStandardType)
 	 * @see org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage#getWorkEffortGoodStandardType_ParentTypeId()
 	 * @model keys="workEffortGoodStdTypeId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	WorkEffortGoodStandardType getParentTypeId();

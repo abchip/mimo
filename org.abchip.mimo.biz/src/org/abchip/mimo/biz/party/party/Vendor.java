@@ -18,11 +18,11 @@ import org.abchip.mimo.biz.BizEntity;
  * The following features are supported:
  * </p>
  * <ul>
+ *   <li>{@link org.abchip.mimo.biz.party.party.Vendor#getPartyId <em>Party Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.party.Vendor#getManifestCompanyName <em>Manifest Company Name</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.party.Vendor#getManifestCompanyTitle <em>Manifest Company Title</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.party.Vendor#getManifestLogoUrl <em>Manifest Logo Url</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.party.Vendor#getManifestPolicies <em>Manifest Policies</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.party.party.Vendor#getPartyId <em>Party Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.party.party.PartyPackage#getVendor()
@@ -135,30 +135,30 @@ public interface Vendor extends BizEntity {
 	void setManifestPolicies(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Party Id</b></em>' reference.
+	 * Returns the value of the '<em><b>Party Id</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Party Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Party Id</em>' reference.
-	 * @see #setPartyId(Party)
+	 * @return the value of the '<em>Party Id</em>' attribute.
+	 * @see #setPartyId(String)
 	 * @see org.abchip.mimo.biz.party.party.PartyPackage#getVendor_PartyId()
-	 * @model keys="partyId" required="true"
+	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
-	Party getPartyId();
+	String getPartyId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.party.party.Vendor#getPartyId <em>Party Id</em>}' reference.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.party.party.Vendor#getPartyId <em>Party Id</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Party Id</em>' reference.
+	 * @param value the new value of the '<em>Party Id</em>' attribute.
 	 * @see #getPartyId()
 	 * @generated
 	 */
-	void setPartyId(Party value);
+	void setPartyId(String value);
 
 } // Vendor

@@ -176,7 +176,6 @@ public interface BenefitType extends BizEntity {
 	 * @see #setParentTypeId(BenefitType)
 	 * @see org.abchip.mimo.biz.humanres.employment.EmploymentPackage#getBenefitType_ParentTypeId()
 	 * @model keys="benefitTypeId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	BenefitType getParentTypeId();

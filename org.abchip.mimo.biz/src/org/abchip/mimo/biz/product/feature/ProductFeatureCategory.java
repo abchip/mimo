@@ -68,7 +68,6 @@ public interface ProductFeatureCategory extends BizEntity {
 	 * @see #setParentCategoryId(ProductFeatureCategory)
 	 * @see org.abchip.mimo.biz.product.feature.FeaturePackage#getProductFeatureCategory_ParentCategoryId()
 	 * @model keys="productFeatureCategoryId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ProductFeatureCategory getParentCategoryId();

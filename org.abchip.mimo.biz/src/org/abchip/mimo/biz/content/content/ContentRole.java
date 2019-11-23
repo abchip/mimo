@@ -46,7 +46,6 @@ public interface ContentRole extends BizEntity {
 	 * @see org.abchip.mimo.biz.content.content.ContentPackage#getContentRole_ContentId()
 	 * @model keys="contentId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Content getContentId();
@@ -102,7 +101,6 @@ public interface ContentRole extends BizEntity {
 	 * @see org.abchip.mimo.biz.content.content.ContentPackage#getContentRole_PartyId()
 	 * @model keys="partyId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Party getPartyId();

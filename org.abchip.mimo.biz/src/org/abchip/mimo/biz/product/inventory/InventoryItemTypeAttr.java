@@ -95,7 +95,6 @@ public interface InventoryItemTypeAttr extends BizEntity {
 	 * @see org.abchip.mimo.biz.product.inventory.InventoryPackage#getInventoryItemTypeAttr_InventoryItemTypeId()
 	 * @model keys="inventoryItemTypeId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	InventoryItemType getInventoryItemTypeId();

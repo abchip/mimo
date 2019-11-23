@@ -96,7 +96,6 @@ public interface FinAccountTransType extends BizEntityType<FinAccountTrans> {
 	 * @see #setParentTypeId(FinAccountTransType)
 	 * @see org.abchip.mimo.biz.accounting.finaccount.FinaccountPackage#getFinAccountTransType_ParentTypeId()
 	 * @model keys="finAccountTransTypeId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	FinAccountTransType getParentTypeId();

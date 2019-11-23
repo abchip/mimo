@@ -18,8 +18,8 @@ import org.abchip.mimo.biz.BizEntity;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.entity.tenant.TenantKeyEncryptingKey#getKekText <em>Kek Text</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.entity.tenant.TenantKeyEncryptingKey#getTenantId <em>Tenant Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.entity.tenant.TenantKeyEncryptingKey#getKekText <em>Kek Text</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.entity.tenant.TenantPackage#getTenantKeyEncryptingKey()
@@ -54,30 +54,30 @@ public interface TenantKeyEncryptingKey extends BizEntity {
 	void setKekText(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Tenant Id</b></em>' reference.
+	 * Returns the value of the '<em><b>Tenant Id</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Tenant Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Tenant Id</em>' reference.
-	 * @see #setTenantId(Tenant)
+	 * @return the value of the '<em>Tenant Id</em>' attribute.
+	 * @see #setTenantId(String)
 	 * @see org.abchip.mimo.biz.entity.tenant.TenantPackage#getTenantKeyEncryptingKey_TenantId()
-	 * @model keys="tenantId" required="true"
+	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
-	Tenant getTenantId();
+	String getTenantId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.entity.tenant.TenantKeyEncryptingKey#getTenantId <em>Tenant Id</em>}' reference.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.entity.tenant.TenantKeyEncryptingKey#getTenantId <em>Tenant Id</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Tenant Id</em>' reference.
+	 * @param value the new value of the '<em>Tenant Id</em>' attribute.
 	 * @see #getTenantId()
 	 * @generated
 	 */
-	void setTenantId(Tenant value);
+	void setTenantId(String value);
 
 } // TenantKeyEncryptingKey

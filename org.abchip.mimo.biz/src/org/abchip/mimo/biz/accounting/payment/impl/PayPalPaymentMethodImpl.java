@@ -8,7 +8,6 @@
 package org.abchip.mimo.biz.accounting.payment.impl;
 
 import org.abchip.mimo.biz.accounting.payment.PayPalPaymentMethod;
-import org.abchip.mimo.biz.accounting.payment.PaymentMethod;
 import org.abchip.mimo.biz.accounting.payment.PaymentPackage;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.party.contact.ContactMech;
@@ -22,6 +21,7 @@ import org.eclipse.emf.ecore.EClass;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.PayPalPaymentMethodImpl#getPaymentMethodId <em>Payment Method Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.PayPalPaymentMethodImpl#getAvsAddr <em>Avs Addr</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.PayPalPaymentMethodImpl#getAvsZip <em>Avs Zip</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.PayPalPaymentMethodImpl#getContactMechId <em>Contact Mech Id</em>}</li>
@@ -29,7 +29,6 @@ import org.eclipse.emf.ecore.EClass;
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.PayPalPaymentMethodImpl#getExpressCheckoutToken <em>Express Checkout Token</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.PayPalPaymentMethodImpl#getPayerId <em>Payer Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.PayPalPaymentMethodImpl#getPayerStatus <em>Payer Status</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.PayPalPaymentMethodImpl#getPaymentMethodId <em>Payment Method Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.PayPalPaymentMethodImpl#getTransactionId <em>Transaction Id</em>}</li>
  * </ul>
  *
@@ -205,8 +204,8 @@ public class PayPalPaymentMethodImpl extends BizEntityImpl implements PayPalPaym
 	 * @generated
 	 */
 	@Override
-	public PaymentMethod getPaymentMethodId() {
-		return (PaymentMethod)eGet(PaymentPackage.Literals.PAY_PAL_PAYMENT_METHOD__PAYMENT_METHOD_ID, true);
+	public String getPaymentMethodId() {
+		return (String)eGet(PaymentPackage.Literals.PAY_PAL_PAYMENT_METHOD__PAYMENT_METHOD_ID, true);
 	}
 
 	/**
@@ -215,7 +214,7 @@ public class PayPalPaymentMethodImpl extends BizEntityImpl implements PayPalPaym
 	 * @generated
 	 */
 	@Override
-	public void setPaymentMethodId(PaymentMethod newPaymentMethodId) {
+	public void setPaymentMethodId(String newPaymentMethodId) {
 		eSet(PaymentPackage.Literals.PAY_PAL_PAYMENT_METHOD__PAYMENT_METHOD_ID, newPaymentMethodId);
 	}
 

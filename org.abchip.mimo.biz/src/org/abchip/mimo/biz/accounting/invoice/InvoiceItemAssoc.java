@@ -219,7 +219,6 @@ public interface InvoiceItemAssoc extends BizEntityTyped<InvoiceItemAssocType> {
 	 * @see #setPartyIdFrom(Party)
 	 * @see org.abchip.mimo.biz.accounting.invoice.InvoicePackage#getInvoiceItemAssoc_PartyIdFrom()
 	 * @model keys="partyId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Party getPartyIdFrom();
@@ -246,7 +245,6 @@ public interface InvoiceItemAssoc extends BizEntityTyped<InvoiceItemAssocType> {
 	 * @see #setPartyIdTo(Party)
 	 * @see org.abchip.mimo.biz.accounting.invoice.InvoicePackage#getInvoiceItemAssoc_PartyIdTo()
 	 * @model keys="partyId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Party getPartyIdTo();
@@ -326,7 +324,6 @@ public interface InvoiceItemAssoc extends BizEntityTyped<InvoiceItemAssocType> {
 	 * @see org.abchip.mimo.biz.accounting.invoice.InvoicePackage#getInvoiceItemAssoc_InvoiceItemAssocTypeId()
 	 * @model keys="invoiceItemAssocTypeId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	InvoiceItemAssocType getInvoiceItemAssocTypeId();

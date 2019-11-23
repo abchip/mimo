@@ -70,7 +70,6 @@ public interface PaymentMethodType extends BizEntityType<PaymentMethod> {
 	 * @see #setDefaultGlAccountId(GlAccount)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPaymentMethodType_DefaultGlAccountId()
 	 * @model keys="glAccountId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	GlAccount getDefaultGlAccountId();

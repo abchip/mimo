@@ -46,7 +46,6 @@ public interface ProdCatalogInvFacility extends BizEntity {
 	 * @see org.abchip.mimo.biz.product.catalog.CatalogPackage#getProdCatalogInvFacility_FacilityId()
 	 * @model keys="facilityId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Facility getFacilityId();
@@ -154,7 +153,6 @@ public interface ProdCatalogInvFacility extends BizEntity {
 	 * @see org.abchip.mimo.biz.product.catalog.CatalogPackage#getProdCatalogInvFacility_ProdCatalogId()
 	 * @model keys="prodCatalogId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ProdCatalog getProdCatalogId();

@@ -112,7 +112,6 @@ public interface Subscription extends BizEntityTyped<SubscriptionType> {
 	 * @see #setAvailableTimeUomId(Uom)
 	 * @see org.abchip.mimo.biz.product.subscription.SubscriptionPackage#getSubscription_AvailableTimeUomId()
 	 * @model keys="uomId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Uom getAvailableTimeUomId();
@@ -167,7 +166,6 @@ public interface Subscription extends BizEntityTyped<SubscriptionType> {
 	 * @see org.abchip.mimo.biz.product.subscription.SubscriptionPackage#getSubscription_CanclAutmExtTimeUomId()
 	 * @model keys="uomId"
 	 *        annotation="mimo-ent-slot help='Unit Of Measure used for the automatic extension of the subscription.'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Uom getCanclAutmExtTimeUomId();
@@ -221,7 +219,6 @@ public interface Subscription extends BizEntityTyped<SubscriptionType> {
 	 * @see #setContactMechId(ContactMech)
 	 * @see org.abchip.mimo.biz.product.subscription.SubscriptionPackage#getSubscription_ContactMechId()
 	 * @model keys="contactMechId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ContactMech getContactMechId();
@@ -381,7 +378,6 @@ public interface Subscription extends BizEntityTyped<SubscriptionType> {
 	 * @see org.abchip.mimo.biz.product.subscription.SubscriptionPackage#getSubscription_GracePeriodOnExpiryUomId()
 	 * @model keys="uomId"
 	 *        annotation="mimo-ent-slot help='Unit Of Measure used for the automatic extension of the subscription.'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Uom getGracePeriodOnExpiryUomId();
@@ -435,7 +431,6 @@ public interface Subscription extends BizEntityTyped<SubscriptionType> {
 	 * @see #setMaxLifeTimeUomId(Uom)
 	 * @see org.abchip.mimo.biz.product.subscription.SubscriptionPackage#getSubscription_MaxLifeTimeUomId()
 	 * @model keys="uomId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Uom getMaxLifeTimeUomId();
@@ -462,7 +457,6 @@ public interface Subscription extends BizEntityTyped<SubscriptionType> {
 	 * @see #setNeedTypeId(NeedType)
 	 * @see org.abchip.mimo.biz.product.subscription.SubscriptionPackage#getSubscription_NeedTypeId()
 	 * @model keys="needTypeId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	NeedType getNeedTypeId();
@@ -489,7 +483,6 @@ public interface Subscription extends BizEntityTyped<SubscriptionType> {
 	 * @see #setOrderId(OrderHeader)
 	 * @see org.abchip.mimo.biz.product.subscription.SubscriptionPackage#getSubscription_OrderId()
 	 * @model keys="orderId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	OrderHeader getOrderId();
@@ -542,7 +535,6 @@ public interface Subscription extends BizEntityTyped<SubscriptionType> {
 	 * @see #setOriginatedFromPartyId(Party)
 	 * @see org.abchip.mimo.biz.product.subscription.SubscriptionPackage#getSubscription_OriginatedFromPartyId()
 	 * @model keys="partyId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Party getOriginatedFromPartyId();
@@ -569,7 +561,6 @@ public interface Subscription extends BizEntityTyped<SubscriptionType> {
 	 * @see #setOriginatedFromRoleTypeId(RoleType)
 	 * @see org.abchip.mimo.biz.product.subscription.SubscriptionPackage#getSubscription_OriginatedFromRoleTypeId()
 	 * @model keys="roleTypeId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	RoleType getOriginatedFromRoleTypeId();
@@ -596,7 +587,6 @@ public interface Subscription extends BizEntityTyped<SubscriptionType> {
 	 * @see #setPartyId(Party)
 	 * @see org.abchip.mimo.biz.product.subscription.SubscriptionPackage#getSubscription_PartyId()
 	 * @model keys="partyId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Party getPartyId();
@@ -701,7 +691,6 @@ public interface Subscription extends BizEntityTyped<SubscriptionType> {
 	 * @see #setRoleTypeId(RoleType)
 	 * @see org.abchip.mimo.biz.product.subscription.SubscriptionPackage#getSubscription_RoleTypeId()
 	 * @model keys="roleTypeId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	RoleType getRoleTypeId();
@@ -806,7 +795,6 @@ public interface Subscription extends BizEntityTyped<SubscriptionType> {
 	 * @see #setUseTimeUomId(Uom)
 	 * @see org.abchip.mimo.biz.product.subscription.SubscriptionPackage#getSubscription_UseTimeUomId()
 	 * @model keys="uomId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Uom getUseTimeUomId();
@@ -879,7 +867,6 @@ public interface Subscription extends BizEntityTyped<SubscriptionType> {
 	 * @see #setSubscriptionResourceId(SubscriptionResource)
 	 * @see org.abchip.mimo.biz.product.subscription.SubscriptionPackage#getSubscription_SubscriptionResourceId()
 	 * @model keys="subscriptionResourceId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	SubscriptionResource getSubscriptionResourceId();
@@ -906,7 +893,6 @@ public interface Subscription extends BizEntityTyped<SubscriptionType> {
 	 * @see #setProductId(Product)
 	 * @see org.abchip.mimo.biz.product.subscription.SubscriptionPackage#getSubscription_ProductId()
 	 * @model keys="productId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Product getProductId();
@@ -933,7 +919,6 @@ public interface Subscription extends BizEntityTyped<SubscriptionType> {
 	 * @see #setProductCategoryId(ProductCategory)
 	 * @see org.abchip.mimo.biz.product.subscription.SubscriptionPackage#getSubscription_ProductCategoryId()
 	 * @model keys="productCategoryId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ProductCategory getProductCategoryId();
@@ -960,7 +945,6 @@ public interface Subscription extends BizEntityTyped<SubscriptionType> {
 	 * @see #setInventoryItemId(InventoryItem)
 	 * @see org.abchip.mimo.biz.product.subscription.SubscriptionPackage#getSubscription_InventoryItemId()
 	 * @model keys="inventoryItemId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	InventoryItem getInventoryItemId();
@@ -987,7 +971,6 @@ public interface Subscription extends BizEntityTyped<SubscriptionType> {
 	 * @see #setSubscriptionTypeId(SubscriptionType)
 	 * @see org.abchip.mimo.biz.product.subscription.SubscriptionPackage#getSubscription_SubscriptionTypeId()
 	 * @model keys="subscriptionTypeId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	SubscriptionType getSubscriptionTypeId();

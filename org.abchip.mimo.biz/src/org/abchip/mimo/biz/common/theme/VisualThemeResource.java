@@ -98,7 +98,6 @@ public interface VisualThemeResource extends BizEntity {
 	 * @see org.abchip.mimo.biz.common.theme.ThemePackage#getVisualThemeResource_VisualThemeId()
 	 * @model keys="visualThemeId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	VisualTheme getVisualThemeId();
@@ -126,7 +125,6 @@ public interface VisualThemeResource extends BizEntity {
 	 * @see org.abchip.mimo.biz.common.theme.ThemePackage#getVisualThemeResource_ResourceTypeEnumId()
 	 * @model keys="enumId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Enumeration getResourceTypeEnumId();

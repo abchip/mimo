@@ -72,7 +72,6 @@ public interface TrackingCodeVisit extends BizEntity {
 	 * @see #setSourceEnumId(Enumeration)
 	 * @see org.abchip.mimo.biz.marketing.tracking.TrackingPackage#getTrackingCodeVisit_SourceEnumId()
 	 * @model keys="enumId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Enumeration getSourceEnumId();
@@ -100,7 +99,6 @@ public interface TrackingCodeVisit extends BizEntity {
 	 * @see org.abchip.mimo.biz.marketing.tracking.TrackingPackage#getTrackingCodeVisit_TrackingCodeId()
 	 * @model keys="trackingCodeId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	TrackingCode getTrackingCodeId();

@@ -65,7 +65,6 @@ public interface OrderItemShipGroup extends BizEntity {
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderItemShipGroup_CarrierPartyId()
 	 * @model keys="partyId"
 	 *        annotation="mimo-ent-slot audit='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Party getCarrierPartyId();
@@ -118,7 +117,6 @@ public interface OrderItemShipGroup extends BizEntity {
 	 * @see #setContactMechId(ContactMech)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderItemShipGroup_ContactMechId()
 	 * @model keys="contactMechId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ContactMech getContactMechId();
@@ -197,7 +195,6 @@ public interface OrderItemShipGroup extends BizEntity {
 	 * @see #setFacilityId(Facility)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderItemShipGroup_FacilityId()
 	 * @model keys="facilityId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Facility getFacilityId();
@@ -303,7 +300,6 @@ public interface OrderItemShipGroup extends BizEntity {
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderItemShipGroup_OrderId()
 	 * @model keys="orderId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	OrderHeader getOrderId();
@@ -411,7 +407,6 @@ public interface OrderItemShipGroup extends BizEntity {
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderItemShipGroup_ShipmentMethodTypeId()
 	 * @model keys="shipmentMethodTypeId"
 	 *        annotation="mimo-ent-slot audit='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ShipmentMethodType getShipmentMethodTypeId();
@@ -464,7 +459,6 @@ public interface OrderItemShipGroup extends BizEntity {
 	 * @see #setSupplierAgreementId(Agreement)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderItemShipGroup_SupplierAgreementId()
 	 * @model keys="agreementId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Agreement getSupplierAgreementId();
@@ -491,7 +485,6 @@ public interface OrderItemShipGroup extends BizEntity {
 	 * @see #setSupplierPartyId(Party)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderItemShipGroup_SupplierPartyId()
 	 * @model keys="partyId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Party getSupplierPartyId();
@@ -518,7 +511,6 @@ public interface OrderItemShipGroup extends BizEntity {
 	 * @see #setTelecomContactMechId(ContactMech)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderItemShipGroup_TelecomContactMechId()
 	 * @model keys="contactMechId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ContactMech getTelecomContactMechId();
@@ -572,7 +564,6 @@ public interface OrderItemShipGroup extends BizEntity {
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderItemShipGroup_VendorPartyId()
 	 * @model keys="partyId"
 	 *        annotation="mimo-ent-slot help='For use with multi-vendor stores, order will be split so that each ship group is associated with only one vendor (only if applicable)'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Party getVendorPartyId();

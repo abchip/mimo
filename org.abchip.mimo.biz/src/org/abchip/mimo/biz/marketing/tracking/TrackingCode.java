@@ -294,7 +294,6 @@ public interface TrackingCode extends BizEntityTyped<TrackingCodeType> {
 	 * @see #setMarketingCampaignId(MarketingCampaign)
 	 * @see org.abchip.mimo.biz.marketing.tracking.TrackingPackage#getTrackingCode_MarketingCampaignId()
 	 * @model keys="marketingCampaignId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	MarketingCampaign getMarketingCampaignId();
@@ -530,7 +529,6 @@ public interface TrackingCode extends BizEntityTyped<TrackingCodeType> {
 	 * @see #setTrackingCodeTypeId(TrackingCodeType)
 	 * @see org.abchip.mimo.biz.marketing.tracking.TrackingPackage#getTrackingCode_TrackingCodeTypeId()
 	 * @model keys="trackingCodeTypeId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	TrackingCodeType getTrackingCodeTypeId();

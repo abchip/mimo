@@ -95,7 +95,6 @@ public interface DeductionType extends BizEntityType<Deduction> {
 	 * @see #setParentTypeId(DeductionType)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getDeductionType_ParentTypeId()
 	 * @model keys="deductionTypeId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	DeductionType getParentTypeId();

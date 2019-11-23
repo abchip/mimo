@@ -74,7 +74,6 @@ public interface FixedAssetStdCost extends BizEntityTyped<FixedAssetStdCostType>
 	 * @see #setAmountUomId(Uom)
 	 * @see org.abchip.mimo.biz.accounting.fixedasset.FixedassetPackage#getFixedAssetStdCost_AmountUomId()
 	 * @model keys="uomId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Uom getAmountUomId();
@@ -156,7 +155,6 @@ public interface FixedAssetStdCost extends BizEntityTyped<FixedAssetStdCostType>
 	 * @see org.abchip.mimo.biz.accounting.fixedasset.FixedassetPackage#getFixedAssetStdCost_FixedAssetId()
 	 * @model keys="fixedAssetId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	FixedAsset getFixedAssetId();
@@ -184,7 +182,6 @@ public interface FixedAssetStdCost extends BizEntityTyped<FixedAssetStdCostType>
 	 * @see org.abchip.mimo.biz.accounting.fixedasset.FixedassetPackage#getFixedAssetStdCost_FixedAssetStdCostTypeId()
 	 * @model keys="fixedAssetStdCostTypeId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	FixedAssetStdCostType getFixedAssetStdCostTypeId();

@@ -235,7 +235,6 @@ public interface JobManagerLock extends BizEntity {
 	 * @see #setReasonEnumId(Enumeration)
 	 * @see org.abchip.mimo.biz.service.schedule.SchedulePackage#getJobManagerLock_ReasonEnumId()
 	 * @model keys="enumId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Enumeration getReasonEnumId();

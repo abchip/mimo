@@ -95,7 +95,6 @@ public interface PartyIdentificationType extends BizEntityType<PartyIdentificati
 	 * @see #setParentTypeId(PartyIdentificationType)
 	 * @see org.abchip.mimo.biz.party.party.PartyPackage#getPartyIdentificationType_ParentTypeId()
 	 * @model keys="partyIdentificationTypeId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	PartyIdentificationType getParentTypeId();

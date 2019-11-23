@@ -96,7 +96,6 @@ public interface AcctgTransType extends BizEntityType<AcctgTrans> {
 	 * @see #setParentTypeId(AcctgTransType)
 	 * @see org.abchip.mimo.biz.accounting.ledger.LedgerPackage#getAcctgTransType_ParentTypeId()
 	 * @model keys="acctgTransTypeId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	AcctgTransType getParentTypeId();

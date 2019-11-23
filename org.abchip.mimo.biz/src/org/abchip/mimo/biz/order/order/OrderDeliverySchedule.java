@@ -107,7 +107,6 @@ public interface OrderDeliverySchedule extends BizEntity {
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderDeliverySchedule_OrderId()
 	 * @model keys="orderId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	OrderHeader getOrderId();
@@ -188,7 +187,6 @@ public interface OrderDeliverySchedule extends BizEntity {
 	 * @see #setStatusId(StatusItem)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderDeliverySchedule_StatusId()
 	 * @model keys="statusId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	StatusItem getStatusId();
@@ -241,7 +239,6 @@ public interface OrderDeliverySchedule extends BizEntity {
 	 * @see #setTotalCubicUomId(Uom)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderDeliverySchedule_TotalCubicUomId()
 	 * @model keys="uomId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Uom getTotalCubicUomId();
@@ -294,7 +291,6 @@ public interface OrderDeliverySchedule extends BizEntity {
 	 * @see #setTotalWeightUomId(Uom)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderDeliverySchedule_TotalWeightUomId()
 	 * @model keys="uomId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Uom getTotalWeightUomId();

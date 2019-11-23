@@ -95,7 +95,6 @@ public interface DataCategory extends BizEntity {
 	 * @see #setParentCategoryId(DataCategory)
 	 * @see org.abchip.mimo.biz.content.data.DataPackage#getDataCategory_ParentCategoryId()
 	 * @model keys="dataCategoryId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	DataCategory getParentCategoryId();

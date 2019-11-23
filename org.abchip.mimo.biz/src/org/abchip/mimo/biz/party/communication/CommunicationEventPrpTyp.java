@@ -96,7 +96,6 @@ public interface CommunicationEventPrpTyp extends BizEntity {
 	 * @see #setParentTypeId(CommunicationEventPrpTyp)
 	 * @see org.abchip.mimo.biz.party.communication.CommunicationPackage#getCommunicationEventPrpTyp_ParentTypeId()
 	 * @model keys="communicationEventPrpTypId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	CommunicationEventPrpTyp getParentTypeId();

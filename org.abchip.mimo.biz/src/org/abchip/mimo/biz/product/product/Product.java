@@ -127,7 +127,6 @@ public interface Product extends BizEntityTyped<ProductType> {
 	 * @see #setAmountUomTypeId(UomType)
 	 * @see org.abchip.mimo.biz.product.product.ProductPackage#getProduct_AmountUomTypeId()
 	 * @model keys="uomTypeId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	UomType getAmountUomTypeId();
@@ -285,7 +284,6 @@ public interface Product extends BizEntityTyped<ProductType> {
 	 * @see #setCreatedByUserLogin(UserLogin)
 	 * @see org.abchip.mimo.biz.product.product.ProductPackage#getProduct_CreatedByUserLogin()
 	 * @model keys="userLoginId"
-	 *        annotation="mimo-ent-format type='id-vlong' length='255'"
 	 * @generated
 	 */
 	UserLogin getCreatedByUserLogin();
@@ -338,7 +336,6 @@ public interface Product extends BizEntityTyped<ProductType> {
 	 * @see #setDefaultShipmentBoxTypeId(ShipmentBoxType)
 	 * @see org.abchip.mimo.biz.product.product.ProductPackage#getProduct_DefaultShipmentBoxTypeId()
 	 * @model keys="shipmentBoxTypeId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ShipmentBoxType getDefaultShipmentBoxTypeId();
@@ -365,7 +362,6 @@ public interface Product extends BizEntityTyped<ProductType> {
 	 * @see #setDepthUomId(Uom)
 	 * @see org.abchip.mimo.biz.product.product.ProductPackage#getProduct_DepthUomId()
 	 * @model keys="uomId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Uom getDepthUomId();
@@ -470,7 +466,6 @@ public interface Product extends BizEntityTyped<ProductType> {
 	 * @see #setDiameterUomId(Uom)
 	 * @see org.abchip.mimo.biz.product.product.ProductPackage#getProduct_DiameterUomId()
 	 * @model keys="uomId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Uom getDiameterUomId();
@@ -576,7 +571,6 @@ public interface Product extends BizEntityTyped<ProductType> {
 	 * @see #setHeightUomId(Uom)
 	 * @see org.abchip.mimo.biz.product.product.ProductPackage#getProduct_HeightUomId()
 	 * @model keys="uomId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Uom getHeightUomId();
@@ -759,7 +753,6 @@ public interface Product extends BizEntityTyped<ProductType> {
 	 * @see #setLastModifiedByUserLogin(UserLogin)
 	 * @see org.abchip.mimo.biz.product.product.ProductPackage#getProduct_LastModifiedByUserLogin()
 	 * @model keys="userLoginId"
-	 *        annotation="mimo-ent-format type='id-vlong' length='255'"
 	 * @generated
 	 */
 	UserLogin getLastModifiedByUserLogin();
@@ -918,7 +911,6 @@ public interface Product extends BizEntityTyped<ProductType> {
 	 * @see #setOriginGeoId(Geo)
 	 * @see org.abchip.mimo.biz.product.product.ProductPackage#getProduct_OriginGeoId()
 	 * @model keys="geoId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Geo getOriginGeoId();
@@ -1232,7 +1224,6 @@ public interface Product extends BizEntityTyped<ProductType> {
 	 * @see #setQuantityUomId(Uom)
 	 * @see org.abchip.mimo.biz.product.product.ProductPackage#getProduct_QuantityUomId()
 	 * @model keys="uomId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Uom getQuantityUomId();
@@ -1259,7 +1250,6 @@ public interface Product extends BizEntityTyped<ProductType> {
 	 * @see #setRatingTypeEnum(Enumeration)
 	 * @see org.abchip.mimo.biz.product.product.ProductPackage#getProduct_RatingTypeEnum()
 	 * @model keys="enumId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Enumeration getRatingTypeEnum();
@@ -1364,7 +1354,6 @@ public interface Product extends BizEntityTyped<ProductType> {
 	 * @see #setRequirementMethodEnumId(Enumeration)
 	 * @see org.abchip.mimo.biz.product.product.ProductPackage#getProduct_RequirementMethodEnumId()
 	 * @model keys="enumId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Enumeration getRequirementMethodEnumId();
@@ -1734,7 +1723,6 @@ public interface Product extends BizEntityTyped<ProductType> {
 	 * @see org.abchip.mimo.biz.product.product.ProductPackage#getProduct_VirtualVariantMethodEnum()
 	 * @model keys="enumId"
 	 *        annotation="mimo-ent-slot help='This field defines the method of selecting a variant from the selectable features on the virtual product. Either as a variant explosion which will work to about 200 variants or as feature explosion which almost has no limits'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Enumeration getVirtualVariantMethodEnum();
@@ -1761,7 +1749,6 @@ public interface Product extends BizEntityTyped<ProductType> {
 	 * @see #setWeightUomId(Uom)
 	 * @see org.abchip.mimo.biz.product.product.ProductPackage#getProduct_WeightUomId()
 	 * @model keys="uomId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Uom getWeightUomId();
@@ -1788,7 +1775,6 @@ public interface Product extends BizEntityTyped<ProductType> {
 	 * @see #setWidthUomId(Uom)
 	 * @see org.abchip.mimo.biz.product.product.ProductPackage#getProduct_WidthUomId()
 	 * @model keys="uomId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Uom getWidthUomId();
@@ -2183,7 +2169,6 @@ public interface Product extends BizEntityTyped<ProductType> {
 	 * @see #setProductTypeId(ProductType)
 	 * @see org.abchip.mimo.biz.product.product.ProductPackage#getProduct_ProductTypeId()
 	 * @model keys="productTypeId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ProductType getProductTypeId();
@@ -2211,7 +2196,6 @@ public interface Product extends BizEntityTyped<ProductType> {
 	 * @see org.abchip.mimo.biz.product.product.ProductPackage#getProduct_PrimaryProductCategoryId()
 	 * @model keys="productCategoryId"
 	 *        annotation="mimo-ent-slot help='The primary category ; it should be one of the productCategoryId already setup in ProductCategoryMember'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ProductCategory getPrimaryProductCategoryId();
@@ -2238,7 +2222,6 @@ public interface Product extends BizEntityTyped<ProductType> {
 	 * @see #setFacilityId(Facility)
 	 * @see org.abchip.mimo.biz.product.product.ProductPackage#getProduct_FacilityId()
 	 * @model keys="facilityId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Facility getFacilityId();
@@ -2265,7 +2248,6 @@ public interface Product extends BizEntityTyped<ProductType> {
 	 * @see #setInventoryItemTypeId(InventoryItemType)
 	 * @see org.abchip.mimo.biz.product.product.ProductPackage#getProduct_InventoryItemTypeId()
 	 * @model keys="inventoryItemTypeId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	InventoryItemType getInventoryItemTypeId();

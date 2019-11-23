@@ -84,6 +84,7 @@ import org.abchip.mimo.biz.content.survey.SurveyResponseAnswer;
 import org.abchip.mimo.biz.content.survey.SurveyTrigger;
 import org.abchip.mimo.biz.content.website.WebsitePackage;
 import org.abchip.mimo.biz.content.website.impl.WebsitePackageImpl;
+import org.abchip.mimo.biz.entity.EntityPackage;
 import org.abchip.mimo.biz.entity.audit.AuditPackage;
 import org.abchip.mimo.biz.entity.audit.impl.AuditPackageImpl;
 import org.abchip.mimo.biz.entity.crypto.CryptoPackage;
@@ -421,8 +422,8 @@ public class SurveyPackageImpl extends EPackageImpl implements SurveyPackage {
 		PreferencePackageImpl thePreferencePackage = (PreferencePackageImpl)(registeredPackage instanceof PreferencePackageImpl ? registeredPackage : PreferencePackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(WebsitePackage.eNS_URI);
 		WebsitePackageImpl theWebsitePackage = (WebsitePackageImpl)(registeredPackage instanceof WebsitePackageImpl ? registeredPackage : WebsitePackage.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(org.abchip.mimo.biz.entity.EntityPackage.eNS_URI);
-		EntityPackageImpl theEntityPackage = (EntityPackageImpl)(registeredPackage instanceof EntityPackageImpl ? registeredPackage : org.abchip.mimo.biz.entity.EntityPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(EntityPackage.eNS_URI);
+		EntityPackageImpl theEntityPackage = (EntityPackageImpl)(registeredPackage instanceof EntityPackageImpl ? registeredPackage : EntityPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(AuditPackage.eNS_URI);
 		AuditPackageImpl theAuditPackage = (AuditPackageImpl)(registeredPackage instanceof AuditPackageImpl ? registeredPackage : AuditPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(CryptoPackage.eNS_URI);
@@ -2403,13 +2404,6 @@ public class SurveyPackageImpl extends EPackageImpl implements SurveyPackage {
 			   "length", "255"
 		   });
 		addAnnotation
-		  (getSurveyMultiResp_SurveyId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getSurveyMultiResp_SurveyMultiRespId(),
 		   source,
 		   new String[] {
@@ -2458,13 +2452,6 @@ public class SurveyPackageImpl extends EPackageImpl implements SurveyPackage {
 			   "type", "numeric",
 			   "precision", "20",
 			   "scale", "0"
-		   });
-		addAnnotation
-		  (getSurveyPage_SurveyId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
 		   });
 		addAnnotation
 		  (getSurveyPage_SurveyPageSeqId(),
@@ -2517,13 +2504,6 @@ public class SurveyPackageImpl extends EPackageImpl implements SurveyPackage {
 			   "length", "255"
 		   });
 		addAnnotation
-		  (getSurveyQuestion_GeoId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getSurveyQuestion_Hint(),
 		   source,
 		   new String[] {
@@ -2536,35 +2516,7 @@ public class SurveyPackageImpl extends EPackageImpl implements SurveyPackage {
 			   "type", "very-long"
 		   });
 		addAnnotation
-		  (getSurveyQuestion_SurveyQuestionCategoryId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getSurveyQuestion_SurveyQuestionOptions(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getSurveyQuestion_SurveyQuestionTypeId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getSurveyQuestionAppl_SurveyId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getSurveyQuestionAppl_SurveyQuestionId(),
 		   source,
 		   new String[] {
 			   "type", "id",
@@ -2666,20 +2618,6 @@ public class SurveyPackageImpl extends EPackageImpl implements SurveyPackage {
 		   new String[] {
 			   "type", "description",
 			   "length", "255"
-		   });
-		addAnnotation
-		  (getSurveyQuestionCategory_ParentCategoryId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getSurveyQuestionOption_SurveyQuestionId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
 		   });
 		addAnnotation
 		  (getSurveyQuestionOption_SurveyOptionSeqId(),
@@ -2794,21 +2732,7 @@ public class SurveyPackageImpl extends EPackageImpl implements SurveyPackage {
 			   "type", "date-time"
 		   });
 		addAnnotation
-		  (getSurveyResponse_OrderId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getSurveyResponse_OrderItemSeqId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getSurveyResponse_PartyId(),
 		   source,
 		   new String[] {
 			   "type", "id",
@@ -2826,34 +2750,6 @@ public class SurveyPackageImpl extends EPackageImpl implements SurveyPackage {
 		   source,
 		   new String[] {
 			   "type", "date-time"
-		   });
-		addAnnotation
-		  (getSurveyResponse_StatusId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getSurveyResponse_SurveyId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getSurveyResponseAnswer_SurveyResponseId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getSurveyResponseAnswer_SurveyQuestionId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
 		   });
 		addAnnotation
 		  (getSurveyResponseAnswer_SurveyMultiRespColId(),
@@ -2889,13 +2785,6 @@ public class SurveyPackageImpl extends EPackageImpl implements SurveyPackage {
 		   new String[] {
 			   "type", "indicator",
 			   "length", "1"
-		   });
-		addAnnotation
-		  (getSurveyResponseAnswer_ContentId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
 		   });
 		addAnnotation
 		  (getSurveyResponseAnswer_CurrencyResponse(),
@@ -2967,20 +2856,6 @@ public class SurveyPackageImpl extends EPackageImpl implements SurveyPackage {
 		   source,
 		   new String[] {
 			   "type", "floating-point"
-		   });
-		addAnnotation
-		  (getSurveyTrigger_SurveyId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getSurveyTrigger_SurveyApplTypeId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
 		   });
 		addAnnotation
 		  (getSurveyTrigger_FromDate(),

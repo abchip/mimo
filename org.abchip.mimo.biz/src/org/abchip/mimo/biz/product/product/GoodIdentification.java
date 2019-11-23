@@ -67,7 +67,6 @@ public interface GoodIdentification extends BizEntityTyped<GoodIdentificationTyp
 	 * @see org.abchip.mimo.biz.product.product.ProductPackage#getGoodIdentification_GoodIdentificationTypeId()
 	 * @model keys="goodIdentificationTypeId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	GoodIdentificationType getGoodIdentificationTypeId();
@@ -95,7 +94,6 @@ public interface GoodIdentification extends BizEntityTyped<GoodIdentificationTyp
 	 * @see org.abchip.mimo.biz.product.product.ProductPackage#getGoodIdentification_ProductId()
 	 * @model keys="productId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Product getProductId();

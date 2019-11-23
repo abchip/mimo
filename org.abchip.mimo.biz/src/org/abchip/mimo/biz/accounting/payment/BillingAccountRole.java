@@ -75,7 +75,6 @@ public interface BillingAccountRole extends BizEntity {
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getBillingAccountRole_PartyId()
 	 * @model keys="partyId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Party getPartyId();
@@ -103,7 +102,6 @@ public interface BillingAccountRole extends BizEntity {
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getBillingAccountRole_RoleTypeId()
 	 * @model keys="roleTypeId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	RoleType getRoleTypeId();
@@ -157,7 +155,6 @@ public interface BillingAccountRole extends BizEntity {
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getBillingAccountRole_BillingAccountId()
 	 * @model keys="billingAccountId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	BillingAccount getBillingAccountId();

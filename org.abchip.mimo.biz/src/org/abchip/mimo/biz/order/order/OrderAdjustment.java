@@ -188,7 +188,6 @@ public interface OrderAdjustment extends BizEntityTyped<OrderAdjustmentType> {
 	 * @see #setCreatedByUserLogin(UserLogin)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderAdjustment_CreatedByUserLogin()
 	 * @model keys="userLoginId"
-	 *        annotation="mimo-ent-format type='id-vlong' length='255'"
 	 * @generated
 	 */
 	UserLogin getCreatedByUserLogin();
@@ -530,7 +529,6 @@ public interface OrderAdjustment extends BizEntityTyped<OrderAdjustmentType> {
 	 * @see #setOrderAdjustmentTypeId(OrderAdjustmentType)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderAdjustment_OrderAdjustmentTypeId()
 	 * @model keys="orderAdjustmentTypeId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	OrderAdjustmentType getOrderAdjustmentTypeId();
@@ -557,7 +555,6 @@ public interface OrderAdjustment extends BizEntityTyped<OrderAdjustmentType> {
 	 * @see #setOrderId(OrderHeader)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderAdjustment_OrderId()
 	 * @model keys="orderId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	OrderHeader getOrderId();
@@ -611,7 +608,6 @@ public interface OrderAdjustment extends BizEntityTyped<OrderAdjustmentType> {
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderAdjustment_OriginalAdjustmentId()
 	 * @model keys="orderAdjustmentId"
 	 *        annotation="mimo-ent-slot help='specifies relation to source OrderAdjustment - eg. for tax on shipping charges'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	OrderAdjustment getOriginalAdjustmentId();
@@ -639,7 +635,6 @@ public interface OrderAdjustment extends BizEntityTyped<OrderAdjustmentType> {
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderAdjustment_OverrideGlAccountId()
 	 * @model keys="glAccountId"
 	 *        annotation="mimo-ent-slot help='used to specify the override or actual glAccountId used for the adjustment, avoids problems if configuration changes after initial posting, etc'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	GlAccount getOverrideGlAccountId();
@@ -667,7 +662,6 @@ public interface OrderAdjustment extends BizEntityTyped<OrderAdjustmentType> {
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderAdjustment_PrimaryGeoId()
 	 * @model keys="geoId"
 	 *        annotation="mimo-ent-slot help='for tax entries this is the primary jurisdiction Geo (the smallest or most local Geo that this tax is for, usually a state/province, perhaps a county or a city)'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Geo getPrimaryGeoId();
@@ -746,7 +740,6 @@ public interface OrderAdjustment extends BizEntityTyped<OrderAdjustmentType> {
 	 * @see #setProductPromoId(ProductPromo)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderAdjustment_ProductPromoId()
 	 * @model keys="productPromoId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ProductPromo getProductPromoId();
@@ -826,7 +819,6 @@ public interface OrderAdjustment extends BizEntityTyped<OrderAdjustmentType> {
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderAdjustment_SecondaryGeoId()
 	 * @model keys="geoId"
 	 *        annotation="mimo-ent-slot help='for tax entries this is the secondary jurisdiction Geo (usually a country, or other Geo that the primary is within)'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Geo getSecondaryGeoId();
@@ -985,7 +977,6 @@ public interface OrderAdjustment extends BizEntityTyped<OrderAdjustmentType> {
 	 * @see #setTaxAuthorityRateSeqId(TaxAuthorityRateProduct)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderAdjustment_TaxAuthorityRateSeqId()
 	 * @model keys="taxAuthorityRateSeqId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	TaxAuthorityRateProduct getTaxAuthorityRateSeqId();

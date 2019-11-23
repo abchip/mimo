@@ -95,7 +95,6 @@ public interface PerfRatingType extends BizEntity {
 	 * @see #setParentTypeId(PerfRatingType)
 	 * @see org.abchip.mimo.biz.humanres.ability.AbilityPackage#getPerfRatingType_ParentTypeId()
 	 * @model keys="perfRatingTypeId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	PerfRatingType getParentTypeId();

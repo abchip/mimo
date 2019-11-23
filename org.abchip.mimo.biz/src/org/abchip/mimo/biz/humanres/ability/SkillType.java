@@ -95,7 +95,6 @@ public interface SkillType extends BizEntity {
 	 * @see #setParentTypeId(SkillType)
 	 * @see org.abchip.mimo.biz.humanres.ability.AbilityPackage#getSkillType_ParentTypeId()
 	 * @model keys="skillTypeId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	SkillType getParentTypeId();

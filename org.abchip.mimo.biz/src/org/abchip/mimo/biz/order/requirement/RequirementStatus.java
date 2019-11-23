@@ -45,7 +45,6 @@ public interface RequirementStatus extends BizEntity {
 	 * @see #setChangeByUserLoginId(UserLogin)
 	 * @see org.abchip.mimo.biz.order.requirement.RequirementPackage#getRequirementStatus_ChangeByUserLoginId()
 	 * @model keys="userLoginId"
-	 *        annotation="mimo-ent-format type='id-vlong' length='255'"
 	 * @generated
 	 */
 	UserLogin getChangeByUserLoginId();
@@ -73,7 +72,6 @@ public interface RequirementStatus extends BizEntity {
 	 * @see org.abchip.mimo.biz.order.requirement.RequirementPackage#getRequirementStatus_RequirementId()
 	 * @model keys="requirementId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Requirement getRequirementId();
@@ -127,7 +125,6 @@ public interface RequirementStatus extends BizEntity {
 	 * @see org.abchip.mimo.biz.order.requirement.RequirementPackage#getRequirementStatus_StatusId()
 	 * @model keys="statusId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	StatusItem getStatusId();

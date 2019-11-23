@@ -55,7 +55,6 @@ public interface ProductContent extends BizEntityTyped<ProductContentType> {
 	 * @see org.abchip.mimo.biz.product.product.ProductPackage#getProductContent_ContentId()
 	 * @model keys="contentId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Content getContentId();
@@ -240,7 +239,6 @@ public interface ProductContent extends BizEntityTyped<ProductContentType> {
 	 * @see #setUseRoleTypeId(RoleType)
 	 * @see org.abchip.mimo.biz.product.product.ProductPackage#getProductContent_UseRoleTypeId()
 	 * @model keys="roleTypeId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	RoleType getUseRoleTypeId();
@@ -293,7 +291,6 @@ public interface ProductContent extends BizEntityTyped<ProductContentType> {
 	 * @see #setUseTimeUomId(Uom)
 	 * @see org.abchip.mimo.biz.product.product.ProductPackage#getProductContent_UseTimeUomId()
 	 * @model keys="uomId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Uom getUseTimeUomId();
@@ -321,7 +318,6 @@ public interface ProductContent extends BizEntityTyped<ProductContentType> {
 	 * @see org.abchip.mimo.biz.product.product.ProductPackage#getProductContent_ProductId()
 	 * @model keys="productId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Product getProductId();
@@ -349,7 +345,6 @@ public interface ProductContent extends BizEntityTyped<ProductContentType> {
 	 * @see org.abchip.mimo.biz.product.product.ProductPackage#getProductContent_ProductContentTypeId()
 	 * @model keys="productContentTypeId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ProductContentType getProductContentTypeId();

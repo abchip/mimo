@@ -18,7 +18,6 @@ package org.abchip.mimo.biz;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.BizEntityNote#getNoteId <em>Note Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.BizEntityNote#getNote <em>Note</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.BizPackage#getBizEntityNote()
@@ -39,6 +38,7 @@ public interface BizEntityNote extends BizEntity {
 	 * @see #setNoteId(String)
 	 * @see org.abchip.mimo.biz.BizPackage#getBizEntityNote_NoteId()
 	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getNoteId();
@@ -52,30 +52,4 @@ public interface BizEntityNote extends BizEntity {
 	 * @generated
 	 */
 	void setNoteId(String value);
-
-	/**
-	 * Returns the value of the '<em><b>Note</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Note</em>' containment reference isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Note</em>' containment reference.
-	 * @see #setNote(BizEntityNoteData)
-	 * @see org.abchip.mimo.biz.BizPackage#getBizEntityNote_Note()
-	 * @model containment="true" resolveProxies="true" required="true"
-	 * @generated
-	 */
-	BizEntityNoteData getNote();
-
-	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.BizEntityNote#getNote <em>Note</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Note</em>' containment reference.
-	 * @see #getNote()
-	 * @generated
-	 */
-	void setNote(BizEntityNoteData value);
 } // BizEntityNote

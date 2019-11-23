@@ -100,7 +100,6 @@ public interface FacilityLocation extends BizEntity {
 	 * @see #setGeoPointId(GeoPoint)
 	 * @see org.abchip.mimo.biz.product.facility.FacilityPackage#getFacilityLocation_GeoPointId()
 	 * @model keys="geoPointId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	GeoPoint getGeoPointId();
@@ -181,7 +180,6 @@ public interface FacilityLocation extends BizEntity {
 	 * @see #setLocationTypeEnumId(Enumeration)
 	 * @see org.abchip.mimo.biz.product.facility.FacilityPackage#getFacilityLocation_LocationTypeEnumId()
 	 * @model keys="enumId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Enumeration getLocationTypeEnumId();
@@ -261,7 +259,6 @@ public interface FacilityLocation extends BizEntity {
 	 * @see org.abchip.mimo.biz.product.facility.FacilityPackage#getFacilityLocation_FacilityId()
 	 * @model keys="facilityId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Facility getFacilityId();

@@ -74,7 +74,6 @@ public interface Budget extends BizEntityTyped<BudgetType> {
 	 * @see #setCustomTimePeriodId(CustomTimePeriod)
 	 * @see org.abchip.mimo.biz.accounting.budget.BudgetPackage#getBudget_CustomTimePeriodId()
 	 * @model keys="customTimePeriodId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	CustomTimePeriod getCustomTimePeriodId();
@@ -183,7 +182,6 @@ public interface Budget extends BizEntityTyped<BudgetType> {
 	 * @see #setBudgetTypeId(BudgetType)
 	 * @see org.abchip.mimo.biz.accounting.budget.BudgetPackage#getBudget_BudgetTypeId()
 	 * @model keys="budgetTypeId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	BudgetType getBudgetTypeId();

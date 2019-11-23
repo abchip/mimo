@@ -130,7 +130,6 @@ public interface FixedAssetMeter extends BizEntity {
 	 * @see org.abchip.mimo.biz.accounting.fixedasset.FixedassetPackage#getFixedAssetMeter_ProductMeterTypeId()
 	 * @model keys="productMeterTypeId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ProductMeterType getProductMeterTypeId();

@@ -75,7 +75,6 @@ public interface ProdCatalogCategory extends BizEntityTyped<ProdCatalogCategoryT
 	 * @see org.abchip.mimo.biz.product.catalog.CatalogPackage#getProdCatalogCategory_ProductCategoryId()
 	 * @model keys="productCategoryId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ProductCategory getProductCategoryId();
@@ -155,7 +154,6 @@ public interface ProdCatalogCategory extends BizEntityTyped<ProdCatalogCategoryT
 	 * @see org.abchip.mimo.biz.product.catalog.CatalogPackage#getProdCatalogCategory_ProdCatalogId()
 	 * @model keys="prodCatalogId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ProdCatalog getProdCatalogId();
@@ -183,7 +181,6 @@ public interface ProdCatalogCategory extends BizEntityTyped<ProdCatalogCategoryT
 	 * @see org.abchip.mimo.biz.product.catalog.CatalogPackage#getProdCatalogCategory_ProdCatalogCategoryTypeId()
 	 * @model keys="prodCatalogCategoryTypeId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ProdCatalogCategoryType getProdCatalogCategoryTypeId();

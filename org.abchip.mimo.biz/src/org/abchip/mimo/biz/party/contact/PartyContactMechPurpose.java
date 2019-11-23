@@ -74,7 +74,6 @@ public interface PartyContactMechPurpose extends BizEntity {
 	 * @see org.abchip.mimo.biz.party.contact.ContactPackage#getPartyContactMechPurpose_PartyId()
 	 * @model keys="partyId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Party getPartyId();
@@ -128,7 +127,6 @@ public interface PartyContactMechPurpose extends BizEntity {
 	 * @see org.abchip.mimo.biz.party.contact.ContactPackage#getPartyContactMechPurpose_ContactMechPurposeTypeId()
 	 * @model keys="contactMechPurposeTypeId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ContactMechPurposeType getContactMechPurposeTypeId();
@@ -156,7 +154,6 @@ public interface PartyContactMechPurpose extends BizEntity {
 	 * @see org.abchip.mimo.biz.party.contact.ContactPackage#getPartyContactMechPurpose_ContactMechId()
 	 * @model keys="contactMechId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ContactMech getContactMechId();

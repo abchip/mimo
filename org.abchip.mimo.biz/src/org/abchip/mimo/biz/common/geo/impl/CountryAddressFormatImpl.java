@@ -8,7 +8,6 @@
 package org.abchip.mimo.biz.common.geo.impl;
 
 import org.abchip.mimo.biz.common.geo.CountryAddressFormat;
-import org.abchip.mimo.biz.common.geo.Geo;
 import org.abchip.mimo.biz.common.geo.GeoAssocType;
 import org.abchip.mimo.biz.common.geo.GeoPackage;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
@@ -22,9 +21,9 @@ import org.eclipse.emf.ecore.EClass;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link org.abchip.mimo.biz.common.geo.impl.CountryAddressFormatImpl#getGeoId <em>Geo Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.common.geo.impl.CountryAddressFormatImpl#getAddressFormat <em>Address Format</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.common.geo.impl.CountryAddressFormatImpl#getGeoAssocTypeId <em>Geo Assoc Type Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.common.geo.impl.CountryAddressFormatImpl#getGeoId <em>Geo Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.common.geo.impl.CountryAddressFormatImpl#isHasPostalCodeExt <em>Has Postal Code Ext</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.common.geo.impl.CountryAddressFormatImpl#getPostalCodeRegex <em>Postal Code Regex</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.common.geo.impl.CountryAddressFormatImpl#isRequirePostalCode <em>Require Postal Code</em>}</li>
@@ -204,8 +203,8 @@ public class CountryAddressFormatImpl extends BizEntityImpl implements CountryAd
 	 * @generated
 	 */
 	@Override
-	public Geo getGeoId() {
-		return (Geo)eGet(GeoPackage.Literals.COUNTRY_ADDRESS_FORMAT__GEO_ID, true);
+	public String getGeoId() {
+		return (String)eGet(GeoPackage.Literals.COUNTRY_ADDRESS_FORMAT__GEO_ID, true);
 	}
 
 	/**
@@ -214,7 +213,7 @@ public class CountryAddressFormatImpl extends BizEntityImpl implements CountryAd
 	 * @generated
 	 */
 	@Override
-	public void setGeoId(Geo newGeoId) {
+	public void setGeoId(String newGeoId) {
 		eSet(GeoPackage.Literals.COUNTRY_ADDRESS_FORMAT__GEO_ID, newGeoId);
 	}
 

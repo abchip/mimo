@@ -71,6 +71,7 @@ import org.abchip.mimo.biz.content.survey.SurveyPackage;
 import org.abchip.mimo.biz.content.survey.impl.SurveyPackageImpl;
 import org.abchip.mimo.biz.content.website.WebsitePackage;
 import org.abchip.mimo.biz.content.website.impl.WebsitePackageImpl;
+import org.abchip.mimo.biz.entity.EntityPackage;
 import org.abchip.mimo.biz.entity.audit.AuditPackage;
 import org.abchip.mimo.biz.entity.audit.impl.AuditPackageImpl;
 import org.abchip.mimo.biz.entity.crypto.CryptoPackage;
@@ -511,8 +512,8 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 		SurveyPackageImpl theSurveyPackage = (SurveyPackageImpl)(registeredPackage instanceof SurveyPackageImpl ? registeredPackage : SurveyPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(WebsitePackage.eNS_URI);
 		WebsitePackageImpl theWebsitePackage = (WebsitePackageImpl)(registeredPackage instanceof WebsitePackageImpl ? registeredPackage : WebsitePackage.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(org.abchip.mimo.biz.entity.EntityPackage.eNS_URI);
-		EntityPackageImpl theEntityPackage = (EntityPackageImpl)(registeredPackage instanceof EntityPackageImpl ? registeredPackage : org.abchip.mimo.biz.entity.EntityPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(EntityPackage.eNS_URI);
+		EntityPackageImpl theEntityPackage = (EntityPackageImpl)(registeredPackage instanceof EntityPackageImpl ? registeredPackage : EntityPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(AuditPackage.eNS_URI);
 		AuditPackageImpl theAuditPackage = (AuditPackageImpl)(registeredPackage instanceof AuditPackageImpl ? registeredPackage : AuditPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(CryptoPackage.eNS_URI);
@@ -1966,8 +1967,8 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 	 * @generated
 	 */
 	@Override
-	public EReference getProductCalculatedInfo_ProductId() {
-		return (EReference)productCalculatedInfoEClass.getEStructuralFeatures().get(1);
+	public EAttribute getProductCalculatedInfo_ProductId() {
+		return (EAttribute)productCalculatedInfoEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -1977,7 +1978,7 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 	 */
 	@Override
 	public EAttribute getProductCalculatedInfo_AverageCustomerRating() {
-		return (EAttribute)productCalculatedInfoEClass.getEStructuralFeatures().get(0);
+		return (EAttribute)productCalculatedInfoEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -3358,8 +3359,8 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 		createEAttribute(productAttributeEClass, PRODUCT_ATTRIBUTE__ATTR_VALUE);
 
 		productCalculatedInfoEClass = createEClass(PRODUCT_CALCULATED_INFO);
+		createEAttribute(productCalculatedInfoEClass, PRODUCT_CALCULATED_INFO__PRODUCT_ID);
 		createEAttribute(productCalculatedInfoEClass, PRODUCT_CALCULATED_INFO__AVERAGE_CUSTOMER_RATING);
-		createEReference(productCalculatedInfoEClass, PRODUCT_CALCULATED_INFO__PRODUCT_ID);
 		createEAttribute(productCalculatedInfoEClass, PRODUCT_CALCULATED_INFO__TOTAL_QUANTITY_ORDERED);
 		createEAttribute(productCalculatedInfoEClass, PRODUCT_CALCULATED_INFO__TOTAL_TIMES_VIEWED);
 
@@ -3815,9 +3816,8 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 		initEAttribute(getProductAttribute_AttrValue(), ecorePackage.getEString(), "attrValue", null, 0, 1, ProductAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(productCalculatedInfoEClass, ProductCalculatedInfo.class, "ProductCalculatedInfo", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getProductCalculatedInfo_ProductId(), ecorePackage.getEString(), "productId", null, 1, 1, ProductCalculatedInfo.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getProductCalculatedInfo_AverageCustomerRating(), ecorePackage.getEBigDecimal(), "averageCustomerRating", null, 0, 1, ProductCalculatedInfo.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getProductCalculatedInfo_ProductId(), this.getProduct(), null, "productId", null, 1, 1, ProductCalculatedInfo.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		getProductCalculatedInfo_ProductId().getEKeys().add(this.getProduct_ProductId());
 		initEAttribute(getProductCalculatedInfo_TotalQuantityOrdered(), ecorePackage.getEBigDecimal(), "totalQuantityOrdered", null, 0, 1, ProductCalculatedInfo.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getProductCalculatedInfo_TotalTimesViewed(), ecorePackage.getELong(), "totalTimesViewed", null, 0, 1, ProductCalculatedInfo.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
@@ -4039,20 +4039,6 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 	protected void createMimoentformatAnnotations() {
 		String source = "mimo-ent-format";
 		addAnnotation
-		  (getGoodIdentification_GoodIdentificationTypeId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getGoodIdentification_ProductId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getGoodIdentification_IdValue(),
 		   source,
 		   new String[] {
@@ -4093,13 +4079,6 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 		   new String[] {
 			   "type", "indicator",
 			   "length", "1"
-		   });
-		addAnnotation
-		  (getGoodIdentificationType_ParentTypeId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
 		   });
 		addAnnotation
 		  (productEClass.getEOperations().get(0),
@@ -4291,13 +4270,6 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 			   "length", "20"
 		   });
 		addAnnotation
-		  (getProduct_AmountUomTypeId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getProduct_AutoCreateKeywords(),
 		   source,
 		   new String[] {
@@ -4348,31 +4320,10 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 			   "length", "20"
 		   });
 		addAnnotation
-		  (getProduct_CreatedByUserLogin(),
-		   source,
-		   new String[] {
-			   "type", "id-vlong",
-			   "length", "255"
-		   });
-		addAnnotation
 		  (getProduct_CreatedDate(),
 		   source,
 		   new String[] {
 			   "type", "date-time"
-		   });
-		addAnnotation
-		  (getProduct_DefaultShipmentBoxTypeId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getProduct_DepthUomId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
 		   });
 		addAnnotation
 		  (getProduct_Description(),
@@ -4396,33 +4347,12 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 			   "length", "255"
 		   });
 		addAnnotation
-		  (getProduct_DiameterUomId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getProduct_FacilityId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getProduct_FixedAmount(),
 		   source,
 		   new String[] {
 			   "type", "currency-amount",
 			   "precision", "18",
 			   "scale", "2"
-		   });
-		addAnnotation
-		  (getProduct_HeightUomId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
 		   });
 		addAnnotation
 		  (getProduct_InShippingBox(),
@@ -4452,13 +4382,6 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 			   "type", "date-time"
 		   });
 		addAnnotation
-		  (getProduct_InventoryItemTypeId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getProduct_InventoryMessage(),
 		   source,
 		   new String[] {
@@ -4485,13 +4408,6 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 		   new String[] {
 			   "type", "url",
 			   "length", "2000"
-		   });
-		addAnnotation
-		  (getProduct_LastModifiedByUserLogin(),
-		   source,
-		   new String[] {
-			   "type", "id-vlong",
-			   "length", "255"
 		   });
 		addAnnotation
 		  (getProduct_LastModifiedDate(),
@@ -4527,13 +4443,6 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 			   "length", "1"
 		   });
 		addAnnotation
-		  (getProduct_OriginGeoId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getProduct_OriginalImageUrl(),
 		   source,
 		   new String[] {
@@ -4554,13 +4463,6 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 		   new String[] {
 			   "type", "description",
 			   "length", "255"
-		   });
-		addAnnotation
-		  (getProduct_PrimaryProductCategoryId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
 		   });
 		addAnnotation
 		  (getProduct_ProductAttributes(),
@@ -4637,13 +4539,6 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 			   "scale", "6"
 		   });
 		addAnnotation
-		  (getProduct_ProductTypeId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getProduct_ProductWeight(),
 		   source,
 		   new String[] {
@@ -4668,20 +4563,6 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 			   "scale", "6"
 		   });
 		addAnnotation
-		  (getProduct_QuantityUomId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getProduct_RatingTypeEnum(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getProduct_ReleaseDate(),
 		   source,
 		   new String[] {
@@ -4700,13 +4581,6 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 		   new String[] {
 			   "type", "indicator",
 			   "length", "1"
-		   });
-		addAnnotation
-		  (getProduct_RequirementMethodEnumId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
 		   });
 		addAnnotation
 		  (getProduct_Reserv2ndPPPerc(),
@@ -4805,59 +4679,10 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 			   "length", "1"
 		   });
 		addAnnotation
-		  (getProduct_VirtualVariantMethodEnum(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getProduct_WeightUomId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getProduct_WidthUomId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getProductAssoc_ProductAssocTypeId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getProductAssoc_ProductId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getProductAssoc_ProductIdTo(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getProductAssoc_FromDate(),
 		   source,
 		   new String[] {
 			   "type", "date-time"
-		   });
-		addAnnotation
-		  (getProductAssoc_EstimateCalcMethod(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
 		   });
 		addAnnotation
 		  (getProductAssoc_Instruction(),
@@ -4880,20 +4705,6 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 		   new String[] {
 			   "type", "long-varchar",
 			   "length", "255"
-		   });
-		addAnnotation
-		  (getProductAssoc_RecurrenceInfoId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getProductAssoc_RoutingWorkEffortId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
 		   });
 		addAnnotation
 		  (getProductAssoc_ScrapFactor(),
@@ -4946,20 +4757,6 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 			   "length", "1"
 		   });
 		addAnnotation
-		  (getProductAssocType_ParentTypeId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getProductAttribute_ProductId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getProductAttribute_AttrName(),
 		   source,
 		   new String[] {
@@ -4988,19 +4785,19 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 			   "length", "255"
 		   });
 		addAnnotation
+		  (getProductCalculatedInfo_ProductId(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
 		  (getProductCalculatedInfo_AverageCustomerRating(),
 		   source,
 		   new String[] {
 			   "type", "fixed-point",
 			   "precision", "18",
 			   "scale", "6"
-		   });
-		addAnnotation
-		  (getProductCalculatedInfo_ProductId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
 		   });
 		addAnnotation
 		  (getProductCalculatedInfo_TotalQuantityOrdered(),
@@ -5017,27 +4814,6 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 			   "type", "numeric",
 			   "precision", "20",
 			   "scale", "0"
-		   });
-		addAnnotation
-		  (getProductContent_ProductId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getProductContent_ContentId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getProductContent_ProductContentTypeId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
 		   });
 		addAnnotation
 		  (getProductContent_FromDate(),
@@ -5080,26 +4856,12 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 			   "scale", "0"
 		   });
 		addAnnotation
-		  (getProductContent_UseRoleTypeId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getProductContent_UseTime(),
 		   source,
 		   new String[] {
 			   "type", "numeric",
 			   "precision", "20",
 			   "scale", "0"
-		   });
-		addAnnotation
-		  (getProductContent_UseTimeUomId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
 		   });
 		addAnnotation
 		  (productContentTypeEClass.getEOperations().get(0),
@@ -5130,67 +4892,11 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 			   "length", "1"
 		   });
 		addAnnotation
-		  (getProductContentType_ParentTypeId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getProductGeo_ProductId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getProductGeo_GeoId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getProductGeo_Description(),
 		   source,
 		   new String[] {
 			   "type", "description",
 			   "length", "255"
-		   });
-		addAnnotation
-		  (getProductGeo_ProductGeoEnumId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getProductGlAccount_ProductId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getProductGlAccount_OrganizationPartyId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getProductGlAccount_GlAccountTypeId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getProductGlAccount_GlAccountId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
 		   });
 		addAnnotation
 		  (getProductGroupOrder_GroupOrderId(),
@@ -5204,20 +4910,6 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 		   source,
 		   new String[] {
 			   "type", "date-time"
-		   });
-		addAnnotation
-		  (getProductGroupOrder_JobId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getProductGroupOrder_ProductId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
 		   });
 		addAnnotation
 		  (getProductGroupOrder_ReqOrderQty(),
@@ -5236,31 +4928,10 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 			   "scale", "6"
 		   });
 		addAnnotation
-		  (getProductGroupOrder_StatusId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getProductGroupOrder_ThruDate(),
 		   source,
 		   new String[] {
 			   "type", "date-time"
-		   });
-		addAnnotation
-		  (getProductKeyword_ProductId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getProductKeyword_KeywordTypeId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
 		   });
 		addAnnotation
 		  (getProductKeyword_Keyword(),
@@ -5278,28 +4949,7 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 			   "scale", "0"
 		   });
 		addAnnotation
-		  (getProductKeyword_StatusId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getProductMaint_ProductId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getProductMaint_ProductMaintSeqId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getProductMaint_IntervalMeterTypeId(),
 		   source,
 		   new String[] {
 			   "type", "id",
@@ -5314,32 +4964,11 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 			   "scale", "6"
 		   });
 		addAnnotation
-		  (getProductMaint_IntervalUomId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getProductMaint_MaintName(),
 		   source,
 		   new String[] {
 			   "type", "name",
 			   "length", "100"
-		   });
-		addAnnotation
-		  (getProductMaint_MaintTemplateWorkEffortId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getProductMaint_ProductMaintTypeId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
 		   });
 		addAnnotation
 		  (getProductMaint_RepeatCount(),
@@ -5385,39 +5014,11 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 			   "length", "255"
 		   });
 		addAnnotation
-		  (getProductMaintType_ParentTypeId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getProductMeter_ProductId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getProductMeter_ProductMeterTypeId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getProductMeter_MeterName(),
 		   source,
 		   new String[] {
 			   "type", "name",
 			   "length", "100"
-		   });
-		addAnnotation
-		  (getProductMeter_MeterUomId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
 		   });
 		addAnnotation
 		  (productMeterTypeEClass.getEOperations().get(0),
@@ -5442,13 +5043,6 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 		   });
 		addAnnotation
 		  (getProductMeterType_ProductMeterTypeId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getProductMeterType_DefaultUomId(),
 		   source,
 		   new String[] {
 			   "type", "id",
@@ -5482,13 +5076,6 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 			   "type", "date-time"
 		   });
 		addAnnotation
-		  (getProductReview_ProductId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getProductReview_ProductRating(),
 		   source,
 		   new String[] {
@@ -5501,48 +5088,6 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 		   source,
 		   new String[] {
 			   "type", "very-long"
-		   });
-		addAnnotation
-		  (getProductReview_ProductStoreId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getProductReview_StatusId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getProductReview_UserLoginId(),
-		   source,
-		   new String[] {
-			   "type", "id-vlong",
-			   "length", "255"
-		   });
-		addAnnotation
-		  (getProductRole_PartyId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getProductRole_RoleTypeId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getProductRole_ProductId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
 		   });
 		addAnnotation
 		  (getProductRole_FromDate(),
@@ -5570,13 +5115,6 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 		   source,
 		   new String[] {
 			   "type", "date-time"
-		   });
-		addAnnotation
-		  (getProductSearchConstraint_ProductSearchResultId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
 		   });
 		addAnnotation
 		  (getProductSearchConstraint_ConstraintSeqId(),
@@ -5753,21 +5291,7 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 			   "length", "1"
 		   });
 		addAnnotation
-		  (getProductType_ParentTypeId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getProductType_ProductTypeAttrs(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getProductTypeAttr_ProductTypeId(),
 		   source,
 		   new String[] {
 			   "type", "id",
@@ -5786,27 +5310,6 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 		   new String[] {
 			   "type", "description",
 			   "length", "255"
-		   });
-		addAnnotation
-		  (getVendorProduct_ProductId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getVendorProduct_VendorPartyId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getVendorProduct_ProductStoreGroupId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
 		   });
 	}
 

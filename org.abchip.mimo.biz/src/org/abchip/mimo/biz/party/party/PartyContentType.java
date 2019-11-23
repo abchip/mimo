@@ -68,7 +68,6 @@ public interface PartyContentType extends BizEntityType<PartyContent> {
 	 * @see #setParentTypeId(PartyContentType)
 	 * @see org.abchip.mimo.biz.party.party.PartyPackage#getPartyContentType_ParentTypeId()
 	 * @model keys="partyContentTypeId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	PartyContentType getParentTypeId();

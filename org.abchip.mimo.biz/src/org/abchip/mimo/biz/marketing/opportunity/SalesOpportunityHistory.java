@@ -82,7 +82,6 @@ public interface SalesOpportunityHistory extends BizEntity {
 	 * @see #setCurrencyUomId(Uom)
 	 * @see org.abchip.mimo.biz.marketing.opportunity.OpportunityPackage#getSalesOpportunityHistory_CurrencyUomId()
 	 * @model keys="uomId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Uom getCurrencyUomId();
@@ -213,7 +212,6 @@ public interface SalesOpportunityHistory extends BizEntity {
 	 * @see #setModifiedByUserLogin(UserLogin)
 	 * @see org.abchip.mimo.biz.marketing.opportunity.OpportunityPackage#getSalesOpportunityHistory_ModifiedByUserLogin()
 	 * @model keys="userLoginId"
-	 *        annotation="mimo-ent-format type='id-vlong' length='255'"
 	 * @generated
 	 */
 	UserLogin getModifiedByUserLogin();
@@ -292,7 +290,6 @@ public interface SalesOpportunityHistory extends BizEntity {
 	 * @see #setOpportunityStageId(SalesOpportunityStage)
 	 * @see org.abchip.mimo.biz.marketing.opportunity.OpportunityPackage#getSalesOpportunityHistory_OpportunityStageId()
 	 * @model keys="opportunityStageId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	SalesOpportunityStage getOpportunityStageId();
@@ -346,7 +343,6 @@ public interface SalesOpportunityHistory extends BizEntity {
 	 * @see #setSalesOpportunityId(SalesOpportunity)
 	 * @see org.abchip.mimo.biz.marketing.opportunity.OpportunityPackage#getSalesOpportunityHistory_SalesOpportunityId()
 	 * @model keys="salesOpportunityId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	SalesOpportunity getSalesOpportunityId();

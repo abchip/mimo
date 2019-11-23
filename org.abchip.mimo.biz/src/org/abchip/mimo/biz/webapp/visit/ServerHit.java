@@ -59,7 +59,6 @@ public interface ServerHit extends BizEntityTyped<ServerHitType> {
 	 * @see org.abchip.mimo.biz.webapp.visit.VisitPackage#getServerHit_VisitId()
 	 * @model keys="visitId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Visit getVisitId();
@@ -143,7 +142,6 @@ public interface ServerHit extends BizEntityTyped<ServerHitType> {
 	 * @see org.abchip.mimo.biz.webapp.visit.VisitPackage#getServerHit_HitTypeId()
 	 * @model keys="hitTypeId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ServerHitType getHitTypeId();
@@ -170,7 +168,6 @@ public interface ServerHit extends BizEntityTyped<ServerHitType> {
 	 * @see #setIdByIpContactMechId(ContactMech)
 	 * @see org.abchip.mimo.biz.webapp.visit.VisitPackage#getServerHit_IdByIpContactMechId()
 	 * @model keys="contactMechId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ContactMech getIdByIpContactMechId();
@@ -197,7 +194,6 @@ public interface ServerHit extends BizEntityTyped<ServerHitType> {
 	 * @see #setInternalContentId(Content)
 	 * @see org.abchip.mimo.biz.webapp.visit.VisitPackage#getServerHit_InternalContentId()
 	 * @model keys="contentId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Content getInternalContentId();
@@ -250,7 +246,6 @@ public interface ServerHit extends BizEntityTyped<ServerHitType> {
 	 * @see #setPartyId(Party)
 	 * @see org.abchip.mimo.biz.webapp.visit.VisitPackage#getServerHit_PartyId()
 	 * @model keys="partyId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Party getPartyId();
@@ -277,7 +272,6 @@ public interface ServerHit extends BizEntityTyped<ServerHitType> {
 	 * @see #setRefByWebContactMechId(ContactMech)
 	 * @see org.abchip.mimo.biz.webapp.visit.VisitPackage#getServerHit_RefByWebContactMechId()
 	 * @model keys="contactMechId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ContactMech getRefByWebContactMechId();

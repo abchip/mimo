@@ -95,7 +95,6 @@ public interface OrderAdjustmentTypeAttr extends BizEntity {
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderAdjustmentTypeAttr_OrderAdjustmentTypeId()
 	 * @model keys="orderAdjustmentTypeId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	OrderAdjustmentType getOrderAdjustmentTypeId();

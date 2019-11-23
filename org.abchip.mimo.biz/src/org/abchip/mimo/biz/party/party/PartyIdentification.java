@@ -67,7 +67,6 @@ public interface PartyIdentification extends BizEntityTyped<PartyIdentificationT
 	 * @see org.abchip.mimo.biz.party.party.PartyPackage#getPartyIdentification_PartyIdentificationTypeId()
 	 * @model keys="partyIdentificationTypeId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	PartyIdentificationType getPartyIdentificationTypeId();
@@ -95,7 +94,6 @@ public interface PartyIdentification extends BizEntityTyped<PartyIdentificationT
 	 * @see org.abchip.mimo.biz.party.party.PartyPackage#getPartyIdentification_PartyId()
 	 * @model keys="partyId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Party getPartyId();

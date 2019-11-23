@@ -18,9 +18,9 @@ import org.abchip.mimo.biz.BizEntity;
  * The following features are supported:
  * </p>
  * <ul>
+ *   <li>{@link org.abchip.mimo.biz.common.geo.CountryAddressFormat#getGeoId <em>Geo Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.common.geo.CountryAddressFormat#getAddressFormat <em>Address Format</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.common.geo.CountryAddressFormat#getGeoAssocTypeId <em>Geo Assoc Type Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.common.geo.CountryAddressFormat#getGeoId <em>Geo Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.common.geo.CountryAddressFormat#isHasPostalCodeExt <em>Has Postal Code Ext</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.common.geo.CountryAddressFormat#getPostalCodeRegex <em>Postal Code Regex</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.common.geo.CountryAddressFormat#isRequirePostalCode <em>Require Postal Code</em>}</li>
@@ -201,7 +201,6 @@ public interface CountryAddressFormat extends BizEntity {
 	 * @see #setGeoAssocTypeId(GeoAssocType)
 	 * @see org.abchip.mimo.biz.common.geo.GeoPackage#getCountryAddressFormat_GeoAssocTypeId()
 	 * @model keys="geoAssocTypeId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	GeoAssocType getGeoAssocTypeId();
@@ -217,30 +216,30 @@ public interface CountryAddressFormat extends BizEntity {
 	void setGeoAssocTypeId(GeoAssocType value);
 
 	/**
-	 * Returns the value of the '<em><b>Geo Id</b></em>' reference.
+	 * Returns the value of the '<em><b>Geo Id</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Geo Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Geo Id</em>' reference.
-	 * @see #setGeoId(Geo)
+	 * @return the value of the '<em>Geo Id</em>' attribute.
+	 * @see #setGeoId(String)
 	 * @see org.abchip.mimo.biz.common.geo.GeoPackage#getCountryAddressFormat_GeoId()
-	 * @model keys="geoId" required="true"
+	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
-	Geo getGeoId();
+	String getGeoId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.common.geo.CountryAddressFormat#getGeoId <em>Geo Id</em>}' reference.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.common.geo.CountryAddressFormat#getGeoId <em>Geo Id</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Geo Id</em>' reference.
+	 * @param value the new value of the '<em>Geo Id</em>' attribute.
 	 * @see #getGeoId()
 	 * @generated
 	 */
-	void setGeoId(Geo value);
+	void setGeoId(String value);
 
 } // CountryAddressFormat

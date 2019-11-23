@@ -141,7 +141,6 @@ public interface FinAccountTrans extends BizEntityTyped<FinAccountTransType> {
 	 * @see #setGlReconciliationId(GlReconciliation)
 	 * @see org.abchip.mimo.biz.accounting.finaccount.FinaccountPackage#getFinAccountTrans_GlReconciliationId()
 	 * @model keys="glReconciliationId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	GlReconciliation getGlReconciliationId();
@@ -221,7 +220,6 @@ public interface FinAccountTrans extends BizEntityTyped<FinAccountTransType> {
 	 * @see #setPartyId(Party)
 	 * @see org.abchip.mimo.biz.accounting.finaccount.FinaccountPackage#getFinAccountTrans_PartyId()
 	 * @model keys="partyId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Party getPartyId();
@@ -248,7 +246,6 @@ public interface FinAccountTrans extends BizEntityTyped<FinAccountTransType> {
 	 * @see #setPaymentId(Payment)
 	 * @see org.abchip.mimo.biz.accounting.finaccount.FinaccountPackage#getFinAccountTrans_PaymentId()
 	 * @model keys="paymentId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Payment getPaymentId();
@@ -275,7 +272,6 @@ public interface FinAccountTrans extends BizEntityTyped<FinAccountTransType> {
 	 * @see #setPerformedByPartyId(Party)
 	 * @see org.abchip.mimo.biz.accounting.finaccount.FinaccountPackage#getFinAccountTrans_PerformedByPartyId()
 	 * @model keys="partyId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Party getPerformedByPartyId();
@@ -302,7 +298,6 @@ public interface FinAccountTrans extends BizEntityTyped<FinAccountTransType> {
 	 * @see #setReasonEnumId(Enumeration)
 	 * @see org.abchip.mimo.biz.accounting.finaccount.FinaccountPackage#getFinAccountTrans_ReasonEnumId()
 	 * @model keys="enumId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Enumeration getReasonEnumId();
@@ -329,7 +324,6 @@ public interface FinAccountTrans extends BizEntityTyped<FinAccountTransType> {
 	 * @see #setStatusId(StatusItem)
 	 * @see org.abchip.mimo.biz.accounting.finaccount.FinaccountPackage#getFinAccountTrans_StatusId()
 	 * @model keys="statusId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	StatusItem getStatusId();
@@ -420,7 +414,6 @@ public interface FinAccountTrans extends BizEntityTyped<FinAccountTransType> {
 	 * @see #setFinAccountTransTypeId(FinAccountTransType)
 	 * @see org.abchip.mimo.biz.accounting.finaccount.FinaccountPackage#getFinAccountTrans_FinAccountTransTypeId()
 	 * @model keys="finAccountTransTypeId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	FinAccountTransType getFinAccountTransTypeId();
@@ -447,7 +440,6 @@ public interface FinAccountTrans extends BizEntityTyped<FinAccountTransType> {
 	 * @see #setFinAccountId(FinAccount)
 	 * @see org.abchip.mimo.biz.accounting.finaccount.FinaccountPackage#getFinAccountTrans_FinAccountId()
 	 * @model keys="finAccountId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	FinAccount getFinAccountId();

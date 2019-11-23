@@ -71,6 +71,7 @@ import org.abchip.mimo.biz.content.survey.SurveyPackage;
 import org.abchip.mimo.biz.content.survey.impl.SurveyPackageImpl;
 import org.abchip.mimo.biz.content.website.WebsitePackage;
 import org.abchip.mimo.biz.content.website.impl.WebsitePackageImpl;
+import org.abchip.mimo.biz.entity.EntityPackage;
 import org.abchip.mimo.biz.entity.audit.AuditPackage;
 import org.abchip.mimo.biz.entity.audit.impl.AuditPackageImpl;
 import org.abchip.mimo.biz.entity.crypto.CryptoPackage;
@@ -359,8 +360,8 @@ public class TrackingPackageImpl extends EPackageImpl implements TrackingPackage
 		SurveyPackageImpl theSurveyPackage = (SurveyPackageImpl)(registeredPackage instanceof SurveyPackageImpl ? registeredPackage : SurveyPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(WebsitePackage.eNS_URI);
 		WebsitePackageImpl theWebsitePackage = (WebsitePackageImpl)(registeredPackage instanceof WebsitePackageImpl ? registeredPackage : WebsitePackage.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(org.abchip.mimo.biz.entity.EntityPackage.eNS_URI);
-		EntityPackageImpl theEntityPackage = (EntityPackageImpl)(registeredPackage instanceof EntityPackageImpl ? registeredPackage : org.abchip.mimo.biz.entity.EntityPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(EntityPackage.eNS_URI);
+		EntityPackageImpl theEntityPackage = (EntityPackageImpl)(registeredPackage instanceof EntityPackageImpl ? registeredPackage : EntityPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(AuditPackage.eNS_URI);
 		AuditPackageImpl theAuditPackage = (AuditPackageImpl)(registeredPackage instanceof AuditPackageImpl ? registeredPackage : AuditPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(CryptoPackage.eNS_URI);
@@ -1465,13 +1466,6 @@ public class TrackingPackageImpl extends EPackageImpl implements TrackingPackage
 			   "type", "date-time"
 		   });
 		addAnnotation
-		  (getTrackingCode_MarketingCampaignId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getTrackingCode_OverrideCss(),
 		   source,
 		   new String[] {
@@ -1521,27 +1515,6 @@ public class TrackingPackageImpl extends EPackageImpl implements TrackingPackage
 			   "scale", "0"
 		   });
 		addAnnotation
-		  (getTrackingCode_TrackingCodeTypeId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getTrackingCodeOrder_OrderId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getTrackingCodeOrder_TrackingCodeTypeId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getTrackingCodeOrder_AffiliateReferredTimeStamp(),
 		   source,
 		   new String[] {
@@ -1567,34 +1540,6 @@ public class TrackingPackageImpl extends EPackageImpl implements TrackingPackage
 		   new String[] {
 			   "type", "long-varchar",
 			   "length", "255"
-		   });
-		addAnnotation
-		  (getTrackingCodeOrder_TrackingCodeId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getTrackingCodeOrderReturn_ReturnId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getTrackingCodeOrderReturn_OrderId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getTrackingCodeOrderReturn_TrackingCodeTypeId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
 		   });
 		addAnnotation
 		  (getTrackingCodeOrderReturn_AffiliateReferredTimeStamp(),
@@ -1631,13 +1576,6 @@ public class TrackingPackageImpl extends EPackageImpl implements TrackingPackage
 			   "length", "255"
 		   });
 		addAnnotation
-		  (getTrackingCodeOrderReturn_TrackingCodeId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (trackingCodeTypeEClass.getEOperations().get(0),
 		   source,
 		   new String[] {
@@ -1666,13 +1604,6 @@ public class TrackingPackageImpl extends EPackageImpl implements TrackingPackage
 			   "length", "255"
 		   });
 		addAnnotation
-		  (getTrackingCodeVisit_TrackingCodeId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getTrackingCodeVisit_FromDate(),
 		   source,
 		   new String[] {
@@ -1680,13 +1611,6 @@ public class TrackingPackageImpl extends EPackageImpl implements TrackingPackage
 		   });
 		addAnnotation
 		  (getTrackingCodeVisit_VisitId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getTrackingCodeVisit_SourceEnumId(),
 		   source,
 		   new String[] {
 			   "type", "id",

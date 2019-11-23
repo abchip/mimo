@@ -75,7 +75,6 @@ public interface AgreementContent extends BizEntityTyped<AgreementContentType> {
 	 * @see org.abchip.mimo.biz.party.agreement.AgreementPackage#getAgreementContent_ContentId()
 	 * @model keys="contentId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Content getContentId();
@@ -157,7 +156,6 @@ public interface AgreementContent extends BizEntityTyped<AgreementContentType> {
 	 * @see org.abchip.mimo.biz.party.agreement.AgreementPackage#getAgreementContent_AgreementId()
 	 * @model keys="agreementId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Agreement getAgreementId();
@@ -185,7 +183,6 @@ public interface AgreementContent extends BizEntityTyped<AgreementContentType> {
 	 * @see org.abchip.mimo.biz.party.agreement.AgreementPackage#getAgreementContent_AgreementContentTypeId()
 	 * @model keys="agreementContentTypeId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	AgreementContentType getAgreementContentTypeId();

@@ -44,7 +44,6 @@ public interface ContentMetaData extends BizEntity {
 	 * @see org.abchip.mimo.biz.content.content.ContentPackage#getContentMetaData_ContentId()
 	 * @model keys="contentId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Content getContentId();
@@ -71,7 +70,6 @@ public interface ContentMetaData extends BizEntity {
 	 * @see #setDataSourceId(DataSource)
 	 * @see org.abchip.mimo.biz.content.content.ContentPackage#getContentMetaData_DataSourceId()
 	 * @model keys="dataSourceId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	DataSource getDataSourceId();
@@ -99,7 +97,6 @@ public interface ContentMetaData extends BizEntity {
 	 * @see org.abchip.mimo.biz.content.content.ContentPackage#getContentMetaData_MetaDataPredicateId()
 	 * @model keys="metaDataPredicateId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	MetaDataPredicate getMetaDataPredicateId();

@@ -47,7 +47,6 @@ public interface InvoiceItemType extends BizEntityType<InvoiceItem> {
 	 * @see #setDefaultGlAccountId(GlAccount)
 	 * @see org.abchip.mimo.biz.accounting.invoice.InvoicePackage#getInvoiceItemType_DefaultGlAccountId()
 	 * @model keys="glAccountId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	GlAccount getDefaultGlAccountId();
@@ -126,7 +125,6 @@ public interface InvoiceItemType extends BizEntityType<InvoiceItem> {
 	 * @see #setParentTypeId(InvoiceItemType)
 	 * @see org.abchip.mimo.biz.accounting.invoice.InvoicePackage#getInvoiceItemType_ParentTypeId()
 	 * @model keys="invoiceItemTypeId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	InvoiceItemType getParentTypeId();

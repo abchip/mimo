@@ -71,6 +71,7 @@ import org.abchip.mimo.biz.content.survey.SurveyPackage;
 import org.abchip.mimo.biz.content.survey.impl.SurveyPackageImpl;
 import org.abchip.mimo.biz.content.website.WebsitePackage;
 import org.abchip.mimo.biz.content.website.impl.WebsitePackageImpl;
+import org.abchip.mimo.biz.entity.EntityPackage;
 import org.abchip.mimo.biz.entity.audit.AuditPackage;
 import org.abchip.mimo.biz.entity.audit.impl.AuditPackageImpl;
 import org.abchip.mimo.biz.entity.crypto.CryptoPackage;
@@ -423,8 +424,8 @@ public class AbilityPackageImpl extends EPackageImpl implements AbilityPackage {
 		SurveyPackageImpl theSurveyPackage = (SurveyPackageImpl)(registeredPackage instanceof SurveyPackageImpl ? registeredPackage : SurveyPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(WebsitePackage.eNS_URI);
 		WebsitePackageImpl theWebsitePackage = (WebsitePackageImpl)(registeredPackage instanceof WebsitePackageImpl ? registeredPackage : WebsitePackage.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(org.abchip.mimo.biz.entity.EntityPackage.eNS_URI);
-		EntityPackageImpl theEntityPackage = (EntityPackageImpl)(registeredPackage instanceof EntityPackageImpl ? registeredPackage : org.abchip.mimo.biz.entity.EntityPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(EntityPackage.eNS_URI);
+		EntityPackageImpl theEntityPackage = (EntityPackageImpl)(registeredPackage instanceof EntityPackageImpl ? registeredPackage : EntityPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(AuditPackage.eNS_URI);
 		AuditPackageImpl theAuditPackage = (AuditPackageImpl)(registeredPackage instanceof AuditPackageImpl ? registeredPackage : AuditPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(CryptoPackage.eNS_URI);
@@ -1986,20 +1987,6 @@ public class AbilityPackageImpl extends EPackageImpl implements AbilityPackage {
 	protected void createMimoentformatAnnotations() {
 		String source = "mimo-ent-format";
 		addAnnotation
-		  (getPartyQual_PartyId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getPartyQual_PartyQualTypeId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getPartyQual_FromDate(),
 		   source,
 		   new String[] {
@@ -2013,13 +2000,6 @@ public class AbilityPackageImpl extends EPackageImpl implements AbilityPackage {
 			   "length", "60"
 		   });
 		addAnnotation
-		  (getPartyQual_StatusId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getPartyQual_ThruDate(),
 		   source,
 		   new String[] {
@@ -2031,13 +2011,6 @@ public class AbilityPackageImpl extends EPackageImpl implements AbilityPackage {
 		   new String[] {
 			   "type", "id-long",
 			   "length", "60"
-		   });
-		addAnnotation
-		  (getPartyQual_VerifStatusId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
 		   });
 		addAnnotation
 		  (partyQualTypeEClass.getEOperations().get(0),
@@ -2068,28 +2041,7 @@ public class AbilityPackageImpl extends EPackageImpl implements AbilityPackage {
 			   "length", "1"
 		   });
 		addAnnotation
-		  (getPartyQualType_ParentTypeId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getPartyResume_ResumeId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getPartyResume_ContentId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getPartyResume_PartyId(),
 		   source,
 		   new String[] {
 			   "type", "id",
@@ -2107,20 +2059,6 @@ public class AbilityPackageImpl extends EPackageImpl implements AbilityPackage {
 		   new String[] {
 			   "type", "long-varchar",
 			   "length", "255"
-		   });
-		addAnnotation
-		  (getPartySkill_PartyId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getPartySkill_SkillTypeId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
 		   });
 		addAnnotation
 		  (getPartySkill_Rating(),
@@ -2181,20 +2119,6 @@ public class AbilityPackageImpl extends EPackageImpl implements AbilityPackage {
 			   "length", "1"
 		   });
 		addAnnotation
-		  (getPerfRatingType_ParentTypeId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getPerfReview_EmployeePartyId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getPerfReview_EmployeeRoleTypeId(),
 		   source,
 		   new String[] {
@@ -2216,34 +2140,13 @@ public class AbilityPackageImpl extends EPackageImpl implements AbilityPackage {
 			   "length", "255"
 		   });
 		addAnnotation
-		  (getPerfReview_EmplPositionId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getPerfReview_FromDate(),
 		   source,
 		   new String[] {
 			   "type", "date-time"
 		   });
 		addAnnotation
-		  (getPerfReview_ManagerPartyId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getPerfReview_ManagerRoleTypeId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getPerfReview_PaymentId(),
 		   source,
 		   new String[] {
 			   "type", "id",
@@ -2254,13 +2157,6 @@ public class AbilityPackageImpl extends EPackageImpl implements AbilityPackage {
 		   source,
 		   new String[] {
 			   "type", "date-time"
-		   });
-		addAnnotation
-		  (getPerfReviewItem_EmployeePartyId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
 		   });
 		addAnnotation
 		  (getPerfReviewItem_EmployeeRoleTypeId(),
@@ -2291,20 +2187,6 @@ public class AbilityPackageImpl extends EPackageImpl implements AbilityPackage {
 			   "length", "255"
 		   });
 		addAnnotation
-		  (getPerfReviewItem_PerfRatingTypeId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getPerfReviewItem_PerfReviewItemTypeId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (perfReviewItemTypeEClass.getEOperations().get(0),
 		   source,
 		   new String[] {
@@ -2331,20 +2213,6 @@ public class AbilityPackageImpl extends EPackageImpl implements AbilityPackage {
 		   new String[] {
 			   "type", "indicator",
 			   "length", "1"
-		   });
-		addAnnotation
-		  (getPerfReviewItemType_ParentTypeId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getPerformanceNote_PartyId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
 		   });
 		addAnnotation
 		  (getPerformanceNote_FromDate(),
@@ -2379,20 +2247,6 @@ public class AbilityPackageImpl extends EPackageImpl implements AbilityPackage {
 			   "type", "date-time"
 		   });
 		addAnnotation
-		  (getPersonTraining_PartyId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getPersonTraining_TrainingClassTypeId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getPersonTraining_FromDate(),
 		   source,
 		   new String[] {
@@ -2406,13 +2260,6 @@ public class AbilityPackageImpl extends EPackageImpl implements AbilityPackage {
 			   "length", "60"
 		   });
 		addAnnotation
-		  (getPersonTraining_ApproverId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getPersonTraining_Reason(),
 		   source,
 		   new String[] {
@@ -2424,20 +2271,6 @@ public class AbilityPackageImpl extends EPackageImpl implements AbilityPackage {
 		   source,
 		   new String[] {
 			   "type", "date-time"
-		   });
-		addAnnotation
-		  (getPersonTraining_TrainingRequestId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getPersonTraining_WorkEffortId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
 		   });
 		addAnnotation
 		  (responsibilityTypeEClass.getEOperations().get(0),
@@ -2466,13 +2299,6 @@ public class AbilityPackageImpl extends EPackageImpl implements AbilityPackage {
 		   new String[] {
 			   "type", "indicator",
 			   "length", "1"
-		   });
-		addAnnotation
-		  (getResponsibilityType_ParentTypeId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
 		   });
 		addAnnotation
 		  (skillTypeEClass.getEOperations().get(0),
@@ -2531,13 +2357,6 @@ public class AbilityPackageImpl extends EPackageImpl implements AbilityPackage {
 			   "length", "1"
 		   });
 		addAnnotation
-		  (getSkillType_ParentTypeId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (trainingClassTypeEClass.getEOperations().get(0),
 		   source,
 		   new String[] {
@@ -2564,13 +2383,6 @@ public class AbilityPackageImpl extends EPackageImpl implements AbilityPackage {
 		   new String[] {
 			   "type", "indicator",
 			   "length", "1"
-		   });
-		addAnnotation
-		  (getTrainingClassType_ParentTypeId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
 		   });
 	}
 

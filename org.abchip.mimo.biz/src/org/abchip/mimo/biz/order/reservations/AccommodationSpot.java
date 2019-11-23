@@ -46,7 +46,6 @@ public interface AccommodationSpot extends BizEntity {
 	 * @see #setAccommodationClassId(AccommodationClass)
 	 * @see org.abchip.mimo.biz.order.reservations.ReservationsPackage#getAccommodationSpot_AccommodationClassId()
 	 * @model keys="accommodationClassId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	AccommodationClass getAccommodationClassId();
@@ -126,7 +125,6 @@ public interface AccommodationSpot extends BizEntity {
 	 * @see #setFixedAssetId(FixedAsset)
 	 * @see org.abchip.mimo.biz.order.reservations.ReservationsPackage#getAccommodationSpot_FixedAssetId()
 	 * @model keys="fixedAssetId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	FixedAsset getFixedAssetId();

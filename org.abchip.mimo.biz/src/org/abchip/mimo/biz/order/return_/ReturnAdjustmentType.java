@@ -95,7 +95,6 @@ public interface ReturnAdjustmentType extends BizEntityType<ReturnAdjustment> {
 	 * @see #setParentTypeId(ReturnAdjustmentType)
 	 * @see org.abchip.mimo.biz.order.return_.ReturnPackage#getReturnAdjustmentType_ParentTypeId()
 	 * @model keys="returnAdjustmentTypeId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ReturnAdjustmentType getParentTypeId();

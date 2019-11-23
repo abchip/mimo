@@ -41,7 +41,6 @@ public interface OrderProductPromoCode extends BizEntity {
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderProductPromoCode_OrderId()
 	 * @model keys="orderId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	OrderHeader getOrderId();
@@ -69,7 +68,6 @@ public interface OrderProductPromoCode extends BizEntity {
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderProductPromoCode_ProductPromoCodeId()
 	 * @model keys="productPromoCodeId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ProductPromoCode getProductPromoCodeId();

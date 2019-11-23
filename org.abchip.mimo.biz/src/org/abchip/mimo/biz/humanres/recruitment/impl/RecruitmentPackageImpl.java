@@ -71,6 +71,7 @@ import org.abchip.mimo.biz.content.survey.SurveyPackage;
 import org.abchip.mimo.biz.content.survey.impl.SurveyPackageImpl;
 import org.abchip.mimo.biz.content.website.WebsitePackage;
 import org.abchip.mimo.biz.content.website.impl.WebsitePackageImpl;
+import org.abchip.mimo.biz.entity.EntityPackage;
 import org.abchip.mimo.biz.entity.audit.AuditPackage;
 import org.abchip.mimo.biz.entity.audit.impl.AuditPackageImpl;
 import org.abchip.mimo.biz.entity.crypto.CryptoPackage;
@@ -343,8 +344,8 @@ public class RecruitmentPackageImpl extends EPackageImpl implements RecruitmentP
 		SurveyPackageImpl theSurveyPackage = (SurveyPackageImpl)(registeredPackage instanceof SurveyPackageImpl ? registeredPackage : SurveyPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(WebsitePackage.eNS_URI);
 		WebsitePackageImpl theWebsitePackage = (WebsitePackageImpl)(registeredPackage instanceof WebsitePackageImpl ? registeredPackage : WebsitePackage.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(org.abchip.mimo.biz.entity.EntityPackage.eNS_URI);
-		EntityPackageImpl theEntityPackage = (EntityPackageImpl)(registeredPackage instanceof EntityPackageImpl ? registeredPackage : org.abchip.mimo.biz.entity.EntityPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(EntityPackage.eNS_URI);
+		EntityPackageImpl theEntityPackage = (EntityPackageImpl)(registeredPackage instanceof EntityPackageImpl ? registeredPackage : EntityPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(AuditPackage.eNS_URI);
 		AuditPackageImpl theAuditPackage = (AuditPackageImpl)(registeredPackage instanceof AuditPackageImpl ? registeredPackage : AuditPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(CryptoPackage.eNS_URI);
@@ -1108,13 +1109,6 @@ public class RecruitmentPackageImpl extends EPackageImpl implements RecruitmentP
 			   "length", "20"
 		   });
 		addAnnotation
-		  (getJobInterview_GradeSecuredEnumId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getJobInterview_JobInterviewDate(),
 		   source,
 		   new String[] {
@@ -1122,34 +1116,6 @@ public class RecruitmentPackageImpl extends EPackageImpl implements RecruitmentP
 		   });
 		addAnnotation
 		  (getJobInterview_JobInterviewResult(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getJobInterview_JobInterviewTypeId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getJobInterview_JobIntervieweePartyId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getJobInterview_JobInterviewerPartyId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getJobInterview_JobRequisitionId(),
 		   source,
 		   new String[] {
 			   "type", "id",
@@ -1214,13 +1180,6 @@ public class RecruitmentPackageImpl extends EPackageImpl implements RecruitmentP
 			   "scale", "0"
 		   });
 		addAnnotation
-		  (getJobRequisition_ExamTypeEnumId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getJobRequisition_ExperienceMonths(),
 		   source,
 		   new String[] {
@@ -1245,13 +1204,6 @@ public class RecruitmentPackageImpl extends EPackageImpl implements RecruitmentP
 		   });
 		addAnnotation
 		  (getJobRequisition_JobLocation(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getJobRequisition_JobPostingTypeEnumId(),
 		   source,
 		   new String[] {
 			   "type", "id",
@@ -1283,13 +1235,6 @@ public class RecruitmentPackageImpl extends EPackageImpl implements RecruitmentP
 		   source,
 		   new String[] {
 			   "type", "date"
-		   });
-		addAnnotation
-		  (getJobRequisition_SkillTypeId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
 		   });
 	}
 

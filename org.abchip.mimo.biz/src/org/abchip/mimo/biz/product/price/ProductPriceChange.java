@@ -54,7 +54,6 @@ public interface ProductPriceChange extends BizEntity {
 	 * @see #setChangedByUserLogin(UserLogin)
 	 * @see org.abchip.mimo.biz.product.price.PricePackage#getProductPriceChange_ChangedByUserLogin()
 	 * @model keys="userLoginId"
-	 *        annotation="mimo-ent-format type='id-vlong' length='255'"
 	 * @generated
 	 */
 	UserLogin getChangedByUserLogin();

@@ -97,7 +97,6 @@ public interface SalesOpportunityCompetitor extends BizEntity {
 	 * @see org.abchip.mimo.biz.marketing.opportunity.OpportunityPackage#getSalesOpportunityCompetitor_SalesOpportunityId()
 	 * @model keys="salesOpportunityId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	SalesOpportunity getSalesOpportunityId();

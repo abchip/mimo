@@ -124,7 +124,6 @@ public interface InventoryItemVariance extends BizEntity {
 	 * @see org.abchip.mimo.biz.product.inventory.InventoryPackage#getInventoryItemVariance_PhysicalInventoryId()
 	 * @model keys="physicalInventoryId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	PhysicalInventory getPhysicalInventoryId();
@@ -151,7 +150,6 @@ public interface InventoryItemVariance extends BizEntity {
 	 * @see #setVarianceReasonId(VarianceReason)
 	 * @see org.abchip.mimo.biz.product.inventory.InventoryPackage#getInventoryItemVariance_VarianceReasonId()
 	 * @model keys="varianceReasonId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	VarianceReason getVarianceReasonId();
@@ -179,7 +177,6 @@ public interface InventoryItemVariance extends BizEntity {
 	 * @see org.abchip.mimo.biz.product.inventory.InventoryPackage#getInventoryItemVariance_InventoryItemId()
 	 * @model keys="inventoryItemId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	InventoryItem getInventoryItemId();

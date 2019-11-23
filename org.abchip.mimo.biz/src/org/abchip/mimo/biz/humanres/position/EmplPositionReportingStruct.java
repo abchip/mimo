@@ -98,7 +98,6 @@ public interface EmplPositionReportingStruct extends BizEntity {
 	 * @see org.abchip.mimo.biz.humanres.position.PositionPackage#getEmplPositionReportingStruct_EmplPositionIdManagedBy()
 	 * @model keys="emplPositionId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	EmplPosition getEmplPositionIdManagedBy();
@@ -126,7 +125,6 @@ public interface EmplPositionReportingStruct extends BizEntity {
 	 * @see org.abchip.mimo.biz.humanres.position.PositionPackage#getEmplPositionReportingStruct_EmplPositionIdReportingTo()
 	 * @model keys="emplPositionId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	EmplPosition getEmplPositionIdReportingTo();

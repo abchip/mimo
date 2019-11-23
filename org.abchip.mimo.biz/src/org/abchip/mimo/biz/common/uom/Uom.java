@@ -123,7 +123,6 @@ public interface Uom extends BizEntityTyped<UomType> {
 	 * @see #setUomTypeId(UomType)
 	 * @see org.abchip.mimo.biz.common.uom.UomPackage#getUom_UomTypeId()
 	 * @model keys="uomTypeId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	UomType getUomTypeId();

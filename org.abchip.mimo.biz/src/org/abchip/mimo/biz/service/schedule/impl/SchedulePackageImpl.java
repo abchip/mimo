@@ -71,6 +71,7 @@ import org.abchip.mimo.biz.content.survey.SurveyPackage;
 import org.abchip.mimo.biz.content.survey.impl.SurveyPackageImpl;
 import org.abchip.mimo.biz.content.website.WebsitePackage;
 import org.abchip.mimo.biz.content.website.impl.WebsitePackageImpl;
+import org.abchip.mimo.biz.entity.EntityPackage;
 import org.abchip.mimo.biz.entity.audit.AuditPackage;
 import org.abchip.mimo.biz.entity.audit.impl.AuditPackageImpl;
 import org.abchip.mimo.biz.entity.crypto.CryptoPackage;
@@ -374,8 +375,8 @@ public class SchedulePackageImpl extends EPackageImpl implements SchedulePackage
 		SurveyPackageImpl theSurveyPackage = (SurveyPackageImpl)(registeredPackage instanceof SurveyPackageImpl ? registeredPackage : SurveyPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(WebsitePackage.eNS_URI);
 		WebsitePackageImpl theWebsitePackage = (WebsitePackageImpl)(registeredPackage instanceof WebsitePackageImpl ? registeredPackage : WebsitePackage.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(org.abchip.mimo.biz.entity.EntityPackage.eNS_URI);
-		EntityPackageImpl theEntityPackage = (EntityPackageImpl)(registeredPackage instanceof EntityPackageImpl ? registeredPackage : org.abchip.mimo.biz.entity.EntityPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(EntityPackage.eNS_URI);
+		EntityPackageImpl theEntityPackage = (EntityPackageImpl)(registeredPackage instanceof EntityPackageImpl ? registeredPackage : EntityPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(AuditPackage.eNS_URI);
 		AuditPackageImpl theAuditPackage = (AuditPackageImpl)(registeredPackage instanceof AuditPackageImpl ? registeredPackage : AuditPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(CryptoPackage.eNS_URI);
@@ -1807,13 +1808,6 @@ public class SchedulePackageImpl extends EPackageImpl implements SchedulePackage
 			   "type", "date-time"
 		   });
 		addAnnotation
-		  (getJobManagerLock_ReasonEnumId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getJobManagerLock_ThruDate(),
 		   source,
 		   new String[] {
@@ -1832,13 +1826,6 @@ public class SchedulePackageImpl extends EPackageImpl implements SchedulePackage
 		   new String[] {
 			   "type", "id",
 			   "length", "20"
-		   });
-		addAnnotation
-		  (getJobSandbox_AuthUserLoginId(),
-		   source,
-		   new String[] {
-			   "type", "id-vlong",
-			   "length", "255"
 		   });
 		addAnnotation
 		  (getJobSandbox_CancelDateTime(),
@@ -1927,20 +1914,6 @@ public class SchedulePackageImpl extends EPackageImpl implements SchedulePackage
 			   "length", "20"
 		   });
 		addAnnotation
-		  (getJobSandbox_RecurrenceInfoId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getJobSandbox_RunAsUser(),
-		   source,
-		   new String[] {
-			   "type", "id-vlong",
-			   "length", "255"
-		   });
-		addAnnotation
 		  (getJobSandbox_RunByInstanceId(),
 		   source,
 		   new String[] {
@@ -1954,13 +1927,6 @@ public class SchedulePackageImpl extends EPackageImpl implements SchedulePackage
 			   "type", "date-time"
 		   });
 		addAnnotation
-		  (getJobSandbox_RuntimeDataId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getJobSandbox_ServiceName(),
 		   source,
 		   new String[] {
@@ -1972,20 +1938,6 @@ public class SchedulePackageImpl extends EPackageImpl implements SchedulePackage
 		   source,
 		   new String[] {
 			   "type", "date-time"
-		   });
-		addAnnotation
-		  (getJobSandbox_StatusId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getJobSandbox_TempExprId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
 		   });
 		addAnnotation
 		  (recurrenceInfoEClass.getEOperations().get(0),
@@ -2029,13 +1981,6 @@ public class SchedulePackageImpl extends EPackageImpl implements SchedulePackage
 			   "type", "very-long"
 		   });
 		addAnnotation
-		  (getRecurrenceInfo_ExceptionRuleId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getRecurrenceInfo_RecurrenceCount(),
 		   source,
 		   new String[] {
@@ -2048,13 +1993,6 @@ public class SchedulePackageImpl extends EPackageImpl implements SchedulePackage
 		   source,
 		   new String[] {
 			   "type", "very-long"
-		   });
-		addAnnotation
-		  (getRecurrenceInfo_RecurrenceRuleId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
 		   });
 		addAnnotation
 		  (getRecurrenceInfo_StartDateTime(),
@@ -2299,20 +2237,6 @@ public class SchedulePackageImpl extends EPackageImpl implements SchedulePackage
 		   });
 		addAnnotation
 		  (getTemporalExpression_TempExprTypeId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getTemporalExpressionAssoc_FromTempExprId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getTemporalExpressionAssoc_ToTempExprId(),
 		   source,
 		   new String[] {
 			   "type", "id",

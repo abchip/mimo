@@ -72,7 +72,6 @@ public interface SecurityGroupPermission extends BizEntity {
 	 * @see org.abchip.mimo.biz.security.securitygroup.SecuritygroupPackage#getSecurityGroupPermission_GroupId()
 	 * @model keys="groupId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	SecurityGroup getGroupId();
@@ -100,7 +99,6 @@ public interface SecurityGroupPermission extends BizEntity {
 	 * @see org.abchip.mimo.biz.security.securitygroup.SecuritygroupPackage#getSecurityGroupPermission_PermissionId()
 	 * @model keys="permissionId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id-long' length='60'"
 	 * @generated
 	 */
 	SecurityPermission getPermissionId();

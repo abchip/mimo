@@ -74,7 +74,6 @@ public interface WebSitePathAlias extends BizEntity {
 	 * @see #setContentId(Content)
 	 * @see org.abchip.mimo.biz.content.website.WebsitePackage#getWebSitePathAlias_ContentId()
 	 * @model keys="contentId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Content getContentId();
@@ -210,7 +209,6 @@ public interface WebSitePathAlias extends BizEntity {
 	 * @see org.abchip.mimo.biz.content.website.WebsitePackage#getWebSitePathAlias_WebSiteId()
 	 * @model keys="webSiteId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	WebSite getWebSiteId();

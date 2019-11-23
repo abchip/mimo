@@ -41,7 +41,6 @@ public interface ContentPurpose extends BizEntityTyped<ContentPurposeType> {
 	 * @see org.abchip.mimo.biz.content.content.ContentPackage#getContentPurpose_ContentId()
 	 * @model keys="contentId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Content getContentId();
@@ -69,7 +68,6 @@ public interface ContentPurpose extends BizEntityTyped<ContentPurposeType> {
 	 * @see org.abchip.mimo.biz.content.content.ContentPackage#getContentPurpose_ContentPurposeTypeId()
 	 * @model keys="contentPurposeTypeId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ContentPurposeType getContentPurposeTypeId();

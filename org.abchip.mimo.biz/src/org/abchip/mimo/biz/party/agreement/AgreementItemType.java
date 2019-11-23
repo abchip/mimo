@@ -96,7 +96,6 @@ public interface AgreementItemType extends BizEntityType<AgreementItem> {
 	 * @see #setParentTypeId(AgreementItemType)
 	 * @see org.abchip.mimo.biz.party.agreement.AgreementPackage#getAgreementItemType_ParentTypeId()
 	 * @model keys="agreementItemTypeId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	AgreementItemType getParentTypeId();

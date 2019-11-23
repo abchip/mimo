@@ -56,7 +56,6 @@ public interface RateAmount extends BizEntity {
 	 * @see org.abchip.mimo.biz.accounting.rate.RatePackage#getRateAmount_EmplPositionTypeId()
 	 * @model keys="emplPositionTypeId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	EmplPositionType getEmplPositionTypeId();
@@ -112,7 +111,6 @@ public interface RateAmount extends BizEntity {
 	 * @see org.abchip.mimo.biz.accounting.rate.RatePackage#getRateAmount_PartyId()
 	 * @model keys="partyId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Party getPartyId();
@@ -140,7 +138,6 @@ public interface RateAmount extends BizEntity {
 	 * @see org.abchip.mimo.biz.accounting.rate.RatePackage#getRateAmount_PeriodTypeId()
 	 * @model keys="periodTypeId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	PeriodType getPeriodTypeId();
@@ -194,7 +191,6 @@ public interface RateAmount extends BizEntity {
 	 * @see org.abchip.mimo.biz.accounting.rate.RatePackage#getRateAmount_RateCurrencyUomId()
 	 * @model keys="uomId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Uom getRateCurrencyUomId();
@@ -249,7 +245,6 @@ public interface RateAmount extends BizEntity {
 	 * @see org.abchip.mimo.biz.accounting.rate.RatePackage#getRateAmount_WorkEffortId()
 	 * @model keys="workEffortId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	WorkEffort getWorkEffortId();
@@ -277,7 +272,6 @@ public interface RateAmount extends BizEntity {
 	 * @see org.abchip.mimo.biz.accounting.rate.RatePackage#getRateAmount_RateTypeId()
 	 * @model keys="rateTypeId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	RateType getRateTypeId();

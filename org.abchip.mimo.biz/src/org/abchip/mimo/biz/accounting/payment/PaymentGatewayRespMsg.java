@@ -93,7 +93,6 @@ public interface PaymentGatewayRespMsg extends BizEntity {
 	 * @see #setPaymentGatewayResponseId(PaymentGatewayResponse)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPaymentGatewayRespMsg_PaymentGatewayResponseId()
 	 * @model keys="paymentGatewayResponseId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	PaymentGatewayResponse getPaymentGatewayResponseId();

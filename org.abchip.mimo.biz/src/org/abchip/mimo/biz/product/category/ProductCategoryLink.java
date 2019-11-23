@@ -267,7 +267,6 @@ public interface ProductCategoryLink extends BizEntity {
 	 * @see #setLinkTypeEnumId(Enumeration)
 	 * @see org.abchip.mimo.biz.product.category.CategoryPackage#getProductCategoryLink_LinkTypeEnumId()
 	 * @model keys="enumId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Enumeration getLinkTypeEnumId();
@@ -374,7 +373,6 @@ public interface ProductCategoryLink extends BizEntity {
 	 * @see org.abchip.mimo.biz.product.category.CategoryPackage#getProductCategoryLink_ProductCategoryId()
 	 * @model keys="productCategoryId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ProductCategory getProductCategoryId();

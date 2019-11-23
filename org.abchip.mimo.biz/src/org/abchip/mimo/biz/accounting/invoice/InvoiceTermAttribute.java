@@ -122,7 +122,6 @@ public interface InvoiceTermAttribute extends BizEntity {
 	 * @see org.abchip.mimo.biz.accounting.invoice.InvoicePackage#getInvoiceTermAttribute_InvoiceTermId()
 	 * @model keys="invoiceTermId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	InvoiceTerm getInvoiceTermId();

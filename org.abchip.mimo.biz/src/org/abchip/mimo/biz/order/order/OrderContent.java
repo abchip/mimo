@@ -47,7 +47,6 @@ public interface OrderContent extends BizEntityTyped<OrderContentType> {
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderContent_ContentId()
 	 * @model keys="contentId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Content getContentId();
@@ -103,7 +102,6 @@ public interface OrderContent extends BizEntityTyped<OrderContentType> {
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderContent_OrderContentTypeId()
 	 * @model keys="orderContentTypeId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	OrderContentType getOrderContentTypeId();
@@ -131,7 +129,6 @@ public interface OrderContent extends BizEntityTyped<OrderContentType> {
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderContent_OrderId()
 	 * @model keys="orderId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	OrderHeader getOrderId();

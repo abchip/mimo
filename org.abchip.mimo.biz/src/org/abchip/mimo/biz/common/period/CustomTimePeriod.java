@@ -103,7 +103,6 @@ public interface CustomTimePeriod extends BizEntity {
 	 * @see #setOrganizationPartyId(Party)
 	 * @see org.abchip.mimo.biz.common.period.PeriodPackage#getCustomTimePeriod_OrganizationPartyId()
 	 * @model keys="partyId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Party getOrganizationPartyId();
@@ -248,7 +247,6 @@ public interface CustomTimePeriod extends BizEntity {
 	 * @see #setParentPeriodId(CustomTimePeriod)
 	 * @see org.abchip.mimo.biz.common.period.PeriodPackage#getCustomTimePeriod_ParentPeriodId()
 	 * @model keys="customTimePeriodId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	CustomTimePeriod getParentPeriodId();
@@ -275,7 +273,6 @@ public interface CustomTimePeriod extends BizEntity {
 	 * @see #setPeriodTypeId(PeriodType)
 	 * @see org.abchip.mimo.biz.common.period.PeriodPackage#getCustomTimePeriod_PeriodTypeId()
 	 * @model keys="periodTypeId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	PeriodType getPeriodTypeId();

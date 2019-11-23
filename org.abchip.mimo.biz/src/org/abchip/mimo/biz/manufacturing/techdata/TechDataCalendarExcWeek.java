@@ -44,7 +44,6 @@ public interface TechDataCalendarExcWeek extends BizEntity {
 	 * @see org.abchip.mimo.biz.manufacturing.techdata.TechdataPackage#getTechDataCalendarExcWeek_CalendarId()
 	 * @model keys="calendarId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	TechDataCalendar getCalendarId();
@@ -99,7 +98,6 @@ public interface TechDataCalendarExcWeek extends BizEntity {
 	 * @see #setCalendarWeekId(TechDataCalendarWeek)
 	 * @see org.abchip.mimo.biz.manufacturing.techdata.TechdataPackage#getTechDataCalendarExcWeek_CalendarWeekId()
 	 * @model keys="calendarWeekId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	TechDataCalendarWeek getCalendarWeekId();

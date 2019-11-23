@@ -161,7 +161,6 @@ public interface PostalAddress extends ContactMech {
 	 * @see #setCityGeoId(Geo)
 	 * @see org.abchip.mimo.biz.party.contact.ContactPackage#getPostalAddress_CityGeoId()
 	 * @model keys="geoId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Geo getCityGeoId();
@@ -188,7 +187,6 @@ public interface PostalAddress extends ContactMech {
 	 * @see #setCountryGeoId(Geo)
 	 * @see org.abchip.mimo.biz.party.contact.ContactPackage#getPostalAddress_CountryGeoId()
 	 * @model keys="geoId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Geo getCountryGeoId();
@@ -215,7 +213,6 @@ public interface PostalAddress extends ContactMech {
 	 * @see #setCountyGeoId(Geo)
 	 * @see org.abchip.mimo.biz.party.contact.ContactPackage#getPostalAddress_CountyGeoId()
 	 * @model keys="geoId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Geo getCountyGeoId();
@@ -268,7 +265,6 @@ public interface PostalAddress extends ContactMech {
 	 * @see #setGeoPointId(GeoPoint)
 	 * @see org.abchip.mimo.biz.party.contact.ContactPackage#getPostalAddress_GeoPointId()
 	 * @model keys="geoPointId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	GeoPoint getGeoPointId();
@@ -347,7 +343,6 @@ public interface PostalAddress extends ContactMech {
 	 * @see #setMunicipalityGeoId(Geo)
 	 * @see org.abchip.mimo.biz.party.contact.ContactPackage#getPostalAddress_MunicipalityGeoId()
 	 * @model keys="geoId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Geo getMunicipalityGeoId();
@@ -426,7 +421,6 @@ public interface PostalAddress extends ContactMech {
 	 * @see #setPostalCodeGeoId(Geo)
 	 * @see org.abchip.mimo.biz.party.contact.ContactPackage#getPostalAddress_PostalCodeGeoId()
 	 * @model keys="geoId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Geo getPostalCodeGeoId();
@@ -453,7 +447,6 @@ public interface PostalAddress extends ContactMech {
 	 * @see #setStateProvinceGeoId(Geo)
 	 * @see org.abchip.mimo.biz.party.contact.ContactPackage#getPostalAddress_StateProvinceGeoId()
 	 * @model keys="geoId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Geo getStateProvinceGeoId();

@@ -116,7 +116,6 @@ public interface WorkEffort extends BizEntityTyped<WorkEffortType> {
 	 * @see #setAccommodationMapId(AccommodationMap)
 	 * @see org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage#getWorkEffort_AccommodationMapId()
 	 * @model keys="accommodationMapId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	AccommodationMap getAccommodationMapId();
@@ -143,7 +142,6 @@ public interface WorkEffort extends BizEntityTyped<WorkEffortType> {
 	 * @see #setAccommodationSpotId(AccommodationSpot)
 	 * @see org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage#getWorkEffort_AccommodationSpotId()
 	 * @model keys="accommodationSpotId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	AccommodationSpot getAccommodationSpotId();
@@ -326,7 +324,6 @@ public interface WorkEffort extends BizEntityTyped<WorkEffortType> {
 	 * @see #setCurrentStatusId(StatusItem)
 	 * @see org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage#getWorkEffort_CurrentStatusId()
 	 * @model keys="statusId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	StatusItem getCurrentStatusId();
@@ -379,7 +376,6 @@ public interface WorkEffort extends BizEntityTyped<WorkEffortType> {
 	 * @see #setEstimateCalcMethod(CustomMethod)
 	 * @see org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage#getWorkEffort_EstimateCalcMethod()
 	 * @model keys="customMethodId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	CustomMethod getEstimateCalcMethod();
@@ -510,7 +506,6 @@ public interface WorkEffort extends BizEntityTyped<WorkEffortType> {
 	 * @see #setFacilityId(Facility)
 	 * @see org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage#getWorkEffort_FacilityId()
 	 * @model keys="facilityId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Facility getFacilityId();
@@ -538,7 +533,6 @@ public interface WorkEffort extends BizEntityTyped<WorkEffortType> {
 	 * @see org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage#getWorkEffort_FixedAssetId()
 	 * @model keys="fixedAssetId"
 	 *        annotation="mimo-ent-slot help='Deprecated - use the WorkEffortFixedAssetAssign entity instead'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	FixedAsset getFixedAssetId();
@@ -695,7 +689,6 @@ public interface WorkEffort extends BizEntityTyped<WorkEffortType> {
 	 * @see #setMoneyUomId(Uom)
 	 * @see org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage#getWorkEffort_MoneyUomId()
 	 * @model keys="uomId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Uom getMoneyUomId();
@@ -722,7 +715,6 @@ public interface WorkEffort extends BizEntityTyped<WorkEffortType> {
 	 * @see #setNoteId(NoteData)
 	 * @see org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage#getWorkEffort_NoteId()
 	 * @model keys="noteId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	NoteData getNoteId();
@@ -880,7 +872,6 @@ public interface WorkEffort extends BizEntityTyped<WorkEffortType> {
 	 * @see org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage#getWorkEffort_RecurrenceInfoId()
 	 * @model keys="recurrenceInfoId"
 	 *        annotation="mimo-ent-slot help='Deprecated - use the tempExprId field instead'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	RecurrenceInfo getRecurrenceInfoId();
@@ -1040,7 +1031,6 @@ public interface WorkEffort extends BizEntityTyped<WorkEffortType> {
 	 * @see #setRuntimeDataId(RuntimeData)
 	 * @see org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage#getWorkEffort_RuntimeDataId()
 	 * @model keys="runtimeDataId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	RuntimeData getRuntimeDataId();
@@ -1067,7 +1057,6 @@ public interface WorkEffort extends BizEntityTyped<WorkEffortType> {
 	 * @see #setScopeEnumId(Enumeration)
 	 * @see org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage#getWorkEffort_ScopeEnumId()
 	 * @model keys="enumId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Enumeration getScopeEnumId();
@@ -1198,7 +1187,6 @@ public interface WorkEffort extends BizEntityTyped<WorkEffortType> {
 	 * @see #setTempExprId(TemporalExpression)
 	 * @see org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage#getWorkEffort_TempExprId()
 	 * @model keys="tempExprId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	TemporalExpression getTempExprId();
@@ -1384,7 +1372,6 @@ public interface WorkEffort extends BizEntityTyped<WorkEffortType> {
 	 * @see org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage#getWorkEffort_WorkEffortParentId()
 	 * @model keys="workEffortId"
 	 *        annotation="mimo-ent-slot help='The primary parent (or the like); it should be one of the parent WorkEfforts already setup in WorkEffortAssoc'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	WorkEffort getWorkEffortParentId();
@@ -1411,7 +1398,6 @@ public interface WorkEffort extends BizEntityTyped<WorkEffortType> {
 	 * @see #setWorkEffortPurposeTypeId(WorkEffortPurposeType)
 	 * @see org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage#getWorkEffort_WorkEffortPurposeTypeId()
 	 * @model keys="workEffortPurposeTypeId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	WorkEffortPurposeType getWorkEffortPurposeTypeId();
@@ -1438,7 +1424,6 @@ public interface WorkEffort extends BizEntityTyped<WorkEffortType> {
 	 * @see #setWorkEffortTypeId(WorkEffortType)
 	 * @see org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage#getWorkEffort_WorkEffortTypeId()
 	 * @model keys="workEffortTypeId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	WorkEffortType getWorkEffortTypeId();

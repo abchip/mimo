@@ -71,6 +71,7 @@ import org.abchip.mimo.biz.content.survey.SurveyPackage;
 import org.abchip.mimo.biz.content.survey.impl.SurveyPackageImpl;
 import org.abchip.mimo.biz.content.website.WebsitePackage;
 import org.abchip.mimo.biz.content.website.impl.WebsitePackageImpl;
+import org.abchip.mimo.biz.entity.EntityPackage;
 import org.abchip.mimo.biz.entity.audit.AuditPackage;
 import org.abchip.mimo.biz.entity.audit.impl.AuditPackageImpl;
 import org.abchip.mimo.biz.entity.crypto.CryptoPackage;
@@ -615,8 +616,8 @@ public class WorkeffortPackageImpl extends EPackageImpl implements WorkeffortPac
 		SurveyPackageImpl theSurveyPackage = (SurveyPackageImpl)(registeredPackage instanceof SurveyPackageImpl ? registeredPackage : SurveyPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(WebsitePackage.eNS_URI);
 		WebsitePackageImpl theWebsitePackage = (WebsitePackageImpl)(registeredPackage instanceof WebsitePackageImpl ? registeredPackage : WebsitePackage.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(org.abchip.mimo.biz.entity.EntityPackage.eNS_URI);
-		EntityPackageImpl theEntityPackage = (EntityPackageImpl)(registeredPackage instanceof EntityPackageImpl ? registeredPackage : org.abchip.mimo.biz.entity.EntityPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(EntityPackage.eNS_URI);
+		EntityPackageImpl theEntityPackage = (EntityPackageImpl)(registeredPackage instanceof EntityPackageImpl ? registeredPackage : EntityPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(AuditPackage.eNS_URI);
 		AuditPackageImpl theAuditPackage = (AuditPackageImpl)(registeredPackage instanceof AuditPackageImpl ? registeredPackage : AuditPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(CryptoPackage.eNS_URI);
@@ -2770,8 +2771,8 @@ public class WorkeffortPackageImpl extends EPackageImpl implements WorkeffortPac
 	 * @generated
 	 */
 	@Override
-	public EReference getWorkEffortIcalData_WorkEffortId() {
-		return (EReference)workEffortIcalDataEClass.getEStructuralFeatures().get(1);
+	public EAttribute getWorkEffortIcalData_WorkEffortId() {
+		return (EAttribute)workEffortIcalDataEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -2781,7 +2782,7 @@ public class WorkeffortPackageImpl extends EPackageImpl implements WorkeffortPac
 	 */
 	@Override
 	public EAttribute getWorkEffortIcalData_IcalData() {
-		return (EAttribute)workEffortIcalDataEClass.getEStructuralFeatures().get(0);
+		return (EAttribute)workEffortIcalDataEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -3957,8 +3958,8 @@ public class WorkeffortPackageImpl extends EPackageImpl implements WorkeffortPac
 		createEReference(workEffortGoodStandardTypeEClass, WORK_EFFORT_GOOD_STANDARD_TYPE__PARENT_TYPE_ID);
 
 		workEffortIcalDataEClass = createEClass(WORK_EFFORT_ICAL_DATA);
+		createEAttribute(workEffortIcalDataEClass, WORK_EFFORT_ICAL_DATA__WORK_EFFORT_ID);
 		createEAttribute(workEffortIcalDataEClass, WORK_EFFORT_ICAL_DATA__ICAL_DATA);
-		createEReference(workEffortIcalDataEClass, WORK_EFFORT_ICAL_DATA__WORK_EFFORT_ID);
 
 		workEffortInventoryAssignEClass = createEClass(WORK_EFFORT_INVENTORY_ASSIGN);
 		createEReference(workEffortInventoryAssignEClass, WORK_EFFORT_INVENTORY_ASSIGN__WORK_EFFORT_ID);
@@ -4492,9 +4493,8 @@ public class WorkeffortPackageImpl extends EPackageImpl implements WorkeffortPac
 		addEOperation(workEffortGoodStandardTypeEClass, ecorePackage.getEString(), "childWorkEffortGoodStandardTypes", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(workEffortIcalDataEClass, WorkEffortIcalData.class, "WorkEffortIcalData", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getWorkEffortIcalData_WorkEffortId(), ecorePackage.getEString(), "workEffortId", null, 1, 1, WorkEffortIcalData.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getWorkEffortIcalData_IcalData(), ecorePackage.getEString(), "icalData", null, 0, 1, WorkEffortIcalData.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getWorkEffortIcalData_WorkEffortId(), this.getWorkEffort(), null, "workEffortId", null, 1, 1, WorkEffortIcalData.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		getWorkEffortIcalData_WorkEffortId().getEKeys().add(this.getWorkEffort_WorkEffortId());
 
 		initEClass(workEffortInventoryAssignEClass, WorkEffortInventoryAssign.class, "WorkEffortInventoryAssign", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getWorkEffortInventoryAssign_WorkEffortId(), this.getWorkEffort(), null, "workEffortId", null, 1, 1, WorkEffortInventoryAssign.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -4691,28 +4691,7 @@ public class WorkeffortPackageImpl extends EPackageImpl implements WorkeffortPac
 			   "length", "20"
 		   });
 		addAnnotation
-		  (getApplicationSandbox_RuntimeDataId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getApplicationSandbox_WorkEffortId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getCommunicationEventWorkEff_WorkEffortId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getCommunicationEventWorkEff_CommunicationEventId(),
 		   source,
 		   new String[] {
 			   "type", "id",
@@ -4752,13 +4731,6 @@ public class WorkeffortPackageImpl extends EPackageImpl implements WorkeffortPac
 		   new String[] {
 			   "type", "name",
 			   "length", "100"
-		   });
-		addAnnotation
-		  (getDeliverable_DeliverableTypeId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
 		   });
 		addAnnotation
 		  (getDeliverable_Description(),
@@ -4915,20 +4887,6 @@ public class WorkeffortPackageImpl extends EPackageImpl implements WorkeffortPac
 			   "length", "20"
 		   });
 		addAnnotation
-		  (getWorkEffort_AccommodationMapId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getWorkEffort_AccommodationSpotId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getWorkEffort_ActualCompletionDate(),
 		   source,
 		   new String[] {
@@ -4973,25 +4931,11 @@ public class WorkeffortPackageImpl extends EPackageImpl implements WorkeffortPac
 			   "type", "date-time"
 		   });
 		addAnnotation
-		  (getWorkEffort_CurrentStatusId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getWorkEffort_Description(),
 		   source,
 		   new String[] {
 			   "type", "description",
 			   "length", "255"
-		   });
-		addAnnotation
-		  (getWorkEffort_EstimateCalcMethod(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
 		   });
 		addAnnotation
 		  (getWorkEffort_EstimatedCompletionDate(),
@@ -5016,20 +4960,6 @@ public class WorkeffortPackageImpl extends EPackageImpl implements WorkeffortPac
 		   source,
 		   new String[] {
 			   "type", "date-time"
-		   });
-		addAnnotation
-		  (getWorkEffort_FacilityId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getWorkEffort_FixedAssetId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
 		   });
 		addAnnotation
 		  (getWorkEffort_InfoUrl(),
@@ -5063,20 +4993,6 @@ public class WorkeffortPackageImpl extends EPackageImpl implements WorkeffortPac
 		   new String[] {
 			   "type", "description",
 			   "length", "255"
-		   });
-		addAnnotation
-		  (getWorkEffort_MoneyUomId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getWorkEffort_NoteId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
 		   });
 		addAnnotation
 		  (getWorkEffort_PercentComplete(),
@@ -5119,13 +5035,6 @@ public class WorkeffortPackageImpl extends EPackageImpl implements WorkeffortPac
 			   "scale", "6"
 		   });
 		addAnnotation
-		  (getWorkEffort_RecurrenceInfoId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getWorkEffort_Reserv2ndPPPerc(),
 		   source,
 		   new String[] {
@@ -5156,20 +5065,6 @@ public class WorkeffortPackageImpl extends EPackageImpl implements WorkeffortPac
 			   "type", "numeric",
 			   "precision", "20",
 			   "scale", "0"
-		   });
-		addAnnotation
-		  (getWorkEffort_RuntimeDataId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getWorkEffort_ScopeEnumId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
 		   });
 		addAnnotation
 		  (getWorkEffort_SendNotificationEmail(),
@@ -5205,13 +5100,6 @@ public class WorkeffortPackageImpl extends EPackageImpl implements WorkeffortPac
 		   new String[] {
 			   "type", "long-varchar",
 			   "length", "255"
-		   });
-		addAnnotation
-		  (getWorkEffort_TempExprId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
 		   });
 		addAnnotation
 		  (getWorkEffort_TimeTransparency(),
@@ -5306,49 +5194,7 @@ public class WorkeffortPackageImpl extends EPackageImpl implements WorkeffortPac
 			   "length", "20"
 		   });
 		addAnnotation
-		  (getWorkEffort_WorkEffortParentId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getWorkEffort_WorkEffortPurposeTypeId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getWorkEffort_WorkEffortSkillStandards(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getWorkEffort_WorkEffortTypeId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getWorkEffortAssoc_WorkEffortAssocTypeId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getWorkEffortAssoc_WorkEffortIdFrom(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getWorkEffortAssoc_WorkEffortIdTo(),
 		   source,
 		   new String[] {
 			   "type", "id",
@@ -5451,21 +5297,7 @@ public class WorkeffortPackageImpl extends EPackageImpl implements WorkeffortPac
 			   "length", "1"
 		   });
 		addAnnotation
-		  (getWorkEffortAssocType_ParentTypeId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getWorkEffortAssocType_WorkEffortAssocTypeAttrs(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getWorkEffortAssocTypeAttr_WorkEffortAssocTypeId(),
 		   source,
 		   new String[] {
 			   "type", "id",
@@ -5484,13 +5316,6 @@ public class WorkeffortPackageImpl extends EPackageImpl implements WorkeffortPac
 		   new String[] {
 			   "type", "description",
 			   "length", "255"
-		   });
-		addAnnotation
-		  (getWorkEffortAttribute_WorkEffortId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
 		   });
 		addAnnotation
 		  (getWorkEffortAttribute_AttrName(),
@@ -5514,20 +5339,6 @@ public class WorkeffortPackageImpl extends EPackageImpl implements WorkeffortPac
 			   "length", "255"
 		   });
 		addAnnotation
-		  (getWorkEffortBilling_WorkEffortId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getWorkEffortBilling_InvoiceId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getWorkEffortBilling_InvoiceItemSeqId(),
 		   source,
 		   new String[] {
@@ -5539,20 +5350,6 @@ public class WorkeffortPackageImpl extends EPackageImpl implements WorkeffortPac
 		   source,
 		   new String[] {
 			   "type", "floating-point"
-		   });
-		addAnnotation
-		  (getWorkEffortContactMech_WorkEffortId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getWorkEffortContactMech_ContactMechId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
 		   });
 		addAnnotation
 		  (getWorkEffortContactMech_FromDate(),
@@ -5572,27 +5369,6 @@ public class WorkeffortPackageImpl extends EPackageImpl implements WorkeffortPac
 		   source,
 		   new String[] {
 			   "type", "date-time"
-		   });
-		addAnnotation
-		  (getWorkEffortContent_WorkEffortId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getWorkEffortContent_ContentId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getWorkEffortContent_WorkEffortContentTypeId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
 		   });
 		addAnnotation
 		  (getWorkEffortContent_FromDate(),
@@ -5628,38 +5404,10 @@ public class WorkeffortPackageImpl extends EPackageImpl implements WorkeffortPac
 			   "length", "255"
 		   });
 		addAnnotation
-		  (getWorkEffortContentType_ParentTypeId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getWorkEffortCostCalc_WorkEffortId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getWorkEffortCostCalc_CostComponentTypeId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getWorkEffortCostCalc_FromDate(),
 		   source,
 		   new String[] {
 			   "type", "date-time"
-		   });
-		addAnnotation
-		  (getWorkEffortCostCalc_CostComponentCalcId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
 		   });
 		addAnnotation
 		  (getWorkEffortCostCalc_ThruDate(),
@@ -5668,35 +5416,7 @@ public class WorkeffortPackageImpl extends EPackageImpl implements WorkeffortPac
 			   "type", "date-time"
 		   });
 		addAnnotation
-		  (getWorkEffortDeliverableProd_WorkEffortId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getWorkEffortDeliverableProd_DeliverableId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getWorkEffortEventReminder_WorkEffortId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getWorkEffortEventReminder_SequenceId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getWorkEffortEventReminder_ContactMechId(),
 		   source,
 		   new String[] {
 			   "type", "id",
@@ -5712,13 +5432,6 @@ public class WorkeffortPackageImpl extends EPackageImpl implements WorkeffortPac
 		   });
 		addAnnotation
 		  (getWorkEffortEventReminder_LocaleId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getWorkEffortEventReminder_PartyId(),
 		   source,
 		   new String[] {
 			   "type", "id",
@@ -5762,20 +5475,6 @@ public class WorkeffortPackageImpl extends EPackageImpl implements WorkeffortPac
 			   "length", "60"
 		   });
 		addAnnotation
-		  (getWorkEffortFixedAssetAssign_WorkEffortId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getWorkEffortFixedAssetAssign_FixedAssetId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getWorkEffortFixedAssetAssign_FromDate(),
 		   source,
 		   new String[] {
@@ -5790,13 +5489,6 @@ public class WorkeffortPackageImpl extends EPackageImpl implements WorkeffortPac
 			   "scale", "2"
 		   });
 		addAnnotation
-		  (getWorkEffortFixedAssetAssign_AvailabilityStatusId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getWorkEffortFixedAssetAssign_Comments(),
 		   source,
 		   new String[] {
@@ -5804,31 +5496,10 @@ public class WorkeffortPackageImpl extends EPackageImpl implements WorkeffortPac
 			   "length", "255"
 		   });
 		addAnnotation
-		  (getWorkEffortFixedAssetAssign_StatusId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getWorkEffortFixedAssetAssign_ThruDate(),
 		   source,
 		   new String[] {
 			   "type", "date-time"
-		   });
-		addAnnotation
-		  (getWorkEffortFixedAssetStd_WorkEffortId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getWorkEffortFixedAssetStd_FixedAssetTypeId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
 		   });
 		addAnnotation
 		  (getWorkEffortFixedAssetStd_EstimatedCost(),
@@ -5851,27 +5522,6 @@ public class WorkeffortPackageImpl extends EPackageImpl implements WorkeffortPac
 			   "type", "floating-point"
 		   });
 		addAnnotation
-		  (getWorkEffortGoodStandard_WorkEffortId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getWorkEffortGoodStandard_WorkEffortGoodStdTypeId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getWorkEffortGoodStandard_ProductId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getWorkEffortGoodStandard_FromDate(),
 		   source,
 		   new String[] {
@@ -5890,13 +5540,6 @@ public class WorkeffortPackageImpl extends EPackageImpl implements WorkeffortPac
 		   source,
 		   new String[] {
 			   "type", "floating-point"
-		   });
-		addAnnotation
-		  (getWorkEffortGoodStandard_StatusId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
 		   });
 		addAnnotation
 		  (getWorkEffortGoodStandard_ThruDate(),
@@ -5933,7 +5576,7 @@ public class WorkeffortPackageImpl extends EPackageImpl implements WorkeffortPac
 			   "length", "1"
 		   });
 		addAnnotation
-		  (getWorkEffortGoodStandardType_ParentTypeId(),
+		  (getWorkEffortIcalData_WorkEffortId(),
 		   source,
 		   new String[] {
 			   "type", "id",
@@ -5946,59 +5589,10 @@ public class WorkeffortPackageImpl extends EPackageImpl implements WorkeffortPac
 			   "type", "very-long"
 		   });
 		addAnnotation
-		  (getWorkEffortIcalData_WorkEffortId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getWorkEffortInventoryAssign_WorkEffortId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getWorkEffortInventoryAssign_InventoryItemId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getWorkEffortInventoryAssign_Quantity(),
 		   source,
 		   new String[] {
 			   "type", "floating-point"
-		   });
-		addAnnotation
-		  (getWorkEffortInventoryAssign_StatusId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getWorkEffortInventoryProduced_WorkEffortId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getWorkEffortInventoryProduced_InventoryItemId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getWorkEffortKeyword_WorkEffortId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
 		   });
 		addAnnotation
 		  (getWorkEffortKeyword_Keyword(),
@@ -6016,39 +5610,11 @@ public class WorkeffortPackageImpl extends EPackageImpl implements WorkeffortPac
 			   "scale", "0"
 		   });
 		addAnnotation
-		  (getWorkEffortNote_WorkEffortId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getWorkEffortNote_InternalNote(),
 		   source,
 		   new String[] {
 			   "type", "indicator",
 			   "length", "1"
-		   });
-		addAnnotation
-		  (getWorkEffortPartyAssignment_WorkEffortId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getWorkEffortPartyAssignment_PartyId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getWorkEffortPartyAssignment_RoleTypeId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
 		   });
 		addAnnotation
 		  (getWorkEffortPartyAssignment_FromDate(),
@@ -6057,46 +5623,11 @@ public class WorkeffortPackageImpl extends EPackageImpl implements WorkeffortPac
 			   "type", "date-time"
 		   });
 		addAnnotation
-		  (getWorkEffortPartyAssignment_AssignedByUserLoginId(),
-		   source,
-		   new String[] {
-			   "type", "id-vlong",
-			   "length", "255"
-		   });
-		addAnnotation
-		  (getWorkEffortPartyAssignment_AvailabilityStatusId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getWorkEffortPartyAssignment_Comments(),
 		   source,
 		   new String[] {
 			   "type", "comment",
 			   "length", "255"
-		   });
-		addAnnotation
-		  (getWorkEffortPartyAssignment_DelegateReasonEnumId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getWorkEffortPartyAssignment_ExpectationEnumId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getWorkEffortPartyAssignment_FacilityId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
 		   });
 		addAnnotation
 		  (getWorkEffortPartyAssignment_MustRsvp(),
@@ -6110,13 +5641,6 @@ public class WorkeffortPackageImpl extends EPackageImpl implements WorkeffortPac
 		   source,
 		   new String[] {
 			   "type", "date-time"
-		   });
-		addAnnotation
-		  (getWorkEffortPartyAssignment_StatusId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
 		   });
 		addAnnotation
 		  (getWorkEffortPartyAssignment_ThruDate(),
@@ -6153,27 +5677,6 @@ public class WorkeffortPackageImpl extends EPackageImpl implements WorkeffortPac
 			   "length", "255"
 		   });
 		addAnnotation
-		  (getWorkEffortPurposeType_ParentTypeId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getWorkEffortReview_WorkEffortId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getWorkEffortReview_UserLoginId(),
-		   source,
-		   new String[] {
-			   "type", "id-vlong",
-			   "length", "255"
-		   });
-		addAnnotation
 		  (getWorkEffortReview_ReviewDate(),
 		   source,
 		   new String[] {
@@ -6197,20 +5700,6 @@ public class WorkeffortPackageImpl extends EPackageImpl implements WorkeffortPac
 		   source,
 		   new String[] {
 			   "type", "very-long"
-		   });
-		addAnnotation
-		  (getWorkEffortReview_StatusId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getWorkEffortSearchConstraint_WorkEffortSearchResultId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
 		   });
 		addAnnotation
 		  (getWorkEffortSearchConstraint_ConstraintSeqId(),
@@ -6338,20 +5827,6 @@ public class WorkeffortPackageImpl extends EPackageImpl implements WorkeffortPac
 			   "length", "20"
 		   });
 		addAnnotation
-		  (getWorkEffortSkillStandard_WorkEffortId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getWorkEffortSkillStandard_SkillTypeId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getWorkEffortSkillStandard_EstimatedCost(),
 		   source,
 		   new String[] {
@@ -6372,20 +5847,6 @@ public class WorkeffortPackageImpl extends EPackageImpl implements WorkeffortPac
 			   "type", "floating-point"
 		   });
 		addAnnotation
-		  (getWorkEffortStatus_WorkEffortId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getWorkEffortStatus_StatusId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getWorkEffortStatus_StatusDatetime(),
 		   source,
 		   new String[] {
@@ -6399,27 +5860,6 @@ public class WorkeffortPackageImpl extends EPackageImpl implements WorkeffortPac
 			   "length", "255"
 		   });
 		addAnnotation
-		  (getWorkEffortStatus_SetByUserLogin(),
-		   source,
-		   new String[] {
-			   "type", "id-vlong",
-			   "length", "255"
-		   });
-		addAnnotation
-		  (getWorkEffortSurveyAppl_SurveyId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getWorkEffortSurveyAppl_WorkEffortId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getWorkEffortSurveyAppl_FromDate(),
 		   source,
 		   new String[] {
@@ -6430,13 +5870,6 @@ public class WorkeffortPackageImpl extends EPackageImpl implements WorkeffortPac
 		   source,
 		   new String[] {
 			   "type", "date-time"
-		   });
-		addAnnotation
-		  (getWorkEffortTransBox_ProcessWorkEffortId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
 		   });
 		addAnnotation
 		  (getWorkEffortTransBox_ToActivityId(),
@@ -6488,21 +5921,7 @@ public class WorkeffortPackageImpl extends EPackageImpl implements WorkeffortPac
 			   "length", "1"
 		   });
 		addAnnotation
-		  (getWorkEffortType_ParentTypeId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getWorkEffortType_WorkEffortTypeAttrs(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getWorkEffortTypeAttr_WorkEffortTypeId(),
 		   source,
 		   new String[] {
 			   "type", "id",

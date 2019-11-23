@@ -128,7 +128,6 @@ public interface ProductStoreKeywordOvrd extends BizEntity {
 	 * @see #setTargetTypeEnumId(Enumeration)
 	 * @see org.abchip.mimo.biz.product.store.StorePackage#getProductStoreKeywordOvrd_TargetTypeEnumId()
 	 * @model keys="enumId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Enumeration getTargetTypeEnumId();
@@ -182,7 +181,6 @@ public interface ProductStoreKeywordOvrd extends BizEntity {
 	 * @see org.abchip.mimo.biz.product.store.StorePackage#getProductStoreKeywordOvrd_ProductStoreId()
 	 * @model keys="productStoreId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ProductStore getProductStoreId();

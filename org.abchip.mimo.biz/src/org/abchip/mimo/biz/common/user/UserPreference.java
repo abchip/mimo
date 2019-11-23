@@ -44,7 +44,6 @@ public interface UserPreference extends BizEntity {
 	 * @see org.abchip.mimo.biz.common.user.UserPackage#getUserPreference_UserLoginId()
 	 * @model keys="userLoginId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id-vlong' length='255'"
 	 * @generated
 	 */
 	UserLogin getUserLoginId();
@@ -99,7 +98,6 @@ public interface UserPreference extends BizEntity {
 	 * @see org.abchip.mimo.biz.common.user.UserPackage#getUserPreference_UserPrefGroupTypeId()
 	 * @model keys="userPrefGroupTypeId"
 	 *        annotation="mimo-ent-slot help='Used to assemble groups of preferences'"
-	 *        annotation="mimo-ent-format type='id-long' length='60'"
 	 * @generated
 	 */
 	UserPrefGroupType getUserPrefGroupTypeId();

@@ -123,7 +123,6 @@ public interface UomConversion extends BizEntity {
 	 * @see org.abchip.mimo.biz.common.uom.UomPackage#getUomConversion_UomId()
 	 * @model keys="uomId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Uom getUomId();
@@ -151,7 +150,6 @@ public interface UomConversion extends BizEntity {
 	 * @see org.abchip.mimo.biz.common.uom.UomPackage#getUomConversion_UomIdTo()
 	 * @model keys="uomId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Uom getUomIdTo();
@@ -178,7 +176,6 @@ public interface UomConversion extends BizEntity {
 	 * @see #setCustomMethodId(CustomMethod)
 	 * @see org.abchip.mimo.biz.common.uom.UomPackage#getUomConversion_CustomMethodId()
 	 * @model keys="customMethodId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	CustomMethod getCustomMethodId();

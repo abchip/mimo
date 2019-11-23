@@ -337,7 +337,6 @@ public interface ProductCategory extends BizEntityTyped<ProductCategoryType> {
 	 * @see #setProductCategoryTypeId(ProductCategoryType)
 	 * @see org.abchip.mimo.biz.product.category.CategoryPackage#getProductCategory_ProductCategoryTypeId()
 	 * @model keys="productCategoryTypeId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ProductCategoryType getProductCategoryTypeId();
@@ -364,7 +363,6 @@ public interface ProductCategory extends BizEntityTyped<ProductCategoryType> {
 	 * @see #setPrimaryParentCategoryId(ProductCategory)
 	 * @see org.abchip.mimo.biz.product.category.CategoryPackage#getProductCategory_PrimaryParentCategoryId()
 	 * @model keys="productCategoryId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ProductCategory getPrimaryParentCategoryId();

@@ -71,6 +71,7 @@ import org.abchip.mimo.biz.content.survey.SurveyPackage;
 import org.abchip.mimo.biz.content.survey.impl.SurveyPackageImpl;
 import org.abchip.mimo.biz.content.website.WebsitePackage;
 import org.abchip.mimo.biz.content.website.impl.WebsitePackageImpl;
+import org.abchip.mimo.biz.entity.EntityPackage;
 import org.abchip.mimo.biz.entity.audit.AuditPackage;
 import org.abchip.mimo.biz.entity.audit.impl.AuditPackageImpl;
 import org.abchip.mimo.biz.entity.crypto.CryptoPackage;
@@ -406,8 +407,8 @@ public class PromoPackageImpl extends EPackageImpl implements PromoPackage {
 		SurveyPackageImpl theSurveyPackage = (SurveyPackageImpl)(registeredPackage instanceof SurveyPackageImpl ? registeredPackage : SurveyPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(WebsitePackage.eNS_URI);
 		WebsitePackageImpl theWebsitePackage = (WebsitePackageImpl)(registeredPackage instanceof WebsitePackageImpl ? registeredPackage : WebsitePackage.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(org.abchip.mimo.biz.entity.EntityPackage.eNS_URI);
-		EntityPackageImpl theEntityPackage = (EntityPackageImpl)(registeredPackage instanceof EntityPackageImpl ? registeredPackage : org.abchip.mimo.biz.entity.EntityPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(EntityPackage.eNS_URI);
+		EntityPackageImpl theEntityPackage = (EntityPackageImpl)(registeredPackage instanceof EntityPackageImpl ? registeredPackage : EntityPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(AuditPackage.eNS_URI);
 		AuditPackageImpl theAuditPackage = (AuditPackageImpl)(registeredPackage instanceof AuditPackageImpl ? registeredPackage : AuditPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(CryptoPackage.eNS_URI);
@@ -2160,37 +2161,16 @@ public class PromoPackageImpl extends EPackageImpl implements PromoPackage {
 			   "scale", "6"
 		   });
 		addAnnotation
-		  (getProductPromo_CreatedByUserLogin(),
-		   source,
-		   new String[] {
-			   "type", "id-vlong",
-			   "length", "255"
-		   });
-		addAnnotation
 		  (getProductPromo_CreatedDate(),
 		   source,
 		   new String[] {
 			   "type", "date-time"
 		   });
 		addAnnotation
-		  (getProductPromo_LastModifiedByUserLogin(),
-		   source,
-		   new String[] {
-			   "type", "id-vlong",
-			   "length", "255"
-		   });
-		addAnnotation
 		  (getProductPromo_LastModifiedDate(),
 		   source,
 		   new String[] {
 			   "type", "date-time"
-		   });
-		addAnnotation
-		  (getProductPromo_OverrideOrgPartyId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
 		   });
 		addAnnotation
 		  (getProductPromo_ProductPromoRules(),
@@ -2259,13 +2239,6 @@ public class PromoPackageImpl extends EPackageImpl implements PromoPackage {
 			   "length", "1"
 		   });
 		addAnnotation
-		  (getProductPromoAction_ProductPromoId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getProductPromoAction_ProductPromoActionSeqId(),
 		   source,
 		   new String[] {
@@ -2288,20 +2261,6 @@ public class PromoPackageImpl extends EPackageImpl implements PromoPackage {
 			   "scale", "6"
 		   });
 		addAnnotation
-		  (getProductPromoAction_CustomMethodId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getProductPromoAction_OrderAdjustmentTypeId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getProductPromoAction_PartyId(),
 		   source,
 		   new String[] {
@@ -2310,13 +2269,6 @@ public class PromoPackageImpl extends EPackageImpl implements PromoPackage {
 		   });
 		addAnnotation
 		  (getProductPromoAction_ProductId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getProductPromoAction_ProductPromoActionEnumId(),
 		   source,
 		   new String[] {
 			   "type", "id",
@@ -2343,20 +2295,6 @@ public class PromoPackageImpl extends EPackageImpl implements PromoPackage {
 		   new String[] {
 			   "type", "indicator",
 			   "length", "1"
-		   });
-		addAnnotation
-		  (getProductPromoCategory_ProductPromoId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getProductPromoCategory_ProductCategoryId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
 		   });
 		addAnnotation
 		  (getProductPromoCategory_AndGroupId(),
@@ -2394,13 +2332,6 @@ public class PromoPackageImpl extends EPackageImpl implements PromoPackage {
 			   "length", "1"
 		   });
 		addAnnotation
-		  (getProductPromoCategory_ProductPromoApplEnumId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (productPromoCodeEClass.getEOperations().get(0),
 		   source,
 		   new String[] {
@@ -2429,13 +2360,6 @@ public class PromoPackageImpl extends EPackageImpl implements PromoPackage {
 			   "length", "20"
 		   });
 		addAnnotation
-		  (getProductPromoCode_CreatedByUserLogin(),
-		   source,
-		   new String[] {
-			   "type", "id-vlong",
-			   "length", "255"
-		   });
-		addAnnotation
 		  (getProductPromoCode_CreatedDate(),
 		   source,
 		   new String[] {
@@ -2446,13 +2370,6 @@ public class PromoPackageImpl extends EPackageImpl implements PromoPackage {
 		   source,
 		   new String[] {
 			   "type", "date-time"
-		   });
-		addAnnotation
-		  (getProductPromoCode_LastModifiedByUserLogin(),
-		   source,
-		   new String[] {
-			   "type", "id-vlong",
-			   "length", "255"
 		   });
 		addAnnotation
 		  (getProductPromoCode_LastModifiedDate(),
@@ -2469,13 +2386,6 @@ public class PromoPackageImpl extends EPackageImpl implements PromoPackage {
 		   });
 		addAnnotation
 		  (getProductPromoCode_ProductPromoCodeParties(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getProductPromoCode_ProductPromoId(),
 		   source,
 		   new String[] {
 			   "type", "id",
@@ -2518,39 +2428,11 @@ public class PromoPackageImpl extends EPackageImpl implements PromoPackage {
 			   "length", "1"
 		   });
 		addAnnotation
-		  (getProductPromoCodeEmail_ProductPromoCodeId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getProductPromoCodeEmail_EmailAddress(),
 		   source,
 		   new String[] {
 			   "type", "email",
 			   "length", "320"
-		   });
-		addAnnotation
-		  (getProductPromoCodeParty_ProductPromoCodeId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getProductPromoCodeParty_PartyId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getProductPromoCond_ProductPromoId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
 		   });
 		addAnnotation
 		  (getProductPromoCond_ProductPromoCondSeqId(),
@@ -2574,53 +2456,11 @@ public class PromoPackageImpl extends EPackageImpl implements PromoPackage {
 			   "length", "255"
 		   });
 		addAnnotation
-		  (getProductPromoCond_CustomMethodId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getProductPromoCond_InputParamEnumId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getProductPromoCond_OperatorEnumId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getProductPromoCond_OtherValue(),
 		   source,
 		   new String[] {
 			   "type", "long-varchar",
 			   "length", "255"
-		   });
-		addAnnotation
-		  (getProductPromoContent_ProductPromoId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getProductPromoContent_ContentId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getProductPromoContent_ProductPromoContentTypeId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
 		   });
 		addAnnotation
 		  (getProductPromoContent_FromDate(),
@@ -2633,20 +2473,6 @@ public class PromoPackageImpl extends EPackageImpl implements PromoPackage {
 		   source,
 		   new String[] {
 			   "type", "date-time"
-		   });
-		addAnnotation
-		  (getProductPromoProduct_ProductPromoId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getProductPromoProduct_ProductId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
 		   });
 		addAnnotation
 		  (getProductPromoProduct_ProductPromoActionSeqId(),
@@ -2670,20 +2496,6 @@ public class PromoPackageImpl extends EPackageImpl implements PromoPackage {
 			   "length", "20"
 		   });
 		addAnnotation
-		  (getProductPromoProduct_ProductPromoApplEnumId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getProductPromoRule_ProductPromoId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getProductPromoRule_ProductPromoRuleId(),
 		   source,
 		   new String[] {
@@ -2698,35 +2510,7 @@ public class PromoPackageImpl extends EPackageImpl implements PromoPackage {
 			   "length", "100"
 		   });
 		addAnnotation
-		  (getProductPromoUse_OrderId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getProductPromoUse_PromoSequenceId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getProductPromoUse_PartyId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getProductPromoUse_ProductPromoCodeId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getProductPromoUse_ProductPromoId(),
 		   source,
 		   new String[] {
 			   "type", "id",

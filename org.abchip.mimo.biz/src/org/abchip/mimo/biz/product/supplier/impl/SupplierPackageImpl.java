@@ -1395,20 +1395,6 @@ public class SupplierPackageImpl extends EPackageImpl implements SupplierPackage
 	protected void createMimoentformatAnnotations() {
 		String source = "mimo-ent-format";
 		addAnnotation
-		  (getMarketInterest_ProductCategoryId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getMarketInterest_PartyClassificationGroupId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getMarketInterest_FromDate(),
 		   source,
 		   new String[] {
@@ -1428,38 +1414,10 @@ public class SupplierPackageImpl extends EPackageImpl implements SupplierPackage
 			   "length", "20"
 		   });
 		addAnnotation
-		  (getReorderGuideline_FacilityId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getReorderGuideline_FromDate(),
 		   source,
 		   new String[] {
 			   "type", "date-time"
-		   });
-		addAnnotation
-		  (getReorderGuideline_GeoId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getReorderGuideline_PartyId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getReorderGuideline_ProductId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
 		   });
 		addAnnotation
 		  (getReorderGuideline_ReorderLevel(),
@@ -1503,27 +1461,6 @@ public class SupplierPackageImpl extends EPackageImpl implements SupplierPackage
 		   new String[] {
 			   "type", "description",
 			   "length", "255"
-		   });
-		addAnnotation
-		  (getSupplierProduct_ProductId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getSupplierProduct_PartyId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getSupplierProduct_CurrencyUomId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
 		   });
 		addAnnotation
 		  (getSupplierProduct_AvailableFromDate(),
@@ -1590,13 +1527,6 @@ public class SupplierPackageImpl extends EPackageImpl implements SupplierPackage
 			   "scale", "6"
 		   });
 		addAnnotation
-		  (getSupplierProduct_QuantityUomId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getSupplierProduct_ShippingPrice(),
 		   source,
 		   new String[] {
@@ -1613,13 +1543,6 @@ public class SupplierPackageImpl extends EPackageImpl implements SupplierPackage
 			   "scale", "6"
 		   });
 		addAnnotation
-		  (getSupplierProduct_SupplierPrefOrderId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getSupplierProduct_SupplierProductId(),
 		   source,
 		   new String[] {
@@ -1634,33 +1557,12 @@ public class SupplierPackageImpl extends EPackageImpl implements SupplierPackage
 			   "length", "100"
 		   });
 		addAnnotation
-		  (getSupplierProduct_SupplierRatingTypeId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getSupplierProduct_UnitsIncluded(),
 		   source,
 		   new String[] {
 			   "type", "fixed-point",
 			   "precision", "18",
 			   "scale", "6"
-		   });
-		addAnnotation
-		  (getSupplierProductFeature_PartyId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getSupplierProductFeature_ProductFeatureId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
 		   });
 		addAnnotation
 		  (getSupplierProductFeature_Description(),
@@ -1671,13 +1573,6 @@ public class SupplierPackageImpl extends EPackageImpl implements SupplierPackage
 		   });
 		addAnnotation
 		  (getSupplierProductFeature_IdCode(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getSupplierProductFeature_UomId(),
 		   source,
 		   new String[] {
 			   "type", "id",

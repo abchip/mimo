@@ -95,7 +95,6 @@ public interface ProductAverageCostType extends BizEntityType<ProductAverageCost
 	 * @see #setParentTypeId(ProductAverageCostType)
 	 * @see org.abchip.mimo.biz.accounting.ledger.LedgerPackage#getProductAverageCostType_ParentTypeId()
 	 * @model keys="productAverageCostTypeId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ProductAverageCostType getParentTypeId();

@@ -123,7 +123,6 @@ public interface PortalPagePortlet extends BizEntity {
 	 * @see org.abchip.mimo.biz.common.portal.PortalPackage#getPortalPagePortlet_PortalPageId()
 	 * @model keys="portalPageId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	PortalPage getPortalPageId();
@@ -151,7 +150,6 @@ public interface PortalPagePortlet extends BizEntity {
 	 * @see org.abchip.mimo.biz.common.portal.PortalPackage#getPortalPagePortlet_PortalPortletId()
 	 * @model keys="portalPortletId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	PortalPortlet getPortalPortletId();

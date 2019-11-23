@@ -97,7 +97,6 @@ public interface ContactMechType extends BizEntityType<ContactMech> {
 	 * @see #setParentTypeId(ContactMechType)
 	 * @see org.abchip.mimo.biz.party.contact.ContactPackage#getContactMechType_ParentTypeId()
 	 * @model keys="contactMechTypeId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ContactMechType getParentTypeId();

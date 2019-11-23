@@ -71,6 +71,7 @@ import org.abchip.mimo.biz.content.survey.SurveyPackage;
 import org.abchip.mimo.biz.content.survey.impl.SurveyPackageImpl;
 import org.abchip.mimo.biz.content.website.WebsitePackage;
 import org.abchip.mimo.biz.content.website.impl.WebsitePackageImpl;
+import org.abchip.mimo.biz.entity.EntityPackage;
 import org.abchip.mimo.biz.entity.audit.AuditPackage;
 import org.abchip.mimo.biz.entity.audit.impl.AuditPackageImpl;
 import org.abchip.mimo.biz.entity.crypto.CryptoPackage;
@@ -503,8 +504,8 @@ public class AgreementPackageImpl extends EPackageImpl implements AgreementPacka
 		SurveyPackageImpl theSurveyPackage = (SurveyPackageImpl)(registeredPackage instanceof SurveyPackageImpl ? registeredPackage : SurveyPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(WebsitePackage.eNS_URI);
 		WebsitePackageImpl theWebsitePackage = (WebsitePackageImpl)(registeredPackage instanceof WebsitePackageImpl ? registeredPackage : WebsitePackage.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(org.abchip.mimo.biz.entity.EntityPackage.eNS_URI);
-		EntityPackageImpl theEntityPackage = (EntityPackageImpl)(registeredPackage instanceof EntityPackageImpl ? registeredPackage : org.abchip.mimo.biz.entity.EntityPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(EntityPackage.eNS_URI);
+		EntityPackageImpl theEntityPackage = (EntityPackageImpl)(registeredPackage instanceof EntityPackageImpl ? registeredPackage : EntityPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(AuditPackage.eNS_URI);
 		AuditPackageImpl theAuditPackage = (AuditPackageImpl)(registeredPackage instanceof AuditPackageImpl ? registeredPackage : AuditPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(CryptoPackage.eNS_URI);
@@ -2817,13 +2818,6 @@ public class AgreementPackageImpl extends EPackageImpl implements AgreementPacka
 			   "length", "255"
 		   });
 		addAnnotation
-		  (getAddendum_AgreementId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getAddendum_AgreementItemSeqId(),
 		   source,
 		   new String[] {
@@ -2879,13 +2873,6 @@ public class AgreementPackageImpl extends EPackageImpl implements AgreementPacka
 			   "length", "20"
 		   });
 		addAnnotation
-		  (getAgreement_AgreementTypeId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getAgreement_Description(),
 		   source,
 		   new String[] {
@@ -2899,41 +2886,6 @@ public class AgreementPackageImpl extends EPackageImpl implements AgreementPacka
 			   "type", "date-time"
 		   });
 		addAnnotation
-		  (getAgreement_PartyIdFrom(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getAgreement_PartyIdTo(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getAgreement_ProductId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getAgreement_RoleTypeIdFrom(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getAgreement_RoleTypeIdTo(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getAgreement_TextData(),
 		   source,
 		   new String[] {
@@ -2944,13 +2896,6 @@ public class AgreementPackageImpl extends EPackageImpl implements AgreementPacka
 		   source,
 		   new String[] {
 			   "type", "date-time"
-		   });
-		addAnnotation
-		  (getAgreementAttribute_AgreementId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
 		   });
 		addAnnotation
 		  (getAgreementAttribute_AttrName(),
@@ -2972,27 +2917,6 @@ public class AgreementPackageImpl extends EPackageImpl implements AgreementPacka
 		   new String[] {
 			   "type", "value",
 			   "length", "255"
-		   });
-		addAnnotation
-		  (getAgreementContent_AgreementId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getAgreementContent_ContentId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getAgreementContent_AgreementContentTypeId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
 		   });
 		addAnnotation
 		  (getAgreementContent_AgreementItemSeqId(),
@@ -3040,13 +2964,6 @@ public class AgreementPackageImpl extends EPackageImpl implements AgreementPacka
 		   new String[] {
 			   "type", "indicator",
 			   "length", "1"
-		   });
-		addAnnotation
-		  (getAgreementContentType_ParentTypeId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
 		   });
 		addAnnotation
 		  (getAgreementEmploymentAppl_AgreementId(),
@@ -3109,20 +3026,6 @@ public class AgreementPackageImpl extends EPackageImpl implements AgreementPacka
 			   "type", "date-time"
 		   });
 		addAnnotation
-		  (getAgreementFacilityAppl_AgreementId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getAgreementFacilityAppl_FacilityId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getAgreementFacilityAppl_AgreementItemSeqId(),
 		   source,
 		   new String[] {
@@ -3130,28 +3033,7 @@ public class AgreementPackageImpl extends EPackageImpl implements AgreementPacka
 			   "length", "20"
 		   });
 		addAnnotation
-		  (getAgreementGeographicalApplic_AgreementId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getAgreementGeographicalApplic_GeoId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getAgreementGeographicalApplic_AgreementItemSeqId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getAgreementItem_AgreementId(),
 		   source,
 		   new String[] {
 			   "type", "id",
@@ -3169,13 +3051,6 @@ public class AgreementPackageImpl extends EPackageImpl implements AgreementPacka
 		   source,
 		   new String[] {
 			   "type", "object"
-		   });
-		addAnnotation
-		  (getAgreementItem_AgreementItemTypeId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
 		   });
 		addAnnotation
 		  (getAgreementItem_AgreementText(),
@@ -3268,20 +3143,6 @@ public class AgreementPackageImpl extends EPackageImpl implements AgreementPacka
 			   "length", "1"
 		   });
 		addAnnotation
-		  (getAgreementItemType_ParentTypeId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getAgreementItemTypeAttr_AgreementItemTypeId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getAgreementItemTypeAttr_AttrName(),
 		   source,
 		   new String[] {
@@ -3296,35 +3157,7 @@ public class AgreementPackageImpl extends EPackageImpl implements AgreementPacka
 			   "length", "255"
 		   });
 		addAnnotation
-		  (getAgreementPartyApplic_AgreementId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getAgreementPartyApplic_PartyId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getAgreementPartyApplic_AgreementItemSeqId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getAgreementProductAppl_AgreementId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getAgreementProductAppl_ProductId(),
 		   source,
 		   new String[] {
 			   "type", "id",
@@ -3344,20 +3177,6 @@ public class AgreementPackageImpl extends EPackageImpl implements AgreementPacka
 			   "type", "currency-precise",
 			   "precision", "18",
 			   "scale", "3"
-		   });
-		addAnnotation
-		  (getAgreementPromoAppl_ProductPromoId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getAgreementPromoAppl_AgreementId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
 		   });
 		addAnnotation
 		  (getAgreementPromoAppl_AgreementItemSeqId(),
@@ -3387,35 +3206,7 @@ public class AgreementPackageImpl extends EPackageImpl implements AgreementPacka
 			   "type", "date-time"
 		   });
 		addAnnotation
-		  (getAgreementRole_AgreementId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getAgreementRole_PartyId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getAgreementRole_RoleTypeId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getAgreementTerm_AgreementTermId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getAgreementTerm_AgreementId(),
 		   source,
 		   new String[] {
 			   "type", "id",
@@ -3449,13 +3240,6 @@ public class AgreementPackageImpl extends EPackageImpl implements AgreementPacka
 			   "type", "date-time"
 		   });
 		addAnnotation
-		  (getAgreementTerm_InvoiceItemTypeId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getAgreementTerm_MaxQuantity(),
 		   source,
 		   new String[] {
@@ -3474,13 +3258,6 @@ public class AgreementPackageImpl extends EPackageImpl implements AgreementPacka
 			   "type", "numeric",
 			   "precision", "20",
 			   "scale", "0"
-		   });
-		addAnnotation
-		  (getAgreementTerm_TermTypeId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
 		   });
 		addAnnotation
 		  (getAgreementTerm_TermValue(),
@@ -3502,13 +3279,6 @@ public class AgreementPackageImpl extends EPackageImpl implements AgreementPacka
 		   source,
 		   new String[] {
 			   "type", "date-time"
-		   });
-		addAnnotation
-		  (getAgreementTermAttribute_AgreementTermId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
 		   });
 		addAnnotation
 		  (getAgreementTermAttribute_AttrName(),
@@ -3574,20 +3344,6 @@ public class AgreementPackageImpl extends EPackageImpl implements AgreementPacka
 			   "length", "1"
 		   });
 		addAnnotation
-		  (getAgreementType_ParentTypeId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getAgreementTypeAttr_AgreementTypeId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getAgreementTypeAttr_AttrName(),
 		   source,
 		   new String[] {
@@ -3600,20 +3356,6 @@ public class AgreementPackageImpl extends EPackageImpl implements AgreementPacka
 		   new String[] {
 			   "type", "description",
 			   "length", "255"
-		   });
-		addAnnotation
-		  (getAgreementWorkEffortApplic_AgreementId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getAgreementWorkEffortApplic_WorkEffortId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
 		   });
 		addAnnotation
 		  (getAgreementWorkEffortApplic_AgreementItemSeqId(),
@@ -3672,21 +3414,7 @@ public class AgreementPackageImpl extends EPackageImpl implements AgreementPacka
 			   "length", "1"
 		   });
 		addAnnotation
-		  (getTermType_ParentTypeId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getTermType_TermTypeAttrs(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getTermTypeAttr_TermTypeId(),
 		   source,
 		   new String[] {
 			   "type", "id",

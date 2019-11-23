@@ -109,7 +109,6 @@ public interface JobRequisition extends BizEntity {
 	 * @see #setExamTypeEnumId(Enumeration)
 	 * @see org.abchip.mimo.biz.humanres.recruitment.RecruitmentPackage#getJobRequisition_ExamTypeEnumId()
 	 * @model keys="enumId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Enumeration getExamTypeEnumId();
@@ -240,7 +239,6 @@ public interface JobRequisition extends BizEntity {
 	 * @see #setJobPostingTypeEnumId(Enumeration)
 	 * @see org.abchip.mimo.biz.humanres.recruitment.RecruitmentPackage#getJobRequisition_JobPostingTypeEnumId()
 	 * @model keys="enumId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Enumeration getJobPostingTypeEnumId();
@@ -398,7 +396,6 @@ public interface JobRequisition extends BizEntity {
 	 * @see #setSkillTypeId(SkillType)
 	 * @see org.abchip.mimo.biz.humanres.recruitment.RecruitmentPackage#getJobRequisition_SkillTypeId()
 	 * @model keys="skillTypeId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	SkillType getSkillTypeId();

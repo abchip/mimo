@@ -8,7 +8,6 @@
 package org.abchip.mimo.biz.content.data.impl;
 
 import org.abchip.mimo.biz.content.data.DataPackage;
-import org.abchip.mimo.biz.content.data.DataResource;
 import org.abchip.mimo.biz.content.data.OtherDataResource;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.eclipse.emf.ecore.EClass;
@@ -21,8 +20,8 @@ import org.eclipse.emf.ecore.EClass;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.content.data.impl.OtherDataResourceImpl#getDataResourceContent <em>Data Resource Content</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.data.impl.OtherDataResourceImpl#getDataResourceId <em>Data Resource Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.content.data.impl.OtherDataResourceImpl#getDataResourceContent <em>Data Resource Content</em>}</li>
  * </ul>
  *
  * @generated
@@ -78,8 +77,8 @@ public class OtherDataResourceImpl extends BizEntityImpl implements OtherDataRes
 	 * @generated
 	 */
 	@Override
-	public DataResource getDataResourceId() {
-		return (DataResource)eGet(DataPackage.Literals.OTHER_DATA_RESOURCE__DATA_RESOURCE_ID, true);
+	public String getDataResourceId() {
+		return (String)eGet(DataPackage.Literals.OTHER_DATA_RESOURCE__DATA_RESOURCE_ID, true);
 	}
 
 	/**
@@ -88,7 +87,7 @@ public class OtherDataResourceImpl extends BizEntityImpl implements OtherDataRes
 	 * @generated
 	 */
 	@Override
-	public void setDataResourceId(DataResource newDataResourceId) {
+	public void setDataResourceId(String newDataResourceId) {
 		eSet(DataPackage.Literals.OTHER_DATA_RESOURCE__DATA_RESOURCE_ID, newDataResourceId);
 	}
 

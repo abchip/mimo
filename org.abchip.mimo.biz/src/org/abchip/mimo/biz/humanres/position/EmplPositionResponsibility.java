@@ -72,7 +72,6 @@ public interface EmplPositionResponsibility extends BizEntity {
 	 * @see org.abchip.mimo.biz.humanres.position.PositionPackage#getEmplPositionResponsibility_EmplPositionId()
 	 * @model keys="emplPositionId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	EmplPosition getEmplPositionId();
@@ -128,7 +127,6 @@ public interface EmplPositionResponsibility extends BizEntity {
 	 * @see org.abchip.mimo.biz.humanres.position.PositionPackage#getEmplPositionResponsibility_ResponsibilityTypeId()
 	 * @model keys="responsibilityTypeId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ResponsibilityType getResponsibilityTypeId();

@@ -57,7 +57,6 @@ public interface ProductAssoc extends BizEntityTyped<ProductAssocType> {
 	 * @see #setEstimateCalcMethod(CustomMethod)
 	 * @see org.abchip.mimo.biz.product.product.ProductPackage#getProductAssoc_EstimateCalcMethod()
 	 * @model keys="customMethodId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	CustomMethod getEstimateCalcMethod();
@@ -190,7 +189,6 @@ public interface ProductAssoc extends BizEntityTyped<ProductAssocType> {
 	 * @see #setRecurrenceInfoId(RecurrenceInfo)
 	 * @see org.abchip.mimo.biz.product.product.ProductPackage#getProductAssoc_RecurrenceInfoId()
 	 * @model keys="recurrenceInfoId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	RecurrenceInfo getRecurrenceInfoId();
@@ -217,7 +215,6 @@ public interface ProductAssoc extends BizEntityTyped<ProductAssocType> {
 	 * @see #setRoutingWorkEffortId(WorkEffort)
 	 * @see org.abchip.mimo.biz.product.product.ProductPackage#getProductAssoc_RoutingWorkEffortId()
 	 * @model keys="workEffortId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	WorkEffort getRoutingWorkEffortId();
@@ -323,7 +320,6 @@ public interface ProductAssoc extends BizEntityTyped<ProductAssocType> {
 	 * @see org.abchip.mimo.biz.product.product.ProductPackage#getProductAssoc_ProductAssocTypeId()
 	 * @model keys="productAssocTypeId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ProductAssocType getProductAssocTypeId();
@@ -351,7 +347,6 @@ public interface ProductAssoc extends BizEntityTyped<ProductAssocType> {
 	 * @see org.abchip.mimo.biz.product.product.ProductPackage#getProductAssoc_ProductId()
 	 * @model keys="productId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Product getProductId();
@@ -379,7 +374,6 @@ public interface ProductAssoc extends BizEntityTyped<ProductAssocType> {
 	 * @see org.abchip.mimo.biz.product.product.ProductPackage#getProductAssoc_ProductIdTo()
 	 * @model keys="productId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Product getProductIdTo();

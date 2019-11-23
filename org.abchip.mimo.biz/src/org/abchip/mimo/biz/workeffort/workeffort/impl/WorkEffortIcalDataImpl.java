@@ -8,7 +8,6 @@
 package org.abchip.mimo.biz.workeffort.workeffort.impl;
 
 import org.abchip.mimo.biz.impl.BizEntityImpl;
-import org.abchip.mimo.biz.workeffort.workeffort.WorkEffort;
 import org.abchip.mimo.biz.workeffort.workeffort.WorkEffortIcalData;
 import org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage;
 import org.eclipse.emf.ecore.EClass;
@@ -21,8 +20,8 @@ import org.eclipse.emf.ecore.EClass;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortIcalDataImpl#getIcalData <em>Ical Data</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortIcalDataImpl#getWorkEffortId <em>Work Effort Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortIcalDataImpl#getIcalData <em>Ical Data</em>}</li>
  * </ul>
  *
  * @generated
@@ -78,8 +77,8 @@ public class WorkEffortIcalDataImpl extends BizEntityImpl implements WorkEffortI
 	 * @generated
 	 */
 	@Override
-	public WorkEffort getWorkEffortId() {
-		return (WorkEffort)eGet(WorkeffortPackage.Literals.WORK_EFFORT_ICAL_DATA__WORK_EFFORT_ID, true);
+	public String getWorkEffortId() {
+		return (String)eGet(WorkeffortPackage.Literals.WORK_EFFORT_ICAL_DATA__WORK_EFFORT_ID, true);
 	}
 
 	/**
@@ -88,7 +87,7 @@ public class WorkEffortIcalDataImpl extends BizEntityImpl implements WorkEffortI
 	 * @generated
 	 */
 	@Override
-	public void setWorkEffortId(WorkEffort newWorkEffortId) {
+	public void setWorkEffortId(String newWorkEffortId) {
 		eSet(WorkeffortPackage.Literals.WORK_EFFORT_ICAL_DATA__WORK_EFFORT_ID, newWorkEffortId);
 	}
 

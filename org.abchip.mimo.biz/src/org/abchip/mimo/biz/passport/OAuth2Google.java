@@ -49,7 +49,6 @@ public interface OAuth2Google extends BizEntity {
 	 * @see org.abchip.mimo.biz.passport.PassportPackage#getOAuth2Google_ProductStoreId()
 	 * @model keys="productStoreId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ProductStore getProductStoreId();

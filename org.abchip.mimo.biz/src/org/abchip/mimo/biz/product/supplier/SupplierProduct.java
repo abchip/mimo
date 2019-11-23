@@ -223,7 +223,6 @@ public interface SupplierProduct extends BizEntity {
 	 * @see org.abchip.mimo.biz.product.supplier.SupplierPackage#getSupplierProduct_CurrencyUomId()
 	 * @model keys="uomId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Uom getCurrencyUomId();
@@ -331,7 +330,6 @@ public interface SupplierProduct extends BizEntity {
 	 * @see org.abchip.mimo.biz.product.supplier.SupplierPackage#getSupplierProduct_PartyId()
 	 * @model keys="partyId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Party getPartyId();
@@ -358,7 +356,6 @@ public interface SupplierProduct extends BizEntity {
 	 * @see #setQuantityUomId(Uom)
 	 * @see org.abchip.mimo.biz.product.supplier.SupplierPackage#getSupplierProduct_QuantityUomId()
 	 * @model keys="uomId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Uom getQuantityUomId();
@@ -516,7 +513,6 @@ public interface SupplierProduct extends BizEntity {
 	 * @see org.abchip.mimo.biz.product.supplier.SupplierPackage#getSupplierProduct_ProductId()
 	 * @model keys="productId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Product getProductId();
@@ -543,7 +539,6 @@ public interface SupplierProduct extends BizEntity {
 	 * @see #setSupplierPrefOrderId(SupplierPrefOrder)
 	 * @see org.abchip.mimo.biz.product.supplier.SupplierPackage#getSupplierProduct_SupplierPrefOrderId()
 	 * @model keys="supplierPrefOrderId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	SupplierPrefOrder getSupplierPrefOrderId();
@@ -570,7 +565,6 @@ public interface SupplierProduct extends BizEntity {
 	 * @see #setSupplierRatingTypeId(SupplierRatingType)
 	 * @see org.abchip.mimo.biz.product.supplier.SupplierPackage#getSupplierProduct_SupplierRatingTypeId()
 	 * @model keys="supplierRatingTypeId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	SupplierRatingType getSupplierRatingTypeId();

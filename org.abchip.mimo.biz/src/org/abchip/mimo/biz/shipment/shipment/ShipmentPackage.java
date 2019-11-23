@@ -52,7 +52,6 @@ public interface ShipmentPackage extends BizEntity {
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipmentPackage_ShipmentId()
 	 * @model keys="shipmentId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Shipment getShipmentId();
@@ -215,7 +214,6 @@ public interface ShipmentPackage extends BizEntity {
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipmentPackage_DimensionUomId()
 	 * @model keys="uomId"
 	 *        annotation="mimo-ent-slot help='This field store the unit of measurement of dimension (length, width and height)'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Uom getDimensionUomId();
@@ -268,7 +266,6 @@ public interface ShipmentPackage extends BizEntity {
 	 * @see #setShipmentBoxTypeId(ShipmentBoxType)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipmentPackage_ShipmentBoxTypeId()
 	 * @model keys="shipmentBoxTypeId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ShipmentBoxType getShipmentBoxTypeId();
@@ -321,7 +318,6 @@ public interface ShipmentPackage extends BizEntity {
 	 * @see #setWeightUomId(Uom)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipmentPackage_WeightUomId()
 	 * @model keys="uomId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Uom getWeightUomId();

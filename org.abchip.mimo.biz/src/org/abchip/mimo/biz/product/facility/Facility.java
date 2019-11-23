@@ -121,7 +121,6 @@ public interface Facility extends BizEntityTyped<FacilityType> {
 	 * @see org.abchip.mimo.biz.product.facility.FacilityPackage#getFacility_DefaultDimensionUomId()
 	 * @model keys="uomId"
 	 *        annotation="mimo-ent-slot help='This field store the unit of measurement of dimension (length, width and height)'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Uom getDefaultDimensionUomId();
@@ -148,7 +147,6 @@ public interface Facility extends BizEntityTyped<FacilityType> {
 	 * @see #setDefaultInventoryItemTypeId(InventoryItemType)
 	 * @see org.abchip.mimo.biz.product.facility.FacilityPackage#getFacility_DefaultInventoryItemTypeId()
 	 * @model keys="inventoryItemTypeId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	InventoryItemType getDefaultInventoryItemTypeId();
@@ -175,7 +173,6 @@ public interface Facility extends BizEntityTyped<FacilityType> {
 	 * @see #setDefaultWeightUomId(Uom)
 	 * @see org.abchip.mimo.biz.product.facility.FacilityPackage#getFacility_DefaultWeightUomId()
 	 * @model keys="uomId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Uom getDefaultWeightUomId();
@@ -280,7 +277,6 @@ public interface Facility extends BizEntityTyped<FacilityType> {
 	 * @see #setFacilitySizeUomId(Uom)
 	 * @see org.abchip.mimo.biz.product.facility.FacilityPackage#getFacility_FacilitySizeUomId()
 	 * @model keys="uomId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Uom getFacilitySizeUomId();
@@ -307,7 +303,6 @@ public interface Facility extends BizEntityTyped<FacilityType> {
 	 * @see #setGeoPointId(GeoPoint)
 	 * @see org.abchip.mimo.biz.product.facility.FacilityPackage#getFacility_GeoPointId()
 	 * @model keys="geoPointId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	GeoPoint getGeoPointId();
@@ -386,7 +381,6 @@ public interface Facility extends BizEntityTyped<FacilityType> {
 	 * @see #setOwnerPartyId(Party)
 	 * @see org.abchip.mimo.biz.product.facility.FacilityPackage#getFacility_OwnerPartyId()
 	 * @model keys="partyId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Party getOwnerPartyId();
@@ -413,7 +407,6 @@ public interface Facility extends BizEntityTyped<FacilityType> {
 	 * @see #setProductStoreId(ProductStore)
 	 * @see org.abchip.mimo.biz.product.facility.FacilityPackage#getFacility_ProductStoreId()
 	 * @model keys="productStoreId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ProductStore getProductStoreId();
@@ -686,7 +679,6 @@ public interface Facility extends BizEntityTyped<FacilityType> {
 	 * @see #setParentFacilityId(Facility)
 	 * @see org.abchip.mimo.biz.product.facility.FacilityPackage#getFacility_ParentFacilityId()
 	 * @model keys="facilityId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Facility getParentFacilityId();
@@ -713,7 +705,6 @@ public interface Facility extends BizEntityTyped<FacilityType> {
 	 * @see #setPrimaryFacilityGroupId(FacilityGroup)
 	 * @see org.abchip.mimo.biz.product.facility.FacilityPackage#getFacility_PrimaryFacilityGroupId()
 	 * @model keys="facilityGroupId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	FacilityGroup getPrimaryFacilityGroupId();
@@ -740,7 +731,6 @@ public interface Facility extends BizEntityTyped<FacilityType> {
 	 * @see #setFacilityTypeId(FacilityType)
 	 * @see org.abchip.mimo.biz.product.facility.FacilityPackage#getFacility_FacilityTypeId()
 	 * @model keys="facilityTypeId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	FacilityType getFacilityTypeId();

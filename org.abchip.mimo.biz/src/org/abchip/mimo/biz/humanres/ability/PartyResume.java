@@ -46,7 +46,6 @@ public interface PartyResume extends BizEntity {
 	 * @see #setContentId(Content)
 	 * @see org.abchip.mimo.biz.humanres.ability.AbilityPackage#getPartyResume_ContentId()
 	 * @model keys="contentId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Content getContentId();
@@ -73,7 +72,6 @@ public interface PartyResume extends BizEntity {
 	 * @see #setPartyId(Party)
 	 * @see org.abchip.mimo.biz.humanres.ability.AbilityPackage#getPartyResume_PartyId()
 	 * @model keys="partyId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Party getPartyId();

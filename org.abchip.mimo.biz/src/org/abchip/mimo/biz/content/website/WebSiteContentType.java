@@ -95,7 +95,6 @@ public interface WebSiteContentType extends BizEntityType<WebSiteContent> {
 	 * @see #setParentTypeId(WebSiteContentType)
 	 * @see org.abchip.mimo.biz.content.website.WebsitePackage#getWebSiteContentType_ParentTypeId()
 	 * @model keys="webSiteContentTypeId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	WebSiteContentType getParentTypeId();

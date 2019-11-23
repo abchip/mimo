@@ -96,7 +96,6 @@ public interface RequirementType extends BizEntityType<Requirement> {
 	 * @see #setParentTypeId(RequirementType)
 	 * @see org.abchip.mimo.biz.order.requirement.RequirementPackage#getRequirementType_ParentTypeId()
 	 * @model keys="requirementTypeId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	RequirementType getParentTypeId();

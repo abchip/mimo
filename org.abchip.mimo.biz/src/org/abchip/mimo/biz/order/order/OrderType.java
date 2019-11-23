@@ -123,7 +123,6 @@ public interface OrderType extends BizEntityType<OrderHeader> {
 	 * @see #setParentTypeId(OrderType)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderType_ParentTypeId()
 	 * @model keys="orderTypeId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	OrderType getParentTypeId();

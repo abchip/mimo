@@ -95,7 +95,6 @@ public interface QuoteTypeAttr extends BizEntity {
 	 * @see org.abchip.mimo.biz.order.quote.QuotePackage#getQuoteTypeAttr_QuoteTypeId()
 	 * @model keys="quoteTypeId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	QuoteType getQuoteTypeId();

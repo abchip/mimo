@@ -95,7 +95,6 @@ public interface InvoiceItemAssocType extends BizEntityType<InvoiceItemAssoc> {
 	 * @see #setParentTypeId(InvoiceItemAssocType)
 	 * @see org.abchip.mimo.biz.accounting.invoice.InvoicePackage#getInvoiceItemAssocType_ParentTypeId()
 	 * @model keys="invoiceItemAssocTypeId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	InvoiceItemAssocType getParentTypeId();

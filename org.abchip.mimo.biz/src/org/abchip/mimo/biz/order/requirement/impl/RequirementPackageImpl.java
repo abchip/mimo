@@ -71,6 +71,7 @@ import org.abchip.mimo.biz.content.survey.SurveyPackage;
 import org.abchip.mimo.biz.content.survey.impl.SurveyPackageImpl;
 import org.abchip.mimo.biz.content.website.WebsitePackage;
 import org.abchip.mimo.biz.content.website.impl.WebsitePackageImpl;
+import org.abchip.mimo.biz.entity.EntityPackage;
 import org.abchip.mimo.biz.entity.audit.AuditPackage;
 import org.abchip.mimo.biz.entity.audit.impl.AuditPackageImpl;
 import org.abchip.mimo.biz.entity.crypto.CryptoPackage;
@@ -415,8 +416,8 @@ public class RequirementPackageImpl extends EPackageImpl implements RequirementP
 		SurveyPackageImpl theSurveyPackage = (SurveyPackageImpl)(registeredPackage instanceof SurveyPackageImpl ? registeredPackage : SurveyPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(WebsitePackage.eNS_URI);
 		WebsitePackageImpl theWebsitePackage = (WebsitePackageImpl)(registeredPackage instanceof WebsitePackageImpl ? registeredPackage : WebsitePackage.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(org.abchip.mimo.biz.entity.EntityPackage.eNS_URI);
-		EntityPackageImpl theEntityPackage = (EntityPackageImpl)(registeredPackage instanceof EntityPackageImpl ? registeredPackage : org.abchip.mimo.biz.entity.EntityPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(EntityPackage.eNS_URI);
+		EntityPackageImpl theEntityPackage = (EntityPackageImpl)(registeredPackage instanceof EntityPackageImpl ? registeredPackage : EntityPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(AuditPackage.eNS_URI);
 		AuditPackageImpl theAuditPackage = (AuditPackageImpl)(registeredPackage instanceof AuditPackageImpl ? registeredPackage : AuditPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(CryptoPackage.eNS_URI);
@@ -1797,13 +1798,6 @@ public class RequirementPackageImpl extends EPackageImpl implements RequirementP
 	protected void createMimoentformatAnnotations() {
 		String source = "mimo-ent-format";
 		addAnnotation
-		  (getDesiredFeature_RequirementId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getDesiredFeature_DesiredFeatureId(),
 		   source,
 		   new String[] {
@@ -1816,27 +1810,6 @@ public class RequirementPackageImpl extends EPackageImpl implements RequirementP
 		   new String[] {
 			   "type", "indicator",
 			   "length", "1"
-		   });
-		addAnnotation
-		  (getDesiredFeature_ProductFeatureId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getOrderRequirementCommitment_OrderId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getOrderRequirementCommitment_RequirementId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
 		   });
 		addAnnotation
 		  (getOrderRequirementCommitment_OrderItemSeqId(),
@@ -1881,13 +1854,6 @@ public class RequirementPackageImpl extends EPackageImpl implements RequirementP
 			   "type", "date-time"
 		   });
 		addAnnotation
-		  (getRequirement_DeliverableId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getRequirement_Description(),
 		   source,
 		   new String[] {
@@ -1903,20 +1869,6 @@ public class RequirementPackageImpl extends EPackageImpl implements RequirementP
 			   "scale", "2"
 		   });
 		addAnnotation
-		  (getRequirement_FacilityId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getRequirement_FixedAssetId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getRequirement_LastModifiedByUserLogin(),
 		   source,
 		   new String[] {
@@ -1928,13 +1880,6 @@ public class RequirementPackageImpl extends EPackageImpl implements RequirementP
 		   source,
 		   new String[] {
 			   "type", "date-time"
-		   });
-		addAnnotation
-		  (getRequirement_ProductId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
 		   });
 		addAnnotation
 		  (getRequirement_Quantity(),
@@ -1978,20 +1923,6 @@ public class RequirementPackageImpl extends EPackageImpl implements RequirementP
 			   "length", "20"
 		   });
 		addAnnotation
-		  (getRequirement_RequirementTypeId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getRequirement_StatusId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getRequirement_UseCase(),
 		   source,
 		   new String[] {
@@ -1999,13 +1930,6 @@ public class RequirementPackageImpl extends EPackageImpl implements RequirementP
 		   });
 		addAnnotation
 		  (getRequirement_WorkRequirementFulfillments(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getRequirementAttribute_RequirementId(),
 		   source,
 		   new String[] {
 			   "type", "id",
@@ -2033,20 +1957,6 @@ public class RequirementPackageImpl extends EPackageImpl implements RequirementP
 			   "length", "255"
 		   });
 		addAnnotation
-		  (getRequirementBudgetAllocation_BudgetId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getRequirementBudgetAllocation_RequirementId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getRequirementBudgetAllocation_BudgetItemSeqId(),
 		   source,
 		   new String[] {
@@ -2062,35 +1972,7 @@ public class RequirementPackageImpl extends EPackageImpl implements RequirementP
 			   "scale", "2"
 		   });
 		addAnnotation
-		  (getRequirementCustRequest_CustRequestId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getRequirementCustRequest_RequirementId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getRequirementCustRequest_CustRequestItemSeqId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getRequirementRole_RequirementId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getRequirementRole_PartyId(),
 		   source,
 		   new String[] {
 			   "type", "id",
@@ -2114,27 +1996,6 @@ public class RequirementPackageImpl extends EPackageImpl implements RequirementP
 		   source,
 		   new String[] {
 			   "type", "date-time"
-		   });
-		addAnnotation
-		  (getRequirementStatus_RequirementId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getRequirementStatus_StatusId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getRequirementStatus_ChangeByUserLoginId(),
-		   source,
-		   new String[] {
-			   "type", "id-vlong",
-			   "length", "255"
 		   });
 		addAnnotation
 		  (getRequirementStatus_StatusDate(),
@@ -2178,21 +2039,7 @@ public class RequirementPackageImpl extends EPackageImpl implements RequirementP
 			   "length", "1"
 		   });
 		addAnnotation
-		  (getRequirementType_ParentTypeId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getRequirementType_RequirementTypeAttrs(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getRequirementTypeAttr_RequirementTypeId(),
 		   source,
 		   new String[] {
 			   "type", "id",
@@ -2232,27 +2079,6 @@ public class RequirementPackageImpl extends EPackageImpl implements RequirementP
 		   new String[] {
 			   "type", "description",
 			   "length", "255"
-		   });
-		addAnnotation
-		  (getWorkRequirementFulfillment_RequirementId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getWorkRequirementFulfillment_WorkEffortId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getWorkRequirementFulfillment_WorkReqFulfTypeId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
 		   });
 	}
 

@@ -130,7 +130,6 @@ public interface PaymentApplication extends BizEntity {
 	 * @see #setTaxAuthGeoId(Geo)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPaymentApplication_TaxAuthGeoId()
 	 * @model keys="geoId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Geo getTaxAuthGeoId();
@@ -157,7 +156,6 @@ public interface PaymentApplication extends BizEntity {
 	 * @see #setPaymentId(Payment)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPaymentApplication_PaymentId()
 	 * @model keys="paymentId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Payment getPaymentId();
@@ -184,7 +182,6 @@ public interface PaymentApplication extends BizEntity {
 	 * @see #setInvoiceId(Invoice)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPaymentApplication_InvoiceId()
 	 * @model keys="invoiceId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Invoice getInvoiceId();
@@ -211,7 +208,6 @@ public interface PaymentApplication extends BizEntity {
 	 * @see #setBillingAccountId(BillingAccount)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPaymentApplication_BillingAccountId()
 	 * @model keys="billingAccountId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	BillingAccount getBillingAccountId();
@@ -238,7 +234,6 @@ public interface PaymentApplication extends BizEntity {
 	 * @see #setToPaymentId(Payment)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPaymentApplication_ToPaymentId()
 	 * @model keys="paymentId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Payment getToPaymentId();
@@ -266,7 +261,6 @@ public interface PaymentApplication extends BizEntity {
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPaymentApplication_OverrideGlAccountId()
 	 * @model keys="glAccountId"
 	 *        annotation="mimo-ent-slot help='If filled in, payment is applied directly against this GL account'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	GlAccount getOverrideGlAccountId();

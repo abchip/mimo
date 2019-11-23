@@ -186,7 +186,6 @@ public interface CreditCard extends PaymentMethod {
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getCreditCard_ContactMechId()
 	 * @model keys="contactMechId"
 	 *        annotation="mimo-ent-slot help='The Billing PostalAddress'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ContactMech getContactMechId();

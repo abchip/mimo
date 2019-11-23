@@ -7,7 +7,6 @@
  */
 package org.abchip.mimo.biz.content.website.impl;
 
-import org.abchip.mimo.biz.content.content.Content;
 import org.abchip.mimo.biz.content.website.WebSitePublishPoint;
 import org.abchip.mimo.biz.content.website.WebsitePackage;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
@@ -21,9 +20,9 @@ import org.eclipse.emf.ecore.EClass;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link org.abchip.mimo.biz.content.website.impl.WebSitePublishPointImpl#getContentId <em>Content Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.website.impl.WebSitePublishPointImpl#getAboutContentId <em>About Content Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.website.impl.WebSitePublishPointImpl#getContentDept <em>Content Dept</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.content.website.impl.WebSitePublishPointImpl#getContentId <em>Content Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.website.impl.WebSitePublishPointImpl#getLeftBarId <em>Left Bar Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.website.impl.WebSitePublishPointImpl#getLineLogo <em>Line Logo</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.website.impl.WebSitePublishPointImpl#getLogo <em>Logo</em>}</li>
@@ -106,8 +105,8 @@ public class WebSitePublishPointImpl extends BizEntityImpl implements WebSitePub
 	 * @generated
 	 */
 	@Override
-	public Content getContentId() {
-		return (Content)eGet(WebsitePackage.Literals.WEB_SITE_PUBLISH_POINT__CONTENT_ID, true);
+	public String getContentId() {
+		return (String)eGet(WebsitePackage.Literals.WEB_SITE_PUBLISH_POINT__CONTENT_ID, true);
 	}
 
 	/**
@@ -116,7 +115,7 @@ public class WebSitePublishPointImpl extends BizEntityImpl implements WebSitePub
 	 * @generated
 	 */
 	@Override
-	public void setContentId(Content newContentId) {
+	public void setContentId(String newContentId) {
 		eSet(WebsitePackage.Literals.WEB_SITE_PUBLISH_POINT__CONTENT_ID, newContentId);
 	}
 

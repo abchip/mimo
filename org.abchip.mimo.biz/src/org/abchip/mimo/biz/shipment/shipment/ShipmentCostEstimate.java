@@ -177,7 +177,6 @@ public interface ShipmentCostEstimate extends BizEntity {
 	 * @see #setGeoIdFrom(Geo)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipmentCostEstimate_GeoIdFrom()
 	 * @model keys="geoId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Geo getGeoIdFrom();
@@ -204,7 +203,6 @@ public interface ShipmentCostEstimate extends BizEntity {
 	 * @see #setGeoIdTo(Geo)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipmentCostEstimate_GeoIdTo()
 	 * @model keys="geoId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Geo getGeoIdTo();
@@ -361,7 +359,6 @@ public interface ShipmentCostEstimate extends BizEntity {
 	 * @see #setPartyId(Party)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipmentCostEstimate_PartyId()
 	 * @model keys="partyId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Party getPartyId();
@@ -388,7 +385,6 @@ public interface ShipmentCostEstimate extends BizEntity {
 	 * @see #setPriceBreakId(QuantityBreak)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipmentCostEstimate_PriceBreakId()
 	 * @model keys="quantityBreakId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	QuantityBreak getPriceBreakId();
@@ -441,7 +437,6 @@ public interface ShipmentCostEstimate extends BizEntity {
 	 * @see #setPriceUomId(Uom)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipmentCostEstimate_PriceUomId()
 	 * @model keys="uomId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Uom getPriceUomId();
@@ -520,7 +515,6 @@ public interface ShipmentCostEstimate extends BizEntity {
 	 * @see #setProductStoreShipMethId(ProductStoreShipmentMeth)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipmentCostEstimate_ProductStoreShipMethId()
 	 * @model keys="productStoreShipMethId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ProductStoreShipmentMeth getProductStoreShipMethId();
@@ -547,7 +541,6 @@ public interface ShipmentCostEstimate extends BizEntity {
 	 * @see #setQuantityBreakId(QuantityBreak)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipmentCostEstimate_QuantityBreakId()
 	 * @model keys="quantityBreakId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	QuantityBreak getQuantityBreakId();
@@ -600,7 +593,6 @@ public interface ShipmentCostEstimate extends BizEntity {
 	 * @see #setQuantityUomId(Uom)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipmentCostEstimate_QuantityUomId()
 	 * @model keys="uomId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Uom getQuantityUomId();
@@ -627,7 +619,6 @@ public interface ShipmentCostEstimate extends BizEntity {
 	 * @see #setRoleTypeId(RoleType)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipmentCostEstimate_RoleTypeId()
 	 * @model keys="roleTypeId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	RoleType getRoleTypeId();
@@ -733,7 +724,6 @@ public interface ShipmentCostEstimate extends BizEntity {
 	 * @see #setWeightBreakId(QuantityBreak)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipmentCostEstimate_WeightBreakId()
 	 * @model keys="quantityBreakId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	QuantityBreak getWeightBreakId();
@@ -786,7 +776,6 @@ public interface ShipmentCostEstimate extends BizEntity {
 	 * @see #setWeightUomId(Uom)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipmentCostEstimate_WeightUomId()
 	 * @model keys="uomId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Uom getWeightUomId();

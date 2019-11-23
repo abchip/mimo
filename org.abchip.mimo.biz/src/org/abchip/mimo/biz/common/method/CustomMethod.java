@@ -221,7 +221,6 @@ public interface CustomMethod extends BizEntityTyped<CustomMethodType> {
 	 * @see #setCustomMethodTypeId(CustomMethodType)
 	 * @see org.abchip.mimo.biz.common.method.MethodPackage#getCustomMethod_CustomMethodTypeId()
 	 * @model keys="customMethodTypeId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	CustomMethodType getCustomMethodTypeId();

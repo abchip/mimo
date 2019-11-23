@@ -206,7 +206,6 @@ public interface EmailTemplateSetting extends BizEntity {
 	 * @see #setEmailType(Enumeration)
 	 * @see org.abchip.mimo.biz.common.email.EmailPackage#getEmailTemplateSetting_EmailType()
 	 * @model keys="enumId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Enumeration getEmailType();

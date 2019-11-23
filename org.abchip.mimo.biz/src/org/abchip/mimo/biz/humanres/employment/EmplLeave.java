@@ -49,7 +49,6 @@ public interface EmplLeave extends BizEntityTyped<EmplLeaveType> {
 	 * @see #setApproverPartyId(Party)
 	 * @see org.abchip.mimo.biz.humanres.employment.EmploymentPackage#getEmplLeave_ApproverPartyId()
 	 * @model keys="partyId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Party getApproverPartyId();
@@ -102,7 +101,6 @@ public interface EmplLeave extends BizEntityTyped<EmplLeaveType> {
 	 * @see #setEmplLeaveReasonTypeId(EmplLeaveReasonType)
 	 * @see org.abchip.mimo.biz.humanres.employment.EmploymentPackage#getEmplLeave_EmplLeaveReasonTypeId()
 	 * @model keys="emplLeaveReasonTypeId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	EmplLeaveReasonType getEmplLeaveReasonTypeId();
@@ -157,7 +155,6 @@ public interface EmplLeave extends BizEntityTyped<EmplLeaveType> {
 	 * @see #setLeaveStatus(StatusItem)
 	 * @see org.abchip.mimo.biz.humanres.employment.EmploymentPackage#getEmplLeave_LeaveStatus()
 	 * @model keys="statusId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	StatusItem getLeaveStatus();
@@ -185,7 +182,6 @@ public interface EmplLeave extends BizEntityTyped<EmplLeaveType> {
 	 * @see org.abchip.mimo.biz.humanres.employment.EmploymentPackage#getEmplLeave_LeaveTypeId()
 	 * @model keys="leaveTypeId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	EmplLeaveType getLeaveTypeId();
@@ -213,7 +209,6 @@ public interface EmplLeave extends BizEntityTyped<EmplLeaveType> {
 	 * @see org.abchip.mimo.biz.humanres.employment.EmploymentPackage#getEmplLeave_PartyId()
 	 * @model keys="partyId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Party getPartyId();

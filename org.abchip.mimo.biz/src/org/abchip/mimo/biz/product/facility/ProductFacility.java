@@ -128,7 +128,6 @@ public interface ProductFacility extends BizEntity {
 	 * @see org.abchip.mimo.biz.product.facility.FacilityPackage#getProductFacility_ProductId()
 	 * @model keys="productId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Product getProductId();
@@ -181,7 +180,6 @@ public interface ProductFacility extends BizEntity {
 	 * @see #setRequirementMethodEnumId(Enumeration)
 	 * @see org.abchip.mimo.biz.product.facility.FacilityPackage#getProductFacility_RequirementMethodEnumId()
 	 * @model keys="enumId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Enumeration getRequirementMethodEnumId();
@@ -209,7 +207,6 @@ public interface ProductFacility extends BizEntity {
 	 * @see org.abchip.mimo.biz.product.facility.FacilityPackage#getProductFacility_FacilityId()
 	 * @model keys="facilityId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Facility getFacilityId();

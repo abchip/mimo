@@ -135,7 +135,6 @@ public interface Agreement extends BizEntityTyped<AgreementType> {
 	 * @see #setPartyIdFrom(Party)
 	 * @see org.abchip.mimo.biz.party.agreement.AgreementPackage#getAgreement_PartyIdFrom()
 	 * @model keys="partyId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Party getPartyIdFrom();
@@ -162,7 +161,6 @@ public interface Agreement extends BizEntityTyped<AgreementType> {
 	 * @see #setPartyIdTo(Party)
 	 * @see org.abchip.mimo.biz.party.agreement.AgreementPackage#getAgreement_PartyIdTo()
 	 * @model keys="partyId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Party getPartyIdTo();
@@ -189,7 +187,6 @@ public interface Agreement extends BizEntityTyped<AgreementType> {
 	 * @see #setProductId(Product)
 	 * @see org.abchip.mimo.biz.party.agreement.AgreementPackage#getAgreement_ProductId()
 	 * @model keys="productId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Product getProductId();
@@ -216,7 +213,6 @@ public interface Agreement extends BizEntityTyped<AgreementType> {
 	 * @see #setRoleTypeIdFrom(RoleType)
 	 * @see org.abchip.mimo.biz.party.agreement.AgreementPackage#getAgreement_RoleTypeIdFrom()
 	 * @model keys="roleTypeId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	RoleType getRoleTypeIdFrom();
@@ -243,7 +239,6 @@ public interface Agreement extends BizEntityTyped<AgreementType> {
 	 * @see #setRoleTypeIdTo(RoleType)
 	 * @see org.abchip.mimo.biz.party.agreement.AgreementPackage#getAgreement_RoleTypeIdTo()
 	 * @model keys="roleTypeId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	RoleType getRoleTypeIdTo();
@@ -388,7 +383,6 @@ public interface Agreement extends BizEntityTyped<AgreementType> {
 	 * @see #setAgreementTypeId(AgreementType)
 	 * @see org.abchip.mimo.biz.party.agreement.AgreementPackage#getAgreement_AgreementTypeId()
 	 * @model keys="agreementTypeId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	AgreementType getAgreementTypeId();

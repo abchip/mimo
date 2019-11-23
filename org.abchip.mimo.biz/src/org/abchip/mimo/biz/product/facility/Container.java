@@ -69,7 +69,6 @@ public interface Container extends BizEntityTyped<ContainerType> {
 	 * @see #setContainerTypeId(ContainerType)
 	 * @see org.abchip.mimo.biz.product.facility.FacilityPackage#getContainer_ContainerTypeId()
 	 * @model keys="containerTypeId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ContainerType getContainerTypeId();
@@ -96,7 +95,6 @@ public interface Container extends BizEntityTyped<ContainerType> {
 	 * @see #setFacilityId(Facility)
 	 * @see org.abchip.mimo.biz.product.facility.FacilityPackage#getContainer_FacilityId()
 	 * @model keys="facilityId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Facility getFacilityId();

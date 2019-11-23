@@ -46,7 +46,6 @@ public interface PaymentContent extends BizEntityTyped<PaymentContentType> {
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPaymentContent_ContentId()
 	 * @model keys="contentId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Content getContentId();
@@ -128,7 +127,6 @@ public interface PaymentContent extends BizEntityTyped<PaymentContentType> {
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPaymentContent_PaymentId()
 	 * @model keys="paymentId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Payment getPaymentId();
@@ -156,7 +154,6 @@ public interface PaymentContent extends BizEntityTyped<PaymentContentType> {
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPaymentContent_PaymentContentTypeId()
 	 * @model keys="paymentContentTypeId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	PaymentContentType getPaymentContentTypeId();

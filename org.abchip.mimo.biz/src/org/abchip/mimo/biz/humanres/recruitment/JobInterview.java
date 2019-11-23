@@ -49,7 +49,6 @@ public interface JobInterview extends BizEntityTyped<JobInterviewType> {
 	 * @see #setGradeSecuredEnumId(Enumeration)
 	 * @see org.abchip.mimo.biz.humanres.recruitment.RecruitmentPackage#getJobInterview_GradeSecuredEnumId()
 	 * @model keys="enumId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Enumeration getGradeSecuredEnumId();
@@ -155,7 +154,6 @@ public interface JobInterview extends BizEntityTyped<JobInterviewType> {
 	 * @see #setJobInterviewTypeId(JobInterviewType)
 	 * @see org.abchip.mimo.biz.humanres.recruitment.RecruitmentPackage#getJobInterview_JobInterviewTypeId()
 	 * @model keys="jobInterviewTypeId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	JobInterviewType getJobInterviewTypeId();
@@ -182,7 +180,6 @@ public interface JobInterview extends BizEntityTyped<JobInterviewType> {
 	 * @see #setJobIntervieweePartyId(Party)
 	 * @see org.abchip.mimo.biz.humanres.recruitment.RecruitmentPackage#getJobInterview_JobIntervieweePartyId()
 	 * @model keys="partyId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Party getJobIntervieweePartyId();
@@ -209,7 +206,6 @@ public interface JobInterview extends BizEntityTyped<JobInterviewType> {
 	 * @see #setJobInterviewerPartyId(Party)
 	 * @see org.abchip.mimo.biz.humanres.recruitment.RecruitmentPackage#getJobInterview_JobInterviewerPartyId()
 	 * @model keys="partyId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Party getJobInterviewerPartyId();
@@ -236,7 +232,6 @@ public interface JobInterview extends BizEntityTyped<JobInterviewType> {
 	 * @see #setJobRequisitionId(JobRequisition)
 	 * @see org.abchip.mimo.biz.humanres.recruitment.RecruitmentPackage#getJobInterview_JobRequisitionId()
 	 * @model keys="jobRequisitionId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	JobRequisition getJobRequisitionId();

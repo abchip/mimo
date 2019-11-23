@@ -71,6 +71,7 @@ import org.abchip.mimo.biz.content.survey.SurveyPackage;
 import org.abchip.mimo.biz.content.survey.impl.SurveyPackageImpl;
 import org.abchip.mimo.biz.content.website.WebsitePackage;
 import org.abchip.mimo.biz.content.website.impl.WebsitePackageImpl;
+import org.abchip.mimo.biz.entity.EntityPackage;
 import org.abchip.mimo.biz.entity.audit.AuditPackage;
 import org.abchip.mimo.biz.entity.audit.impl.AuditPackageImpl;
 import org.abchip.mimo.biz.entity.crypto.CryptoPackage;
@@ -406,8 +407,8 @@ public class OpportunityPackageImpl extends EPackageImpl implements OpportunityP
 		SurveyPackageImpl theSurveyPackage = (SurveyPackageImpl)(registeredPackage instanceof SurveyPackageImpl ? registeredPackage : SurveyPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(WebsitePackage.eNS_URI);
 		WebsitePackageImpl theWebsitePackage = (WebsitePackageImpl)(registeredPackage instanceof WebsitePackageImpl ? registeredPackage : WebsitePackage.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(org.abchip.mimo.biz.entity.EntityPackage.eNS_URI);
-		EntityPackageImpl theEntityPackage = (EntityPackageImpl)(registeredPackage instanceof EntityPackageImpl ? registeredPackage : org.abchip.mimo.biz.entity.EntityPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(EntityPackage.eNS_URI);
+		EntityPackageImpl theEntityPackage = (EntityPackageImpl)(registeredPackage instanceof EntityPackageImpl ? registeredPackage : EntityPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(AuditPackage.eNS_URI);
 		AuditPackageImpl theAuditPackage = (AuditPackageImpl)(registeredPackage instanceof AuditPackageImpl ? registeredPackage : AuditPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(CryptoPackage.eNS_URI);
@@ -2125,61 +2126,12 @@ public class OpportunityPackageImpl extends EPackageImpl implements OpportunityP
 			   "scale", "2"
 		   });
 		addAnnotation
-		  (getSalesForecast_CreatedByUserLoginId(),
-		   source,
-		   new String[] {
-			   "type", "id-vlong",
-			   "length", "255"
-		   });
-		addAnnotation
-		  (getSalesForecast_CurrencyUomId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getSalesForecast_CustomTimePeriodId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getSalesForecast_ForecastAmount(),
 		   source,
 		   new String[] {
 			   "type", "currency-amount",
 			   "precision", "18",
 			   "scale", "2"
-		   });
-		addAnnotation
-		  (getSalesForecast_InternalPartyId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getSalesForecast_ModifiedByUserLoginId(),
-		   source,
-		   new String[] {
-			   "type", "id-vlong",
-			   "length", "255"
-		   });
-		addAnnotation
-		  (getSalesForecast_OrganizationPartyId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getSalesForecast_ParentSalesForecastId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
 		   });
 		addAnnotation
 		  (getSalesForecast_PercentOfQuotaClosed(),
@@ -2221,13 +2173,6 @@ public class OpportunityPackageImpl extends EPackageImpl implements OpportunityP
 			   "length", "20"
 		   });
 		addAnnotation
-		  (getSalesForecastDetail_SalesForecastId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getSalesForecastDetail_SalesForecastDetailId(),
 		   source,
 		   new String[] {
@@ -2243,33 +2188,12 @@ public class OpportunityPackageImpl extends EPackageImpl implements OpportunityP
 			   "scale", "2"
 		   });
 		addAnnotation
-		  (getSalesForecastDetail_ProductCategoryId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getSalesForecastDetail_ProductId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getSalesForecastDetail_Quantity(),
 		   source,
 		   new String[] {
 			   "type", "fixed-point",
 			   "precision", "18",
 			   "scale", "6"
-		   });
-		addAnnotation
-		  (getSalesForecastDetail_QuantityUomId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
 		   });
 		addAnnotation
 		  (getSalesForecastHistory_SalesForecastHistoryId(),
@@ -2301,20 +2225,6 @@ public class OpportunityPackageImpl extends EPackageImpl implements OpportunityP
 			   "scale", "2"
 		   });
 		addAnnotation
-		  (getSalesForecastHistory_CurrencyUomId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getSalesForecastHistory_CustomTimePeriodId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getSalesForecastHistory_ForecastAmount(),
 		   source,
 		   new String[] {
@@ -2323,31 +2233,10 @@ public class OpportunityPackageImpl extends EPackageImpl implements OpportunityP
 			   "scale", "2"
 		   });
 		addAnnotation
-		  (getSalesForecastHistory_InternalPartyId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getSalesForecastHistory_ModifiedByUserLoginId(),
-		   source,
-		   new String[] {
-			   "type", "id-vlong",
-			   "length", "255"
-		   });
-		addAnnotation
 		  (getSalesForecastHistory_ModifiedTimestamp(),
 		   source,
 		   new String[] {
 			   "type", "date-time"
-		   });
-		addAnnotation
-		  (getSalesForecastHistory_OrganizationPartyId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
 		   });
 		addAnnotation
 		  (getSalesForecastHistory_ParentSalesForecastId(),
@@ -2381,13 +2270,6 @@ public class OpportunityPackageImpl extends EPackageImpl implements OpportunityP
 			   "scale", "2"
 		   });
 		addAnnotation
-		  (getSalesForecastHistory_SalesForecastId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (salesOpportunityEClass.getEOperations().get(0),
 		   source,
 		   new String[] {
@@ -2410,20 +2292,6 @@ public class OpportunityPackageImpl extends EPackageImpl implements OpportunityP
 		   });
 		addAnnotation
 		  (getSalesOpportunity_SalesOpportunityId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getSalesOpportunity_CreatedByUserLogin(),
-		   source,
-		   new String[] {
-			   "type", "id-vlong",
-			   "length", "255"
-		   });
-		addAnnotation
-		  (getSalesOpportunity_CurrencyUomId(),
 		   source,
 		   new String[] {
 			   "type", "id",
@@ -2465,13 +2333,6 @@ public class OpportunityPackageImpl extends EPackageImpl implements OpportunityP
 			   "scale", "6"
 		   });
 		addAnnotation
-		  (getSalesOpportunity_MarketingCampaignId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getSalesOpportunity_NextStep(),
 		   source,
 		   new String[] {
@@ -2489,13 +2350,6 @@ public class OpportunityPackageImpl extends EPackageImpl implements OpportunityP
 		   new String[] {
 			   "type", "name",
 			   "length", "100"
-		   });
-		addAnnotation
-		  (getSalesOpportunity_OpportunityStageId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
 		   });
 		addAnnotation
 		  (getSalesOpportunity_SalesOpportunityCompetitors(),
@@ -2520,20 +2374,6 @@ public class OpportunityPackageImpl extends EPackageImpl implements OpportunityP
 		   });
 		addAnnotation
 		  (getSalesOpportunity_SalesOpportunityWorkEfforts(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getSalesOpportunity_TypeEnumId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getSalesOpportunityCompetitor_SalesOpportunityId(),
 		   source,
 		   new String[] {
 			   "type", "id",
@@ -2579,13 +2419,6 @@ public class OpportunityPackageImpl extends EPackageImpl implements OpportunityP
 			   "type", "very-long"
 		   });
 		addAnnotation
-		  (getSalesOpportunityHistory_CurrencyUomId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getSalesOpportunityHistory_Description(),
 		   source,
 		   new String[] {
@@ -2614,13 +2447,6 @@ public class OpportunityPackageImpl extends EPackageImpl implements OpportunityP
 			   "scale", "6"
 		   });
 		addAnnotation
-		  (getSalesOpportunityHistory_ModifiedByUserLogin(),
-		   source,
-		   new String[] {
-			   "type", "id-vlong",
-			   "length", "255"
-		   });
-		addAnnotation
 		  (getSalesOpportunityHistory_ModifiedTimestamp(),
 		   source,
 		   new String[] {
@@ -2631,55 +2457,6 @@ public class OpportunityPackageImpl extends EPackageImpl implements OpportunityP
 		   source,
 		   new String[] {
 			   "type", "very-long"
-		   });
-		addAnnotation
-		  (getSalesOpportunityHistory_OpportunityStageId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getSalesOpportunityHistory_SalesOpportunityId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getSalesOpportunityQuote_SalesOpportunityId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getSalesOpportunityQuote_QuoteId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getSalesOpportunityRole_SalesOpportunityId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getSalesOpportunityRole_PartyId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getSalesOpportunityRole_RoleTypeId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
 		   });
 		addAnnotation
 		  (salesOpportunityStageEClass.getEOperations().get(0),
@@ -2726,13 +2503,6 @@ public class OpportunityPackageImpl extends EPackageImpl implements OpportunityP
 			   "scale", "0"
 		   });
 		addAnnotation
-		  (getSalesOpportunityTrckCode_SalesOpportunityId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getSalesOpportunityTrckCode_TrackingCodeId(),
 		   source,
 		   new String[] {
@@ -2744,20 +2514,6 @@ public class OpportunityPackageImpl extends EPackageImpl implements OpportunityP
 		   source,
 		   new String[] {
 			   "type", "date-time"
-		   });
-		addAnnotation
-		  (getSalesOpportunityWorkEffort_SalesOpportunityId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getSalesOpportunityWorkEffort_WorkEffortId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
 		   });
 	}
 

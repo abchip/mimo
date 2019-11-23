@@ -78,7 +78,6 @@ public interface PartyQual extends BizEntityTyped<PartyQualType> {
 	 * @see org.abchip.mimo.biz.humanres.ability.AbilityPackage#getPartyQual_PartyId()
 	 * @model keys="partyId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Party getPartyId();
@@ -106,7 +105,6 @@ public interface PartyQual extends BizEntityTyped<PartyQualType> {
 	 * @see org.abchip.mimo.biz.humanres.ability.AbilityPackage#getPartyQual_PartyQualTypeId()
 	 * @model keys="partyQualTypeId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	PartyQualType getPartyQualTypeId();
@@ -160,7 +158,6 @@ public interface PartyQual extends BizEntityTyped<PartyQualType> {
 	 * @see org.abchip.mimo.biz.humanres.ability.AbilityPackage#getPartyQual_StatusId()
 	 * @model keys="statusId"
 	 *        annotation="mimo-ent-slot help='Status e.g. completed, part-time etc.'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	StatusItem getStatusId();
@@ -241,7 +238,6 @@ public interface PartyQual extends BizEntityTyped<PartyQualType> {
 	 * @see org.abchip.mimo.biz.humanres.ability.AbilityPackage#getPartyQual_VerifStatusId()
 	 * @model keys="statusId"
 	 *        annotation="mimo-ent-slot help='Verification done for this entry if any'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	StatusItem getVerifStatusId();

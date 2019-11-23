@@ -95,7 +95,6 @@ public interface BillingAccountTermAttr extends BizEntity {
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getBillingAccountTermAttr_BillingAccountTermId()
 	 * @model keys="billingAccountTermId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	BillingAccountTerm getBillingAccountTermId();

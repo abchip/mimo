@@ -191,7 +191,6 @@ public interface Shipment extends BizEntityTyped<ShipmentType> {
 	 * @see #setCurrencyUomId(Uom)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipment_CurrencyUomId()
 	 * @model keys="uomId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Uom getCurrencyUomId();
@@ -218,7 +217,6 @@ public interface Shipment extends BizEntityTyped<ShipmentType> {
 	 * @see #setDestinationContactMechId(ContactMech)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipment_DestinationContactMechId()
 	 * @model keys="contactMechId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ContactMech getDestinationContactMechId();
@@ -245,7 +243,6 @@ public interface Shipment extends BizEntityTyped<ShipmentType> {
 	 * @see #setDestinationFacilityId(Facility)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipment_DestinationFacilityId()
 	 * @model keys="facilityId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Facility getDestinationFacilityId();
@@ -272,7 +269,6 @@ public interface Shipment extends BizEntityTyped<ShipmentType> {
 	 * @see #setDestinationTelecomNumberId(TelecomNumber)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipment_DestinationTelecomNumberId()
 	 * @model keys="contactMechId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	TelecomNumber getDestinationTelecomNumberId();
@@ -325,7 +321,6 @@ public interface Shipment extends BizEntityTyped<ShipmentType> {
 	 * @see #setEstimatedArrivalWorkEffId(WorkEffort)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipment_EstimatedArrivalWorkEffId()
 	 * @model keys="workEffortId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	WorkEffort getEstimatedArrivalWorkEffId();
@@ -430,7 +425,6 @@ public interface Shipment extends BizEntityTyped<ShipmentType> {
 	 * @see #setEstimatedShipWorkEffId(WorkEffort)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipment_EstimatedShipWorkEffId()
 	 * @model keys="workEffortId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	WorkEffort getEstimatedShipWorkEffId();
@@ -561,7 +555,6 @@ public interface Shipment extends BizEntityTyped<ShipmentType> {
 	 * @see #setOriginContactMechId(ContactMech)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipment_OriginContactMechId()
 	 * @model keys="contactMechId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ContactMech getOriginContactMechId();
@@ -588,7 +581,6 @@ public interface Shipment extends BizEntityTyped<ShipmentType> {
 	 * @see #setOriginFacilityId(Facility)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipment_OriginFacilityId()
 	 * @model keys="facilityId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Facility getOriginFacilityId();
@@ -615,7 +607,6 @@ public interface Shipment extends BizEntityTyped<ShipmentType> {
 	 * @see #setOriginTelecomNumberId(TelecomNumber)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipment_OriginTelecomNumberId()
 	 * @model keys="contactMechId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	TelecomNumber getOriginTelecomNumberId();
@@ -642,7 +633,6 @@ public interface Shipment extends BizEntityTyped<ShipmentType> {
 	 * @see #setPartyIdFrom(Party)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipment_PartyIdFrom()
 	 * @model keys="partyId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Party getPartyIdFrom();
@@ -669,7 +659,6 @@ public interface Shipment extends BizEntityTyped<ShipmentType> {
 	 * @see #setPartyIdTo(Party)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipment_PartyIdTo()
 	 * @model keys="partyId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Party getPartyIdTo();
@@ -696,7 +685,6 @@ public interface Shipment extends BizEntityTyped<ShipmentType> {
 	 * @see #setPicklistBinId(PicklistBin)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipment_PicklistBinId()
 	 * @model keys="picklistBinId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	PicklistBin getPicklistBinId();
@@ -723,7 +711,6 @@ public interface Shipment extends BizEntityTyped<ShipmentType> {
 	 * @see #setPrimaryOrderId(OrderHeader)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipment_PrimaryOrderId()
 	 * @model keys="orderId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	OrderHeader getPrimaryOrderId();
@@ -750,7 +737,6 @@ public interface Shipment extends BizEntityTyped<ShipmentType> {
 	 * @see #setPrimaryReturnId(ReturnHeader)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipment_PrimaryReturnId()
 	 * @model keys="returnId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ReturnHeader getPrimaryReturnId();
@@ -830,7 +816,6 @@ public interface Shipment extends BizEntityTyped<ShipmentType> {
 	 * @see #setShipmentTypeId(ShipmentType)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipment_ShipmentTypeId()
 	 * @model keys="shipmentTypeId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ShipmentType getShipmentTypeId();
@@ -857,7 +842,6 @@ public interface Shipment extends BizEntityTyped<ShipmentType> {
 	 * @see #setStatusId(StatusItem)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipment_StatusId()
 	 * @model keys="statusId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	StatusItem getStatusId();

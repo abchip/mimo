@@ -20,9 +20,9 @@ import org.abchip.mimo.biz.BizEntity;
  * The following features are supported:
  * </p>
  * <ul>
+ *   <li>{@link org.abchip.mimo.biz.security.login.UserLoginSession#getUserLoginId <em>User Login Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.security.login.UserLoginSession#getSavedDate <em>Saved Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.security.login.UserLoginSession#getSessionData <em>Session Data</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.security.login.UserLoginSession#getUserLoginId <em>User Login Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.security.login.LoginPackage#getUserLoginSession()
@@ -83,30 +83,30 @@ public interface UserLoginSession extends BizEntity {
 	void setSessionData(String value);
 
 	/**
-	 * Returns the value of the '<em><b>User Login Id</b></em>' reference.
+	 * Returns the value of the '<em><b>User Login Id</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>User Login Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>User Login Id</em>' reference.
-	 * @see #setUserLoginId(UserLogin)
+	 * @return the value of the '<em>User Login Id</em>' attribute.
+	 * @see #setUserLoginId(String)
 	 * @see org.abchip.mimo.biz.security.login.LoginPackage#getUserLoginSession_UserLoginId()
-	 * @model keys="userLoginId" required="true"
+	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-format type='id-vlong' length='255'"
 	 * @generated
 	 */
-	UserLogin getUserLoginId();
+	String getUserLoginId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.security.login.UserLoginSession#getUserLoginId <em>User Login Id</em>}' reference.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.security.login.UserLoginSession#getUserLoginId <em>User Login Id</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>User Login Id</em>' reference.
+	 * @param value the new value of the '<em>User Login Id</em>' attribute.
 	 * @see #getUserLoginId()
 	 * @generated
 	 */
-	void setUserLoginId(UserLogin value);
+	void setUserLoginId(String value);
 
 } // UserLoginSession

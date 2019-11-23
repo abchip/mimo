@@ -71,6 +71,7 @@ import org.abchip.mimo.biz.content.survey.SurveyPackage;
 import org.abchip.mimo.biz.content.survey.impl.SurveyPackageImpl;
 import org.abchip.mimo.biz.content.website.WebsitePackage;
 import org.abchip.mimo.biz.content.website.impl.WebsitePackageImpl;
+import org.abchip.mimo.biz.entity.EntityPackage;
 import org.abchip.mimo.biz.entity.audit.AuditPackage;
 import org.abchip.mimo.biz.entity.audit.impl.AuditPackageImpl;
 import org.abchip.mimo.biz.entity.crypto.CryptoPackage;
@@ -407,8 +408,8 @@ public class VisitPackageImpl extends EPackageImpl implements VisitPackage {
 		SurveyPackageImpl theSurveyPackage = (SurveyPackageImpl)(registeredPackage instanceof SurveyPackageImpl ? registeredPackage : SurveyPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(WebsitePackage.eNS_URI);
 		WebsitePackageImpl theWebsitePackage = (WebsitePackageImpl)(registeredPackage instanceof WebsitePackageImpl ? registeredPackage : WebsitePackage.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(org.abchip.mimo.biz.entity.EntityPackage.eNS_URI);
-		EntityPackageImpl theEntityPackage = (EntityPackageImpl)(registeredPackage instanceof EntityPackageImpl ? registeredPackage : org.abchip.mimo.biz.entity.EntityPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(EntityPackage.eNS_URI);
+		EntityPackageImpl theEntityPackage = (EntityPackageImpl)(registeredPackage instanceof EntityPackageImpl ? registeredPackage : EntityPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(AuditPackage.eNS_URI);
 		AuditPackageImpl theAuditPackage = (AuditPackageImpl)(registeredPackage instanceof AuditPackageImpl ? registeredPackage : AuditPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(CryptoPackage.eNS_URI);
@@ -2023,20 +2024,6 @@ public class VisitPackageImpl extends EPackageImpl implements VisitPackage {
 			   "length", "100"
 		   });
 		addAnnotation
-		  (getServerHit_HitTypeId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getServerHit_VisitId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getServerHit_ContentId(),
 		   source,
 		   new String[] {
@@ -2050,40 +2037,12 @@ public class VisitPackageImpl extends EPackageImpl implements VisitPackage {
 			   "type", "date-time"
 		   });
 		addAnnotation
-		  (getServerHit_IdByIpContactMechId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getServerHit_InternalContentId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getServerHit_NumOfBytes(),
 		   source,
 		   new String[] {
 			   "type", "numeric",
 			   "precision", "20",
 			   "scale", "0"
-		   });
-		addAnnotation
-		  (getServerHit_PartyId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getServerHit_RefByWebContactMechId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
 		   });
 		addAnnotation
 		  (getServerHit_ReferrerUrl(),
@@ -2162,20 +2121,6 @@ public class VisitPackageImpl extends EPackageImpl implements VisitPackage {
 			   "length", "255"
 		   });
 		addAnnotation
-		  (getServerHitBin_HitTypeId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getServerHitBin_InternalContentId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getServerHitBin_MaxTimeMillis(),
 		   source,
 		   new String[] {
@@ -2251,41 +2196,6 @@ public class VisitPackageImpl extends EPackageImpl implements VisitPackage {
 		   });
 		addAnnotation
 		  (getUserAgent_UserAgentId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getUserAgent_BrowserTypeId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getUserAgent_PlatformTypeId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getUserAgent_ProtocolTypeId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getUserAgent_UserAgentMethodTypeId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getUserAgent_UserAgentTypeId(),
 		   source,
 		   new String[] {
 			   "type", "id",
@@ -2479,13 +2389,6 @@ public class VisitPackageImpl extends EPackageImpl implements VisitPackage {
 			   "type", "date-time"
 		   });
 		addAnnotation
-		  (getVisit_UserAgentId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getVisit_UserCreated(),
 		   source,
 		   new String[] {
@@ -2498,13 +2401,6 @@ public class VisitPackageImpl extends EPackageImpl implements VisitPackage {
 		   new String[] {
 			   "type", "id-vlong",
 			   "length", "255"
-		   });
-		addAnnotation
-		  (getVisit_VisitorId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
 		   });
 		addAnnotation
 		  (getVisit_WebappName(),
@@ -2533,13 +2429,6 @@ public class VisitPackageImpl extends EPackageImpl implements VisitPackage {
 		   new String[] {
 			   "type", "id",
 			   "length", "20"
-		   });
-		addAnnotation
-		  (getVisitor_UserLoginId(),
-		   source,
-		   new String[] {
-			   "type", "id-vlong",
-			   "length", "255"
 		   });
 	}
 

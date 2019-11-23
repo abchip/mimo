@@ -96,7 +96,6 @@ public interface ProductCategoryType extends BizEntityType<ProductCategory> {
 	 * @see #setParentTypeId(ProductCategoryType)
 	 * @see org.abchip.mimo.biz.product.category.CategoryPackage#getProductCategoryType_ParentTypeId()
 	 * @model keys="productCategoryTypeId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ProductCategoryType getParentTypeId();

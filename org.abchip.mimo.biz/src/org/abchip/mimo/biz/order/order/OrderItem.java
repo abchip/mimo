@@ -227,7 +227,6 @@ public interface OrderItem extends BizEntityTyped<OrderItemType> {
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderItem_ChangeByUserLoginId()
 	 * @model keys="userLoginId"
 	 *        annotation="mimo-ent-slot audit='true'"
-	 *        annotation="mimo-ent-format type='id-vlong' length='255'"
 	 * @generated
 	 */
 	UserLogin getChangeByUserLoginId();
@@ -358,7 +357,6 @@ public interface OrderItem extends BizEntityTyped<OrderItemType> {
 	 * @see #setDontCancelSetUserLogin(UserLogin)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderItem_DontCancelSetUserLogin()
 	 * @model keys="userLoginId"
-	 *        annotation="mimo-ent-format type='id-vlong' length='255'"
 	 * @generated
 	 */
 	UserLogin getDontCancelSetUserLogin();
@@ -541,7 +539,6 @@ public interface OrderItem extends BizEntityTyped<OrderItemType> {
 	 * @see #setFromInventoryItemId(InventoryItem)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderItem_FromInventoryItemId()
 	 * @model keys="inventoryItemId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	InventoryItem getFromInventoryItemId();
@@ -595,7 +592,6 @@ public interface OrderItem extends BizEntityTyped<OrderItemType> {
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderItem_OrderId()
 	 * @model keys="orderId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	OrderHeader getOrderId();
@@ -676,7 +672,6 @@ public interface OrderItem extends BizEntityTyped<OrderItemType> {
 	 * @see #setOrderItemTypeId(OrderItemType)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderItem_OrderItemTypeId()
 	 * @model keys="orderItemTypeId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	OrderItemType getOrderItemTypeId();
@@ -704,7 +699,6 @@ public interface OrderItem extends BizEntityTyped<OrderItemType> {
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderItem_OverrideGlAccountId()
 	 * @model keys="glAccountId"
 	 *        annotation="mimo-ent-slot help='Used to specify the override or actual glAccountId used for the adjustment, avoids problems if configuration changes after initial posting, etc.'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	GlAccount getOverrideGlAccountId();
@@ -809,7 +803,6 @@ public interface OrderItem extends BizEntityTyped<OrderItemType> {
 	 * @see #setProductId(Product)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderItem_ProductId()
 	 * @model keys="productId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Product getProductId();
@@ -915,7 +908,6 @@ public interface OrderItem extends BizEntityTyped<OrderItemType> {
 	 * @see #setRecurringFreqUomId(Uom)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderItem_RecurringFreqUomId()
 	 * @model keys="uomId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Uom getRecurringFreqUomId();
@@ -968,7 +960,6 @@ public interface OrderItem extends BizEntityTyped<OrderItemType> {
 	 * @see #setSalesOpportunityId(SalesOpportunity)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderItem_SalesOpportunityId()
 	 * @model keys="salesOpportunityId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	SalesOpportunity getSalesOpportunityId();
@@ -1125,7 +1116,6 @@ public interface OrderItem extends BizEntityTyped<OrderItemType> {
 	 * @see #setStatusId(StatusItem)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderItem_StatusId()
 	 * @model keys="statusId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	StatusItem getStatusId();
@@ -1204,7 +1194,6 @@ public interface OrderItem extends BizEntityTyped<OrderItemType> {
 	 * @see #setSyncStatusId(StatusItem)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderItem_SyncStatusId()
 	 * @model keys="statusId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	StatusItem getSyncStatusId();

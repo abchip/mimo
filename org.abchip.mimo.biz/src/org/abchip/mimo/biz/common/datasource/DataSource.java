@@ -155,7 +155,6 @@ public interface DataSource extends BizEntityTyped<DataSourceType> {
 	 * @see #setDataSourceTypeId(DataSourceType)
 	 * @see org.abchip.mimo.biz.common.datasource.DatasourcePackage#getDataSource_DataSourceTypeId()
 	 * @model keys="dataSourceTypeId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	DataSourceType getDataSourceTypeId();

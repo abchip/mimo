@@ -95,7 +95,6 @@ public interface TrainingClassType extends BizEntity {
 	 * @see #setParentTypeId(TrainingClassType)
 	 * @see org.abchip.mimo.biz.humanres.ability.AbilityPackage#getTrainingClassType_ParentTypeId()
 	 * @model keys="trainingClassTypeId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	TrainingClassType getParentTypeId();

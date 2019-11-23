@@ -95,7 +95,6 @@ public interface ProductContentType extends BizEntityType<ProductContent> {
 	 * @see #setParentTypeId(ProductContentType)
 	 * @see org.abchip.mimo.biz.product.product.ProductPackage#getProductContentType_ParentTypeId()
 	 * @model keys="productContentTypeId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ProductContentType getParentTypeId();

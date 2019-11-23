@@ -121,7 +121,6 @@ public interface CustomScreen extends BizEntityTyped<CustomScreenType> {
 	 * @see #setCustomScreenTypeId(CustomScreenType)
 	 * @see org.abchip.mimo.biz.common.screen.ScreenPackage#getCustomScreen_CustomScreenTypeId()
 	 * @model keys="customScreenTypeId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	CustomScreenType getCustomScreenTypeId();

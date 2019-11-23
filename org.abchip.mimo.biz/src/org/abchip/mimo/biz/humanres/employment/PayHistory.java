@@ -189,7 +189,6 @@ public interface PayHistory extends BizEntity {
 	 * @see #setPayGradeId(PayGrade)
 	 * @see org.abchip.mimo.biz.humanres.employment.EmploymentPackage#getPayHistory_PayGradeId()
 	 * @model keys="payGradeId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	PayGrade getPayGradeId();
@@ -216,7 +215,6 @@ public interface PayHistory extends BizEntity {
 	 * @see #setPeriodTypeId(PeriodType)
 	 * @see org.abchip.mimo.biz.humanres.employment.EmploymentPackage#getPayHistory_PeriodTypeId()
 	 * @model keys="periodTypeId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	PeriodType getPeriodTypeId();

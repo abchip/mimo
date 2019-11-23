@@ -352,15 +352,6 @@ public interface CampaignPackage extends EPackage {
 	int MARKETING_CAMPAIGN_NOTE__NOTE_ID = BizPackage.BIZ_ENTITY_NOTE__NOTE_ID;
 
 	/**
-	 * The feature id for the '<em><b>Note</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MARKETING_CAMPAIGN_NOTE__NOTE = BizPackage.BIZ_ENTITY_NOTE__NOTE;
-
-	/**
 	 * The feature id for the '<em><b>Marketing Campaign Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

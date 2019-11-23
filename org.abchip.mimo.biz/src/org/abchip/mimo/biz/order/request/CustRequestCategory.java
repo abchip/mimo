@@ -69,7 +69,6 @@ public interface CustRequestCategory extends BizEntity {
 	 * @see #setCustRequestTypeId(CustRequestType)
 	 * @see org.abchip.mimo.biz.order.request.RequestPackage#getCustRequestCategory_CustRequestTypeId()
 	 * @model keys="custRequestTypeId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	CustRequestType getCustRequestTypeId();

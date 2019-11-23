@@ -81,6 +81,7 @@ import org.abchip.mimo.biz.content.survey.SurveyPackage;
 import org.abchip.mimo.biz.content.survey.impl.SurveyPackageImpl;
 import org.abchip.mimo.biz.content.website.WebsitePackage;
 import org.abchip.mimo.biz.content.website.impl.WebsitePackageImpl;
+import org.abchip.mimo.biz.entity.EntityPackage;
 import org.abchip.mimo.biz.entity.audit.AuditPackage;
 import org.abchip.mimo.biz.entity.audit.impl.AuditPackageImpl;
 import org.abchip.mimo.biz.entity.crypto.CryptoPackage;
@@ -397,8 +398,8 @@ public class TaxPackageImpl extends EPackageImpl implements TaxPackage {
 		SurveyPackageImpl theSurveyPackage = (SurveyPackageImpl)(registeredPackage instanceof SurveyPackageImpl ? registeredPackage : SurveyPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(WebsitePackage.eNS_URI);
 		WebsitePackageImpl theWebsitePackage = (WebsitePackageImpl)(registeredPackage instanceof WebsitePackageImpl ? registeredPackage : WebsitePackage.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(org.abchip.mimo.biz.entity.EntityPackage.eNS_URI);
-		EntityPackageImpl theEntityPackage = (EntityPackageImpl)(registeredPackage instanceof EntityPackageImpl ? registeredPackage : org.abchip.mimo.biz.entity.EntityPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(EntityPackage.eNS_URI);
+		EntityPackageImpl theEntityPackage = (EntityPackageImpl)(registeredPackage instanceof EntityPackageImpl ? registeredPackage : EntityPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(AuditPackage.eNS_URI);
 		AuditPackageImpl theAuditPackage = (AuditPackageImpl)(registeredPackage instanceof AuditPackageImpl ? registeredPackage : AuditPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(CryptoPackage.eNS_URI);
@@ -1892,13 +1893,6 @@ public class TaxPackageImpl extends EPackageImpl implements TaxPackage {
 	protected void createMimoentformatAnnotations() {
 		String source = "mimo-ent-format";
 		addAnnotation
-		  (getPartyTaxAuthInfo_PartyId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getPartyTaxAuthInfo_FromDate(),
 		   source,
 		   new String[] {
@@ -1944,20 +1938,6 @@ public class TaxPackageImpl extends EPackageImpl implements TaxPackage {
 		   source,
 		   new String[] {
 			   "type", "date-time"
-		   });
-		addAnnotation
-		  (getTaxAuthority_TaxAuthGeoId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getTaxAuthority_TaxAuthPartyId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
 		   });
 		addAnnotation
 		  (getTaxAuthority_IncludeTaxInPrice(),
@@ -2015,13 +1995,6 @@ public class TaxPackageImpl extends EPackageImpl implements TaxPackage {
 			   "length", "20"
 		   });
 		addAnnotation
-		  (getTaxAuthorityAssoc_TaxAuthorityAssocTypeId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getTaxAuthorityAssoc_ThruDate(),
 		   source,
 		   new String[] {
@@ -2042,13 +2015,6 @@ public class TaxPackageImpl extends EPackageImpl implements TaxPackage {
 			   "length", "255"
 		   });
 		addAnnotation
-		  (getTaxAuthorityCategory_ProductCategoryId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getTaxAuthorityCategory_TaxAuthGeoId(),
 		   source,
 		   new String[] {
@@ -2063,13 +2029,6 @@ public class TaxPackageImpl extends EPackageImpl implements TaxPackage {
 			   "length", "20"
 		   });
 		addAnnotation
-		  (getTaxAuthorityGlAccount_OrganizationPartyId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getTaxAuthorityGlAccount_TaxAuthGeoId(),
 		   source,
 		   new String[] {
@@ -2078,13 +2037,6 @@ public class TaxPackageImpl extends EPackageImpl implements TaxPackage {
 		   });
 		addAnnotation
 		  (getTaxAuthorityGlAccount_TaxAuthPartyId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getTaxAuthorityGlAccount_GlAccountId(),
 		   source,
 		   new String[] {
 			   "type", "id",
@@ -2155,20 +2107,6 @@ public class TaxPackageImpl extends EPackageImpl implements TaxPackage {
 			   "scale", "2"
 		   });
 		addAnnotation
-		  (getTaxAuthorityRateProduct_ProductCategoryId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getTaxAuthorityRateProduct_ProductStoreId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getTaxAuthorityRateProduct_TaxAuthGeoId(),
 		   source,
 		   new String[] {
@@ -2177,13 +2115,6 @@ public class TaxPackageImpl extends EPackageImpl implements TaxPackage {
 		   });
 		addAnnotation
 		  (getTaxAuthorityRateProduct_TaxAuthPartyId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getTaxAuthorityRateProduct_TaxAuthorityRateTypeId(),
 		   source,
 		   new String[] {
 			   "type", "id",

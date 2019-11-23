@@ -94,7 +94,6 @@ public interface StatusValidChange extends BizEntity {
 	 * @see org.abchip.mimo.biz.common.status.StatusPackage#getStatusValidChange_StatusId()
 	 * @model keys="statusId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	StatusItem getStatusId();
@@ -122,7 +121,6 @@ public interface StatusValidChange extends BizEntity {
 	 * @see org.abchip.mimo.biz.common.status.StatusPackage#getStatusValidChange_StatusIdTo()
 	 * @model keys="statusId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	StatusItem getStatusIdTo();

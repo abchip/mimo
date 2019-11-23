@@ -212,7 +212,6 @@ public interface TaxAuthorityAssoc extends BizEntityTyped<TaxAuthorityAssocType>
 	 * @see #setTaxAuthorityAssocTypeId(TaxAuthorityAssocType)
 	 * @see org.abchip.mimo.biz.accounting.tax.TaxPackage#getTaxAuthorityAssoc_TaxAuthorityAssocTypeId()
 	 * @model keys="taxAuthorityAssocTypeId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	TaxAuthorityAssocType getTaxAuthorityAssocTypeId();

@@ -107,7 +107,6 @@ public interface FixedAssetProduct extends BizEntityTyped<FixedAssetProductType>
 	 * @see org.abchip.mimo.biz.accounting.fixedasset.FixedassetPackage#getFixedAssetProduct_ProductId()
 	 * @model keys="productId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Product getProductId();
@@ -160,7 +159,6 @@ public interface FixedAssetProduct extends BizEntityTyped<FixedAssetProductType>
 	 * @see #setQuantityUomId(Uom)
 	 * @see org.abchip.mimo.biz.accounting.fixedasset.FixedassetPackage#getFixedAssetProduct_QuantityUomId()
 	 * @model keys="uomId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Uom getQuantityUomId();
@@ -240,7 +238,6 @@ public interface FixedAssetProduct extends BizEntityTyped<FixedAssetProductType>
 	 * @see org.abchip.mimo.biz.accounting.fixedasset.FixedassetPackage#getFixedAssetProduct_FixedAssetId()
 	 * @model keys="fixedAssetId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	FixedAsset getFixedAssetId();
@@ -268,7 +265,6 @@ public interface FixedAssetProduct extends BizEntityTyped<FixedAssetProductType>
 	 * @see org.abchip.mimo.biz.accounting.fixedasset.FixedassetPackage#getFixedAssetProduct_FixedAssetProductTypeId()
 	 * @model keys="fixedAssetProductTypeId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	FixedAssetProductType getFixedAssetProductTypeId();

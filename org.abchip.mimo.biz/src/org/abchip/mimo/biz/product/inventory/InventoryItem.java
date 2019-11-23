@@ -238,7 +238,6 @@ public interface InventoryItem extends BizEntityTyped<InventoryItemType> {
 	 * @see org.abchip.mimo.biz.product.inventory.InventoryPackage#getInventoryItem_CurrencyUomId()
 	 * @model keys="uomId"
 	 *        annotation="mimo-ent-slot help='The currency Uom of the unit cost.'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Uom getCurrencyUomId();
@@ -343,7 +342,6 @@ public interface InventoryItem extends BizEntityTyped<InventoryItemType> {
 	 * @see #setFixedAssetId(FixedAsset)
 	 * @see org.abchip.mimo.biz.product.inventory.InventoryPackage#getInventoryItem_FixedAssetId()
 	 * @model keys="fixedAssetId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	FixedAsset getFixedAssetId();
@@ -449,7 +447,6 @@ public interface InventoryItem extends BizEntityTyped<InventoryItemType> {
 	 * @see org.abchip.mimo.biz.product.inventory.InventoryPackage#getInventoryItem_OwnerPartyId()
 	 * @model keys="partyId"
 	 *        annotation="mimo-ent-slot help='The owner of the inventory item.'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Party getOwnerPartyId();
@@ -476,7 +473,6 @@ public interface InventoryItem extends BizEntityTyped<InventoryItemType> {
 	 * @see #setPartyId(Party)
 	 * @see org.abchip.mimo.biz.product.inventory.InventoryPackage#getInventoryItem_PartyId()
 	 * @model keys="partyId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Party getPartyId();
@@ -503,7 +499,6 @@ public interface InventoryItem extends BizEntityTyped<InventoryItemType> {
 	 * @see #setProductId(Product)
 	 * @see org.abchip.mimo.biz.product.inventory.InventoryPackage#getInventoryItem_ProductId()
 	 * @model keys="productId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Product getProductId();
@@ -608,7 +603,6 @@ public interface InventoryItem extends BizEntityTyped<InventoryItemType> {
 	 * @see #setStatusId(StatusItem)
 	 * @see org.abchip.mimo.biz.product.inventory.InventoryPackage#getInventoryItem_StatusId()
 	 * @model keys="statusId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	StatusItem getStatusId();
@@ -662,7 +656,6 @@ public interface InventoryItem extends BizEntityTyped<InventoryItemType> {
 	 * @see #setUomId(Uom)
 	 * @see org.abchip.mimo.biz.product.inventory.InventoryPackage#getInventoryItem_UomId()
 	 * @model keys="uomId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Uom getUomId();
@@ -861,7 +854,6 @@ public interface InventoryItem extends BizEntityTyped<InventoryItemType> {
 	 * @see #setInventoryItemTypeId(InventoryItemType)
 	 * @see org.abchip.mimo.biz.product.inventory.InventoryPackage#getInventoryItem_InventoryItemTypeId()
 	 * @model keys="inventoryItemTypeId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	InventoryItemType getInventoryItemTypeId();
@@ -888,7 +880,6 @@ public interface InventoryItem extends BizEntityTyped<InventoryItemType> {
 	 * @see #setFacilityId(Facility)
 	 * @see org.abchip.mimo.biz.product.inventory.InventoryPackage#getInventoryItem_FacilityId()
 	 * @model keys="facilityId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Facility getFacilityId();
@@ -915,7 +906,6 @@ public interface InventoryItem extends BizEntityTyped<InventoryItemType> {
 	 * @see #setContainerId(Container)
 	 * @see org.abchip.mimo.biz.product.inventory.InventoryPackage#getInventoryItem_ContainerId()
 	 * @model keys="containerId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Container getContainerId();
@@ -942,7 +932,6 @@ public interface InventoryItem extends BizEntityTyped<InventoryItemType> {
 	 * @see #setLotId(Lot)
 	 * @see org.abchip.mimo.biz.product.inventory.InventoryPackage#getInventoryItem_LotId()
 	 * @model keys="lotId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Lot getLotId();

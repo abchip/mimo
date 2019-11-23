@@ -11,7 +11,6 @@ import java.util.Date;
 
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.security.login.LoginPackage;
-import org.abchip.mimo.biz.security.login.UserLogin;
 import org.abchip.mimo.biz.security.login.UserLoginSession;
 import org.eclipse.emf.ecore.EClass;
 
@@ -23,9 +22,9 @@ import org.eclipse.emf.ecore.EClass;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link org.abchip.mimo.biz.security.login.impl.UserLoginSessionImpl#getUserLoginId <em>User Login Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.security.login.impl.UserLoginSessionImpl#getSavedDate <em>Saved Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.security.login.impl.UserLoginSessionImpl#getSessionData <em>Session Data</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.security.login.impl.UserLoginSessionImpl#getUserLoginId <em>User Login Id</em>}</li>
  * </ul>
  *
  * @generated
@@ -102,8 +101,8 @@ public class UserLoginSessionImpl extends BizEntityImpl implements UserLoginSess
 	 * @generated
 	 */
 	@Override
-	public UserLogin getUserLoginId() {
-		return (UserLogin)eGet(LoginPackage.Literals.USER_LOGIN_SESSION__USER_LOGIN_ID, true);
+	public String getUserLoginId() {
+		return (String)eGet(LoginPackage.Literals.USER_LOGIN_SESSION__USER_LOGIN_ID, true);
 	}
 
 	/**
@@ -112,7 +111,7 @@ public class UserLoginSessionImpl extends BizEntityImpl implements UserLoginSess
 	 * @generated
 	 */
 	@Override
-	public void setUserLoginId(UserLogin newUserLoginId) {
+	public void setUserLoginId(String newUserLoginId) {
 		eSet(LoginPackage.Literals.USER_LOGIN_SESSION__USER_LOGIN_ID, newUserLoginId);
 	}
 

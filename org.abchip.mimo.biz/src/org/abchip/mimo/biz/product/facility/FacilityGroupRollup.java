@@ -125,7 +125,6 @@ public interface FacilityGroupRollup extends BizEntity {
 	 * @see org.abchip.mimo.biz.product.facility.FacilityPackage#getFacilityGroupRollup_FacilityGroupId()
 	 * @model keys="facilityGroupId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	FacilityGroup getFacilityGroupId();
@@ -153,7 +152,6 @@ public interface FacilityGroupRollup extends BizEntity {
 	 * @see org.abchip.mimo.biz.product.facility.FacilityPackage#getFacilityGroupRollup_ParentFacilityGroupId()
 	 * @model keys="facilityGroupId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	FacilityGroup getParentFacilityGroupId();

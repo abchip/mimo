@@ -71,6 +71,7 @@ import org.abchip.mimo.biz.content.survey.SurveyPackage;
 import org.abchip.mimo.biz.content.survey.impl.SurveyPackageImpl;
 import org.abchip.mimo.biz.content.website.WebsitePackage;
 import org.abchip.mimo.biz.content.website.impl.WebsitePackageImpl;
+import org.abchip.mimo.biz.entity.EntityPackage;
 import org.abchip.mimo.biz.entity.audit.AuditPackage;
 import org.abchip.mimo.biz.entity.audit.impl.AuditPackageImpl;
 import org.abchip.mimo.biz.entity.crypto.CryptoPackage;
@@ -591,8 +592,8 @@ public class PartyPackageImpl extends EPackageImpl implements PartyPackage {
 		SurveyPackageImpl theSurveyPackage = (SurveyPackageImpl)(registeredPackage instanceof SurveyPackageImpl ? registeredPackage : SurveyPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(WebsitePackage.eNS_URI);
 		WebsitePackageImpl theWebsitePackage = (WebsitePackageImpl)(registeredPackage instanceof WebsitePackageImpl ? registeredPackage : WebsitePackage.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(org.abchip.mimo.biz.entity.EntityPackage.eNS_URI);
-		EntityPackageImpl theEntityPackage = (EntityPackageImpl)(registeredPackage instanceof EntityPackageImpl ? registeredPackage : org.abchip.mimo.biz.entity.EntityPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(EntityPackage.eNS_URI);
+		EntityPackageImpl theEntityPackage = (EntityPackageImpl)(registeredPackage instanceof EntityPackageImpl ? registeredPackage : EntityPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(AuditPackage.eNS_URI);
 		AuditPackageImpl theAuditPackage = (AuditPackageImpl)(registeredPackage instanceof AuditPackageImpl ? registeredPackage : AuditPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(CryptoPackage.eNS_URI);
@@ -966,17 +967,7 @@ public class PartyPackageImpl extends EPackageImpl implements PartyPackage {
 	 * @generated
 	 */
 	@Override
-	public EReference getAffiliate_PartyId() {
-		return (EReference)affiliateEClass.getEStructuralFeatures().get(4);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EAttribute getAffiliate_AffiliateDescription() {
+	public EAttribute getAffiliate_PartyId() {
 		return (EAttribute)affiliateEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -986,7 +977,7 @@ public class PartyPackageImpl extends EPackageImpl implements PartyPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getAffiliate_AffiliateName() {
+	public EAttribute getAffiliate_AffiliateDescription() {
 		return (EAttribute)affiliateEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -996,7 +987,7 @@ public class PartyPackageImpl extends EPackageImpl implements PartyPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getAffiliate_DateTimeApproved() {
+	public EAttribute getAffiliate_AffiliateName() {
 		return (EAttribute)affiliateEClass.getEStructuralFeatures().get(2);
 	}
 
@@ -1006,8 +997,18 @@ public class PartyPackageImpl extends EPackageImpl implements PartyPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getAffiliate_DateTimeCreated() {
+	public EAttribute getAffiliate_DateTimeApproved() {
 		return (EAttribute)affiliateEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getAffiliate_DateTimeCreated() {
+		return (EAttribute)affiliateEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -1846,8 +1847,8 @@ public class PartyPackageImpl extends EPackageImpl implements PartyPackage {
 	 * @generated
 	 */
 	@Override
-	public EReference getPartyIcsAvsOverride_PartyId() {
-		return (EReference)partyIcsAvsOverrideEClass.getEStructuralFeatures().get(1);
+	public EAttribute getPartyIcsAvsOverride_PartyId() {
+		return (EAttribute)partyIcsAvsOverrideEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -1857,7 +1858,7 @@ public class PartyPackageImpl extends EPackageImpl implements PartyPackage {
 	 */
 	@Override
 	public EAttribute getPartyIcsAvsOverride_AvsDeclineString() {
-		return (EAttribute)partyIcsAvsOverrideEClass.getEStructuralFeatures().get(0);
+		return (EAttribute)partyIcsAvsOverrideEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -3176,17 +3177,7 @@ public class PartyPackageImpl extends EPackageImpl implements PartyPackage {
 	 * @generated
 	 */
 	@Override
-	public EReference getVendor_PartyId() {
-		return (EReference)vendorEClass.getEStructuralFeatures().get(4);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EAttribute getVendor_ManifestCompanyName() {
+	public EAttribute getVendor_PartyId() {
 		return (EAttribute)vendorEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -3196,7 +3187,7 @@ public class PartyPackageImpl extends EPackageImpl implements PartyPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getVendor_ManifestCompanyTitle() {
+	public EAttribute getVendor_ManifestCompanyName() {
 		return (EAttribute)vendorEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -3206,7 +3197,7 @@ public class PartyPackageImpl extends EPackageImpl implements PartyPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getVendor_ManifestLogoUrl() {
+	public EAttribute getVendor_ManifestCompanyTitle() {
 		return (EAttribute)vendorEClass.getEStructuralFeatures().get(2);
 	}
 
@@ -3216,8 +3207,18 @@ public class PartyPackageImpl extends EPackageImpl implements PartyPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getVendor_ManifestPolicies() {
+	public EAttribute getVendor_ManifestLogoUrl() {
 		return (EAttribute)vendorEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getVendor_ManifestPolicies() {
+		return (EAttribute)vendorEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -3325,11 +3326,11 @@ public class PartyPackageImpl extends EPackageImpl implements PartyPackage {
 		createEAttribute(addressMatchMapEClass, ADDRESS_MATCH_MAP__SEQUENCE_NUM);
 
 		affiliateEClass = createEClass(AFFILIATE);
+		createEAttribute(affiliateEClass, AFFILIATE__PARTY_ID);
 		createEAttribute(affiliateEClass, AFFILIATE__AFFILIATE_DESCRIPTION);
 		createEAttribute(affiliateEClass, AFFILIATE__AFFILIATE_NAME);
 		createEAttribute(affiliateEClass, AFFILIATE__DATE_TIME_APPROVED);
 		createEAttribute(affiliateEClass, AFFILIATE__DATE_TIME_CREATED);
-		createEReference(affiliateEClass, AFFILIATE__PARTY_ID);
 		createEAttribute(affiliateEClass, AFFILIATE__SITE_PAGE_VIEWS);
 		createEAttribute(affiliateEClass, AFFILIATE__SITE_TYPE);
 		createEAttribute(affiliateEClass, AFFILIATE__SITE_VISITORS);
@@ -3425,8 +3426,8 @@ public class PartyPackageImpl extends EPackageImpl implements PartyPackage {
 		createEAttribute(partyGroupEClass, PARTY_GROUP__TICKER_SYMBOL);
 
 		partyIcsAvsOverrideEClass = createEClass(PARTY_ICS_AVS_OVERRIDE);
+		createEAttribute(partyIcsAvsOverrideEClass, PARTY_ICS_AVS_OVERRIDE__PARTY_ID);
 		createEAttribute(partyIcsAvsOverrideEClass, PARTY_ICS_AVS_OVERRIDE__AVS_DECLINE_STRING);
-		createEReference(partyIcsAvsOverrideEClass, PARTY_ICS_AVS_OVERRIDE__PARTY_ID);
 
 		partyIdentificationEClass = createEClass(PARTY_IDENTIFICATION);
 		createEReference(partyIdentificationEClass, PARTY_IDENTIFICATION__PARTY_IDENTIFICATION_TYPE_ID);
@@ -3577,11 +3578,11 @@ public class PartyPackageImpl extends EPackageImpl implements PartyPackage {
 		createEAttribute(roleTypeAttrEClass, ROLE_TYPE_ATTR__DESCRIPTION);
 
 		vendorEClass = createEClass(VENDOR);
+		createEAttribute(vendorEClass, VENDOR__PARTY_ID);
 		createEAttribute(vendorEClass, VENDOR__MANIFEST_COMPANY_NAME);
 		createEAttribute(vendorEClass, VENDOR__MANIFEST_COMPANY_TITLE);
 		createEAttribute(vendorEClass, VENDOR__MANIFEST_LOGO_URL);
 		createEAttribute(vendorEClass, VENDOR__MANIFEST_POLICIES);
-		createEReference(vendorEClass, VENDOR__PARTY_ID);
 
 		webSiteRoleEClass = createEClass(WEB_SITE_ROLE);
 		createEReference(webSiteRoleEClass, WEB_SITE_ROLE__PARTY_ID);
@@ -3705,12 +3706,11 @@ public class PartyPackageImpl extends EPackageImpl implements PartyPackage {
 		initEAttribute(getAddressMatchMap_SequenceNum(), ecorePackage.getELong(), "sequenceNum", null, 0, 1, AddressMatchMap.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(affiliateEClass, Affiliate.class, "Affiliate", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getAffiliate_PartyId(), ecorePackage.getEString(), "partyId", null, 1, 1, Affiliate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getAffiliate_AffiliateDescription(), ecorePackage.getEString(), "affiliateDescription", null, 0, 1, Affiliate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getAffiliate_AffiliateName(), ecorePackage.getEString(), "affiliateName", null, 0, 1, Affiliate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getAffiliate_DateTimeApproved(), ecorePackage.getEDate(), "dateTimeApproved", null, 0, 1, Affiliate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getAffiliate_DateTimeCreated(), ecorePackage.getEDate(), "dateTimeCreated", null, 0, 1, Affiliate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getAffiliate_PartyId(), this.getParty(), null, "partyId", null, 1, 1, Affiliate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		getAffiliate_PartyId().getEKeys().add(this.getParty_PartyId());
 		initEAttribute(getAffiliate_SitePageViews(), ecorePackage.getEString(), "sitePageViews", null, 0, 1, Affiliate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getAffiliate_SiteType(), ecorePackage.getEString(), "siteType", null, 0, 1, Affiliate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getAffiliate_SiteVisitors(), ecorePackage.getEString(), "siteVisitors", null, 0, 1, Affiliate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -4002,9 +4002,8 @@ public class PartyPackageImpl extends EPackageImpl implements PartyPackage {
 		initEAttribute(getPartyGroup_TickerSymbol(), ecorePackage.getEString(), "tickerSymbol", null, 0, 1, PartyGroup.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(partyIcsAvsOverrideEClass, PartyIcsAvsOverride.class, "PartyIcsAvsOverride", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getPartyIcsAvsOverride_PartyId(), ecorePackage.getEString(), "partyId", null, 1, 1, PartyIcsAvsOverride.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getPartyIcsAvsOverride_AvsDeclineString(), ecorePackage.getEString(), "avsDeclineString", null, 0, 1, PartyIcsAvsOverride.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getPartyIcsAvsOverride_PartyId(), this.getParty(), null, "partyId", null, 1, 1, PartyIcsAvsOverride.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		getPartyIcsAvsOverride_PartyId().getEKeys().add(this.getParty_PartyId());
 
 		initEClass(partyIdentificationEClass, PartyIdentification.class, "PartyIdentification", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getPartyIdentification_PartyIdentificationTypeId(), this.getPartyIdentificationType(), null, "partyIdentificationTypeId", null, 1, 1, PartyIdentification.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -4238,12 +4237,11 @@ public class PartyPackageImpl extends EPackageImpl implements PartyPackage {
 		initEAttribute(getRoleTypeAttr_Description(), ecorePackage.getEString(), "description", null, 0, 1, RoleTypeAttr.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(vendorEClass, Vendor.class, "Vendor", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getVendor_PartyId(), ecorePackage.getEString(), "partyId", null, 1, 1, Vendor.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getVendor_ManifestCompanyName(), ecorePackage.getEString(), "manifestCompanyName", null, 0, 1, Vendor.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getVendor_ManifestCompanyTitle(), ecorePackage.getEString(), "manifestCompanyTitle", null, 0, 1, Vendor.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getVendor_ManifestLogoUrl(), ecorePackage.getEString(), "manifestLogoUrl", null, 0, 1, Vendor.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getVendor_ManifestPolicies(), ecorePackage.getEString(), "manifestPolicies", null, 0, 1, Vendor.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getVendor_PartyId(), this.getParty(), null, "partyId", null, 1, 1, Vendor.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		getVendor_PartyId().getEKeys().add(this.getParty_PartyId());
 
 		initEClass(webSiteRoleEClass, WebSiteRole.class, "WebSiteRole", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getWebSiteRole_PartyId(), this.getParty(), null, "partyId", null, 1, 1, WebSiteRole.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -4298,6 +4296,13 @@ public class PartyPackageImpl extends EPackageImpl implements PartyPackage {
 			   "scale", "0"
 		   });
 		addAnnotation
+		  (getAffiliate_PartyId(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
+		   });
+		addAnnotation
 		  (getAffiliate_AffiliateDescription(),
 		   source,
 		   new String[] {
@@ -4322,13 +4327,6 @@ public class PartyPackageImpl extends EPackageImpl implements PartyPackage {
 		   source,
 		   new String[] {
 			   "type", "date-time"
-		   });
-		addAnnotation
-		  (getAffiliate_PartyId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
 		   });
 		addAnnotation
 		  (getAffiliate_SitePageViews(),
@@ -4940,24 +4938,10 @@ public class PartyPackageImpl extends EPackageImpl implements PartyPackage {
 			   "length", "20"
 		   });
 		addAnnotation
-		  (getParty_CreatedByUserLogin(),
-		   source,
-		   new String[] {
-			   "type", "id-vlong",
-			   "length", "255"
-		   });
-		addAnnotation
 		  (getParty_CreatedDate(),
 		   source,
 		   new String[] {
 			   "type", "date-time"
-		   });
-		addAnnotation
-		  (getParty_DataSourceId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
 		   });
 		addAnnotation
 		  (getParty_Description(),
@@ -4978,13 +4962,6 @@ public class PartyPackageImpl extends EPackageImpl implements PartyPackage {
 		   new String[] {
 			   "type", "indicator",
 			   "length", "1"
-		   });
-		addAnnotation
-		  (getParty_LastModifiedByUserLogin(),
-		   source,
-		   new String[] {
-			   "type", "id-vlong",
-			   "length", "255"
 		   });
 		addAnnotation
 		  (getParty_LastModifiedDate(),
@@ -5042,35 +5019,7 @@ public class PartyPackageImpl extends EPackageImpl implements PartyPackage {
 			   "length", "20"
 		   });
 		addAnnotation
-		  (getParty_PartyTypeId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getParty_PreferredCurrencyUomId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getParty_StatusId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getParty_SupplierProductFeatures(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getPartyAttribute_PartyId(),
 		   source,
 		   new String[] {
 			   "type", "id",
@@ -5098,20 +5047,6 @@ public class PartyPackageImpl extends EPackageImpl implements PartyPackage {
 			   "length", "255"
 		   });
 		addAnnotation
-		  (getPartyCarrierAccount_PartyId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getPartyCarrierAccount_CarrierPartyId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getPartyCarrierAccount_FromDate(),
 		   source,
 		   new String[] {
@@ -5129,20 +5064,6 @@ public class PartyPackageImpl extends EPackageImpl implements PartyPackage {
 		   source,
 		   new String[] {
 			   "type", "date-time"
-		   });
-		addAnnotation
-		  (getPartyClassification_PartyId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getPartyClassification_PartyClassificationGroupId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
 		   });
 		addAnnotation
 		  (getPartyClassification_FromDate(),
@@ -5185,20 +5106,6 @@ public class PartyPackageImpl extends EPackageImpl implements PartyPackage {
 			   "length", "255"
 		   });
 		addAnnotation
-		  (getPartyClassificationGroup_ParentGroupId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getPartyClassificationGroup_PartyClassificationTypeId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (partyClassificationTypeEClass.getEOperations().get(0),
 		   source,
 		   new String[] {
@@ -5234,34 +5141,6 @@ public class PartyPackageImpl extends EPackageImpl implements PartyPackage {
 			   "length", "1"
 		   });
 		addAnnotation
-		  (getPartyClassificationType_ParentTypeId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getPartyContent_PartyId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getPartyContent_ContentId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getPartyContent_PartyContentTypeId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getPartyContent_FromDate(),
 		   source,
 		   new String[] {
@@ -5295,27 +5174,6 @@ public class PartyPackageImpl extends EPackageImpl implements PartyPackage {
 			   "length", "255"
 		   });
 		addAnnotation
-		  (getPartyContentType_ParentTypeId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getPartyDataSource_PartyId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getPartyDataSource_DataSourceId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getPartyDataSource_FromDate(),
 		   source,
 		   new String[] {
@@ -5337,20 +5195,6 @@ public class PartyPackageImpl extends EPackageImpl implements PartyPackage {
 		   });
 		addAnnotation
 		  (getPartyDataSource_VisitId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getPartyGeoPoint_PartyId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getPartyGeoPoint_GeoPointId(),
 		   source,
 		   new String[] {
 			   "type", "id",
@@ -5427,13 +5271,6 @@ public class PartyPackageImpl extends EPackageImpl implements PartyPackage {
 			   "length", "10"
 		   });
 		addAnnotation
-		  (getPartyIcsAvsOverride_AvsDeclineString(),
-		   source,
-		   new String[] {
-			   "type", "long-varchar",
-			   "length", "255"
-		   });
-		addAnnotation
 		  (getPartyIcsAvsOverride_PartyId(),
 		   source,
 		   new String[] {
@@ -5441,18 +5278,11 @@ public class PartyPackageImpl extends EPackageImpl implements PartyPackage {
 			   "length", "20"
 		   });
 		addAnnotation
-		  (getPartyIdentification_PartyIdentificationTypeId(),
+		  (getPartyIcsAvsOverride_AvsDeclineString(),
 		   source,
 		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getPartyIdentification_PartyId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
+			   "type", "long-varchar",
+			   "length", "255"
 		   });
 		addAnnotation
 		  (getPartyIdentification_IdValue(),
@@ -5497,13 +5327,6 @@ public class PartyPackageImpl extends EPackageImpl implements PartyPackage {
 			   "length", "1"
 		   });
 		addAnnotation
-		  (getPartyIdentificationType_ParentTypeId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getPartyInvitation_PartyInvitationId(),
 		   source,
 		   new String[] {
@@ -5531,13 +5354,6 @@ public class PartyPackageImpl extends EPackageImpl implements PartyPackage {
 			   "length", "20"
 		   });
 		addAnnotation
-		  (getPartyInvitation_PartyIdFrom(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getPartyInvitation_PartyInvitationGroupAssocs(),
 		   source,
 		   new String[] {
@@ -5552,53 +5368,11 @@ public class PartyPackageImpl extends EPackageImpl implements PartyPackage {
 			   "length", "20"
 		   });
 		addAnnotation
-		  (getPartyInvitation_StatusId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getPartyInvitation_ToName(),
 		   source,
 		   new String[] {
 			   "type", "name",
 			   "length", "100"
-		   });
-		addAnnotation
-		  (getPartyInvitationGroupAssoc_PartyIdTo(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getPartyInvitationGroupAssoc_PartyInvitationId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getPartyInvitationRoleAssoc_RoleTypeId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getPartyInvitationRoleAssoc_PartyInvitationId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getPartyNameHistory_PartyId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
 		   });
 		addAnnotation
 		  (getPartyNameHistory_ChangeDate(),
@@ -5649,27 +5423,6 @@ public class PartyPackageImpl extends EPackageImpl implements PartyPackage {
 			   "length", "100"
 		   });
 		addAnnotation
-		  (getPartyNote_PartyId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getPartyProfileDefault_PartyId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getPartyProfileDefault_ProductStoreId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getPartyProfileDefault_DefaultBillAddr(),
 		   source,
 		   new String[] {
@@ -5698,34 +5451,6 @@ public class PartyPackageImpl extends EPackageImpl implements PartyPackage {
 			   "length", "20"
 		   });
 		addAnnotation
-		  (getPartyRelationship_PartyIdFrom(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getPartyRelationship_PartyIdTo(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getPartyRelationship_RoleTypeIdFrom(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getPartyRelationship_RoleTypeIdTo(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getPartyRelationship_FromDate(),
 		   source,
 		   new String[] {
@@ -5737,13 +5462,6 @@ public class PartyPackageImpl extends EPackageImpl implements PartyPackage {
 		   new String[] {
 			   "type", "comment",
 			   "length", "255"
-		   });
-		addAnnotation
-		  (getPartyRelationship_PartyRelationshipTypeId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
 		   });
 		addAnnotation
 		  (getPartyRelationship_PermissionsEnumId(),
@@ -5760,32 +5478,11 @@ public class PartyPackageImpl extends EPackageImpl implements PartyPackage {
 			   "length", "100"
 		   });
 		addAnnotation
-		  (getPartyRelationship_PriorityTypeId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getPartyRelationship_RelationshipName(),
 		   source,
 		   new String[] {
 			   "type", "name",
 			   "length", "100"
-		   });
-		addAnnotation
-		  (getPartyRelationship_SecurityGroupId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getPartyRelationship_StatusId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
 		   });
 		addAnnotation
 		  (getPartyRelationship_ThruDate(),
@@ -5822,13 +5519,6 @@ public class PartyPackageImpl extends EPackageImpl implements PartyPackage {
 			   "length", "1"
 		   });
 		addAnnotation
-		  (getPartyRelationshipType_ParentTypeId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getPartyRelationshipType_PartyRelationshipName(),
 		   source,
 		   new String[] {
@@ -5836,59 +5526,10 @@ public class PartyPackageImpl extends EPackageImpl implements PartyPackage {
 			   "length", "100"
 		   });
 		addAnnotation
-		  (getPartyRelationshipType_RoleTypeIdValidFrom(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getPartyRelationshipType_RoleTypeIdValidTo(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getPartyRole_PartyId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getPartyRole_RoleTypeId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getPartyStatus_StatusId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getPartyStatus_PartyId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getPartyStatus_StatusDate(),
 		   source,
 		   new String[] {
 			   "type", "date-time"
-		   });
-		addAnnotation
-		  (getPartyStatus_ChangeByUserLoginId(),
-		   source,
-		   new String[] {
-			   "type", "id-vlong",
-			   "length", "255"
 		   });
 		addAnnotation
 		  (partyTypeEClass.getEOperations().get(0),
@@ -5926,21 +5567,7 @@ public class PartyPackageImpl extends EPackageImpl implements PartyPackage {
 			   "length", "1"
 		   });
 		addAnnotation
-		  (getPartyType_ParentTypeId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getPartyType_PartyTypeAttrs(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getPartyTypeAttr_PartyTypeId(),
 		   source,
 		   new String[] {
 			   "type", "id",
@@ -5985,13 +5612,6 @@ public class PartyPackageImpl extends EPackageImpl implements PartyPackage {
 		   source,
 		   new String[] {
 			   "type", "date"
-		   });
-		addAnnotation
-		  (getPerson_EmploymentStatusEnumId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
 		   });
 		addAnnotation
 		  (getPerson_ExistingCustomer(),
@@ -6124,13 +5744,6 @@ public class PartyPackageImpl extends EPackageImpl implements PartyPackage {
 		   new String[] {
 			   "type", "name",
 			   "length", "100"
-		   });
-		addAnnotation
-		  (getPerson_ResidenceStatusEnumId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
 		   });
 		addAnnotation
 		  (getPerson_Salutation(),
@@ -6342,13 +5955,6 @@ public class PartyPackageImpl extends EPackageImpl implements PartyPackage {
 			   "length", "1"
 		   });
 		addAnnotation
-		  (getRoleType_ParentTypeId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getRoleType_RoleTypeAttrs(),
 		   source,
 		   new String[] {
@@ -6357,13 +5963,6 @@ public class PartyPackageImpl extends EPackageImpl implements PartyPackage {
 		   });
 		addAnnotation
 		  (getRoleType_ValidContactMechRoles(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getRoleTypeAttr_RoleTypeId(),
 		   source,
 		   new String[] {
 			   "type", "id",
@@ -6382,6 +5981,13 @@ public class PartyPackageImpl extends EPackageImpl implements PartyPackage {
 		   new String[] {
 			   "type", "description",
 			   "length", "255"
+		   });
+		addAnnotation
+		  (getVendor_PartyId(),
+		   source,
+		   new String[] {
+			   "type", "id",
+			   "length", "20"
 		   });
 		addAnnotation
 		  (getVendor_ManifestCompanyName(),
@@ -6409,34 +6015,6 @@ public class PartyPackageImpl extends EPackageImpl implements PartyPackage {
 		   source,
 		   new String[] {
 			   "type", "very-long"
-		   });
-		addAnnotation
-		  (getVendor_PartyId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getWebSiteRole_PartyId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getWebSiteRole_RoleTypeId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getWebSiteRole_WebSiteId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
 		   });
 		addAnnotation
 		  (getWebSiteRole_FromDate(),

@@ -46,7 +46,6 @@ public interface ProdConfItemContent extends BizEntityTyped<ProdConfItemContentT
 	 * @see org.abchip.mimo.biz.product.config.ConfigPackage#getProdConfItemContent_ContentId()
 	 * @model keys="contentId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	Content getContentId();
@@ -128,7 +127,6 @@ public interface ProdConfItemContent extends BizEntityTyped<ProdConfItemContentT
 	 * @see org.abchip.mimo.biz.product.config.ConfigPackage#getProdConfItemContent_ConfigItemId()
 	 * @model keys="configItemId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ProductConfigItem getConfigItemId();
@@ -156,7 +154,6 @@ public interface ProdConfItemContent extends BizEntityTyped<ProdConfItemContentT
 	 * @see org.abchip.mimo.biz.product.config.ConfigPackage#getProdConfItemContent_ConfItemContentTypeId()
 	 * @model keys="confItemContentTypeId" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	ProdConfItemContentType getConfItemContentTypeId();

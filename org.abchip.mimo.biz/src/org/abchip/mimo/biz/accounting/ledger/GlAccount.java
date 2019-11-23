@@ -409,7 +409,6 @@ public interface GlAccount extends BizEntityTyped<GlAccountType> {
 	 * @see #setGlAccountTypeId(GlAccountType)
 	 * @see org.abchip.mimo.biz.accounting.ledger.LedgerPackage#getGlAccount_GlAccountTypeId()
 	 * @model keys="glAccountTypeId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	GlAccountType getGlAccountTypeId();
@@ -436,7 +435,6 @@ public interface GlAccount extends BizEntityTyped<GlAccountType> {
 	 * @see #setGlAccountClassId(GlAccountClass)
 	 * @see org.abchip.mimo.biz.accounting.ledger.LedgerPackage#getGlAccount_GlAccountClassId()
 	 * @model keys="glAccountClassId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	GlAccountClass getGlAccountClassId();
@@ -463,7 +461,6 @@ public interface GlAccount extends BizEntityTyped<GlAccountType> {
 	 * @see #setGlResourceTypeId(GlResourceType)
 	 * @see org.abchip.mimo.biz.accounting.ledger.LedgerPackage#getGlAccount_GlResourceTypeId()
 	 * @model keys="glResourceTypeId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	GlResourceType getGlResourceTypeId();
@@ -490,7 +487,6 @@ public interface GlAccount extends BizEntityTyped<GlAccountType> {
 	 * @see #setGlXbrlClassId(GlXbrlClass)
 	 * @see org.abchip.mimo.biz.accounting.ledger.LedgerPackage#getGlAccount_GlXbrlClassId()
 	 * @model keys="glXbrlClassId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	GlXbrlClass getGlXbrlClassId();
@@ -517,7 +513,6 @@ public interface GlAccount extends BizEntityTyped<GlAccountType> {
 	 * @see #setParentGlAccountId(GlAccount)
 	 * @see org.abchip.mimo.biz.accounting.ledger.LedgerPackage#getGlAccount_ParentGlAccountId()
 	 * @model keys="glAccountId"
-	 *        annotation="mimo-ent-format type='id' length='20'"
 	 * @generated
 	 */
 	GlAccount getParentGlAccountId();
